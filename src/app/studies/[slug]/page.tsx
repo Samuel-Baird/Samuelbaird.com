@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { CitationCopy } from "@/components/citation-copy";
 import { getCurrentUser } from "@/lib/auth";
 import { getBookmarkSetForUser, getStudyBySlug, pdfPublicUrl } from "@/lib/data";
 
@@ -232,8 +233,31 @@ export default async function StudyDetailPage({
         </p>
       )}
 
+      <CitationCopy
+        study={{
+          title: study.title,
+          authors: study.authors,
+          year: study.year,
+          source: study.source,
+          external_url: study.external_url,
+        }}
+        bibtexKey={study.slug.replace(/-/g, "_")}
+      />
+
+      <p className="mt-10 text-xs text-[color:var(--muted)]">
+        <Link
+          href={`/contact?category=correction&ref=${encodeURIComponent(
+            `study:${study.slug}`,
+          )}`}
+          className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+        >
+          Report an error
+        </Link>{" "}
+        on this study.
+      </p>
+
       {auth?.profile?.is_admin && (
-        <div className="mt-10">
+        <div className="mt-6">
           <Link
             href={`/admin/studies/${study.slug}/edit`}
             className="inline-flex h-10 items-center rounded-full border border-[color:var(--border)] px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)]"

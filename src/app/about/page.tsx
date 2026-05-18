@@ -130,6 +130,21 @@ export default async function AboutPage() {
           . It aims to honor the Church&apos;s teachings and mission while
           presenting public data honestly.
         </p>
+
+        <div className="mt-8 rounded-2xl border border-[color:var(--border)] bg-white p-5 text-sm">
+          <p className="font-medium text-[color:var(--foreground)]">
+            How stats are collected and channels are selected
+          </p>
+          <p className="mt-2 text-[color:var(--muted)]">
+            Read the full explanation of our data sources, selection criteria, and editorial independence policy.
+          </p>
+          <Link
+            href="/methodology"
+            className="mt-3 inline-flex h-9 items-center rounded-full border border-[color:var(--border)] px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+          >
+            Read methodology →
+          </Link>
+        </div>
       </div>
     </div>
   );

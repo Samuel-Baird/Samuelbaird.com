@@ -5,6 +5,7 @@ const links = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/channels", label: "Channels" },
   { href: "/admin/studies", label: "Studies" },
+  { href: "/admin/messages", label: "Messages" },
   { href: "/admin/refresh", label: "Refresh stats" },
 ];
 

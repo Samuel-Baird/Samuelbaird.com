@@ -254,7 +254,16 @@ export default async function ChannelDetailPage({
       </div>
 
       <p className="mt-6 text-xs text-[color:var(--muted)]">
-        Last refreshed: {fmtDate(yt?.captured_at) ?? "—"}.
+        Last refreshed: {fmtDate(yt?.captured_at) ?? "—"}.{" "}
+        <Link
+          href={`/contact?category=correction&ref=${encodeURIComponent(
+            `channel:${channel.slug}`,
+          )}`}
+          className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+        >
+          Report an error
+        </Link>
+        .
       </p>
     </div>
   );
