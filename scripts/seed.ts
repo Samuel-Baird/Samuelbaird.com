@@ -146,7 +146,7 @@ async function main() {
   console.log(`Read ${curated.length} curated rows, ${idByName.size} channelIds`);
 
   let matched = 0;
-  let unmatched: string[] = [];
+  const unmatched: string[] = [];
   const slugsUsed = new Set<string>();
 
   for (const row of curated) {

@@ -99,9 +99,14 @@ export default async function Home() {
               </span>
               <Link
                 href={`/channels/${c.slug}`}
-                className="flex-1 truncate text-sm font-medium hover:text-[color:var(--accent)]"
+                className="flex min-w-0 flex-1 items-center gap-2 text-sm font-medium hover:text-[color:var(--accent)]"
               >
-                {c.name}
+                <span className="truncate">{c.name}</span>
+                {c.channel_type && (
+                  <span className="shrink-0 rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
+                    {c.channel_type}
+                  </span>
+                )}
               </Link>
               <span className="text-sm tabular-nums text-[color:var(--muted)]">
                 {fmtCompact(c.latest?.subscribers)}

@@ -39,6 +39,9 @@ export default async function ChannelDetailPage({
 
   const yt = channel.latest;
   const ytLink = `https://www.youtube.com/channel/${channel.youtube_channel_id}`;
+  const location = [channel.city, channel.state, channel.country]
+    .filter(Boolean)
+    .join(", ");
 
   const stats = [
     { label: "Subscribers", value: fmtCompact(yt?.subscribers) },
@@ -61,9 +64,43 @@ export default async function ChannelDetailPage({
         ← All channels
       </Link>
 
+      {channel.channel_type && (
+        <div className="mt-6 flex flex-wrap items-center gap-2">
+          <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
+            {channel.channel_type}
+          </span>
+        </div>
+      )}
+
       <h1 className="serif mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
         {channel.name}
       </h1>
+      {(location || channel.owned_by || channel.language) && (
+        <dl className="mt-5 grid gap-3 text-sm text-[color:var(--muted)] sm:grid-cols-3">
+          {location && (
+            <div>
+              <dt className="text-[10px] uppercase tracking-wider">Location</dt>
+              <dd className="mt-1 text-[color:var(--foreground)]">{location}</dd>
+            </div>
+          )}
+          {channel.owned_by && (
+            <div>
+              <dt className="text-[10px] uppercase tracking-wider">Owned by</dt>
+              <dd className="mt-1 text-[color:var(--foreground)]">
+                {channel.owned_by}
+              </dd>
+            </div>
+          )}
+          {channel.language && (
+            <div>
+              <dt className="text-[10px] uppercase tracking-wider">Language</dt>
+              <dd className="mt-1 text-[color:var(--foreground)]">
+                {channel.language}
+              </dd>
+            </div>
+          )}
+        </dl>
+      )}
       <p className="mt-3 text-sm text-[color:var(--muted)]">
         YouTube ID:{" "}
         <code className="rounded bg-[color:var(--muted-soft)] px-1.5 py-0.5 text-xs">

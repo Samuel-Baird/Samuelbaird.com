@@ -6,6 +6,12 @@ export type Channel = {
   description: string | null;
   country: string | null;
   thumbnail_url: string | null;
+  channel_type: string | null;
+  language: string | null;
+  state: string | null;
+  city: string | null;
+  owned_by: string | null;
+  handle: string | null;
   created_at_youtube: string | null;
   featured: boolean;
   is_active: boolean;
