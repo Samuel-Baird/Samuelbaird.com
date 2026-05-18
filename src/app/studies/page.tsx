@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getStudies } from "@/lib/data";
+import { BookmarkButton } from "@/components/bookmark-button";
+import { getCurrentUser } from "@/lib/auth";
+import { CONTACT_EMAIL, mailto } from "@/lib/contact";
+import { getBookmarkSetForUser, getStudies } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Studies",
@@ -11,7 +14,10 @@ export const metadata: Metadata = {
 export const revalidate = 600;
 
 export default async function StudiesPage() {
-  const studies = await getStudies();
+  const [studies, auth] = await Promise.all([getStudies(), getCurrentUser()]);
+  const bookmarks = auth
+    ? await getBookmarkSetForUser(auth.user.id)
+    : { channels: new Set<string>(), studies: new Set<string>() };
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -28,10 +34,19 @@ export default async function StudiesPage() {
 
       <ul className="mt-12 grid gap-5 sm:grid-cols-2">
         {studies.map((s) => (
-          <li key={s.id}>
+          <li key={s.id} className="relative">
+            <div className="absolute right-3 top-3 z-10">
+              <BookmarkButton
+                targetType="study"
+                targetId={s.id}
+                initial={bookmarks.studies.has(s.id)}
+                signedIn={Boolean(auth)}
+                size="sm"
+              />
+            </div>
             <Link
               href={`/studies/${s.slug}`}
-              className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 transition-colors hover:border-[color:var(--accent)]"
+              className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 pr-16 transition-colors hover:border-[color:var(--accent)]"
             >
               <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
                 {s.year && (
@@ -68,6 +83,23 @@ export default async function StudiesPage() {
           </li>
         ))}
       </ul>
+
+      <aside className="mt-12 rounded-2xl border border-[color:var(--border)] bg-[color:var(--accent-soft)]/40 p-6 text-sm text-[color:var(--foreground)] sm:p-8">
+        <p className="serif text-lg font-semibold tracking-tight">
+          Know a study we should add?
+        </p>
+        <p className="mt-2 leading-relaxed text-[color:var(--muted)]">
+          Email{" "}
+          <a
+            href={mailto("Add a study")}
+            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+          >
+            {CONTACT_EMAIL}
+          </a>{" "}
+          with a link or PDF — peer-reviewed work and reputable independent
+          research are both welcome.
+        </p>
+      </aside>
     </div>
   );
 }

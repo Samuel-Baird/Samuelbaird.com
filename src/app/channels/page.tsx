@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ChannelsTable } from "@/components/channels-table";
-import { getChannelsWithLatest } from "@/lib/data";
+import { getCurrentUser } from "@/lib/auth";
+import { CONTACT_EMAIL, mailto } from "@/lib/contact";
+import { getBookmarkSetForUser, getChannelsWithLatest } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Channels",
@@ -10,7 +12,13 @@ export const metadata: Metadata = {
 export const revalidate = 600; // 10 minutes
 
 export default async function ChannelsPage() {
-  const channels = await getChannelsWithLatest();
+  const [channels, auth] = await Promise.all([
+    getChannelsWithLatest(),
+    getCurrentUser(),
+  ]);
+  const bookmarks = auth
+    ? await getBookmarkSetForUser(auth.user.id)
+    : { channels: new Set<string>(), studies: new Set<string>() };
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -27,8 +35,28 @@ export default async function ChannelsPage() {
       </p>
 
       <div className="mt-10">
-        <ChannelsTable channels={channels} />
+        <ChannelsTable
+          channels={channels}
+          bookmarkedSet={bookmarks.channels}
+          signedIn={Boolean(auth)}
+        />
       </div>
+
+      <aside className="mt-12 rounded-2xl border border-[color:var(--border)] bg-[color:var(--accent-soft)]/40 p-6 text-sm text-[color:var(--foreground)] sm:p-8">
+        <p className="serif text-lg font-semibold tracking-tight">
+          Know a creator we should track?
+        </p>
+        <p className="mt-2 leading-relaxed text-[color:var(--muted)]">
+          Email{" "}
+          <a
+            href={mailto("Add a creator")}
+            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+          >
+            {CONTACT_EMAIL}
+          </a>{" "}
+          with the channel name and a link, and I&apos;ll review it for the list.
+        </p>
+      </aside>
     </div>
   );
 }

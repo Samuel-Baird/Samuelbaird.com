@@ -1,5 +1,6 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { Channel, ChannelWithStats, SiteStats, Study } from "./types";
 
 // Read-only public client (anon key). RLS allows select on all public tables.
@@ -29,6 +30,97 @@ export async function getChannelsWithLatest(): Promise<ChannelWithStats[]> {
     ...c,
     latest: byId.get(c.id) ?? null,
   }));
+}
+
+export async function getBookmarkSetForUser(
+  userId: string,
+): Promise<{ channels: Set<string>; studies: Set<string> }> {
+  const sb = await createSupabaseServerClient();
+  const { data, error } = await sb
+    .from("bookmarks")
+    .select("target_type, target_id")
+    .eq("user_id", userId);
+  if (error) throw error;
+
+  const channels = new Set<string>();
+  const studies = new Set<string>();
+  for (const row of data ?? []) {
+    if (row.target_type === "channel") channels.add(row.target_id);
+    if (row.target_type === "study") studies.add(row.target_id);
+  }
+  return { channels, studies };
+}
+
+export async function getBookmarkedChannelsForUser(
+  userId: string,
+): Promise<ChannelWithStats[]> {
+  const sb = await createSupabaseServerClient();
+  const { data: bookmarks, error } = await sb
+    .from("bookmarks")
+    .select("target_id")
+    .eq("user_id", userId)
+    .eq("target_type", "channel")
+    .order("created_at", { ascending: false });
+  if (error) throw error;
+
+  const ids = (bookmarks ?? []).map((row) => row.target_id);
+  if (ids.length === 0) return [];
+
+  const { data: channelRows, error: channelError } = await sb
+    .from("channels")
+    .select("*")
+    .in("id", ids)
+    .eq("is_active", true);
+  if (channelError) throw channelError;
+
+  const byChannelId = new Map(
+    ((channelRows ?? []) as Channel[]).map((channel) => [channel.id, channel]),
+  );
+  const channels = ids
+    .map((id) => byChannelId.get(id))
+    .filter((channel): channel is Channel => Boolean(channel));
+  if (channels.length === 0) return [];
+
+  const { data: stats, error: sErr } = await sb
+    .from("channel_stats_latest")
+    .select("*")
+    .in(
+      "channel_id",
+      channels.map((c) => c.id),
+    );
+  if (sErr) throw sErr;
+
+  const byId = new Map((stats ?? []).map((s) => [s.channel_id, s]));
+  return channels.map((c) => ({ ...c, latest: byId.get(c.id) ?? null }));
+}
+
+export async function getBookmarkedStudiesForUser(
+  userId: string,
+): Promise<Study[]> {
+  const sb = await createSupabaseServerClient();
+  const { data: bookmarks, error } = await sb
+    .from("bookmarks")
+    .select("target_id")
+    .eq("user_id", userId)
+    .eq("target_type", "study")
+    .order("created_at", { ascending: false });
+  if (error) throw error;
+
+  const ids = (bookmarks ?? []).map((row) => row.target_id);
+  if (ids.length === 0) return [];
+
+  const { data: studies, error: studiesError } = await sb
+    .from("studies")
+    .select("*")
+    .in("id", ids);
+  if (studiesError) throw studiesError;
+
+  const byStudyId = new Map(
+    ((studies ?? []) as Study[]).map((study) => [study.id, study]),
+  );
+  return ids
+    .map((id) => byStudyId.get(id))
+    .filter((study): study is Study => Boolean(study));
 }
 
 export async function getChannelBySlug(

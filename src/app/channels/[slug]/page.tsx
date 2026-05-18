@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getChannelBySlug } from "@/lib/data";
+import { BookmarkButton } from "@/components/bookmark-button";
+import { getCurrentUser } from "@/lib/auth";
+import { getBookmarkSetForUser, getChannelBySlug } from "@/lib/data";
 import {
   fmtCompact,
   fmtNumber,
@@ -34,8 +36,12 @@ export default async function ChannelDetailPage({
   params: Promise<RouteParams>;
 }) {
   const { slug } = await params;
-  const channel = await getChannelBySlug(slug);
+  const [channel, auth] = await Promise.all([
+    getChannelBySlug(slug),
+    getCurrentUser(),
+  ]);
   if (!channel) notFound();
+  const bookmarks = auth ? await getBookmarkSetForUser(auth.user.id) : null;
 
   const yt = channel.latest;
   const ytLink = `https://www.youtube.com/channel/${channel.youtube_channel_id}`;
@@ -108,7 +114,7 @@ export default async function ChannelDetailPage({
         </code>
       </p>
 
-      <div className="mt-6">
+      <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={ytLink}
           target="_blank"
@@ -117,6 +123,13 @@ export default async function ChannelDetailPage({
         >
           Open on YouTube ↗
         </a>
+        <BookmarkButton
+          targetType="channel"
+          targetId={channel.id}
+          initial={bookmarks?.channels.has(channel.id) ?? false}
+          signedIn={Boolean(auth)}
+          label="inline"
+        />
       </div>
 
       <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">

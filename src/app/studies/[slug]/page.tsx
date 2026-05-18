@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getStudyBySlug, pdfPublicUrl } from "@/lib/data";
+import { BookmarkButton } from "@/components/bookmark-button";
+import { getCurrentUser } from "@/lib/auth";
+import { getBookmarkSetForUser, getStudyBySlug, pdfPublicUrl } from "@/lib/data";
 
 export const revalidate = 600;
 
@@ -27,8 +29,12 @@ export default async function StudyDetailPage({
   params: Promise<RouteParams>;
 }) {
   const { slug } = await params;
-  const study = await getStudyBySlug(slug);
+  const [study, auth] = await Promise.all([
+    getStudyBySlug(slug),
+    getCurrentUser(),
+  ]);
   if (!study) notFound();
+  const bookmarks = auth ? await getBookmarkSetForUser(auth.user.id) : null;
 
   const pdfUrl = pdfPublicUrl(study.pdf_path);
 
@@ -57,9 +63,18 @@ export default async function StudyDetailPage({
         ))}
       </div>
 
-      <h1 className="serif mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-        {study.title}
-      </h1>
+      <div className="mt-4 flex flex-wrap items-start justify-between gap-4">
+        <h1 className="serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+          {study.title}
+        </h1>
+        <BookmarkButton
+          targetType="study"
+          targetId={study.id}
+          initial={bookmarks?.studies.has(study.id) ?? false}
+          signedIn={Boolean(auth)}
+          label="inline"
+        />
+      </div>
       {study.authors.length > 0 && (
         <p className="mt-3 text-sm text-[color:var(--muted)]">
           {study.authors.join(", ")}

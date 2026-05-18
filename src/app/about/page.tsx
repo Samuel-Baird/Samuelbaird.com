@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "About",
@@ -43,6 +44,21 @@ export default function AboutPage() {
             work, hosted with attribution.
           </li>
         </ul>
+
+        <h2 className="serif pt-4 text-2xl font-semibold tracking-tight text-[color:var(--foreground)]">
+          Contact
+        </h2>
+        <p className="text-[color:var(--muted)]">
+          Suggestions, corrections, or a creator/study you&apos;d like to see
+          added? Email{" "}
+          <a
+            href={mailto("Latter-day Stats")}
+            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+          >
+            {CONTACT_EMAIL}
+          </a>
+          .
+        </p>
 
         <h2 className="serif pt-4 text-2xl font-semibold tracking-tight text-[color:var(--foreground)]">
           Disclaimer

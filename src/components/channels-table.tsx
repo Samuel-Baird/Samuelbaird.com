@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { BookmarkButton } from "@/components/bookmark-button";
 import type { ChannelWithStats } from "@/lib/types";
 import {
   fmtCompact,
@@ -21,7 +22,11 @@ type SortKey =
 
 type SortDirection = "asc" | "desc";
 
-type Props = { channels: ChannelWithStats[] };
+type Props = {
+  channels: ChannelWithStats[];
+  bookmarkedSet?: Set<string>;
+  signedIn?: boolean;
+};
 
 const sortLabels: Record<SortKey, string> = {
   name: "Name",
@@ -92,7 +97,11 @@ function SortHeader({
   );
 }
 
-export function ChannelsTable({ channels }: Props) {
+export function ChannelsTable({
+  channels,
+  bookmarkedSet = new Set<string>(),
+  signedIn = false,
+}: Props) {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("subscribers");
   const [direction, setDirection] = useState<SortDirection>("desc");
@@ -185,6 +194,7 @@ export function ChannelsTable({ channels }: Props) {
         <table className="w-full text-sm">
           <thead className="bg-[color:var(--muted-soft)]/60 text-left text-xs uppercase tracking-wider text-[color:var(--muted)]">
             <tr>
+              <th className="w-12 px-3 py-3" />
               <SortHeader
                 label="Channel"
                 sortKey="name"
@@ -249,6 +259,15 @@ export function ChannelsTable({ channels }: Props) {
                 key={c.id}
                 className="border-t border-[color:var(--border)] hover:bg-[color:var(--muted-soft)]/40"
               >
+                <td className="px-3 py-3.5">
+                  <BookmarkButton
+                    targetType="channel"
+                    targetId={c.id}
+                    initial={bookmarkedSet.has(c.id)}
+                    signedIn={signedIn}
+                    size="sm"
+                  />
+                </td>
                 <td className="px-5 py-3.5">
                   <Link
                     href={`/channels/${c.slug}`}
@@ -294,8 +313,17 @@ export function ChannelsTable({ channels }: Props) {
         {filtered.map((c) => (
           <li
             key={c.id}
-            className="rounded-2xl border border-[color:var(--border)] bg-white p-4"
+            className="relative rounded-2xl border border-[color:var(--border)] bg-white p-4 pr-14"
           >
+            <div className="absolute right-3 top-3 z-10">
+              <BookmarkButton
+                targetType="channel"
+                targetId={c.id}
+                initial={bookmarkedSet.has(c.id)}
+                signedIn={signedIn}
+                size="sm"
+              />
+            </div>
             <Link
               href={`/channels/${c.slug}`}
               className="block min-h-[44px]"
