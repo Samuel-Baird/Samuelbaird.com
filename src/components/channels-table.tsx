@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { colorsForType } from "@/lib/channel-types";
 import type { ChannelWithStats } from "@/lib/types";
 import {
   fmtCompact,
@@ -50,8 +51,11 @@ const defaultDirection: Record<SortKey, SortDirection> = {
 
 function TypePill({ type }: { type: string | null }) {
   if (!type) return <span className="text-[color:var(--muted)]">-</span>;
+  const { bg, text } = colorsForType(type);
   return (
-    <span className="inline-flex rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
+    <span
+      className={`inline-flex rounded-full ${bg} ${text} px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider`}
+    >
       {type}
     </span>
   );
@@ -190,9 +194,9 @@ export function ChannelsTable({
       </p>
 
       {/* Desktop table */}
-      <div className="mt-6 hidden overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white md:block">
-        <table className="w-full text-sm">
-          <thead className="bg-[color:var(--muted-soft)]/60 text-left text-xs uppercase tracking-wider text-[color:var(--muted)]">
+      <div className="mt-6 hidden rounded-2xl border border-[color:var(--border)] bg-white md:block">
+        <table className="w-full border-separate border-spacing-0 text-sm">
+          <thead className="sticky top-16 z-10 bg-[color:var(--muted-soft)] text-left text-xs uppercase tracking-wider text-[color:var(--muted)] shadow-[0_1px_0_0_var(--border)]">
             <tr>
               <th className="w-12 px-3 py-3" />
               <SortHeader

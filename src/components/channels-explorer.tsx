@@ -226,7 +226,7 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
 
       <div className="grid gap-8 md:grid-cols-[260px_minmax(0,1fr)]">
         <aside className="hidden md:block">
-          <div className="sticky top-20">
+          <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-1">
             <ChannelsFilterSidebar
               groups={groups}
               selections={selections}

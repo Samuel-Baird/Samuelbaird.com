@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { getCurrentUser } from "@/lib/auth";
+import { colorsForType } from "@/lib/channel-types";
 import { getBookmarkSetForUser, getChannelBySlug } from "@/lib/data";
 import {
   fmtCompact,
@@ -70,13 +71,18 @@ export default async function ChannelDetailPage({
         ← All channels
       </Link>
 
-      {channel.channel_type && (
-        <div className="mt-6 flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
-            {channel.channel_type}
-          </span>
-        </div>
-      )}
+      {channel.channel_type && (() => {
+        const { bg, text } = colorsForType(channel.channel_type);
+        return (
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            <span
+              className={`rounded-full ${bg} ${text} px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider`}
+            >
+              {channel.channel_type}
+            </span>
+          </div>
+        );
+      })()}
 
       <h1 className="serif mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
         {channel.name}

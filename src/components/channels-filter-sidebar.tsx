@@ -117,7 +117,7 @@ export function ChannelsFilterSidebar({
                   </button>
                 </div>
 
-                <div className="max-h-72 overflow-y-auto pr-1">
+                <div className="pr-1">
                   {group.options.map((option) => (
                     <label
                       key={option.value}
