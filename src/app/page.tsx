@@ -1,8 +1,28 @@
 import Link from "next/link";
+import {
+  getChannelsWithLatest,
+  getFeaturedStudies,
+  getSiteStats,
+} from "@/lib/data";
+import { fmtCompact, fmtNumber } from "@/lib/format";
 
-export default function Home() {
+export const revalidate = 600;
+
+export default async function Home() {
+  const [stats, channels, studies] = await Promise.all([
+    getSiteStats(),
+    getChannelsWithLatest(),
+    getFeaturedStudies(2),
+  ]);
+
+  const top = channels
+    .filter((c) => c.latest)
+    .sort((a, b) => (b.latest!.subscribers ?? 0) - (a.latest!.subscribers ?? 0))
+    .slice(0, 10);
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+      {/* Hero */}
       <section className="max-w-3xl">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
           Latter-day Stats
@@ -12,9 +32,8 @@ export default function Home() {
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
           A public hub tracking LDS YouTube creators, academic studies, and
-          community trends — sourced from public data and updated regularly.
+          community trends — sourced from public data and refreshed regularly.
         </p>
-
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/channels"
@@ -31,23 +50,130 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-20 rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-sm text-[color:var(--muted)]">
-        <div className="serif text-lg text-[color:var(--foreground)]">
-          Coming soon
+      {/* Core metric tiles */}
+      {stats && (
+        <section className="mt-16 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+          <MetricTile
+            label="Channels tracked"
+            value={fmtNumber(stats.total_channels)}
+          />
+          <MetricTile
+            label="Combined subscribers"
+            value={fmtCompact(stats.total_subscribers)}
+          />
+          <MetricTile
+            label="Combined views"
+            value={fmtCompact(stats.total_views)}
+          />
+          <MetricTile
+            label="Total videos"
+            value={fmtCompact(stats.total_videos)}
+          />
+        </section>
+      )}
+
+      {/* Top channels */}
+      <section className="mt-20">
+        <div className="flex items-end justify-between gap-3">
+          <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
+            Top channels by subscribers
+          </h2>
+          <Link
+            href="/channels"
+            className="text-sm text-[color:var(--accent)] hover:underline"
+          >
+            View all →
+          </Link>
         </div>
-        <p className="mt-2 max-w-xl">
-          Core metrics, top-10 channel strip, and featured studies will appear
-          here once the database is connected. For now you can preview the{" "}
-          <Link href="/channels" className="underline underline-offset-2">
-            channels
-          </Link>{" "}
-          and{" "}
-          <Link href="/studies" className="underline underline-offset-2">
-            studies
-          </Link>{" "}
-          sections.
-        </p>
+        <ol className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+          {top.map((c, i) => (
+            <li
+              key={c.id}
+              className={
+                "flex items-center gap-4 px-5 py-3.5 " +
+                (i > 0 ? "border-t border-[color:var(--border)]" : "")
+              }
+            >
+              <span className="w-6 text-right text-sm text-[color:var(--muted)] tabular-nums">
+                {i + 1}
+              </span>
+              <Link
+                href={`/channels/${c.slug}`}
+                className="flex-1 truncate text-sm font-medium hover:text-[color:var(--accent)]"
+              >
+                {c.name}
+              </Link>
+              <span className="text-sm tabular-nums text-[color:var(--muted)]">
+                {fmtCompact(c.latest?.subscribers)}
+              </span>
+            </li>
+          ))}
+        </ol>
       </section>
+
+      {/* Featured studies */}
+      {studies.length > 0 && (
+        <section className="mt-20">
+          <div className="flex items-end justify-between gap-3">
+            <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
+              Featured studies
+            </h2>
+            <Link
+              href="/studies"
+              className="text-sm text-[color:var(--accent)] hover:underline"
+            >
+              View all →
+            </Link>
+          </div>
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+            {studies.map((s) => (
+              <li key={s.id}>
+                <Link
+                  href={`/studies/${s.slug}`}
+                  className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 transition-colors hover:border-[color:var(--accent)]"
+                >
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
+                    {s.year && (
+                      <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
+                        {s.year}
+                      </span>
+                    )}
+                    {s.tags.slice(0, 2).map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="serif mt-4 text-lg font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">
+                    {s.title}
+                  </h3>
+                  {s.authors.length > 0 && (
+                    <p className="mt-2 text-sm text-[color:var(--muted)]">
+                      {s.authors.join(", ")}
+                    </p>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+  );
+}
+
+function MetricTile({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
+      <div className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+        {label}
+      </div>
+      <div className="serif mt-2 text-3xl font-semibold tabular-nums sm:text-4xl">
+        {value}
+      </div>
     </div>
   );
 }

@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
+import { ChannelsTable } from "@/components/channels-table";
+import { getChannelsWithLatest } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Channels",
-  description: "LDS YouTube channels tracked by Latter-day Stats.",
+  description: "Latter-day Saint YouTube creators tracked by Latter-day Stats.",
 };
 
-export default function ChannelsPage() {
+export const revalidate = 600; // 10 minutes
+
+export default async function ChannelsPage() {
+  const channels = await getChannelsWithLatest();
+
   return (
-    <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
         Channels
       </p>
@@ -15,12 +21,13 @@ export default function ChannelsPage() {
         LDS YouTube creators
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-        Sortable view of channels we track — subscribers, total views, upload
-        cadence, and channel age. Data table appears here once the database is
-        connected.
+        {channels.length} channels covering Latter-day Saint apologetics,
+        scholarship, and faith-promoting discussion — searchable and sortable
+        by subscribers, views, upload cadence, and channel age.
       </p>
-      <div className="mt-12 rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-sm text-[color:var(--muted)]">
-        Channel table loading after Supabase setup.
+
+      <div className="mt-10">
+        <ChannelsTable channels={channels} />
       </div>
     </div>
   );
