@@ -71,10 +71,9 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
       </div>
 
       <div className="mt-4 overflow-x-auto rounded-2xl border border-[color:var(--border)] bg-white">
-        <table className="w-full min-w-[1000px] text-sm">
+        <table className="w-full min-w-[900px] text-sm">
           <thead className="bg-[color:var(--muted-soft)]/60 text-left text-xs uppercase tracking-wider text-[color:var(--muted)]">
             <tr>
-              <th className="px-4 py-3">Thumbnail</th>
               <th className="px-4 py-3">Name</th>
               <th className="px-4 py-3">Type</th>
               <th className="px-4 py-3 text-right">Subs</th>
@@ -91,18 +90,6 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
                   key={channel.id}
                   className="border-t border-[color:var(--border)]"
                 >
-                  <td className="px-4 py-3">
-                    {channel.thumbnail_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={channel.thumbnail_url}
-                        alt=""
-                        className="h-10 w-10 rounded-full object-cover"
-                      />
-                    ) : (
-                      <div className="h-10 w-10 rounded-full bg-[color:var(--muted-soft)]" />
-                    )}
-                  </td>
                   <td className="px-4 py-3 font-medium">
                     <div>{channel.name}</div>
                     {channel.handle && (

@@ -87,9 +87,21 @@ export default async function ChannelDetailPage({
         );
       })()}
 
-      <h1 className="serif mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-        {channel.name}
-      </h1>
+      <div className="mt-6 flex items-center gap-5">
+        {channel.thumbnail_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={channel.thumbnail_url}
+            alt=""
+            className="h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
+          />
+        ) : (
+          <div className="h-20 w-20 shrink-0 rounded-full bg-[color:var(--muted-soft)] sm:h-24 sm:w-24" />
+        )}
+        <h1 className="serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          {channel.name}
+        </h1>
+      </div>
       {(location || channel.owned_by || language) && (
         <dl className="mt-5 grid gap-3 text-sm text-[color:var(--muted)] sm:grid-cols-3">
           {location && (
