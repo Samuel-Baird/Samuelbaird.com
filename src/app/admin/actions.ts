@@ -178,23 +178,45 @@ export async function updateChannelDetails(id: string, formData: FormData) {
     featured: formData.get("featured") === "on",
     is_active: formData.get("is_active") === "on",
   };
-  const withOverrides = {
+  const coreDetails = {
     ...base,
     country_manual: get("country_manual"),
     language_manual: get("language_manual"),
     lds_affiliation_source: get("lds_affiliation_source"),
   };
+  const detailsWithoutAffiliationSource = {
+    ...base,
+    country_manual: get("country_manual"),
+    language_manual: get("language_manual"),
+  };
+  const socialProfiles = {
+    facebook_url: get("facebook_url"),
+    instagram_url: get("instagram_url"),
+    tiktok_url: get("tiktok_url"),
+    x_url: get("x_url"),
+  };
 
   let { data, error } = await supabase
     .from("channels")
-    .update(withOverrides)
+    .update(coreDetails)
     .eq("id", id)
     .select("slug")
     .single();
 
-  // Fallback: migration 0006/0007 columns may not be applied yet. Retry
-  // without the newer columns so saves still work.
-  if (error && /country_manual|language_manual|lds_affiliation_source/.test(error.message)) {
+  // Fallback: older databases may not have migration 0007 yet. Keep the
+  // country/language override save intact when only the affiliation column is
+  // missing.
+  if (error && /lds_affiliation_source/.test(error.message)) {
+    ({ data, error } = await supabase
+      .from("channels")
+      .update(detailsWithoutAffiliationSource)
+      .eq("id", id)
+      .select("slug")
+      .single());
+  }
+
+  // Fallback: migration 0006 may not be applied yet.
+  if (error && /country_manual|language_manual/.test(error.message)) {
     ({ data, error } = await supabase
       .from("channels")
       .update(base)
@@ -204,6 +226,18 @@ export async function updateChannelDetails(id: string, formData: FormData) {
   }
   if (error) throw error;
   if (!data) throw new Error("Channel not found.");
+
+  const { error: socialError } = await supabase
+    .from("channels")
+    .update(socialProfiles)
+    .eq("id", id);
+  if (
+    socialError &&
+    !/facebook_url|instagram_url|tiktok_url|x_url/.test(socialError.message)
+  ) {
+    throw socialError;
+  }
+
   revalidatePath("/admin/channels");
   revalidatePath(`/admin/channels/${data.slug}/edit`);
   revalidatePath(`/channels/${data.slug}`);

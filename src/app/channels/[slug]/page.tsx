@@ -18,6 +18,19 @@ export const revalidate = 600;
 
 type RouteParams = { slug: string };
 
+function isHttpUrl(value: string) {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function socialHref(value: string) {
+  return isHttpUrl(value) ? value : `https://${value}`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -52,6 +65,14 @@ export default async function ChannelDetailPage({
   const location = [channel.city, channel.state, country]
     .filter(Boolean)
     .join(", ");
+  const socialProfiles = [
+    { label: "Facebook", url: channel.facebook_url },
+    { label: "Instagram", url: channel.instagram_url },
+    { label: "TikTok", url: channel.tiktok_url },
+    { label: "X", url: channel.x_url },
+  ].filter((profile): profile is { label: string; url: string } =>
+    Boolean(profile.url),
+  );
 
   const stats = [
     { label: "Subscribers", value: fmtCompact(yt?.subscribers) },
@@ -136,7 +157,8 @@ export default async function ChannelDetailPage({
       </p>
       <p className="mt-2 text-sm text-[color:var(--muted)]">
         LDS affiliation source:{" "}
-        {channel.lds_affiliation_source ? (
+        {channel.lds_affiliation_source &&
+        isHttpUrl(channel.lds_affiliation_source) ? (
           <a
             href={channel.lds_affiliation_source}
             target="_blank"
@@ -145,8 +167,16 @@ export default async function ChannelDetailPage({
           >
             {channel.lds_affiliation_source}
           </a>
-        ) : (
+        ) : channel.lds_affiliation_source ? (
+          <span className="text-[color:var(--foreground)]">
+            {channel.lds_affiliation_source}
+          </span>
+        ) : ["Religious", "Critical", "Apologetics"].includes(
+            channel.channel_type ?? "",
+          ) ? (
           <span className="text-[color:var(--foreground)]">channel content</span>
+        ) : (
+          <span className="font-medium text-red-700">missing</span>
         )}
       </p>
 
@@ -175,6 +205,25 @@ export default async function ChannelDetailPage({
           </Link>
         )}
       </div>
+
+      {socialProfiles.length > 0 && (
+        <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
+          <span className="mr-1 text-[color:var(--muted)]">
+            Other profiles:
+          </span>
+          {socialProfiles.map((profile) => (
+            <a
+              key={profile.label}
+              href={socialHref(profile.url)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-9 items-center rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+            >
+              {profile.label}
+            </a>
+          ))}
+        </div>
+      )}
 
       <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {stats.map((s) => (

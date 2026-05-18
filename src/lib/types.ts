@@ -15,6 +15,10 @@ export type Channel = {
   owned_by: string | null;
   handle: string | null;
   lds_affiliation_source: string | null;
+  facebook_url: string | null;
+  instagram_url: string | null;
+  tiktok_url: string | null;
+  x_url: string | null;
   created_at_youtube: string | null;
   featured: boolean;
   is_active: boolean;

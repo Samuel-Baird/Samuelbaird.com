@@ -127,13 +127,53 @@ export default async function AdminEditChannelPage({
 
         <Field
           label="LDS affiliation source"
-          hint='URL backing up the LDS affiliation. Leave blank if the channel content itself makes it self-evident — the page will say "Source: channel content".'
+          hint='URL or short note backing up the LDS affiliation, such as "User authenticated: creator contacted me to confirm LDS affiliation." Leave blank if the channel content itself makes it self-evident.'
         >
           <Input
             name="lds_affiliation_source"
             defaultValue={channel.lds_affiliation_source ?? ""}
+            placeholder="URL or verification note"
           />
         </Field>
+
+        <fieldset className="grid gap-5 rounded-2xl border border-[color:var(--border)] p-4">
+          <legend className="px-1 text-xs uppercase tracking-wider text-[color:var(--muted)]">
+            Other social profiles
+          </legend>
+          <p className="-mt-2 text-xs text-[color:var(--muted)]">
+            Optional profile links only. These do not affect tracked stats.
+          </p>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <Field label="Facebook">
+              <Input
+                name="facebook_url"
+                defaultValue={channel.facebook_url ?? ""}
+                placeholder="https://facebook.com/..."
+              />
+            </Field>
+            <Field label="Instagram">
+              <Input
+                name="instagram_url"
+                defaultValue={channel.instagram_url ?? ""}
+                placeholder="https://instagram.com/..."
+              />
+            </Field>
+            <Field label="TikTok">
+              <Input
+                name="tiktok_url"
+                defaultValue={channel.tiktok_url ?? ""}
+                placeholder="https://tiktok.com/@..."
+              />
+            </Field>
+            <Field label="X">
+              <Input
+                name="x_url"
+                defaultValue={channel.x_url ?? ""}
+                placeholder="https://x.com/..."
+              />
+            </Field>
+          </div>
+        </fieldset>
 
         <div className="flex flex-wrap gap-6">
           <label className="flex items-center gap-2 text-sm">
@@ -206,14 +246,17 @@ function Field({
 function Input({
   name,
   defaultValue,
+  placeholder,
 }: {
   name: string;
   defaultValue?: string;
+  placeholder?: string;
 }) {
   return (
     <input
       name={name}
       defaultValue={defaultValue}
+      placeholder={placeholder}
       className="h-10 w-full rounded-md border border-[color:var(--border)] bg-white px-3 text-sm focus:border-[color:var(--accent)] focus:outline-none"
     />
   );
