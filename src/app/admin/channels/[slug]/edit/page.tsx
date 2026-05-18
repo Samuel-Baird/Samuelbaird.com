@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { deleteChannel, updateChannelDetails } from "@/app/admin/actions";
 import { TYPE_COLORS } from "@/lib/channel-types";
+import { COUNTRIES, LANGUAGES } from "@/lib/iso";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Channel } from "@/lib/types";
 
@@ -78,9 +79,12 @@ export default async function AdminEditChannelPage({
                 : "YouTube API did not provide a country."
             }
           >
-            <Input
+            <input
               name="country_manual"
+              list="iso-countries"
               defaultValue={channel.country_manual ?? ""}
+              placeholder="e.g. US"
+              className="h-10 w-full rounded-md border border-[color:var(--border)] bg-white px-3 text-sm focus:border-[color:var(--accent)] focus:outline-none"
             />
           </Field>
           <Field
@@ -91,11 +95,28 @@ export default async function AdminEditChannelPage({
                 : "YouTube API did not provide a language."
             }
           >
-            <Input
+            <input
               name="language_manual"
+              list="iso-languages"
               defaultValue={channel.language_manual ?? ""}
+              placeholder="e.g. en"
+              className="h-10 w-full rounded-md border border-[color:var(--border)] bg-white px-3 text-sm focus:border-[color:var(--accent)] focus:outline-none"
             />
           </Field>
+          <datalist id="iso-countries">
+            {COUNTRIES.map((c) => (
+              <option key={c.code} value={c.code}>
+                {c.name}
+              </option>
+            ))}
+          </datalist>
+          <datalist id="iso-languages">
+            {LANGUAGES.map((l) => (
+              <option key={l.code} value={l.code}>
+                {l.name}
+              </option>
+            ))}
+          </datalist>
           <Field label="State / region">
             <Input name="state" defaultValue={channel.state ?? ""} />
           </Field>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export const revalidate = 600;
 
 export default async function AboutPage() {
-  const myChannel = await getChannelByNameLike("I think therefore I Sam");
+  const myChannel = await getChannelByNameLike("%think therefore i sam%");
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">

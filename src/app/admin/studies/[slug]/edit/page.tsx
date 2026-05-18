@@ -68,7 +68,7 @@ export default async function AdminEditStudyPage({
           label="Findings for Latter-day Saints"
           rows={6}
           hint="One per line."
-          defaultValue={study.findings.join("\n")}
+          defaultValue={(study.findings ?? []).join("\n")}
         />
         <Textarea
           name="limitations"
@@ -103,7 +103,7 @@ export default async function AdminEditStudyPage({
             <input
               name="flagged_problematic"
               type="checkbox"
-              defaultChecked={study.flagged_problematic}
+              defaultChecked={study.flagged_problematic ?? false}
               className="h-4 w-4"
             />
             Flag as problematic methodology
