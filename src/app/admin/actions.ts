@@ -169,23 +169,40 @@ export async function updateChannelDetails(id: string, formData: FormData) {
     return value || null;
   };
   const supabase = createSupabaseServiceClient();
-  const { data, error } = await supabase
+  const base = {
+    channel_type: get("channel_type"),
+    state: get("state"),
+    city: get("city"),
+    owned_by: get("owned_by"),
+    handle: get("handle"),
+    featured: formData.get("featured") === "on",
+    is_active: formData.get("is_active") === "on",
+  };
+  const withOverrides = {
+    ...base,
+    country_manual: get("country_manual"),
+    language_manual: get("language_manual"),
+  };
+
+  let { data, error } = await supabase
     .from("channels")
-    .update({
-      channel_type: get("channel_type"),
-      country_manual: get("country_manual"),
-      language_manual: get("language_manual"),
-      state: get("state"),
-      city: get("city"),
-      owned_by: get("owned_by"),
-      handle: get("handle"),
-      featured: formData.get("featured") === "on",
-      is_active: formData.get("is_active") === "on",
-    })
+    .update(withOverrides)
     .eq("id", id)
     .select("slug")
     .single();
+
+  // Fallback: migration 0006 (country_manual/language_manual) hasn't been
+  // applied yet. Retry without the override columns so saves still work.
+  if (error && /country_manual|language_manual/.test(error.message)) {
+    ({ data, error } = await supabase
+      .from("channels")
+      .update(base)
+      .eq("id", id)
+      .select("slug")
+      .single());
+  }
   if (error) throw error;
+  if (!data) throw new Error("Channel not found.");
   revalidatePath("/admin/channels");
   revalidatePath(`/admin/channels/${data.slug}/edit`);
   revalidatePath(`/channels/${data.slug}`);
@@ -241,7 +258,7 @@ export async function createStudy(formData: FormData) {
   if (uploadError) throw uploadError;
 
   const yearValue = String(formData.get("year") ?? "").trim();
-  const { error } = await supabase.from("studies").insert({
+  const base = {
     slug,
     title,
     authors: parseCsv(formData.get("authors")),
@@ -250,13 +267,19 @@ export async function createStudy(formData: FormData) {
     abstract: String(formData.get("abstract") ?? "").trim() || null,
     tags: parseCsv(formData.get("tags")),
     featured: formData.get("featured") === "on",
+    pdf_path: pdfPath,
+  };
+  const extras = {
     findings: parseLines(formData.get("findings")),
     limitations: String(formData.get("limitations") ?? "").trim() || null,
     flagged_problematic: formData.get("flagged_problematic") === "on",
     flag_reason: String(formData.get("flag_reason") ?? "").trim() || null,
     context_note: String(formData.get("context_note") ?? "").trim() || null,
-    pdf_path: pdfPath,
-  });
+  };
+  let { error } = await supabase.from("studies").insert({ ...base, ...extras });
+  if (error && /findings|limitations|flagged_problematic|flag_reason|context_note/.test(error.message)) {
+    ({ error } = await supabase.from("studies").insert(base));
+  }
   if (error) throw error;
 
   revalidatePath("/admin/studies");
@@ -276,26 +299,38 @@ export async function updateStudy(id: string, formData: FormData) {
   await requireAdmin();
   const yearValue = String(formData.get("year") ?? "").trim();
   const supabase = createSupabaseServiceClient();
-  const { data, error } = await supabase
-    .from("studies")
-    .update({
-      title: String(formData.get("title") ?? "").trim(),
-      authors: parseCsv(formData.get("authors")),
-      year: yearValue ? Number(yearValue) : null,
-      source: String(formData.get("source") ?? "").trim() || null,
-      abstract: String(formData.get("abstract") ?? "").trim() || null,
-      tags: parseCsv(formData.get("tags")),
-      featured: formData.get("featured") === "on",
-      findings: parseLines(formData.get("findings")),
-      limitations: String(formData.get("limitations") ?? "").trim() || null,
-      flagged_problematic: formData.get("flagged_problematic") === "on",
-      flag_reason: String(formData.get("flag_reason") ?? "").trim() || null,
+  const base = {
+    title: String(formData.get("title") ?? "").trim(),
+    authors: parseCsv(formData.get("authors")),
+    year: yearValue ? Number(yearValue) : null,
+    source: String(formData.get("source") ?? "").trim() || null,
+    abstract: String(formData.get("abstract") ?? "").trim() || null,
+    tags: parseCsv(formData.get("tags")),
+    featured: formData.get("featured") === "on",
+  };
+  const extras = {
+    findings: parseLines(formData.get("findings")),
+    limitations: String(formData.get("limitations") ?? "").trim() || null,
+    flagged_problematic: formData.get("flagged_problematic") === "on",
+    flag_reason: String(formData.get("flag_reason") ?? "").trim() || null,
     context_note: String(formData.get("context_note") ?? "").trim() || null,
-    })
+  };
+  let { data, error } = await supabase
+    .from("studies")
+    .update({ ...base, ...extras })
     .eq("id", id)
     .select("slug")
     .single();
+  if (error && /findings|limitations|flagged_problematic|flag_reason|context_note/.test(error.message)) {
+    ({ data, error } = await supabase
+      .from("studies")
+      .update(base)
+      .eq("id", id)
+      .select("slug")
+      .single());
+  }
   if (error) throw error;
+  if (!data) throw new Error("Study not found.");
   revalidatePath("/admin/studies");
   revalidatePath(`/admin/studies/${data.slug}/edit`);
   revalidatePath(`/studies/${data.slug}`);

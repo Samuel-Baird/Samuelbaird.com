@@ -32,6 +32,25 @@ export async function getChannelsWithLatest(): Promise<ChannelWithStats[]> {
   }));
 }
 
+export async function getChannelByYouTubeId(
+  youtubeChannelId: string,
+): Promise<ChannelWithStats | null> {
+  const sb = publicClient();
+  const { data, error } = await sb
+    .from("channels")
+    .select("*")
+    .eq("youtube_channel_id", youtubeChannelId)
+    .maybeSingle();
+  if (error) throw error;
+  if (!data) return null;
+  const { data: latest } = await sb
+    .from("channel_stats_latest")
+    .select("*")
+    .eq("channel_id", (data as Channel).id)
+    .maybeSingle();
+  return { ...(data as Channel), latest: latest ?? null };
+}
+
 export async function getChannelByNameLike(
   pattern: string,
 ): Promise<ChannelWithStats | null> {

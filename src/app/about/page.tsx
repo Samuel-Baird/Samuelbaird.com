@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
-import { getChannelByNameLike } from "@/lib/data";
+import { getChannelByYouTubeId } from "@/lib/data";
 import { fmtCompact, fmtNumber } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export const revalidate = 600;
 
 export default async function AboutPage() {
-  const myChannel = await getChannelByNameLike("%think therefore i sam%");
+  const myChannel = await getChannelByYouTubeId("UCT9gbDOQjYH8CQSG7-IMkTQ");
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
