@@ -26,7 +26,17 @@ export async function proxy(request: NextRequest) {
     },
   );
 
-  await supabase.auth.getUser();
+  try {
+    await supabase.auth.getUser();
+  } catch {
+    // A malformed/expired auth cookie shouldn't 500 the whole site. Clear it
+    // so the next request renders the page as a signed-out visitor.
+    for (const cookie of request.cookies.getAll()) {
+      if (cookie.name.startsWith("sb-")) {
+        response.cookies.delete(cookie.name);
+      }
+    }
+  }
 
   return response;
 }
