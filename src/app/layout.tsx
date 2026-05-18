@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { Suspense } from "react";
+import { AuthPromptProvider } from "@/components/auth-prompt";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
@@ -37,9 +39,13 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteNav />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <Suspense fallback={null}>
+          <AuthPromptProvider>
+            <SiteNav />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </AuthPromptProvider>
+        </Suspense>
       </body>
     </html>
   );

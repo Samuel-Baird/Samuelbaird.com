@@ -213,15 +213,109 @@ export async function getChannelStatsHistory(channelId: string) {
   return data ?? [];
 }
 
-export async function getStudies(): Promise<Study[]> {
+export type StudySort = "featured" | "year" | "upvotes";
+
+export type StudiesQuery = {
+  query?: string;
+  tags?: string[];
+  sort?: StudySort;
+};
+
+export async function getStudies(opts: StudiesQuery = {}): Promise<Study[]> {
+  const sb = publicClient();
+  let q = sb.from("studies").select("*");
+
+  if (opts.query && opts.query.trim()) {
+    // websearch_to_tsquery via Supabase's textSearch helper
+    q = q.textSearch("search_tsv", opts.query.trim(), { type: "websearch" });
+  }
+  if (opts.tags && opts.tags.length > 0) {
+    q = q.contains("tags", opts.tags);
+  }
+
+  if (opts.sort === "upvotes") {
+    // Order applied after join below.
+    q = q.order("year", { ascending: false, nullsFirst: false });
+  } else if (opts.sort === "year") {
+    q = q.order("year", { ascending: false, nullsFirst: false });
+  } else {
+    q = q
+      .order("featured", { ascending: false })
+      .order("year", { ascending: false, nullsFirst: false });
+  }
+
+  const { data, error } = await q;
+  if (error) throw error;
+  let studies = (data ?? []) as Study[];
+
+  if (opts.sort === "upvotes" && studies.length > 0) {
+    const counts = await getUpvoteCountMap(
+      "study",
+      studies.map((s) => s.id),
+    );
+    studies = studies.slice().sort((a, b) => {
+      const av = counts.get(a.id) ?? 0;
+      const bv = counts.get(b.id) ?? 0;
+      return bv - av;
+    });
+  }
+
+  return studies;
+}
+
+export async function getAllStudyTags(): Promise<{ value: string; count: number }[]> {
+  const sb = publicClient();
+  const { data, error } = await sb.from("studies").select("tags");
+  if (error) throw error;
+  const counts = new Map<string, number>();
+  for (const row of (data ?? []) as { tags: string[] }[]) {
+    for (const tag of row.tags ?? []) {
+      const trimmed = (tag ?? "").trim();
+      if (!trimmed) continue;
+      counts.set(trimmed, (counts.get(trimmed) ?? 0) + 1);
+    }
+  }
+  return [...counts.entries()]
+    .map(([value, count]) => ({ value, count }))
+    .sort((a, b) => a.value.localeCompare(b.value));
+}
+
+export async function getUpvoteCountMap(
+  targetType: "channel" | "study",
+  targetIds: string[],
+): Promise<Map<string, number>> {
+  if (targetIds.length === 0) return new Map();
   const sb = publicClient();
   const { data, error } = await sb
-    .from("studies")
-    .select("*")
-    .order("featured", { ascending: false })
-    .order("year", { ascending: false, nullsFirst: false });
+    .from("upvote_counts")
+    .select("target_id, upvotes")
+    .eq("target_type", targetType)
+    .in("target_id", targetIds);
   if (error) throw error;
-  return (data ?? []) as Study[];
+  return new Map(
+    ((data ?? []) as { target_id: string; upvotes: number }[]).map((row) => [
+      row.target_id,
+      row.upvotes,
+    ]),
+  );
+}
+
+export async function getUpvoteSetForUser(
+  userId: string,
+): Promise<{ channels: Set<string>; studies: Set<string> }> {
+  const sb = await createSupabaseServerClient();
+  const { data, error } = await sb
+    .from("upvotes")
+    .select("target_type, target_id")
+    .eq("user_id", userId);
+  if (error) throw error;
+  const channels = new Set<string>();
+  const studies = new Set<string>();
+  for (const row of data ?? []) {
+    if (row.target_type === "channel") channels.add(row.target_id);
+    if (row.target_type === "study") studies.add(row.target_id);
+  }
+  return { channels, studies };
 }
 
 export async function getFeaturedStudies(limit = 2): Promise<Study[]> {

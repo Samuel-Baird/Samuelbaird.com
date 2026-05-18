@@ -1,9 +1,10 @@
 "use client";
 
 import { Bookmark, BookmarkCheck } from "lucide-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toggleBookmark } from "@/app/actions/bookmarks";
+import { useAuthPrompt } from "@/components/auth-prompt";
 
 type BookmarkButtonProps = {
   targetType: "channel" | "study";
@@ -26,7 +27,7 @@ export function BookmarkButton({
   const [pending, startTransition] = useTransition();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const router = useRouter();
+  const { requestLogin } = useAuthPrompt();
   const noun = targetType === "channel" ? "channel" : "study";
   const title = bookmarked ? "Saved" : `Save ${noun}`;
   const currentPath = `${pathname || "/"}${searchParams?.toString() ? `?${searchParams}` : ""}`;
@@ -34,7 +35,7 @@ export function BookmarkButton({
 
   function onClick() {
     if (!signedIn) {
-      router.push(`/login?next=${encodeURIComponent(currentPath)}`);
+      requestLogin(`Sign in to save ${noun}s to your bookmarks.`);
       return;
     }
 

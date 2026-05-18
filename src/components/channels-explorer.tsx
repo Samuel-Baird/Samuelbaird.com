@@ -4,11 +4,15 @@ import { SlidersHorizontal, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChannelsFilterSidebar, type FilterGroup } from "@/components/channels-filter-sidebar";
 import { ChannelsTable } from "@/components/channels-table";
+import { ExportCsvButton } from "@/components/export-csv-button";
+import { fmtAvgViews } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
 
 type Props = {
   channels: ChannelWithStats[];
   bookmarkedSet: Set<string>;
+  upvotedSet: Set<string>;
+  upvoteCounts: Record<string, number>;
   signedIn: boolean;
 };
 
@@ -55,7 +59,13 @@ function nextSelectionSet(current: Set<string>, value: string) {
   return next;
 }
 
-export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
+export function ChannelsExplorer({
+  channels,
+  bookmarkedSet,
+  upvotedSet,
+  upvoteCounts,
+  signedIn,
+}: Props) {
   const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set());
   const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
   const [selectedLanguages, setSelectedLanguages] = useState<Set<string>>(new Set());
@@ -272,9 +282,59 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
             </div>
           )}
 
+          <div className="mb-4 flex justify-end">
+            <ExportCsvButton
+              rows={filteredChannels}
+              filename="latter-day-stats-channels.csv"
+              columns={[
+                { header: "Name", value: (c) => c.name },
+                { header: "Type", value: (c) => c.channel_type ?? "" },
+                {
+                  header: "Country",
+                  value: (c) => c.country_manual ?? c.country ?? "",
+                },
+                {
+                  header: "Language",
+                  value: (c) => c.language_manual ?? c.language ?? "",
+                },
+                {
+                  header: "Subscribers",
+                  value: (c) => c.latest?.subscribers ?? "",
+                },
+                {
+                  header: "Total views",
+                  value: (c) => c.latest?.total_views ?? "",
+                },
+                { header: "Videos", value: (c) => c.latest?.video_count ?? "" },
+                {
+                  header: "Avg views/video",
+                  value: (c) =>
+                    fmtAvgViews(c.latest?.total_views, c.latest?.video_count),
+                },
+                {
+                  header: "Channel created",
+                  value: (c) => c.created_at_youtube ?? "",
+                },
+                {
+                  header: "Upvotes",
+                  value: (c) => upvoteCounts[c.id] ?? 0,
+                },
+                {
+                  header: "YouTube URL",
+                  value: (c) =>
+                    c.handle
+                      ? `https://www.youtube.com/${c.handle.startsWith("@") ? c.handle : `@${c.handle}`}`
+                      : `https://www.youtube.com/channel/${c.youtube_channel_id}`,
+                },
+              ]}
+            />
+          </div>
+
           <ChannelsTable
             channels={filteredChannels}
             bookmarkedSet={bookmarkedSet}
+            upvotedSet={upvotedSet}
+            upvoteCounts={upvoteCounts}
             signedIn={signedIn}
           />
         </div>

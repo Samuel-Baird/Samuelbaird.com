@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { UpvoteButton } from "@/components/upvote-button";
 import { colorsForType } from "@/lib/channel-types";
 import type { ChannelWithStats } from "@/lib/types";
 import {
@@ -19,13 +20,16 @@ type SortKey =
   | "total_views"
   | "video_count"
   | "avg_views"
-  | "age";
+  | "age"
+  | "upvotes";
 
 type SortDirection = "asc" | "desc";
 
 type Props = {
   channels: ChannelWithStats[];
   bookmarkedSet?: Set<string>;
+  upvotedSet?: Set<string>;
+  upvoteCounts?: Record<string, number>;
   signedIn?: boolean;
 };
 
@@ -37,6 +41,7 @@ const sortLabels: Record<SortKey, string> = {
   video_count: "Videos",
   avg_views: "Avg views/video",
   age: "Channel age",
+  upvotes: "Upvotes",
 };
 
 const defaultDirection: Record<SortKey, SortDirection> = {
@@ -47,6 +52,7 @@ const defaultDirection: Record<SortKey, SortDirection> = {
   video_count: "desc",
   avg_views: "desc",
   age: "desc",
+  upvotes: "desc",
 };
 
 function TypePill({ type }: { type: string | null }) {
@@ -104,6 +110,8 @@ function SortHeader({
 export function ChannelsTable({
   channels,
   bookmarkedSet = new Set<string>(),
+  upvotedSet = new Set<string>(),
+  upvoteCounts = {},
   signedIn = false,
 }: Props) {
   const [query, setQuery] = useState("");
@@ -133,6 +141,7 @@ export function ChannelsTable({
         c.created_at_youtube
           ? new Date(c.created_at_youtube).getTime()
           : -1,
+      upvotes: (c: ChannelWithStats) => upvoteCounts[c.id] ?? 0,
     }[sort];
 
     return list.sort((a, b) => {
@@ -144,7 +153,7 @@ export function ChannelsTable({
           : (av as number) - (bv as number);
       return direction === "asc" ? result : -result;
     });
-  }, [channels, direction, query, sort]);
+  }, [channels, direction, query, sort, upvoteCounts]);
 
   function setSortKey(nextSort: SortKey) {
     if (nextSort === sort) {
@@ -254,6 +263,14 @@ export function ChannelsTable({
                 onSort={setSortKey}
                 align="right"
               />
+              <SortHeader
+                label="Upvotes"
+                sortKey="upvotes"
+                activeSort={sort}
+                direction={direction}
+                onSort={setSortKey}
+                align="right"
+              />
               <th className="px-5 py-3" />
             </tr>
           </thead>
@@ -298,6 +315,18 @@ export function ChannelsTable({
                 <td className="px-3 py-3.5 text-right tabular-nums text-[color:var(--muted)]">
                   {fmtYearsSince(c.created_at_youtube)}
                 </td>
+                <td className="px-3 py-3.5 text-right">
+                  <div className="inline-flex">
+                    <UpvoteButton
+                      targetType="channel"
+                      targetId={c.id}
+                      initialCount={upvoteCounts[c.id] ?? 0}
+                      initialUpvoted={upvotedSet.has(c.id)}
+                      signedIn={signedIn}
+                      size="sm"
+                    />
+                  </div>
+                </td>
                 <td className="px-5 py-3.5 text-right">
                   <Link
                     href={`/channels/${c.slug}`}
@@ -317,9 +346,17 @@ export function ChannelsTable({
         {filtered.map((c) => (
           <li
             key={c.id}
-            className="relative rounded-2xl border border-[color:var(--border)] bg-white p-4 pr-14"
+            className="relative rounded-2xl border border-[color:var(--border)] bg-white p-4 pr-28"
           >
-            <div className="absolute right-3 top-3 z-10">
+            <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
+              <UpvoteButton
+                targetType="channel"
+                targetId={c.id}
+                initialCount={upvoteCounts[c.id] ?? 0}
+                initialUpvoted={upvotedSet.has(c.id)}
+                signedIn={signedIn}
+                size="sm"
+              />
               <BookmarkButton
                 targetType="channel"
                 targetId={c.id}
