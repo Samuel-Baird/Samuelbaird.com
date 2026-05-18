@@ -75,11 +75,25 @@ export default async function StudyDetailPage({
           label="inline"
         />
       </div>
-      {study.authors.length > 0 && (
+      {(study.authors.length > 0 || study.source) && (
         <p className="mt-3 text-sm text-[color:var(--muted)]">
-          {study.authors.join(", ")}
-          {study.source ? ` · ${study.source}` : ""}
+          {study.authors.length > 0 ? study.authors.join(", ") : null}
+          {study.authors.length > 0 && study.source ? " · " : ""}
+          {study.source ?? ""}
         </p>
+      )}
+
+      {!pdfUrl && study.external_url && (
+        <div className="mt-6">
+          <a
+            href={study.external_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 items-center rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
+          >
+            Read on external site ↗
+          </a>
+        </div>
       )}
 
       {study.abstract && (

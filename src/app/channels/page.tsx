@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ChannelsTable } from "@/components/channels-table";
+import { ChannelsExplorer } from "@/components/channels-explorer";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { getBookmarkSetForUser, getChannelsWithLatest } from "@/lib/data";
@@ -35,7 +35,7 @@ export default async function ChannelsPage() {
       </p>
 
       <div className="mt-10">
-        <ChannelsTable
+        <ChannelsExplorer
           channels={channels}
           bookmarkedSet={bookmarks.channels}
           signedIn={Boolean(auth)}
