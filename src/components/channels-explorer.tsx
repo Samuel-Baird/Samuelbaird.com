@@ -11,8 +11,6 @@ import type { ChannelWithStats } from "@/lib/types";
 type Props = {
   channels: ChannelWithStats[];
   bookmarkedSet: Set<string>;
-  upvotedSet: Set<string>;
-  upvoteCounts: Record<string, number>;
   signedIn: boolean;
 };
 
@@ -59,13 +57,7 @@ function nextSelectionSet(current: Set<string>, value: string) {
   return next;
 }
 
-export function ChannelsExplorer({
-  channels,
-  bookmarkedSet,
-  upvotedSet,
-  upvoteCounts,
-  signedIn,
-}: Props) {
+export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
   const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set());
   const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
   const [selectedLanguages, setSelectedLanguages] = useState<Set<string>>(new Set());
@@ -316,10 +308,6 @@ export function ChannelsExplorer({
                   value: (c) => c.created_at_youtube ?? "",
                 },
                 {
-                  header: "Upvotes",
-                  value: (c) => upvoteCounts[c.id] ?? 0,
-                },
-                {
                   header: "YouTube URL",
                   value: (c) =>
                     c.handle
@@ -333,8 +321,6 @@ export function ChannelsExplorer({
           <ChannelsTable
             channels={filteredChannels}
             bookmarkedSet={bookmarkedSet}
-            upvotedSet={upvotedSet}
-            upvoteCounts={upvoteCounts}
             signedIn={signedIn}
           />
         </div>

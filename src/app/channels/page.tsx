@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { ChannelsExplorer } from "@/components/channels-explorer";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
-import {
-  getBookmarkSetForUser,
-  getChannelsWithLatest,
-  getUpvoteCountMap,
-  getUpvoteSetForUser,
-} from "@/lib/data";
+import { getBookmarkSetForUser, getChannelsWithLatest } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Channels",
@@ -21,20 +16,9 @@ export default async function ChannelsPage() {
     getChannelsWithLatest(),
     getCurrentUser(),
   ]);
-  const [bookmarks, upvotes, upvoteCounts] = await Promise.all([
-    auth
-      ? getBookmarkSetForUser(auth.user.id)
-      : Promise.resolve({ channels: new Set<string>(), studies: new Set<string>() }),
-    auth
-      ? getUpvoteSetForUser(auth.user.id)
-      : Promise.resolve({ channels: new Set<string>(), studies: new Set<string>() }),
-    getUpvoteCountMap(
-      "channel",
-      channels.map((c) => c.id),
-    ),
-  ]);
-  const upvoteCountsObj: Record<string, number> = {};
-  for (const [k, v] of upvoteCounts.entries()) upvoteCountsObj[k] = v;
+  const bookmarks = auth
+    ? await getBookmarkSetForUser(auth.user.id)
+    : { channels: new Set<string>(), studies: new Set<string>() };
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -54,8 +38,6 @@ export default async function ChannelsPage() {
         <ChannelsExplorer
           channels={channels}
           bookmarkedSet={bookmarks.channels}
-          upvotedSet={upvotes.channels}
-          upvoteCounts={upvoteCountsObj}
           signedIn={Boolean(auth)}
         />
       </div>
