@@ -21,9 +21,14 @@ export type AuthContext = {
 
 export async function getCurrentUser(): Promise<AuthContext | null> {
   const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user: User | null = null;
+  try {
+    const result = await supabase.auth.getUser();
+    user = result.data.user;
+  } catch (error) {
+    console.error("auth.getUser failed:", error);
+    return null;
+  }
 
   if (!user) {
     return null;
@@ -36,7 +41,10 @@ export async function getCurrentUser(): Promise<AuthContext | null> {
     .maybeSingle();
 
   if (error) {
-    throw error;
+    // Don't 500 the whole layout on a profile-fetch hiccup; degrade to
+    // "signed-in user, profile unknown" so the navbar still renders.
+    console.error("profile fetch failed:", error);
+    return { user, profile: null };
   }
 
   return {
