@@ -162,8 +162,21 @@ export async function setChannelType(id: string, value: string) {
   revalidatePath("/");
 }
 
-export async function updateChannelDetails(id: string, formData: FormData) {
-  await requireAdmin();
+export type SaveResult =
+  | { ok: true; warnings: string[] }
+  | { ok: false; error: string };
+
+export async function updateChannelDetails(
+  id: string,
+  _prevState: SaveResult | null,
+  formData: FormData,
+): Promise<SaveResult> {
+  try {
+    await requireAdmin();
+  } catch {
+    return { ok: false, error: "Not authorized." };
+  }
+  const warnings: string[] = [];
   const get = (key: string) => {
     const value = String(formData.get(key) ?? "").trim();
     return value || null;
@@ -203,10 +216,8 @@ export async function updateChannelDetails(id: string, formData: FormData) {
     .select("slug")
     .single();
 
-  // Fallback: older databases may not have migration 0007 yet. Keep the
-  // country/language override save intact when only the affiliation column is
-  // missing.
   if (error && /lds_affiliation_source/.test(error.message)) {
+    warnings.push("LDS affiliation source did not save — migration 0007 not applied.");
     ({ data, error } = await supabase
       .from("channels")
       .update(detailsWithoutAffiliationSource)
@@ -215,8 +226,8 @@ export async function updateChannelDetails(id: string, formData: FormData) {
       .single());
   }
 
-  // Fallback: migration 0006 may not be applied yet.
   if (error && /country_manual|language_manual/.test(error.message)) {
+    warnings.push("Country/language overrides did not save — migration 0006 not applied.");
     ({ data, error } = await supabase
       .from("channels")
       .update(base)
@@ -224,18 +235,23 @@ export async function updateChannelDetails(id: string, formData: FormData) {
       .select("slug")
       .single());
   }
-  if (error) throw error;
-  if (!data) throw new Error("Channel not found.");
+  if (error) return { ok: false, error: error.message };
+  if (!data) return { ok: false, error: "Channel not found." };
 
+  const hasSocialInput = Object.values(socialProfiles).some((v) => v !== null);
   const { error: socialError } = await supabase
     .from("channels")
     .update(socialProfiles)
     .eq("id", id);
   if (
     socialError &&
-    !/facebook_url|instagram_url|tiktok_url|x_url/.test(socialError.message)
+    /facebook_url|instagram_url|tiktok_url|x_url/.test(socialError.message)
   ) {
-    throw socialError;
+    if (hasSocialInput) {
+      warnings.push("Social profile URLs did not save — migration 0008 not applied.");
+    }
+  } else if (socialError) {
+    return { ok: false, error: socialError.message };
   }
 
   revalidatePath("/admin/channels");
@@ -243,7 +259,7 @@ export async function updateChannelDetails(id: string, formData: FormData) {
   revalidatePath(`/channels/${data.slug}`);
   revalidatePath("/channels");
   revalidatePath("/");
-  redirect(`/admin/channels?updated=${data.slug}`);
+  return { ok: true, warnings };
 }
 
 export async function setStudyFeatured(id: string, value: boolean) {
@@ -330,8 +346,17 @@ function parseLines(value: FormDataEntryValue | null): string[] {
     .filter(Boolean);
 }
 
-export async function updateStudy(id: string, formData: FormData) {
-  await requireAdmin();
+export async function updateStudy(
+  id: string,
+  _prevState: SaveResult | null,
+  formData: FormData,
+): Promise<SaveResult> {
+  try {
+    await requireAdmin();
+  } catch {
+    return { ok: false, error: "Not authorized." };
+  }
+  const warnings: string[] = [];
   const yearValue = String(formData.get("year") ?? "").trim();
   const supabase = createSupabaseServiceClient();
   const base = {
@@ -357,6 +382,7 @@ export async function updateStudy(id: string, formData: FormData) {
     .select("slug")
     .single();
   if (error && /findings|limitations|flagged_problematic|flag_reason|context_note/.test(error.message)) {
+    warnings.push("Findings/limitations/flag/context fields did not save — migration 0005 not applied.");
     ({ data, error } = await supabase
       .from("studies")
       .update(base)
@@ -364,14 +390,14 @@ export async function updateStudy(id: string, formData: FormData) {
       .select("slug")
       .single());
   }
-  if (error) throw error;
-  if (!data) throw new Error("Study not found.");
+  if (error) return { ok: false, error: error.message };
+  if (!data) return { ok: false, error: "Study not found." };
   revalidatePath("/admin/studies");
   revalidatePath(`/admin/studies/${data.slug}/edit`);
   revalidatePath(`/studies/${data.slug}`);
   revalidatePath("/studies");
   revalidatePath("/");
-  redirect(`/admin/studies?updated=${data.slug}`);
+  return { ok: true, warnings };
 }
 
 export async function refreshStatsNow() {
@@ -401,6 +427,7 @@ export async function refreshStatsNow() {
     if (statsError) throw statsError;
 
     const update: Record<string, string> = {};
+    if (snapshot.name) update.name = snapshot.name;
     if (snapshot.description) update.description = snapshot.description;
     if (snapshot.country) update.country = snapshot.country;
     if (snapshot.defaultLanguage) update.language = snapshot.defaultLanguage;

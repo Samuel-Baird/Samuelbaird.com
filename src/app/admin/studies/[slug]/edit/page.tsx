@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { deleteStudy, updateStudy } from "@/app/admin/actions";
+import { EditForm } from "@/components/edit-form";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Study } from "@/lib/types";
 
@@ -35,7 +36,7 @@ export default async function AdminEditStudyPage({
         Edit study
       </h1>
 
-      <form
+      <EditForm
         action={action}
         className="mt-8 grid gap-5 rounded-2xl border border-[color:var(--border)] bg-white p-6"
       >
@@ -118,18 +119,13 @@ export default async function AdminEditStudyPage({
             />
           </label>
         </fieldset>
-        <div className="flex flex-wrap items-center gap-3">
-          <button className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white hover:opacity-90">
-            Save changes
-          </button>
-          <Link
-            href={`/studies/${study.slug}`}
-            className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-          >
-            View public page →
-          </Link>
-        </div>
-      </form>
+        <Link
+          href={`/studies/${study.slug}`}
+          className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+        >
+          View public page →
+        </Link>
+      </EditForm>
 
       <form action={deleteStudy.bind(null, study.id)} className="mt-6">
         <button className="text-sm text-red-700 hover:underline">

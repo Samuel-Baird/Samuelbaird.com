@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { deleteChannel, updateChannelDetails } from "@/app/admin/actions";
+import { EditForm } from "@/components/edit-form";
 import { TYPE_COLORS } from "@/lib/channel-types";
 import { COUNTRIES, LANGUAGES } from "@/lib/iso";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
@@ -45,7 +46,7 @@ export default async function AdminEditChannelPage({
         </code>
       </p>
 
-      <form
+      <EditForm
         action={action}
         className="mt-8 grid gap-5 rounded-2xl border border-[color:var(--border)] bg-white p-6"
       >
@@ -194,18 +195,13 @@ export default async function AdminEditChannelPage({
           </label>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
-          <button className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white hover:opacity-90">
-            Save changes
-          </button>
-          <Link
-            href={`/channels/${channel.slug}`}
-            className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-          >
-            View public page →
-          </Link>
-        </div>
-      </form>
+        <Link
+          href={`/channels/${channel.slug}`}
+          className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+        >
+          View public page →
+        </Link>
+      </EditForm>
 
       <form
         action={deleteChannel.bind(null, channel.id)}
