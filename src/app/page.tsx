@@ -3,7 +3,9 @@ import {
   getChannelsWithLatest,
   getFeaturedChannelsMix,
   getFeaturedStudies,
+  getRisersAndFallers,
   getSiteStats,
+  type ChannelMover,
 } from "@/lib/data";
 import { colorsForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
@@ -11,12 +13,14 @@ import { fmtCompact, fmtNumber } from "@/lib/format";
 export const revalidate = 600;
 
 export default async function Home() {
-  const [stats, channels, featuredMix, studies] = await Promise.all([
+  const [stats, channels, featuredMix, studies, movers] = await Promise.all([
     getSiteStats(),
     getChannelsWithLatest(),
     getFeaturedChannelsMix(6),
     getFeaturedStudies(2),
+    getRisersAndFallers(30, 5),
   ]);
+  const hasMovers = movers.risers.length > 0 || movers.fallers.length > 0;
 
   const top = channels
     .filter((c) => c.latest)
@@ -177,6 +181,36 @@ export default async function Home() {
         </ol>
       </section>
 
+      {/* Risers & Fallers */}
+      {hasMovers && (
+        <section className="mt-20">
+          <div className="flex items-end justify-between gap-3">
+            <div>
+              <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
+                Risers & Fallers
+              </h2>
+              <p className="mt-1 text-sm text-[color:var(--muted)]">
+                Biggest subscriber moves over the last 30 days.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <MoverList
+              title="Risers"
+              tone="up"
+              channels={movers.risers}
+              emptyMsg="No risers in this window yet."
+            />
+            <MoverList
+              title="Fallers"
+              tone="down"
+              channels={movers.fallers}
+              emptyMsg="No fallers in this window yet."
+            />
+          </div>
+        </section>
+      )}
+
       {/* Featured studies */}
       {studies.length > 0 && (
         <section className="mt-20">
@@ -226,6 +260,63 @@ export default async function Home() {
             ))}
           </ul>
         </section>
+      )}
+    </div>
+  );
+}
+
+function MoverList({
+  title,
+  tone,
+  channels,
+  emptyMsg,
+}: {
+  title: string;
+  tone: "up" | "down";
+  channels: ChannelMover[];
+  emptyMsg: string;
+}) {
+  const up = tone === "up";
+  const toneText = up ? "text-emerald-700" : "text-red-700";
+  const arrow = up ? "▲" : "▼";
+  return (
+    <div className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+      <div className="flex items-center justify-between border-b border-[color:var(--border)] px-5 py-3">
+        <span className="text-sm font-semibold">{title}</span>
+        <span className={"text-xs " + toneText}>{arrow} 30d</span>
+      </div>
+      {channels.length === 0 ? (
+        <p className="px-5 py-6 text-sm text-[color:var(--muted)]">{emptyMsg}</p>
+      ) : (
+        <ol>
+          {channels.map((c, i) => (
+            <li
+              key={c.id}
+              className={
+                "flex items-center gap-3 px-5 py-3 " +
+                (i > 0 ? "border-t border-[color:var(--border)]" : "")
+              }
+            >
+              <span className="w-5 text-right text-xs text-[color:var(--muted)] tabular-nums">
+                {i + 1}
+              </span>
+              <Link
+                href={`/channels/${c.slug}`}
+                className="min-w-0 flex-1 truncate text-sm font-medium hover:text-[color:var(--accent)]"
+              >
+                {c.name}
+              </Link>
+              <span className={"text-sm tabular-nums " + toneText}>
+                {up ? "+" : ""}
+                {c.delta_pct.toFixed(1)}%
+              </span>
+              <span className="hidden w-20 text-right text-xs tabular-nums text-[color:var(--muted)] sm:inline-block">
+                {up ? "+" : ""}
+                {fmtCompact(c.delta_subscribers)}
+              </span>
+            </li>
+          ))}
+        </ol>
       )}
     </div>
   );

@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { GrowthChart } from "@/components/growth-chart";
 import { getCurrentUser } from "@/lib/auth";
 import { colorsForType } from "@/lib/channel-types";
-import { getBookmarkSetForUser, getChannelBySlug } from "@/lib/data";
+import {
+  getBookmarkSetForUser,
+  getChannelBySlug,
+  getChannelStatsHistory,
+} from "@/lib/data";
 import { effectiveCountry, effectiveLanguage } from "@/lib/types";
 import {
   fmtCompact,
@@ -56,7 +61,10 @@ export default async function ChannelDetailPage({
     getCurrentUser(),
   ]);
   if (!channel) notFound();
-  const bookmarks = auth ? await getBookmarkSetForUser(auth.user.id) : null;
+  const [bookmarks, history] = await Promise.all([
+    auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
+    getChannelStatsHistory(channel.id),
+  ]);
 
   const yt = channel.latest;
   const ytLink = `https://www.youtube.com/channel/${channel.youtube_channel_id}`;
@@ -241,10 +249,12 @@ export default async function ChannelDetailPage({
         ))}
       </dl>
 
-      <p className="mt-10 text-xs text-[color:var(--muted)]">
-        Last refreshed:{" "}
-        {fmtDate(yt?.captured_at) ?? "—"}. Subscriber growth chart will appear
-        once more snapshots have been collected.
+      <div className="mt-10">
+        <GrowthChart data={history} label="Subscribers" />
+      </div>
+
+      <p className="mt-6 text-xs text-[color:var(--muted)]">
+        Last refreshed: {fmtDate(yt?.captured_at) ?? "—"}.
       </p>
     </div>
   );

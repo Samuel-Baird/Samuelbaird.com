@@ -213,6 +213,71 @@ export async function getChannelStatsHistory(channelId: string) {
   return data ?? [];
 }
 
+export type ChannelMover = ChannelWithStats & {
+  baseline_subscribers: number;
+  baseline_captured_at: string;
+  delta_subscribers: number;
+  delta_pct: number;
+};
+
+export async function getRisersAndFallers(
+  windowDays = 30,
+  limit = 5,
+): Promise<{ risers: ChannelMover[]; fallers: ChannelMover[] }> {
+  const sb = publicClient();
+  const since = new Date(
+    Date.now() - windowDays * 24 * 60 * 60 * 1000,
+  ).toISOString();
+
+  const { data: rows, error } = await sb
+    .from("channel_stats")
+    .select("channel_id, captured_at, subscribers")
+    .gte("captured_at", since)
+    .order("captured_at", { ascending: true });
+  if (error) throw error;
+
+  type Row = { channel_id: string; captured_at: string; subscribers: number };
+  const baselineByChannel = new Map<string, Row>();
+  for (const r of (rows ?? []) as Row[]) {
+    if (!baselineByChannel.has(r.channel_id)) {
+      baselineByChannel.set(r.channel_id, r);
+    }
+  }
+  if (baselineByChannel.size === 0) {
+    return { risers: [], fallers: [] };
+  }
+
+  const all = await getChannelsWithLatest();
+  const movers: ChannelMover[] = [];
+  for (const c of all) {
+    const baseline = baselineByChannel.get(c.id);
+    const latest = c.latest;
+    if (!baseline || !latest) continue;
+    if (baseline.captured_at >= latest.captured_at) continue;
+    if (!baseline.subscribers || baseline.subscribers <= 0) continue;
+    const delta = (latest.subscribers ?? 0) - baseline.subscribers;
+    const pct = (delta / baseline.subscribers) * 100;
+    movers.push({
+      ...c,
+      baseline_subscribers: baseline.subscribers,
+      baseline_captured_at: baseline.captured_at,
+      delta_subscribers: delta,
+      delta_pct: pct,
+    });
+  }
+
+  const risers = movers
+    .filter((m) => m.delta_subscribers > 0)
+    .sort((a, b) => b.delta_pct - a.delta_pct)
+    .slice(0, limit);
+  const fallers = movers
+    .filter((m) => m.delta_subscribers < 0)
+    .sort((a, b) => a.delta_pct - b.delta_pct)
+    .slice(0, limit);
+
+  return { risers, fallers };
+}
+
 export type StudySort = "featured" | "year" | "upvotes";
 
 export type StudiesQuery = {
