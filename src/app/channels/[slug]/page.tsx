@@ -134,6 +134,21 @@ export default async function ChannelDetailPage({
           {channel.youtube_channel_id}
         </code>
       </p>
+      <p className="mt-2 text-sm text-[color:var(--muted)]">
+        LDS affiliation source:{" "}
+        {channel.lds_affiliation_source ? (
+          <a
+            href={channel.lds_affiliation_source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+          >
+            {channel.lds_affiliation_source}
+          </a>
+        ) : (
+          <span className="text-[color:var(--foreground)]">channel content</span>
+        )}
+      </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
         <a

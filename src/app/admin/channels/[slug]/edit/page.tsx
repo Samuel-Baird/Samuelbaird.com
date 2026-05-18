@@ -125,6 +125,16 @@ export default async function AdminEditChannelPage({
           </Field>
         </div>
 
+        <Field
+          label="LDS affiliation source"
+          hint='URL backing up the LDS affiliation. Leave blank if the channel content itself makes it self-evident — the page will say "Source: channel content".'
+        >
+          <Input
+            name="lds_affiliation_source"
+            defaultValue={channel.lds_affiliation_source ?? ""}
+          />
+        </Field>
+
         <div className="flex flex-wrap gap-6">
           <label className="flex items-center gap-2 text-sm">
             <input

@@ -14,6 +14,7 @@ export type Channel = {
   city: string | null;
   owned_by: string | null;
   handle: string | null;
+  lds_affiliation_source: string | null;
   created_at_youtube: string | null;
   featured: boolean;
   is_active: boolean;

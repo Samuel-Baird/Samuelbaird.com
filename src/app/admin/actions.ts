@@ -182,6 +182,7 @@ export async function updateChannelDetails(id: string, formData: FormData) {
     ...base,
     country_manual: get("country_manual"),
     language_manual: get("language_manual"),
+    lds_affiliation_source: get("lds_affiliation_source"),
   };
 
   let { data, error } = await supabase
@@ -191,9 +192,9 @@ export async function updateChannelDetails(id: string, formData: FormData) {
     .select("slug")
     .single();
 
-  // Fallback: migration 0006 (country_manual/language_manual) hasn't been
-  // applied yet. Retry without the override columns so saves still work.
-  if (error && /country_manual|language_manual/.test(error.message)) {
+  // Fallback: migration 0006/0007 columns may not be applied yet. Retry
+  // without the newer columns so saves still work.
+  if (error && /country_manual|language_manual|lds_affiliation_source/.test(error.message)) {
     ({ data, error } = await supabase
       .from("channels")
       .update(base)
