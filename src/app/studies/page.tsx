@@ -46,8 +46,26 @@ export default async function StudiesPage() {
             </div>
             <Link
               href={`/studies/${s.slug}`}
-              className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 pr-16 transition-colors hover:border-[color:var(--accent)]"
+              className={
+                "group block h-full rounded-2xl border bg-white p-6 pr-16 transition-colors " +
+                (s.flagged_problematic
+                  ? "border-red-200 hover:border-red-500"
+                  : "border-[color:var(--border)] hover:border-[color:var(--accent)]")
+              }
+              title={
+                s.flagged_problematic
+                  ? "Flagged for methodological concerns"
+                  : undefined
+              }
             >
+              {s.flagged_problematic && (
+                <span
+                  aria-label="Flagged for methodological concerns"
+                  className="absolute left-3 top-3 z-10 inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+                >
+                  !
+                </span>
+              )}
               <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
                 {s.year && (
                   <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">

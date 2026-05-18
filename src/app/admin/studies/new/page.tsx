@@ -12,19 +12,54 @@ export default function NewStudyPage() {
         <TextField name="authors" label="Authors" placeholder="Comma-separated" />
         <TextField name="year" label="Year" type="number" />
         <TextField name="source" label="Source" />
-        <label className="block text-sm font-medium">
-          Abstract
-          <textarea
-            name="abstract"
-            rows={6}
-            className="mt-2 w-full rounded-2xl border border-[color:var(--border)] px-4 py-3 text-sm focus:border-[color:var(--accent)] focus:outline-none"
-          />
-        </label>
+        <Textarea
+          name="abstract"
+          label="Abstract"
+          rows={6}
+          hint="Pasted directly from the paper."
+        />
+        <Textarea
+          name="findings"
+          label="Findings for Latter-day Saints"
+          rows={6}
+          hint='One per line. Example: "1 in 4 Latter-day Saints report ___"'
+        />
+        <Textarea
+          name="limitations"
+          label="Limitations in methodology"
+          rows={5}
+          hint="Sampling, response rate, framing — anything that should temper conclusions."
+        />
+        <Textarea
+          name="context_note"
+          label="Context note (neutral)"
+          rows={4}
+          hint="Optional. Additional context for studies that are honestly easy to misunderstand but aren't methodologically flagged."
+        />
         <TextField name="tags" label="Tags" placeholder="Comma-separated" />
         <label className="flex items-center gap-2 text-sm">
           <input name="featured" type="checkbox" className="h-4 w-4" />
           Featured
         </label>
+        <fieldset className="rounded-2xl border border-red-200 bg-red-50/40 p-4">
+          <label className="flex items-center gap-2 text-sm font-medium text-red-900">
+            <input
+              name="flagged_problematic"
+              type="checkbox"
+              className="h-4 w-4"
+            />
+            Flag as problematic methodology
+          </label>
+          <label className="mt-3 block text-sm font-medium">
+            Flag reason
+            <textarea
+              name="flag_reason"
+              rows={3}
+              placeholder="Why this study should be read with caution (convenience sampling, conclusions overreaching the data, etc.)."
+              className="mt-2 w-full rounded-2xl border border-[color:var(--border)] px-4 py-3 text-sm focus:border-[color:var(--accent)] focus:outline-none"
+            />
+          </label>
+        </fieldset>
         <label className="block text-sm font-medium">
           PDF
           <input
@@ -65,6 +100,34 @@ function TextField({
         required={required}
         placeholder={placeholder}
         className="mt-2 h-11 w-full rounded-full border border-[color:var(--border)] px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
+      />
+    </label>
+  );
+}
+
+function Textarea({
+  name,
+  label,
+  rows = 5,
+  hint,
+}: {
+  name: string;
+  label: string;
+  rows?: number;
+  hint?: string;
+}) {
+  return (
+    <label className="block text-sm font-medium">
+      {label}
+      {hint && (
+        <span className="mt-1 block text-xs font-normal text-[color:var(--muted)]">
+          {hint}
+        </span>
+      )}
+      <textarea
+        name={name}
+        rows={rows}
+        className="mt-2 w-full rounded-2xl border border-[color:var(--border)] px-4 py-3 text-sm focus:border-[color:var(--accent)] focus:outline-none"
       />
     </label>
   );

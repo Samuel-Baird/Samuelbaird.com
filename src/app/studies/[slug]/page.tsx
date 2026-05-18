@@ -47,6 +47,47 @@ export default async function StudyDetailPage({
         ← All studies
       </Link>
 
+      {study.context_note && !study.flagged_problematic && (
+        <div className="mt-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--accent-soft)]/30 p-4 text-sm text-[color:var(--foreground)]">
+          <div className="flex items-start gap-3">
+            <span
+              aria-hidden
+              className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color:var(--accent)] text-xs font-bold text-white"
+            >
+              i
+            </span>
+            <div>
+              <p className="font-semibold">Context</p>
+              <p className="mt-1 whitespace-pre-line leading-relaxed">
+                {study.context_note}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {study.flagged_problematic && (
+        <div className="mt-6 rounded-2xl border-2 border-red-300 bg-red-50 p-4 text-sm text-red-900">
+          <div className="flex items-start gap-3">
+            <span
+              aria-hidden
+              className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+            >
+              !
+            </span>
+            <div>
+              <p className="font-semibold">
+                Flagged for methodological concerns
+              </p>
+              <p className="mt-1 leading-relaxed">
+                {study.flag_reason ??
+                  "This study has been flagged for problematic methodology or drawing more from the conclusions than the data find. Read with appropriate caution."}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
         {study.year && (
           <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
@@ -107,6 +148,19 @@ export default async function StudyDetailPage({
         </section>
       )}
 
+      {study.findings.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+            Findings for Latter-day Saints
+          </h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
+            {study.findings.map((finding, i) => (
+              <li key={i}>{finding}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {pdfUrl && (
         <section className="mt-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -153,6 +207,17 @@ export default async function StudyDetailPage({
         </section>
       )}
 
+      {study.limitations && (
+        <section className="mt-12">
+          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+            Limitations in methodology
+          </h2>
+          <p className="mt-3 whitespace-pre-line text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
+            {study.limitations}
+          </p>
+        </section>
+      )}
+
       {study.external_url && (
         <p className="mt-8 text-sm text-[color:var(--muted)]">
           Source:{" "}
@@ -165,6 +230,17 @@ export default async function StudyDetailPage({
             {study.external_url}
           </a>
         </p>
+      )}
+
+      {auth?.profile?.is_admin && (
+        <div className="mt-10">
+          <Link
+            href={`/admin/studies/${study.slug}/edit`}
+            className="inline-flex h-10 items-center rounded-full border border-[color:var(--border)] px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)]"
+          >
+            Edit (admin)
+          </Link>
+        </div>
       )}
     </div>
   );

@@ -100,30 +100,37 @@ export async function addChannelByInput(rawInput: string) {
       : await resolveHandleToChannelId(parsed.handleSlug);
   if (!youtubeId) throw new Error("Could not resolve that YouTube handle.");
 
+  const supabase = createSupabaseServiceClient();
+  const { data: existing, error: existingError } = await supabase
+    .from("channels")
+    .select("slug, name")
+    .eq("youtube_channel_id", youtubeId)
+    .maybeSingle();
+  if (existingError) throw existingError;
+  if (existing) {
+    redirect(`/admin/channels?duplicate=${existing.slug}`);
+  }
+
   const [snapshot] = await fetchYouTubeSnapshots([youtubeId]);
   if (!snapshot) throw new Error("YouTube did not return that channel.");
 
-  const supabase = createSupabaseServiceClient();
   const slug = await uniqueSlug(snapshot.name, "channels");
   const handle = parsed.kind === "handle" ? parsed.handle : null;
 
   const { data: channel, error } = await supabase
     .from("channels")
-    .upsert(
-      {
-        youtube_channel_id: snapshot.id,
-        name: snapshot.name,
-        slug,
-        channel_type: null,
-        description: snapshot.description,
-        country: snapshot.country,
-        language: snapshot.defaultLanguage,
-        thumbnail_url: snapshot.thumbnailUrl,
-        created_at_youtube: snapshot.publishedAt,
-        handle,
-      },
-      { onConflict: "youtube_channel_id" },
-    )
+    .insert({
+      youtube_channel_id: snapshot.id,
+      name: snapshot.name,
+      slug,
+      channel_type: null,
+      description: snapshot.description,
+      country: snapshot.country,
+      language: snapshot.defaultLanguage,
+      thumbnail_url: snapshot.thumbnailUrl,
+      created_at_youtube: snapshot.publishedAt,
+      handle,
+    })
     .select("id, slug")
     .single();
   if (error) throw error;
@@ -141,6 +148,50 @@ export async function addChannelByInput(rawInput: string) {
   revalidatePath("/channels");
   revalidatePath("/");
   redirect(`/admin/channels?added=${channel.slug}`);
+}
+
+export async function setChannelType(id: string, value: string) {
+  await requireAdmin();
+  const { error } = await createSupabaseServiceClient()
+    .from("channels")
+    .update({ channel_type: value || null })
+    .eq("id", id);
+  if (error) throw error;
+  revalidatePath("/admin/channels");
+  revalidatePath("/channels");
+  revalidatePath("/");
+}
+
+export async function updateChannelDetails(id: string, formData: FormData) {
+  await requireAdmin();
+  const get = (key: string) => {
+    const value = String(formData.get(key) ?? "").trim();
+    return value || null;
+  };
+  const supabase = createSupabaseServiceClient();
+  const { data, error } = await supabase
+    .from("channels")
+    .update({
+      channel_type: get("channel_type"),
+      country_manual: get("country_manual"),
+      language_manual: get("language_manual"),
+      state: get("state"),
+      city: get("city"),
+      owned_by: get("owned_by"),
+      handle: get("handle"),
+      featured: formData.get("featured") === "on",
+      is_active: formData.get("is_active") === "on",
+    })
+    .eq("id", id)
+    .select("slug")
+    .single();
+  if (error) throw error;
+  revalidatePath("/admin/channels");
+  revalidatePath(`/admin/channels/${data.slug}/edit`);
+  revalidatePath(`/channels/${data.slug}`);
+  revalidatePath("/channels");
+  revalidatePath("/");
+  redirect(`/admin/channels?updated=${data.slug}`);
 }
 
 export async function setStudyFeatured(id: string, value: boolean) {
@@ -199,6 +250,11 @@ export async function createStudy(formData: FormData) {
     abstract: String(formData.get("abstract") ?? "").trim() || null,
     tags: parseCsv(formData.get("tags")),
     featured: formData.get("featured") === "on",
+    findings: parseLines(formData.get("findings")),
+    limitations: String(formData.get("limitations") ?? "").trim() || null,
+    flagged_problematic: formData.get("flagged_problematic") === "on",
+    flag_reason: String(formData.get("flag_reason") ?? "").trim() || null,
+    context_note: String(formData.get("context_note") ?? "").trim() || null,
     pdf_path: pdfPath,
   });
   if (error) throw error;
@@ -207,6 +263,45 @@ export async function createStudy(formData: FormData) {
   revalidatePath("/studies");
   revalidatePath("/");
   redirect(`/admin/studies?added=${slug}`);
+}
+
+function parseLines(value: FormDataEntryValue | null): string[] {
+  return String(value ?? "")
+    .split(/\r?\n/)
+    .map((line) => line.replace(/^[-*\s]+/, "").trim())
+    .filter(Boolean);
+}
+
+export async function updateStudy(id: string, formData: FormData) {
+  await requireAdmin();
+  const yearValue = String(formData.get("year") ?? "").trim();
+  const supabase = createSupabaseServiceClient();
+  const { data, error } = await supabase
+    .from("studies")
+    .update({
+      title: String(formData.get("title") ?? "").trim(),
+      authors: parseCsv(formData.get("authors")),
+      year: yearValue ? Number(yearValue) : null,
+      source: String(formData.get("source") ?? "").trim() || null,
+      abstract: String(formData.get("abstract") ?? "").trim() || null,
+      tags: parseCsv(formData.get("tags")),
+      featured: formData.get("featured") === "on",
+      findings: parseLines(formData.get("findings")),
+      limitations: String(formData.get("limitations") ?? "").trim() || null,
+      flagged_problematic: formData.get("flagged_problematic") === "on",
+      flag_reason: String(formData.get("flag_reason") ?? "").trim() || null,
+    context_note: String(formData.get("context_note") ?? "").trim() || null,
+    })
+    .eq("id", id)
+    .select("slug")
+    .single();
+  if (error) throw error;
+  revalidatePath("/admin/studies");
+  revalidatePath(`/admin/studies/${data.slug}/edit`);
+  revalidatePath(`/studies/${data.slug}`);
+  revalidatePath("/studies");
+  revalidatePath("/");
+  redirect(`/admin/studies?updated=${data.slug}`);
 }
 
 export async function refreshStatsNow() {

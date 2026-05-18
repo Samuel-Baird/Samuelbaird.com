@@ -5,6 +5,7 @@ import { BookmarkButton } from "@/components/bookmark-button";
 import { getCurrentUser } from "@/lib/auth";
 import { colorsForType } from "@/lib/channel-types";
 import { getBookmarkSetForUser, getChannelBySlug } from "@/lib/data";
+import { effectiveCountry, effectiveLanguage } from "@/lib/types";
 import {
   fmtCompact,
   fmtNumber,
@@ -46,7 +47,9 @@ export default async function ChannelDetailPage({
 
   const yt = channel.latest;
   const ytLink = `https://www.youtube.com/channel/${channel.youtube_channel_id}`;
-  const location = [channel.city, channel.state, channel.country]
+  const country = effectiveCountry(channel);
+  const language = effectiveLanguage(channel);
+  const location = [channel.city, channel.state, country]
     .filter(Boolean)
     .join(", ");
 
@@ -87,7 +90,7 @@ export default async function ChannelDetailPage({
       <h1 className="serif mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
         {channel.name}
       </h1>
-      {(location || channel.owned_by || channel.language) && (
+      {(location || channel.owned_by || language) && (
         <dl className="mt-5 grid gap-3 text-sm text-[color:var(--muted)] sm:grid-cols-3">
           {location && (
             <div>
@@ -103,11 +106,11 @@ export default async function ChannelDetailPage({
               </dd>
             </div>
           )}
-          {channel.language && (
+          {language && (
             <div>
               <dt className="text-[10px] uppercase tracking-wider">Language</dt>
               <dd className="mt-1 text-[color:var(--foreground)]">
-                {channel.language}
+                {language}
               </dd>
             </div>
           )}
@@ -136,6 +139,14 @@ export default async function ChannelDetailPage({
           signedIn={Boolean(auth)}
           label="inline"
         />
+        {auth?.profile?.is_admin && (
+          <Link
+            href={`/admin/channels/${channel.slug}/edit`}
+            className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+          >
+            Edit (admin)
+          </Link>
+        )}
       </div>
 
       <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">

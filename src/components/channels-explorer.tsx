@@ -29,8 +29,9 @@ function normalizeFilterValue(value: string | null) {
 
 function getChannelFilterValue(channel: ChannelWithStats, key: FilterKey) {
   if (key === "type") return normalizeFilterValue(channel.channel_type);
-  if (key === "country") return normalizeFilterValue(channel.country);
-  return normalizeFilterValue(channel.language);
+  if (key === "country")
+    return normalizeFilterValue(channel.country_manual ?? channel.country);
+  return normalizeFilterValue(channel.language_manual ?? channel.language);
 }
 
 function matchesSelections(

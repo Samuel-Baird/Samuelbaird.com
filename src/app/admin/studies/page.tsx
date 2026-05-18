@@ -3,7 +3,7 @@ import { deleteStudy, setStudyFeatured } from "@/app/admin/actions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Study } from "@/lib/types";
 
-type SearchParams = { added?: string };
+type SearchParams = { added?: string; updated?: string };
 
 export default async function AdminStudiesPage({
   searchParams,
@@ -29,6 +29,11 @@ export default async function AdminStudiesPage({
               Added {params.added}
             </p>
           )}
+          {params.updated && (
+            <p className="mt-2 text-sm text-[color:var(--accent)]">
+              Updated {params.updated}
+            </p>
+          )}
         </div>
         <Link
           href="/admin/studies/new"
@@ -51,7 +56,19 @@ export default async function AdminStudiesPage({
           <tbody>
             {((data ?? []) as Study[]).map((study) => (
               <tr key={study.id} className="border-t border-[color:var(--border)]">
-                <td className="px-4 py-3 font-medium">{study.title}</td>
+                <td className="px-4 py-3 font-medium">
+                  <div className="flex items-center gap-2">
+                    {study.flagged_problematic && (
+                      <span
+                        title="Flagged for methodological concerns"
+                        className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+                      >
+                        !
+                      </span>
+                    )}
+                    <span>{study.title}</span>
+                  </div>
+                </td>
                 <td className="px-4 py-3 tabular-nums text-[color:var(--muted)]">
                   {study.year ?? "-"}
                 </td>
@@ -69,6 +86,12 @@ export default async function AdminStudiesPage({
                       className="text-xs text-[color:var(--accent)] hover:underline"
                     >
                       View
+                    </Link>
+                    <Link
+                      href={`/admin/studies/${study.slug}/edit`}
+                      className="text-xs text-[color:var(--accent)] hover:underline"
+                    >
+                      Edit
                     </Link>
                     <form action={deleteStudy.bind(null, study.id)}>
                       <button className="text-xs text-red-700 hover:underline">

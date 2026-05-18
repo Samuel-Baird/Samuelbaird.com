@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
+import { getChannelByNameLike } from "@/lib/data";
+import { fmtCompact, fmtNumber } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "About",
@@ -7,7 +10,11 @@ export const metadata: Metadata = {
     "About Latter-day Stats — a public hub for statistics, research, and creator data on the Latter-day Saint community.",
 };
 
-export default function AboutPage() {
+export const revalidate = 600;
+
+export default async function AboutPage() {
+  const myChannel = await getChannelByNameLike("I think therefore I Sam");
+
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
@@ -30,6 +37,58 @@ export default function AboutPage() {
           researchers to see at a glance who is talking, how their reach is
           growing, and what scholarship is being published.
         </p>
+
+        <h2 className="serif pt-4 text-2xl font-semibold tracking-tight text-[color:var(--foreground)]">
+          About me
+        </h2>
+        <p>
+          I&apos;m <strong>Samuel Baird</strong> — a Latter-day Saint and the
+          person behind this site. I run a small YouTube channel,{" "}
+          <em>I think therefore I Sam</em>, where I explore faith, history, and
+          the questions members and seekers actually ask. Latter-day Stats grew
+          out of wanting a clearer picture of the LDS conversation happening
+          online and in the literature, and a place to point people who want
+          something more concrete than vibes.
+        </p>
+
+        {myChannel && (
+          <Link
+            href={`/channels/${myChannel.slug}`}
+            className="not-prose group flex items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white p-4 no-underline transition-colors hover:border-[color:var(--accent)]"
+          >
+            {myChannel.thumbnail_url ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={myChannel.thumbnail_url}
+                alt=""
+                className="h-16 w-16 shrink-0 rounded-full object-cover"
+              />
+            ) : (
+              <div className="h-16 w-16 shrink-0 rounded-full bg-[color:var(--muted-soft)]" />
+            )}
+            <div className="min-w-0 flex-1">
+              <div className="text-sm font-semibold text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+                {myChannel.name}
+              </div>
+              {myChannel.handle && (
+                <div className="text-xs text-[color:var(--muted)]">
+                  {myChannel.handle}
+                </div>
+              )}
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[color:var(--muted)]">
+                <span className="tabular-nums">
+                  {fmtCompact(myChannel.latest?.subscribers)} subscribers
+                </span>
+                <span className="tabular-nums">
+                  {fmtCompact(myChannel.latest?.total_views)} views
+                </span>
+                <span className="tabular-nums">
+                  {fmtNumber(myChannel.latest?.video_count)} videos
+                </span>
+              </div>
+            </div>
+          </Link>
+        )}
 
         <h2 className="serif pt-4 text-2xl font-semibold tracking-tight text-[color:var(--foreground)]">
           Sources

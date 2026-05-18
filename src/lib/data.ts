@@ -32,6 +32,47 @@ export async function getChannelsWithLatest(): Promise<ChannelWithStats[]> {
   }));
 }
 
+export async function getChannelByNameLike(
+  pattern: string,
+): Promise<ChannelWithStats | null> {
+  const sb = publicClient();
+  const { data, error } = await sb
+    .from("channels")
+    .select("*")
+    .ilike("name", pattern)
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  if (!data) return null;
+  const { data: latest } = await sb
+    .from("channel_stats_latest")
+    .select("*")
+    .eq("channel_id", (data as Channel).id)
+    .maybeSingle();
+  return { ...(data as Channel), latest: latest ?? null };
+}
+
+export async function getFeaturedChannelsMix(
+  total = 6,
+): Promise<ChannelWithStats[]> {
+  const all = await getChannelsWithLatest();
+  const featured = all.filter((c) => c.featured);
+  const used = new Set(featured.map((c) => c.id));
+  const fillerPool = all.filter(
+    (c) => !used.has(c.id) && c.channel_type !== "Critical",
+  );
+
+  const needed = Math.max(0, total - featured.length);
+  const shuffled = [...fillerPool];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  const fillers = shuffled.slice(0, needed);
+
+  return [...featured, ...fillers];
+}
+
 export async function getBookmarkSetForUser(
   userId: string,
 ): Promise<{ channels: Set<string>; studies: Set<string> }> {

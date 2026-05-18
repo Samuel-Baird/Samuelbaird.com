@@ -5,9 +5,11 @@ export type Channel = {
   slug: string;
   description: string | null;
   country: string | null;
+  country_manual: string | null;
   thumbnail_url: string | null;
   channel_type: string | null;
   language: string | null;
+  language_manual: string | null;
   state: string | null;
   city: string | null;
   owned_by: string | null;
@@ -31,6 +33,14 @@ export type ChannelWithStats = Channel & {
   latest: ChannelStats | null;
 };
 
+export function effectiveCountry(channel: Pick<Channel, "country" | "country_manual">): string | null {
+  return channel.country_manual ?? channel.country ?? null;
+}
+
+export function effectiveLanguage(channel: Pick<Channel, "language" | "language_manual">): string | null {
+  return channel.language_manual ?? channel.language ?? null;
+}
+
 export type Study = {
   id: string;
   slug: string;
@@ -44,6 +54,11 @@ export type Study = {
   external_url: string | null;
   featured: boolean;
   published_at: string | null;
+  findings: string[];
+  limitations: string | null;
+  flagged_problematic: boolean;
+  flag_reason: string | null;
+  context_note: string | null;
   created_at: string;
   updated_at: string;
 };
