@@ -27,7 +27,7 @@ export default async function ChannelsPage() {
     .at(-1);
 
   return (
-    <div className="max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
+    <div className="w-full px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
         Channels
       </p>

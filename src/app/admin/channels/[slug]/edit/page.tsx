@@ -126,17 +126,6 @@ export default async function AdminEditChannelPage({
           </Field>
         </div>
 
-        <Field
-          label="LDS affiliation source"
-          hint='URL or short note backing up the LDS affiliation, such as "User authenticated: creator contacted me to confirm LDS affiliation." Leave blank if the channel content itself makes it self-evident.'
-        >
-          <Input
-            name="lds_affiliation_source"
-            defaultValue={channel.lds_affiliation_source ?? ""}
-            placeholder="URL or verification note"
-          />
-        </Field>
-
         <fieldset className="grid gap-5 rounded-2xl border border-[color:var(--border)] p-4">
           <legend className="px-1 text-xs uppercase tracking-wider text-[color:var(--muted)]">
             Other social profiles

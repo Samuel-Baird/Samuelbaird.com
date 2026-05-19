@@ -145,6 +145,17 @@ export default async function StudyDetailPage({
         </p>
       )}
 
+      {auth?.profile?.is_admin && (
+        <div className="mt-4">
+          <Link
+            href={`/admin/studies/${study.slug}/edit`}
+            className="inline-flex h-9 items-center rounded-full border border-[color:var(--border)] px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+          >
+            Edit (admin)
+          </Link>
+        </div>
+      )}
+
       {!pdfUrl && study.external_url && (
         <div className="mt-6">
           <a
@@ -339,16 +350,6 @@ export default async function StudyDetailPage({
         on this study.
       </p>
 
-      {auth?.profile?.is_admin && (
-        <div className="mt-6">
-          <Link
-            href={`/admin/studies/${study.slug}/edit`}
-            className="inline-flex h-10 items-center rounded-full border border-[color:var(--border)] px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)]"
-          >
-            Edit (admin)
-          </Link>
-        </div>
-      )}
     </div>
   );
 }

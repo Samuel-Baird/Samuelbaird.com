@@ -66,7 +66,7 @@ export default async function StudiesPage({
   for (const [k, v] of upvoteCounts.entries()) upvoteCountsObj[k] = v;
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+    <div className="w-full px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
         Studies
       </p>
