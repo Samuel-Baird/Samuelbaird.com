@@ -383,14 +383,14 @@ function StudyCard({
         className={
           "group block h-full rounded-2xl border bg-white p-6 pr-28 transition-colors " +
           (s.flagged_problematic
-            ? "border-red-200 hover:border-red-500"
+            ? "border-[color:var(--border)] hover:border-red-500"
             : "border-[color:var(--border)] hover:border-[color:var(--accent)]")
         }
       >
         {s.flagged_problematic && (
           <span
             aria-label="Flagged for methodological concerns"
-            className="absolute left-3 top-3 z-10 inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+            className="pointer-events-none absolute left-3 top-3 z-10 inline-flex h-5 w-5 origin-center scale-0 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white opacity-0 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100 group-hover:animate-pulse"
           >
             !
           </span>
