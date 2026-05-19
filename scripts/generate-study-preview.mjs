@@ -3,8 +3,12 @@
 // Usage:  node scripts/generate-study-preview.mjs <slug> [--skip-existing] [--force-source=pdf_figure|url_scrape|ai_dataviz]
 //
 // Cascade (each step short-circuits on success):
-//   1. PDF figure  — extract the largest embedded image on a page containing a
-//                    "Figure N" / "Fig. N" / "Chart N" caption from the uploaded PDF.
+//   1. PDF figure  — extract every embedded image on a page with a
+//                    "Figure N" / "Fig. N" / "Chart N" caption from the uploaded
+//                    PDF, then ask Claude Haiku 4.5 (if ANTHROPIC_API_KEY is set)
+//                    which figure best illustrates the study's key finding.
+//                    Falls back to the largest candidate when no key is set,
+//                    only one candidate exists, or `--no-llm` is passed.
 //   2. URL scrape  — fetch external_url, look for og:image / twitter:image.
 //   3. AI data-viz — render an SVG findings card from the study's `findings` array.
 //                    AI-sourced previews set preview_image_is_ai=true.
@@ -78,24 +82,21 @@ async function tryPdfFigure() {
       disableWorker: true,
     }).promise;
 
-    const CAPTION_RE = /\b(Figure|Fig\.|Chart|Table)\s*\d+/i;
-    let best = null; // { img, area, caption, page }
+    const CAPTION_RE = /\b(Figure|Fig\.|Chart|Table)\s*\d+/gi;
+    const candidates = []; // { img, area, caption, page }
     const maxPages = Math.min(doc.numPages, 40);
     const debug = args.includes("--debug");
-    let pagesWithCaption = 0;
-    let imagesSeen = 0;
 
     for (let p = 1; p <= maxPages; p++) {
       const page = await doc.getPage(p);
       const text = await page.getTextContent();
-      // Concat all text items so "Figure" + " " + "2" split across runs still match.
       const joined = text.items.map((it) => it.str ?? "").join(" ");
-      const captionMatch = joined.match(CAPTION_RE);
-      if (!captionMatch) continue;
-      pagesWithCaption++;
-      // Pull a fuller caption phrase around the match.
-      const idx = joined.indexOf(captionMatch[0]);
-      const captionLine = joined.slice(idx, idx + 120).split(/[.\n]/)[0].trim();
+      const matches = [...joined.matchAll(CAPTION_RE)];
+      if (matches.length === 0) continue;
+      // First caption on the page is usually the figure label; pull a longer
+      // snippet for context (used in the Claude prompt and as the final caption).
+      const idx = matches[0].index ?? joined.indexOf(matches[0][0]);
+      const captionLine = joined.slice(idx, idx + 220).split(/(?<=\.)\s|\n/)[0].trim();
 
       const ops = await page.getOperatorList();
       const { OPS } = pdfjs;
@@ -130,24 +131,28 @@ async function tryPdfFigure() {
           img = null;
         }
         if (!img || !img.data || !img.width || !img.height) continue;
-        imagesSeen++;
-        const area = img.width * img.height;
-        // Skip tiny logos / icons.
         if (img.width < 200 || img.height < 150) continue;
-        if (!best || area > best.area) {
-          best = { img, area, caption: captionLine, page: p };
-        }
+        candidates.push({
+          img,
+          area: img.width * img.height,
+          caption: captionLine,
+          page: p,
+        });
       }
     }
 
     if (debug) {
       console.warn(
-        `PDF debug: ${maxPages} pages scanned, ${pagesWithCaption} with caption, ${imagesSeen} images inspected, best=${best ? `${best.img.width}x${best.img.height} on p${best.page}` : "none"}`,
+        `PDF debug: ${maxPages} pages scanned, ${candidates.length} candidate figures`,
       );
+      for (const c of candidates) {
+        console.warn(`  p${c.page} ${c.img.width}x${c.img.height} — ${c.caption.slice(0, 80)}`);
+      }
     }
-    if (!best) return null;
+    if (candidates.length === 0) return null;
 
-    const png = imageToPng(best.img);
+    const picked = await pickBestFigure(candidates);
+    const png = imageToPng(picked.img);
     if (!png) return null;
 
     return {
@@ -156,12 +161,71 @@ async function tryPdfFigure() {
       contentType: "image/png",
       source: "pdf_figure",
       isAi: false,
-      caption: `${best.caption} (page ${best.page})`,
+      caption: `${picked.caption} (page ${picked.page})`,
     };
   } catch (e) {
     console.warn("PDF figure extraction failed:", e.message);
     return null;
   }
+}
+
+async function pickBestFigure(candidates) {
+  const debug = args.includes("--debug");
+  const apiKey = process.env.ANTHROPIC_API_KEY ?? env.ANTHROPIC_API_KEY;
+
+  if (!apiKey || candidates.length < 2 || args.includes("--no-llm")) {
+    // Largest figure on a captioned page is the fallback heuristic.
+    return candidates.slice().sort((a, b) => b.area - a.area)[0];
+  }
+
+  const list = candidates
+    .map((c, i) => `[${i}] page ${c.page}, ${c.img.width}x${c.img.height} — ${c.caption}`)
+    .join("\n");
+  const prompt = `You are choosing which figure from a research paper would make the best preview image for a public-facing summary card.
+
+Study title: ${study.title}
+Abstract: ${study.abstract ?? "(not available)"}
+Key findings:
+${(study.findings ?? []).map((f) => `- ${f}`).join("\n") || "(not available)"}
+
+Candidate figures extracted from the PDF (each is an image + nearby caption text):
+${list}
+
+Pick the ONE figure that best illustrates the paper's most interesting finding for a general audience. Prefer charts/graphs over tables, and prefer figures whose caption clearly maps to a key finding above. Avoid decorative images, author photos, logos, and methodology diagrams.
+
+Respond with ONLY the index number in brackets, e.g. "[2]". No other text.`;
+
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: "claude-haiku-4-5-20251001",
+        max_tokens: 20,
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    if (!res.ok) {
+      if (debug) console.warn(`Claude pick failed: ${res.status} ${await res.text()}`);
+      return candidates.slice().sort((a, b) => b.area - a.area)[0];
+    }
+    const json = await res.json();
+    const text = json.content?.[0]?.text ?? "";
+    const m = text.match(/\[(\d+)\]/) ?? text.match(/(\d+)/);
+    const idx = m ? Number(m[1]) : NaN;
+    if (Number.isInteger(idx) && idx >= 0 && idx < candidates.length) {
+      if (debug) console.warn(`Claude picked candidate [${idx}]`);
+      return candidates[idx];
+    }
+    if (debug) console.warn(`Claude returned unparseable response: ${text}`);
+  } catch (e) {
+    if (debug) console.warn("Claude pick errored:", e.message);
+  }
+  return candidates.slice().sort((a, b) => b.area - a.area)[0];
 }
 
 // pdfjs image buffer kinds: 1=GRAYSCALE_1BPP, 2=RGB_24BPP, 3=RGBA_32BPP
