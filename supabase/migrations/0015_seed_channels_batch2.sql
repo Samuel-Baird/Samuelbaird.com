@@ -1,0 +1,50 @@
+-- Seed / upsert 37 channels from latter-day-stats-channels.csv (batch 2).
+-- Uses ON CONFLICT so rows that already exist are updated in-place;
+-- the slug-defaulting trigger sets slug = youtube_channel_id for new rows.
+
+insert into public.channels (youtube_channel_id, slug, channel_type, city, state, owned_by, is_active)
+values
+  ('UCdNjexbIS_NKJC4ZRwKf9ag', 'UCdNjexbIS_NKJC4ZRwKf9ag', 'Church',                  null,            null,  'Church',             true),
+  ('UCImHL0SXFoB5AC33-qe6urQ', 'UCImHL0SXFoB5AC33-qe6urQ', 'Church',                  null,            null,  'Church',             true),
+  ('UCiAkukrUIRCwaLaFx_MJq7Q', 'UCiAkukrUIRCwaLaFx_MJq7Q', 'Music',                   null,            null,  'Church',             true),
+  ('UCqrqFLPh4cRM1VomUzG24sQ', 'UCqrqFLPh4cRM1VomUzG24sQ', 'Anti-Church',             null,            'United States', null,   true),
+  ('UCWCpHqxpBcpnXiIiJOYgRYA', 'UCWCpHqxpBcpnXiIiJOYgRYA', 'News',                    null,            null,  'Church',             true),
+  ('UCciPSR2honmSdLAN2PAJujA', 'UCciPSR2honmSdLAN2PAJujA', 'Youth',                   null,            null,  'Church',             true),
+  ('UCzpdgMjpMUunL9ObB6WZxPQ', 'UCzpdgMjpMUunL9ObB6WZxPQ', 'Music',                   null,            null,  'BYU',                true),
+  ('UCSdPpMokMoGCSSNShOecP9w', 'UCSdPpMokMoGCSSNShOecP9w', 'Church',                  null,            null,  'Church',             true),
+  ('UCErjRQAX9ZV_AxuLmh8kfPg', 'UCErjRQAX9ZV_AxuLmh8kfPg', 'Music',                   null,            null,  'BYU',                true),
+  ('UCSsrx8lFpeuBjNIE7FNm2CQ', 'UCSsrx8lFpeuBjNIE7FNm2CQ', 'Religious',               null,            'UT',  'Scripture Central',  true),
+  ('UC1rWz3q1j8w6XLd09V57PLQ', 'UC1rWz3q1j8w6XLd09V57PLQ', 'Religious',               null,            'UT',  'Scripture Central',  true),
+  ('UC-bcS96io6KqnSXJpYICkVQ', 'UC-bcS96io6KqnSXJpYICkVQ', 'TV',                      null,            null,  'BYU',                true),
+  ('UCAAJCQ0FCqRmAEv95SyTfNg', 'UCAAJCQ0FCqRmAEv95SyTfNg', 'General Religious',       null,            null,  null,                 true),
+  ('UCgXbCVJ79-JVyHoBIDhpvEQ', 'UCgXbCVJ79-JVyHoBIDhpvEQ', 'Education',               null,            null,  'BYU',                true),
+  ('UCXS613dlRxDheQoLb2fPCmw', 'UCXS613dlRxDheQoLb2fPCmw', 'Religious',               null,            null,  null,                 true),
+  ('UCDM4cG9T5jvdV3SeHT6ILCw', 'UCDM4cG9T5jvdV3SeHT6ILCw', 'Religious',               null,            null,  null,                 true),
+  ('UCctU7ssWjBx6E3HQ5xV6hDQ', 'UCctU7ssWjBx6E3HQ5xV6hDQ', 'Education',               null,            null,  'BYU',                true),
+  ('UCt9_B1tUt1i-NfaG3lteIEw', 'UCt9_B1tUt1i-NfaG3lteIEw', 'Education',               null,            null,  'BYU',                true),
+  ('UCqcV3DaWnvf2j-Dl1w7nNyA', 'UCqcV3DaWnvf2j-Dl1w7nNyA', 'Children',                null,            null,  null,                 true),
+  ('UCaRTB7h-1p_Rd9qw6HU0tVQ', 'UCaRTB7h-1p_Rd9qw6HU0tVQ', 'Children',                null,            null,  'Church',             true),
+  ('UCm5q_daua2JdizO_fo-wZlw', 'UCm5q_daua2JdizO_fo-wZlw', 'Church',                  null,            null,  'Church',             true),
+  ('UCpumfWNEXE5YbL5QMjg5agA', 'UCpumfWNEXE5YbL5QMjg5agA', 'Religious',               'Cedar Hills',   'UT',  null,                 true),
+  ('UCZO_0YmZvUcAUEFf4lGPb7g', 'UCZO_0YmZvUcAUEFf4lGPb7g', 'Religious',               'Lehi',          'UT',  'Ben Arkell',         true),
+  ('UCnmsAFGrFuGe0obW6tkEY6w', 'UCnmsAFGrFuGe0obW6tkEY6w', 'Apologetics',             null,            null,  'Cardon Ellis',       true),
+  ('UCP7SfUaCqZNYBwM6owHEHOw', 'UCP7SfUaCqZNYBwM6owHEHOw', 'News',                    null,            null,  'Church',             true),
+  ('UCQQAByHVqmp2DGkMk5SsOZw', 'UCQQAByHVqmp2DGkMk5SsOZw', 'Anti-Church',             null,            null,  null,                 false),
+  ('UC1ICXUC92McH31ZuvGNhxBw', 'UC1ICXUC92McH31ZuvGNhxBw', 'Anti-Church',             null,            null,  null,                 true),
+  ('UCrsTCEZc7x2Co0VDU2nAYew', 'UCrsTCEZc7x2Co0VDU2nAYew', 'Religious',               'Independence',  'MO',  'Jared Davies',       false),
+  ('UCbeg4_p5Cb7G2aohrwkJQWw', 'UCbeg4_p5Cb7G2aohrwkJQWw', 'Anti-Church',             null,            null,  null,                 true),
+  ('UCdZ4Rno-FS6uoBN3KBxXyiA', 'UCdZ4Rno-FS6uoBN3KBxXyiA', 'Religious',               'Provo',         'UT',  'John Hilton III',    true),
+  ('UClgWBV5g-y5vVyJ-dp1nGjA', 'UClgWBV5g-y5vVyJ-dp1nGjA', 'Gen. Conf. Video Reposts', null,           null,  null,                 true),
+  ('UCUaTUyVRfQH0MbNmvG9GeTA', 'UCUaTUyVRfQH0MbNmvG9GeTA', 'Children',                null,            null,  null,                 true),
+  ('UC2LBmYIOq6Eu_ZC14i_YkIg', 'UC2LBmYIOq6Eu_ZC14i_YkIg', 'Apologetics',             null,            null,  'More Good Foundation', true),
+  ('UCFNi-bt0oFbPvWvv5UmmAVQ', 'UCFNi-bt0oFbPvWvv5UmmAVQ', 'Politics',                null,            'AZ',  null,                 true),
+  ('UCo-6l1g27GdDb4riutS8I0w', 'UCo-6l1g27GdDb4riutS8I0w', 'Anti-Church',             null,            null,  null,                 true),
+  ('UCbpG_4CUzJD3gUSS6wN8-2w', 'UCbpG_4CUzJD3gUSS6wN8-2w', 'News',                    null,            null,  'Church',             true),
+  ('UCp7-cFBse_-lN03U0QvMZyw', 'UCp7-cFBse_-lN03U0QvMZyw', 'Not LDS',                 null,            null,  'Jeff McCullough',    true)
+on conflict (youtube_channel_id) do update set
+  channel_type = excluded.channel_type,
+  city         = excluded.city,
+  state        = excluded.state,
+  owned_by     = excluded.owned_by,
+  is_active    = excluded.is_active,
+  updated_at   = now();

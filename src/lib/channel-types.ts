@@ -35,8 +35,10 @@ export const TYPE_COLORS: Record<string, TypeColor> = {
   Ancestry: { bg: "bg-amber-100", text: "text-amber-800" },
 
   // Critical / outside
+  "Anti-Church": { bg: "bg-rose-100", text: "text-rose-800" },
   Critical: { bg: "bg-rose-100", text: "text-rose-800" },
   Investigator: { bg: "bg-orange-100", text: "text-orange-800" },
+  Politics: { bg: "bg-orange-100", text: "text-orange-800" },
   "Politics / Investigator": { bg: "bg-orange-100", text: "text-orange-800" },
   "Not LDS": { bg: "bg-stone-200", text: "text-stone-700" },
 
