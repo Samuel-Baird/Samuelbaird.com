@@ -329,6 +329,23 @@ export async function createStudy(formData: FormData) {
     if (uploadError) throw uploadError;
   }
 
+  const previewFile = formData.get("preview_image");
+  const hasPreview = previewFile instanceof File && previewFile.size > 0;
+  let previewImagePath: string | null = null;
+  if (hasPreview) {
+    const ext = ((previewFile as File).name.split(".").pop() ?? "png").toLowerCase();
+    previewImagePath = `${slug}/preview.${ext}`;
+    const { error: previewError } = await supabase.storage
+      .from("studies")
+      .upload(previewImagePath, previewFile as File, {
+        contentType: (previewFile as File).type || "image/png",
+        upsert: true,
+      });
+    if (previewError) throw previewError;
+  }
+  const previewIsAi = formData.get("preview_image_is_ai") === "on";
+  const previewCaption = String(formData.get("preview_image_caption") ?? "").trim() || null;
+
   const yearValue = String(formData.get("year") ?? "").trim();
   const sourceTypeRaw = String(formData.get("source_type") ?? "").trim() || null;
   const base = {
@@ -345,6 +362,10 @@ export async function createStudy(formData: FormData) {
     source_type: sourceTypeRaw,
     category: String(formData.get("category") ?? "").trim() || null,
     pdf_path: pdfPath,
+    preview_image_path: previewImagePath,
+    preview_image_source: previewImagePath ? "manual" : null,
+    preview_image_caption: previewCaption,
+    preview_image_is_ai: previewIsAi,
   };
   const extras = {
     findings: parseLines(formData.get("findings")),
@@ -354,8 +375,10 @@ export async function createStudy(formData: FormData) {
     context_note: String(formData.get("context_note") ?? "").trim() || null,
   };
   let { error } = await supabase.from("studies").insert({ ...base, ...extras });
-  if (error && /findings|limitations|flagged_problematic|flag_reason|context_note/.test(error.message)) {
-    ({ error } = await supabase.from("studies").insert(base));
+  if (error && /findings|limitations|flagged_problematic|flag_reason|context_note|preview_image/.test(error.message)) {
+    const { preview_image_path, preview_image_source, preview_image_caption, preview_image_is_ai, ...baseNoPreview } = base;
+    void preview_image_path; void preview_image_source; void preview_image_caption; void preview_image_is_ai;
+    ({ error } = await supabase.from("studies").insert(baseNoPreview));
   }
   if (error) throw error;
 

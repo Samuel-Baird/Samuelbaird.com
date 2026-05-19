@@ -25,7 +25,9 @@ When the user uploads a study (PDF, link, or pasted text), Claude must **deeply 
 
 4. Write the row directly to Supabase (`studies` table) via the service-role key in `.env.local`. Do not ask for confirmation — per user's standing preference, ship the change.
 
-5. After insert, report the slug and a one-line summary of what was added.
+5. Immediately after insert, run `node scripts/generate-study-preview.mjs <slug>` to populate the preview image. The script tries `og:image` from `external_url` first, then falls back to an AI-rendered findings card. AI-generated previews are auto-labeled in the UI; do not override the label unless you have a real figure from the source — in that case, upload it via the admin form and set the caption to identify which figure it is (e.g. "Figure 2 from the study").
+
+6. After insert + preview, report the slug, the preview source (`url_scrape` / `ai_dataviz`), and a one-line summary of what was added.
 
 ## Examples of when to flag
 

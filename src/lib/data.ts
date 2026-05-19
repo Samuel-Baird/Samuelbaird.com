@@ -555,7 +555,11 @@ export async function getSearchIndex(): Promise<SearchItem[]> {
 }
 
 export function pdfPublicUrl(pdfPath: string | null): string | null {
-  if (!pdfPath) return null;
+  return storagePublicUrl(pdfPath);
+}
+
+export function storagePublicUrl(path: string | null): string | null {
+  if (!path) return null;
   const sb = publicClient();
-  return sb.storage.from("studies").getPublicUrl(pdfPath).data.publicUrl;
+  return sb.storage.from("studies").getPublicUrl(path).data.publicUrl;
 }

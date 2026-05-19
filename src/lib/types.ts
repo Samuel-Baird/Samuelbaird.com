@@ -77,6 +77,10 @@ export type Study = {
   source_type: string | null;
   category: string | null;
   secondary_url: string | null;
+  preview_image_path: string | null;
+  preview_image_source: string | null;
+  preview_image_caption: string | null;
+  preview_image_is_ai: boolean;
   created_at: string;
   updated_at: string;
 };

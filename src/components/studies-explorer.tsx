@@ -8,6 +8,13 @@ import { BookmarkButton } from "@/components/bookmark-button";
 import { UpvoteButton } from "@/components/upvote-button";
 import type { Study } from "@/lib/types";
 
+function previewUrl(path: string | null): string | null {
+  if (!path) return null;
+  const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!base) return null;
+  return `${base}/storage/v1/object/public/studies/${path}`;
+}
+
 type Props = {
   studies: Study[];
   tags: { value: string; count: number }[];
@@ -359,6 +366,7 @@ function StudyCard({
   signedIn: boolean;
 }) {
   const sourceType = s.source_type ? SOURCE_TYPE_LABELS[s.source_type] : null;
+  const imgUrl = previewUrl(s.preview_image_path);
   return (
     <li className="relative">
       <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
@@ -381,12 +389,29 @@ function StudyCard({
       <Link
         href={`/studies/${s.slug}`}
         className={
-          "group block h-full rounded-2xl border bg-white p-6 pr-28 transition-colors " +
+          "group block h-full overflow-hidden rounded-2xl border bg-white transition-colors " +
           (s.flagged_problematic
             ? "border-[color:var(--border)] hover:border-red-500"
             : "border-[color:var(--border)] hover:border-[color:var(--accent)]")
         }
       >
+        {imgUrl && (
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-[color:var(--muted-soft)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgUrl}
+              alt={s.preview_image_caption ?? ""}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            {s.preview_image_is_ai && (
+              <span className="absolute bottom-2 left-2 rounded-full bg-black/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white">
+                AI · not from study
+              </span>
+            )}
+          </div>
+        )}
+        <div className="p-6 pr-28">
         {s.flagged_problematic && (
           <span
             aria-label="Flagged for methodological concerns"
@@ -429,6 +454,7 @@ function StudyCard({
           </p>
         )}
         <p className="mt-5 text-xs text-[color:var(--accent)]">Read study →</p>
+        </div>
       </Link>
     </li>
   );
