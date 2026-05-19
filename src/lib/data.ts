@@ -40,12 +40,13 @@ function rowToChannelWithStats(row: ChannelFullRow): ChannelWithStats {
   return { ...(channel as Channel), latest };
 }
 
-export async function getChannelsWithLatest(): Promise<ChannelWithStats[]> {
+export async function getChannelsWithLatest(
+  { includeInactive = false }: { includeInactive?: boolean } = {},
+): Promise<ChannelWithStats[]> {
   const sb = publicClient();
-  const { data, error } = await sb
-    .from("channel_full")
-    .select("*")
-    .eq("is_active", true);
+  let query = sb.from("channel_full").select("*");
+  if (!includeInactive) query = query.eq("is_active", true);
+  const { data, error } = await query;
   if (error) throw error;
   return (data as ChannelFullRow[]).map(rowToChannelWithStats);
 }

@@ -32,10 +32,19 @@ export default function MethodologyPage() {
 
       <Section title="Channel selection">
         <p>
-          Channels are manually curated by the site editor based on relevance to
-          the Latter-day Saint community. A channel must primarily discuss
-          Latter-day Saint doctrine, culture, history, or criticism to be
-          included.
+          Channels are manually curated by the site editor based on relevance
+          to the Latter-day Saint community. To be included, a channel must
+          discuss or revolve around Latter-day Saint doctrine, culture, music,
+          history, or criticism. Channels that talk significantly about the
+          Church even if it isn&apos;t their main focus — for example,
+          broader Christian apologetics channels that regularly engage with
+          Latter-day Saint topics — may also be included.
+        </p>
+        <p className="mt-3">
+          Channels run by members whose content has nothing to do with the
+          Church are <strong>not</strong> included — membership alone is not
+          the criterion. The content itself has to engage with Latter-day
+          Saint topics in a meaningful way.
         </p>
         <p className="mt-3">
           Inclusion does not constitute endorsement. Channels representing a

@@ -45,10 +45,11 @@ export default async function AboutPage() {
           I&apos;m <strong>Samuel Baird</strong> — a Latter-day Saint and the
           person behind this site. I run a small YouTube channel,{" "}
           <em>I think therefore I Sam</em>, where I explore faith, history, and
-          the questions members and seekers actually ask. Latter-day Stats grew
-          out of wanting a clearer picture of the LDS conversation happening
-          online and in the literature, and a place to point people who want
-          something more concrete than vibes.
+          the questions members and seekers actually ask. I&apos;m interested
+          in learning more about my own faith tradition, as well as comparing
+          and contrasting other perspectives. As someone interested in the
+          data, I wanted to make this site for my own interest as well as to
+          share with others.
         </p>
 
         {myChannel && (

@@ -15,7 +15,7 @@ export const revalidate = 600; // 10 minutes
 
 export default async function ChannelsPage() {
   const [channels, auth] = await Promise.all([
-    getChannelsWithLatest(),
+    getChannelsWithLatest({ includeInactive: true }),
     getCurrentUser(),
   ]);
   const bookmarks = auth
@@ -29,7 +29,7 @@ export default async function ChannelsPage() {
     .at(-1);
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+    <div className="max-w-7xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
         Channels
       </p>
@@ -37,9 +37,10 @@ export default async function ChannelsPage() {
         LDS YouTube creators
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-        {channels.length} channels covering Latter-day Saint apologetics,
-        scholarship, and faith-promoting discussion — searchable and sortable
-        by subscribers, views, upload cadence, and channel age.
+        {channels.length} channels covering Latter-day Saint related content —
+        apologetics, scholarship, faith-promoting discussion, and critical
+        content — searchable and sortable by subscribers, views, upload
+        cadence, and channel age.
       </p>
 
       <div className="mt-5">

@@ -61,6 +61,17 @@ function TypePill({ type }: { type: string | null }) {
   );
 }
 
+function InactivePill() {
+  return (
+    <span
+      title="This channel has been flagged as inactive for not posting for a long period of time."
+      className="inline-flex cursor-help rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)] ring-1 ring-[color:var(--border)]"
+    >
+      Inactive
+    </span>
+  );
+}
+
 function SortHeader({
   label,
   sortKey,
@@ -273,12 +284,15 @@ export function ChannelsTable({
                   />
                 </td>
                 <td className="px-5 py-3.5">
-                  <Link
-                    href={`/channels/${c.slug}`}
-                    className="font-medium text-[color:var(--foreground)] hover:text-[color:var(--accent)]"
-                  >
-                    {c.name}
-                  </Link>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Link
+                      href={`/channels/${c.slug}`}
+                      className="font-medium text-[color:var(--foreground)] hover:text-[color:var(--accent)]"
+                    >
+                      {c.name}
+                    </Link>
+                    {!c.is_active && <InactivePill />}
+                  </div>
                 </td>
                 <td className="px-3 py-3.5">
                   <TypePill type={c.channel_type} />
@@ -333,9 +347,10 @@ export function ChannelsTable({
               className="block min-h-[44px]"
               aria-label={`View ${c.name}`}
             >
-              {c.channel_type && (
-                <div className="mb-2">
-                  <TypePill type={c.channel_type} />
+              {(c.channel_type || !c.is_active) && (
+                <div className="mb-2 flex flex-wrap gap-2">
+                  {c.channel_type && <TypePill type={c.channel_type} />}
+                  {!c.is_active && <InactivePill />}
                 </div>
               )}
               <div className="flex items-start justify-between gap-3">
