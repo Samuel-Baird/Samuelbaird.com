@@ -419,6 +419,46 @@ export async function getSiteStats(): Promise<SiteStats | null> {
   return (data as SiteStats) ?? null;
 }
 
+export type SearchItem =
+  | { kind: "channel"; slug: string; name: string; sub: string | null }
+  | { kind: "study"; slug: string; name: string; sub: string | null }
+  | { kind: "tag"; slug: string; name: string; sub: string | null };
+
+export async function getSearchIndex(): Promise<SearchItem[]> {
+  const sb = publicClient();
+  const [channelsRes, studiesRes, tagsRes] = await Promise.all([
+    sb.from("channels").select("slug, name, channel_type").eq("is_active", true),
+    sb.from("studies").select("slug, title, year, authors"),
+    getAllStudyTags(),
+  ]);
+  if (channelsRes.error) throw channelsRes.error;
+  if (studiesRes.error) throw studiesRes.error;
+
+  const channels: SearchItem[] = (channelsRes.data ?? []).map(
+    (c: { slug: string; name: string; channel_type: string | null }) => ({
+      kind: "channel" as const,
+      slug: c.slug,
+      name: c.name,
+      sub: c.channel_type,
+    }),
+  );
+  const studies: SearchItem[] = (studiesRes.data ?? []).map(
+    (s: { slug: string; title: string; year: number | null; authors: string[] | null }) => ({
+      kind: "study" as const,
+      slug: s.slug,
+      name: s.title,
+      sub: [s.year, (s.authors ?? [])[0]].filter(Boolean).join(" · ") || null,
+    }),
+  );
+  const tags: SearchItem[] = tagsRes.map((t) => ({
+    kind: "tag" as const,
+    slug: t.value,
+    name: t.value,
+    sub: `${t.count} ${t.count === 1 ? "study" : "studies"}`,
+  }));
+  return [...channels, ...studies, ...tags];
+}
+
 export function pdfPublicUrl(pdfPath: string | null): string | null {
   if (!pdfPath) return null;
   const sb = publicClient();

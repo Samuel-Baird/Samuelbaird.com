@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChannelPicker } from "@/components/channel-picker";
+import { FreshnessBadge } from "@/components/freshness-badge";
 import {
   ComparisonChart,
   type ComparisonSeries,
@@ -116,6 +117,7 @@ export default async function ComparePage({
                 <th className="px-3 py-3 text-right font-medium">Subscribers</th>
                 <th className="px-3 py-3 text-right font-medium">Total views</th>
                 <th className="px-3 py-3 text-right font-medium">Videos</th>
+                <th className="px-3 py-3 text-right font-medium">Updated</th>
               </tr>
             </thead>
             <tbody>
@@ -147,6 +149,9 @@ export default async function ComparePage({
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums text-[color:var(--muted)]">
                     {fmtNumber(r.channel.latest?.video_count)}
+                  </td>
+                  <td className="px-3 py-3 text-right">
+                    <FreshnessBadge iso={r.channel.latest?.captured_at} />
                   </td>
                 </tr>
               ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { FreshnessBadge } from "@/components/freshness-badge";
 import { GrowthChart } from "@/components/growth-chart";
 import { getCurrentUser } from "@/lib/auth";
 import { colorsForType } from "@/lib/channel-types";
@@ -103,18 +104,19 @@ export default async function ChannelDetailPage({
         ← All channels
       </Link>
 
-      {channel.channel_type && (() => {
-        const { bg, text } = colorsForType(channel.channel_type);
-        return (
-          <div className="mt-6 flex flex-wrap items-center gap-2">
+      <div className="mt-6 flex flex-wrap items-center gap-2">
+        {channel.channel_type && (() => {
+          const { bg, text } = colorsForType(channel.channel_type);
+          return (
             <span
               className={`rounded-full ${bg} ${text} px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider`}
             >
               {channel.channel_type}
             </span>
-          </div>
-        );
-      })()}
+          );
+        })()}
+        <FreshnessBadge iso={yt?.captured_at} />
+      </div>
 
       <div className="mt-6 flex items-center gap-5">
         {channel.thumbnail_url ? (
@@ -262,7 +264,6 @@ export default async function ChannelDetailPage({
       </div>
 
       <p className="mt-6 text-xs text-[color:var(--muted)]">
-        Last refreshed: {fmtDate(yt?.captured_at) ?? "—"}.{" "}
         <Link
           href={`/contact?category=correction&ref=${encodeURIComponent(
             `channel:${channel.slug}`,
@@ -271,7 +272,6 @@ export default async function ChannelDetailPage({
         >
           Report an error
         </Link>
-        .
       </p>
     </div>
   );

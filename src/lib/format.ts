@@ -28,6 +28,25 @@ export function fmtAvgViews(
   return fmtCompact(Math.round(views / videos));
 }
 
+export function fmtRelative(
+  iso: string | null | undefined,
+): { text: string; fresh: boolean } {
+  if (!iso) return { text: "Unknown", fresh: false };
+  const t = new Date(iso).getTime();
+  if (isNaN(t)) return { text: "Unknown", fresh: false };
+  const diff = Date.now() - t;
+  const m = Math.floor(diff / 60_000);
+  const h = Math.floor(diff / 3_600_000);
+  const d = Math.floor(diff / 86_400_000);
+  const fresh = d < 7;
+  let text: string;
+  if (m < 60) text = `${Math.max(1, m)}m ago`;
+  else if (h < 24) text = `${h}h ago`;
+  else if (d < 30) text = `${d}d ago`;
+  else text = fmtDate(iso);
+  return { text, fresh };
+}
+
 export function fmtDate(iso: string | null | undefined): string {
   if (!iso) return "—";
   const d = new Date(iso);

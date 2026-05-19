@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { AuthMenu, type AuthMenuUser } from "@/components/auth-menu";
+import { CommandPaletteHost } from "@/components/command-palette-host";
 import { SiteNavClient, type SiteNavLink } from "@/components/site-nav-client";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
 
@@ -40,6 +42,9 @@ export async function SiteNav() {
 
         <div className="flex items-center gap-3">
           <SiteNavClient links={links} user={user} signOut={signOutAction} />
+          <Suspense fallback={null}>
+            <CommandPaletteHost />
+          </Suspense>
           <AuthMenu user={user} signOut={signOutAction} />
         </div>
       </div>

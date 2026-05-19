@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChannelsExplorer } from "@/components/channels-explorer";
+import { FreshnessBadge } from "@/components/freshness-badge";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { getBookmarkSetForUser, getChannelsWithLatest } from "@/lib/data";
@@ -21,6 +22,12 @@ export default async function ChannelsPage() {
     ? await getBookmarkSetForUser(auth.user.id)
     : { channels: new Set<string>(), studies: new Set<string>() };
 
+  const latestCapture = channels
+    .map((c) => c.latest?.captured_at)
+    .filter((s): s is string => Boolean(s))
+    .sort()
+    .at(-1);
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
@@ -34,6 +41,10 @@ export default async function ChannelsPage() {
         scholarship, and faith-promoting discussion — searchable and sortable
         by subscribers, views, upload cadence, and channel age.
       </p>
+
+      <div className="mt-5">
+        <FreshnessBadge iso={latestCapture} size="md" prefix="Stats refreshed" />
+      </div>
 
       <div className="mt-6">
         <Link
