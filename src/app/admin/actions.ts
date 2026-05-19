@@ -65,6 +65,42 @@ export async function setChannelFeatured(id: string, value: boolean) {
   revalidatePath("/");
 }
 
+function normalizeEmail(value: FormDataEntryValue | null) {
+  return String(value ?? "").trim().toLowerCase();
+}
+
+export async function upsertPremiumUser(formData: FormData) {
+  const auth = await requireAdmin();
+  const email = normalizeEmail(formData.get("email"));
+  const name = String(formData.get("name") ?? "").trim() || null;
+  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    throw new Error("Enter a valid email address.");
+  }
+
+  const { error } = await createSupabaseServiceClient()
+    .from("premium_users")
+    .upsert(
+      {
+        email,
+        name,
+        created_by: auth.user.id,
+      },
+      { onConflict: "email" },
+    );
+  if (error) throw error;
+  revalidatePath("/admin/premium");
+}
+
+export async function deletePremiumUser(id: string) {
+  await requireAdmin();
+  const { error } = await createSupabaseServiceClient()
+    .from("premium_users")
+    .delete()
+    .eq("id", id);
+  if (error) throw error;
+  revalidatePath("/admin/premium");
+}
+
 export async function setChannelActive(id: string, value: boolean) {
   await requireAdmin();
   const { error } = await createSupabaseServiceClient()

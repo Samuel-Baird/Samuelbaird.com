@@ -554,6 +554,44 @@ export async function getSearchIndex(): Promise<SearchItem[]> {
   return [...channels, ...studies, ...tags];
 }
 
+export type StudyStats = {
+  total: number;
+  findings: number;
+  topics: number;
+  yearMin: number | null;
+  yearMax: number | null;
+  flagged: number;
+};
+
+export async function getStudyStats(): Promise<StudyStats> {
+  const sb = publicClient();
+  const { data, error } = await sb
+    .from("studies")
+    .select("year, tags, findings, flagged_problematic");
+  if (error) throw error;
+  const rows = (data ?? []) as {
+    year: number | null;
+    tags: string[] | null;
+    findings: string[] | null;
+    flagged_problematic: boolean | null;
+  }[];
+  const topics = new Set<string>();
+  let findings = 0;
+  let yearMin: number | null = null;
+  let yearMax: number | null = null;
+  let flagged = 0;
+  for (const r of rows) {
+    for (const t of r.tags ?? []) if (t?.trim()) topics.add(t.trim());
+    findings += (r.findings ?? []).length;
+    if (typeof r.year === "number") {
+      if (yearMin === null || r.year < yearMin) yearMin = r.year;
+      if (yearMax === null || r.year > yearMax) yearMax = r.year;
+    }
+    if (r.flagged_problematic) flagged++;
+  }
+  return { total: rows.length, findings, topics: topics.size, yearMin, yearMax, flagged };
+}
+
 export function pdfPublicUrl(pdfPath: string | null): string | null {
   return storagePublicUrl(pdfPath);
 }

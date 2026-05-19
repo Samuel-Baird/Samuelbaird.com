@@ -6,7 +6,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChannelsFilterSidebar, type FilterGroup } from "@/components/channels-filter-sidebar";
 import { ChannelsTable } from "@/components/channels-table";
 import { ExportCsvButton } from "@/components/export-csv-button";
-import { fmtAvgViews } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
 
 type Props = {
@@ -160,6 +159,20 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
   );
 
   const activeFilterCount = activeFilters.length;
+  const exportHref = useMemo(() => {
+    const params = new URLSearchParams();
+    for (const type of [...selectedTypes].sort((a, b) => a.localeCompare(b))) {
+      params.append("type", type);
+    }
+    for (const country of [...selectedCountries].sort((a, b) => a.localeCompare(b))) {
+      params.append("country", country);
+    }
+    for (const language of [...selectedLanguages].sort((a, b) => a.localeCompare(b))) {
+      params.append("language", language);
+    }
+    const query = params.toString();
+    return `/api/exports/channels.csv${query ? `?${query}` : ""}`;
+  }, [selectedCountries, selectedLanguages, selectedTypes]);
 
   function setGroupSelection(key: FilterKey, next: Set<string>) {
     if (key === "type") setSelectedTypes(next);
@@ -304,45 +317,9 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
 
           <div className="mb-4 flex justify-end">
             <ExportCsvButton
-              rows={filteredChannels}
-              filename="latter-day-stats-channels.csv"
-              columns={[
-                { header: "Name", value: (c) => c.name },
-                { header: "Type", value: (c) => c.channel_type ?? "" },
-                {
-                  header: "Country",
-                  value: (c) => c.country_manual ?? c.country ?? "",
-                },
-                {
-                  header: "Language",
-                  value: (c) => c.language_manual ?? c.language ?? "",
-                },
-                {
-                  header: "Subscribers",
-                  value: (c) => c.latest?.subscribers ?? "",
-                },
-                {
-                  header: "Total views",
-                  value: (c) => c.latest?.total_views ?? "",
-                },
-                { header: "Videos", value: (c) => c.latest?.video_count ?? "" },
-                {
-                  header: "Avg views/video",
-                  value: (c) =>
-                    fmtAvgViews(c.latest?.total_views, c.latest?.video_count),
-                },
-                {
-                  header: "Channel created",
-                  value: (c) => c.created_at_youtube ?? "",
-                },
-                {
-                  header: "YouTube URL",
-                  value: (c) =>
-                    c.handle
-                      ? `https://www.youtube.com/${c.handle.startsWith("@") ? c.handle : `@${c.handle}`}`
-                      : `https://www.youtube.com/channel/${c.youtube_channel_id}`,
-                },
-              ]}
+              href={exportHref}
+              rowCount={filteredChannels.length}
+              signedIn={signedIn}
             />
           </div>
 

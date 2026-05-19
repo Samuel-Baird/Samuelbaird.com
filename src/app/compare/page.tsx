@@ -12,6 +12,7 @@ import {
   getChannelsWithLatest,
 } from "@/lib/data";
 import { fmtCompact, fmtNumber } from "@/lib/format";
+import { requireCapability } from "@/lib/permissions";
 
 export const metadata: Metadata = {
   title: "Compare channels",
@@ -41,6 +42,12 @@ export default async function ComparePage({
   searchParams: Promise<SearchParams>;
 }) {
   const { slugs: slugsParam } = await searchParams;
+  const nextParams = new URLSearchParams();
+  if (slugsParam) nextParams.set("slugs", slugsParam);
+  await requireCapability(
+    "compare_channels",
+    `/compare${nextParams.toString() ? `?${nextParams}` : ""}`,
+  );
   const slugs = parseSlugs(slugsParam);
 
   const allChannels = await getChannelsWithLatest();

@@ -5,6 +5,7 @@ import {
   getFeaturedStudies,
   getRisersAndFallers,
   getSiteStats,
+  getStudyStats,
 } from "@/lib/data";
 import { RisersFallers } from "@/components/risers-fallers";
 import {
@@ -18,13 +19,15 @@ import type { ChannelWithStats } from "@/lib/types";
 export const revalidate = 600;
 
 export default async function Home() {
-  const [stats, channels, featuredMix, studies, movers] = await Promise.all([
-    getSiteStats(),
-    getChannelsWithLatest(),
-    getFeaturedChannelsMix(6),
-    getFeaturedStudies(2),
-    getRisersAndFallers(30, 5),
-  ]);
+  const [stats, channels, featuredMix, studies, movers, studyStats] =
+    await Promise.all([
+      getSiteStats(),
+      getChannelsWithLatest(),
+      getFeaturedChannelsMix(6),
+      getFeaturedStudies(2),
+      getRisersAndFallers(30, 5),
+      getStudyStats(),
+    ]);
   const topStatSlides = buildTopStatSlides(channels);
 
   return (
@@ -76,6 +79,40 @@ export default async function Home() {
             label="Total videos"
             value={fmtCompact(stats.total_videos)}
           />
+        </section>
+      )}
+
+      {studyStats.total > 0 && (
+        <section className="mt-5">
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+              Research library
+            </h2>
+            <Link
+              href="/studies"
+              className="text-xs font-medium text-[color:var(--accent)] hover:underline"
+            >
+              Browse studies →
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+            <MetricTile
+              label="Studies tracked"
+              value={fmtNumber(studyStats.total)}
+            />
+            <MetricTile
+              label="Findings catalogued"
+              value={fmtNumber(studyStats.findings)}
+            />
+            <MetricTile
+              label="Topics covered"
+              value={fmtNumber(studyStats.topics)}
+            />
+            <MetricTile
+              label="Years spanned"
+              value={formatYearSpan(studyStats.yearMin, studyStats.yearMax)}
+            />
+          </div>
         </section>
       )}
 
@@ -206,6 +243,12 @@ function MetricTile({ label, value }: { label: string; value: string }) {
       </div>
     </div>
   );
+}
+
+function formatYearSpan(yearMin: number | null, yearMax: number | null) {
+  if (!yearMin || !yearMax) return "—";
+  if (yearMin === yearMax) return String(yearMin);
+  return `${yearMin}–${yearMax}`;
 }
 
 function buildTopStatSlides(channels: ChannelWithStats[]): TopStatSlide[] {
