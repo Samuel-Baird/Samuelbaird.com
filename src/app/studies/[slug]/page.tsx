@@ -3,8 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { CitationCopy } from "@/components/citation-copy";
+import { StudyProgressPanel } from "@/components/study-progress-panel";
 import { getCurrentUser } from "@/lib/auth";
-import { getBookmarkSetForUser, getStudyBySlug, pdfPublicUrl } from "@/lib/data";
+import {
+  getBookmarkSetForUser,
+  getRelatedStudies,
+  getStudyBySlug,
+  getStudyProgressForUser,
+  pdfPublicUrl,
+} from "@/lib/data";
 
 export const revalidate = 600;
 
@@ -35,7 +42,11 @@ export default async function StudyDetailPage({
     getCurrentUser(),
   ]);
   if (!study) notFound();
-  const bookmarks = auth ? await getBookmarkSetForUser(auth.user.id) : null;
+  const [bookmarks, progress, related] = await Promise.all([
+    auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
+    auth ? getStudyProgressForUser(auth.user.id, study.id) : Promise.resolve(null),
+    getRelatedStudies(study.id, study.tags ?? [], 4),
+  ]);
 
   const pdfUrl = pdfPublicUrl(study.pdf_path);
 
@@ -231,6 +242,56 @@ export default async function StudyDetailPage({
             {study.external_url}
           </a>
         </p>
+      )}
+
+      <StudyProgressPanel
+        studyId={study.id}
+        signedIn={Boolean(auth)}
+        initialStatus={progress?.status ?? "unread"}
+        initialNotes={progress?.notes ?? ""}
+      />
+
+      {related.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+            Related studies
+          </h2>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            {related.map((r) => (
+              <li key={r.id}>
+                <Link
+                  href={`/studies/${r.slug}`}
+                  className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
+                >
+                  <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
+                    {r.year && (
+                      <span className="rounded-full bg-[color:var(--muted-soft)] px-2 py-0.5 tabular-nums">
+                        {r.year}
+                      </span>
+                    )}
+                    {(r.tags ?? []).slice(0, 2).map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-[color:var(--accent)]"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="serif mt-2 text-base font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">
+                    {r.title}
+                  </p>
+                  {r.authors.length > 0 && (
+                    <p className="mt-1.5 text-xs text-[color:var(--muted)]">
+                      {r.authors.slice(0, 2).join(", ")}
+                      {r.authors.length > 2 ? " et al." : ""}
+                    </p>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <CitationCopy

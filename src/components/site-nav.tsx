@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { AuthMenu, type AuthMenuUser } from "@/components/auth-menu";
 import { CommandPaletteHost } from "@/components/command-palette-host";
 import { SiteNavClient, type SiteNavLink } from "@/components/site-nav-client";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
 
 const links: SiteNavLink[] = [
@@ -45,6 +46,7 @@ export async function SiteNav() {
           <Suspense fallback={null}>
             <CommandPaletteHost />
           </Suspense>
+          <ThemeToggle />
           <AuthMenu user={user} signOut={signOutAction} />
         </div>
       </div>

@@ -37,7 +37,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${fraunces.variable} h-full`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          // Set theme before paint to avoid flash. Safe inline boot script.
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Suspense fallback={null}>
           <AuthPromptProvider>

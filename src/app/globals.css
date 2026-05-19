@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #fbfaf7;
   --foreground: #1a1a1a;
@@ -9,6 +11,25 @@
   --accent: #1f4f7a;
   --accent-soft: #e8eff6;
 }
+
+html.dark {
+  --background: #0f1115;
+  --foreground: #e9e7e2;
+  --muted: #9a9a9a;
+  --muted-soft: #1d2027;
+  --border: #2a2e36;
+  --accent: #7fb0d8;
+  --accent-soft: #1a2733;
+  color-scheme: dark;
+}
+
+/* Card surfaces use bg-white in light mode; remap in dark to a dark surface. */
+html.dark .bg-white {
+  background-color: #161a20;
+}
+
+/* Soft accent backgrounds with opacity modifiers like bg-[color:var(--accent-soft)]/30
+   already adapt because the var changes. Same for borders. */
 
 @theme inline {
   --color-background: var(--background);

@@ -419,6 +419,56 @@ export async function getSiteStats(): Promise<SiteStats | null> {
   return (data as SiteStats) ?? null;
 }
 
+export async function getStudyProgressForUser(
+  userId: string,
+  studyId: string,
+): Promise<{ status: "read" | "unread"; notes: string } | null> {
+  const sb = await createSupabaseServerClient();
+  const { data, error } = await sb
+    .from("study_progress")
+    .select("status, notes")
+    .eq("user_id", userId)
+    .eq("study_id", studyId)
+    .maybeSingle();
+  if (error) throw error;
+  if (!data) return null;
+  return {
+    status: (data.status as "read" | "unread") ?? "unread",
+    notes: (data.notes as string) ?? "",
+  };
+}
+
+export async function getRelatedStudies(
+  studyId: string,
+  tags: string[],
+  limit = 4,
+): Promise<Study[]> {
+  if (!tags || tags.length === 0) return [];
+  const sb = publicClient();
+  const { data, error } = await sb
+    .from("studies")
+    .select("*")
+    .neq("id", studyId)
+    .overlaps("tags", tags);
+  if (error) throw error;
+  const others = (data ?? []) as Study[];
+  const a = new Set(tags);
+  const scored = others
+    .map((s) => {
+      const b = new Set(s.tags ?? []);
+      let overlap = 0;
+      for (const t of b) if (a.has(t)) overlap++;
+      const union = new Set([...a, ...b]).size;
+      const jaccard = union === 0 ? 0 : overlap / union;
+      return { study: s, score: jaccard, year: s.year ?? 0 };
+    })
+    .filter((s) => s.score > 0)
+    .sort((x, y) => y.score - x.score || y.year - x.year)
+    .slice(0, limit)
+    .map((s) => s.study);
+  return scored;
+}
+
 export type SearchItem =
   | { kind: "channel"; slug: string; name: string; sub: string | null }
   | { kind: "study"; slug: string; name: string; sub: string | null }
