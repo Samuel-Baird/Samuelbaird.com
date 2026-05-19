@@ -38,7 +38,8 @@ function isInformedSaints(c: {
   const blob = [c.facebook_url, c.instagram_url, c.tiktok_url, c.x_url, c.name]
     .filter(Boolean)
     .join(" ")
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/\s+/g, "");
   return blob.includes("informedsaints");
 }
 
