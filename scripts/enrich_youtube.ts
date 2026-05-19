@@ -58,10 +58,12 @@ function chunk<T>(arr: T[], size: number): T[][] {
 async function main() {
   const ref = process.env.SUPABASE_PROJECT_REF!;
   const password = process.env.SUPABASE_DB_PASSWORD!;
+  const host =
+    process.env.SUPABASE_POOLER_HOST ?? "aws-1-us-east-1.pooler.supabase.com";
   const pg = new Client({
-    connectionString: `postgresql://postgres:${encodeURIComponent(
+    connectionString: `postgresql://postgres.${ref}:${encodeURIComponent(
       password,
-    )}@db.${ref}.supabase.co:5432/postgres`,
+    )}@${host}:5432/postgres`,
     ssl: { rejectUnauthorized: false },
   });
   await pg.connect();
