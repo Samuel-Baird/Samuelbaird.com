@@ -203,31 +203,6 @@ export default async function ChannelDetailPage({
           {channel.youtube_channel_id}
         </code>
       </p>
-      <p className="mt-2 text-sm text-[color:var(--muted)]">
-        LDS affiliation source:{" "}
-        {channel.lds_affiliation_source &&
-        isHttpUrl(channel.lds_affiliation_source) ? (
-          <a
-            href={channel.lds_affiliation_source}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-          >
-            {channel.lds_affiliation_source}
-          </a>
-        ) : channel.lds_affiliation_source ? (
-          <span className="text-[color:var(--foreground)]">
-            {channel.lds_affiliation_source}
-          </span>
-        ) : ["Religious", "Critical", "Apologetics"].includes(
-            channel.channel_type ?? "",
-          ) ? (
-          <span className="text-[color:var(--foreground)]">channel content</span>
-        ) : (
-          <span className="font-medium text-red-700">missing</span>
-        )}
-      </p>
-
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={ytLink}

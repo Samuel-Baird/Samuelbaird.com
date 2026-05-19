@@ -213,7 +213,7 @@ export function ChannelsTable({
         <table className="w-full border-separate border-spacing-0 text-sm">
           <thead className="sticky top-16 z-10 bg-[color:var(--muted-soft)] text-left text-xs uppercase tracking-wider text-[color:var(--muted)] shadow-[0_1px_0_0_var(--border)]">
             <tr>
-              <th className="w-12 px-3 py-3" />
+              <th className="w-12 px-3 py-3 text-right text-[color:var(--muted)]">#</th>
               <SortHeader
                 label="Channel"
                 sortKey="name"
@@ -273,19 +273,13 @@ export function ChannelsTable({
             </tr>
           </thead>
           <tbody>
-            {filtered.map((c) => (
+            {filtered.map((c, index) => (
               <tr
                 key={c.id}
                 className="border-t border-[color:var(--border)] hover:bg-[color:var(--muted-soft)]/40"
               >
-                <td className="px-3 py-3.5">
-                  <BookmarkButton
-                    targetType="channel"
-                    targetId={c.id}
-                    initial={bookmarkedSet.has(c.id)}
-                    signedIn={signedIn}
-                    size="sm"
-                  />
+                <td className="px-3 py-3.5 text-right tabular-nums text-[color:var(--muted)]">
+                  {index + 1}
                 </td>
                 <td className="px-5 py-3.5">
                   <div className="flex flex-wrap items-center gap-2">
@@ -317,12 +311,21 @@ export function ChannelsTable({
                   {fmtYearsSince(c.created_at_youtube)}
                 </td>
                 <td className="px-5 py-3.5 text-right">
-                  <Link
-                    href={`/channels/${c.slug}`}
-                    className="text-xs text-[color:var(--accent)] hover:underline"
-                  >
-                    View →
-                  </Link>
+                  <div className="inline-flex items-center gap-3">
+                    <Link
+                      href={`/channels/${c.slug}`}
+                      className="text-xs text-[color:var(--accent)] hover:underline"
+                    >
+                      View →
+                    </Link>
+                    <BookmarkButton
+                      targetType="channel"
+                      targetId={c.id}
+                      initial={bookmarkedSet.has(c.id)}
+                      signedIn={signedIn}
+                      size="sm"
+                    />
+                  </div>
                 </td>
               </tr>
             ))}
