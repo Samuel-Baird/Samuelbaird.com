@@ -24,6 +24,7 @@ export const TYPE_COLORS: Record<string, TypeColor> = {
   Education: { bg: "bg-teal-100", text: "text-teal-800" },
   Scripture: { bg: "bg-cyan-100", text: "text-cyan-800" },
   History: { bg: "bg-stone-200", text: "text-stone-700" },
+  "Church History": { bg: "bg-stone-200", text: "text-stone-700" },
   Podcast: { bg: "bg-violet-100", text: "text-violet-800" },
   "Come Follow Me": { bg: "bg-cyan-100", text: "text-cyan-800" },
   "Official Church": { bg: "bg-indigo-100", text: "text-indigo-800" },
