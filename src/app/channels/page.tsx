@@ -76,6 +76,10 @@ export default async function ChannelsPage() {
           </a>{" "}
           with the channel name and a link, and I&apos;ll review it for the list.
         </p>
+        <p className="mt-3 text-xs leading-relaxed text-[color:var(--muted)]">
+          Channels with fewer than 1,000 subscribers aren&apos;t tracked — each
+          channel adds to the daily YouTube API quota cost.
+        </p>
       </aside>
     </div>
   );

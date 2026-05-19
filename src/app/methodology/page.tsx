@@ -54,6 +54,12 @@ export default function MethodologyPage() {
           the source&apos;s perspective.
         </p>
         <p className="mt-3">
+          Channels with fewer than 1,000 YouTube subscribers are not tracked.
+          Each channel adds to the daily YouTube Data API quota cost, so the
+          catalog is limited to channels with enough audience for the
+          statistics to be meaningful.
+        </p>
+        <p className="mt-3">
           To suggest a channel,{" "}
           <Link href="/contact?category=channel_suggestion" className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline">
             use the contact form
