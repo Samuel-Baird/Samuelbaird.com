@@ -218,6 +218,7 @@ export type ChannelMover = ChannelWithStats & {
   baseline_captured_at: string;
   delta_subscribers: number;
   delta_pct: number;
+  history: { captured_at: string; subscribers: number }[];
 };
 
 export async function getRisersAndFallers(
@@ -238,10 +239,14 @@ export async function getRisersAndFallers(
 
   type Row = { channel_id: string; captured_at: string; subscribers: number };
   const baselineByChannel = new Map<string, Row>();
+  const historyByChannel = new Map<string, { captured_at: string; subscribers: number }[]>();
   for (const r of (rows ?? []) as Row[]) {
     if (!baselineByChannel.has(r.channel_id)) {
       baselineByChannel.set(r.channel_id, r);
     }
+    const arr = historyByChannel.get(r.channel_id) ?? [];
+    arr.push({ captured_at: r.captured_at, subscribers: r.subscribers });
+    historyByChannel.set(r.channel_id, arr);
   }
   if (baselineByChannel.size === 0) {
     return { risers: [], fallers: [] };
@@ -263,6 +268,7 @@ export async function getRisersAndFallers(
       baseline_captured_at: baseline.captured_at,
       delta_subscribers: delta,
       delta_pct: pct,
+      history: historyByChannel.get(c.id) ?? [],
     });
   }
 

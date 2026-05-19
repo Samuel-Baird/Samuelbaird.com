@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ChannelsExplorer } from "@/components/channels-explorer";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
@@ -33,6 +34,15 @@ export default async function ChannelsPage() {
         scholarship, and faith-promoting discussion — searchable and sortable
         by subscribers, views, upload cadence, and channel age.
       </p>
+
+      <div className="mt-6">
+        <Link
+          href="/compare"
+          className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+        >
+          Compare channels →
+        </Link>
+      </div>
 
       <div className="mt-10">
         <ChannelsExplorer

@@ -251,6 +251,14 @@ export default async function ChannelDetailPage({
 
       <div className="mt-10">
         <GrowthChart data={history} label="Subscribers" />
+        <div className="mt-4 text-right">
+          <Link
+            href={`/compare?slugs=${encodeURIComponent(channel.slug)}`}
+            className="text-sm text-[color:var(--accent)] hover:underline"
+          >
+            Compare with another channel →
+          </Link>
+        </div>
       </div>
 
       <p className="mt-6 text-xs text-[color:var(--muted)]">
