@@ -55,6 +55,7 @@ export function fmtDate(iso: string | null | undefined): string {
     year: "numeric",
     month: "short",
     day: "numeric",
+    timeZone: "America/Denver",
   });
 }
 
@@ -68,5 +69,7 @@ export function fmtDateTime(iso: string | null | undefined): string {
     day: "numeric",
     hour: "numeric",
     minute: "2-digit",
+    timeZone: "America/Denver",
+    timeZoneName: "short",
   });
 }

@@ -75,9 +75,6 @@ export function CommandPalette({ items }: Props) {
       >
         <Search size={16} aria-hidden="true" />
         <span>Search…</span>
-        <kbd className="ml-2 rounded border border-[color:var(--border)] bg-[color:var(--muted-soft)] px-1.5 py-0.5 text-[10px] font-medium">
-          ⌘K
-        </kbd>
       </button>
 
       {open && (

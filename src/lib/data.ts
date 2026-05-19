@@ -84,21 +84,55 @@ export async function getFeaturedChannelsMix(
   total = 6,
 ): Promise<ChannelWithStats[]> {
   const all = await getChannelsWithLatest();
+  const EXCLUDED_TYPES = new Set(["Critical", "Anti-Church"]);
+
   const featured = all.filter((c) => c.featured);
   const used = new Set(featured.map((c) => c.id));
+
+  // Build a category-diverse filler set: one channel per type, shuffled, then
+  // repeat until we have enough. This ensures the 6-card grid rarely shows
+  // the same category twice in a row.
   const fillerPool = all.filter(
-    (c) => !used.has(c.id) && c.channel_type !== "Critical",
+    (c) => !used.has(c.id) && !EXCLUDED_TYPES.has(c.channel_type ?? ""),
   );
 
-  const needed = Math.max(0, total - featured.length);
-  const shuffled = [...fillerPool];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  // Group by type, shuffle within each group
+  const byType = new Map<string, ChannelWithStats[]>();
+  for (const c of fillerPool) {
+    const key = c.channel_type ?? "Other";
+    if (!byType.has(key)) byType.set(key, []);
+    byType.get(key)!.push(c);
   }
-  const fillers = shuffled.slice(0, needed);
+  for (const arr of byType.values()) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
 
-  return [...featured, ...fillers];
+  // Round-robin across types to maximise category variety
+  const typeQueues = [...byType.values()];
+  for (let i = typeQueues.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [typeQueues[i], typeQueues[j]] = [typeQueues[j], typeQueues[i]];
+  }
+  const diverse: ChannelWithStats[] = [];
+  const needed = Math.max(0, total - featured.length);
+  let round = 0;
+  while (diverse.length < needed) {
+    let added = false;
+    for (const queue of typeQueues) {
+      if (diverse.length >= needed) break;
+      if (queue.length > round) {
+        diverse.push(queue[round]);
+        added = true;
+      }
+    }
+    if (!added) break;
+    round++;
+  }
+
+  return [...featured, ...diverse];
 }
 
 export async function getBookmarkSetForUser(
