@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter, Fraunces } from "next/font/google";
 import { Suspense } from "react";
 import { AuthPromptProvider } from "@/components/auth-prompt";
@@ -55,6 +56,7 @@ export default function RootLayout({
             <SiteFooter />
           </AuthPromptProvider>
         </Suspense>
+        <Analytics />
       </body>
     </html>
   );
