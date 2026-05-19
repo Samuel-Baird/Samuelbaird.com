@@ -84,7 +84,7 @@ export async function getFeaturedChannelsMix(
   total = 6,
 ): Promise<ChannelWithStats[]> {
   const all = await getChannelsWithLatest();
-  const EXCLUDED_TYPES = new Set(["Critical", "Anti-Church"]);
+  const EXCLUDED_TYPES = new Set(["Critical"]);
 
   const featured = all.filter((c) => c.featured);
   const used = new Set(featured.map((c) => c.id));

@@ -29,14 +29,12 @@ export const TYPE_COLORS: Record<string, TypeColor> = {
   "Come Follow Me": { bg: "bg-cyan-100", text: "text-cyan-800" },
   "Official Church": { bg: "bg-indigo-100", text: "text-indigo-800" },
   BYU: { bg: "bg-sky-100", text: "text-sky-800" },
-  "BYUradio Podcast": { bg: "bg-sky-100", text: "text-sky-800" },
   "Gen. Conf. Video Reposts": { bg: "bg-violet-100", text: "text-violet-800" },
   "General Religious": { bg: "bg-blue-100", text: "text-blue-800" },
   "Religious Shorts": { bg: "bg-blue-100", text: "text-blue-800" },
   Ancestry: { bg: "bg-amber-100", text: "text-amber-800" },
 
   // Critical / outside
-  "Anti-Church": { bg: "bg-rose-100", text: "text-rose-800" },
   Critical: { bg: "bg-rose-100", text: "text-rose-800" },
   Investigator: { bg: "bg-orange-100", text: "text-orange-800" },
   Politics: { bg: "bg-orange-100", text: "text-orange-800" },
