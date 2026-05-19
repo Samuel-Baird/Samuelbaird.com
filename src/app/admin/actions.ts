@@ -417,6 +417,45 @@ export async function updateStudy(
     tags: parseCsv(formData.get("tags")),
     featured: formData.get("featured") === "on",
   };
+
+  // Preview image handling: a new file replaces, "clear" wipes, otherwise
+  // only the caption/AI flag are updated.
+  const previewFile = formData.get("preview_image");
+  const hasPreview = previewFile instanceof File && previewFile.size > 0;
+  const clearPreview = formData.get("preview_image_clear") === "on";
+  const previewIsAi = formData.get("preview_image_is_ai") === "on";
+  const previewCaption =
+    String(formData.get("preview_image_caption") ?? "").trim() || null;
+  const previewUpdate: Record<string, unknown> = {
+    preview_image_caption: previewCaption,
+    preview_image_is_ai: previewIsAi,
+  };
+  if (clearPreview) {
+    previewUpdate.preview_image_path = null;
+    previewUpdate.preview_image_source = null;
+    previewUpdate.preview_image_is_ai = false;
+    previewUpdate.preview_image_caption = null;
+  } else if (hasPreview) {
+    const { data: existing } = await supabase
+      .from("studies")
+      .select("slug")
+      .eq("id", id)
+      .single();
+    const slug = existing?.slug;
+    if (slug) {
+      const ext = ((previewFile as File).name.split(".").pop() ?? "png").toLowerCase();
+      const path = `${slug}/preview.${ext}`;
+      const { error: upErr } = await supabase.storage
+        .from("studies")
+        .upload(path, previewFile as File, {
+          contentType: (previewFile as File).type || "image/png",
+          upsert: true,
+        });
+      if (upErr) return { ok: false, error: upErr.message };
+      previewUpdate.preview_image_path = path;
+      previewUpdate.preview_image_source = "manual";
+    }
+  }
   const extras = {
     findings: parseLines(formData.get("findings")),
     limitations: String(formData.get("limitations") ?? "").trim() || null,
@@ -426,12 +465,12 @@ export async function updateStudy(
   };
   let { data, error } = await supabase
     .from("studies")
-    .update({ ...base, ...extras })
+    .update({ ...base, ...extras, ...previewUpdate })
     .eq("id", id)
     .select("slug")
     .single();
-  if (error && /findings|limitations|flagged_problematic|flag_reason|context_note/.test(error.message)) {
-    warnings.push("Findings/limitations/flag/context fields did not save — migration 0005 not applied.");
+  if (error && /findings|limitations|flagged_problematic|flag_reason|context_note|preview_image/.test(error.message)) {
+    warnings.push("Some optional fields did not save — newer migration not applied.");
     ({ data, error } = await supabase
       .from("studies")
       .update(base)
@@ -447,6 +486,37 @@ export async function updateStudy(
   revalidatePath("/studies");
   revalidatePath("/");
   return { ok: true, warnings };
+}
+
+export async function regenerateStudyPreview(id: string) {
+  await requireAdmin();
+  const supabase = createSupabaseServiceClient();
+  const { data: study, error } = await supabase
+    .from("studies")
+    .select("slug")
+    .eq("id", id)
+    .single();
+  if (error || !study) throw error ?? new Error("Study not found.");
+
+  const { spawn } = await import("node:child_process");
+  const path = await import("node:path");
+  const cwd = process.cwd();
+  await new Promise<void>((resolve, reject) => {
+    const child = spawn(
+      process.execPath,
+      [path.join(cwd, "scripts", "generate-study-preview.mjs"), study.slug],
+      { cwd, stdio: "inherit" },
+    );
+    child.on("error", reject);
+    child.on("exit", (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`generate-study-preview exited with ${code}`));
+    });
+  });
+
+  revalidatePath(`/admin/studies/${study.slug}/edit`);
+  revalidatePath(`/studies/${study.slug}`);
+  revalidatePath("/studies");
 }
 
 export async function refreshStatsNow() {

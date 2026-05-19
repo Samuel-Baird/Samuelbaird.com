@@ -23,6 +23,7 @@ export default function NewStudyPage() {
             <option value="primary_dataset">Primary Dataset</option>
             <option value="study">Study</option>
             <option value="secondary_analysis">Secondary Analysis</option>
+            <option value="blog_analysis">Blog Analysis</option>
           </select>
         </label>
         <TextField name="category" label="Category (section heading)" placeholder="e.g. Wellbeing & Flourishing" />

@@ -4,6 +4,7 @@ const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> =
   primary_dataset: { label: "Primary Dataset", className: "bg-emerald-100 text-emerald-800" },
   study: { label: "Study", className: "bg-blue-100 text-blue-800" },
   secondary_analysis: { label: "Secondary Analysis", className: "bg-[color:var(--muted-soft)] text-[color:var(--muted)]" },
+  blog_analysis: { label: "Blog Analysis", className: "bg-amber-100 text-amber-800" },
 };
 import Link from "next/link";
 import { notFound } from "next/navigation";

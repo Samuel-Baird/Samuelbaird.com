@@ -52,6 +52,10 @@ const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> =
     label: "Secondary Analysis",
     className: "bg-[color:var(--muted-soft)] text-[color:var(--muted)]",
   },
+  blog_analysis: {
+    label: "Blog Analysis",
+    className: "bg-amber-100 text-amber-800",
+  },
 };
 
 export function StudiesExplorer({
