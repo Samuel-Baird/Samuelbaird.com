@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import {
+  AdminMessageNotifications,
+  type AdminMessagePreview,
+} from "@/components/admin-message-notifications";
 import { AuthMenu, type AuthMenuUser } from "@/components/auth-menu";
 import { CommandPaletteHost } from "@/components/command-palette-host";
 import { SiteNavClient, type SiteNavLink } from "@/components/site-nav-client";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
+import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 const links: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
@@ -30,6 +35,9 @@ export async function SiteNav() {
         is_admin: auth.profile?.is_admin === true,
       }
     : null;
+  const messageNotifications = user?.is_admin
+    ? await getOpenMessageNotifications()
+    : null;
 
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--border)] bg-[color:var(--background)]/85 backdrop-blur">
@@ -46,10 +54,41 @@ export async function SiteNav() {
           <Suspense fallback={null}>
             <CommandPaletteHost />
           </Suspense>
+          {messageNotifications ? (
+            <AdminMessageNotifications
+              openCount={messageNotifications.openCount}
+              previews={messageNotifications.previews}
+            />
+          ) : null}
           <ThemeToggle />
           <AuthMenu user={user} signOut={signOutAction} />
         </div>
       </div>
     </header>
   );
+}
+
+async function getOpenMessageNotifications(): Promise<{
+  openCount: number;
+  previews: AdminMessagePreview[];
+}> {
+  const supabase = createSupabaseServiceClient();
+  const { data, count, error } = await supabase
+    .from("messages")
+    .select("id, category, body, created_at, page_ref, name, email", {
+      count: "exact",
+    })
+    .eq("resolved", false)
+    .order("created_at", { ascending: false })
+    .limit(5);
+
+  if (error) {
+    console.error("open message notification query failed:", error);
+    return { openCount: 0, previews: [] };
+  }
+
+  return {
+    openCount: count ?? data?.length ?? 0,
+    previews: (data ?? []) as AdminMessagePreview[],
+  };
 }

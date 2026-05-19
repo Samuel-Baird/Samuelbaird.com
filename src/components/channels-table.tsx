@@ -27,6 +27,7 @@ type Props = {
   channels: ChannelWithStats[];
   bookmarkedSet?: Set<string>;
   signedIn?: boolean;
+  initialSort?: SortKey;
 };
 
 const sortLabels: Record<SortKey, string> = {
@@ -116,10 +117,13 @@ export function ChannelsTable({
   channels,
   bookmarkedSet = new Set<string>(),
   signedIn = false,
+  initialSort = "subscribers",
 }: Props) {
   const [query, setQuery] = useState("");
-  const [sort, setSort] = useState<SortKey>("subscribers");
-  const [direction, setDirection] = useState<SortDirection>("desc");
+  const [sort, setSort] = useState<SortKey>(initialSort);
+  const [direction, setDirection] = useState<SortDirection>(
+    defaultDirection[initialSort],
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();

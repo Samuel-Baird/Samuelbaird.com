@@ -22,6 +22,11 @@ export const TYPE_COLORS: Record<string, TypeColor> = {
   Religious: { bg: "bg-blue-100", text: "text-blue-800" },
   Church: { bg: "bg-indigo-100", text: "text-indigo-800" },
   Education: { bg: "bg-teal-100", text: "text-teal-800" },
+  Scripture: { bg: "bg-cyan-100", text: "text-cyan-800" },
+  History: { bg: "bg-stone-200", text: "text-stone-700" },
+  Podcast: { bg: "bg-violet-100", text: "text-violet-800" },
+  "Come Follow Me": { bg: "bg-cyan-100", text: "text-cyan-800" },
+  "Official Church": { bg: "bg-indigo-100", text: "text-indigo-800" },
   BYU: { bg: "bg-sky-100", text: "text-sky-800" },
   "BYUradio Podcast": { bg: "bg-sky-100", text: "text-sky-800" },
   "Gen. Conf. Video Reposts": { bg: "bg-violet-100", text: "text-violet-800" },
@@ -37,6 +42,7 @@ export const TYPE_COLORS: Record<string, TypeColor> = {
 
   // Lifestyle / culture
   Music: { bg: "bg-pink-100", text: "text-pink-800" },
+  Family: { bg: "bg-lime-100", text: "text-lime-800" },
   Comedy: { bg: "bg-yellow-100", text: "text-yellow-800" },
   Entertainment: { bg: "bg-purple-100", text: "text-purple-800" },
   Children: { bg: "bg-lime-100", text: "text-lime-800" },

@@ -2,7 +2,10 @@
 
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import {
+  createSupabaseServerClient,
+  createSupabaseServiceClient,
+} from "@/lib/supabase/server";
 
 const VALID_CATEGORIES = [
   "general",
@@ -20,11 +23,26 @@ function isCategory(value: string): value is Category {
 export async function submitMessage(formData: FormData) {
   const categoryRaw = String(formData.get("category") ?? "").trim();
   const category: Category = isCategory(categoryRaw) ? categoryRaw : "general";
+  const website = String(formData.get("website") ?? "").trim();
   const name = String(formData.get("name") ?? "").trim().slice(0, 120) || null;
   const email = String(formData.get("email") ?? "").trim().slice(0, 200) || null;
   const pageRef =
     String(formData.get("page_ref") ?? "").trim().slice(0, 300) || null;
   const body = String(formData.get("body") ?? "").trim();
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect(
+      `/login?next=${encodeURIComponent(buildRedirect("/contact", { category, pageRef }))}`,
+    );
+  }
+
+  if (website) {
+    redirect("/contact?sent=1");
+  }
 
   if (!body) {
     redirect(buildRedirect("/contact", { error: "empty", category, pageRef }));
@@ -36,10 +54,10 @@ export async function submitMessage(formData: FormData) {
     redirect(buildRedirect("/contact", { error: "bad_email", category, pageRef }));
   }
 
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const limited = await isRateLimited(user.id);
+  if (limited) {
+    redirect(buildRedirect("/contact", { error: "rate_limited", category, pageRef }));
+  }
 
   const { error } = await supabase.from("messages").insert({
     category,
@@ -47,12 +65,40 @@ export async function submitMessage(formData: FormData) {
     email,
     page_ref: pageRef,
     body,
-    user_id: user?.id ?? null,
+    user_id: user.id,
   });
   if (error) throw error;
 
   revalidatePath("/admin/messages");
   redirect("/contact?sent=1");
+}
+
+async function isRateLimited(userId: string) {
+  const supabase = createSupabaseServiceClient();
+  const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+  const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+
+  const [
+    { count: recentCount, error: recentError },
+    { count: dayCount, error: dayError },
+  ] = await Promise.all([
+    supabase
+      .from("messages")
+      .select("id", { count: "exact", head: true })
+      .eq("user_id", userId)
+      .gte("created_at", tenMinutesAgo),
+    supabase
+      .from("messages")
+      .select("id", { count: "exact", head: true })
+      .eq("user_id", userId)
+      .gte("created_at", oneDayAgo),
+  ]);
+
+  if (recentError || dayError) {
+    throw recentError ?? dayError;
+  }
+
+  return (recentCount ?? 0) >= 2 || (dayCount ?? 0) >= 8;
 }
 
 function buildRedirect(

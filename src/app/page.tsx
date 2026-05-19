@@ -7,8 +7,13 @@ import {
   getSiteStats,
 } from "@/lib/data";
 import { RisersFallers } from "@/components/risers-fallers";
+import {
+  TopStatsCarousel,
+  type TopStatSlide,
+} from "@/components/top-stats-carousel";
 import { colorsForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
+import type { ChannelWithStats } from "@/lib/types";
 
 export const revalidate = 600;
 
@@ -24,6 +29,7 @@ export default async function Home() {
     .filter((c) => c.latest)
     .sort((a, b) => (b.latest!.subscribers ?? 0) - (a.latest!.subscribers ?? 0))
     .slice(0, 10);
+  const topStatSlides = buildTopStatSlides(channels);
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
@@ -76,6 +82,8 @@ export default async function Home() {
           />
         </section>
       )}
+
+      <TopStatsCarousel slides={topStatSlides} />
 
       {/* Featured channels */}
       {featuredMix.length > 0 && (
@@ -246,4 +254,168 @@ function MetricTile({ label, value }: { label: string; value: string }) {
       </div>
     </div>
   );
+}
+
+function buildTopStatSlides(channels: ChannelWithStats[]): TopStatSlide[] {
+  const withStats = channels.filter((channel) => channel.latest);
+  const slides = [
+    topChannelsSlide({
+      channels: withStats,
+      label: "Subscribers",
+      title: "Top channels by subscribers",
+      metricLabel: "Largest audience",
+      eyebrow: "Subscribers",
+      href: "/channels?sort=subscribers",
+      value: (channel) => channel.latest?.subscribers ?? 0,
+      format: fmtCompact,
+      sublabel: "subscribers",
+    }),
+    topChannelsSlide({
+      channels: withStats,
+      label: "Views",
+      title: "Most watched channels",
+      metricLabel: "Top channel views",
+      eyebrow: "Total views",
+      href: "/channels?sort=total_views",
+      value: (channel) => channel.latest?.total_views ?? 0,
+      format: fmtCompact,
+      sublabel: "views",
+    }),
+    topChannelsSlide({
+      channels: withStats,
+      label: "Videos",
+      title: "Largest video libraries",
+      metricLabel: "Top video count",
+      eyebrow: "Videos published",
+      href: "/channels?sort=video_count",
+      value: (channel) => channel.latest?.video_count ?? 0,
+      format: fmtCompact,
+      sublabel: "videos",
+    }),
+    topChannelsSlide({
+      channels: withStats.filter((channel) => {
+        const videos = channel.latest?.video_count ?? 0;
+        return videos >= 10;
+      }),
+      label: "Avg views",
+      title: "Highest average views per video",
+      metricLabel: "Best average",
+      eyebrow: "Views per video",
+      href: "/channels?sort=avg_views",
+      value: averageViews,
+      format: fmtCompact,
+      sublabel: "avg views/video",
+    }),
+    categorySlide(withStats, "Apologetics", "subscribers"),
+    categorySlide(withStats, "Music", "total_views"),
+    categorySlide(withStats, "Church", "video_count"),
+    categorySlide(withStats, "Education", "avg_views"),
+  ];
+
+  return slides.filter((slide): slide is TopStatSlide => Boolean(slide));
+}
+
+function topChannelsSlide({
+  channels,
+  label,
+  title,
+  metricLabel,
+  eyebrow,
+  href,
+  value,
+  format,
+  sublabel,
+}: {
+  channels: ChannelWithStats[];
+  label: string;
+  title: string;
+  metricLabel: string;
+  eyebrow: string;
+  href: string;
+  value: (channel: ChannelWithStats) => number;
+  format: (value: number | null | undefined) => string;
+  sublabel: string;
+}): TopStatSlide | null {
+  const items = [...channels]
+    .filter((channel) => value(channel) > 0)
+    .sort((a, b) => value(b) - value(a))
+    .slice(0, 5);
+
+  const leader = items[0];
+  if (!leader) return null;
+
+  return {
+    label,
+    title,
+    href,
+    metricLabel,
+    metricValue: format(value(leader)),
+    eyebrow,
+    items: items.map((channel) => ({
+      id: channel.id,
+      name: channel.name,
+      href: `/channels/${channel.slug}`,
+      value: format(value(channel)),
+      sublabel: channel.channel_type
+        ? `${channel.channel_type} - ${sublabel}`
+        : sublabel,
+    })),
+  };
+}
+
+function categorySlide(
+  channels: ChannelWithStats[],
+  category: string,
+  sort: "subscribers" | "total_views" | "video_count" | "avg_views",
+): TopStatSlide | null {
+  const metricMeta = {
+    subscribers: {
+      label: "Subscribers",
+      metricLabel: "Category leader",
+      sublabel: "subscribers",
+      value: (channel: ChannelWithStats) => channel.latest?.subscribers ?? 0,
+      format: fmtCompact,
+    },
+    total_views: {
+      label: "Views",
+      metricLabel: "Category leader",
+      sublabel: "views",
+      value: (channel: ChannelWithStats) => channel.latest?.total_views ?? 0,
+      format: fmtCompact,
+    },
+    video_count: {
+      label: "Videos",
+      metricLabel: "Largest library",
+      sublabel: "videos",
+      value: (channel: ChannelWithStats) => channel.latest?.video_count ?? 0,
+      format: fmtCompact,
+    },
+    avg_views: {
+      label: "Avg views",
+      metricLabel: "Best average",
+      sublabel: "avg views/video",
+      value: averageViews,
+      format: fmtCompact,
+    },
+  }[sort];
+
+  return topChannelsSlide({
+    channels: channels.filter(
+      (channel) => channel.channel_type?.toLowerCase() === category.toLowerCase(),
+    ),
+    label: category,
+    title: `Top ${category.toLowerCase()} channels`,
+    metricLabel: metricMeta.metricLabel,
+    eyebrow: `${category} - ${metricMeta.label}`,
+    href: `/channels?type=${encodeURIComponent(category)}`,
+    value: metricMeta.value,
+    format: metricMeta.format,
+    sublabel: metricMeta.sublabel,
+  });
+}
+
+function averageViews(channel: ChannelWithStats) {
+  const views = channel.latest?.total_views ?? 0;
+  const videos = channel.latest?.video_count ?? 0;
+  return videos > 0 ? Math.round(views / videos) : 0;
 }

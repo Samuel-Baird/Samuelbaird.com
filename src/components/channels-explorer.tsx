@@ -1,6 +1,7 @@
 "use client";
 
 import { SlidersHorizontal, X } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChannelsFilterSidebar, type FilterGroup } from "@/components/channels-filter-sidebar";
 import { ChannelsTable } from "@/components/channels-table";
@@ -15,6 +16,14 @@ type Props = {
 };
 
 type FilterKey = FilterGroup["key"];
+type SortKey =
+  | "name"
+  | "type"
+  | "subscribers"
+  | "total_views"
+  | "video_count"
+  | "avg_views"
+  | "age";
 
 const UNKNOWN = "Unknown";
 
@@ -23,6 +32,20 @@ const groupLabels: Record<FilterKey, string> = {
   country: "Country",
   language: "Language",
 };
+
+const SORT_KEYS = new Set<SortKey>([
+  "name",
+  "type",
+  "subscribers",
+  "total_views",
+  "video_count",
+  "avg_views",
+  "age",
+]);
+
+function getInitialSort(value: string | null): SortKey {
+  return SORT_KEYS.has(value as SortKey) ? (value as SortKey) : "subscribers";
+}
 
 function normalizeFilterValue(value: string | null) {
   const normalized = value?.trim();
@@ -58,7 +81,12 @@ function nextSelectionSet(current: Set<string>, value: string) {
 }
 
 export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
-  const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set());
+  const searchParams = useSearchParams();
+  const initialType = searchParams.get("type");
+  const initialSort = getInitialSort(searchParams.get("sort"));
+  const [selectedTypes, setSelectedTypes] = useState<Set<string>>(
+    () => new Set(initialType ? [initialType] : []),
+  );
   const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
   const [selectedLanguages, setSelectedLanguages] = useState<Set<string>>(new Set());
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -322,6 +350,7 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
             channels={filteredChannels}
             bookmarkedSet={bookmarkedSet}
             signedIn={signedIn}
+            initialSort={initialSort}
           />
         </div>
       </div>

@@ -93,7 +93,8 @@ export default async function AdminMessagesPage({
           {messages.map((m) => (
             <li
               key={m.id}
-              className="rounded-2xl border border-[color:var(--border)] bg-white p-5"
+              id={`message-${m.id}`}
+              className="scroll-mt-28 rounded-2xl border border-[color:var(--border)] bg-white p-5 target:border-[color:var(--accent)] target:ring-2 target:ring-[color:var(--accent-soft)]"
             >
               <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
                 <span className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]">
