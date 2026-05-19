@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
+
+const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> = {
+  primary_dataset: { label: "Primary Dataset", className: "bg-emerald-100 text-emerald-800" },
+  study: { label: "Study", className: "bg-blue-100 text-blue-800" },
+  secondary_analysis: { label: "Secondary Analysis", className: "bg-[color:var(--muted-soft)] text-[color:var(--muted)]" },
+};
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
@@ -101,6 +107,11 @@ export default async function StudyDetailPage({
       )}
 
       <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
+        {study.source_type && SOURCE_TYPE_LABELS[study.source_type] && (
+          <span className={`rounded-full px-2.5 py-1 font-medium uppercase tracking-wide text-[10px] ${SOURCE_TYPE_LABELS[study.source_type].className}`}>
+            {SOURCE_TYPE_LABELS[study.source_type].label}
+          </span>
+        )}
         {study.year && (
           <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
             {study.year}
@@ -240,6 +251,19 @@ export default async function StudyDetailPage({
             className="text-[color:var(--accent)] underline"
           >
             {study.external_url}
+          </a>
+        </p>
+      )}
+      {study.secondary_url && (
+        <p className="mt-2 text-sm text-[color:var(--muted)]">
+          Data / additional:{" "}
+          <a
+            href={study.secondary_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent)] underline"
+          >
+            {study.secondary_url}
           </a>
         </p>
       )}

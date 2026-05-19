@@ -13,6 +13,21 @@ export default function NewStudyPage() {
         <TextField name="authors" label="Authors" placeholder="Comma-separated" />
         <TextField name="year" label="Year" type="number" />
         <TextField name="source" label="Source" />
+        <label className="block text-sm font-medium">
+          Source type
+          <select
+            name="source_type"
+            className="mt-2 h-11 w-full rounded-full border border-[color:var(--border)] px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
+          >
+            <option value="">— unset —</option>
+            <option value="primary_dataset">Primary Dataset</option>
+            <option value="study">Study</option>
+            <option value="secondary_analysis">Secondary Analysis</option>
+          </select>
+        </label>
+        <TextField name="category" label="Category (section heading)" placeholder="e.g. Wellbeing & Flourishing" />
+        <TextField name="external_url" label="External URL" type="url" />
+        <TextField name="secondary_url" label="Secondary URL (data access, replication, etc.)" type="url" />
         <Textarea
           name="abstract"
           label="Abstract"
@@ -63,11 +78,11 @@ export default function NewStudyPage() {
         </fieldset>
         <label className="block text-sm font-medium">
           PDF
+          <span className="ml-1 text-xs font-normal text-[color:var(--muted)]">(optional if External URL is set)</span>
           <input
             name="pdf"
             type="file"
             accept="application/pdf"
-            required
             className="mt-2 block w-full text-sm"
           />
         </label>

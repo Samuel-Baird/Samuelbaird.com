@@ -302,24 +302,35 @@ export async function createStudy(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   if (!title) throw new Error("Title is required.");
 
+  const externalUrl = String(formData.get("external_url") ?? "").trim() || null;
   const file = formData.get("pdf");
-  if (!(file instanceof File) || file.size === 0) {
-    throw new Error("PDF file is required.");
+  const hasPdf = file instanceof File && file.size > 0;
+
+  if (!hasPdf && !externalUrl) {
+    throw new Error("Either a PDF file or an External URL is required.");
   }
-  if (file.type !== "application/pdf" || file.size > 25 * 1024 * 1024) {
+  if (hasPdf && (file as File).type !== "application/pdf") {
+    throw new Error("Upload a PDF file no larger than 25MB.");
+  }
+  if (hasPdf && (file as File).size > 25 * 1024 * 1024) {
     throw new Error("Upload a PDF file no larger than 25MB.");
   }
 
   const supabase = createSupabaseServiceClient();
   const slug = await uniqueSlug(title, "studies");
-  const filename = sanitizeFilename(file.name) || "study.pdf";
-  const pdfPath = `${slug}/${filename}`;
-  const { error: uploadError } = await supabase.storage
-    .from("studies")
-    .upload(pdfPath, file, { contentType: "application/pdf", upsert: false });
-  if (uploadError) throw uploadError;
+
+  let pdfPath: string | null = null;
+  if (hasPdf) {
+    const filename = sanitizeFilename((file as File).name) || "study.pdf";
+    pdfPath = `${slug}/${filename}`;
+    const { error: uploadError } = await supabase.storage
+      .from("studies")
+      .upload(pdfPath, file as File, { contentType: "application/pdf", upsert: false });
+    if (uploadError) throw uploadError;
+  }
 
   const yearValue = String(formData.get("year") ?? "").trim();
+  const sourceTypeRaw = String(formData.get("source_type") ?? "").trim() || null;
   const base = {
     slug,
     title,
@@ -329,6 +340,10 @@ export async function createStudy(formData: FormData) {
     abstract: String(formData.get("abstract") ?? "").trim() || null,
     tags: parseCsv(formData.get("tags")),
     featured: formData.get("featured") === "on",
+    external_url: externalUrl,
+    secondary_url: String(formData.get("secondary_url") ?? "").trim() || null,
+    source_type: sourceTypeRaw,
+    category: String(formData.get("category") ?? "").trim() || null,
     pdf_path: pdfPath,
   };
   const extras = {

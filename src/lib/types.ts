@@ -74,6 +74,9 @@ export type Study = {
   flagged_problematic: boolean;
   flag_reason: string | null;
   context_note: string | null;
+  source_type: string | null;
+  category: string | null;
+  secondary_url: string | null;
   created_at: string;
   updated_at: string;
 };

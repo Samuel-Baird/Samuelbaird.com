@@ -24,6 +24,29 @@ const SORT_LABELS: Record<Props["initial"]["sort"], string> = {
   upvotes: "Most upvoted",
 };
 
+const CATEGORY_ORDER = [
+  "Wellbeing & Flourishing",
+  "Mental Health",
+  "Major Demographic Surveys",
+  "Physical Health & Longevity",
+  "Retention & Generational Change",
+];
+
+const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> = {
+  primary_dataset: {
+    label: "Primary Dataset",
+    className: "bg-emerald-100 text-emerald-800",
+  },
+  study: {
+    label: "Study",
+    className: "bg-blue-100 text-blue-800",
+  },
+  secondary_analysis: {
+    label: "Secondary Analysis",
+    className: "bg-[color:var(--muted-soft)] text-[color:var(--muted)]",
+  },
+};
+
 export function StudiesExplorer({
   studies,
   tags,
@@ -145,6 +168,9 @@ export function StudiesExplorer({
     </div>
   );
 
+  const isGrouped =
+    !initial.q && initial.tags.length === 0 && initial.sort === "featured";
+
   return (
     <div>
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -212,79 +238,22 @@ export function StudiesExplorer({
             <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)]">
               No studies match your filters.
             </div>
+          ) : isGrouped ? (
+            <GroupedStudies
+              studies={studies}
+              bookmarkedSet={bookmarkedSet}
+              upvotedSet={upvotedSet}
+              upvoteCounts={upvoteCounts}
+              signedIn={signedIn}
+            />
           ) : (
-            <ul className="grid gap-5 sm:grid-cols-2">
-              {studies.map((s) => (
-                <li key={s.id} className="relative">
-                  <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
-                    <UpvoteButton
-                      targetType="study"
-                      targetId={s.id}
-                      initialCount={upvoteCounts[s.id] ?? 0}
-                      initialUpvoted={upvotedSet.has(s.id)}
-                      signedIn={signedIn}
-                      size="sm"
-                    />
-                    <BookmarkButton
-                      targetType="study"
-                      targetId={s.id}
-                      initial={bookmarkedSet.has(s.id)}
-                      signedIn={signedIn}
-                      size="sm"
-                    />
-                  </div>
-                  <Link
-                    href={`/studies/${s.slug}`}
-                    className={
-                      "group block h-full rounded-2xl border bg-white p-6 pr-28 transition-colors " +
-                      (s.flagged_problematic
-                        ? "border-red-200 hover:border-red-500"
-                        : "border-[color:var(--border)] hover:border-[color:var(--accent)]")
-                    }
-                  >
-                    {s.flagged_problematic && (
-                      <span
-                        aria-label="Flagged for methodological concerns"
-                        className="absolute left-3 top-3 z-10 inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
-                      >
-                        !
-                      </span>
-                    )}
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
-                      {s.year && (
-                        <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
-                          {s.year}
-                        </span>
-                      )}
-                      {s.tags.slice(0, 3).map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <h2 className="serif mt-4 text-xl font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
-                      {s.title}
-                    </h2>
-                    {s.authors.length > 0 && (
-                      <p className="mt-2 text-sm text-[color:var(--muted)]">
-                        {s.authors.join(", ")}
-                      </p>
-                    )}
-                    {s.abstract && (
-                      <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-[color:var(--foreground)]">
-                        {s.abstract}
-                      </p>
-                    )}
-                    <p className="mt-5 text-xs text-[color:var(--accent)]">
-                      Read study →
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <StudyGrid
+              studies={studies}
+              bookmarkedSet={bookmarkedSet}
+              upvotedSet={upvotedSet}
+              upvoteCounts={upvoteCounts}
+              signedIn={signedIn}
+            />
           )}
         </div>
       </div>
@@ -321,5 +290,146 @@ export function StudiesExplorer({
         </div>
       )}
     </div>
+  );
+}
+
+type GridProps = {
+  studies: Study[];
+  bookmarkedSet: Set<string>;
+  upvotedSet: Set<string>;
+  upvoteCounts: Record<string, number>;
+  signedIn: boolean;
+};
+
+function GroupedStudies({ studies, ...rest }: GridProps) {
+  const byCategory = new Map<string, Study[]>();
+  for (const s of studies) {
+    const key = s.category ?? "Other";
+    if (!byCategory.has(key)) byCategory.set(key, []);
+    byCategory.get(key)!.push(s);
+  }
+
+  const orderedKeys = [
+    ...CATEGORY_ORDER.filter((k) => byCategory.has(k)),
+    ...[...byCategory.keys()].filter((k) => !CATEGORY_ORDER.includes(k)),
+  ];
+
+  return (
+    <div className="space-y-12">
+      {orderedKeys.map((cat) => (
+        <section key={cat}>
+          <h2 className="serif mb-5 text-xl font-semibold tracking-tight text-[color:var(--foreground)]">
+            {cat}
+          </h2>
+          <StudyGrid studies={byCategory.get(cat)!} {...rest} />
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function StudyGrid({ studies, bookmarkedSet, upvotedSet, upvoteCounts, signedIn }: GridProps) {
+  return (
+    <ul className="grid gap-5 sm:grid-cols-2">
+      {studies.map((s) => (
+        <StudyCard
+          key={s.id}
+          study={s}
+          bookmarked={bookmarkedSet.has(s.id)}
+          upvoted={upvotedSet.has(s.id)}
+          upvoteCount={upvoteCounts[s.id] ?? 0}
+          signedIn={signedIn}
+        />
+      ))}
+    </ul>
+  );
+}
+
+function StudyCard({
+  study: s,
+  bookmarked,
+  upvoted,
+  upvoteCount,
+  signedIn,
+}: {
+  study: Study;
+  bookmarked: boolean;
+  upvoted: boolean;
+  upvoteCount: number;
+  signedIn: boolean;
+}) {
+  const sourceType = s.source_type ? SOURCE_TYPE_LABELS[s.source_type] : null;
+  return (
+    <li className="relative">
+      <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
+        <UpvoteButton
+          targetType="study"
+          targetId={s.id}
+          initialCount={upvoteCount}
+          initialUpvoted={upvoted}
+          signedIn={signedIn}
+          size="sm"
+        />
+        <BookmarkButton
+          targetType="study"
+          targetId={s.id}
+          initial={bookmarked}
+          signedIn={signedIn}
+          size="sm"
+        />
+      </div>
+      <Link
+        href={`/studies/${s.slug}`}
+        className={
+          "group block h-full rounded-2xl border bg-white p-6 pr-28 transition-colors " +
+          (s.flagged_problematic
+            ? "border-red-200 hover:border-red-500"
+            : "border-[color:var(--border)] hover:border-[color:var(--accent)]")
+        }
+      >
+        {s.flagged_problematic && (
+          <span
+            aria-label="Flagged for methodological concerns"
+            className="absolute left-3 top-3 z-10 inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+          >
+            !
+          </span>
+        )}
+        <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
+          {sourceType && (
+            <span className={`rounded-full px-2.5 py-1 font-medium uppercase tracking-wide text-[10px] ${sourceType.className}`}>
+              {sourceType.label}
+            </span>
+          )}
+          {s.year && (
+            <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
+              {s.year}
+            </span>
+          )}
+          {s.tags.slice(0, 2).map((t) => (
+            <span
+              key={t}
+              className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+        <h2 className="serif mt-4 text-xl font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+          {s.title}
+        </h2>
+        {s.authors.length > 0 && (
+          <p className="mt-2 text-sm text-[color:var(--muted)]">
+            {s.authors.join(", ")}
+          </p>
+        )}
+        {s.abstract && (
+          <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-[color:var(--foreground)]">
+            {s.abstract}
+          </p>
+        )}
+        <p className="mt-5 text-xs text-[color:var(--accent)]">Read study →</p>
+      </Link>
+    </li>
   );
 }
