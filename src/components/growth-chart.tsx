@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { fmtCompact, fmtDate } from "@/lib/format";
 
 type Point = { captured_at: string; subscribers: number };
@@ -8,7 +11,10 @@ type Props = {
   label?: string;
 };
 
+type HoverPoint = { xPct: number; yPct: number; date: string; value: number };
+
 export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props) {
+  const [hover, setHover] = useState<HoverPoint | null>(null);
   if (!data || data.length < 2) {
     return (
       <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-6 text-center text-sm text-[color:var(--muted)]">
@@ -60,6 +66,23 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   const pct = first.v > 0 ? (delta / first.v) * 100 : 0;
   const up = delta >= 0;
 
+  function handleMouseMove(e: React.MouseEvent<SVGSVGElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const svgX = ((e.clientX - rect.left) / rect.width) * W;
+    let nearest = points[0];
+    let minDist = Infinity;
+    for (const p of points) {
+      const d = Math.abs(svgX - x(p.t));
+      if (d < minDist) { minDist = d; nearest = p; }
+    }
+    setHover({
+      xPct: (x(nearest.t) / W) * 100,
+      yPct: (y(nearest.v) / H) * 100,
+      date: nearest.iso,
+      value: nearest.v,
+    });
+  }
+
   return (
     <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
       <div className="flex items-end justify-between gap-3">
@@ -87,29 +110,63 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
           </div>
         </div>
       </div>
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        preserveAspectRatio="none"
-        role="img"
-        aria-label={`${label} from ${fmtDate(first.iso)} to ${fmtDate(last.iso)}`}
-        className="mt-4 h-44 w-full sm:h-52"
-      >
-        <path
-          d={area}
-          fill="var(--accent)"
-          fillOpacity={0.08}
-        />
-        <path
-          d={path}
-          fill="none"
-          stroke="var(--accent)"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-        />
-        <circle cx={x(last.t)} cy={y(last.v)} r={3.5} fill="var(--accent)" />
-      </svg>
+      <div className="relative mt-4">
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          preserveAspectRatio="none"
+          role="img"
+          aria-label={`${label} from ${fmtDate(first.iso)} to ${fmtDate(last.iso)}`}
+          className="h-44 w-full sm:h-52"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={() => setHover(null)}
+        >
+          <path
+            d={area}
+            fill="var(--accent)"
+            fillOpacity={0.08}
+          />
+          <path
+            d={path}
+            fill="none"
+            stroke="var(--accent)"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            vectorEffect="non-scaling-stroke"
+          />
+          <circle cx={x(last.t)} cy={y(last.v)} r={3.5} fill="var(--accent)" />
+          {hover && (() => {
+            const hx = (hover.xPct / 100) * W;
+            const hy = (hover.yPct / 100) * H;
+            return (
+              <>
+                <line
+                  x1={hx} y1={padT}
+                  x2={hx} y2={padT + innerH}
+                  stroke="var(--border)"
+                  strokeWidth={1}
+                  strokeDasharray="4 2"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <circle cx={hx} cy={hy} r={5} fill="var(--accent)" />
+              </>
+            );
+          })()}
+        </svg>
+        {hover && (
+          <div
+            className="pointer-events-none absolute z-10 rounded-lg border border-[color:var(--border)] bg-white px-3 py-2 text-xs shadow-md"
+            style={{
+              left: `${hover.xPct}%`,
+              top: `${hover.yPct}%`,
+              transform: `translate(${hover.xPct > 75 ? "-100%" : "8px"}, -110%)`,
+            }}
+          >
+            <div className="font-medium text-[color:var(--foreground)]">{fmtDate(hover.date)}</div>
+            <div className="tabular-nums text-[color:var(--accent)]">{fmtCompact(hover.value)} {label.toLowerCase()}</div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

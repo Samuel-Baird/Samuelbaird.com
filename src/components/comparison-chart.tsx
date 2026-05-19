@@ -33,8 +33,15 @@ function normalizeSeries(
   return pts.map((p) => ({ ...p, v: (p.v / base) * 100 }));
 }
 
+type HoverState = {
+  xPct: number;
+  svgX: number;
+  nearest: Array<{ label: string; color: string; value: number; iso: string }>;
+};
+
 export function ComparisonChart({ series, height = 280 }: Props) {
   const [mode, setMode] = useState<"absolute" | "indexed">("indexed");
+  const [hover, setHover] = useState<HoverState | null>(null);
 
   const normalized = useMemo(
     () => series.map((s) => ({ ...s, points: normalizeSeries(s, mode) })),
@@ -70,6 +77,30 @@ export function ComparisonChart({ series, height = 280 }: Props) {
   const innerH = H - padT - padB;
   const x = (t: number) => padL + ((t - tMin) / tSpan) * innerW;
   const y = (v: number) => padT + innerH - ((v - vMin) / vSpan) * innerH;
+
+  function handleMouseMove(e: React.MouseEvent<SVGSVGElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const svgX = ((e.clientX - rect.left) / rect.width) * W;
+    // Use the first valid series as the time anchor
+    const anchor = validSeries[0];
+    let anchorT = anchor.points[0].t;
+    let minDist = Infinity;
+    for (const p of anchor.points) {
+      const d = Math.abs(svgX - x(p.t));
+      if (d < minDist) { minDist = d; anchorT = p.t; }
+    }
+    // For each series find the point nearest to anchorT
+    const nearest = validSeries.map((s) => {
+      let best = s.points[0];
+      let bd = Infinity;
+      for (const p of s.points) {
+        const d = Math.abs(p.t - anchorT);
+        if (d < bd) { bd = d; best = p; }
+      }
+      return { label: s.label, color: s.color, value: best.v, iso: best.iso };
+    });
+    setHover({ xPct: (svgX / W) * 100, svgX, nearest });
+  }
 
   return (
     <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
@@ -111,37 +142,93 @@ export function ComparisonChart({ series, height = 280 }: Props) {
         </div>
       </div>
 
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        preserveAspectRatio="none"
-        role="img"
-        aria-label="Channel comparison chart"
-        className="mt-4 h-64 w-full sm:h-72"
-      >
-        {validSeries.map((s) => {
-          const path = s.points
-            .map(
-              (p, i) =>
-                `${i === 0 ? "M" : "L"} ${x(p.t).toFixed(1)} ${y(p.v).toFixed(1)}`,
-            )
-            .join(" ");
-          const last = s.points[s.points.length - 1];
-          return (
-            <g key={s.label}>
-              <path
-                d={path}
-                fill="none"
-                stroke={s.color}
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
+      <div className="relative mt-4">
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          preserveAspectRatio="none"
+          role="img"
+          aria-label="Channel comparison chart"
+          className="h-64 w-full sm:h-72"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={() => setHover(null)}
+        >
+          {validSeries.map((s) => {
+            const path = s.points
+              .map(
+                (p, i) =>
+                  `${i === 0 ? "M" : "L"} ${x(p.t).toFixed(1)} ${y(p.v).toFixed(1)}`,
+              )
+              .join(" ");
+            const last = s.points[s.points.length - 1];
+            return (
+              <g key={s.label}>
+                <path
+                  d={path}
+                  fill="none"
+                  stroke={s.color}
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <circle cx={x(last.t)} cy={y(last.v)} r={3.5} fill={s.color} />
+              </g>
+            );
+          })}
+          {hover && (
+            <>
+              <line
+                x1={hover.svgX} y1={padT}
+                x2={hover.svgX} y2={padT + innerH}
+                stroke="var(--border)"
+                strokeWidth={1}
+                strokeDasharray="4 2"
                 vectorEffect="non-scaling-stroke"
               />
-              <circle cx={x(last.t)} cy={y(last.v)} r={3.5} fill={s.color} />
-            </g>
-          );
-        })}
-      </svg>
+              {hover.nearest.map((n) => {
+                const s = validSeries.find((s) => s.label === n.label);
+                if (!s) return null;
+                const p = s.points.find((p) => p.iso === n.iso);
+                if (!p) return null;
+                return (
+                  <circle
+                    key={n.label}
+                    cx={x(p.t)} cy={y(p.v)}
+                    r={5}
+                    fill={n.color}
+                  />
+                );
+              })}
+            </>
+          )}
+        </svg>
+        {hover && (
+          <div
+            className="pointer-events-none absolute z-10 min-w-[120px] rounded-lg border border-[color:var(--border)] bg-white px-3 py-2 text-xs shadow-md"
+            style={{
+              left: `${hover.xPct}%`,
+              top: "8px",
+              transform: `translateX(${hover.xPct > 70 ? "-100%" : "8px"})`,
+            }}
+          >
+            <div className="mb-1.5 font-medium text-[color:var(--muted)]">
+              {fmtDate(hover.nearest[0].iso)}
+            </div>
+            {hover.nearest.map((n) => (
+              <div key={n.label} className="flex items-center gap-2 leading-5">
+                <span
+                  className="inline-block h-2 w-2 shrink-0 rounded-full"
+                  style={{ backgroundColor: n.color }}
+                />
+                <span className="truncate text-[color:var(--foreground)]">{n.label}</span>
+                <span className="ml-auto tabular-nums text-[color:var(--foreground)]">
+                  {mode === "indexed" ? `${n.value.toFixed(1)}` : fmtCompact(n.value)}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
       <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs">
         {validSeries.map((s) => {
