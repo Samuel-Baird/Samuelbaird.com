@@ -1,4 +1,5 @@
 import { addChannelByInput } from "@/app/admin/actions";
+import { SubmitButton } from "@/components/submit-button";
 
 export default function NewChannelPage() {
   async function submit(formData: FormData) {
@@ -21,9 +22,9 @@ export default function NewChannelPage() {
             className="mt-2 h-11 w-full rounded-full border border-[color:var(--border)] px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
           />
         </label>
-        <button className="mt-5 inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90">
-          Add channel
-        </button>
+        <div className="mt-5">
+          <SubmitButton pendingLabel="Adding…">Add channel</SubmitButton>
+        </div>
       </form>
     </div>
   );

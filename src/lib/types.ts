@@ -1,15 +1,25 @@
+// Display shape is the joined `channel_full` view: user-curated metadata from
+// `channels` + YouTube-derived fields from `channel_youtube`. The split is by
+// table, but consumers see one merged row.
 export type Channel = {
   id: string;
   youtube_channel_id: string;
-  name: string;
   slug: string;
+  // YouTube-derived (from channel_youtube). `name` falls back to the channel
+  // ID in the channel_full view when a refresh has not yet populated it.
+  name: string;
   description: string | null;
   country: string | null;
-  country_manual: string | null;
-  thumbnail_url: string | null;
-  channel_type: string | null;
   language: string | null;
+  thumbnail_url: string | null;
+  created_at_youtube: string | null;
+  last_synced_at: string | null;
+  last_sync_status: string | null;
+  last_sync_error: string | null;
+  // User-curated metadata.
+  country_manual: string | null;
   language_manual: string | null;
+  channel_type: string | null;
   state: string | null;
   city: string | null;
   owned_by: string | null;
@@ -19,7 +29,7 @@ export type Channel = {
   instagram_url: string | null;
   tiktok_url: string | null;
   x_url: string | null;
-  created_at_youtube: string | null;
+  notes: string | null;
   featured: boolean;
   is_active: boolean;
   created_at: string;

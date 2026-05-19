@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { submitMessage } from "@/app/actions/messages";
+import { SubmitButton } from "@/components/submit-button";
 import { CONTACT_EMAIL } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -130,12 +131,12 @@ export default async function ContactPage({
           />
         </Field>
 
-        <button
-          type="submit"
-          className="inline-flex h-11 items-center rounded-full bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-colors hover:opacity-90"
+        <SubmitButton
+          pendingLabel="Sending…"
+          className="inline-flex h-11 items-center rounded-full bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           Send message
-        </button>
+        </SubmitButton>
       </form>
     </div>
   );

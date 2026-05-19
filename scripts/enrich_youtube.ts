@@ -91,18 +91,29 @@ async function main() {
         const stats = item.statistics ?? {};
         const thumb = s.thumbnails?.high?.url ?? s.thumbnails?.default?.url ?? null;
 
+        // Full overwrite: YouTube is the source of truth for these fields.
         await pg.query(
           `
-          update public.channels set
-            description = coalesce($2, description),
-            country = coalesce($3, country),
-            language = coalesce($4, language),
-            thumbnail_url = coalesce($5, thumbnail_url),
-            created_at_youtube = coalesce(channels.created_at_youtube, $6)
-          where id = $1;
+          insert into public.channel_youtube (
+            channel_id, name, description, country, default_language,
+            thumbnail_url, created_at_youtube,
+            last_synced_at, last_sync_status, last_sync_error
+          )
+          values ($1, $2, $3, $4, $5, $6, $7, now(), 'ok', null)
+          on conflict (channel_id) do update set
+            name = excluded.name,
+            description = excluded.description,
+            country = excluded.country,
+            default_language = excluded.default_language,
+            thumbnail_url = excluded.thumbnail_url,
+            created_at_youtube = excluded.created_at_youtube,
+            last_synced_at = excluded.last_synced_at,
+            last_sync_status = 'ok',
+            last_sync_error = null;
           `,
           [
             dbId,
+            s.title ?? null,
             s.description ?? null,
             s.country ?? null,
             s.defaultLanguage ?? null,
@@ -128,7 +139,21 @@ async function main() {
       }
 
       for (const id of batch) {
-        if (!seen.has(id)) missing++;
+        if (seen.has(id)) continue;
+        missing++;
+        const dbId = idMap.get(id);
+        if (!dbId) continue;
+        await pg.query(
+          `
+          insert into public.channel_youtube (channel_id, last_synced_at, last_sync_status, last_sync_error)
+          values ($1, now(), 'missing', $2)
+          on conflict (channel_id) do update set
+            last_synced_at = now(),
+            last_sync_status = 'missing',
+            last_sync_error = excluded.last_sync_error;
+          `,
+          [dbId, `YouTube returned no data for ${id}`],
+        );
       }
       process.stdout.write(`  enriched: ${enriched}, stats: ${statsWritten}, missing: ${missing}\r`);
     }

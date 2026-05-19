@@ -103,7 +103,7 @@ export async function addChannelByInput(rawInput: string) {
   const supabase = createSupabaseServiceClient();
   const { data: existing, error: existingError } = await supabase
     .from("channels")
-    .select("slug, name")
+    .select("slug")
     .eq("youtube_channel_id", youtubeId)
     .maybeSingle();
   if (existingError) throw existingError;
@@ -114,26 +114,37 @@ export async function addChannelByInput(rawInput: string) {
   const [snapshot] = await fetchYouTubeSnapshots([youtubeId]);
   if (!snapshot) throw new Error("YouTube did not return that channel.");
 
-  const slug = await uniqueSlug(snapshot.name, "channels");
   const handle = parsed.kind === "handle" ? parsed.handle : null;
 
+  // Slug == youtube_channel_id (stable across renames). The before-insert trigger
+  // fills it from youtube_channel_id when omitted, but set it explicitly here too.
   const { data: channel, error } = await supabase
     .from("channels")
     .insert({
       youtube_channel_id: snapshot.id,
-      name: snapshot.name,
-      slug,
-      channel_type: null,
-      description: snapshot.description,
-      country: snapshot.country,
-      language: snapshot.defaultLanguage,
-      thumbnail_url: snapshot.thumbnailUrl,
-      created_at_youtube: snapshot.publishedAt,
+      slug: snapshot.id,
       handle,
     })
     .select("id, slug")
     .single();
   if (error) throw error;
+
+  const { error: ytError } = await supabase.from("channel_youtube").upsert(
+    {
+      channel_id: channel.id,
+      name: snapshot.name,
+      description: snapshot.description,
+      country: snapshot.country,
+      default_language: snapshot.defaultLanguage,
+      thumbnail_url: snapshot.thumbnailUrl,
+      created_at_youtube: snapshot.publishedAt,
+      last_synced_at: new Date().toISOString(),
+      last_sync_status: "ok",
+      last_sync_error: null,
+    },
+    { onConflict: "channel_id" },
+  );
+  if (ytError) throw ytError;
 
   const { error: statsError } = await supabase.from("channel_stats").insert({
     channel_id: channel.id,
@@ -414,9 +425,29 @@ export async function refreshStatsNow() {
   );
   const byYtId = new Map((channels ?? []).map((c) => [c.youtube_channel_id, c.id]));
 
+  const now = new Date().toISOString();
   for (const snapshot of snapshots) {
     const channelId = byYtId.get(snapshot.id);
     if (!channelId) continue;
+
+    const { error: ytError } = await supabase
+      .from("channel_youtube")
+      .upsert(
+        {
+          channel_id: channelId,
+          name: snapshot.name,
+          description: snapshot.description,
+          country: snapshot.country,
+          default_language: snapshot.defaultLanguage,
+          thumbnail_url: snapshot.thumbnailUrl,
+          created_at_youtube: snapshot.publishedAt,
+          last_synced_at: now,
+          last_sync_status: "ok",
+          last_sync_error: null,
+        },
+        { onConflict: "channel_id" },
+      );
+    if (ytError) throw ytError;
 
     const { error: statsError } = await supabase.from("channel_stats").insert({
       channel_id: channelId,
@@ -425,20 +456,6 @@ export async function refreshStatsNow() {
       video_count: snapshot.videoCount,
     });
     if (statsError) throw statsError;
-
-    const update: Record<string, string> = {};
-    if (snapshot.name) update.name = snapshot.name;
-    if (snapshot.description) update.description = snapshot.description;
-    if (snapshot.country) update.country = snapshot.country;
-    if (snapshot.defaultLanguage) update.language = snapshot.defaultLanguage;
-    if (snapshot.thumbnailUrl) update.thumbnail_url = snapshot.thumbnailUrl;
-    if (Object.keys(update).length > 0) {
-      const { error: updateError } = await supabase
-        .from("channels")
-        .update(update)
-        .eq("id", channelId);
-      if (updateError) throw updateError;
-    }
   }
 
   await refreshLatestView();

@@ -59,7 +59,7 @@ export default async function AdminAnalyticsPage() {
       .from("channel_stats_latest")
       .select("channel_id, captured_at")
       .lt("captured_at", since7),
-    sb.from("channels").select("id, name, slug, is_active"),
+    sb.from("channel_full").select("id, name, slug, is_active"),
     sb.from("studies").select("id, title, slug"),
   ]);
 

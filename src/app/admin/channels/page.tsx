@@ -15,7 +15,7 @@ export default async function AdminChannelsPage({
   const supabase = createSupabaseServiceClient();
   const [{ data: channels, error }, { data: stats, error: statsError }] =
     await Promise.all([
-      supabase.from("channels").select("*").order("name", { ascending: true }),
+      supabase.from("channel_full").select("*").order("name", { ascending: true, nullsFirst: false }),
       supabase.from("channel_stats_latest").select("*"),
     ]);
   if (error) throw error;

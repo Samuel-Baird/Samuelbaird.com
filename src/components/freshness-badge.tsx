@@ -1,4 +1,4 @@
-import { fmtRelative } from "@/lib/format";
+import { fmtDateTime, fmtRelative } from "@/lib/format";
 
 type Props = {
   iso: string | null | undefined;
@@ -7,7 +7,8 @@ type Props = {
 };
 
 export function FreshnessBadge({ iso, size = "sm", prefix = "Updated" }: Props) {
-  const { text, fresh } = fmtRelative(iso);
+  const { fresh } = fmtRelative(iso);
+  const text = fmtDateTime(iso);
   const pad =
     size === "md" ? "px-3 py-1 text-xs" : "px-2 py-0.5 text-[10px]";
   const tone = fresh

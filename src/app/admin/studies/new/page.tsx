@@ -1,4 +1,5 @@
 import { createStudy } from "@/app/admin/actions";
+import { SubmitButton } from "@/components/submit-button";
 
 export default function NewStudyPage() {
   return (
@@ -70,9 +71,12 @@ export default function NewStudyPage() {
             className="mt-2 block w-full text-sm"
           />
         </label>
-        <button className="inline-flex h-10 w-fit items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90">
+        <SubmitButton
+          pendingLabel="Creating…"
+          className="inline-flex h-10 w-fit items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+        >
           Create study
-        </button>
+        </SubmitButton>
       </form>
     </div>
   );

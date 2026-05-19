@@ -17,9 +17,9 @@ export default async function AdminEditChannelPage({
   const { slug } = await params;
   const supabase = createSupabaseServiceClient();
   const { data, error } = await supabase
-    .from("channels")
+    .from("channel_full")
     .select("*")
-    .eq("slug", slug)
+    .or(`slug.eq.${slug},youtube_channel_id.eq.${slug}`)
     .maybeSingle();
   if (error) throw error;
   if (!data) notFound();

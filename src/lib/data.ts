@@ -12,24 +12,42 @@ function publicClient() {
   );
 }
 
+type ChannelFullRow = Channel & {
+  stats_captured_at: string | null;
+  subscribers: number | null;
+  total_views: number | null;
+  video_count: number | null;
+};
+
+function rowToChannelWithStats(row: ChannelFullRow): ChannelWithStats {
+  const {
+    stats_captured_at,
+    subscribers,
+    total_views,
+    video_count,
+    ...channel
+  } = row;
+  const latest =
+    stats_captured_at !== null && subscribers !== null
+      ? {
+          channel_id: channel.id,
+          captured_at: stats_captured_at,
+          subscribers: subscribers ?? 0,
+          total_views: total_views ?? 0,
+          video_count: video_count ?? 0,
+        }
+      : null;
+  return { ...(channel as Channel), latest };
+}
+
 export async function getChannelsWithLatest(): Promise<ChannelWithStats[]> {
   const sb = publicClient();
-  const { data: channels, error } = await sb
-    .from("channels")
+  const { data, error } = await sb
+    .from("channel_full")
     .select("*")
     .eq("is_active", true);
   if (error) throw error;
-
-  const { data: stats, error: sErr } = await sb
-    .from("channel_stats_latest")
-    .select("*");
-  if (sErr) throw sErr;
-
-  const byId = new Map(stats!.map((s) => [s.channel_id, s]));
-  return (channels as Channel[]).map((c) => ({
-    ...c,
-    latest: byId.get(c.id) ?? null,
-  }));
+  return (data as ChannelFullRow[]).map(rowToChannelWithStats);
 }
 
 export async function getChannelByYouTubeId(
@@ -37,18 +55,13 @@ export async function getChannelByYouTubeId(
 ): Promise<ChannelWithStats | null> {
   const sb = publicClient();
   const { data, error } = await sb
-    .from("channels")
+    .from("channel_full")
     .select("*")
     .eq("youtube_channel_id", youtubeChannelId)
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
-  const { data: latest } = await sb
-    .from("channel_stats_latest")
-    .select("*")
-    .eq("channel_id", (data as Channel).id)
-    .maybeSingle();
-  return { ...(data as Channel), latest: latest ?? null };
+  return rowToChannelWithStats(data as ChannelFullRow);
 }
 
 export async function getChannelByNameLike(
@@ -56,19 +69,14 @@ export async function getChannelByNameLike(
 ): Promise<ChannelWithStats | null> {
   const sb = publicClient();
   const { data, error } = await sb
-    .from("channels")
+    .from("channel_full")
     .select("*")
     .ilike("name", pattern)
     .limit(1)
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
-  const { data: latest } = await sb
-    .from("channel_stats_latest")
-    .select("*")
-    .eq("channel_id", (data as Channel).id)
-    .maybeSingle();
-  return { ...(data as Channel), latest: latest ?? null };
+  return rowToChannelWithStats(data as ChannelFullRow);
 }
 
 export async function getFeaturedChannelsMix(
@@ -126,32 +134,20 @@ export async function getBookmarkedChannelsForUser(
   const ids = (bookmarks ?? []).map((row) => row.target_id);
   if (ids.length === 0) return [];
 
-  const { data: channelRows, error: channelError } = await sb
-    .from("channels")
+  const { data: rows, error: channelError } = await sb
+    .from("channel_full")
     .select("*")
     .in("id", ids)
     .eq("is_active", true);
   if (channelError) throw channelError;
 
   const byChannelId = new Map(
-    ((channelRows ?? []) as Channel[]).map((channel) => [channel.id, channel]),
+    ((rows ?? []) as ChannelFullRow[]).map((row) => [row.id, row]),
   );
-  const channels = ids
+  return ids
     .map((id) => byChannelId.get(id))
-    .filter((channel): channel is Channel => Boolean(channel));
-  if (channels.length === 0) return [];
-
-  const { data: stats, error: sErr } = await sb
-    .from("channel_stats_latest")
-    .select("*")
-    .in(
-      "channel_id",
-      channels.map((c) => c.id),
-    );
-  if (sErr) throw sErr;
-
-  const byId = new Map((stats ?? []).map((s) => [s.channel_id, s]));
-  return channels.map((c) => ({ ...c, latest: byId.get(c.id) ?? null }));
+    .filter((row): row is ChannelFullRow => Boolean(row))
+    .map(rowToChannelWithStats);
 }
 
 export async function getBookmarkedStudiesForUser(
@@ -187,19 +183,17 @@ export async function getChannelBySlug(
   slug: string,
 ): Promise<ChannelWithStats | null> {
   const sb = publicClient();
+  // Slug is now equal to youtube_channel_id (stable across renames). We accept
+  // either field for backwards compatibility with any links still using the old
+  // name-based slug.
   const { data, error } = await sb
-    .from("channels")
+    .from("channel_full")
     .select("*")
-    .eq("slug", slug)
+    .or(`slug.eq.${slug},youtube_channel_id.eq.${slug}`)
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
-  const { data: latest } = await sb
-    .from("channel_stats_latest")
-    .select("*")
-    .eq("channel_id", data.id)
-    .maybeSingle();
-  return { ...(data as Channel), latest: latest ?? null };
+  return rowToChannelWithStats(data as ChannelFullRow);
 }
 
 export async function getChannelStatsHistory(channelId: string) {
@@ -477,7 +471,7 @@ export type SearchItem =
 export async function getSearchIndex(): Promise<SearchItem[]> {
   const sb = publicClient();
   const [channelsRes, studiesRes, tagsRes] = await Promise.all([
-    sb.from("channels").select("slug, name, channel_type").eq("is_active", true),
+    sb.from("channel_full").select("slug, name, channel_type").eq("is_active", true),
     sb.from("studies").select("slug, title, year, authors"),
     getAllStudyTags(),
   ]);

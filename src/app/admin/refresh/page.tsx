@@ -1,6 +1,7 @@
 import { refreshStatsNow } from "@/app/admin/actions";
+import { SubmitButton } from "@/components/submit-button";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
-import { fmtDate } from "@/lib/format";
+import { fmtDateTime } from "@/lib/format";
 
 type SearchParams = { confirm?: string; refreshed?: string };
 
@@ -23,7 +24,7 @@ export default async function AdminRefreshPage({
         Refresh stats
       </h1>
       <p className="mt-3 text-sm text-[color:var(--muted)]">
-        Last refresh: {fmtDate(data?.captured_at)}
+        Last refresh: {fmtDateTime(data?.captured_at)}
       </p>
       {params.refreshed && (
         <p className="mt-3 text-sm text-[color:var(--accent)]">
@@ -38,9 +39,11 @@ export default async function AdminRefreshPage({
               This will call the YouTube API for every tracked channel and append
               a new stats snapshot.
             </p>
-            <button className="mt-5 inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90">
-              Refresh stats now
-            </button>
+            <div className="mt-5">
+              <SubmitButton pendingLabel="Refreshing…">
+                Refresh stats now
+              </SubmitButton>
+            </div>
           </form>
         ) : (
           <a

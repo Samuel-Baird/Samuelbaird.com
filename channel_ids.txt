@@ -1,0 +1,7 @@
+# YouTube channel IDs to track (one per line). Lines starting with # are comments.
+# Run `npx tsx scripts/seed_channel_ids.ts` to upsert these into the
+# `channels` metadata table, then hit /api/cron/refresh-stats to populate
+# YouTube data and initial stats.
+#
+# Add the channels you want tracked below. Example:
+# UCRijo3ddMTht_IHyNSNXpNQ
