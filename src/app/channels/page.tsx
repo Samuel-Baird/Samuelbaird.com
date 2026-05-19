@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: "Latter-day Saint YouTube creators tracked by Latter-day Stats.",
 };
 
-export const revalidate = 600; // 10 minutes
-
 export default async function ChannelsPage() {
   const [channels, auth] = await Promise.all([
     getChannelsWithLatest({ includeInactive: true }),

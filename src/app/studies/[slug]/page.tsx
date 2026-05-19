@@ -19,8 +19,6 @@ import {
   pdfPublicUrl,
 } from "@/lib/data";
 
-export const revalidate = 600;
-
 type RouteParams = { slug: string };
 
 export async function generateMetadata({
