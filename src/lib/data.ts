@@ -267,9 +267,25 @@ export async function getRisersAndFallers(
   if (error) throw error;
 
   type Row = { channel_id: string; captured_at: string; subscribers: number };
+  // Collapse to at most one data point per UTC day per channel — keep the latest
+  // capture for each day so manual refreshes don't double-count, and so the
+  // sparkline and delta reflect once-a-day cadence.
+  const latestPerDay = new Map<string, Row>();
+  for (const r of (rows ?? []) as Row[]) {
+    const day = r.captured_at.slice(0, 10);
+    const key = `${r.channel_id}|${day}`;
+    const existing = latestPerDay.get(key);
+    if (!existing || existing.captured_at < r.captured_at) {
+      latestPerDay.set(key, r);
+    }
+  }
+  const dedupedRows = [...latestPerDay.values()].sort((a, b) =>
+    a.captured_at < b.captured_at ? -1 : a.captured_at > b.captured_at ? 1 : 0,
+  );
+
   const baselineByChannel = new Map<string, Row>();
   const historyByChannel = new Map<string, { captured_at: string; subscribers: number }[]>();
-  for (const r of (rows ?? []) as Row[]) {
+  for (const r of dedupedRows) {
     if (!baselineByChannel.has(r.channel_id)) {
       baselineByChannel.set(r.channel_id, r);
     }

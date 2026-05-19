@@ -19,30 +19,6 @@ import {
   fmtAvgViews,
   fmtDate,
 } from "@/lib/format";
-import {
-  getAllSocialStats,
-  type PlatformKey,
-} from "@/lib/social-stats-cache";
-import type { SocialStats } from "@/lib/social-stats";
-
-// Test-phase scoping: only fetch live social stats for this one channel.
-// Match loosely against any of the channel's social URLs so trailing slashes
-// or www/non-www variations don't disqualify it.
-function isInformedSaints(c: {
-  facebook_url: string | null;
-  instagram_url: string | null;
-  tiktok_url: string | null;
-  x_url: string | null;
-  name: string;
-}) {
-  const blob = [c.facebook_url, c.instagram_url, c.tiktok_url, c.x_url, c.name]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase()
-    .replace(/\s+/g, "");
-  return blob.includes("informedsaints");
-}
-
 type RouteParams = { slug: string };
 
 function isHttpUrl(value: string) {
@@ -83,26 +59,9 @@ export default async function ChannelDetailPage({
     getCurrentUser(),
   ]);
   if (!channel) notFound();
-  const showSocialStats = isInformedSaints(channel);
-  // If the channel record has no social URLs yet, fall back to the URLs the
-  // user provided when requesting this feature so the test page still renders.
-  const effectiveSocialUrls = showSocialStats
-    ? {
-        facebook:
-          channel.facebook_url ?? "https://www.facebook.com/informedsaints",
-        instagram:
-          channel.instagram_url ?? "https://www.instagram.com/informedsaintspod",
-        tiktok:
-          channel.tiktok_url ?? "https://www.tiktok.com/@informedsaints",
-        x: channel.x_url ?? "https://x.com/informedsaints",
-      }
-    : null;
-  const [bookmarks, history, socialStats] = await Promise.all([
+  const [bookmarks, history] = await Promise.all([
     auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
     getChannelStatsHistory(channel.id),
-    effectiveSocialUrls
-      ? getAllSocialStats(effectiveSocialUrls)
-      : Promise.resolve(null),
   ]);
 
   const yt = channel.latest;
@@ -229,98 +188,25 @@ export default async function ChannelDetailPage({
         )}
       </div>
 
-      {socialProfiles.length > 0 && !showSocialStats && (
-        <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
-          <span className="mr-1 text-[color:var(--muted)]">
-            Other profiles:
-          </span>
-          {socialProfiles.map((profile) => (
-            <a
-              key={profile.label}
-              href={socialHref(profile.url)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-9 items-center rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
-            >
-              {profile.label}
-            </a>
-          ))}
-        </div>
-      )}
-
-      {showSocialStats && effectiveSocialUrls && (
-        <div className="mt-8">
+      {socialProfiles.length > 0 && (
+        <div className="mt-6">
           <h2 className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
             Other profiles
           </h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            {(
-              [
-                { label: "Facebook", url: effectiveSocialUrls.facebook },
-                { label: "Instagram", url: effectiveSocialUrls.instagram },
-                { label: "TikTok", url: effectiveSocialUrls.tiktok },
-                { label: "X", url: effectiveSocialUrls.x },
-              ] as const
-            ).map((profile) => {
-              const key = profile.label.toLowerCase() as PlatformKey;
-              const stats: SocialStats | null = socialStats?.[key] ?? null;
-              return (
-                <a
-                  key={profile.label}
-                  href={socialHref(profile.url)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:bg-[color:var(--muted-soft)]"
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-sm font-medium text-[color:var(--foreground)]">
-                      {profile.label}
-                    </span>
-                    <span className="text-xs text-[color:var(--muted)]">
-                      Open ↗
-                    </span>
-                  </div>
-                  {stats ? (
-                    <dl className="mt-3 grid grid-cols-3 gap-2 text-center">
-                      {stats.followers !== undefined && (
-                        <div>
-                          <dd className="serif text-lg font-semibold tabular-nums">
-                            {fmtCompact(stats.followers)}
-                          </dd>
-                          <dt className="text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
-                            Followers
-                          </dt>
-                        </div>
-                      )}
-                      {stats.posts !== undefined && (
-                        <div>
-                          <dd className="serif text-lg font-semibold tabular-nums">
-                            {fmtCompact(stats.posts)}
-                          </dd>
-                          <dt className="text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
-                            Posts
-                          </dt>
-                        </div>
-                      )}
-                      {stats.likes !== undefined && (
-                        <div>
-                          <dd className="serif text-lg font-semibold tabular-nums">
-                            {fmtCompact(stats.likes)}
-                          </dd>
-                          <dt className="text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
-                            Likes
-                          </dt>
-                        </div>
-                      )}
-                    </dl>
-                  ) : (
-                    <p className="mt-3 text-xs text-[color:var(--muted)]">
-                      Stats unavailable
-                    </p>
-                  )}
-                </a>
-              );
-            })}
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {socialProfiles.map((profile) => (
+              <a
+                key={profile.label}
+                href={socialHref(profile.url)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open on ${profile.label}`}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-[color:var(--border)] bg-white px-3 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+              >
+                <span>{profile.label}</span>
+                <span aria-hidden="true" className="text-xs text-[color:var(--muted)]">↗</span>
+              </a>
+            ))}
           </div>
         </div>
       )}
