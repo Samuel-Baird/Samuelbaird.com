@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { deleteChannel, updateChannelDetails } from "@/app/admin/actions";
 import { EditForm } from "@/components/edit-form";
-import { TYPE_COLORS } from "@/lib/channel-types";
+import { TYPE_COLORS, colorsForType } from "@/lib/channel-types";
 import { COUNTRIES, LANGUAGES } from "@/lib/iso";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Channel } from "@/lib/types";
@@ -25,6 +25,13 @@ export default async function AdminEditChannelPage({
   if (!data) notFound();
   const channel = data as Channel;
   const types = Object.keys(TYPE_COLORS).sort();
+  const selectedTypes = new Set(
+    channel.channel_types?.length
+      ? channel.channel_types
+      : channel.channel_type
+        ? [channel.channel_type]
+        : [],
+  );
 
   const action = updateChannelDetails.bind(null, channel.id);
 
@@ -50,19 +57,37 @@ export default async function AdminEditChannelPage({
         action={action}
         className="mt-8 grid gap-5 rounded-2xl border border-[color:var(--border)] bg-white p-6"
       >
-        <Field label="Type">
-          <select
-            name="channel_type"
-            defaultValue={channel.channel_type ?? ""}
-            className="h-10 w-full rounded-md border border-[color:var(--border)] bg-white px-3 text-sm"
-          >
-            <option value="">—</option>
-            {types.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+        <Field
+          label="Tags"
+          hint="Pick every tag that applies. The first selected tag (alphabetical) is used as the primary type for legacy displays."
+        >
+          <div className="mt-1 grid max-h-72 grid-cols-2 gap-1.5 overflow-y-auto rounded-md border border-[color:var(--border)] bg-white p-2 sm:grid-cols-3">
+            {types.map((t) => {
+              const { bg, text } = colorsForType(t);
+              const checked = selectedTypes.has(t);
+              return (
+                <label
+                  key={t}
+                  className={`flex cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-xs transition-colors ${
+                    checked ? "bg-[color:var(--muted-soft)]" : "hover:bg-[color:var(--muted-soft)]/50"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    name="channel_types"
+                    value={t}
+                    defaultChecked={checked}
+                    className="h-3.5 w-3.5"
+                  />
+                  <span
+                    className={`inline-flex rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider`}
+                  >
+                    {t}
+                  </span>
+                </label>
+              );
+            })}
+          </div>
         </Field>
 
         <div className="grid gap-5 sm:grid-cols-2">

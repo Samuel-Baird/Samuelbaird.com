@@ -75,10 +75,27 @@ export default async function BookmarksPage({
                   />
                 </div>
                 <Link href={`/channels/${c.slug}`} className="block">
-                  {c.channel_type && (
-                    <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
-                      {c.channel_type}
-                    </span>
+                  {(c.channel_types?.length
+                    ? c.channel_types
+                    : c.channel_type
+                      ? [c.channel_type]
+                      : []
+                  ).length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {(c.channel_types?.length
+                        ? c.channel_types
+                        : c.channel_type
+                          ? [c.channel_type]
+                          : []
+                      ).map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   )}
                   <h2 className="serif mt-4 text-xl font-semibold leading-snug hover:text-[color:var(--accent)]">
                     {c.name}

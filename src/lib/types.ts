@@ -20,6 +20,7 @@ export type Channel = {
   country_manual: string | null;
   language_manual: string | null;
   channel_type: string | null;
+  channel_types: string[];
   state: string | null;
   city: string | null;
   owned_by: string | null;

@@ -134,7 +134,7 @@ export default async function Home() {
           </div>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featuredMix.map((c) => {
-              const { bg, text } = colorsForType(c.channel_type);
+              const tags = channelTagsOf(c);
               return (
                 <li key={c.id}>
                   <Link
@@ -155,14 +155,18 @@ export default async function Home() {
                       <h3 className="truncate text-sm font-semibold group-hover:text-[color:var(--accent)]">
                         {c.name}
                       </h3>
-                      <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
-                        {c.channel_type && (
-                          <span
-                            className={`rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] uppercase tracking-wider`}
-                          >
-                            {c.channel_type}
-                          </span>
-                        )}
+                      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
+                        {tags.map((tag) => {
+                          const { bg, text } = colorsForType(tag);
+                          return (
+                            <span
+                              key={tag}
+                              className={`rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] uppercase tracking-wider`}
+                            >
+                              {tag}
+                            </span>
+                          );
+                        })}
                         <span className="tabular-nums">
                           {fmtCompact(c.latest?.subscribers)} subs
                         </span>
@@ -249,6 +253,10 @@ function formatYearSpan(yearMin: number | null, yearMax: number | null) {
   if (!yearMin || !yearMax) return "—";
   if (yearMin === yearMax) return String(yearMin);
   return `${yearMin}–${yearMax}`;
+}
+
+function channelTagsOf(c: ChannelWithStats): string[] {
+  return c.channel_types?.length ? c.channel_types : c.channel_type ? [c.channel_type] : [];
 }
 
 function buildTopStatSlides(channels: ChannelWithStats[]): TopStatSlide[] {
@@ -351,8 +359,8 @@ function topChannelsSlide({
       name: channel.name,
       href: `/channels/${channel.slug}`,
       value: format(value(channel)),
-      sublabel: channel.channel_type
-        ? `${channel.channel_type} - ${sublabel}`
+      sublabel: channelTagsOf(channel)[0]
+        ? `${channelTagsOf(channel)[0]} - ${sublabel}`
         : sublabel,
     })),
   };
@@ -395,8 +403,10 @@ function categorySlide(
   }[sort];
 
   return topChannelsSlide({
-    channels: channels.filter(
-      (channel) => channel.channel_type?.toLowerCase() === category.toLowerCase(),
+    channels: channels.filter((channel) =>
+      channelTagsOf(channel).some(
+        (tag) => tag.toLowerCase() === category.toLowerCase(),
+      ),
     ),
     label: category,
     title: `Top ${category.toLowerCase()} channels`,

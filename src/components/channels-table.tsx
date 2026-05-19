@@ -50,8 +50,7 @@ const defaultDirection: Record<SortKey, SortDirection> = {
   age: "desc",
 };
 
-function TypePill({ type }: { type: string | null }) {
-  if (!type) return <span className="text-[color:var(--muted)]">-</span>;
+function TypePill({ type }: { type: string }) {
   const { bg, text } = colorsForType(type);
   return (
     <span
@@ -59,6 +58,22 @@ function TypePill({ type }: { type: string | null }) {
     >
       {type}
     </span>
+  );
+}
+
+function channelTags(c: ChannelWithStats): string[] {
+  const arr = c.channel_types?.length ? c.channel_types : c.channel_type ? [c.channel_type] : [];
+  return arr;
+}
+
+function TypePills({ types }: { types: string[] }) {
+  if (types.length === 0) return <span className="text-[color:var(--muted)]">-</span>;
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {types.map((t) => (
+        <TypePill key={t} type={t} />
+      ))}
+    </div>
   );
 }
 
@@ -129,13 +144,13 @@ export function ChannelsTable({
     const q = query.trim().toLowerCase();
     const list = q
       ? channels.filter((c) =>
-          [c.name, c.channel_type].some((v) => v?.toLowerCase().includes(q)),
+          [c.name, ...channelTags(c)].some((v) => v?.toLowerCase().includes(q)),
         )
       : channels.slice();
 
     const get = {
       name: (c: ChannelWithStats) => c.name.toLowerCase(),
-      type: (c: ChannelWithStats) => c.channel_type?.toLowerCase() ?? "",
+      type: (c: ChannelWithStats) => channelTags(c)[0]?.toLowerCase() ?? "",
       subscribers: (c: ChannelWithStats) => c.latest?.subscribers ?? -1,
       total_views: (c: ChannelWithStats) => c.latest?.total_views ?? -1,
       video_count: (c: ChannelWithStats) => c.latest?.video_count ?? -1,
@@ -293,7 +308,7 @@ export function ChannelsTable({
                   </div>
                 </td>
                 <td className="px-3 py-3.5">
-                  <TypePill type={c.channel_type} />
+                  <TypePills types={channelTags(c)} />
                 </td>
                 <td className="px-3 py-3.5 text-right tabular-nums">
                   {fmtCompact(c.latest?.subscribers)}
@@ -354,9 +369,11 @@ export function ChannelsTable({
               className="block min-h-[44px]"
               aria-label={`View ${c.name}`}
             >
-              {(c.channel_type || !c.is_active) && (
-                <div className="mb-2 flex flex-wrap gap-2">
-                  {c.channel_type && <TypePill type={c.channel_type} />}
+              {(channelTags(c).length > 0 || !c.is_active) && (
+                <div className="mb-2 flex flex-wrap gap-1.5">
+                  {channelTags(c).map((t) => (
+                    <TypePill key={t} type={t} />
+                  ))}
                   {!c.is_active && <InactivePill />}
                 </div>
               )}

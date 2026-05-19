@@ -51,11 +51,35 @@ function normalizeFilterValue(value: string | null) {
   return normalized ? normalized : UNKNOWN;
 }
 
+function channelTagValues(channel: ChannelWithStats): string[] {
+  const arr = channel.channel_types?.length
+    ? channel.channel_types
+    : channel.channel_type
+      ? [channel.channel_type]
+      : [];
+  return arr.length ? arr : [UNKNOWN];
+}
+
 function getChannelFilterValue(channel: ChannelWithStats, key: FilterKey) {
-  if (key === "type") return normalizeFilterValue(channel.channel_type);
+  if (key === "type") {
+    // Returned for sort/display only; matching uses channelTagValues.
+    return channelTagValues(channel)[0];
+  }
   if (key === "country")
     return normalizeFilterValue(channel.country_manual ?? channel.country);
   return normalizeFilterValue(channel.language_manual ?? channel.language);
+}
+
+function channelMatchesGroup(
+  channel: ChannelWithStats,
+  key: FilterKey,
+  selected: Set<string>,
+): boolean {
+  if (selected.size === 0) return true;
+  if (key === "type") {
+    return channelTagValues(channel).some((tag) => selected.has(tag));
+  }
+  return selected.has(getChannelFilterValue(channel, key));
 }
 
 function matchesSelections(
@@ -63,10 +87,7 @@ function matchesSelections(
   selections: Record<FilterKey, Set<string>>,
   keys: FilterKey[] = ["type", "country", "language"],
 ) {
-  return keys.every((key) => {
-    const selected = selections[key];
-    return selected.size === 0 || selected.has(getChannelFilterValue(channel, key));
-  });
+  return keys.every((key) => channelMatchesGroup(channel, key, selections[key]));
 }
 
 function nextSelectionSet(current: Set<string>, value: string) {
@@ -108,7 +129,7 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
     };
 
     for (const channel of channels) {
-      values.type.add(getChannelFilterValue(channel, "type"));
+      for (const tag of channelTagValues(channel)) values.type.add(tag);
       values.country.add(getChannelFilterValue(channel, "country"));
       values.language.add(getChannelFilterValue(channel, "language"));
     }
@@ -140,8 +161,10 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
         options: availableOptions[key].map((value) => ({
           value,
           label: value,
-          count: countBase.filter(
-            (channel) => getChannelFilterValue(channel, key) === value,
+          count: countBase.filter((channel) =>
+            key === "type"
+              ? channelTagValues(channel).includes(value)
+              : getChannelFilterValue(channel, key) === value,
           ).length,
         })),
       };

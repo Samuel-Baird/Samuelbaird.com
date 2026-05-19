@@ -199,9 +199,10 @@ export async function addChannelByInput(rawInput: string) {
 
 export async function setChannelType(id: string, value: string) {
   await requireAdmin();
+  const types = value ? [value] : [];
   const { error } = await createSupabaseServiceClient()
     .from("channels")
-    .update({ channel_type: value || null })
+    .update({ channel_types: types, channel_type: value || null })
     .eq("id", id);
   if (error) throw error;
   revalidatePath("/admin/channels");
@@ -229,8 +230,15 @@ export async function updateChannelDetails(
     return value || null;
   };
   const supabase = createSupabaseServiceClient();
+  const channelTypes = formData
+    .getAll("channel_types")
+    .map((v) => String(v).trim())
+    .filter(Boolean);
+  // Deduplicate while preserving order.
+  const channelTypesDeduped = [...new Set(channelTypes)];
   const base = {
-    channel_type: get("channel_type"),
+    channel_types: channelTypesDeduped,
+    channel_type: channelTypesDeduped[0] ?? null,
     state: get("state"),
     city: get("city"),
     owned_by: get("owned_by"),
@@ -262,6 +270,18 @@ export async function updateChannelDetails(
     .eq("id", id)
     .select("slug")
     .single();
+
+  if (error && /channel_types/.test(error.message)) {
+    warnings.push("Multiple tags did not save — migration 0026 not applied.");
+    const { channel_types: _drop, ...withoutArray } = coreDetails;
+    void _drop;
+    ({ data, error } = await supabase
+      .from("channels")
+      .update(withoutArray)
+      .eq("id", id)
+      .select("slug")
+      .single());
+  }
 
   if (error && /lds_affiliation_source/.test(error.message)) {
     warnings.push("LDS affiliation source did not save — migration 0007 not applied.");

@@ -12,14 +12,28 @@ function normalizeFilterValue(value: string | null | undefined) {
   return normalized ? normalized : UNKNOWN;
 }
 
+function channelTagsOf(channel: ChannelWithStats): string[] {
+  return channel.channel_types?.length
+    ? channel.channel_types
+    : channel.channel_type
+      ? [channel.channel_type]
+      : [];
+}
+
 function getChannelFilterValue(
   channel: ChannelWithStats,
-  key: "type" | "country" | "language",
+  key: "country" | "language",
 ) {
-  if (key === "type") return normalizeFilterValue(channel.channel_type);
   if (key === "country")
     return normalizeFilterValue(channel.country_manual ?? channel.country);
   return normalizeFilterValue(channel.language_manual ?? channel.language);
+}
+
+function matchesType(channel: ChannelWithStats, selected: Set<string>): boolean {
+  if (selected.size === 0) return true;
+  const tags = channelTagsOf(channel);
+  if (tags.length === 0) return selected.has(UNKNOWN);
+  return tags.some((tag) => selected.has(tag));
 }
 
 function selectedValues(req: NextRequest, key: "type" | "country" | "language") {
@@ -52,8 +66,7 @@ export async function GET(req: NextRequest) {
 
   const channels = (await getChannelsWithLatest({ includeInactive: true })).filter(
     (channel) =>
-      (selections.type.size === 0 ||
-        selections.type.has(getChannelFilterValue(channel, "type"))) &&
+      matchesType(channel, selections.type) &&
       (selections.country.size === 0 ||
         selections.country.has(getChannelFilterValue(channel, "country"))) &&
       (selections.language.size === 0 ||
@@ -62,7 +75,7 @@ export async function GET(req: NextRequest) {
 
   const csv = toCsv(channels, [
     { header: "Name", value: (c) => c.name },
-    { header: "Type", value: (c) => c.channel_type ?? "" },
+    { header: "Tags", value: (c) => channelTagsOf(c).join("|") },
     { header: "Country", value: (c) => c.country_manual ?? c.country ?? "" },
     { header: "Language", value: (c) => c.language_manual ?? c.language ?? "" },
     { header: "Subscribers", value: (c) => c.latest?.subscribers ?? "" },

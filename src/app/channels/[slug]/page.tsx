@@ -102,16 +102,22 @@ export default async function ChannelDetailPage({
       </Link>
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
-        {channel.channel_type && (() => {
-          const { bg, text } = colorsForType(channel.channel_type);
+        {(channel.channel_types?.length
+          ? channel.channel_types
+          : channel.channel_type
+            ? [channel.channel_type]
+            : []
+        ).map((tag) => {
+          const { bg, text } = colorsForType(tag);
           return (
             <span
+              key={tag}
               className={`rounded-full ${bg} ${text} px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider`}
             >
-              {channel.channel_type}
+              {tag}
             </span>
           );
-        })()}
+        })}
         <FreshnessBadge iso={yt?.captured_at} />
       </div>
 

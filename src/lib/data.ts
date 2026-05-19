@@ -92,14 +92,22 @@ export async function getFeaturedChannelsMix(
   // Build a category-diverse filler set: one channel per type, shuffled, then
   // repeat until we have enough. This ensures the 6-card grid rarely shows
   // the same category twice in a row.
-  const fillerPool = all.filter(
-    (c) => !used.has(c.id) && !EXCLUDED_TYPES.has(c.channel_type ?? ""),
-  );
+  const primaryType = (c: ChannelWithStats) =>
+    (c.channel_types?.[0] ?? c.channel_type ?? "") || "Other";
+  const fillerPool = all.filter((c) => {
+    if (used.has(c.id)) return false;
+    const tags = c.channel_types?.length
+      ? c.channel_types
+      : c.channel_type
+        ? [c.channel_type]
+        : [];
+    return !tags.some((t) => EXCLUDED_TYPES.has(t));
+  });
 
-  // Group by type, shuffle within each group
+  // Group by primary tag, shuffle within each group
   const byType = new Map<string, ChannelWithStats[]>();
   for (const c of fillerPool) {
-    const key = c.channel_type ?? "Other";
+    const key = primaryType(c);
     if (!byType.has(key)) byType.set(key, []);
     byType.get(key)!.push(c);
   }

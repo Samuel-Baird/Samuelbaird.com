@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState, useTransition } from "react";
+import { useMemo, useState } from "react";
 import {
   deleteChannel,
   setChannelActive,
   setChannelFeatured,
-  setChannelType,
 } from "@/app/admin/actions";
+import { colorsForType } from "@/lib/channel-types";
 import { fmtCompact } from "@/lib/format";
 import type { Channel, ChannelStats } from "@/lib/types";
 
@@ -17,11 +17,13 @@ type Props = {
   types: string[];
 };
 
+function channelTagsOf(c: Channel): string[] {
+  return c.channel_types?.length ? c.channel_types : c.channel_type ? [c.channel_type] : [];
+}
+
 export function AdminChannelsTable({ channels, stats, types }: Props) {
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
-  const [pending, startTransition] = useTransition();
-
   const byId = useMemo(
     () => new Map(stats.map((stat) => [stat.channel_id, stat])),
     [stats],
@@ -30,12 +32,12 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return channels.filter((c) => {
-      if (typeFilter && (c.channel_type ?? "") !== typeFilter) return false;
+      if (typeFilter && !channelTagsOf(c).includes(typeFilter)) return false;
       if (!q) return true;
       return (
         c.name.toLowerCase().includes(q) ||
         (c.handle ?? "").toLowerCase().includes(q) ||
-        (c.channel_type ?? "").toLowerCase().includes(q) ||
+        channelTagsOf(c).some((t) => t.toLowerCase().includes(q)) ||
         (c.country ?? "").toLowerCase().includes(q) ||
         (c.country_manual ?? "").toLowerCase().includes(q) ||
         (c.owned_by ?? "").toLowerCase().includes(q) ||
@@ -99,24 +101,23 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
                     )}
                   </td>
                   <td className="px-4 py-3">
-                    <select
-                      defaultValue={channel.channel_type ?? ""}
-                      disabled={pending}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        startTransition(() => {
-                          setChannelType(channel.id, value);
-                        });
-                      }}
-                      className="h-8 max-w-[180px] rounded-md border border-[color:var(--border)] bg-white px-2 text-xs"
-                    >
-                      <option value="">—</option>
-                      {types.map((t) => (
-                        <option key={t} value={t}>
-                          {t}
-                        </option>
-                      ))}
-                    </select>
+                    {channelTagsOf(channel).length === 0 ? (
+                      <span className="text-xs text-[color:var(--muted)]">—</span>
+                    ) : (
+                      <div className="flex max-w-[220px] flex-wrap gap-1">
+                        {channelTagsOf(channel).map((t) => {
+                          const { bg, text } = colorsForType(t);
+                          return (
+                            <span
+                              key={t}
+                              className={`inline-flex rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider`}
+                            >
+                              {t}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    )}
                   </td>
                   <td className="px-4 py-3 text-right tabular-nums">
                     {fmtCompact(latest?.subscribers)}
