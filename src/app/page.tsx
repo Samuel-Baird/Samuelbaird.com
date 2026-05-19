@@ -25,10 +25,6 @@ export default async function Home() {
     getFeaturedStudies(2),
     getRisersAndFallers(30, 5),
   ]);
-  const top = channels
-    .filter((c) => c.latest)
-    .sort((a, b) => (b.latest!.subscribers ?? 0) - (a.latest!.subscribers ?? 0))
-    .slice(0, 10);
   const topStatSlides = buildTopStatSlides(channels);
 
   return (
@@ -142,50 +138,6 @@ export default async function Home() {
           </ul>
         </section>
       )}
-
-      {/* Top channels */}
-      <section className="mt-20">
-        <div className="flex items-end justify-between gap-3">
-          <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
-            Top channels by subscribers
-          </h2>
-          <Link
-            href="/channels"
-            className="text-sm text-[color:var(--accent)] hover:underline"
-          >
-            View all →
-          </Link>
-        </div>
-        <ol className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
-          {top.map((c, i) => (
-            <li
-              key={c.id}
-              className={
-                "flex items-center gap-4 px-5 py-3.5 " +
-                (i > 0 ? "border-t border-[color:var(--border)]" : "")
-              }
-            >
-              <span className="w-6 text-right text-sm text-[color:var(--muted)] tabular-nums">
-                {i + 1}
-              </span>
-              <Link
-                href={`/channels/${c.slug}`}
-                className="flex min-w-0 flex-1 items-center gap-2 text-sm font-medium hover:text-[color:var(--accent)]"
-              >
-                <span className="truncate">{c.name}</span>
-                {c.channel_type && (
-                  <span className="shrink-0 rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
-                    {c.channel_type}
-                  </span>
-                )}
-              </Link>
-              <span className="text-sm tabular-nums text-[color:var(--muted)]">
-                {fmtCompact(c.latest?.subscribers)}
-              </span>
-            </li>
-          ))}
-        </ol>
-      </section>
 
       <RisersFallers risers={movers.risers} fallers={movers.fallers} />
 
