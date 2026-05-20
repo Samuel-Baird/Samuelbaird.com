@@ -72,6 +72,26 @@ export default async function PremiumPage({
   const { slugs: slugsParam } = await searchParams;
   const status = await getPremiumStatus();
 
+  if (status.premium) {
+    return (
+      <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-500">
+          Premium
+        </p>
+        <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+          Thank you for supporting Latter-day Stats
+        </h1>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
+          You have full access to all premium features. Enjoy.
+        </p>
+
+        <PremiumContent slugsParam={slugsParam} email={status.email} />
+
+        <BenefitsList heading="Your premium benefits" />
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-500">
@@ -92,7 +112,22 @@ export default async function PremiumPage({
         .
       </p>
 
-      <section className="mt-10 grid gap-4 sm:grid-cols-2">
+      <BenefitsList />
+
+      <LockedNotice signedIn={status.signedIn} />
+    </div>
+  );
+}
+
+function BenefitsList({ heading }: { heading?: string } = {}) {
+  return (
+    <section className="mt-12">
+      {heading ? (
+        <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
+          {heading}
+        </h2>
+      ) : null}
+      <div className={`${heading ? "mt-6" : ""} grid gap-4 sm:grid-cols-2`}>
         {BENEFITS.map((b) => (
           <div
             key={b.title}
@@ -106,14 +141,8 @@ export default async function PremiumPage({
             </p>
           </div>
         ))}
-      </section>
-
-      {status.premium ? (
-        <PremiumContent slugsParam={slugsParam} email={status.email} />
-      ) : (
-        <LockedNotice signedIn={status.signedIn} />
-      )}
-    </div>
+      </div>
+    </section>
   );
 }
 
@@ -186,16 +215,8 @@ async function PremiumContent({
 
   return (
     <>
-      <section className="mt-16">
-        <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
-          Risers &amp; fallers
-        </h2>
-        <p className="mt-2 text-sm text-[color:var(--muted)]">
-          Biggest movers over the past 30 days.
-        </p>
-        <div className="mt-6">
-          <RisersFallers risers={movers.risers} fallers={movers.fallers} />
-        </div>
+      <section className="mt-12">
+        <RisersFallers risers={movers.risers} fallers={movers.fallers} />
       </section>
 
       <section className="mt-20">

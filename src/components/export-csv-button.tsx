@@ -44,15 +44,15 @@ export function ExportCsvButton({
   return (
     <a
       href={href}
-      className={`inline-flex h-11 items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)] ${
+      className={`inline-flex h-11 items-center gap-2 rounded-full border border-amber-400/60 bg-amber-50 px-4 text-sm font-medium text-amber-700 hover:bg-amber-100 ${
         rowCount === 0 ? "pointer-events-none opacity-60" : ""
       }`}
-      title={`${label} (${rowCount} rows)`}
+      title={`${label} (${rowCount} rows) — premium feature`}
       aria-disabled={rowCount === 0}
     >
       <Download aria-hidden="true" size={16} />
       {label}
-      <span className="text-xs text-[color:var(--muted)]">({rowCount})</span>
+      <span className="text-xs text-amber-700/70">({rowCount})</span>
     </a>
   );
 }
