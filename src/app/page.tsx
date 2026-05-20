@@ -3,6 +3,7 @@ import {
   getChannelsWithLatest,
   getFeaturedChannelsMix,
   getFeaturedStudies,
+  getRecentlyAdded,
   getRisersAndFallers,
   getSiteStats,
   getStudyStats,
@@ -19,7 +20,7 @@ import type { ChannelWithStats } from "@/lib/types";
 export const revalidate = 600;
 
 export default async function Home() {
-  const [stats, channels, featuredMix, studies, movers, studyStats] =
+  const [stats, channels, featuredMix, studies, movers, studyStats, recent] =
     await Promise.all([
       getSiteStats(),
       getChannelsWithLatest(),
@@ -27,6 +28,7 @@ export default async function Home() {
       getFeaturedStudies(2),
       getRisersAndFallers(30, 5),
       getStudyStats(),
+      getRecentlyAdded(30, 6),
     ]);
   const topStatSlides = buildTopStatSlides(channels);
 
@@ -177,6 +179,102 @@ export default async function Home() {
               );
             })}
           </ul>
+        </section>
+      )}
+
+      {(recent.channels.length > 0 || recent.studies.length > 0) && (
+        <section className="mt-20">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+            <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
+              New this month
+            </h2>
+            <span className="text-sm text-[color:var(--muted)]">
+              Added in the last 30 days
+            </span>
+          </div>
+          {recent.channels.length > 0 && (
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {recent.channels.map((c) => {
+                const tags = channelTagsOf(c);
+                return (
+                  <li key={c.id}>
+                    <Link
+                      href={`/channels/${c.slug}`}
+                      className="group flex h-full items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
+                    >
+                      {c.thumbnail_url ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={c.thumbnail_url}
+                          alt=""
+                          className="h-14 w-14 shrink-0 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="h-14 w-14 shrink-0 rounded-full bg-[color:var(--muted-soft)]" />
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <h3 className="truncate text-sm font-semibold group-hover:text-[color:var(--accent)]">
+                          {c.name}
+                        </h3>
+                        <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
+                          {tags.map((tag) => {
+                            const { bg, text } = colorsForType(tag);
+                            return (
+                              <span
+                                key={tag}
+                                className={`rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] uppercase tracking-wider`}
+                              >
+                                {tag}
+                              </span>
+                            );
+                          })}
+                          <span className="tabular-nums">
+                            {fmtCompact(c.latest?.subscribers)} subs
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+          {recent.studies.length > 0 && (
+            <ul className="mt-4 grid gap-4 md:grid-cols-2">
+              {recent.studies.map((s) => (
+                <li key={s.id}>
+                  <Link
+                    href={`/studies/${s.slug}`}
+                    className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 transition-colors hover:border-[color:var(--accent)]"
+                  >
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
+                      {s.year && (
+                        <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
+                          {s.year}
+                        </span>
+                      )}
+                      {s.tags.slice(0, 2).map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="serif mt-4 text-lg font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">
+                      {s.title}
+                    </h3>
+                    {s.authors.length > 0 && (
+                      <p className="mt-2 text-sm text-[color:var(--muted)]">
+                        {s.authors.join(", ")}
+                      </p>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       )}
 

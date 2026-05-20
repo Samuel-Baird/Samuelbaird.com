@@ -143,6 +143,35 @@ export async function getFeaturedChannelsMix(
   return [...featured, ...diverse];
 }
 
+export async function getRecentlyAdded(
+  days = 30,
+  limit = 6,
+): Promise<{ channels: ChannelWithStats[]; studies: Study[] }> {
+  const since = new Date(Date.now() - days * 86_400_000).toISOString();
+  const sb = publicClient();
+  const [chRes, sRes] = await Promise.all([
+    sb
+      .from("channel_full")
+      .select("*")
+      .eq("is_active", true)
+      .gte("created_at", since)
+      .order("created_at", { ascending: false })
+      .limit(limit),
+    sb
+      .from("studies")
+      .select("*")
+      .gte("created_at", since)
+      .order("created_at", { ascending: false })
+      .limit(limit),
+  ]);
+  if (chRes.error) throw chRes.error;
+  if (sRes.error) throw sRes.error;
+  return {
+    channels: (chRes.data as ChannelFullRow[]).map(rowToChannelWithStats),
+    studies: (sRes.data ?? []) as Study[],
+  };
+}
+
 export async function getBookmarkSetForUser(
   userId: string,
 ): Promise<{ channels: Set<string>; studies: Set<string> }> {
