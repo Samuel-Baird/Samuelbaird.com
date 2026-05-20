@@ -222,8 +222,6 @@ function buildTopStatSlides(channels: ChannelWithStats[]): TopStatSlide[] {
     }),
     categorySlide(withStats, "Apologetics", "subscribers"),
     categorySlide(withStats, "Music", "total_views"),
-    categorySlide(withStats, "Church", "video_count"),
-    categorySlide(withStats, "Education", "avg_views"),
   ];
 
   return slides.filter((slide): slide is TopStatSlide => Boolean(slide));
