@@ -2,7 +2,7 @@ import Link from "next/link";
 import {
   getChannelsWithLatest,
   getFeaturedChannelsCarouselPool,
-  getRandomStudies,
+  getStudiesCarouselMix,
   getRecentlyAdded,
   getRisersAndFallers,
   getSiteStats,
@@ -26,7 +26,7 @@ export default async function Home() {
       getSiteStats(),
       getChannelsWithLatest(),
       getFeaturedChannelsCarouselPool(24),
-      getRandomStudies(20),
+      getStudiesCarouselMix(20),
       getRisersAndFallers(30, 5),
       getRecentlyAdded(30, 6, { studies: false }),
     ]);

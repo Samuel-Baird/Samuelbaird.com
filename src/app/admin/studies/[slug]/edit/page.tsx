@@ -95,15 +95,6 @@ export default async function AdminEditStudyPage({
           placeholder="Comma-separated"
           defaultValue={study.tags.join(", ")}
         />
-        <label className="flex items-center gap-2 text-sm">
-          <input
-            name="featured"
-            type="checkbox"
-            defaultChecked={study.featured}
-            className="h-4 w-4"
-          />
-          Featured
-        </label>
         <PreviewImageField
           currentPath={study.preview_image_path}
           currentSource={study.preview_image_source}

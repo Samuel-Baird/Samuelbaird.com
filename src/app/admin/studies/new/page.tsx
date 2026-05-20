@@ -54,10 +54,6 @@ export default function NewStudyPage() {
           hint="Optional. Additional context for studies that are honestly easy to misunderstand but aren't methodologically flagged."
         />
         <TextField name="tags" label="Tags" placeholder="Comma-separated" />
-        <label className="flex items-center gap-2 text-sm">
-          <input name="featured" type="checkbox" className="h-4 w-4" />
-          Featured
-        </label>
         <fieldset className="rounded-2xl border border-red-200 bg-red-50/40 p-4">
           <label className="flex items-center gap-2 text-sm font-medium text-red-900">
             <input

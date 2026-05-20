@@ -25,7 +25,7 @@ type SearchParams = {
 
 function parseSort(value: string | undefined): StudySort {
   if (value === "year" || value === "upvotes") return value;
-  return "featured";
+  return "categories";
 }
 
 function parseTags(value: SearchParams["tag"]): string[] {

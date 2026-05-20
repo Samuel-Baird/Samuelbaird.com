@@ -329,18 +329,6 @@ export async function updateChannelDetails(
   return { ok: true, warnings };
 }
 
-export async function setStudyFeatured(id: string, value: boolean) {
-  await requireAdmin();
-  const { error } = await createSupabaseServiceClient()
-    .from("studies")
-    .update({ featured: value })
-    .eq("id", id);
-  if (error) throw error;
-  revalidatePath("/admin/studies");
-  revalidatePath("/studies");
-  revalidatePath("/");
-}
-
 export async function deleteStudy(id: string) {
   await requireAdmin();
   const { error } = await createSupabaseServiceClient()
@@ -412,7 +400,6 @@ export async function createStudy(formData: FormData) {
     source: String(formData.get("source") ?? "").trim() || null,
     abstract: String(formData.get("abstract") ?? "").trim() || null,
     tags: parseCsv(formData.get("tags")),
-    featured: formData.get("featured") === "on",
     external_url: externalUrl,
     secondary_url: String(formData.get("secondary_url") ?? "").trim() || null,
     source_type: sourceTypeRaw,
@@ -471,7 +458,6 @@ export async function updateStudy(
     source: String(formData.get("source") ?? "").trim() || null,
     abstract: String(formData.get("abstract") ?? "").trim() || null,
     tags: parseCsv(formData.get("tags")),
-    featured: formData.get("featured") === "on",
   };
 
   // Preview image handling: a new file replaces, "clear" wipes, otherwise

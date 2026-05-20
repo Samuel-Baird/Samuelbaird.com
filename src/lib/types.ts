@@ -68,7 +68,6 @@ export type Study = {
   tags: string[];
   pdf_path: string | null;
   external_url: string | null;
-  featured: boolean;
   published_at: string | null;
   findings: string[];
   limitations: string | null;

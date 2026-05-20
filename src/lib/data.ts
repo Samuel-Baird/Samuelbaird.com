@@ -432,7 +432,7 @@ export async function getRisersAndFallers(
   return { risers, fallers };
 }
 
-export type StudySort = "featured" | "year" | "upvotes";
+export type StudySort = "categories" | "year" | "upvotes";
 
 export type StudiesQuery = {
   query?: string;
@@ -452,16 +452,9 @@ export async function getStudies(opts: StudiesQuery = {}): Promise<Study[]> {
     q = q.contains("tags", opts.tags);
   }
 
-  if (opts.sort === "upvotes") {
-    // Order applied after join below.
-    q = q.order("year", { ascending: false, nullsFirst: false });
-  } else if (opts.sort === "year") {
-    q = q.order("year", { ascending: false, nullsFirst: false });
-  } else {
-    q = q
-      .order("featured", { ascending: false })
-      .order("year", { ascending: false, nullsFirst: false });
-  }
+  // All sorts come back ordered by year desc; explorer groups by category
+  // client-side when sort === "categories".
+  q = q.order("year", { ascending: false, nullsFirst: false });
 
   const { data, error } = await q;
   if (error) throw error;
@@ -537,31 +530,48 @@ export async function getUpvoteSetForUser(
   return { channels, studies };
 }
 
-export async function getRandomStudies(limit = 20): Promise<Study[]> {
+// Pool for the homepage carousel: a shuffled mix biased toward both
+// recently added studies and the most upvoted ones. Duplicates between
+// the two pools are deduped.
+export async function getStudiesCarouselMix(limit = 20): Promise<Study[]> {
   const sb = publicClient();
   const { data, error } = await sb
     .from("studies")
     .select("*")
-    .order("year", { ascending: false, nullsFirst: false });
+    .order("created_at", { ascending: false });
   if (error) throw error;
   const all = (data ?? []) as Study[];
-  for (let i = all.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [all[i], all[j]] = [all[j], all[i]];
-  }
-  return all.slice(0, limit);
-}
+  if (all.length === 0) return [];
 
-export async function getFeaturedStudies(limit = 2): Promise<Study[]> {
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("studies")
-    .select("*")
-    .eq("featured", true)
-    .order("year", { ascending: false, nullsFirst: false })
-    .limit(limit);
-  if (error) throw error;
-  return (data ?? []) as Study[];
+  const halfRecent = Math.ceil(limit / 2);
+  const halfUpvoted = limit - halfRecent;
+  const recent = all.slice(0, Math.min(halfRecent * 2, all.length));
+
+  const counts = await getUpvoteCountMap("study", all.map((s) => s.id));
+  const byUpvotes = all
+    .slice()
+    .sort((a, b) => (counts.get(b.id) ?? 0) - (counts.get(a.id) ?? 0))
+    .slice(0, Math.min(halfUpvoted * 2, all.length));
+
+  const seen = new Set<string>();
+  const mix: Study[] = [];
+  for (const s of [...recent, ...byUpvotes]) {
+    if (seen.has(s.id)) continue;
+    seen.add(s.id);
+    mix.push(s);
+  }
+  // Fill remainder from the full pool if we're short
+  for (const s of all) {
+    if (mix.length >= limit) break;
+    if (seen.has(s.id)) continue;
+    seen.add(s.id);
+    mix.push(s);
+  }
+  for (let i = mix.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [mix[i], mix[j]] = [mix[j], mix[i]];
+  }
+  return mix.slice(0, limit);
 }
 
 export async function getStudyBySlug(slug: string): Promise<Study | null> {

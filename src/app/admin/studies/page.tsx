@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { deleteStudy, setStudyFeatured } from "@/app/admin/actions";
+import { deleteStudy } from "@/app/admin/actions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Study } from "@/lib/types";
 
@@ -49,7 +49,6 @@ export default async function AdminStudiesPage({
             <tr>
               <th className="px-4 py-3">Title</th>
               <th className="px-4 py-3">Year</th>
-              <th className="px-4 py-3">Featured</th>
               <th className="px-4 py-3" />
             </tr>
           </thead>
@@ -71,13 +70,6 @@ export default async function AdminStudiesPage({
                 </td>
                 <td className="px-4 py-3 tabular-nums text-[color:var(--muted)]">
                   {study.year ?? "-"}
-                </td>
-                <td className="px-4 py-3">
-                  <form action={setStudyFeatured.bind(null, study.id, !study.featured)}>
-                    <button className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs hover:bg-[color:var(--muted-soft)]">
-                      {study.featured ? "Featured" : "Not featured"}
-                    </button>
-                  </form>
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex justify-end gap-3">

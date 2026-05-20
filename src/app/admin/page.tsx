@@ -7,7 +7,6 @@ export default async function AdminDashboardPage() {
     activeChannels,
     inactiveChannels,
     studies,
-    featuredStudies,
     profiles,
     lastStats,
     recentProfiles,
@@ -15,7 +14,6 @@ export default async function AdminDashboardPage() {
     supabase.from("channels").select("id", { count: "exact", head: true }).eq("is_active", true),
     supabase.from("channels").select("id", { count: "exact", head: true }).eq("is_active", false),
     supabase.from("studies").select("id", { count: "exact", head: true }),
-    supabase.from("studies").select("id", { count: "exact", head: true }).eq("featured", true),
     supabase.from("profiles").select("id", { count: "exact", head: true }),
     supabase
       .from("channel_stats")
@@ -42,7 +40,7 @@ export default async function AdminDashboardPage() {
         <Tile
           label="Studies"
           value={fmtNumber(studies.count)}
-          detail={`${featuredStudies.count ?? 0} featured`}
+          detail="catalogued"
         />
         <Tile label="Users" value={fmtNumber(profiles.count)} detail="registered profiles" />
         <Tile

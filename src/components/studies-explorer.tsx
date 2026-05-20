@@ -22,11 +22,11 @@ type Props = {
   upvotedSet: Set<string>;
   upvoteCounts: Record<string, number>;
   signedIn: boolean;
-  initial: { q: string; tags: string[]; sort: "featured" | "year" | "upvotes" };
+  initial: { q: string; tags: string[]; sort: "categories" | "year" | "upvotes" };
 };
 
 const SORT_LABELS: Record<Props["initial"]["sort"], string> = {
-  featured: "Featured",
+  categories: "Categories",
   year: "Newest",
   upvotes: "Most upvoted",
 };
@@ -121,7 +121,7 @@ export function StudiesExplorer({
 
   function setSort(value: Props["initial"]["sort"]) {
     const next = new URLSearchParams(searchParams?.toString() ?? "");
-    if (value === "featured") next.delete("sort");
+    if (value === "categories") next.delete("sort");
     else next.set("sort", value);
     pushParams(next);
   }
@@ -180,7 +180,7 @@ export function StudiesExplorer({
   );
 
   const isGrouped =
-    !initial.q && initial.tags.length === 0 && initial.sort === "featured";
+    !initial.q && initial.tags.length === 0 && initial.sort === "categories";
 
   return (
     <div>
