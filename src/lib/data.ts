@@ -146,24 +146,26 @@ export async function getFeaturedChannelsMix(
 export async function getRecentlyAdded(
   days = 30,
   limit = 6,
+  { studies: includeStudies = true }: { studies?: boolean } = {},
 ): Promise<{ channels: ChannelWithStats[]; studies: Study[] }> {
   const since = new Date(Date.now() - days * 86_400_000).toISOString();
   const sb = publicClient();
-  const [chRes, sRes] = await Promise.all([
-    sb
-      .from("channel_full")
-      .select("*")
-      .eq("is_active", true)
-      .gte("created_at", since)
-      .order("created_at", { ascending: false })
-      .limit(limit),
-    sb
-      .from("studies")
-      .select("*")
-      .gte("created_at", since)
-      .order("created_at", { ascending: false })
-      .limit(limit),
-  ]);
+  const channelsQuery = sb
+    .from("channel_full")
+    .select("*")
+    .eq("is_active", true)
+    .gte("created_at", since)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  const studiesQuery = includeStudies
+    ? sb
+        .from("studies")
+        .select("*")
+        .gte("created_at", since)
+        .order("created_at", { ascending: false })
+        .limit(limit)
+    : Promise.resolve({ data: [], error: null } as const);
+  const [chRes, sRes] = await Promise.all([channelsQuery, studiesQuery]);
   if (chRes.error) throw chRes.error;
   if (sRes.error) throw sRes.error;
   return {
