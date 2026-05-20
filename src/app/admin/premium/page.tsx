@@ -31,7 +31,7 @@ export default async function AdminPremiumUsersPage() {
   return (
     <div>
       <h1 className="serif text-4xl font-semibold tracking-tight">
-        Premium users
+        Beta testers
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
         Add people to the premium allowlist before or after they sign in.
@@ -81,7 +81,7 @@ export default async function AdminPremiumUsersPage() {
           Weekly digest recipients
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-          Premium users who opted in to the weekly email digest. Copy the
+          Beta testers who opted in to the weekly email digest. Copy the
           comma-separated list below and paste into your email client to send
           the digest manually.
         </p>
@@ -144,7 +144,7 @@ export default async function AdminPremiumUsersPage() {
           </table>
         ) : (
           <div className="p-8 text-center text-sm text-[color:var(--muted)]">
-            No premium users yet.
+            No beta testers yet.
           </div>
         )}
       </div>

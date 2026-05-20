@@ -79,7 +79,7 @@ function PremiumModal({
           {feature} is a premium feature
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
-          Please contact Sam if you would like to become a premium user.
+          Please contact Sam if you would like to become a beta tester.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <a

@@ -150,10 +150,10 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
   return (
     <section className="mt-12 rounded-2xl border border-amber-400/60 bg-amber-50 p-6 sm:p-8">
       <p className="serif text-xl font-semibold tracking-tight text-amber-700">
-        These features are for premium users.
+        These features are for beta testers.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
-        Please contact Sam if you would like to become a premium user.
+        Please contact Sam if you would like to become a beta tester.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a

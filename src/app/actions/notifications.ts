@@ -9,7 +9,7 @@ export async function setWeeklyNotification(formData: FormData) {
   const auth = await getCurrentUser();
   if (!auth) throw new Error("Not signed in");
   const premium = await isPremiumUser(auth);
-  if (!premium) throw new Error("Not a premium user");
+  if (!premium) throw new Error("Not a beta tester");
   const email = (auth.profile?.email ?? auth.user.email ?? "")
     .trim()
     .toLowerCase();
