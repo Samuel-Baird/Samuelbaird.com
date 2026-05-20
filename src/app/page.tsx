@@ -1,12 +1,13 @@
 import Link from "next/link";
 import {
   getChannelsWithLatest,
-  getFeaturedChannelsMix,
+  getFeaturedChannelsCarouselPool,
   getRandomStudies,
   getRecentlyAdded,
   getRisersAndFallers,
   getSiteStats,
 } from "@/lib/data";
+import { ChannelsCarousel } from "@/components/channels-carousel";
 import { RisersFallers } from "@/components/risers-fallers";
 import { StudiesCarousel } from "@/components/studies-carousel";
 import {
@@ -20,11 +21,11 @@ import type { ChannelWithStats } from "@/lib/types";
 export const revalidate = 600;
 
 export default async function Home() {
-  const [stats, channels, featuredMix, randomStudies, movers, recent] =
+  const [stats, channels, featuredPool, randomStudies, movers, recent] =
     await Promise.all([
       getSiteStats(),
       getChannelsWithLatest(),
-      getFeaturedChannelsMix(6),
+      getFeaturedChannelsCarouselPool(24),
       getRandomStudies(20),
       getRisersAndFallers(30, 5),
       getRecentlyAdded(30, 6, { studies: false }),
@@ -85,67 +86,7 @@ export default async function Home() {
 
       <TopStatsCarousel slides={topStatSlides} />
 
-      {/* Featured channels */}
-      {featuredMix.length > 0 && (
-        <section className="mt-20">
-          <div className="flex items-end justify-between gap-3">
-            <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
-              Featured channels
-            </h2>
-            <Link
-              href="/channels"
-              className="text-sm text-[color:var(--accent)] hover:underline"
-            >
-              View all →
-            </Link>
-          </div>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredMix.map((c) => {
-              const tags = channelTagsOf(c);
-              return (
-                <li key={c.id}>
-                  <Link
-                    href={`/channels/${c.slug}`}
-                    className="group flex h-full items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
-                  >
-                    {c.thumbnail_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={c.thumbnail_url}
-                        alt=""
-                        className="h-14 w-14 shrink-0 rounded-full object-cover"
-                      />
-                    ) : (
-                      <div className="h-14 w-14 shrink-0 rounded-full bg-[color:var(--muted-soft)]" />
-                    )}
-                    <div className="min-w-0 flex-1">
-                      <h3 className="truncate text-sm font-semibold group-hover:text-[color:var(--accent)]">
-                        {c.name}
-                      </h3>
-                      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
-                        {tags.map((tag) => {
-                          const { bg, text } = colorsForType(tag);
-                          return (
-                            <span
-                              key={tag}
-                              className={`rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] uppercase tracking-wider`}
-                            >
-                              {tag}
-                            </span>
-                          );
-                        })}
-                        <span className="tabular-nums">
-                          {fmtCompact(c.latest?.subscribers)} subs
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      )}
+      <ChannelsCarousel channels={featuredPool} />
 
       <RisersFallers risers={movers.risers} fallers={movers.fallers} />
 

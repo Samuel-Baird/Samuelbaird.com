@@ -143,6 +143,70 @@ export async function getFeaturedChannelsMix(
   return [...featured, ...diverse];
 }
 
+export async function getFeaturedChannelsCarouselPool(
+  total = 24,
+): Promise<ChannelWithStats[]> {
+  const all = await getChannelsWithLatest();
+  const EXCLUDED_TYPES = new Set(["Critical"]);
+  const primaryType = (c: ChannelWithStats) =>
+    (c.channel_types?.[0] ?? c.channel_type ?? "") || "Other";
+
+  const eligible = all.filter((c) => {
+    const tags = c.channel_types?.length
+      ? c.channel_types
+      : c.channel_type
+        ? [c.channel_type]
+        : [];
+    return !tags.some((t) => EXCLUDED_TYPES.has(t));
+  });
+  if (eligible.length === 0) return [];
+
+  // Group by primary tag, shuffle within each group
+  const byType = new Map<string, ChannelWithStats[]>();
+  for (const c of eligible) {
+    const key = primaryType(c);
+    if (!byType.has(key)) byType.set(key, []);
+    byType.get(key)!.push(c);
+  }
+  for (const arr of byType.values()) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  const typeQueues = [...byType.values()];
+  for (let i = typeQueues.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [typeQueues[i], typeQueues[j]] = [typeQueues[j], typeQueues[i]];
+  }
+
+  // Round-robin across types; loop if we exhaust unique channels (duplicates ok)
+  const out: ChannelWithStats[] = [];
+  let round = 0;
+  while (out.length < total) {
+    let added = false;
+    for (const queue of typeQueues) {
+      if (out.length >= total) break;
+      const next = queue[round % queue.length];
+      if (next) {
+        out.push(next);
+        added = true;
+      }
+    }
+    if (!added) break;
+    round++;
+  }
+
+  // Sprinkle featured into random positions so the eye-catchers aren't clustered
+  const featured = eligible.filter((c) => c.featured);
+  for (const f of featured) {
+    const pos = Math.floor(Math.random() * (out.length + 1));
+    out.splice(pos, 0, f);
+  }
+  return out.slice(0, total);
+}
+
 export async function getRecentlyAdded(
   days = 30,
   limit = 6,
