@@ -21,13 +21,19 @@ When the user uploads a study (PDF, link, or pasted text), Claude must **deeply 
    - `slug` — kebab-case, descriptive
    - `pdf_path` — only if the PDF was uploaded to storage
 
-3. **Do NOT fill** `context_note` or `flagged_problematic` / `flag_reason` unless the essay has **large methodological problems** that make it improbable to draw the conclusions the study claims (e.g., non-representative sample presented as representative, statistical errors, conclusions unsupported by the data, conflicts of interest that materially affect interpretation). Cosmetic limitations belong in `limitations`, not `flag_reason`.
+3. **Utah category exception:** Any study with `category = "Utah"` (studies that focus on Utah as a geography without using religion/Latter-day Saint identification as a variable) must default `context_note` to:
 
-4. Write the row directly to Supabase (`studies` table) via the service-role key in `.env.local`. Do not ask for confirmation — per user's standing preference, ship the change.
+   > Utah and "Latter-day Saint" are not synonymous. Only roughly 40% of Utahns identify as Latter-day Saint (see Cragun & Brewer, *Mormons Are No Longer a Majority in Utah: Causes, Consequences, and Implications for the Sociology of Religion*, 2023 — https://doi.org/10.1093/socrel/srad022). Findings about Utah should not be applied to or attributed to the Latter-day Saint population without further analysis isolating religious affiliation.
 
-5. Immediately after insert, run `node scripts/generate-study-preview.mjs <slug>` to populate the preview image. The script tries `og:image` from `external_url` first, then falls back to an AI-rendered findings card. AI-generated previews are auto-labeled in the UI; do not override the label unless you have a real figure from the source — in that case, upload it via the admin form and set the caption to identify which figure it is (e.g. "Figure 2 from the study").
+   Add study-specific context after this default if useful. This is the only case where `context_note` is filled by default rather than reserved for flagged problems.
 
-6. After insert + preview, report the slug, the preview source (`url_scrape` / `ai_dataviz`), and a one-line summary of what was added.
+4. **Do NOT fill** `context_note` (outside the Utah-category default above) or `flagged_problematic` / `flag_reason` unless the essay has **large methodological problems** that make it improbable to draw the conclusions the study claims (e.g., non-representative sample presented as representative, statistical errors, conclusions unsupported by the data, conflicts of interest that materially affect interpretation). Cosmetic limitations belong in `limitations`, not `flag_reason`.
+
+5. Write the row directly to Supabase (`studies` table) via the service-role key in `.env.local`. Do not ask for confirmation — per user's standing preference, ship the change.
+
+6. Immediately after insert, run `node scripts/generate-study-preview.mjs <slug>` to populate the preview image. The script tries `og:image` from `external_url` first, then falls back to an AI-rendered findings card. AI-generated previews are auto-labeled in the UI; do not override the label unless you have a real figure from the source — in that case, upload it via the admin form and set the caption to identify which figure it is (e.g. "Figure 2 from the study").
+
+7. After insert + preview, report the slug, the preview source (`url_scrape` / `ai_dataviz`), and a one-line summary of what was added.
 
 ## Examples of when to flag
 
