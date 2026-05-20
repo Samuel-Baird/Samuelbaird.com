@@ -23,6 +23,9 @@ export function PreviewImageField({
   const existing = currentUrl(currentPath);
   const [pickedUrl, setPickedUrl] = useState<string | null>(null);
   const [clear, setClear] = useState(false);
+  const [caption, setCaption] = useState(currentCaption ?? "");
+  const FROM_SOURCE_CAPTION = "This image is from the source";
+  const fromSource = caption.trim() === FROM_SOURCE_CAPTION;
 
   useEffect(() => {
     if (!pickedUrl) return;
@@ -81,10 +84,23 @@ export function PreviewImageField({
         Caption
         <input
           name="preview_image_caption"
-          defaultValue={currentCaption ?? ""}
+          value={caption}
+          onChange={(e) => setCaption(e.target.value)}
           placeholder='e.g. "Figure 2 from the study"'
           className="mt-2 h-11 w-full rounded-full border border-[color:var(--border)] px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
         />
+      </label>
+
+      <label className="mt-3 flex items-center gap-2 text-sm">
+        <input
+          type="checkbox"
+          checked={fromSource}
+          onChange={(e) =>
+            setCaption(e.target.checked ? FROM_SOURCE_CAPTION : "")
+          }
+          className="h-4 w-4"
+        />
+        This image is from the source (website or analysis)
       </label>
 
       <label className="mt-3 flex items-center gap-2 text-sm">
