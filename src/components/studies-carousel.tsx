@@ -30,7 +30,7 @@ const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> =
   },
 };
 
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 4;
 const ROTATE_MS = 6000;
 
 export function StudiesCarousel({ studies }: { studies: Study[] }) {
@@ -68,7 +68,7 @@ export function StudiesCarousel({ studies }: { studies: Study[] }) {
           View all →
         </Link>
       </div>
-      <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+      <ul className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {visible.map((s) => (
           <StudyCard key={s.id} study={s} />
         ))}
