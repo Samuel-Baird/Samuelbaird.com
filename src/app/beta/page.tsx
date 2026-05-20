@@ -20,9 +20,9 @@ import { getPremiumStatus } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Premium",
+  title: "Beta",
   description:
-    "Premium features for Latter-day Stats — risers and fallers, channel comparison, CSV exports, critical creators, and the weekly digest.",
+    "Beta features for Latter-day Stats — risers and fallers, channel comparison, CSV exports, critical creators, and the weekly digest.",
 };
 
 export const dynamic = "force-dynamic";
@@ -76,18 +76,18 @@ export default async function PremiumPage({
     return (
       <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-500">
-          Premium
+          Beta
         </p>
         <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
           Thank you for supporting Latter-day Stats
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-          You have full access to all premium features. Enjoy.
+          You have full access to all beta features. Enjoy.
         </p>
 
         <PremiumContent slugsParam={slugsParam} email={status.email} />
 
-        <BenefitsList heading="Your premium benefits" />
+        <BenefitsList heading="Your beta benefits" />
       </div>
     );
   }
@@ -95,16 +95,16 @@ export default async function PremiumPage({
   return (
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-500">
-        Premium
+        Beta
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-        Premium features
+        Beta features
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-        A handful of bonus features for supporters of Latter-day Stats. Want
+        A handful of bonus features for beta testers of Latter-day Stats. Want
         access? Email{" "}
         <a
-          href={mailto("Premium access")}
+          href={mailto("Beta access")}
           className="text-amber-600 underline underline-offset-2 hover:no-underline"
         >
           {CONTACT_EMAIL}
@@ -157,14 +157,14 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a
-          href={mailto("Premium access")}
+          href={mailto("Beta access")}
           className="inline-flex h-11 items-center rounded-full bg-amber-500 px-5 text-sm font-medium text-white hover:bg-amber-400"
         >
           Email Sam ({CONTACT_EMAIL})
         </a>
         {!signedIn ? (
           <Link
-            href="/login?next=/premium"
+            href="/login?next=/beta"
             className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
           >
             Sign in
@@ -233,7 +233,7 @@ async function PremiumContent({
             allChannels={options}
             selectedSlugs={valid.map((r) => r.channel.slug)}
             max={MAX_COMPARE}
-            basePath="/premium"
+            basePath="/beta"
           />
         </div>
 

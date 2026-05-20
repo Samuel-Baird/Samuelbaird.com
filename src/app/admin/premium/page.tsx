@@ -34,8 +34,8 @@ export default async function AdminPremiumUsersPage() {
         Beta testers
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-        Add people to the premium allowlist before or after they sign in.
-        Premium grants access to CSV exports, channel comparison, risers &amp;
+        Add people to the beta tester allowlist before or after they sign in.
+        Beta access grants CSV exports, channel comparison, risers &amp;
         fallers, critical creators, and the weekly digest opt-in.
       </p>
 

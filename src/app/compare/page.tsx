@@ -9,5 +9,5 @@ export default async function ComparePage({
 }) {
   const { slugs } = await searchParams;
   const qs = slugs ? `?slugs=${encodeURIComponent(slugs)}` : "";
-  redirect(`/premium${qs}`);
+  redirect(`/beta${qs}`);
 }

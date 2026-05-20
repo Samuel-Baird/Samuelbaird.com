@@ -32,7 +32,7 @@ export async function requireCapability(
   if (policy === "premium") {
     const premium = await isPremiumUser(auth);
     if (!premium) {
-      redirect("/premium");
+      redirect("/beta");
     }
   }
 

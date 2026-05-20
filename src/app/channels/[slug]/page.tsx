@@ -67,7 +67,7 @@ export default async function ChannelDetailPage({
       ? [channel.channel_type]
       : [];
   if (channelTags.includes("Critical") && !premiumStatus.premium) {
-    redirect("/premium");
+    redirect("/beta");
   }
   const [bookmarks, history] = await Promise.all([
     auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
@@ -247,7 +247,7 @@ export default async function ChannelDetailPage({
         <GrowthChart data={history} label="Subscribers" />
         <div className="mt-4 text-right">
           <Link
-            href={`/premium?slugs=${encodeURIComponent(channel.slug)}`}
+            href={`/beta?slugs=${encodeURIComponent(channel.slug)}`}
             className="text-sm text-amber-600 hover:underline"
           >
             Compare with another channel →

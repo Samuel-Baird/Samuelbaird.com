@@ -23,6 +23,6 @@ export async function setWeeklyNotification(formData: FormData) {
     .eq("email", email);
   if (error) throw error;
 
-  revalidatePath("/premium");
+  revalidatePath("/beta");
   revalidatePath("/admin/premium");
 }
