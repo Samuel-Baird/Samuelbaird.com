@@ -4,11 +4,9 @@ import {
   getFeaturedChannelsCarouselPool,
   getStudiesCarouselMix,
   getRecentlyAdded,
-  getRisersAndFallers,
   getSiteStats,
 } from "@/lib/data";
 import { ChannelsCarousel } from "@/components/channels-carousel";
-import { RisersFallers } from "@/components/risers-fallers";
 import { StudiesCarousel } from "@/components/studies-carousel";
 import {
   TopStatsCarousel,
@@ -21,13 +19,12 @@ import type { ChannelWithStats } from "@/lib/types";
 export const revalidate = 600;
 
 export default async function Home() {
-  const [stats, channels, featuredPool, randomStudies, movers, recent] =
+  const [stats, channels, featuredPool, randomStudies, recent] =
     await Promise.all([
       getSiteStats(),
       getChannelsWithLatest(),
       getFeaturedChannelsCarouselPool(24),
       getStudiesCarouselMix(20),
-      getRisersAndFallers(30, 5),
       getRecentlyAdded(30, 6, { studies: false }),
     ]);
   const topStatSlides = buildTopStatSlides(channels);
@@ -87,8 +84,6 @@ export default async function Home() {
       <TopStatsCarousel slides={topStatSlides} />
 
       <ChannelsCarousel channels={featuredPool} />
-
-      <RisersFallers risers={movers.risers} fallers={movers.fallers} />
 
       {recent.channels.length > 0 && (
         <section className="mt-20">

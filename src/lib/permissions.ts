@@ -9,8 +9,8 @@ export type Capability = "download_channel_csv" | "compare_channels";
 type CapabilityPolicy = "signed_in" | "premium";
 
 const CAPABILITY_POLICIES: Record<Capability, CapabilityPolicy> = {
-  download_channel_csv: "signed_in",
-  compare_channels: "signed_in",
+  download_channel_csv: "premium",
+  compare_channels: "premium",
 };
 
 function loginPath(nextPath: string) {
@@ -32,7 +32,7 @@ export async function requireCapability(
   if (policy === "premium") {
     const premium = await isPremiumUser(auth);
     if (!premium) {
-      redirect("/");
+      redirect("/premium");
     }
   }
 
@@ -50,4 +50,18 @@ export async function isPremiumUser(auth: AuthContext): Promise<boolean> {
     .maybeSingle();
   if (error) throw error;
   return Boolean(data);
+}
+
+export type PremiumStatus = {
+  signedIn: boolean;
+  premium: boolean;
+  email: string | null;
+};
+
+export async function getPremiumStatus(): Promise<PremiumStatus> {
+  const auth = await getCurrentUser();
+  if (!auth) return { signedIn: false, premium: false, email: null };
+  const email = auth.profile?.email ?? auth.user.email ?? null;
+  const premium = await isPremiumUser(auth);
+  return { signedIn: true, premium, email };
 }

@@ -37,6 +37,7 @@ const CATEGORY_ORDER = [
   "Major Demographic Surveys",
   "Physical Health & Longevity",
   "Retention & Generational Change",
+  "Utah",
 ];
 
 const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> = {

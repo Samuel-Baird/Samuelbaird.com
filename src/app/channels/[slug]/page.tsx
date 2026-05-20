@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { getPremiumStatus } from "@/lib/permissions";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { GrowthChart } from "@/components/growth-chart";
@@ -54,11 +55,20 @@ export default async function ChannelDetailPage({
   params: Promise<RouteParams>;
 }) {
   const { slug } = await params;
-  const [channel, auth] = await Promise.all([
+  const [channel, auth, premiumStatus] = await Promise.all([
     getChannelBySlug(slug),
     getCurrentUser(),
+    getPremiumStatus(),
   ]);
   if (!channel) notFound();
+  const channelTags = channel.channel_types?.length
+    ? channel.channel_types
+    : channel.channel_type
+      ? [channel.channel_type]
+      : [];
+  if (channelTags.includes("Critical") && !premiumStatus.premium) {
+    redirect("/premium");
+  }
   const [bookmarks, history] = await Promise.all([
     auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
     getChannelStatsHistory(channel.id),
@@ -237,8 +247,8 @@ export default async function ChannelDetailPage({
         <GrowthChart data={history} label="Subscribers" />
         <div className="mt-4 text-right">
           <Link
-            href={`/compare?slugs=${encodeURIComponent(channel.slug)}`}
-            className="text-sm text-[color:var(--accent)] hover:underline"
+            href={`/premium?slugs=${encodeURIComponent(channel.slug)}`}
+            className="text-sm text-amber-600 hover:underline"
           >
             Compare with another channel →
           </Link>

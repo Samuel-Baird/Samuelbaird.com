@@ -16,7 +16,7 @@ When the user uploads a study (PDF, link, or pasted text), Claude must **deeply 
    - `external_url` — canonical link to the study
    - `secondary_url` — data portal / related coverage if applicable
    - `source_type` — one of: `primary_dataset`, `study`, `secondary_analysis`
-   - `category` — section heading (e.g. "Wellbeing & Flourishing", "Mental Health", "Major Demographic Surveys", "Physical Health & Longevity", "Retention & Generational Change", "Belief & Practice", "Family & Marriage", "Perception & Image", "History", "Service & Civic Engagement")
+   - `category` — section heading (e.g. "Wellbeing & Flourishing", "Mental Health", "Major Demographic Surveys", "Physical Health & Longevity", "Retention & Generational Change", "Belief & Practice", "Family & Marriage", "Perception & Image", "History", "Service & Civic Engagement", "Utah")
    - `limitations` — honest sample / design / generalizability caveats (always fill this; every study has limitations)
    - `slug` — kebab-case, descriptive
    - `pdf_path` — only if the PDF was uploaded to storage

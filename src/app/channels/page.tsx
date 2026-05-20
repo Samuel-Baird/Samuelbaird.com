@@ -5,6 +5,7 @@ import { FreshnessBadge } from "@/components/freshness-badge";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { getBookmarkSetForUser, getChannelsWithLatest } from "@/lib/data";
+import { getPremiumStatus } from "@/lib/permissions";
 
 export const metadata: Metadata = {
   title: "Channels",
@@ -12,10 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default async function ChannelsPage() {
-  const [channels, auth] = await Promise.all([
-    getChannelsWithLatest({ includeInactive: true }),
+  const [auth, premiumStatus] = await Promise.all([
     getCurrentUser(),
+    getPremiumStatus(),
   ]);
+  const channels = await getChannelsWithLatest({
+    includeInactive: true,
+    includeCritical: premiumStatus.premium,
+  });
   const bookmarks = auth
     ? await getBookmarkSetForUser(auth.user.id)
     : { channels: new Set<string>(), studies: new Set<string>() };
@@ -45,20 +50,12 @@ export default async function ChannelsPage() {
         <FreshnessBadge iso={latestCapture} size="md" prefix="Stats refreshed" />
       </div>
 
-      <div className="mt-6">
-        <Link
-          href="/compare"
-          className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
-        >
-          Compare channels →
-        </Link>
-      </div>
-
       <div className="mt-10">
         <ChannelsExplorer
           channels={channels}
           bookmarkedSet={bookmarks.channels}
           signedIn={Boolean(auth)}
+          premium={premiumStatus.premium}
         />
       </div>
 

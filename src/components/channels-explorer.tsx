@@ -12,6 +12,7 @@ type Props = {
   channels: ChannelWithStats[];
   bookmarkedSet: Set<string>;
   signedIn: boolean;
+  premium: boolean;
 };
 
 type FilterKey = FilterGroup["key"];
@@ -100,7 +101,12 @@ function nextSelectionSet(current: Set<string>, value: string) {
   return next;
 }
 
-export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
+export function ChannelsExplorer({
+  channels,
+  bookmarkedSet,
+  signedIn,
+  premium,
+}: Props) {
   const searchParams = useSearchParams();
   const initialType = searchParams.get("type");
   const initialSort = getInitialSort(searchParams.get("sort"));
@@ -342,7 +348,7 @@ export function ChannelsExplorer({ channels, bookmarkedSet, signedIn }: Props) {
             <ExportCsvButton
               href={exportHref}
               rowCount={filteredChannels.length}
-              signedIn={signedIn}
+              premium={premium}
             />
           </div>
 

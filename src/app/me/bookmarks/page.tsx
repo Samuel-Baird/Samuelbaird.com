@@ -46,11 +46,11 @@ export default async function BookmarksPage({
       {tab === "channels" && channels.length >= 2 && (
         <div className="mt-6">
           <Link
-            href={`/compare?slugs=${channels
+            href={`/premium?slugs=${channels
               .slice(0, 4)
               .map((c) => encodeURIComponent(c.slug))
               .join(",")}`}
-            className="inline-flex h-10 items-center rounded-full border border-[color:var(--border)] bg-white px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)]"
+            className="inline-flex h-10 items-center rounded-full border border-amber-400/60 bg-amber-50 px-4 text-sm font-medium text-amber-700 hover:bg-amber-100"
           >
             Compare {Math.min(channels.length, 4)} bookmarked →
           </Link>

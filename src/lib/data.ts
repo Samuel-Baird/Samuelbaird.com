@@ -41,14 +41,26 @@ function rowToChannelWithStats(row: ChannelFullRow): ChannelWithStats {
 }
 
 export async function getChannelsWithLatest(
-  { includeInactive = false }: { includeInactive?: boolean } = {},
+  {
+    includeInactive = false,
+    includeCritical = true,
+  }: { includeInactive?: boolean; includeCritical?: boolean } = {},
 ): Promise<ChannelWithStats[]> {
   const sb = publicClient();
   let query = sb.from("channel_full").select("*");
   if (!includeInactive) query = query.eq("is_active", true);
   const { data, error } = await query;
   if (error) throw error;
-  return (data as ChannelFullRow[]).map(rowToChannelWithStats);
+  const rows = (data as ChannelFullRow[]).map(rowToChannelWithStats);
+  if (includeCritical) return rows;
+  return rows.filter((c) => {
+    const tags = c.channel_types?.length
+      ? c.channel_types
+      : c.channel_type
+        ? [c.channel_type]
+        : [];
+    return !tags.includes("Critical");
+  });
 }
 
 export async function getChannelByYouTubeId(
@@ -647,24 +659,43 @@ export type SearchItem =
   | { kind: "study"; slug: string; name: string; sub: string | null }
   | { kind: "tag"; slug: string; name: string; sub: string | null };
 
-export async function getSearchIndex(): Promise<SearchItem[]> {
+export async function getSearchIndex(
+  { includeCritical = true }: { includeCritical?: boolean } = {},
+): Promise<SearchItem[]> {
   const sb = publicClient();
   const [channelsRes, studiesRes, tagsRes] = await Promise.all([
-    sb.from("channel_full").select("slug, name, channel_type").eq("is_active", true),
+    sb
+      .from("channel_full")
+      .select("slug, name, channel_type, channel_types")
+      .eq("is_active", true),
     sb.from("studies").select("slug, title, year, authors"),
     getAllStudyTags(),
   ]);
   if (channelsRes.error) throw channelsRes.error;
   if (studiesRes.error) throw studiesRes.error;
 
-  const channels: SearchItem[] = (channelsRes.data ?? []).map(
-    (c: { slug: string; name: string; channel_type: string | null }) => ({
+  const channelRows = (channelsRes.data ?? []) as Array<{
+    slug: string;
+    name: string;
+    channel_type: string | null;
+    channel_types: string[] | null;
+  }>;
+  const channels: SearchItem[] = channelRows
+    .filter((c) => {
+      if (includeCritical) return true;
+      const tags = c.channel_types?.length
+        ? c.channel_types
+        : c.channel_type
+          ? [c.channel_type]
+          : [];
+      return !tags.includes("Critical");
+    })
+    .map((c) => ({
       kind: "channel" as const,
       slug: c.slug,
       name: c.name,
       sub: c.channel_type,
-    }),
-  );
+    }));
   const studies: SearchItem[] = (studiesRes.data ?? []).map(
     (s: { slug: string; title: string; year: number | null; authors: string[] | null }) => ({
       kind: "study" as const,

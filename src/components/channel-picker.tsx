@@ -10,9 +10,15 @@ type Props = {
   allChannels: ChannelOption[];
   selectedSlugs: string[];
   max?: number;
+  basePath?: string;
 };
 
-export function ChannelPicker({ allChannels, selectedSlugs, max = 4 }: Props) {
+export function ChannelPicker({
+  allChannels,
+  selectedSlugs,
+  max = 4,
+  basePath = "/compare",
+}: Props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
 
@@ -39,7 +45,7 @@ export function ChannelPicker({ allChannels, selectedSlugs, max = 4 }: Props) {
   function navigate(next: string[]) {
     const params = new URLSearchParams();
     if (next.length > 0) params.set("slugs", next.join(","));
-    router.replace(`/compare${params.toString() ? `?${params}` : ""}`);
+    router.replace(`${basePath}${params.toString() ? `?${params}` : ""}`);
   }
 
   function add(slug: string) {

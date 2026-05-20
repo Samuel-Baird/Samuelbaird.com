@@ -9,6 +9,7 @@ import { AuthAvatar, type AuthMenuUser } from "@/components/auth-menu";
 export type SiteNavLink = {
   href: string;
   label: string;
+  premium?: boolean;
 };
 
 type SiteNavClientProps = {
@@ -30,16 +31,15 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
       <nav className="hidden gap-7 text-sm md:flex">
         {links.map((link) => {
           const active = isActive(pathname, link.href);
+          const baseClass = link.premium
+            ? active
+              ? "text-amber-500 transition-colors hover:text-amber-400 hover:[text-shadow:0_0_10px_rgba(251,191,36,0.55)]"
+              : "text-[color:var(--muted)] transition-colors hover:text-amber-400 hover:[text-shadow:0_0_10px_rgba(251,191,36,0.55)]"
+            : active
+              ? "text-[color:var(--foreground)]"
+              : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--foreground)]";
           return (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={
-                active
-                  ? "text-[color:var(--foreground)]"
-                  : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--foreground)]"
-              }
-            >
+            <Link key={link.href} href={link.href} className={baseClass}>
               {link.label}
             </Link>
           );
@@ -61,17 +61,21 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
           <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
             {links.map((link) => {
               const active = isActive(pathname, link.href);
+              const className =
+                "rounded-md px-2 py-3 text-base " +
+                (link.premium
+                  ? active
+                    ? "bg-[color:var(--muted-soft)] text-amber-500 hover:text-amber-400"
+                    : "text-[color:var(--muted)] hover:text-amber-400"
+                  : active
+                    ? "bg-[color:var(--muted-soft)] text-[color:var(--foreground)]"
+                    : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]");
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={
-                    "rounded-md px-2 py-3 text-base " +
-                    (active
-                      ? "bg-[color:var(--muted-soft)] text-[color:var(--foreground)]"
-                      : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]")
-                  }
+                  className={className}
                 >
                   {link.label}
                 </Link>
