@@ -27,6 +27,8 @@ When the user uploads a study (PDF, link, or pasted text), Claude must **deeply 
 
    Add study-specific context after this default if useful. This is the only case where `context_note` is filled by default rather than reserved for flagged problems.
 
+   The study-detail page also renders the findings header as **"Findings for Utah"** (not "Findings for Latter-day Saints") whenever `category = "Utah"`. Write the `findings` array as **Utah-vs-other-regions comparisons**: Utah's value, the national average or neighbor states, and where Utah ranks. Do not phrase findings as conclusions about Latter-day Saints. If the source has no religious-affiliation variable, include a bullet stating that explicitly.
+
 4. **Do NOT fill** `context_note` (outside the Utah-category default above) or `flagged_problematic` / `flag_reason` unless the essay has **large methodological problems** that make it improbable to draw the conclusions the study claims (e.g., non-representative sample presented as representative, statistical errors, conclusions unsupported by the data, conflicts of interest that materially affect interpretation). Cosmetic limitations belong in `limitations`, not `flag_reason`.
 
 5. Write the row directly to Supabase (`studies` table) via the service-role key in `.env.local`. Do not ask for confirmation — per user's standing preference, ship the change.
