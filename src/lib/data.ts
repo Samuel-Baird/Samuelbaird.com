@@ -471,6 +471,21 @@ export async function getUpvoteSetForUser(
   return { channels, studies };
 }
 
+export async function getRandomStudies(limit = 20): Promise<Study[]> {
+  const sb = publicClient();
+  const { data, error } = await sb
+    .from("studies")
+    .select("*")
+    .order("year", { ascending: false, nullsFirst: false });
+  if (error) throw error;
+  const all = (data ?? []) as Study[];
+  for (let i = all.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [all[i], all[j]] = [all[j], all[i]];
+  }
+  return all.slice(0, limit);
+}
+
 export async function getFeaturedStudies(limit = 2): Promise<Study[]> {
   const sb = publicClient();
   const { data, error } = await sb

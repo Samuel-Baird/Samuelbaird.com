@@ -2,13 +2,13 @@ import Link from "next/link";
 import {
   getChannelsWithLatest,
   getFeaturedChannelsMix,
-  getFeaturedStudies,
+  getRandomStudies,
   getRecentlyAdded,
   getRisersAndFallers,
   getSiteStats,
-  getStudyStats,
 } from "@/lib/data";
 import { RisersFallers } from "@/components/risers-fallers";
+import { StudiesCarousel } from "@/components/studies-carousel";
 import {
   TopStatsCarousel,
   type TopStatSlide,
@@ -20,14 +20,13 @@ import type { ChannelWithStats } from "@/lib/types";
 export const revalidate = 600;
 
 export default async function Home() {
-  const [stats, channels, featuredMix, studies, movers, studyStats, recent] =
+  const [stats, channels, featuredMix, randomStudies, movers, recent] =
     await Promise.all([
       getSiteStats(),
       getChannelsWithLatest(),
       getFeaturedChannelsMix(6),
-      getFeaturedStudies(2),
+      getRandomStudies(20),
       getRisersAndFallers(30, 5),
-      getStudyStats(),
       getRecentlyAdded(30, 6),
     ]);
   const topStatSlides = buildTopStatSlides(channels);
@@ -81,40 +80,6 @@ export default async function Home() {
             label="Total videos"
             value={fmtCompact(stats.total_videos)}
           />
-        </section>
-      )}
-
-      {studyStats.total > 0 && (
-        <section className="mt-5">
-          <div className="mb-3 flex items-center justify-between gap-3">
-            <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
-              Research library
-            </h2>
-            <Link
-              href="/studies"
-              className="text-xs font-medium text-[color:var(--accent)] hover:underline"
-            >
-              Browse studies →
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-            <MetricTile
-              label="Studies tracked"
-              value={fmtNumber(studyStats.total)}
-            />
-            <MetricTile
-              label="Findings catalogued"
-              value={fmtNumber(studyStats.findings)}
-            />
-            <MetricTile
-              label="Topics covered"
-              value={fmtNumber(studyStats.topics)}
-            />
-            <MetricTile
-              label="Years spanned"
-              value={formatYearSpan(studyStats.yearMin, studyStats.yearMax)}
-            />
-          </div>
         </section>
       )}
 
@@ -280,56 +245,7 @@ export default async function Home() {
 
       <RisersFallers risers={movers.risers} fallers={movers.fallers} />
 
-      {/* Featured studies */}
-      {studies.length > 0 && (
-        <section className="mt-20">
-          <div className="flex items-end justify-between gap-3">
-            <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
-              Featured studies
-            </h2>
-            <Link
-              href="/studies"
-              className="text-sm text-[color:var(--accent)] hover:underline"
-            >
-              View all →
-            </Link>
-          </div>
-          <ul className="mt-6 grid gap-5 sm:grid-cols-2">
-            {studies.map((s) => (
-              <li key={s.id}>
-                <Link
-                  href={`/studies/${s.slug}`}
-                  className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 transition-colors hover:border-[color:var(--accent)]"
-                >
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
-                    {s.year && (
-                      <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
-                        {s.year}
-                      </span>
-                    )}
-                    {s.tags.slice(0, 2).map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="serif mt-4 text-lg font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">
-                    {s.title}
-                  </h3>
-                  {s.authors.length > 0 && (
-                    <p className="mt-2 text-sm text-[color:var(--muted)]">
-                      {s.authors.join(", ")}
-                    </p>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <StudiesCarousel studies={randomStudies} />
     </div>
   );
 }
@@ -345,12 +261,6 @@ function MetricTile({ label, value }: { label: string; value: string }) {
       </div>
     </div>
   );
-}
-
-function formatYearSpan(yearMin: number | null, yearMax: number | null) {
-  if (!yearMin || !yearMax) return "—";
-  if (yearMin === yearMax) return String(yearMin);
-  return `${yearMin}–${yearMax}`;
 }
 
 function channelTagsOf(c: ChannelWithStats): string[] {
