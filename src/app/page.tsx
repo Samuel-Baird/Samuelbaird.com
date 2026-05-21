@@ -6,6 +6,7 @@ import {
   getRecentlyAdded,
   getSiteStats,
 } from "@/lib/data";
+import { getPremiumStatus } from "@/lib/permissions";
 import { ChannelsCarousel } from "@/components/channels-carousel";
 import { StudiesCarousel } from "@/components/studies-carousel";
 import {
@@ -16,16 +17,16 @@ import { colorsForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
 
-export const revalidate = 600;
-
 export default async function Home() {
+  const premiumStatus = await getPremiumStatus();
+  const includeCritical = premiumStatus.premium;
   const [stats, channels, featuredPool, randomStudies, recent] =
     await Promise.all([
       getSiteStats(),
-      getChannelsWithLatest(),
-      getFeaturedChannelsCarouselPool(24),
+      getChannelsWithLatest({ includeCritical }),
+      getFeaturedChannelsCarouselPool(24, { includeCritical }),
       getStudiesCarouselMix(20),
-      getRecentlyAdded(30, 6, { studies: false }),
+      getRecentlyAdded(30, 6, { studies: false, includeCritical }),
     ]);
   const topStatSlides = buildTopStatSlides(channels);
 

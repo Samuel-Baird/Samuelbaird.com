@@ -157,9 +157,10 @@ export async function getFeaturedChannelsMix(
 
 export async function getFeaturedChannelsCarouselPool(
   total = 24,
+  { includeCritical = false }: { includeCritical?: boolean } = {},
 ): Promise<ChannelWithStats[]> {
   const all = await getChannelsWithLatest();
-  const EXCLUDED_TYPES = new Set(["Critical"]);
+  const EXCLUDED_TYPES = new Set(includeCritical ? [] : ["Critical"]);
   const primaryType = (c: ChannelWithStats) =>
     (c.channel_types?.[0] ?? c.channel_type ?? "") || "Other";
 
@@ -222,7 +223,10 @@ export async function getFeaturedChannelsCarouselPool(
 export async function getRecentlyAdded(
   days = 30,
   limit = 6,
-  { studies: includeStudies = true }: { studies?: boolean } = {},
+  {
+    studies: includeStudies = true,
+    includeCritical = true,
+  }: { studies?: boolean; includeCritical?: boolean } = {},
 ): Promise<{ channels: ChannelWithStats[]; studies: Study[] }> {
   const since = new Date(Date.now() - days * 86_400_000).toISOString();
   const sb = publicClient();
@@ -244,8 +248,19 @@ export async function getRecentlyAdded(
   const [chRes, sRes] = await Promise.all([channelsQuery, studiesQuery]);
   if (chRes.error) throw chRes.error;
   if (sRes.error) throw sRes.error;
+  const channels = (chRes.data as ChannelFullRow[])
+    .map(rowToChannelWithStats)
+    .filter((c) => {
+      if (includeCritical) return true;
+      const tags = c.channel_types?.length
+        ? c.channel_types
+        : c.channel_type
+          ? [c.channel_type]
+          : [];
+      return !tags.includes("Critical");
+    });
   return {
-    channels: (chRes.data as ChannelFullRow[]).map(rowToChannelWithStats),
+    channels,
     studies: (sRes.data ?? []) as Study[],
   };
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { fmtCompact, fmtDate } from "@/lib/format";
 
-type Point = { captured_at: string; subscribers: number };
+type Point = { captured_at: string; subscribers?: number; value?: number };
 
 type Props = {
   data: Point[];
@@ -18,7 +18,7 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   if (!data || data.length < 2) {
     return (
       <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-6 text-center text-sm text-[color:var(--muted)]">
-        Subscriber history will appear here once at least two snapshots have
+        {label} history will appear here once at least two snapshots have
         been collected.
       </div>
     );
@@ -28,7 +28,7 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
     .map((d) => ({
       iso: d.captured_at,
       t: new Date(d.captured_at).getTime(),
-      v: d.subscribers,
+      v: d.value ?? d.subscribers ?? 0,
     }))
     .filter((p) => Number.isFinite(p.t) && Number.isFinite(p.v));
 

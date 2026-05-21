@@ -6,12 +6,13 @@ import { fmtCompact, fmtDate } from "@/lib/format";
 export type ComparisonSeries = {
   label: string;
   color: string;
-  data: { captured_at: string; subscribers: number }[];
+  data: { captured_at: string; subscribers?: number; value?: number }[];
 };
 
 type Props = {
   series: ComparisonSeries[];
   height?: number;
+  metricLabel?: string;
 };
 
 type NormalizedPoint = { t: number; v: number; iso: string };
@@ -24,7 +25,7 @@ function normalizeSeries(
     .map((d) => ({
       iso: d.captured_at,
       t: new Date(d.captured_at).getTime(),
-      v: d.subscribers,
+      v: d.value ?? d.subscribers ?? 0,
     }))
     .filter((p) => Number.isFinite(p.t) && Number.isFinite(p.v));
   if (pts.length === 0) return [];
@@ -39,7 +40,7 @@ type HoverState = {
   nearest: Array<{ label: string; color: string; value: number; iso: string }>;
 };
 
-export function ComparisonChart({ series, height = 280 }: Props) {
+export function ComparisonChart({ series, height = 280, metricLabel = "Subscribers" }: Props) {
   const [mode, setMode] = useState<"absolute" | "indexed">("indexed");
   const [hover, setHover] = useState<HoverState | null>(null);
 
@@ -107,7 +108,7 @@ export function ComparisonChart({ series, height = 280 }: Props) {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
-            Subscribers — comparison
+            {metricLabel} — comparison
           </div>
           <div className="mt-1 text-xs text-[color:var(--muted)]">
             {fmtDate(new Date(tMin).toISOString())} →{" "}

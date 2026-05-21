@@ -243,8 +243,15 @@ export default async function ChannelDetailPage({
         ))}
       </dl>
 
-      <div className="mt-10">
+      <div className="mt-10 space-y-6">
         <GrowthChart data={history} label="Subscribers" />
+        <GrowthChart
+          data={history.map((p) => ({
+            captured_at: p.captured_at,
+            value: p.total_views,
+          }))}
+          label="Views"
+        />
         <div className="mt-4 text-right">
           <Link
             href={`/beta?slugs=${encodeURIComponent(channel.slug)}`}

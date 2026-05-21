@@ -212,6 +212,14 @@ async function PremiumContent({
       subscribers: p.subscribers,
     })),
   }));
+  const viewsSeries: ComparisonSeries[] = valid.map((r) => ({
+    label: r.channel.name,
+    color: r.color,
+    data: r.history.map((p) => ({
+      captured_at: p.captured_at,
+      value: p.total_views,
+    })),
+  }));
 
   return (
     <>
@@ -237,9 +245,12 @@ async function PremiumContent({
           />
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 space-y-6">
           {series.length >= 2 ? (
-            <ComparisonChart series={series} />
+            <>
+              <ComparisonChart series={series} metricLabel="Subscribers" />
+              <ComparisonChart series={viewsSeries} metricLabel="Views" />
+            </>
           ) : (
             <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-10 text-center text-sm text-[color:var(--muted)]">
               {series.length === 1
