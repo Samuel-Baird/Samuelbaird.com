@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CompareView } from "@/components/compare-view";
-import { alignSections } from "@/lib/align-sections";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type {
   ChangelogDocument,
@@ -115,10 +114,8 @@ export default async function ComparePage({
   if (errA) throw errA;
   if (errB) throw errB;
 
-  const pairs = alignSections(
-    (sectionsA ?? []) as ChangelogSection[],
-    (sectionsB ?? []) as ChangelogSection[],
-  );
+  const left = (sectionsA ?? []) as ChangelogSection[];
+  const right = (sectionsB ?? []) as ChangelogSection[];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
@@ -131,7 +128,7 @@ export default async function ComparePage({
       <h1 className="serif mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
         {doc.title}
       </h1>
-      <CompareView va={va} vb={vb} pairs={pairs} />
+      <CompareView va={va} vb={vb} initialLeft={left} initialRight={right} />
     </div>
   );
 }
