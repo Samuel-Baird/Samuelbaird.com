@@ -5,6 +5,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { fmtDate } from "@/lib/format";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { ChangelogDocument, ChangelogVersion } from "@/lib/types";
+import { VersionPicker } from "@/components/version-picker";
 
 const CONFIDENCE_LABELS: Record<string, { label: string; className: string }> = {
   "official-digital": { label: "Official digital", className: "bg-emerald-100 text-emerald-800" },
@@ -169,10 +170,12 @@ export default async function VersionsDocumentPage({
           </ol>
         )}
 
-        <p className="mt-6 text-xs text-[color:var(--muted)]">
-          Side-by-side comparison and AI-assisted change summaries between
-          editions are coming in a later phase.
-        </p>
+        {versions.length >= 2 && (
+          <VersionPicker
+            docSlug={doc.slug}
+            versions={versions.map((v) => ({ id: v.id, label: v.label }))}
+          />
+        )}
       </section>
     </div>
   );
