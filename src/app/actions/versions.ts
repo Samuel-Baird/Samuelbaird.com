@@ -40,10 +40,10 @@ async function uniqueDocumentSlug(baseName: string, exceptId?: string) {
 }
 
 function revalidateDocument(slug: string) {
-  revalidatePath("/changelog");
-  revalidatePath(`/changelog/${slug}`);
-  revalidatePath("/admin/changelog");
-  revalidatePath(`/admin/changelog/${slug}/edit`);
+  revalidatePath("/versions");
+  revalidatePath(`/versions/${slug}`);
+  revalidatePath("/admin/versions");
+  revalidatePath(`/admin/versions/${slug}/edit`);
 }
 
 // ---------------------------------------------------------------------------
@@ -67,7 +67,7 @@ export async function createChangelogDocument(formData: FormData) {
   if (error) throw error;
 
   revalidateDocument(slug);
-  redirect(`/admin/changelog/${slug}/edit`);
+  redirect(`/admin/versions/${slug}/edit`);
 }
 
 export async function updateChangelogDocument(id: string, formData: FormData) {
@@ -90,7 +90,7 @@ export async function updateChangelogDocument(id: string, formData: FormData) {
   if (error) throw error;
 
   revalidateDocument(slug);
-  redirect(`/admin/changelog/${slug}/edit`);
+  redirect(`/admin/versions/${slug}/edit`);
 }
 
 export async function deleteChangelogDocument(id: string) {
@@ -100,9 +100,9 @@ export async function deleteChangelogDocument(id: string) {
     .delete()
     .eq("id", id);
   if (error) throw error;
-  revalidatePath("/changelog");
-  revalidatePath("/admin/changelog");
-  redirect("/admin/changelog");
+  revalidatePath("/versions");
+  revalidatePath("/admin/versions");
+  redirect("/admin/versions");
 }
 
 // ---------------------------------------------------------------------------

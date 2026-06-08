@@ -94,7 +94,7 @@ export type SiteStats = {
 };
 
 // ============================================================================
-// LDS Changelog — document version tracking (documents → versions → sections)
+// Versions — document version tracking (documents → versions → sections)
 // ============================================================================
 export type ChangelogDocument = {
   id: string;

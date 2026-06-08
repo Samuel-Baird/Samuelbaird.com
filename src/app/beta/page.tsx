@@ -62,6 +62,10 @@ const BENEFITS = [
     title: "Weekly email digest",
     desc: "New studies, new channels, and trend research delivered weekly.",
   },
+  {
+    title: "Versions",
+    desc: "Compare multiple accounts of the same event, or trace how official handbooks, manuals, and guides change across editions over time.",
+  },
 ];
 
 export default async function PremiumPage({
@@ -131,12 +135,12 @@ function BenefitsList({ heading }: { heading?: string } = {}) {
         {BENEFITS.map((b) => (
           <div
             key={b.title}
-            className="rounded-2xl border border-amber-300/60 bg-amber-50/40 p-5"
+            className="rounded-2xl border border-amber-300/60 bg-amber-50/40 p-5 dark:border-amber-700/40 dark:bg-amber-950/20"
           >
-            <h3 className="serif text-lg font-semibold tracking-tight text-amber-700">
+            <h3 className="serif text-lg font-semibold tracking-tight text-amber-700 dark:text-amber-400">
               {b.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
+            <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)] dark:text-[color:var(--foreground)]">
               {b.desc}
             </p>
           </div>
@@ -148,8 +152,8 @@ function BenefitsList({ heading }: { heading?: string } = {}) {
 
 function LockedNotice({ signedIn }: { signedIn: boolean }) {
   return (
-    <section className="mt-12 rounded-2xl border border-amber-400/60 bg-amber-50 p-6 sm:p-8">
-      <p className="serif text-xl font-semibold tracking-tight text-amber-700">
+    <section className="mt-12 rounded-2xl border border-amber-400/60 bg-amber-50/60 p-6 sm:p-8 dark:border-amber-700/40 dark:bg-amber-950/25">
+      <p className="serif text-xl font-semibold tracking-tight text-amber-700 dark:text-amber-300">
         These features are for beta testers.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
@@ -165,7 +169,7 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
         {!signedIn ? (
           <Link
             href="/login?next=/beta"
-            className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+            className="inline-flex h-11 items-center rounded-full border border-amber-600/60 bg-amber-100 px-5 text-sm font-medium text-black hover:bg-amber-200 dark:bg-amber-900/40 dark:text-black dark:border-amber-600/60 dark:hover:bg-amber-900/60"
           >
             Sign in
           </Link>
@@ -252,7 +256,7 @@ async function PremiumContent({
               <ComparisonChart series={viewsSeries} metricLabel="Views" />
             </>
           ) : (
-            <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-10 text-center text-sm text-[color:var(--muted)]">
+            <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-[color:var(--muted-soft)] p-10 text-center text-sm text-[color:var(--muted)]">
               {series.length === 1
                 ? "Add at least one more channel to start the comparison."
                 : "Add channels above to get started."}
@@ -261,7 +265,7 @@ async function PremiumContent({
         </div>
 
         {valid.length > 0 && (
-          <div className="mt-8 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[color:var(--border)]">
             <table className="w-full text-sm">
               <thead className="bg-[color:var(--muted-soft)] text-left text-xs uppercase tracking-wider text-[color:var(--muted)]">
                 <tr>
@@ -317,7 +321,7 @@ async function PremiumContent({
         )}
       </section>
 
-      <section className="mt-20 rounded-2xl border border-[color:var(--border)] bg-white p-6 sm:p-8">
+      <section className="mt-20 rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-6 sm:p-8">
         <h2 className="serif text-2xl font-semibold tracking-tight">
           Weekly digest
         </h2>

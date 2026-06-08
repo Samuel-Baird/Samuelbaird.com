@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { deleteChangelogDocument } from "@/app/actions/changelog";
+import { deleteChangelogDocument } from "@/app/actions/versions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { ChangelogDocument } from "@/lib/types";
 
@@ -9,7 +9,7 @@ type DocumentRow = ChangelogDocument & {
   changelog_versions: { count: number }[];
 };
 
-export default async function AdminChangelogPage() {
+export default async function AdminVersionsPage() {
   const { data, error } = await createSupabaseServiceClient()
     .from("changelog_documents")
     .select("*, changelog_versions(count)")
@@ -21,10 +21,10 @@ export default async function AdminChangelogPage() {
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="serif text-4xl font-semibold tracking-tight">
-          Changelog
+          Versions
         </h1>
         <Link
-          href="/admin/changelog/new"
+          href="/admin/versions/new"
           className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90"
         >
           + New document
@@ -59,13 +59,13 @@ export default async function AdminChangelogPage() {
                   <td className="px-4 py-3">
                     <div className="flex justify-end gap-3">
                       <Link
-                        href={`/changelog/${doc.slug}`}
+                        href={`/versions/${doc.slug}`}
                         className="text-xs text-[color:var(--accent)] hover:underline"
                       >
                         View
                       </Link>
                       <Link
-                        href={`/admin/changelog/${doc.slug}/edit`}
+                        href={`/admin/versions/${doc.slug}/edit`}
                         className="text-xs text-[color:var(--accent)] hover:underline"
                       >
                         Edit

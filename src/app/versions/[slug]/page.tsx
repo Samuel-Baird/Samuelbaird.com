@@ -41,7 +41,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ChangelogDocumentPage({
+export default async function VersionsDocumentPage({
   params,
 }: {
   params: Promise<RouteParams>;
@@ -72,7 +72,7 @@ export default async function ChangelogDocumentPage({
   return (
     <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
       <Link
-        href="/changelog"
+        href="/versions"
         className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
       >
         ← All documents
@@ -98,7 +98,7 @@ export default async function ChangelogDocumentPage({
       {auth?.profile?.is_admin && (
         <div className="mt-4">
           <Link
-            href={`/admin/changelog/${doc.slug}/edit`}
+            href={`/admin/versions/${doc.slug}/edit`}
             className="inline-flex h-9 items-center rounded-full border border-[color:var(--border)] px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
           >
             Edit (admin)

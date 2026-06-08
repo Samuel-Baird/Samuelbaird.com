@@ -4,16 +4,16 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { ChangelogDocument } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Changelog",
+  title: "Versions",
   description:
-    "Track how Latter-day Saint documents — handbooks, manuals, and guides — change across editions over time.",
+    "Side-by-side versions of key Latter-day Saint documents — different accounts of the same event, and how official texts change across editions over time.",
 };
 
 type DocumentRow = ChangelogDocument & {
   changelog_versions: { count: number }[];
 };
 
-export default async function ChangelogPage() {
+export default async function VersionsPage() {
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase
     .from("changelog_documents")
@@ -26,20 +26,19 @@ export default async function ChangelogPage() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
-        Changelog
+        Versions
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-        How Latter-day Saint documents change
+        Versions of Latter-day Saint documents
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-        A neutral, source-based archive of major Church documents across
-        editions — handbooks, manuals, and guides. Browse a document&rsquo;s
-        version history; side-by-side comparison and change summaries are on the
-        way.
+        A neutral, source-based archive — compare multiple accounts of the same
+        event, or trace how official handbooks, manuals, and guides change
+        across editions over time.
       </p>
 
       {documents.length === 0 ? (
-        <div className="mt-12 rounded-2xl border border-[color:var(--border)] bg-white p-8 text-center">
+        <div className="mt-12 rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-8 text-center">
           <p className="serif text-lg font-semibold tracking-tight">
             No documents tracked yet
           </p>
@@ -54,8 +53,8 @@ export default async function ChangelogPage() {
             return (
               <li key={doc.id}>
                 <Link
-                  href={`/changelog/${doc.slug}`}
-                  className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-5 transition-colors hover:border-[color:var(--accent)]"
+                  href={`/versions/${doc.slug}`}
+                  className="group block h-full rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-5 transition-colors hover:border-[color:var(--accent)]"
                 >
                   {doc.category && (
                     <span className="inline-block rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-[color:var(--accent)]">
@@ -85,11 +84,12 @@ export default async function ChangelogPage() {
           About this archive
         </p>
         <p className="mt-2 leading-relaxed text-[color:var(--muted)]">
-          LDS Changelog is an independent research and archival tool for studying
-          how official and semi-official documents develop over time. It is not
-          affiliated with The Church of Jesus Christ of Latter-day Saints. The
-          aim is to make changes visible and easy to study — not to tell you what
-          to think about them.
+          This is an independent research and archival tool for studying Latter-day
+          Saint documents — from different accounts of the same historical event
+          to how official texts change across editions. It is not affiliated with
+          The Church of Jesus Christ of Latter-day Saints. The aim is to make
+          versions visible and easy to compare — not to tell you what to think
+          about them.
         </p>
       </aside>
     </div>

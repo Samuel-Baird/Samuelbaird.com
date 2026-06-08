@@ -1,4 +1,4 @@
-export default function ChangelogLoading() {
+export default function VersionsLoading() {
   return (
     <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-20">
       <div className="h-3 w-24 animate-pulse rounded-full bg-[color:var(--muted-soft)]" />

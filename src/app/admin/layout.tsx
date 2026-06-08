@@ -6,7 +6,7 @@ const links = [
   { href: "/admin/analytics", label: "Analytics" },
   { href: "/admin/channels", label: "Channels" },
   { href: "/admin/studies", label: "Studies" },
-  { href: "/admin/changelog", label: "Changelog" },
+  { href: "/admin/versions", label: "Versions" },
   { href: "/admin/premium", label: "Beta testers" },
   { href: "/admin/messages", label: "Messages" },
   { href: "/admin/refresh", label: "Refresh stats" },

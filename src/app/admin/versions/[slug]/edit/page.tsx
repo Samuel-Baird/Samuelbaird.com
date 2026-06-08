@@ -9,7 +9,7 @@ import {
   updateChangelogDocument,
   updateChangelogSection,
   updateChangelogVersion,
-} from "@/app/actions/changelog";
+} from "@/app/actions/versions";
 import { SubmitButton } from "@/components/submit-button";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type {
@@ -35,7 +35,7 @@ const areaClass =
 
 type RouteParams = { slug: string };
 
-export default async function AdminEditChangelogDocumentPage({
+export default async function AdminEditVersionsDocumentPage({
   params,
 }: {
   params: Promise<RouteParams>;
@@ -80,7 +80,7 @@ export default async function AdminEditChangelogDocumentPage({
   return (
     <div className="max-w-3xl">
       <Link
-        href="/admin/changelog"
+        href="/admin/versions"
         className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
       >
         ← All documents
@@ -90,7 +90,7 @@ export default async function AdminEditChangelogDocumentPage({
           Edit document
         </h1>
         <Link
-          href={`/changelog/${doc.slug}`}
+          href={`/versions/${doc.slug}`}
           className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
         >
           View public page →

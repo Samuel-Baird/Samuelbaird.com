@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { createChangelogDocument } from "@/app/actions/changelog";
+import { createChangelogDocument } from "@/app/actions/versions";
 import { SubmitButton } from "@/components/submit-button";
 
-export default function NewChangelogDocumentPage() {
+export default function NewVersionsDocumentPage() {
   return (
     <div className="max-w-2xl">
       <Link
-        href="/admin/changelog"
+        href="/admin/versions"
         className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
       >
         ← All documents
