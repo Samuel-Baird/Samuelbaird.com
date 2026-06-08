@@ -169,7 +169,7 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
         {!signedIn ? (
           <Link
             href="/login?next=/beta"
-            className="inline-flex h-11 items-center rounded-full border border-amber-600/60 bg-amber-100 px-5 text-sm font-medium text-black hover:bg-amber-200 dark:bg-amber-900/40 dark:text-black dark:border-amber-600/60 dark:hover:bg-amber-900/60"
+            className="inline-flex h-11 items-center rounded-full border border-amber-600/60 bg-amber-100 px-5 text-sm font-medium text-black hover:bg-amber-200 dark:bg-amber-900/40 dark:text-white dark:border-amber-600/60 dark:hover:bg-amber-900/60"
           >
             Sign in
           </Link>
