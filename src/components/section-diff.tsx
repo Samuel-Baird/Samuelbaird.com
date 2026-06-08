@@ -5,18 +5,14 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 // ---------------------------------------------------------------------------
-// Footnote extraction
+// Footnote extraction (for tooltip content lookup)
 // ---------------------------------------------------------------------------
 
 type FootnoteMap = Record<string, string>;
 
-/**
- * Pull [^id]: content definitions out of a markdown string.
- * Handles single-line and multi-line definitions (indented continuation lines).
- */
 function extractFootnotes(md: string): FootnoteMap {
   const map: FootnoteMap = {};
-  // Match [^id]: followed by content until the next [^id]: or end of string
+  // Match [^id]: content — handles multi-line definitions with indented continuation
   const re = /^\[\^([^\]]+)\]:\s*([\s\S]*?)(?=^\[\^[^\]]+\]:|\z)/gm;
   let match: RegExpExecArray | null;
   while ((match = re.exec(md)) !== null) {
@@ -25,36 +21,11 @@ function extractFootnotes(md: string): FootnoteMap {
   return map;
 }
 
-/**
- * Remove the ## Footnotes section and all [^id]: definitions from markdown
- * so they don't render as a list at the bottom.
- */
-function stripFootnoteDefs(md: string): string {
-  return md
-    // Remove the whole ## Footnotes heading + everything after it that is definitions
-    .replace(/^##\s*Footnotes\s*\n([\s\S]*)/im, (_, rest) =>
-      // Keep any non-definition lines that might follow (unlikely but safe)
-      rest
-        .split("\n")
-        .filter((l: string) => !/^\[\^[^\]]+\]:/.test(l.trim()))
-        .join("\n"),
-    )
-    // Remove bare [^id]: lines outside the section too
-    .replace(/^\[\^[^\]]+\]:.*(\n[ \t]+.*)*\n?/gm, "")
-    .trim();
-}
-
 // ---------------------------------------------------------------------------
-// Footnote tooltip component
+// Footnote tooltip
 // ---------------------------------------------------------------------------
 
-function FootnoteTooltip({
-  label,
-  content,
-}: {
-  label: string;
-  content: string;
-}) {
+function FootnoteTooltip({ label, content }: { label: string; content: string }) {
   return (
     <span className="group relative inline-block">
       <sup
@@ -63,14 +34,12 @@ function FootnoteTooltip({
       >
         [{label}]
       </sup>
-      {/* Tooltip */}
       <span
         className="
-          pointer-events-none absolute bottom-full left-1/2 z-30 mb-1.5
+          pointer-events-none absolute bottom-full left-1/2 z-30 mb-2
           w-72 -translate-x-1/2 rounded-xl border border-[color:var(--border)]
           bg-white px-3 py-2.5 text-xs leading-relaxed text-[color:var(--foreground)]
-          shadow-lg opacity-0 transition-opacity duration-150
-          group-hover:opacity-100
+          shadow-lg opacity-0 transition-opacity duration-150 group-hover:opacity-100
         "
         role="tooltip"
       >
@@ -78,7 +47,6 @@ function FootnoteTooltip({
           Note {label}
         </span>
         {content}
-        {/* Arrow */}
         <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[color:var(--border)]" />
       </span>
     </span>
@@ -86,7 +54,7 @@ function FootnoteTooltip({
 }
 
 // ---------------------------------------------------------------------------
-// Build component map (needs footnote lookup closure)
+// Component map
 // ---------------------------------------------------------------------------
 
 function makeMdComponents(
@@ -127,22 +95,17 @@ function makeMdComponents(
         {children}
       </blockquote>
     ),
-    strong: ({ children }) => (
-      <strong className="font-semibold">{children}</strong>
-    ),
+    strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
     hr: () => <hr className="my-4 border-[color:var(--border)]" />,
 
-    // Footnote references render as <a href="#user-content-fn-ID">
+    // Intercept footnote reference links → tooltip; pass other links through normally
     a: ({ href, children }) => {
-      const fnMatch = href?.match(/^#user-content-fn-(.+)$/);
-      if (fnMatch) {
-        const id = fnMatch[1];
+      const fnRef = href?.match(/^#user-content-fn-(.+)$/);
+      if (fnRef) {
+        const id = fnRef[1];
         const content = footnotes[id];
-        if (content) {
-          return <FootnoteTooltip label={id} content={content} />;
-        }
-        // Fallback if definition not found
+        if (content) return <FootnoteTooltip label={id} content={content} />;
         return <sup className="text-[color:var(--accent)]">[{id}]</sup>;
       }
       return (
@@ -157,18 +120,31 @@ function makeMdComponents(
       );
     },
 
-    // Suppress the rendered footnotes section at the bottom
+    // Style the footnotes section at the bottom
     section: ({ node, children, ...props }) => {
-      const dataType = (node as { properties?: Record<string, unknown> })
-        ?.properties?.["dataFootnotes"];
-      if (dataType) return null;
+      const isFootnotes = (
+        node as { properties?: Record<string, unknown> }
+      )?.properties?.dataFootnotes;
+      if (isFootnotes) {
+        return (
+          <section
+            className="mt-6 border-t border-[color:var(--border)] pt-4"
+            {...props}
+          >
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              Notes
+            </p>
+            {children}
+          </section>
+        );
+      }
       return <section {...props}>{children}</section>;
     },
   };
 }
 
 // ---------------------------------------------------------------------------
-// Strip markdown syntax to plain text for diffing
+// Plain-text stripper for diff mode
 // ---------------------------------------------------------------------------
 
 function markdownToPlain(md: string): string {
@@ -178,8 +154,8 @@ function markdownToPlain(md: string): string {
     .replace(/_{1,3}([^_]+)_{1,3}/g, "$1")
     .replace(/`([^`]+)`/g, "$1")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    // Remove footnote references
     .replace(/\[\^[^\]]+\]/g, "")
+    .replace(/^\[\^[^\]]+\]:.*$/gm, "")
     .replace(/^>\s*/gm, "")
     .replace(/^[-*+]\s+/gm, "")
     .replace(/^\d+\.\s+/gm, "")
@@ -192,44 +168,24 @@ function markdownToPlain(md: string): string {
 // Diff renderer
 // ---------------------------------------------------------------------------
 
-function DiffText({
-  left,
-  right,
-  side,
-}: {
-  left: string;
-  right: string;
-  side: "left" | "right";
-}) {
+function DiffText({ left, right, side }: { left: string; right: string; side: "left" | "right" }) {
   const changes = diffWords(left, right);
   return (
     <p className="text-sm leading-relaxed">
       {changes.map((change, i) => {
         if (change.added) {
-          if (side === "right") {
-            return (
-              <mark
-                key={i}
-                className="rounded bg-emerald-100 px-0.5 text-emerald-900 not-italic"
-              >
-                {change.value}
-              </mark>
-            );
-          }
-          return null;
+          return side === "right" ? (
+            <mark key={i} className="rounded bg-emerald-100 px-0.5 text-emerald-900 not-italic">
+              {change.value}
+            </mark>
+          ) : null;
         }
         if (change.removed) {
-          if (side === "left") {
-            return (
-              <mark
-                key={i}
-                className="rounded bg-red-100 px-0.5 text-red-900 line-through not-italic"
-              >
-                {change.value}
-              </mark>
-            );
-          }
-          return null;
+          return side === "left" ? (
+            <mark key={i} className="rounded bg-red-100 px-0.5 text-red-900 line-through not-italic">
+              {change.value}
+            </mark>
+          ) : null;
         }
         return <span key={i}>{change.value}</span>;
       })}
@@ -253,18 +209,21 @@ export function SectionBodyWithDiff({
   side: "left" | "right";
 }) {
   if (diffMode && counterpart != null) {
-    const plain = markdownToPlain(markdown);
-    const counterPlain = markdownToPlain(counterpart);
-    return <DiffText left={plain} right={counterPlain} side={side} />;
+    return (
+      <DiffText
+        left={markdownToPlain(markdown)}
+        right={markdownToPlain(counterpart)}
+        side={side}
+      />
+    );
   }
 
   const footnotes = extractFootnotes(markdown);
-  const cleaned = stripFootnoteDefs(markdown);
   const components = makeMdComponents(footnotes);
 
   return (
     <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
-      {cleaned}
+      {markdown}
     </ReactMarkdown>
   );
 }
