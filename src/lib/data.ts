@@ -1,4 +1,6 @@
 import "server-only";
+import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { createClient } from "@supabase/supabase-js";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import type { Channel, ChannelWithStats, SiteStats, Study } from "./types";
@@ -11,6 +13,12 @@ function publicClient() {
     { auth: { autoRefreshToken: false, persistSession: false } },
   );
 }
+
+// Public (anon-key) reads are wrapped in unstable_cache, tagged "channels" /
+// "studies" / "upvotes" so admin actions and the stats cron can invalidate
+// them via revalidateTag. Per-user readers (bookmarks, upvotes, progress) use
+// the cookie-bound client and must NOT go inside unstable_cache. Anything
+// involving Math.random() also stays outside so shuffles vary per request.
 
 type ChannelFullRow = Channel & {
   stats_captured_at: string | null;
@@ -40,18 +48,32 @@ function rowToChannelWithStats(row: ChannelFullRow): ChannelWithStats {
   return { ...(channel as Channel), latest };
 }
 
+const fetchChannelFullRows = cache(
+  unstable_cache(
+    async (includeInactive: boolean): Promise<ChannelFullRow[]> => {
+      const sb = publicClient();
+      let query = sb.from("channel_full").select("*");
+      if (!includeInactive) query = query.eq("is_active", true);
+      const { data, error } = await query;
+      if (error) throw error;
+      return (data ?? []) as ChannelFullRow[];
+    },
+    ["channel-full-rows"],
+    { tags: ["channels"], revalidate: 3600 },
+  ),
+);
+
 export async function getChannelsWithLatest(
   {
     includeInactive = false,
     includeCritical = true,
   }: { includeInactive?: boolean; includeCritical?: boolean } = {},
 ): Promise<ChannelWithStats[]> {
-  const sb = publicClient();
-  let query = sb.from("channel_full").select("*");
-  if (!includeInactive) query = query.eq("is_active", true);
-  const { data, error } = await query;
-  if (error) throw error;
-  const rows = (data as ChannelFullRow[]).map(rowToChannelWithStats);
+  // Critical filtering happens outside the cache so premium and non-premium
+  // visitors share one cache entry.
+  const rows = (await fetchChannelFullRows(includeInactive)).map(
+    rowToChannelWithStats,
+  );
   if (includeCritical) return rows;
   return rows.filter((c) => {
     const tags = c.channel_types?.length
@@ -63,18 +85,26 @@ export async function getChannelsWithLatest(
   });
 }
 
+const fetchChannelByYouTubeId = unstable_cache(
+  async (youtubeChannelId: string): Promise<ChannelFullRow | null> => {
+    const sb = publicClient();
+    const { data, error } = await sb
+      .from("channel_full")
+      .select("*")
+      .eq("youtube_channel_id", youtubeChannelId)
+      .maybeSingle();
+    if (error) throw error;
+    return (data as ChannelFullRow) ?? null;
+  },
+  ["channel-by-youtube-id"],
+  { tags: ["channels"], revalidate: 3600 },
+);
+
 export async function getChannelByYouTubeId(
   youtubeChannelId: string,
 ): Promise<ChannelWithStats | null> {
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("channel_full")
-    .select("*")
-    .eq("youtube_channel_id", youtubeChannelId)
-    .maybeSingle();
-  if (error) throw error;
-  if (!data) return null;
-  return rowToChannelWithStats(data as ChannelFullRow);
+  const row = await fetchChannelByYouTubeId(youtubeChannelId);
+  return row ? rowToChannelWithStats(row) : null;
 }
 
 export async function getChannelByNameLike(
@@ -220,6 +250,41 @@ export async function getFeaturedChannelsCarouselPool(
   return out.slice(0, total);
 }
 
+const fetchRecentlyAdded = unstable_cache(
+  async (
+    days: number,
+    limit: number,
+    includeStudies: boolean,
+  ): Promise<{ channelRows: ChannelFullRow[]; studies: Study[] }> => {
+    const since = new Date(Date.now() - days * 86_400_000).toISOString();
+    const sb = publicClient();
+    const channelsQuery = sb
+      .from("channel_full")
+      .select("*")
+      .eq("is_active", true)
+      .gte("created_at", since)
+      .order("created_at", { ascending: false })
+      .limit(limit);
+    const studiesQuery = includeStudies
+      ? sb
+          .from("studies")
+          .select("*")
+          .gte("created_at", since)
+          .order("created_at", { ascending: false })
+          .limit(limit)
+      : Promise.resolve({ data: [], error: null } as const);
+    const [chRes, sRes] = await Promise.all([channelsQuery, studiesQuery]);
+    if (chRes.error) throw chRes.error;
+    if (sRes.error) throw sRes.error;
+    return {
+      channelRows: (chRes.data ?? []) as ChannelFullRow[],
+      studies: (sRes.data ?? []) as Study[],
+    };
+  },
+  ["recently-added"],
+  { tags: ["channels", "studies"], revalidate: 3600 },
+);
+
 export async function getRecentlyAdded(
   days = 30,
   limit = 6,
@@ -228,27 +293,12 @@ export async function getRecentlyAdded(
     includeCritical = true,
   }: { studies?: boolean; includeCritical?: boolean } = {},
 ): Promise<{ channels: ChannelWithStats[]; studies: Study[] }> {
-  const since = new Date(Date.now() - days * 86_400_000).toISOString();
-  const sb = publicClient();
-  const channelsQuery = sb
-    .from("channel_full")
-    .select("*")
-    .eq("is_active", true)
-    .gte("created_at", since)
-    .order("created_at", { ascending: false })
-    .limit(limit);
-  const studiesQuery = includeStudies
-    ? sb
-        .from("studies")
-        .select("*")
-        .gte("created_at", since)
-        .order("created_at", { ascending: false })
-        .limit(limit)
-    : Promise.resolve({ data: [], error: null } as const);
-  const [chRes, sRes] = await Promise.all([channelsQuery, studiesQuery]);
-  if (chRes.error) throw chRes.error;
-  if (sRes.error) throw sRes.error;
-  const channels = (chRes.data as ChannelFullRow[])
+  const { channelRows, studies } = await fetchRecentlyAdded(
+    days,
+    limit,
+    includeStudies,
+  );
+  const channels = channelRows
     .map(rowToChannelWithStats)
     .filter((c) => {
       if (includeCritical) return true;
@@ -259,10 +309,7 @@ export async function getRecentlyAdded(
           : [];
       return !tags.includes("Critical");
     });
-  return {
-    channels,
-    studies: (sRes.data ?? []) as Study[],
-  };
+  return { channels, studies };
 }
 
 export async function getBookmarkSetForUser(
@@ -344,33 +391,45 @@ export async function getBookmarkedStudiesForUser(
     .filter((study): study is Study => Boolean(study));
 }
 
+const fetchChannelBySlug = unstable_cache(
+  async (slug: string): Promise<ChannelFullRow | null> => {
+    const sb = publicClient();
+    // Slug is now equal to youtube_channel_id (stable across renames). We accept
+    // either field for backwards compatibility with any links still using the old
+    // name-based slug.
+    const { data, error } = await sb
+      .from("channel_full")
+      .select("*")
+      .or(`slug.eq.${slug},youtube_channel_id.eq.${slug}`)
+      .maybeSingle();
+    if (error) throw error;
+    return (data as ChannelFullRow) ?? null;
+  },
+  ["channel-by-slug"],
+  { tags: ["channels"], revalidate: 3600 },
+);
+
 export async function getChannelBySlug(
   slug: string,
 ): Promise<ChannelWithStats | null> {
-  const sb = publicClient();
-  // Slug is now equal to youtube_channel_id (stable across renames). We accept
-  // either field for backwards compatibility with any links still using the old
-  // name-based slug.
-  const { data, error } = await sb
-    .from("channel_full")
-    .select("*")
-    .or(`slug.eq.${slug},youtube_channel_id.eq.${slug}`)
-    .maybeSingle();
-  if (error) throw error;
-  if (!data) return null;
-  return rowToChannelWithStats(data as ChannelFullRow);
+  const row = await fetchChannelBySlug(slug);
+  return row ? rowToChannelWithStats(row) : null;
 }
 
-export async function getChannelStatsHistory(channelId: string) {
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("channel_stats")
-    .select("captured_at, subscribers, total_views, video_count")
-    .eq("channel_id", channelId)
-    .order("captured_at", { ascending: true });
-  if (error) throw error;
-  return data ?? [];
-}
+export const getChannelStatsHistory = unstable_cache(
+  async (channelId: string) => {
+    const sb = publicClient();
+    const { data, error } = await sb
+      .from("channel_stats")
+      .select("captured_at, subscribers, total_views, video_count")
+      .eq("channel_id", channelId)
+      .order("captured_at", { ascending: true });
+    if (error) throw error;
+    return data ?? [];
+  },
+  ["channel-stats-history"],
+  { tags: ["channels"], revalidate: 3600 },
+);
 
 export type ChannelMover = ChannelWithStats & {
   baseline_subscribers: number;
@@ -380,70 +439,75 @@ export type ChannelMover = ChannelWithStats & {
   history: { captured_at: string; subscribers: number }[];
 };
 
+type ChannelMoverRow = {
+  channel_id: string;
+  baseline_subscribers: number;
+  baseline_captured_at: string;
+  history: { captured_at: string; subscribers: number }[];
+};
+
+// The daily dedupe + baseline computation lives in Postgres
+// (get_channel_movers, migration 0031) instead of scanning 30 days of
+// channel_stats rows in JS.
+const fetchChannelMovers = unstable_cache(
+  async (windowDays: number): Promise<ChannelMoverRow[]> => {
+    const sb = publicClient();
+    const { data, error } = await sb.rpc("get_channel_movers", {
+      window_days: windowDays,
+    });
+    if (error) throw error;
+    // Postgres RPC timestamps come back space-separated; normalize to ISO so
+    // new Date(...) parses them in every browser (Safari rejects the space).
+    const toIso = (ts: string) => ts.replace(" ", "T");
+    return ((data ?? []) as ChannelMoverRow[]).map((r) => ({
+      ...r,
+      baseline_captured_at: toIso(r.baseline_captured_at),
+      history: (r.history ?? []).map((p) => ({
+        ...p,
+        captured_at: toIso(p.captured_at),
+      })),
+    }));
+  },
+  ["channel-movers"],
+  { tags: ["channels"], revalidate: 3600 },
+);
+
 export async function getRisersAndFallers(
   windowDays = 30,
   limit = 5,
 ): Promise<{ risers: ChannelMover[]; fallers: ChannelMover[] }> {
-  const sb = publicClient();
-  const since = new Date(
-    Date.now() - windowDays * 24 * 60 * 60 * 1000,
-  ).toISOString();
-
-  const { data: rows, error } = await sb
-    .from("channel_stats")
-    .select("channel_id, captured_at, subscribers")
-    .gte("captured_at", since)
-    .order("captured_at", { ascending: true });
-  if (error) throw error;
-
-  type Row = { channel_id: string; captured_at: string; subscribers: number };
-  // Collapse to at most one data point per UTC day per channel — keep the latest
-  // capture for each day so manual refreshes don't double-count, and so the
-  // sparkline and delta reflect once-a-day cadence.
-  const latestPerDay = new Map<string, Row>();
-  for (const r of (rows ?? []) as Row[]) {
-    const day = r.captured_at.slice(0, 10);
-    const key = `${r.channel_id}|${day}`;
-    const existing = latestPerDay.get(key);
-    if (!existing || existing.captured_at < r.captured_at) {
-      latestPerDay.set(key, r);
-    }
-  }
-  const dedupedRows = [...latestPerDay.values()].sort((a, b) =>
-    a.captured_at < b.captured_at ? -1 : a.captured_at > b.captured_at ? 1 : 0,
-  );
-
-  const baselineByChannel = new Map<string, Row>();
-  const historyByChannel = new Map<string, { captured_at: string; subscribers: number }[]>();
-  for (const r of dedupedRows) {
-    if (!baselineByChannel.has(r.channel_id)) {
-      baselineByChannel.set(r.channel_id, r);
-    }
-    const arr = historyByChannel.get(r.channel_id) ?? [];
-    arr.push({ captured_at: r.captured_at, subscribers: r.subscribers });
-    historyByChannel.set(r.channel_id, arr);
-  }
-  if (baselineByChannel.size === 0) {
+  const [moverRows, all] = await Promise.all([
+    fetchChannelMovers(windowDays),
+    getChannelsWithLatest(),
+  ]);
+  if (moverRows.length === 0) {
     return { risers: [], fallers: [] };
   }
+  const byChannelId = new Map(moverRows.map((r) => [r.channel_id, r]));
 
-  const all = await getChannelsWithLatest();
   const movers: ChannelMover[] = [];
   for (const c of all) {
-    const baseline = baselineByChannel.get(c.id);
+    const baseline = byChannelId.get(c.id);
     const latest = c.latest;
     if (!baseline || !latest) continue;
-    if (baseline.captured_at >= latest.captured_at) continue;
-    if (!baseline.subscribers || baseline.subscribers <= 0) continue;
-    const delta = (latest.subscribers ?? 0) - baseline.subscribers;
-    const pct = (delta / baseline.subscribers) * 100;
+    // RPC timestamps use a space separator, table reads use ISO "T" — compare
+    // as dates, not strings.
+    if (
+      Date.parse(baseline.baseline_captured_at) >=
+      Date.parse(latest.captured_at)
+    )
+      continue;
+    if (!baseline.baseline_subscribers || baseline.baseline_subscribers <= 0)
+      continue;
+    const delta = (latest.subscribers ?? 0) - baseline.baseline_subscribers;
+    const pct = (delta / baseline.baseline_subscribers) * 100;
     movers.push({
       ...c,
-      baseline_subscribers: baseline.subscribers,
-      baseline_captured_at: baseline.captured_at,
+      baseline_subscribers: baseline.baseline_subscribers,
+      baseline_captured_at: baseline.baseline_captured_at,
       delta_subscribers: delta,
       delta_pct: pct,
-      history: historyByChannel.get(c.id) ?? [],
+      history: baseline.history ?? [],
     });
   }
 
@@ -467,25 +531,36 @@ export type StudiesQuery = {
   sort?: StudySort;
 };
 
+const fetchStudies = unstable_cache(
+  async (query: string, tags: string[]): Promise<Study[]> => {
+    const sb = publicClient();
+    let q = sb.from("studies").select("*");
+
+    if (query) {
+      // websearch_to_tsquery via Supabase's textSearch helper
+      q = q.textSearch("search_tsv", query, { type: "websearch" });
+    }
+    if (tags.length > 0) {
+      q = q.contains("tags", tags);
+    }
+
+    // All sorts come back ordered by year desc; explorer groups by category
+    // client-side when sort === "categories".
+    q = q.order("year", { ascending: false, nullsFirst: false }).limit(500);
+
+    const { data, error } = await q;
+    if (error) throw error;
+    return (data ?? []) as Study[];
+  },
+  ["studies-query"],
+  { tags: ["studies"], revalidate: 3600 },
+);
+
 export async function getStudies(opts: StudiesQuery = {}): Promise<Study[]> {
-  const sb = publicClient();
-  let q = sb.from("studies").select("*");
-
-  if (opts.query && opts.query.trim()) {
-    // websearch_to_tsquery via Supabase's textSearch helper
-    q = q.textSearch("search_tsv", opts.query.trim(), { type: "websearch" });
-  }
-  if (opts.tags && opts.tags.length > 0) {
-    q = q.contains("tags", opts.tags);
-  }
-
-  // All sorts come back ordered by year desc; explorer groups by category
-  // client-side when sort === "categories".
-  q = q.order("year", { ascending: false, nullsFirst: false });
-
-  const { data, error } = await q;
-  if (error) throw error;
-  let studies = (data ?? []) as Study[];
+  let studies = await fetchStudies(
+    (opts.query ?? "").trim(),
+    opts.tags ?? [],
+  );
 
   if (opts.sort === "upvotes" && studies.length > 0) {
     const counts = await getUpvoteCountMap(
@@ -502,40 +577,63 @@ export async function getStudies(opts: StudiesQuery = {}): Promise<Study[]> {
   return studies;
 }
 
-export async function getAllStudyTags(): Promise<{ value: string; count: number }[]> {
-  const sb = publicClient();
-  const { data, error } = await sb.from("studies").select("tags");
-  if (error) throw error;
-  const counts = new Map<string, number>();
-  for (const row of (data ?? []) as { tags: string[] }[]) {
-    for (const tag of row.tags ?? []) {
-      const trimmed = (tag ?? "").trim();
-      if (!trimmed) continue;
-      counts.set(trimmed, (counts.get(trimmed) ?? 0) + 1);
-    }
-  }
-  return [...counts.entries()]
-    .map(([value, count]) => ({ value, count }))
-    .sort((a, b) => a.value.localeCompare(b.value));
-}
+export const getAllStudyTags = cache(
+  unstable_cache(
+    async (): Promise<{ value: string; count: number }[]> => {
+      const sb = publicClient();
+      const { data, error } = await sb.from("studies").select("tags");
+      if (error) throw error;
+      const counts = new Map<string, number>();
+      for (const row of (data ?? []) as { tags: string[] }[]) {
+        for (const tag of row.tags ?? []) {
+          const trimmed = (tag ?? "").trim();
+          if (!trimmed) continue;
+          counts.set(trimmed, (counts.get(trimmed) ?? 0) + 1);
+        }
+      }
+      return [...counts.entries()]
+        .map(([value, count]) => ({ value, count }))
+        .sort((a, b) => a.value.localeCompare(b.value));
+    },
+    ["all-study-tags"],
+    { tags: ["studies"], revalidate: 3600 },
+  ),
+);
+
+// One small cached fetch of the whole upvote_counts view replaces the old
+// per-ID-set queries, so every caller shares a single cache entry.
+const fetchAllUpvoteCounts = cache(
+  unstable_cache(
+    async (): Promise<
+      { target_type: string; target_id: string; upvotes: number }[]
+    > => {
+      const sb = publicClient();
+      const { data, error } = await sb
+        .from("upvote_counts")
+        .select("target_type, target_id, upvotes");
+      if (error) throw error;
+      return (data ?? []) as {
+        target_type: string;
+        target_id: string;
+        upvotes: number;
+      }[];
+    },
+    ["upvote-counts-all"],
+    { tags: ["upvotes"], revalidate: 60 },
+  ),
+);
 
 export async function getUpvoteCountMap(
   targetType: "channel" | "study",
   targetIds: string[],
 ): Promise<Map<string, number>> {
   if (targetIds.length === 0) return new Map();
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("upvote_counts")
-    .select("target_id, upvotes")
-    .eq("target_type", targetType)
-    .in("target_id", targetIds);
-  if (error) throw error;
+  const wanted = new Set(targetIds);
+  const rows = await fetchAllUpvoteCounts();
   return new Map(
-    ((data ?? []) as { target_id: string; upvotes: number }[]).map((row) => [
-      row.target_id,
-      row.upvotes,
-    ]),
+    rows
+      .filter((r) => r.target_type === targetType && wanted.has(r.target_id))
+      .map((row) => [row.target_id, row.upvotes]),
   );
 }
 
@@ -557,39 +655,55 @@ export async function getUpvoteSetForUser(
   return { channels, studies };
 }
 
+const fetchRecentStudies = unstable_cache(
+  async (limit: number): Promise<Study[]> => {
+    const sb = publicClient();
+    const { data, error } = await sb
+      .from("studies")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .limit(limit);
+    if (error) throw error;
+    return (data ?? []) as Study[];
+  },
+  ["recent-studies"],
+  { tags: ["studies"], revalidate: 3600 },
+);
+
+const fetchStudiesByIds = unstable_cache(
+  async (ids: string[]): Promise<Study[]> => {
+    if (ids.length === 0) return [];
+    const sb = publicClient();
+    const { data, error } = await sb.from("studies").select("*").in("id", ids);
+    if (error) throw error;
+    return (data ?? []) as Study[];
+  },
+  ["studies-by-ids"],
+  { tags: ["studies"], revalidate: 3600 },
+);
+
 // Pool for the homepage carousel: a shuffled mix biased toward both
 // recently added studies and the most upvoted ones. Duplicates between
 // the two pools are deduped.
 export async function getStudiesCarouselMix(limit = 20): Promise<Study[]> {
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("studies")
-    .select("*")
-    .order("created_at", { ascending: false });
-  if (error) throw error;
-  const all = (data ?? []) as Study[];
-  if (all.length === 0) return [];
+  const [recent, allCounts] = await Promise.all([
+    fetchRecentStudies(limit),
+    fetchAllUpvoteCounts(),
+  ]);
+  if (recent.length === 0) return [];
 
-  const halfRecent = Math.ceil(limit / 2);
-  const halfUpvoted = limit - halfRecent;
-  const recent = all.slice(0, Math.min(halfRecent * 2, all.length));
+  const topUpvotedIds = allCounts
+    .filter((r) => r.target_type === "study")
+    .sort((a, b) => b.upvotes - a.upvotes)
+    .slice(0, limit)
+    .map((r) => r.target_id)
+    .sort(); // stable order so the cache key doesn't churn between requests
 
-  const counts = await getUpvoteCountMap("study", all.map((s) => s.id));
-  const byUpvotes = all
-    .slice()
-    .sort((a, b) => (counts.get(b.id) ?? 0) - (counts.get(a.id) ?? 0))
-    .slice(0, Math.min(halfUpvoted * 2, all.length));
+  const upvoted = await fetchStudiesByIds(topUpvotedIds);
 
   const seen = new Set<string>();
   const mix: Study[] = [];
-  for (const s of [...recent, ...byUpvotes]) {
-    if (seen.has(s.id)) continue;
-    seen.add(s.id);
-    mix.push(s);
-  }
-  // Fill remainder from the full pool if we're short
-  for (const s of all) {
-    if (mix.length >= limit) break;
+  for (const s of [...recent, ...upvoted]) {
     if (seen.has(s.id)) continue;
     seen.add(s.id);
     mix.push(s);
@@ -601,23 +715,36 @@ export async function getStudiesCarouselMix(limit = 20): Promise<Study[]> {
   return mix.slice(0, limit);
 }
 
-export async function getStudyBySlug(slug: string): Promise<Study | null> {
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("studies")
-    .select("*")
-    .eq("slug", slug)
-    .maybeSingle();
-  if (error) throw error;
-  return (data as Study) ?? null;
-}
+export const getStudyBySlug = unstable_cache(
+  async (slug: string): Promise<Study | null> => {
+    const sb = publicClient();
+    const { data, error } = await sb
+      .from("studies")
+      .select("*")
+      .eq("slug", slug)
+      .maybeSingle();
+    if (error) throw error;
+    return (data as Study) ?? null;
+  },
+  ["study-by-slug"],
+  { tags: ["studies"], revalidate: 3600 },
+);
 
-export async function getSiteStats(): Promise<SiteStats | null> {
-  const sb = publicClient();
-  const { data, error } = await sb.from("site_stats").select("*").maybeSingle();
-  if (error) throw error;
-  return (data as SiteStats) ?? null;
-}
+export const getSiteStats = cache(
+  unstable_cache(
+    async (): Promise<SiteStats | null> => {
+      const sb = publicClient();
+      const { data, error } = await sb
+        .from("site_stats")
+        .select("*")
+        .maybeSingle();
+      if (error) throw error;
+      return (data as SiteStats) ?? null;
+    },
+    ["site-stats"],
+    { tags: ["channels"], revalidate: 3600 },
+  ),
+);
 
 export async function getStudyProgressForUser(
   userId: string,
@@ -638,20 +765,28 @@ export async function getStudyProgressForUser(
   };
 }
 
+const fetchStudiesOverlappingTags = unstable_cache(
+  async (studyId: string, tags: string[]): Promise<Study[]> => {
+    const sb = publicClient();
+    const { data, error } = await sb
+      .from("studies")
+      .select("*")
+      .neq("id", studyId)
+      .overlaps("tags", tags);
+    if (error) throw error;
+    return (data ?? []) as Study[];
+  },
+  ["studies-overlapping-tags"],
+  { tags: ["studies"], revalidate: 3600 },
+);
+
 export async function getRelatedStudies(
   studyId: string,
   tags: string[],
   limit = 4,
 ): Promise<Study[]> {
   if (!tags || tags.length === 0) return [];
-  const sb = publicClient();
-  const { data, error } = await sb
-    .from("studies")
-    .select("*")
-    .neq("id", studyId)
-    .overlaps("tags", tags);
-  if (error) throw error;
-  const others = (data ?? []) as Study[];
+  const others = await fetchStudiesOverlappingTags(studyId, tags);
   const a = new Set(tags);
   const scored = others
     .map((s) => {
@@ -674,27 +809,50 @@ export type SearchItem =
   | { kind: "study"; slug: string; name: string; sub: string | null }
   | { kind: "tag"; slug: string; name: string; sub: string | null };
 
+type SearchChannelRow = {
+  slug: string;
+  name: string;
+  channel_type: string | null;
+  channel_types: string[] | null;
+};
+type SearchStudyRow = {
+  slug: string;
+  title: string;
+  year: number | null;
+  authors: string[] | null;
+};
+
+const fetchSearchIndexBase = unstable_cache(
+  async (): Promise<{
+    channelRows: SearchChannelRow[];
+    studyRows: SearchStudyRow[];
+  }> => {
+    const sb = publicClient();
+    const [channelsRes, studiesRes] = await Promise.all([
+      sb
+        .from("channel_full")
+        .select("slug, name, channel_type, channel_types")
+        .eq("is_active", true),
+      sb.from("studies").select("slug, title, year, authors"),
+    ]);
+    if (channelsRes.error) throw channelsRes.error;
+    if (studiesRes.error) throw studiesRes.error;
+    return {
+      channelRows: (channelsRes.data ?? []) as SearchChannelRow[],
+      studyRows: (studiesRes.data ?? []) as SearchStudyRow[],
+    };
+  },
+  ["search-index-base"],
+  { tags: ["channels", "studies"], revalidate: 3600 },
+);
+
 export async function getSearchIndex(
   { includeCritical = true }: { includeCritical?: boolean } = {},
 ): Promise<SearchItem[]> {
-  const sb = publicClient();
-  const [channelsRes, studiesRes, tagsRes] = await Promise.all([
-    sb
-      .from("channel_full")
-      .select("slug, name, channel_type, channel_types")
-      .eq("is_active", true),
-    sb.from("studies").select("slug, title, year, authors"),
+  const [{ channelRows, studyRows }, tagsRes] = await Promise.all([
+    fetchSearchIndexBase(),
     getAllStudyTags(),
   ]);
-  if (channelsRes.error) throw channelsRes.error;
-  if (studiesRes.error) throw studiesRes.error;
-
-  const channelRows = (channelsRes.data ?? []) as Array<{
-    slug: string;
-    name: string;
-    channel_type: string | null;
-    channel_types: string[] | null;
-  }>;
   const channels: SearchItem[] = channelRows
     .filter((c) => {
       if (includeCritical) return true;
@@ -711,14 +869,12 @@ export async function getSearchIndex(
       name: c.name,
       sub: c.channel_type,
     }));
-  const studies: SearchItem[] = (studiesRes.data ?? []).map(
-    (s: { slug: string; title: string; year: number | null; authors: string[] | null }) => ({
-      kind: "study" as const,
-      slug: s.slug,
-      name: s.title,
-      sub: [s.year, (s.authors ?? [])[0]].filter(Boolean).join(" · ") || null,
-    }),
-  );
+  const studies: SearchItem[] = studyRows.map((s) => ({
+    kind: "study" as const,
+    slug: s.slug,
+    name: s.title,
+    sub: [s.year, (s.authors ?? [])[0]].filter(Boolean).join(" · ") || null,
+  }));
   const tags: SearchItem[] = tagsRes.map((t) => ({
     kind: "tag" as const,
     slug: t.value,
@@ -737,7 +893,8 @@ export type StudyStats = {
   flagged: number;
 };
 
-export async function getStudyStats(): Promise<StudyStats> {
+export const getStudyStats = unstable_cache(
+  async (): Promise<StudyStats> => {
   const sb = publicClient();
   const { data, error } = await sb
     .from("studies")
@@ -764,7 +921,10 @@ export async function getStudyStats(): Promise<StudyStats> {
     if (r.flagged_problematic) flagged++;
   }
   return { total: rows.length, findings, topics: topics.size, yearMin, yearMax, flagged };
-}
+  },
+  ["study-stats"],
+  { tags: ["studies"], revalidate: 3600 },
+);
 
 export function pdfPublicUrl(pdfPath: string | null): string | null {
   return storagePublicUrl(pdfPath);

@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { uuidSchema } from "@/lib/validation";
 
 type ToggleInput = {
   studyId: string;
@@ -10,6 +11,9 @@ type ToggleInput = {
 };
 
 export async function toggleStudyRead(input: ToggleInput) {
+  if (!uuidSchema.safeParse(input.studyId).success) {
+    throw new Error("Invalid study id.");
+  }
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },
@@ -52,6 +56,9 @@ type SaveNoteInput = {
 };
 
 export async function saveStudyNote(input: SaveNoteInput) {
+  if (!uuidSchema.safeParse(input.studyId).success) {
+    throw new Error("Invalid study id.");
+  }
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },

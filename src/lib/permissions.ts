@@ -1,5 +1,7 @@
 import "server-only";
 
+import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { redirect } from "next/navigation";
 import { getCurrentUser, type AuthContext } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
@@ -39,17 +41,26 @@ export async function requireCapability(
   return auth;
 }
 
+// Cached across requests (keyed by email); admin premium-user edits call
+// revalidateTag("premium-users") so grants/revocations apply immediately.
+const isPremiumEmail = unstable_cache(
+  async (email: string): Promise<boolean> => {
+    const { data, error } = await createSupabaseServiceClient()
+      .from("premium_users")
+      .select("id")
+      .eq("email", email)
+      .maybeSingle();
+    if (error) throw error;
+    return Boolean(data);
+  },
+  ["premium-email"],
+  { tags: ["premium-users"], revalidate: 300 },
+);
+
 export async function isPremiumUser(auth: AuthContext): Promise<boolean> {
   const email = auth.profile?.email ?? auth.user.email ?? null;
   if (!email) return false;
-
-  const { data, error } = await createSupabaseServiceClient()
-    .from("premium_users")
-    .select("id")
-    .eq("email", email.trim().toLowerCase())
-    .maybeSingle();
-  if (error) throw error;
-  return Boolean(data);
+  return isPremiumEmail(email.trim().toLowerCase());
 }
 
 export type PremiumStatus = {
@@ -58,10 +69,10 @@ export type PremiumStatus = {
   email: string | null;
 };
 
-export async function getPremiumStatus(): Promise<PremiumStatus> {
+export const getPremiumStatus = cache(async (): Promise<PremiumStatus> => {
   const auth = await getCurrentUser();
   if (!auth) return { signedIn: false, premium: false, email: null };
   const email = auth.profile?.email ?? auth.user.email ?? null;
   const premium = await isPremiumUser(auth);
   return { signedIn: true, premium, email };
-}
+});

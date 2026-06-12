@@ -17,13 +17,18 @@ export default async function ChannelsPage() {
     getCurrentUser(),
     getPremiumStatus(),
   ]);
-  const channels = await getChannelsWithLatest({
-    includeInactive: true,
-    includeCritical: premiumStatus.premium,
-  });
-  const bookmarks = auth
-    ? await getBookmarkSetForUser(auth.user.id)
-    : { channels: new Set<string>(), studies: new Set<string>() };
+  const [channels, bookmarks] = await Promise.all([
+    getChannelsWithLatest({
+      includeInactive: true,
+      includeCritical: premiumStatus.premium,
+    }),
+    auth
+      ? getBookmarkSetForUser(auth.user.id)
+      : Promise.resolve({
+          channels: new Set<string>(),
+          studies: new Set<string>(),
+        }),
+  ]);
 
   const latestCapture = channels
     .map((c) => c.latest?.captured_at)

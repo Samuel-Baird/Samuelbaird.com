@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { toggleTargetSchema } from "@/lib/validation";
 
 type ToggleBookmarkInput = {
   targetType: "channel" | "study";
@@ -11,6 +12,8 @@ type ToggleBookmarkInput = {
 };
 
 export async function toggleBookmark(input: ToggleBookmarkInput) {
+  const parsed = toggleTargetSchema.safeParse(input);
+  if (!parsed.success) throw new Error("Invalid bookmark target.");
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },

@@ -1,15 +1,27 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth";
+import { logEvent } from "@/lib/log";
+import { runStatsRefresh } from "@/lib/refresh-stats";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
+import {
+  emailSchema,
+  linkSchema,
+  uuidSchema,
+  yearSchema,
+} from "@/lib/validation";
 import {
   fetchYouTubeSnapshots,
   parseHandleInput,
   resolveHandleToChannelId,
   slugifyName,
 } from "@/lib/youtube";
+
+function assertUuid(id: string) {
+  if (!uuidSchema.safeParse(id).success) throw new Error("Invalid id.");
+}
 
 function parseCsv(value: FormDataEntryValue | null): string[] {
   return String(value ?? "")
@@ -55,11 +67,13 @@ async function refreshLatestView() {
 
 export async function setChannelFeatured(id: string, value: boolean) {
   await requireAdmin();
+  assertUuid(id);
   const { error } = await createSupabaseServiceClient()
     .from("channels")
     .update({ featured: value })
     .eq("id", id);
   if (error) throw error;
+  revalidateTag("channels", { expire: 0 });
   revalidatePath("/admin/channels");
   revalidatePath("/channels");
   revalidatePath("/");
@@ -73,7 +87,7 @@ export async function upsertPremiumUser(formData: FormData) {
   const auth = await requireAdmin();
   const email = normalizeEmail(formData.get("email"));
   const name = String(formData.get("name") ?? "").trim() || null;
-  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+  if (!emailSchema.safeParse(email).success) {
     throw new Error("Enter a valid email address.");
   }
 
@@ -88,26 +102,31 @@ export async function upsertPremiumUser(formData: FormData) {
       { onConflict: "email" },
     );
   if (error) throw error;
+  revalidateTag("premium-users", { expire: 0 });
   revalidatePath("/admin/premium");
 }
 
 export async function deletePremiumUser(id: string) {
   await requireAdmin();
+  assertUuid(id);
   const { error } = await createSupabaseServiceClient()
     .from("premium_users")
     .delete()
     .eq("id", id);
   if (error) throw error;
+  revalidateTag("premium-users", { expire: 0 });
   revalidatePath("/admin/premium");
 }
 
 export async function setChannelActive(id: string, value: boolean) {
   await requireAdmin();
+  assertUuid(id);
   const { error } = await createSupabaseServiceClient()
     .from("channels")
     .update({ is_active: value })
     .eq("id", id);
   if (error) throw error;
+  revalidateTag("channels", { expire: 0 });
   revalidatePath("/admin/channels");
   revalidatePath("/channels");
   revalidatePath("/");
@@ -115,11 +134,13 @@ export async function setChannelActive(id: string, value: boolean) {
 
 export async function deleteChannel(id: string) {
   await requireAdmin();
+  assertUuid(id);
   const { error } = await createSupabaseServiceClient()
     .from("channels")
     .delete()
     .eq("id", id);
   if (error) throw error;
+  revalidateTag("channels", { expire: 0 });
   revalidatePath("/admin/channels");
   revalidatePath("/channels");
   revalidatePath("/");
@@ -191,6 +212,7 @@ export async function addChannelByInput(rawInput: string) {
   if (statsError) throw statsError;
 
   await refreshLatestView();
+  revalidateTag("channels", { expire: 0 });
   revalidatePath("/admin/channels");
   revalidatePath("/channels");
   revalidatePath("/");
@@ -199,12 +221,14 @@ export async function addChannelByInput(rawInput: string) {
 
 export async function setChannelType(id: string, value: string) {
   await requireAdmin();
+  assertUuid(id);
   const types = value ? [value] : [];
   const { error } = await createSupabaseServiceClient()
     .from("channels")
     .update({ channel_types: types, channel_type: value || null })
     .eq("id", id);
   if (error) throw error;
+  revalidateTag("channels", { expire: 0 });
   revalidatePath("/admin/channels");
   revalidatePath("/channels");
   revalidatePath("/");
@@ -223,6 +247,9 @@ export async function updateChannelDetails(
     await requireAdmin();
   } catch {
     return { ok: false, error: "Not authorized." };
+  }
+  if (!uuidSchema.safeParse(id).success) {
+    return { ok: false, error: "Invalid channel id." };
   }
   const warnings: string[] = [];
   const get = (key: string) => {
@@ -263,6 +290,14 @@ export async function updateChannelDetails(
     tiktok_url: get("tiktok_url"),
     x_url: get("x_url"),
   };
+  for (const [field, value] of Object.entries(socialProfiles)) {
+    if (value !== null && !linkSchema.safeParse(value).success) {
+      return {
+        ok: false,
+        error: `${field.replace("_url", "")} link doesn't look valid.`,
+      };
+    }
+  }
 
   let { data, error } = await supabase
     .from("channels")
@@ -272,6 +307,7 @@ export async function updateChannelDetails(
     .single();
 
   if (error && /channel_types/.test(error.message)) {
+    logEvent("channel_update_fallback", { id, message: error.message }, "error");
     warnings.push("Multiple tags did not save — migration 0026 not applied.");
     const { channel_types: _drop, ...withoutArray } = coreDetails;
     void _drop;
@@ -284,6 +320,7 @@ export async function updateChannelDetails(
   }
 
   if (error && /lds_affiliation_source/.test(error.message)) {
+    logEvent("channel_update_fallback", { id, message: error.message }, "error");
     warnings.push("LDS affiliation source did not save — migration 0007 not applied.");
     ({ data, error } = await supabase
       .from("channels")
@@ -294,6 +331,7 @@ export async function updateChannelDetails(
   }
 
   if (error && /country_manual|language_manual/.test(error.message)) {
+    logEvent("channel_update_fallback", { id, message: error.message }, "error");
     warnings.push("Country/language overrides did not save — migration 0006 not applied.");
     ({ data, error } = await supabase
       .from("channels")
@@ -321,6 +359,7 @@ export async function updateChannelDetails(
     return { ok: false, error: socialError.message };
   }
 
+  revalidateTag("channels", { expire: 0 });
   revalidatePath("/admin/channels");
   revalidatePath(`/admin/channels/${data.slug}/edit`);
   revalidatePath(`/channels/${data.slug}`);
@@ -331,11 +370,13 @@ export async function updateChannelDetails(
 
 export async function deleteStudy(id: string) {
   await requireAdmin();
+  assertUuid(id);
   const { error } = await createSupabaseServiceClient()
     .from("studies")
     .delete()
     .eq("id", id);
   if (error) throw error;
+  revalidateTag("studies", { expire: 0 });
   revalidatePath("/admin/studies");
   revalidatePath("/studies");
   revalidatePath("/");
@@ -345,6 +386,11 @@ export async function createStudy(formData: FormData) {
   await requireAdmin();
   const title = String(formData.get("title") ?? "").trim();
   if (!title) throw new Error("Title is required.");
+  if (title.length > 300) throw new Error("Title is too long (300 max).");
+  const yearRaw = String(formData.get("year") ?? "").trim();
+  if (yearRaw && !yearSchema.safeParse(yearRaw).success) {
+    throw new Error("Year must be a 4-digit year.");
+  }
 
   const externalUrl = String(formData.get("external_url") ?? "").trim() || null;
   const file = formData.get("pdf");
@@ -425,6 +471,7 @@ export async function createStudy(formData: FormData) {
   }
   if (error) throw error;
 
+  revalidateTag("studies", { expire: 0 });
   revalidatePath("/admin/studies");
   revalidatePath("/studies");
   revalidatePath("/");
@@ -448,8 +495,14 @@ export async function updateStudy(
   } catch {
     return { ok: false, error: "Not authorized." };
   }
+  if (!uuidSchema.safeParse(id).success) {
+    return { ok: false, error: "Invalid study id." };
+  }
   const warnings: string[] = [];
   const yearValue = String(formData.get("year") ?? "").trim();
+  if (yearValue && !yearSchema.safeParse(yearValue).success) {
+    return { ok: false, error: "Year must be a 4-digit year." };
+  }
   const supabase = createSupabaseServiceClient();
   const base = {
     title: String(formData.get("title") ?? "").trim(),
@@ -512,6 +565,7 @@ export async function updateStudy(
     .select("slug")
     .single();
   if (error && /findings|limitations|flagged_problematic|flag_reason|context_note|preview_image/.test(error.message)) {
+    logEvent("study_update_fallback", { id, message: error.message }, "error");
     warnings.push("Some optional fields did not save — newer migration not applied.");
     ({ data, error } = await supabase
       .from("studies")
@@ -522,6 +576,7 @@ export async function updateStudy(
   }
   if (error) return { ok: false, error: error.message };
   if (!data) return { ok: false, error: "Study not found." };
+  revalidateTag("studies", { expire: 0 });
   revalidatePath("/admin/studies");
   revalidatePath(`/admin/studies/${data.slug}/edit`);
   revalidatePath(`/studies/${data.slug}`);
@@ -532,6 +587,14 @@ export async function updateStudy(
 
 export async function regenerateStudyPreview(id: string) {
   await requireAdmin();
+  assertUuid(id);
+  // Relies on scripts/ which isn't bundled into Vercel functions — this is
+  // local-only admin tooling.
+  if (process.env.VERCEL) {
+    throw new Error(
+      "Preview regeneration only works when running the admin locally.",
+    );
+  }
   const supabase = createSupabaseServiceClient();
   const { data: study, error } = await supabase
     .from("studies")
@@ -547,15 +610,18 @@ export async function regenerateStudyPreview(id: string) {
     const child = spawn(
       process.execPath,
       [path.join(cwd, "scripts", "generate-study-preview.mjs"), study.slug],
-      { cwd, stdio: "inherit" },
+      { cwd, stdio: "inherit", timeout: 120_000 },
     );
     child.on("error", reject);
-    child.on("exit", (code) => {
+    child.on("exit", (code, signal) => {
       if (code === 0) resolve();
+      else if (signal)
+        reject(new Error(`generate-study-preview timed out (${signal})`));
       else reject(new Error(`generate-study-preview exited with ${code}`));
     });
   });
 
+  revalidateTag("studies", { expire: 0 });
   revalidatePath(`/admin/studies/${study.slug}/edit`);
   revalidatePath(`/studies/${study.slug}`);
   revalidatePath("/studies");
@@ -564,55 +630,10 @@ export async function regenerateStudyPreview(id: string) {
 export async function refreshStatsNow() {
   await requireAdmin();
   const supabase = createSupabaseServiceClient();
-  const { data: channels, error } = await supabase
-    .from("channels")
-    .select("id, youtube_channel_id")
-    .not("youtube_channel_id", "is", null);
-  if (error) throw error;
-
-  const snapshots = await fetchYouTubeSnapshots(
-    (channels ?? []).map((channel) => channel.youtube_channel_id),
-  );
-  const byYtId = new Map((channels ?? []).map((c) => [c.youtube_channel_id, c.id]));
-
-  const now = new Date().toISOString();
-  for (const snapshot of snapshots) {
-    const channelId = byYtId.get(snapshot.id);
-    if (!channelId) continue;
-
-    const { error: ytError } = await supabase
-      .from("channel_youtube")
-      .upsert(
-        {
-          channel_id: channelId,
-          name: snapshot.name,
-          description: snapshot.description,
-          country: snapshot.country,
-          default_language: snapshot.defaultLanguage,
-          thumbnail_url: snapshot.thumbnailUrl,
-          created_at_youtube: snapshot.publishedAt,
-          last_synced_at: now,
-          last_sync_status: "ok",
-          last_sync_error: null,
-        },
-        { onConflict: "channel_id" },
-      );
-    if (ytError) throw ytError;
-
-    const { error: statsError } = await supabase.from("channel_stats").insert({
-      channel_id: channelId,
-      subscribers: snapshot.subscribers,
-      total_views: snapshot.totalViews,
-      video_count: snapshot.videoCount,
-    });
-    if (statsError) throw statsError;
-  }
-
-  await refreshLatestView();
+  // Manual refresh covers inactive channels too, unlike the daily cron.
+  await runStatsRefresh(supabase, { activeOnly: false });
   revalidatePath("/admin");
   revalidatePath("/admin/channels");
   revalidatePath("/admin/refresh");
-  revalidatePath("/channels");
-  revalidatePath("/");
   redirect("/admin/refresh?refreshed=1");
 }
