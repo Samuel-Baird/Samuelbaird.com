@@ -92,38 +92,3 @@ export type SiteStats = {
   total_videos: number;
   last_refresh: string | null;
 };
-
-// ============================================================================
-// Versions — document version tracking (documents → versions → sections)
-// ============================================================================
-export type ChangelogDocument = {
-  id: string;
-  slug: string;
-  title: string;
-  summary: string | null;
-  category: string | null;
-  created_at: string;
-  updated_at: string;
-};
-
-export type ChangelogVersion = {
-  id: string;
-  document_id: string;
-  label: string;
-  published_on: string | null;
-  ordinal: number;
-  source_type: string;
-  source_url: string | null;
-  extraction_method: string | null;
-  confidence: string | null;
-  created_at: string;
-};
-
-export type ChangelogSection = {
-  id: string;
-  version_id: string;
-  ordinal: number;
-  heading: string | null;
-  body_markdown: string | null;
-  created_at: string;
-};

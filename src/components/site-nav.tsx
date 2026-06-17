@@ -9,26 +9,19 @@ import { CommandPaletteHost } from "@/components/command-palette-host";
 import { SiteNavClient, type SiteNavLink } from "@/components/site-nav-client";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
-import { getPremiumStatus } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 const ALL_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
-  { href: "/versions", label: "Versions", betaOnly: true },
   { href: "/beta", label: "Beta", premium: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 export async function SiteNav() {
-  const [auth, premiumStatus] = await Promise.all([
-    getCurrentUser(),
-    getPremiumStatus(),
-  ]);
-  const links = ALL_LINKS.filter(
-    (l) => !l.betaOnly || premiumStatus.premium,
-  );
+  const auth = await getCurrentUser();
+  const links = ALL_LINKS;
   const user: AuthMenuUser | null = auth
     ? {
         id: auth.user.id,
