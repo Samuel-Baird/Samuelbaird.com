@@ -79,6 +79,12 @@ export const CATEGORY_META: Record<
     definition:
       "Explicit succession-of-Gods language. Requires a succession of Gods, not merely a plurality of worlds.",
   },
+  "DIVINE-PROGRESSION": {
+    label: "Divine progression",
+    pill: "bg-rose-50 text-rose-900 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-800/50",
+    definition:
+      "Addresses whether God Himself still progresses in knowledge or power. Affirmations (Young, Woodruff) and denials (Joseph Fielding Smith, McConkie: only in dominions) both carry the tag; each quote's note states the direction.",
+  },
   "RETREAT-REFRAME": {
     label: "Retreat / reframe",
     pill: "bg-orange-50 text-orange-900 ring-orange-200 dark:bg-orange-950/40 dark:text-orange-300 dark:ring-orange-800/50",

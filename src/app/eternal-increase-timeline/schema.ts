@@ -12,6 +12,7 @@ export const CATEGORY_IDS = [
   "MANY-WORLDS",
   "HEAVENLY-MOTHER",
   "INFINITE-CHAIN",
+  "DIVINE-PROGRESSION",
   "RETREAT-REFRAME",
 ] as const;
 
