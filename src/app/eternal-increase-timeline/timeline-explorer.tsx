@@ -41,6 +41,7 @@ import {
   type SourceEntry,
   type SourceType,
 } from "./schema";
+import { TimelineGraph } from "./timeline-graph";
 
 function norm(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
@@ -327,6 +328,16 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
         </PanelSection>
       </aside>
 
+      <div className="min-w-0">
+        <div className="mb-8 print:hidden">
+          <TimelineGraph
+            entries={visible}
+            onSelect={(id) => {
+              const el = document.getElementById(id);
+              el?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          />
+        </div>
       {visible.length === 0 ? (
         <div className="mt-8 rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)] lg:mt-0">
           No sources match your filters.
@@ -359,6 +370,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           })}
         </div>
       )}
+      </div>
     </div>
   );
 }

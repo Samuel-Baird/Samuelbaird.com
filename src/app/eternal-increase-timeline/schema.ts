@@ -2,7 +2,9 @@ import { z } from "zod";
 
 export const CATEGORY_IDS = [
   "BACKWARD-EXPLICIT",
-  "BACKWARD-MORTALITY",
+  "FATHER-MORTAL-EXPERIENCE",
+  "FATHER-BECAME-GOD",
+  "FATHER-ALWAYS-GOD",
   "BACKWARD-AGNOSTIC",
   "FORWARD-EXPLICIT",
   "FORWARD-EUPHEMISM",
@@ -144,6 +146,18 @@ export function parseSources(raw: unknown): SourceEntry[] {
   if (strayOverrides.length > 0) {
     throw new Error(
       `eternal-increase-timeline/sources.json has hearsayByQuote keys with no matching quote:\n  ${strayOverrides.join("\n  ")}`,
+    );
+  }
+
+  // mrm.org is a discovery aid only — see docs/timelines/SOURCING.md. It must
+  // never be published as a citation, so a URL on that host fails the build.
+  const disallowedHost = /^https?:\/\/([a-z0-9-]+\.)*mrm\.org(\/|$)/i;
+  const banned = entries
+    .filter((e) => disallowedHost.test(e.url))
+    .map((e) => `${e.id} -> ${e.url}`);
+  if (banned.length > 0) {
+    throw new Error(
+      `eternal-increase-timeline/sources.json cites a research-aid-only host that must not be published:\n  ${banned.join("\n  ")}`,
     );
   }
 

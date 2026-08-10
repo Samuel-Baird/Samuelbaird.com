@@ -20,11 +20,23 @@ export const CATEGORY_META: Record<
     definition:
       "States that the Father had a Father, or a God above Him.",
   },
-  "BACKWARD-MORTALITY": {
-    label: "Backward: mortality",
+  "FATHER-MORTAL-EXPERIENCE": {
+    label: "Father: mortal experience",
     pill: "bg-sky-50 text-sky-900 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-800/50",
     definition:
-      "God underwent mortality; no Father-above is stated.",
+      "God lived a mortal probation — “as man now is, God once was.” Check the referent chip: where it is not “Father,” the source makes the claim without establishing it of the Father.",
+  },
+  "FATHER-BECAME-GOD": {
+    label: "Father: became God",
+    pill: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
+    definition:
+      "God attained divinity at some point rather than always possessing it — exaltation, progression to perfection, “attained the state.” Implies but is distinct from having had a mortal experience.",
+  },
+  "FATHER-ALWAYS-GOD": {
+    label: "Father: always God",
+    pill: "bg-stone-100 text-stone-800 ring-stone-300 dark:bg-stone-800/50 dark:text-stone-300 dark:ring-stone-600/50",
+    definition:
+      "The counter-position: God has always been God, with no prior state of non-divinity. Tagged on denials as well as affirmations elsewhere in the axis; each quote's note states the direction.",
   },
   "BACKWARD-AGNOSTIC": {
     label: "Backward: agnostic",
