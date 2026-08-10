@@ -34,14 +34,53 @@ export const SOURCE_TYPES = ["original", "citation"] as const;
 export const STANCES = ["affirms", "hedges", "denies"] as const;
 
 /**
- * Categories that carry a stance, and the subject whose proposition that
- * stance is about. The excluded three are deliberate: RETREAT-REFRAME
- * describes an operation performed on an earlier teaching rather than a
- * position on it, and MANY-WORLDS and TRIPARTITE-FRAMEWORK are explanatory
- * frameworks — "affirming" a framework says nothing about how settled a
- * doctrine was, which is the only thing the stance chart is measuring.
+ * Categories that carry a stance. The excluded three are deliberate:
+ * RETREAT-REFRAME describes an operation performed on an earlier teaching
+ * rather than a position on it, and MANY-WORLDS and TRIPARTITE-FRAMEWORK are
+ * explanatory frameworks — "affirming" a framework says nothing about how
+ * settled a doctrine was, which is the only thing the stance chart measures.
  */
-export const SUBJECT_OF_CATEGORY = {
+export const STANCE_CATEGORY_IDS = [
+  "BACKWARD-EXPLICIT",
+  "FATHER-MORTAL-EXPERIENCE",
+  "FATHER-BECAME-GOD",
+  "FATHER-ALWAYS-GOD",
+  "BACKWARD-AGNOSTIC",
+  "INFINITE-CHAIN",
+  "FORWARD-EXPLICIT",
+  "FORWARD-EUPHEMISM",
+  "SPIRIT-BIRTH-VIVIPAROUS",
+  "SPIRIT-BIRTH-ADOPTION",
+  "HEAVENLY-MOTHER",
+  "DIVINE-PROGRESSION",
+] as const satisfies readonly (typeof CATEGORY_IDS)[number][];
+
+export type StanceCategoryId = (typeof STANCE_CATEGORY_IDS)[number];
+
+export const SUBJECT_IDS = [
+  "father-origin",
+  "father-mortality",
+  "infinite-chain",
+  "eternal-increase",
+  "spirit-birth",
+  "heavenly-mother",
+  "divine-progression",
+] as const;
+
+export type SubjectId = (typeof SUBJECT_IDS)[number];
+
+/**
+ * The subject whose proposition a category's stance was judged against.
+ *
+ * Subjects may share a category — the broad "was the Father once mortal"
+ * question and the narrow "did he live a mortality" one both read
+ * FATHER-MORTAL-EXPERIENCE — but only one of them defines what the recorded
+ * direction *means*. That one is here, and it is the proposition shown to
+ * whoever assigns a stance. A subject may only borrow a category when its own
+ * question reads the same direction the same way; where it would not, the
+ * category needs its own stance field, not a second interpretation of this one.
+ */
+export const DEFINING_SUBJECT: Record<StanceCategoryId, SubjectId> = {
   "BACKWARD-EXPLICIT": "father-origin",
   "FATHER-MORTAL-EXPERIENCE": "father-origin",
   "FATHER-BECAME-GOD": "father-origin",
@@ -54,17 +93,12 @@ export const SUBJECT_OF_CATEGORY = {
   "SPIRIT-BIRTH-ADOPTION": "eternal-increase",
   "HEAVENLY-MOTHER": "heavenly-mother",
   "DIVINE-PROGRESSION": "divine-progression",
-} as const satisfies Partial<Record<(typeof CATEGORY_IDS)[number], string>>;
+};
 
-export type StanceCategoryId = keyof typeof SUBJECT_OF_CATEGORY;
-export type SubjectId = (typeof SUBJECT_OF_CATEGORY)[StanceCategoryId];
-
-export const STANCE_CATEGORY_IDS = Object.keys(
-  SUBJECT_OF_CATEGORY,
-) as StanceCategoryId[];
+const STANCE_CATEGORY_SET: ReadonlySet<string> = new Set(STANCE_CATEGORY_IDS);
 
 export function isStanceCategory(id: string): id is StanceCategoryId {
-  return id in SUBJECT_OF_CATEGORY;
+  return STANCE_CATEGORY_SET.has(id);
 }
 
 const witnessSchema = z.object({

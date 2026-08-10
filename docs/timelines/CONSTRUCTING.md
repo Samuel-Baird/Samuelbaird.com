@@ -85,9 +85,11 @@ a given moment. Every quote now records a `stance` of `affirms`, `hedges` or
 `denies` for each of its claim categories, and the build fails if one is
 missing. Three rules:
 
-- **Stance is about the subject's proposition,** which is written out in
-  `SUBJECTS` in `constants.ts` — not about the category name and not about the
-  doctrine in general.
+- **Stance is about the proposition of the category's defining subject,**
+  written out in `SUBJECTS` in `constants.ts` — not about the category name and
+  not about the doctrine in general. Narrower subjects may read the same
+  category to ask a sharper question, but only where the direction means the
+  same thing; the defining subject is the one that fixes what it means.
 - **Hedging is an answer,** not a missing one. Euphemism, an explicit refusal to
   say, and an affirmation withdrawn by its own qualification all belong in
   `hedges`; rounding them to yes or no erases the shape of a taper.

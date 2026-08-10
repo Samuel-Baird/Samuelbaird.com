@@ -302,12 +302,23 @@ export const ERAS: Era[] = [
  * about the category in the abstract — which is why the proposition is written
  * out here and shown to the reader rather than left implicit in a tag name.
  *
- * The four subjects partition the twelve stance-bearing categories, so a
- * quote's stance on a given category is never ambiguous about which question
- * it answers. Heavenly Mother is deliberately its own subject rather than a
- * member of eternal increase: a Mother existing and the exalted begetting
- * spirit children are different claims, and folding them together would force
- * a direction onto quotes that address only one of them.
+ * Subjects come in two widths, and both are wanted. A broad one asks whether a
+ * whole position was held; a narrow one asks after a single move inside it, and
+ * can show a claim quietly going out of use while the broad question still
+ * looks settled. So they overlap rather than partition: `DEFINING_SUBJECT` in
+ * schema.ts records which subject's proposition a category's stance actually
+ * means, and a narrower subject may read the same category only where its
+ * question takes that direction the same way.
+ *
+ * Heavenly Mother stays its own subject rather than joining eternal increase:
+ * a Mother existing and the exalted begetting spirit children are different
+ * claims, and merging them would force a direction onto quotes that address
+ * only one.
+ *
+ * `bands` names the three positions in this subject's own words. "Affirms" and
+ * "Denies" are accurate but say nothing; on the Father's origin the same two
+ * bands are "Became God" and "Always God", which is the actual disagreement and
+ * what a reader came to see.
  */
 export type Subject = {
   id: SubjectId;
@@ -315,6 +326,7 @@ export type Subject = {
   question: string;
   proposition: string;
   categories: StanceCategoryId[];
+  bands: Record<Stance, string>;
 };
 
 export const SUBJECTS: Subject[] = [
@@ -332,6 +344,40 @@ export const SUBJECTS: Subject[] = [
       "FATHER-ALWAYS-GOD",
       "BACKWARD-AGNOSTIC",
     ],
+    bands: {
+      affirms: "Became God",
+      hedges: "Declines to say",
+      denies: "Always God",
+    },
+  },
+  {
+    id: "father-mortality",
+    label: "A mortal life",
+    question: "Did the Father live a mortal life?",
+    proposition:
+      "God the Father passed through a mortal probation — “as man now is, God once was.”",
+    // The narrow half of the origin question. Whether the Father *lived* a
+    // mortality is a different claim from whether he had a Father above him,
+    // and the two stopped being taught at different times.
+    categories: ["FATHER-MORTAL-EXPERIENCE"],
+    bands: {
+      affirms: "Lived a mortality",
+      hedges: "Declines to say",
+      denies: "Denied",
+    },
+  },
+  {
+    id: "infinite-chain",
+    label: "Gods above the Father",
+    question: "Is there a chain of Gods above the Father?",
+    proposition:
+      "The Father has a Father above him, and that succession runs back without end.",
+    categories: ["INFINITE-CHAIN"],
+    bands: {
+      affirms: "A chain without end",
+      hedges: "Declines to say",
+      denies: "Denied",
+    },
   },
   {
     id: "eternal-increase",
@@ -345,6 +391,29 @@ export const SUBJECTS: Subject[] = [
       "SPIRIT-BIRTH-VIVIPAROUS",
       "SPIRIT-BIRTH-ADOPTION",
     ],
+    bands: {
+      affirms: "They beget",
+      hedges: "Euphemism only",
+      denies: "Begetting denied",
+    },
+  },
+  {
+    id: "spirit-birth",
+    label: "How spirits are born",
+    question: "Are spirits begotten, or organized?",
+    proposition:
+      "Spirit children are literally begotten and born to heavenly parents, rather than organized or adopted from existing intelligences.",
+    // Two rival mechanisms rather than a claim and its denial, which is why the
+    // bands are named for the positions. The denial band is small and that is
+    // the finding: the organized/adopted reading is the minority one, and it
+    // belongs to the earliest and the latest ends of the corpus rather than
+    // the middle.
+    categories: ["SPIRIT-BIRTH-VIVIPAROUS", "SPIRIT-BIRTH-ADOPTION"],
+    bands: {
+      affirms: "Literally begotten",
+      hedges: "Mechanism unstated",
+      denies: "Organized, not begotten",
+    },
   },
   {
     id: "heavenly-mother",
@@ -353,6 +422,11 @@ export const SUBJECTS: Subject[] = [
     proposition:
       "A Heavenly Mother exists and is a parent of the human family.",
     categories: ["HEAVENLY-MOTHER"],
+    bands: {
+      affirms: "She exists",
+      hedges: "Declines to say",
+      denies: "Denied",
+    },
   },
   {
     id: "divine-progression",
@@ -361,6 +435,11 @@ export const SUBJECTS: Subject[] = [
     proposition:
       "God continues to advance in knowledge or perfection, rather than possessing all of it already.",
     categories: ["DIVINE-PROGRESSION"],
+    bands: {
+      affirms: "Still progressing",
+      hedges: "Declines to say",
+      denies: "Progression denied",
+    },
   },
 ];
 

@@ -101,15 +101,31 @@ in a 1971 *Ensign* is high-correlation despite B-tier hearsay.
 ### Stance
 
 Stance answers *which way* a quote leans, which the category alone does not say.
-It is judged against the written-out `proposition` of the subject that owns the
-category (see `SUBJECTS` in `constants.ts`), never against the category name or
-the doctrine in general. `hedges` covers euphemism, an explicit refusal to say,
-deliberate ambiguity, and an affirmation withdrawn by its own qualification.
+It is judged against the written-out `proposition` of the category's **defining
+subject** (`DEFINING_SUBJECT` in `schema.ts`, propositions in `SUBJECTS` in
+`constants.ts`), never against the category name or the doctrine in general.
+`hedges` covers euphemism, an explicit refusal to say, deliberate ambiguity, and
+an affirmation withdrawn by its own qualification.
 
 Twelve of the fifteen categories carry a stance. `RETREAT-REFRAME`,
 `MANY-WORLDS` and `TRIPARTITE-FRAMEWORK` do not: the first describes an
 operation on an earlier teaching, and the other two are explanatory frameworks,
 so "affirming" them would say nothing about how settled a doctrine was.
+
+**Subjects overlap on purpose.** A broad subject asks whether a whole position
+was held; a narrow one asks after a single move inside it. "Was the Father once
+a mortal man?" and "Is there a chain of Gods above the Father?" both read
+`INFINITE-CHAIN`, and they should — the chain claim stops appearing after 1981
+while the broad question still looks settled, which is exactly what the narrow
+chart is for. Only the defining subject fixes what a recorded direction *means*;
+another subject may read the same category only where its question takes that
+direction the same way. Where it would not, that category needs its own stance
+field rather than a second reading of this one.
+
+Each subject also names its three bands in its own words (`bands` in
+`SUBJECTS`). "Affirms" and "Denies" are accurate and say nothing; on the
+Father's origin the same two bands are "Became God" and "Always God", which is
+the actual disagreement.
 
 Three build-time checks enforce it, all failing with the offending JSON path:
 

@@ -12,6 +12,10 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
+// Defining subjects only — the four whose propositions fix what a recorded
+// direction means. The narrower subjects in constants.ts borrow these
+// categories to ask a sharper question, but they must not be offered here or a
+// reviewer would be asked to judge one category against two propositions.
 const SUBJECTS = {
   "father-origin": {
     question: "Was the Father once a mortal man?",

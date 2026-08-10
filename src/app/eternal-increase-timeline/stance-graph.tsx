@@ -3,7 +3,6 @@
 import { useMemo, useRef, useState } from "react";
 import {
   CATEGORY_META,
-  STANCE_META,
   STATUS_META,
   SUBJECTS,
   SUBJECT_META,
@@ -45,11 +44,10 @@ import {
  * rather than inferred here, so the chart can be argued with from the data.
  */
 
-const BANDS: { stance: Stance; label: string }[] = [
-  { stance: "affirms", label: "Affirms" },
-  { stance: "hedges", label: "Hedges" },
-  { stance: "denies", label: "Denies" },
-];
+// Top to bottom. The labels come from the subject, not from here — see
+// `bands` in constants.ts.
+const BAND_ORDER: Stance[] = ["affirms", "hedges", "denies"];
+
 
 type Dot = {
   key: string;
@@ -64,6 +62,9 @@ type Dot = {
   unreviewed: boolean;
   cats: StanceCategoryId[];
   stance: Stance;
+  // The subject's own name for this band, so the tooltip and the screen-reader
+  // label say what the gutter says rather than a generic "affirms".
+  bandLabel: string;
 };
 
 type Band = {
@@ -170,7 +171,8 @@ export function StanceGraph({
 
     let y = ERA_STRIP;
     const bands: Band[] = [];
-    for (const { stance, label } of BANDS) {
+    for (const stance of BAND_ORDER) {
+      const label = meta.bands[stance];
       const members = raw.filter((r) => r.stance === stance);
 
       const columns = new Map<number, typeof members>();
@@ -202,6 +204,7 @@ export function StanceGraph({
             unreviewed: quote?.stanceNeedsReview === true,
             cats: r.cats,
             stance: r.stance,
+            bandLabel: label,
           });
         });
       }
@@ -444,7 +447,7 @@ export function StanceGraph({
                         key={d.key}
                         role="button"
                         tabIndex={0}
-                        aria-label={`${d.entry.dateDisplay}, ${d.entry.title} — ${STANCE_META[d.stance].label.toLowerCase()}`}
+                        aria-label={`${d.entry.dateDisplay}, ${d.entry.title} — ${d.bandLabel.toLowerCase()}`}
                         style={{ pointerEvents: "none" }}
                         className="focus:outline-none"
                         onFocus={() => show(d)}
@@ -618,7 +621,7 @@ function StanceTooltip({
           className="small-caps"
           style={{ color: INK_PAINT[STATUS_META[dot.entry.correlationStatus].ink] }}
         >
-          {STANCE_META[dot.stance].label}
+          {dot.bandLabel}
         </span>{" "}
         <span className="text-[color:var(--muted)]">
           · {STATUS_META[dot.entry.correlationStatus].label}
