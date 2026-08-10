@@ -1205,7 +1205,8 @@
         "note": "Roberts prints W. W. Phelps's “If You Could Hie to Kolob” in full immediately after the prose statement, as the hymnodic form of the same claim. This is why the chain outlives the prose that carries it: the hymn stayed in the hymnbook long after General Authorities stopped writing sentences like the one above."
       }
     ],
-    "notes": "Verified verbatim twice over against the 1895 first edition: the Internet Archive page scan (printed p. 466) and the Mormon Texts Project's independent transcription. Chapter XXX is titled “Evidence of Divine Inspiration in Joseph Smith Derived from the Prophet's Teaching in Regard to the Extent of the Universe, Man's Place in It and His Doctrine Respecting the Gods—Concluded”; the passage sits directly after Roberts's block quotation of the King Follett Discourse (see kfd-1844), which is what raises the question the endless line answers. Graded never-official: Roberts sat in the First Council of the Seventy and the book was issued by the church-affiliated George Q. Cannon & Sons, but it carried no First Presidency commission — unlike Talmage's Articles of Faith four years later — and it functioned as a missionary apologetic rather than as a doctrinal standard."
+    "notes": "Verified verbatim twice over against the 1895 first edition: the Internet Archive page scan (printed p. 466) and the Mormon Texts Project's independent transcription. Chapter XXX is titled “Evidence of Divine Inspiration in Joseph Smith Derived from the Prophet's Teaching in Regard to the Extent of the Universe, Man's Place in It and His Doctrine Respecting the Gods—Concluded”; the passage sits directly after Roberts's block quotation of the King Follett Discourse (see kfd-1844), which is what raises the question the endless line answers. Graded never-official: Roberts sat in the First Council of the Seventy and the book was issued by the church-affiliated George Q. Cannon & Sons, but it carried no First Presidency commission — unlike Talmage's Articles of Faith four years later — and it functioned as a missionary apologetic rather than as a doctrinal standard.",
+    "citesId": ["kfd-1844"]
   },
   {
     "id": "cannon-female-deities-1895",
@@ -1332,7 +1333,8 @@
         "url": "https://corpus.noahairmet.com/b/articles-of-faith-15cc/382",
         "note": "Reflowed modern ebook carrying only the first-edition preface but a post-1917 text; do not quote 1899 wording from it. See talmage-af-kingdom-excision-1917 for the documented edition changes."
       }
-    ]
+    ],
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "nelson-scientific-aspects-1904",
@@ -1673,7 +1675,8 @@
         "note": "The Snow couplet is the only backward-mortality content in the chapter, and Widtsoe imports it as a summary rather than deriving it. “He comes of a race of gods” is about man's ancestry, not God's."
       }
     ],
-    "notes": "Verified verbatim against a scan of the 1915 first edition, whose title page reads “Published for the Use of the Melchizedek Priesthood by the General Priesthood Committee, 1915” — hence historical-official rather than never-official, though the book was never canonical and is long out of print. Printed pp. 23–25 in that edition carry chapter 6, matching the pagination Eugene England uses. Watch the edition when quoting: the Paulsen and Fisher review in FARMS Review 15/2 quotes the 1965 Deseret Book printing, which reads “if the law of progression be accepted” where the 1915 text collated here reads “if the great law of progression is accepted,” and the surrounding sentences differ likewise. Recorded as a divine-progression affirmation and emphatically not as a chain source: this is the taxonomy's fourth trap in its purest form, a source that affirms ongoing divine progression while asserting no divine ancestry at all. Structurally it belongs with Penrose (1884) and Nelson (1904)."
+    "notes": "Verified verbatim against a scan of the 1915 first edition, whose title page reads “Published for the Use of the Melchizedek Priesthood by the General Priesthood Committee, 1915” — hence historical-official rather than never-official, though the book was never canonical and is long out of print. Printed pp. 23–25 in that edition carry chapter 6, matching the pagination Eugene England uses. Watch the edition when quoting: the Paulsen and Fisher review in FARMS Review 15/2 quotes the 1965 Deseret Book printing, which reads “if the law of progression be accepted” where the 1915 text collated here reads “if the great law of progression is accepted,” and the surrounding sentences differ likewise. Recorded as a divine-progression affirmation and emphatically not as a chain source: this is the taxonomy's fourth trap in its purest form, a source that affirms ongoing divine progression while asserting no divine ancestry at all. Structurally it belongs with Penrose (1884) and Nelson (1904).",
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "talmage-conference-1915",
@@ -1705,7 +1708,8 @@
         "note": "The couplet, and immediately a Christological gloss on it — “We know that Christ is God, and that He lived upon the earth as a Man” — which is exactly the ambiguity catalogued at snow-couplet. Referent ambiguous for this quote even though the entry's referent is the Father, because Talmage's own next sentence supplies the Son as the illustration. Note also the demotion in status: the couplet is “what we may call an aphorism,” not revelation. Spacing around the semicolons in the vault transcription reflects OCR of the printed Report and has been normalized; no words changed."
       }
     ],
-    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1915/1915-04-34-james-e-talmage-remarks-34.md, transcribed from the official printed Conference Report and verified against a word-coordinate reading-order reconstruction of the archive.org DjVu OCR (conferencereport1915a, leaf anchor n121); the Final Review pass found no body change needed. Conference Report, so A. The office is given as the generic “General Authority” in the vault frontmatter; Talmage had been ordained an Apostle in December 1911 and was of the Twelve in April 1915. This entry exists chiefly to be read against talmage-af-1899, and the pairing is the point: the same author, sixteen years apart, makes two claims that sound identical and are not. In 1899 he wrote of “a God who is Himself progressive… whose perfection consists in eternal advancement” — present tense, ongoing, DIVINE-PROGRESSION. Here in 1915 he says the Father “was once a Man, and has progressed… to His present position” — past tense, completed, BACKWARD-MORTALITY. Conflating the two is trap #1 running in the opposite direction from usual, and it is how a single author gets cited on both sides of the twentieth-century progression debate."
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1915/1915-04-34-james-e-talmage-remarks-34.md, transcribed from the official printed Conference Report and verified against a word-coordinate reading-order reconstruction of the archive.org DjVu OCR (conferencereport1915a, leaf anchor n121); the Final Review pass found no body change needed. Conference Report, so A. The office is given as the generic “General Authority” in the vault frontmatter; Talmage had been ordained an Apostle in December 1911 and was of the Twelve in April 1915. This entry exists chiefly to be read against talmage-af-1899, and the pairing is the point: the same author, sixteen years apart, makes two claims that sound identical and are not. In 1899 he wrote of “a God who is Himself progressive… whose perfection consists in eternal advancement” — present tense, ongoing, DIVINE-PROGRESSION. Here in 1915 he says the Father “was once a Man, and has progressed… to His present position” — past tense, completed, BACKWARD-MORTALITY. Conflating the two is trap #1 running in the opposite direction from usual, and it is how a single author gets cited on both sides of the twentieth-century progression debate.",
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "jfsmith-crowning-glory-1916",
@@ -1898,7 +1902,8 @@
         "note": "Context rather than an independent claim, and deliberately not tagged RETREAT-REFRAME: Merrill's counsel is a general instruction to Church educators, not a ruling on this doctrine, and tagging it would be retrojection. It is recorded because of where it sits — an apostle who spent years as Church Commissioner of Education, telling teachers in the same address to stay on fundamentals and then reaching for the safe half of the couplet. Merrill defines a mystery procedurally: any passage on which informed readers disagree."
       }
     ],
-    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1943/1943-10-merrill-by-precept-and-example.md, transcribed from the Church History Library preservation scan of the printed Conference Report (Internet Archive conferencereport1943sa, printed pp. 85–87, leaf n86) with reading order reconstructed from the DjVu word coordinates; the file is status published. Conference Report, so A. Chosen over Merrill's April 1945 conference address (conferencereport1945a), which carries the same half-couplet — “a characteristic teaching of the Church is that ‘as God now is man may become’ — a statement in poetic language of our magnificent doctrine of eternal progression” — in a single sentence and nothing else; the 1943 address gives the same formula plus the mysteries counsel and the post-mortal-learning gloss, so it is the stronger of the two. Merrill's April 1944 address (“Man Inherits Attributes of God His Father”) is a third witness to the same theme and contains the striking “we are of the race of the Gods,” but no couplet; it is left out to avoid three near-identical Merrill entries. Note the delivery setting: an off-the-air session, spoken extemporaneously, which is why the doctrine appears as an aside."
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1943/1943-10-merrill-by-precept-and-example.md, transcribed from the Church History Library preservation scan of the printed Conference Report (Internet Archive conferencereport1943sa, printed pp. 85–87, leaf n86) with reading order reconstructed from the DjVu word coordinates; the file is status published. Conference Report, so A. Chosen over Merrill's April 1945 conference address (conferencereport1945a), which carries the same half-couplet — “a characteristic teaching of the Church is that ‘as God now is man may become’ — a statement in poetic language of our magnificent doctrine of eternal progression” — in a single sentence and nothing else; the 1943 address gives the same formula plus the mysteries counsel and the post-mortal-learning gloss, so it is the stronger of the two. Merrill's April 1944 address (“Man Inherits Attributes of God His Father”) is a third witness to the same theme and contains the striking “we are of the race of the Gods,” but no couplet; it is left out to avoid three near-identical Merrill entries. Note the delivery setting: an off-the-air session, spoken extemporaneously, which is why the doctrine appears as an aside.",
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "richards-eternal-increase-1945",
@@ -2055,7 +2060,8 @@
         "note": "Eternal increase affirmed entirely by negation — the doctrine appears only as the thing the unworthy forfeit. Euphemism rather than explicit: “increase” is named and nothing else is, no offspring, no mechanism, no godhood. Note also the chain of consequence being drawn, from the Word of Wisdom through the temple to eternal increase, which is what puts a cosmological doctrine into a talk about parental teaching."
       }
     ],
-    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1948/1948-10-eldred-g-smith-conference-address.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1948sa, leaves n90–n94) at 0.983 similarity with no divergence beyond spacing and hyphenation. Conference Report, so A. The printed Report supplies no formal title; the vault's is supplied from the discourse headings. Both quotes stand under the single side-head “Opportunities for Exaltation” and are given here in discourse order, so quoteId q2 precedes q1 in the array; the ids are unchanged so that existing references still resolve. What this entry documents is a register shift rather than a new claim, and having both halves of the section makes the shift visible in one place: the full Snow couplet is quoted plainly and treated as conference commonplace, and then the doctrine it entails is preached in the negative, temple-marriage-incentive form — not “you will bear spirit children” but “they shall have no increase.” D&C 132:17 is cited, the entailment is intact, and the content has become an argument for a behavior, which is how a doctrine can remain formally in force while ceasing to be described. Entry-level referent moved from n/a to ambiguous now that the entry carries a backward-direction quote; per the snow-couplet ruling the bare couplet does not settle Father or Son, and Smith supplies nothing that would."
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1948/1948-10-eldred-g-smith-conference-address.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1948sa, leaves n90–n94) at 0.983 similarity with no divergence beyond spacing and hyphenation. Conference Report, so A. The printed Report supplies no formal title; the vault's is supplied from the discourse headings. Both quotes stand under the single side-head “Opportunities for Exaltation” and are given here in discourse order, so quoteId q2 precedes q1 in the array; the ids are unchanged so that existing references still resolve. What this entry documents is a register shift rather than a new claim, and having both halves of the section makes the shift visible in one place: the full Snow couplet is quoted plainly and treated as conference commonplace, and then the doctrine it entails is preached in the negative, temple-marriage-incentive form — not “you will bear spirit children” but “they shall have no increase.” D&C 132:17 is cited, the entailment is intact, and the content has become an argument for a behavior, which is how a doctrine can remain formally in force while ceasing to be described. Entry-level referent moved from n/a to ambiguous now that the entry carries a backward-direction quote; per the snow-couplet ruling the bare couplet does not settle Father or Son, and Smith supplies nothing that would.",
+    "citesId": ["snow-couplet", "dc-132"]
   },
   {
     "id": "hunter-beget-spirit-children-1949",
@@ -2204,7 +2210,8 @@
         "note": "“And so on” is the whole regress in three words, and it is offered as “a reasonable thought” rather than as a mystery to be handled carefully — from the same author, in the same chapter, who calls belief in God's progression in knowledge dangerous."
       }
     ],
-    "notes": "Verified by re-pulling the whole of chapter 1 and reading the section sequence in order: THE GODHEAD, MODERN KNOWLEDGE OF GOD, HOW GOD PROGRESSES, HOW GOD DOES NOT PROGRESS (with FALSE NOTIONS ABOUT GOD'S PROGRESSION, PERFECTION OF GOD NOT “RELATIVE,” SCRIPTURES PROVE OMNIPOTENCE OF GOD, GOD PROGRESSES BECAUSE OF KNOWLEDGE, WILL GOD DESTROY HIMSELF?), then HOW GOD IS EVERLASTING (with GOD IS AN EXALTED MAN and CHRIST BORN; YET FROM EVERLASTING), then HOW GOD IS FROM ETERNITY TO ETERNITY. The progression denial and the chain affirmation are separated by roughly a page of text and six intervening headings, so they are recorded here as separate quotes and must never be ellipsed together into one sentence, which is how the pair usually circulates. Taken together they are the cleanest single demonstration in this dataset that divine ancestry and divine progression are independent axes: Smith prints the chain approvingly a page after calling belief in God's continuing progression “very dangerous.” The chain half is expressly attributed to Joseph Smith and quotes both the Sermon in the Grove and the King Follett Discourse (see sermon-grove-1844 and kfd-1844). Graded never-official: Doctrines of Salvation is a Bookcraft compilation of Smith's sermons and writings assembled and captioned by Bruce R. McConkie, not a church publication, though it has long been treated as authoritative. The copy collated is a reflowed digital edition without the printed pagination, so sections are cited by heading; printed page numbers were not confirmed and are not asserted."
+    "notes": "Verified by re-pulling the whole of chapter 1 and reading the section sequence in order: THE GODHEAD, MODERN KNOWLEDGE OF GOD, HOW GOD PROGRESSES, HOW GOD DOES NOT PROGRESS (with FALSE NOTIONS ABOUT GOD'S PROGRESSION, PERFECTION OF GOD NOT “RELATIVE,” SCRIPTURES PROVE OMNIPOTENCE OF GOD, GOD PROGRESSES BECAUSE OF KNOWLEDGE, WILL GOD DESTROY HIMSELF?), then HOW GOD IS EVERLASTING (with GOD IS AN EXALTED MAN and CHRIST BORN; YET FROM EVERLASTING), then HOW GOD IS FROM ETERNITY TO ETERNITY. The progression denial and the chain affirmation are separated by roughly a page of text and six intervening headings, so they are recorded here as separate quotes and must never be ellipsed together into one sentence, which is how the pair usually circulates. Taken together they are the cleanest single demonstration in this dataset that divine ancestry and divine progression are independent axes: Smith prints the chain approvingly a page after calling belief in God's continuing progression “very dangerous.” The chain half is expressly attributed to Joseph Smith and quotes both the Sermon in the Grove and the King Follett Discourse (see sermon-grove-1844 and kfd-1844). Graded never-official: Doctrines of Salvation is a Bookcraft compilation of Smith's sermons and writings assembled and captioned by Bruce R. McConkie, not a church publication, though it has long been treated as authoritative. The copy collated is a reflowed digital edition without the printed pagination, so sections are cited by heading; printed page numbers were not confirmed and are not asserted.",
+    "citesId": ["sermon-grove-1844", "kfd-1844"]
   },
   {
     "id": "jfs-agq-temple-marriage-1954",
@@ -2240,7 +2247,8 @@
         "note": "The doctrine stated in the negative, which is where the euphemism gets unpacked: “they do not continue—that is, they do not continue through posterity.” Increase means posterity in eternity, in his own gloss, delivered as a warning rather than as a metaphysical claim. The affirmative version circulates constantly; this negative version is what gave it teeth in the mid-century Church."
       }
     ],
-    "notes": "Verified by reading the complete answer — the question, HAVE NO CLAIM UPON EACH OTHER, INDIVIDUALS MAKE OWN CHOICE, WHERE DOES THE BLAME LIE?, IMPORTANCE OF TEMPLE MARRIAGE, THE PROBLEM OF DIVORCE — in the GSA copy. Provenance differs from the rest of this lane and is the reason for the exact date: the volume prints a parenthetical stating the answer was given at the afternoon session of Ensign Stake conference in the Assembly Hall on October 31, 1954, “as reported by Lola E. Meehan,” so this is a named reporter's transcript of a spoken answer rather than a written Improvement Era column, later gathered by Smith into volume 4 (published 1963). Graded hearsay A rather than C: unlike the Journal of Discourses shorthand, the text was selected and published by the speaker himself in a volume under his own name, but the reader should know a stenographer stands between the words and the page. Cited by title and volume sequence number (39); the reflowed digital edition carries no printed pagination and page numbers are not asserted. Correlation graded historical-official for the reasons given in jfs-agq-as-man-is-1958. Note the nine-year gap between utterance and book publication — a caution for anyone dating this lane by volume year alone."
+    "notes": "Verified by reading the complete answer — the question, HAVE NO CLAIM UPON EACH OTHER, INDIVIDUALS MAKE OWN CHOICE, WHERE DOES THE BLAME LIE?, IMPORTANCE OF TEMPLE MARRIAGE, THE PROBLEM OF DIVORCE — in the GSA copy. Provenance differs from the rest of this lane and is the reason for the exact date: the volume prints a parenthetical stating the answer was given at the afternoon session of Ensign Stake conference in the Assembly Hall on October 31, 1954, “as reported by Lola E. Meehan,” so this is a named reporter's transcript of a spoken answer rather than a written Improvement Era column, later gathered by Smith into volume 4 (published 1963). Graded hearsay A rather than C: unlike the Journal of Discourses shorthand, the text was selected and published by the speaker himself in a volume under his own name, but the reader should know a stenographer stands between the words and the page. Cited by title and volume sequence number (39); the reflowed digital edition carries no printed pagination and page numbers are not asserted. Correlation graded historical-official for the reasons given in jfs-agq-as-man-is-1958. Note the nine-year gap between utterance and book publication — a caution for anyone dating this lane by volume year alone.",
+    "citesId": ["dc-132"]
   },
   {
     "id": "brown-deify-man-1956",
@@ -2329,12 +2337,17 @@
         "note": "The reframe completed. Smith affirms the couplet — “the caption heading this article must be true” — but the demonstration he has just given is Christological, so the God who “once was” as man is here Christ, not the Father. Hence FATHER-MORTAL-EXPERIENCE carried with referent “son”: the category is the couplet's claim, and the referent records who Smith has attached it to. This is the era's authoritative way of keeping the couplet while refusing its usual subject."
       }
     ],
-    "notes": "Verified by reading the complete Q&A (question, all four section headings — CHRIST IS OUR ELDER BROTHER, WE, TOO, MAY RECEIVE THE FULNESS, OTHER SCRIPTURAL EVIDENCE, THE SAVIOR PASSED THROUGH TRIALS OF MORTALITY — and the closing sentence) in the GSA copy of the collected five-volume edition. The column originated in Smith's monthly “Your Question” feature in the Improvement Era, which he had written since May 1953; this edition does not print the individual column dates, so the entry is dated by the publication year of volume 2 (1958) at year precision. The digital edition collated is reflowed and carries no printed pagination, so the Q&A is cited by its title and its sequence number within the volume (29) rather than by page; printed page numbers are not asserted. Correlation graded historical-official: the columns ran in the Church's official magazine and the books were issued by Deseret Book from the senior apostle, functioning as a semi-official doctrinal organ — though the 2012 Deseret Book reissue collated here carries a modern boilerplate disclaimer that the work “is not an official publication” of the Church, which is a 2012 legal notice and not a 1958 status. This is the cleanest BACKWARD-AGNOSTIC datum in the dataset from the mid-century Church, and it should be read against jfsmith-doctrines-salvation-1954, where the same author prints “The Prophet taught that our Father had a Father and so on” as “a reasonable thought.” Four years later, asked the question directly by a member, he declines to answer it. Neither text is his considered final word on the other; the pair is the point."
+    "notes": "Verified by reading the complete Q&A (question, all four section headings — CHRIST IS OUR ELDER BROTHER, WE, TOO, MAY RECEIVE THE FULNESS, OTHER SCRIPTURAL EVIDENCE, THE SAVIOR PASSED THROUGH TRIALS OF MORTALITY — and the closing sentence) in the GSA copy of the collected five-volume edition. The column originated in Smith's monthly “Your Question” feature in the Improvement Era, which he had written since May 1953; this edition does not print the individual column dates, so the entry is dated by the publication year of volume 2 (1958) at year precision. The digital edition collated is reflowed and carries no printed pagination, so the Q&A is cited by its title and its sequence number within the volume (29) rather than by page; printed page numbers are not asserted. Correlation graded historical-official: the columns ran in the Church's official magazine and the books were issued by Deseret Book from the senior apostle, functioning as a semi-official doctrinal organ — though the 2012 Deseret Book reissue collated here carries a modern boilerplate disclaimer that the work “is not an official publication” of the Church, which is a 2012 legal notice and not a 1958 status. This is the cleanest BACKWARD-AGNOSTIC datum in the dataset from the mid-century Church, and it should be read against jfsmith-doctrines-salvation-1954, where the same author prints “The Prophet taught that our Father had a Father and so on” as “a reasonable thought.” Four years later, asked the question directly by a member, he declines to answer it. Neither text is his considered final word on the other; the pair is the point.",
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "jfs-agq-plural-gods-1958",
     "sourceType": "citation",
-    "citesId": ["sermon-grove-1844", "jfsmith-doctrines-salvation-1954"],
+    "citesId": [
+      "sermon-grove-1844",
+      "jfsmith-doctrines-salvation-1954",
+      "dc-132"
+    ],
     "date": "1958-01-01",
     "dateDisplay": "1958",
     "datePrecision": "year",
@@ -2428,7 +2441,8 @@
         "note": "The closing sentence of the answer, and a register datum: the whole case ends on “is it not feasible to believe,” with the phrase still inside quotation marks. Even the era's most confident defender of the doctrine leaves it at plausibility."
       }
     ],
-    "notes": "Verified by reading the complete Q&A — question, the untitled opening, the section JESUS HAD A FATHER AND A MOTHER, and the closing Genesis 1:26–27 argument — in the GSA copy. Dated by publication year of volume 3 (1960) at year precision; this edition prints no individual column dates. The printed page anchor is derivable: at volume 4, question 38, Smith cross-references the immediately preceding answer in volume 3 as “‘Elias Is Noah,’ Answers to Gospel Questions, Vol. 3, pp. 138-41,” so “A Mother in Heaven,” which follows it directly, begins at p. 142. The end page is not derivable and is not asserted, and the reflowed digital edition carries no printed pagination of its own. Correlation graded historical-official for the reasons given in jfs-agq-as-man-is-1958. This is the mid-century link between snow-heavenly-mother-1885 / whitney-father-and-mother-1907 and the later hedged treatments (hinckley-daughters-of-god-1991, essay-2015): the doctrine is defended, the mechanism is literal, and the whole thing rests on common sense rather than revelation — which is precisely the vulnerability the later retreat exploits. Read against jfs-agq-personal-father-1966, where the same author, asked how a Father of flesh and bone produced spirit children, answers that “this question the Lord has not fully explained.”"
+    "notes": "Verified by reading the complete Q&A — question, the untitled opening, the section JESUS HAD A FATHER AND A MOTHER, and the closing Genesis 1:26–27 argument — in the GSA copy. Dated by publication year of volume 3 (1960) at year precision; this edition prints no individual column dates. The printed page anchor is derivable: at volume 4, question 38, Smith cross-references the immediately preceding answer in volume 3 as “‘Elias Is Noah,’ Answers to Gospel Questions, Vol. 3, pp. 138-41,” so “A Mother in Heaven,” which follows it directly, begins at p. 142. The end page is not derivable and is not asserted, and the reflowed digital edition carries no printed pagination of its own. Correlation graded historical-official for the reasons given in jfs-agq-as-man-is-1958. This is the mid-century link between snow-heavenly-mother-1885 / whitney-father-and-mother-1907 and the later hedged treatments (hinckley-daughters-of-god-1991, essay-2015): the doctrine is defended, the mechanism is literal, and the whole thing rests on common sense rather than revelation — which is precisely the vulnerability the later retreat exploits. Read against jfs-agq-personal-father-1966, where the same author, asked how a Father of flesh and bone produced spirit children, answers that “this question the Lord has not fully explained.”",
+    "citesId": ["dc-132"]
   },
   {
     "id": "jfs-agq-create-intelligence-1960",
@@ -2562,7 +2576,8 @@
         "note": "“This process” is the one just called “infinitely repeated in nature,” with the Father placed inside it — a chain is implicit by symmetry, but per the no-retrojection principle it is not tagged INFINITE-CHAIN: Romney never states the backward direction. “God himself attained perfection” is the clearest FATHER-BECAME-GOD statement in the set."
       }
     ],
-    "notes": "The only located instance in the twentieth-century conference corpus (~10,000 addresses, 1897–1970 plus the modern era) where the parent-offspring mechanism is called infinitely repeated and God Himself is placed within it. Verified against the Internet Archive scan of the October 1964 Conference Report. Collated against the Internet Archive scan conferencereport1964sa at leaf n50 (running head “Saturday, October 3”); title page gives the conference dates as October 2, 3, 4, 1964."
+    "notes": "The only located instance in the twentieth-century conference corpus (~10,000 addresses, 1897–1970 plus the modern era) where the parent-offspring mechanism is called infinitely repeated and God Himself is placed within it. Verified against the Internet Archive scan of the October 1964 Conference Report. Collated against the Internet Archive scan conferencereport1964sa at leaf n50 (running head “Saturday, October 3”); title page gives the conference dates as October 2, 3, 4, 1964.",
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "madsen-eternal-man-1966",
@@ -2661,7 +2676,8 @@
         "note": "Printed p. 545, under the heading “Implementation.” Heavenly Mother is stated as the reason the divine parent-child relationship is what it is, not offered as a devotional aside, and the authority cited is a sitting apostle's book (Harold B. Lee, Youth and the Church). On the forward chain: the lesson names the round and names the exaltation route, but it does not say in terms that the spirit children born to exalted beings will themselves receive worlds and become gods. The whole weight of that claim rests on the word “round,” and the sentence's grammar leaves “the opportunity to reach the heights of exaltation by an earth life” attached to mortals generally rather than specifically to the newly born spirits. So the closed forward chain is implied by the vocabulary and is not asserted — recorded here, deliberately, as implication rather than as text."
       }
     ],
-    "notes": "Verified verbatim against the archive.org page images of printed pp. 543 and 545 (item reliefsocietymag56reli, IA leaves 565 and 567), collated against the item's full text. This is the answer to the open question the archival sweep left: the lesson is “Lesson 97—Eternal Marriage” by Roy W. Doxey, in the Lesson Department of the July 1969 issue, printed pp. 540–545, with the reading assignment D&C 131:1–4 and 132, and headed for use in the first meeting of October 1969 (Northern Hemisphere) or March 1970 (Southern). The sweep's provisional B3 upgrade should not be made: the lesson is unambiguous B2 with stated physiology, and the forward chain beyond that is carried only by the phrase “eternal round” — see the note on q2. Two further passages set the register. On p. 543 the lesson glosses D&C 132:24–25 as “eternal lives, the power of eternal increase, which is the opposite of the deaths, or the lack of such power.” And the whole lesson is built on quoted authorities rather than on its own voice — Joseph Smith, Brigham Young, Joseph F. Smith, Widtsoe, McKay, Melvin J. Ballard, and Harold B. Lee — which is what makes it useful evidence about what was safe to teach women in 1969 rather than merely about what one lesson writer thought. Filed historical-official: an official auxiliary magazine's correlated lesson course, no longer published."
+    "notes": "Verified verbatim against the archive.org page images of printed pp. 543 and 545 (item reliefsocietymag56reli, IA leaves 565 and 567), collated against the item's full text. This is the answer to the open question the archival sweep left: the lesson is “Lesson 97—Eternal Marriage” by Roy W. Doxey, in the Lesson Department of the July 1969 issue, printed pp. 540–545, with the reading assignment D&C 131:1–4 and 132, and headed for use in the first meeting of October 1969 (Northern Hemisphere) or March 1970 (Southern). The sweep's provisional B3 upgrade should not be made: the lesson is unambiguous B2 with stated physiology, and the forward chain beyond that is carried only by the phrase “eternal round” — see the note on q2. Two further passages set the register. On p. 543 the lesson glosses D&C 132:24–25 as “eternal lives, the power of eternal increase, which is the opposite of the deaths, or the lack of such power.” And the whole lesson is built on quoted authorities rather than on its own voice — Joseph Smith, Brigham Young, Joseph F. Smith, Widtsoe, McKay, Melvin J. Ballard, and Harold B. Lee — which is what makes it useful evidence about what was safe to teach women in 1969 rather than merely about what one lesson writer thought. Filed historical-official: an official auxiliary magazine's correlated lesson course, no longer published.",
+    "citesId": ["dc-132"]
   },
   {
     "id": "mcconkie-family-affair-1970",
@@ -3464,7 +3480,13 @@
   {
     "id": "mcconkie-mormon-doctrine",
     "sourceType": "citation",
-    "citesId": ["kfd-1844", "snow-couplet", "pratt-seer"],
+    "citesId": [
+      "kfd-1844",
+      "snow-couplet",
+      "pratt-seer",
+      "sermon-grove-1844",
+      "dc-132"
+    ],
     "date": "1958-01-01",
     "dateDisplay": "1958; 2nd ed. 1966; discontinued 2010",
     "datePrecision": "year",
@@ -3508,7 +3530,12 @@
   {
     "id": "acm-1976",
     "sourceType": "citation",
-    "citesId": ["kfd-1844", "dc-132", "fp-1909"],
+    "citesId": [
+      "kfd-1844",
+      "dc-132",
+      "fp-1909",
+      "jfsmith-doctrines-salvation-1954"
+    ],
     "date": "1976-01-01",
     "dateDisplay": "1976",
     "datePrecision": "year",
@@ -3632,7 +3659,8 @@
       "hinckley-1997-q1": "C",
       "hinckley-1997-q2": "C",
       "hinckley-1997-q3": "A"
-    }
+    },
+    "citesId": ["snow-couplet"]
   },
   {
     "id": "emsm-2003",
@@ -3742,7 +3770,7 @@
   {
     "id": "seminary-2014",
     "sourceType": "citation",
-    "citesId": ["dc-132"],
+    "citesId": ["dc-132", "fp-1916"],
     "date": "2014-01-01",
     "dateDisplay": "2014",
     "datePrecision": "year",
@@ -3869,7 +3897,7 @@
   {
     "id": "nt-manual-2018",
     "sourceType": "citation",
-    "citesId": ["sermon-grove-1844"],
+    "citesId": ["sermon-grove-1844", "kfd-1844"],
     "date": "2018-01-01",
     "dateDisplay": "2014/2018 editions",
     "datePrecision": "year",

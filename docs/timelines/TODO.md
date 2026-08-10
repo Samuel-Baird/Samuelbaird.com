@@ -141,3 +141,23 @@ Bracketed excerpts currently on the page, each needing the original read:
   colour key shipped: `timeline-graph.tsx` now draws one below the axis, keyed
   to the swimlanes rather than to all fifteen categories, so it stays legible
   however many categories are in view.
+
+## From the August 2026 citation-graph audit (decisions for the maintainer)
+
+- **sourceType flips recommended, not applied:** `doxey-eternal-marriage-1969`
+  → citation (its own notes say the lesson is built on quoted authorities;
+  counterweight: flipping rolls a 1969 Relief Society attestation out of the
+  collapse view). `ttf-2004` and `eternal-family-2022` → citation, both
+  blocked on missing originals (`dc-131`; the 1843 Manuscript History
+  statement) — do not repoint at dc-132 as a substitute. `seminary-2025`'s
+  existing dc-132 target has the same latent mis-aim (the lesson is on 131).
+- **Citation→citation edges are currently impossible by invariant** — all 75
+  edges point at originals, and the collapse view drops citation→citation
+  rollups silently. Two real quotations are withheld because of it
+  (`emsm-2003` → fp-1925, `seminary-2014` → mcconkie-mormon-doctrine). If the
+  invariant should bend, bend it deliberately in the explorer, not via a data
+  patch.
+- **A `dby` node?** Three entries route text through the *Discourses of
+  Brigham Young* compilation (doxey-1969, tpby-1997, young-father-mother-1862)
+  with no entry making that intermediary visible.
+- Full rationales: `graph-patches.json` in the research workspace archive.
