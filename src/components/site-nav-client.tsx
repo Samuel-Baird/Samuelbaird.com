@@ -104,6 +104,13 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
                   >
                     My bookmarks
                   </Link>
+                  <Link
+                    href="/me/settings"
+                    onClick={() => setOpen(false)}
+                    className="block rounded-[var(--radius)] px-2 py-3 text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+                  >
+                    My settings
+                  </Link>
                   {user.is_admin ? (
                     <Link
                       href="/admin"

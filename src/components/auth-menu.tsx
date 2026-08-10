@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, LogOut, Shield, UserRound } from "lucide-react";
+import { ChevronDown, LogOut, Settings, Shield, UserRound } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -123,6 +123,16 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
           >
             <UserRound className="h-4 w-4 text-[color:var(--muted)]" />
             My bookmarks
+          </Link>
+
+          <Link
+            href="/me/settings"
+            role="menuitem"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-[var(--radius)] px-3 py-2 text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+          >
+            <Settings className="h-4 w-4 text-[color:var(--muted)]" />
+            My settings
           </Link>
 
           {user.is_admin ? (
