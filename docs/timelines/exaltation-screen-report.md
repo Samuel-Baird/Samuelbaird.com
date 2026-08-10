@@ -65,3 +65,38 @@ Taxonomy controls applied: premortal spirit children are not B2; bare theosis an
 ## Resume note
 
 The ledger is JSONL and is written one row at a time. If interrupted, resume by skipping files already present in the ledger and rerun the report generator; the coverage denominator remains the 1,980 extracted hit files.
+
+
+---
+
+## Second pass (August 2026): adversarial full-read re-screen
+
+The first pass's REDUNDANT class was audited against known-substantive talks
+and found to contain measured false negatives, and five known-substantive
+talks proved to contain no exalt* vocabulary at all. A second pass therefore
+read **in full** — no window triage — all 1,351 REDUNDANT talks plus 349
+additional general-conference talks carrying related vocabulary (spirit
+children, mother in heaven, once a man, beget, eternal increase, …) without
+any exalt* form. 31 chunks, every chunk's quotes machine-verified verbatim
+against source.
+
+**Result: 199 of the 1,700 re-read talks are SUBSTANTIVE (177 not previously
+in the dataset), against 23 found by the first pass.** Final corpus
+accounting across both passes (2,329 talks):
+
+- SUBSTANTIVE: 222
+- REDUNDANT: 1,115
+- PASSING: 992
+
+Each ledger row now carries a `pass` field: `1-triage` (first-pass window
+triage; the 606 first-pass PASSING rows and first-pass SUBSTANTIVE rows),
+`2-full-read` (re-read REDUNDANT population), or `2-full-read-new-net`
+(the 349 related-vocabulary talks). Residual limit, stated honestly: the
+first-pass PASSING class was not re-read; its risk profile is lower (the
+measured failure mode was REDUNDANT-boundary underclassification), but it
+has not had the full-read treatment.
+
+The decade distribution of newly found substantive talks is the finding:
+1910s: 20 · 1920s: 12 · 1930s: 8 · 1940s: 8 · 1950s: 13 · 1960s: 15 ·
+1970s: 16 · 1980s: 10 · 1990s: 6 · 2000s: 7 · 2010s: 22. The doctrine did
+not go quiet in conference — it moved out of searchable vocabulary.

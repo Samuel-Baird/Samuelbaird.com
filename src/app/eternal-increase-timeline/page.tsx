@@ -31,7 +31,7 @@ const PRINCIPLES = [
   },
   {
     title: "Corpus-level coverage",
-    body: "Every General Conference talk containing an exaltation word-form — 1,980 talks, 1850s to the 2020s — has been read or triaged and classified: passing mention, redundant restatement, or substantive claim. The conference sources here are drawn from the substantive class, and claims about absence rest on that screen rather than on a failure to recall an example. The full classification ledger is published in the project repository.",
+    body: "Every General Conference talk containing an exaltation word-form — 1,980 talks, 1850s to the 2020s — has been classified, and the at-risk classes were then re-read in full in a second, adversarial pass, together with 349 further talks that carry related vocabulary without ever saying “exaltation.” Of 2,329 talks screened, 222 make substantive claims on these axes. Conference sources here are drawn from that class; claims about absence rest on the screen rather than on a failure to recall an example. The full classification ledger, including which pass classified each talk, is published in the project repository.",
   },
   {
     title: "Direction recorded as data",
