@@ -23,11 +23,15 @@ const BANDS = [
 ];
 
 // Three ascending bars sharing the bottom band's baseline, echoing the
-// site's stats subject without competing with the hive shape.
+// site's stats subject without competing with the hive shape. The tallest
+// bar rises into the band above (BANDS[3]), so all three x-positions stay
+// inside that band's flat span (its rounded corners start at x=5.7/18.3) —
+// straying past that clips a bar's edge across the curve and reads as
+// misaligned at favicon scale.
 const BARS = [
-  { x: 13.2, h: 3.4 },
-  { x: 15.9, h: 5.4 },
-  { x: 18.6, h: 7.6 },
+  { x: 10.3, h: 3.4 },
+  { x: 13.0, h: 5.4 },
+  { x: 15.7, h: 7.6 },
 ];
 const BAR_BASELINE = 20.4;
 const BAR_WIDTH = 2.1;
