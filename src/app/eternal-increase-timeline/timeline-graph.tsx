@@ -2,7 +2,15 @@
 
 import { useMemo, useRef, useState } from "react";
 import type { TagInk } from "@/components/tag";
-import { CATEGORY_META, ERAS, categoriesOf } from "./constants";
+import { CATEGORY_META, categoriesOf } from "./constants";
+import {
+  ERA_STRIP,
+  INK_PAINT,
+  buildAxis,
+  nearestDot,
+  rowHeight,
+  stackOffset,
+} from "./graph-shared";
 import type { SourceEntry } from "./schema";
 
 /**
@@ -35,67 +43,6 @@ const LANES: { ink: TagInk; label: string }[] = [
   { ink: "ink", label: "Always God" },
   { ink: "muted", label: "Other" },
 ];
-
-// SVG paint attributes take a CSS variable directly, so unlike Tailwind class
-// strings these can be looked up from a table without tripping v4's inability
-// to see constructed class names.
-const INK_PAINT: Record<TagInk, string> = {
-  ink: "var(--foreground)",
-  accent: "var(--accent)",
-  oxblood: "var(--oxblood)",
-  honey: "var(--honey)",
-  muted: "var(--muted)",
-};
-
-const ERA_STRIP = 15; // room for era labels above the first lane
-const DOT_PITCH = 11; // vertical gap between dots stacked on one year
-const LANE_MIN = 30;
-const LANE_PAD = 15;
-// Percent of the width held back at each end. A source landing exactly on the
-// axis minimum would otherwise be drawn centred on x=0 and lose its left half
-// to the edge of the SVG.
-const INSET = 1.5;
-
-/**
- * Decade-rounded bounds for layout, kept separate from the true data range.
- * Padding the plot to round decades keeps edge dots off the border and puts
- * tick labels on readable numbers, but the caption reports the real first and
- * last years — rounding up would otherwise advertise a year with no source in
- * it (a 2025 source must not make the axis claim 2030).
- */
-function axisBounds(years: number[]): {
-  min: number;
-  max: number;
-  dataMin: number;
-  dataMax: number;
-} {
-  const dataMin = Math.min(...years);
-  const dataMax = Math.max(...years);
-  const min = Math.floor(dataMin / 10) * 10;
-  const max = Math.ceil(dataMax / 10) * 10;
-  return { min, max: max === min ? min + 10 : max, dataMin, dataMax };
-}
-
-/**
- * Two tick densities. Labelled years get a full-height gridline; the decades
- * between them get a short mark on the axis rule only. A single density
- * either ruled the plot with twenty lines or left a two-century span with
- * four labels.
- */
-function tickYears(min: number, max: number): { grid: number[]; minor: number[] } {
-  const span = max - min;
-  const labelStep = span <= 60 ? 10 : span <= 300 ? 20 : 50;
-  const grid: number[] = [];
-  for (let y = Math.ceil(min / labelStep) * labelStep; y <= max; y += labelStep) {
-    grid.push(y);
-  }
-  const minorStep = span <= 300 ? 10 : 50;
-  const minor: number[] = [];
-  for (let y = Math.ceil(min / minorStep) * minorStep; y <= max; y += minorStep) {
-    if (!grid.includes(y)) minor.push(y);
-  }
-  return { grid, minor };
-}
 
 type Dot = {
   entry: SourceEntry;
@@ -142,11 +89,8 @@ export function TimelineGraph({
 
   const model = useMemo(() => {
     if (entries.length === 0) return null;
-    const years = entries.map((e) => Number(e.date.slice(0, 4)));
-    const { min, max, dataMin, dataMax } = axisBounds(years);
-    const span = max - min;
-    const pctFor = (year: number) =>
-      Math.round((INSET + ((year - min) / span) * (100 - 2 * INSET)) * 10) / 10;
+    const axis = buildAxis(entries.map((e) => Number(e.date.slice(0, 4))));
+    const { pctFor } = axis;
 
     // Lane = the ink family of the entry's first category, the same rule the
     // dot's colour follows. Untagged entries fall to the meta lane.
@@ -169,7 +113,7 @@ export function TimelineGraph({
         columns.set(pct, [...(columns.get(pct) ?? []), entry]);
       }
       const maxStack = Math.max(...[...columns.values()].map((c) => c.length));
-      const height = Math.max(LANE_MIN, maxStack * DOT_PITCH + LANE_PAD);
+      const height = rowHeight(maxStack);
       const centre = y + height / 2;
 
       const dots: Dot[] = [];
@@ -178,9 +122,7 @@ export function TimelineGraph({
           dots.push({
             entry,
             pct,
-            // Stack around the lane's centre line rather than down from its
-            // top, so a lane holding one dot still reads as a single row.
-            cy: centre + (i - (group.length - 1) / 2) * DOT_PITCH,
+            cy: centre + stackOffset(i, group.length),
             paint: INK_PAINT[ink],
             isCitation: entry.sourceType === "citation",
             cats: categoriesOf(entry),
@@ -191,30 +133,7 @@ export function TimelineGraph({
       y += height;
     }
 
-    // Eras overlapping the axis, in order, for the alternating backdrop.
-    const bands = ERAS.filter(
-      (era) => era.startYear <= max && era.endYear >= min,
-    ).map((era) => {
-      const left = pctFor(Math.max(era.startYear, min));
-      return {
-        id: era.id,
-        label: era.label,
-        left,
-        width: pctFor(Math.min(era.endYear, max)) - left,
-      };
-    });
-
-    return {
-      min,
-      max,
-      dataMin,
-      dataMax,
-      lanes,
-      bands,
-      height: y,
-      ticks: tickYears(min, max),
-      pctFor,
-    };
+    return { ...axis, lanes, height: y };
   }, [entries]);
 
   if (!model) {
@@ -233,33 +152,9 @@ export function TimelineGraph({
     ? allDots.find((d) => d.entry.id === hoveredId)
     : null;
 
-  /**
-   * Whichever dot the pointer is closest to, or null past the give-up radius.
-   *
-   * Pointer input is handled by one transparent layer over the whole plot
-   * rather than by a hit circle per dot. A comfortable 24px target is wider
-   * than the gap between adjacent years on a two-century axis, so per-dot
-   * targets overlapped and whichever happened to paint last swallowed its
-   * neighbours' clicks entirely. Nearest-wins keeps every dot reachable at
-   * any width and still forgives an imprecise tap.
-   */
   const nearestTo = (event: { clientX: number; clientY: number }): Dot | null => {
     const box = svgRef.current?.getBoundingClientRect();
-    if (!box) return null;
-    const x = event.clientX - box.left;
-    const y = event.clientY - box.top;
-    let best: Dot | null = null;
-    let bestDistance = Infinity;
-    for (const dot of allDots) {
-      const dx = (dot.pct / 100) * box.width - x;
-      const dy = dot.cy - y;
-      const distance = dx * dx + dy * dy;
-      if (distance < bestDistance) {
-        bestDistance = distance;
-        best = dot;
-      }
-    }
-    return bestDistance <= 22 * 22 ? best : null;
+    return box ? nearestDot(allDots, box, event.clientX, event.clientY) : null;
   };
 
   /**

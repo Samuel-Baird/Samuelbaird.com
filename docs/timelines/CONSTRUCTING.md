@@ -68,11 +68,37 @@ assert that a retreat was wrong or dishonest.
 
 **Include the counter-position.** An axis that can only record affirmations will
 always look one-sided. `DIVINE-PROGRESSION` covers both affirmations and
-denials, with each quote's note stating the direction; `FATHER-ALWAYS-GOD` exists
-so the denial of divine becoming has somewhere to live.
+denials; `FATHER-ALWAYS-GOD` exists so the denial of divine becoming has
+somewhere to live.
 
-> A category with zero sources is a finding, not a failure. `FATHER-ALWAYS-GOD`
-> currently has none, which is worth knowing and worth chasing.
+> A category with few sources is a finding, not a failure. `FATHER-ALWAYS-GOD`
+> has four, and every one of them is complicated — the 1884 Joseph F. Smith
+> passage states both directions of the axis five sentences apart, and the 1966
+> Madsen one denies the *creedal* always-God position while asserting
+> attainment. That the orthodox counter-position is this hard to attest cleanly
+> is itself worth knowing, and worth chasing further.
+
+**State the direction as data.** Being tagged with a claim does not say which
+way a source leans on it, and for a long time the direction lived only in prose
+notes — which meant the corpus could not be asked how settled a teaching was at
+a given moment. Every quote now records a `stance` of `affirms`, `hedges` or
+`denies` for each of its claim categories, and the build fails if one is
+missing. Three rules:
+
+- **Stance is about the subject's proposition,** which is written out in
+  `SUBJECTS` in `constants.ts` — not about the category name and not about the
+  doctrine in general.
+- **Hedging is an answer,** not a missing one. Euphemism, an explicit refusal to
+  say, and an affirmation withdrawn by its own qualification all belong in
+  `hedges`; rounding them to yes or no erases the shape of a taper.
+- **Only claim categories take a stance.** `RETREAT-REFRAME` describes an
+  operation on an earlier teaching, and `MANY-WORLDS` and `TRIPARTITE-FRAMEWORK`
+  are explanatory frameworks; "affirming" either says nothing about how settled
+  a doctrine was.
+
+A stance the author has not confirmed carries `stanceNeedsReview: true` and
+renders with a dashed ring rather than being withheld — dropping it would
+quietly thin whichever band it belongs to.
 
 **Distinguish explicit from euphemistic.** Nearly every taper story lives on
 this boundary, so hold the canon to the same strict standard as everything else.

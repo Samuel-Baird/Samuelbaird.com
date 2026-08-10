@@ -18,6 +18,7 @@ import {
   INK_VARS,
   SOURCE_TYPE_META,
   STATUS_META,
+  SUBJECTS,
   categoriesOf,
   eraFor,
   hearsayForQuote,
@@ -43,7 +44,9 @@ import {
   type Referent,
   type SourceEntry,
   type SourceType,
+  type SubjectId,
 } from "./schema";
+import { StanceGraph } from "./stance-graph";
 import { TimelineGraph } from "./timeline-graph";
 
 function norm(s: string): string {
@@ -68,6 +71,10 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
   const [copied, setCopied] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [expandAll, setExpandAll] = useState(false);
+  // Fixed default rather than "whichever subject has most in view": the server
+  // render and the first client render have to agree, and a data-dependent
+  // default would differ the moment a filter arrived from the URL.
+  const [subject, setSubject] = useState<SubjectId>("father-origin");
   // Shared between the graph and the cards so hovering either one marks the
   // other; the plot is otherwise hard to tie back to a specific entry.
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -104,6 +111,8 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     const q = p.get("q");
     if (q) setQuery(q);
     if (p.get("cc") === "1") setCollapseCitations(true);
+    const subj = p.get("subj");
+    if (subj && SUBJECTS.some((s) => s.id === subj)) setSubject(subj as SubjectId);
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -124,6 +133,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
       for (const t of sourceTypes) p.append("t", t);
       if (query.trim()) p.set("q", query.trim());
       if (collapseCitations) p.set("cc", "1");
+      if (subject !== "father-origin") p.set("subj", subject);
       const qs = p.toString();
       window.history.replaceState(
         null,
@@ -132,7 +142,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
       );
     }, 300);
     return () => window.clearTimeout(timer);
-  }, [cats, grades, statuses, referents, sourceTypes, query, collapseCitations]);
+  }, [cats, grades, statuses, referents, sourceTypes, query, collapseCitations, subject]);
 
   const byId = useMemo(
     () => new Map(entries.map((e) => [e.id, e])),
@@ -342,9 +352,20 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           </span>
         </div>
 
-        <div className="mb-8 print:hidden">
+        <div className="mb-4 print:hidden">
           <TimelineGraph
             entries={visible}
+            hoveredId={hoveredId}
+            onHover={setHoveredId}
+            onSelect={scrollToId}
+          />
+        </div>
+
+        <div className="mb-8 print:hidden">
+          <StanceGraph
+            entries={visible}
+            subject={subject}
+            onSubjectChange={setSubject}
             hoveredId={hoveredId}
             onHover={setHoveredId}
             onSelect={scrollToId}

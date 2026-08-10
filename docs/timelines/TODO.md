@@ -90,12 +90,24 @@ Bracketed excerpts currently on the page, each needing the original read:
 
 ### Unresolved analytical questions
 
-- **`FATHER-ALWAYS-GOD` has zero sources.** The counter-position exists as a
-  category with nothing in it. Either the denial genuinely is not made in these
-  terms — itself a finding worth stating — or it exists and has not been found.
-  Look in the same places the `DIVINE-PROGRESSION` denials came from
-  (Joseph Fielding Smith, McConkie, mid-century institute manuals), and in
-  discussions of creedal vs. Latter-day Saint conceptions of God.
+- **`FATHER-ALWAYS-GOD` has four sources and not one is clean.** The 1884 Joseph
+  F. Smith passage states both directions of the axis five sentences apart; the
+  1966 Madsen one denies the *creedal* always-God position while asserting
+  attainment, which is close to the opposite of what the tag is for. Every one
+  is flagged `stanceNeedsReview`. That the orthodox counter-position is this
+  hard to attest cleanly may itself be the finding, but keep looking in the
+  places the `DIVINE-PROGRESSION` denials came from (Joseph Fielding Smith,
+  McConkie, mid-century institute manuals) and in discussions of creedal vs.
+  Latter-day Saint conceptions of God.
+- **Review the flagged stance placements.** 27 quotes carry
+  `stanceNeedsReview: true` from the initial backfill — mostly cases where the
+  note and the excerpt pull apart, or where a reading contradicts what the
+  category usually means. They render with a dashed ring until confirmed.
+  Clearing one means deleting the flag.
+- **Split `jfs-same-ordeal-1884-q1`.** One excerpt, both directions of the
+  Father-origin axis. Quote-level tagging is supposed to prevent exactly this;
+  splitting it into two excerpts would let each carry its own stance honestly
+  instead of appearing as two dots off one passage.
 - **`fp-1909-q2` tag.** Now `FORWARD-EUPHEMISM`. The excerpt as transcribed
   runs forward (man evolving into a God); confirm the *Improvement Era* wording
   and move it to `FATHER-MORTAL-EXPERIENCE` if it contains a backward clause.
@@ -131,7 +143,10 @@ Bracketed excerpts currently on the page, each needing the original read:
   timeline should import them rather than copy the folder. Worth doing *when*
   the second timeline exists, not before — one instance is not yet a pattern.
 - **Move `implied` onto the category pair** so a quote can mark one category
-  implied and another stated (see [`SCHEMA.md`](./SCHEMA.md)).
+  implied and another stated (see [`SCHEMA.md`](./SCHEMA.md)). No longer
+  hypothetical — quotes with two categories now exist, so some are mismarked
+  today. `stance` is keyed per category already and should move onto the same
+  pair when this happens, replacing both side tables with one.
 - **Timeline index page** once there is more than one, listing them with their
   question and source count. Unlisted like the timelines themselves.
 - **Cross-timeline citation.** The Family Proclamation and eternal-increase
@@ -141,6 +156,11 @@ Bracketed excerpts currently on the page, each needing the original read:
   colour key shipped: `timeline-graph.tsx` now draws one below the axis, keyed
   to the swimlanes rather than to all fifteen categories, so it stays legible
   however many categories are in view.
+- **A weighted consensus line over the stance chart** was considered and left
+  out. Any line needs weights — by office, by hearsay, by whether a source is
+  still published — and every choice of weight is arguable in a way the dots
+  themselves are not. The chart shows its ingredients instead. If it is ever
+  added, the weights belong on the page, next to the line.
 
 ## From the August 2026 citation-graph audit (decisions for the maintainer)
 

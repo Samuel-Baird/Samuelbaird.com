@@ -31,6 +31,42 @@ export const REFERENTS = ["father", "son", "ambiguous", "n/a"] as const;
 
 export const SOURCE_TYPES = ["original", "citation"] as const;
 
+export const STANCES = ["affirms", "hedges", "denies"] as const;
+
+/**
+ * Categories that carry a stance, and the subject whose proposition that
+ * stance is about. The excluded three are deliberate: RETREAT-REFRAME
+ * describes an operation performed on an earlier teaching rather than a
+ * position on it, and MANY-WORLDS and TRIPARTITE-FRAMEWORK are explanatory
+ * frameworks — "affirming" a framework says nothing about how settled a
+ * doctrine was, which is the only thing the stance chart is measuring.
+ */
+export const SUBJECT_OF_CATEGORY = {
+  "BACKWARD-EXPLICIT": "father-origin",
+  "FATHER-MORTAL-EXPERIENCE": "father-origin",
+  "FATHER-BECAME-GOD": "father-origin",
+  "FATHER-ALWAYS-GOD": "father-origin",
+  "BACKWARD-AGNOSTIC": "father-origin",
+  "INFINITE-CHAIN": "father-origin",
+  "FORWARD-EXPLICIT": "eternal-increase",
+  "FORWARD-EUPHEMISM": "eternal-increase",
+  "SPIRIT-BIRTH-VIVIPAROUS": "eternal-increase",
+  "SPIRIT-BIRTH-ADOPTION": "eternal-increase",
+  "HEAVENLY-MOTHER": "heavenly-mother",
+  "DIVINE-PROGRESSION": "divine-progression",
+} as const satisfies Partial<Record<(typeof CATEGORY_IDS)[number], string>>;
+
+export type StanceCategoryId = keyof typeof SUBJECT_OF_CATEGORY;
+export type SubjectId = (typeof SUBJECT_OF_CATEGORY)[StanceCategoryId];
+
+export const STANCE_CATEGORY_IDS = Object.keys(
+  SUBJECT_OF_CATEGORY,
+) as StanceCategoryId[];
+
+export function isStanceCategory(id: string): id is StanceCategoryId {
+  return id in SUBJECT_OF_CATEGORY;
+}
+
 const witnessSchema = z.object({
   scribe: z.string().min(1),
   url: z.url().optional(),
@@ -49,6 +85,22 @@ const quoteSchema = z.object({
   // True when the categories are read into the quote rather than stated by
   // it — rendered as an "implied" marker on the pills.
   implied: z.boolean().optional(),
+  // Where this quote stands on the proposition behind each of its
+  // stance-bearing categories: does it teach the thing, gesture at it without
+  // committing, or reject it? The direction used to live only in prose, which
+  // meant the corpus could not be asked the one question it exists to answer —
+  // how settled a teaching was at a given moment. Required for every
+  // stance-bearing category on the quote; see parseSources.
+  //
+  // Keyed loosely, like hearsayByQuote above: a record over the category enum
+  // demands *every* category as a key, and the checks in parseSources pin the
+  // keys down far better than the enum could anyway — they require each one to
+  // be a category this particular quote actually carries.
+  stance: z.record(z.string(), z.enum(STANCES)).optional(),
+  // Set by the backfill when the reading was not clear-cut. Rendered, never
+  // hidden: dropping unreviewed quotes would bias the bands in exactly the
+  // direction the completeness check exists to prevent.
+  stanceNeedsReview: z.boolean().optional(),
   note: z.string().optional(),
 });
 
@@ -89,6 +141,7 @@ export type SourceEntry = z.infer<typeof sourceEntrySchema>;
 export type Quote = z.infer<typeof quoteSchema>;
 export type Witness = z.infer<typeof witnessSchema>;
 export type CategoryId = (typeof CATEGORY_IDS)[number];
+export type Stance = (typeof STANCES)[number];
 export type HearsayGrade = (typeof HEARSAY_GRADES)[number];
 export type CorrelationStatus = (typeof CORRELATION_STATUSES)[number];
 export type Referent = (typeof REFERENTS)[number];
@@ -146,6 +199,55 @@ export function parseSources(raw: unknown): SourceEntry[] {
   if (strayOverrides.length > 0) {
     throw new Error(
       `eternal-increase-timeline/sources.json has hearsayByQuote keys with no matching quote:\n  ${strayOverrides.join("\n  ")}`,
+    );
+  }
+
+  // Stance keys must name a category the quote actually carries, and one that
+  // takes a stance at all. A stance recorded against a category the quote does
+  // not hold is silently inert — the same failure the hearsayByQuote check
+  // above exists to catch.
+  const strayStance = entries.flatMap((e) =>
+    e.quotes.flatMap((q) => {
+      const own = new Set(q.categories);
+      return Object.keys(q.stance ?? {})
+        .filter((c) => !own.has(c as CategoryId) || !isStanceCategory(c))
+        .map((c) => `${e.id}.${q.quoteId}.stance["${c}"]`);
+    }),
+  );
+  if (strayStance.length > 0) {
+    throw new Error(
+      `eternal-increase-timeline/sources.json has stance keys that name a category the quote does not carry, or one that takes no stance:\n  ${strayStance.join("\n  ")}`,
+    );
+  }
+
+  // Every stance-bearing category on a quote must state its direction. A
+  // missing stance would not fail loudly — the quote would just vanish from
+  // the certainty chart, quietly undercounting whichever band it belonged to.
+  // That is the worst outcome available here, so it fails the build instead,
+  // and a future author tagging a new quote gets told to state the direction.
+  const missingStance = entries.flatMap((e) =>
+    e.quotes.flatMap((q) =>
+      q.categories
+        .filter(isStanceCategory)
+        .filter((c) => !q.stance?.[c])
+        .map((c) => `${e.id}.${q.quoteId} is missing stance for ${c}`),
+    ),
+  );
+  if (missingStance.length > 0) {
+    throw new Error(
+      `eternal-increase-timeline/sources.json has quotes tagged with a stance-bearing category but no stance:\n  ${missingStance.join("\n  ")}`,
+    );
+  }
+
+  // A review flag with nothing to review is a leftover.
+  const emptyFlags = entries.flatMap((e) =>
+    e.quotes
+      .filter((q) => q.stanceNeedsReview && !q.stance)
+      .map((q) => `${e.id}.${q.quoteId}`),
+  );
+  if (emptyFlags.length > 0) {
+    throw new Error(
+      `eternal-increase-timeline/sources.json flags quotes for stance review that carry no stance:\n  ${emptyFlags.join("\n  ")}`,
     );
   }
 

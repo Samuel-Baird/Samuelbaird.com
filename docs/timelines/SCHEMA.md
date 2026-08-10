@@ -82,6 +82,7 @@ in a 1971 *Ensign* is high-correlation despite B-tier hearsay.
   "excerpt": "God himself was once as we are now, and is an exalted man...",
   "referent": "father",
   "implied": false,
+  "stance": { "FATHER-MORTAL-EXPERIENCE": "affirms", "FATHER-BECAME-GOD": "affirms" },
   "note": "Per-quote analysis."
 }
 ```
@@ -93,12 +94,37 @@ in a 1971 *Ensign* is high-correlation despite B-tier hearsay.
 | `excerpt` | string | yes | The quoted text. `[Square brackets]` mark a placeholder awaiting transcription. |
 | `referent` | Referent | no | Overrides the entry's referent. Backward-direction quotes should always carry one. |
 | `implied` | boolean | no | The categories are **read into** the quote rather than stated by it. Renders an "implied" marker. |
+| `stance` | Record&lt;CategoryId, Stance&gt; | **yes, for claim categories** | `affirms` \| `hedges` \| `denies` — where the quote stands on the proposition behind each claim category it carries. See below. |
+| `stanceNeedsReview` | boolean | no | The placement is not yet author-confirmed. Renders with a dashed ring; never hidden. |
 | `note` | string | no | Why this excerpt is tagged as it is; where the plainest reading differs from the interesting one, say so here. |
 
+### Stance
+
+Stance answers *which way* a quote leans, which the category alone does not say.
+It is judged against the written-out `proposition` of the subject that owns the
+category (see `SUBJECTS` in `constants.ts`), never against the category name or
+the doctrine in general. `hedges` covers euphemism, an explicit refusal to say,
+deliberate ambiguity, and an affirmation withdrawn by its own qualification.
+
+Twelve of the fifteen categories carry a stance. `RETREAT-REFRAME`,
+`MANY-WORLDS` and `TRIPARTITE-FRAMEWORK` do not: the first describes an
+operation on an earlier teaching, and the other two are explanatory frameworks,
+so "affirming" them would say nothing about how settled a doctrine was.
+
+Three build-time checks enforce it, all failing with the offending JSON path:
+
+- every `stance` key must be a category **that quote actually carries**, and one
+  that takes a stance at all;
+- every stance-bearing category on a quote **must** have a stance — a missing
+  one would not fail loudly, it would just drop the quote out of the certainty
+  chart and quietly undercount a band;
+- `stanceNeedsReview` requires a `stance` to review.
+
 > **Known limitation.** `implied` is per-quote, so on a quote with several
-> categories it marks all of them. Every current use has a single category, so
-> nothing is misrendered today — but marking one category implied and another
-> stated on the same quote needs the flag moved onto the category pair first.
+> categories it marks all of them — and several quotes now carry two, so a
+> quote with one category read-in and another stated outright is currently
+> mismarked. Fixing it means moving the flag onto the category pair, at which
+> point `stance` should move with it (see TODO).
 
 ---
 

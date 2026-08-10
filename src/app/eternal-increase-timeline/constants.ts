@@ -6,6 +6,9 @@ import type {
   Referent,
   SourceEntry,
   SourceType,
+  Stance,
+  StanceCategoryId,
+  SubjectId,
 } from "./schema";
 
 // Tailwind v4 needs complete literal class strings — never build these by
@@ -290,6 +293,99 @@ export const ERAS: Era[] = [
   { id: "correlated", label: "Correlated Era", range: "1950–2010", startYear: 1950, endYear: 2012 },
   { id: "taper", label: "Gospel Topics Era & Taper", range: "2013–present", startYear: 2013, endYear: 9999 },
 ];
+
+/**
+ * The questions the corpus can be asked about how settled a teaching was.
+ *
+ * A subject is a proposition plus the categories that bear on it. `affirms`,
+ * `hedges` and `denies` on a quote are always *about the proposition*, never
+ * about the category in the abstract — which is why the proposition is written
+ * out here and shown to the reader rather than left implicit in a tag name.
+ *
+ * The four subjects partition the twelve stance-bearing categories, so a
+ * quote's stance on a given category is never ambiguous about which question
+ * it answers. Heavenly Mother is deliberately its own subject rather than a
+ * member of eternal increase: a Mother existing and the exalted begetting
+ * spirit children are different claims, and folding them together would force
+ * a direction onto quotes that address only one of them.
+ */
+export type Subject = {
+  id: SubjectId;
+  label: string;
+  question: string;
+  proposition: string;
+  categories: StanceCategoryId[];
+};
+
+export const SUBJECTS: Subject[] = [
+  {
+    id: "father-origin",
+    label: "The Father's origin",
+    question: "Was the Father once a mortal man?",
+    proposition:
+      "God the Father passed through a mortality like ours and attained his exaltation, rather than having always been God.",
+    categories: [
+      "BACKWARD-EXPLICIT",
+      "FATHER-MORTAL-EXPERIENCE",
+      "FATHER-BECAME-GOD",
+      "INFINITE-CHAIN",
+      "FATHER-ALWAYS-GOD",
+      "BACKWARD-AGNOSTIC",
+    ],
+  },
+  {
+    id: "eternal-increase",
+    label: "Eternal increase",
+    question: "Do the exalted become parents of spirit children?",
+    proposition:
+      "Exalted men and women beget spirit offspring and so continue the pattern by which we were made.",
+    categories: [
+      "FORWARD-EXPLICIT",
+      "FORWARD-EUPHEMISM",
+      "SPIRIT-BIRTH-VIVIPAROUS",
+      "SPIRIT-BIRTH-ADOPTION",
+    ],
+  },
+  {
+    id: "heavenly-mother",
+    label: "Heavenly Mother",
+    question: "Is there a Mother in Heaven?",
+    proposition:
+      "A Heavenly Mother exists and is a parent of the human family.",
+    categories: ["HEAVENLY-MOTHER"],
+  },
+  {
+    id: "divine-progression",
+    label: "Divine progression",
+    question: "Does God still progress?",
+    proposition:
+      "God continues to advance in knowledge or perfection, rather than possessing all of it already.",
+    categories: ["DIVINE-PROGRESSION"],
+  },
+];
+
+export const SUBJECT_META: Record<SubjectId, Subject> = Object.fromEntries(
+  SUBJECTS.map((s) => [s.id, s]),
+) as Record<SubjectId, Subject>;
+
+export const STANCE_META: Record<
+  Stance,
+  { label: string; definition: string }
+> = {
+  affirms: {
+    label: "Affirms",
+    definition: "States or plainly teaches the proposition.",
+    },
+  hedges: {
+    label: "Hedges",
+    definition:
+      "Gestures at it without committing — euphemism, an explicit refusal to say, deliberate ambiguity, or an affirmation withdrawn by its own qualification.",
+  },
+  denies: {
+    label: "Denies",
+    definition: "Rejects or corrects the proposition.",
+  },
+};
 
 export function eraFor(entry: SourceEntry): Era {
   const year = Number(entry.date.slice(0, 4));

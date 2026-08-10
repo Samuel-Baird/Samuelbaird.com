@@ -29,6 +29,10 @@ const PRINCIPLES = [
     title: "Quote-level tagging",
     body: "A single talk or manual can make several distinct doctrinal moves. Each excerpt carries its own categories, its own referent, and where provenance differs, its own hearsay grade.",
   },
+  {
+    title: "Direction recorded as data",
+    body: "Being tagged with a claim says nothing about which way a source leans on it, so every excerpt also records whether it affirms, hedges on, or denies the proposition behind each of its claim categories. Hedging is kept as its own answer rather than rounded to a yes or a no, because a teaching usually passes through it on the way out. Those placements are a reading of the excerpt, not an official characterisation, and the ones still unconfirmed are marked as such.",
+  },
 ];
 
 const CHASE_DOWN = [

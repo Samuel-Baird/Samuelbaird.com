@@ -5,6 +5,7 @@ import {
   INK_VARS,
   REFERENT_META,
   SOURCE_TYPE_META,
+  STANCE_META,
   STATUS_META,
 } from "./constants";
 import {
@@ -13,6 +14,7 @@ import {
   HEARSAY_GRADES,
   REFERENTS,
   SOURCE_TYPES,
+  STANCES,
 } from "./schema";
 
 /**
@@ -38,6 +40,37 @@ export function ScalesLegend() {
               </dd>
             </div>
           ))}
+        </dl>
+      </LegendBlock>
+
+      <LegendBlock
+        title="Stance"
+        intro="Where a quote stands on the question the stance chart is asking. Recorded per quote and per category, because one passage can teach one claim while rejecting a neighbouring one. Only the twelve claim categories carry a stance: a reframing or an explanatory framework is not a position on a proposition, so neither takes one."
+      >
+        <dl className="mt-2 space-y-2">
+          {STANCES.map((s) => (
+            <div key={s} className="flex gap-2">
+              <dt className="small-caps w-16 shrink-0 text-xs text-[color:var(--foreground)]">
+                {STANCE_META[s].label}
+              </dt>
+              <dd className="flex-1 text-xs leading-relaxed text-[color:var(--muted)]">
+                {STANCE_META[s].definition}
+              </dd>
+            </div>
+          ))}
+          <div className="flex gap-2">
+            <dt className="w-16 shrink-0 pt-1">
+              <span
+                aria-hidden="true"
+                className="inline-block h-3 w-3 rounded-full border border-dashed border-[color:var(--muted)]"
+              />
+            </dt>
+            <dd className="flex-1 text-xs leading-relaxed text-[color:var(--muted)]">
+              A dashed ring marks a placement the author has not yet confirmed.
+              These are shown rather than withheld: dropping them would quietly
+              thin whichever band they belong to.
+            </dd>
+          </div>
         </dl>
       </LegendBlock>
 
