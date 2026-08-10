@@ -1,8 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { sendDailyDigestEmail, type NotifiableMessage } from "@/lib/messages";
+import { logEvent } from "@/lib/log";
+import { monthlyWindow, runMonthlyNewsletter } from "@/lib/newsletter";
 
-export const maxDuration = 60;
+// Vercel Hobby caps a project at 2 cron jobs; both are already spent (this
+// route + refresh-stats), so the monthly newsletter rides along here instead
+// of getting its own schedule — see the day-of-month guard below.
+export const maxDuration = 300;
 
 const WINDOW_MS = 24 * 60 * 60 * 1000;
 
@@ -38,11 +43,34 @@ export async function GET(req: NextRequest) {
 
   const sent = await sendDailyDigestEmail({ since, recent, openCount });
 
+  // The monthly newsletter runs on the 1st of the month (UTC), reporting the
+  // month that just closed. `?newsletter=force` (still behind CRON_SECRET,
+  // checked above) lets it be triggered on any day for testing; the
+  // month_key unique constraint in runMonthlyNewsletter still prevents a
+  // real double-send. Kept in its own try/catch so a newsletter failure
+  // can't take down the daily digest response, and vice versa.
+  const isFirstOfMonth = new Date().getUTCDate() === 1;
+  const forceNewsletter = req.nextUrl.searchParams.get("newsletter") === "force";
+  let newsletter: unknown = null;
+  if (isFirstOfMonth || forceNewsletter) {
+    try {
+      newsletter = await runMonthlyNewsletter(supabase, monthlyWindow());
+    } catch (err) {
+      logEvent(
+        "newsletter.failed",
+        { error: err instanceof Error ? err.message : String(err) },
+        "error",
+      );
+      newsletter = { status: "failed" };
+    }
+  }
+
   return NextResponse.json({
     ok: true,
     sent,
     since,
     newCount: recent.length,
     openCount,
+    newsletter,
   });
 }

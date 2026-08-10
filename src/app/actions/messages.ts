@@ -7,6 +7,7 @@ import {
   createSupabaseServerClient,
   createSupabaseServiceClient,
 } from "@/lib/supabase/server";
+import { getCurrentUser } from "@/lib/auth";
 import { uuidSchema } from "@/lib/validation";
 import { sendNewMessageEmail } from "@/lib/messages";
 
@@ -27,21 +28,17 @@ export async function submitMessage(formData: FormData) {
   const categoryRaw = String(formData.get("category") ?? "").trim();
   const category: Category = isCategory(categoryRaw) ? categoryRaw : "general";
   const website = String(formData.get("website") ?? "").trim();
-  const name = String(formData.get("name") ?? "").trim().slice(0, 120) || null;
-  const email = String(formData.get("email") ?? "").trim().slice(0, 200) || null;
   const pageRef =
     String(formData.get("page_ref") ?? "").trim().slice(0, 300) || null;
   const body = String(formData.get("body") ?? "").trim();
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
 
-  if (!user) {
+  const auth = await getCurrentUser();
+  if (!auth) {
     redirect(
       `/login?next=${encodeURIComponent(buildRedirect("/contact", { category, pageRef }))}`,
     );
   }
+  const { user } = auth;
 
   if (website) {
     redirect("/contact?sent=1");
@@ -53,14 +50,23 @@ export async function submitMessage(formData: FormData) {
   if (body.length > 5000) {
     redirect(buildRedirect("/contact", { error: "too_long", category, pageRef }));
   }
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    redirect(buildRedirect("/contact", { error: "bad_email", category, pageRef }));
-  }
 
   const limited = await isRateLimited(user.id);
   if (limited) {
     redirect(buildRedirect("/contact", { error: "rate_limited", category, pageRef }));
   }
+
+  // Identity comes from the signed-in account, not free-text form fields —
+  // keeps a visitor from submitting a message under someone else's name.
+  const name =
+    auth.profile?.full_name?.trim() ||
+    (typeof user.user_metadata?.full_name === "string"
+      ? user.user_metadata.full_name.trim()
+      : "") ||
+    null;
+  const email = auth.profile?.email ?? user.email ?? null;
+
+  const supabase = await createSupabaseServerClient();
 
   // Generated here rather than read back from the insert: RLS grants select on
   // messages to admins only, so a returning-insert would fail for visitors.

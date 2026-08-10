@@ -1,5 +1,6 @@
 import { CONTACT_EMAIL } from "@/lib/contact";
 import { escapeHtml, sendEmail } from "@/lib/email";
+import { SITE_URL } from "@/lib/site";
 
 export const CATEGORY_LABELS: Record<string, string> = {
   general: "General",
@@ -23,8 +24,6 @@ export type NotifiableMessage = {
   created_at: string;
 };
 
-const SITE = "https://latter-day-stats.vercel.app";
-
 function notifyAddress() {
   return process.env.MESSAGE_NOTIFY_EMAIL || CONTACT_EMAIL;
 }
@@ -34,7 +33,7 @@ function sender(message: Pick<NotifiableMessage, "name" | "email">) {
 }
 
 function adminLink(id: string) {
-  return `${SITE}/admin/messages#message-${id}`;
+  return `${SITE_URL}/admin/messages#message-${id}`;
 }
 
 const WRAPPER_STYLE =
@@ -122,7 +121,7 @@ export async function sendDailyDigestEmail({
         .join("\n"),
     ),
     "",
-    `All messages: ${SITE}/admin/messages`,
+    `All messages: ${SITE_URL}/admin/messages`,
   ].filter((line) => line !== null);
 
   const rows = recent
@@ -140,7 +139,7 @@ export async function sendDailyDigestEmail({
   <h2 style="font-size:18px;margin:0 0 6px">${escapeHtml(newLabel)}</h2>
   <p style="${META_STYLE}">${escapeHtml(openLabel)} in total${breakdown.length ? ` &middot; ${escapeHtml(breakdown.join(" · "))}` : ""}</p>
   ${recent.length ? `<ul style="list-style:none;padding:0;margin:20px 0">${rows}</ul>` : "<p style=\"margin:20px 0\">No new messages in the last day.</p>"}
-  <p><a href="${SITE}/admin/messages" style="color:#0f6b5c">All messages &rarr;</a></p>
+  <p><a href="${SITE_URL}/admin/messages" style="color:#0f6b5c">All messages &rarr;</a></p>
 </div>`;
 
   return sendEmail({

@@ -30,7 +30,6 @@ const CATEGORIES: { value: string; label: string }[] = [
 const ERROR_MESSAGES: Record<string, string> = {
   empty: "Message body is required.",
   too_long: "Message must be under 5,000 characters.",
-  bad_email: "That email address doesn't look right.",
   rate_limited:
     "A few messages already came through from this account. Please try again later.",
 };
@@ -133,26 +132,12 @@ export default async function ContactPage({
                 </select>
               </Field>
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Your name (optional)" htmlFor="name">
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    maxLength={120}
-                    className="h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-sm"
-                  />
-                </Field>
-                <Field label="Email (optional)" htmlFor="email">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    maxLength={200}
-                    placeholder="so we can follow up"
-                    className="h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-sm"
-                  />
-                </Field>
+              <div className="rounded-[var(--radius)] bg-[color:var(--muted-soft)] px-4 py-3 text-xs text-[color:var(--muted)]">
+                Sending as{" "}
+                <span className="font-medium text-[color:var(--foreground)]">
+                  {auth.profile?.full_name ?? "Signed-in user"}
+                </span>{" "}
+                ({auth.profile?.email ?? auth.user.email})
               </div>
 
               {pageRef && (

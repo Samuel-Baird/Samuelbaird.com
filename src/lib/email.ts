@@ -14,6 +14,9 @@ export type SendEmailInput = {
   html: string;
   text: string;
   replyTo?: string | null;
+  // Extra headers, e.g. List-Unsubscribe / List-Unsubscribe-Post for the
+  // monthly newsletter's one-click unsubscribe (RFC 8058).
+  headers?: Record<string, string>;
 };
 
 /**
@@ -42,6 +45,7 @@ export async function sendEmail(input: SendEmailInput): Promise<boolean> {
         html: input.html,
         text: input.text,
         ...(input.replyTo ? { reply_to: input.replyTo } : {}),
+        ...(input.headers ? { headers: input.headers } : {}),
       }),
     });
 
