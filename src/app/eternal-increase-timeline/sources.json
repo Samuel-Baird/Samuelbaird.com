@@ -551,6 +551,43 @@
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/journal-of-discourses/1856/1856-10-grant-those-who-are-in-darkness.md, whose text was collated against BYU ContentDM page images of Journal of Discourses vol. 4, pp. 122–129. Journal of Discourses, so C: a Pitman-shorthand report of a Bowery discourse, published without the speaker's review; the printed heading is “Those Who Are in Darkness Cannot Discern the Light—Exhortations to Male and Female to Seek After the Light of the Holy Ghost—Women Who Leave Their Husbands, Etc.” Eugene England, “Perfection and Progression,” BYU Studies 29/3 (1989), 39, pairs this with a Brigham Young “lariat rope” sermon of the same month; Young's version could not be located in the vault (the October 1856 Young files in the corpus are the handcart-rescue discourses), so only Grant's is entered here, and any Young lariat entry should be sourced from the printed Journal of Discourses directly rather than from England. Grant was Second Counselor in the First Presidency and died five weeks after this discourse, on 1 December 1856."
   },
   {
+    "id": "phelps-hie-to-kolob-1856",
+    "sourceType": "original",
+    "date": "1856-11-19",
+    "dateDisplay": "November 19, 1856",
+    "datePrecision": "day",
+    "title": "W. W. Phelps, “There Is No End” (now the hymn “If You Could Hie to Kolob”)",
+    "speaker": "William W. Phelps",
+    "office": "Latter-day Saint printer, poet, and former scribe to Joseph Smith",
+    "venue": "Poem “There Is No End,” Deseret News, 19 November 1856, p. 2; hymn no. 284 in Hymns of The Church of Jesus Christ of Latter-day Saints",
+    "url": "https://www.churchofjesuschrist.org/study/manual/hymns/if-you-could-hie-to-kolob",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "phelps-hie-to-kolob-1856-q1",
+        "categories": ["BACKWARD-AGNOSTIC"],
+        "referent": "ambiguous",
+        "excerpt": "Do you think that you could ever, Through all eternity, Find out the generation Where Gods began to be?",
+        "note": "The regress question in interrogative form, and the tagging turns on that form. What the quatrain states is that the beginning of the Gods is not findable — the C-agnostic move — and that is all it states. It does not assert an endless line, it does not name the Father, and it does not say the Gods have generations in a single descending line rather than merely a plural existence. The INFINITE-CHAIN reading is the answer a rhetorical question invites, not a claim the hymn makes, so under the no-retrojection rule it is argued in the entry note rather than tagged here. Note also that “Gods” is unqualified: the referent is the class of Gods, not demonstrably the Father, hence “ambiguous” — unlike roberts-endless-line-1895-q2, where Roberts reprints this same quatrain in a context that has already made the Father its subject."
+      },
+      {
+        "quoteId": "phelps-hie-to-kolob-1856-q2",
+        "categories": [],
+        "excerpt": "Or see the grand beginning, Where space did not extend? Or view the last creation, Where Gods and matter end? Methinks the Spirit whispers, “No man has found ‘pure space,’ Nor seen the outside curtains, Where nothing has a place.”",
+        "note": "Untagged on purpose, and it is the load-bearing stanza for how this entry is graded. Verse 2 is where the hymn answers itself, and the answer it gives is a limit on knowledge, not a cosmology: the Spirit whispers that no man has found the bounds. That answer is addressed to the spatial question (“pure space,” “the outside curtains”) rather than to the genealogical one in verse 1, which is left standing unanswered. Recorded so the entry shows that the hymn's own reply to its own questions is agnostic."
+      },
+      {
+        "quoteId": "phelps-hie-to-kolob-1856-q3",
+        "categories": ["MANY-WORLDS"],
+        "excerpt": "The works of God continue, And worlds and lives abound; Improvement and progression Have one eternal round. There is no end to matter; There is no end to space; There is no end to spirit; There is no end to race.",
+        "note": "The “There is no end to…” litany, which runs on through verses 4 and 5 (virtue, might, wisdom, light, union, youth, priesthood, truth; glory, love, being, and “no death above”). Tagged MANY-WORLDS for “worlds and lives abound.” Deliberately not tagged DIVINE-PROGRESSION: “Improvement and progression Have one eternal round” says progression is a permanent feature of the universe, not that God is progressing, and reading God into it is exactly the conflation this dataset exists to prevent. Deliberately not tagged INFINITE-CHAIN either: what the litany declares endless is matter, space, spirit, and race — never a line of Gods. The chain is the one thing the endlessness list conspicuously omits."
+      }
+    ],
+    "notes": "Provenance resolved: this is not a Times and Seasons text. Phelps published it as the poem “There Is No End” in the Deseret News, 19 November 1856, p. 2 — twelve years after Joseph Smith's death and nine years into the Utah period — and it entered the hymnody later under its present title. The Deseret News attribution is taken from Michael Hubbard MacKay et al., eds., Producing Ancient Scripture, p. 440 n.134 (https://corpus.noahairmet.com/b/producing-ancient-scripture-joseph-smith-s-4e4d/440), which cites the poem to that issue and identifies it as hymn 284 in the 1985 hymnal; the 1856 newspaper page itself was not inspected for this entry, so the printing date is carried on that scholarly authority rather than on a page image. The hymn text quoted here was verified verbatim against the live churchofjesuschrist.org hymn page on 2026-08-10, where it stands as no. 284 with the text credited to “William W. Phelps, 1792–1872,” the tune KINGSFOLD arranged by Ralph Vaughan Williams, and the scripture references Abraham 3:1–4, 9 and Moses 1:3–4, 33–39. Graded current-correlated on that basis: it is a currently hosted, currently sung hymn. Caveat for a later pass: the hosted text is the 1985 hymnal, which the new Hymns—For Home and Church (2024–) is progressively superseding; whether the hymn and its number survive that rollout is not asserted here. Why this entry matters to the timeline: it is the only place in current correlated worship material where the beginning-of-the-Gods question is put to a congregation at all, and it is put as a question that is never answered. B. H. Roberts saw the opportunity and closed it — in A New Witness for God (1895) he prints the prose claim that “there has been and there now exists an endless line of Gods,” then prints this hymn in full immediately after as its hymnodic form (see roberts-endless-line-1895, quote q2, which reproduces this same quatrain in the older “D'ye think that you could ever” wording). No citesId is set on this entry, because citation edges run from the citing source to the cited one and the hymn is the earlier text; the reciprocal edge belongs on roberts-endless-line-1895 and adding it is out of scope here. The practical consequence is the one Roberts's own note anticipates: the prose statement fell out of General Authority usage, and the question survived in the hymnbook."
+  },
+  {
     "id": "kimball-chain-1857",
     "sourceType": "original",
     "date": "1857-04-06",
@@ -1206,7 +1243,7 @@
       }
     ],
     "notes": "Verified verbatim twice over against the 1895 first edition: the Internet Archive page scan (printed p. 466) and the Mormon Texts Project's independent transcription. Chapter XXX is titled “Evidence of Divine Inspiration in Joseph Smith Derived from the Prophet's Teaching in Regard to the Extent of the Universe, Man's Place in It and His Doctrine Respecting the Gods—Concluded”; the passage sits directly after Roberts's block quotation of the King Follett Discourse (see kfd-1844), which is what raises the question the endless line answers. Graded never-official: Roberts sat in the First Council of the Seventy and the book was issued by the church-affiliated George Q. Cannon & Sons, but it carried no First Presidency commission — unlike Talmage's Articles of Faith four years later — and it functioned as a missionary apologetic rather than as a doctrinal standard.",
-    "citesId": ["kfd-1844"]
+    "citesId": ["kfd-1844", "phelps-hie-to-kolob-1856"]
   },
   {
     "id": "cannon-female-deities-1895",
@@ -1254,6 +1291,50 @@
       }
     ],
     "notes": "Verified verbatim against the archive.org page images of printed pp. 315, 316, and 317 (item juvenileinstruct3010geor, IA leaves 23–25), collated against the item's full text; the column heading and the byline “The Editor” come from the issue's own table of contents, which lists “Topics of the Times — The Worship of Female Deities — Fast Day and the Sacrament — Passing the Sacrament … The Editor 314.” The 314–317 span in the standard citation covers all three topics in the column; the Heavenly Mother material occupies pp. 314–317, and the hymn discussion pp. 316–317. Cannon was First Counselor to Wilford Woodruff and editor of the magazine, so this is the First Presidency correcting a church periodical in that periodical — the earliest clean retreat-and-reframe in the dataset, and the template for a boundary that gets redrawn in almost the same terms much later (compare hinckley-daughters-of-god-1991, which affirms the inference to a Mother in Heaven and forbids praying to her). Three conflation traps this entry should not be used to spring. First, the trigger is Elizabeth Cady Stanton's Woman's Bible, not Latter-day Saint teaching; the Harrison hymn is reached as a domestic application of an argument aimed outward. Second, Cannon does not deny Heavenly Mother's existence, and the dataset should not cite him for that. Third, the sanction is on worship and on Godhead membership, not on the generative doctrine — nothing in the column touches eternal increase or spirit birth, which continued to be taught without interruption."
+  },
+  {
+    "id": "whitney-exponent-mother-mortality-1895",
+    "sourceType": "original",
+    "citesId": ["o-my-father"],
+    "date": "1895-06-15",
+    "dateDisplay": "June 15, 1895",
+    "datePrecision": "day",
+    "title": "Orson F. Whitney: “our eternal Father and Mother were once man and woman in mortality”",
+    "speaker": "Orson F. Whitney",
+    "office": "Bishop of the Salt Lake City Eighteenth Ward (later a member of the Quorum of the Twelve Apostles)",
+    "venue": "Remarks made at the large Tabernacle, Salt Lake City, Sunday, May 12, 1895; printed in Woman's Exponent 24, no. 2 (June 15, 1895): 9–10",
+    "url": "https://archive.org/details/exponent1895/page/n40",
+    "hearsay": "A",
+    "correlationStatus": "never-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "whitney-exponent-mother-mortality-1895-q1",
+        "categories": ["HEAVENLY-MOTHER", "FATHER-MORTAL-EXPERIENCE"],
+        "referent": "father",
+        "excerpt": "Thirdly, that if we be the children of God; if it be true, as we have sung, and as I doubt not, that in the heavens parents are not single, but that we have a Mother as well as a Father there, then it follows that we, as the sons and daughters of God, bear within us the embryotic germs of Deity, and are capable by advancement, by progression, of becoming like our Father and our Mother in heaven; that it is possible, in other words, for man to become God, and if this be true, it teaches that there was a time when that being whom we now worship—that our eternal Father and Mother were once man and woman in mortality.",
+        "note": "The rarest thing in the Heavenly Mother corpus: past mortality predicated of the Mother, in print, by name. Two things make it unusual. First, the direction of the argument — Whitney does not begin from the Snow couplet and extend it; he begins from the forward claim (we may become as God), treats it as established, and runs it backwards as an entailment, “and if this be true, it teaches that there was a time when…” That is the symmetry inference stated outright by the speaker rather than read into him, which is why it is tagged rather than confined to a note. Second, the Mother is carried through the whole inference on the same terms as the Father, so the mortality claim is joint. Tagged FATHER-MORTAL-EXPERIENCE only, not FATHER-BECAME-GOD: what Whitney asserts is that the Father and Mother were once mortal, and the attainment is present in the argument's structure rather than in a statement about them, which is exactly the line the bare-couplet precedent draws. Referent “father” because the enum has no joint value; the point of the quote is that the Mother is included, and the entry note says so. The hymn allusion — “as we have sung… that in the heavens parents are not single” — is a direct paraphrase of Eliza R. Snow, hence the citesId to o-my-father."
+      },
+      {
+        "quoteId": "whitney-exponent-mother-mortality-1895-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "Secondly, that Deity, which created man and woman, male and female, in its own image, after its own likeness, must of necessity involve and comprehend the male and female principles.",
+        "note": "The second of the three thoughts Whitney draws from Genesis 1:26–27, and the premise the Mother claim rests on. Note the argument-form: Deity “must of necessity involve and comprehend” both principles, which is a deduction from the image-of-God text rather than an appeal to revelation. Same move Erastus Snow made in 1885 (snow-heavenly-mother-1885) and Joseph Fielding Smith would make in 1960 (jfs-agq-mother-in-heaven-1960) — the doctrine is defended from reason and scriptural inference throughout its history, which is the vulnerability the twentieth-century retreat later exploits."
+      },
+      {
+        "quoteId": "whitney-exponent-mother-mortality-1895-q3",
+        "categories": ["MANY-WORLDS"],
+        "excerpt": "Progress is written upon everything that God has made. The stars that glitter in the blue vault of heaven are educated worlds, homes of the redeemed and glorified or of those who, like ourselves, yet hope for glorification. This earth is but one of millions of planets that have preceded it, and have become the habitations of the righteous",
+        "note": "Plurality of worlds in the full nineteenth-century idiom, and note the temporal claim inside it: this earth is one of millions “that have preceded it.” A sequence of inhabited, glorified worlds stretching back before ours is the cosmological setting the backward inference in q1 assumes. Not tagged INFINITE-CHAIN — Whitney says the worlds are many and prior, not that the Gods over them form a line."
+      },
+      {
+        "quoteId": "whitney-exponent-mother-mortality-1895-q4",
+        "categories": [],
+        "excerpt": "These are well-known Mormon doctrines, and they ought to be well known Christian doctrines, for they are sustained by the Scriptures, which, when properly understood and interpreted, will be found to teach, by implication at least, these truths.",
+        "note": "Untagged register datum, and the sentence that immediately follows q1. “Well-known Mormon doctrines” — in 1895 the divine mortality of the Heavenly Mother could be described from the Tabernacle stand as common knowledge and offered to Christendom as something it should adopt. Compare the handling a century later in hinckley-1997 and essay-2015. Note the small hedge that survives even here: the scriptures teach it “by implication at least.”"
+      }
+    ],
+    "notes": "Verified verbatim against the Internet Archive scan of the bound Woman's Exponent for 1895 (item exponent1895, IA leaf 41 = printed p. 9; the address continues onto p. 10). The masthead on that leaf reads “Vol. 24 … SALT LAKE CITY, UTAH, JUNE 15, 1895 … No. 2,” and the piece is headed “BISHOP O. F. WHITNEY” with the bracketed line “[Remarks made at the large Tabernacle, Salt Lake City, Sunday, May 12, 1895.]” Whitespace and line-break artifacts in the OCR have been normalized in the excerpts; no words are changed, and the printed spelling “embryotic” is preserved. Provenance chain: the target list flagged this item from Paulsen and Pulido, “‘A Mother There': A Survey of Historical Teachings about Mother in Heaven,” BYU Studies 50/1, p. 89 n.31 (https://corpus.noahairmet.com/b/50-1-0c17/89), whose summary — that Whitney taught both a Mother in Heaven and her mortal probation — is confirmed by the primary text quoted here. Correlation graded never-official: the Woman's Exponent was an independently produced periodical, edited and published by Latter-day Saint women without Church ownership, though closely associated with the Relief Society and freely printing General Authority remarks. The occasion matters: this is a Sunday Tabernacle meeting at which women spoke first (Whitney is introduced as following “the eloquent ladies who have already addressed you”), the topic in the room was woman suffrage, and Whitney's Heavenly Mother argument is offered as theological support for it. Hearsay graded A on the convention that published periodicals rate A, with the caveat that the Exponent prints an unsigned report of oral remarks delivered a month earlier and no reporter is named; the text is smooth and continuous and reads as a prepared transcript rather than as notes, but it is not a stenographic record and the wording should not be pressed word by word. This is the strongest single datum in the dataset for the Mother's past mortality, and it should be read against whitney-father-and-mother-1907, where the same man, now an apostle speaking in general conference, makes the Heavenly Mother argument again and drops the mortality half entirely."
   },
   {
     "id": "roberts-plurality-of-gods-era-1898",
@@ -1335,6 +1416,49 @@
       }
     ],
     "citesId": ["snow-couplet"]
+  },
+  {
+    "id": "cannon-power-of-procreation-1899",
+    "sourceType": "original",
+    "date": "1899-04-06",
+    "dateDisplay": "April 6, 1899",
+    "datePrecision": "day",
+    "title": "George Q. Cannon: “the power of procreation is promised”",
+    "speaker": "George Q. Cannon",
+    "office": "First Counselor in the First Presidency",
+    "venue": "General conference, first day afternoon session, Salt Lake Tabernacle (Conference Report, April 1899, pp. 17–21)",
+    "url": "https://archive.org/details/conferencereport1899a/page/n18",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "cannon-power-of-procreation-1899-q1",
+        "categories": [],
+        "excerpt": "That the man who has done his duty in his sphere here on the earth faithfully will have an enlarged sphere hereafter; will have greater power, more opportunities for development; shall have every God-like power; every power and attribute that we have derived from our ancestry—that is, from God our Eternal Father. We shall have room for infinite gratification, unlimited gratification, going on from one degree of power to another, and exercising it as our Father exercises it in the midst of the eternities.",
+        "note": "The run-up, kept untagged on purpose. “Every God-like power” and “exercising it as our Father exercises it” is theosis at full strength and asserts nothing generative by itself — the A-framing trap, handled the same way as whitney-father-and-mother-1907-q3. What makes the passage matter is that Cannon then names the power. Printed p. 20."
+      },
+      {
+        "quoteId": "cannon-power-of-procreation-1899-q2",
+        "categories": ["FORWARD-EXPLICIT"],
+        "excerpt": "If I have children; if I have a wife, I shall have them in eternity. I shall preside over that family no matter how small it may be, or how large it may extend. They will be my kingdom; for this is the promise of God. … that that union shall be perpetuated throughout eternity, and that there shall be an increase of that love and of that union and an increase also of that power, because the power of procreation is promised—the greatest power that man possesses on the earth. That is promised unto those who are faithful.",
+        "note": "The naming. “Increase” is not left as a euphemism for one sentence longer than it takes to say what it is: the power of procreation, identified as the same power man possesses on earth, promised to the faithful. This is why the entry is FORWARD-EXPLICIT rather than FORWARD-EUPHEMISM. Elision covers Cannon's intervening sentence about those with whom our lives are entwined. Printed p. 20."
+      },
+      {
+        "quoteId": "cannon-power-of-procreation-1899-q3",
+        "categories": ["FORWARD-EXPLICIT", "MANY-WORLDS"],
+        "excerpt": "Therefore, it can be said of us as it was said of our Lord and Savior, \"to the increase of His kingdom there shall be no end.\" Why? Because of this principle that I spoke of—the principle of procreation. By it, and through that principle the worlds are peopled. The planetary orbs which stud our heavens so gloriously are peopled by that principle—the principle of procreation. God possesses it, and we as His children inherit the power. If we do what is right He promises to bestow it upon us.",
+        "note": "The cosmological reach, in three sentences: procreation peoples the worlds, God possesses it, and His children inherit it. MANY-WORLDS is earned outright — “the planetary orbs which stud our heavens.” Note what is *not* here, and why the entry stops where it does: Cannon never says spirit children and never describes a premortal birth, so SPIRIT-BIRTH-VIVIPAROUS would be retrojection even though the mechanism claim in q4 points that way. What he says is that the peopling of worlds runs on the principle we already know. Printed p. 20."
+      },
+      {
+        "quoteId": "cannon-power-of-procreation-1899-q4",
+        "categories": ["FORWARD-EXPLICIT"],
+        "implied": true,
+        "excerpt": "I know the world say this is materialistic; that we take wrong views of this; that we are not spiritual enough. Well, I am willing to have that charge levelled against me. I want to be materialistic in this sense. I want to enjoy that which we enjoy here, purified, exalted, and increased beyond my comprehension or your comprehension at the present time; and we are to have this glory and this power; the Lord promises it unto us.",
+        "note": "Marked implied because the antecedent of “that which we enjoy here” is supplied by the previous sentences rather than restated — but the antecedent is unambiguous in context, and this is the closest Cannon comes to a mechanism: not a new power but the earthly one continued, “purified, exalted, and increased.” The register is worth as much as the doctrine. The materialism charge is anticipated, embraced, and answered from the pulpit at general conference by a member of the First Presidency, in the same conference year Talmage published the Articles of Faith. Printed p. 20."
+      }
+    ],
+    "notes": "Verified word-for-word against the Church History Library preservation scan of the printed Conference Report on the Internet Archive (item conferencereport1899a, file conferencereport691chur_djvu.txt; the address runs printed pp. 17–21 and every excerpt above is on p. 20), not merely against the Pulpit vault file talks/english/conference-reports/1899/1899-04-cannon-scriptures-and-living-revelation.md. That distinction matters here: the vault transcription of this talk renders nearly every sentence-final period as an em dash, a systematic transcription artifact that is not in the printed page, so the excerpts above follow the scan rather than the vault. OCR line-break hyphenation removed and spacing around dashes normalized; two OCR misreadings in the quoted span (\"gloriouslv\", \"sixtj'-nine\") corrected against the surrounding text. No words changed. Conference Report, so A; historical-official. The address is a survey of what the Restoration has done for the world in sixty-nine years — the printed subject line above it reads \"The great and beneficent physical and spiritual effects brought to the world by the organization of the Church\" — and the peroration on procreation arrives as the answer to \"what has the organization of this Church done for us in regard to the future?\", not as a doctrinal excursus. It is the sixty-ninth anniversary of the Church's organization to the day, which is what \"sixty-nine years ago today\" in the closing paragraphs fixes the date on. Read directly against cannon-female-deities-1895: four years earlier the same man, in the same office, shut down a Heavenly Mother hymn as approaching worship, and the 1895 entry's third caveat — that the sanction fell on worship and Godhead membership, not on the generative doctrine — is confirmed here in the plainest possible way. Cannon preaches procreation as an inherited divine power in general conference with no hedge at all."
   },
   {
     "id": "nelson-scientific-aspects-1904",
@@ -1801,6 +1925,98 @@
     "notes": "The edition diff is real and both states are verified verbatim. Chain of witnesses, all read as full text and page-anchored: first edition (Deseret News, 1899), p. 421 — clause present, confirmed independently in two scans (BYU's articlesoffaiths1899talm leaf 439 and Google's articlesfaithas00talmgoog); second edition (December 1901), p. 421 — present; fifth edition (November 1909), p. 421 — present; tenth edition (February 1917), p. 421 — absent, read through the eleventh edition (October 1919), whose Publishers' Note states it was printed from the tenth edition's plates; 1924 revision, p. 409 — absent and explicitly disclaimed. The tenth edition is therefore the edition that dropped it, and its own Preface (signed Salt Lake City, February 1917) says the issue “presents some departures from the earlier imprints in wording, in the substitution of several rewritten paragraphs” — Talmage announces that paragraphs were rewritten without saying which. NOT VERIFIED, and deliberately not asserted anywhere above: the footnote-mined scholarly claim that the “from kingdom to kingdom” language was originally inserted at the request of the First Presidency's reviewing committee. The 1899 Preface names that committee (Francis M. Lyman, Abraham H. Cannon and Anthon H. Lund of the Twelve; George Reynolds of the Seventy; John Nicholson; Karl G. Maeser) and thanks them for their “painstaking and efficient examination of the manuscript prior to the delivery of the lectures,” but nothing in the printed book attributes this clause to them; that half of the claim rests on Talmage's journals and should be run down there before it is published. Two corrections for the maintainer regarding the existing talmage-af-1899 entry, both found while doing this diff: (1) its q2 reads “the opposition of all the sects,” but the 1899 first edition reads “the opposition of all other sects” — “all the sects” is the tenth/eleventh-edition wording, and the 1924 revision reads “the opposition of the sects”; (2) the venue gives the progression passage as “p. 430 in early printings,” but in the 1899 first edition it is p. 442; p. 430 is its page in the 1924 A Study of the Articles of Faith. Both discrepancies trace to the same cause as the GSA witness note above — the corpus e-text of Articles of Faith is a post-1917 text, not the first edition."
   },
   {
+    "id": "lectures-on-faith-decanonized-1921",
+    "sourceType": "original",
+    "date": "1921-01-01",
+    "dateDisplay": "1921",
+    "datePrecision": "year",
+    "title": "The Lectures on Faith removed from the Doctrine and Covenants",
+    "speaker": "Doctrine and Covenants revision committee (George F. Richards, chair; Anthony W. Ivins, Melvin J. Ballard, James E. Talmage, John A. Widtsoe, Joseph Fielding Smith)",
+    "office": "Committee of the Quorum of the Twelve Apostles appointed by the First Presidency",
+    "venue": "Explanatory introduction to the 1921 edition of the Doctrine and Covenants, p. v",
+    "url": "https://archive.org/details/doctrinecovenant0000jose_n3n7/page/n10",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "witnesses": [
+      {
+        "scribe": "Joseph Smith Papers transcript of the 1835 Doctrine and Covenants, Lecture Fifth",
+        "url": "https://www.josephsmithpapers.org/paper-summary/doctrine-and-covenants-1835/60",
+        "note": "Printed pp. 52–53; the paragraph quoted below breaks across the two pages. The catechism quoted below is printed p. 55 (image 63)."
+      },
+      {
+        "scribe": "Joseph Smith Papers transcript of the 1835 Doctrine and Covenants, Lecture Third",
+        "url": "https://www.josephsmithpapers.org/paper-summary/doctrine-and-covenants-1835/46",
+        "note": "Printed p. 38, §§12–15 — the attribute list, including the always-God clause."
+      },
+      {
+        "scribe": "Current Doctrine and Covenants introduction, churchofjesuschrist.org",
+        "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/introduction",
+        "note": "The removal notice is still printed in the current hosted scripture, in reworded form. See the entry note for the wording change."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "lectures-on-faith-decanonized-1921-q1",
+        "categories": [],
+        "referent": "father",
+        "excerpt": "There are two personages who constitute the great matchless, governing and supreme power over all things—by whom all things were created and made … They are the Father and the Son: The Father being a personage of spirit, glory and power: possessing all perfection and fulness: The Son, who was in the bosom of the Father, a personage of tabernacle, made, or fashioned like unto man, or being in the form and likeness of man …",
+        "note": "The removed text itself — Lecture Fifth, §2, 1835 Doctrine and Covenants pp. 52–53; the sentence breaks across the page turn at “supreme power over / all things,” and is quoted continuously here. Untagged deliberately. This is a claim about what the Father presently is (unembodied spirit, against the Son's tabernacle), not a claim about whether he was always God, and tagging it FATHER-ALWAYS-GOD would be reading the 1844 controversy backwards into an 1835 sentence that is not addressing it. It earns its place because it is the specific incompatibility: by 1843 the Prophet was teaching that “The Father has a body of flesh and bones as tangible as man's” (D&C 130:22), and by April 1844 that the Father “dwelt on an earth” — and Lecture 5 was still bound into the canon saying the opposite about the Father's nature. Note also the count: the Godhead here has two personages, with the Holy Spirit identified as the shared mind of the Father and the Son rather than as a third personage."
+      },
+      {
+        "quoteId": "lectures-on-faith-decanonized-1921-q2",
+        "categories": [],
+        "referent": "father",
+        "excerpt": "Q. How many personages are there in the Godhead? A. Two: the Father and the Son. … Q. What is the Father? A. He is a personage of glory and power.",
+        "note": "The catechism attached to Lecture Fifth, 1835 Doctrine and Covenants p. 55 — the form in which this material was actually taught, since the catechisms were written to be memorized by elders and missionaries. Recorded because it shows the two-personage Godhead was not a stray phrase in a discursive lecture but the drilled answer. Also untagged, for the reason given on q1."
+      },
+      {
+        "quoteId": "lectures-on-faith-decanonized-1921-q3",
+        "categories": ["FATHER-ALWAYS-GOD"],
+        "referent": "father",
+        "excerpt": "12 From the foregoing testimonies, we learn the following things respecting the character of God. 13 First, That he was God before the world was created, and the same God that he was, after it was created. … 15 Thirdly, That he changes not, neither is there variableness with him; but that he is the same from everlasting to everlasting, being the same yesterday to-day and forever; and that his course is one eternal round, without variation.",
+        "note": "Affirmation, and the sharpest one in the removed material — Lecture Third, §§12–15, 1835 Doctrine and Covenants p. 38. God was God before the world was created and does not change. Read against the text the Church would print in the Ensign fifty years after the removal: “We have imagined and supposed that God was God from all eternity. I will refute that idea” (see ensign-king-follett-1971 and kfd-1844). Between 1835 and 1844 the canon contained both propositions; after 1921 it contained only the later one, and it contained it nowhere in the Doctrine and Covenants at all."
+      },
+      {
+        "quoteId": "lectures-on-faith-decanonized-1921-q4",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "Certain lessons, entitled “Lectures on Faith,” which were bound in with the Doctrine and Covenants in some of its former issues, are not included in this edition. Those lessons were prepared for use in the School of the Elders, conducted in Kirtland, Ohio, during the winter of 1834-1835; but they were never presented to nor accepted by the Church as being otherwise than theological lectures or lessons.",
+        "note": "The editorial act, in the only words the Church printed to explain it. Tagged RETREAT-REFRAME for what the sentence does rather than for any doctrine it states: it removes canonized text and reclassifies it retroactively, and the reclassification is a claim about 1835 that the 1835 volume contradicts — the Lectures were headed “the Doctrine of the Church of the Latter Day Saints,” the second part of that volume was headed “Covenants and Commandments,” and the 1835 First Presidency's preface said the Lectures embraced “the important doctrine of salvation” and that they were prepared to “answer to every principle advanced.” Note what the notice does not say: it gives no reason connected to the Godhead. The Godhead reason surfaces only in private correspondence — see the entry note."
+      }
+    ],
+    "notes": "Verified text, source by source, because this entry stitches three documents together. (1) The 1921 explanatory notice was read verbatim from a printing of the 1921 edition digitized at archive.org (item doctrinecovenant0000jose_n3n7, catalogued 1923, notice on p. v, IA leaf 11); the wording quoted here is the printed wording, and it differs slightly from the form usually reprinted in the secondary literature, which drops the “to” and reads “never presented nor accepted.” (2) Lectures Third and Fifth were read verbatim from the Joseph Smith Papers transcripts of the 1835 first edition, pp. 38, 52–53, and 55, not from a modern reprint. (3) The committee's composition and chronology are received scholarship, not something verified here from committee minutes: the standard account is Richard S. Van Wagoner, Steven C. Walker, and Allen D. Roberts, “The ‘Lectures on Faith’: A Case Study in Decanonization,” Dialogue 20/3 (1987): 71–77 (https://corpus.noahairmet.com/b/v20n03-e92a/73), which records that the First Presidency appointed George F. Richards to chair the committee on 18 March 1920 with Ivins, Ballard, and Talmage, that Widtsoe and Joseph Fielding Smith joined by June, and that the group turned to the Doctrine and Covenants after finishing the Book of Mormon. Treat the committee roster and dates as that article's reporting. The Godhead motive is likewise received rather than official: Van Wagoner et al. print Joseph Fielding Smith's 1940 reply to John W. Fitzgerald listing four reasons for the removal, of which the last two are that the Lectures “are not complete as to their teachings regarding the Godhead” and that Talmage and the committee thought it “better not to have them bound in the same volume as the commandments or revelations” so as “to avoid confusion and contention on this vital point of belief.” That is a private letter written nineteen years after the fact by one committee member, and it is the closest thing to an official rationale that exists; the printed notice offers none. Dated at year precision to the 1921 edition, since the removal has no announcement date — there was no vote, no conference action, and no notice beyond the paragraph quoted in q4. Correlation graded historical-official: the 1921 edition was the Church's own scripture. One live afterlife worth recording: the current hosted Doctrine and Covenants introduction still reports the removal, but has rewritten both the setting and the reason — “Beginning with the 1835 edition, a series of seven theological lessons was also included; these were titled the Lectures on Faith. These had been prepared for use in the School of the Prophets in Kirtland, Ohio, from 1834 to 1835. Although profitable for doctrine and instruction, these lectures have been omitted from the Doctrine and Covenants since the 1921 edition because they were not given or presented as revelations to the whole Church.” The 1921 committee said the Lectures had never been accepted as anything other than lectures; the present text says they were not revelations, which is a narrower and less contestable claim, and it adds the concession that they are “profitable for doctrine and instruction.” Two rationales, a century apart, for one deletion."
+  },
+  {
+    "id": "clawson-parents-in-heaven-1924",
+    "sourceType": "original",
+    "date": "1924-10-03",
+    "dateDisplay": "October 3, 1924",
+    "datePrecision": "day",
+    "title": "Rudger Clawson: “suffice it to say we also have a mother in heaven”",
+    "speaker": "Rudger Clawson",
+    "office": "President of the Quorum of the Twelve Apostles",
+    "venue": "General conference, first day afternoon session, Salt Lake Tabernacle (Conference Report, October 1924, pp. 24–25)",
+    "url": "https://archive.org/details/conferencereport1924sa/page/n25",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "clawson-parents-in-heaven-1924-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "Now, brethren and sisters and friends, as a matter of fact, and as these scriptures which I have read, and many other scriptures, indicate, we existed before we came here and belonged to a great family of spirits in heaven. We speak of our Father in heaven. Jesus said, When you pray, say, \"Our Father which art in heaven.\" We were his children in spirit, in heaven, and suffice it to say we also have a mother in heaven. There were parents in heaven — parents and children.",
+        "note": "Printed under the side-head \"WE WERE THE CHILDREN OF GOD IN THE SPIRIT WORLD.\" The register is the finding. There is no hedge, no argument, no hymn and no appeal to authority: \"as a matter of fact\" governs the paragraph, and the Mother arrives inside a subordinate clause — \"suffice it to say\" — as something too settled to need establishing. Five years later, from the same pulpit, the same apostle will say \"we believe that we have a mother there,\" reach for \"O My Father\" to license it, argue for it from the existence of a father, and commend the whole idea as \"interesting and worthy of profound consideration\" (clawson-mother-there-1929). One speaker, one office, five years, and the epistemic frame has moved from fact to belief."
+      },
+      {
+        "quoteId": "clawson-parents-in-heaven-1924-q2",
+        "categories": [],
+        "excerpt": "Let me say to you that when the earth was organized and rolled into existence, the Lord had a great and glorious purpose in view, and it was that these sons and daughters in the spirit world should come down to the earth and inhabit it.",
+        "note": "The following paragraph, kept for setting. Untagged: the premortal family is doing structural work in the sermon — it is the answer to Bruno Lessing's \"conundrum\" about the object of life — but this sentence asserts nothing about a Mother or about generation."
+      }
+    ],
+    "notes": "Verified word-for-word against the Church History Library preservation scan of the printed Conference Report on the Internet Archive (conferencereport1924sa, printed pp. 24–25), and separately present in the Pulpit vault file talks/english/conference-reports/1924/1924-10-06-rudger-clawson-remarks-6.md, whose Final Review collated leaves n24–n27 at 0.991 similarity. Conference Report, so A; historical-official. Two provenance corrections the vault file does not yet carry, both settled on the scan. First, the vault frontmatter labels this the First Day Morning Session; the printed Report puts it in the AFTERNOON SESSION that convened at 2 o'clock, immediately after Orson F. Whitney's morning remarks, which is also what the opening sentence says (\"I am dependent this afternoon\"). Second, the filename's \"1924-10-06\" is a collection artifact of the same sequential-numbering ingest that corrupted the 1929 files; the October 1924 conference ran October 3–5 and this is the first day, October 3. The printed Report supplies no formal talk title, only side-heads; \"A Conundrum\" in the vault is the first of them. Filed as an original with no citesId, and that absence is the point of comparison with clawson-mother-there-1929, which cites the hymn twice: in 1924 Clawson reaches the Mother without Eliza R. Snow, exactly as Orson F. Whitney had in 1907 (whitney-father-and-mother-1907)."
+  },
+  {
     "id": "clawson-mother-there-1929",
     "sourceType": "original",
     "citesId": ["o-my-father"],
@@ -1906,6 +2122,48 @@
     "citesId": ["snow-couplet"]
   },
   {
+    "id": "widtsoe-god-title-attainment-1943",
+    "sourceType": "original",
+    "date": "1943-12-01",
+    "dateDisplay": "December 1943",
+    "datePrecision": "month",
+    "title": "John A. Widtsoe: “God” as a title describing an attainment — plurality without a chain",
+    "speaker": "John A. Widtsoe",
+    "office": "Member of the Quorum of the Twelve Apostles and co-editor of the Improvement Era",
+    "venue": "“Evidences and Reconciliations: LXXIII — Why Are the Words ‘God’ and ‘Father’ Applied to Several Personages?” Improvement Era 46, no. 12 (December 1943): 769",
+    "url": "https://archive.org/details/improvementera4612unse/page/n33",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "widtsoe-god-title-attainment-1943-q1",
+        "categories": [],
+        "excerpt": "It is evident, therefore, that since the Father, Son, and Holy Ghost are distinct personages, the word “God” is not only a name, but may be used also as a title describing an attainment or office. … In the same manner the title “God” may be applied to anyone who has attained to Godhood, that is, who has risen so high as to partake sufficiently of the essence of divinity.",
+        "note": "The pivot of the whole column, and untagged because by itself it is a lexical claim rather than a doctrinal one: “God” is sometimes a name and sometimes a rank. Recorded because everything Widtsoe does with the plurality-of-gods material downstream depends on this distinction, and because the distinction is precisely what makes a regress unnecessary. If “god” is a rank, a plurality of gods is a fact about promoted creatures, not a fact about God's ancestry."
+      },
+      {
+        "quoteId": "widtsoe-god-title-attainment-1943-q2",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "This implies that many personages may have attained the power and place of Godhood. This does not make them in any sense coequal with God, or with his Son, or the Holy Ghost. Those who are denominated gods have a rank in the eternal councils, with corresponding power to help foster the purposes of the Father. There may be many generals in an earthly government, but only one commander-in-chief. Even so in the government of heaven.",
+        "note": "Tagged RETREAT-REFRAME, and the tag is a judgment call that should be stated plainly rather than buried. Widtsoe is not declining a question and not denying a doctrine — he keeps the plurality of gods entirely. What he does is re-describe it as a hierarchy of rank under one commander-in-chief, which converts a doctrine that in Orson Pratt's and B. H. Roberts's hands generated an endless line of Gods into a static organizational chart with the Father permanently at the top. The reframing is the datum; a reader who thinks the category should be reserved for explicit retreats can discount the tag and keep the quote. Note also that the military analogy does the work an argument would otherwise have to do: it makes subordination feel obvious without ever addressing whether the commander-in-chief himself was once a general."
+      },
+      {
+        "quoteId": "widtsoe-god-title-attainment-1943-q3",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "The conditions under which Godhood may be attained have not been set forth fully. Necessarily so high a place can be obtained only by rigid obedience to God's laws. Those who aspire to such exaltation must be sealed as man and wife for time and eternity. Then they may continue the work of the Father in behalf of the waiting intelligences in the spirit world. Their “glory shall be a fulness and a continuation of the seeds forever and ever.”",
+        "note": "The generative claim, delivered entirely in euphemism, which is why the tag is FORWARD-EUPHEMISM and not FORWARD-EXPLICIT. “Continue the work of the Father in behalf of the waiting intelligences” names no offspring and no mechanism; the only concrete word in the sentence is the D&C 132:19 quotation, and “a continuation of the seeds” is itself the scriptural euphemism. Compare widtsoe-exaltation-celestial-1948, where the same author writing five years later says flatly that “Spiritual children are begotten by them” — the same doctrine, one column stating it and one column gesturing at it, which is a useful measure of how much the plainness varies with the question being answered rather than with the era."
+      },
+      {
+        "quoteId": "widtsoe-god-title-attainment-1943-q4",
+        "categories": [],
+        "excerpt": "The word “father” is also applied to different personages. God is the father of the spirits of all men. They were begotten spiritually by him in the pre-existent state. The relationship between God and man as father and son is real.",
+        "note": "Untagged, and the restraint is the point. “Begotten spiritually by him” is begetting language, but it is unaccompanied: no mother, no gestation, no birth, and no organization-versus-begetting statement either, so it will not carry SPIRIT-BIRTH-VIVIPAROUS and will not carry SPIRIT-BIRTH-ADOPTION. Recorded as the mid-century default formula — real fatherhood asserted, mechanism unspecified — against which the explicit statements on both sides (fp-1909, jfs-agq-mother-in-heaven-1960 for viviparous; kfd-1844 for organization) should be read."
+      }
+    ],
+    "notes": "Verified verbatim against the Internet Archive scan of the Improvement Era, December 1943 (item improvementera4612unse, IA leaf 34 = printed p. 769); the issue masthead confirms Volume 46, Number 12, and the contents page lists the piece as “Evidences and Reconciliations: LXXIII — Why Are the Words ‘God’ and ‘Father’ Applied to Several Personages? John A. Widtsoe 769.” Whitespace and line-break hyphenation from the OCR have been normalized in the excerpts; no words are changed. The column, not the book, is cited on purpose: “Evidences and Reconciliations” ran as a monthly numbered feature in the Era from the late 1930s and was only afterwards gathered into three Bookcraft volumes (1943, 1947, 1951) and then rearranged and retitled by G. Homer Durham for the one-volume 1960 edition, where this piece appears as “Why Are the Terms ‘God’ and ‘Father’ Applied to Several Personages?” The book texts are edited; the Era is the first printing and the form in which members actually read it. Correlation graded historical-official: the Improvement Era was the Church's official organ, its masthead named Widtsoe as an editor alongside the Church President, and Widtsoe was a sitting apostle answering doctrinal questions in it — but the column was never curriculum and the collected volumes were commercial. This is the cleanest single statement of the twentieth-century domestication of the plurality of gods, and it should be read against pratt-infinite-gods-1855 and roberts-endless-line-1895, which answer the same question by extending the series backwards, and against jfs-agq-plural-gods-1958, where Joseph Fielding Smith handles it a decade and a half later."
+  },
+  {
     "id": "richards-eternal-increase-1945",
     "sourceType": "original",
     "date": "1945-04-06",
@@ -1928,6 +2186,87 @@
       }
     ],
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1945/1945-04-stephen-l-richards-teachings-of-the-church-set-forth-in-a-letter.md, transcribed from the Internet Archive scan of the printed Conference Report (conferencereport1945a, leaves 27–34) with reading order reconstructed from the DjVu XML. Conference Report, so A. The vault file is status draft and the surrounding paragraph carries two visible OCR artifacts (“p'romise”, “Creator of. the universe”); the excerpt is trimmed at both ends to a clean run and the elisions mark that trimming, not omitted argument — a maintainer should re-check this one against the page image before publication. The address is Richards reading and expounding a letter he had written setting out Church teachings for an enquirer, which is why the tone is expository. The passage stands two paragraphs after his statement that exaltation is “a never-ending experience in eternal progression and achievement,” and immediately before he tells the congregation that “much of this may seem highly theoretical and ethereal to you.”"
+  },
+  {
+    "id": "hunter-continuation-of-seeds-1947",
+    "sourceType": "original",
+    "citesId": ["dc-132"],
+    "date": "1947-10-04",
+    "dateDisplay": "October 4, 1947",
+    "datePrecision": "day",
+    "title": "Milton R. Hunter: the beget-spirit-children gloss, in brackets inside D&C 132",
+    "speaker": "Milton R. Hunter",
+    "office": "First Council of the Seventy",
+    "venue": "General conference, second day afternoon session (Conference Report, October 1947, pp. 95–100)",
+    "url": "https://archive.org/details/conferencereport1947sa/page/n95",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, October 1947 (118th Semi-Annual Conference; call no. M204.1 A1 1880, 1897–)",
+        "url": "https://catalog.churchofjesuschrist.org/record/955fd4ca-b5f3-4616-ba86-03f45a875bec/0?view=browse",
+        "note": "Authoritative catalog record for the printed Report; the Church's own online conference archive does not reach back before 1971."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "hunter-continuation-of-seeds-1947-q1",
+        "categories": ["FORWARD-EXPLICIT"],
+        "excerpt": ". . . and they shall pass by the angels, and the gods, which are set there, to their exaltation and glory in all things, as hath been sealed upon their heads, which glory shall be a fulness and a continuation of the seeds forever and ever. [And the Prophet Joseph Smith said that promise meant to have the power to beget spirit children.]",
+        "note": "The bracket is printed in the Conference Report itself, inside Hunter's block quotation of D&C 132:19 and straddling the page break from p. 99 to p. 100 — verified on the scan. So the euphemism and its decoding are on the same printed line: the revelation says \"a continuation of the seeds,\" and the Report's own square brackets say what that means. The spaced full stops at the head are the printed ellipsis of Hunter's quotation, not an editorial cut. Tagged FORWARD-EXPLICIT and not SPIRIT-BIRTH-VIVIPAROUS: \"beget spirit children\" names the offspring and the act but supplies no birth analogy and no physiology — that arrives eighteen months later in hunter-beget-spirit-children-1949 (\"on the same principle as we were born to our Heavenly Parents\"). Note also that the Joseph Smith attribution carries no citation, here or in 1949; the gloss is not in the King Follett Discourse, and no source is given for it either time."
+      },
+      {
+        "quoteId": "hunter-continuation-of-seeds-1947-q2",
+        "categories": [],
+        "excerpt": "When the great judgment day comes, and when all men and women who have been true and faithful in all things stand before the judgment seat of God the Eternal Father and Jesus the Christ to give an account of their actions, words, and thoughts, while in mortality, it shall be said unto them, Well done my beloved servants, enter ye into your exaltation. Receive your life eternal.",
+        "note": "The frame, kept because it shows what the address is: a talk to the youth of the Church about tobacco, liquor, and chastity, printed under the side-head \"Blessings Promised to Righteous.\" The generative doctrine is the payoff of a Word of Wisdom sermon, which is where a good deal of the mid-century material actually lives."
+      },
+      {
+        "quoteId": "hunter-continuation-of-seeds-1947-q3",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "This is life eternal, my brothers and sisters. This is the exaltation which the gospel of Jesus Christ promises those who love God and keep his commandments.",
+        "note": "The immediate closing gloss, and the whole euphemism problem in two sentences: having just printed \"the power to beget spirit children\" in brackets, Hunter re-covers it with the words \"life eternal\" and \"exaltation.\" Whoever heard only the summary heard nothing generative at all."
+      }
+    ],
+    "notes": "Verified word-for-word against the Church History Library preservation scan of the printed Conference Report on the Internet Archive (conferencereport1947sa, file conferencereport1181chur_djvu.txt, printed pp. 99–100; running head \"Saturday, October 4 — Second Day\"), and present in the Pulpit vault file talks/english/conference-reports/1947/1947-10-milton-r-hunter-conference-address.md, whose Final Review collated leaves n95–n100. Conference Report, so A; historical-official. The printed Report supplies no formal title. The OCR of the closing citation reads \"(D. 6 C. 132:19-22.)\" for \"(D. & C. 132:19-22.)\" and the excerpts above stop short of it. This entry completes a three-talk Milton R. Hunter arc that should be read in order, because the explicitness moves in one direction and then keeps moving: October 1947 (here) buries the decoding in square brackets inside a scripture block in a youth sermon; October 1948 (hunter-exalted-man-1948) reads the King Follett Discourse aloud and defines God as \"an exalted man,\" while closing the forward direction in pure euphemism; April 1949 (hunter-beget-spirit-children-1949) states the whole package unbracketed — procreation, spirit children, the Eternal Mother, the birth analogy, and spirit infancy. Three general conferences in eighteen months, one member of the First Council of the Seventy, and the doctrine going from a bracket to a paragraph. It also further corrects the Pulpit lane's decade table, which recorded \"spirit children\" as rare before the 1960s: the phrase is in the printed Conference Report in its full generative sense in 1947, two years earlier than the dataset previously showed."
+  },
+  {
+    "id": "widtsoe-exaltation-celestial-1948",
+    "sourceType": "original",
+    "date": "1948-03-01",
+    "dateDisplay": "March 1948",
+    "datePrecision": "month",
+    "title": "John A. Widtsoe: “Spiritual children are begotten by them”",
+    "speaker": "John A. Widtsoe",
+    "office": "Member of the Quorum of the Twelve Apostles and co-editor of the Improvement Era",
+    "venue": "“Evidences and Reconciliations: CXXI — How May Membership and Exaltation in the Celestial Kingdom Be Won?” Improvement Era 51, no. 3 (March 1948): 161, 189–190",
+    "url": "https://archive.org/details/improvementera5103unse/page/n33",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Improvement Era, March 1948, continuation pages",
+        "url": "https://archive.org/details/improvementera5103unse/page/n62",
+        "note": "The column runs from p. 161 and is concluded on pp. 189–190 under the running head EVIDENCES AND RECONCILIATIONS / (Concluded from page 189). The begetting sentence quoted below is on the continuation, not the opening page."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "widtsoe-exaltation-celestial-1948-q1",
+        "categories": [],
+        "excerpt": "It is a basic gospel doctrine that every person, except a very few, will be saved. It is an equally basic doctrine that salvation is graded. Every person will be placed in the hereafter according to his works.",
+        "note": "The opening, recorded as context so the entry shows the frame Widtsoe is working in. The whole column is an exposition of D&C 76 and the three kingdoms; the generative claim in q2 arrives at the very end, as the last thing said about the highest of the three degrees of the highest kingdom, and it arrives without being asked for by the question at the head of the column."
+      },
+      {
+        "quoteId": "widtsoe-exaltation-celestial-1948-q2",
+        "categories": ["FORWARD-EXPLICIT"],
+        "excerpt": "To enter the highest of these degrees in the celestial kingdom is to be exalted in the kingdom of God. Such exaltation comes to those who receive the higher ordinances of the Church, such as the temple endowment, and afterwards are sealed in marriage for time and eternity, whether on earth or in the hereafter. Those who are so sealed continue the family relationship eternally. Spiritual children are begotten by them. They carry on the work of salvation for the hosts of waiting spirits. They who are so exalted become even as the gods. They will be “from everlasting to everlasting, because they continue.”",
+        "note": "FORWARD-EXPLICIT, and it clears the bar with room to spare: new spiritual children, begotten after this life, by exalted sealed couples, who thereby “become even as the gods.” Note the passive voice — “Spiritual children are begotten by them” — which keeps the sentence explicit about the fact while saying nothing about the physiology, so this is B2/B3 without B4 and carries no SPIRIT-BIRTH-VIVIPAROUS tag. Note also what Widtsoe conspicuously does not do with the symmetry he has just created: the exalted carry on “the work of salvation for the hosts of waiting spirits,” which is the Father's present work described as the destination of the faithful, and he draws no backward inference from it at all. The symmetry is an observation about the shape of the claim, recorded here rather than tagged."
+      }
+    ],
+    "notes": "Verified verbatim against the Internet Archive scan of the Improvement Era, March 1948 (item improvementera5103unse); the opening is IA leaf 34 = printed p. 161, the concluding portion containing the begetting sentence is IA leaf 63 = printed pp. 189–190, and the contents page lists the piece as “Evidences and Reconciliations: CXXI — How May Membership and Exaltation in the Celestial Kingdom Be Won? John A. Widtsoe 161.” Whitespace and line-break hyphenation from the OCR have been normalized in the excerpts; no words are changed. Two scan artifacts disclosed so a re-checker does not think the text has been altered: the column opens with a decorative drop capital that the OCR reads as “Tt is a basic gospel doctrine,” restored here to “It”; and q2 runs across the p. 189 / p. 190 column break, so in the raw OCR reading order the sentence “Spiritual children are begotten by / them” is interrupted by an intervening advertisement. The two halves were verified separately against the scan and are quoted continuously. Cited to the Era column rather than to the collected Bookcraft volumes for the reasons given in widtsoe-god-title-attainment-1943; note that the 1960 Durham one-volume rearrangement prints this piece with the terrestrial glory compared to “the moon,” where the 1948 Era reads “as of the earth,” which is one more reason to quote the magazine. Correlation graded historical-official on the same basis as the 1943 column. Placement on the timeline: this sits between richards-eternal-increase-1945 and hunter-beget-spirit-children-1949 in a tight cluster of late-1940s General Authority statements that say the generative thing plainly, and it is the cleanest of them for the point that the claim was, at that moment, ordinary enough to appear as the closing paragraph of a general Q&A about the three degrees of glory rather than as a special topic. Read against widtsoe-god-title-attainment-1943, where the same author says the same thing in euphemism, and against the later retreat documented in hinckley-1997 and packer-parentage-1984."
   },
   {
     "id": "romney-mother-in-heaven-1948",
@@ -2110,6 +2449,49 @@
       }
     ],
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1949/1949-04-milton-r-hunter-conference-address.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1949a, leaves n65–n72); the file is status published. Conference Report, so A. The printed Report supplies no formal title. This is the strongest mid-century entry in the set and it corrects a gap in the frequency data: the Pulpit lane's decade table records “spirit children” as rare before the 1960s, but the phrase is here in 1949 in its full generative sense, not the modern sense of “we are God's spirit children.” Structurally the address is a survey of the degrees of glory; the passage sits under the side-head “Exaltation,” between the D&C 132:19–20 quotation and the D&C 132:17 quotation about angels who “cannot be enlarged” — so the affirmative statement and Eldred G. Smith's negative one (eldred-smith-no-increase-1948, eldred-smith-slavery-godhood-1950) are being preached from the same two verses in the same three-year stretch. Merged in v2 with the duplicate entry hunter-eternal-mother-1949, which recorded this same 4 April 1949 address under a second id with the same speaker, date, session, Conference Report pages, URL and vault file; the shared quote now appears once and the spirit-infancy passage is carried as q3. Hunter appears four times in the 1945–1949 conference corpus on this theme; this is the strongest and it supersedes the others — his October 1945 address (“Man, as a spirit, was begotten and born of heavenly parents… we are gods in embryo”) and his October 1949 remarks on Eternal Parents say less, in weaker language, than this one paragraph does. Together with romney-mother-in-heaven-1948 it shows that the mid-century quiet in the dataset is an artifact of collection, not of doctrine."
+  },
+  {
+    "id": "widtsoe-many-gods-1949",
+    "sourceType": "original",
+    "date": "1949-12-01",
+    "dateDisplay": "December 1949",
+    "datePrecision": "month",
+    "title": "John A. Widtsoe answers “Are There Many Gods?” — and never mentions a chain",
+    "speaker": "John A. Widtsoe",
+    "office": "Member of the Quorum of the Twelve Apostles and co-editor of the Improvement Era",
+    "venue": "“Evidences and Reconciliations: CXL — Are There Many Gods?” Improvement Era 52, no. 12 (December 1949): 833, 864",
+    "url": "https://archive.org/details/improvementera5212unse/page/n41",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Improvement Era, December 1949, continuation page",
+        "url": "https://archive.org/details/improvementera5212unse/page/n72",
+        "note": "The column runs from p. 833 and is concluded on p. 864, where the closing answer quoted below appears."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "widtsoe-many-gods-1949-q1",
+        "categories": [],
+        "excerpt": "The Latter-day Saints believe in one supreme God. He is God, the Father, to whom we direct our prayers, in the name of Jesus, the Christ. Associated with the Father are his Son, Jesus the Christ, and the Holy Ghost. These three separate and distinct personages constitute the Godhead, the governing council of the universe.",
+        "note": "The first sentence of an answer to the question “Are there many gods?” is “The Latter-day Saints believe in one supreme God.” Untagged, and recorded for the order: before Widtsoe concedes any plurality he establishes monotheistic priority, which is the shape of an apologetic reply rather than an exposition."
+      },
+      {
+        "quoteId": "widtsoe-many-gods-1949-q2",
+        "categories": [],
+        "excerpt": "This revealed doctrine of the composition and nature of the Godhead teaches that there are at least three Gods. … However, in the restored gospel the word god does not always refer to the governing council of the Gods; the Father, Son, and Holy Ghost. There are in the universe innumerable intelligent beings, some of whom have come to this earth. These beings, if faithful to the law of the Eternal Father, are steadily progressing toward his likeness. Those who have risen high in their progressive development are often spoken of as gods.",
+        "note": "The concession and its immediate containment. Untagged: “progressing toward his likeness” and “often spoken of as gods” is theosis, which by itself is not evidence for generative exaltation and not evidence for a divine ancestry, and the whole point of this dataset is to refuse the slide. Note the two senses of “gods” Widtsoe is keeping apart — the Godhead's three, and the promoted many — and note that neither sense involves anyone standing behind the Father."
+      },
+      {
+        "quoteId": "widtsoe-many-gods-1949-q3",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "While then, there are many gods there should nevertheless be a clear distinction between the Holy Trinity and those who because of righteous labors have won the title of gods. … The answer to the question at the head of this writing is that there are many gods.",
+        "note": "The verdict, and the same reframing move as widtsoe-god-title-attainment-1943-q2, applied six years later to the question in its most direct form. The tag carries the same caveat: Widtsoe affirms the plurality outright — his last sentence is “there are many gods” — and what he reframes is its content, from a series that could extend in either direction into a two-tier arrangement of an unmoved Trinity above a promoted class. Also worth recording for its own sake: the bulk of the column between q2 and this verdict is spent defusing the Adam–God sermon, which tells you what the question “are there many gods?” had come to mean to Era readers by 1949."
+      }
+    ],
+    "notes": "Verified verbatim against the Internet Archive scan of the Improvement Era, December 1949 (item improvementera5212unse); the opening is IA leaf 42 = printed p. 833, the conclusion is IA leaf 73 = printed p. 864, and the contents page lists the piece as “Evidences and Reconciliations: CXL — Are There Many Gods? John A. Widtsoe 833.” Whitespace and line-break hyphenation from the OCR have been normalized in the excerpts; no words are changed. One scan artifact disclosed: the column opens with a decorative drop capital that the OCR reads as “'T'he Latter-day Saints believe in one supreme God,” restored here to “The.” Cited to the Era rather than the collected volumes for the reasons given in widtsoe-god-title-attainment-1943; the 1960 Durham rearrangement prints this as chapter II.4 with the internal Brigham Young quotations from Discourses of Brigham Young dropped. Correlation graded historical-official on the same basis. This entry earns its place on the timeline by omission, and the omission should be stated rather than tagged. Asked flatly whether there are many gods, a sitting apostle in the Church's official magazine answers yes, cites Joseph Smith's plurality-of-gods sermon at length, cites D&C 76:58, 132:20, and 121:32, spends a third of the column disentangling Brigham Young's Adam sermon — and never once raises the question of whether the Father has a Father. Ninety-four years earlier Orson Pratt answered a version of the same question with an infinite series (pratt-infinite-gods-1855); fifty-four years earlier B. H. Roberts answered it with “an endless line of Gods, stretching back into the eternities” (roberts-endless-line-1895). By 1949 the same question produces a hierarchy chart. Read alongside jfs-agq-plural-gods-1958, where Joseph Fielding Smith fields the plurality question nine years later, and jfs-agq-as-man-is-1958, where he declines the backward question explicitly rather than simply passing it by."
   },
   {
     "id": "eldred-smith-slavery-godhood-1950",
@@ -2717,6 +3099,77 @@
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1970/1970-04-mcconkie-salvation-is-a-family-affair.md, whose Final Review collated the full body against the archive.org scan conferencereport1970a, leaves n27–n30, word for word, with no lexical fixes needed; seven bled-in printed side-heads were converted to Markdown headings and trailing material belonging to the following speaker was stripped in an earlier pass. One shared OCR artifact survives elsewhere in the talk (“prepare arid qualify us”), reproduced identically by the independent witness and therefore left alone; it does not touch any quoted excerpt. Conference Report, so A; historical-official. Filed as a citation because the entry's Heavenly Mother content is the hymn — McConkie adds no argument about her, and the talk's own argument is about the family unit — but the two euphemism quotes are carried because this is McConkie establishing the vocabulary he will police for the next two decades. Read against mcconkie-heresies-1980 and mcconkie-mormon-doctrine."
   },
   {
+    "id": "ensign-king-follett-1971",
+    "sourceType": "citation",
+    "citesId": ["kfd-1844"],
+    "date": "1971-04-01",
+    "dateDisplay": "April and May 1971",
+    "datePrecision": "month",
+    "title": "The Ensign reprints the King Follett Sermon in two parts",
+    "speaker": "Joseph Smith, reprinted by the Ensign",
+    "office": "President of the Church (d. 1844); text reprinted under the Ensign's “Classics in Mormon Thought” series",
+    "venue": "“The King Follett Sermon,” Ensign, April 1971, 13–14, and Ensign, May 1971, 13",
+    "url": "https://www.churchofjesuschrist.org/study/ensign/1971/04/the-king-follett-sermon",
+    "hearsay": "A",
+    "hearsayByQuote": {
+      "ensign-king-follett-1971-q2": "C",
+      "ensign-king-follett-1971-q3": "C",
+      "ensign-king-follett-1971-q4": "C",
+      "ensign-king-follett-1971-q5": "C"
+    },
+    "correlationStatus": "current-correlated",
+    "referent": "father",
+    "witnesses": [
+      {
+        "scribe": "Ensign, May 1971 — part two",
+        "url": "https://www.churchofjesuschrist.org/study/ensign/1971/05/the-king-follett-sermon",
+        "note": "The concluding installment, carrying its own headnote and the intelligence/eternalism material."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "ensign-king-follett-1971-q1",
+        "categories": [],
+        "excerpt": "The King Follett Sermon, one of the classics of Church literature, was given by the Prophet Joseph Smith at the April 7, 1844, conference of the Church in Nauvoo, Illinois. Some twenty thousand Saints were assembled. … Longhand notes of the discourse were made by Willard Richards, Wilford Woodruff, Thomas Bullock, and William Clayton. This reprint was taken from the Documentary History of the Church, vol. 6, pages 302–17. That volume notes: “This was not a stenographic report, but a carefully and skillfully prepared one made by these men who were trained in reporting and taking notes. Evidently, there are some imperfections in the report and some thoughts expressed by the Prophet which were not fully rounded out and made complete. …”",
+        "note": "The whole editorial apparatus the Ensign supplies, and the reason this entry is worth having as its own row: the Church, in 1971, names the discourse “one of the classics of Church literature,” prints it under a standing series heading “Classics in Mormon Thought,” and does so with no doctrinal hedge whatsoever. The only caution offered is textual — the DHC's own admission that the report is imperfect — and even that is quoted from the source rather than issued by the Ensign in its own voice. The headnote does name all four longhand reporters, which is more transparency than most reprints of the sermon give. What it does not say is that the DHC text is an editorial amalgam of those four accounts rather than any one of them."
+      },
+      {
+        "quoteId": "ensign-king-follett-1971-q2",
+        "categories": ["FATHER-MORTAL-EXPERIENCE", "FATHER-BECAME-GOD"],
+        "referent": "father",
+        "excerpt": "God himself was once as we are now, and is an exalted man, and sits enthroned in yonder heavens! That is the great secret.",
+        "note": "Both halves of the Father-status axis in one sentence, printed under the section heading “God an Exalted Man”: past mortality (“was once as we are now”) and attainment (“is an exalted man”). Per the precedent set on kfd-1844-q1, that pairing takes both tags. Hearsay downgraded to C for this quote: these are not the words of any of the four contemporaneous witnesses but the smoothed 1855 History draft reading, which is exactly the amalgam kfd-1844 flags in its own notes."
+      },
+      {
+        "quoteId": "ensign-king-follett-1971-q3",
+        "categories": ["FATHER-ALWAYS-GOD", "FATHER-MORTAL-EXPERIENCE"],
+        "referent": "father",
+        "excerpt": "In order to understand the subject of the dead, for consolation of those who mourn for the loss of their friends, it is necessary we should understand the character and being of God and how He came to be so; for I am going to tell you how God came to be God. We have imagined and supposed that God was God from all eternity. I will refute that idea, and take away the veil, so that you may see. … It is the first principle of the gospel to know for a certainty the character of God, and to know that we may converse with Him as one man converses with another, and that He was once a man like us; yea, that God himself, the Father of us all, dwelt on an earth, the same as Jesus Christ Himself did",
+        "note": "Denial — FATHER-ALWAYS-GOD is carried here for the explicit rejection, “We have imagined and supposed that God was God from all eternity. I will refute that idea.” Set this beside lectures-on-faith-decanonized-1921-q3, which is the proposition being refuted, printed in the Church's own canon until 1921 and here refuted in the Church's own magazine in 1971. Hearsay C: same amalgam problem as q2, and note that Bullock at this point actually reads “he was God from the begin of all Eternity,” which is the opposite of what the smoothed text says — see kfd-1844."
+      },
+      {
+        "quoteId": "ensign-king-follett-1971-q4",
+        "categories": ["INFINITE-CHAIN"],
+        "referent": "father",
+        "excerpt": "and you have got to learn how to be gods yourselves, and to be kings and priests to God, the same as all gods have done before you, namely, by going from one small degree to another, and from a small capacity to a great one; from grace to grace, from exaltation to exaltation, until you attain to the resurrection of the dead, and are able to dwell in everlasting burnings, and to sit in glory, as do those who sit enthroned in everlasting power.",
+        "note": "The chain clause, and the single most important thing to know about this entry is that the Ensign prints it in the smoothed form. “The same as all gods have done before you” is the amalgam. Of the four contemporaneous accounts only Clayton attests a comparison class of Gods (“as all Gods has done”); Bullock has the weaker “same as all have done” with no “Gods” at all; Richards and Woodruff record the deification injunction with no comparison clause attached to it. So the reading that reaches 1971 readers — and, through them, most later citation of the sermon — rests on one witness and silently resolves a real divergence. See kfd-1844-q2, where the divergence is laid out. Hearsay C. Referent “father” for consistency with kfd-1844-q2, though strictly the clause is about the class of gods rather than the Father as such."
+      },
+      {
+        "quoteId": "ensign-king-follett-1971-q5",
+        "categories": ["SPIRIT-BIRTH-ADOPTION"],
+        "excerpt": "The mind or the intelligence which man possesses is co-equal [co-eternal] with God himself. … God never had the power to create the spirit of man at all. God himself could not create himself. Intelligence is eternal and exists upon a self-existent principle. It is a spirit from age to age and there is no creation about it.",
+        "note": "From the May installment. Organization over begetting, in the Church's own current magazine archive, in direct tension with fp-1909 and with the viviparous statements of the mid-century — which is worth noting given that all of it remains hosted side by side today. The bracket is the apparatus datum: “co-equal [co-eternal]” is an editorial gloss carried over from the Documentary History, and the same silent-correction convention appears throughout the reprint (“I will call [for] the attention,” “I calculate [intend] to edify you”). The Ensign supplies no footnotes of its own and no marginal apparatus; the brackets are the only editorial marks in the text. Hearsay C."
+      },
+      {
+        "quoteId": "ensign-king-follett-1971-q6",
+        "categories": [],
+        "excerpt": "This is the conclusion of the King Follett Sermon, delivered by the Prophet Joseph Smith at the April 7, 1844, conference of the Church in Nauvoo, Illinois. The first part of this classic was reprinted in the April Ensign (page 12). Readers should be reminded that the account of the talk was reconstructed from longhand notes taken by four brethren. It is also important to know that the Prophet's enemies were within just a few months of bringing about his death. This reprint was taken from the Documentary History of the Church, volume 6, pages 302–17.",
+        "note": "The May headnote. “Reconstructed from longhand notes taken by four brethren” is a franker description of the text's status than the April headnote gave, and it is the closest the Church came in 1971 to saying that no single witness underwrites the printed wording. Small apparatus discrepancy worth recording: this headnote places the first installment at page 12, while the citation line on the April article reads “Ensign, Apr. 1971, 13–14.”"
+      }
+    ],
+    "notes": "Both installments were read verbatim from the live churchofjesuschrist.org pages on 2026-08-10; the quotations above are the hosted text exactly, including its bracketed editorial insertions and its section headings (“God an Exalted Man,” “Eternal Life to Know God and Jesus Christ,” “The Immortal Intelligence”). Filed as a citation of kfd-1844 rather than as an original, because the value of the entry is the event, not the text: in April and May 1971 — at the high-water mark of Correlation, in the first months of the newly consolidated Ensign, under a First Presidency headed by Joseph Fielding Smith — the Church reprinted the most theologically radical sermon in its history, in full, over two issues, framed admiringly and without a single doctrinal caveat. The same May 1971 issue carries Smith's own First Presidency message denying that God progresses in knowledge or power (jfs-progression-1971). Those two texts are thirteen pages and one issue apart, which is as concise a demonstration as the dataset contains that the C question and the D question are independent: the Church President could print “God himself was once as we are now” and “his progression consists not in gaining more knowledge or power” in the same magazine without contradiction, because they are not the same claim. Correlation graded current-correlated: both installments remain hosted in the official Gospel Library archive today and are reachable from the Church's own search. Textual caution repeated from kfd-1844 and applied per quote via hearsayByQuote: the reprint is the Documentary History text, an editorial amalgam of the Richards, Woodruff, Bullock, and Clayton accounts, and it is not identical with any of them. Where the amalgam and the witnesses diverge — most consequentially at “the same as all gods have done before you” — the quote notes say so. Do not treat any wording in this entry as a fifth witness to what was said on 7 April 1844."
+  },
+  {
     "id": "jfs-progression-1971",
     "sourceType": "original",
     "date": "1971-05-01",
@@ -2806,7 +3259,7 @@
         "note": "The immediately preceding paragraph, kept for setting. The Heavenly Mother sentence is the peroration of an address about the advancement of Latter-day Saint women, delivered in the same year Neal A. Maxwell reached for her in the same conference — the doctrine surfaces in 1978 as part of a response to the decade's argument about women, not as part of an argument about cosmology."
       }
     ],
-    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1978/1978-04-kimball-the-true-way-of-life-and-salvation.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the live page was re-checked during drafting and confirmed to load with this passage present. Official published text, so A, and still hosted, so current-correlated. Filed as a citation: the hymn is named and characterized, and Kimball's own contribution is a gloss on it rather than an independent argument. Kimball returns to Heavenly Mother repeatedly in 1977–1978 — the October 1978 sisters' address, for instance, says “He and your mother in heaven value you beyond any measure. They gave your eternal intelligence spirit form,” which is the tripartite intelligence-spirit-body sequence rather than a hymn citation, and his April 1977 “Our Great Potential” simply prints the hymn's stanzas. This is the strongest of the cluster and the others are deliberately not drafted."
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1978/1978-04-kimball-the-true-way-of-life-and-salvation.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the live page was re-checked during drafting and confirmed to load with this passage present. Official published text, so A, and still hosted, so current-correlated. Filed as a citation: the hymn is named and characterized, and Kimball's own contribution is a gloss on it rather than an independent argument. Kimball returns to Heavenly Mother repeatedly in 1977–1978 — the October 1978 sisters' address, for instance, says “He and your mother in heaven value you beyond any measure. They gave your eternal intelligence spirit form,” which is the tripartite intelligence-spirit-body sequence rather than a hymn citation, and his April 1977 “Our Great Potential” simply prints the hymn's stanzas. The October 1978 tripartite passage is now its own entry (kimball-intelligence-spirit-form-1978); the April 1977 bare hymn printing remains undrafted by design."
   },
   {
     "id": "maxwell-heavenly-mother-1978",
@@ -2840,6 +3293,42 @@
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1978/1978-04-maxwell-the-women-of-god.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the closing paragraph was re-fetched from the live page during drafting and returned verbatim. Official published text, so A, and still hosted, so current-correlated. Filed as an original with the citesId edge preserved: the hymn supplies the vocabulary of the last paragraph, but the proposition — that a Heavenly Mother has made arrangements for our return — is Maxwell's and is not in Eliza R. Snow. Delivered in the same session as kimball-doctrinal-hymn-1978, which is the fact to notice: April 1978 is the high-water mark of official Heavenly Mother language in the modern era, and both instances arise from the Church's engagement with the decade's arguments about women. Thirteen years later Gordon B. Hinckley will address the same audience on the same subject to draw a line."
   },
   {
+    "id": "kimball-intelligence-spirit-form-1978",
+    "sourceType": "original",
+    "date": "1978-10-01",
+    "dateDisplay": "October 1978",
+    "datePrecision": "month",
+    "title": "Spencer W. Kimball: “They gave your eternal intelligence spirit form”",
+    "speaker": "Spencer W. Kimball",
+    "office": "President of the Church",
+    "venue": "General Women's Meeting, general conference, Salt Lake City",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1978/10/privileges-and-responsibilities-of-sisters?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "kimball-intelligence-spirit-form-1978-q1",
+        "categories": ["HEAVENLY-MOTHER", "TRIPARTITE-FRAMEWORK"],
+        "excerpt": "This is a partnership. God and his creation. The Primary song says, “I am a child of God.” Born with a noble birthright. God is your father. He loves you. He and your mother in heaven value you beyond any measure. They gave your eternal intelligence spirit form, just as your earthly mother and father have given you a mortal body. You are unique. One of a kind, made of the eternal intelligence which gives you claim upon eternal life.",
+        "note": "Both tags are stated, not read in. HEAVENLY-MOTHER: \"your mother in heaven\" is named as a second agent — \"They gave\" — not merely acknowledged. TRIPARTITE-FRAMEWORK: the three tiers and both transitions are all present in one sentence — an eternal intelligence that is not made, given spirit form by heavenly parents, then given a mortal body by earthly parents — and the parallel construction (\"just as\") makes the premortal transition as real as the mortal one. Compare eom-premortal-life-1992, which states the identical sequence fourteen years later and sources it to Melvin J. Ballard; Kimball sources it to nothing and states it to a worldwide audience of women as catechesis. What he does not say is how, and \"gave … spirit form\" is compatible with organizing as well as with begetting, so no SPIRIT-BIRTH tag attaches in either direction."
+      },
+      {
+        "quoteId": "kimball-intelligence-spirit-form-1978-q2",
+        "categories": [],
+        "excerpt": "Let there be no question in your mind about your value as an individual. The whole intent of the gospel plan is to provide an opportunity for each of you to reach your fullest potential, which is eternal progression and the possibility of godhood.",
+        "note": "The very next paragraph, untagged on purpose. \"Eternal progression and the possibility of godhood\" is theosis and nothing more — the A-framing trap — and it is recorded here precisely to show that the tripartite sentence above is not doing forward-generative work in this address. Kimball tells the sisters what they came from; he does not tell them they will do it in turn."
+      },
+      {
+        "quoteId": "kimball-intelligence-spirit-form-1978-q3",
+        "categories": [],
+        "excerpt": "Mothers have a sacred role. They are partners with God, as well as with their own husbands, first in giving birth to the Lord’s spirit children and then in rearing those children so they will serve the Lord and keep his commandments.",
+        "note": "Kept for the semantic reading it forces. \"The Lord's spirit children\" here means us — already-existing spirits receiving mortal bodies from mortal mothers. That is the modern sense of the phrase, and it is the exact inverse of the 1949 sense in hunter-beget-spirit-children-1949, where spirit children are what exalted couples will beget. The same three words, twenty-nine years apart, pointing in opposite directions in the same corpus. Untagged: nothing here is a claim about eternal increase."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1978/1978-10-kimball-privileges-and-responsibilities-of-sisters.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; all three excerpts were independently re-fetched from that live page during drafting on 2026-08-10 and returned verbatim. Official published text, so A, and still hosted, so current-correlated. Delivered at the first worldwide General Women's Meeting — \"Nothing like it has ever been held before in the Church,\" as Kimball says in the third paragraph — which is worth recording alongside the doctrine: the strongest tripartite sentence in the modern conference corpus was spoken at the inaugural session of a new meeting for women. Filed as an original with no citesId: the hymn is not quoted here and the Primary song is named rather than argued from. Two housekeeping notes for whoever maintains the neighbouring entries. First, this address completes the 1978 cluster with kimball-doctrinal-hymn-1978 (April, \"that doctrinal hymn and anthem of affection\") and maxwell-heavenly-mother-1978 (April, \"the anticipatory arrangements of a Heavenly Mother\") — three official Heavenly Mother statements in one calendar year, the high-water mark of the modern era, all of them arising from the decade's argument about women rather than from any argument about cosmology. Second, kimball-doctrinal-hymn-1978's own notes state that this October address was \"deliberately not drafted\" as the weaker member of the cluster; that judgment is superseded by this entry, on the ground that the two make different claims — April is a gloss on the hymn, October is the intelligence-to-spirit staging, which no other Kimball text in the dataset supplies — and that note should be revised when sources.json is next edited."
+  },
+  {
     "id": "mcconkie-heresies-1980",
     "sourceType": "original",
     "date": "1980-06-01",
@@ -2862,6 +3351,38 @@
       }
     ],
     "notes": "Never official — a BYU fireside, not conference. It triggered the McConkie–England correspondence (February 1981), the classic institutional episode of this debate; the denial position entered official channels through Joseph Fielding Smith's writings and the correlated manuals instead. Wording verified against the BYU Speeches text."
+  },
+  {
+    "id": "abrea-same-as-all-gods-1981",
+    "sourceType": "citation",
+    "citesId": ["kfd-1844"],
+    "date": "1981-10-01",
+    "dateDisplay": "October 1981",
+    "datePrecision": "month",
+    "title": "Angel Abrea reads the King Follett Discourse: “the same as all Gods have done before you”",
+    "speaker": "Angel Abrea",
+    "office": "Of the First Quorum of the Seventy",
+    "venue": "General conference, Saturday afternoon session",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1981/10/the-little-things-and-eternal-life?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "abrea-same-as-all-gods-1981-q1",
+        "categories": ["INFINITE-CHAIN"],
+        "referent": "ambiguous",
+        "excerpt": "“Here, then, is eternal life—to know the only wise and true God; and you have got to learn how to be Gods yourselves, and to be kings and priests to God, the same as all Gods have done before you, namely, by going from one small degree to another, and from a small capacity to a great one; from grace to grace, from exaltation to exaltation, until you attain to the resurrection of the dead, and are able to dwell in everlasting burnings, and to sit in glory, as do those who sit enthroned in everlasting power. … “… [You] shall be heirs of God and joint heirs with Jesus Christ. What is it? To inherit the same power, the same glory and the same exaltation, until you arrive at the station of a God, and ascend the throne of eternal power, the same as those who have gone before.” (Teachings of the Prophet Joseph Smith, sel. Joseph Fielding Smith, Salt Lake City: Deseret Book Co., 1938, pp. 346–47.)",
+        "note": "The comparison-class clause is what earns the tag, twice over: \"the same as all Gods have done before you\" and \"the same as those who have gone before.\" A plurality of Gods preceded us on this path — which is the backward claim, made in general conference in 1981. Referent is ambiguous and must stay so: Abrea nowhere applies the clause to the Father, and the deification half of the passage (\"learn how to be Gods yourselves,\" \"the station of a God\") is theosis, which carries no tag of its own. Provenance caveat carried forward from kfd-1844-q2, and it bears on exactly this sentence: \"the same as all Gods have done before you\" is the Teachings of the Prophet Joseph Smith amalgam, and of the four contemporaneous witnesses only Clayton attests \"as all Gods has done\" at all — Bullock has the weaker \"same as all have done\" with no \"Gods,\" and Richards and Woodruff record the deification injunction with no comparison clause. Abrea is reading the strongest available reconstruction, at second hand, from a 1938 compilation. The printed ellipses are as published; the bracketed \"[You]\" is the published text's."
+      },
+      {
+        "quoteId": "abrea-same-as-all-gods-1981-q2",
+        "categories": [],
+        "excerpt": "This incident made me think about what often happens in our own lives. I thought about the tremendous potential that exists in each one of us, potential that can direct us to eternal life. … How many times do we allow little “butterflies” to reduce, restrain, or restrict our immense potential from guiding us to exaltation?",
+        "note": "The two sentences that bracket the quotation, kept because they are the whole of Abrea's use of it. The King Follett material is not exposited, defended, qualified, or returned to; it is the warrant for a motivational point about Sabbath observance, sacrament meeting attendance, sustaining leaders, and tithing. The rest of the talk is about butterflies on a radiator and a branch member named Jose. That is the finding — the strongest backward-facing text in the tradition passing through a 1981 general conference as an unremarked-upon preamble."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1981/1981-10-abrea-the-little-things-and-eternal-life.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the Joseph Smith block and its source citation were independently re-fetched from that live page during drafting on 2026-08-10 and returned verbatim, including the parenthetical Teachings citation. Official published text, so A, and still hosted on churchofjesuschrist.org, so current-correlated. Filed as a citation with a citesId edge to kfd-1844, per the rule that Teachings of the Prophet Joseph Smith is a citation of the four King Follett witnesses rather than an independent original — the entry's value is entirely that the passage is being read aloud, not what Abrea adds to it. Two contextual facts the timeline reader needs. First, the date: this is October 1981, sixteen months after Bruce R. McConkie's \"Seven Deadly Heresies\" (mcconkie-heresies-1980) and in the middle of the period when the dataset's correlated backward-explicit column is otherwise nearly empty — the material is not being taught, but it is still being quoted, from the published compilations, without comment. Second, the speaker: Abrea was the first Latin American General Authority, called to the First Quorum of the Seventy in 1981, and this is an early conference address; nothing about the setting marks the quotation as controversial or as requiring defense. Compare hunter-exalted-man-1948, where the same body of material is read aloud with full doctrinal intent, and note how much thinner the use has become in thirty-three years."
   },
   {
     "id": "packer-parentage-1984",
@@ -2940,6 +3461,39 @@
       }
     ],
     "notes": "The book itself is not in the collated corpus; the text was verified verbatim against Paulsen and Fisher's block quotation with page citation in the FARMS Review 15/2 (2003), 429–30 n. 22, where the note runs across the two printed pages. Recorded here because the sentence circulates as regress evidence when both scholarly sources that quote it read it as the opposite — a divine-progression denial, placing Millet and McConkie with Bruce R. McConkie and Joseph Fielding Smith against the Brigham Young–Woodruff–Roberts–Widtsoe side of the intra-LDS debate. Under this project's taxonomy it belongs outside category C entirely. Never-official: a Bookcraft trade book by two BYU religion faculty."
+  },
+  {
+    "id": "howard-hunter-whitney-1987",
+    "sourceType": "original",
+    "date": "1987-10-01",
+    "dateDisplay": "October 1987",
+    "datePrecision": "month",
+    "title": "Howard W. Hunter quotes Orson F. Whitney: “more like our Father and Mother in heaven”",
+    "speaker": "Howard W. Hunter",
+    "office": "Acting President of the Quorum of the Twelve Apostles",
+    "venue": "General conference, Sunday morning session",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1987/10/the-opening-and-closing-of-doors?lang=eng",
+    "hearsay": "A",
+    "hearsayByQuote": {
+      "howard-hunter-whitney-1987-q1": "C"
+    },
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "howard-hunter-whitney-1987-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "I share the view expressed by Orson F. Whitney in these words: “No pain that we suffer, no trial that we experience is wasted. It ministers to our education, to the development of such qualities as patience, faith, fortitude, and humility. All that we suffer and all that we endure, especially when we endure it patiently, builds up our characters, purifies our hearts, expands our souls, and makes us more tender and charitable, more worthy to be called the children of God … and it is through sorrow and suffering, toil and tribulation, that we gain the education that we come here to acquire and which will make us more like our Father and Mother in heaven” (as quoted in *Faith Precedes the Miracle,* p. 98).",
+        "note": "Graded C rather than A on its own, and the reason is the attribution the talk gives. Hunter's own words are published official text; the Whitney material is not sourced to any Whitney publication but only to page 98 of Spencer W. Kimball's 1972 Faith Precedes the Miracle, which itself prints the passage without a citation. No conference address that uses it — and there are four — supplies a primary source, so the chain is Whitney (d. 1931) → Kimball's uncited book → the pulpit. Tagged HEAVENLY-MOTHER only: \"more like our Father and Mother in heaven\" is likeness, which is theosis, and asserts nothing generative — the same reading given to whitney-father-and-mother-1907-q1, which is a different Whitney text. The ellipsis is printed in the published talk, not an editorial cut; the asterisks are the italics of the published text."
+      },
+      {
+        "quoteId": "howard-hunter-whitney-1987-q2",
+        "categories": [],
+        "excerpt": "President Spencer W. Kimball, who knew a good deal about suffering, disappointment, and circumstances beyond his control, once wrote: “Being human, we would expel from our lives physical pain and mental anguish and assure ourselves of continual ease and comfort, but if we were to close the doors upon sorrow and distress, we might be excluding our greatest friends and benefactors. Suffering can make saints of people as they learn patience, long-suffering, and self-mastery” (*Faith Precedes the Miracle,* Salt Lake City: Deseret Book Co., 1972, p. 98).",
+        "note": "Earlier in the same address, and from the same page of the same book. Kept because it shows the mechanism of transmission exactly: Hunter is working from a single page of a devotional paperback on adversity, and the Heavenly Mother clause arrives as a passenger on a quotation about suffering. Untagged — nothing here concerns a Mother."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1987/1987-10-hunter-the-opening-and-closing-of-doors.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the live page was re-checked during drafting on 2026-08-10 and confirmed to load with the Whitney paragraph present and with the attribution reading \"as quoted in Faith Precedes the Miracle, p. 98.\" Official published text, so A at entry level, with the Whitney quote graded C — see the quote note. Filed as an original despite being substantively a quotation, because the quoted source is not an entry in this dataset and a citesId edge would dangle: whitney-father-and-mother-1907 is Whitney's October 1907 conference address on Heavenly Mother as philosophy, a different text making a different argument, and it must not be used as the target here. What this entry actually documents is a quotation lineage, and the lineage is larger than it first appears. The identical Whitney passage, always with the \"Father and Mother in heaven\" clause and always sourced only to Faith Precedes the Miracle p. 98, is read in general conference by Adney Y. Komatsu in October 1979 (\"After Much Tribulation Come the Blessings\"), by Komatsu again in April 1987 (\"Looking to the Savior\"), by Hunter here six months later, and by Neill F. Marriott in April 2016 (\"What Shall We Do?\", footnote 5: \"Orson F. Whitney, in Spencer W. Kimball, Faith Precedes the Miracle (1972), 98\"). Marriott's version silently trims the passage with four ellipses but keeps the closing clause intact. Four conference appearances across thirty-seven years, none of them arguing for a Heavenly Mother and none of them able to cite Whitney directly — which is how the doctrine kept surfacing in official discourse during the decades when almost no one taught it: not as doctrine but as a fixed phrase inside a quotation about adversity. Per the drafting charter, the Komatsu and Marriott instances are recorded here rather than drafted as entries of their own."
   },
   {
     "id": "hinckley-daughters-of-god-1991",
@@ -4024,6 +4578,67 @@
       }
     ],
     "notes": "Verified 2026-08-10 against the live page. Two corrections to the survey that flagged this item: the page contains no “creative powers” language and no male/female complementarity language at all — searches for “creative,” “procreative” and “male and female” return nothing on this page, though “exaltation” and “posterity” each appear twice — so any pairing of this lesson with the Oaks/Renlund creative-powers register is unsupported and would have to come from a different lesson in the course. What is here is the single bracketed Joseph Smith fragment above, together with the Bible Dictionary gloss of eternal increase carried at q2. Logged as an original because the quoted 1843 history statement has no entry in this dataset; if one is added, convert to a citation. Compare johnson-2025, which names post-mortal childbearing in a pastoral register and is rated the same way for the same reason."
+  },
+  {
+    "id": "renlund-divine-nature-2022",
+    "sourceType": "original",
+    "citesId": ["dc-132"],
+    "date": "2022-04-01",
+    "dateDisplay": "April 2022",
+    "datePrecision": "month",
+    "title": "Dale G. Renlund, “Your Divine Nature and Eternal Destiny” — revealed, and fenced",
+    "speaker": "Dale G. Renlund",
+    "office": "Of the Quorum of the Twelve Apostles",
+    "venue": "General conference, women's session, Salt Lake City",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/2022/04/36renlund?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "renlund-divine-nature-2022-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "The second truth is that we have heavenly parents, a father and a mother. The doctrine of a Heavenly Mother comes by revelation and is a distinctive belief among Latter-day Saints. President Dallin H. Oaks explained the importance of this truth: “Our theology begins with heavenly parents. Our highest aspiration is to be like them.”",
+        "note": "The affirmation, and it is stronger than Hinckley's on the one axis that matters most. \"The doctrine of a Heavenly Mother comes by revelation\" is the direct contrary of hinckley-daughters-of-god-1991-q5, \"her of whom we have no revealed knowledge,\" and it restores the epistemic claim that Hinckley's closing sentence had removed — thirty-one years later, to a comparable audience, from the same pulpit. It also restores what iverson-mother-in-heaven-1908 had asserted and 1991 had converted into an argument from silence. Note the ground shifts but the content does not: nothing further about her is stated here than in 1991."
+      },
+      {
+        "quoteId": "renlund-divine-nature-2022-q2",
+        "categories": ["HEAVENLY-MOTHER", "RETREAT-REFRAME"],
+        "excerpt": "Very little has been revealed about Mother in Heaven, but what we do know is summarized in a gospel topic found in our Gospel Library application. Once you have read what is there, you will know everything that I know about the subject. I wish I knew more. You too may still have questions and want to find more answers. Seeking greater understanding is an important part of our spiritual development, but please be cautious. Reason cannot replace revelation.",
+        "note": "The fence, and the pivot of the address. Three moves in six sentences: the content is capped (\"very little\"), the ceiling is set at a Gospel Library page rather than at an apostle's own knowledge (\"you will know everything that I know\"), and the traditional warrant for the doctrine is disqualified outright — \"Reason cannot replace revelation.\" That last clause retires the argument that had carried the doctrine for 137 years: Erastus Snow's inference from nature (snow-heavenly-mother-1885), Rudger Clawson's \"Who ever heard of a father where there was no mother?\" (clawson-mother-there-1929), Orson F. Whitney's dare to prove it unphilosophic (whitney-father-and-mother-1907), and Hinckley's own \"Logic and reason would certainly suggest\" (hinckley-daughters-of-god-1991-q3). The 1991 affirmation and the 2022 prohibition rest on opposite epistemologies, and the 2022 one forbids the 1991 one. Carries both tags for the same reason the Hinckley entry does: the affirmation and the boundary are the same sentence-cluster."
+      },
+      {
+        "quoteId": "renlund-divine-nature-2022-q3",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "Speculation will not lead to greater spiritual knowledge, but it can lead us to deception or divert our focus from what has been revealed. For example, the Savior taught His disciples, “Always pray unto the Father in my name.” We follow this pattern and direct our worship to our Heavenly Father in the name of Jesus Christ and do not pray to Heavenly Mother.",
+        "note": "The prohibition on prayer, restated for a new generation and — this is the point to record — restated without Hinckley. The published footnote for the sentence cites Russell M. Nelson's \"Lessons from the Lord's Prayers\" (Ensign or Liahona, May 2009), not the 1991 address that is the modern origin of the rule. The scriptural pattern argument survives from 1991 (hinckley-daughters-of-god-1991-q4); the argument from the absence of precedent among Church presidents does not reappear. Note also the framing: what was in 1991 the correction of a named practice by \"some few women of the Church\" is here a general caution against \"speculation,\" with no group named and nothing to have been done wrong."
+      },
+      {
+        "quoteId": "renlund-divine-nature-2022-q4",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "Ever since God appointed prophets, they have been authorized to speak on His behalf. But they do not pronounce doctrines fabricated “of [their] own mind” or teach what has not been revealed. … Latter-day prophets are similarly constrained. Demanding revelation from God is both arrogant and unproductive. Instead, we wait on the Lord and His timetable to reveal His truths through the means that He has established.",
+        "note": "The most consequential paragraph in the address and the one least often quoted. The reticence is relocated a third time. Spencer W. Kimball had relocated it to the Mother herself — \"maternal modesty,\" \"restrained, queenly elegance\" (kimball-doctrinal-hymn-1978); Hinckley relocated it to the state of revelation; Renlund relocates it to the office, which is now described as constrained rather than reticent. Prophets do not decline to say more, they are unable to, and asking them to is \"arrogant.\" The Balaam analogy is elided; the bracketed \"[their]\" is the published text's."
+      },
+      {
+        "quoteId": "renlund-divine-nature-2022-q5",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "The third truth in the opening paragraph of the Young Women theme is that we have “a divine nature.” This is intrinsic to who we are. It is spiritually “genetic,” inherited from our heavenly parents, and requires no effort on our part.",
+        "note": "Inheritance language, scare-quoted. \"Spiritually 'genetic'\" is a heredity metaphor from a cardiologist and is as close as the address comes to any mechanism — but the quotation marks are doing the fencing, and the claim is about nature rather than about generation. HEAVENLY-MOTHER because the parents are plural and are the source; no SPIRIT-BIRTH tag, in either direction, because none is stated."
+      },
+      {
+        "quoteId": "renlund-divine-nature-2022-q6",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "Our Heavenly Father wants you to become His heir and receive all that He has. He cannot offer you more. He cannot promise you more.",
+        "note": "The peroration, and the forward direction as it now sounds: maximal in scope, empty of content. \"All that He has\" is the D&C 84:38 formula, and the footnote points there. Compare renlund-2020-q3, where the same author encodes the same thing as \"His kind of life\" — the two together are the clearest available sample of how the generative claim is carried in current apostolic discourse, which is by inheritance vocabulary that never says what is inherited."
+      },
+      {
+        "quoteId": "renlund-divine-nature-2022-q7",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "Dallin H. Oaks, “Apostasy and Restoration,” Ensign, May 1995, 87; see also Doctrine and Covenants 131:1–4; 132:19. Women and men cannot be exalted without each other.",
+        "note": "Published footnote 8 in full, and the only place in the address where D&C 132 appears. The last sentence is Renlund's own gloss, not part of the Oaks citation: a bare statement that exaltation requires both sexes, appended to the \"continuation of the seeds\" verse (see dc-132) and to the new-and-everlasting-covenant-of-marriage verses, in a footnote to a talk about a Young Women theme. The whole nineteenth-century argument is present in that adjacency and is nowhere in the body text — which is precisely the pattern this dataset exists to make visible."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/2022/2022-04-renlund-your-divine-nature-and-eternal-destiny.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the live page was re-fetched during drafting on 2026-08-10 and returned the byline (\"By Elder Dale G. Renlund of the Quorum of the Twelve Apostles\"), the opening of each excerpted paragraph, and footnote 8 in full, all verbatim. Official published text, so A, and still hosted, so current-correlated. The direct sequel to hinckley-daughters-of-god-1991 and the entry that should be read immediately after it, but the relationship is not the one usually assumed, and three things should be checked against the text rather than repeated from summaries. First, Renlund does not quote or cite Hinckley anywhere in the address or its forty footnotes — the fence is rebuilt from scratch, citing Oaks (1995) for the affirmation and Nelson (2009) for the prayer restriction. Second, he does not cite \"O My Father\" or Eliza R. Snow, which is why this entry carries no citesId edge to o-my-father: the hymn that had licensed the doctrine from 1845 through Hinckley's own 1991 address has dropped out entirely, and the authority now runs to a Gospel Library page. That page and the Gospel Topics essay \"Mother in Heaven\" (essay-2015) are named in footnotes 7, 9 and 16 as the whole of what may be known; no edge is drawn to essay-2015 because it is itself a citation-type entry and the dataset draws citesId edges only to originals, but the delegation is the substantive fact and is recorded here. The only citesId is dc-132, earned by footnote 8. Third, the shape is the inverse of 1991 on the epistemic axis and identical on the practical one: Hinckley affirmed the doctrine on logic and then emptied it by denying revelation; Renlund affirms the revelation and then empties it by capping the content and disqualifying the logic. Both end in the same place — she is real, and there is nothing further to say — by opposite routes. What is genuinely new in 2022 is the handoff: the authority on the subject is no longer a hymn, an apostle, or an inference, but a page in an app, and the address says so twice."
   },
   {
     "id": "carpenter-2024",
