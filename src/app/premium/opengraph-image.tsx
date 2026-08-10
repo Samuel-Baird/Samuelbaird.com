@@ -3,12 +3,12 @@ import { OG_SIZE, OG_CONTENT_TYPE, OgFrame, OG_INK, OG_MUTED } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = "Latter-day Stats — Beta";
+export const alt = "Latter-day Stats — Premium";
 
 export default function Image() {
   return new ImageResponse(
     (
-      <OgFrame eyebrow="Latter-day Stats · Beta">
+      <OgFrame eyebrow="Latter-day Stats · Premium">
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
@@ -19,7 +19,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Beta features
+            Premium features
           </div>
           <div
             style={{

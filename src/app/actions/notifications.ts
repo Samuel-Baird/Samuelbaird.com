@@ -9,7 +9,7 @@ export async function setWeeklyNotification(formData: FormData) {
   const auth = await getCurrentUser();
   if (!auth) throw new Error("Not signed in");
   const premium = await isPremiumUser(auth);
-  if (!premium) throw new Error("Not a beta tester");
+  if (!premium) throw new Error("Not a premium member");
   const email = (auth.profile?.email ?? auth.user.email ?? "")
     .trim()
     .toLowerCase();
@@ -23,6 +23,6 @@ export async function setWeeklyNotification(formData: FormData) {
     .eq("email", email);
   if (error) throw error;
 
-  revalidatePath("/beta");
+  revalidatePath("/premium");
   revalidatePath("/admin/premium");
 }

@@ -21,9 +21,9 @@ import { getPremiumStatus } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Beta",
+  title: "Premium",
   description:
-    "Beta features for Latter-day Stats — risers and fallers, channel comparison, CSV exports, critical creators, and the weekly digest.",
+    "Premium features for Latter-day Stats — risers and fallers, channel comparison, CSV exports, critical creators, and the weekly digest. Unlocked with a one-time $5+ donation.",
 };
 
 export const dynamic = "force-dynamic";
@@ -89,18 +89,18 @@ export default async function PremiumPage({
     return (
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
         <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
-          Beta
+          Premium
         </p>
         <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
           <DeseretTitle text="Thank you for supporting Latter-day Stats" />
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-          You have full access to all beta features. Enjoy.
+          You have full access to all premium features. Enjoy.
         </p>
 
         <PremiumContent slugsParam={slugsParam} email={status.email} />
 
-        <BenefitsList heading="Your beta benefits" />
+        <BenefitsList heading="Your premium benefits" />
       </div>
     );
   }
@@ -108,21 +108,14 @@ export default async function PremiumPage({
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
-        Beta
+        Premium
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-        <DeseretTitle text="Beta features" />
+        <DeseretTitle text="Premium features" />
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-        A handful of bonus features for beta testers of Latter-day Stats. Want
-        access? Email{" "}
-        <a
-          href={mailto("Beta access")}
-          className="text-[color:var(--honey)] underline underline-offset-2 hover:no-underline"
-        >
-          {CONTACT_EMAIL}
-        </a>
-        .
+        A handful of bonus features, unlocked with a one-time donation of $5
+        or more. Anything helps and is appreciated.
       </p>
 
       <BenefitsList />
@@ -163,21 +156,29 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
   return (
     <section className="mt-12 rounded-[var(--radius)] border border-[color:var(--honey)]/40 bg-[color:var(--honey-soft)] p-6 sm:p-8">
       <p className="serif text-xl font-semibold tracking-tight text-[color:var(--honey)]">
-        These features are for beta testers.
+        Unlock premium with a $5+ donation.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
-        Please contact Sam if you would like to become a beta tester.
+        Donate any amount over $5, once, via PayPal or Venmo. Then forward
+        your receipt to Sam and you&apos;ll be added by hand — anything helps
+        and is appreciated.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
-        <a
-          href={mailto("Beta access")}
+        <Link
+          href="/donate"
           className="inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--honey)] px-5 text-sm font-medium text-white hover:opacity-90"
         >
-          Email Sam ({CONTACT_EMAIL})
+          Donate →
+        </Link>
+        <a
+          href={mailto("Premium access — donation receipt")}
+          className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--honey)]/50 bg-[color:var(--honey-soft)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--honey)]/15"
+        >
+          Email receipt ({CONTACT_EMAIL})
         </a>
         {!signedIn ? (
           <Link
-            href="/login?next=/beta"
+            href="/login?next=/premium"
             className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--honey)]/50 bg-[color:var(--honey-soft)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--honey)]/15"
           >
             Sign in
@@ -254,7 +255,7 @@ async function PremiumContent({
             allChannels={options}
             selectedSlugs={valid.map((r) => r.channel.slug)}
             max={MAX_COMPARE}
-            basePath="/beta"
+            basePath="/premium"
           />
         </div>
 
