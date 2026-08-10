@@ -70,7 +70,7 @@ export function UpvoteButton({
       aria-pressed={upvoted}
       disabled={pending}
       onClick={onClick}
-      className={`${sizing} inline-flex shrink-0 items-center justify-center gap-1 rounded-full border border-[color:var(--border)] bg-white font-medium tabular-nums transition-colors hover:bg-[color:var(--muted-soft)] disabled:opacity-60 ${
+      className={`${sizing} inline-flex shrink-0 items-center justify-center gap-1 rounded-[var(--radius)] border border-[color:var(--border)] bg-white font-medium tabular-nums transition-colors hover:bg-[color:var(--muted-soft)] disabled:opacity-60 ${
         upvoted ? "border-[color:var(--accent)] text-[color:var(--accent)]" : ""
       }`}
     >

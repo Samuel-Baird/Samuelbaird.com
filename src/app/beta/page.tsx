@@ -79,7 +79,7 @@ export default async function PremiumPage({
   if (status.premium) {
     return (
       <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-500">
+        <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
           Beta
         </p>
         <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -98,7 +98,7 @@ export default async function PremiumPage({
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-500">
+      <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
         Beta
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -109,7 +109,7 @@ export default async function PremiumPage({
         access? Email{" "}
         <a
           href={mailto("Beta access")}
-          className="text-amber-600 underline underline-offset-2 hover:no-underline"
+          className="text-[color:var(--honey)] underline underline-offset-2 hover:no-underline"
         >
           {CONTACT_EMAIL}
         </a>
@@ -135,9 +135,9 @@ function BenefitsList({ heading }: { heading?: string } = {}) {
         {BENEFITS.map((b) => (
           <div
             key={b.title}
-            className="rounded-2xl border border-amber-300/60 bg-amber-50/40 p-5 dark:border-amber-700/40 dark:bg-amber-950/20"
+            className="rounded-[var(--radius)] border border-[color:var(--honey)]/30 bg-[color:var(--honey-soft)] p-5"
           >
-            <h3 className="serif text-lg font-semibold tracking-tight text-amber-700 dark:text-amber-400">
+            <h3 className="serif text-lg font-semibold tracking-tight text-[color:var(--honey)]">
               {b.title}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)] dark:text-[color:var(--foreground)]">
@@ -152,8 +152,8 @@ function BenefitsList({ heading }: { heading?: string } = {}) {
 
 function LockedNotice({ signedIn }: { signedIn: boolean }) {
   return (
-    <section className="mt-12 rounded-2xl border border-amber-400/60 bg-amber-50/60 p-6 sm:p-8 dark:border-amber-700/40 dark:bg-amber-950/25">
-      <p className="serif text-xl font-semibold tracking-tight text-amber-700 dark:text-amber-300">
+    <section className="mt-12 rounded-[var(--radius)] border border-[color:var(--honey)]/40 bg-[color:var(--honey-soft)] p-6 sm:p-8">
+      <p className="serif text-xl font-semibold tracking-tight text-[color:var(--honey)]">
         These features are for beta testers.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
@@ -162,14 +162,14 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
       <div className="mt-5 flex flex-wrap gap-3">
         <a
           href={mailto("Beta access")}
-          className="inline-flex h-11 items-center rounded-full bg-amber-500 px-5 text-sm font-medium text-white hover:bg-amber-400"
+          className="inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--honey)] px-5 text-sm font-medium text-white hover:opacity-90"
         >
           Email Sam ({CONTACT_EMAIL})
         </a>
         {!signedIn ? (
           <Link
             href="/login?next=/beta"
-            className="inline-flex h-11 items-center rounded-full border border-amber-600/60 bg-amber-100 px-5 text-sm font-medium text-black hover:bg-amber-200 dark:bg-amber-900/40 dark:text-white dark:border-amber-600/60 dark:hover:bg-amber-900/60"
+            className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--honey)]/50 bg-[color:var(--honey-soft)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--honey)]/15"
           >
             Sign in
           </Link>
@@ -256,7 +256,7 @@ async function PremiumContent({
               <ComparisonChart series={viewsSeries} metricLabel="Views" />
             </>
           ) : (
-            <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-[color:var(--muted-soft)] p-10 text-center text-sm text-[color:var(--muted)]">
+            <div className="rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-[color:var(--muted-soft)] p-10 text-center text-sm text-[color:var(--muted)]">
               {series.length === 1
                 ? "Add at least one more channel to start the comparison."
                 : "Add channels above to get started."}
@@ -265,9 +265,9 @@ async function PremiumContent({
         </div>
 
         {valid.length > 0 && (
-          <div className="mt-8 overflow-hidden rounded-2xl border border-[color:var(--border)]">
+          <div className="mt-8 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
             <table className="w-full text-sm">
-              <thead className="bg-[color:var(--muted-soft)] text-left text-xs uppercase tracking-wider text-[color:var(--muted)]">
+              <thead className="small-caps bg-[color:var(--muted-soft)] text-left text-xs text-[color:var(--muted)]">
                 <tr>
                   <th className="px-5 py-3 font-medium">Channel</th>
                   <th className="px-3 py-3 text-right font-medium">
@@ -321,7 +321,7 @@ async function PremiumContent({
         )}
       </section>
 
-      <section className="mt-20 rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-6 sm:p-8">
+      <section className="mt-20 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-6 sm:p-8">
         <h2 className="serif text-2xl font-semibold tracking-tight">
           Weekly digest
         </h2>

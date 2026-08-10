@@ -7,7 +7,8 @@ import {
   setChannelActive,
   setChannelFeatured,
 } from "@/app/admin/actions";
-import { colorsForType } from "@/lib/channel-types";
+import { Tag } from "@/components/tag";
+import { inkForType } from "@/lib/channel-types";
 import { fmtCompact } from "@/lib/format";
 import type { Channel, ChannelStats } from "@/lib/types";
 
@@ -53,12 +54,12 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by name, handle, type, country…"
-          className="h-10 flex-1 min-w-[260px] rounded-full border border-[color:var(--border)] px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
+          className="h-10 flex-1 min-w-[260px] rounded-[var(--radius)] border border-[color:var(--border)] px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
         />
         <select
           value={typeFilter}
           onChange={(e) => setTypeFilter(e.target.value)}
-          className="h-10 rounded-full border border-[color:var(--border)] px-3 text-sm"
+          className="h-10 rounded-[var(--radius)] border border-[color:var(--border)] px-3 text-sm"
         >
           <option value="">All types</option>
           {types.map((t) => (
@@ -72,7 +73,7 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
         </span>
       </div>
 
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-[color:var(--border)] bg-white">
+      <div className="mt-4 overflow-x-auto rounded-[var(--radius)] border border-[color:var(--border)] bg-white">
         <table className="w-full min-w-[900px] text-sm">
           <thead className="bg-[color:var(--muted-soft)]/60 text-left text-xs uppercase tracking-wider text-[color:var(--muted)]">
             <tr>
@@ -105,17 +106,11 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
                       <span className="text-xs text-[color:var(--muted)]">—</span>
                     ) : (
                       <div className="flex max-w-[220px] flex-wrap gap-1">
-                        {channelTagsOf(channel).map((t) => {
-                          const { bg, text } = colorsForType(t);
-                          return (
-                            <span
-                              key={t}
-                              className={`inline-flex rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider`}
-                            >
-                              {t}
-                            </span>
-                          );
-                        })}
+                        {channelTagsOf(channel).map((t) => (
+                          <Tag key={t} ink={inkForType(t)}>
+                            {t}
+                          </Tag>
+                        ))}
                       </div>
                     )}
                   </td>
@@ -130,7 +125,7 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
                         !channel.featured,
                       )}
                     >
-                      <button className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs hover:bg-[color:var(--muted-soft)]">
+                      <button className="rounded-[var(--radius)] border border-[color:var(--border)] px-3 py-1 text-xs hover:bg-[color:var(--muted-soft)]">
                         {channel.featured ? "Featured" : "Not featured"}
                       </button>
                     </form>
@@ -143,7 +138,7 @@ export function AdminChannelsTable({ channels, stats, types }: Props) {
                         !channel.is_active,
                       )}
                     >
-                      <button className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs hover:bg-[color:var(--muted-soft)]">
+                      <button className="rounded-[var(--radius)] border border-[color:var(--border)] px-3 py-1 text-xs hover:bg-[color:var(--muted-soft)]">
                         {channel.is_active ? "Active" : "Inactive"}
                       </button>
                     </form>

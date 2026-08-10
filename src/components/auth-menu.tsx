@@ -81,7 +81,7 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
     return (
       <Link
         href={`/login?next=${next}`}
-        className="inline-flex h-10 items-center justify-center rounded-full border border-[color:var(--border)] px-4 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+        className="inline-flex h-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] px-4 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
       >
         Sign in
       </Link>
@@ -95,7 +95,7 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--background)] px-1.5 pr-3 text-sm text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+        className="inline-flex h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--background)] px-1.5 pr-3 text-sm text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
       >
         <AuthAvatar user={user} />
         <ChevronDown className="h-4 w-4 text-[color:var(--muted)]" />
@@ -104,7 +104,7 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
       {open ? (
         <div
           role="menu"
-          className="absolute right-0 top-12 z-50 w-64 rounded-lg border border-[color:var(--border)] bg-[color:var(--background)] p-2 shadow-lg"
+          className="absolute right-0 top-12 z-50 w-64 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--background)] p-2 shadow-sm"
         >
           <div className="border-b border-[color:var(--border)] px-3 py-3">
             <p className="truncate text-sm font-medium text-[color:var(--foreground)]">
@@ -119,7 +119,7 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
             href="/me/bookmarks"
             role="menuitem"
             onClick={() => setOpen(false)}
-            className="mt-2 flex items-center gap-2 rounded-md px-3 py-2 text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+            className="mt-2 flex items-center gap-2 rounded-[var(--radius)] px-3 py-2 text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
           >
             <UserRound className="h-4 w-4 text-[color:var(--muted)]" />
             My bookmarks
@@ -130,7 +130,7 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
               href="/admin"
               role="menuitem"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+              className="flex items-center gap-2 rounded-[var(--radius)] px-3 py-2 text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
             >
               <Shield className="h-4 w-4 text-[color:var(--muted)]" />
               Admin
@@ -141,7 +141,7 @@ export function AuthMenu({ user, signOut }: AuthMenuProps) {
             <button
               type="submit"
               role="menuitem"
-              className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+              className="flex w-full items-center gap-2 rounded-[var(--radius)] px-3 py-2 text-left text-sm text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
             >
               <LogOut className="h-4 w-4 text-[color:var(--muted)]" />
               Sign out

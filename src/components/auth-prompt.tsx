@@ -89,7 +89,7 @@ export function AuthPromptProvider({ children }: { children: React.ReactNode }) 
             onClick={close}
             className="absolute inset-0 bg-black/40"
           />
-          <section className="relative w-full max-w-md rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] p-7 shadow-xl">
+          <section className="relative w-full max-w-md rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--background)] p-7 shadow-lg">
             <button
               type="button"
               onClick={close}
@@ -111,7 +111,7 @@ export function AuthPromptProvider({ children }: { children: React.ReactNode }) 
               type="button"
               disabled={pending}
               onClick={continueWithGoogle}
-              className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[color:var(--foreground)] disabled:cursor-not-allowed disabled:opacity-70"
+              className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[color:var(--foreground)] disabled:cursor-not-allowed disabled:opacity-70"
             >
               {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
               Continue with Google

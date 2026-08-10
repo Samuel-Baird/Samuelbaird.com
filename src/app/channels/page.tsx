@@ -38,7 +38,7 @@ export default async function ChannelsPage() {
 
   return (
     <div className="w-full px-5 py-14 sm:px-8 sm:py-20">
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+      <p className="small-caps text-xs font-medium text-[color:var(--accent)]">
         Channels
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -64,7 +64,7 @@ export default async function ChannelsPage() {
         />
       </div>
 
-      <aside className="mt-12 rounded-2xl border border-[color:var(--border)] bg-[color:var(--accent-soft)]/40 p-6 text-sm text-[color:var(--foreground)] sm:p-8">
+      <aside className="mt-12 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--accent-soft)]/40 p-6 text-sm text-[color:var(--foreground)] sm:p-8">
         <p className="serif text-lg font-semibold tracking-tight">
           Know a creator we should track?
         </p>

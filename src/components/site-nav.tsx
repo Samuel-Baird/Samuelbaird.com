@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { BeehiveMark } from "@/components/beehive-mark";
 import {
   AdminMessageNotifications,
   type AdminMessagePreview,
@@ -47,9 +48,15 @@ export async function SiteNav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Link
           href="/"
-          className="serif text-xl font-semibold tracking-tight text-[color:var(--foreground)] sm:text-2xl"
+          className="flex items-center gap-2.5 text-[color:var(--foreground)]"
         >
-          Latter-day Stats
+          <BeehiveMark
+            title="Latter-day Stats"
+            className="h-6 w-6 shrink-0 text-[color:var(--honey)]"
+          />
+          <span className="serif text-xl font-semibold tracking-tight sm:text-2xl">
+            Latter-day Stats
+          </span>
         </Link>
 
         <div className="flex items-center gap-3">

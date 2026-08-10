@@ -18,7 +18,7 @@ export default function MethodologyPage() {
         ← About
       </Link>
 
-      <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+      <p className="small-caps mt-6 text-xs font-medium text-[color:var(--accent)]">
         Methodology
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
@@ -151,7 +151,7 @@ function Section({
 }) {
   return (
     <section className="mt-12">
-      <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+      <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
         {title}
       </h2>
       <div className="mt-4 text-base leading-relaxed text-[color:var(--foreground)]">

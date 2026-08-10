@@ -1,26 +1,33 @@
 import Link from "next/link";
+import { BeehiveMark } from "@/components/beehive-mark";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-[color:var(--border)] bg-[color:var(--muted-soft)]/40">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 text-sm text-[color:var(--muted)] sm:px-8 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-2">
-          <div className="serif text-base font-medium text-[color:var(--foreground)]">
-            Latter-day Stats
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <div className="flex flex-col gap-6 text-sm text-[color:var(--muted)] md:flex-row md:items-center md:justify-between">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 serif text-base font-medium text-[color:var(--foreground)]">
+              <BeehiveMark className="h-4 w-4 text-[color:var(--honey)]" />
+              Latter-day Stats
+            </div>
+            <p className="max-w-md leading-relaxed">
+              Statistics, research, and creator data on the Latter-day Saint
+              community. Not affiliated with The Church of Jesus Christ of
+              Latter-day Saints.
+            </p>
           </div>
-          <p className="max-w-md leading-relaxed">
-            Statistics, research, and creator data on the Latter-day Saint
-            community. Not affiliated with The Church of Jesus Christ of
-            Latter-day Saints.
-          </p>
+          <nav className="small-caps flex flex-wrap gap-x-6 gap-y-2 text-[13px]">
+            <Link href="/channels" className="hover:text-[color:var(--foreground)] transition-colors">Channels</Link>
+            <Link href="/studies" className="hover:text-[color:var(--foreground)] transition-colors">Studies</Link>
+            <Link href="/timelines" className="hover:text-[color:var(--foreground)] transition-colors">Timelines</Link>
+            <Link href="/about" className="hover:text-[color:var(--foreground)] transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-[color:var(--foreground)] transition-colors">Contact</Link>
+          </nav>
         </div>
-        <nav className="flex flex-wrap gap-x-6 gap-y-2">
-          <Link href="/channels" className="hover:text-[color:var(--foreground)] transition-colors">Channels</Link>
-          <Link href="/studies" className="hover:text-[color:var(--foreground)] transition-colors">Studies</Link>
-          <Link href="/timelines" className="hover:text-[color:var(--foreground)] transition-colors">Timelines</Link>
-          <Link href="/about" className="hover:text-[color:var(--foreground)] transition-colors">About</Link>
-          <Link href="/contact" className="hover:text-[color:var(--foreground)] transition-colors">Contact</Link>
-        </nav>
+        <div className="dinkus mt-8 mb-0 text-xs">
+          <BeehiveMark className="h-3.5 w-3.5" />
+        </div>
       </div>
     </footer>
   );

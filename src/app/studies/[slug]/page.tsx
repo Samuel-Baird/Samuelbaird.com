@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 
-const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> = {
-  primary_dataset: { label: "Primary Dataset", className: "bg-emerald-100 text-emerald-800" },
-  study: { label: "Study", className: "bg-blue-100 text-blue-800" },
-  secondary_analysis: { label: "Secondary Analysis", className: "bg-[color:var(--muted-soft)] text-[color:var(--muted)]" },
-  blog_analysis: { label: "Blog Analysis", className: "bg-amber-100 text-amber-800" },
+const SOURCE_TYPE_LABELS: Record<string, { label: string; ink: TagInk }> = {
+  primary_dataset: { label: "Primary Dataset", ink: "honey" },
+  study: { label: "Study", ink: "accent" },
+  secondary_analysis: { label: "Secondary Analysis", ink: "muted" },
+  blog_analysis: { label: "Blog Analysis", ink: "oxblood" },
 };
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { CitationCopy } from "@/components/citation-copy";
 import { StudyProgressPanel } from "@/components/study-progress-panel";
+import { Tag, type TagInk } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
 import {
   getBookmarkSetForUser,
@@ -67,7 +68,7 @@ export default async function StudyDetailPage({
       </Link>
 
       {study.context_note && !study.flagged_problematic && (
-        <div className="mt-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--accent-soft)]/30 p-4 text-sm text-[color:var(--foreground)]">
+        <div className="mt-6 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--accent-soft)]/30 p-4 text-sm text-[color:var(--foreground)]">
           <div className="flex items-start gap-3">
             <span
               aria-hidden
@@ -86,11 +87,11 @@ export default async function StudyDetailPage({
       )}
 
       {study.flagged_problematic && (
-        <div className="mt-6 rounded-2xl border-2 border-red-300 bg-red-50 p-4 text-sm text-red-900">
+        <div className="mt-6 rounded-[var(--radius)] border-2 border-[color:var(--oxblood)]/50 bg-[color:var(--oxblood-soft)] p-4 text-sm text-[color:var(--oxblood)]">
           <div className="flex items-start gap-3">
             <span
               aria-hidden
-              className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white"
+              className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color:var(--oxblood)] text-xs font-bold text-white"
             >
               !
             </span>
@@ -109,22 +110,19 @@ export default async function StudyDetailPage({
 
       <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
         {study.source_type && SOURCE_TYPE_LABELS[study.source_type] && (
-          <span className={`rounded-full px-2.5 py-1 font-medium uppercase tracking-wide text-[10px] ${SOURCE_TYPE_LABELS[study.source_type].className}`}>
+          <Tag ink={SOURCE_TYPE_LABELS[study.source_type].ink}>
             {SOURCE_TYPE_LABELS[study.source_type].label}
-          </span>
+          </Tag>
         )}
         {study.year && (
-          <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
+          <Tag ink="muted" className="serif-onum">
             {study.year}
-          </span>
+          </Tag>
         )}
         {study.tags.map((t) => (
-          <span
-            key={t}
-            className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
-          >
+          <Tag key={t} ink="accent">
             {t}
-          </span>
+          </Tag>
         ))}
       </div>
 
@@ -152,7 +150,7 @@ export default async function StudyDetailPage({
         <div className="mt-4">
           <Link
             href={`/admin/studies/${study.slug}/edit`}
-            className="inline-flex h-9 items-center rounded-full border border-[color:var(--border)] px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+            className="inline-flex h-9 items-center rounded-[var(--radius)] border border-[color:var(--border)] px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
           >
             Edit (admin)
           </Link>
@@ -165,7 +163,7 @@ export default async function StudyDetailPage({
             href={study.external_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
+            className="inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
           >
             Read on external site ↗
           </a>
@@ -173,7 +171,7 @@ export default async function StudyDetailPage({
       )}
 
       {previewImageUrl && (
-        <figure className="mt-10 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)]/40">
+        <figure className="mt-10 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)]/40">
           <div className="relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -182,7 +180,7 @@ export default async function StudyDetailPage({
               className="block h-auto w-full"
             />
             {study.preview_image_is_ai && (
-              <span className="absolute bottom-2 left-2 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-white">
+              <span className="small-caps absolute bottom-2 left-2 rounded-[var(--radius)] bg-black/70 px-2.5 py-1 text-[10px] font-medium text-white">
                 AI · not from study
               </span>
             )}
@@ -204,7 +202,7 @@ export default async function StudyDetailPage({
 
       {study.abstract && (
         <section className="mt-10">
-          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+          <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
             Abstract
           </h2>
           <p className="mt-3 text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
@@ -215,7 +213,7 @@ export default async function StudyDetailPage({
 
       {(study.findings ?? []).length > 0 && (
         <section className="mt-10">
-          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+          <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
             {study.category === "Utah" ? "Findings for Utah" : "Findings for Latter-day Saints"}
           </h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
@@ -229,7 +227,7 @@ export default async function StudyDetailPage({
       {pdfUrl && (
         <section className="mt-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+            <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
               Full text
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -237,20 +235,20 @@ export default async function StudyDetailPage({
                 href={pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center rounded-full border border-[color:var(--border)] bg-white px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+                className="inline-flex h-10 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
               >
                 Open in new tab ↗
               </a>
               <a
                 href={pdfUrl}
                 download
-                className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-xs font-medium text-white hover:opacity-90"
+                className="inline-flex h-10 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-xs font-medium text-white hover:opacity-90"
               >
                 Download PDF
               </a>
             </div>
           </div>
-          <div className="mt-4 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)]/40">
+          <div className="mt-4 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)]/40">
             <object
               data={pdfUrl}
               type="application/pdf"
@@ -274,7 +272,7 @@ export default async function StudyDetailPage({
 
       {study.limitations && (
         <section className="mt-12">
-          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+          <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
             Limitations in methodology
           </h2>
           <p className="mt-3 whitespace-pre-line text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
@@ -319,7 +317,7 @@ export default async function StudyDetailPage({
 
       {related.length > 0 && (
         <section className="mt-12">
-          <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+          <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
             Related studies
           </h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -327,21 +325,18 @@ export default async function StudyDetailPage({
               <li key={r.id}>
                 <Link
                   href={`/studies/${r.slug}`}
-                  className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
+                  className="group block h-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
                 >
-                  <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-wider text-[color:var(--muted)]">
+                  <div className="flex flex-wrap items-center gap-2 text-[10px] text-[color:var(--muted)]">
                     {r.year && (
-                      <span className="rounded-full bg-[color:var(--muted-soft)] px-2 py-0.5 tabular-nums">
+                      <Tag ink="muted" className="serif-onum">
                         {r.year}
-                      </span>
+                      </Tag>
                     )}
                     {(r.tags ?? []).slice(0, 2).map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-[color:var(--accent)]"
-                      >
+                      <Tag key={t} ink="accent">
                         {t}
-                      </span>
+                      </Tag>
                     ))}
                   </div>
                   <p className="serif mt-2 text-base font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">

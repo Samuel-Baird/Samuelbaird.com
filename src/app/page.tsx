@@ -13,7 +13,8 @@ import {
   TopStatsCarousel,
   type TopStatSlide,
 } from "@/components/top-stats-carousel";
-import { colorsForType } from "@/lib/channel-types";
+import { Tag } from "@/components/tag";
+import { inkForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
 
@@ -47,13 +48,13 @@ export default async function Home() {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/channels"
-            className="inline-flex h-11 items-center rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
+            className="inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
           >
             Browse channels
           </Link>
           <Link
             href="/studies"
-            className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+            className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
           >
             Read studies
           </Link>
@@ -103,7 +104,7 @@ export default async function Home() {
                 <li key={c.id}>
                   <Link
                     href={`/channels/${c.slug}`}
-                    className="group flex h-full items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
+                    className="group flex h-full items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
                   >
                     {c.thumbnail_url ? (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -120,17 +121,11 @@ export default async function Home() {
                         {c.name}
                       </h3>
                       <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
-                        {tags.map((tag) => {
-                          const { bg, text } = colorsForType(tag);
-                          return (
-                            <span
-                              key={tag}
-                              className={`rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] uppercase tracking-wider`}
-                            >
-                              {tag}
-                            </span>
-                          );
-                        })}
+                        {tags.map((tag) => (
+                          <Tag key={tag} ink={inkForType(tag)}>
+                            {tag}
+                          </Tag>
+                        ))}
                         <span className="tabular-nums">
                           {fmtCompact(c.latest?.subscribers)} subs
                         </span>
@@ -151,7 +146,7 @@ export default async function Home() {
 
 function MetricTile({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
+    <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5">
       <div className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
         {label}
       </div>

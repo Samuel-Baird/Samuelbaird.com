@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AdminChannelsTable } from "@/components/admin-channels-table";
-import { TYPE_COLORS } from "@/lib/channel-types";
+import { TYPE_INK } from "@/lib/channel-types";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Channel, ChannelStats } from "@/lib/types";
 
@@ -21,7 +21,7 @@ export default async function AdminChannelsPage({
   if (error) throw error;
   if (statsError) throw statsError;
 
-  const types = Object.keys(TYPE_COLORS).sort();
+  const types = Object.keys(TYPE_INK).sort();
 
   return (
     <div>
@@ -48,7 +48,7 @@ export default async function AdminChannelsPage({
         </div>
         <Link
           href="/admin/channels/new"
-          className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90"
+          className="inline-flex h-10 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90"
         >
           New channel
         </Link>

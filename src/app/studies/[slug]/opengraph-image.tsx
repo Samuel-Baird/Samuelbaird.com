@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og";
 import { getStudyBySlug } from "@/lib/data";
+import { OG_SIZE, OG_CONTENT_TYPE, OgFrame, OG_INK, OG_MUTED } from "@/lib/og";
 
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const size = OG_SIZE;
+export const contentType = OG_CONTENT_TYPE;
 export const alt = "Latter-day Stats — Study";
 
 export default async function Image({
@@ -24,36 +25,13 @@ export default async function Image({
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          background: "#ffffff",
-          padding: "64px 72px",
-          fontFamily: "Georgia, serif",
-        }}
-      >
-        <span
-          style={{
-            fontSize: 18,
-            color: "#6b7280",
-            fontFamily: "system-ui, sans-serif",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-          }}
-        >
-          Latter-day Stats · Academic Study
-        </span>
-
+      <OgFrame eyebrow="Latter-day Stats · Academic Study">
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
               fontSize: title.length > 60 ? 52 : 64,
               fontWeight: 700,
-              color: "#111827",
+              color: OG_INK,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
             }}
@@ -64,7 +42,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: 26,
-                color: "#6b7280",
+                color: OG_MUTED,
                 fontFamily: "system-ui, sans-serif",
               }}
             >
@@ -72,17 +50,7 @@ export default async function Image({
             </div>
           )}
         </div>
-
-        <div
-          style={{
-            fontSize: 18,
-            color: "#9ca3af",
-            fontFamily: "system-ui, sans-serif",
-          }}
-        >
-          latter-day-stats.vercel.app
-        </div>
-      </div>
+      </OgFrame>
     ),
     { ...size },
   );

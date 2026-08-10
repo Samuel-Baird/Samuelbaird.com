@@ -53,7 +53,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
 
   if (validSeries.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-10 text-center text-sm text-[color:var(--muted)]">
+      <div className="rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-10 text-center text-sm text-[color:var(--muted)]">
         Pick two or more channels with sufficient history to compare.
       </div>
     );
@@ -104,7 +104,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
   }
 
   return (
-    <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
+    <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
@@ -115,14 +115,14 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
             {fmtDate(new Date(tMax).toISOString())}
           </div>
         </div>
-        <div className="inline-flex rounded-full border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-0.5 text-xs">
+        <div className="inline-flex rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-0.5 text-xs">
           <button
             type="button"
             onClick={() => setMode("indexed")}
             className={
-              "rounded-full px-3 py-1.5 " +
+              "rounded-[var(--radius)] px-3 py-1.5 " +
               (mode === "indexed"
-                ? "bg-white text-[color:var(--foreground)] shadow-sm"
+                ? "bg-white text-[color:var(--foreground)]"
                 : "text-[color:var(--muted)]")
             }
           >
@@ -132,9 +132,9 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
             type="button"
             onClick={() => setMode("absolute")}
             className={
-              "rounded-full px-3 py-1.5 " +
+              "rounded-[var(--radius)] px-3 py-1.5 " +
               (mode === "absolute"
-                ? "bg-white text-[color:var(--foreground)] shadow-sm"
+                ? "bg-white text-[color:var(--foreground)]"
                 : "text-[color:var(--muted)]")
             }
           >
@@ -205,7 +205,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
         </svg>
         {hover && (
           <div
-            className="pointer-events-none absolute z-10 min-w-[120px] rounded-lg border border-[color:var(--border)] bg-white px-3 py-2 text-xs shadow-md"
+            className="pointer-events-none absolute z-10 min-w-[120px] rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 py-2 text-xs"
             style={{
               left: `${hover.xPct}%`,
               top: "8px",
@@ -218,7 +218,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
             {hover.nearest.map((n) => (
               <div key={n.label} className="flex items-center gap-2 leading-5">
                 <span
-                  className="inline-block h-2 w-2 shrink-0 rounded-full"
+                  className="inline-block h-2 w-2 shrink-0 rounded-[var(--radius)]"
                   style={{ backgroundColor: n.color }}
                 />
                 <span className="truncate text-[color:var(--foreground)]">{n.label}</span>
@@ -240,7 +240,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
           return (
             <li key={s.label} className="flex items-center gap-2">
               <span
-                className="inline-block h-2.5 w-2.5 rounded-full"
+                className="inline-block h-2.5 w-2.5 rounded-[var(--radius)]"
                 style={{ backgroundColor: s.color }}
                 aria-hidden="true"
               />
@@ -250,7 +250,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
               <span
                 className={
                   "tabular-nums " +
-                  (delta >= 0 ? "text-emerald-700" : "text-red-700")
+                  (delta >= 0 ? "text-[color:var(--accent)]" : "text-[color:var(--oxblood)]")
                 }
               >
                 {delta >= 0 ? "+" : ""}

@@ -17,14 +17,14 @@ export default async function AboutPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+      <p className="small-caps text-xs font-medium text-[color:var(--accent)]">
         About
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
         A public hub for Latter-day Saint statistics &amp; research.
       </h1>
 
-      <div className="prose-like mt-10 space-y-6 text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
+      <div className="prose-like drop-cap-lead mt-10 space-y-6 text-base leading-relaxed text-[color:var(--foreground)] sm:text-lg">
         <p>
           <span className="serif text-[color:var(--foreground)]">Latter-day Stats</span>{" "}
           gathers public statistics about the Latter-day Saint community —
@@ -55,7 +55,7 @@ export default async function AboutPage() {
         {myChannel && (
           <Link
             href={`/channels/${myChannel.slug}`}
-            className="not-prose group flex items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white p-4 no-underline transition-colors hover:border-[color:var(--accent)]"
+            className="not-prose group flex items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 no-underline transition-colors hover:border-[color:var(--accent)]"
           >
             {myChannel.thumbnail_url ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -132,7 +132,7 @@ export default async function AboutPage() {
           presenting public data honestly.
         </p>
 
-        <div className="mt-8 rounded-2xl border border-[color:var(--border)] bg-white p-5 text-sm">
+        <div className="mt-8 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 text-sm">
           <p className="font-medium text-[color:var(--foreground)]">
             How stats are collected and channels are selected
           </p>
@@ -141,7 +141,7 @@ export default async function AboutPage() {
           </p>
           <Link
             href="/methodology"
-            className="mt-3 inline-flex h-9 items-center rounded-full border border-[color:var(--border)] px-4 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+            className="mt-3 inline-flex h-9 items-center rounded-[var(--radius)] border border-[color:var(--border)] px-4 text-xs small-caps font-medium hover:bg-[color:var(--muted-soft)]"
           >
             Read methodology →
           </Link>

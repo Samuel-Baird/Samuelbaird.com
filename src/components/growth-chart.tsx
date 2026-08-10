@@ -17,7 +17,7 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   const [hover, setHover] = useState<HoverPoint | null>(null);
   if (!data || data.length < 2) {
     return (
-      <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-6 text-center text-sm text-[color:var(--muted)]">
+      <div className="rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-6 text-center text-sm text-[color:var(--muted)]">
         {label} history will appear here once at least two snapshots have
         been collected.
       </div>
@@ -84,7 +84,7 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   }
 
   return (
-    <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
+    <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5">
       <div className="flex items-end justify-between gap-3">
         <div>
           <div className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
@@ -101,7 +101,7 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
           <div
             className={
               "text-xs tabular-nums " +
-              (up ? "text-emerald-700" : "text-red-700")
+              (up ? "text-[color:var(--accent)]" : "text-[color:var(--oxblood)]")
             }
           >
             {up ? "+" : ""}
@@ -155,7 +155,7 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
         </svg>
         {hover && (
           <div
-            className="pointer-events-none absolute z-10 rounded-lg border border-[color:var(--border)] bg-white px-3 py-2 text-xs shadow-md"
+            className="pointer-events-none absolute z-10 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 py-2 text-xs"
             style={{
               left: `${hover.xPct}%`,
               top: `${hover.yPct}%`,

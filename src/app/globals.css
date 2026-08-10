@@ -10,6 +10,15 @@
   --border: #e6e3dd;
   --accent: #1f4f7a;
   --accent-soft: #e8eff6;
+  /* Deseret seasoning: honey is the identity accent (logomark, active
+     states, chart highlight, dinkus); oxblood is a second ink family for
+     tags. Both are tuned to sit on --background at AA text contrast. */
+  --honey: #8a5a06;
+  --honey-soft: #f6ecd6;
+  --oxblood: #7c2d2d;
+  --oxblood-soft: #f4e6e3;
+  /* The one radius. Archive surfaces are flat panels, not pills. */
+  --radius: 3px;
 }
 
 html.dark {
@@ -20,6 +29,10 @@ html.dark {
   --border: #2a2e36;
   --accent: #7fb0d8;
   --accent-soft: #1a2733;
+  --honey: #d9a441;
+  --honey-soft: #2b230f;
+  --oxblood: #d98787;
+  --oxblood-soft: #2a1a1a;
   color-scheme: dark;
 }
 
@@ -39,6 +52,10 @@ html.dark .bg-white {
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-honey: var(--honey);
+  --color-honey-soft: var(--honey-soft);
+  --color-oxblood: var(--oxblood);
+  --color-oxblood-soft: var(--oxblood-soft);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
 }
@@ -55,6 +72,50 @@ body {
 .serif {
   font-family: var(--font-fraunces), ui-serif, Georgia, serif;
   font-feature-settings: "ss01";
+}
+
+/* Old-style figures for dates set in running serif text (annals, bylines). */
+.serif-onum {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-feature-settings: "ss01", "onum";
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Small-caps label style used for tags, table headers, and secondary
+   button text — the Archive direction's substitute for pill/badge fills. */
+.small-caps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+}
+
+/* Section-break flourish. Usage: <div class="dinkus">::before content set
+   via the beehive mark component, or plain text fallback below.</div> */
+.dinkus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--honey);
+  margin-block: 2rem;
+}
+.dinkus::before,
+.dinkus::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+/* Drop cap for study abstracts / long-form intros. Apply to a paragraph
+   directly following an element with class "drop-cap-lead". */
+.drop-cap-lead::first-letter {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 0.08em;
+  padding-top: 0.03em;
+  color: var(--honey);
 }
 
 /* Site chrome is rendered by the root layout, so page-level utilities can't

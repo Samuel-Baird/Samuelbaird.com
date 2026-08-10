@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BeehiveMark } from "@/components/beehive-mark";
 import { parseSources } from "./schema";
 import rawSources from "./sources.json";
 import { TimelineExplorer } from "./timeline-explorer";
@@ -58,7 +59,7 @@ export default function EternalIncreaseTimelinePage() {
         how those teachings were reframed in correlated materials.
       </p>
 
-      <p className="mt-6 max-w-3xl rounded-2xl border border-[color:var(--border)] bg-[color:var(--muted-soft)]/60 p-4 text-sm leading-relaxed text-[color:var(--muted)]">
+      <p className="mt-6 max-w-3xl rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)]/60 p-4 text-sm leading-relaxed text-[color:var(--muted)]">
         Working research document. Categorizations are the author&apos;s
         analysis, not official characterizations.
       </p>
@@ -83,6 +84,10 @@ export default function EternalIncreaseTimelinePage() {
       </details>
 
       <TimelineExplorer entries={entries} />
+
+      <div className="dinkus" aria-hidden="true">
+        <BeehiveMark className="h-4 w-4" />
+      </div>
 
       <Section title="To chase down">
         <ul className="space-y-2 text-sm leading-relaxed text-[color:var(--muted)]">

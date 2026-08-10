@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { Tag, type TagInk } from "@/components/tag";
 import { UpvoteButton } from "@/components/upvote-button";
 import type { Study } from "@/lib/types";
 
@@ -40,22 +41,22 @@ const CATEGORY_ORDER = [
   "Utah",
 ];
 
-const SOURCE_TYPE_LABELS: Record<string, { label: string; className: string }> = {
+const SOURCE_TYPE_LABELS: Record<string, { label: string; ink: TagInk }> = {
   primary_dataset: {
     label: "Primary Dataset",
-    className: "bg-emerald-100 text-emerald-800",
+    ink: "accent",
   },
   study: {
     label: "Study",
-    className: "bg-blue-100 text-blue-800",
+    ink: "ink",
   },
   secondary_analysis: {
     label: "Secondary Analysis",
-    className: "bg-[color:var(--muted-soft)] text-[color:var(--muted)]",
+    ink: "muted",
   },
   blog_analysis: {
     label: "Blog Analysis",
-    className: "bg-amber-100 text-amber-800",
+    ink: "honey",
   },
 };
 
@@ -142,14 +143,14 @@ export function StudiesExplorer({
   }, [drawerOpen]);
 
   const sidebar = (
-    <div className="rounded-2xl border border-[color:var(--border)] bg-white p-5">
+    <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5">
       <div className="flex items-center justify-between gap-4">
         <h2 className="serif text-xl font-semibold tracking-tight">Topics</h2>
         {selectedTags.size > 0 && (
           <button
             type="button"
             onClick={clearTags}
-            className="rounded-full px-2 text-sm text-[color:var(--accent)] hover:underline"
+            className="rounded-[var(--radius)] px-2 text-sm text-[color:var(--accent)] hover:underline"
           >
             Clear
           </button>
@@ -197,7 +198,7 @@ export function StudiesExplorer({
             placeholder="Search title, author, abstract, tags…"
             value={queryInput}
             onChange={(e) => setQueryInput(e.target.value)}
-            className="h-11 w-full rounded-full border border-[color:var(--border)] bg-white pl-11 pr-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
+            className="h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white pl-11 pr-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
           />
         </div>
         <label className="flex items-center gap-2 text-sm text-[color:var(--muted)]">
@@ -207,7 +208,7 @@ export function StudiesExplorer({
             onChange={(e) =>
               setSort(e.target.value as Props["initial"]["sort"])
             }
-            className="h-11 rounded-full border border-[color:var(--border)] bg-white px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
+            className="h-11 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
           >
             {(Object.keys(SORT_LABELS) as Array<keyof typeof SORT_LABELS>).map(
               (k) => (
@@ -221,12 +222,12 @@ export function StudiesExplorer({
         <button
           type="button"
           onClick={() => setDrawerOpen(true)}
-          className="inline-flex h-11 items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 text-sm font-medium md:hidden"
+          className="inline-flex h-11 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium md:hidden"
         >
           <SlidersHorizontal aria-hidden="true" size={16} />
           Topics
           {selectedTags.size > 0 && (
-            <span className="rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs text-[color:var(--accent)]">
+            <span className="rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs text-[color:var(--accent)]">
               {selectedTags.size}
             </span>
           )}
@@ -247,7 +248,7 @@ export function StudiesExplorer({
           </p>
 
           {studies.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)]">
+            <div className="rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)]">
               No studies match your filters.
             </div>
           ) : isGrouped ? (
@@ -394,7 +395,7 @@ function StudyCard({
       <Link
         href={`/studies/${s.slug}`}
         className={
-          "group block h-full overflow-hidden rounded-2xl border bg-white transition-colors " +
+          "group block h-full overflow-hidden rounded-[var(--radius)] border bg-white transition-colors " +
           (s.flagged_problematic
             ? "border-[color:var(--border)] hover:border-red-500"
             : "border-[color:var(--border)] hover:border-[color:var(--accent)]")
@@ -410,7 +411,7 @@ function StudyCard({
               className="h-full w-full object-cover"
             />
             {s.preview_image_is_ai && (
-              <span className="absolute bottom-2 left-2 rounded-full bg-black/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white">
+              <span className="absolute bottom-2 left-2 rounded-[var(--radius)] bg-black/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white">
                 AI · not from study
               </span>
             )}
@@ -426,23 +427,12 @@ function StudyCard({
           </span>
         )}
         <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
-          {sourceType && (
-            <span className={`rounded-full px-2.5 py-1 font-medium uppercase tracking-wide text-[10px] ${sourceType.className}`}>
-              {sourceType.label}
-            </span>
-          )}
-          {s.year && (
-            <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
-              {s.year}
-            </span>
-          )}
+          {sourceType && <Tag ink={sourceType.ink}>{sourceType.label}</Tag>}
+          {s.year && <Tag>{s.year}</Tag>}
           {s.tags.slice(0, 2).map((t) => (
-            <span
-              key={t}
-              className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
-            >
+            <Tag key={t} ink="accent">
               {t}
-            </span>
+            </Tag>
           ))}
         </div>
         <h2 className="serif mt-4 text-xl font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">

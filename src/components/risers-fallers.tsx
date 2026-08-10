@@ -32,7 +32,7 @@ function Sparkline({
         `${i === 0 ? "M" : "L"} ${x(xs[i]).toFixed(1)} ${y(p.subscribers).toFixed(1)}`,
     )
     .join(" ");
-  const stroke = tone === "up" ? "rgb(4 120 87)" : "rgb(185 28 28)";
+  const stroke = tone === "up" ? "var(--accent)" : "var(--oxblood)";
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
@@ -65,10 +65,10 @@ function MoverList({
   emptyMsg: string;
 }) {
   const up = tone === "up";
-  const toneText = up ? "text-emerald-700" : "text-red-700";
+  const toneText = up ? "text-[color:var(--accent)]" : "text-[color:var(--oxblood)]";
   const arrow = up ? "▲" : "▼";
   return (
-    <div className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+    <div className="overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-white">
       <div className="flex items-center justify-between border-b border-[color:var(--border)] px-5 py-3">
         <span className="text-sm font-semibold">{title}</span>
         <span className={"text-xs " + toneText}>{arrow} 30d</span>
@@ -93,10 +93,10 @@ function MoverList({
                 <img
                   src={c.thumbnail_url}
                   alt=""
-                  className="h-8 w-8 shrink-0 rounded-full object-cover"
+                  className="h-8 w-8 shrink-0 rounded-[var(--radius)] object-cover"
                 />
               ) : (
-                <div className="h-8 w-8 shrink-0 rounded-full bg-[color:var(--muted-soft)]" />
+                <div className="h-8 w-8 shrink-0 rounded-[var(--radius)] bg-[color:var(--muted-soft)]" />
               )}
               <Link
                 href={`/channels/${c.slug}`}

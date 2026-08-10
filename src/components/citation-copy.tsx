@@ -77,19 +77,19 @@ export function CitationCopy({
 
   return (
     <section className="mt-12">
-      <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+      <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
         Cite this study
       </h2>
       <div className="mt-3 space-y-3">
         {formats.map((f) => (
-          <div key={f.id} className="rounded-xl border border-[color:var(--border)] bg-white">
+          <div key={f.id} className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white">
             <div className="flex items-center justify-between border-b border-[color:var(--border)] px-4 py-2">
-              <span className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+              <span className="small-caps text-[11px] font-medium text-[color:var(--muted)]">
                 {f.label}
               </span>
               <button
                 onClick={() => copy(f.id, f.text)}
-                className="inline-flex h-7 items-center rounded-full border border-[color:var(--border)] px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+                className="inline-flex h-7 items-center rounded-[var(--radius)] border border-[color:var(--border)] px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
               >
                 {copied === f.id ? "Copied!" : "Copy"}
               </button>

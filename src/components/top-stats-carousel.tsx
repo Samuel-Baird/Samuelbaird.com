@@ -62,7 +62,7 @@ export function TopStatsCarousel({ slides }: TopStatsCarouselProps) {
               type="button"
               aria-label="Previous statistic"
               onClick={() => move(-1)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-white hover:bg-[color:var(--muted-soft)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white hover:bg-[color:var(--muted-soft)]"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
@@ -70,7 +70,7 @@ export function TopStatsCarousel({ slides }: TopStatsCarouselProps) {
               type="button"
               aria-label="Next statistic"
               onClick={() => move(1)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] bg-white hover:bg-[color:var(--muted-soft)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white hover:bg-[color:var(--muted-soft)]"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -78,7 +78,7 @@ export function TopStatsCarousel({ slides }: TopStatsCarouselProps) {
         ) : null}
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white">
+      <div className="mt-6 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-white">
         <div className="grid gap-0 md:grid-cols-[0.95fr_1.35fr]">
           <Link
             href={active.href}
@@ -142,9 +142,9 @@ export function TopStatsCarousel({ slides }: TopStatsCarouselProps) {
               aria-current={dotIndex === index}
               onClick={() => setIndex(dotIndex)}
               className={
-                "h-2.5 rounded-full transition-all " +
+                "h-2.5 rounded-[var(--radius)] transition-all " +
                 (dotIndex === index
-                  ? "w-8 bg-[color:var(--accent)]"
+                  ? "w-8 bg-[color:var(--honey)]"
                   : "w-2.5 bg-[color:var(--border)] hover:bg-[color:var(--muted)]")
               }
             />

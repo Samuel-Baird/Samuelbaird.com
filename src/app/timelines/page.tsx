@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { BeehiveMark } from "@/components/beehive-mark";
+import { Tag } from "@/components/tag";
 import { TIMELINES } from "./registry";
 
 export const metadata: Metadata = {
@@ -46,25 +48,26 @@ export default function TimelinesPage() {
         <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
           Available timelines
         </h2>
-        <ul className="mt-4 space-y-4">
-          {TIMELINES.map((t) => (
+        <ul className="mt-4 rounded-[var(--radius)] border border-[color:var(--border)]">
+          {TIMELINES.map((t, i) => (
             <li key={t.href}>
+              {i > 0 && (
+                <div className="dinkus" aria-hidden="true" style={{ marginBlock: 0 }}>
+                  <BeehiveMark className="h-3.5 w-3.5" />
+                </div>
+              )}
               <Link
                 href={t.href}
-                className="group block rounded-2xl border border-[color:var(--border)] bg-white p-5 transition-colors hover:border-[color:var(--accent)] sm:p-6"
+                className="group block p-5 transition-colors hover:bg-[color:var(--muted-soft)]/50 sm:p-6"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-xs tabular-nums">
+                  <span className="serif-onum rounded-[var(--radius)] bg-[color:var(--muted-soft)] px-2.5 py-1 text-xs tabular-nums">
                     {t.span}
                   </span>
                   <span className="text-xs text-[color:var(--muted)]">
                     {t.sourceCount} sources
                   </span>
-                  {t.status && (
-                    <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-800/50">
-                      {t.status}
-                    </span>
-                  )}
+                  {t.status && <Tag ink="honey">{t.status}</Tag>}
                 </div>
                 <h3 className="serif mt-3 text-xl font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">
                   {t.title}
