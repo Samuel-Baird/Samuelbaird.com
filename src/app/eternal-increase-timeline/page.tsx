@@ -30,6 +30,10 @@ const PRINCIPLES = [
     body: "A single talk or manual can make several distinct doctrinal moves. Each excerpt carries its own categories, its own referent, and where provenance differs, its own hearsay grade.",
   },
   {
+    title: "Corpus-level coverage",
+    body: "Every General Conference talk containing an exaltation word-form — 1,980 talks, 1850s to the 2020s — has been read or triaged and classified: passing mention, redundant restatement, or substantive claim. The conference sources here are drawn from the substantive class, and claims about absence rest on that screen rather than on a failure to recall an example. The full classification ledger is published in the project repository.",
+  },
+  {
     title: "Direction recorded as data",
     body: "Being tagged with a claim says nothing about which way a source leans on it, so every excerpt also records whether it affirms, hedges on, or denies the proposition behind each of its claim categories. Hedging is kept as its own answer rather than rounded to a yes or a no, because a teaching usually passes through it on the way out. Those placements are a reading of the excerpt, not an official characterisation, and the ones still unconfirmed are marked as such.",
   },

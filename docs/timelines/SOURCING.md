@@ -215,3 +215,17 @@ liturgy is neither published by the Church nor stable across the period
 covered. Where a published source itself characterizes temple teaching, the
 published source is the entry. This is a scope rule, not an evasion, and it is
 stated here so the absence reads as a decision rather than an oversight.
+
+### The exaltation screen
+
+For the eternal-increase timeline, the absence discipline in this section is
+backed by a full-corpus screen: every General Conference talk containing an
+`exalt*` word-form (1,980 talks) was extracted with context windows, triaged,
+and classified — PASSING, REDUNDANT, or SUBSTANTIVE, with every SUBSTANTIVE
+candidate read in full before classification. The ledger
+([`exaltation-screen-ledger.jsonl`](./exaltation-screen-ledger.jsonl)) and the
+count report ([`exaltation-screen-report.md`](./exaltation-screen-report.md))
+are committed alongside this document; the ledger records a one-line reason
+for every talk *not* included, which is the standing answer to "but what about
+talk X." Screening was machine-assisted with staged triage; the substantive
+class was verified at drafting time under §8.
