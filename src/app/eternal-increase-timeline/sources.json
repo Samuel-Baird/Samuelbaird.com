@@ -505,6 +505,43 @@
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/journal-of-discourses/1855/1855-02-18-pratt-the-holy-spirit-and-the-godhead.md (“The Holy Spirit and the Godhead”), whose complete text was collated against the BYU JoD volume 2 page scan, pp. 334–347. Contemporaneous report, speaker unreviewed, hence C. This is the collection's essential control. Nineteenth-century “infinite Gods” language is routinely cited as evidence for an infinite regress; Pratt gets to literally infinite Gods by a route that is not genealogical, in the same decade and from the same pulpit as Brigham Young's genuinely serial statements. Anyone citing an 1850s “many Gods” or “infinite Gods” passage as backward-chain evidence has to clear this one first, because it demonstrates that the vocabulary alone does not settle the direction. Two consequences worth carrying: the arithmetic is compatible with a completed, non-successive plurality; and on this metaphysics — God as the finished attribute-set of knowledge, identical in all — there is nothing left for God to increase in, which is why Pratt's opposition to ongoing divine progression is structural rather than stated (his propositional denial lives in The Seer and the 1860 First Presidency exchange, not in this sermon corpus). Structurally this is also the earliest instance of a move the dataset sees again in 1984: defusing plurality by redefining what “God” refers to (see packer-parentage-1984). The rhyme is worth noting; unlike Packer, Pratt is constructing rather than walking anything back, so RETREAT-REFRAME is not applied."
   },
   {
+    "id": "grant-lariat-1856",
+    "sourceType": "original",
+    "date": "1856-10-26",
+    "dateDisplay": "October 26, 1856",
+    "datePrecision": "day",
+    "title": "Jedediah M. Grant: “My God is not lariatted out”",
+    "speaker": "Jedediah M. Grant",
+    "office": "Second Counselor in the First Presidency",
+    "venue": "Bowery discourse, Great Salt Lake City (Journal of Discourses 4:122–129)",
+    "url": "https://contentdm.lib.byu.edu/digital/collection/JournalOfDiscourses3/id/637",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "BYU ContentDM scan of Journal of Discourses vol. 4, pp. 122–129",
+        "url": "https://web.archive.org/web/20260222165354/https://contentdm.lib.byu.edu/digital/collection/JournalOfDiscourses3/id/637/",
+        "note": "Wayback capture of the BYU page images the vault text was collated against."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "grant-lariat-1856-q1",
+        "categories": ["DIVINE-PROGRESSION"],
+        "excerpt": "Men have to be rewarded according to their works; if a man ceases to work, there is no more blessings for him. He is lariatted out, as Orson Pratt lariatted out the Gods in his theory; his circle is as far as the string extends. My God is not lariatted out.",
+        "note": "Affirmation, by ridicule. The lariat is a staked rope: a tethered animal can graze only as far as the string reaches. Grant applies the image to Orson Pratt's published position that the Gods have all knowledge and cannot increase in it, and refuses it for his own God — the shortest statement of the affirmative side of the progression question in the nineteenth-century corpus. The target is named, which is what makes the quote usable: this is the Young/Pratt controversy conducted from the pulpit, nine years before the First Presidency condemned Pratt's propositions (see fp-repudiation-1865)."
+      },
+      {
+        "quoteId": "grant-lariat-1856-q2",
+        "categories": [],
+        "excerpt": "I do not want the old men to think that they have done enough, but to exert themselves to the last, and not to believe in a God that is lariatted out, nor be lariatted out themselves, and say, “I have worked ten, fifteen, or twenty-five years, and I do not want to work anymore, my rope is long enough now.”",
+        "note": "Context, not an independent claim: Grant's whole use of the image is homiletic — a God who has stopped growing licenses men who have stopped working. Recorded here because it shows the doctrinal claim being deployed as an argument about labor, which is how the affirmative side of the progression question was normally preached rather than argued."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/journal-of-discourses/1856/1856-10-grant-those-who-are-in-darkness.md, whose text was collated against BYU ContentDM page images of Journal of Discourses vol. 4, pp. 122–129. Journal of Discourses, so C: a Pitman-shorthand report of a Bowery discourse, published without the speaker's review; the printed heading is “Those Who Are in Darkness Cannot Discern the Light—Exhortations to Male and Female to Seek After the Light of the Holy Ghost—Women Who Leave Their Husbands, Etc.” Eugene England, “Perfection and Progression,” BYU Studies 29/3 (1989), 39, pairs this with a Brigham Young “lariat rope” sermon of the same month; Young's version could not be located in the vault (the October 1856 Young files in the corpus are the handcart-rescue discourses), so only Grant's is entered here, and any Young lariat entry should be sourced from the printed Journal of Discourses directly rather than from England. Grant was Second Counselor in the First Presidency and died five weeks after this discourse, on 1 December 1856."
+  },
+  {
     "id": "kimball-chain-1857",
     "sourceType": "original",
     "date": "1857-04-06",
@@ -632,6 +669,37 @@
       }
     ],
     "notes": "The relayed saying is an attribution chain three links deep — Joseph Smith (d. 1844) → Heber C. Kimball (earlier the same afternoon) → Young → Watt's shorthand — so while the sermon is a contemporaneous report (C), the Joseph attribution itself is an eighteen-year-old relay and should be weighed accordingly. Also excerpted in Widtsoe's Discourses of Brigham Young compilation."
+  },
+  {
+    "id": "young-progressing-eternally-1867",
+    "sourceType": "original",
+    "date": "1867-01-13",
+    "dateDisplay": "January 13, 1867",
+    "datePrecision": "day",
+    "title": "Brigham Young: “the God that I serve is progressing eternally”",
+    "speaker": "Brigham Young",
+    "office": "President of the Church",
+    "venue": "Tabernacle discourse, Great Salt Lake City (Journal of Discourses 11:282–291)",
+    "url": "https://contentdm.lib.byu.edu/digital/collection/JournalOfDiscourses3/id/4477",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Edward L. Sloan, shorthand reporter, printed in Journal of Discourses 11:282–291",
+        "url": "https://web.archive.org/web/20260805191823/https://contentdm.lib.byu.edu/digital/collection/JournalOfDiscourses3/id/4477",
+        "note": "Wayback capture of the BYU ContentDM page images. The printed header reads “Remarks by President Brigham Young, in the Tabernacle, Great Salt Lake City, January 13th, 1867. Reported by Edward L. Sloan.”"
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "young-progressing-eternally-1867-q1",
+        "categories": ["DIVINE-PROGRESSION", "FORWARD-EUPHEMISM"],
+        "excerpt": "They appear to be bounded in their capacity for acquiring knowledge, as Brother Orson Pratt, has in theory, bounded the capacity of God. According to his theory, God can progress no further in knowledge and power; but the God that I serve is progressing eternally, and so are his children: they will increase to all eternity, if they are faithful.",
+        "note": "Affirmation, and the most explicit one from a Church President in the corpus. Two claims in one sentence, and they must be kept apart: God is progressing eternally (D), and his children will increase to all eternity (the forward promise, stated with no object — no offspring, no worlds, no mechanism). Young joins them with “and so are,” which is exactly the symmetry that later readers turn into an argument for a chain; he does not himself make a backward claim here, so nothing backward is tagged. Orson Pratt is named as the holder of the bounded view, which dates and localizes the dispute (compare pratt-seer and fp-repudiation-1865)."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/journal-of-discourses/1867/1867-01-young-weakness-of-the-human-mind.md, printed under the heading “Weakness of the Human Mind. Extortion. Imperfection of the Human Judgment. Introduction of Machinery.” Journal of Discourses, so C: Edward L. Sloan's shorthand report, not reviewed by the speaker before publication; the vault file is still status draft. This is the sentence Eugene England uses to open “Perfection and Progression,” BYU Studies 29/3 (1989), 33, where he sets it against Hyrum Smith's 1844 “I would not serve a God that had not all wisdom and power” to frame the whole two-modes argument; England's reproduction is lowercase OCR, so the text here is taken from the sermon, not from him. Note what the surrounding paragraphs are actually about: retail prices, judging cloth, and Saints who stop learning. The doctrinal claim arrives as an analogy for members who will not study, which is a recurring feature of this material and a reason it is easy to miss when sweeping by topic."
   },
   {
     "id": "pratt-celestial-marriage-1869",
@@ -1162,6 +1230,80 @@
     "needsVerification": true
   },
   {
+    "id": "whitney-father-and-mother-1907",
+    "sourceType": "original",
+    "date": "1907-10-05",
+    "dateDisplay": "October 5, 1907",
+    "datePrecision": "day",
+    "title": "Orson F. Whitney: a Mother in heaven defended as philosophy",
+    "speaker": "Orson F. Whitney",
+    "office": "Member of the Quorum of the Twelve Apostles",
+    "venue": "General conference, second day afternoon session, Salt Lake Tabernacle (Conference Report, October 1907)",
+    "url": "https://archive.org/details/conferencereport1907sa/page/n45",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "whitney-father-and-mother-1907-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "Why, then, should it be deemed unphilosophic for man, the child of God, — man and woman, male and female, — to become like their Father and their Mother in heaven? We are at the defiance of the world to prove this doctrine unphilosophical.",
+        "note": "A Mother in heaven asserted in passing and then used as a premise, which is the tell: Whitney does not argue for her, he assumes her and dares the world to refute the package. Tagged HEAVENLY-MOTHER only. “Become like their Father and their Mother in heaven” is theosis, not generative exaltation, and carries no FORWARD tag by itself — the A-framing trap. Spacing before the question mark normalized from the printed OCR; no words changed."
+      },
+      {
+        "quoteId": "whitney-father-and-mother-1907-q2",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "implied": true,
+        "excerpt": "You earthly parents expect your children to become men and women like yourselves. You know that it is only a question of time, when, if they live, your little toddling children will become men and women, and will marry and have children of their own.",
+        "note": "Marked implied. The sentence is literally about mortal children. But it is the immediate warrant for the claim in q1 — the analogy is offered so that the hearer will complete it — and what completes it is offspring, not merely likeness. Whitney stops one step short of saying so, so the forward-generative reading is carried as read-into rather than stated."
+      },
+      {
+        "quoteId": "whitney-father-and-mother-1907-q3",
+        "categories": [],
+        "excerpt": "It revealed anew the sublime fact that man is verily the child of Deity, and can become, by development, like unto his Father and his God. It taught the great truth that man is divinity in embryo, and capable, by education, through human experience, and by obedience to the principles of eternal progress, of rising to the plane whereon stands the Universal Father, who desires to make His children equal with Himself, and to put into their possession all things.",
+        "note": "Untagged on purpose. “Divinity in embryo,” “equal with Himself,” “rising to the plane whereon stands the Universal Father” — this is theosis at full nineteenth-century strength and it still asserts nothing about spirit offspring or about a chain behind the Father. Recorded so the entry shows what Whitney does and does not claim in the same breath."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1907/1907-10-whitney-defending-the-saints.md, whose Final Review collated the full body against the archive.org scan conferencereport1907sa, leaves n45–n53, word for word against the printed page. A heavyweight pass had earlier split a separate George F. Richards address out of this file and re-anchored the leaf, so the URL points at where Whitney's own remarks begin. Conference Report, so A; historical-official. No hymn quotation appears in this talk, which is why the entry carries no citesId — Whitney reaches the Mother without Eliza R. Snow, through the same argument from nature that Erastus Snow used in 1885 (see snow-heavenly-mother-1885), but stripped of the anatomy and recast as a reply to outside critics. The setting matters: the talk is an apologetic defense of the Saints “against calumny and misrepresentation,” and the Heavenly Mother claim is deployed as an asset rather than defended as an embarrassment. Read against packer-parentage-1984 and hinckley-1997, which handle the same apologetic pressure by subtraction."
+  },
+  {
+    "id": "iverson-mother-in-heaven-1908",
+    "sourceType": "original",
+    "citesId": ["o-my-father"],
+    "date": "1908-04-05",
+    "dateDisplay": "April 5, 1908",
+    "datePrecision": "day",
+    "title": "Heber C. Iverson: the hymn credited to Joseph Smith's inspiration",
+    "speaker": "Heber C. Iverson",
+    "office": "Bishop of the Second Ward",
+    "venue": "General conference, Sunday afternoon overflow session (Conference Report, April 1908, pp. 69–72)",
+    "url": "https://archive.org/details/conferencereport1908a/page/n69",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "iverson-mother-in-heaven-1908-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "In the heavens are parents single? No; the thought makes reason stare! Truth is reason; truth eternal Tells me I've a mother there.",
+        "note": "The couplet as printed in the Conference Report; Iverson quotes the first three stanzas and stops here. Spacing before the question mark, semicolon and exclamation point normalized from the printed OCR; no words changed. See o-my-father."
+      },
+      {
+        "quoteId": "iverson-mother-in-heaven-1908-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "That doctrine was ridiculed seventy years ago, when announced by this hymn, teaching what had been given by inspiration flowing first through the mind of the Prophet Joseph Smith, that we have a mother in heaven.",
+        "note": "The provenance claim that the whole later tradition rests on, made explicit from the pulpit: the hymn is not Eliza R. Snow's poetic inference but a vehicle for revelation given first to Joseph Smith. Set this beside snow-heavenly-mother-1885, where an apostle says the opposite in as many words — “it is left for us to infer this” — and beside hinckley-daughters-of-god-1991, where the argument has shrunk to the observation that Joseph made no correction to what Sister Snow had written. The date arithmetic is loose: “seventy years ago” from 1908 lands in 1838, while the poem was published in 1845."
+      },
+      {
+        "quoteId": "iverson-mother-in-heaven-1908-q3",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "He discourses very learnedly upon the dual sequence of the term Elohim, and proves conclusively by his deduction that there is a feminine element existing with the Deity, and that we have in Deity a mother as well as a father. There are mothers of our spirits.",
+        "note": "Two things worth having. First, the corroboration is outside and secular — an unnamed writer in “one of the leading magazines of this country” arguing from the plural form of Elohim — which is a Latter-day Saint apostle-era bishop reaching for a non-Mormon philologist to underwrite a Mormon doctrine. Second, and easy to miss, the plural: “There are mothers of our spirits.” Iverson slides from one Mother to many without remark, twenty years after the Manifesto and in a Church still living with plural marriage, and the plural never becomes a doctrine anyone defends."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1908/1908-04-iverson-rejoicing-and-responsibility.md, whose heavyweight pass verified the talk boundary, speaker, session and supplied title against the archive.org Conference Report scan conferencereport1908a at printed pages 69–72, and whose Final Review pass is recorded as complete. Conference Report, so A; historical-official. Filed as an original rather than a citation, with citesId preserving the edge to o-my-father: the hymn is quoted at length, but the entry's value is the three claims Iverson builds around it — that the doctrine came by inspiration through Joseph Smith, that a secular philologist independently confirms it, and that our spirits have mothers plural — none of which is in the hymn. He is a ward bishop speaking in an overflow session, so this is not authoritative teaching; it is evidence of what a well-read local leader took the hymn to have settled, which for the reception history is the more useful thing."
+  },
+  {
     "id": "fp-1909",
     "sourceType": "original",
     "date": "1909-11-01",
@@ -1194,6 +1336,49 @@
     "needsVerification": true
   },
   {
+    "id": "roberts-progress-of-god-1911",
+    "sourceType": "original",
+    "date": "1911-01-01",
+    "dateDisplay": "1911",
+    "datePrecision": "year",
+    "title": "B. H. Roberts: God's immutability does not exclude advancement or progress of God",
+    "speaker": "B. H. Roberts",
+    "office": "President of the First Council of the Seventy",
+    "venue": "The Seventy's Course in Theology, Fourth Year: The Atonement (Salt Lake City: The Deseret News, 1911), 69–70",
+    "url": "https://corpus.noahairmet.com/b/roberts-seventy-s-course-in-theology-6e80/803",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Eugene England, “Perfection and Progression: Two Complementary Ways to Talk About God,” BYU Studies 29/3 (1989), 43, citing The Seventy's Course in Theology (Deseret News Press, 1911), 69–70",
+        "url": "https://corpus.noahairmet.com/b/29-3-b51d/43",
+        "note": "England's catalogue entry, which is what led here; his reproduction is lowercase OCR and drops the “so” from “should not be so understood.” The excerpts below are from the Roberts volume, not from England."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "roberts-progress-of-god-1911-q1",
+        "categories": ["DIVINE-PROGRESSION"],
+        "excerpt": "But God's immutability should not be so understood as to exclude the idea of advancement or progress of God. Thus, for example: God's kingdom and glory may be enlarged, as more and more redeemed souls are added to his kingdom… So that in this sense there may come change and progress even for God.",
+        "note": "Affirmation, and the ground it stands on matters: Roberts derives divine progress from the enlargement of God's kingdom and glory — the very same “dominions, not knowledge” move that Bruce R. McConkie would later use to *deny* progression (see mcconkie-heresies-1980 and millet-mcconkie-life-beyond-1986). The difference is that Roberts does not stop there; see the next quote. Elision marks a phrase carrying scan artifacts in the digitized page."
+      },
+      {
+        "quoteId": "roberts-progress-of-god-1911-q2",
+        "categories": ["DIVINE-PROGRESSION"],
+        "excerpt": "an absolute immutability would require eternal immobility—which would reduce God to a condition eternally static, which, from the nature of things, would bar him from participation in that enlargement of kingdom and increasing glory that comes from redemption and the progress of men.",
+        "note": "The argument stated negatively: an unqualified immutability is not reverence but paralysis. The same stagnation-is-death reasoning runs through Hugh B. Brown's April 1956 conference address (see brown-deify-man-1956), where it has been transferred from God to man."
+      },
+      {
+        "quoteId": "roberts-progress-of-god-1911-q3",
+        "categories": ["DIVINE-PROGRESSION"],
+        "excerpt": "So with the All-knowing attribute, Omniscience: that must be understood somewhat in the same light as the other attributes considered: not that God is Omniscient up to the point that further progress in knowledge is impossible to him; but that all knowledge that is, all that exists, God knows.",
+        "note": "The sharper half of the claim, and the one England does not quote: Roberts takes progression into knowledge, not merely dominion. This is the precise proposition Joseph Fielding Smith calls “very dangerous” forty-three years later (jfsmith-doctrines-salvation-1954) and McConkie calls a deadly heresy in 1980, and it is here in a Church-published quorum study course written by the President of the First Council of the Seventy."
+      }
+    ],
+    "notes": "Verified by pulling the printed pages themselves from the Gospel Scholar Archive copy of the collected Seventy's Course in Theology (PDF pp. 802–804 = printed pp. 68–70 of Year Book IV), and confirming from the volume's own title page (PDF p. 727) that the 1911 Deseret News imprint England cites is Fourth Year: The Atonement. Line-break hyphenation has been closed up; one phrase carrying scan damage is elided. The passage sits in a numbered section headed “7. Limitation in the Attributes of God,” immediately after Roberts's treatments of Omnipotence, Omniscience and Omnipresence, and is footnoted to a long quotation from Sir Oliver Lodge — the philosophical provenance England and Matthew Bowman both trace to Herbert Spencer-era British thought. correlationStatus is graded historical-official here because the Year Books were prepared by Roberts in his office as President of the First Council of the Seventy, issued by the Church's own press, and used as the prescribed course of study for Seventies quorums; note that the existing bh-roberts-tripartite entry grades the same series never-official, and the two should be reconciled by the maintainer rather than left divergent. This entry is deliberately *not* the tripartite-framework entry: bh-roberts-tripartite covers intelligence → spirit → body and still needs its own excerpt pulled from the Year Books; this one covers only the progression claim."
+  },
+  {
     "id": "penrose-endless-increase-1911",
     "sourceType": "original",
     "date": "1911-10-07",
@@ -1222,6 +1407,36 @@
       }
     ],
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1911/1911-10-15-charles-w-penrose-remarks-15.md. Conference Report, so A. That file has an unusually heavy repair history — two long passages were scrambled by two-column OCR and were later de-interleaved directly against the archive.org page images (leaves n48–n56, printed pp. 48–54) — but neither quoted passage falls inside the repaired blocks, and both read cleanly apart from the two isolated scan artifacts noted on the quotes. Two corrections to how this source is usually described. First the date: the pulpit report gives 6 October, but the vault frontmatter and the printed session heading place it in the second day afternoon session, 7 October 1911. Second the office: he is frequently cited as First Presidency here, but Penrose was not called as a counselor until December 1911, so in October he was still of the Twelve. Why it matters: this is post-Manifesto, official, and undiminished. Twenty-one years after plural marriage ended, the full generative package is preached in general conference without hedging — which is the evidence that the early twentieth century softened the vocabulary of deification, not the doctrine of increase."
+  },
+  {
+    "id": "jfs-ignoramuses-1914",
+    "sourceType": "original",
+    "date": "1914-04-04",
+    "dateDisplay": "April 4, 1914",
+    "datePrecision": "day",
+    "title": "Joseph F. Smith: “a few ignoramuses, ‘learned fools’” who limit God to the capacity of man",
+    "speaker": "Joseph F. Smith",
+    "office": "President of the Church",
+    "venue": "General conference opening address, first day morning session (Conference Report, April 1914)",
+    "url": "https://archive.org/details/conferencereport1914a/page/n2",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "jfs-ignoramuses-1914-q1",
+        "categories": ["DIVINE-PROGRESSION"],
+        "excerpt": "It is true that we have, now and then, here and there, occasionally, persons who would, if they possibly could, limit the power, the knowledge, the wisdom of God Almighty, to the capacity of men. We have a few of them among us, and some of them have been, and may be, school teachers.",
+        "note": "Denial, and the one detail that fixes its target: “school teachers.” This is 1914, three years after the Brigham Young University modernism dismissals, and the finite-God, God-still-learning position was being taught by Church educators — compare nelson-scientific-aspects-1904, written by a BYU professor. The claim being rejected is that God's knowledge and power are bounded by what man can conceive."
+      },
+      {
+        "quoteId": "jfs-ignoramuses-1914-q2",
+        "categories": ["DIVINE-PROGRESSION"],
+        "excerpt": "I say again that there are just a few ignoramuses, “learned fools,” if you please, who would make you believe, if they could, that Almighty God is limited in His power to the capacity of man. Don't you believe it, not for one moment.",
+        "note": "Denial, in the register the phrase is famous for. Read the intervening text before using it as a straight progression datum: the specific charges Smith enumerates are that the miracles were “mere symbols,” that Christ could not turn water into wine or walk on water, and that the Father and Son did not appear to Joseph Smith in person. The proposition on the page is a denial of miracle and of divine omnipotence, not the technical claim that God is still acquiring knowledge; “the knowledge, the wisdom” of the previous quote is the only part that reaches the progression question directly."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1914/1914-04-00-smith-opening-address.md, transcribed from the official printed Conference Report (Internet Archive conferencereport1914a, leaves n2–n10) and Final-Reviewed against an independent column-order reconstruction of the same scan. Conference Report, so A. The talk was missing from the vault's original ingest and was recovered whole in a later pass, which is why it does not appear in earlier sweeps of the 1914 conference. Eugene England, “Perfection and Progression,” BYU Studies 29/3 (1989), 40, files this under the deniers of divine progression alongside Joseph Fielding Smith; the excerpt is taken from the Conference Report rather than from England's lowercase OCR rendering, and the note above records where England's framing runs ahead of what the printed text says. The pairing that makes the entry worth having is chronological: Roberts publishes the progression claim in a Church-issued priesthood course in 1911, and the President of the Church calls its holders learned fools from the pulpit in 1914."
   },
   {
     "id": "widtsoe-rational-theology-1915",
@@ -1301,6 +1516,229 @@
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1915/1915-04-34-james-e-talmage-remarks-34.md, transcribed from the official printed Conference Report and verified against a word-coordinate reading-order reconstruction of the archive.org DjVu OCR (conferencereport1915a, leaf anchor n121); the Final Review pass found no body change needed. Conference Report, so A. The office is given as the generic “General Authority” in the vault frontmatter; Talmage had been ordained an Apostle in December 1911 and was of the Twelve in April 1915. This entry exists chiefly to be read against talmage-af-1899, and the pairing is the point: the same author, sixteen years apart, makes two claims that sound identical and are not. In 1899 he wrote of “a God who is Himself progressive… whose perfection consists in eternal advancement” — present tense, ongoing, DIVINE-PROGRESSION. Here in 1915 he says the Father “was once a Man, and has progressed… to His present position” — past tense, completed, BACKWARD-MORTALITY. Conflating the two is trap #1 running in the opposite direction from usual, and it is how a single author gets cited on both sides of the twentieth-century progression debate."
   },
   {
+    "id": "clawson-mother-there-1929",
+    "sourceType": "original",
+    "citesId": ["o-my-father"],
+    "date": "1929-10-06",
+    "dateDisplay": "October 6, 1929",
+    "datePrecision": "day",
+    "title": "Rudger Clawson: “Who ever heard of a father where there was no mother?”",
+    "speaker": "Rudger Clawson",
+    "office": "President of the Quorum of the Twelve Apostles",
+    "venue": "General conference, third day morning session, Salt Lake Tabernacle (Conference Report, October 1929)",
+    "url": "https://archive.org/details/conferencereport1929sa/page/n105",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "clawson-mother-there-1929-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "We understand, from the scriptures, that Jesus Christ is our elder brother. If that be the case then we are his younger brothers and younger sisters; we belonged to a great family before we came into the world. It was the family of God, for Jesus said: \"When you pray, say our Father which art in heaven. Our Father is there, and we believe that we have a mother there. That thought was beautifully expressed in the hymn that the choir sang this morning. I think you will agree with me that it is a very wonderful thought indeed. At least it is interesting and worthy of profound consideration.",
+        "note": "Note the register: “we believe that we have a mother there,” and then the doctrine is commended as “interesting and worthy of profound consideration” rather than taught as known. The quotation mark before “When you pray” is never closed in the vault text collated against the scan, and is preserved here rather than silently repaired. Spacing before semicolons and colons normalized; no words changed. The hymn was sung by the Tabernacle Choir that morning, which is how it entered the discourse — worship first, doctrine after."
+      },
+      {
+        "quoteId": "clawson-mother-there-1929-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "\"I had learned to call thee Father, Through thy spirit from on high, But until the key of knowledge Was restored, I knew not why.\" \"In the heavens are parents single? No, the thought makes reason stare. Truth is reason. Truth eternal Tells me I've a mother there.\"",
+        "note": "Punctuation follows the 1929 Conference Report printing, which differs from the hymnal text (commas for semicolons, a period after “stare”). See o-my-father."
+      },
+      {
+        "quoteId": "clawson-mother-there-1929-q3",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "To say the least, if we are led to believe that we have a Father in heaven, I think we are justified in believing that we have a Mother there. Who ever heard of a father where there was no mother?",
+        "note": "The Erastus Snow argument from nature, compressed to a single rhetorical question and shorn of the anatomy — and hedged twice over (“to say the least,” “I think we are justified in believing”). Sixty-two years later Gordon B. Hinckley will make the identical move in the identical words of logic: “Logic and reason would certainly suggest that if we have a Father in Heaven, we have a Mother in Heaven.” That the inference survives verbatim across the whole twentieth century, while the anatomical premise behind it disappears, is the point of filing this entry next to snow-heavenly-mother-1885 and hinckley-daughters-of-god-1991."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1929/1929-10-31-rudger-clawson-remarks-38.md, whose Final Review collated §0 against the archive.org scan conferencereport1929sa, leaves n105–n109, fixing OCR errors and a page-break sentence split. Provenance caveat worth carrying: the October 1929 ingest suffered the same systemic corruption as April 1929 — sequential “remarks-N” filenames with fabricated dates and session labels assigned by file position — and the heavyweight pass reconstructed the true date (October 6, 1929) and session from the report's own headers, so the filename is not evidence of anything. Conference Report, so A; historical-official. The vault frontmatter gives the generic “General Authority”; Clawson had presided over the Quorum of the Twelve since 1921. Filed as an original with the citesId edge preserved because the argument in q3 is Clawson's own and is not in the hymn. This entry and grant-o-my-father-1938 open the 1925–1965 stretch in which the hymn keeps circulating while almost no one argues from it."
+  },
+  {
+    "id": "grant-o-my-father-1938",
+    "sourceType": "citation",
+    "citesId": ["o-my-father"],
+    "date": "1938-10-06",
+    "dateDisplay": "October 6, 1938",
+    "datePrecision": "day",
+    "title": "Heber J. Grant reads “O My Father” into the conference record",
+    "speaker": "Heber J. Grant",
+    "office": "President of the Church",
+    "venue": "General conference, opening address, first day morning session (Conference Report, October 1938)",
+    "url": "https://archive.org/details/conferencereport1938sa/page/n3",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "grant-o-my-father-1938-q1",
+        "categories": [],
+        "excerpt": "I have a little book in which I have recorded from time to time for many years items that have very profoundly impressed me… I have decided to read here today a part of what was in my Christmas greeting. I wish that all that is in my greeting might be read by all of the Latter-day Saints. As our conference proceedings are to be published, that is my excuse for reading a portion of this book entitled, \"Treasures I Would Share,\" which was distributed by me for Christmas of 1937.",
+        "note": "The mechanism of transmission, stated by the transmitter. Grant's reason for reading the hymn aloud is explicitly that the Conference Report will print it — he is using the opening address as a publishing channel. That is why this entry exists: nothing is argued, and the whole text of the hymn enters the official record anyway."
+      },
+      {
+        "quoteId": "grant-o-my-father-1938-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "I had learned to call thee Father, Through thy Spirit from on high; But until the Key of Knowledge Was restored, I knew not why. In the heavens are parents single? No; the thought makes reason stare! Truth is reason, truth eternal Tells me I've a mother there.",
+        "note": "The Mother stanza, read by the President of the Church in the opening address of general conference. Spacing before semicolons normalized from the printed OCR, and the hymn's verse line breaks are rendered as running text; no words changed. See o-my-father."
+      },
+      {
+        "quoteId": "grant-o-my-father-1938-q3",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "When I leave this frail existence, When I lay this mortal by, Father, Mother, may I meet you In your royal courts on high? Then, at length, when I've completed All you sent me forth to do, With your mutual approbation, Let me come and dwell with you.",
+        "note": "The closing stanza, which is where the hymn does its heaviest devotional work: the Mother is not merely posited, she is addressed, and reunion with her is the thing prayed for. This stanza, not the “parents single” couplet, is what most twentieth-century speakers actually quote — Henry D. Taylor in 1961, Hugh B. Brown in 1968, Neal A. Maxwell in 1978 — which is why phrase searches for “parents single” badly undercount the cluster."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1938/1938-10-heber-j-grant-selections-from-treasures-i-would-share.md, whose Final Review collated the text against the archive.org scan conferencereport1938sa, leaves n2–n16, with reading order rebuilt from the scan's DjVu word coordinates; five running-head bleeds were removed and side-heads converted to headings, no wording changed. Conference Report, so A; historical-official. A pure citation and deliberately so — Grant makes no argument about a Mother in heaven, offers no gloss, and does not pause at the stanza. He is reading ten favorite poems and hymns from a Christmas booklet, and “O My Father” is the fourth of the six he got through before the clock beat him. The entry earns its place on office and date rather than content: this is the President of the Church putting the full text of the doctrine's primary vehicle into the printed proceedings in 1938, in the middle of the stretch where the dataset otherwise goes quiet. Transmission without argument is the characteristic mid-century mode, and this is the cleanest specimen of it."
+  },
+  {
+    "id": "merrill-precept-example-1943",
+    "sourceType": "original",
+    "date": "1943-10-02",
+    "dateDisplay": "October 2, 1943",
+    "datePrecision": "day",
+    "title": "Joseph F. Merrill: half the couplet, and “leave mysteries alone”",
+    "speaker": "Joseph F. Merrill",
+    "office": "Quorum of the Twelve Apostles",
+    "venue": "General conference, Saturday evening session (Conference Report, October 1943, pp. 85–87)",
+    "url": "https://archive.org/details/conferencereport1943sa/page/n86",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "merrill-precept-example-1943-q1",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "Well, yes, we are going to live a long, long time, and many of the things, that we would like to know, we will have an opportunity to learn, when we pass beyond this sphere, if we are willing to comply with the conditions for advancement… Yet we are taught that “as God now is, man may become.” How may man become like God? By working, advancing, growing, increasing, by his efforts, and he will have a long, long time in which he can continue those efforts.",
+        "note": "The half-couplet. Merrill quotes only the forward line, “as God now is, man may become,” and never the backward one; this is the standard mid-century citation habit and it is why couplet counts overstate how often the Father's past mortality was actually preached. Note also what the forward line is made to mean here: post-mortal *learning*, not offspring, not worlds, not godhood. The register is self-improvement."
+      },
+      {
+        "quoteId": "merrill-precept-example-1943-q2",
+        "categories": [],
+        "excerpt": "Now as to precept, I believe it is extremely important to confine our teaching to fundamentals. On this matter may I say I am strongly influenced, have been influenced for a considerable number of years, by the attitude of the late President A. W. Ivins. When we teach by precept, he said, we should confine our attention to things that are fundamental and leave mysteries alone.",
+        "note": "Context rather than an independent claim, and deliberately not tagged RETREAT-REFRAME: Merrill's counsel is a general instruction to Church educators, not a ruling on this doctrine, and tagging it would be retrojection. It is recorded because of where it sits — an apostle who spent years as Church Commissioner of Education, telling teachers in the same address to stay on fundamentals and then reaching for the safe half of the couplet. Merrill defines a mystery procedurally: any passage on which informed readers disagree."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1943/1943-10-merrill-by-precept-and-example.md, transcribed from the Church History Library preservation scan of the printed Conference Report (Internet Archive conferencereport1943sa, printed pp. 85–87, leaf n86) with reading order reconstructed from the DjVu word coordinates; the file is status published. Conference Report, so A. Chosen over Merrill's April 1945 conference address (conferencereport1945a), which carries the same half-couplet — “a characteristic teaching of the Church is that ‘as God now is man may become’ — a statement in poetic language of our magnificent doctrine of eternal progression” — in a single sentence and nothing else; the 1943 address gives the same formula plus the mysteries counsel and the post-mortal-learning gloss, so it is the stronger of the two. Merrill's April 1944 address (“Man Inherits Attributes of God His Father”) is a third witness to the same theme and contains the striking “we are of the race of the Gods,” but no couplet; it is left out to avoid three near-identical Merrill entries. Note the delivery setting: an off-the-air session, spoken extemporaneously, which is why the doctrine appears as an aside."
+  },
+  {
+    "id": "richards-eternal-increase-1945",
+    "sourceType": "original",
+    "date": "1945-04-06",
+    "dateDisplay": "April 6, 1945",
+    "datePrecision": "day",
+    "title": "Stephen L Richards: eternal increase, mentioned “with a little hesitation”",
+    "speaker": "Stephen L Richards",
+    "office": "Quorum of the Twelve Apostles",
+    "venue": "General conference, first day morning session (Conference Report, April 1945)",
+    "url": "https://archive.org/details/conferencereport1945a/page/n28",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "richards-eternal-increase-1945-q1",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "…held out for those who attain exaltation which I mention to you with a little hesitation because I have not yet laid the foundation for it, and that is this: That these eternal homes of the future life shall be blessed with eternal increase so that families never cease growing in number, in virtue and power…",
+        "note": "Increase named, and glossed as families “growing in number” — one step past the bare word but still short of naming spirit children or a mechanism, so FORWARD-EUPHEMISM rather than FORWARD-EXPLICIT. The self-conscious framing is the datum: an apostle in general conference flags the doctrine as something he mentions “with a little hesitation,” and justifies raising it only because a later argument depends on it. Compare the confidence of talmage-af-1899 (“the Church proclaims the eternal truth”) forty-six years earlier."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1945/1945-04-stephen-l-richards-teachings-of-the-church-set-forth-in-a-letter.md, transcribed from the Internet Archive scan of the printed Conference Report (conferencereport1945a, leaves 27–34) with reading order reconstructed from the DjVu XML. Conference Report, so A. The vault file is status draft and the surrounding paragraph carries two visible OCR artifacts (“p'romise”, “Creator of. the universe”); the excerpt is trimmed at both ends to a clean run and the elisions mark that trimming, not omitted argument — a maintainer should re-check this one against the page image before publication. The address is Richards reading and expounding a letter he had written setting out Church teachings for an enquirer, which is why the tone is expository. The passage stands two paragraphs after his statement that exaltation is “a never-ending experience in eternal progression and achievement,” and immediately before he tells the congregation that “much of this may seem highly theoretical and ethereal to you.”"
+  },
+  {
+    "id": "romney-mother-in-heaven-1948",
+    "sourceType": "original",
+    "date": "1948-04-05",
+    "dateDisplay": "April 5, 1948",
+    "datePrecision": "day",
+    "title": "Marion G. Romney: “I do not know the process”",
+    "speaker": "Marion G. Romney",
+    "office": "Assistant to the Council of the Twelve Apostles",
+    "venue": "General conference, second day morning session (Conference Report, April 1948)",
+    "url": "https://archive.org/details/conferencereport1948a/page/n76",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, April 1948 (118th Annual Conference)",
+        "url": "https://catalog.churchofjesuschrist.org/record/d1d6a8d0-08c5-4d4d-8d2f-4a1313de16bc/0?view=browse",
+        "note": "Authoritative CHL catalog record, call no. M204.1 A1 1880, 1897–, for the printed Conference Report. The vault treats this as canonical and the Internet Archive preservation scan conferencereport1948a as the page-by-page collation witness; the archive.org leaf anchor n76 is taken from the vault's own Final Review collation record."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "romney-mother-in-heaven-1948-q1",
+        "categories": ["HEAVENLY-MOTHER", "SPIRIT-BIRTH-VIVIPAROUS"],
+        "excerpt": "I believe he is the Father of my spirit and the Father of your spirit. I believe we were born to him and to our mother in heaven. I do not know the process, but I do know how we are born to our fathers and mothers in this earth and that is the way I think about it.",
+        "note": "The most candid statement of the viviparous model in the twentieth-century pulpit corpus, precisely because it is offered as a personal working picture rather than as doctrine. Romney disclaims the mechanism in the same sentence in which he supplies it: the process is unknown, the earthly analogy is what he substitutes, and he says so. Tagged SPIRIT-BIRTH-VIVIPAROUS as stated, not implied — he does state that this is how he conceives it — with the hedge preserved here rather than in the tag. Compare pratt-seer and ballard-increase, where the same picture is asserted as physiology."
+      },
+      {
+        "quoteId": "romney-mother-in-heaven-1948-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "I believe I was born to him as a spirit child in the spirit world before I was born here, and what I say about myself — and you will pardon the personal reference — I feel about every other human soul that lives in the earth. I believe we all lived with him before we came here.",
+        "note": "The generalization: the personal testimony is immediately extended to every human being, which converts an autobiographical belief into a universal claim about origin without ever changing register."
+      },
+      {
+        "quoteId": "romney-mother-in-heaven-1948-q3",
+        "categories": [],
+        "excerpt": "I have here in this book a talk upon which I have spent many hours in thought and preparation. I had intended to give it at this conference… I shall therefore not talk on that subject, but I will ask each of you, if you will, to offer a silent prayer in your heart for me… that I may have the Spirit of the Lord while I speak to you wholly extemporaneously.",
+        "note": "Provenance, and it is load-bearing. Romney abandoned his prepared text because President David O. McKay had just given the same talk, and delivered this one unwritten. The Heavenly Mother passage is therefore unrehearsed — which is exactly why it is valuable evidence of the ambient mid-century understanding, and exactly why it should not be pressed as a considered doctrinal formulation."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1948/1948-04-marion-g-romney-conference-address.md, whose Final Review collated the body against the independent scan OCR conferencereport1948a, leaves n76–n79, at 0.9839 similarity with no vault change needed; the sole flagged span proved to be a running-head artifact in the scan's raw reading order rather than a vault error. Conference Report, so A; historical-official — the Church's online conference archive begins in 1971, so no hosted page exists. No hymn quotation appears, hence no citesId. This is the strongest single find in the 1925–1965 stretch: an Assistant to the Twelve, speaking extemporaneously in general conference, states spirit birth from a Mother in heaven and simultaneously admits the mechanism is unknown to him. Distinct from the 1964 Romney entry already in the dataset (see romney-1964) and from eldred-smith-no-increase-1948, which was delivered at the same conference era and takes the opposite line on divine progression."
+  },
+  {
+    "id": "hunter-exalted-man-1948",
+    "sourceType": "original",
+    "citesId": ["kfd-1844", "snow-couplet"],
+    "date": "1948-10-01",
+    "dateDisplay": "October 1, 1948",
+    "datePrecision": "day",
+    "title": "Milton R. Hunter: “he is a man — an exalted man”, with all knowledge",
+    "speaker": "Milton R. Hunter",
+    "office": "First Council of the Seventy",
+    "venue": "General conference, first day morning session (Conference Report, October 1948, pp. 13–18)",
+    "url": "https://archive.org/details/conferencereport1948sa/page/n14",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, October 1948 (call no. M204.1 A1 1880, 1897–)",
+        "url": "https://catalog.churchofjesuschrist.org/record/055c505c-c9c9-41b2-8b65-06c66b9400ae/0?view=browse",
+        "note": "Authoritative catalog record for the printed Report; the Church's own online conference archive does not reach back before 1971."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "hunter-exalted-man-1948-q1",
+        "categories": ["FATHER-MORTAL-EXPERIENCE", "FATHER-BECAME-GOD"],
+        "referent": "father",
+        "excerpt": "We believe that God is a personal being. By a personal being, we mean that he is a man — an exalted man. Approximately one hundred years ago, soon after Lorenzo Snow became a member of the true Church of Jesus Christ, he formulated a remarkable couplet which has since that time become famous. He said: “As man is, God once was; as God is, man may become.” (Lorenzo Snow, The Millennial Star 54:404.)",
+        "note": "Both halves of the couplet, quoted in full, cited to a printed source, and used as the definition of what “personal being” means — not as an aside. “Exalted man” is attainment language, hence FATHER-BECAME-GOD; the couplet supplies the mortality, hence FATHER-MORTAL-EXPERIENCE as well. The referent is unambiguous because the whole address is about “God the Eternal Father… Elohim.”"
+      },
+      {
+        "quoteId": "hunter-exalted-man-1948-q2",
+        "categories": ["FATHER-MORTAL-EXPERIENCE"],
+        "referent": "father",
+        "excerpt": "It is the first principle of the Gospel to know for a certainty the character of God, and to know that we may converse with him as one man converses with another, and that he was once a man like us; yea, that God himself, the Father of us all, dwelt on an earth, the same as Jesus Christ himself did. . . . … God himself was once as we are now, and is an exalted man, and sits enthroned in yonder heavens. That is the great secret.",
+        "note": "Hunter reading the King Follett Discourse aloud in general conference in 1948, cited to Teachings of the Prophet Joseph Smith, pp. 345–346 (see kfd-1844). Two paragraphs of Hunter's block quotation, with a third between them omitted at the … (“I will go back to the beginning before the world was, to show what kind of a being God is…”); the spaced full stops inside the first paragraph are the printed ellipsis of Hunter's own quotation, not an editorial cut. Worth registering as a fact about the period: the King Follett material was not merely surviving in books in the 1940s, it was being read from the pulpit at general conference."
+      },
+      {
+        "quoteId": "hunter-exalted-man-1948-q3",
+        "categories": ["DIVINE-PROGRESSION", "MANY-WORLDS"],
+        "excerpt": "We believe that God is omniscient: that he is all-knowing, that he sees all things and that he hears all sounds. In other words, that his sight and his hearing know no bounds, and that his knowledge is absolutely unlimited.",
+        "note": "Denial, sitting in the same address as the strongest backward claim of the mid-century conference corpus — the cleanest single-speaker demonstration in this window that the two axes are independent. Hunter holds that the Father was once a man and progressed to godhood, and that his knowledge is now absolutely unlimited. MANY-WORLDS is carried by the neighbouring sentence in the same section: “through his understanding of those laws and by putting them into operation he has created worlds without number, that is, they are not numbered to mortal man.”"
+      },
+      {
+        "quoteId": "hunter-exalted-man-1948-q4",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "I know that we will some day return to the presence of God our Eternal Father and become exalted, glorified, and celestialized beings, receiving a portion, along with him, of the great glory that he possesses.",
+        "note": "The forward half as Hunter closes it — “a portion” of the Father's glory, alongside him. Compare his April 1949 address six months later (hunter-beget-spirit-children-1949), where the same speaker names the generative content outright. The two together show how much the explicitness varies within one man's conference preaching."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1948/1948-10-milton-r-hunter-conference-address.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1948sa, leaves n14–n19 = printed pp. 13–18) at 0.977 similarity, with one page-break paragraph split rejoined against the page image. Conference Report, so A. The printed Report supplies no formal title; the vault's is supplied from the discourse headings. This is the answer to the question the charter asked about Milton R. Hunter: his conference addresses do carry the exalted-man teaching, in almost the same words as the books that are not in the corpus, and he sources it to Snow and to the King Follett Discourse rather than presenting it as his own. Delivered as an explicit supplement to George F. Richards's address earlier the same session, which had covered the First Vision and the personality of Elohim."
+  },
+  {
     "id": "eldred-smith-no-increase-1948",
     "sourceType": "original",
     "date": "1948-10-02",
@@ -1330,6 +1768,158 @@
       }
     ],
     "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1948/1948-10-eldred-g-smith-conference-address.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1948sa, leaves n90–n93) at 0.983 similarity with no divergence beyond spacing and hyphenation. Conference Report, so A. The printed Report supplies no formal title; the vault's is supplied from the discourse headings. What this entry documents is a register shift rather than a new claim. By mid-century the generative doctrine is preached almost exclusively in this negative, temple-marriage-incentive form: not “you will bear spirit children” but “they shall have no increase.” D&C 132:17 is cited, the entailment is intact, and the content has become an argument for a behavior — which is how a doctrine can remain formally in force while ceasing to be described."
+  },
+  {
+    "id": "hunter-eternal-mother-1949",
+    "sourceType": "original",
+    "date": "1949-04-04",
+    "dateDisplay": "April 4, 1949",
+    "datePrecision": "day",
+    "title": "Milton R. Hunter: begetting spirit children “on the same principle”",
+    "speaker": "Milton R. Hunter",
+    "office": "Of the First Council of the Seventy",
+    "venue": "General conference, second day morning session (Conference Report, April 1949)",
+    "url": "https://archive.org/details/conferencereport1949a/page/n65",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, April 1949 (119th Annual Conference)",
+        "url": "https://catalog.churchofjesuschrist.org/record/da2edee9-2035-4dff-85b0-0f4b8f44665b/0?view=browse",
+        "note": "Authoritative CHL catalog record, call no. M205.1 C536 v. 1–69 1902–1970, for the printed Conference Report. The Internet Archive preservation scan conferencereport1949a is the collation witness; the leaf anchor n65 is taken from the vault's own Final Review collation record (leaves n65–n72, similarity 0.9793)."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "hunter-eternal-mother-1949-q1",
+        "categories": ["HEAVENLY-MOTHER", "SPIRIT-BIRTH-VIVIPAROUS"],
+        "excerpt": "they were all sons and daughters of God the Eternal Father and our Eternal Mother in that celestial spirit realm before we came into mortality. We are taught that we were born into that spirit realm as babies, and that we grew to maturity there, undergoing the various experiences which were there for us prior to our coming to mortality.",
+        "note": "Not merely birth but infancy and maturation — spirits “born into that spirit realm as babies” who “grew to maturity there.” That is the viviparous model carried past the moment of birth into a full developmental biography, which is further than the nineteenth-century sources usually go and further than anything the Church teaches now. Presented as catechesis: “We are taught.”"
+      },
+      {
+        "quoteId": "hunter-eternal-mother-1949-q2",
+        "categories": [
+          "FORWARD-EXPLICIT",
+          "SPIRIT-BIRTH-VIVIPAROUS",
+          "HEAVENLY-MOTHER"
+        ],
+        "excerpt": "The Prophet Joseph Smith explained that this continuation of \"the seeds\" forever and ever, meant the power of procreation; in other words, the power to beget spirit children on the same principle as we were born to our Heavenly Parents, God the Eternal Father and our Eternal Mother. Therefore, a man cannot receive the highest exaltation without a woman, his wife, nor can a woman be exalted without her husband.",
+        "note": "FORWARD-EXPLICIT: not “eternal increase,” not “eternal family units,” but the power to beget spirit children, named. And the symmetry is stated rather than left to inference — the begetting exalted couples will do is “on the same principle” as the begetting that produced us, so the forward and backward directions are one mechanism. This is the D&C 132:19 “continuation of the seeds” reading (see dc-132) delivered plainly from a general conference pulpit in 1949. The gloss is credited to Joseph Smith; Hunter gives no citation for that attribution."
+      },
+      {
+        "quoteId": "hunter-eternal-mother-1949-q3",
+        "categories": [],
+        "excerpt": "Then shall they be gods. (Ibid. 132:19-20.)",
+        "note": "Context for the two quotes above: Hunter has just read D&C 132:19–20 aloud, and the “continuation of the seeds” gloss is offered as exegesis of the verse he read. Untagged — the scriptural text is already in the dataset at dc-132; what is being catalogued here is Hunter's reading of it."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1949/1949-04-milton-r-hunter-conference-address.md, whose Final Review collated §0 against conferencereport1949a, leaves n65–n72, at 0.9793 similarity with no body change required. Conference Report, so A; historical-official. No hymn quotation, hence no citesId. Hunter appears four times in the 1945–1949 conference corpus on this theme; this is the strongest and it supersedes the others — his October 1945 address (“Man, as a spirit, was begotten and born of heavenly parents… we are gods in embryo”) and his April and October 1949 remarks on Eternal Parents say less, in weaker language, than this one paragraph does. Together with romney-mother-in-heaven-1948 it shows that the mid-century quiet in the dataset is an artifact of collection, not of doctrine: the strong generative teaching was still being preached in general conference in the late 1940s, in the plainest available words, by a member of the First Council of the Seventy who was also the Church's most prolific popular theologian of the period."
+  },
+  {
+    "id": "hunter-beget-spirit-children-1949",
+    "sourceType": "original",
+    "citesId": ["dc-132"],
+    "date": "1949-04-04",
+    "dateDisplay": "April 4, 1949",
+    "datePrecision": "day",
+    "title": "Milton R. Hunter: “the power to beget spirit children,” and our Eternal Mother",
+    "speaker": "Milton R. Hunter",
+    "office": "First Council of the Seventy",
+    "venue": "General conference, second day morning session (Conference Report, April 1949)",
+    "url": "https://archive.org/details/conferencereport1949a/page/n65",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, April 1949 (call no. M205.1 C536 v. 1–69, 1902–1970)",
+        "url": "https://catalog.churchofjesuschrist.org/record/da2edee9-2035-4dff-85b0-0f4b8f44665b/0?view=browse",
+        "note": "Authoritative catalog record for the printed Report; the Internet Archive item conferencereport1949a is the Church History Library preservation scan the vault text was collated against."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "hunter-beget-spirit-children-1949-q1",
+        "categories": [
+          "FORWARD-EXPLICIT",
+          "SPIRIT-BIRTH-VIVIPAROUS",
+          "HEAVENLY-MOTHER"
+        ],
+        "excerpt": "The Prophet Joseph Smith explained that this continuation of “the seeds” forever and ever, meant the power of procreation; in other words, the power to beget spirit children on the same principle as we were born to our Heavenly Parents, God the Eternal Father and our Eternal Mother. Therefore, a man cannot receive the highest exaltation without a woman, his wife, nor can a woman be exalted without her husband.",
+        "note": "The whole package in two sentences, from the pulpit at general conference: increase glossed as procreation, the object named as spirit children, the mechanism named as “the same principle” by which we were born, and the Heavenly Mother named as a parent in the premortal birth. SPIRIT-BIRTH-VIVIPAROUS rather than adoption because the analogy Hunter draws is to birth, not to sealing. No backward claim about the Father's own origin is made, so the referent stays n/a: this is the forward direction only."
+      },
+      {
+        "quoteId": "hunter-beget-spirit-children-1949-q2",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "…they shall pass by the angels and the gods, which are set there, to their exaltation and glory in all things, as hath been sealed upon their heads, which glory shall be a fulness and a continuation of the seeds forever and ever. Then shall they be gods.",
+        "note": "D&C 132:19–20 as Hunter reads it (see dc-132), including the bracketed insertion “[and if they commit no sin to break that seal]” earlier in the verse, which is his. The revelation supplies the euphemism — “a continuation of the seeds” — and the quote above is Hunter supplying the referent for it. This is the pairing the whole dataset turns on: the scripture is opaque, the exposition is not."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1949/1949-04-milton-r-hunter-conference-address.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1949a, leaves n65–n72); the file is status published. Conference Report, so A. The printed Report supplies no formal title. This is the strongest mid-century entry in the set and it corrects a gap in the frequency data: the Pulpit lane's decade table records “spirit children” as rare before the 1960s, but the phrase is here in 1949 in its full generative sense, not the modern sense of “we are God's spirit children.” Structurally the address is a survey of the degrees of glory; the passage sits under the side-head “Exaltation,” between the D&C 132:19–20 quotation and the D&C 132:17 quotation about angels who “cannot be enlarged” — so the affirmative statement and Eldred G. Smith's negative one (eldred-smith-no-increase-1948, eldred-smith-slavery-godhood-1950) are being preached from the same two verses in the same three-year stretch."
+  },
+  {
+    "id": "eldred-smith-slavery-godhood-1950",
+    "sourceType": "original",
+    "citesId": ["dc-132"],
+    "date": "1950-04-08",
+    "dateDisplay": "April 8, 1950",
+    "datePrecision": "day",
+    "title": "Eldred G. Smith: the difference between slavery and godhood for eternity",
+    "speaker": "Eldred G. Smith",
+    "office": "Patriarch to the Church",
+    "venue": "General conference, second day morning session (Conference Report, April 1950)",
+    "url": "https://archive.org/details/conferencereport1950a/page/n66",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, April 1950 (call no. M204.1 A1 1880, 1897–)",
+        "url": "https://catalog.churchofjesuschrist.org/record/d3eefcfa-0a24-41a6-a85b-46cf404e532a/0?view=browse",
+        "note": "Authoritative catalog record for the printed Report; collated against the Church History Library preservation scan on the Internet Archive (conferencereport1950a, leaves n66–n71)."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "eldred-smith-slavery-godhood-1950-q1",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "I tell others, many of them, the difference between civil marriage and celestial or temple marriage is the difference between slavery and godhood for eternity. The Lord makes it sound a little nicer when he says those who reject the law of celestial marriage will be ministering angels, and worlds without end shall have no increase. Waiting on others with no further progress is an eternal existence but is not real living. Living involves progress.",
+        "note": "Godhood named, and named as the stake in a marriage decision. The remarkable clause is the second one: “The Lord makes it sound a little nicer” is a speaker telling a general conference audience, in as many words, that the scriptural language is a softening of what he has just said plainly. Still FORWARD-EUPHEMISM and not FORWARD-EXPLICIT on this dataset's precedent — no offspring, no mechanism, nothing but the word “increase” doing the work (compare dc-132, where “then shall they be gods” is graded the same way)."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1950/1950-04-smith-i-hope-the-lord-will-bless-me.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1950a); the file is status published. Conference Report, so A. The printed Report supplies no formal title; the vault's placeholder is taken from the opening line. Same speaker as eldred-smith-no-increase-1948, eighteen months later, in a talk that is otherwise entirely about teaching method, advertising, and Utah cigarette expenditure — the cosmological claim arrives as a sales argument for temple marriage, which is the register the mid-century material lives in. Note also that the October 1948 talk already carried the full Snow couplet (“We often say… that ‘as man now is, God once was, and as God now is, man may become’”) in a section headed “Opportunities for Exaltation”; that quote is not in the existing eldred-smith-no-increase-1948 entry and should be added to it rather than given an entry of its own."
+  },
+  {
+    "id": "kimball-godhood-1952",
+    "sourceType": "original",
+    "date": "1952-04-04",
+    "dateDisplay": "April 4, 1952",
+    "datePrecision": "day",
+    "title": "Spencer W. Kimball: “eternal increase, perfection, and with it all — Godhood”",
+    "speaker": "Spencer W. Kimball",
+    "office": "Quorum of the Twelve Apostles",
+    "venue": "General conference, Friday morning session (Conference Report, April 1952)",
+    "url": "https://archive.org/details/conferencereport1952a/page/n20",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "witnesses": [
+      {
+        "scribe": "Church History Library catalog record, Conference Report, April 1952 (call no. M204.1 A1 1880, 1897–)",
+        "url": "https://catalog.churchofjesuschrist.org/record/7fd062e7-7654-47c1-84e4-7bb27c3e93b7",
+        "note": "Authoritative catalog record for the printed Report; collated against the Church History Library preservation scan on the Internet Archive (conferencereport1952a, leaves n20–n25)."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "kimball-godhood-1952-q1",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "The blessings of eternity contemplated in this “all” bring to men immortality and everlasting life, eternal growth, divine leadership, eternal increase, perfection, and with it all — Godhood.",
+        "note": "The closing sentence of the address, and a list rather than an argument: increase is one item in a series terminating in Godhood, with the dash doing the emphasis. Nothing is defined — no offspring, no worlds, no mechanism — which is exactly the point of recording it. The “all” is from the parable of the prodigal son, “all that I have is thine,” which Kimball has spent the previous paragraphs on."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1952/1952-04-kimball-i-pray-for-the-spirit-of-the.md, whose text was collated page-by-page against the Church History Library preservation scan on the Internet Archive (conferencereport1952a); the file is status published. Conference Report, so A. The printed Report supplies no formal title; the vault's placeholder is taken from the opening line. Entered chiefly for the pairing with kimball-1976: the same man, twenty-four years apart, ends a conference address with “Godhood” in 1952 and warns the Church from the pulpit in 1976 against “the dissemination of doctrines which are not according to the scriptures and which are alleged to have been taught by some of the General Authorities of past generations.” The 1976 warning was aimed at Adam–God, not at this, and the entry should not be read as a retraction — but the register shift between the two is the kind of movement this timeline exists to show."
   },
   {
     "id": "jfsmith-doctrines-salvation-1954",
@@ -1368,6 +1958,81 @@
       }
     ],
     "notes": "Verified by re-pulling the whole of chapter 1 and reading the section sequence in order: THE GODHEAD, MODERN KNOWLEDGE OF GOD, HOW GOD PROGRESSES, HOW GOD DOES NOT PROGRESS (with FALSE NOTIONS ABOUT GOD'S PROGRESSION, PERFECTION OF GOD NOT “RELATIVE,” SCRIPTURES PROVE OMNIPOTENCE OF GOD, GOD PROGRESSES BECAUSE OF KNOWLEDGE, WILL GOD DESTROY HIMSELF?), then HOW GOD IS EVERLASTING (with GOD IS AN EXALTED MAN and CHRIST BORN; YET FROM EVERLASTING), then HOW GOD IS FROM ETERNITY TO ETERNITY. The progression denial and the chain affirmation are separated by roughly a page of text and six intervening headings, so they are recorded here as separate quotes and must never be ellipsed together into one sentence, which is how the pair usually circulates. Taken together they are the cleanest single demonstration in this dataset that divine ancestry and divine progression are independent axes: Smith prints the chain approvingly a page after calling belief in God's continuing progression “very dangerous.” The chain half is expressly attributed to Joseph Smith and quotes both the Sermon in the Grove and the King Follett Discourse (see sermon-grove-1844 and kfd-1844). Graded never-official: Doctrines of Salvation is a Bookcraft compilation of Smith's sermons and writings assembled and captioned by Bruce R. McConkie, not a church publication, though it has long been treated as authoritative. The copy collated is a reflowed digital edition without the printed pagination, so sections are cited by heading; printed page numbers were not confirmed and are not asserted."
+  },
+  {
+    "id": "brown-deify-man-1956",
+    "sourceType": "original",
+    "citesId": ["widtsoe-rational-theology-1915"],
+    "date": "1956-04-08",
+    "dateDisplay": "April 8, 1956",
+    "datePrecision": "day",
+    "title": "Hugh B. Brown reads Widtsoe on God's growth, then draws the line: “deify man,” not humanize God",
+    "speaker": "Hugh B. Brown",
+    "office": "Assistant to the Council of the Twelve Apostles",
+    "venue": "General conference, third day morning meeting (Conference Report, April 1956)",
+    "url": "https://archive.org/details/conferencereport1956a/page/n103",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "brown-deify-man-1956-q1",
+        "categories": ["FATHER-BECAME-GOD"],
+        "referent": "father",
+        "excerpt": "In the beginning, which transcends our understanding, God undoubtedly exercised his will vigorously and thus gained great experience of the forces lying about him. As knowledge grew into greater knowledge by the persistent efforts of the will, his recognition of universal laws became greater until he obtained at last a conquest over the universe which to our finite understanding seems absolutely complete.",
+        "note": "Brown reading John A. Widtsoe aloud in general conference (“On this point Dr. Widtsoe wrote as follows:”), from A Rational Theology — see widtsoe-rational-theology-1915. Every verb is completed: gained, grew, became, obtained at last. That makes it FATHER-BECAME-GOD, not DIVINE-PROGRESSION, on the same reading that separates talmage-conference-1915 from talmage-af-1899. Attainment language with no explicit mortality, so FATHER-BECAME-GOD alone. What Brown leaves out is the finding: Widtsoe's paragraph in A Rational Theology continues “if the great law of progression is accepted, God must have been engaged from the beginning, and must now be engaged in progressive development” — the present-tense clause, the one that actually asserts ongoing divine progression, does not survive into the 1956 pulpit relay. Two printed paragraphs are joined here with a space; nothing between them is omitted."
+      },
+      {
+        "quoteId": "brown-deify-man-1956-q2",
+        "categories": [],
+        "excerpt": "If God is in fact our Father, then we, Father and children, belong to the same society of eternal intelligences. Among them he is supreme, he is the most advanced, most powerful, and most intelligent.",
+        "note": "Context for the quote above and the one below, not tagged on its own. It is the ontology that makes the rest coherent — God and men as members of one society of co-eternal intelligences, differing by position on a scale — and it is argued from Abraham 3:19, 22, which Brown quotes immediately after. Naming God “the most advanced” of a class implies a scale he ascended, but Brown does not say so, and the no-retrojection rule keeps it out of the categories."
+      },
+      {
+        "quoteId": "brown-deify-man-1956-q3",
+        "categories": ["RETREAT-REFRAME", "FORWARD-EUPHEMISM"],
+        "excerpt": "When we say man may become like our Father, we do not mean to humanize God, but rather to deify man — not as he now is but as he may become. The difference between us is indescribably great, but it is one of degree rather than of kind.",
+        "note": "The boundary drawn explicitly, in the sentence right after the Widtsoe reading: whatever the doctrine means, it does not mean bringing God down. The reframe and the claim are doing opposite work in the same breath — “degree rather than of kind” is the strong version of the teaching, and “we do not mean to humanize God” is the disclaimer attached to it. Compare packer-parentage-1984, where the same defensive move has hardened into a redefinition."
+      },
+      {
+        "quoteId": "brown-deify-man-1956-q4",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "To deny the possibility of eternal progression is to accept the awful alternative of eventual stagnation which would be damnation.",
+        "note": "The stagnation argument, applied to man. B. H. Roberts had used the identical reasoning about God in 1911 — “an absolute immutability would require eternal immobility” (roberts-progress-of-god-1911) — and by 1956 it is being deployed for human progression only. Same argument, subject quietly changed."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1956/1956-04-brown-1-wonder-if-sometimes-our-people-think.md, transcribed from the Internet Archive scan of the printed Conference Report (conferencereport1956a, leaves n103–n106). Conference Report, so A. The vault file is status draft with an OCR-and-auto-clean provenance and no archive snapshot yet, and it records no calling; Brown was an Assistant to the Council of the Twelve in April 1956 (ordained an Apostle April 1958, First Presidency 1961), confirmed from the calling recorded on his other 1954–1956 conference files in the same corpus. The printed Report supplies no formal title. This entry replaces the Hugh B. Brown candidate Eugene England catalogues at BYU Studies 29/3 (1989), 44 — “when we speak of eternal increase we speak not only of increase of posterity, we speak of increase of knowledge…”, cited to Continuing the Quest (Deseret Press, 1961), 4. That book is in neither the Pulpit corpus nor the Gospel Scholar Archive, England's reproduction is unpunctuated lowercase OCR that cannot be quoted verbatim, and on inspection the passage is about *human* eternal increase (“increase of all that goes to make up godhood”) rather than God's progression, so it would have been mis-tagged as DIVINE-PROGRESSION had it been taken at England's framing. This address supplies verifiable Brown text on the same questions from the official record."
+  },
+  {
+    "id": "taylor-o-my-father-1961",
+    "sourceType": "citation",
+    "citesId": ["o-my-father"],
+    "date": "1961-10-01",
+    "dateDisplay": "October 1, 1961",
+    "datePrecision": "day",
+    "title": "Henry D. Taylor: the hymn's closing prayer, mid-century",
+    "speaker": "Henry D. Taylor",
+    "office": "Assistant to the Quorum of the Twelve Apostles",
+    "venue": "General conference, third day morning meeting (Conference Report, October 1961)",
+    "url": "https://archive.org/details/conferencereport1961sa/page/n101",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "taylor-o-my-father-1961-q1",
+        "categories": [],
+        "excerpt": "We sing a beautiful hymn that is a favorite of mine. It refers to our existence prior to coming to this earth. Sister Eliza R. Snow, the author, poses some very meaningful questions, and in addressing our Father in heaven asks:",
+        "note": "The framing, and the reframing. Taylor tells the congregation what the hymn is about — premortal existence — and the Mother is not named in the summary even though she is named in the stanza he is about to read. This is the mid-century handling in miniature: the text is preserved intact and its most distinctive claim is quietly not the point."
+      },
+      {
+        "quoteId": "taylor-o-my-father-1961-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "\"When I leave this frail existence; When I lay this mortal by, Father, Mother, may I meet you In your royal courts on high? Then at length, when I've completed All you sent me forth to do; With your mutual approbation, Let me come and dwell with you.\" (\"O My Father\")",
+        "note": "The Mother addressed directly, in general conference, in 1961. Punctuation follows the Conference Report printing, which uses semicolons where the hymnal has commas. Taylor attributes the hymn by title. See o-my-father."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1961/1961-10-taylor-we-sing-a-beautiful-hymn-that-is.md, whose Final Review collated §0 against conferencereport1961sa, leaves n101–n103, removing two running-head bleeds mid-sentence and making no other body change; the heavyweight pass rebuilt the report's reading order from the scan's DjVu word coordinates and corrected the date and session from the report's own dateline. The vault-supplied title is the talk's opening words, since the printed Report gives none. Conference Report, so A; historical-official — the Church's online archive begins in 1971. A citation and nothing more: Taylor quotes the hymn to introduce a sermon about keeping all the commandments, illustrated by the blind men and the elephant, and never returns to the Mother. It is filed anyway because it is the only located general conference witness to the hymn's Heavenly Mother stanzas in the whole of the 1950s and early 1960s, and because the shape of the citation — full stanza, correct attribution, no comment — is itself the finding for that decade."
   },
   {
     "id": "romney-1964",
@@ -1437,6 +2102,43 @@
     "notes": "Verified verbatim against the printed text at pp. 55–57 (the dialogue passage runs from p. 56 onto p. 57; footnote 5 sits at the foot of p. 55, footnote 11 at the foot of p. 57). The scan's OCR is poor and mangles “but” to “hut” and “William” beyond recognition in the notes; those are scanner artifacts of an otherwise clear text and are silently corrected here. The framing caveat is not optional: the speaker is a fictional Joseph Smith, ventriloquized by Madsen for a theodicy, and quoting “God Himself became God” as though Madsen or Joseph Smith said it flatly is the single most common misuse of this book. Never-official: a BYU philosopher's trade book from Deseret Book. Adjacent interest for the Roberts/James strand — Madsen aligns his position with James, Whitehead, Hartshorne and Brightman by name."
   },
   {
+    "id": "mcconkie-family-affair-1970",
+    "sourceType": "citation",
+    "citesId": ["o-my-father"],
+    "date": "1970-04-04",
+    "dateDisplay": "April 4, 1970",
+    "datePrecision": "day",
+    "title": "Bruce R. McConkie: “one of our great doctrinal hymns”",
+    "speaker": "Bruce R. McConkie",
+    "office": "Of the First Council of the Seventy",
+    "venue": "General conference, second session, Saturday afternoon (Conference Report, April 1970)",
+    "url": "https://archive.org/details/conferencereport1970a/page/n29",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "mcconkie-family-affair-1970-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "In one of our great doctrinal hymns we sing: \"In the heavens are parents single? No; the thought makes reason stare! Truth is reason, truth eternal Tells me I've a mother there. \"When I leave this frail existence, When I lay this mortal by, Father, Mother, may I meet you In your royal courts on high? Then, at length, when I've completed All you sent me forth to do, With your mutual approbation Let me come and dwell with you.\" —Hymns, No. 138",
+        "note": "“One of our great doctrinal hymns” — the classification is the datum. McConkie, who spent a career policing the boundary between doctrine and folklore, files the Heavenly Mother stanzas on the doctrine side without qualification, and opens the talk with them. The hymnal number McConkie gives is 138, from the book then in use; Gordon B. Hinckley will cite the same lines as no. 292 from the 1985 hymnal in 1991 — the numbering is a cheap dating check on any later quotation of the hymn. Verse line breaks rendered as running text; the stray opening quotation mark before “When I leave” is in the printed Report."
+      },
+      {
+        "quoteId": "mcconkie-family-affair-1970-q2",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "Manifestly if we are to become like our Eternal Father, we must become immortal as he is immortal; we must gain the character, perfections, and attributes which he possesses; we must attain the power, glory, and dominion which he enjoys; and we must create for ourselves eternal family units patterned after his eternal family.",
+        "note": "The euphemism in its mature form, and it is doing real work: “create for ourselves eternal family units patterned after his eternal family” says everything the older sources said about generative exaltation except the word children. The pattern claim also runs backward by implication — his family is the template — but McConkie asserts nothing about the Father's own origin here, so no backward tag."
+      },
+      {
+        "quoteId": "mcconkie-family-affair-1970-q3",
+        "categories": ["FORWARD-EUPHEMISM"],
+        "excerpt": "Full salvation consists of the continuation of the family unit in celestial glory… heaven itself is but the projection of a Latter-day Saint family into eternity… That power by which salvation comes is so great that it can make of earth a heaven, and of man, a god.",
+        "note": "The closing formulation, with two elisions marked. “Continuation of the family unit” is D&C 132's “continuation of the seeds” with the biology removed — compare hunter-eternal-mother-1949 twenty-one years earlier, where the same verse is glossed as “the power to beget spirit children.” Same doctrine, same scripture, and in the interval the mechanism has gone silent while the promise (“of man, a god”) has not."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/conference-reports/1970/1970-04-mcconkie-salvation-is-a-family-affair.md, whose Final Review collated the full body against the archive.org scan conferencereport1970a, leaves n27–n30, word for word, with no lexical fixes needed; seven bled-in printed side-heads were converted to Markdown headings and trailing material belonging to the following speaker was stripped in an earlier pass. One shared OCR artifact survives elsewhere in the talk (“prepare arid qualify us”), reproduced identically by the independent witness and therefore left alone; it does not touch any quoted excerpt. Conference Report, so A; historical-official. Filed as a citation because the entry's Heavenly Mother content is the hymn — McConkie adds no argument about her, and the talk's own argument is about the family unit — but the two euphemism quotes are carried because this is McConkie establishing the vocabulary he will police for the next two decades. Read against mcconkie-heresies-1980 and mcconkie-mormon-doctrine."
+  },
+  {
     "id": "jfs-progression-1971",
     "sourceType": "original",
     "date": "1971-05-01",
@@ -1459,6 +2161,105 @@
       }
     ],
     "notes": "Smith had argued this position for decades in Doctrines of Salvation (which prints “HOW GOD DOES NOT PROGRESS” roughly a page before “The Prophet taught that our Father had a Father and so on” — denying progression while affirming the regress, proof the two questions are independent). This 1971 First Presidency message is the position's most official form."
+  },
+  {
+    "id": "eldred-smith-spirit-offspring-1973",
+    "sourceType": "original",
+    "date": "1973-10-01",
+    "dateDisplay": "October 1973",
+    "datePrecision": "month",
+    "title": "Eldred G. Smith: “the same type of experiences they had done”",
+    "speaker": "Eldred G. Smith",
+    "office": "Patriarch to the Church",
+    "venue": "General conference, Saturday afternoon session",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1973/10/opposition-in-order-to-strengthen-us?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "eldred-smith-spirit-offspring-1973-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "In the heavens, before the earth was formed, the plan of this earth life was explained to all of us. We were then but spirit offspring of our Father and Mother in heaven.",
+        "note": "The opening sentence of the talk. “Spirit offspring of our Father and Mother in heaven” asserts the Mother and premortal parentage; no mechanism is named, so HEAVENLY-MOTHER alone and no spirit-birth tag."
+      },
+      {
+        "quoteId": "eldred-smith-spirit-offspring-1973-q2",
+        "categories": ["FATHER-MORTAL-EXPERIENCE"],
+        "referent": "father",
+        "excerpt": "We all learned then that through this earth life experience we would have the opportunity of going through the same type of experiences they had done and so become as they are.",
+        "note": "The sentence that makes this an original rather than another Heavenly Mother mention. “They” is the Father and Mother of the preceding sentence, and what is predicated of them is a completed earth life: mortality is not merely our probation, it is a repetition of theirs. That is FATHER-MORTAL-EXPERIENCE, stated obliquely but unmistakably, and delivered in a currently hosted general conference talk. Per the Father-status precedent it takes that tag alone — “become as they are” is what we may attain, and nothing is said here about how the Father attained anything, so no FATHER-BECAME-GOD. The Mother is swept into the same claim, which is rarer still: whatever the Father did, she did. Referent father for the tagged clause even though the pronoun is plural, since the category concerns the Father's status."
+      },
+      {
+        "quoteId": "eldred-smith-spirit-offspring-1973-q3",
+        "categories": [],
+        "excerpt": "The records tell us that we all shouted for joy at this glorious news.",
+        "note": "The next sentence, kept so the reader can see there is no retreat, qualification, or scriptural hedge attached — the King Follett claim is stated in two clauses and the talk moves straight on to Adam and Eve. The remainder of the address is about opposition and agency and never returns to the point."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1973/1973-10-smith-opposition-in-order-to-strengthen-us.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the two categorized excerpts were additionally re-fetched from that live page during drafting and returned verbatim. Official published text, so A, and still hosted, so current-correlated. No hymn quotation, hence no citesId. Distinct speaker-entry from eldred-smith-no-increase-1948, and the pair is worth reading together: the same man who in 1948 was on record against ongoing divine progression here states, twenty-five years later, that the Father and Mother passed through the same type of mortal experience we are passing through — trap #4 in the taxonomy, denying D while C-adjacent mortality sits comfortably in the same career. It also matters that this survives on the Church's own site: the claim is not quarantined in a 19th-century sermon but sits in the searchable modern archive."
+  },
+  {
+    "id": "kimball-doctrinal-hymn-1978",
+    "sourceType": "citation",
+    "citesId": ["o-my-father"],
+    "date": "1978-04-01",
+    "dateDisplay": "April 1978",
+    "datePrecision": "month",
+    "title": "Spencer W. Kimball: “that doctrinal hymn and anthem of affection”",
+    "speaker": "Spencer W. Kimball",
+    "office": "President of the Church",
+    "venue": "General conference, Saturday morning session",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1978/04/the-true-way-of-life-and-salvation?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "kimball-doctrinal-hymn-1978-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "Finally, when we sing that doctrinal hymn and anthem of affection, “O My Father,” we get a sense of the ultimate in maternal modesty, of the restrained, queenly elegance of our Heavenly Mother, and knowing how profoundly our mortal mothers have shaped us here, do we suppose her influence on us as individuals to be less if we live so as to return there?",
+        "note": "A President of the Church calling the hymn doctrinal, in the same clause in which he explains the doctrine's silence as a property of its subject. The Mother's absence from scripture and prayer becomes “maternal modesty” and “restrained, queenly elegance” — the reticence is relocated from the institution to her. That move is what makes this the hinge between the confident early-century usage and hinckley-daughters-of-god-1991, which will convert the same silence into a boundary on practice. Tagged HEAVENLY-MOTHER, not RETREAT-REFRAME: Kimball is enlarging her, not fencing her, and he asserts real influence on individuals."
+      },
+      {
+        "quoteId": "kimball-doctrinal-hymn-1978-q2",
+        "categories": [],
+        "excerpt": "The Prophet Joseph gave us the Relief Society organization to advance these high purposes for Latter-day Saint women. That society today is a worldwide movement holding membership in national and world organizations for the advancement of women.",
+        "note": "The immediately preceding paragraph, kept for setting. The Heavenly Mother sentence is the peroration of an address about the advancement of Latter-day Saint women, delivered in the same year Neal A. Maxwell reached for her in the same conference — the doctrine surfaces in 1978 as part of a response to the decade's argument about women, not as part of an argument about cosmology."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1978/1978-04-kimball-the-true-way-of-life-and-salvation.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the live page was re-checked during drafting and confirmed to load with this passage present. Official published text, so A, and still hosted, so current-correlated. Filed as a citation: the hymn is named and characterized, and Kimball's own contribution is a gloss on it rather than an independent argument. Kimball returns to Heavenly Mother repeatedly in 1977–1978 — the October 1978 sisters' address, for instance, says “He and your mother in heaven value you beyond any measure. They gave your eternal intelligence spirit form,” which is the tripartite intelligence-spirit-body sequence rather than a hymn citation, and his April 1977 “Our Great Potential” simply prints the hymn's stanzas. This is the strongest of the cluster and the others are deliberately not drafted."
+  },
+  {
+    "id": "maxwell-heavenly-mother-1978",
+    "sourceType": "original",
+    "citesId": ["o-my-father"],
+    "date": "1978-04-01",
+    "dateDisplay": "April 1978",
+    "datePrecision": "month",
+    "title": "Neal A. Maxwell: “the anticipatory arrangements of a Heavenly Mother”",
+    "speaker": "Neal A. Maxwell",
+    "office": "Of the Presidency of the First Quorum of the Seventy",
+    "venue": "General conference, Saturday morning session",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1978/04/the-women-of-god?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "maxwell-heavenly-mother-1978-q1",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "Finally, remember: When we return to our real home, it will be with the “mutual approbation” of those who reign in the “royal courts on high.” There we will find beauty such as mortal “eye hath not seen”; we will hear sounds of surpassing music which mortal “ear hath not heard.” Could such a regal homecoming be possible without the anticipatory arrangements of a Heavenly Mother?",
+        "note": "Two hymn phrases quoted in quotation marks with no attribution — “mutual approbation” and “royal courts on high” — on the assumption that the congregation will hear the source. That mode of citation is the measure of how thoroughly the hymn had been absorbed by 1978, and it is why phrase searches for “parents single” miss talks like this one. The claim itself goes past anything in the hymn: the hymn's Mother is present and addressed, Maxwell's Mother acts, and heaven is her preparation. It is still a rhetorical question — the strongest Heavenly Mother assertion of the modern corpus, and it is interrogative."
+      },
+      {
+        "quoteId": "maxwell-heavenly-mother-1978-q2",
+        "categories": [],
+        "excerpt": "We know so little, brothers and sisters, about the reasons for the division of duties between womanhood and manhood as well as between motherhood and priesthood. These were divinely determined in another time and another place… The story of the women of God, therefore, is, for now, an untold drama within a drama.",
+        "note": "The talk's opening, kept because it sets the epistemic frame that the closing question depends on: what is known is little, what is asserted is asserted as inference from the shape of things. Elision marked. Untagged — this makes no claim about a Mother."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1978/1978-04-maxwell-the-women-of-god.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; the closing paragraph was re-fetched from the live page during drafting and returned verbatim. Official published text, so A, and still hosted, so current-correlated. Filed as an original with the citesId edge preserved: the hymn supplies the vocabulary of the last paragraph, but the proposition — that a Heavenly Mother has made arrangements for our return — is Maxwell's and is not in Eliza R. Snow. Delivered in the same session as kimball-doctrinal-hymn-1978, which is the fact to notice: April 1978 is the high-water mark of official Heavenly Mother language in the modern era, and both instances arise from the Church's engagement with the decade's arguments about women. Thirteen years later Gordon B. Hinckley will address the same audience on the same subject to draw a line."
   },
   {
     "id": "mcconkie-heresies-1980",
@@ -1561,6 +2362,55 @@
       }
     ],
     "notes": "The book itself is not in the collated corpus; the text was verified verbatim against Paulsen and Fisher's block quotation with page citation in the FARMS Review 15/2 (2003), 429–30 n. 22, where the note runs across the two printed pages. Recorded here because the sentence circulates as regress evidence when both scholarly sources that quote it read it as the opposite — a divine-progression denial, placing Millet and McConkie with Bruce R. McConkie and Joseph Fielding Smith against the Brigham Young–Woodruff–Roberts–Widtsoe side of the intra-LDS debate. Under this project's taxonomy it belongs outside category C entirely. Never-official: a Bookcraft trade book by two BYU religion faculty."
+  },
+  {
+    "id": "hinckley-daughters-of-god-1991",
+    "sourceType": "original",
+    "citesId": ["o-my-father"],
+    "date": "1991-10-01",
+    "dateDisplay": "October 1991",
+    "datePrecision": "month",
+    "title": "Gordon B. Hinckley, “Daughters of God” — the Mother affirmed and fenced",
+    "speaker": "Gordon B. Hinckley",
+    "office": "First Counselor in the First Presidency",
+    "venue": "General Women's Meeting, general conference, Salt Lake City",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1991/10/daughters-of-god?lang=eng",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "hinckley-daughters-of-god-1991-q1",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "I am therefore on this occasion going to take the liberty of rereading that portion of the talk which pertains to a matter over which some few women of the Church appear to be greatly exercised. I give it to all, in this forum, because of the activities of a few who evidently are seeking to lead others in the paths which they are following. I speak of those who advocate the offering of prayers to our Mother in Heaven.",
+        "note": "The occasion, stated. Everything that follows is Hinckley rereading his own April 1991 address to the regional representatives, verbatim and in quotation marks, to a general audience of women — so the boundary is being set twice, once in a training meeting and once, deliberately, in public. Provenance is still first-person and A: the inner quotation is the same speaker quoting himself from six months earlier, not a relay."
+      },
+      {
+        "quoteId": "hinckley-daughters-of-god-1991-q2",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "“It was Eliza R. Snow who wrote the words: ‘Truth is reason; truth eternal / Tells me I’ve a mother there.’ (*Hymns,* 1985, no. 292.) “It has been said that the Prophet Joseph Smith made no correction to what Sister Snow had written. Therefore, we have a Mother in Heaven. Therefore, [some assume] that we may appropriately pray to her.",
+        "note": "The hymn cited by author and hymnal number, and the traditional warrant for the doctrine restated in its weakest available form: not that Joseph revealed it, but that he did not correct it. Compare iverson-mother-in-heaven-1908, where the same doctrine is credited to “inspiration flowing first through the mind of the Prophet Joseph Smith.” Eighty-three years have converted a revelation claim into an argument from silence. The bracketed “[some assume]” is Hinckley's own interpolation as printed; asterisks are the italics of the published text."
+      },
+      {
+        "quoteId": "hinckley-daughters-of-god-1991-q3",
+        "categories": ["HEAVENLY-MOTHER"],
+        "excerpt": "“Logic and reason would certainly suggest that if we have a Father in Heaven, we have a Mother in Heaven. That doctrine rests well with me.",
+        "note": "The affirmation, and the ground it stands on. This is Erastus Snow's inference and Rudger Clawson's rhetorical question arriving intact in 1991 — logic and reason, not revelation and not scripture. “Rests well with me” is a personal endorsement rather than a doctrinal declaration, and the sentence is placed so that the concession precedes the restriction. See snow-heavenly-mother-1885 and clawson-mother-there-1929."
+      },
+      {
+        "quoteId": "hinckley-daughters-of-god-1991-q4",
+        "categories": ["RETREAT-REFRAME"],
+        "excerpt": "“However, in light of the instruction we have received from the Lord Himself, I regard it as inappropriate for anyone in the Church to pray to our Mother in Heaven.… “I have looked in vain for any instance where any President of the Church, from Joseph Smith to Ezra Taft Benson, has offered a prayer to ‘our Mother in Heaven.’",
+        "note": "The restriction, and the two arguments for it: the scriptural pattern of prayer to the Father, and an argument from the absence of precedent among Church presidents. Elision marks the omitted run of scriptural citations from Matthew 6 and 3 Nephi. Note what is not said — the doctrine is nowhere denied, and no claim is made that she does not exist or is not a person. What is fenced is practice."
+      },
+      {
+        "quoteId": "hinckley-daughters-of-god-1991-q5",
+        "categories": ["RETREAT-REFRAME", "HEAVENLY-MOTHER"],
+        "excerpt": "“I suppose those … who use this expression and who try to further its use are well-meaning, but they are misguided. The fact that we do not pray to our Mother in Heaven in no way belittles or denigrates her.” That is the end of the quotation from the talk I gave earlier, to which I may add that none of us can add to or diminish the glory of her of whom we have no revealed knowledge.",
+        "note": "The closing sentence is the most consequential clause in the modern corpus on this subject: “her of whom we have no revealed knowledge.” The Mother is affirmed as real and simultaneously placed outside revelation altogether — which retroactively reclassifies the whole nineteenth- and early twentieth-century tradition, including Iverson's claim that the doctrine came by inspiration through Joseph Smith and Kimball's description of “O My Father” as a doctrinal hymn, as something other than revealed. The ellipsis in the first sentence is printed in the published text, not an editorial cut. Carries both tags: the reframe is executed and the doctrine is affirmed in the same breath, which is precisely the pattern the category exists to capture."
+      }
+    ],
+    "notes": "Re-pulled verbatim from the Pulpit vault file talks/english/modern/1991/1991-10-hinckley-daughters-of-god.md, whose heavyweight pass diffed the vault body against the live churchofjesuschrist.org page paragraph by paragraph at a 1.0000 match; three of the five excerpts were independently re-fetched from that live page during drafting and returned verbatim. Official published text, so A, and still hosted, so current-correlated. Filed as an original with the citesId edge preserved — the hymn is quoted and attributed, but the entry's substance is Hinckley's own ruling on what may be done with it. The pivotal modern boundary text, and its structure is worth stating plainly, because both critics and defenders routinely collapse it: the doctrine is affirmed (q3), the practice is prohibited (q4), the affirmation is then hollowed by the epistemic claim that nothing about her is revealed (q5). Nothing here repudiates Heavenly Mother, and nothing here leaves room for anyone to say much more about her. Read forward to essay-2015, which restates the doctrine while citing this address, and back to maxwell-heavenly-mother-1978, delivered to a comparable audience thirteen years earlier with no fence at all."
   },
   {
     "id": "tpby-1997",

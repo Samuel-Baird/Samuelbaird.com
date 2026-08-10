@@ -142,14 +142,22 @@ export function DeseretTitle({
     TOTAL_STAGGER_BUDGET_MS / Math.max(text.length, 1),
   );
 
-  // Split into words and the whitespace between them, keeping both. The word
-  // is the smallest unit that goes in the layout: splitting Latin per
-  // character would let the line break mid-word ("creat" / "or") and would
-  // drop kerning, so the title reflowed the moment the animation collapsed
-  // back to a plain text node. Words stay whole text nodes, and only the
-  // Deseret overlay — which is absolutely positioned and therefore weightless
-  // — is split per character for the stagger.
-  const parts = text.split(/(\s+)/).filter((part) => part !== "");
+  // Split the title into the same pieces the browser would be willing to
+  // break between, so the animating markup and the finished text node wrap
+  // identically. Splitting per character breaks lines mid-word ("creat" /
+  // "or"); splitting only on whitespace goes too far the other way, since
+  // "Latter-day" is one token here but plain text may break it after the
+  // hyphen — either mismatch makes the title jump when the animation ends.
+  // So: whitespace is its own token, and words additionally break after a
+  // hyphen, dash, or slash. Latin stays whole text nodes within a token,
+  // which also preserves kerning; only the Deseret overlay is split per
+  // character, and it is absolutely positioned and therefore weightless.
+  const parts = text
+    .split(/(\s+)/)
+    .filter((part) => part !== "")
+    .flatMap((part) =>
+      /^\s+$/.test(part) ? [part] : part.split(/(?<=[-–—/])/).filter(Boolean),
+    );
   // Character offset each part starts at, so a part's glyphs keep their place
   // in the single stagger running across the whole title.
   const starts: number[] = [];
@@ -164,12 +172,11 @@ export function DeseretTitle({
         const start = starts[partIndex];
 
         if (/^\s+$/.test(part)) {
-          // A real space between inline-blocks, so lines still break here.
-          return (
-            <span key={partIndex} aria-hidden="true" className="whitespace-pre">
-              {part}
-            </span>
-          );
+          // A bare text node, not a span. Whitespace in an element with
+          // white-space: pre can neither collapse nor hang at the end of a
+          // line, so it takes up width the finished text node would not and
+          // the title wraps a word early.
+          return part;
         }
 
         const chars = Array.from(part);

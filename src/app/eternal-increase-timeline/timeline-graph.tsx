@@ -125,13 +125,12 @@ export function TimelineGraph({
   hoveredId?: string | null;
   onHover?: (id: string | null) => void;
 }) {
-  // Kept separate from `hoveredId`: the parent also sets that when a card is
-  // hovered, and a card hover should highlight the dot without popping a
-  // tooltip over a plot the reader is not looking at.
-  // Carries the anchor it was measured with. Measuring happens in the event
-  // handler that opened it, never during render — by render time the ref may
-  // be null, and reading layout mid-render is not safe under concurrent
-  // rendering.
+  // Kept separate from `hoveredId`, which the parent also sets when a card is
+  // hovered: that direction should mark the dot without popping a tooltip over
+  // a plot the reader is not looking at. Carries the anchor it was measured
+  // with, because measuring happens in the handler that opened it — by render
+  // time the ref may be null, and reading layout mid-render is not safe under
+  // concurrent rendering.
   const [tip, setTip] = useState<{
     id: string;
     x: number;
@@ -518,7 +517,15 @@ export function TimelineGraph({
   );
 }
 
-/** Roughly what the card measures with a couple of category rows. */
+/**
+ * Rough card height, used only to choose a side. Real ones run 104–230px
+ * depending on how many categories an entry carries and how far its title
+ * wraps, and the plot is barely taller than that, so an entry with five
+ * categories will overhang the figure whichever side it takes. That is
+ * deliberate: it floats over the section below, which is what a tooltip does.
+ * What must not happen is clipping, which is why it is anchored to the figure
+ * rather than to the plot's scroll container.
+ */
 const TOOLTIP_HEIGHT = 130;
 
 function Tooltip({

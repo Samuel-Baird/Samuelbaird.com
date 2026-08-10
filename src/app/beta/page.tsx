@@ -5,6 +5,7 @@ import {
   ComparisonChart,
   type ComparisonSeries,
 } from "@/components/comparison-chart";
+import { DeseretTitle } from "@/components/deseret-title";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { RisersFallers } from "@/components/risers-fallers";
 import { WeeklyDigestToggle } from "@/components/weekly-digest-toggle";
@@ -83,7 +84,7 @@ export default async function PremiumPage({
           Beta
         </p>
         <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Thank you for supporting Latter-day Stats
+          <DeseretTitle text="Thank you for supporting Latter-day Stats" />
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
           You have full access to all beta features. Enjoy.
@@ -102,7 +103,7 @@ export default async function PremiumPage({
         Beta
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-        Beta features
+        <DeseretTitle text="Beta features" />
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
         A handful of bonus features for beta testers of Latter-day Stats. Want
