@@ -17,7 +17,7 @@ const ALL_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
   { href: "/timelines", label: "Timelines" },
-  { href: "/beta", label: "Beta", premium: true },
+  { href: "/premium", label: "Premium", premium: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/donate", label: "Donate" },

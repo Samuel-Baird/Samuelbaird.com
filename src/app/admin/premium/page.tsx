@@ -31,12 +31,13 @@ export default async function AdminPremiumUsersPage() {
   return (
     <div>
       <h1 className="serif text-4xl font-semibold tracking-tight">
-        Beta testers
+        Premium members
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-        Add people to the beta tester allowlist before or after they sign in.
-        Beta access grants CSV exports, channel comparison, risers &amp;
-        fallers, critical creators, and the weekly digest opt-in.
+        Add people here once they&apos;ve donated $5 or more and sent their
+        receipt — before or after they sign in. Premium access grants CSV
+        exports, channel comparison, risers &amp; fallers, critical creators,
+        and the weekly digest opt-in.
       </p>
 
       <form
@@ -81,7 +82,7 @@ export default async function AdminPremiumUsersPage() {
           Weekly digest recipients
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-          Beta testers who opted in to the weekly email digest. Copy the
+          Premium members who opted in to the weekly email digest. Copy the
           comma-separated list below and paste into your email client to send
           the digest manually.
         </p>
@@ -144,7 +145,7 @@ export default async function AdminPremiumUsersPage() {
           </table>
         ) : (
           <div className="p-8 text-center text-sm text-[color:var(--muted)]">
-            No beta testers yet.
+            No premium members yet.
           </div>
         )}
       </div>

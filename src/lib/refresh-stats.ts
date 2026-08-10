@@ -131,7 +131,7 @@ export async function runStatsRefresh(
   revalidateTag("channels", { expire: 0 });
   revalidatePath("/");
   revalidatePath("/channels");
-  revalidatePath("/beta");
+  revalidatePath("/premium");
 
   const summary: RefreshSummary = {
     total: ytIds.length,

@@ -68,7 +68,7 @@ export default async function ChannelDetailPage({
       ? [channel.channel_type]
       : [];
   if (channelTags.includes("Critical") && !premiumStatus.premium) {
-    redirect("/beta");
+    redirect("/premium");
   }
   const [bookmarks, history] = await Promise.all([
     auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
@@ -249,7 +249,7 @@ export default async function ChannelDetailPage({
         />
         <div className="mt-4 text-right">
           <Link
-            href={`/beta?slugs=${encodeURIComponent(channel.slug)}`}
+            href={`/premium?slugs=${encodeURIComponent(channel.slug)}`}
             className="text-sm text-amber-600 hover:underline"
           >
             Compare with another channel →
