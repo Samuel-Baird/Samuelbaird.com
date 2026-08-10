@@ -2,34 +2,34 @@
 
 import {
   ChevronDown,
-  Copy,
-  Download,
   ExternalLink,
   Quote as QuoteIcon,
-  Search,
+  SlidersHorizontal,
   TriangleAlert,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { Tag } from "@/components/tag";
+import { HearsayBadge, ReferentChip } from "./badges";
 import {
   CATEGORY_META,
   ERAS,
   HEARSAY_META,
   INK_VARS,
-  REFERENT_META,
   SOURCE_TYPE_META,
   STATUS_META,
   categoriesOf,
   eraFor,
   hearsayForQuote,
 } from "./constants";
+import { BackToTop, EraNav } from "./era-nav";
 import {
   buildMarkdown,
   downloadMarkdown,
   type FilterState,
 } from "./export-markdown";
-import { ScalesLegend } from "./legend";
+import { FilterPanel } from "./filter-panel";
+import { scrollToId } from "./scroll";
 import {
   CATEGORY_IDS,
   CORRELATION_STATUSES,
@@ -66,16 +66,73 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
   const [query, setQuery] = useState("");
   const [collapseCitations, setCollapseCitations] = useState(false);
   const [copied, setCopied] = useState(false);
-  const catsPanelRef = useRef<HTMLDetailsElement>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [expandAll, setExpandAll] = useState(false);
+  // Shared between the graph and the cards so hovering either one marks the
+  // other; the plot is otherwise hard to tie back to a specific entry.
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
-  // Server-renders closed (compact on phones); pops open after mount where
-  // the sidebar layout has room. `open` is uncontrolled, so no hydration
-  // mismatch.
+  // Filters live in the query string so a filtered reading is a shareable
+  // link and survives a reload. Deliberately not useSearchParams: nothing on
+  // the server reads these, and subscribing to them would put every keystroke
+  // through the router and force a Suspense boundary around the explorer for
+  // nothing. Next routes native history calls through its router anyway — see
+  // node_modules/next/dist/docs/01-app/01-getting-started/04-linking-and-navigating.md.
+  //
+  // This has to be an effect that writes state: the server renders with the
+  // filters empty, so reading the URL during render instead would make the
+  // client's first paint disagree with the server's HTML. One pass on mount,
+  // never again — the eslint rule flags the shape, not a real cascade.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    if (window.matchMedia("(min-width: 1024px)").matches && catsPanelRef.current) {
-      catsPanelRef.current.open = true;
-    }
+    const p = new URLSearchParams(window.location.search);
+    const pick = <T extends string>(key: string, allowed: readonly T[]) => {
+      const found = p.getAll(key).filter((v): v is T => allowed.includes(v as T));
+      return found.length > 0 ? new Set(found) : null;
+    };
+    const c = pick("c", CATEGORY_IDS);
+    if (c) setCats(c);
+    const g = pick("g", HEARSAY_GRADES);
+    if (g) setGrades(g);
+    const s = pick("s", CORRELATION_STATUSES);
+    if (s) setStatuses(s);
+    const r = pick("r", REFERENTS);
+    if (r) setReferents(r);
+    const t = pick("t", SOURCE_TYPES);
+    if (t) setSourceTypes(t);
+    const q = p.get("q");
+    if (q) setQuery(q);
+    if (p.get("cc") === "1") setCollapseCitations(true);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  // Skips the mount pass so reading the URL above cannot be undone by an
+  // immediate write of the still-empty initial state.
+  const urlWriteReady = useRef(false);
+  useEffect(() => {
+    if (!urlWriteReady.current) {
+      urlWriteReady.current = true;
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      const p = new URLSearchParams();
+      for (const c of cats) p.append("c", c);
+      for (const g of grades) p.append("g", g);
+      for (const s of statuses) p.append("s", s);
+      for (const r of referents) p.append("r", r);
+      for (const t of sourceTypes) p.append("t", t);
+      if (query.trim()) p.set("q", query.trim());
+      if (collapseCitations) p.set("cc", "1");
+      const qs = p.toString();
+      window.history.replaceState(
+        null,
+        "",
+        qs ? `?${qs}` : window.location.pathname,
+      );
+    }, 300);
+    return () => window.clearTimeout(timer);
+  }, [cats, grades, statuses, referents, sourceTypes, query, collapseCitations]);
 
   const byId = useMemo(
     () => new Map(entries.map((e) => [e.id, e])),
@@ -138,13 +195,20 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     return map;
   }, [filtered, collapseCitations]);
 
-  const anyFilterActive =
-    cats.size > 0 ||
-    grades.size > 0 ||
-    statuses.size > 0 ||
-    referents.size > 0 ||
-    sourceTypes.size > 0 ||
-    query.trim() !== "";
+  // One grouping, read by both the jump bar's counts and the card sections,
+  // so a disabled jump button always means an absent section.
+  const byEra = useMemo(
+    () =>
+      ERAS.map((era) => ({
+        era,
+        inEra: visible.filter((e) => eraFor(e).id === era.id),
+      })),
+    [visible],
+  );
+
+  const facetCount =
+    cats.size + grades.size + statuses.size + referents.size + sourceTypes.size;
+  const anyFilterActive = facetCount > 0 || query.trim() !== "";
 
   const filters: FilterState = {
     categories: cats,
@@ -178,282 +242,204 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     setQuery("");
   }
 
+  // Drawer plumbing mirrors the channels explorer (src/components/
+  // channels-explorer.tsx): lock the page behind it, close on Escape, and
+  // keep Tab inside it while it is open.
+  useEffect(() => {
+    if (!drawerOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const focusableSelector =
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), details, [tabindex]:not([tabindex="-1"])';
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDrawerOpen(false);
+        return;
+      }
+      if (event.key !== "Tab" || !drawerRef.current) return;
+
+      const focusable = Array.from(
+        drawerRef.current.querySelectorAll<HTMLElement>(focusableSelector),
+      ).filter((element) => element.offsetParent !== null);
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    window.setTimeout(() => {
+      drawerRef.current?.querySelector<HTMLElement>(focusableSelector)?.focus();
+    }, 0);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [drawerOpen]);
+
+  const panelProps = {
+    query,
+    onQueryChange: setQuery,
+    cats,
+    onToggleCat: (id: CategoryId) => setCats(toggleIn(cats, id)),
+    referents,
+    onToggleReferent: (r: Referent) => setReferents(toggleIn(referents, r)),
+    sourceTypes,
+    onToggleSourceType: (t: SourceType) => setSourceTypes(toggleIn(sourceTypes, t)),
+    grades,
+    onToggleGrade: (g: HearsayGrade) => setGrades(toggleIn(grades, g)),
+    statuses,
+    onToggleStatus: (s: CorrelationStatus) => setStatuses(toggleIn(statuses, s)),
+    collapseCitations,
+    onToggleCollapseCitations: () => setCollapseCitations(!collapseCitations),
+    visibleCount: visible.length,
+    totalCount: entries.length,
+    anyFilterActive,
+    onClearAll: clearAll,
+    onExport: handleExport,
+    onCopy: handleCopy,
+    copied,
+  };
+
   return (
     <div className="mt-10 lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-10">
-      {/* top-24 clears the single-line site header at lg widths; below lg the
-          panel sits in normal flow so no header-height sync is needed. */}
-      <aside className="print:hidden lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pb-4">
-        <div className="relative">
-          <Search
-            aria-hidden="true"
-            className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[color:var(--muted)]"
-          />
-          <input
-            type="search"
-            inputMode="search"
-            placeholder="Search sources…"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="h-10 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white pl-11 pr-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
-          />
-        </div>
-
-        <div className="mt-2 flex items-center gap-2 py-1">
-          <span className="text-xs tabular-nums text-[color:var(--muted)]">
-            {visible.length} of {entries.length} sources
-          </span>
-          {anyFilterActive && (
-            <button
-              type="button"
-              onClick={clearAll}
-              className="text-xs font-medium text-[color:var(--accent)] hover:underline"
-            >
-              Clear
-            </button>
-          )}
-          <span className="ml-auto flex gap-1.5">
-            <button
-              type="button"
-              onClick={handleExport}
-              title="Export filtered sources as Markdown"
-              className="small-caps inline-flex h-8 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
-            >
-              <Download aria-hidden="true" size={13} />
-              .md
-            </button>
-            <button
-              type="button"
-              onClick={handleCopy}
-              title="Copy filtered sources as Markdown"
-              className="small-caps inline-flex h-8 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
-            >
-              <Copy aria-hidden="true" size={13} />
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </span>
-        </div>
-
-        <label className="flex cursor-pointer items-center gap-2 py-1.5 text-xs font-medium">
-          <input
-            type="checkbox"
-            checked={collapseCitations}
-            onChange={() => setCollapseCitations(!collapseCitations)}
-            className="h-3.5 w-3.5 rounded border-[color:var(--border)] accent-[color:var(--accent)]"
-          />
-          Collapse citations
-        </label>
-        {collapseCitations && (
-          <p className="pb-1.5 text-xs leading-relaxed text-[color:var(--muted)]">
-            Showing originals only. Later sources that quote them are listed
-            beneath each original as citations.
-          </p>
-        )}
-
-        <PanelSection label="Categories" count={cats.size} panelRef={catsPanelRef}>
-            {CATEGORY_IDS.map((id) => (
-              <FilterOption
-                key={id}
-                checked={cats.has(id)}
-                onChange={() => setCats(toggleIn(cats, id))}
-              >
-                <Tag ink={CATEGORY_META[id].ink}>{CATEGORY_META[id].label}</Tag>
-              </FilterOption>
-            ))}
-          </PanelSection>
-          <PanelSection label="Referent" count={referents.size}>
-            {REFERENTS.map((r) => (
-              <FilterOption
-                key={r}
-                checked={referents.has(r)}
-                onChange={() => setReferents(toggleIn(referents, r))}
-              >
-                <Tag ink={REFERENT_META[r].ink}>{REFERENT_META[r].short}</Tag>
-              </FilterOption>
-            ))}
-          </PanelSection>
-          <PanelSection label="Type" count={sourceTypes.size}>
-            {SOURCE_TYPES.map((t) => (
-              <FilterOption
-                key={t}
-                checked={sourceTypes.has(t)}
-                onChange={() => setSourceTypes(toggleIn(sourceTypes, t))}
-              >
-                <span className="text-sm">{SOURCE_TYPE_META[t].label}</span>
-              </FilterOption>
-            ))}
-          </PanelSection>
-          <PanelSection label="Hearsay" count={grades.size}>
-            {HEARSAY_GRADES.map((g) => (
-              <FilterOption
-                key={g}
-                checked={grades.has(g)}
-                onChange={() => setGrades(toggleIn(grades, g))}
-              >
-                <span className="flex items-center gap-2">
-                  <HearsayBadge grade={g} />
-                  <span className="text-xs text-[color:var(--muted)]">
-                    {HEARSAY_META[g].description}
-                  </span>
-                </span>
-              </FilterOption>
-            ))}
-          </PanelSection>
-          <PanelSection label="Status" count={statuses.size}>
-            {CORRELATION_STATUSES.map((s) => (
-              <FilterOption
-                key={s}
-                checked={statuses.has(s)}
-                onChange={() => setStatuses(toggleIn(statuses, s))}
-              >
-                <span className="flex items-center gap-2 text-sm">
-                  <span
-                    aria-hidden="true"
-                    className={`inline-block h-1.5 w-1.5 rounded-full ${STATUS_META[s].dot}`}
-                  />
-                  <span className="small-caps">{STATUS_META[s].label}</span>
-                </span>
-              </FilterOption>
-            ))}
-          </PanelSection>
-
-        <PanelSection label="About the scales">
-          <ScalesLegend />
-        </PanelSection>
+      {/* top-24 clears the single-line site header at lg widths. Below lg the
+          panel moves into the drawer, so the graph is the first thing under
+          the heading instead of thirty checkboxes. */}
+      <aside className="hidden print:hidden lg:sticky lg:top-24 lg:block lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pb-4">
+        <FilterPanel variant="desktop" {...panelProps} />
       </aside>
 
       <div className="min-w-0">
+        <div className="mb-5 flex items-center justify-between gap-3 lg:hidden print:hidden">
+          <button
+            type="button"
+            aria-label="Open filters"
+            onClick={() => setDrawerOpen(true)}
+            className="inline-flex min-h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium"
+          >
+            <SlidersHorizontal aria-hidden="true" size={16} />
+            Filters
+            {facetCount > 0 && (
+              <span className="rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs tabular-nums text-[color:var(--accent)]">
+                {facetCount}
+              </span>
+            )}
+          </button>
+          <span className="text-xs tabular-nums text-[color:var(--muted)]">
+            {visible.length} of {entries.length}
+          </span>
+        </div>
+
         <div className="mb-8 print:hidden">
           <TimelineGraph
             entries={visible}
-            onSelect={(id) => {
-              const el = document.getElementById(id);
-              el?.scrollIntoView({ behavior: "smooth", block: "start" });
-            }}
+            hoveredId={hoveredId}
+            onHover={setHoveredId}
+            onSelect={scrollToId}
           />
         </div>
-      {visible.length === 0 ? (
-        <div className="mt-8 rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)] lg:mt-0">
-          No sources match your filters.
-        </div>
-      ) : (
-        <div className="mt-8 lg:mt-0">
-          {(() => {
-            let rendered = 0;
-            return ERAS.map((era) => {
-              const inEra = visible.filter((e) => eraFor(e).id === era.id);
-              if (inEra.length === 0) return null;
-              const isFirst = rendered === 0;
-              rendered += 1;
-              return (
-                <section key={era.id} className={isFirst ? "" : "mt-14"}>
-                  {!isFirst && (
-                    <div className="dinkus" aria-hidden="true">
-                      <BeehiveMark className="h-4 w-4" />
-                    </div>
-                  )}
-                  <p className="serif-onum text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--muted)]">
-                    {era.range}
-                  </p>
-                  <h2 className="serif mt-1 text-2xl font-semibold tracking-tight">
-                    {era.label}
-                  </h2>
-                  <ol className="relative mt-6 space-y-6 border-l border-[color:var(--border)] pl-6 sm:pl-8">
-                    {inEra.map((entry) => (
-                      <TimelineEntry
-                        key={entry.id}
-                        entry={entry}
-                        byId={byId}
-                        citations={citationsByOriginal.get(entry.id) ?? []}
-                      />
-                    ))}
-                  </ol>
-                </section>
-              );
-            });
-          })()}
+
+        {visible.length > 0 && (
+          <EraNav
+            eras={byEra.map(({ era, inEra }) => ({ era, count: inEra.length }))}
+            expandAll={expandAll}
+            onToggleExpandAll={() => setExpandAll(!expandAll)}
+          />
+        )}
+
+        {visible.length === 0 ? (
+          <div className="mt-8 rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)] lg:mt-0">
+            No sources match your filters.
+          </div>
+        ) : (
+          <div>
+            {(() => {
+              let rendered = 0;
+              return byEra.map(({ era, inEra }) => {
+                if (inEra.length === 0) return null;
+                const isFirst = rendered === 0;
+                rendered += 1;
+                return (
+                  <section
+                    key={era.id}
+                    id={`era-${era.id}`}
+                    className={isFirst ? "scroll-mt-32" : "mt-14 scroll-mt-32"}
+                  >
+                    {!isFirst && (
+                      <div className="dinkus" aria-hidden="true">
+                        <BeehiveMark className="h-4 w-4" />
+                      </div>
+                    )}
+                    <p className="serif-onum text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                      {era.range}
+                    </p>
+                    <h2 className="serif mt-1 text-2xl font-semibold tracking-tight">
+                      {era.label}
+                    </h2>
+                    <ol className="relative mt-6 space-y-6 border-l border-[color:var(--border)] pl-6 sm:pl-8">
+                      {inEra.map((entry) => (
+                        <TimelineEntry
+                          key={entry.id}
+                          entry={entry}
+                          byId={byId}
+                          citations={citationsByOriginal.get(entry.id) ?? []}
+                          expandAll={expandAll}
+                          hovered={hoveredId === entry.id}
+                          onHoverChange={setHoveredId}
+                        />
+                      ))}
+                    </ol>
+                  </section>
+                );
+              });
+            })()}
+          </div>
+        )}
+      </div>
+
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
+          <button
+            type="button"
+            aria-label="Close filters"
+            onClick={() => setDrawerOpen(false)}
+            className="absolute inset-0 bg-black/35"
+          />
+          <div
+            ref={drawerRef}
+            className="absolute right-0 top-0 flex h-full w-[88vw] max-w-sm flex-col border-l border-[color:var(--border)] bg-[color:var(--background)]"
+          >
+            <div className="flex-1 overflow-y-auto">
+              <FilterPanel variant="drawer" {...panelProps} />
+            </div>
+            <div className="sticky bottom-0 border-t border-[color:var(--border)] bg-[color:var(--background)] p-4">
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(false)}
+                className="min-h-11 w-full rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white"
+              >
+                Show {visible.length}{" "}
+                {visible.length === 1 ? "source" : "sources"}
+              </button>
+            </div>
+          </div>
         </div>
       )}
-      </div>
+
+      <BackToTop />
     </div>
-  );
-}
-
-function PanelSection({
-  label,
-  count,
-  panelRef,
-  children,
-}: {
-  label: string;
-  count?: number;
-  panelRef?: React.Ref<HTMLDetailsElement>;
-  children: React.ReactNode;
-}) {
-  return (
-    <details
-      ref={panelRef}
-      className="group border-t border-[color:var(--border)] first-of-type:border-t-0"
-    >
-      <summary className="flex cursor-pointer list-none items-center gap-1.5 py-2.5 text-sm font-medium hover:text-[color:var(--accent)] [&::-webkit-details-marker]:hidden">
-        {label}
-        {count != null && count > 0 && (
-          <span className="rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-1.5 py-0.5 text-[10px] tabular-nums text-[color:var(--accent)]">
-            {count}
-          </span>
-        )}
-        <ChevronDown
-          aria-hidden="true"
-          size={13}
-          className="ml-auto transition-transform group-open:rotate-180"
-        />
-      </summary>
-      <div className="pb-2">{children}</div>
-    </details>
-  );
-}
-
-function FilterOption({
-  checked,
-  onChange,
-  children,
-}: {
-  checked: boolean;
-  onChange: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="flex min-h-9 cursor-pointer items-center gap-3 rounded-[var(--radius)] px-2 py-1.5 hover:bg-[color:var(--muted-soft)]/60">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        className="h-4 w-4 shrink-0 rounded border-[color:var(--border)] accent-[color:var(--accent)]"
-      />
-      {children}
-    </label>
-  );
-}
-
-function HearsayBadge({ grade }: { grade: HearsayGrade }) {
-  const meta = HEARSAY_META[grade];
-  const c = INK_VARS[meta.ink];
-  return (
-    <span
-      title={`Hearsay ${grade}: ${meta.description} Example: ${meta.example}`}
-      aria-label={`Hearsay rating ${grade}: ${meta.description}`}
-      className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius)] text-xs font-semibold ring-1 ${c.bg} ${c.text} ${c.ring}`}
-    >
-      {grade}
-    </span>
-  );
-}
-
-function ReferentChip({ referent }: { referent: Referent }) {
-  const meta = REFERENT_META[referent];
-  return (
-    <Tag ink={meta.ink} title={`${meta.label} — ${meta.definition}`}>
-      {meta.short}
-    </Tag>
   );
 }
 
@@ -461,12 +447,28 @@ function TimelineEntry({
   entry,
   byId,
   citations,
+  expandAll,
+  hovered,
+  onHoverChange,
 }: {
   entry: SourceEntry;
   byId: Map<string, SourceEntry>;
   citations: SourceEntry[];
+  expandAll: boolean;
+  hovered: boolean;
+  onHoverChange: (id: string | null) => void;
 }) {
-  const [open, setOpen] = useState(false);
+  // null means "follow the page-wide toggle". Flipping that toggle clears any
+  // per-card override, so the global control always wins the next time it is
+  // used without stranding a card the reader opened by hand.
+  const [override, setOverride] = useState<boolean | null>(null);
+  const [lastExpandAll, setLastExpandAll] = useState(expandAll);
+  if (lastExpandAll !== expandAll) {
+    setLastExpandAll(expandAll);
+    setOverride(null);
+  }
+  const open = override ?? expandAll;
+
   const status = STATUS_META[entry.correlationStatus];
   const typeMeta = SOURCE_TYPE_META[entry.sourceType];
 
@@ -480,7 +482,15 @@ function TimelineEntry({
             : "bg-[color:var(--muted)]"
         }`}
       />
-      <article className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:p-6 print:break-inside-avoid">
+      <article
+        onMouseEnter={() => onHoverChange(entry.id)}
+        onMouseLeave={() => onHoverChange(null)}
+        className={`rounded-[var(--radius)] border bg-white p-5 sm:p-6 print:break-inside-avoid ${
+          hovered
+            ? "border-[color:var(--honey)]"
+            : "border-[color:var(--border)]"
+        }`}
+      >
         <div className="flex flex-wrap items-center gap-2">
           <span className="serif-onum rounded-[var(--radius)] bg-[color:var(--muted-soft)] px-2.5 py-1 text-xs tabular-nums">
             {entry.dateDisplay}
@@ -584,7 +594,7 @@ function TimelineEntry({
 
         <button
           type="button"
-          onClick={() => setOpen(!open)}
+          onClick={() => setOverride(!open)}
           aria-expanded={open}
           className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)] hover:underline print:hidden"
         >

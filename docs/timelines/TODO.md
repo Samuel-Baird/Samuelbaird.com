@@ -137,5 +137,7 @@ Bracketed excerpts currently on the page, each needing the original read:
 - **Cross-timeline citation.** The Family Proclamation and eternal-increase
   timelines share entries; decide whether `citesId` can cross timeline
   boundaries or whether shared sources move to a common file.
-- **Graph refinements** — optional density/heat mode for large datasets, and a
-  colour key when a timeline has many categories in view at once.
+- **Graph refinements** — optional density/heat mode for large datasets. The
+  colour key shipped: `timeline-graph.tsx` now draws one below the axis, keyed
+  to the swimlanes rather than to all fifteen categories, so it stays legible
+  however many categories are in view.
