@@ -20,6 +20,7 @@ const ALL_LINKS: SiteNavLink[] = [
   { href: "/beta", label: "Beta", premium: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+  { href: "/donate", label: "Donate" },
 ];
 
 export async function SiteNav() {
