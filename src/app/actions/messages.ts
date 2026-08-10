@@ -2,11 +2,13 @@
 
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { after } from "next/server";
 import {
   createSupabaseServerClient,
   createSupabaseServiceClient,
 } from "@/lib/supabase/server";
 import { uuidSchema } from "@/lib/validation";
+import { sendNewMessageEmail } from "@/lib/messages";
 
 const VALID_CATEGORIES = [
   "general",
@@ -60,7 +62,11 @@ export async function submitMessage(formData: FormData) {
     redirect(buildRedirect("/contact", { error: "rate_limited", category, pageRef }));
   }
 
+  // Generated here rather than read back from the insert: RLS grants select on
+  // messages to admins only, so a returning-insert would fail for visitors.
+  const id = crypto.randomUUID();
   const { error } = await supabase.from("messages").insert({
+    id,
     category,
     name,
     email,
@@ -69,6 +75,21 @@ export async function submitMessage(formData: FormData) {
     user_id: user.id,
   });
   if (error) throw error;
+
+  // Notify after the response is sent — sendNewMessageEmail never throws, so a
+  // mail outage can't cost the visitor their submission. `after` still runs
+  // despite the redirect() below.
+  after(() =>
+    sendNewMessageEmail({
+      id,
+      category,
+      name,
+      email,
+      page_ref: pageRef,
+      body,
+      created_at: new Date().toISOString(),
+    }),
+  );
 
   revalidatePath("/admin/messages");
   redirect("/contact?sent=1");

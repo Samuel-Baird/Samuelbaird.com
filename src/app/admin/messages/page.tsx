@@ -1,6 +1,7 @@
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtDate } from "@/lib/format";
 import { markMessageResolved } from "@/app/actions/messages";
+import { categoryLabel } from "@/lib/messages";
 
 type Message = {
   id: string;
@@ -16,14 +17,6 @@ type Message = {
 };
 
 type SearchParams = { filter?: string };
-
-const CATEGORY_LABELS: Record<string, string> = {
-  general: "General",
-  correction: "Correction",
-  channel_suggestion: "Channel",
-  study_suggestion: "Study",
-  bug: "Bug",
-};
 
 async function toggleResolved(formData: FormData) {
   "use server";
@@ -98,7 +91,7 @@ export default async function AdminMessagesPage({
             >
               <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
                 <span className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]">
-                  {CATEGORY_LABELS[m.category] ?? m.category}
+                  {categoryLabel(m.category)}
                 </span>
                 <span>{fmtDate(m.created_at)}</span>
                 {m.resolved && (
