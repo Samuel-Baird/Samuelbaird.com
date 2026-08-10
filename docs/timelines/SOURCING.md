@@ -157,3 +157,61 @@ Set `needsVerification` whenever any of these is true:
 - If a quote's plainest reading in context differs from the reading that makes
   it interesting, say so in the note. Several entries do this, and it is the
   single most valuable thing the notes carry.
+
+---
+
+## 8. Adversarial verification
+
+Drafting and verifying are separate jobs, done by separate hands. Every entry
+gets a second pass by a verifier whose brief is to **break** it, not to confirm
+it — an audit that confirms everything is an audit that checked nothing.
+
+The verifier retrieves the primary source independently (not the drafter's
+notes) and runs seven checks:
+
+1. **Excerpt integrity** — every quote collated word-by-word against the
+   retrieved text. Verbatim or it fails.
+2. **Elision fairness** — read what every `...` removed. If the elided text
+   undercuts the quoted claim, the elision is the finding.
+3. **Citation accuracy** — date, venue, page, speaker, and the speaker's
+   office *at the time* (promotions applied in hindsight are a recurring
+   error).
+4. **URL health** — the link must serve the text, not a table of contents
+   that merely contains it somewhere.
+5. **Category audit** — tags must survive the conflation traps in
+   `CONSTRUCTING.md`; identical language must be tagged identically across
+   entries.
+6. **Referent audit** — is "Father" actually established by the text?
+7. **Hearsay audit** — grade per §3, including per-quote overrides.
+
+Findings are recorded with a source-derived fix or not at all — a verifier
+never guesses a correction. Problems with no fix available from a retrieved
+source stay open and logged rather than being papered over.
+
+Two further disciplines this process has already earned:
+
+- **Keep the drop log.** Candidates rejected for failing the verbatim bar are
+  recorded with reasons. The list of what was *not* included, and why, is the
+  standing answer to "but what about X" — and it marks exactly where a
+  library trip or an authenticated archive account would extend the dataset.
+- **Check for same-event duplicates** whenever entries are drafted in
+  parallel: two drafters once produced the same April 1949 conference talk
+  under two ids from two discovery routes. Speaker + date collisions get
+  checked before merge, not after.
+
+The first full audit of the eternal-increase timeline (August 2026) re-verified
+all 119 then-existing entries this way: 60 confirmed on all seven checks, 109
+corrections applied to the rest — including a composite quote in a
+manuals-sourced entry, a paraphrase inside quotation marks, and an elision that
+had manufactured the reading its own note argued for. The verdict files are the
+audit trail.
+
+### Scope note: temple liturgy
+
+The endowment and sealing liturgy is the native home of several phrases this
+timeline traces ("eternal increase" above all). It is deliberately out of
+scope: the site cites only published sources a reader can check, and the
+liturgy is neither published by the Church nor stable across the period
+covered. Where a published source itself characterizes temple teaching, the
+published source is the entry. This is a scope rule, not an evasion, and it is
+stated here so the absence reads as a decision rather than an oversight.
