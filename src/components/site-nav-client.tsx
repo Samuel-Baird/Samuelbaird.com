@@ -29,15 +29,15 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
 
   return (
     <>
-      <nav className="hidden gap-7 text-sm md:flex">
+      <nav className="small-caps hidden gap-7 text-[13px] md:flex">
         {links.map((link) => {
           const active = isActive(pathname, link.href);
           const baseClass = link.premium
             ? active
-              ? "text-amber-500 transition-colors hover:text-amber-400 hover:[text-shadow:0_0_10px_rgba(251,191,36,0.55)]"
-              : "text-[color:var(--muted)] transition-colors hover:text-amber-400 hover:[text-shadow:0_0_10px_rgba(251,191,36,0.55)]"
+              ? "text-[color:var(--honey)] underline decoration-1 underline-offset-4 transition-colors"
+              : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--honey)]"
             : active
-              ? "text-[color:var(--foreground)]"
+              ? "text-[color:var(--foreground)] underline decoration-1 underline-offset-4"
               : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--foreground)]";
           return (
             <Link key={link.href} href={link.href} className={baseClass}>
@@ -51,7 +51,7 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] md:hidden"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] md:hidden"
         onClick={() => setOpen((value) => !value)}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -63,11 +63,11 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
             {links.map((link) => {
               const active = isActive(pathname, link.href);
               const className =
-                "rounded-md px-2 py-3 text-base " +
+                "rounded-[var(--radius)] px-2 py-3 text-base " +
                 (link.premium
                   ? active
-                    ? "bg-[color:var(--muted-soft)] text-amber-500 hover:text-amber-400"
-                    : "text-[color:var(--muted)] hover:text-amber-400"
+                    ? "bg-[color:var(--muted-soft)] text-[color:var(--honey)]"
+                    : "text-[color:var(--muted)] hover:text-[color:var(--honey)]"
                   : active
                     ? "bg-[color:var(--muted-soft)] text-[color:var(--foreground)]"
                     : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]");
@@ -100,7 +100,7 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
                   <Link
                     href="/me/bookmarks"
                     onClick={() => setOpen(false)}
-                    className="block rounded-md px-2 py-3 text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+                    className="block rounded-[var(--radius)] px-2 py-3 text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
                   >
                     My bookmarks
                   </Link>
@@ -108,7 +108,7 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
                     <Link
                       href="/admin"
                       onClick={() => setOpen(false)}
-                      className="block rounded-md px-2 py-3 text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+                      className="block rounded-[var(--radius)] px-2 py-3 text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
                     >
                       Admin
                     </Link>
@@ -116,7 +116,7 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
                   <form action={signOut}>
                     <button
                       type="submit"
-                      className="block w-full rounded-md px-2 py-3 text-left text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+                      className="block w-full rounded-[var(--radius)] px-2 py-3 text-left text-base text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
                     >
                       Sign out
                     </button>
@@ -126,7 +126,7 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
                 <Link
                   href={`/login?next=${encodeURIComponent(pathname || "/")}`}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-2 py-3 text-base font-medium text-[color:var(--foreground)]"
+                  className="block rounded-[var(--radius)] px-2 py-3 text-base font-medium text-[color:var(--foreground)]"
                 >
                   Sign in
                 </Link>

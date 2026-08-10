@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { OG_SIZE, OG_CONTENT_TYPE, OgFrame } from "@/lib/og";
+import { OG_SIZE, OG_CONTENT_TYPE, OgFrame, OG_INK, OG_MUTED } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
@@ -14,7 +14,7 @@ export default function Image() {
             style={{
               fontSize: 88,
               fontWeight: 700,
-              color: "#111827",
+              color: OG_INK,
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
             }}
@@ -24,7 +24,7 @@ export default function Image() {
           <div
             style={{
               fontSize: 28,
-              color: "#6b7280",
+              color: OG_MUTED,
               fontFamily: "system-ui, sans-serif",
               maxWidth: 900,
             }}

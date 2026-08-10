@@ -1,51 +1,53 @@
 /**
- * Visual styling for channel type pills.
+ * Visual styling for channel type tags.
  *
- * Each known type maps to a Tailwind background + text color pair. Unknown
- * types fall back to a muted gray so new types added later still render
+ * The Archive direction uses one small ink family (ink, accent blue,
+ * oxblood, honey) rather than a distinct pastel per type — 19 different
+ * hues is what reads as "vibe-coded." Types are grouped by what they mean,
+ * not given individual colors, so the palette stays legible and the
+ * grouping itself carries meaning:
+ *   - accent (blue): faith-affiliated / institutional
+ *   - honey: culture, lifestyle, media
+ *   - oxblood: critical / outside perspectives
+ *   - ink: everything else (education, ancestry, neutral)
+ * Unknown types fall back to muted so new types added later still render
  * cleanly without code changes.
- *
- * Tailwind v4 needs the full color class names to appear in source (no
- * dynamic string concatenation), so we keep them as literal strings here.
  */
 
-export type TypeColor = { bg: string; text: string };
+import type { TagInk } from "@/components/tag";
 
-const NEUTRAL: TypeColor = {
-  bg: "bg-[color:var(--muted-soft)]",
-  text: "text-[color:var(--muted)]",
-};
+const NEUTRAL: TagInk = "muted";
 
-export const TYPE_COLORS: Record<string, TypeColor> = {
-  // Faith-promoting / scholarship
-  Apologetics: { bg: "bg-emerald-100", text: "text-emerald-800" },
-  Religious: { bg: "bg-blue-100", text: "text-blue-800" },
-  Church: { bg: "bg-indigo-100", text: "text-indigo-800" },
-  Education: { bg: "bg-teal-100", text: "text-teal-800" },
-  "Church History": { bg: "bg-stone-200", text: "text-stone-700" },
-  BYU: { bg: "bg-sky-100", text: "text-sky-800" },
-  "Gen. Conf. Video Reposts": { bg: "bg-violet-100", text: "text-violet-800" },
-  "General Religious": { bg: "bg-blue-100", text: "text-blue-800" },
-  Ancestry: { bg: "bg-amber-100", text: "text-amber-800" },
+export const TYPE_INK: Record<string, TagInk> = {
+  // Faith-affiliated / institutional
+  Religious: "accent",
+  Church: "accent",
+  BYU: "accent",
+  "Gen. Conf. Video Reposts": "accent",
+  "General Religious": "accent",
+  Apologetics: "accent",
 
   // Critical / outside
-  Critical: { bg: "bg-rose-100", text: "text-rose-800" },
-  Investigator: { bg: "bg-orange-100", text: "text-orange-800" },
-  Politics: { bg: "bg-orange-100", text: "text-orange-800" },
-  "Not LDS": { bg: "bg-stone-200", text: "text-stone-700" },
+  Critical: "oxblood",
+  Investigator: "oxblood",
+  Politics: "oxblood",
+  "Not LDS": "oxblood",
 
-  // Lifestyle / culture
-  Music: { bg: "bg-pink-100", text: "text-pink-800" },
-  Children: { bg: "bg-lime-100", text: "text-lime-800" },
-  Youth: { bg: "bg-lime-100", text: "text-lime-800" },
+  // Lifestyle / culture / media
+  Music: "honey",
+  Children: "honey",
+  Youth: "honey",
+  News: "honey",
+  TV: "honey",
 
-  // Media
-  News: { bg: "bg-slate-200", text: "text-slate-700" },
-  TV: { bg: "bg-slate-200", text: "text-slate-700" },
-  Business: { bg: "bg-zinc-200", text: "text-zinc-700" },
+  // Neutral / reference
+  Education: "ink",
+  "Church History": "ink",
+  Ancestry: "ink",
+  Business: "ink",
 };
 
-export function colorsForType(type: string | null | undefined): TypeColor {
+export function inkForType(type: string | null | undefined): TagInk {
   if (!type) return NEUTRAL;
-  return TYPE_COLORS[type] ?? NEUTRAL;
+  return TYPE_INK[type] ?? NEUTRAL;
 }

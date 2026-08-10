@@ -35,7 +35,7 @@ function LoginContent() {
 
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-6xl items-center justify-center px-5 py-16 sm:px-8">
-      <section className="w-full max-w-md rounded-lg border border-[color:var(--border)] bg-[color:var(--background)] p-8 shadow-sm">
+      <section className="w-full max-w-md rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--background)] p-8">
         <div className="text-center">
           <h1 className="serif text-3xl font-semibold tracking-tight text-[color:var(--foreground)]">
             Latter-day Stats
@@ -46,7 +46,7 @@ function LoginContent() {
         </div>
 
         {error ? (
-          <p className="mt-6 rounded-md border border-[color:var(--border)] bg-[color:var(--muted-soft)] px-4 py-3 text-sm text-[color:var(--foreground)]">
+          <p className="mt-6 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)] px-4 py-3 text-sm text-[color:var(--foreground)]">
             Sign-in failed. Please try again.
           </p>
         ) : null}
@@ -55,7 +55,7 @@ function LoginContent() {
           type="button"
           disabled={pending}
           onClick={continueWithGoogle}
-          className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[color:var(--foreground)] disabled:cursor-not-allowed disabled:opacity-70"
+          className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[color:var(--foreground)] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
           Continue with Google
@@ -68,7 +68,7 @@ function LoginContent() {
 function LoginCardSkeleton() {
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-6xl items-center justify-center px-5 py-16 sm:px-8">
-      <div className="h-56 w-full max-w-md animate-pulse rounded-lg border border-[color:var(--border)] bg-[color:var(--muted-soft)]" />
+      <div className="h-56 w-full max-w-md animate-pulse rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)]" />
     </div>
   );
 }

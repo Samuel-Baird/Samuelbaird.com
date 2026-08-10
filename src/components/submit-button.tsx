@@ -20,7 +20,7 @@ export function SubmitButton({
       disabled={pending}
       className={
         className ??
-        "inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+        "inline-flex h-10 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
       }
     >
       {pending ? (

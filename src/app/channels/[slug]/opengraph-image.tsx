@@ -1,9 +1,10 @@
 import { ImageResponse } from "next/og";
 import { getChannelBySlug } from "@/lib/data";
 import { fmtCompact } from "@/lib/format";
+import { OG_SIZE, OG_CONTENT_TYPE, OgFrame, OG_INK, OG_MUTED } from "@/lib/og";
 
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const size = OG_SIZE;
+export const contentType = OG_CONTENT_TYPE;
 export const alt = "Latter-day Stats — Channel";
 
 export default async function Image({
@@ -25,59 +26,36 @@ export default async function Image({
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          background: "#ffffff",
-          padding: "64px 72px",
-          fontFamily: "Georgia, serif",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          {channel?.thumbnail_url && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={channel.thumbnail_url}
-              width={80}
-              height={80}
-              style={{ borderRadius: 40, objectFit: "cover" }}
-              alt=""
-            />
-          )}
-          <span
-            style={{
-              fontSize: 18,
-              color: "#6b7280",
-              fontFamily: "system-ui, sans-serif",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-            }}
-          >
-            Latter-day Stats · Channel
-          </span>
-        </div>
-
+      <OgFrame eyebrow="Latter-day Stats · Channel">
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div
-            style={{
-              fontSize: 72,
-              fontWeight: 700,
-              color: "#111827",
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {name}
+          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+            {channel?.thumbnail_url && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={channel.thumbnail_url}
+                width={80}
+                height={80}
+                style={{ borderRadius: 4, objectFit: "cover" }}
+                alt=""
+              />
+            )}
+            <div
+              style={{
+                fontSize: 72,
+                fontWeight: 700,
+                color: OG_INK,
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {name}
+            </div>
           </div>
           {stat && (
             <div
               style={{
                 fontSize: 28,
-                color: "#6b7280",
+                color: OG_MUTED,
                 fontFamily: "system-ui, sans-serif",
               }}
             >
@@ -85,17 +63,7 @@ export default async function Image({
             </div>
           )}
         </div>
-
-        <div
-          style={{
-            fontSize: 18,
-            color: "#9ca3af",
-            fontFamily: "system-ui, sans-serif",
-          }}
-        >
-          latter-day-stats.vercel.app
-        </div>
-      </div>
+      </OgFrame>
     ),
     { ...size },
   );

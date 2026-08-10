@@ -282,12 +282,12 @@ export function ChannelsExplorer({
           type="button"
           aria-label="Open filters"
           onClick={() => setDrawerOpen(true)}
-          className="inline-flex min-h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 text-sm font-medium shadow-sm"
+          className="inline-flex min-h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium"
         >
           <SlidersHorizontal aria-hidden="true" size={16} />
           Filters
           {activeFilterCount > 0 && (
-            <span className="rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs text-[color:var(--accent)]">
+            <span className="rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs text-[color:var(--accent)]">
               {activeFilterCount}
             </span>
           )}
@@ -313,7 +313,7 @@ export function ChannelsExplorer({
 
         <div className="min-w-0">
           {activeFilterCount > 0 && (
-            <div className="mb-5 rounded-2xl border border-[color:var(--border)] bg-white p-3">
+            <div className="mb-5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-3">
               <div className="flex flex-wrap items-center gap-2">
                 {activeFilters.map((filter) => (
                   <button
@@ -321,7 +321,7 @@ export function ChannelsExplorer({
                     type="button"
                     onClick={() => handleToggle(filter.key, filter.value)}
                     aria-label={`Remove filter ${filter.label}: ${filter.value}`}
-                    className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[color:var(--muted-soft)] px-3 text-xs text-[color:var(--foreground)] hover:bg-[color:var(--accent-soft)]"
+                    className="inline-flex min-h-10 items-center gap-1.5 rounded-[var(--radius)] bg-[color:var(--muted-soft)] px-3 text-xs text-[color:var(--foreground)] hover:bg-[color:var(--accent-soft)]"
                   >
                     <span>
                       {filter.label}: {filter.value}
@@ -388,7 +388,7 @@ export function ChannelsExplorer({
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="min-h-11 w-full rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white"
+                className="min-h-11 w-full rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white"
               >
                 Show {filteredChannels.length} channels
               </button>

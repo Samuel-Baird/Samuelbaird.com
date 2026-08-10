@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getSiteStats } from "@/lib/data";
 import { fmtCompact, fmtNumber } from "@/lib/format";
-import { OG_SIZE, OG_CONTENT_TYPE, OgFrame } from "@/lib/og";
+import { OG_SIZE, OG_CONTENT_TYPE, OgFrame, OG_INK, OG_ACCENT } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
@@ -18,7 +18,7 @@ export default async function Image() {
             style={{
               fontSize: 64,
               fontWeight: 700,
-              color: "#111827",
+              color: OG_INK,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
               maxWidth: 1000,
@@ -33,7 +33,7 @@ export default async function Image() {
                 display: "flex",
                 gap: 32,
                 fontSize: 26,
-                color: "#1f4f7a",
+                color: OG_ACCENT,
                 fontFamily: "system-ui, sans-serif",
                 fontWeight: 600,
               }}

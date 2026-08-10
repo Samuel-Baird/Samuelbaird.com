@@ -47,7 +47,7 @@ export function ChannelsFilterSidebar({
     <div
       className={
         variant === "desktop"
-          ? "rounded-2xl border border-[color:var(--border)] bg-white p-5"
+          ? "rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5"
           : "bg-[color:var(--background)] p-5"
       }
     >
@@ -57,7 +57,7 @@ export function ChannelsFilterSidebar({
           <button
             type="button"
             onClick={onClearAll}
-            className="min-h-10 rounded-full px-2 text-sm text-[color:var(--accent)] hover:underline"
+            className="min-h-10 rounded-[var(--radius)] px-2 text-sm text-[color:var(--accent)] hover:underline"
           >
             Clear all
           </button>
@@ -85,7 +85,7 @@ export function ChannelsFilterSidebar({
                 <span className="flex items-center gap-2">
                   <span>{group.label}</span>
                   {selected.size > 0 && (
-                    <span className="rounded-full bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs text-[color:var(--accent)]">
+                    <span className="rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-2 py-0.5 text-xs text-[color:var(--accent)]">
                       {selected.size}
                     </span>
                   )}
@@ -104,14 +104,14 @@ export function ChannelsFilterSidebar({
                   <button
                     type="button"
                     onClick={() => onSelectAll(group.key)}
-                    className="min-h-10 rounded-full pr-2 text-[color:var(--accent)] hover:underline"
+                    className="min-h-10 rounded-[var(--radius)] pr-2 text-[color:var(--accent)] hover:underline"
                   >
                     Select all
                   </button>
                   <button
                     type="button"
                     onClick={() => onSelectNone(group.key)}
-                    className="min-h-10 rounded-full px-2 text-[color:var(--muted)] hover:text-[color:var(--foreground)] hover:underline"
+                    className="min-h-10 rounded-[var(--radius)] px-2 text-[color:var(--muted)] hover:text-[color:var(--foreground)] hover:underline"
                   >
                     Select none
                   </button>
@@ -121,7 +121,7 @@ export function ChannelsFilterSidebar({
                   {group.options.map((option) => (
                     <label
                       key={option.value}
-                      className="flex min-h-10 cursor-pointer items-center gap-3 rounded-lg py-2.5 text-sm hover:bg-[color:var(--muted-soft)]/60"
+                      className="flex min-h-10 cursor-pointer items-center gap-3 rounded-[var(--radius)] py-2.5 text-sm hover:bg-[color:var(--muted-soft)]/60"
                     >
                       <input
                         type="checkbox"

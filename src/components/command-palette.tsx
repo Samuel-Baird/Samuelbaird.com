@@ -71,7 +71,7 @@ export function CommandPalette({ items }: Props) {
         type="button"
         aria-label="Open search (⌘K)"
         onClick={() => setOpen(true)}
-        className="hidden h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-3 text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)] md:inline-flex"
+        className="hidden h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)] md:inline-flex"
       >
         <Search size={16} aria-hidden="true" />
         <span>Search…</span>
@@ -91,7 +91,7 @@ export function CommandPalette({ items }: Props) {
           />
           <Command
             label="Site search"
-            className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-[color:var(--border)] bg-white shadow-2xl"
+            className="relative w-full max-w-xl overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-white shadow-lg"
           >
             <div className="flex items-center gap-3 border-b border-[color:var(--border)] px-4">
               <Search
@@ -126,7 +126,7 @@ export function CommandPalette({ items }: Props) {
                         key={`${item.kind}:${item.slug}`}
                         value={`${item.name} ${item.sub ?? ""} ${item.kind}`}
                         onSelect={() => go(item)}
-                        className="flex cursor-pointer items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm text-[color:var(--foreground)] aria-selected:bg-[color:var(--muted-soft)]"
+                        className="flex cursor-pointer items-center justify-between gap-3 rounded-[var(--radius)] px-3 py-2 text-sm text-[color:var(--foreground)] aria-selected:bg-[color:var(--muted-soft)]"
                       >
                         <span className="truncate font-medium">
                           {item.name}

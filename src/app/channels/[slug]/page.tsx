@@ -6,7 +6,8 @@ import { BookmarkButton } from "@/components/bookmark-button";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { GrowthChart } from "@/components/growth-chart";
 import { getCurrentUser } from "@/lib/auth";
-import { colorsForType } from "@/lib/channel-types";
+import { Tag } from "@/components/tag";
+import { inkForType } from "@/lib/channel-types";
 import {
   getBookmarkSetForUser,
   getChannelBySlug,
@@ -117,17 +118,11 @@ export default async function ChannelDetailPage({
           : channel.channel_type
             ? [channel.channel_type]
             : []
-        ).map((tag) => {
-          const { bg, text } = colorsForType(tag);
-          return (
-            <span
-              key={tag}
-              className={`rounded-full ${bg} ${text} px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider`}
-            >
-              {tag}
-            </span>
-          );
-        })}
+        ).map((tag) => (
+          <Tag key={tag} ink={inkForType(tag)}>
+            {tag}
+          </Tag>
+        ))}
         <FreshnessBadge iso={yt?.captured_at} />
       </div>
 
@@ -183,7 +178,7 @@ export default async function ChannelDetailPage({
           href={ytLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-11 items-center rounded-full bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
+          className="inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:opacity-90"
         >
           Open on YouTube ↗
         </a>
@@ -197,7 +192,7 @@ export default async function ChannelDetailPage({
         {auth?.profile?.is_admin && (
           <Link
             href={`/admin/channels/${channel.slug}/edit`}
-            className="inline-flex h-11 items-center rounded-full border border-[color:var(--border)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
+            className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]"
           >
             Edit (admin)
           </Link>
@@ -217,7 +212,7 @@ export default async function ChannelDetailPage({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Open on ${profile.label}`}
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-[color:var(--border)] bg-white px-3 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
               >
                 <span>{profile.label}</span>
                 <span aria-hidden="true" className="text-xs text-[color:var(--muted)]">↗</span>
@@ -231,7 +226,7 @@ export default async function ChannelDetailPage({
         {stats.map((s) => (
           <div
             key={s.label}
-            className="rounded-2xl border border-[color:var(--border)] bg-white p-5"
+            className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5"
           >
             <dt className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
               {s.label}

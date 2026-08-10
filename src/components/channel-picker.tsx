@@ -62,7 +62,7 @@ export function ChannelPicker({
   const atMax = selectedSlugs.length >= max;
 
   return (
-    <div className="rounded-2xl border border-[color:var(--border)] bg-white p-4 sm:p-5">
+    <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 sm:p-5">
       <div className="flex flex-wrap items-center gap-2">
         {selected.map((c) => (
           <button
@@ -70,7 +70,7 @@ export function ChannelPicker({
             type="button"
             onClick={() => remove(c.slug)}
             aria-label={`Remove ${c.name}`}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-[color:var(--accent-soft)] px-3 text-xs text-[color:var(--accent)] hover:opacity-80"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-3 text-xs text-[color:var(--accent)] hover:opacity-80"
           >
             <span className="font-medium">{c.name}</span>
             <X aria-hidden="true" size={14} />
@@ -91,10 +91,10 @@ export function ChannelPicker({
             placeholder="Add a channel by name..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="h-11 w-full rounded-full border border-[color:var(--border)] bg-white px-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
+            className="h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
           />
           {matches.length > 0 && (
-            <ul className="absolute left-0 right-0 z-20 mt-2 max-h-72 overflow-y-auto rounded-2xl border border-[color:var(--border)] bg-white shadow-lg">
+            <ul className="absolute left-0 right-0 z-20 mt-2 max-h-72 overflow-y-auto rounded-[var(--radius)] border border-[color:var(--border)] bg-white shadow-lg">
               {matches.map((c) => (
                 <li key={c.slug}>
                   <button

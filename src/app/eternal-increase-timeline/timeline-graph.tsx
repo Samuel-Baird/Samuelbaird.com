@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { TagInk } from "@/components/tag";
 import { CATEGORY_META, categoriesOf } from "./constants";
-import type { CategoryId, SourceEntry } from "./schema";
+import type { SourceEntry } from "./schema";
 
 /**
  * Dot-plot overview of the filtered sources: one dot per source, placed on a
@@ -14,24 +15,17 @@ import type { CategoryId, SourceEntry } from "./schema";
  * and knows nothing about this dataset's specific tags.
  */
 
-// Dot fills, keyed to the same hue families as the category pills. Literal
-// class strings only — Tailwind v4 cannot see constructed names.
-const DOT_FILL: Record<CategoryId, string> = {
-  "FATHER-MORTAL-EXPERIENCE": "bg-sky-500",
-  "FATHER-BECAME-GOD": "bg-blue-600",
-  "FATHER-ALWAYS-GOD": "bg-stone-500",
-  "BACKWARD-EXPLICIT": "bg-blue-800",
-  "BACKWARD-AGNOSTIC": "bg-indigo-500",
-  "FORWARD-EXPLICIT": "bg-emerald-600",
-  "FORWARD-EUPHEMISM": "bg-teal-500",
-  "SPIRIT-BIRTH-VIVIPAROUS": "bg-purple-600",
-  "SPIRIT-BIRTH-ADOPTION": "bg-fuchsia-600",
-  "TRIPARTITE-FRAMEWORK": "bg-violet-500",
-  "MANY-WORLDS": "bg-cyan-500",
-  "HEAVENLY-MOTHER": "bg-amber-500",
-  "INFINITE-CHAIN": "bg-slate-500",
-  "DIVINE-PROGRESSION": "bg-rose-500",
-  "RETREAT-REFRAME": "bg-orange-500",
+// Dot fills route through the same 4-ink-family tokens as CATEGORY_META
+// (src/app/eternal-increase-timeline/constants.ts) rather than a rainbow of
+// Tailwind hues, so a dot's colour always matches its category's tag colour
+// elsewhere on the page. Literal class strings only — Tailwind v4 cannot see
+// constructed names.
+const DOT_FILL: Record<TagInk, string> = {
+  ink: "bg-[color:var(--foreground)]",
+  accent: "bg-[color:var(--accent)]",
+  oxblood: "bg-[color:var(--oxblood)]",
+  honey: "bg-[color:var(--honey)]",
+  muted: "bg-[color:var(--muted)]",
 };
 
 const UNTAGGED_FILL = "bg-[color:var(--muted)]";
@@ -94,7 +88,7 @@ export function TimelineGraph({
           entry,
           pct,
           row: i,
-          fill: cats.length > 0 ? DOT_FILL[cats[0]] : UNTAGGED_FILL,
+          fill: cats.length > 0 ? DOT_FILL[CATEGORY_META[cats[0]].ink] : UNTAGGED_FILL,
           cats,
         };
       }),
@@ -105,7 +99,7 @@ export function TimelineGraph({
 
   if (!model) {
     return (
-      <div className="rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-6 text-center text-xs text-[color:var(--muted)]">
+      <div className="rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-6 text-center text-xs text-[color:var(--muted)]">
         No sources to plot.
       </div>
     );
@@ -115,7 +109,7 @@ export function TimelineGraph({
   const plotHeight = Math.max(64, (model.maxRow + 1) * 18 + 16);
 
   return (
-    <figure className="rounded-2xl border border-[color:var(--border)] bg-white p-4 sm:p-5">
+    <figure className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 sm:p-5">
       <figcaption className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
           Distribution over time
@@ -156,8 +150,8 @@ export function TimelineGraph({
                 d.cats.length ? ` (${d.cats.map((c) => CATEGORY_META[c].label).join(", ")})` : ""
               }`}
               aria-label={`${d.entry.dateDisplay}, ${d.entry.title}`}
-              className={`absolute h-2.5 w-2.5 -translate-x-1/2 rounded-full ring-2 ring-white transition-transform hover:scale-150 focus:scale-150 focus:outline-none focus-visible:ring-[color:var(--accent)] dark:ring-[#161a20] ${d.fill} ${
-                active ? "scale-150" : ""
+              className={`absolute h-2.5 w-2.5 -translate-x-1/2 rounded-full ring-2 ring-white transition-transform hover:scale-150 focus:scale-150 focus:outline-none focus-visible:ring-[color:var(--honey)] dark:ring-[#161a20] ${d.fill} ${
+                active ? "scale-150 ring-[color:var(--honey)]" : ""
               } ${d.entry.sourceType === "citation" ? "opacity-55" : ""}`}
               style={{ left: `${d.pct}%`, top: d.row * 18 + 4 }}
             />

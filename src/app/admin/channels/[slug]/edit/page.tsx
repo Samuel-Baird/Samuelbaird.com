@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { deleteChannel, updateChannelDetails } from "@/app/admin/actions";
 import { EditForm } from "@/components/edit-form";
-import { TYPE_COLORS, colorsForType } from "@/lib/channel-types";
+import { Tag } from "@/components/tag";
+import { TYPE_INK, inkForType } from "@/lib/channel-types";
 import { COUNTRIES, LANGUAGES } from "@/lib/iso";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Channel } from "@/lib/types";
@@ -24,7 +25,7 @@ export default async function AdminEditChannelPage({
   if (error) throw error;
   if (!data) notFound();
   const channel = data as Channel;
-  const types = Object.keys(TYPE_COLORS).sort();
+  const types = Object.keys(TYPE_INK).sort();
   const selectedTypes = new Set(
     channel.channel_types?.length
       ? channel.channel_types
@@ -55,7 +56,7 @@ export default async function AdminEditChannelPage({
 
       <EditForm
         action={action}
-        className="mt-8 grid gap-5 rounded-2xl border border-[color:var(--border)] bg-white p-6"
+        className="mt-8 grid gap-5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6"
       >
         <Field
           label="Tags"
@@ -63,7 +64,6 @@ export default async function AdminEditChannelPage({
         >
           <div className="mt-1 grid max-h-72 grid-cols-2 gap-1.5 overflow-y-auto rounded-md border border-[color:var(--border)] bg-white p-2 sm:grid-cols-3">
             {types.map((t) => {
-              const { bg, text } = colorsForType(t);
               const checked = selectedTypes.has(t);
               return (
                 <label
@@ -79,11 +79,7 @@ export default async function AdminEditChannelPage({
                     defaultChecked={checked}
                     className="h-3.5 w-3.5"
                   />
-                  <span
-                    className={`inline-flex rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider`}
-                  >
-                    {t}
-                  </span>
+                  <Tag ink={inkForType(t)}>{t}</Tag>
                 </label>
               );
             })}
@@ -151,7 +147,7 @@ export default async function AdminEditChannelPage({
           </Field>
         </div>
 
-        <fieldset className="grid gap-5 rounded-2xl border border-[color:var(--border)] p-4">
+        <fieldset className="grid gap-5 rounded-[var(--radius)] border border-[color:var(--border)] p-4">
           <legend className="px-1 text-xs uppercase tracking-wider text-[color:var(--muted)]">
             Other social profiles
           </legend>

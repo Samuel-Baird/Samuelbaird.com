@@ -3,29 +3,56 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fbfaf7;
+  /* Aged paper. The page is warm creme; cards sit on it as cleaner sheets. */
+  --background: #f4eeda;
+  --surface: #fcf9ef;
   --foreground: #1a1a1a;
-  --muted: #6b6b6b;
-  --muted-soft: #f0eee9;
-  --border: #e6e3dd;
+  --muted: #63605a;
+  --muted-soft: #ece4cf;
+  --border: #ded5bf;
   --accent: #1f4f7a;
   --accent-soft: #e8eff6;
+  /* Deseret seasoning: honey is the identity accent (logomark, active
+     states, chart highlight, dinkus); oxblood is a second ink family for
+     tags. Both are tuned to sit on --background at AA text contrast. */
+  --honey: #8a5a06;
+  --honey-soft: #f6ecd6;
+  --oxblood: #7c2d2d;
+  --oxblood-soft: #f4e6e3;
+  /* The one radius. Archive surfaces are flat panels, not pills. */
+  --radius: 3px;
+  /* Fine fibrous grain, umber, capped at 8% alpha. The anisotropic
+     baseFrequency stretches the noise horizontally so it reads as laid
+     paper rather than TV static. stitchTiles keeps the tile seamless. */
+  --page-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.30 0 0 0 0 0.24 0 0 0 0 0.12 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23p)'/%3E%3C/svg%3E");
 }
 
 html.dark {
+  /* Dark stone: a broad low-frequency mottle plus sparse pale specks. */
   --background: #0f1115;
+  --surface: #161a20;
   --foreground: #e9e7e2;
   --muted: #9a9a9a;
   --muted-soft: #1d2027;
   --border: #2a2e36;
   --accent: #7fb0d8;
   --accent-soft: #1a2733;
+  --honey: #d9a441;
+  --honey-soft: #2b230f;
+  --oxblood: #d98787;
+  --oxblood-soft: #2a1a1a;
+  /* Layer 1 is the stone grain. Layer 2 thresholds the noise via the alpha
+     row (alpha = 7A - 5.45) so only the brightest peaks survive as flecks,
+     landing about 0.5% of pixels; make the constant more negative for
+     sparser specks (-6.1 is effectively none, -4.8 is heavy granite). */
+  --page-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.18' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.86 0 0 0 0 0.88 0 0 0 0.05 0'/%3E%3C/filter%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.92 0 0 0 0 0.92 0 0 0 0 0.90 0 0 0 7 -5.45'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23m)'/%3E%3Crect width='320' height='320' filter='url(%23s)'/%3E%3C/svg%3E");
   color-scheme: dark;
 }
 
-/* Card surfaces use bg-white in light mode; remap in dark to a dark surface. */
-html.dark .bg-white {
-  background-color: #161a20;
+/* Card surfaces are authored as bg-white in markup; both themes resolve it
+   through --surface. Unlayered, so it wins over the Tailwind utility. */
+.bg-white {
+  background-color: var(--surface);
 }
 
 /* Soft accent backgrounds with opacity modifiers like bg-[color:var(--accent-soft)]/30
@@ -39,12 +66,18 @@ html.dark .bg-white {
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-honey: var(--honey);
+  --color-honey-soft: var(--honey-soft);
+  --color-oxblood: var(--oxblood);
+  --color-oxblood-soft: var(--oxblood-soft);
+  --color-surface: var(--surface);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--page-texture);
   color: var(--foreground);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-feature-settings: "ss01", "cv11";
@@ -57,6 +90,76 @@ body {
   font-feature-settings: "ss01";
 }
 
+/* Old-style figures for dates set in running serif text (annals, bylines). */
+.serif-onum {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-feature-settings: "ss01", "onum";
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Small-caps label style used for tags, table headers, and secondary
+   button text — the Archive direction's substitute for pill/badge fills. */
+.small-caps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+}
+
+/* Section-break flourish. Usage: <div class="dinkus">::before content set
+   via the beehive mark component, or plain text fallback below.</div> */
+.dinkus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--honey);
+  margin-block: 2rem;
+}
+.dinkus::before,
+.dinkus::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+/* Drop cap for study abstracts / long-form intros. Apply to a paragraph
+   directly following an element with class "drop-cap-lead". */
+.drop-cap-lead::first-letter {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 0.08em;
+  padding-top: 0.03em;
+  color: var(--honey);
+}
+
+/* Deseret title reveal. Both the hidden states live inside the keyframes and
+   never inline, so when this block is absent (reduced motion) the Latin text
+   simply stays visible and the Deseret overlay never renders. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes deseret-out {
+    from {
+      opacity: 1;
+      filter: blur(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(2px);
+    }
+  }
+  @keyframes deseret-in {
+    from {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+}
+
 /* Site chrome is rendered by the root layout, so page-level utilities can't
    reach it. Drop it from printouts and print on white. */
 @media print {
@@ -66,5 +169,6 @@ body {
   }
   body {
     background: #fff;
+    background-image: none;
   }
 }

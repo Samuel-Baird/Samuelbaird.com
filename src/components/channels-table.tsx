@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BookmarkButton } from "@/components/bookmark-button";
-import { colorsForType } from "@/lib/channel-types";
+import { Tag } from "@/components/tag";
+import { inkForType } from "@/lib/channel-types";
 import type { ChannelWithStats } from "@/lib/types";
 import {
   fmtCompact,
@@ -51,14 +52,7 @@ const defaultDirection: Record<SortKey, SortDirection> = {
 };
 
 function TypePill({ type }: { type: string }) {
-  const { bg, text } = colorsForType(type);
-  return (
-    <span
-      className={`inline-flex rounded-full ${bg} ${text} px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider`}
-    >
-      {type}
-    </span>
-  );
+  return <Tag ink={inkForType(type)}>{type}</Tag>;
 }
 
 function channelTags(c: ChannelWithStats): string[] {
@@ -79,12 +73,12 @@ function TypePills({ types }: { types: string[] }) {
 
 function InactivePill() {
   return (
-    <span
+    <Tag
+      ink="muted"
       title="This channel has been flagged as inactive for not posting for a long period of time."
-      className="inline-flex cursor-help rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)] ring-1 ring-[color:var(--border)]"
     >
       Inactive
-    </span>
+    </Tag>
   );
 }
 
@@ -115,7 +109,7 @@ function SortHeader({
       <button
         type="button"
         onClick={() => onSort(sortKey)}
-        className={`inline-flex items-center gap-1 rounded-full px-2 py-1 transition-colors hover:bg-white/70 hover:text-[color:var(--foreground)] ${
+        className={`inline-flex items-center gap-1 rounded-[var(--radius)] px-2 py-1 transition-colors hover:bg-white/70 hover:text-[color:var(--foreground)] ${
           align === "right" ? "justify-end" : ""
         }`}
       >
@@ -194,7 +188,7 @@ export function ChannelsTable({
           placeholder="Search channels..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="h-11 w-full rounded-full border border-[color:var(--border)] bg-white px-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none sm:max-w-xs"
+          className="h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none sm:max-w-xs"
         />
         <label className="flex items-center gap-2 text-sm text-[color:var(--muted)]">
           <span className="hidden sm:inline">Sort by</span>
@@ -205,7 +199,7 @@ export function ChannelsTable({
               setSort(nextSort);
               setDirection(defaultDirection[nextSort]);
             }}
-            className="h-11 rounded-full border border-[color:var(--border)] bg-white px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
+            className="h-11 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none"
           >
             {Object.entries(sortLabels).map(([k, label]) => {
               const key = k as SortKey;
@@ -224,7 +218,7 @@ export function ChannelsTable({
       </p>
 
       {/* Desktop table */}
-      <div className="mt-6 hidden rounded-2xl border border-[color:var(--border)] bg-white md:block">
+      <div className="mt-6 hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-white md:block">
         <table className="w-full border-separate border-spacing-0 text-sm">
           <thead className="sticky top-16 z-10 bg-[color:var(--muted-soft)] text-left text-xs uppercase tracking-wider text-[color:var(--muted)] shadow-[0_1px_0_0_var(--border)]">
             <tr>
@@ -353,7 +347,7 @@ export function ChannelsTable({
         {filtered.map((c) => (
           <li
             key={c.id}
-            className="relative rounded-2xl border border-[color:var(--border)] bg-white p-4 pr-14"
+            className="relative rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 pr-14"
           >
             <div className="absolute right-3 top-3 z-10">
               <BookmarkButton

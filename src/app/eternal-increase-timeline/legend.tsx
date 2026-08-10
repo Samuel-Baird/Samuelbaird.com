@@ -1,6 +1,8 @@
+import { Tag } from "@/components/tag";
 import {
   CATEGORY_META,
   HEARSAY_META,
+  INK_VARS,
   REFERENT_META,
   SOURCE_TYPE_META,
   STATUS_META,
@@ -29,11 +31,7 @@ export function ScalesLegend() {
           {REFERENTS.map((r) => (
             <div key={r} className="flex gap-2">
               <dt>
-                <span
-                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${REFERENT_META[r].chip}`}
-                >
-                  {REFERENT_META[r].short}
-                </span>
+                <Tag ink={REFERENT_META[r].ink}>{REFERENT_META[r].short}</Tag>
               </dt>
               <dd className="flex-1 text-xs leading-relaxed text-[color:var(--muted)]">
                 {REFERENT_META[r].definition}
@@ -48,11 +46,7 @@ export function ScalesLegend() {
           {SOURCE_TYPES.map((t) => (
             <div key={t} className="flex gap-2">
               <dt>
-                <span
-                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${SOURCE_TYPE_META[t].chip}`}
-                >
-                  {SOURCE_TYPE_META[t].label}
-                </span>
+                <Tag ink={SOURCE_TYPE_META[t].ink}>{SOURCE_TYPE_META[t].label}</Tag>
               </dt>
               <dd className="flex-1 text-xs leading-relaxed text-[color:var(--muted)]">
                 {SOURCE_TYPE_META[t].definition}
@@ -70,7 +64,7 @@ export function ScalesLegend() {
           {HEARSAY_GRADES.map((g) => (
             <div key={g} className="flex gap-2">
               <dt
-                className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold ring-1 ${HEARSAY_META[g].badge}`}
+                className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius)] text-xs font-semibold ring-1 ${INK_VARS[HEARSAY_META[g].ink].bg} ${INK_VARS[HEARSAY_META[g].ink].text} ${INK_VARS[HEARSAY_META[g].ink].ring}`}
               >
                 {g}
               </dt>
@@ -96,7 +90,7 @@ export function ScalesLegend() {
                 aria-hidden="true"
                 className={`inline-block h-1.5 w-1.5 rounded-full ${STATUS_META[s].dot}`}
               />
-              {STATUS_META[s].label}
+              <span className="small-caps">{STATUS_META[s].label}</span>
             </li>
           ))}
         </ul>
@@ -107,11 +101,7 @@ export function ScalesLegend() {
           {CATEGORY_IDS.map((id) => (
             <div key={id}>
               <dt>
-                <span
-                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${CATEGORY_META[id].pill}`}
-                >
-                  {CATEGORY_META[id].label}
-                </span>
+                <Tag ink={CATEGORY_META[id].ink}>{CATEGORY_META[id].label}</Tag>
               </dt>
               <dd className="mt-0.5 text-xs leading-relaxed text-[color:var(--muted)]">
                 {CATEGORY_META[id].definition}

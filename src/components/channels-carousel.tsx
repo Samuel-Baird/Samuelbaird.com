@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { colorsForType } from "@/lib/channel-types";
+import { Tag } from "@/components/tag";
+import { inkForType } from "@/lib/channel-types";
 import { fmtCompact } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
 
@@ -59,7 +60,7 @@ export function ChannelsCarousel({ channels }: { channels: ChannelWithStats[] })
             <li key={`${c.id}-${start + i}`}>
               <Link
                 href={`/channels/${c.slug}`}
-                className="group flex h-full items-center gap-4 rounded-2xl border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
+                className="group flex h-full items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
               >
                 {c.thumbnail_url ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -76,17 +77,11 @@ export function ChannelsCarousel({ channels }: { channels: ChannelWithStats[] })
                     {c.name}
                   </h3>
                   <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
-                    {tags.map((tag) => {
-                      const { bg, text } = colorsForType(tag);
-                      return (
-                        <span
-                          key={tag}
-                          className={`rounded-full ${bg} ${text} px-2 py-0.5 text-[10px] uppercase tracking-wider`}
-                        >
-                          {tag}
-                        </span>
-                      );
-                    })}
+                    {tags.map((tag) => (
+                      <Tag key={tag} ink={inkForType(tag)}>
+                        {tag}
+                      </Tag>
+                    ))}
                     <span className="tabular-nums">
                       {fmtCompact(c.latest?.subscribers)} subs
                     </span>

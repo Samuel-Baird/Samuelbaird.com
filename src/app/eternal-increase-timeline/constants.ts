@@ -1,3 +1,4 @@
+import type { TagInk } from "@/components/tag";
 import type {
   CategoryId,
   CorrelationStatus,
@@ -8,203 +9,267 @@ import type {
 } from "./schema";
 
 // Tailwind v4 needs complete literal class strings — never build these by
-// concatenation (same rule as src/lib/channel-types.ts).
-
+// concatenation (same rule as src/lib/channel-types.ts). Colour now routes
+// through the shared 4-ink-family system (src/components/tag.tsx) rather
+// than N bright Tailwind pastels: every *_META table below stores a TagInk,
+// and callers render <Tag ink={...}> instead of hand-building pill classes.
+//
+// The hearsay grade stamp is circular (a letterpress-style monogram, not a
+// label), so it can't reuse <Tag>'s rounded-rect markup. INK_VARS mirrors
+// Tag's own text/ring/bg classes per ink family so that one other shape can
+// stay on the same palette without duplicating colour decisions.
+export const INK_VARS: Record<
+  TagInk,
+  { text: string; ring: string; bg: string }
+> = {
+  ink: {
+    text: "text-[color:var(--foreground)]",
+    ring: "ring-[color:var(--foreground)]/25",
+    bg: "bg-[color:var(--foreground)]/[0.04]",
+  },
+  accent: {
+    text: "text-[color:var(--accent)]",
+    ring: "ring-[color:var(--accent)]/35",
+    bg: "bg-[color:var(--accent-soft)]",
+  },
+  oxblood: {
+    text: "text-[color:var(--oxblood)]",
+    ring: "ring-[color:var(--oxblood)]/35",
+    bg: "bg-[color:var(--oxblood-soft)]",
+  },
+  honey: {
+    text: "text-[color:var(--honey)]",
+    ring: "ring-[color:var(--honey)]/35",
+    bg: "bg-[color:var(--honey-soft)]",
+  },
+  muted: {
+    text: "text-[color:var(--muted)]",
+    ring: "ring-[color:var(--border)]",
+    bg: "bg-[color:var(--muted-soft)]",
+  },
+};
+//
+// Category ink families follow the dataset's own axes rather than being
+// arbitrary:
+//   - oxblood = backward-direction claims (a Father-above-the-Father, or a
+//     succession of Gods) — the doctrinally load-bearing, contested axis.
+//   - honey   = forward-direction / "eternal increase" claims (procreation,
+//     spirit birth, Heavenly Mother) — the site's namesake axis, given the
+//     Deseret accent colour.
+//   - accent  = structural/explanatory frameworks (many worlds, tripartite
+//     model, ongoing divine progression) rather than first-order claims.
+//   - ink     = the orthodox baseline/counter-position (always God).
+//   - muted   = meta categories that sit outside the claim axes (declining
+//     to answer, or a later retreat/reframe of an earlier teaching).
 export const CATEGORY_META: Record<
   CategoryId,
-  { label: string; pill: string; definition: string }
+  { label: string; ink: TagInk; definition: string }
 > = {
   "BACKWARD-EXPLICIT": {
     label: "Backward: explicit",
-    pill: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
+    ink: "oxblood",
     definition:
       "States that the Father had a Father, or a God above Him.",
   },
   "FATHER-MORTAL-EXPERIENCE": {
     label: "Father: mortal experience",
-    pill: "bg-sky-50 text-sky-900 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-800/50",
+    ink: "oxblood",
     definition:
       "God lived a mortal probation — “as man now is, God once was.” Check the referent chip: where it is not “Father,” the source makes the claim without establishing it of the Father.",
   },
   "FATHER-BECAME-GOD": {
     label: "Father: became God",
-    pill: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
+    ink: "oxblood",
     definition:
       "God attained divinity at some point rather than always possessing it — exaltation, progression to perfection, “attained the state.” Implies but is distinct from having had a mortal experience.",
   },
   "FATHER-ALWAYS-GOD": {
     label: "Father: always God",
-    pill: "bg-stone-100 text-stone-800 ring-stone-300 dark:bg-stone-800/50 dark:text-stone-300 dark:ring-stone-600/50",
+    ink: "ink",
     definition:
       "The counter-position: God has always been God, with no prior state of non-divinity. Tagged on denials as well as affirmations elsewhere in the axis; each quote's note states the direction.",
   },
   "BACKWARD-AGNOSTIC": {
     label: "Backward: agnostic",
-    pill: "bg-indigo-50 text-indigo-900 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-800/50",
+    ink: "muted",
     definition:
       "Acknowledges the regress question but declines or discourages it.",
   },
   "FORWARD-EXPLICIT": {
     label: "Forward: explicit",
-    pill: "bg-emerald-50 text-emerald-900 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-800/50",
+    ink: "honey",
     definition:
       "Exalted humans procreate spirit children or people worlds.",
   },
   "FORWARD-EUPHEMISM": {
     label: "Forward: euphemism",
-    pill: "bg-teal-50 text-teal-900 ring-teal-200 dark:bg-teal-950/40 dark:text-teal-300 dark:ring-teal-800/50",
+    ink: "honey",
     definition:
       "“Eternal increase,” “continuation of the seeds,” “eternal families” — no mechanism stated.",
   },
   "SPIRIT-BIRTH-VIVIPAROUS": {
     label: "Spirit birth: viviparous",
-    pill: "bg-purple-50 text-purple-900 ring-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:ring-purple-800/50",
+    ink: "honey",
     definition:
       "Spirits literally begotten and born of Heavenly Parents.",
   },
   "SPIRIT-BIRTH-ADOPTION": {
     label: "Spirit birth: adoption/organization",
-    pill: "bg-fuchsia-50 text-fuchsia-900 ring-fuchsia-200 dark:bg-fuchsia-950/40 dark:text-fuchsia-300 dark:ring-fuchsia-800/50",
+    ink: "honey",
     definition:
       "Spirits organized from eternal intelligence rather than begotten.",
   },
   "TRIPARTITE-FRAMEWORK": {
     label: "Tripartite framework",
-    pill: "bg-violet-50 text-violet-900 ring-violet-200 dark:bg-violet-950/40 dark:text-violet-300 dark:ring-violet-800/50",
+    ink: "accent",
     definition:
       "Intelligence → spirit → body as an explicit three-stage model. Reserved for sources that actually articulate three stages — not retrojected onto Abraham 3 or the King Follett Discourse, which state two-stage or unstaged eternalism.",
   },
   "MANY-WORLDS": {
     label: "Many worlds",
-    pill: "bg-cyan-50 text-cyan-900 ring-cyan-200 dark:bg-cyan-950/40 dark:text-cyan-300 dark:ring-cyan-800/50",
+    ink: "accent",
     definition:
       "Plural worlds or creations under one God; no succession of Gods implied.",
   },
   "HEAVENLY-MOTHER": {
     label: "Heavenly Mother",
-    pill: "bg-amber-50 text-amber-900 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-800/50",
+    ink: "honey",
     definition: "A Mother in Heaven is affirmed.",
   },
   "INFINITE-CHAIN": {
     label: "Infinite chain",
-    pill: "bg-slate-100 text-slate-800 ring-slate-200 dark:bg-slate-800/50 dark:text-slate-300 dark:ring-slate-700/60",
+    ink: "oxblood",
     definition:
       "Explicit succession-of-Gods language. Requires a succession of Gods, not merely a plurality of worlds.",
   },
   "DIVINE-PROGRESSION": {
     label: "Divine progression",
-    pill: "bg-rose-50 text-rose-900 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-800/50",
+    ink: "accent",
     definition:
       "Addresses whether God Himself still progresses in knowledge or power. Affirmations (Young, Woodruff) and denials (Joseph Fielding Smith, McConkie: only in dominions) both carry the tag; each quote's note states the direction.",
   },
   "RETREAT-REFRAME": {
     label: "Retreat / reframe",
-    pill: "bg-orange-50 text-orange-900 ring-orange-200 dark:bg-orange-950/40 dark:text-orange-300 dark:ring-orange-800/50",
+    ink: "muted",
     definition:
       "Later material that removes, softens, or reframes an earlier teaching.",
   },
 };
 
+// Hearsay is a reliability gradient, so it walks the ink families in order
+// from strongest provenance to weakest rather than by arbitrary hue:
+// ink (first-person) -> accent -> muted (neutral midpoint) -> honey (caution)
+// -> oxblood (weakest / no traceable original).
 export const HEARSAY_META: Record<
   HearsayGrade,
-  { badge: string; description: string; example: string }
+  { ink: TagInk; description: string; example: string }
 > = {
   A: {
-    badge:
-      "bg-emerald-100 text-emerald-800 ring-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:ring-emerald-800/50",
+    ink: "ink",
     description:
       "First-person text by the speaker, published under their direction.",
     example: "1909 First Presidency statement",
   },
   B: {
-    badge:
-      "bg-teal-100 text-teal-800 ring-teal-200 dark:bg-teal-950/50 dark:text-teal-300 dark:ring-teal-800/50",
+    ink: "accent",
     description: "Contemporaneous notes by trained scribes, amalgamated.",
     example: "King Follett Discourse scribal accounts",
   },
   C: {
-    badge:
-      "bg-amber-100 text-amber-800 ring-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:ring-amber-800/50",
+    ink: "muted",
     description:
       "Contemporaneous secondhand report, including shorthand reports edited for publication.",
     example: "Journal of Discourses via George Watt's shorthand",
   },
   D: {
-    badge:
-      "bg-orange-100 text-orange-800 ring-orange-200 dark:bg-orange-950/50 dark:text-orange-300 dark:ring-orange-800/50",
+    ink: "honey",
     description: "Later recollection, years after the fact.",
     example: "Snow's c. 1901 account of the couplet's 1840 origin",
   },
   E: {
-    badge:
-      "bg-rose-100 text-rose-800 ring-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800/50",
+    ink: "oxblood",
     description:
       "Attributed via tertiary compilation with no traceable original.",
     example: "Genuinely orphaned attributions; folklore",
   },
 };
 
+// Correlation status: accent marks what is currently published, honey/oxblood
+// flag the two ways a source has fallen out of current use.
 export const STATUS_META: Record<
   CorrelationStatus,
-  { label: string; dot: string }
+  { label: string; ink: TagInk; dot: string }
 > = {
   "current-correlated": {
     label: "Current-correlated",
+    ink: "accent",
     dot: "bg-[color:var(--accent)]",
   },
   "historical-official": {
     label: "Historical-official",
-    dot: "bg-[color:var(--muted)]",
+    ink: "ink",
+    dot: "bg-[color:var(--foreground)]",
   },
-  discontinued: { label: "Discontinued", dot: "bg-amber-500" },
-  "never-official": { label: "Never official", dot: "bg-rose-500" },
+  discontinued: {
+    label: "Discontinued",
+    ink: "honey",
+    dot: "bg-[color:var(--honey)]",
+  },
+  "never-official": {
+    label: "Never official",
+    ink: "oxblood",
+    dot: "bg-[color:var(--oxblood)]",
+  },
 };
 
+// Referent: father-referent claims are the doctrinally distinctive ones, so
+// they get oxblood; son-referent claims require no theogony of the Father
+// and read as the "safe" reading, so accent; ambiguous is a caution (honey).
 export const REFERENT_META: Record<
   Referent,
-  { label: string; short: string; chip: string; definition: string }
+  { label: string; short: string; ink: TagInk; definition: string }
 > = {
   father: {
     label: "Referent: the Father",
     short: "Father",
-    chip: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
+    ink: "oxblood",
     definition:
       "The “God” of the key claim is demonstrably God the Father. These are the doctrinally distinctive claims.",
   },
   son: {
     label: "Referent: the Son",
     short: "Son",
-    chip: "bg-emerald-50 text-emerald-900 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-800/50",
+    ink: "accent",
     definition:
       "The claim's own warrant points at Christ — a being who was mortal, is now God, and has a Father above him. Requires no theogony for the Father.",
   },
   ambiguous: {
     label: "Referent: ambiguous",
     short: "Ambiguous",
-    chip: "bg-amber-50 text-amber-900 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-800/50",
+    ink: "honey",
     definition:
       "The referent cannot be settled from the source itself. Later use often exploits exactly this ambiguity.",
   },
   "n/a": {
     label: "Referent: not applicable",
     short: "n/a",
-    chip: "bg-[color:var(--muted-soft)] text-[color:var(--muted)] ring-[color:var(--border)]",
+    ink: "muted",
     definition: "The source makes no backward-direction claim about God.",
   },
 };
 
 export const SOURCE_TYPE_META: Record<
   SourceType,
-  { label: string; chip: string; definition: string }
+  { label: string; ink: TagInk; definition: string }
 > = {
   original: {
     label: "Original",
-    chip: "bg-[color:var(--accent-soft)] text-[color:var(--accent)] ring-[color:var(--border)]",
+    ink: "accent",
     definition: "First attestation of the teaching.",
   },
   citation: {
     label: "Citation",
-    chip: "bg-[color:var(--muted-soft)] text-[color:var(--muted)] ring-[color:var(--border)]",
+    ink: "muted",
     definition:
       "A later source quoting or teaching from an original. Collapsing citations folds these into the originals they cite.",
   },

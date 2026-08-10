@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { Tag } from "@/components/tag";
 import { requireUser } from "@/lib/auth";
 import {
   getBookmarkedChannelsForUser,
@@ -50,7 +51,7 @@ export default async function BookmarksPage({
               .slice(0, 4)
               .map((c) => encodeURIComponent(c.slug))
               .join(",")}`}
-            className="inline-flex h-10 items-center rounded-full border border-amber-400/60 bg-amber-50 px-4 text-sm font-medium text-amber-700 hover:bg-amber-100"
+            className="inline-flex h-10 items-center rounded-[var(--radius)] border border-[color:var(--honey)]/40 bg-[color:var(--honey-soft)] px-4 text-sm font-medium text-[color:var(--honey)] hover:bg-[color:var(--honey)]/15"
           >
             Compare {Math.min(channels.length, 4)} bookmarked →
           </Link>
@@ -63,7 +64,7 @@ export default async function BookmarksPage({
             {channels.map((c) => (
               <li
                 key={c.id}
-                className="relative rounded-2xl border border-[color:var(--border)] bg-white p-5 pr-14"
+                className="relative rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 pr-14"
               >
                 <div className="absolute right-3 top-3">
                   <BookmarkButton
@@ -88,12 +89,9 @@ export default async function BookmarksPage({
                           ? [c.channel_type]
                           : []
                       ).map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-[10px] uppercase tracking-wider text-[color:var(--muted)]"
-                        >
+                        <Tag key={t} ink="muted">
                           {t}
-                        </span>
+                        </Tag>
                       ))}
                     </div>
                   )}
@@ -132,21 +130,18 @@ export default async function BookmarksPage({
               </div>
               <Link
                 href={`/studies/${s.slug}`}
-                className="group block h-full rounded-2xl border border-[color:var(--border)] bg-white p-6 pr-16 transition-colors hover:border-[color:var(--accent)]"
+                className="group block h-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 pr-16 transition-colors hover:border-[color:var(--accent)]"
               >
                 <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--muted)]">
                   {s.year && (
-                    <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 tabular-nums">
+                    <Tag ink="muted" className="serif-onum">
                       {s.year}
-                    </span>
+                    </Tag>
                   )}
                   {s.tags.slice(0, 3).map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full bg-[color:var(--accent-soft)] px-2.5 py-1 text-[color:var(--accent)]"
-                    >
+                    <Tag key={t} ink="accent">
                       {t}
-                    </span>
+                    </Tag>
                   ))}
                 </div>
                 <h2 className="serif mt-4 text-xl font-semibold leading-snug tracking-tight group-hover:text-[color:var(--accent)]">
@@ -200,7 +195,7 @@ function TabLink({
 function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-[10px] uppercase tracking-wider">{label}</dt>
+      <dt className="small-caps text-[10px]">{label}</dt>
       <dd className="tabular-nums text-[color:var(--foreground)]">{value}</dd>
     </div>
   );
@@ -208,11 +203,11 @@ function Metric({ label, value }: { label: string; value: string }) {
 
 function Empty({ label, href }: { label: string; href: string }) {
   return (
-    <div className="mt-8 rounded-2xl border border-[color:var(--border)] bg-white p-8 text-center">
+    <div className="mt-8 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-8 text-center">
       <p className="text-sm text-[color:var(--muted)]">No saved {label} yet</p>
       <Link
         href={href}
-        className="mt-4 inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90"
+        className="mt-4 inline-flex h-10 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90"
       >
         Browse {label}
       </Link>

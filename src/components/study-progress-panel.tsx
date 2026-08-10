@@ -75,7 +75,7 @@ export function StudyProgressPanel({
   }
 
   return (
-    <section className="mt-10 rounded-2xl border border-[color:var(--border)] bg-white p-5 sm:p-6">
+    <section className="mt-10 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
@@ -93,7 +93,7 @@ export function StudyProgressPanel({
           disabled={pending}
           aria-pressed={isRead}
           className={
-            "inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium transition-colors disabled:opacity-60 " +
+            "inline-flex h-11 items-center gap-2 rounded-[var(--radius)] px-5 text-sm font-medium transition-colors disabled:opacity-60 " +
             (isRead
               ? "bg-emerald-600 text-white hover:opacity-90"
               : "border border-[color:var(--border)] bg-white text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]")
@@ -131,7 +131,7 @@ export function StudyProgressPanel({
               placeholder="What stood out? Quotes, page numbers, follow-ups…"
               maxLength={5000}
               rows={5}
-              className="block w-full rounded-2xl border border-[color:var(--border)] bg-white p-3 text-sm leading-relaxed focus:border-[color:var(--accent)] focus:outline-none"
+              className="block w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-3 text-sm leading-relaxed focus:border-[color:var(--accent)] focus:outline-none"
             />
             <div className="mt-2 flex items-center justify-between gap-3">
               <p className="text-xs text-[color:var(--muted)]">
@@ -145,7 +145,7 @@ export function StudyProgressPanel({
                   type="button"
                   onClick={onSaveNote}
                   disabled={pending || !dirty}
-                  className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white transition-colors hover:opacity-90 disabled:opacity-50"
+                  className="inline-flex h-10 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-sm font-medium text-white transition-colors hover:opacity-90 disabled:opacity-50"
                 >
                   Save note
                 </button>

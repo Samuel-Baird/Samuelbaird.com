@@ -10,10 +10,13 @@ import {
   TriangleAlert,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { BeehiveMark } from "@/components/beehive-mark";
+import { Tag } from "@/components/tag";
 import {
   CATEGORY_META,
   ERAS,
   HEARSAY_META,
+  INK_VARS,
   REFERENT_META,
   SOURCE_TYPE_META,
   STATUS_META,
@@ -191,7 +194,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
             placeholder="Search sources…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="h-10 w-full rounded-full border border-[color:var(--border)] bg-white pl-11 pr-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
+            className="h-10 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white pl-11 pr-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
           />
         </div>
 
@@ -213,7 +216,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
               type="button"
               onClick={handleExport}
               title="Export filtered sources as Markdown"
-              className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+              className="small-caps inline-flex h-8 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
             >
               <Download aria-hidden="true" size={13} />
               .md
@@ -222,7 +225,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
               type="button"
               onClick={handleCopy}
               title="Copy filtered sources as Markdown"
-              className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+              className="small-caps inline-flex h-8 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
             >
               <Copy aria-hidden="true" size={13} />
               {copied ? "Copied!" : "Copy"}
@@ -253,11 +256,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                 checked={cats.has(id)}
                 onChange={() => setCats(toggleIn(cats, id))}
               >
-                <span
-                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${CATEGORY_META[id].pill}`}
-                >
-                  {CATEGORY_META[id].label}
-                </span>
+                <Tag ink={CATEGORY_META[id].ink}>{CATEGORY_META[id].label}</Tag>
               </FilterOption>
             ))}
           </PanelSection>
@@ -268,13 +267,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                 checked={referents.has(r)}
                 onChange={() => setReferents(toggleIn(referents, r))}
               >
-                <span className="flex items-center gap-2">
-                  <span
-                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${REFERENT_META[r].chip}`}
-                  >
-                    {REFERENT_META[r].short}
-                  </span>
-                </span>
+                <Tag ink={REFERENT_META[r].ink}>{REFERENT_META[r].short}</Tag>
               </FilterOption>
             ))}
           </PanelSection>
@@ -317,7 +310,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                     aria-hidden="true"
                     className={`inline-block h-1.5 w-1.5 rounded-full ${STATUS_META[s].dot}`}
                   />
-                  {STATUS_META[s].label}
+                  <span className="small-caps">{STATUS_META[s].label}</span>
                 </span>
               </FilterOption>
             ))}
@@ -339,35 +332,45 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           />
         </div>
       {visible.length === 0 ? (
-        <div className="mt-8 rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)] lg:mt-0">
+        <div className="mt-8 rounded-[var(--radius)] border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)] lg:mt-0">
           No sources match your filters.
         </div>
       ) : (
-        <div className="mt-8 space-y-14 lg:mt-0">
-          {ERAS.map((era) => {
-            const inEra = visible.filter((e) => eraFor(e).id === era.id);
-            if (inEra.length === 0) return null;
-            return (
-              <section key={era.id}>
-                <p className="text-xs font-medium uppercase tracking-[0.18em] tabular-nums text-[color:var(--muted)]">
-                  {era.range}
-                </p>
-                <h2 className="serif mt-1 text-2xl font-semibold tracking-tight">
-                  {era.label}
-                </h2>
-                <ol className="relative mt-6 space-y-6 border-l border-[color:var(--border)] pl-6 sm:pl-8">
-                  {inEra.map((entry) => (
-                    <TimelineEntry
-                      key={entry.id}
-                      entry={entry}
-                      byId={byId}
-                      citations={citationsByOriginal.get(entry.id) ?? []}
-                    />
-                  ))}
-                </ol>
-              </section>
-            );
-          })}
+        <div className="mt-8 lg:mt-0">
+          {(() => {
+            let rendered = 0;
+            return ERAS.map((era) => {
+              const inEra = visible.filter((e) => eraFor(e).id === era.id);
+              if (inEra.length === 0) return null;
+              const isFirst = rendered === 0;
+              rendered += 1;
+              return (
+                <section key={era.id} className={isFirst ? "" : "mt-14"}>
+                  {!isFirst && (
+                    <div className="dinkus" aria-hidden="true">
+                      <BeehiveMark className="h-4 w-4" />
+                    </div>
+                  )}
+                  <p className="serif-onum text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                    {era.range}
+                  </p>
+                  <h2 className="serif mt-1 text-2xl font-semibold tracking-tight">
+                    {era.label}
+                  </h2>
+                  <ol className="relative mt-6 space-y-6 border-l border-[color:var(--border)] pl-6 sm:pl-8">
+                    {inEra.map((entry) => (
+                      <TimelineEntry
+                        key={entry.id}
+                        entry={entry}
+                        byId={byId}
+                        citations={citationsByOriginal.get(entry.id) ?? []}
+                      />
+                    ))}
+                  </ol>
+                </section>
+              );
+            });
+          })()}
         </div>
       )}
       </div>
@@ -394,7 +397,7 @@ function PanelSection({
       <summary className="flex cursor-pointer list-none items-center gap-1.5 py-2.5 text-sm font-medium hover:text-[color:var(--accent)] [&::-webkit-details-marker]:hidden">
         {label}
         {count != null && count > 0 && (
-          <span className="rounded-full bg-[color:var(--accent-soft)] px-1.5 py-0.5 text-[10px] tabular-nums text-[color:var(--accent)]">
+          <span className="rounded-[var(--radius)] bg-[color:var(--accent-soft)] px-1.5 py-0.5 text-[10px] tabular-nums text-[color:var(--accent)]">
             {count}
           </span>
         )}
@@ -419,7 +422,7 @@ function FilterOption({
   children: React.ReactNode;
 }) {
   return (
-    <label className="flex min-h-9 cursor-pointer items-center gap-3 rounded-lg px-2 py-1.5 hover:bg-[color:var(--muted-soft)]/60">
+    <label className="flex min-h-9 cursor-pointer items-center gap-3 rounded-[var(--radius)] px-2 py-1.5 hover:bg-[color:var(--muted-soft)]/60">
       <input
         type="checkbox"
         checked={checked}
@@ -433,11 +436,12 @@ function FilterOption({
 
 function HearsayBadge({ grade }: { grade: HearsayGrade }) {
   const meta = HEARSAY_META[grade];
+  const c = INK_VARS[meta.ink];
   return (
     <span
       title={`Hearsay ${grade}: ${meta.description} Example: ${meta.example}`}
       aria-label={`Hearsay rating ${grade}: ${meta.description}`}
-      className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold ring-1 ${meta.badge}`}
+      className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius)] text-xs font-semibold ring-1 ${c.bg} ${c.text} ${c.ring}`}
     >
       {grade}
     </span>
@@ -447,12 +451,9 @@ function HearsayBadge({ grade }: { grade: HearsayGrade }) {
 function ReferentChip({ referent }: { referent: Referent }) {
   const meta = REFERENT_META[referent];
   return (
-    <span
-      title={`${meta.label} — ${meta.definition}`}
-      className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${meta.chip}`}
-    >
+    <Tag ink={meta.ink} title={`${meta.label} — ${meta.definition}`}>
       {meta.short}
-    </span>
+    </Tag>
   );
 }
 
@@ -479,34 +480,32 @@ function TimelineEntry({
             : "bg-[color:var(--muted)]"
         }`}
       />
-      <article className="rounded-2xl border border-[color:var(--border)] bg-white p-5 sm:p-6 print:break-inside-avoid">
+      <article className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:p-6 print:break-inside-avoid">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-[color:var(--muted-soft)] px-2.5 py-1 text-xs tabular-nums">
+          <span className="serif-onum rounded-[var(--radius)] bg-[color:var(--muted-soft)] px-2.5 py-1 text-xs tabular-nums">
             {entry.dateDisplay}
           </span>
           <HearsayBadge grade={entry.hearsay} />
-          <span
-            title={typeMeta.definition}
-            className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${typeMeta.chip}`}
-          >
+          <Tag ink={typeMeta.ink} title={typeMeta.definition}>
             {typeMeta.label}
-          </span>
+          </Tag>
           {entry.referent !== "n/a" && <ReferentChip referent={entry.referent} />}
           {entry.needsVerification && (
-            <span
+            <Tag
+              ink="oxblood"
               title="Citation not yet verified against the original source"
-              className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-800/50"
+              className="inline-flex items-center gap-1"
             >
               <TriangleAlert aria-hidden="true" size={11} />
               verify
-            </span>
+            </Tag>
           )}
           <a
             href={entry.url}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Open source for ${entry.title}`}
-            className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-full text-[color:var(--muted)] hover:bg-[color:var(--muted-soft)] hover:text-[color:var(--accent)] print:hidden"
+            className="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-[var(--radius)] text-[color:var(--muted)] hover:bg-[color:var(--muted-soft)] hover:text-[color:var(--accent)] print:hidden"
           >
             <ExternalLink aria-hidden="true" size={15} />
           </a>
@@ -518,7 +517,7 @@ function TimelineEntry({
         <p className="mt-1 text-sm text-[color:var(--muted)]">
           {entry.speaker} · {entry.office} · {entry.venue}
         </p>
-        <p className="mt-2 flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+        <p className="small-caps mt-2 flex items-center gap-1.5 text-[10px] font-medium text-[color:var(--muted)]">
           <span
             aria-hidden="true"
             className={`inline-block h-1.5 w-1.5 rounded-full ${status.dot}`}
@@ -528,7 +527,7 @@ function TimelineEntry({
 
         {entry.citesId && entry.citesId.length > 0 && (
           <p className="mt-3 text-xs leading-relaxed text-[color:var(--muted)]">
-            <span className="font-medium uppercase tracking-wider">Cites · </span>
+            <span className="small-caps font-medium">Cites · </span>
             {entry.citesId.map((id, i) => (
               <span key={id}>
                 {i > 0 && "; "}
@@ -544,8 +543,8 @@ function TimelineEntry({
         )}
 
         {entry.witnesses && entry.witnesses.length > 0 && (
-          <div className="mt-3 rounded-xl border border-[color:var(--border)] p-3">
-            <p className="text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+          <div className="mt-3 rounded-[var(--radius)] border border-[color:var(--border)] p-3">
+            <p className="small-caps text-[10px] font-medium text-[color:var(--muted)]">
               Witnesses
             </p>
             <ul className="mt-2 space-y-1.5">
@@ -597,14 +596,14 @@ function TimelineEntry({
           />
         </button>
 
-        <div className="mt-4 rounded-xl bg-[color:var(--muted-soft)]/60 p-3 text-xs leading-relaxed text-[color:var(--muted)]">
-          <span className="font-medium uppercase tracking-wider">Notes · </span>
+        <div className="mt-4 rounded-[var(--radius)] bg-[color:var(--muted-soft)]/60 p-3 text-xs leading-relaxed text-[color:var(--muted)]">
+          <span className="small-caps font-medium">Notes · </span>
           {entry.notes}
         </div>
 
         {citations.length > 0 && (
-          <div className="mt-4 rounded-xl border border-dashed border-[color:var(--border)] p-3">
-            <p className="text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+          <div className="mt-4 rounded-[var(--radius)] border border-dashed border-[color:var(--border)] p-3">
+            <p className="small-caps text-[10px] font-medium text-[color:var(--muted)]">
               Cited by {citations.length}{" "}
               {citations.length === 1 ? "later source" : "later sources"}
             </p>
@@ -649,30 +648,24 @@ function QuoteBlock({
     <div id={quote.quoteId}>
       <div className="flex flex-wrap items-center gap-1.5">
         {quote.categories.length === 0 ? (
-          <span className="inline-flex items-center rounded-full bg-[color:var(--muted-soft)] px-2.5 py-0.5 text-[11px] font-medium text-[color:var(--muted)]">
-            context
-          </span>
+          <Tag ink="muted">context</Tag>
         ) : (
           quote.categories.map((c) => (
-            <span
-              key={c}
-              title={CATEGORY_META[c].definition}
-              className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-medium ring-1 ${CATEGORY_META[c].pill}`}
-            >
+            <Tag key={c} ink={CATEGORY_META[c].ink} title={CATEGORY_META[c].definition}>
               {CATEGORY_META[c].label}
               {quote.implied && (
                 <span className="opacity-70" title="Read into the quote rather than stated by it">
-                  · implied
+                  {" "}· implied
                 </span>
               )}
-            </span>
+            </Tag>
           ))
         )}
         {quote.referent && <ReferentChip referent={quote.referent} />}
         {overridden && (
           <span
             title={`Hearsay for this quote differs from the source: ${HEARSAY_META[grade].description}`}
-            className={`inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-semibold ring-1 ${HEARSAY_META[grade].badge}`}
+            className={`inline-flex h-5 w-5 items-center justify-center rounded-[var(--radius)] text-[10px] font-semibold ring-1 ${INK_VARS[HEARSAY_META[grade].ink].bg} ${INK_VARS[HEARSAY_META[grade].ink].text} ${INK_VARS[HEARSAY_META[grade].ink].ring}`}
           >
             {grade}
           </span>

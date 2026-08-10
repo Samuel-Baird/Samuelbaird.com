@@ -66,7 +66,7 @@ export function BookmarkButton({
         aria-pressed={bookmarked}
         disabled={pending}
         onClick={onClick}
-        className="inline-flex h-10 items-center gap-2 rounded-full border border-[color:var(--border)] bg-white px-4 text-sm font-medium transition-colors hover:bg-[color:var(--muted-soft)] disabled:opacity-60"
+        className="inline-flex h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium transition-colors hover:bg-[color:var(--muted-soft)] disabled:opacity-60"
       >
         <Icon
           className={`${iconSize} ${bookmarked ? "fill-[color:var(--accent)] text-[color:var(--accent)]" : ""}`}
