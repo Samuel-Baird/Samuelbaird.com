@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
-import { CATEGORY_META, HEARSAY_META, STATUS_META } from "./constants";
-import { CATEGORY_IDS, CORRELATION_STATUSES, HEARSAY_GRADES, parseSources } from "./schema";
+import {
+  CATEGORY_META,
+  HEARSAY_META,
+  REFERENT_META,
+  SOURCE_TYPE_META,
+  STATUS_META,
+} from "./constants";
+import {
+  CATEGORY_IDS,
+  CORRELATION_STATUSES,
+  HEARSAY_GRADES,
+  REFERENTS,
+  SOURCE_TYPES,
+  parseSources,
+} from "./schema";
 import rawSources from "./sources.json";
 import { TimelineExplorer } from "./timeline-explorer";
 
@@ -11,15 +24,32 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const PRINCIPLES = [
+  {
+    title: "No retrojection",
+    body: "A source is tagged only for what it states, not for what later frameworks read into it. This is why Moses 1 is “many worlds” rather than an infinite chain, and why the three-stage intelligence → spirit → body model is filed under B. H. Roberts rather than Abraham 3.",
+  },
+  {
+    title: "Referent discipline",
+    body: "Every backward-direction claim is checked for whether its “God” is demonstrably the Father, plausibly the Son, or genuinely ambiguous. This is the most important control in the dataset: the Father-referent claims are the doctrinally distinctive ones, and they are rarer than the corpus first appears.",
+  },
+  {
+    title: "Original vs. citation",
+    body: "Each source is typed as a first attestation or as a later source quoting one. Collapsing citations shows what is actually attested, independently, and when.",
+  },
+  {
+    title: "Quote-level tagging",
+    body: "A single talk or manual can make several distinct doctrinal moves. Each excerpt carries its own categories, its own referent, and where provenance differs, its own hearsay grade.",
+  },
+];
+
 const CHASE_DOWN = [
   "Joseph F. Smith, Gospel Doctrine, on spirit birth (early 1900s)",
-  "Bruce R. McConkie, Mormon Doctrine, “Eternal Progression” and “Spirit Children” entries (1958/1966) — never official but massively influential; its 2010 discontinuation is itself a retreat data point",
-  "Achieving a Celestial Marriage manual (1976) — the “as our Father in Heaven once did” chart; possibly the peak of correlated forward + backward explicitness",
-  "Spencer W. Kimball's 1976 Adam–God repudiation (boundary-setting on regress speculation)",
-  "Encyclopedia of Mormonism (1992) — “God the Father,” “Spirit Body,” “Eternal Progression” entries as a semi-official snapshot",
   "Hugh B. Brown / David O. McKay-era General Conference uses of “eternal increase”",
+  "Encyclopedia of Mormonism (1992) — “God the Father,” “Spirit Body,” “Eternal Progression” entries as a semi-official snapshot",
   "Blake Ostler, “The Idea of Pre-existence in the Development of Mormon Thought,” Dialogue 15.1 (1982) — the standard taxonomy of tripartite vs. viviparous models",
   "Charley Harrell, “This Is My Doctrine”: The Development of Mormon Theology (2011) — chapter on theogony",
+  "The fuller transcript question on the 1997 Time interview — Hinckley later indicated context had been trimmed",
 ];
 
 export default function EternalIncreaseTimelinePage() {
@@ -30,7 +60,7 @@ export default function EternalIncreaseTimelinePage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
-        Source timeline
+        Source timeline · v2
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
         Eternal regress &amp; eternal increase.
@@ -47,11 +77,71 @@ export default function EternalIncreaseTimelinePage() {
         analysis, not official characterizations.
       </p>
 
+      <Section title="Method">
+        <dl className="space-y-4">
+          {PRINCIPLES.map((p) => (
+            <div key={p.title}>
+              <dt className="text-sm font-semibold">{p.title}</dt>
+              <dd className="mt-1 text-sm leading-relaxed text-[color:var(--muted)]">
+                {p.body}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      <Section title="Referent">
+        <p className="text-sm leading-relaxed text-[color:var(--muted)]">
+          Who the “God” of a backward-direction claim actually is. Several
+          load-bearing “God was once a man” texts ground themselves in
+          Christ&apos;s mortality — a being who was mortal, is now God, and has
+          a Father above him fits the Son perfectly and requires no theogony for
+          the Father.
+        </p>
+        <dl className="mt-4 space-y-3">
+          {REFERENTS.map((r) => (
+            <div key={r} className="flex gap-3">
+              <dt>
+                <span
+                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${REFERENT_META[r].chip}`}
+                >
+                  {REFERENT_META[r].short}
+                </span>
+              </dt>
+              <dd className="flex-1 text-sm leading-relaxed text-[color:var(--muted)]">
+                {REFERENT_META[r].definition}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      <Section title="Original vs. citation">
+        <dl className="space-y-3">
+          {SOURCE_TYPES.map((t) => (
+            <div key={t} className="flex gap-3">
+              <dt>
+                <span
+                  className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${SOURCE_TYPE_META[t].chip}`}
+                >
+                  {SOURCE_TYPE_META[t].label}
+                </span>
+              </dt>
+              <dd className="flex-1 text-sm leading-relaxed text-[color:var(--muted)]">
+                {SOURCE_TYPE_META[t].definition}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
       <Section title="Hearsay & reliability scale">
         <p className="text-sm leading-relaxed text-[color:var(--muted)]">
           How directly the text traces to the speaker. This is a sourcing axis
           only — a low grade does not mean a teaching is unimportant, and a high
-          grade does not mean it is currently taught.
+          grade does not mean it is currently taught. Where a source&apos;s
+          quotes do not share a provenance, individual excerpts carry their own
+          grade.
         </p>
         <dl className="mt-4 space-y-3">
           {HEARSAY_GRADES.map((g) => (
@@ -115,7 +205,10 @@ export default function EternalIncreaseTimelinePage() {
       <Section title="To chase down">
         <ul className="space-y-2 text-sm leading-relaxed text-[color:var(--muted)]">
           {CHASE_DOWN.map((item) => (
-            <li key={item} className="border-l-2 border-[color:var(--border)] pl-3">
+            <li
+              key={item}
+              className="border-l-2 border-[color:var(--border)] pl-3"
+            >
               {item}
             </li>
           ))}
