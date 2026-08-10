@@ -23,6 +23,7 @@ export function SiteFooter() {
             <Link href="/timelines" className="hover:text-[color:var(--foreground)] transition-colors">Timelines</Link>
             <Link href="/about" className="hover:text-[color:var(--foreground)] transition-colors">About</Link>
             <Link href="/contact" className="hover:text-[color:var(--foreground)] transition-colors">Contact</Link>
+            <Link href="/donate" className="hover:text-[color:var(--foreground)] transition-colors">Donate</Link>
           </nav>
         </div>
         <div className="dinkus mt-8 mb-0 text-xs">
