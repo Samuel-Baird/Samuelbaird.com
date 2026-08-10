@@ -150,7 +150,7 @@ export function TimelineGraph({
                 d.cats.length ? ` (${d.cats.map((c) => CATEGORY_META[c].label).join(", ")})` : ""
               }`}
               aria-label={`${d.entry.dateDisplay}, ${d.entry.title}`}
-              className={`absolute h-2.5 w-2.5 -translate-x-1/2 rounded-full ring-2 ring-white transition-transform hover:scale-150 focus:scale-150 focus:outline-none focus-visible:ring-[color:var(--honey)] dark:ring-[#161a20] ${d.fill} ${
+              className={`absolute h-2.5 w-2.5 -translate-x-1/2 rounded-full ring-2 ring-[color:var(--surface)] transition-transform hover:scale-150 focus:scale-150 focus:outline-none focus-visible:ring-[color:var(--honey)] ${d.fill} ${
                 active ? "scale-150 ring-[color:var(--honey)]" : ""
               } ${d.entry.sourceType === "citation" ? "opacity-55" : ""}`}
               style={{ left: `${d.pct}%`, top: d.row * 18 + 4 }}
