@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DeseretTitle } from "@/components/deseret-title";
 import { StudiesExplorer } from "@/components/studies-explorer";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
@@ -71,7 +72,7 @@ export default async function StudiesPage({
         Studies
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-        Research library
+        <DeseretTitle text="Research library" />
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
         Curated academic studies relating to the Latter-day Saint community.

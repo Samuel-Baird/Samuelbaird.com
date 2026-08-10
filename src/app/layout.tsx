@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter, Fraunces, Noto_Sans_Deseret } from "next/font/google";
 import { Suspense } from "react";
 import { AuthPromptProvider } from "@/components/auth-prompt";
 import { SiteNav } from "@/components/site-nav";
@@ -20,6 +20,17 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
+// Decorative only — the title reveal in <DeseretTitle>. Not preloaded: the
+// component waits on document.fonts before animating, and a missed reveal is
+// cheaper than blocking on a font no page needs to render its content.
+const notoDeseret = Noto_Sans_Deseret({
+  variable: "--font-deseret",
+  weight: "400",
+  subsets: ["deseret"],
+  display: "swap",
+  preload: false,
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Latter-day Stats",
@@ -37,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fraunces.variable} h-full`}
+      className={`${inter.variable} ${fraunces.variable} ${notoDeseret.variable} h-full`}
       suppressHydrationWarning
     >
       <head>

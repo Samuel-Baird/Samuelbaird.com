@@ -13,6 +13,7 @@ import {
   TopStatsCarousel,
   type TopStatSlide,
 } from "@/components/top-stats-carousel";
+import { DeseretTitle } from "@/components/deseret-title";
 import { Tag } from "@/components/tag";
 import { inkForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
@@ -39,7 +40,7 @@ export default async function Home() {
           Latter-day Stats
         </p>
         <h1 className="serif mt-4 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-          Statistics, research, and creator data on the Latter-day Saint community.
+          <DeseretTitle text="Statistics, research, and creator data on the Latter-day Saint community." />
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
           A public hub tracking LDS YouTube creators, academic studies, and

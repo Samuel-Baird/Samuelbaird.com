@@ -5,7 +5,7 @@ export const OG_CONTENT_TYPE = "image/png";
 
 // Archive palette, hardcoded — satori can't read globals.css or CSS vars.
 // Keep these in sync with src/app/globals.css :root values.
-export const OG_PAPER = "#fbfaf7";
+export const OG_PAPER = "#f4eeda";
 export const OG_INK = "#1a1a1a";
 export const OG_MUTED = "#6b6b6b";
 export const OG_BORDER = "#e6e3dd";

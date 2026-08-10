@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChannelsExplorer } from "@/components/channels-explorer";
+import { DeseretTitle } from "@/components/deseret-title";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
@@ -42,7 +43,7 @@ export default async function ChannelsPage() {
         Channels
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-        LDS YouTube creators
+        <DeseretTitle text="LDS YouTube creators" />
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
         {channels.length} channels covering Latter-day Saint related content —

@@ -1,14 +1,28 @@
 # Latter-day Stats Branding and Design Guidelines
 
-Last updated: May 18, 2026
+Last updated: August 10, 2026
 
-This document captures the current visual identity and interface patterns for the Latter-day Stats website. Treat it as the working design source of truth for future edits so new pages and components stay consistent with the site as built.
+This document is the design source of truth for the site. Read it before building
+any new page or component, and follow it — the point is that a page added six
+months from now still looks like it belongs to the same publication.
+
+The current identity is **"the Archive"**: nineteenth-century print-almanac
+conventions executed with modern data-journalism discipline, plus restrained
+Deseret-era seasoning (a beehive mark, a honey accent, and a decorative Deseret
+alphabet flourish). It replaced an earlier generic look built on rounded-full
+pills, `rounded-2xl` white cards with soft shadows, and nineteen different bright
+Tailwind pastels for tags. **Do not reintroduce those.**
+
+The organizing idea: every item on this site is *a record with a source*.
+Channels are a gazetteer, studies are a library catalog, timelines are annals.
+The design should make that reading feel obvious.
 
 ## Brand Positioning
 
-Latter-day Stats is a public, independent data hub for statistics, research, and creator data related to the Latter-day Saint community.
+Latter-day Stats is a public, independent data hub for statistics, research, and
+creator data related to the Latter-day Saint community.
 
-The current brand should feel:
+The brand should feel:
 
 - Clear and research-minded, with an academic/editorial tone.
 - Warm and approachable, not corporate or cold.
@@ -16,319 +30,254 @@ The current brand should feel:
 - Respectful of the subject matter without looking institutionally official.
 - Independent from The Church of Jesus Christ of Latter-day Saints.
 
-Core product language used across the site:
+Core product language:
 
 - "Statistics, research, and creator data on the Latter-day Saint community."
 - "LDS YouTube creators"
 - "Research library"
 - "A public hub for Latter-day Saint statistics & research."
 
-## Logo and Name
+## Name and Mark
 
-The site currently uses text-only branding:
-
-- Primary name: `Latter-day Stats`
-- Nav wordmark: serif, semibold, tight tracking, foreground color.
-- No logo mark or icon system is currently defined.
-
-Recommended usage:
-
-- Use `Latter-day Stats` exactly, with the hyphen in `Latter-day`.
-- Keep the wordmark typographic unless a future logo is intentionally designed.
-- Do not use official Church marks, temple silhouettes, or anything that could imply affiliation.
+- Primary name: `Latter-day Stats`, always with the hyphen in `Latter-day`.
+- Wordmark: the beehive mark followed by the name in Fraunces, semibold, tight
+  tracking. In the nav the name is wrapped in `<DeseretTitle>` (see Typography).
+- **Beehive mark** — `src/components/beehive-mark.tsx`. A line-drawn skep, stroked
+  rather than filled, so it reads as an engraving rather than clip art. It takes
+  `className` and optional `title`, and inherits `currentColor`. Used in the nav
+  wordmark, the footer, the favicon (`src/app/icon.tsx`), OG images
+  (`src/lib/og.tsx`), and as the centered glyph in a `.dinkus` section break.
+  Usually honey-colored; muted or ink is fine where honey would shout.
+- Do not use official Church marks, temple silhouettes, or anything implying
+  affiliation. The beehive is a regional/pioneer motif, not an institutional one.
 
 ## Color System
 
-Defined in `src/app/globals.css` as CSS variables and exposed to Tailwind v4 through `@theme inline`.
+Tokens live in `src/app/globals.css` (`:root` and `html.dark`) and are exposed to
+Tailwind v4 through `@theme inline`. **Always reference tokens** — never hardcode
+a hex value or reach for a default Tailwind color ramp (`emerald-100`, `red-600`,
+etc.) in site UI.
 
-| Token | Hex | Role |
-| --- | --- | --- |
-| `--background` | `#fbfaf7` | Warm page background, nav background, drawer background |
-| `--foreground` | `#1a1a1a` | Primary text |
-| `--muted` | `#6b6b6b` | Secondary text, captions, table metadata |
-| `--muted-soft` | `#f0eee9` | Subtle panels, table headers, inactive pills, hover fills |
-| `--border` | `#e6e3dd` | Hairline borders for cards, tables, nav, forms |
-| `--accent` | `#1f4f7a` | Primary actions, links, eyebrow labels, selected states |
-| `--accent-soft` | `#e8eff6` | Soft blue tags, callouts, counters, avatar fallback |
+| Token | Light | Dark | Role |
+| --- | --- | --- | --- |
+| `--background` | `#f4eeda` | `#0f1115` | Page canvas — aged creme paper / dark stone |
+| `--surface` | `#fcf9ef` | `#161a20` | Card and panel surfaces (see note below) |
+| `--foreground` | `#1a1a1a` | `#e9e7e2` | Primary text |
+| `--muted` | `#63605a` | `#9a9a9a` | Secondary text, captions, metadata |
+| `--muted-soft` | `#ece4cf` | `#1d2027` | Subtle fills, table headers, hover states |
+| `--border` | `#ded5bf` | `#2a2e36` | Hairline rules — the primary separator |
+| `--accent` | `#1f4f7a` | `#7fb0d8` | Interactive blue: links, primary actions, eyebrows |
+| `--accent-soft` | `#e8eff6` | `#1a2733` | Soft accent fills |
+| `--honey` | `#8a5a06` | `#d9a441` | Identity accent: mark, dinkus, drop caps, chart highlight |
+| `--honey-soft` | `#f6ecd6` | `#2b230f` | Honey tag fills |
+| `--oxblood` | `#7c2d2d` | `#d98787` | Second ink family: warnings, contested/critical states |
+| `--oxblood-soft` | `#f4e6e3` | `#2a1a1a` | Oxblood tag fills |
+| `--radius` | `3px` | — | **The one radius on the site** |
+| `--page-texture` | SVG | SVG | Body background texture (see below) |
 
-### Color Usage
+Two accents, two jobs: **`--accent` is the interactive color** (if it's blue, you
+can click it) and **`--honey` is the identity color** (mark, flourishes, a single
+emphasized data series). Don't let honey become a second link color.
 
-- Use the warm off-white `--background` as the default page canvas.
-- Use white cards on top of the warm background for data surfaces.
-- Use `--accent` sparingly for primary calls to action, links, section eyebrows, and active UI.
-- Use `--accent-soft` for non-dominant emphasis such as study tags, filter counters, callout backgrounds, and avatar initials.
-- Use red only for warnings or methodological concerns:
-  - `red-600` / `red-700` for icons and danger text.
-  - `red-50`, `red-200`, `red-300`, `red-900` for flagged-study panels.
-- Preserve the warm neutral base. Avoid introducing a saturated, one-note palette.
+### Surfaces and texture
 
-### Channel Type Colors
+The body carries `--page-texture`, an inline-SVG `feTurbulence` tile: fine umber
+fiber grain on light, low-frequency stone mottle plus sparse pale specks on dark.
+It is a data URI in a custom property — no image assets, no network requests.
 
-Channel pills are defined in `src/lib/channel-types.ts`.
+Cards stay **flat and untextured** and sit on `--surface`, reading as clean sheets
+laid on an aged desk. Card markup is authored as `bg-white`; an unlayered rule in
+`globals.css` remaps `.bg-white` to `var(--surface)` in both themes, so no call
+site needs a `dark:` variant. Prefer writing `bg-white` for card surfaces to match
+existing code. Never texture a card, table, or chart surface — texture belongs to
+the page only.
 
-Current category colors:
-
-- Faith and scholarship: emerald, blue, indigo, teal, sky, violet, amber.
-- Critical or outside: rose, orange, stone.
-- Lifestyle and culture: pink, yellow, purple, lime, fuchsia, green.
-- Media and business: slate, zinc.
-- Unknown or missing: `--muted-soft` background with `--muted` text.
-
-Keep all Tailwind color class names literal in source because Tailwind v4 needs to see the complete classes.
+Any element that needs to "knock out" against a card (a ring around a chart dot,
+for instance) should use `ring-[color:var(--surface)]`, not `ring-white`.
 
 ## Typography
 
-Fonts are loaded in `src/app/layout.tsx` with `next/font/google`.
+Loaded in `src/app/layout.tsx` via `next/font/google` (build-time, self-hosted).
 
-| Font | CSS Variable | Role |
+| Font | Variable | Role |
 | --- | --- | --- |
 | Inter | `--font-inter` | Body text, UI, tables, controls |
-| Fraunces | `--font-fraunces` | Wordmark, hero headlines, section headings, large stat values |
+| Fraunces | `--font-fraunces` | Wordmark, headlines, section headings, large stat values |
+| Noto Sans Deseret | `--font-deseret` | Decorative title reveal only |
 
-Global body settings:
+Utility classes in `globals.css`:
 
-- Body font: Inter, with `ui-sans-serif`, `system-ui`, `sans-serif` fallback.
-- Serif utility class: `.serif`, using Fraunces with `ui-serif`, Georgia, serif fallback.
-- Body feature settings: `"ss01", "cv11"`.
-- Serif feature settings: `"ss01"`.
-- Font rendering: antialiased and optimized for legibility.
+- `.serif` — Fraunces with Georgia fallback.
+- `.serif-onum` — Fraunces with old-style figures, for dates and year spans set in
+  running text (annals, bylines, timeline metadata).
+- `.small-caps` — `font-variant-caps: all-small-caps` with slight tracking. **This
+  is the house label style.** Use it for eyebrows, tag text, table headers, and
+  secondary button microcopy, in place of the old `uppercase tracking-wider`.
+- `.dinkus` — a centered flourish flanked by hairline rules, for section breaks.
+  Put a `<BeehiveMark className="h-3.5 w-3.5" />` inside it.
+- `.drop-cap-lead` — applied to a container, drops a large honey Fraunces cap on
+  its first paragraph. For editorial leads and study abstracts; use sparingly.
 
-### Type Patterns
+### Type patterns
 
-- Hero/page H1: `.serif`, `text-4xl`, `font-semibold`, `tracking-tight`, scaling to `sm:text-5xl`; homepage scales to `md:text-6xl`.
-- Page eyebrow: `text-xs`, `font-medium`, uppercase, `tracking-[0.18em]`, accent color.
-- Section heading: `.serif`, `text-2xl`, `font-semibold`, `tracking-tight`, scaling to `sm:text-3xl`.
-- Card title: usually `.serif` for editorial content and Inter semibold for compact channel rows.
-- Body copy: `text-base`, `leading-relaxed`, muted or foreground depending on emphasis, often `sm:text-lg` on editorial pages.
-- Metadata labels: uppercase, `text-[10px]` or `text-[11px]`, `tracking-wider`, muted.
-- Numeric stats: use `tabular-nums`; large metrics use Fraunces.
+- Page H1: `.serif`, `text-4xl font-semibold tracking-tight`, `sm:text-5xl`.
+- Eyebrow above an H1: `.small-caps text-xs font-medium`, accent color.
+- Section heading: `.serif text-2xl font-semibold tracking-tight`.
+- Body copy: `text-base leading-relaxed`, `sm:text-lg` on editorial pages.
+- Metadata labels: `.small-caps`, `text-[11px]`, muted.
+- Numbers: always `tabular-nums` in columns; `.serif-onum` for dates in prose.
+
+### The Deseret title reveal
+
+`src/components/deseret-title.tsx` renders text that appears briefly in the
+Deseret alphabet, then "translates" itself into Latin character by character.
+
+```tsx
+<h1 className="serif text-4xl font-semibold tracking-tight">
+  <DeseretTitle text="Sources over time." />
+</h1>
+```
+
+Rules, all of them load-bearing:
+
+- **Decorative only.** Deseret is never the sole carrier of any information.
+  The server render and the first client render are plain Latin, so crawlers,
+  no-JS visitors, and reduced-motion users only ever see Latin. The mapping is an
+  approximate per-letter stand-in, not a real transliteration (Deseret is
+  phonemic) — never present it as authentic transliterated text.
+- `text` must be a plain string. Keep the surrounding `<h1>` and its classes.
+- Page titles use the default `replay="always"`. The nav wordmark uses
+  `replay="session"` with a `sessionKey`, so it doesn't re-animate on every
+  navigation.
+- Apply it to public page H1s only — not to H2s, admin pages, or `[slug]` titles.
 
 ## Layout
 
-Main content is centered with consistent horizontal padding:
+**Every public page fills the `mx-auto max-w-6xl px-5 sm:px-8` rail** — the same
+rail as the nav and footer. Do not build new pages on a narrow `max-w-2xl` /
+`max-w-3xl` column; that leaves dead whitespace down both sides.
 
-- Wide pages: `mx-auto max-w-6xl px-5 sm:px-8`.
-- Editorial/detail pages: `mx-auto max-w-3xl` or `max-w-4xl`.
-- Vertical rhythm:
-  - Page top padding: `py-14 sm:py-20` or `py-16 sm:py-24`.
-  - Major sections: `mt-16`, `mt-20`.
-  - Card lists: `mt-6`.
+Filling the rail does **not** mean stretching prose to 1100px. Keep body text at a
+readable measure (`max-w-2xl`) and use the remaining width deliberately:
 
-Responsive behavior:
+- A two-column split with a marginalia aside:
+  `lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14`, with the aside carrying
+  `lg:border-l lg:border-[color:var(--border)] lg:pl-10`. Put real content there —
+  sources, contact details, a sticky table of contents, related links.
+- A header band above a `border-b` hairline, with the H1 and lede side by side.
+- Full-bleed (`w-full`, no max-width) is correct for dense data tables — the
+  channels and studies pages already do this.
+- Asides stack below the main column on mobile: apply the grid, sticky, and border
+  treatments at the `lg:` breakpoint only.
 
-- Navigation collapses below `md`.
-- Channel filters become a right-side mobile drawer below `md`.
-- Tables are desktop-first at `md`; mobile uses cards.
-- Cards usually grid to `sm:grid-cols-2` and `lg:grid-cols-3` where appropriate.
+Vertical rhythm: page padding `py-14 sm:py-20` (or `py-16 sm:py-24` for editorial
+pages); major sections `mt-12`–`mt-16`.
 
 ## Components and UI Patterns
 
-### Navigation
+### Shape and depth
 
-Files:
+- **One radius: `rounded-[var(--radius)]`** (3px) on buttons, inputs, cards,
+  panels, tags, and tooltips. No `rounded-full`, no `rounded-2xl`, no `rounded-md`.
+  The only legitimate circles are avatar images, status dots, and chart points.
+- **Borders, not shadows.** Cards are `border border-[color:var(--border)]` with
+  no `shadow-*`. A modest shadow is acceptable only on genuinely floating layers
+  (modal, command palette, mobile drawer) where depth conveys stacking.
 
-- `src/components/site-nav.tsx`
-- `src/components/site-nav-client.tsx`
-- `src/components/auth-menu.tsx`
+### Tags
 
-Current pattern:
+Use the shared `Tag` component (`src/components/tag.tsx`) for every badge, pill,
+category label, and status chip. Square corners, small caps, hairline ring, faint
+tint. It takes `ink`, one of five families:
 
-- Sticky top header.
-- Warm translucent background: `bg-[color:var(--background)]/85`.
-- Bottom border and backdrop blur.
-- Text-only serif wordmark.
-- Desktop nav uses muted inactive links and foreground active links.
-- Mobile menu is a full-width dropdown below the header.
-- Auth menu uses a rounded avatar button and compact dropdown.
+| Ink | Meaning |
+| --- | --- |
+| `accent` | Institutional / faith-affiliated / primary |
+| `oxblood` | Critical, contested, outside, needs-verification, warning |
+| `honey` | Culture, lifestyle, media, thematic highlight |
+| `ink` | Neutral reference / orthodox baseline |
+| `muted` | Default, unknown, or de-emphasized |
 
-### Footer
+Channel types map to these in `src/lib/channel-types.ts` via `inkForType()`;
+timeline categories, hearsay grades, and correlation statuses map in
+`src/app/eternal-increase-timeline/constants.ts`. **Group new values into an
+existing family — never add a sixth color.** The families carry meaning; that's
+the whole point of having only five.
 
-File: `src/components/site-footer.tsx`
+Tailwind v4 needs literal class strings, so keep these maps as literals rather
+than building class names by concatenation.
 
-Current pattern:
+### Buttons and links
 
-- Top border.
-- Soft muted background: `bg-[color:var(--muted-soft)]/40`.
-- Short disclaimer copy.
-- Simple text links.
-
-### Buttons and Links
-
-Primary action:
-
-- Rounded full pill.
-- `h-10` or `h-11`.
-- Accent background, white text.
-- Medium text weight.
-- Hover usually `opacity-90`; login uses hover foreground.
-
-Secondary action:
-
-- Rounded full pill.
-- Border with `--border`.
-- White or background fill.
-- Foreground text.
-- Hover fills with `--muted-soft`.
-
-Text links:
-
-- Accent color.
-- Hover underline for list/detail links.
-- Inline editorial links use underline with `underline-offset-2`.
-
-Icon buttons:
-
-- Use `lucide-react`.
-- Rounded full button, square `h-10 w-10`.
-- Border and white/background fill.
-- Saved bookmark state fills icon with accent.
-
-### Cards
-
-Primary card style:
-
-- `rounded-2xl`
-- `border border-[color:var(--border)]`
-- `bg-white`
-- Padding between `p-4` and `p-6`
-- Hover border changes to accent for clickable cards.
-
-Use cards for repeated data items, detail metric tiles, forms, callouts, and auth panels. Avoid nested cards when possible.
+- Primary: `rounded-[var(--radius)]`, accent background, white text, `h-10`/`h-11`.
+- Secondary: same radius, `border border-[color:var(--border)]`, surface fill,
+  hover `bg-[color:var(--muted-soft)]`. Small-caps microcopy suits these well.
+- Text links: accent, underline on hover; inline editorial links underline with
+  `underline-offset-2`.
+- Icon buttons: `lucide-react`, square `h-10 w-10`, same radius, hairline border.
 
 ### Tables
 
-Current table pattern:
+Desktop tables sit in a bordered container with hairline row rules. Headers are
+`.small-caps`, muted, over a rule. Numeric cells are `tabular-nums` and
+right-aligned. Row hover uses `--muted-soft` at low opacity. Mobile gets purpose-
+built cards, never a squeezed table.
 
-- Desktop tables are enclosed in a rounded, bordered white container.
-- Header rows use `--muted-soft` fill, muted uppercase labels, and tracking.
-- Numeric cells use `tabular-nums` and right alignment.
-- Row hover uses `--muted-soft` at low opacity.
-- Mobile equivalents should become cards, not squeezed tables.
+### Charts
 
-### Forms and Inputs
+Every color traces to a token: `--accent` for the primary series, `--border` for
+hairline gridlines, `--muted` for axis labels, `--oxblood` for decline/negative
+signals, and `--honey` reserved for a *single* deliberate highlight. Never use a
+charting library's default palette.
 
-Current form pattern:
+### Forms
 
-- Search inputs and selects use rounded full pills.
-- Admin edit fields use rounded-md inputs where dense editing is needed.
-- Focus state changes border to accent and removes default outline.
-- Labels are small and functional; helper text is muted.
+Inputs and selects use the standard radius and a hairline border; focus moves the
+border to accent and removes the default outline. Labels are small and functional;
+helper text is muted.
 
-### Filters
+## Motion
 
-Channel filters use:
+The site is nearly static by design, and motion should stay incidental —
+`transition-colors` on hover, skeleton pulses, the Deseret reveal.
 
-- Desktop sidebar card with sticky positioning.
-- Mobile right drawer with dark overlay.
-- Accordion groups with `details` / `summary`.
-- Checkbox accent color set to `--accent`.
-- Active filter chips use muted-soft fill, with accent-soft hover.
-
-## Page Patterns
-
-### Homepage
-
-The homepage is an editorial/data dashboard hybrid:
-
-- Large hero statement with minimal copy.
-- Two primary links: channels and studies.
-- Four core metric tiles.
-- Featured channels as compact avatar cards.
-- Top channels as a ranked bordered list.
-- Featured studies as editorial cards.
-
-### Channels
-
-The channels page emphasizes utility:
-
-- Page eyebrow and serif title.
-- Short explanatory paragraph.
-- Filter/sidebar plus sortable searchable table.
-- Mobile cards for channel data.
-- Soft accent callout for creator suggestions.
-
-### Channel Detail
-
-The channel detail page uses:
-
-- Back link.
-- Channel type pill.
-- Avatar plus serif channel name.
-- Metadata definition list.
-- YouTube ID code pill.
-- Primary YouTube action, bookmark action, optional admin edit.
-- Metric tiles in a responsive grid.
-
-### Studies
-
-The studies list uses editorial cards:
-
-- Year and tag pills.
-- Serif study titles.
-- Author line and abstract preview.
-- Bookmark button positioned in the card corner.
-- Red warning treatment when flagged for methodological concerns.
-
-### Study Detail
-
-The study detail page uses:
-
-- Context and warning callout panels.
-- Serif title.
-- Accent section labels.
-- Rounded action buttons.
-- Embedded PDF/content container with rounded border.
-
-### About
-
-The About page is more editorial:
-
-- Narrower `max-w-3xl` measure.
-- Larger readable body text.
-- Serif subheads.
-- Muted source and disclaimer copy.
-- Independent/non-affiliation message is explicit.
+**All non-essential motion must be gated on reduced-motion preference.** The
+pattern is established in `globals.css`: keyframes live inside
+`@media (prefers-reduced-motion: no-preference)`, and any "hidden" starting state
+belongs *inside the keyframes*, never in an inline style — so when the block
+doesn't apply, content is simply visible rather than stuck invisible. Client
+components should also check
+`window.matchMedia("(prefers-reduced-motion: reduce)")` before animating.
 
 ## Voice and Copy
 
-Tone should be:
+Direct, transparent, and careful. Plainspoken rather than promotional. Comfortable
+with data terms without being jargon-heavy. Respectful toward faith and
+scholarship.
 
-- Direct, transparent, and careful.
-- Plainspoken rather than promotional.
-- Comfortable with data terms, but not jargon-heavy.
-- Respectful toward faith and scholarship.
+Prefer: "public data", "tracked", "refreshed regularly", "curated academic
+studies", "independent", "not affiliated".
 
-Prefer:
-
-- "public data"
-- "tracked"
-- "refreshed regularly"
-- "curated academic studies"
-- "independent"
-- "not affiliated"
-
-Avoid:
-
-- Overclaiming authority or official status.
-- Marketing hype.
-- Insider-only language without context.
-- Copy that implies endorsement by the Church.
+Avoid: overclaiming authority or official status, marketing hype, insider-only
+language without context, and any copy implying endorsement by the Church.
 
 ## Implementation Notes
 
-- Framework: Next.js `16.2.6`, React `19.2.4`.
-- Styling: Tailwind CSS v4 via `@import "tailwindcss"` and `@theme inline`.
-- Icons: `lucide-react`.
-- Design tokens currently live in `src/app/globals.css`.
-- Font setup lives in `src/app/layout.tsx`.
-- Channel pill colors live in `src/lib/channel-types.ts`.
+- Next.js `16.2.6`, React `19.2.4`, Tailwind CSS v4 (`@import "tailwindcss"` +
+  `@theme inline`), `lucide-react` for icons.
+- Tokens and utilities: `src/app/globals.css`. Fonts: `src/app/layout.tsx`.
+- Shared identity components: `src/components/tag.tsx`,
+  `src/components/beehive-mark.tsx`, `src/components/deseret-title.tsx`.
+- Admin pages under `src/app/admin/` are held to a looser standard than public
+  pages; bring them along opportunistically.
 
-When adding new UI:
+Checklist when adding UI:
 
-- Reuse CSS variables instead of hard-coded custom colors.
-- Use Inter for controls/body and Fraunces via `.serif` for brand/editorial emphasis.
-- Keep dense data surfaces scan-friendly.
-- Use rounded full pills for actions and filters.
-- Use `rounded-2xl` bordered white cards for repeated data content.
-- Keep responsive mobile equivalents intentionally designed rather than merely compressed.
-
+- [ ] Colors come from tokens; no raw hex, no default Tailwind ramps.
+- [ ] `rounded-[var(--radius)]` everywhere; no pills, no `rounded-2xl`.
+- [ ] Borders instead of shadows on cards and panels.
+- [ ] Badges use `<Tag>` with one of the five inks.
+- [ ] Page fills the `max-w-6xl` rail; prose still capped at a readable measure.
+- [ ] Labels and eyebrows use `.small-caps`; dates in prose use `.serif-onum`.
+- [ ] Any new animation is gated on `prefers-reduced-motion`.
+- [ ] Works in both light and dark mode.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BeehiveMark } from "@/components/beehive-mark";
+import { DeseretTitle } from "@/components/deseret-title";
 import { parseSources } from "./schema";
 import rawSources from "./sources.json";
 import { TimelineExplorer } from "./timeline-explorer";
@@ -50,7 +51,7 @@ export default function EternalIncreaseTimelinePage() {
         Source timeline · v2
       </p>
       <h1 className="serif mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-        Eternal regress &amp; eternal increase.
+        <DeseretTitle text="Eternal regress & eternal increase." />
       </h1>
       <p className="mt-5 max-w-3xl text-base leading-relaxed text-[color:var(--muted)]">
         A chronological gathering of primary and official sources on four

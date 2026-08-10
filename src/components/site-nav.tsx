@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { BeehiveMark } from "@/components/beehive-mark";
+import { DeseretTitle } from "@/components/deseret-title";
 import {
   AdminMessageNotifications,
   type AdminMessagePreview,
@@ -54,9 +55,12 @@ export async function SiteNav() {
             title="Latter-day Stats"
             className="h-6 w-6 shrink-0 text-[color:var(--honey)]"
           />
-          <span className="serif text-xl font-semibold tracking-tight sm:text-2xl">
-            Latter-day Stats
-          </span>
+          <DeseretTitle
+            text="Latter-day Stats"
+            replay="session"
+            sessionKey="wordmark"
+            className="serif text-xl font-semibold tracking-tight sm:text-2xl"
+          />
         </Link>
 
         <div className="flex items-center gap-3">

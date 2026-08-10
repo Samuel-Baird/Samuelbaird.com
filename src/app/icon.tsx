@@ -8,7 +8,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-const PAPER = "#fbfaf7";
+const PAPER = "#f4eeda";
 const HONEY = "#8a5a06";
 
 export default function Icon() {
