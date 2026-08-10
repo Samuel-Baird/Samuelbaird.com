@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { BeehiveMark } from "@/components/beehive-mark";
+import { BeehiveStatsMark } from "@/components/beehive-stats-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import {
   AdminMessageNotifications,
@@ -51,9 +51,9 @@ export async function SiteNav() {
           href="/"
           className="flex items-center gap-2.5 text-[color:var(--foreground)]"
         >
-          <BeehiveMark
+          <BeehiveStatsMark
             title="Latter-day Stats"
-            className="h-6 w-6 shrink-0 text-[color:var(--honey)]"
+            className="h-6 w-6 shrink-0"
           />
           <DeseretTitle
             text="Latter-day Stats"
