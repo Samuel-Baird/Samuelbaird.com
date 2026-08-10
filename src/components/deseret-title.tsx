@@ -142,36 +142,71 @@ export function DeseretTitle({
     TOTAL_STAGGER_BUDGET_MS / Math.max(text.length, 1),
   );
 
+  // Split into words and the whitespace between them, keeping both. The word
+  // is the smallest unit that goes in the layout: splitting Latin per
+  // character would let the line break mid-word ("creat" / "or") and would
+  // drop kerning, so the title reflowed the moment the animation collapsed
+  // back to a plain text node. Words stay whole text nodes, and only the
+  // Deseret overlay — which is absolutely positioned and therefore weightless
+  // — is split per character for the stagger.
+  const parts = text.split(/(\s+)/).filter((part) => part !== "");
+  // Character offset each part starts at, so a part's glyphs keep their place
+  // in the single stagger running across the whole title.
+  const starts: number[] = [];
+  for (let i = 0, seen = 0; i < parts.length; i += 1) {
+    starts.push(seen);
+    seen += parts[i].length;
+  }
+
   return (
     <span className={className} aria-label={text}>
-      {Array.from(text).map((char, index) => {
-        const delay = `${Math.round(index * stagger)}ms`;
+      {parts.map((part, partIndex) => {
+        const start = starts[partIndex];
+
+        if (/^\s+$/.test(part)) {
+          // A real space between inline-blocks, so lines still break here.
+          return (
+            <span key={partIndex} aria-hidden="true" className="whitespace-pre">
+              {part}
+            </span>
+          );
+        }
+
+        const chars = Array.from(part);
+        // The Latin word resolves once its last glyph has finished turning
+        // over, so the title reads as translating word by word.
+        const wordDelay = `${Math.round((start + chars.length - 1) * stagger)}ms`;
+
         return (
           <span
-            key={`${char}-${index}`}
+            key={partIndex}
             aria-hidden="true"
-            className="relative inline-block whitespace-pre"
+            className="relative inline-block"
           >
-            {/* Latin holds the layout; the Deseret glyph overlays it, so
-                differing glyph widths never shift surrounding content. */}
             <span
               style={{
-                animation: `deseret-in ${DURATION_MS}ms ease-out ${delay} both`,
+                animation: `deseret-in ${DURATION_MS}ms ease-out ${wordDelay} both`,
               }}
             >
-              {char}
+              {part}
             </span>
-            {DESERET_LOWER[char.toLowerCase()] ? (
-              <span
-                className="pointer-events-none absolute inset-0 flex items-center justify-center"
-                style={{
-                  fontFamily: "var(--font-deseret), sans-serif",
-                  animation: `deseret-out ${DURATION_MS}ms ease-in ${delay} both`,
-                }}
-              >
-                {toDeseret(char)}
-              </span>
-            ) : null}
+            <span
+              className="pointer-events-none absolute inset-0 flex items-center justify-center"
+              style={{ fontFamily: "var(--font-deseret), sans-serif" }}
+            >
+              {chars.map((char, charIndex) => (
+                <span
+                  key={charIndex}
+                  style={{
+                    animation: `deseret-out ${DURATION_MS}ms ease-in ${Math.round(
+                      (start + charIndex) * stagger,
+                    )}ms both`,
+                  }}
+                >
+                  {toDeseret(char)}
+                </span>
+              ))}
+            </span>
           </span>
         );
       })}
