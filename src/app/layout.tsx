@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { AuthPromptProvider } from "@/components/auth-prompt";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,6 +33,7 @@ const notoDeseret = Noto_Sans_Deseret({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Latter-day Stats",
     template: "%s · Latter-day Stats",
