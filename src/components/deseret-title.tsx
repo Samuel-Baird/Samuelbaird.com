@@ -114,10 +114,12 @@ export function DeseretTitle({
     ready.then((available) => {
       if (cancelled || !available) return;
       setAnimating(true);
-      try {
-        window.sessionStorage.setItem(storageKey, "1");
-      } catch {
-        // Non-fatal: the animation just replays next navigation.
+      if (replay === "session") {
+        try {
+          window.sessionStorage.setItem(storageKey, "1");
+        } catch {
+          // Non-fatal: the animation just replays next navigation.
+        }
       }
       done = setTimeout(
         () => {

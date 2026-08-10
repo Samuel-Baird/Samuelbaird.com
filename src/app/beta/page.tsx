@@ -28,7 +28,15 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const PALETTE = ["#1f4f7a", "#b45309", "#047857", "#7c3aed"];
+// Series colours are the ink families, so the chart reads as part of the site
+// and follows both themes. var() resolves in the SVG paint attributes that
+// comparison-chart sets, as well as in the legend swatch backgrounds.
+const PALETTE = [
+  "var(--accent)",
+  "var(--honey)",
+  "var(--oxblood)",
+  "var(--foreground)",
+];
 const MAX_COMPARE = 4;
 
 type SearchParams = { slugs?: string };
@@ -79,7 +87,7 @@ export default async function PremiumPage({
 
   if (status.premium) {
     return (
-      <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
         <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
           Beta
         </p>
@@ -98,7 +106,7 @@ export default async function PremiumPage({
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
+    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
         Beta
       </p>
@@ -132,7 +140,7 @@ function BenefitsList({ heading }: { heading?: string } = {}) {
           {heading}
         </h2>
       ) : null}
-      <div className={`${heading ? "mt-6" : ""} grid gap-4 sm:grid-cols-2`}>
+      <div className={`${heading ? "mt-6" : ""} grid gap-4 sm:grid-cols-2 lg:grid-cols-3`}>
         {BENEFITS.map((b) => (
           <div
             key={b.title}
