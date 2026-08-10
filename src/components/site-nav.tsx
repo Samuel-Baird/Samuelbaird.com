@@ -14,6 +14,7 @@ import { createSupabaseServiceClient } from "@/lib/supabase/server";
 const ALL_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
+  { href: "/timelines", label: "Timelines" },
   { href: "/beta", label: "Beta", premium: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
