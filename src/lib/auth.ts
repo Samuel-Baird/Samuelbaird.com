@@ -1,5 +1,6 @@
 import "server-only";
 
+import { cache } from "react";
 import { notFound, redirect } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -19,7 +20,9 @@ export type AuthContext = {
   profile: Profile | null;
 };
 
-export async function getCurrentUser(): Promise<AuthContext | null> {
+// cache() dedupes the auth + profile round trips within a single render pass
+// (layout navbar, page, and permission checks all call this).
+export const getCurrentUser = cache(async (): Promise<AuthContext | null> => {
   const supabase = await createSupabaseServerClient();
   let user: User | null = null;
   try {
@@ -51,7 +54,7 @@ export async function getCurrentUser(): Promise<AuthContext | null> {
     user,
     profile: (profile as Profile | null) ?? null,
   };
-}
+});
 
 export async function requireUser(): Promise<AuthContext> {
   const auth = await getCurrentUser();

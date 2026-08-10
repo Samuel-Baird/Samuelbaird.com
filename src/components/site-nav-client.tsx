@@ -10,6 +10,7 @@ export type SiteNavLink = {
   href: string;
   label: string;
   premium?: boolean;
+  betaOnly?: boolean;
 };
 
 type SiteNavClientProps = {

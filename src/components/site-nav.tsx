@@ -11,7 +11,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
-const links: SiteNavLink[] = [
+const ALL_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
   { href: "/beta", label: "Beta", premium: true },
@@ -21,6 +21,7 @@ const links: SiteNavLink[] = [
 
 export async function SiteNav() {
   const auth = await getCurrentUser();
+  const links = ALL_LINKS;
   const user: AuthMenuUser | null = auth
     ? {
         id: auth.user.id,

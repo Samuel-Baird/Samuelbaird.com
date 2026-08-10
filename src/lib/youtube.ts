@@ -56,65 +56,105 @@ export function parseHandleInput(
   return { kind: "handle", handleSlug, handle: `@${handleSlug}` };
 }
 
-export async function fetchYouTubeSnapshots(
-  channelIds: string[],
+async function fetchSnapshotBatch(
+  ids: string[],
+  key: string,
 ): Promise<YtChannelSnapshot[]> {
+  const url = new URL("https://www.googleapis.com/youtube/v3/channels");
+  url.searchParams.set("part", "snippet,statistics");
+  url.searchParams.set("id", ids.join(","));
+  url.searchParams.set("key", key);
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`YouTube API request failed: ${response.status}`);
+  }
+
+  const json = (await response.json()) as {
+    items?: Array<{
+      id: string;
+      snippet?: {
+        title?: string;
+        description?: string;
+        country?: string;
+        defaultLanguage?: string;
+        publishedAt?: string;
+        thumbnails?: { high?: { url?: string }; default?: { url?: string } };
+      };
+      statistics?: {
+        subscriberCount?: string;
+        viewCount?: string;
+        videoCount?: string;
+      };
+    }>;
+  };
+
+  return (json.items ?? []).map((item) => ({
+    id: item.id,
+    name: item.snippet?.title ?? item.id,
+    description: item.snippet?.description ?? null,
+    country: item.snippet?.country ?? null,
+    defaultLanguage: item.snippet?.defaultLanguage ?? null,
+    publishedAt: item.snippet?.publishedAt ?? null,
+    thumbnailUrl:
+      item.snippet?.thumbnails?.high?.url ??
+      item.snippet?.thumbnails?.default?.url ??
+      null,
+    subscribers: Number(item.statistics?.subscriberCount ?? 0),
+    totalViews: Number(item.statistics?.viewCount ?? 0),
+    videoCount: Number(item.statistics?.videoCount ?? 0),
+  }));
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// Each 50-id batch is retried independently; a batch that still fails after
+// retries reports its ids in failedIds instead of sinking the whole run.
+export async function fetchYouTubeSnapshotsWithRetry(
+  channelIds: string[],
+): Promise<{ snapshots: YtChannelSnapshot[]; failedIds: string[] }> {
   const key = process.env.YOUTUBE_API_KEY;
   if (!key) throw new Error("Missing YOUTUBE_API_KEY");
 
   const snapshots: YtChannelSnapshot[] = [];
+  const failedIds: string[] = [];
+  const backoffsMs = [1_000, 4_000];
+
   for (let i = 0; i < channelIds.length; i += 50) {
     const ids = channelIds.slice(i, i + 50);
     if (ids.length === 0) continue;
 
-    const url = new URL("https://www.googleapis.com/youtube/v3/channels");
-    url.searchParams.set("part", "snippet,statistics");
-    url.searchParams.set("id", ids.join(","));
-    url.searchParams.set("key", key);
-
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`YouTube API request failed: ${response.status}`);
-    }
-
-    const json = (await response.json()) as {
-      items?: Array<{
-        id: string;
-        snippet?: {
-          title?: string;
-          description?: string;
-          country?: string;
-          defaultLanguage?: string;
-          publishedAt?: string;
-          thumbnails?: { high?: { url?: string }; default?: { url?: string } };
-        };
-        statistics?: {
-          subscriberCount?: string;
-          viewCount?: string;
-          videoCount?: string;
-        };
-      }>;
-    };
-
-    for (const item of json.items ?? []) {
-      snapshots.push({
-        id: item.id,
-        name: item.snippet?.title ?? item.id,
-        description: item.snippet?.description ?? null,
-        country: item.snippet?.country ?? null,
-        defaultLanguage: item.snippet?.defaultLanguage ?? null,
-        publishedAt: item.snippet?.publishedAt ?? null,
-        thumbnailUrl:
-          item.snippet?.thumbnails?.high?.url ??
-          item.snippet?.thumbnails?.default?.url ??
-          null,
-        subscribers: Number(item.statistics?.subscriberCount ?? 0),
-        totalViews: Number(item.statistics?.viewCount ?? 0),
-        videoCount: Number(item.statistics?.videoCount ?? 0),
-      });
+    for (let attempt = 0; ; attempt++) {
+      try {
+        snapshots.push(...(await fetchSnapshotBatch(ids, key)));
+        break;
+      } catch (err) {
+        if (attempt >= backoffsMs.length) {
+          failedIds.push(...ids);
+          console.error(
+            `YouTube batch failed after ${attempt + 1} attempts:`,
+            err,
+          );
+          break;
+        }
+        await sleep(backoffsMs[attempt]);
+      }
     }
   }
 
+  return { snapshots, failedIds };
+}
+
+export async function fetchYouTubeSnapshots(
+  channelIds: string[],
+): Promise<YtChannelSnapshot[]> {
+  const { snapshots, failedIds } =
+    await fetchYouTubeSnapshotsWithRetry(channelIds);
+  if (failedIds.length > 0) {
+    throw new Error(
+      `YouTube API request failed for ${failedIds.length} channel(s).`,
+    );
+  }
   return snapshots;
 }
 

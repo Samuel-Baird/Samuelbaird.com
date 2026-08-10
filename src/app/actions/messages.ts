@@ -6,6 +6,7 @@ import {
   createSupabaseServerClient,
   createSupabaseServiceClient,
 } from "@/lib/supabase/server";
+import { uuidSchema } from "@/lib/validation";
 
 const VALID_CATEGORIES = [
   "general",
@@ -114,6 +115,9 @@ function buildRedirect(
 }
 
 export async function markMessageResolved(id: string, resolved: boolean) {
+  if (!uuidSchema.safeParse(id).success) {
+    throw new Error("Invalid message id.");
+  }
   const supabase = await createSupabaseServerClient();
   const { error } = await supabase
     .from("messages")

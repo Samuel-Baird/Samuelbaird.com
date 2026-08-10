@@ -1,8 +1,9 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { toggleTargetSchema } from "@/lib/validation";
 
 type ToggleUpvoteInput = {
   targetType: "channel" | "study";
@@ -11,6 +12,8 @@ type ToggleUpvoteInput = {
 };
 
 export async function toggleUpvote(input: ToggleUpvoteInput) {
+  const parsed = toggleTargetSchema.safeParse(input);
+  if (!parsed.success) throw new Error("Invalid upvote target.");
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },
@@ -48,6 +51,7 @@ export async function toggleUpvote(input: ToggleUpvoteInput) {
     if (error) throw error;
   }
 
+  revalidateTag("upvotes", { expire: 0 });
   if (input.currentPath) revalidatePath(input.currentPath);
   return { upvoted };
 }
