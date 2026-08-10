@@ -2,7 +2,9 @@ import type {
   CategoryId,
   CorrelationStatus,
   HearsayGrade,
+  Referent,
   SourceEntry,
+  SourceType,
 } from "./schema";
 
 // Tailwind v4 needs complete literal class strings — never build these by
@@ -16,61 +18,84 @@ export const CATEGORY_META: Record<
     label: "Backward: explicit",
     pill: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
     definition:
-      "Explicitly states God the Father had a Father / a God above Him.",
+      "States that the Father had a Father, or a God above Him.",
   },
-  "BACKWARD-MORTALITY": {
-    label: "Backward: mortality",
+  "FATHER-MORTAL-EXPERIENCE": {
+    label: "Father: mortal experience",
     pill: "bg-sky-50 text-sky-900 ring-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:ring-sky-800/50",
     definition:
-      "God underwent mortality (“was once as we are”) — implies but does not state a Father above Him.",
+      "God lived a mortal probation — “as man now is, God once was.” Check the referent chip: where it is not “Father,” the source makes the claim without establishing it of the Father.",
+  },
+  "FATHER-BECAME-GOD": {
+    label: "Father: became God",
+    pill: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
+    definition:
+      "God attained divinity at some point rather than always possessing it — exaltation, progression to perfection, “attained the state.” Implies but is distinct from having had a mortal experience.",
+  },
+  "FATHER-ALWAYS-GOD": {
+    label: "Father: always God",
+    pill: "bg-stone-100 text-stone-800 ring-stone-300 dark:bg-stone-800/50 dark:text-stone-300 dark:ring-stone-600/50",
+    definition:
+      "The counter-position: God has always been God, with no prior state of non-divinity. Tagged on denials as well as affirmations elsewhere in the axis; each quote's note states the direction.",
   },
   "BACKWARD-AGNOSTIC": {
     label: "Backward: agnostic",
     pill: "bg-indigo-50 text-indigo-900 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-800/50",
     definition:
-      "Acknowledges the question but declines or discourages inquiry.",
+      "Acknowledges the regress question but declines or discourages it.",
   },
   "FORWARD-EXPLICIT": {
     label: "Forward: explicit",
     pill: "bg-emerald-50 text-emerald-900 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-800/50",
     definition:
-      "Exalted humans will procreate spirit children / people worlds.",
+      "Exalted humans procreate spirit children or people worlds.",
   },
   "FORWARD-EUPHEMISM": {
     label: "Forward: euphemism",
     pill: "bg-teal-50 text-teal-900 ring-teal-200 dark:bg-teal-950/40 dark:text-teal-300 dark:ring-teal-800/50",
     definition:
-      "“Eternal increase,” “continuation of the seeds,” “eternal families” without stating the mechanism.",
+      "“Eternal increase,” “continuation of the seeds,” “eternal families” — no mechanism stated.",
   },
   "SPIRIT-BIRTH-VIVIPAROUS": {
     label: "Spirit birth: viviparous",
     pill: "bg-purple-50 text-purple-900 ring-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:ring-purple-800/50",
     definition:
-      "Spirit birth described in physiological or literal terms (Heavenly Parents beget spirits).",
-  },
-  "SPIRIT-BIRTH-TRIPARTITE": {
-    label: "Spirit birth: tripartite",
-    pill: "bg-violet-50 text-violet-900 ring-violet-200 dark:bg-violet-950/40 dark:text-violet-300 dark:ring-violet-800/50",
-    definition:
-      "Intelligence → spirit → body framework (organization of pre-existing intelligence).",
+      "Spirits literally begotten and born of Heavenly Parents.",
   },
   "SPIRIT-BIRTH-ADOPTION": {
     label: "Spirit birth: adoption/organization",
     pill: "bg-fuchsia-50 text-fuchsia-900 ring-fuchsia-200 dark:bg-fuchsia-950/40 dark:text-fuchsia-300 dark:ring-fuchsia-800/50",
     definition:
-      "Spirits organized rather than begotten (King Follett reading; Ostler's view).",
+      "Spirits organized from eternal intelligence rather than begotten.",
+  },
+  "TRIPARTITE-FRAMEWORK": {
+    label: "Tripartite framework",
+    pill: "bg-violet-50 text-violet-900 ring-violet-200 dark:bg-violet-950/40 dark:text-violet-300 dark:ring-violet-800/50",
+    definition:
+      "Intelligence → spirit → body as an explicit three-stage model. Reserved for sources that actually articulate three stages — not retrojected onto Abraham 3 or the King Follett Discourse, which state two-stage or unstaged eternalism.",
+  },
+  "MANY-WORLDS": {
+    label: "Many worlds",
+    pill: "bg-cyan-50 text-cyan-900 ring-cyan-200 dark:bg-cyan-950/40 dark:text-cyan-300 dark:ring-cyan-800/50",
+    definition:
+      "Plural worlds or creations under one God; no succession of Gods implied.",
   },
   "HEAVENLY-MOTHER": {
     label: "Heavenly Mother",
     pill: "bg-amber-50 text-amber-900 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-800/50",
-    definition:
-      "Mother in Heaven as necessary participant in spirit generation.",
+    definition: "A Mother in Heaven is affirmed.",
   },
   "INFINITE-CHAIN": {
     label: "Infinite chain",
     pill: "bg-slate-100 text-slate-800 ring-slate-200 dark:bg-slate-800/50 dark:text-slate-300 dark:ring-slate-700/60",
     definition:
-      "Explicit chain language: worlds without end, endless succession of Gods.",
+      "Explicit succession-of-Gods language. Requires a succession of Gods, not merely a plurality of worlds.",
+  },
+  "DIVINE-PROGRESSION": {
+    label: "Divine progression",
+    pill: "bg-rose-50 text-rose-900 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-800/50",
+    definition:
+      "Addresses whether God Himself still progresses in knowledge or power. Affirmations (Young, Woodruff) and denials (Joseph Fielding Smith, McConkie: only in dominions) both carry the tag; each quote's note states the direction.",
   },
   "RETREAT-REFRAME": {
     label: "Retreat / reframe",
@@ -101,21 +126,21 @@ export const HEARSAY_META: Record<
     badge:
       "bg-amber-100 text-amber-800 ring-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:ring-amber-800/50",
     description:
-      "Contemporaneous secondhand report (journal entry of what someone heard).",
-    example: "Wilford Woodruff journal reporting a Joseph Smith sermon",
+      "Contemporaneous secondhand report, including shorthand reports edited for publication.",
+    example: "Journal of Discourses via George Watt's shorthand",
   },
   D: {
     badge:
       "bg-orange-100 text-orange-800 ring-orange-200 dark:bg-orange-950/50 dark:text-orange-300 dark:ring-orange-800/50",
     description: "Later recollection, years after the fact.",
-    example: "1890s reminiscences of Nauvoo teachings",
+    example: "Snow's c. 1901 account of the couplet's 1840 origin",
   },
   E: {
     badge:
       "bg-rose-100 text-rose-800 ring-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:ring-rose-800/50",
     description:
-      "Attributed via tertiary compilation without traceable original.",
-    example: "Some Journal of Discourses attributions; folklore",
+      "Attributed via tertiary compilation with no traceable original.",
+    example: "Genuinely orphaned attributions; folklore",
   },
 };
 
@@ -131,13 +156,57 @@ export const STATUS_META: Record<
     label: "Historical-official",
     dot: "bg-[color:var(--muted)]",
   },
-  discontinued: {
-    label: "Discontinued",
-    dot: "bg-amber-500",
+  discontinued: { label: "Discontinued", dot: "bg-amber-500" },
+  "never-official": { label: "Never official", dot: "bg-rose-500" },
+};
+
+export const REFERENT_META: Record<
+  Referent,
+  { label: string; short: string; chip: string; definition: string }
+> = {
+  father: {
+    label: "Referent: the Father",
+    short: "Father",
+    chip: "bg-blue-50 text-blue-900 ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-800/50",
+    definition:
+      "The “God” of the key claim is demonstrably God the Father. These are the doctrinally distinctive claims.",
   },
-  "never-official": {
-    label: "Never official",
-    dot: "bg-rose-500",
+  son: {
+    label: "Referent: the Son",
+    short: "Son",
+    chip: "bg-emerald-50 text-emerald-900 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-800/50",
+    definition:
+      "The claim's own warrant points at Christ — a being who was mortal, is now God, and has a Father above him. Requires no theogony for the Father.",
+  },
+  ambiguous: {
+    label: "Referent: ambiguous",
+    short: "Ambiguous",
+    chip: "bg-amber-50 text-amber-900 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-800/50",
+    definition:
+      "The referent cannot be settled from the source itself. Later use often exploits exactly this ambiguity.",
+  },
+  "n/a": {
+    label: "Referent: not applicable",
+    short: "n/a",
+    chip: "bg-[color:var(--muted-soft)] text-[color:var(--muted)] ring-[color:var(--border)]",
+    definition: "The source makes no backward-direction claim about God.",
+  },
+};
+
+export const SOURCE_TYPE_META: Record<
+  SourceType,
+  { label: string; chip: string; definition: string }
+> = {
+  original: {
+    label: "Original",
+    chip: "bg-[color:var(--accent-soft)] text-[color:var(--accent)] ring-[color:var(--border)]",
+    definition: "First attestation of the teaching.",
+  },
+  citation: {
+    label: "Citation",
+    chip: "bg-[color:var(--muted-soft)] text-[color:var(--muted)] ring-[color:var(--border)]",
+    definition:
+      "A later source quoting or teaching from an original. Collapsing citations folds these into the originals they cite.",
   },
 };
 
@@ -159,5 +228,18 @@ export const ERAS: Era[] = [
 
 export function eraFor(entry: SourceEntry): Era {
   const year = Number(entry.date.slice(0, 4));
-  return ERAS.find((e) => year >= e.startYear && year <= e.endYear) ?? ERAS[ERAS.length - 1];
+  return (
+    ERAS.find((e) => year >= e.startYear && year <= e.endYear) ??
+    ERAS[ERAS.length - 1]
+  );
+}
+
+/** Hearsay grade for a specific quote, honouring any per-quote override. */
+export function hearsayForQuote(entry: SourceEntry, quoteId: string): HearsayGrade {
+  return entry.hearsayByQuote?.[quoteId] ?? entry.hearsay;
+}
+
+/** Every category asserted anywhere in an entry's quotes. */
+export function categoriesOf(entry: SourceEntry): CategoryId[] {
+  return [...new Set(entry.quotes.flatMap((q) => q.categories))];
 }

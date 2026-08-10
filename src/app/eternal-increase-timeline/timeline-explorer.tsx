@@ -5,6 +5,7 @@ import {
   Copy,
   Download,
   ExternalLink,
+  Quote as QuoteIcon,
   Search,
   TriangleAlert,
 } from "lucide-react";
@@ -13,19 +14,34 @@ import {
   CATEGORY_META,
   ERAS,
   HEARSAY_META,
+  REFERENT_META,
+  SOURCE_TYPE_META,
   STATUS_META,
+  categoriesOf,
   eraFor,
+  hearsayForQuote,
 } from "./constants";
-import { buildMarkdown, downloadMarkdown, type FilterState } from "./export-markdown";
+import {
+  buildMarkdown,
+  downloadMarkdown,
+  type FilterState,
+} from "./export-markdown";
+import { ScalesLegend } from "./legend";
 import {
   CATEGORY_IDS,
   CORRELATION_STATUSES,
   HEARSAY_GRADES,
+  REFERENTS,
+  SOURCE_TYPES,
   type CategoryId,
   type CorrelationStatus,
   type HearsayGrade,
+  type Quote,
+  type Referent,
   type SourceEntry,
+  type SourceType,
 } from "./schema";
+import { TimelineGraph } from "./timeline-graph";
 
 function norm(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
@@ -42,58 +58,108 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
   const [cats, setCats] = useState<Set<CategoryId>>(new Set());
   const [grades, setGrades] = useState<Set<HearsayGrade>>(new Set());
   const [statuses, setStatuses] = useState<Set<CorrelationStatus>>(new Set());
+  const [referents, setReferents] = useState<Set<Referent>>(new Set());
+  const [sourceTypes, setSourceTypes] = useState<Set<SourceType>>(new Set());
   const [query, setQuery] = useState("");
+  const [collapseCitations, setCollapseCitations] = useState(false);
   const [copied, setCopied] = useState(false);
-  const barRef = useRef<HTMLDivElement>(null);
+  const catsPanelRef = useRef<HTMLDetailsElement>(null);
 
-  // The site header is sticky and reflows with viewport width (73px wide,
-  // 129px when the wordmark wraps beside the nav links), so park the filter
-  // bar directly beneath whatever height it currently is.
+  // Server-renders closed (compact on phones); pops open after mount where
+  // the sidebar layout has room. `open` is uncontrolled, so no hydration
+  // mismatch.
   useEffect(() => {
-    const header = document.querySelector("body > header");
-    const bar = barRef.current;
-    if (!header || !bar) return;
-    const sync = () => {
-      bar.style.top = `${header.getBoundingClientRect().height}px`;
-    };
-    sync();
-    const observer = new ResizeObserver(sync);
-    observer.observe(header);
-    return () => observer.disconnect();
+    if (window.matchMedia("(min-width: 1024px)").matches && catsPanelRef.current) {
+      catsPanelRef.current.open = true;
+    }
   }, []);
 
+  const byId = useMemo(
+    () => new Map(entries.map((e) => [e.id, e])),
+    [entries],
+  );
+
+  /** Citations that survived filtering, grouped under the original they cite. */
   const filtered = useMemo(() => {
     const tokens = norm(query).split(/\s+/).filter(Boolean);
     return entries.filter((entry) => {
-      if (cats.size > 0 && !entry.categories.some((c) => cats.has(c))) {
-        return false;
+      const entryCats = categoriesOf(entry);
+      if (cats.size > 0 && !entryCats.some((c) => cats.has(c))) return false;
+      if (grades.size > 0) {
+        const allGrades = [
+          entry.hearsay,
+          ...entry.quotes.map((q) => hearsayForQuote(entry, q.quoteId)),
+        ];
+        if (!allGrades.some((g) => grades.has(g))) return false;
       }
-      if (grades.size > 0 && !grades.has(entry.hearsay)) return false;
-      if (statuses.size > 0 && !statuses.has(entry.correlationStatus)) {
-        return false;
+      if (statuses.size > 0 && !statuses.has(entry.correlationStatus)) return false;
+      if (referents.size > 0) {
+        const allReferents = [
+          entry.referent,
+          ...entry.quotes.flatMap((q) => (q.referent ? [q.referent] : [])),
+        ];
+        if (!allReferents.some((r) => referents.has(r))) return false;
       }
+      if (sourceTypes.size > 0 && !sourceTypes.has(entry.sourceType)) return false;
       if (tokens.length > 0) {
         const haystack = norm(
-          `${entry.title} ${entry.speaker} ${entry.transcription}`,
+          [
+            entry.title,
+            entry.speaker,
+            entry.notes,
+            ...entry.quotes.map((q) => `${q.excerpt} ${q.note ?? ""}`),
+          ].join(" "),
         );
         if (!tokens.every((t) => haystack.includes(t))) return false;
       }
       return true;
     });
-  }, [entries, cats, grades, statuses, query]);
+  }, [entries, cats, grades, statuses, referents, sourceTypes, query]);
+
+  // Collapse mode hides citations from the timeline and lists them under the
+  // original each one cites, so "what is actually attested" reads directly.
+  const visible = useMemo(
+    () => (collapseCitations ? filtered.filter((e) => e.sourceType === "original") : filtered),
+    [filtered, collapseCitations],
+  );
+
+  const citationsByOriginal = useMemo(() => {
+    const map = new Map<string, SourceEntry[]>();
+    if (!collapseCitations) return map;
+    for (const entry of filtered) {
+      if (entry.sourceType !== "citation") continue;
+      for (const target of entry.citesId ?? []) {
+        map.set(target, [...(map.get(target) ?? []), entry]);
+      }
+    }
+    return map;
+  }, [filtered, collapseCitations]);
 
   const anyFilterActive =
-    cats.size > 0 || grades.size > 0 || statuses.size > 0 || query.trim() !== "";
+    cats.size > 0 ||
+    grades.size > 0 ||
+    statuses.size > 0 ||
+    referents.size > 0 ||
+    sourceTypes.size > 0 ||
+    query.trim() !== "";
 
-  const filters: FilterState = { categories: cats, grades, statuses, query };
+  const filters: FilterState = {
+    categories: cats,
+    grades,
+    statuses,
+    referents,
+    sourceTypes,
+    query,
+    collapseCitations,
+  };
 
   function handleExport() {
-    downloadMarkdown(buildMarkdown(filtered, entries.length, filters));
+    downloadMarkdown(buildMarkdown(visible, entries.length, filters, byId));
   }
 
   function handleCopy() {
     navigator.clipboard
-      .writeText(buildMarkdown(filtered, entries.length, filters))
+      .writeText(buildMarkdown(visible, entries.length, filters, byId))
       .then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
@@ -104,16 +170,16 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     setCats(new Set());
     setGrades(new Set());
     setStatuses(new Set());
+    setReferents(new Set());
+    setSourceTypes(new Set());
     setQuery("");
   }
 
   return (
-    <div className="mt-10">
-      <div
-        ref={barRef}
-        style={{ top: 73 }}
-        className="sticky z-30 -mx-5 border-b border-[color:var(--border)] bg-[color:var(--background)]/90 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8 print:hidden"
-      >
+    <div className="mt-10 lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-10">
+      {/* top-24 clears the single-line site header at lg widths; below lg the
+          panel sits in normal flow so no header-height sync is needed. */}
+      <aside className="print:hidden lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pb-4">
         <div className="relative">
           <Search
             aria-hidden="true"
@@ -122,14 +188,65 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           <input
             type="search"
             inputMode="search"
-            placeholder="Search title, speaker, transcription…"
+            placeholder="Search sources…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="h-10 w-full rounded-full border border-[color:var(--border)] bg-white pl-11 pr-5 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
           />
         </div>
-        <div className="mt-2.5 flex flex-wrap items-center gap-2">
-          <FilterDropdown label="Categories" count={cats.size}>
+
+        <div className="mt-2 flex items-center gap-2 py-1">
+          <span className="text-xs tabular-nums text-[color:var(--muted)]">
+            {visible.length} of {entries.length} sources
+          </span>
+          {anyFilterActive && (
+            <button
+              type="button"
+              onClick={clearAll}
+              className="text-xs font-medium text-[color:var(--accent)] hover:underline"
+            >
+              Clear
+            </button>
+          )}
+          <span className="ml-auto flex gap-1.5">
+            <button
+              type="button"
+              onClick={handleExport}
+              title="Export filtered sources as Markdown"
+              className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+            >
+              <Download aria-hidden="true" size={13} />
+              .md
+            </button>
+            <button
+              type="button"
+              onClick={handleCopy}
+              title="Copy filtered sources as Markdown"
+              className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+            >
+              <Copy aria-hidden="true" size={13} />
+              {copied ? "Copied!" : "Copy"}
+            </button>
+          </span>
+        </div>
+
+        <label className="flex cursor-pointer items-center gap-2 py-1.5 text-xs font-medium">
+          <input
+            type="checkbox"
+            checked={collapseCitations}
+            onChange={() => setCollapseCitations(!collapseCitations)}
+            className="h-3.5 w-3.5 rounded border-[color:var(--border)] accent-[color:var(--accent)]"
+          />
+          Collapse citations
+        </label>
+        {collapseCitations && (
+          <p className="pb-1.5 text-xs leading-relaxed text-[color:var(--muted)]">
+            Showing originals only. Later sources that quote them are listed
+            beneath each original as citations.
+          </p>
+        )}
+
+        <PanelSection label="Categories" count={cats.size} panelRef={catsPanelRef}>
             {CATEGORY_IDS.map((id) => (
               <FilterOption
                 key={id}
@@ -143,8 +260,36 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                 </span>
               </FilterOption>
             ))}
-          </FilterDropdown>
-          <FilterDropdown label="Hearsay" count={grades.size}>
+          </PanelSection>
+          <PanelSection label="Referent" count={referents.size}>
+            {REFERENTS.map((r) => (
+              <FilterOption
+                key={r}
+                checked={referents.has(r)}
+                onChange={() => setReferents(toggleIn(referents, r))}
+              >
+                <span className="flex items-center gap-2">
+                  <span
+                    className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${REFERENT_META[r].chip}`}
+                  >
+                    {REFERENT_META[r].short}
+                  </span>
+                </span>
+              </FilterOption>
+            ))}
+          </PanelSection>
+          <PanelSection label="Type" count={sourceTypes.size}>
+            {SOURCE_TYPES.map((t) => (
+              <FilterOption
+                key={t}
+                checked={sourceTypes.has(t)}
+                onChange={() => setSourceTypes(toggleIn(sourceTypes, t))}
+              >
+                <span className="text-sm">{SOURCE_TYPE_META[t].label}</span>
+              </FilterOption>
+            ))}
+          </PanelSection>
+          <PanelSection label="Hearsay" count={grades.size}>
             {HEARSAY_GRADES.map((g) => (
               <FilterOption
                 key={g}
@@ -159,8 +304,8 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                 </span>
               </FilterOption>
             ))}
-          </FilterDropdown>
-          <FilterDropdown label="Status" count={statuses.size}>
+          </PanelSection>
+          <PanelSection label="Status" count={statuses.size}>
             {CORRELATION_STATUSES.map((s) => (
               <FilterOption
                 key={s}
@@ -176,46 +321,31 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                 </span>
               </FilterOption>
             ))}
-          </FilterDropdown>
-          {anyFilterActive && (
-            <button
-              type="button"
-              onClick={clearAll}
-              className="rounded-full px-2 text-sm text-[color:var(--accent)] hover:underline"
-            >
-              Clear
-            </button>
-          )}
-          <span className="ml-auto text-xs tabular-nums text-[color:var(--muted)]">
-            {filtered.length} of {entries.length} sources
-          </span>
-          <button
-            type="button"
-            onClick={handleExport}
-            className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
-          >
-            <Download aria-hidden="true" size={13} />
-            Export .md
-          </button>
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
-          >
-            <Copy aria-hidden="true" size={13} />
-            {copied ? "Copied!" : "Copy"}
-          </button>
-        </div>
-      </div>
+          </PanelSection>
 
-      {filtered.length === 0 ? (
-        <div className="mt-10 rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)]">
+        <PanelSection label="About the scales">
+          <ScalesLegend />
+        </PanelSection>
+      </aside>
+
+      <div className="min-w-0">
+        <div className="mb-8 print:hidden">
+          <TimelineGraph
+            entries={visible}
+            onSelect={(id) => {
+              const el = document.getElementById(id);
+              el?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          />
+        </div>
+      {visible.length === 0 ? (
+        <div className="mt-8 rounded-2xl border border-dashed border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)] lg:mt-0">
           No sources match your filters.
         </div>
       ) : (
-        <div className="mt-10 space-y-14">
+        <div className="mt-8 space-y-14 lg:mt-0">
           {ERAS.map((era) => {
-            const inEra = filtered.filter((e) => eraFor(e).id === era.id);
+            const inEra = visible.filter((e) => eraFor(e).id === era.id);
             if (inEra.length === 0) return null;
             return (
               <section key={era.id}>
@@ -227,7 +357,12 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
                 </h2>
                 <ol className="relative mt-6 space-y-6 border-l border-[color:var(--border)] pl-6 sm:pl-8">
                   {inEra.map((entry) => (
-                    <TimelineEntry key={entry.id} entry={entry} />
+                    <TimelineEntry
+                      key={entry.id}
+                      entry={entry}
+                      byId={byId}
+                      citations={citationsByOriginal.get(entry.id) ?? []}
+                    />
                   ))}
                 </ol>
               </section>
@@ -235,33 +370,41 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           })}
         </div>
       )}
+      </div>
     </div>
   );
 }
 
-function FilterDropdown({
+function PanelSection({
   label,
   count,
+  panelRef,
   children,
 }: {
   label: string;
-  count: number;
+  count?: number;
+  panelRef?: React.Ref<HTMLDetailsElement>;
   children: React.ReactNode;
 }) {
   return (
-    <details className="relative">
-      <summary className="inline-flex h-8 cursor-pointer list-none items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)] [&::-webkit-details-marker]:hidden">
+    <details
+      ref={panelRef}
+      className="group border-t border-[color:var(--border)] first-of-type:border-t-0"
+    >
+      <summary className="flex cursor-pointer list-none items-center gap-1.5 py-2.5 text-sm font-medium hover:text-[color:var(--accent)] [&::-webkit-details-marker]:hidden">
         {label}
-        {count > 0 && (
+        {count != null && count > 0 && (
           <span className="rounded-full bg-[color:var(--accent-soft)] px-1.5 py-0.5 text-[10px] tabular-nums text-[color:var(--accent)]">
             {count}
           </span>
         )}
-        <ChevronDown aria-hidden="true" size={13} />
+        <ChevronDown
+          aria-hidden="true"
+          size={13}
+          className="ml-auto transition-transform group-open:rotate-180"
+        />
       </summary>
-      <div className="absolute left-0 top-full z-40 mt-2 max-h-[50vh] w-72 overflow-y-auto rounded-2xl border border-[color:var(--border)] bg-white p-2 shadow-lg">
-        {children}
-      </div>
+      <div className="pb-2">{children}</div>
     </details>
   );
 }
@@ -301,15 +444,40 @@ function HearsayBadge({ grade }: { grade: HearsayGrade }) {
   );
 }
 
-function TimelineEntry({ entry }: { entry: SourceEntry }) {
+function ReferentChip({ referent }: { referent: Referent }) {
+  const meta = REFERENT_META[referent];
+  return (
+    <span
+      title={`${meta.label} — ${meta.definition}`}
+      className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${meta.chip}`}
+    >
+      {meta.short}
+    </span>
+  );
+}
+
+function TimelineEntry({
+  entry,
+  byId,
+  citations,
+}: {
+  entry: SourceEntry;
+  byId: Map<string, SourceEntry>;
+  citations: SourceEntry[];
+}) {
   const [open, setOpen] = useState(false);
   const status = STATUS_META[entry.correlationStatus];
+  const typeMeta = SOURCE_TYPE_META[entry.sourceType];
 
   return (
-    <li className="relative">
+    <li id={entry.id} className="relative scroll-mt-40">
       <span
         aria-hidden="true"
-        className="absolute -left-[29px] top-7 h-2.5 w-2.5 rounded-full border-2 border-[color:var(--background)] bg-[color:var(--accent)] sm:-left-[37px]"
+        className={`absolute -left-[29px] top-7 h-2.5 w-2.5 rounded-full border-2 border-[color:var(--background)] sm:-left-[37px] ${
+          entry.sourceType === "original"
+            ? "bg-[color:var(--accent)]"
+            : "bg-[color:var(--muted)]"
+        }`}
       />
       <article className="rounded-2xl border border-[color:var(--border)] bg-white p-5 sm:p-6 print:break-inside-avoid">
         <div className="flex flex-wrap items-center gap-2">
@@ -317,6 +485,13 @@ function TimelineEntry({ entry }: { entry: SourceEntry }) {
             {entry.dateDisplay}
           </span>
           <HearsayBadge grade={entry.hearsay} />
+          <span
+            title={typeMeta.definition}
+            className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 ${typeMeta.chip}`}
+          >
+            {typeMeta.label}
+          </span>
+          {entry.referent !== "n/a" && <ReferentChip referent={entry.referent} />}
           {entry.needsVerification && (
             <span
               title="Citation not yet verified against the original source"
@@ -351,19 +526,62 @@ function TimelineEntry({ entry }: { entry: SourceEntry }) {
           {status.label}
         </p>
 
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {entry.categories.map((c) => (
-            <span
-              key={c}
-              title={CATEGORY_META[c].definition}
-              className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium ring-1 ${CATEGORY_META[c].pill}`}
-            >
-              {CATEGORY_META[c].label}
-            </span>
+        {entry.citesId && entry.citesId.length > 0 && (
+          <p className="mt-3 text-xs leading-relaxed text-[color:var(--muted)]">
+            <span className="font-medium uppercase tracking-wider">Cites · </span>
+            {entry.citesId.map((id, i) => (
+              <span key={id}>
+                {i > 0 && "; "}
+                <a
+                  href={`#${id}`}
+                  className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+                >
+                  {byId.get(id)?.title ?? id}
+                </a>
+              </span>
+            ))}
+          </p>
+        )}
+
+        {entry.witnesses && entry.witnesses.length > 0 && (
+          <div className="mt-3 rounded-xl border border-[color:var(--border)] p-3">
+            <p className="text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+              Witnesses
+            </p>
+            <ul className="mt-2 space-y-1.5">
+              {entry.witnesses.map((w) => (
+                <li key={w.scribe} className="text-xs leading-relaxed">
+                  {w.url ? (
+                    <a
+                      href={w.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+                    >
+                      {w.scribe}
+                    </a>
+                  ) : (
+                    <span className="font-medium">{w.scribe}</span>
+                  )}
+                  {w.note && (
+                    <span className="text-[color:var(--muted)]"> — {w.note}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="mt-4 space-y-4">
+          {entry.quotes.map((quote) => (
+            <QuoteBlock
+              key={quote.quoteId}
+              entry={entry}
+              quote={quote}
+              open={open}
+            />
           ))}
         </div>
-
-        <p className="mt-4 text-sm leading-relaxed">{entry.summary}</p>
 
         <button
           type="button"
@@ -371,25 +589,119 @@ function TimelineEntry({ entry }: { entry: SourceEntry }) {
           aria-expanded={open}
           className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)] hover:underline print:hidden"
         >
-          Transcription
+          {open ? "Hide excerpts" : `Show excerpts (${entry.quotes.length})`}
           <ChevronDown
             aria-hidden="true"
             size={13}
             className={open ? "rotate-180 transition-transform" : "transition-transform"}
           />
         </button>
-        {/* Always in the DOM so `print:block` can force it open in printouts. */}
-        <blockquote
-          className={`serif mt-3 whitespace-pre-line border-l-2 border-[color:var(--border)] pl-4 text-[15px] leading-relaxed ${open ? "block" : "hidden print:block"}`}
-        >
-          {entry.transcription}
-        </blockquote>
 
         <div className="mt-4 rounded-xl bg-[color:var(--muted-soft)]/60 p-3 text-xs leading-relaxed text-[color:var(--muted)]">
           <span className="font-medium uppercase tracking-wider">Notes · </span>
           {entry.notes}
         </div>
+
+        {citations.length > 0 && (
+          <div className="mt-4 rounded-xl border border-dashed border-[color:var(--border)] p-3">
+            <p className="text-[10px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+              Cited by {citations.length}{" "}
+              {citations.length === 1 ? "later source" : "later sources"}
+            </p>
+            <ul className="mt-2 space-y-1">
+              {citations.map((c) => (
+                <li key={c.id} className="text-xs leading-relaxed">
+                  <span className="tabular-nums text-[color:var(--muted)]">
+                    {c.dateDisplay}
+                  </span>{" "}
+                  —{" "}
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+                  >
+                    {c.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </article>
     </li>
+  );
+}
+
+function QuoteBlock({
+  entry,
+  quote,
+  open,
+}: {
+  entry: SourceEntry;
+  quote: Quote;
+  open: boolean;
+}) {
+  const grade = hearsayForQuote(entry, quote.quoteId);
+  const overridden = grade !== entry.hearsay;
+
+  return (
+    <div id={quote.quoteId}>
+      <div className="flex flex-wrap items-center gap-1.5">
+        {quote.categories.length === 0 ? (
+          <span className="inline-flex items-center rounded-full bg-[color:var(--muted-soft)] px-2.5 py-0.5 text-[11px] font-medium text-[color:var(--muted)]">
+            context
+          </span>
+        ) : (
+          quote.categories.map((c) => (
+            <span
+              key={c}
+              title={CATEGORY_META[c].definition}
+              className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-medium ring-1 ${CATEGORY_META[c].pill}`}
+            >
+              {CATEGORY_META[c].label}
+              {quote.implied && (
+                <span className="opacity-70" title="Read into the quote rather than stated by it">
+                  · implied
+                </span>
+              )}
+            </span>
+          ))
+        )}
+        {quote.referent && <ReferentChip referent={quote.referent} />}
+        {overridden && (
+          <span
+            title={`Hearsay for this quote differs from the source: ${HEARSAY_META[grade].description}`}
+            className={`inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-semibold ring-1 ${HEARSAY_META[grade].badge}`}
+          >
+            {grade}
+          </span>
+        )}
+      </div>
+
+      {/* Always in the DOM so `print:block` can force it open in printouts. */}
+      <blockquote
+        className={`serif mt-2 whitespace-pre-line border-l-2 border-[color:var(--border)] pl-4 text-[15px] leading-relaxed ${
+          open ? "block" : "hidden print:block"
+        }`}
+      >
+        {quote.excerpt}
+      </blockquote>
+
+      {quote.note && (
+        <p
+          className={`mt-2 flex gap-2 text-xs leading-relaxed text-[color:var(--muted)] ${
+            open ? "flex" : "hidden print:flex"
+          }`}
+        >
+          <QuoteIcon
+            aria-hidden="true"
+            size={12}
+            className="mt-0.5 shrink-0 opacity-50"
+          />
+          {quote.note}
+        </p>
+      )}
+    </div>
   );
 }

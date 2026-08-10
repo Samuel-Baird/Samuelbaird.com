@@ -1,6 +1,7 @@
 [
   {
-    "id": "moses-1-1830",
+    "id": "moses-1",
+    "sourceType": "original",
     "date": "1830-06-01",
     "dateDisplay": "June 1830",
     "datePrecision": "month",
@@ -9,15 +10,53 @@
     "office": "First Elder of the Church",
     "venue": "Revelation (Visions of Moses), later canonized in the Pearl of Great Price",
     "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/1",
-    "categories": ["INFINITE-CHAIN"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "God's creative work is presented as endless: worlds without number have been created, and as one earth passes away another comes.",
-    "transcription": "And worlds without number have I created; and I also created them for mine own purpose... The heavens, they are many, and they cannot be numbered unto man; but they are numbered unto me, for they are mine. And as one earth shall pass away, and the heavens thereof even so shall another come; and there is no end to my works, neither to my words.",
-    "notes": "Earliest canonical statement of an unending cosmological process. Chain language here is about worlds, not Gods — but it supplies the scaffolding later regress teachings build on."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "moses-1-q1",
+        "categories": [
+          "MANY-WORLDS"
+        ],
+        "excerpt": "And worlds without number have I created; and I also created them for mine own purpose... And as one earth shall pass away, and the heavens thereof even so shall another come; and there is no end to my works, neither to my words.",
+        "note": "A single divine speaker creates all the worlds. He is the originator of the series, not a member of it."
+      }
+    ],
+    "notes": "Retagged in v2: MANY-WORLDS, not INFINITE-CHAIN. Plurality of worlds is not succession of Gods. This text is context for later chain teachings rather than evidence of them — and the interpretive move by which Pratt and Young later recruit it is itself the datum, logged on those entries."
   },
   {
-    "id": "abraham-3-1842",
+    "id": "js-1842-discourse",
+    "sourceType": "original",
+    "date": "1842-01-30",
+    "dateDisplay": "January 30, 1842",
+    "datePrecision": "day",
+    "title": "Discourse, 30 January 1842",
+    "speaker": "Joseph Smith",
+    "office": "President of the Church",
+    "venue": "Nauvoo, Illinois",
+    "url": "https://www.josephsmithpapers.org/paper-summary/discourse-30-january-1842/1",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "js-1842-discourse-q1",
+        "categories": [
+          "BACKWARD-EXPLICIT",
+          "INFINITE-CHAIN"
+        ],
+        "referent": "father",
+        "excerpt": "the God & father of our Lord Jesus Christ was once the same as the Son or Holy Ghost bo[th] having redeemed a world became the eternal God of that world he had a son Jesus Christ who redeemed this earth the same as his father had a world which made them equal & the Holy Ghost would do the same in his turn & so would all the Saints who inherited a Celestial glory so their would be Gods many & Lords many.",
+        "note": "Father-referent and explicit: the Father was once as the Son is, redeemed a world of His own, and stands in a repeating series (\"Gods many & Lords many\"). Backward regress and forward progression are stated in one breath, with the Christological analogy already doing the argumentative work it will do again in the King Follett Discourse."
+      }
+    ],
+    "notes": "Added in v2, and it revises the working claim that the Sermon in the Grove is Joseph Smith's only unambiguous Father-referent BACKWARD-EXPLICIT statement. This discourse predates it by nearly two and a half years and is quoted in the Joseph Smith Papers footnotes to the Bullock report of the King Follett Discourse (footnote 9), which is where this entry was found. Rated C pending confirmation of the reporter and the exact JSP document ID — verify before leaning on it, since the wording above is transcribed from the KFD annotation rather than read off the discourse page itself.",
+    "needsVerification": true
+  },
+  {
+    "id": "abraham-3",
+    "sourceType": "original",
     "date": "1842-03-01",
     "dateDisplay": "March 1842",
     "datePrecision": "month",
@@ -26,15 +65,30 @@
     "office": "President of the Church",
     "venue": "Published in Times and Seasons, Nauvoo; later canonized in the Pearl of Great Price",
     "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3",
-    "categories": ["SPIRIT-BIRTH-TRIPARTITE", "INFINITE-CHAIN"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "Intelligences (spirits) 'have no beginning... no end'; a plurality of Gods ('the Gods') organize the heavens and the earth.",
-    "transcription": "If there be two spirits, and one shall be more intelligent than the other... they shall have no beginning; they existed before, they shall have no end, they shall exist after, for they are gnolaum, or eternal... And then the Lord said: Let us go down. And they went down at the beginning, and they, that is the Gods, organized and formed the heavens and the earth.",
-    "notes": "The tripartite framework's proof text: eternal, uncreated intelligences plus 'the Gods' as organizers rather than creators ex nihilo. In tension with later viviparous readings that make spirits literal offspring with a birth-point."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "abraham-3-q1",
+        "categories": [
+          "SPIRIT-BIRTH-ADOPTION"
+        ],
+        "excerpt": "If there be two spirits, and one shall be more intelligent than the other... they shall have no beginning; they existed before, they shall have no end, they shall exist after, for they are gnolaum, or eternal.",
+        "note": "Eternal, uncreated intelligences — no beginning means no begetting."
+      },
+      {
+        "quoteId": "abraham-3-q2",
+        "categories": [],
+        "excerpt": "And then the Lord said: Let us go down. And they went down at the beginning, and they, that is the Gods, organized and formed the heavens and the earth.",
+        "note": "Context rather than evidence: plural organizing Gods, with no statement of how those Gods came to be."
+      }
+    ],
+    "notes": "The TRIPARTITE tag is dropped in v2. Abraham 3 asserts eternal intelligences and plural organizing Gods; it never articulates intelligence → spirit → body staging. Note too that \"intelligences\" and \"spirits\" are used interchangeably across 3:22–23, which cuts against reading a stage distinction into the chapter at all. The three-stage model is B. H. Roberts's later synthesis — filed separately."
   },
   {
-    "id": "dc-132-1843",
+    "id": "dc-132",
+    "sourceType": "original",
     "date": "1843-07-12",
     "dateDisplay": "July 12, 1843",
     "datePrecision": "day",
@@ -43,15 +97,32 @@
     "office": "President of the Church",
     "venue": "Revelation recorded at Nauvoo; first published 1852; canonized 1876",
     "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/132",
-    "categories": ["FORWARD-EXPLICIT", "INFINITE-CHAIN"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "Those sealed and exalted 'shall be gods' with 'a continuation of the seeds forever and ever' — the canonical anchor for eternal increase.",
-    "transcription": "...they shall pass by the angels, and the gods, which are set there, to their exaltation and glory in all things, as hath been sealed upon their heads, which glory shall be a fulness and a continuation of the seeds forever and ever. Then shall they be gods, because they have no end; therefore shall they be from everlasting to everlasting, because they continue; then shall they be above all, because all things are subject unto them... they are ordained to bear the souls of men; for herein is the work of my Father continued, that he may be glorified.",
-    "notes": "The load-bearing canonical text for forward progression. 'Continuation of the seeds' is the phrase every later euphemism orbits — compare Oaks 2019, which quotes it while leaving the referent unstated."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "dc-132-q1",
+        "categories": [
+          "FORWARD-EUPHEMISM"
+        ],
+        "excerpt": "...which glory shall be a fulness and a continuation of the seeds forever and ever. Then shall they be gods, because they have no end... then shall they be above all, because all things are subject unto them.",
+        "note": "Promises deification and continuing \"seeds\" without naming either the mechanism or the object. Nothing here says spirit children."
+      },
+      {
+        "quoteId": "dc-132-q2",
+        "categories": [
+          "FORWARD-EUPHEMISM"
+        ],
+        "excerpt": "...they are ordained to bear the souls of men; for herein is the work of my Father continued, that he may be glorified.",
+        "note": "On its plainest reading v. 63 addresses plural mortal wives bearing children in mortality."
+      }
+    ],
+    "notes": "Downgraded in v2 from FORWARD-EXPLICIT to FORWARD-EUPHEMISM. This is deliberate and contestable: the explicit spirit-procreation reading is supplied by later interpreters — Pratt, the 1909 First Presidency, Ballard — not by the verse. Holding the canon itself to the strict standard is what makes the euphemism/explicit boundary load-bearing, and that boundary is where the whole taper story lives. The dependency is preserved: the explicit teachings that cite this text carry the explicitness themselves, and the citation links show it."
   },
   {
-    "id": "king-follett-discourse-1844",
+    "id": "kfd-1844",
+    "sourceType": "original",
     "date": "1844-04-07",
     "dateDisplay": "April 7, 1844",
     "datePrecision": "day",
@@ -59,16 +130,66 @@
     "speaker": "Joseph Smith",
     "office": "President of the Church",
     "venue": "General Conference, Nauvoo",
-    "url": "https://www.churchofjesuschrist.org/study/ensign/1971/04/the-king-follett-sermon",
-    "categories": ["BACKWARD-MORTALITY", "SPIRIT-BIRTH-ADOPTION"],
+    "url": "https://www.josephsmithpapers.org/paper-summary/discourse-7-april-1844-as-reported-by-thomas-bullock/1",
     "hearsay": "B",
     "correlationStatus": "historical-official",
-    "summary": "God 'was once as we are now, and is an exalted man'; the mind of man is co-eternal with God — spirits were not created but are self-existent.",
-    "transcription": "God himself was once as we are now, and is an exalted man, and sits enthroned in yonder heavens!... you have got to learn how to be Gods yourselves, and to be kings and priests to God, the same as all Gods have done before you... The mind or the intelligence which man possesses is co-equal [co-eternal] with God himself... God never had the power to create the spirit of man at all. God himself could not create himself. Intelligence is eternal and exists upon a self-existent principle.",
-    "notes": "Amalgamated from contemporaneous notes by Bullock, Clayton, Richards, and Woodruff — hence B, not A. Republished in the Ensign, April/May 1971, and quoted in Teachings of Presidents: Joseph Smith (2007). The co-eternal-intelligence passage is the strongest support for the adoption/organization reading of spirit origins, against viviparous spirit birth. Individual scribal accounts: Joseph Smith Papers, 'Discourse, 7 April 1844.'"
+    "referent": "father",
+    "witnesses": [
+      {
+        "scribe": "Thomas Bullock",
+        "url": "https://www.josephsmithpapers.org/paper-summary/discourse-7-april-1844-as-reported-by-thomas-bullock/1",
+        "note": "Contemporaneous longhand; the base text for the standard versification."
+      },
+      {
+        "scribe": "William Clayton",
+        "url": "https://www.josephsmithpapers.org/paper-summary/discourse-7-april-1844-as-reported-by-william-clayton/1",
+        "note": "Contemporaneous longhand; sole witness to the \"all Gods\" wording."
+      },
+      {
+        "scribe": "Willard Richards",
+        "url": "https://www.josephsmithpapers.org/paper-summary/discourse-7-april-1844-as-reported-by-willard-richards/1",
+        "note": "Highly abbreviated notes in Joseph Smith's own journal; does not record the deification passage."
+      },
+      {
+        "scribe": "Wilford Woodruff",
+        "url": "https://www.josephsmithpapers.org/paper-summary/discourse-7-april-1844-as-reported-by-wilford-woodruff/1",
+        "note": "Journal account; does not record the deification passage."
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "kfd-1844-q1",
+        "categories": [
+          "FATHER-MORTAL-EXPERIENCE",
+          "FATHER-BECAME-GOD"
+        ],
+        "referent": "father",
+        "excerpt": "God himself was once as we are now, and is an exalted man... God himself, the Father of us all, dwelt on an earth, the same as Jesus Christ himself did.",
+        "note": "Referent is unambiguously the Father — \"the Father of us all\" — but the Father's mortality is established by analogy to Christ. The Christological analogy is the engine of the discourse, and Snow later runs the same engine. Retagged for the Father axis: “was once as we are now” is the mortal experience; “is an exalted man” is the attainment."
+      },
+      {
+        "quoteId": "kfd-1844-q2",
+        "categories": [
+          "INFINITE-CHAIN"
+        ],
+        "referent": "father",
+        "excerpt": "you have got to learn how to be a god yourself... to be priests & Kings as all Gods has done— by going from a small degree to another from exaltation to ex[altation] (Clayton) / you have got to learn how to be a God yourself & be a K[ing] & God Priest to God same as all have done (Bullock)",
+        "note": "Verification resolved, and it matters. Of the four accounts, only Clayton attests \"as all Gods has done\"; Bullock has the weaker \"same as all have done\" with no \"Gods\"; Richards and Woodruff do not record the passage at all. The familiar amalgam reading \"the same as all Gods have done before you\" therefore rests on a single witness, and smooths away a real divergence. Weight the INFINITE-CHAIN tag on this quote accordingly."
+      },
+      {
+        "quoteId": "kfd-1844-q3",
+        "categories": [
+          "SPIRIT-BIRTH-ADOPTION"
+        ],
+        "excerpt": "The mind or the intelligence which man possesses is co-equal [co-eternal] with God himself... God never had the power to create the spirit of man at all. God himself could not create himself. Intelligence is eternal and exists upon a self-existent principle.",
+        "note": "The strongest support in the corpus for organization over begetting, and in direct tension with the viviparous statements of 1909."
+      }
+    ],
+    "notes": "Amalgamated texts — the 1855 History draft, Teachings of the Prophet Joseph Smith, and the April 1971 Ensign — are citations of these four witnesses, not independent originals, and are filed as such. Honest accounting on the backward direction: the King Follett Discourse teaches that the Father was mortal. The had-a-Father inference arrives ten weeks later in the Sermon in the Grove."
   },
   {
-    "id": "sermon-in-the-grove-1844",
+    "id": "sermon-grove-1844",
+    "sourceType": "original",
     "date": "1844-06-16",
     "dateDisplay": "June 16, 1844",
     "datePrecision": "day",
@@ -77,50 +198,227 @@
     "office": "President of the Church",
     "venue": "East grove near the temple, Nauvoo",
     "url": "https://www.josephsmithpapers.org/paper-summary/discourse-16-june-1844-a-as-reported-by-thomas-bullock/1",
-    "categories": ["BACKWARD-EXPLICIT", "INFINITE-CHAIN"],
     "hearsay": "B",
     "correlationStatus": "historical-official",
-    "summary": "Commenting on Revelation 1:6, Joseph Smith teaches explicitly that God the Father himself had a Father — the clearest backward-regress statement in his corpus.",
-    "transcription": "If Jesus Christ was the Son of God, and John discovered that God the Father of Jesus Christ had a Father, you may suppose that He had a Father also. Where was there ever a son without a father?... Hence if Jesus had a Father, can we not believe that He had a Father also? I despise the idea of being scared to death at such a doctrine, for the Bible is full of it.",
-    "notes": "Text as printed in History of the Church 6:473–79 and Teachings of the Prophet Joseph Smith 370–73, amalgamated from the Bullock and Clayton reports — link goes to the Joseph Smith Papers Bullock account for hearsay transparency. This is the passage the 2018 New Testament institute manual still quotes (see the ch. 53 entry), making it the lone explicit backward regress surviving in a current manual."
+    "referent": "father",
+    "witnesses": [
+      {
+        "scribe": "Thomas Bullock",
+        "url": "https://www.josephsmithpapers.org/paper-summary/discourse-16-june-1844-a-as-reported-by-thomas-bullock/1",
+        "note": "Primary contemporaneous report."
+      },
+      {
+        "scribe": "William Clayton",
+        "url": "https://www.josephsmithpapers.org/paper-summary/discourse-16-june-1844-b-as-reported-by-william-clayton/1"
+      }
+    ],
+    "quotes": [
+      {
+        "quoteId": "sermon-grove-1844-q1",
+        "categories": [
+          "BACKWARD-EXPLICIT",
+          "INFINITE-CHAIN"
+        ],
+        "referent": "father",
+        "excerpt": "If Jesus Christ was the Son of God, and John discovered that God the Father of Jesus Christ had a Father, you may suppose that He had a Father also. Where was there ever a son without a father?",
+        "note": "Unambiguously Father-referent, and exegetical rather than visionary: the claim is derived from a reading of Revelation 1:6 (\"God and his Father\"), not asserted from revelation. The epistemic register matters for how later sources handle it."
+      }
+    ],
+    "notes": "The clearest Father-referent backward-explicit statement in Joseph Smith's corpus, though no longer the earliest — see the 30 January 1842 discourse. Teachings of the Prophet Joseph Smith 370–73 is an amalgamated citation of these witnesses. Every later correlated BACKWARD-EXPLICIT text traces to this sermon, which is why collapsing citations leaves the backward-explicit column empty after 1844."
   },
   {
-    "id": "snow-couplet-1840",
-    "date": "1840-01-01",
-    "dateDisplay": "1840 (formulated); reaffirmed in print through 1901",
-    "datePrecision": "year",
-    "title": "Lorenzo Snow couplet",
-    "speaker": "Lorenzo Snow",
-    "office": "Elder (later President of the Church)",
-    "venue": "Private epiphany, Nauvoo; published and reaffirmed repeatedly thereafter",
-    "url": "https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-lorenzo-snow/chapter-5",
-    "categories": ["BACKWARD-MORTALITY", "FORWARD-EXPLICIT"],
+    "id": "o-my-father",
+    "sourceType": "original",
+    "date": "1845-11-15",
+    "dateDisplay": "November 1845",
+    "datePrecision": "month",
+    "title": "Eliza R. Snow, “O My Father”",
+    "speaker": "Eliza R. Snow",
+    "office": "Secretary, Female Relief Society of Nauvoo",
+    "venue": "Poem published in Times and Seasons; hymn in continuous use since",
+    "url": "https://www.churchofjesuschrist.org/study/manual/hymns/o-my-father",
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "'As man now is, God once was; as God now is, man may be' — the couplet that compresses both directions of the doctrine into a single sentence.",
-    "transcription": "As man now is, God once was: As God now is, man may be.",
-    "notes": "Rated A rather than C: although the 1840 origin story is later recollection, Snow personally reaffirmed the couplet in print many times as an apostle and president, and Teachings of Presidents: Lorenzo Snow ch. 5 (2012) republishes it — a current-correlated source. The Gospel Topics essay 'Becoming Like God' (2014) engages the couplet's second half while going quiet on the first."
-  },
-  {
-    "id": "brigham-young-jd-origin-of-gods",
-    "date": "1859-10-08",
-    "dateDisplay": "October 8, 1859 (JD 7:333); caution republished 1997",
-    "datePrecision": "day",
-    "title": "Brigham Young on the endless chain of Gods — and his caution",
-    "speaker": "Brigham Young",
-    "office": "President of the Church",
-    "venue": "Tabernacle discourses, Salt Lake City (Journal of Discourses)",
-    "url": "https://www.churchofjesuschrist.org/study/manual/teachings-brigham-young/chapter-4",
-    "categories": ["BACKWARD-EXPLICIT", "BACKWARD-AGNOSTIC", "INFINITE-CHAIN"],
-    "hearsay": "E",
-    "correlationStatus": "historical-official",
-    "summary": "Young taught an endless succession of Gods ('How many Gods there are, I do not know. But there never was a time when there were not Gods') while discouraging inquiry into 'the origin of Gods.'",
-    "transcription": "How many Gods there are, I do not know. But there never was a time when there were not Gods and worlds, and when men were not passing through the same ordeals that we are now passing through. That course has been from all eternity, and it is and will be to all eternity. (JD 7:333) ... It is the height of folly for men to try to find out the origin of the Gods.",
-    "notes": "Rated E for the Journal of Discourses attribution chain (shorthand reports, edited for publication; some discourses B-grade where Watt's shorthand survives). The 1997 manual Teachings of Presidents: Brigham Young republishes the caution — verify the exact chapter ('Knowing and Honoring the Godhead') and quote wording against the manual text. The pairing matters: the same speaker holds the most explicit chain language and the earliest official discouragement of the regress question.",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "o-my-father-q1",
+        "categories": [
+          "HEAVENLY-MOTHER"
+        ],
+        "excerpt": "In the heav'ns are parents single? No, the thought makes reason stare! Truth is reason; truth eternal Tells me I've a mother there.",
+        "note": "Affirms a Mother in Heaven and premortal parentage; states no generative mechanism."
+      }
+    ],
+    "notes": "Tightened in v2 to HEAVENLY-MOTHER only — the spirit-birth tag was retrojection. The hymn has anchored Heavenly Mother in lived worship for 180 years while leaving the mechanism unstated, which makes it the template for the later euphemism strategy. Verify inclusion and numbering in the current hymnal rollout (Hymns — For Home and Church, 2024–), which supersedes the 1985 hymnal's no. 292.",
     "needsVerification": true
   },
   {
-    "id": "pratt-the-seer-1853",
+    "id": "kimball-chain-1857",
+    "sourceType": "original",
+    "date": "1857-04-06",
+    "dateDisplay": "April 6, 1857",
+    "datePrecision": "day",
+    "title": "Heber C. Kimball: a Father connected with one still farther back",
+    "speaker": "Heber C. Kimball",
+    "office": "First Counselor in the First Presidency",
+    "venue": "General conference discourse, Bowery, Salt Lake City (Journal of Discourses 5:18–23, at 5:19)",
+    "url": "https://contentdm.lib.byu.edu/digital/collection/JournalOfDiscourses3/id/2358",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "kimball-chain-1857-q1",
+        "categories": [
+          "BACKWARD-EXPLICIT",
+          "INFINITE-CHAIN"
+        ],
+        "referent": "father",
+        "excerpt": "We must be grafted into the true vine, and continue to partake of its fatness, and then we shall go back to our Father and God, who is connected with one who is still farther back; and this Father is connected with one still further back, and so on; and just so far as we respect our superiors and try to save our children, so shall we receive blessings from this time forth and forever, and shall become as numerous as the sands upon the seashore.",
+        "note": "The chain runs in both directions inside one sentence — ancestors “still further back” and posterity “as numerous as the sands upon the seashore.” One of the cleanest explicit-chain sentences in the Journal of Discourses."
+      }
+    ],
+    "notes": "Verified verbatim against the printed Journal of Discourses. Pitman shorthand report; the speaker did not review the text before publication — hence hearsay C under the v2 rebasing of Journal of Discourses material."
+  },
+  {
+    "id": "woodruff-progression-1857",
+    "sourceType": "original",
+    "date": "1857-12-06",
+    "dateDisplay": "December 6, 1857",
+    "datePrecision": "day",
+    "title": "Wilford Woodruff: God Himself is increasing and progressing",
+    "speaker": "Wilford Woodruff",
+    "office": "Quorum of the Twelve Apostles",
+    "venue": "Tabernacle discourse, Salt Lake City (Journal of Discourses 6:115–121, at 6:120)",
+    "url": "https://contentdm.lib.byu.edu/digital/collection/JournalOfDiscourses3/id/2645",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "woodruff-progression-1857-q1",
+        "categories": [
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "If there was a point where man in his progression could not proceed any further, the very idea would throw a gloom over every intelligent and reflecting mind. God himself is increasing and progressing in knowledge, power, and dominion, and will do so, worlds without end. It is just so with us. We are in a probation, which is a school of experience.",
+        "note": "Affirmation. The argument runs from the intolerability of a ceiling on human progress to God's ongoing progression — anthropology first, theology second. Later official denials attack the conclusion without engaging this premise. “God himself” is not further specified, hence the ambiguous referent."
+      }
+    ],
+    "notes": "The most explicit affirmative divine-progression sentence located in the Journal of Discourses corpus: a full-corpus sweep (~11,600 sermon files, 1830–2026) found no other unambiguous “God is progressing in knowledge” assertion from the pulpit, and none at all after this date. Watt shorthand, not reviewed by the speaker."
+  },
+  {
+    "id": "young-origin-caution-1859",
+    "sourceType": "original",
+    "date": "1859-10-09",
+    "dateDisplay": "October 9, 1859",
+    "datePrecision": "day",
+    "title": "Brigham Young: instead of inquiring after the origin of the Gods",
+    "speaker": "Brigham Young",
+    "office": "President of the Church",
+    "venue": "General conference discourse, Salt Lake City (Journal of Discourses 7:282–291)",
+    "url": "https://archive.org/details/per_utah-and-the-mormons_journal-of-discourses-_brigham-young-_1860_7/page/n289",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "young-origin-caution-1859-q1",
+        "categories": [
+          "BACKWARD-AGNOSTIC"
+        ],
+        "excerpt": "Many have tried to penetrate to the First Cause of all things; but it would be as easy for an ant to number the grains of sand on the earth. It is not for man, with his limited intelligence, to grasp eternity in his comprehension. … Instead of inquiring after the origin of the Gods—instead of trying to explore the depths of eternities that have been, that are, and that will be—instead of endeavouring to discover the boundaries of boundless space, let them seek to know the object of their present existence, and how to apply, in the most profitable manner for their mutual good and salvation, the intelligence they possess.",
+        "note": "Delivered the day after the “never was a time when there were not Gods” discourse (by-chain), in the same October 1859 conference: the same speaker holds the most explicit chain language and the earliest discouragement of the question on consecutive days."
+      }
+    ],
+    "notes": "This is the caution the by-chain entry's earlier placeholder pointed at — it belongs to its own sermon (“Intelligence, Etc.,” October 9, 1859), not to the October 8 discourse. The 1997 Teachings of Presidents: Brigham Young manual (ch. 4) excerpts this passage; log that manual as its own citation entry when added."
+  },
+  {
+    "id": "young-father-mother-1862",
+    "sourceType": "original",
+    "date": "1862-02-23",
+    "dateDisplay": "February 23, 1862",
+    "datePrecision": "day",
+    "title": "Brigham Young relays Joseph Smith: a God who had not a Father — nor a mother",
+    "speaker": "Brigham Young",
+    "office": "President of the Church",
+    "venue": "Tabernacle discourse, Salt Lake City (Journal of Discourses 9:286–289)",
+    "url": "https://archive.org/details/per_utah-and-the-mormons_journal-of-discourses-_brigham-young-_1862_9/page/n295",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "young-father-mother-1862-q1",
+        "categories": [
+          "BACKWARD-EXPLICIT",
+          "HEAVENLY-MOTHER"
+        ],
+        "referent": "father",
+        "excerpt": "The idea that the Lord our God is not a personage of tabernacle is entirely a mistaken notion. He was once a man. Brother Kimball quoted a saying of Joseph the Prophet, that he would not worship a God who had not a Father; and I do not know that he would if he had not a mother; the one would be as absurd as the other. If he had a Father, he was made in his likeness. And if he is our Father we are made after his image and likeness.",
+        "note": "Three stacked claims in one breath: past mortality (“He was once a man”), the Father's Father (the relayed Joseph Smith saying), and the mother clause — which is Young's own hedged inference (“I do not know that he would”), not part of the reported saying."
+      }
+    ],
+    "notes": "The relayed saying is an attribution chain three links deep — Joseph Smith (d. 1844) → Heber C. Kimball (earlier the same afternoon) → Young → Watt's shorthand — so while the sermon is a contemporaneous report (C), the Joseph attribution itself is an eighteen-year-old relay and should be weighed accordingly. Also excerpted in Widtsoe's Discourses of Brigham Young compilation."
+  },
+  {
+    "id": "snow-couplet",
+    "sourceType": "original",
+    "date": "1892-01-01",
+    "dateDisplay": "Couplet as published doctrine, 1880s–1901; origin story dated to 1840",
+    "datePrecision": "year",
+    "title": "Lorenzo Snow couplet",
+    "speaker": "Lorenzo Snow",
+    "office": "Apostle, later President of the Church",
+    "venue": "Published poetry and addresses; origin narrated in later recollection",
+    "url": "https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-lorenzo-snow/chapter-5",
+    "hearsay": "A",
+    "hearsayByQuote": {
+      "snow-couplet-q4": "D"
+    },
+    "correlationStatus": "current-correlated",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "snow-couplet-q1",
+        "categories": [
+          "FATHER-MORTAL-EXPERIENCE"
+        ],
+        "referent": "ambiguous",
+        "excerpt": "As man now is, God once was: As God now is, man may be.",
+        "note": "The couplet in isolation. Nothing in it settles whether \"God\" is the Father or the Son."
+      },
+      {
+        "quoteId": "snow-couplet-q2",
+        "categories": [
+          "FATHER-MORTAL-EXPERIENCE",
+          "FORWARD-EXPLICIT"
+        ],
+        "referent": "son",
+        "excerpt": "As Abra'm, Isaac, Jacob, too, First babes, then men — to gods they grew. As man now is, our God once was; As now God is, so man may be... For John declares: When Christ we see Like unto him we'll truly be... The head of all his spirit-race.",
+        "note": "Snow's own poem “Man's Destiny” (January 1892). His warrant is 1 John 3:2 — likeness to Christ. The closing “head of all his spirit-race” is a forward-explicit signal: an exalted man as progenitor of a spirit race."
+      },
+      {
+        "quoteId": "snow-couplet-q3",
+        "categories": [
+          "FATHER-BECAME-GOD"
+        ],
+        "referent": "son",
+        "excerpt": "This principle, in substance, is found also in the scriptures. The Lord said to John... “To him that overcometh will I grant to sit with me in my throne, even as I also overcame, and am set down with my Father in his throne.”",
+        "note": "Address of 20 July 1901. The proof text is Revelation 3:21 — Christ's own exaltation. A being who was mortal, is now God, and has a Father above him fits the Son exactly and requires no theogony for the Father. Retagged: Revelation 3:21 describes attainment (“overcame, and am set down”), not mortality — and with referent Son, it does not establish either of the Father."
+      },
+      {
+        "quoteId": "snow-couplet-q4",
+        "categories": [],
+        "excerpt": "[The 1840 origin narrative: the couplet received as an insight while hearing Elder Sherwood expound, at Nauvoo, before the King Follett Discourse.]",
+        "note": "Survives only through Snow's own recollection some six decades later — hence the D override on this quote alone, while the couplet as published doctrine stays A."
+      }
+    ],
+    "notes": "The most consequential revision in v2. Both of Snow's own proof texts are about Christ, so on his own scriptural warrant the couplet is Christological and the Father-referent reading is imported from the King Follett milieu. Counterweight: he dated the insight to 1840 Nauvoo, attributed it to revelation, and his milieu pointed at the Father. Verdict: ambiguous, weighted toward the Son. The consequence for the site is concrete — the couplet should not be read as independent evidence for the Father's mortality; it inherits that meaning only when paired with the King Follett Discourse. That later Church usage exploits precisely this ambiguity (Hinckley's “more of a couplet than anything else”; the 2014 essay's “little has been revealed about the first half”) is itself one of the collection's findings."
+  },
+  {
+    "id": "pratt-seer",
+    "sourceType": "original",
     "date": "1853-01-01",
     "dateDisplay": "1853–1854",
     "datePrecision": "year",
@@ -129,84 +427,531 @@
     "office": "Apostle",
     "venue": "The Seer (periodical), Washington, D.C.",
     "url": "https://archive.org/details/seer01prat",
-    "categories": ["SPIRIT-BIRTH-VIVIPAROUS"],
     "hearsay": "A",
     "correlationStatus": "never-official",
-    "summary": "The most systematic viviparous spirit-birth theology ever published by an apostle: spirits literally begotten and born of Heavenly Parents, described in physiological detail.",
-    "transcription": "Each God, through his wife or wives, raises up a numerous family of sons and daughters... As soon as each God has begotten many millions of male and female spirits... he, in connection with his sons, organizes a new world... The Father of our spirits has only been doing that which His progenitors did before Him.",
-    "notes": "A-tier hearsay (Pratt's own pen) but never-official — and formally repudiated in part: the First Presidency under Brigham Young publicly disavowed portions of The Seer in 1865, an early RETREAT data point worth its own future entry. Pratt's systematization is the high-water mark the correlated era slowly walks back from."
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "pratt-seer-q1",
+        "categories": [
+          "SPIRIT-BIRTH-VIVIPAROUS",
+          "HEAVENLY-MOTHER"
+        ],
+        "excerpt": "Each God, through his wife or wives, raises up a numerous family of sons and daughters... As soon as each God has begotten many millions of male and female spirits... he, in connection with his sons, organizes a new world.",
+        "note": "The most systematic viviparous spirit-birth theology published by an apostle."
+      },
+      {
+        "quoteId": "pratt-seer-q2",
+        "categories": [
+          "INFINITE-CHAIN",
+          "BACKWARD-EXPLICIT"
+        ],
+        "referent": "father",
+        "excerpt": "The Father of our spirits has only been doing that which His progenitors did before Him.",
+        "note": "Father-referent and explicitly serial: progenitors, plural, before Him."
+      }
+    ],
+    "notes": "A-tier by provenance (Pratt's own pen) but never official, and formally repudiated in part — see the 1865 First Presidency statement, the first official retreat in this dataset, 132 years before the Hinckley interviews. Pratt's systematization is the high-water mark from which the correlated era slowly walks back."
   },
   {
-    "id": "o-my-father-1845",
-    "date": "1845-11-15",
-    "dateDisplay": "November 1845",
-    "datePrecision": "month",
-    "title": "Eliza R. Snow, 'O My Father' ('My Father in Heaven')",
-    "speaker": "Eliza R. Snow",
-    "office": "Secretary, Female Relief Society of Nauvoo",
-    "venue": "Poem published in Times and Seasons; hymn in continuous use since",
-    "url": "https://www.churchofjesuschrist.org/study/manual/hymns/o-my-father",
-    "categories": ["HEAVENLY-MOTHER"],
+    "id": "fp-repudiation-1865",
+    "sourceType": "citation",
+    "citesId": [
+      "pratt-seer"
+    ],
+    "date": "1865-08-23",
+    "dateDisplay": "August 23, 1865",
+    "datePrecision": "day",
+    "title": "First Presidency and Quorum of the Twelve, statement on The Seer",
+    "speaker": "Brigham Young, Heber C. Kimball, Daniel H. Wells, and the Twelve",
+    "office": "First Presidency and the Twelve",
+    "venue": "Published declaration, Salt Lake City",
+    "url": "https://archive.org/details/seer01prat",
     "hearsay": "A",
-    "correlationStatus": "current-correlated",
-    "summary": "Canonized-adjacent affirmation of a Mother in Heaven: 'Truth eternal tells me I've a mother there.'",
-    "transcription": "In the heav'ns are parents single? No, the thought makes reason stare! Truth is reason; truth eternal Tells me I've a mother there. When I leave this frail existence, When I lay this mortal by, Father, Mother, may I meet you In your royal courts on high?",
-    "notes": "The hymn has anchored Heavenly Mother in lived Latter-day Saint worship for 180 years while the mechanism of spirit generation went unstated — the template for FORWARD-EUPHEMISM avant la lettre. Verify inclusion and hymn number in the new hymnal rollout ('Hymns — For Home and Church,' 2024–), since the print 1985 hymnal (no. 292) is being superseded.",
+    "correlationStatus": "historical-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "fp-repudiation-1865-q1",
+        "categories": [
+          "RETREAT-REFRAME",
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "[Among the propositions from The Seer condemned by the First Presidency and Twelve: that “the father and the son do not progress in knowledge and wisdom, because they already know all things past, present and to come,” and that “none of the gods know more than another and none are progressing in knowledge.”]",
+        "note": "Itemization per Eugene England, “Perfection and Progression,” BYU Studies 29/3 (1989), 39. Note the inversion: the earliest official condemnation in this collection protects the affirmation of divine progression by condemning Orson Pratt's denial of it. Exact declaration wording still needs pulling from the original printing."
+      }
+    ],
+    "notes": "Added in v2. The earliest official retreat in the collection, and a useful corrective to any narrative that treats doctrinal walk-back as a late-twentieth-century phenomenon. Verify the exact date, wording, and publication venue. Partially filled from England's published itemization of the condemned propositions; the verification flag stays until the original printing is read.",
     "needsVerification": true
   },
   {
-    "id": "origin-of-man-1909",
+    "id": "by-chain",
+    "sourceType": "original",
+    "date": "1859-10-08",
+    "dateDisplay": "October 8, 1859",
+    "datePrecision": "day",
+    "title": "Brigham Young on the succession of Gods — and his caution",
+    "speaker": "Brigham Young",
+    "office": "President of the Church",
+    "venue": "Tabernacle discourse, Salt Lake City (Journal of Discourses 7:333)",
+    "url": "https://www.churchofjesuschrist.org/study/manual/teachings-brigham-young/chapter-4",
+    "hearsay": "C",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "by-chain-q1",
+        "categories": [
+          "INFINITE-CHAIN",
+          "BACKWARD-EXPLICIT"
+        ],
+        "referent": "father",
+        "excerpt": "How many Gods there are, I do not know. But there never was a time when there were not Gods and worlds, and when men were not passing through the same ordeals that we are now passing through. That course has been from all eternity, and it is and will be to all eternity.",
+        "note": "Succession of Gods, not merely plurality of worlds — this is what the tightened INFINITE-CHAIN tag requires."
+      }
+    ],
+    "notes": "Hearsay raised from E to C in v2. Most Journal of Discourses material derives from George Watt's contemporaneous shorthand, edited for publication and in the early years reviewed by Young's office — that is contemporaneous secondhand with an editing layer, not untraceable attribution. E is now reserved for genuinely orphaned attributions. The pairing is what makes this entry valuable: the same speaker holds the most explicit chain language and the earliest official discouragement of the question. Quote verified verbatim against the printed Journal of Discourses 7:333 (page-scan collation). The “origin of the Gods” caution formerly held here as a placeholder belongs to a different discourse — see young-origin-caution-1859, delivered the next day of the same conference."
+  },
+  {
+    "id": "talmage-af-1899",
+    "sourceType": "original",
+    "date": "1899-01-01",
+    "dateDisplay": "1899",
+    "datePrecision": "year",
+    "title": "James E. Talmage: a God who is Himself progressive",
+    "speaker": "James E. Talmage",
+    "office": "Author writing under commission of the First Presidency (ordained an Apostle 1911)",
+    "venue": "The Articles of Faith, Lecture XXIV, “Practical Religion” (p. 430 in early printings)",
+    "url": "https://corpus.noahairmet.com/b/articles-of-faith-15cc/382",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "talmage-af-1899-q1",
+        "categories": [
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "We believe in a God who is Himself progressive, whose majesty is intelligence; whose perfection consists in eternal advancement; the perpetual work of whose creation stands “finished, yet renewed forever;”—a Being who has attained His exalted state by a path which now His children are permitted to follow; whose glory it is their heritage to share.",
+        "note": "Affirmation — the canonical statement of ongoing divine progression in an officially commissioned doctrinal work. Contrast Talmage in the April 1915 Conference Report (“was once a Man, and has progressed … to His present position”), which is completed past progression, not this claim — the same apostle, sixteen years apart, saying two different things that sound identical."
+      },
+      {
+        "quoteId": "talmage-af-1899-q2",
+        "categories": [
+          "FATHER-MORTAL-EXPERIENCE"
+        ],
+        "excerpt": "In spite of the opposition of all the sects, in the face of direct charges of blasphemy, the Church proclaims the eternal truth, “As man is, God once was; as God is, man may become.”",
+        "note": "The Snow couplet proclaimed as “eternal truth” against blasphemy charges — a useful register datum for 1899 confidence, three sentences after the progression claim."
+      }
+    ],
+    "notes": "Text verified against the printed lecture. The book was prepared and published under First Presidency commission and served as a semi-official doctrinal standard for decades; it is not current curriculum."
+  },
+  {
+    "id": "bh-roberts-tripartite",
+    "sourceType": "original",
+    "date": "1907-01-01",
+    "dateDisplay": "1907–1911",
+    "datePrecision": "year",
+    "title": "B. H. Roberts, The Seventy's Course in Theology",
+    "speaker": "B. H. Roberts",
+    "office": "President of the First Council of the Seventy",
+    "venue": "Seventy's Course in Theology (five volumes); later The Truth, The Way, The Life",
+    "url": "https://bhroberts.org/",
+    "hearsay": "A",
+    "correlationStatus": "never-official",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "bh-roberts-tripartite-q1",
+        "categories": [
+          "TRIPARTITE-FRAMEWORK"
+        ],
+        "excerpt": "[Roberts's articulation of intelligence → spirit → body: an eternal, uncreated intelligence is at some point organized into a spirit body by Heavenly Parents, and later receives a physical body. Exact excerpt to be pulled from the Course in Theology volumes.]",
+        "note": "Placeholder excerpt; the framework needs quoting directly from Roberts rather than paraphrased."
+      }
+    ],
+    "notes": "Added in v2 as the actual origin of the three-stage model, which v1 wrongly retrojected onto Abraham 3. Roberts's synthesis is what harmonizes Abraham 3's eternalism with 1909-era viviparism: it lets spirits be literally begotten while their underlying intelligence remains uncreated. Never official, but it became the default framework in twentieth-century teaching. Link out to bhroberts.org for the primary volumes.",
+    "needsVerification": true
+  },
+  {
+    "id": "fp-1909",
+    "sourceType": "original",
     "date": "1909-11-01",
     "dateDisplay": "November 1909",
     "datePrecision": "month",
-    "title": "First Presidency, 'The Origin of Man'",
-    "speaker": "Joseph F. Smith, John R. Winder, Anthon H. Lund (First Presidency)",
+    "title": "First Presidency, “The Origin of Man”",
+    "speaker": "Joseph F. Smith, John R. Winder, Anthon H. Lund",
     "office": "First Presidency",
     "venue": "Improvement Era (official statement)",
     "url": "https://www.churchofjesuschrist.org/study/ensign/2002/02/the-origin-of-man",
-    "categories": ["SPIRIT-BIRTH-VIVIPAROUS", "HEAVENLY-MOTHER"],
     "hearsay": "A",
     "correlationStatus": "historical-official",
-    "summary": "Official First Presidency doctrine: 'man, as a spirit, was begotten and born of heavenly parents' before mortality.",
-    "transcription": "All men and women are in the similitude of the universal Father and Mother, and are literally the sons and daughters of Deity... man, as a spirit, was begotten and born of heavenly parents, and reared to maturity in the eternal mansions of the Father, prior to coming upon the earth in a temporal body.",
-    "notes": "The strongest A-tier viviparous statement: first-person First Presidency text, published under their direction. The Ensign reprinted it in full in February 2002 — that reprint is itself a correlation-era data point, since it postdates the Hinckley interviews by five years."
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "fp-1909-q1",
+        "categories": [
+          "SPIRIT-BIRTH-VIVIPAROUS",
+          "HEAVENLY-MOTHER"
+        ],
+        "excerpt": "All men and women are in the similitude of the universal Father and Mother, and are literally the sons and daughters of Deity... man, as a spirit, was begotten and born of heavenly parents, and reared to maturity in the eternal mansions of the Father, prior to coming upon the earth in a temporal body.",
+        "note": "The strongest viviparous statement in the corpus, and the only one that says both begotten and born."
+      },
+      {
+        "quoteId": "fp-1909-q2",
+        "categories": [
+          "FORWARD-EUPHEMISM"
+        ],
+        "referent": "ambiguous",
+        "excerpt": "[Man is] the offspring of celestial parentage... capable, by experience through ages and aeons, of evolving into a God.",
+        "note": "Tagged BACKWARD-MORTALITY per the v2 revision, but flagging a tension for review: as excerpted, the sentence runs forward (man evolving into a God), not backward (God having been man). It reads as a First Presidency forward-progression claim — arguably FORWARD-EUPHEMISM, since no mechanism is named — and only yields a backward claim by running the couplet's inference in reverse. Confirm the exact wording against the 1909 Improvement Era text, then settle the tag. Retag resolved: with BACKWARD-MORTALITY retired, this moves to FORWARD-EUPHEMISM rather than onto the Father axis. The sentence runs forward — man evolving into a God, no mechanism named — and never claims the Father was mortal. Confirm the Improvement Era wording; if it does contain a backward clause, move it to FATHER-MORTAL-EXPERIENCE."
+      }
+    ],
+    "notes": "Verify quote 2's wording before relying on it; if confirmed it makes 1909 a stronger forward-progression statement than it is usually remembered as being. The February 2002 Ensign reprint is filed separately as a citation — its timing, five years after the Hinckley interviews, is the datum.",
+    "needsVerification": true
   },
   {
-    "id": "father-and-son-1916",
+    "id": "romney-1964",
+    "sourceType": "original",
+    "date": "1964-10-03",
+    "dateDisplay": "October 3, 1964",
+    "datePrecision": "day",
+    "title": "Marion G. Romney: a process infinitely repeated in nature",
+    "speaker": "Marion G. Romney",
+    "office": "Quorum of the Twelve Apostles",
+    "venue": "General conference, Saturday morning session (Conference Report, October 1964)",
+    "url": "https://archive.org/details/conferencereport1964sa/page/n49",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "romney-1964-q1",
+        "categories": [
+          "FORWARD-EXPLICIT"
+        ],
+        "excerpt": "We all know that like begets like and that for the offspring to grow to the stature of his parent is a process infinitely repeated in nature. We can therefore understand that for a son of God to grow to the likeness of his Father in heaven is in harmony with natural law. We see this law demonstrated every few years in our own experience. Sons born to mortal fathers grow up to be like their fathers in the flesh. This is the way it will be with spirit sons of God. They will grow up to be like their Father in heaven. Joseph taught this obvious truth.",
+        "note": "Spirit sons of God growing to the stature of their parent, argued from natural law."
+      },
+      {
+        "quoteId": "romney-1964-q2",
+        "categories": [
+          "FATHER-MORTAL-EXPERIENCE",
+          "FATHER-BECAME-GOD"
+        ],
+        "excerpt": "As a matter of fact, he taught that through this process God himself attained perfection. From President Snow's understanding of the teachings of the Prophet on this doctrinal point, he coined the familiar couplet: “As man is, God once was; as God is, man may become.” This teaching is peculiar to the restored gospel of Jesus Christ.",
+        "note": "“This process” is the one just called “infinitely repeated in nature,” with the Father placed inside it — a chain is implicit by symmetry, but per the no-retrojection principle it is not tagged INFINITE-CHAIN: Romney never states the backward direction. “God himself attained perfection” is the clearest FATHER-BECAME-GOD statement in the set."
+      }
+    ],
+    "notes": "The only located instance in the twentieth-century conference corpus (~10,000 addresses, 1897–1970 plus the modern era) where the parent-offspring mechanism is called infinitely repeated and God Himself is placed within it. Verified against the Internet Archive scan of the October 1964 Conference Report."
+  },
+  {
+    "id": "jfs-progression-1971",
+    "sourceType": "original",
+    "date": "1971-05-01",
+    "dateDisplay": "May 1971",
+    "datePrecision": "month",
+    "title": "Joseph Fielding Smith: progression “not in gaining more knowledge or power”",
+    "speaker": "Joseph Fielding Smith",
+    "office": "President of the Church",
+    "venue": "First Presidency message, “The Most Important Knowledge,” Ensign, May 1971",
+    "url": "https://www.churchofjesuschrist.org/study/ensign/1971/05/the-most-important-knowledge",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "jfs-progression-1971-q1",
+        "categories": [
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "And I am grateful that we know he is an infinite and eternal being who knows all things and has all power and whose progression consists not in gaining more knowledge or power, not in further perfecting his godly attributes, but in the increase and multiplying of his kingdoms.",
+        "note": "Denial — the definitive official statement of the only-in-dominions position, from a sitting Church President in a First Presidency message. Note the mechanism: God's progression is relocated into the expansion of kingdoms, i.e. the forward/generative chain."
+      }
+    ],
+    "notes": "Smith had argued this position for decades in Doctrines of Salvation (which prints “HOW GOD DOES NOT PROGRESS” roughly a page before “The Prophet taught that our Father had a Father and so on” — denying progression while affirming the regress, proof the two questions are independent). This 1971 First Presidency message is the position's most official form."
+  },
+  {
+    "id": "mcconkie-heresies-1980",
+    "sourceType": "original",
+    "date": "1980-06-01",
+    "dateDisplay": "June 1, 1980",
+    "datePrecision": "day",
+    "title": "Bruce R. McConkie, “The Seven Deadly Heresies”",
+    "speaker": "Bruce R. McConkie",
+    "office": "Quorum of the Twelve Apostles",
+    "venue": "Brigham Young University fireside address",
+    "url": "https://speeches.byu.edu/talks/bruce-r-mcconkie/seven-deadly-heresies/",
+    "hearsay": "A",
+    "correlationStatus": "never-official",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "mcconkie-heresies-1980-q1",
+        "categories": [
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "[On the proposition that God is progressing in knowledge and learning new truths, listed as heresy one:] This is false—utterly, totally, and completely. There is not one sliver of truth in it. … God progresses in the sense that his kingdoms increase and his dominions multiply—not in the sense that he learns new truths.",
+        "note": "Denial, the sharpest on record. Note the rhetorical mechanism: “God progresses” is affirmed and immediately redefined as expansion of kingdoms — quoting the first clause alone reads as an affirmation of the position being denounced."
+      }
+    ],
+    "notes": "Never official — a BYU fireside, not conference. It triggered the McConkie–England correspondence (February 1981), the classic institutional episode of this debate; the denial position entered official channels through Joseph Fielding Smith's writings and the correlated manuals instead. Wording verified against the BYU Speeches text."
+  },
+  {
+    "id": "dcsm-2002-omniscience",
+    "sourceType": "original",
+    "date": "2002-01-01",
+    "dateDisplay": "2002",
+    "datePrecision": "year",
+    "title": "Doctrine and Covenants Student Manual rejects “He Himself is still learning”",
+    "speaker": "Church Educational System",
+    "office": "Institute curriculum",
+    "venue": "Doctrine and Covenants Student Manual (2002), Section 38, pp. 75–79",
+    "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-38-if-ye-are-prepared-ye-shall-not-fear",
+    "hearsay": "A",
+    "correlationStatus": "discontinued",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "dcsm-2002-omniscience-q1",
+        "categories": [
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "Some have questioned whether God is omniscient, that is, whether He knows all things. They say that He knows all things relative to man but that He Himself is still learning. This scripture shows that God has all knowledge.",
+        "note": "Denial in correlated curriculum. The position being corrected — God “is still learning” — is the one Woodruff preached in 1857; the manual frames it as an outsider's question. The proof-text is D&C 38:1–2, where the speaker is the Lord (Jesus Christ), hence the ambiguous referent."
+      }
+    ],
+    "notes": "Superseded by the 2017 institute manual but still hosted. A clean example of the denial position operating quietly in curriculum rather than conference."
+  },
+  {
+    "id": "ensign-2002-origin-of-man",
+    "sourceType": "citation",
+    "citesId": [
+      "fp-1909"
+    ],
+    "date": "2002-02-01",
+    "dateDisplay": "February 2002",
+    "datePrecision": "month",
+    "title": "Ensign reprint of “The Origin of Man”",
+    "speaker": "Church of Jesus Christ of Latter-day Saints",
+    "office": "Official magazine",
+    "venue": "Ensign, February 2002",
+    "url": "https://www.churchofjesuschrist.org/study/ensign/2002/02/the-origin-of-man",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "ensign-2002-origin-of-man-q1",
+        "categories": [
+          "SPIRIT-BIRTH-VIVIPAROUS"
+        ],
+        "excerpt": "[Full reprint of the 1909 statement, including “begotten and born of heavenly parents.”]",
+        "note": "The act of reprinting is the datum; the text is the 1909 original."
+      }
+    ],
+    "notes": "Reprinting the strongest viviparous statement in full, five years after the Hinckley interviews minimized the backward direction, cuts against a simple monotonic-taper narrative. The Ensign reprinted “The Father and the Son” two months later. Both belong in any honest account of the period."
+  },
+  {
+    "id": "fp-1916",
+    "sourceType": "original",
     "date": "1916-06-30",
     "dateDisplay": "June 30, 1916",
     "datePrecision": "day",
-    "title": "First Presidency and the Twelve, 'The Father and the Son: A Doctrinal Exposition'",
+    "title": "First Presidency and the Twelve, “The Father and the Son: A Doctrinal Exposition”",
     "speaker": "First Presidency and Quorum of the Twelve Apostles",
     "office": "First Presidency and the Twelve",
     "venue": "Official doctrinal exposition (Improvement Era, August 1916)",
     "url": "https://www.churchofjesuschrist.org/study/ensign/2002/04/the-father-and-the-son",
-    "categories": ["SPIRIT-BIRTH-VIVIPAROUS"],
     "hearsay": "A",
     "correlationStatus": "historical-official",
-    "summary": "Clarifies Elohim/Jehovah usage; Elohim is 'the literal Parent' of Jesus Christ and 'of the spirits of the human race.'",
-    "transcription": "God the Eternal Father, whom we designate by the exalted name-title 'Elohim,' is the literal Parent of our Lord and Savior Jesus Christ, and of the spirits of the human race.",
-    "notes": "Reprinted in the Ensign, April 2002, alongside the February 2002 reprint of 'The Origin of Man' — the pair of reprints reads as a quiet reaffirmation of literal spirit parentage at the very moment public-facing rhetoric was softening."
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "fp-1916-q1",
+        "categories": [
+          "SPIRIT-BIRTH-VIVIPAROUS"
+        ],
+        "implied": true,
+        "excerpt": "God the Eternal Father, whom we designate by the exalted name-title “Elohim,” is the literal Parent of our Lord and Savior Jesus Christ, and of the spirits of the human race.",
+        "note": "Marked implied: this asserts literal parentage, not birth mechanics. Strictly it is viviparous-implied, and 1909 remains the statement that actually says “begotten and born.”"
+      }
+    ],
+    "notes": "Reprinted in the Ensign, April 2002, alongside the February reprint of “The Origin of Man.”"
   },
   {
-    "id": "ballard-sacramental-covenant-1949",
-    "date": "1949-01-01",
-    "dateDisplay": "1949 (compilation; sermon delivered 1919)",
+    "id": "fp-1925",
+    "sourceType": "citation",
+    "citesId": [
+      "fp-1909"
+    ],
+    "date": "1925-09-01",
+    "dateDisplay": "September 1925",
+    "datePrecision": "month",
+    "title": "First Presidency, “‘Mormon’ View of Evolution”",
+    "speaker": "Heber J. Grant, Anthony W. Ivins, Charles W. Nibley",
+    "office": "First Presidency",
+    "venue": "Improvement Era",
+    "url": "https://www.churchofjesuschrist.org/study/ensign/2002/02/the-origin-of-man",
+    "hearsay": "A",
+    "correlationStatus": "historical-official",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "fp-1925-q1",
+        "categories": [],
+        "excerpt": "[Condensed reissue of the 1909 statement. Check whether “begotten and born of heavenly parents” survives the condensation.]",
+        "note": "The categories on this entry are deliberately empty until the wording is checked — the whole point of the entry is which language did or did not survive."
+      }
+    ],
+    "notes": "Added in v2. A condensed reissue of 1909, and a clean natural experiment: if the “begotten and born” language was trimmed, that is an early retreat data point three decades before correlation; if retained, it strengthens the continuity case. Either result is worth having, which is why the entry belongs in the set regardless. URL currently points at the 1909 reprint and needs replacing with the 1925 text.",
+    "needsVerification": true
+  },
+  {
+    "id": "ballard-increase",
+    "sourceType": "original",
+    "date": "1922-09-22",
+    "dateDisplay": "Sermon 1922; compilation published 1949",
     "datePrecision": "year",
-    "title": "Melvin J. Ballard, 'The Sacramental Covenant' / Sermons and Missionary Services",
+    "title": "Melvin J. Ballard on eternal increase",
     "speaker": "Melvin J. Ballard",
     "office": "Apostle (d. 1939; compilation published posthumously)",
-    "venue": "Sermons and Missionary Services of Melvin Joseph Ballard (Bookcraft, 1949)",
+    "venue": "Sermon at Ogden, Utah; later in Sermons and Missionary Services of Melvin Joseph Ballard (Bookcraft, 1949)",
     "url": "https://www.churchofjesuschrist.org/study/manual/eternal-marriage-student-manual/eternal-increase",
-    "categories": ["SPIRIT-BIRTH-VIVIPAROUS", "FORWARD-EXPLICIT"],
-    "hearsay": "A",
+    "hearsay": "B",
     "correlationStatus": "historical-official",
-    "summary": "Spirit bodies described in physiological terms — spirit as literal substance transmitted from Heavenly Parents — with exalted couples promised the same generative power.",
-    "transcription": "What do we mean by endless or eternal increase? We mean that through the righteousness and faithfulness of men and women who keep the commandments of God they will come forth with celestial bodies, fitted and prepared to enter into their great, high and eternal glory in the celestial kingdom of God, and unto them, through their preparation, there will come spirit children.",
-    "notes": "The URL points at the 2003 Eternal Marriage Student Manual's 'Eternal Increase' section, which republishes Ballard — see that entry for the correlation significance. Verify the exact excerpt wording against the manual, which trims the 1949 text."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "ballard-increase-q1",
+        "categories": [
+          "FORWARD-EXPLICIT",
+          "SPIRIT-BIRTH-VIVIPAROUS"
+        ],
+        "excerpt": "What do we mean by endless or eternal increase? We mean that through the righteousness and faithfulness of men and women who keep the commandments of God they will come forth with celestial bodies, fitted and prepared to enter into their great, high and eternal glory in the celestial kingdom of God, and unto them, through their preparation, there will come spirit children.",
+        "note": "Names both the object (spirit children) and the agents (exalted couples) — genuinely explicit where D&C 132 is not."
+      }
+    ],
+    "notes": "Hearsay lowered from A to B in v2. Sermons and Missionary Services was assembled posthumously by Bryant S. Hinckley from sermon reports; Ballard did not publish it under his own direction, so first-person A does not apply. Verify which sermon carries the physiological “spirit matter in their veins” material — “Three Degrees of Glory” (Ogden, 22 September 1922) is the likely origin, and “The Sacramental Covenant” is a different sermon that v1 conflated with it. The 2003 manual entry stays A as a citation: the decision to correlate is first-person Church action even where the underlying sermon text is B.",
+    "needsVerification": true
   },
   {
-    "id": "family-proclamation-1995",
+    "id": "mcconkie-mormon-doctrine",
+    "sourceType": "citation",
+    "citesId": [
+      "kfd-1844",
+      "snow-couplet",
+      "pratt-seer"
+    ],
+    "date": "1958-01-01",
+    "dateDisplay": "1958; 2nd ed. 1966; discontinued 2010",
+    "datePrecision": "year",
+    "title": "Bruce R. McConkie, Mormon Doctrine — “Eternal Progression,” “Spirit Children”",
+    "speaker": "Bruce R. McConkie",
+    "office": "Seventy, later Apostle",
+    "venue": "Mormon Doctrine (Bookcraft)",
+    "url": "https://archive.org/details/mormondoctrine0000mcco",
+    "hearsay": "A",
+    "correlationStatus": "discontinued",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "mcconkie-mormon-doctrine-q1",
+        "categories": [
+          "FORWARD-EXPLICIT",
+          "SPIRIT-BIRTH-VIVIPAROUS",
+          "INFINITE-CHAIN"
+        ],
+        "referent": "father",
+        "excerpt": "[Entries on “Eternal Progression” and “Spirit Children” stating that exalted beings beget spirit offspring and that this pattern has no beginning or end. Exact wording to be pulled from the 1966 second edition.]",
+        "note": "Placeholder excerpt pending the printed edition."
+      },
+      {
+        "quoteId": "mcconkie-mormon-doctrine-q2",
+        "categories": [
+          "BACKWARD-EXPLICIT",
+          "INFINITE-CHAIN"
+        ],
+        "referent": "father",
+        "excerpt": "“Every man who reigns in celestial glory is a god to his dominions,” the Prophet said. Hence, the Father, who shall continue to all eternity as the God of exalted beings, is a God of Gods. Further, as the Prophet also taught, there is “a God above the Father of our Lord Jesus Christ. … If Jesus Christ was the Son of God, and John discovered that God the Father of Jesus Christ had a Father, you may suppose that he had a Father also. Where was there ever a son without a father? … Hence if Jesus had a Father, can we not believe that he had a Father also?” In this way both the Father and the Son, as also all exalted beings, are now or in due course will become Gods of Gods.",
+        "note": "The “God of Gods” entry, 2nd ed. (1966) p. 230, printing the Sermon in the Grove regress approvingly — from the same author whose 1980 fireside denounced divine progression in knowledge. Affirming the backward chain while denying divine progression: the two questions are independent, demonstrated within one corpus."
+      }
+    ],
+    "notes": "Added in v2. Never official — it drew First Presidency concern on publication — yet massively influential on lay understanding for half a century, which is exactly why it needs to be in the dataset with its status labelled honestly. Bookcraft/Deseret Book let it go out of print in 2010; that discontinuation is itself a retreat data point, and the reason its correlation status is discontinued rather than never-official. The God of Gods passage is verified against the 2nd edition, p. 230; the Eternal Progression and Spirit Children entries still need their own verification pass, and the 1958 first-edition pagination remains unchecked.",
+    "needsVerification": true
+  },
+  {
+    "id": "acm-1976",
+    "sourceType": "citation",
+    "citesId": [
+      "kfd-1844",
+      "dc-132",
+      "fp-1909"
+    ],
+    "date": "1976-01-01",
+    "dateDisplay": "1976",
+    "datePrecision": "year",
+    "title": "Achieving a Celestial Marriage (student manual)",
+    "speaker": "Church Educational System",
+    "office": "Institute curriculum (correlated)",
+    "venue": "Institute of Religion student manual",
+    "url": "https://archive.org/details/achievingcelesti0000unse",
+    "hearsay": "A",
+    "correlationStatus": "discontinued",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "acm-1976-q1",
+        "categories": [
+          "FATHER-MORTAL-EXPERIENCE",
+          "FATHER-BECAME-GOD",
+          "HEAVENLY-MOTHER",
+          "SPIRIT-BIRTH-VIVIPAROUS"
+        ],
+        "referent": "father",
+        "excerpt": "As shown in this chapter, our Father in heaven was once a man as we are now, capable of physical death. By obedience to eternal gospel principles, he progressed from one stage of life to another until he attained the state that we call exaltation or godhood. In such a condition, he and our mother in heaven were empowered to give birth to spirit children whose potential was equal to that of their heavenly parents. We are those spirit children.",
+        "note": "Chapter 1 summary, section (1-20), p. 132. Backward mortality, a heavenly mother, and viviparous spirit birth (“give birth to spirit children”) asserted of the Father in one paragraph of correlated curriculum. Carries both Father-axis positions explicitly: “once a man... capable of physical death” and “until he attained the state.”"
+      },
+      {
+        "quoteId": "acm-1976-q2",
+        "categories": [
+          "FORWARD-EXPLICIT"
+        ],
+        "excerpt": "a man and his wife when glorified will have spirit children who eventually will go on an earth like this one … these worlds will be peopled by our own offspring.",
+        "note": "Quoted on the same page from Joseph Fielding Smith's Doctrines of Salvation — the forward chain run all the way to peopled worlds, in the same manual spread as the backward claim."
+      }
+    ],
+    "notes": "Added in v2 as the probable peak of correlated explicitness in both directions simultaneously — a manual teaching backward mortality and forward procreation on the same page, which no current material does. Chase the chart language specifically; it is the strongest single contrast with the 2025 curriculum. Wording verified against the Internet Archive scan of the 1976 printing (item AchievingACelestialMarriage), p. 132. Out-of-print CES manual, not current curriculum."
+  },
+  {
+    "id": "kimball-1976",
+    "sourceType": "original",
+    "date": "1976-10-01",
+    "dateDisplay": "October 1976",
+    "datePrecision": "month",
+    "title": "Spencer W. Kimball, “Our Own Liahona” (Adam–God repudiation)",
+    "speaker": "Spencer W. Kimball",
+    "office": "President of the Church",
+    "venue": "General Conference, Salt Lake City",
+    "url": "https://www.churchofjesuschrist.org/study/general-conference/1976/10/our-own-liahona",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "kimball-1976-q1",
+        "categories": [
+          "RETREAT-REFRAME"
+        ],
+        "excerpt": "We warn you against the dissemination of doctrines which are not according to the scriptures and which are alleged to have been taught by some of the General Authorities of past generations. Such, for instance, is the Adam-God theory.",
+        "note": "Boundary-setting from the pulpit: an explicit ruling that a past General Authority teaching is not doctrine."
+      }
+    ],
+    "notes": "Added in v2. Not about eternal increase directly, but it establishes the precedent and the vocabulary for retiring a speculative theogonic teaching attributed to Brigham Young — the mechanism later applied more quietly to the regress question. Verify the talk title and exact wording."
+  },
+  {
+    "id": "proclamation-1995",
+    "sourceType": "original",
     "date": "1995-09-23",
     "dateDisplay": "September 23, 1995",
     "datePrecision": "day",
@@ -215,49 +960,131 @@
     "office": "First Presidency and the Twelve",
     "venue": "General Relief Society Meeting; official proclamation",
     "url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world",
-    "categories": ["SPIRIT-BIRTH-VIVIPAROUS", "HEAVENLY-MOTHER"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "'Each is a beloved spirit son or daughter of heavenly parents' — literal parentage affirmed, mechanism unstated.",
-    "transcription": "All human beings—male and female—are created in the image of God. Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature and destiny. Gender is an essential characteristic of individual premortal, mortal, and eternal identity and purpose.",
-    "notes": "SPIRIT-BIRTH-VIVIPAROUS is tagged as implied, not stated: 'spirit son or daughter of heavenly parents' presumes literal parentage without describing generation. The mormonr research page on the proclamation's drafting history is useful background."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "proclamation-1995-q1",
+        "categories": [
+          "SPIRIT-BIRTH-VIVIPAROUS",
+          "HEAVENLY-MOTHER"
+        ],
+        "implied": true,
+        "excerpt": "All human beings—male and female—are created in the image of God. Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature and destiny.",
+        "note": "Marked implied. On a strict reading this parallels the 1916 exposition, not the 1909 statement: literal parentage presumed, generation unstated."
+      }
+    ],
+    "notes": "Filed as an original rather than a citation: it is a new doctrinal text, though it draws on the 1909 and 1916 language. The implied flag is doing the work v1's parenthetical “(implied)” did informally."
   },
   {
-    "id": "hinckley-interviews-1997",
+    "id": "hinckley-1997",
+    "sourceType": "original",
     "date": "1997-08-04",
-    "dateDisplay": "August 4, 1997 (Time); April 13, 1997 (SF Chronicle)",
-    "datePrecision": "day",
-    "title": "Gordon B. Hinckley press interviews (Time; San Francisco Chronicle)",
+    "dateDisplay": "1997 (interviews April and August; General Conference October)",
+    "datePrecision": "year",
+    "title": "Gordon B. Hinckley, 1997 press interviews and General Conference response",
     "speaker": "Gordon B. Hinckley",
     "office": "President of the Church",
-    "venue": "Published press interviews",
+    "venue": "Time; San Francisco Chronicle; General Conference",
     "url": "https://time.com/archive/6730655/kingdom-come/",
-    "categories": ["RETREAT-REFRAME", "BACKWARD-AGNOSTIC"],
     "hearsay": "A",
     "correlationStatus": "never-official",
-    "summary": "Asked whether God was once a man, Hinckley responds: 'I don't know that we teach it. I don't know that we emphasize it' — the landmark public retreat.",
-    "transcription": "On whether his church still holds that God the Father was once a man: 'I don't know that we teach it. I don't know that we emphasize it... I understand the philosophical background behind it. But I don't know a lot about it and I don't know that others know a lot about it.' (Time, Aug. 4, 1997) — 'I wouldn't say that. There was a little couplet coined, \"As man is, God once was. As God is, man may become.\" Now that's more of a couplet than anything else.' (San Francisco Chronicle, Apr. 13, 1997)",
-    "notes": "Never-official: press-interview transcripts, not Church publications — but A-tier as first-person published statements. Compare his October 1997 General Conference response to the coverage: 'I think I understand thoroughly the doctrine of the Church' — an internal reassurance paired with external minimization. The clearest single hinge point of the taper."
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "hinckley-1997-q1",
+        "categories": [
+          "RETREAT-REFRAME",
+          "BACKWARD-AGNOSTIC"
+        ],
+        "referent": "father",
+        "excerpt": "On whether his church still holds that God the Father was once a man: “I don't know that we teach it. I don't know that we emphasize it... I understand the philosophical background behind it. But I don't know a lot about it and I don't know that others know a lot about it.”",
+        "note": "Time, 4 August 1997. The question put to him was explicitly about the Father, which is what makes the referent unambiguous here."
+      },
+      {
+        "quoteId": "hinckley-1997-q2",
+        "categories": [
+          "RETREAT-REFRAME"
+        ],
+        "referent": "ambiguous",
+        "excerpt": "I wouldn't say that. There was a little couplet coined, “As man is, God once was. As God is, man may become.” Now that's more of a couplet than anything else.",
+        "note": "San Francisco Chronicle, 13 April 1997. Minimizes precisely by retreating to the couplet — the one formulation whose referent is ambiguous. See the Snow entry."
+      },
+      {
+        "quoteId": "hinckley-1997-q3",
+        "categories": [],
+        "excerpt": "I personally have been misrepresented... I think I understand thoroughly the doctrine of the Church.",
+        "note": "General Conference, October 1997. Folded in here as a quote rather than filed as a separate source, since it is the same speaker responding to coverage of the same speech acts. The internal reassurance and the external minimization are the pair worth seeing together."
+      }
+    ],
+    "notes": "Never official — press interviews and a conference response, not Church publications — but A-tier as first-person published statements. Hinckley later indicated the interview context had been trimmed; the fuller-transcript question is worth chasing before treating quote 1 as a complete account of what he said."
   },
   {
-    "id": "eternal-marriage-manual-2003",
+    "id": "emsm-2003",
+    "sourceType": "citation",
+    "citesId": [
+      "ballard-increase"
+    ],
     "date": "2003-01-01",
     "dateDisplay": "2003",
     "datePrecision": "year",
-    "title": "Eternal Marriage Student Manual, 'Eternal Increase'",
+    "title": "Eternal Marriage Student Manual, “Eternal Increase”",
     "speaker": "Church Educational System",
     "office": "Institute curriculum (correlated)",
     "venue": "Institute of Religion student manual",
     "url": "https://www.churchofjesuschrist.org/study/manual/eternal-marriage-student-manual/eternal-increase",
-    "categories": ["SPIRIT-BIRTH-VIVIPAROUS", "FORWARD-EXPLICIT"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "Republishes Melvin J. Ballard's viviparous spirit-birth teaching under the heading 'Eternal Increase' — the last explicitly viviparous correlated publication.",
-    "transcription": "See the Ballard 1949 entry for the core excerpt; the manual gathers Ballard, Joseph Fielding Smith, and others under 'Eternal Increase,' teaching that exalted couples will have 'spirit children' and 'eternal increase.'",
-    "notes": "Still hosted on churchofjesuschrist.org as of 2026, hence current-correlated — but institute curriculum has moved to newer courses, so its practical circulation is residual. As the terminus of explicit viviparism in correlated print, it is the baseline against which the 2014→2025 seminary-manual comparison should be read."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "emsm-2003-q1",
+        "categories": [
+          "FORWARD-EXPLICIT",
+          "SPIRIT-BIRTH-VIVIPAROUS"
+        ],
+        "excerpt": "[Gathers Ballard, Joseph Fielding Smith and others under the heading “Eternal Increase,” teaching that exalted couples will have spirit children.]",
+        "note": "A as a correlation act even though the underlying Ballard text is B."
+      }
+    ],
+    "notes": "Still hosted on churchofjesuschrist.org, hence current-correlated, though institute curriculum has moved on and its practical circulation is residual. As the terminus of explicit viviparism in correlated print it is the baseline for the 2014 → 2025 comparison."
   },
   {
-    "id": "dc-seminary-manual-2014",
+    "id": "tpjfs-2013",
+    "sourceType": "citation",
+    "citesId": [
+      "jfs-progression-1971"
+    ],
+    "date": "2013-01-01",
+    "dateDisplay": "2013",
+    "datePrecision": "year",
+    "title": "Teachings of Presidents: Joseph Fielding Smith reprints the denial",
+    "speaker": "Joseph Fielding Smith (curriculum reprint)",
+    "office": "Teachings of Presidents of the Church series",
+    "venue": "Teachings of Presidents of the Church: Joseph Fielding Smith (2013), ch. 1, “Our Father in Heaven”",
+    "url": "https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-joseph-fielding-smith/chapter-1-our-father-in-heaven",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "tpjfs-2013-q1",
+        "categories": [
+          "DIVINE-PROGRESSION"
+        ],
+        "excerpt": "I am grateful that we know he is our Father in heaven, the Father of our spirits, and that he ordained the laws whereby we can advance and progress until we become like him. And I am grateful that we know he is an infinite and eternal being who knows all things and has all power and whose progression consists not in gaining more knowledge or power, not in further perfecting his godly attributes, but in the increase and multiplying of his kingdoms.",
+        "note": "Denial, republished verbatim in current correlated curriculum — with the human-progression promise in the immediately preceding sentence. Human progression: affirmed; divine progression in knowledge: denied; the pairing in one paragraph is the modern settlement in miniature."
+      }
+    ],
+    "notes": "Current Teachings of Presidents manual carrying the 1971 denial forward. Wording verified against the hosted manual text."
+  },
+  {
+    "id": "seminary-2014",
+    "sourceType": "citation",
+    "citesId": [
+      "dc-132"
+    ],
     "date": "2014-01-01",
     "dateDisplay": "2014",
     "datePrecision": "year",
@@ -266,16 +1093,107 @@
     "office": "Seminary curriculum (correlated)",
     "venue": "Seminary teacher manual",
     "url": "https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-and-church-history-seminary-teacher-manual-2014",
-    "categories": ["FORWARD-EXPLICIT"],
     "hearsay": "A",
     "correlationStatus": "discontinued",
-    "summary": "Teaches that exalted beings become 'parents of spirit offspring' whose children pass through the same stages of progression.",
-    "transcription": "[Locate and paste the exact lesson text for D&C 131 on exaltation and 'parents of spirit offspring.']",
-    "notes": "Superseded by the 2025 D&C curriculum, hence discontinued. This entry and the 2025 manual entry form the strongest original side-by-side in the collection: same scripture block, eleven years apart, with the spirit-offspring sentence removed. Pull the exact 2014 lesson URL and wording before publishing the comparison.",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "seminary-2014-q1",
+        "categories": [
+          "FORWARD-EXPLICIT"
+        ],
+        "excerpt": "[Locate the exact lesson text on exaltation and becoming “parents of spirit offspring.”]",
+        "note": "Placeholder pending the exact lesson URL and wording."
+      }
+    ],
+    "notes": "Superseded by the 2025 curriculum, hence discontinued. Note what the citation link makes visible: the manual supplies FORWARD-EXPLICIT language while citing a text this dataset rates as euphemism — the explicitness is added by the curriculum, not carried by the scripture. Paired with the 2025 entry, this is the collection's strongest original contribution.",
     "needsVerification": true
   },
   {
-    "id": "nt-manual-rev-1-3-2018",
+    "id": "essay-2014",
+    "sourceType": "citation",
+    "citesId": [
+      "kfd-1844",
+      "snow-couplet"
+    ],
+    "date": "2014-02-01",
+    "dateDisplay": "February 2014",
+    "datePrecision": "month",
+    "title": "Gospel Topics Essay, “Becoming Like God”",
+    "speaker": "Church of Jesus Christ of Latter-day Saints (unsigned; First Presidency–approved)",
+    "office": "Official essay",
+    "venue": "churchofjesuschrist.org Gospel Topics Essays",
+    "url": "https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/becoming-like-god",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "ambiguous",
+    "quotes": [
+      {
+        "quoteId": "essay-2014-q1",
+        "categories": [
+          "BACKWARD-AGNOSTIC",
+          "RETREAT-REFRAME"
+        ],
+        "referent": "ambiguous",
+        "excerpt": "Little has been revealed about the first half of this couplet, and consequently little is taught.",
+        "note": "Operation one, aimed at the Snow couplet: declare the backward half unrevealed. Note the move's dependence on the couplet's referent ambiguity — if the couplet is Christological, there is indeed little revealed, because it was never a claim about the Father."
+      },
+      {
+        "quoteId": "essay-2014-q2",
+        "categories": [
+          "RETREAT-REFRAME"
+        ],
+        "excerpt": "Latter-day Saints' doctrine of exaltation is often similarly reduced in media to a cartoonish image of people receiving their own planets.",
+        "note": "Operation two: relocate deification into patristic theosis and ecumenical company (Irenaeus, C. S. Lewis), where neither regress nor spirit birth needs defending."
+      },
+      {
+        "quoteId": "essay-2014-q3",
+        "categories": [
+          "FORWARD-EUPHEMISM"
+        ],
+        "excerpt": "[The essay's handling of the King Follett Discourse — quoted accurately, then bracketed as unelaborated.]",
+        "note": "Operation three, and the essay's method in miniature: quote the historic teaching correctly, then frame it as undeveloped. Pull the exact passage."
+      }
+    ],
+    "notes": "Three quotes because the essay performs three distinct rhetorical operations on two different originals. Verify the excerpt wording against the current text, which has been lightly revised since 2014. Q1 (“Little has been revealed …”) verified verbatim against the currently hosted essay text, August 2026; q2 and q3 still need their wording checked.",
+    "needsVerification": true
+  },
+  {
+    "id": "essay-2015",
+    "sourceType": "citation",
+    "citesId": [
+      "fp-1909",
+      "o-my-father"
+    ],
+    "date": "2015-10-01",
+    "dateDisplay": "October 2015",
+    "datePrecision": "month",
+    "title": "Gospel Topics Essay, “Mother in Heaven”",
+    "speaker": "Church of Jesus Christ of Latter-day Saints (unsigned; First Presidency–approved)",
+    "office": "Official essay",
+    "venue": "churchofjesuschrist.org Gospel Topics Essays",
+    "url": "https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/mother-in-heaven",
+    "hearsay": "A",
+    "correlationStatus": "current-correlated",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "essay-2015-q1",
+        "categories": [
+          "HEAVENLY-MOTHER"
+        ],
+        "excerpt": "The Church of Jesus Christ of Latter-day Saints teaches that all human beings, male and female, are beloved spirit children of heavenly parents, a Heavenly Father and a Heavenly Mother.",
+        "note": "Affirmation without mechanism."
+      }
+    ],
+    "notes": "The citation link now makes the observation machine-visible: this essay cites the 1909 statement while declining to reproduce its “begotten and born” language. The gap between what is cited and what is quoted is a precise measure of the reframe."
+  },
+  {
+    "id": "nt-manual-2018",
+    "sourceType": "citation",
+    "citesId": [
+      "sermon-grove-1844"
+    ],
     "date": "2018-01-01",
     "dateDisplay": "2014/2018 editions",
     "datePrecision": "year",
@@ -284,98 +1202,105 @@
     "office": "Institute curriculum (correlated)",
     "venue": "Institute of Religion student manual",
     "url": "https://www.churchofjesuschrist.org/study/manual/new-testament-student-manual/revelation/chapter-53-revelation-1-3",
-    "categories": ["BACKWARD-EXPLICIT"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "Republishes Joseph Smith's Sermon-in-the-Grove commentary on Revelation 1:6 — 'God the Father of Jesus Christ had a Father' — the lone explicit backward regress in a current manual.",
-    "transcription": "The manual quotes Joseph Smith: 'If Jesus Christ was the Son of God, and... God the Father of Jesus Christ had a Father, you may suppose that He had a Father also... Hence if Jesus had a Father, can we not believe that He had a Father also?'",
-    "notes": "A-tier as a manual quoting a B-tier sermon (Bullock/Clayton reports via Teachings of the Prophet Joseph Smith). Its survival in current curriculum is the strongest counterevidence to a claim that backward regress has been fully retired — and its isolation is equally telling."
+    "referent": "father",
+    "quotes": [
+      {
+        "quoteId": "nt-manual-2018-q1",
+        "categories": [
+          "BACKWARD-EXPLICIT"
+        ],
+        "referent": "father",
+        "excerpt": "The manual quotes Joseph Smith: “If Jesus Christ was the Son of God, and... God the Father of Jesus Christ had a Father, you may suppose that He had a Father also... Hence if Jesus had a Father, can we not believe that He had a Father also?”",
+        "note": "A-tier as a manual, quoting a B-tier sermon."
+      }
+    ],
+    "notes": "The lone surviving explicit backward regress in current curriculum — and, under the citation model, not an independent one. Collapsing citations folds it into the 1844 sermon, which is the analytical payoff: no new backward-explicit original since 1844, and exactly one surviving citation."
   },
   {
-    "id": "becoming-like-god-2014",
-    "date": "2014-02-01",
-    "dateDisplay": "February 2014",
-    "datePrecision": "month",
-    "title": "Gospel Topics Essay, 'Becoming Like God'",
-    "speaker": "Church of Jesus Christ of Latter-day Saints (unsigned; First Presidency–approved)",
-    "office": "Official essay",
-    "venue": "churchofjesuschrist.org Gospel Topics Essays",
-    "url": "https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/becoming-like-god",
-    "categories": ["BACKWARD-AGNOSTIC", "RETREAT-REFRAME", "FORWARD-EUPHEMISM"],
-    "hearsay": "A",
-    "correlationStatus": "current-correlated",
-    "summary": "Engages the Snow couplet and King Follett Discourse but declines to affirm backward regress ('little has been revealed'), reframing deification through patristic theosis.",
-    "transcription": "Since human conceptions of reality are necessarily limited in mortality, religions struggle to adequately articulate their visions of eternal glory... Latter-day Saints' doctrine of exaltation is often similarly reduced in media to a cartoonish image of people receiving their own planets... Little has been revealed about the first half of this couplet, and consequently little is taught.",
-    "notes": "The essay's method is the taper in miniature: quote the historic teaching accurately, then bracket it as unelaborated. The pivot to Irenaeus and C.S. Lewis relocates deification into ecumenical territory where neither regress nor spirit birth needs defending. Verify the 'cartoonish image' and 'little has been revealed' excerpts against the current essay text, which has been lightly revised since 2014."
-  },
-  {
-    "id": "mother-in-heaven-essay-2015",
-    "date": "2015-10-01",
-    "dateDisplay": "October 2015",
-    "datePrecision": "month",
-    "title": "Gospel Topics Essay, 'Mother in Heaven'",
-    "speaker": "Church of Jesus Christ of Latter-day Saints (unsigned; First Presidency–approved)",
-    "office": "Official essay",
-    "venue": "churchofjesuschrist.org Gospel Topics Essays",
-    "url": "https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/mother-in-heaven",
-    "categories": ["HEAVENLY-MOTHER"],
-    "hearsay": "A",
-    "correlationStatus": "current-correlated",
-    "summary": "Affirms a Heavenly Mother as 'cherished and distinctive' doctrine while remaining silent on the mechanism of spirit generation.",
-    "transcription": "The Church of Jesus Christ of Latter-day Saints teaches that all human beings, male and female, are beloved spirit children of heavenly parents, a Heavenly Father and a Heavenly Mother. This understanding is rooted in scriptural and prophetic teachings about the nature of God, our relationship to Deity, and the godly potential of men and women.",
-    "notes": "Affirmation without mechanism: the essay cites the 1909 'Origin of Man' statement yet does not reproduce its 'begotten and born' language. The gap between what is cited and what is quoted is a precise measure of the reframe."
-  },
-  {
-    "id": "oaks-gc-october-2019",
+    "id": "oaks-2019",
+    "sourceType": "citation",
+    "citesId": [
+      "dc-132"
+    ],
     "date": "2019-10-01",
     "dateDisplay": "October 2019",
     "datePrecision": "month",
-    "title": "Dallin H. Oaks, October 2019 General Conference",
+    "title": "Dallin H. Oaks, “Two Great Commandments”",
     "speaker": "Dallin H. Oaks",
     "office": "First Counselor in the First Presidency",
     "venue": "General Conference, Salt Lake City",
     "url": "https://www.churchofjesuschrist.org/study/general-conference/2019/10",
-    "categories": ["FORWARD-EUPHEMISM"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "Cites 'the creative powers inherent in the combination of male and female' and quotes D&C 132's 'continuation of the seeds forever and ever' — the most explicit 21st-century General Conference reference, with the final noun left unstated.",
-    "transcription": "[Verify exact talk and wording: 'the creative powers inherent in the combination of male and female — what modern revelation describes as the \"continuation of the seeds forever and ever.\"']",
-    "notes": "Borderline FORWARD-EXPLICIT: quoting D&C 132:19 in a marriage context does the doctrinal work while the sentence never says 'spirit children.' Confirm the exact talk title from the October 2019 sessions (likely the women's session address or 'Two Great Commandments') before publishing.",
-    "needsVerification": true
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "oaks-2019-q1",
+        "categories": [
+          "FORWARD-EUPHEMISM"
+        ],
+        "excerpt": "That highest destiny is possible only through marriage for eternity. Eternal life includes the creative powers inherent in the combination of male and female—what modern revelation describes as the “continuation of the seeds forever and ever.”",
+        "note": "The final noun — spirit children — is left unstated; the scriptural code phrase carries the content. The clearest twenty-first-century conference instance of the euphemism register."
+      }
+    ],
+    "notes": "Wording verified against the hosted talk (October 2019 general conference, Sunday morning session). Confirm the exact talk from the October 2019 sessions before publishing."
   },
   {
-    "id": "johnson-liahona-2025",
+    "id": "johnson-2025",
+    "sourceType": "original",
     "date": "2025-09-01",
     "dateDisplay": "September 2025",
     "datePrecision": "month",
-    "title": "Camille N. Johnson, 'Lessons Learned in Inviting Christ to Author My Story'",
+    "title": "Camille N. Johnson, “Lessons Learned in Inviting Christ to Author My Story”",
     "speaker": "Camille N. Johnson",
     "office": "Relief Society General President",
     "venue": "Liahona (official magazine)",
     "url": "https://www.churchofjesuschrist.org/study/liahona/2025/09/04-lessons-learned-in-inviting-christ-to-author-my-story",
-    "categories": ["FORWARD-EXPLICIT"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "States that 'whether we are sealed and bear children in this life or the next, our object is exaltation' — a current official-magazine affirmation of posthumous childbearing.",
-    "transcription": "...whether we are sealed and bear children in this life or the next, our object is exaltation.",
-    "notes": "A rare recent explicit: 'bear children... in the next [life]' asserts the forward mechanism in a 2025 correlated publication, against the general drift toward euphemism. Notable that it arrives in a pastoral context (comforting those without children in mortality) rather than a doctrinal exposition."
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "johnson-2025-q1",
+        "categories": [
+          "FORWARD-EXPLICIT"
+        ],
+        "excerpt": "...whether we are sealed and bear children in this life or the next, our object is exaltation.",
+        "note": "Caveat in the v2 spirit of referent discipline: in context this comforts couples childless in mortality, and the plainest reading is posthumous fulfilment of sealing promises. It entails post-mortal childbearing but does not specify spirit children — the object of “bear children... in the next [life]” is left open, and a millennial or resurrected reading is available. Kept explicit because it does name post-mortal childbearing, which nothing else in current correlated print does."
+      }
+    ],
+    "notes": "A rare recent explicit, arriving in a pastoral rather than doctrinal register — which may be precisely why it could be said at all."
   },
   {
-    "id": "dc-manual-2025",
+    "id": "cfm-2025",
+    "sourceType": "citation",
+    "citesId": [
+      "dc-132"
+    ],
     "date": "2025-01-01",
     "dateDisplay": "2025",
     "datePrecision": "year",
     "title": "Doctrine and Covenants curriculum (2025), D&C 131 material",
     "speaker": "Church Educational System",
-    "office": "Seminary/Come Follow Me curriculum (correlated)",
-    "venue": "2025 D&C curriculum",
+    "office": "Come, Follow Me / seminary curriculum (correlated)",
+    "venue": "2025 Doctrine and Covenants curriculum",
     "url": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025",
-    "categories": ["RETREAT-REFRAME"],
     "hearsay": "A",
     "correlationStatus": "current-correlated",
-    "summary": "'Increase' in D&C 131 reframed around eternal marriage and becoming like God; the 2014 manual's 'parents of spirit offspring' language is absent.",
-    "transcription": "[Pull the exact 2025 lesson text for the D&C 131 block for side-by-side comparison with the 2014 seminary manual.]",
-    "notes": "The paired entry to the 2014 seminary manual: same scripture block, spirit-offspring sentence removed. This side-by-side is the collection's strongest original contribution — verify the exact 2025 lesson URL and wording before publishing.",
+    "referent": "n/a",
+    "quotes": [
+      {
+        "quoteId": "cfm-2025-q1",
+        "categories": [
+          "RETREAT-REFRAME"
+        ],
+        "excerpt": "[Pull the exact 2025 lesson text for the D&C 131 block for side-by-side comparison with the 2014 seminary manual.]",
+        "note": "The comparison to capture is narrow and concrete: same scripture block, eleven years apart, with the spirit-offspring sentence absent."
+      }
+    ],
+    "notes": "Paired entry to the 2014 seminary manual. Both cite the same original, and the difference between what each adds to it is the measurement.",
     "needsVerification": true
   }
 ]
