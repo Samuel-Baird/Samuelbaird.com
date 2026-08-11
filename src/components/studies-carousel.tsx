@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Tag, type TagInk } from "@/components/tag";
@@ -112,12 +113,12 @@ function StudyCard({ study: s }: { study: Study }) {
       >
         {imgUrl && (
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-[color:var(--muted-soft)]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={imgUrl}
               alt={s.preview_image_caption ?? ""}
-              loading="lazy"
-              className="h-full w-full object-cover"
+              fill
+              sizes="(min-width: 640px) 50vw, 100vw"
+              className="object-cover"
             />
             {s.preview_image_is_ai && (
               <span className="absolute bottom-2 left-2 rounded-[var(--radius)] bg-black/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white">

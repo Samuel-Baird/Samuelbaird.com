@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown, LogOut, Settings, Shield, UserRound } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -25,9 +26,11 @@ function userInitial(user: AuthMenuUser) {
 export function AuthAvatar({ user }: { user: AuthMenuUser }) {
   if (user.avatar_url) {
     return (
-      <img
+      <Image
         src={user.avatar_url}
         alt=""
+        width={32}
+        height={32}
         referrerPolicy="no-referrer"
         className="h-8 w-8 rounded-full object-cover"
       />
