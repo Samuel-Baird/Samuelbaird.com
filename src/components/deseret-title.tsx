@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { toDeseretChar } from "@/lib/deseret";
 
 /**
  * Renders text that briefly appears in the Deseret alphabet before
@@ -11,50 +12,10 @@ import { useEffect, useState } from "react";
  * motion enabled only ever get the real title; the Deseret pass is added
  * after mount and removed when it finishes.
  *
- * Deseret is a phonemic alphabet, so there is no true letter-for-letter
- * transliteration of English. The map below picks a plausible glyph per
- * Latin letter for the sake of the animation — it is not a real
- * transliteration and nothing meaningful is ever encoded in it.
+ * The Latin -> Deseret glyph mapping lives in @/lib/deseret and is shared
+ * with the donate modal's thank-you carousel — see that file for why it's
+ * not a real transliteration.
  */
-
-const DESERET_LOWER: Record<string, string> = {
-  a: "\u{10430}",
-  b: "\u{1043A}",
-  c: "\u{1043F}",
-  d: "\u{1043C}",
-  e: "\u{1042F}",
-  f: "\u{10441}",
-  g: "\u{10440}",
-  h: "\u{10438}",
-  i: "\u{1042E}",
-  j: "\u{1043E}",
-  k: "\u{1043F}",
-  l: "\u{1044A}",
-  m: "\u{1044B}",
-  n: "\u{1044C}",
-  o: "\u{1042C}",
-  p: "\u{10439}",
-  q: "\u{1043F}",
-  r: "\u{10449}",
-  s: "\u{10445}",
-  t: "\u{1043B}",
-  u: "\u{10433}",
-  v: "\u{10442}",
-  w: "\u{10436}",
-  x: "\u{10446}",
-  y: "\u{10437}",
-  z: "\u{10446}",
-};
-
-/** Deseret capitals sit 0x28 below their lowercase counterparts. */
-const CASE_OFFSET = 0x28;
-
-function toDeseret(char: string): string {
-  const lower = DESERET_LOWER[char.toLowerCase()];
-  if (!lower) return char;
-  if (char === char.toLowerCase()) return lower;
-  return String.fromCodePoint(lower.codePointAt(0)! - CASE_OFFSET);
-}
 
 const DURATION_MS = 300;
 const MAX_STAGGER_MS = 50;
@@ -212,7 +173,7 @@ export function DeseretTitle({
                     )}ms both`,
                   }}
                 >
-                  {toDeseret(char)}
+                  {toDeseretChar(char)}
                 </span>
               ))}
             </span>

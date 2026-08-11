@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
+import { DonateButtons } from "@/components/donate-buttons";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -32,24 +33,7 @@ export default function DonatePage() {
             directly toward hosting and keeping it that way. Anything helps
             and is appreciated.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={PAYPAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              Donate via PayPal →
-            </a>
-            <a
-              href={VENMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-6 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
-            >
-              Donate via Venmo →
-            </a>
-          </div>
+          <DonateButtons paypalUrl={PAYPAL_URL} venmoUrl={VENMO_URL} />
           <p className="text-sm text-[color:var(--muted)]">
             You&apos;ll be taken to {PAYPAL_URL.replace("https://", "")} or{" "}
             {VENMO_URL.replace("https://", "")} to complete the donation.
