@@ -5,6 +5,7 @@ import { DeseretTitle } from "@/components/deseret-title";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { getChannelByYouTubeId } from "@/lib/data";
 import { fmtCompact, fmtNumber } from "@/lib/format";
+import samuelPhoto from "./samuel-baird.jpg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -16,7 +17,15 @@ export const metadata: Metadata = {
 export const revalidate = 600;
 
 export default async function AboutPage() {
-  const myChannel = await getChannelByYouTubeId("UCT9gbDOQjYH8CQSG7-IMkTQ");
+  // The rest of the page has nothing to do with this channel lookup — a data
+  // hiccup here shouldn't take down the whole About page, just the optional
+  // "author channel" card.
+  let myChannel: Awaited<ReturnType<typeof getChannelByYouTubeId>> = null;
+  try {
+    myChannel = await getChannelByYouTubeId("UCT9gbDOQjYH8CQSG7-IMkTQ");
+  } catch (error) {
+    console.error("about page: author channel lookup failed:", error);
+  }
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
@@ -47,6 +56,12 @@ export default async function AboutPage() {
           <h2 className="serif pt-4 text-2xl font-semibold tracking-tight text-[color:var(--foreground)]">
             About me
           </h2>
+          <Image
+            src={samuelPhoto}
+            alt="Samuel Baird"
+            className="w-48 rounded-[var(--radius)] border border-[color:var(--border)] object-cover sm:w-56"
+            placeholder="blur"
+          />
           <p>
             I&apos;m <strong>Samuel Baird</strong> — a Latter-day Saint and the
             person behind this site. I run a small YouTube channel,{" "}
