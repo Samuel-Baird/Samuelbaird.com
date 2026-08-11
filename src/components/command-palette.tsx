@@ -71,10 +71,10 @@ export function CommandPalette({ items }: Props) {
         type="button"
         aria-label="Open search (⌘K)"
         onClick={() => setOpen(true)}
-        className="hidden h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)] md:inline-flex"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)] md:w-auto md:justify-start md:gap-2 md:px-3"
       >
         <Search size={16} aria-hidden="true" />
-        <span>Search…</span>
+        <span className="hidden md:inline">Search…</span>
       </button>
 
       {open && (

@@ -11,6 +11,7 @@ import { getPremiumStatus } from "@/lib/permissions";
 export const metadata: Metadata = {
   title: "Channels",
   description: "Latter-day Saint YouTube creators tracked by Latter-day Stats.",
+  alternates: { canonical: "/channels" },
 };
 
 export default async function ChannelsPage() {

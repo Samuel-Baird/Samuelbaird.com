@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getPremiumStatus } from "@/lib/permissions";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { GrowthChart } from "@/components/growth-chart";
 import { getCurrentUser } from "@/lib/auth";
@@ -47,6 +48,7 @@ export async function generateMetadata({
   return {
     title: c.name,
     description: `Subscriber, view, and upload stats for the LDS YouTube channel ${c.name}.`,
+    alternates: { canonical: `/channels/${slug}` },
   };
 }
 
@@ -105,12 +107,12 @@ export default async function ChannelDetailPage({
 
   return (
     <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-20">
-      <Link
-        href="/channels"
-        className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-      >
-        ← All channels
-      </Link>
+      <Breadcrumbs
+        items={[
+          { label: "Channels", href: "/channels" },
+          { label: channel.name },
+        ]}
+      />
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
         {(channel.channel_types?.length

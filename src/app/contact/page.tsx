@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch, report an error, or suggest a channel or study for Latter-day Stats.",
+  alternates: { canonical: "/contact" },
 };
 
 type SearchParams = {
-  sent?: string;
   error?: string;
   category?: string;
   ref?: string;
@@ -40,7 +40,6 @@ export default async function ContactPage({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
-  const sent = params.sent === "1";
   const errorMsg = params.error ? ERROR_MESSAGES[params.error] : null;
   const defaultCategory = CATEGORIES.find((c) => c.value === params.category)
     ?.value ?? "general";
@@ -75,12 +74,6 @@ export default async function ContactPage({
 
       <div className="mt-10 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
         <div className="max-w-xl">
-          {sent && (
-            <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--honey-soft)] px-5 py-4 text-sm text-[color:var(--foreground)]">
-              Thanks - your message was received. We&apos;ll follow up if a
-              reply is needed.
-            </div>
-          )}
           {errorMsg && (
             <div className="rounded-[var(--radius)] border border-[color:var(--oxblood)]/30 bg-[color:var(--oxblood-soft)] px-5 py-4 text-sm text-[color:var(--oxblood)]">
               {errorMsg}
@@ -180,7 +173,7 @@ export default async function ContactPage({
               <ul className="mt-3 space-y-3 border-t border-[color:var(--border)] pt-3 text-sm leading-relaxed text-[color:var(--muted)]">
                 <li>
                   Messages are read by the site editor, not a support team.
-                  Replies usually go out within a few days.
+                  We usually respond within 48 hours.
                 </li>
                 <li>
                   Corrections are the fastest to act on — include a link to the

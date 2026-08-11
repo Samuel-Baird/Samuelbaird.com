@@ -22,6 +22,7 @@ export function SiteFooter() {
             <Link href="/studies" className="hover:text-[color:var(--foreground)] transition-colors">Studies</Link>
             <Link href="/timelines" className="hover:text-[color:var(--foreground)] transition-colors">Timelines</Link>
             <Link href="/about" className="hover:text-[color:var(--foreground)] transition-colors">About</Link>
+            <Link href="/faq" className="hover:text-[color:var(--foreground)] transition-colors">FAQ</Link>
             <Link href="/contact" className="hover:text-[color:var(--foreground)] transition-colors">Contact</Link>
             <Link href="/donate" className="hover:text-[color:var(--foreground)] transition-colors">Donate</Link>
           </nav>

@@ -42,6 +42,29 @@ export const metadata: Metadata = {
     "Statistics, research, and creator data on the Latter-day Saint community.",
 };
 
+// Site-wide structured data. Kept minimal and factual — no aggregate
+// ratings, no org logo claims, nothing that overstates what the site is.
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Latter-day Stats",
+      description:
+        "Statistics, research, and creator data on the Latter-day Saint community.",
+      publisher: { "@id": `${SITE_URL}/#publisher` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#publisher`,
+      name: "Samuel Baird",
+      url: `${SITE_URL}/about`,
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -59,6 +82,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
+        {/* Plain <link>, not the metadata API's alternates.types — a
+            page-level `alternates` (added for canonical URLs) fully replaces
+            this layout's alternates object rather than merging into it, so
+            feed discovery would silently vanish on every page that sets
+            its own canonical. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Latter-day Stats"
+          href={`${SITE_URL}/feed.xml`}
         />
       </head>
       <body className="min-h-full flex flex-col">

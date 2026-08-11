@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Methodology",
   description:
     "How Latter-day Stats selects channels, collects statistics, and curates academic studies.",
+  alternates: { canonical: "/methodology" },
 };
 
 const SECTIONS: { id: string; title: string }[] = [
