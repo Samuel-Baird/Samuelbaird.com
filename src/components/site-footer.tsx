@@ -30,6 +30,13 @@ export function SiteFooter() {
         <div className="dinkus mt-8 mb-0 text-xs">
           <BeehiveMark className="h-3.5 w-3.5" />
         </div>
+
+        <nav className="small-caps flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px] text-[color:var(--muted)]">
+          <Link href="/terms" className="hover:text-[color:var(--foreground)] transition-colors">Terms</Link>
+          <Link href="/privacy" className="hover:text-[color:var(--foreground)] transition-colors">Privacy</Link>
+          <Link href="/dmca" className="hover:text-[color:var(--foreground)] transition-colors">Copyright</Link>
+          <Link href="/accessibility" className="hover:text-[color:var(--foreground)] transition-colors">Accessibility</Link>
+        </nav>
       </div>
     </footer>
   );
