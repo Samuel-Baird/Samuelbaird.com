@@ -76,6 +76,8 @@ type Row = {
 export function StanceGraph({
   entries,
   corpus,
+  fitToView,
+  onFitToViewChange,
   subject,
   onSubjectChange,
   onSelect,
@@ -89,6 +91,14 @@ export function StanceGraph({
    * a long silence stays visibly long.
    */
   corpus: SourceEntry[];
+  /**
+   * Narrow the axis to the material on screen instead of the whole corpus.
+   * Off by default: the fixed axis is what makes an absence legible, and an
+   * absence is usually the more interesting fact. On, it buys back the width
+   * for reading a crowded decade.
+   */
+  fitToView: boolean;
+  onFitToViewChange: (fit: boolean) => void;
   subject: QuestionId;
   onSubjectChange: (id: QuestionId) => void;
   onSelect?: (id: string) => void;
@@ -164,7 +174,7 @@ export function StanceGraph({
     const years = raw.map((r) => r.year);
     const axis = buildAxis(
       years,
-      corpus.map((e) => Number(e.date.slice(0, 4))),
+      fitToView ? undefined : corpus.map((e) => Number(e.date.slice(0, 4))),
     );
 
     let y = ERA_STRIP;
@@ -229,7 +239,7 @@ export function StanceGraph({
       dataMin: Math.min(...years),
       dataMax: Math.max(...years),
     };
-  }, [entries, corpus, subject]);
+  }, [entries, corpus, subject, fitToView]);
 
   const allDots = model ? model.bands.flatMap((b) => b.dots) : [];
   const tipDot = tip ? allDots.find((d) => d.key === tip.key) : null;
@@ -282,7 +292,10 @@ export function StanceGraph({
         )}
       </figcaption>
 
-      <SubjectTabs subject={subject} counts={counts} onChange={onSubjectChange} />
+      <div className="mt-3 flex items-end justify-between gap-3 border-b border-[color:var(--border)]">
+        <SubjectTabs subject={subject} counts={counts} onChange={onSubjectChange} />
+        <AxisToggle fitToView={fitToView} onChange={onFitToViewChange} />
+      </div>
 
       <p className="mt-2 text-[11px] leading-relaxed text-[color:var(--muted)]">
         <span className="text-[color:var(--foreground)]">{meta.question}</span>{" "}
@@ -559,14 +572,52 @@ export function StanceGraph({
           <StanceKey dots={allDots} />
 
           <p className="mt-2 text-[10px] leading-relaxed text-[color:var(--muted)]">
-            The axis is the whole corpus, {model.min}–{model.max}, on every
-            question and under every filter — so empty stretches are years
-            nobody addressed it. The count above is the range with material in
-            it. Click a dot to jump to its entry.
+            {fitToView ? (
+              <>
+                Condensed: the axis is narrowed to the material in view, so
+                widths are not comparable between questions. Untick to put every
+                question back on the corpus-wide axis, where an empty stretch is
+                years nobody addressed it.
+              </>
+            ) : (
+              <>
+                The axis is the whole corpus, {model.min}–{model.max}, on every
+                question and under every filter — so empty stretches are years
+                nobody addressed it. The count above is the range with material
+                in it.
+              </>
+            )}{" "}
+            Click a dot to jump to its entry.
           </p>
         </>
       )}
     </figure>
+  );
+}
+
+/**
+ * Off by default, and that default is load-bearing: the corpus-wide axis is
+ * what lets an absence take up room, and on most of these questions the
+ * absence is the finding. Condensing is for reading a crowded decade, so it
+ * has to be asked for.
+ */
+function AxisToggle({
+  fitToView,
+  onChange,
+}: {
+  fitToView: boolean;
+  onChange: (fit: boolean) => void;
+}) {
+  return (
+    <label className="flex shrink-0 cursor-pointer items-center gap-1.5 pb-1.5 text-[10px] text-[color:var(--muted)]">
+      <input
+        type="checkbox"
+        checked={fitToView}
+        onChange={(e) => onChange(e.target.checked)}
+        className="h-3 w-3 accent-[color:var(--accent)]"
+      />
+      <span className="small-caps whitespace-nowrap">Condense</span>
+    </label>
   );
 }
 
@@ -583,7 +634,7 @@ function SubjectTabs({
     <div
       role="tablist"
       aria-label="Choose a question"
-      className="-mx-1 mt-3 flex gap-1 overflow-x-auto whitespace-nowrap border-b border-[color:var(--border)]"
+      className="-mx-1 flex min-w-0 flex-1 gap-1 overflow-x-auto whitespace-nowrap"
     >
       {QUESTIONS.map((s) => {
         const active = s.id === subject;

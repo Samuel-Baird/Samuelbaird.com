@@ -75,6 +75,8 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
   // render and the first client render have to agree, and a data-dependent
   // default would differ the moment a filter arrived from the URL.
   const [subject, setSubject] = useState<QuestionId>("divinity");
+  // Full corpus by default; condensing narrows the axis to what is on screen.
+  const [fitToView, setFitToView] = useState(false);
   // Shared between the graph and the cards so hovering either one marks the
   // other; the plot is otherwise hard to tie back to a specific entry.
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -113,6 +115,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     if (p.get("cc") === "1") setCollapseCitations(true);
     const subj = p.get("subj");
     if (subj && QUESTIONS.some((s) => s.id === subj)) setSubject(subj as QuestionId);
+    if (p.get("axis") === "fit") setFitToView(true);
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -134,6 +137,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
       if (query.trim()) p.set("q", query.trim());
       if (collapseCitations) p.set("cc", "1");
       if (subject !== "divinity") p.set("subj", subject);
+      if (fitToView) p.set("axis", "fit");
       const qs = p.toString();
       window.history.replaceState(
         null,
@@ -142,7 +146,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
       );
     }, 300);
     return () => window.clearTimeout(timer);
-  }, [cats, grades, statuses, referents, sourceTypes, query, collapseCitations, subject]);
+  }, [cats, grades, statuses, referents, sourceTypes, query, collapseCitations, subject, fitToView]);
 
   const byId = useMemo(
     () => new Map(entries.map((e) => [e.id, e])),
@@ -365,6 +369,8 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           <StanceGraph
             entries={visible}
             corpus={entries}
+            fitToView={fitToView}
+            onFitToViewChange={setFitToView}
             subject={subject}
             onSubjectChange={setSubject}
             hoveredId={hoveredId}

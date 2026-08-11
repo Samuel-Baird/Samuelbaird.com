@@ -178,13 +178,15 @@ the offending JSON path named.
 - **Both graphs reflect the filters, and their axes behave differently on
   purpose.** The distribution graph rescales to the sources in view, because it
   is answering "what is here" and wants the width spent on the material. The
-  stance chart is pinned to the whole corpus on every question and under every
+  stance chart defaults to the whole corpus on every question and under every
   filter, because it is answering "how settled was this" — and an autoscaling
   axis is actively misleading there. A question last raised in 2013 would
   otherwise redraw with its final dot against the right edge, looking current,
-  when the fact worth seeing is the decade of silence after it. Fixing the axis
+  when the fact worth seeing is the decade of silence after it. The fixed axis
   also means the six questions share a ruler, so a gap on one tab is the same
-  width as a gap on another.
+  width as a gap on another. **Condense** trades that away for width when a
+  narrow period is what you are reading; it is opt-in, and it says in the
+  footnote that widths are no longer comparable between questions.
 - **Neither ever pads its stated range.** Whatever the axis spans, the caption
   reports the true first and last year of the data actually plotted.
 - **Excerpts collapsed by default, expanded in print.** Do not use `<details>`
