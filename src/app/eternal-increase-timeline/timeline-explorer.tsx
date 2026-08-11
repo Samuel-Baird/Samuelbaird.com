@@ -364,6 +364,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
         <div className="mb-8 print:hidden">
           <StanceGraph
             entries={visible}
+            corpus={entries}
             subject={subject}
             onSubjectChange={setSubject}
             hoveredId={hoveredId}

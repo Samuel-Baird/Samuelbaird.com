@@ -75,6 +75,7 @@ type Row = {
 
 export function StanceGraph({
   entries,
+  corpus,
   subject,
   onSubjectChange,
   onSelect,
@@ -82,6 +83,12 @@ export function StanceGraph({
   onHover,
 }: {
   entries: SourceEntry[];
+  /**
+   * Every source in the timeline, filtered or not. The axis is pinned to this
+   * rather than to what is on screen, so the six questions share one ruler and
+   * a long silence stays visibly long.
+   */
+  corpus: SourceEntry[];
   subject: QuestionId;
   onSubjectChange: (id: QuestionId) => void;
   onSelect?: (id: string) => void;
@@ -154,8 +161,11 @@ export function StanceGraph({
 
     if (raw.length === 0) return null;
 
-    const axis = buildAxis(raw.map((r) => r.year));
     const years = raw.map((r) => r.year);
+    const axis = buildAxis(
+      years,
+      corpus.map((e) => Number(e.date.slice(0, 4))),
+    );
 
     let y = ERA_STRIP;
     const rows: Row[] = [];
@@ -219,7 +229,7 @@ export function StanceGraph({
       dataMin: Math.min(...years),
       dataMax: Math.max(...years),
     };
-  }, [entries, subject]);
+  }, [entries, corpus, subject]);
 
   const allDots = model ? model.bands.flatMap((b) => b.dots) : [];
   const tipDot = tip ? allDots.find((d) => d.key === tip.key) : null;
@@ -547,6 +557,13 @@ export function StanceGraph({
           {tip && tipDot && <StanceTooltip dot={tipDot} anchor={tip} />}
 
           <StanceKey dots={allDots} />
+
+          <p className="mt-2 text-[10px] leading-relaxed text-[color:var(--muted)]">
+            The axis is the whole corpus, {model.min}–{model.max}, on every
+            question and under every filter — so empty stretches are years
+            nobody addressed it. The count above is the range with material in
+            it. Click a dot to jump to its entry.
+          </p>
         </>
       )}
     </figure>

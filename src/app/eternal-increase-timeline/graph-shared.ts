@@ -99,9 +99,20 @@ export type Axis = {
 /**
  * The full horizontal model for a set of years: bounds, the year-to-percent
  * projection, both tick densities, and the era backdrop.
+ *
+ * `domainYears` fixes the axis to a span wider than the data — pass the whole
+ * corpus and the plot keeps the same ruler however little is on it. That is
+ * what makes an absence legible: a question last raised in 2013 should show
+ * thirteen empty years, not quietly rescale until its final dot sits against
+ * the right edge looking current. `dataMin`/`dataMax` still report the real
+ * first and last year of what is actually plotted, so the caption never
+ * inherits the padding.
  */
-export function buildAxis(years: number[]): Axis {
-  const { min, max, dataMin, dataMax } = axisBounds(years);
+export function buildAxis(years: number[], domainYears?: number[]): Axis {
+  const { min, max } = axisBounds(
+    domainYears && domainYears.length > 0 ? domainYears : years,
+  );
+  const { dataMin, dataMax } = axisBounds(years);
   const span = max - min;
   const pctFor = (year: number) =>
     Math.round((INSET + ((year - min) / span) * (100 - 2 * INSET)) * 10) / 10;

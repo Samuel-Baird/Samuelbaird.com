@@ -175,8 +175,18 @@ the offending JSON path named.
   contiguous — a gap silently drops sources.
 - **Filters combine OR within a facet, AND across facets.** An empty facet
   means inactive, not "match nothing".
-- **The graph reflects the filters** and rescales to the sources in view. It
-  reports the true first and last year of the data, never a padded bound.
+- **Both graphs reflect the filters, and their axes behave differently on
+  purpose.** The distribution graph rescales to the sources in view, because it
+  is answering "what is here" and wants the width spent on the material. The
+  stance chart is pinned to the whole corpus on every question and under every
+  filter, because it is answering "how settled was this" — and an autoscaling
+  axis is actively misleading there. A question last raised in 2013 would
+  otherwise redraw with its final dot against the right edge, looking current,
+  when the fact worth seeing is the decade of silence after it. Fixing the axis
+  also means the six questions share a ruler, so a gap on one tab is the same
+  width as a gap on another.
+- **Neither ever pads its stated range.** Whatever the axis spans, the caption
+  reports the true first and last year of the data actually plotted.
 - **Excerpts collapsed by default, expanded in print.** Do not use `<details>`
   for this: a closed `<details>` cannot be reliably forced open for printing.
   Render the excerpt always and toggle with `hidden` / `print:block`.
