@@ -1,11 +1,11 @@
 /**
- * Merges reviewed stance calls back into sources.json.
+ * Merges the re-read back into sources.json.
  *
  * Deliberately incurious: it writes what the review files say and nothing
- * else. It never guesses a stance, never fills a gap from the category's usual
- * meaning, and refuses the whole run if the reviews and the corpus disagree
- * about which calls were needed — a partial merge would leave the file in a
- * state the build rejects for reasons that no longer point at the cause.
+ * else. It never guesses a band, never fills a gap from what a category
+ * usually means, and refuses the whole run if the reviews and the corpus
+ * disagree about which questions were asked — a partial merge would leave the
+ * file failing the build for reasons that no longer point at the cause.
  *
  *   node scripts/stance-apply.mjs <result-dir>
  */
@@ -13,21 +13,43 @@ import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const STANCES = new Set(["affirms", "hedges", "denies"]);
-const STANCE_CATEGORIES = new Set([
-  "BACKWARD-EXPLICIT",
-  "FATHER-MORTAL-EXPERIENCE",
-  "FATHER-BECAME-GOD",
-  "INFINITE-CHAIN",
-  "FATHER-ALWAYS-GOD",
-  "BACKWARD-AGNOSTIC",
-  "FORWARD-EXPLICIT",
-  "FORWARD-EUPHEMISM",
-  "SPIRIT-BIRTH-VIVIPAROUS",
-  "SPIRIT-BIRTH-ADOPTION",
-  "HEAVENLY-MOTHER",
-  "DIVINE-PROGRESSION",
-]);
+const NOT_ADDRESSED = "not-addressed";
+
+const TRIGGERS = {
+  divinity: ["FATHER-BECAME-GOD", "FATHER-ALWAYS-GOD", "BACKWARD-AGNOSTIC"],
+  regress: ["BACKWARD-EXPLICIT", "INFINITE-CHAIN", "BACKWARD-AGNOSTIC"],
+  mortality: ["FATHER-MORTAL-EXPERIENCE"],
+  increase: [
+    "FORWARD-EXPLICIT",
+    "FORWARD-EUPHEMISM",
+    "SPIRIT-BIRTH-VIVIPAROUS",
+    "SPIRIT-BIRTH-ADOPTION",
+  ],
+  mother: ["HEAVENLY-MOTHER"],
+  progression: ["DIVINE-PROGRESSION"],
+};
+
+const BANDS = {
+  divinity: ["not-always-god", "declines", "always-god"],
+  regress: ["infinite", "indefinite", "finite", "most-high", "declines"],
+  mortality: ["probation", "already-divine", "declines", "denies"],
+  increase: [
+    "literal-begetting",
+    "mechanism-unstated",
+    "organized-not-begotten",
+    "declines",
+    "denies",
+  ],
+  mother: [
+    "necessary-for-birth",
+    "parent-mechanism-unstated",
+    "present-role-unstated",
+    "role-capped",
+    "declines",
+    "denies",
+  ],
+  progression: ["knowledge", "dominion-only", "declines", "denies"],
+};
 
 const resultDir = process.argv[2];
 if (!resultDir) {
@@ -52,33 +74,46 @@ for (const file of readdirSync(resultDir).filter((f) => /^result-\d+\.json$/.tes
 const problems = [];
 let applied = 0;
 let flagged = 0;
+let notAddressed = 0;
 
 for (const entry of sources) {
   for (const quote of entry.quotes) {
-    const needed = quote.categories.filter((c) => STANCE_CATEGORIES.has(c));
+    const asked = Object.keys(TRIGGERS).filter((q) =>
+      TRIGGERS[q].some((t) => quote.categories.includes(t)),
+    );
     const review = reviews.get(quote.quoteId);
 
-    if (needed.length === 0) {
-      if (review) problems.push(`${quote.quoteId}: reviewed but needs no stance`);
+    if (asked.length === 0) {
+      if (review) problems.push(`${quote.quoteId}: reviewed but asked nothing`);
+      // The previous model's field is gone; strip any leftovers.
+      delete quote.stance;
+      delete quote.bands;
+      delete quote.stanceNeedsReview;
       continue;
     }
     if (!review) {
-      problems.push(`${quote.quoteId}: needs ${needed.length} stance call(s), no review found`);
+      problems.push(`${quote.quoteId}: asked ${asked.length} question(s), no review found`);
       continue;
     }
 
-    const given = Object.keys(review.stance ?? {});
-    const missing = needed.filter((c) => !given.includes(c));
-    const extra = given.filter((c) => !needed.includes(c));
-    const bad = Object.entries(review.stance ?? {}).filter(([, v]) => !STANCES.has(v));
-    if (missing.length) problems.push(`${quote.quoteId}: missing stance for ${missing.join(", ")}`);
-    if (extra.length) problems.push(`${quote.quoteId}: stance for uncarried category ${extra.join(", ")}`);
-    if (bad.length) problems.push(`${quote.quoteId}: invalid value ${bad.map(([k, v]) => `${k}=${v}`).join(", ")}`);
+    const given = Object.keys(review.bands ?? {});
+    const missing = asked.filter((q) => !given.includes(q));
+    const extra = given.filter((q) => !asked.includes(q));
+    const bad = Object.entries(review.bands ?? {}).filter(
+      ([q, b]) => asked.includes(q) && b !== NOT_ADDRESSED && !BANDS[q]?.includes(b),
+    );
+    if (missing.length) problems.push(`${quote.quoteId}: no answer for ${missing.join(", ")}`);
+    if (extra.length) problems.push(`${quote.quoteId}: answered unasked ${extra.join(", ")}`);
+    if (bad.length)
+      problems.push(
+        `${quote.quoteId}: invalid band ${bad.map(([q, b]) => `${q}=${b}`).join(", ")}`,
+      );
     if (missing.length || extra.length || bad.length) continue;
 
-    // Key order follows the quote's own categories so the diff stays readable.
-    quote.stance = Object.fromEntries(needed.map((c) => [c, review.stance[c]]));
-    applied += needed.length;
+    delete quote.stance;
+    quote.bands = Object.fromEntries(asked.map((q) => [q, review.bands[q]]));
+    applied += asked.length;
+    notAddressed += asked.filter((q) => review.bands[q] === NOT_ADDRESSED).length;
     if (review.confidence === "low") {
       quote.stanceNeedsReview = true;
       flagged++;
@@ -101,11 +136,21 @@ if (problems.length) {
 
 writeFileSync(sourcesPath, JSON.stringify(sources, null, 2) + "\n");
 
-const tally = { affirms: 0, hedges: 0, denies: 0 };
+const tally = {};
 for (const e of sources)
   for (const q of e.quotes)
-    for (const v of Object.values(q.stance ?? {})) tally[v]++;
+    for (const [question, band] of Object.entries(q.bands ?? {})) {
+      tally[question] ??= {};
+      tally[question][band] = (tally[question][band] ?? 0) + 1;
+    }
 
-console.log(`applied ${applied} stance calls across ${reviews.size} quotes`);
-console.log(`  affirms ${tally.affirms}  hedges ${tally.hedges}  denies ${tally.denies}`);
+console.log(`applied ${applied} answers across ${reviews.size} quotes`);
+console.log(`  answered "not-addressed": ${notAddressed}`);
 console.log(`  flagged for review: ${flagged} quotes`);
+for (const [question, bands] of Object.entries(tally)) {
+  const parts = Object.entries(bands)
+    .sort((a, b) => b[1] - a[1])
+    .map(([b, n]) => `${b} ${n}`)
+    .join(", ");
+  console.log(`  ${question.padEnd(12)} ${parts}`);
+}

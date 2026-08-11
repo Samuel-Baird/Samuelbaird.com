@@ -1,14 +1,13 @@
 import type { TagInk } from "@/components/tag";
+import { NOT_ADDRESSED } from "./schema";
 import type {
   CategoryId,
   CorrelationStatus,
   HearsayGrade,
+  QuestionId,
   Referent,
   SourceEntry,
   SourceType,
-  Stance,
-  StanceCategoryId,
-  SubjectId,
 } from "./schema";
 
 // Tailwind v4 needs complete literal class strings — never build these by
@@ -295,176 +294,267 @@ export const ERAS: Era[] = [
 ];
 
 /**
- * The questions the corpus can be asked about how settled a teaching was.
+ * The questions the corpus is asked, with the answers each one takes.
  *
- * A subject is a proposition plus the categories that bear on it. `affirms`,
- * `hedges` and `denies` on a quote are always *about the proposition*, never
- * about the category in the abstract — which is why the proposition is written
- * out here and shown to the reader rather than left implicit in a tag name.
+ * Every band carries its criteria in the data rather than in a document, so
+ * whoever assigns one — a reader or an agent — is held to the same written
+ * rule, and so the page can show that rule to anyone who wants to argue with a
+ * placement. The full reasoning is in docs/timelines/STANCE-TAXONOMY.md.
  *
- * Subjects come in two widths, and both are wanted. A broad one asks whether a
- * whole position was held; a narrow one asks after a single move inside it, and
- * can show a claim quietly going out of use while the broad question still
- * looks settled. So they overlap rather than partition: `DEFINING_SUBJECT` in
- * schema.ts records which subject's proposition a category's stance actually
- * means, and a narrower subject may read the same category only where its
- * question takes that direction the same way.
- *
- * Heavenly Mother stays its own subject rather than joining eternal increase:
- * a Mother existing and the exalted begetting spirit children are different
- * claims, and merging them would force a direction onto quotes that address
- * only one.
- *
- * `bands` names the three positions in this subject's own words. "Affirms" and
- * "Denies" are accurate but say nothing; on the Father's origin the same two
- * bands are "Became God" and "Always God", which is the actual disagreement and
- * what a reader came to see.
+ * Two structural things worth knowing. Bands are ordered by *commitment*, not
+ * by magnitude: on the regress question an indefinite chain outranks a finite
+ * one because leaving the succession open is a stronger claim than closing it.
+ * And `offScale` marks an answer that is not a rung on the ladder at all —
+ * declining to say sits genuinely between "not always God" and "always God",
+ * but nothing sits between an infinite regress and none, so drawing it there
+ * would invent a position no source holds.
  */
-export type Subject = {
-  id: SubjectId;
+export type Band = {
+  id: string;
   label: string;
-  question: string;
-  proposition: string;
-  categories: StanceCategoryId[];
-  bands: Record<Stance, string>;
+  criteria: string;
+  /** Not a rung on the scale; drawn apart from the ordered bands. */
+  offScale?: boolean;
 };
 
-export const SUBJECTS: Subject[] = [
+export type Question = {
+  id: QuestionId;
+  /** Tab label. */
+  label: string;
+  /** Asked of every quote the triggering categories reach. */
+  question: string;
+  /** Shown under the tabs, in the reader's own terms. */
+  blurb: string;
+  bands: Band[];
+};
+
+export const QUESTIONS: Question[] = [
   {
-    id: "father-origin",
-    label: "The Father's origin",
-    question: "Was the Father once a mortal man?",
-    proposition:
-      "God the Father passed through a mortality like ours and attained his exaltation, rather than having always been God.",
-    categories: [
-      "BACKWARD-EXPLICIT",
-      "FATHER-MORTAL-EXPERIENCE",
-      "FATHER-BECAME-GOD",
-      "INFINITE-CHAIN",
-      "FATHER-ALWAYS-GOD",
-      "BACKWARD-AGNOSTIC",
+    id: "divinity",
+    label: "Divinity",
+    question: "Was the Father always God?",
+    blurb:
+      "Whether the Father has always been God, or came to be one. This is not the mortality question: on this tradition's own terms Jehovah was God before and during his mortal life, so a passage about the Father's mortality says nothing here unless it also speaks of his becoming.",
+    bands: [
+      {
+        id: "not-always-god",
+        label: "Not always God",
+        criteria:
+          "Asserts a change into godhood — attained, became, was exalted to, progressed to being God — or that there was a time he was not God.",
+      },
+      {
+        id: "declines",
+        label: "Declines to say",
+        criteria:
+          "Raises his origin or history and withholds, or is deliberately poised between attainment and eternal divinity.",
+      },
+      {
+        id: "always-god",
+        label: "Always God",
+        criteria:
+          "Asserts the Father has always been God: no beginning to his divinity, no attainment.",
+      },
     ],
-    bands: {
-      affirms: "Became God",
-      hedges: "Declines to say",
-      denies: "Always God",
-    },
   },
   {
-    id: "father-mortality",
-    label: "A mortal life",
-    question: "Did the Father live a mortal life?",
-    proposition:
-      "God the Father passed through a mortal probation — “as man now is, God once was.”",
-    // The narrow half of the origin question. Whether the Father *lived* a
-    // mortality is a different claim from whether he had a Father above him,
-    // and the two stopped being taught at different times.
-    categories: ["FATHER-MORTAL-EXPERIENCE"],
-    bands: {
-      affirms: "Lived a mortality",
-      hedges: "Declines to say",
-      denies: "Denied",
-    },
+    id: "regress",
+    label: "Regress",
+    question: "How many Gods stand above the Father?",
+    blurb:
+      "An unquantified chain is an indefinite claim, not an infinite one. Reading it as infinite is the most tempting error available here, and the bands are ordered by how strong a claim is being made rather than by how many Gods are counted.",
+    bands: [
+      {
+        id: "infinite",
+        label: "Infinite regress",
+        criteria:
+          "An explicitly endless or numberless succession of Gods above the Father.",
+      },
+      {
+        id: "indefinite",
+        label: "Indefinite regress",
+        criteria:
+          "A chain above the Father with no stated terminus and no stated count — the default reading of an unqualified “his Father had a Father.”",
+      },
+      {
+        id: "finite",
+        label: "Finite regress",
+        criteria:
+          "A bounded chain: a stated count, or a named terminus above the Father.",
+      },
+      {
+        id: "most-high",
+        label: "Father is the Most High",
+        criteria: "Asserts nothing stands above the Father; he is the terminus.",
+      },
+      {
+        id: "declines",
+        label: "Declines to say",
+        criteria: "Raises the question and withholds.",
+        offScale: true,
+      },
+    ],
   },
   {
-    id: "infinite-chain",
-    label: "Gods above the Father",
-    question: "Is there a chain of Gods above the Father?",
-    proposition:
-      "The Father has a Father above him, and that succession runs back without end.",
-    categories: ["INFINITE-CHAIN"],
-    bands: {
-      affirms: "A chain without end",
-      hedges: "Declines to say",
-      denies: "Denied",
-    },
+    id: "mortality",
+    label: "Mortality",
+    question: "Did the Father pass through a mortal life?",
+    blurb:
+      "Kept apart from the divinity question on purpose. A mortal life and an attained divinity are separate claims, and the middle band is for the pattern this tradition already accepts in Christ — mortal while never ceasing to be God.",
+    bands: [
+      {
+        id: "probation",
+        label: "A probation as ours",
+        criteria:
+          "A mortality like ours: tested, subject to law, able to fall. A probation, not merely an incarnation.",
+      },
+      {
+        id: "already-divine",
+        label: "Mortal, already divine",
+        criteria:
+          "Lived a mortal life while already God — the Jehovah pattern. Incarnation without loss of divinity, or explicit comparison to Christ's mortality.",
+      },
+      {
+        id: "declines",
+        label: "Declines to say",
+        criteria: "Raises his mortality and withholds its character.",
+        offScale: true,
+      },
+      {
+        id: "denies",
+        label: "Denies mortality",
+        criteria: "Asserts the Father never was mortal.",
+      },
+    ],
   },
   {
-    id: "eternal-increase",
+    id: "increase",
     label: "Eternal increase",
     question: "Do the exalted become parents of spirit children?",
-    proposition:
-      "Exalted men and women beget spirit offspring and so continue the pattern by which we were made.",
-    categories: [
-      "FORWARD-EXPLICIT",
-      "FORWARD-EUPHEMISM",
-      "SPIRIT-BIRTH-VIVIPAROUS",
-      "SPIRIT-BIRTH-ADOPTION",
+    blurb:
+      "The distinction that matters is whether a mechanism is stated. Promising posterity without saying how is its own position, and it is the one most of the modern corpus takes.",
+    bands: [
+      {
+        id: "literal-begetting",
+        label: "Literally begotten",
+        criteria:
+          "Spirit children are begotten and born of heavenly parents. Procreation stated, not implied.",
+      },
+      {
+        id: "mechanism-unstated",
+        label: "Increase, mechanism unstated",
+        criteria:
+          "Affirms eternal increase, posterity, or continuation of seed while withholding how it happens.",
+      },
+      {
+        id: "organized-not-begotten",
+        label: "Organized, not begotten",
+        criteria:
+          "Spirits are organized, adopted, or fashioned from pre-existing intelligence — explicitly not begotten.",
+      },
+      {
+        id: "declines",
+        label: "Declines to say",
+        criteria: "Raises the question and withholds.",
+        offScale: true,
+      },
+      {
+        id: "denies",
+        label: "Denies increase",
+        criteria: "Denies that exalted beings have spirit posterity at all.",
+      },
     ],
-    bands: {
-      affirms: "They beget",
-      hedges: "Euphemism only",
-      denies: "Begetting denied",
-    },
   },
   {
-    id: "spirit-birth",
-    label: "How spirits are born",
-    question: "Are spirits begotten, or organized?",
-    proposition:
-      "Spirit children are literally begotten and born to heavenly parents, rather than organized or adopted from existing intelligences.",
-    // Two rival mechanisms rather than a claim and its denial, which is why the
-    // bands are named for the positions. The denial band is small and that is
-    // the finding: the organized/adopted reading is the minority one, and it
-    // belongs to the earliest and the latest ends of the corpus rather than
-    // the middle.
-    categories: ["SPIRIT-BIRTH-VIVIPAROUS", "SPIRIT-BIRTH-ADOPTION"],
-    bands: {
-      affirms: "Literally begotten",
-      hedges: "Mechanism unstated",
-      denies: "Organized, not begotten",
-    },
-  },
-  {
-    id: "heavenly-mother",
+    id: "mother",
     label: "Heavenly Mother",
-    question: "Is there a Mother in Heaven?",
-    proposition:
-      "A Heavenly Mother exists and is a parent of the human family.",
-    categories: ["HEAVENLY-MOTHER"],
-    bands: {
-      affirms: "She exists",
-      hedges: "Declines to say",
-      denies: "Denied",
-    },
+    question: "What work does the Mother do?",
+    blurb:
+      "Her existence is barely contested in this corpus, so asking whether she exists draws a flat line. What moves is how much she is required to do — and a rebuke aimed at praying to her caps her role without denying her.",
+    bands: [
+      {
+        id: "necessary-for-birth",
+        label: "Necessary for spirit birth",
+        criteria:
+          "Required for spirit children to exist. Begetting is said to need a mother, or she is named as bearing spirit offspring.",
+      },
+      {
+        id: "parent-mechanism-unstated",
+        label: "A parent, mechanism unstated",
+        criteria:
+          "Parentage affirmed — we are her children, she is a parent alongside the Father — without asserting how. The “heavenly parents” formula.",
+      },
+      {
+        id: "present-role-unstated",
+        label: "Present, role unstated",
+        criteria:
+          "She exists, or is a consort or exalted wife, with no claim about parentage or generation.",
+      },
+      {
+        id: "role-capped",
+        label: "Role capped",
+        criteria:
+          "Grants her, then restricts what follows: no speculation, no worship, no inference beyond what is given.",
+      },
+      {
+        id: "declines",
+        label: "Declines to say",
+        criteria: "Raises her and withholds entirely.",
+        offScale: true,
+      },
+      {
+        id: "denies",
+        label: "Denied",
+        criteria: "Denies her, or denies the specific role proposed.",
+      },
+    ],
   },
   {
-    id: "divine-progression",
+    id: "progression",
     label: "Divine progression",
     question: "Does God still progress?",
-    proposition:
-      "God continues to advance in knowledge or perfection, rather than possessing all of it already.",
-    categories: ["DIVINE-PROGRESSION"],
-    bands: {
-      affirms: "Still progressing",
-      hedges: "Declines to say",
-      denies: "Progression denied",
-    },
+    blurb:
+      "The interesting band is the middle one. Restricting progression to dominion while denying it in knowledge is a distinct position, and it is how the claim was retired rather than simply contradicted.",
+    bands: [
+      {
+        id: "knowledge",
+        label: "Progresses in knowledge",
+        criteria:
+          "God advances in knowledge, truth, or perfection. The strong claim.",
+      },
+      {
+        id: "dominion-only",
+        label: "In dominion only",
+        criteria:
+          "Restricts progression to glory, dominion, or kingdoms while denying growth in knowledge.",
+      },
+      {
+        id: "declines",
+        label: "Declines to say",
+        criteria: "Raises it and withholds.",
+        offScale: true,
+      },
+      {
+        id: "denies",
+        label: "Denies progression",
+        criteria: "God possesses all knowledge and does not advance.",
+      },
+    ],
   },
 ];
 
-export const SUBJECT_META: Record<SubjectId, Subject> = Object.fromEntries(
-  SUBJECTS.map((s) => [s.id, s]),
-) as Record<SubjectId, Subject>;
+export const QUESTION_META: Record<QuestionId, Question> = Object.fromEntries(
+  QUESTIONS.map((q) => [q.id, q]),
+) as Record<QuestionId, Question>;
 
-export const STANCE_META: Record<
-  Stance,
-  { label: string; definition: string }
-> = {
-  affirms: {
-    label: "Affirms",
-    definition: "States or plainly teaches the proposition.",
-    },
-  hedges: {
-    label: "Hedges",
-    definition:
-      "Gestures at it without committing — euphemism, an explicit refusal to say, deliberate ambiguity, or an affirmation withdrawn by its own qualification.",
-  },
-  denies: {
-    label: "Denies",
-    definition: "Rejects or corrects the proposition.",
-  },
-};
+/** The band a quote landed in for a question, or null where it answers none. */
+export function bandFor(
+  quote: { bands?: Record<string, string> },
+  question: QuestionId,
+): Band | null {
+  const id = quote.bands?.[question];
+  if (!id || id === NOT_ADDRESSED) return null;
+  return QUESTION_META[question].bands.find((b) => b.id === id) ?? null;
+}
 
 export function eraFor(entry: SourceEntry): Era {
   const year = Number(entry.date.slice(0, 4));

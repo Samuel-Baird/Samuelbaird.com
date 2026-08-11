@@ -1,23 +1,26 @@
 # Stance taxonomy
 
-**Status: proposal. Not implemented, and nothing has been categorised against
-it.** The shipped stance chart still uses the three-value model described in
-[`SCHEMA.md`](./SCHEMA.md) — `affirms` / `hedges` / `denies`, one scale for
-every question. This document replaces that model. Adopting it means
-re-reading the corpus, not relabelling it; see [What this costs](#what-this-costs).
+**Status: implemented.** Every quote is categorised against this, and the
+three-value model it replaced — one `affirms`/`hedges`/`denies` axis across all
+six questions — is gone from both the data and the schema. The field contract
+is in [`SCHEMA.md`](./SCHEMA.md); the bands and their criteria also live in
+`QUESTIONS` in `constants.ts`, so whoever assigns one is held to the same
+written rule the page shows its readers.
 
-Three open questions at the end need answering before any of it is built.
+The three questions this document once left open were settled when it was
+built; each is recorded at the point it applies, and collected under
+[Decisions](#decisions-taken).
 
 ---
 
-## Why the current model has to go
+## Why the previous model had to go
 
-**Three values cannot hold these questions.** "How many Gods are above the
+**Three values could not hold these questions.** "How many Gods are above the
 Father?" has at least four distinct answers, and they are ordered — infinite,
 indefinite, finite, none. Collapsing that into affirm/deny throws away the
 distinction the corpus actually argues about.
 
-**Divinity and mortality are independent, and the current model welds them
+**Divinity and mortality are independent, and the previous model welded them
 together.** `FATHER-BECAME-GOD` and `FATHER-MORTAL-EXPERIENCE` are treated as
 two ways of saying one thing. They are not. Under this tradition's own
 theology, Jehovah was God before and during his mortal life — so "God once was
@@ -25,7 +28,7 @@ as man now is" does **not**, by itself, assert that there was a time the Father
 was not God. Only *attainment* language does that. A quote can affirm the
 mortality and say nothing whatever about the divinity, and many do.
 
-**Heavenly Mother needs a role scale, not an existence scale.** Existence is
+**Heavenly Mother needed a role scale, not an existence scale.** Existence is
 close to uncontested here — 49 of 59 quotes affirm it and exactly one denies —
 so an existence axis is a flat line. What actually moves over time is how much
 doctrinal work she does: required for spirit birth at one end, a capped and
@@ -200,26 +203,28 @@ overlap — a category's recorded direction currently means whatever its
 where the reading survives. With scales owned by questions, a quote simply has
 a band per question it addresses, and nothing has to be reinterpreted.
 
-## What this costs
+## Decisions taken
 
-A re-backfill, not a relabel. Groups 1 and 3 will move quotes outright, because
-the current data answered a fused question and cannot be mechanically split.
-Group 5 will spread across bands that do not exist yet. The 27 placements
-already flagged `stanceNeedsReview` should be treated as unresolved rather than
-carried over.
+**`BACKWARD-AGNOSTIC` raises both divinity and regress.** Splitting the tag by
+which question is being declined would have presumed the answer, and sources
+that decline are rarely that tidy. Each question is answered separately, and a
+quote may decline one while saying something definite about the other.
 
-The integrity checks in `parseSources` and the drill in
-`scripts/stance-check-drill.mjs` generalise without much trouble: the
-completeness rule becomes "every question a quote bears on has a band", and the
-membership rule becomes "the band is one this question defines".
+**Off-scale answers are drawn apart.** Declining to say is a rung between "not
+always God" and "always God", so on that question it sits in the middle. It is
+not a rung between an infinite regress and none, so everywhere else it is drawn
+below a dashed rule rather than inside the scale. Drawing both boundaries alike
+would imply an order that is not there.
 
-## Open questions
+**"Present, role unstated" was kept.** It is thin, and the temptation was to
+merge it into "Role capped". But capping is a deliberate act — granting her and
+then closing the subject — while saying nothing further is just silence. Fusing
+them would recreate exactly the kind of conflation this taxonomy exists to
+remove, and a band that stays near-empty is itself a finding about the record.
 
-1. **`BACKWARD-AGNOSTIC`** declines on *something* — split it by which question
-   is being declined (divinity vs. regress), or drop it in favour of a per-group
-   "declines to say"?
-2. **Off-scale "declines"** — draw it as a separate band detached from the
-   ordered ones, or keep it as a middle row on the groups whose scale allows it?
-3. **Group 5, "Present, role unstated"** — is it earning its place, or should it
-   merge into "Role capped"? It looks thinly attested, and a band holding two
-   dots is worse than no band.
+## What it cost
+
+A re-read, not a relabel — 610 answers across 524 quotes, assigned from the
+excerpts again rather than translated from the old field. Everything recorded
+under the previous model was discarded, including the placements it had flagged
+for review, because a fused question cannot be mechanically split.

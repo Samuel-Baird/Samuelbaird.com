@@ -18,7 +18,7 @@ import {
   INK_VARS,
   SOURCE_TYPE_META,
   STATUS_META,
-  SUBJECTS,
+  QUESTIONS,
   categoriesOf,
   eraFor,
   hearsayForQuote,
@@ -44,7 +44,7 @@ import {
   type Referent,
   type SourceEntry,
   type SourceType,
-  type SubjectId,
+  type QuestionId,
 } from "./schema";
 import { StanceGraph } from "./stance-graph";
 import { TimelineGraph } from "./timeline-graph";
@@ -74,7 +74,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
   // Fixed default rather than "whichever subject has most in view": the server
   // render and the first client render have to agree, and a data-dependent
   // default would differ the moment a filter arrived from the URL.
-  const [subject, setSubject] = useState<SubjectId>("father-origin");
+  const [subject, setSubject] = useState<QuestionId>("divinity");
   // Shared between the graph and the cards so hovering either one marks the
   // other; the plot is otherwise hard to tie back to a specific entry.
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -112,7 +112,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     if (q) setQuery(q);
     if (p.get("cc") === "1") setCollapseCitations(true);
     const subj = p.get("subj");
-    if (subj && SUBJECTS.some((s) => s.id === subj)) setSubject(subj as SubjectId);
+    if (subj && QUESTIONS.some((s) => s.id === subj)) setSubject(subj as QuestionId);
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -133,7 +133,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
       for (const t of sourceTypes) p.append("t", t);
       if (query.trim()) p.set("q", query.trim());
       if (collapseCitations) p.set("cc", "1");
-      if (subject !== "father-origin") p.set("subj", subject);
+      if (subject !== "divinity") p.set("subj", subject);
       const qs = p.toString();
       window.history.replaceState(
         null,

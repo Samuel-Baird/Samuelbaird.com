@@ -34,8 +34,8 @@ const PRINCIPLES = [
     body: "Every General Conference talk containing an exaltation word-form — 1,980 talks, 1850s to the 2020s — has been classified, and the at-risk classes were then re-read in full in a second, adversarial pass, together with 349 further talks that carry related vocabulary without ever saying “exaltation.” Of 2,329 talks screened, 222 make substantive claims on these axes. Conference sources here are drawn from that class; claims about absence rest on the screen rather than on a failure to recall an example. The full classification ledger, including which pass classified each talk, is published in the project repository.",
   },
   {
-    title: "Direction recorded as data",
-    body: "Being tagged with a claim says nothing about which way a source leans on it, so every excerpt also records whether it affirms, hedges on, or denies the proposition behind each of its claim categories. Hedging is kept as its own answer rather than rounded to a yes or a no, because a teaching usually passes through it on the way out. Those placements are a reading of the excerpt, not an official characterisation, and the ones still unconfirmed are marked as such.",
+    title: "One scale per question",
+    body: "Being tagged with a claim says nothing about which way a source leans on it, so each excerpt also answers the questions its tags raise — and every question keeps its own scale, because they do not all have two sides. How many Gods stand above the Father has four answers, and an unquantified chain is an indefinite claim rather than an infinite one. Questions are kept apart even where the sources run them together: whether the Father was always God is not the same question as whether he lived a mortal life, since this tradition already holds that Christ was God throughout his. A passage that turns out not to speak to a question it raised is recorded as answering exactly that. All of it is a reading of the excerpt rather than an official characterisation, and the readings still unconfirmed are marked.",
   },
 ];
 

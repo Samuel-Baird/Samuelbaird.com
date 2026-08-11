@@ -78,29 +78,28 @@ somewhere to live.
 > attainment. That the orthodox counter-position is this hard to attest cleanly
 > is itself worth knowing, and worth chasing further.
 
-**State the direction as data.** Being tagged with a claim does not say which
-way a source leans on it, and for a long time the direction lived only in prose
-notes — which meant the corpus could not be asked how settled a teaching was at
-a given moment. Every quote now records a `stance` of `affirms`, `hedges` or
-`denies` for each of its claim categories, and the build fails if one is
-missing. Three rules:
+**Answer the questions, on their own scales.** Being tagged with a claim does
+not say which way a source leans on it. A category now decides which *questions*
+a quote is asked; `bands` records what it answers, and every question keeps its
+own ordered scale. Four rules:
 
-- **Stance is about the proposition of the category's defining subject,**
-  written out in `SUBJECTS` in `constants.ts` — not about the category name and
-  not about the doctrine in general. Narrower subjects may read the same
-  category to ask a sharper question, but only where the direction means the
-  same thing; the defining subject is the one that fixes what it means.
-- **Hedging is an answer,** not a missing one. Euphemism, an explicit refusal to
-  say, and an affirmation withdrawn by its own qualification all belong in
-  `hedges`; rounding them to yes or no erases the shape of a taper.
-- **Only claim categories take a stance.** `RETREAT-REFRAME` describes an
-  operation on an earlier teaching, and `MANY-WORLDS` and `TRIPARTITE-FRAMEWORK`
-  are explanatory frameworks; "affirming" either says nothing about how settled
-  a doctrine was.
-
-A stance the author has not confirmed carries `stanceNeedsReview: true` and
-renders with a dashed ring rather than being withheld — dropping it would
-quietly thin whichever band it belongs to.
+- **A scale per question, because they do not all have two sides.** How many
+  Gods stand above the Father takes four answers, and an unquantified chain is
+  an *indefinite* claim, never an infinite one. Promoting it is the retrojection
+  this project exists to avoid.
+- **Keep questions apart even where the sources run them together.** Whether the
+  Father was always God and whether he lived a mortal life are independent: this
+  tradition already holds that Christ was God throughout his mortality, so
+  "God once was as man now is" answers the mortality question and says nothing
+  about the divinity one.
+- **Silence is an answer.** A passage that raises a question by its tags and
+  turns out not to speak to it is recorded as `not-addressed`. Leaving it blank
+  would drop the quote out of that chart and quietly thin a band; the build
+  refuses it.
+- **Off-scale answers are drawn apart.** Declining to say sits genuinely between
+  "not always God" and "always God", but nothing sits between an infinite
+  regress and none — so on that question it is drawn below the scale rather than
+  inside it.
 
 **Distinguish explicit from euphemistic.** Nearly every taper story lives on
 this boundary, so hold the canon to the same strict standard as everything else.

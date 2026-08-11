@@ -4,13 +4,11 @@ Working list for the source-timeline project. See
 [`CONSTRUCTING.md`](./CONSTRUCTING.md) for how a new timeline is built and
 [`SOURCING.md`](./SOURCING.md) for where material comes from.
 
-> **The stance model is being redesigned.** Before doing further stance work,
-> read [`STANCE-TAXONOMY.md`](./STANCE-TAXONOMY.md): six question groups with
-> their own ordered scales, replacing the single affirms/hedges/denies axis. It
-> is a proposal with three open questions and nothing has been categorised
-> against it, but adopting it means re-reading the corpus rather than
-> relabelling — so new stance data assigned under the current model may not
-> survive.
+> **Before doing any stance work, read
+> [`STANCE-TAXONOMY.md`](./STANCE-TAXONOMY.md).** Six questions, each with its
+> own ordered scale and written criteria per band. A new quote is asked whatever
+> questions its categories raise, and the build refuses it until every one of
+> them is answered.
 
 ---
 
@@ -107,11 +105,17 @@ Bracketed excerpts currently on the page, each needing the original read:
   places the `DIVINE-PROGRESSION` denials came from (Joseph Fielding Smith,
   McConkie, mid-century institute manuals) and in discussions of creedal vs.
   Latter-day Saint conceptions of God.
-- **Review the flagged stance placements.** 27 quotes carry
-  `stanceNeedsReview: true` from the initial backfill — mostly cases where the
-  note and the excerpt pull apart, or where a reading contradicts what the
-  category usually means. They render with a dashed ring until confirmed.
-  Clearing one means deleting the flag.
+- **Review the flagged placements.** Quotes carrying `stanceNeedsReview: true`
+  from the re-read render with a dashed ring until confirmed; clearing one means
+  deleting the flag. Most are genuine borderlines — a passage sitting between
+  two adjacent bands, or one whose force depends on context the excerpt does not
+  carry.
+- **Check the `not-addressed` answers on FORWARD-EUPHEMISM quotes.** The re-read
+  found a cluster of them that name no increase, posterity, or seed at all, and
+  so answer the increase question with silence despite carrying a forward tag.
+  Either the tag is over-applied on those quotes or the excerpts are cut too
+  short to show what earned it. Worth reading the sources rather than adjusting
+  the band.
 - **Split `jfs-same-ordeal-1884-q1`.** One excerpt, both directions of the
   Father-origin axis. Quote-level tagging is supposed to prevent exactly this;
   splitting it into two excerpts would let each carry its own stance honestly

@@ -82,7 +82,7 @@ in a 1971 *Ensign* is high-correlation despite B-tier hearsay.
   "excerpt": "God himself was once as we are now, and is an exalted man...",
   "referent": "father",
   "implied": false,
-  "stance": { "FATHER-MORTAL-EXPERIENCE": "affirms", "FATHER-BECAME-GOD": "affirms" },
+  "bands": { "mortality": "probation", "divinity": "not-always-god" },
   "note": "Per-quote analysis."
 }
 ```
@@ -94,53 +94,40 @@ in a 1971 *Ensign* is high-correlation despite B-tier hearsay.
 | `excerpt` | string | yes | The quoted text. `[Square brackets]` mark a placeholder awaiting transcription. |
 | `referent` | Referent | no | Overrides the entry's referent. Backward-direction quotes should always carry one. |
 | `implied` | boolean | no | The categories are **read into** the quote rather than stated by it. Renders an "implied" marker. |
-| `stance` | Record&lt;CategoryId, Stance&gt; | **yes, for claim categories** | `affirms` \| `hedges` \| `denies` — where the quote stands on the proposition behind each claim category it carries. See below. |
+| `bands` | Record&lt;QuestionId, BandId&gt; | **yes, for every question raised** | What the quote answers, per question its categories raise. `not-addressed` where it turns out not to speak to one. See below. |
 | `stanceNeedsReview` | boolean | no | The placement is not yet author-confirmed. Renders with a dashed ring; never hidden. |
 | `note` | string | no | Why this excerpt is tagged as it is; where the plainest reading differs from the interesting one, say so here. |
 
-### Stance
+### Questions and bands
 
-Stance answers *which way* a quote leans, which the category alone does not say.
-It is judged against the written-out `proposition` of the category's **defining
-subject** (`DEFINING_SUBJECT` in `schema.ts`, propositions in `SUBJECTS` in
-`constants.ts`), never against the category name or the doctrine in general.
-`hedges` covers euphemism, an explicit refusal to say, deliberate ambiguity, and
-an affirmation withdrawn by its own qualification.
+A category says which questions a quote is *asked*; `bands` records what it
+answers. Each question owns its own ordered scale, because they do not all have
+two sides — see [`STANCE-TAXONOMY.md`](./STANCE-TAXONOMY.md) for every band and
+its criteria.
 
-Twelve of the fifteen categories carry a stance. `RETREAT-REFRAME`,
-`MANY-WORLDS` and `TRIPARTITE-FRAMEWORK` do not: the first describes an
-operation on an earlier teaching, and the other two are explanatory frameworks,
-so "affirming" them would say nothing about how settled a doctrine was.
+Two consequences worth stating plainly:
 
-**Subjects overlap on purpose.** A broad subject asks whether a whole position
-was held; a narrow one asks after a single move inside it. "Was the Father once
-a mortal man?" and "Is there a chain of Gods above the Father?" both read
-`INFINITE-CHAIN`, and they should — the chain claim stops appearing after 1981
-while the broad question still looks settled, which is exactly what the narrow
-chart is for. Only the defining subject fixes what a recorded direction *means*;
-another subject may read the same category only where its question takes that
-direction the same way. Where it would not, that category needs its own stance
-field rather than a second reading of this one.
+- **Band values are only meaningful within their question.** `denies` means
+  different things on different scales and `infinite` is meaningless on all but
+  one, so a value that is legal somewhere is not thereby legal here.
+- **`not-addressed` is an answer, not a gap.** A passage may raise a question by
+  its tags and turn out not to speak to it — a mortality text that never touches
+  the Father's divinity, most often. Recording that explicitly is what lets the
+  build insist every raised question was decided.
 
-Each subject also names its three bands in its own words (`bands` in
-`SUBJECTS`). "Affirms" and "Denies" are accurate and say nothing; on the
-Father's origin the same two bands are "Became God" and "Always God", which is
-the actual disagreement.
+Four build-time checks enforce it, all failing with the offending JSON path:
 
-Three build-time checks enforce it, all failing with the offending JSON path:
-
-- every `stance` key must be a category **that quote actually carries**, and one
-  that takes a stance at all;
-- every stance-bearing category on a quote **must** have a stance — a missing
-  one would not fail loudly, it would just drop the quote out of the certainty
-  chart and quietly undercount a band;
-- `stanceNeedsReview` requires a `stance` to review.
+- an answer to a question the quote's categories never raise;
+- a band the question does not define;
+- a raised question left unanswered — a missing answer would not fail loudly,
+  it would just drop the quote out of that chart and quietly undercount a band;
+- `stanceNeedsReview` with nothing to review.
 
 > **Known limitation.** `implied` is per-quote, so on a quote with several
-> categories it marks all of them — and several quotes now carry two, so a
-> quote with one category read-in and another stated outright is currently
-> mismarked. Fixing it means moving the flag onto the category pair, at which
-> point `stance` should move with it (see TODO).
+> categories it marks all of them — and many quotes now carry two, so a quote
+> with one category read-in and another stated outright is currently mismarked.
+> Fixing it means moving the flag onto the category pair. `bands` is unaffected:
+> it is keyed by question, not by category, so it does not need to move with it.
 
 ---
 

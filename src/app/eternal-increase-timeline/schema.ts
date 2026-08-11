@@ -31,74 +31,146 @@ export const REFERENTS = ["father", "son", "ambiguous", "n/a"] as const;
 
 export const SOURCE_TYPES = ["original", "citation"] as const;
 
-export const STANCES = ["affirms", "hedges", "denies"] as const;
-
 /**
- * Categories that carry a stance. The excluded three are deliberate:
- * RETREAT-REFRAME describes an operation performed on an earlier teaching
- * rather than a position on it, and MANY-WORLDS and TRIPARTITE-FRAMEWORK are
- * explanatory frameworks — "affirming" a framework says nothing about how
- * settled a doctrine was, which is the only thing the stance chart measures.
+ * The questions the corpus is asked, and the ordered answers each one takes.
+ *
+ * A question owns its own scale; a category only decides which questions a
+ * quote is asked. That inversion is the point. The previous model ran one
+ * affirms/hedges/denies axis across everything, which could not hold a
+ * four-valued answer like the regress question, and — worse — welded divinity
+ * and mortality into a single claim. They are independent: on this tradition's
+ * own terms Jehovah was God before and during his mortal life, so "God once
+ * was as man now is" asserts nothing at all about whether there was a time the
+ * Father was not God. Only attainment language does that.
+ *
+ * See docs/timelines/STANCE-TAXONOMY.md for the criteria behind every band.
  */
-export const STANCE_CATEGORY_IDS = [
-  "BACKWARD-EXPLICIT",
-  "FATHER-MORTAL-EXPERIENCE",
-  "FATHER-BECAME-GOD",
-  "FATHER-ALWAYS-GOD",
-  "BACKWARD-AGNOSTIC",
-  "INFINITE-CHAIN",
-  "FORWARD-EXPLICIT",
-  "FORWARD-EUPHEMISM",
-  "SPIRIT-BIRTH-VIVIPAROUS",
-  "SPIRIT-BIRTH-ADOPTION",
-  "HEAVENLY-MOTHER",
-  "DIVINE-PROGRESSION",
-] as const satisfies readonly (typeof CATEGORY_IDS)[number][];
-
-export type StanceCategoryId = (typeof STANCE_CATEGORY_IDS)[number];
-
-export const SUBJECT_IDS = [
-  "father-origin",
-  "father-mortality",
-  "infinite-chain",
-  "eternal-increase",
-  "spirit-birth",
-  "heavenly-mother",
-  "divine-progression",
+export const QUESTION_IDS = [
+  "divinity",
+  "regress",
+  "mortality",
+  "increase",
+  "mother",
+  "progression",
 ] as const;
 
-export type SubjectId = (typeof SUBJECT_IDS)[number];
+export type QuestionId = (typeof QUESTION_IDS)[number];
 
 /**
- * The subject whose proposition a category's stance was judged against.
- *
- * Subjects may share a category — the broad "was the Father once mortal"
- * question and the narrow "did he live a mortality" one both read
- * FATHER-MORTAL-EXPERIENCE — but only one of them defines what the recorded
- * direction *means*. That one is here, and it is the proposition shown to
- * whoever assigns a stance. A subject may only borrow a category when its own
- * question reads the same direction the same way; where it would not, the
- * category needs its own stance field, not a second interpretation of this one.
+ * Recorded when a quote carries a category that raises a question, but on
+ * reading turns out not to speak to it — a mortality passage tagged for the
+ * Father's origin that never touches his divinity, say. It is an answer, not a
+ * gap: keeping it explicit is what lets the build insist every raised question
+ * was actually decided, while still letting the honest answer be "this does
+ * not address it". Never drawn.
  */
-export const DEFINING_SUBJECT: Record<StanceCategoryId, SubjectId> = {
-  "BACKWARD-EXPLICIT": "father-origin",
-  "FATHER-MORTAL-EXPERIENCE": "father-origin",
-  "FATHER-BECAME-GOD": "father-origin",
-  "FATHER-ALWAYS-GOD": "father-origin",
-  "BACKWARD-AGNOSTIC": "father-origin",
-  "INFINITE-CHAIN": "father-origin",
-  "FORWARD-EXPLICIT": "eternal-increase",
-  "FORWARD-EUPHEMISM": "eternal-increase",
-  "SPIRIT-BIRTH-VIVIPAROUS": "eternal-increase",
-  "SPIRIT-BIRTH-ADOPTION": "eternal-increase",
-  "HEAVENLY-MOTHER": "heavenly-mother",
-  "DIVINE-PROGRESSION": "divine-progression",
+export const NOT_ADDRESSED = "not-addressed";
+
+/**
+ * Bands per question, in the order they are drawn — most committed first.
+ *
+ * `offScale` marks an answer that is not a rung on the ladder. Declining to
+ * say sits genuinely between "not always God" and "always God", but it is not
+ * between "infinite regress" and "no regress at all", and drawing it there
+ * would invent a position nobody holds.
+ */
+export const QUESTION_BANDS = {
+  divinity: [
+    { id: "not-always-god" },
+    { id: "declines" },
+    { id: "always-god" },
+  ],
+  regress: [
+    { id: "infinite" },
+    { id: "indefinite" },
+    { id: "finite" },
+    { id: "most-high" },
+    { id: "declines", offScale: true },
+  ],
+  mortality: [
+    { id: "probation" },
+    { id: "already-divine" },
+    { id: "declines", offScale: true },
+    { id: "denies" },
+  ],
+  increase: [
+    { id: "literal-begetting" },
+    { id: "mechanism-unstated" },
+    { id: "organized-not-begotten" },
+    { id: "declines", offScale: true },
+    { id: "denies" },
+  ],
+  mother: [
+    { id: "necessary-for-birth" },
+    { id: "parent-mechanism-unstated" },
+    { id: "present-role-unstated" },
+    { id: "role-capped" },
+    { id: "declines", offScale: true },
+    { id: "denies" },
+  ],
+  progression: [
+    { id: "knowledge" },
+    { id: "dominion-only" },
+    { id: "declines", offScale: true },
+    { id: "denies" },
+  ],
+} as const satisfies Record<
+  QuestionId,
+  readonly { id: string; offScale?: boolean }[]
+>;
+
+export type BandId<Q extends QuestionId = QuestionId> =
+  (typeof QUESTION_BANDS)[Q][number]["id"];
+
+/**
+ * Categories that raise each question. A quote is asked a question when it
+ * carries one of these; what it answers is a separate matter entirely, and is
+ * read off the excerpt rather than inferred from the tag.
+ *
+ * BACKWARD-AGNOSTIC raises both divinity and regress on purpose. Splitting it
+ * would presume which of the two a source is declining to answer, and sources
+ * that decline are rarely that tidy.
+ */
+export const QUESTION_TRIGGERS: Record<
+  QuestionId,
+  readonly (typeof CATEGORY_IDS)[number][]
+> = {
+  divinity: ["FATHER-BECAME-GOD", "FATHER-ALWAYS-GOD", "BACKWARD-AGNOSTIC"],
+  regress: ["BACKWARD-EXPLICIT", "INFINITE-CHAIN", "BACKWARD-AGNOSTIC"],
+  mortality: ["FATHER-MORTAL-EXPERIENCE"],
+  increase: [
+    "FORWARD-EXPLICIT",
+    "FORWARD-EUPHEMISM",
+    "SPIRIT-BIRTH-VIVIPAROUS",
+    "SPIRIT-BIRTH-ADOPTION",
+  ],
+  mother: ["HEAVENLY-MOTHER"],
+  progression: ["DIVINE-PROGRESSION"],
 };
 
-const STANCE_CATEGORY_SET: ReadonlySet<string> = new Set(STANCE_CATEGORY_IDS);
+/** Every question a quote's categories put to it. */
+export function questionsFor(categories: readonly string[]): QuestionId[] {
+  return QUESTION_IDS.filter((q) =>
+    QUESTION_TRIGGERS[q].some((c) => categories.includes(c)),
+  );
+}
 
-export function isStanceCategory(id: string): id is StanceCategoryId {
-  return STANCE_CATEGORY_SET.has(id);
+const BAND_IDS_BY_QUESTION = Object.fromEntries(
+  QUESTION_IDS.map((q) => [
+    q,
+    new Set<string>([
+      ...QUESTION_BANDS[q].map((b) => b.id as string),
+      NOT_ADDRESSED,
+    ]),
+  ]),
+) as unknown as Record<QuestionId, ReadonlySet<string>>;
+
+export function isQuestionId(id: string): id is QuestionId {
+  return (QUESTION_IDS as readonly string[]).includes(id);
+}
+
+export function isBandOf(question: QuestionId, band: string): boolean {
+  return BAND_IDS_BY_QUESTION[question].has(band);
 }
 
 const witnessSchema = z.object({
@@ -119,19 +191,17 @@ const quoteSchema = z.object({
   // True when the categories are read into the quote rather than stated by
   // it — rendered as an "implied" marker on the pills.
   implied: z.boolean().optional(),
-  // Where this quote stands on the proposition behind each of its
-  // stance-bearing categories: does it teach the thing, gesture at it without
-  // committing, or reject it? The direction used to live only in prose, which
-  // meant the corpus could not be asked the one question it exists to answer —
-  // how settled a teaching was at a given moment. Required for every
-  // stance-bearing category on the quote; see parseSources.
+  // What this quote answers, for each question its categories put to it: one
+  // band id per question, or NOT_ADDRESSED where the passage turns out not to
+  // speak to it. Required for every question the quote raises; see
+  // parseSources.
   //
-  // Keyed loosely, like hearsayByQuote above: a record over the category enum
-  // demands *every* category as a key, and the checks in parseSources pin the
-  // keys down far better than the enum could anyway — they require each one to
-  // be a category this particular quote actually carries.
-  stance: z.record(z.string(), z.enum(STANCES)).optional(),
-  // Set by the backfill when the reading was not clear-cut. Rendered, never
+  // Keyed loosely, like hearsayByQuote above — a record over the question enum
+  // would demand every question as a key, and the checks in parseSources pin
+  // both keys and values down far better than an enum could, because a legal
+  // band depends on which question is being answered.
+  bands: z.record(z.string(), z.string()).optional(),
+  // Set by the re-read when the answer was not clear-cut. Rendered, never
   // hidden: dropping unreviewed quotes would bias the bands in exactly the
   // direction the completeness check exists to prevent.
   stanceNeedsReview: z.boolean().optional(),
@@ -175,7 +245,6 @@ export type SourceEntry = z.infer<typeof sourceEntrySchema>;
 export type Quote = z.infer<typeof quoteSchema>;
 export type Witness = z.infer<typeof witnessSchema>;
 export type CategoryId = (typeof CATEGORY_IDS)[number];
-export type Stance = (typeof STANCES)[number];
 export type HearsayGrade = (typeof HEARSAY_GRADES)[number];
 export type CorrelationStatus = (typeof CORRELATION_STATUSES)[number];
 export type Referent = (typeof REFERENTS)[number];
@@ -236,52 +305,66 @@ export function parseSources(raw: unknown): SourceEntry[] {
     );
   }
 
-  // Stance keys must name a category the quote actually carries, and one that
-  // takes a stance at all. A stance recorded against a category the quote does
-  // not hold is silently inert — the same failure the hearsayByQuote check
-  // above exists to catch.
-  const strayStance = entries.flatMap((e) =>
+  // An answer to a question the quote was never asked is silently inert — the
+  // same failure the hearsayByQuote check above exists to catch.
+  const strayBands = entries.flatMap((e) =>
     e.quotes.flatMap((q) => {
-      const own = new Set(q.categories);
-      return Object.keys(q.stance ?? {})
-        .filter((c) => !own.has(c as CategoryId) || !isStanceCategory(c))
-        .map((c) => `${e.id}.${q.quoteId}.stance["${c}"]`);
+      const asked = new Set<string>(questionsFor(q.categories));
+      return Object.keys(q.bands ?? {})
+        .filter((k) => !isQuestionId(k) || !asked.has(k))
+        .map((k) => `${e.id}.${q.quoteId}.bands["${k}"]`);
     }),
   );
-  if (strayStance.length > 0) {
+  if (strayBands.length > 0) {
     throw new Error(
-      `eternal-increase-timeline/sources.json has stance keys that name a category the quote does not carry, or one that takes no stance:\n  ${strayStance.join("\n  ")}`,
+      `eternal-increase-timeline/sources.json answers questions that its categories never raise:\n  ${strayBands.join("\n  ")}`,
     );
   }
 
-  // Every stance-bearing category on a quote must state its direction. A
-  // missing stance would not fail loudly — the quote would just vanish from
-  // the certainty chart, quietly undercounting whichever band it belonged to.
-  // That is the worst outcome available here, so it fails the build instead,
-  // and a future author tagging a new quote gets told to state the direction.
-  const missingStance = entries.flatMap((e) =>
+  // A band has to be one this question actually offers. Bands are only unique
+  // within a question — "denies" means different things on different scales,
+  // and "infinite" is meaningless on all but one — so a value that is legal
+  // somewhere is not thereby legal here.
+  const badBands = entries.flatMap((e) =>
     e.quotes.flatMap((q) =>
-      q.categories
-        .filter(isStanceCategory)
-        .filter((c) => !q.stance?.[c])
-        .map((c) => `${e.id}.${q.quoteId} is missing stance for ${c}`),
+      Object.entries(q.bands ?? {})
+        .filter(([k, v]) => isQuestionId(k) && !isBandOf(k, v))
+        .map(([k, v]) => `${e.id}.${q.quoteId}.bands["${k}"] = "${v}"`),
     ),
   );
-  if (missingStance.length > 0) {
+  if (badBands.length > 0) {
     throw new Error(
-      `eternal-increase-timeline/sources.json has quotes tagged with a stance-bearing category but no stance:\n  ${missingStance.join("\n  ")}`,
+      `eternal-increase-timeline/sources.json uses band values that the question does not define:\n  ${badBands.join("\n  ")}`,
+    );
+  }
+
+  // Every question a quote raises must be answered. A missing answer would not
+  // fail loudly — the quote would just vanish from that chart, quietly
+  // undercounting whichever band it belonged to. That is the worst outcome
+  // available here, so it fails the build instead. Answering "not-addressed"
+  // is always available and is a real answer, not a way of skipping one.
+  const unanswered = entries.flatMap((e) =>
+    e.quotes.flatMap((q) =>
+      questionsFor(q.categories)
+        .filter((question) => !q.bands?.[question])
+        .map((question) => `${e.id}.${q.quoteId} does not answer "${question}"`),
+    ),
+  );
+  if (unanswered.length > 0) {
+    throw new Error(
+      `eternal-increase-timeline/sources.json has quotes whose categories raise a question they never answer:\n  ${unanswered.join("\n  ")}`,
     );
   }
 
   // A review flag with nothing to review is a leftover.
   const emptyFlags = entries.flatMap((e) =>
     e.quotes
-      .filter((q) => q.stanceNeedsReview && !q.stance)
+      .filter((q) => q.stanceNeedsReview && !q.bands)
       .map((q) => `${e.id}.${q.quoteId}`),
   );
   if (emptyFlags.length > 0) {
     throw new Error(
-      `eternal-increase-timeline/sources.json flags quotes for stance review that carry no stance:\n  ${emptyFlags.join("\n  ")}`,
+      `eternal-increase-timeline/sources.json flags quotes for review that answer nothing:\n  ${emptyFlags.join("\n  ")}`,
     );
   }
 

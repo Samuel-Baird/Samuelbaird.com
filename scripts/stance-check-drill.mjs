@@ -1,56 +1,70 @@
 /**
- * Proves the stance integrity checks actually fail the build.
+ * Proves the band integrity checks actually fail the build.
  *
  * A guard nobody has watched fail is a guess. This corrupts an in-memory copy
- * of sources.json three ways — one per check — and asserts each is caught and
+ * of sources.json four ways — one per check — and asserts each is caught and
  * names the offending path. The file on disk is never touched.
  *
  *   node --experimental-strip-types scripts/stance-check-drill.mjs
  */
-import { parseSources } from "../src/app/eternal-increase-timeline/schema.ts";
+import { parseSources, questionsFor } from "../src/app/eternal-increase-timeline/schema.ts";
 import raw from "../src/app/eternal-increase-timeline/sources.json" with { type: "json" };
 
 const clone = () => JSON.parse(JSON.stringify(raw));
 
-/** The first quote carrying at least one stance, wherever it happens to be. */
-function firstStanced(data) {
+/** The first quote that answers at least one question. */
+function firstAnswering(data) {
   for (const entry of data)
     for (const quote of entry.quotes)
-      if (quote.stance && Object.keys(quote.stance).length > 0)
+      if (quote.bands && Object.keys(quote.bands).length > 0)
         return { entry, quote };
-  throw new Error("no stanced quote found — is the backfill applied?");
+  throw new Error("no quote with bands — has the re-read been applied?");
 }
 
 const cases = [
   {
-    name: "stance key naming a category the quote does not carry",
+    name: "answering a question the categories never raise",
     corrupt: (d) => {
-      const { quote } = firstStanced(d);
-      quote.stance["MANY-WORLDS"] = "affirms";
+      const { quote } = firstAnswering(d);
+      // Pick a question this quote is definitely not asked.
+      const asked = new Set(questionsFor(quote.categories));
+      const spare = ["mother", "progression", "regress", "increase"].find(
+        (q) => !asked.has(q),
+      );
+      quote.bands[spare] = "declines";
     },
-    expect: /stance keys that name a category/,
+    expect: /answers questions that its categories never raise/,
   },
   {
-    name: "stance-bearing category with no direction",
+    name: "a band the question does not define",
     corrupt: (d) => {
-      const { quote } = firstStanced(d);
-      delete quote.stance[Object.keys(quote.stance)[0]];
+      const { quote } = firstAnswering(d);
+      const q = Object.keys(quote.bands)[0];
+      // Legal on the regress scale, meaningless everywhere else.
+      quote.bands[q] = q === "regress" ? "literal-begetting" : "infinite";
     },
-    expect: /tagged with a stance-bearing category but no stance/,
+    expect: /uses band values that the question does not define/,
   },
   {
-    name: "review flag with nothing to review",
+    name: "a raised question left unanswered",
     corrupt: (d) => {
-      // A quote with no categories at all, so it needs no stance.
+      const { quote } = firstAnswering(d);
+      delete quote.bands[Object.keys(quote.bands)[0]];
+    },
+    expect: /raise a question they never answer/,
+  },
+  {
+    name: "a review flag with nothing to review",
+    corrupt: (d) => {
       for (const entry of d)
         for (const quote of entry.quotes)
-          if (quote.categories.length === 0) {
+          if (questionsFor(quote.categories).length === 0) {
             quote.stanceNeedsReview = true;
             return;
           }
-      throw new Error("no uncategorised quote to flag");
+      throw new Error("no unasked quote to flag");
     },
-    expect: /flags quotes for stance review that carry no stance/,
+    expect: /flags quotes for review that answer nothing/,
   },
 ];
 
@@ -75,7 +89,6 @@ for (const c of cases) {
   }
 }
 
-// And the real file must still pass.
 try {
   parseSources(raw);
   console.log("✓ sources.json as committed passes every check");

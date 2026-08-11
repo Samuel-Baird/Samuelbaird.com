@@ -3,9 +3,9 @@
 import { useMemo, useRef, useState } from "react";
 import {
   CATEGORY_META,
+  QUESTIONS,
+  QUESTION_META,
   STATUS_META,
-  SUBJECTS,
-  SUBJECT_META,
   hearsayForQuote,
 } from "./constants";
 import {
@@ -17,11 +17,11 @@ import {
   stackOffset,
 } from "./graph-shared";
 import {
-  isStanceCategory,
+  NOT_ADDRESSED,
+  questionsFor,
+  type CategoryId,
+  type QuestionId,
   type SourceEntry,
-  type Stance,
-  type StanceCategoryId,
-  type SubjectId,
 } from "./schema";
 
 /**
@@ -44,9 +44,6 @@ import {
  * rather than inferred here, so the chart can be argued with from the data.
  */
 
-// Top to bottom. The labels come from the subject, not from here — see
-// `bands` in constants.ts.
-const BAND_ORDER: Stance[] = ["affirms", "hedges", "denies"];
 
 
 type Dot = {
@@ -60,16 +57,17 @@ type Dot = {
   isCitation: boolean;
   strong: boolean; // first-hand or scribal provenance (hearsay A/B)
   unreviewed: boolean;
-  cats: StanceCategoryId[];
-  stance: Stance;
-  // The subject's own name for this band, so the tooltip and the screen-reader
-  // label say what the gutter says rather than a generic "affirms".
+  cats: CategoryId[];
+  // The question's own name for this band, so the tooltip and the screen-reader
+  // label say what the gutter says rather than a bare band id.
   bandLabel: string;
+  bandCriteria: string;
 };
 
-type Band = {
-  stance: Stance;
+type Row = {
+  id: string;
   label: string;
+  offScale: boolean;
   y: number;
   height: number;
   dots: Dot[];
@@ -84,8 +82,8 @@ export function StanceGraph({
   onHover,
 }: {
   entries: SourceEntry[];
-  subject: SubjectId;
-  onSubjectChange: (id: SubjectId) => void;
+  subject: QuestionId;
+  onSubjectChange: (id: QuestionId) => void;
   onSelect?: (id: string) => void;
   hoveredId?: string | null;
   onHover?: (id: string | null) => void;
@@ -102,65 +100,55 @@ export function StanceGraph({
   // Dot counts for every tab, so the picker can show what each question holds
   // under the current filters and disable the ones the filters emptied.
   const counts = useMemo(() => {
-    const out = {} as Record<SubjectId, number>;
-    for (const s of SUBJECTS) {
-      const members = new Set<string>(s.categories);
-      let n = 0;
-      for (const entry of entries) {
-        for (const quote of entry.quotes) {
-          const hit = quote.categories.filter((c) => members.has(c));
-          if (hit.length === 0) continue;
-          // One dot per distinct stance, not per category: a quote tagged with
-          // two categories of the same subject that lean the same way is one
-          // statement, but the passage that states both directions at once is
-          // genuinely two marks.
-          n += new Set(
-            hit
-              .map((c) => quote.stance?.[c as StanceCategoryId])
-              .filter(Boolean),
-          ).size;
+    const out = {} as Record<QuestionId, number>;
+    for (const q of QUESTIONS) out[q.id] = 0;
+    for (const entry of entries) {
+      for (const quote of entry.quotes) {
+        for (const q of questionsFor(quote.categories)) {
+          const band = quote.bands?.[q];
+          // A quote that was asked and answered "does not address it" is not
+          // on this chart, and must not be counted as though it were.
+          if (band && band !== NOT_ADDRESSED) out[q] += 1;
         }
       }
-      out[s.id] = n;
     }
     return out;
   }, [entries]);
 
   const model = useMemo(() => {
-    const meta = SUBJECT_META[subject];
-    const members = new Set<string>(meta.categories);
+    const meta = QUESTION_META[subject];
 
+    // One dot per quote per question: a quote gives this question exactly one
+    // answer, however many categories raised it.
     const raw: {
       entry: SourceEntry;
       quoteId: string;
       excerpt: string;
       year: number;
-      stance: Stance;
-      cats: StanceCategoryId[];
+      band: string;
+      cats: CategoryId[];
     }[] = [];
+
+    const asked = new Set<string>(
+      QUESTIONS.find((q) => q.id === subject)?.bands.map((b) => b.id) ?? [],
+    );
 
     for (const entry of entries) {
       for (const quote of entry.quotes) {
-        const hit = quote.categories
-          .filter(isStanceCategory)
-          .filter((c) => members.has(c));
-        if (hit.length === 0) continue;
-        const byStance = new Map<Stance, StanceCategoryId[]>();
-        for (const cat of hit) {
-          const stance = quote.stance?.[cat];
-          if (!stance) continue; // the build blocks this; be quiet at runtime
-          byStance.set(stance, [...(byStance.get(stance) ?? []), cat]);
-        }
-        for (const [stance, cats] of byStance) {
-          raw.push({
-            entry,
-            quoteId: quote.quoteId,
-            excerpt: quote.excerpt,
-            year: Number(entry.date.slice(0, 4)),
-            stance,
-            cats,
-          });
-        }
+        if (!questionsFor(quote.categories).includes(subject)) continue;
+        const band = quote.bands?.[subject];
+        // Unanswered is blocked by the build; answered "not-addressed" means
+        // the passage was read and found not to speak to this question, so it
+        // belongs on no band here.
+        if (!band || band === NOT_ADDRESSED || !asked.has(band)) continue;
+        raw.push({
+          entry,
+          quoteId: quote.quoteId,
+          excerpt: quote.excerpt,
+          year: Number(entry.date.slice(0, 4)),
+          band,
+          cats: quote.categories,
+        });
       }
     }
 
@@ -170,10 +158,9 @@ export function StanceGraph({
     const years = raw.map((r) => r.year);
 
     let y = ERA_STRIP;
-    const bands: Band[] = [];
-    for (const stance of BAND_ORDER) {
-      const label = meta.bands[stance];
-      const members = raw.filter((r) => r.stance === stance);
+    const rows: Row[] = [];
+    for (const band of meta.bands) {
+      const members = raw.filter((r) => r.band === band.id);
 
       const columns = new Map<number, typeof members>();
       for (const r of members) {
@@ -192,7 +179,7 @@ export function StanceGraph({
           const quote = r.entry.quotes.find((q) => q.quoteId === r.quoteId);
           const grade = hearsayForQuote(r.entry, r.quoteId);
           dots.push({
-            key: `${r.quoteId}:${r.stance}`,
+            key: `${r.quoteId}:${r.band}`,
             entry: r.entry,
             quoteId: r.quoteId,
             excerpt: r.excerpt,
@@ -203,23 +190,30 @@ export function StanceGraph({
             strong: grade === "A" || grade === "B",
             unreviewed: quote?.stanceNeedsReview === true,
             cats: r.cats,
-            stance: r.stance,
-            bandLabel: label,
+            bandLabel: band.label,
+            bandCriteria: band.criteria,
           });
         });
       }
-      // Every band is drawn even when empty. A subject with nothing in Denies
-      // is making a claim about the record, and collapsing the band would hide
-      // it — the reader would see three rows on one tab and two on another
-      // without being told why.
-      bands.push({ stance, label, y, height, dots });
+      // Every band is drawn even when empty. A question with nothing in its
+      // denial band is making a claim about the record, and collapsing the row
+      // would hide it — the reader would see five rows on one tab and three on
+      // another without being told why.
+      rows.push({
+        id: band.id,
+        label: band.label,
+        offScale: band.offScale === true,
+        y,
+        height,
+        dots,
+      });
       y += height;
     }
 
     return {
       ...axis,
       eraMarks: axis.bands,
-      bands,
+      bands: rows,
       height: y,
       quoteCount: new Set(raw.map((r) => r.quoteId)).size,
       dataMin: Math.min(...years),
@@ -229,7 +223,7 @@ export function StanceGraph({
 
   const allDots = model ? model.bands.flatMap((b) => b.dots) : [];
   const tipDot = tip ? allDots.find((d) => d.key === tip.key) : null;
-  const meta = SUBJECT_META[subject];
+  const meta = QUESTION_META[subject];
 
   const nearestTo = (event: { clientX: number; clientY: number }): Dot | null => {
     const box = svgRef.current?.getBoundingClientRect();
@@ -282,12 +276,12 @@ export function StanceGraph({
 
       <p className="mt-2 text-[11px] leading-relaxed text-[color:var(--muted)]">
         <span className="text-[color:var(--foreground)]">{meta.question}</span>{" "}
-        Dots sit by where each excerpt stands on the claim that {meta.proposition}
+        {meta.blurb}
       </p>
 
       {!model ? (
         <div className="mt-3 rounded-[var(--radius)] border border-dashed border-[color:var(--border)] p-6 text-center text-xs text-[color:var(--muted)]">
-          No quotes to plot for this subject.
+          No quotes answer this question in view.
         </div>
       ) : (
         <>
@@ -300,7 +294,7 @@ export function StanceGraph({
               >
                 {model.bands.map((band) => (
                   <span
-                    key={band.stance}
+                    key={band.id}
                     className="small-caps absolute right-2 text-[9px] leading-none text-[color:var(--muted)]"
                     style={{ top: band.y + band.height / 2 - 4 }}
                   >
@@ -328,7 +322,7 @@ export function StanceGraph({
                   {model.bands.map((band, i) =>
                     i % 2 === 1 ? (
                       <rect
-                        key={band.stance}
+                        key={band.id}
                         x={0}
                         y={band.y}
                         width="100%"
@@ -385,22 +379,36 @@ export function StanceGraph({
                     />
                   ))}
 
-                  {model.bands.slice(1).map((band) => (
-                    <line
-                      key={band.stance}
-                      x1="0"
-                      x2="100%"
-                      y1={band.y}
-                      y2={band.y}
-                      stroke="var(--border)"
-                      opacity={0.7}
-                    />
-                  ))}
+                  {/* A plain rule between rungs of the scale; a dashed one
+                      where the scale stops. Below that line the rows are not
+                      further steps in the same direction — declining to say is
+                      not a weaker version of denying — and drawing the two
+                      boundaries alike would imply an order that is not there. */}
+                  {model.bands.map((band, i) =>
+                    i === 0 ? null : (
+                      <line
+                        key={band.id}
+                        x1="0"
+                        x2="100%"
+                        y1={band.y}
+                        y2={band.y}
+                        stroke="var(--border)"
+                        strokeDasharray={
+                          band.offScale && !model.bands[i - 1].offScale
+                            ? "3 3"
+                            : undefined
+                        }
+                        opacity={
+                          band.offScale && !model.bands[i - 1].offScale ? 1 : 0.7
+                        }
+                      />
+                    ),
+                  )}
 
                   {model.bands.map((band) =>
                     band.dots.length === 0 ? (
                       <text
-                        key={`empty-${band.stance}`}
+                        key={`empty-${band.id}`}
                         x="50%"
                         y={band.y + band.height / 2 + 3}
                         textAnchor="middle"
@@ -483,7 +491,13 @@ export function StanceGraph({
                             stroke={d.paint}
                             strokeWidth={1}
                             strokeDasharray="2 2"
-                            opacity={0.9}
+                            // Muted on purpose. A third of the placements carry
+                            // this ring, and at that density a bold marker
+                            // stops reading as a caveat and starts competing
+                            // with the status colour. The proportion is stated
+                            // as a number in the key instead, which is the
+                            // honest way to carry a fact that large.
+                            opacity={0.5}
                           />
                         )}
                       </g>
@@ -544,9 +558,9 @@ function SubjectTabs({
   counts,
   onChange,
 }: {
-  subject: SubjectId;
-  counts: Record<SubjectId, number>;
-  onChange: (id: SubjectId) => void;
+  subject: QuestionId;
+  counts: Record<QuestionId, number>;
+  onChange: (id: QuestionId) => void;
 }) {
   return (
     <div
@@ -554,7 +568,7 @@ function SubjectTabs({
       aria-label="Choose a question"
       className="-mx-1 mt-3 flex gap-1 overflow-x-auto whitespace-nowrap border-b border-[color:var(--border)]"
     >
-      {SUBJECTS.map((s) => {
+      {QUESTIONS.map((s) => {
         const active = s.id === subject;
         const empty = counts[s.id] === 0;
         return (
@@ -660,7 +674,7 @@ function StanceKey({ dots }: { dots: Dot[] }) {
   const hasCitation = dots.some((d) => d.isCitation);
   const hasOriginal = dots.some((d) => !d.isCitation);
   const hasWeak = dots.some((d) => !d.strong);
-  const hasUnreviewed = dots.some((d) => d.unreviewed);
+  const unreviewed = dots.filter((d) => d.unreviewed).length;
 
   return (
     <ul className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-[color:var(--border)] pt-2.5 text-[10px] text-[color:var(--muted)]">
@@ -692,13 +706,16 @@ function StanceKey({ dots }: { dots: Dot[] }) {
           Secondhand or later account
         </li>
       )}
-      {hasUnreviewed && (
+      {unreviewed > 0 && (
         <li className="flex items-center gap-1.5">
           <span
             aria-hidden="true"
             className="inline-block h-2.5 w-2.5 shrink-0 rounded-full border border-dashed border-[color:var(--muted)]"
           />
-          Placement unconfirmed
+          <span className="tabular-nums">
+            {unreviewed} of {dots.length}
+          </span>{" "}
+          unconfirmed
         </li>
       )}
     </ul>

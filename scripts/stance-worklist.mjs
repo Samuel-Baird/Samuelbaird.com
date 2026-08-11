@@ -1,124 +1,138 @@
 /**
- * Emits the stance backfill worklist: every (quote, stance-bearing category)
- * pair that needs a direction recorded, batched for parallel review.
+ * Emits the re-read worklist: every quote, with each question its categories
+ * put to it and the bands that question offers.
  *
- * The corpus records *that* a quote touches a category but not *which way* it
- * leans, and the direction is what the certainty chart is built on. It lives
- * in each quote's prose note today, so this hands the reviewer the note and
- * the excerpt together with the proposition the direction is about.
+ * This is a re-read rather than a relabel. The previous model ran one
+ * affirms/hedges/denies axis across every question, which could not express a
+ * four-valued answer and — worse — treated the Father's divinity and his
+ * mortality as one claim. Nothing recorded under it can be mechanically
+ * translated, so every answer is assigned from the excerpt again.
  *
  *   node scripts/stance-worklist.mjs <out-dir> [batches]
  */
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-// Defining subjects only — the four whose propositions fix what a recorded
-// direction means. The narrower subjects in constants.ts borrow these
-// categories to ask a sharper question, but they must not be offered here or a
-// reviewer would be asked to judge one category against two propositions.
-const SUBJECTS = {
-  "father-origin": {
-    question: "Was the Father once a mortal man?",
-    proposition:
-      "God the Father passed through a mortality like ours and attained his exaltation, rather than having always been God.",
-    categories: [
-      "BACKWARD-EXPLICIT",
-      "FATHER-MORTAL-EXPERIENCE",
-      "FATHER-BECAME-GOD",
-      "INFINITE-CHAIN",
-      "FATHER-ALWAYS-GOD",
-      "BACKWARD-AGNOSTIC",
+const QUESTIONS = {
+  divinity: {
+    question: "Was the Father always God?",
+    guidance:
+      "Not the mortality question. On this tradition's own terms Jehovah was God before and during his mortal life, so mortality language alone answers nothing here — only language about becoming, attaining, or always having been God does.",
+    triggers: ["FATHER-BECAME-GOD", "FATHER-ALWAYS-GOD", "BACKWARD-AGNOSTIC"],
+    bands: [
+      ["not-always-god", "Asserts a change into godhood — attained, became, was exalted to, progressed to being God — or that there was a time he was not God."],
+      ["declines", "Raises his origin or history and withholds, or is deliberately poised between attainment and eternal divinity."],
+      ["always-god", "Asserts the Father has always been God: no beginning to his divinity, no attainment."],
     ],
   },
-  "eternal-increase": {
+  regress: {
+    question: "How many Gods stand above the Father?",
+    guidance:
+      "An unquantified chain is INDEFINITE, never infinite. Promoting it is the most tempting error here — an unbounded-sounding phrase is not a claim about infinity.",
+    triggers: ["BACKWARD-EXPLICIT", "INFINITE-CHAIN", "BACKWARD-AGNOSTIC"],
+    bands: [
+      ["infinite", "An explicitly endless or numberless succession of Gods above the Father."],
+      ["indefinite", "A chain above the Father with no stated terminus and no stated count — the default reading of an unqualified 'his Father had a Father'."],
+      ["finite", "A bounded chain: a stated count, or a named terminus above the Father."],
+      ["most-high", "Asserts nothing stands above the Father; he is the terminus."],
+      ["declines", "Raises the question and withholds."],
+    ],
+  },
+  mortality: {
+    question: "Did the Father pass through a mortal life?",
+    guidance:
+      "Separate from the divinity question. The second band is for the pattern this tradition already accepts in Christ: mortal while never ceasing to be God.",
+    triggers: ["FATHER-MORTAL-EXPERIENCE"],
+    bands: [
+      ["probation", "A mortality like ours: tested, subject to law, able to fall. A probation, not merely an incarnation."],
+      ["already-divine", "Lived a mortal life while already God — the Jehovah pattern. Incarnation without loss of divinity, or explicit comparison to Christ's mortality."],
+      ["declines", "Raises his mortality and withholds its character."],
+      ["denies", "Asserts the Father never was mortal."],
+    ],
+  },
+  increase: {
     question: "Do the exalted become parents of spirit children?",
-    proposition:
-      "Exalted men and women beget spirit offspring and so continue the pattern by which we were made.",
-    categories: [
+    guidance:
+      "The distinction that matters is whether a mechanism is stated. Promising posterity without saying how is its own position.",
+    triggers: [
       "FORWARD-EXPLICIT",
       "FORWARD-EUPHEMISM",
       "SPIRIT-BIRTH-VIVIPAROUS",
       "SPIRIT-BIRTH-ADOPTION",
     ],
+    bands: [
+      ["literal-begetting", "Spirit children are begotten and born of heavenly parents. Procreation stated, not implied."],
+      ["mechanism-unstated", "Affirms eternal increase, posterity, or continuation of seed while withholding how it happens."],
+      ["organized-not-begotten", "Spirits are organized, adopted, or fashioned from pre-existing intelligence — explicitly not begotten."],
+      ["declines", "Raises the question and withholds."],
+      ["denies", "Denies that exalted beings have spirit posterity at all."],
+    ],
   },
-  "heavenly-mother": {
-    question: "Is there a Mother in Heaven?",
-    proposition: "A Heavenly Mother exists and is a parent of the human family.",
-    categories: ["HEAVENLY-MOTHER"],
+  mother: {
+    question: "What work does the Mother do?",
+    guidance:
+      "A role scale, not an existence scale. Her existence is barely contested here. A rebuke aimed at a practice — praying to her, the fitness of a hymn — caps her role and does not deny her. 'Heavenly parents' alone affirms parentage, not mechanism, and never reaches the top band.",
+    triggers: ["HEAVENLY-MOTHER"],
+    bands: [
+      ["necessary-for-birth", "Required for spirit children to exist. Begetting is said to need a mother, or she is named as bearing spirit offspring."],
+      ["parent-mechanism-unstated", "Parentage affirmed — we are her children, she is a parent alongside the Father — without asserting how."],
+      ["present-role-unstated", "She exists, or is a consort or exalted wife, with no claim about parentage or generation."],
+      ["role-capped", "Grants her, then restricts what follows: no speculation, no worship, no inference beyond what is given."],
+      ["declines", "Raises her and withholds entirely."],
+      ["denies", "Denies her, or denies the specific role proposed."],
+    ],
   },
-  "divine-progression": {
+  progression: {
     question: "Does God still progress?",
-    proposition:
-      "God continues to advance in knowledge or perfection, rather than possessing all of it already.",
-    categories: ["DIVINE-PROGRESSION"],
+    guidance:
+      "The middle band is the interesting one: restricting progression to dominion while denying it in knowledge is a distinct position, and it is how the claim was retired rather than simply contradicted.",
+    triggers: ["DIVINE-PROGRESSION"],
+    bands: [
+      ["knowledge", "God advances in knowledge, truth, or perfection. The strong claim."],
+      ["dominion-only", "Restricts progression to glory, dominion, or kingdoms while denying growth in knowledge."],
+      ["declines", "Raises it and withholds."],
+      ["denies", "God possesses all knowledge and does not advance."],
+    ],
   },
 };
-
-// What the tag usually means, offered to the reviewer as a starting point and
-// never as an answer. A prior that survives the note is fine; a prior that
-// overrides the note is the failure mode this whole exercise exists to avoid,
-// so contradicting one is a reason to flag, not to reconsider the note.
-const PRIORS = {
-  "BACKWARD-EXPLICIT": "affirms",
-  "FATHER-MORTAL-EXPERIENCE": "affirms",
-  "FATHER-BECAME-GOD": "affirms",
-  "INFINITE-CHAIN": "affirms",
-  "FATHER-ALWAYS-GOD": "denies",
-  "BACKWARD-AGNOSTIC": "hedges",
-  "FORWARD-EXPLICIT": "affirms",
-  "FORWARD-EUPHEMISM": "hedges",
-  "SPIRIT-BIRTH-VIVIPAROUS": "affirms",
-  "SPIRIT-BIRTH-ADOPTION": "read the note",
-  "HEAVENLY-MOTHER": "read the note",
-  "DIVINE-PROGRESSION": "read the note",
-};
-
-const SUBJECT_OF = Object.fromEntries(
-  Object.entries(SUBJECTS).flatMap(([id, s]) =>
-    s.categories.map((c) => [c, id]),
-  ),
-);
 
 const outDir = process.argv[2];
-const batches = Number(process.argv[3] ?? 6);
+const batches = Number(process.argv[3] ?? 12);
 if (!outDir) {
   console.error("usage: node scripts/stance-worklist.mjs <out-dir> [batches]");
   process.exit(1);
 }
 
 const sources = JSON.parse(
-  await import("node:fs/promises").then((fs) =>
-    fs.readFile(
-      new URL("../src/app/eternal-increase-timeline/sources.json", import.meta.url),
-      "utf8",
-    ),
+  readFileSync(
+    new URL("../src/app/eternal-increase-timeline/sources.json", import.meta.url),
+    "utf8",
   ),
 );
 
 const units = [];
 for (const entry of sources) {
   for (const quote of entry.quotes) {
-    const cats = quote.categories.filter((c) => c in SUBJECT_OF);
-    if (cats.length === 0) continue;
+    const asked = Object.entries(QUESTIONS)
+      .filter(([, q]) => q.triggers.some((t) => quote.categories.includes(t)))
+      .map(([id, q]) => ({
+        id,
+        question: q.question,
+        guidance: q.guidance,
+        bands: q.bands.map(([band, criteria]) => ({ band, criteria })),
+      }));
+    if (asked.length === 0) continue;
     units.push({
       quoteId: quote.quoteId,
       entryId: entry.id,
       date: entry.dateDisplay,
       speaker: entry.speaker,
       office: entry.office,
-      hearsay: entry.hearsay,
-      correlationStatus: entry.correlationStatus,
       referent: quote.referent ?? entry.referent,
-      implied: quote.implied ?? false,
+      categories: quote.categories,
       excerpt: quote.excerpt,
       note: quote.note ?? "",
-      needed: cats.map((c) => ({
-        category: c,
-        subject: SUBJECT_OF[c],
-        question: SUBJECTS[SUBJECT_OF[c]].question,
-        proposition: SUBJECTS[SUBJECT_OF[c]].proposition,
-        prior: PRIORS[c],
-      })),
+      asked,
     });
   }
 }
@@ -131,18 +145,14 @@ mkdirSync(outDir, { recursive: true });
 const chunks = Array.from({ length: batches }, () => []);
 units.forEach((u, i) => chunks[i % batches].push(u));
 
-chunks.forEach((chunk, i) => {
-  writeFileSync(
-    join(outDir, `batch-${i + 1}.json`),
-    JSON.stringify(chunk, null, 1),
-  );
-});
-
-console.log(
-  `${units.length} quotes, ${units.reduce((n, u) => n + u.needed.length, 0)} stance calls, ${batches} batches`,
+chunks.forEach((chunk, i) =>
+  writeFileSync(join(outDir, `batch-${i + 1}.json`), JSON.stringify(chunk, null, 1)),
 );
+
+const decisions = units.reduce((n, u) => n + u.asked.length, 0);
+console.log(`${units.length} quotes, ${decisions} answers, ${batches} batches`);
 chunks.forEach((c, i) =>
   console.log(
-    `  batch-${i + 1}.json  ${String(c.length).padStart(3)} quotes  ${c.reduce((n, u) => n + u.needed.length, 0)} calls`,
+    `  batch-${i + 1}.json  ${String(c.length).padStart(3)} quotes  ${c.reduce((n, u) => n + u.asked.length, 0)} answers`,
   ),
 );

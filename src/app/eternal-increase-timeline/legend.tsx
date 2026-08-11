@@ -5,7 +5,7 @@ import {
   INK_VARS,
   REFERENT_META,
   SOURCE_TYPE_META,
-  STANCE_META,
+  QUESTIONS,
   STATUS_META,
 } from "./constants";
 import {
@@ -14,7 +14,6 @@ import {
   HEARSAY_GRADES,
   REFERENTS,
   SOURCE_TYPES,
-  STANCES,
 } from "./schema";
 
 /**
@@ -44,17 +43,28 @@ export function ScalesLegend() {
       </LegendBlock>
 
       <LegendBlock
-        title="Stance"
-        intro="Where a quote stands on the question the stance chart is asking. Recorded per quote and per category, because one passage can teach one claim while rejecting a neighbouring one. Only the twelve claim categories carry a stance: a reframing or an explanatory framework is not a position on a proposition, so neither takes one."
+        title="Questions and answers"
+        intro="Each question owns its own scale, so an answer means something only on the question that asked it. A quote is asked a question when it carries one of that question's categories; what it answers is read off the excerpt, and a passage that turns out not to speak to the question is recorded as answering exactly that rather than being quietly dropped."
       >
-        <dl className="mt-2 space-y-2">
-          {STANCES.map((s) => (
-            <div key={s} className="flex gap-2">
-              <dt className="small-caps w-16 shrink-0 text-xs text-[color:var(--foreground)]">
-                {STANCE_META[s].label}
+        <dl className="mt-2 space-y-4">
+          {QUESTIONS.map((q) => (
+            <div key={q.id}>
+              <dt className="text-xs font-medium text-[color:var(--foreground)]">
+                {q.question}
               </dt>
-              <dd className="flex-1 text-xs leading-relaxed text-[color:var(--muted)]">
-                {STANCE_META[s].definition}
+              <dd className="mt-1 space-y-1">
+                {q.bands.map((b) => (
+                  <p
+                    key={b.id}
+                    className="text-xs leading-relaxed text-[color:var(--muted)]"
+                  >
+                    <span className="small-caps text-[color:var(--foreground)]">
+                      {b.label}
+                      {b.offScale && " (off the scale)"}
+                    </span>{" "}
+                    — {b.criteria}
+                  </p>
+                ))}
               </dd>
             </div>
           ))}
