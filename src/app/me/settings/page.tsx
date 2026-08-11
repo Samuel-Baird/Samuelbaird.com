@@ -1,6 +1,7 @@
 import { requireUser } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { NewsletterToggle } from "@/components/newsletter-toggle";
+import { DeleteAccountButton } from "@/components/delete-account-button";
 
 export const dynamic = "force-dynamic";
 
@@ -46,6 +47,37 @@ export default async function SettingsPage() {
         </p>
         <div className="mt-4">
           <NewsletterToggle initial={subscribed} />
+        </div>
+      </section>
+
+      <section className="mt-6 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6">
+        <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
+          Your data
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
+          Download a copy of everything tied to your account — bookmarks,
+          upvotes, reading progress, newsletter subscription, and messages
+          you&apos;ve sent.
+        </p>
+        <div className="mt-4">
+          <a
+            href="/api/me/export"
+            className="inline-flex h-10 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)]"
+          >
+            Export my data
+          </a>
+        </div>
+      </section>
+
+      <section className="mt-6 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6">
+        <h2 className="small-caps text-xs font-medium text-[color:var(--oxblood)]">
+          Delete account
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
+          Permanently delete your account and everything tied to it.
+        </p>
+        <div className="mt-4">
+          <DeleteAccountButton />
         </div>
       </section>
     </div>
