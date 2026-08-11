@@ -2,6 +2,25 @@
 
 An MCP server exposing the data behind [Latter-day Stats](https://github.com/Samuel-Baird/latter-day-stats): channels, studies, and timelines.
 
+**Hosted, remote version — no setup required:** `https://latter-day-stats.vercel.app/api/mcp`
+(source: [`src/app/api/mcp/route.ts`](../src/app/api/mcp/route.ts), same tools as below).
+Point any MCP client that supports remote/Streamable HTTP servers at that URL directly,
+or use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) for stdio-only clients:
+
+```json
+{
+  "mcpServers": {
+    "latter-day-stats": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://latter-day-stats.vercel.app/api/mcp"]
+    }
+  }
+}
+```
+
+The rest of this document covers the standalone local server below — useful if you want
+to run against your own Supabase project or hack on the tools without redeploying.
+
 - **Channels** — the tracked YouTube channels and their subscriber/view stats. Channels tagged `Critical` (critical-of-the-Church commentary) are always excluded, matching the site's own faithful-view filter.
 - **Studies** — the research library (surveys, papers, articles).
 - **Timelines** — the sourced doctrinal/historical timelines (graded primary sources with quotes and category tags). Read directly from the repo's `sources.json` files, no database needed.
