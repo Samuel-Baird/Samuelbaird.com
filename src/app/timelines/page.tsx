@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Timelines",
   description:
     "Chronological collections of primary and official sources, showing how particular teachings have been stated over time.",
+  alternates: { canonical: "/timelines" },
 };
 
 export default function TimelinesPage() {

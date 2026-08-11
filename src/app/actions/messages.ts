@@ -41,7 +41,7 @@ export async function submitMessage(formData: FormData) {
   const { user } = auth;
 
   if (website) {
-    redirect("/contact?sent=1");
+    redirect("/contact/thank-you");
   }
 
   if (!body) {
@@ -98,7 +98,7 @@ export async function submitMessage(formData: FormData) {
   );
 
   revalidatePath("/admin/messages");
-  redirect("/contact?sent=1");
+  redirect("/contact/thank-you");
 }
 
 async function isRateLimited(userId: string) {

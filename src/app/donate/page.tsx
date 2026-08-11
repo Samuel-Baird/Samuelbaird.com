@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Donate",
   description:
     "Support Latter-day Stats — donations go toward hosting and keeping the site free and ad-free. $5+ once unlocks premium features.",
+  alternates: { canonical: "/donate" },
 };
 
 const PAYPAL_URL = "https://paypal.me/Baird90";

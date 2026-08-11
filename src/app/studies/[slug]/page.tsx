@@ -9,6 +9,7 @@ const SOURCE_TYPE_LABELS: Record<string, { label: string; ink: TagInk }> = {
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CitationCopy } from "@/components/citation-copy";
 import { StudyProgressPanel } from "@/components/study-progress-panel";
 import { Tag, type TagInk } from "@/components/tag";
@@ -35,6 +36,7 @@ export async function generateMetadata({
   return {
     title: s.title,
     description: s.abstract?.slice(0, 200) ?? undefined,
+    alternates: { canonical: `/studies/${slug}` },
   };
 }
 
@@ -60,12 +62,9 @@ export default async function StudyDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
-      <Link
-        href="/studies"
-        className="text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-      >
-        ← All studies
-      </Link>
+      <Breadcrumbs
+        items={[{ label: "Studies", href: "/studies" }, { label: study.title }]}
+      />
 
       {study.context_note && !study.flagged_problematic && (
         <div className="mt-6 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--accent-soft)]/30 p-4 text-sm text-[color:var(--foreground)]">

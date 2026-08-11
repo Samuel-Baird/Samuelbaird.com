@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "About Latter-day Stats — a public hub for statistics, research, and creator data on the Latter-day Saint community.",
+  alternates: { canonical: "/about" },
 };
 
 export const revalidate = 600;

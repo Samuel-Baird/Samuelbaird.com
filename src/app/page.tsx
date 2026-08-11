@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   getChannelsWithLatest,
@@ -18,6 +19,10 @@ import { Tag } from "@/components/tag";
 import { inkForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function Home() {
   const premiumStatus = await getPremiumStatus();

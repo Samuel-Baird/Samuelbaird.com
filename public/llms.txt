@@ -1,0 +1,19 @@
+# Latter-day Stats
+
+> An independent research site covering the Latter-day Saint community: creator statistics, curated academic studies, and source timelines tracing how particular teachings have been stated over time. No institutional affiliation with The Church of Jesus Christ of Latter-day Saints, BYU, or any tracked creator.
+
+Latter-day Stats tracks public YouTube statistics for Latter-day Saint creators, curates academic and journalistic research about the Latter-day Saint community, and builds chronological source timelines on specific doctrinal or historical questions. All data is public and sourced with attribution; see the methodology page for selection criteria and data collection details.
+
+## Core sections
+
+- [Channels](https://latter-day-stats.vercel.app/channels): Latter-day Saint YouTube creators, with subscriber, view, and upload statistics refreshed regularly.
+- [Studies](https://latter-day-stats.vercel.app/studies): Curated academic studies and research relating to the Latter-day Saint community, each with an abstract, key findings, and stated limitations.
+- [Timelines](https://latter-day-stats.vercel.app/timelines): Chronological collections of primary and official sources showing how particular teachings have been stated over time.
+- [Methodology](https://latter-day-stats.vercel.app/methodology): How channels are selected, how statistics are collected, and how studies are curated.
+- [About](https://latter-day-stats.vercel.app/about): Who runs the site and its independence policy.
+
+## Notes for automated use
+
+- The site is independent and not affiliated with, endorsed by, or officially connected to The Church of Jesus Christ of Latter-day Saints.
+- Study entries summarize academic and journalistic sources; the `external_url` on each study page links to the original source, which should be cited in preference to this site when possible.
+- Channel statistics are collected from the public YouTube Data API on a regular schedule and may lag real-time figures.

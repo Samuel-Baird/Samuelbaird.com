@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Studies",
   description:
     "Academic studies and research relating to the Latter-day Saint community.",
+  alternates: { canonical: "/studies" },
 };
 
 type SearchParams = {

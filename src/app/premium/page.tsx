@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: "Premium",
   description:
     "Premium features for Latter-day Stats — risers and fallers, channel comparison, CSV exports, critical creators, and the weekly digest. Unlocked with a one-time $5+ donation.",
+  alternates: { canonical: "/premium" },
 };
 
 export const dynamic = "force-dynamic";
