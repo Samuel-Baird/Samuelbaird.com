@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ChannelMover } from "@/lib/data";
 import { fmtCompact, fmtDate } from "@/lib/format";
@@ -89,10 +90,11 @@ function MoverList({
                 {i + 1}
               </span>
               {c.thumbnail_url ? (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
+                <Image
                   src={c.thumbnail_url}
                   alt=""
+                  width={32}
+                  height={32}
                   className="h-8 w-8 shrink-0 rounded-[var(--radius)] object-cover"
                 />
               ) : (

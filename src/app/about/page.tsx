@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
@@ -81,10 +82,11 @@ export default async function AboutPage() {
                 className="group mt-3 flex items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 no-underline transition-colors hover:border-[color:var(--accent)]"
               >
                 {myChannel.thumbnail_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={myChannel.thumbnail_url}
                     alt=""
+                    width={56}
+                    height={56}
                     className="h-14 w-14 shrink-0 rounded-full object-cover"
                   />
                 ) : (
