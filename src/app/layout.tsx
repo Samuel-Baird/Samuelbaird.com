@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter, Fraunces, Noto_Sans_Deseret } from "next/font/google";
 import { Suspense } from "react";
+import { AgeGateModal } from "@/components/age-gate-modal";
 import { AuthPromptProvider } from "@/components/auth-prompt";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -105,6 +106,7 @@ export default function RootLayout({
             <SiteNav />
             <main className="flex-1">{children}</main>
             <SiteFooter />
+            <AgeGateModal />
           </AuthPromptProvider>
         </Suspense>
         <Analytics />

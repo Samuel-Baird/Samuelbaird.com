@@ -18,12 +18,11 @@ function LoginContent() {
   const nextParam = searchParams.get("next") ?? "/";
   const error = searchParams.get("error");
   const [pending, setPending] = useState(false);
-  const [ageConfirmed, setAgeConfirmed] = useState(false);
 
   async function continueWithGoogle() {
     setPending(true);
     const supabase = createSupabaseBrowserClient();
-    const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextParam)}&age_confirmed=1`;
+    const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextParam)}`;
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo },
@@ -52,24 +51,11 @@ function LoginContent() {
           </p>
         ) : null}
 
-        <label className="mt-8 flex items-start gap-2.5 text-sm text-[color:var(--foreground)]">
-          <input
-            type="checkbox"
-            checked={ageConfirmed}
-            onChange={(e) => setAgeConfirmed(e.target.checked)}
-            className="mt-0.5 h-4 w-4 shrink-0 rounded-sm border-[color:var(--border)] accent-[color:var(--accent)]"
-          />
-          <span>
-            I confirm I am at least 13 years old. Latter-day Stats accounts
-            aren&apos;t available to anyone younger.
-          </span>
-        </label>
-
         <button
           type="button"
-          disabled={pending || !ageConfirmed}
+          disabled={pending}
           onClick={continueWithGoogle}
-          className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[color:var(--foreground)] disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-5 text-sm font-medium text-white transition-colors hover:bg-[color:var(--foreground)] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
           Continue with Google

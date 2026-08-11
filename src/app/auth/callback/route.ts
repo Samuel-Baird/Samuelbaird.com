@@ -1,4 +1,4 @@
-import { NextResponse, after, type NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 export async function GET(request: NextRequest) {
@@ -18,26 +18,32 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(new URL("/login?error=oauth", request.url));
   }
 
-  // COPPA: /login only reaches here after the age-confirmation checkbox is
-  // checked, so record it — but only stamp it once, and never let this block
-  // sign-in. Swallowed rather than awaited-and-thrown: a stats/schema hiccup
-  // here must not lock a real user out of their account.
-  if (
-    request.nextUrl.searchParams.get("age_confirmed") === "1" &&
-    data.user
-  ) {
-    const userId = data.user.id;
-    after(async () => {
-      const { error: updateError } = await supabase
-        .from("profiles")
-        .update({ age_confirmed_at: new Date().toISOString() })
-        .eq("id", userId)
-        .is("age_confirmed_at", null);
-      if (updateError) {
-        console.error("age_confirmed_at stamp failed:", updateError);
-      }
-    });
+  // COPPA: every sign-in path (the /login page and the AuthPromptProvider
+  // modal) lands here, so this is the one place that reliably knows whether
+  // a user has ever confirmed their age. A never-confirmed profile means
+  // this is (in effect) a first login — send them on to `next` with
+  // `age_gate=1` so the site-wide AgeGateModal can collect confirmation
+  // post sign-in, without blocking the OAuth flow itself. A lookup failure
+  // must never block sign-in, so it's treated the same as "already
+  // confirmed" rather than retried.
+  let needsAgeGate = false;
+  if (data.user) {
+    const { data: profile, error: profileError } = await supabase
+      .from("profiles")
+      .select("age_confirmed_at")
+      .eq("id", data.user.id)
+      .maybeSingle();
+    if (profileError) {
+      console.error("age_confirmed_at lookup failed:", profileError);
+    } else {
+      needsAgeGate = !profile?.age_confirmed_at;
+    }
   }
 
-  return NextResponse.redirect(new URL(next, request.nextUrl.origin));
+  const redirectUrl = new URL(next, request.nextUrl.origin);
+  if (needsAgeGate) {
+    redirectUrl.searchParams.set("age_gate", "1");
+  }
+
+  return NextResponse.redirect(redirectUrl);
 }
