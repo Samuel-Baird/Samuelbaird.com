@@ -106,6 +106,7 @@ first is the eternal regress / eternal increase timeline at
 | [`docs/timelines/SOURCING.md`](./docs/timelines/SOURCING.md) | Where sources come from, hearsay grading, multi-witness handling, **and the hosts that must never be cited publicly** |
 | [`docs/timelines/CONSTRUCTING.md`](./docs/timelines/CONSTRUCTING.md) | The four analytical rules, category design, building a new timeline |
 | [`docs/timelines/SCHEMA.md`](./docs/timelines/SCHEMA.md) | Field-by-field data contract for `sources.json` |
+| [`docs/timelines/STANCE-TAXONOMY.md`](./docs/timelines/STANCE-TAXONOMY.md) | **Proposal, not yet built.** Redesign of the stance model into six question groups with their own ordered scales |
 | [`docs/timelines/TODO.md`](./docs/timelines/TODO.md) | Backlog: planned timelines and open verification items |
 
 Each timeline is a self-contained route folder. Its data lives in a single

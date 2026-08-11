@@ -4,6 +4,14 @@ Working list for the source-timeline project. See
 [`CONSTRUCTING.md`](./CONSTRUCTING.md) for how a new timeline is built and
 [`SOURCING.md`](./SOURCING.md) for where material comes from.
 
+> **The stance model is being redesigned.** Before doing further stance work,
+> read [`STANCE-TAXONOMY.md`](./STANCE-TAXONOMY.md): six question groups with
+> their own ordered scales, replacing the single affirms/hedges/denies axis. It
+> is a proposal with three open questions and nothing has been categorised
+> against it, but adopting it means re-reading the corpus rather than
+> relabelling — so new stance data assigned under the current model may not
+> survive.
+
 ---
 
 ## Planned timelines
