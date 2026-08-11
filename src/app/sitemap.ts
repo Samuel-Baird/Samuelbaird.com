@@ -28,10 +28,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/methodology`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE}/donate`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE}/contact`, changeFrequency: "monthly", priority: 0.3 },
-    { url: `${BASE}/terms`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${BASE}/privacy`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${BASE}/dmca`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${BASE}/accessibility`, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const channelRoutes: MetadataRoute.Sitemap = (channelsRes.data ?? []).map(
