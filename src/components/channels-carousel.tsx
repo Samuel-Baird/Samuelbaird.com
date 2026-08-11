@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Tag } from "@/components/tag";
@@ -63,10 +64,11 @@ export function ChannelsCarousel({ channels }: { channels: ChannelWithStats[] })
                 className="group flex h-full items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
               >
                 {c.thumbnail_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={c.thumbnail_url}
                     alt=""
+                    width={56}
+                    height={56}
                     className="h-14 w-14 shrink-0 rounded-full object-cover"
                   />
                 ) : (

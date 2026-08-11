@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getPremiumStatus } from "@/lib/permissions";
@@ -130,10 +131,11 @@ export default async function ChannelDetailPage({
 
       <div className="mt-6 flex items-center gap-5">
         {channel.thumbnail_url ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={channel.thumbnail_url}
             alt=""
+            width={96}
+            height={96}
             className="h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           />
         ) : (
