@@ -79,29 +79,71 @@ If the console warns "low-confidence" baseline (fewer than 8 qualifying
 videos), either widen `--pages` and rerun, or set `expected_views` by hand in
 the analysis JSON with a note in the summary about why.
 
+## Steps 2–5 — run as one per-video loop
+
+Work videos one at a time — fetch a transcript, analyze, write the JSON,
+insert — rather than batch-fetching every transcript up front. Analysis
+takes 10–30+ minutes per video, so fetching each transcript immediately
+before its own analysis spaces the YouTube requests naturally. Batch-fetching
+is what triggers YouTube's per-IP "unusual traffic" block: observed
+2026-08-12, three transcript fetches in quick succession tripped it, after
+which every watch-page request from this machine — browser or script alike —
+got HTTP 429 for hours.
+
 ## Step 2 — Fetch the transcript
 
-For each video to analyze:
+Never fetch transcripts by driving the YouTube watch page in a browser (e.g.
+clicking "Show transcript" in the Browser pane): it is the heaviest request
+pattern, trips the anti-bot interstitial fastest, and the resulting block is
+IP-wide, killing tier 0 for the rest of the session. If an anti-bot
+challenge does appear anywhere, never attempt to click through it — solving
+it is strictly for the user, by hand, in their own browser.
+
+Work down this ladder. The session's first tier-0 run doubles as the probe
+that tells you whether the IP is currently blocked.
+
+**Tier 0 — caption scrape** (lightest: two bare HTTP requests, no external
+tools):
 
 ```bash
 npx tsx scripts/hub-fetch-transcript.ts --video <youtube_video_id> --out <youtube_video_id>.transcript.json
 ```
 
-This scrapes the caption track (preferring manual English, falling back to
-auto-generated) with no external tools. It's inherently fragile — YouTube
-changes these internal payloads without notice — so if it fails:
+Prefers manual English captions, falls back to auto-generated. Its exit code
+tells you the next move:
 
-1. **First fallback:** if `yt-dlp` is installed, run
-   `yt-dlp --write-auto-sub --sub-lang en --skip-download <watch-url>` and
-   convert the resulting `.vtt`/`.srv3` into `{ transcript, segments }` by
-   hand.
-2. **Last resort:** watch the video (or the parts around likely claims) and
-   write the transcript manually into the JSON, setting `"source": "manual"`.
+| Exit | Meaning | Next move |
+|---|---|---|
+| 0 | Transcript written | Continue to step 3 |
+| 2 | Video has no captions | Tier 2 — yt-dlp has nothing to download either |
+| 3 | Rate-limited (429 / interstitial / empty timedtext body) | **Circuit-break:** skip tier 0 for every remaining video this session; use tier 1 |
+| 1 | Anything else (payload shape changed, network error) | Try tier 1 |
 
-A transcript fetch failure is **not blocking** — analysis can still proceed
-from watching the video directly and noting timestamps manually. Always
-store whatever transcript text is available (full transcript, private,
-re-analysis only) even though the hub UI never renders it.
+**Tier 1 — yt-dlp** (different request path — its Innertube "android" client
+kept working while the watch page 429'd, verified 2026-08-12):
+
+```bash
+yt-dlp --write-sub --write-auto-sub --sub-lang en --skip-download --sleep-requests 2 -o "<youtube_video_id>" "https://www.youtube.com/watch?v=<youtube_video_id>"
+```
+
+then convert the resulting `.vtt` into the transcript-JSON shape:
+
+```bash
+npx tsx scripts/hub-fetch-transcript.ts --video <youtube_video_id> --from-vtt <youtube_video_id>.en.vtt --out <youtube_video_id>.transcript.json
+```
+
+If yt-dlp itself starts failing, run `yt-dlp -U` first — YouTube churns
+these internals constantly. Its "no supported JavaScript runtime" warning is
+harmless (installing deno silences it).
+
+**Tier 2 — manual:** watch the video (or the parts around likely claims) and
+write the transcript into the JSON by hand, setting `"source": "manual"`.
+
+A transcript fetch failure is **not blocking** — mark the video and keep the
+queue moving; analysis can still proceed from watching the video directly
+and noting timestamps manually. Always store whatever transcript text is
+available (full transcript, private, re-analysis only) even though the hub
+UI never renders it.
 
 ## Step 3 — Analyze
 
@@ -248,6 +290,8 @@ finding exactly what still needs the next pipeline step, e.g. filter to
   status at `/admin/access`.
 - Scripts: `scripts/hub-list-new-videos.ts`, `scripts/hub-fetch-transcript.ts`,
   `scripts/hub-insert-analysis.ts`.
+- `hub-fetch-transcript.ts` exit codes (0 ok / 2 no captions / 3
+  rate-limited / 1 other) and its `--from-vtt` converter mode: see Step 2.
 - Priority formula (may evolve — it lives in the insert script, not the
   schema): `(view_count / max(expected_views, 1)) * (debunkability / 10)`.
 - `video_status`: `active` | `removed` | `private` — set by
