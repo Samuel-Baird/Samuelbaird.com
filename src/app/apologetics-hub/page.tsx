@@ -253,36 +253,48 @@ export default async function ApologeticsHubPage({
   return (
     <div>
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-8">
-        <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
-          In Memory
-        </p>
-        <h2 className="serif mt-2 text-2xl font-semibold tracking-tight">
-          Chandler David Hendry
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
-          This resource is dedicated to the memory of Chandler David Hendry,
-          who devoted his time to sharing and defending the restored gospel
-          of Jesus Christ, engaging sincerely with those of other faiths, and
-          helping Latter-day Saints better understand and articulate what
-          they believe.
-        </p>
-        <blockquote className="mt-5 max-w-2xl border-l-2 border-[color:var(--honey)] pl-4 text-base italic leading-relaxed text-[color:var(--foreground)]">
-          &ldquo;I think everyone should first understand what the
-          Church&rsquo;s main truth claims are, and how to articulate them
-          correctly, and how to defend them. And once you have that basic
-          understanding, just start having good-faith discussions.&rdquo;
-          <footer className="small-caps mt-2 text-xs font-medium not-italic text-[color:var(--muted)]">
-            —{" "}
-            <a
-              href="https://www.youtube.com/live/AwrFGqxSuO8?si=vCl3OZHzI9W_-t_b&t=3557"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[color:var(--accent)] hover:underline"
-            >
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+          <Image
+            src="/apologetics-hub/chandler-hendry.jpg"
+            alt="Chandler David Hendry"
+            width={596}
+            height={335}
+            className="w-full shrink-0 rounded-[var(--radius)] object-cover sm:w-64"
+          />
+          <div>
+            <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
+              In Memory
+            </p>
+            <h2 className="serif mt-2 text-2xl font-semibold tracking-tight">
               Chandler David Hendry
-            </a>
-          </footer>
-        </blockquote>
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
+              This resource is dedicated to the memory of Chandler David
+              Hendry, who devoted his time to sharing and defending the
+              restored gospel of Jesus Christ, engaging sincerely with those
+              of other faiths, and helping Latter-day Saints better
+              understand and articulate what they believe.
+            </p>
+            <blockquote className="mt-5 max-w-2xl border-l-2 border-[color:var(--honey)] pl-4 text-base italic leading-relaxed text-[color:var(--foreground)]">
+              &ldquo;I think everyone should first understand what the
+              Church&rsquo;s main truth claims are, and how to articulate
+              them correctly, and how to defend them. And once you have that
+              basic understanding, just start having good-faith
+              discussions.&rdquo;
+              <footer className="small-caps mt-2 text-xs font-medium not-italic text-[color:var(--muted)]">
+                —{" "}
+                <a
+                  href="https://www.youtube.com/live/AwrFGqxSuO8?si=vCl3OZHzI9W_-t_b&t=3557"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[color:var(--accent)] hover:underline"
+                >
+                  Chandler David Hendry
+                </a>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
       </section>
 
       <section className="mt-8 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-8">
