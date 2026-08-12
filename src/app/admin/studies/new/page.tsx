@@ -1,7 +1,10 @@
 import { createStudy } from "@/app/admin/actions";
 import { SubmitButton } from "@/components/submit-button";
+import { requireAdmin } from "@/lib/auth";
 
-export default function NewStudyPage() {
+export default async function NewStudyPage() {
+  await requireAdmin();
+
   return (
     <div className="max-w-2xl">
       <h1 className="serif text-4xl font-semibold tracking-tight">New study</h1>

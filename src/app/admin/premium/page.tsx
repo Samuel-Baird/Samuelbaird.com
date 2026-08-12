@@ -1,6 +1,7 @@
 import { deletePremiumUser, upsertPremiumUser } from "@/app/admin/actions";
 import { CopyEmails } from "@/components/copy-emails";
 import { SubmitButton } from "@/components/submit-button";
+import { requireAdmin } from "@/lib/auth";
 import { fmtDate } from "@/lib/format";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
@@ -15,6 +16,8 @@ type PremiumUser = {
 };
 
 export default async function AdminPremiumUsersPage() {
+  await requireAdmin();
+
   const { data, error } = await createSupabaseServiceClient()
     .from("premium_users")
     .select("id, email, name, created_at, notify_weekly")

@@ -1,7 +1,10 @@
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtDate, fmtNumber } from "@/lib/format";
 
 export default async function AdminDashboardPage() {
+  await requireAdmin();
+
   const supabase = createSupabaseServiceClient();
   const [
     activeChannels,

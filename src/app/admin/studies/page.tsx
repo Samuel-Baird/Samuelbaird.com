@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { deleteStudy } from "@/app/admin/actions";
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Study } from "@/lib/types";
 
@@ -10,6 +11,8 @@ export default async function AdminStudiesPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
+  await requireAdmin();
+
   const params = await searchParams;
   const { data, error } = await createSupabaseServiceClient()
     .from("studies")

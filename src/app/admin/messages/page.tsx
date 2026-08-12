@@ -1,3 +1,4 @@
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtDate } from "@/lib/format";
 import { markMessageResolved } from "@/app/actions/messages";
@@ -30,6 +31,8 @@ export default async function AdminMessagesPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
+  await requireAdmin();
+
   const params = await searchParams;
   const showResolved = params.filter === "resolved";
   const showAll = params.filter === "all";

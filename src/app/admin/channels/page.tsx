@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AdminChannelsTable } from "@/components/admin-channels-table";
 import { TYPE_INK } from "@/lib/channel-types";
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Channel, ChannelStats } from "@/lib/types";
 
@@ -11,6 +12,8 @@ export default async function AdminChannelsPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
+  await requireAdmin();
+
   const params = await searchParams;
   const supabase = createSupabaseServiceClient();
   const [{ data: channels, error }, { data: stats, error: statsError }] =

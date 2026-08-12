@@ -1,7 +1,10 @@
 import { addChannelByInput } from "@/app/admin/actions";
 import { SubmitButton } from "@/components/submit-button";
+import { requireAdmin } from "@/lib/auth";
 
-export default function NewChannelPage() {
+export default async function NewChannelPage() {
+  await requireAdmin();
+
   async function submit(formData: FormData) {
     "use server";
     await addChannelByInput(String(formData.get("channel") ?? ""));

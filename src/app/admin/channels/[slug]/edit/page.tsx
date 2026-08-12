@@ -4,6 +4,7 @@ import { deleteChannel, updateChannelDetails } from "@/app/admin/actions";
 import { EditForm } from "@/components/edit-form";
 import { Tag } from "@/components/tag";
 import { TYPE_INK, inkForType } from "@/lib/channel-types";
+import { requireAdmin } from "@/lib/auth";
 import { COUNTRIES, LANGUAGES } from "@/lib/iso";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Channel } from "@/lib/types";
@@ -15,6 +16,8 @@ export default async function AdminEditChannelPage({
 }: {
   params: Promise<RouteParams>;
 }) {
+  await requireAdmin();
+
   const { slug } = await params;
   const supabase = createSupabaseServiceClient();
   const { data, error } = await supabase

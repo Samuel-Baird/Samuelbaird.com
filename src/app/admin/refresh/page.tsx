@@ -1,5 +1,6 @@
 import { refreshStatsNow } from "@/app/admin/actions";
 import { SubmitButton } from "@/components/submit-button";
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtDateTime } from "@/lib/format";
 
@@ -10,6 +11,8 @@ export default async function AdminRefreshPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
+  await requireAdmin();
+
   const params = await searchParams;
   const { data } = await createSupabaseServiceClient()
     .from("channel_stats")

@@ -7,6 +7,7 @@ import {
 } from "@/app/admin/actions";
 import { EditForm } from "@/components/edit-form";
 import { PreviewImageField } from "@/components/preview-image-field";
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type { Study } from "@/lib/types";
 
@@ -17,6 +18,8 @@ export default async function AdminEditStudyPage({
 }: {
   params: Promise<RouteParams>;
 }) {
+  await requireAdmin();
+
   const { slug } = await params;
   const supabase = createSupabaseServiceClient();
   const { data, error } = await supabase

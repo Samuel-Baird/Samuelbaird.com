@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtDate, fmtNumber } from "@/lib/format";
 
@@ -23,6 +24,8 @@ function daysAgoIso(days: number) {
 }
 
 export default async function AdminAnalyticsPage() {
+  await requireAdmin();
+
   const sb = createSupabaseServiceClient();
   const since30 = daysAgoIso(30);
   const since7 = daysAgoIso(7);
