@@ -103,6 +103,39 @@ export type HubVideoStatusValue = "working_on_it" | "responded";
 
 export type HubVideoState = "active" | "removed" | "private";
 
+// Per-channel record of when scripts/hub-list-new-videos.ts last scanned a
+// channel, independent of whether it found anything new — see
+// supabase/migrations/0041_hub_channel_state.sql for why this can't be
+// derived from hub_videos alone.
+export type HubChannelState = {
+  channel_id: string;
+  last_ingested_at: string;
+  created_at: string;
+  updated_at: string;
+};
+
+// The three-step ingest pipeline (scripts/hub-list-new-videos.ts →
+// hub-fetch-transcript.ts → hub-insert-analysis.ts). A video is always at
+// exactly one stage — the most advanced step actually completed for it —
+// rather than a set of flags, since the feed only ever needs to show where
+// a video currently stands in the pipeline.
+export type HubIngestStage = "metadata_only" | "transcript_fetched" | "ai_analyzed";
+
+export const HUB_INGEST_STAGE_LABEL: Record<HubIngestStage, string> = {
+  metadata_only: "Metadata ingested",
+  transcript_fetched: "Script ingested",
+  ai_analyzed: "AI rankings/claims provided",
+};
+
+export function hubIngestStage(video: {
+  analyzed_at: string | null;
+  debunkability: number | null;
+}, hasTranscript: boolean): HubIngestStage {
+  if (video.analyzed_at || video.debunkability != null) return "ai_analyzed";
+  if (hasTranscript) return "transcript_fetched";
+  return "metadata_only";
+}
+
 export type HubVideo = {
   id: string;
   channel_id: string;

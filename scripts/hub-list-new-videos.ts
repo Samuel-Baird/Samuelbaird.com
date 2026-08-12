@@ -258,6 +258,17 @@ async function main() {
 
   console.log(`Channel: ${channel.name} (${channel.youtube_channel_id})`);
 
+  const { data: priorState } = await supabase
+    .from("hub_channel_state")
+    .select("last_ingested_at")
+    .eq("channel_id", channel.id)
+    .maybeSingle();
+  console.log(
+    priorState
+      ? `Last ingested: ${priorState.last_ingested_at}`
+      : "Last ingested: never",
+  );
+
   const uploadsPlaylistId = await fetchUploadsPlaylistId(
     channel.youtube_channel_id,
     key,
@@ -360,6 +371,17 @@ async function main() {
   } else {
     console.log("\n" + json);
   }
+
+  // Record the scan regardless of whether it found anything new — a channel
+  // checked-and-current must be distinguishable from one never checked at
+  // all, so the next ingest session knows what's actually overdue.
+  const { error: stateError } = await supabase
+    .from("hub_channel_state")
+    .upsert(
+      { channel_id: channel.id, last_ingested_at: new Date().toISOString() },
+      { onConflict: "channel_id" },
+    );
+  if (stateError) throw stateError;
 }
 
 main().catch((err) => {

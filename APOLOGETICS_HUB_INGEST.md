@@ -28,6 +28,29 @@ per the user's standing preference to ship rather than pause for approval.
   running the steps below against its `channels` row — no new channel-tagging
   work is required as long as it's already tracked as `Critical`.
 
+## Step 0 — Pick a channel to work on
+
+Every tracked `Critical` channel should get periodic passes, not just the
+pilot channel. `public.hub_channel_state` records `last_ingested_at` per
+channel — the last time `hub-list-new-videos.ts` scanned it, whether or not
+that scan found anything new. Before starting a session, check which tracked
+channels are most overdue:
+
+```sql
+select c.name, c.slug, hcs.last_ingested_at
+from public.channels c
+left join public.hub_channel_state hcs on hcs.channel_id = c.id
+where c.channel_type = 'Critical'
+order by hcs.last_ingested_at asc nulls first;
+```
+
+`last_ingested_at` is a per-channel checkpoint, not a per-video one — it
+tells you a channel was checked as of that time, so a channel with no new
+uploads since its last scan doesn't look identical to one that's never been
+scanned at all. `hub-list-new-videos.ts` (below) prints the prior value at
+the top of its run and updates it automatically at the end, success or not
+— you don't set it by hand.
+
 ## Step 1 — Find new videos
 
 ```bash
@@ -182,17 +205,43 @@ apologist or admin account) and check the summary, claim timestamps (the
 video should seek correctly), and sources render as expected before
 reporting the run done.
 
+## Ingest-stage tags
+
+Every video on the hub feed shows exactly one stage tag, whichever step is
+furthest along — not a checklist of completed steps. A video with claims
+shows only "AI rankings/claims provided," not also "Metadata ingested" and
+"Script ingested." The stage is derived, not hand-set: `hubIngestStage()` in
+`src/lib/types.ts` computes it from whether `hub_transcripts` has a row and
+whether `hub_videos.analyzed_at`/`debunkability` is set, so it can never
+drift out of sync with the actual data.
+
+| Tag | Meaning | Set by |
+|---|---|---|
+| Metadata ingested | Row exists in `hub_videos` (title, views, thumbnail...); no transcript yet | `hub-list-new-videos.ts` |
+| Script ingested | Transcript fetched into `hub_transcripts` | `hub-fetch-transcript.ts` |
+| AI rankings/claims provided | Full analysis done — claims, debunkability, priority | `hub-insert-analysis.ts` |
+
+Admin accounts get a stage filter on `/apologetics-hub` (non-admin
+apologists don't see the filter, though everyone sees the tags) — useful for
+finding exactly what still needs the next pipeline step, e.g. filter to
+"Metadata ingested" to see everything still waiting on a transcript.
+
 ## Reference
 
-- Schema: `supabase/migrations/0039_apologetics_hub.sql`.
+- Schema: `supabase/migrations/0039_apologetics_hub.sql`,
+  `0041_hub_channel_state.sql`.
 - Access control: `requireApologist()` / `isApologistUser()` in
-  `src/lib/permissions.ts`; grant/revoke apologist status at
-  `/admin/apologists`.
+  `src/lib/permissions.ts`; grant/revoke apologist (and premium, admin)
+  status at `/admin/access`.
 - Scripts: `scripts/hub-list-new-videos.ts`, `scripts/hub-fetch-transcript.ts`,
   `scripts/hub-insert-analysis.ts`.
 - Priority formula (may evolve — it lives in the insert script, not the
   schema): `(view_count / max(expected_views, 1)) * (debunkability / 10)`.
 - `video_status`: `active` | `removed` | `private` — set by
   `--mark-removed` in step 1, not by the analysis JSON.
+- `hub_channel_state.last_ingested_at`: per-channel scan checkpoint, see
+  Step 0 above.
+- Ingest-stage tags: see above; derivation lives in `hubIngestStage()` in
+  `src/lib/types.ts`.
 - Per-creator status (working on it / responded + link) is set from the hub
   UI itself, not by these scripts — see `src/app/actions/hub-status.ts`.

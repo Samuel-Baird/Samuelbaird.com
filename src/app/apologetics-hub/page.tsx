@@ -5,7 +5,13 @@ import { Tag, type TagInk } from "@/components/tag";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
-import type { HubVideo, HubVideoStatusValue } from "@/lib/types";
+import {
+  HUB_INGEST_STAGE_LABEL,
+  hubIngestStage,
+  type HubIngestStage,
+  type HubVideo,
+  type HubVideoStatusValue,
+} from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Apologetics Hub",
@@ -14,14 +20,27 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-type SearchParams = { sort?: string };
+type SearchParams = { sort?: string; stage?: string };
 
 type FeedVideo = HubVideo & {
   channel_name: string;
   channel_slug: string;
   working_on_it_count: number;
   responded_count: number;
+  ingest_stage: HubIngestStage;
 };
+
+const STAGE_INK: Record<HubIngestStage, TagInk> = {
+  metadata_only: "muted",
+  transcript_fetched: "honey",
+  ai_analyzed: "accent",
+};
+
+const STAGE_OPTIONS: HubIngestStage[] = [
+  "metadata_only",
+  "transcript_fetched",
+  "ai_analyzed",
+];
 
 function debunkabilityInk(score: number | null): TagInk {
   if (score == null) return "muted";
@@ -40,9 +59,13 @@ export default async function ApologeticsHubPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  await requireApologist();
+  const auth = await requireApologist();
+  const isAdmin = auth.profile?.is_admin === true;
   const params = await searchParams;
   const sort = params.sort === "newest" ? "newest" : "priority";
+  const stageFilter = STAGE_OPTIONS.includes(params.stage as HubIngestStage)
+    ? (params.stage as HubIngestStage)
+    : null;
 
   const supabase = createSupabaseServiceClient();
 
@@ -65,20 +88,31 @@ export default async function ApologeticsHubPage({
   const channelIds = [...new Set(videos.map((v) => v.channel_id))];
   const videoIds = videos.map((v) => v.id);
 
-  const [{ data: channelRows, error: channelsError }, { data: statusRows, error: statusesError }] =
-    await Promise.all([
-      channelIds.length
-        ? supabase.from("channel_full").select("id, name, slug").in("id", channelIds)
-        : Promise.resolve({ data: [], error: null }),
-      videoIds.length
-        ? supabase
-            .from("hub_video_statuses")
-            .select("video_id, status")
-            .in("video_id", videoIds)
-        : Promise.resolve({ data: [], error: null }),
-    ]);
+  const [
+    { data: channelRows, error: channelsError },
+    { data: statusRows, error: statusesError },
+    { data: transcriptRows, error: transcriptsError },
+  ] = await Promise.all([
+    channelIds.length
+      ? supabase.from("channel_full").select("id, name, slug").in("id", channelIds)
+      : Promise.resolve({ data: [], error: null }),
+    videoIds.length
+      ? supabase
+          .from("hub_video_statuses")
+          .select("video_id, status")
+          .in("video_id", videoIds)
+      : Promise.resolve({ data: [], error: null }),
+    videoIds.length
+      ? supabase.from("hub_transcripts").select("video_id").in("video_id", videoIds)
+      : Promise.resolve({ data: [], error: null }),
+  ]);
   if (channelsError) throw channelsError;
   if (statusesError) throw statusesError;
+  if (transcriptsError) throw transcriptsError;
+
+  const videoIdsWithTranscript = new Set(
+    ((transcriptRows ?? []) as { video_id: string }[]).map((r) => r.video_id),
+  );
 
   const channelById = new Map(
     ((channelRows ?? []) as { id: string; name: string; slug: string }[]).map(
@@ -99,7 +133,7 @@ export default async function ApologeticsHubPage({
     statusCounts.set(row.video_id, counts);
   }
 
-  const feed: FeedVideo[] = videos.map((v) => {
+  const feedAll: FeedVideo[] = videos.map((v) => {
     const channel = channelById.get(v.channel_id);
     const counts = statusCounts.get(v.id) ?? { working_on_it: 0, responded: 0 };
     return {
@@ -108,8 +142,20 @@ export default async function ApologeticsHubPage({
       channel_slug: channel?.slug ?? "",
       working_on_it_count: counts.working_on_it,
       responded_count: counts.responded,
+      ingest_stage: hubIngestStage(v, videoIdsWithTranscript.has(v.id)),
     };
   });
+
+  const feed = stageFilter
+    ? feedAll.filter((v) => v.ingest_stage === stageFilter)
+    : feedAll;
+
+  function hrefWithStage(stage: HubIngestStage | null) {
+    const qs = new URLSearchParams();
+    qs.set("sort", sort);
+    if (stage) qs.set("stage", stage);
+    return `/apologetics-hub?${qs.toString()}`;
+  }
 
   return (
     <div>
@@ -150,6 +196,39 @@ export default async function ApologeticsHubPage({
           Newest
         </Link>
       </div>
+
+      {isAdmin && (
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+          <span className="text-[color:var(--muted)]">
+            Ingest stage (admin):
+          </span>
+          <Link
+            href={hrefWithStage(null)}
+            className={
+              !stageFilter
+                ? "font-medium text-[color:var(--accent)]"
+                : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+            }
+          >
+            All
+          </Link>
+          {STAGE_OPTIONS.map((stage) => (
+            <span key={stage} className="contents">
+              <span className="text-[color:var(--border)]">·</span>
+              <Link
+                href={hrefWithStage(stage)}
+                className={
+                  stageFilter === stage
+                    ? "font-medium text-[color:var(--accent)]"
+                    : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+                }
+              >
+                {HUB_INGEST_STAGE_LABEL[stage]}
+              </Link>
+            </span>
+          ))}
+        </div>
+      )}
 
       {feed.length === 0 ? (
         <div className="mt-8 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-8 text-center text-sm text-[color:var(--muted)]">
@@ -193,6 +272,9 @@ export default async function ApologeticsHubPage({
                     </h2>
 
                     <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                      <Tag ink={STAGE_INK[video.ingest_stage]}>
+                        {HUB_INGEST_STAGE_LABEL[video.ingest_stage]}
+                      </Tag>
                       <Tag ink={debunkabilityInk(video.debunkability)}>
                         Debunkability {video.debunkability ?? "—"}/10
                       </Tag>
