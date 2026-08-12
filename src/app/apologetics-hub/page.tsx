@@ -5,6 +5,7 @@ import {
   HubAdminStatsMenu,
   type HubAdminStats,
 } from "@/components/hub/admin-stats-menu";
+import { MethodologyNote } from "@/components/hub/methodology-note";
 import { Tag, type TagInk } from "@/components/tag";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
@@ -420,7 +421,9 @@ export default async function ApologeticsHubPage({
         access.
       </p>
 
-      <div className="mt-8 flex flex-wrap items-center gap-2 text-sm">
+      <MethodologyNote className="mt-8" />
+
+      <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
         <span className="text-[color:var(--muted)]">Sort:</span>
         {SORT_OPTIONS.map((option, i) => (
           <span key={option} className="contents">
