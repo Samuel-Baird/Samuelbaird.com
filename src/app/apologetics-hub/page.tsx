@@ -254,14 +254,7 @@ export default async function ApologeticsHubPage({
     <div>
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-          <Image
-            src="/apologetics-hub/chandler-hendry.jpg"
-            alt="Chandler David Hendry"
-            width={596}
-            height={335}
-            className="w-full shrink-0 rounded-[var(--radius)] object-cover sm:w-64"
-          />
-          <div>
+          <div className="order-2 sm:order-1">
             <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
               In Memory
             </p>
@@ -294,6 +287,13 @@ export default async function ApologeticsHubPage({
               </footer>
             </blockquote>
           </div>
+          <Image
+            src="/apologetics-hub/chandler-hendry.jpg"
+            alt="Chandler David Hendry"
+            width={331}
+            height={335}
+            className="order-1 w-full shrink-0 rounded-[var(--radius)] object-cover sm:order-2 sm:w-56"
+          />
         </div>
       </section>
 
