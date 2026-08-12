@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BeehiveMark } from "@/components/beehive-mark";
 import { Tag, type TagInk } from "@/components/tag";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
@@ -284,12 +283,13 @@ export default async function ApologeticsHubPage({
             </a>
           </footer>
         </blockquote>
+      </section>
 
-        <div className="dinkus">
-          <BeehiveMark className="h-3.5 w-3.5" />
-        </div>
-
-        <p className="max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+      <section className="mt-8 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-8">
+        <h2 className="serif text-3xl font-semibold tracking-tight sm:text-4xl">
+          About This Tool
+        </h2>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
           The Apologetics Hub exists to help apologists find the content
           most worth responding to and give them good material to respond
           with — a feed of critical-channel videos, ranked by attention and
@@ -304,10 +304,10 @@ export default async function ApologeticsHubPage({
           responded to so effort isn&apos;t duplicated. If you have feedback
           on how to make this resource more useful, reach out to{" "}
           <a
-            href="mailto:b13llama@gmail.com"
+            href="mailto:ithinksamofficial@gmail.com"
             className="text-[color:var(--accent)] hover:underline"
           >
-            b13llama@gmail.com
+            ithinksamofficial@gmail.com
           </a>
           .
         </p>
