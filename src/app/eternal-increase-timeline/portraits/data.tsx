@@ -22,6 +22,22 @@ export type Stance = {
   ink: TagInk;
 };
 
+/**
+ * The six questions each sitter is read against, in the order they appear on
+ * the catalogue card. The first three are the timeline's own axes; the last
+ * three are the questions those axes keep raising.
+ */
+export const STANCE_QUESTIONS = [
+  { key: "father", label: "Did God have a Father?" },
+  { key: "man", label: "Was God once a man?" },
+  { key: "increase", label: "Endless posterity?" },
+  { key: "spiritBirth", label: "How are spirits made?" },
+  { key: "progression", label: "Does God still progress?" },
+  { key: "mother", label: "A Mother in Heaven?" },
+] as const;
+
+export type StanceKey = (typeof STANCE_QUESTIONS)[number]["key"];
+
 export type Speaker = {
   id: string;
   name: string;
@@ -31,7 +47,9 @@ export type Speaker = {
   era: string;
   frame: "gilt" | "walnut";
   face: Face;
-  stances: { father: Stance; man: Stance; increase: Stance };
+  stances: Record<StanceKey, Stance>;
+  /** How well-attested this sitter's positions are, in the timeline's terms. */
+  evidence: string;
   summary: string;
   beliefs: string[];
   quotes: { text: string; source: string; url: string }[];
@@ -66,7 +84,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Yes — by 1844", ink: "honey" },
       man: { answer: "Yes — King Follett", ink: "honey" },
       increase: { answer: "Yes, mechanism unsaid", ink: "ink" },
+      spiritBirth: { answer: "Organized, not begotten", ink: "accent" },
+      progression: { answer: "Yes — a higher exaltation", ink: "honey" },
+      mother: { answer: "Not in his record", ink: "muted" },
     },
+    evidence:
+      "Six sources, none verbatim: the two 1844 sermons survive as longhand witnesses (grade B) and the 1842 discourse as second-hand notes (grade C).",
     summary:
       "Started with an unchanging God and ended, in the last ten weeks of his life, teaching that God was once a man and that the Father himself had a Father — a conclusion he reached by Bible exegesis, not reported vision. He promised the exalted “a continuation of the seeds forever,” yet taught that intelligence is uncreated and cannot be made: organization, not begetting. The literal spirit-birth chain his successors preached was their link, not his.",
     beliefs: [
@@ -129,7 +152,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Yes — “no beginning”", ink: "honey" },
       man: { answer: "Yes — still progressing", ink: "honey" },
       increase: { answer: "Yes — literal birth", ink: "honey" },
+      spiritBirth: { answer: "Begotten and born", ink: "honey" },
+      progression: { answer: "Yes — “progressing eternally”", ink: "honey" },
+      mother: { answer: "Implied — “a mother”", ink: "ink" },
     },
+    evidence:
+      "Almost entirely grade C: Journal of Discourses shorthand, edited for print and never reviewed by Young. Evidence of the claims, not of his sentences.",
     summary:
       "Preached the boldest chain-of-Gods doctrine any Church President has delivered — Gods without beginning, spirits literally begotten and born in the celestial world, a God who “is progressing eternally” — but his sharpest regress statements sit inside the Adam–God frame, and the day after his cleanest chain statement he told the Saints to stop inquiring after the origin of the Gods. Nearly all of it survives only as unreviewed shorthand.",
     beliefs: [
@@ -199,7 +227,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Persons yes — God no", ink: "oxblood" },
       man: { answer: "Yes (the person)", ink: "honey" },
       increase: { answer: "Yes — maximal", ink: "honey" },
+      spiritBirth: { answer: "“Formed by generation”", ink: "honey" },
+      progression: { answer: "No — he knows all things", ink: "oxblood" },
+      mother: { answer: "“His wife or wives”", ink: "ink" },
     },
+    evidence:
+      "Uniquely grade A where it counts: the distinctive positions are his own pen, in The Seer and the pamphlets — which is exactly why they could be formally repudiated.",
     summary:
       "Split God in two: divine persons regress forever — “The Father of our spirits has only been doing that which His Progenitors did before Him” — but the true eternal God is the attribute-set of light, truth, and knowledge, which never began and, crucially, never learns. He is the corpus’s most explicit voice on the forward chain, and the metaphysics behind his backward one got him censured in 1860 and formally repudiated in 1865.",
     beliefs: [
@@ -266,7 +299,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "One link, then silence", ink: "muted" },
       man: { answer: "Leaning yes, hedged", ink: "ink" },
       increase: { answer: "Emphatic yes", ink: "honey" },
+      spiritBirth: { answer: "Procreation, literally", ink: "honey" },
+      progression: { answer: "Not addressed", ink: "muted" },
+      mother: { answer: "Yes — but never worshipped", ink: "oxblood" },
     },
+    evidence:
+      "Mixed: the 1889 and 1892 discourses are grade C newspaper reports he never reviewed; the 1899 conference statements and the 1895 editorial are grade A.",
     summary:
       "The great theologian of the forward direction: God’s glory is the size of his posterity, procreation survives death and peoples the worlds, and exalted Abraham will have to “emigrate” for want of room. Backward, he extends the chain exactly one link past the Son — “Jesus received it as the Father received it” — asks whether other Gods were born of woman, and never names a Father of the Father.",
     beliefs: [
@@ -326,7 +364,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "No chain needed", ink: "oxblood" },
       man: { answer: "Yes — his plainest", ink: "honey" },
       increase: { answer: "Yes — “perpetual”", ink: "honey" },
+      spiritBirth: { answer: "Begotten — and organized", ink: "ink" },
+      progression: { answer: "Rose by his own exertions", ink: "honey" },
+      mother: { answer: "Never mentioned", ink: "muted" },
     },
+    evidence:
+      "Grade A from 1901 onward — printed Conference Reports — with the pivotal 1884 “Personality of God” discourse a grade C reporter's account.",
     summary:
       "Backward mortality without regress: the Father was once mortal and “fought his way from the depths… by His own exertions,” but eternality sits in an impersonal, beginningless spirit of intelligence, so no divine ancestry is ever asserted in either direction. On increase he is unhedged — resurrected couples are “parents of children… endless, perpetual increase” — and he spent his last decades demolishing Adam–God without ever naming Brigham Young.",
     beliefs: [
@@ -391,7 +434,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Unsaid — edge pressed", ink: "muted" },
       man: { answer: "Yes — Mother too", ink: "honey" },
       increase: { answer: "Yes, formulaic", ink: "ink" },
+      spiritBirth: { answer: "“Became,” never begotten", ink: "accent" },
+      progression: { answer: "Even God has limits", ink: "oxblood" },
+      mother: { answer: "Yes — his four-decade cause", ink: "honey" },
     },
+    evidence:
+      "Grade A conference addresses, except the strongest claim of all: the 1895 Heavenly-Mother-in-mortality remarks reach us through an unsigned report in a never-official periodical.",
     summary:
       "Pressed the boundary harder than any peer without ever asserting a Father of the Father: God “found himself” among pre-existing, uncreatable intelligences; our eternal Father and Mother “were once man and woman in mortality” (said at a suffrage rally, in print, by name); and his 5,700-line epic Elias set “the chain whereby the Gods perpetuate their reign” in heroic verse.",
     beliefs: [
@@ -454,7 +502,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "“A reasonable thought”", ink: "honey" },
       man: { answer: "Yes — a mystery", ink: "ink" },
       increase: { answer: "Yes — spirit birth", ink: "honey" },
+      spiritBirth: { answer: "Literal, from a Mother", ink: "honey" },
+      progression: { answer: "No — “very dangerous”", ink: "oxblood" },
+      mother: { answer: "Yes — she gave spirit birth", ink: "honey" },
     },
+    evidence:
+      "Grade A throughout — his own published words — but the books carrying the regress are compilations, flagged never-official rather than authoritative.",
     summary:
       "The timeline’s most-cited voice, and its signature is affirm-then-police: he printed “our Father had a Father and so on” as “a reasonable thought,” affirmed the exalted-man Father and literal spirit birth from a Heavenly Mother — while ruling that God’s only progression is more kingdoms, never more knowledge, and answering the direct question with “we will leave that until we receive further knowledge.”",
     beliefs: [
@@ -514,7 +567,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Never engaged", ink: "muted" },
       man: { answer: "Yes — the couplet", ink: "honey" },
       increase: { answer: "Yes — devotional", ink: "ink" },
+      spiritBirth: { answer: "“No parent has ever yet”", ink: "ink" },
+      progression: { answer: "Not addressed", ink: "muted" },
+      mother: { answer: "Yes — “O My Father”", ink: "honey" },
     },
+    evidence:
+      "Grade A conference addresses — but his strongest entry works by quoting Brigham Young, so grade C shorthand rides inside an official text.",
     summary:
       "Godhood as destiny, preached in the devotional register: “gods in embryo,” 225,000 potential gods counted in one priesthood session, “no parent has ever yet on this earth been the parent of a spirit.” The destination stays loud while the mechanism goes quiet — and the backward question is never engaged at all, though he quoted the couplet as President and retired Adam–God by name.",
     beliefs: [
@@ -573,7 +631,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Yes — “God of Gods”", ink: "honey" },
       man: { answer: "By entailment", ink: "ink" },
       increase: { answer: "Yes — most explicit", ink: "honey" },
+      spiritBirth: { answer: "“Actually born”", ink: "honey" },
+      progression: { answer: "Kingdoms, never knowledge", ink: "oxblood" },
+      mother: { answer: "Implied by spirit birth", ink: "ink" },
     },
+    evidence:
+      "Grade A — all his own published words — but status varies sharply: Mormon Doctrine was never official and went out of print in 2010, and the Heresies fireside is a fireside.",
     summary:
       "Mormon Doctrine states the full two-directional chain more literally than any other twentieth-century source — the Father is “a God of Gods,” spirits are “actually born,” exalted couples multiply “their race without end” — while heresy number one of his Seven Deadly Heresies damns any God who learns: kingdoms may grow, attributes may not. The Father’s mortality rides on a single adjective, “resurrected,” never argued.",
     beliefs: [
@@ -636,7 +699,12 @@ export const SPEAKERS: Speaker[] = [
       father: { answer: "Silent", ink: "muted" },
       man: { answer: "Silent", ink: "muted" },
       increase: { answer: "Euphemism only", ink: "oxblood" },
+      spiritBirth: { answer: "Not described", ink: "muted" },
+      progression: { answer: "Not addressed", ink: "muted" },
+      mother: { answer: "Named, never described", ink: "oxblood" },
     },
+    evidence:
+      "Grade A and fully official — the cleanest provenance in the hall, which is what makes the silences count as evidence rather than as gaps in the record.",
     summary:
       "The correlated present in one career: theology “begins with heavenly parents,” yet a full sermon on the nature of the Father contains no couplet, no King Follett, no origin — the space filled instead by “the Supreme Being, the Creator and Ruler of the universe.” “Eternal increase” quietly becomes children born in mortality, and his boundary rule — teach only what meets the standards of official doctrine — would retire most of this hall.",
     beliefs: [
