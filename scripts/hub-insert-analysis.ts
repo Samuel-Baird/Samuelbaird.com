@@ -29,6 +29,7 @@ loadEnv({ path: ".env.local" });
 import { readFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
+import { computePriorityScore } from "./hub-priority";
 
 const sourceSchema = z.object({
   title: z.string().trim().min(1).max(300),
@@ -120,14 +121,12 @@ async function main() {
     );
   }
 
-  const priorityScore =
-    analysis.debunkability != null
-      ? Math.round(
-          (analysis.view_count / Math.max(analysis.expected_views ?? 1, 1)) *
-            (analysis.debunkability / 10) *
-            1000,
-        ) / 1000
-      : null;
+  const priorityScore = computePriorityScore({
+    viewCount: analysis.view_count,
+    expectedViews: analysis.expected_views ?? null,
+    debunkability: analysis.debunkability ?? null,
+    publishedAt: analysis.published_at,
+  });
 
   const supabase = supabaseClient();
 
