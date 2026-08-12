@@ -123,8 +123,13 @@ tells you the next move:
 kept working while the watch page 429'd, verified 2026-08-12):
 
 ```bash
-yt-dlp --write-sub --write-auto-sub --sub-lang en --skip-download --sleep-requests 2 -o "<youtube_video_id>" "https://www.youtube.com/watch?v=<youtube_video_id>"
+yt-dlp --extractor-args "youtube:player_client=android" --write-sub --write-auto-sub --sub-lang en --skip-download --sleep-requests 2 -o "<youtube_video_id>" "https://www.youtube.com/watch?v=<youtube_video_id>"
 ```
+
+Pass `--extractor-args "youtube:player_client=android"` explicitly — plain
+`yt-dlp` with no args tries the default client mix (including `web`) and can
+hit the same "Sign in to confirm you're not a bot" wall as tier 0, even
+while forcing `android` still works.
 
 then convert the resulting `.vtt` into the transcript-JSON shape:
 
@@ -135,6 +140,23 @@ npx tsx scripts/hub-fetch-transcript.ts --video <youtube_video_id> --from-vtt <y
 If yt-dlp itself starts failing, run `yt-dlp -U` first — YouTube churns
 these internals constantly. Its "no supported JavaScript runtime" warning is
 harmless (installing deno silences it).
+
+**Tier 1 also has a session budget, not just tier 0.** Observed 2026-08-12:
+after roughly 9 transcript fetches in one session (spread over ~1 hour, one
+at a time, never batched), forcing `player_client=android` stopped working
+too — every subsequent video, regardless of which one, failed with "Sign in
+to confirm you're not a bot," even with `--sleep-requests` raised to 5s. This
+wasn't a per-video fluke: three different, previously-untouched video IDs in
+a row all failed the same way within seconds of each other, which is what
+distinguishes a real IP-wide escalation from an unlucky single video (e.g.
+age-restriction, which fails immediately with a *different*, unambiguous
+"age-restricted" error rather than the bot-check message — see the exit-code
+table above for that case). When you see the bot-check message on two or
+three unrelated videos back to back, stop trying tier 1 for the rest of the
+session rather than burning more requests against it — there's no confirmed
+recovery window (unlike tier 0's within-session persistence), so don't loop
+retrying. Fall back to tier 2, or pause transcript-dependent work and resume
+in a later session once the block has had time to clear.
 
 **Tier 2 — manual:** watch the video (or the parts around likely claims) and
 write the transcript into the JSON by hand, setting `"source": "manual"`.
@@ -168,6 +190,37 @@ argues, not whether it's right. No editorializing, no "this dishonest video…".
 **Claims** — extract the video's specific, checkable claims (not every
 opinion or personal-experience statement — those aren't "debunkable" and
 don't belong here). For each:
+
+**Personal-experience videos** (a member or family member recounting what
+happened to them) are usually not "debunkable" as a whole — don't rebut
+someone's account of their own mistreatment or trauma, and don't relitigate
+whether it happened. But look for specific *institutional-practice*
+assertions embedded in the narrative that have a mundane, documented
+explanation the viewer isn't given — e.g. a mission office holding
+missionaries' passports is standard safekeeping/visa-renewal practice in
+many missions (passports are a black-market theft target; visas often need
+periodic renewal), not by itself evidence of coercion. When a claim like
+that is present:
+- Add ONE claim that contextualizes the institutional practice, without
+  characterizing the person's specific experience as false or exaggerated.
+  The tone is "here's the normal reason this practice exists," not "this
+  didn't happen to you" or "this was fine."
+- If the video's account includes something the normal explanation doesn't
+  cover (e.g. refusing to return a passport when the missionary or their
+  family asks for it), say so explicitly — the mundane explanation for the
+  practice doesn't excuse every use of it, and the response should say
+  where the line is, not paper over it.
+- `sources` still needs at least one citation, but for institutional-practice
+  context like this the GSA/pulpit-vault/latter-day-stats MCPs usually don't
+  cover it — a WebSearch/WebFetch to a documented, reputable source is fine
+  for this narrow case (cite the URL as usual). Prefer the GC/GSA/pulpit-vault
+  MCPs whenever the claim is doctrinal or historical rather than
+  administrative.
+- Debunkability for these videos still stays low (1–3) — contextualizing one
+  practice doesn't make the video's core narrative "debunkable"; the claim
+  exists to inform an apologist's response, not to score the video higher.
+
+For everything else:
 - `timestamp_seconds` — to the nearest ~10 seconds, taken from the
   transcript segment where the claim starts.
 - `excerpt` — a verbatim quote, ≤ ~40 words, taken directly from the
@@ -252,9 +305,10 @@ them rather than retyping.
 npx tsx scripts/hub-insert-analysis.ts <analysis-file.json>
 ```
 
-The script validates the JSON, computes
-`priority_score = (view_count / max(expected_views, 1)) * (debunkability / 10)`,
-and upserts `hub_videos` / `hub_claims` / `hub_transcripts`. It prints the
+The script validates the JSON, computes `priority_score` via
+`scripts/hub-priority.ts` (attention × severity × a recency multiplier —
+see Reference below), and upserts `hub_videos` / `hub_claims` /
+`hub_transcripts`. It prints the
 video's hub URL (`/apologetics-hub/<youtube_video_id>`) — open it (as an
 apologist or admin account) and check the summary, claim timestamps (the
 video should seek correctly), and sources render as expected before
@@ -289,11 +343,21 @@ finding exactly what still needs the next pipeline step, e.g. filter to
   `src/lib/permissions.ts`; grant/revoke apologist (and premium, admin)
   status at `/admin/access`.
 - Scripts: `scripts/hub-list-new-videos.ts`, `scripts/hub-fetch-transcript.ts`,
-  `scripts/hub-insert-analysis.ts`.
+  `scripts/hub-insert-analysis.ts`, `scripts/hub-priority.ts`,
+  `scripts/hub-backfill-priority.ts`.
 - `hub-fetch-transcript.ts` exit codes (0 ok / 2 no captions / 3
   rate-limited / 1 other) and its `--from-vtt` converter mode: see Step 2.
-- Priority formula (may evolve — it lives in the insert script, not the
-  schema): `(view_count / max(expected_views, 1)) * (debunkability / 10)`.
+- Priority formula (may evolve — it lives in `scripts/hub-priority.ts`, not
+  the schema, and `hub-insert-analysis.ts` imports it so there's one
+  implementation): `attention × severity × recency`, where
+  `attention = view_count / max(expected_views, 1)`,
+  `severity = debunkability / 10`, and `recency` is an exponential decay on
+  `published_at` (180-day half-life, floor of 0.3× so a still-viral old
+  video is deprioritized relative to an equally-severe fresh one, not
+  buried entirely — added 2026-08-12). If the formula changes again, run
+  `npx tsx scripts/hub-backfill-priority.ts` (or `--dry-run` first) to
+  recompute `priority_score` on every already-analyzed row — it's stored,
+  not a generated column, so old rows don't update themselves.
 - `video_status`: `active` | `removed` | `private` — set by
   `--mark-removed` in step 1, not by the analysis JSON.
 - `hub_channel_state.last_ingested_at`: per-channel scan checkpoint, see
@@ -306,3 +370,7 @@ finding exactly what still needs the next pipeline step, e.g. filter to
   `src/lib/types.ts`.
 - Per-creator status (working on it / responded + link) is set from the hub
   UI itself, not by these scripts — see `src/app/actions/hub-status.ts`.
+- Reported-response links (anyone can log a link to someone else's response
+  video, unlimited per video) live in `hub_reported_responses` — see
+  `src/app/actions/hub-reported-responses.ts` and
+  `supabase/migrations/0043_hub_reported_responses.sql`.
