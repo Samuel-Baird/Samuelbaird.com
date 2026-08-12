@@ -92,3 +92,83 @@ export type SiteStats = {
   total_videos: number;
   last_refresh: string | null;
 };
+
+// ============================================================================
+// Apologetics Hub — private, apologist-gated. All reads/writes go through
+// createSupabaseServiceClient() behind requireApologist(); RLS on these
+// tables is deny-all (see supabase/migrations/0039_apologetics_hub.sql).
+// ============================================================================
+
+export type HubVideoStatusValue = "working_on_it" | "responded";
+
+export type HubVideoState = "active" | "removed" | "private";
+
+export type HubVideo = {
+  id: string;
+  channel_id: string;
+  youtube_video_id: string;
+  title: string;
+  published_at: string;
+  duration_seconds: number | null;
+  thumbnail_url: string | null;
+  summary: string;
+  view_count: number;
+  view_count_updated_at: string | null;
+  expected_views: number | null;
+  debunkability: number | null;
+  priority_score: number | null;
+  video_status: HubVideoState;
+  analyzed_at: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+// Joined display shape used by the feed and detail pages.
+export type HubVideoWithChannel = HubVideo & {
+  channel_name: string;
+  channel_slug: string;
+};
+
+export type HubClaimSource = {
+  title: string;
+  url: string;
+  note: string;
+};
+
+export type HubClaim = {
+  id: string;
+  video_id: string;
+  position: number;
+  timestamp_seconds: number;
+  excerpt: string;
+  claim_summary: string;
+  response: string;
+  sources: HubClaimSource[];
+  created_at: string;
+  updated_at: string;
+};
+
+export type HubVideoStatus = {
+  user_id: string;
+  video_id: string;
+  status: HubVideoStatusValue;
+  response_url: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+// Joined display shape: a status row plus the creator's display name.
+export type HubVideoStatusWithUser = HubVideoStatus & {
+  full_name: string | null;
+  email: string | null;
+};
+
+// Transcript is stored for (re)analysis only — never selected for rendering
+// in the UI. Typed here for the ingest scripts, not for page components.
+export type HubTranscript = {
+  video_id: string;
+  transcript: string;
+  segments: { start: number; text: string }[] | null;
+  source: "timedtext" | "yt-dlp" | "manual";
+  fetched_at: string;
+};
