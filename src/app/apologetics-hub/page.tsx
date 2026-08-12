@@ -42,6 +42,15 @@ const STAGE_OPTIONS: HubIngestStage[] = [
   "ai_analyzed",
 ];
 
+// Hard cap on rows fetched per request. Without this, every downstream
+// .in(id, [...]) call (channels, statuses, transcripts) grows with the
+// total row count, and once that count reaches the thousands the resulting
+// query URL exceeds PostgREST's limit and every request 400s — this is not
+// a hypothetical, it happened in production once hub_videos passed ~6,000
+// rows. 60 is generous for a "what to work on" feed; nobody needs more than
+// that in view at once.
+const FEED_LIMIT = 60;
+
 function debunkabilityInk(score: number | null): TagInk {
   if (score == null) return "muted";
   if (score >= 8) return "oxblood";
@@ -69,18 +78,31 @@ export default async function ApologeticsHubPage({
 
   const supabase = createSupabaseServiceClient();
 
-  const videosQuery = supabase
+  let videosQuery = supabase
     .from("hub_videos")
     .select(
       "id, channel_id, youtube_video_id, title, published_at, duration_seconds, thumbnail_url, summary, view_count, view_count_updated_at, expected_views, debunkability, priority_score, video_status, analyzed_at, created_at, updated_at",
     );
+  // Push the coarse half of the stage filter (analyzed vs. not) down to the
+  // database before the row cap applies — otherwise, with thousands of
+  // metadata-only rows outscored by every analyzed one on both sort orders,
+  // "show me what still needs a transcript" would always return empty. The
+  // finer metadata-only/transcript-fetched split happens after fetching,
+  // against this already-bounded set.
+  videosQuery =
+    stageFilter === "ai_analyzed"
+      ? videosQuery.not("debunkability", "is", null)
+      : stageFilter
+        ? videosQuery.is("debunkability", null)
+        : videosQuery;
   const { data: videoRows, error: videosError } =
     sort === "newest"
-      ? await videosQuery.order("published_at", { ascending: false })
-      : await videosQuery.order("priority_score", {
-          ascending: false,
-          nullsFirst: false,
-        });
+      ? await videosQuery
+          .order("published_at", { ascending: false })
+          .limit(FEED_LIMIT)
+      : await videosQuery
+          .order("priority_score", { ascending: false, nullsFirst: false })
+          .limit(FEED_LIMIT);
   if (videosError) throw videosError;
 
   const videos = (videoRows ?? []) as HubVideo[];
