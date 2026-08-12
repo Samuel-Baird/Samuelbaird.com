@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BeehiveMark } from "@/components/beehive-mark";
 import { Tag, type TagInk } from "@/components/tag";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
@@ -20,7 +21,24 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-type SearchParams = { sort?: string; stage?: string };
+type SearchParams = { sort?: string; stage?: string; hide?: string };
+
+const SORT_OPTIONS = ["priority", "newest", "views", "expected"] as const;
+type SortOption = (typeof SORT_OPTIONS)[number];
+
+const SORT_LABEL: Record<SortOption, string> = {
+  priority: "Priority",
+  newest: "Newest",
+  views: "Most viewed",
+  expected: "Most expected views",
+};
+
+const HIDE_OPTIONS: HubVideoStatusValue[] = ["working_on_it", "responded"];
+
+const HIDE_LABEL: Record<HubVideoStatusValue, string> = {
+  working_on_it: "Hide: someone's working on it",
+  responded: "Hide: already responded",
+};
 
 type FeedVideo = HubVideo & {
   channel_name: string;
@@ -71,18 +89,49 @@ export default async function ApologeticsHubPage({
   const auth = await requireApologist();
   const isAdmin = auth.profile?.is_admin === true;
   const params = await searchParams;
-  const sort = params.sort === "newest" ? "newest" : "priority";
+  const sort: SortOption = SORT_OPTIONS.includes(params.sort as SortOption)
+    ? (params.sort as SortOption)
+    : "priority";
   const stageFilter = STAGE_OPTIONS.includes(params.stage as HubIngestStage)
     ? (params.stage as HubIngestStage)
     : null;
+  const hideStatuses = new Set(
+    (params.hide ?? "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter((s): s is HubVideoStatusValue => HIDE_OPTIONS.includes(s as HubVideoStatusValue)),
+  );
 
   const supabase = createSupabaseServiceClient();
+
+  // Resolve "hide responded/working-on-it" to a bounded set of video ids to
+  // exclude, before the row cap applies — same reasoning as the stage
+  // pushdown below: filtering after the LIMIT would silently under-fill the
+  // feed once a channel has a lot of claimed videos.
+  let excludeIds: string[] = [];
+  if (hideStatuses.size > 0) {
+    const { data: hideRows, error: hideError } = await supabase
+      .from("hub_video_statuses")
+      .select("video_id")
+      .in("status", [...hideStatuses]);
+    if (hideError) throw hideError;
+    excludeIds = [
+      ...new Set((hideRows ?? []).map((r) => r.video_id as string)),
+    ];
+  }
 
   let videosQuery = supabase
     .from("hub_videos")
     .select(
-      "id, channel_id, youtube_video_id, title, published_at, duration_seconds, thumbnail_url, summary, view_count, view_count_updated_at, expected_views, debunkability, priority_score, video_status, analyzed_at, created_at, updated_at",
-    );
+      "id, channel_id, youtube_video_id, title, published_at, duration_seconds, thumbnail_url, summary, view_count, view_count_updated_at, expected_views, debunkability, priority_score, video_status, analyzed_at, lds_relevant, created_at, updated_at",
+    )
+    // Videos determined during analysis to not be about Latter-day
+    // Saints/Mormonism are hidden here; not-yet-analyzed rows (null) stay
+    // visible until a real determination is made.
+    .or("lds_relevant.is.null,lds_relevant.eq.true");
+  if (excludeIds.length > 0) {
+    videosQuery = videosQuery.not("id", "in", `(${excludeIds.join(",")})`);
+  }
   // Push the coarse half of the stage filter (analyzed vs. not) down to the
   // database before the row cap applies — otherwise, with thousands of
   // metadata-only rows outscored by every analyzed one on both sort orders,
@@ -95,14 +144,23 @@ export default async function ApologeticsHubPage({
       : stageFilter
         ? videosQuery.is("debunkability", null)
         : videosQuery;
-  const { data: videoRows, error: videosError } =
+  const sortedQuery =
     sort === "newest"
-      ? await videosQuery
-          .order("published_at", { ascending: false })
-          .limit(FEED_LIMIT)
-      : await videosQuery
-          .order("priority_score", { ascending: false, nullsFirst: false })
-          .limit(FEED_LIMIT);
+      ? videosQuery.order("published_at", { ascending: false })
+      : sort === "views"
+        ? videosQuery.order("view_count", { ascending: false })
+        : sort === "expected"
+          ? videosQuery.order("expected_views", {
+              ascending: false,
+              nullsFirst: false,
+            })
+          : videosQuery.order("priority_score", {
+              ascending: false,
+              nullsFirst: false,
+            });
+  const { data: videoRows, error: videosError } = await sortedQuery.limit(
+    FEED_LIMIT,
+  );
   if (videosError) throw videosError;
 
   const videos = (videoRows ?? []) as HubVideo[];
@@ -172,16 +230,90 @@ export default async function ApologeticsHubPage({
     ? feedAll.filter((v) => v.ingest_stage === stageFilter)
     : feedAll;
 
-  function hrefWithStage(stage: HubIngestStage | null) {
+  function hrefFor(overrides: {
+    sort?: SortOption;
+    stage?: HubIngestStage | null;
+    hide?: Set<HubVideoStatusValue>;
+  }) {
     const qs = new URLSearchParams();
-    qs.set("sort", sort);
+    qs.set("sort", overrides.sort ?? sort);
+    const stage = overrides.stage !== undefined ? overrides.stage : stageFilter;
     if (stage) qs.set("stage", stage);
+    const hide = overrides.hide ?? hideStatuses;
+    if (hide.size > 0) qs.set("hide", [...hide].join(","));
     return `/apologetics-hub?${qs.toString()}`;
+  }
+
+  function toggledHide(status: HubVideoStatusValue): Set<HubVideoStatusValue> {
+    const next = new Set(hideStatuses);
+    if (next.has(status)) next.delete(status);
+    else next.add(status);
+    return next;
   }
 
   return (
     <div>
-      <p className="small-caps text-xs font-medium text-[color:var(--accent)]">
+      <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-8">
+        <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
+          In Memory
+        </p>
+        <h2 className="serif mt-2 text-2xl font-semibold tracking-tight">
+          Chandler David Hendry
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
+          This resource is dedicated to the memory of Chandler David Hendry,
+          who devoted his time to sharing and defending the restored gospel
+          of Jesus Christ, engaging sincerely with those of other faiths, and
+          helping Latter-day Saints better understand and articulate what
+          they believe.
+        </p>
+        <blockquote className="mt-5 max-w-2xl border-l-2 border-[color:var(--honey)] pl-4 text-base italic leading-relaxed text-[color:var(--foreground)]">
+          &ldquo;I think everyone should first understand what the
+          Church&rsquo;s main truth claims are, and how to articulate them
+          correctly, and how to defend them. And once you have that basic
+          understanding, just start having good-faith discussions.&rdquo;
+          <footer className="small-caps mt-2 text-xs font-medium not-italic text-[color:var(--muted)]">
+            —{" "}
+            <a
+              href="https://www.youtube.com/live/AwrFGqxSuO8?si=vCl3OZHzI9W_-t_b&t=3557"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[color:var(--accent)] hover:underline"
+            >
+              Chandler David Hendry
+            </a>
+          </footer>
+        </blockquote>
+
+        <div className="dinkus">
+          <BeehiveMark className="h-3.5 w-3.5" />
+        </div>
+
+        <p className="max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+          The Apologetics Hub exists to help apologists find the content
+          most worth responding to and give them good material to respond
+          with — a feed of critical-channel videos, ranked by attention and
+          debunkability, each paired with claim-level rebuttals and sources.
+          It&apos;s meant to save the work of tracking every channel
+          yourself and to keep real sourcing at the center of every
+          response.
+        </p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+          We all work better when we work together. Collaborate, help each
+          other, and mark what you&apos;re working on or have already
+          responded to so effort isn&apos;t duplicated. If you have feedback
+          on how to make this resource more useful, reach out to{" "}
+          <a
+            href="mailto:b13llama@gmail.com"
+            className="text-[color:var(--accent)] hover:underline"
+          >
+            b13llama@gmail.com
+          </a>
+          .
+        </p>
+      </section>
+
+      <p className="small-caps mt-12 text-xs font-medium text-[color:var(--accent)]">
         Apologetics Hub
       </p>
       <h1 className="serif mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -194,29 +326,45 @@ export default async function ApologeticsHubPage({
         access.
       </p>
 
-      <div className="mt-8 flex items-center gap-2 text-sm">
+      <div className="mt-8 flex flex-wrap items-center gap-2 text-sm">
         <span className="text-[color:var(--muted)]">Sort:</span>
-        <Link
-          href="/apologetics-hub?sort=priority"
-          className={
-            sort === "priority"
-              ? "font-medium text-[color:var(--accent)]"
-              : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-          }
-        >
-          Priority
-        </Link>
-        <span className="text-[color:var(--border)]">·</span>
-        <Link
-          href="/apologetics-hub?sort=newest"
-          className={
-            sort === "newest"
-              ? "font-medium text-[color:var(--accent)]"
-              : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-          }
-        >
-          Newest
-        </Link>
+        {SORT_OPTIONS.map((option, i) => (
+          <span key={option} className="contents">
+            {i > 0 && <span className="text-[color:var(--border)]">·</span>}
+            <Link
+              href={hrefFor({ sort: option })}
+              className={
+                sort === option
+                  ? "font-medium text-[color:var(--accent)]"
+                  : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+              }
+            >
+              {SORT_LABEL[option]}
+            </Link>
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+        {HIDE_OPTIONS.map((status, i) => {
+          const active = hideStatuses.has(status);
+          return (
+            <span key={status} className="contents">
+              {i > 0 && <span className="text-[color:var(--border)]">·</span>}
+              <Link
+                href={hrefFor({ hide: toggledHide(status) })}
+                className={
+                  active
+                    ? "font-medium text-[color:var(--accent)]"
+                    : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+                }
+              >
+                {active ? "✓ " : ""}
+                {HIDE_LABEL[status]}
+              </Link>
+            </span>
+          );
+        })}
       </div>
 
       {isAdmin && (
@@ -225,7 +373,7 @@ export default async function ApologeticsHubPage({
             Ingest stage (admin):
           </span>
           <Link
-            href={hrefWithStage(null)}
+            href={hrefFor({ stage: null })}
             className={
               !stageFilter
                 ? "font-medium text-[color:var(--accent)]"
@@ -238,7 +386,7 @@ export default async function ApologeticsHubPage({
             <span key={stage} className="contents">
               <span className="text-[color:var(--border)]">·</span>
               <Link
-                href={hrefWithStage(stage)}
+                href={hrefFor({ stage })}
                 className={
                   stageFilter === stage
                     ? "font-medium text-[color:var(--accent)]"

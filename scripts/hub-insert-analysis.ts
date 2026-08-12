@@ -14,6 +14,10 @@
  *     "duration_seconds": 1234, "thumbnail_url": "...",
  *     "view_count": 12345, "expected_views": 6789,
  *     "summary": "...", "debunkability": 1-10,
+ *     "lds_relevant": true,  // false hides the video from the public feed —
+ *                            // some tracked channels don't address Latter-day
+ *                            // Saints/Mormonism in every upload; the row,
+ *                            // transcript, and any claims are still retained
  *     "claims": [{ "timestamp_seconds", "excerpt", "claim_summary",
  *                  "response", "sources": [{"title","url","note"}] }, ...],
  *     "transcript": { "source", "transcript", "segments" }  // or "transcript_file": "path.json"
@@ -61,6 +65,9 @@ const analysisSchema = z.object({
   expected_views: z.number().min(0).nullable().optional(),
   summary: z.string().trim().max(2000).default(""),
   debunkability: z.number().int().min(1).max(10).nullable().optional(),
+  // Required so every analysis pass makes an explicit call — false hides
+  // the video from the public feed (see APOLOGETICS_HUB_INGEST.md Step 3).
+  lds_relevant: z.boolean(),
   claims: z.array(claimSchema).default([]),
   transcript: transcriptSchema.nullable().optional(),
   transcript_file: z.string().trim().min(1).nullable().optional(),
@@ -139,6 +146,7 @@ async function main() {
         view_count_updated_at: new Date().toISOString(),
         expected_views: analysis.expected_views ?? null,
         debunkability: analysis.debunkability ?? null,
+        lds_relevant: analysis.lds_relevant,
         priority_score: priorityScore,
         analyzed_at: new Date().toISOString(),
       },

@@ -152,6 +152,10 @@ export type HubVideo = {
   priority_score: number | null;
   video_status: HubVideoState;
   analyzed_at: string | null;
+  // Set during analysis (scripts/hub-insert-analysis.ts). Null = not yet
+  // determined. false = the video doesn't address Latter-day
+  // Saints/Mormonism — hidden from the public feed, row/transcript retained.
+  lds_relevant: boolean | null;
   created_at: string;
   updated_at: string;
 };

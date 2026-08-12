@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Tag } from "@/components/tag";
 import { VideoPanel } from "@/components/hub/video-panel";
@@ -44,7 +45,7 @@ export default async function HubVideoPage({ params }: PageProps) {
   const { data: video, error: videoError } = await supabase
     .from("hub_videos")
     .select(
-      "id, channel_id, youtube_video_id, title, published_at, duration_seconds, thumbnail_url, summary, view_count, view_count_updated_at, expected_views, debunkability, priority_score, video_status, analyzed_at, created_at, updated_at",
+      "id, channel_id, youtube_video_id, title, published_at, duration_seconds, thumbnail_url, summary, view_count, view_count_updated_at, expected_views, debunkability, priority_score, video_status, analyzed_at, lds_relevant, created_at, updated_at",
     )
     .eq("youtube_video_id", videoId)
     .maybeSingle();
@@ -125,7 +126,13 @@ export default async function HubVideoPage({ params }: PageProps) {
 
   return (
     <div>
-      <p className="small-caps text-xs font-medium text-[color:var(--accent)]">
+      <Link
+        href="/apologetics-hub"
+        className="small-caps inline-flex items-center gap-1 text-xs font-medium text-[color:var(--muted)] hover:text-[color:var(--accent)]"
+      >
+        ← Back to hub
+      </Link>
+      <p className="small-caps mt-4 text-xs font-medium text-[color:var(--accent)]">
         {channel?.name ?? "Unknown channel"} · {fmtDate(typedVideo.published_at)}
       </p>
       <h1 className="serif mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -137,6 +144,13 @@ export default async function HubVideoPage({ params }: PageProps) {
             {typedVideo.video_status === "removed"
               ? "Removed from YouTube — embed may not work"
               : "Now private — embed may not work"}
+          </Tag>
+        </div>
+      )}
+      {typedVideo.lds_relevant === false && (
+        <div className="mt-3">
+          <Tag ink="muted">
+            Not about Latter-day Saints — hidden from the public feed
           </Tag>
         </div>
       )}

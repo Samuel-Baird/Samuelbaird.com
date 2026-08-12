@@ -108,6 +108,18 @@ re-analysis only) even though the hub UI never renders it.
 This is the substantive part of the session. Watch/read the video via the
 transcript and produce:
 
+**Relevance** — first decide whether the video actually addresses Latter-day
+Saints/Mormonism at all. Not every tracked Critical channel stays on-topic in
+every upload — a general Christian-apologetics or ex-high-demand-religion
+channel, for instance, may post plenty of videos with nothing to do with the
+Church. Set `lds_relevant: false` for those; the video's row, transcript, and
+any partial claims are still retained (for the record and so it isn't
+rescanned as "new" later), but it's hidden from the public feed. When
+`lds_relevant` is `false`, `claims` can be left empty and `debunkability`
+omitted — there's nothing here for an apologist to act on. Only set
+`lds_relevant: true` and continue to full analysis below when the video does
+engage the Church, its doctrine, history, or members.
+
 **Summary** — 2–4 sentences, neutral register. Describe what the video
 argues, not whether it's right. No editorializing, no "this dishonest video…".
 
@@ -165,6 +177,7 @@ One file per video. Full shape (validated by
   "view_count": 42000,
   "expected_views": 31000,
   "summary": "Two-to-four neutral sentences describing what the video argues.",
+  "lds_relevant": true,
   "debunkability": 7,
   "claims": [
     {
@@ -229,7 +242,7 @@ finding exactly what still needs the next pipeline step, e.g. filter to
 ## Reference
 
 - Schema: `supabase/migrations/0039_apologetics_hub.sql`,
-  `0041_hub_channel_state.sql`.
+  `0041_hub_channel_state.sql`, `0042_hub_lds_relevant.sql`.
 - Access control: `requireApologist()` / `isApologistUser()` in
   `src/lib/permissions.ts`; grant/revoke apologist (and premium, admin)
   status at `/admin/access`.
@@ -241,6 +254,10 @@ finding exactly what still needs the next pipeline step, e.g. filter to
   `--mark-removed` in step 1, not by the analysis JSON.
 - `hub_channel_state.last_ingested_at`: per-channel scan checkpoint, see
   Step 0 above.
+- `hub_videos.lds_relevant`: set during analysis, see Step 3's Relevance
+  section above. Null (not yet analyzed) and `true` both show in the public
+  feed; `false` hides the video from the feed while keeping the row,
+  transcript, and any claims.
 - Ingest-stage tags: see above; derivation lives in `hubIngestStage()` in
   `src/lib/types.ts`.
 - Per-creator status (working on it / responded + link) is set from the hub
