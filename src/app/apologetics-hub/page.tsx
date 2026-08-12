@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  HubAdminStatsMenu,
+  type HubAdminStats,
+} from "@/components/hub/admin-stats-menu";
 import { Tag, type TagInk } from "@/components/tag";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
@@ -102,6 +106,76 @@ export default async function ApologeticsHubPage({
   );
 
   const supabase = createSupabaseServiceClient();
+
+  // Admin-only ingest-pipeline stats for the dashboard icon — a handful of
+  // cheap aggregate queries, only run for admins so regular apologists don't
+  // pay for them on every feed load.
+  const adminStats: HubAdminStats | null = isAdmin
+    ? await (async () => {
+        const [
+          { count: totalCriticalChannels },
+          { data: channelStateRows },
+          { count: totalVideos },
+          { count: incompleteVideos },
+          { data: lastAnalyzedRows },
+          { count: hiddenVideos },
+          { count: relevanceUndetermined },
+        ] = await Promise.all([
+          supabase
+            .from("channels")
+            .select("id", { count: "exact", head: true })
+            .eq("channel_type", "Critical"),
+          supabase.from("hub_channel_state").select("channel_id, last_ingested_at"),
+          supabase.from("hub_videos").select("id", { count: "exact", head: true }),
+          supabase
+            .from("hub_videos")
+            .select("id", { count: "exact", head: true })
+            .is("debunkability", null)
+            .is("analyzed_at", null),
+          supabase
+            .from("hub_videos")
+            .select("analyzed_at")
+            .not("analyzed_at", "is", null)
+            .order("analyzed_at", { ascending: false })
+            .limit(1),
+          supabase
+            .from("hub_videos")
+            .select("id", { count: "exact", head: true })
+            .eq("lds_relevant", false),
+          supabase
+            .from("hub_videos")
+            .select("id", { count: "exact", head: true })
+            .is("lds_relevant", null),
+        ]);
+
+        const scannedIds = new Set(
+          ((channelStateRows ?? []) as { channel_id: string }[]).map(
+            (r) => r.channel_id,
+          ),
+        );
+        const lastScrapeRun = (
+          (channelStateRows ?? []) as { last_ingested_at: string }[]
+        ).reduce<string | null>(
+          (latest, r) =>
+            !latest || r.last_ingested_at > latest ? r.last_ingested_at : latest,
+          null,
+        );
+
+        return {
+          totalCriticalChannels: totalCriticalChannels ?? 0,
+          channelsScanned: scannedIds.size,
+          channelsNeverScanned: (totalCriticalChannels ?? 0) - scannedIds.size,
+          lastScrapeRun,
+          totalVideos: totalVideos ?? 0,
+          incompleteVideos: incompleteVideos ?? 0,
+          lastAnalysisRun:
+            ((lastAnalyzedRows ?? [])[0] as { analyzed_at: string } | undefined)
+              ?.analyzed_at ?? null,
+          hiddenVideos: hiddenVideos ?? 0,
+          relevanceUndetermined: relevanceUndetermined ?? 0,
+        };
+      })()
+    : null;
 
   // Resolve "hide responded/working-on-it" to a bounded set of video ids to
   // exclude, before the row cap applies — same reasoning as the stage
@@ -251,10 +325,16 @@ export default async function ApologeticsHubPage({
   }
 
   return (
-    <div>
+    <div className="relative">
+      {adminStats && (
+        <div className="absolute right-0 top-0">
+          <HubAdminStatsMenu stats={adminStats} />
+        </div>
+      )}
+
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-          <div className="order-2 sm:order-1">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div className="order-2 sm:order-1 sm:flex-1">
             <p className="small-caps text-xs font-medium text-[color:var(--honey)]">
               In Memory
             </p>
@@ -287,13 +367,15 @@ export default async function ApologeticsHubPage({
               </footer>
             </blockquote>
           </div>
-          <Image
-            src="/apologetics-hub/chandler-hendry.jpg"
-            alt="Chandler David Hendry"
-            width={331}
-            height={335}
-            className="order-1 w-full shrink-0 rounded-[var(--radius)] object-cover sm:order-2 sm:w-56"
-          />
+          <div className="order-1 flex justify-center sm:order-2 sm:w-56 sm:shrink-0">
+            <Image
+              src="/apologetics-hub/chandler-hendry.jpg"
+              alt="Chandler David Hendry"
+              width={331}
+              height={335}
+              className="w-full rounded-[var(--radius)] object-cover"
+            />
+          </div>
         </div>
       </section>
 
