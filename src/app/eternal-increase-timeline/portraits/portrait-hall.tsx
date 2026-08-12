@@ -4,7 +4,7 @@ import { ChevronDown, ExternalLink } from "lucide-react";
 import { useRef, useState } from "react";
 import { Tag } from "@/components/tag";
 import { Cameo, FramedPortrait } from "./cameo";
-import { SPEAKERS, type Speaker } from "./data";
+import { SPEAKERS, STANCE_QUESTIONS, type Speaker } from "./data";
 
 /**
  * The portrait hall: the ten speakers most often cited in this timeline's
@@ -138,27 +138,29 @@ function CatalogueCard({
         </button>
       </div>
 
-      <dl className="mt-5 grid gap-3 sm:grid-cols-3">
-        {(
-          [
-            ["Did God have a Father?", speaker.stances.father],
-            ["Was God once a man?", speaker.stances.man],
-            ["Endless posterity?", speaker.stances.increase],
-          ] as const
-        ).map(([question, stance]) => (
-          <div
-            key={question}
-            className="rounded-[var(--radius)] border border-[color:var(--border)] p-3"
-          >
-            <dt className="small-caps text-[10px] font-medium text-[color:var(--muted)]">
-              {question}
-            </dt>
-            <dd className="mt-1.5">
-              <Tag ink={stance.ink}>{stance.answer}</Tag>
-            </dd>
-          </div>
-        ))}
+      <dl className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {STANCE_QUESTIONS.map(({ key, label }) => {
+          const stance = speaker.stances[key];
+          return (
+            <div
+              key={key}
+              className="rounded-[var(--radius)] border border-[color:var(--border)] p-3"
+            >
+              <dt className="small-caps text-[10px] font-medium text-[color:var(--muted)]">
+                {label}
+              </dt>
+              <dd className="mt-1.5">
+                <Tag ink={stance.ink}>{stance.answer}</Tag>
+              </dd>
+            </div>
+          );
+        })}
       </dl>
+
+      <p className="mt-3 text-xs leading-relaxed text-[color:var(--muted)]">
+        <span className="small-caps font-medium">Evidence · </span>
+        {speaker.evidence}
+      </p>
 
       <SectionLabel>Summary of beliefs</SectionLabel>
       <p className="serif mt-2 max-w-2xl border-l-2 border-[color:var(--honey)] pl-4 text-[15px] italic leading-relaxed">
