@@ -24,5 +24,5 @@ export async function setWeeklyNotification(formData: FormData) {
   if (error) throw error;
 
   revalidatePath("/premium");
-  revalidatePath("/admin/premium");
+  revalidatePath("/admin/access");
 }

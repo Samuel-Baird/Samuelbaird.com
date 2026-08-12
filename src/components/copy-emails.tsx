@@ -21,14 +21,14 @@ export function CopyEmails({ value }: { value: string }) {
         readOnly
         value={value}
         rows={6}
-        className="w-full rounded-xl border border-[color:var(--border)] bg-white p-3 text-sm font-mono"
+        className="w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-3 text-sm font-mono"
         onFocus={(e) => e.currentTarget.select()}
       />
       <button
         type="button"
         onClick={onCopy}
         disabled={!value}
-        className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90 disabled:opacity-60"
+        className="inline-flex h-10 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90 disabled:opacity-60"
       >
         {copied ? "Copied!" : "Copy emails"}
       </button>
