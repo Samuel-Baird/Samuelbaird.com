@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
+import { PortraitHall } from "./portraits/portrait-hall";
 import { parseSources } from "./schema";
 import rawSources from "./sources.json";
 import { TimelineExplorer } from "./timeline-explorer";
@@ -52,6 +53,12 @@ export default function EternalIncreaseTimelinePage() {
   const entries = parseSources(rawSources).sort((a, b) =>
     a.date.localeCompare(b.date),
   );
+  // Citation counts for the portrait hall come from the live dataset, so the
+  // "cited N times" captions stay honest as sources are added.
+  const citedCounts: Record<string, number> = {};
+  for (const entry of entries) {
+    citedCounts[entry.speaker] = (citedCounts[entry.speaker] ?? 0) + 1;
+  }
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -91,6 +98,8 @@ export default function EternalIncreaseTimelinePage() {
           ))}
         </dl>
       </details>
+
+      <PortraitHall citedCounts={citedCounts} />
 
       <TimelineExplorer entries={entries} />
 

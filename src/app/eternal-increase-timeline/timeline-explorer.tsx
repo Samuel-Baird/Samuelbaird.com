@@ -71,6 +71,9 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
   const [copied, setCopied] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [expandAll, setExpandAll] = useState(false);
+  // The 315 source cards are a long read, so the list ships collapsed behind
+  // one "See sources" button; the graphs above stay live either way.
+  const [sourcesOpen, setSourcesOpen] = useState(false);
   // Fixed default rather than "whichever subject has most in view": the server
   // render and the first client render have to agree, and a data-dependent
   // default would differ the moment a filter arrived from the URL.
@@ -116,6 +119,9 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
     const subj = p.get("subj");
     if (subj && QUESTIONS.some((s) => s.id === subj)) setSubject(subj as QuestionId);
     if (p.get("axis") === "fit") setFitToView(true);
+    // A #hash deep link targets a specific source card, which only exists
+    // once the list is expanded.
+    if (window.location.hash) setSourcesOpen(true);
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -247,6 +253,18 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
       });
   }
 
+  // Graph points link to source cards, which are only in the DOM once the
+  // list is expanded — so a click on a collapsed list expands it first, then
+  // scrolls after the cards have mounted.
+  function revealAndScroll(id: string) {
+    if (sourcesOpen) {
+      scrollToId(id);
+      return;
+    }
+    setSourcesOpen(true);
+    window.setTimeout(() => scrollToId(id), 80);
+  }
+
   function clearAll() {
     setCats(new Set());
     setGrades(new Set());
@@ -361,7 +379,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
             entries={visible}
             hoveredId={hoveredId}
             onHover={setHoveredId}
-            onSelect={scrollToId}
+            onSelect={revealAndScroll}
           />
         </div>
 
@@ -375,10 +393,28 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
             onSubjectChange={setSubject}
             hoveredId={hoveredId}
             onHover={setHoveredId}
-            onSelect={scrollToId}
+            onSelect={revealAndScroll}
           />
         </div>
 
+        {!sourcesOpen ? (
+          <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-8 text-center">
+            <p className="text-sm text-[color:var(--muted)]">
+              The full source list — {visible.length}
+              {anyFilterActive ? ` of ${entries.length} matching` : ""}{" "}
+              {visible.length === 1 ? "entry" : "entries"}, era by era — is
+              collapsed to keep the page readable.
+            </p>
+            <button
+              type="button"
+              onClick={() => setSourcesOpen(true)}
+              className="mt-4 inline-flex min-h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white"
+            >
+              See sources ({visible.length})
+            </button>
+          </div>
+        ) : (
+          <>
         {visible.length > 0 && (
           <EraNav
             eras={byEra.map(({ era, inEra }) => ({ era, count: inEra.length }))}
@@ -434,6 +470,8 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
               });
             })()}
           </div>
+        )}
+          </>
         )}
       </div>
 
