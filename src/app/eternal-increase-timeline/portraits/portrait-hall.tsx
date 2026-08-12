@@ -34,14 +34,11 @@ export function PortraitHall({ citedCounts }: { citedCounts: Record<string, numb
   }
 
   return (
-    <section className="mt-12" aria-label="Portrait hall of most-cited speakers">
-      <h2 className="serif text-2xl font-semibold tracking-tight">The portrait hall</h2>
-      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-        The ten voices heard most often in this timeline&rsquo;s sources — ranked by citation
-        count, with Joseph Smith seated by commission. Portraits are cartoons, not likenesses;
-        the nameplates are set in the Deseret Alphabet, the phonetic script the territory once
-        printed its schoolbooks in. Select a portrait for a summary of what its sitter believed,
-        followed by the detailed profile.
+    <div aria-label="Portrait hall of most-cited speakers">
+      <p className="max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+        Ranked by citation count, with Joseph Smith seated by commission. Portraits are
+        cartoons, not likenesses; the nameplates are set in the Deseret Alphabet, the
+        phonetic script the territory once printed its schoolbooks in.
       </p>
 
       <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -89,7 +86,7 @@ export function PortraitHall({ citedCounts }: { citedCounts: Record<string, numb
           />
         </div>
       )}
-    </section>
+    </div>
   );
 }
 

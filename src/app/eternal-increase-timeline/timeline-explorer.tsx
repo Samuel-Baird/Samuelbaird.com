@@ -398,7 +398,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
         </div>
 
         {!sourcesOpen ? (
-          <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-8 text-center">
+          <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-8 text-center print:hidden">
             <p className="text-sm text-[color:var(--muted)]">
               The full source list — {visible.length}
               {anyFilterActive ? ` of ${entries.length} matching` : ""}{" "}
@@ -408,6 +408,7 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
             <button
               type="button"
               onClick={() => setSourcesOpen(true)}
+              aria-expanded={false}
               className="mt-4 inline-flex min-h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white"
             >
               See sources ({visible.length})
@@ -415,6 +416,22 @@ export function TimelineExplorer({ entries }: { entries: SourceEntry[] }) {
           </div>
         ) : (
           <>
+        <div className="mb-6 flex items-center justify-between gap-4 print:hidden">
+          <p className="text-sm text-[color:var(--muted)]">
+            Showing {visible.length}
+            {anyFilterActive ? ` of ${entries.length}` : ""}{" "}
+            {visible.length === 1 ? "source" : "sources"}
+          </p>
+          <button
+            type="button"
+            onClick={() => setSourcesOpen(false)}
+            aria-expanded
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)]"
+          >
+            Hide sources
+            <ChevronDown aria-hidden="true" size={13} className="rotate-180" />
+          </button>
+        </div>
         {visible.length > 0 && (
           <EraNav
             eras={byEra.map(({ era, inEra }) => ({ era, count: inEra.length }))}

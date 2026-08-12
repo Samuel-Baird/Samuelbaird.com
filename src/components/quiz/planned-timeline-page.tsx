@@ -3,7 +3,9 @@ import { ArrowLeft } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import { Tag } from "@/components/tag";
+import { CollapsibleSection } from "@/components/collapsible-section";
 import { Quiz } from "@/components/quiz/quiz-section";
+import { quizSectionFor } from "@/lib/quiz";
 
 /**
  * A timeline that has been scoped but whose sources have not been gathered
@@ -34,6 +36,8 @@ export function PlannedTimelinePage({
   /** Where the sources are expected to come from. */
   sourcing: string;
 }) {
+  const questionCount = quizSectionFor(timeline)?.questions.length ?? 0;
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <Link
@@ -109,25 +113,27 @@ export function PlannedTimelinePage({
         <BeehiveMark className="h-4 w-4" />
       </div>
 
-      <section>
-        <h2 className="serif text-2xl font-semibold tracking-tight">
-          Where do you land on {title.toLowerCase().startsWith("the ") ? title.toLowerCase() : title}?
-        </h2>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-          Answer this timeline&apos;s questions and see which position your answers describe.
-          You can also{" "}
-          <Link
-            href="/quiz"
-            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-          >
-            answer every timeline&apos;s questions at once
-          </Link>
-          .
-        </p>
-        <div className="mt-8">
-          <Quiz timeline={timeline} signInReason="Sign in to take the quiz." />
-        </div>
-      </section>
+      <CollapsibleSection
+        title={`Where do you land on ${title}?`}
+        blurb={
+          <>
+            Answer this timeline&apos;s questions and see which position your answers
+            describe. You can also{" "}
+            <Link
+              href="/quiz"
+              className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+            >
+              answer every timeline&apos;s questions at once
+            </Link>
+            .
+          </>
+        }
+        meta={`${questionCount} questions · answers saved to your account`}
+        closedLabel="Take the quiz"
+        openLabel="Hide the quiz"
+      >
+        <Quiz timeline={timeline} signInReason="Sign in to take the quiz." />
+      </CollapsibleSection>
     </div>
   );
 }
