@@ -4,11 +4,14 @@ import { notFound } from "next/navigation";
 import { Tag } from "@/components/tag";
 import { VideoPanel } from "@/components/hub/video-panel";
 import { StatusControls } from "@/components/hub/status-controls";
+import { ReportedResponses } from "@/components/hub/reported-responses";
+import { MethodologyNote } from "@/components/hub/methodology-note";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import type {
   HubClaim,
+  HubReportedResponseWithUser,
   HubVideo,
   HubVideoStatusValue,
   HubVideoStatusWithUser,
@@ -58,6 +61,7 @@ export default async function HubVideoPage({ params }: PageProps) {
     { data: channel, error: channelError },
     { data: claimRows, error: claimsError },
     { data: statusRows, error: statusesError },
+    { data: reportedResponseRows, error: reportedResponsesError },
   ] = await Promise.all([
     supabase
       .from("channel_full")
@@ -75,10 +79,16 @@ export default async function HubVideoPage({ params }: PageProps) {
       .from("hub_video_statuses")
       .select("user_id, video_id, status, response_url, created_at, updated_at")
       .eq("video_id", typedVideo.id),
+    supabase
+      .from("hub_reported_responses")
+      .select("id, video_id, url, added_by, created_at")
+      .eq("video_id", typedVideo.id)
+      .order("created_at", { ascending: false }),
   ]);
   if (channelError) throw channelError;
   if (claimsError) throw claimsError;
   if (statusesError) throw statusesError;
+  if (reportedResponsesError) throw reportedResponsesError;
 
   const claims = (claimRows ?? []) as HubClaim[];
 
@@ -91,7 +101,22 @@ export default async function HubVideoPage({ params }: PageProps) {
     updated_at: string;
   }[];
 
-  const userIds = [...new Set(statusRowsTyped.map((s) => s.user_id))];
+  const reportedResponseRowsTyped = (reportedResponseRows ?? []) as {
+    id: string;
+    video_id: string;
+    url: string;
+    added_by: string | null;
+    created_at: string;
+  }[];
+
+  const userIds = [
+    ...new Set([
+      ...statusRowsTyped.map((s) => s.user_id),
+      ...reportedResponseRowsTyped
+        .map((r) => r.added_by)
+        .filter((id): id is string => id != null),
+    ]),
+  ];
   const { data: profileRows, error: profilesError } = userIds.length
     ? await supabase
         .from("profiles")
@@ -113,6 +138,13 @@ export default async function HubVideoPage({ params }: PageProps) {
     full_name: profileById.get(s.user_id)?.full_name ?? null,
     email: profileById.get(s.user_id)?.email ?? null,
   }));
+
+  const reportedResponses: HubReportedResponseWithUser[] =
+    reportedResponseRowsTyped.map((r) => ({
+      ...r,
+      full_name: r.added_by ? profileById.get(r.added_by)?.full_name ?? null : null,
+      email: r.added_by ? profileById.get(r.added_by)?.email ?? null : null,
+    }));
 
   const ownStatus =
     allStatuses.find((s) => s.user_id === auth.user.id) ?? null;
@@ -207,6 +239,7 @@ export default async function HubVideoPage({ params }: PageProps) {
                 </dd>
               </div>
             </dl>
+            <MethodologyNote className="mt-4" />
           </div>
 
           <StatusControls
@@ -215,6 +248,14 @@ export default async function HubVideoPage({ params }: PageProps) {
             ownStatus={ownStatus}
             allStatuses={allStatuses}
             currentUserId={auth.user.id}
+          />
+
+          <ReportedResponses
+            videoId={typedVideo.id}
+            currentPath={currentPath}
+            responses={reportedResponses}
+            currentUserId={auth.user.id}
+            isAdmin={auth.profile?.is_admin === true}
           />
         </aside>
       </div>

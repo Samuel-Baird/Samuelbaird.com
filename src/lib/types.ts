@@ -200,6 +200,22 @@ export type HubVideoStatusWithUser = HubVideoStatus & {
   email: string | null;
 };
 
+// A shared, append-only log of "someone else already responded to this" —
+// distinct from HubVideoStatus, which is a per-apologist working/responded
+// status. Any apologist can add one; a video can have any number of them.
+export type HubReportedResponse = {
+  id: string;
+  video_id: string;
+  url: string;
+  added_by: string | null;
+  created_at: string;
+};
+
+export type HubReportedResponseWithUser = HubReportedResponse & {
+  full_name: string | null;
+  email: string | null;
+};
+
 // Transcript is stored for (re)analysis only — never selected for rendering
 // in the UI. Typed here for the ingest scripts, not for page components.
 export type HubTranscript = {
