@@ -1,0 +1,198 @@
+# Apologetics Hub Ingest — Claude Instructions
+
+The Apologetics Hub (`/apologetics-hub`, gated to accounts with apologist
+access) is a feed of critical-channel videos, each with claim-level rebuttals
+and sources, so apologist content creators can divide coverage and respond
+with good material. There is no scraping cron — ingest is run **manually, in
+a Claude Code session**, following this document. When the user asks Claude
+to "run the apologetics hub ingest" (or similar), Claude should work through
+the five steps below end to end without asking for confirmation at each step,
+per the user's standing preference to ship rather than pause for approval.
+
+## Prerequisites
+
+- `.env.local` must have `YOUTUBE_API_KEY`, `NEXT_PUBLIC_SUPABASE_URL`,
+  `SUPABASE_SERVICE_ROLE_KEY` set (the app's usual `.env.local`; the ingest
+  scripts do not need `SUPABASE_PROJECT_REF`/`SUPABASE_DB_PASSWORD` — those
+  are only for schema migrations).
+- The session should have these MCPs connected, since claim responses must
+  cite real sources through them rather than from memory:
+  - **Gospel Scholar Archive** — scholarly volumes, page-level citations.
+  - **pulpit-vault** (General Conference corpus) — `verify_quote` before
+    repeating any attributed quotation; `search_concordance` for topical
+    sourcing.
+  - **latter-day-stats** (this site's own MCP) — channel/study context.
+- Tracked channels live in `public.channels`. The pilot channel is **Mormon
+  Stories Podcast** (`youtube_channel_id` `UCx6OgmoqJbOVRq-Lv1P7SzA`,
+  `channel_type = 'Critical'`). Adding another channel to the hub just means
+  running the steps below against its `channels` row — no new channel-tagging
+  work is required as long as it's already tracked as `Critical`.
+
+## Step 1 — Find new videos
+
+```bash
+npx tsx scripts/hub-list-new-videos.ts --channel UCx6OgmoqJbOVRq-Lv1P7SzA --out new-videos.json
+```
+
+`--channel` accepts a `channels.slug` or a raw YouTube channel id. This scans
+the channel's most recent uploads (2 pages / 100 videos by default — raise
+with `--pages`), computes a view-count baseline (`expected_views`, the median
+of the 15 most recent qualifying uploads — shorts and videos under 14 days
+old are excluded), and prints/writes the videos not yet in `hub_videos`.
+
+Optional flags for channels already in the hub:
+- `--refresh-stats` — update `view_count` on existing rows for this channel.
+- `--mark-removed` — flip rows the API no longer returns to
+  `video_status = 'removed'`. Deleted and private videos look identical to
+  the public API (both are just absent), so a row flagged `removed` may
+  actually be `private` — spot-check before trusting the label at scale.
+
+Read `new-videos.json`. Each entry has `youtube_video_id`, `title`,
+`published_at`, `duration_seconds`, `view_count`, `thumbnail_url`, and the
+computed `expected_views`. The output also carries `channel.id` — the
+`channel_id` value every analysis JSON in step 4 needs.
+
+If the console warns "low-confidence" baseline (fewer than 8 qualifying
+videos), either widen `--pages` and rerun, or set `expected_views` by hand in
+the analysis JSON with a note in the summary about why.
+
+## Step 2 — Fetch the transcript
+
+For each video to analyze:
+
+```bash
+npx tsx scripts/hub-fetch-transcript.ts --video <youtube_video_id> --out <youtube_video_id>.transcript.json
+```
+
+This scrapes the caption track (preferring manual English, falling back to
+auto-generated) with no external tools. It's inherently fragile — YouTube
+changes these internal payloads without notice — so if it fails:
+
+1. **First fallback:** if `yt-dlp` is installed, run
+   `yt-dlp --write-auto-sub --sub-lang en --skip-download <watch-url>` and
+   convert the resulting `.vtt`/`.srv3` into `{ transcript, segments }` by
+   hand.
+2. **Last resort:** watch the video (or the parts around likely claims) and
+   write the transcript manually into the JSON, setting `"source": "manual"`.
+
+A transcript fetch failure is **not blocking** — analysis can still proceed
+from watching the video directly and noting timestamps manually. Always
+store whatever transcript text is available (full transcript, private,
+re-analysis only) even though the hub UI never renders it.
+
+## Step 3 — Analyze
+
+This is the substantive part of the session. Watch/read the video via the
+transcript and produce:
+
+**Summary** — 2–4 sentences, neutral register. Describe what the video
+argues, not whether it's right. No editorializing, no "this dishonest video…".
+
+**Claims** — extract the video's specific, checkable claims (not every
+opinion or personal-experience statement — those aren't "debunkable" and
+don't belong here). For each:
+- `timestamp_seconds` — to the nearest ~10 seconds, taken from the
+  transcript segment where the claim starts.
+- `excerpt` — a verbatim quote, ≤ ~40 words, taken directly from the
+  transcript (do not paraphrase into a quote).
+- `claim_summary` — one sentence stating the claim being made.
+- `response` — the written rebuttal. Name the specific flaw: false
+  dichotomy, presentism, a misquote or missing context, an unsupported
+  causal leap, a cherry-picked source, etc. Be specific, not "this is wrong."
+- `sources` — **every response must cite at least one source obtained
+  through the GSA, pulpit-vault, or latter-day-stats MCPs during this
+  session**, not from memory. Use the cite/verify URLs those tools return —
+  they open the exact page or paragraph. Run `verify_quote` before repeating
+  any attributed General Conference quotation. Each source is
+  `{ title, url, note }`, where `note` states what the source shows and the
+  specific flaw it exposes — not just a description of the source.
+
+**Debunkability** (1–10) — how worth an apologist's time this video is to
+respond to:
+
+| Score | Meaning |
+|---|---|
+| 1–2 | Subjective / personal-experience territory — don't engage. |
+| 3–4 | Contested interpretation without a clear factual error. |
+| 5–6 | Misleading framing, but good counter-sources exist. |
+| 7–8 | Contains a factual error refutable with primary sources. |
+| 9–10 | Demonstrably false, with a document the audience can be shown directly. |
+
+Score the video overall (its weakest defensible claims pull the score up;
+purely subjective videos stay low even if popular).
+
+**View ranking** — `expected_views` comes from step 1's baseline (median of
+the channel's recent normal-length uploads). Override it by hand only when
+you have a specific reason (e.g. the channel just had a viral unrelated
+video skew the baseline) — note the reason in the summary if you do.
+
+## Step 4 — Write the analysis JSON
+
+One file per video. Full shape (validated by
+`scripts/hub-insert-analysis.ts`):
+
+```json
+{
+  "channel_id": "1c6d2d1d-823e-4311-b0a9-c504f81a2c5a",
+  "youtube_video_id": "dQw4w9WgXcQ",
+  "title": "Video title exactly as on YouTube",
+  "published_at": "2026-08-01T18:00:00Z",
+  "duration_seconds": 5400,
+  "thumbnail_url": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+  "view_count": 42000,
+  "expected_views": 31000,
+  "summary": "Two-to-four neutral sentences describing what the video argues.",
+  "debunkability": 7,
+  "claims": [
+    {
+      "timestamp_seconds": 1830,
+      "excerpt": "Verbatim ~40-word quote from the transcript.",
+      "claim_summary": "One sentence stating the claim.",
+      "response": "The written rebuttal, naming the specific flaw in the argument.",
+      "sources": [
+        {
+          "title": "Short source title",
+          "url": "https://the-mcp-tool-returned-this-exact-url",
+          "note": "What the source shows and the flaw it exposes."
+        }
+      ]
+    }
+  ],
+  "transcript_file": "dQw4w9WgXcQ.transcript.json"
+}
+```
+
+`transcript_file` points at step 2's output; use an inline `transcript`
+object with the same `{ source, transcript, segments }` shape instead if you
+wrote one by hand. `channel_id`, `youtube_video_id`, `title`, `published_at`,
+`view_count` normally come straight from step 1's `new-videos.json` — copy
+them rather than retyping.
+
+## Step 5 — Insert and verify
+
+```bash
+npx tsx scripts/hub-insert-analysis.ts <analysis-file.json>
+```
+
+The script validates the JSON, computes
+`priority_score = (view_count / max(expected_views, 1)) * (debunkability / 10)`,
+and upserts `hub_videos` / `hub_claims` / `hub_transcripts`. It prints the
+video's hub URL (`/apologetics-hub/<youtube_video_id>`) — open it (as an
+apologist or admin account) and check the summary, claim timestamps (the
+video should seek correctly), and sources render as expected before
+reporting the run done.
+
+## Reference
+
+- Schema: `supabase/migrations/0039_apologetics_hub.sql`.
+- Access control: `requireApologist()` / `isApologistUser()` in
+  `src/lib/permissions.ts`; grant/revoke apologist status at
+  `/admin/apologists`.
+- Scripts: `scripts/hub-list-new-videos.ts`, `scripts/hub-fetch-transcript.ts`,
+  `scripts/hub-insert-analysis.ts`.
+- Priority formula (may evolve — it lives in the insert script, not the
+  schema): `(view_count / max(expected_views, 1)) * (debunkability / 10)`.
+- `video_status`: `active` | `removed` | `private` — set by
+  `--mark-removed` in step 1, not by the analysis JSON.
+- Per-creator status (working on it / responded + link) is set from the hub
+  UI itself, not by these scripts — see `src/app/actions/hub-status.ts`.

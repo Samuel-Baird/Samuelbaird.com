@@ -2,7 +2,7 @@ import "server-only";
 
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getCurrentUser, type AuthContext } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
@@ -76,3 +76,47 @@ export const getPremiumStatus = cache(async (): Promise<PremiumStatus> => {
   const premium = await isPremiumUser(auth);
   return { signedIn: true, premium, email };
 });
+
+// ============================================================================
+// Apologetics Hub access — mirrors the premium allowlist exactly (email-keyed
+// table, cached lookup, tag-based invalidation on admin grant/revoke), but
+// gates with notFound() rather than a redirect: the hub does not exist
+// unless you're allowed in, matching requireAdmin()'s hidden-404 semantics.
+// ============================================================================
+
+// Cached across requests (keyed by email); admin apologist-user edits call
+// revalidateTag("apologists") so grants/revocations apply immediately.
+const isApologistEmail = unstable_cache(
+  async (email: string): Promise<boolean> => {
+    const { data, error } = await createSupabaseServiceClient()
+      .from("apologists")
+      .select("id")
+      .eq("email", email)
+      .maybeSingle();
+    if (error) throw error;
+    return Boolean(data);
+  },
+  ["apologist-email"],
+  { tags: ["apologists"], revalidate: 300 },
+);
+
+export async function isApologistUser(auth: AuthContext): Promise<boolean> {
+  // Admins always have hub access, regardless of allowlist membership.
+  if (auth.profile?.is_admin === true) return true;
+  const email = auth.profile?.email ?? auth.user.email ?? null;
+  if (!email) return false;
+  return isApologistEmail(email.trim().toLowerCase());
+}
+
+export async function requireApologist(): Promise<AuthContext> {
+  const auth = await getCurrentUser();
+  if (!auth) {
+    notFound();
+  }
+
+  if (!(await isApologistUser(auth))) {
+    notFound();
+  }
+
+  return auth;
+}

@@ -118,6 +118,41 @@ export async function deletePremiumUser(id: string) {
   revalidatePath("/admin/premium");
 }
 
+export async function upsertApologist(formData: FormData) {
+  const auth = await requireAdmin();
+  const email = normalizeEmail(formData.get("email"));
+  const name = String(formData.get("name") ?? "").trim() || null;
+  if (!emailSchema.safeParse(email).success) {
+    throw new Error("Enter a valid email address.");
+  }
+
+  const { error } = await createSupabaseServiceClient()
+    .from("apologists")
+    .upsert(
+      {
+        email,
+        name,
+        created_by: auth.user.id,
+      },
+      { onConflict: "email" },
+    );
+  if (error) throw error;
+  revalidateTag("apologists", { expire: 0 });
+  revalidatePath("/admin/apologists");
+}
+
+export async function deleteApologist(id: string) {
+  await requireAdmin();
+  assertUuid(id);
+  const { error } = await createSupabaseServiceClient()
+    .from("apologists")
+    .delete()
+    .eq("id", id);
+  if (error) throw error;
+  revalidateTag("apologists", { expire: 0 });
+  revalidatePath("/admin/apologists");
+}
+
 export async function setChannelActive(id: string, value: boolean) {
   await requireAdmin();
   assertUuid(id);
