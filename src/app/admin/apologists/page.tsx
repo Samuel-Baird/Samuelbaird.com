@@ -1,6 +1,7 @@
 import { deleteApologist, upsertApologist } from "@/app/admin/actions";
 import { SubmitButton } from "@/components/submit-button";
 import { Tag } from "@/components/tag";
+import { requireAdmin } from "@/lib/auth";
 import { fmtDate } from "@/lib/format";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
@@ -14,6 +15,13 @@ type Apologist = {
 };
 
 export default async function AdminApologistsPage() {
+  // Gate here too, not just in admin/layout.tsx: Next streams a layout's
+  // not-found boundary independently of a sibling page segment's own data
+  // fetching, so a layout-only check can still leak this query's real rows
+  // into the raw response even though the rendered page correctly shows
+  // 404. Every gated page must call its own require*() before fetching.
+  await requireAdmin();
+
   const { data, error } = await createSupabaseServiceClient()
     .from("apologists")
     .select("id, email, name, created_at")
