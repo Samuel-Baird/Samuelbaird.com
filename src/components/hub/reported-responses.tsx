@@ -85,7 +85,7 @@ export function ReportedResponses({
           type="button"
           disabled={pending || !url.trim()}
           onClick={add}
-          className="h-10 shrink-0 rounded-[var(--radius)] border border-[color:var(--accent)] bg-[color:var(--accent-soft)] px-4 text-xs font-medium text-[color:var(--accent)] transition-colors disabled:opacity-60"
+          className="inline-flex h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-[var(--radius)] border border-[color:var(--accent)] bg-[color:var(--accent-soft)] px-4 text-xs font-medium text-[color:var(--accent)] transition-colors disabled:opacity-60"
         >
           Add link
         </button>
