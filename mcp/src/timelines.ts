@@ -19,6 +19,30 @@ const TIMELINE_REGISTRY = [
     jsonPath: "src/app/eternal-increase-timeline/sources.json",
     status: "Working draft",
   },
+  {
+    href: "/family-proclamation-timeline",
+    title: "The Family: A Proclamation to the World",
+    question:
+      "What has been taught about gender as an eternal characteristic, about the family forms exaltation requires, and about what kind of document the 1995 Proclamation is.",
+    jsonPath: "src/app/family-proclamation-timeline/sources.json",
+    status: "In preparation",
+  },
+  {
+    href: "/baptism-timeline",
+    title: "Baptism",
+    question:
+      "Whether baptism works the remission of sins and the new birth or witnesses to a change already worked, who may receive it, and whose baptism counts.",
+    jsonPath: "src/app/baptism-timeline/sources.json",
+    status: "In preparation",
+  },
+  {
+    href: "/sacrament-timeline",
+    title: "The sacrament",
+    question:
+      "What the emblems have been said to be, from memorial through the forms of real presence, what partaking is said to do, and how plainly or ceremonially the rite has been kept.",
+    jsonPath: "src/app/sacrament-timeline/sources.json",
+    status: "In preparation",
+  },
 ] as const;
 
 type SourceEntry = {
@@ -68,7 +92,9 @@ export async function listTimelines() {
         title: t.title,
         question: t.question,
         status: t.status,
-        span: `${Math.min(...years)}–${Math.max(...years)}`,
+        // A timeline in preparation has no sources yet; Math.min of nothing is
+        // Infinity, so report the span as unknown rather than as "∞–-∞".
+        span: years.length > 0 ? `${Math.min(...years)}–${Math.max(...years)}` : null,
         sourceCount: sources.length,
       };
     }),

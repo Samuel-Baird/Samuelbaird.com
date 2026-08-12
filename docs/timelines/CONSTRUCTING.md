@@ -213,3 +213,52 @@ in `robots.txt`, which is the opposite of unlisting it.
 Treat the URL itself as the access control: anyone given the link can read the
 page. When a timeline is ready to be public, add it to `sitemap.ts` and drop the
 `robots` metadata in the same change.
+
+---
+
+## 6. Timelines in preparation
+
+A timeline can be **scoped before it is sourced**: the question is settled and
+the axes are written, but no sources have been gathered. Such a timeline is
+listed in the registry with `planned: true`, `status: "In preparation"`, and no
+`span` or `sourceCount` — the index omits those figures rather than printing a
+zero, and the registry's `spanOf` returns `undefined` for an empty file.
+
+This is a deliberate exception to §5's "start unlisted". A working draft is
+hidden because partial data can be mistaken for a finding; a planned timeline
+has no data at all, says so on the page, and is worth showing because its quiz
+already runs. It still carries `robots: { index: false, follow: false }` and
+still stays out of `sitemap.ts`.
+
+Requirements:
+
+- `src/app/<topic>-timeline/sources.json` exists containing `[]`, so adding the
+  first source is a one-file edit.
+- The page renders `<PlannedTimelinePage>` with the question, the axes the
+  sources will be tagged against, and where they will come from.
+- Both MCP registries list it: `TIMELINE_SOURCES` in the hosted route with an
+  empty array, and `TIMELINE_REGISTRY` in `mcp/src/timelines.ts` with its
+  `jsonPath`. Listing it in one and not the other makes `get_timeline_sources`
+  throw "unknown timeline" for a timeline `list_timelines` just returned.
+
+## 7. The quiz
+
+Each timeline may put its own questions to the reader (`src/lib/quiz/`). The
+rules that keep it honest:
+
+- **Questions belong to exactly one timeline.** A question answered on that
+  timeline's page and the same question answered at `/quiz` are one stored
+  answer, so the two views never disagree.
+- **A figure's answers are its documented positions**, and a question the
+  figure never addressed is *absent from its answer map* rather than guessed.
+  Scoring skips those: silence is not dissent, and matching on it would invent
+  agreement.
+- **A timeline still in preparation matches to named positions, not people.**
+  Nothing is attributed to an individual ahead of the research. When the
+  sources land, the positions are replaced by the speakers on that timeline.
+- **Include the option that declines.** Every question needs a way to say the
+  matter is unrevealed or unsettled, for the same reason §2 requires
+  counter-positions: a reader who would decline should be able to say so, and
+  the figures who declined are then reachable.
+- Answers are stored per question in `public.quiz_answers`; results are derived
+  on read rather than saved, so re-scoring never leaves a stale verdict behind.
