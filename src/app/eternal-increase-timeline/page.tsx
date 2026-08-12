@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeehiveMark } from "@/components/beehive-mark";
+import { CollapsibleSection } from "@/components/collapsible-section";
 import { DeseretTitle } from "@/components/deseret-title";
 import { Quiz } from "@/components/quiz/quiz-section";
 import { PortraitHall } from "./portraits/portrait-hall";
@@ -101,31 +102,41 @@ export default function EternalIncreaseTimelinePage() {
         </dl>
       </details>
 
-      <PortraitHall citedCounts={citedCounts} />
+      <CollapsibleSection
+        title="Which of them are you?"
+        blurb={
+          <>
+            The six questions the portrait hall reads each speaker against, put to you
+            instead. Answer them and see whose positions yours line up with — and where you
+            part company. You can also{" "}
+            <Link
+              href="/quiz"
+              className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+            >
+              answer every timeline&apos;s questions at once
+            </Link>
+            .
+          </>
+        }
+        meta="6 questions · answers saved to your account"
+        closedLabel="Take the quiz"
+        openLabel="Hide the quiz"
+      >
+        <Quiz
+          timeline="/eternal-increase-timeline"
+          signInReason="Sign in to take the quiz."
+        />
+      </CollapsibleSection>
 
-      <section className="mt-14">
-        <h2 className="serif text-2xl font-semibold tracking-tight">
-          Which of them are you?
-        </h2>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-          The six questions the portrait hall reads each speaker against, put to you instead.
-          Answer them and see whose positions yours line up with — and where you part
-          company. You can also{" "}
-          <Link
-            href="/quiz"
-            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-          >
-            answer every timeline&apos;s questions at once
-          </Link>
-          .
-        </p>
-        <div className="mt-8">
-          <Quiz
-            timeline="/eternal-increase-timeline"
-            signInReason="Sign in to take the quiz."
-          />
-        </div>
-      </section>
+      <CollapsibleSection
+        title="The portrait hall"
+        blurb="The ten voices heard most often in this timeline's sources, hung as framed cameos. Select one for a summary of what its sitter believed, then the detailed profile."
+        meta="10 speakers"
+        closedLabel="See the profiles"
+        openLabel="Hide the profiles"
+      >
+        <PortraitHall citedCounts={citedCounts} />
+      </CollapsibleSection>
 
       <div className="dinkus" aria-hidden="true">
         <BeehiveMark className="h-4 w-4" />
