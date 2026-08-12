@@ -32,9 +32,15 @@ type SourceEntry = {
 };
 
 // Timelines are static content bundled with the site (not database rows).
-// Extend this map when a new timeline is added to the registry.
+// Extend this map when a new timeline is added to the registry. A timeline
+// still in preparation belongs here with an empty array rather than being left
+// out: it is listed by list_timelines either way, and an omission would make
+// get_timeline_sources throw "unknown timeline" for a timeline that does exist.
 const TIMELINE_SOURCES: Record<string, SourceEntry[]> = {
   "/eternal-increase-timeline": eternalIncreaseSources as SourceEntry[],
+  "/family-proclamation-timeline": [],
+  "/baptism-timeline": [],
+  "/sacrament-timeline": [],
 };
 
 function channelTags(c: { channel_types: string[]; channel_type: string | null }) {

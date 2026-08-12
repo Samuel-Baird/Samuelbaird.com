@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
+import { Quiz } from "@/components/quiz/quiz-section";
 import { PortraitHall } from "./portraits/portrait-hall";
 import { parseSources } from "./schema";
 import rawSources from "./sources.json";
@@ -100,6 +102,34 @@ export default function EternalIncreaseTimelinePage() {
       </details>
 
       <PortraitHall citedCounts={citedCounts} />
+
+      <section className="mt-14">
+        <h2 className="serif text-2xl font-semibold tracking-tight">
+          Which of them are you?
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+          The six questions the portrait hall reads each speaker against, put to you instead.
+          Answer them and see whose positions yours line up with — and where you part
+          company. You can also{" "}
+          <Link
+            href="/quiz"
+            className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+          >
+            answer every timeline&apos;s questions at once
+          </Link>
+          .
+        </p>
+        <div className="mt-8">
+          <Quiz
+            timeline="/eternal-increase-timeline"
+            signInReason="Sign in to take the quiz."
+          />
+        </div>
+      </section>
+
+      <div className="dinkus" aria-hidden="true">
+        <BeehiveMark className="h-4 w-4" />
+      </div>
 
       <TimelineExplorer entries={entries} />
 

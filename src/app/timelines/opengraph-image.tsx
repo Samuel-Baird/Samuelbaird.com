@@ -7,7 +7,10 @@ export const contentType = OG_CONTENT_TYPE;
 export const alt = "Latter-day Stats — Timelines";
 
 export default function Image() {
-  const totalSources = TIMELINES.reduce((sum, t) => sum + t.sourceCount, 0);
+  // Counts only timelines that actually have sources — one still in
+  // preparation should not inflate either number on a share card.
+  const published = TIMELINES.filter((t) => !t.planned);
+  const totalSources = published.reduce((sum, t) => sum + (t.sourceCount ?? 0), 0);
 
   return new ImageResponse(
     (
@@ -46,7 +49,7 @@ export default function Image() {
             }}
           >
             <span>
-              {TIMELINES.length} timeline{TIMELINES.length === 1 ? "" : "s"}
+              {published.length} timeline{published.length === 1 ? "" : "s"}
             </span>
             <span>·</span>
             <span>{totalSources} sources</span>

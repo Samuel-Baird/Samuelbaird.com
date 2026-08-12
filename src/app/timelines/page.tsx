@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import { Tag } from "@/components/tag";
+import { ALL_QUESTIONS } from "@/lib/quiz";
 import { TIMELINES } from "./registry";
 
 export const metadata: Metadata = {
@@ -34,6 +35,31 @@ export default function TimelinesPage() {
         </div>
       </header>
 
+      <section className="mt-10">
+        <div className="rounded-[var(--radius)] border border-[color:var(--honey)]/40 bg-[color:var(--honey-soft)]/40 p-5 sm:p-6 lg:flex lg:items-center lg:gap-10">
+          <div className="min-w-0 lg:flex-1">
+            <h2 className="serif text-xl font-semibold tracking-tight sm:text-2xl">
+              Answer every timeline&apos;s questions at once
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+              Each timeline reads its sources against a handful of questions. The quiz puts
+              the same{" "}
+              <span className="tabular-nums">{ALL_QUESTIONS.length}</span> questions to you
+              and tells you which figure on each timeline you come out closest to. Do them
+              all here, or answer a timeline&apos;s own set on its page — it is one set of
+              answers, saved to your account.
+            </p>
+          </div>
+          <Link
+            href="/quiz"
+            className="mt-5 inline-flex min-h-11 shrink-0 items-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white lg:mt-0"
+          >
+            Take the quiz
+            <ArrowRight aria-hidden="true" size={14} />
+          </Link>
+        </div>
+      </section>
+
       <section className="mt-12">
         <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
           Available timelines
@@ -58,32 +84,36 @@ export default function TimelinesPage() {
                     {t.question}
                   </p>
                   <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
-                    Open timeline
+                    {t.planned ? "See the scope and take its quiz" : "Open timeline"}
                     <ArrowRight aria-hidden="true" size={13} />
                   </p>
                 </div>
                 <dl className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 lg:mt-0 lg:block lg:space-y-3 lg:border-l lg:border-[color:var(--border)] lg:pl-6">
-                  <div>
-                    <dt className="small-caps text-[11px] text-[color:var(--muted)]">
-                      Span
-                    </dt>
-                    <dd className="serif-onum text-base tabular-nums">
-                      {t.span}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="small-caps text-[11px] text-[color:var(--muted)]">
-                      Sources
-                    </dt>
-                    <dd className="serif-onum text-base tabular-nums">
-                      {t.sourceCount}
-                    </dd>
-                  </div>
+                  {t.span && (
+                    <div>
+                      <dt className="small-caps text-[11px] text-[color:var(--muted)]">
+                        Span
+                      </dt>
+                      <dd className="serif-onum text-base tabular-nums">
+                        {t.span}
+                      </dd>
+                    </div>
+                  )}
+                  {t.sourceCount !== undefined && (
+                    <div>
+                      <dt className="small-caps text-[11px] text-[color:var(--muted)]">
+                        Sources
+                      </dt>
+                      <dd className="serif-onum text-base tabular-nums">
+                        {t.sourceCount}
+                      </dd>
+                    </div>
+                  )}
                   {t.status && (
                     <div>
                       <dt className="sr-only">Status</dt>
                       <dd>
-                        <Tag ink="honey">{t.status}</Tag>
+                        <Tag ink={t.planned ? "muted" : "honey"}>{t.status}</Tag>
                       </dd>
                     </div>
                   )}
