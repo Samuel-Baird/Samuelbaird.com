@@ -6,6 +6,11 @@ import { VideoPanel } from "@/components/hub/video-panel";
 import { StatusControls } from "@/components/hub/status-controls";
 import { ReportedResponses } from "@/components/hub/reported-responses";
 import { MethodologyNote } from "@/components/hub/methodology-note";
+import {
+  PromoteClaimPanel,
+  type HubClaimWithLink,
+  type PromotableClaim,
+} from "@/components/hub/promote-claim-panel";
 import { fmtCompact, fmtDate } from "@/lib/format";
 import { requireApologist } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
@@ -71,7 +76,7 @@ export default async function HubVideoPage({ params }: PageProps) {
     supabase
       .from("hub_claims")
       .select(
-        "id, video_id, position, timestamp_seconds, excerpt, claim_summary, response, sources, created_at, updated_at",
+        "id, video_id, position, timestamp_seconds, excerpt, claim_summary, response, sources, claim_id, created_at, updated_at",
       )
       .eq("video_id", typedVideo.id)
       .order("position", { ascending: true }),
@@ -90,7 +95,28 @@ export default async function HubVideoPage({ params }: PageProps) {
   if (statusesError) throw statusesError;
   if (reportedResponsesError) throw reportedResponsesError;
 
-  const claims = (claimRows ?? []) as HubClaim[];
+  const claimsWithLink = (claimRows ?? []) as (HubClaim & {
+    claim_id: string | null;
+  })[];
+  const claims: HubClaim[] = claimsWithLink;
+
+  // The whole library (drafts included) feeds the "attach to existing" picker;
+  // the rows this video's claims already point at are joined back in below.
+  const claimLibrary: PromotableClaim[] = await (async () => {
+    const { data, error } = await supabase
+      .from("claims")
+      .select("id, slug, title, status")
+      .order("title", { ascending: true })
+      .limit(500);
+    if (error) throw error;
+    return (data ?? []) as PromotableClaim[];
+  })();
+
+  const claimById = new Map(claimLibrary.map((c) => [c.id, c]));
+  const promotableClaims: HubClaimWithLink[] = claimsWithLink.map((c) => ({
+    ...c,
+    linked: c.claim_id ? claimById.get(c.claim_id) ?? null : null,
+  }));
 
   const statusRowsTyped = (statusRows ?? []) as {
     user_id: string;
@@ -256,6 +282,12 @@ export default async function HubVideoPage({ params }: PageProps) {
             responses={reportedResponses}
             currentUserId={auth.user.id}
             isAdmin={auth.profile?.is_admin === true}
+          />
+
+          <PromoteClaimPanel
+            claims={promotableClaims}
+            library={claimLibrary}
+            currentPath={currentPath}
           />
         </aside>
       </div>

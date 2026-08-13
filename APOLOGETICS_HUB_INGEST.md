@@ -314,6 +314,45 @@ apologist or admin account) and check the summary, claim timestamps (the
 video should seek correctly), and sources render as expected before
 reporting the run done.
 
+## Step 6 — Feed the claim library
+
+The hub is the workbench; `/claims` is the public product. Most criticisms
+recur across many videos and many channels, so one good response should be
+written once and reused, not rewritten per video. After step 5, open the hub
+video page and work down the **Claim library** panel in the sidebar. For each
+claim on the video:
+
+1. **Check whether it's already in the library.** The "Attach to existing"
+   picker lists every canonical claim, drafts included. Read the titles — if
+   this video is making a claim the library already answers, attach it and
+   stop. That records the occurrence (which feeds the "documented in N videos
+   across M channels" line on the public page) without duplicating work.
+2. **Otherwise promote it as a new claim.** The form pre-fills from the hub
+   claim, but the two text fields need real editing, because a per-video note
+   and a standalone public page are not the same document:
+   - **Title** — a short, searchable headline. Write what someone would type
+     into a search box, not a summary of the video.
+   - **The claim, at its strongest** — restate the criticism in general terms,
+     stated as strongly as it can fairly be put. The hub excerpt is one
+     speaker's phrasing on one video; the library entry should answer the
+     underlying claim, not just that clip. Never weaken it to make the
+     response easier.
+   - **Response** — must stand alone. No "as mentioned above," no reliance on
+     having watched the video.
+   - **Topic tags** — reuse existing tags where they fit; they drive the
+     index filters and the related-claims list.
+3. **Publish when the sources hold up.** New claims are created as drafts.
+   Publishing requires at least one source — enforced both in the server
+   action and by a check constraint in the schema — and every citation must
+   have been verified through the GSA / pulpit-vault / latter-day-stats MCPs
+   during a session, per the sourcing rule in Step 3. Re-verify anything
+   copied across before you hit Publish; a claim page is quotable in a way a
+   private hub note is not.
+
+What stays private: `claim_occurrences` maps claims back to the specific
+critical videos, and is deny-all under RLS. The public page renders only
+aggregate counts — never the video titles, ids, or links. Don't add them.
+
 ## Ingest-stage tags
 
 Every video on the hub feed shows exactly one stage tag, whichever step is
@@ -338,7 +377,8 @@ finding exactly what still needs the next pipeline step, e.g. filter to
 ## Reference
 
 - Schema: `supabase/migrations/0039_apologetics_hub.sql`,
-  `0041_hub_channel_state.sql`, `0042_hub_lds_relevant.sql`.
+  `0041_hub_channel_state.sql`, `0042_hub_lds_relevant.sql`,
+  `0044_claim_library.sql` (public `claims` + private `claim_occurrences`).
 - Access control: `requireApologist()` / `isApologistUser()` in
   `src/lib/permissions.ts`; grant/revoke apologist (and premium, admin)
   status at `/admin/access`.
