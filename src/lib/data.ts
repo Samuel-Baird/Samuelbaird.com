@@ -2,8 +2,18 @@ import "server-only";
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
 import { createClient } from "@supabase/supabase-js";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
-import type { Channel, ChannelWithStats, SiteStats, Study } from "./types";
+import {
+  createSupabaseServerClient,
+  createSupabaseServiceClient,
+} from "@/lib/supabase/server";
+import type {
+  Channel,
+  ChannelWithStats,
+  Claim,
+  ClaimReach,
+  SiteStats,
+  Study,
+} from "./types";
 
 // Read-only public client (anon key). RLS allows select on all public tables.
 function publicClient() {
@@ -924,6 +934,161 @@ export const getStudyStats = unstable_cache(
   },
   ["study-stats"],
   { tags: ["studies"], revalidate: 3600 },
+);
+
+// ============================================================================
+// Claim library (public reads). RLS restricts anon selects to published rows,
+// so these can use the anon client like studies do — the status filter below
+// is for clarity and index use, not for security.
+// ============================================================================
+
+// Explicit column list rather than "*": the table also carries search_tsv,
+// which is an internal index artifact — it would otherwise be serialized into
+// client component props and returned by the public MCP tools.
+const CLAIM_COLUMNS =
+  "id, slug, title, claim_text, response, status, topic_tags, sources, response_video_url, published_at, created_by, created_at, updated_at";
+
+export type ClaimSort = "recent" | "reach" | "title";
+
+export type ClaimsQuery = {
+  query?: string;
+  tags?: string[];
+  sort?: ClaimSort;
+};
+
+const fetchPublishedClaims = unstable_cache(
+  async (query: string, tags: string[]): Promise<Claim[]> => {
+    const sb = publicClient();
+    let q = sb.from("claims").select(CLAIM_COLUMNS).eq("status", "published");
+
+    if (query) {
+      q = q.textSearch("search_tsv", query, { type: "websearch" });
+    }
+    if (tags.length > 0) {
+      q = q.contains("topic_tags", tags);
+    }
+
+    q = q
+      .order("published_at", { ascending: false, nullsFirst: false })
+      .limit(500);
+
+    const { data, error } = await q;
+    if (error) throw error;
+    return (data ?? []) as Claim[];
+  },
+  ["claims-query"],
+  { tags: ["claims"], revalidate: 3600 },
+);
+
+export async function getPublishedClaims(
+  opts: ClaimsQuery = {},
+): Promise<Claim[]> {
+  const claims = await fetchPublishedClaims(
+    (opts.query ?? "").trim(),
+    opts.tags ?? [],
+  );
+
+  if (opts.sort === "title") {
+    return claims.slice().sort((a, b) => a.title.localeCompare(b.title));
+  }
+  // "reach" is applied by the caller, which has the occurrence counts; the
+  // default ordering is already most-recently-published first.
+  return claims;
+}
+
+export const getClaimBySlug = unstable_cache(
+  async (slug: string): Promise<Claim | null> => {
+    const sb = publicClient();
+    const { data, error } = await sb
+      .from("claims")
+      .select(CLAIM_COLUMNS)
+      .eq("slug", slug)
+      .eq("status", "published")
+      .maybeSingle();
+    if (error) throw error;
+    return (data as Claim | null) ?? null;
+  },
+  ["claim-by-slug"],
+  { tags: ["claims"], revalidate: 3600 },
+);
+
+export const getAllClaimTopicTags = cache(
+  unstable_cache(
+    async (): Promise<{ value: string; count: number }[]> => {
+      const sb = publicClient();
+      const { data, error } = await sb
+        .from("claims")
+        .select("topic_tags")
+        .eq("status", "published");
+      if (error) throw error;
+      const counts = new Map<string, number>();
+      for (const row of (data ?? []) as { topic_tags: string[] }[]) {
+        for (const tag of row.topic_tags ?? []) {
+          const trimmed = (tag ?? "").trim();
+          if (!trimmed) continue;
+          counts.set(trimmed, (counts.get(trimmed) ?? 0) + 1);
+        }
+      }
+      return [...counts.entries()]
+        .map(([value, count]) => ({ value, count }))
+        .sort((a, b) => a.value.localeCompare(b.value));
+    },
+    ["all-claim-topic-tags"],
+    { tags: ["claims"], revalidate: 3600 },
+  ),
+);
+
+// Occurrence rows are deny-all under RLS and name specific critical videos, so
+// this reads through the service client and returns counts only — never the
+// video ids or links. See 0044_claim_library.sql for why.
+export const getClaimReachMap = unstable_cache(
+  async (claimIds: string[]): Promise<Record<string, ClaimReach>> => {
+    if (claimIds.length === 0) return {};
+    const sb = createSupabaseServiceClient();
+    const { data, error } = await sb
+      .from("claim_occurrences")
+      .select("claim_id, hub_videos(channel_id, published_at)")
+      .in("claim_id", claimIds);
+    if (error) throw error;
+
+    type Row = {
+      claim_id: string;
+      hub_videos: { channel_id: string; published_at: string } | null;
+    };
+
+    const acc = new Map<
+      string,
+      { videos: number; channels: Set<string>; firstYear: number | null }
+    >();
+    for (const row of (data ?? []) as unknown as Row[]) {
+      const entry = acc.get(row.claim_id) ?? {
+        videos: 0,
+        channels: new Set<string>(),
+        firstYear: null,
+      };
+      entry.videos += 1;
+      if (row.hub_videos?.channel_id) entry.channels.add(row.hub_videos.channel_id);
+      const year = row.hub_videos?.published_at
+        ? new Date(row.hub_videos.published_at).getUTCFullYear()
+        : null;
+      if (year != null && (entry.firstYear === null || year < entry.firstYear)) {
+        entry.firstYear = year;
+      }
+      acc.set(row.claim_id, entry);
+    }
+
+    const out: Record<string, ClaimReach> = {};
+    for (const [claimId, entry] of acc.entries()) {
+      out[claimId] = {
+        videoCount: entry.videos,
+        channelCount: entry.channels.size,
+        firstSeenYear: entry.firstYear,
+      };
+    }
+    return out;
+  },
+  ["claim-reach-map"],
+  { tags: ["claims"], revalidate: 3600 },
 );
 
 export function pdfPublicUrl(pdfPath: string | null): string | null {

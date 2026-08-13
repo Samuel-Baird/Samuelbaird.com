@@ -72,10 +72,6 @@ const BENEFITS = [
     title: "Weekly email digest",
     desc: "New studies, new channels, and trend research delivered weekly.",
   },
-  {
-    title: "Versions",
-    desc: "Compare multiple accounts of the same event, or trace how official handbooks, manuals, and guides change across editions over time.",
-  },
 ];
 
 export default async function PremiumPage({

@@ -7,6 +7,9 @@ import {
   getStudies,
   getStudyBySlug,
   getAllStudyTags,
+  getAllClaimTopicTags,
+  getClaimBySlug,
+  getPublishedClaims,
 } from "@/lib/data";
 import { TIMELINES } from "@/app/timelines/registry";
 import eternalIncreaseSources from "@/app/eternal-increase-timeline/sources.json";
@@ -213,6 +216,70 @@ const handler = createMcpHandler(
       },
       async () => {
         const tags = await getAllStudyTags();
+        return { content: [{ type: "text", text: JSON.stringify(tags, null, 2) }] };
+      },
+    );
+
+    // Claim library. Published claims only — drafts and the occurrence
+    // mapping (which names the critical videos making each claim) are
+    // apologist-only and never reach this surface.
+    server.registerTool(
+      "list_claims",
+      {
+        title: "List claims",
+        description:
+          "List/search the Latter-day Stats claim library: common criticisms of the Church of Jesus Christ of Latter-day Saints, each stated at its strongest and answered from cited primary sources.",
+        inputSchema: z.object({
+          search: z.string().optional().describe('Full-text search over the claim and response (websearch syntax, e.g. "seer stone").'),
+          tags: z.array(z.string()).optional().describe("Claims must carry all of these topic tags. See list_claim_topics."),
+          sort: z.enum(["recent", "title"]).optional().describe("Default: recent (most recently published first)."),
+          limit: z.number().int().positive().max(200).optional().describe("Default 25, max 200."),
+        }),
+      },
+      async (args) => {
+        const claims = await getPublishedClaims({
+          query: args.search,
+          tags: args.tags,
+          sort: args.sort,
+        });
+        const limit = Math.min(args.limit ?? 25, 200);
+        // Trimmed shape: the full response text can be long, and callers
+        // fetching a list usually want to pick one and call get_claim.
+        const rows = claims.slice(0, limit).map((c) => ({
+          slug: c.slug,
+          title: c.title,
+          claim_text: c.claim_text,
+          topic_tags: c.topic_tags,
+          source_count: c.sources.length,
+          published_at: c.published_at,
+        }));
+        return { content: [{ type: "text", text: JSON.stringify(rows, null, 2) }] };
+      },
+    );
+
+    server.registerTool(
+      "get_claim",
+      {
+        title: "Get claim",
+        description:
+          "Get one claim's full detail by slug: the claim as critics state it, the sourced response, and every citation behind it.",
+        inputSchema: z.object({ slug: z.string() }),
+      },
+      async ({ slug }) => {
+        const claim = await getClaimBySlug(slug);
+        return { content: [{ type: "text", text: JSON.stringify(claim, null, 2) }] };
+      },
+    );
+
+    server.registerTool(
+      "list_claim_topics",
+      {
+        title: "List claim topics",
+        description: "List the topic tags used in the claim library with their counts, for use with list_claims' `tags` filter.",
+        inputSchema: z.object({}),
+      },
+      async () => {
+        const tags = await getAllClaimTopicTags();
         return { content: [{ type: "text", text: JSON.stringify(tags, null, 2) }] };
       },
     );
