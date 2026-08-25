@@ -6,13 +6,17 @@ import { notFound, redirect } from "next/navigation";
 import { getCurrentUser, type AuthContext } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
-export type Capability = "download_channel_csv" | "compare_channels";
+export type Capability =
+  | "download_channel_csv"
+  | "compare_channels"
+  | "download_evangelical_quiz_data";
 
 type CapabilityPolicy = "signed_in" | "premium";
 
 const CAPABILITY_POLICIES: Record<Capability, CapabilityPolicy> = {
   download_channel_csv: "premium",
   compare_channels: "premium",
+  download_evangelical_quiz_data: "premium",
 };
 
 function loginPath(nextPath: string) {

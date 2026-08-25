@@ -15,6 +15,7 @@ import type {
   Match,
   QuizData,
   QuizItem,
+  Response,
   Tradition,
   TraditionScore,
 } from "./types";
@@ -163,6 +164,28 @@ export function groupBreakdownRows(item: QuizItem): GroupBreakdownRow[] {
   return GROUP_DISPLAY_ORDER.filter((g) => item.raw_pct[g] !== undefined).map(
     (g) => ({ group: g, pcts: item.raw_pct[g] }),
   );
+}
+
+/**
+ * `item.raw_pct[group]` back into the workbook's fixed 5-column order
+ * (strongly_disagree, somewhat_disagree, not_sure, somewhat_agree,
+ * strongly_agree), for export. A 3-option item's two collapsed columns come
+ * back as 0 — the same convention the workbook itself uses for a collapsed
+ * item, not a claim that 0% chose "somewhat."
+ */
+export function fiveColumnPct(item: QuizItem, group: string): number[] | null {
+  const pcts = item.raw_pct[group];
+  if (!pcts) return null;
+  const byResponse = Object.fromEntries(
+    item.scale.map((r, i) => [r, pcts[i]]),
+  ) as Partial<Record<Response, number>>;
+  return [
+    "strongly_disagree",
+    "somewhat_disagree",
+    "not_sure",
+    "somewhat_agree",
+    "strongly_agree",
+  ].map((r) => byResponse[r as Response] ?? 0);
 }
 
 export const TRADITION_LABEL: Record<Tradition, string> = {

@@ -65,6 +65,10 @@ const BENEFITS = [
     desc: "Download the full channel directory with stats — subscribers, views, videos, language, country.",
   },
   {
+    title: "Survey data downloads",
+    desc: "Download the underlying data behind the \"How evangelical are you?\" quiz — every statement, every group, as CSV.",
+  },
+  {
     title: "Critical content creators",
     desc: "Access channels in the Critical category — hidden from public listings.",
   },

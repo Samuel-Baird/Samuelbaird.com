@@ -17,6 +17,7 @@ export {
   answeredCount,
   breakdown,
   displayOptions,
+  fiveColumnPct,
   groupBreakdownRows,
   itemById,
   matchTradition,

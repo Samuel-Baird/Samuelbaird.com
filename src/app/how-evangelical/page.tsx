@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { DownloadDataButton } from "@/components/evangelical-quiz/download-data-button";
 import { EvangelicalQuizApp } from "@/components/evangelical-quiz/quiz-app";
 import { SurveyFooter } from "@/components/evangelical-quiz/survey-footer";
+import { getPremiumStatus } from "@/lib/permissions";
 
 // Unlisted: not in the nav, not in sitemap.ts, shared by direct link only.
 export const metadata: Metadata = {
@@ -10,7 +12,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function HowEvangelicalPage() {
+// Reads the signed-in reader's premium status for the data-download gate.
+export const dynamic = "force-dynamic";
+
+export default async function HowEvangelicalPage() {
+  const { premium } = await getPremiumStatus();
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
@@ -20,8 +27,9 @@ export default function HowEvangelicalPage() {
         {/* Sourcing marginalia, per the honesty requirement that it appear on
             every screen — one persistent aside rather than a footer repeated
             inside each quiz step. Stacks below the quiz on mobile. */}
-        <aside className="mt-10 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
+        <aside className="mt-10 space-y-6 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
           <SurveyFooter />
+          <DownloadDataButton premium={premium} />
         </aside>
       </div>
     </div>
