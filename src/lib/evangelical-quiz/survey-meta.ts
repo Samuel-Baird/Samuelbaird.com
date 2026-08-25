@@ -6,8 +6,17 @@
  *
  * `sampleSize` and `marginOfError` are `null` until filled in with the
  * figures Ligonier/Lifeway publish for that wave — the footer renders an
- * honest "not yet on file" rather than a guessed number. Fill these in from
- * the wave's methodology note before this quiz goes out.
+ * honest "not yet on file" rather than a guessed number.
+ *
+ * 2025: n=3,001, fielded Jan 6-15, 2025; sampling error does not exceed
+ * +/-1.9% at 95% confidence (subgroup margins are higher, unquantified in
+ * the source). Source: "2025 State of American Theology Study — Research
+ * Report" (Lifeway Research), Methodology section,
+ * https://research.lifeway.com/wp-content/uploads/2025/09/Ligonier-State-of-Theology-2025-White-Paper.pdf
+ *
+ * 2022: figure not yet sourced — the arian item is the only 2022-wave
+ * question in this quiz and it needs its own methodology citation before
+ * shipping a number here.
  */
 export type SurveyWaveMeta = {
   year: number;
@@ -22,8 +31,8 @@ export const SURVEY_WAVES: Record<number, SurveyWaveMeta> = {
     year: 2025,
     sponsor: "Ligonier Ministries",
     fielder: "Lifeway Research",
-    sampleSize: null,
-    marginOfError: null,
+    sampleSize: 3001,
+    marginOfError: "±1.9% overall (95% confidence); higher within subgroups",
   },
   2022: {
     year: 2022,

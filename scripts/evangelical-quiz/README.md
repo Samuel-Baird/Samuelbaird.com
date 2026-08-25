@@ -161,25 +161,65 @@ hand-edit `data.json`.
 
 ## Status
 
-As of the last data pull, only the `arian` item (2022 wave — Arianism, the
-last year that statement was fielded) has real numbers; the other 35 items in
-the workbook are defined (statement text, year, group rows) but blank. The
-app runs correctly against however many items have data — it's a fully
-working one-question quiz right now, and becomes the full 36-question quiz
-the moment the rest of the workbook is filled in and rebuilt. Nothing in
-`src/` needs to change for that to happen.
+`arian` (2022 wave) has real numbers, verified and unchanged. As of 2026-08-25,
+the `Evangelical` and `All U.S. adults` rows for all 35 2025-wave items are
+also filled — every item is still missing `Black Protestant`, `Roman
+Catholic`, and (for most) `Mainline`, so the app still runs as a 1-question
+quiz until those land too. `EVANGELICAL_SHARE` (0.25) is already the source's
+own reported evangelical share of U.S. adults (798/3001 in the 2025 raw
+microdata), so no change needed there.
 
-Because so few items currently have data, `runSelfTest`'s "modal-evangelical
-answers match Evangelical tradition" and "...score high" checks legitimately
-fail against `arian` alone — Black Protestant respondents affirm that
-statement even more heavily than evangelicals do (56% vs. 48% strongly
-agree), so a 1-item match correctly doesn't favor Evangelical. That's real
-survey noise from an n=1 test, not a bug; expect both checks to pass once
-enough items are loaded that doctrinally central statements (Trinity,
-resurrection, salvation through Christ alone) dominate the sum.
+### Where the 2025 Evangelical / All U.S. adults numbers came from
 
-Also outstanding: `SurveyWaveMeta.sampleSize` / `.marginOfError` in
-`src/lib/evangelical-quiz/survey-meta.ts` are `null` — the honesty-requirement
-footer needs the real sample size and margin of error for the 2025 and 2022
-waves from Ligonier/Lifeway's published methodology, which weren't in the
-workbook.
+Pulled directly from Lifeway Research's own public data behind
+thestateoftheology.com — not transcribed from the PDF report, computed from
+the underlying respondent-level microdata the site's own data explorer reads:
+
+- `https://thestateoftheology.com/assets/data/us/responses-2025.csv` — one row
+  per respondent (n=3,001), raw 1–5 codes per statement (`Q21_1`..`Q30_4`,
+  10 screens of 3–4 statements each) plus a survey weight (`WT`).
+- Value coding (1=Strongly Agree, 2=Somewhat Agree, 3=Somewhat Disagree,
+  4=Strongly Disagree, 5=Not Sure) and the `Qxx_y` → item order were confirmed
+  by reproducing the "All U.S. adults" weighted percentages in the published
+  research report byte-for-byte (every one of the 35 items matched the
+  report's own charts to within rounding).
+  Report: `https://research.lifeway.com/wp-content/uploads/2025/09/Ligonier-State-of-Theology-2025-White-Paper.pdf`
+- **"Evangelical" here is the survey's own belief-based definition**, not a
+  self-reported religious affiliation: the CSV's `EVB` column flags
+  respondents who strongly agree with all four "NAE Lifeway Research
+  Evangelical Beliefs Definition" statements (white paper, p.24 — these are
+  exactly `bible_highest_authority`, `evangelism_important`,
+  `cross_only_sacrifice`, and `christ_alone_salvation` in this workbook).
+  Confirmed by reproducing the report's own "Evangelicals X% v. non-evangelicals
+  Y% Agree" spot-checks (e.g. `god_perfect` 97% v. 59%, `election` 41% v. 23%)
+  from `EVB=1` vs. `EVB=2` weighted crosstabs — every check matched to within
+  a point.
+
+**Consequence worth knowing:** because those same four statements *define*
+who counts as Evangelical in this dataset, their Evangelical distribution is
+tautological — `EVB=1` respondents strongly agree with all four by
+construction (100/0/0/0/0), not because of independent survey behavior.
+Their scoring weights will come out extremely large and somewhat circular
+("evangelical" answers score as maximally evangelical because that's the
+definition, not a discovery). Worth deciding whether to keep them in the
+quiz as-is, downweight them, or treat them separately from the log-likelihood
+sum — flagging rather than deciding, since it's a product call.
+
+To reproduce or extend: the same CSV/report pairing exists for 2014, 2016,
+2018, 2020, and 2022 at `.../assets/data/us/responses-{year}.csv` and
+`.../wp-content/uploads/.../Ligonier-State-of-Theology-{year}-*.pdf` — useful
+if a future item needs a different wave's numbers.
+
+### Found already in the workbook, not touched
+
+While filling the above, the workbook already had `Black Protestant` data for
+the first 12 items and a leftover `Other`-group row (values blank) after each
+of the last 5 items, plus `Black Protestant` / `Mainline` / `Roman Catholic`
+rows hidden throughout — none of this was present when this quiz was first
+scoped (see prior session), so something filled part of the sheet in the
+interim. Left entirely alone; flagged to the user directly rather than
+guessed at or cleaned up unasked.
+
+Also outstanding: `SurveyWaveMeta` for the 2022 wave in
+`src/lib/evangelical-quiz/survey-meta.ts` still has `sampleSize` /
+`marginOfError` as `null` — the 2025 wave's methodology is now filled in.
