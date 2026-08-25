@@ -1,0 +1,446 @@
+{
+  "data_version": "1",
+  "responses": [
+    "strongly_disagree",
+    "somewhat_disagree",
+    "not_sure",
+    "somewhat_agree",
+    "strongly_agree"
+  ],
+  "responses_3": [
+    "strongly_disagree",
+    "not_sure",
+    "strongly_agree"
+  ],
+  "traditions": [
+    "Evangelical",
+    "Black Protestant",
+    "Mainline",
+    "Roman Catholic"
+  ],
+  "baseline_group": "All U.S. adults",
+  "constants": {
+    "EVANGELICAL_SHARE": 0.25,
+    "PROB_FLOOR": 0.02,
+    "NEG_FLOOR": 0.005,
+    "SHRINKAGE": 2.5,
+    "SIM_N": 20000,
+    "SIM_SEED": 20250825,
+    "TIE_MARGIN": 0.25
+  },
+  "years": [
+    2022
+  ],
+  "items": [
+    {
+      "id": "arian",
+      "statement": "Jesus is the first and greatest being created by God.",
+      "year": 2022,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.174353,
+        0.160343,
+        -0.465363,
+        -0.186586,
+        0.251314
+      ],
+      "p": {
+        "Evangelical": [
+          0.21,
+          0.09,
+          0.09,
+          0.13,
+          0.48
+        ],
+        "Black Protestant": [
+          0.09,
+          0.07,
+          0.06,
+          0.22,
+          0.56
+        ],
+        "Mainline": [
+          0.16,
+          0.1,
+          0.13,
+          0.15,
+          0.46
+        ],
+        "Roman Catholic": [
+          0.11,
+          0.09,
+          0.09,
+          0.2,
+          0.51
+        ]
+      },
+      "p_all": [
+        0.24,
+        0.08,
+        0.13,
+        0.15,
+        0.4
+      ],
+      "p_not_evangelical": [
+        0.25,
+        0.076667,
+        0.143333,
+        0.156667,
+        0.373333
+      ]
+    }
+  ],
+  "expected_items": 36,
+  "pending_items": [
+    {
+      "id": "god_perfect",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "trinity",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "all_religions",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "god_unchanging",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "resurrection",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "god_loves_same",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "jesus_not_god",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "marriage_man_woman",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "spirit_force",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "spirit_new_birth",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "spirit_forbidden",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "good_by_nature",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "smallest_sin",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "justification_faith",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "born_innocent",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "bible_myths",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "bible_accurate",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "science_disproves",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "election",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "hell_real",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "second_coming",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "worship_alone",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "faith_not_politics",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "join_church",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "sex_outside_marriage",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "abortion_sin",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "gender_choice",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "homosexual_condemnation",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "god_unconcerned",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "bible_authority_must_do",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "belief_not_objective",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "bible_highest_authority",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "evangelism_important",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "cross_only_sacrifice",
+      "reason": "no data yet (all 5 rows blank)"
+    },
+    {
+      "id": "christ_alone_salvation",
+      "reason": "no data yet (all 5 rows blank)"
+    }
+  ],
+  "percentile_breakpoints": [
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.186145,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.074634,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    -0.069741,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.064137,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526,
+    0.100526
+  ]
+}
