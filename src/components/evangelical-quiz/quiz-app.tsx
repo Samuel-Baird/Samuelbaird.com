@@ -38,6 +38,9 @@ export function EvangelicalQuizApp() {
 
   function answer(responseIndex: number) {
     setAnswers((a) => ({ ...a, [current.id]: responseIndex }));
+  }
+
+  function continueToNext() {
     if (index + 1 < items.length) {
       setIndex(index + 1);
     } else {
@@ -72,6 +75,8 @@ export function EvangelicalQuizApp() {
         chosen={answers[current.id]}
         onAnswer={answer}
         onBack={back}
+        onContinue={continueToNext}
+        isLast={index + 1 >= items.length}
       />
     );
   }

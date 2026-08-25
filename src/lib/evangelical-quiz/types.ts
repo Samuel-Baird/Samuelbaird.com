@@ -46,6 +46,13 @@ export type QuizItem = {
   /** Smoothed P(r | All U.S. adults). The reference distribution. */
   p_all: number[];
   p_not_evangelical: number[];
+  /**
+   * As-entered percentages (whole numbers, sum to 100), one array per group
+   * that has data for this item, aligned to `scale`. Unsmoothed — unlike
+   * `p` / `p_all`, nothing here is floored for log-safety, so this is what
+   * the per-question group breakdown chart should render, not `p`.
+   */
+  raw_pct: Record<string, number[]>;
 };
 
 export type QuizConstants = {

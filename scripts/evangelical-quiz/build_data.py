@@ -318,6 +318,24 @@ def weights(p_e, p_note):
     return [math.log(e / n) for e, n in zip(p_e, p_note)]
 
 
+def round_pct(fractions):
+    """Fractions (sum to 1) -> whole percentages that sum to exactly 100.
+
+    Plain rounding, then the rounding error is dumped on whichever bucket
+    was rounded the least accurately - keeps the display total exact
+    without distorting any one bucket more than necessary.
+    """
+    pct = [x * 100 for x in fractions]
+    r = [round(x) for x in pct]
+    diff = 100 - sum(r)
+    if diff != 0:
+        idx = (max if diff > 0 else min)(
+            range(len(pct)), key=lambda i: pct[i] - r[i]
+        )
+        r[idx] += diff
+    return r
+
+
 def score_answers(answers, item_weights, shrinkage=SHRINKAGE):
     """answers: {item_id: response_index}. Unanswered items are skipped."""
     total = 0.0
@@ -388,6 +406,11 @@ def build(items, usable, unusable, order, rep: Report):
             "p": {g: [round(x, 6) for x in smooth(raw[g])] for g in TRADITIONS},
             "p_all": [round(x, 6) for x in p_all],
             "p_not_evangelical": [round(x, 6) for x in p_note],
+            # Unsmoothed, as-entered percentages for every group (0-2% floor
+            # from `smooth()` never applied) - for the per-question group
+            # breakdown chart, which shows the real numbers, not the
+            # log-friendly ones the scoring math uses.
+            "raw_pct": {g: round_pct(raw[g]) for g in REQUIRED_GROUPS},
         })
 
     if three_option_ids:

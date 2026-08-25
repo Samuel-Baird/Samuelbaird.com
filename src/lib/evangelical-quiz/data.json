@@ -94,150 +94,187 @@
         0.143333,
         0.156667,
         0.373333
-      ]
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          21,
+          9,
+          9,
+          13,
+          48
+        ],
+        "Black Protestant": [
+          9,
+          7,
+          6,
+          22,
+          56
+        ],
+        "Mainline": [
+          16,
+          10,
+          13,
+          15,
+          46
+        ],
+        "Roman Catholic": [
+          11,
+          9,
+          9,
+          20,
+          51
+        ],
+        "All U.S. adults": [
+          24,
+          8,
+          13,
+          15,
+          40
+        ]
+      }
     }
   ],
   "expected_items": 36,
   "pending_items": [
     {
       "id": "god_perfect",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "trinity",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "all_religions",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "god_unchanging",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "resurrection",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "god_loves_same",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "jesus_not_god",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "marriage_man_woman",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "spirit_force",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "spirit_new_birth",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "spirit_forbidden",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "good_by_nature",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Mainline, Roman Catholic"
     },
     {
       "id": "smallest_sin",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "justification_faith",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "born_innocent",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "bible_myths",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "bible_accurate",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "science_disproves",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "election",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "hell_real",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "second_coming",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "worship_alone",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "faith_not_politics",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "join_church",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "sex_outside_marriage",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "abortion_sin",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "gender_choice",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "homosexual_condemnation",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "god_unconcerned",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "bible_authority_must_do",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "belief_not_objective",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "bible_highest_authority",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "evangelism_important",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "cross_only_sacrifice",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     },
     {
       "id": "christ_alone_salvation",
-      "reason": "no data yet (all 5 rows blank)"
+      "reason": "missing Black Protestant, Mainline, Roman Catholic"
     }
   ],
   "percentile_breakpoints": [

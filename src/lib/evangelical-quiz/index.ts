@@ -17,6 +17,7 @@ export {
   answeredCount,
   breakdown,
   displayOptions,
+  groupBreakdownRows,
   itemById,
   matchTradition,
   percentileOf,
@@ -24,6 +25,7 @@ export {
   scoreAnswers,
   TRADITION_LABEL,
 } from "./scoring";
+export type { GroupBreakdownRow } from "./scoring";
 
 export { runSelfTest, printSelfTest } from "./self-test";
 export type { SelfTestResult } from "./self-test";

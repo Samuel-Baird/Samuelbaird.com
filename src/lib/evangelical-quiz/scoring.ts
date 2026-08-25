@@ -138,6 +138,33 @@ export function displayOptions(item: QuizItem): { response: string; index: numbe
   }));
 }
 
+/** Display order for the per-question group breakdown chart. */
+const GROUP_DISPLAY_ORDER = [
+  "Evangelical",
+  "Black Protestant",
+  "Mainline",
+  "Roman Catholic",
+  "All U.S. adults",
+];
+
+export type GroupBreakdownRow = {
+  group: string;
+  /** Percentages aligned to item.scale, summing to 100. */
+  pcts: number[];
+};
+
+/**
+ * This item's raw group percentages, in a fixed display order, limited to
+ * groups the workbook actually has data for (currently that's often all of
+ * them or none — an item only ships once every required group is filled —
+ * but the chart stays correct either way).
+ */
+export function groupBreakdownRows(item: QuizItem): GroupBreakdownRow[] {
+  return GROUP_DISPLAY_ORDER.filter((g) => item.raw_pct[g] !== undefined).map(
+    (g) => ({ group: g, pcts: item.raw_pct[g] }),
+  );
+}
+
 export const TRADITION_LABEL: Record<Tradition, string> = {
   Evangelical: "an Evangelical Protestant",
   "Black Protestant": "a Black Protestant",

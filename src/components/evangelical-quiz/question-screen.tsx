@@ -1,6 +1,7 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { displayOptions, responseLabel } from "@/lib/evangelical-quiz";
 import type { QuizItem } from "@/lib/evangelical-quiz";
+import { GroupBreakdownChart } from "./group-breakdown-chart";
 
 export function QuestionScreen({
   item,
@@ -9,6 +10,8 @@ export function QuestionScreen({
   chosen,
   onAnswer,
   onBack,
+  onContinue,
+  isLast,
 }: {
   item: QuizItem;
   /** 0-based position in the question sequence. */
@@ -18,9 +21,12 @@ export function QuestionScreen({
   chosen: number | undefined;
   onAnswer: (responseIndex: number) => void;
   onBack: (() => void) | null;
+  onContinue: () => void;
+  isLast: boolean;
 }) {
   const options = displayOptions(item);
   const progressPct = Math.round((index / total) * 100);
+  const answered = chosen !== undefined;
 
   return (
     <div>
@@ -96,6 +102,21 @@ export function QuestionScreen({
           })}
         </div>
       </fieldset>
+
+      {answered && (
+        <>
+          <GroupBreakdownChart item={item} chosenIndex={chosen} />
+
+          <button
+            type="button"
+            onClick={onContinue}
+            className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+          >
+            {isLast ? "See your results" : "Next question"}
+            <ArrowRight aria-hidden="true" size={15} />
+          </button>
+        </>
+      )}
     </div>
   );
 }
