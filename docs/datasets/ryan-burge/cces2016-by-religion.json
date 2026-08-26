@@ -1,0 +1,594 @@
+{
+  "source": "Ryan Burge (github.com/ryanburge), CCES 2016 common content extract (cces2016_small_cces.csv).",
+  "via": "Ryan Burge",
+  "method": "Population: all 12 religpew categories individually (not collapsed - see this script's own docstring for why). Unweighted (this file carries no survey weight column) - good for shape/direction, not exact figures. Immigration items are a select-all battery (CC16_331_1/2/3/7): share is 'selected' vs. 'not selected'. Abortion items (CC16_332a/f) and same-sex marriage (CC16_335) are support/oppose or favor/oppose.",
+  "total_n": 64600,
+  "pathway_selected": {
+    "Protestant": {
+      "pct": 49.92,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 55.09,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 48.05,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 48.07,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 63.13,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 64.45,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 66.67,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 55.52,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 75.6,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 70.17,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 55.45,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 59.32,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "border_selected": {
+    "Protestant": {
+      "pct": 58.73,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 52.62,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 55.75,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 52.76,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 47.87,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 33.49,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 34.62,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 44.15,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 25.86,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 35.84,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 42.57,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 44.13,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "dreamer_selected": {
+    "Protestant": {
+      "pct": 41.68,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 43.39,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 43.33,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 38.12,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 58.67,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 52.98,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 53.95,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 46.15,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 69.96,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 63.31,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 45.44,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 49.19,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "deport_selected": {
+    "Protestant": {
+      "pct": 48.8,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 42.13,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 47.59,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 43.37,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 30.34,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 28.21,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 28.34,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 37.12,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 20.97,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 26.32,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 37.53,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 37.61,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "prochoice_support": {
+    "Protestant": {
+      "pct": 47.6,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 58.86,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 27.13,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 64.36,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 81.44,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 66.28,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 81.8,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 76.59,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 92.12,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 83.77,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 71.63,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 63.63,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "prolife_support": {
+    "Protestant": {
+      "pct": 20.42,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 18.44,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 15.98,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 25.41,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 6.92,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 31.88,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 9.02,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 21.07,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 4.2,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 3.86,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 11.66,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 15.96,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "gaym_favor": {
+    "Protestant": {
+      "pct": 46.61,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 66.75,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 35.63,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 55.52,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 82.86,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 47.48,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 82.13,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 76.25,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 94.09,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 91.31,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 76.58,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 66.09,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  },
+  "attend_distribution": {
+    "Protestant": {
+      "shares_pct": {
+        "More than once a week": 15.48,
+        "Once a week": 26.71,
+        "Once or twice a month": 10.96,
+        "A few times a year": 16.2,
+        "Seldom": 21.75,
+        "Never": 8.9
+      },
+      "valid_n": 22665,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "shares_pct": {
+        "More than once a week": 5.27,
+        "Once a week": 25.42,
+        "Once or twice a month": 11.5,
+        "A few times a year": 20.74,
+        "Seldom": 24.35,
+        "Never": 12.7
+      },
+      "valid_n": 13768,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "shares_pct": {
+        "More than once a week": 14.68,
+        "Once a week": 57.92,
+        "Once or twice a month": 6.94,
+        "A few times a year": 7.05,
+        "Seldom": 10.17,
+        "Never": 3.24
+      },
+      "valid_n": 865,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "shares_pct": {
+        "More than once a week": 10.77,
+        "Once a week": 20.99,
+        "Once or twice a month": 17.13,
+        "A few times a year": 20.44,
+        "Seldom": 18.51,
+        "Never": 12.15
+      },
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "shares_pct": {
+        "More than once a week": 3.89,
+        "Once a week": 9.86,
+        "Once or twice a month": 9.47,
+        "A few times a year": 25.68,
+        "Seldom": 26.01,
+        "Never": 25.1
+      },
+      "valid_n": 1542,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "shares_pct": {
+        "More than once a week": 24.7,
+        "Once a week": 27.79,
+        "Once or twice a month": 11.88,
+        "A few times a year": 13.54,
+        "Seldom": 15.44,
+        "Never": 6.65
+      },
+      "valid_n": 421,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "shares_pct": {
+        "More than once a week": 4.38,
+        "Once a week": 7.78,
+        "Once or twice a month": 8.59,
+        "A few times a year": 17.5,
+        "Seldom": 28.85,
+        "Never": 32.9
+      },
+      "valid_n": 617,
+      "group_n": 621
+    },
+    "Hindu": {
+      "shares_pct": {
+        "More than once a week": 8.3,
+        "Once a week": 15.57,
+        "Once or twice a month": 21.8,
+        "A few times a year": 30.8,
+        "Seldom": 16.26,
+        "Never": 7.27
+      },
+      "valid_n": 289,
+      "group_n": 299
+    },
+    "Atheist": {
+      "shares_pct": {
+        "More than once a week": 0.22,
+        "Once a week": 0.57,
+        "Once or twice a month": 0.62,
+        "A few times a year": 1.87,
+        "Seldom": 7.97,
+        "Never": 88.74
+      },
+      "valid_n": 4014,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "shares_pct": {
+        "More than once a week": 0.18,
+        "Once a week": 0.83,
+        "Once or twice a month": 1.31,
+        "A few times a year": 5.1,
+        "Seldom": 22.73,
+        "Never": 69.86
+      },
+      "valid_n": 3982,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "shares_pct": {
+        "More than once a week": 1.72,
+        "Once a week": 4.7,
+        "Once or twice a month": 4.08,
+        "A few times a year": 10.52,
+        "Seldom": 29.05,
+        "Never": 49.94
+      },
+      "valid_n": 11712,
+      "group_n": 11986
+    },
+    "Something else": {
+      "shares_pct": {
+        "More than once a week": 7.31,
+        "Once a week": 11.42,
+        "Once or twice a month": 7.34,
+        "A few times a year": 14.29,
+        "Seldom": 26.53,
+        "Never": 33.11
+      },
+      "valid_n": 3555,
+      "group_n": 3621
+    }
+  },
+  "attend_order": [
+    "More than once a week",
+    "Once a week",
+    "Once or twice a month",
+    "A few times a year",
+    "Seldom",
+    "Never"
+  ]
+}

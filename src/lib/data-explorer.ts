@@ -16,6 +16,7 @@ import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
 import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
 import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritual-experience.json";
 import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
+import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -98,6 +99,16 @@ const BELIEFS_GROUP_ORDER = [
   "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
   "Jewish", "Other world religions", "Other faiths",
   "All religious average", "Religiously unaffiliated",
+];
+
+/** Group order for the CCES 2016 "by religion" graphics, matching
+ * GROUP_ORDER in scripts/ryan-burge/render_cces2016_by_religion_charts.py -
+ * all 12 religpew categories individually, per that backlog item's own
+ * "not just LDS vs. everyone else" population note. */
+const CCES2016_GROUP_ORDER = [
+  "Mormon", "Protestant", "Catholic", "Orthodox", "Jewish", "Muslim",
+  "Buddhist", "Hindu", "Atheist", "Agnostic", "Nothing in particular",
+  "Something else",
 ];
 
 /** A direct quotation of how the dataset's own source describes itself. */
@@ -286,7 +297,16 @@ export const DATASETS: Dataset[] = [
       "compare LDS answers against every other religious tradition and the religiously " +
       "unaffiliated side by side, not just against the sample as a whole.",
     sourceUrl: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GDF6Z0",
-    graphics: [],
+    graphics: [
+      cces2016PathwayGraphic(),
+      cces2016BorderGraphic(),
+      cces2016DreamerGraphic(),
+      cces2016DeportGraphic(),
+      cces2016ProchoiceGraphic(),
+      cces2016ProlifeGraphic(),
+      cces2016GaymGraphic(),
+      cces2016AttendGraphic(),
+    ],
   },
   {
     slug: "ces-stacked-2006-2018",
@@ -1089,6 +1109,165 @@ function pewVol12Graphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who volunteered in the past 12 months, by tradition: ${alt}.`,
+  };
+}
+
+/** Formats a CCES2016_GROUP_ORDER-keyed {pct} result set into alt text,
+ * shared by the seven single-percentage CCES 2016 graphics below. */
+function cces2016PctAlt(results: Record<string, { pct: number | null }>): string {
+  return CCES2016_GROUP_ORDER
+    .map((group) => `${group} ${results[group]!.pct?.toFixed(0) ?? "n/a"}%`)
+    .join(", ");
+}
+
+/**
+ * Grant legal status (3+ years worked, no felonies) - a select-all
+ * immigration item, by the CCES 2016 extract's full 12-category religion
+ * variable. Built from cces2016-by-religion.json
+ * (scripts/ryan-burge/cces2016_by_religion.py), rendered by
+ * scripts/ryan-burge/render_cces2016_by_religion_charts.py.
+ */
+function cces2016PathwayGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.pathway_selected);
+  return {
+    title: "Grant legal status: 3+ years worked, no felonies",
+    description: "Share who selected this option in a multi-select immigration-policy battery.",
+    imageSrc: "/data-explorer/cces-2016/pathway.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share selecting legal-status-for-workers in a multi-select battery, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Increase border patrols - same select-all battery, population, data
+ * source, and render script as the graphic above.
+ */
+function cces2016BorderGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.border_selected);
+  return {
+    title: "Increase border patrols",
+    description: "Share who selected this option in a multi-select immigration-policy battery.",
+    imageSrc: "/data-explorer/cces-2016/border.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share selecting increased border patrols in a multi-select battery, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Grant legal status to Dreamers - same select-all battery, population,
+ * data source, and render script as the graphic above.
+ */
+function cces2016DreamerGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.dreamer_selected);
+  return {
+    title: "Grant legal status to Dreamers",
+    description: "Share who selected this option in a multi-select immigration-policy battery.",
+    imageSrc: "/data-explorer/cces-2016/dreamer.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share selecting legal status for Dreamers in a multi-select battery, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Identify and deport illegal immigrants - same select-all battery,
+ * population, data source, and render script as the graphic above.
+ */
+function cces2016DeportGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.deport_selected);
+  return {
+    title: "Identify and deport illegal immigrants",
+    description: "Share who selected this option in a multi-select immigration-policy battery.",
+    imageSrc: "/data-explorer/cces-2016/deport.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share selecting identify-and-deport in a multi-select battery, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Always allow abortion as a matter of choice (support), by the CCES
+ * 2016 extract's full religion variable. Same data source and render
+ * script as the graphics above.
+ */
+function cces2016ProchoiceGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.prochoice_support);
+  return {
+    title: "Always allow abortion as a matter of choice",
+    description:
+      "Share who support always allowing a woman to obtain an abortion as a matter of choice.",
+    imageSrc: "/data-explorer/cces-2016/prochoice.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share supporting unrestricted abortion access, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Make abortion illegal in all circumstances (support), by the CCES 2016
+ * extract's full religion variable. Same data source and render script
+ * as the graphics above.
+ */
+function cces2016ProlifeGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.prolife_support);
+  return {
+    title: "Make abortion illegal in all circumstances",
+    description: "Share who support making abortion illegal in all circumstances.",
+    imageSrc: "/data-explorer/cces-2016/prolife.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share supporting a total abortion ban, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Favor same-sex marriage, by the CCES 2016 extract's full religion
+ * variable. Same data source and render script as the graphics above.
+ */
+function cces2016GaymGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.gaym_favor);
+  return {
+    title: "Favor same-sex marriage",
+    description: "Share who favor allowing gays and lesbians to marry legally.",
+    imageSrc: "/data-explorer/cces-2016/gaym.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share favoring same-sex marriage, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Religious attendance, full 6-category distribution, by the CCES 2016
+ * extract's full religion variable. Same data source and render script
+ * as the graphics above.
+ */
+function cces2016AttendGraphic(): Graphic {
+  const { attend_distribution: results, attend_order: order } = cces2016Data;
+  const alt = CCES2016_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct]?.toFixed(0) ?? "n/a"}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Religious attendance, full distribution",
+    description: "How often each religion group attends religious services.",
+    imageSrc: "/data-explorer/cces-2016/attend-distribution.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `100%-stacked bar chart, religious attendance frequency by religion: ${alt}.`,
   };
 }
 

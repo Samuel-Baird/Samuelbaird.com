@@ -74,41 +74,6 @@ there's a lot more in it than this file scopes out.
 
 ## Pending
 
-### CCES 2016 — by religion, religious vs. non-religious (N=870 LDS)
-
-Population for every item in this group: the full `religion` variable (12
-categories — Protestant, Catholic, Mormon, Orthodox, Jewish, Muslim,
-Buddhist, Hindu, Atheist, Agnostic, Nothing in particular, Something
-else), so the comparison includes both other religious traditions and the
-non-religious categories, not just "LDS vs. everyone else." **NEEDS DESIGN
-DECISION**: several of these traditions are thin even before splitting by
-a response category (Muslim N=436, Hindu N=299, Buddhist N=621) — decide
-whether to show all 12 groups or collapse the smallest into an "other
-religion" bucket, and flag which was chosen in the chart's own caption, the
-way the Pew RLS backlog's cutpoint decisions do. All items below are
-unweighted (see this file's note above).
-
-- **Immigration — grant legal status to those with 3+ years of work and no
-  felonies** — `pathway` (`CC16_331_1`), select/not-selected.
-- **Immigration — increase border patrols on the U.S.-Mexican border** —
-  `border` (`CC16_331_2`), select/not-selected.
-- **Immigration — grant legal status to those brought illegally as
-  children who graduated a U.S. high school (Dreamers)** — `dreamer`
-  (`CC16_331_3`), select/not-selected.
-- **Immigration — identify and deport illegal immigrants** — `deport`
-  (`CC16_331_7`), select/not-selected.
-- **Always allow abortion as a matter of choice** — `prochoice`
-  (`CC16_332a`), support/oppose.
-- **Make abortion illegal in all circumstances** — `prolife`
-  (`CC16_332f`), support/oppose.
-- **Favor or oppose same-sex marriage** — `gaym` (`CC16_335`),
-  favor/oppose.
-- **Religious service attendance** — `attend` (`pew_churatd`), 6-category
-  (More than once a week / Once a week / Once or twice a month / A few
-  times a year / Seldom / Never) — a full-distribution stacked bar per
-  religion group, not a single %, since this is the one item in this group
-  that isn't binary.
-
 ### CES stacked — party ID over time (N=5,955 LDS across 2006–2018)
 
 - **Party ID (pid7), LDS men vs. LDS women, over time.** LDS N by year and
@@ -164,6 +129,25 @@ was chosen. Use `weight_2017` for all four.
 
 ## Shipped
 
+- **2026-08-26 — CCES 2016 by religion (8 charts).** Four immigration
+  select-all items ([pathway](../../../public/data-explorer/cces-2016/pathway.png),
+  [border](../../../public/data-explorer/cces-2016/border.png),
+  [dreamer](../../../public/data-explorer/cces-2016/dreamer.png),
+  [deport](../../../public/data-explorer/cces-2016/deport.png)), two
+  abortion items
+  ([prochoice](../../../public/data-explorer/cces-2016/prochoice.png),
+  [prolife](../../../public/data-explorer/cces-2016/prolife.png)), same-sex
+  marriage
+  ([gaym](../../../public/data-explorer/cces-2016/gaym.png)), and
+  [religious attendance, full distribution](../../../public/data-explorer/cces-2016/attend-distribution.png).
+  **Design decision made**: all 12 `religion` categories shown
+  individually, not collapsed — even the thinnest (Hindu N=299, Muslim
+  N=436) are large enough for a rough %, the same call already made for
+  Pew RLS's even-thinner "Other world religions" (n=99). Unweighted per
+  this file's own note (`cces2016_small_cces.csv` carries no weight
+  column). Computed by `scripts/ryan-burge/cces2016_by_religion.py`,
+  rendered by `scripts/ryan-burge/render_cces2016_by_religion_charts.py`.
+  Wired into `/data-explorer/cces-2016/graphics`.
 - **2026-08-25/26 — Party ID (pid7) over time, by religious tradition.**
   Shipped 2026-08-25 as an in-app interactive chart (`WaveLineChart`), then
   replaced 2026-08-26 with a downloadable PNG when the site retired its
