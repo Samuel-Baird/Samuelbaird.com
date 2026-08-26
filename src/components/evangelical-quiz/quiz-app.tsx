@@ -43,13 +43,10 @@ type Step = "landing" | "demographics" | "question" | "results";
 export function EvangelicalQuizApp({
   initialAnswers,
   signedIn,
-  datasetHref,
   needsDemographics,
 }: {
   initialAnswers: AnswerMap;
   signedIn: boolean;
-  /** Where "back to the dataset" on the results screen should go. */
-  datasetHref: string | null;
   /**
    * Server-side "should we ask" verdict: for signed-in readers, whether
    * profiles.demographics_updated_at is unset. Always true for anonymous
@@ -230,12 +227,5 @@ export function EvangelicalQuizApp({
     );
   }
 
-  return (
-    <ResultsScreen
-      answers={answers}
-      onRetake={retake}
-      datasetHref={datasetHref}
-      signedIn={signedIn}
-    />
-  );
+  return <ResultsScreen answers={answers} onRetake={retake} signedIn={signedIn} />;
 }

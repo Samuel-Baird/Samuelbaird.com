@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, History, RotateCcw } from "lucide-react";
+import { History, RotateCcw } from "lucide-react";
 import { useAuthPrompt } from "@/components/auth-prompt";
 import { BeehiveMark } from "@/components/beehive-mark";
 import {
@@ -39,13 +39,10 @@ function directionPhrase(row: BreakdownRow): string {
 export function ResultsScreen({
   answers,
   onRetake,
-  datasetHref,
   signedIn,
 }: {
   answers: AnswerMap;
   onRetake: () => void;
-  /** Where the top-of-page "back" link should go, once the quiz is done. */
-  datasetHref: string | null;
   signedIn: boolean;
 }) {
   const score = percentileScore(QUIZ_DATA, answers);
@@ -62,17 +59,7 @@ export function ResultsScreen({
 
   return (
     <div>
-      {datasetHref && (
-        <Link
-          href={datasetHref}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)] hover:underline"
-        >
-          <ArrowLeft aria-hidden="true" size={13} />
-          Back to Data Explorer
-        </Link>
-      )}
-
-      <p className="small-caps mt-6 text-[11px] font-medium text-[color:var(--honey)]">
+      <p className="small-caps text-[11px] font-medium text-[color:var(--honey)]">
         Your result
       </p>
 
