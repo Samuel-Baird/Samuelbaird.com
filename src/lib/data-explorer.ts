@@ -8,6 +8,9 @@
 
 import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-quiz";
 import switchingRatesData from "../../docs/datasets/pew-rls-2023-24/switching-rates.json";
+import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switching-generalized.json";
+import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
+import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
   title: string;
@@ -38,6 +41,20 @@ const SWITCHING_GROUP_ORDER = [
   "Protestant",
   "Other Christian",
   "Orthodox Christian",
+];
+
+/** Group order shared by the three "switching, generalized" + birth-decade
+ * graphics below, and by their render scripts
+ * (scripts/pew-rls/render_switching_generalized_chart.py,
+ * scripts/pew-rls/render_birth_decade_chart.py) - keep all three in sync. */
+const GENERALIZED_GROUP_ORDER = [
+  "Latter-day Saint",
+  "Catholic",
+  "Protestant",
+  "Orthodox Christian",
+  "Jehovah's Witness",
+  "Other Christian",
+  "Christian average",
 ];
 
 /** A direct quotation of how the dataset's own source describes itself. */
@@ -169,7 +186,12 @@ export const DATASETS: Dataset[] = [
         "Appendix A of the accompanying report before comparing across waves.",
     ],
     methodologySourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
-    graphics: [pewSwitchingRatesGraphic()],
+    graphics: [
+      pewSwitchingRatesGraphic(),
+      pewSwitchingCurrentCompositionGraphic(),
+      pewSwitchingRaisedCohortGraphic(),
+      pewBirthDecadeGraphic(),
+    ],
   },
   {
     slug: "cces-2016",
@@ -204,7 +226,7 @@ export const DATASETS: Dataset[] = [
       "enough to break that group out by year and by gender and still have a usable sample in " +
       "most cells.",
     sourceUrl: "https://github.com/ryanburge/pets",
-    graphics: [],
+    graphics: [cesPidOverTimeGraphic()],
   },
   {
     slug: "voter-survey-panel",
@@ -261,6 +283,111 @@ function pewSwitchingRatesGraphic(): Graphic {
       `tradition to the share currently in it. ${netChangeAlt}. Faded bars (Other ` +
       `Christian, Orthodox Christian) have a 95% confidence interval that includes zero. ` +
       `Below it, current Protestant tradition composition: ${protestantAlt}.`,
+  };
+}
+
+/**
+ * "Of today's members, raised in it or converted in?" - one half of
+ * GRAPHICS_TODO.md's "Switching, generalized" item. Built from
+ * switching-generalized.json (scripts/pew-rls/switching_generalized.py),
+ * rendered by scripts/pew-rls/render_switching_generalized_chart.py.
+ */
+function pewSwitchingCurrentCompositionGraphic(): Graphic {
+  const { switching_generalized: switching } = switchingGeneralizedData;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = switching[group as keyof typeof switching];
+    return `${group} raised in it ${g.retained_in_pct.toFixed(0)}%, converted in ${g.converted_in_pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Of today's members: raised in it, or converted in?",
+    description:
+      "Each tradition's current membership, split by whether they were raised in it or " +
+      "joined from elsewhere.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/switching-current-composition.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, share of each tradition's current membership: ${alt}.`,
+  };
+}
+
+/**
+ * "Of those raised in it, stayed or left?" - the other half of the same
+ * backlog item; see pewSwitchingCurrentCompositionGraphic above for why
+ * this is a separate figure rather than one merged bar (different
+ * denominators - current members there, the raised cohort here).
+ */
+function pewSwitchingRaisedCohortGraphic(): Graphic {
+  const { switching_generalized: switching } = switchingGeneralizedData;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = switching[group as keyof typeof switching];
+    return `${group} stayed ${g.stayed_pct.toFixed(0)}%, left ${g.left_pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Of those raised in it: still in it, or left?",
+    description: "People raised in each tradition, split by whether they're still in it today.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/switching-raised-cohort.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, share of each tradition's raised-in-it cohort: ${alt}.`,
+  };
+}
+
+/**
+ * Birth-decade makeup by tradition. Built from birth-decade-distribution.json
+ * (scripts/pew-rls/birth_decade_distribution.py), rendered by
+ * scripts/pew-rls/render_birth_decade_chart.py.
+ */
+function pewBirthDecadeGraphic(): Graphic {
+  const { distribution, decade_order: decadeOrder } = birthDecadeData;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = distribution[group as keyof typeof distribution];
+    const shares = decadeOrder
+      .map((d) => `${d} ${g.shares_pct[d as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Birth-decade makeup, by tradition",
+    description:
+      "Share of each tradition's current members born in each decade — the finest age " +
+      "measure the public-use file offers.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, birth-decade share of each tradition's current members. ${alt}.`,
+  };
+}
+
+/**
+ * Party ID (pid7) over time, by tradition - the CES Stacked entry's own
+ * graphic. Built from pid-over-time.json (scripts/ryan-burge/pid_over_time.py),
+ * rendered by scripts/ryan-burge/render_pid_over_time_chart.py.
+ */
+function cesPidOverTimeGraphic(): Graphic {
+  const { waves, series } = pidOverTimeData;
+  const alt = Object.entries(series)
+    .map(([group, s]) => {
+      const points = waves
+        .map((yr, i) => (s.values[i] == null ? null : `${yr} ${s.values[i]!.toFixed(2)}`))
+        .filter((p): p is string => p != null)
+        .join(", ");
+      return `${group}: ${points}`;
+    })
+    .join("; ");
+
+  return {
+    title: "Party ID over time, by tradition",
+    description:
+      "Mean 7-point party ID (-3 = strong Democrat, +3 = strong Republican) across seven " +
+      "federal election cycles.",
+    imageSrc: "/data-explorer/ces-stacked-2006-2018/pid-over-time.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Line chart, mean 7-point party ID by tradition and survey wave. ${alt}.`,
   };
 }
 

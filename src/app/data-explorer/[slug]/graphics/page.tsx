@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
-import { DATASET_FIGURES } from "@/components/charts/figures";
 import { DeseretTitle } from "@/components/deseret-title";
 import { DATASETS, getDataset } from "@/lib/data-explorer";
 
@@ -36,8 +35,6 @@ export default async function DatasetGraphicsPage({
   const dataset = getDataset(slug);
   if (!dataset) notFound();
 
-  const Figures = DATASET_FIGURES[dataset.slug] ?? [];
-
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <Link
@@ -55,14 +52,6 @@ export default async function DatasetGraphicsPage({
         Charts made from the {dataset.name} dataset. Free to download and share — credit
         appears on each image.
       </p>
-
-      {Figures.length > 0 && (
-        <section className="mt-12 space-y-8">
-          {Figures.map((Figure, i) => (
-            <Figure key={i} />
-          ))}
-        </section>
-      )}
 
       <div className="mt-12 grid gap-8 sm:grid-cols-2">
         {dataset.graphics.map((graphic) => (

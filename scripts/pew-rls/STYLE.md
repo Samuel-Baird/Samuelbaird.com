@@ -96,3 +96,47 @@ text especially — it carries the full raised/current numbers per group,
 since the image itself only labels the net-change value) from that same
 JSON, so the image, the alt text, and the gallery page can't quietly
 disagree.
+
+## 100%-stacked composition: "switching, generalized" and birth-decade
+
+Two more chart shapes on this dataset's `/graphics` page follow this same
+compute-then-render split, but as a 100%-stacked horizontal bar rather than
+a diverging one — "what's this group made of," not "how has it changed."
+Both retired an in-app "Interactive" `StackedBars` twin on 2026-08-26 (see
+`docs/CHARTS.md`'s "History" note) in favor of the PNG being the only copy.
+
+**Switching, generalized** (`switching_generalized.py` →
+`switching-generalized.json` → `render_switching_generalized_chart.py` →
+two PNGs, `switching-current-composition.png` and
+`switching-raised-cohort.png`): reuses the identity-neutral palette from
+the net-change chart above, not a per-tradition color, because the segments
+here are also a rate/status split (raised-in vs. converted-in; stayed vs.
+left), not a group identity. `--accent` for "raised in it"/"stayed" (the
+same weighted headcount read against two different denominators), `--honey`
+for "converted in," `--oxblood` for "left" per the site's decline-token
+rule.
+
+**Birth-decade makeup** (`birth_decade_distribution.py` →
+`birth-decade-distribution.json` → `render_birth_decade_chart.py` →
+`birth-decade-distribution.png`): a genuinely ordinal scale (which decade),
+so it uses a single-hue ramp instead — the light-mode hex values of
+`--chart-ordinal-1..7` from `src/app/globals.css`, hardcoded in the render
+script the same way every other token in this pipeline is (the PNG
+pipeline never reads CSS custom properties or Tailwind classes; see
+`docs/CHARTS.md`'s Scope note). Steps 1-4 (the faint end) get dark label
+text, steps 5-7 (the intense end) get white — the same split
+`src/components/charts/palette.ts` used to document for the in-app kit's
+now-deleted `LABEL_ON` map, before that map's only consumers were removed.
+
+Regenerate either:
+
+```bash
+python scripts/pew-rls/switching_generalized.py
+python scripts/pew-rls/render_switching_generalized_chart.py \
+  --composition-out ../../public/data-explorer/pew-religious-landscape-study/switching-current-composition.png \
+  --raised-cohort-out ../../public/data-explorer/pew-religious-landscape-study/switching-raised-cohort.png
+
+python scripts/pew-rls/birth_decade_distribution.py
+python scripts/pew-rls/render_birth_decade_chart.py \
+  --out ../../public/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png
+```

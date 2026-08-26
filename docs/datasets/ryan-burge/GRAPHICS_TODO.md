@@ -164,15 +164,22 @@ was chosen. Use `weight_2017` for all four.
 
 ## Shipped
 
-- **2026-08-25 — Party ID (pid7) over time, by religious tradition.**
-  Shipped as an interactive chart (`WaveLineChart`), not a PNG — see
-  `docs/CHARTS.md` for the house chart kit this and future data-explorer
-  figures use. **Design decision made**: hand-picked group set (Mormon,
-  Catholic, Southern Baptist, United Methodist, Nothing in Particular,
-  Atheist, Jewish — the last aggregating five Jewish denominational rows in
-  the source, since it has no single unified "Jewish" category), per this
-  file's own recommendation, rather than a RELTRAD rollup that would erase
-  LDS entirely. Data: `scripts/ryan-burge/pid_over_time.py` →
-  `docs/datasets/ryan-burge/pid-over-time.json`. Wired into
+- **2026-08-25/26 — Party ID (pid7) over time, by religious tradition.**
+  Shipped 2026-08-25 as an in-app interactive chart (`WaveLineChart`), then
+  replaced 2026-08-26 with a downloadable PNG when the site retired its
+  interactive-figure/PNG "twin" pattern site-wide (see `docs/CHARTS.md`) —
+  every data-explorer graphic is now the single PNG, no in-app duplicate.
+  **Design decision made**: hand-picked group set (Mormon, Catholic,
+  Southern Baptist, United Methodist, Nothing in Particular, Atheist, Jewish
+  — the last aggregating five Jewish denominational rows in the source,
+  since it has no single unified "Jewish" category), per this file's own
+  recommendation, rather than a RELTRAD rollup that would erase LDS
+  entirely. Data: `scripts/ryan-burge/pid_over_time.py` →
+  `docs/datasets/ryan-burge/pid-over-time.json`. Rendered by
+  `scripts/ryan-burge/render_pid_over_time_chart.py` (the first PNG line
+  chart in this codebase's graphics pipeline — translates `WaveLineChart`'s
+  own conventions onto the static canvas: donut markers, a dashed connector
+  across a gap, end-of-line labels instead of a legend, highlight-vs-gray
+  with Latter-day Saint as the one highlighted series). Wired into
   `/data-explorer/ces-stacked-2006-2018/graphics` via
-  `src/components/charts/figures/pid-over-time-figure.tsx`.
+  `cesPidOverTimeGraphic()` in `src/lib/data-explorer.ts`.
