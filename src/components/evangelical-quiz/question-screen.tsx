@@ -105,8 +105,6 @@ export function QuestionScreen({
 
       {answered && (
         <>
-          <GroupBreakdownChart item={item} chosenIndex={chosen} />
-
           <button
             type="button"
             onClick={onContinue}
@@ -115,6 +113,8 @@ export function QuestionScreen({
             {isLast ? "See your results" : "Next question"}
             <ArrowRight aria-hidden="true" size={15} />
           </button>
+
+          <GroupBreakdownChart item={item} chosenIndex={chosen} />
         </>
       )}
     </div>

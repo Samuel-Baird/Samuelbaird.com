@@ -3,7 +3,23 @@ import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import { HowItWorks } from "./how-it-works";
 
-export function LandingScreen({ onStart }: { onStart: () => void }) {
+export function LandingScreen({
+  answeredCount,
+  hasFinished,
+  onStart,
+  onResume,
+  onViewResults,
+}: {
+  /** How many of this reader's answers are already saved (0 unless signed in). */
+  answeredCount: number;
+  /** True once every current item has a saved answer. */
+  hasFinished: boolean;
+  onStart: () => void;
+  onResume: () => void;
+  onViewResults: () => void;
+}) {
+  const inProgress = answeredCount > 0 && !hasFinished;
+
   return (
     <div>
       <h1 className="serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
@@ -27,13 +43,42 @@ export function LandingScreen({ onStart }: { onStart: () => void }) {
         </p>
       )}
 
-      <button
-        type="button"
-        onClick={onStart}
-        className="mt-8 inline-flex min-h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
-      >
-        Start
-      </button>
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        {hasFinished ? (
+          <>
+            <button
+              type="button"
+              onClick={onViewResults}
+              className="inline-flex min-h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+            >
+              View results
+            </button>
+            <button
+              type="button"
+              onClick={onStart}
+              className="inline-flex min-h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-6 text-sm font-medium hover:bg-[color:var(--muted-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+            >
+              Retake
+            </button>
+          </>
+        ) : inProgress ? (
+          <button
+            type="button"
+            onClick={onResume}
+            className="inline-flex min-h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+          >
+            Continue ({answeredCount} of {QUIZ_QUESTION_COUNT} answered)
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={onStart}
+            className="inline-flex min-h-11 items-center rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+          >
+            Start
+          </button>
+        )}
+      </div>
 
       <div className="mt-12">
         <HowItWorks />
