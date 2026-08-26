@@ -2,6 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { fmtCompact, fmtDate } from "@/lib/format";
+import { ChartTooltip } from "@/components/charts/chart-tooltip";
+import { EndOfLineLabel } from "@/components/charts/direct-labels";
+import { nearestByX, svgPointerX } from "@/components/charts/hover";
+import { linearScale } from "@/components/charts/scales";
 
 export type ComparisonSeries = {
   label: string;
@@ -65,39 +69,33 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
   const tMax = Math.max(...allTimes);
   const vMin = Math.min(...allValues);
   const vMax = Math.max(...allValues);
-  const tSpan = Math.max(1, tMax - tMin);
-  const vSpan = Math.max(1, vMax - vMin);
 
   const W = 800;
   const H = height;
   const padL = 8;
-  const padR = 8;
+  const padR = 88; // room for end-of-line labels
   const padT = 8;
   const padB = 24;
   const innerW = W - padL - padR;
   const innerH = H - padT - padB;
-  const x = (t: number) => padL + ((t - tMin) / tSpan) * innerW;
-  const y = (v: number) => padT + innerH - ((v - vMin) / vSpan) * innerH;
+  const x = (t: number) => linearScale(t, [tMin, tMax], [padL, padL + innerW]);
+  const y = (v: number) => linearScale(v, [vMin, vMax], [padT + innerH, padT]);
 
   function handleMouseMove(e: React.MouseEvent<SVGSVGElement>) {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const svgX = ((e.clientX - rect.left) / rect.width) * W;
+    const svgX = svgPointerX(e, W);
     // Use the first valid series as the time anchor
     const anchor = validSeries[0];
-    let anchorT = anchor.points[0].t;
-    let minDist = Infinity;
-    for (const p of anchor.points) {
-      const d = Math.abs(svgX - x(p.t));
-      if (d < minDist) { minDist = d; anchorT = p.t; }
-    }
+    const anchorPoint = nearestByX(
+      anchor.points.map((p) => ({ x: x(p.t), p })),
+      svgX,
+    );
+    const anchorT = anchorPoint.p.t;
     // For each series find the point nearest to anchorT
     const nearest = validSeries.map((s) => {
-      let best = s.points[0];
-      let bd = Infinity;
-      for (const p of s.points) {
-        const d = Math.abs(p.t - anchorT);
-        if (d < bd) { bd = d; best = p; }
-      }
+      const best = nearestByX(
+        s.points.map((p) => ({ x: p.t, p })),
+        anchorT,
+      ).p;
       return { label: s.label, color: s.color, value: best.v, iso: best.iso };
     });
     setHover({ xPct: (svgX / W) * 100, svgX, nearest });
@@ -172,7 +170,10 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                 />
-                <circle cx={x(last.t)} cy={y(last.v)} r={3.5} fill={s.color} />
+                {/* Donut marker on the last point, per the house line-chart spec */}
+                <circle cx={x(last.t)} cy={y(last.v)} r={5} fill="var(--surface)" />
+                <circle cx={x(last.t)} cy={y(last.v)} r={5} fill="none" stroke={s.color} strokeWidth={1.5} />
+                <circle cx={x(last.t)} cy={y(last.v)} r={2} fill={s.color} />
               </g>
             );
           })}
@@ -203,15 +204,25 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
             </>
           )}
         </svg>
+
+        {/* End-of-line labels, HTML overlay per the house text rule — direct
+            labeling in place of relying solely on the legend below. */}
+        {validSeries.map((s) => {
+          const last = s.points[s.points.length - 1];
+          return (
+            <EndOfLineLabel
+              key={s.label}
+              xPct={(x(last.t) / W) * 100}
+              yPct={(y(last.v) / H) * 100}
+              color={s.color}
+            >
+              {s.label}
+            </EndOfLineLabel>
+          );
+        })}
+
         {hover && (
-          <div
-            className="pointer-events-none absolute z-10 min-w-[120px] rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 py-2 text-xs"
-            style={{
-              left: `${hover.xPct}%`,
-              top: "8px",
-              transform: `translateX(${hover.xPct > 70 ? "-100%" : "8px"})`,
-            }}
-          >
+          <ChartTooltip xPct={hover.xPct} yPct={8} anchor="top">
             <div className="mb-1.5 font-medium text-[color:var(--muted)]">
               {fmtDate(hover.nearest[0].iso)}
             </div>
@@ -227,7 +238,7 @@ export function ComparisonChart({ series, height = 280, metricLabel = "Subscribe
                 </span>
               </div>
             ))}
-          </div>
+          </ChartTooltip>
         )}
       </div>
 

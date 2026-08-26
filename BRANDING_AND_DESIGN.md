@@ -230,6 +230,11 @@ hairline gridlines, `--muted` for axis labels, `--oxblood` for decline/negative
 signals, and `--honey` reserved for a *single* deliberate highlight. Never use a
 charting library's default palette.
 
+Full chart anatomy, the shared component kit (`src/components/charts/`), and
+per-chart-type specs (line, dot plot with CI, 100%-stacked, faceted small
+multiples) live in **[docs/CHARTS.md](docs/CHARTS.md)**. Read it before
+building a new chart or adding a chart type.
+
 ### Forms
 
 Inputs and selects use the standard radius and a hairline border; focus moves the
@@ -281,3 +286,4 @@ Checklist when adding UI:
 - [ ] Labels and eyebrows use `.small-caps`; dates in prose use `.serif-onum`.
 - [ ] Any new animation is gated on `prefers-reduced-motion`.
 - [ ] Works in both light and dark mode.
+- [ ] New charts follow [docs/CHARTS.md](docs/CHARTS.md).

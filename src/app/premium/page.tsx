@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChannelPicker } from "@/components/channel-picker";
+import { SERIES_PAINT } from "@/components/charts/palette";
 import {
   ComparisonChart,
   type ComparisonSeries,
@@ -29,15 +30,11 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-// Series colours are the ink families, so the chart reads as part of the site
-// and follows both themes. var() resolves in the SVG paint attributes that
-// comparison-chart sets, as well as in the legend swatch backgrounds.
-const PALETTE = [
-  "var(--accent)",
-  "var(--honey)",
-  "var(--oxblood)",
-  "var(--foreground)",
-];
+// Series colours are the canonical chart-kit palette (src/components/charts/
+// palette.ts), so this chart reads as part of the site and follows both
+// themes. var() resolves in the SVG paint attributes that comparison-chart
+// sets, as well as in the legend swatch backgrounds.
+const PALETTE = SERIES_PAINT;
 const MAX_COMPARE = 4;
 
 type SearchParams = { slugs?: string };

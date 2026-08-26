@@ -1,0 +1,172 @@
+{
+  "source": "Cooperative Election Studies (CCES/CES common content), 2006-2018",
+  "via": "Ryan Burge (github.com/ryanburge/pets)",
+  "method": "Mean 7-point party ID (Strong Democrat=-3 .. Strong Republican=+3, Independent=0) per year, within a hand-picked group set. This extract carries no survey weight column, so every number here is unweighted -- read it for shape and direction, not a number that needs to be exact. \"Jewish\" aggregates five denominational rows in the source (Conservative/Orthodox/Other/Reconstructionist/Reformed Jew); every other group is a single raw `trad` value.",
+  "group_set_note": "Standard RELTRAD would collapse everything outside Protestant/Catholic into \"other faith\", erasing LDS entirely, so this chart hand-picks named groups instead, the way the Pew switching-rates chart does.",
+  "waves": [
+    2006,
+    2008,
+    2010,
+    2012,
+    2014,
+    2016,
+    2017,
+    2018
+  ],
+  "series": {
+    "Latter-day Saint": {
+      "values": [
+        -0.967,
+        1.463,
+        1.158,
+        1.195,
+        1.027,
+        0.887,
+        0.609,
+        0.989
+      ],
+      "n": [
+        666,
+        618,
+        900,
+        870,
+        827,
+        849,
+        266,
+        804
+      ]
+    },
+    "Catholic": {
+      "values": [
+        -0.002,
+        -0.063,
+        0.025,
+        -0.143,
+        -0.24,
+        -0.368,
+        -0.314,
+        -0.122
+      ],
+      "n": [
+        7508,
+        6869,
+        12244,
+        11129,
+        11390,
+        13467,
+        3533,
+        11074
+      ]
+    },
+    "Southern Baptist": {
+      "values": [
+        null,
+        1.163,
+        0.605,
+        0.601,
+        0.438,
+        0.439,
+        0.704,
+        0.848
+      ],
+      "n": [
+        0,
+        1380,
+        2879,
+        2793,
+        2556,
+        2714,
+        747,
+        2626
+      ]
+    },
+    "United Methodist": {
+      "values": [
+        null,
+        0.313,
+        0.367,
+        0.385,
+        0.211,
+        0.166,
+        0.236,
+        0.313
+      ],
+      "n": [
+        0,
+        1570,
+        3038,
+        2736,
+        2509,
+        2604,
+        639,
+        2384
+      ]
+    },
+    "Nothing in Particular": {
+      "values": [
+        null,
+        -0.78,
+        -0.834,
+        -0.844,
+        -0.721,
+        -0.716,
+        -0.727,
+        -0.629
+      ],
+      "n": [
+        0,
+        3811,
+        7296,
+        7730,
+        9029,
+        11202,
+        3415,
+        11049
+      ]
+    },
+    "Atheist": {
+      "values": [
+        null,
+        -1.36,
+        null,
+        -1.538,
+        -1.545,
+        -1.461,
+        -1.603,
+        -1.581
+      ],
+      "n": [
+        0,
+        1091,
+        0,
+        2107,
+        2719,
+        3964,
+        1224,
+        4003
+      ]
+    },
+    "Jewish": {
+      "values": [
+        null,
+        -1.162,
+        -1.121,
+        -1.06,
+        -1.147,
+        -1.122,
+        -1.085,
+        -1.058
+      ],
+      "n": [
+        0,
+        681,
+        1643,
+        1226,
+        1378,
+        1505,
+        400,
+        1427
+      ]
+    }
+  }
+}

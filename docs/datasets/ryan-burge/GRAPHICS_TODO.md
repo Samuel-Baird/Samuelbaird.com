@@ -111,16 +111,6 @@ unweighted (see this file's note above).
 
 ### CES stacked — party ID over time (N=5,955 LDS across 2006–2018)
 
-- **Party ID (pid7) over time, by religious tradition.** **NEEDS DESIGN
-  DECISION**: the raw `trad` column has 85 denominations — unusable
-  directly as a chart's group set. Standard RELTRAD collapses everything
-  outside Protestant/Catholic into "other faith," which would erase LDS
-  entirely (see `data/ryan-burge/INVENTORY.md`'s caveat), so don't apply a
-  generic RELTRAD rollup here. Recommended default: hand-pick a named
-  comparison set the way the Pew switching-rates chart does (e.g. Mormon +
-  Catholic + Southern Baptist + United Methodist/ELCA + Nothing in
-  Particular + Atheist + Jewish) — confirm or change before building, and
-  note the chosen set in the chart's caption.
 - **Party ID (pid7), LDS men vs. LDS women, over time.** LDS N by year and
   gender: 2006 F=319/M=353, 2008 F=269/M=360, 2010 F=409/M=515, 2012
   F=496/M=410, 2014 F=385/M=473, 2016 F=414/M=456, 2017 F=134/M=139, 2018
@@ -173,3 +163,16 @@ was chosen. Use `weight_2017` for all four.
 ---
 
 ## Shipped
+
+- **2026-08-25 — Party ID (pid7) over time, by religious tradition.**
+  Shipped as an interactive chart (`WaveLineChart`), not a PNG — see
+  `docs/CHARTS.md` for the house chart kit this and future data-explorer
+  figures use. **Design decision made**: hand-picked group set (Mormon,
+  Catholic, Southern Baptist, United Methodist, Nothing in Particular,
+  Atheist, Jewish — the last aggregating five Jewish denominational rows in
+  the source, since it has no single unified "Jewish" category), per this
+  file's own recommendation, rather than a RELTRAD rollup that would erase
+  LDS entirely. Data: `scripts/ryan-burge/pid_over_time.py` →
+  `docs/datasets/ryan-burge/pid-over-time.json`. Wired into
+  `/data-explorer/ces-stacked-2006-2018/graphics` via
+  `src/components/charts/figures/pid-over-time-figure.tsx`.

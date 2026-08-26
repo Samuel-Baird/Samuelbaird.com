@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { fmtCompact, fmtDate } from "@/lib/format";
+import { ChartTooltip } from "@/components/charts/chart-tooltip";
+import { nearestByX, svgPointerX } from "@/components/charts/hover";
+import { linearScale } from "@/components/charts/scales";
 
 type Point = { captured_at: string; subscribers?: number; value?: number };
 
@@ -36,8 +39,6 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   const tMax = points[points.length - 1].t;
   const vMin = Math.min(...points.map((p) => p.v));
   const vMax = Math.max(...points.map((p) => p.v));
-  const vSpan = Math.max(1, vMax - vMin);
-  const tSpan = Math.max(1, tMax - tMin);
 
   const W = 800;
   const H = height;
@@ -48,8 +49,8 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   const innerW = W - padL - padR;
   const innerH = H - padT - padB;
 
-  const x = (t: number) => padL + ((t - tMin) / tSpan) * innerW;
-  const y = (v: number) => padT + innerH - ((v - vMin) / vSpan) * innerH;
+  const x = (t: number) => linearScale(t, [tMin, tMax], [padL, padL + innerW]);
+  const y = (v: number) => linearScale(v, [vMin, vMax], [padT + innerH, padT]);
 
   const path = points
     .map((p, i) => `${i === 0 ? "M" : "L"} ${x(p.t).toFixed(1)} ${y(p.v).toFixed(1)}`)
@@ -67,14 +68,11 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
   const up = delta >= 0;
 
   function handleMouseMove(e: React.MouseEvent<SVGSVGElement>) {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const svgX = ((e.clientX - rect.left) / rect.width) * W;
-    let nearest = points[0];
-    let minDist = Infinity;
-    for (const p of points) {
-      const d = Math.abs(svgX - x(p.t));
-      if (d < minDist) { minDist = d; nearest = p; }
-    }
+    const svgX = svgPointerX(e, W);
+    const nearest = nearestByX(
+      points.map((p) => ({ x: x(p.t), p })),
+      svgX,
+    ).p;
     setHover({
       xPct: (x(nearest.t) / W) * 100,
       yPct: (y(nearest.v) / H) * 100,
@@ -134,7 +132,10 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
             strokeLinejoin="round"
             vectorEffect="non-scaling-stroke"
           />
-          <circle cx={x(last.t)} cy={y(last.v)} r={3.5} fill="var(--accent)" />
+          {/* Donut marker on the last point, per the house line-chart spec */}
+          <circle cx={x(last.t)} cy={y(last.v)} r={5} fill="var(--surface)" />
+          <circle cx={x(last.t)} cy={y(last.v)} r={5} fill="none" stroke="var(--accent)" strokeWidth={1.5} />
+          <circle cx={x(last.t)} cy={y(last.v)} r={2} fill="var(--accent)" />
           {hover && (() => {
             const hx = (hover.xPct / 100) * W;
             const hy = (hover.yPct / 100) * H;
@@ -154,17 +155,10 @@ export function GrowthChart({ data, height = 200, label = "Subscribers" }: Props
           })()}
         </svg>
         {hover && (
-          <div
-            className="pointer-events-none absolute z-10 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 py-2 text-xs"
-            style={{
-              left: `${hover.xPct}%`,
-              top: `${hover.yPct}%`,
-              transform: `translate(${hover.xPct > 75 ? "-100%" : "8px"}, -110%)`,
-            }}
-          >
+          <ChartTooltip xPct={hover.xPct} yPct={hover.yPct} anchor="point">
             <div className="font-medium text-[color:var(--foreground)]">{fmtDate(hover.date)}</div>
             <div className="tabular-nums text-[color:var(--accent)]">{fmtCompact(hover.value)} {label.toLowerCase()}</div>
-          </div>
+          </ChartTooltip>
         )}
       </div>
     </div>

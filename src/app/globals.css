@@ -21,6 +21,19 @@
   --oxblood-soft: #f4e6e3;
   /* The one radius. Archive surfaces are flat panels, not pills. */
   --radius: 3px;
+  /* Single-hue ordinal ramp for charts (e.g. birth-decade shares), lightest
+     to most-intense. Authored per theme rather than computed from --accent
+     via color-mix(): every semantic token flips which end is "light" between
+     themes (dark mode reads light text on a dark surface), so mixing toward
+     --foreground or --accent-soft as a "light" anchor inverts the ramp's
+     order in dark mode. These are their own tokens for that reason. */
+  --chart-ordinal-1: #e8eff6;
+  --chart-ordinal-2: #c3d7e8;
+  --chart-ordinal-3: #96b9d6;
+  --chart-ordinal-4: #5e8db8;
+  --chart-ordinal-5: #1f4f7a;
+  --chart-ordinal-6: #163a5c;
+  --chart-ordinal-7: #0d2740;
   /* Fine fibrous grain, umber, capped at 8% alpha. The anisotropic
      baseFrequency stretches the noise horizontally so it reads as laid
      paper rather than TV static. stitchTiles keeps the tile seamless. */
@@ -41,6 +54,16 @@ html.dark {
   --honey-soft: #2b230f;
   --oxblood: #d98787;
   --oxblood-soft: #2a1a1a;
+  /* Same ramp, reauthored for the dark surface: increasing intensity means
+     increasing brightness against the dark background, the opposite
+     direction from the light theme above. */
+  --chart-ordinal-1: #16232e;
+  --chart-ordinal-2: #1e3247;
+  --chart-ordinal-3: #2c4a63;
+  --chart-ordinal-4: #3d648a;
+  --chart-ordinal-5: #7fb0d8;
+  --chart-ordinal-6: #a8cbe6;
+  --chart-ordinal-7: #d3e6f4;
   /* Layer 1 is the stone grain. Layer 2 thresholds the noise via the alpha
      row (alpha = 7A - 5.45) so only the brightest peaks survive as flecks,
      landing about 0.5% of pixels; make the constant more negative for
