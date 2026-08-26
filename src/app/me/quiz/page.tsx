@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Tag } from "@/components/tag";
+import { DemographicsEditor } from "@/components/evangelical-quiz/demographics-editor";
 import { requireUser } from "@/lib/auth";
 import { getQuizAnswersForUser } from "@/lib/quiz/answers";
+import { demographicsFromRow } from "@/lib/evangelical-quiz/demographics-row";
 import { QUIZ_SECTIONS, answeredCount, optionLabel, scoreSection } from "@/lib/quiz";
 
 export const metadata: Metadata = {
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function MeQuizPage() {
-  const { user } = await requireUser();
+  const { user, profile } = await requireUser();
   const answers = await getQuizAnswersForUser(user.id);
   const total = QUIZ_SECTIONS.reduce((n, s) => n + s.questions.length, 0);
   const answeredAll = QUIZ_SECTIONS.reduce(
@@ -115,6 +117,8 @@ export default async function MeQuizPage() {
           })}
         </div>
       )}
+
+      <DemographicsEditor initial={demographicsFromRow(profile)} />
     </div>
   );
 }
