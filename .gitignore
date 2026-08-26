@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local dataset microdata — too large for git, never committed.
+# Documentation and derived files live in docs/datasets/ instead; see
+# docs/datasets/pew-rls-2023-24/README.md.
+/data/

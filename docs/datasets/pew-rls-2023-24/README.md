@@ -49,10 +49,14 @@ python scripts/pew-rls/extract_codebook.py \
 
 The microdata itself — `2023-24 RLS Public Use File Feb 19.csv` (239 MB) and
 the SPSS `.sav` (119 MB). Both exceed GitHub's 100 MB per-file limit and
-would need Git LFS; neither is needed to build the site. Download them from
-Pew's [Religious Landscape Study
-page](https://www.pewresearch.org/religious-landscape-study/) and keep them
-outside the repo.
+would need Git LFS; neither is needed to build the site.
+
+On the repo owner's machine they sit, along with the rest of Pew's download
+exactly as Pew ships it, in `data/pew-rls-2023-24/` — inside the working
+tree but gitignored, so the files are one `cd` away without ever being
+staged. Anyone else: download them from Pew's [Religious Landscape Study
+page](https://www.pewresearch.org/religious-landscape-study/) into that same
+path and every script here will find them.
 
 Pew also ships two versions of the file. Everything here documents the
 **public-use file (PUF)**, which withholds a set of sensitive variables —
