@@ -87,56 +87,6 @@ the same public file won't produce a different answer.
   institution's impact on society, separately, not a joint compatibility
   framing.
 
-### Practice — population varies by item, follow each one exactly
-
-The requested population differs item to item here — don't default them
-all to the same rule.
-
-- **Religion important in their lives** — `RELIMP` (`Very`/`Somewhat`/
-  `Not too`/`Not at all important`). Population: Christian **+ other
-  religions**, **excluding** the religiously unaffiliated. Needs a decision
-  on the cutpoint — "very important" alone (top box) vs. "very" + "somewhat"
-  (top two) — flag which was chosen in the chart's own caption, the way the
-  State of Theology charts always specify "strongly + somewhat agree."
-- **Bible extremely/very important** — `BIBIMP` (`Extremely`/`Very`/
-  `Somewhat`/`Not too`/`Not at all important`). Population: **Christian
-  only**. "Extremely or very important" = categories 1+2, exactly as
-  asked — no cutpoint decision needed here, the request already names it.
-- **Attendance frequency, full distribution** (monthly+, weekly, once or
-  twice, etc.) — `ATTNDPERRLS`, same 6-point scale as `CHATTEND` above.
-  Population: **all religious groups** (this one isn't Christian-only).
-  A full-distribution stacked bar per group, not a single %.
-- **Attend in-person and/or online at least monthly** — needs a **derived**
-  value combining `ATTNDPERRLS` and `ATTNDONRLS` (identical 6-point scales)
-  with an OR: monthly-or-more on either one. Not a straight variable read —
-  compute the derived flag first. Population: all religious groups.
-- **Member of a house of worship** — `MEMB` (`Yes`/`No`). Population: all
-  religions.
-- **Pray, frequency** — `PRAY` (`Several times a day` / `Once a day` /
-  `A few times a week` / `Once a week` / `A few times a month` / `Seldom` /
-  `Never`). Population: all religions. The request's "daily,
-  monthly/weekly, etc." suggests collapsing 7 categories into fewer
-  buckets for readability — needs a decision on the exact bucketing before
-  building.
-- **Read scripture outside of religious services, weekly+** — `PRAC_B`
-  (`At least once a week` / `Once or twice a month` / `Several times a
-  year` / `Seldom` / `Never`). Population: **all religions** (as asked —
-  note this one is *not* Christian-restricted, unlike the next item, which
-  is the same battery but a different practice).
-- **Read other holy texts aside from scripture, weekly+** (devotions,
-  inspirational literature) — `PRAC_C`, same 5-point scale as `PRAC_B`.
-  Population: **Christian only** — deliberately narrower than the scripture
-  item above; keep that distinction, don't default both to the same
-  population.
-- **Pray or say grace before meals** — `GRACE` (`Always`/`Often`/
-  `Sometimes`/`Seldom`/`Never`). Population: Christian only. Needs a
-  decision on the cutpoint (Always alone, or Always+Often).
-- **Participate in prayer groups, scripture study, or religious education
-  programs** — `PRAC_A`, same 5-point scale as `PRAC_B`/`PRAC_C`.
-  Population: Christian only. Needs a decision on the frequency threshold
-  that counts (e.g., "at least once a week" alone, vs. any regular
-  participation above "seldom").
-
 ### Beliefs
 
 - **Belief in souls** — `SOUL` (`Yes`/`No`).
@@ -216,3 +166,4 @@ all to the same rule.
 - [Switching, generalized](../../../public/data-explorer/pew-religious-landscape-study/switching-current-composition.png) — 2026-08-25/26, two PNGs: [current composition](../../../public/data-explorer/pew-religious-landscape-study/switching-current-composition.png) + [raised cohort](../../../public/data-explorer/pew-religious-landscape-study/switching-raised-cohort.png). Same `FRMREL`/`CURREL` cross-tab as the net-change chart, reframed as composition rather than one net number. Chart-form decision: a small-multiples pair (not one merged bar) — one is current-membership composition (raised-in vs. converted-in, % of `CURREL`==group), the other is the raised cohort's outcome (stayed vs. left, % of `FRMREL`==group); the "stayed"/"raised-in" segment is the same weighted headcount in both so it shares one color (`--accent`) across them, "converted in" takes `--honey`, "left" takes `--oxblood` per the decline-token rule. Computed by `scripts/pew-rls/switching_generalized.py`, rendered by `scripts/pew-rls/render_switching_generalized_chart.py`.
 - [Childhood formation](../../../public/data-explorer/pew-religious-landscape-study/childhood-attendance.png) — 2026-08-26, three PNGs: [attendance monthly+](../../../public/data-explorer/pew-religious-landscape-study/childhood-attendance.png) (`CHATTEND` categories 1-3), [religion very important to family](../../../public/data-explorer/pew-religious-landscape-study/childhood-importance.png) (`CHIMPREL_B`=1), [religious education received](../../../public/data-explorer/pew-religious-landscape-study/childhood-education.png) (`CHEDU2` full 4-category distribution). Population: respondents raised in one of the six Christian `FRMREL` groups (Protestant combined), not current tradition, per the item's own note; each item excludes its own don't-know/refused (99) from its own denominator rather than sharing one base across all three. The two single-number items use the highlight-vs-gray convention (Latter-day Saint in `--accent`, every other group in a bar-safe gray) since they're magnitude comparisons, not a decline/composition split; the education item is a 100%-stacked bar with its own light-to-dark tan ramp (distinct from the ordinal blue ramp birth-decade uses, so the two "which stage" scales on this page don't read as the same variable). Computed by `scripts/pew-rls/childhood_formation.py`, rendered by `scripts/pew-rls/render_childhood_formation_charts.py`.
 - [Family and household](../../../public/data-explorer/pew-religious-landscape-study/family-children-at-home.png) — 2026-08-26, two PNGs: [children at home](../../../public/data-explorer/pew-religious-landscape-study/family-children-at-home.png) (`CHILDREN`=Yes, population: six Christian `CURREL` groups + Christian average) and [pray/read scripture with kids](../../../public/data-explorer/pew-religious-landscape-study/family-kidact-prayer.png) (`KIDACT_A`=Yes, population per the item's own note widened to Christian + an "Other religions" bucket (Jewish/Muslim/Buddhist/Hindu/other-world/other-faiths) + a religiously-affiliated average, **filtered to parents only** — `CHILDREN`=Yes — so every group's denominator is that group's own parents, not the whole group). Both use current tradition (`CURREL`), not raised-in (`FRMREL`) — a population switch from the childhood-formation items above it, since these two ask about the respondent's life today. Computed by `scripts/pew-rls/family_household.py`, rendered by `scripts/pew-rls/render_family_household_charts.py`.
+- [Practice](../../../public/data-explorer/pew-religious-landscape-study/practice-relimp.png) — 2026-08-26, ten PNGs from one compute/render pair covering the whole "Practice" section, three population sets per each item's own note (see `scripts/pew-rls/practice.py`'s docstring): Christian only (7 rows), Christian + other religions (8 rows), and all twelve religiously-affiliated `CURREL` traditions individually + an all-religious average (13 rows) — the unaffiliated are excluded from every chart here, since no item in this section asked for them. **Design decisions made** (all four flagged by the backlog item, resolved and noted in `practice.json`'s own `design_decisions` key so a future chart can't silently disagree): `RELIMP` uses top-two-box (very+somewhat important); `PRAY`'s 7 categories collapse to 4 (Daily/Weekly/Monthly or less/Never); `GRACE` uses top-box (Always alone); `PRAC_A` uses "at least once a week" alone. Files: [religion important](../../../public/data-explorer/pew-religious-landscape-study/practice-relimp.png), [Bible important](../../../public/data-explorer/pew-religious-landscape-study/practice-bibimp.png), [attendance distribution](../../../public/data-explorer/pew-religious-landscape-study/practice-attend-distribution.png), [attend monthly+ in-person/online](../../../public/data-explorer/pew-religious-landscape-study/practice-attend-monthly-plus.png), [house-of-worship member](../../../public/data-explorer/pew-religious-landscape-study/practice-memb.png), [prayer frequency](../../../public/data-explorer/pew-religious-landscape-study/practice-pray-distribution.png), [scripture reading weekly+](../../../public/data-explorer/pew-religious-landscape-study/practice-pracb.png), [other holy texts weekly+](../../../public/data-explorer/pew-religious-landscape-study/practice-pracc.png), [grace before meals](../../../public/data-explorer/pew-religious-landscape-study/practice-grace.png), [prayer/study groups weekly+](../../../public/data-explorer/pew-religious-landscape-study/practice-praca.png). The two full-distribution items reuse the site's official ordinal ramp (`--chart-ordinal-1..7`), evenly resampled to however many segments each scale has, rather than inventing a new ramp per chart. Computed by `scripts/pew-rls/practice.py`, rendered by `scripts/pew-rls/render_practice_charts.py`.

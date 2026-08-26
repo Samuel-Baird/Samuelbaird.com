@@ -12,6 +12,7 @@ import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switch
 import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
 import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhood-formation.json";
 import familyHouseholdData from "../../docs/datasets/pew-rls-2023-24/family-household.json";
+import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -74,6 +75,15 @@ const KIDACT_GROUP_ORDER = [
   "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
   "Jehovah's Witness", "Other Christian", "Other religions",
   "Religiously affiliated average",
+];
+
+/** Group order for the six "Practice" items whose population is every
+ * religiously affiliated tradition individually (not lumped), matching
+ * ALL_RELIGIOUS_ORDER in scripts/pew-rls/render_practice_charts.py. */
+const ALL_RELIGIOUS_GROUP_ORDER = [
+  "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
+  "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
+  "Jewish", "Other world religions", "Other faiths", "All religious average",
 ];
 
 /** A direct quotation of how the dataset's own source describes itself. */
@@ -215,6 +225,16 @@ export const DATASETS: Dataset[] = [
       pewChildhoodEducationGraphic(),
       pewChildrenAtHomeGraphic(),
       pewKidactPrayerGraphic(),
+      pewRelimpGraphic(),
+      pewBibimpGraphic(),
+      pewAttendDistributionGraphic(),
+      pewAttendMonthlyPlusGraphic(),
+      pewMembGraphic(),
+      pewPrayDistributionGraphic(),
+      pewPracbGraphic(),
+      pewPraccGraphic(),
+      pewGraceGraphic(),
+      pewPracaGraphic(),
     ],
   },
   {
@@ -502,6 +522,203 @@ function pewKidactPrayerGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share of each tradition's parents who pray or read scripture with their children: ${alt}.`,
+  };
+}
+
+/** Formats a group-order list of {pct} results into "Group NN%, Group NN%,
+ * ..." for a magnitude-bar graphic's alt text - shared by every "Practice"
+ * single-percentage item below. */
+function pctAlt(
+  order: readonly string[],
+  results: Record<string, { pct: number }>,
+): string {
+  return order.map((group) => `${group} ${results[group]!.pct.toFixed(0)}%`).join(", ");
+}
+
+/**
+ * Religion is important in their life (very+somewhat, top-two-box), by
+ * current tradition. Built from practice.json (scripts/pew-rls/practice.py),
+ * rendered by scripts/pew-rls/render_practice_charts.py.
+ */
+function pewRelimpGraphic(): Graphic {
+  const alt = pctAlt(KIDACT_GROUP_ORDER, practiceData.relimp_important);
+  return {
+    title: "Religion is important in their life",
+    description: "Share who say religion is very or somewhat important in their life.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-relimp.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say religion is very or somewhat important in their life: ${alt}.`,
+  };
+}
+
+/**
+ * The Bible is important in their life (extremely+very), Christian only.
+ * Same data source and render script as the graphic above.
+ */
+function pewBibimpGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.bibimp_important);
+  return {
+    title: "The Bible is important in their life",
+    description: "Share who say the Bible is extremely or very important in their life.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-bibimp.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say the Bible is extremely or very important in their life: ${alt}.`,
+  };
+}
+
+/**
+ * Attendance frequency, full 6-category distribution, every religiously
+ * affiliated tradition individually. Same data source and render script
+ * as the graphic above.
+ */
+function pewAttendDistributionGraphic(): Graphic {
+  const { attend_distribution: results, attend_order: order } = practiceData;
+  const alt = ALL_RELIGIOUS_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Attendance frequency, full distribution",
+    description: "How often each tradition's members attend religious services in person.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-attend-distribution.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, religious attendance frequency by tradition. ${alt}.`,
+  };
+}
+
+/**
+ * Attend in-person and/or online, monthly or more (a derived flag: monthly+
+ * on either item). Same data source and render script as the graphic above.
+ */
+function pewAttendMonthlyPlusGraphic(): Graphic {
+  const alt = pctAlt(ALL_RELIGIOUS_GROUP_ORDER, practiceData.attend_monthly_plus_either);
+  return {
+    title: "Attend in-person and/or online, monthly or more",
+    description:
+      "Share attending religious services monthly or more, either in person or online/on TV.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-attend-monthly-plus.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share attending religious services monthly+ in person and/or online: ${alt}.`,
+  };
+}
+
+/**
+ * Member of a house of worship, every religiously affiliated tradition
+ * individually. Same data source and render script as the graphic above.
+ */
+function pewMembGraphic(): Graphic {
+  const alt = pctAlt(ALL_RELIGIOUS_GROUP_ORDER, practiceData.memb_member);
+  return {
+    title: "Member of a house of worship",
+    description:
+      "Share who are personally a member of a church, synagogue, mosque, temple, or other " +
+      "house of worship.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-memb.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who are a member of a house of worship, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Prayer frequency, collapsed to 4 buckets (see practice.py's
+ * design_decisions), every religiously affiliated tradition individually.
+ * Same data source and render script as the graphic above.
+ */
+function pewPrayDistributionGraphic(): Graphic {
+  const { pray_distribution: results, pray_order: order } = practiceData;
+  const alt = ALL_RELIGIOUS_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Prayer frequency",
+    description: "How often each tradition's members pray, outside of attending religious services.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-pray-distribution.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, prayer frequency by tradition. ${alt}.`,
+  };
+}
+
+/**
+ * Read scripture outside of services, weekly+, every religiously affiliated
+ * tradition individually. Same data source and render script as the
+ * graphic above.
+ */
+function pewPracbGraphic(): Graphic {
+  const alt = pctAlt(ALL_RELIGIOUS_GROUP_ORDER, practiceData.pracb_weekly_plus);
+  return {
+    title: "Read scripture outside of services, weekly+",
+    description: "Share reading scripture at least once a week, outside of religious services.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-pracb.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share reading scripture weekly+ outside of services, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Read other holy texts or devotions, weekly+, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewPraccGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.pracc_weekly_plus);
+  return {
+    title: "Read other holy texts or devotions, weekly+",
+    description:
+      "Share reading other holy texts, devotions, or inspirational literature at least " +
+      "once a week.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-pracc.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share reading other holy texts/devotions weekly+, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Always say grace before meals (top box), Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewGraceGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.grace_always);
+  return {
+    title: "Always say grace before meals",
+    description: "Share who always pray or say grace before meals.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-grace.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who always say grace before meals, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Prayer or scripture study groups, weekly+, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewPracaGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.praca_weekly_plus);
+  return {
+    title: "Prayer or scripture study groups, weekly+",
+    description:
+      "Share participating in prayer groups, scripture study, or religious education " +
+      "programs at least once a week.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-praca.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share in weekly+ prayer/scripture-study/religious-ed groups, by Christian tradition: ${alt}.`,
   };
 }
 

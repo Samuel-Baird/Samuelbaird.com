@@ -1,0 +1,707 @@
+{
+  "source": "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” doi: 10.58094/3kwb-bf52.",
+  "method": "Population is current tradition (CURREL), weighted by WEIGHT; each item excludes its own don't know/refused (99) from its own denominator. Three population sets, per GRAPHICS_TODO.md's own per-item notes: Christian (six groups + a weighted Christian average), Christian + other religions (those six plus a pooled 'Other religions' bucket and a religiously-affiliated average), and all religious groups (all twelve traditions individually plus an all-religious average) - the religiously unaffiliated are excluded from every population here, since none of this section's items ask for them.",
+  "design_decisions": {
+    "RELIMP": "Top-two-box (very + somewhat important) - matches the site's existing agree-scale convention.",
+    "PRAY": "Collapsed from 7 categories to 4: Daily (several times a day + once a day), Weekly (a few times a week + once a week), Monthly or less (a few times a month + seldom), Never.",
+    "GRACE": "Top box (Always) alone, not Always+Often.",
+    "PRAC_A": "\"At least once a week\" alone (the scale's own top category), matching PRAC_B/PRAC_C's identical weekly+ framing."
+  },
+  "total_weighted_n": 257520024.0,
+  "total_unweighted_n": 36908,
+  "relimp_important": {
+    "Protestant": {
+      "pct": 88.51,
+      "valid_unweighted_n": 15014,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 82.67,
+      "valid_unweighted_n": 6931,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 95.78,
+      "valid_unweighted_n": 564,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 76.19,
+      "valid_unweighted_n": 222,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 98.39,
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 73.16,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 226
+    },
+    "Other religions": {
+      "pct": 59.73,
+      "valid_unweighted_n": 2567,
+      "group_unweighted_n": 2578
+    },
+    "Religiously affiliated average": {
+      "pct": 83.91,
+      "valid_unweighted_n": 25635,
+      "group_unweighted_n": 25764
+    }
+  },
+  "bibimp_important": {
+    "Protestant": {
+      "pct": 72.29,
+      "valid_unweighted_n": 15031,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 46.01,
+      "valid_unweighted_n": 6921,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 79.75,
+      "valid_unweighted_n": 565,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 45.7,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 97.95,
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 48.05,
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 64.1,
+      "valid_unweighted_n": 23079,
+      "group_unweighted_n": 23186
+    }
+  },
+  "attend_distribution": {
+    "Protestant": {
+      "shares_pct": {
+        "More than once a week": 13.75,
+        "Once a week": 26.43,
+        "Once or twice a month": 11.11,
+        "A few times a year": 19.25,
+        "Seldom": 21.78,
+        "Never": 7.68
+      },
+      "valid_unweighted_n": 14972,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "shares_pct": {
+        "More than once a week": 6.52,
+        "Once a week": 22.44,
+        "Once or twice a month": 11.04,
+        "A few times a year": 27.43,
+        "Seldom": 23.1,
+        "Never": 9.46
+      },
+      "valid_unweighted_n": 6930,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "shares_pct": {
+        "More than once a week": 19.49,
+        "Once a week": 49.32,
+        "Once or twice a month": 7.05,
+        "A few times a year": 13.46,
+        "Seldom": 6.8,
+        "Never": 3.87
+      },
+      "valid_unweighted_n": 563,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "shares_pct": {
+        "More than once a week": 5.42,
+        "Once a week": 17.14,
+        "Once or twice a month": 14.99,
+        "A few times a year": 23.37,
+        "Seldom": 29.56,
+        "Never": 9.52
+      },
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "shares_pct": {
+        "More than once a week": 68.26,
+        "Once a week": 6.56,
+        "Once or twice a month": 3.16,
+        "A few times a year": 4.26,
+        "Seldom": 9.9,
+        "Never": 7.87
+      },
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "shares_pct": {
+        "More than once a week": 4.54,
+        "Once a week": 11.97,
+        "Once or twice a month": 4.31,
+        "A few times a year": 20.53,
+        "Seldom": 34.99,
+        "Never": 23.67
+      },
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 226
+    },
+    "Jewish": {
+      "shares_pct": {
+        "More than once a week": 7.53,
+        "Once a week": 7.26,
+        "Once or twice a month": 8.37,
+        "A few times a year": 26.26,
+        "Seldom": 31.36,
+        "Never": 19.21
+      },
+      "valid_unweighted_n": 847,
+      "group_unweighted_n": 850
+    },
+    "Muslim": {
+      "shares_pct": {
+        "More than once a week": 17.11,
+        "Once a week": 21.64,
+        "Once or twice a month": 7.59,
+        "A few times a year": 21.51,
+        "Seldom": 18.62,
+        "Never": 13.53
+      },
+      "valid_unweighted_n": 272,
+      "group_unweighted_n": 273
+    },
+    "Buddhist": {
+      "shares_pct": {
+        "More than once a week": 2.34,
+        "Once a week": 4.2,
+        "Once or twice a month": 10.23,
+        "A few times a year": 26.88,
+        "Seldom": 35.01,
+        "Never": 21.35
+      },
+      "valid_unweighted_n": 345,
+      "group_unweighted_n": 348
+    },
+    "Hindu": {
+      "shares_pct": {
+        "More than once a week": 6.45,
+        "Once a week": 11.96,
+        "Once or twice a month": 16.32,
+        "A few times a year": 36.25,
+        "Seldom": 17.47,
+        "Never": 11.56
+      },
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 247
+    },
+    "Other world religions": {
+      "shares_pct": {
+        "More than once a week": 0.32,
+        "Once a week": 6.41,
+        "Once or twice a month": 5.08,
+        "A few times a year": 23.27,
+        "Seldom": 32.12,
+        "Never": 32.8
+      },
+      "valid_unweighted_n": 99,
+      "group_unweighted_n": 99
+    },
+    "Other faiths": {
+      "shares_pct": {
+        "More than once a week": 0.88,
+        "Once a week": 2.87,
+        "Once or twice a month": 5.23,
+        "A few times a year": 10.31,
+        "Seldom": 28.36,
+        "Never": 52.35
+      },
+      "valid_unweighted_n": 760,
+      "group_unweighted_n": 761
+    },
+    "All religious average": {
+      "shares_pct": {
+        "More than once a week": 11.27,
+        "Once a week": 23.66,
+        "Once or twice a month": 10.68,
+        "A few times a year": 21.66,
+        "Seldom": 22.5,
+        "Never": 10.24
+      },
+      "valid_unweighted_n": 25597,
+      "group_unweighted_n": 25764
+    }
+  },
+  "attend_order": [
+    "More than once a week",
+    "Once a week",
+    "Once or twice a month",
+    "A few times a year",
+    "Seldom",
+    "Never"
+  ],
+  "attend_monthly_plus_either": {
+    "Protestant": {
+      "pct": 62.8,
+      "valid_unweighted_n": 15043,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 46.55,
+      "valid_unweighted_n": 6943,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 79.79,
+      "valid_unweighted_n": 563,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 42.83,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 80.28,
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 45.39,
+      "valid_unweighted_n": 226,
+      "group_unweighted_n": 226
+    },
+    "Jewish": {
+      "pct": 28.58,
+      "valid_unweighted_n": 848,
+      "group_unweighted_n": 850
+    },
+    "Muslim": {
+      "pct": 56.59,
+      "valid_unweighted_n": 272,
+      "group_unweighted_n": 273
+    },
+    "Buddhist": {
+      "pct": 28.69,
+      "valid_unweighted_n": 348,
+      "group_unweighted_n": 348
+    },
+    "Hindu": {
+      "pct": 38.79,
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 247
+    },
+    "Other world religions": {
+      "pct": 16.77,
+      "valid_unweighted_n": 99,
+      "group_unweighted_n": 99
+    },
+    "Other faiths": {
+      "pct": 13.52,
+      "valid_unweighted_n": 760,
+      "group_unweighted_n": 761
+    },
+    "All religious average": {
+      "pct": 55.11,
+      "valid_unweighted_n": 25686,
+      "group_unweighted_n": 25764
+    }
+  },
+  "memb_member": {
+    "Protestant": {
+      "pct": 57.15,
+      "valid_unweighted_n": 14968,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 47.38,
+      "valid_unweighted_n": 6915,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 85.92,
+      "valid_unweighted_n": 564,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 53.83,
+      "valid_unweighted_n": 223,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 75.71,
+      "valid_unweighted_n": 111,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 33.37,
+      "valid_unweighted_n": 226,
+      "group_unweighted_n": 226
+    },
+    "Jewish": {
+      "pct": 42.61,
+      "valid_unweighted_n": 847,
+      "group_unweighted_n": 850
+    },
+    "Muslim": {
+      "pct": 35.2,
+      "valid_unweighted_n": 273,
+      "group_unweighted_n": 273
+    },
+    "Buddhist": {
+      "pct": 27.09,
+      "valid_unweighted_n": 346,
+      "group_unweighted_n": 348
+    },
+    "Hindu": {
+      "pct": 25.17,
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 247
+    },
+    "Other world religions": {
+      "pct": 26.52,
+      "valid_unweighted_n": 98,
+      "group_unweighted_n": 99
+    },
+    "Other faiths": {
+      "pct": 11.05,
+      "valid_unweighted_n": 754,
+      "group_unweighted_n": 761
+    },
+    "All religious average": {
+      "pct": 51.92,
+      "valid_unweighted_n": 25572,
+      "group_unweighted_n": 25764
+    }
+  },
+  "pray_distribution": {
+    "Protestant": {
+      "shares_pct": {
+        "Daily": 64.62,
+        "Weekly": 18.35,
+        "Monthly or less": 15.62,
+        "Never": 1.42
+      },
+      "valid_unweighted_n": 14979,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "shares_pct": {
+        "Daily": 51.5,
+        "Weekly": 20.91,
+        "Monthly or less": 24.16,
+        "Never": 3.44
+      },
+      "valid_unweighted_n": 6922,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "shares_pct": {
+        "Daily": 73.88,
+        "Weekly": 12.54,
+        "Monthly or less": 11.27,
+        "Never": 2.3
+      },
+      "valid_unweighted_n": 562,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "shares_pct": {
+        "Daily": 53.58,
+        "Weekly": 20.51,
+        "Monthly or less": 19.86,
+        "Never": 6.05
+      },
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "shares_pct": {
+        "Daily": 86.96,
+        "Weekly": 4.04,
+        "Monthly or less": 8.7,
+        "Never": 0.3
+      },
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "shares_pct": {
+        "Daily": 50.97,
+        "Weekly": 22.11,
+        "Monthly or less": 22.65,
+        "Never": 4.27
+      },
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 226
+    },
+    "Jewish": {
+      "shares_pct": {
+        "Daily": 21.96,
+        "Weekly": 11.41,
+        "Monthly or less": 42.38,
+        "Never": 24.26
+      },
+      "valid_unweighted_n": 844,
+      "group_unweighted_n": 850
+    },
+    "Muslim": {
+      "shares_pct": {
+        "Daily": 66.98,
+        "Weekly": 13.29,
+        "Monthly or less": 14.48,
+        "Never": 5.25
+      },
+      "valid_unweighted_n": 273,
+      "group_unweighted_n": 273
+    },
+    "Buddhist": {
+      "shares_pct": {
+        "Daily": 21.86,
+        "Weekly": 22.05,
+        "Monthly or less": 38.66,
+        "Never": 17.43
+      },
+      "valid_unweighted_n": 345,
+      "group_unweighted_n": 348
+    },
+    "Hindu": {
+      "shares_pct": {
+        "Daily": 46.06,
+        "Weekly": 18.38,
+        "Monthly or less": 29.75,
+        "Never": 5.81
+      },
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 247
+    },
+    "Other world religions": {
+      "shares_pct": {
+        "Daily": 41.25,
+        "Weekly": 18.78,
+        "Monthly or less": 22.46,
+        "Never": 17.52
+      },
+      "valid_unweighted_n": 99,
+      "group_unweighted_n": 99
+    },
+    "Other faiths": {
+      "shares_pct": {
+        "Daily": 25.12,
+        "Weekly": 19.3,
+        "Monthly or less": 32.03,
+        "Never": 23.55
+      },
+      "valid_unweighted_n": 752,
+      "group_unweighted_n": 761
+    },
+    "All religious average": {
+      "shares_pct": {
+        "Daily": 58.03,
+        "Weekly": 18.72,
+        "Monthly or less": 19.58,
+        "Never": 3.66
+      },
+      "valid_unweighted_n": 25584,
+      "group_unweighted_n": 25764
+    }
+  },
+  "pray_order": [
+    "Daily",
+    "Weekly",
+    "Monthly or less",
+    "Never"
+  ],
+  "pracb_weekly_plus": {
+    "Protestant": {
+      "pct": 40.96,
+      "valid_unweighted_n": 14942,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 14.27,
+      "valid_unweighted_n": 6912,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 59.8,
+      "valid_unweighted_n": 560,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 15.22,
+      "valid_unweighted_n": 221,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 81.08,
+      "valid_unweighted_n": 110,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 28.57,
+      "valid_unweighted_n": 226,
+      "group_unweighted_n": 226
+    },
+    "Jewish": {
+      "pct": 14.17,
+      "valid_unweighted_n": 841,
+      "group_unweighted_n": 850
+    },
+    "Muslim": {
+      "pct": 27.85,
+      "valid_unweighted_n": 272,
+      "group_unweighted_n": 273
+    },
+    "Buddhist": {
+      "pct": 13.43,
+      "valid_unweighted_n": 343,
+      "group_unweighted_n": 348
+    },
+    "Hindu": {
+      "pct": 11.98,
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 247
+    },
+    "Other world religions": {
+      "pct": 19.31,
+      "valid_unweighted_n": 98,
+      "group_unweighted_n": 99
+    },
+    "Other faiths": {
+      "pct": 7.64,
+      "valid_unweighted_n": 753,
+      "group_unweighted_n": 761
+    },
+    "All religious average": {
+      "pct": 31.24,
+      "valid_unweighted_n": 25525,
+      "group_unweighted_n": 25764
+    }
+  },
+  "pracc_weekly_plus": {
+    "Protestant": {
+      "pct": 33.39,
+      "valid_unweighted_n": 14929,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 15.35,
+      "valid_unweighted_n": 6906,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 48.14,
+      "valid_unweighted_n": 561,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 15.69,
+      "valid_unweighted_n": 223,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 58.8,
+      "valid_unweighted_n": 110,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 35.43,
+      "valid_unweighted_n": 226,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 28.24,
+      "valid_unweighted_n": 22955,
+      "group_unweighted_n": 23186
+    }
+  },
+  "grace_always": {
+    "Protestant": {
+      "pct": 26.9,
+      "valid_unweighted_n": 15001,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 17.31,
+      "valid_unweighted_n": 6936,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 40.64,
+      "valid_unweighted_n": 563,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 17.79,
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 45.41,
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 15.43,
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 24.21,
+      "valid_unweighted_n": 23063,
+      "group_unweighted_n": 23186
+    }
+  },
+  "praca_weekly_plus": {
+    "Protestant": {
+      "pct": 23.83,
+      "valid_unweighted_n": 14953,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 8.31,
+      "valid_unweighted_n": 6907,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 44.91,
+      "valid_unweighted_n": 560,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 6.34,
+      "valid_unweighted_n": 222,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 75.2,
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 14.21,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 19.67,
+      "valid_unweighted_n": 22979,
+      "group_unweighted_n": 23186
+    }
+  }
+}
