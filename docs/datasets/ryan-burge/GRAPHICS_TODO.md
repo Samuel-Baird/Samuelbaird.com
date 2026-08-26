@@ -74,43 +74,34 @@ there's a lot more in it than this file scopes out.
 
 ## Pending
 
-### VOTER Survey Panel — grouped by religion (2017 wave)
-
-All four items below are from the 2017 wave. **NEEDS DESIGN DECISION**:
-group by `religpew_2017` (matches the wave these items were asked in;
-N=84 LDS, 83 non-missing per item) or `religpew_baseline` (larger N=141–149,
-but reflects the respondent's religion as of the original baseline wave,
-which may not match their 2017 identification for panel members who
-converted or attrited differently by religion). Recommended default:
-`religpew_2017`, for wave-matched accuracy over sample size — flag which
-was chosen. Use `weight_2017` for all four.
-
-- **Feeling thermometer matrix — racial and religious groups, by
-  respondent's religion.** 7 targets, each `ft_*_2017`, 0–100 continuous
-  (exclude sentinel codes 997/998/999 = Don't know/Skipped/Not asked
-  before averaging): Blacks, Whites, Hispanics, Asians, Muslims, Jews,
-  Christians. One heatmap/small-multiples graphic, not 7 separate charts.
-- **Feeling thermometer matrix — political and social groups, by
-  respondent's religion.** 9 targets, same 0–100 scale and sentinel
-  handling as above: Feminists, Immigrants, Gays and lesbians, Labor
-  unions, Police officers, The alt-right movement, Evangelical Christians,
-  Democrats, Republicans. One heatmap/small-multiples graphic.
-- **Issue-importance matrix — by respondent's religion.** 23 issues, each
-  `imiss_*_2017`, 4-point (Very important / Somewhat important / Not very
-  important / Unimportant): crime, the economy, immigration, the
-  environment, religious liberty, terrorism, gay rights, education, family
-  and medical leave, health care, money in politics, climate change,
-  Social Security, infrastructure investment, jobs, the budget deficit,
-  poverty, taxes, Medicare, abortion, size of government, racial equality,
-  gender equality. **NEEDS DESIGN DECISION**: one heatmap needs a single
-  number per cell — decide top-box ("% very important" alone) vs. top-two-box
-  ("very" + "somewhat"), and flag which was chosen, the way the Pew RLS
-  backlog's own cutpoint items do.
+Empty — every item that was queued here has shipped. Per this file's own
+workflow note: **don't silently start pulling more variables from the
+VOTER Survey Panel on your own initiative.** Tell the user this backlog is
+clear and that it's a good time for them to sit down with the VOTER
+Survey Panel in depth themselves — it's an 867-variable, six-wave panel
+(`data/ryan-burge/reference/voter_survey_panel_variable_list.tsv` has the
+full list) and only four items from one wave were ever scoped out here.
 
 ---
 
 ## Shipped
 
+- **2026-08-26 — Feeling thermometer matrices + issue-importance matrix
+  (3 heatmaps).** [Racial/religious](../../../public/data-explorer/voter-survey-panel/ft-racial-religious.png)
+  (7 targets), [political/social](../../../public/data-explorer/voter-survey-panel/ft-political-social.png)
+  (9 targets), [issue importance](../../../public/data-explorer/voter-survey-panel/issue-importance.png)
+  (23 issues) — all × the same 9 religion groups as the stranger-in-my-
+  -own-country item, grouped by `religpew_2017`. A new chart shape for
+  this pipeline: one row per target, one column per religion group, each
+  cell colored by a continuous single-hue ramp (the site's own
+  `--chart-ordinal-1`/`-7` anchors, interpolated) and printing its own
+  value, plus a low→high gradient legend since the color language is new
+  here. Thermometers exclude sentinel codes (997/998/999) before averaging
+  weighted means. **Design decision made** for issue importance: top-two-
+  box ("very" + "somewhat" important), matching this project's existing
+  cutpoint convention rather than top-box alone. Computed by
+  `scripts/ryan-burge/voter_matrices.py`, rendered by
+  `scripts/ryan-burge/render_voter_matrices.py`.
 - **2026-08-26 — "Feel like a stranger in my own country," by religion
   (2017 wave).** [PNG](../../../public/data-explorer/voter-survey-panel/stranger-2017.png).
   Verbatim question stem pulled from the Voter Study Group's own VOTER

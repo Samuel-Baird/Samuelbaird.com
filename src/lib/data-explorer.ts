@@ -19,6 +19,9 @@ import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
 import pidByGenderData from "../../docs/datasets/ryan-burge/pid-by-gender.json";
 import voterStrangerData from "../../docs/datasets/ryan-burge/voter-stranger.json";
+import voterFtRacialData from "../../docs/datasets/ryan-burge/voter-ft-racial-religious.json";
+import voterFtPoliticalData from "../../docs/datasets/ryan-burge/voter-ft-political-social.json";
+import voterIssueImportanceData from "../../docs/datasets/ryan-burge/voter-issue-importance.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -343,7 +346,12 @@ export const DATASETS: Dataset[] = [
       "political groups, issue-importance ratings, and a religion battery with 141–149 " +
       "Latter-day Saint respondents at baseline (84 in the 2017 wave specifically).",
     sourceUrl: "https://www.voterstudygroup.org/",
-    graphics: [voterStrangerGraphic()],
+    graphics: [
+      voterStrangerGraphic(),
+      voterFtRacialGraphic(),
+      voterFtPoliticalGraphic(),
+      voterIssueImportanceGraphic(),
+    ],
   },
 ];
 
@@ -1363,6 +1371,85 @@ function voterStrangerGraphic(): Graphic {
     height: 1350,
     credit: "via Ryan Burge",
     alt: `100%-stacked bar chart, agreement with "these days I feel like a stranger in my own country," by religion. ${alt}.`,
+  };
+}
+
+/** Formats a religion x target matrix into "Target: Group NN, Group NN, ...;
+ * ..." alt text, shared by the three VOTER "matrix" heatmap graphics
+ * below. `unit` is appended to each value ("" for a 0-100 thermometer
+ * mean, "%" for a top-two-box share). */
+function voterMatrixAlt(
+  matrix: Record<string, Record<string, number | null>>,
+  targetOrder: readonly string[],
+  groupOrder: readonly string[],
+  unit: string,
+): string {
+  return targetOrder
+    .map((target) => {
+      const cells = groupOrder
+        .map((group) => `${group} ${matrix[group]![target]?.toFixed(0) ?? "n/a"}${unit}`)
+        .join(", ");
+      return `${target}: ${cells}`;
+    })
+    .join("; ");
+}
+
+/**
+ * Feeling thermometers toward racial and religious groups, by religion
+ * (2017 wave) - a heatmap/small-multiples matrix (7 targets x 9 religion
+ * groups). Built from voter-ft-racial-religious.json
+ * (scripts/ryan-burge/voter_matrices.py), rendered by
+ * scripts/ryan-burge/render_voter_matrices.py.
+ */
+function voterFtRacialGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterFtRacialData;
+  const alt = voterMatrixAlt(matrix, targets, groups, "");
+  return {
+    title: "Feeling thermometers: racial and religious groups, by religion",
+    description: "0 = coldest/most unfavorable, 100 = warmest/most favorable. Weighted means.",
+    imageSrc: "/data-explorer/voter-survey-panel/ft-racial-religious.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Heatmap, feeling-thermometer mean (0-100) toward racial/religious groups by religion. ${alt}.`,
+  };
+}
+
+/**
+ * Feeling thermometers toward political and social groups, by religion
+ * (2017 wave) - a heatmap/small-multiples matrix (9 targets x 9 religion
+ * groups). Same data source and render script as the graphic above.
+ */
+function voterFtPoliticalGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterFtPoliticalData;
+  const alt = voterMatrixAlt(matrix, targets, groups, "");
+  return {
+    title: "Feeling thermometers: political and social groups, by religion",
+    description: "0 = coldest/most unfavorable, 100 = warmest/most favorable. Weighted means.",
+    imageSrc: "/data-explorer/voter-survey-panel/ft-political-social.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Heatmap, feeling-thermometer mean (0-100) toward political/social groups by religion. ${alt}.`,
+  };
+}
+
+/**
+ * Issue importance (top-two-box: very or somewhat important), by religion
+ * (2017 wave) - a heatmap/small-multiples matrix (23 issues x 9 religion
+ * groups). Same data source and render script as the graphics above.
+ */
+function voterIssueImportanceGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIssueImportanceData;
+  const alt = voterMatrixAlt(matrix, targets, groups, "%");
+  return {
+    title: "Issue importance, by religion",
+    description: "Share saying very or somewhat important (top-two-box).",
+    imageSrc: "/data-explorer/voter-survey-panel/issue-importance.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Heatmap, share saying each issue is very/somewhat important, by religion. ${alt}.`,
   };
 }
 
