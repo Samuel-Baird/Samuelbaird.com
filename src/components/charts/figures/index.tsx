@@ -4,7 +4,6 @@
  * the same pattern src/lib/data-explorer.ts uses for datasets themselves.
  */
 
-import { AgreementFacetsFigure } from "./agreement-facets-figure";
 import { BirthDecadeFigure } from "./birth-decade-figure";
 import { NetChangeFigure } from "./net-change-figure";
 import { PidOverTimeFigure } from "./pid-over-time-figure";
@@ -12,7 +11,7 @@ import { SwitchingCurrentCompositionFigure } from "./switching-current-compositi
 import { SwitchingRaisedCohortFigure } from "./switching-raised-cohort-figure";
 
 export const DATASET_FIGURES: Record<string, React.ComponentType[]> = {
-  "state-of-theology": [AgreementFacetsFigure],
+  "state-of-theology": [],
   "pew-religious-landscape-study": [
     NetChangeFigure,
     SwitchingCurrentCompositionFigure,

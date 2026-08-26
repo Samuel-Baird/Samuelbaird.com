@@ -44,6 +44,19 @@ applies to every item — Pew's numbers are never unweighted.
 
 ## Pending
 
+### Childhood switching — net change since childhood, by tradition
+
+- **Net change since childhood, by tradition** — previously shipped as a
+  static PNG, then pulled from the dataset's graphics gallery and returned
+  here. `FRMREL`/`CURREL` cross-tab, same six-group set as the childhood
+  formation items below (Protestant combined, + Catholic, LDS, Orthodox,
+  Jehovah's Witness, Other Christian), with bootstrap confidence intervals
+  via `WEIGHT`/`REPWT_001`–`REPWT_500`, plus a current Evangelical/Mainline/
+  Historically Black Protestant composition inset. The computation
+  (`scripts/pew-rls/switching_rates.py`) and rendering
+  (`scripts/pew-rls/render_switching_chart.py`) already exist from the prior
+  build — rerun/rewire rather than rebuild from scratch.
+
 ### Blocked — no variable exists in the public file
 
 These five needed real verification, not assumption, before being marked
@@ -246,6 +259,5 @@ all to the same rule.
 
 ## Shipped
 
-- [Net change since childhood, by tradition](../../../public/data-explorer/pew-religious-landscape-study/switching-rates.png) — 2026-08-25. LDS vs. Catholic, Jehovah's Witness, Protestant (combined), Orthodox Christian, Other Christian; net raised-vs-current change with bootstrap confidence intervals, plus a current Evangelical/Mainline/Historically Black Protestant composition inset. Computed by `scripts/pew-rls/switching_rates.py`, rendered by `scripts/pew-rls/render_switching_chart.py`.
 - [Birth-decade makeup, by tradition](../../../src/components/charts/figures/birth-decade-figure.tsx) — 2026-08-25, delivered as an in-app "Interactive" figure (`docs/CHARTS.md`'s `StackedBars`) rather than a downloadable PNG. `BIRTHDECADE` share (7 buckets) of each tradition's current (`CURREL`) membership, LDS vs. Protestant/Catholic/Orthodox/JW/Other Christian plus a weighted Christian average; numeric median age dropped per the item's own note (not computable from decade buckets without assuming a within-bucket distribution). Uses the kit's own `ACCENT_ORDINAL_RAMP` (`--chart-ordinal-1..7`), authored per-theme so it doesn't invert in dark mode. Computed by `scripts/pew-rls/birth_decade_distribution.py`.
 - [Switching, generalized](../../../src/components/charts/figures/switching-current-composition-figure.tsx) — 2026-08-25/26, delivered as two in-app "Interactive" `StackedBars` figures (`switching-current-composition-figure.tsx` + [switching-raised-cohort-figure.tsx](../../../src/components/charts/figures/switching-raised-cohort-figure.tsx)) rather than a downloadable PNG. Same `FRMREL`/`CURREL` cross-tab as the net-change chart, reframed as composition rather than one net number. Chart-form decision: a small-multiples pair (not one merged bar) — one figure is current-membership composition (raised-in vs. converted-in, % of `CURREL`==group), the other is the raised cohort's outcome (stayed vs. left, % of `FRMREL`==group); the "stayed"/"raised-in" segment is the same weighted headcount in both so it shares one color (`--accent`) across them, "converted in" takes `--honey`, "left" takes `--oxblood` per the decline-token rule. Computed by `scripts/pew-rls/switching_generalized.py`.
