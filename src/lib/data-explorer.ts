@@ -14,6 +14,7 @@ import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhoo
 import familyHouseholdData from "../../docs/datasets/pew-rls-2023-24/family-household.json";
 import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
 import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
+import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritual-experience.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -252,6 +253,9 @@ export const DATASETS: Dataset[] = [
       pewHellBeliefGraphic(),
       pewHeavenVsHellGraphic(),
       pewEvolutionGuidedGraphic(),
+      pewSpiritualMeaningGraphic(),
+      pewSpiritualPeaceGraphic(),
+      pewSpiritualPresenceGraphic(),
     ],
   },
   {
@@ -831,6 +835,57 @@ function pewEvolutionGuidedGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who say evolution was guided by God, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Think about life's meaning and purpose, weekly+, Christian only. Built
+ * from spiritual-experience.json (scripts/pew-rls/spiritual_experience.py),
+ * rendered by scripts/pew-rls/render_spiritual_experience_charts.py.
+ */
+function pewSpiritualMeaningGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, spiritualExperienceData.meaning_purpose_weekly_plus);
+  return {
+    title: "Think about life's meaning and purpose, weekly+",
+    description: "Share who think about the meaning and purpose of life at least once a week.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/spiritual-meaning.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who think about life's meaning/purpose weekly+, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Feel spiritual peace and well-being, weekly+, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewSpiritualPeaceGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, spiritualExperienceData.spiritual_peace_weekly_plus);
+  return {
+    title: "Feel spiritual peace and well-being, weekly+",
+    description:
+      "Share who feel a deep sense of spiritual peace and well-being at least once a week.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/spiritual-peace.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who feel spiritual peace weekly+, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Feel a presence beyond this world, weekly+, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewSpiritualPresenceGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, spiritualExperienceData.presence_beyond_weekly_plus);
+  return {
+    title: "Feel a presence beyond this world, weekly+",
+    description:
+      "Share who feel the presence of something from beyond this world at least once a week.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/spiritual-presence.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who feel a presence beyond this world weekly+, by Christian tradition: ${alt}.`,
   };
 }
 

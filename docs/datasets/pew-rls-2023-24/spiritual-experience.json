@@ -1,0 +1,117 @@
+{
+  "source": "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” doi: 10.58094/3kwb-bf52.",
+  "method": "Population: Christian (six CURREL groups + a weighted Christian average), per this section's own header. Weekly+ is each item's own \"at least once a week\" top category; don't know/refused excluded from each item's own denominator.",
+  "total_weighted_n": 257520024.0,
+  "total_unweighted_n": 36908,
+  "meaning_purpose_weekly_plus": {
+    "Protestant": {
+      "pct": 54.99,
+      "valid_unweighted_n": 14925,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 44.7,
+      "valid_unweighted_n": 6906,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 65.99,
+      "valid_unweighted_n": 560,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 46.39,
+      "valid_unweighted_n": 223,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 63.83,
+      "valid_unweighted_n": 110,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 62.7,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 52.16,
+      "valid_unweighted_n": 22948,
+      "group_unweighted_n": 23186
+    }
+  },
+  "spiritual_peace_weekly_plus": {
+    "Protestant": {
+      "pct": 54.13,
+      "valid_unweighted_n": 14846,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 39.06,
+      "valid_unweighted_n": 6873,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 64.0,
+      "valid_unweighted_n": 561,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 35.67,
+      "valid_unweighted_n": 220,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 74.2,
+      "valid_unweighted_n": 109,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 61.19,
+      "valid_unweighted_n": 223,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 49.77,
+      "valid_unweighted_n": 22832,
+      "group_unweighted_n": 23186
+    }
+  },
+  "presence_beyond_weekly_plus": {
+    "Protestant": {
+      "pct": 46.56,
+      "valid_unweighted_n": 14705,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 32.36,
+      "valid_unweighted_n": 6852,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 56.35,
+      "valid_unweighted_n": 558,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 29.91,
+      "valid_unweighted_n": 220,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 58.77,
+      "valid_unweighted_n": 105,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 53.51,
+      "valid_unweighted_n": 218,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 42.4,
+      "valid_unweighted_n": 22658,
+      "group_unweighted_n": 23186
+    }
+  }
+}
