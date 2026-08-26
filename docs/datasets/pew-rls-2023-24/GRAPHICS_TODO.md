@@ -87,24 +87,6 @@ the same public file won't produce a different answer.
   institution's impact on society, separately, not a joint compatibility
   framing.
 
-### Switching, generalized
-
-- **Net staying/leaving, standardized around being born into the faith —
-  Christian denominations only + a Christian average.** A generalization
-  of the shipped "Net change since childhood" graphic
-  (`switching-rates.json`), but reframed: rather than one net-change
-  number, show the *composition* of each tradition's current membership —
-  what share of today's adherents were raised in it (retained) vs.
-  converted in, and separately what share of those raised in it left. Data
-  fully supports this (same `FRMREL`/`CURREL` cross-tab the shipped chart
-  already computes), but the exact chart form needs a decision before
-  building — candidates: a per-tradition stacked bar (retained % + gained
-  % = current 100%), or a small-multiples pair (retention rate vs. loss
-  rate) per tradition. Same six-group set as the shipped chart (Protestant
-  combined — `FRMREL` still can't split it on the raised side; see that
-  chart's own note) plus a weighted Christian-overall average bar/row as a
-  reference. `FRMREL`, `CURREL`, `WEIGHT`, `REPWT_001`–`500`.
-
 ### Childhood formation — Christian denominations + Christian average
 
 Same six-group set as the shipped switching chart (Evangelical/Mainline/
@@ -266,3 +248,4 @@ all to the same rule.
 
 - [Net change since childhood, by tradition](../../../public/data-explorer/pew-religious-landscape-study/switching-rates.png) — 2026-08-25. LDS vs. Catholic, Jehovah's Witness, Protestant (combined), Orthodox Christian, Other Christian; net raised-vs-current change with bootstrap confidence intervals, plus a current Evangelical/Mainline/Historically Black Protestant composition inset. Computed by `scripts/pew-rls/switching_rates.py`, rendered by `scripts/pew-rls/render_switching_chart.py`.
 - [Birth-decade makeup, by tradition](../../../public/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png) — 2026-08-25. `BIRTHDECADE` share (7 buckets) of each tradition's current (`CURREL`) membership, LDS vs. Protestant/Catholic/Orthodox/JW/Other Christian plus a weighted Christian average; numeric median age dropped per the item's own note (not computable from decade buckets without assuming a within-bucket distribution). New single-hue ordinal ramp on the site's `--accent` hue, validated with `dataviz` skill's `validate_palette.js --ordinal`. Computed by `scripts/pew-rls/birth_decade_distribution.py`, rendered by `scripts/pew-rls/render_birth_decade_chart.py`.
+- [Switching, generalized](../../../public/data-explorer/pew-religious-landscape-study/switching-generalized.png) — 2026-08-25. Same `FRMREL`/`CURREL` cross-tab as the net-change chart, reframed as composition rather than one net number. Chart-form decision: a small-multiples pair (not one merged bar) — top panel is current-membership composition (raised-in vs. converted-in, % of `CURREL`==group), bottom panel is the raised cohort's outcome (stayed vs. left, % of `FRMREL`==group); the "stayed"/"raised-in" segment is the same weighted headcount in both panels so it shares one color (`--accent`) across them, "converted in" takes `--honey`, "left" takes `--oxblood` per the decline-token rule. Computed by `scripts/pew-rls/switching_generalized.py`, rendered by `scripts/pew-rls/render_switching_generalized_chart.py`.
