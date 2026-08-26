@@ -18,6 +18,7 @@ const BASE_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
   { href: "/claims", label: "Claims" },
+  { href: "/data-explorer", label: "Data Explorer" },
   { href: "/premium", label: "Premium", premium: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
+import { DATASETS } from "@/lib/data-explorer";
 
 const BASE = "https://latter-day-stats.vercel.app";
 
@@ -25,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/channels`, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/studies`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/claims`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/data-explorer`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/timelines`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/premium`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/faq`, changeFrequency: "monthly", priority: 0.6 },
@@ -65,5 +67,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   );
 
-  return [...staticRoutes, ...channelRoutes, ...studyRoutes, ...claimRoutes];
+  const datasetRoutes: MetadataRoute.Sitemap = DATASETS.map((d) => ({
+    url: `${BASE}/data-explorer/${d.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...channelRoutes,
+    ...studyRoutes,
+    ...claimRoutes,
+    ...datasetRoutes,
+  ];
 }
