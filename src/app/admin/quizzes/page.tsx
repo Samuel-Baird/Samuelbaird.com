@@ -3,6 +3,7 @@ import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtNumber } from "@/lib/format";
 import {
   BIRTH_DECADE_OPTIONS,
+  COUNTRY_OPTIONS,
   EDUCATION_OPTIONS,
   GENDER_OPTIONS,
   HISPANIC_OPTIONS,
@@ -38,6 +39,7 @@ type RunRow = {
   race: string | null;
   education: string | null;
   marital_status: string | null;
+  country: string | null;
   us_state: string | null;
   /** Migration 0046's name for the religion slug. */
   tradition_slug: string | null;
@@ -108,7 +110,7 @@ export default async function AdminQuizzesPage() {
   const { data } = await sb
     .from("evangelical_quiz_runs")
     .select(
-      "user_id, age, birth_decade, gender, hispanic, race, education, marital_status, us_state, tradition_slug, score, percentile, matched_tradition, tie, created_at",
+      "user_id, age, birth_decade, gender, hispanic, race, education, marital_status, country, us_state, tradition_slug, score, percentile, matched_tradition, tie, created_at",
     )
     .order("created_at", { ascending: false });
   const runs = (data ?? []) as RunRow[];
@@ -345,6 +347,12 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
               rows={tally(runs, MARITAL_OPTIONS, (r) => r.marital_status)}
             />
           </div>
+
+          <Breakdown
+            title="Country"
+            rows={tally(runs, COUNTRY_OPTIONS, (r) => r.country)}
+            columns
+          />
 
           <Breakdown
             title="State"

@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import {
   BIRTH_DECADE_OPTIONS,
+  COUNTRY_OPTIONS,
   DEMOGRAPHICS_DISCLOSURE,
   DEMOGRAPHICS_PROVENANCE,
   EDUCATION_OPTIONS,
@@ -13,6 +14,7 @@ import {
   RACE_OPTIONS,
   RELIGION_OPTIONS_BY_GROUP,
   STATE_OPTIONS,
+  US_COUNTRY_SLUG,
   validateDemographics,
   type Demographics,
 } from "@/lib/evangelical-quiz/demographics";
@@ -44,8 +46,22 @@ export function DemographicsScreen({
   const [race, setRace] = useState("");
   const [education, setEducation] = useState("");
   const [maritalStatus, setMaritalStatus] = useState("");
+  const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [religionSlug, setReligionSlug] = useState("");
+
+  // The state question is for the U.S. only. It stays visible but disabled
+  // until the reader says they're in the U.S., so the dependency is
+  // apparent rather than a field that appears out of nowhere.
+  const stateApplies = country === US_COUNTRY_SLUG;
+
+  function changeCountry(next: string) {
+    setCountry(next);
+    // Moving off the U.S. abandons any state already picked, so the form
+    // can't submit a contradiction. (validateDemographics enforces the same
+    // rule server-side; this is just to keep the UI honest.)
+    if (next !== US_COUNTRY_SLUG) setState("");
+  }
 
   function submit() {
     onSubmit(
@@ -56,6 +72,7 @@ export function DemographicsScreen({
         race: race || null,
         education: education || null,
         maritalStatus: maritalStatus || null,
+        country: country || null,
         state: state || null,
         religionSlug: religionSlug || null,
       }),
@@ -179,13 +196,31 @@ export function DemographicsScreen({
             />
           </Field>
 
+          <Field id="eq-country" label="What country do you live in?">
+            <OptionSelect
+              id="eq-country"
+              value={country}
+              onChange={changeCountry}
+              options={COUNTRY_OPTIONS}
+            />
+          </Field>
+
           <Field id="eq-state" label="What state do you live in?">
             <OptionSelect
               id="eq-state"
               value={state}
               onChange={setState}
               options={STATE_OPTIONS}
+              disabled={!stateApplies}
+              placeholder={
+                stateApplies ? "Optional — choose one" : "Choose the United States first"
+              }
             />
+            {!stateApplies && (
+              <p className="mt-1.5 text-xs text-[color:var(--muted)]">
+                Asked only of readers in the United States.
+              </p>
+            )}
           </Field>
         </div>
       </div>
@@ -242,20 +277,27 @@ function OptionSelect({
   value,
   onChange,
   options,
+  disabled = false,
+  placeholder = "Optional — choose one",
 }: {
   id: string;
   value: string;
   onChange: (value: string) => void;
   options: readonly { slug: string; label: string }[];
+  disabled?: boolean;
+  placeholder?: string;
 }) {
   return (
     <select
       id={id}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className={SELECT_CLASS}
+      disabled={disabled}
+      className={`${SELECT_CLASS} ${
+        disabled ? "cursor-not-allowed text-[color:var(--muted)] opacity-60" : ""
+      }`}
     >
-      <option value="">Optional — choose one</option>
+      <option value="">{placeholder}</option>
       {options.map((o) => (
         <option key={o.slug} value={o.slug}>
           {o.label}
