@@ -19,9 +19,11 @@ different denominators (current members vs. people raised in the
 tradition) and collapsing them into one bar would either hide one
 denominator or force a misleading shared axis. The "stayed" segment is the
 same weighted headcount in both panels (raised in a tradition AND still in
-it today) - just read against two different bases - so the render script
-gives it one shared color across both panels rather than four unrelated
-segment colors.
+it today) - just read against two different bases - so the two in-app
+figures that read this JSON (src/components/charts/figures/
+switching-current-composition-figure.tsx and switching-raised-cohort-
+figure.tsx, per docs/CHARTS.md) give it one shared color across both
+rather than four unrelated segment colors.
 
 Population: same six-group Christian set as switching_rates.py (Protestant
 combined, per that script's own FRMREL2-is-restricted-use note), plus a

@@ -8,9 +8,16 @@ import { AgreementFacetsFigure } from "./agreement-facets-figure";
 import { BirthDecadeFigure } from "./birth-decade-figure";
 import { NetChangeFigure } from "./net-change-figure";
 import { PidOverTimeFigure } from "./pid-over-time-figure";
+import { SwitchingCurrentCompositionFigure } from "./switching-current-composition-figure";
+import { SwitchingRaisedCohortFigure } from "./switching-raised-cohort-figure";
 
 export const DATASET_FIGURES: Record<string, React.ComponentType[]> = {
   "state-of-theology": [AgreementFacetsFigure],
-  "pew-religious-landscape-study": [NetChangeFigure, BirthDecadeFigure],
+  "pew-religious-landscape-study": [
+    NetChangeFigure,
+    SwitchingCurrentCompositionFigure,
+    SwitchingRaisedCohortFigure,
+    BirthDecadeFigure,
+  ],
   "ces-stacked-2006-2018": [PidOverTimeFigure],
 };
