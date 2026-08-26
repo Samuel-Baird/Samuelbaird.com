@@ -85,10 +85,16 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
+                subtitle_fontsize: float = 14) -> float:
     """Dynamic wrap + spacing, same approach as render_switching_generalized_chart.py.
-    Returns the y-fraction where the title block ends, for the caller to
-    place its own content below."""
+    Returns the y-fraction where the subtitle block actually ends (not just
+    where it starts) - see STYLE.md's "Vertical layout" section - so the
+    caller can size its axes to the real available band instead of a fixed
+    guess. Title lines are placed one at a time so their bottom is exact;
+    the subtitle is one fig.text() call with an embedded newline, so its
+    height is matplotlib's default linespacing (1.2x fontsize) times its
+    line count, converted from points to figure-fraction units."""
     title_fontsize = 27
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
@@ -101,9 +107,11 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26) -> float:
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
     )
-    return subtitle_y
+    subtitle_lines = subtitle.count("\n") + 1
+    subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
+    return subtitle_y - subtitle_lines * subtitle_line_height
 
 
 def draw_caption(fig, fonts, total_n: int, extra_note: str | None, top_y: float) -> None:
@@ -130,8 +138,15 @@ def render_magnitude_bar(
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Vertical centering: size the axes to the real gap between the
+    # subtitle and the caption, not a fixed guess - see STYLE.md.
+    caption_top = 0.185
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    ax_top = subtitle_bottom - 0.035
+    ax_bottom = caption_top + 0.035
+
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
-    ax = fig.add_axes([AXES_LEFT, 0.34, AXES_WIDTH, 0.46])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     for spine in ax.spines.values():
@@ -155,8 +170,7 @@ def render_magnitude_bar(
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
                  color=c, fontproperties=fonts["bold"], fontsize=15, zorder=4)
 
-    subtitle_end = draw_title(fig, fonts, title, subtitle)
-    draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note, 0.185)
+    draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note, caption_top)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
@@ -171,8 +185,15 @@ def render_education_stack(
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Vertical centering, same approach as render_magnitude_bar above, with
+    # extra bottom room reserved for the legend row below the axes.
+    caption_top = 0.185
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    ax_top = subtitle_bottom - 0.035
+    ax_bottom = caption_top + 0.035 + 0.05
+
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
-    ax = fig.add_axes([AXES_LEFT, 0.32, AXES_WIDTH, 0.44])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     for spine in ax.spines.values():
@@ -212,8 +233,7 @@ def render_education_stack(
     for text in legend.get_texts():
         text.set_color(INK)
 
-    subtitle_end = draw_title(fig, fonts, title, subtitle)
-    draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note, 0.185)
+    draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note, caption_top)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

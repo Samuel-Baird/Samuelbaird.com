@@ -77,8 +77,12 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def _draw_title(fig, fonts, title: str, subtitle: str) -> None:
+def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
+    """Returns the y-fraction where the subtitle block actually ends, so
+    the caller can size its axes to the real available band instead of a
+    fixed guess - see STYLE.md's "Vertical layout" section."""
     title_fontsize = 26
+    subtitle_fontsize = 13.5
     title_lines = textwrap.wrap(title, width=27)
     line_spacing = title_fontsize / 650
     title_top = 0.965
@@ -90,8 +94,14 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> None:
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=13.5, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
     )
+    subtitle_lines = subtitle.count("\n") + 1
+    subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
+    return subtitle_y - subtitle_lines * subtitle_line_height
+
+
+CAPTION_TOP = 0.14
 
 
 def _draw_caption(fig, fonts, total_n: int, note: str) -> None:
@@ -103,10 +113,9 @@ def _draw_caption(fig, fonts, total_n: int, note: str) -> None:
         "doi: 10.58094/3kwb-bf52.",
     ]
     caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    caption_y = 0.14
     for i, line in enumerate(caption_lines):
         fig.text(
-            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
+            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
             fontsize=10, color=MUTED, ha="left", va="top",
         )
 
@@ -118,10 +127,14 @@ def render_magnitude_bar(
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
-    n_rows = len(GROUP_ORDER)
-    axes_height = min(0.66, 0.05 * n_rows + 0.08)
+    # Vertical centering: size the axes to the real gap between the
+    # subtitle and the caption, not a fixed guess - see STYLE.md.
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = CAPTION_TOP + 0.03
+
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
-    ax = fig.add_axes([AXES_LEFT, 0.20, AXES_WIDTH, axes_height])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     for spine in ax.spines.values():
@@ -145,7 +158,6 @@ def render_magnitude_bar(
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
                  color=c, fontproperties=fonts["bold"], fontsize=12.5, zorder=4)
 
-    _draw_title(fig, fonts, title, subtitle)
     _draw_caption(fig, fonts, total_n, note)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -165,10 +177,14 @@ def render_paired_bar(
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
-    n_rows = len(GROUP_ORDER)
-    axes_height = min(0.66, 0.055 * n_rows + 0.08)
+    # Vertical centering, same approach as render_magnitude_bar above, with
+    # extra top room reserved for the legend row above the axes.
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    ax_top = subtitle_bottom - 0.03 - 0.045
+    ax_bottom = CAPTION_TOP + 0.03
+
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
-    ax = fig.add_axes([AXES_LEFT, 0.18, AXES_WIDTH, axes_height])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     ax.set_yticks([])
@@ -206,7 +222,6 @@ def render_paired_bar(
     for text in legend.get_texts():
         text.set_color(INK)
 
-    _draw_title(fig, fonts, title, subtitle)
     _draw_caption(fig, fonts, total_n, note)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

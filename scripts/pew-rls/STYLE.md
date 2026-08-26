@@ -140,3 +140,68 @@ python scripts/pew-rls/birth_decade_distribution.py
 python scripts/pew-rls/render_birth_decade_chart.py \
   --out ../../public/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png
 ```
+
+## Magnitude bar (highlight-vs-gray) and paired bar
+
+Most of the dataset's remaining backlog sections (childhood formation,
+family and household, practice, beliefs, spiritual experience, public life
+and society) ship as a **magnitude bar**: one row per group, a single
+percentage, sorted by the group order every other chart on this page
+already uses. There's no per-tradition identity color and no decline
+signal here, so these reuse the site's highlight-vs-gray convention
+instead — Latter-day Saint in `--accent` (`#1f4f7a`), every other group in
+a bar-safe gray (`#8f8b82`, a lightened `--muted` that still reads as a
+distinct fill at full opacity, unlike the line chart's stroke-only
+`CONTEXT_GRAY`). Group order and population (Christian only, Christian +
+other religions, or every religiously-affiliated tradition individually +
+the unaffiliated) vary item to item — see each compute script's own
+docstring (`childhood_formation.py`, `family_household.py`, `practice.py`,
+`beliefs.py`, `spiritual_experience.py`, `public_life.py`) for which set a
+given chart uses and why.
+
+**Heaven vs. hell** (`beliefs.py` → `render_beliefs_charts.py`) needed a
+shape none of the above cover: two independent yes/no items shown side by
+side per group rather than one value or a 100%-stack. Built as a **paired
+bar** — two bars per row sharing one zero baseline (heaven in `--accent`,
+hell in `--honey`), a small top legend instead of in-place labels since
+neither color maps to a single fixed meaning across the whole page.
+
+## Vertical layout: centering the plot band
+
+Every chart in this pipeline computes its axes' vertical position and
+height dynamically from the actual rendered title/subtitle block above it
+and the actual caption block below it — never a fixed axes position chosen
+to fit one particular chart's row count. A fixed position is exactly what
+produced the bug this section documents fixing (2026-08-26): a handful of
+charts with few rows (7-8, mostly the Christian-only magnitude bars) had
+their axes pinned low on the canvas regardless of how short their
+title/subtitle ran, leaving a large dead band between the subtitle and the
+bars while the caption sat close underneath — visually bottom-heavy and
+uncentered, not because those charts had more content but because the
+axes math never looked at how much space the text actually used.
+
+The fix, in every render script's magnitude-bar/stacked-bar/paired-bar
+function:
+
+1. Compute `subtitle_bottom`, the real y-fraction where the subtitle text
+   ends — title lines are already placed one `fig.text()` call per line
+   with a known `line_spacing`, so their bottom is exact; the subtitle is
+   one `fig.text()` call with an embedded `\n`, so its height is
+   `subtitle_fontsize * 1.2 / 72 / FIG_H_IN` per line (matplotlib's default
+   linespacing, converted from points to figure-fraction units) times its
+   line count.
+2. `caption_top` is already a known constant (the `fig.text()` y-position
+   the caption's first line is drawn at).
+3. The axes' top and bottom are `subtitle_bottom - TOP_GAP` and
+   `caption_top + BOTTOM_GAP` (`TOP_GAP`/`BOTTOM_GAP` ≈ 0.03-0.04, a small
+   fixed breathing margin) — the axes' height is whatever's left between
+   them, not a formula keyed to row count.
+
+Because the axes now always fill the true available band, the bars inside
+it (via matplotlib's own `ax.margins()`) land vertically centered with
+consistent space above (below the subtitle) and below (above the caption)
+regardless of how many rows a given chart has or how long its title
+wrapped to. A short-titled 7-row chart and a long-titled 14-row chart both
+get a properly centered, evenly-spaced plot band — the number of rows
+changes how tall each bar is, not where the whole block sits on the
+canvas.

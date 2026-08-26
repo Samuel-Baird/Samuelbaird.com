@@ -71,6 +71,32 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
+                title_fontsize: float = 26, subtitle_fontsize: float = 13.5) -> float:
+    """Returns the y-fraction where the subtitle block actually ends, so
+    the caller can size its axes to the real available band instead of a
+    fixed guess - see STYLE.md's "Vertical layout" section."""
+    title_lines = textwrap.wrap(title, width=width)
+    line_spacing = title_fontsize / 650
+    title_top = 0.965
+    for i, line in enumerate(title_lines):
+        fig.text(
+            0.065, title_top - i * line_spacing, line,
+            fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+        )
+    subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
+    fig.text(
+        0.065, subtitle_y, subtitle,
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+    )
+    subtitle_lines = subtitle.count("\n") + 1
+    subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
+    return subtitle_y - subtitle_lines * subtitle_line_height
+
+
+CAPTION_TOP = 0.145
+
+
 def render_magnitude_bar(
     results: dict, group_order: list[str], title: str, subtitle: str, note: str,
     total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
@@ -78,10 +104,15 @@ def render_magnitude_bar(
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Vertical centering: size the axes to the real gap between the
+    # subtitle and the caption, not a fixed guess - see STYLE.md.
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = CAPTION_TOP + 0.03
+
     n_rows = len(group_order)
-    axes_height = min(0.66, 0.05 * n_rows + 0.08)
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
-    ax = fig.add_axes([AXES_LEFT, 0.20, AXES_WIDTH, axes_height])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     for spine in ax.spines.values():
@@ -106,21 +137,6 @@ def render_magnitude_bar(
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
                  color=c, fontproperties=fonts["bold"], fontsize=13 if n_rows > 8 else 15, zorder=4)
 
-    title_fontsize = 26
-    title_lines = textwrap.wrap(title, width=27)
-    line_spacing = title_fontsize / 650
-    title_top = 0.965
-    for i, line in enumerate(title_lines):
-        fig.text(
-            0.065, title_top - i * line_spacing, line,
-            fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
-        )
-    subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
-    fig.text(
-        0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=13.5, color=MUTED, ha="left", va="top",
-    )
-
     source_paragraphs = [
         note,
         f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
@@ -129,10 +145,9 @@ def render_magnitude_bar(
         "doi: 10.58094/3kwb-bf52.",
     ]
     caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    caption_y = 0.145
     for i, line in enumerate(caption_lines):
         fig.text(
-            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
+            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
             fontsize=10, color=MUTED, ha="left", va="top",
         )
 
