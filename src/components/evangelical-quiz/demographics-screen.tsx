@@ -3,9 +3,16 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import {
+  BIRTH_DECADE_OPTIONS,
   DEMOGRAPHICS_DISCLOSURE,
+  DEMOGRAPHICS_PROVENANCE,
+  EDUCATION_OPTIONS,
   GENDER_OPTIONS,
-  TRADITION_OPTIONS,
+  HISPANIC_OPTIONS,
+  MARITAL_OPTIONS,
+  RACE_OPTIONS,
+  RELIGION_OPTIONS_BY_GROUP,
+  STATE_OPTIONS,
   validateDemographics,
   type Demographics,
 } from "@/lib/evangelical-quiz/demographics";
@@ -14,8 +21,13 @@ import {
  * The optional demographic intake, shown once before question 1. Every
  * field is optional and the whole screen is skippable; nothing here feeds
  * the score or appears on the results screen - it exists so results can
- * be analyzed in aggregate (e.g. self-reported tradition vs. the
- * tradition the scoring assigns).
+ * be analyzed in aggregate (e.g. self-reported religion vs. the tradition
+ * the scoring assigns).
+ *
+ * The questions, their wording, and their answer lists are Pew Research
+ * Center's Religious Landscape Study instrument - see
+ * src/lib/evangelical-quiz/demographics.ts and
+ * docs/datasets/pew-rls-2023-24/.
  */
 export function DemographicsScreen({
   onSubmit,
@@ -26,23 +38,29 @@ export function DemographicsScreen({
   onSkip: () => void;
   onBack: () => void;
 }) {
-  const [age, setAge] = useState("");
+  const [birthDecade, setBirthDecade] = useState("");
   const [gender, setGender] = useState("");
-  const [traditionSlug, setTraditionSlug] = useState("");
+  const [hispanic, setHispanic] = useState("");
+  const [race, setRace] = useState("");
+  const [education, setEducation] = useState("");
+  const [maritalStatus, setMaritalStatus] = useState("");
+  const [state, setState] = useState("");
+  const [religionSlug, setReligionSlug] = useState("");
 
   function submit() {
-    const parsedAge = age.trim() === "" ? null : Number(age);
     onSubmit(
       validateDemographics({
-        age: parsedAge !== null && Number.isFinite(parsedAge) ? Math.trunc(parsedAge) : null,
+        birthDecade: birthDecade || null,
         gender: gender || null,
-        traditionSlug: traditionSlug || null,
+        hispanic: hispanic || null,
+        race: race || null,
+        education: education || null,
+        maritalStatus: maritalStatus || null,
+        state: state || null,
+        religionSlug: religionSlug || null,
       }),
     );
   }
-
-  const selectClass =
-    "h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none";
 
   return (
     <div>
@@ -61,61 +79,114 @@ export function DemographicsScreen({
       <p className="mt-3 max-w-xl text-sm leading-relaxed text-[color:var(--muted)]">
         {DEMOGRAPHICS_DISCLOSURE}
       </p>
+      <p className="mt-2 max-w-xl text-sm leading-relaxed text-[color:var(--muted)]">
+        {DEMOGRAPHICS_PROVENANCE}
+      </p>
 
-      <div className="mt-8 max-w-md space-y-6">
-        <div>
-          <label htmlFor="eq-age" className="block text-sm font-medium">
-            Age
-          </label>
-          <input
-            id="eq-age"
-            type="number"
-            inputMode="numeric"
-            min={1}
-            max={110}
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            placeholder="Optional"
-            className="mt-1.5 h-11 w-32 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm placeholder:text-[color:var(--muted)] focus:border-[color:var(--accent)] focus:outline-none"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="eq-gender" className="block text-sm font-medium">
-            Gender
-          </label>
+      <div className="mt-8 max-w-2xl">
+        <Field
+          id="eq-religion"
+          label="Which of these best describes your religion?"
+        >
           <select
+            id="eq-religion"
+            value={religionSlug}
+            onChange={(e) => setReligionSlug(e.target.value)}
+            className={SELECT_CLASS}
+          >
+            <option value="">Optional — choose one</option>
+            {RELIGION_OPTIONS_BY_GROUP.map(({ group, options }) =>
+              // A single-option group reads better flat than as a heading
+              // with one child under it.
+              options.length === 1 ? (
+                <option key={options[0].slug} value={options[0].slug}>
+                  {options[0].label}
+                </option>
+              ) : (
+                <optgroup key={group} label={group}>
+                  {options.map((o) => (
+                    <option key={o.slug} value={o.slug}>
+                      {o.label}
+                    </option>
+                  ))}
+                </optgroup>
+              ),
+            )}
+          </select>
+        </Field>
+
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <Field id="eq-birth-decade" label="In what decade were you born?">
+            <OptionSelect
+              id="eq-birth-decade"
+              value={birthDecade}
+              onChange={setBirthDecade}
+              options={BIRTH_DECADE_OPTIONS}
+            />
+          </Field>
+
+          <Field
             id="eq-gender"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-            className={`mt-1.5 ${selectClass}`}
+            label="Do you describe yourself as a man, a woman, or in some other way?"
           >
-            <option value="">Optional — choose one</option>
-            {GENDER_OPTIONS.map((g) => (
-              <option key={g.slug} value={g.slug}>
-                {g.label}
-              </option>
-            ))}
-          </select>
-        </div>
+            <OptionSelect
+              id="eq-gender"
+              value={gender}
+              onChange={setGender}
+              options={GENDER_OPTIONS}
+            />
+          </Field>
 
-        <div>
-          <label htmlFor="eq-tradition" className="block text-sm font-medium">
-            Which religious tradition do you identify with?
-          </label>
-          <select
-            id="eq-tradition"
-            value={traditionSlug}
-            onChange={(e) => setTraditionSlug(e.target.value)}
-            className={`mt-1.5 ${selectClass}`}
+          <Field
+            id="eq-hispanic"
+            label="Are you of Hispanic, Latino, or Spanish origin?"
           >
-            <option value="">Optional — choose one</option>
-            {TRADITION_OPTIONS.map((t) => (
-              <option key={t.slug} value={t.slug}>
-                {t.label}
-              </option>
-            ))}
-          </select>
+            <OptionSelect
+              id="eq-hispanic"
+              value={hispanic}
+              onChange={setHispanic}
+              options={HISPANIC_OPTIONS}
+            />
+          </Field>
+
+          <Field id="eq-race" label="What is your race?">
+            <OptionSelect
+              id="eq-race"
+              value={race}
+              onChange={setRace}
+              options={RACE_OPTIONS}
+            />
+          </Field>
+
+          <Field
+            id="eq-education"
+            label="What is the highest level of school you have completed?"
+          >
+            <OptionSelect
+              id="eq-education"
+              value={education}
+              onChange={setEducation}
+              options={EDUCATION_OPTIONS}
+            />
+          </Field>
+
+          <Field id="eq-marital" label="What is your marital status?">
+            <OptionSelect
+              id="eq-marital"
+              value={maritalStatus}
+              onChange={setMaritalStatus}
+              options={MARITAL_OPTIONS}
+            />
+          </Field>
+
+          <Field id="eq-state" label="What state do you live in?">
+            <OptionSelect
+              id="eq-state"
+              value={state}
+              onChange={setState}
+              options={STATE_OPTIONS}
+            />
+          </Field>
         </div>
       </div>
 
@@ -141,5 +212,55 @@ export function DemographicsScreen({
         These answers never affect your score and are never shown with your result.
       </p>
     </div>
+  );
+}
+
+const SELECT_CLASS =
+  "mt-1.5 h-11 w-full rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm focus:border-[color:var(--accent)] focus:outline-none";
+
+function Field({
+  id,
+  label,
+  children,
+}: {
+  id: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-sm font-medium">
+        {label}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function OptionSelect({
+  id,
+  value,
+  onChange,
+  options,
+}: {
+  id: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: readonly { slug: string; label: string }[];
+}) {
+  return (
+    <select
+      id={id}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className={SELECT_CLASS}
+    >
+      <option value="">Optional — choose one</option>
+      {options.map((o) => (
+        <option key={o.slug} value={o.slug}>
+          {o.label}
+        </option>
+      ))}
+    </select>
   );
 }

@@ -49,6 +49,17 @@ export type Dataset = {
   /** Verbatim methodology lines, in order, from the source's own writeup. */
   methodology?: string[];
   methodologySourceUrl?: string;
+  /** The source's own recommended citation, verbatim. */
+  citation?: string;
+  /** Bare DOI, e.g. "10.58094/3kwb-bf52" - linked via doi.org. */
+  doi?: string;
+  /** Where the dataset itself can be downloaded. */
+  sourceUrl?: string;
+  /**
+   * What this site does with the dataset beyond the quizzes and graphics
+   * below - the reason it's listed even before there's an analysis of it.
+   */
+  howWeUseIt?: string;
   quiz?: Quiz;
   graphics: Graphic[];
 };
@@ -101,6 +112,53 @@ export const DATASETS: Dataset[] = [
       href: "/how-evangelical",
     },
     graphics: stateOfTheologyGraphics(),
+  },
+  {
+    slug: "pew-religious-landscape-study",
+    name: "Religious Landscape Study",
+    shortDescription:
+      "Pew's 36,908-respondent map of American religion — who belongs to what, and what they believe.",
+    sponsor: "Pew Research Center",
+    fielder: "NORC at the University of Chicago",
+    description:
+      "Pew Research Center's third Religious Landscape Study, after 2007 and 2014. " +
+      "36,908 U.S. adults answered " +
+      "between July 2023 and March 2024 — enough for reliable state-level estimates, and enough " +
+      "to say something about small groups that national polls of 1,000 people can only round " +
+      "off. Latter-day Saints are one of those groups. The study's other contribution is its " +
+      "taxonomy: a branching set of questions about religious identity, back-coded into 298 " +
+      "denominations, which collapse into families of denominations, which collapse into 16 " +
+      "religious traditions.",
+    citation:
+      "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” " +
+      "doi: 10.58094/3kwb-bf52.",
+    doi: "10.58094/3kwb-bf52",
+    sourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
+    howWeUseIt:
+      "The optional demographic questions in this site's quizzes are Pew's, taken from this " +
+      "study's questionnaire and worded the same way — religion, birth cohort, gender, race, " +
+      "Hispanic origin, education, marital status, and state. The religion list is Pew's own " +
+      "taxonomy in full, down to the denominational family, including the Protestant, " +
+      "non-Christian, and religiously unaffiliated subcategories. Answers given here can " +
+      "therefore be read against a national sample without a recoding step in between.",
+    methodology: [
+      "36,908 U.S. adults, interviewed July 17, 2023 – March 4, 2024, in English and Spanish.",
+      "A geographically stratified address-based sample; 205,100 addresses were invited.",
+      "Respondents chose their mode: 25,250 answered online, 10,733 by mail, 925 by phone.",
+      "The AAPOR RR3 response rate was 20%.",
+      "Weights are raked to American Community Survey and CPS benchmarks.",
+      "National margin of sampling error: ±0.8 percentage points at 95% confidence, after " +
+        "accounting for the sample design and the loss of precision from weighting. Subgroups " +
+        "are wider — ±1.7 points for historically Black Protestants, ±8.7 for Hindus.",
+      "The public-use file withholds sensitive variables, geography among them; a restricted-use " +
+        "file is to reach ICPSR under a data use agreement.",
+      "Not directly comparable with the 2007 and 2014 waves without care: those were " +
+        "random-digit-dial telephone surveys, this one is mostly online and paper. Pew ran a " +
+        "1,519-respondent telephone bridge study to measure the mode difference — read " +
+        "Appendix A of the accompanying report before comparing across waves.",
+    ],
+    methodologySourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
+    graphics: [],
   },
 ];
 

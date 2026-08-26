@@ -1,7 +1,19 @@
 import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtNumber } from "@/lib/format";
-import { TRADITION_OPTIONS } from "@/lib/evangelical-quiz/demographics";
+import {
+  BIRTH_DECADE_OPTIONS,
+  EDUCATION_OPTIONS,
+  GENDER_OPTIONS,
+  HISPANIC_OPTIONS,
+  MARITAL_OPTIONS,
+  RACE_OPTIONS,
+  RELIGION_GROUPS,
+  RELIGION_OPTIONS,
+  STATE_OPTIONS,
+  religionOption,
+  type ReligionGroup,
+} from "@/lib/evangelical-quiz/demographics";
 import { QUIZ_DATA } from "@/lib/evangelical-quiz";
 
 export const dynamic = "force-dynamic";
@@ -12,12 +24,22 @@ export const dynamic = "force-dynamic";
  * evangelical quiz's section is built today. Reads evangelical_quiz_runs
  * (deny-all RLS) through the service client, aggregates in JS like
  * /admin/analytics.
+ *
+ * The demographic breakdowns follow Pew's RLS variables (migration 0047),
+ * so a column here lines up with a column in Pew's published tables.
  */
 
 type RunRow = {
   user_id: string | null;
   age: number | null;
+  birth_decade: string | null;
   gender: string | null;
+  hispanic: string | null;
+  race: string | null;
+  education: string | null;
+  marital_status: string | null;
+  us_state: string | null;
+  /** Migration 0046's name for the religion slug. */
   tradition_slug: string | null;
   score: number;
   percentile: number;
@@ -28,6 +50,7 @@ type RunRow = {
 
 const MATCHABLE = ["Evangelical", "Black Protestant", "Mainline", "Roman Catholic"];
 
+/** Legacy only - the intake stopped asking for age at migration 0047. */
 const AGE_BUCKETS: { label: string; min: number; max: number }[] = [
   { label: "Under 18", min: 1, max: 17 },
   { label: "18–29", min: 18, max: 29 },
@@ -35,6 +58,18 @@ const AGE_BUCKETS: { label: string; min: number; max: number }[] = [
   { label: "45–64", min: 45, max: 64 },
   { label: "65+", min: 65, max: 110 },
 ];
+
+/**
+ * The quiz tradition a whole religion group corresponds to. Every option in
+ * a group shares one (that's what makes it a group), so the first answers
+ * for all of them.
+ */
+const GROUP_TRADITION = new Map<ReligionGroup, string | null>(
+  RELIGION_GROUPS.map((group) => [
+    group,
+    RELIGION_OPTIONS.find((o) => o.group === group)?.quizTradition ?? null,
+  ]),
+);
 
 function daysAgoIso(days: number) {
   return new Date(Date.now() - days * 86_400_000).toISOString();
@@ -49,6 +84,23 @@ function countBy<T>(rows: T[], key: (row: T) => string): Map<string, number> {
   return map;
 }
 
+/**
+ * Counts one demographic field in its option list's own order, so a
+ * breakdown reads like the question did - never sorted by size, which would
+ * shuffle ordinal answers like birth decade or education.
+ */
+function tally(
+  runs: RunRow[],
+  options: readonly { slug: string; label: string }[],
+  value: (run: RunRow) => string | null,
+): { label: string; count: number; muted?: boolean }[] {
+  const counts = countBy(runs, (r) => value(r) ?? "__none__");
+  const rows = options
+    .map((o) => ({ label: o.label, count: counts.get(o.slug) ?? 0 }))
+    .filter((r) => r.count > 0);
+  return [...rows, { label: "Not provided", count: counts.get("__none__") ?? 0, muted: true }];
+}
+
 export default async function AdminQuizzesPage() {
   await requireAdmin();
 
@@ -56,7 +108,7 @@ export default async function AdminQuizzesPage() {
   const { data } = await sb
     .from("evangelical_quiz_runs")
     .select(
-      "user_id, age, gender, tradition_slug, score, percentile, matched_tradition, tie, created_at",
+      "user_id, age, birth_decade, gender, hispanic, race, education, marital_status, us_state, tradition_slug, score, percentile, matched_tradition, tie, created_at",
     )
     .order("created_at", { ascending: false });
   const runs = (data ?? []) as RunRow[];
@@ -68,7 +120,7 @@ export default async function AdminQuizzesPage() {
         <p className="mt-2 max-w-2xl text-sm text-[color:var(--muted)]">
           Completed runs, one row per completion (retakes count again). Scores are
           recomputed server-side at recording time; demographics are the optional
-          intake snapshot.
+          intake snapshot, asked in Pew&apos;s Religious Landscape Study wording.
         </p>
       </header>
 
@@ -96,28 +148,39 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
     r.tie ? "Tie" : (r.matched_tradition ?? "No match"),
   );
 
-  // Self-reported x matched crosstab.
+  // Self-reported x matched crosstab, at the group level: with 53 religions
+  // in the picker a row-per-religion table would be mostly zeroes, and the
+  // agreement diagonal is a group-level claim anyway (any evangelical
+  // Protestant family should match "Evangelical").
   const crosstabRows = [
-    ...TRADITION_OPTIONS,
-    { slug: "__none__", label: "Not provided", pewCategory: null },
+    ...RELIGION_GROUPS.map((group) => ({
+      key: group as string,
+      label: group as string,
+      quizTradition: GROUP_TRADITION.get(group) ?? null,
+    })),
+    { key: "__none__", label: "Not provided", quizTradition: null },
   ];
   const cell = new Map<string, number>();
   for (const r of runs) {
-    const self = r.tradition_slug ?? "__none__";
+    const self = religionOption(r.tradition_slug)?.group ?? "__none__";
     const matched = r.tie ? "Tie" : (r.matched_tradition ?? "—");
     const k = `${self}|${matched}`;
     cell.set(k, (cell.get(k) ?? 0) + 1);
   }
   const crosstabCols = [...MATCHABLE, "Tie"];
 
-  // Demographics.
-  const ageCounts = AGE_BUCKETS.map((b) => ({
-    label: b.label,
-    count: runs.filter((r) => r.age !== null && r.age >= b.min && r.age <= b.max).length,
-  }));
-  const ageMissing = runs.filter((r) => r.age === null).length;
-  const genderCounts = countBy(runs, (r) => r.gender ?? "Not provided");
-  const traditionLabel = new Map(TRADITION_OPTIONS.map((t) => [t.slug, t.label]));
+  // Self-reported religion in full detail, grouped as the picker groups it.
+  const religionCounts = countBy(runs, (r) => r.tradition_slug ?? "__none__");
+  const religionGroups = RELIGION_GROUPS.map((group) => ({
+    group,
+    options: RELIGION_OPTIONS.filter(
+      (o) => o.group === group && (religionCounts.get(o.slug) ?? 0) > 0,
+    ).map((o) => ({ label: o.label, count: religionCounts.get(o.slug) ?? 0 })),
+  })).filter((g) => g.options.length > 0);
+  const religionMissing = religionCounts.get("__none__") ?? 0;
+
+  // Legacy age, from runs recorded before birth cohort replaced it.
+  const legacyAge = runs.filter((r) => r.age !== null);
 
   return (
     <section className="space-y-8">
@@ -189,11 +252,11 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
 
           <div>
             <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-              Self-reported tradition × matched tradition
+              Self-reported religion × matched tradition
             </h3>
             <p className="mt-1 text-xs text-[color:var(--muted)]">
-              Highlighted cells are agreement — the self-reported tradition maps to the
-              matched one.
+              Rows are Pew&apos;s RELTRAD groups. Highlighted cells are agreement — the
+              self-reported group maps to the matched tradition.
             </p>
             <div className="mt-3 overflow-x-auto">
               <table className="w-full min-w-[540px] border-collapse text-xs">
@@ -209,11 +272,11 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
                 </thead>
                 <tbody>
                   {crosstabRows.map((row) => (
-                    <tr key={row.slug} className="border-b border-[color:var(--border)]/60">
+                    <tr key={row.key} className="border-b border-[color:var(--border)]/60">
                       <td className="py-1.5 pr-3">{row.label}</td>
                       {crosstabCols.map((c) => {
-                        const count = cell.get(`${row.slug}|${c}`) ?? 0;
-                        const agree = row.pewCategory !== null && row.pewCategory === c;
+                        const count = cell.get(`${row.key}|${c}`) ?? 0;
+                        const agree = row.quizTradition !== null && row.quizTradition === c;
                         return (
                           <td
                             key={c}
@@ -232,65 +295,127 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2">
-            <div>
-              <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-                Age
-              </h3>
-              <ul className="mt-3 space-y-1.5 text-sm">
-                {ageCounts.map((b) => (
-                  <li key={b.label} className="flex justify-between gap-4">
-                    <span>{b.label}</span>
-                    <span className="tabular-nums">{fmtNumber(b.count)}</span>
-                  </li>
-                ))}
-                <li className="flex justify-between gap-4 text-[color:var(--muted)]">
-                  <span>Not provided</span>
-                  <span className="tabular-nums">{fmtNumber(ageMissing)}</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-                Gender
-              </h3>
-              <ul className="mt-3 space-y-1.5 text-sm">
-                {[...genderCounts.entries()]
-                  .sort((a, b) => b[1] - a[1])
-                  .map(([slug, count]) => (
-                    <li key={slug} className="flex justify-between gap-4">
-                      <span className="capitalize">{slug.replace(/_/g, " ")}</span>
-                      <span className="tabular-nums">{fmtNumber(count)}</span>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          </div>
-
           <div>
             <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-              Self-reported tradition
+              Self-reported religion
             </h3>
-            <ul className="mt-3 space-y-1.5 text-sm">
-              {[...countBy(runs, (r) => r.tradition_slug ?? "__none__").entries()]
-                .sort((a, b) => b[1] - a[1])
-                .map(([slug, count]) => (
-                  <li key={slug} className="flex justify-between gap-4">
-                    <span>
-                      {slug === "__none__" ? "Not provided" : (traditionLabel.get(slug) ?? slug)}
-                    </span>
-                    <span className="tabular-nums">{fmtNumber(count)}</span>
-                  </li>
-                ))}
-            </ul>
+            <p className="mt-1 text-xs text-[color:var(--muted)]">
+              Pew&apos;s FAMILY taxonomy. Categories nobody chose are left out.
+            </p>
+            <div className="mt-3 grid gap-6 sm:grid-cols-2">
+              {religionGroups.map(({ group, options }) => (
+                <div key={group}>
+                  <h4 className="text-xs font-semibold">{group}</h4>
+                  <ul className="mt-1.5 space-y-1.5 text-sm">
+                    {options.map((o) => (
+                      <li key={o.label} className="flex justify-between gap-4">
+                        <span>{o.label}</span>
+                        <span className="tabular-nums">{fmtNumber(o.count)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-xs text-[color:var(--muted)]">
+              Not provided: {fmtNumber(religionMissing)}
+            </p>
           </div>
 
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <Breakdown
+              title="Birth cohort"
+              rows={tally(runs, BIRTH_DECADE_OPTIONS, (r) => r.birth_decade)}
+            />
+            <Breakdown
+              title="Gender"
+              rows={tally(runs, GENDER_OPTIONS, (r) => r.gender)}
+            />
+            <Breakdown
+              title="Hispanic origin"
+              rows={tally(runs, HISPANIC_OPTIONS, (r) => r.hispanic)}
+            />
+            <Breakdown title="Race" rows={tally(runs, RACE_OPTIONS, (r) => r.race)} />
+            <Breakdown
+              title="Education"
+              rows={tally(runs, EDUCATION_OPTIONS, (r) => r.education)}
+            />
+            <Breakdown
+              title="Marital status"
+              rows={tally(runs, MARITAL_OPTIONS, (r) => r.marital_status)}
+            />
+          </div>
+
+          <Breakdown
+            title="State"
+            rows={tally(runs, STATE_OPTIONS, (r) => r.us_state)}
+            columns
+          />
+
+          {legacyAge.length > 0 && (
+            <div>
+              <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+                Age (legacy)
+              </h3>
+              <p className="mt-1 text-xs text-[color:var(--muted)]">
+                From {fmtNumber(legacyAge.length)} runs recorded before the intake
+                switched to Pew&apos;s birth-cohort question.
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm">
+                {AGE_BUCKETS.map((b) => (
+                  <li key={b.label} className="flex justify-between gap-4">
+                    <span>{b.label}</span>
+                    <span className="tabular-nums">
+                      {fmtNumber(
+                        legacyAge.filter((r) => r.age! >= b.min && r.age! <= b.max).length,
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <p className="text-xs text-[color:var(--muted)]">
-            Data version {QUIZ_DATA.data_version} · {QUIZ_DATA.items.length} statements
+            Data version {QUIZ_DATA.data_version} · {QUIZ_DATA.items.length} statements ·
+            demographics mirror Pew Research Center&apos;s 2023-24 Religious Landscape
+            Study (doi: 10.58094/3kwb-bf52)
           </p>
         </>
       )}
     </section>
+  );
+}
+
+function Breakdown({
+  title,
+  rows,
+  columns = false,
+}: {
+  title: string;
+  rows: { label: string; count: number; muted?: boolean }[];
+  /** For long lists (states) - wrap into columns rather than one tall list. */
+  columns?: boolean;
+}) {
+  return (
+    <div>
+      <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">{title}</h3>
+      <ul
+        className={`mt-3 space-y-1.5 text-sm ${columns ? "sm:columns-2 lg:columns-3" : ""}`}
+      >
+        {rows.map((r) => (
+          <li
+            key={r.label}
+            className={`flex justify-between gap-4 ${
+              r.muted ? "text-[color:var(--muted)]" : ""
+            }`}
+          >
+            <span>{r.label}</span>
+            <span className="tabular-nums">{fmtNumber(r.count)}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

@@ -59,6 +59,17 @@ export default async function DatasetPage({
 
       <div className="mt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
         <div className="max-w-2xl space-y-8">
+          {dataset.howWeUseIt && (
+            <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-7">
+              <h2 className="small-caps text-[11px] font-medium text-[color:var(--accent)]">
+                How we use it
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
+                {dataset.howWeUseIt}
+              </p>
+            </section>
+          )}
+
           {dataset.quiz && (
             <Link
               href={dataset.quiz.href}
@@ -120,6 +131,39 @@ export default async function DatasetPage({
         </div>
 
         <aside className="mt-10 space-y-8 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
+          {dataset.citation && (
+            <section>
+              <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+                Cite it as
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
+                {dataset.citation}
+              </p>
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                {dataset.doi && (
+                  <a
+                    href={`https://doi.org/${dataset.doi}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-medium text-[color:var(--accent)] hover:underline"
+                  >
+                    doi.org/{dataset.doi}
+                  </a>
+                )}
+                {dataset.sourceUrl && (
+                  <a
+                    href={dataset.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-medium text-[color:var(--accent)] hover:underline"
+                  >
+                    Download the dataset
+                  </a>
+                )}
+              </div>
+            </section>
+          )}
+
           {dataset.selfDescription && (
             <section>
               <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">

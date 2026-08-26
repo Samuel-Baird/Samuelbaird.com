@@ -8,6 +8,7 @@ import {
   scoreAnswers,
 } from "@/lib/evangelical-quiz";
 import {
+  isEmptyDemographics,
   validateDemographics,
   type Demographics,
 } from "@/lib/evangelical-quiz/demographics";
@@ -91,6 +92,59 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 type DemographicsInput = Partial<Demographics> & { currentPath?: string };
 
 /**
+ * The demographic columns shared by `profiles` and `evangelical_quiz_runs`
+ * (migrations 0046 and 0047). One string so a select can never drift from
+ * the row shape the mapper below expects.
+ */
+const DEMOGRAPHIC_COLUMNS =
+  "age, birth_decade, gender, hispanic, race, education, marital_status, us_state, tradition_slug";
+
+type DemographicRow = {
+  age?: number | null;
+  birth_decade?: string | null;
+  gender?: string | null;
+  hispanic?: string | null;
+  race?: string | null;
+  education?: string | null;
+  marital_status?: string | null;
+  us_state?: string | null;
+  tradition_slug?: string | null;
+};
+
+/** Row -> Demographics. `tradition_slug` is 0046's name for the religion. */
+function demographicsFromRow(row: DemographicRow | null | undefined): Demographics {
+  return validateDemographics({
+    age: row?.age ?? null,
+    birthDecade: row?.birth_decade ?? null,
+    gender: row?.gender ?? null,
+    hispanic: row?.hispanic ?? null,
+    race: row?.race ?? null,
+    education: row?.education ?? null,
+    maritalStatus: row?.marital_status ?? null,
+    state: row?.us_state ?? null,
+    religionSlug: row?.tradition_slug ?? null,
+  });
+}
+
+/**
+ * Demographics -> row. `age` is deliberately absent: the intake stopped
+ * asking for it when birth_decade (RLS BIRTHDECADE) took over, so writing
+ * the always-null value back would erase what older profiles recorded.
+ */
+function demographicColumns(d: Demographics) {
+  return {
+    birth_decade: d.birthDecade,
+    gender: d.gender,
+    hispanic: d.hispanic,
+    race: d.race,
+    education: d.education,
+    marital_status: d.maritalStatus,
+    us_state: d.state,
+    tradition_slug: d.religionSlug,
+  };
+}
+
+/**
  * Saves a signed-in reader's optional demographics to their profile and
  * stamps demographics_updated_at - which doubles as the "already asked"
  * marker, so this is called on skip too (with all-null fields). Anonymous
@@ -109,9 +163,7 @@ export async function saveEvangelicalDemographics(input: DemographicsInput) {
   const { error } = await supabase
     .from("profiles")
     .update({
-      age: d.age,
-      gender: d.gender,
-      tradition_slug: d.traditionSlug,
+      ...demographicColumns(d),
       demographics_updated_at: new Date().toISOString(),
     })
     .eq("id", user.id);
@@ -161,14 +213,10 @@ export async function recordEvangelicalQuizRun(input: RecordRunInput) {
   if (user) {
     const { data: profile } = await supabase
       .from("profiles")
-      .select("age, gender, tradition_slug")
+      .select(DEMOGRAPHIC_COLUMNS)
       .eq("id", user.id)
       .maybeSingle();
-    demographics = validateDemographics({
-      age: profile?.age ?? null,
-      gender: profile?.gender ?? null,
-      traditionSlug: profile?.tradition_slug ?? null,
-    });
+    demographics = demographicsFromRow(profile);
   } else {
     if (!input.anonId || !UUID_RE.test(input.anonId)) {
       throw new Error("Anonymous runs need an anon id.");
@@ -186,9 +234,10 @@ export async function recordEvangelicalQuizRun(input: RecordRunInput) {
     id: input.runId,
     user_id: user?.id ?? null,
     anon_id: anonId,
+    // The run snapshot keeps `age` - it's the one place the column is still
+    // written, so a profile recorded before the RLS switch keeps its value.
     age: demographics.age,
-    gender: demographics.gender,
-    tradition_slug: demographics.traditionSlug,
+    ...demographicColumns(demographics),
     answers,
     score,
     percentile,
@@ -225,7 +274,7 @@ export async function claimEvangelicalQuizRuns(input: { anonId: string }) {
     .update({ user_id: user.id, anon_id: null })
     .eq("anon_id", input.anonId)
     .is("user_id", null)
-    .select("id, age, gender, tradition_slug, created_at");
+    .select(`id, created_at, ${DEMOGRAPHIC_COLUMNS}`);
   if (error) throw error;
   if (!claimed || claimed.length === 0) return { claimed: 0 };
 
@@ -238,18 +287,16 @@ export async function claimEvangelicalQuizRuns(input: { anonId: string }) {
     const latest = [...claimed].sort((a, b) =>
       String(b.created_at).localeCompare(String(a.created_at)),
     )[0];
-    const d = validateDemographics({
-      age: latest.age,
-      gender: latest.gender,
-      traditionSlug: latest.tradition_slug,
-    });
-    if (d.age !== null || d.gender !== null || d.traditionSlug !== null) {
+    const d = demographicsFromRow(latest);
+    if (!isEmptyDemographics(d)) {
       await supabase
         .from("profiles")
         .update({
+          // Unlike the intake, this backfill does carry `age` across: it's
+          // restoring a snapshot, and an older run may be the only place
+          // the value survives.
           age: d.age,
-          gender: d.gender,
-          tradition_slug: d.traditionSlug,
+          ...demographicColumns(d),
           demographics_updated_at: new Date().toISOString(),
         })
         .eq("id", user.id);

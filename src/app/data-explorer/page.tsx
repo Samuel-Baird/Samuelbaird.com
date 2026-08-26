@@ -44,7 +44,11 @@ export default function DataExplorerPage() {
                 </p>
               </div>
               <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
-                {count} {count === 1 ? "analysis" : "analyses"}
+                {/* A dataset earns a card as soon as the site uses it — the
+                    analyses can come later, so don't advertise "0 analyses". */}
+                {count === 0
+                  ? "About this dataset"
+                  : `${count} ${count === 1 ? "analysis" : "analyses"}`}
                 <ArrowRight
                   aria-hidden="true"
                   size={13}

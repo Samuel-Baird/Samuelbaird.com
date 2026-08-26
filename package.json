@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:pew-rls": "tsx scripts/pew-rls/check-taxonomy.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "^2.0.0",

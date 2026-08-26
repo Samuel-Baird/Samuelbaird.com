@@ -62,8 +62,11 @@ export default function PrivacyPage() {
             <p className="mt-3">
               If you complete a quiz (such as &ldquo;How evangelical are
               you?&rdquo;), we store your answers and result, along with any
-              optional demographics you chose to provide (age, gender,
-              religious tradition), for aggregate research. For signed-out
+              optional demographics you chose to provide (religion, birth
+              decade, gender, race, Hispanic origin, education, marital
+              status, and state — the same questions Pew Research Center
+              asks in its Religious Landscape Study), for aggregate
+              research. For signed-out
               takers this is stored anonymously — under a random identifier
               held only in your browser, with no IP address or browser
               fingerprint. Every demographic question is skippable, and
