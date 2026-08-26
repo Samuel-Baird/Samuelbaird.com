@@ -17,6 +17,7 @@ import {
   type BreakdownRow,
   type GroupPercentile,
 } from "@/lib/evangelical-quiz";
+import { GroupBreakdownChart } from "./group-breakdown-chart";
 import { HowItWorks } from "./how-it-works";
 import { ShareButton } from "./share-button";
 
@@ -227,6 +228,10 @@ export function ResultsScreen({
                     )}
                   </>
                 )}
+                <GroupBreakdownChart
+                  item={row.item}
+                  chosenIndex={row.item.scale.indexOf(row.response)}
+                />
               </li>
             );
           })}

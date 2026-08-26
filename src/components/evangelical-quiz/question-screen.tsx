@@ -1,7 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { displayOptions, responseLabel } from "@/lib/evangelical-quiz";
 import type { QuizItem } from "@/lib/evangelical-quiz";
-import { GroupBreakdownChart } from "./group-breakdown-chart";
 
 export function QuestionScreen({
   item,
@@ -125,8 +124,6 @@ export function QuestionScreen({
           </button>
         )}
       </div>
-
-      {answered && <GroupBreakdownChart item={item} chosenIndex={chosen} />}
     </div>
   );
 }
