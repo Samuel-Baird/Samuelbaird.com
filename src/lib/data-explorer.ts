@@ -13,6 +13,7 @@ import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-di
 import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhood-formation.json";
 import familyHouseholdData from "../../docs/datasets/pew-rls-2023-24/family-household.json";
 import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
+import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -84,6 +85,17 @@ const ALL_RELIGIOUS_GROUP_ORDER = [
   "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
   "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
   "Jewish", "Other world religions", "Other faiths", "All religious average",
+];
+
+/** Group order for the "Beliefs" section, matching GROUP_ORDER in
+ * scripts/pew-rls/render_beliefs_charts.py - all religious traditions
+ * individually + an average + the unaffiliated as their own row, per that
+ * section's own open-population resolution (see beliefs.py's docstring). */
+const BELIEFS_GROUP_ORDER = [
+  "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
+  "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
+  "Jewish", "Other world religions", "Other faiths",
+  "All religious average", "Religiously unaffiliated",
 ];
 
 /** A direct quotation of how the dataset's own source describes itself. */
@@ -235,6 +247,11 @@ export const DATASETS: Dataset[] = [
       pewPraccGraphic(),
       pewGraceGraphic(),
       pewPracaGraphic(),
+      pewSoulBeliefGraphic(),
+      pewHeavenBeliefGraphic(),
+      pewHellBeliefGraphic(),
+      pewHeavenVsHellGraphic(),
+      pewEvolutionGuidedGraphic(),
     ],
   },
   {
@@ -719,6 +736,101 @@ function pewPracaGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share in weekly+ prayer/scripture-study/religious-ed groups, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Belief in a soul or spirit, by current tradition (all religiously
+ * affiliated traditions individually + the unaffiliated, per this
+ * section's open-population resolution - see beliefs.py's docstring).
+ * Built from beliefs.json (scripts/pew-rls/beliefs.py), rendered by
+ * scripts/pew-rls/render_beliefs_charts.py.
+ */
+function pewSoulBeliefGraphic(): Graphic {
+  const alt = pctAlt(BELIEFS_GROUP_ORDER, beliefsData.soul_belief);
+  return {
+    title: "Believe people have a soul or spirit",
+    description:
+      "Share who believe people have a soul or spirit in addition to their physical body.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-soul.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who believe in a soul or spirit, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Belief in heaven, by current tradition. Same data source and render
+ * script as the graphic above.
+ */
+function pewHeavenBeliefGraphic(): Graphic {
+  const alt = pctAlt(BELIEFS_GROUP_ORDER, beliefsData.heaven_belief);
+  return {
+    title: "Believe in heaven",
+    description:
+      "Share who believe there is a heaven where people who led good lives are eternally " +
+      "rewarded.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-heaven.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who believe in heaven, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Belief in hell, by current tradition. Same data source and render
+ * script as the graphic above.
+ */
+function pewHellBeliefGraphic(): Graphic {
+  const alt = pctAlt(BELIEFS_GROUP_ORDER, beliefsData.hell_belief);
+  return {
+    title: "Believe in hell",
+    description:
+      "Share who believe there is a hell where people who led bad lives are eternally " +
+      "punished.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-hell.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who believe in hell, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Heaven vs. hell belief, paired per tradition - the fifth Beliefs item,
+ * built once both individual belief graphics above exist. Same data
+ * source and render script as the graphics above.
+ */
+function pewHeavenVsHellGraphic(): Graphic {
+  const alt = BELIEFS_GROUP_ORDER.map((group) => {
+    const h = beliefsData.heaven_belief[group as keyof typeof beliefsData.heaven_belief];
+    const l = beliefsData.hell_belief[group as keyof typeof beliefsData.hell_belief];
+    return `${group} heaven ${h.pct.toFixed(0)}%, hell ${l.pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Belief in heaven vs. hell",
+    description: "The same two questions, compared side by side per tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-heaven-vs-hell.png",
+    width: 1080,
+    height: 1350,
+    alt: `Paired bar chart, belief in heaven vs. hell by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Evolution guided by God, by current tradition. Same data source and
+ * render script as the graphics above.
+ */
+function pewEvolutionGuidedGraphic(): Graphic {
+  const alt = pctAlt(BELIEFS_GROUP_ORDER, beliefsData.evolution_guided_by_god);
+  return {
+    title: "Evolution guided by God",
+    description:
+      "Share who say humans evolved over time due to processes guided or allowed by God.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-evolution.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say evolution was guided by God, by tradition: ${alt}.`,
   };
 }
 
