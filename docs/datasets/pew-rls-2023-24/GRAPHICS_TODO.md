@@ -87,24 +87,6 @@ the same public file won't produce a different answer.
   institution's impact on society, separately, not a joint compatibility
   framing.
 
-### Partially blocked
-
-- **Median age (Christians), plus age distribution by group (stacked
-  bars)** — there is **no continuous age variable in the public file at
-  all**, and no age-in-single-years or half-decade variable either:
-  `BIRTHHALFDECADE` (which would let you approximate one) is
-  restricted-use only. The only public age measure is `BIRTHDECADE` — 7
-  buckets, `1940s or earlier` through `2000s`. The **distribution chart is
-  fully buildable** (a stacked bar of `BIRTHDECADE` share per tradition,
-  restricted to Christian traditions + a Christian average, matching every
-  other item's population rule below). A **numeric median age** is not
-  directly computable from decade buckets without assuming a distribution
-  within each bucket — that would be an approximation with a stated method,
-  not Pew's own median. Recommend building the distribution chart and
-  either dropping "median age" or relabeling it "typical (modal) birth
-  decade" unless an approximated median with an explicit caveat is wanted
-  instead — needs a decision before building.
-
 ### Switching, generalized
 
 - **Net staying/leaving, standardized around being born into the faith —
@@ -283,3 +265,4 @@ all to the same rule.
 ## Shipped
 
 - [Net change since childhood, by tradition](../../../public/data-explorer/pew-religious-landscape-study/switching-rates.png) — 2026-08-25. LDS vs. Catholic, Jehovah's Witness, Protestant (combined), Orthodox Christian, Other Christian; net raised-vs-current change with bootstrap confidence intervals, plus a current Evangelical/Mainline/Historically Black Protestant composition inset. Computed by `scripts/pew-rls/switching_rates.py`, rendered by `scripts/pew-rls/render_switching_chart.py`.
+- [Birth-decade makeup, by tradition](../../../public/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png) — 2026-08-25. `BIRTHDECADE` share (7 buckets) of each tradition's current (`CURREL`) membership, LDS vs. Protestant/Catholic/Orthodox/JW/Other Christian plus a weighted Christian average; numeric median age dropped per the item's own note (not computable from decade buckets without assuming a within-bucket distribution). New single-hue ordinal ramp on the site's `--accent` hue, validated with `dataviz` skill's `validate_palette.js --ordinal`. Computed by `scripts/pew-rls/birth_decade_distribution.py`, rendered by `scripts/pew-rls/render_birth_decade_chart.py`.

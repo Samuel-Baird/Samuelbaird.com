@@ -8,6 +8,7 @@
 
 import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-quiz";
 import switchingRatesData from "../../docs/datasets/pew-rls-2023-24/switching-rates.json";
+import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
 
 export type Quiz = {
   title: string;
@@ -73,6 +74,19 @@ const SWITCHING_GROUP_ORDER = [
   "Protestant",
   "Other Christian",
   "Orthodox Christian",
+];
+
+/** Sort/label order for the birth-decade-distribution graphic's alt text,
+ * matching render_birth_decade_chart.py's GROUP_ORDER (top-to-bottom on
+ * the chart itself; this list reads bottom-to-top, i.e. reversed). */
+const BIRTH_DECADE_GROUP_ORDER = [
+  "Protestant",
+  "Catholic",
+  "Latter-day Saint",
+  "Orthodox Christian",
+  "Jehovah's Witness",
+  "Other Christian",
+  "Christian average",
 ];
 
 export const DATASETS: Dataset[] = [
@@ -169,7 +183,7 @@ export const DATASETS: Dataset[] = [
         "Appendix A of the accompanying report before comparing across waves.",
     ],
     methodologySourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
-    graphics: [pewSwitchingRatesGraphic()],
+    graphics: [pewSwitchingRatesGraphic(), pewBirthDecadeGraphic()],
   },
 ];
 
@@ -208,6 +222,40 @@ function pewSwitchingRatesGraphic(): Graphic {
       `tradition to the share currently in it. ${netChangeAlt}. Faded bars (Other ` +
       `Christian, Orthodox Christian) have a 95% confidence interval that includes zero. ` +
       `Below it, current Protestant tradition composition: ${protestantAlt}.`,
+  };
+}
+
+/**
+ * Birth-decade distribution graphic for the Pew RLS entry: what share of
+ * each tradition's current members were born in each decade. Built from
+ * birth-decade-distribution.json (produced by
+ * scripts/pew-rls/birth_decade_distribution.py and rendered to PNG by
+ * scripts/pew-rls/render_birth_decade_chart.py) - same never-hand-type
+ * reasoning as pewSwitchingRatesGraphic() above. GRAPHICS_TODO.md's
+ * "Partially blocked" item: no continuous age variable exists in the
+ * public-use file, so this ships the distribution chart it calls "fully
+ * buildable" without a numeric median age.
+ */
+function pewBirthDecadeGraphic(): Graphic {
+  const { distribution, decade_order: decadeOrder } = birthDecadeData;
+  const alt = BIRTH_DECADE_GROUP_ORDER.map((group) => {
+    const g = distribution[group as keyof typeof distribution];
+    const shares = decadeOrder
+      .map((d) => `${d} ${g.shares_pct[d as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Birth-decade makeup, by tradition",
+    description:
+      "Share of each tradition's current members born in each decade — the finest age " +
+      "measure the public-use file offers.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png",
+    width: 1080,
+    height: 1350,
+    alt:
+      `Stacked bar chart: birth-decade share of each tradition's current members. ${alt}.`,
   };
 }
 
