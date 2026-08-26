@@ -2,8 +2,8 @@
 
 **This is the website's style, not the social-media one.** @ithinkisam's
 Instagram graphics have their own established style, documented in
-[`STATISTICS_STYLE_GUIDE`](https://github.com/Samuel-Baird/ithinksam_statistics/blob/main/STATISTICS_STYLE_GUIDE)
-in the `ithinksam_statistics` repo — same color palette and typography as
+[`STATISTICS_STYLE_GUIDE.md`](../social-graphics/STATISTICS_STYLE_GUIDE.md)
+in `scripts/social-graphics/` — same color palette and typography as
 here, but built for a feed (an optionally punchy title, a post-length
 write-up alongside it). The website's [Data Explorer](../../src/app/data-explorer/)
 is a different medium with a different job — a reader is here to look up
@@ -23,10 +23,10 @@ finished. When the real website generator gets built, it should follow
 this doc; update this doc first if that build changes anything here.
 
 This doc is a distillation of two sources: the established R scripts —
-[`state_of_theology_charts.R`](https://github.com/Samuel-Baird/ithinksam_statistics/blob/main/state_of_theology_charts.R)
-and [`state_of_theology_groups.R`](https://github.com/Samuel-Baird/ithinksam_statistics/blob/main/state_of_theology_groups.R) —
-and `STATISTICS_STYLE_GUIDE` itself, adapted for the website's own title
-rule. If you change the shared palette or type, update `STATISTICS_STYLE_GUIDE`,
+[`state_of_theology_charts.R`](../social-graphics/state_of_theology_charts.R)
+and [`state_of_theology_groups.R`](../social-graphics/state_of_theology_groups.R) —
+and `STATISTICS_STYLE_GUIDE.md` itself, adapted for the website's own title
+rule. If you change the shared palette or type, update `STATISTICS_STYLE_GUIDE.md`,
 this file, and `render_chart.py` together — an undocumented style isn't a
 style, it's a one-off.
 
@@ -97,13 +97,13 @@ and prominent (it's the biggest thing on the chart, per Composition below)
 but let it be neutral: the reader should be able to look at the title and
 the bars and reach their own read, not be handed one.
 
-This is the one deliberate departure from `STATISTICS_STYLE_GUIDE`'s social
+This is the one deliberate departure from `STATISTICS_STYLE_GUIDE.md`'s social
 style. The two guides aren't the same rule applied twice:
 
 - **Website (this doc): always neutral.** Every chart here is titled with
   the bare statement. No exceptions — a reader is here to check what the
   data says, not to be pulled through a feed.
-- **Social (`STATISTICS_STYLE_GUIDE`): title is a judgment call.** A post
+- **Social (`STATISTICS_STYLE_GUIDE.md`): title is a judgment call.** A post
   may use a punchy or clever line ("America's Arianism problem") when one
   fits, or may not — it's not a rule that every post needs a claim, just
   that the option is open there in a way it deliberately isn't here.

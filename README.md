@@ -64,7 +64,11 @@ src/app/            routes (App Router); route folders may colocate their own
 src/components/     shared components, flat, kebab-case filenames
 src/lib/            data access, auth, types; src/lib/supabase/ holds the clients
 supabase/migrations/  numbered SQL migrations
-scripts/            one-off maintenance and seeding scripts (tsx / node)
+scripts/            one-off maintenance and seeding scripts (tsx / node),
+                    plus the statistics-graphics generators:
+                    scripts/social-graphics/ (R, Instagram posts) and
+                    scripts/state-of-theology-graphics/ (Python, website) -
+                    each has its own README/style guide
 content/            static source texts (e.g. King Follett scribal accounts)
 docs/               project documentation
 ```

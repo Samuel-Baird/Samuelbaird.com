@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Render State of Theology comparison-by-tradition graphics.
 
-Python port of the house style established in
-github.com/Samuel-Baird/ithinksam_statistics (state_of_theology_groups.R) -
+Python port of the house style established by the social-media R scripts
+(scripts/social-graphics/state_of_theology_groups.R) -
 same palette and typography, adapted per STYLE.md for the website (white
 background, neutral titles) - for use where R/ggplot2/ragg aren't available.
-The R scripts in that repo are the canonical generator for social posts;
+Those R scripts are the canonical generator for social posts;
 this exists so a Claude Code session (or anyone without an R toolchain) can
 produce a website-style chart without installing one.
 
