@@ -387,7 +387,9 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
           <p className="text-xs text-[color:var(--muted)]">
             Data version {QUIZ_DATA.data_version} · {QUIZ_DATA.items.length} statements ·
             demographics mirror Pew Research Center&apos;s 2023-24 Religious Landscape
-            Study (doi: 10.58094/3kwb-bf52)
+            Study (doi: 10.58094/3kwb-bf52). Runs before data v3 recorded a percentile
+            against a simulated population; the decile chart above mixes both
+            definitions for runs of different vintages.
           </p>
         </>
       )}

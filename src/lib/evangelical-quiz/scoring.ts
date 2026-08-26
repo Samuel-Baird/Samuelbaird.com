@@ -15,6 +15,7 @@ import type {
   Match,
   QuizData,
   QuizItem,
+  ReferenceGroupKey,
   Response,
   Tradition,
   TraditionScore,
@@ -42,11 +43,39 @@ export function scoreAnswers(data: QuizData, answers: AnswerMap): number {
 }
 
 /**
- * Percent of the synthetic national population scoring below `score`.
- * Binary search over the ascending breakpoints the build computed.
+ * Same as `scoreAnswers`, but limited to `data.percentile_items` — this is
+ * the score a percentile is looked up with, since `arian` (2022-only) isn't
+ * something the real respondents behind `reference` were ever asked, and
+ * including it would score the reader against a question the comparison
+ * group couldn't answer.
  */
-export function percentileOf(data: QuizData, score: number): number {
-  const bp = data.percentile_breakpoints;
+export function percentileScore(data: QuizData, answers: AnswerMap): number {
+  const eligible = new Set(data.percentile_items);
+  let total = 0;
+  for (const item of data.items) {
+    if (!eligible.has(item.id)) continue;
+    const r = answers[item.id];
+    if (r === undefined) continue;
+    const w = item.w[r];
+    if (w === undefined) continue;
+    total += w;
+  }
+  return total / data.constants.SHRINKAGE;
+}
+
+/**
+ * Percent of a reference group's real, survey-weighted respondents scoring
+ * below `score`. Binary search over the ascending curve the build computed
+ * from the State of Theology 2025 microdata. Defaults to "all" (all
+ * Americans) — the headline comparison; pass another `ReferenceGroupKey`
+ * for a per-tradition percentile.
+ */
+export function percentileOf(
+  data: QuizData,
+  score: number,
+  group: ReferenceGroupKey = "all",
+): number {
+  const bp = data.reference?.groups[group]?.curve ?? [];
   if (bp.length < 2) return 50;
   let lo = 0;
   let hi = bp.length;
@@ -56,9 +85,37 @@ export function percentileOf(data: QuizData, score: number): number {
     else hi = mid;
   }
   // lo can reach bp.length when score exceeds every breakpoint (a real
-  // score more extreme than all 20k simulated respondents) - clamp so the
-  // result never reads as more than "100% of Americans."
+  // score more extreme than every respondent in the group) - clamp so the
+  // result never reads as more than 100%.
   return (100 * Math.min(lo, bp.length - 1)) / (bp.length - 1);
+}
+
+export type GroupPercentile = {
+  key: ReferenceGroupKey;
+  label: string;
+  n: number;
+  percentile: number;
+};
+
+/**
+ * `percentileOf` for every reference group, in the build's display order —
+ * the "compared with each group" list on the results screen.
+ */
+export function groupPercentiles(data: QuizData, score: number): GroupPercentile[] {
+  const reference = data.reference;
+  if (!reference) return [];
+  const rows: GroupPercentile[] = [];
+  for (const key of reference.group_order) {
+    const group = reference.groups[key];
+    if (!group) continue;
+    rows.push({
+      key,
+      label: group.label,
+      n: group.n,
+      percentile: percentileOf(data, score, key),
+    });
+  }
+  return rows;
 }
 
 /**

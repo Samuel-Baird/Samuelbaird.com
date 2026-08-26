@@ -8,28 +8,36 @@ makes no network calls.
 ## The pipeline
 
 ```
-workbook.xlsx  --build_data.py-->  src/lib/evangelical-quiz/data.json  --imported by-->  the app
+workbook.xlsx  --+
+                  +--build_data.py-->  src/lib/evangelical-quiz/data.json  --imported by-->  the app
+responses-2025.csv --+
 ```
 
-`build_data.py` is the only thing that touches the raw survey percentages.
+`build_data.py` is the only thing that touches the raw survey percentages
+(from the workbook) or the raw respondent microdata (from the CSV).
 Everything downstream — the React components, the scoring functions in
 `src/lib/evangelical-quiz/scoring.ts` — works off the finished blob and never
-sees a percentage cell.
+sees a percentage cell or a respondent row.
 
 ### Regenerating the data
 
 ```bash
 python scripts/evangelical-quiz/build_data.py \
   --xlsx "path/to/How_Evangelcal_are_you_.xlsx" \
+  --csv data/state-of-theology/responses-2025.csv \
   --out src/lib/evangelical-quiz/data.json
 ```
 
-Standard library only — nothing to `pip install`. Run with `--report-only` to
-see what the workbook contains (item count, which groups are present, which
-rows don't sum to ~100) without writing anything:
+Standard library only — nothing to `pip install`. `--csv` defaults to
+`data/state-of-theology/responses-2025.csv` (gitignored, like the rest of
+`/data/`); pass `--fetch` to download it there automatically from
+`thestateoftheology.com` if it's missing. Run with `--report-only` to see
+what the workbook and microdata contain (item count, which groups are
+present, which rows don't sum to ~100, per-group percentile landmarks)
+without writing anything:
 
 ```bash
-python scripts/evangelical-quiz/build_data.py --xlsx workbook.xlsx --report-only
+python scripts/evangelical-quiz/build_data.py --xlsx workbook.xlsx --csv responses-2025.csv --report-only
 ```
 
 The build refuses to emit a blob if zero items have usable data, and it never
@@ -99,16 +107,41 @@ calling sex outside marriage a sin come from the same underlying belief), so
 summing raw log-likelihood ratios overstates confidence — naive Bayes assumes
 independence these items don't have. The summed score is divided by
 `SHRINKAGE` to correct for that. This is the one constant meant to be tuned by
-feel; there's no data-derived value for it.
+feel; there's no data-derived value for it. Note that `SHRINKAGE` is
+rank-preserving — dividing every score by the same constant never changes
+who scores higher than whom — so it has **no effect on any percentile**. It
+only scales the stored `score` value and the per-question breakdown numbers
+on the results screen.
 
-**5. Reporting: percentile, not probability.** We don't convert the score to
-"87% likely evangelical" — an uncalibrated, meaningless number for this kind
-of test. Instead, at build time we draw `SIM_N` synthetic respondents by
-sampling each answer independently from the `All U.S. adults` distribution,
-score every one with the same weights, sort the results, and store
-`PCTL_STEPS + 1` evenly spaced breakpoints. At runtime, a reader's score is
-binary-searched into that curve to produce "you answered more like an
-evangelical than N% of Americans."
+**5. Reporting: percentile, not probability — against real respondents.**
+We don't convert the score to "87% likely evangelical" — an uncalibrated,
+meaningless number for this kind of test. Nor do we compare the score to a
+synthetic population (an earlier version of this quiz did: it drew 20,000
+simulated respondents by sampling each answer *independently* from the `All
+U.S. adults` distribution, which ignores how real answers correlate and
+produces a percentile curve about 3× too narrow — a consistent evangelical
+would saturate at the 100th percentile even though real evangelical
+respondents span a real range).
+
+Instead, at build time we score the **actual 3,001 respondents** of the
+State of Theology 2025 survey — the same microdata the workbook's own
+percentages were computed from — with the exact weights above, using each
+respondent's own survey weight (`WT`). `arian` (2022-only) is excluded from
+every respondent's score, since none of them were asked it. Sorting the
+weighted scores and walking the cumulative weight gives `PCTL_STEPS + 1`
+evenly spaced, deterministic breakpoints (no RNG — the same input always
+produces byte-identical output) — see `reference.groups.all.curve` in the
+blob. At runtime, a reader's score (also with `arian` excluded — see
+`scoring.ts:percentileScore`) is binary-searched into that curve to produce
+"you answered more like an evangelical than N% of Americans," and that
+sentence is now literally true.
+
+We do the same thing separately for each religious tradition the survey
+distinguishes (`reference.groups.evangelical`, `.black_protestant`,
+`.mainline`, `.catholic`, `.other_none`, plus the complement
+`.non_evangelical` and the belief-based `.evangelical_by_belief` — see
+"Reference population" below), so the results screen can also say "more
+evangelical than N% of Catholics," etc.
 
 **6. Tradition match.** Separately from the evangelical score, for each
 tradition *G* ∈ {Evangelical, Black Protestant, Mainline, Roman Catholic}:
@@ -132,27 +165,65 @@ it can never quietly disagree:
 
 | Constant | Default | Meaning |
 |---|---|---|
-| `EVANGELICAL_SHARE` | `0.25` | Assumed evangelical share of U.S. adults, used to back "not Evangelical" out of "All U.S. adults." |
+| `EVANGELICAL_SHARE` | `0.25` | Assumed evangelical share of U.S. adults, used to back "not Evangelical" out of "All U.S. adults." Matches the 2025 microdata's own RELTRAD=1 share (798/3001 = 0.266). |
 | `PROB_FLOOR` | `0.02` | Floor on every probability before taking a log. |
 | `NEG_FLOOR` | `0.005` | Floor for a not-Evangelical cell that goes negative. |
-| `SHRINKAGE` | `2.5` | Divides the summed score to correct for correlated items. The one constant meant to be hand-tuned. |
-| `SIM_N` | `20000` | Synthetic respondents drawn for the percentile curve. |
-| `SIM_SEED` | `20250825` | Fixed seed — reruns on unchanged data produce byte-identical breakpoints. |
+| `SHRINKAGE` | `2.5` | Divides the summed score to correct for correlated items. Percentile-neutral (see step 4 above) — hand-tune it for the displayed score/breakdown numbers, not to move the percentile. |
+| `PCTL_STEPS` | `200` | Breakpoints stored per percentile curve: 0, 0.5, 1.0 ... 100. |
+| `CROSSCHECK_TOL` | `1.5` | Percentage points; how far a CSV-recomputed group percentage may drift from the workbook's own cell before the build fails. Workbook cells are whole-number rounded, so ~1pt of drift is expected noise — a real item/column mismatch shows up as tens of points off, not this. |
 | `TIE_MARGIN` | `0.25` | Log-likelihood gap (nats) below which the top two traditions are reported as a tie. |
+
+## Reference population
+
+The percentile curves in `data.json.reference` are built from
+`data/state-of-theology/responses-2025.csv` (gitignored; fetch with
+`--fetch` or download manually from `CSV_URL` in `build_data.py`) — one row
+per respondent (n=3,001) to the 2025 State of Theology survey, with a survey
+weight (`WT`) and, per respondent, a `RELTRAD` religious-tradition code and
+an `EVB` belief-based-evangelical flag.
+
+**`RELTRAD` codes**, verified by `crosscheck_workbook()` at every build
+(reproducing the workbook's own published group percentages from the CSV,
+cell by cell, within `CROSSCHECK_TOL`): `1` = Evangelical (n=798), `2` =
+Black Protestant (n=103), `3` = Mainline (n=222), `4` = Roman Catholic
+(n=683), `5` = Other faiths & the unaffiliated (n=1,195). These five values
+partition every respondent exactly once, and match this build's own
+`Evangelical` / `Black Protestant` / `Mainline` / `Roman Catholic` workbook
+groups — i.e. the same "Evangelical" definition drives both the item
+weights and the group percentile curve.
+
+**`EVB`** is a separate, belief-based definition: it flags respondents who
+strongly agree with all four "NAE Lifeway Research Evangelical Beliefs
+Definition" statements (`bible_highest_authority`, `evangelism_important`,
+`cross_only_sacrifice`, `christ_alone_salvation`; n=637). It is **not** the
+group these four items' own weights are computed against — see "Found
+already in the workbook" below — so it's shipped as its own curve
+(`evangelical_by_belief`) rather than folded into `RELTRAD`'s Evangelical.
+
+`crosscheck_workbook()` runs on every build (including `--report-only`) and
+fails the build if any item/group cell it can check drifts by more than
+`CROSSCHECK_TOL`. This is what actually proves the CSV's 35 `Qxx_y` columns
+line up with the right item in the right order, and that `RELTRAD` means
+what the table above says it means — a wrong mapping would show up as a
+wild, tens-of-points mismatch, not the ~1pt rounding noise a correct mapping
+produces.
 
 To retune, edit the constant in `build_data.py` and re-run the build — never
 hand-edit `data.json`.
 
 ## Files
 
-- `build_data.py` — parses the workbook, validates it, derives weights, runs
-  the simulation, emits `src/lib/evangelical-quiz/data.json`.
+- `build_data.py` — parses the workbook, validates it, derives weights, scores
+  the respondent microdata to build the empirical percentile curves, emits
+  `src/lib/evangelical-quiz/data.json`.
 - `src/lib/evangelical-quiz/types.ts` — the blob's shape and the app's types.
 - `src/lib/evangelical-quiz/scoring.ts` — pure scoring functions (`scoreAnswers`,
-  `percentileOf`, `matchTradition`, `breakdown`), each mirroring a step above.
+  `percentileScore`, `percentileOf`, `groupPercentiles`, `matchTradition`,
+  `breakdown`), each mirroring a step above.
 - `src/lib/evangelical-quiz/self-test.ts` — the sanity checks called out in
-  the build spec: weights finite, percentiles monotonic, and answering the
-  modal evangelical response to every question scores in the top decile. Run
+  the build spec: weights finite, every reference curve monotonic, and
+  answering the modal evangelical response to every question scores in the
+  top decile against both the all-Americans and the Evangelical curve. Run
   `runEvangelicalQuizSelfTest()` from the browser console on `/how-evangelical`
   in a dev build.
 - `src/components/evangelical-quiz/` — the landing, question, and results
@@ -205,26 +276,30 @@ the underlying respondent-level microdata the site's own data explorer reads:
   research report byte-for-byte (every one of the 35 items matched the
   report's own charts to within rounding).
   Report: `https://research.lifeway.com/wp-content/uploads/2025/09/Ligonier-State-of-Theology-2025-White-Paper.pdf`
-- **"Evangelical" here is the survey's own belief-based definition**, not a
-  self-reported religious affiliation: the CSV's `EVB` column flags
-  respondents who strongly agree with all four "NAE Lifeway Research
-  Evangelical Beliefs Definition" statements (white paper, p.24 — these are
-  exactly `bible_highest_authority`, `evangelism_important`,
-  `cross_only_sacrifice`, and `christ_alone_salvation` in this workbook).
-  Confirmed by reproducing the report's own "Evangelicals X% v. non-evangelicals
-  Y% Agree" spot-checks (e.g. `god_perfect` 97% v. 59%, `election` 41% v. 23%)
-  from `EVB=1` vs. `EVB=2` weighted crosstabs — every check matched to within
-  a point.
+- **"Evangelical" here is `RELTRAD=1`** — the survey's denominational/tradition
+  classification (see "Reference population" above) — **not** the CSV's
+  separate belief-based `EVB` flag. (An earlier draft of this README claimed
+  the opposite; see "Correction" immediately below.) `EVB` respondents
+  strongly agree with all four "NAE Lifeway Research Evangelical Beliefs
+  Definition" statements (white paper, p.24 — exactly
+  `bible_highest_authority`, `evangelism_important`, `cross_only_sacrifice`,
+  and `christ_alone_salvation` in this workbook) and are shipped separately
+  as the `evangelical_by_belief` reference curve.
 
-**Consequence worth knowing:** because those same four statements *define*
-who counts as Evangelical in this dataset, their Evangelical distribution is
-tautological — `EVB=1` respondents strongly agree with all four by
-construction (100/0/0/0/0), not because of independent survey behavior.
-Their scoring weights will come out extremely large and somewhat circular
-("evangelical" answers score as maximally evangelical because that's the
-definition, not a discovery). Worth deciding whether to keep them in the
-quiz as-is, downweight them, or treat them separately from the log-likelihood
-sum — flagging rather than deciding, since it's a product call.
+**Correction (2026-08-25):** an earlier version of this README claimed the
+workbook's `Evangelical` column *was* the `EVB` flag, and warned that the
+four NAE-definition statements above were therefore tautological — 100%
+strongly-agree by construction, producing circular, oversized weights. That
+claim was checked numerically against the CSV and is **wrong**: the
+workbook's `Evangelical` percentages match `RELTRAD=1` respondents (e.g.
+`bible_highest_authority` workbook `[3,6,0,23,68]` vs. a fresh weighted
+`RELTRAD=1` crosstab `[3.3,5.7,0.0,23.3,67.8]`), not `EVB=1` (which would be
+`[0,0,0,0,100]` by construction). The four items' actual weights are
+ordinary — `cross_only_sacrifice`'s max `|w|` (2.56) is in line with
+`second_coming` (2.51) and `god_perfect` (2.40) — so no capping or special
+handling was needed after all. Left here, corrected, as provenance rather
+than deleted, since the original reasoning was sound *if* the premise had
+been true — the premise just didn't hold for the data actually shipped.
 
 To reproduce or extend: the same CSV/report pairing exists for 2014, 2016,
 2018, 2020, and 2022 at `.../assets/data/us/responses-{year}.csv` and

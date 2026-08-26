@@ -8,6 +8,9 @@ export type {
   QuizConstants,
   QuizData,
   QuizItem,
+  Reference,
+  ReferenceGroup,
+  ReferenceGroupKey,
   Response,
   Tradition,
   TraditionScore,
@@ -19,14 +22,16 @@ export {
   displayOptions,
   fiveColumnPct,
   groupBreakdownRows,
+  groupPercentiles,
   itemById,
   matchTradition,
   percentileOf,
+  percentileScore,
   responseLabel,
   scoreAnswers,
   TRADITION_LABEL,
 } from "./scoring";
-export type { GroupBreakdownRow } from "./scoring";
+export type { GroupBreakdownRow, GroupPercentile } from "./scoring";
 
 export { runSelfTest, printSelfTest } from "./self-test";
 export type { SelfTestResult } from "./self-test";

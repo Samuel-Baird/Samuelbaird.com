@@ -4,8 +4,8 @@ import { revalidatePath } from "next/cache";
 import {
   matchTradition,
   percentileOf,
+  percentileScore,
   QUIZ_DATA,
-  scoreAnswers,
 } from "@/lib/evangelical-quiz";
 import {
   isEmptyDemographics,
@@ -178,7 +178,7 @@ export async function recordEvangelicalQuizRun(input: RecordRunInput) {
     demographics = validateDemographics(input.demographics);
   }
 
-  const score = scoreAnswers(QUIZ_DATA, answers);
+  const score = percentileScore(QUIZ_DATA, answers);
   const percentile = percentileOf(QUIZ_DATA, score);
   const match = matchTradition(QUIZ_DATA, answers);
 

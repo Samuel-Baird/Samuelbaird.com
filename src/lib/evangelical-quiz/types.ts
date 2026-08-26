@@ -60,9 +60,50 @@ export type QuizConstants = {
   PROB_FLOOR: number;
   NEG_FLOOR: number;
   SHRINKAGE: number;
-  SIM_N: number;
-  SIM_SEED: number;
   TIE_MARGIN: number;
+};
+
+/**
+ * The reference groups an empirical percentile can be reported against.
+ * Every key except `evangelical_by_belief` is one of this build's own
+ * workbook groups (Evangelical/Black Protestant/Mainline/Roman Catholic, by
+ * RELTRAD) or their complement/union; `evangelical_by_belief` is the
+ * survey's separate belief-based (NAE definition) flag, kept distinct.
+ */
+export type ReferenceGroupKey =
+  | "all"
+  | "evangelical"
+  | "non_evangelical"
+  | "black_protestant"
+  | "mainline"
+  | "catholic"
+  | "other_none"
+  | "evangelical_by_belief";
+
+export type ReferenceGroup = {
+  label: string;
+  /**
+   * Unweighted respondent count. Small for e.g. Black Protestants (n=103) —
+   * the results screen should caveat percentiles built on a small n.
+   */
+  n: number;
+  /**
+   * Scores of this group's real, survey-weighted respondents at evenly
+   * spaced percentiles, ascending. Index i is the (100 * i / (n-1))th
+   * percentile. Built from respondents who answered every `percentile_items`
+   * question (the quiz has no skip path, so every reader's score is
+   * comparable to this without adjustment).
+   */
+  curve: number[];
+};
+
+export type Reference = {
+  source: string;
+  url: string;
+  /** Total respondents backing every curve (the "all" group's n). */
+  n: number;
+  group_order: ReferenceGroupKey[];
+  groups: Partial<Record<ReferenceGroupKey, ReferenceGroup>>;
 };
 
 export type QuizData = {
@@ -80,10 +121,13 @@ export type QuizData = {
   /** Items the workbook defines but has no usable data for yet. */
   pending_items: { id: string; reason: string }[];
   /**
-   * Scores of the synthetic national population at evenly spaced
-   * percentiles, ascending. Index i is the (100 * i / (n-1))th percentile.
+   * The item ids counted in the percentile score — every usable item except
+   * `arian` (2022-only; the real respondents behind `reference` were never
+   * asked it, so it can't contribute to a score compared against them).
    */
-  percentile_breakpoints: number[];
+  percentile_items: string[];
+  /** The real-respondent data the percentile is computed against. */
+  reference: Reference | null;
 };
 
 /**

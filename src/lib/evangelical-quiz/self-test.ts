@@ -13,7 +13,7 @@
  * by the quiz page itself.
  */
 
-import { matchTradition, percentileOf, scoreAnswers } from "./scoring";
+import { matchTradition, percentileOf, percentileScore } from "./scoring";
 import type { AnswerMap, QuizData } from "./types";
 
 export type SelfTestResult = {
@@ -41,27 +41,65 @@ export function runSelfTest(data: QuizData): SelfTestResult[] {
         : `non-finite weight in: ${nonFinite.join(", ")}`,
   });
 
-  // 2. Percentile breakpoints are monotonically non-decreasing.
-  const bp = data.percentile_breakpoints;
-  let monotonic = true;
-  for (let i = 1; i < bp.length; i++) {
-    if (bp[i] < bp[i - 1]) {
-      monotonic = false;
-      break;
+  // 2. Every reference group's percentile curve is monotonically
+  // non-decreasing.
+  const reference = data.reference;
+  const nonMonotonic: string[] = [];
+  for (const key of reference?.group_order ?? []) {
+    const curve = reference?.groups[key]?.curve ?? [];
+    for (let i = 1; i < curve.length; i++) {
+      if (curve[i] < curve[i - 1]) {
+        nonMonotonic.push(key);
+        break;
+      }
     }
   }
   results.push({
-    name: "percentile breakpoints monotonic",
-    pass: monotonic,
-    detail: monotonic
-      ? `${bp.length} breakpoints, ascending from ${bp[0]?.toFixed(3)} to ${bp[
-          bp.length - 1
-        ]?.toFixed(3)}`
-      : "breakpoints decrease somewhere — simulation or sort is broken",
+    name: "reference percentile curves monotonic",
+    pass: reference !== null && nonMonotonic.length === 0,
+    detail:
+      reference === null
+        ? "no reference data in this blob"
+        : nonMonotonic.length === 0
+          ? `all ${reference.group_order.length} group curves ascending`
+          : `curve decreases somewhere in: ${nonMonotonic.join(", ")}`,
   });
 
-  // 3. Answering the modal Evangelical response to every question scores
-  // high (top decile) on the synthetic curve.
+  // 3. percentile_items is every usable item except arian (2022-only — the
+  // real respondents behind `reference` were never asked it).
+  const percentileItemsOk =
+    !data.percentile_items.includes("arian") &&
+    data.percentile_items.length === data.items.filter((i) => i.id !== "arian").length;
+  results.push({
+    name: "percentile_items excludes arian",
+    pass: percentileItemsOk,
+    detail: `${data.percentile_items.length} percentile items of ${data.items.length} total`,
+  });
+
+  // 4. The "all" curve's median is self-consistent: looking its own p50
+  // breakpoint back up should return ~50.
+  const allCurve = reference?.groups.all?.curve ?? [];
+  const median = allCurve[Math.round((allCurve.length - 1) / 2)];
+  const medianPercentile = median !== undefined ? percentileOf(data, median) : NaN;
+  results.push({
+    name: "median is self-consistent",
+    pass: Math.abs(medianPercentile - 50) <= 2,
+    detail: `percentileOf(median score ${median?.toFixed(3)}) = ${medianPercentile.toFixed(1)} (expect ~50)`,
+  });
+
+  // 5. RELTRAD-based group counts sum to the "all" group's count — the five
+  // traditions should partition every respondent exactly once.
+  const reltradKeys = ["evangelical", "black_protestant", "mainline", "catholic", "other_none"] as const;
+  const reltradSum = reltradKeys.reduce((sum, k) => sum + (reference?.groups[k]?.n ?? 0), 0);
+  const allN = reference?.groups.all?.n ?? -1;
+  results.push({
+    name: "RELTRAD group counts sum to all-Americans count",
+    pass: reltradSum === allN && allN > 0,
+    detail: `${reltradKeys.map((k) => `${k}=${reference?.groups[k]?.n ?? 0}`).join(" + ")} = ${reltradSum} (all=${allN})`,
+  });
+
+  // 6. Answering the modal Evangelical response to every question scores
+  // high (top decile) against the empirical all-Americans curve.
   const modalAnswers: AnswerMap = {};
   for (const item of data.items) {
     const pe = item.p.Evangelical;
@@ -75,7 +113,7 @@ export function runSelfTest(data: QuizData): SelfTestResult[] {
     });
     modalAnswers[item.id] = bestIdx;
   }
-  const modalScore = scoreAnswers(data, modalAnswers);
+  const modalScore = percentileScore(data, modalAnswers);
   const modalPercentile = percentileOf(data, modalScore);
   results.push({
     name: "modal-evangelical answers score high",
@@ -85,7 +123,18 @@ export function runSelfTest(data: QuizData): SelfTestResult[] {
     )}, percentile ${modalPercentile.toFixed(1)} (expect >= 90)`,
   });
 
-  // 4. Tradition match on the same modal-evangelical answers actually names
+  // 7. The same modal-evangelical answers should land in the top half of
+  // the Evangelical group's own curve — a consistency check between the
+  // per-item weights (which come from the Evangelical vs. not-Evangelical
+  // contrast) and the empirical Evangelical percentile curve.
+  const evangelicalPercentile = percentileOf(data, modalScore, "evangelical");
+  results.push({
+    name: "modal-evangelical answers rank high among evangelicals too",
+    pass: evangelicalPercentile >= 75,
+    detail: `percentile among evangelicals: ${evangelicalPercentile.toFixed(1)} (expect >= 75)`,
+  });
+
+  // 8. Tradition match on the same modal-evangelical answers actually names
   // Evangelical as top or runner-up — a basic sanity check that the two
   // scoring paths agree with each other.
   const match = matchTradition(data, modalAnswers);

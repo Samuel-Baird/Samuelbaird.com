@@ -100,6 +100,12 @@ export default async function QuizHistoryPage() {
                 <p className="mt-1 text-xs text-[color:var(--muted)]">
                   {fmtDateTime(run.created_at)} · data v{run.data_version}
                 </p>
+                {Number(run.data_version) < 3 && (
+                  <p className="mt-1 text-xs text-[color:var(--muted)]">
+                    This percentile used a simulated reference population, since replaced
+                    with real survey respondents.
+                  </p>
+                )}
               </div>
               <form
                 action={async () => {
