@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { QUIZ_DATA, QUIZ_IS_COMPLETE, QUIZ_QUESTION_COUNT } from "@/lib/evangelical-quiz";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
@@ -6,6 +7,7 @@ import { HowItWorks } from "./how-it-works";
 export function LandingScreen({
   answeredCount,
   hasFinished,
+  signedIn,
   onStart,
   onResume,
   onViewResults,
@@ -14,6 +16,7 @@ export function LandingScreen({
   answeredCount: number;
   /** True once every current item has a saved answer. */
   hasFinished: boolean;
+  signedIn: boolean;
   onStart: () => void;
   onResume: () => void;
   onViewResults: () => void;
@@ -77,6 +80,14 @@ export function LandingScreen({
           >
             Start
           </button>
+        )}
+        {signedIn && (
+          <Link
+            href="/how-evangelical/history"
+            className="text-sm font-medium text-[color:var(--accent)] hover:underline"
+          >
+            Past results
+          </Link>
         )}
       </div>
 

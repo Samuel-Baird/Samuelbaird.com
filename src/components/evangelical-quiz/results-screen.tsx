@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, RotateCcw } from "lucide-react";
+import { ArrowLeft, History, RotateCcw } from "lucide-react";
+import { useAuthPrompt } from "@/components/auth-prompt";
 import { BeehiveMark } from "@/components/beehive-mark";
 import {
   breakdown,
@@ -35,16 +36,19 @@ export function ResultsScreen({
   answers,
   onRetake,
   datasetHref,
+  signedIn,
 }: {
   answers: AnswerMap;
   onRetake: () => void;
   /** Where the top-of-page "back" link should go, once the quiz is done. */
   datasetHref: string | null;
+  signedIn: boolean;
 }) {
   const score = scoreAnswers(QUIZ_DATA, answers);
   const percentile = percentileOf(QUIZ_DATA, score);
   const match = matchTradition(QUIZ_DATA, answers);
   const rows = breakdown(QUIZ_DATA, answers);
+  const { requestLogin } = useAuthPrompt();
 
   const shareText = buildShareText(percentile, match);
 
@@ -99,9 +103,38 @@ export function ResultsScreen({
         </p>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 flex flex-wrap items-center gap-3">
         <ShareButton text={shareText} />
+        {signedIn && (
+          <Link
+            href="/how-evangelical/history"
+            className="inline-flex min-h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+          >
+            <History aria-hidden="true" size={15} />
+            Past results
+          </Link>
+        )}
       </div>
+
+      {/* The spec's "save this result" moment: a skippable sign-in nudge at
+          the point of highest motivation. The run is already recorded
+          anonymously; signing in here claims it (and any earlier ones) into
+          the account via the existing claim-on-sign-in effect. */}
+      {!signedIn && (
+        <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)]/60 p-4">
+          <p className="min-w-0 flex-1 text-sm leading-relaxed text-[color:var(--muted)]">
+            Want to keep this result? Sign in and it&apos;s saved to your account — along
+            with any future retakes.
+          </p>
+          <button
+            type="button"
+            onClick={() => requestLogin("Sign in to save this result to your account.")}
+            className="min-h-10 rounded-[var(--radius)] bg-[color:var(--accent)] px-4 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+          >
+            Save this result
+          </button>
+        </div>
+      )}
 
       <section className="mt-12">
         <h2 className="serif text-xl font-semibold tracking-tight sm:text-2xl">

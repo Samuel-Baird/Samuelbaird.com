@@ -258,3 +258,33 @@ export async function claimEvangelicalQuizRuns(input: { anonId: string }) {
 
   return { claimed: claimed.length };
 }
+
+/**
+ * Deletes one of the signed-in reader's own completed runs - the per-run
+ * delete on the history page. Ownership is enforced by the query, not
+ * trust: the service client (runs are deny-all RLS) deletes only where
+ * both the id and the caller's user_id match.
+ */
+export async function deleteEvangelicalQuizRun(input: {
+  runId: string;
+  currentPath?: string;
+}) {
+  if (!UUID_RE.test(input.runId)) return { deleted: false as const };
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { deleted: false as const };
+
+  const service = createSupabaseServiceClient();
+  const { error } = await service
+    .from("evangelical_quiz_runs")
+    .delete()
+    .eq("id", input.runId)
+    .eq("user_id", user.id);
+  if (error) throw error;
+
+  if (input.currentPath) revalidatePath(input.currentPath);
+  return { deleted: true as const };
+}

@@ -196,6 +196,7 @@ export function EvangelicalQuizApp({
       <LandingScreen
         answeredCount={answeredCount}
         hasFinished={hasFinished}
+        signedIn={signedIn}
         onStart={start}
         onResume={resume}
         onViewResults={viewResults}
@@ -228,5 +229,12 @@ export function EvangelicalQuizApp({
     );
   }
 
-  return <ResultsScreen answers={answers} onRetake={retake} datasetHref={datasetHref} />;
+  return (
+    <ResultsScreen
+      answers={answers}
+      onRetake={retake}
+      datasetHref={datasetHref}
+      signedIn={signedIn}
+    />
+  );
 }
