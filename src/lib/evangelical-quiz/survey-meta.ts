@@ -10,9 +10,14 @@
  *
  * 2025: n=3,001, fielded Jan 6-15, 2025; sampling error does not exceed
  * +/-1.9% at 95% confidence (subgroup margins are higher, unquantified in
- * the source). Source: "2025 State of American Theology Study — Research
- * Report" (Lifeway Research), Methodology section,
- * https://research.lifeway.com/wp-content/uploads/2025/09/Ligonier-State-of-Theology-2025-White-Paper.pdf
+ * the source). Confirmed against both the Lifeway Research white paper
+ * ("2025 State of American Theology Study — Research Report", Methodology
+ * section, https://research.lifeway.com/wp-content/uploads/2025/09/Ligonier-State-of-Theology-2025-White-Paper.pdf)
+ * and the survey's own self-published methodology at thestateoftheology.com,
+ * which additionally notes the panel was demographically balanced and
+ * weighted on gender, age, ethnicity, income, region, and religion — see
+ * the fuller methodology list on the dataset's Data Explorer page
+ * (src/lib/data-explorer.ts) for that exact wording.
  *
  * 2022: figure not yet sourced — the arian item is the only 2022-wave
  * question in this quiz and it needs its own methodology citation before

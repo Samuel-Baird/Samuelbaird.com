@@ -29,9 +29,3545 @@
     "TIE_MARGIN": 0.25
   },
   "years": [
-    2022
+    2022,
+    2025
   ],
   "items": [
+    {
+      "id": "god_perfect",
+      "statement": "God is a perfect being and cannot make a mistake.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.397895,
+        -1.299283,
+        -1.609438,
+        -0.336472,
+        0.65764
+      ],
+      "p": {
+        "Evangelical": [
+          0.02,
+          0.03,
+          0.02,
+          0.1,
+          0.83
+        ],
+        "Black Protestant": [
+          0.019802,
+          0.019802,
+          0.059406,
+          0.118812,
+          0.782178
+        ],
+        "Mainline": [
+          0.05,
+          0.1,
+          0.05,
+          0.14,
+          0.66
+        ],
+        "Roman Catholic": [
+          0.07,
+          0.11,
+          0.07,
+          0.21,
+          0.54
+        ]
+      },
+      "p_all": [
+        0.17,
+        0.09,
+        0.08,
+        0.13,
+        0.53
+      ],
+      "p_not_evangelical": [
+        0.22,
+        0.11,
+        0.1,
+        0.14,
+        0.43
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          2,
+          3,
+          2,
+          10,
+          83
+        ],
+        "Black Protestant": [
+          1,
+          2,
+          6,
+          12,
+          79
+        ],
+        "Mainline": [
+          5,
+          10,
+          5,
+          14,
+          66
+        ],
+        "Roman Catholic": [
+          7,
+          11,
+          7,
+          21,
+          54
+        ],
+        "All U.S. adults": [
+          17,
+          9,
+          8,
+          13,
+          53
+        ]
+      }
+    },
+    {
+      "id": "trinity",
+      "statement": "There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.278975,
+        -0.858662,
+        -1.856298,
+        -0.485787,
+        0.600727
+      ],
+      "p": {
+        "Evangelical": [
+          0.019802,
+          0.019802,
+          0.019802,
+          0.108911,
+          0.831683
+        ],
+        "Black Protestant": [
+          0.019608,
+          0.019608,
+          0.058824,
+          0.127451,
+          0.77451
+        ],
+        "Mainline": [
+          0.019802,
+          0.019802,
+          0.079208,
+          0.217822,
+          0.663366
+        ],
+        "Roman Catholic": [
+          0.03,
+          0.03,
+          0.05,
+          0.24,
+          0.65
+        ]
+      },
+      "p_all": [
+        0.15,
+        0.04,
+        0.1,
+        0.16,
+        0.55
+      ],
+      "p_not_evangelical": [
+        0.193399,
+        0.046733,
+        0.126733,
+        0.17703,
+        0.456106
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          1,
+          2,
+          2,
+          11,
+          84
+        ],
+        "Black Protestant": [
+          1,
+          1,
+          6,
+          13,
+          79
+        ],
+        "Mainline": [
+          1,
+          2,
+          8,
+          22,
+          67
+        ],
+        "Roman Catholic": [
+          3,
+          3,
+          5,
+          24,
+          65
+        ],
+        "All U.S. adults": [
+          15,
+          4,
+          10,
+          16,
+          55
+        ]
+      }
+    },
+    {
+      "id": "all_religions",
+      "statement": "God accepts the worship of all religions, including Christianity, Judaism, and Islam.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.91056,
+        0.81093,
+        -0.236389,
+        -0.272867,
+        -0.405465
+      ],
+      "p": {
+        "Evangelical": [
+          0.29,
+          0.12,
+          0.1,
+          0.17,
+          0.32
+        ],
+        "Black Protestant": [
+          0.09,
+          0.04,
+          0.06,
+          0.24,
+          0.57
+        ],
+        "Mainline": [
+          0.05,
+          0.07,
+          0.08,
+          0.26,
+          0.54
+        ],
+        "Roman Catholic": [
+          0.03,
+          0.04,
+          0.05,
+          0.22,
+          0.66
+        ]
+      },
+      "p_all": [
+        0.16,
+        0.07,
+        0.12,
+        0.21,
+        0.44
+      ],
+      "p_not_evangelical": [
+        0.116667,
+        0.053333,
+        0.126667,
+        0.223333,
+        0.48
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          29,
+          12,
+          10,
+          17,
+          32
+        ],
+        "Black Protestant": [
+          9,
+          4,
+          6,
+          24,
+          57
+        ],
+        "Mainline": [
+          5,
+          7,
+          8,
+          26,
+          54
+        ],
+        "Roman Catholic": [
+          3,
+          4,
+          5,
+          22,
+          66
+        ],
+        "All U.S. adults": [
+          16,
+          7,
+          12,
+          21,
+          44
+        ]
+      }
+    },
+    {
+      "id": "god_unchanging",
+      "statement": "God is unchanging.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.956332,
+        -1.181045,
+        -1.397069,
+        -0.379957,
+        0.612489
+      ],
+      "p": {
+        "Evangelical": [
+          0.019802,
+          0.029703,
+          0.039604,
+          0.118812,
+          0.792079
+        ],
+        "Black Protestant": [
+          0.03,
+          0.03,
+          0.06,
+          0.12,
+          0.76
+        ],
+        "Mainline": [
+          0.04,
+          0.08,
+          0.09,
+          0.16,
+          0.63
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.09,
+          0.11,
+          0.24,
+          0.52
+        ]
+      },
+      "p_all": [
+        0.11,
+        0.08,
+        0.13,
+        0.16,
+        0.52
+      ],
+      "p_not_evangelical": [
+        0.140066,
+        0.096766,
+        0.160132,
+        0.173729,
+        0.429307
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          1,
+          3,
+          4,
+          12,
+          80
+        ],
+        "Black Protestant": [
+          3,
+          3,
+          6,
+          12,
+          76
+        ],
+        "Mainline": [
+          4,
+          8,
+          9,
+          16,
+          63
+        ],
+        "Roman Catholic": [
+          4,
+          9,
+          11,
+          24,
+          52
+        ],
+        "All U.S. adults": [
+          11,
+          8,
+          13,
+          16,
+          52
+        ]
+      }
+    },
+    {
+      "id": "resurrection",
+      "statement": "Biblical accounts of the physical (bodily) resurrection of Jesus are completely accurate. This event actually occurred.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.345645,
+        -1.620048,
+        -1.527022,
+        -0.300105,
+        0.812855
+      ],
+      "p": {
+        "Evangelical": [
+          0.019802,
+          0.019802,
+          0.029703,
+          0.158416,
+          0.772277
+        ],
+        "Black Protestant": [
+          0.02,
+          0.04,
+          0.09,
+          0.18,
+          0.67
+        ],
+        "Mainline": [
+          0.05,
+          0.06,
+          0.1,
+          0.31,
+          0.48
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.09,
+          0.12,
+          0.29,
+          0.46
+        ]
+      },
+      "p_all": [
+        0.16,
+        0.08,
+        0.11,
+        0.2,
+        0.45
+      ],
+      "p_not_evangelical": [
+        0.206733,
+        0.100066,
+        0.136766,
+        0.213861,
+        0.342574
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          1,
+          2,
+          3,
+          16,
+          78
+        ],
+        "Black Protestant": [
+          2,
+          4,
+          9,
+          18,
+          67
+        ],
+        "Mainline": [
+          5,
+          6,
+          10,
+          31,
+          48
+        ],
+        "Roman Catholic": [
+          4,
+          9,
+          12,
+          29,
+          46
+        ],
+        "All U.S. adults": [
+          16,
+          8,
+          11,
+          20,
+          45
+        ]
+      }
+    },
+    {
+      "id": "god_loves_same",
+      "statement": "God loves all people the same way.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.181045,
+        -0.013245,
+        -1.310133,
+        -0.439544,
+        0.240563
+      ],
+      "p": {
+        "Evangelical": [
+          0.029703,
+          0.029703,
+          0.019802,
+          0.09901,
+          0.821782
+        ],
+        "Black Protestant": [
+          0.019417,
+          0.019417,
+          0.019417,
+          0.097087,
+          0.84466
+        ],
+        "Mainline": [
+          0.019608,
+          0.029412,
+          0.019608,
+          0.147059,
+          0.784314
+        ],
+        "Roman Catholic": [
+          0.019608,
+          0.019608,
+          0.019608,
+          0.156863,
+          0.784314
+        ]
+      },
+      "p_all": [
+        0.08,
+        0.03,
+        0.06,
+        0.14,
+        0.69
+      ],
+      "p_not_evangelical": [
+        0.096766,
+        0.030099,
+        0.073399,
+        0.153663,
+        0.646073
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          3,
+          3,
+          1,
+          10,
+          83
+        ],
+        "Black Protestant": [
+          0,
+          2,
+          1,
+          10,
+          87
+        ],
+        "Mainline": [
+          1,
+          3,
+          1,
+          15,
+          80
+        ],
+        "Roman Catholic": [
+          1,
+          2,
+          1,
+          16,
+          80
+        ],
+        "All U.S. adults": [
+          8,
+          3,
+          6,
+          14,
+          69
+        ]
+      }
+    },
+    {
+      "id": "jesus_not_god",
+      "statement": "Jesus was a great teacher, but he was not God.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.864212,
+        -0.13815,
+        -1.203973,
+        -0.693147,
+        -0.310155
+      ],
+      "p": {
+        "Evangelical": [
+          0.53,
+          0.09,
+          0.04,
+          0.12,
+          0.22
+        ],
+        "Black Protestant": [
+          0.28,
+          0.07,
+          0.1,
+          0.17,
+          0.38
+        ],
+        "Mainline": [
+          0.31,
+          0.12,
+          0.05,
+          0.22,
+          0.3
+        ],
+        "Roman Catholic": [
+          0.26,
+          0.14,
+          0.1,
+          0.22,
+          0.28
+        ]
+      },
+      "p_all": [
+        0.3,
+        0.1,
+        0.11,
+        0.21,
+        0.28
+      ],
+      "p_not_evangelical": [
+        0.223333,
+        0.103333,
+        0.133333,
+        0.24,
+        0.3
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          53,
+          9,
+          4,
+          12,
+          22
+        ],
+        "Black Protestant": [
+          28,
+          7,
+          10,
+          17,
+          38
+        ],
+        "Mainline": [
+          31,
+          12,
+          5,
+          22,
+          30
+        ],
+        "Roman Catholic": [
+          26,
+          14,
+          10,
+          22,
+          28
+        ],
+        "All U.S. adults": [
+          30,
+          10,
+          11,
+          21,
+          28
+        ]
+      }
+    },
+    {
+      "id": "marriage_man_woman",
+      "statement": "God created marriage to be between one man and one woman.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.94591,
+        -0.693147,
+        -0.847298,
+        -0.427444,
+        0.639746
+      ],
+      "p": {
+        "Evangelical": [
+          0.04,
+          0.04,
+          0.03,
+          0.1,
+          0.79
+        ],
+        "Black Protestant": [
+          0.06,
+          0.04,
+          0.03,
+          0.11,
+          0.76
+        ],
+        "Mainline": [
+          0.12,
+          0.1,
+          0.05,
+          0.15,
+          0.58
+        ],
+        "Roman Catholic": [
+          0.13,
+          0.1,
+          0.06,
+          0.2,
+          0.51
+        ]
+      },
+      "p_all": [
+        0.22,
+        0.07,
+        0.06,
+        0.14,
+        0.51
+      ],
+      "p_not_evangelical": [
+        0.28,
+        0.08,
+        0.07,
+        0.153333,
+        0.416667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          4,
+          4,
+          3,
+          10,
+          79
+        ],
+        "Black Protestant": [
+          6,
+          4,
+          3,
+          11,
+          76
+        ],
+        "Mainline": [
+          12,
+          10,
+          5,
+          15,
+          58
+        ],
+        "Roman Catholic": [
+          13,
+          10,
+          6,
+          20,
+          51
+        ],
+        "All U.S. adults": [
+          22,
+          7,
+          6,
+          14,
+          51
+        ]
+      }
+    },
+    {
+      "id": "spirit_force",
+      "statement": "The Holy Spirit is a force but is not a personal being.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.587787,
+        0.451985,
+        -0.587787,
+        -0.367725,
+        0.043963
+      ],
+      "p": {
+        "Evangelical": [
+          0.27,
+          0.11,
+          0.1,
+          0.21,
+          0.31
+        ],
+        "Black Protestant": [
+          0.17,
+          0.1,
+          0.08,
+          0.23,
+          0.42
+        ],
+        "Mainline": [
+          0.1,
+          0.07,
+          0.1,
+          0.39,
+          0.34
+        ],
+        "Roman Catholic": [
+          0.1,
+          0.09,
+          0.13,
+          0.34,
+          0.34
+        ]
+      },
+      "p_all": [
+        0.18,
+        0.08,
+        0.16,
+        0.28,
+        0.3
+      ],
+      "p_not_evangelical": [
+        0.15,
+        0.07,
+        0.18,
+        0.303333,
+        0.296667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          27,
+          11,
+          10,
+          21,
+          31
+        ],
+        "Black Protestant": [
+          17,
+          10,
+          8,
+          23,
+          42
+        ],
+        "Mainline": [
+          10,
+          7,
+          10,
+          39,
+          34
+        ],
+        "Roman Catholic": [
+          10,
+          9,
+          13,
+          34,
+          34
+        ],
+        "All U.S. adults": [
+          18,
+          8,
+          16,
+          28,
+          30
+        ]
+      }
+    },
+    {
+      "id": "spirit_new_birth",
+      "statement": "The Holy Spirit gives a spiritual new birth or new life before a person has faith in Jesus Christ.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.0,
+        -0.154151,
+        -0.619039,
+        -0.119545,
+        0.546544
+      ],
+      "p": {
+        "Evangelical": [
+          0.19,
+          0.08,
+          0.14,
+          0.21,
+          0.38
+        ],
+        "Black Protestant": [
+          0.14,
+          0.09,
+          0.11,
+          0.23,
+          0.43
+        ],
+        "Mainline": [
+          0.08,
+          0.11,
+          0.21,
+          0.32,
+          0.28
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.09,
+          0.23,
+          0.32,
+          0.32
+        ]
+      },
+      "p_all": [
+        0.19,
+        0.09,
+        0.23,
+        0.23,
+        0.26
+      ],
+      "p_not_evangelical": [
+        0.19,
+        0.093333,
+        0.26,
+        0.236667,
+        0.22
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          19,
+          8,
+          14,
+          21,
+          38
+        ],
+        "Black Protestant": [
+          14,
+          9,
+          11,
+          23,
+          43
+        ],
+        "Mainline": [
+          8,
+          11,
+          21,
+          32,
+          28
+        ],
+        "Roman Catholic": [
+          4,
+          9,
+          23,
+          32,
+          32
+        ],
+        "All U.S. adults": [
+          19,
+          9,
+          23,
+          23,
+          26
+        ]
+      }
+    },
+    {
+      "id": "spirit_forbidden",
+      "statement": "The Holy Spirit can tell me to do something which is forbidden in the Bible.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.354545,
+        -0.200671,
+        -1.129865,
+        -0.322773,
+        0.0
+      ],
+      "p": {
+        "Evangelical": [
+          0.67,
+          0.12,
+          0.07,
+          0.07,
+          0.07
+        ],
+        "Black Protestant": [
+          0.58,
+          0.16,
+          0.09,
+          0.08,
+          0.09
+        ],
+        "Mainline": [
+          0.53,
+          0.17,
+          0.13,
+          0.12,
+          0.05
+        ],
+        "Roman Catholic": [
+          0.45,
+          0.16,
+          0.16,
+          0.13,
+          0.1
+        ]
+      },
+      "p_all": [
+        0.52,
+        0.14,
+        0.18,
+        0.09,
+        0.07
+      ],
+      "p_not_evangelical": [
+        0.47,
+        0.146667,
+        0.216667,
+        0.096667,
+        0.07
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          67,
+          12,
+          7,
+          7,
+          7
+        ],
+        "Black Protestant": [
+          58,
+          16,
+          9,
+          8,
+          9
+        ],
+        "Mainline": [
+          53,
+          17,
+          13,
+          12,
+          5
+        ],
+        "Roman Catholic": [
+          45,
+          16,
+          16,
+          13,
+          10
+        ],
+        "All U.S. adults": [
+          52,
+          14,
+          18,
+          9,
+          7
+        ]
+      }
+    },
+    {
+      "id": "good_by_nature",
+      "statement": "Everyone sins a little, but most people are good by nature.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.737599,
+        0.329479,
+        -0.635989,
+        -0.272867,
+        -0.174353
+      ],
+      "p": {
+        "Evangelical": [
+          0.23,
+          0.19,
+          0.03,
+          0.34,
+          0.21
+        ],
+        "Black Protestant": [
+          0.09,
+          0.13,
+          0.07,
+          0.38,
+          0.33
+        ],
+        "Mainline": [
+          0.06,
+          0.11,
+          0.02,
+          0.55,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.11,
+          0.03,
+          0.49,
+          0.33
+        ]
+      },
+      "p_all": [
+        0.14,
+        0.15,
+        0.05,
+        0.42,
+        0.24
+      ],
+      "p_not_evangelical": [
+        0.11,
+        0.136667,
+        0.056667,
+        0.446667,
+        0.25
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          23,
+          19,
+          3,
+          34,
+          21
+        ],
+        "Black Protestant": [
+          9,
+          13,
+          7,
+          38,
+          33
+        ],
+        "Mainline": [
+          6,
+          11,
+          2,
+          55,
+          26
+        ],
+        "Roman Catholic": [
+          4,
+          11,
+          3,
+          49,
+          33
+        ],
+        "All U.S. adults": [
+          14,
+          15,
+          5,
+          42,
+          24
+        ]
+      }
+    },
+    {
+      "id": "smallest_sin",
+      "statement": "Even the smallest sin deserves eternal damnation.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.48112,
+        0.336472,
+        0.0,
+        0.251314,
+        1.175573
+      ],
+      "p": {
+        "Evangelical": [
+          0.41,
+          0.14,
+          0.06,
+          0.12,
+          0.27
+        ],
+        "Black Protestant": [
+          0.43,
+          0.14,
+          0.09,
+          0.11,
+          0.23
+        ],
+        "Mainline": [
+          0.67,
+          0.11,
+          0.03,
+          0.12,
+          0.07
+        ],
+        "Roman Catholic": [
+          0.66,
+          0.12,
+          0.03,
+          0.1,
+          0.09
+        ]
+      },
+      "p_all": [
+        0.6,
+        0.11,
+        0.06,
+        0.1,
+        0.13
+      ],
+      "p_not_evangelical": [
+        0.663333,
+        0.1,
+        0.06,
+        0.093333,
+        0.083333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          41,
+          14,
+          6,
+          12,
+          27
+        ],
+        "Black Protestant": [
+          43,
+          14,
+          9,
+          11,
+          23
+        ],
+        "Mainline": [
+          67,
+          11,
+          3,
+          12,
+          7
+        ],
+        "Roman Catholic": [
+          66,
+          12,
+          3,
+          10,
+          9
+        ],
+        "All U.S. adults": [
+          60,
+          11,
+          6,
+          10,
+          13
+        ]
+      }
+    },
+    {
+      "id": "justification_faith",
+      "statement": "God counts a person as righteous not because of one’s works but only because of one’s faith in Jesus Christ.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.358123,
+        -0.465363,
+        -1.299283,
+        0.0,
+        0.832344
+      ],
+      "p": {
+        "Evangelical": [
+          0.06,
+          0.09,
+          0.04,
+          0.22,
+          0.59
+        ],
+        "Black Protestant": [
+          0.04,
+          0.1,
+          0.1,
+          0.22,
+          0.54
+        ],
+        "Mainline": [
+          0.11,
+          0.13,
+          0.06,
+          0.27,
+          0.43
+        ],
+        "Roman Catholic": [
+          0.16,
+          0.19,
+          0.12,
+          0.26,
+          0.27
+        ]
+      },
+      "p_all": [
+        0.19,
+        0.13,
+        0.12,
+        0.22,
+        0.34
+      ],
+      "p_not_evangelical": [
+        0.233333,
+        0.143333,
+        0.146667,
+        0.22,
+        0.256667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          6,
+          9,
+          4,
+          22,
+          59
+        ],
+        "Black Protestant": [
+          4,
+          10,
+          10,
+          22,
+          54
+        ],
+        "Mainline": [
+          11,
+          13,
+          6,
+          27,
+          43
+        ],
+        "Roman Catholic": [
+          16,
+          19,
+          12,
+          26,
+          27
+        ],
+        "All U.S. adults": [
+          19,
+          13,
+          12,
+          22,
+          34
+        ]
+      }
+    },
+    {
+      "id": "born_innocent",
+      "statement": "Everyone is born innocent in the eyes of God.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.709148,
+        0.251314,
+        -0.847298,
+        -0.413976,
+        0.0
+      ],
+      "p": {
+        "Evangelical": [
+          0.21,
+          0.06,
+          0.04,
+          0.13,
+          0.56
+        ],
+        "Black Protestant": [
+          0.15,
+          0.05,
+          0.03,
+          0.13,
+          0.64
+        ],
+        "Mainline": [
+          0.059406,
+          0.049505,
+          0.019802,
+          0.178218,
+          0.693069
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.05,
+          0.02,
+          0.19,
+          0.7
+        ]
+      },
+      "p_all": [
+        0.13,
+        0.05,
+        0.08,
+        0.18,
+        0.56
+      ],
+      "p_not_evangelical": [
+        0.103333,
+        0.046667,
+        0.093333,
+        0.196667,
+        0.56
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          21,
+          6,
+          4,
+          13,
+          56
+        ],
+        "Black Protestant": [
+          15,
+          5,
+          3,
+          13,
+          64
+        ],
+        "Mainline": [
+          6,
+          5,
+          1,
+          18,
+          70
+        ],
+        "Roman Catholic": [
+          4,
+          5,
+          2,
+          19,
+          70
+        ],
+        "All U.S. adults": [
+          13,
+          5,
+          8,
+          18,
+          56
+        ]
+      }
+    },
+    {
+      "id": "bible_myths",
+      "statement": "The Bible, like all sacred writings, contains helpful accounts of ancient myths but is not literally true.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.998529,
+        0.09309,
+        -0.587787,
+        -0.725937,
+        -1.15268
+      ],
+      "p": {
+        "Evangelical": [
+          0.57,
+          0.15,
+          0.05,
+          0.15,
+          0.08
+        ],
+        "Black Protestant": [
+          0.43,
+          0.16,
+          0.09,
+          0.18,
+          0.14
+        ],
+        "Mainline": [
+          0.27,
+          0.18,
+          0.06,
+          0.34,
+          0.15
+        ],
+        "Roman Catholic": [
+          0.19,
+          0.18,
+          0.1,
+          0.35,
+          0.18
+        ]
+      },
+      "p_all": [
+        0.3,
+        0.14,
+        0.08,
+        0.27,
+        0.21
+      ],
+      "p_not_evangelical": [
+        0.21,
+        0.136667,
+        0.09,
+        0.31,
+        0.253333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          57,
+          15,
+          5,
+          15,
+          8
+        ],
+        "Black Protestant": [
+          43,
+          16,
+          9,
+          18,
+          14
+        ],
+        "Mainline": [
+          27,
+          18,
+          6,
+          34,
+          15
+        ],
+        "Roman Catholic": [
+          19,
+          18,
+          10,
+          35,
+          18
+        ],
+        "All U.S. adults": [
+          30,
+          14,
+          8,
+          27,
+          21
+        ]
+      }
+    },
+    {
+      "id": "bible_accurate",
+      "statement": "The Bible is 100% accurate in all that it teaches.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.773067,
+        -0.587787,
+        -0.427444,
+        0.072759,
+        1.034074
+      ],
+      "p": {
+        "Evangelical": [
+          0.06,
+          0.1,
+          0.05,
+          0.19,
+          0.6
+        ],
+        "Black Protestant": [
+          0.1,
+          0.09,
+          0.04,
+          0.2,
+          0.57
+        ],
+        "Mainline": [
+          0.18,
+          0.24,
+          0.07,
+          0.25,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.19,
+          0.24,
+          0.06,
+          0.26,
+          0.25
+        ]
+      },
+      "p_all": [
+        0.28,
+        0.16,
+        0.07,
+        0.18,
+        0.31
+      ],
+      "p_not_evangelical": [
+        0.353333,
+        0.18,
+        0.076667,
+        0.176667,
+        0.213333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          6,
+          10,
+          5,
+          19,
+          60
+        ],
+        "Black Protestant": [
+          10,
+          9,
+          4,
+          20,
+          57
+        ],
+        "Mainline": [
+          18,
+          24,
+          7,
+          25,
+          26
+        ],
+        "Roman Catholic": [
+          19,
+          24,
+          6,
+          26,
+          25
+        ],
+        "All U.S. adults": [
+          28,
+          16,
+          7,
+          18,
+          31
+        ]
+      }
+    },
+    {
+      "id": "science_disproves",
+      "statement": "Modern science disproves the Bible.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.824175,
+        -0.154151,
+        -0.76214,
+        -0.541131,
+        -0.998529
+      ],
+      "p": {
+        "Evangelical": [
+          0.57,
+          0.16,
+          0.07,
+          0.13,
+          0.07
+        ],
+        "Black Protestant": [
+          0.48,
+          0.13,
+          0.11,
+          0.2,
+          0.08
+        ],
+        "Mainline": [
+          0.4,
+          0.29,
+          0.11,
+          0.14,
+          0.06
+        ],
+        "Roman Catholic": [
+          0.31,
+          0.23,
+          0.17,
+          0.21,
+          0.08
+        ]
+      },
+      "p_all": [
+        0.33,
+        0.18,
+        0.13,
+        0.2,
+        0.16
+      ],
+      "p_not_evangelical": [
+        0.25,
+        0.186667,
+        0.15,
+        0.223333,
+        0.19
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          57,
+          16,
+          7,
+          13,
+          7
+        ],
+        "Black Protestant": [
+          48,
+          13,
+          11,
+          20,
+          8
+        ],
+        "Mainline": [
+          40,
+          29,
+          11,
+          14,
+          6
+        ],
+        "Roman Catholic": [
+          31,
+          23,
+          17,
+          21,
+          8
+        ],
+        "All U.S. adults": [
+          33,
+          18,
+          13,
+          20,
+          16
+        ]
+      }
+    },
+    {
+      "id": "election",
+      "statement": "God chose the people he would save before he created the world.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.14183,
+        -0.097638,
+        -0.211309,
+        0.195745,
+        0.510826
+      ],
+      "p": {
+        "Evangelical": [
+          0.35,
+          0.13,
+          0.17,
+          0.15,
+          0.2
+        ],
+        "Black Protestant": [
+          0.31,
+          0.13,
+          0.16,
+          0.15,
+          0.25
+        ],
+        "Mainline": [
+          0.4,
+          0.2,
+          0.16,
+          0.15,
+          0.09
+        ],
+        "Roman Catholic": [
+          0.33,
+          0.17,
+          0.19,
+          0.16,
+          0.15
+        ]
+      },
+      "p_all": [
+        0.39,
+        0.14,
+        0.2,
+        0.13,
+        0.14
+      ],
+      "p_not_evangelical": [
+        0.403333,
+        0.143333,
+        0.21,
+        0.123333,
+        0.12
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          35,
+          13,
+          17,
+          15,
+          20
+        ],
+        "Black Protestant": [
+          31,
+          13,
+          16,
+          15,
+          25
+        ],
+        "Mainline": [
+          40,
+          20,
+          16,
+          15,
+          9
+        ],
+        "Roman Catholic": [
+          33,
+          17,
+          19,
+          16,
+          15
+        ],
+        "All U.S. adults": [
+          39,
+          14,
+          20,
+          13,
+          14
+        ]
+      }
+    },
+    {
+      "id": "hell_real",
+      "statement": "Hell is a real place where certain people will be punished forever.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.845827,
+        -0.725937,
+        -0.76214,
+        -0.200671,
+        0.881548
+      ],
+      "p": {
+        "Evangelical": [
+          0.04,
+          0.05,
+          0.07,
+          0.18,
+          0.66
+        ],
+        "Black Protestant": [
+          0.019802,
+          0.039604,
+          0.09901,
+          0.247525,
+          0.594059
+        ],
+        "Mainline": [
+          0.11,
+          0.15,
+          0.15,
+          0.28,
+          0.31
+        ],
+        "Roman Catholic": [
+          0.1,
+          0.1,
+          0.16,
+          0.33,
+          0.31
+        ]
+      },
+      "p_all": [
+        0.2,
+        0.09,
+        0.13,
+        0.21,
+        0.37
+      ],
+      "p_not_evangelical": [
+        0.253333,
+        0.103333,
+        0.15,
+        0.22,
+        0.273333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          4,
+          5,
+          7,
+          18,
+          66
+        ],
+        "Black Protestant": [
+          1,
+          4,
+          10,
+          25,
+          60
+        ],
+        "Mainline": [
+          11,
+          15,
+          15,
+          28,
+          31
+        ],
+        "Roman Catholic": [
+          10,
+          10,
+          16,
+          33,
+          31
+        ],
+        "All U.S. adults": [
+          20,
+          9,
+          13,
+          21,
+          37
+        ]
+      }
+    },
+    {
+      "id": "second_coming",
+      "statement": "There will be a time when Jesus Christ returns to judge all the people who have lived.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.512306,
+        -1.021651,
+        -1.299283,
+        -0.389465,
+        0.888541
+      ],
+      "p": {
+        "Evangelical": [
+          0.02,
+          0.03,
+          0.04,
+          0.14,
+          0.77
+        ],
+        "Black Protestant": [
+          0.03,
+          0.03,
+          0.08,
+          0.2,
+          0.66
+        ],
+        "Mainline": [
+          0.07,
+          0.04,
+          0.12,
+          0.33,
+          0.44
+        ],
+        "Roman Catholic": [
+          0.07,
+          0.08,
+          0.13,
+          0.3,
+          0.42
+        ]
+      },
+      "p_all": [
+        0.19,
+        0.07,
+        0.12,
+        0.19,
+        0.43
+      ],
+      "p_not_evangelical": [
+        0.246667,
+        0.083333,
+        0.146667,
+        0.206667,
+        0.316667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          2,
+          3,
+          4,
+          14,
+          77
+        ],
+        "Black Protestant": [
+          3,
+          3,
+          8,
+          20,
+          66
+        ],
+        "Mainline": [
+          7,
+          4,
+          12,
+          33,
+          44
+        ],
+        "Roman Catholic": [
+          7,
+          8,
+          13,
+          30,
+          42
+        ],
+        "All U.S. adults": [
+          19,
+          7,
+          12,
+          19,
+          43
+        ]
+      }
+    },
+    {
+      "id": "worship_alone",
+      "statement": "Worshiping alone or with one’s family is a valid replacement for regularly attending church.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.497838,
+        0.693147,
+        -0.635989,
+        -0.040822,
+        -0.451985
+      ],
+      "p": {
+        "Evangelical": [
+          0.17,
+          0.24,
+          0.06,
+          0.32,
+          0.21
+        ],
+        "Black Protestant": [
+          0.19,
+          0.17,
+          0.07,
+          0.29,
+          0.28
+        ],
+        "Mainline": [
+          0.06,
+          0.17,
+          0.06,
+          0.42,
+          0.29
+        ],
+        "Roman Catholic": [
+          0.1,
+          0.16,
+          0.07,
+          0.39,
+          0.28
+        ]
+      },
+      "p_all": [
+        0.12,
+        0.15,
+        0.1,
+        0.33,
+        0.3
+      ],
+      "p_not_evangelical": [
+        0.103333,
+        0.12,
+        0.113333,
+        0.333333,
+        0.33
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          17,
+          24,
+          6,
+          32,
+          21
+        ],
+        "Black Protestant": [
+          19,
+          17,
+          7,
+          29,
+          28
+        ],
+        "Mainline": [
+          6,
+          17,
+          6,
+          42,
+          29
+        ],
+        "Roman Catholic": [
+          10,
+          16,
+          7,
+          39,
+          28
+        ],
+        "All U.S. adults": [
+          12,
+          15,
+          10,
+          33,
+          30
+        ]
+      }
+    },
+    {
+      "id": "faith_not_politics",
+      "statement": "Christians should not allow their religious beliefs to influence their political decisions.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.962037,
+        0.223144,
+        -0.200671,
+        -0.348307,
+        -0.813106
+      ],
+      "p": {
+        "Evangelical": [
+          0.41,
+          0.2,
+          0.06,
+          0.16,
+          0.17
+        ],
+        "Black Protestant": [
+          0.21,
+          0.2,
+          0.11,
+          0.21,
+          0.27
+        ],
+        "Mainline": [
+          0.28,
+          0.28,
+          0.04,
+          0.18,
+          0.22
+        ],
+        "Roman Catholic": [
+          0.14,
+          0.18,
+          0.06,
+          0.3,
+          0.32
+        ]
+      },
+      "p_all": [
+        0.22,
+        0.17,
+        0.07,
+        0.21,
+        0.33
+      ],
+      "p_not_evangelical": [
+        0.156667,
+        0.16,
+        0.073333,
+        0.226667,
+        0.383333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          41,
+          20,
+          6,
+          16,
+          17
+        ],
+        "Black Protestant": [
+          21,
+          20,
+          11,
+          21,
+          27
+        ],
+        "Mainline": [
+          28,
+          28,
+          4,
+          18,
+          22
+        ],
+        "Roman Catholic": [
+          14,
+          18,
+          6,
+          30,
+          32
+        ],
+        "All U.S. adults": [
+          22,
+          17,
+          7,
+          21,
+          33
+        ]
+      }
+    },
+    {
+      "id": "join_church",
+      "statement": "Every Christian has an obligation to join a local church.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.646627,
+        0.0,
+        -0.367725,
+        0.502629,
+        0.737599
+      ],
+      "p": {
+        "Evangelical": [
+          0.22,
+          0.22,
+          0.06,
+          0.27,
+          0.23
+        ],
+        "Black Protestant": [
+          0.17,
+          0.18,
+          0.09,
+          0.27,
+          0.29
+        ],
+        "Mainline": [
+          0.28,
+          0.34,
+          0.1,
+          0.15,
+          0.13
+        ],
+        "Roman Catholic": [
+          0.28,
+          0.26,
+          0.07,
+          0.24,
+          0.15
+        ]
+      },
+      "p_all": [
+        0.37,
+        0.22,
+        0.08,
+        0.19,
+        0.14
+      ],
+      "p_not_evangelical": [
+        0.42,
+        0.22,
+        0.086667,
+        0.163333,
+        0.11
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          22,
+          22,
+          6,
+          27,
+          23
+        ],
+        "Black Protestant": [
+          17,
+          18,
+          9,
+          27,
+          29
+        ],
+        "Mainline": [
+          28,
+          34,
+          10,
+          15,
+          13
+        ],
+        "Roman Catholic": [
+          28,
+          26,
+          7,
+          24,
+          15
+        ],
+        "All U.S. adults": [
+          37,
+          22,
+          8,
+          19,
+          14
+        ]
+      }
+    },
+    {
+      "id": "sex_outside_marriage",
+      "statement": "Sex outside of traditional marriage is a sin.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.646825,
+        -0.693147,
+        -0.635989,
+        0.129212,
+        0.973449
+      ],
+      "p": {
+        "Evangelical": [
+          0.07,
+          0.08,
+          0.03,
+          0.22,
+          0.6
+        ],
+        "Black Protestant": [
+          0.07,
+          0.16,
+          0.04,
+          0.26,
+          0.47
+        ],
+        "Mainline": [
+          0.18,
+          0.2,
+          0.07,
+          0.31,
+          0.24
+        ],
+        "Roman Catholic": [
+          0.26,
+          0.19,
+          0.06,
+          0.24,
+          0.25
+        ]
+      },
+      "p_all": [
+        0.29,
+        0.14,
+        0.05,
+        0.2,
+        0.32
+      ],
+      "p_not_evangelical": [
+        0.363333,
+        0.16,
+        0.056667,
+        0.193333,
+        0.226667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          7,
+          8,
+          3,
+          22,
+          60
+        ],
+        "Black Protestant": [
+          7,
+          16,
+          4,
+          26,
+          47
+        ],
+        "Mainline": [
+          18,
+          20,
+          7,
+          31,
+          24
+        ],
+        "Roman Catholic": [
+          26,
+          19,
+          6,
+          24,
+          25
+        ],
+        "All U.S. adults": [
+          29,
+          14,
+          5,
+          20,
+          32
+        ]
+      }
+    },
+    {
+      "id": "abortion_sin",
+      "statement": "Abortion is a sin.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.376992,
+        -0.336472,
+        -0.154151,
+        0.151231,
+        0.783531
+      ],
+      "p": {
+        "Evangelical": [
+          0.09,
+          0.1,
+          0.08,
+          0.19,
+          0.54
+        ],
+        "Black Protestant": [
+          0.13,
+          0.11,
+          0.13,
+          0.28,
+          0.35
+        ],
+        "Mainline": [
+          0.19,
+          0.22,
+          0.09,
+          0.24,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.2,
+          0.16,
+          0.09,
+          0.24,
+          0.31
+        ]
+      },
+      "p_all": [
+        0.29,
+        0.13,
+        0.09,
+        0.17,
+        0.32
+      ],
+      "p_not_evangelical": [
+        0.356667,
+        0.14,
+        0.093333,
+        0.163333,
+        0.246667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          9,
+          10,
+          8,
+          19,
+          54
+        ],
+        "Black Protestant": [
+          13,
+          11,
+          13,
+          28,
+          35
+        ],
+        "Mainline": [
+          19,
+          22,
+          9,
+          24,
+          26
+        ],
+        "Roman Catholic": [
+          20,
+          16,
+          9,
+          24,
+          31
+        ],
+        "All U.S. adults": [
+          29,
+          13,
+          9,
+          17,
+          32
+        ]
+      }
+    },
+    {
+      "id": "gender_choice",
+      "statement": "People should be able to choose their gender regardless of their biological sex.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.688184,
+        -0.236389,
+        -0.367725,
+        -0.587787,
+        -1.349927
+      ],
+      "p": {
+        "Evangelical": [
+          0.67,
+          0.1,
+          0.06,
+          0.1,
+          0.07
+        ],
+        "Black Protestant": [
+          0.53,
+          0.12,
+          0.09,
+          0.1,
+          0.16
+        ],
+        "Mainline": [
+          0.46,
+          0.15,
+          0.11,
+          0.16,
+          0.12
+        ],
+        "Roman Catholic": [
+          0.38,
+          0.15,
+          0.09,
+          0.2,
+          0.18
+        ]
+      },
+      "p_all": [
+        0.42,
+        0.12,
+        0.08,
+        0.16,
+        0.22
+      ],
+      "p_not_evangelical": [
+        0.336667,
+        0.126667,
+        0.086667,
+        0.18,
+        0.27
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          67,
+          10,
+          6,
+          10,
+          7
+        ],
+        "Black Protestant": [
+          53,
+          12,
+          9,
+          10,
+          16
+        ],
+        "Mainline": [
+          46,
+          15,
+          11,
+          16,
+          12
+        ],
+        "Roman Catholic": [
+          38,
+          15,
+          9,
+          20,
+          18
+        ],
+        "All U.S. adults": [
+          42,
+          12,
+          8,
+          16,
+          22
+        ]
+      }
+    },
+    {
+      "id": "homosexual_condemnation",
+      "statement": "The Bible’s condemnation of homosexual behavior doesn’t apply today.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.946806,
+        0.0,
+        -0.93827,
+        -0.635989,
+        -1.036092
+      ],
+      "p": {
+        "Evangelical": [
+          0.61,
+          0.13,
+          0.06,
+          0.09,
+          0.11
+        ],
+        "Black Protestant": [
+          0.41,
+          0.11,
+          0.19,
+          0.12,
+          0.17
+        ],
+        "Mainline": [
+          0.29,
+          0.21,
+          0.12,
+          0.2,
+          0.18
+        ],
+        "Roman Catholic": [
+          0.22,
+          0.19,
+          0.15,
+          0.22,
+          0.22
+        ]
+      },
+      "p_all": [
+        0.33,
+        0.13,
+        0.13,
+        0.15,
+        0.26
+      ],
+      "p_not_evangelical": [
+        0.236667,
+        0.13,
+        0.153333,
+        0.17,
+        0.31
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          61,
+          13,
+          6,
+          9,
+          11
+        ],
+        "Black Protestant": [
+          41,
+          11,
+          19,
+          12,
+          17
+        ],
+        "Mainline": [
+          29,
+          21,
+          12,
+          20,
+          18
+        ],
+        "Roman Catholic": [
+          22,
+          19,
+          15,
+          22,
+          22
+        ],
+        "All U.S. adults": [
+          33,
+          13,
+          13,
+          15,
+          26
+        ]
+      }
+    },
+    {
+      "id": "god_unconcerned",
+      "statement": "God is unconcerned with my day-to-day decisions.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.728594,
+        -0.13815,
+        -1.299283,
+        -0.847298,
+        -1.369487
+      ],
+      "p": {
+        "Evangelical": [
+          0.67,
+          0.18,
+          0.03,
+          0.07,
+          0.05
+        ],
+        "Black Protestant": [
+          0.59,
+          0.21,
+          0.05,
+          0.1,
+          0.05
+        ],
+        "Mainline": [
+          0.48,
+          0.26,
+          0.03,
+          0.16,
+          0.07
+        ],
+        "Roman Catholic": [
+          0.38,
+          0.27,
+          0.07,
+          0.17,
+          0.11
+        ]
+      },
+      "p_all": [
+        0.41,
+        0.2,
+        0.09,
+        0.14,
+        0.16
+      ],
+      "p_not_evangelical": [
+        0.323333,
+        0.206667,
+        0.11,
+        0.163333,
+        0.196667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          67,
+          18,
+          3,
+          7,
+          5
+        ],
+        "Black Protestant": [
+          59,
+          21,
+          5,
+          10,
+          5
+        ],
+        "Mainline": [
+          48,
+          26,
+          3,
+          16,
+          7
+        ],
+        "Roman Catholic": [
+          38,
+          27,
+          7,
+          17,
+          11
+        ],
+        "All U.S. adults": [
+          41,
+          20,
+          9,
+          14,
+          16
+        ]
+      }
+    },
+    {
+      "id": "bible_authority_must_do",
+      "statement": "The Bible has the authority to tell us what we must do.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.00148,
+        -0.635989,
+        -0.847298,
+        0.283575,
+        1.098612
+      ],
+      "p": {
+        "Evangelical": [
+          0.05,
+          0.09,
+          0.03,
+          0.27,
+          0.56
+        ],
+        "Black Protestant": [
+          0.13,
+          0.04,
+          0.07,
+          0.3,
+          0.46
+        ],
+        "Mainline": [
+          0.15,
+          0.17,
+          0.06,
+          0.36,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.23,
+          0.22,
+          0.07,
+          0.28,
+          0.2
+        ]
+      },
+      "p_all": [
+        0.29,
+        0.15,
+        0.06,
+        0.22,
+        0.28
+      ],
+      "p_not_evangelical": [
+        0.37,
+        0.17,
+        0.07,
+        0.203333,
+        0.186667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          5,
+          9,
+          3,
+          27,
+          56
+        ],
+        "Black Protestant": [
+          13,
+          4,
+          7,
+          30,
+          46
+        ],
+        "Mainline": [
+          15,
+          17,
+          6,
+          36,
+          26
+        ],
+        "Roman Catholic": [
+          23,
+          22,
+          7,
+          28,
+          20
+        ],
+        "All U.S. adults": [
+          29,
+          15,
+          6,
+          22,
+          28
+        ]
+      }
+    },
+    {
+      "id": "belief_not_objective",
+      "statement": "Religious belief is not about objective truth.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.847298,
+        0.236389,
+        0.0,
+        -0.417735,
+        -0.635989
+      ],
+      "p": {
+        "Evangelical": [
+          0.28,
+          0.19,
+          0.23,
+          0.18,
+          0.12
+        ],
+        "Black Protestant": [
+          0.23,
+          0.16,
+          0.2,
+          0.18,
+          0.23
+        ],
+        "Mainline": [
+          0.18,
+          0.2,
+          0.17,
+          0.31,
+          0.14
+        ],
+        "Roman Catholic": [
+          0.11,
+          0.19,
+          0.22,
+          0.32,
+          0.16
+        ]
+      },
+      "p_all": [
+        0.16,
+        0.16,
+        0.23,
+        0.25,
+        0.2
+      ],
+      "p_not_evangelical": [
+        0.12,
+        0.15,
+        0.23,
+        0.273333,
+        0.226667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          28,
+          19,
+          23,
+          18,
+          12
+        ],
+        "Black Protestant": [
+          23,
+          16,
+          20,
+          18,
+          23
+        ],
+        "Mainline": [
+          18,
+          20,
+          17,
+          31,
+          14
+        ],
+        "Roman Catholic": [
+          11,
+          19,
+          22,
+          32,
+          16
+        ],
+        "All U.S. adults": [
+          16,
+          16,
+          23,
+          25,
+          20
+        ]
+      }
+    },
+    {
+      "id": "bible_highest_authority",
+      "statement": "The Bible is the highest authority for what I believe.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.377094,
+        -1.09822,
+        -0.019411,
+        -0.055961,
+        0.987779
+      ],
+      "p": {
+        "Evangelical": [
+          0.029412,
+          0.058824,
+          0.019608,
+          0.22549,
+          0.666667
+        ],
+        "Black Protestant": [
+          0.019417,
+          0.116505,
+          0.019417,
+          0.252427,
+          0.592233
+        ],
+        "Mainline": [
+          0.088235,
+          0.117647,
+          0.019608,
+          0.401961,
+          0.372549
+        ],
+        "Roman Catholic": [
+          0.147059,
+          0.186275,
+          0.019608,
+          0.343137,
+          0.303922
+        ]
+      },
+      "p_all": [
+        0.245098,
+        0.147059,
+        0.019608,
+        0.235294,
+        0.352941
+      ],
+      "p_not_evangelical": [
+        0.316869,
+        0.176401,
+        0.019992,
+        0.238469,
+        0.248269
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          3,
+          6,
+          0,
+          23,
+          68
+        ],
+        "Black Protestant": [
+          1,
+          12,
+          0,
+          26,
+          61
+        ],
+        "Mainline": [
+          9,
+          12,
+          0,
+          41,
+          38
+        ],
+        "Roman Catholic": [
+          15,
+          19,
+          0,
+          35,
+          31
+        ],
+        "All U.S. adults": [
+          25,
+          15,
+          0,
+          24,
+          36
+        ]
+      }
+    },
+    {
+      "id": "evangelism_important",
+      "statement": "It is very important for me personally to encourage non-Christians to trust Jesus Christ as their Savior.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.964387,
+        -0.788065,
+        -0.019411,
+        0.323165,
+        0.965473
+      ],
+      "p": {
+        "Evangelical": [
+          0.04902,
+          0.098039,
+          0.019608,
+          0.284314,
+          0.54902
+        ],
+        "Black Protestant": [
+          0.078431,
+          0.147059,
+          0.019608,
+          0.254902,
+          0.5
+        ],
+        "Mainline": [
+          0.147059,
+          0.205882,
+          0.019608,
+          0.323529,
+          0.303922
+        ],
+        "Roman Catholic": [
+          0.196078,
+          0.245098,
+          0.019608,
+          0.303922,
+          0.235294
+        ]
+      },
+      "p_all": [
+        0.27451,
+        0.186275,
+        0.019608,
+        0.22549,
+        0.294118
+      ],
+      "p_not_evangelical": [
+        0.349536,
+        0.215602,
+        0.019992,
+        0.205802,
+        0.209068
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          5,
+          10,
+          0,
+          29,
+          56
+        ],
+        "Black Protestant": [
+          8,
+          15,
+          0,
+          26,
+          51
+        ],
+        "Mainline": [
+          15,
+          21,
+          0,
+          33,
+          31
+        ],
+        "Roman Catholic": [
+          20,
+          25,
+          0,
+          31,
+          24
+        ],
+        "All U.S. adults": [
+          28,
+          19,
+          0,
+          23,
+          30
+        ]
+      }
+    },
+    {
+      "id": "cross_only_sacrifice",
+      "statement": "Jesus Christ’s death on the cross is the only sacrifice that could remove the penalty of my sin.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.564557,
+        -1.065959,
+        -0.019411,
+        -0.405073,
+        0.927856
+      ],
+      "p": {
+        "Evangelical": [
+          0.019608,
+          0.068627,
+          0.019608,
+          0.156863,
+          0.735294
+        ],
+        "Black Protestant": [
+          0.039216,
+          0.068627,
+          0.019608,
+          0.196078,
+          0.676471
+        ],
+        "Mainline": [
+          0.088235,
+          0.166667,
+          0.019608,
+          0.27451,
+          0.45098
+        ],
+        "Roman Catholic": [
+          0.098039,
+          0.205882,
+          0.019608,
+          0.323529,
+          0.352941
+        ]
+      },
+      "p_all": [
+        0.196078,
+        0.166667,
+        0.019608,
+        0.215686,
+        0.401961
+      ],
+      "p_not_evangelical": [
+        0.254802,
+        0.199268,
+        0.019992,
+        0.235202,
+        0.290736
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          2,
+          7,
+          0,
+          16,
+          75
+        ],
+        "Black Protestant": [
+          4,
+          7,
+          0,
+          20,
+          69
+        ],
+        "Mainline": [
+          9,
+          17,
+          0,
+          28,
+          46
+        ],
+        "Roman Catholic": [
+          10,
+          21,
+          0,
+          33,
+          36
+        ],
+        "All U.S. adults": [
+          20,
+          17,
+          0,
+          22,
+          41
+        ]
+      }
+    },
+    {
+      "id": "christ_alone_salvation",
+      "statement": "Only those who trust in Jesus Christ alone as their Savior receive God’s free gift of eternal salvation.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.079049,
+        -1.129473,
+        -0.019411,
+        -0.061166,
+        1.041846
+      ],
+      "p": {
+        "Evangelical": [
+          0.039216,
+          0.068627,
+          0.019608,
+          0.205882,
+          0.666667
+        ],
+        "Black Protestant": [
+          0.039216,
+          0.137255,
+          0.019608,
+          0.22549,
+          0.578431
+        ],
+        "Mainline": [
+          0.127451,
+          0.186275,
+          0.019608,
+          0.323529,
+          0.343137
+        ],
+        "Roman Catholic": [
+          0.176471,
+          0.235294,
+          0.019608,
+          0.303922,
+          0.264706
+        ]
+      },
+      "p_all": [
+        0.245098,
+        0.176471,
+        0.019608,
+        0.215686,
+        0.343137
+      ],
+      "p_not_evangelical": [
+        0.313603,
+        0.212335,
+        0.019992,
+        0.218868,
+        0.235202
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          4,
+          7,
+          0,
+          21,
+          68
+        ],
+        "Black Protestant": [
+          4,
+          14,
+          0,
+          23,
+          59
+        ],
+        "Mainline": [
+          13,
+          19,
+          0,
+          33,
+          35
+        ],
+        "Roman Catholic": [
+          18,
+          24,
+          0,
+          31,
+          27
+        ],
+        "All U.S. adults": [
+          25,
+          18,
+          0,
+          22,
+          35
+        ]
+      }
+    },
     {
       "id": "arian",
       "statement": "Jesus is the first and greatest being created by God.",
@@ -135,349 +3671,208 @@
     }
   ],
   "expected_items": 36,
-  "pending_items": [
-    {
-      "id": "god_perfect",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "trinity",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "all_religions",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "god_unchanging",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "resurrection",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "god_loves_same",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "jesus_not_god",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "marriage_man_woman",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "spirit_force",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "spirit_new_birth",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "spirit_forbidden",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "good_by_nature",
-      "reason": "missing Mainline, Roman Catholic"
-    },
-    {
-      "id": "smallest_sin",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "justification_faith",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "born_innocent",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "bible_myths",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "bible_accurate",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "science_disproves",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "election",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "hell_real",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "second_coming",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "worship_alone",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "faith_not_politics",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "join_church",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "sex_outside_marriage",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "abortion_sin",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "gender_choice",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "homosexual_condemnation",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "god_unconcerned",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "bible_authority_must_do",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "belief_not_objective",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "bible_highest_authority",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "evangelism_important",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "cross_only_sacrifice",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    },
-    {
-      "id": "christ_alone_salvation",
-      "reason": "missing Black Protestant, Mainline, Roman Catholic"
-    }
-  ],
+  "pending_items": [],
   "percentile_breakpoints": [
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.186145,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.074634,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    -0.069741,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.064137,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526,
-    0.100526
+    -12.234849,
+    -8.215427,
+    -7.61202,
+    -7.268598,
+    -7.012493,
+    -6.835346,
+    -6.662809,
+    -6.517877,
+    -6.390744,
+    -6.268386,
+    -6.173753,
+    -6.072502,
+    -5.988684,
+    -5.913285,
+    -5.831012,
+    -5.758966,
+    -5.681191,
+    -5.610648,
+    -5.548067,
+    -5.463932,
+    -5.399965,
+    -5.336062,
+    -5.27264,
+    -5.21437,
+    -5.155224,
+    -5.105103,
+    -5.047897,
+    -4.993529,
+    -4.947175,
+    -4.898651,
+    -4.849978,
+    -4.807096,
+    -4.762604,
+    -4.720688,
+    -4.680811,
+    -4.644637,
+    -4.607835,
+    -4.570658,
+    -4.528896,
+    -4.491425,
+    -4.449907,
+    -4.41001,
+    -4.372127,
+    -4.331581,
+    -4.294009,
+    -4.262341,
+    -4.224197,
+    -4.185072,
+    -4.154174,
+    -4.117479,
+    -4.08575,
+    -4.049497,
+    -4.013524,
+    -3.978189,
+    -3.947202,
+    -3.911589,
+    -3.877523,
+    -3.844955,
+    -3.813279,
+    -3.782989,
+    -3.75499,
+    -3.715976,
+    -3.679462,
+    -3.652059,
+    -3.625121,
+    -3.598675,
+    -3.57212,
+    -3.541366,
+    -3.510935,
+    -3.479648,
+    -3.448848,
+    -3.420785,
+    -3.393944,
+    -3.360546,
+    -3.3325,
+    -3.306866,
+    -3.276623,
+    -3.255644,
+    -3.22593,
+    -3.202448,
+    -3.176737,
+    -3.149583,
+    -3.124094,
+    -3.095864,
+    -3.068015,
+    -3.041914,
+    -3.009569,
+    -2.984878,
+    -2.957377,
+    -2.928981,
+    -2.896802,
+    -2.866087,
+    -2.836668,
+    -2.805943,
+    -2.781593,
+    -2.752905,
+    -2.724712,
+    -2.699673,
+    -2.672928,
+    -2.650273,
+    -2.620493,
+    -2.595533,
+    -2.568582,
+    -2.540928,
+    -2.518346,
+    -2.486974,
+    -2.460228,
+    -2.43165,
+    -2.405931,
+    -2.383327,
+    -2.358259,
+    -2.335442,
+    -2.311649,
+    -2.285412,
+    -2.262845,
+    -2.236165,
+    -2.210278,
+    -2.186079,
+    -2.159145,
+    -2.131253,
+    -2.11017,
+    -2.081698,
+    -2.047872,
+    -2.022216,
+    -1.998482,
+    -1.972852,
+    -1.939428,
+    -1.917407,
+    -1.888732,
+    -1.86814,
+    -1.841894,
+    -1.816287,
+    -1.782712,
+    -1.75095,
+    -1.72394,
+    -1.698642,
+    -1.671069,
+    -1.645873,
+    -1.616644,
+    -1.587919,
+    -1.55479,
+    -1.518353,
+    -1.48741,
+    -1.462577,
+    -1.43426,
+    -1.403033,
+    -1.374199,
+    -1.339698,
+    -1.305491,
+    -1.276742,
+    -1.236738,
+    -1.205657,
+    -1.1735,
+    -1.142771,
+    -1.11015,
+    -1.071727,
+    -1.040272,
+    -1.005229,
+    -0.964522,
+    -0.928847,
+    -0.892377,
+    -0.855166,
+    -0.815136,
+    -0.769027,
+    -0.725935,
+    -0.687132,
+    -0.646211,
+    -0.605688,
+    -0.561171,
+    -0.525085,
+    -0.48318,
+    -0.438567,
+    -0.389501,
+    -0.347355,
+    -0.293129,
+    -0.24504,
+    -0.19852,
+    -0.150312,
+    -0.087633,
+    -0.035232,
+    0.010232,
+    0.062595,
+    0.119862,
+    0.182906,
+    0.250391,
+    0.321446,
+    0.392722,
+    0.468331,
+    0.554684,
+    0.634595,
+    0.719199,
+    0.828035,
+    0.944554,
+    1.067002,
+    1.233808,
+    1.394029,
+    1.589289,
+    1.820927,
+    2.115936,
+    2.568378,
+    5.190044
   ]
 }

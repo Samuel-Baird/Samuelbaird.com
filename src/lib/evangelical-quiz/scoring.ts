@@ -55,7 +55,10 @@ export function percentileOf(data: QuizData, score: number): number {
     if (bp[mid] < score) lo = mid + 1;
     else hi = mid;
   }
-  return (100 * lo) / (bp.length - 1);
+  // lo can reach bp.length when score exceeds every breakpoint (a real
+  // score more extreme than all 20k simulated respondents) - clamp so the
+  // result never reads as more than "100% of Americans."
+  return (100 * Math.min(lo, bp.length - 1)) / (bp.length - 1);
 }
 
 /**
