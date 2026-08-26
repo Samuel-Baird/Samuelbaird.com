@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
-"""Render a State of Theology comparison-by-tradition graphic.
+"""Render State of Theology comparison-by-tradition graphics.
 
 Python port of the house style established in
 github.com/Samuel-Baird/ithinksam_statistics (state_of_theology_groups.R) -
-same palette, typography, and composition, for use where R/ggplot2/ragg
-aren't available. The R scripts in that repo are the canonical generator;
-this exists so Claude Code sessions (and anyone else without an R toolchain)
-can produce a chart in the same house style without installing one.
+same palette and typography, adapted per STYLE.md for the website (white
+background, neutral titles) - for use where R/ggplot2/ragg aren't available.
+The R scripts in that repo are the canonical generator for social posts;
+this exists so a Claude Code session (or anyone without an R toolchain) can
+produce a website-style chart without installing one.
 
-See scripts/state-of-theology-graphics/STYLE.md for the full spec this
-implements - colors, fonts, layout rules - so a chart made here and a chart
-made in R stay visually identical.
+Reads directly from the quiz's own data.json (produced by
+scripts/evangelical-quiz/build_data.py) rather than hand-entered numbers, so
+a chart here can never drift from what the quiz itself shows.
+
+See STYLE.md for the full spec this implements - colors, fonts, layout
+rules - so a chart made here and a chart made in R stay visually identical
+on every point except the two documented, deliberate departures.
 
 Usage:
+    # One item:
     python render_chart.py --item arian --out ../../public/data-explorer/state-of-theology/nicaea-lost.png
+
+    # Every item in data.json, written as <item_id>.png:
+    python render_chart.py --all --out-dir ../../public/data-explorer/state-of-theology
 
 Fonts: needs Roboto Condensed (regular/bold/italic/bold-italic) and Roboto
 Slab (bold) as local .ttf files - point --fonts-dir at a folder containing
@@ -23,6 +32,7 @@ them, or place them next to this script in a `fonts/` subdirectory.
 from __future__ import annotations
 
 import argparse
+import json
 import textwrap
 from pathlib import Path
 
@@ -52,35 +62,42 @@ GROUP_ORDER = list(PALETTE.keys())
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350 - Instagram 4:5
 
-SOURCE_LINES = [
-    "The State of Theology survey · sponsored by Ligonier Ministries, conducted by Lifeway Research",
-    "Groups are religious tradition (denomination and church association).",
-    "National online panel · 3,001 U.S. adults · margin of error ±1.9%",
-]
+SPONSOR_LINE = (
+    "The State of Theology survey · sponsored by Ligonier Ministries, "
+    "conducted by Lifeway Research"
+)
+GROUP_MEANING_LINE = "Groups are religious tradition (denomination and church association)."
+# Sample size / margin of error is wave-specific - never state a number for
+# a wave it wasn't measured in. See scripts/evangelical-quiz/survey-meta.ts,
+# the source of truth for these figures.
+WAVE_METHODOLOGY = {
+    2025: "National online panel · 3,001 U.S. adults · margin of error ±1.9%",
+    2022: "National online panel · sample size and margin of error not yet on file for this wave",
+}
 HANDLE = "@ithinkisam"
 
-# item_id -> (survey statement verbatim, direction word, survey year,
-# {group: whole-number percent}).
-#
-# The statement itself IS the title - no separate editorial headline. See
-# STYLE.md "Titles: neutral, not editorial" for why: a claim like "A
-# majority also deny the Trinity" tells the reader what conclusion to draw
-# before they've seen a number. Quoting the statement verbatim, in large
-# type, doesn't.
-ITEMS = {
-    "arian": (
-        "Jesus is the first and greatest being created by God.",
-        "agree",
-        "2022",
-        {
-            "Evangelical": 61,
-            "Black Protestant": 78,
-            "Mainline": 61,
-            "Roman Catholic": 71,
-            "All U.S. adults": 55,
-        },
-    ),
-}
+DEFAULT_DATA_JSON = (
+    Path(__file__).parent / ".." / ".." / "src" / "lib" / "evangelical-quiz" / "data.json"
+).resolve()
+
+
+def load_data(data_json: Path) -> dict:
+    with open(data_json, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def item_agree_pcts(item: dict) -> dict[str, int]:
+    """Whole-number "agree" percent (strongly + somewhat) per group that has
+    data for this item, from the item's raw_pct (aligned to item['scale']).
+    """
+    scale = item["scale"]
+    i_swa = scale.index("somewhat_agree") if "somewhat_agree" in scale else None
+    i_sa = scale.index("strongly_agree")
+    out = {}
+    for group, pcts in item["raw_pct"].items():
+        agree = pcts[i_sa] + (pcts[i_swa] if i_swa is not None else 0)
+        out[group] = round(agree)
+    return out
 
 
 def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
@@ -101,9 +118,10 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def render(item_id: str, out_path: Path, fonts_dir: Path) -> None:
-    statement, direction, year, values = ITEMS[item_id]
-    fonts = load_fonts(fonts_dir)
+def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> None:
+    statement = item["statement"]
+    year = item["year"]
+    values = item_agree_pcts(item)
 
     groups = [g for g in GROUP_ORDER if g in values][::-1]  # bottom-to-top
     pcts = [values[g] for g in groups]
@@ -141,9 +159,15 @@ def render(item_id: str, out_path: Path, fonts_dir: Path) -> None:
     # Title IS the survey statement, verbatim, in quotes - no editorial
     # headline above it. Wrapped by hand (matplotlib's fig-level wrap= is
     # unreliable) at a width tuned for this font/size/canvas combination.
-    title_lines = textwrap.wrap(f"“{statement}”", width=26)
+    # Long statements get a smaller title size so they still fit above the
+    # chart without colliding with it.
     title_fontsize = 34
-    line_spacing = 0.052
+    title_lines = textwrap.wrap(f"“{statement}”", width=26)
+    if len(title_lines) > 4:
+        title_fontsize = 27
+        title_lines = textwrap.wrap(f"“{statement}”", width=33)
+
+    line_spacing = title_fontsize / 650
     title_top = 0.965
 
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.01
@@ -159,20 +183,25 @@ def render(item_id: str, out_path: Path, fonts_dir: Path) -> None:
 
     fig.text(
         0.065, subtitle_y,
-        f"Share who strongly {direction} or somewhat {direction}, {year}",
+        f"Share who strongly agree or somewhat agree, {year}",
         fontproperties=fonts["regular"], fontsize=15, color=MUTED,
         ha="left", va="top",
     )
 
     # Caption block: source lines (muted) + handle (amber bold), bottom-left.
+    source_lines = [
+        SPONSOR_LINE,
+        GROUP_MEANING_LINE,
+        WAVE_METHODOLOGY.get(year, "National online panel · methodology not yet on file for this wave"),
+    ]
     caption_y = 0.105
-    for i, line in enumerate(SOURCE_LINES):
+    for i, line in enumerate(source_lines):
         fig.text(
             0.065, caption_y - i * 0.021, line, fontproperties=fonts["regular"],
             fontsize=10.5, color=MUTED, ha="left", va="top",
         )
     fig.text(
-        0.065, caption_y - len(SOURCE_LINES) * 0.021 - 0.01, HANDLE,
+        0.065, caption_y - len(source_lines) * 0.021 - 0.01, HANDLE,
         fontproperties=fonts["bold"], fontsize=10.5,
         color=PALETTE["Evangelical"], ha="left", va="top",
     )
@@ -184,14 +213,33 @@ def render(item_id: str, out_path: Path, fonts_dir: Path) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--item", required=True, choices=sorted(ITEMS))
-    ap.add_argument("--out", required=True, type=Path)
-    ap.add_argument(
-        "--fonts-dir", type=Path, default=Path(__file__).parent / "fonts",
-    )
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--item", help="item_id from data.json, e.g. arian")
+    ap.add_argument("--all", action="store_true", help="render every item in data.json")
+    ap.add_argument("--out", type=Path, help="output PNG path (with --item)")
+    ap.add_argument("--out-dir", type=Path, help="output directory (with --all); files named <item_id>.png")
+    ap.add_argument("--data", type=Path, default=DEFAULT_DATA_JSON, help="path to data.json")
+    ap.add_argument("--fonts-dir", type=Path, default=Path(__file__).parent / "fonts")
     args = ap.parse_args()
-    render(args.item, args.out, args.fonts_dir)
+
+    if bool(args.item) == bool(args.all):
+        raise SystemExit("pass exactly one of --item or --all")
+    if args.item and not args.out:
+        raise SystemExit("--item requires --out")
+    if args.all and not args.out_dir:
+        raise SystemExit("--all requires --out-dir")
+
+    data = load_data(args.data)
+    items_by_id = {item["id"]: item for item in data["items"]}
+    fonts = load_fonts(args.fonts_dir)
+
+    if args.item:
+        if args.item not in items_by_id:
+            raise SystemExit(f"item {args.item!r} not found in {args.data}")
+        render(items_by_id[args.item], args.out, fonts)
+    else:
+        for item_id, item in items_by_id.items():
+            render(item, args.out_dir / f"{item_id}.png", fonts)
 
 
 if __name__ == "__main__":

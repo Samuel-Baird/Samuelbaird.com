@@ -4,22 +4,23 @@
 Instagram graphics have their own established style, documented in
 [`STATISTICS_STYLE_GUIDE`](https://github.com/Samuel-Baird/ithinksam_statistics/blob/main/STATISTICS_STYLE_GUIDE)
 in the `ithinksam_statistics` repo — same color palette and typography as
-here, but built for a feed (punchy editorial titles, a post-length write-up
-alongside it). The website's [Data Explorer](../../src/app/data-explorer/)
+here, but built for a feed (an optionally punchy title, a post-length
+write-up alongside it). The website's [Data Explorer](../../src/app/data-explorer/)
 is a different medium with a different job — a reader is here to look up
-what the data actually says, not to be pulled through a feed — so its one
-real departure from the social style is **how a chart's title is written**;
-see below.
+what the data actually says, not to be pulled through a feed — so it
+departs from the social style on two points: **how a chart's title is
+written** and **background color**. See "Titles: neutral, not editorial"
+and the Palette section below for both.
 
 **Status: the real website generator doesn't exist yet.** The palette and
-type are locked (shared with the social style), but the actual
-website-specific R (or other) code is deliberately not being built yet —
-holding until the fuller dataset is delivered, so the pipeline gets
-designed against real data rather than one item. `render_chart.py` and the
-one graphic it's produced so far are a placeholder proving the style holds
-up outside a social-post context, not the finished thing. When the real
-website generator gets built, it should follow this doc; update this doc
-first if that build changes anything here.
+type are locked (shared with the social style), but dedicated
+website-specific R (or other) generator code is deliberately not being
+built yet. `render_chart.py` — a Python/matplotlib script, not the eventual
+generator — reads the quiz's full `data.json` directly and can render every
+item (`--all`), so all 36 current statements have a graphic; that's a
+depth-of-coverage milestone, not a signal that the pipeline itself is
+finished. When the real website generator gets built, it should follow
+this doc; update this doc first if that build changes anything here.
 
 This doc is a distillation of two sources: the established R scripts —
 [`state_of_theology_charts.R`](https://github.com/Samuel-Baird/ithinksam_statistics/blob/main/state_of_theology_charts.R)
@@ -120,9 +121,11 @@ Every chart:
    text on the chart — it IS the headline, there's no separate one above
    it. Wrap it across as many lines as it needs.
 2. **Subtitle**, one line, Roboto Condensed, muted, directly under the
-   title: "Share who strongly {agree|disagree} or somewhat {agree|disagree},
-   {year}" — state the direction being measured explicitly. Never round
-   "strongly + somewhat" into an unlabeled "% agree."
+   title: "Share who strongly agree or somewhat agree, {year}." Always
+   *agree* — measuring the same direction on every chart is itself part of
+   staying neutral; picking disagree for whichever items would read more
+   dramatically that way would be a framing choice, not a wording one.
+   Never round "strongly + somewhat" into an unlabeled "% agree."
 3. **The chart** — no chart title/axis title, no legend (colors are
    self-explanatory once you know the palette above; a caption line
    documents it if needed). Bars are colored per the group palette; value
@@ -168,15 +171,23 @@ There's no canonical website generator yet (see Status, above) —
 real website generator is built (in whatever language), point it at this
 doc and update the workflow described here.
 
-**Python** (`render_chart.py`), for now: add a key to the `ITEMS` dict —
-`item_id: (statement, direction, year, {group: percent, ...})` — and run:
+**`render_chart.py` reads directly from the quiz's own `data.json`** — it
+never hand-enters a percentage. Adding a graphic for a new item is a data
+change one level up: fill in that item in the workbook, regenerate
+`data.json` (`scripts/evangelical-quiz/build_data.py`), then:
 
 ```bash
+# One item, explicit output path:
 python render_chart.py --item <item_id> --out <path>.png
+
+# Every item in data.json, written as <item_id>.png:
+python render_chart.py --all --out-dir ../../public/data-explorer/state-of-theology
 ```
 
-Pull the percentages from the same place the quiz's own data comes from —
-[`scripts/evangelical-quiz/build_data.py`](../evangelical-quiz/build_data.py)'s
-output, or directly from the State of Theology data explorer / microdata
-(see that script's README for how to fetch and verify it) — never
-transcribe a number you haven't cross-checked against a real source.
+`src/lib/data-explorer.ts`'s `stateOfTheologyGraphics()` builds the
+gallery's metadata (titles, alt text, per-group percentages) from that same
+`data.json` too, via `groupBreakdownRows()`/`fiveColumnPct()` — so the
+chart image, the gallery page, and the quiz itself can never quietly
+disagree with each other. Never hand-type a percentage into any of the
+three; if a number needs to change, it changes in the workbook and
+everything downstream regenerates.

@@ -6,6 +6,8 @@
  * lookup table (see scripts/evangelical-quiz/README.md).
  */
 
+import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-quiz";
+
 export type Quiz = {
   title: string;
   description: string;
@@ -98,23 +100,39 @@ export const DATASETS: Dataset[] = [
         "like, and how evangelical your answers are relative to the rest of the country.",
       href: "/how-evangelical",
     },
-    graphics: [
-      {
-        title: '"Jesus is the first and greatest being created by God."',
-        description: "Agreement by religious tradition, 2022 wave.",
-        imageSrc: "/data-explorer/state-of-theology/nicaea-lost.png",
-        width: 1080,
-        height: 1350,
-        alt:
-          'Bar chart: share who agree "Jesus is the first and greatest being created by God," ' +
-          "by religious tradition. Evangelical 61%, Black Protestant 78%, Mainline 61%, Roman " +
-          "Catholic 71%, All U.S. adults 55%.",
-        credit: "@ithinkisam",
-      },
-    ],
+    graphics: stateOfTheologyGraphics(),
   },
 ];
 
 export function getDataset(slug: string): Dataset | undefined {
   return DATASETS.find((d) => d.slug === slug);
+}
+
+/**
+ * One graphic per quiz item, generated from the quiz's own data so the
+ * gallery can never drift from what the quiz itself shows. Images are
+ * rendered by scripts/state-of-theology-graphics/render_chart.py
+ * (`--all`) to `/public/data-explorer/state-of-theology/<item_id>.png` —
+ * rerun that after regenerating data.json to keep these in sync.
+ */
+function stateOfTheologyGraphics(): Graphic[] {
+  return QUIZ_DATA.items.map((item) => {
+    const rows = groupBreakdownRows(item).map((row) => {
+      const pcts = fiveColumnPct(item, row.group)!;
+      const agree = pcts[3] + pcts[4]; // somewhat_agree + strongly_agree
+      return { group: row.group, agree };
+    });
+    return {
+      title: `"${item.statement}"`,
+      description: `Agreement by religious tradition, ${item.year} wave.`,
+      imageSrc: `/data-explorer/state-of-theology/${item.id}.png`,
+      width: 1080,
+      height: 1350,
+      alt:
+        `Bar chart: share who agree "${item.statement}," by religious tradition. ` +
+        rows.map((r) => `${r.group} ${r.agree}%`).join(", ") +
+        ".",
+      credit: "@ithinkisam",
+    };
+  });
 }
