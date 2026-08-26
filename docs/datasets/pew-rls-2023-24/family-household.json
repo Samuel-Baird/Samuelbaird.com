@@ -1,0 +1,93 @@
+{
+  "source": "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” doi: 10.58094/3kwb-bf52.",
+  "method": "children_with_kids_at_home: population is each group's CURREL (current tradition, not raised-in), weighted by WEIGHT, excluding don't know/refused. pray_or_read_scripture_with_kids: same CURREL population but filtered to parents only (CHILDREN=Yes) - the denominator is that group's own parents, per the RLS readme's documented filter for this item; 'Other religions' pools Jewish/Muslim/Buddhist/Hindu/other-world/other-faiths CURREL codes, and 'Religiously affiliated average' pools all six Christian groups plus Other religions (excluding the unaffiliated) before taking the ratio.",
+  "total_weighted_n": 257520024.0,
+  "total_unweighted_n": 36908,
+  "children_with_kids_at_home": {
+    "Protestant": {
+      "pct": 27.44,
+      "valid_unweighted_n": 14886,
+      "group_unweighted_n": 15099
+    },
+    "Catholic": {
+      "pct": 27.64,
+      "valid_unweighted_n": 6839,
+      "group_unweighted_n": 6958
+    },
+    "Latter-day Saint": {
+      "pct": 37.67,
+      "valid_unweighted_n": 559,
+      "group_unweighted_n": 565
+    },
+    "Orthodox Christian": {
+      "pct": 27.34,
+      "valid_unweighted_n": 223,
+      "group_unweighted_n": 225
+    },
+    "Jehovah's Witness": {
+      "pct": 23.83,
+      "valid_unweighted_n": 111,
+      "group_unweighted_n": 113
+    },
+    "Other Christian": {
+      "pct": 27.0,
+      "valid_unweighted_n": 218,
+      "group_unweighted_n": 226
+    },
+    "Christian average": {
+      "pct": 27.71,
+      "valid_unweighted_n": 22836,
+      "group_unweighted_n": 23186
+    }
+  },
+  "pray_or_read_scripture_with_kids": {
+    "Protestant": {
+      "pct": 64.78,
+      "valid_unweighted_n": 3218,
+      "group_unweighted_n": 15099,
+      "parent_unweighted_n": 3270
+    },
+    "Catholic": {
+      "pct": 44.82,
+      "valid_unweighted_n": 1359,
+      "group_unweighted_n": 6958,
+      "parent_unweighted_n": 1393
+    },
+    "Latter-day Saint": {
+      "pct": 80.39,
+      "valid_unweighted_n": 194,
+      "group_unweighted_n": 565,
+      "parent_unweighted_n": 195
+    },
+    "Orthodox Christian": {
+      "pct": 59.97,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 225,
+      "parent_unweighted_n": 52
+    },
+    "Jehovah's Witness": {
+      "pct": 58.57,
+      "valid_unweighted_n": 15,
+      "group_unweighted_n": 113,
+      "parent_unweighted_n": 16
+    },
+    "Other Christian": {
+      "pct": 31.28,
+      "valid_unweighted_n": 42,
+      "group_unweighted_n": 226,
+      "parent_unweighted_n": 43
+    },
+    "Other religions": {
+      "pct": 38.06,
+      "valid_unweighted_n": 603,
+      "group_unweighted_n": 2578,
+      "parent_unweighted_n": 610
+    },
+    "Religiously affiliated average": {
+      "pct": 56.44,
+      "valid_unweighted_n": 5481,
+      "group_unweighted_n": 25764,
+      "parent_unweighted_n": 5579
+    }
+  }
+}

@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+"""Renders the two "family and household" PNGs for the Pew RLS Data
+Explorer page: share with children under 18 at home, and share of parents
+who pray or read scripture with their kids.
+
+Reads only docs/datasets/pew-rls-2023-24/family-household.json (produced by
+scripts/pew-rls/family_household.py) - no number here is hand-typed. Same
+canvas/fonts/highlight-vs-gray convention as
+render_childhood_formation_charts.py; see STYLE.md in this folder. The two
+charts intentionally use different group sets (six Christian traditions +
+Christian average for the first; those six + "Other religions" + a
+religiously-affiliated average for the second), per the backlog item's own
+note that the second item's population is explicitly wider - the render
+script takes the group order as an argument rather than hardcoding one
+list, so each chart draws exactly the rows its own JSON has.
+
+Usage:
+    python render_family_household_charts.py \
+        --children-out ../../public/data-explorer/pew-religious-landscape-study/family-children-at-home.png \
+        --kidact-out ../../public/data-explorer/pew-religious-landscape-study/family-kidact-prayer.png
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import textwrap
+from pathlib import Path
+
+import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+
+# ---------------------------------------------------------------------------
+# House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
+# ---------------------------------------------------------------------------
+
+INK = "#1A1A1A"
+PAPER = "#FFFFFF"
+MUTED = "#6E6A63"
+
+ACCENT = "#1f4f7a"        # --accent - the one highlighted series (Latter-day Saint)
+CONTEXT_GRAY = "#8f8b82"  # bar-fill-safe lighten of --muted
+
+FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350 - matches every other Data Explorer graphic
+
+HIGHLIGHT_GROUP = "Latter-day Saint"
+
+DEFAULT_DATA_JSON = (
+    Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "pew-rls-2023-24" / "family-household.json"
+).resolve()
+DEFAULT_FONTS_DIR = (
+    Path(__file__).parent / ".." / "state-of-theology-graphics" / "fonts"
+).resolve()
+
+# Bottom-to-top plot order for each chart (top row is drawn last in a barh
+# call using this reversed) - LDS first so it plots at the top, same
+# convention as every other chart in this pipeline.
+CHILDREN_ORDER = [
+    "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
+    "Jehovah's Witness", "Other Christian", "Christian average",
+]
+KIDACT_ORDER = [
+    "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
+    "Jehovah's Witness", "Other Christian", "Other religions",
+    "Religiously affiliated average",
+]
+
+
+def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
+    files = {
+        "regular": "RobotoCondensed-Regular.ttf",
+        "bold": "RobotoCondensed-Bold.ttf",
+        "title": "RobotoSlab-Bold.ttf",
+    }
+    props = {}
+    for key, filename in files.items():
+        path = fonts_dir / filename
+        if not path.exists():
+            raise SystemExit(f"missing font file: {path}")
+        fm.fontManager.addfont(str(path))
+        props[key] = fm.FontProperties(fname=str(path))
+    return props
+
+
+def render_magnitude_bar(
+    results: dict, group_order: list[str], title: str, subtitle: str, note: str,
+    total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
+) -> None:
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    n_rows = len(group_order)
+    axes_height = min(0.50, 0.065 * n_rows + 0.10)
+    AXES_LEFT, AXES_WIDTH = 0.34, 0.60
+    ax = fig.add_axes([AXES_LEFT, 0.32, AXES_WIDTH, axes_height])
+    ax.set_facecolor(PAPER)
+    ax.set_xticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.tick_params(axis="y", length=0, pad=10)
+
+    rows = group_order[::-1]
+    values = [results[g]["pct"] for g in rows]
+    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+
+    ax.barh(rows, values, height=0.6, color=colors, zorder=3)
+    ax.set_xlim(0, max(values) * 1.2)
+    ax.margins(y=0.11)
+
+    for tick_label, g in zip(ax.get_yticklabels(), rows):
+        tick_label.set_fontproperties(fonts["bold"])
+        tick_label.set_fontsize(14)
+        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+
+    for g, v, c in zip(rows, values, colors):
+        ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
+                 color=c, fontproperties=fonts["bold"], fontsize=15, zorder=4)
+
+    title_fontsize = 27
+    title_lines = textwrap.wrap(title, width=26)
+    line_spacing = title_fontsize / 650
+    title_top = 0.965
+    for i, line in enumerate(title_lines):
+        fig.text(
+            0.065, title_top - i * line_spacing, line,
+            fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+        )
+    subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
+    fig.text(
+        0.065, subtitle_y, subtitle,
+        fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
+    )
+
+    source_paragraphs = [
+        note,
+        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
+        f"N = {total_n:,} U.S. adults",
+        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
+        "doi: 10.58094/3kwb-bf52.",
+    ]
+    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
+    caption_y = 0.185
+    for i, line in enumerate(caption_lines):
+        fig.text(
+            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
+            fontsize=10, color=MUTED, ha="left", va="top",
+        )
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--children-out", type=Path, required=True)
+    ap.add_argument("--kidact-out", type=Path, required=True)
+    ap.add_argument("--data", type=Path, default=DEFAULT_DATA_JSON)
+    ap.add_argument("--fonts-dir", type=Path, default=DEFAULT_FONTS_DIR)
+    args = ap.parse_args()
+
+    with open(args.data, encoding="utf-8") as f:
+        data = json.load(f)
+    fonts = load_fonts(args.fonts_dir)
+
+    render_magnitude_bar(
+        data["children_with_kids_at_home"], CHILDREN_ORDER,
+        title="Share with children under 18 at home",
+        subtitle="Of each current tradition's members, share who are a\nparent or guardian of a child under 18 living with them.",
+        note="Population: current tradition (CURREL); excludes don't know/refused.",
+        total_n=data["total_unweighted_n"],
+        out_path=args.children_out,
+        fonts=fonts,
+    )
+    render_magnitude_bar(
+        data["pray_or_read_scripture_with_kids"], KIDACT_ORDER,
+        title="Of parents, who pray or read scripture with their kids",
+        subtitle="Share of each tradition's parents who pray or read\nscripture with their children.",
+        note="Population: parents of children under 18 (CHILDREN=Yes) in each current "
+             "tradition (CURREL); excludes don't know/refused.",
+        total_n=data["total_unweighted_n"],
+        out_path=args.kidact_out,
+        fonts=fonts,
+    )
+
+
+if __name__ == "__main__":
+    main()

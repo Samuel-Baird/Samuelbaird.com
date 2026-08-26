@@ -11,6 +11,7 @@ import switchingRatesData from "../../docs/datasets/pew-rls-2023-24/switching-ra
 import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switching-generalized.json";
 import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
 import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhood-formation.json";
+import familyHouseholdData from "../../docs/datasets/pew-rls-2023-24/family-household.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -56,6 +57,23 @@ const GENERALIZED_GROUP_ORDER = [
   "Jehovah's Witness",
   "Other Christian",
   "Christian average",
+];
+
+/** Group order for children_with_kids_at_home, matching CHILDREN_ORDER in
+ * scripts/pew-rls/render_family_household_charts.py. */
+const CHILDREN_GROUP_ORDER = [
+  "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
+  "Jehovah's Witness", "Other Christian", "Christian average",
+];
+
+/** Group order for pray_or_read_scripture_with_kids, matching
+ * KIDACT_ORDER in scripts/pew-rls/render_family_household_charts.py - a
+ * wider population than every other chart on this page, per the backlog
+ * item's own note. */
+const KIDACT_GROUP_ORDER = [
+  "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
+  "Jehovah's Witness", "Other Christian", "Other religions",
+  "Religiously affiliated average",
 ];
 
 /** A direct quotation of how the dataset's own source describes itself. */
@@ -195,6 +213,8 @@ export const DATASETS: Dataset[] = [
       pewChildhoodAttendanceGraphic(),
       pewChildhoodImportanceGraphic(),
       pewChildhoodEducationGraphic(),
+      pewChildrenAtHomeGraphic(),
+      pewKidactPrayerGraphic(),
     ],
   },
   {
@@ -436,6 +456,52 @@ function pewChildhoodEducationGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `100%-stacked bar chart, years of religious education received by tradition raised in. ${alt}.`,
+  };
+}
+
+/**
+ * Share with children under 18 at home, by current tradition. Built from
+ * family-household.json (scripts/pew-rls/family_household.py), rendered by
+ * scripts/pew-rls/render_family_household_charts.py.
+ */
+function pewChildrenAtHomeGraphic(): Graphic {
+  const results = familyHouseholdData.children_with_kids_at_home;
+  const alt = CHILDREN_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    return `${group} ${g.pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Share with children under 18 at home",
+    description:
+      "Of each current tradition's members, share who are a parent or guardian of a child " +
+      "under 18 living with them.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/family-children-at-home.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share of each current tradition's members with children under 18 at home: ${alt}.`,
+  };
+}
+
+/**
+ * Of parents, share who pray or read scripture with their kids, by current
+ * tradition (+ "Other religions" and a religiously-affiliated average).
+ * Same data source and render script as the graphic above.
+ */
+function pewKidactPrayerGraphic(): Graphic {
+  const results = familyHouseholdData.pray_or_read_scripture_with_kids;
+  const alt = KIDACT_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    return `${group} ${g.pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Of parents, who pray or read scripture with their kids",
+    description: "Share of each tradition's parents who pray or read scripture with their children.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/family-kidact-prayer.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share of each tradition's parents who pray or read scripture with their children: ${alt}.`,
   };
 }
 
