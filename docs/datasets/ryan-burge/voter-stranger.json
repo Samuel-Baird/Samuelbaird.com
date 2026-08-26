@@ -1,0 +1,121 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER (Views of the Electorate Research) Survey Panel, 2017 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "question": "How much do you agree or disagree with this statement? - These days I feel like a stranger in my own country.",
+  "question_source": "Voter Study Group VOTER Survey codebook (verbatim, not paraphrased).",
+  "method": "Population: religpew_2017 (wave-matched religion), weighted by weight_2017. Excludes three categories too thin to show individually - see excluded_too_thin below.",
+  "excluded_too_thin": {
+    "4": "Orthodox (n=18)",
+    "6": "Muslim (n=13)",
+    "8": "Hindu (n=3)"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "stranger_order": [
+    "Strongly agree",
+    "Mostly agree",
+    "Mostly disagree",
+    "Strongly disagree"
+  ],
+  "results": {
+    "Protestant": {
+      "shares_pct": {
+        "Strongly agree": 13.84,
+        "Mostly agree": 33.4,
+        "Mostly disagree": 40.8,
+        "Strongly disagree": 11.95
+      },
+      "valid_n": 1963,
+      "group_n": 1977
+    },
+    "Catholic": {
+      "shares_pct": {
+        "Strongly agree": 13.23,
+        "Mostly agree": 36.32,
+        "Mostly disagree": 34.62,
+        "Strongly disagree": 15.83
+      },
+      "valid_n": 1053,
+      "group_n": 1055
+    },
+    "Mormon": {
+      "shares_pct": {
+        "Strongly agree": 5.61,
+        "Mostly agree": 27.0,
+        "Mostly disagree": 41.93,
+        "Strongly disagree": 25.46
+      },
+      "valid_n": 83,
+      "group_n": 84
+    },
+    "Jewish": {
+      "shares_pct": {
+        "Strongly agree": 7.98,
+        "Mostly agree": 25.73,
+        "Mostly disagree": 44.58,
+        "Strongly disagree": 21.71
+      },
+      "valid_n": 168,
+      "group_n": 168
+    },
+    "Buddhist": {
+      "shares_pct": {
+        "Strongly agree": 18.45,
+        "Mostly agree": 53.81,
+        "Mostly disagree": 22.93,
+        "Strongly disagree": 4.82
+      },
+      "valid_n": 51,
+      "group_n": 51
+    },
+    "Atheist": {
+      "shares_pct": {
+        "Strongly agree": 21.55,
+        "Mostly agree": 29.54,
+        "Mostly disagree": 35.26,
+        "Strongly disagree": 13.66
+      },
+      "valid_n": 292,
+      "group_n": 292
+    },
+    "Agnostic": {
+      "shares_pct": {
+        "Strongly agree": 14.32,
+        "Mostly agree": 42.55,
+        "Mostly disagree": 30.28,
+        "Strongly disagree": 12.86
+      },
+      "valid_n": 309,
+      "group_n": 310
+    },
+    "Nothing in particular": {
+      "shares_pct": {
+        "Strongly agree": 16.73,
+        "Mostly agree": 39.38,
+        "Mostly disagree": 32.21,
+        "Strongly disagree": 11.68
+      },
+      "valid_n": 816,
+      "group_n": 819
+    },
+    "Something else": {
+      "shares_pct": {
+        "Strongly agree": 21.91,
+        "Mostly agree": 36.4,
+        "Mostly disagree": 26.48,
+        "Strongly disagree": 15.21
+      },
+      "valid_n": 203,
+      "group_n": 204
+    }
+  }
+}

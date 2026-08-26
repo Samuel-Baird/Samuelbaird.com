@@ -18,6 +18,7 @@ import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritu
 import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
 import pidByGenderData from "../../docs/datasets/ryan-burge/pid-by-gender.json";
+import voterStrangerData from "../../docs/datasets/ryan-burge/voter-stranger.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -342,7 +343,7 @@ export const DATASETS: Dataset[] = [
       "political groups, issue-importance ratings, and a religion battery with 141–149 " +
       "Latter-day Saint respondents at baseline (84 in the 2017 wave specifically).",
     sourceUrl: "https://www.voterstudygroup.org/",
-    graphics: [],
+    graphics: [voterStrangerGraphic()],
   },
 ];
 
@@ -1333,6 +1334,35 @@ function cesPidByGenderGraphic(): Graphic {
     height: 1350,
     credit: "via Ryan Burge",
     alt: `100%-stacked bar chart, LDS party ID by gender and survey wave. ${alt}.`,
+  };
+}
+
+/**
+ * "These days I feel like a stranger in my own country," by religion
+ * (2017 wave) - the VOTER Survey Panel entry's first graphic. Built from
+ * voter-stranger.json (scripts/ryan-burge/voter_stranger.py), rendered by
+ * scripts/ryan-burge/render_voter_stranger_chart.py.
+ */
+function voterStrangerGraphic(): Graphic {
+  const { results, group_order: order, stranger_order: segments } = voterStrangerData;
+  const alt = order
+    .map((group) => {
+      const g = results[group as keyof typeof results];
+      const shares = segments
+        .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct]?.toFixed(0) ?? "n/a"}%`)
+        .join(", ");
+      return `${group}: ${shares}`;
+    })
+    .join("; ");
+
+  return {
+    title: "“These days I feel like a stranger in my own country”",
+    description: "Agreement with this statement, by religion (2017 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/stranger-2017.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `100%-stacked bar chart, agreement with "these days I feel like a stranger in my own country," by religion. ${alt}.`,
   };
 }
 
