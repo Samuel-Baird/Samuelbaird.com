@@ -1,0 +1,158 @@
+{
+  "source": "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” doi: 10.58094/3kwb-bf52.",
+  "method": "Population: respondents raised in one of six Christian FRMREL groups (Protestant combined, per switching_rates.py's own FRMREL2-restricted-use note), weighted by WEIGHT. 'Christian average' pools weighted totals across all six before taking ratios, not an unweighted mean of the six percentages. Each item's own DON'T KNOW/REFUSED (99) respondents are excluded from that item's own denominator only.",
+  "total_weighted_n": 257520024.0,
+  "total_unweighted_n": 36908,
+  "chattend_monthly_plus": {
+    "Protestant": {
+      "pct": 80.16,
+      "valid_unweighted_n": 17848,
+      "group_unweighted_n": 17942
+    },
+    "Catholic": {
+      "pct": 75.85,
+      "valid_unweighted_n": 11223,
+      "group_unweighted_n": 11281
+    },
+    "Latter-day Saint": {
+      "pct": 89.07,
+      "valid_unweighted_n": 726,
+      "group_unweighted_n": 730
+    },
+    "Orthodox Christian": {
+      "pct": 62.95,
+      "valid_unweighted_n": 264,
+      "group_unweighted_n": 266
+    },
+    "Jehovah's Witness": {
+      "pct": 78.69,
+      "valid_unweighted_n": 157,
+      "group_unweighted_n": 158
+    },
+    "Other Christian": {
+      "pct": 65.65,
+      "valid_unweighted_n": 238,
+      "group_unweighted_n": 242
+    },
+    "Christian average": {
+      "pct": 78.47,
+      "valid_unweighted_n": 30456,
+      "group_unweighted_n": 30619
+    }
+  },
+  "chimprel_very_important": {
+    "Protestant": {
+      "pct": 49.82,
+      "valid_unweighted_n": 17833,
+      "group_unweighted_n": 17942
+    },
+    "Catholic": {
+      "pct": 50.85,
+      "valid_unweighted_n": 11235,
+      "group_unweighted_n": 11281
+    },
+    "Latter-day Saint": {
+      "pct": 70.0,
+      "valid_unweighted_n": 728,
+      "group_unweighted_n": 730
+    },
+    "Orthodox Christian": {
+      "pct": 37.35,
+      "valid_unweighted_n": 264,
+      "group_unweighted_n": 266
+    },
+    "Jehovah's Witness": {
+      "pct": 78.13,
+      "valid_unweighted_n": 158,
+      "group_unweighted_n": 158
+    },
+    "Other Christian": {
+      "pct": 44.58,
+      "valid_unweighted_n": 239,
+      "group_unweighted_n": 242
+    },
+    "Christian average": {
+      "pct": 50.79,
+      "valid_unweighted_n": 30457,
+      "group_unweighted_n": 30619
+    }
+  },
+  "chedu2_distribution": {
+    "Protestant": {
+      "shares_pct": {
+        "None": 23.33,
+        "1-3 years": 18.93,
+        "4-6 years": 15.47,
+        "7 years or more": 42.28
+      },
+      "valid_unweighted_n": 17765,
+      "group_unweighted_n": 17942
+    },
+    "Catholic": {
+      "shares_pct": {
+        "None": 37.46,
+        "1-3 years": 25.88,
+        "4-6 years": 15.37,
+        "7 years or more": 21.29
+      },
+      "valid_unweighted_n": 11181,
+      "group_unweighted_n": 11281
+    },
+    "Latter-day Saint": {
+      "shares_pct": {
+        "None": 20.94,
+        "1-3 years": 17.41,
+        "4-6 years": 19.61,
+        "7 years or more": 42.04
+      },
+      "valid_unweighted_n": 724,
+      "group_unweighted_n": 730
+    },
+    "Orthodox Christian": {
+      "shares_pct": {
+        "None": 46.85,
+        "1-3 years": 21.51,
+        "4-6 years": 14.25,
+        "7 years or more": 17.39
+      },
+      "valid_unweighted_n": 265,
+      "group_unweighted_n": 266
+    },
+    "Jehovah's Witness": {
+      "shares_pct": {
+        "None": 83.61,
+        "1-3 years": 4.03,
+        "4-6 years": 2.22,
+        "7 years or more": 10.14
+      },
+      "valid_unweighted_n": 157,
+      "group_unweighted_n": 158
+    },
+    "Other Christian": {
+      "shares_pct": {
+        "None": 31.36,
+        "1-3 years": 22.29,
+        "4-6 years": 10.56,
+        "7 years or more": 35.79
+      },
+      "valid_unweighted_n": 236,
+      "group_unweighted_n": 242
+    },
+    "Christian average": {
+      "shares_pct": {
+        "None": 29.36,
+        "1-3 years": 21.44,
+        "4-6 years": 15.38,
+        "7 years or more": 33.82
+      },
+      "valid_unweighted_n": 30328,
+      "group_unweighted_n": 30619
+    }
+  },
+  "chedu2_order": [
+    "None",
+    "1-3 years",
+    "4-6 years",
+    "7 years or more"
+  ]
+}

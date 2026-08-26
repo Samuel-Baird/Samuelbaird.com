@@ -10,6 +10,7 @@ import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-
 import switchingRatesData from "../../docs/datasets/pew-rls-2023-24/switching-rates.json";
 import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switching-generalized.json";
 import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
+import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhood-formation.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -191,6 +192,9 @@ export const DATASETS: Dataset[] = [
       pewSwitchingCurrentCompositionGraphic(),
       pewSwitchingRaisedCohortGraphic(),
       pewBirthDecadeGraphic(),
+      pewChildhoodAttendanceGraphic(),
+      pewChildhoodImportanceGraphic(),
+      pewChildhoodEducationGraphic(),
     ],
   },
   {
@@ -358,6 +362,80 @@ function pewBirthDecadeGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `100%-stacked bar chart, birth-decade share of each tradition's current members. ${alt}.`,
+  };
+}
+
+/**
+ * Grew up attending church monthly or more, by tradition raised in. Built
+ * from childhood-formation.json (scripts/pew-rls/childhood_formation.py),
+ * rendered by scripts/pew-rls/render_childhood_formation_charts.py.
+ */
+function pewChildhoodAttendanceGraphic(): Graphic {
+  const results = childhoodFormationData.chattend_monthly_plus;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    return `${group} ${g.pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Grew up attending church monthly or more",
+    description:
+      "Share of each Christian tradition's raised-in-it population, by childhood " +
+      "attendance frequency.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/childhood-attendance.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share raised in each tradition who attended church monthly+ as a child: ${alt}.`,
+  };
+}
+
+/**
+ * Religion was very important to their family growing up, by tradition
+ * raised in. Same data source and render script as the attendance graphic
+ * above.
+ */
+function pewChildhoodImportanceGraphic(): Graphic {
+  const results = childhoodFormationData.chimprel_very_important;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    return `${group} ${g.pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Religion was very important to their family growing up",
+    description:
+      "Share of each Christian tradition's raised-in-it population who say religion was " +
+      "\"very important\" to their family.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/childhood-importance.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share raised in each tradition who say religion was very important to their family: ${alt}.`,
+  };
+}
+
+/**
+ * Religious education received growing up (4-category distribution), by
+ * tradition raised in. Same data source and render script as the two
+ * childhood-formation graphics above.
+ */
+function pewChildhoodEducationGraphic(): Graphic {
+  const { chedu2_distribution: results, chedu2_order: order } = childhoodFormationData;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Religious education received growing up",
+    description:
+      "Years of Sunday School, CCD, or similar religious education, by tradition raised in.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/childhood-education.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, years of religious education received by tradition raised in. ${alt}.`,
   };
 }
 
