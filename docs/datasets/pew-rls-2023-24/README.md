@@ -92,6 +92,7 @@ recoding step in between:
 | Education | `EDUCREC` |
 | Marital status | `MARITAL` |
 | State | `STATE` |
+| Country | *(none — see below)* |
 
 `FAMILY` is the level Pew calls a "family of denominations" — one step
 coarser than `DENOMREC2` (298 denominations in `DENOM`, coarsened to 86
@@ -109,3 +110,17 @@ the TypeScript:
 - `atheist_agnostic` is retired, not deleted. It predates this taxonomy and
   is still referenced by rows recorded before the switch; `FAMILY` splits it
   into Atheist (301) and Agnostic (302).
+
+Two places where the site asks *more* than the RLS does, both because its
+readers are not Pew's sample:
+
+- **Country of residence** has no RLS counterpart at all — the study surveys
+  U.S. adults, so residence is assumed. This site's readers are not all
+  American, and recording "not the U.S." beats recording a blank state. The
+  state question is asked only when the country is the United States, both
+  in the intake and in `validateDemographics`.
+- **The 2010s and 2020s birth cohorts** extend past `BIRTHDECADE`, which
+  stops at the 2000s because Pew surveys adults. The site's own floor is 13+
+  (COPPA, migration 0037). Both carry a null RLS code, so rows in those
+  cohorts fall outside any comparison with Pew's numbers rather than
+  silently distorting one.

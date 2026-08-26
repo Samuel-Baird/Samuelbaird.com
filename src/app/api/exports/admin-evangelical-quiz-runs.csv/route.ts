@@ -15,6 +15,7 @@ type RunRow = {
   race: string | null;
   education: string | null;
   marital_status: string | null;
+  country: string | null;
   us_state: string | null;
   /** Migration 0046's name for the religion slug. */
   tradition_slug: string | null;
@@ -38,6 +39,7 @@ function rls(r: RunRow) {
     race: r.race,
     education: r.education,
     maritalStatus: r.marital_status,
+    country: r.country,
     state: r.us_state,
     religionSlug: r.tradition_slug,
   });
@@ -57,7 +59,7 @@ export async function GET() {
   const { data, error } = await sb
     .from("evangelical_quiz_runs")
     .select(
-      "id, user_id, age, birth_decade, gender, hispanic, race, education, marital_status, us_state, tradition_slug, answers, score, percentile, matched_tradition, runner_up_tradition, tie, data_version, created_at",
+      "id, user_id, age, birth_decade, gender, hispanic, race, education, marital_status, country, us_state, tradition_slug, answers, score, percentile, matched_tradition, runner_up_tradition, tie, data_version, created_at",
     )
     .order("created_at", { ascending: true });
   if (error) throw error;
@@ -85,6 +87,7 @@ export async function GET() {
     { header: "rls_educrec", value: (r) => rls(r).EDUCREC ?? "" },
     { header: "marital_status", value: (r) => r.marital_status ?? "" },
     { header: "rls_marital", value: (r) => rls(r).MARITAL ?? "" },
+    { header: "country", value: (r) => r.country ?? "" },
     { header: "state", value: (r) => r.us_state ?? "" },
     // Retired question, kept so runs recorded before the RLS switch export
     // everything they hold.

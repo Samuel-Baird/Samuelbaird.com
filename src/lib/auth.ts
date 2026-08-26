@@ -25,6 +25,7 @@ export type Profile = {
   race: string | null;
   education: string | null;
   marital_status: string | null;
+  country: string | null;
   us_state: string | null;
   tradition_slug: string | null;
   /** Set when demographics were asked (submitted or skipped) - the "don't re-ask" marker. */

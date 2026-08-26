@@ -97,7 +97,7 @@ type DemographicsInput = Partial<Demographics> & { currentPath?: string };
  * the row shape the mapper below expects.
  */
 const DEMOGRAPHIC_COLUMNS =
-  "age, birth_decade, gender, hispanic, race, education, marital_status, us_state, tradition_slug";
+  "age, birth_decade, gender, hispanic, race, education, marital_status, country, us_state, tradition_slug";
 
 type DemographicRow = {
   age?: number | null;
@@ -107,6 +107,7 @@ type DemographicRow = {
   race?: string | null;
   education?: string | null;
   marital_status?: string | null;
+  country?: string | null;
   us_state?: string | null;
   tradition_slug?: string | null;
 };
@@ -121,6 +122,7 @@ function demographicsFromRow(row: DemographicRow | null | undefined): Demographi
     race: row?.race ?? null,
     education: row?.education ?? null,
     maritalStatus: row?.marital_status ?? null,
+    country: row?.country ?? null,
     state: row?.us_state ?? null,
     religionSlug: row?.tradition_slug ?? null,
   });
@@ -139,6 +141,7 @@ function demographicColumns(d: Demographics) {
     race: d.race,
     education: d.education,
     marital_status: d.maritalStatus,
+    country: d.country,
     us_state: d.state,
     tradition_slug: d.religionSlug,
   };
