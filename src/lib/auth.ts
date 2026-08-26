@@ -12,9 +12,20 @@ export type Profile = {
   avatar_url: string | null;
   is_admin: boolean;
   age_confirmed_at: string | null;
-  /** Optional quiz demographics (migration 0046); all nullable. */
+  /**
+   * Optional quiz demographics (migrations 0046 and 0047); all nullable.
+   * Everything but `age` mirrors a Pew RLS variable - see
+   * src/lib/evangelical-quiz/demographics.ts. `age` predates that and is no
+   * longer collected; `tradition_slug` holds a religion, not a tradition.
+   */
   age: number | null;
+  birth_decade: string | null;
   gender: string | null;
+  hispanic: string | null;
+  race: string | null;
+  education: string | null;
+  marital_status: string | null;
+  us_state: string | null;
   tradition_slug: string | null;
   /** Set when demographics were asked (submitted or skipped) - the "don't re-ask" marker. */
   demographics_updated_at: string | null;
