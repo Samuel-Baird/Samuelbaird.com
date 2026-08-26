@@ -63,10 +63,8 @@ export const DATASETS: Dataset[] = [
       },
       {
         type: "graphic",
-        title: "A majority also deny the Trinity",
-        description:
-          '"Jesus is the first and greatest being created by God" — agreement by religious ' +
-          "tradition, 2022 wave.",
+        title: '"Jesus is the first and greatest being created by God."',
+        description: "Agreement by religious tradition, 2022 wave.",
         imageSrc: "/data-explorer/state-of-theology/nicaea-lost.png",
         width: 1080,
         height: 1350,

@@ -23,6 +23,7 @@ them, or place them next to this script in a `fonts/` subdirectory.
 from __future__ import annotations
 
 import argparse
+import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
@@ -55,11 +56,16 @@ SOURCE_LINES = [
 ]
 HANDLE = "@ithinkisam"
 
-# item_id -> (chart title, statement quote, direction word, survey year,
-# {group: whole-number percent})
+# item_id -> (survey statement verbatim, direction word, survey year,
+# {group: whole-number percent}).
+#
+# The statement itself IS the title - no separate editorial headline. See
+# STYLE.md "Titles: neutral, not editorial" for why: a claim like "A
+# majority also deny the Trinity" tells the reader what conclusion to draw
+# before they've seen a number. Quoting the statement verbatim, in large
+# type, doesn't.
 ITEMS = {
     "arian": (
-        "A majority also deny the Trinity",
         "Jesus is the first and greatest being created by God.",
         "agree",
         "2022",
@@ -93,7 +99,7 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
 
 
 def render(item_id: str, out_path: Path, fonts_dir: Path) -> None:
-    title, quote, direction, year, values = ITEMS[item_id]
+    statement, direction, year, values = ITEMS[item_id]
     fonts = load_fonts(fonts_dir)
 
     groups = [g for g in GROUP_ORDER if g in values][::-1]  # bottom-to-top
@@ -129,21 +135,27 @@ def render(item_id: str, out_path: Path, fonts_dir: Path) -> None:
         label.set_fontsize(19)
         label.set_color(INK)
 
-    fig.subplots_adjust(left=0.30, right=0.94, top=0.62, bottom=0.28)
+    # Title IS the survey statement, verbatim, in quotes - no editorial
+    # headline above it. Wrapped by hand (matplotlib's fig-level wrap= is
+    # unreliable) at a width tuned for this font/size/canvas combination.
+    title_lines = textwrap.wrap(f"“{statement}”", width=26)
+    title_fontsize = 34
+    line_spacing = 0.052
+    title_top = 0.965
 
-    # Title (Roboto Slab Bold), plot-level so it aligns with the caption.
-    fig.text(
-        0.065, 0.965, title, fontproperties=fonts["title"], fontsize=30,
-        color=INK, ha="left", va="top", wrap=True,
-    )
+    subtitle_y = title_top - len(title_lines) * line_spacing - 0.01
 
-    # Subtitle: italic quote line, then the share/year line.
+    fig.subplots_adjust(left=0.30, right=0.94, top=subtitle_y - 0.055, bottom=0.24)
+
+    for i, line in enumerate(title_lines):
+        fig.text(
+            0.065, title_top - i * line_spacing, line,
+            fontproperties=fonts["title"], fontsize=title_fontsize,
+            color=INK, ha="left", va="top",
+        )
+
     fig.text(
-        0.065, 0.895, f"“{quote}”", fontproperties=fonts["italic"],
-        fontsize=15, color=MUTED, ha="left", va="top",
-    )
-    fig.text(
-        0.065, 0.86,
+        0.065, subtitle_y,
         f"Share who strongly {direction} or somewhat {direction}, {year}",
         fontproperties=fonts["regular"], fontsize=15, color=MUTED,
         ha="left", va="top",
