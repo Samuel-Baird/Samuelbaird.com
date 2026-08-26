@@ -1,0 +1,578 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Every respondent's group is fixed at their religpew_baseline (~2011) identity - a 'baseline cohort' - tracked forward through 2016/2017 regardless of later religious identification, except retention (idea 1), which measures identity persistence itself. Unweighted. Excludes the same too-thin categories as every other VOTER graphic.",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_years": [
+    2011,
+    2016,
+    2017
+  ],
+  "retention": {
+    "Protestant": {
+      "values": [
+        100.0,
+        89.69,
+        90.34
+      ],
+      "n": [
+        3143,
+        3142,
+        1935
+      ]
+    },
+    "Catholic": {
+      "values": [
+        100.0,
+        89.97,
+        90.35
+      ],
+      "n": [
+        1746,
+        1745,
+        1099
+      ]
+    },
+    "Mormon": {
+      "values": [
+        100.0,
+        90.07,
+        89.01
+      ],
+      "n": [
+        141,
+        141,
+        91
+      ]
+    },
+    "Jewish": {
+      "values": [
+        100.0,
+        91.45,
+        89.39
+      ],
+      "n": [
+        269,
+        269,
+        179
+      ]
+    },
+    "Buddhist": {
+      "values": [
+        100.0,
+        69.01,
+        80.85
+      ],
+      "n": [
+        71,
+        71,
+        47
+      ]
+    },
+    "Atheist": {
+      "values": [
+        100.0,
+        82.45,
+        82.59
+      ],
+      "n": [
+        377,
+        376,
+        224
+      ]
+    },
+    "Agnostic": {
+      "values": [
+        100.0,
+        61.91,
+        61.27
+      ],
+      "n": [
+        470,
+        470,
+        315
+      ]
+    },
+    "Nothing in particular": {
+      "values": [
+        100.0,
+        62.65,
+        65.91
+      ],
+      "n": [
+        1203,
+        1202,
+        748
+      ]
+    },
+    "Something else": {
+      "values": [
+        100.0,
+        34.95,
+        34.44
+      ],
+      "n": [
+        475,
+        475,
+        302
+      ]
+    }
+  },
+  "religimp_very_important": {
+    "Protestant": {
+      "values": [
+        59.38,
+        58.92,
+        58.18
+      ],
+      "n": [
+        3139,
+        3143,
+        1937
+      ]
+    },
+    "Catholic": {
+      "values": [
+        45.33,
+        45.42,
+        44.72
+      ],
+      "n": [
+        1745,
+        1746,
+        1098
+      ]
+    },
+    "Mormon": {
+      "values": [
+        75.89,
+        70.92,
+        74.73
+      ],
+      "n": [
+        141,
+        141,
+        91
+      ]
+    },
+    "Jewish": {
+      "values": [
+        20.82,
+        15.99,
+        16.2
+      ],
+      "n": [
+        269,
+        269,
+        179
+      ]
+    },
+    "Buddhist": {
+      "values": [
+        25.35,
+        25.35,
+        25.53
+      ],
+      "n": [
+        71,
+        71,
+        47
+      ]
+    },
+    "Atheist": {
+      "values": [
+        1.06,
+        2.12,
+        1.34
+      ],
+      "n": [
+        377,
+        377,
+        224
+      ]
+    },
+    "Agnostic": {
+      "values": [
+        1.28,
+        2.13,
+        1.59
+      ],
+      "n": [
+        469,
+        470,
+        315
+      ]
+    },
+    "Nothing in particular": {
+      "values": [
+        11.81,
+        14.3,
+        13.33
+      ],
+      "n": [
+        1202,
+        1203,
+        750
+      ]
+    },
+    "Something else": {
+      "values": [
+        41.68,
+        37.68,
+        34.65
+      ],
+      "n": [
+        475,
+        475,
+        303
+      ]
+    }
+  },
+  "prayer_daily": {
+    "Protestant": {
+      "values": [
+        63.91,
+        62.59,
+        61.97
+      ],
+      "n": [
+        3095,
+        3085,
+        1904
+      ]
+    },
+    "Catholic": {
+      "values": [
+        55.17,
+        54.1,
+        55.44
+      ],
+      "n": [
+        1713,
+        1708,
+        1075
+      ]
+    },
+    "Mormon": {
+      "values": [
+        81.16,
+        79.71,
+        76.67
+      ],
+      "n": [
+        138,
+        138,
+        90
+      ]
+    },
+    "Jewish": {
+      "values": [
+        25.29,
+        24.0,
+        24.14
+      ],
+      "n": [
+        257,
+        250,
+        174
+      ]
+    },
+    "Buddhist": {
+      "values": [
+        39.13,
+        33.33,
+        28.89
+      ],
+      "n": [
+        69,
+        66,
+        45
+      ]
+    },
+    "Atheist": {
+      "values": [
+        0.27,
+        1.07,
+        0.9
+      ],
+      "n": [
+        376,
+        374,
+        223
+      ]
+    },
+    "Agnostic": {
+      "values": [
+        6.56,
+        6.26,
+        5.79
+      ],
+      "n": [
+        457,
+        463,
+        311
+      ]
+    },
+    "Nothing in particular": {
+      "values": [
+        27.87,
+        26.41,
+        26.07
+      ],
+      "n": [
+        1148,
+        1155,
+        721
+      ]
+    },
+    "Something else": {
+      "values": [
+        53.68,
+        48.04,
+        46.62
+      ],
+      "n": [
+        462,
+        460,
+        296
+      ]
+    }
+  },
+  "trustgovt_top_two": {
+    "Protestant": {
+      "values": [
+        9.14,
+        11.26,
+        14.83
+      ],
+      "n": [
+        3107,
+        3118,
+        1935
+      ]
+    },
+    "Catholic": {
+      "values": [
+        10.75,
+        12.75,
+        16.3
+      ],
+      "n": [
+        1731,
+        1733,
+        1098
+      ]
+    },
+    "Mormon": {
+      "values": [
+        3.6,
+        6.38,
+        11.11
+      ],
+      "n": [
+        139,
+        141,
+        90
+      ]
+    },
+    "Jewish": {
+      "values": [
+        11.99,
+        14.23,
+        11.8
+      ],
+      "n": [
+        267,
+        267,
+        178
+      ]
+    },
+    "Buddhist": {
+      "values": [
+        21.13,
+        19.72,
+        17.02
+      ],
+      "n": [
+        71,
+        71,
+        47
+      ]
+    },
+    "Atheist": {
+      "values": [
+        8.87,
+        12.27,
+        10.31
+      ],
+      "n": [
+        372,
+        375,
+        223
+      ]
+    },
+    "Agnostic": {
+      "values": [
+        7.54,
+        10.47,
+        11.5
+      ],
+      "n": [
+        464,
+        468,
+        313
+      ]
+    },
+    "Nothing in particular": {
+      "values": [
+        10.25,
+        12.81,
+        11.5
+      ],
+      "n": [
+        1190,
+        1194,
+        748
+      ]
+    },
+    "Something else": {
+      "values": [
+        6.2,
+        8.94,
+        9.9
+      ],
+      "n": [
+        468,
+        470,
+        303
+      ]
+    }
+  },
+  "vote_r_share_2012_2016": {
+    "Protestant": {
+      "2012": 55.74,
+      "2016": 55.27,
+      "n_2012": 2910,
+      "n_2016": 2978
+    },
+    "Catholic": {
+      "2012": 55.11,
+      "2016": 54.32,
+      "n_2012": 1644,
+      "n_2016": 1668
+    },
+    "Mormon": {
+      "2012": 71.76,
+      "2016": 53.79,
+      "n_2012": 131,
+      "n_2016": 132
+    },
+    "Jewish": {
+      "2012": 33.6,
+      "2016": 34.11,
+      "n_2012": 253,
+      "n_2016": 258
+    },
+    "Buddhist": {
+      "2012": 10.61,
+      "2016": 18.46,
+      "n_2012": 66,
+      "n_2016": 65
+    },
+    "Atheist": {
+      "2012": 12.26,
+      "2016": 13.01,
+      "n_2012": 359,
+      "n_2016": 369
+    },
+    "Agnostic": {
+      "2012": 21.1,
+      "2016": 22.08,
+      "n_2012": 436,
+      "n_2016": 453
+    },
+    "Nothing in particular": {
+      "2012": 32.66,
+      "2016": 36.27,
+      "n_2012": 1084,
+      "n_2016": 1111
+    },
+    "Something else": {
+      "2012": 34.27,
+      "2016": 37.56,
+      "n_2012": 429,
+      "n_2016": 442
+    }
+  },
+  "gaymar_favor_baseline_2016": {
+    "Protestant": {
+      "baseline": 29.76,
+      "2016": 43.95,
+      "n_baseline": 3132,
+      "n_2016": 2728
+    },
+    "Catholic": {
+      "baseline": 37.46,
+      "2016": 56.6,
+      "n_baseline": 1738,
+      "n_2016": 1484
+    },
+    "Mormon": {
+      "baseline": 20.57,
+      "2016": 36.44,
+      "n_baseline": 141,
+      "n_2016": 118
+    },
+    "Jewish": {
+      "baseline": 68.66,
+      "2016": 86.01,
+      "n_baseline": 268,
+      "n_2016": 243
+    },
+    "Buddhist": {
+      "baseline": 76.06,
+      "2016": 86.15,
+      "n_baseline": 71,
+      "n_2016": 65
+    },
+    "Atheist": {
+      "baseline": 90.43,
+      "2016": 95.28,
+      "n_baseline": 376,
+      "n_2016": 360
+    },
+    "Agnostic": {
+      "baseline": 80.81,
+      "2016": 87.5,
+      "n_baseline": 469,
+      "n_2016": 448
+    },
+    "Nothing in particular": {
+      "baseline": 61.35,
+      "2016": 75.42,
+      "n_baseline": 1198,
+      "n_2016": 1062
+    },
+    "Something else": {
+      "baseline": 55.81,
+      "2016": 67.13,
+      "n_baseline": 473,
+      "n_2016": 429
+    }
+  }
+}

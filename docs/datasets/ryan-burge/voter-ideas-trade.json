@@ -1,0 +1,104 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_note": "2016 wave (religpew_2016)",
+  "note": "Each row is the share holding the positive-for-consumers view of that specific economic effect (more jobs/higher wages/lower prices/better quality/more products) - not a single 'favor trade' scale, since the five source items ask about five different effects.",
+  "target_order": [
+    "Favor increasing trade generally",
+    "Free trade agreements mean more jobs",
+    "Free trade agreements mean higher wages",
+    "Free trade agreements mean lower prices",
+    "Free trade agreements mean better product quality",
+    "Free trade agreements mean more products available"
+  ],
+  "matrix": {
+    "Mormon": {
+      "Favor increasing trade generally": 91.5,
+      "Free trade agreements mean more jobs": 27.1,
+      "Free trade agreements mean higher wages": 21.1,
+      "Free trade agreements mean lower prices": 57.1,
+      "Free trade agreements mean better product quality": 25.0,
+      "Free trade agreements mean more products available": 48.9
+    },
+    "Protestant": {
+      "Favor increasing trade generally": 74.9,
+      "Free trade agreements mean more jobs": 22.4,
+      "Free trade agreements mean higher wages": 18.2,
+      "Free trade agreements mean lower prices": 53.2,
+      "Free trade agreements mean better product quality": 23.2,
+      "Free trade agreements mean more products available": 42.3
+    },
+    "Catholic": {
+      "Favor increasing trade generally": 78.2,
+      "Free trade agreements mean more jobs": 23.2,
+      "Free trade agreements mean higher wages": 18.9,
+      "Free trade agreements mean lower prices": 51.0,
+      "Free trade agreements mean better product quality": 22.4,
+      "Free trade agreements mean more products available": 41.9
+    },
+    "Jewish": {
+      "Favor increasing trade generally": 84.8,
+      "Free trade agreements mean more jobs": 22.1,
+      "Free trade agreements mean higher wages": 16.9,
+      "Free trade agreements mean lower prices": 57.4,
+      "Free trade agreements mean better product quality": 24.5,
+      "Free trade agreements mean more products available": 50.6
+    },
+    "Buddhist": {
+      "Favor increasing trade generally": 81.0,
+      "Free trade agreements mean more jobs": 26.7,
+      "Free trade agreements mean higher wages": 21.3,
+      "Free trade agreements mean lower prices": 57.4,
+      "Free trade agreements mean better product quality": 29.5,
+      "Free trade agreements mean more products available": 42.6
+    },
+    "Atheist": {
+      "Favor increasing trade generally": 84.8,
+      "Free trade agreements mean more jobs": 17.0,
+      "Free trade agreements mean higher wages": 12.5,
+      "Free trade agreements mean lower prices": 69.4,
+      "Free trade agreements mean better product quality": 20.4,
+      "Free trade agreements mean more products available": 53.3
+    },
+    "Agnostic": {
+      "Favor increasing trade generally": 85.0,
+      "Free trade agreements mean more jobs": 20.2,
+      "Free trade agreements mean higher wages": 15.5,
+      "Free trade agreements mean lower prices": 69.0,
+      "Free trade agreements mean better product quality": 26.6,
+      "Free trade agreements mean more products available": 54.6
+    },
+    "Nothing in particular": {
+      "Favor increasing trade generally": 78.3,
+      "Free trade agreements mean more jobs": 22.1,
+      "Free trade agreements mean higher wages": 18.4,
+      "Free trade agreements mean lower prices": 54.5,
+      "Free trade agreements mean better product quality": 24.4,
+      "Free trade agreements mean more products available": 46.3
+    },
+    "Something else": {
+      "Favor increasing trade generally": 75.2,
+      "Free trade agreements mean more jobs": 19.9,
+      "Free trade agreements mean higher wages": 14.9,
+      "Free trade agreements mean lower prices": 63.2,
+      "Free trade agreements mean better product quality": 20.3,
+      "Free trade agreements mean more products available": 38.1
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_note": "2016 wave (religpew_2016)",
+  "note": "Share who are very or somewhat proud (top-two-box) of America on this dimension.",
+  "target_order": [
+    "The way democracy works",
+    "Fair and equal treatment of all groups",
+    "Its history"
+  ],
+  "matrix": {
+    "Protestant": {
+      "The way democracy works": 83.1,
+      "Fair and equal treatment of all groups": 66.3,
+      "Its history": 87.4
+    },
+    "Catholic": {
+      "The way democracy works": 85.1,
+      "Fair and equal treatment of all groups": 70.0,
+      "Its history": 91.1
+    },
+    "Mormon": {
+      "The way democracy works": 86.5,
+      "Fair and equal treatment of all groups": 68.5,
+      "Its history": 93.1
+    },
+    "Jewish": {
+      "The way democracy works": 79.3,
+      "Fair and equal treatment of all groups": 56.4,
+      "Its history": 81.8
+    },
+    "Buddhist": {
+      "The way democracy works": 68.9,
+      "Fair and equal treatment of all groups": 35.5,
+      "Its history": 61.7
+    },
+    "Atheist": {
+      "The way democracy works": 63.5,
+      "Fair and equal treatment of all groups": 36.6,
+      "Its history": 59.0
+    },
+    "Agnostic": {
+      "The way democracy works": 67.7,
+      "Fair and equal treatment of all groups": 41.7,
+      "Its history": 75.9
+    },
+    "Nothing in particular": {
+      "The way democracy works": 68.6,
+      "Fair and equal treatment of all groups": 48.0,
+      "Its history": 74.7
+    },
+    "Something else": {
+      "The way democracy works": 74.7,
+      "Fair and equal treatment of all groups": 49.8,
+      "Its history": 73.2
+    }
+  }
+}

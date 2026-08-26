@@ -86,6 +86,41 @@ full list) and only four items from one wave were ever scoped out here.
 
 ## Shipped
 
+- **2026-08-26 — All 20 VOTER Survey Panel ideas from
+  [VOTER_PANEL_IDEAS.md](VOTER_PANEL_IDEAS.md) (23 PNGs).** That file is a
+  brainstorm list, not a backlog — nothing here was ever queued as a
+  formal item — but the user asked for all twenty built, so per this
+  file's own rule ("if you build something not on this list, add a
+  Shipped entry for it anyway") they're recorded here. See
+  `VOTER_PANEL_IDEAS.md` itself for the per-idea build notes (each idea's
+  entry there now links its shipped PNG); the short version:
+  - **Six longitudinal graphics** (ideas 1/2/3/5/20) fix every
+    respondent's group at their `religpew_baseline` (~2011) identity and
+    track that cohort forward through 2016/2017, regardless of later
+    religious identification — the one thing a repeated cross-section
+    (Pew RLS, CCES) can't do. Idea 3 is scoped to 2012 → 2016, not → 2020
+    as originally drafted: the actual `.dta` file only contains baseline,
+    2012, 2016, and 2017 waves (confirmed via `pyreadstat` metadata, not
+    assumed from the dataset's own wider description). Two new chart
+    shapes for this pipeline: a percentage-axis line chart (adapted from
+    `render_pid_over_time_chart.py`) and a two-series paired bar (adapted
+    from Pew RLS's `render_beliefs_charts.py`).
+  - **Eight single-value magnitude bars** (ideas 4/6/10/13/15/19) and
+    **nine heatmap matrices** (ideas 7/8/9/11/12/14/16/17/18) are
+    single-wave cross-sections reusing this file's already-shipped shapes
+    exactly. A few needed their own polarity note, documented in
+    `scripts/ryan-burge/voter_ideas_matrices.py`'s own docstring: the
+    trade-attitude matrix rescales each of five differently-worded
+    `free_trade_*` items onto one consistent "good for consumers" share
+    rather than a raw "% Increase" (which means something different for
+    jobs than for prices); the immigration matrix mixes 0-100%-share rows
+    with four 1-10-slider means rescaled to 0-100, since the source
+    battery mixes scale types.
+  - Every idea's own population/wave choice, cutpoint, and thin-group
+    exclusion is documented in whichever `voter_ideas_*.py` compute
+    script computed it — same "no hand-typed numbers, decisions flagged
+    in the script that made them" rule as every other chart in this
+    pipeline.
 - **2026-08-26 — Feeling thermometer matrices + issue-importance matrix
   (3 heatmaps).** [Racial/religious](../../../public/data-explorer/voter-survey-panel/ft-racial-religious.png)
   (7 targets), [political/social](../../../public/data-explorer/voter-survey-panel/ft-political-social.png)

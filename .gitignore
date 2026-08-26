@@ -45,3 +45,8 @@ next-env.d.ts
 # Documentation and derived files live in docs/datasets/ instead; see
 # docs/datasets/pew-rls-2023-24/README.md.
 /data/
+
+# Python bytecode cache — several scripts/*.py folders import each other
+# as plain modules now (e.g. voter_ideas_*.py), which creates these.
+__pycache__/
+*.pyc

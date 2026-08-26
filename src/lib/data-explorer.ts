@@ -22,6 +22,17 @@ import voterStrangerData from "../../docs/datasets/ryan-burge/voter-stranger.jso
 import voterFtRacialData from "../../docs/datasets/ryan-burge/voter-ft-racial-religious.json";
 import voterFtPoliticalData from "../../docs/datasets/ryan-burge/voter-ft-political-social.json";
 import voterIssueImportanceData from "../../docs/datasets/ryan-burge/voter-issue-importance.json";
+import voterIdeasBarsData from "../../docs/datasets/ryan-burge/voter-ideas-bars.json";
+import voterIdeasLongitudinalData from "../../docs/datasets/ryan-burge/voter-ideas-longitudinal.json";
+import voterIdeasSexismData from "../../docs/datasets/ryan-burge/voter-ideas-sexism.json";
+import voterIdeasMuslimData from "../../docs/datasets/ryan-burge/voter-ideas-muslim-distrust.json";
+import voterIdeasImmigrationData from "../../docs/datasets/ryan-burge/voter-ideas-immigration.json";
+import voterIdeasTradeData from "../../docs/datasets/ryan-burge/voter-ideas-trade.json";
+import voterIdeasPromisesData from "../../docs/datasets/ryan-burge/voter-ideas-promises.json";
+import voterIdeasMediaData from "../../docs/datasets/ryan-burge/voter-ideas-media.json";
+import voterIdeasOrgsData from "../../docs/datasets/ryan-burge/voter-ideas-orgs.json";
+import voterIdeasVolunteeringData from "../../docs/datasets/ryan-burge/voter-ideas-volunteering.json";
+import voterIdeasPrideData from "../../docs/datasets/ryan-burge/voter-ideas-pride.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -351,6 +362,29 @@ export const DATASETS: Dataset[] = [
       voterFtRacialGraphic(),
       voterFtPoliticalGraphic(),
       voterIssueImportanceGraphic(),
+      voterRetentionGraphic(),
+      voterReligimpTrendGraphic(),
+      voterPrayerTrendGraphic(),
+      voterTrustGovtTrendGraphic(),
+      voterVote2012vs2016Graphic(),
+      voterGaymarShiftGraphic(),
+      voterWishedVotedGraphic(),
+      voterVoteRegretsGraphic(),
+      voterSelfRelianceGraphic(),
+      voterRaceSlaveGraphic(),
+      voterReverseDiscriminationGraphic(),
+      voterTrustPeopleGraphic(),
+      voterRiggedElitesGraphic(),
+      voterMilitaryGraphic(),
+      voterSexismGraphic(),
+      voterMuslimDistrustGraphic(),
+      voterImmigrationIdeaGraphic(),
+      voterTradeGraphic(),
+      voterPromisesGraphic(),
+      voterMediaGraphic(),
+      voterOrgsGraphic(),
+      voterVolunteeringGraphic(),
+      voterPrideGraphic(),
     ],
   },
 ];
@@ -1450,6 +1484,332 @@ function voterIssueImportanceGraphic(): Graphic {
     height: 1350,
     credit: "via Ryan Burge",
     alt: `Heatmap, share saying each issue is very/somewhat important, by religion. ${alt}.`,
+  };
+}
+
+/**
+ * The twenty VOTER Panel "idea" graphics below build out
+ * docs/datasets/ryan-burge/VOTER_PANEL_IDEAS.md - a brainstorm list, not a
+ * formal backlog, but the user asked for all twenty built. Six lean on the
+ * panel's own longitudinal structure (a fixed religpew_baseline cohort
+ * tracked forward through 2016/2017, per each JSON's own method note);
+ * fourteen are single-wave cross-sections reusing this file's established
+ * magnitude-bar and heatmap-matrix shapes.
+ */
+
+/** Formats a wave-series result set (idea's own {values: [n,n,n]} shape)
+ * into alt text for the four VOTER longitudinal line-chart graphics. */
+function voterSeriesAlt(
+  series: Record<string, { values: (number | null)[] }>,
+  groupOrder: readonly string[],
+  waveYears: readonly number[],
+): string {
+  return groupOrder
+    .map((group) => {
+      const points = waveYears
+        .map((yr, i) => `${yr} ${series[group]!.values[i]?.toFixed(0) ?? "n/a"}%`)
+        .join(", ");
+      return `${group}: ${points}`;
+    })
+    .join("; ");
+}
+
+function voterRetentionGraphic(): Graphic {
+  const { retention, group_order: groups, wave_years: waves } = voterIdeasLongitudinalData;
+  const alt = voterSeriesAlt(retention, groups, waves);
+  return {
+    title: "Religious retention, by tradition",
+    description: "Of each tradition's baseline (~2011) members, share who still identify with it at each later wave.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-retention.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Line chart, religious retention from baseline through 2017 by tradition. ${alt}.`,
+  };
+}
+
+function voterReligimpTrendGraphic(): Graphic {
+  const { religimp_very_important: series, group_order: groups, wave_years: waves } = voterIdeasLongitudinalData;
+  const alt = voterSeriesAlt(series, groups, waves);
+  return {
+    title: "Religion \"very important,\" by tradition",
+    description: "Of each tradition's baseline cohort, share who say religion is very important in their life.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-religimp-trend.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Line chart, share saying religion is very important, baseline cohort tracked to 2017. ${alt}.`,
+  };
+}
+
+function voterPrayerTrendGraphic(): Graphic {
+  const { prayer_daily: series, group_order: groups, wave_years: waves } = voterIdeasLongitudinalData;
+  const alt = voterSeriesAlt(series, groups, waves);
+  return {
+    title: "Pray daily, by tradition",
+    description: "Of each tradition's baseline cohort, share who pray at least once a day.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-prayer-trend.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Line chart, share praying daily, baseline cohort tracked to 2017. ${alt}.`,
+  };
+}
+
+function voterTrustGovtTrendGraphic(): Graphic {
+  const { trustgovt_top_two: series, group_order: groups, wave_years: waves } = voterIdeasLongitudinalData;
+  const alt = voterSeriesAlt(series, groups, waves);
+  return {
+    title: "Trust the government, by tradition",
+    description: "Of each tradition's baseline cohort, share who trust the government to do right most of the time or always.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-trustgovt-trend.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Line chart, share trusting government, baseline cohort tracked to 2017. ${alt}.`,
+  };
+}
+
+function voterVote2012vs2016Graphic(): Graphic {
+  const { vote_r_share_2012_2016: results, group_order: groups } = voterIdeasLongitudinalData;
+  const alt = groups
+    .map((g) => {
+      const r = results[g as keyof typeof results];
+      return `${g} 2012=${r["2012"]?.toFixed(0) ?? "n/a"}%, 2016=${r["2016"]?.toFixed(0) ?? "n/a"}%`;
+    })
+    .join(", ");
+  return {
+    title: "Republican presidential vote share, 2012 vs. 2016",
+    description: "Of each tradition's baseline cohort, share who voted for the Republican candidate.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-vote-2012-2016.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Paired bar chart, Republican vote share 2012 vs 2016 by tradition. ${alt}.`,
+  };
+}
+
+function voterGaymarShiftGraphic(): Graphic {
+  const { gaymar_favor_baseline_2016: results, group_order: groups } = voterIdeasLongitudinalData;
+  const alt = groups
+    .map((g) => {
+      const r = results[g as keyof typeof results];
+      return `${g} baseline=${r.baseline?.toFixed(0) ?? "n/a"}%, 2016=${r["2016"]?.toFixed(0) ?? "n/a"}%`;
+    })
+    .join(", ");
+  return {
+    title: "Favor gay marriage, baseline vs. 2016",
+    description: "Of each tradition's baseline cohort, share who favor allowing gays and lesbians to marry legally.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-gaymar-shift.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Paired bar chart, favor gay marriage baseline vs 2016 by tradition. ${alt}.`,
+  };
+}
+
+/** Formats a {pct} result set into alt text, shared by the eight
+ * single-value VOTER idea magnitude-bar graphics below. */
+function voterIdeaPctAlt(results: Record<string, { pct: number | null }>, groupOrder: readonly string[]): string {
+  return groupOrder.map((g) => `${g} ${results[g]!.pct?.toFixed(0) ?? "n/a"}%`).join(", ");
+}
+
+function voterWishedVotedGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.wished_voted, voterIdeasBarsData.group_order);
+  return {
+    title: "Wished they had voted in 2016",
+    description: "Of those who didn't vote, share who wish they had.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-wished-voted.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share who wished they'd voted in 2016, by religion: ${alt}.`,
+  };
+}
+
+function voterVoteRegretsGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.vote_regrets, voterIdeasBarsData.group_order);
+  return {
+    title: "Regret their 2016 presidential vote",
+    description: "Share who regret who they voted for president in 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-vote-regrets.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share regretting their 2016 presidential vote, by religion: ${alt}.`,
+  };
+}
+
+function voterSelfRelianceGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.self_reliance, voterIdeasBarsData.group_order);
+  return {
+    title: "Value self-reliance over obedience in children",
+    description: "Forced choice: which quality matters more for a child to have - obedience, or self-reliance.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-self-reliance.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share valuing self-reliance over obedience in children, by religion: ${alt}.`,
+  };
+}
+
+function voterRaceSlaveGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.race_slave_agree, voterIdeasBarsData.group_order);
+  return {
+    title: "Slavery's legacy still disadvantages Black Americans",
+    description: "Share who agree generations of slavery and discrimination have made it hard for Black people to succeed.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-race-slave.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing slavery's legacy disadvantages Black Americans, by religion: ${alt}.`,
+  };
+}
+
+function voterReverseDiscriminationGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.reverse_discrimination_agree, voterIdeasBarsData.group_order);
+  return {
+    title: "Discrimination against whites is a serious problem",
+    description: "Share who agree discrimination against white people is as big a problem as discrimination against minorities.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-reverse-discrimination.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing reverse discrimination is a serious problem, by religion: ${alt}.`,
+  };
+}
+
+function voterTrustPeopleGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.trust_people, voterIdeasBarsData.group_order);
+  return {
+    title: "Most people can be trusted",
+    description: "Generalized social trust - can't be too careful vs. most people can be trusted.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-trust-people.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share saying most people can be trusted, by religion: ${alt}.`,
+  };
+}
+
+function voterRiggedElitesGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.rigged_elites_agree, voterIdeasBarsData.group_order);
+  return {
+    title: "Elites don't understand people like me",
+    description: "Share who agree elites in this country don't understand the problems they're facing.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-rigged-elites.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing elites don't understand people like them, by religion: ${alt}.`,
+  };
+}
+
+function voterMilitaryGraphic(): Graphic {
+  const alt = voterIdeaPctAlt(voterIdeasBarsData.military_household, voterIdeasBarsData.group_order);
+  return {
+    title: "Military household connection",
+    description: "Share who or whose family currently serve or previously served in the military.",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-military.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share with a military household connection, by religion: ${alt}.`,
+  };
+}
+
+/** Formats a religion x target matrix (the nine VOTER idea heatmaps'
+ * shared JSON shape) into alt text. */
+function voterIdeaMatrixAlt(
+  matrix: Record<string, Record<string, number | null>>,
+  targetOrder: readonly string[],
+  groupOrder: readonly string[],
+): string {
+  return targetOrder
+    .map((target) => {
+      const cells = groupOrder.map((group) => `${group} ${matrix[group]![target]?.toFixed(0) ?? "n/a"}%`).join(", ");
+      return `${target}: ${cells}`;
+    })
+    .join("; ");
+}
+
+function voterSexismGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasSexismData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Gender-role attitudes, by religion",
+    description: "Share who strongly or somewhat agree with each statement (2016 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-sexism.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, agreement with gender-role statements by religion. ${alt}.`,
+  };
+}
+
+function voterMuslimDistrustGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasMuslimData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Muslim surveillance proposals, by religion",
+    description: "Share who strongly or somewhat agree with each proposal (2017 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-muslim-distrust.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, agreement with Muslim surveillance proposals by religion. ${alt}.`,
+  };
+}
+
+function voterImmigrationIdeaGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasImmigrationData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Views of immigrants, by religion",
+    description: "Share holding the pro-immigrant view on each measure (2017 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-immigration.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, pro-immigrant sentiment by religion. ${alt}.`,
+  };
+}
+
+function voterTradeGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasTradeData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Free trade attitudes, by religion",
+    description: "Share holding the positive-for-consumers view on each effect (2016 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-trade.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, positive view of free trade's effects by religion. ${alt}.`,
+  };
+}
+
+function voterPromisesGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasPromisesData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Support for Trump's specific promises, by religion",
+    description: "Share who support each promise (2017 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-promises.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, support for Trump campaign promises by religion. ${alt}.`,
+  };
+}
+
+function voterMediaGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasMediaData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Evening news viewership, by religion",
+    description: "Share who watch each program (baseline wave, ~2011).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-media.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, evening news program viewership by religion. ${alt}.`,
+  };
+}
+
+function voterOrgsGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasOrgsData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Organization membership, by religion",
+    description: "Share who are a member of each organization (baseline wave, ~2011).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-orgs.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, civic-organization membership by religion. ${alt}.`,
+  };
+}
+
+function voterVolunteeringGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasVolunteeringData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "Volunteering by cause, by religion",
+    description: "Share who volunteered for each type of cause in the past 12 months (baseline wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-volunteering.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, volunteering by cause type and religion. ${alt}.`,
+  };
+}
+
+function voterPrideGraphic(): Graphic {
+  const { matrix, target_order: targets, group_order: groups } = voterIdeasPrideData;
+  const alt = voterIdeaMatrixAlt(matrix, targets, groups);
+  return {
+    title: "National pride, by religion",
+    description: "Share very or somewhat proud of America on each dimension (2016 wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/idea-pride.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Heatmap, national pride by dimension and religion. ${alt}.`,
   };
 }
 

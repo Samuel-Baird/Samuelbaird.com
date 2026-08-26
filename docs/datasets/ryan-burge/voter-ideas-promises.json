@@ -1,0 +1,84 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_note": "2017 wave (religpew_2017)",
+  "note": "Share who support this Trump promise (regardless of how high a priority they said it was).",
+  "target_order": [
+    "Building a border wall",
+    "Repealing the ACA (Obamacare)",
+    "Withdrawing from the TPP trade deal",
+    "Reducing corruption in government"
+  ],
+  "matrix": {
+    "Protestant": {
+      "Building a border wall": 53.9,
+      "Repealing the ACA (Obamacare)": 56.1,
+      "Withdrawing from the TPP trade deal": 45.4,
+      "Reducing corruption in government": 90.9
+    },
+    "Catholic": {
+      "Building a border wall": 51.8,
+      "Repealing the ACA (Obamacare)": 54.0,
+      "Withdrawing from the TPP trade deal": 43.0,
+      "Reducing corruption in government": 91.3
+    },
+    "Mormon": {
+      "Building a border wall": 63.1,
+      "Repealing the ACA (Obamacare)": 71.4,
+      "Withdrawing from the TPP trade deal": 48.8,
+      "Reducing corruption in government": 95.2
+    },
+    "Jewish": {
+      "Building a border wall": 32.3,
+      "Repealing the ACA (Obamacare)": 33.3,
+      "Withdrawing from the TPP trade deal": 29.2,
+      "Reducing corruption in government": 88.6
+    },
+    "Buddhist": {
+      "Building a border wall": 27.5,
+      "Repealing the ACA (Obamacare)": 22.0,
+      "Withdrawing from the TPP trade deal": 33.3,
+      "Reducing corruption in government": 76.5
+    },
+    "Atheist": {
+      "Building a border wall": 12.0,
+      "Repealing the ACA (Obamacare)": 11.3,
+      "Withdrawing from the TPP trade deal": 22.6,
+      "Reducing corruption in government": 86.0
+    },
+    "Agnostic": {
+      "Building a border wall": 15.5,
+      "Repealing the ACA (Obamacare)": 22.9,
+      "Withdrawing from the TPP trade deal": 22.7,
+      "Reducing corruption in government": 86.1
+    },
+    "Nothing in particular": {
+      "Building a border wall": 35.3,
+      "Repealing the ACA (Obamacare)": 35.5,
+      "Withdrawing from the TPP trade deal": 33.3,
+      "Reducing corruption in government": 88.0
+    },
+    "Something else": {
+      "Building a border wall": 36.3,
+      "Repealing the ACA (Obamacare)": 38.4,
+      "Withdrawing from the TPP trade deal": 35.0,
+      "Reducing corruption in government": 87.7
+    }
+  }
+}

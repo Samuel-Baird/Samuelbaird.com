@@ -173,7 +173,7 @@ def render_heatmap(
 
     source_paragraphs = [
         note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2017 wave), via "
+        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via "
         "Ryan Burge (github.com/ryanburge).",
     ]
     caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=118)]
