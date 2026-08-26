@@ -10,6 +10,7 @@ export function QuestionScreen({
   chosen,
   onAnswer,
   onBack,
+  onExit,
   onContinue,
   isLast,
 }: {
@@ -20,7 +21,10 @@ export function QuestionScreen({
   /** Index into item.scale of the reader's current answer, if any. */
   chosen: number | undefined;
   onAnswer: (responseIndex: number) => void;
-  onBack: (() => void) | null;
+  /** Go to the previous question (or the landing screen from question 1). */
+  onBack: () => void;
+  /** Bail out of the question flow entirely, back to the survey's landing screen. */
+  onExit: () => void;
   onContinue: () => void;
   isLast: boolean;
 }) {
@@ -31,18 +35,14 @@ export function QuestionScreen({
   return (
     <div>
       <div className="flex items-center justify-between gap-4">
-        {onBack ? (
-          <button
-            type="button"
-            onClick={onBack}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius)] px-1 text-xs font-medium text-[color:var(--accent)] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
-          >
-            <ArrowLeft aria-hidden="true" size={13} />
-            Back
-          </button>
-        ) : (
-          <span />
-        )}
+        <button
+          type="button"
+          onClick={onExit}
+          className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius)] px-1 text-xs font-medium text-[color:var(--accent)] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+        >
+          <ArrowLeft aria-hidden="true" size={13} />
+          Back to survey
+        </button>
         <p className="small-caps text-[11px] text-[color:var(--muted)]">
           <span className="tabular-nums font-medium text-[color:var(--foreground)]">
             {index + 1}
@@ -105,20 +105,28 @@ export function QuestionScreen({
         </div>
       </fieldset>
 
-      {answered && (
-        <>
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={onBack}
+          className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-6 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+        >
+          <ArrowLeft aria-hidden="true" size={15} />
+          Back
+        </button>
+        {answered && (
           <button
             type="button"
             onClick={onContinue}
-            className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius)] bg-[color:var(--accent)] px-6 text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
           >
             {isLast ? "See your results" : "Next question"}
             <ArrowRight aria-hidden="true" size={15} />
           </button>
+        )}
+      </div>
 
-          <GroupBreakdownChart item={item} chosenIndex={chosen} />
-        </>
-      )}
+      {answered && <GroupBreakdownChart item={item} chosenIndex={chosen} />}
     </div>
   );
 }

@@ -223,6 +223,7 @@ export function EvangelicalQuizApp({
         chosen={answers[current.id]}
         onAnswer={answer}
         onBack={back}
+        onExit={() => setStep("landing")}
         onContinue={continueToNext}
         isLast={index + 1 >= items.length}
       />

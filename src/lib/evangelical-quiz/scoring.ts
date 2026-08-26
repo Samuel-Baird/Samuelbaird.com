@@ -122,16 +122,17 @@ export function responseLabel(response: string): string {
 
 /**
  * The order buttons are shown in on the question screen: agree options
- * first (top of thumb reach on mobile), then disagree, "not sure" last.
- * Independent of `scale`'s storage order (which matches the survey
- * explorer's disagree -> not-sure -> agree layout, for easy data entry).
+ * first (top of thumb reach on mobile), then disagree, with "not sure"
+ * centered between the two rather than tacked on at the end. Independent
+ * of `scale`'s storage order (which matches the survey explorer's
+ * disagree -> not-sure -> agree layout, for easy data entry).
  */
 const DISPLAY_ORDER = [
   "strongly_agree",
   "somewhat_agree",
+  "not_sure",
   "somewhat_disagree",
   "strongly_disagree",
-  "not_sure",
 ] as const;
 
 /** This item's options as {response, index}, in on-screen display order. */
