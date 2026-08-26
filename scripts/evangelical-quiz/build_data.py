@@ -41,7 +41,19 @@ SIM_SEED = 20250825        # fixed so builds are reproducible
 TIE_MARGIN = 0.25          # nats; top-two traditions closer than this = a tie
 PCTL_STEPS = 200           # breakpoints stored: 0, 0.5, 1.0 ... 100
 
-DATA_VERSION = "1"         # bump when the workbook or this math changes
+DATA_VERSION = "2"         # bump when the workbook or this math changes
+                           # (2: arian moved into the christology block,
+                           # which also reshuffles the simulation's RNG
+                           # sequence and thus the percentile breakpoints)
+
+# Question order follows the workbook's row order, except for explicit
+# placements here: item -> the item it should appear immediately before.
+# arian (2022 wave - dropped from the 2025 instrument but kept because it
+# is theologically interesting) belongs with the deity-of-Christ items
+# rather than tacked on at the end where the workbook appends it.
+PLACE_BEFORE = {
+    "arian": "jesus_not_god",
+}
 
 # ---------------------------------------------------------------------------
 
@@ -263,7 +275,17 @@ def classify(order, items, rep: Report):
             rep.warn("%s: %s (extra group, ignored)" % (item_id, p))
         usable.append(item_id)
 
-    return usable, unusable, groups_seen
+    return apply_placements(usable), unusable, groups_seen
+
+
+def apply_placements(usable):
+    """Relocate items per PLACE_BEFORE, preserving workbook order otherwise."""
+    result = list(usable)
+    for item_id, before_id in PLACE_BEFORE.items():
+        if item_id in result and before_id in result:
+            result.remove(item_id)
+            result.insert(result.index(before_id), item_id)
+    return result
 
 
 # ---------------------------------------------------------------------------

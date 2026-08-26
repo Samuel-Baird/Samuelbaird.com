@@ -161,6 +161,27 @@ hand-edit `data.json`.
 
 ## Status
 
+STALE (kept for provenance): as of 2026-08-25 the full workbook has since
+been delivered — all 36 items have data for all five groups and the quiz
+runs complete. The paragraphs below describe the partial state and how the
+2025 Evangelical / All U.S. adults numbers were first sourced.
+
+### The arian question (2022 wave)
+
+`arian` ("Jesus is the first and greatest being created by God") is the one
+statement not from the 2025 wave: it was **dropped from the 2025 survey**,
+and it's included here deliberately anyway — it's theologically interesting
+(the one item where the orthodox answer scores as *less* evangelical), using
+the 2022 wave, the last time it was asked. The quiz flags this on the
+question and results screens; the graphic's caption cites the 2022 wave
+honestly rather than borrowing 2025's sample size.
+
+In the question order it's placed with the deity-of-Christ items (via
+`PLACE_BEFORE` in `build_data.py` — question order otherwise follows
+workbook row order), immediately before "Jesus was a great teacher, but he
+was not God," rather than tacked on at the end where the workbook appends
+its rows.
+
 `arian` (2022 wave) has real numbers, verified and unchanged. As of 2026-08-25,
 the `Evangelical` and `All U.S. adults` rows for all 35 2025-wave items are
 also filled — every item is still missing `Black Protestant`, `Roman

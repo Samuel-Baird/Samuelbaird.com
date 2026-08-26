@@ -135,7 +135,8 @@ export function ResultsScreen({
                 </p>
                 {row.item.year === 2022 && (
                   <p className="small-caps mt-1.5 text-[10px] text-[color:var(--muted)]">
-                    2022 wave — the last year this statement was asked
+                    2022 wave — dropped from the 2025 survey; kept here as
+                    theologically interesting
                   </p>
                 )}
               </li>

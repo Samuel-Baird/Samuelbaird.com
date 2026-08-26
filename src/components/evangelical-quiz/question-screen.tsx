@@ -70,8 +70,10 @@ export function QuestionScreen({
           {item.statement}
         </legend>
         {item.year === 2022 && (
-          <p className="small-caps mt-2 text-[11px] text-[color:var(--muted)]">
-            2022 wave — the last year this statement was asked
+          <p className="mt-2 text-xs text-[color:var(--muted)]">
+            <span className="small-caps text-[11px]">2022 wave</span> — this statement was
+            dropped from the 2025 survey, but it&apos;s theologically interesting enough
+            that we kept it, using the last wave it was asked.
           </p>
         )}
         {item.three_option && (
