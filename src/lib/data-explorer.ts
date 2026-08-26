@@ -200,6 +200,59 @@ export const DATASETS: Dataset[] = [
     methodologySourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
     graphics: [pewSwitchingRatesGraphic(), pewBirthDecadeGraphic(), pewSwitchingGeneralizedGraphic()],
   },
+  {
+    slug: "cces-2016",
+    name: "CCES 2016",
+    shortDescription:
+      "A 64,600-respondent national election survey, with 870 Latter-day Saints in it.",
+    sponsor: "Cooperative Election Studies (multi-university consortium)",
+    fielder: "YouGov",
+    description:
+      "The Cooperative Congressional Election Study is a large annual national survey on " +
+      "politics and public opinion, run online by YouGov. This entry is a 33-variable teaching " +
+      "extract of the 2016 wave — issue positions on guns, abortion, immigration, and gay " +
+      "marriage, plus party ID, ideology, vote choice, and religion — redistributed by Ryan " +
+      "Burge (github.com/ryanburge). It carries 870 Latter-day Saint respondents, enough to " +
+      "compare LDS answers against every other religious tradition and the religiously " +
+      "unaffiliated side by side, not just against the sample as a whole.",
+    sourceUrl: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GDF6Z0",
+    graphics: [],
+  },
+  {
+    slug: "ces-stacked-2006-2018",
+    name: "CES Stacked, 2006–2018",
+    shortDescription:
+      "Party ID, race, and gender by religious tradition, across seven federal election cycles.",
+    sponsor: "Cooperative Election Studies (multi-university consortium)",
+    fielder: "YouGov",
+    description:
+      "Ryan Burge's own tabulation stacking eight waves of the CCES/CES common content " +
+      "(2006–2018) down to five variables — religious tradition, 7-point party ID, race, " +
+      "gender, and year — for tracking a group's partisanship over time rather than in a " +
+      "single snapshot. It carries 5,955 Latter-day Saint respondents across the eight waves, " +
+      "enough to break that group out by year and by gender and still have a usable sample in " +
+      "most cells.",
+    sourceUrl: "https://github.com/ryanburge/pets",
+    graphics: [],
+  },
+  {
+    slug: "voter-survey-panel",
+    name: "VOTER Survey Panel",
+    shortDescription:
+      "A longitudinal panel of the same 8,000 voters, re-interviewed from 2011 through 2020.",
+    sponsor: "Democracy Fund Voter Study Group",
+    fielder: "YouGov",
+    description:
+      "The VOTER (Views of the Electorate Research) Survey re-interviews the same panel of " +
+      "voters across multiple waves — 2011, 2012, 2016, 2017, 2018, 2019, and 2020 — which " +
+      "makes it possible to track how the same people's views moved, not just how the " +
+      "population's views compare year to year. This 867-variable file, redistributed by Ryan " +
+      "Burge (github.com/ryanburge), includes feeling thermometers toward other religious and " +
+      "political groups, issue-importance ratings, and a religion battery with 141–149 " +
+      "Latter-day Saint respondents at baseline (84 in the 2017 wave specifically).",
+    sourceUrl: "https://www.voterstudygroup.org/",
+    graphics: [],
+  },
 ];
 
 export function getDataset(slug: string): Dataset | undefined {
