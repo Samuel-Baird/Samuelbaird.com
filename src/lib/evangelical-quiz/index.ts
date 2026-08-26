@@ -24,6 +24,7 @@ export {
   groupBreakdownRows,
   groupPercentiles,
   itemById,
+  itemWavePercentile,
   matchTradition,
   percentileOf,
   percentileScore,

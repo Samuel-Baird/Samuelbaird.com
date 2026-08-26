@@ -64,30 +64,51 @@ export function percentileScore(data: QuizData, answers: AnswerMap): number {
 }
 
 /**
+ * Percent of an ascending curve of real, survey-weighted respondent scores
+ * that fall below `score`. Shared by `percentileOf` (the main reference
+ * curves) and `itemWavePercentile` (a single item's own-wave curve) — same
+ * binary search, different curve.
+ */
+function percentileFromCurve(curve: number[], score: number): number {
+  if (curve.length < 2) return 50;
+  let lo = 0;
+  let hi = curve.length;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (curve[mid] < score) lo = mid + 1;
+    else hi = mid;
+  }
+  // lo can reach curve.length when score exceeds every breakpoint (a real
+  // score more extreme than every respondent in the group) - clamp so the
+  // result never reads as more than 100%.
+  return (100 * Math.min(lo, curve.length - 1)) / (curve.length - 1);
+}
+
+/**
  * Percent of a reference group's real, survey-weighted respondents scoring
- * below `score`. Binary search over the ascending curve the build computed
- * from the State of Theology 2025 microdata. Defaults to "all" (all
- * Americans) — the headline comparison; pass another `ReferenceGroupKey`
- * for a per-tradition percentile.
+ * below `score`, from the curves built from the State of Theology 2025
+ * microdata. Defaults to "all" (all Americans) — the headline comparison;
+ * pass another `ReferenceGroupKey` for a per-tradition percentile.
  */
 export function percentileOf(
   data: QuizData,
   score: number,
   group: ReferenceGroupKey = "all",
 ): number {
-  const bp = data.reference?.groups[group]?.curve ?? [];
-  if (bp.length < 2) return 50;
-  let lo = 0;
-  let hi = bp.length;
-  while (lo < hi) {
-    const mid = (lo + hi) >> 1;
-    if (bp[mid] < score) lo = mid + 1;
-    else hi = mid;
-  }
-  // lo can reach bp.length when score exceeds every breakpoint (a real
-  // score more extreme than every respondent in the group) - clamp so the
-  // result never reads as more than 100%.
-  return (100 * Math.min(lo, bp.length - 1)) / (bp.length - 1);
+  return percentileFromCurve(data.reference?.groups[group]?.curve ?? [], score);
+}
+
+/**
+ * A standalone percentile for one answer to one item, against that item's
+ * own `wave_reference` curve — currently only `arian` has one (see
+ * `QuizItem.wave_reference`). Returns null for any item without one, rather
+ * than a misleading 50.
+ */
+export function itemWavePercentile(item: QuizItem, response: number): number | null {
+  const curve = item.wave_reference?.curve;
+  const weight = item.w[response];
+  if (!curve || weight === undefined) return null;
+  return percentileFromCurve(curve, weight);
 }
 
 export type GroupPercentile = {

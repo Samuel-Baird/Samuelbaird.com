@@ -68,7 +68,12 @@ export function HowItWorks() {
           survey and was dropped from the 2025 instrument. We kept it because it&apos;s
           theologically interesting, but since the 2025 respondents you&apos;re
           compared against were never asked it, it doesn&apos;t count toward your
-          percentile.
+          percentile. We do still tell you how your answer to that one question
+          compares to the real 2022 respondents who were asked it — we checked, and
+          that specific question wasn&apos;t swapped for a different one between
+          survey waves, even though at least one other statement was, which is why
+          we don&apos;t try to build a full second comparison out of that year&apos;s
+          data.
         </p>
         <p className="font-medium text-[color:var(--foreground)]">
           This is a similarity measure against survey response patterns, not a

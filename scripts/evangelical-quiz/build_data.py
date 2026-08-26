@@ -108,6 +108,21 @@ REFERENCE_GROUPS = [
      lambda r: r["EVB"] == "1"),
 ]
 
+# `arian`'s own wave (2022) respondent microdata, for a standalone per-item
+# percentile shown alongside it - NOT for folding into the main percentile.
+# The battery isn't stable across waves: at least one other slot (Q21_4) asks
+# a different statement in 2022 ("God learns and adapts to different
+# circumstances") than in 2025 (`god_unchanging`, its near-opposite framing),
+# discovered by comparing weighted response profiles across years. That means
+# a reader's non-arian answers can't be assumed comparable to how 2022
+# respondents would have answered the same 34 statements, so a single mixed
+# reference population isn't sound. What IS sound: scoring the real 2022
+# respondents on this ONE item, with this item's own weights, since arian's
+# survey column (`ARIAN_CSV_COL`) is confirmed unchanged.
+ARIAN_CSV_URL = "https://thestateoftheology.com/assets/data/us/responses-2022.csv"
+ARIAN_CSV_DEFAULT = Path(__file__).resolve().parents[2] / "data/state-of-theology/responses-2022.csv"
+ARIAN_CSV_COL = "Q22_2"
+
 # Question order follows the workbook's row order, except for explicit
 # placements here: item -> the item it should appear immediately before.
 # arian (2022 wave - dropped from the 2025 instrument but kept because it
@@ -653,11 +668,88 @@ def empirical_curves(rows, q_of, item_weights, three_option_ids, rep: Report):
     }
 
 
+def load_arian_wave_csv(csv_path: Path, rep: Report):
+    """Load just what a standalone `arian` percentile needs from the 2022
+    microdata: `ARIAN_CSV_COL`, WT, and RELTRAD (for the crosscheck below).
+    Deliberately not the full `load_microdata` validation - the other 34
+    battery slots are known to include at least one rotated statement (see
+    ARIAN_CSV_URL's comment), so nothing here should assume the rest of that
+    file's battery matches the 2025 one.
+    """
+    with csv_path.open(encoding="utf-8-sig", newline="") as f:
+        rows = list(csvlib.DictReader(f))
+    if not rows:
+        raise SystemExit("arian wave CSV %s is empty" % csv_path)
+    required = [ARIAN_CSV_COL, "WT", "RELTRAD"]
+    missing = [c for c in required if c not in rows[0]]
+    if missing:
+        raise SystemExit("arian wave CSV missing column(s): %s" % ", ".join(missing))
+    for i, row in enumerate(rows, start=2):
+        if row.get(ARIAN_CSV_COL, "").strip() not in {"1", "2", "3", "4", "5"}:
+            raise SystemExit("arian wave CSV row %d: %s=%r is not an integer 1-5"
+                              % (i, ARIAN_CSV_COL, row.get(ARIAN_CSV_COL)))
+        try:
+            wt = float(row["WT"])
+        except (TypeError, ValueError):
+            wt = -1
+        if wt <= 0:
+            raise SystemExit("arian wave CSV row %d: WT=%r is not > 0" % (i, row.get("WT")))
+    rep.note("arian wave: %d respondents loaded from %s" % (len(rows), csv_path))
+    return rows
+
+
+def arian_wave_reference(rows, arian_item, rep: Report):
+    """A standalone percentile curve for `arian` alone, built from the real
+    2022 respondents who were actually asked it - not folded into the main
+    `reference` block, which is 2025-respondent-only (see the comment on
+    ARIAN_CSV_URL for why mixing waves for the other 34 items isn't sound).
+    """
+    if arian_item is None:
+        return None
+
+    expected = arian_item["raw_pct"].get("Evangelical")
+    if expected is not None:
+        computed = weighted_group_dist(
+            rows, ARIAN_CSV_COL, lambda r: r["RELTRAD"] == "1", len(expected)
+        )
+        if computed is None:
+            rep.error("arian/Evangelical: no 2022 respondents matched")
+        else:
+            dev = max(abs(a - b) for a, b in zip(expected, computed))
+            if dev > CROSSCHECK_TOL:
+                rep.error(
+                    "arian/Evangelical: workbook says %s, 2022 CSV recomputes "
+                    "%s (%.2f pt off) - check ARIAN_CSV_COL"
+                    % (expected, [round(x, 1) for x in computed], dev)
+                )
+            else:
+                rep.note("arian crosscheck: Evangelical cell within %.2f pt" % dev)
+
+    w = arian_item["w"]
+    scored = [
+        (w[CODE_TO_INDEX[int(row[ARIAN_CSV_COL])]], float(row["WT"]))
+        for row in rows
+    ]
+    curve = weighted_quantile_curve(scored)
+    for a, b in zip(curve, curve[1:]):
+        if b < a:
+            rep.error("arian wave reference curve is not monotonic")
+            break
+
+    return {
+        "source": "State of Theology 2022 respondent microdata (this item's own wave)",
+        "url": ARIAN_CSV_URL,
+        "n": len(rows),
+        "curve": [round(x, 6) for x in curve],
+    }
+
+
 # ---------------------------------------------------------------------------
 # Build
 # ---------------------------------------------------------------------------
 
-def build(items, usable, unusable, order, rep: Report, microdata_rows=None):
+def build(items, usable, unusable, order, rep: Report, microdata_rows=None,
+          arian_wave_rows=None):
     out_items = []
     item_weights = {}
     three_option_ids = []
@@ -707,7 +799,15 @@ def build(items, usable, unusable, order, rep: Report, microdata_rows=None):
             # breakdown chart, which shows the real numbers, not the
             # log-friendly ones the scoring math uses.
             "raw_pct": {g: round_pct(raw[g]) for g in REQUIRED_GROUPS},
+            "wave_reference": None,
         })
+
+    if arian_wave_rows is not None:
+        arian_item = next((it for it in out_items if it["id"] == "arian"), None)
+        if arian_item is None:
+            rep.warn("arian wave CSV given but arian isn't a usable item - ignored")
+        else:
+            arian_item["wave_reference"] = arian_wave_reference(arian_wave_rows, arian_item, rep)
 
     if three_option_ids:
         rep.note("3-option items (collapsed in the source): "
@@ -813,6 +913,17 @@ def print_report(order, usable, unusable, groups_seen, rep, blob):
                     for pct in (1, 10, 25, 50, 75, 90, 99)
                 )
                 print("  %-24s n=%-5d %s" % (g["label"], g["n"], landmarks))
+        arian_item = next((it for it in blob["items"] if it["id"] == "arian"), None)
+        if arian_item and arian_item.get("wave_reference"):
+            wr = arian_item["wave_reference"]
+            curve = wr["curve"]
+            landmarks = ", ".join(
+                "p%d=%+.2f" % (pct, curve[int(pct / 100 * PCTL_STEPS)])
+                for pct in (1, 10, 25, 50, 75, 90, 99)
+            )
+            print("\n--- arian wave-level reference (%s, n=%d) ---"
+                  % (wr["source"], wr["n"]))
+            print("  %s" % landmarks)
     print()
 
 
@@ -824,8 +935,14 @@ def main():
                           "the empirical percentile curves (default: %s)"
                           % CSV_DEFAULT)
     ap.add_argument("--fetch", action="store_true",
-                     help="download --csv from %s if the path doesn't "
-                          "already exist" % CSV_URL)
+                     help="download --csv (and --arian-csv) from their URLs "
+                          "if the paths don't already exist")
+    ap.add_argument("--arian-csv", type=Path, default=ARIAN_CSV_DEFAULT,
+                     help="State of Theology 2022 respondent microdata, for "
+                          "arian's standalone wave-level percentile only - "
+                          "not used for the main reference (default: %s). "
+                          "Pass a nonexistent/empty path to skip it."
+                          % ARIAN_CSV_DEFAULT)
     ap.add_argument("--out", type=Path, help="where to write the JSON blob")
     ap.add_argument("--report-only", action="store_true")
     ap.add_argument("--quiet", action="store_true")
@@ -836,6 +953,7 @@ def main():
     usable, unusable, groups_seen = classify(order, items, rep)
 
     microdata_rows = None
+    arian_wave_rows = None
     if usable:
         if args.fetch and not args.csv.exists():
             args.csv.parent.mkdir(parents=True, exist_ok=True)
@@ -849,7 +967,19 @@ def main():
             )
         microdata_rows = load_microdata(args.csv, rep)
 
-    blob = build(items, usable, unusable, order, rep, microdata_rows) if usable else None
+        if args.fetch and args.arian_csv and not args.arian_csv.exists():
+            args.arian_csv.parent.mkdir(parents=True, exist_ok=True)
+            if not args.quiet:
+                print("fetching %s -> %s" % (ARIAN_CSV_URL, args.arian_csv))
+            urllib.request.urlretrieve(ARIAN_CSV_URL, args.arian_csv)
+        if args.arian_csv and args.arian_csv.exists():
+            arian_wave_rows = load_arian_wave_csv(args.arian_csv, rep)
+        elif not args.quiet:
+            print("arian wave CSV not found at %s - arian will ship without "
+                  "its own wave-level percentile" % args.arian_csv)
+
+    blob = build(items, usable, unusable, order, rep, microdata_rows,
+                 arian_wave_rows) if usable else None
 
     if not args.quiet:
         print_report(order, usable, unusable, groups_seen, rep, blob)

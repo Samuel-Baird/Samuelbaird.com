@@ -25,13 +25,17 @@ sees a percentage cell or a respondent row.
 python scripts/evangelical-quiz/build_data.py \
   --xlsx "path/to/How_Evangelcal_are_you_.xlsx" \
   --csv data/state-of-theology/responses-2025.csv \
+  --arian-csv data/state-of-theology/responses-2022.csv \
   --out src/lib/evangelical-quiz/data.json
 ```
 
 Standard library only — nothing to `pip install`. `--csv` defaults to
 `data/state-of-theology/responses-2025.csv` (gitignored, like the rest of
-`/data/`); pass `--fetch` to download it there automatically from
-`thestateoftheology.com` if it's missing. Run with `--report-only` to see
+`/data/`); `--arian-csv` defaults to `data/state-of-theology/responses-2022.csv`
+and is optional — omit it (or point it at a nonexistent path) and `arian`
+simply ships without its own wave-level percentile (see "`arian`'s own
+percentile" below). Pass `--fetch` to download either/both automatically
+from `thestateoftheology.com` if missing. Run with `--report-only` to see
 what the workbook and microdata contain (item count, which groups are
 present, which rows don't sum to ~100, per-group percentile landmarks)
 without writing anything:
@@ -211,6 +215,37 @@ produces.
 To retune, edit the constant in `build_data.py` and re-run the build — never
 hand-edit `data.json`.
 
+## `arian`'s own percentile
+
+`arian` is excluded from `percentile_items` (see "The math" above) because
+the 2025 respondents behind `reference` were never asked it. It would be
+tempting to fold it back in by scoring the reader's other 34 answers against
+2022 respondents instead — but the battery isn't stable across waves: at
+least one other slot (`Q21_4`) asks a different statement in 2022 ("God
+learns and adapts to different circumstances") than in 2025
+(`god_unchanging`, its near-opposite framing), found by comparing weighted
+response profiles year over year. So a 2022 respondent's answer to the other
+34 items isn't a safe stand-in for how they'd have answered 2025's wording,
+and a single mixed-wave reference population would be unsound.
+
+What's still sound: scoring the real 2022 respondents on `arian` **alone**,
+since its own slot (`ARIAN_CSV_COL` = `Q22_2` in `build_data.py`) is
+confirmed *not* to have rotated — `arian_wave_reference()` reproduces the
+workbook's own `arian`/Evangelical percentages from that column to within
+`CROSSCHECK_TOL`. That gives `arian.wave_reference` in the blob: a 201-point
+curve built the same way as the main reference curves (`weighted_quantile_curve`
+over `(this item's weight for that respondent's answer, WT)` pairs), but
+from `arian`'s own wave and scored on `arian` only. The results screen uses
+it (`itemWavePercentile`) to add "on this question alone, you answered more
+like an evangelical than N% of the 2022 respondents who were asked it" next
+to `arian`'s breakdown row — a real comparison, just not one folded into the
+headline number, and not proof the rest of that year's battery lines up with
+this one's.
+
+Pass `--arian-csv` a path to `data/state-of-theology/responses-2022.csv` (or
+`--fetch` it) to include this; omit it and `arian.wave_reference` is simply
+`null` — the quiz runs fine either way, just without that one extra line.
+
 ## Files
 
 - `build_data.py` — parses the workbook, validates it, derives weights, scores
@@ -218,8 +253,8 @@ hand-edit `data.json`.
   `src/lib/evangelical-quiz/data.json`.
 - `src/lib/evangelical-quiz/types.ts` — the blob's shape and the app's types.
 - `src/lib/evangelical-quiz/scoring.ts` — pure scoring functions (`scoreAnswers`,
-  `percentileScore`, `percentileOf`, `groupPercentiles`, `matchTradition`,
-  `breakdown`), each mirroring a step above.
+  `percentileScore`, `percentileOf`, `groupPercentiles`, `itemWavePercentile`,
+  `matchTradition`, `breakdown`), each mirroring a step above.
 - `src/lib/evangelical-quiz/self-test.ts` — the sanity checks called out in
   the build spec: weights finite, every reference curve monotonic, and
   answering the modal evangelical response to every question scores in the
@@ -245,7 +280,9 @@ and it's included here deliberately anyway — it's theologically interesting
 (the one item where the orthodox answer scores as *less* evangelical), using
 the 2022 wave, the last time it was asked. The quiz flags this on the
 question and results screens; the graphic's caption cites the 2022 wave
-honestly rather than borrowing 2025's sample size.
+honestly rather than borrowing 2025's sample size. It also gets its own
+standalone percentile against real 2022 respondents — see "`arian`'s own
+percentile" above.
 
 In the question order it's placed with the deity-of-Christ items (via
 `PLACE_BEFORE` in `build_data.py` — question order otherwise follows

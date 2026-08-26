@@ -7,6 +7,7 @@ import { BeehiveMark } from "@/components/beehive-mark";
 import {
   breakdown,
   groupPercentiles,
+  itemWavePercentile,
   matchTradition,
   percentileOf,
   percentileScore,
@@ -189,6 +190,10 @@ export function ResultsScreen({
         <ol className="mt-6 space-y-3">
           {rows.map((row) => {
             const positive = row.contribution >= 0;
+            const wavePercentile = itemWavePercentile(
+              row.item,
+              row.item.scale.indexOf(row.response),
+            );
             return (
               <li
                 key={row.item.id}
@@ -207,11 +212,20 @@ export function ResultsScreen({
                   {directionPhrase(row)}
                 </p>
                 {!QUIZ_DATA.percentile_items.includes(row.item.id) && (
-                  <p className="small-caps mt-1.5 text-[10px] text-[color:var(--muted)]">
-                    2022 wave — dropped from the 2025 survey; kept here as theologically
-                    interesting, but it doesn&apos;t count toward your percentile, since the
-                    2025 respondents weren&apos;t asked it
-                  </p>
+                  <>
+                    <p className="small-caps mt-1.5 text-[10px] text-[color:var(--muted)]">
+                      2022 wave — dropped from the 2025 survey; kept here as theologically
+                      interesting, but it doesn&apos;t count toward your percentile, since the
+                      2025 respondents weren&apos;t asked it
+                    </p>
+                    {wavePercentile !== null && (
+                      <p className="mt-1 text-xs text-[color:var(--muted)]">
+                        On this question alone, you answered more like an evangelical than{" "}
+                        <span className="tabular-nums">{Math.round(wavePercentile)}%</span> of
+                        the 2022 respondents who were asked it.
+                      </p>
+                    )}
+                  </>
                 )}
               </li>
             );

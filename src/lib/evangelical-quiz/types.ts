@@ -53,6 +53,23 @@ export type QuizItem = {
    * the per-question group breakdown chart should render, not `p`.
    */
   raw_pct: Record<string, number[]>;
+  /**
+   * A standalone percentile curve for this item alone, built from the real
+   * respondents of the wave it actually ran in — present only for an item
+   * excluded from `percentile_items` (currently just `arian`, 2022-only).
+   * Not comparable to the main `reference` curves: those score readers
+   * against 2025 respondents on the 2025 battery; this scores a reader's
+   * answer to one question against respondents of a different survey wave
+   * who were asked that exact question (verified not to have rotated to a
+   * different statement — the rest of that wave's battery isn't checked
+   * and may have, so nothing else uses it).
+   */
+  wave_reference: {
+    source: string;
+    url: string;
+    n: number;
+    curve: number[];
+  } | null;
 };
 
 export type QuizConstants = {

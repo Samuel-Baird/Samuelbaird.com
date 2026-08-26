@@ -13,7 +13,7 @@
  * by the quiz page itself.
  */
 
-import { matchTradition, percentileOf, percentileScore } from "./scoring";
+import { itemWavePercentile, matchTradition, percentileOf, percentileScore } from "./scoring";
 import type { AnswerMap, QuizData } from "./types";
 
 export type SelfTestResult = {
@@ -148,6 +148,47 @@ export function runSelfTest(data: QuizData): SelfTestResult[] {
       ? `ranked: ${match.all.map((s) => `${s.tradition}=${s.logLikelihood.toFixed(2)}`).join(", ")}`
       : "matchTradition returned null (no items with data)",
   });
+
+  // 9. arian's standalone wave-level curve (if shipped) is monotonic, and
+  // the modal-evangelical response to arian ranks respectably against it —
+  // same shape of check as #6, on the one item that has its own curve
+  // instead of using the main reference.
+  const arianItem = data.items.find((i) => i.id === "arian");
+  const arianCurve = arianItem?.wave_reference?.curve;
+  if (arianCurve) {
+    let arianMonotonic = true;
+    for (let i = 1; i < arianCurve.length; i++) {
+      if (arianCurve[i] < arianCurve[i - 1]) {
+        arianMonotonic = false;
+        break;
+      }
+    }
+    results.push({
+      name: "arian wave-level curve monotonic",
+      pass: arianMonotonic,
+      detail: arianMonotonic
+        ? `${arianCurve.length} breakpoints ascending`
+        : "curve decreases somewhere",
+    });
+
+    const arianModalIdx = modalAnswers["arian"];
+    const arianModalPercentile =
+      arianModalIdx !== undefined ? itemWavePercentile(arianItem!, arianModalIdx) : null;
+    results.push({
+      name: "modal-evangelical arian answer ranks reasonably on its own curve",
+      pass: arianModalPercentile !== null && arianModalPercentile >= 50,
+      detail:
+        arianModalPercentile !== null
+          ? `percentile ${arianModalPercentile.toFixed(1)} (expect >= 50)`
+          : "itemWavePercentile returned null",
+    });
+  } else {
+    results.push({
+      name: "arian wave-level curve monotonic",
+      pass: true,
+      detail: "no wave_reference shipped for arian in this blob — skipped",
+    });
+  }
 
   return results;
 }
