@@ -12,6 +12,12 @@ export type Profile = {
   avatar_url: string | null;
   is_admin: boolean;
   age_confirmed_at: string | null;
+  /** Optional quiz demographics (migration 0046); all nullable. */
+  age: number | null;
+  gender: string | null;
+  tradition_slug: string | null;
+  /** Set when demographics were asked (submitted or skipped) - the "don't re-ask" marker. */
+  demographics_updated_at: string | null;
   created_at: string;
   updated_at: string;
 };

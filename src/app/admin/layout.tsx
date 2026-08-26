@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/auth";
 const links = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/analytics", label: "Analytics" },
+  { href: "/admin/quizzes", label: "Quizzes" },
   { href: "/admin/channels", label: "Channels" },
   { href: "/admin/studies", label: "Studies" },
   { href: "/admin/access", label: "Access & Roles" },

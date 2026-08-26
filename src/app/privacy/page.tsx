@@ -59,6 +59,16 @@ export default function PrivacyPage() {
               the message you send, along with which page (if any) you were
               referencing.
             </p>
+            <p className="mt-3">
+              If you complete a quiz (such as &ldquo;How evangelical are
+              you?&rdquo;), we store your answers and result, along with any
+              optional demographics you chose to provide (age, gender,
+              religious tradition), for aggregate research. For signed-out
+              takers this is stored anonymously — under a random identifier
+              held only in your browser, with no IP address or browser
+              fingerprint. Every demographic question is skippable, and
+              deleting your account deletes your quiz runs with it.
+            </p>
           </Section>
 
           <Section id="how-we-use-it" title="How we use it">

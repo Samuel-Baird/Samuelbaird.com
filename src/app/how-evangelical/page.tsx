@@ -32,6 +32,7 @@ export default async function HowEvangelicalPage() {
             initialAnswers={initialAnswers}
             signedIn={Boolean(auth)}
             datasetHref={HOME_DATASET ? `/data-explorer/${HOME_DATASET.slug}` : null}
+            needsDemographics={auth ? auth.profile?.demographics_updated_at == null : true}
           />
         </div>
         {/* Sourcing marginalia, per the honesty requirement that it appear on
