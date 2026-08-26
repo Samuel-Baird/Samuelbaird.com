@@ -74,18 +74,6 @@ there's a lot more in it than this file scopes out.
 
 ## Pending
 
-### CES stacked — party ID over time (N=5,955 LDS across 2006–2018)
-
-- **Party ID (pid7), LDS men vs. LDS women, over time.** LDS N by year and
-  gender: 2006 F=319/M=353, 2008 F=269/M=360, 2010 F=409/M=515, 2012
-  F=496/M=410, 2014 F=385/M=473, 2016 F=414/M=456, 2017 F=134/M=139, 2018
-  F=425/M=398. **NEEDS DESIGN DECISION**: splitting the full 7-point pid7
-  by gender across 8 years produces thin cells in the smallest year
-  (2017, N=273 total) — recommend collapsing to a 3-category party ID
-  (Democrat/Independent/Republican, folding "leaners" into their party) for
-  this chart specifically. Item 1 above isn't split further and can likely
-  keep the full 7-point scale.
-
 ### VOTER Survey Panel — grouped by religion (2017 wave)
 
 All four items below are from the 2017 wave. **NEEDS DESIGN DECISION**:
@@ -129,6 +117,19 @@ was chosen. Use `weight_2017` for all four.
 
 ## Shipped
 
+- **2026-08-26 — Party ID (pid7), LDS men vs. LDS women, over time.**
+  [PNG](../../../public/data-explorer/ces-stacked-2006-2018/pid-by-gender.png).
+  **Design decision made** (per this item's own recommendation): pid7
+  collapsed to 3 categories (Democrat/Independent/Republican, leaners
+  folded in) — the smallest year/gender cell (2017 women, N=134) is too
+  thin for the full 7-point split. 16 rows (8 waves × 2 genders),
+  most-recent wave at top, a thin divider between each wave's two rows.
+  Colors avoid literal red/blue and the site's `--oxblood` decline token
+  (not a party signal): `--accent` for Democrat, `--honey` for Republican,
+  a neutral gray for Independent. Computed by
+  `scripts/ryan-burge/pid_by_gender.py`, rendered by
+  `scripts/ryan-burge/render_pid_by_gender_chart.py`. Wired into
+  `/data-explorer/ces-stacked-2006-2018/graphics`.
 - **2026-08-26 — CCES 2016 by religion (8 charts).** Four immigration
   select-all items ([pathway](../../../public/data-explorer/cces-2016/pathway.png),
   [border](../../../public/data-explorer/cces-2016/border.png),

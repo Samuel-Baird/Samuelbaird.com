@@ -17,6 +17,7 @@ import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
 import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritual-experience.json";
 import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
+import pidByGenderData from "../../docs/datasets/ryan-burge/pid-by-gender.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -323,7 +324,7 @@ export const DATASETS: Dataset[] = [
       "enough to break that group out by year and by gender and still have a usable sample in " +
       "most cells.",
     sourceUrl: "https://github.com/ryanburge/pets",
-    graphics: [cesPidOverTimeGraphic()],
+    graphics: [cesPidOverTimeGraphic(), cesPidByGenderGraphic()],
   },
   {
     slug: "voter-survey-panel",
@@ -1298,6 +1299,40 @@ function cesPidOverTimeGraphic(): Graphic {
     height: 1350,
     credit: "via Ryan Burge",
     alt: `Line chart, mean 7-point party ID by tradition and survey wave. ${alt}.`,
+  };
+}
+
+/**
+ * Party ID (pid7), LDS men vs. LDS women, over time - the CES Stacked
+ * entry's second graphic. Built from pid-by-gender.json
+ * (scripts/ryan-burge/pid_by_gender.py), rendered by
+ * scripts/ryan-burge/render_pid_by_gender_chart.py.
+ */
+function cesPidByGenderGraphic(): Graphic {
+  const { by_year_gender: results, category_order: categories, waves } = pidByGenderData;
+  const alt = waves
+    .map((year) => {
+      const parts = (["Male", "Female"] as const).map((gender) => {
+        const r = results[`${year}_${gender}` as keyof typeof results];
+        const shares = categories
+          .map((cat) => `${cat} ${r.shares_pct[cat as keyof typeof r.shares_pct]?.toFixed(0) ?? "n/a"}%`)
+          .join(", ");
+        return `${gender === "Male" ? "Men" : "Women"}: ${shares}`;
+      });
+      return `${year} — ${parts.join("; ")}`;
+    })
+    .join(". ");
+
+  return {
+    title: "Party ID, LDS men vs. LDS women, over time",
+    description:
+      "3-category party ID (Democrat/Independent/Republican, leaners folded in) among " +
+      "Latter-day Saints, by gender and wave.",
+    imageSrc: "/data-explorer/ces-stacked-2006-2018/pid-by-gender.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `100%-stacked bar chart, LDS party ID by gender and survey wave. ${alt}.`,
   };
 }
 
