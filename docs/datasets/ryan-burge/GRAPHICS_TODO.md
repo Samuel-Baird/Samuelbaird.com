@@ -85,12 +85,6 @@ converted or attrited differently by religion). Recommended default:
 `religpew_2017`, for wave-matched accuracy over sample size — flag which
 was chosen. Use `weight_2017` for all four.
 
-- **"Feel like a stranger in my own country" — agree/disagree, by
-  religion.** `stranger_2017`, 4-point (Strongly agree / Mostly agree /
-  Mostly disagree / Strongly disagree). The variable label is short; pull
-  the verbatim question stem from the Voter Study Group's own 2017 codebook
-  before quoting it on the site — don't publish a paraphrase in quote
-  marks.
 - **Feeling thermometer matrix — racial and religious groups, by
   respondent's religion.** 7 targets, each `ft_*_2017`, 0–100 continuous
   (exclude sentinel codes 997/998/999 = Don't know/Skipped/Not asked
@@ -117,6 +111,20 @@ was chosen. Use `weight_2017` for all four.
 
 ## Shipped
 
+- **2026-08-26 — "Feel like a stranger in my own country," by religion
+  (2017 wave).** [PNG](../../../public/data-explorer/voter-survey-panel/stranger-2017.png).
+  Verbatim question stem pulled from the Voter Study Group's own VOTER
+  Survey codebook (fetched via web search + the codebook PDF's own topline
+  text, not paraphrased): "How much do you agree or disagree with this
+  statement? - These days I feel like a stranger in my own country."
+  Grouped by `religpew_2017` per this section's own recommended default.
+  **Design decision made**: three of the twelve religion categories
+  excluded as too thin to show individually — Orthodox (n=18), Muslim
+  (n=13), Hindu (n=3) — well below every other group here (next-smallest
+  is Buddhist, n=51) and below any group shown individually elsewhere in
+  this project (Pew RLS's thinnest kept group is n=99); noted in the
+  chart's own caption. Computed by `scripts/ryan-burge/voter_stranger.py`,
+  rendered by `scripts/ryan-burge/render_voter_stranger_chart.py`.
 - **2026-08-26 — Party ID (pid7), LDS men vs. LDS women, over time.**
   [PNG](../../../public/data-explorer/ces-stacked-2006-2018/pid-by-gender.png).
   **Design decision made** (per this item's own recommendation): pid7
