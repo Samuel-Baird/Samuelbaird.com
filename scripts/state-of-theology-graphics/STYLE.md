@@ -40,9 +40,15 @@ height = 11.25, dpi = 120)`. Python: matplotlib figure `9in × 11.25in` at
 | Token | Hex | Use |
 |---|---|---|
 | Ink | `#1A1A1A` | Titles, axis labels |
-| Paper | `#F7F5F0` | Figure and panel background — never white |
+| Paper | `#FFFFFF` | Figure and panel background |
 | Muted | `#6E6A63` | Subtitles, captions, source lines |
 | Grid | `#D9D5CC` | Gridlines, dividers (by-year style only — see Composition) |
+
+**Paper is pure white here, deliberately different from the Instagram
+scripts' cream (`#F7F5F0`).** Every other token — ink, muted, grid, and the
+full group palette below — is shared between the two styles. White
+background is a website-specific requirement; don't "fix" it back to cream
+by copying the R scripts' constant.
 
 Group colors — consistent across every chart; a given group is always this
 color, no exceptions:
@@ -91,13 +97,19 @@ but let it be neutral: the reader should be able to look at the title and
 the bars and reach their own read, not be handed one.
 
 This is the one deliberate departure from `STATISTICS_STYLE_GUIDE`'s social
-style, which calls for "a short, punchy claim... not a variable name" —
-that's the right call for a feed post competing for a scroll, and it stays
-the house style there. It's the wrong call for a page whose whole point is
-letting someone check what a dataset actually says. Don't port the punchy
-convention into this doc's charts, and don't port the neutral convention
-back into the Instagram scripts — they're solving different problems on
-purpose.
+style. The two guides aren't the same rule applied twice:
+
+- **Website (this doc): always neutral.** Every chart here is titled with
+  the bare statement. No exceptions — a reader is here to check what the
+  data says, not to be pulled through a feed.
+- **Social (`STATISTICS_STYLE_GUIDE`): title is a judgment call.** A post
+  may use a punchy or clever line ("America's Arianism problem") when one
+  fits, or may not — it's not a rule that every post needs a claim, just
+  that the option is open there in a way it deliberately isn't here.
+
+Don't port the punchy convention into this doc's charts (it's specifically
+not allowed here), and don't treat "always neutral" as something the social
+side owes either — they're two different jobs.
 
 ## Composition
 
@@ -134,6 +146,20 @@ Every chart:
 
 No drop shadows, no gradients, no 3D, no rounded bar corners — flat fills
 only.
+
+## Where graphics live on the website
+
+Not a rendering rule, but part of the spec: every dataset's graphics get
+their own page — `/data-explorer/<slug>/graphics` — a gallery of every
+graphic for that dataset, each with its own download link (a plain
+`<a download>` on the PNG; these are static files, nothing to gate). The
+dataset's own page (`/data-explorer/<slug>`) shows a small preview
+thumbnail of one graphic, below the quiz card if that dataset has one,
+linking through to the gallery — not the full graphic inline. See
+[`src/lib/data-explorer.ts`](../../src/lib/data-explorer.ts) for the
+registry shape (`Dataset.graphics`) and
+[`src/app/data-explorer/[slug]/graphics/page.tsx`](../../src/app/data-explorer/%5Bslug%5D/graphics/page.tsx)
+for the gallery page itself.
 
 ## Adding an item
 

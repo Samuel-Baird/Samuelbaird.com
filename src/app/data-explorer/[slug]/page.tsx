@@ -35,6 +35,8 @@ export default async function DatasetPage({
   const dataset = getDataset(slug);
   if (!dataset) notFound();
 
+  const previewGraphic = dataset.graphics[0];
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <Link
@@ -55,12 +57,11 @@ export default async function DatasetPage({
         {dataset.description}
       </p>
 
-      <div className="mt-12 space-y-8">
-        {dataset.analyses.map((analysis) =>
-          analysis.type === "quiz" ? (
+      <div className="mt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
+        <div className="max-w-2xl space-y-8">
+          {dataset.quiz && (
             <Link
-              key={analysis.title}
-              href={analysis.href}
+              href={dataset.quiz.href}
               className="group block rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 no-underline transition-colors hover:border-[color:var(--accent)] sm:p-7"
             >
               <span className="small-caps inline-flex items-center gap-1.5 text-[11px] font-medium text-[color:var(--accent)]">
@@ -68,10 +69,10 @@ export default async function DatasetPage({
                 Quiz
               </span>
               <h2 className="serif mt-2 text-2xl font-semibold tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
-                {analysis.title}
+                {dataset.quiz.title}
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-                {analysis.description}
+                {dataset.quiz.description}
               </p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
                 Take the quiz
@@ -82,38 +83,87 @@ export default async function DatasetPage({
                 />
               </span>
             </Link>
-          ) : (
-            <figure
-              key={analysis.title}
-              className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-7"
+          )}
+
+          {previewGraphic && (
+            <Link
+              href={`/data-explorer/${dataset.slug}/graphics`}
+              className="group block rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 no-underline transition-colors hover:border-[color:var(--accent)] sm:p-7"
             >
               <span className="small-caps inline-flex items-center gap-1.5 text-[11px] font-medium text-[color:var(--honey)]">
                 <BarChart3 aria-hidden="true" size={13} />
-                Graphic
+                Graphics
               </span>
-              <h2 className="serif mt-2 text-2xl font-semibold tracking-tight text-[color:var(--foreground)]">
-                {analysis.title}
+              <h2 className="serif mt-2 text-2xl font-semibold tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+                {dataset.graphics.length}{" "}
+                {dataset.graphics.length === 1 ? "graphic" : "graphics"}
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-                {analysis.description}
-              </p>
-              <div className="mt-5 max-w-sm overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
+              <div className="mt-4 w-40 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
                 <Image
-                  src={analysis.imageSrc}
-                  alt={analysis.alt}
-                  width={analysis.width}
-                  height={analysis.height}
+                  src={previewGraphic.imageSrc}
+                  alt={previewGraphic.alt}
+                  width={previewGraphic.width}
+                  height={previewGraphic.height}
                   className="h-auto w-full"
                 />
               </div>
-              {analysis.credit && (
-                <figcaption className="mt-2 text-xs text-[color:var(--muted)]">
-                  {analysis.credit}
-                </figcaption>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
+                View all graphics
+                <ArrowRight
+                  aria-hidden="true"
+                  size={13}
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
+              </span>
+            </Link>
+          )}
+        </div>
+
+        <aside className="mt-10 space-y-8 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
+          {dataset.selfDescription && (
+            <section>
+              <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+                How {dataset.sponsor} describes it
+              </h2>
+              <blockquote className="mt-3 space-y-3 border-l-2 border-[color:var(--border)] pl-4 text-sm leading-relaxed text-[color:var(--muted)]">
+                {dataset.selfDescription.quote.split("\n\n").map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </blockquote>
+              <a
+                href={dataset.selfDescription.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block text-xs font-medium text-[color:var(--accent)] hover:underline"
+              >
+                {dataset.selfDescription.sourceLabel}
+              </a>
+            </section>
+          )}
+
+          {dataset.methodology && (
+            <section>
+              <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+                Methodology
+              </h2>
+              <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[color:var(--muted)]">
+                {dataset.methodology.map((line, i) => (
+                  <li key={i}>{line}</li>
+                ))}
+              </ul>
+              {dataset.methodologySourceUrl && (
+                <a
+                  href={dataset.methodologySourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-xs font-medium text-[color:var(--accent)] hover:underline"
+                >
+                  {dataset.methodologySourceUrl.replace(/^https?:\/\//, "")}
+                </a>
               )}
-            </figure>
-          ),
-        )}
+            </section>
+          )}
+        </aside>
       </div>
 
       <div className="dinkus mt-14" aria-hidden="true">

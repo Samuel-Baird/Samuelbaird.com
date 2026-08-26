@@ -34,7 +34,10 @@ import matplotlib.pyplot as plt
 # ---------------------------------------------------------------------------
 
 INK = "#1A1A1A"
-PAPER = "#F7F5F0"
+# White, not the Instagram scripts' cream (#F7F5F0) - the website's graphics
+# spec calls for a white background specifically. Everything else in the
+# palette (ink/muted/grid/group colors) is shared with the social style.
+PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 GRID = "#D9D5CC"
 

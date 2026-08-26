@@ -67,11 +67,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   );
 
-  const datasetRoutes: MetadataRoute.Sitemap = DATASETS.map((d) => ({
-    url: `${BASE}/data-explorer/${d.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const datasetRoutes: MetadataRoute.Sitemap = DATASETS.flatMap((d) => [
+    { url: `${BASE}/data-explorer/${d.slug}`, changeFrequency: "monthly" as const, priority: 0.7 },
+    ...(d.graphics.length
+      ? [
+          {
+            url: `${BASE}/data-explorer/${d.slug}/graphics`,
+            changeFrequency: "monthly" as const,
+            priority: 0.6,
+          },
+        ]
+      : []),
+  ]);
 
   return [
     ...staticRoutes,

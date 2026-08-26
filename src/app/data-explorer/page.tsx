@@ -24,34 +24,36 @@ export default function DataExplorerPage() {
       </p>
 
       <div className="mt-12 grid gap-5 sm:grid-cols-2">
-        {DATASETS.map((dataset) => (
-          <Link
-            key={dataset.slug}
-            href={`/data-explorer/${dataset.slug}`}
-            className="group flex flex-col justify-between rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 no-underline transition-colors hover:border-[color:var(--accent)]"
-          >
-            <div>
-              <h2 className="serif text-xl font-semibold tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
-                {dataset.name}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
-                {dataset.shortDescription}
-              </p>
-              <p className="small-caps mt-3 text-[11px] text-[color:var(--muted)]">
-                {dataset.sponsor} · {dataset.fielder}
-              </p>
-            </div>
-            <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
-              {dataset.analyses.length}{" "}
-              {dataset.analyses.length === 1 ? "analysis" : "analyses"}
-              <ArrowRight
-                aria-hidden="true"
-                size={13}
-                className="transition-transform group-hover:translate-x-0.5"
-              />
-            </span>
-          </Link>
-        ))}
+        {DATASETS.map((dataset) => {
+          const count = (dataset.quiz ? 1 : 0) + dataset.graphics.length;
+          return (
+            <Link
+              key={dataset.slug}
+              href={`/data-explorer/${dataset.slug}`}
+              className="group flex flex-col justify-between rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 no-underline transition-colors hover:border-[color:var(--accent)]"
+            >
+              <div>
+                <h2 className="serif text-xl font-semibold tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+                  {dataset.name}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
+                  {dataset.shortDescription}
+                </p>
+                <p className="small-caps mt-3 text-[11px] text-[color:var(--muted)]">
+                  {dataset.sponsor} · {dataset.fielder}
+                </p>
+              </div>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
+                {count} {count === 1 ? "analysis" : "analyses"}
+                <ArrowRight
+                  aria-hidden="true"
+                  size={13}
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
+              </span>
+            </Link>
+          );
+        })}
       </div>
 
       <div className="dinkus mt-14" aria-hidden="true">
