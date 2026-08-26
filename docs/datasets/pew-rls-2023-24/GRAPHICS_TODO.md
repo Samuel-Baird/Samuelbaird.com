@@ -87,50 +87,6 @@ the same public file won't produce a different answer.
   institution's impact on society, separately, not a joint compatibility
   framing.
 
-### Public life and society — Christian, unless noted
-
-- **"America's openness to people from all over the world is essential to
-  who we are as a nation"** — `OPENIDEN`, a forced-choice between that
-  statement and its opposite ("too open... we risk losing our identity").
-  Category 1 is an exact wording match to the request.
-- **Growing immigrant population is a change for the better** — `CHNG_A`
-  (`Change for the better`/`Change for the worse`/`Hasn't made much
-  difference` — part of a `CHNG_A`/`CHNG_B`/`CHNG_C` battery on social
-  change). Category 1 is an exact match.
-- **Racial/ethnic diversity strengthens American society** — `DIVRACPOP`
-  (`Strengthens American society` / `Weakens` / `Doesn't make much
-  difference`). Category 1 is an exact match.
-- **Religious diversity strengthens society** — `DIVRELPOP`, identical
-  3-point scale to `DIVRACPOP` (confirmed, not assumed from the shared
-  naming). Category 1 is an exact match.
-- **"God gave humans a duty to protect and care for the Earth"** —
-  `HUMNTR_B` (`Completely`/`Mostly`/`Somewhat`/`A little bit`/`Not at all`
-  describes their view). Population: Christian **+ other religions**, per
-  the request. **Filtered**: `HUMNTR_A`/`HUMNTR_B` are only asked of those
-  who answered "yes" in `GOD` (belief in God, per the RLS readme's own
-  filter list) — the denominator per group is that group's God-believers,
-  not the whole group. This could quietly distort a cross-group comparison
-  if a group's belief-in-God rate itself varies a lot; worth a second look
-  once the numbers are in, not just built and shipped blind.
-- **Religion does more good than harm** — `RELIMPACT` (`does more harm
-  than good` / `more good than harm` / `equal amounts`). Category 2 is an
-  exact match. Population: **all religiously affiliated and unaffiliated**
-  — the widest population rule of any item on this list, don't restrict to
-  Christian.
-- **Religious organizations bring people together** — `RELINST_F`, a plain
-  `Agree`/`Disagree` (no middle category — confirmed, not a 4- or 5-point
-  scale like `HUMNTR_B` above).
-- **Religious organizations help the poor and needy** — `RELINST_G`, same
-  `Agree`/`Disagree` scale.
-- **Religious organizations protect and strengthen morality** —
-  `RELINST_E`, same `Agree`/`Disagree` scale. (`RELINST_C` doesn't exist —
-  Pew's own lettering skips it; not a gap on this project's end.)
-- **Science does more harm than good** — `SCIMPACT` (`does more harm than
-  good` / `more good than harm` / `equal amounts`). Category 1 is an exact
-  match. Population: Christian, per the request.
-- **Volunteered in the past 12 months** — `VOL12_CPS` (`Yes`/`No`).
-  Population: **all religions and unaffiliated**.
-
 ---
 
 ## Shipped
@@ -143,3 +99,8 @@ the same public file won't produce a different answer.
 - [Beliefs](../../../public/data-explorer/pew-religious-landscape-study/beliefs-soul.png) — 2026-08-26, five PNGs: [soul](../../../public/data-explorer/pew-religious-landscape-study/beliefs-soul.png), [heaven](../../../public/data-explorer/pew-religious-landscape-study/beliefs-heaven.png), [hell](../../../public/data-explorer/pew-religious-landscape-study/beliefs-hell.png), [heaven vs. hell paired](../../../public/data-explorer/pew-religious-landscape-study/beliefs-heaven-vs-hell.png), [evolution guided by God](../../../public/data-explorer/pew-religious-landscape-study/beliefs-evolution.png). **Open-population question resolved**: the item left population unspecified — rather than defaulting to Christian-only or silently excluding the unaffiliated, used all twelve religiously-affiliated `CURREL` traditions individually + a weighted average + the religiously unaffiliated as their own (not pooled-in) row, since afterlife/soul belief is a genuine, well-attested finding among the unaffiliated worth showing. The heaven-vs-hell item needed a chart shape nothing else in this pipeline had yet — a paired bar (two independent yes/no items shown side by side per group, not summing to 100 like every stacked-bar chart here) — built as its own `render_paired_bar()` in the render script rather than forcing it into the 100%-stack shape. Computed by `scripts/pew-rls/beliefs.py`, rendered by `scripts/pew-rls/render_beliefs_charts.py`.
 - [Spiritual experience](../../../public/data-explorer/pew-religious-landscape-study/spiritual-meaning.png) — 2026-08-26, three PNGs: [life's meaning/purpose](../../../public/data-explorer/pew-religious-landscape-study/spiritual-meaning.png) (`EXP_G`), [spiritual peace](../../../public/data-explorer/pew-religious-landscape-study/spiritual-peace.png) (`EXP_A`), [presence beyond this world](../../../public/data-explorer/pew-religious-landscape-study/spiritual-presence.png) (`EXP_D`), all weekly+ (each item's own top category), Christian only per the section's header. Computed by `scripts/pew-rls/spiritual_experience.py`, rendered by `scripts/pew-rls/render_spiritual_experience_charts.py`.
 - [Practice](../../../public/data-explorer/pew-religious-landscape-study/practice-relimp.png) — 2026-08-26, ten PNGs from one compute/render pair covering the whole "Practice" section, three population sets per each item's own note (see `scripts/pew-rls/practice.py`'s docstring): Christian only (7 rows), Christian + other religions (8 rows), and all twelve religiously-affiliated `CURREL` traditions individually + an all-religious average (13 rows) — the unaffiliated are excluded from every chart here, since no item in this section asked for them. **Design decisions made** (all four flagged by the backlog item, resolved and noted in `practice.json`'s own `design_decisions` key so a future chart can't silently disagree): `RELIMP` uses top-two-box (very+somewhat important); `PRAY`'s 7 categories collapse to 4 (Daily/Weekly/Monthly or less/Never); `GRACE` uses top-box (Always alone); `PRAC_A` uses "at least once a week" alone. Files: [religion important](../../../public/data-explorer/pew-religious-landscape-study/practice-relimp.png), [Bible important](../../../public/data-explorer/pew-religious-landscape-study/practice-bibimp.png), [attendance distribution](../../../public/data-explorer/pew-religious-landscape-study/practice-attend-distribution.png), [attend monthly+ in-person/online](../../../public/data-explorer/pew-religious-landscape-study/practice-attend-monthly-plus.png), [house-of-worship member](../../../public/data-explorer/pew-religious-landscape-study/practice-memb.png), [prayer frequency](../../../public/data-explorer/pew-religious-landscape-study/practice-pray-distribution.png), [scripture reading weekly+](../../../public/data-explorer/pew-religious-landscape-study/practice-pracb.png), [other holy texts weekly+](../../../public/data-explorer/pew-religious-landscape-study/practice-pracc.png), [grace before meals](../../../public/data-explorer/pew-religious-landscape-study/practice-grace.png), [prayer/study groups weekly+](../../../public/data-explorer/pew-religious-landscape-study/practice-praca.png). The two full-distribution items reuse the site's official ordinal ramp (`--chart-ordinal-1..7`), evenly resampled to however many segments each scale has, rather than inventing a new ramp per chart. Computed by `scripts/pew-rls/practice.py`, rendered by `scripts/pew-rls/render_practice_charts.py`.
+- [Public life and society](../../../public/data-explorer/pew-religious-landscape-study/public-openiden.png) — 2026-08-26, the backlog's last section: eleven PNGs from one compute/render pair. Population defaults to Christian (the section's own header) except `HUMNTR_B` (Christian + other religions, filtered to God-believers per the RLS readme's documented filter — noted as worth a second look for cross-group belief-in-God-rate distortion, still true here) and `RELIMPACT`/`VOL12_CPS` (the widest population in the section: all twelve religiously-affiliated traditions + an average + the unaffiliated). **Design decision made**: `HUMNTR_B`'s 5-point scale had no cutpoint named in the request — resolved as top-box ("Completely" alone), noted in `public_life.json`'s own `design_decisions` key. Files: [openness essential](../../../public/data-explorer/pew-religious-landscape-study/public-openiden.png), [immigration a change for the better](../../../public/data-explorer/pew-religious-landscape-study/public-chng-a.png), [racial diversity strengthens](../../../public/data-explorer/pew-religious-landscape-study/public-divracpop.png), [religious diversity strengthens](../../../public/data-explorer/pew-religious-landscape-study/public-divrelpop.png), [duty to protect Earth](../../../public/data-explorer/pew-religious-landscape-study/public-humntr.png), [religion more good than harm](../../../public/data-explorer/pew-religious-landscape-study/public-relimpact.png), [orgs bring people together](../../../public/data-explorer/pew-religious-landscape-study/public-relinst-f.png), [orgs help the poor](../../../public/data-explorer/pew-religious-landscape-study/public-relinst-g.png), [orgs strengthen morality](../../../public/data-explorer/pew-religious-landscape-study/public-relinst-e.png), [science more harm than good](../../../public/data-explorer/pew-religious-landscape-study/public-scimpact.png), [volunteered past 12 months](../../../public/data-explorer/pew-religious-landscape-study/public-vol12.png). Computed by `scripts/pew-rls/public_life.py`, rendered by `scripts/pew-rls/render_public_life_charts.py`.
+
+**Pending now contains only the five permanently Blocked items** (no
+public variable exists for them) — every buildable item in this backlog
+has shipped.

@@ -15,6 +15,7 @@ import familyHouseholdData from "../../docs/datasets/pew-rls-2023-24/family-hous
 import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
 import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
 import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritual-experience.json";
+import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 
 export type Quiz = {
@@ -256,6 +257,17 @@ export const DATASETS: Dataset[] = [
       pewSpiritualMeaningGraphic(),
       pewSpiritualPeaceGraphic(),
       pewSpiritualPresenceGraphic(),
+      pewOpenidenGraphic(),
+      pewChngAGraphic(),
+      pewDivracpopGraphic(),
+      pewDivrelpopGraphic(),
+      pewHumntrGraphic(),
+      pewRelimpactGraphic(),
+      pewRelinstFGraphic(),
+      pewRelinstGGraphic(),
+      pewRelinstEGraphic(),
+      pewScimpactGraphic(),
+      pewVol12Graphic(),
     ],
   },
   {
@@ -886,6 +898,197 @@ function pewSpiritualPresenceGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who feel a presence beyond this world weekly+, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * America's openness to the world is essential, Christian only. Built from
+ * public-life.json (scripts/pew-rls/public_life.py), rendered by
+ * scripts/pew-rls/render_public_life_charts.py.
+ */
+function pewOpenidenGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.openiden_openness_essential);
+  return {
+    title: "America's openness to the world is essential",
+    description:
+      "Share who say America's openness to people from all over the world is essential to " +
+      "who we are as a nation.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-openiden.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say America's openness to the world is essential, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Immigration is a change for the better, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewChngAGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.chng_a_immigration_better);
+  return {
+    title: "Immigration is a change for the better",
+    description: "Share who say a growing population of immigrants is a change for the better.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-chng-a.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say immigration is a change for the better, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Racial/ethnic diversity strengthens society, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewDivracpopGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.divracpop_strengthens);
+  return {
+    title: "Racial/ethnic diversity strengthens society",
+    description:
+      "Share who say people of many different races/ethnicities strengthens American society.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-divracpop.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say racial/ethnic diversity strengthens society, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Religious diversity strengthens society, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewDivrelpopGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.divrelpop_strengthens);
+  return {
+    title: "Religious diversity strengthens society",
+    description:
+      "Share who say people of many different religions (and no religion) strengthens " +
+      "American society.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-divrelpop.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say religious diversity strengthens society, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * God gave humans a duty to protect the Earth (top box, God-believers
+ * only), Christian + other religions. Same data source and render script
+ * as the graphic above.
+ */
+function pewHumntrGraphic(): Graphic {
+  const alt = pctAlt(KIDACT_GROUP_ORDER, publicLifeData.humntr_b_completely);
+  return {
+    title: "God gave humans a duty to protect the Earth",
+    description: "Of God-believers, share who say this completely describes their view.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-humntr.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share of God-believers who say humans have a duty to protect the Earth, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Religion does more good than harm, the widest population in this
+ * section (all religiously affiliated traditions + the unaffiliated).
+ * Same data source and render script as the graphic above.
+ */
+function pewRelimpactGraphic(): Graphic {
+  const alt = pctAlt(BELIEFS_GROUP_ORDER, publicLifeData.relimpact_more_good);
+  return {
+    title: "Religion does more good than harm",
+    description:
+      "Share who say religion's overall impact on American society is more good than harm.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-relimpact.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say religion does more good than harm, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Religious orgs bring people together, Christian only. Same data source
+ * and render script as the graphic above.
+ */
+function pewRelinstFGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.relinst_f_bring_together);
+  return {
+    title: "Religious orgs bring people together",
+    description:
+      "Share who agree churches and other religious organizations strengthen community bonds.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-relinst-f.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who agree religious orgs bring people together, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Religious orgs help the poor and needy, Christian only. Same data
+ * source and render script as the graphic above.
+ */
+function pewRelinstGGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.relinst_g_help_poor);
+  return {
+    title: "Religious orgs help the poor and needy",
+    description:
+      "Share who agree churches and other religious organizations play an important role " +
+      "helping the poor.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-relinst-g.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who agree religious orgs help the poor and needy, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Religious orgs protect and strengthen morality, Christian only. Same
+ * data source and render script as the graphic above.
+ */
+function pewRelinstEGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.relinst_e_strengthen_morality);
+  return {
+    title: "Religious orgs protect and strengthen morality",
+    description:
+      "Share who agree churches and other religious organizations protect and strengthen " +
+      "morality in society.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-relinst-e.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who agree religious orgs protect/strengthen morality, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Science does more harm than good, Christian only. Same data source and
+ * render script as the graphic above.
+ */
+function pewScimpactGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, publicLifeData.scimpact_more_harm);
+  return {
+    title: "Science does more harm than good",
+    description:
+      "Share who say science's overall impact on American society is more harm than good.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-scimpact.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say science does more harm than good, by Christian tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Volunteered in the past 12 months, the widest population in this
+ * section. Same data source and render script as the graphic above.
+ */
+function pewVol12Graphic(): Graphic {
+  const alt = pctAlt(BELIEFS_GROUP_ORDER, publicLifeData.vol12_volunteered);
+  return {
+    title: "Volunteered in the past 12 months",
+    description: "Share who spent any time volunteering in the past 12 months.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-vol12.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who volunteered in the past 12 months, by tradition: ${alt}.`,
   };
 }
 
