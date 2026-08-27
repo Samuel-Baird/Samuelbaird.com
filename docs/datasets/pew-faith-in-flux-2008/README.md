@@ -47,6 +47,14 @@ shared chart shape in `scripts/flagship-charts/common.py`:
 - `leave-vs-join.json` (whether changing religion was driven more by
   wanting to leave the old one or join the new one, q6) — computed by
   `leave_vs_join.py`, rendered by `render_leave_vs_join_chart.py`.
+- `leaving-decision-maker.json` (whether leaving was mostly the
+  respondent's own decision or their family's, q2) — computed by
+  `leaving_decision_maker.py`, rendered by
+  `render_leaving_decision_chart.py`.
+- `faith-strength-before-after.json` (share with strong faith, as a
+  teenager vs. now, q12/q13) — computed by
+  `faith_strength_before_after.py`, rendered by
+  `render_faith_strength_chart.py`.
 
 Further charts from this dataset should follow the same two-stage
 pattern.

@@ -30,7 +30,7 @@ committed):
 
 ## Status
 
-Three charts shipped, all by respondent's own current religion
+Five charts shipped, all by respondent's own current religion
 (QCURRELrec), pooled across all countries surveyed, wired into the Data
 Explorer entry (`src/lib/data-explorer.ts`, slug `pew-latin-america-2014`),
 using the shared chart shape in `scripts/flagship-charts/common.py`:
@@ -44,6 +44,18 @@ using the shared chart shape in `scripts/flagship-charts/common.py`:
 - `religion-importance.json` (share saying religion is very important in
   their life, Q29) — computed by `religion_importance.py`, rendered by
   `render_religion_importance_chart.py`.
+- `samesex-marriage.json` (support for same-sex marriage, Q15) — computed
+  by `samesex_marriage.py`, rendered by `render_samesex_marriage_chart.py`.
+- `witchcraft-belief.json` (share believing magic/sorcery/witchcraft can
+  influence people's lives, Q60h, a syncretism indicator) — computed by
+  `witchcraft_belief.py`, rendered by `render_witchcraft_belief_chart.py`.
+
+Note: this dataset's only current-religion variable (QCURRELrec) folds
+Mormons into "Other religion" - there's no way to isolate an LDS-specific
+population share or attitude breakout here, which is why every chart in
+this dataset (including the original mormons-as-christian.json) asks
+"what do people of each religion think," not "what do Latin American
+Mormons think."
 
 Further charts from this dataset should follow the same two-stage
 pattern.

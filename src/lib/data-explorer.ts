@@ -63,12 +63,18 @@ import spouseReligiousDisagreementData from "../../docs/datasets/pew-rls-2014-re
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
 import latinAmericaWeeklyAttendanceData from "../../docs/datasets/pew-latin-america-2014/weekly-attendance.json";
 import latinAmericaReligionImportanceData from "../../docs/datasets/pew-latin-america-2014/religion-importance.json";
+import latinAmericaSamesexMarriageData from "../../docs/datasets/pew-latin-america-2014/samesex-marriage.json";
+import witchcraftBeliefData from "../../docs/datasets/pew-latin-america-2014/witchcraft-belief.json";
 import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
 import reasonsLeftReligionData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-left-religion.json";
 import leaveVsJoinData from "../../docs/datasets/pew-faith-in-flux-2008/leave-vs-join.json";
+import leavingDecisionMakerData from "../../docs/datasets/pew-faith-in-flux-2008/leaving-decision-maker.json";
+import faithStrengthBeforeAfterData from "../../docs/datasets/pew-faith-in-flux-2008/faith-strength-before-after.json";
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
 import prayerCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/prayer-covid-coping.json";
 import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/inperson-attendance-covid.json";
+import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/financial-threat-covid.json";
+import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
@@ -628,6 +634,8 @@ export const DATASETS: Dataset[] = [
       mormonsAsChristianGraphic(),
       latinAmericaWeeklyAttendanceGraphic(),
       latinAmericaReligionImportanceGraphic(),
+      latinAmericaSamesexMarriageGraphic(),
+      witchcraftBeliefGraphic(),
     ],
   },
   {
@@ -653,6 +661,8 @@ export const DATASETS: Dataset[] = [
       reasonsJoinedLdsGraphic(),
       reasonsLeftReligionGraphic(),
       leaveVsJoinGraphic(),
+      leavingDecisionMakerGraphic(),
+      faithStrengthBeforeAfterGraphic(),
     ],
   },
   {
@@ -673,6 +683,8 @@ export const DATASETS: Dataset[] = [
       onlineWorshipCovidGraphic(),
       prayerCovidCopingGraphic(),
       inpersonAttendanceCovidGraphic(),
+      financialThreatCovidGraphic(),
+      blmSermonsGraphic(),
     ],
   },
 ];
@@ -1169,6 +1181,34 @@ function latinAmericaReligionImportanceGraphic(): Graphic {
   };
 }
 
+function latinAmericaSamesexMarriageGraphic(): Graphic {
+  const { group_order: order, favor_samesex_marriage: results } = latinAmericaSamesexMarriageData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Support for same-sex marriage",
+    description: "Share across Latin America favoring same-sex marriage, by their own religion.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/samesex-marriage.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share across Latin America favoring same-sex marriage, by their own religion. ${alt}.`,
+  };
+}
+
+function witchcraftBeliefGraphic(): Graphic {
+  const { group_order: order, believe_witchcraft: results } = witchcraftBeliefData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Belief in witchcraft",
+    description: "Share across Latin America believing magic, sorcery, or witchcraft can influence people's lives, by their own religion.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/witchcraft-belief.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share across Latin America believing magic, sorcery, or witchcraft can influence people's lives, by their own religion. ${alt}.`,
+  };
+}
+
 function reasonsJoinedLdsGraphic(): Graphic {
   const { reason_order: order, important_reason_pct: results, lds_converts_unweighted_n: n } = reasonsJoinedLdsData;
   const alt = order
@@ -1211,6 +1251,34 @@ function leaveVsJoinGraphic(): Graphic {
   };
 }
 
+function leavingDecisionMakerGraphic(): Graphic {
+  const { decision_order: order, decision_pct: results } = leavingDecisionMakerData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Whose decision was it to leave?",
+    description: "Among people who left their childhood religion, who mainly made that decision?",
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/leaving-decision-maker.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: who mainly decided to leave the childhood religion, among religious switchers. ${alt}.`,
+  };
+}
+
+function faithStrengthBeforeAfterGraphic(): Graphic {
+  const { time_order: order, strong_faith_pct: results } = faithStrengthBeforeAfterData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Did switching strengthen their faith?",
+    description: "Share of religious switchers with strong faith, as a teenager vs. now.",
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/faith-strength-before-after.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of religious switchers with strong faith, as a teenager vs. now. ${alt}.`,
+  };
+}
+
 function onlineWorshipCovidGraphic(): Graphic {
   const { group_order: order, watched_online_worship: results } = onlineWorshipCovidData;
   const alt = order
@@ -1250,6 +1318,34 @@ function inpersonAttendanceCovidGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/inperson-attendance-covid.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share attending religious services in person in the past month, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function financialThreatCovidGraphic(): Graphic {
+  const { group_order: order, major_financial_threat: results } = financialThreatCovidData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "COVID as a financial threat",
+    description: "Share calling the coronavirus outbreak a major threat to their personal finances, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/financial-threat-covid.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share calling COVID a major threat to their personal finances, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function blmSermonsGraphic(): Graphic {
+  const { group_order: order, heard_blm_support_sermon: results } = blmSermonsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Hearing BLM support from the pulpit",
+    description: "Share who heard a sermon expressing support for the Black Lives Matter protests, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/blm-sermons.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of monthly attenders hearing a pro-Black Lives Matter sermon, by religious tradition, July 2020. ${alt}.`,
   };
 }
 

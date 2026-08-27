@@ -1,0 +1,20 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is all respondents who left the religion they were raised in (this recontact survey's own design). Top-two-box (\"very strong\" + \"somewhat strong\") on q12 (faith strength as a teenager, in their childhood religion) and q13 (faith strength now, in their current religion); each item's own \"didn't/don't have religious faith\" and don't know/refused excluded from its own denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "time_order": [
+    "As a teenager",
+    "Now"
+  ],
+  "strong_faith_pct": {
+    "As a teenager": {
+      "pct": 74.5,
+      "valid_unweighted_n": 2823
+    },
+    "Now": {
+      "pct": 82.16,
+      "valid_unweighted_n": 2788
+    }
+  }
+}

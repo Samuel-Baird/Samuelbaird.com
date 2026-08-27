@@ -43,5 +43,14 @@ chart shape in `scripts/flagship-charts/common.py`:
   in person in the past month, ATTENDMONTH_W70) — computed by
   `inperson_attendance_covid.py`, rendered by
   `render_inperson_attendance_chart.py`.
+- `financial-threat-covid.json` (share calling COVID a major threat to
+  their personal finances, COVIDTHREAT_d_W70) — computed by
+  `financial_threat_covid.py`, rendered by
+  `render_financial_threat_chart.py`.
+- `blm-sermons.json` (share hearing a pro-Black Lives Matter sermon,
+  SERMONISSUE_b_W70) — computed by `blm_sermons.py`, rendered by
+  `render_blm_sermons_chart.py`. Unlike this dataset's other charts, its
+  population is respondents who attend religious services at least
+  monthly (SERMONISSUE's own skip pattern), not all U.S. adults.
 
 Further charts from this dataset should follow the same two-stage pattern.

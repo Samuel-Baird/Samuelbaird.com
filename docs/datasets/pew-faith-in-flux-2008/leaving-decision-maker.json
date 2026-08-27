@@ -1,0 +1,26 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is all respondents who left the religion they were raised in (this recontact survey's own design). q2 asks whether leaving was mostly their own decision or mostly decided by parents/family; don't know/refused excluded from the denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "valid_unweighted_n": 708,
+  "decision_order": [
+    "Mostly their own decision",
+    "Mostly decided by parents or family",
+    "Both/neither"
+  ],
+  "decision_pct": {
+    "Mostly their own decision": {
+      "pct": 67.96,
+      "unweighted_n": 547
+    },
+    "Mostly decided by parents or family": {
+      "pct": 27.96,
+      "unweighted_n": 138
+    },
+    "Both/neither": {
+      "pct": 4.08,
+      "unweighted_n": 23
+    }
+  }
+}
