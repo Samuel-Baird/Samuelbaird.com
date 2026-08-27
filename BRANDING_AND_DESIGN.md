@@ -233,7 +233,10 @@ charting library's default palette.
 Full chart anatomy, the shared component kit (`src/components/charts/`), and
 per-chart-type specs (line, dot plot with CI, 100%-stacked, faceted small
 multiples) live in **[docs/CHARTS.md](docs/CHARTS.md)**. Read it before
-building a new chart or adding a chart type.
+building a new chart or adding a chart type. Downloadable Data Explorer PNG
+graphics have their own pipeline and must stay legible at roughly 1/3 scale
+(how they render on a phone) — the mobile font floors live in
+`scripts/state-of-theology-graphics/STYLE.md`.
 
 ### Forms
 

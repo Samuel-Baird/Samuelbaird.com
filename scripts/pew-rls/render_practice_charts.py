@@ -25,12 +25,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -117,10 +121,9 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
     return subtitle_y - subtitle_lines * subtitle_line_height
 
 
-CAPTION_TOP = 0.145
-
-
-def _draw_caption(fig, fonts, total_n: int, note: str) -> None:
+def _draw_caption(fig, fonts, total_n: int, note: str) -> float:
+    """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
+    section. Returns caption_top for the vertical-centering contract."""
     source_paragraphs = [
         note,
         f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
@@ -128,12 +131,7 @@ def _draw_caption(fig, fonts, total_n: int, note: str) -> None:
         "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
         "doi: 10.58094/3kwb-bf52.",
     ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
+    return draw_caption_bottom(fig, fonts, source_paragraphs)
 
 
 def render_magnitude_bar(
@@ -144,10 +142,12 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
-    # subtitle and the caption, not a fixed guess - see STYLE.md.
+    # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03
+    ax_bottom = caption_top + 0.03
 
     n_rows = len(group_order)
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
@@ -169,14 +169,12 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(12.5 if n_rows > 8 else 14)
+        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
-                 color=c, fontproperties=fonts["bold"], fontsize=13 if n_rows > 8 else 15, zorder=4)
-
-    _draw_caption(fig, fonts, total_n, note)
+                 color=c, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL if n_rows > 8 else 15, zorder=4)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
@@ -192,10 +190,12 @@ def render_distribution_stack(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering, same approach as render_magnitude_bar above, with
-    # extra bottom room reserved for the legend row below the axes.
+    # extra bottom room reserved for the legend row below the axes. Caption
+    # is drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03 + 0.05
+    ax_bottom = caption_top + 0.03 + 0.05
 
     n_rows = len(group_order)
     n_segs = len(seg_order)
@@ -222,17 +222,17 @@ def render_distribution_stack(
         ax.barh(rows, vals, left=left, height=bar_h, color=color,
                 edgecolor=PAPER, linewidth=1.2, zorder=3)
         for g, v, l in zip(rows, vals, left):
-            if v >= 7:
+            if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(l + v / 2, g, f"{v:.0f}%", va="center", ha="center",
                         color=text_color, fontproperties=fonts["bold"],
-                        fontsize=10.5 if n_rows > 8 else 12, zorder=4)
+                        fontsize=MIN.DATA_LABEL, zorder=4)
         left = [l + v for l, v in zip(left, vals)]
 
     ax.set_xlim(0, 100)
     ax.margins(y=0.06 if n_rows > 8 else 0.11)
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(12 if n_rows > 8 else 14)
+        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
     handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
@@ -240,12 +240,10 @@ def render_distribution_stack(
     legend = ax.legend(
         handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.055),
         ncol=min(4, n_segs), frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=11, prop=fonts["bold"], columnspacing=1.2,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.2,
     )
     for text in legend.get_texts():
         text.set_color(INK)
-
-    _draw_caption(fig, fonts, total_n, note)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

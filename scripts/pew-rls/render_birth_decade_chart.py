@@ -20,12 +20,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -85,8 +89,21 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
+    # bottom-anchored" section - so the axes/legend/note stack above it can
+    # be placed relative to its real top edge.
+    source_paragraphs = [
+        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
+        f"N = {total_n:,} U.S. adults",
+        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
+        "doi: 10.58094/3kwb-bf52.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    note_y = caption_top + 0.04
+    ax_bottom = note_y + 0.16
+
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
-    ax = fig.add_axes([AXES_LEFT, 0.32, AXES_WIDTH, 0.44])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, 0.32 + 0.44 - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     for spine in ax.spines.values():
@@ -104,10 +121,10 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         ax.barh(rows, vals, left=left, height=bar_height, color=color,
                 edgecolor=PAPER, linewidth=1.5, zorder=3)
         for g, v, l in zip(rows, vals, left):
-            if v >= 6:  # Burge's "suppress what won't fit" rule
+            if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(
                     l + v / 2, g, f"{v:.0f}%", va="center", ha="center",
-                    color=text_color, fontproperties=fonts["bold"], fontsize=11, zorder=4,
+                    color=text_color, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4,
                 )
         left = [l + v for l, v in zip(left, vals)]
 
@@ -126,13 +143,13 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     legend = ax.legend(
         handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.09),
         ncol=4, frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=10.5, prop=fonts["bold"], columnspacing=1.2,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.2,
     )
     for text in legend.get_texts():
         text.set_color(INK)
 
     fig.text(
-        AXES_LEFT, 0.185,
+        AXES_LEFT, note_y,
         "The finest age measure the public-use file offers - no numeric median age.",
         fontproperties=fonts["regular"], fontsize=10, color=MUTED, ha="left", va="top",
     )
@@ -154,21 +171,6 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         "Share of each tradition's current members born in each decade.",
         fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
     )
-
-    # --- Caption ------------------------------------------------------------
-    source_paragraphs = [
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    caption_y = 0.145
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

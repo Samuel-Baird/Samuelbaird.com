@@ -16,12 +16,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -35,7 +39,6 @@ ORDINAL_RAMP_7 = ["#e8eff6", "#c3d7e8", "#96b9d6", "#5e8db8", "#1f4f7a", "#163a5
 LABEL_INK_FOR_STEP_7 = [INK, INK, INK, INK, "#FFFFFF", "#FFFFFF", "#FFFFFF"]
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
-CAPTION_TOP = 0.16
 
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "ryan-burge" / "voter-stranger.json"
@@ -93,8 +96,17 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     title = "“These days I feel like a stranger in my own country”"
     subtitle = "Agreement with this statement, by religion (2017 wave)."
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+
+    excluded_note = "Too thin to show individually: " + ", ".join(excluded.values()) + "."
+    source_paragraphs = [
+        f"“{data['question']}”",
+        "Population: religpew_2017, weighted by weight_2017. " + excluded_note,
+        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2017 wave), via "
+        "Ryan Burge (github.com/ryanburge).",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03 + 0.05
+    ax_bottom = caption_top + 0.03 + 0.05
 
     AXES_LEFT, AXES_WIDTH = 0.34, 0.60
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -116,9 +128,9 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         ax.barh(rows, vals, left=left, height=0.65, color=color,
                 edgecolor=PAPER, linewidth=1.2, zorder=3)
         for g, v, l in zip(rows, vals, left):
-            if v >= 7:
+            if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(l + v / 2, g, f"{v:.0f}%", va="center", ha="center",
-                        color=text_color, fontproperties=fonts["bold"], fontsize=11.5, zorder=4)
+                        color=text_color, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         left = [l + v for l, v in zip(left, vals)]
 
     ax.set_xlim(0, 100)
@@ -133,24 +145,10 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     legend = ax.legend(
         handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.055),
         ncol=4, frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=10.5, prop=fonts["bold"], columnspacing=1.2,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.2,
     )
     for text in legend.get_texts():
         text.set_color(INK)
-
-    excluded_note = "Too thin to show individually: " + ", ".join(excluded.values()) + "."
-    source_paragraphs = [
-        f"“{data['question']}”",
-        "Population: religpew_2017, weighted by weight_2017. " + excluded_note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2017 wave), via "
-        "Ryan Burge (github.com/ryanburge).",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

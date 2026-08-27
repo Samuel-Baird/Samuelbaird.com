@@ -15,11 +15,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -94,9 +98,6 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
     return subtitle_y - subtitle_lines * subtitle_line_height
 
 
-CAPTION_TOP = 0.145
-
-
 def render_magnitude_bar(
     results: dict, group_order: list[str], title: str, subtitle: str, note: str,
     total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
@@ -105,10 +106,19 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
-    # subtitle and the caption, not a fixed guess - see STYLE.md.
+    # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    source_paragraphs = [
+        note,
+        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
+        f"N = {total_n:,} U.S. adults",
+        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
+        "doi: 10.58094/3kwb-bf52.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03
+    ax_bottom = caption_top + 0.03
 
     n_rows = len(group_order)
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
@@ -130,26 +140,12 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(12.5 if n_rows > 8 else 14)
+        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
-                 color=c, fontproperties=fonts["bold"], fontsize=13 if n_rows > 8 else 15, zorder=4)
-
-    source_paragraphs = [
-        note,
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
+                 color=c, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL if n_rows > 8 else 15, zorder=4)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

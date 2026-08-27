@@ -1,0 +1,154 @@
+"""Shared house-style helpers for the Data Explorer PNG pipeline.
+
+Every dataset folder under scripts/ (state-of-theology-graphics, pew-rls,
+ryan-burge) renders its own 1080x1350 matplotlib PNGs, but three things kept
+drifting because they were copy-pasted per script: where the caption/footnote
+sits, how small type is allowed to get, and (for the heatmaps) how a value
+maps to a fill color. This module is the one place those live now. Import it
+the same way every script already reaches across folders for
+DEFAULT_FONTS_DIR:
+
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from chart_style import draw_caption_bottom, diverging_color, label_ink, MIN
+
+Per scripts/state-of-theology-graphics/STYLE.md's sync contract: if you
+change anything in this module, update that STYLE.md, scripts/ryan-burge/STYLE.md,
+and scripts/pew-rls/STYLE.md together - an undocumented style isn't a style.
+"""
+
+from __future__ import annotations
+
+import textwrap
+
+INK = "#1A1A1A"
+PAPER = "#FFFFFF"
+MUTED = "#6E6A63"
+BORDER = "#D9D5CC"
+
+FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350px
+
+
+class MIN:
+    """Minimum font sizes (pt, at this pipeline's fixed 1080x1350 canvas) so
+    every chart survives being viewed at ~1/3 scale on a phone (a 1080px PNG
+    renders at roughly 335 CSS px in the /graphics gallery). A render script
+    may go bigger than these, never smaller. If content can't fit at the
+    floor, the chart is too dense - split it into two images, or suppress a
+    label, rather than shrinking text below floor. Footnotes/captions are
+    exempt: fine print is allowed to stay fine print."""
+
+    TITLE = 24
+    SUBTITLE = 12.5
+    DATA_LABEL = 13
+    AXIS_LABEL = 12
+    HEATMAP_CELL = 12.5
+    HEATMAP_HEADER = 12
+    LEGEND = 12
+
+
+def draw_caption_bottom(
+    fig,
+    fonts,
+    paragraphs: list[str],
+    *,
+    left: float = 0.065,
+    wrap_width: int = 98,
+    fontsize: float = 10,
+    line_step: float = 0.0165,
+    bottom: float = 0.030,
+    color: str = MUTED,
+    handle: str | None = None,
+    handle_color: str | None = None,
+) -> float:
+    """Draws the caption/footnote block bottom-anchored: the lowest line
+    (the handle, if given, else the last wrapped caption line) sits at
+    y=bottom, with every line above it stacked upward. This is the opposite
+    of the old pattern (a CAPTION_TOP constant, drawn downward) - it means
+    whatever vertical space the caption doesn't use belongs to the chart
+    above it, instead of a fixed band being reserved regardless of how much
+    text is actually in the caption.
+
+    Call this BEFORE laying out the chart's own axes and use the return
+    value as `caption_top` in the "vertical layout: centering the plot band"
+    contract (scripts/pew-rls/STYLE.md) - i.e. `ax_bottom = caption_top + gap`.
+    The return value is the y-fraction just above the top caption line.
+
+    `paragraphs` are source/methodology lines, wrapped to `wrap_width`
+    characters (matplotlib's own figure-level wrap is unreliable across
+    versions and doesn't respect a figure's real margins - hence hand
+    wrapping here, same as every script did before this helper existed).
+    """
+    lines = [ln for para in paragraphs for ln in textwrap.wrap(para, width=wrap_width)]
+
+    y = bottom
+    if handle:
+        fig.text(
+            left, y, handle, fontproperties=fonts["bold"], fontsize=fontsize,
+            color=handle_color or color, ha="left", va="top",
+        )
+        y += line_step * 1.4  # a little extra breathing room above the handle
+
+    for line in reversed(lines):
+        fig.text(
+            left, y, line, fontproperties=fonts["regular"], fontsize=fontsize,
+            color=color, ha="left", va="top",
+        )
+        y += line_step
+
+    return y
+
+
+def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
+    hex_color = hex_color.lstrip("#")
+    return tuple(int(hex_color[i : i + 2], 16) for i in (0, 2, 4))  # type: ignore[return-value]
+
+
+def _rgb_to_hex(rgb: tuple[float, float, float]) -> str:
+    return "#{:02x}{:02x}{:02x}".format(*(max(0, min(255, round(c))) for c in rgb))
+
+
+# Named semantic anchors for diverging heatmap ramps - reuse the site's own
+# tokens rather than inventing new hexes. The green is deliberately
+# teal-shifted (not a pure green) so it stays separable from the oxblood red
+# under deuteranopia by both hue and lightness, not hue alone.
+DIV_NEG_RED = "#7c2d2d"  # --oxblood, the site's decline/negative token
+DIV_POS_GREEN = "#1F6E5E"  # teal-shifted green
+DIV_COOL_BLUE = "#1f4f7a"  # --accent
+DIV_WARM_RED = "#7c2d2d"
+
+
+def diverging_color(t: float, low_hex: str, high_hex: str, mid_hex: str = PAPER) -> str:
+    """t in [0, 1] -> a hex color on a piecewise-linear low -> mid -> high
+    ramp (t=0.5 is mid_hex exactly). Use this for every heatmap cell instead
+    of a single-hue ramp: the midpoint should be the scale's own substantive
+    midpoint (e.g. 50 on a 0-100 scale), not the data's median, so a reader
+    can tell which side of "half" a cell sits on at a glance, not just how
+    dark it is."""
+    t = max(0.0, min(1.0, t))
+    low, mid, high = _hex_to_rgb(low_hex), _hex_to_rgb(mid_hex), _hex_to_rgb(high_hex)
+    if t <= 0.5:
+        frac = t / 0.5
+        rgb = tuple(lo + (m - lo) * frac for lo, m in zip(low, mid))
+    else:
+        frac = (t - 0.5) / 0.5
+        rgb = tuple(m + (hi - m) * frac for m, hi in zip(mid, high))
+    return _rgb_to_hex(rgb)
+
+
+def _relative_luminance(hex_color: str) -> float:
+    def chan(c: int) -> float:
+        c_norm = c / 255
+        return c_norm / 12.92 if c_norm <= 0.03928 else ((c_norm + 0.055) / 1.055) ** 2.4
+
+    r, g, b = (chan(c) for c in _hex_to_rgb(hex_color))
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def label_ink(bg_hex: str, ink: str = INK, paper: str = PAPER, threshold: float = 0.45) -> str:
+    """White or ink label color for text drawn on top of bg_hex, by relative
+    luminance. Replaces the old `t > 0.55` heatmap hack, which assumed the
+    ramp only got darker at one end - wrong for a diverging ramp, which is
+    dark at BOTH the low and high ends and light (white) in the middle."""
+    return paper if _relative_luminance(bg_hex) < threshold else ink

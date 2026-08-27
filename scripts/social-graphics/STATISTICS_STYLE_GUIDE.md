@@ -83,13 +83,18 @@ the site's Data Explorer, documented at
 That doc departs from this one on two points, both website-specific:
 
 - **Title wording.** Here (social), a title *may* be a short, punchy claim
-  when one fits ("America's Arianism problem") — that's a judgment call
-  per post, not a requirement every post needs a claim. On the website,
-  every chart's title is the survey statement itself, verbatim, neutral,
-  no claim attached, no exceptions — a reader there is checking what the
-  data says, not scrolling a feed. Don't pull "always neutral" back into
-  posts made from this guide, and don't treat "punchy is fine" as license
-  to editorialize a website chart.
+  when one fits ("America's Arianism problem") — that's a judgment call per
+  post, not a requirement every post needs a claim. On the website, a title
+  must be either the survey statement/item verbatim (a *measurement*
+  title) or a plain, verifiable-from-the-chart summary of the finding (a
+  *factual-summary* title) — spin, judgment words, and unplotted claims are
+  banned in both website modes, but a punchy line like "America's Arianism
+  problem" still isn't legal there (it's a judgment word, not a direction
+  word, and it isn't literally readable off a bar). See
+  `state-of-theology-graphics/STYLE.md`'s "Titles: accurate, not editorial"
+  for the full rule. Don't pull the website's spin ban back into posts made
+  from this guide, and don't treat "punchy is fine" as license to
+  editorialize a website chart.
 - **Background.** Here, `paper` is the cream `#F7F5F0`. On the website it's
   pure white. Everything else in the palette is shared between the two.
 

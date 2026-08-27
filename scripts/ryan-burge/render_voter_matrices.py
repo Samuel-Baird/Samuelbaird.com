@@ -5,15 +5,14 @@ political/social) and issue importance, all by religion (2017 wave).
 
 Reads only the three docs/datasets/ryan-burge/voter-*.json files (produced
 by scripts/ryan-burge/voter_matrices.py) - no number here is hand-typed.
-This is a new chart shape for this pipeline - a heatmap/small-multiples
-matrix, per the backlog item's own instruction ("one heatmap graphic, not
-N separate charts"): one row per target (the 7/9/23 things being rated),
-one column per religion group, each cell colored by a continuous single-hue
-ramp (the same light-to-dark blue anchors as the site's official ordinal
-ramp, `--chart-ordinal-1`/`--chart-ordinal-7`) and printing its own value -
+This is a heatmap/small-multiples matrix shape - one row per target (the
+7/9/23 things being rated), one column per religion group, each cell colored
+by a tri-color diverging ramp (low -> white -> high, semantically anchored
+per chart - see scripts/ryan-burge/STYLE.md) and printing its own value -
 matching this pipeline's "every mark carries its own printed label" rule
-even in a new chart shape. Same vertical-centering layout rule as the rest
-of the pipeline (see scripts/pew-rls/STYLE.md).
+even in a heatmap. Same vertical-centering layout rule as the rest of the
+pipeline (see scripts/pew-rls/STYLE.md), captions bottom-anchored via
+scripts/chart_style.py.
 
 Usage: see the three --*-out flags below; run with --help for the full list.
 """
@@ -22,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
@@ -29,19 +29,23 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import (  # noqa: E402
+    BORDER,
+    DIV_COOL_BLUE,
+    DIV_WARM_RED,
+    MIN,
+    diverging_color,
+    draw_caption_bottom,
+    label_ink,
+)
+
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-BORDER = "#D9D5CC"
 HIGHLIGHT_GROUP = "Mormon"
 
-# Light and dark anchors of the site's official ordinal ramp
-# (--chart-ordinal-1 / --chart-ordinal-7, light-mode values).
-RAMP_LOW = (0xE8, 0xEF, 0xF6)
-RAMP_HIGH = (0x0D, 0x27, 0x40)
-
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
-CAPTION_TOP = 0.11
 
 DEFAULT_FONTS_DIR = (
     Path(__file__).parent / ".." / "state-of-theology-graphics" / "fonts"
@@ -64,16 +68,8 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def cell_color(t: float) -> str:
-    """t in [0, 1] -> a hex color linearly interpolated between the ramp's
-    light and dark anchors."""
-    t = max(0.0, min(1.0, t))
-    rgb = tuple(round(lo + (hi - lo) * t) for lo, hi in zip(RAMP_LOW, RAMP_HIGH))
-    return f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}"
-
-
 def draw_title(fig, fonts, title: str, subtitle: str, width: int = 34,
-                title_fontsize: float = 24, subtitle_fontsize: float = 12.5) -> float:
+                title_fontsize: float = MIN.TITLE, subtitle_fontsize: float = MIN.SUBTITLE) -> float:
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
     title_top = 0.975
@@ -96,15 +92,48 @@ def render_heatmap(
     matrix: dict, row_order: list[str], col_order: list[str], value_min: float, value_max: float,
     unit: str, title: str, subtitle: str, note: str, out_path: Path,
     fonts: dict[str, fm.FontProperties],
+    low_color: str = DIV_COOL_BLUE, high_color: str = DIV_WARM_RED, mid_value: float | None = None,
 ) -> None:
+    """mid_value defaults to the scale's own midpoint ((value_min + value_max)
+    / 2) - the ramp's white point should be the scale's substantive midpoint,
+    not the data's median. See scripts/ryan-burge/STYLE.md for anchor-color
+    choice per chart."""
+    if mid_value is None:
+        mid_value = (value_min + value_max) / 2
+
+    def cell_color(val: float) -> str:
+        t = (val - value_min) / (value_max - value_min)
+        # Re-scale so mid_value lands exactly at t=0.5 on the diverging ramp,
+        # even when it isn't the arithmetic midpoint of [value_min, value_max].
+        mid_t = (mid_value - value_min) / (value_max - value_min)
+        if mid_t <= 0:
+            t = 0.5 + 0.5 * t
+        elif mid_t >= 1:
+            t = 0.5 * t
+        elif t <= mid_t:
+            t = 0.5 * (t / mid_t) if mid_t else 0.5
+        else:
+            t = 0.5 + 0.5 * (t - mid_t) / (1 - mid_t)
+        return diverging_color(t, low_color, high_color)
+
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    ax_top = subtitle_bottom - 0.025
-    ax_bottom = CAPTION_TOP + 0.02
 
-    ROW_LABEL_W = 0.30
+    source_paragraphs = [
+        note,
+        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via "
+        "Ryan Burge (github.com/ryanburge).",
+    ]
+    caption_top = draw_caption_bottom(
+        fig, fonts, source_paragraphs, left=0.045, wrap_width=118, fontsize=9, line_step=0.0145,
+    )
+
+    ax_top = subtitle_bottom - 0.025
+    ax_bottom = caption_top + 0.02
+
+    ROW_LABEL_W = 0.34
     AXES_LEFT, AXES_RIGHT = 0.045, 0.975
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_RIGHT - AXES_LEFT, ax_top - ax_bottom])
     ax.set_xlim(0, 1)
@@ -122,19 +151,23 @@ def render_heatmap(
     # upward from their anchor), then the grid itself.
     legend_h = 0.035
     legend_y0, legend_y1 = 1.0 - legend_h, 1.0
-    header_h = min(0.11, (1.0 - legend_h) / n_rows * 1.6)
+    header_h = min(0.13, (1.0 - legend_h) / n_rows * 1.8)
     header_gap = 0.018
     plot_top = legend_y0 - header_gap - header_h
 
     n_steps = 40
     for k in range(n_steps):
         x0 = grid_left + k * (grid_w / n_steps)
+        t = k / (n_steps - 1)
+        val = value_min + t * (value_max - value_min)
         ax.add_patch(Rectangle((x0, legend_y0), grid_w / n_steps + 0.001, legend_y1 - legend_y0,
-                                facecolor=cell_color(k / (n_steps - 1)), edgecolor="none", zorder=2))
-    ax.text(grid_left, legend_y1 + 0.004, f"{value_min:.0f}{unit}", ha="left", va="bottom",
-            fontproperties=fonts["regular"], fontsize=8.5, color=MUTED)
-    ax.text(grid_left + grid_w, legend_y1 + 0.004, f"{value_max:.0f}{unit}", ha="right", va="bottom",
-            fontproperties=fonts["regular"], fontsize=8.5, color=MUTED)
+                                facecolor=cell_color(val), edgecolor="none", zorder=2))
+    ax.text(grid_left, legend_y1 + 0.006, f"{value_min:.0f}{unit}", ha="left", va="bottom",
+            fontproperties=fonts["regular"], fontsize=MIN.LEGEND, color=MUTED)
+    ax.text(grid_left + grid_w / 2, legend_y1 + 0.006, f"{mid_value:.0f}{unit}", ha="center", va="bottom",
+            fontproperties=fonts["regular"], fontsize=MIN.LEGEND, color=MUTED)
+    ax.text(grid_left + grid_w, legend_y1 + 0.006, f"{value_max:.0f}{unit}", ha="right", va="bottom",
+            fontproperties=fonts["regular"], fontsize=MIN.LEGEND, color=MUTED)
 
     # Column headers (religion group names), rotated for narrow columns.
     for j, group in enumerate(col_order):
@@ -142,46 +175,29 @@ def render_heatmap(
         color = "#1f4f7a" if group == HIGHLIGHT_GROUP else INK
         ax.text(cx, plot_top + header_h, group, ha="right", va="top",
                 rotation=38, rotation_mode="anchor",
-                fontproperties=fonts["bold"], fontsize=9.5, color=color)
+                fontproperties=fonts["bold"], fontsize=MIN.HEATMAP_HEADER, color=color)
 
     for i, row_label in enumerate(row_order):
         y0 = plot_top - (i + 1) * (plot_top / n_rows)
         y1 = plot_top - i * (plot_top / n_rows)
         cell_h = y1 - y0
         ax.text(grid_left - 0.012, (y0 + y1) / 2, row_label, ha="right", va="center",
-                fontproperties=fonts["bold"], fontsize=9.5, color=INK)
+                fontproperties=fonts["bold"], fontsize=MIN.HEATMAP_HEADER, color=INK)
         for j, group in enumerate(col_order):
             x0 = grid_left + j * col_w
             val = matrix[group][row_label]
             if val is None:
-                fig_color = "#F2F0EA"
+                fig_color = PAPER
                 label = "n/a"
                 text_color = MUTED
             else:
-                t = (val - value_min) / (value_max - value_min)
-                fig_color = cell_color(t)
+                fig_color = cell_color(val)
                 label = f"{val:.0f}{unit}"
-                text_color = "#FFFFFF" if t > 0.55 else INK
+                text_color = label_ink(fig_color)
             ax.add_patch(Rectangle((x0, y0), col_w, cell_h, facecolor=fig_color,
-                                    edgecolor=PAPER, linewidth=1.2, zorder=2))
+                                    edgecolor=BORDER, linewidth=1.2, zorder=2))
             ax.text(x0 + col_w / 2, (y0 + y1) / 2, label, ha="center", va="center",
-                    fontproperties=fonts["bold"], fontsize=8.3, color=text_color, zorder=3)
-    ax.text(grid_left, legend_y1 + 0.006, f"{value_min:.0f}{unit}", ha="left", va="bottom",
-            fontproperties=fonts["regular"], fontsize=8.5, color=MUTED)
-    ax.text(grid_left + grid_w, legend_y1 + 0.006, f"{value_max:.0f}{unit}", ha="right", va="bottom",
-            fontproperties=fonts["regular"], fontsize=8.5, color=MUTED)
-
-    source_paragraphs = [
-        note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via "
-        "Ryan Burge (github.com/ryanburge).",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=118)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.045, CAPTION_TOP - i * 0.0145, line, fontproperties=fonts["regular"],
-            fontsize=9, color=MUTED, ha="left", va="top",
-        )
+                    fontproperties=fonts["bold"], fontsize=MIN.HEATMAP_CELL, color=text_color, zorder=3)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
@@ -211,12 +227,15 @@ def main() -> None:
 
     excluded_note = "Too thin to show individually: " + ", ".join(racial["excluded_too_thin"].values()) + "."
 
+    # Feeling thermometers: the thermometer's own cold/warm metaphor - fully
+    # colorblind-safe since it doesn't depend on red/green discrimination.
     render_heatmap(
         racial["matrix"], racial["target_order"], racial["group_order"], 0, 100, "",
         title="Feeling thermometers: racial and religious groups, by religion",
         subtitle="0 = coldest/most unfavorable, 100 = warmest/most favorable. Weighted means.",
         note=f"Population: religpew_2017, weighted by weight_2017. {excluded_note}",
         out_path=args.racial_out, fonts=fonts,
+        low_color=DIV_COOL_BLUE, high_color=DIV_WARM_RED,
     )
     render_heatmap(
         political["matrix"], political["target_order"], political["group_order"], 0, 100, "",
@@ -224,13 +243,17 @@ def main() -> None:
         subtitle="0 = coldest/most unfavorable, 100 = warmest/most favorable. Weighted means.",
         note=f"Population: religpew_2017, weighted by weight_2017. {excluded_note}",
         out_path=args.political_out, fonts=fonts,
+        low_color=DIV_COOL_BLUE, high_color=DIV_WARM_RED,
     )
+    # Issue importance: non-valenced intensity ("how much"), not a value
+    # judgment - stays on the neutral blue-red ramp rather than green/red.
     render_heatmap(
         imiss["matrix"], imiss["target_order"], imiss["group_order"], 0, 100, "%",
         title="Issue importance, by religion",
         subtitle="Share saying very or somewhat important (top-two-box).",
         note=f"Population: religpew_2017, weighted by weight_2017. {excluded_note}",
         out_path=args.imiss_out, fonts=fonts,
+        low_color=DIV_COOL_BLUE, high_color=DIV_WARM_RED,
     )
 
 

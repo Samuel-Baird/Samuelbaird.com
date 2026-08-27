@@ -20,12 +20,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -101,10 +105,9 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
     return subtitle_y - subtitle_lines * subtitle_line_height
 
 
-CAPTION_TOP = 0.14
-
-
-def _draw_caption(fig, fonts, total_n: int, note: str) -> None:
+def _draw_caption(fig, fonts, total_n: int, note: str) -> float:
+    """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
+    section. Returns caption_top for the vertical-centering contract."""
     source_paragraphs = [
         note,
         f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
@@ -112,12 +115,7 @@ def _draw_caption(fig, fonts, total_n: int, note: str) -> None:
         "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
         "doi: 10.58094/3kwb-bf52.",
     ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
+    return draw_caption_bottom(fig, fonts, source_paragraphs)
 
 
 def render_magnitude_bar(
@@ -128,10 +126,12 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
-    # subtitle and the caption, not a fixed guess - see STYLE.md.
+    # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03
+    ax_bottom = caption_top + 0.03
 
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -151,14 +151,12 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(12)
+        tick_label.set_fontsize(MIN.AXIS_LABEL)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
-                 color=c, fontproperties=fonts["bold"], fontsize=12.5, zorder=4)
-
-    _draw_caption(fig, fonts, total_n, note)
+                 color=c, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
@@ -178,10 +176,12 @@ def render_paired_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering, same approach as render_magnitude_bar above, with
-    # extra top room reserved for the legend row above the axes.
+    # extra top room reserved for the legend row above the axes. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03 - 0.045
-    ax_bottom = CAPTION_TOP + 0.03
+    ax_bottom = caption_top + 0.03
 
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -205,12 +205,12 @@ def render_paired_bar(
         ax.barh(y + bar_h / 2 + 0.02, hv, height=bar_h, color=ACCENT, zorder=3)
         ax.barh(y - bar_h / 2 - 0.02, hl, height=bar_h, color=HONEY, zorder=3)
         ax.text(hv + max_val * 0.02, y + bar_h / 2 + 0.02, f"{hv:.0f}%", va="center", ha="left",
-                 color=ACCENT, fontproperties=fonts["bold"], fontsize=10.5, zorder=4)
+                 color=ACCENT, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         ax.text(hl + max_val * 0.02, y - bar_h / 2 - 0.02, f"{hl:.0f}%", va="center", ha="left",
-                 color=HONEY, fontproperties=fonts["bold"], fontsize=10.5, zorder=4)
+                 color=HONEY, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         label_color = ACCENT if g == HIGHLIGHT_GROUP else INK
         ax.text(-max_val * 0.02, y, g, va="center", ha="right",
-                 color=label_color, fontproperties=fonts["bold"], fontsize=12, zorder=4)
+                 color=label_color, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
 
     handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label="Heaven"),
                mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label="Hell")]
@@ -221,8 +221,6 @@ def render_paired_bar(
     )
     for text in legend.get_texts():
         text.set_color(INK)
-
-    _draw_caption(fig, fonts, total_n, note)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

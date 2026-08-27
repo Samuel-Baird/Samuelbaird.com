@@ -20,11 +20,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see scripts/pew-rls/STYLE.md. Keep this block in sync.
@@ -76,8 +80,21 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
+    # bottom-anchored" section - so the axes can reclaim whatever space the
+    # caption doesn't use.
+    source_paragraphs = [
+        "Cooperative Congressional Election Study (CCES/CES) common content, 2006-2018, "
+        "via Ryan Burge (github.com/ryanburge).",
+        "Unweighted - this extract carries no survey weight column. Jewish aggregates "
+        "five denominational rows in the source file, which has no single unified "
+        "\"Jewish\" category.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    ax_bottom = caption_top + 0.03 + 0.045  # + a wave-year tick-label row
+
     AXES_LEFT, AXES_WIDTH = 0.115, 0.62
-    ax = fig.add_axes([AXES_LEFT, 0.36, AXES_WIDTH, 0.42])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, 0.36 + 0.42 - ax_bottom])
     ax.set_facecolor(PAPER)
     for spine in ax.spines.values():
         spine.set_visible(False)
@@ -94,7 +111,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     ax.set_yticklabels([f"{t:+g}" if t != 0 else "0" for t in yticks])
     for label in ax.get_yticklabels():
         label.set_fontproperties(fonts["regular"])
-        label.set_fontsize(11)
+        label.set_fontsize(MIN.AXIS_LABEL)
         label.set_color(MUTED)
     ax.tick_params(axis="y", length=0, pad=8)
     ax.set_xticks([])
@@ -161,7 +178,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # tenths of each other at the last wave (Latter-day Saint vs. Southern
     # Baptist, 2018: 0.99 vs. 0.85) and would otherwise overlap. The marker
     # itself always stays at the real value - only the printed label moves.
-    MIN_GAP = 0.34
+    MIN_GAP = 0.38  # widened slightly for the larger end-of-line label font size
     end_labels.sort(key=lambda d: d["value"], reverse=True)
     end_labels[0]["label_y"] = end_labels[0]["value"]
     for i in range(1, len(end_labels)):
@@ -173,7 +190,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
             d["text"], xy=(d["year"], d["value"]), xytext=(label_x, d["label_y"]),
             textcoords="data", va="center", ha="left",
             color=d["color"], alpha=d["alpha"],
-            fontproperties=fonts["bold"], fontsize=12.5, zorder=6,
+            fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=6,
         )
         # Thin leader from the real endpoint to the (possibly nudged) label,
         # only drawn when the label actually moved - an unmoved label needs
@@ -186,7 +203,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     tick_y = -3 - 0.16
     for yr in waves:
         ax.text(yr, tick_y, str(yr), ha="center", va="top",
-                 fontproperties=fonts["regular"], fontsize=10.5, color=MUTED)
+                 fontproperties=fonts["regular"], fontsize=MIN.AXIS_LABEL, color=MUTED)
 
     # --- Title / subtitle -------------------------------------------------
     title_fontsize = 28
@@ -200,22 +217,6 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         "across seven federal election cycles.",
         fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
     )
-
-    # --- Caption ------------------------------------------------------------
-    source_paragraphs = [
-        "Cooperative Congressional Election Study (CCES/CES) common content, 2006-2018, "
-        "via Ryan Burge (github.com/ryanburge).",
-        "Unweighted - this extract carries no survey weight column. Jewish aggregates "
-        "five denominational rows in the source file, which has no single unified "
-        "\"Jewish\" category.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    caption_y = 0.185
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

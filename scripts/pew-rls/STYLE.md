@@ -4,7 +4,9 @@ Shares the website graphics system established in
 [`../state-of-theology-graphics/STYLE.md`](../state-of-theology-graphics/STYLE.md) —
 same canvas (1080×1350, white background), same fonts (Roboto Slab Bold
 titles, Roboto Condensed everything else, loaded from that folder's
-`fonts/`), same "neutral, not editorial" title rule, same
+`fonts/`), same "accurate, not editorial" title rule, same bottom-anchored
+caption and mobile font floors (via
+[`scripts/chart_style.py`](../chart_style.py)), same
 `/data-explorer/<slug>/graphics` gallery wiring. This file only documents
 what's genuinely new for this dataset's charts.
 
@@ -190,8 +192,12 @@ function:
    `subtitle_fontsize * 1.2 / 72 / FIG_H_IN` per line (matplotlib's default
    linespacing, converted from points to figure-fraction units) times its
    line count.
-2. `caption_top` is already a known constant (the `fig.text()` y-position
-   the caption's first line is drawn at).
+2. `caption_top = chart_style.draw_caption_bottom(...)` — since the caption
+   itself is now bottom-anchored (see the parent doc's "Footnotes:
+   bottom-anchored" section) rather than drawn from a fixed constant,
+   `caption_top` is no longer a known constant either: it's the return
+   value of that call, which depends on how many lines the caption actually
+   wrapped to. Call `draw_caption_bottom` *before* laying out the axes.
 3. The axes' top and bottom are `subtitle_bottom - TOP_GAP` and
    `caption_top + BOTTOM_GAP` (`TOP_GAP`/`BOTTOM_GAP` ≈ 0.03-0.04, a small
    fixed breathing margin) — the axes' height is whatever's left between
@@ -200,8 +206,10 @@ function:
 Because the axes now always fill the true available band, the bars inside
 it (via matplotlib's own `ax.margins()`) land vertically centered with
 consistent space above (below the subtitle) and below (above the caption)
-regardless of how many rows a given chart has or how long its title
-wrapped to. A short-titled 7-row chart and a long-titled 14-row chart both
-get a properly centered, evenly-spaced plot band — the number of rows
-changes how tall each bar is, not where the whole block sits on the
-canvas.
+regardless of how many rows a given chart has, how long its title wrapped
+to, or how many lines its own caption needed. A short-titled 7-row chart, a
+long-titled 14-row chart, and a chart with an unusually short caption all
+get a properly centered, evenly-spaced plot band that uses all the room the
+caption doesn't need — the plot band now genuinely grows when the caption
+is short, which is the point of moving the caption to a bottom anchor in
+the first place.

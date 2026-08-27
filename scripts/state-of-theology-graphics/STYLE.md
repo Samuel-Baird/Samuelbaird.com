@@ -27,7 +27,10 @@ This doc is a distillation of two sources: the established R scripts —
 and [`state_of_theology_groups.R`](../social-graphics/state_of_theology_groups.R) —
 and `STATISTICS_STYLE_GUIDE.md` itself, adapted for the website's own title
 rule. If you change the shared palette or type, update `STATISTICS_STYLE_GUIDE.md`,
-this file, and `render_chart.py` together — an undocumented style isn't a
+this file, [`scripts/ryan-burge/STYLE.md`](../ryan-burge/STYLE.md), and
+[`scripts/chart_style.py`](../chart_style.py) (captions, mobile font floors,
+heatmap gradients — the pieces every dataset folder now imports rather than
+copy-pasting) together with `render_chart.py` — an undocumented style isn't a
 style, it's a one-off.
 
 ## Format
@@ -73,6 +76,19 @@ it again, but don't use it for anything else.
 Evangelical color, bold — not muted, it's the one caption element meant to
 stand out.
 
+**Bar-color distinctness.** When one chart uses more than one bar hue, every
+hue must come from a documented palette — the identity palette above, the
+pew-rls rate tokens, or evenly-spaced picks from the site's 7-step ordinal
+ramp (`--chart-ordinal-1..7`) — never adjacent ramp steps assigned to
+adjacent segments, which reads as one smeared gradient rather than distinct
+categories. Cap of 4 non-gray hues per chart, matching
+[`docs/CHARTS.md`](../../docs/CHARTS.md)'s `MAX_SERIES`; context/gray bars
+(the highlight-vs-gray convention) don't count against that cap. Any
+same-hue light/dark pairing (like the decline chart's confident/uncertain
+tones below) must clear the 60%-tint precedent: at least 3:1 non-text
+contrast against white, and a lightness difference obvious without relying
+on hue discrimination.
+
 ## Typography
 
 - **Titles**: Roboto Slab, Bold. Nothing else uses this family — it's the
@@ -88,38 +104,49 @@ to `render_chart.py` for the Python path. The R path expects the same
 families installed as system fonts (`ragg`/`systemfonts` discover them from
 the OS, not from a bundled file).
 
-## Titles: neutral, not editorial
+## Titles: accurate, not editorial
 
-**The title is the survey statement itself, verbatim, in quotes — nothing
-else.** Not "A majority also deny the Trinity." Not any other line that
-tells the reader what to conclude before they've seen a bar. Set it large
-and prominent (it's the biggest thing on the chart, per Composition below)
-but let it be neutral: the reader should be able to look at the title and
-the bars and reach their own read, not be handed one.
+A title must do one of two jobs, and nothing else:
 
-This is the one deliberate departure from `STATISTICS_STYLE_GUIDE.md`'s social
-style. The two guides aren't the same rule applied twice:
+- **Measurement title** — what the data measures: the survey statement
+  verbatim in quotes (`"The Bible is 100% accurate in all that it
+  teaches"`), or a neutral description of the item ("Prayer frequency",
+  "Attendance frequency, full distribution").
+- **Factual-summary title** — a plain statement of what the chart shows,
+  readable as true directly off a printed number on the chart itself
+  ("Latter-day Saints report the highest weekly attendance", "Most
+  traditions have lost more members than they gained").
 
-- **Website (this doc): always neutral.** Every chart here is titled with
-  the bare statement. No exceptions — a reader is here to check what the
-  data says, not to be pulled through a feed.
-- **Social (`STATISTICS_STYLE_GUIDE.md`): title is a judgment call.** A post
-  may use a punchy or clever line ("America's Arianism problem") when one
-  fits, or may not — it's not a rule that every post needs a claim, just
-  that the option is open there in a way it deliberately isn't here.
+**Both are equally house style.** What's still banned is spin. A
+factual-summary title must clear all three:
 
-Don't port the punchy convention into this doc's charts (it's specifically
-not allowed here), and don't treat "always neutral" as something the social
-side owes either — they're two different jobs.
+1. **Verifiable from a value label already on the chart** — no outside
+   knowledge required to confirm it's true.
+2. **Direction words, not judgment words.** "Highest", "fewest", "more than
+   half" are fine; "problem", "collapse", "surge", "alarming" are not — those
+   hand the reader a conclusion the chart itself doesn't establish.
+3. **No unplotted cause, motive, or trend.** A title can say what a chart
+   shows; it can't say why, or what happens next, unless that's also a
+   plotted value.
+
+"America's Arianism problem" stays a social-only title (a judgment word, and
+not literally readable off a bar). "A majority of evangelicals deny the
+Trinity" is a legal website title *if and only if* the chart's own printed
+value shows that majority.
+
+This is a loosened version of this doc's former "always neutral" rule.
+`STATISTICS_STYLE_GUIDE.md`'s social style is unchanged and still keeps its
+own latitude to be punchier than either mode here — see that doc for the
+social title rule.
 
 ## Composition
 
 Every chart:
 
-1. **Title** — top-left, Roboto Slab Bold, ink, the survey statement
-   verbatim in quotes (see above). This is the largest, most prominent
-   text on the chart — it IS the headline, there's no separate one above
-   it. Wrap it across as many lines as it needs.
+1. **Title** — top-left, Roboto Slab Bold, ink, per "Titles: accurate, not
+   editorial" above. This is the largest, most prominent text on the chart —
+   it IS the headline, there's no separate one above it. Wrap it across as
+   many lines as it needs.
 2. **Subtitle**, one line, Roboto Condensed, muted, directly under the
    title: "Share who strongly agree or somewhat agree, {year}." Always
    *agree* — measuring the same direction on every chart is itself part of
@@ -138,7 +165,9 @@ Every chart:
      bars, one pair (Evangelical, All U.S. adults) per year, light
      horizontal gridlines only (`grid` token, thin), x-axis category labels
      bold ink.
-4. **Caption**, bottom-left, small (≈11.5pt), muted, left-aligned:
+4. **Caption**, bottom-anchored (see "Footnotes" below), small (≈10-11.5pt,
+   exempt from the mobile floors below — fine print is allowed to stay fine
+   print), muted, left-aligned:
    - Sponsor/fielder line: "The State of Theology survey · sponsored by
      Ligonier Ministries, conducted by Lifeway Research"
    - What "group" means for that chart (by-tradition charts: "Groups are
@@ -148,7 +177,54 @@ Every chart:
    - `@ithinkisam`, bold, amber
 
 No drop shadows, no gradients, no 3D, no rounded bar corners — flat fills
-only.
+only. (Heatmap ramps are the one sanctioned exception to "no gradients" — see
+[`scripts/ryan-burge/STYLE.md`](../ryan-burge/STYLE.md) — and even there the
+ramp is stepped per-cell, not a true continuous gradient fill.)
+
+## Footnotes: bottom-anchored
+
+The caption block anchors to the very bottom of the canvas — its lowest
+line (the `@ithinkisam` handle, where present, otherwise the last source
+line) sits at `y = 0.030`, with every line above it stacked upward. This
+replaces the old pattern of a hardcoded `CAPTION_TOP` constant that the
+caption was drawn downward from regardless of how much text it actually
+had. Whatever vertical space the caption doesn't use belongs to the chart
+above it — a short caption should mean a taller chart, not empty space.
+
+Use [`chart_style.draw_caption_bottom(...)`](../chart_style.py) rather than
+hand-rolling this. Its return value is the caption's actual top edge, which
+feeds directly into the "vertical layout: centering the plot band" rule
+(`scripts/pew-rls/STYLE.md`) as `caption_top` — call it *before* laying out
+the chart's own axes. Caption grammar (sponsor line, population note, N,
+handle) is unchanged; only its position and how that position is computed
+changed.
+
+## At-a-glance legibility and mobile floors
+
+These images are read most often on a phone: a 1080px PNG renders at
+roughly 335 CSS px in the `/graphics` gallery, about 1/3 scale. Every text
+element that carries data has to survive that scale-down, or the chart
+stops making sense at a glance — which defeats the point of a chart. Minimum
+sizes at this pipeline's canvas (1080×1350px, dpi 120, so 1pt ≈ 1.67px):
+
+| Element | Floor |
+|---|---|
+| Title (Roboto Slab Bold) | 24pt |
+| Subtitle | 12.5pt |
+| Value/data labels (bold) | 13pt |
+| Axis / category / row / column labels (bold) | 12pt |
+| Heatmap cell values (bold) | 12.5pt |
+| Legend labels | 12pt |
+| Footnotes/captions | exempt — 9-10.5pt as today |
+
+These floors live in [`scripts/chart_style.py`](../chart_style.py) as `MIN`.
+A render script may go bigger than a floor, never smaller. If content can't
+fit at the floor — a heatmap with too many rows, a label with too many
+words — that's a sign the chart is too dense for one image, not a reason to
+shrink text past the point a phone screen can show it. Split the chart
+before you shrink the type. This doc's existing "suppress a label once it
+can't fit" rule (via `docs/CHARTS.md`) now has a number attached to what
+"can't fit" means.
 
 ## Where graphics live on the website
 

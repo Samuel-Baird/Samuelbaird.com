@@ -22,12 +22,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -46,8 +50,6 @@ DEFAULT_DATA_JSON = (
 DEFAULT_FONTS_DIR = (
     Path(__file__).parent / ".." / "state-of-theology-graphics" / "fonts"
 ).resolve()
-
-CAPTION_TOP = 0.135
 
 
 def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
@@ -105,8 +107,16 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     subtitle = ("3-category party ID (Democrat/Independent/Republican,\n"
                 "leaners folded in) among Latter-day Saints, by gender and wave.")
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    source_paragraphs = [
+        "Population: Latter-day Saints (trad == \"Mormon\"), by gender, across all eight "
+        "CES/CCES waves. pid7 collapsed to 3 categories (see pid_by_gender.py's own "
+        "design-decision note).",
+        "Ryan Burge (github.com/ryanburge), CES stacked 2006-2018 common content extract.",
+        "Unweighted - this extract carries no survey weight column.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03 + 0.05  # extra room for the legend below the axes
+    ax_bottom = caption_top + 0.03 + 0.05  # extra room for the legend below the axes
 
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -127,16 +137,16 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         ax.barh(rows, vals, left=left, height=0.72, color=color,
                 edgecolor=PAPER, linewidth=1.2, zorder=3)
         for r, v, l in zip(rows, vals, left):
-            if v >= 8:
+            if v >= 9:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(l + v / 2, r, f"{v:.0f}%", va="center", ha="center",
-                        color=TEXT_ON_FILL, fontproperties=fonts["bold"], fontsize=10, zorder=4)
+                        color=TEXT_ON_FILL, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         left = [l + v for l, v in zip(left, vals)]
 
     ax.set_xlim(0, 100)
     ax.margins(y=0.015)
     for tick_label, r, k in zip(ax.get_yticklabels(), rows, keys):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(10.5)
+        tick_label.set_fontsize(MIN.AXIS_LABEL)
         tick_label.set_color(INK)
 
     # A thin divider between each year's two rows, drawn at the boundary
@@ -152,20 +162,6 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     )
     for text in legend.get_texts():
         text.set_color(INK)
-
-    source_paragraphs = [
-        "Population: Latter-day Saints (trad == \"Mormon\"), by gender, across all eight "
-        "CES/CCES waves. pid7 collapsed to 3 categories (see pid_by_gender.py's own "
-        "design-decision note).",
-        "Ryan Burge (github.com/ryanburge), CES stacked 2006-2018 common content extract.",
-        "Unweighted - this extract carries no survey weight column.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

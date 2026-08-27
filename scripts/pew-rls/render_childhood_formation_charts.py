@@ -24,12 +24,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -114,7 +118,9 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
     return subtitle_y - subtitle_lines * subtitle_line_height
 
 
-def draw_caption(fig, fonts, total_n: int, extra_note: str | None, top_y: float) -> None:
+def draw_caption(fig, fonts, total_n: int, extra_note: str | None) -> float:
+    """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
+    section. Returns caption_top for the vertical-centering contract."""
     source_paragraphs = [
         f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
         f"N = {total_n:,} U.S. adults raised Christian",
@@ -123,12 +129,7 @@ def draw_caption(fig, fonts, total_n: int, extra_note: str | None, top_y: float)
     ]
     if extra_note:
         source_paragraphs.insert(0, extra_note)
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, top_y - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
+    return draw_caption_bottom(fig, fonts, source_paragraphs)
 
 
 def render_magnitude_bar(
@@ -139,9 +140,10 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
-    # subtitle and the caption, not a fixed guess - see STYLE.md.
-    caption_top = 0.185
+    # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note)
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035
 
@@ -170,8 +172,6 @@ def render_magnitude_bar(
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
                  color=c, fontproperties=fonts["bold"], fontsize=15, zorder=4)
 
-    draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note, caption_top)
-
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
     plt.close(fig)
@@ -187,8 +187,8 @@ def render_education_stack(
 
     # Vertical centering, same approach as render_magnitude_bar above, with
     # extra bottom room reserved for the legend row below the axes.
-    caption_top = 0.185
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note)
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035 + 0.05
 
@@ -232,8 +232,6 @@ def render_education_stack(
     )
     for text in legend.get_texts():
         text.set_color(INK)
-
-    draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note, caption_top)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

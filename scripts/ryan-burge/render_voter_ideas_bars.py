@@ -14,11 +14,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -28,7 +32,6 @@ CONTEXT_GRAY = "#8f8b82"
 HIGHLIGHT_GROUP = "Mormon"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
-CAPTION_TOP = 0.16
 
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "ryan-burge" / "voter-ideas-bars.json"
@@ -82,8 +85,14 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    source_paragraphs = [
+        note,
+        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2016 wave), via Ryan "
+        "Burge (github.com/ryanburge).",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03
+    ax_bottom = caption_top + 0.03
 
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -103,24 +112,12 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(13)
+        tick_label.set_fontsize(MIN.AXIS_LABEL)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
                  color=c, fontproperties=fonts["bold"], fontsize=14, zorder=4)
-
-    source_paragraphs = [
-        note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2016 wave), via Ryan "
-        "Burge (github.com/ryanburge).",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

@@ -20,11 +20,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -98,9 +102,17 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
-    # subtitle and the caption, not a fixed guess - see STYLE.md.
-    caption_top = 0.185
+    # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    source_paragraphs = [
+        "Population: Christian only.",
+        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
+        f"N = {total_n:,} U.S. adults",
+        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
+        "doi: 10.58094/3kwb-bf52.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035
 
@@ -128,20 +140,6 @@ def render_magnitude_bar(
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
                  color=c, fontproperties=fonts["bold"], fontsize=15, zorder=4)
-
-    source_paragraphs = [
-        "Population: Christian only.",
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, caption_top - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

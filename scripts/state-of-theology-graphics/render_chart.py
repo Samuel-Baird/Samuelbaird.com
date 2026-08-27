@@ -33,11 +33,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -131,6 +135,19 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     fig.patch.set_facecolor(PAPER)
     ax.set_facecolor(PAPER)
 
+    # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
+    # bottom-anchored" section - so subplots_adjust's `bottom` below can use
+    # its real top edge instead of a fixed guess.
+    source_lines = [
+        SPONSOR_LINE,
+        GROUP_MEANING_LINE,
+        WAVE_METHODOLOGY.get(year, "National online panel · methodology not yet on file for this wave"),
+    ]
+    caption_top = draw_caption_bottom(
+        fig, fonts, source_lines, left=0.065, fontsize=10.5, line_step=0.021,
+        handle=HANDLE, handle_color=PALETTE["Evangelical"],
+    )
+
     bar_height = 0.62
     ax.barh(groups, pcts, height=bar_height, color=colors, zorder=3)
     ax.margins(y=0.06)
@@ -172,7 +189,7 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
 
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.01
 
-    fig.subplots_adjust(left=0.30, right=0.94, top=subtitle_y - 0.055, bottom=0.24)
+    fig.subplots_adjust(left=0.30, right=0.94, top=subtitle_y - 0.055, bottom=caption_top + 0.045)
 
     for i, line in enumerate(title_lines):
         fig.text(
@@ -186,24 +203,6 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         f"Share who strongly agree or somewhat agree, {year}",
         fontproperties=fonts["regular"], fontsize=15, color=MUTED,
         ha="left", va="top",
-    )
-
-    # Caption block: source lines (muted) + handle (amber bold), bottom-left.
-    source_lines = [
-        SPONSOR_LINE,
-        GROUP_MEANING_LINE,
-        WAVE_METHODOLOGY.get(year, "National online panel · methodology not yet on file for this wave"),
-    ]
-    caption_y = 0.105
-    for i, line in enumerate(source_lines):
-        fig.text(
-            0.065, caption_y - i * 0.021, line, fontproperties=fonts["regular"],
-            fontsize=10.5, color=MUTED, ha="left", va="top",
-        )
-    fig.text(
-        0.065, caption_y - len(source_lines) * 0.021 - 0.01, HANDLE,
-        fontproperties=fonts["bold"], fontsize=10.5,
-        color=PALETTE["Evangelical"], ha="left", va="top",
     )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

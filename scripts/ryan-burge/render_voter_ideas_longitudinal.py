@@ -22,12 +22,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -41,7 +45,6 @@ CONTEXT_ALPHA = 0.55
 HIGHLIGHT_GROUP = "Mormon"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
-CAPTION_TOP = 0.155
 
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "ryan-burge" / "voter-ideas-longitudinal.json"
@@ -89,18 +92,15 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
     return subtitle_y - subtitle_lines * subtitle_line_height
 
 
-def draw_caption(fig, fonts, note: str) -> None:
+def draw_caption(fig, fonts, note: str) -> float:
+    """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
+    section. Returns caption_top for the vertical-centering contract."""
     source_paragraphs = [
         note,
         "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge "
         "(github.com/ryanburge).",
     ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, CAPTION_TOP - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
+    return draw_caption_bottom(fig, fonts, source_paragraphs)
 
 
 def render_line_chart(
@@ -116,9 +116,10 @@ def render_line_chart(
     # labels, drawn as their own fig.text() row rather than inside the
     # axes' data coordinates (keeps them out of the axes' own y-limits).
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption(fig, fonts, note)
     tick_row_h = 0.045
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = CAPTION_TOP + 0.03 + tick_row_h
+    ax_bottom = caption_top + 0.03 + tick_row_h
 
     AXES_LEFT, AXES_WIDTH = 0.09, 0.62
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -136,7 +137,7 @@ def render_line_chart(
     ax.set_yticklabels([f"{t}%" for t in yticks])
     for label in ax.get_yticklabels():
         label.set_fontproperties(fonts["regular"])
-        label.set_fontsize(11)
+        label.set_fontsize(MIN.AXIS_LABEL)
         label.set_color(MUTED)
     ax.tick_params(axis="y", length=0, pad=8)
     ax.set_xticks([])
@@ -181,7 +182,7 @@ def render_line_chart(
             "color": paint if highlight else INK, "alpha": 1.0 if highlight else 0.85,
         })
 
-    MIN_GAP = 4.2
+    MIN_GAP = 4.8  # widened slightly for the larger end-of-line label font size
     end_labels.sort(key=lambda d: d["value"], reverse=True)
     end_labels[0]["label_y"] = end_labels[0]["value"]
     for i in range(1, len(end_labels)):
@@ -193,7 +194,7 @@ def render_line_chart(
             d["text"], xy=(d["year"], d["value"]), xytext=(label_x, d["label_y"]),
             textcoords="data", va="center", ha="left",
             color=d["color"], alpha=d["alpha"],
-            fontproperties=fonts["bold"], fontsize=11.5, zorder=6,
+            fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=6,
         )
         if abs(d["label_y"] - d["value"]) > 1e-6:
             ax.plot([d["year"] + span * 0.015, label_x - span * 0.01], [d["value"], d["label_y"]],
@@ -208,9 +209,7 @@ def render_line_chart(
         label_text = tick_labels.get(yr, str(yr))
         xfrac = AXES_LEFT + (yr - xmin) / (xmax - xmin) * AXES_WIDTH
         fig.text(xfrac, tick_y, label_text, ha="center", va="top",
-                 fontproperties=fonts["regular"], fontsize=10.5, color=MUTED)
-
-    draw_caption(fig, fonts, note)
+                 fontproperties=fonts["regular"], fontsize=MIN.AXIS_LABEL, color=MUTED)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
@@ -226,8 +225,9 @@ def render_paired_bar(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption(fig, fonts, note)
     ax_top = subtitle_bottom - 0.04
-    ax_bottom = CAPTION_TOP + 0.03
+    ax_bottom = caption_top + 0.03
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
@@ -250,14 +250,14 @@ def render_paired_bar(
         if av is not None:
             ax.barh(y + bar_h / 2 + 0.02, av, height=bar_h, color=ACCENT, zorder=3)
             ax.text(av + max_val * 0.02, y + bar_h / 2 + 0.02, f"{av:.0f}%", va="center", ha="left",
-                     color=ACCENT, fontproperties=fonts["bold"], fontsize=10.5, zorder=4)
+                     color=ACCENT, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         if bv is not None:
             ax.barh(y - bar_h / 2 - 0.02, bv, height=bar_h, color=HONEY, zorder=3)
             ax.text(bv + max_val * 0.02, y - bar_h / 2 - 0.02, f"{bv:.0f}%", va="center", ha="left",
-                     color=HONEY, fontproperties=fonts["bold"], fontsize=10.5, zorder=4)
+                     color=HONEY, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         label_color = ACCENT if g == HIGHLIGHT_GROUP else INK
         ax.text(-max_val * 0.02, y, g, va="center", ha="right",
-                 color=label_color, fontproperties=fonts["bold"], fontsize=12, zorder=4)
+                 color=label_color, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
 
     handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label=label_a),
                mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label=label_b)]
@@ -268,8 +268,6 @@ def render_paired_bar(
     )
     for text in legend.get_texts():
         text.set_color(INK)
-
-    draw_caption(fig, fonts, note)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

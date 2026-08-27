@@ -18,12 +18,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -94,8 +98,23 @@ def render_panel(
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Caption drawn first (bottom-anchored) so its real top edge is known
+    # before the axes/legend/denominator-note stack above it is placed - see
+    # STYLE.md's "Footnotes: bottom-anchored" section. The relative spacing
+    # between caption -> denominator note -> axes bottom is preserved from
+    # the old fixed layout; only the anchor point moved.
+    source_paragraphs = [
+        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
+        f"N = {total_unweighted_n:,} U.S. adults",
+        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
+        "doi: 10.58094/3kwb-bf52.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    denom_note_y = caption_top + 0.06
+    ax_bottom = denom_note_y + 0.10
+
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
-    ax = fig.add_axes([AXES_LEFT, 0.32, AXES_WIDTH, 0.48])
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, 0.32 + 0.48 - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
     for spine in ax.spines.values():
@@ -136,7 +155,7 @@ def render_panel(
         text.set_color(INK)
 
     fig.text(
-        AXES_LEFT, 0.245, denominator_note,
+        AXES_LEFT, denom_note_y, denominator_note,
         fontproperties=fonts["regular"], fontsize=10, color=MUTED, ha="left", va="top",
     )
 
@@ -159,21 +178,6 @@ def render_panel(
         0.065, subtitle_y, "\n".join(subtitle_lines),
         fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
     )
-
-    # --- Caption ------------------------------------------------------------
-    source_paragraphs = [
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_unweighted_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    caption_y = 0.185
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

@@ -17,42 +17,59 @@ import argparse
 import json
 from pathlib import Path
 
-from render_voter_matrices import DEFAULT_FONTS_DIR, load_fonts, render_heatmap
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import DIV_COOL_BLUE, DIV_NEG_RED, DIV_POS_GREEN, DIV_WARM_RED  # noqa: E402
+
+from render_voter_matrices import DEFAULT_FONTS_DIR, load_fonts, render_heatmap  # noqa: E402
 
 DEFAULT_DATA_DIR = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "ryan-burge"
 ).resolve()
 
-# (json stem, output filename, title, subtitle, value_min, value_max, unit)
+NEUTRAL = (DIV_COOL_BLUE, DIV_WARM_RED)  # intensity/support share - not a value judgment
+NEGATIVE_HIGH = (DIV_POS_GREEN, DIV_NEG_RED)  # agreeing IS the negative view
+POSITIVE_HIGH = (DIV_NEG_RED, DIV_POS_GREEN)  # high = the pro/positive view per the subtitle
+
+# (json stem, output filename, title, subtitle, value_min, value_max, unit, (low_color, high_color))
+# Ramp choice follows scripts/ryan-burge/STYLE.md's "Per-chart anchor
+# assignment" table - keep the two in sync.
 CHARTS = [
+    # NEUTRAL, not NEGATIVE_HIGH: this battery mixes regressive-worded items
+    # ("Women should return to traditional roles") with items where agreeing
+    # is the sympathetic-to-equality response ("Women miss out on jobs due
+    # to discrimination", "opportunities for women have improved") - a
+    # single agree=negative ramp would color those rows backwards. See
+    # scripts/ryan-burge/STYLE.md.
     ("voter-ideas-sexism", "idea-sexism.png",
      "Gender-role attitudes, by religion",
-     "Share who strongly or somewhat agree with each statement (2016 wave).", 0, 100, "%"),
+     "Share who strongly or somewhat agree with each statement (2016 wave).", 0, 100, "%", NEUTRAL),
     ("voter-ideas-muslim-distrust", "idea-muslim-distrust.png",
      "Muslim surveillance proposals, by religion",
-     "Share who strongly or somewhat agree with each proposal (2017 wave).", 0, 100, "%"),
+     "Share who strongly or somewhat agree with each proposal (2017 wave).", 0, 100, "%", NEGATIVE_HIGH),
     ("voter-ideas-immigration", "idea-immigration.png",
      "Views of immigrants, by religion",
-     "Share holding the pro-immigrant view on each measure (2017 wave).", 0, 100, "%"),
+     "Share holding the pro-immigrant view on each measure (2017 wave).", 0, 100, "%", POSITIVE_HIGH),
     ("voter-ideas-trade", "idea-trade.png",
      "Free trade attitudes, by religion",
-     "Share holding the positive-for-consumers view on each effect (2016 wave).", 0, 100, "%"),
+     "Share holding the positive-for-consumers view on each effect (2016 wave).", 0, 100, "%", POSITIVE_HIGH),
     ("voter-ideas-promises", "idea-promises.png",
      "Support for Trump's specific promises, by religion",
-     "Share who support each promise (2017 wave).", 0, 100, "%"),
+     "Share who support each promise (2017 wave).", 0, 100, "%", NEUTRAL),
     ("voter-ideas-media", "idea-media.png",
      "Evening news viewership, by religion",
-     "Share who watch each program (baseline wave, ~2011).", 0, 100, "%"),
+     "Share who watch each program (baseline wave, ~2011).", 0, 100, "%", NEUTRAL),
     ("voter-ideas-orgs", "idea-orgs.png",
      "Organization membership, by religion",
-     "Share who are a member of each organization (baseline wave, ~2011).", 0, 100, "%"),
+     "Share who are a member of each organization (baseline wave, ~2011).", 0, 100, "%", NEUTRAL),
     ("voter-ideas-volunteering", "idea-volunteering.png",
      "Volunteering by cause, by religion",
      "Share who volunteered for each type of cause in the past 12 months (baseline wave).",
-     0, 100, "%"),
+     0, 100, "%", NEUTRAL),
     ("voter-ideas-pride", "idea-pride.png",
      "National pride, by religion",
-     "Share very or somewhat proud of America on each dimension (2016 wave).", 0, 100, "%"),
+     "Share very or somewhat proud of America on each dimension (2016 wave).", 0, 100, "%", NEUTRAL),
 ]
 
 
@@ -64,7 +81,7 @@ def main() -> None:
     args = ap.parse_args()
     fonts = load_fonts(args.fonts_dir)
 
-    for stem, filename, title, subtitle, vmin, vmax, unit in CHARTS:
+    for stem, filename, title, subtitle, vmin, vmax, unit, (low_color, high_color) in CHARTS:
         with open(args.data_dir / f"{stem}.json", encoding="utf-8") as f:
             data = json.load(f)
         excluded_note = "Too thin to show individually: " + ", ".join(data["excluded_too_thin"].values()) + "."
@@ -73,6 +90,7 @@ def main() -> None:
             data["matrix"], data["target_order"], data["group_order"], vmin, vmax, unit,
             title=title, subtitle=subtitle, note=note,
             out_path=args.out_dir / filename, fonts=fonts,
+            low_color=low_color, high_color=high_color,
         )
 
 

@@ -17,11 +17,14 @@ from __future__ import annotations
 
 import argparse
 import json
-import textwrap
+import sys
 from pathlib import Path
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -96,6 +99,19 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
+    # Caption drawn first (bottom-anchored) so its actual top edge is known
+    # before the inset axes' bottom is chosen - see STYLE.md's "Footnotes:
+    # bottom-anchored" / "Vertical layout" sections.
+    source_paragraphs = [
+        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
+        f"N = {total_n:,} U.S. adults",
+        "Net change = share currently in a tradition vs. the share raised in it, as % of "
+        "the raised share. Confidence intervals from Pew's own 500 bootstrap replicate weights.",
+        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
+        "doi: 10.58094/3kwb-bf52.",
+    ]
+    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs, left=0.065)
+
     # Explicit rectangles ([left, bottom, width, height], figure fraction, 0
     # at the bottom) rather than gridspec: this chart mixes two axes with
     # hand-placed text between and around them, and gridspec's height_ratios
@@ -103,8 +119,10 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # coordinates make every element's vertical budget an intentional,
     # visible number here rather than an emergent one.
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
+    INSET_TOP = 0.370
+    inset_bottom = caption_top + 0.03
     ax_main = fig.add_axes([AXES_LEFT, 0.485, AXES_WIDTH, 0.30])
-    ax_inset = fig.add_axes([AXES_LEFT, 0.235, AXES_WIDTH, 0.135])
+    ax_inset = fig.add_axes([AXES_LEFT, inset_bottom, AXES_WIDTH, INSET_TOP - inset_bottom])
     for ax in (ax_main, ax_inset):
         ax.set_facecolor(PAPER)
         ax.set_xticks([])
@@ -222,26 +240,6 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         "raised in it — 2023-24 Religious Landscape Study.",
         fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
     )
-
-    # --- Caption ------------------------------------------------------------
-    # Wrapped by hand at a width tuned for this font/size/canvas, same reason
-    # render_chart.py does: fig-level wrap= is unreliable across matplotlib
-    # versions and doesn't respect the figure's actual margins.
-    source_paragraphs = [
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Net change = share currently in a tradition vs. the share raised in it, as % of "
-        "the raised share. Confidence intervals from Pew's own 500 bootstrap replicate weights.",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_lines = [line for para in source_paragraphs for line in textwrap.wrap(para, width=98)]
-    caption_y = 0.185
-    for i, line in enumerate(caption_lines):
-        fig.text(
-            0.065, caption_y - i * 0.0165, line, fontproperties=fonts["regular"],
-            fontsize=10, color=MUTED, ha="left", va="top",
-        )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
