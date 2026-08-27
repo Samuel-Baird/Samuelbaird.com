@@ -58,6 +58,16 @@ decline when extrapolated that far, and a mechanistically nicer
 declining-growth-rate model fits the noisy underlying rate data poorly).
 Showing a range communicates the real uncertainty instead of one
 falsely-precise number.
+
+render_timeseries_by_direction (added for a second worldwide-membership-
+history chart) colors every segment by whether it rose or fell from the
+prior year - --accent (blue) for an increase, --oxblood (red) for a
+decrease - rather than by data-quality status the way render_timeseries
+does. This is a different question a chart can answer ("when did it ever
+go down?") and needed its own function rather than a mode flag on
+render_timeseries, since the two are mutually exclusive ways to color the
+same line (quality-of-source vs. direction-of-change) and a single
+function trying to do both would need a confusing dual-legend.
 """
 
 from __future__ import annotations
@@ -614,6 +624,147 @@ def render_100_stack(
         bbox_transform=fig.transFigure,
         ncol=legend_ncol, frameon=False, handlelength=1.6, handleheight=1.6,
         fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def render_timeseries_by_direction(
+    *,
+    years: list[int],
+    values: dict[int, float],
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+    y_step: float = 2_000_000,
+    y_label_divisor: float = 1_000_000,
+    y_label_suffix: str = "M",
+    x_tick_step: int = 25,
+    label_years: list[int] | None = None,
+) -> None:
+    """A single line over `years`, colored per-segment by whether it rose
+    (--accent, blue) or fell (--oxblood, red) from the prior year - see
+    this module's docstring for why this is a separate function from
+    render_timeseries rather than a mode on it. Every year touching a
+    decrease gets a small red marker (both the year it fell FROM and the
+    year it fell TO, so the whole dip is visually bracketed); every other
+    year is unmarked to keep a long series from turning into a wall of dots.
+    """
+    import math
+
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = legend_top_y + 0.03
+
+    AXES_LEFT, AXES_WIDTH = 0.13, 0.80
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    vals = [values[y] for y in years]
+    y_floor = math.floor(min(vals) / y_step) * y_step
+    y_ceil = math.ceil(max(vals) / y_step) * y_step
+    if y_ceil == y_floor:
+        y_ceil += y_step
+
+    y_ticks = []
+    t = y_floor
+    while t <= y_ceil:
+        y_ticks.append(t)
+        t += y_step
+    ax.set_ylim(y_floor, y_ceil)
+    ax.set_yticks(y_ticks)
+    ax.set_yticklabels([f"{t / y_label_divisor:g}{y_label_suffix}" for t in y_ticks])
+    ax.tick_params(axis="y", length=0, pad=8, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_yticklabels():
+        label.set_fontproperties(fonts["regular"])
+        label.set_color(MUTED)
+    ax.grid(axis="y", color=BORDER, linewidth=1, zorder=1)
+
+    x_ticks = [y for y in years if y % x_tick_step == 0] or years
+    if years[0] not in x_ticks:
+        x_ticks.insert(0, years[0])
+    if years[-1] not in x_ticks:
+        x_ticks.append(years[-1])
+    ax.set_xticks(x_ticks)
+    ax.set_xticklabels([str(y) for y in x_ticks])
+    ax.tick_params(axis="x", length=0, pad=10, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_xticklabels():
+        label.set_fontproperties(fonts["bold"])
+        label.set_color(INK)
+    ax.set_xlim(years[0] - 0.5, years[-1] + 0.5)
+
+    decrease_years: set[int] = set()
+    for y0, y1 in zip(years[:-1], years[1:]):
+        falling = values[y1] < values[y0]
+        color = OXBLOOD if falling else ACCENT
+        if falling:
+            decrease_years.add(y0)
+            decrease_years.add(y1)
+        ax.plot(
+            [y0, y1], [values[y0], values[y1]], color=color,
+            linewidth=2.75, solid_capstyle="round", zorder=3,
+        )
+    for y in decrease_years:
+        ax.plot(
+            y, values[y], marker="o", markersize=6,
+            markerfacecolor=OXBLOOD, markeredgecolor=OXBLOOD, zorder=4,
+        )
+
+    label_years = label_years or [years[0], years[-1]]
+    for y in label_years:
+        color = ACCENT
+        if y == years[0]:
+            ax.annotate(
+                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 0),
+                textcoords="offset points", ha="right", va="center",
+                color=color, fontproperties=fonts["bold"],
+                fontsize=MIN.DATA_LABEL + 2, zorder=5,
+            )
+            continue
+        if y == years[-1]:
+            ax.annotate(
+                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 12),
+                textcoords="offset points", ha="right", va="center",
+                color=color, fontproperties=fonts["bold"],
+                fontsize=MIN.DATA_LABEL + 2, zorder=5,
+            )
+            continue
+        dist_to_floor = values[y] - y_floor
+        dist_to_ceil = y_ceil - values[y]
+        va = "bottom" if dist_to_floor < dist_to_ceil else "top"
+        ax.annotate(
+            f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(0, 18 if va == "bottom" else -18),
+            textcoords="offset points", ha="center", va=va,
+            color=color, fontproperties=fonts["bold"],
+            fontsize=MIN.DATA_LABEL + 2, zorder=5,
+        )
+
+    from matplotlib.lines import Line2D
+    handles = [
+        Line2D([0], [0], color=ACCENT, linewidth=2.75, label="Increase from prior year"),
+        Line2D([0], [0], color=OXBLOOD, linewidth=2.75, label="Decrease from prior year"),
+    ]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=2, frameon=False, handlelength=2.2, columnspacing=1.4,
+        fontsize=MIN.LEGEND, prop=fonts["bold"],
     )
     for text in legend.get_texts():
         text.set_color(INK)

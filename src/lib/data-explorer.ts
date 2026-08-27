@@ -229,7 +229,7 @@ export const DATASETS: Dataset[] = [
     sourceUrl:
       "https://en.wikipedia.org/wiki/Membership_history_of_the_Church_of_Jesus_Christ_of_Latter-day_Saints",
     category: "Mixed Datasets",
-    graphics: [worldwideMembershipHistoryGraphic()],
+    graphics: [worldwideMembershipHistoryGraphic(), worldwideMembershipDirectionGraphic()],
   },
   {
     slug: "state-of-theology",
@@ -632,6 +632,25 @@ function worldwideMembershipHistoryGraphic(): Graphic {
   };
 }
 
+function worldwideMembershipDirectionGraphic(): Graphic {
+  const { year_order: years, series } = worldwideMembershipHistoryData;
+  const decreaseYears = years.filter((y, i) => {
+    if (i === 0) return false;
+    const prev = years[i - 1];
+    return series[String(y) as keyof typeof series].members < series[String(prev) as keyof typeof series].members;
+  });
+  const alt = decreaseYears
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].members.toLocaleString()}`)
+    .join(", ");
+  return {
+    title: "Where did membership ever decrease?",
+    description: "The same 1830-2025 series, colored by whether membership grew or shrank from the year before.",
+    imageSrc: "/data-explorer/worldwide-membership-history/membership-by-direction.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: worldwide Church membership, 1830 to 2025, colored blue for growth and red for decrease from the prior year. Years with a decrease: ${alt}. Every other year grew.`,
+  };
+}
+
 function usMembershipProjectionGraphic(): Graphic {
   const { range_year_order: years, range_series, trend_fit_years: fit, anchor_year } =
     usMembershipProjectionData;
@@ -799,6 +818,19 @@ function onlineWorshipCovidGraphic(): Graphic {
 
 export function getDataset(slug: string): Dataset | undefined {
   return DATASETS.find((d) => d.slug === slug);
+}
+
+/** Kebab-cases a category label (e.g. "Mixed Datasets" -> "mixed-datasets")
+ * for its /data-explorer/category/<slug> route. */
+export function categorySlug(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getDatasetsByCategory(slug: string): Dataset[] {
+  return DATASETS.filter((d) => d.category && categorySlug(d.category) === slug);
 }
 
 /**
