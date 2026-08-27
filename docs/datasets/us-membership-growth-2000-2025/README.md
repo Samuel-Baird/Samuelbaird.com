@@ -57,16 +57,34 @@ uses the shared `render_timeseries` line-chart shape in
 `scripts/flagship-charts/common.py` (solid line/filled markers for real
 figures, dashed/hollow for interpolated years).
 
-## Second chart: projected to 2050
+## Second chart: projected to 2050 (a range, not a single line)
 
-`membership-projection-2050.json` (via `build_projection.py`) fits an
-ordinary-least-squares line to the 14 Church-reported 2012-2025 figures
-(the longest fully-solid run in `membership-by-year.json`, avoiding the
-earlier rounded/interpolated years), anchors it at the actual 2025 value,
-and extends it to 2050 at that slope (~45,000/year). This is a linear
-trend extrapolation, not a demographic forecast — actual growth has been
-decelerating (2024 to 2025 was essentially flat), so 2050 could land lower
-than this projection if that slowdown continues.
+`membership-projection-2050.json` (via `build_projection.py`) originally
+extended a single linear trend line to 2050. It was replaced with a
+low/high **range** after checking whether linear was really the best fit:
+
+- A quadratic fit to the 14 Church-reported 2012-2025 figures scores a
+  better R² (0.99 vs linear's 0.98), but extrapolated to 2050 its negative
+  curvature makes membership *peak around 2034 and then decline* below
+  today's level — a classic polynomial-extrapolation artifact (a curve
+  that fits the observed window well can still do something absurd once
+  extended 25 years past it).
+- A more mechanistically sensible model — fit the year-over-year growth
+  *rate* as a declining trend and compound it forward, floored at 0% — 
+  avoids that reversal, but the underlying rate data is noisy (COVID-era
+  dip, partial rebound), so the rate-trend itself only fits at R²≈0.41.
+
+Neither alternative is reliably better than linear for a 25-year
+extrapolation, so the chart now shows a **range** between the two most
+defensible simple bounds instead of picking one:
+
+- **High**: the same linear fit as before (14 reported years, ~45,000/year),
+  extended unchanged.
+- **Low**: the declining-growth-rate model above, which reaches its 0%
+  floor around 2031 and stays flat after.
+
+Both are anchored at the actual 2025 figure. Neither bound is a forecast —
+the caption and alt text say so explicitly.
 
 ```bash
 python scripts/us-membership-growth-2000-2025/build_projection.py
@@ -74,7 +92,7 @@ python scripts/us-membership-growth-2000-2025/render_projection_chart.py \
   --out public/data-explorer/us-membership-growth-2000-2025/membership-projection-2050.png
 ```
 
-Uses the same `render_timeseries` shape, extended with a third status
-(`"projected"`, gray dashed — visually distinct from the first chart's
-`"interpolated"`, accent dashed, so a reader can't mistake "no report for
-this historical year" for "hasn't happened yet").
+Uses `render_range_projection` in `scripts/flagship-charts/common.py`: a
+solid history line, then a shaded low/high band (high boundary dashed
+accent, low boundary dashed gray) rather than the single-line
+`render_timeseries` shape the first chart still uses.

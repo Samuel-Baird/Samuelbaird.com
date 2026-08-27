@@ -46,6 +46,18 @@ the trend, not as a bar's length-as-magnitude, so truncating the axis to
 the data's own range is standard practice for a line chart and isn't
 misleading as long as the gridline values are labeled plainly, which they
 are here.
+
+render_range_projection (added for the us-membership-growth-2000-2025
+dataset's 2050 chart, replacing an earlier single-line version) is a
+history line plus a shaded low/high band for the projected years, not a
+single projected line - a single trend line turned out not to be
+defensible 25 years past the data (see
+scripts/us-membership-growth-2000-2025/build_projection.py's own
+docstring for why: a better-fitting quadratic reverses into an implausible
+decline when extrapolated that far, and a mechanistically nicer
+declining-growth-rate model fits the noisy underlying rate data poorly).
+Showing a range communicates the real uncertainty instead of one
+falsely-precise number.
 """
 
 from __future__ import annotations
@@ -382,6 +394,142 @@ def render_timeseries(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
         bbox_transform=fig.transFigure,
         ncol=len(handles), frameon=False, handlelength=2.2, columnspacing=1.4,
+        fontsize=MIN.LEGEND, prop=fonts["bold"],
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def render_range_projection(
+    *,
+    history_years: list[int],
+    history_values: dict[int, float],
+    range_years: list[int],
+    low_values: dict[int, float],
+    high_values: dict[int, float],
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+    y_step: float = 500_000,
+    y_label_divisor: float = 1_000_000,
+    y_label_suffix: str = "M",
+) -> None:
+    """A solid --accent history line (`history_years`), then a shaded
+    low/high band for `range_years` (which should start at the same year
+    `history_years` ends on, so the band picks up exactly where the solid
+    line stops) - see this module's docstring for why a range, not a
+    single projected line. The high boundary is drawn --accent dashed (the
+    "trend continues" reading), the low boundary CONTEXT_GRAY dashed (the
+    "deceleration continues" reading); the fill between them is a light
+    --accent tint. Value callouts: history's own first point, plus the
+    range's final low and high figures.
+    """
+    import math
+
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = legend_top_y + 0.03
+
+    AXES_LEFT, AXES_WIDTH = 0.13, 0.80
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    all_years = history_years + range_years[1:]
+    hist_vals = [history_values[y] for y in history_years]
+    low_vals = [low_values[y] for y in range_years]
+    high_vals = [high_values[y] for y in range_years]
+    y_min = min(hist_vals + low_vals)
+    y_max = max(hist_vals + high_vals)
+    y_floor = math.floor(y_min / y_step) * y_step
+    y_ceil = math.ceil(y_max / y_step) * y_step
+    if y_ceil == y_floor:
+        y_ceil += y_step
+
+    y_ticks = []
+    t = y_floor
+    while t <= y_ceil:
+        y_ticks.append(t)
+        t += y_step
+    ax.set_ylim(y_floor, y_ceil)
+    ax.set_yticks(y_ticks)
+    ax.set_yticklabels([f"{t / y_label_divisor:g}{y_label_suffix}" for t in y_ticks])
+    ax.tick_params(axis="y", length=0, pad=8, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_yticklabels():
+        label.set_fontproperties(fonts["regular"])
+        label.set_color(MUTED)
+    ax.grid(axis="y", color=BORDER, linewidth=1, zorder=1)
+
+    x_ticks = [y for y in all_years if y % 5 == 0] or all_years
+    if all_years[0] not in x_ticks:
+        x_ticks.insert(0, all_years[0])
+    if all_years[-1] not in x_ticks:
+        x_ticks.append(all_years[-1])
+    ax.set_xticks(x_ticks)
+    ax.set_xticklabels([str(y) for y in x_ticks])
+    ax.tick_params(axis="x", length=0, pad=10, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_xticklabels():
+        label.set_fontproperties(fonts["bold"])
+        label.set_color(INK)
+    ax.set_xlim(all_years[0] - 0.5, all_years[-1] + 0.5)
+
+    ax.plot(history_years, hist_vals, color=ACCENT, linewidth=2.75,
+            solid_capstyle="round", zorder=3)
+    ax.fill_between(range_years, low_vals, high_vals, color=ACCENT, alpha=0.13,
+                     linewidth=0, zorder=2)
+    ax.plot(range_years, high_vals, color=ACCENT, linewidth=1.75,
+            linestyle=(0, (5, 3)), zorder=3)
+    ax.plot(range_years, low_vals, color=CONTEXT_GRAY, linewidth=1.75,
+            linestyle=(0, (5, 3)), zorder=3)
+    for x, y, c in ((history_years[-1], hist_vals[-1], ACCENT),):
+        ax.plot(x, y, marker="o", markersize=6, markerfacecolor=c,
+                markeredgecolor=c, markeredgewidth=1.8, zorder=4)
+
+    # First history point floats left (see render_timeseries for why: it's
+    # the one placement clear of both the axis floor and the line's own
+    # early climb, regardless of axis range). Final high/low points float
+    # left of the canvas's own right edge for the same reason a plain
+    # rightward float would overflow it.
+    def label(x, y, color, dx, dy, ha):
+        ax.annotate(
+            f"{y:,.0f}", xy=(x, y), xytext=(dx, dy), textcoords="offset points",
+            ha=ha, va="center", color=color, fontproperties=fonts["bold"],
+            fontsize=MIN.DATA_LABEL + 2, zorder=5,
+        )
+
+    label(history_years[0], hist_vals[0], ACCENT, -10, 0, "right")
+    label(range_years[-1], high_vals[-1], ACCENT, -10, 0, "right")
+    # The low bound flattens out (hits its 0%-growth floor) well before
+    # 2050, so its own line runs dead flat under this label - nudge down
+    # so the line passes below the text rather than straight through it.
+    label(range_years[-1], low_vals[-1], CONTEXT_GRAY, -10, -14, "right")
+
+    from matplotlib.lines import Line2D
+    import matplotlib.patches as mpatches
+    handles = [
+        Line2D([0], [0], color=ACCENT, linewidth=2.75, linestyle="solid", label="Reported figure"),
+        mpatches.Patch(facecolor=ACCENT, alpha=0.13, edgecolor="none",
+                        label=f"Projected range, {range_years[0] + 1}-{range_years[-1]}"),
+    ]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=2, frameon=False, handlelength=2.2, columnspacing=1.4,
         fontsize=MIN.LEGEND, prop=fonts["bold"],
     )
     for text in legend.get_texts():

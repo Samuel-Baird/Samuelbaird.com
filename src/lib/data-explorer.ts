@@ -633,18 +633,21 @@ function worldwideMembershipHistoryGraphic(): Graphic {
 }
 
 function usMembershipProjectionGraphic(): Graphic {
-  const { year_order: years, series, trend_fit_years: fit, anchor_year, trend_slope_per_year: slope } =
+  const { range_year_order: years, range_series, trend_fit_years: fit, anchor_year } =
     usMembershipProjectionData;
-  const milestones = years.filter((y) => y === anchor_year || (y > anchor_year && y % 5 === 0));
+  const milestones = years.filter((y) => y === anchor_year || y % 5 === 0);
   const alt = milestones
-    .map((y) => `${y}: ${series[String(y) as keyof typeof series].members.toLocaleString()}`)
+    .map((y) => {
+      const r = range_series[String(y) as keyof typeof range_series];
+      return y === anchor_year ? `${y}: ${r.high.toLocaleString()}` : `${y}: ${r.low.toLocaleString()}-${r.high.toLocaleString()}`;
+    })
     .join(", ");
   return {
     title: "U.S. membership, projected to 2050",
-    description: `Reported through ${anchor_year}, then a linear extrapolation of the ${fit[0]}-${fit[1]} reported trend (~${slope.toLocaleString()}/year).`,
+    description: `Reported through ${anchor_year}, then a range between two scenarios built from the ${fit[0]}-${fit[1]} reported trend, rather than a single guess.`,
     imageSrc: "/data-explorer/us-membership-growth-2000-2025/membership-projection-2050.png",
     width: 1080, height: 1350,
-    alt: `Line chart: U.S. Church membership, reported through ${anchor_year} then linearly projected to 2050 at the ${fit[0]}-${fit[1]} trend rate. ${alt}. This is a trend extrapolation, not a demographic forecast.`,
+    alt: `Line and range chart: U.S. Church membership, reported through ${anchor_year}, then a projected range through 2050 between a "trend continues" high estimate and a "deceleration continues" low estimate. ${alt}. Neither bound is a forecast.`,
   };
 }
 
