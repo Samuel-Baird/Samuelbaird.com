@@ -1,0 +1,269 @@
+{
+  "method": "Ordinary-least-squares linear fit to the 14 Church-reported annual figures 2012-2025 (slope ~44,996/year), anchored at the actual 2025 figure and extended to 2050 at that same slope. A linear extrapolation of a 14-year average, not a demographic forecast - actual growth has been decelerating (2024 to 2025 was essentially flat), so this likely overstates 2050 membership if that slowdown continues.",
+  "trend_fit_years": [
+    2012,
+    2025
+  ],
+  "trend_slope_per_year": 44996,
+  "anchor_year": 2025,
+  "anchor_value": 6929770,
+  "year_order": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050
+  ],
+  "series": {
+    "2000": {
+      "members": 5208827,
+      "status": "reported"
+    },
+    "2001": {
+      "members": 5309414,
+      "status": "reported"
+    },
+    "2002": {
+      "members": 5410000,
+      "status": "reported"
+    },
+    "2003": {
+      "members": 5505000,
+      "status": "reported"
+    },
+    "2004": {
+      "members": 5600000,
+      "status": "reported"
+    },
+    "2005": {
+      "members": 5690000,
+      "status": "reported"
+    },
+    "2006": {
+      "members": 5780000,
+      "status": "reported"
+    },
+    "2007": {
+      "members": 5875000,
+      "status": "reported"
+    },
+    "2008": {
+      "members": 5970000,
+      "status": "reported"
+    },
+    "2009": {
+      "members": 6058907,
+      "status": "reported"
+    },
+    "2010": {
+      "members": 6144582,
+      "status": "reported"
+    },
+    "2011": {
+      "members": 6232999,
+      "status": "reported"
+    },
+    "2012": {
+      "members": 6321416,
+      "status": "reported"
+    },
+    "2013": {
+      "members": 6398889,
+      "status": "reported"
+    },
+    "2014": {
+      "members": 6466267,
+      "status": "reported"
+    },
+    "2015": {
+      "members": 6531656,
+      "status": "reported"
+    },
+    "2016": {
+      "members": 6592195,
+      "status": "reported"
+    },
+    "2017": {
+      "members": 6641886,
+      "status": "reported"
+    },
+    "2018": {
+      "members": 6681829,
+      "status": "reported"
+    },
+    "2019": {
+      "members": 6721032,
+      "status": "reported"
+    },
+    "2020": {
+      "members": 6742000,
+      "status": "reported"
+    },
+    "2021": {
+      "members": 6763019,
+      "status": "reported"
+    },
+    "2022": {
+      "members": 6804028,
+      "status": "reported"
+    },
+    "2023": {
+      "members": 6868793,
+      "status": "reported"
+    },
+    "2024": {
+      "members": 6929956,
+      "status": "reported"
+    },
+    "2025": {
+      "members": 6929770,
+      "status": "reported"
+    },
+    "2026": {
+      "members": 6974766,
+      "status": "projected"
+    },
+    "2027": {
+      "members": 7019763,
+      "status": "projected"
+    },
+    "2028": {
+      "members": 7064759,
+      "status": "projected"
+    },
+    "2029": {
+      "members": 7109755,
+      "status": "projected"
+    },
+    "2030": {
+      "members": 7154752,
+      "status": "projected"
+    },
+    "2031": {
+      "members": 7199748,
+      "status": "projected"
+    },
+    "2032": {
+      "members": 7244744,
+      "status": "projected"
+    },
+    "2033": {
+      "members": 7289741,
+      "status": "projected"
+    },
+    "2034": {
+      "members": 7334737,
+      "status": "projected"
+    },
+    "2035": {
+      "members": 7379734,
+      "status": "projected"
+    },
+    "2036": {
+      "members": 7424730,
+      "status": "projected"
+    },
+    "2037": {
+      "members": 7469726,
+      "status": "projected"
+    },
+    "2038": {
+      "members": 7514723,
+      "status": "projected"
+    },
+    "2039": {
+      "members": 7559719,
+      "status": "projected"
+    },
+    "2040": {
+      "members": 7604715,
+      "status": "projected"
+    },
+    "2041": {
+      "members": 7649712,
+      "status": "projected"
+    },
+    "2042": {
+      "members": 7694708,
+      "status": "projected"
+    },
+    "2043": {
+      "members": 7739704,
+      "status": "projected"
+    },
+    "2044": {
+      "members": 7784701,
+      "status": "projected"
+    },
+    "2045": {
+      "members": 7829697,
+      "status": "projected"
+    },
+    "2046": {
+      "members": 7874693,
+      "status": "projected"
+    },
+    "2047": {
+      "members": 7919690,
+      "status": "projected"
+    },
+    "2048": {
+      "members": 7964686,
+      "status": "projected"
+    },
+    "2049": {
+      "members": 8009683,
+      "status": "projected"
+    },
+    "2050": {
+      "members": 8054679,
+      "status": "projected"
+    }
+  }
+}

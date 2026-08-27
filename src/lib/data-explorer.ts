@@ -44,6 +44,7 @@ import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/m
 import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
+import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 
 export type Quiz = {
   title: string;
@@ -170,6 +171,15 @@ export type Dataset = {
   howWeUseIt?: string;
   quiz?: Quiz;
   graphics: Graphic[];
+  /**
+   * Optional section label for the Data Explorer index (e.g. "Mixed
+   * Datasets" for a compiled cross-source timeline, as opposed to one
+   * survey's own microdata). Datasets sharing a category must sit
+   * consecutively in this array - the index page groups by *runs* of the
+   * same category, not by a global sort, so a category split across two
+   * places in this list would render as two separate sections.
+   */
+  category?: string;
 };
 
 export const DATASETS: Dataset[] = [
@@ -194,7 +204,8 @@ export const DATASETS: Dataset[] = [
       "Almanac (2002-2009), and the Church's newsroom country page (2012-2025).",
     sourceUrl:
       "https://newsroom.churchofjesuschrist.org/facts-and-statistics/country/united-states",
-    graphics: [usMembershipGrowthGraphic()],
+    category: "Mixed Datasets",
+    graphics: [usMembershipGrowthGraphic(), usMembershipProjectionGraphic()],
   },
   {
     slug: "state-of-theology",
@@ -581,6 +592,22 @@ export const DATASETS: Dataset[] = [
 // scripts/flagship-charts/common.py) rather than the many-chart buildout
 // pew-rls-2023-24 or the ryan-burge sources have - see each dataset's own
 // docs/datasets/<slug>/README.md for the regeneration commands.
+
+function usMembershipProjectionGraphic(): Graphic {
+  const { year_order: years, series, trend_fit_years: fit, anchor_year, trend_slope_per_year: slope } =
+    usMembershipProjectionData;
+  const milestones = years.filter((y) => y === anchor_year || (y > anchor_year && y % 5 === 0));
+  const alt = milestones
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].members.toLocaleString()}`)
+    .join(", ");
+  return {
+    title: "U.S. membership, projected to 2050",
+    description: `Reported through ${anchor_year}, then a linear extrapolation of the ${fit[0]}-${fit[1]} reported trend (~${slope.toLocaleString()}/year).`,
+    imageSrc: "/data-explorer/us-membership-growth-2000-2025/membership-projection-2050.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: U.S. Church membership, reported through ${anchor_year} then linearly projected to 2050 at the ${fit[0]}-${fit[1]} trend rate. ${alt}. This is a trend extrapolation, not a demographic forecast.`,
+  };
+}
 
 function usMembershipGrowthGraphic(): Graphic {
   const { year_order: years, series } = usMembershipGrowthData;

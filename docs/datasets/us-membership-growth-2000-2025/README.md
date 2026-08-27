@@ -56,3 +56,25 @@ citation — never hand-edit `membership-by-year.json`. The render script
 uses the shared `render_timeseries` line-chart shape in
 `scripts/flagship-charts/common.py` (solid line/filled markers for real
 figures, dashed/hollow for interpolated years).
+
+## Second chart: projected to 2050
+
+`membership-projection-2050.json` (via `build_projection.py`) fits an
+ordinary-least-squares line to the 14 Church-reported 2012-2025 figures
+(the longest fully-solid run in `membership-by-year.json`, avoiding the
+earlier rounded/interpolated years), anchors it at the actual 2025 value,
+and extends it to 2050 at that slope (~45,000/year). This is a linear
+trend extrapolation, not a demographic forecast — actual growth has been
+decelerating (2024 to 2025 was essentially flat), so 2050 could land lower
+than this projection if that slowdown continues.
+
+```bash
+python scripts/us-membership-growth-2000-2025/build_projection.py
+python scripts/us-membership-growth-2000-2025/render_projection_chart.py \
+  --out public/data-explorer/us-membership-growth-2000-2025/membership-projection-2050.png
+```
+
+Uses the same `render_timeseries` shape, extended with a third status
+(`"projected"`, gray dashed — visually distinct from the first chart's
+`"interpolated"`, accent dashed, so a reader can't mistake "no report for
+this historical year" for "hasn't happened yet").

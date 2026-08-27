@@ -208,15 +208,29 @@ def render_timeseries(
     y_label_suffix: str = "M",
     label_years: list[int] | None = None,
 ) -> None:
-    """A single --accent line over `years` (evenly spaced, e.g. one per
-    calendar year). `statuses[year]` is "reported"/"rounded" (real figure)
-    or "interpolated" (linearly filled, no source) - see this module's
-    docstring. A segment between two adjacent years is drawn dashed if
-    EITHER endpoint is interpolated, solid otherwise; markers are filled
-    for real points, hollow (accent-outlined) for interpolated ones.
+    """A single line over `years` (evenly spaced, e.g. one per calendar
+    year). `statuses[year]` is one of:
+      - "reported"/"rounded": a real figure - solid --accent, filled marker.
+      - "interpolated": linearly filled across a historical gap with no
+        source - dashed --accent, hollow accent-outlined marker.
+      - "projected": a forward trend projection, not a historical figure
+        at all - dashed CONTEXT_GRAY, hollow gray-outlined marker. Kept
+        visually distinct from "interpolated" so a reader can't mistake
+        "we don't have this year's report" for "this hasn't happened yet."
+    A segment between two adjacent years takes the "worse" status of its
+    two endpoints (projected > interpolated > reported) for its line
+    style. The legend only lists statuses actually present in `statuses`.
     `label_years` (default: first and last) get a bold value callout.
     """
     import math
+
+    STATUS_RANK = {"reported": 0, "rounded": 0, "interpolated": 1, "projected": 2}
+    STATUS_COLOR = {"reported": ACCENT, "rounded": ACCENT, "interpolated": ACCENT, "projected": CONTEXT_GRAY}
+    STATUS_LEGEND_LABEL = {
+        "reported": "Reported figure", "rounded": "Reported figure",
+        "interpolated": "Interpolated (no source found)",
+        "projected": "Projected (linear trend)",
+    }
 
     fonts = fonts or load_fonts()
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
@@ -266,40 +280,78 @@ def render_timeseries(
     ax.set_xlim(years[0] - 0.5, years[-1] + 0.5)
 
     for y0, y1 in zip(years[:-1], years[1:]):
-        dashed = statuses[y0] == "interpolated" or statuses[y1] == "interpolated"
+        seg_status = max(statuses[y0], statuses[y1], key=lambda s: STATUS_RANK[s])
+        color = STATUS_COLOR[seg_status]
         ax.plot(
-            [y0, y1], [values[y0], values[y1]], color=ACCENT,
-            linewidth=2.75, linestyle=(0, (5, 3)) if dashed else "solid",
+            [y0, y1], [values[y0], values[y1]], color=color,
+            linewidth=2.75, linestyle="solid" if STATUS_RANK[seg_status] == 0 else (0, (5, 3)),
             solid_capstyle="round", zorder=3,
         )
     for y in years:
-        real = statuses[y] != "interpolated"
+        color = STATUS_COLOR[statuses[y]]
+        real = STATUS_RANK[statuses[y]] == 0
         ax.plot(
             y, values[y], marker="o",
             markersize=6 if real else 5.5,
-            markerfacecolor=ACCENT if real else PAPER,
-            markeredgecolor=ACCENT, markeredgewidth=1.8, zorder=4,
+            markerfacecolor=color if real else PAPER,
+            markeredgecolor=color, markeredgewidth=1.8, zorder=4,
         )
 
+    # A fixed pixel offset (not a fraction of the y-range) so a label never
+    # overshoots the floor/ceiling regardless of how wide that range is -
+    # a range-relative offset (e.g. "3.5% of the axis span") looks fine on
+    # a 2M-wide axis but pushes a near-floor point's label past the bottom
+    # spine on a wider one (e.g. this shape's own 2000-2050 projection,
+    # which spans 4M). Direction still leans away from whichever boundary
+    # (floor or ceiling) the point sits closer to.
     label_years = label_years or [years[0], years[-1]]
     for y in label_years:
-        va = "bottom" if values[y] >= (y_floor + y_ceil) / 2 else "top"
-        offset = (y_ceil - y_floor) * 0.035 * (1 if va == "bottom" else -1)
-        ax.text(
-            y, values[y] + offset, f"{values[y]:,.0f}", ha="center",
-            va=va, color=ACCENT, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL + 2,
-            zorder=5,
+        if y == years[0]:
+            # The series' first point has nothing to its left in x and
+            # (for an increasing series) nothing below it in value - every
+            # OTHER direction risks the label crossing either the axis
+            # floor (pushing down, on a wide y-range where the first
+            # point sits close to it) or the line's own steep early climb
+            # (pushing up). Floating it left, vertically centered on the
+            # point, is the one placement clear of both regardless of the
+            # axis range - matplotlib doesn't clip an annotation that
+            # extends past the axes box, so this is safe even though
+            # x < years[0] is technically off the plotted x-range.
+            ax.annotate(
+                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 0),
+                textcoords="offset points", ha="right", va="center",
+                color=STATUS_COLOR[statuses[y]], fontproperties=fonts["bold"],
+                fontsize=MIN.DATA_LABEL + 2, zorder=5,
+            )
+            continue
+        dist_to_floor = values[y] - y_floor
+        dist_to_ceil = y_ceil - values[y]
+        va = "bottom" if dist_to_floor < dist_to_ceil else "top"
+        ax.annotate(
+            f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(0, 18 if va == "bottom" else -18),
+            textcoords="offset points", ha="center", va=va,
+            color=STATUS_COLOR[statuses[y]], fontproperties=fonts["bold"],
+            fontsize=MIN.DATA_LABEL + 2, zorder=5,
         )
 
     from matplotlib.lines import Line2D
+    # Dedupe by legend label, not raw status - "reported" and "rounded"
+    # share one legend entry ("Reported figure") despite being distinct
+    # statuses (see membership-by-year.json's own per-year `status`).
+    present_ranks = sorted({STATUS_RANK[statuses[y]] for y in years})
+    rank_to_status = {rank: s for s, rank in STATUS_RANK.items() if rank in present_ranks}
     handles = [
-        Line2D([0], [0], color=ACCENT, linewidth=2.75, linestyle="solid", label="Reported figure"),
-        Line2D([0], [0], color=ACCENT, linewidth=2.75, linestyle=(0, (5, 3)), label="Interpolated (no source found)"),
+        Line2D(
+            [0], [0], color=STATUS_COLOR[rank_to_status[rank]], linewidth=2.75,
+            linestyle="solid" if rank == 0 else (0, (5, 3)),
+            label=STATUS_LEGEND_LABEL[rank_to_status[rank]],
+        )
+        for rank in present_ranks
     ]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
         bbox_transform=fig.transFigure,
-        ncol=2, frameon=False, handlelength=2.2, columnspacing=1.4,
+        ncol=len(handles), frameon=False, handlelength=2.2, columnspacing=1.4,
         fontsize=MIN.LEGEND, prop=fonts["bold"],
     )
     for text in legend.get_texts():
