@@ -45,7 +45,27 @@ class MIN:
     AXIS_LABEL = 12
     HEATMAP_CELL = 12.5
     HEATMAP_HEADER = 12
-    LEGEND = 12
+    HEATMAP_LEGEND = 12  # gradient-strip min/mid/max labels - stays compact, a thin strip has no room for 24pt
+    LEGEND = 24  # bar-chart key/legend text - ~2x the old 12pt floor; legends were getting lost at 1/3 scale
+
+
+# Figure-fraction height of one row of a matplotlib legend at MIN.LEGEND
+# size (handlelength=1.6, handleheight=1.6, labelspacing=0.9) on this
+# pipeline's fixed canvas - measured empirically (fig.canvas.draw() +
+# legend.get_window_extent()), not estimated, because eyeballed constants
+# here previously produced a legend that silently overlapped the caption
+# below it. Use this to reserve exact room for a legend block:
+#
+#   legend_height = LEGEND_ROW_HEIGHT * n_rows
+#   legend_bottom_y = caption_top + 0.02          # small gap above caption
+#   legend_top_y = legend_bottom_y + legend_height
+#   ax_bottom = legend_top_y + 0.02               # small gap below the axes
+#
+# then anchor the legend with loc="upper left", bbox_to_anchor=(left_margin,
+# legend_top_y), bbox_transform=fig.transFigure - figure-anchored, not
+# axes-anchored, so a long-label legend has the full canvas width to lay
+# out in rather than clipping past the narrower axes box's right edge.
+LEGEND_ROW_HEIGHT = 0.0403
 
 
 def draw_caption_bottom(

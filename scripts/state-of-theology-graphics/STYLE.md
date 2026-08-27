@@ -214,7 +214,8 @@ sizes at this pipeline's canvas (1080×1350px, dpi 120, so 1pt ≈ 1.67px):
 | Value/data labels (bold) | 13pt |
 | Axis / category / row / column labels (bold) | 12pt |
 | Heatmap cell values (bold) | 12.5pt |
-| Legend labels | 12pt |
+| Heatmap gradient-strip legend (min/mid/max) | 12pt |
+| **Bar-chart legend/key text** | **24pt** |
 | Footnotes/captions | exempt — 9-10.5pt as today |
 
 These floors live in [`scripts/chart_style.py`](../chart_style.py) as `MIN`.
@@ -225,6 +226,54 @@ shrink text past the point a phone screen can show it. Split the chart
 before you shrink the type. This doc's existing "suppress a label once it
 can't fit" rule (via `docs/CHARTS.md`) now has a number attached to what
 "can't fit" means.
+
+**Bar-chart legends/keys are ~2x the size of every other label** (24pt vs.
+12-13pt elsewhere). A legend swatch-plus-word is easy to lose entirely at
+1/3 scale in a way a data label sitting on its own bar isn't — the color
+alone has to carry the meaning, so the word next to it has to survive the
+scale-down at least as well as everything else does, if not better.
+
+A matplotlib gotcha this floor ran into: **`ax.legend(fontsize=..., prop=a_FontProperties_instance)` silently ignores `fontsize`** — whichever
+size (if any) is already baked into `prop` wins, and every render script's
+`fonts["bold"]` loads at matplotlib's default (10pt) unless told otherwise.
+The reliable fix, already used for axis tick labels throughout this
+pipeline, is two calls: create the legend, then loop
+`for text in legend.get_texts(): text.set_fontsize(MIN.LEGEND)` — `Text.set_fontsize()` overrides directly, independent of `prop`. Don't trust
+`legend(fontsize=...)` alone to do anything when `prop=` is also passed.
+
+Sizing a legend up this much means it needs real room, computed exactly —
+see `chart_style.LEGEND_ROW_HEIGHT` and the worked formula in its docstring
+for reserving that room and anchoring the legend to the figure (not the
+narrower axes box) so a multi-word legend has the full canvas width to lay
+out in.
+
+## Always check for overlap and spillover
+
+Before a render is considered done — every time a chart's layout changes,
+not just the first time — open the actual PNG and look for:
+
+- **Text overlapping other text.** A bigger label, a longer legend, an extra
+  wrapped title line, or more rows than the last chart you tested can all
+  push one text block into another. This has actually happened in this
+  pipeline: a legend sized up for mobile legibility silently overlapped the
+  caption underneath it because the reserved space was guessed rather than
+  measured.
+- **Text or a swatch spilling outside its own bar, cell, or legend key.** A
+  value label wider than the bar it's printed on, a legend column wider
+  than the space reserved for it.
+- **Anything clipped at the canvas edge.** A wide legend centered on the
+  axes' (not the full canvas') width is a common way for this to happen —
+  see "Bar-chart legends/keys," above, for the fix.
+
+Checking the rendered PNG at full size catches most of this; a chart that
+looks fine at full size can still fail at the 1/3-scale gallery view (see
+"At-a-glance legibility," above), so check there too when the layout is new
+or has meaningfully changed. When a chart is parameterized (a shared
+render function called for several items with different row counts, label
+lengths, or value ranges), check more than one instance of it — the one
+with the most rows, the longest label, and the widest value are where
+overlap and spillover actually show up, not necessarily the first one you
+render.
 
 ## Where graphics live on the website
 

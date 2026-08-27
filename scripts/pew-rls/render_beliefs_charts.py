@@ -29,7 +29,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -176,11 +176,14 @@ def render_paired_bar(
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering, same approach as render_magnitude_bar above, with
-    # extra top room reserved for the legend row above the axes. Caption is
-    # drawn first (bottom-anchored) so its real top edge is known.
+    # room reserved for the legend row above the axes (exact, via
+    # LEGEND_ROW_HEIGHT - not a guessed constant, see chart_style.py).
+    # Caption is drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = _draw_caption(fig, fonts, total_n, note)
-    ax_top = subtitle_bottom - 0.03 - 0.045
+    legend_top_y = subtitle_bottom - 0.02
+    legend_bottom_y = legend_top_y - LEGEND_ROW_HEIGHT  # 2 items, 1 row
+    ax_top = legend_bottom_y - 0.02
     ax_bottom = caption_top + 0.03
 
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
@@ -215,12 +218,14 @@ def render_paired_bar(
     handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label="Heaven"),
                mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label="Hell")]
     legend = ax.legend(
-        handles=handles, loc="upper center", bbox_to_anchor=(0.5, 1.045),
-        ncol=2, frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=12, prop=fonts["bold"], columnspacing=1.5,
+        handles=handles, loc="upper left", bbox_to_anchor=(0.36, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=2, frameon=False, handlelength=1.6, handleheight=1.6,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.5,
     )
     for text in legend.get_texts():
         text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)  # legend()'s fontsize= is ignored when prop= is also passed
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

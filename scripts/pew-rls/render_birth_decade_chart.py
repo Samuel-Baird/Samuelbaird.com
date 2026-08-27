@@ -29,7 +29,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -100,7 +100,12 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     ]
     caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     note_y = caption_top + 0.04
-    ax_bottom = note_y + 0.16
+
+    legend_ncol = 4
+    legend_rows = -(-len(decade_order) // legend_ncol)  # ceil division
+    legend_bottom_y = note_y + 0.02
+    legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT * legend_rows
+    ax_bottom = legend_top_y + 0.02
 
     AXES_LEFT, AXES_WIDTH = 0.30, 0.64
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, 0.32 + 0.44 - ax_bottom])
@@ -141,12 +146,14 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         for d, c in zip(decade_order, ORDINAL_RAMP)
     ]
     legend = ax.legend(
-        handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.09),
-        ncol=4, frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.2,
+        handles=handles, loc="upper left", bbox_to_anchor=(0.045, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=legend_ncol, frameon=False, handlelength=1.6, handleheight=1.6,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
     )
     for text in legend.get_texts():
         text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)  # legend()'s fontsize= is ignored when prop= is also passed
 
     fig.text(
         AXES_LEFT, note_y,

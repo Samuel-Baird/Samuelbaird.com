@@ -163,4 +163,7 @@ palette/layout rules the Pew RLS charts follow, that folder's
 `render_birth_decade_chart.py` for three different chart shapes (diverging
 bar with CI whiskers, 100%-stacked bar, ordinal-ramp 100%-stacked bar), and
 `scripts/ryan-burge/STYLE.md` for the pipeline's one heatmap/matrix shape
-(tri-color diverging gradient).
+(tri-color diverging gradient). Before calling a render done, read
+`scripts/state-of-theology-graphics/STYLE.md`'s "Always check for overlap
+and spillover" section — open the actual PNG and check for it, every time
+a layout changes, not just the first render.

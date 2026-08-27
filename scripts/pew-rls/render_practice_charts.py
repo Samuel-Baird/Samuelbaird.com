@@ -34,7 +34,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -195,10 +195,14 @@ def render_distribution_stack(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = caption_top + 0.03 + 0.05
 
     n_rows = len(group_order)
     n_segs = len(seg_order)
+    legend_ncol = 2
+    legend_rows = -(-n_segs // legend_ncol)  # ceil division
+    legend_bottom_y = caption_top + 0.02
+    legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT * legend_rows
+    ax_bottom = legend_top_y + 0.02
     # Evenly spaced picks from the 7-step ramp so a 4-segment scale (prayer)
     # gets more contrast between adjacent steps than a naive first-4 slice.
     step_idxs = [round(i * (len(ORDINAL_RAMP_7) - 1) / (n_segs - 1)) for i in range(n_segs)]
@@ -237,13 +241,18 @@ def render_distribution_stack(
 
     handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
                for l, c in zip(seg_order, colors)]
+    # Anchored to the figure, left-aligned at the chart's own left margin -
+    # not to the (narrower) axes box - so a long-label legend has the full
+    # canvas width to lay out in rather than clipping past the right edge.
     legend = ax.legend(
-        handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.055),
-        ncol=min(4, n_segs), frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.2,
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=legend_ncol, frameon=False, handlelength=1.6, handleheight=1.6,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
     )
     for text in legend.get_texts():
         text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)  # legend()'s fontsize= is ignored when prop= is also passed
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)

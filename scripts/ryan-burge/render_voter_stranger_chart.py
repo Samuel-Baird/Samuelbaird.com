@@ -25,7 +25,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -106,7 +106,12 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     ]
     caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
     ax_top = subtitle_bottom - 0.03
-    ax_bottom = caption_top + 0.03 + 0.05
+
+    legend_ncol = 2
+    legend_rows = -(-len(seg_order) // legend_ncol)  # ceil division
+    legend_bottom_y = caption_top + 0.02
+    legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT * legend_rows
+    ax_bottom = legend_top_y + 0.02
 
     AXES_LEFT, AXES_WIDTH = 0.34, 0.60
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
@@ -143,12 +148,14 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
                for l, c in zip(seg_order, colors)]
     legend = ax.legend(
-        handles=handles, loc="upper center", bbox_to_anchor=(0.5, -0.055),
-        ncol=4, frameon=False, handlelength=1.2, handleheight=1.2,
-        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.2,
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=legend_ncol, frameon=False, handlelength=1.6, handleheight=1.6,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
     )
     for text in legend.get_texts():
         text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)  # legend()'s fontsize= is ignored when prop= is also passed
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
