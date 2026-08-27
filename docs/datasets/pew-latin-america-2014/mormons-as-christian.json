@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a Historically Catholic Region.\"",
+  "method": "Population is respondent's own current religion (QCURRELrec), pooled across all 18 Latin American/Caribbean countries and Puerto Rico. Share answering \"yes\" to Q63e (\"Do you personally consider Mormons to be followers of the Christian faith, or not?\"); don't know/refused excluded, \"never heard of group\" retained as a valid non-yes response rather than treated as missing. Weighted by the dataset's own combined base/post-stratification WEIGHT.",
+  "total_weighted_n": 30326.60869018281,
+  "total_unweighted_n": 30326,
+  "group_order": [
+    "Other religion",
+    "Unaffiliated",
+    "Catholic",
+    "Protestant/Evangelical",
+    "All respondents"
+  ],
+  "consider_mormons_christian": {
+    "Catholic": {
+      "pct": 42.08,
+      "valid_unweighted_n": 15480,
+      "group_unweighted_n": 19799
+    },
+    "Protestant/Evangelical": {
+      "pct": 32.18,
+      "valid_unweighted_n": 5596,
+      "group_unweighted_n": 6744
+    },
+    "Other religion": {
+      "pct": 50.03,
+      "valid_unweighted_n": 814,
+      "group_unweighted_n": 944
+    },
+    "Unaffiliated": {
+      "pct": 43.1,
+      "valid_unweighted_n": 2091,
+      "group_unweighted_n": 2793
+    },
+    "All respondents": {
+      "pct": 40.13,
+      "valid_unweighted_n": 24015,
+      "group_unweighted_n": 30326
+    }
+  }
+}

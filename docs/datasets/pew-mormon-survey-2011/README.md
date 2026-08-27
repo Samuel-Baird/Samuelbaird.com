@@ -25,10 +25,12 @@ committed):
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-mormon-survey-2011`), which currently ships with `graphics: []`.
-Follow the two-stage pattern in `scripts/pew-rls/` (analysis script reads
-the `.sav`, writes a weighted-aggregate JSON here; a render script turns
-that JSON into a PNG under `public/data-explorer/pew-mormon-survey-2011/`)
-when picking this up.
+One flagship chart shipped: `ordination-by-activity.json` (belief that
+women should be ordained to the priesthood, by activity level in the
+Church), computed by `scripts/pew-mormon-survey-2011/ordination_by_activity.py`
+and rendered by `render_ordination_chart.py` to
+`public/data-explorer/pew-mormon-survey-2011/ordination-by-activity.png`,
+using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
+into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
+`pew-mormon-survey-2011`). Further charts from this dataset should follow
+the same two-stage pattern.

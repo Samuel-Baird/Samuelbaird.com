@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\"",
+  "method": "Population is current religious tradition (RELTRAD), continental-US main survey only. Cutpoint is top-two-box (completely + mostly agree) on q10c (\"Evolution is the best explanation for the origins of human life on earth\"); don't know/refused excluded from each row's denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 88292.49782861538,
+  "total_unweighted_n": 35556,
+  "group_order": [
+    "Buddhist",
+    "Hindu",
+    "Jewish",
+    "Unaffiliated",
+    "Catholic",
+    "Orthodox",
+    "Mainline Protestant Churches",
+    "Muslim",
+    "Historically Black Protestant Churches",
+    "Evangelical Protestant Churches",
+    "Mormon",
+    "Jehovah's Witness",
+    "All U.S. adults"
+  ],
+  "evolution_agree": {
+    "Evangelical Protestant Churches": {
+      "pct": 25.26,
+      "valid_unweighted_n": 8942,
+      "group_unweighted_n": 9472
+    },
+    "Mainline Protestant Churches": {
+      "pct": 54.71,
+      "valid_unweighted_n": 6916,
+      "group_unweighted_n": 7470
+    },
+    "Historically Black Protestant Churches": {
+      "pct": 43.14,
+      "valid_unweighted_n": 1781,
+      "group_unweighted_n": 1995
+    },
+    "Catholic": {
+      "pct": 62.31,
+      "valid_unweighted_n": 7491,
+      "group_unweighted_n": 8054
+    },
+    "Mormon": {
+      "pct": 22.48,
+      "valid_unweighted_n": 566,
+      "group_unweighted_n": 581
+    },
+    "Orthodox": {
+      "pct": 59.62,
+      "valid_unweighted_n": 331,
+      "group_unweighted_n": 363
+    },
+    "Jehovah's Witness": {
+      "pct": 8.03,
+      "valid_unweighted_n": 211,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 81.49,
+      "valid_unweighted_n": 648,
+      "group_unweighted_n": 682
+    },
+    "Muslim": {
+      "pct": 46.68,
+      "valid_unweighted_n": 110,
+      "group_unweighted_n": 116
+    },
+    "Buddhist": {
+      "pct": 85.64,
+      "valid_unweighted_n": 391,
+      "group_unweighted_n": 411
+    },
+    "Hindu": {
+      "pct": 84.52,
+      "valid_unweighted_n": 245,
+      "group_unweighted_n": 257
+    },
+    "Unaffiliated": {
+      "pct": 76.32,
+      "valid_unweighted_n": 4745,
+      "group_unweighted_n": 5048
+    },
+    "All U.S. adults": {
+      "pct": 51.85,
+      "valid_unweighted_n": 33185,
+      "group_unweighted_n": 35556
+    }
+  }
+}

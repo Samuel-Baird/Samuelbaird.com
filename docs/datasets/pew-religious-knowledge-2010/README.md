@@ -28,10 +28,13 @@ not committed):
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-religious-knowledge-2010`), which currently ships with
-`graphics: []`. Follow the two-stage pattern in `scripts/pew-rls/`
-(analysis script reads the `.sav`, writes a weighted-aggregate JSON here; a
-render script turns that JSON into a PNG under
-`public/data-explorer/pew-religious-knowledge-2010/`) when picking this up.
+One flagship chart shipped: `mormon-founding-knowledge.json` (share
+correctly saying the Mormon religion was founded after 1800, by the
+respondent's own religion), computed by
+`scripts/pew-religious-knowledge-2010/mormon_founding_knowledge.py` and
+rendered by `render_mormon_founding_chart.py` to
+`public/data-explorer/pew-religious-knowledge-2010/mormon-founding-knowledge.png`,
+using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
+into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
+`pew-religious-knowledge-2010`). Further charts from this dataset should
+follow the same two-stage pattern.

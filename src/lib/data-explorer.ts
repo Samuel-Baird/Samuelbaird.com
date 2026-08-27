@@ -34,6 +34,14 @@ import voterIdeasOrgsData from "../../docs/datasets/ryan-burge/voter-ideas-orgs.
 import voterIdeasVolunteeringData from "../../docs/datasets/ryan-burge/voter-ideas-volunteering.json";
 import voterIdeasPrideData from "../../docs/datasets/ryan-burge/voter-ideas-pride.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
+import mormonOrdinationData from "../../docs/datasets/pew-mormon-survey-2011/ordination-by-activity.json";
+import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
+import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
+import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
+import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
+import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
+import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
+import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
 
 export type Quiz = {
   title: string;
@@ -406,7 +414,7 @@ export const DATASETS: Dataset[] = [
       "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2012/01/12/mormons-in-america-executive-summary/",
-    graphics: [],
+    graphics: [mormonOrdinationGraphic()],
   },
   {
     slug: "pew-religious-knowledge-2010",
@@ -425,7 +433,7 @@ export const DATASETS: Dataset[] = [
     citation: "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2010/09/28/u-s-religious-knowledge-survey/",
-    graphics: [],
+    graphics: [mormonFoundingKnowledgeGraphic()],
   },
   {
     slug: "pew-rls-2007",
@@ -442,7 +450,7 @@ export const DATASETS: Dataset[] = [
       "switching in America and established the RELTRAD religious-tradition classification " +
       "later waves (2014, 2023-24) still use.",
     sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2007/",
-    graphics: [],
+    graphics: [evolutionBeliefGraphic()],
   },
   {
     slug: "pew-rls-2014",
@@ -460,7 +468,7 @@ export const DATASETS: Dataset[] = [
     citation:
       "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
     sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2014/",
-    graphics: [],
+    graphics: [samesexMarriage2014Graphic()],
   },
   {
     slug: "pew-rls-2014-recontact",
@@ -478,7 +486,7 @@ export const DATASETS: Dataset[] = [
       "underlies the report \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2016/10/26/one-in-five-u-s-adults-were-raised-in-interfaith-homes/",
-    graphics: [],
+    graphics: [marriageSharedBeliefsGraphic()],
   },
   {
     slug: "pew-latin-america-2014",
@@ -499,7 +507,7 @@ export const DATASETS: Dataset[] = [
       "Historically Catholic Region.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2014/11/13/religion-in-latin-america/",
-    graphics: [],
+    graphics: [mormonsAsChristianGraphic()],
   },
   {
     slug: "pew-faith-in-flux-2008",
@@ -520,7 +528,7 @@ export const DATASETS: Dataset[] = [
       "U.S.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2009/04/27/faith-in-flux/",
-    graphics: [],
+    graphics: [reasonsJoinedLdsGraphic()],
   },
   {
     slug: "pew-atp-w70-2020",
@@ -536,9 +544,130 @@ export const DATASETS: Dataset[] = [
       "religious tradition (Latter-day Saints coded 20000), which is what makes an otherwise " +
       "general-topic wave usable for breaking its questions out by religion.",
     sourceUrl: "https://www.pewresearch.org/our-methods/u-s-surveys/american-trends-panel/",
-    graphics: [],
+    graphics: [onlineWorshipCovidGraphic()],
   },
 ];
+
+// --- Flagship graphics for the eight raw-Pew-dataset registrations above.
+// Each dataset gets exactly one chart (found via scripts/<slug>/*.py, an
+// analysis script that reads the raw .sav microdata and writes a JSON
+// aggregate to docs/datasets/<slug>/, rendered by
+// scripts/<slug>/render_*.py using the shared shape in
+// scripts/flagship-charts/common.py) rather than the many-chart buildout
+// pew-rls-2023-24 or the ryan-burge sources have - see each dataset's own
+// docs/datasets/<slug>/README.md for the regeneration commands.
+
+function mormonOrdinationGraphic(): Graphic {
+  const { activity_order: order, ordain_women_yes: results } = mormonOrdinationData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Should women be ordained to the priesthood?",
+    description: "Share of Mormons who believe dedicated women members should be ordained, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/ordination-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons believing women should be ordained to the priesthood, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function mormonFoundingKnowledgeGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = mormonFoundingKnowledgeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who knows when Mormonism was founded?",
+    description: "Share correctly saying the Mormon religion was founded after 1800, by the respondent's own religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/mormon-founding-knowledge.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Mormonism as founded sometime after 1800, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function evolutionBeliefGraphic(): Graphic {
+  const { group_order: order, evolution_agree: results } = evolutionBeliefData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is evolution the best explanation?",
+    description: "Share who agree evolution is the best explanation for human life on Earth, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/evolution-belief.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share agreeing evolution is the best explanation for human life on Earth, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function samesexMarriage2014Graphic(): Graphic {
+  const { group_order: order, favor_samesex_marriage: results } = samesexMarriage2014Data;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Support for same-sex marriage, 2014",
+    description: "Share who favor allowing gays and lesbians to marry legally, by religious tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014/samesex-marriage.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share favoring same-sex marriage, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function marriageSharedBeliefsGraphic(): Graphic {
+  const { group_order: order, shared_beliefs_very_important: results } = marriageSharedBeliefsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Sharing faith with a spouse",
+    description: "Share who say shared religious beliefs are very important for a successful marriage, by tradition (2015).",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/marriage-shared-beliefs.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying shared religious beliefs are very important for a successful marriage, by religious tradition. ${alt}.`,
+  };
+}
+
+function mormonsAsChristianGraphic(): Graphic {
+  const { group_order: order, consider_mormons_christian: results } = mormonsAsChristianData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Are Mormons seen as Christian?",
+    description: "Share across Latin America who consider Mormons to be followers of the Christian faith, by their own religion.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/mormons-as-christian.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share considering Mormons to be followers of the Christian faith, by respondent's own religion, across Latin America. ${alt}.`,
+  };
+}
+
+function reasonsJoinedLdsGraphic(): Graphic {
+  const { reason_order: order, important_reason_pct: results, lds_converts_unweighted_n: n } = reasonsJoinedLdsData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Why converts say they joined the LDS Church",
+    description: `Share of LDS converts (n=${n}) calling each factor an important reason they became Mormon.`,
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/reasons-joined-lds.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of LDS converts calling each factor an important reason for joining. ${alt}.`,
+  };
+}
+
+function onlineWorshipCovidGraphic(): Graphic {
+  const { group_order: order, watched_online_worship: results } = onlineWorshipCovidData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Worship online during COVID lockdowns",
+    description: "Share who watched religious services online or on TV in the past month, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/online-worship-covid.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share watching religious services online or on TV in the past month, by religious tradition, July 2020. ${alt}.`,
+  };
+}
 
 export function getDataset(slug: string): Dataset | undefined {
   return DATASETS.find((d) => d.slug === slug);

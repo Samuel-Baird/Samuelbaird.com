@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share answering \"yes\" to ATTENDONLINE_W70 (\"In the last month, have you watched religious services online or on TV?\"); don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10211.00001353193,
+  "total_unweighted_n": 10211,
+  "group_order": [
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Mormon",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "watched_online_worship": {
+    "Evangelical Protestant": {
+      "pct": 62.39,
+      "valid_unweighted_n": 2080,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 37.2,
+      "valid_unweighted_n": 1365,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 67.12,
+      "valid_unweighted_n": 457,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 36.33,
+      "valid_unweighted_n": 2217,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 45.4,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 17.02,
+      "valid_unweighted_n": 250,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 8.44,
+      "valid_unweighted_n": 3073,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 33.51,
+      "valid_unweighted_n": 10182,
+      "group_unweighted_n": 10211
+    }
+  }
+}

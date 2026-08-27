@@ -29,10 +29,13 @@ committed):
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-faith-in-flux-2008`), which currently ships with `graphics: []`.
-Follow the two-stage pattern in `scripts/pew-rls/` (analysis script reads
-the `.sav`, writes a weighted-aggregate JSON here; a render script turns
-that JSON into a PNG under `public/data-explorer/pew-faith-in-flux-2008/`)
-when picking this up.
+One flagship chart shipped: `reasons-joined-lds.json` (why the survey's 38
+converts to Mormonism say they joined), computed by
+`scripts/pew-faith-in-flux-2008/reasons_joined_lds.py` and rendered by
+`render_reasons_joined_lds_chart.py` to
+`public/data-explorer/pew-faith-in-flux-2008/reasons-joined-lds.png`, using
+the shared chart shape in `scripts/flagship-charts/common.py` (with a
+wider `axes_left` margin, since its row labels are full survey-item
+phrases rather than short group names). Wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-faith-in-flux-2008`). Further charts
+from this dataset should follow the same two-stage pattern.

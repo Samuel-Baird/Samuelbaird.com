@@ -28,10 +28,11 @@ abstract.
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-atp-w70-2020`), which currently ships with `graphics: []`. Follow
-the two-stage pattern in `scripts/pew-rls/` (analysis script reads the
-`.sav`, writes a weighted-aggregate JSON here; a render script turns that
-JSON into a PNG under `public/data-explorer/pew-atp-w70-2020/`) when
-picking this up.
+One flagship chart shipped: `online-worship-covid.json` (share who watched
+religious services online or on TV during the pandemic, by religious
+tradition), computed by `scripts/pew-atp-w70-2020/online_worship_covid.py`
+and rendered by `render_online_worship_chart.py` to
+`public/data-explorer/pew-atp-w70-2020/online-worship-covid.png`, using the
+shared chart shape in `scripts/flagship-charts/common.py`. Wired into the
+Data Explorer entry (`src/lib/data-explorer.ts`, slug `pew-atp-w70-2020`).
+Further charts from this dataset should follow the same two-stage pattern.

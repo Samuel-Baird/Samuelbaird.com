@@ -28,10 +28,13 @@ committed):
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-rls-2014-recontact`), which currently ships with `graphics: []`.
-Follow the two-stage pattern in `scripts/pew-rls/` (analysis script reads
-the `.sav`, writes a weighted-aggregate JSON here; a render script turns
-that JSON into a PNG under
-`public/data-explorer/pew-rls-2014-recontact/`) when picking this up.
+One flagship chart shipped: `marriage-shared-beliefs.json` (share saying
+shared religious beliefs are very important for a successful marriage, by
+tradition), computed by
+`scripts/pew-rls-2014-recontact/marriage_shared_beliefs.py` and rendered by
+`render_marriage_shared_beliefs_chart.py` to
+`public/data-explorer/pew-rls-2014-recontact/marriage-shared-beliefs.png`,
+using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
+into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
+`pew-rls-2014-recontact`). Further charts from this dataset should follow
+the same two-stage pattern.

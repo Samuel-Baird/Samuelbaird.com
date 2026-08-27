@@ -1,0 +1,41 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is the subset of respondents who converted TO Mormonism (CURREL2 = 20000), a small subgroup of this 2,867-respondent recontact survey. Each reason's own don't know/refused excluded from its own denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "lds_converts_unweighted_n": 38,
+  "reason_order": [
+    "Enjoyed the services and style of worship",
+    "Felt called by God",
+    "Asked to join by a member of the religion",
+    "Married someone of that religion",
+    "Moved to a new community",
+    "Attracted by a particular minister or pastor"
+  ],
+  "important_reason_pct": {
+    "Felt called by God": {
+      "pct": 51.04,
+      "valid_unweighted_n": 22
+    },
+    "Enjoyed the services and style of worship": {
+      "pct": 90.43,
+      "valid_unweighted_n": 22
+    },
+    "Married someone of that religion": {
+      "pct": 29.19,
+      "valid_unweighted_n": 22
+    },
+    "Asked to join by a member of the religion": {
+      "pct": 48.96,
+      "valid_unweighted_n": 22
+    },
+    "Attracted by a particular minister or pastor": {
+      "pct": 11.96,
+      "valid_unweighted_n": 22
+    },
+    "Moved to a new community": {
+      "pct": 22.01,
+      "valid_unweighted_n": 22
+    }
+  }
+}

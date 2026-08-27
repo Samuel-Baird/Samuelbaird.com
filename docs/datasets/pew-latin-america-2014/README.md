@@ -30,10 +30,13 @@ committed):
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-latin-america-2014`), which currently ships with `graphics: []`.
-Follow the two-stage pattern in `scripts/pew-rls/` (analysis script reads
-the `.sav`, writes a weighted-aggregate JSON here; a render script turns
-that JSON into a PNG under `public/data-explorer/pew-latin-america-2014/`)
-when picking this up.
+One flagship chart shipped: `mormons-as-christian.json` (share across
+Latin America who consider Mormons to be followers of the Christian
+faith, by their own religion), computed by
+`scripts/pew-latin-america-2014/mormons_as_christian.py` and rendered by
+`render_mormons_as_christian_chart.py` to
+`public/data-explorer/pew-latin-america-2014/mormons-as-christian.png`,
+using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
+into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
+`pew-latin-america-2014`). Further charts from this dataset should follow
+the same two-stage pattern.

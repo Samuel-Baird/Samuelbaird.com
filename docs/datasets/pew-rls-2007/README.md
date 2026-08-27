@@ -28,11 +28,12 @@ Raw microdata lives in `data/pew-rls-2007/` (gitignored, not committed):
 
 ## Status
 
-Landed, not yet analyzed. No JSON aggregates or charts have been built from
-this dataset — see the Data Explorer entry (`src/lib/data-explorer.ts`,
-slug `pew-rls-2007`), which currently ships with `graphics: []`. The most
-natural first use is a three-point trendline against `pew-rls-2014` and
-`pew-rls-2023-24` on a question all three waves share. Follow the
-two-stage pattern in `scripts/pew-rls/` (analysis script reads the `.sav`,
-writes a weighted-aggregate JSON here; a render script turns that JSON
-into a PNG under `public/data-explorer/pew-rls-2007/`) when picking this up.
+One flagship chart shipped: `evolution-belief.json` (share agreeing
+evolution is the best explanation for human life on Earth, by religious
+tradition), computed by `scripts/pew-rls-2007/evolution_belief.py` and
+rendered by `render_evolution_chart.py` to
+`public/data-explorer/pew-rls-2007/evolution-belief.png`, using the shared
+chart shape in `scripts/flagship-charts/common.py`. Wired into the Data
+Explorer entry (`src/lib/data-explorer.ts`, slug `pew-rls-2007`). The most
+natural next chart is a three-point trendline against `pew-rls-2014` and
+`pew-rls-2023-24` on a question all three waves share.
