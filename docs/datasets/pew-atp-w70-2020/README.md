@@ -28,11 +28,20 @@ abstract.
 
 ## Status
 
-One flagship chart shipped: `online-worship-covid.json` (share who watched
-religious services online or on TV during the pandemic, by religious
-tradition), computed by `scripts/pew-atp-w70-2020/online_worship_covid.py`
-and rendered by `render_online_worship_chart.py` to
-`public/data-explorer/pew-atp-w70-2020/online-worship-covid.png`, using the
-shared chart shape in `scripts/flagship-charts/common.py`. Wired into the
-Data Explorer entry (`src/lib/data-explorer.ts`, slug `pew-atp-w70-2020`).
+Three charts shipped, all by religious tradition (F_RELTRAD) with groups
+under 30 valid respondents omitted, wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-atp-w70-2020`), using the shared
+chart shape in `scripts/flagship-charts/common.py`:
+
+- `online-worship-covid.json` (share who watched religious services
+  online or on TV during the pandemic, ATTENDONLINE_W70) — computed by
+  `online_worship_covid.py`, rendered by `render_online_worship_chart.py`.
+- `prayer-covid-coping.json` (share who prayed daily to cope with the
+  coronavirus outbreak, SPIRIT2_a_W70) — computed by
+  `prayer_covid_coping.py`, rendered by `render_prayer_covid_chart.py`.
+- `inperson-attendance-covid.json` (share who attended religious services
+  in person in the past month, ATTENDMONTH_W70) — computed by
+  `inperson_attendance_covid.py`, rendered by
+  `render_inperson_attendance_chart.py`.
+
 Further charts from this dataset should follow the same two-stage pattern.

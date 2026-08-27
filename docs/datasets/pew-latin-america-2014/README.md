@@ -30,13 +30,20 @@ committed):
 
 ## Status
 
-One flagship chart shipped: `mormons-as-christian.json` (share across
-Latin America who consider Mormons to be followers of the Christian
-faith, by their own religion), computed by
-`scripts/pew-latin-america-2014/mormons_as_christian.py` and rendered by
-`render_mormons_as_christian_chart.py` to
-`public/data-explorer/pew-latin-america-2014/mormons-as-christian.png`,
-using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
-into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
-`pew-latin-america-2014`). Further charts from this dataset should follow
-the same two-stage pattern.
+Three charts shipped, all by respondent's own current religion
+(QCURRELrec), pooled across all countries surveyed, wired into the Data
+Explorer entry (`src/lib/data-explorer.ts`, slug `pew-latin-america-2014`),
+using the shared chart shape in `scripts/flagship-charts/common.py`:
+
+- `mormons-as-christian.json` (share who consider Mormons to be followers
+  of the Christian faith, Q63e) — computed by `mormons_as_christian.py`,
+  rendered by `render_mormons_as_christian_chart.py`.
+- `weekly-attendance.json` (share attending religious services weekly or
+  more, Q45) — computed by `weekly_attendance.py`, rendered by
+  `render_weekly_attendance_chart.py`.
+- `religion-importance.json` (share saying religion is very important in
+  their life, Q29) — computed by `religion_importance.py`, rendered by
+  `render_religion_importance_chart.py`.
+
+Further charts from this dataset should follow the same two-stage
+pattern.

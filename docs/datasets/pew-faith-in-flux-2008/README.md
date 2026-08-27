@@ -29,13 +29,24 @@ committed):
 
 ## Status
 
-One flagship chart shipped: `reasons-joined-lds.json` (why the survey's 38
-converts to Mormonism say they joined), computed by
-`scripts/pew-faith-in-flux-2008/reasons_joined_lds.py` and rendered by
-`render_reasons_joined_lds_chart.py` to
-`public/data-explorer/pew-faith-in-flux-2008/reasons-joined-lds.png`, using
-the shared chart shape in `scripts/flagship-charts/common.py` (with a
-wider `axes_left` margin, since its row labels are full survey-item
-phrases rather than short group names). Wired into the Data Explorer entry
-(`src/lib/data-explorer.ts`, slug `pew-faith-in-flux-2008`). Further charts
-from this dataset should follow the same two-stage pattern.
+Three charts shipped, wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-faith-in-flux-2008`), using the
+shared chart shape in `scripts/flagship-charts/common.py`:
+
+- `reasons-joined-lds.json` (why the survey's 38 converts to Mormonism
+  say they joined) — computed by `reasons_joined_lds.py`, rendered by
+  `render_reasons_joined_lds_chart.py` (wider `axes_left` margin, since
+  its row labels are full survey-item phrases).
+- `reasons-left-religion.json` (why all 2,867 recontacted switchers left
+  the religion they grew up in, q4 battery) — computed by
+  `reasons_left_religion.py`, rendered by `render_reasons_left_chart.py`
+  (same wider `axes_left`). The former-Mormon subgroup here is only
+  n=26 — too thin even by this dataset's own loose small-n convention —
+  so this chart reports the general switcher population instead of
+  isolating Mormon leavers.
+- `leave-vs-join.json` (whether changing religion was driven more by
+  wanting to leave the old one or join the new one, q6) — computed by
+  `leave_vs_join.py`, rendered by `render_leave_vs_join_chart.py`.
+
+Further charts from this dataset should follow the same two-stage
+pattern.

@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a Historically Catholic Region.\"",
+  "method": "Population is respondent's own current religion (QCURRELrec), pooled across all 18 Latin American/Caribbean countries and Puerto Rico. Weekly+ combines \"more than once a week\" and \"once a week\" on Q45; don't know/refused excluded from each row's denominator. Weighted by the dataset's own combined base/post-stratification WEIGHT.",
+  "total_weighted_n": 30326.60869018281,
+  "total_unweighted_n": 30326,
+  "group_order": [
+    "Protestant/Evangelical",
+    "Other religion",
+    "Catholic",
+    "Unaffiliated",
+    "All respondents"
+  ],
+  "attend_weekly": {
+    "Catholic": {
+      "pct": 37.92,
+      "valid_unweighted_n": 19739,
+      "group_unweighted_n": 19799
+    },
+    "Protestant/Evangelical": {
+      "pct": 71.82,
+      "valid_unweighted_n": 6724,
+      "group_unweighted_n": 6744
+    },
+    "Other religion": {
+      "pct": 61.56,
+      "valid_unweighted_n": 942,
+      "group_unweighted_n": 944
+    },
+    "Unaffiliated": {
+      "pct": 4.09,
+      "valid_unweighted_n": 2757,
+      "group_unweighted_n": 2793
+    },
+    "All respondents": {
+      "pct": 42.93,
+      "valid_unweighted_n": 30204,
+      "group_unweighted_n": 30326
+    }
+  }
+}

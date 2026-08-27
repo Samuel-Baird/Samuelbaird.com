@@ -1,0 +1,26 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is all respondents who left the religion they were raised in (this recontact survey's own design). q6 asks whether the change was more about wanting to leave the old religion or wanting to join the new one; don't know/refused excluded from the denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "valid_unweighted_n": 1394,
+  "motive_order": [
+    "Wanted to join the new religion",
+    "Neither/both",
+    "Wanted to leave the old religion"
+  ],
+  "motive_pct": {
+    "Wanted to leave the old religion": {
+      "pct": 30.46,
+      "unweighted_n": 588
+    },
+    "Wanted to join the new religion": {
+      "pct": 35.98,
+      "unweighted_n": 349
+    },
+    "Neither/both": {
+      "pct": 33.56,
+      "unweighted_n": 457
+    }
+  }
+}

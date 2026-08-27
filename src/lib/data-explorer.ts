@@ -51,8 +51,14 @@ import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontac
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
+import latinAmericaWeeklyAttendanceData from "../../docs/datasets/pew-latin-america-2014/weekly-attendance.json";
+import latinAmericaReligionImportanceData from "../../docs/datasets/pew-latin-america-2014/religion-importance.json";
 import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
+import reasonsLeftReligionData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-left-religion.json";
+import leaveVsJoinData from "../../docs/datasets/pew-faith-in-flux-2008/leave-vs-join.json";
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
+import prayerCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/prayer-covid-coping.json";
+import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/inperson-attendance-covid.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
@@ -594,7 +600,11 @@ export const DATASETS: Dataset[] = [
       "Historically Catholic Region.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2014/11/13/religion-in-latin-america/",
-    graphics: [mormonsAsChristianGraphic()],
+    graphics: [
+      mormonsAsChristianGraphic(),
+      latinAmericaWeeklyAttendanceGraphic(),
+      latinAmericaReligionImportanceGraphic(),
+    ],
   },
   {
     slug: "pew-faith-in-flux-2008",
@@ -615,7 +625,11 @@ export const DATASETS: Dataset[] = [
       "U.S.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2009/04/27/faith-in-flux/",
-    graphics: [reasonsJoinedLdsGraphic()],
+    graphics: [
+      reasonsJoinedLdsGraphic(),
+      reasonsLeftReligionGraphic(),
+      leaveVsJoinGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w70-2020",
@@ -631,7 +645,11 @@ export const DATASETS: Dataset[] = [
       "religious tradition (Latter-day Saints coded 20000), which is what makes an otherwise " +
       "general-topic wave usable for breaking its questions out by religion.",
     sourceUrl: "https://www.pewresearch.org/our-methods/u-s-surveys/american-trends-panel/",
-    graphics: [onlineWorshipCovidGraphic()],
+    graphics: [
+      onlineWorshipCovidGraphic(),
+      prayerCovidCopingGraphic(),
+      inpersonAttendanceCovidGraphic(),
+    ],
   },
 ];
 
@@ -959,6 +977,34 @@ function mormonsAsChristianGraphic(): Graphic {
   };
 }
 
+function latinAmericaWeeklyAttendanceGraphic(): Graphic {
+  const { group_order: order, attend_weekly: results } = latinAmericaWeeklyAttendanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who attends religious services weekly?",
+    description: "Share across Latin America attending religious services once a week or more, by their own religion.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/weekly-attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share across Latin America attending religious services weekly or more, by their own religion. ${alt}.`,
+  };
+}
+
+function latinAmericaReligionImportanceGraphic(): Graphic {
+  const { group_order: order, religion_very_important: results } = latinAmericaReligionImportanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is religion?",
+    description: "Share across Latin America saying religion is very important in their life, by their own religion.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/religion-importance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share across Latin America saying religion is very important in their life, by their own religion. ${alt}.`,
+  };
+}
+
 function reasonsJoinedLdsGraphic(): Graphic {
   const { reason_order: order, important_reason_pct: results, lds_converts_unweighted_n: n } = reasonsJoinedLdsData;
   const alt = order
@@ -973,6 +1019,34 @@ function reasonsJoinedLdsGraphic(): Graphic {
   };
 }
 
+function reasonsLeftReligionGraphic(): Graphic {
+  const { reason_order: order, important_reason_pct: results } = reasonsLeftReligionData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Why do people leave their childhood religion?",
+    description: "Share of religious switchers calling each factor an important reason they left the religion they grew up in.",
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/reasons-left-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of religious switchers calling each factor an important reason for leaving. ${alt}.`,
+  };
+}
+
+function leaveVsJoinGraphic(): Graphic {
+  const { motive_order: order, motive_pct: results } = leaveVsJoinData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Leaving, or joining?",
+    description: "When people changed religion, was it driven more by wanting to leave the old one, or join the new one?",
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/leave-vs-join.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: whether changing religion was driven more by wanting to leave the old religion or join the new one. ${alt}.`,
+  };
+}
+
 function onlineWorshipCovidGraphic(): Graphic {
   const { group_order: order, watched_online_worship: results } = onlineWorshipCovidData;
   const alt = order
@@ -984,6 +1058,34 @@ function onlineWorshipCovidGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/online-worship-covid.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share watching religious services online or on TV in the past month, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function prayerCovidCopingGraphic(): Graphic {
+  const { group_order: order, prayed_daily_covid: results } = prayerCovidCopingData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Praying to cope with COVID",
+    description: "Share who prayed daily to help cope with the coronavirus outbreak, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/prayer-covid-coping.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share praying daily to cope with the coronavirus outbreak, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function inpersonAttendanceCovidGraphic(): Graphic {
+  const { group_order: order, attended_inperson_covid: results } = inpersonAttendanceCovidData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who kept attending in person?",
+    description: "Share who attended religious services in person in the past month, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/inperson-attendance-covid.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share attending religious services in person in the past month, by religious tradition, July 2020. ${alt}.`,
   };
 }
 

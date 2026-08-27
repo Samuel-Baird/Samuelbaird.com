@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is all respondents who left the religion they were raised in (this recontact survey's own design - all 2,867 respondents had changed religious tradition or moved within one since childhood). Each reason's own don't know/refused excluded from its own denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "reason_order": [
+    "Just gradually drifted away",
+    "Spiritual needs weren't being met",
+    "Found a religion they liked more",
+    "Stopped believing in the religion's teachings",
+    "Married someone of a different religion",
+    "Wasn't comfortable with the community there"
+  ],
+  "important_reason_pct": {
+    "Stopped believing in the religion's teachings": {
+      "pct": 35.15,
+      "valid_unweighted_n": 1418
+    },
+    "Just gradually drifted away": {
+      "pct": 52.62,
+      "valid_unweighted_n": 1426
+    },
+    "Found a religion they liked more": {
+      "pct": 45.94,
+      "valid_unweighted_n": 1716
+    },
+    "Spiritual needs weren't being met": {
+      "pct": 51.52,
+      "valid_unweighted_n": 1704
+    },
+    "Wasn't comfortable with the community there": {
+      "pct": 21.46,
+      "valid_unweighted_n": 1416
+    },
+    "Married someone of a different religion": {
+      "pct": 26.02,
+      "valid_unweighted_n": 1748
+    }
+  }
+}
