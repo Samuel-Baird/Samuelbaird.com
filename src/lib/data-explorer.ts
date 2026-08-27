@@ -35,6 +35,7 @@ import voterIdeasVolunteeringData from "../../docs/datasets/ryan-burge/voter-ide
 import voterIdeasPrideData from "../../docs/datasets/ryan-burge/voter-ideas-pride.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 import mormonOrdinationData from "../../docs/datasets/pew-mormon-survey-2011/ordination-by-activity.json";
+import mormonismChristianData from "../../docs/datasets/pew-mormon-survey-2011/mormonism-christian.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
@@ -414,7 +415,7 @@ export const DATASETS: Dataset[] = [
       "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2012/01/12/mormons-in-america-executive-summary/",
-    graphics: [mormonOrdinationGraphic()],
+    graphics: [mormonismChristianGraphic(), mormonOrdinationGraphic()],
   },
   {
     slug: "pew-religious-knowledge-2010",
@@ -556,6 +557,23 @@ export const DATASETS: Dataset[] = [
 // scripts/flagship-charts/common.py) rather than the many-chart buildout
 // pew-rls-2023-24 or the ryan-burge sources have - see each dataset's own
 // docs/datasets/<slug>/README.md for the regeneration commands.
+
+function mormonismChristianGraphic(): Graphic {
+  const { row_order: rows, segment_order: segs, results } = mormonismChristianData;
+  const alt = rows
+    .map((r) => {
+      const v = results[r as keyof typeof results];
+      return `${r}: ` + segs.map((s) => `${s} ${v[s as keyof typeof v]}%`).join(", ");
+    })
+    .join("; ");
+  return {
+    title: "Is Mormonism a Christian religion?",
+    description: "Mormons themselves vs. the U.S. general public.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/mormonism-christian.png",
+    width: 1080, height: 1350,
+    alt: `Stacked bar chart, is Mormonism a Christian religion, Mormons vs. U.S. general public. ${alt}.`,
+  };
+}
 
 function mormonOrdinationGraphic(): Graphic {
   const { activity_order: order, ordain_women_yes: results } = mormonOrdinationData;

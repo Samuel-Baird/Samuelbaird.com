@@ -25,12 +25,23 @@ committed):
 
 ## Status
 
-One flagship chart shipped: `ordination-by-activity.json` (belief that
-women should be ordained to the priesthood, by activity level in the
-Church), computed by `scripts/pew-mormon-survey-2011/ordination_by_activity.py`
-and rendered by `render_ordination_chart.py` to
-`public/data-explorer/pew-mormon-survey-2011/ordination-by-activity.png`,
-using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
-into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
-`pew-mormon-survey-2011`). Further charts from this dataset should follow
-the same two-stage pattern.
+Two charts shipped, both wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-mormon-survey-2011`):
+
+- `ordination-by-activity.json` (belief that women should be ordained to
+  the priesthood, by activity level in the Church) — computed by
+  `scripts/pew-mormon-survey-2011/ordination_by_activity.py`, rendered by
+  `render_ordination_chart.py` using the shared magnitude-bar shape in
+  `scripts/flagship-charts/common.py`.
+- `mormonism-christian.json` ("Is Mormonism a Christian religion?", q442,
+  Mormons vs. the U.S. general public) — computed by
+  `scripts/pew-mormon-survey-2011/mormonism_christian.py`, rendered by
+  `render_mormonism_christian_chart.py` using the shared 100%-stack shape
+  (`render_100_stack`) in the same common module. The "U.S. general
+  public" row is Pew's own published comparison number from a separate
+  November 2011 survey of non-Mormons this site doesn't hold microdata
+  for — copied verbatim with its own source note in the analysis script,
+  not computed here; see that script's docstring before reusing the
+  pattern elsewhere.
+
+Further charts from this dataset should follow the same two-stage pattern.

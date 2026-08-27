@@ -1,0 +1,28 @@
+{
+  "source": "Pew Research Center. 2012. \"Mormons in America.\"",
+  "method": "q442 (\"do you think of Mormonism as a Christian religion, or is it not a Christian religion?\") asked of Mormon respondents; don't know/refused kept IN the base as its own segment (not excluded), matching Pew's own published topline treatment of this question. Weighted by the dataset's own `weight` variable. The \"U.S. general public\" row is copied verbatim from Pew's own published comparison (a November 2011 survey of non-Mormons this site does not hold microdata for) - not computed from this dataset.",
+  "segment_order": [
+    "Yes",
+    "No",
+    "Don't know"
+  ],
+  "row_order": [
+    "U.S. Mormons",
+    "U.S. general public"
+  ],
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "mormons_unweighted_n": 1019,
+  "results": {
+    "U.S. Mormons": {
+      "Yes": 97.3,
+      "No": 1.7,
+      "Don't know": 1.0
+    },
+    "U.S. general public": {
+      "Yes": 51.0,
+      "No": 32.0,
+      "Don't know": 17.0
+    }
+  }
+}
