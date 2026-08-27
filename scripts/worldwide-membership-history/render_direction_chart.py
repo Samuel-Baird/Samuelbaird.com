@@ -41,11 +41,19 @@ def main():
     years = data["year_order"]
     values = {y: data["series"][str(y)]["members"] for y in years}
 
+    # Value callouts every 25 years from the series' own start, plus the
+    # final year (2025 is only 20 years past 2005, an uneven last gap, but
+    # leaving off the endpoint would be a stranger omission than one
+    # shorter interval).
+    label_years = list(range(years[0], years[-1], 25))
+    if label_years[-1] != years[-1]:
+        label_years.append(years[-1])
+
     render_timeseries_by_direction(
         years=years,
         values=values,
-        title="Where did membership ever decrease?",
-        subtitle="Worldwide Church membership, 1830-2025, colored\nby whether it grew or shrank from the year before.",
+        title="Worldwide Church membership, 1830-2025",
+        subtitle="Colored by whether it grew or shrank from the year\nbefore, with the total every 25 years.",
         caption_paragraphs=[
             "Four years saw a net decrease: 1839 (following the 1838 Missouri Extermination "
             "Order), and 1855-1857 (the difficult early Utah years). Every other year grew.",
@@ -53,6 +61,7 @@ def main():
         ],
         out_path=args.out,
         fonts=load_fonts(),
+        label_years=label_years,
     )
 
 

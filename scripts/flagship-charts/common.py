@@ -342,17 +342,22 @@ def render_timeseries(
     label_years = label_years or [years[0], years[-1]]
     for y in label_years:
         # The series' own first/last point has nothing to its left/right
-        # in x, so floating its label sideways (vertically centered, no
-        # vertical push at all) is always clear of the line - unlike a
-        # vertical push, which for an interior or endpoint value close to
-        # the floor/ceiling can either cross the axis spine (wide y-range)
-        # or land back on the line's own steep climb (narrow one).
+        # in x, so floating its label sideways is normally clear of the
+        # line - unlike a vertical push, which for an interior or endpoint
+        # value close to the floor/ceiling can either cross the axis spine
+        # (wide y-range) or land back on the line's own steep climb
+        # (narrow one). A small upward nudge is still needed on top of the
+        # sideways float when the first point sits at (or very near) the
+        # y-axis floor itself, e.g. worldwide-membership-history's 1830
+        # value of 280 on an 18M-tall axis - centered-on-the-point placement
+        # there lands directly on top of the floor's own "0M" tick label,
+        # since both are drawn at the same height in the same left margin.
         # matplotlib doesn't clip an annotation that extends past the axes
-        # box, so this is safe even though it's technically off the
-        # plotted x-range.
+        # box, so floating left is safe even though it's technically off
+        # the plotted x-range.
         if y == years[0]:
             ax.annotate(
-                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 0),
+                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 14),
                 textcoords="offset points", ha="right", va="center",
                 color=STATUS_COLOR[statuses[y]], fontproperties=fonts["bold"],
                 fontsize=MIN.DATA_LABEL + 2, zorder=5,
@@ -522,7 +527,7 @@ def render_range_projection(
             fontsize=MIN.DATA_LABEL + 2, zorder=5,
         )
 
-    label(history_years[0], hist_vals[0], ACCENT, -10, 0, "right")
+    label(history_years[0], hist_vals[0], ACCENT, -10, 14, "right")
     label(range_years[-1], high_vals[-1], ACCENT, -10, 0, "right")
     # The low bound flattens out (hits its 0%-growth floor) well before
     # 2050, so its own line runs dead flat under this label - nudge down
@@ -730,8 +735,14 @@ def render_timeseries_by_direction(
     for y in label_years:
         color = ACCENT
         if y == years[0]:
+            # See render_timeseries's own first-point comment: a small
+            # upward nudge on top of the sideways float, so a point that
+            # sits at (or very near) the y-axis floor - e.g. 1830's 280 on
+            # an 18M-tall axis - doesn't land its label on top of the
+            # floor's own tick label, which lives in the same left margin
+            # at the same height.
             ax.annotate(
-                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 0),
+                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 14),
                 textcoords="offset points", ha="right", va="center",
                 color=color, fontproperties=fonts["bold"],
                 fontsize=MIN.DATA_LABEL + 2, zorder=5,
@@ -748,11 +759,18 @@ def render_timeseries_by_direction(
         dist_to_floor = values[y] - y_floor
         dist_to_ceil = y_ceil - values[y]
         va = "bottom" if dist_to_floor < dist_to_ceil else "top"
+        # ha="right" (label entirely left of the point) rather than
+        # centered, since on a curve that's still rising to the right of
+        # this point (true for every interior milestone on an exponential
+        # series like this one), a centered label's right half sits over
+        # x-values where the line has already climbed higher - i.e. into
+        # the line itself - while its left half sits over years where the
+        # curve was lower, which is always clear.
         ax.annotate(
-            f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(0, 18 if va == "bottom" else -18),
-            textcoords="offset points", ha="center", va=va,
+            f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-12, 20 if va == "bottom" else -20),
+            textcoords="offset points", ha="right", va=va,
             color=color, fontproperties=fonts["bold"],
-            fontsize=MIN.DATA_LABEL + 2, zorder=5,
+            fontsize=MIN.DATA_LABEL, zorder=5,
         )
 
     from matplotlib.lines import Line2D

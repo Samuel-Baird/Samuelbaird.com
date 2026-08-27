@@ -639,15 +639,19 @@ function worldwideMembershipDirectionGraphic(): Graphic {
     const prev = years[i - 1];
     return series[String(y) as keyof typeof series].members < series[String(prev) as keyof typeof series].members;
   });
-  const alt = decreaseYears
+  const decreaseAlt = decreaseYears
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].members.toLocaleString()}`)
+    .join(", ");
+  const milestoneYears = years.filter((y, i) => i === 0 || i === years.length - 1 || (y - years[0]) % 25 === 0);
+  const milestoneAlt = milestoneYears
     .map((y) => `${y}: ${series[String(y) as keyof typeof series].members.toLocaleString()}`)
     .join(", ");
   return {
-    title: "Where did membership ever decrease?",
-    description: "The same 1830-2025 series, colored by whether membership grew or shrank from the year before.",
+    title: "Worldwide Church membership, 1830-2025",
+    description: "The same series, colored by whether membership grew or shrank from the year before, with the total every 25 years.",
     imageSrc: "/data-explorer/worldwide-membership-history/membership-by-direction.png",
     width: 1080, height: 1350,
-    alt: `Line chart: worldwide Church membership, 1830 to 2025, colored blue for growth and red for decrease from the prior year. Years with a decrease: ${alt}. Every other year grew.`,
+    alt: `Line chart: worldwide Church membership, 1830 to 2025, colored blue for growth and red for decrease from the prior year, labeled every 25 years - ${milestoneAlt}. Years with a decrease: ${decreaseAlt}. Every other year grew.`,
   };
 }
 
