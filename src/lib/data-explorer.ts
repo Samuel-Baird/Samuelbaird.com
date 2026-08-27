@@ -79,6 +79,7 @@ import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.jso
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
+import tenLargestChurchesData from "../../docs/datasets/ten-largest-us-churches-2035/denominations.json";
 
 export type Quiz = {
   title: string;
@@ -263,6 +264,37 @@ export const DATASETS: Dataset[] = [
       "https://en.wikipedia.org/wiki/Membership_history_of_the_Church_of_Jesus_Christ_of_Latter-day_Saints",
     category: "Mixed Datasets",
     graphics: [worldwideMembershipHistoryGraphic(), worldwideMembershipDirectionGraphic()],
+  },
+  {
+    slug: "ten-largest-us-churches-2035",
+    name: "Ten Largest U.S.-Rooted Churches, Projected to 2035",
+    shortDescription:
+      "Ten denominations' own reported membership, each extended by a simple trend line to 2035 — modeled on Ryan Burge's American-religion projections.",
+    sponsor: "Multiple denominations (each self-reported; see README for exceptions)",
+    fielder: "Compiled by this site from multiple public sources",
+    description:
+      "A third \"mixed data\" entry, comparing ACROSS ten denominations rather than " +
+      "tracking one body over time: Catholic Church, United Methodist Church, The " +
+      "Church of Jesus Christ of Latter-day Saints, Evangelical Lutheran Church in " +
+      "America, Lutheran Church–Missouri Synod, Orthodox Christian churches (combined " +
+      "estimate), Episcopal Church, Presbyterian Church (USA), Church of God in " +
+      "Christ, and Presbyterian Church in America. For each, an ordinary-least-squares " +
+      "line is fit through that body's own reported membership figures and extended to " +
+      "2035 — a blunt straight-line extrapolation, not a demographic forecast, modeled " +
+      "on Ryan Burge's GSS-based American-religion projections " +
+      "(gist.github.com/ryanburge/e785275206cd12584b73eb4ec9b3ad52). Several entries " +
+      "carry real data-quality caveats — Catholic figures vary 5-15M by methodology, " +
+      "LDS figures are worldwide rather than U.S.-only, and Orthodox/COGIC figures are " +
+      "sparse and, for COGIC, diverge roughly 5-6x from independent U.S. Religion " +
+      "Census counts. See docs/datasets/ten-largest-us-churches-2035/README.md for " +
+      "every figure's exact citation and confidence rating.",
+    citation:
+      "Compiled from each denomination's own statistical reporting (GCAH/GCFA, ELCA, " +
+      "LCMS, PCA Historical Center, etc.), the U.S. Religion Census, and secondary " +
+      "research compilations - see README.md for the full per-denomination source list.",
+    sourceUrl: "https://gist.github.com/ryanburge/e785275206cd12584b73eb4ec9b3ad52",
+    category: "Mixed Datasets",
+    graphics: [tenLargestChurchesGraphic()],
   },
   {
     slug: "state-of-theology",
@@ -771,6 +803,32 @@ function usMembershipGrowthGraphic(): Graphic {
     imageSrc: "/data-explorer/us-membership-growth-2000-2025/membership-by-year.png",
     width: 1080, height: 1350,
     alt: `Line chart: U.S. Church membership by year, 2000 to 2025. ${alt}.`,
+  };
+}
+
+function tenLargestChurchesGraphic(): Graphic {
+  const { denomination_order: order, denominations } = tenLargestChurchesData;
+  const rows = [...order].sort(
+    (a, b) => denominations[b as keyof typeof denominations].last_reported_members -
+      denominations[a as keyof typeof denominations].last_reported_members,
+  );
+  const alt = rows
+    .map((slug) => {
+      const d = denominations[slug as keyof typeof denominations];
+      const flag = d.confidence === "low" ? " (low-confidence sourcing)" : "";
+      return `${d.name}: ${d.last_reported_members.toLocaleString()} in ${d.last_reported_year} ` +
+        `-> ${d.projected_2035_members.toLocaleString()} projected in 2035 ` +
+        `(${d.projected_pct_change > 0 ? "+" : ""}${d.projected_pct_change}%)${flag}`;
+    })
+    .join(", ");
+  return {
+    title: "Ten largest U.S.-rooted churches, projected to 2035",
+    description:
+      "Each denomination's own last-reported membership vs. a simple straight-line trend extended to 2035.",
+    imageSrc: "/data-explorer/ten-largest-us-churches-2035/projected-2035.png",
+    width: 1080, height: 1350,
+    alt: `Log-scale dumbbell chart: ten denominations' last-reported U.S. membership (LDS Church figure is worldwide) ` +
+      `vs. a linear-trend projection to 2035, largest to smallest. ${alt}. Neither projection is a forecast.`,
   };
 }
 
