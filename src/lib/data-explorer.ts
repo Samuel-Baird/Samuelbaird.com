@@ -45,6 +45,7 @@ import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledg
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
 import churchStateLawData from "../../docs/datasets/pew-religious-knowledge-2010/church-state-law.json";
 import jesusBirthplaceKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/jesus-birthplace-knowledge.json";
+import overallScoreData from "../../docs/datasets/pew-religious-knowledge-2010/overall-score.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
 import certaintyOfGodData from "../../docs/datasets/pew-rls-2007/certainty-of-god.json";
 import dailyPrayerData from "../../docs/datasets/pew-rls-2007/daily-prayer.json";
@@ -538,6 +539,7 @@ export const DATASETS: Dataset[] = [
       bookOfMormonKnowledgeGraphic(),
       churchStateLawGraphic(),
       jesusBirthplaceKnowledgeGraphic(),
+      overallScoreGraphic(),
     ],
   },
   {
@@ -898,6 +900,20 @@ function bookOfMormonKnowledgeGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-religious-knowledge-2010/book-of-mormon-knowledge.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share correctly saying the Book of Mormon places Jesus's appearance in the Americas, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function overallScoreGraphic(): Graphic {
+  const { group_order: order, results, n_items } = overallScoreData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].mean_correct}`)
+    .join(", ");
+  return {
+    title: "Who scored best on the religious knowledge quiz?",
+    description: `Average number correct out of ${n_items} questions, by the respondent's own religion.`,
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/overall-score.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: average number correct out of ${n_items} religious knowledge questions, by respondent's own religion. ${alt}.`,
   };
 }
 

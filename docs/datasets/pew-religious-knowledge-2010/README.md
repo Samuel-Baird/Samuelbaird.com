@@ -54,4 +54,15 @@ Single-population ranking across all U.S. adults:
   b/c) — computed by `church_state_law.py`, rendered by
   `render_church_state_chart.py`.
 
+Composite score, by respondent's own present religion:
+- `overall-score.json` ("Who scored best on the religious knowledge
+  quiz?", average number correct out of the full 32-item scale) —
+  computed by `overall_score.py`, which transcribes the correct-answer
+  key from this dataset's own "Answers to Knowledge Questions" PDF
+  against each item's own value labels; rendered by
+  `render_overall_score_chart.py` with `value_suffix=""` since this is an
+  average count, not a percent. Reproduces Pew's own headline finding
+  (Mormons ~20 of 32, well above the ~16 national average) closely enough
+  to validate the transcription.
+
 Further charts from this dataset should follow the same two-stage pattern.

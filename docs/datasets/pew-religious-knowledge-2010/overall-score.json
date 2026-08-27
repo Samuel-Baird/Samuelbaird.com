@@ -1,0 +1,50 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "Average number correct (out of 32 scored items) per respondent, by present religion (qn20). Correct-answer key transcribed from this dataset's own \"Answers to Knowledge Questions\" PDF. Don't know/refused (and any other non-matching response) scores as incorrect, matching Pew's own published scoring - not excluded from the item. Groups with fewer than 30 respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "n_items": 32,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Agnostic",
+    "Jewish",
+    "Mormon",
+    "Atheist",
+    "Protestant",
+    "Unaffiliated",
+    "Catholic",
+    "All U.S. adults"
+  ],
+  "results": {
+    "Protestant": {
+      "mean_correct": 16.1,
+      "unweighted_n": 1429
+    },
+    "Catholic": {
+      "mean_correct": 14.69,
+      "unweighted_n": 679
+    },
+    "Mormon": {
+      "mean_correct": 20.28,
+      "unweighted_n": 215
+    },
+    "Jewish": {
+      "mean_correct": 20.49,
+      "unweighted_n": 212
+    },
+    "Atheist": {
+      "mean_correct": 19.22,
+      "unweighted_n": 74
+    },
+    "Agnostic": {
+      "mean_correct": 21.75,
+      "unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "mean_correct": 15.2,
+      "unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "mean_correct": 16.02,
+      "unweighted_n": 3412
+    }
+  }
+}
