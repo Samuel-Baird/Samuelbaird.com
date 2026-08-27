@@ -1,0 +1,422 @@
+{
+  "method": "For each denomination, an ordinary-least-squares line is fit through its own reported membership points, then extended to 2035 (Catholic Church is fit through only its 2010 and 2020 points - see its own note). This is a simple straight-line extrapolation, not a demographic model: it cannot see an inflection - a schism, a policy vote, an accelerating or decelerating rate - that hasn't happened yet in the data. `confidence` on every entry reflects how clean and consistent that entry's own sourcing is, from \"high\" (a clean multi-point single-source series) to \"low\" (sparse and/or internally inconsistent). Modeled after Ryan Burge's GSS-based American-religion projections (https://gist.github.com/ryanburge/e785275206cd12584b73eb4ec9b3ad52), applied here to individual denominations' own reported membership rather than survey-tradition shares.",
+  "denomination_order": [
+    "catholic-church",
+    "united-methodist-church",
+    "lds-church",
+    "elca",
+    "lcms",
+    "orthodox-christian",
+    "episcopal-church",
+    "pcusa",
+    "cogic",
+    "pca"
+  ],
+  "denominations": {
+    "catholic-church": {
+      "name": "Catholic Church",
+      "population_note": "US, official diocesan counts (Official Catholic Directory)",
+      "points": [
+        {
+          "year": 1990,
+          "members": 62400000,
+          "source": "ARDA / Official Catholic Directory, via CARA sourcing summary (cara.georgetown.edu/faqs)."
+        },
+        {
+          "year": 2000,
+          "members": 62000000,
+          "source": "CARA (Georgetown), cara.georgetown.edu/faqs."
+        },
+        {
+          "year": 2010,
+          "members": 68500000,
+          "source": "CARA (Georgetown), cara.georgetown.edu/faqs."
+        },
+        {
+          "year": 2020,
+          "members": 67600000,
+          "source": "Official Catholic Directory diocesan total, via Wikipedia \"Catholic Church in the United States.\""
+        }
+      ],
+      "last_reported_year": 2020,
+      "last_reported_members": 67600000,
+      "fit_method": "linear (2010-2020 only, see note)",
+      "projected_2035_members": 66250000,
+      "projected_pct_change": -2.0,
+      "trend": "flat",
+      "confidence": "low",
+      "note": "Sources disagree by 5-15M in the same year depending on methodology (registered vs. self-identified counts) - the weakest series in this set. The projection below uses only the 2010-2020 slope (roughly flat), not the noisy full 1990-2020 fit, which is dominated by a 2000-2010 jump that looks like a reporting-convention change rather than real growth."
+    },
+    "united-methodist-church": {
+      "name": "United Methodist Church",
+      "population_note": "US, General Commission on Archives & History / GCFA statistics",
+      "points": [
+        {
+          "year": 1990,
+          "members": 8853455,
+          "source": "General Commission on Archives & History, gcah.org/history/timelines/membership-statistics."
+        },
+        {
+          "year": 2000,
+          "members": 8411503,
+          "source": "General Commission on Archives & History."
+        },
+        {
+          "year": 2010,
+          "members": 7679850,
+          "source": "General Commission on Archives & History."
+        },
+        {
+          "year": 2020,
+          "members": 6268310,
+          "source": "General Commission on Archives & History."
+        },
+        {
+          "year": 2022,
+          "members": 5424175,
+          "source": "UMC.org, \"United Methodists at a Glance.\""
+        },
+        {
+          "year": 2023,
+          "members": 4238097,
+          "source": "General Council on Finance and Administration, via juicyecumenism.com (Nov. 2024)."
+        }
+      ],
+      "last_reported_year": 2023,
+      "last_reported_members": 4238097,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 3824323,
+      "projected_pct_change": -9.8,
+      "trend": "down",
+      "confidence": "medium",
+      "note": "Includes the 2019-2023 disaffiliation schism (~7,600 churches left in one wave). A straight-line fit through this whole span likely overstates future decline, since that one-time shock is unlikely to repeat at the same rate."
+    },
+    "lds-church": {
+      "name": "The Church of Jesus Christ of Latter-day Saints",
+      "population_note": "Worldwide membership - no clean U.S.-only annual series exists (see this site's own us-membership-growth-2000-2025 dataset for why)",
+      "points": [
+        {
+          "year": 1990,
+          "members": 7761179,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 1995,
+          "members": 9338859,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 2000,
+          "members": 11068861,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 2005,
+          "members": 12560869,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 2010,
+          "members": 14131467,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 2015,
+          "members": 15634199,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 2020,
+          "members": 16663663,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        },
+        {
+          "year": 2024,
+          "members": 17509781,
+          "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints.\""
+        }
+      ],
+      "last_reported_year": 2024,
+      "last_reported_members": 17509781,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 21130135,
+      "projected_pct_change": 20.7,
+      "trend": "up",
+      "confidence": "medium",
+      "note": "Worldwide, not U.S.-only - the other nine bodies here are U.S. totals. A true U.S.-only projection would show slower growth, since most of the Church's current growth is international (see us-membership-growth-2000-2025)."
+    },
+    "elca": {
+      "name": "Evangelical Lutheran Church in America",
+      "population_note": "US, baptized membership",
+      "points": [
+        {
+          "year": 1988,
+          "members": 5251534,
+          "source": "So What Faith, \"ELCA Membership Cut in Half\" (2024), sowhatfaith.com."
+        },
+        {
+          "year": 1993,
+          "members": 5212785,
+          "source": "So What Faith."
+        },
+        {
+          "year": 1998,
+          "members": 5178225,
+          "source": "So What Faith."
+        },
+        {
+          "year": 2003,
+          "members": 4984925,
+          "source": "So What Faith."
+        },
+        {
+          "year": 2008,
+          "members": 4633887,
+          "source": "So What Faith."
+        },
+        {
+          "year": 2013,
+          "members": 3863133,
+          "source": "So What Faith."
+        },
+        {
+          "year": 2020,
+          "members": 3142777,
+          "source": "So What Faith."
+        },
+        {
+          "year": 2023,
+          "members": 2690000,
+          "source": "ELCA, \"Summary of Congregational Statistics as of 12/31/2023,\" resources.elca.org."
+        }
+      ],
+      "last_reported_year": 2023,
+      "last_reported_members": 2690000,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 2145850,
+      "projected_pct_change": -20.2,
+      "trend": "down",
+      "confidence": "high",
+      "note": "The steepest sustained decline in this set. A 2009 denomination-wide vote on sexuality policy accelerated losses roughly 2009-2013."
+    },
+    "lcms": {
+      "name": "Lutheran Church-Missouri Synod",
+      "population_note": "US, baptized membership",
+      "points": [
+        {
+          "year": 1993,
+          "members": 2615567,
+          "source": "LCMS statistical yearbook, as cited via secondary compilation."
+        },
+        {
+          "year": 2010,
+          "members": 2280000,
+          "source": "Mighty Fortress Substack, \"The Brisk Decline of the LCMS.\""
+        },
+        {
+          "year": 2020,
+          "members": 1860000,
+          "source": "Mighty Fortress Substack."
+        },
+        {
+          "year": 2024,
+          "members": 1674315,
+          "source": "LCMS Inc. Annual Report 2024."
+        }
+      ],
+      "last_reported_year": 2024,
+      "last_reported_members": 1674315,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 1410213,
+      "projected_pct_change": -15.8,
+      "trend": "down",
+      "confidence": "medium",
+      "note": "Only 4 usable data points - no reliable 1990 or 2000 figure was found - so this trend line is less precise than the other Lutheran/mainline bodies here."
+    },
+    "orthodox-christian": {
+      "name": "Orthodox Christian (combined estimate)",
+      "population_note": "US, Eastern + Oriental Orthodox, aggregate estimates",
+      "points": [
+        {
+          "year": 2000,
+          "members": 1200000,
+          "source": "Association of Statisticians of American Religious Bodies (ASARB) 2000 study, via orthodoxhistory.org."
+        },
+        {
+          "year": 2010,
+          "members": 900000,
+          "source": "Average of two conflicting 2010 estimates (799,400-1,044,000) - see orthodoxhistory.org and usreligioncensus.org."
+        },
+        {
+          "year": 2020,
+          "members": 1170000,
+          "source": "2020 U.S. Religion Census, Appendix F (Orthodox Christian Groups): ~675,675 Eastern + ~491,413 Oriental Orthodox."
+        }
+      ],
+      "last_reported_year": 2020,
+      "last_reported_members": 1170000,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 1052500,
+      "projected_pct_change": -10.0,
+      "trend": "flat",
+      "confidence": "low",
+      "note": "Sparse, self-reported/estimated, and internally inconsistent between sources for the same year (two 2010 estimates differ by 30%). Treat as roughly flat, not a real trend - the three points barely outnumber the free parameters in a line."
+    },
+    "episcopal-church": {
+      "name": "Episcopal Church",
+      "population_note": "US, baptized membership",
+      "points": [
+        {
+          "year": 1995,
+          "members": 2500000,
+          "source": "The Living Church, \"Facing Episcopal Church Decline.\""
+        },
+        {
+          "year": 2010,
+          "members": 1960000,
+          "source": "The Living Church, livingchurch.org/covenant/facing-episcopal-church-decline-the-latest-numbers."
+        },
+        {
+          "year": 2023,
+          "members": 1547000,
+          "source": "The Living Church, \"TEC's Latest Numbers: The Good News and the Bad News,\" livingchurch.org."
+        }
+      ],
+      "last_reported_year": 2023,
+      "last_reported_members": 1547000,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 1127466,
+      "projected_pct_change": -27.1,
+      "trend": "down",
+      "confidence": "medium",
+      "note": "Only 3 data points. Child-baptism counts (a decline proxy tracked by the same source: 1990 ~56,862 to 2023 ~14,735) confirm the same steady downward shape. The Church did not report a 2024 baptized-membership topline at all, citing \"parochial report confusion.\""
+    },
+    "pcusa": {
+      "name": "Presbyterian Church (USA)",
+      "population_note": "US, active membership",
+      "points": [
+        {
+          "year": 1990,
+          "members": 3788009,
+          "source": "So What Faith, \"PCUSA Membership: 30 Years of Decline\" (2023)."
+        },
+        {
+          "year": 2000,
+          "members": 2525330,
+          "source": "So What Faith / Protestia compilation."
+        },
+        {
+          "year": 2010,
+          "members": 2016091,
+          "source": "So What Faith / Protestia compilation."
+        },
+        {
+          "year": 2019,
+          "members": 1300000,
+          "source": "So What Faith, \"The PCUSA Is Missing 2.6 Million People.\""
+        },
+        {
+          "year": 2020,
+          "members": 1245097,
+          "source": "So What Faith / Protestia compilation."
+        },
+        {
+          "year": 2022,
+          "members": 1100000,
+          "source": "Presbyterian Outlook, \"PCUSA 2022 Statistical Report,\" pres-outlook.org."
+        },
+        {
+          "year": 2023,
+          "members": 1094733,
+          "source": "So What Faith / Protestia compilation."
+        }
+      ],
+      "last_reported_year": 2023,
+      "last_reported_members": 1094733,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 67763,
+      "projected_pct_change": -93.8,
+      "trend": "down",
+      "confidence": "high",
+      "note": "The steepest relative decline of any body here. The straight-line fit implies near-zero membership by the late 2030s - a widely-discussed (if mechanically extreme) implication of this exact trend continuing unchanged; real decline curves usually decelerate as the steepest-declining congregations close first, so treat the 2035 figure as a lower bound on plausibility, not a real forecast."
+    },
+    "cogic": {
+      "name": "Church of God in Christ",
+      "population_note": "US, self-reported (the denomination's own figures)",
+      "points": [
+        {
+          "year": 1997,
+          "members": 5200000,
+          "source": "Denominational self-report."
+        },
+        {
+          "year": 2003,
+          "members": 5400000,
+          "source": "Denominational self-report."
+        },
+        {
+          "year": 2016,
+          "members": 5500000,
+          "source": "Denominational self-report."
+        }
+      ],
+      "last_reported_year": 2016,
+      "last_reported_members": 5500000,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 5796466,
+      "projected_pct_change": 5.4,
+      "trend": "flat",
+      "confidence": "low",
+      "note": "Self-reported figures (~5.2-5.5M) diverge roughly 5-6x from the independent U.S. Religion Census, which counted ~624,000 in 2010 and ~920,000 in 2020 (itself a rising count on the independent measure). This is the lowest-confidence series in the whole set, shown here per the denomination's own reporting rather than the census figures - a genuinely unresolved discrepancy, not a rounding difference."
+    },
+    "pca": {
+      "name": "Presbyterian Church in America",
+      "population_note": "US, communicant + non-communicant members",
+      "points": [
+        {
+          "year": 1988,
+          "members": 211154,
+          "source": "PCA Historical Center, pcahistory.org/main/pcastats.html."
+        },
+        {
+          "year": 1993,
+          "members": 250551,
+          "source": "PCA Historical Center."
+        },
+        {
+          "year": 1998,
+          "members": 287091,
+          "source": "PCA Historical Center."
+        },
+        {
+          "year": 2003,
+          "members": 320400,
+          "source": "PCA Historical Center."
+        },
+        {
+          "year": 2008,
+          "members": 340852,
+          "source": "PCA Historical Center."
+        },
+        {
+          "year": 2016,
+          "members": 374161,
+          "source": "PCA Historical Center."
+        },
+        {
+          "year": 2025,
+          "members": 405634,
+          "source": "Graphs About Religion, \"A Deep Dive into the Presbyterian Church in America\" (2025)."
+        }
+      ],
+      "last_reported_year": 2025,
+      "last_reported_members": 405634,
+      "fit_method": "linear (ordinary least squares, all reported points)",
+      "projected_2035_members": 471335,
+      "projected_pct_change": 16.2,
+      "trend": "up",
+      "confidence": "high",
+      "note": "The one denomination in this set that has grown steadily throughout the period (roughly 1.5-2%/year)."
+    }
+  }
+}

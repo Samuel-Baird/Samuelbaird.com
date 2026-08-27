@@ -68,6 +68,21 @@ go down?") and needed its own function rather than a mode flag on
 render_timeseries, since the two are mutually exclusive ways to color the
 same line (quality-of-source vs. direction-of-change) and a single
 function trying to do both would need a confusing dual-legend.
+
+render_dumbbell_log (added for the ten-largest-us-churches-2035 dataset,
+comparing TEN denominations against each other rather than tracking one
+body over time) is a log-scale dumbbell/slope chart: one row per
+denomination, a gray dot at its own last-reported membership and a
+triangle at its 2035 straight-line projection, connected by a line colored
+--accent (growing) or --oxblood (declining). Log scale is required here,
+not a style choice - these ten bodies span from ~400K to ~70M members, and
+on a linear axis the nine smaller ones would collapse to indistinguishable
+points against the Catholic Church's bar. This is the multi-entity
+counterpart to render_timeseries's single-entity "solid vs. dashed"
+distinction: here every entry gets its own real-vs-projected pair, so the
+dashed/solid device doesn't apply and confidence is instead marked with an
+asterisk on the row label (see `low_confidence_rows`) with the caption
+explaining which bodies that covers and why.
 """
 
 from __future__ import annotations
@@ -782,6 +797,138 @@ def render_timeseries_by_direction(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
         bbox_transform=fig.transFigure,
         ncol=2, frameon=False, handlelength=2.2, columnspacing=1.4,
+        fontsize=MIN.LEGEND, prop=fonts["bold"],
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def render_dumbbell_log(
+    *,
+    rows: list[str],
+    row_labels: dict[str, str],
+    start_values: dict[str, float],
+    end_values: dict[str, float],
+    low_confidence_rows: set[str],
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+) -> None:
+    """One row per `rows` entry (already in top-to-bottom display order,
+    e.g. largest current membership first) - a gray dot at
+    `start_values[row]` (last reported figure), a triangle at
+    `end_values[row]` (2035 straight-line projection), joined by a line
+    colored --accent if the projection is higher than the start, --oxblood
+    if lower. X-axis is log-scaled - see this module's docstring for why
+    that's load-bearing here, not decorative. Rows in `low_confidence_rows`
+    get an asterisk appended to their y-axis label; the caption should
+    explain what that covers.
+    """
+    import math
+    from matplotlib.ticker import FixedLocator, FuncFormatter
+
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = legend_top_y + 0.03
+
+    AXES_LEFT, AXES_WIDTH = 0.46, 0.50
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    n = len(rows)
+    all_vals = [start_values[r] for r in rows] + [end_values[r] for r in rows]
+    x_min, x_max = min(all_vals), max(all_vals)
+    ax.set_xscale("log")
+    ax.set_xlim(x_min / 2.2, x_max * 1.9)
+
+    def fmt_value(v, _pos=None):
+        if v >= 1_000_000:
+            n = v / 1_000_000
+            s = f"{n:.2f}" if n < 10 else f"{n:.1f}"
+            return s.rstrip("0").rstrip(".") + "M"
+        if v >= 1_000:
+            return f"{v / 1_000:.0f}K"
+        return f"{v:.0f}"
+
+    tick_vals = []
+    decade = 10 ** math.floor(math.log10(x_min))
+    while decade <= x_max * 10:
+        for mult in (1, 3):
+            t = decade * mult
+            if x_min / 2.2 <= t <= x_max * 1.9:
+                tick_vals.append(t)
+        decade *= 10
+    ax.xaxis.set_major_locator(FixedLocator(tick_vals))
+    ax.xaxis.set_major_formatter(FuncFormatter(fmt_value))
+    ax.tick_params(axis="x", length=0, pad=10, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_xticklabels():
+        label.set_fontproperties(fonts["bold"])
+        label.set_color(INK)
+    ax.grid(axis="x", color=BORDER, linewidth=1, zorder=1, which="major")
+
+    ax.set_ylim(n - 0.5, -0.5)
+    ax.set_yticks(range(n))
+    ax.set_yticklabels([row_labels[r] + ("*" if r in low_confidence_rows else "") for r in rows])
+    ax.tick_params(axis="y", length=0, pad=10)
+    for tick_label in ax.get_yticklabels():
+        tick_label.set_fontproperties(fonts["bold"])
+        tick_label.set_fontsize(13.5)
+        tick_label.set_color(INK)
+
+    for i, r in enumerate(rows):
+        start, end = start_values[r], end_values[r]
+        growing = end >= start
+        color = ACCENT if growing else OXBLOOD
+        ax.plot([start, end], [i, i], color=color, linewidth=2.4, zorder=3, solid_capstyle="round")
+        ax.plot(start, i, marker="o", markersize=7, markerfacecolor=CONTEXT_GRAY,
+                 markeredgecolor=CONTEXT_GRAY, zorder=4)
+        ax.plot(end, i, marker="^" if growing else "v", markersize=9,
+                 markerfacecolor=color, markeredgecolor=color, zorder=4)
+
+        # Vertical offsets (above/below the row's own line), not horizontal -
+        # a horizontal float risks colliding with the y-axis row labels
+        # whenever a point sits close to the shared x_min/x_max (e.g. PCUSA's
+        # 2035 projection, which lands near the axis's own left edge).
+        ax.annotate(
+            fmt_value(start), xy=(start, i), xytext=(0, 11), textcoords="offset points",
+            ha="center", va="bottom", color=MUTED, fontproperties=fonts["regular"],
+            fontsize=MIN.DATA_LABEL - 1, zorder=5,
+        )
+        ax.annotate(
+            fmt_value(end), xy=(end, i), xytext=(0, -12), textcoords="offset points",
+            ha="center", va="top", color=color, fontproperties=fonts["bold"],
+            fontsize=MIN.DATA_LABEL, zorder=5,
+        )
+
+    from matplotlib.lines import Line2D
+    handles = [
+        Line2D([0], [0], marker="o", color=PAPER, markerfacecolor=CONTEXT_GRAY,
+               markeredgecolor=CONTEXT_GRAY, markersize=7, label="Last reported"),
+        Line2D([0], [0], marker="^", color=PAPER, markerfacecolor=ACCENT,
+               markeredgecolor=ACCENT, markersize=8, label="2035: growing"),
+        Line2D([0], [0], marker="v", color=PAPER, markerfacecolor=OXBLOOD,
+               markeredgecolor=OXBLOOD, markersize=8, label="2035: declining"),
+    ]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=len(handles), frameon=False, handlelength=1.6, columnspacing=1.2,
         fontsize=MIN.LEGEND, prop=fonts["bold"],
     )
     for text in legend.get_texts():
