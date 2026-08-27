@@ -39,6 +39,8 @@ import mormonismChristianData from "../../docs/datasets/pew-mormon-survey-2011/m
 import essentialToBeingMormonData from "../../docs/datasets/pew-mormon-survey-2011/essential-to-being-mormon.json";
 import tithingByActivityData from "../../docs/datasets/pew-mormon-survey-2011/tithing-by-activity.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
+import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
+import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
@@ -500,7 +502,11 @@ export const DATASETS: Dataset[] = [
     citation: "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2010/09/28/u-s-religious-knowledge-survey/",
-    graphics: [mormonFoundingKnowledgeGraphic()],
+    graphics: [
+      mormonFoundingKnowledgeGraphic(),
+      josephSmithKnowledgeGraphic(),
+      bookOfMormonKnowledgeGraphic(),
+    ],
   },
   {
     slug: "pew-rls-2007",
@@ -768,6 +774,34 @@ function mormonFoundingKnowledgeGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-religious-knowledge-2010/mormon-founding-knowledge.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share correctly identifying Mormonism as founded sometime after 1800, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function josephSmithKnowledgeGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = josephSmithKnowledgeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who knows Joseph Smith was a Mormon?",
+    description: "Share correctly identifying Joseph Smith's religion, by the respondent's own religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/joseph-smith-knowledge.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Joseph Smith as Mormon, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function bookOfMormonKnowledgeGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = bookOfMormonKnowledgeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Where does the Book of Mormon say Jesus appeared?",
+    description: "Share correctly saying the Americas, by the respondent's own religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/book-of-mormon-knowledge.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly saying the Book of Mormon places Jesus's appearance in the Americas, by respondent's own religion. ${alt}.`,
   };
 }
 

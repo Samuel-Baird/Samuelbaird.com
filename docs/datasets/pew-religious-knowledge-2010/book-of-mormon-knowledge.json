@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn43 asked all respondents where the Book of Mormon says Jesus Christ appeared to people after his resurrection (The Americas, the Middle East, or Asia); the correct answer is \"The Americas.\" Broken out by the respondent's own present religion (qn20); don't know/refused excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Mormon",
+    "Agnostic",
+    "Jewish",
+    "Atheist",
+    "Unaffiliated",
+    "Protestant",
+    "Catholic",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 58.24,
+      "valid_unweighted_n": 931,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 50.57,
+      "valid_unweighted_n": 451,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 92.25,
+      "valid_unweighted_n": 208,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 74.28,
+      "valid_unweighted_n": 161,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 71.99,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 81.45,
+      "valid_unweighted_n": 111,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 59.23,
+      "valid_unweighted_n": 237,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 58.14,
+      "valid_unweighted_n": 2397,
+      "group_unweighted_n": 3412
+    }
+  }
+}

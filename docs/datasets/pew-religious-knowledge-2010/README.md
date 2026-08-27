@@ -28,13 +28,22 @@ not committed):
 
 ## Status
 
-One flagship chart shipped: `mormon-founding-knowledge.json` (share
-correctly saying the Mormon religion was founded after 1800, by the
-respondent's own religion), computed by
-`scripts/pew-religious-knowledge-2010/mormon_founding_knowledge.py` and
-rendered by `render_mormon_founding_chart.py` to
-`public/data-explorer/pew-religious-knowledge-2010/mormon-founding-knowledge.png`,
-using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
-into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
-`pew-religious-knowledge-2010`). Further charts from this dataset should
-follow the same two-stage pattern.
+Three charts shipped, all wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-religious-knowledge-2010`), each
+broken out by the respondent's own present religion (qn20) with groups
+under 30 valid respondents omitted, using the shared magnitude-bar shape
+in `scripts/flagship-charts/common.py`:
+
+- `mormon-founding-knowledge.json` (share correctly saying the Mormon
+  religion was founded after 1800, qn42) — computed by
+  `mormon_founding_knowledge.py`, rendered by
+  `render_mormon_founding_chart.py`.
+- `joseph-smith-knowledge.json` (share correctly identifying Joseph
+  Smith's religion as Mormon, qn48c) — computed by
+  `joseph_smith_knowledge.py`, rendered by `render_joseph_smith_chart.py`.
+- `book-of-mormon-knowledge.json` (share correctly saying the Book of
+  Mormon places Jesus's post-resurrection appearance in the Americas,
+  qn43) — computed by `book_of_mormon_knowledge.py`, rendered by
+  `render_book_of_mormon_chart.py`.
+
+Further charts from this dataset should follow the same two-stage pattern.
