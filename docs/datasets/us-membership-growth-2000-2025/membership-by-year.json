@@ -1,0 +1,195 @@
+{
+  "sources_summary": [
+    "Pew/ARDA 2000 and 2010 U.S. Religion Census (Church self-report).",
+    "Deseret News Church Almanac figures (2002-2009), via cumorah.com's LDS Church growth archive and rickety.us.",
+    "Church newsroom country page (2012-2025), via Wikipedia's \"United States membership statistics (LDS Church)\" compiled table: https://en.wikipedia.org/wiki/United_States_membership_statistics_(LDS_Church)",
+    "https://newsroom.churchofjesuschrist.org/facts-and-statistics/country/united-states"
+  ],
+  "method": "This is a compiled timeline, not one survey's microdata - each point is a separately cited Church-reported (or Church-published round estimate) figure. 2001, 2003, 2005, 2007, and 2011 have no findable U.S.-only total in any source checked and are linearly interpolated between their nearest real neighbors; every other year is a real reported figure. See each year's own `status` (reported/rounded/interpolated) and `source`.",
+  "year_order": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "series": {
+    "2000": {
+      "members": 5208827,
+      "status": "reported",
+      "source": "2000 U.S. Religion Census (Association of Statisticians of American Religious Bodies), LDS Church self-report.",
+      "note": null
+    },
+    "2001": {
+      "members": 5309414,
+      "status": "interpolated",
+      "source": "Linearly interpolated between the 2000 and 2002 figures - no U.S.-only total for 2001 was found in any available source.",
+      "note": null
+    },
+    "2002": {
+      "members": 5410000,
+      "status": "rounded",
+      "source": "Deseret News Church Almanac figure, as compiled by cumorah.com's LDS Church growth archive; known only to the nearest 10,000.",
+      "note": null
+    },
+    "2003": {
+      "members": 5505000,
+      "status": "interpolated",
+      "source": "Linearly interpolated between the 2002 and 2004 figures - no U.S.-only total for 2003 was found in any available source.",
+      "note": null
+    },
+    "2004": {
+      "members": 5600000,
+      "status": "rounded",
+      "source": "Deseret News Church Almanac figure, as compiled by cumorah.com; known only to the nearest 10,000.",
+      "note": null
+    },
+    "2005": {
+      "members": 5690000,
+      "status": "interpolated",
+      "source": "Linearly interpolated between the 2004 and 2006 figures - no U.S.-only total for 2005 was found in any available source.",
+      "note": null
+    },
+    "2006": {
+      "members": 5780000,
+      "status": "rounded",
+      "source": "Deseret News Church Almanac figure, as compiled by cumorah.com; known only to the nearest 10,000.",
+      "note": null
+    },
+    "2007": {
+      "members": 5875000,
+      "status": "interpolated",
+      "source": "Linearly interpolated between the 2006 and 2008 figures - no U.S.-only total for 2007 was found in any available source.",
+      "note": null
+    },
+    "2008": {
+      "members": 5970000,
+      "status": "rounded",
+      "source": "Deseret News Church Almanac figure, as compiled by cumorah.com; known only to the nearest 10,000.",
+      "note": null
+    },
+    "2009": {
+      "members": 6058907,
+      "status": "reported",
+      "source": "Deseret News 2011 Church Almanac, as compiled by rickety.us.",
+      "note": null
+    },
+    "2010": {
+      "members": 6144582,
+      "status": "reported",
+      "source": "2010 U.S. Religion Census (Association of Statisticians of American Religious Bodies), LDS Church self-report.",
+      "note": null
+    },
+    "2011": {
+      "members": 6232999,
+      "status": "interpolated",
+      "source": "Linearly interpolated between the 2010 and 2012 figures - no U.S.-only total for 2011 was found in any available source.",
+      "note": null
+    },
+    "2012": {
+      "members": 6321416,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2013": {
+      "members": 6398889,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2014": {
+      "members": 6466267,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2015": {
+      "members": 6531656,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2016": {
+      "members": 6592195,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2017": {
+      "members": 6641886,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2018": {
+      "members": 6681829,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2019": {
+      "members": 6721032,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2020": {
+      "members": 6742000,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": "Published as a round number; the Church did not release an exact 2020 total."
+    },
+    "2021": {
+      "members": 6763019,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2022": {
+      "members": 6804028,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2023": {
+      "members": 6868793,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2024": {
+      "members": 6929956,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": null
+    },
+    "2025": {
+      "members": 6929770,
+      "status": "reported",
+      "source": "Church newsroom country page.",
+      "note": "As of Oct. 13, 2025."
+    }
+  }
+}

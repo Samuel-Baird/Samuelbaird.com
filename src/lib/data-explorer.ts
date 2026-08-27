@@ -43,6 +43,7 @@ import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontac
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
 import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
+import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 
 export type Quiz = {
   title: string;
@@ -172,6 +173,29 @@ export type Dataset = {
 };
 
 export const DATASETS: Dataset[] = [
+  {
+    slug: "us-membership-growth-2000-2025",
+    name: "U.S. Church Membership Growth, 2000-2025",
+    shortDescription:
+      "A compiled year-by-year timeline of reported U.S. Church membership — not one survey, several sources stitched together.",
+    sponsor: "The Church of Jesus Christ of Latter-day Saints",
+    fielder: "Compiled by this site from multiple public sources",
+    description:
+      "This site's first \"mixed data\" entry: no single source publishes a complete " +
+      "year-by-year U.S.-only membership series, so this stitches one together from the " +
+      "2000 and 2010 U.S. Religion Census, the Deseret News Church Almanac, and the " +
+      "Church's own newsroom country page. Five years (2001, 2003, 2005, 2007, 2011) have " +
+      "no findable U.S.-only total in any source checked and are linearly interpolated " +
+      "between their nearest real neighbors — shown as a dashed line, never presented as " +
+      "if reported. See docs/datasets/us-membership-growth-2000-2025/README.md for every " +
+      "year's exact citation.",
+    citation:
+      "Compiled from the U.S. Religion Census (2000, 2010), the Deseret News Church " +
+      "Almanac (2002-2009), and the Church's newsroom country page (2012-2025).",
+    sourceUrl:
+      "https://newsroom.churchofjesuschrist.org/facts-and-statistics/country/united-states",
+    graphics: [usMembershipGrowthGraphic()],
+  },
   {
     slug: "state-of-theology",
     name: "State of Theology Survey",
@@ -557,6 +581,23 @@ export const DATASETS: Dataset[] = [
 // scripts/flagship-charts/common.py) rather than the many-chart buildout
 // pew-rls-2023-24 or the ryan-burge sources have - see each dataset's own
 // docs/datasets/<slug>/README.md for the regeneration commands.
+
+function usMembershipGrowthGraphic(): Graphic {
+  const { year_order: years, series } = usMembershipGrowthData;
+  const alt = years
+    .map((y) => {
+      const r = series[String(y) as keyof typeof series];
+      return `${y}: ${r.members.toLocaleString()}${r.status === "interpolated" ? " (interpolated)" : r.status === "rounded" ? " (rounded)" : ""}`;
+    })
+    .join(", ");
+  return {
+    title: "U.S. Church membership, 2000-2025",
+    description: "Reported U.S. membership year by year; interpolated years are marked and shown dashed.",
+    imageSrc: "/data-explorer/us-membership-growth-2000-2025/membership-by-year.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: U.S. Church membership by year, 2000 to 2025. ${alt}.`,
+  };
+}
 
 function mormonismChristianGraphic(): Graphic {
   const { row_order: rows, segment_order: segs, results } = mormonismChristianData;

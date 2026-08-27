@@ -34,6 +34,18 @@ segments (Yes/No/Don't know). Segment colors are fixed at Yes=--accent
 know=Muted (gray) - not a caller-supplied palette - since this shape only
 exists for yes/no/don't-know-style items where that mapping is always the
 right one.
+
+render_timeseries (added for the "mixed data" us-membership-growth-2000-2025
+entry) is the first line chart in this pipeline: a single --accent line
+over years, solid where every underlying figure is a real reported (or
+Church-published round-estimate) number, dashed wherever a segment touches
+a linearly-interpolated year (no source has that year's figure - see
+scripts/us-membership-growth-2000-2025/build_data.py). Unlike the bar
+shapes above, the y-axis does NOT start at zero: a line's slope reads as
+the trend, not as a bar's length-as-magnitude, so truncating the axis to
+the data's own range is standard practice for a line chart and isn't
+misleading as long as the gridline values are labeled plainly, which they
+are here.
 """
 
 from __future__ import annotations
@@ -171,6 +183,128 @@ def render_magnitude_bar(
             color=c, fontproperties=fonts["bold"],
             fontsize=MIN.DATA_LABEL if n_rows > 8 else 15, zorder=4,
         )
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+BORDER = "#D9D5CC"
+
+
+def render_timeseries(
+    *,
+    years: list[int],
+    values: dict[int, float],
+    statuses: dict[int, str],
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+    y_step: float = 500_000,
+    y_label_divisor: float = 1_000_000,
+    y_label_suffix: str = "M",
+    label_years: list[int] | None = None,
+) -> None:
+    """A single --accent line over `years` (evenly spaced, e.g. one per
+    calendar year). `statuses[year]` is "reported"/"rounded" (real figure)
+    or "interpolated" (linearly filled, no source) - see this module's
+    docstring. A segment between two adjacent years is drawn dashed if
+    EITHER endpoint is interpolated, solid otherwise; markers are filled
+    for real points, hollow (accent-outlined) for interpolated ones.
+    `label_years` (default: first and last) get a bold value callout.
+    """
+    import math
+
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = legend_top_y + 0.03
+
+    AXES_LEFT, AXES_WIDTH = 0.13, 0.80
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    vals = [values[y] for y in years]
+    y_floor = math.floor(min(vals) / y_step) * y_step
+    y_ceil = math.ceil(max(vals) / y_step) * y_step
+    if y_ceil == y_floor:
+        y_ceil += y_step
+
+    y_ticks = []
+    t = y_floor
+    while t <= y_ceil:
+        y_ticks.append(t)
+        t += y_step
+    ax.set_ylim(y_floor, y_ceil)
+    ax.set_yticks(y_ticks)
+    ax.set_yticklabels([f"{t / y_label_divisor:g}{y_label_suffix}" for t in y_ticks])
+    ax.tick_params(axis="y", length=0, pad=8, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_yticklabels():
+        label.set_fontproperties(fonts["regular"])
+        label.set_color(MUTED)
+    ax.grid(axis="y", color=BORDER, linewidth=1, zorder=1)
+
+    x_ticks = [y for y in years if y % 5 == 0] or years
+    if years[-1] not in x_ticks:
+        x_ticks.append(years[-1])
+    ax.set_xticks(x_ticks)
+    ax.set_xticklabels([str(y) for y in x_ticks])
+    ax.tick_params(axis="x", length=0, pad=10, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_xticklabels():
+        label.set_fontproperties(fonts["bold"])
+        label.set_color(INK)
+    ax.set_xlim(years[0] - 0.5, years[-1] + 0.5)
+
+    for y0, y1 in zip(years[:-1], years[1:]):
+        dashed = statuses[y0] == "interpolated" or statuses[y1] == "interpolated"
+        ax.plot(
+            [y0, y1], [values[y0], values[y1]], color=ACCENT,
+            linewidth=2.75, linestyle=(0, (5, 3)) if dashed else "solid",
+            solid_capstyle="round", zorder=3,
+        )
+    for y in years:
+        real = statuses[y] != "interpolated"
+        ax.plot(
+            y, values[y], marker="o",
+            markersize=6 if real else 5.5,
+            markerfacecolor=ACCENT if real else PAPER,
+            markeredgecolor=ACCENT, markeredgewidth=1.8, zorder=4,
+        )
+
+    label_years = label_years or [years[0], years[-1]]
+    for y in label_years:
+        va = "bottom" if values[y] >= (y_floor + y_ceil) / 2 else "top"
+        offset = (y_ceil - y_floor) * 0.035 * (1 if va == "bottom" else -1)
+        ax.text(
+            y, values[y] + offset, f"{values[y]:,.0f}", ha="center",
+            va=va, color=ACCENT, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL + 2,
+            zorder=5,
+        )
+
+    from matplotlib.lines import Line2D
+    handles = [
+        Line2D([0], [0], color=ACCENT, linewidth=2.75, linestyle="solid", label="Reported figure"),
+        Line2D([0], [0], color=ACCENT, linewidth=2.75, linestyle=(0, (5, 3)), label="Interpolated (no source found)"),
+    ]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=2, frameon=False, handlelength=2.2, columnspacing=1.4,
+        fontsize=MIN.LEGEND, prop=fonts["bold"],
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
