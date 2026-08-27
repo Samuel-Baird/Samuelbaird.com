@@ -28,12 +28,12 @@ not committed):
 
 ## Status
 
-Three charts shipped, all wired into the Data Explorer entry
-(`src/lib/data-explorer.ts`, slug `pew-religious-knowledge-2010`), each
-broken out by the respondent's own present religion (qn20) with groups
-under 30 valid respondents omitted, using the shared magnitude-bar shape
-in `scripts/flagship-charts/common.py`:
+Five charts shipped, all wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-religious-knowledge-2010`), using
+the shared magnitude-bar shape in `scripts/flagship-charts/common.py`:
 
+By respondent's own present religion (qn20), groups under 30 valid
+respondents omitted:
 - `mormon-founding-knowledge.json` (share correctly saying the Mormon
   religion was founded after 1800, qn42) — computed by
   `mormon_founding_knowledge.py`, rendered by
@@ -45,5 +45,13 @@ in `scripts/flagship-charts/common.py`:
   Mormon places Jesus's post-resurrection appearance in the Americas,
   qn43) — computed by `book_of_mormon_knowledge.py`, rendered by
   `render_book_of_mormon_chart.py`.
+- `jesus-birthplace-knowledge.json` (share correctly saying Bethlehem,
+  qn41) — computed by `jesus_birthplace_knowledge.py`, rendered by
+  `render_jesus_birthplace_chart.py`.
+
+Single-population ranking across all U.S. adults:
+- `church-state-law.json` ("What can public school teachers do?", qn50a/
+  b/c) — computed by `church_state_law.py`, rendered by
+  `render_church_state_chart.py`.
 
 Further charts from this dataset should follow the same two-stage pattern.

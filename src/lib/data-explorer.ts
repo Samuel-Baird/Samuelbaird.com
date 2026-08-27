@@ -38,12 +38,18 @@ import mormonOrdinationData from "../../docs/datasets/pew-mormon-survey-2011/ord
 import mormonismChristianData from "../../docs/datasets/pew-mormon-survey-2011/mormonism-christian.json";
 import essentialToBeingMormonData from "../../docs/datasets/pew-mormon-survey-2011/essential-to-being-mormon.json";
 import tithingByActivityData from "../../docs/datasets/pew-mormon-survey-2011/tithing-by-activity.json";
+import missionTitheByConvertData from "../../docs/datasets/pew-mormon-survey-2011/mission-and-tithe-by-convert.json";
+import presidentReadinessData from "../../docs/datasets/pew-mormon-survey-2011/president-readiness-by-party.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
+import churchStateLawData from "../../docs/datasets/pew-religious-knowledge-2010/church-state-law.json";
+import jesusBirthplaceKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/jesus-birthplace-knowledge.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
 import certaintyOfGodData from "../../docs/datasets/pew-rls-2007/certainty-of-god.json";
 import dailyPrayerData from "../../docs/datasets/pew-rls-2007/daily-prayer.json";
+import retentionRateData from "../../docs/datasets/pew-rls-2007/retention-rate.json";
+import ldsShareByRegionData from "../../docs/datasets/pew-rls-2007/lds-share-by-region.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -495,6 +501,8 @@ export const DATASETS: Dataset[] = [
       mormonOrdinationGraphic(),
       essentialToBeingMormonGraphic(),
       tithingByActivityGraphic(),
+      missionTitheByConvertGraphic(),
+      presidentReadinessGraphic(),
     ],
   },
   {
@@ -518,6 +526,8 @@ export const DATASETS: Dataset[] = [
       mormonFoundingKnowledgeGraphic(),
       josephSmithKnowledgeGraphic(),
       bookOfMormonKnowledgeGraphic(),
+      churchStateLawGraphic(),
+      jesusBirthplaceKnowledgeGraphic(),
     ],
   },
   {
@@ -535,7 +545,13 @@ export const DATASETS: Dataset[] = [
       "switching in America and established the RELTRAD religious-tradition classification " +
       "later waves (2014, 2023-24) still use.",
     sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2007/",
-    graphics: [evolutionBeliefGraphic(), certaintyOfGodGraphic(), dailyPrayerGraphic()],
+    graphics: [
+      evolutionBeliefGraphic(),
+      certaintyOfGodGraphic(),
+      dailyPrayerGraphic(),
+      retentionRateGraphic(),
+      ldsShareByRegionGraphic(),
+    ],
   },
   {
     slug: "pew-rls-2014",
@@ -795,6 +811,34 @@ function tithingByActivityGraphic(): Graphic {
   };
 }
 
+function missionTitheByConvertGraphic(): Graphic {
+  const { row_order: order, results } = missionTitheByConvertData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Converts vs. lifelong Mormons",
+    description: "Share serving a full-time mission and paying a full tithe, by whether they converted or were raised Mormon.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/mission-and-tithe-by-convert.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: mission service and full-tithe payment among Mormons, by convert vs. lifelong status. ${alt}.`,
+  };
+}
+
+function presidentReadinessGraphic(): Graphic {
+  const { group_order: order, ready_for_mormon_president: results } = presidentReadinessData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Ready for a Mormon president?",
+    description: "Share of Mormons saying Americans are ready to elect a Mormon president, by the Mormon respondent's own party.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/president-readiness-by-party.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons saying Americans are ready to elect a Mormon president, by the respondent's own party. ${alt}.`,
+  };
+}
+
 function mormonFoundingKnowledgeGraphic(): Graphic {
   const { group_order: order, correct_pct: results } = mormonFoundingKnowledgeData;
   const alt = order
@@ -837,6 +881,34 @@ function bookOfMormonKnowledgeGraphic(): Graphic {
   };
 }
 
+function churchStateLawGraphic(): Graphic {
+  const { item_order: order, correct_pct: results } = churchStateLawData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "What can public school teachers do?",
+    description: "Share correctly identifying whether the Constitution permits each action in a public school classroom.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/church-state-law.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying whether the Constitution permits each classroom action. ${alt}.`,
+  };
+}
+
+function jesusBirthplaceKnowledgeGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = jesusBirthplaceKnowledgeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who knows where Jesus was born?",
+    description: "Share correctly saying Bethlehem, by the respondent's own religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/jesus-birthplace-knowledge.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly saying the Bible places Jesus's birth in Bethlehem, by respondent's own religion. ${alt}.`,
+  };
+}
+
 function evolutionBeliefGraphic(): Graphic {
   const { group_order: order, evolution_agree: results } = evolutionBeliefData;
   const alt = order
@@ -876,6 +948,34 @@ function dailyPrayerGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/daily-prayer.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share praying at least once a day outside of religious services, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function retentionRateGraphic(): Graphic {
+  const { group_order: order, retained_pct: results } = retentionRateData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who stays in the religion they were raised in?",
+    description: "Share raised in each tradition who still identify with that same tradition as adults.",
+    imageSrc: "/data-explorer/pew-rls-2007/retention-rate.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share raised in each tradition who still identify with it as adults, 2007. ${alt}.`,
+  };
+}
+
+function ldsShareByRegionGraphic(): Graphic {
+  const { region_order: order, share_of_mormons: results } = ldsShareByRegionData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Where do Mormons live?",
+    description: "Share of U.S. Mormons living in each Census region, 2007.",
+    imageSrc: "/data-explorer/pew-rls-2007/lds-share-by-region.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Mormons living in each Census region, 2007. ${alt}.`,
   };
 }
 

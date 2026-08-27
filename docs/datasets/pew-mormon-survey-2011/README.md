@@ -25,7 +25,7 @@ committed):
 
 ## Status
 
-Four charts shipped, all wired into the Data Explorer entry
+Six charts shipped, all wired into the Data Explorer entry
 (`src/lib/data-explorer.ts`, slug `pew-mormon-survey-2011`):
 
 - `ordination-by-activity.json` (belief that women should be ordained to
@@ -52,5 +52,14 @@ Four charts shipped, all wired into the Data Explorer entry
   activity level in the Church, q406) — computed by
   `scripts/pew-mormon-survey-2011/tithing_by_activity.py`, rendered by
   `render_tithing_chart.py` using the shared magnitude-bar shape.
+- `mission-and-tithe-by-convert.json` ("Converts vs. lifelong Mormons",
+  mission service q413 and full-tithe payment q416, split by convert
+  status derived from q430) — computed by
+  `mission_and_tithe_by_convert.py`, rendered by
+  `render_mission_tithe_chart.py`.
+- `president-readiness-by-party.json` ("Ready for a Mormon president?",
+  q311 by the Mormon respondent's own party) — computed by
+  `president_readiness_by_party.py`, rendered by
+  `render_president_readiness_chart.py`.
 
 Further charts from this dataset should follow the same two-stage pattern.

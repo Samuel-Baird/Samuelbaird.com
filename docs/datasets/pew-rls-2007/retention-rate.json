@@ -1,0 +1,35 @@
+{
+  "source": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\"",
+  "method": "Raised tradition is q50 (\"in what religion were you raised\") collapsed to five coarse buckets (Protestant of any denomination, Catholic, Mormon, Jewish, Unaffiliated); retention is the share of each raised bucket whose current tradition (RELTRAD) falls in the matching coarse bucket. Continental-US main survey only. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 88292.49782861538,
+  "total_unweighted_n": 35556,
+  "group_order": [
+    "Protestant",
+    "Jewish",
+    "Mormon",
+    "Catholic",
+    "Unaffiliated"
+  ],
+  "retained_pct": {
+    "Protestant": {
+      "pct": 79.91,
+      "raised_unweighted_n": 19601
+    },
+    "Catholic": {
+      "pct": 67.72,
+      "raised_unweighted_n": 10542
+    },
+    "Mormon": {
+      "pct": 70.38,
+      "raised_unweighted_n": 583
+    },
+    "Jewish": {
+      "pct": 76.29,
+      "raised_unweighted_n": 768
+    },
+    "Unaffiliated": {
+      "pct": 46.17,
+      "raised_unweighted_n": 2258
+    }
+  }
+}

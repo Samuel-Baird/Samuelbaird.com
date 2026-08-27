@@ -1,0 +1,34 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design), broken out by self-reported party (party). Share answering \"yes\" to q311 (\"do you think the American people as a whole are ready to elect a Mormon as president\"); \"other/depends\" and don't know/refused excluded from each row's denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "group_order": [
+    "Republican",
+    "Independent",
+    "Democrat",
+    "All Mormon adults"
+  ],
+  "ready_for_mormon_president": {
+    "Republican": {
+      "pct": 71.27,
+      "valid_unweighted_n": 490,
+      "group_unweighted_n": 544
+    },
+    "Democrat": {
+      "pct": 36.65,
+      "valid_unweighted_n": 92,
+      "group_unweighted_n": 103
+    },
+    "Independent": {
+      "pct": 60.08,
+      "valid_unweighted_n": 264,
+      "group_unweighted_n": 305
+    },
+    "All Mormon adults": {
+      "pct": 64.07,
+      "valid_unweighted_n": 894,
+      "group_unweighted_n": 1019
+    }
+  }
+}

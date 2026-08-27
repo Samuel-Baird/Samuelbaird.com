@@ -1,0 +1,31 @@
+{
+  "source": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\"",
+  "method": "Population is respondents whose current tradition (RELTRAD) is Mormon, continental-US main survey only (the Alaska/Hawaii supplement is a separate file and isn't combined here), broken out by Census region (cregion). Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 88292.49782861538,
+  "total_unweighted_n": 35556,
+  "mormon_unweighted_n": 581,
+  "region_order": [
+    "West",
+    "South",
+    "Midwest",
+    "Northeast"
+  ],
+  "share_of_mormons": {
+    "Northeast": {
+      "pct": 4.24,
+      "unweighted_n": 24
+    },
+    "Midwest": {
+      "pct": 7.1,
+      "unweighted_n": 44
+    },
+    "South": {
+      "pct": 12.5,
+      "unweighted_n": 77
+    },
+    "West": {
+      "pct": 76.16,
+      "unweighted_n": 436
+    }
+  }
+}
