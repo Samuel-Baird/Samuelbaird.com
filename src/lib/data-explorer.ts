@@ -53,9 +53,13 @@ import ldsShareByRegionData from "../../docs/datasets/pew-rls-2007/lds-share-by-
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
+import millennialShareData from "../../docs/datasets/pew-rls-2014/millennial-share.json";
+import nonesGrowthData from "../../docs/datasets/pew-rls-2014/nones-growth-2007-2014.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
+import attendWithSpouseData from "../../docs/datasets/pew-rls-2014-recontact/attend-with-spouse.json";
+import spouseReligiousDisagreementData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religious-disagreement.json";
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
 import latinAmericaWeeklyAttendanceData from "../../docs/datasets/pew-latin-america-2014/weekly-attendance.json";
 import latinAmericaReligionImportanceData from "../../docs/datasets/pew-latin-america-2014/religion-importance.json";
@@ -573,6 +577,8 @@ export const DATASETS: Dataset[] = [
       samesexMarriage2014Graphic(),
       weeklyAttendance2014Graphic(),
       certaintyOfGod2014Graphic(),
+      millennialShareGraphic(),
+      nonesGrowthGraphic(),
     ],
   },
   {
@@ -595,6 +601,8 @@ export const DATASETS: Dataset[] = [
       marriageSharedBeliefsGraphic(),
       raisedInterfaithGraphic(),
       spouseReligionMatteredGraphic(),
+      attendWithSpouseGraphic(),
+      spouseReligiousDisagreementGraphic(),
     ],
   },
   {
@@ -1021,6 +1029,34 @@ function certaintyOfGod2014Graphic(): Graphic {
   };
 }
 
+function millennialShareGraphic(): Graphic {
+  const { group_order: order, millennial_pct: results } = millennialShareData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Which traditions skew young?",
+    description: "Share born 1981-1996 (Millennials), by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/millennial-share.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Millennials, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function nonesGrowthGraphic(): Graphic {
+  const { wave_order: order, unaffiliated_pct: results } = nonesGrowthData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "The rise of the \"nones\"",
+    description: "Religiously unaffiliated share of U.S. adults, 2007 vs. 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/nones-growth-2007-2014.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: religiously unaffiliated share of U.S. adults, 2007 vs. 2014. ${alt}.`,
+  };
+}
+
 function marriageSharedBeliefsGraphic(): Graphic {
   const { group_order: order, shared_beliefs_very_important: results } = marriageSharedBeliefsData;
   const alt = order
@@ -1060,6 +1096,34 @@ function spouseReligionMatteredGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014-recontact/spouse-religion-mattered.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of the ever-married saying their spouse's religion was very important in deciding to marry them, by religious tradition. ${alt}.`,
+  };
+}
+
+function attendWithSpouseGraphic(): Graphic {
+  const { group_order: order, attend_with_spouse: results } = attendWithSpouseData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you attend with your spouse?",
+    description: "Share who typically attend religious services with their spouse or partner, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/attend-with-spouse.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who typically attend religious services with their spouse, by current tradition. ${alt}.`,
+  };
+}
+
+function spouseReligiousDisagreementGraphic(): Graphic {
+  const { group_order: order, disagree_a_lot: results } = spouseReligiousDisagreementData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you and your spouse disagree about religion?",
+    description: "Share saying they disagree with their spouse or partner about religion a lot, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/spouse-religious-disagreement.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying they disagree with their spouse about religion a lot, by current tradition. ${alt}.`,
   };
 }
 

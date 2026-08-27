@@ -28,7 +28,7 @@ committed):
 
 ## Status
 
-Three charts shipped, all by current religious tradition (reltrad) with
+Five charts shipped, all by current religious tradition (reltrad) with
 groups under 30 valid respondents omitted (this recontact reached only
 5,000 of the main 2014 RLS's 35,071 respondents), wired into the Data
 Explorer entry (`src/lib/data-explorer.ts`, slug `pew-rls-2014-recontact`),
@@ -45,5 +45,12 @@ using the shared chart shape in `scripts/flagship-charts/common.py`:
   spouse's religion was very important in deciding to marry them, qd6a) —
   computed by `spouse_religion_mattered.py`, rendered by
   `render_spouse_religion_chart.py`.
+- `attend-with-spouse.json` (share who typically attend religious
+  services with their spouse, qd3) — computed by `attend_with_spouse.py`,
+  rendered by `render_attend_with_spouse_chart.py`.
+- `spouse-religious-disagreement.json` (share disagreeing with their
+  spouse about religion a lot, qd5) — computed by
+  `spouse_religious_disagreement.py`, rendered by
+  `render_spouse_disagreement_chart.py`.
 
 Further charts from this dataset should follow the same two-stage pattern.

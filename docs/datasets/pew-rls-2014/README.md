@@ -27,11 +27,11 @@ The `data/pew-rls-2014-recontact/` folder holds a related but separate
 
 ## Status
 
-Three charts shipped, all by current religious tradition (RELTRAD), wired
-into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
-`pew-rls-2014`), using the shared chart shape in
-`scripts/flagship-charts/common.py`:
+Five charts shipped, wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-rls-2014`), using the shared chart
+shape in `scripts/flagship-charts/common.py`:
 
+By current religious tradition (RELTRAD):
 - `samesex-marriage.json` (support for same-sex marriage, qb22) — computed
   by `samesex_marriage.py`, rendered by `render_samesex_marriage_chart.py`.
 - `weekly-attendance.json` (share attending religious services weekly or
@@ -41,6 +41,15 @@ into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
   exists, qg1b) — computed by `certainty_of_god.py`, rendered by
   `render_certainty_chart.py`; a companion to the same-named chart in
   `scripts/pew-rls-2007/`.
+- `millennial-share.json` (share born 1981-1996, cohort5cat) — computed
+  by `millennial_share.py`, rendered by `render_millennial_share_chart.py`.
+
+Cross-wave:
+- `nones-growth-2007-2014.json` (unaffiliated share, 2007 vs. 2014) —
+  computed by `nones_growth_2007_2014.py`, which unusually reads BOTH
+  `data/pew-rls-2007/` and this dataset's own .sav (justified since the
+  whole point is the two-wave comparison), rendered by
+  `render_nones_growth_chart.py`.
 
 The most natural next chart is a three-point trendline against
 `pew-rls-2007` and `pew-rls-2023-24` on a question all three waves share.
