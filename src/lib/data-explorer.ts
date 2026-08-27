@@ -387,6 +387,157 @@ export const DATASETS: Dataset[] = [
       voterPrideGraphic(),
     ],
   },
+  {
+    slug: "pew-mormon-survey-2011",
+    name: "2011 National Survey of Mormons",
+    shortDescription:
+      "Pew's survey of Mormons themselves — belief, practice, and place in American life.",
+    sponsor: "Pew Research Center",
+    fielder: "Social Science Research Solutions (SSRS)",
+    description:
+      "Rather than surveying the general public about Mormons, this 2011 study surveyed " +
+      "1,019 self-identified Mormon adults directly — what they believe, how they practice, " +
+      "and how accepted they feel in American society. Interviews were conducted Oct. 25–Nov. " +
+      "16, 2011 by telephone (landline and cell) in English and Spanish, oversampling counties " +
+      "with the largest Mormon populations and recontacting self-identified Mormons from " +
+      "earlier Pew and SSRS surveys. The resulting report, \"Mormons in America,\" was released " +
+      "in January 2012.",
+    citation:
+      "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+    sourceUrl:
+      "https://www.pewresearch.org/religion/2012/01/12/mormons-in-america-executive-summary/",
+    graphics: [],
+  },
+  {
+    slug: "pew-religious-knowledge-2010",
+    name: "2010 U.S. Religious Knowledge Survey",
+    shortDescription:
+      "What Americans of every faith (and none) actually know about religion.",
+    sponsor: "Pew Research Center",
+    fielder: "Princeton Survey Research Associates International (PSRAI)",
+    description:
+      "A 32-question quiz on the Bible, world religions, and church-state law, fielded " +
+      "May 19–June 6, 2010 among 3,412 U.S. adults by landline and cell phone. The survey " +
+      "oversampled Jewish, Mormon, and atheist/agnostic respondents by recontacting people " +
+      "previous surveys had identified as belonging to those groups, which makes it one of " +
+      "the few Pew datasets from this era with a usable standalone Mormon subsample on a " +
+      "knowledge (rather than belief/practice) battery.",
+    citation: "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+    sourceUrl:
+      "https://www.pewresearch.org/religion/2010/09/28/u-s-religious-knowledge-survey/",
+    graphics: [],
+  },
+  {
+    slug: "pew-rls-2007",
+    name: "2007 U.S. Religious Landscape Survey",
+    shortDescription:
+      "The original Religious Landscape Survey — the baseline the 2014 and 2023-24 waves track against.",
+    sponsor: "Pew Research Center",
+    fielder: "Princeton Survey Research Associates International (PSRAI)",
+    description:
+      "The first Religious Landscape Survey: 35,556 adults in the continental U.S., " +
+      "interviewed by telephone in summer 2007, plus a supplemental spring 2008 sample of " +
+      "200 Alaska and 201 Hawaii adults (reported separately; the two files don't share a " +
+      "combining weight). This is the survey that first measured the scale of religious " +
+      "switching in America and established the RELTRAD religious-tradition classification " +
+      "later waves (2014, 2023-24) still use.",
+    sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2007/",
+    graphics: [],
+  },
+  {
+    slug: "pew-rls-2014",
+    name: "2014 Religious Landscape Study",
+    shortDescription:
+      "The middle wave of Pew's Religious Landscape Study, between the 2007 original and 2023-24.",
+    sponsor: "Pew Research Center",
+    fielder: "Princeton Survey Research Associates International (PSRAI)",
+    description:
+      "35,071 U.S. adults interviewed by telephone (60% cell, 40% landline) June 4–Sept. 30, " +
+      "2014, in English and Spanish, with a minimum of 300 interviews in every state and the " +
+      "District of Columbia. This wave is the source of the widely cited \"America's Changing " +
+      "Religious Landscape\" report and, alongside the 2007 and 2023-24 waves, forms the " +
+      "three-point trendline this site's Religious Landscape Study material draws on.",
+    citation:
+      "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+    sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2014/",
+    graphics: [],
+  },
+  {
+    slug: "pew-rls-2014-recontact",
+    name: "2014 Religious Landscape Study — Recontact Survey",
+    shortDescription:
+      "A 2015 follow-up to 5,000 RLS 2014 respondents, focused on interfaith upbringing and marriage.",
+    sponsor: "Pew Research Center",
+    fielder: "Princeton Survey Research Associates International (PSRAI)",
+    description:
+      "Between March 17 and May 6, 2015, Pew recontacted 5,000 respondents from the main " +
+      "2014 Religious Landscape Study, sorted into 15 strata by religious and demographic " +
+      "characteristics (oversampling groups like the religiously intermarried) and reweighted " +
+      "afterward to restore proper proportions. It shares respondent IDs and key variables " +
+      "(RELTRAD, CHRELTRAD, region) with the main 2014 file, so the two can be merged. It " +
+      "underlies the report \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
+    sourceUrl:
+      "https://www.pewresearch.org/religion/2016/10/26/one-in-five-u-s-adults-were-raised-in-interfaith-homes/",
+    graphics: [],
+  },
+  {
+    slug: "pew-latin-america-2014",
+    name: "Religion in Latin America",
+    shortDescription:
+      "Pew's face-to-face survey of religious belief and practice across 19 Latin American countries and territories.",
+    sponsor: "Pew Research Center (Pew-Templeton Global Religious Futures project)",
+    fielder: "Princeton Survey Research Associates International (PSRAI) and Ipsos Public Affairs",
+    description:
+      "Between October 2013 and February 2014, Pew conducted over 30,000 face-to-face " +
+      "interviews with non-institutionalized adults across 18 Latin American and Caribbean " +
+      "countries plus Puerto Rico, covering religious affiliation, belief, practice, and " +
+      "social and political views. Latter-day Saints are a small share of most national " +
+      "samples here, but the dataset is large enough to compare the region's Catholic-to-" +
+      "Protestant shift against how much smaller traditions like LDS appear by comparison.",
+    citation:
+      "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a " +
+      "Historically Catholic Region.\"",
+    sourceUrl:
+      "https://www.pewresearch.org/religion/2014/11/13/religion-in-latin-america/",
+    graphics: [],
+  },
+  {
+    slug: "pew-faith-in-flux-2008",
+    name: "Faith in Flux (2008 Conversion Recontact Survey)",
+    shortDescription:
+      "Follow-up interviews with 2007 Religious Landscape Survey respondents, focused on why people change religion.",
+    sponsor: "Pew Research Center",
+    fielder: "Princeton Survey Research Associates International (PSRAI)",
+    description:
+      "A follow-up to the 2007 U.S. Religious Landscape Survey, which found that 28% of " +
+      "American adults had changed religious tradition since childhood (44% including moves " +
+      "within a tradition). This 2008 recontact survey re-interviewed 2,867 of those " +
+      "respondents by phone between Oct. 3 and Nov. 7, 2008, asking specifically why they " +
+      "left, why they joined, and how they feel about the change — the reasons behind " +
+      "religious switching, not just its incidence.",
+    citation:
+      "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the " +
+      "U.S.\"",
+    sourceUrl:
+      "https://www.pewresearch.org/religion/2009/04/27/faith-in-flux/",
+    graphics: [],
+  },
+  {
+    slug: "pew-atp-w70-2020",
+    name: "American Trends Panel, Wave 70 (July 2020)",
+    shortDescription:
+      "A general Pew American Trends Panel wave, fielded July 2020, carrying a religious-tradition variable.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 70 of Pew's American Trends Panel: 10,211 U.S. adults surveyed online (a small " +
+      "non-internet subsample by mail) July 13–19, 2020, in English and Spanish. Like other " +
+      "ATP waves, it carries a F_RELTRAD frame variable classifying each respondent's " +
+      "religious tradition (Latter-day Saints coded 20000), which is what makes an otherwise " +
+      "general-topic wave usable for breaking its questions out by religion.",
+    sourceUrl: "https://www.pewresearch.org/our-methods/u-s-surveys/american-trends-panel/",
+    graphics: [],
+  },
 ];
 
 export function getDataset(slug: string): Dataset | undefined {
