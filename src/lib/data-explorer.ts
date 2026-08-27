@@ -45,6 +45,7 @@ import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/rea
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
+import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
 
 export type Quiz = {
   title: string;
@@ -206,6 +207,29 @@ export const DATASETS: Dataset[] = [
       "https://newsroom.churchofjesuschrist.org/facts-and-statistics/country/united-states",
     category: "Mixed Datasets",
     graphics: [usMembershipGrowthGraphic(), usMembershipProjectionGraphic()],
+  },
+  {
+    slug: "worldwide-membership-history",
+    name: "Worldwide Church Membership History, 1830-2025",
+    shortDescription:
+      "The full worldwide membership count, year by year, from six founding members to nearly 18 million.",
+    sponsor: "The Church of Jesus Christ of Latter-day Saints",
+    fielder: "Compiled by this site from multiple public sources",
+    description:
+      "Unlike the U.S.-only timeline above, this one has no gaps: worldwide membership is " +
+      "documented for every single year since the Church's 1830 founding in one coherent " +
+      "source lineage — the 2013 Church Almanac for 1830-2011, and the Church's own annual " +
+      "statistical reports for 2012-2025. 2025's figure (17,887,212) was independently " +
+      "cross-checked against the Church's current newsroom statistics page and matches " +
+      "exactly. See docs/datasets/worldwide-membership-history/README.md for the full source.",
+    citation:
+      "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day " +
+      "Saints,\" sourced to the 2013 Church Almanac (1830-2011) and the Church's annual " +
+      "statistical reports (2012-2025).",
+    sourceUrl:
+      "https://en.wikipedia.org/wiki/Membership_history_of_the_Church_of_Jesus_Christ_of_Latter-day_Saints",
+    category: "Mixed Datasets",
+    graphics: [worldwideMembershipHistoryGraphic()],
   },
   {
     slug: "state-of-theology",
@@ -592,6 +616,21 @@ export const DATASETS: Dataset[] = [
 // scripts/flagship-charts/common.py) rather than the many-chart buildout
 // pew-rls-2023-24 or the ryan-burge sources have - see each dataset's own
 // docs/datasets/<slug>/README.md for the regeneration commands.
+
+function worldwideMembershipHistoryGraphic(): Graphic {
+  const { year_order: years, series } = worldwideMembershipHistoryData;
+  const milestones = [years[0], 1900, 1947, 2000, years[years.length - 1]];
+  const alt = milestones
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].members.toLocaleString()}`)
+    .join(", ");
+  return {
+    title: "Worldwide Church membership, 1830-2025",
+    description: "From six founding members to nearly 18 million, year by year, with no gaps.",
+    imageSrc: "/data-explorer/worldwide-membership-history/membership-by-year.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: worldwide Church membership by year, 1830 to 2025, complete with no gaps. Selected milestones - ${alt}.`,
+  };
+}
 
 function usMembershipProjectionGraphic(): Graphic {
   const { year_order: years, series, trend_fit_years: fit, anchor_year, trend_slope_per_year: slope } =

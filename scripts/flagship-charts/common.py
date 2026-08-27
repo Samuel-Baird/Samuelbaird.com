@@ -207,6 +207,8 @@ def render_timeseries(
     y_label_divisor: float = 1_000_000,
     y_label_suffix: str = "M",
     label_years: list[int] | None = None,
+    x_tick_step: int = 5,
+    show_markers: bool = True,
 ) -> None:
     """A single line over `years` (evenly spaced, e.g. one per calendar
     year). `statuses[year]` is one of:
@@ -221,6 +223,14 @@ def render_timeseries(
     two endpoints (projected > interpolated > reported) for its line
     style. The legend only lists statuses actually present in `statuses`.
     `label_years` (default: first and last) get a bold value callout.
+
+    `x_tick_step` spaces out year labels on the x-axis (raise it above the
+    5-year default for a long span - e.g. 25 for an 1830-2025 series,
+    where every-5-years would crowd ~40 labels together). `show_markers`
+    turns off the per-year dot entirely (leaving just the line) for a
+    dense multi-century series, where a dot every single year is visual
+    noise rather than signal - the line's own shape already carries the
+    same information.
     """
     import math
 
@@ -268,7 +278,9 @@ def render_timeseries(
         label.set_color(MUTED)
     ax.grid(axis="y", color=BORDER, linewidth=1, zorder=1)
 
-    x_ticks = [y for y in years if y % 5 == 0] or years
+    x_ticks = [y for y in years if y % x_tick_step == 0] or years
+    if years[0] not in x_ticks:
+        x_ticks.insert(0, years[0])
     if years[-1] not in x_ticks:
         x_ticks.append(years[-1])
     ax.set_xticks(x_ticks)
@@ -287,7 +299,8 @@ def render_timeseries(
             linewidth=2.75, linestyle="solid" if STATUS_RANK[seg_status] == 0 else (0, (5, 3)),
             solid_capstyle="round", zorder=3,
         )
-    for y in years:
+    marker_years = years if show_markers else (label_years or [years[0], years[-1]])
+    for y in marker_years:
         color = STATUS_COLOR[statuses[y]]
         real = STATUS_RANK[statuses[y]] == 0
         ax.plot(
@@ -306,19 +319,36 @@ def render_timeseries(
     # (floor or ceiling) the point sits closer to.
     label_years = label_years or [years[0], years[-1]]
     for y in label_years:
+        # The series' own first/last point has nothing to its left/right
+        # in x, so floating its label sideways (vertically centered, no
+        # vertical push at all) is always clear of the line - unlike a
+        # vertical push, which for an interior or endpoint value close to
+        # the floor/ceiling can either cross the axis spine (wide y-range)
+        # or land back on the line's own steep climb (narrow one).
+        # matplotlib doesn't clip an annotation that extends past the axes
+        # box, so this is safe even though it's technically off the
+        # plotted x-range.
         if y == years[0]:
-            # The series' first point has nothing to its left in x and
-            # (for an increasing series) nothing below it in value - every
-            # OTHER direction risks the label crossing either the axis
-            # floor (pushing down, on a wide y-range where the first
-            # point sits close to it) or the line's own steep early climb
-            # (pushing up). Floating it left, vertically centered on the
-            # point, is the one placement clear of both regardless of the
-            # axis range - matplotlib doesn't clip an annotation that
-            # extends past the axes box, so this is safe even though
-            # x < years[0] is technically off the plotted x-range.
             ax.annotate(
                 f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 0),
+                textcoords="offset points", ha="right", va="center",
+                color=STATUS_COLOR[statuses[y]], fontproperties=fonts["bold"],
+                fontsize=MIN.DATA_LABEL + 2, zorder=5,
+            )
+            continue
+        if y == years[-1]:
+            # Unlike the first point, floating this one further right risks
+            # running past the canvas edge entirely (there's much less
+            # right-margin reserved than the left margin the y-axis labels
+            # already claim) - so this one floats LEFT instead, back over
+            # the plot, with a small upward nudge: sweeping left at exactly
+            # this height is normally collision-free (the series' own
+            # maximum only occurs at x = years[-1]), except when growth has
+            # flattened right at the end (e.g. the last two years of the
+            # U.S. 2000-2025 series are within 200 of each other) and a
+            # second point sits at nearly the same height just before it.
+            ax.annotate(
+                f"{values[y]:,.0f}", xy=(y, values[y]), xytext=(-10, 12),
                 textcoords="offset points", ha="right", va="center",
                 color=STATUS_COLOR[statuses[y]], fontproperties=fonts["bold"],
                 fontsize=MIN.DATA_LABEL + 2, zorder=5,
