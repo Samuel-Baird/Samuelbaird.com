@@ -25,7 +25,7 @@ committed):
 
 ## Status
 
-Two charts shipped, both wired into the Data Explorer entry
+Four charts shipped, all wired into the Data Explorer entry
 (`src/lib/data-explorer.ts`, slug `pew-mormon-survey-2011`):
 
 - `ordination-by-activity.json` (belief that women should be ordained to
@@ -43,5 +43,14 @@ Two charts shipped, both wired into the Data Explorer entry
   for — copied verbatim with its own source note in the analysis script,
   not computed here; see that script's docstring before reusing the
   pattern elsewhere.
+- `essential-to-being-mormon.json` ("What's essential to being a good
+  Mormon?", q411a/c/e/f/g, a single-population ranking of five candidate
+  beliefs/practices) — computed by
+  `scripts/pew-mormon-survey-2011/essential_to_being_mormon.py`, rendered
+  by `render_essential_chart.py` using the shared magnitude-bar shape.
+- `tithing-by-activity.json` ("Do Mormons pay a full tithe?", q416 by
+  activity level in the Church, q406) — computed by
+  `scripts/pew-mormon-survey-2011/tithing_by_activity.py`, rendered by
+  `render_tithing_chart.py` using the shared magnitude-bar shape.
 
 Further charts from this dataset should follow the same two-stage pattern.

@@ -1,0 +1,35 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design). Each item's own don't know/refused excluded from its own denominator; \"essential\" is the top of a four-point scale (essential, important but not essential, not too important, not at all important). Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "item_order": [
+    "Believing Joseph Smith saw God the Father and Jesus Christ",
+    "Working to help the poor and needy",
+    "Having regular family home evenings or family nights",
+    "Not drinking coffee and tea",
+    "Not watching R-rated movies"
+  ],
+  "essential_pct": {
+    "Believing Joseph Smith saw God the Father and Jesus Christ": {
+      "pct": 81.03,
+      "valid_unweighted_n": 1006
+    },
+    "Working to help the poor and needy": {
+      "pct": 73.63,
+      "valid_unweighted_n": 1016
+    },
+    "Having regular family home evenings or family nights": {
+      "pct": 50.83,
+      "valid_unweighted_n": 1018
+    },
+    "Not drinking coffee and tea": {
+      "pct": 49.79,
+      "valid_unweighted_n": 1011
+    },
+    "Not watching R-rated movies": {
+      "pct": 32.78,
+      "valid_unweighted_n": 1001
+    }
+  }
+}

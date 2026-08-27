@@ -36,6 +36,8 @@ import voterIdeasPrideData from "../../docs/datasets/ryan-burge/voter-ideas-prid
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 import mormonOrdinationData from "../../docs/datasets/pew-mormon-survey-2011/ordination-by-activity.json";
 import mormonismChristianData from "../../docs/datasets/pew-mormon-survey-2011/mormonism-christian.json";
+import essentialToBeingMormonData from "../../docs/datasets/pew-mormon-survey-2011/essential-to-being-mormon.json";
+import tithingByActivityData from "../../docs/datasets/pew-mormon-survey-2011/tithing-by-activity.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
@@ -474,7 +476,12 @@ export const DATASETS: Dataset[] = [
       "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2012/01/12/mormons-in-america-executive-summary/",
-    graphics: [mormonismChristianGraphic(), mormonOrdinationGraphic()],
+    graphics: [
+      mormonismChristianGraphic(),
+      mormonOrdinationGraphic(),
+      essentialToBeingMormonGraphic(),
+      tithingByActivityGraphic(),
+    ],
   },
   {
     slug: "pew-religious-knowledge-2010",
@@ -719,6 +726,34 @@ function mormonOrdinationGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/ordination-by-activity.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons believing women should be ordained to the priesthood, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function essentialToBeingMormonGraphic(): Graphic {
+  const { item_order: order, essential_pct: results } = essentialToBeingMormonData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "What's essential to being a good Mormon?",
+    description: "Share of Mormons calling each belief or practice essential for being a good Mormon.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/essential-to-being-mormon.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons calling each belief or practice essential for being a good Mormon. ${alt}.`,
+  };
+}
+
+function tithingByActivityGraphic(): Graphic {
+  const { activity_order: order, pay_tithing_yes: results } = tithingByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do Mormons pay a full tithe?",
+    description: "Share of Mormons who pay tithing, at least 10% of income, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/tithing-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons paying a full tithe, by activity level in the Church. ${alt}.`,
   };
 }
 
