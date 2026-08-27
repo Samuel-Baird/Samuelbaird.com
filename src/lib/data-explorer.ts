@@ -42,8 +42,14 @@ import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowl
 import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
+import certaintyOfGodData from "../../docs/datasets/pew-rls-2007/certainty-of-god.json";
+import dailyPrayerData from "../../docs/datasets/pew-rls-2007/daily-prayer.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
+import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
+import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
+import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
+import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
 import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
@@ -523,7 +529,7 @@ export const DATASETS: Dataset[] = [
       "switching in America and established the RELTRAD religious-tradition classification " +
       "later waves (2014, 2023-24) still use.",
     sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2007/",
-    graphics: [evolutionBeliefGraphic()],
+    graphics: [evolutionBeliefGraphic(), certaintyOfGodGraphic(), dailyPrayerGraphic()],
   },
   {
     slug: "pew-rls-2014",
@@ -541,7 +547,11 @@ export const DATASETS: Dataset[] = [
     citation:
       "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
     sourceUrl: "https://www.pewresearch.org/religious-landscape-study/2014/",
-    graphics: [samesexMarriage2014Graphic()],
+    graphics: [
+      samesexMarriage2014Graphic(),
+      weeklyAttendance2014Graphic(),
+      certaintyOfGod2014Graphic(),
+    ],
   },
   {
     slug: "pew-rls-2014-recontact",
@@ -559,7 +569,11 @@ export const DATASETS: Dataset[] = [
       "underlies the report \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2016/10/26/one-in-five-u-s-adults-were-raised-in-interfaith-homes/",
-    graphics: [marriageSharedBeliefsGraphic()],
+    graphics: [
+      marriageSharedBeliefsGraphic(),
+      raisedInterfaithGraphic(),
+      spouseReligionMatteredGraphic(),
+    ],
   },
   {
     slug: "pew-latin-america-2014",
@@ -819,6 +833,34 @@ function evolutionBeliefGraphic(): Graphic {
   };
 }
 
+function certaintyOfGodGraphic(): Graphic {
+  const { group_order: order, absolutely_certain: results } = certaintyOfGodData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How certain are people that God exists?",
+    description: "Share of believers absolutely certain God or a universal spirit exists, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/certainty-of-god.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of believers absolutely certain God or a universal spirit exists, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function dailyPrayerGraphic(): Graphic {
+  const { group_order: order, pray_daily: results } = dailyPrayerData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who prays daily?",
+    description: "Share who pray at least once a day outside of religious services, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/daily-prayer.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share praying at least once a day outside of religious services, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
 function samesexMarriage2014Graphic(): Graphic {
   const { group_order: order, favor_samesex_marriage: results } = samesexMarriage2014Data;
   const alt = order
@@ -833,6 +875,34 @@ function samesexMarriage2014Graphic(): Graphic {
   };
 }
 
+function weeklyAttendance2014Graphic(): Graphic {
+  const { group_order: order, attend_weekly: results } = weeklyAttendance2014Data;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who attends religious services weekly?",
+    description: "Share attending religious services once a week or more, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/weekly-attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share attending religious services weekly or more, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function certaintyOfGod2014Graphic(): Graphic {
+  const { group_order: order, absolutely_certain: results } = certaintyOfGod2014Data;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How certain are people that God exists?",
+    description: "Share of believers absolutely certain God exists, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/certainty-of-god.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of believers absolutely certain God exists, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
 function marriageSharedBeliefsGraphic(): Graphic {
   const { group_order: order, shared_beliefs_very_important: results } = marriageSharedBeliefsData;
   const alt = order
@@ -844,6 +914,34 @@ function marriageSharedBeliefsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014-recontact/marriage-shared-beliefs.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying shared religious beliefs are very important for a successful marriage, by religious tradition. ${alt}.`,
+  };
+}
+
+function raisedInterfaithGraphic(): Graphic {
+  const { group_order: order, raised_interfaith: results } = raisedInterfaithData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Raised in more than one religion?",
+    description: "Share who think of themselves as having been raised in more than one religion, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/raised-interfaith.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share raised in more than one religion, by current religious tradition. ${alt}.`,
+  };
+}
+
+function spouseReligionMatteredGraphic(): Graphic {
+  const { group_order: order, spouse_religion_very_important: results } = spouseReligionMatteredData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Did your spouse's religion matter?",
+    description: "Share of the ever-married saying their spouse's religion was very important in deciding to marry them, by tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/spouse-religion-mattered.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of the ever-married saying their spouse's religion was very important in deciding to marry them, by religious tradition. ${alt}.`,
   };
 }
 

@@ -27,12 +27,20 @@ The `data/pew-rls-2014-recontact/` folder holds a related but separate
 
 ## Status
 
-One flagship chart shipped: `samesex-marriage.json` (support for same-sex
-marriage, by religious tradition), computed by
-`scripts/pew-rls-2014/samesex_marriage.py` and rendered by
-`render_samesex_marriage_chart.py` to
-`public/data-explorer/pew-rls-2014/samesex-marriage.png`, using the shared
-chart shape in `scripts/flagship-charts/common.py`. Wired into the Data
-Explorer entry (`src/lib/data-explorer.ts`, slug `pew-rls-2014`). The most
-natural next chart is a three-point trendline against `pew-rls-2007` and
-`pew-rls-2023-24` on a question all three waves share.
+Three charts shipped, all by current religious tradition (RELTRAD), wired
+into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
+`pew-rls-2014`), using the shared chart shape in
+`scripts/flagship-charts/common.py`:
+
+- `samesex-marriage.json` (support for same-sex marriage, qb22) — computed
+  by `samesex_marriage.py`, rendered by `render_samesex_marriage_chart.py`.
+- `weekly-attendance.json` (share attending religious services weekly or
+  more, ATTEND) — computed by `weekly_attendance.py`, rendered by
+  `render_weekly_attendance_chart.py`.
+- `certainty-of-god.json` (share of believers absolutely certain God
+  exists, qg1b) — computed by `certainty_of_god.py`, rendered by
+  `render_certainty_chart.py`; a companion to the same-named chart in
+  `scripts/pew-rls-2007/`.
+
+The most natural next chart is a three-point trendline against
+`pew-rls-2007` and `pew-rls-2023-24` on a question all three waves share.

@@ -28,13 +28,22 @@ committed):
 
 ## Status
 
-One flagship chart shipped: `marriage-shared-beliefs.json` (share saying
-shared religious beliefs are very important for a successful marriage, by
-tradition), computed by
-`scripts/pew-rls-2014-recontact/marriage_shared_beliefs.py` and rendered by
-`render_marriage_shared_beliefs_chart.py` to
-`public/data-explorer/pew-rls-2014-recontact/marriage-shared-beliefs.png`,
-using the shared chart shape in `scripts/flagship-charts/common.py`. Wired
-into the Data Explorer entry (`src/lib/data-explorer.ts`, slug
-`pew-rls-2014-recontact`). Further charts from this dataset should follow
-the same two-stage pattern.
+Three charts shipped, all by current religious tradition (reltrad) with
+groups under 30 valid respondents omitted (this recontact reached only
+5,000 of the main 2014 RLS's 35,071 respondents), wired into the Data
+Explorer entry (`src/lib/data-explorer.ts`, slug `pew-rls-2014-recontact`),
+using the shared chart shape in `scripts/flagship-charts/common.py`:
+
+- `marriage-shared-beliefs.json` (share saying shared religious beliefs
+  are very important for a successful marriage, qd1g) — computed by
+  `marriage_shared_beliefs.py`, rendered by
+  `render_marriage_shared_beliefs_chart.py`.
+- `raised-interfaith.json` (share who think of themselves as raised in
+  more than one religion, qb19) — computed by `raised_interfaith.py`,
+  rendered by `render_raised_interfaith_chart.py`.
+- `spouse-religion-mattered.json` (share of the ever-married saying their
+  spouse's religion was very important in deciding to marry them, qd6a) —
+  computed by `spouse_religion_mattered.py`, rendered by
+  `render_spouse_religion_chart.py`.
+
+Further charts from this dataset should follow the same two-stage pattern.

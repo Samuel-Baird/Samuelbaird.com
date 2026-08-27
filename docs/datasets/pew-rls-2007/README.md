@@ -28,12 +28,20 @@ Raw microdata lives in `data/pew-rls-2007/` (gitignored, not committed):
 
 ## Status
 
-One flagship chart shipped: `evolution-belief.json` (share agreeing
-evolution is the best explanation for human life on Earth, by religious
-tradition), computed by `scripts/pew-rls-2007/evolution_belief.py` and
-rendered by `render_evolution_chart.py` to
-`public/data-explorer/pew-rls-2007/evolution-belief.png`, using the shared
-chart shape in `scripts/flagship-charts/common.py`. Wired into the Data
-Explorer entry (`src/lib/data-explorer.ts`, slug `pew-rls-2007`). The most
-natural next chart is a three-point trendline against `pew-rls-2014` and
-`pew-rls-2023-24` on a question all three waves share.
+Three charts shipped, all by current religious tradition (RELTRAD),
+continental-US main survey only, wired into the Data Explorer entry
+(`src/lib/data-explorer.ts`, slug `pew-rls-2007`), using the shared
+chart shape in `scripts/flagship-charts/common.py`:
+
+- `evolution-belief.json` (share agreeing evolution is the best
+  explanation for human life on Earth, q10c) — computed by
+  `evolution_belief.py`, rendered by `render_evolution_chart.py`.
+- `certainty-of-god.json` (share of believers absolutely certain God or a
+  universal spirit exists, q31) — computed by `certainty_of_god.py`,
+  rendered by `render_certainty_chart.py`.
+- `daily-prayer.json` (share who pray at least once a day outside of
+  religious services, q41) — computed by `daily_prayer.py`, rendered by
+  `render_daily_prayer_chart.py`.
+
+The most natural next chart is a three-point trendline against
+`pew-rls-2014` and `pew-rls-2023-24` on a question all three waves share.
