@@ -6,8 +6,8 @@ world weekly+ - all Christian only.
 
 Reads only docs/datasets/pew-rls-2023-24/spiritual-experience.json
 (produced by scripts/pew-rls/spiritual_experience.py) - no number here is
-hand-typed. Same canvas/fonts/highlight-vs-gray magnitude-bar shape as
-render_childhood_formation_charts.py; see STYLE.md in this folder.
+hand-typed. Same canvas/fonts/per-group identity color magnitude-bar shape
+as render_childhood_formation_charts.py; see STYLE.md in this folder.
 
 Usage:
     python render_spiritual_experience_charts.py \
@@ -28,15 +28,11 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-
-ACCENT = "#1f4f7a"
-CONTEXT_GRAY = "#8f8b82"
-HIGHLIGHT_GROUP = "Latter-day Saint"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
@@ -127,7 +123,7 @@ def render_magnitude_bar(
     sorted_order = sort_groups(GROUP_ORDER, lambda g: results[g]["pct"])
     rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     ax.barh(rows, values, height=0.6, color=colors, zorder=3)
     ax.set_xlim(0, max(values) * 1.2)
@@ -136,7 +132,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(14)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",

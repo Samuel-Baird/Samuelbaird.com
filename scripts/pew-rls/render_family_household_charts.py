@@ -5,7 +5,7 @@ who pray or read scripture with their kids.
 
 Reads only docs/datasets/pew-rls-2023-24/family-household.json (produced by
 scripts/pew-rls/family_household.py) - no number here is hand-typed. Same
-canvas/fonts/highlight-vs-gray convention as
+canvas/fonts/per-group identity color palette as
 render_childhood_formation_charts.py; see STYLE.md in this folder. The two
 charts intentionally use different group sets (six Christian traditions +
 Christian average for the first; those six + "Other religions" + a
@@ -32,7 +32,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -42,12 +42,7 @@ INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 
-ACCENT = "#1f4f7a"        # --accent - the one highlighted series (Latter-day Saint)
-CONTEXT_GRAY = "#8f8b82"  # bar-fill-safe lighten of --muted
-
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350 - matches every other Data Explorer graphic
-
-HIGHLIGHT_GROUP = "Latter-day Saint"
 
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "pew-rls-2023-24" / "family-household.json"
@@ -144,7 +139,7 @@ def render_magnitude_bar(
     sorted_order = sort_groups(group_order, lambda g: results[g]["pct"])
     rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     ax.barh(rows, values, height=0.6, color=colors, zorder=3)
     ax.set_xlim(0, max(values) * 1.2)
@@ -153,7 +148,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(14)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",

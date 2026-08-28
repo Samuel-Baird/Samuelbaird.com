@@ -252,6 +252,50 @@ total-population row ("U.S. adults," "Total population"), if a chart ever has
 one, sinks below even those, at the very bottom. The canonical implementation
 is `sort_groups` in `scripts/chart_style.py`.
 
+**Per-group identity colors for the Pew RLS Data Explorer:** the Pew
+Religious Landscape Study magnitude-bar charts (`scripts/pew-rls/*.py`)
+give every named denomination/religion its own distinct identity color,
+rather than singling out Latter-day Saint in `--accent` and flattening
+every other group to one gray — that older "highlight-vs-gray" convention
+read as favoritism once every group in the same dataset needed its own
+identity. Two Christian traditions reuse colors already locked by the
+State of Theology charts (`scripts/state-of-theology-graphics/STYLE.md`'s
+Palette section) so the same tradition reads as the same color everywhere
+on the site it appears.
+
+| Group | Color name | Hex |
+|---|---|---|
+| Latter-day Saint | Blue (`--accent`) | `#1f4f7a` |
+| Catholic | Wine | `#8C4A5F` |
+| Protestant | Amber | `#C9721C` |
+| Orthodox Christian | Moss | `#5B7553` |
+| Jehovah's Witness | Plum | `#6B4472` |
+| Muslim | Olive | `#6B8C3D` |
+| Hindu | Crimson | `#9C2B2B` |
+| Buddhist | Ochre | `#9C8A1F` |
+| Jewish | Periwinkle | `#7A6BA6` |
+| Religiously unaffiliated | Umber | `#6B4A2F` |
+
+Two more row kinds aren't a single identity, so they share existing neutral
+tokens instead of getting their own hue — matching their own sink-to-bottom
+tier from the row-order rule above: any "Other..." catch-all (Other
+Christian, Other religions, and the like — tier 1 above) uses the existing
+bar-safe gray, `CONTEXT_GRAY` (`#8f8b82`); any "...average" aggregate or a
+total-population row (tiers 2/3 above) uses the existing `MUTED` token
+(`#6E6A63`).
+
+**Accepted tradeoff:** Muslim (olive, `#6B8C3D`) and Orthodox Christian
+(moss, `#5B7553`) are visually closer than the usual colorblind/low-vision
+floor when they land next to each other on a chart. This is accepted,
+not a bug to fix, because every bar in this chart type already prints its
+full group name and its percentage directly on the bar — color is never
+the only way to identify a row, which is the secondary-encoding condition
+under which a sub-floor color pair is allowed.
+
+The canonical implementation is `GROUP_COLORS`/`color_for_group` in
+`scripts/chart_style.py`; see `scripts/pew-rls/STYLE.md`'s "Magnitude bar
+(per-group identity color)" section for a worked example.
+
 ### Forms
 
 Inputs and selects use the standard radius and a hairline border; focus moves the

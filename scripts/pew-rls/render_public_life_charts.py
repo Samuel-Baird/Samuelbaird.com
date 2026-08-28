@@ -23,15 +23,11 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-
-ACCENT = "#1f4f7a"
-CONTEXT_GRAY = "#8f8b82"
-HIGHLIGHT_GROUP = "Latter-day Saint"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
@@ -132,7 +128,7 @@ def render_magnitude_bar(
     sorted_order = sort_groups(group_order, lambda g: results[g]["pct"])
     rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     bar_h = 0.62 if n_rows <= 8 else 0.68
     ax.barh(rows, values, height=bar_h, color=colors, zorder=3)
@@ -142,7 +138,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
