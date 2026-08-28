@@ -176,8 +176,10 @@ def _row_tier(label: str) -> int:
         "u.s. adults", "general population", "total population", "all u.s. adults",
     }
     if lower in total_pop_labels or "total population" in lower:
+        return 3
+    if "average" in lower:
         return 2
-    if lower.startswith("other") or "average" in lower:
+    if lower.startswith("other"):
         return 1
     return 0
 
@@ -186,20 +188,24 @@ def sort_groups(labels: list[str], value_of: Callable[[str], float]) -> list[str
     """Site-wide row-order rule for magnitude bar / paired bar / 100%-stacked
     bar / diverging bar charts (see BRANDING_AND_DESIGN.md's "Charts"
     section, which states this rule in plain terms): rows are sorted highest
-    to lowest by their own statistic, except two kinds of rows that always
-    sink to the bottom regardless of value.
+    to lowest by their own statistic, except three kinds of rows that always
+    sink to the bottom regardless of value, in this fixed tier order.
 
     Tier 0 (normal): sorted by `-value_of(label)`, i.e. descending.
-    Tier 1 (catch-all/aggregate): any label that starts with "Other" (case-
+    Tier 1 (named catch-all): any label that starts with "Other" (case-
     insensitive - "Other Christian", "Other religions", "Other world
-    religions", "Other faiths") or contains "average" (case-insensitive -
-    "Christian average", "Religiously affiliated average", "All religious
-    average"). Sorted by value *within* this tier too - it's not a frozen
-    order, just always below every tier-0 row.
-    Tier 2 (total population): a literal total-population row, if a chart
+    religions", "Other faiths"). Sorted by value *within* this tier too -
+    it's not a frozen order, just always below every tier-0 row.
+    Tier 2 (population average): any label containing "average" (case-
+    insensitive - "Christian average", "Religiously affiliated average",
+    "All religious average"). Always below tier 1 - a named "Other X" group
+    is still a real, if miscellaneous, group of people; an "average" row is
+    an aggregate over the whole chart and reads better anchored at the very
+    bottom of the substantive rows. Sorted by value within this tier too.
+    Tier 3 (total population): a literal total-population row, if a chart
     ever has one - "U.S. adults", "General population", "Total population",
     "All U.S. adults", or any label containing "total population" (case-
-    insensitive). Sorted below tier 1, at the very bottom of everything. No
+    insensitive). Sorted below tier 2, at the very bottom of everything. No
     chart in this dataset has one of these today, but the rule is written to
     be ready when one shows up.
 

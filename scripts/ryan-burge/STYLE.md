@@ -20,8 +20,9 @@ call to make here yet. If a future chart in this folder is a magnitude bar
 (single value per group, sorted by that value), use `chart_style.sort_groups`
 rather than hand-curating an order — see `BRANDING_AND_DESIGN.md`'s "Charts"
 section for the site-wide rule (sort highest to lowest by the chart's own
-statistic; "Other"/average catch-alls and a total-population row, if
-present, always sink to the bottom) and `scripts/pew-rls/STYLE.md`'s
+statistic; a named "Other" catch-all sinks below every substantive row, an
+"average" aggregate sinks below even that, and a total-population row, if
+present, sinks to the very bottom) and `scripts/pew-rls/STYLE.md`'s
 "Magnitude bar" section for a worked example.
 
 ## Heatmaps: tri-color diverging, semantically anchored

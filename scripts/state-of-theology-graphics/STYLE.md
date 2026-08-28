@@ -42,8 +42,9 @@ But if a future chart here is a one-row-highlighted magnitude comparison
 (single value per group, sorted by that value) rather than an identity read,
 use `chart_style.sort_groups` instead of hand-curating an order — see
 `BRANDING_AND_DESIGN.md`'s "Charts" section for the site-wide rule (sort
-highest to lowest by the chart's own statistic; "Other"/average catch-alls
-and a total-population row, if present, always sink to the bottom) and
+highest to lowest by the chart's own statistic; a named "Other" catch-all
+sinks below every substantive row, an "average" aggregate sinks below even
+that, and a total-population row, if present, sinks to the very bottom) and
 `scripts/pew-rls/STYLE.md`'s "Magnitude bar" section for a worked example.
 
 ## Format

@@ -159,9 +159,9 @@ rather than hand-rolling either), regenerate the PNG, then add the
 `Graphic`-building function to `data-explorer.ts` and wire it into that
 dataset's `graphics: [...]` array. See `scripts/pew-rls/STYLE.md` for the
 palette/layout rules the Pew RLS charts follow, that folder's
-`render_switching_chart.py`, `render_switching_generalized_chart.py`, and
-`render_birth_decade_chart.py` for three different chart shapes (diverging
-bar with CI whiskers, 100%-stacked bar, ordinal-ramp 100%-stacked bar), and
+`render_switching_generalized_chart.py` and `render_birth_decade_chart.py`
+for two different chart shapes (100%-stacked bar, ordinal-ramp
+100%-stacked bar), and
 `scripts/ryan-burge/STYLE.md` for the pipeline's one heatmap/matrix shape
 (tri-color diverging gradient). Before calling a render done, read
 `scripts/state-of-theology-graphics/STYLE.md`'s "Always check for overlap

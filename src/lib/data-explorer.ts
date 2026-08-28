@@ -7,7 +7,6 @@
  */
 
 import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-quiz";
-import switchingRatesData from "../../docs/datasets/pew-rls-2023-24/switching-rates.json";
 import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switching-generalized.json";
 import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
 import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhood-formation.json";
@@ -101,16 +100,6 @@ export type Graphic = {
   /** Where the graphic itself credits its source, e.g. an @handle. */
   credit?: string;
 };
-
-/** Sort/label order for the switching-rates graphic's alt text. */
-const SWITCHING_GROUP_ORDER = [
-  "Catholic",
-  "Jehovah's Witness",
-  "Latter-day Saint",
-  "Protestant",
-  "Other Christian",
-  "Orthodox Christian",
-];
 
 /** Group order shared by the three "switching, generalized" + birth-decade
  * graphics below, and by their render scripts
@@ -390,7 +379,6 @@ export const DATASETS: Dataset[] = [
     ],
     methodologySourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
     graphics: [
-      pewSwitchingRatesGraphic(),
       pewSwitchingCurrentCompositionGraphic(),
       pewSwitchingRaisedCohortGraphic(),
       pewBirthDecadeGraphic(),
@@ -1438,40 +1426,6 @@ export function categorySlug(category: string): string {
 
 export function getDatasetsByCategory(slug: string): Dataset[] {
   return DATASETS.filter((d) => d.category && categorySlug(d.category) === slug);
-}
-
-/**
- * Net-change-since-childhood graphic for the Pew RLS entry. Built from
- * switching-rates.json (produced by scripts/pew-rls/switching_rates.py and
- * rendered to PNG by scripts/pew-rls/render_switching_chart.py) rather than
- * hand-typed, so the alt text can't drift from the numbers the chart
- * itself shows - same reasoning as stateOfTheologyGraphics() below.
- */
-function pewSwitchingRatesGraphic(): Graphic {
-  const { switching, protestant_current_composition: protestant } = switchingRatesData;
-  const fmt = (n: number) => `${n >= 0 ? "+" : ""}${n.toFixed(0)}%`;
-  const netChangeAlt = SWITCHING_GROUP_ORDER.map((group) => {
-    const g = switching[group as keyof typeof switching];
-    return `${group} ${fmt(g.net_change_pct)} (raised ${g.raised_pct.toFixed(1)}%, ` +
-      `now ${g.current_pct.toFixed(1)}%)`;
-  }).join(", ");
-  const protestantAlt = Object.entries(protestant)
-    .map(([group, g]) => `${group} ${g.current_pct.toFixed(1)}%`)
-    .join(", ");
-
-  return {
-    title: "Net change since childhood, by tradition",
-    description:
-      "Each tradition's share of U.S. adults today, compared with the share raised in it.",
-    imageSrc: "/data-explorer/pew-religious-landscape-study/switching-rates.png",
-    width: 1080,
-    height: 1350,
-    alt:
-      `Diverging bar chart: net change from the share of U.S. adults raised in each ` +
-      `tradition to the share currently in it. ${netChangeAlt}. Faded bars (Other ` +
-      `Christian, Orthodox Christian) have a 95% confidence interval that includes zero. ` +
-      `Below it, current Protestant tradition composition: ${protestantAlt}.`,
-  };
 }
 
 /**
