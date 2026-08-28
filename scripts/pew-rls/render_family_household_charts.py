@@ -32,7 +32,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import draw_caption_bottom  # noqa: E402
+from chart_style import draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -141,7 +141,8 @@ def render_magnitude_bar(
         spine.set_visible(False)
     ax.tick_params(axis="y", length=0, pad=10)
 
-    rows = group_order[::-1]
+    sorted_order = sort_groups(group_order, lambda g: results[g]["pct"])
+    rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
     colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
 

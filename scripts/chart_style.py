@@ -16,11 +16,15 @@ DEFAULT_FONTS_DIR:
 Per scripts/state-of-theology-graphics/STYLE.md's sync contract: if you
 change anything in this module, update that STYLE.md, scripts/ryan-burge/STYLE.md,
 and scripts/pew-rls/STYLE.md together - an undocumented style isn't a style.
+This includes `sort_groups` below (the site-wide row-order rule) - see
+BRANDING_AND_DESIGN.md's "Charts" section for the canonical statement of the
+rule and scripts/pew-rls/STYLE.md for a worked example of applying it.
 """
 
 from __future__ import annotations
 
 import textwrap
+from typing import Callable
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -164,6 +168,49 @@ def _relative_luminance(hex_color: str) -> float:
 
     r, g, b = (chan(c) for c in _hex_to_rgb(hex_color))
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def _row_tier(label: str) -> int:
+    lower = label.lower()
+    total_pop_labels = {
+        "u.s. adults", "general population", "total population", "all u.s. adults",
+    }
+    if lower in total_pop_labels or "total population" in lower:
+        return 2
+    if lower.startswith("other") or "average" in lower:
+        return 1
+    return 0
+
+
+def sort_groups(labels: list[str], value_of: Callable[[str], float]) -> list[str]:
+    """Site-wide row-order rule for magnitude bar / paired bar / 100%-stacked
+    bar / diverging bar charts (see BRANDING_AND_DESIGN.md's "Charts"
+    section, which states this rule in plain terms): rows are sorted highest
+    to lowest by their own statistic, except two kinds of rows that always
+    sink to the bottom regardless of value.
+
+    Tier 0 (normal): sorted by `-value_of(label)`, i.e. descending.
+    Tier 1 (catch-all/aggregate): any label that starts with "Other" (case-
+    insensitive - "Other Christian", "Other religions", "Other world
+    religions", "Other faiths") or contains "average" (case-insensitive -
+    "Christian average", "Religiously affiliated average", "All religious
+    average"). Sorted by value *within* this tier too - it's not a frozen
+    order, just always below every tier-0 row.
+    Tier 2 (total population): a literal total-population row, if a chart
+    ever has one - "U.S. adults", "General population", "Total population",
+    "All U.S. adults", or any label containing "total population" (case-
+    insensitive). Sorted below tier 1, at the very bottom of everything. No
+    chart in this dataset has one of these today, but the rule is written to
+    be ready when one shows up.
+
+    Returns a new list; `labels` itself is not mutated. Uses Python's stable
+    sort, so ties within a tier (equal value_of()) keep their original
+    relative order from the input `labels` list - callers that pass a
+    curated `GROUP_ORDER`/`group_order` list as the *set* of rows (which
+    group keys belong in a chart) can keep doing so; this function only
+    changes what order they come out in, not which rows are included.
+    """
+    return sorted(labels, key=lambda label: (_row_tier(label), -value_of(label)))
 
 
 def label_ink(bg_hex: str, ink: str = INK, paper: str = PAPER, threshold: float = 0.45) -> str:

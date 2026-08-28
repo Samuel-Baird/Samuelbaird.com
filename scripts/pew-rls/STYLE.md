@@ -148,16 +148,23 @@ python scripts/pew-rls/render_birth_decade_chart.py \
 Most of the dataset's remaining backlog sections (childhood formation,
 family and household, practice, beliefs, spiritual experience, public life
 and society) ship as a **magnitude bar**: one row per group, a single
-percentage, sorted by the group order every other chart on this page
-already uses. There's no per-tradition identity color and no decline
-signal here, so these reuse the site's highlight-vs-gray convention
-instead — Latter-day Saint in `--accent` (`#1f4f7a`), every other group in
-a bar-safe gray (`#8f8b82`, a lightened `--muted` that still reads as a
-distinct fill at full opacity, unlike the line chart's stroke-only
-`CONTEXT_GRAY`). Group order and population (Christian only, Christian +
-other religions, or every religiously-affiliated tradition individually +
-the unaffiliated) vary item to item — see each compute script's own
-docstring (`childhood_formation.py`, `family_household.py`, `practice.py`,
+percentage, sorted by the site-wide row-order rule — highest to lowest by
+each group's own value, with catch-all/aggregate rows ("Other Christian,"
+"Christian average," and the like) always sunk below every substantive row
+regardless of their own number, sorted by value within that bottom tier —
+via `chart_style.sort_groups` (see `BRANDING_AND_DESIGN.md`'s "Charts"
+section for the canonical statement of the rule). There's no per-tradition
+identity color and no decline signal here, so these reuse the site's
+highlight-vs-gray convention instead — Latter-day Saint in `--accent`
+(`#1f4f7a`), every other group in a bar-safe gray (`#8f8b82`, a lightened
+`--muted` that still reads as a distinct fill at full opacity, unlike the
+line chart's stroke-only `CONTEXT_GRAY`). The population each chart draws
+from (Christian only, Christian + other religions, or every
+religiously-affiliated tradition individually + the unaffiliated) still
+varies item to item — a `GROUP_ORDER`/`group_order` constant still says
+*which* group keys belong in a given chart, it just no longer dictates the
+order they're drawn in; see each compute script's own docstring
+(`childhood_formation.py`, `family_household.py`, `practice.py`,
 `beliefs.py`, `spiritual_experience.py`, `public_life.py`) for which set a
 given chart uses and why.
 

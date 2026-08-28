@@ -29,7 +29,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -115,7 +115,10 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         spine.set_visible(False)
     ax.tick_params(axis="y", length=0, pad=10)
 
-    rows = GROUP_ORDER[::-1]  # bottom-to-top, so LDS plots at top
+    # Sorted by each tradition's "2000s" share - which traditions skew
+    # youngest - per the site-wide row-order rule.
+    sorted_order = sort_groups(GROUP_ORDER, lambda g: distribution[g]["shares_pct"]["2000s"])
+    rows = sorted_order[::-1]  # bottom-to-top, so the highest-sorted group plots at top
     bar_height = 0.6
 
     left = [0.0] * len(rows)

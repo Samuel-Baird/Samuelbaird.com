@@ -12,6 +12,18 @@ what's genuinely new: this folder renders the pipeline's only **heatmaps**
 (`render_voter_matrices.py`'s `render_heatmap()`, reused by
 `render_voter_ideas_matrices.py`) and its CCES/PID bar and line shapes.
 
+## Row order, if a future chart here needs one
+
+This folder's existing charts are heatmaps and CCES/PID bar and line shapes,
+not one-row-highlighted magnitude comparisons, so there's no `sort_groups`
+call to make here yet. If a future chart in this folder is a magnitude bar
+(single value per group, sorted by that value), use `chart_style.sort_groups`
+rather than hand-curating an order — see `BRANDING_AND_DESIGN.md`'s "Charts"
+section for the site-wide rule (sort highest to lowest by the chart's own
+statistic; "Other"/average catch-alls and a total-population row, if
+present, always sink to the bottom) and `scripts/pew-rls/STYLE.md`'s
+"Magnitude bar" section for a worked example.
+
 ## Heatmaps: tri-color diverging, semantically anchored
 
 Heatmap cells use a **diverging low → white → high ramp**, not the single-hue
