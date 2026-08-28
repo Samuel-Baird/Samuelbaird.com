@@ -86,7 +86,7 @@ def draw_caption_bottom(
     *,
     left: float = 0.065,
     wrap_width: int = 98,
-    fontsize: float = 10,
+    fontsize: float = 11.5,
     line_step: float = 0.0165,
     bottom: float = 0.030,
     color: str = MUTED,
@@ -105,6 +105,20 @@ def draw_caption_bottom(
     value as `caption_top` in the "vertical layout: centering the plot band"
     contract (scripts/pew-rls/STYLE.md) - i.e. `ax_bottom = caption_top + gap`.
     The return value is the y-fraction just above the top caption line.
+
+    Site-wide caption convention (see BRANDING_AND_DESIGN.md's "Charts"
+    section): every chart's footnote is exactly one bold line, "@ithinkisam
+    | data: <short source title>" - no DOI/URL, no methodology paragraphs,
+    no per-chart population/cutpoint notes. Pass it via `handle=` with
+    `paragraphs=[]`; every render script across every dataset does this the
+    same way, so the caption block is always exactly one line regardless of
+    dataset. `paragraphs`/`wrap_width`/`line_step` remain general-purpose
+    (a caller can still stack additional lines above the handle if some
+    future need genuinely requires it), but nothing in this codebase does
+    today - the single-line handle is the standard, not the exception.
+    The `fontsize` default (11.5, up from the pre-2026-08 default of 10) is
+    the "slightly larger" bump that came with this convention; still small
+    enough to read as fine print, not a second subtitle.
 
     `paragraphs` are source/methodology lines, wrapped to `wrap_width`
     characters (matplotlib's own figure-level wrap is unreliable across

@@ -296,6 +296,24 @@ The canonical implementation is `GROUP_COLORS`/`color_for_group` in
 `scripts/chart_style.py`; see `scripts/pew-rls/STYLE.md`'s "Magnitude bar
 (per-group identity color)" section for a worked example.
 
+**Footnote/caption, every Data Explorer PNG:** one bold line, nothing else —
+`@ithinkisam | data: <short source title>`. No DOI, no URL, no full academic
+citation, no per-chart population/cutpoint/exclusion methodology note. The
+short title is a plain human name for the dataset (e.g. "Pew 2023-24 RLS,"
+"Ryan Burge, CCES 2016," "Church membership compilation"), not a formal
+citation — someone who wants the full source can already find it in the
+dataset's own `docs/datasets/<slug>/README.md`, so the chart image itself
+only needs to say *which* dataset, not cite it. This replaced the older,
+per-dataset pattern of stacking 2-3 caption paragraphs (a methodology note,
+an `N =` line, and a full "Pew Research Center. 2025. ... doi: ..." citation
+line) — that pattern is retired everywhere, not just on new charts. Draw it
+with `chart_style.draw_caption_bottom(fig, fonts, [], handle="@ithinkisam |
+data: <short title>")` — empty `paragraphs`, the whole line as `handle` (bold,
+`fontsize` defaults to 11.5, up from the pre-2026-08 default of 10 — "slightly
+larger," not a second subtitle). Every render script across every dataset
+folder draws its caption this same way; there is no dataset-specific
+exception.
+
 ### Forms
 
 Inputs and selects use the standard radius and a hairline border; focus moves the
