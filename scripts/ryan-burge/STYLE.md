@@ -7,7 +7,11 @@ titles, Roboto Condensed everything else, loaded from that folder's
 `fonts/`), same "accurate, not editorial" title rule, same bottom-anchored
 caption and mobile font floors (via
 [`scripts/chart_style.py`](../chart_style.py)), same
-`/data-explorer/<slug>/graphics` gallery wiring. This file only documents
+`/data-explorer/<slug>/graphics` gallery wiring. Every chart here follows
+the site-wide one-line caption convention (`BRANDING_AND_DESIGN.md`'s
+"Charts" section): `draw_caption_bottom(fig, fonts, [], handle="@ithinkisam
+| data: <short title>")`, no per-chart methodology/population paragraphs.
+This file only documents
 what's genuinely new: this folder renders the pipeline's only **heatmaps**
 (`render_voter_matrices.py`'s `render_heatmap()`, reused by
 `render_voter_ideas_matrices.py`) and its CCES/PID bar and line shapes.
@@ -80,7 +84,7 @@ whole point of a heatmap over a table of numbers.
 | `voter-ft-racial-religious`, `voter-ft-political-social` | `DIV_COOL_BLUE` → `DIV_WARM_RED` | Thermometer's own cold/warm metaphor |
 | `voter-issue-importance`, `voter-ideas-sexism`, `voter-ideas-promises`, `voter-ideas-media`, `voter-ideas-orgs`, `voter-ideas-volunteering`, `voter-ideas-pride` | `DIV_COOL_BLUE` → `DIV_WARM_RED` (neutral) | Intensity/support share ("how much"), not a value judgment the item itself carries. `voter-ideas-sexism` lands here specifically because its six statements are a **mixed-worded battery** — some regressive ("Women should return to traditional roles"), some where agreeing is the sympathetic-to-equality response ("Women miss out on jobs due to discrimination") — so a single agree=negative ramp would color half the rows backwards. Also includes the politically loaded, non-mixed items (policy support, national pride), where assigning green to "more" would imply an opinion the site doesn't take. |
 | `voter-ideas-muslim-distrust` | `DIV_POS_GREEN` (low) → `DIV_NEG_RED` (high) | All three proposals point the same direction — agreeing *is* the discriminatory/restrictive position in every row, so one ramp direction is honest across the whole matrix |
-| `voter-ideas-immigration`, `voter-ideas-trade` | `DIV_NEG_RED` (low) → `DIV_POS_GREEN` (high) | Each row is independently normalized to "share holding the positive view" (per that chart's own caption note) before it reaches this chart — high already means the same thing in every row, so the ramp can too |
+| `voter-ideas-immigration`, `voter-ideas-trade` | `DIV_NEG_RED` (low) → `DIV_POS_GREEN` (high) | Each row is independently normalized to "share holding the positive view" (documented in the compute script, e.g. `voter_ideas_matrices.py` — no longer in the rendered caption, which is now the site-wide one-line handle only) before it reaches this chart — high already means the same thing in every row, so the ramp can too |
 
 Confirm a chart's own subtitle/wording before assuming which end is
 "positive" — the table above is a starting point per dataset, not a

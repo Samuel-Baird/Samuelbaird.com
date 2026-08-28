@@ -85,12 +85,7 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    source_paragraphs = [
-        note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2016 wave), via Ryan "
-        "Burge (github.com/ryanburge).",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, Voter Study Group")
     ax_top = subtitle_bottom - 0.03
     ax_bottom = caption_top + 0.03
 

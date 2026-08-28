@@ -103,13 +103,7 @@ def render_panel(
     # STYLE.md's "Footnotes: bottom-anchored" section. The relative spacing
     # between caption -> denominator note -> axes bottom is preserved from
     # the old fixed layout; only the anchor point moved.
-    source_paragraphs = [
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_unweighted_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
     denom_note_y = caption_top + 0.06
     legend_bottom_y = denom_note_y + 0.02
     legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT  # 2 items, 1 row

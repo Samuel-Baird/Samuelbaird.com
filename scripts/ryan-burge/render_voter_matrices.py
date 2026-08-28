@@ -121,13 +121,8 @@ def render_heatmap(
 
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
 
-    source_paragraphs = [
-        note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via "
-        "Ryan Burge (github.com/ryanburge).",
-    ]
     caption_top = draw_caption_bottom(
-        fig, fonts, source_paragraphs, left=0.045, wrap_width=118, fontsize=9, line_step=0.0145,
+        fig, fonts, [], left=0.045, handle="@ithinkisam | data: Ryan Burge, Voter Study Group",
     )
 
     ax_top = subtitle_bottom - 0.025

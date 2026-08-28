@@ -103,13 +103,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
 def draw_caption(fig, fonts, total_n: int, note: str) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    source_paragraphs = [
-        note,
-        f"Ryan Burge (github.com/ryanburge), CCES 2016 common content extract · N = {total_n:,}",
-        "Unweighted - this extract carries no survey weight column; good for shape/direction, "
-        "not exact figures.",
-    ]
-    return draw_caption_bottom(fig, fonts, source_paragraphs)
+    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CCES 2016")
 
 
 def render_magnitude_bar(

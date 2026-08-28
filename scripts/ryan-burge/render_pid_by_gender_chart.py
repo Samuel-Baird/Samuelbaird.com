@@ -107,14 +107,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     subtitle = ("3-category party ID (Democrat/Independent/Republican,\n"
                 "leaners folded in) among Latter-day Saints, by gender and wave.")
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    source_paragraphs = [
-        "Population: Latter-day Saints (trad == \"Mormon\"), by gender, across all eight "
-        "CES/CCES waves. pid7 collapsed to 3 categories (see pid_by_gender.py's own "
-        "design-decision note).",
-        "Ryan Burge (github.com/ryanburge), CES stacked 2006-2018 common content extract.",
-        "Unweighted - this extract carries no survey weight column.",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CES 2006-2018")
     ax_top = subtitle_bottom - 0.03
     legend_bottom_y = caption_top + 0.02
     legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT  # 3 items, 1 row

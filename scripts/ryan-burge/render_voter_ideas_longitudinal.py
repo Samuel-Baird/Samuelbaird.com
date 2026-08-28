@@ -95,12 +95,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
 def draw_caption(fig, fonts, note: str) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    source_paragraphs = [
-        note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge "
-        "(github.com/ryanburge).",
-    ]
-    return draw_caption_bottom(fig, fonts, source_paragraphs)
+    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, Voter Study Group")
 
 
 def render_line_chart(
