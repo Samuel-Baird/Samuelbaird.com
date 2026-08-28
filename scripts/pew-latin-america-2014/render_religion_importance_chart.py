@@ -40,13 +40,7 @@ def main():
         highlight_rows=None,
         title="How important is religion?",
         subtitle="Share across Latin America saying religion is very\nimportant in their life, by their own religion.",
-        caption_paragraphs=[
-            "Population: respondent's own current religion, pooled across all countries "
-            "surveyed; don't know/refused excluded.",
-            f"Pew Research Center's Religion in Latin America survey, fielded 2013-14 · "
-            f"N = {data['total_unweighted_n']:,} adults across 19 countries/territories",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew Religion in Latin America (2014)"],
         out_path=args.out,
         fonts=load_fonts(),
     )

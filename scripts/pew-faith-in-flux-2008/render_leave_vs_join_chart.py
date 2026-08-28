@@ -40,13 +40,7 @@ def main():
         highlight_rows=None,
         title="Leaving, or joining?",
         subtitle="When people changed religion, was it driven more by\nwanting to leave the old one, or join the new one?",
-        caption_paragraphs=[
-            "Population: all recontacted respondents who left the religion they were "
-            "raised in; don't know/refused excluded.",
-            f"Pew Research Center's Faith in Flux (2008 Conversion Recontact Survey) · "
-            f"N = {data['valid_unweighted_n']:,} recontacted adults",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew Faith in Flux (2008)"],
         out_path=args.out,
         fonts=load_fonts(),
     )

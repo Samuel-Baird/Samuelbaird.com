@@ -40,13 +40,7 @@ def main():
         highlight_rows={"Mormon"},
         title="Worship online during COVID lockdowns",
         subtitle="Share who watched religious services online or on\nTV in the past month, by religious tradition, July 2020.",
-        caption_paragraphs=[
-            "Population: respondent's religious tradition; don't know/refused excluded. "
-            "Groups under 30 valid respondents omitted.",
-            f"Pew Research Center's American Trends Panel, Wave 70 (July 13-19, 2020) · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew ATP Wave 70 (2020)"],
         out_path=args.out,
         fonts=load_fonts(),
     )

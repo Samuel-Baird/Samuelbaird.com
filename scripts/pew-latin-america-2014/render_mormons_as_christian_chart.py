@@ -40,13 +40,7 @@ def main():
         highlight_rows=None,
         title="Are Mormons seen as Christian?",
         subtitle="Share across Latin America who consider Mormons to\nbe followers of the Christian faith, by their own religion.",
-        caption_paragraphs=[
-            "Population: respondent's own current religion, pooled across all countries "
-            "surveyed; don't know/refused excluded, \"never heard of group\" counted as no.",
-            f"Pew Research Center's Religion in Latin America survey, fielded 2013-14 · "
-            f"N = {data['total_unweighted_n']:,} adults across 19 countries/territories",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew Religion in Latin America (2014)"],
         out_path=args.out,
         fonts=load_fonts(),
     )

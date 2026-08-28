@@ -40,13 +40,7 @@ def main():
         highlight_rows=None,
         title="Why converts say they joined the LDS Church",
         subtitle="Share of LDS converts calling each factor an\nimportant reason they became Mormon.",
-        caption_paragraphs=[
-            f"Population: respondents who converted to Mormonism (n={data['lds_converts_unweighted_n']}), "
-            "a small subgroup of this recontact survey; each reason's own don't know/refused excluded.",
-            f"Pew Research Center's Faith in Flux (2008 Conversion Recontact Survey) · "
-            f"N = {data['total_unweighted_n']:,} recontacted adults overall",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew Faith in Flux (2008)"],
         out_path=args.out,
         fonts=load_fonts(),
         axes_left=0.52,
