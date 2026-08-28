@@ -65,21 +65,8 @@ def main():
         low_confidence_rows=low_confidence_rows,
         title="Ten Largest U.S.-Rooted Churches, Projected to 2035",
         subtitle="Last reported membership vs. a straight-line trend extended to 2035",
-        caption_paragraphs=[
-            "Each dot is that denomination's own most recently reported membership figure "
-            "(years vary by body, 2016-2025); each triangle is a simple ordinary-least-"
-            "squares line through that body's own historical figures, extended to 2035. "
-            "This is a blunt straight-line extrapolation, not a demographic forecast - it "
-            "can't see a schism, policy shift, or rate change that hasn't happened yet in "
-            "the data. LDS Church figures are worldwide, not U.S.-only. Starred (*) "
-            "entries have low-confidence sourcing: Catholic figures vary 5-15M by "
-            "methodology; Orthodox and COGIC figures are sparse and, for COGIC, diverge "
-            "roughly 5-6x from independent U.S. Religion Census counts. See "
-            "docs/datasets/ten-largest-us-churches-2035/README.md for every figure's "
-            "exact citation.",
-            "Modeled after Ryan Burge's GSS-based American-religion projections: "
-            "gist.github.com/ryanburge/e785275206cd12584b73eb4ec9b3ad52",
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Compiled denominational reporting",
         out_path=args.out,
         fonts=load_fonts(),
     )

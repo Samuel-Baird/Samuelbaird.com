@@ -40,13 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Support for same-sex marriage, 2014",
         subtitle="Share who favor or strongly favor allowing gays\nand lesbians to marry legally, by religious tradition.",
-        caption_paragraphs=[
-            "Population: current religious tradition; top-two-box (strongly favor + favor); "
-            "don't know/refused excluded.",
-            f"Pew Research Center's 2014 Religious Landscape Study · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2014 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )

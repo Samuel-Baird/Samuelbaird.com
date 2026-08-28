@@ -40,13 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Which traditions skew young?",
         subtitle="Share born 1981-1996 (Millennials),\nby religious tradition, 2014.",
-        caption_paragraphs=[
-            "Population: current religious tradition; don't know/refused excluded. Groups "
-            "under 30 valid respondents omitted.",
-            f"Pew Research Center's 2014 Religious Landscape Study · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2014 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )

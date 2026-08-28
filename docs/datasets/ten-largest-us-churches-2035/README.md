@@ -36,7 +36,7 @@ Every entry carries a `confidence` field:
 | --- | --- |
 | `high` | A clean, consistent multi-point series from one source lineage |
 | `medium` | Usable but sparse, or complicated by a known one-time shock |
-| `low` | Sparse and/or internally inconsistent sourcing — shown, but flagged everywhere (chart, caption, and here) |
+| `low` | Sparse and/or internally inconsistent sourcing — shown, but flagged everywhere (starred on the chart, noted in alt text, and here) |
 
 ## Sources, by denomination
 

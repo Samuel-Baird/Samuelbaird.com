@@ -41,14 +41,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Do you attend with your spouse?",
         subtitle="Share who typically attend religious services with\ntheir spouse or partner, by current tradition.",
-        caption_paragraphs=[
-            "Population: current religious tradition, among those with a spouse/partner "
-            "who attend services; don't know/refused excluded. Groups under 30 valid "
-            "respondents omitted.",
-            f"Pew Research Center's 2014 RLS recontact survey (fielded 2015) · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2014 RLS Recontact",
         out_path=args.out,
         fonts=load_fonts(),
     )

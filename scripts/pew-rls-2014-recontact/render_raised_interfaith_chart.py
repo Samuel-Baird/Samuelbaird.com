@@ -41,13 +41,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Raised in more than one religion?",
         subtitle="Share who think of themselves as having been raised\nin more than one religion, by current tradition.",
-        caption_paragraphs=[
-            "Population: current religious tradition; don't know/refused excluded. Groups "
-            "under 30 valid respondents omitted.",
-            f"Pew Research Center's 2014 RLS recontact survey (fielded 2015) · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2014 RLS Recontact",
         out_path=args.out,
         fonts=load_fonts(),
     )

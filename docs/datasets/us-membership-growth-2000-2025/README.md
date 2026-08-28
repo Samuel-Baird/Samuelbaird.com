@@ -84,7 +84,8 @@ defensible simple bounds instead of picking one:
   floor around 2031 and stays flat after.
 
 Both are anchored at the actual 2025 figure. Neither bound is a forecast —
-the caption and alt text say so explicitly.
+the alt text says so explicitly (the chart's own caption is just the
+site-wide handle line; see BRANDING_AND_DESIGN.md's "Charts" section).
 
 ```bash
 python scripts/us-membership-growth-2000-2025/build_projection.py

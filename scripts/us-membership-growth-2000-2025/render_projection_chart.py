@@ -47,8 +47,9 @@ def main():
         low_values=low_values,
         high_values=high_values,
         title="U.S. membership, projected to 2050",
-        subtitle=f"Reported through {data['anchor_year']}, then a range between\ntwo scenarios (see caption) rather than one guess.",
-        caption_paragraphs=[data["method"]],
+        subtitle=f"Reported through {data['anchor_year']}, then a range between\ntwo scenarios rather than one guess.",
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Church membership compilation",
         out_path=args.out,
         fonts=load_fonts(),
     )

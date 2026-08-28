@@ -54,11 +54,8 @@ def main():
         values=values,
         title="Worldwide Church membership, 1830-2025",
         subtitle="Colored by whether it grew or shrank from the year\nbefore, with the total every 25 years.",
-        caption_paragraphs=[
-            "Four years saw a net decrease: 1839 (following the 1838 Missouri Extermination "
-            "Order), and 1855-1857 (the difficult early Utah years). Every other year grew.",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Church membership history",
         out_path=args.out,
         fonts=load_fonts(),
         label_years=label_years,

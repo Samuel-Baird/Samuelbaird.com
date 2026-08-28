@@ -41,12 +41,8 @@ def main():
         highlight_rows=None,
         title="The rise of the \"nones\"",
         subtitle="Religiously unaffiliated share of U.S. adults,\n2007 vs. 2014.",
-        caption_paragraphs=[
-            "Population: all U.S. adults, each wave's own RELTRAD variable.",
-            "Pew Research Center's 2007 U.S. Religious Landscape Survey and 2014 "
-            "Religious Landscape Study",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2014 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )
