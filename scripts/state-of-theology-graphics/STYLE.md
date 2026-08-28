@@ -186,16 +186,13 @@ Every chart:
      bars, one pair (Evangelical, All U.S. adults) per year, light
      horizontal gridlines only (`grid` token, thin), x-axis category labels
      bold ink.
-4. **Caption**, bottom-anchored (see "Footnotes" below), small (≈10-11.5pt,
-   exempt from the mobile floors below — fine print is allowed to stay fine
-   print), muted, left-aligned:
-   - Sponsor/fielder line: "The State of Theology survey · sponsored by
-     Ligonier Ministries, conducted by Lifeway Research"
-   - What "group" means for that chart (by-tradition charts: "Groups are
-     religious tradition (denomination and church association)."
-     By-year charts: "Evangelicals are classified by affiliation.")
-   - Sample size and margin of error for the wave(s) shown
-   - `@ithinkisam`, bold, amber
+4. **Caption**, bottom-anchored (see "Footnotes" below), ≈11.5pt, exempt from
+   the mobile floors below — fine print is allowed to stay fine print), muted,
+   left-aligned: the site-wide one-line handle, `@ithinkisam | data: State of
+   Theology survey`, bold, muted (not amber — see "Footnotes" below). No
+   sponsor/fielder line, no group-meaning note, no sample size/margin of
+   error; those lived in the caption before the site-wide convention
+   collapsed every chart's footnote to this single line.
 
 No drop shadows, no gradients, no 3D, no rounded bar corners — flat fills
 only. (Heatmap ramps are the one sanctioned exception to "no gradients" — see
@@ -216,9 +213,11 @@ Use [`chart_style.draw_caption_bottom(...)`](../chart_style.py) rather than
 hand-rolling this. Its return value is the caption's actual top edge, which
 feeds directly into the "vertical layout: centering the plot band" rule
 (`scripts/pew-rls/STYLE.md`) as `caption_top` — call it *before* laying out
-the chart's own axes. Caption grammar (sponsor line, population note, N,
-handle) is unchanged; only its position and how that position is computed
-changed.
+the chart's own axes. Caption content follows the site-wide convention in
+`BRANDING_AND_DESIGN.md`'s "Charts" section: `paragraphs=[]`, `handle=
+"@ithinkisam | data: State of Theology survey"`, and no `handle_color`
+override (the old amber `handle_color=PALETTE["Evangelical"]` is retired —
+the handle is muted gray like every other dataset's).
 
 ## At-a-glance legibility and mobile floors
 
@@ -237,7 +236,7 @@ sizes at this pipeline's canvas (1080×1350px, dpi 120, so 1pt ≈ 1.67px):
 | Heatmap cell values (bold) | 12.5pt |
 | Heatmap gradient-strip legend (min/mid/max) | 12pt |
 | **Bar-chart legend/key text** | **24pt** |
-| Footnotes/captions | exempt — 9-10.5pt as today |
+| Footnotes/captions | exempt — 11.5pt as today |
 
 These floors live in [`scripts/chart_style.py`](../chart_style.py) as `MIN`.
 A render script may go bigger than a floor, never smaller. If content can't

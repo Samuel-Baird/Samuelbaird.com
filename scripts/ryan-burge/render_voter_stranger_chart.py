@@ -88,7 +88,6 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     results = data["results"]
     group_order = data["group_order"]
     seg_order = data["stranger_order"]
-    excluded = data["excluded_too_thin"]
 
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
@@ -97,14 +96,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     subtitle = "Agreement with this statement, by religion (2017 wave)."
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
 
-    excluded_note = "Too thin to show individually: " + ", ".join(excluded.values()) + "."
-    source_paragraphs = [
-        f"“{data['question']}”",
-        "Population: religpew_2017, weighted by weight_2017. " + excluded_note,
-        "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel (2017 wave), via "
-        "Ryan Burge (github.com/ryanburge).",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, Voter Study Group")
     ax_top = subtitle_bottom - 0.03
 
     legend_ncol = 2

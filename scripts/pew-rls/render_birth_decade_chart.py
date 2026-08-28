@@ -84,7 +84,6 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
 def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> None:
     distribution = data["distribution"]
     decade_order = data["decade_order"]
-    total_n = data["total_unweighted_n"]
 
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
@@ -92,13 +91,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
     # bottom-anchored" section - so the axes/legend/note stack above it can
     # be placed relative to its real top edge.
-    source_paragraphs = [
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
     note_y = caption_top + 0.04
 
     legend_ncol = 4

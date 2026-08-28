@@ -83,14 +83,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
     # bottom-anchored" section - so the axes can reclaim whatever space the
     # caption doesn't use.
-    source_paragraphs = [
-        "Cooperative Congressional Election Study (CCES/CES) common content, 2006-2018, "
-        "via Ryan Burge (github.com/ryanburge).",
-        "Unweighted - this extract carries no survey weight column. Jewish aggregates "
-        "five denominational rows in the source file, which has no single unified "
-        "\"Jewish\" category.",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CES 2006-2018")
     ax_bottom = caption_top + 0.03 + 0.045  # + a wave-year tick-label row
 
     AXES_LEFT, AXES_WIDTH = 0.115, 0.62

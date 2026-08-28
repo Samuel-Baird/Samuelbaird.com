@@ -105,14 +105,7 @@ def render_magnitude_bar(
     # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
     # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    source_paragraphs = [
-        note,
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    caption_top = draw_caption_bottom(fig, fonts, source_paragraphs)
+    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
     ax_top = subtitle_bottom - 0.03
     ax_bottom = caption_top + 0.03
 

@@ -123,14 +123,7 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
 def _draw_caption(fig, fonts, total_n: int, note: str) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    source_paragraphs = [
-        note,
-        f"Pew Research Center's Religious Landscape Study (RLS), 2023-24 wave · "
-        f"N = {total_n:,} U.S. adults",
-        "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” "
-        "doi: 10.58094/3kwb-bf52.",
-    ]
-    return draw_caption_bottom(fig, fonts, source_paragraphs)
+    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
 
 
 def render_magnitude_bar(

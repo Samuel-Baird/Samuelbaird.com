@@ -66,20 +66,6 @@ GROUP_ORDER = list(PALETTE.keys())
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350 - Instagram 4:5
 
-SPONSOR_LINE = (
-    "The State of Theology survey · sponsored by Ligonier Ministries, "
-    "conducted by Lifeway Research"
-)
-GROUP_MEANING_LINE = "Groups are religious tradition (denomination and church association)."
-# Sample size / margin of error is wave-specific - never state a number for
-# a wave it wasn't measured in. See scripts/evangelical-quiz/survey-meta.ts,
-# the source of truth for these figures.
-WAVE_METHODOLOGY = {
-    2025: "National online panel · 3,001 U.S. adults · margin of error ±1.9%",
-    2022: "National online panel · sample size and margin of error not yet on file for this wave",
-}
-HANDLE = "@ithinkisam"
-
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "src" / "lib" / "evangelical-quiz" / "data.json"
 ).resolve()
@@ -138,14 +124,8 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
     # bottom-anchored" section - so subplots_adjust's `bottom` below can use
     # its real top edge instead of a fixed guess.
-    source_lines = [
-        SPONSOR_LINE,
-        GROUP_MEANING_LINE,
-        WAVE_METHODOLOGY.get(year, "National online panel · methodology not yet on file for this wave"),
-    ]
     caption_top = draw_caption_bottom(
-        fig, fonts, source_lines, left=0.065, fontsize=10.5, line_step=0.021,
-        handle=HANDLE, handle_color=PALETTE["Evangelical"],
+        fig, fonts, [], handle="@ithinkisam | data: State of Theology survey",
     )
 
     bar_height = 0.62
