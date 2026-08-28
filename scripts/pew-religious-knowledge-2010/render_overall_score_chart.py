@@ -42,14 +42,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Who scored best on the religious knowledge quiz?",
         subtitle=f"Average number correct out of {data['n_items']} questions,\nby the respondent's own religion.",
-        caption_paragraphs=[
-            "Population: all U.S. adults, by present religion (qn20). Don't know/refused "
-            "scores as incorrect, matching Pew's own published scoring. Groups under 30 "
-            "respondents omitted.",
-            f"Pew Research Center's 2010 U.S. Religious Knowledge Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2010 Religious Knowledge Survey",
         out_path=args.out,
         fonts=load_fonts(),
         value_suffix="",

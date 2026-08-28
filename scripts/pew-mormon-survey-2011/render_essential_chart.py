@@ -41,13 +41,8 @@ def main():
         highlight_rows=None,
         title="What's essential to being a good Mormon?",
         subtitle="Share of Mormons calling each belief or practice\nessential for being a good Mormon.",
-        caption_paragraphs=[
-            "Population: all respondents (self-identified Mormons by the survey's own "
-            "design); don't know/refused excluded from each item's own base.",
-            f"Pew Research Center's 2011 National Survey of Mormons · "
-            f"N = {data['total_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
         axes_left=0.52,

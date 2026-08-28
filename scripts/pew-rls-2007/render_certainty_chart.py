@@ -41,13 +41,8 @@ def main():
         highlight_rows={"Mormon"},
         title="How certain are people that God exists?",
         subtitle="Share of believers absolutely certain God or a universal\nspirit exists, by religious tradition.",
-        caption_paragraphs=[
-            "Population: current religious tradition, continental U.S.; among those who "
-            "believe in God/a universal spirit; don't know/refused excluded.",
-            f"Pew Research Center's 2007 U.S. Religious Landscape Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2007 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )

@@ -41,14 +41,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Who stays in the religion they were raised in?",
         subtitle="Share raised in each tradition who still identify\nwith that same tradition as adults.",
-        caption_paragraphs=[
-            "Population: continental U.S., grouped by childhood religion (q50) into five "
-            "coarse traditions; retained if current tradition (RELTRAD) falls in the same "
-            "bucket.",
-            f"Pew Research Center's 2007 U.S. Religious Landscape Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2007 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )

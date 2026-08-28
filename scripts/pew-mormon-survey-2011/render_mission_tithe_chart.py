@@ -41,14 +41,8 @@ def main():
         highlight_rows=None,
         title="Converts vs. lifelong Mormons",
         subtitle="Share serving a full-time mission and paying a full\ntithe, by whether they converted or were raised Mormon.",
-        caption_paragraphs=[
-            f"Population: all respondents; \"Convert\" (n={data['convert_unweighted_n']}) "
-            f"was not raised Mormon, \"Lifelong\" (n={data['lifelong_unweighted_n']}) was; "
-            "don't know/refused excluded from each item's own base.",
-            f"Pew Research Center's 2011 National Survey of Mormons · "
-            f"N = {data['total_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
         axes_left=0.5,

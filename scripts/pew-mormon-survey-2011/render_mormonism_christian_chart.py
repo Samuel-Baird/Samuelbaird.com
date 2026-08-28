@@ -39,14 +39,8 @@ def main():
         values=data["results"],
         title="Is Mormonism a Christian religion?",
         subtitle="Mormons themselves vs. the U.S. general public.",
-        caption_paragraphs=[
-            "\"U.S. Mormons\" from this dataset (don't know/refused kept in the base). "
-            "\"U.S. general public\" is Pew's own published comparison figure from a "
-            "separate November 2011 survey of non-Mormons, not computed here.",
-            f"Pew Research Center's 2011 National Survey of Mormons · "
-            f"N = {data['mormons_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
     )

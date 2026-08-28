@@ -41,13 +41,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Who knows Joseph Smith was a Mormon?",
         subtitle="Share correctly identifying Joseph Smith's religion,\nby the respondent's own religion.",
-        caption_paragraphs=[
-            "Population: all U.S. adults, by present religion (qn20); don't know/refused "
-            "excluded. Groups under 30 valid respondents omitted.",
-            f"Pew Research Center's 2010 U.S. Religious Knowledge Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2010 Religious Knowledge Survey",
         out_path=args.out,
         fonts=load_fonts(),
     )

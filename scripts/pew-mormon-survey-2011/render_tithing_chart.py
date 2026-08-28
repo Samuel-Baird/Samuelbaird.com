@@ -40,13 +40,8 @@ def main():
         highlight_rows=None,
         title="Do Mormons pay a full tithe?",
         subtitle="Share of Mormons who pay tithing, at least 10% of income,\nby how active they are in the Church.",
-        caption_paragraphs=[
-            "Population: all respondents (self-identified Mormons by the survey's own "
-            "design); partial donors and don't know/refused excluded from each row.",
-            f"Pew Research Center's 2011 National Survey of Mormons · "
-            f"N = {data['total_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
     )

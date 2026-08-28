@@ -40,13 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Is evolution the best explanation?",
         subtitle="Share who agree evolution is the best explanation\nfor human life on Earth, by religious tradition.",
-        caption_paragraphs=[
-            "Population: current religious tradition, continental U.S.; top-two-box "
-            "(completely + mostly agree); don't know/refused excluded.",
-            f"Pew Research Center's 2007 U.S. Religious Landscape Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2007 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )

@@ -41,13 +41,8 @@ def main():
         highlight_rows=None,
         title="What can public school teachers do?",
         subtitle="Share correctly identifying whether the Constitution\npermits each action in a public school classroom.",
-        caption_paragraphs=[
-            "Population: all U.S. adults; don't know/refused excluded from each item's own "
-            "base.",
-            f"Pew Research Center's 2010 U.S. Religious Knowledge Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2010 Religious Knowledge Survey",
         out_path=args.out,
         fonts=load_fonts(),
         axes_left=0.5,

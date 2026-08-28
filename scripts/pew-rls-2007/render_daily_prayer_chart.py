@@ -40,13 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Who prays daily?",
         subtitle="Share who pray at least once a day outside of\nreligious services, by religious tradition.",
-        caption_paragraphs=[
-            "Population: current religious tradition, continental U.S.; don't know/refused "
-            "excluded.",
-            f"Pew Research Center's 2007 U.S. Religious Landscape Survey · "
-            f"N = {data['total_unweighted_n']:,} U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2007 RLS",
         out_path=args.out,
         fonts=load_fonts(),
     )

@@ -41,13 +41,8 @@ def main():
         highlight_rows=None,
         title="Ready for a Mormon president?",
         subtitle="Share of Mormons saying Americans are ready to elect a\nMormon president, by the Mormon respondent's own party.",
-        caption_paragraphs=[
-            "Population: all respondents (self-identified Mormons); \"other/depends\" and "
-            "don't know/refused excluded.",
-            f"Pew Research Center's 2011 National Survey of Mormons · "
-            f"N = {data['total_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
     )

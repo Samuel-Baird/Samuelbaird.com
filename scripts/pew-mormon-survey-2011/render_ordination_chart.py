@@ -40,13 +40,8 @@ def main():
         highlight_rows=None,
         title="Should women be ordained to the priesthood?",
         subtitle="Share of Mormons who believe dedicated women members\nshould be ordained, by how active they are in the Church.",
-        caption_paragraphs=[
-            "Population: all respondents (self-identified Mormons by the survey's own "
-            "design); don't know/refused excluded from each row.",
-            f"Pew Research Center's 2011 National Survey of Mormons · "
-            f"N = {data['total_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
     )

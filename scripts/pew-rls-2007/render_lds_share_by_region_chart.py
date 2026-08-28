@@ -41,13 +41,8 @@ def main():
         highlight_rows=None,
         title="Where do Mormons live?",
         subtitle="Share of U.S. Mormons living in each\nCensus region, 2007.",
-        caption_paragraphs=[
-            "Population: respondents whose current tradition (RELTRAD) is Mormon, "
-            "continental U.S., by Census region (cregion).",
-            f"Pew Research Center's 2007 U.S. Religious Landscape Survey · "
-            f"N = {data['mormon_unweighted_n']:,} Mormon adults",
-            data["source"],
-        ],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew 2007 RLS",
         out_path=args.out,
         fonts=load_fonts(),
         value_suffix="%",
