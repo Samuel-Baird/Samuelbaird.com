@@ -7,8 +7,8 @@ scripts/pew-rls/practice.py) - no number here is hand-typed. Same
 canvas/fonts as every other chart in this pipeline; see STYLE.md in this
 folder. Two chart shapes, reused across all ten items:
 
-- Magnitude bar (highlight-vs-gray, Latter-day Saint in --accent, every
-  other group in a bar-safe gray) - for the eight single-percentage items.
+- Magnitude bar (per-group identity color, via chart_style.color_for_group)
+  - for the eight single-percentage items.
 - 100%-stacked bar (single-hue ordinal ramp, the official
   --chart-ordinal-1..7 tokens' light-mode hex) - for the two full-
   distribution items (attendance, prayer frequency).
@@ -34,7 +34,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -45,8 +45,7 @@ PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 
 ACCENT = "#1f4f7a"
-CONTEXT_GRAY = "#8f8b82"
-HIGHLIGHT_GROUP = "Latter-day Saint"
+HIGHLIGHT_GROUP = "Latter-day Saint"  # still used by render_distribution_stack's row labels
 
 # --chart-ordinal-1..7, light-mode values (src/app/globals.css) - the site's
 # one official ordinal ramp, reused here for two different frequency scales
@@ -161,7 +160,7 @@ def render_magnitude_bar(
     sorted_order = sort_groups(group_order, lambda g: results[g]["pct"])
     rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     bar_h = 0.62 if n_rows <= 8 else 0.68
     ax.barh(rows, values, height=bar_h, color=colors, zorder=3)
@@ -171,7 +170,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",

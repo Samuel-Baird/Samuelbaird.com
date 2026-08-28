@@ -7,8 +7,8 @@ Reads only docs/datasets/pew-rls-2023-24/childhood-formation.json
 (produced by scripts/pew-rls/childhood_formation.py) - no number here is
 hand-typed. Same canvas/fonts as render_switching_chart.py; see STYLE.md in
 this folder. The first two items are single-value magnitude comparisons,
-so they use the highlight-vs-gray convention (Latter-day Saint in
---accent, every other group in muted gray) rather than the diverging or
+so they use the per-group identity color palette (each named tradition its
+own hex, via chart_style.color_for_group) rather than the diverging or
 100%-stacked treatments used elsewhere on this page. The third item is a
 real 4-category distribution, so it's a 100%-stacked bar like
 render_switching_generalized_chart.py.
@@ -33,7 +33,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -43,9 +43,6 @@ INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 
-ACCENT = "#1f4f7a"       # --accent - the one highlighted series (Latter-day Saint)
-CONTEXT_GRAY = "#8f8b82"  # a bar-fill-safe lighten of --muted - readable at full
-                          # opacity as a fill (unlike the line chart's stroke use)
 TEXT_ON_FILL = "#FFFFFF"
 
 # Same two colors render_switching_generalized_chart.py uses for the
@@ -63,7 +60,6 @@ GROUP_ORDER = [
     "Other Christian",
     "Christian average",
 ]
-HIGHLIGHT_GROUP = "Latter-day Saint"
 
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "pew-rls-2023-24" / "childhood-formation.json"
@@ -158,7 +154,7 @@ def render_magnitude_bar(
     sorted_order = sort_groups(GROUP_ORDER, lambda g: results[g]["pct"])
     rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     ax.barh(rows, values, height=0.6, color=colors, zorder=3)
     ax.set_xlim(0, max(values) * 1.18)
@@ -167,7 +163,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(15)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",

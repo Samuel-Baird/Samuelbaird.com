@@ -121,7 +121,7 @@ python scripts/pew-rls/render_birth_decade_chart.py \
   --out ../../public/data-explorer/pew-religious-landscape-study/birth-decade-distribution.png
 ```
 
-## Magnitude bar (highlight-vs-gray) and paired bar
+## Magnitude bar (per-group identity color) and paired bar
 
 Most of the dataset's remaining backlog sections (childhood formation,
 family and household, practice, beliefs, spiritual experience, public life
@@ -132,18 +132,37 @@ like) always sunk below every substantive row and a population-average
 aggregate ("Christian average" and the like) sunk below even that,
 regardless of either's own number, each sorted by value within its own
 bottom tier — via `chart_style.sort_groups` (see `BRANDING_AND_DESIGN.md`'s
-"Charts" section for the canonical statement of the rule). There's no per-tradition
-identity color and no decline signal here, so these reuse the site's
-highlight-vs-gray convention instead — Latter-day Saint in `--accent`
-(`#1f4f7a`), every other group in a bar-safe gray (`#8f8b82`, a lightened
-`--muted` that still reads as a distinct fill at full opacity, unlike the
-line chart's stroke-only `CONTEXT_GRAY`). The population each chart draws
-from (Christian only, Christian + other religions, or every
-religiously-affiliated tradition individually + the unaffiliated) still
-varies item to item — a `GROUP_ORDER`/`group_order` constant still says
-*which* group keys belong in a given chart, it just no longer dictates the
-order they're drawn in; see each compute script's own docstring
-(`childhood_formation.py`, `family_household.py`, `practice.py`,
+"Charts" section for the canonical statement of the rule).
+
+Each named denomination/religion gets its own locked identity color — the
+full 10-color palette and the plain-language rule live in
+`BRANDING_AND_DESIGN.md`'s "Charts" section; the canonical implementation
+is `chart_style.GROUP_COLORS`/`chart_style.color_for_group`. A catch-all
+("Other Christian" and the like) falls back to the bar-fill-safe gray
+(`CONTEXT_GRAY`, `#8f8b82`); a population-average or total-population row
+falls back to `MUTED` (`#6E6A63`) — both via `color_for_group`, matching
+each row's own tier from `sort_groups` rather than getting a made-up color.
+This replaced the old highlight-vs-gray convention (Latter-day Saint alone
+in `--accent`, every other group flattened to one gray) on 2026-08-28:
+singling out LDS's bar color (and, previously, its row-label text) read as
+favoritism rather than a deliberate signal once every other group in the
+same dataset needed its own identity too. Row-label (y-axis tick) text is
+now always `INK` in every magnitude-bar and paired-bar function — it no
+longer bolds/colors the Latter-day Saint row differently from the rest,
+for the same reason. The one accepted tradeoff: Muslim (olive, `#6B8C3D`)
+and Orthodox Christian (moss, `#5B7553`) sit closer together than the
+usual colorblind-safe floor when they land next to each other on a chart;
+this is legal only because every bar already prints its group name and
+percentage directly on it, so color is never the sole way to identify a
+row — see `BRANDING_AND_DESIGN.md` for the full statement of why this is
+accepted rather than fixed.
+
+The population each chart draws from (Christian only, Christian + other
+religions, or every religiously-affiliated tradition individually + the
+unaffiliated) still varies item to item — a `GROUP_ORDER`/`group_order`
+constant still says *which* group keys belong in a given chart, it just no
+longer dictates the order they're drawn in; see each compute script's own
+docstring (`childhood_formation.py`, `family_household.py`, `practice.py`,
 `beliefs.py`, `spiritual_experience.py`, `public_life.py`) for which set a
 given chart uses and why.
 

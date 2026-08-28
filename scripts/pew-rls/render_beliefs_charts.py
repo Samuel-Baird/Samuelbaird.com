@@ -29,7 +29,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -41,8 +41,6 @@ MUTED = "#6E6A63"
 
 ACCENT = "#1f4f7a"
 HONEY = "#8a5a06"
-CONTEXT_GRAY = "#8f8b82"
-HIGHLIGHT_GROUP = "Latter-day Saint"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
@@ -144,7 +142,7 @@ def render_magnitude_bar(
     sorted_order = sort_groups(GROUP_ORDER, lambda g: results[g]["pct"])
     rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     ax.barh(rows, values, height=0.68, color=colors, zorder=3)
     ax.set_xlim(0, max(values) * 1.2)
@@ -153,7 +151,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(MIN.AXIS_LABEL)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
@@ -213,9 +211,8 @@ def render_paired_bar(
                  color=ACCENT, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         ax.text(hl + max_val * 0.02, y - bar_h / 2 - 0.02, f"{hl:.0f}%", va="center", ha="left",
                  color=HONEY, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
-        label_color = ACCENT if g == HIGHLIGHT_GROUP else INK
         ax.text(-max_val * 0.02, y, g, va="center", ha="right",
-                 color=label_color, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
+                 color=INK, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
 
     handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label="Heaven"),
                mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label="Hell")]

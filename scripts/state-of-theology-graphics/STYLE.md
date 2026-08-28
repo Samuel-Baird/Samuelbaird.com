@@ -47,6 +47,13 @@ sinks below every substantive row, an "average" aggregate sinks below even
 that, and a total-population row, if present, sinks to the very bottom) and
 `scripts/pew-rls/STYLE.md`'s "Magnitude bar" section for a worked example.
 
+Two colors in this file's own Palette table above (Evangelical's amber
+`#C9721C`, Roman Catholic's wine `#8C4A5F`) are reused as-is by the Pew RLS
+Data Explorer's per-group identity palette (Protestant, Catholic) so the
+same tradition reads as the same color on both. See `BRANDING_AND_DESIGN.md`'s
+"Charts" section for that full 10-color palette and `chart_style.GROUP_COLORS`
+for the implementation.
+
 ## Format
 
 1080×1350px (Instagram 4:5). R: `ggsave(..., device = ragg::agg_png, width = 9,

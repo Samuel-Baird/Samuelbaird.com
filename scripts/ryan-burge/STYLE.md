@@ -23,7 +23,10 @@ section for the site-wide rule (sort highest to lowest by the chart's own
 statistic; a named "Other" catch-all sinks below every substantive row, an
 "average" aggregate sinks below even that, and a total-population row, if
 present, sinks to the very bottom) and `scripts/pew-rls/STYLE.md`'s
-"Magnitude bar" section for a worked example.
+"Magnitude bar (per-group identity color)" section for a worked example.
+If a future chart here needs a per-group identity color rather than a
+heatmap ramp, use `chart_style.color_for_group` (same "Charts" section for
+the palette) rather than inventing a new color scheme.
 
 ## Heatmaps: tri-color diverging, semantically anchored
 

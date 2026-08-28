@@ -31,6 +31,13 @@ PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 BORDER = "#D9D5CC"
 
+# Bar-fill-safe lighten of MUTED, readable as a distinct fill at full
+# opacity (unlike a line chart's stroke-only muted gray). Promoted here from
+# per-render-script duplicates (scripts/pew-rls/render_*.py each defined
+# their own CONTEXT_GRAY = "#8f8b82") so it has one home like every other
+# shared token in this module.
+CONTEXT_GRAY = "#8f8b82"
+
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350px
 
 
@@ -217,6 +224,49 @@ def sort_groups(labels: list[str], value_of: Callable[[str], float]) -> list[str
     changes what order they come out in, not which rows are included.
     """
     return sorted(labels, key=lambda label: (_row_tier(label), -value_of(label)))
+
+
+# Per-denomination identity palette for the Pew RLS Data Explorer's
+# magnitude-bar charts (see BRANDING_AND_DESIGN.md's "Charts" section for
+# the full table, the plain-language rule, and the one accepted
+# Muslim/Orthodox Christian tradeoff). Every named denomination/religion
+# gets its own distinct identity color - the old "Latter-day Saint in
+# --accent, everyone else in one gray" convention singled out LDS in a way
+# that read as favoritism rather than a deliberate signal. Catholic and
+# Protestant reuse colors already locked by the State of Theology charts
+# (scripts/state-of-theology-graphics/STYLE.md's Palette section) so the
+# same tradition reads as the same color everywhere on the site they
+# appear together.
+GROUP_COLORS = {
+    "Latter-day Saint": "#1f4f7a",  # blue, the site's --accent
+    "Catholic": "#8C4A5F",  # wine, matches State of Theology's Roman Catholic
+    "Protestant": "#C9721C",  # amber, matches State of Theology's Evangelical
+    "Orthodox Christian": "#5B7553",  # moss
+    "Jehovah's Witness": "#6B4472",  # plum
+    "Muslim": "#6B8C3D",  # olive
+    "Hindu": "#9C2B2B",  # crimson
+    "Buddhist": "#9C8A1F",  # ochre
+    "Jewish": "#7A6BA6",  # periwinkle
+    "Religiously unaffiliated": "#6B4A2F",  # umber
+}
+
+
+def color_for_group(label: str) -> str:
+    """Bar-fill color for one row of a per-group-identity magnitude bar
+    chart. A named denomination/religion in `GROUP_COLORS` gets its own
+    locked identity hex. Everything else isn't a single identity to begin
+    with, so it shares a neutral token instead, matching its own sink-to-
+    bottom tier from `sort_groups` above: a named catch-all ("Other
+    Christian" and the like, tier 1) gets `CONTEXT_GRAY`; a population-
+    average aggregate or total-population row (tiers 2/3) gets `MUTED`.
+    See BRANDING_AND_DESIGN.md's "Charts" section for the full palette
+    table and the accepted Muslim/Orthodox Christian color-distance
+    tradeoff (legal here only because every bar also prints its group name
+    and percentage directly on the chart - color is never the only
+    encoding)."""
+    if label in GROUP_COLORS:
+        return GROUP_COLORS[label]
+    return CONTEXT_GRAY if _row_tier(label) == 1 else MUTED
 
 
 def label_ink(bg_hex: str, ink: str = INK, paper: str = PAPER, threshold: float = 0.45) -> str:
