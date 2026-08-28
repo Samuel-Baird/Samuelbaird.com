@@ -253,6 +253,15 @@ export type HubReportedResponse = {
   created_at: string;
 };
 
+// Social-media posting status for a Data Explorer graphic, keyed by
+// (dataset_slug, graphic_id) — see supabase/migrations/0049_graphic_posts.sql.
+export type GraphicPost = {
+  dataset_slug: string;
+  graphic_id: string;
+  posted: boolean;
+  posted_dates: string;
+};
+
 export type HubReportedResponseWithUser = HubReportedResponse & {
   full_name: string | null;
   email: string | null;

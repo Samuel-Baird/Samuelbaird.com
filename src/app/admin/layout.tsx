@@ -7,6 +7,7 @@ const links = [
   { href: "/admin/quizzes", label: "Quizzes" },
   { href: "/admin/channels", label: "Channels" },
   { href: "/admin/studies", label: "Studies" },
+  { href: "/admin/graphics", label: "Graphics" },
   { href: "/admin/access", label: "Access & Roles" },
   { href: "/admin/messages", label: "Messages" },
   { href: "/admin/refresh", label: "Refresh stats" },

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
-import { DATASETS, categorySlug } from "@/lib/data-explorer";
+import { DATASETS, categorySlug, graphicId } from "@/lib/data-explorer";
 
 const BASE = "https://latter-day-stats.vercel.app";
 
@@ -78,6 +78,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           },
         ]
       : []),
+    ...d.graphics.map((g) => ({
+      url: `${BASE}/data-explorer/${d.slug}/graphics/${graphicId(g)}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    })),
   ]);
 
   const categorySlugs = [...new Set(DATASETS.filter((d) => d.category).map((d) => categorySlug(d.category!)))];

@@ -1415,6 +1415,32 @@ export function getDataset(slug: string): Dataset | undefined {
   return DATASETS.find((d) => d.slug === slug);
 }
 
+/** Stable per-dataset graphic id: the imageSrc basename minus ".png".
+ * Used as the /data-explorer/[slug]/graphics/[graphicId] URL segment and
+ * as graphic_posts.graphic_id (see supabase/migrations/0049_graphic_posts.sql)
+ * - renaming a PNG changes it, so treat basenames as stable identifiers. */
+export function graphicId(graphic: Graphic): string {
+  return graphic.imageSrc.split("/").pop()!.replace(/\.png$/, "");
+}
+
+export function getGraphic(datasetSlug: string, id: string): Graphic | undefined {
+  return getDataset(datasetSlug)?.graphics.find((g) => graphicId(g) === id);
+}
+
+// Build-time guard: graphic ids are URL segments and database keys, so they
+// must be unique within a dataset. Throws at module load so `next build`
+// fails loudly on a collision rather than silently mis-linking a share URL.
+for (const d of DATASETS) {
+  const seenIds = new Set<string>();
+  for (const g of d.graphics) {
+    const id = graphicId(g);
+    if (seenIds.has(id)) {
+      throw new Error(`Duplicate graphic id "${id}" in dataset "${d.slug}"`);
+    }
+    seenIds.add(id);
+  }
+}
+
 /** Kebab-cases a category label (e.g. "Mixed Datasets" -> "mixed-datasets")
  * for its /data-explorer/category/<slug> route. */
 export function categorySlug(category: string): string {

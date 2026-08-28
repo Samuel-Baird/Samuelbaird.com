@@ -34,3 +34,10 @@ export const yearSchema = z.coerce
 export function firstZodMessage(error: z.ZodError): string {
   return error.issues[0]?.message ?? "Invalid input.";
 }
+
+export const graphicPostSchema = z.object({
+  datasetSlug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+  graphicId: z.string().max(120).regex(/^[a-z0-9][a-z0-9_-]*$/),
+  posted: z.boolean(),
+  postedDates: z.string().trim().max(500),
+});
