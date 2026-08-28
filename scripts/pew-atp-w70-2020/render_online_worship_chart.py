@@ -40,7 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Worship online during COVID lockdowns",
         subtitle="Share who watched religious services online or on\nTV in the past month, by religious tradition, July 2020.",
-        caption_paragraphs=["@ithinkisam | data: Pew ATP Wave 70 (2020)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew ATP Wave 70 (2020)",
         out_path=args.out,
         fonts=load_fonts(),
     )

@@ -40,7 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Praying to cope with COVID",
         subtitle="Share who prayed daily to help cope with the\ncoronavirus outbreak, by religious tradition, July 2020.",
-        caption_paragraphs=["@ithinkisam | data: Pew ATP Wave 70 (2020)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew ATP Wave 70 (2020)",
         out_path=args.out,
         fonts=load_fonts(),
     )

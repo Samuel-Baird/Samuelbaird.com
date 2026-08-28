@@ -40,7 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Hearing BLM support from the pulpit",
         subtitle="Share who heard a sermon expressing support for the\nBlack Lives Matter protests, by religious tradition, July 2020.",
-        caption_paragraphs=["@ithinkisam | data: Pew ATP Wave 70 (2020)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew ATP Wave 70 (2020)",
         out_path=args.out,
         fonts=load_fonts(),
     )

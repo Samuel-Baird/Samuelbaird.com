@@ -41,7 +41,8 @@ def main():
         highlight_rows={"Now"},
         title="Did switching strengthen their faith?",
         subtitle="Share of religious switchers with strong faith,\nas a teenager vs. now.",
-        caption_paragraphs=["@ithinkisam | data: Pew Faith in Flux (2008)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew Faith in Flux (2008)",
         out_path=args.out,
         fonts=load_fonts(),
     )

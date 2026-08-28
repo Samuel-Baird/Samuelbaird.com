@@ -40,7 +40,8 @@ def main():
         highlight_rows=None,
         title="Leaving, or joining?",
         subtitle="When people changed religion, was it driven more by\nwanting to leave the old one, or join the new one?",
-        caption_paragraphs=["@ithinkisam | data: Pew Faith in Flux (2008)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew Faith in Flux (2008)",
         out_path=args.out,
         fonts=load_fonts(),
     )

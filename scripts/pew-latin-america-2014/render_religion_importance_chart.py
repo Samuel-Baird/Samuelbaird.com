@@ -40,7 +40,8 @@ def main():
         highlight_rows=None,
         title="How important is religion?",
         subtitle="Share across Latin America saying religion is very\nimportant in their life, by their own religion.",
-        caption_paragraphs=["@ithinkisam | data: Pew Religion in Latin America (2014)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew Religion in Latin America (2014)",
         out_path=args.out,
         fonts=load_fonts(),
     )

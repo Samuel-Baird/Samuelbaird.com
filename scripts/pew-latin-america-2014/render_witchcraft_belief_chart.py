@@ -40,7 +40,8 @@ def main():
         highlight_rows=None,
         title="Belief in witchcraft",
         subtitle="Share across Latin America believing magic, sorcery,\nor witchcraft can influence people's lives, by their own religion.",
-        caption_paragraphs=["@ithinkisam | data: Pew Religion in Latin America (2014)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew Religion in Latin America (2014)",
         out_path=args.out,
         fonts=load_fonts(),
     )

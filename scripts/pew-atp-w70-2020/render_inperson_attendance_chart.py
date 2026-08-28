@@ -40,7 +40,8 @@ def main():
         highlight_rows={"Mormon"},
         title="Who kept attending in person?",
         subtitle="Share who attended religious services in person in\nthe past month, by religious tradition, July 2020.",
-        caption_paragraphs=["@ithinkisam | data: Pew ATP Wave 70 (2020)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew ATP Wave 70 (2020)",
         out_path=args.out,
         fonts=load_fonts(),
     )

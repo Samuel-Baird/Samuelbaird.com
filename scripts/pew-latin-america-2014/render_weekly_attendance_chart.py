@@ -40,7 +40,8 @@ def main():
         highlight_rows=None,
         title="Who attends religious services weekly?",
         subtitle="Share across Latin America attending religious services\nonce a week or more, by their own religion.",
-        caption_paragraphs=["@ithinkisam | data: Pew Religion in Latin America (2014)"],
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Pew Religion in Latin America (2014)",
         out_path=args.out,
         fonts=load_fonts(),
     )
