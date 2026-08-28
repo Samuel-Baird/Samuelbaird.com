@@ -41,13 +41,7 @@ def main():
         highlight_rows=None,
         title="Why do people leave their childhood religion?",
         subtitle="Share of religious switchers calling each factor an\nimportant reason they left the religion they grew up in.",
-        caption_paragraphs=[
-            "Population: all recontacted respondents who left the religion they were "
-            "raised in; each reason's own don't know/refused excluded.",
-            f"Pew Research Center's Faith in Flux (2008 Conversion Recontact Survey) · "
-            f"N = {data['total_unweighted_n']:,} recontacted adults",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew Faith in Flux (2008)"],
         out_path=args.out,
         fonts=load_fonts(),
         axes_left=0.52,

@@ -41,14 +41,7 @@ def main():
         highlight_rows={"Now"},
         title="Did switching strengthen their faith?",
         subtitle="Share of religious switchers with strong faith,\nas a teenager vs. now.",
-        caption_paragraphs=[
-            "Population: all recontacted respondents who left the religion they were "
-            "raised in; each time point's own \"didn't/don't have faith\" and don't know/"
-            "refused excluded from its own base.",
-            f"Pew Research Center's Faith in Flux (2008 Conversion Recontact Survey) · "
-            f"N = {data['total_unweighted_n']:,} recontacted adults",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew Faith in Flux (2008)"],
         out_path=args.out,
         fonts=load_fonts(),
     )

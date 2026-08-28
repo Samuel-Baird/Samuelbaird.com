@@ -33,7 +33,6 @@ def main():
 
     rows = data["group_order"]
     values = {r: data["heard_blm_support_sermon"][r]["pct"] for r in rows}
-    attenders_n = data["heard_blm_support_sermon"]["All attenders"]["valid_unweighted_n"]
 
     render_magnitude_bar(
         rows=rows,
@@ -41,14 +40,7 @@ def main():
         highlight_rows={"Mormon"},
         title="Hearing BLM support from the pulpit",
         subtitle="Share who heard a sermon expressing support for the\nBlack Lives Matter protests, by religious tradition, July 2020.",
-        caption_paragraphs=[
-            "Population: respondent's religious tradition, restricted to those who attend "
-            "religious services at least monthly; refused excluded. Groups under 30 valid "
-            "respondents omitted.",
-            f"Pew Research Center's American Trends Panel, Wave 70 (July 13-19, 2020) · "
-            f"N = {attenders_n:,} monthly-attending U.S. adults",
-            data["source"],
-        ],
+        caption_paragraphs=["@ithinkisam | data: Pew ATP Wave 70 (2020)"],
         out_path=args.out,
         fonts=load_fonts(),
     )

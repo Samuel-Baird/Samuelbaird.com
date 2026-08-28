@@ -159,6 +159,8 @@ def render_magnitude_bar(
     title: str,
     subtitle: str,
     caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
     out_path: Path,
     fonts: dict[str, fm.FontProperties] | None = None,
     value_suffix: str = "%",
@@ -168,10 +170,12 @@ def render_magnitude_bar(
     order), reading its value from `values[row]`. Rows in `highlight_rows`
     (or every row, if None - a single-population "which of these items
     mattered" chart rather than a by-group comparison) are drawn in
-    --accent; everything else in a bar-safe gray. `caption_paragraphs` are
-    passed straight to chart_style.draw_caption_bottom - put the
-    population/method note first, then the source line(s) with N and the
-    recommended citation, matching every other chart in this pipeline.
+    --accent; everything else in a bar-safe gray. `caption_paragraphs`,
+    `handle`, and `handle_color` are passed straight to
+    chart_style.draw_caption_bottom - per the site-wide caption convention
+    (BRANDING_AND_DESIGN.md's "Charts" section), pass `caption_paragraphs=[]`
+    and `handle="@ithinkisam | data: <short title>"` rather than building a
+    multi-line citation block.
 
     `axes_left` reserves that figure-fraction for the row labels before the
     bars start; raise it above the 0.36 default when a row label is long
@@ -184,7 +188,9 @@ def render_magnitude_bar(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+    )
     ax_top = subtitle_bottom - 0.03
     ax_bottom = caption_top + 0.03
 
@@ -238,6 +244,8 @@ def render_timeseries(
     title: str,
     subtitle: str,
     caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
     out_path: Path,
     fonts: dict[str, fm.FontProperties] | None = None,
     y_step: float = 500_000,
@@ -284,7 +292,9 @@ def render_timeseries(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+    )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
     ax_bottom = legend_top_y + 0.03
@@ -446,6 +456,8 @@ def render_range_projection(
     title: str,
     subtitle: str,
     caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
     out_path: Path,
     fonts: dict[str, fm.FontProperties] | None = None,
     y_step: float = 500_000,
@@ -469,7 +481,9 @@ def render_range_projection(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+    )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
     ax_bottom = legend_top_y + 0.03
@@ -580,6 +594,8 @@ def render_100_stack(
     title: str,
     subtitle: str,
     caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
     out_path: Path,
     fonts: dict[str, fm.FontProperties] | None = None,
 ) -> None:
@@ -594,7 +610,9 @@ def render_100_stack(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+    )
     ax_top = subtitle_bottom - 0.03
 
     n_rows = len(rows)
@@ -662,6 +680,8 @@ def render_timeseries_by_direction(
     title: str,
     subtitle: str,
     caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
     out_path: Path,
     fonts: dict[str, fm.FontProperties] | None = None,
     y_step: float = 2_000_000,
@@ -685,7 +705,9 @@ def render_timeseries_by_direction(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+    )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
     ax_bottom = legend_top_y + 0.03
@@ -819,6 +841,8 @@ def render_dumbbell_log(
     title: str,
     subtitle: str,
     caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
     out_path: Path,
     fonts: dict[str, fm.FontProperties] | None = None,
 ) -> None:
@@ -840,7 +864,9 @@ def render_dumbbell_log(
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, caption_paragraphs)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+    )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
     ax_bottom = legend_top_y + 0.03
