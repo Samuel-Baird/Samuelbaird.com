@@ -77,28 +77,6 @@ baseline or shows uncertainty, so this is new:
 - The value label sits past the bar's tip (further in the bar's own
   growth direction — here, further left), bold, in the bar's own tone.
 
-## Data source and regeneration
-
-Never hand-type a percentage, per the existing house rule. The numbers
-come from `scripts/pew-rls/switching_rates.py`, which reads the RLS
-microdata directly (`FRMREL`, `CURREL`, `RELTRAD`, `WEIGHT`, and all 500
-replicate weight columns) and writes
-`docs/datasets/pew-rls-2023-24/switching-rates.json`. `render_switching_chart.py`
-reads only that JSON — regenerate the JSON first if the underlying numbers
-ever need to change, then re-render:
-
-```bash
-python scripts/pew-rls/switching_rates.py
-python scripts/pew-rls/render_switching_chart.py \
-  --out ../../public/data-explorer/pew-religious-landscape-study/switching-rates.png
-```
-
-`src/lib/data-explorer.ts`'s Pew entry builds its graphic metadata (alt
-text especially — it carries the full raised/current numbers per group,
-since the image itself only labels the net-change value) from that same
-JSON, so the image, the alt text, and the gallery page can't quietly
-disagree.
-
 ## 100%-stacked composition: "switching, generalized" and birth-decade
 
 Two more chart shapes on this dataset's `/graphics` page follow this same
@@ -149,11 +127,12 @@ Most of the dataset's remaining backlog sections (childhood formation,
 family and household, practice, beliefs, spiritual experience, public life
 and society) ship as a **magnitude bar**: one row per group, a single
 percentage, sorted by the site-wide row-order rule — highest to lowest by
-each group's own value, with catch-all/aggregate rows ("Other Christian,"
-"Christian average," and the like) always sunk below every substantive row
-regardless of their own number, sorted by value within that bottom tier —
-via `chart_style.sort_groups` (see `BRANDING_AND_DESIGN.md`'s "Charts"
-section for the canonical statement of the rule). There's no per-tradition
+each group's own value, with a named catch-all ("Other Christian" and the
+like) always sunk below every substantive row and a population-average
+aggregate ("Christian average" and the like) sunk below even that,
+regardless of either's own number, each sorted by value within its own
+bottom tier — via `chart_style.sort_groups` (see `BRANDING_AND_DESIGN.md`'s
+"Charts" section for the canonical statement of the rule). There's no per-tradition
 identity color and no decline signal here, so these reuse the site's
 highlight-vs-gray convention instead — Latter-day Saint in `--accent`
 (`#1f4f7a`), every other group in a bar-safe gray (`#8f8b82`, a lightened

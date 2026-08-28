@@ -241,13 +241,16 @@ graphics have their own pipeline and must stay legible at roughly 1/3 scale
 **Row order for magnitude/comparison charts:** when a chart shows one row per
 group (a magnitude bar, a paired bar, a 100%-stacked bar, or a diverging bar),
 rows sort highest to lowest by the chart's own statistic — not a curated,
-hardcoded order. Two kinds of rows are the exception and always sink below
-every substantive row regardless of their value: catch-all/aggregate rows
-("Other Christian," "Christian average," and the like) sink below the
-substantive rows, sorted by value among themselves; a literal total-population
-row ("U.S. adults," "Total population"), if a chart ever has one, sinks below
-even those. The canonical implementation is `sort_groups` in
-`scripts/chart_style.py`.
+hardcoded order. Three kinds of rows are the exception and always sink below
+every substantive row regardless of their value, in this order: a named
+catch-all ("Other Christian," "Other religions," and the like — still a real,
+if miscellaneous, group of people) sinks just below the substantive rows,
+sorted by value among themselves; a population-average aggregate ("Christian
+average," "All religious average") sinks below that, since it's an aggregate
+over the whole chart rather than a group of people at all; a literal
+total-population row ("U.S. adults," "Total population"), if a chart ever has
+one, sinks below even those, at the very bottom. The canonical implementation
+is `sort_groups` in `scripts/chart_style.py`.
 
 ### Forms
 
