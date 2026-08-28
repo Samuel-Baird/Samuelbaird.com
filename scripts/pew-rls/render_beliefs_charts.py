@@ -29,7 +29,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -141,7 +141,8 @@ def render_magnitude_bar(
         spine.set_visible(False)
     ax.tick_params(axis="y", length=0, pad=8)
 
-    rows = GROUP_ORDER[::-1]
+    sorted_order = sort_groups(GROUP_ORDER, lambda g: results[g]["pct"])
+    rows = sorted_order[::-1]
     values = [results[g]["pct"] for g in rows]
     colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
 
@@ -194,7 +195,8 @@ def render_paired_bar(
     for spine in ax.spines.values():
         spine.set_visible(False)
 
-    rows = GROUP_ORDER[::-1]
+    sorted_order = sort_groups(GROUP_ORDER, lambda g: heaven[g]["pct"])
+    rows = sorted_order[::-1]
     y_positions = list(range(len(rows)))
     ax.set_ylim(-0.7, len(rows) - 0.3)
 

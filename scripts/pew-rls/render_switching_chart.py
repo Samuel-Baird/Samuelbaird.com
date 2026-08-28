@@ -24,7 +24,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom  # noqa: E402
+from chart_style import MIN, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -49,9 +49,14 @@ PROTESTANT_PALETTE = {
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350 - matches every other Data Explorer graphic
 
-# Sort order for the main chart: descending by |net change|, largest
-# decline first. Data-driven, not curated - LDS lands wherever its own
-# number puts it, same as every other group.
+# Set of rows for the main chart - which groups belong, not what order they
+# plot in. Order now comes from chart_style.sort_groups at render time
+# (descending by |net change|, largest decline first), with the site-wide
+# tiering rule applied on top: "Other Christian" sinks below every
+# substantive row regardless of its own |net change|, since it's a
+# catch-all/aggregate row, not a distinct tradition. LDS still lands
+# wherever its own number puts it among the substantive rows, same as every
+# other non-pinned group.
 GROUP_ORDER = [
     "Catholic",
     "Jehovah's Witness",
@@ -131,7 +136,8 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         ax.tick_params(axis="y", length=0, pad=10)
 
     # --- Main chart: net change, diverging from a zero baseline ----------
-    groups = GROUP_ORDER[::-1]  # bottom-to-top, so the largest decline plots at top
+    sorted_groups = sort_groups(GROUP_ORDER, lambda g: abs(switching[g]["net_change_pct"]))
+    groups = sorted_groups[::-1]  # bottom-to-top, so the largest decline plots at top
     values = [switching[g]["net_change_pct"] for g in groups]
     ses = [switching[g]["net_change_se"] for g in groups]
     margins = [1.96 * se for se in ses]

@@ -238,6 +238,17 @@ graphics have their own pipeline and must stay legible at roughly 1/3 scale
 (how they render on a phone) — the mobile font floors live in
 `scripts/state-of-theology-graphics/STYLE.md`.
 
+**Row order for magnitude/comparison charts:** when a chart shows one row per
+group (a magnitude bar, a paired bar, a 100%-stacked bar, or a diverging bar),
+rows sort highest to lowest by the chart's own statistic — not a curated,
+hardcoded order. Two kinds of rows are the exception and always sink below
+every substantive row regardless of their value: catch-all/aggregate rows
+("Other Christian," "Christian average," and the like) sink below the
+substantive rows, sorted by value among themselves; a literal total-population
+row ("U.S. adults," "Total population"), if a chart ever has one, sinks below
+even those. The canonical implementation is `sort_groups` in
+`scripts/chart_style.py`.
+
 ### Forms
 
 Inputs and selects use the standard radius and a hairline border; focus moves the

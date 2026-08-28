@@ -33,6 +33,19 @@ heatmap gradients — the pieces every dataset folder now imports rather than
 copy-pasting) together with `render_chart.py` — an undocumented style isn't a
 style, it's a one-off.
 
+## Row order, if a future chart here needs one
+
+This dataset's existing charts use a fixed, identity-based color-per-tradition
+palette (amber/moss/slate/wine/teal — see the Palette section below), and
+that identity read comes with a fixed, curated row order that stays as-is.
+But if a future chart here is a one-row-highlighted magnitude comparison
+(single value per group, sorted by that value) rather than an identity read,
+use `chart_style.sort_groups` instead of hand-curating an order — see
+`BRANDING_AND_DESIGN.md`'s "Charts" section for the site-wide rule (sort
+highest to lowest by the chart's own statistic; "Other"/average catch-alls
+and a total-population row, if present, always sink to the bottom) and
+`scripts/pew-rls/STYLE.md`'s "Magnitude bar" section for a worked example.
+
 ## Format
 
 1080×1350px (Instagram 4:5). R: `ggsave(..., device = ragg::agg_png, width = 9,
