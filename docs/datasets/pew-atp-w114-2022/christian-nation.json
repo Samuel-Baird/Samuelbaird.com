@@ -1,0 +1,70 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 114, fielded September 13-18, 2022. Underlies \"45% of Americans Say U.S. Should Be a 'Christian Nation'\" (Pew Research Center, October 27, 2022).",
+  "method": "Population is respondent's self-reported religious affiliation (F_RELIG) - Wave 114 does not carry the finer F_RELTRAD frame variable used in other ATP waves in this dataset family. Share answering \"yes\" to NATCHRc_W114 (\"Do you think the United States should be a Christian nation?\"); refused excluded from each row's denominator. NATCHRc was asked of a random half of the sample only (Pew's own form split), so valid Ns are roughly half of each group's total. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W114 variable.",
+  "total_weighted_n": 10588.00000740826,
+  "total_unweighted_n": 10588,
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Nothing in particular",
+    "Other",
+    "Buddhist",
+    "Jewish",
+    "Agnostic",
+    "Atheist",
+    "All U.S. adults"
+  ],
+  "should_be_christian_nation": {
+    "Protestant": {
+      "pct": 70.77,
+      "valid_unweighted_n": 2181,
+      "group_unweighted_n": 4441
+    },
+    "Catholic": {
+      "pct": 49.04,
+      "valid_unweighted_n": 1009,
+      "group_unweighted_n": 2085
+    },
+    "Mormon": {
+      "pct": 74.94,
+      "valid_unweighted_n": 92,
+      "group_unweighted_n": 190
+    },
+    "Jewish": {
+      "pct": 16.1,
+      "valid_unweighted_n": 122,
+      "group_unweighted_n": 230
+    },
+    "Buddhist": {
+      "pct": 16.33,
+      "valid_unweighted_n": 41,
+      "group_unweighted_n": 66
+    },
+    "Atheist": {
+      "pct": 5.63,
+      "valid_unweighted_n": 315,
+      "group_unweighted_n": 634
+    },
+    "Agnostic": {
+      "pct": 8.47,
+      "valid_unweighted_n": 307,
+      "group_unweighted_n": 642
+    },
+    "Other": {
+      "pct": 17.17,
+      "valid_unweighted_n": 139,
+      "group_unweighted_n": 262
+    },
+    "Nothing in particular": {
+      "pct": 24.01,
+      "valid_unweighted_n": 861,
+      "group_unweighted_n": 1810
+    },
+    "All U.S. adults": {
+      "pct": 46.97,
+      "valid_unweighted_n": 5174,
+      "group_unweighted_n": 10588
+    }
+  }
+}

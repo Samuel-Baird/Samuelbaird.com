@@ -1,0 +1,70 @@
+{
+  "source": "Pew Research Center. Being Christian in Western Europe survey, church-tax add-on, fielded April-August 2017.",
+  "method": "Population is respondents in the 9 countries where the church tax exists and Q13 was asked (Austria, Denmark, Finland, Germany, Italy, Portugal, Spain, Sweden, Switzerland - the codebook's own ASK list). Share answering \"yes\" to Q13 (\"Do you currently pay the church tax, or not?\"); denominator is Q13's three substantive codes (yes / no / \"I do not pay any taxes\"), don't-know and refused excluded. Weighted by the dataset's own weight variable.",
+  "total_weighted_n": 14976.0,
+  "total_unweighted_n": 14976,
+  "group_order": [
+    "Denmark",
+    "Austria",
+    "Italy",
+    "Switzerland",
+    "Finland",
+    "Germany",
+    "Sweden",
+    "Spain",
+    "Portugal",
+    "9-country average"
+  ],
+  "pays_church_tax": {
+    "Austria": {
+      "pct": 76.52,
+      "valid_unweighted_n": 1786,
+      "group_unweighted_n": 1791
+    },
+    "Denmark": {
+      "pct": 80.85,
+      "valid_unweighted_n": 1478,
+      "group_unweighted_n": 1493
+    },
+    "Finland": {
+      "pct": 71.68,
+      "valid_unweighted_n": 1492,
+      "group_unweighted_n": 1498
+    },
+    "Germany": {
+      "pct": 71.15,
+      "valid_unweighted_n": 2205,
+      "group_unweighted_n": 2211
+    },
+    "Italy": {
+      "pct": 75.36,
+      "valid_unweighted_n": 1777,
+      "group_unweighted_n": 1804
+    },
+    "Portugal": {
+      "pct": 14.64,
+      "valid_unweighted_n": 1457,
+      "group_unweighted_n": 1501
+    },
+    "Spain": {
+      "pct": 28.35,
+      "valid_unweighted_n": 1449,
+      "group_unweighted_n": 1499
+    },
+    "Sweden": {
+      "pct": 70.0,
+      "valid_unweighted_n": 1464,
+      "group_unweighted_n": 1493
+    },
+    "Switzerland": {
+      "pct": 74.56,
+      "valid_unweighted_n": 1675,
+      "group_unweighted_n": 1686
+    },
+    "9-country average": {
+      "pct": 63.84,
+      "valid_unweighted_n": 14783,
+      "group_unweighted_n": 14976
+    }
+  }
+}

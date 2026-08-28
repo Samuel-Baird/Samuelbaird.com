@@ -75,6 +75,22 @@ import prayerCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/prayer-c
 import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/inperson-attendance-covid.json";
 import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/financial-threat-covid.json";
 import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
+import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
+import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
+import womenLeadersData from "../../docs/datasets/pew-black-faith-2021/women-leaders.json";
+import religiousNationalIdentityData from "../../docs/datasets/pew-eastern-europe-2015/religious-national-identity.json";
+import pewGlobalRestrictionsGriData from "../../docs/datasets/pew-global-restrictions-religion/gri-trend.json";
+import christianNeighborAcceptanceData from "../../docs/datasets/pew-india-2021/christian-neighbor-acceptance.json";
+import paysChurchTaxData from "../../docs/datasets/pew-church-tax-western-europe/pays-church-tax.json";
+import christianShareDeclineData from "../../docs/datasets/pew-religious-composition-2010-2020/christian-share-decline.json";
+import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migration/global-migrant-composition.json";
+import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
+import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
+import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
+import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
+import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
+import renewalistShareData from "../../docs/datasets/pew-10-country-religion-2007/renewalist-share.json";
+import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-religion-2007/latino-religious-converts.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
@@ -708,6 +724,318 @@ export const DATASETS: Dataset[] = [
       financialThreatCovidGraphic(),
       blmSermonsGraphic(),
     ],
+  },
+  {
+    slug: "pew-catholic-family-2015",
+    name: "2015 Survey of U.S. Catholics and Family Life",
+    shortDescription:
+      "A 2015 Pew survey of U.S. adults (Catholic oversample) on Catholic identity, papal opinion, and family-life teachings.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (telephone, landline + cellphone)",
+    description:
+      "Pew Research Center's 2015 Survey of U.S. Catholics and Family Life: 5,122 U.S. adults 18+ " +
+      "surveyed by telephone (landline and cellphone) May 5–June 7, 2015, in English and Spanish. " +
+      "The sample is the general public, not Catholics only, but includes 1,016 respondents who " +
+      "are Catholic by religion — enough to analyze Catholic opinion on the pope, confession, " +
+      "Communion practice, and Church teachings on marriage and family on its own. It underlies " +
+      "Pew's 2015 reports \"Catholics Divided Over Global Warming\" and \"U.S. Catholics Open to " +
+      "Non-Traditional Families.\"",
+    citation:
+      "Pew Research Center. \"U.S. Catholics Open to Non-Traditional Families.\" September 2, 2015. " +
+      "2015 Survey of U.S. Catholics and Family Life, fielded May 5-June 7, 2015.",
+    sourceUrl: "https://www.pewresearch.org/religion/2015/09/02/u-s-catholics-open-to-non-traditional-families/",
+    graphics: [annulmentCommunionGraphic()],
+  },
+  {
+    slug: "pew-subsaharan-africa-2010",
+    name: "Tolerance and Tension: Islam and Christianity in Sub-Saharan Africa (2010)",
+    shortDescription:
+      "A 19-country face-to-face survey of sub-Saharan Africa's Christian and Muslim populations, fielded 2008-09.",
+    sponsor: "The Pew Charitable Trusts and the John Templeton Foundation",
+    fielder: "Pew Research Center's Forum on Religion & Public Life",
+    description:
+      "A face-to-face general-population survey of 25,091 adults across 19 sub-Saharan African " +
+      "countries, fielded December 2008–April 2009 in more than 60 languages and dialects. The " +
+      "19 countries together hold roughly three-quarters of sub-Saharan Africa's population. It " +
+      "covers religious identity, tolerance between faiths, Pentecostal/Charismatic belief and " +
+      "practice, traditional/spirit beliefs, and views on national identity and religious law. " +
+      "Unlike most datasets in this pipeline it carries no U.S./LDS-specific frame variable — " +
+      "Latter-day Saints are not a named category anywhere in the questionnaire.",
+    citation:
+      "Pew Research Center's Forum on Religion & Public Life. 2010. \"Tolerance and Tension: " +
+      "Islam and Christianity in Sub-Saharan Africa.\"",
+    sourceUrl: "https://www.pewresearch.org/wp-content/uploads/sites/7/2010/04/sub-saharan-africa-full-report.pdf",
+    graphics: [charismaticChristiansGraphic()],
+  },
+  {
+    slug: "pew-black-faith-2021",
+    name: "Faith Among Black Americans (2021)",
+    shortDescription:
+      "A dedicated Pew survey of 8,660 Black American adults on religious belief and practice, fielded 2019-2020.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (combined ATP, ABS, NORC AmeriSpeak, and Ipsos KnowledgePanel samples)",
+    description:
+      "Pew's dedicated study of Black American religious life: 8,660 Black adults surveyed via a " +
+      "combination of four probability-based samples (the Center's American Trends Panel, its own " +
+      "ABS survey, NORC's AmeriSpeak panel, and Ipsos's KnowledgePanel), online, by mail, and by " +
+      "live telephone, November 19, 2019-June 3, 2020 (most respondents completed the survey between " +
+      "January 21 and February 10, 2020). An additional 4,574 non-Black respondents were interviewed " +
+      "to support general-population comparisons.",
+    citation:
+      "Pew Research Center. \"Faith Among Black Americans,\" published Feb. 16, 2021 (survey fielded " +
+      "Nov. 19, 2019-June 3, 2020).",
+    sourceUrl: "https://www.pewresearch.org/religion/2021/02/16/faith-among-black-americans/",
+    graphics: [womenLeadersGraphic()],
+  },
+  {
+    slug: "pew-eastern-europe-2015",
+    name: "Central and Eastern Europe (2015-2016)",
+    shortDescription:
+      "A face-to-face Pew survey across 18 Central and Eastern European countries, fielded 2015-2016, on religion, national identity, and Orthodox-Catholic relations.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center",
+    description:
+      "Pew's face-to-face survey behind the 2017 report \"Religious Belief and National Belonging in " +
+      "Central and Eastern Europe\": more than 25,000 adults interviewed June 2015-July 2016 in 17 " +
+      "languages across 18 countries (Armenia, Belarus, Bosnia, Bulgaria, Croatia, Czech Republic, " +
+      "Estonia, Georgia, Greece, Hungary, Latvia, Lithuania, Moldova, Poland, Romania, Russia, Serbia, " +
+      "Ukraine). Covers religious belief and practice, Orthodox-Catholic relations, and how religious " +
+      "identity fuses with national identity in a region once dominated by atheist regimes.",
+    citation: "Pew Research Center. 2017. \"Religious Belief and National Belonging in Central and Eastern Europe.\"",
+    sourceUrl: "https://www.pewresearch.org/religion/2017/05/10/religious-belief-and-national-belonging-in-central-and-eastern-europe/",
+    graphics: [religiousNationalIdentityGraphic()],
+  },
+  {
+    slug: "pew-global-restrictions-religion",
+    name: "Global Restrictions on Religion (2007-2022)",
+    shortDescription:
+      "Pew's annual country-level ratings of government restrictions and social hostilities involving religion, worldwide, 2007-2022.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (Pew-Templeton Global Religious Futures project)",
+    description:
+      "A cumulative country/year-level dataset rating 198 countries and territories each year from 2007 to " +
+      "2022 on two 0-10 indexes: the Government Restrictions Index (GRI, 20 measures of how governments " +
+      "restrict religious belief and practice - banning faiths, prohibiting conversion, favoring one religion) " +
+      "and the Social Hostilities Index (SHI, 13 measures of religion-related hostility by private individuals " +
+      "and groups - mob violence, harassment over religious attire, religion-related armed conflict). Unlike " +
+      "this site's other Pew datasets, it carries no per-respondent religion variable, so it has no " +
+      "Latter-day-Saint-specific breakout; Pew's Dec. 2024 report found restrictions held at their highest " +
+      "level yet recorded in 2022, continuing a rise that began around 2010.",
+    citation:
+      "Pew Research Center, \"Government Restrictions on Religion Stayed at Peak Levels Globally in 2022,\" " +
+      "Dec. 18, 2024, based on the \"Global Restrictions on Religion\" cumulative dataset (2007-2022, 198 " +
+      "countries and territories).",
+    sourceUrl: "https://www.pewresearch.org/religion/2024/12/18/government-restrictions-on-religion-stayed-at-peak-levels-globally-in-2022/",
+    graphics: [pewGlobalRestrictionsGriGraphic()],
+  },
+  {
+    slug: "pew-india-2021",
+    name: "India Religion Survey (2019-2020)",
+    shortDescription:
+      "Pew's massive face-to-face survey of religion across India, fielded 2019-2020, oversampling religious minorities including Christians.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center, fieldwork directed by RTI International",
+    description:
+      "Pew Research Center's face-to-face survey of religion in India: 29,999 adults surveyed across " +
+      "26 states and three union territories in 17 languages, fielded November 17, 2019-March 23, " +
+      "2020. Muslims, Christians, Sikhs, Buddhists, Jains, and Northeast-region residents were " +
+      "deliberately oversampled, yielding 1,011 Christian respondents - enough for reliable subgroup " +
+      "analysis of India's ~2% Christian minority. Underlies Pew's 2021 report \"Religion in India: " +
+      "Tolerance and Segregation.\"",
+    sourceUrl: "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+    graphics: [christianNeighborAcceptanceGraphic()],
+  },
+  {
+    slug: "pew-church-tax-western-europe",
+    name: "Being Christian in Western Europe (Church Tax Add-On)",
+    shortDescription:
+      "Pew's Western Europe religion survey, augmented with three questions about who currently pays — or is opting out of — the church tax.",
+    sponsor: "Pew Research Center",
+    fielder: "GfK Belgium",
+    description:
+      "Pew's \"Being Christian in Western Europe\" survey: 26,096 adults interviewed by " +
+      "telephone (cellphone and landline) April–August 2017 across 15 Western European " +
+      "countries plus Slovakia, under the direction of GfK Belgium. This version adds three " +
+      "church-tax items (Q13, Q14a, Q14b) Pew fielded later for its 2019 report. Church tax " +
+      "exists in only 9 of the 16 countries surveyed — mandatory in Austria, Denmark, " +
+      "Finland, Germany, Sweden, and Switzerland; voluntary opt-in in Italy, Portugal, and " +
+      "Spain — and Q13 was asked only in those 9.",
+    citation:
+      "Pew Research Center. 2019. \"In Western European Countries With Church Taxes, Support " +
+      "for the Tradition Remains Strong.\"",
+    sourceUrl: "https://www.pewresearch.org/religion/2019/04/30/in-western-european-countries-with-church-taxes-support-for-the-tradition-remains-strong/",
+    graphics: [paysChurchTaxGraphic()],
+  },
+  {
+    slug: "pew-religious-composition-2010-2020",
+    name: "How the Global Religious Landscape Changed From 2010 to 2020",
+    shortDescription:
+      "Country-level Christian, Muslim, and other religious-population estimates for 2010 and 2020, across 201 countries and territories.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center",
+    description:
+      "Population estimates for seven broad religious categories - Christians, Muslims, " +
+      "Hindus, Buddhists, Jews, Other religions, and the religiously unaffiliated - for " +
+      "2010 and 2020, across 201 countries and territories covering 99.98% of the " +
+      "world's population. Compiled from more than 2,700 national censuses, demographic " +
+      "surveys, and population registers, not a single fielded survey. There is no " +
+      "Latter-day Saint-specific breakout; LDS people are folded into the broad " +
+      "Christian category, so this dataset's chart tells the global-Christianity " +
+      "backdrop against which the Church's own growth numbers (elsewhere on this site) " +
+      "play out.",
+    citation:
+      "Pew Research Center. 2026. \"How the Global Religious Landscape Changed From 2010 " +
+      "to 2020.\" (dataset updated Feb. 12, 2026 with a Religious Diversity Index.)",
+    sourceUrl: "https://www.pewresearch.org/religion/2026/02/12/religious-diversity-around-the-world/",
+    graphics: [christianShareDeclineGraphic()],
+  },
+  {
+    slug: "pew-religion-migration",
+    name: "Religious Composition of the World's Migrants, 1990-2020",
+    shortDescription:
+      "Pew's global estimate of the religious composition of the world's international migrants, 1990-2020.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center",
+    description:
+      "Pew's estimate of the religious composition of the world's international migrant stock " +
+      "— people living outside the country where they were born — for seven benchmark years " +
+      "from 1990 to 2020, broken out by country, region, and world total, and by direction " +
+      "(incoming to a destination vs. outgoing from an origin). Built primarily from 270 " +
+      "censuses and surveys, filled out with Pew's own indirect-estimation methodology where " +
+      "a country's migrant population lacks a direct religious breakdown. There is no " +
+      "Latter-day Saint/Mormon-specific breakout — categories are broad (Christian, Muslim, " +
+      "Unaffiliated, Hindu, Buddhist, Jewish, Other).",
+    citation:
+      "Kramer, Stephanie, Yunping Tong and Anne Fengyan Shi. 2024. \"Religious Composition of " +
+      "the World's Migrants, 1990-2020.\" Pew Research Center.",
+    sourceUrl: "https://www.pewresearch.org/religion/2024/08/19/religious-composition-of-the-worlds-migrants-1990-2020/",
+    graphics: [globalMigrantCompositionGraphic()],
+  },
+  {
+    slug: "pew-atp-w114-2022",
+    name: "American Trends Panel, Wave 114 (September 2022)",
+    shortDescription:
+      "A general Pew American Trends Panel wave, fielded September 2022, that fed Pew's 'Christian nation' research.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 114 of Pew's American Trends Panel: 10,588 U.S. adults surveyed online " +
+      "September 13–18, 2022, in English and Spanish. It fed several Pew reports on " +
+      "religion and politics, most notably \"45% of Americans Say U.S. Should Be a " +
+      "'Christian Nation'\" (October 27, 2022). Unlike some other ATP waves in this " +
+      "collection, it does not carry the finer F_RELTRAD frame variable — religious " +
+      "breakouts here use F_RELIG, which still separately identifies Mormon/LDS " +
+      "respondents (coded 3.0).",
+    sourceUrl: "https://www.pewresearch.org/religion/2022/10/27/45-of-americans-say-u-s-should-be-a-christian-nation/",
+    graphics: [christianNationGraphic()],
+  },
+  {
+    slug: "pew-atp-w117-2022",
+    name: "American Trends Panel, Wave 117 (November 2022)",
+    shortDescription:
+      "A general Pew American Trends Panel wave, fielded November 2022, carrying a religious-tradition variable.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 117 of Pew's American Trends Panel: 11,377 U.S. adults surveyed online " +
+      "November 16–27, 2022, in English and Spanish. Like other ATP waves, it carries a " +
+      "F_RELTRAD frame variable classifying each respondent's religious tradition " +
+      "(Latter-day Saints coded 20000), which is what makes an otherwise general-topic " +
+      "wave usable for breaking its questions out by religion. It underlies several 2023 " +
+      "Pew reports on religious-service attendance, including \"How the Pandemic Has " +
+      "Affected Attendance at U.S. Religious Services.\"",
+    sourceUrl: "https://www.pewresearch.org/religion/2023/03/28/how-the-pandemic-has-affected-attendance-at-u-s-religious-services/",
+    graphics: [inpersonAttendanceW117Graphic()],
+  },
+  {
+    slug: "pew-atp-w132-2023",
+    name: "American Trends Panel, Wave 132 (August 2023)",
+    shortDescription:
+      "A general Pew American Trends Panel wave on spirituality, fielded August 2023.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 132 of Pew's American Trends Panel: 11,201 U.S. adults surveyed online " +
+      "July 31–Aug. 6, 2023, in English and Spanish. Unlike other ATP waves in this " +
+      "collection, it carries no F_RELTRAD frame variable — religion is broken out " +
+      "here using F_RELIG instead (Latter-day Saints/Mormons coded 3.0). Most of the " +
+      "wave is a large battery of belief and experience items about spirituality, " +
+      "likely feeding Pew's Dec. 2023 \"Spirituality Among Americans\" report.",
+    sourceUrl: "https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/",
+    graphics: [beyondThisWorldGraphic()],
+  },
+  {
+    slug: "pew-atp-w143-2024",
+    name: "American Trends Panel, Wave 143 (February 2024)",
+    shortDescription:
+      "A Pew American Trends Panel wave on religion and politics, fielded February 2024.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 143 of Pew's American Trends Panel: 12,693 U.S. adults surveyed online (a small " +
+      "phone subsample), Feb. 13-25, 2024, in English and Spanish, with oversamples of Jewish " +
+      "and Muslim Americans. Unlike most ATP waves in this collection, it does not carry the " +
+      "usual F_RELTRAD frame variable; religious-tradition breakouts here instead use F_RELIG " +
+      "(Latter-day Saints coded 3, \"Mormon\"). It fed a wide slate of 2024-25 Pew releases on " +
+      "religion, politics, and the Israel-Hamas war.",
+    sourceUrl: "https://www.pewresearch.org/our-methods/u-s-surveys/american-trends-panel/",
+    graphics: [religiousMinorityGraphic()],
+  },
+  {
+    slug: "pew-atp-w162-2025",
+    name: "American Trends Panel, Wave 162 (February 2025)",
+    shortDescription:
+      "A Pew American Trends Panel wave on Catholicism and religion's place in American life, fielded February 2025.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 162 of Pew's American Trends Panel: 9,544 U.S. adults surveyed online and by phone " +
+      "February 3–9, 2025, in English and Spanish. Focused mainly on Catholicism, plus general " +
+      "religion and civic-trust items. Unlike most other ATP waves, it carries no F_RELTRAD " +
+      "frame variable; its RELIG_W162 present-religion variable (code 3.0 = Mormon/LDS) is used " +
+      "instead to break out Latter-day Saints. Fed Pew's October 2025 report on religion's " +
+      "growing perceived influence in American life.",
+    sourceUrl: "https://www.pewresearch.org/religion/2025/10/20/growing-share-of-us-adults-say-religion-is-gaining-influence-in-american-life/",
+    graphics: [religiousConflictGraphic()],
+  },
+  {
+    slug: "pew-10-country-religion-2007",
+    name: "Spirit and Power: A 10-Country Survey of Pentecostals (2006)",
+    shortDescription:
+      "A cross-national Pew survey of Pentecostal and Charismatic (\"renewalist\") Christianity across ten countries, fielded 2006.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center, Forum on Religion & Public Life",
+    description:
+      "Pew Forum's cross-national study of \"renewalist\" Christianity — Pentecostals " +
+      "and Charismatics — surveyed 11,028 respondents (7,475 general public plus a " +
+      "renewalist oversample) across ten countries — Brazil, Chile, Guatemala, India, " +
+      "Kenya, Nigeria, the Philippines, South Africa, South Korea, and the United " +
+      "States — between May and September 2006. Covers religious belief, practice, " +
+      "and Pentecostal/Charismatic identity, with a derived RENEWALIST variable " +
+      "usable for cross-country comparison.",
+    citation: "Pew Research Center, Forum on Religion & Public Life. 2006. \"Spirit and Power: A 10-Country Survey of Pentecostals.\"",
+    sourceUrl: "https://www.pewresearch.org/religion/2006/10/05/spirit-and-power/",
+    graphics: [renewalistShareGraphic()],
+  },
+  {
+    slug: "pew-hispanics-religion-2007",
+    name: "Pew Hispanic Center/Pew Forum Survey of Latinos (2006)",
+    shortDescription:
+      "A 2006 Pew survey of U.S. Latino adults focused on religious switching, with a small Mormon breakout.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Hispanic Center and Pew Forum on Religion & Public Life",
+    description:
+      "A telephone survey of 4,016 U.S. Hispanic adults, conducted August 10-October 4, 2006, " +
+      "in English and Spanish. It deliberately oversampled 2,000 non-Catholic respondents to " +
+      "study religious switching among Latinos in detail, and underlies the report \"Changing " +
+      "Faiths: Latinos and the Transformation of American Religion.\" Its recoded religion " +
+      "variable carries an explicit Mormon category, with 34 unweighted respondents.",
+    citation:
+      "Pew Research Center (Pew Hispanic Center and Pew Forum on Religion & Public Life). " +
+      "\"Changing Faiths: Latinos and the Transformation of American Religion,\" survey of 4,016 " +
+      "U.S. Hispanic adults, fielded Aug. 10-Oct. 4, 2006.",
+    sourceUrl: "https://www.pewresearch.org/race-and-ethnicity/2007/04/25/changing-faiths-latinos-and-the-transformation-of-american-religion/",
+    graphics: [latinoReligiousConvertsGraphic()],
   },
 ];
 
@@ -1408,6 +1736,232 @@ function blmSermonsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/blm-sermons.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of monthly attenders hearing a pro-Black Lives Matter sermon, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function annulmentCommunionGraphic(): Graphic {
+  const { group_order: order, should_allow_communion_after_remarriage: results } = annulmentCommunionData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Communion after remarriage, no annulment",
+    description: "Share of U.S. Catholics saying the Church should let divorced Catholics who remarry without an annulment take Communion, by Mass attendance, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/annulment-communion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Catholics saying the Church should let divorced Catholics who remarry without an annulment receive Communion, by Mass attendance frequency, 2015. ${alt}.`,
+  };
+}
+
+function charismaticChristiansGraphic(): Graphic {
+  const { group_order: order, charismatic_christian_share: results } = charismaticChristiansData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Charismatic Christianity across Sub-Saharan Africa",
+    description: "Share of Christians who describe themselves as a Charismatic Christian, by country, top 12 of 18, 2008-09.",
+    imageSrc: "/data-explorer/pew-subsaharan-africa-2010/charismatic-christians.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Christians describing themselves as a Charismatic Christian, by country, top 12 of 18, 2008-09. ${alt}.`,
+  };
+}
+
+function womenLeadersGraphic(): Graphic {
+  const { group_order: order, women_should_lead: results } = womenLeadersData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Should women lead congregations?",
+    description: "Share of Black Americans saying women should be allowed to serve as a congregation's senior religious leader, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/women-leaders.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans saying women should be allowed to serve as a congregation's senior religious leader, by religion. ${alt}.`,
+  };
+}
+
+function religiousNationalIdentityGraphic(): Graphic {
+  const { group_order: order, important_to_share_dominant_faith: results } = religiousNationalIdentityData;
+  const alt = order
+    .map((c) => `${c} ${results[c as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Being Orthodox (or Catholic) and belonging",
+    description:
+      "Share saying it's \"very important\" to belong to their country's own dominant Christian tradition to be truly a citizen, 6 highest- and 6 lowest-ranked of 18 Central/Eastern European countries surveyed, 2015-16.",
+    imageSrc: "/data-explorer/pew-eastern-europe-2015/religious-national-identity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying it's very important to belong to their country's dominant Christian tradition to be truly a citizen, 6 highest and 6 lowest of 18 countries surveyed, 2015-2016. ${alt}.`,
+  };
+}
+
+function pewGlobalRestrictionsGriGraphic(): Graphic {
+  const { year_order: years, series } = pewGlobalRestrictionsGriData;
+  const milestones = [years[0], 2010, 2015, years[years.length - 1]];
+  const alt = milestones
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].median_gri.toFixed(2)}`)
+    .join(", ");
+  return {
+    title: "Government restrictions on religion, worldwide",
+    description: "The global median score on Pew's 0-10 Government Restrictions Index climbed from 1.76 in 2007 to a peak of 3.00 in 2021-2022.",
+    imageSrc: "/data-explorer/pew-global-restrictions-religion/gri-trend.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: global median Government Restrictions Index (GRI) score, 0-10 scale, by year, 2007-2022. Selected years - ${alt}.`,
+  };
+}
+
+function christianNeighborAcceptanceGraphic(): Graphic {
+  const { group_order: order, accept_christian_neighbor: results } = christianNeighborAcceptanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Would you accept a Christian neighbor?",
+    description: "Share of India's other major religious communities willing to accept a Christian as a neighbor, by the respondent's own religion, 2019-2020.",
+    imageSrc: "/data-explorer/pew-india-2021/christian-neighbor-acceptance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share willing to accept a Christian neighbor, by respondent's own religion, India 2019-2020. ${alt}.`,
+  };
+}
+
+function paysChurchTaxGraphic(): Graphic {
+  const { group_order: order, pays_church_tax: results } = paysChurchTaxData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who still pays the church tax",
+    description: "Share of adults who currently pay their country's church tax, among the 9 Western European countries where it exists, 2017.",
+    imageSrc: "/data-explorer/pew-church-tax-western-europe/pays-church-tax.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who currently pay their country's church tax, by country, 2017. ${alt}.`,
+  };
+}
+
+function christianShareDeclineGraphic(): Graphic {
+  const { group_order: order, christian_share_decline_pp: results } = christianShareDeclineData;
+  const alt = order
+    .map((c) => `${c} ${results[c as keyof typeof results].decline_pp}pp`)
+    .join(", ");
+  return {
+    title: "Where the Christian share fell the most",
+    description: "The ten countries and territories where the Christian share of population fell the most, 2010 to 2020.",
+    imageSrc: "/data-explorer/pew-religious-composition-2010-2020/christian-share-decline.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: percentage-point decline in the Christian share of population, 2010 to 2020, ten largest declines worldwide. ${alt}.`,
+  };
+}
+
+function globalMigrantCompositionGraphic(): Graphic {
+  const { group_order: order, global_composition: results } = globalMigrantCompositionData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "The world's migrants, by religion",
+    description: "Religious composition of the world's ~281 million international migrants, 2020.",
+    imageSrc: "/data-explorer/pew-religion-migration/global-migrant-composition.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: religious composition of the world's ~281 million international migrants, 2020. ${alt}.`,
+  };
+}
+
+function christianNationGraphic(): Graphic {
+  const { group_order: order, should_be_christian_nation: results } = christianNationData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Should the U.S. be a Christian nation?",
+    description: "Share saying yes, by religious affiliation, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/christian-nation.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying the U.S. should be a Christian nation, by religious affiliation, September 2022. ${alt}.`,
+  };
+}
+
+function inpersonAttendanceW117Graphic(): Graphic {
+  const { group_order: order, attended_in_person: results } = inpersonAttendanceW117Data;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who's back in the pews",
+    description: "Share who attended religious services in person in the past month, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/inperson-attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share attending religious services in person in the past month, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function beyondThisWorldGraphic(): Graphic {
+  const { group_order: order, felt_beyond_this_world_connection: results } = beyondThisWorldData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "A feeling of connection beyond this world",
+    description: "Share who have ever had a sudden or unexpected feeling of connection with something from beyond this world, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/beyond-this-world.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have ever had a sudden or unexpected feeling of connection with something from beyond this world, by religion, 2023. ${alt}.`,
+  };
+}
+
+function religiousMinorityGraphic(): Graphic {
+  const { group_order: order, religious_minority: results } = religiousMinorityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Feeling like a religious minority",
+    description: "Share who consider themselves part of a minority group because of their religious beliefs, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/religious-minority.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share considering themselves part of a religious minority, by religion, February 2024. ${alt}.`,
+  };
+}
+
+function religiousConflictGraphic(): Graphic {
+  const { group_order: order, religious_belief_conflict: results } = religiousConflictData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Feeling out of step with mainstream culture",
+    description: "Share who feel at least some conflict between their own religious beliefs and mainstream American culture, by present religion, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/religious-conflict.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share feeling at least some conflict between their own religious beliefs and mainstream American culture, by present religion, February 2025. ${alt}.`,
+  };
+}
+
+function renewalistShareGraphic(): Graphic {
+  const { group_order: order, renewalist_share: results } = renewalistShareData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How renewalist is each country?",
+    description: "Share of the general public who are Pentecostal or Charismatic Christians, by country, 2006.",
+    imageSrc: "/data-explorer/pew-10-country-religion-2007/renewalist-share.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of the general public who are Pentecostal or Charismatic Christians, by country, 2006. ${alt}.`,
+  };
+}
+
+function latinoReligiousConvertsGraphic(): Graphic {
+  const { group_order: order, converted_to_current_religion: results } = latinoReligiousConvertsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Latino converts to their faith",
+    description: "Share of U.S. Latino adults who converted to their current religion, rather than being raised in it, by religious group, 2006.",
+    imageSrc: "/data-explorer/pew-hispanics-religion-2007/latino-religious-converts.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Latino adults who converted to their current religion rather than being raised in it, by religious group, 2006. ${alt}.`,
   };
 }
 
