@@ -34,7 +34,6 @@ carries the same string so the public page and this folder can't drift.
 | `source/questionnaire-paper-english.pdf` | Paper instrument, English |
 | `source/questionnaire-paper-spanish.pdf` | Paper instrument, Spanish |
 | `codebook.json` | `source/codebook.xlsx` flattened to one object per variable |
-| `switching-rates.json` | Weighted raised-vs-current religion shares (`FRMREL`/`CURREL`/`RELTRAD`), with bootstrap standard errors, for the Data Explorer's net-change graphic |
 
 `codebook.json` is generated, not hand-written — regenerate it with:
 
@@ -46,22 +45,10 @@ python scripts/pew-rls/extract_codebook.py \
 
 (Standard library only. An `.xlsx` is a zip of XML, so nothing to install.)
 
-`switching-rates.json` reads the microdata directly — `FRMREL`, `CURREL`,
-`RELTRAD`, `WEIGHT`, and all 500 `REPWT_*` replicate weight columns — and
-needs `data/pew-rls-2023-24/` populated (see "What's deliberately not in
-here," below) plus `pandas`/`numpy`. Regenerate it, then the PNG that reads
-it, with:
-
-```bash
-python scripts/pew-rls/switching_rates.py
-python scripts/pew-rls/render_switching_chart.py \
-  --out public/data-explorer/pew-religious-landscape-study/switching-rates.png
-```
-
-See [`scripts/pew-rls/STYLE.md`](../../scripts/pew-rls/STYLE.md) for the
-chart's palette and layout — an extension of
+See [`scripts/pew-rls/STYLE.md`](../../scripts/pew-rls/STYLE.md) for this
+pipeline's chart palette and layout conventions — an extension of
 [`state-of-theology-graphics/STYLE.md`](../../scripts/state-of-theology-graphics/STYLE.md)'s
-house style for a decline/net-change chart, which that doc doesn't cover.
+house style.
 
 ## What's deliberately *not* in here
 
