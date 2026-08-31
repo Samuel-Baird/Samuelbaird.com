@@ -30,7 +30,6 @@ from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E40
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-HIGHLIGHT_GROUP = "Mormon"
 
 # --chart-ordinal-1..7, light-mode values, resampled to 4 steps for extra
 # contrast between adjacent segments - same approach as the Pew RLS
@@ -135,7 +134,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(13)
-        tick_label.set_color("#1f4f7a" if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
                for l, c in zip(seg_order, colors)]

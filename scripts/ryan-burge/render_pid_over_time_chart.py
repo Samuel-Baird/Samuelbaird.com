@@ -7,9 +7,13 @@ scripts/ryan-burge/pid_over_time.py) - no number here is hand-typed. Same
 canvas/fonts/palette as scripts/pew-rls/render_switching_chart.py (see that
 folder's STYLE.md); this is the first PNG line chart in that pipeline, so it
 translates the in-app WaveLineChart's own conventions (donut markers,
-dashed connector across a gap, end-of-line labels instead of a legend,
-highlight-vs-gray) onto the static-canvas house style rather than
-inventing a new one.
+dashed connector across a gap, end-of-line labels instead of a legend)
+onto the static-canvas house style rather than inventing a new one. Each
+line gets its own per-denomination identity color via
+chart_style.color_for_group (see BRANDING_AND_DESIGN.md's "Charts"
+section) rather than the old single-highlight-vs-gray convention, which
+singled out Latter-day Saint against an undifferentiated gray field for
+every other tradition.
 
 Usage:
     python render_pid_over_time_chart.py \
@@ -28,7 +32,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import MIN, draw_caption_bottom  # noqa: E402
+from chart_style import MIN, color_for_group, draw_caption_bottom  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see scripts/pew-rls/STYLE.md. Keep this block in sync.
@@ -39,15 +43,7 @@ PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 GRID = "#D9D5CC"
 
-ACCENT = "#1f4f7a"  # --accent - the one highlighted series (Latter-day Saint)
-CONTEXT_GRAY = "#6E6A63"  # --muted, used for every non-highlighted series
-CONTEXT_ALPHA = 0.55  # lighter than the in-app CONTEXT_OPACITY (0.45) since
-                       # this has to hold up printed at 1080px with no hover
-                       # to fall back on if a gray line reads too faint
-
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120  # 1080x1350 - matches every other Data Explorer graphic
-
-HIGHLIGHT_GROUP = "Latter-day Saint"
 
 DEFAULT_DATA_JSON = (
     Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "ryan-burge" / "pid-over-time.json"
@@ -113,18 +109,20 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         ax.axhline(t, color=GRID, linewidth=1.2 if t == 0 else 0.8,
                     linestyle="-" if t == 0 else (0, (4, 2)), zorder=1)
 
-    # Draw context (gray) series first, highlight series last, so the
-    # highlighted line always sits on top at any crossing.
-    group_order = [g for g in series if g != HIGHLIGHT_GROUP] + [HIGHLIGHT_GROUP]
+    # Every series gets its own per-denomination identity color (see
+    # chart_style.color_for_group) so each tradition's trend is
+    # independently readable, rather than one highlighted line against an
+    # undifferentiated gray field for everyone else. Draw order no longer
+    # needs to put one series "on top" - iterate in the JSON's own order.
+    group_order = list(series.keys())
 
     end_labels: list[dict] = []  # collision-resolved separately below, once
                                   # every series's real endpoint is known
 
     for group in group_order:
         values = series[group]["values"]
-        highlight = group == HIGHLIGHT_GROUP
-        paint = ACCENT if highlight else CONTEXT_GRAY
-        alpha = 1.0 if highlight else CONTEXT_ALPHA
+        paint = color_for_group(group)
+        alpha = 1.0
 
         pts = [(yr, v) for yr, v in zip(waves, values) if v is not None]
         if not pts:
@@ -144,7 +142,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         for run in runs:
             xs, ys = zip(*run)
             ax.plot(xs, ys, color=paint, alpha=alpha, linewidth=2.2,
-                     solid_capstyle="round", zorder=3 if highlight else 2)
+                     solid_capstyle="round", zorder=3)
         for (py, pv), (cy, cv) in zip(pts, pts[1:]):
             if idx_by_year[cy] != idx_by_year[py] + 1:
                 ax.plot([py, cy], [pv, cv], color=paint, alpha=alpha * 0.8,
@@ -158,12 +156,16 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         ax.scatter(xs, ys, s=7, facecolor=paint, edgecolor="none", alpha=alpha, zorder=5)
 
         # End-of-line label, not a legend - position resolved below, once
-        # every series's real endpoint is collected.
+        # every series's real endpoint is collected. The label text is a
+        # group name, so it stays plain ink (never colored to match its own
+        # line) per the site-wide rule that axis/tick/group labels are
+        # never colored to match anything - see BRANDING_AND_DESIGN.md's
+        # "Charts" section.
         last_year, last_val = pts[-1]
         end_labels.append({
             "text": group, "year": last_year, "value": last_val,
-            "color": paint if highlight else INK,
-            "alpha": 1.0 if highlight else 0.85,
+            "color": INK,
+            "alpha": 1.0,
         })
 
     # Collision-resolved label y-positions: greedy top-down pass enforcing a

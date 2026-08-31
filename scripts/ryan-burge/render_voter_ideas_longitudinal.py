@@ -31,18 +31,19 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
 GRID = "#D9D5CC"
 
+# Two-wave paired-bar shape (render_paired_bar): ACCENT/HONEY encode which
+# wave a bar belongs to (not a group identity), the same two-series
+# convention as pew-rls/render_beliefs_charts.py - unrelated to the
+# per-group identity colors the line-chart shape below uses.
 ACCENT = "#1f4f7a"
 HONEY = "#8a5a06"
-CONTEXT_GRAY = "#6E6A63"
-CONTEXT_ALPHA = 0.55
-HIGHLIGHT_GROUP = "Mormon"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
@@ -141,14 +142,18 @@ def render_line_chart(
         ax.axhline(t, color=GRID, linewidth=1.2 if t == 0 else 0.8,
                     linestyle="-" if t == 0 else (0, (4, 2)), zorder=1)
 
-    plot_order = [g for g in group_order if g != HIGHLIGHT_GROUP] + [HIGHLIGHT_GROUP]
+    # Every series gets its own per-group identity color (see
+    # chart_style.color_for_group) so each group's trend is independently
+    # readable, rather than one highlighted line against an undifferentiated
+    # gray field for everyone else. Draw order no longer needs to put one
+    # series "on top" - iterate in the given group_order.
+    plot_order = list(group_order)
     end_labels: list[dict] = []
 
     for group in plot_order:
         values = series[group]["values"]
-        highlight = group == HIGHLIGHT_GROUP
-        paint = ACCENT if highlight else CONTEXT_GRAY
-        alpha = 1.0 if highlight else CONTEXT_ALPHA
+        paint = color_for_group(group)
+        alpha = 1.0
 
         pts = [(yr, v) for yr, v in zip(waves, values) if v is not None]
         if not pts:
@@ -165,16 +170,19 @@ def render_line_chart(
         for run in runs:
             xs, ys = zip(*run)
             ax.plot(xs, ys, color=paint, alpha=alpha, linewidth=2.2,
-                     solid_capstyle="round", zorder=3 if highlight else 2)
+                     solid_capstyle="round", zorder=3)
 
         xs, ys = zip(*pts)
         ax.scatter(xs, ys, s=46, facecolor=PAPER, edgecolor=paint, linewidth=1.4, alpha=alpha, zorder=4)
         ax.scatter(xs, ys, s=7, facecolor=paint, edgecolor="none", alpha=alpha, zorder=5)
 
+        # End-of-line label is a group name, so it stays plain ink (never
+        # colored to match its own line) per the site-wide rule - see
+        # BRANDING_AND_DESIGN.md's "Charts" section.
         last_year, last_val = pts[-1]
         end_labels.append({
             "text": group, "year": last_year, "value": last_val,
-            "color": paint if highlight else INK, "alpha": 1.0 if highlight else 0.85,
+            "color": INK, "alpha": 1.0,
         })
 
     MIN_GAP = 4.8  # widened slightly for the larger end-of-line label font size
@@ -252,9 +260,8 @@ def render_paired_bar(
             ax.barh(y - bar_h / 2 - 0.02, bv, height=bar_h, color=HONEY, zorder=3)
             ax.text(bv + max_val * 0.02, y - bar_h / 2 - 0.02, f"{bv:.0f}%", va="center", ha="left",
                      color=HONEY, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
-        label_color = ACCENT if g == HIGHLIGHT_GROUP else INK
         ax.text(-max_val * 0.02, y, g, va="center", ha="right",
-                 color=label_color, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
+                 color=INK, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
 
     handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label=label_a),
                mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label=label_b)]

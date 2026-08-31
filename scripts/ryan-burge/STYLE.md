@@ -103,14 +103,27 @@ this pipeline learned the hard way (2026-08 heatmap recolor):
 
 ## CCES/PID bar and line charts
 
-`render_cces2016_by_religion_charts.py`, `render_pid_by_gender_chart.py`,
-and `render_pid_over_time_chart.py` reuse the magnitude-bar and
-highlight-vs-gray conventions documented in
-[`../pew-rls/STYLE.md`](../pew-rls/STYLE.md) ("Magnitude bar" section) rather
-than inventing new shapes — Latter-day Saint in `--accent` (`#1f4f7a`),
-other groups in the bar-safe gray (`#8f8b82`) or muted context lines. See
-each compute script's own docstring (`cces2016_by_religion.py`,
-`pid_by_gender.py`, `pid_over_time.py`) for population and wave specifics.
+`render_cces2016_by_religion_charts.py`, `render_voter_ideas_bars.py`,
+`render_voter_volunteering_summary_chart.py`, `render_pid_over_time_chart.py`,
+and `render_voter_ideas_longitudinal.py`'s line-chart shape reuse the
+magnitude-bar and per-group-identity-color line-chart conventions documented
+in [`../pew-rls/STYLE.md`](../pew-rls/STYLE.md) ("Magnitude bar" section)
+rather than inventing new shapes — every named group gets its own locked hex
+from `chart_style.color_for_group`, not one highlighted group in `--accent`
+against everyone else in a single undifferentiated gray (retired 2026-08-31
+site-wide: singling out Latter-day Saint that way read as favoritism rather
+than a deliberate signal, and for the line charts it also made every other
+tradition's own trend unreadable against everyone else's). `render_pid_by_gender_chart.py`
+is the one exception in this folder — its Democrat/Independent/Republican
+rows are party categories, not denominations, so it keeps the
+`--accent`/`--honey`/gray convention documented in its own docstring, which
+was never the group-highlight pattern to begin with. Every row/tick/end-of-
+line label across every chart in this folder stays plain ink regardless of
+its bar's or line's own fill color — labels are never colored to match, per
+`BRANDING_AND_DESIGN.md`'s "Charts" section. See each compute script's own
+docstring (`cces2016_by_religion.py`, `voter_ideas_bars.py`,
+`voter_volunteering_summary.py`, `pid_over_time.py`,
+`voter_ideas_longitudinal.py`) for population and wave specifics.
 
 ## Regeneration
 

@@ -30,15 +30,11 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-
-ACCENT = "#1f4f7a"
-CONTEXT_GRAY = "#8f8b82"
-HIGHLIGHT_GROUP = "Mormon"
 
 # --chart-ordinal-1..7, light-mode values (src/app/globals.css) - the same
 # official ordinal ramp scripts/pew-rls/render_practice_charts.py reuses
@@ -128,7 +124,7 @@ def render_magnitude_bar(
 
     rows = GROUP_ORDER[::-1]
     values = [results[g]["pct"] for g in rows]
-    colors = [ACCENT if g == HIGHLIGHT_GROUP else CONTEXT_GRAY for g in rows]
+    colors = [color_for_group(g) for g in rows]
 
     ax.barh(rows, values, height=0.68, color=colors, zorder=3)
     ax.set_xlim(0, max(values) * 1.2)
@@ -137,7 +133,7 @@ def render_magnitude_bar(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(MIN.AXIS_LABEL)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
         ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
@@ -197,7 +193,7 @@ def render_distribution_stack(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(MIN.AXIS_LABEL)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
                for l, c in zip(seg_order, colors)]

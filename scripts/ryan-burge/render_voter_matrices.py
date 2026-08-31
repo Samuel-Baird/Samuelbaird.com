@@ -43,7 +43,6 @@ from chart_style import (  # noqa: E402
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-HIGHLIGHT_GROUP = "Mormon"
 
 FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
@@ -167,10 +166,9 @@ def render_heatmap(
     # Column headers (religion group names), rotated for narrow columns.
     for j, group in enumerate(col_order):
         cx = grid_left + (j + 0.5) * col_w
-        color = "#1f4f7a" if group == HIGHLIGHT_GROUP else INK
         ax.text(cx, plot_top + header_h, group, ha="right", va="top",
                 rotation=38, rotation_mode="anchor",
-                fontproperties=fonts["bold"], fontsize=MIN.HEATMAP_HEADER, color=color)
+                fontproperties=fonts["bold"], fontsize=MIN.HEATMAP_HEADER, color=INK)
 
     for i, row_label in enumerate(row_order):
         y0 = plot_top - (i + 1) * (plot_top / n_rows)
