@@ -398,3 +398,28 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   friendliness toward Mormons — check for overlap with the already-
   shipped `president_readiness_by_party` chart, which likely already
   covers q311, before using q303-q310).
+
+- **pew-religious-knowledge-2010** (2010 U.S. Religious Knowledge Survey,
+  oversampled Mormons) — 2026-08-31: had 6 charts, all knowledge-quiz items
+  broken out by present religion (qn20). Added 2 more this pass, same
+  construction — `college-religion-courses.json` (65.8% of Mormons have
+  ever taken a college-level religion course, highest of any tradition by
+  27 points over 2nd-place Jewish at 39.2% and well above the 29.8%
+  national average, plausibly reflects the Church's institute-of-religion
+  program pairing CES religion classes with secular college coursework for
+  many Latter-day Saint young adults) and `ten-commandments-knowledge.json`
+  (85.3% of Mormons correctly pick the Golden Rule as the option that is
+  NOT one of the Ten Commandments, highest of any group by 11 points over
+  2nd-place Agnostics at 74.2%, a general Bible-literacy item rather than
+  an LDS-specific one but fits this dataset's existing knowledge-item
+  convention). Checked and skipped for near-duplicate overlap: qn34a
+  (read scripture outside services, weekly+ — same construct already
+  shipped as pew-rls-2023-24's `practice-pracb` chart) and qn34b/qn53
+  (reading about own religion / childhood religious-ed attendance — close
+  enough to w44-2018's `learns-about-own-religion-weekly` and
+  `religious-ed-4plus-years` charts to skip). Dataset has a large
+  remaining battery of general Bible/world-religion knowledge items with
+  no LDS-specific angle (qn35-40, qn44, qn46-48, qn55, qn60-63); qn61
+  (Darwin/evolution) and qn9 (New Deal, a non-religion item) checked this
+  pass and dropped as unremarkable. Consider this dataset close to fully
+  mined.
