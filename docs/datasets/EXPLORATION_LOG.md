@@ -560,3 +560,37 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   Word of Wisdom item), and qk10b-d (Sunday school, religious homeschooling,
   volunteering with kids). Consider this dataset close to fully mined after
   this pass.
+
+- **pew-black-faith-2021** (Pew's "Faith Among Black Americans," fielded
+  2019-2020) — fifth chart, 2026-08-31: did a fresh cross-reference of every
+  `data/` folder against `data-explorer.ts`'s `DATASETS` array first (no
+  dataset with zero graphics or unmentioned-anywhere-in-this-log turned up —
+  pew-rls-2023-24, ryan-burge, and state-of-theology are simply undocumented
+  here despite being heavily charted in earlier sessions, confirmed by
+  grepping their many existing imports/imageSrc entries). Fell back to the
+  single most defensible remaining item from this dataset's own prior-pass
+  notes: the untouched CHURCHLOOK battery ("how important would each of the
+  following be in choosing a new congregation"). Checked all five sub-items
+  by RELIGMOD (34-valid-N floor already established for this dataset/file);
+  CHURCHLOOK_a/b (welcoming, inspiring sermons) show Mormons mid-pack with
+  no distinctive story, and CHURCHLOOK_d/e (senior leaders/congregants
+  share your race) repeat the same Black-church-specific racial framing
+  already flagged as a weak LDS fit for this dataset's COMMINFL1/BLKEQL1_c
+  items — skipped all four. CHURCHLOOK_c ("belongs to your denomination")
+  had a genuine story and became `denomination-loyalty.json`
+  (`denomination_very_important`, RELIGMOD, n=33 valid Mormon respondents):
+  47.5% of Black Mormons say it's very important that a new congregation
+  belong to their own denomination, 2nd only to Jehovah's Witness at 64.6%
+  and well above Protestant 32.7%/Catholic 31.6%/Unaffiliated 20.1% — ties
+  to the Church's restorationist, exclusive-priesthood-authority claim
+  (not one interchangeable denomination among many). Also checked
+  ESSENT_a/ESSENT_b/ESSENT_f (believing in God / attending services /
+  avoiding premarital sex essential to being a moral/religious person) and
+  dropped all three: Mormon lands mid-pack on each (34.7%-42.5%), no
+  highest/lowest story despite ESSENT_f's superficial Law-of-Chastity tie.
+  This dataset's remaining untouched material (PERSDO1_a-e,
+  TYPEGODSUM/GODBELIEFSMOD_b/d, CLERGYSSM, ESSENTCHURCH_a-g, "all
+  respondents.sav" Black-vs-non-Black comparison) is either likely
+  duplicative of already-shipped items, weak-fit, or unchecked pending a
+  future pass — this pass built exactly the one defensible chart the
+  remaining battery supported rather than forcing a full batch.

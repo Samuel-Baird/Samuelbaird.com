@@ -115,6 +115,7 @@ import womenLeadersData from "../../docs/datasets/pew-black-faith-2021/women-lea
 import convertDutyData from "../../docs/datasets/pew-black-faith-2021/convert-duty.json";
 import godRespondsData from "../../docs/datasets/pew-black-faith-2021/god-responds.json";
 import turnedToChurchForHelpData from "../../docs/datasets/pew-black-faith-2021/turned-to-church-for-help.json";
+import denominationLoyaltyData from "../../docs/datasets/pew-black-faith-2021/denomination-loyalty.json";
 import religiousNationalIdentityData from "../../docs/datasets/pew-eastern-europe-2015/religious-national-identity.json";
 import pewGlobalRestrictionsGriData from "../../docs/datasets/pew-global-restrictions-religion/gri-trend.json";
 import christianNeighborAcceptanceData from "../../docs/datasets/pew-india-2021/christian-neighbor-acceptance.json";
@@ -1034,6 +1035,7 @@ const RAW_DATASETS: Dataset[] = [
       convertDutyGraphic(),
       godRespondsGraphic(),
       turnedToChurchForHelpGraphic(),
+      denominationLoyaltyGraphic(),
     ],
   },
   {
@@ -2649,6 +2651,20 @@ function turnedToChurchForHelpGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-black-faith-2021/turned-to-church-for-help.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Black Americans who have ever turned to their congregation for help with bills, housing, or food, by religion. ${alt}.`,
+  };
+}
+
+function denominationLoyaltyGraphic(): Graphic {
+  const { group_order: order, denomination_very_important: results } = denominationLoyaltyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Sticking with your own denomination",
+    description: "Share of Black Americans saying it's very important that a new congregation belong to their own denomination, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/denomination-loyalty.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans saying it's very important that a new congregation belong to their own denomination, by religion. ${alt}.`,
   };
 }
 
