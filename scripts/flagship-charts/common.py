@@ -279,6 +279,39 @@ def render_magnitude_bar(
         tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
+    # Wrap any row label onto multiple lines if a single unbroken line would
+    # eat too much of the canvas - a caller whose rows are full survey-item
+    # sentences (e.g. "Believing Joseph Smith saw God the Father and Jesus
+    # Christ") rather than short group names can otherwise drive the
+    # auto-widen step below past AXES_LEFT_CAP, leaving little or even
+    # negative width for the bars themselves and clipping every value label
+    # off the canvas. Same wrap-then-measure-then-rewrap technique
+    # _draw_title uses: narrow the wrap width until every label's rendered
+    # width clears the cap, floored so a single very-long word can't spin
+    # this into an unbounded loop.
+    AXES_LEFT_CAP = 0.62
+    label_pad_px = 8 / 72 * DPI  # matches tick_params(pad=8) above (points -> px)
+    edge_margin_px = 0.045 * FIG_W_IN * DPI  # buffer so a wide label doesn't touch the canvas edge
+    max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px
+    row_wrap_width = 30
+    ax.set_yticks(range(len(display_rows)))
+    while True:
+        wrapped_labels = {r: "\n".join(textwrap.wrap(r, width=row_wrap_width)) for r in display_rows}
+        ax.set_yticklabels([wrapped_labels[r] for r in display_rows])
+        for tick_label, r in zip(ax.get_yticklabels(), display_rows):
+            tick_label.set_fontproperties(fonts["bold"])
+            tick_label.set_fontsize(MIN.LEGEND)
+            tick_label.set_color(INK)
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        max_label_px = max(
+            (tl.get_window_extent(renderer=renderer).width for tl in ax.get_yticklabels()),
+            default=0,
+        )
+        if max_label_px <= max_label_width_px or row_wrap_width <= 12:
+            break
+        row_wrap_width -= 2
+
     # Auto-widen the left margin when a row label doesn't fit inside
     # `axes_left` at MIN.LEGEND size. This pipeline's ~60 callers span many
     # datasets with wildly different row-label lengths (a short group name
@@ -289,16 +322,9 @@ def render_magnitude_bar(
     # crowding, not a one-or-two-chart edge case (see this folder's
     # STYLE.md). Measured from the actual rendered text width, not a
     # character count, since the bold condensed font isn't monospace.
-    # Never narrows below the caller's own `axes_left` - only widens it.
-    fig.canvas.draw()
-    renderer = fig.canvas.get_renderer()
-    label_pad_px = 8 / 72 * DPI  # matches tick_params(pad=8) above (points -> px)
-    edge_margin_px = 0.045 * FIG_W_IN * DPI  # buffer so a wide label doesn't touch the canvas edge
-    max_label_px = max(
-        (tl.get_window_extent(renderer=renderer).width for tl in ax.get_yticklabels()),
-        default=0,
-    )
-    required_left = (max_label_px + label_pad_px + edge_margin_px) / (FIG_W_IN * DPI)
+    # Never narrows below the caller's own `axes_left` - only widens it, and
+    # never past AXES_LEFT_CAP now that oversized labels wrap instead.
+    required_left = min(AXES_LEFT_CAP, (max_label_px + label_pad_px + edge_margin_px) / (FIG_W_IN * DPI))
     if required_left > AXES_LEFT:
         AXES_LEFT, AXES_WIDTH = required_left, 0.94 - required_left
         ax.set_position([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
