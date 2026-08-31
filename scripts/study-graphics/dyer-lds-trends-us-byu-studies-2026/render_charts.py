@@ -21,6 +21,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 sys.path.insert(0, str(SCRIPTS_DIR / "flagship-charts"))
 
+from chart_style import MIN  # noqa: E402
 from common import load_fonts, render_magnitude_bar  # noqa: E402
 
 STUDY_SLUG = "dyer-lds-trends-us-byu-studies-2026"
@@ -55,12 +56,16 @@ def main() -> None:
         # A single ordered trend, not a highlight-vs-context comparison -
         # every bar carries the same weight.
         highlight_rows=None,
-        title="LDS Youth Deidentification and Daily Video-Clip Use",
+        title="LDS Youth Who Watch More Video Clips Are More Likely to Leave",
         subtitle="Share of FFYD youth who had deidentified as\nLatter-day Saint by 2024, by daily video-clip watching",
         caption_paragraphs=[],
         handle=HANDLE,
         out_path=OUT_DIR / "video-clip-watching.png",
         fonts=fonts,
+        # This chart is meant to stand alone as a single shareable image, so
+        # its value labels read at the same weight as the row labels rather
+        # than the pipeline's smaller gallery-grid default.
+        value_label_fontsize=MIN.LEGEND,
     )
 
 

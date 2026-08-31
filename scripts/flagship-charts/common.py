@@ -201,6 +201,7 @@ def render_magnitude_bar(
     axes_left: float = 0.36,
     group_identity: bool = False,
     row_colors: dict[str, str] | None = None,
+    value_label_fontsize: float | None = None,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
     order), reading its value from `values[row]`. `caption_paragraphs`,
@@ -245,6 +246,12 @@ def render_magnitude_bar(
     prose (e.g. a survey-item sentence) rather than a short group name -
     the default clips long labels past the canvas's left edge, since
     matplotlib doesn't wrap or shrink y-tick labels on its own.
+
+    `value_label_fontsize` overrides the bar-end value label's size (default
+    `MIN.DATA_LABEL`/15pt, well under the `MIN.LEGEND`/24pt row labels) for
+    a caller that wants the two to read at the same weight - e.g. a chart
+    meant to stand alone as a single shareable image rather than sit in a
+    dense gallery grid. Leave unset to keep the pipeline default.
     """
     fonts = fonts or load_fonts()
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
@@ -366,11 +373,16 @@ def render_magnitude_bar(
         tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
+    data_label_fontsize = (
+        value_label_fontsize
+        if value_label_fontsize is not None
+        else (MIN.DATA_LABEL if n_rows > 8 else 15)
+    )
     for r, v, c, y in zip(display_rows, vals, colors, row_positions):
         ax.text(
             v + max(vals) * 0.02, y, f"{v:.0f}{value_suffix}", va="center", ha="left",
             color=c, fontproperties=fonts["bold"],
-            fontsize=MIN.DATA_LABEL if n_rows > 8 else 15, zorder=4,
+            fontsize=data_label_fontsize, zorder=4,
         )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
