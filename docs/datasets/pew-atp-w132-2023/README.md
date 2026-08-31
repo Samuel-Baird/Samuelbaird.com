@@ -51,7 +51,7 @@ here.
 
 ## Status
 
-One chart shipped, wired into the Data Explorer entry
+Three charts shipped, wired into the Data Explorer entry
 (`src/lib/data-explorer.ts`, slug `pew-atp-w132-2023`), using the shared
 chart shape in `scripts/flagship-charts/common.py`:
 
@@ -64,6 +64,21 @@ chart shape in `scripts/flagship-charts/common.py`:
   at 49.8%) — picked over the wave's many belief-in-God-style items, where
   Mormons cluster with other highly religious groups rather than standing
   out on their own.
+- `religious-community.json` (share involved in "a religious community,
+  such as a church or religious congregation," `SPIRCOM1_a_W132`, asked of
+  all respondents) — computed by `religious_community.py`, rendered by
+  `render_religious_community_chart.py`. Latter-day Saints report this at
+  81.4%, the highest of any named tradition (next: Orthodox Christian
+  77.2%, Protestant 59.0%, Catholic 49.6%) — matches the Church's
+  congregational-participation emphasis (ward/stake callings, weekly
+  meetings, ministering).
+- `has-cross.json` (share who have a cross "for spiritual purposes,"
+  `SPIRTHINGS_e_W132`, asked of all respondents) — computed by
+  `has_cross.py`, rendered by `render_has_cross_chart.py`. Latter-day
+  Saints report this at just 11.7%, far below every other named Christian
+  tradition (Protestant 41.7%, Catholic 72.8%, Orthodox Christian 82.0%) —
+  tracks the Church's well-known choice not to use the cross as a symbol of
+  the faith.
 
 Further charts from this dataset should follow the same two-stage pattern.
 Groups under 30 valid respondents are dropped (`MIN_VALID_N` convention,

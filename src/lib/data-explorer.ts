@@ -95,6 +95,8 @@ import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migra
 import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
+import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
+import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religious-community.json";
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
 import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
@@ -118,6 +120,23 @@ export type Quiz = {
   title: string;
   description: string;
   href: string;
+};
+
+/**
+ * A set of @ithinkisam's Instagram carousel slides for this dataset - a
+ * distinct thing from `graphics` above (those are neutral website charts;
+ * these carry an editorial title per-slide, per the social style guide at
+ * scripts/social-graphics/STATISTICS_STYLE_GUIDE.md). Just a link out to a
+ * static gallery page, not part of the structured Graphic system.
+ */
+export type SocialSet = {
+  title: string;
+  description: string;
+  href: string;
+  count: number;
+  previewSrc: string;
+  previewWidth: number;
+  previewHeight: number;
 };
 
 export type Graphic = {
@@ -241,6 +260,8 @@ export type Dataset = {
   howWeUseIt?: string;
   quiz?: Quiz;
   graphics: Graphic[];
+  /** @ithinkisam's Instagram carousel sets for this dataset, if any. */
+  socialSets?: SocialSet[];
   /**
    * Optional section label for the Data Explorer index (e.g. "Mixed
    * Datasets" for a compiled cross-source timeline, as opposed to one
@@ -266,6 +287,7 @@ const RAW_DATASETS: Dataset[] = [
       "A compiled year-by-year timeline of reported U.S. Church membership — not one survey, several sources stitched together.",
     sponsor: "The Church of Jesus Christ of Latter-day Saints",
     fielder: "Compiled by this site from multiple public sources",
+    fieldedPeriod: "2000-2025",
     description:
       "This site's first \"mixed data\" entry: no single source publishes a complete " +
       "year-by-year U.S.-only membership series, so this stitches one together from the " +
@@ -290,6 +312,7 @@ const RAW_DATASETS: Dataset[] = [
       "The full worldwide membership count, year by year, from six founding members to nearly 18 million.",
     sponsor: "The Church of Jesus Christ of Latter-day Saints",
     fielder: "Compiled by this site from multiple public sources",
+    fieldedPeriod: "1830-2025",
     description:
       "Unlike the U.S.-only timeline above, this one has no gaps: worldwide membership is " +
       "documented for every single year since the Church's 1830 founding in one coherent " +
@@ -313,6 +336,7 @@ const RAW_DATASETS: Dataset[] = [
       "Ten denominations' own reported membership, each extended by a simple trend line to 2035 — modeled on Ryan Burge's American-religion projections.",
     sponsor: "Multiple denominations (each self-reported; see README for exceptions)",
     fielder: "Compiled by this site from multiple public sources",
+    fieldedPeriod: "Historical reporting, projected to 2035",
     description:
       "A third \"mixed data\" entry, comparing ACROSS ten denominations rather than " +
       "tracking one body over time: Catholic Church, United Methodist Church, The " +
@@ -344,6 +368,7 @@ const RAW_DATASETS: Dataset[] = [
       "A national survey of American theological belief, run every two years since 2014.",
     sponsor: "Ligonier Ministries",
     fielder: "Lifeway Research",
+    fieldedPeriod: "2014-2025",
     description:
       "Ligonier Ministries and Lifeway Research have surveyed American adults on their " +
       "theological beliefs every two years since 2014 — around 3,000 respondents per wave, " +
@@ -384,6 +409,30 @@ const RAW_DATASETS: Dataset[] = [
       href: "/how-evangelical",
     },
     graphics: stateOfTheologyGraphics(),
+    socialSets: [
+      {
+        title: "Evangelicals vs. the country, 2016–2025",
+        description:
+          "An Instagram carousel tracking evangelicals against all U.S. adults across five " +
+          "survey waves, plus a 2022 scorecard of where evangelical belief is firmest.",
+        href: "/data-explorer/state-of-theology/social/post1",
+        count: 14,
+        previewSrc: "/social-graphics/state-of-theology/post1/1_nicaea_won.png",
+        previewWidth: 1080,
+        previewHeight: 1350,
+      },
+      {
+        title: "Comparing four traditions, 2025",
+        description:
+          "An Instagram carousel comparing Evangelical, Black Protestant, Mainline, and " +
+          "Roman Catholic respondents across nine statements from the survey.",
+        href: "/data-explorer/state-of-theology/social/post2",
+        count: 12,
+        previewSrc: "/social-graphics/state-of-theology/post2/1_trinity.png",
+        previewWidth: 1080,
+        previewHeight: 1350,
+      },
+    ],
   },
   {
     slug: "pew-religious-landscape-study",
@@ -392,6 +441,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's 36,908-respondent map of American religion — who belongs to what, and what they believe.",
     sponsor: "Pew Research Center",
     fielder: "NORC at the University of Chicago",
+    fieldedPeriod: "2023-24",
     description:
       "Pew Research Center's third Religious Landscape Study, after 2007 and 2014. " +
       "36,908 U.S. adults answered " +
@@ -500,6 +550,7 @@ const RAW_DATASETS: Dataset[] = [
       "A 64,600-respondent national election survey, with 870 Latter-day Saints in it.",
     sponsor: "Cooperative Election Studies (multi-university consortium)",
     fielder: "YouGov",
+    fieldedPeriod: "2016",
     description:
       "The Cooperative Congressional Election Study is a large annual national survey on " +
       "politics and public opinion, run online by YouGov. This entry is a 33-variable teaching " +
@@ -528,6 +579,7 @@ const RAW_DATASETS: Dataset[] = [
       "Party ID, race, and gender by religious tradition, across seven federal election cycles.",
     sponsor: "Cooperative Election Studies (multi-university consortium)",
     fielder: "YouGov",
+    fieldedPeriod: "2006-2018",
     description:
       "Ryan Burge's own tabulation stacking eight waves of the CCES/CES common content " +
       "(2006–2018) down to five variables — religious tradition, 7-point party ID, race, " +
@@ -545,6 +597,7 @@ const RAW_DATASETS: Dataset[] = [
       "A longitudinal panel of the same 8,000 voters, re-interviewed from 2011 through 2020.",
     sponsor: "Democracy Fund Voter Study Group",
     fielder: "YouGov",
+    fieldedPeriod: "2011-2020",
     description:
       "The VOTER (Views of the Electorate Research) Survey re-interviews the same panel of " +
       "voters across multiple waves — 2011, 2012, 2016, 2017, 2018, 2019, and 2020 — which " +
@@ -593,6 +646,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's survey of Mormons themselves — belief, practice, and place in American life.",
     sponsor: "Pew Research Center",
     fielder: "Social Science Research Solutions (SSRS)",
+    fieldedPeriod: "2011",
     description:
       "Rather than surveying the general public about Mormons, this 2011 study surveyed " +
       "1,019 self-identified Mormon adults directly — what they believe, how they practice, " +
@@ -624,6 +678,7 @@ const RAW_DATASETS: Dataset[] = [
       "What Americans of every faith (and none) actually know about religion.",
     sponsor: "Pew Research Center",
     fielder: "Princeton Survey Research Associates International (PSRAI)",
+    fieldedPeriod: "2010",
     description:
       "A 32-question quiz on the Bible, world religions, and church-state law, fielded " +
       "May 19–June 6, 2010 among 3,412 U.S. adults by landline and cell phone. The survey " +
@@ -650,6 +705,7 @@ const RAW_DATASETS: Dataset[] = [
       "The original Religious Landscape Survey — the baseline the 2014 and 2023-24 waves track against.",
     sponsor: "Pew Research Center",
     fielder: "Princeton Survey Research Associates International (PSRAI)",
+    fieldedPeriod: "2007-08",
     description:
       "The first Religious Landscape Survey: 35,556 adults in the continental U.S., " +
       "interviewed by telephone in summer 2007, plus a supplemental spring 2008 sample of " +
@@ -673,6 +729,7 @@ const RAW_DATASETS: Dataset[] = [
       "The middle wave of Pew's Religious Landscape Study, between the 2007 original and 2023-24.",
     sponsor: "Pew Research Center",
     fielder: "Princeton Survey Research Associates International (PSRAI)",
+    fieldedPeriod: "2014",
     description:
       "35,071 U.S. adults interviewed by telephone (60% cell, 40% landline) June 4–Sept. 30, " +
       "2014, in English and Spanish, with a minimum of 300 interviews in every state and the " +
@@ -697,6 +754,7 @@ const RAW_DATASETS: Dataset[] = [
       "A 2015 follow-up to 5,000 RLS 2014 respondents, focused on interfaith upbringing and marriage.",
     sponsor: "Pew Research Center",
     fielder: "Princeton Survey Research Associates International (PSRAI)",
+    fieldedPeriod: "2015",
     description:
       "Between March 17 and May 6, 2015, Pew recontacted 5,000 respondents from the main " +
       "2014 Religious Landscape Study, sorted into 15 strata by religious and demographic " +
@@ -721,6 +779,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's face-to-face survey of religious belief and practice across 19 Latin American countries and territories.",
     sponsor: "Pew Research Center (Pew-Templeton Global Religious Futures project)",
     fielder: "Princeton Survey Research Associates International (PSRAI) and Ipsos Public Affairs",
+    fieldedPeriod: "2013-14",
     description:
       "Between October 2013 and February 2014, Pew conducted over 30,000 face-to-face " +
       "interviews with non-institutionalized adults across 18 Latin American and Caribbean " +
@@ -749,6 +808,7 @@ const RAW_DATASETS: Dataset[] = [
       "Follow-up interviews with 2007 Religious Landscape Survey respondents, focused on why people change religion.",
     sponsor: "Pew Research Center",
     fielder: "Princeton Survey Research Associates International (PSRAI)",
+    fieldedPeriod: "2008",
     description:
       "A follow-up to the 2007 U.S. Religious Landscape Survey, which found that 28% of " +
       "American adults had changed religious tradition since childhood (44% including moves " +
@@ -776,6 +836,7 @@ const RAW_DATASETS: Dataset[] = [
       "A Pew American Trends Panel wave on religious knowledge and belief, fielded February 2019.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "February 2019",
     description:
       "Wave 44 of Pew's American Trends Panel: 10,971 U.S. adults surveyed online " +
       "Feb. 4-19, 2019 (full panel plus a KnowledgePanel oversample), in English and " +
@@ -803,6 +864,7 @@ const RAW_DATASETS: Dataset[] = [
       "A general Pew American Trends Panel wave, fielded July 2020, carrying a religious-tradition variable.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "July 2020",
     description:
       "Wave 70 of Pew's American Trends Panel: 10,211 U.S. adults surveyed online (a small " +
       "non-internet subsample by mail) July 13–19, 2020, in English and Spanish. Like other " +
@@ -825,6 +887,7 @@ const RAW_DATASETS: Dataset[] = [
       "A 2015 Pew survey of U.S. adults (Catholic oversample) on Catholic identity, papal opinion, and family-life teachings.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (telephone, landline + cellphone)",
+    fieldedPeriod: "2015",
     description:
       "Pew Research Center's 2015 Survey of U.S. Catholics and Family Life: 5,122 U.S. adults 18+ " +
       "surveyed by telephone (landline and cellphone) May 5–June 7, 2015, in English and Spanish. " +
@@ -853,6 +916,7 @@ const RAW_DATASETS: Dataset[] = [
       "A 19-country face-to-face survey of sub-Saharan Africa's Christian and Muslim populations, fielded 2008-09.",
     sponsor: "The Pew Charitable Trusts and the John Templeton Foundation",
     fielder: "Pew Research Center's Forum on Religion & Public Life",
+    fieldedPeriod: "2008-09",
     description:
       "A face-to-face general-population survey of 25,091 adults across 19 sub-Saharan African " +
       "countries, fielded December 2008–April 2009 in more than 60 languages and dialects. The " +
@@ -874,6 +938,7 @@ const RAW_DATASETS: Dataset[] = [
       "A dedicated Pew survey of 8,660 Black American adults on religious belief and practice, fielded 2019-2020.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (combined ATP, ABS, NORC AmeriSpeak, and Ipsos KnowledgePanel samples)",
+    fieldedPeriod: "2019-2020",
     description:
       "Pew's dedicated study of Black American religious life: 8,660 Black adults surveyed via a " +
       "combination of four probability-based samples (the Center's American Trends Panel, its own " +
@@ -894,6 +959,7 @@ const RAW_DATASETS: Dataset[] = [
       "A face-to-face Pew survey across 18 Central and Eastern European countries, fielded 2015-2016, on religion, national identity, and Orthodox-Catholic relations.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center",
+    fieldedPeriod: "2015-2016",
     description:
       "Pew's face-to-face survey behind the 2017 report \"Religious Belief and National Belonging in " +
       "Central and Eastern Europe\": more than 25,000 adults interviewed June 2015-July 2016 in 17 " +
@@ -912,6 +978,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's annual country-level ratings of government restrictions and social hostilities involving religion, worldwide, 2007-2022.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (Pew-Templeton Global Religious Futures project)",
+    fieldedPeriod: "2007-2022",
     description:
       "A cumulative country/year-level dataset rating 198 countries and territories each year from 2007 to " +
       "2022 on two 0-10 indexes: the Government Restrictions Index (GRI, 20 measures of how governments " +
@@ -935,6 +1002,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's massive face-to-face survey of religion across India, fielded 2019-2020, oversampling religious minorities including Christians.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center, fieldwork directed by RTI International",
+    fieldedPeriod: "2019-2020",
     description:
       "Pew Research Center's face-to-face survey of religion in India: 29,999 adults surveyed across " +
       "26 states and three union territories in 17 languages, fielded November 17, 2019-March 23, " +
@@ -952,6 +1020,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's Western Europe religion survey, augmented with three questions about who currently pays — or is opting out of — the church tax.",
     sponsor: "Pew Research Center",
     fielder: "GfK Belgium",
+    fieldedPeriod: "2017",
     description:
       "Pew's \"Being Christian in Western Europe\" survey: 26,096 adults interviewed by " +
       "telephone (cellphone and landline) April–August 2017 across 15 Western European " +
@@ -973,6 +1042,7 @@ const RAW_DATASETS: Dataset[] = [
       "Country-level Christian, Muslim, and other religious-population estimates for 2010 and 2020, across 201 countries and territories.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center",
+    fieldedPeriod: "2010 and 2020",
     description:
       "Population estimates for seven broad religious categories - Christians, Muslims, " +
       "Hindus, Buddhists, Jews, Other religions, and the religiously unaffiliated - for " +
@@ -996,6 +1066,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew's global estimate of the religious composition of the world's international migrants, 1990-2020.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center",
+    fieldedPeriod: "1990-2020",
     description:
       "Pew's estimate of the religious composition of the world's international migrant stock " +
       "— people living outside the country where they were born — for seven benchmark years " +
@@ -1018,6 +1089,7 @@ const RAW_DATASETS: Dataset[] = [
       "A general Pew American Trends Panel wave, fielded September 2022, that fed Pew's 'Christian nation' research.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "September 2022",
     description:
       "Wave 114 of Pew's American Trends Panel: 10,588 U.S. adults surveyed online " +
       "September 13–18, 2022, in English and Spanish. It fed several Pew reports on " +
@@ -1036,6 +1108,7 @@ const RAW_DATASETS: Dataset[] = [
       "A general Pew American Trends Panel wave, fielded November 2022, carrying a religious-tradition variable.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "November 2022",
     description:
       "Wave 117 of Pew's American Trends Panel: 11,377 U.S. adults surveyed online " +
       "November 16–27, 2022, in English and Spanish. Like other ATP waves, it carries a " +
@@ -1054,6 +1127,7 @@ const RAW_DATASETS: Dataset[] = [
       "A general Pew American Trends Panel wave on spirituality, fielded August 2023.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "August 2023",
     description:
       "Wave 132 of Pew's American Trends Panel: 11,201 U.S. adults surveyed online " +
       "July 31–Aug. 6, 2023, in English and Spanish. Unlike other ATP waves in this " +
@@ -1062,7 +1136,7 @@ const RAW_DATASETS: Dataset[] = [
       "wave is a large battery of belief and experience items about spirituality, " +
       "likely feeding Pew's Dec. 2023 \"Spirituality Among Americans\" report.",
     sourceUrl: "https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/",
-    graphics: [beyondThisWorldGraphic()],
+    graphics: [beyondThisWorldGraphic(), religiousCommunityGraphic(), hasCrossGraphic()],
   },
   {
     slug: "pew-atp-w143-2024",
@@ -1071,6 +1145,7 @@ const RAW_DATASETS: Dataset[] = [
       "A Pew American Trends Panel wave on religion and politics, fielded February 2024.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "February 2024",
     description:
       "Wave 143 of Pew's American Trends Panel: 12,693 U.S. adults surveyed online (a small " +
       "phone subsample), Feb. 13-25, 2024, in English and Spanish, with oversamples of Jewish " +
@@ -1100,6 +1175,7 @@ const RAW_DATASETS: Dataset[] = [
       "A Pew American Trends Panel wave on Catholicism and religion's place in American life, fielded February 2025.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center (American Trends Panel)",
+    fieldedPeriod: "February 2025",
     description:
       "Wave 162 of Pew's American Trends Panel: 9,544 U.S. adults surveyed online and by phone " +
       "February 3–9, 2025, in English and Spanish. Focused mainly on Catholicism, plus general " +
@@ -1122,6 +1198,7 @@ const RAW_DATASETS: Dataset[] = [
       "A cross-national Pew survey of Pentecostal and Charismatic (\"renewalist\") Christianity across ten countries, fielded 2006.",
     sponsor: "Pew Research Center",
     fielder: "Pew Research Center, Forum on Religion & Public Life",
+    fieldedPeriod: "2006",
     description:
       "Pew Forum's cross-national study of \"renewalist\" Christianity — Pentecostals " +
       "and Charismatics — surveyed 11,028 respondents (7,475 general public plus a " +
@@ -2167,6 +2244,34 @@ function beyondThisWorldGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w132-2023/beyond-this-world.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who have ever had a sudden or unexpected feeling of connection with something from beyond this world, by religion, 2023. ${alt}.`,
+  };
+}
+
+function hasCrossGraphic(): Graphic {
+  const { group_order: order, has_cross_for_spiritual_purposes: results } = hasCrossData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you have a cross for spiritual purposes?",
+    description: "Share who have a cross \"for spiritual purposes,\" by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/has-cross.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have a cross for spiritual purposes, by religion, 2023. ${alt}.`,
+  };
+}
+
+function religiousCommunityGraphic(): Graphic {
+  const { group_order: order, involved_in_religious_community: results } = religiousCommunityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Involved in a religious community",
+    description: "Share involved in \"a religious community, such as a church or religious congregation,\" by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/religious-community.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share involved in a religious community, by religion, 2023. ${alt}.`,
   };
 }
 
