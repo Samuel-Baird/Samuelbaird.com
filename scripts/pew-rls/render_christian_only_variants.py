@@ -68,6 +68,10 @@ def main() -> None:
         subtitle="How often each tradition's members attend religious\nservices in person.",
         note=CHRISTIAN_NOTE, total_n=total_n,
         out_path=OUT_DIR / "practice-attend-distribution-christian.png", fonts=fonts,
+        # Requested: group (y-axis) labels the same size as the legend key,
+        # rather than this shape's usual smaller axis-label size - trying it
+        # on this one chart first before rolling it out further.
+        group_label_fontsize=practice_r.MIN.LEGEND,
     )
     practice_r.render_magnitude_bar(
         practice["attend_monthly_plus_either"], NARROW_ORDER,

@@ -178,6 +178,7 @@ def render_magnitude_bar(
 def render_distribution_stack(
     results: dict, group_order: list[str], seg_order: list[str], title: str, subtitle: str,
     note: str, total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
+    group_label_fontsize: float | None = None,
 ) -> None:
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
@@ -228,9 +229,11 @@ def render_distribution_stack(
 
     ax.set_xlim(0, 100)
     ax.margins(y=0.06 if n_rows > 8 else 0.11)
+    resolved_label_fontsize = group_label_fontsize if group_label_fontsize is not None \
+        else (MIN.AXIS_LABEL if n_rows > 8 else 14)
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
+        tick_label.set_fontsize(resolved_label_fontsize)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
     handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
