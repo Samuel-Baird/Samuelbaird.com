@@ -252,6 +252,24 @@ total-population row ("U.S. adults," "Total population"), if a chart ever has
 one, sinks below even those, at the very bottom. The canonical implementation
 is `sort_groups` in `scripts/chart_style.py`.
 
+**Gallery order for a dataset's graphics:** each Data Explorer dataset's own
+graphics page (`/data-explorer/[slug]/graphics`) lists that dataset's charts
+in alphabetical order by title — not the order they were added, not grouped
+by topic. This is unrelated to the row-order rule above (that one sorts the
+bars *inside* one chart by value; this one sorts *which chart* comes first in
+the gallery, by title) and applies to every dataset, including ones whose
+graphics are built dynamically rather than listed by hand (e.g. State of
+Theology's one-graphic-per-survey-item page). The canonical implementation
+is `sortGraphicsAlphabetically` in `src/lib/data-explorer.ts`, applied once
+centrally when `DATASETS` is exported — an individual dataset's own
+`graphics: [...]` array (or a helper function that builds one) can list its
+entries in whatever order is most convenient to write; nothing needs to be
+hand-sorted or kept in sync as graphics are added or removed. Leading
+punctuation (a quotation mark opening a survey-statement title, straight or
+curly) is stripped before comparing, so a quoted title alphabetizes by its
+first real word rather than sorting before or after every unquoted title as
+a block.
+
 **Per-group identity colors for the Pew RLS Data Explorer:** the Pew
 Religious Landscape Study magnitude-bar charts (`scripts/pew-rls/*.py`)
 give every named denomination/religion its own distinct identity color,

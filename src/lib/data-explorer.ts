@@ -231,7 +231,13 @@ export type Dataset = {
   category?: string;
 };
 
-export const DATASETS: Dataset[] = [
+/** Raw dataset definitions, in whatever order they were added to this file -
+ * NOT the order graphics render in. Each dataset's `graphics` array here can
+ * list its entries in any order (grouped by topic, in the order a backlog
+ * item was worked, etc.) - `DATASETS` below is what every page actually
+ * imports, and it re-sorts each dataset's graphics alphabetically by title
+ * before export. See `sortGraphicsAlphabetically`'s docstring for why. */
+const RAW_DATASETS: Dataset[] = [
   {
     slug: "us-membership-growth-2000-2025",
     name: "U.S. Church Membership Growth, 2000-2025",
@@ -1061,6 +1067,33 @@ export const DATASETS: Dataset[] = [
     graphics: [latinoReligiousConvertsGraphic()],
   },
 ];
+
+/** Site-wide Data Explorer rule: every dataset's graphics gallery
+ * (/data-explorer/[slug]/graphics) lists its charts in alphabetical order
+ * by title, not in whatever order they were added to RAW_DATASETS above -
+ * see BRANDING_AND_DESIGN.md's "Charts" section for the canonical
+ * statement of the rule. Applying it once here, centrally, means a
+ * dataset's own `graphics: [...]` array (or a helper like
+ * `stateOfTheologyGraphics()` that builds one dynamically) never has to
+ * get its entries hand-sorted or re-sorted when a new graphic is added -
+ * whatever order is most convenient to write stays correct. `localeCompare`
+ * with base sensitivity (case/accent-insensitive) matches how a reader
+ * would alphabetize by eye. Leading punctuation is stripped before
+ * comparing (not left to ICU's default collation) - straight quotes sort
+ * as ignorable there, but curly/smart quotes (voter-survey-panel's one
+ * “...”-quoted title) don't, and would otherwise sort before every plain
+ * letter instead of alongside its neighbors. */
+function sortGraphicsAlphabetically(graphics: Graphic[]): Graphic[] {
+  const sortKey = (title: string) => title.replace(/^[^\p{L}\p{N}]+/u, "");
+  return [...graphics].sort((a, b) =>
+    sortKey(a.title).localeCompare(sortKey(b.title), "en", { sensitivity: "base" }),
+  );
+}
+
+export const DATASETS: Dataset[] = RAW_DATASETS.map((d) => ({
+  ...d,
+  graphics: sortGraphicsAlphabetically(d.graphics),
+}));
 
 // --- Flagship graphics for the eight raw-Pew-dataset registrations above.
 // Each dataset gets exactly one chart (found via scripts/<slug>/*.py, an
