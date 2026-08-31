@@ -1,0 +1,140 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 143, fielded Feb. 13-25, 2024.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG). Discrimination item: share saying Black people face 'a lot' of discrimination today; refused excluded. Practice item: share answering 'yes, I do' to wearing or carrying religious items/symbols; refused excluded. Groups under 30 valid respondents omitted. Weighted by WEIGHT_W143.",
+  "total_weighted_n": 12693.000056380071,
+  "total_unweighted_n": 12693,
+  "discrimination_against_black_americans": {
+    "Protestant": {
+      "pct": 34.98,
+      "valid_unweighted_n": 4366,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 34.59,
+      "valid_unweighted_n": 2008,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 25.83,
+      "valid_unweighted_n": 172,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 17.97,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 53.39,
+      "valid_unweighted_n": 1929,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 61.43,
+      "valid_unweighted_n": 410,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 44.59,
+      "valid_unweighted_n": 101,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 28.99,
+      "valid_unweighted_n": 79,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 63.78,
+      "valid_unweighted_n": 602,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 52.31,
+      "valid_unweighted_n": 731,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 50.6,
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 47.07,
+      "valid_unweighted_n": 1867,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 40.21,
+      "valid_unweighted_n": 12636,
+      "group_unweighted_n": 12693
+    }
+  },
+  "wears_religious_items": {
+    "Protestant": {
+      "pct": 30.22,
+      "valid_unweighted_n": 4351,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 54.76,
+      "valid_unweighted_n": 2013,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 61.78,
+      "valid_unweighted_n": 172,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 52.41,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 38.47,
+      "valid_unweighted_n": 1933,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 29.99,
+      "valid_unweighted_n": 406,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 39.68,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 31.51,
+      "valid_unweighted_n": 79,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 3.23,
+      "valid_unweighted_n": 604,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 6.11,
+      "valid_unweighted_n": 729,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 39.17,
+      "valid_unweighted_n": 248,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 14.85,
+      "valid_unweighted_n": 1860,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 30.84,
+      "valid_unweighted_n": 12619,
+      "group_unweighted_n": 12693
+    }
+  }
+}

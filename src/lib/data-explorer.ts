@@ -16,6 +16,7 @@ import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
 import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritual-experience.json";
 import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
 import holidayBatchData from "../../docs/datasets/pew-rls-2023-24/holiday-batch.json";
+import holidayBatch2Data from "../../docs/datasets/pew-rls-2023-24/holiday-batch-2.json";
 import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
 import foodStorageByActivityData from "../../docs/datasets/pew-mormon-survey-2011/food-storage-by-activity.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
@@ -96,6 +97,9 @@ import w143HolidayBatchData from "../../docs/datasets/pew-atp-w143-2024/holiday-
 import w143HolidayBatch2Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-2.json";
 import w162HolidayBatchData from "../../docs/datasets/pew-atp-w162-2025/holiday-batch.json";
 import cathessentData from "../../docs/datasets/pew-atp-w162-2025/cathessent.json";
+import confessionFrequencyData from "../../docs/datasets/pew-atp-w162-2025/confession-frequency.json";
+import w143HolidayBatch3Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-3.json";
+import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-beliefs.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
 import renewalistShareData from "../../docs/datasets/pew-10-country-religion-2007/renewalist-share.json";
 import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-religion-2007/latino-religious-converts.json";
@@ -477,6 +481,9 @@ const RAW_DATASETS: Dataset[] = [
       pewStayHomeParentGraphic(),
       pewReligiousSymbolsGraphic(),
       pewSchoolPrayerGraphic(),
+      pewSameFaithSpouseGraphic(),
+      pewAsianShareGraphic(),
+      pewTwoPlusChildrenGraphic(),
     ],
   },
   {
@@ -600,6 +607,7 @@ const RAW_DATASETS: Dataset[] = [
       presidentReadinessGraphic(),
       polygamyMoralityGraphic(),
       foodStorageByActivityGraphic(),
+      coreBeliefsGraphic(),
     ],
   },
   {
@@ -1039,6 +1047,8 @@ const RAW_DATASETS: Dataset[] = [
       w143PresSameBeliefsGraphic(),
       w143AfterlifeGraphic(),
       w143AncestorSpiritsGraphic(),
+      w143DiscrimBlackGraphic(),
+      w143WearsReligiousItemsGraphic(),
     ],
   },
   {
@@ -1056,7 +1066,12 @@ const RAW_DATASETS: Dataset[] = [
       "instead to break out Latter-day Saints. Fed Pew's October 2025 report on religion's " +
       "growing perceived influence in American life.",
     sourceUrl: "https://www.pewresearch.org/religion/2025/10/20/growing-share-of-us-adults-say-religion-is-gaining-influence-in-american-life/",
-    graphics: [religiousConflictGraphic(), devotionToSaintsGraphic(), cathessentGraphic()],
+    graphics: [
+      religiousConflictGraphic(),
+      devotionToSaintsGraphic(),
+      cathessentGraphic(),
+      confessionFrequencyGraphic(),
+    ],
   },
   {
     slug: "pew-10-country-religion-2007",
@@ -1291,6 +1306,20 @@ function tithingByActivityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/tithing-by-activity.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons paying a full tithe, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function coreBeliefsGraphic(): Graphic {
+  const { item_order: order, believe_pct: results } = coreBeliefsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "What do Mormons believe about Jesus and eternity?",
+    description: "Share of Mormons who believe each of a set of core Christian/LDS belief items.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/core-beliefs.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons who believe core Christian/LDS belief items. ${alt}.`,
   };
 }
 
@@ -2118,6 +2147,42 @@ function w143AncestorSpiritsGraphic(): Graphic {
   };
 }
 
+function w143DiscrimBlackGraphic(): Graphic {
+  const results = w143HolidayBatch3Data.discrimination_against_black_americans;
+  return {
+    title: "Discrimination against Black Americans?",
+    description: "Share saying Black people face \"a lot\" of discrimination in society today, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/discrimination-against-black-americans.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying Black Americans face a lot of discrimination today, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143WearsReligiousItemsGraphic(): Graphic {
+  const results = w143HolidayBatch3Data.wears_religious_items;
+  return {
+    title: "Who wears religious items or symbols?",
+    description: "Share who wear or carry religious items or symbols, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/wears-religious-items.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who wear or carry religious items or symbols, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function confessionFrequencyGraphic(): Graphic {
+  const { item_order: order, confession_frequency_pct: results } = confessionFrequencyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How often do Catholics go to confession?",
+    description: "Share of Catholics saying how often they go to confession with a priest, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/confession-frequency.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: how often Catholics go to confession, February 2025. ${alt}.`,
+  };
+}
+
 function religiousMinorityGraphic(): Graphic {
   const { group_order: order, religious_minority: results } = religiousMinorityData;
   const alt = order
@@ -2533,6 +2598,45 @@ function pewSchoolPrayerGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-religious-landscape-study/school-prayer-jesus-favor.png",
     width: 1080, height: 1350,
     alt: `Bar chart, share favoring teacher-led Jesus-referencing school prayer, by religious tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Three more holiday-calendar-driven "by tradition" graphics (Valentine's
+ * Day, AANHPI Heritage Month, Mother's/Father's Day) built from
+ * holiday-batch-2.json (scripts/pew-rls/holiday_batch_2.py), rendered by
+ * scripts/pew-rls/render_holiday_batch_2.py.
+ */
+function pewSameFaithSpouseGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatch2Data.same_faith_spouse);
+  return {
+    title: "Whose spouse shares their religion?",
+    description: "Share of married/partnered adults whose spouse or partner shares their current religion, by tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/same-faith-spouse.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share whose spouse/partner shares their current religion, by tradition: ${alt}.`,
+  };
+}
+
+function pewAsianShareGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatch2Data.asian_or_asian_american);
+  return {
+    title: "Who is Asian or Asian-American?",
+    description: "Share of each religious tradition identifying as Asian or Asian-American.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/asian-share-by-tradition.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, Asian/Asian-American share, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewTwoPlusChildrenGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatch2Data.two_or_more_children);
+  return {
+    title: "Who has two or more children?",
+    description: "Share with two or more children ever born, by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/two-or-more-children.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share with two or more children ever born, by religious tradition: ${alt}.`,
   };
 }
 

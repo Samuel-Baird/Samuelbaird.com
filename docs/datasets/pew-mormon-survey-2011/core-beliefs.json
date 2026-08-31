@@ -1,0 +1,25 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design). Each item's own don't know/refused excluded from its own denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "item_order": [
+    "Jesus rose from the dead",
+    "Families can be sealed together eternally in temple ceremonies",
+    "God the Father and Jesus Christ are separate, physical beings"
+  ],
+  "believe_pct": {
+    "Jesus rose from the dead": {
+      "pct": 98.42,
+      "valid_unweighted_n": 1009
+    },
+    "Families can be sealed together eternally in temple ceremonies": {
+      "pct": 96.18,
+      "valid_unweighted_n": 1005
+    },
+    "God the Father and Jesus Christ are separate, physical beings": {
+      "pct": 95.29,
+      "valid_unweighted_n": 1009
+    }
+  }
+}
