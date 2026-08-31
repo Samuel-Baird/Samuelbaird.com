@@ -423,3 +423,35 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   (Darwin/evolution) and qn9 (New Deal, a non-religion item) checked this
   pass and dropped as unremarkable. Consider this dataset close to fully
   mined.
+
+- **pew-faith-in-flux-2008** (2008 Conversion Recontact Survey) — 2026-08-31:
+  had 5 charts (never previously logged here, hence appearing "untouched" by
+  this log's own summary at the top - it wasn't). Added 2 more this pass.
+  `joining-decision-maker.png` (q15, the joining-side mirror of the
+  existing leaving-decision-maker chart's q2 - 81% of people who became
+  their current religious identity say it was mostly their own decision,
+  18% mostly their parents'/family's; n=399 valid, a subset of the full
+  2,867 since q15 is only asked of respondents who report a specific age
+  of becoming CURREL) and `ever-identified-with.png` (the q22 battery,
+  "have you ever identified with X at any point in your life," a single-
+  population ranking across 12 named identities with the Mormon row
+  highlighted via `highlight_rows` rather than `group_identity` - Mormon
+  is the LEAST-often-passed-through identity in the battery at 2.7%,
+  vs. 34.3% for "nothing in particular," 27.5% for Nondenominational
+  Christian, and 13.3% for Baptist; read alongside the already-shipped
+  reasons-joined-lds chart's 38-respondent LDS-convert base, this is
+  further evidence LDS identity is rarely a way station people pass
+  through on a longer path of religious searching - people who try it
+  tend to arrive there directly). Checked and skipped for duplicate/weak-
+  fit risk: q19a-e/q20a-e (general religious-skepticism agree/disagree
+  battery, no clean LDS angle without re-deriving finalgrp subgroups
+  already too thin), q7/q8/q10/q11 (childhood/teen religious-practice
+  frequency, would need a by-group breakout and the only LDS-sized
+  subgroup, former/current Mormons, is already too thin at n=26-38 per
+  the existing charts' own notes). Remaining untouched material: q3oe/
+  q16oe (open-ended coded reasons for leaving/joining, likely overlaps
+  the existing q4/q17-battery reason charts once decoded), q5k-s (forced-
+  choice framing of the same q4 reasons, redundant with reasons-left-
+  religion), q1/q1a/q14/q14a (age and life-stage when leaving/joining, a
+  demographic item with no direct religious-content angle). Consider this
+  dataset close to fully mined.

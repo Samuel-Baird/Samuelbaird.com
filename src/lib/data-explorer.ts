@@ -93,6 +93,8 @@ import reasonsLeftReligionData from "../../docs/datasets/pew-faith-in-flux-2008/
 import leaveVsJoinData from "../../docs/datasets/pew-faith-in-flux-2008/leave-vs-join.json";
 import leavingDecisionMakerData from "../../docs/datasets/pew-faith-in-flux-2008/leaving-decision-maker.json";
 import faithStrengthBeforeAfterData from "../../docs/datasets/pew-faith-in-flux-2008/faith-strength-before-after.json";
+import joiningDecisionMakerData from "../../docs/datasets/pew-faith-in-flux-2008/joining-decision-maker.json";
+import everIdentifiedWithData from "../../docs/datasets/pew-faith-in-flux-2008/ever-identified-with.json";
 import onlineWorshipCovidData from "../../docs/datasets/pew-atp-w70-2020/online-worship-covid.json";
 import prayerCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/prayer-covid-coping.json";
 import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/inperson-attendance-covid.json";
@@ -882,6 +884,8 @@ const RAW_DATASETS: Dataset[] = [
       leaveVsJoinGraphic(),
       leavingDecisionMakerGraphic(),
       faithStrengthBeforeAfterGraphic(),
+      joiningDecisionMakerGraphic(),
+      everIdentifiedWithGraphic(),
     ],
   },
   {
@@ -2252,6 +2256,34 @@ function faithStrengthBeforeAfterGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-faith-in-flux-2008/faith-strength-before-after.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of religious switchers with strong faith, as a teenager vs. now. ${alt}.`,
+  };
+}
+
+function joiningDecisionMakerGraphic(): Graphic {
+  const { decision_order: order, decision_pct: results } = joiningDecisionMakerData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Whose decision was it to join?",
+    description: "Among people who became their current religious identity, who mainly made that decision?",
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/joining-decision-maker.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: who mainly decided to become their current religious identity, among religious switchers. ${alt}.`,
+  };
+}
+
+function everIdentifiedWithGraphic(): Graphic {
+  const { identity_order: order, ever_identified_pct: results } = everIdentifiedWithData;
+  const alt = order
+    .map((r) => `${r} ${results[r as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Have you ever identified as...?",
+    description: "Share of religious switchers who have ever identified with each religion, not just as their current or childhood faith. Mormon is the least-often-passed-through identity in the battery, at 3%.",
+    imageSrc: "/data-explorer/pew-faith-in-flux-2008/ever-identified-with.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of religious switchers who have ever identified with each religion at any point in their life. ${alt}.`,
   };
 }
 

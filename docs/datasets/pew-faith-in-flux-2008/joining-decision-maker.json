@@ -1,0 +1,26 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is respondents with a valid answer to q15, asked only of those who report a specific age at which they became their current religious identity (q14) - a subset of this 2,867-respondent recontact survey's switchers, skewed toward people who adopted CURREL past early childhood. q15 asks whether becoming CURREL was mostly their own decision or mostly decided by parents/family; don't know/refused excluded from the denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "valid_unweighted_n": 399,
+  "decision_order": [
+    "Mostly their own decision",
+    "Mostly decided by parents or family",
+    "Both/neither"
+  ],
+  "decision_pct": {
+    "Mostly their own decision": {
+      "pct": 80.77,
+      "unweighted_n": 328
+    },
+    "Mostly decided by parents or family": {
+      "pct": 17.75,
+      "unweighted_n": 65
+    },
+    "Both/neither": {
+      "pct": 1.47,
+      "unweighted_n": 6
+    }
+  }
+}
