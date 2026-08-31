@@ -67,8 +67,8 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 34,
-                title_fontsize: float = MIN.TITLE, subtitle_fontsize: float = MIN.SUBTITLE) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 36,
+                title_fontsize: float = 32, subtitle_fontsize: float = 16) -> float:
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
     title_top = 0.975
@@ -80,7 +80,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 34,
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.012
     fig.text(
         0.045, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -122,9 +122,14 @@ def render_heatmap(
 
     caption_top = draw_caption_bottom(
         fig, fonts, [], left=0.045, handle="@ithinkisam | data: Ryan Burge, Voter Study Group",
+        fontsize=16, color=INK,
     )
 
-    ax_top = subtitle_bottom - 0.025
+    # Gap widened from 0.025 (pre-rollout) to clear the color-legend's
+    # 0/50/100 tick labels, which sit just above the axes' own top edge -
+    # the bigger 16pt subtitle (up from 12.5pt) needs more clearance below
+    # it than the old gap left (2026-08-31 title/subtitle/footnote rollout).
+    ax_top = subtitle_bottom - 0.045
     ax_bottom = caption_top + 0.02
 
     ROW_LABEL_W = 0.34

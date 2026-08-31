@@ -224,6 +224,86 @@ chart per shape (12-row magnitude bar and 12-row distribution stack in
 7-series line chart in `render_pid_over_time_chart.py`) for
 clipping/overlap — all clean after the `axes_left` fix above.
 
+## Bigger, black title/subtitle/footnote are now pipeline defaults
+
+As of 2026-08-31 (same day as the row-label/outline rollout above), this
+folder also rolls out the title/subtitle/footnote readability treatment
+`scripts/pew-rls/` made its default first (see that folder's STYLE.md,
+"Bigger, black title/subtitle/footnote are now pipeline defaults") to
+every `render_*.py` in `scripts/ryan-burge/`:
+
+- **Title fontsize 26/27/28pt (or `MIN.TITLE`, 24pt) → 32pt.**
+- **Subtitle fontsize 13.5/14pt (or `MIN.SUBTITLE`, 12.5pt) → 16pt, color
+  `MUTED` → `INK`.**
+- **Footnote/caption fontsize 11.5pt (`chart_style.draw_caption_bottom`'s
+  own default) → 16pt, color `MUTED` → `INK`**, passed explicitly on every
+  `draw_caption_bottom(...)` call in this folder (`fontsize=16, color=INK`)
+  rather than changing that helper's shared default — `chart_style.py` is
+  imported by `flagship-charts/` and `state-of-theology-graphics/` too, and
+  neither had rolled this out yet as of this date (flagship-charts was
+  mid-rollout in a concurrent session), so changing the shared default
+  would have silently changed their captions as a side effect. Same
+  per-file-override approach pew-rls used, for the same reason.
+
+Every `draw_title`-shaped function in this folder (all except
+`render_pid_over_time_chart.py`, which draws its title/subtitle inline
+with no wrapping) also widened its title wrap width — 27/30 chars → 35 (36
+for `render_voter_matrices.py`, whose title/subtitle sit at the wider
+`left=0.045` margin instead of `0.065`). Chosen the same way pew-rls chose
+its own default: not a guess, but the largest wrap width where every title
+string this folder's `main()`s actually pass (all ~38 of them, across both
+margins) renders, once word-wrapped, within the canvas's real available
+width at 32pt in RobotoSlab-Bold — measured with
+`fig.text(...).get_window_extent()`, not estimated from character counts,
+since bold serif letterforms vary enough that a char-count budget isn't a
+reliable width proxy (the same lesson pew-rls's own rollout learned). No
+title in this folder needed a narrower per-chart override at that default
+— unlike pew-rls, which needed one on 7 charts — because this folder's
+longest titles (`"Slavery's legacy still disadvantages Black Americans"`,
+the smart-quoted `"These days I feel like a stranger in my own country"`)
+still fit within the chosen wrap width with a small margin to spare.
+
+`render_voter_matrices.py`'s `draw_title` also stopped reading its
+defaults from `chart_style.MIN.TITLE`/`MIN.SUBTITLE` (24pt/12.5pt, the
+shared cross-pipeline *minimum* floor, not a target) and now hardcodes
+32pt/16pt directly, matching every other file in this folder — `MIN.TITLE`
+and `MIN.SUBTITLE` stay untouched in `chart_style.py` since other
+pipelines' charts still read them as their actual (unbumped) default.
+
+### One crowding fix: `render_heatmap`'s subtitle-to-legend gap
+
+`render_voter_matrices.render_heatmap` (reused by
+`render_voter_ideas_matrices.py`) draws its color-legend's `0`/`50`/`100`
+tick labels just above the axes' own top edge, `subtitle_bottom - 0.025`
+below the subtitle's baseline. That fixed 0.025 gap was sized for the old
+12.5pt subtitle; at 16pt the subtitle's own rendered height ate most of
+it, so the legend's tick numbers visually crowded up against the subtitle
+text (worst case: `ft-political-social.png`, whose subtitle is a full
+sentence). Widened the gap to `0.045` — the fix lives on `render_heatmap`
+itself (one function, reused by both files that call it), not a caller
+override, since every heatmap in this folder shares the same layout math
+and the same subtitle-length risk. Regenerated all 12 heatmap PNGs (3 from
+`render_voter_matrices.py`, 9 from `render_voter_ideas_matrices.py`) after
+the fix and confirmed the gap is clear on the widest subtitle
+(`ft-political-social.png`) and the most-rows matrix (`idea-orgs.png`, 20
+rows).
+
+Regenerated every PNG this pipeline produces (all 39) and, beyond the
+heatmap fix above, spot-checked the widest/most-rows chart per remaining
+shape — 12-row magnitude bar and 12-row distribution stack in
+`render_cces2016_by_religion_charts.py`, 16-row stacked bar in
+`render_pid_by_gender_chart.py`, 9-row stacked bar in
+`render_voter_stranger_chart.py`, the two `render_paired_bar` charts, the
+7-series line chart in `render_pid_over_time_chart.py`, and the 9-wave
+line chart in `render_voter_ideas_longitudinal.py` — for
+title/subtitle/caption clipping or overlap: all clean. An automated
+edge-pixel scan (dark pixels touching the canvas's top/bottom/left/right
+edge) across all 39 regenerated PNGs found two pre-existing left-edge row-
+label clips in `idea-sexism.png` and `idea-trade.png` (confirmed present
+in the pre-rollout PNGs too, via `git show HEAD:...`) — unrelated to this
+rollout (row labels use `MIN.HEATMAP_HEADER`, untouched here) and left
+unfixed as out of scope.
+
 ## Regeneration
 
 All charts in this folder read committed JSON under

@@ -446,13 +446,18 @@ default 42-character wrap despite fitting the character count (RobotoSlab
 Bold's letterforms vary enough in width — an m/w/g-heavy title runs wider
 than a same-length title with more i/l's — that a character-count wrap
 budget alone isn't a reliable proxy for a title's actual rendered width).
-Rolled out to: `scripts/pew-rls/` (2026-08-31, this rollout). Pending in
-separate batches: `scripts/ryan-burge/`, `scripts/flagship-charts/`,
+Rolled out to: `scripts/pew-rls/` (2026-08-31) and `scripts/ryan-burge/`
+(2026-08-31, same day, separate batch — see `scripts/ryan-burge/STYLE.md`'s
+"Bigger, black title/subtitle/footnote are now pipeline defaults" section
+for its own file-by-file rollout, its title-wrap-width measurement, and the
+one crowding fix it needed, on `render_heatmap`'s subtitle-to-legend-tick
+gap). Pending in separate batches: `scripts/flagship-charts/`,
 `scripts/state-of-theology-graphics/` — `chart_style.draw_caption_bottom`'s
-own default fontsize/color were deliberately left unchanged (still 11.5pt/
-`MUTED`) rather than bumped to match pew-rls's new values, since those three
-other pipelines still expect the old default until their own batches land;
-each `scripts/pew-rls/*.py` caption call now passes `fontsize=16, color=INK`
+own default fontsize/color are deliberately left unchanged (still 11.5pt/
+`MUTED`) rather than bumped to match pew-rls's/ryan-burge's new values,
+since those two remaining pipelines still expect the old default until
+their own batches land; each `scripts/pew-rls/*.py` and
+`scripts/ryan-burge/*.py` caption call now passes `fontsize=16, color=INK`
 explicitly instead.
 
 ### Forms

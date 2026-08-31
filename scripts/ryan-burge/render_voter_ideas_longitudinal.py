@@ -71,8 +71,8 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
-                title_fontsize: float = 27, subtitle_fontsize: float = 14) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 35,
+                title_fontsize: float = 32, subtitle_fontsize: float = 16) -> float:
     """Returns the y-fraction where the subtitle block actually ends - see
     scripts/pew-rls/STYLE.md's "Vertical layout" section."""
     title_lines = textwrap.wrap(title, width=width)
@@ -86,7 +86,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -96,7 +96,9 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
 def draw_caption(fig, fonts, note: str) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, Voter Study Group")
+    return draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, Voter Study Group", fontsize=16, color=INK,
+    )
 
 
 def render_line_chart(

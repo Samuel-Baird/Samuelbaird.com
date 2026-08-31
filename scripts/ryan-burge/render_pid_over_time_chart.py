@@ -79,7 +79,9 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
     # bottom-anchored" section - so the axes can reclaim whatever space the
     # caption doesn't use.
-    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CES 2006-2018")
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CES 2006-2018", fontsize=16, color=INK,
+    )
     ax_bottom = caption_top + 0.03 + 0.045  # + a wave-year tick-label row
 
     AXES_LEFT, AXES_WIDTH = 0.115, 0.62
@@ -201,7 +203,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
                  fontproperties=fonts["regular"], fontsize=MIN.AXIS_LABEL, color=MUTED)
 
     # --- Title / subtitle -------------------------------------------------
-    title_fontsize = 28
+    title_fontsize = 32
     fig.text(
         0.065, 0.965, "Party ID over time, by tradition",
         fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
@@ -210,7 +212,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         0.065, 0.912,
         "Mean 7-point party ID (-3 = strong Democrat, +3 = strong Republican)\n"
         "across seven federal election cycles.",
-        fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=16, color=INK, ha="left", va="top",
     )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

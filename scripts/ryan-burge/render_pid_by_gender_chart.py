@@ -68,8 +68,8 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 30,
-                title_fontsize: float = 26, subtitle_fontsize: float = 13.5) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 35,
+                title_fontsize: float = 32, subtitle_fontsize: float = 16) -> float:
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
     title_top = 0.965
@@ -81,7 +81,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 30,
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -107,7 +107,9 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     subtitle = ("3-category party ID (Democrat/Independent/Republican,\n"
                 "leaners folded in) among Latter-day Saints, by gender and wave.")
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CES 2006-2018")
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Ryan Burge, CES 2006-2018", fontsize=16, color=INK,
+    )
     ax_top = subtitle_bottom - 0.03
     legend_bottom_y = caption_top + 0.02
     legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT  # 3 items, 1 row
