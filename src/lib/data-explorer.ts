@@ -94,6 +94,8 @@ import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
+import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
+import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
 import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
 import w143HolidayBatchData from "../../docs/datasets/pew-atp-w143-2024/holiday-batch.json";
 import w143HolidayBatch2Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-2.json";
@@ -780,7 +782,15 @@ const RAW_DATASETS: Dataset[] = [
       "groups, Holocaust knowledge, and Catholics' own beliefs about Communion — fed " +
       "Pew's 2019 \"What Americans Know About Religion\" report.",
     sourceUrl: "https://www.pewresearch.org/religion/2019/07/23/what-americans-know-about-religion/",
-    graphics: [communionBeliefGraphic()],
+    graphics: [
+      communionBeliefGraphic(),
+      w44ConstitutionGraphic(),
+      w44EasterGraphic(),
+      w44RamadanGraphic(),
+      w44RoshHashanaGraphic(),
+      w44MeccaGraphic(),
+      w44WarmthGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w70-2020",
@@ -2215,6 +2225,79 @@ function confessionFrequencyGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w162-2025/confession-frequency.png",
     width: 1080, height: 1350,
     alt: `Bar chart: how often Catholics go to confession, February 2025. ${alt}.`,
+  };
+}
+
+/** Formats a {pct} results record (insertion order) into alt text for the
+ * five W44 knowledge-quiz graphics below. */
+function w44BatchAlt(results: Record<string, { pct: number }>): string {
+  return Object.entries(results).map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`).join(", ");
+}
+
+function w44ConstitutionGraphic(): Graphic {
+  const results = w44KnowledgeBatchData.knows_constitution_no_religious_test;
+  return {
+    title: "What does the Constitution say about religion?",
+    description: "Share correctly saying the Constitution requires no religious test for federal officeholders, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-constitution-no-religious-test.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying the Constitution's no-religious-test clause, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44EasterGraphic(): Graphic {
+  const results = w44KnowledgeBatchData.knows_easter_is_resurrection;
+  return {
+    title: "What's commemorated on Easter Sunday?",
+    description: "Share correctly identifying the Resurrection of Jesus, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-easter-is-resurrection.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying the Resurrection as what Easter commemorates, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44RamadanGraphic(): Graphic {
+  const results = w44KnowledgeBatchData.knows_ramadan_is_islamic;
+  return {
+    title: "What is Ramadan?",
+    description: "Share correctly identifying Ramadan as an Islamic holy month, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-ramadan-is-islamic.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Ramadan as an Islamic holy month, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44RoshHashanaGraphic(): Graphic {
+  const results = w44KnowledgeBatchData.knows_rosh_hashana_is_new_year;
+  return {
+    title: "What is Rosh Hashana?",
+    description: "Share correctly identifying Rosh Hashana as the Jewish New Year, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-rosh-hashana-is-new-year.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Rosh Hashana as the Jewish New Year, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44MeccaGraphic(): Graphic {
+  const results = w44KnowledgeBatchData.knows_mecca_is_pilgrimage_city;
+  return {
+    title: "Where do Muslims make a pilgrimage?",
+    description: "Share correctly identifying Mecca as Islam's pilgrimage city, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-mecca-is-pilgrimage-city.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Mecca as Islam's pilgrimage city, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44WarmthGraphic(): Graphic {
+  const results = w44WarmthData.warmth_toward_mormons;
+  const alt = Object.entries(results).map(([g, r]) => `${g} ${r.mean}/100`).join(", ");
+  return {
+    title: "How warmly do Americans feel toward Mormons?",
+    description: "Mean feeling-thermometer rating toward Mormons (0=coldest, 100=warmest), by the rater's own religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/warmth-toward-mormons.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: mean feeling-thermometer rating toward Mormons, by rater's own religion, February 2019. ${alt}.`,
   };
 }
 
