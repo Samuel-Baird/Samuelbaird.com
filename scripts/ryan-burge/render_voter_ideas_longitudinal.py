@@ -223,7 +223,17 @@ def render_line_chart(
 def render_paired_bar(
     series_a: dict, series_b: dict, label_a: str, label_b: str, group_order: list[str],
     title: str, subtitle: str, note: str, out_path: Path, fonts: dict[str, fm.FontProperties],
+    axes_left: float = 0.30,
 ) -> None:
+    """axes_left: left edge of the plot axes (figure-fraction) - also the
+    right boundary the row labels are drawn leftward from. Widen it on a
+    chart-by-chart basis when a row label is long enough to clip past the
+    canvas's left edge at MIN.LEGEND size - see
+    scripts/pew-rls/render_family_household_charts.render_magnitude_bar's
+    docstring for the same fix applied there. Both charts that call this
+    function share `group_order`'s "Nothing in particular" row (20 chars),
+    long enough at MIN.LEGEND to clip past x=0 at the default axes_left
+    (2026-08-31)."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
@@ -233,7 +243,7 @@ def render_paired_bar(
     legend_bottom_y = legend_top_y - LEGEND_ROW_HEIGHT  # 2 items, 1 row
     ax_top = legend_bottom_y - 0.02
     ax_bottom = caption_top + 0.03
-    AXES_LEFT, AXES_WIDTH = 0.30, 0.64
+    AXES_LEFT, AXES_WIDTH = axes_left, 0.94 - axes_left
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
@@ -261,10 +271,10 @@ def render_paired_bar(
             ax.text(bv + max_val * 0.02, y - bar_h / 2 - 0.02, f"{bv:.0f}%", va="center", ha="left",
                      color=HONEY, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         ax.text(-max_val * 0.02, y, g, va="center", ha="right",
-                 color=INK, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
+                 color=INK, fontproperties=fonts["bold"], fontsize=MIN.LEGEND, zorder=4)
 
-    handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label=label_a),
-               mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label=label_b)]
+    handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=INK, label=label_a),
+               mpatches.Patch(facecolor=HONEY, edgecolor=INK, label=label_b)]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(AXES_LEFT, legend_top_y),
         bbox_transform=fig.transFigure,
@@ -334,6 +344,9 @@ def main() -> None:
         title="Republican presidential vote share, 2012 vs. 2016",
         subtitle="Of each tradition's baseline cohort, share who voted\nfor the Republican candidate.",
         note=cohort_note, out_path=args.vote_out, fonts=fonts,
+        # "Nothing in particular" clips past the canvas's left edge at the
+        # default axes_left - see render_paired_bar's docstring.
+        axes_left=0.40,
     )
     gaymar = data["gaymar_favor_baseline_2016"]
     render_paired_bar(
@@ -342,6 +355,9 @@ def main() -> None:
         title="Favor gay marriage, baseline vs. 2016",
         subtitle="Of each tradition's baseline cohort, share who favor\nallowing gays and lesbians to marry legally.",
         note=cohort_note, out_path=args.gaymar_out, fonts=fonts,
+        # "Nothing in particular" clips past the canvas's left edge at the
+        # default axes_left - see render_paired_bar's docstring.
+        axes_left=0.40,
     )
 
 

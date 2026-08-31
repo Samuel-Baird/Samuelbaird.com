@@ -130,7 +130,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         color = colors[cat]
         vals = [by_year_gender[k]["shares_pct"][cat] or 0 for k in keys]
         ax.barh(rows, vals, left=left, height=0.72, color=color,
-                edgecolor=PAPER, linewidth=1.2, zorder=3)
+                edgecolor=INK, linewidth=1.2, zorder=3)
         for r, v, l in zip(rows, vals, left):
             if v >= 9:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(l + v / 2, r, f"{v:.0f}%", va="center", ha="center",
@@ -141,7 +141,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     ax.margins(y=0.015)
     for tick_label, r, k in zip(ax.get_yticklabels(), rows, keys):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     # A thin divider between each year's two rows, drawn at the boundary
@@ -149,7 +149,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     for i in range(2, len(rows), 2):
         ax.axhline(i - 0.5, color="#D9D5CC", linewidth=1, zorder=1)
 
-    handles = [mpatches.Patch(facecolor=colors[c], edgecolor=PAPER, label=c) for c in category_order]
+    handles = [mpatches.Patch(facecolor=colors[c], edgecolor=INK, label=c) for c in category_order]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(AXES_LEFT, legend_top_y),
         bbox_transform=fig.transFigure,

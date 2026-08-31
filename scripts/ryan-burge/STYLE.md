@@ -125,6 +125,105 @@ docstring (`cces2016_by_religion.py`, `voter_ideas_bars.py`,
 `voter_volunteering_summary.py`, `pid_over_time.py`,
 `voter_ideas_longitudinal.py`) for population and wave specifics.
 
+## Bigger row labels and black outlines are now pipeline defaults
+
+As of 2026-08-31, this folder rolls out the same two readability
+treatments `scripts/pew-rls/` made its default the same day (see that
+folder's STYLE.md, "Bigger row labels and black outlines are now pipeline
+defaults", for the full background and rationale) to every `render_*.py`
+in `scripts/ryan-burge/`:
+
+- **Group/axis (row) labels at `MIN.LEGEND` (24pt)** instead of the
+  pipeline's old smaller floor (`MIN.AXIS_LABEL`, 12pt, or a chart's own
+  hardcoded 13-14pt).
+- **Black (`INK`) bar/segment and legend-swatch outlines** instead of the
+  old default (`PAPER`/white, invisible where a segment touches a chart's
+  outer edge or another segment).
+
+File by file:
+
+- `render_cces2016_by_religion_charts.py` — `render_magnitude_bar`'s and
+  `render_distribution_stack`'s row-label fontsize both changed from
+  `MIN.AXIS_LABEL` to `MIN.LEGEND`; `render_distribution_stack`'s stacked-
+  segment `edgecolor` and its legend-swatch `edgecolor` both changed from
+  `PAPER` to `INK`. `render_magnitude_bar`'s bars have no edge (a single
+  bar per row never touches a neighbor, same as every pew-rls magnitude
+  bar), so no edge color to change there.
+- `render_pid_by_gender_chart.py` — row-label fontsize `MIN.AXIS_LABEL` →
+  `MIN.LEGEND`; stacked-segment and legend-swatch `edgecolor` `PAPER` →
+  `INK`.
+- `render_voter_ideas_bars.py`, `render_voter_volunteering_summary_chart.py`
+  — row-label fontsize `MIN.AXIS_LABEL` → `MIN.LEGEND`. Both are plain
+  magnitude bars (no stacked segments, no legend), so no edge color to
+  change.
+- `render_voter_ideas_longitudinal.py` — `render_paired_bar`'s row label
+  (drawn via `ax.text`, not a tick label, since this shape hides the
+  y-axis) changed from `MIN.AXIS_LABEL` to `MIN.LEGEND`; its two legend
+  swatches changed `edgecolor` from `PAPER` to `INK`. The bars themselves
+  have no edge (same paired-bar convention as
+  `pew-rls/render_beliefs_charts.render_paired_bar`). `render_line_chart`
+  in this file is unchanged — see "Line charts are exempt" below.
+- `render_voter_stranger_chart.py` — row-label fontsize (hardcoded `13`) →
+  `MIN.LEGEND`; stacked-segment and legend-swatch `edgecolor` `PAPER` →
+  `INK`.
+- `render_pid_over_time_chart.py` — unchanged; see "Line charts are
+  exempt" below.
+- `render_voter_matrices.py` (`render_heatmap`, reused by
+  `render_voter_ideas_matrices.py`) — unchanged; see "Heatmaps are exempt"
+  below.
+
+### Line charts are exempt
+
+`render_pid_over_time_chart.py` and `render_voter_ideas_longitudinal.py`'s
+`render_line_chart` have no group/axis row labels in the bar-chart sense —
+their y-axis ticks are a numeric scale (party ID, a percentage), not one
+label per group, so they correctly keep `MIN.AXIS_LABEL`. The one
+per-group identifier each line carries — its end-of-line label — already
+draws at `MIN.DATA_LABEL` (13pt, bigger than the old `MIN.AXIS_LABEL`
+floor this rollout replaces elsewhere) with its own collision-avoidance
+pass (`MIN_GAP`) tuned for that size; bumping it to `MIN.LEGEND` for 7-9
+simultaneous series would collide labels against each other on the narrow
+end-of-line margin this shape reserves. Left as `MIN.DATA_LABEL`,
+unchanged by this rollout.
+
+### Heatmaps are exempt
+
+`render_heatmap`'s row/column labels already draw at their own
+purpose-built floors (`MIN.HEATMAP_HEADER`, `MIN.HEATMAP_CELL`,
+`MIN.HEATMAP_LEGEND` — see `chart_style.MIN`'s docstring: a thin legend
+strip has no room for 24pt), not the `MIN.AXIS_LABEL`/hardcoded sizes this
+rollout replaces, so there's nothing to bump. Its cell border was also
+never `PAPER` — cells already outline in the Border/Grid token (`#D9D5CC`,
+see this file's own "White cells on white paper" note above), a
+deliberate near-midpoint-cell-visibility fix that predates this rollout,
+not the invisible-white-edge problem the bar/segment treatment addresses.
+Checked and left as-is.
+
+### One crowding fix: `render_paired_bar`'s `axes_left`
+
+Both charts built on `render_voter_ideas_longitudinal.render_paired_bar`
+(`idea-vote-2012-2016.png`, `idea-gaymar-shift.png`) share the same
+9-group `group_order`, which includes a "Nothing in particular" row (20
+characters) — long enough at `MIN.LEGEND` size to clip past the canvas's
+left edge at the shape's old default `axes_left=0.30` (narrower than any
+pew-rls magnitude-bar default, since this shape's bars start closer to
+the row labels). `render_paired_bar` gained an `axes_left` parameter
+(default unchanged: 0.30) and both call sites now pass `axes_left=0.40`.
+Every other chart in this folder fits its widest label inside its
+existing default margin at `MIN.LEGEND` size without adjustment — this is
+a per-chart fix, not a pipeline-wide margin change, per pew-rls STYLE.md's
+general rule that a crowding fix belongs on the specific chart that needs
+it.
+
+Regenerated every PNG this pipeline produces and spot-checked the widest
+chart per shape (12-row magnitude bar and 12-row distribution stack in
+`render_cces2016_by_religion_charts.py`, 16-row stacked bar in
+`render_pid_by_gender_chart.py`, 9-row stacked bar in
+`render_voter_stranger_chart.py`, 23-row heatmap in
+`render_voter_matrices.py`, the two `render_paired_bar` charts, and the
+7-series line chart in `render_pid_over_time_chart.py`) for
+clipping/overlap — all clean after the `axes_left` fix above.
+
 ## Regeneration
 
 All charts in this folder read committed JSON under

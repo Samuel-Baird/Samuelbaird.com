@@ -132,7 +132,7 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
@@ -181,7 +181,7 @@ def render_distribution_stack(
     for seg_label, color, text_color in zip(seg_order, colors, text_colors):
         vals = [results[g]["shares_pct"][seg_label] for g in rows]
         ax.barh(rows, vals, left=left, height=bar_h, color=color,
-                edgecolor=PAPER, linewidth=1.2, zorder=3)
+                edgecolor=INK, linewidth=1.2, zorder=3)
         for g, v, l in zip(rows, vals, left):
             if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(l + v / 2, g, f"{v:.0f}%", va="center", ha="center",
@@ -192,10 +192,10 @@ def render_distribution_stack(
     ax.margins(y=0.05)
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
-    handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
+    handles = [mpatches.Patch(facecolor=c, edgecolor=INK, label=l)
                for l, c in zip(seg_order, colors)]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
