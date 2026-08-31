@@ -69,13 +69,15 @@ def main() -> None:
         note=CHRISTIAN_NOTE, total_n=total_n,
         out_path=OUT_DIR / "practice-attend-distribution-christian.png", fonts=fonts,
         # Requested: group (y-axis) labels the same size as the legend key,
-        # a larger full-width title, and black box outlines so the palest
-        # blue segment/legend swatch reads against the white canvas -
-        # trying all three on this one chart first before rolling out
-        # further.
+        # a larger full-width title, black box outlines so the palest blue
+        # segment/legend swatch reads against the white canvas, and
+        # smaller outer-edge buffers so the chart itself fills more of the
+        # canvas - trying all four on this one chart first before rolling
+        # out further.
         group_label_fontsize=practice_r.MIN.LEGEND,
         title_fontsize=32, title_wrap_width=42,
         box_edgecolor=practice_r.INK,
+        left_margin=0.04, top_margin=0.978, right_edge=0.965, bottom_margin=0.018,
     )
     practice_r.render_magnitude_bar(
         practice["attend_monthly_plus_either"], NARROW_ORDER,

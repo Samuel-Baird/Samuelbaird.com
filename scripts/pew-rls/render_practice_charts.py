@@ -99,6 +99,7 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
 def _draw_title(
     fig, fonts, title: str, subtitle: str,
     title_fontsize: float = 26, title_wrap_width: int = 27,
+    left_margin: float = 0.065, top_margin: float = 0.965,
 ) -> float:
     """Returns the y-fraction where the subtitle block actually ends, so
     the caller can size its axes to the real available band instead of a
@@ -111,19 +112,25 @@ def _draw_title(
     require. Override both together (a wider wrap fits more per line, so
     a taller font doesn't cost extra wrapped lines) on a chart-by-chart
     basis rather than sitewide, since a wider default would need
-    re-checking every existing title for new/different wrap points."""
+    re-checking every existing title for new/different wrap points.
+
+    left_margin/top_margin are the outer-edge buffers (fraction of the
+    9x11.25in canvas) before the title text starts - defaults match every
+    other chart in this pipeline; shrink them on a chart-by-chart basis to
+    let that chart's content fill more of the canvas, same reasoning as
+    title_wrap_width above."""
     subtitle_fontsize = 13.5
     title_lines = textwrap.wrap(title, width=title_wrap_width)
     line_spacing = title_fontsize / 650
-    title_top = 0.965
+    title_top = top_margin
     for i, line in enumerate(title_lines):
         fig.text(
-            0.065, title_top - i * line_spacing, line,
+            left_margin, title_top - i * line_spacing, line,
             fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
         )
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
-        0.065, subtitle_y, subtitle,
+        left_margin, subtitle_y, subtitle,
         fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
@@ -131,10 +138,16 @@ def _draw_title(
     return subtitle_y - subtitle_lines * subtitle_line_height
 
 
-def _draw_caption(fig, fonts, total_n: int, note: str) -> float:
+def _draw_caption(
+    fig, fonts, total_n: int, note: str,
+    left_margin: float = 0.065, bottom_margin: float = 0.030,
+) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    return draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        left=left_margin, bottom=bottom_margin,
+    )
 
 
 def render_magnitude_bar(
@@ -192,15 +205,24 @@ def render_distribution_stack(
     group_label_fontsize: float | None = None,
     title_fontsize: float = 26, title_wrap_width: int = 27,
     box_edgecolor: str = PAPER,
+    left_margin: float = 0.065, top_margin: float = 0.965,
+    right_edge: float = 0.94, bottom_margin: float = 0.030,
 ) -> None:
+    """left_margin/top_margin/right_edge/bottom_margin are the outer-edge
+    canvas buffers (figure-fraction) - see _draw_title's docstring. Shrink
+    them together on a chart-by-chart basis to let that chart's own
+    content (bars, labels, legend) fill more of the canvas; defaults match
+    every other chart in this pipeline."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering, same approach as render_magnitude_bar above, with
     # extra bottom room reserved for the legend row below the axes. Caption
     # is drawn first (bottom-anchored) so its real top edge is known.
-    subtitle_bottom = _draw_title(fig, fonts, title, subtitle, title_fontsize, title_wrap_width)
-    caption_top = _draw_caption(fig, fonts, total_n, note)
+    subtitle_bottom = _draw_title(
+        fig, fonts, title, subtitle, title_fontsize, title_wrap_width, left_margin, top_margin,
+    )
+    caption_top = _draw_caption(fig, fonts, total_n, note, left_margin, bottom_margin)
     ax_top = subtitle_bottom - 0.03
 
     n_rows = len(group_order)
@@ -216,7 +238,7 @@ def render_distribution_stack(
     colors = [ORDINAL_RAMP_7[i] for i in step_idxs]
     text_colors = [LABEL_INK_FOR_STEP_7[i] for i in step_idxs]
 
-    AXES_LEFT, AXES_WIDTH = 0.36, 0.58
+    AXES_LEFT, AXES_WIDTH = 0.36, right_edge - 0.36
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
@@ -260,7 +282,7 @@ def render_distribution_stack(
     # not to the (narrower) axes box - so a long-label legend has the full
     # canvas width to lay out in rather than clipping past the right edge.
     legend = ax.legend(
-        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        handles=handles, loc="upper left", bbox_to_anchor=(left_margin, legend_top_y),
         bbox_transform=fig.transFigure,
         ncol=legend_ncol, frameon=False, handlelength=1.6, handleheight=1.6,
         fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
