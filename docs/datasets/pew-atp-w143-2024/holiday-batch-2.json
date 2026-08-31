@@ -1,0 +1,274 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 143, fielded Feb. 13-25, 2024.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG). PRES1 items: share saying 'very important' (top box). AFTDTH: share saying 'there is definitely life after death' (top box). BELIEVE_SPRT: share answering yes. Refused excluded from each item's own denominator. Groups under 30 valid respondents omitted. Weighted by WEIGHT_W143.",
+  "total_weighted_n": 12693.000056380071,
+  "total_unweighted_n": 12693,
+  "president_strong_beliefs_important": {
+    "Protestant": {
+      "pct": 23.97,
+      "valid_unweighted_n": 4355,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 17.73,
+      "valid_unweighted_n": 2012,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 24.05,
+      "valid_unweighted_n": 173,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 22.56,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 8.71,
+      "valid_unweighted_n": 1932,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 28.92,
+      "valid_unweighted_n": 413,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 4.33,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 10.93,
+      "valid_unweighted_n": 79,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 0.51,
+      "valid_unweighted_n": 604,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 1.01,
+      "valid_unweighted_n": 730,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 7.81,
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 5.59,
+      "valid_unweighted_n": 1868,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 15.77,
+      "valid_unweighted_n": 12637,
+      "group_unweighted_n": 12693
+    }
+  },
+  "president_same_beliefs_important": {
+    "Protestant": {
+      "pct": 20.29,
+      "valid_unweighted_n": 4369,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 11.59,
+      "valid_unweighted_n": 2013,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 6.29,
+      "valid_unweighted_n": 173,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 19.5,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 2.66,
+      "valid_unweighted_n": 1934,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 19.92,
+      "valid_unweighted_n": 412,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 0.92,
+      "valid_unweighted_n": 103,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 8.46,
+      "valid_unweighted_n": 79,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 0.03,
+      "valid_unweighted_n": 604,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 0.78,
+      "valid_unweighted_n": 731,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 9.76,
+      "valid_unweighted_n": 249,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 3.98,
+      "valid_unweighted_n": 1868,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 12.16,
+      "valid_unweighted_n": 12656,
+      "group_unweighted_n": 12693
+    }
+  },
+  "definitely_life_after_death": {
+    "Protestant": {
+      "pct": 63.15,
+      "valid_unweighted_n": 4327,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 44.43,
+      "valid_unweighted_n": 1994,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 67.72,
+      "valid_unweighted_n": 172,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 28.07,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 14.98,
+      "valid_unweighted_n": 1897,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 63.13,
+      "valid_unweighted_n": 405,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 20.25,
+      "valid_unweighted_n": 99,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 32.27,
+      "valid_unweighted_n": 78,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 1.9,
+      "valid_unweighted_n": 601,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 6.47,
+      "valid_unweighted_n": 723,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 50.32,
+      "valid_unweighted_n": 239,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 22.23,
+      "valid_unweighted_n": 1836,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 43.31,
+      "valid_unweighted_n": 12491,
+      "group_unweighted_n": 12693
+    }
+  },
+  "believe_ancestor_spirits": {
+    "Protestant": {
+      "pct": 31.11,
+      "valid_unweighted_n": 4294,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 48.37,
+      "valid_unweighted_n": 1996,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 59.58,
+      "valid_unweighted_n": 171,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 49.15,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 27.93,
+      "valid_unweighted_n": 1910,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 29.41,
+      "valid_unweighted_n": 405,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 62.19,
+      "valid_unweighted_n": 100,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 48.66,
+      "valid_unweighted_n": 78,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 9.59,
+      "valid_unweighted_n": 601,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 26.23,
+      "valid_unweighted_n": 723,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 63.91,
+      "valid_unweighted_n": 241,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 41.84,
+      "valid_unweighted_n": 1831,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 37.07,
+      "valid_unweighted_n": 12470,
+      "group_unweighted_n": 12693
+    }
+  }
+}

@@ -15,6 +15,9 @@ import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
 import beliefsData from "../../docs/datasets/pew-rls-2023-24/beliefs.json";
 import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritual-experience.json";
 import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
+import holidayBatchData from "../../docs/datasets/pew-rls-2023-24/holiday-batch.json";
+import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
+import foodStorageByActivityData from "../../docs/datasets/pew-mormon-survey-2011/food-storage-by-activity.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
 import pidByGenderData from "../../docs/datasets/ryan-burge/pid-by-gender.json";
 import voterStrangerData from "../../docs/datasets/ryan-burge/voter-stranger.json";
@@ -89,6 +92,10 @@ import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
+import w143HolidayBatchData from "../../docs/datasets/pew-atp-w143-2024/holiday-batch.json";
+import w143HolidayBatch2Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-2.json";
+import w162HolidayBatchData from "../../docs/datasets/pew-atp-w162-2025/holiday-batch.json";
+import cathessentData from "../../docs/datasets/pew-atp-w162-2025/cathessent.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
 import renewalistShareData from "../../docs/datasets/pew-10-country-religion-2007/renewalist-share.json";
 import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-religion-2007/latino-religious-converts.json";
@@ -156,6 +163,10 @@ const KIDACT_GROUP_ORDER = [
   "Jehovah's Witness", "Other religions",
   "Religiously affiliated average",
 ];
+
+/** Group order for the seven holiday-batch graphics, matching
+ * holiday-batch.json's own group_order (scripts/pew-rls/holiday_batch.py). */
+const HOLIDAY_BATCH_ORDER = holidayBatchData.group_order;
 
 /** Group order for the six "Practice" items whose population is every
  * religiously affiliated tradition individually (not lumped), matching
@@ -459,6 +470,13 @@ const RAW_DATASETS: Dataset[] = [
       pewScimpactGraphic(),
       pewVol12Graphic(),
       pewVol12ChristianGraphic(),
+      pewWorksForPayGraphic(),
+      pewHappinessGraphic(),
+      pewHispanicShareGraphic(),
+      pewChristianNationGraphic(),
+      pewStayHomeParentGraphic(),
+      pewReligiousSymbolsGraphic(),
+      pewSchoolPrayerGraphic(),
     ],
   },
   {
@@ -486,6 +504,7 @@ const RAW_DATASETS: Dataset[] = [
       cces2016ProlifeGraphic(),
       cces2016GaymGraphic(),
       cces2016AttendGraphic(),
+      cces2016UnionGraphic(),
     ],
   },
   {
@@ -579,6 +598,8 @@ const RAW_DATASETS: Dataset[] = [
       tithingByActivityGraphic(),
       missionTitheByConvertGraphic(),
       presidentReadinessGraphic(),
+      polygamyMoralityGraphic(),
+      foodStorageByActivityGraphic(),
     ],
   },
   {
@@ -1008,7 +1029,17 @@ const RAW_DATASETS: Dataset[] = [
       "(Latter-day Saints coded 3, \"Mormon\"). It fed a wide slate of 2024-25 Pew releases on " +
       "religion, politics, and the Israel-Hamas war.",
     sourceUrl: "https://www.pewresearch.org/our-methods/u-s-surveys/american-trends-panel/",
-    graphics: [religiousMinorityGraphic()],
+    graphics: [
+      religiousMinorityGraphic(),
+      w143FastsGraphic(),
+      w143CandlesGraphic(),
+      w143DiscrimMuslimsGraphic(),
+      w143DiscrimJewsGraphic(),
+      w143PresStrongBeliefsGraphic(),
+      w143PresSameBeliefsGraphic(),
+      w143AfterlifeGraphic(),
+      w143AncestorSpiritsGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w162-2025",
@@ -1025,7 +1056,7 @@ const RAW_DATASETS: Dataset[] = [
       "instead to break out Latter-day Saints. Fed Pew's October 2025 report on religion's " +
       "growing perceived influence in American life.",
     sourceUrl: "https://www.pewresearch.org/religion/2025/10/20/growing-share-of-us-adults-say-religion-is-gaining-influence-in-american-life/",
-    graphics: [religiousConflictGraphic()],
+    graphics: [religiousConflictGraphic(), devotionToSaintsGraphic(), cathessentGraphic()],
   },
   {
     slug: "pew-10-country-religion-2007",
@@ -1260,6 +1291,34 @@ function tithingByActivityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/tithing-by-activity.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons paying a full tithe, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function polygamyMoralityGraphic(): Graphic {
+  const { item_order: order, polygamy_view_pct: results } = polygamyMoralityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do Mormons see polygamy as moral?",
+    description: "Mormons' own view of polygamy - having more than one wife.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/polygamy-morality.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: Mormons' own view of polygamy's morality. ${alt}.`,
+  };
+}
+
+function foodStorageByActivityGraphic(): Graphic {
+  const { activity_order: order, keeps_food_storage_yes: results } = foodStorageByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who keeps a food storage supply?",
+    description: "Share of Mormons who keep a supply of food in storage for emergencies, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/food-storage-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons keeping a food storage supply, by activity level in the Church. ${alt}.`,
   };
 }
 
@@ -1965,6 +2024,100 @@ function beyondThisWorldGraphic(): Graphic {
   };
 }
 
+/** Formats a {pct} results record (insertion order) into alt text for the
+ * four W143 holiday-batch graphics below. */
+function w143BatchAlt(results: Record<string, { pct: number }>): string {
+  return Object.entries(results).map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`).join(", ");
+}
+
+function w143FastsGraphic(): Graphic {
+  const results = w143HolidayBatchData.fasts_for_holy_times;
+  return {
+    title: "Who fasts for holy times?",
+    description: "Share who fast for certain periods during holy times, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/fasts-for-holy-times.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who fast for holy times, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143CandlesGraphic(): Graphic {
+  const results = w143HolidayBatchData.lights_candles_incense;
+  return {
+    title: "Who lights candles or incense?",
+    description: "Share who light incense or candles for spiritual or religious reasons, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/lights-candles-incense.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who light candles or incense for spiritual/religious reasons, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143DiscrimMuslimsGraphic(): Graphic {
+  const results = w143HolidayBatchData.discrimination_against_muslims;
+  return {
+    title: "Discrimination against Muslims?",
+    description: "Share saying Muslims face \"a lot\" of discrimination in society today, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/discrimination-against-muslims.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying Muslims face a lot of discrimination today, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143DiscrimJewsGraphic(): Graphic {
+  const results = w143HolidayBatchData.discrimination_against_jews;
+  return {
+    title: "Discrimination against Jewish Americans?",
+    description: "Share saying Jewish people face \"a lot\" of discrimination in society today, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/discrimination-against-jews.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying Jewish people face a lot of discrimination today, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143PresStrongBeliefsGraphic(): Graphic {
+  const results = w143HolidayBatch2Data.president_strong_beliefs_important;
+  return {
+    title: "Want a president with strong religious beliefs?",
+    description: "Share saying it's very important to have a president with strong religious beliefs, even if different from their own, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/president-strong-beliefs.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying it's very important to have a president with strong religious beliefs, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143PresSameBeliefsGraphic(): Graphic {
+  const results = w143HolidayBatch2Data.president_same_beliefs_important;
+  return {
+    title: "Want a president who shares your beliefs?",
+    description: "Share saying it's very important to have a president whose religious beliefs are the same as their own, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/president-same-beliefs.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying it's very important to have a president who shares their own religious beliefs, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143AfterlifeGraphic(): Graphic {
+  const results = w143HolidayBatch2Data.definitely_life_after_death;
+  return {
+    title: "Is there definitely life after death?",
+    description: "Share saying there is definitely life after death, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/definitely-life-after-death.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying there is definitely life after death, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143AncestorSpiritsGraphic(): Graphic {
+  const results = w143HolidayBatch2Data.believe_ancestor_spirits;
+  return {
+    title: "Can ancestors' spirits help or harm you?",
+    description: "Share who believe the spirits of ancestors can help or harm them, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/believe-ancestor-spirits.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe ancestors' spirits can help or harm them, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
 function religiousMinorityGraphic(): Graphic {
   const { group_order: order, religious_minority: results } = religiousMinorityData;
   const alt = order
@@ -1990,6 +2143,32 @@ function religiousConflictGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w162-2025/religious-conflict.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share feeling at least some conflict between their own religious beliefs and mainstream American culture, by present religion, February 2025. ${alt}.`,
+  };
+}
+
+function cathessentGraphic(): Graphic {
+  const { item_order: order, essential_pct: results } = cathessentData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "What's essential to being Catholic?",
+    description: "Share of Catholics calling each item essential to what being Catholic means to them, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/cathessent.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Catholics calling each item essential to being Catholic, February 2025. ${alt}.`,
+  };
+}
+
+function devotionToSaintsGraphic(): Graphic {
+  const results = w162HolidayBatchData.devotion_to_saints_weekly_plus;
+  const alt = Object.entries(results).map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`).join(", ");
+  return {
+    title: "Who practices devotion to saints?",
+    description: "Share practicing devotion to the Virgin Mary or a favorite saint at least weekly, by religion, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/devotion-to-saints.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share practicing devotion to the Virgin Mary or a favorite saint at least weekly, by religion, February 2025. ${alt}.`,
   };
 }
 
@@ -2267,6 +2446,94 @@ function pctAlt(
   results: Record<string, { pct: number }>,
 ): string {
   return order.map((group) => `${group} ${results[group]!.pct.toFixed(0)}%`).join(", ");
+}
+
+/**
+ * Six holiday-calendar-driven "by tradition" graphics (Labor Day,
+ * happiness/mental-health days, Hispanic Heritage Month, Constitution Day
+ * x2, Family Proclamation anniversary, Religious Freedom/Human Rights Day)
+ * built from holiday-batch.json (scripts/pew-rls/holiday_batch.py),
+ * rendered by scripts/pew-rls/render_holiday_batch.py.
+ */
+function pewWorksForPayGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.works_for_pay);
+  return {
+    title: "Who works full or part time for pay?",
+    description: "Share who currently work for pay, by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/labor-day-works-for-pay.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share who work full or part time for pay, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewHappinessGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.very_happy);
+  return {
+    title: "Who says they're very happy with life?",
+    description: "Share saying they are \"very happy\" with life these days, by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/happiness-by-tradition.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share saying they are very happy with life, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewHispanicShareGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.hispanic);
+  return {
+    title: "Who is Hispanic, Latino, or Spanish?",
+    description: "Share of each religious tradition identifying as Hispanic, Latino, or Spanish.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/hispanic-share-by-tradition.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, Hispanic/Latino/Spanish share, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewChristianNationGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.christian_nation_favor);
+  return {
+    title: "Should the U.S. be declared a Christian nation?",
+    description: "Share favoring the federal government declaring the U.S. a Christian nation, by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/christian-nation-favor.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share favoring declaring the U.S. a Christian nation, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewStayHomeParentGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.stay_home_parent_better);
+  return {
+    title: "Is a stay-at-home parent better for kids?",
+    description:
+      "Share saying children are better off when a parent stays home to focus on family, " +
+      "rather than both parents working outside the home, by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/stay-home-parent-view.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share saying kids are better off with a stay-at-home parent, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewReligiousSymbolsGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.religious_symbols_favor);
+  return {
+    title: "Religious symbols on public property?",
+    description: "Share favoring cities and towns placing religious symbols on public property, by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/religious-symbols-public-property.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share favoring religious symbols on public property, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewSchoolPrayerGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, holidayBatchData.school_prayer_favor);
+  return {
+    title: "Teacher-led prayer in public schools?",
+    description:
+      "Share favoring public school teachers leading classes in prayers that refer to Jesus, " +
+      "by religious tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/school-prayer-jesus-favor.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share favoring teacher-led Jesus-referencing school prayer, by religious tradition: ${alt}.`,
+  };
 }
 
 /**
@@ -3185,6 +3452,23 @@ function cces2016AttendGraphic(): Graphic {
     height: 1350,
     credit: "via Ryan Burge",
     alt: `100%-stacked bar chart, religious attendance frequency by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Currently a labor union member - Labor Day hook. Same population, data
+ * source, and render script as the graphics above.
+ */
+function cces2016UnionGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016Data.union_currently);
+  return {
+    title: "Who is currently a labor union member?",
+    description: "Share who are currently a member of a labor union, by religion.",
+    imageSrc: "/data-explorer/cces-2016/union.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share currently a labor union member, by religion: ${alt}.`,
   };
 }
 

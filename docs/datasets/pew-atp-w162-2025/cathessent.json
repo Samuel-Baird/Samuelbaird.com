@@ -1,0 +1,50 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 162, fielded Feb. 3-9, 2025.",
+  "method": "Population is Catholic respondents (RELIG_W162 == 2, \"Roman Catholic\"). Each item's own don't know/refused excluded from its own denominator; \"essential\" is the top of a three-point scale (essential, important but not essential, not important). Weighted by WEIGHT_W162.",
+  "total_weighted_n": 1909.8297578417094,
+  "total_unweighted_n": 1787,
+  "item_order": [
+    "A relationship with Jesus",
+    "Devotion to the Virgin Mary",
+    "Helping the poor and needy",
+    "Receiving the Eucharist",
+    "The pope's leadership",
+    "Opposing abortion",
+    "Caring for immigrants",
+    "Opposing the death penalty"
+  ],
+  "essential_pct": {
+    "Receiving the Eucharist": {
+      "pct": 46.84,
+      "valid_unweighted_n": 1767
+    },
+    "A relationship with Jesus": {
+      "pct": 70.45,
+      "valid_unweighted_n": 1768
+    },
+    "Devotion to the Virgin Mary": {
+      "pct": 50.24,
+      "valid_unweighted_n": 1768
+    },
+    "The pope's leadership": {
+      "pct": 33.42,
+      "valid_unweighted_n": 1758
+    },
+    "Helping the poor and needy": {
+      "pct": 47.48,
+      "valid_unweighted_n": 1773
+    },
+    "Opposing abortion": {
+      "pct": 32.88,
+      "valid_unweighted_n": 1762
+    },
+    "Caring for immigrants": {
+      "pct": 30.61,
+      "valid_unweighted_n": 1769
+    },
+    "Opposing the death penalty": {
+      "pct": 22.64,
+      "valid_unweighted_n": 1764
+    }
+  }
+}

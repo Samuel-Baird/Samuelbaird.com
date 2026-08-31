@@ -1,0 +1,30 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design). Don't know/refused excluded from the denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4047.2614735013194,
+  "total_unweighted_n": 1011,
+  "item_order": [
+    "Morally wrong",
+    "Not a moral issue",
+    "Morally acceptable",
+    "Depends on the situation"
+  ],
+  "polygamy_view_pct": {
+    "Morally wrong": {
+      "pct": 86.28,
+      "valid_unweighted_n": 868
+    },
+    "Not a moral issue": {
+      "pct": 10.95,
+      "valid_unweighted_n": 117
+    },
+    "Morally acceptable": {
+      "pct": 1.81,
+      "valid_unweighted_n": 17
+    },
+    "Depends on the situation": {
+      "pct": 0.96,
+      "valid_unweighted_n": 9
+    }
+  }
+}

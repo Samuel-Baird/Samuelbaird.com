@@ -1,0 +1,125 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 162, fielded Feb. 3-9, 2025.",
+  "method": "Population is all respondents, grouped by religious affiliation (RELIG_W162, this wave's own backcoded item - no F_RELTRAD/F_RELIG frame variable on this wave). RELIGCONFLICT: a great deal + some conflict (top two box); refused excluded. PRACTICEA_SAINTS: daily + weekly (top two box); refused excluded. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W162 variable.",
+  "total_weighted_n": 9544.000199450762,
+  "total_unweighted_n": 9544,
+  "religion_culture_conflict": {
+    "Protestant": {
+      "pct": 66.78,
+      "valid_unweighted_n": 4017,
+      "group_unweighted_n": 4037
+    },
+    "Catholic": {
+      "pct": 54.89,
+      "valid_unweighted_n": 1786,
+      "group_unweighted_n": 1787
+    },
+    "Mormon": {
+      "pct": 78.4,
+      "valid_unweighted_n": 135,
+      "group_unweighted_n": 135
+    },
+    "Orthodox Christian": {
+      "pct": 68.15,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 44
+    },
+    "Jewish": {
+      "pct": 62.21,
+      "valid_unweighted_n": 388,
+      "group_unweighted_n": 390
+    },
+    "Muslim": {
+      "pct": 69.56,
+      "valid_unweighted_n": 123,
+      "group_unweighted_n": 123
+    },
+    "Buddhist": {
+      "pct": 38.01,
+      "valid_unweighted_n": 89,
+      "group_unweighted_n": 89
+    },
+    "Hindu": {
+      "pct": 53.76,
+      "valid_unweighted_n": 65,
+      "group_unweighted_n": 66
+    },
+    "Atheist": {
+      "pct": 61.04,
+      "valid_unweighted_n": 603,
+      "group_unweighted_n": 609
+    },
+    "Agnostic": {
+      "pct": 48.58,
+      "valid_unweighted_n": 710,
+      "group_unweighted_n": 713
+    },
+    "Other": {
+      "pct": 59.34,
+      "valid_unweighted_n": 260,
+      "group_unweighted_n": 262
+    },
+    "Nothing in particular": {
+      "pct": 37.52,
+      "valid_unweighted_n": 1246,
+      "group_unweighted_n": 1261
+    },
+    "U.S. adults": {
+      "pct": 58.15,
+      "valid_unweighted_n": 9488,
+      "group_unweighted_n": 9544
+    }
+  },
+  "devotion_to_saints_weekly_plus": {
+    "Protestant": {
+      "pct": 4.24,
+      "valid_unweighted_n": 1048,
+      "group_unweighted_n": 4037
+    },
+    "Catholic": {
+      "pct": 26.56,
+      "valid_unweighted_n": 1776,
+      "group_unweighted_n": 1787
+    },
+    "Mormon": {
+      "pct": 25.08,
+      "valid_unweighted_n": 35,
+      "group_unweighted_n": 135
+    },
+    "Jewish": {
+      "pct": 31.49,
+      "valid_unweighted_n": 55,
+      "group_unweighted_n": 390
+    },
+    "Buddhist": {
+      "pct": 0.0,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 89
+    },
+    "Atheist": {
+      "pct": 0.59,
+      "valid_unweighted_n": 260,
+      "group_unweighted_n": 609
+    },
+    "Agnostic": {
+      "pct": 0.69,
+      "valid_unweighted_n": 339,
+      "group_unweighted_n": 713
+    },
+    "Other": {
+      "pct": 5.16,
+      "valid_unweighted_n": 107,
+      "group_unweighted_n": 262
+    },
+    "Nothing in particular": {
+      "pct": 4.06,
+      "valid_unweighted_n": 549,
+      "group_unweighted_n": 1261
+    },
+    "U.S. adults": {
+      "pct": 14.25,
+      "valid_unweighted_n": 4253,
+      "group_unweighted_n": 9544
+    }
+  }
+}

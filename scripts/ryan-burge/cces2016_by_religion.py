@@ -51,7 +51,9 @@ ATTEND_ORDER = list(ATTEND_LABELS.values())
 ATTEND_DK = 7
 
 USECOLS = ["religion", "pathway", "border", "dreamer", "deport",
-           "prochoice", "prolife", "gaym", "attend"]
+           "prochoice", "prolife", "gaym", "attend", "union"]
+
+UNION_CURRENTLY = 1
 
 
 def group_masks(religion: np.ndarray) -> dict[str, np.ndarray]:
@@ -98,6 +100,7 @@ def main():
     gaym_results = {l: binary_share(df["gaym"].to_numpy(), m, FAVOR, set()) for l, m in masks.items()}
     attend_results = {l: distribution(df["attend"].to_numpy(), m, ATTEND_LABELS, ATTEND_ORDER, ATTEND_DK)
                        for l, m in masks.items()}
+    union_results = {l: binary_share(df["union"].to_numpy(), m, UNION_CURRENTLY, set()) for l, m in masks.items()}
 
     out = {
         "source": "Ryan Burge (github.com/ryanburge), CCES 2016 common content extract "
@@ -119,6 +122,7 @@ def main():
         "gaym_favor": gaym_results,
         "attend_distribution": attend_results,
         "attend_order": ATTEND_ORDER,
+        "union_currently": union_results,
     }
     with open("docs/datasets/ryan-burge/cces2016-by-religion.json", "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
@@ -142,6 +146,7 @@ def main():
     show("Make abortion illegal, support", prolife_results)
     show("Favor same-sex marriage", gaym_results)
     show("Attendance distribution", attend_results)
+    show("Currently a labor union member", union_results)
 
     print("\nWrote docs/datasets/ryan-burge/cces2016-by-religion.json")
 

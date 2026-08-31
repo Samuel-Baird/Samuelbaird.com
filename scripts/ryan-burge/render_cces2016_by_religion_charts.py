@@ -225,6 +225,7 @@ def main() -> None:
     ap.add_argument("--prolife-out", type=Path, required=True)
     ap.add_argument("--gaym-out", type=Path, required=True)
     ap.add_argument("--attend-out", type=Path, required=True)
+    ap.add_argument("--union-out", type=Path, required=True)
     ap.add_argument("--data", type=Path, default=DEFAULT_DATA_JSON)
     ap.add_argument("--fonts-dir", type=Path, default=DEFAULT_FONTS_DIR)
     args = ap.parse_args()
@@ -282,6 +283,12 @@ def main() -> None:
         title="Religious attendance, full distribution",
         subtitle="How often each religion group attends religious\nservices.",
         note=note, total_n=total_n, out_path=args.attend_out, fonts=fonts,
+    )
+    render_magnitude_bar(
+        data["union_currently"],
+        title="Who is currently a labor union member?",
+        subtitle="Share who are currently a member of a labor union.",
+        note=note, total_n=total_n, out_path=args.union_out, fonts=fonts,
     )
 
 

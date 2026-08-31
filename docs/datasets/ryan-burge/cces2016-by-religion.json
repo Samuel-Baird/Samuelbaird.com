@@ -590,5 +590,67 @@
     "A few times a year",
     "Seldom",
     "Never"
-  ]
+  ],
+  "union_currently": {
+    "Protestant": {
+      "pct": 6.51,
+      "valid_n": 22888,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 10.3,
+      "valid_n": 13880,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 7.93,
+      "valid_n": 870,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 11.05,
+      "valid_n": 362,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 8.86,
+      "valid_n": 1546,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 14.45,
+      "valid_n": 436,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 6.76,
+      "valid_n": 621,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 4.68,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 7.45,
+      "valid_n": 4025,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 6.31,
+      "valid_n": 3993,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 6.4,
+      "valid_n": 11986,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 5.44,
+      "valid_n": 3621,
+      "group_n": 3621
+    }
+  }
 }
