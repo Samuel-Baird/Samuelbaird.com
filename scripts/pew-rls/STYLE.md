@@ -229,6 +229,79 @@ caption doesn't need — the plot band now genuinely grows when the caption
 is short, which is the point of moving the caption to a bottom anchor in
 the first place.
 
+## Bigger row labels and black outlines are now pipeline defaults
+
+`render_christian_only_variants.py`'s attendance-distribution chart
+(`practice-attend-distribution-christian.png`) originally introduced two
+readability treatments as an *optional override*, passed explicitly to
+`render_practice_charts.render_distribution_stack` alongside that one
+chart's own larger title and tighter margins:
+
+- **Group/axis (row) labels at `MIN.LEGEND` (24pt)** instead of the
+  pipeline's old smaller floor (`MIN.AXIS_LABEL`, 12pt, or a chart's own
+  hardcoded 14-15pt) - legends were already bumped to `MIN.LEGEND` for the
+  same 1/3-scale-on-a-phone reason (see `MIN`'s own docstring in
+  `chart_style.py`); row labels are read at the same distance as a legend
+  key, so there's no reason they should be smaller.
+- **Black (`INK`) bar/segment and legend-swatch outlines** instead of the
+  pipeline's old default (`PAPER`/white, invisible at a chart's outer edge
+  and on the palest steps of the ordinal ramp against the white canvas).
+
+As of 2026-08-31, both are the *default* everywhere in this pipeline, not
+an override - every `render_*.py` in `scripts/pew-rls/` (except
+`render_christian_only_variants.py`, which only calls the others) now
+draws every group/axis row label at `MIN.LEGEND` and every bar/segment
+patch and legend swatch with an `INK` edge, unconditionally:
+
+- `render_practice_charts.py` - `render_magnitude_bar`'s row-label
+  fontsize is now unconditionally `MIN.LEGEND` (dropping the old
+  `n_rows > 8` branch); `render_distribution_stack`'s `box_edgecolor`
+  parameter default changed from `PAPER` to `INK`, and its
+  `group_label_fontsize` parameter's `None` fallback changed from
+  `MIN.AXIS_LABEL`/14 to `MIN.LEGEND`. The parameters themselves are
+  unchanged - `render_christian_only_variants.py` still passes
+  `box_edgecolor=practice_r.INK` and `group_label_fontsize=practice_r.MIN.LEGEND`
+  explicitly to its one reference chart; those calls are now redundant
+  with the new defaults but harmless, and were left in place rather than
+  stripped, so that chart's own explicit intent stays visible at the call
+  site.
+- `render_beliefs_charts.py` - both `render_magnitude_bar`'s row-label
+  fontsize and `render_paired_bar`'s row-label fontsize (drawn via
+  `ax.text`, not a tick label, since that shape hides the y-axis) are now
+  `MIN.LEGEND`; `render_paired_bar`'s two legend swatches now use
+  `edgecolor=INK` instead of `PAPER`.
+- `render_public_life_charts.py` - row-label fontsize is unconditionally
+  `MIN.LEGEND` (same `n_rows > 8` branch dropped as practice's magnitude
+  bar). No stacked segments or legend swatches in this file's one shape,
+  so no edge color to change.
+- `render_family_household_charts.py`, `render_spiritual_experience_charts.py`
+  - row-label fontsize changed from a hardcoded 14pt to `MIN.LEGEND`
+  (both files needed a fresh `MIN` import from `chart_style`).
+- `render_childhood_formation_charts.py`, `render_birth_decade_chart.py`,
+  `render_switching_generalized_chart.py` - row-label fontsize changed
+  from a hardcoded 15pt to `MIN.LEGEND`; every `edgecolor=PAPER` on a
+  stacked-bar segment or legend swatch changed to `INK`.
+
+**Two charts needed a widened left margin as a result.** `MIN.LEGEND` at
+24pt roughly doubles the pixel width of the longest row labels in this
+pipeline; the site-wide vertical-centering contract above already re-flows
+each chart's *vertical* band automatically, but the *horizontal* left
+margin each magnitude-bar function reserves for row labels was still a
+fixed constant. Two charts have a group whose label is long enough at
+24pt to clip past the canvas's left edge (x=0) at that fixed constant:
+`family_household.py`'s `KIDACT_ORDER` and `public_life.py`'s
+`CHRISTIAN_PLUS_OTHER_ORDER`, both of which include a
+"Religiously affiliated average" row (30 characters - longer than any
+other label in this pipeline). Both `render_magnitude_bar` functions
+gained an `axes_left` parameter (default unchanged: 0.34 for
+family-household, 0.36 for public-life) and their one call site with that
+row (`family-kidact-prayer.png`, `public-humntr.png`) now passes
+`axes_left=0.46` to reserve more room. Every other chart in this pipeline
+fits its widest label inside the existing default margin at `MIN.LEGEND`
+size without adjustment - this is a per-chart fix, not a pipeline-wide
+margin change, per this doc's general rule that a crowding fix belongs on
+the specific chart that needs it.
+
 ## Title qualifiers render smaller than the primary title
 
 `render_christian_only_variants.py` builds titles like "Attendance

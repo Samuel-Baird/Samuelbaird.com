@@ -32,7 +32,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -109,7 +109,16 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
 def render_magnitude_bar(
     results: dict, group_order: list[str], title: str, subtitle: str, note: str,
     total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
+    axes_left: float = 0.34,
 ) -> None:
+    """axes_left: left edge of the plot axes (figure-fraction) - also the
+    right boundary the row (y-axis tick) labels are drawn leftward from.
+    Default matches every chart in this pipeline; widen it on a chart-by-
+    chart basis when a row label is long enough to clip past the canvas's
+    left edge at MIN.LEGEND size - see STYLE.md's "Vertical layout" section
+    for the general pattern this follows. KIDACT_ORDER's "Religiously
+    affiliated average" row needed this (2026-08-31): at the default 0.34
+    that label's text ran past x=0 and was clipped by the figure boundary."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
@@ -121,7 +130,7 @@ def render_magnitude_bar(
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035
 
-    AXES_LEFT, AXES_WIDTH = 0.34, 0.60
+    AXES_LEFT, AXES_WIDTH = axes_left, 0.94 - axes_left
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
@@ -140,7 +149,7 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(14)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
@@ -183,6 +192,10 @@ def main() -> None:
         total_n=data["total_unweighted_n"],
         out_path=args.kidact_out,
         fonts=fonts,
+        # KIDACT_ORDER's "Religiously affiliated average" row is long enough
+        # at MIN.LEGEND size to clip past the canvas's left edge at the
+        # default axes_left - see render_magnitude_bar's docstring.
+        axes_left=0.46,
     )
 
 

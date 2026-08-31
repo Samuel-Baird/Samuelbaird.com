@@ -125,7 +125,7 @@ def render_panel(
     for key, label, color in zip(seg_keys, seg_labels, seg_colors):
         vals = [switching[g][key] for g in rows]
         ax.barh(rows, vals, left=left, height=bar_height, color=color,
-                edgecolor=PAPER, linewidth=1.5, zorder=3)
+                edgecolor=INK, linewidth=1.5, zorder=3)
         for g, v, l in zip(rows, vals, left):
             if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(
@@ -139,10 +139,10 @@ def render_panel(
 
     for tick_label in ax.get_yticklabels():
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(15)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
-    handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l) for l, c in zip(seg_labels, seg_colors)]
+    handles = [mpatches.Patch(facecolor=c, edgecolor=INK, label=l) for l, c in zip(seg_labels, seg_colors)]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(AXES_LEFT, legend_top_y),
         bbox_transform=fig.transFigure,

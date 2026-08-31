@@ -155,7 +155,7 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
@@ -217,10 +217,10 @@ def render_paired_bar(
         ax.text(hl + max_val * 0.02, y - bar_h / 2 - 0.02, f"{hl:.0f}%", va="center", ha="left",
                  color=HONEY, fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL, zorder=4)
         ax.text(-max_val * 0.02, y, g, va="center", ha="right",
-                 color=INK, fontproperties=fonts["bold"], fontsize=MIN.AXIS_LABEL, zorder=4)
+                 color=INK, fontproperties=fonts["bold"], fontsize=MIN.LEGEND, zorder=4)
 
-    handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=PAPER, label="Heaven"),
-               mpatches.Patch(facecolor=HONEY, edgecolor=PAPER, label="Hell")]
+    handles = [mpatches.Patch(facecolor=ACCENT, edgecolor=INK, label="Heaven"),
+               mpatches.Patch(facecolor=HONEY, edgecolor=INK, label="Hell")]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(0.36, legend_top_y),
         bbox_transform=fig.transFigure,

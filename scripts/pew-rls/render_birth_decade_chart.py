@@ -118,7 +118,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
         text_color = LABEL_INK_FOR_STEP[step]
         vals = [distribution[g]["shares_pct"][decade] for g in rows]
         ax.barh(rows, vals, left=left, height=bar_height, color=color,
-                edgecolor=PAPER, linewidth=1.5, zorder=3)
+                edgecolor=INK, linewidth=1.5, zorder=3)
         for g, v, l in zip(rows, vals, left):
             if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(
@@ -132,11 +132,11 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
 
     for tick_label in ax.get_yticklabels():
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(15)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     handles = [
-        mpatches.Patch(facecolor=c, edgecolor=PAPER, label=d)
+        mpatches.Patch(facecolor=c, edgecolor=INK, label=d)
         for d, c in zip(decade_order, ORDINAL_RAMP)
     ]
     legend = ax.legend(

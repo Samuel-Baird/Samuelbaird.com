@@ -108,7 +108,15 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 27,
 def render_magnitude_bar(
     results: dict, group_order: list[str], title: str, subtitle: str, note: str,
     total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
+    axes_left: float = 0.36,
 ) -> None:
+    """axes_left: left edge of the plot axes (figure-fraction) - also the
+    right boundary the row (y-axis tick) labels are drawn leftward from.
+    Widen it on a chart-by-chart basis when a row label is long enough to
+    clip past the canvas's left edge at MIN.LEGEND size - see
+    render_family_household_charts.render_magnitude_bar's docstring for the
+    same fix applied there. CHRISTIAN_PLUS_OTHER_ORDER's "Religiously
+    affiliated average" row needed this (2026-08-31)."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
@@ -121,7 +129,7 @@ def render_magnitude_bar(
     ax_bottom = caption_top + 0.03
 
     n_rows = len(group_order)
-    AXES_LEFT, AXES_WIDTH = 0.36, 0.58
+    AXES_LEFT, AXES_WIDTH = axes_left, 0.94 - axes_left
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
     ax.set_facecolor(PAPER)
     ax.set_xticks([])
@@ -141,7 +149,7 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
@@ -208,6 +216,10 @@ def main() -> None:
         note="Population: Christian + other religions, filtered to respondents who believe "
              "in God (GOD=Yes); cutpoint is \"Completely\" alone (top box).",
         total_n=total_n, out_path=args.humntr_out, fonts=fonts,
+        # CHRISTIAN_PLUS_OTHER_ORDER's "Religiously affiliated average" row
+        # clips past the canvas's left edge at the default axes_left - see
+        # render_magnitude_bar's docstring.
+        axes_left=0.46,
     )
     render_magnitude_bar(
         data["relimpact_more_good"], WIDEST_ORDER,

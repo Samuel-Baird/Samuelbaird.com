@@ -28,7 +28,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -124,7 +124,7 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(14)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):

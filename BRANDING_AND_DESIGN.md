@@ -362,6 +362,25 @@ The canonical implementation is `GROUP_COLORS`/`GROUP_ALIASES`/
 `color_for_group` in `scripts/chart_style.py`; see `scripts/pew-rls/STYLE.md`'s
 "Magnitude bar (per-group identity color)" section for a worked example.
 
+**Row labels read at legend size; bar/segment/legend-swatch outlines are
+black — pew-rls default as of 2026-08-31.** Every group/axis (row) label on
+a `scripts/pew-rls/` chart draws at `MIN.LEGEND` (24pt, the same floor
+already used for legend text — see `MIN`'s docstring in
+`scripts/chart_style.py`), not the pipeline's older, smaller axis-label
+floor. Every bar/segment patch and legend swatch on a `scripts/pew-rls/`
+chart outlines in `INK` (near-black) rather than `PAPER` (white) —
+`PAPER` is invisible at a chart's own outer edge and on the palest steps
+of an ordinal ramp against the white canvas. Both started as an *optional*
+override on one chart (`render_christian_only_variants.py`'s attendance-
+distribution chart) and are now this pipeline's *default* everywhere;
+see `scripts/pew-rls/STYLE.md`'s "Bigger row labels and black outlines
+are now pipeline defaults" section for the full file-by-file rollout and
+the one crowding fix (`axes_left`) it required on two charts with an
+unusually long row label. This is a `scripts/pew-rls/` rule specifically,
+not yet a site-wide one — `scripts/ryan-burge/`, `scripts/flagship-charts/`,
+and `scripts/state-of-theology-graphics/` still use the older sizing/edge
+defaults and are expected to roll out the same change separately.
+
 **Title qualifiers render smaller than the primary title.** A trailing
 parenthetical qualifier on a chart title — e.g. "Attendance frequency,
 full distribution (Christian only)" — renders on its own line at roughly
