@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
 import { DATASETS, categorySlug, graphicId } from "@/lib/data-explorer";
+import { getGraphicPostMap, isPublished } from "@/lib/graphic-posts";
 import { STUDY_GRAPHICS } from "@/lib/study-graphics";
 
 const BASE = "https://latter-day-stats.vercel.app";
@@ -16,10 +17,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // The anon key can only see published claims (RLS), which is exactly the
   // set that belongs in a sitemap — drafts are filtered out by the database.
-  const [channelsRes, studiesRes, claimsRes] = await Promise.all([
+  const [channelsRes, studiesRes, claimsRes, postMap] = await Promise.all([
     sb.from("channels").select("slug, updated_at").eq("is_active", true),
     sb.from("studies").select("slug, updated_at"),
     sb.from("claims").select("slug, updated_at").eq("status", "published"),
+    getGraphicPostMap(),
   ]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -68,38 +70,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   );
 
-  const datasetRoutes: MetadataRoute.Sitemap = DATASETS.flatMap((d) => [
-    { url: `${BASE}/data-explorer/${d.slug}`, changeFrequency: "monthly" as const, priority: 0.7 },
-    ...(d.graphics.length
-      ? [
-          {
-            url: `${BASE}/data-explorer/${d.slug}/graphics`,
-            changeFrequency: "monthly" as const,
-            priority: 0.6,
-          },
-        ]
-      : []),
-    ...d.graphics.map((g) => ({
-      url: `${BASE}/data-explorer/${d.slug}/graphics/${graphicId(g)}`,
-      changeFrequency: "yearly" as const,
-      priority: 0.4,
-    })),
-  ]);
+  const datasetRoutes: MetadataRoute.Sitemap = DATASETS.flatMap((d) => {
+    const published = d.graphics.filter((g) => isPublished(postMap, d.slug, graphicId(g)));
+    return [
+      { url: `${BASE}/data-explorer/${d.slug}`, changeFrequency: "monthly" as const, priority: 0.7 },
+      ...(published.length
+        ? [
+            {
+              url: `${BASE}/data-explorer/${d.slug}/graphics`,
+              changeFrequency: "monthly" as const,
+              priority: 0.6,
+            },
+          ]
+        : []),
+      ...published.map((g) => ({
+        url: `${BASE}/data-explorer/${d.slug}/graphics/${graphicId(g)}`,
+        changeFrequency: "yearly" as const,
+        priority: 0.4,
+      })),
+    ];
+  });
 
-  const studyGraphicsRoutes: MetadataRoute.Sitemap = STUDY_GRAPHICS.filter(
-    (e) => e.graphics.length > 0,
-  ).flatMap((e) => [
-    {
-      url: `${BASE}/studies/${e.studySlug}/graphics`,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    ...e.graphics.map((g) => ({
-      url: `${BASE}/studies/${e.studySlug}/graphics/${graphicId(g)}`,
-      changeFrequency: "yearly" as const,
-      priority: 0.4,
-    })),
-  ]);
+  const studyGraphicsRoutes: MetadataRoute.Sitemap = STUDY_GRAPHICS.flatMap((e) => {
+    const published = e.graphics.filter((g) => isPublished(postMap, e.studySlug, graphicId(g)));
+    if (published.length === 0) return [];
+    return [
+      {
+        url: `${BASE}/studies/${e.studySlug}/graphics`,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      },
+      ...published.map((g) => ({
+        url: `${BASE}/studies/${e.studySlug}/graphics/${graphicId(g)}`,
+        changeFrequency: "yearly" as const,
+        priority: 0.4,
+      })),
+    ];
+  });
 
   const categorySlugs = [...new Set(DATASETS.filter((d) => d.category).map((d) => categorySlug(d.category!)))];
   const categoryRoutes: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({

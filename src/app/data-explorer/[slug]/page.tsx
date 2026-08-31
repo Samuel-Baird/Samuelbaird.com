@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, BarChart3, ClipboardList, Share2 } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
+import { getCurrentUser } from "@/lib/auth";
 import { DATASETS, getDataset } from "@/lib/data-explorer";
+import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 
 export function generateStaticParams() {
   return DATASETS.map((d) => ({ slug: d.slug }));
@@ -35,7 +37,12 @@ export default async function DatasetPage({
   const dataset = getDataset(slug);
   if (!dataset) notFound();
 
-  const previewGraphic = dataset.graphics[0];
+  const [auth, postMap] = await Promise.all([getCurrentUser(), getGraphicPostMap()]);
+  const isAdmin = auth?.profile?.is_admin === true;
+  const visibleGraphics = isAdmin
+    ? dataset.graphics
+    : filterPublished(postMap, slug, dataset.graphics);
+  const previewGraphic = visibleGraphics[0];
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -106,8 +113,8 @@ export default async function DatasetPage({
                 Graphics
               </span>
               <h2 className="serif mt-2 text-2xl font-semibold tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
-                {dataset.graphics.length}{" "}
-                {dataset.graphics.length === 1 ? "graphic" : "graphics"}
+                {visibleGraphics.length}{" "}
+                {visibleGraphics.length === 1 ? "graphic" : "graphics"}
               </h2>
               <div className="mt-4 w-40 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
                 <Image

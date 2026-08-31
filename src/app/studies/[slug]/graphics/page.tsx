@@ -5,9 +5,13 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
+import { GraphicAdminOverlay } from "@/components/admin/graphic-admin-overlay";
 import { GraphicShareButton } from "@/components/data-explorer/graphic-share-button";
+import { Tag } from "@/components/tag";
+import { getCurrentUser } from "@/lib/auth";
 import { graphicId } from "@/lib/data-explorer";
 import { getStudyBySlug } from "@/lib/data";
+import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 import { STUDY_GRAPHICS, getStudyGraphics } from "@/lib/study-graphics";
 
 export function generateStaticParams() {
@@ -44,6 +48,13 @@ export default async function StudyGraphicsPage({
   const study = await getStudyBySlug(slug);
   if (!study) notFound();
 
+  const [auth, postMap] = await Promise.all([getCurrentUser(), getGraphicPostMap()]);
+  const isAdmin = auth?.profile?.is_admin === true;
+  const currentPath = `/studies/${study.slug}/graphics`;
+
+  const graphics = isAdmin ? entry.graphics : filterPublished(postMap, slug, entry.graphics);
+  if (graphics.length === 0) notFound();
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <Link
@@ -63,32 +74,53 @@ export default async function StudyGraphicsPage({
       </p>
 
       <div className="mt-12 grid gap-8 sm:grid-cols-2">
-        {entry.graphics.map((graphic) => {
+        {graphics.map((graphic) => {
           const id = graphicId(graphic);
           const graphicHref = `/studies/${study.slug}/graphics/${id}`;
+          const status = postMap[`${slug}/${id}`];
+          const published = status?.published === true;
           return (
             <figure
               key={id}
-              className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5"
+              className={`rounded-[var(--radius)] border bg-white p-5 ${
+                isAdmin && !published
+                  ? "border-dashed border-[color:var(--oxblood)]/40"
+                  : "border-[color:var(--border)]"
+              }`}
             >
-              <Link
-                href={graphicHref}
-                className="block overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
-              >
-                <Image
-                  src={graphic.imageSrc}
-                  alt={graphic.alt}
-                  width={graphic.width}
-                  height={graphic.height}
-                  className="h-auto w-full"
-                />
-              </Link>
+              <div className="relative">
+                <Link
+                  href={graphicHref}
+                  className="block overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
+                >
+                  <Image
+                    src={graphic.imageSrc}
+                    alt={graphic.alt}
+                    width={graphic.width}
+                    height={graphic.height}
+                    className="h-auto w-full"
+                  />
+                </Link>
+                {isAdmin && (
+                  <GraphicAdminOverlay
+                    slug={slug}
+                    graphicId={id}
+                    published={published}
+                    posted={status?.posted === true}
+                    postedDates={status?.posted_dates ?? ""}
+                    currentPath={currentPath}
+                  />
+                )}
+              </div>
               <figcaption className="mt-4">
-                <h2 className="serif text-lg font-semibold leading-snug tracking-tight text-[color:var(--foreground)]">
-                  <Link href={graphicHref} className="hover:underline">
-                    {graphic.title}
-                  </Link>
-                </h2>
+                <div className="flex items-center gap-2">
+                  <h2 className="serif text-lg font-semibold leading-snug tracking-tight text-[color:var(--foreground)]">
+                    <Link href={graphicHref} className="hover:underline">
+                      {graphic.title}
+                    </Link>
+                  </h2>
+                  {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
+                </div>
                 <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--muted)]">
                   {graphic.description}
                 </p>

@@ -1,4 +1,5 @@
 import {
+  DATASETS,
   type GalleryGraphic,
   type Graphic,
   deriveTraditions,
@@ -253,11 +254,24 @@ export const STUDY_GRAPHICS: StudyGraphicsEntry[] = RAW_STUDY_GRAPHICS.map(
 // Build-time guards, mirroring data-explorer.ts's: graphic ids are URL
 // segments, so they must be unique within a study, and a study slug must
 // appear only once. Throws at module load so `next build` fails loudly.
+//
+// A study slug must also never collide with a Data Explorer dataset slug:
+// graphic_posts.dataset_slug is a flat key space shared by both registries
+// (see supabase/migrations/0049_graphic_posts.sql's doc comment), so a
+// collision would let a study's publish/posted state silently overwrite a
+// same-named dataset's, or vice versa.
 {
+  const datasetSlugs = new Set(DATASETS.map((d) => d.slug));
   const seenSlugs = new Set<string>();
   for (const e of STUDY_GRAPHICS) {
     if (seenSlugs.has(e.studySlug)) {
       throw new Error(`Duplicate study-graphics entry for "${e.studySlug}"`);
+    }
+    if (datasetSlugs.has(e.studySlug)) {
+      throw new Error(
+        `Study slug "${e.studySlug}" collides with a Data Explorer dataset slug - ` +
+          `graphic_posts keys on slug alone, so this would corrupt publish/posted state.`,
+      );
     }
     seenSlugs.add(e.studySlug);
     const seenIds = new Set<string>();

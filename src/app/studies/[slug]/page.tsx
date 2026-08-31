@@ -17,6 +17,7 @@ import { CitationCopy } from "@/components/citation-copy";
 import { StudyProgressPanel } from "@/components/study-progress-panel";
 import { Tag, type TagInk } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
+import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 import {
   getBookmarkSetForUser,
   getRelatedStudies,
@@ -54,15 +55,23 @@ export default async function StudyDetailPage({
     getCurrentUser(),
   ]);
   if (!study) notFound();
-  const [bookmarks, progress, related] = await Promise.all([
+  const isAdmin = auth?.profile?.is_admin === true;
+  const [bookmarks, progress, related, postMap] = await Promise.all([
     auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
     auth ? getStudyProgressForUser(auth.user.id, study.id) : Promise.resolve(null),
     getRelatedStudies(study.id, study.tags ?? [], 4),
+    getGraphicPostMap(),
   ]);
 
   const pdfUrl = pdfPublicUrl(study.pdf_path);
   const previewImageUrl = storagePublicUrl(study.preview_image_path);
-  const graphicsEntry = getStudyGraphics(study.slug);
+  const rawGraphicsEntry = getStudyGraphics(study.slug);
+  const graphicsEntry = rawGraphicsEntry && {
+    ...rawGraphicsEntry,
+    graphics: isAdmin
+      ? rawGraphicsEntry.graphics
+      : filterPublished(postMap, study.slug, rawGraphicsEntry.graphics),
+  };
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">

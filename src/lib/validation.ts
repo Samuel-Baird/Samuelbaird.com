@@ -35,9 +35,22 @@ export function firstZodMessage(error: z.ZodError): string {
   return error.issues[0]?.message ?? "Invalid input.";
 }
 
+// A site-relative path passed back into revalidatePath() from a public-page
+// control — never an absolute URL, so a caller can't force-revalidate
+// something outside the app.
+const currentPathSchema = z.string().startsWith("/").max(300).optional();
+
 export const graphicPostSchema = z.object({
   datasetSlug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
   graphicId: z.string().max(120).regex(/^[a-z0-9][a-z0-9_-]*$/),
   posted: z.boolean(),
   postedDates: z.string().trim().max(500),
+  currentPath: currentPathSchema,
+});
+
+export const graphicPublishSchema = z.object({
+  datasetSlug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+  graphicId: z.string().max(120).regex(/^[a-z0-9][a-z0-9_-]*$/),
+  published: z.boolean(),
+  currentPath: currentPathSchema,
 });

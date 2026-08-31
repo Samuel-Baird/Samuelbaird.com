@@ -1,27 +1,31 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { setGraphicPostStatus } from "@/app/actions/graphic-posts";
+import { setGraphicPostStatus, setGraphicPublished } from "@/app/actions/graphic-posts";
 
 export function GraphicPostControls({
   datasetSlug,
   graphicId,
   posted: initialPosted,
   postedDates: initialPostedDates,
+  published: initialPublished,
 }: {
   datasetSlug: string;
   graphicId: string;
   posted: boolean;
   postedDates: string;
+  published: boolean;
 }) {
-  const [pending, startTransition] = useTransition();
+  const [postPending, startPostTransition] = useTransition();
+  const [publishPending, startPublishTransition] = useTransition();
   const [posted, setPosted] = useState(initialPosted);
   const [postedDates, setPostedDates] = useState(initialPostedDates);
+  const [published, setPublished] = useState(initialPublished);
   const [error, setError] = useState<string | null>(null);
 
   function save(next: { posted: boolean; postedDates: string }) {
     setError(null);
-    startTransition(async () => {
+    startPostTransition(async () => {
       try {
         await setGraphicPostStatus({ datasetSlug, graphicId, ...next });
       } catch (e) {
@@ -41,13 +45,37 @@ export function GraphicPostControls({
     save({ posted, postedDates });
   }
 
+  function togglePublished() {
+    const next = !published;
+    setError(null);
+    setPublished(next);
+    startPublishTransition(async () => {
+      try {
+        await setGraphicPublished({ datasetSlug, graphicId, published: next });
+      } catch (e) {
+        setPublished(!next);
+        setError(e instanceof Error ? e.message : "Something went wrong.");
+      }
+    });
+  }
+
   return (
     <div className="flex flex-wrap items-center gap-3">
       <label className="inline-flex items-center gap-1.5 text-xs font-medium">
         <input
           type="checkbox"
+          checked={published}
+          disabled={publishPending}
+          onChange={togglePublished}
+          className="h-4 w-4 accent-[color:var(--accent)] disabled:opacity-60"
+        />
+        Published
+      </label>
+      <label className="inline-flex items-center gap-1.5 text-xs font-medium">
+        <input
+          type="checkbox"
           checked={posted}
-          disabled={pending}
+          disabled={postPending}
           onChange={togglePosted}
           className="h-4 w-4 accent-[color:var(--accent)] disabled:opacity-60"
         />
@@ -56,7 +84,7 @@ export function GraphicPostControls({
       <input
         type="text"
         value={postedDates}
-        disabled={pending}
+        disabled={postPending}
         onChange={(e) => setPostedDates(e.target.value)}
         onBlur={saveDatesOnBlur}
         placeholder="Last posted… (free text)"

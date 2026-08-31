@@ -4,9 +4,11 @@ import { Search, SlidersHorizontal, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { GraphicAdminOverlay } from "@/components/admin/graphic-admin-overlay";
 import { FacetGroup } from "@/components/facet-group";
 import { Tag } from "@/components/tag";
 import { graphicId, type GalleryGraphic } from "@/lib/data-explorer";
+import type { GraphicPostMap } from "@/lib/graphic-posts";
 
 const PAGE_SIZE = 24;
 
@@ -22,7 +24,18 @@ function firstYear(period: string): number {
   return match ? Number(match[0]) : 0;
 }
 
-export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
+export function GraphicsGallery({
+  graphics,
+  isAdmin = false,
+  postMap,
+}: {
+  graphics: GalleryGraphic[];
+  /** Admins see every graphic (unpublished included) plus the publish/posted
+   * overlay on each card; non-admins get only what the server already
+   * filtered to published. */
+  isAdmin?: boolean;
+  postMap?: GraphicPostMap;
+}) {
   const [query, setQuery] = useState("");
   const [selectedDatasets, setSelectedDatasets] = useState<Set<string>>(new Set());
   const [selectedPeriods, setSelectedPeriods] = useState<Set<string>>(new Set());
@@ -212,11 +225,17 @@ export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
                 {visible.map((g) => {
                   const id = graphicId(g);
                   const href = g.href ?? `/data-explorer/${g.datasetSlug}/graphics/${id}`;
+                  const status = postMap?.[`${g.datasetSlug}/${id}`];
+                  const published = status?.published === true;
                   return (
-                    <li key={`${g.datasetSlug}/${id}`}>
+                    <li key={`${g.datasetSlug}/${id}`} className="relative">
                       <Link
                         href={href}
-                        className="group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)] bg-white transition-colors hover:border-[color:var(--accent)]"
+                        className={`group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border bg-white transition-colors hover:border-[color:var(--accent)] ${
+                          isAdmin && !published
+                            ? "border-dashed border-[color:var(--oxblood)]/40"
+                            : "border-[color:var(--border)]"
+                        }`}
                       >
                         <div className="overflow-hidden border-b border-[color:var(--border)]">
                           <Image
@@ -231,6 +250,7 @@ export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
                           <div className="flex flex-wrap items-center gap-1.5">
                             <Tag ink="ink">{g.datasetName}</Tag>
                             <Tag ink="muted">{g.fieldedPeriod}</Tag>
+                            {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
                           </div>
                           <h3 className="serif mt-3 text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
                             {g.title}
@@ -251,6 +271,16 @@ export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
                           )}
                         </div>
                       </Link>
+                      {isAdmin && (
+                        <GraphicAdminOverlay
+                          slug={g.datasetSlug}
+                          graphicId={id}
+                          published={published}
+                          posted={status?.posted === true}
+                          postedDates={status?.posted_dates ?? ""}
+                          currentPath="/data-explorer/gallery"
+                        />
+                      )}
                     </li>
                   );
                 })}

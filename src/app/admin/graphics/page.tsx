@@ -1,12 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GraphicPostControls } from "@/components/admin/graphic-post-controls";
-import { DATASETS, graphicId } from "@/lib/data-explorer";
 import { requireAdmin } from "@/lib/auth";
+import { DATASETS, graphicId, type Graphic } from "@/lib/data-explorer";
+import { getStudiesBySlugs } from "@/lib/data";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
+import { getStudyFolderSlugs, STUDY_GRAPHICS } from "@/lib/study-graphics";
 import type { GraphicPost } from "@/lib/types";
 
-type Filter = "all" | "posted" | "unposted";
+type Filter = "all" | "posted" | "unposted" | "unpublished";
+
+type Section = {
+  key: string;
+  title: string;
+  basePath: string;
+  graphics: Graphic[];
+};
 
 export default async function AdminGraphicsPage({
   searchParams,
@@ -17,11 +26,16 @@ export default async function AdminGraphicsPage({
 
   const { filter: rawFilter } = await searchParams;
   const filter: Filter =
-    rawFilter === "posted" || rawFilter === "unposted" ? rawFilter : "all";
+    rawFilter === "posted" || rawFilter === "unposted" || rawFilter === "unpublished"
+      ? rawFilter
+      : "all";
 
-  const { data, error } = await createSupabaseServiceClient()
-    .from("graphic_posts")
-    .select("dataset_slug, graphic_id, posted, posted_dates");
+  const [{ data, error }, studies] = await Promise.all([
+    createSupabaseServiceClient()
+      .from("graphic_posts")
+      .select("dataset_slug, graphic_id, posted, posted_dates, published"),
+    getStudiesBySlugs(getStudyFolderSlugs()),
+  ]);
   if (error) throw error;
 
   const statusByKey = new Map<string, GraphicPost>(
@@ -31,8 +45,33 @@ export default async function AdminGraphicsPage({
     ]),
   );
 
-  const totalGraphics = DATASETS.reduce((n, d) => n + d.graphics.length, 0);
+  const studiesBySlug = new Map(studies.map((s) => [s.slug, s]));
+
+  const datasetSections: Section[] = DATASETS.filter((d) => d.graphics.length > 0).map((d) => ({
+    key: d.slug,
+    title: d.name,
+    basePath: `/data-explorer/${d.slug}/graphics`,
+    graphics: d.graphics,
+  }));
+
+  const studySections: Section[] = STUDY_GRAPHICS.filter((e) => e.graphics.length > 0)
+    .map((e) => {
+      const study = studiesBySlug.get(e.studySlug);
+      if (!study) return null;
+      return {
+        key: e.studySlug,
+        title: study.title,
+        basePath: `/studies/${e.studySlug}/graphics`,
+        graphics: e.graphics,
+      };
+    })
+    .filter((s): s is Section => s !== null);
+
+  const sections = [...datasetSections, ...studySections];
+
+  const totalGraphics = sections.reduce((n, s) => n + s.graphics.length, 0);
   const totalPosted = [...statusByKey.values()].filter((s) => s.posted).length;
+  const totalPublished = [...statusByKey.values()].filter((s) => s.published).length;
 
   const filterHref = (f: Filter) => (f === "all" ? "/admin/graphics" : `/admin/graphics?filter=${f}`);
 
@@ -42,11 +81,11 @@ export default async function AdminGraphicsPage({
         <div>
           <h1 className="serif text-4xl font-semibold tracking-tight">Graphics</h1>
           <p className="mt-2 text-sm text-[color:var(--muted)]">
-            {totalPosted} of {totalGraphics} posted
+            {totalPublished} of {totalGraphics} published · {totalPosted} of {totalGraphics} posted
           </p>
         </div>
         <nav className="flex gap-2">
-          {(["all", "unposted", "posted"] as const).map((f) => (
+          {(["all", "unpublished", "unposted", "posted"] as const).map((f) => (
             <Link
               key={f}
               href={filterHref(f)}
@@ -64,39 +103,40 @@ export default async function AdminGraphicsPage({
       </div>
 
       <div className="mt-8 space-y-10">
-        {DATASETS.filter((d) => d.graphics.length > 0).map((dataset) => {
-          const rows = dataset.graphics
+        {sections.map((section) => {
+          const rows = section.graphics
             .map((g) => {
               const id = graphicId(g);
-              const status = statusByKey.get(`${dataset.slug}/${id}`);
-              return { graphic: g, id, posted: status?.posted ?? false, postedDates: status?.posted_dates ?? "" };
+              const status = statusByKey.get(`${section.key}/${id}`);
+              return {
+                graphic: g,
+                id,
+                posted: status?.posted ?? false,
+                postedDates: status?.posted_dates ?? "",
+                published: status?.published ?? false,
+              };
             })
             .filter((r) => {
               if (filter === "posted") return r.posted;
               if (filter === "unposted") return !r.posted;
+              if (filter === "unpublished") return !r.published;
               return true;
             });
 
           if (rows.length === 0) return null;
 
           return (
-            <section key={dataset.slug}>
+            <section key={section.key}>
               <h2 className="serif text-lg font-semibold tracking-tight">
-                <Link
-                  href={`/data-explorer/${dataset.slug}/graphics`}
-                  className="hover:underline"
-                >
-                  {dataset.name}
+                <Link href={section.basePath} className="hover:underline">
+                  {section.title}
                 </Link>
               </h2>
               <div className="mt-3 divide-y divide-[color:var(--border)] rounded-[var(--radius)] border border-[color:var(--border)] bg-white">
-                {rows.map(({ graphic, id, posted, postedDates }) => (
-                  <div
-                    key={id}
-                    className="flex flex-wrap items-center gap-4 p-4"
-                  >
+                {rows.map(({ graphic, id, posted, postedDates, published }) => (
+                  <div key={id} className="flex flex-wrap items-center gap-4 p-4">
                     <Link
-                      href={`/data-explorer/${dataset.slug}/graphics/${id}`}
+                      href={`${section.basePath}/${id}`}
                       className="block w-24 shrink-0 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
                     >
                       <Image
@@ -108,19 +148,17 @@ export default async function AdminGraphicsPage({
                       />
                     </Link>
                     <div className="min-w-[160px] flex-1">
-                      <Link
-                        href={`/data-explorer/${dataset.slug}/graphics/${id}`}
-                        className="text-sm font-medium hover:underline"
-                      >
+                      <Link href={`${section.basePath}/${id}`} className="text-sm font-medium hover:underline">
                         {graphic.title}
                       </Link>
                     </div>
-                    <div className="w-full sm:w-auto sm:min-w-[320px]">
+                    <div className="w-full sm:w-auto sm:min-w-[380px]">
                       <GraphicPostControls
-                        datasetSlug={dataset.slug}
+                        datasetSlug={section.key}
                         graphicId={id}
                         posted={posted}
                         postedDates={postedDates}
+                        published={published}
                       />
                     </div>
                   </div>

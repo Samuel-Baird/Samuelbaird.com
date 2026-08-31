@@ -4,9 +4,11 @@ import { ArrowRight } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import { FolderExplorer } from "@/components/folder-explorer";
+import { getCurrentUser } from "@/lib/auth";
 import { getStudiesBySlugs } from "@/lib/data";
 import { DATASETS } from "@/lib/data-explorer";
 import { buildDatasetFolders, buildStudyFolders } from "@/lib/explorer-folders";
+import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 import { getStudyFolderSlugs, STUDY_GRAPHICS } from "@/lib/study-graphics";
 
 export const metadata: Metadata = {
@@ -17,11 +19,28 @@ export const metadata: Metadata = {
 };
 
 export default async function DataExplorerPage() {
-  const datasetFolders = buildDatasetFolders(DATASETS);
-
   const studySlugs = getStudyFolderSlugs();
-  const studies = await getStudiesBySlugs(studySlugs);
-  const graphicsBySlug = new Map(STUDY_GRAPHICS.map((e) => [e.studySlug, e.graphics]));
+  const [auth, postMap, studies] = await Promise.all([
+    getCurrentUser(),
+    getGraphicPostMap(),
+    getStudiesBySlugs(studySlugs),
+  ]);
+  const isAdmin = auth?.profile?.is_admin === true;
+
+  // Non-admins only ever see published graphics, so a folder's advertised
+  // count and its very existence (a study with zero published graphics
+  // shouldn't produce an empty folder — see buildStudyFolders) reflect that.
+  const visibleDatasets = isAdmin
+    ? DATASETS
+    : DATASETS.map((d) => ({ ...d, graphics: filterPublished(postMap, d.slug, d.graphics) }));
+  const datasetFolders = buildDatasetFolders(visibleDatasets);
+
+  const graphicsBySlug = new Map(
+    STUDY_GRAPHICS.map((e) => [
+      e.studySlug,
+      isAdmin ? e.graphics : filterPublished(postMap, e.studySlug, e.graphics),
+    ]),
+  );
   const studyFolders = buildStudyFolders(studies, graphicsBySlug);
 
   const folders = [...datasetFolders, ...studyFolders];

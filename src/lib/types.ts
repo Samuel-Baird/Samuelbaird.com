@@ -253,13 +253,18 @@ export type HubReportedResponse = {
   created_at: string;
 };
 
-// Social-media posting status for a Data Explorer graphic, keyed by
-// (dataset_slug, graphic_id) — see supabase/migrations/0049_graphic_posts.sql.
+// Social-media posting + publish status for a Data Explorer or study
+// graphic, keyed by (dataset_slug, graphic_id) — dataset_slug holds either a
+// Data Explorer dataset slug or a study slug, a flat key space (see
+// supabase/migrations/0049_graphic_posts.sql, 0051_graphic_published.sql).
+// `published` gates public visibility; `posted` just tracks whether it's
+// gone out on social media — the two are independent.
 export type GraphicPost = {
   dataset_slug: string;
   graphic_id: string;
   posted: boolean;
   posted_dates: string;
+  published: boolean;
 };
 
 export type HubReportedResponseWithUser = HubReportedResponse & {

@@ -4,9 +4,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
+import { GraphicAdminOverlay } from "@/components/admin/graphic-admin-overlay";
 import { GraphicShareButton } from "@/components/data-explorer/graphic-share-button";
+import { Tag } from "@/components/tag";
+import { getCurrentUser } from "@/lib/auth";
 import { graphicId as idOf } from "@/lib/data-explorer";
 import { getStudyBySlug } from "@/lib/data";
+import { isPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 import { STUDY_GRAPHICS, getStudyGraphic } from "@/lib/study-graphics";
 
 export function generateStaticParams() {
@@ -15,23 +19,32 @@ export function generateStaticParams() {
   );
 }
 
+async function resolve(slug: string, graphicId: string) {
+  const graphic = getStudyGraphic(slug, graphicId);
+  if (!graphic) return null;
+
+  const [auth, postMap] = await Promise.all([getCurrentUser(), getGraphicPostMap()]);
+  const isAdmin = auth?.profile?.is_admin === true;
+  const published = isPublished(postMap, slug, graphicId);
+  if (!isAdmin && !published) return null;
+
+  return { graphic, isAdmin, published, postMap };
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string; graphicId: string }>;
 }): Promise<Metadata> {
   const { slug, graphicId } = await params;
-  const graphic = getStudyGraphic(slug, graphicId);
-  if (!graphic) return {};
+  const resolved = await resolve(slug, graphicId);
+  if (!resolved) return {};
+  const { graphic } = resolved;
 
   return {
     title: graphic.title,
     description: graphic.description,
     alternates: { canonical: `/studies/${slug}/graphics/${graphicId}` },
-    // A leaf openGraph block replaces the root opengraph-image.tsx entirely
-    // (Next merges metadata shallowly, root -> leaf), so this graphic's own
-    // PNG becomes the link preview — same pattern as the Data Explorer's
-    // single-graphic route.
     openGraph: {
       title: graphic.title,
       description: graphic.description,
@@ -57,8 +70,11 @@ export default async function StudyGraphicPage({
   params: Promise<{ slug: string; graphicId: string }>;
 }) {
   const { slug, graphicId } = await params;
-  const graphic = getStudyGraphic(slug, graphicId);
-  if (!graphic) notFound();
+  const resolved = await resolve(slug, graphicId);
+  if (!resolved) notFound();
+  const { graphic, isAdmin, published, postMap } = resolved;
+  const status = postMap[`${slug}/${graphicId}`];
+
   const study = await getStudyBySlug(slug);
   if (!study) notFound();
 
@@ -73,7 +89,13 @@ export default async function StudyGraphicPage({
       </Link>
 
       <div className="mt-8 grid gap-8 md:grid-cols-[minmax(0,1fr)_320px]">
-        <div className="overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
+        <div
+          className={`relative overflow-hidden rounded-[var(--radius)] border ${
+            isAdmin && !published
+              ? "border-dashed border-[color:var(--oxblood)]/40"
+              : "border-[color:var(--border)]"
+          }`}
+        >
           <Image
             src={graphic.imageSrc}
             alt={graphic.alt}
@@ -82,12 +104,25 @@ export default async function StudyGraphicPage({
             priority
             className="h-auto w-full"
           />
+          {isAdmin && (
+            <GraphicAdminOverlay
+              slug={slug}
+              graphicId={graphicId}
+              published={published}
+              posted={status?.posted === true}
+              postedDates={status?.posted_dates ?? ""}
+              currentPath={`/studies/${slug}/graphics/${graphicId}`}
+            />
+          )}
         </div>
 
         <div>
-          <h1 className="serif text-2xl font-semibold leading-snug tracking-tight">
-            {graphic.title}
-          </h1>
+          <div className="flex items-center gap-2">
+            <h1 className="serif text-2xl font-semibold leading-snug tracking-tight">
+              {graphic.title}
+            </h1>
+            {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
+          </div>
           <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
             {graphic.description}
           </p>
