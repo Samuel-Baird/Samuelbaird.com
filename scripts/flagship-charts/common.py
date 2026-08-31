@@ -289,7 +289,7 @@ def render_magnitude_bar(
     # _draw_title uses: narrow the wrap width until every label's rendered
     # width clears the cap, floored so a single very-long word can't spin
     # this into an unbounded loop.
-    AXES_LEFT_CAP = 0.62
+    AXES_LEFT_CAP = 0.46
     label_pad_px = 8 / 72 * DPI  # matches tick_params(pad=8) above (points -> px)
     edge_margin_px = 0.045 * FIG_W_IN * DPI  # buffer so a wide label doesn't touch the canvas edge
     max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px

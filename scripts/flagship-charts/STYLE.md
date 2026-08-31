@@ -121,6 +121,30 @@ default keeps the default; only the ones that don't get widened, and each
 by exactly as much as its own longest label requires. Re-scanned all 63
 regenerated PNGs after this change: 0 flagged.
 
+### The auto-widened left margin is capped at 46% of the canvas
+
+As of 2026-08-31, uncapped auto-widening turned out to have two failure
+modes once a caller's rows are full sentences rather than short group
+names (`pew-mormon-survey-2011`'s "Believing Joseph Smith saw God the
+Father and Jesus Christ" row, at 24pt, needed 95% of the canvas on its
+own): the mild case just crowds the bars into a thin sliver of the
+canvas (`mission-and-tithe-by-convert`'s bars occupied ~18% of the
+width), and the severe case pushes `required_left` past 1.0, leaving
+*negative* axes width - bars collapse entirely and every value label
+clips off the right edge.
+
+`render_magnitude_bar` now wraps any row label that would need more than
+`AXES_LEFT_CAP` (0.46 of the canvas) onto multiple lines - same
+wrap-then-measure-then-rewrap technique `_draw_title` uses - before
+running the widen step above, so `required_left` never exceeds the cap
+and the bars always keep at least ~54% of the canvas regardless of how
+long a row label is. This is a hard cap, not a per-caller override: any
+new flagship chart with sentence-length rows gets this for free.
+Regenerated all 58 `common.py`-backed callers (`render_magnitude_bar`,
+`render_100_stack`, `render_dumbbell_log`) after landing this; an
+edge-pixel scan of the 48 that changed flagged 0 for left/right clipping,
+and the ~10 unchanged ones already fit inside the cap unwrapped.
+
 ## Bigger, black title/subtitle/footnote are now pipeline defaults
 
 As of 2026-08-31, this module also rolls out the title/subtitle/footnote
