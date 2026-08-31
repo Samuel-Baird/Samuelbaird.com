@@ -96,13 +96,24 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
+def _draw_title(
+    fig, fonts, title: str, subtitle: str,
+    title_fontsize: float = 26, title_wrap_width: int = 27,
+) -> float:
     """Returns the y-fraction where the subtitle block actually ends, so
     the caller can size its axes to the real available band instead of a
-    fixed guess - see STYLE.md's "Vertical layout" section."""
-    title_fontsize = 26
+    fixed guess - see STYLE.md's "Vertical layout" section.
+
+    title_wrap_width=27 is conservative relative to the canvas's real
+    width (title text runs from x=0.065 to roughly x=0.94, ~7.9in of the
+    9in canvas) - it leaves the right third of the title's own row empty
+    on most titles, wrapping a line earlier than the canvas would actually
+    require. Override both together (a wider wrap fits more per line, so
+    a taller font doesn't cost extra wrapped lines) on a chart-by-chart
+    basis rather than sitewide, since a wider default would need
+    re-checking every existing title for new/different wrap points."""
     subtitle_fontsize = 13.5
-    title_lines = textwrap.wrap(title, width=27)
+    title_lines = textwrap.wrap(title, width=title_wrap_width)
     line_spacing = title_fontsize / 650
     title_top = 0.965
     for i, line in enumerate(title_lines):
@@ -179,6 +190,8 @@ def render_distribution_stack(
     results: dict, group_order: list[str], seg_order: list[str], title: str, subtitle: str,
     note: str, total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
     group_label_fontsize: float | None = None,
+    title_fontsize: float = 26, title_wrap_width: int = 27,
+    box_edgecolor: str = PAPER,
 ) -> None:
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
@@ -186,7 +199,7 @@ def render_distribution_stack(
     # Vertical centering, same approach as render_magnitude_bar above, with
     # extra bottom room reserved for the legend row below the axes. Caption
     # is drawn first (bottom-anchored) so its real top edge is known.
-    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle, title_fontsize, title_wrap_width)
     caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03
 
@@ -215,11 +228,16 @@ def render_distribution_stack(
     rows = sorted_order[::-1]
     bar_h = 0.62 if n_rows <= 8 else 0.68
 
+    # box_edgecolor default (PAPER/white) is invisible at a chart's outer
+    # edge - fine for separating adjacent segments from each other, but it
+    # leaves the palest ORDINAL_RAMP_7 steps (near-white blues) with no
+    # visible boundary against the white canvas. Override to INK where
+    # that matters (see the call site).
     left = [0.0] * len(rows)
     for seg_label, color, text_color in zip(seg_order, colors, text_colors):
         vals = [results[g]["shares_pct"][seg_label] for g in rows]
         ax.barh(rows, vals, left=left, height=bar_h, color=color,
-                edgecolor=PAPER, linewidth=1.2, zorder=3)
+                edgecolor=box_edgecolor, linewidth=1.2, zorder=3)
         for g, v, l in zip(rows, vals, left):
             if v >= 8:  # suppress a label that can't clear the mobile floor cleanly
                 ax.text(l + v / 2, g, f"{v:.0f}%", va="center", ha="center",
@@ -236,7 +254,7 @@ def render_distribution_stack(
         tick_label.set_fontsize(resolved_label_fontsize)
         tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
 
-    handles = [mpatches.Patch(facecolor=c, edgecolor=PAPER, label=l)
+    handles = [mpatches.Patch(facecolor=c, edgecolor=box_edgecolor, label=l)
                for l, c in zip(seg_order, colors)]
     # Anchored to the figure, left-aligned at the chart's own left margin -
     # not to the (narrower) axes box - so a long-label legend has the full
