@@ -166,6 +166,16 @@ docstring (`childhood_formation.py`, `family_household.py`, `practice.py`,
 `beliefs.py`, `spiritual_experience.py`, `public_life.py`) for which set a
 given chart uses and why.
 
+**Practice's own 100%-stack** (`practice.py` → `render_practice_charts.py`'s
+`render_distribution_stack`, used for the attendance- and prayer-frequency
+full-distribution charts) uses the same single-hue ordinal ramp as
+birth-decade above, since its segments are a frequency scale, not a group
+identity — that part was never the highlight-vs-gray pattern. Its row
+(y-axis tick) label *was* still colored `ACCENT` for the Latter-day Saint
+row via a local `HIGHLIGHT_GROUP` check, left over from before the
+magnitude-bar fix above — fixed on 2026-08-31 the same way: every row
+label is unconditionally `INK`, regardless of which group it names.
+
 **Heaven vs. hell** (`beliefs.py` → `render_beliefs_charts.py`) needed a
 shape none of the above cover: two independent yes/no items shown side by
 side per group rather than one value or a 100%-stack. Built as a **paired
@@ -218,3 +228,18 @@ get a properly centered, evenly-spaced plot band that uses all the room the
 caption doesn't need — the plot band now genuinely grows when the caption
 is short, which is the point of moving the caption to a bottom anchor in
 the first place.
+
+## Title qualifiers render smaller than the primary title
+
+`render_christian_only_variants.py` builds titles like "Attendance
+frequency, full distribution (Christian only)" — a trailing parenthetical
+noting which population a variant chart covers. Every `_draw_title`/
+`draw_title` in this pipeline (`render_practice_charts.py`,
+`render_beliefs_charts.py`, `render_public_life_charts.py`) splits that
+qualifier off via `chart_style.split_title_qualifier` and renders it on
+its own line at roughly 55% of the primary title's font size, rather than
+wrapping it in as if it were equally important. See `BRANDING_AND_DESIGN.md`'s
+"Charts" section for the site-wide statement of this rule. A mid-sentence
+parenthetical that isn't a trailing qualifier (e.g. a title that just
+happens to end a clause in parens) is left alone — `split_title_qualifier`
+only matches a `(...)` group at the very end of the string.

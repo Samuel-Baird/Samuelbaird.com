@@ -270,37 +270,81 @@ curly) is stripped before comparing, so a quoted title alphabetizes by its
 first real word rather than sorting before or after every unquoted title as
 a block.
 
-**Per-group identity colors for the Pew RLS Data Explorer:** the Pew
-Religious Landscape Study magnitude-bar charts (`scripts/pew-rls/*.py`)
-give every named denomination/religion its own distinct identity color,
-rather than singling out Latter-day Saint in `--accent` and flattening
-every other group to one gray — that older "highlight-vs-gray" convention
-read as favoritism once every group in the same dataset needed its own
-identity. Two Christian traditions reuse colors already locked by the
-State of Theology charts (`scripts/state-of-theology-graphics/STYLE.md`'s
-Palette section) so the same tradition reads as the same color everywhere
-on the site it appears.
+**Per-group identity colors, site-wide:** every Data Explorer chart that
+compares named denominations/religions (a magnitude bar, a 100%-stacked
+bar, or a longitudinal line chart with one line per group) gives each
+group its own distinct identity color. No chart singles out Latter-day
+Saint in `--accent` against every other group flattened to one gray —
+that older "highlight-vs-gray" convention read as favoritism once every
+group in the same dataset needed its own identity, and it's retired
+everywhere on the site, not just for the Pew RLS pipeline. This applies
+across every dataset folder: `scripts/pew-rls/`, the one-off Pew datasets
+sharing `scripts/flagship-charts/common.py`'s `render_magnitude_bar`, and
+`scripts/ryan-burge/`. Several Christian traditions reuse colors already
+locked by the State of Theology charts
+(`scripts/state-of-theology-graphics/STYLE.md`'s Palette section) so the
+same tradition reads as the same color everywhere on the site it appears.
 
 | Group | Color name | Hex |
 |---|---|---|
-| Latter-day Saint | Blue (`--accent`) | `#1f4f7a` |
+| Latter-day Saint (alias: Mormon) | Blue (`--accent`) | `#1f4f7a` |
 | Catholic | Wine | `#8C4A5F` |
 | Protestant | Amber | `#C9721C` |
-| Orthodox Christian | Moss | `#5B7553` |
+| Evangelical Protestant | Amber (light) | `#D68A2E` |
+| Mainline Protestant | Amber (pale) | `#E8B15E` |
+| Historically Black Protestant | Amber (dark) | `#8B5A2B` |
+| Orthodox Christian (alias: Orthodox) | Moss | `#5B7553` |
 | Jehovah's Witness | Plum | `#6B4472` |
 | Muslim | Olive | `#6B8C3D` |
 | Hindu | Crimson | `#9C2B2B` |
 | Buddhist | Ochre | `#9C8A1F` |
 | Jewish | Periwinkle | `#7A6BA6` |
-| Religiously unaffiliated | Umber | `#6B4A2F` |
+| Religiously unaffiliated (alias: Unaffiliated) | Umber | `#6B4A2F` |
+| Agnostic | Slate blue-gray | `#4A6B7A` |
+| Atheist | Dark navy-slate | `#2F4858` |
+| Nothing in particular | Clay/tan | `#A67B5B` |
+| Southern Baptist | Brick | `#7A3B2E` |
+| United Methodist | Navy | `#3E5C76` |
+
+The Evangelical/Mainline/Historically Black Protestant trio stays in the
+amber family (same broad tradition as generic Protestant) but each gets
+its own distinct shade, since a chart can show all three as separate rows
+at once (e.g. an ATP wave's attendance-by-tradition breakdown) — reusing
+one amber for all three would make them indistinguishable from each
+other. Different survey waves spell the same group differently ("Mormon"
+vs. "Latter-day Saint," "Evangelical Protestant" vs. "...Churches" vs.
+"...Tradition," "Unaffiliated" vs. "Unaffiliated (religious \"nones\"),"
+capitalization drift on "Nothing in Particular") — `GROUP_ALIASES` in
+`scripts/chart_style.py` resolves every spelling variant to one canonical
+color before lookup, rather than duplicating hex values across
+near-identical dict keys.
 
 Two more row kinds aren't a single identity, so they share existing neutral
 tokens instead of getting their own hue — matching their own sink-to-bottom
 tier from the row-order rule above: any "Other..." catch-all (Other
-Christian, Other religions, and the like — tier 1 above) uses the existing
-bar-safe gray, `CONTEXT_GRAY` (`#8f8b82`); any "...average" aggregate or a
-total-population row (tiers 2/3 above) uses the existing `MUTED` token
-(`#6E6A63`).
+Christian, Other religions, "Something else," and the like — tier 1 above)
+uses the existing bar-safe gray, `CONTEXT_GRAY` (`#8f8b82`); any
+"...average" aggregate or an "All &lt;population&gt;" baseline row (tiers
+2/3 above — e.g. "All U.S. adults," "All Black Americans," "All
+attenders") uses the existing `MUTED` token (`#6E6A63`).
+
+**Not every "highlight one row, gray the rest" chart is this pattern.** A
+handful of one-off flagship-charts callers highlight the chart's own
+subject — a specific country among many (`highlight_rows={"United
+States"}`), a top-ranked subset, a tracked time period or category — not a
+religious identity. That's a different, legitimate encoding (drawing
+attention to what the chart is actually about) and is unaffected by this
+rule; only a chart whose highlighted row *is* a religious/denominational
+identity needs to convert to per-group identity colors.
+
+**Row/tick/group labels are always plain ink, regardless of chart shape or
+dataset.** A bar's own fill (or a line's own stroke, or a data value
+printed next to it) can carry its group's identity color, but the axis
+label naming that row/line — the group's name itself — is never colored to
+match. This is a separate, universal rule from the identity-color table
+above and applies even to charts that don't do per-group identity coloring
+at all (e.g. a chart highlighting a country or time period still owes
+every tick label plain ink).
 
 **Accepted tradeoff:** Muslim (olive, `#6B8C3D`) and Orthodox Christian
 (moss, `#5B7553`) are visually closer than the usual colorblind/low-vision
@@ -308,11 +352,23 @@ floor when they land next to each other on a chart. This is accepted,
 not a bug to fix, because every bar in this chart type already prints its
 full group name and its percentage directly on the bar — color is never
 the only way to identify a row, which is the secondary-encoding condition
-under which a sub-floor color pair is allowed.
+under which a sub-floor color pair is allowed. The same reasoning applies
+to Latter-day Saint (blue, `#1f4f7a`) and United Methodist (navy,
+`#3E5C76`) landing near each other on a line chart
+(`scripts/ryan-burge/render_pid_over_time_chart.py`) — every line there
+also carries its own printed end-of-line label.
 
-The canonical implementation is `GROUP_COLORS`/`color_for_group` in
-`scripts/chart_style.py`; see `scripts/pew-rls/STYLE.md`'s "Magnitude bar
-(per-group identity color)" section for a worked example.
+The canonical implementation is `GROUP_COLORS`/`GROUP_ALIASES`/
+`color_for_group` in `scripts/chart_style.py`; see `scripts/pew-rls/STYLE.md`'s
+"Magnitude bar (per-group identity color)" section for a worked example.
+
+**Title qualifiers render smaller than the primary title.** A trailing
+parenthetical qualifier on a chart title — e.g. "Attendance frequency,
+full distribution (Christian only)" — renders on its own line at roughly
+55% of the primary title's font size, not wrapped in as if it were equally
+important. The canonical implementation is `split_title_qualifier` in
+`scripts/chart_style.py`, used by every title-drawing function in
+`scripts/pew-rls/*.py`.
 
 **Footnote/caption, every Data Explorer PNG:** one bold line, nothing else —
 `@ithinkisam | data: <short source title>`. No DOI, no URL, no full academic

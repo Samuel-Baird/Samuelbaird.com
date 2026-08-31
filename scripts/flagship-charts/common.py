@@ -12,10 +12,15 @@ per dataset family and so duplicate their own render_magnitude_bar per file
 flagship chart. Duplicating the same ~150-line matplotlib function eight
 times for a single call site each would just be copy-paste, not the
 "family evolves independently" reason the other folders duplicate - so this
-one shared module holds the single chart shape all eight need: a horizontal
-magnitude bar, one row per category, with one or more rows optionally
-highlighted in --accent and the rest in a bar-safe gray. Same canvas, fonts,
-and caption/title layout as every other chart in the Data Explorer pipeline
+one shared module holds the single chart shape all eight need (and every
+other one-off dataset registered since - see this folder's STYLE.md for
+the full list): a horizontal magnitude bar, one row per category, colored
+either by per-group religious identity (`group_identity=True`, the
+default for any group-comparison chart - see BRANDING_AND_DESIGN.md's
+"Charts" section) or by a binary highlight of the chart's own subject
+(`highlight_rows`, for a chart about a specific country/time-period/
+category rather than a religious identity). Same canvas, fonts, and
+caption/title layout as every other chart in the Data Explorer pipeline
 (scripts/chart_style.py, scripts/state-of-theology-graphics/STYLE.md) - only
 the compute step differs per dataset, in that dataset's own
 scripts/<slug>/*.py analysis script.
