@@ -9,6 +9,7 @@ import type { Study } from "@/lib/types";
 import churchNewsStateGrowthData from "../../docs/study-data/church-news-us-membership-growth-by-state-2000-2025/data.json";
 import pewMormonsInAmericaData from "../../docs/study-data/pew-mormons-in-america-2012/data.json";
 import religionPerfectionismData from "../../docs/study-data/byu-studies-63-4-religion-and-perfectionism/data.json";
+import dyerLdsTrendsData from "../../docs/study-data/dyer-lds-trends-us-byu-studies-2026/data.json";
 
 /**
  * Per-study downloadable graphics — the studies-section counterpart of the
@@ -160,7 +161,41 @@ function introjectedMotivationGraphic(): Graphic {
   };
 }
 
+function dyerSmartphoneOwnershipGraphic(): Graphic {
+  const { rows } = dyerLdsTrendsData.charts["smartphone-ownership"];
+  const alt = rows.map((r) => `${r.label} ${r.pct}%`).join(", ");
+  return {
+    title: "Smartphone ownership and deidentifying",
+    description:
+      "Share of Family Foundations of Youth Development (FFYD) panel youth who had deidentified as Latter-day Saint by 2024, by whether they owned a smartphone in 2020.",
+    imageSrc:
+      "/study-graphics/dyer-lds-trends-us-byu-studies-2026/smartphone-ownership.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart: share of FFYD youth who had deidentified as Latter-day Saint by 2024, by smartphone ownership. ${alt}.`,
+  };
+}
+
+function dyerVideoClipWatchingGraphic(): Graphic {
+  const { rows } = dyerLdsTrendsData.charts["video-clip-watching"];
+  const alt = rows.map((r) => `${r.label} ${r.pct}%`).join(", ");
+  return {
+    title: "Watching video clips and deidentifying",
+    description:
+      "Share of FFYD panel youth who had deidentified as Latter-day Saint by 2024, by hours of daily video-clip watching in 2020.",
+    imageSrc:
+      "/study-graphics/dyer-lds-trends-us-byu-studies-2026/video-clip-watching.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart: share of FFYD youth who had deidentified as Latter-day Saint by 2024, by daily video-clip watching. ${alt}.`,
+  };
+}
+
 const RAW_STUDY_GRAPHICS: StudyGraphicsEntry[] = [
+  {
+    studySlug: "dyer-lds-trends-us-byu-studies-2026",
+    graphics: [dyerSmartphoneOwnershipGraphic(), dyerVideoClipWatchingGraphic()],
+  },
   {
     studySlug: "church-news-us-membership-growth-by-state-2000-2025",
     graphics: [churchNewsPctGrowthGraphic(), churchNewsGainsGraphic()],
