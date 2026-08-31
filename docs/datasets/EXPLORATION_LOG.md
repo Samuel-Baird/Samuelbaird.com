@@ -261,6 +261,40 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   with no Latter-day-Saint/U.S.-specific frame variable, documented as
   such in its own description. Not worth revisiting for more charts.
 
+- **pew-rls-2014-recontact** (2014 RLS recontact survey) — partial,
+  2026-08-31: had 5 charts (all qd-series marriage/family items). Added 2
+  more this pass, both broken out by current tradition (reltrad) from the
+  qb/qc batteries not yet touched — `parents-talked-religion.json` (77.8%
+  of Mormons say their parents or guardians talked about religion "a lot"
+  growing up, from qb15, highest of any tradition by 16 points over 2nd-
+  place Historically Black Protestant at 62.0% and well above Evangelical
+  Protestant's 42.4% — ties to the Church's family gospel-teaching culture,
+  e.g. family home evening/family scripture study) and
+  `attendance-stability.json` (only 39.2% of Mormons have ever gone
+  through a period since turning 18 of attending religious services less
+  often than they do now, from qc9, the lowest "lapsed" share of any
+  tradition — Evangelical/Mainline Protestant both ~58-59% — reads as the
+  most stable, unbroken lifelong attendance pattern of any group).
+  Confirmed pew-latin-america-2014's existing 6 charts already max out
+  that dataset's LDS content before starting this pass: Mormons in Latin
+  America aren't broken out as their own respondent group in QCURRELrec
+  (folded into "Other religion," too small a sample), so the only
+  Mormon-specific item is Q63e ("do you consider Mormons Christian"),
+  already shipped as `mormons-as-christian.json` — not worth revisiting.
+  Back in pew-rls-2014-recontact: checked and dropped qc3 ("only
+  considered congregations in your own denomination when looking for a
+  new one" — Mormon valid n=29, just under the 30 floor), qc11/qd7/qd9a
+  (all Mormon n<30 once skip-gated to their relevant subsamples), and
+  qb17/qb18 (importance of religion to self/family growing up — both read
+  as near-duplicates of the already-shipped pew-religious-landscape-study
+  `childhood-importance.png` CHIMPREL chart, same construct different
+  survey). Remaining untouched candidates if this dataset gets a third
+  pass: qb16 (parental disagreement about religion growing up), qb21
+  (currently belonging to more than one religion — check against the
+  already-shipped `raised-interfaith.json` for overlap first), and the
+  qc1a/b/d "reasons for looking for a new congregation" battery (likely
+  too small a Mormon n given the qc3 sibling item's 29).
+
 - **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — partial,
   2026-08-31: had 5 charts (evolution-belief, certainty-of-god,
   daily-prayer, retention-rate, lds-share-by-region). Added 3 more this

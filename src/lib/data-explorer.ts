@@ -75,6 +75,8 @@ import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/rai
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
 import attendWithSpouseData from "../../docs/datasets/pew-rls-2014-recontact/attend-with-spouse.json";
 import spouseReligiousDisagreementData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religious-disagreement.json";
+import parentsTalkedReligionData from "../../docs/datasets/pew-rls-2014-recontact/parents-talked-religion.json";
+import attendanceStabilityData from "../../docs/datasets/pew-rls-2014-recontact/attendance-stability.json";
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
 import transubstantiationData from "../../docs/datasets/pew-latin-america-2014/transubstantiation.json";
 import latinAmericaWeeklyAttendanceData from "../../docs/datasets/pew-latin-america-2014/weekly-attendance.json";
@@ -810,6 +812,8 @@ const RAW_DATASETS: Dataset[] = [
       spouseReligionMatteredGraphic(),
       attendWithSpouseGraphic(),
       spouseReligiousDisagreementGraphic(),
+      parentsTalkedReligionGraphic(),
+      attendanceStabilityGraphic(),
     ],
   },
   {
@@ -1979,6 +1983,34 @@ function spouseReligiousDisagreementGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014-recontact/spouse-religious-disagreement.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying they disagree with their spouse about religion a lot, by current tradition. ${alt}.`,
+  };
+}
+
+function parentsTalkedReligionGraphic(): Graphic {
+  const { group_order: order, parents_talked_religion_a_lot: results } = parentsTalkedReligionData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Parents talked about religion — a lot",
+    description: "Share who say their parents or guardians talked about religion \"a lot\" growing up, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/parents-talked-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say their parents talked about religion a lot growing up, by current tradition. ${alt}.`,
+  };
+}
+
+function attendanceStabilityGraphic(): Graphic {
+  const { group_order: order, ever_attended_less_since_18: results } = attendanceStabilityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Has attendance ever lapsed?",
+    description: "Share who have ever gone through a period attending services less often than now, since turning 18, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/attendance-stability.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share whose religious attendance has ever lapsed since turning 18, by current tradition. ${alt}.`,
   };
 }
 
