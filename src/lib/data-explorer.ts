@@ -108,6 +108,7 @@ import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/finan
 import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
 import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scripture-covid-coping.json";
 import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
+import covidLessonBeliefData from "../../docs/datasets/pew-atp-w70-2020/covid-lesson-belief.json";
 import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
 import adultArrangementsData from "../../docs/datasets/pew-catholic-family-2015/adult-arrangements.json";
 import prayerStyleData from "../../docs/datasets/pew-catholic-family-2015/prayer-style.json";
@@ -960,6 +961,7 @@ const RAW_DATASETS: Dataset[] = [
       scriptureCovidCopingGraphic(),
       religiousOrgGivingCovidGraphic(),
       congregationDonatingGraphic(),
+      covidLessonBeliefGraphic(),
     ],
   },
   {
@@ -2508,6 +2510,20 @@ function congregationDonatingGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/congregation-donating.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of monthly attenders who donate to their house of worship, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function covidLessonBeliefGraphic(): Graphic {
+  const { group_order: order, believes_covid_lesson: results } = covidLessonBeliefData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "A lesson to learn from COVID",
+    description: "Share who believe there's a lesson (or set of lessons) for humankind to learn from the coronavirus outbreak, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/covid-lesson-belief.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe there's a lesson for humankind to learn from the coronavirus outbreak, by religious tradition, July 2020. ${alt}.`,
   };
 }
 
