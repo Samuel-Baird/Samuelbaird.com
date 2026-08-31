@@ -376,15 +376,23 @@ distribution chart) and are now this pipeline's *default* everywhere;
 see `scripts/pew-rls/STYLE.md`'s "Bigger row labels and black outlines
 are now pipeline defaults" section for the full file-by-file rollout and
 the one crowding fix (`axes_left`) it required on two charts with an
-unusually long row label. Rolled out to: `scripts/pew-rls/` (2026-08-31)
-and `scripts/ryan-burge/` (2026-08-31, see `scripts/ryan-burge/STYLE.md`'s
+unusually long row label. Rolled out to: `scripts/pew-rls/` (2026-08-31),
+`scripts/ryan-burge/` (2026-08-31, see `scripts/ryan-burge/STYLE.md`'s
 "Bigger row labels and black outlines are now pipeline defaults" section
 — that pipeline's heatmap/matrix shape keeps its own separate, smaller
 `MIN.HEATMAP_*` label floors and its cell border was already the
 Border/Grid token rather than Paper, so neither treatment changed the
-heatmap shape). `scripts/flagship-charts/` and
-`scripts/state-of-theology-graphics/` still use the older sizing/edge
-defaults and are expected to roll out the same change separately.
+heatmap shape), and `scripts/flagship-charts/` (2026-08-31, see
+`scripts/flagship-charts/STYLE.md`'s "Bigger row labels and black outlines
+are now pipeline defaults" section — its three line-chart shapes are
+exempt for the same numeric-y-axis reason as ryan-burge's line charts, and
+its `render_magnitude_bar` needed an auto-widening left margin rather than
+per-caller `axes_left` overrides, since ~55 datasets share that one
+function and 27 of its 63 regenerated charts clipped at the old fixed
+default — a pipeline-wide crowding problem, not a one-or-two-chart edge
+case). `scripts/state-of-theology-graphics/` still uses the older
+sizing/edge defaults and is expected to roll out the same change
+separately.
 
 **Title qualifiers render smaller than the primary title.** A trailing
 parenthetical qualifier on a chart title — e.g. "Attendance frequency,

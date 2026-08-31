@@ -246,8 +246,32 @@ def render_magnitude_bar(
 
     for tick_label, r in zip(ax.get_yticklabels(), display_rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
+
+    # Auto-widen the left margin when a row label doesn't fit inside
+    # `axes_left` at MIN.LEGEND size. This pipeline's ~60 callers span many
+    # datasets with wildly different row-label lengths (a short group name
+    # like "Mormon" next to "Historically Black Protestant Churches" in the
+    # very same RELTRAD-style chart) - a single fixed default clips
+    # whichever caller's labels happen to be longer than it was sized for,
+    # and with ~30 of those ~60 callers affected this is pipeline-wide
+    # crowding, not a one-or-two-chart edge case (see this folder's
+    # STYLE.md). Measured from the actual rendered text width, not a
+    # character count, since the bold condensed font isn't monospace.
+    # Never narrows below the caller's own `axes_left` - only widens it.
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    label_pad_px = 8 / 72 * DPI  # matches tick_params(pad=8) above (points -> px)
+    edge_margin_px = 0.045 * FIG_W_IN * DPI  # buffer so a wide label doesn't touch the canvas edge
+    max_label_px = max(
+        (tl.get_window_extent(renderer=renderer).width for tl in ax.get_yticklabels()),
+        default=0,
+    )
+    required_left = (max_label_px + label_pad_px + edge_margin_px) / (FIG_W_IN * DPI)
+    if required_left > AXES_LEFT:
+        AXES_LEFT, AXES_WIDTH = required_left, 0.94 - required_left
+        ax.set_position([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
 
     for r, v, c in zip(display_rows, vals, colors):
         ax.text(
@@ -668,7 +692,7 @@ def render_100_stack(
         text_color = YES_NO_DK_TEXT_ON[seg]
         vals = [values[r][seg] for r in display_rows]
         ax.barh(display_rows, vals, left=left, height=bar_h, color=color,
-                 edgecolor=PAPER, linewidth=1.5, zorder=3)
+                 edgecolor=INK, linewidth=1.5, zorder=3)
         for r, v, l in zip(display_rows, vals, left):
             if v >= 5:
                 ax.text(l + v / 2, r, f"{v:.0f}%", va="center", ha="center",
@@ -680,11 +704,11 @@ def render_100_stack(
     ax.margins(y=0.35)
     for tick_label in ax.get_yticklabels():
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(16)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     import matplotlib.patches as mpatches
-    handles = [mpatches.Patch(facecolor=YES_NO_DK_COLORS[s], edgecolor=PAPER, label=s)
+    handles = [mpatches.Patch(facecolor=YES_NO_DK_COLORS[s], edgecolor=INK, label=s)
                for s in segment_order]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
@@ -943,7 +967,7 @@ def render_dumbbell_log(
     ax.tick_params(axis="y", length=0, pad=10)
     for tick_label in ax.get_yticklabels():
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(13.5)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for i, r in enumerate(rows):

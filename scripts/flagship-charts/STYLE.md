@@ -51,6 +51,76 @@ growing, `--oxblood` for declining - not by religious identity. This isn't
 the highlight-vs-gray pattern and doesn't use `color_for_group`; leave it
 as-is.
 
+## Bigger row labels and black outlines are now pipeline defaults
+
+As of 2026-08-31, this module rolls out the same two readability
+treatments `scripts/pew-rls/` and `scripts/ryan-burge/` made their
+defaults the same day (see `scripts/pew-rls/STYLE.md`'s "Bigger row
+labels and black outlines are now pipeline defaults" section for the full
+background and rationale):
+
+- **Group/axis (row) labels at `MIN.LEGEND` (24pt)** instead of the old
+  smaller floor (`MIN.AXIS_LABEL`/12pt for `n_rows > 8`, or a hardcoded
+  14pt/16pt/13.5pt below that threshold or in a different shape).
+- **Black (`INK`) bar/segment and legend-swatch outlines** instead of the
+  old default (`PAPER`/white, invisible where a segment touches a chart's
+  outer edge or another segment).
+
+Function by function:
+
+- `render_magnitude_bar` - row-label (y-tick) fontsize is now
+  unconditionally `MIN.LEGEND`, dropping the old `n_rows > 8 ? MIN.AXIS_LABEL
+  : 14` branch. This shape's bars have no edge (a single bar per row never
+  touches a neighbor), so no edge color to change.
+- `render_100_stack` - row-label fontsize changed from a hardcoded 16pt to
+  `MIN.LEGEND`; its stacked-segment `edgecolor` and legend-swatch
+  `edgecolor` both changed from `PAPER` to `INK`.
+- `render_dumbbell_log` - row-label fontsize changed from a hardcoded
+  13.5pt to `MIN.LEGEND`. Its dot/triangle markers already color
+  `markeredgecolor` to match their own `markerfacecolor` (gray dot,
+  accent/oxblood triangle) - that's a different, intentional device (no
+  visible ring), not the invisible-white-edge problem this rollout
+  targets, so left unchanged.
+- `render_timeseries`, `render_range_projection`,
+  `render_timeseries_by_direction` - unchanged; see "Line charts are
+  exempt" below.
+
+### Line charts are exempt
+
+`render_timeseries`, `render_range_projection`, and
+`render_timeseries_by_direction` have no group/axis row label in the
+bar-chart sense - their y-axis ticks are a numeric scale (a membership
+count), not one label per group, so they correctly keep `MIN.AXIS_LABEL`.
+Same reasoning as `scripts/ryan-burge/STYLE.md`'s "Line charts are
+exempt". Their point markers already set `markeredgecolor` to match each
+point's own fill color (status- or direction-coded) rather than `PAPER`,
+so there was no invisible-white-edge problem to fix there either.
+
+### `render_magnitude_bar`'s auto-widening left margin
+
+Unlike `pew-rls/render_family_household_charts.render_magnitude_bar` and
+`ryan-burge/render_voter_ideas_longitudinal.render_paired_bar`, which each
+needed a one-off `axes_left` bump on one or two call sites, this module's
+`render_magnitude_bar` is called by ~55 datasets whose row labels range
+from a single word ("Mormon") to full RELTRAD tradition names
+("Historically Black Protestant Churches") - often in the *same* chart.
+An automated edge-pixel scan after the `MIN.LEGEND` bump (dark pixels
+touching the canvas's left border) flagged 27 of the pipeline's 63
+regenerated PNGs as clipped at the old fixed `axes_left` default - clearly
+pipeline-wide crowding, not an isolated chart or two, so per this
+pipeline's own "prefer a shared fix over per-caller overrides unless only
+one or two callers are affected" rule, `render_magnitude_bar` gained
+auto-widening logic instead of 27 individual `axes_left=` call-site edits:
+after setting the row-label fontsize, it draws the figure once, measures
+the actual rendered pixel width of the widest y-tick label via
+matplotlib's renderer (not a character count - the bold condensed font
+isn't monospace), and repositions the axes to whatever `axes_left` that
+label needs, floored at (never narrower than) the function's own
+`axes_left` parameter. A chart whose labels already fit inside the
+default keeps the default; only the ones that don't get widened, and each
+by exactly as much as its own longest label requires. Re-scanned all 63
+regenerated PNGs after this change: 0 flagged.
+
 ## Regenerating
 
 Each dataset's own `scripts/<slug>/render_*.py` script is a thin CLI wrapper
