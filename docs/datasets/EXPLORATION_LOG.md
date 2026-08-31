@@ -424,6 +424,28 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   pass and dropped as unremarkable. Consider this dataset close to fully
   mined.
 
+- **pew-atp-w132-2023** (American Trends Panel, Wave 132, spirituality
+  battery) — partial, third pass 2026-08-31: had 3 charts (beyond-this-world,
+  religious-community, has-cross). Added 2 more this pass, both by F_RELIG —
+  `spirituality-important.json` (66.5% of Mormons call spirituality "very
+  important" in their life, highest of any Christian tradition and
+  essentially tied with Muslims at 66.7% for the highest of any group in the
+  wave) and `tattoo-piercing-spiritual.json` (only 6.5% of Mormons have a
+  tattoo or piercing "for spiritual purposes," lowest of any Christian
+  tradition — Protestant 8.3%/Catholic 7.8%/Orthodox 10.4% — essentially
+  tied with Atheists at 6.0% and above only Muslims at 4.3% among all 12
+  groups; ties to the LDS body-as-temple/tattoo counsel). Checked
+  SPIRTHINGS_a (jewelry, Mormon 10.2% — thin, no clear doctrinal story) and
+  SPIRTHINGS_d (home shrine/altar/icon, Mormon 11.2% — not the lowest,
+  Protestant is lower at 7.2%, undercuts an LDS-distinctiveness story) and
+  dropped both; also checked LIFESPIR_W132 (became more/less spiritual over
+  lifetime, Mormon 50.1% — solidly mid-pack, no distinctive story) and
+  dropped it. Wave's DTHLKE_c (dead can provide guidance/protection) is
+  still untouched but flagged in the prior pass as overlapping W143's
+  shipped "ancestors' spirits" chart — check closely before using. Consider
+  this wave close to fully mined; only DTHLKE_c remains as a live candidate,
+  and it's a marginal one.
+
 - **pew-faith-in-flux-2008** (2008 Conversion Recontact Survey) — 2026-08-31:
   had 5 charts (never previously logged here, hence appearing "untouched" by
   this log's own summary at the top - it wasn't). Added 2 more this pass.
@@ -454,4 +476,59 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   choice framing of the same q4 reasons, redundant with reasons-left-
   religion), q1/q1a/q14/q14a (age and life-stage when leaving/joining, a
   demographic item with no direct religious-content angle). Consider this
+  dataset close to fully mined.
+
+- **pew-atp-w143-2024** (American Trends Panel, Wave 143, February 2024 —
+  religion/politics + Israel-Hamas war) — 2026-08-31: had 11 charts, all
+  previously built but never logged here (cross-referenced against
+  `data-explorer.ts`'s graphics array to confirm). Added 2 more this pass,
+  same F_RELIG group-set/`binary_by_group` construction as the existing
+  holiday_batch*.py scripts — `believes-in-reincarnation.png` (only 14.0% of
+  Mormons believe people will be reborn in this world again and again, tied
+  with Atheists for the lowest of any group — Buddhist 67.0%/Hindu 65.9% at
+  the top — ties to the LDS doctrine of one mortal probation rather than
+  reincarnation) and `consults-fortune-teller.png` (5.9% of Mormons consult
+  a fortune teller, horoscope, or other way to see the future, 2nd-lowest
+  after Jewish's 5.6% and essentially tied with Protestant's 6.2% — ties to
+  LDS counsel against seeking guidance through divination/fortune-telling).
+  Both from BELIEVE_REIN_W143/PRACTICE_FUTR_W143, checked against the
+  existing 11 charts for overlap (none — those cover fasting, candles,
+  discrimination-perception items, president-belief items, afterlife,
+  ancestors' spirits, and wearing religious items) and confirmed no
+  existing "reincarnation" or "fortune teller/horoscope/divination" chart
+  anywhere on the site. All groups clear the 30-valid floor at n=57-4,354.
+  Wave's remaining untouched battery is almost entirely Israel-Hamas-war/
+  politics content with no religious-tradition breakout angle (SYMP_W143,
+  HMSACC/HMSVAL/ISRACC/ISRVAL, FUNDISR/AIDGZ, LAND_RSLV, etc.) or
+  Catholic-specific (CCHRCH_*, PPLFAV_a Pope Francis, POPE_CHANGE); the only
+  other live candidate is BELIEVE_SPEL_W143 (belief spells/curses/magic can
+  influence people's lives) but it lacks as clean an LDS doctrinal tie as
+  this pass's two items, and RELIGCONFLICT_W143 (conflict between own
+  beliefs and mainstream culture) has Mormons mid-pack at 58.1%, no
+  distinctiveness story. Consider this wave close to fully mined.
+
+- **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — third pass,
+  2026-08-31: had 8 charts. Added 2 more from the prior pass's remaining-
+  battery list, both broken out by RELTRAD, continental-US main survey —
+  `share-faith-nonbelievers.json` (q42d, 47.8% of Mormons share their
+  faith with non-believers or people from other religious backgrounds at
+  least monthly, 4th of 11 named traditions behind Jehovah's Witness
+  86.4%/Historically Black Protestant 56.8%/Evangelical Protestant 53.9%,
+  ties to LDS full-time and everyday member-missionary practice;
+  Unaffiliated has no valid cases, the item isn't meaningfully asked of
+  them) and `angels-demons-active.json` (q39b, 91.6% of Mormons completely
+  or mostly agree angels and demons are active in the world, 2nd only to
+  Jehovah's Witness at 96.3% and above Historically Black Protestant
+  90.2%/Evangelical Protestant 89.8%, ties to LDS scripture's angelic-
+  ministration accounts, e.g. Moroni's visits to Joseph Smith, and belief
+  in a personal, active adversary). Both PNGs read cleanly at 12-13 rows,
+  no label collision. Checked q46/q47 (conflict between devout religion
+  and modern society) this pass and dropped it: Mormon at 37.9% is
+  mid-pack, close to Orthodox 38.0%/Catholic 36.1%, no distinctiveness
+  story. Remaining untouched candidates from the prior pass's list: q37/q38
+  (scripture literalism, likely near-duplicate of 2014's
+  scripture-word-of-god — check first), q42d's siblings weren't checked
+  individually, q43a (spiritual peace, q43c already checked and dropped),
+  q55a-c (family religious practices with children, likely near-duplicate
+  of 2014's qk10a/qk10b family-scripture-prayer chart). Consider this
   dataset close to fully mined.

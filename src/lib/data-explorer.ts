@@ -64,6 +64,8 @@ import ldsShareByRegionData from "../../docs/datasets/pew-rls-2007/lds-share-by-
 import officialMembershipData from "../../docs/datasets/pew-rls-2007/official-membership.json";
 import prayerScriptureGroupsData from "../../docs/datasets/pew-rls-2007/prayer-scripture-groups.json";
 import volunteerWithChildrenData from "../../docs/datasets/pew-rls-2007/volunteer-with-children.json";
+import shareFaithNonbelieversData from "../../docs/datasets/pew-rls-2007/share-faith-nonbelievers.json";
+import angelsDemonsActiveData from "../../docs/datasets/pew-rls-2007/angels-demons-active.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -128,6 +130,8 @@ import followsOwnLeadersData from "../../docs/datasets/pew-atp-w117-2022/follows
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
 import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religious-community.json";
+import spiritualityImportantData from "../../docs/datasets/pew-atp-w132-2023/spirituality-important.json";
+import tattooPiercingSpiritualData from "../../docs/datasets/pew-atp-w132-2023/tattoo-piercing-spiritual.json";
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
 import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
@@ -139,6 +143,7 @@ import w162HolidayBatchData from "../../docs/datasets/pew-atp-w162-2025/holiday-
 import cathessentData from "../../docs/datasets/pew-atp-w162-2025/cathessent.json";
 import confessionFrequencyData from "../../docs/datasets/pew-atp-w162-2025/confession-frequency.json";
 import w143HolidayBatch3Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-3.json";
+import w143HolidayBatch4Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-4.json";
 import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-beliefs.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
 import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-religious-items.json";
@@ -769,6 +774,8 @@ const RAW_DATASETS: Dataset[] = [
       officialMembershipGraphic(),
       prayerScriptureGroupsGraphic(),
       volunteerWithChildrenGraphic(),
+      shareFaithNonbelieversGraphic(),
+      angelsDemonsActiveGraphic(),
     ],
   },
   {
@@ -1214,7 +1221,13 @@ const RAW_DATASETS: Dataset[] = [
       "wave is a large battery of belief and experience items about spirituality, " +
       "likely feeding Pew's Dec. 2023 \"Spirituality Among Americans\" report.",
     sourceUrl: "https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/",
-    graphics: [beyondThisWorldGraphic(), religiousCommunityGraphic(), hasCrossGraphic()],
+    graphics: [
+      beyondThisWorldGraphic(),
+      religiousCommunityGraphic(),
+      hasCrossGraphic(),
+      spiritualityImportantGraphic(),
+      tattooPiercingSpiritualGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w143-2024",
@@ -1244,6 +1257,8 @@ const RAW_DATASETS: Dataset[] = [
       w143AncestorSpiritsGraphic(),
       w143DiscrimBlackGraphic(),
       w143WearsReligiousItemsGraphic(),
+      w143ReincarnationGraphic(),
+      w143FortuneTellerGraphic(),
     ],
   },
   {
@@ -1850,6 +1865,34 @@ function volunteerWithChildrenGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/volunteer-with-children.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who work with children or youth at their place of worship at least weekly, among those with a usual place of worship, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function shareFaithNonbelieversGraphic(): Graphic {
+  const { group_order: order, shares_faith_monthly_plus: results } = shareFaithNonbelieversData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who shares their faith with non-believers?",
+    description: "Share who share their faith with non-believers or people from other religious backgrounds at least monthly, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/share-faith-nonbelievers.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who share their faith with non-believers or people from other religious backgrounds at least monthly, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function angelsDemonsActiveGraphic(): Graphic {
+  const { group_order: order, angels_demons_active: results } = angelsDemonsActiveData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Are angels and demons active in the world?",
+    description: "Share who completely or mostly agree that angels and demons are active in the world, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/angels-demons-active.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree angels and demons are active in the world, by religious tradition, 2007. ${alt}.`,
   };
 }
 
@@ -2817,6 +2860,34 @@ function religiousCommunityGraphic(): Graphic {
   };
 }
 
+function spiritualityImportantGraphic(): Graphic {
+  const { group_order: order, spirituality_very_important: results } = spiritualityImportantData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is spirituality in your life?",
+    description: "Share saying spirituality is \"very important\" in their life, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/spirituality-important.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying spirituality is very important in their life, by religion, 2023. ${alt}.`,
+  };
+}
+
+function tattooPiercingSpiritualGraphic(): Graphic {
+  const { group_order: order, tattoo_or_piercing_for_spiritual_purposes: results } = tattooPiercingSpiritualData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you have a tattoo or piercing for spiritual purposes?",
+    description: "Share who have a tattoo or piercing \"for spiritual purposes,\" by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/tattoo-piercing-spiritual.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have a tattoo or piercing for spiritual purposes, by religion, 2023. ${alt}.`,
+  };
+}
+
 /** Formats a {pct} results record (insertion order) into alt text for the
  * four W143 holiday-batch graphics below. */
 function w143BatchAlt(results: Record<string, { pct: number }>): string {
@@ -2930,6 +3001,28 @@ function w143WearsReligiousItemsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w143-2024/wears-religious-items.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who wear or carry religious items or symbols, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143ReincarnationGraphic(): Graphic {
+  const results = w143HolidayBatch4Data.believes_in_reincarnation;
+  return {
+    title: "Who believes in reincarnation?",
+    description: "Share who believe people will be reborn in this world again and again, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/believes-in-reincarnation.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe in reincarnation, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143FortuneTellerGraphic(): Graphic {
+  const results = w143HolidayBatch4Data.consults_fortune_teller;
+  return {
+    title: "Who consults a fortune teller or horoscope?",
+    description: "Share who consult a fortune teller, horoscope, or other way to see the future, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/consults-fortune-teller.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who consult a fortune teller, horoscope, or other way to see the future, by religion, February 2024. ${w143BatchAlt(results)}.`,
   };
 }
 
