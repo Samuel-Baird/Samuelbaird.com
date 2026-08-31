@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 162, fielded February 3-9, 2025.",
+  "method": "Population is respondent's present religion (RELIG_W162; this wave has no F_RELTRAD frame variable). Share attending religious services in person more than once a week or once a week, aside from weddings and funerals (ATTENDPER_W162); don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W162 variable.",
+  "total_weighted_n": 9544.000199450762,
+  "total_unweighted_n": 9544,
+  "group_order": [
+    "Mormon",
+    "Muslim",
+    "Protestant",
+    "Orthodox Christian",
+    "Catholic",
+    "Jewish",
+    "Hindu",
+    "Nothing in particular",
+    "Buddhist",
+    "Agnostic",
+    "Atheist",
+    "Something else",
+    "All U.S. adults"
+  ],
+  "attend_weekly_plus": {
+    "Protestant": {
+      "pct": 37.03,
+      "valid_unweighted_n": 4029,
+      "group_unweighted_n": 4037
+    },
+    "Catholic": {
+      "pct": 28.41,
+      "valid_unweighted_n": 1785,
+      "group_unweighted_n": 1787
+    },
+    "Mormon": {
+      "pct": 52.32,
+      "valid_unweighted_n": 135,
+      "group_unweighted_n": 135
+    },
+    "Orthodox Christian": {
+      "pct": 33.97,
+      "valid_unweighted_n": 44,
+      "group_unweighted_n": 44
+    },
+    "Jewish": {
+      "pct": 20.25,
+      "valid_unweighted_n": 390,
+      "group_unweighted_n": 390
+    },
+    "Muslim": {
+      "pct": 43.36,
+      "valid_unweighted_n": 123,
+      "group_unweighted_n": 123
+    },
+    "Buddhist": {
+      "pct": 2.46,
+      "valid_unweighted_n": 89,
+      "group_unweighted_n": 89
+    },
+    "Hindu": {
+      "pct": 15.54,
+      "valid_unweighted_n": 65,
+      "group_unweighted_n": 66
+    },
+    "Atheist": {
+      "pct": 0.06,
+      "valid_unweighted_n": 608,
+      "group_unweighted_n": 609
+    },
+    "Agnostic": {
+      "pct": 1.12,
+      "valid_unweighted_n": 712,
+      "group_unweighted_n": 713
+    },
+    "Something else": {
+      "pct": 10.22,
+      "valid_unweighted_n": 262,
+      "group_unweighted_n": 262
+    },
+    "Nothing in particular": {
+      "pct": 3.46,
+      "valid_unweighted_n": 1259,
+      "group_unweighted_n": 1261
+    },
+    "All U.S. adults": {
+      "pct": 24.68,
+      "valid_unweighted_n": 9524,
+      "group_unweighted_n": 9544
+    }
+  }
+}

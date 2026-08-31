@@ -115,6 +115,8 @@ import confessionFrequencyData from "../../docs/datasets/pew-atp-w162-2025/confe
 import w143HolidayBatch3Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-3.json";
 import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-beliefs.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
+import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-religious-items.json";
+import w162AttendanceData from "../../docs/datasets/pew-atp-w162-2025/attendance.json";
 import renewalistShareData from "../../docs/datasets/pew-10-country-religion-2007/renewalist-share.json";
 import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-religion-2007/latino-religious-converts.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
@@ -1204,6 +1206,8 @@ const RAW_DATASETS: Dataset[] = [
       devotionToSaintsGraphic(),
       cathessentGraphic(),
       confessionFrequencyGraphic(),
+      wearReligiousItemsGraphic(),
+      w162AttendanceGraphic(),
     ],
   },
   {
@@ -2628,6 +2632,34 @@ function religiousConflictGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w162-2025/religious-conflict.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share feeling at least some conflict between their own religious beliefs and mainstream American culture, by present religion, February 2025. ${alt}.`,
+  };
+}
+
+function wearReligiousItemsGraphic(): Graphic {
+  const { group_order: order, wear_religious_items_weekly_plus: results } = wearReligiousItemsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Wearing your faith",
+    description: "Share who wear religious items or symbols, or carry them with them, daily or weekly, by present religion, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/wear-religious-items.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who wear religious items or symbols, or carry them with them, daily or weekly, by present religion, February 2025. ${alt}.`,
+  };
+}
+
+function w162AttendanceGraphic(): Graphic {
+  const { group_order: order, attend_weekly_plus: results } = w162AttendanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How often Americans attend services",
+    description: "Share attending religious services in person at least weekly, by present religion, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share attending religious services in person at least weekly, by present religion, February 2025. ${alt}.`,
   };
 }
 

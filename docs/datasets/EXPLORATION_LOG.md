@@ -53,3 +53,24 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   Catholics, Jews, Muslims, Atheists, Mainline Protestants by F_RELIG),
   REL4_* ("do you personally know a Mormon" by F_RELIG), and CHRNAT1a/b
   (awareness/favorability toward "Christian nationalism").
+
+- **pew-atp-w162-2025** (American Trends Panel, Wave 162, February 2025 —
+  Catholicism/religion's place in American life) — partial, 2026-08-31: had
+  4 charts, all Catholic-specific (`religious-conflict.json`,
+  `cathessent.json`, `confession-frequency.json`, and a devotion-to-saints
+  chart from `holiday-batch.json`). Added 2 more this pass, both drawn from
+  general (non-Catholic-coded) items broken out by RELIG_W162 (this wave has
+  no F_RELTRAD frame variable) — `attendance.json` (52.3% of Latter-day
+  Saints attend religious services in person at least weekly, highest of
+  any group in the wave, ahead of Muslims at 43.4% and every other Christian
+  tradition) and `wear-religious-items.json` (50.5% of Latter-day Saints
+  wear religious items/symbols or carry them with them at least weekly,
+  2nd only to Orthodox Christians at 51.2%). Wave's remaining items are
+  almost entirely Catholic-specific (CATHESSENT_*, CATHATTEND*, CCHRCH_*,
+  parish/Mass items) — not usable for further LDS breakouts; the only other
+  general items are RELART_W162 (religious objects/artwork at home, but
+  worded around cross/crucifix/pictures of Jesus or saints — too close to
+  the shipped devotion-to-saints chart) and PRACTICEA_BIB_W162/
+  PRACTICEA_OTHSCRPT_W162 (scripture reading, but skip-logic-gated to a
+  small subsample — only 35 and 100 valid Mormon respondents respectively).
+  Consider this wave essentially fully mined.
