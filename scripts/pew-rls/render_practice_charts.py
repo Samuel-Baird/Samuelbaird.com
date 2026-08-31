@@ -14,7 +14,7 @@ folder. Two chart shapes, reused across all ten items:
   distribution items (attendance, prayer frequency).
 
 Group sets vary by item's own population rule (see practice.py's
-docstring) - CHRISTIAN_ORDER (7 rows), CHRISTIAN_PLUS_OTHER_ORDER (8 rows),
+docstring) - CHRISTIAN_ORDER (7 rows), CHRISTIAN_PLUS_OTHER_ORDER (6 rows),
 or ALL_RELIGIOUS_ORDER (13 rows) - so every render call passes its own
 order list rather than a single hardcoded one.
 
@@ -64,7 +64,6 @@ CHRISTIAN_ORDER = [
 CHRISTIAN_PLUS_OTHER_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
     "Jehovah's Witness", "Other religions",
-    "Religiously affiliated average",
 ]
 ALL_RELIGIOUS_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",

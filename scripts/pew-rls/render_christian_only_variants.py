@@ -4,11 +4,12 @@ Data Explorer charts, alongside (not replacing) their original wide-
 population versions.
 
 Requested population for all 12: Latter-day Saint, Catholic, Protestant,
-Orthodox Christian, Jehovah's Witness - plus Religiously unaffiliated for
-the seven items whose original chart already carried that row (the five
-"beliefs" items below in scripts/pew-rls/render_beliefs_charts.py, plus
-relimpact/vol12 in scripts/pew-rls/render_public_life_charts.py, both of
-which use that file's WIDEST_ORDER). Everything else about each chart
+Orthodox Christian, Jehovah's Witness. Religiously unaffiliated was
+dropped from the seven items that originally carried it (the five
+"beliefs" items below plus relimpact/vol12) on 2026-08-31, at the site
+owner's request - keeping every "(Christian only)" chart to genuinely
+Christian-only rows, rather than Christian traditions plus one
+non-Christian row. Everything else about each chart
 (title, subtitle, data source, chart shape) is unchanged from the
 original - only the row set is narrower. Reuses each item's existing
 compute step and JSON (practice.json, beliefs.json, public-life.json) and
@@ -42,16 +43,10 @@ NARROW_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
     "Jehovah's Witness",
 ]
-NARROW_PLUS_UNAFFILIATED_ORDER = NARROW_ORDER + ["Religiously unaffiliated"]
 
 CHRISTIAN_NOTE = (
     "Population: Christian traditions only (Latter-day Saint, Catholic, Protestant, "
     "Orthodox Christian, Jehovah's Witness)."
-)
-CHRISTIAN_PLUS_UNAFFILIATED_NOTE = (
-    "Population: Christian traditions only (Latter-day Saint, Catholic, Protestant, "
-    "Orthodox Christian, Jehovah's Witness), plus the religiously unaffiliated as "
-    "their own row."
 )
 
 
@@ -114,41 +109,41 @@ def main() -> None:
     with open(DATA_DIR / "beliefs.json", encoding="utf-8") as f:
         beliefs = json.load(f)
     beliefs_total_n = beliefs["total_unweighted_n"]
-    beliefs_r.GROUP_ORDER = NARROW_PLUS_UNAFFILIATED_ORDER
+    beliefs_r.GROUP_ORDER = NARROW_ORDER
 
     beliefs_r.render_magnitude_bar(
         beliefs["soul_belief"],
         title="Believe people have a soul or spirit (Christian only)",
         subtitle="Share who believe people have a soul or spirit in\naddition to their physical body.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=beliefs_total_n,
+        note=CHRISTIAN_NOTE, total_n=beliefs_total_n,
         out_path=OUT_DIR / "beliefs-soul-christian.png", fonts=fonts,
     )
     beliefs_r.render_magnitude_bar(
         beliefs["heaven_belief"],
         title="Believe in heaven (Christian only)",
         subtitle="Share who believe there is a heaven where people who\nled good lives are eternally rewarded.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=beliefs_total_n,
+        note=CHRISTIAN_NOTE, total_n=beliefs_total_n,
         out_path=OUT_DIR / "beliefs-heaven-christian.png", fonts=fonts,
     )
     beliefs_r.render_magnitude_bar(
         beliefs["hell_belief"],
         title="Believe in hell (Christian only)",
         subtitle="Share who believe there is a hell where people who led\nbad lives are eternally punished.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=beliefs_total_n,
+        note=CHRISTIAN_NOTE, total_n=beliefs_total_n,
         out_path=OUT_DIR / "beliefs-hell-christian.png", fonts=fonts,
     )
     beliefs_r.render_paired_bar(
         beliefs["heaven_belief"], beliefs["hell_belief"],
         title="Belief in heaven vs. hell (Christian only)",
         subtitle="The same two questions, compared side by side per\ntradition.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=beliefs_total_n,
+        note=CHRISTIAN_NOTE, total_n=beliefs_total_n,
         out_path=OUT_DIR / "beliefs-heaven-vs-hell-christian.png", fonts=fonts,
     )
     beliefs_r.render_magnitude_bar(
         beliefs["evolution_guided_by_god"],
         title="Evolution guided by God (Christian only)",
         subtitle="Share who say humans evolved over time due to\nprocesses guided or allowed by God.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=beliefs_total_n,
+        note=CHRISTIAN_NOTE, total_n=beliefs_total_n,
         out_path=OUT_DIR / "beliefs-evolution-christian.png", fonts=fonts,
     )
 
@@ -157,17 +152,17 @@ def main() -> None:
     public_total_n = public_life["total_unweighted_n"]
 
     public_r.render_magnitude_bar(
-        public_life["relimpact_more_good"], NARROW_PLUS_UNAFFILIATED_ORDER,
+        public_life["relimpact_more_good"], NARROW_ORDER,
         title="Religion does more good than harm (Christian only)",
         subtitle="Share who say religion's overall impact on American\nsociety is more good than harm.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=public_total_n,
+        note=CHRISTIAN_NOTE, total_n=public_total_n,
         out_path=OUT_DIR / "public-relimpact-christian.png", fonts=fonts,
     )
     public_r.render_magnitude_bar(
-        public_life["vol12_volunteered"], NARROW_PLUS_UNAFFILIATED_ORDER,
+        public_life["vol12_volunteered"], NARROW_ORDER,
         title="Volunteered in the past 12 months (Christian only)",
         subtitle="Share who spent any time volunteering in the past 12\nmonths.",
-        note=CHRISTIAN_PLUS_UNAFFILIATED_NOTE, total_n=public_total_n,
+        note=CHRISTIAN_NOTE, total_n=public_total_n,
         out_path=OUT_DIR / "public-vol12-christian.png", fonts=fonts,
     )
 
