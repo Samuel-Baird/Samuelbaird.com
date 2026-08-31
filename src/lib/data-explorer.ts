@@ -64,6 +64,8 @@ import ldsShareByRegionData from "../../docs/datasets/pew-rls-2007/lds-share-by-
 import officialMembershipData from "../../docs/datasets/pew-rls-2007/official-membership.json";
 import prayerScriptureGroupsData from "../../docs/datasets/pew-rls-2007/prayer-scripture-groups.json";
 import volunteerWithChildrenData from "../../docs/datasets/pew-rls-2007/volunteer-with-children.json";
+import shareFaithNonbelieversData from "../../docs/datasets/pew-rls-2007/share-faith-nonbelievers.json";
+import angelsDemonsActiveData from "../../docs/datasets/pew-rls-2007/angels-demons-active.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -772,6 +774,8 @@ const RAW_DATASETS: Dataset[] = [
       officialMembershipGraphic(),
       prayerScriptureGroupsGraphic(),
       volunteerWithChildrenGraphic(),
+      shareFaithNonbelieversGraphic(),
+      angelsDemonsActiveGraphic(),
     ],
   },
   {
@@ -1861,6 +1865,34 @@ function volunteerWithChildrenGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/volunteer-with-children.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who work with children or youth at their place of worship at least weekly, among those with a usual place of worship, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function shareFaithNonbelieversGraphic(): Graphic {
+  const { group_order: order, shares_faith_monthly_plus: results } = shareFaithNonbelieversData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who shares their faith with non-believers?",
+    description: "Share who share their faith with non-believers or people from other religious backgrounds at least monthly, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/share-faith-nonbelievers.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who share their faith with non-believers or people from other religious backgrounds at least monthly, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function angelsDemonsActiveGraphic(): Graphic {
+  const { group_order: order, angels_demons_active: results } = angelsDemonsActiveData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Are angels and demons active in the world?",
+    description: "Share who completely or mostly agree that angels and demons are active in the world, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/angels-demons-active.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree angels and demons are active in the world, by religious tradition, 2007. ${alt}.`,
   };
 }
 

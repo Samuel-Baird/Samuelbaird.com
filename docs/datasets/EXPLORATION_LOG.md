@@ -506,3 +506,29 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   this pass's two items, and RELIGCONFLICT_W143 (conflict between own
   beliefs and mainstream culture) has Mormons mid-pack at 58.1%, no
   distinctiveness story. Consider this wave close to fully mined.
+
+- **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — third pass,
+  2026-08-31: had 8 charts. Added 2 more from the prior pass's remaining-
+  battery list, both broken out by RELTRAD, continental-US main survey —
+  `share-faith-nonbelievers.json` (q42d, 47.8% of Mormons share their
+  faith with non-believers or people from other religious backgrounds at
+  least monthly, 4th of 11 named traditions behind Jehovah's Witness
+  86.4%/Historically Black Protestant 56.8%/Evangelical Protestant 53.9%,
+  ties to LDS full-time and everyday member-missionary practice;
+  Unaffiliated has no valid cases, the item isn't meaningfully asked of
+  them) and `angels-demons-active.json` (q39b, 91.6% of Mormons completely
+  or mostly agree angels and demons are active in the world, 2nd only to
+  Jehovah's Witness at 96.3% and above Historically Black Protestant
+  90.2%/Evangelical Protestant 89.8%, ties to LDS scripture's angelic-
+  ministration accounts, e.g. Moroni's visits to Joseph Smith, and belief
+  in a personal, active adversary). Both PNGs read cleanly at 12-13 rows,
+  no label collision. Checked q46/q47 (conflict between devout religion
+  and modern society) this pass and dropped it: Mormon at 37.9% is
+  mid-pack, close to Orthodox 38.0%/Catholic 36.1%, no distinctiveness
+  story. Remaining untouched candidates from the prior pass's list: q37/q38
+  (scripture literalism, likely near-duplicate of 2014's
+  scripture-word-of-god — check first), q42d's siblings weren't checked
+  individually, q43a (spiritual peace, q43c already checked and dropped),
+  q55a-c (family religious practices with children, likely near-duplicate
+  of 2014's qk10a/qk10b family-scripture-prayer chart). Consider this
+  dataset close to fully mined.
