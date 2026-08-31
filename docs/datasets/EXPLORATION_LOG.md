@@ -805,3 +805,29 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   site appears to be approaching a genuine mining plateau, though a few
   single-item candidates (COVIDLESSON2_W70 among them) remain if a future
   pass wants to push further into thinner territory.
+
+- **Plateau check, 2026-08-31 (26th+ pass)** — read this entire log in full
+  and re-checked the last pass's one flagged open candidate,
+  COVIDLESSON2_W70 ("do you believe any of the lessons humankind should
+  learn from COVID were sent to us by God," ATP W70), by computing the real
+  weighted crosstab by F_RELTRAD directly from `ATP W70.sav` rather than
+  trusting the prior note: Mormon = 64.4% (n=156 valid), which lands 4th of
+  16 groups — behind Historically Black Protestant (74.6%), Muslim (69.5%),
+  and Evangelical Protestant (66.0%) — confirming the prior pass's read that
+  this is a crowded mid-upper-pack result with no highest/lowest
+  distinctiveness story, not worth shipping as a chart. Also did the full
+  final cross-reference requested: every one of the 28 folders under
+  `data/` maps to a slug (or, for `ryan-burge`, multiple sub-dataset slugs)
+  already present in `src/lib/data-explorer.ts`'s `DATASETS` array — no
+  dataset was found sitting entirely unmined and unlisted. With
+  COVIDLESSON2_W70 (the only concretely open candidate carried forward from
+  the prior pass) checked and rejected, and every dataset's own
+  remaining-battery notes in this log already exhausted or explicitly
+  marked "close to/fully mined" across 25+ prior passes, this pass found
+  zero defensible new charts. **Conclusion: the Data Explorer has reached
+  its natural mining plateau for this session.** No chart was built. Future
+  passes should not re-check pew-rls-2023-24, ryan-burge, state-of-theology,
+  the nine no-usable-breakout cross-national datasets, or any dataset marked
+  "fully mined" / "close to fully mined" above without first identifying a
+  genuinely new angle (e.g. a newly released Pew wave, a newly added data
+  file) rather than re-scanning the same exhausted batteries.
