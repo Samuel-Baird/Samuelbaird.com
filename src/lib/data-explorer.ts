@@ -125,6 +125,9 @@ import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-r
 import w162AttendanceData from "../../docs/datasets/pew-atp-w162-2025/attendance.json";
 import renewalistShareData from "../../docs/datasets/pew-10-country-religion-2007/renewalist-share.json";
 import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-religion-2007/latino-religious-converts.json";
+import importanceOfReligionHispanicsData from "../../docs/datasets/pew-hispanics-religion-2007/importance-of-religion.json";
+import volunteeredForChurchData from "../../docs/datasets/pew-hispanics-religion-2007/volunteered-for-church.json";
+import weeklyAttendanceHispanicsData from "../../docs/datasets/pew-hispanics-religion-2007/weekly-attendance.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
@@ -1263,7 +1266,12 @@ const RAW_DATASETS: Dataset[] = [
       "\"Changing Faiths: Latinos and the Transformation of American Religion,\" survey of 4,016 " +
       "U.S. Hispanic adults, fielded Aug. 10-Oct. 4, 2006.",
     sourceUrl: "https://www.pewresearch.org/race-and-ethnicity/2007/04/25/changing-faiths-latinos-and-the-transformation-of-american-religion/",
-    graphics: [latinoReligiousConvertsGraphic()],
+    graphics: [
+      latinoReligiousConvertsGraphic(),
+      importanceOfReligionHispanicsGraphic(),
+      volunteeredForChurchGraphic(),
+      weeklyAttendanceHispanicsGraphic(),
+    ],
   },
 ];
 
@@ -2812,6 +2820,48 @@ function latinoReligiousConvertsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-hispanics-religion-2007/latino-religious-converts.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of U.S. Latino adults who converted to their current religion rather than being raised in it, by religious group, 2006. ${alt}.`,
+  };
+}
+
+function importanceOfReligionHispanicsGraphic(): Graphic {
+  const { group_order: order, very_important: results } = importanceOfReligionHispanicsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is religion in your life?",
+    description: "Share of U.S. Latino adults calling religion \"very important\" in their own life, by religious group, 2006.",
+    imageSrc: "/data-explorer/pew-hispanics-religion-2007/importance-of-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Latino adults calling religion "very important" in their own life, by religious group, 2006. ${alt}.`,
+  };
+}
+
+function volunteeredForChurchGraphic(): Graphic {
+  const { group_order: order, volunteered_for_church: results } = volunteeredForChurchData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who volunteers for their congregation",
+    description: "Share of U.S. Latino adults who volunteered their time to a church or religious group in the past year, by religious group, 2006.",
+    imageSrc: "/data-explorer/pew-hispanics-religion-2007/volunteered-for-church.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Latino adults who volunteered their time to a church or religious group in the past year, by religious group, 2006. ${alt}.`,
+  };
+}
+
+function weeklyAttendanceHispanicsGraphic(): Graphic {
+  const { group_order: order, weekly_or_more: results } = weeklyAttendanceHispanicsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who's in the pews every week",
+    description: "Share of U.S. Latino adults attending religious services at least once a week, by religious group, 2006.",
+    imageSrc: "/data-explorer/pew-hispanics-religion-2007/weekly-attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Latino adults attending religious services at least once a week, by religious group, 2006. ${alt}.`,
   };
 }
 
