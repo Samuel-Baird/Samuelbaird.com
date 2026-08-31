@@ -720,3 +720,40 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   shipped elsewhere; qh3 childhood religion — demographic, no belief
   content) all look thin or duplicative; consider this dataset close to
   fully mined.
+
+- **pew-mormon-survey-2011** (2011 National Survey of Mormons) — 13th
+  chart, 2026-08-31: read this log in full and cross-referenced `data/`
+  against `data-explorer.ts`'s `DATASETS` array — no untouched dataset
+  turned up, and every other family (pew-rls-2023-24, ryan-burge,
+  state-of-theology) is confirmed fully mined via its own
+  GRAPHICS_TODO.md/auto-generation note. Checked this dataset's own
+  remaining-candidate list from its most recent pass: q421a-d ("is [X]
+  religion similar to your own") is a social-distance item with no
+  belief/practice content, and q303-q310 (perceived societal awareness/
+  fairness/friendliness toward Mormons) mostly duplicate the already-
+  shipped `president-readiness-by-party` construct or read as thin
+  political-perception items — both skipped. Landed on q409c ("do you
+  believe the president of the LDS/Mormon Church is a prophet of God"),
+  the one item in the q409 core-belief battery not yet used anywhere on
+  the site (q409a/b/d already shipped as a single-population ranking in
+  `core-beliefs.json`; q409e already shipped in `ordination-by-
+  activity.json`). Built it by activity level (q406), matching this
+  dataset's existing by-activity convention (`book-of-mormon-origin-by-
+  activity.json`, `temple-recommend-by-activity.json`, `daily-prayer-by-
+  activity.json`) rather than repeating core_beliefs.py's single-ranking
+  shape — a foundational LDS truth claim (living prophetic leadership)
+  checked against real engagement data. `prophet-belief-by-activity.json`:
+  99.2% of "Very active" Mormons believe the Church president is a
+  prophet of God, falling to 96.1% Somewhat active, 89.3% Not too active,
+  and just 46.4% Not at all active (95.1% among all Mormon adults) — a
+  strong, clean activity gradient. All cells clear the 30-valid floor
+  (smallest: n=49, Not at all active). Computed by
+  `scripts/pew-mormon-survey-2011/prophet_belief_by_activity.py` →
+  `docs/datasets/pew-mormon-survey-2011/prophet-belief-by-activity.json`,
+  rendered by
+  `scripts/pew-mormon-survey-2011/render_prophet_belief_chart.py` →
+  `public/data-explorer/pew-mormon-survey-2011/prophet-belief-by-
+  activity.png` (5 rows, checked by reading the PNG directly — no label
+  collision). Wired into `src/lib/data-explorer.ts`
+  (`prophetBeliefByActivityGraphic()`). With q421/q303-310 both weak
+  fits, consider this dataset fully mined.
