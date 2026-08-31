@@ -93,6 +93,7 @@ import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migra
 import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
+import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
 import w143HolidayBatchData from "../../docs/datasets/pew-atp-w143-2024/holiday-batch.json";
 import w143HolidayBatch2Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-2.json";
@@ -762,6 +763,24 @@ const RAW_DATASETS: Dataset[] = [
       leavingDecisionMakerGraphic(),
       faithStrengthBeforeAfterGraphic(),
     ],
+  },
+  {
+    slug: "pew-atp-w44-2018",
+    name: "American Trends Panel, Wave 44 (February 2019)",
+    shortDescription:
+      "A Pew American Trends Panel wave on religious knowledge and belief, fielded February 2019.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center (American Trends Panel)",
+    description:
+      "Wave 44 of Pew's American Trends Panel: 10,971 U.S. adults surveyed online " +
+      "Feb. 4-19, 2019 (full panel plus a KnowledgePanel oversample), in English and " +
+      "Spanish. Carries F_RELTRAD, the standard RLS-coded religious-tradition variable " +
+      "(Latter-day Saints coded 20000, \"Mormon\"). A wide religious-literacy battery — " +
+      "Bible/Torah/Quran/Buddhist-text knowledge questions, feelings toward religious " +
+      "groups, Holocaust knowledge, and Catholics' own beliefs about Communion — fed " +
+      "Pew's 2019 \"What Americans Know About Religion\" report.",
+    sourceUrl: "https://www.pewresearch.org/religion/2019/07/23/what-americans-know-about-religion/",
+    graphics: [communionBeliefGraphic()],
   },
   {
     slug: "pew-atp-w70-2020",
@@ -2196,6 +2215,20 @@ function confessionFrequencyGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w162-2025/confession-frequency.png",
     width: 1080, height: 1350,
     alt: `Bar chart: how often Catholics go to confession, February 2025. ${alt}.`,
+  };
+}
+
+function communionBeliefGraphic(): Graphic {
+  const { item_order: order, belief_pct: results } = communionBeliefData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do Catholics believe in transubstantiation?",
+    description: "What U.S. Catholics personally believe about the bread and wine used for Communion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/communion-belief.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: what U.S. Catholics personally believe about Communion bread and wine, February 2019. ${alt}.`,
   };
 }
 

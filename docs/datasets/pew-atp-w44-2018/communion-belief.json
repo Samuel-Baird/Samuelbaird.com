@@ -1,0 +1,20 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 44, fielded Feb. 4-19, 2019.",
+  "method": "Population is Catholic respondents (F_RELTRAD == 10000, per this wave's own skip logic - COMMUNB was not asked outside this group). Refused excluded from the denominator. Weighted by WEIGHT_W44.",
+  "total_weighted_n": 1926.0148676806998,
+  "total_unweighted_n": 1821,
+  "item_order": [
+    "Are symbols of the body and blood of Christ",
+    "Actually become the body and blood of Christ"
+  ],
+  "belief_pct": {
+    "Actually become the body and blood of Christ": {
+      "pct": 30.78,
+      "valid_unweighted_n": 656
+    },
+    "Are symbols of the body and blood of Christ": {
+      "pct": 69.22,
+      "valid_unweighted_n": 1165
+    }
+  }
+}
