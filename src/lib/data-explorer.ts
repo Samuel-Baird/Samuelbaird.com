@@ -54,6 +54,8 @@ import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowled
 import churchStateLawData from "../../docs/datasets/pew-religious-knowledge-2010/church-state-law.json";
 import jesusBirthplaceKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/jesus-birthplace-knowledge.json";
 import overallScoreData from "../../docs/datasets/pew-religious-knowledge-2010/overall-score.json";
+import collegeReligionCoursesData from "../../docs/datasets/pew-religious-knowledge-2010/college-religion-courses.json";
+import tenCommandmentsKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/ten-commandments-knowledge.json";
 import evolutionBeliefData from "../../docs/datasets/pew-rls-2007/evolution-belief.json";
 import certaintyOfGodData from "../../docs/datasets/pew-rls-2007/certainty-of-god.json";
 import dailyPrayerData from "../../docs/datasets/pew-rls-2007/daily-prayer.json";
@@ -736,6 +738,8 @@ const RAW_DATASETS: Dataset[] = [
       churchStateLawGraphic(),
       jesusBirthplaceKnowledgeGraphic(),
       overallScoreGraphic(),
+      collegeReligionCoursesGraphic(),
+      tenCommandmentsKnowledgeGraphic(),
     ],
   },
   {
@@ -1674,6 +1678,34 @@ function overallScoreGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-religious-knowledge-2010/overall-score.png",
     width: 1080, height: 1350,
     alt: `Bar chart: average number correct out of ${n_items} religious knowledge questions, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function collegeReligionCoursesGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = collegeReligionCoursesData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who's taken a college religion course?",
+    description: "Share who have ever taken a college-level religion course, by the respondent's own religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/college-religion-courses.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have ever taken a college-level religion course, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function tenCommandmentsKnowledgeGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = tenCommandmentsKnowledgeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Which one isn't a Commandment?",
+    description: "Share correctly picking the Golden Rule as the option that is NOT one of the Ten Commandments, by religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/ten-commandments-knowledge.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying the Golden Rule as not one of the Ten Commandments, by respondent's own religion. ${alt}.`,
   };
 }
 
