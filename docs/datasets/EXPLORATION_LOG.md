@@ -532,3 +532,31 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   q55a-c (family religious practices with children, likely near-duplicate
   of 2014's qk10a/qk10b family-scripture-prayer chart). Consider this
   dataset close to fully mined.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — fourth pass, 2026-08-31:
+  had 11 charts. Added 2 more from the prior passes' remaining-battery lists,
+  both broken out by RELTRAD, using the short canonical group labels per this
+  dataset's own row-label-collision fix — `preserve-traditional-beliefs.json`
+  (qh4, 72.8% of Mormons say their own church or denomination should preserve
+  its traditional beliefs and practices rather than adjust or modernize them,
+  highest of any tradition — Jehovah's Witness 2nd at 69.3%, Evangelical
+  Protestant 3rd at 64.9% — ties to the LDS teaching that core doctrine is
+  eternal and unchanging even as the Church receives continuing revelation on
+  its application) and `scripture-literalism.json` (qg7b, a skip-gated
+  follow-up asked only of respondents who already call their own scripture
+  the word of God in qg7 — among that subset, only 37.9% of Mormons say
+  scripture is meant literally, word for word, near the bottom of Christian
+  traditions and well below Historically Black Protestant 71.7%/Evangelical
+  Protestant 65.2%, despite the already-shipped qg7 chart showing 93.8% of
+  Mormons calling scripture the word of God — a genuinely distinct construct
+  from that chart, not a duplicate, and plausibly reflects LDS doctrine of
+  imperfect ancient-text transmission (Articles of Faith 1:8, "as far as it
+  is translated correctly") alongside ongoing modern revelation). Both at
+  12-13 rows with no label collision (checked by reading each PNG directly).
+  Remaining untouched candidates from prior passes' lists: qm5a/b/d (church
+  too focused on rules/money-power/politics — still needs an overlap check
+  against the 2023-24 wave's public-life battery before use), qi2t/qi2u
+  (dietary restrictions, eating beef/pork — thin doctrinal tie, not really a
+  Word of Wisdom item), and qk10b-d (Sunday school, religious homeschooling,
+  volunteering with kids). Consider this dataset close to fully mined after
+  this pass.

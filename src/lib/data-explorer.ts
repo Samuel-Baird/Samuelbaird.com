@@ -77,6 +77,8 @@ import bornAgainIdentityData from "../../docs/datasets/pew-rls-2014/born-again-i
 import familyScripturePrayerData from "../../docs/datasets/pew-rls-2014/family-scripture-prayer.json";
 import scriptureWordOfGodData from "../../docs/datasets/pew-rls-2014/scripture-word-of-god.json";
 import volunteerThroughChurchData from "../../docs/datasets/pew-rls-2014/volunteer-through-church.json";
+import preserveTraditionalBeliefsData from "../../docs/datasets/pew-rls-2014/preserve-traditional-beliefs.json";
+import scriptureLiteralismData from "../../docs/datasets/pew-rls-2014/scripture-literalism.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
@@ -807,6 +809,8 @@ const RAW_DATASETS: Dataset[] = [
       familyScripturePrayerGraphic(),
       scriptureWordOfGodGraphic(),
       volunteerThroughChurchGraphic(),
+      preserveTraditionalBeliefsGraphic(),
+      scriptureLiteralismGraphic(),
     ],
   },
   {
@@ -2047,6 +2051,34 @@ function volunteerThroughChurchGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/volunteer-through-church.png",
     width: 1080, height: 1350,
     alt: `Bar chart: among past-week volunteers, share whose volunteering was mainly through a church or religious organization, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function preserveTraditionalBeliefsGraphic(): Graphic {
+  const { group_order: order, prefers_preserving_traditional_beliefs: results } = preserveTraditionalBeliefsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Preserve traditional beliefs and practices",
+    description: "Share who say their own church or denomination should preserve its traditional beliefs and practices, rather than adjust or modernize them, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/preserve-traditional-beliefs.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say their own church or denomination should preserve its traditional beliefs and practices rather than adjust or modernize them, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function scriptureLiteralismGraphic(): Graphic {
+  const { group_order: order, scripture_taken_literally: results } = scriptureLiteralismData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is scripture meant literally?",
+    description: "Among those who call their own scripture the word of God, share who say it is meant literally, word for word, rather than interpreted, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/scripture-literalism.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: among those who call their own scripture the word of God, share who say it is meant literally rather than interpreted, by religious tradition, 2014. ${alt}.`,
   };
 }
 
