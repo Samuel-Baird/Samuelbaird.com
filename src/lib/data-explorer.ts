@@ -141,6 +141,7 @@ import w162HolidayBatchData from "../../docs/datasets/pew-atp-w162-2025/holiday-
 import cathessentData from "../../docs/datasets/pew-atp-w162-2025/cathessent.json";
 import confessionFrequencyData from "../../docs/datasets/pew-atp-w162-2025/confession-frequency.json";
 import w143HolidayBatch3Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-3.json";
+import w143HolidayBatch4Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-4.json";
 import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-beliefs.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
 import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-religious-items.json";
@@ -1252,6 +1253,8 @@ const RAW_DATASETS: Dataset[] = [
       w143AncestorSpiritsGraphic(),
       w143DiscrimBlackGraphic(),
       w143WearsReligiousItemsGraphic(),
+      w143ReincarnationGraphic(),
+      w143FortuneTellerGraphic(),
     ],
   },
   {
@@ -2966,6 +2969,28 @@ function w143WearsReligiousItemsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w143-2024/wears-religious-items.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who wear or carry religious items or symbols, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143ReincarnationGraphic(): Graphic {
+  const results = w143HolidayBatch4Data.believes_in_reincarnation;
+  return {
+    title: "Who believes in reincarnation?",
+    description: "Share who believe people will be reborn in this world again and again, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/believes-in-reincarnation.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe in reincarnation, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143FortuneTellerGraphic(): Graphic {
+  const results = w143HolidayBatch4Data.consults_fortune_teller;
+  return {
+    title: "Who consults a fortune teller or horoscope?",
+    description: "Share who consult a fortune teller, horoscope, or other way to see the future, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/consults-fortune-teller.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who consult a fortune teller, horoscope, or other way to see the future, by religion, February 2024. ${w143BatchAlt(results)}.`,
   };
 }
 

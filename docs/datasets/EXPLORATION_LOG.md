@@ -477,3 +477,32 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   religion), q1/q1a/q14/q14a (age and life-stage when leaving/joining, a
   demographic item with no direct religious-content angle). Consider this
   dataset close to fully mined.
+
+- **pew-atp-w143-2024** (American Trends Panel, Wave 143, February 2024 —
+  religion/politics + Israel-Hamas war) — 2026-08-31: had 11 charts, all
+  previously built but never logged here (cross-referenced against
+  `data-explorer.ts`'s graphics array to confirm). Added 2 more this pass,
+  same F_RELIG group-set/`binary_by_group` construction as the existing
+  holiday_batch*.py scripts — `believes-in-reincarnation.png` (only 14.0% of
+  Mormons believe people will be reborn in this world again and again, tied
+  with Atheists for the lowest of any group — Buddhist 67.0%/Hindu 65.9% at
+  the top — ties to the LDS doctrine of one mortal probation rather than
+  reincarnation) and `consults-fortune-teller.png` (5.9% of Mormons consult
+  a fortune teller, horoscope, or other way to see the future, 2nd-lowest
+  after Jewish's 5.6% and essentially tied with Protestant's 6.2% — ties to
+  LDS counsel against seeking guidance through divination/fortune-telling).
+  Both from BELIEVE_REIN_W143/PRACTICE_FUTR_W143, checked against the
+  existing 11 charts for overlap (none — those cover fasting, candles,
+  discrimination-perception items, president-belief items, afterlife,
+  ancestors' spirits, and wearing religious items) and confirmed no
+  existing "reincarnation" or "fortune teller/horoscope/divination" chart
+  anywhere on the site. All groups clear the 30-valid floor at n=57-4,354.
+  Wave's remaining untouched battery is almost entirely Israel-Hamas-war/
+  politics content with no religious-tradition breakout angle (SYMP_W143,
+  HMSACC/HMSVAL/ISRACC/ISRVAL, FUNDISR/AIDGZ, LAND_RSLV, etc.) or
+  Catholic-specific (CCHRCH_*, PPLFAV_a Pope Francis, POPE_CHANGE); the only
+  other live candidate is BELIEVE_SPEL_W143 (belief spells/curses/magic can
+  influence people's lives) but it lacks as clean an LDS doctrinal tie as
+  this pass's two items, and RELIGCONFLICT_W143 (conflict between own
+  beliefs and mainstream culture) has Mormons mid-pack at 58.1%, no
+  distinctiveness story. Consider this wave close to fully mined.

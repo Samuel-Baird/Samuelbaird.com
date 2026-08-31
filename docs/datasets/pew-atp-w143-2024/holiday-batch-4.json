@@ -1,0 +1,140 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 143, fielded Feb. 13-25, 2024.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG). Reincarnation item: share answering 'yes, I believe' that people will be reborn in this world again and again; refused excluded. Fortune-teller item: share answering 'yes, I do' to consulting a fortune teller, horoscope, or other way to see the future; refused excluded. Groups under 30 valid respondents omitted. Weighted by WEIGHT_W143.",
+  "total_weighted_n": 12693.000056380071,
+  "total_unweighted_n": 12693,
+  "believes_in_reincarnation": {
+    "Protestant": {
+      "pct": 22.77,
+      "valid_unweighted_n": 4274,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 38.52,
+      "valid_unweighted_n": 1991,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 14.02,
+      "valid_unweighted_n": 169,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 50.42,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 25.73,
+      "valid_unweighted_n": 1897,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 20.43,
+      "valid_unweighted_n": 401,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 66.96,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 65.93,
+      "valid_unweighted_n": 78,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 14.37,
+      "valid_unweighted_n": 602,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 28.43,
+      "valid_unweighted_n": 719,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 64.77,
+      "valid_unweighted_n": 240,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 42.9,
+      "valid_unweighted_n": 1821,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 31.55,
+      "valid_unweighted_n": 12411,
+      "group_unweighted_n": 12693
+    }
+  },
+  "consults_fortune_teller": {
+    "Protestant": {
+      "pct": 6.16,
+      "valid_unweighted_n": 4354,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 10.48,
+      "valid_unweighted_n": 2013,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 5.87,
+      "valid_unweighted_n": 171,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 24.46,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 5.58,
+      "valid_unweighted_n": 1928,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 12.56,
+      "valid_unweighted_n": 408,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 28.74,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 33.14,
+      "valid_unweighted_n": 77,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 3.77,
+      "valid_unweighted_n": 604,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 11.16,
+      "valid_unweighted_n": 729,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 19.47,
+      "valid_unweighted_n": 249,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 12.6,
+      "valid_unweighted_n": 1860,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 9.42,
+      "valid_unweighted_n": 12616,
+      "group_unweighted_n": 12693
+    }
+  }
+}
