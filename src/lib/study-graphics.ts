@@ -180,7 +180,7 @@ function dyerVideoClipWatchingGraphic(): Graphic {
   const { rows } = dyerLdsTrendsData.charts["video-clip-watching"];
   const alt = rows.map((r) => `${r.label} ${r.pct}%`).join(", ");
   return {
-    title: "Watching video clips and deidentifying",
+    title: "LDS Youth Deidentification and Daily Video-Clip Use",
     description:
       "Share of FFYD panel youth who had deidentified as Latter-day Saint by 2024, by hours of daily video-clip watching in 2020.",
     imageSrc:

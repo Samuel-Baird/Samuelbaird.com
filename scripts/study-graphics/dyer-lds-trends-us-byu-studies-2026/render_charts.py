@@ -55,7 +55,7 @@ def main() -> None:
         # A single ordered trend, not a highlight-vs-context comparison -
         # every bar carries the same weight.
         highlight_rows=None,
-        title="Watching video clips and deidentifying",
+        title="LDS Youth Deidentification and Daily Video-Clip Use",
         subtitle="Share of FFYD youth who had deidentified as\nLatter-day Saint by 2024, by daily video-clip watching",
         caption_paragraphs=[],
         handle=HANDLE,
