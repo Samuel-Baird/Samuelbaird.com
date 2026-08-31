@@ -129,7 +129,7 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     )
 
     bar_height = 0.62
-    ax.barh(groups, pcts, height=bar_height, color=colors, zorder=3)
+    ax.barh(groups, pcts, height=bar_height, color=colors, edgecolor=INK, linewidth=1.2, zorder=3)
     ax.margins(y=0.06)
 
     xtop = ((max(pcts) // 10) + 1) * 10
@@ -150,7 +150,7 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     ax.tick_params(axis="y", length=0, pad=10)
     for label in ax.get_yticklabels():
         label.set_fontproperties(fonts["bold"])
-        label.set_fontsize(19)
+        label.set_fontsize(MIN.LEGEND)
         label.set_color(INK)
 
     # Title IS the survey statement, verbatim, in quotes - no editorial

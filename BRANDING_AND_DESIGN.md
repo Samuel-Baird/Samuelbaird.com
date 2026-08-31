@@ -390,9 +390,11 @@ its `render_magnitude_bar` needed an auto-widening left margin rather than
 per-caller `axes_left` overrides, since ~55 datasets share that one
 function and 27 of its 63 regenerated charts clipped at the old fixed
 default — a pipeline-wide crowding problem, not a one-or-two-chart edge
-case). `scripts/state-of-theology-graphics/` still uses the older
-sizing/edge defaults and is expected to roll out the same change
-separately.
+case), and `scripts/state-of-theology-graphics/` (2026-08-31, see that
+folder's `STYLE.md` — its five-group set never crowds, so the existing
+`left=0.30` margin already had room for the larger label and no per-chart
+adjustment was needed). Every Data Explorer pipeline now carries both
+treatments as its default.
 
 **Title qualifiers render smaller than the primary title.** A trailing
 parenthetical qualifier on a chart title — e.g. "Attendance frequency,

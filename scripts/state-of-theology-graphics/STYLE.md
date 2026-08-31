@@ -253,6 +253,17 @@ can't fit" rule (via `docs/CHARTS.md`) now has a number attached to what
 alone has to carry the meaning, so the word next to it has to survive the
 scale-down at least as well as everything else does, if not better.
 
+**Site-wide default, not an override: y-axis group labels render at
+`MIN.LEGEND` (24pt), and every bar gets a black (`INK`) outline.** Both
+started as a one-chart override on the pew-rls attendance-distribution
+chart and are now the default across every Data Explorer pipeline
+(pew-rls, ryan-burge, flagship-charts, and this one) — see
+`BRANDING_AND_DESIGN.md`'s "Charts" section. This pipeline's five group
+rows never crowd (the group set is fixed), so no per-chart margin or row-
+height adjustment was needed to fit the larger label — `render_chart.py`'s
+existing `left=0.30` margin already had room. The outline uses the same
+`edgecolor=INK, linewidth=1.2` convention as the other pipelines' bars.
+
 A matplotlib gotcha this floor ran into: **`ax.legend(fontsize=..., prop=a_FontProperties_instance)` silently ignores `fontsize`** — whichever
 size (if any) is already baked into `prop` wins, and every render script's
 `fonts["bold"]` loads at matplotlib's default (10pt) unless told otherwise.
