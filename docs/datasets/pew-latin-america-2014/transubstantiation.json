@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a Historically Catholic Region.\"",
+  "method": "Population is respondent's own current religion (QCURRELrec), pooled across all 18 Latin American/Caribbean countries and Puerto Rico. Share answering \"yes\" to Q60m (\"Do you believe that in communion, the bread and wine actually become the body and blood of Christ, or not?\"); don't know/refused excluded. Weighted by the dataset's own combined base/post-stratification WEIGHT.",
+  "total_weighted_n": 30326.60869018281,
+  "total_unweighted_n": 30326,
+  "group_order": [
+    "Catholic",
+    "Protestant/Evangelical",
+    "Other religion",
+    "Unaffiliated",
+    "All respondents"
+  ],
+  "believe_transubstantiation": {
+    "Catholic": {
+      "pct": 88.02,
+      "valid_unweighted_n": 19240,
+      "group_unweighted_n": 19799
+    },
+    "Protestant/Evangelical": {
+      "pct": 76.0,
+      "valid_unweighted_n": 6462,
+      "group_unweighted_n": 6744
+    },
+    "Other religion": {
+      "pct": 55.18,
+      "valid_unweighted_n": 901,
+      "group_unweighted_n": 944
+    },
+    "Unaffiliated": {
+      "pct": 39.23,
+      "valid_unweighted_n": 2541,
+      "group_unweighted_n": 2793
+    },
+    "All respondents": {
+      "pct": 79.95,
+      "valid_unweighted_n": 29183,
+      "group_unweighted_n": 30326
+    }
+  }
+}

@@ -66,6 +66,7 @@ import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-reconta
 import attendWithSpouseData from "../../docs/datasets/pew-rls-2014-recontact/attend-with-spouse.json";
 import spouseReligiousDisagreementData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religious-disagreement.json";
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
+import transubstantiationData from "../../docs/datasets/pew-latin-america-2014/transubstantiation.json";
 import latinAmericaWeeklyAttendanceData from "../../docs/datasets/pew-latin-america-2014/weekly-attendance.json";
 import latinAmericaReligionImportanceData from "../../docs/datasets/pew-latin-america-2014/religion-importance.json";
 import latinAmericaSamesexMarriageData from "../../docs/datasets/pew-latin-america-2014/samesex-marriage.json";
@@ -728,6 +729,7 @@ const RAW_DATASETS: Dataset[] = [
       "https://www.pewresearch.org/religion/2014/11/13/religion-in-latin-america/",
     graphics: [
       mormonsAsChristianGraphic(),
+      transubstantiationGraphic(),
       latinAmericaWeeklyAttendanceGraphic(),
       latinAmericaReligionImportanceGraphic(),
       latinAmericaSamesexMarriageGraphic(),
@@ -1684,6 +1686,20 @@ function mormonsAsChristianGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-latin-america-2014/mormons-as-christian.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share considering Mormons to be followers of the Christian faith, by respondent's own religion, across Latin America. ${alt}.`,
+  };
+}
+
+function transubstantiationGraphic(): Graphic {
+  const { group_order: order, believe_transubstantiation: results } = transubstantiationData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do the bread and wine become Christ's body?",
+    description: "Share across Latin America who believe that in communion, the bread and wine actually become the body and blood of Christ, by their own religion.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/transubstantiation.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share believing the bread and wine become Christ's body and blood in communion, by respondent's own religion, across Latin America. ${alt}.`,
   };
 }
 
