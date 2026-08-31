@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import { CategoryCard, DatasetCard } from "@/components/dataset-card";
@@ -45,6 +47,17 @@ export default function DataExplorerPage() {
         Public survey and statistical datasets, and what we&apos;ve done with each one —
         quizzes you can take, graphics, and write-ups.
       </p>
+      <Link
+        href="/data-explorer/gallery"
+        className="group mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--accent)] hover:underline"
+      >
+        Browse every graphic in one gallery
+        <ArrowRight
+          aria-hidden="true"
+          size={13}
+          className="transition-transform group-hover:translate-x-0.5"
+        />
+      </Link>
 
       <div className="mt-12 grid gap-5 sm:grid-cols-2">
         {groups.map((group) =>
