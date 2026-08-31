@@ -71,15 +71,13 @@ if those ever move.
   since nothing in that file uses them anymore). Four bars per chart,
   ordered Evangelical / Black Protestant / Mainline / Roman Catholic, as
   specified.
-- **post1 groups: untouched**, as instructed. `PREVIEW_single_series_
-  religions.png` in `post1-evangelical-trends/png/` (built by the
-  throwaway `single_series_preview.R` in that folder, not wired into the
-  real script) shows what dropping "All U.S. adults" would do to the
-  "Many roads" slide — the one where evangelicals sit 16 points below the
-  national figure in 2025 (49% vs. 65%). As a single series it reads as
-  an unremarkable up-and-down 46–58% line with no visible point; the
-  finding only exists as a comparison. Let me know if you want the rest
-  of post1 converted anyway, or kept as two-series.
+- **post1 groups: decided — kept.** A throwaway preview showed what
+  dropping "All U.S. adults" would do to the "Many roads" slide (the one
+  where evangelicals sit 16 points below the national figure in 2025, 49%
+  vs. 65%): as a single series it read as an unremarkable up-and-down
+  46–58% line with no visible point, since the finding only exists as a
+  comparison. Confirmed to keep both series everywhere in post1 — no code
+  change needed there, it was never touched.
 - Zero-based y-axes, every value label, and the 1080×1350 `ragg::agg_png`
   9×11.25in/120dpi output are all unchanged. No survey numbers were
   touched.
