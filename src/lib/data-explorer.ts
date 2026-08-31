@@ -83,6 +83,7 @@ import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/in
 import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/financial-threat-covid.json";
 import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
 import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
+import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
 import womenLeadersData from "../../docs/datasets/pew-black-faith-2021/women-leaders.json";
 import religiousNationalIdentityData from "../../docs/datasets/pew-eastern-europe-2015/religious-national-identity.json";
@@ -836,7 +837,14 @@ const RAW_DATASETS: Dataset[] = [
       "Pew Research Center. \"U.S. Catholics Open to Non-Traditional Families.\" September 2, 2015. " +
       "2015 Survey of U.S. Catholics and Family Life, fielded May 5-June 7, 2015.",
     sourceUrl: "https://www.pewresearch.org/religion/2015/09/02/u-s-catholics-open-to-non-traditional-families/",
-    graphics: [annulmentCommunionGraphic()],
+    graphics: [
+      annulmentCommunionGraphic(),
+      raisedByMarriedParentsGraphic(),
+      raisedBySingleParentGraphic(),
+      raisedByDivorcedParentsGraphic(),
+      raisedByCohabitingParentsGraphic(),
+      raisedByGayLesbianCoupleGraphic(),
+    ],
   },
   {
     slug: "pew-subsaharan-africa-2010",
@@ -1928,6 +1936,67 @@ function blmSermonsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/blm-sermons.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of monthly attenders hearing a pro-Black Lives Matter sermon, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+/** Formats a {pct} results record (insertion order) into alt text for the
+ * five household-types graphics below. */
+function householdTypeAlt(results: Record<string, { pct: number }>): string {
+  return Object.entries(results).map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`).join(", ");
+}
+
+function raisedByMarriedParentsGraphic(): Graphic {
+  const results = householdTypesData.raised_by_married_mother_father;
+  return {
+    title: "Raised by a married mother and father?",
+    description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-married-mother-father.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying a married mother and father is as good an arrangement as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function raisedBySingleParentGraphic(): Graphic {
+  const results = householdTypesData.raised_by_single_parent;
+  return {
+    title: "Raised by a single parent?",
+    description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-single-parent.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying a single parent is as good an arrangement as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function raisedByDivorcedParentsGraphic(): Graphic {
+  const results = householdTypesData.raised_by_divorced_parents;
+  return {
+    title: "Raised by divorced parents?",
+    description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-divorced-parents.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying divorced parents is as good an arrangement as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function raisedByCohabitingParentsGraphic(): Graphic {
+  const results = householdTypesData.raised_by_cohabiting_unmarried_parents;
+  return {
+    title: "Raised by unmarried parents living together?",
+    description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-cohabiting-unmarried-parents.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying unmarried cohabiting parents is as good an arrangement as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function raisedByGayLesbianCoupleGraphic(): Graphic {
+  const results = householdTypesData.raised_by_gay_lesbian_couple;
+  return {
+    title: "Raised by a gay or lesbian couple?",
+    description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-gay-lesbian-couple.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying a gay or lesbian couple is as good an arrangement as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
   };
 }
 
