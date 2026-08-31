@@ -245,7 +245,7 @@ export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
             </div>
           ) : (
             <>
-              <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                 {visible.map((g) => {
                   const id = graphicId(g);
                   const href = `/data-explorer/${g.datasetSlug}/graphics/${id}`;

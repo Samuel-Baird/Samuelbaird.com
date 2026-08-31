@@ -17,7 +17,7 @@ export default function GraphicsGalleryPage() {
   const graphics = getAllGraphics();
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+    <div className="w-full px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href="/data-explorer"
         className="inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)] hover:underline"
