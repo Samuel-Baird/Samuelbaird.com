@@ -4,6 +4,32 @@ One line per dataset: what's been mined for charts, what's left. Datasets
 not yet listed here haven't been through a dedicated pass — cross-reference
 `data/` against `src/lib/data-explorer.ts`'s `DATASETS` array to find them.
 
+- **pew-hispanics-religion-2007** (Pew Hispanic Center/Pew Forum Survey of
+  Latinos, 2006) — partial, 2026-08-31: had 1 chart
+  (`latino-religious-converts.json`). Added 3 more this pass, all broken
+  out by the survey's own recoded `relig` variable (34 unweighted Latino
+  Mormon respondents, just over the 30-valid floor; every item below still
+  cleared it at n=34) — `importance-of-religion.json` (84.8% of Latino
+  Mormons call religion "very important" in their own life, 2nd only to
+  Jehovah's Witnesses at 92.1%), `weekly-attendance.json` (67.4% of Latino
+  Mormons attend religious services weekly or more, again 2nd only to JWs
+  at 74.5%), and `volunteered-for-church.json` (66.5% of Latino Mormons
+  volunteered time to their congregation in the past year — highest of any
+  group by a wide margin, well above Protestants' 52.7% and more than
+  double Catholics' 26.2%, plausibly reflecting the Church's lay-ministry/
+  callings model). One item was checked and dropped: `qn52_d` (belief
+  Jesus will return in the respondent's lifetime) has only 25 valid Mormon
+  respondents once refusals are excluded, under the 30 floor. Dataset
+  still has a large untouched battery, but it's mostly Catholic-specific
+  (F1406_qn1-F1406_qn36, gated to a Catholic recontact subsample with its
+  own weight) or thematically thin for LDS (political/immigration items,
+  Hispanic-clergy-representation items). Remaining general candidates
+  worth checking: `qn14_d` (favorability toward Mormons, rated by other
+  groups — thematically close to the already-shipped w114-2022
+  `relfav-mormons` chart, check for overlap first), `qn53` (crucifix/
+  religious objects displayed at home), `qn25` (born-again/evangelical
+  self-identification).
+
 - **pew-atp-w132-2023** (American Trends Panel, Wave 132, spirituality
   battery) — partial, 2026-08-31: had 1 chart (`beyond-this-world.json`,
   "feeling of connection beyond this world"); added 2 more this pass —
