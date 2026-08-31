@@ -1,0 +1,34 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 114, fielded September 13-18, 2022.",
+  "method": "Population is respondent's self-reported religious affiliation (F_RELIG) - Wave 114 does not carry the finer F_RELTRAD frame variable used in other ATP waves in this dataset family. Share saying it is \"essential\" to what being a faithful member of their tradition means to them that they have \"a personal relationship with Jesus Christ\" (ESSENT_k_W114). This item was piped only to respondents whose tradition centers on Jesus Christ; Jewish, Muslim, Buddhist, Hindu, Other, and unaffiliated respondents show zero valid responses and are excluded. Refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W114 variable.",
+  "total_weighted_n": 10588.00000740826,
+  "total_unweighted_n": 10588,
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Orthodox Christian"
+  ],
+  "personal_relationship_jesus_essential": {
+    "Protestant": {
+      "pct": 79.57,
+      "valid_unweighted_n": 4418,
+      "group_unweighted_n": 4441
+    },
+    "Catholic": {
+      "pct": 64.18,
+      "valid_unweighted_n": 2070,
+      "group_unweighted_n": 2085
+    },
+    "Mormon": {
+      "pct": 83.54,
+      "valid_unweighted_n": 190,
+      "group_unweighted_n": 190
+    },
+    "Orthodox Christian": {
+      "pct": 49.79,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 51
+    }
+  }
+}

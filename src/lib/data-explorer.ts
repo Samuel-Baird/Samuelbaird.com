@@ -93,6 +93,9 @@ import paysChurchTaxData from "../../docs/datasets/pew-church-tax-western-europe
 import christianShareDeclineData from "../../docs/datasets/pew-religious-composition-2010-2020/christian-share-decline.json";
 import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migration/global-migrant-composition.json";
 import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
+import essentJesusData from "../../docs/datasets/pew-atp-w114-2022/essent-jesus.json";
+import essentAttendData from "../../docs/datasets/pew-atp-w114-2022/essent-attend.json";
+import relfavMormonsData from "../../docs/datasets/pew-atp-w114-2022/relfav-mormons.json";
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
 import nontechPrayerGroupsData from "../../docs/datasets/pew-atp-w117-2022/nontech-prayer-groups.json";
 import watchOnlineMonthlyData from "../../docs/datasets/pew-atp-w117-2022/watch-online-monthly.json";
@@ -1106,7 +1109,7 @@ const RAW_DATASETS: Dataset[] = [
       "breakouts here use F_RELIG, which still separately identifies Mormon/LDS " +
       "respondents (coded 3.0).",
     sourceUrl: "https://www.pewresearch.org/religion/2022/10/27/45-of-americans-say-u-s-should-be-a-christian-nation/",
-    graphics: [christianNationGraphic()],
+    graphics: [christianNationGraphic(), essentJesusGraphic(), essentAttendGraphic(), relfavMormonsGraphic()],
   },
   {
     slug: "pew-atp-w117-2022",
@@ -2229,6 +2232,48 @@ function christianNationGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w114-2022/christian-nation.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying the U.S. should be a Christian nation, by religious affiliation, September 2022. ${alt}.`,
+  };
+}
+
+function essentJesusGraphic(): Graphic {
+  const { group_order: order, personal_relationship_jesus_essential: results } = essentJesusData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "A personal relationship with Jesus Christ",
+    description: "Share of Christians saying this is essential to what being faithful to their tradition means, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/essent-jesus.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Christians saying a personal relationship with Jesus Christ is essential to their faith, by tradition, September 2022. ${alt}.`,
+  };
+}
+
+function essentAttendGraphic(): Graphic {
+  const { group_order: order, attend_services_essential: results } = essentAttendData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is attending services essential to your faith?",
+    description: "Share saying regular religious attendance is essential to what being faithful to their tradition means, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/essent-attend.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying regular religious attendance is essential to their faith, by tradition, September 2022. ${alt}.`,
+  };
+}
+
+function relfavMormonsGraphic(): Graphic {
+  const { group_order: order, favorable_toward_mormons: results } = relfavMormonsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How favorably do Americans view Mormons?",
+    description: "Share with a favorable view of Mormons, by the respondent's own religion, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/relfav-mormons.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share with a favorable view of Mormons, by the respondent's own religion, September 2022. ${alt}.`,
   };
 }
 
