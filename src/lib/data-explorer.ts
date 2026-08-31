@@ -118,6 +118,7 @@ import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religi
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
 import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
+import w44EngagementBatchData from "../../docs/datasets/pew-atp-w44-2018/religious-engagement-batch.json";
 import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
 import w143HolidayBatchData from "../../docs/datasets/pew-atp-w143-2024/holiday-batch.json";
 import w143HolidayBatch2Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-2.json";
@@ -888,6 +889,9 @@ const RAW_DATASETS: Dataset[] = [
       w44MeccaGraphic(),
       w44FaithAloneGraphic(),
       w44WarmthGraphic(),
+      w44LearnsOwnReligionGraphic(),
+      w44KnowsAMormonGraphic(),
+      w44ReligiousEd4PlusGraphic(),
     ],
   },
   {
@@ -2792,6 +2796,39 @@ function w44WarmthGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w44-2018/warmth-toward-mormons.png",
     width: 1080, height: 1350,
     alt: `Bar chart: mean feeling-thermometer rating toward Mormons, by rater's own religion, February 2019. ${alt}.`,
+  };
+}
+
+function w44LearnsOwnReligionGraphic(): Graphic {
+  const results = w44EngagementBatchData.learns_about_own_religion_weekly_plus;
+  return {
+    title: "Who studies their own faith weekly?",
+    description: "Share who do things to learn about their own religion (reading scripture, podcasts, books) at least weekly, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/learns-about-own-religion-weekly.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who do things to learn about their own religion at least weekly, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44KnowsAMormonGraphic(): Graphic {
+  const results = w44EngagementBatchData.personally_knows_a_mormon;
+  return {
+    title: "Who personally knows a Mormon?",
+    description: "Share who personally know someone who is Mormon, by the respondent's own religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/personally-knows-a-mormon.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who personally know someone who is Mormon, by the respondent's own religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44ReligiousEd4PlusGraphic(): Graphic {
+  const results = w44EngagementBatchData.religious_ed_4plus_years;
+  return {
+    title: "Who had years of religious education?",
+    description: "Share who attended Sunday school, CCD, or other religious education for 4 or more years, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/religious-ed-4plus-years.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who attended religious education for 4 or more years, by religion, February 2019. ${w44BatchAlt(results)}.`,
   };
 }
 

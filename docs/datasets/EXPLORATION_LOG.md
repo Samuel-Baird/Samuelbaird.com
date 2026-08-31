@@ -224,3 +224,39 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   not-everything-literal, a natural follow-up to this pass's qg7 chart),
   qk10b-d (Sunday school, religious homeschooling, volunteering with
   kids), qi2t/qi2u (dietary restrictions).
+
+- **pew-atp-w44-2018** (American Trends Panel, Wave 44, February 2019 —
+  religious knowledge and belief) — previously had 8 charts (5 knowledge-
+  quiz items, Communion belief, feeling-thermometer warmth toward Mormons).
+  Added 3 more this pass, all broken out by F_RELTRAD with the same
+  13-group Protestant-collapsed set as knowledge_batch.py —
+  `learns-about-own-religion-weekly.png` (66.1% of Latter-day Saints do
+  things to learn about their own religion — reading scripture, podcasts,
+  books — at least weekly, 2nd only to Jehovah's Witnesses at 81.3% and
+  well above every other tradition's ~20-53%, ties to LDS personal/family
+  scripture study), `personally-knows-a-mormon.png` (which traditions are
+  most/least likely to personally know a Mormon: "Other faiths" highest at
+  62.1%, Protestants at 49.5%, down to Jehovah's Witnesses at 10.7% and
+  Muslims at 13.1% — a social-visibility/proximity story, not an LDS
+  self-report), and `religious-ed-4plus-years.png` (74.8% of Latter-day
+  Saints attended Sunday school/CCD/religious education for 4+ years,
+  highest of any named tradition — Protestants 2nd at 68.3% — ties to the
+  Church's youth Primary/Sunday School programs). Checked
+  pew-atp-w44-2018's remaining battery for other candidates: TRINITY_W44
+  (knowledge item testing the textbook definition of the Trinity, not a
+  belief item — skipped as a weak fit for the "own belief" story given
+  LDS non-creedal theology), RELTEACHc_W44 (self-rated knowledge of
+  Mormonism by other traditions — conceptually redundant with this pass's
+  "knows a Mormon" chart), CHIMPRELa/b (importance of religion growing
+  up — skipped as a near-duplicate of pew-rls-2023-24's already-shipped
+  `chimprel_very_important` chart), and READREL2_W44 (learning about
+  *other* religions — thinner LDS angle than READREL1's own-religion
+  version already used). Also confirmed (by reading each entry's own
+  description in data-explorer.ts) that every other 1-chart dataset in
+  data/ — pew-10-country-religion-2007, pew-subsaharan-africa-2010,
+  pew-eastern-europe-2015, pew-global-restrictions-religion,
+  pew-india-2021, pew-church-tax-western-europe,
+  pew-religious-composition-2010-2020, pew-religion-migration — is
+  capped by design: each is a cross-national or country-level dataset
+  with no Latter-day-Saint/U.S.-specific frame variable, documented as
+  such in its own description. Not worth revisiting for more charts.
