@@ -260,3 +260,35 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   capped by design: each is a cross-national or country-level dataset
   with no Latter-day-Saint/U.S.-specific frame variable, documented as
   such in its own description. Not worth revisiting for more charts.
+
+- **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — partial,
+  2026-08-31: had 5 charts (evolution-belief, certainty-of-god,
+  daily-prayer, retention-rate, lds-share-by-region). Added 3 more this
+  pass, all broken out by RELTRAD using the continental-US main survey
+  file — `official-membership.json` (92.4% of Mormons are official
+  members of the church or house of worship they attend, highest of any
+  tradition by 9 points over 2nd-place Historically Black Protestant at
+  83.3%, ties to LDS formal membership records created at baptism/
+  confirmation), `prayer-scripture-groups.json` (64.8% of Mormons
+  participate in a prayer group, Scripture study group, or religious
+  education program at least weekly, 2nd only to Jehovah's Witnesses at
+  83.0% and well above every other tradition's <45%, ties to LDS Sunday
+  School/seminary/institute culture), and `volunteer-with-children.json`
+  (45.5% of Mormons work with children or youth at their place of worship
+  at least weekly, 2nd only to Jehovah's Witnesses at 47.3%, q28c is
+  skip-gated to respondents with a usual place of worship so its "All
+  respondents" baseline is smaller than the full RELTRAD sample, ties to
+  the Church's lay-volunteer calling system including Primary and youth
+  leadership). Dataset has a large untouched battery worth checking for
+  remaining candidates: q32 (view of God, person vs. impersonal force —
+  check against the already-shipped 2014 `view-of-god` chart before using,
+  same framing different year could work as a trend point), q37/q38
+  (nature of scripture, word of God vs. book written by man — likewise
+  near-duplicate of 2014's `scripture-word-of-god`), q39b (angels/demons
+  active in the world), q42d (share faith with non-believers — ties to
+  full-time missionary work), q43a/q43c (spiritual peace/answered prayer
+  experiences — q43c checked this pass, mid-pack at 36.6%, weaker
+  distinctiveness story so skipped), q46/q47 (perceived conflict between
+  religious devotion and modern society), and q55a-c (family religious
+  practices with children — q55a/b likely near-duplicates of 2014's
+  qk10a/qk10b family-scripture-prayer chart, check before using).

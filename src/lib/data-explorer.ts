@@ -56,6 +56,9 @@ import certaintyOfGodData from "../../docs/datasets/pew-rls-2007/certainty-of-go
 import dailyPrayerData from "../../docs/datasets/pew-rls-2007/daily-prayer.json";
 import retentionRateData from "../../docs/datasets/pew-rls-2007/retention-rate.json";
 import ldsShareByRegionData from "../../docs/datasets/pew-rls-2007/lds-share-by-region.json";
+import officialMembershipData from "../../docs/datasets/pew-rls-2007/official-membership.json";
+import prayerScriptureGroupsData from "../../docs/datasets/pew-rls-2007/prayer-scripture-groups.json";
+import volunteerWithChildrenData from "../../docs/datasets/pew-rls-2007/volunteer-with-children.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -748,6 +751,9 @@ const RAW_DATASETS: Dataset[] = [
       dailyPrayerGraphic(),
       retentionRateGraphic(),
       ldsShareByRegionGraphic(),
+      officialMembershipGraphic(),
+      prayerScriptureGroupsGraphic(),
+      volunteerWithChildrenGraphic(),
     ],
   },
   {
@@ -1707,6 +1713,48 @@ function ldsShareByRegionGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/lds-share-by-region.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of U.S. Mormons living in each Census region, 2007. ${alt}.`,
+  };
+}
+
+function officialMembershipGraphic(): Graphic {
+  const { group_order: order, official_member: results } = officialMembershipData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who's an official member of their congregation?",
+    description: "Share who are official members of the church or house of worship they attend, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/official-membership.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who are official members of the church or house of worship they attend, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function prayerScriptureGroupsGraphic(): Graphic {
+  const { group_order: order, weekly_prayer_or_scripture_group: results } = prayerScriptureGroupsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Weekly prayer or Scripture study groups",
+    description: "Share who participate in a prayer group, Scripture study group, or religious education program at least weekly, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/prayer-scripture-groups.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who participate in a prayer group, Scripture study group, or religious education program at least weekly, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function volunteerWithChildrenGraphic(): Graphic {
+  const { group_order: order, weekly_works_with_children_youth: results } = volunteerWithChildrenData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who volunteers with kids at church?",
+    description: "Share who work with children or youth at their place of worship at least weekly, among those with a usual place of worship, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/volunteer-with-children.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who work with children or youth at their place of worship at least weekly, among those with a usual place of worship, by religious tradition, 2007. ${alt}.`,
   };
 }
 
