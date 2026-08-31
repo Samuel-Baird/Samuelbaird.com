@@ -109,6 +109,7 @@ import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scrip
 import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
 import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
 import adultArrangementsData from "../../docs/datasets/pew-catholic-family-2015/adult-arrangements.json";
+import prayerStyleData from "../../docs/datasets/pew-catholic-family-2015/prayer-style.json";
 import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
 import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
@@ -981,6 +982,7 @@ const RAW_DATASETS: Dataset[] = [
     sourceUrl: "https://www.pewresearch.org/religion/2015/09/02/u-s-catholics-open-to-non-traditional-families/",
     graphics: [
       annulmentCommunionGraphic(),
+      prayerStyleGraphic(),
       raisedByMarriedParentsGraphic(),
       raisedBySingleParentGraphic(),
       raisedByDivorcedParentsGraphic(),
@@ -2583,6 +2585,20 @@ function childlessByChoiceGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-catholic-family-2015/childless-by-choice.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying a couple who choose not to have children is as good a way of life as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function prayerStyleGraphic(): Graphic {
+  const results = prayerStyleData.personal_conversation_prayer;
+  const alt = Object.entries(results)
+    .map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`)
+    .join(", ");
+  return {
+    title: "Memorized prayers, or a personal conversation?",
+    description: "Share who say they mainly have a personal conversation with God when they pray, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/prayer-style.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say they mainly have a personal conversation with God when they pray rather than mainly reciting memorized prayers, by religion, 2015. ${alt}.`,
   };
 }
 

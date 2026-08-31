@@ -1,0 +1,73 @@
+{
+  "source": "Pew Research Center. 2015 Survey of U.S. Catholics and Family Life, fielded May 5-June 7, 2015.",
+  "method": "Population is all respondents (a general-public sample with a Catholic oversample), grouped by present religion (relig). qf6 asks how respondents mainly pray: memorized prayers, a personal conversation with God, both (volunteered), or other/neither (volunteered) - only don't know/refused is excluded from the denominator. Share is top box ('mainly have a personal conversation with God'). Groups under 30 valid respondents omitted - Mormon N is thin (87 valid respondents) and should be read directionally. Weighted by the dataset's own weight variable.",
+  "total_weighted_n": 14217.4,
+  "total_unweighted_n": 5122,
+  "personal_conversation_prayer": {
+    "Protestant": {
+      "pct": 83.57,
+      "valid_unweighted_n": 1791,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 45.92,
+      "valid_unweighted_n": 982,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 89.77,
+      "valid_unweighted_n": 87,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 62.96,
+      "valid_unweighted_n": 36,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 49.39,
+      "valid_unweighted_n": 82,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 36.65,
+      "valid_unweighted_n": 39,
+      "group_unweighted_n": 43
+    },
+    "Hindu": {
+      "pct": 50.44,
+      "valid_unweighted_n": 33,
+      "group_unweighted_n": 38
+    },
+    "Agnostic": {
+      "pct": 78.73,
+      "valid_unweighted_n": 82,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 73.87,
+      "valid_unweighted_n": 86,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 81.8,
+      "valid_unweighted_n": 509,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 87.92,
+      "valid_unweighted_n": 561,
+      "group_unweighted_n": 582
+    },
+    "Jehovah's Witness": {
+      "pct": 96.08,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "U.S. adults": {
+      "pct": 73.97,
+      "valid_unweighted_n": 4405,
+      "group_unweighted_n": 5122
+    }
+  }
+}

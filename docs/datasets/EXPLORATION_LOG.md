@@ -687,3 +687,36 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   prior passes' notes: qk10c (religious homeschooling — likely a much
   thinner Mormon N given how rare it is), qk10d (volunteer work with
   kids — weaker doctrinal tie), qm5a/b/d, qi2t/qi2u.
+
+- **pew-catholic-family-2015** (2015 Survey of U.S. Catholics and Family
+  Life) — fourth chart, 2026-08-31: checked several other datasets'
+  remaining-battery notes first and rejected them — pew-black-faith-2021's
+  PERSDO1_a/c/d (meditate, burn candles/incense, pray at home altar) all
+  land Mormons mid-pack with no distinctive story once actually computed
+  (checked by weighted crosstab, not assumed), and PERSDO1_e (consult a
+  diviner) has Mormons *higher* than most Christian groups at n=33 — a
+  counter-doctrinal, thin-N result not worth shipping. Landed instead on
+  this dataset's own unchecked qf6 item ("when you pray, do you mainly say
+  memorized prayers ... or have a personal conversation with God"), broken
+  out by present religion (relig, same general-public + Catholic-oversample
+  sample as this folder's other three scripts). `prayer-style.json`:
+  89.8% of Mormons say they mainly have a personal conversation with God
+  rather than memorized prayers, 2nd only to Jehovah's Witness (96.1%,
+  thinner n=31) among 12 named groups clearing the 30-floor, well above
+  Protestant (83.6%) and far above Catholic (45.9%)/Orthodox (63.0%) —
+  ties directly to LDS teaching that personal prayer is an informal,
+  individual conversation rather than fixed liturgy, with no standard
+  congregational prayer text outside the sacrament prayers. Mormon n=87
+  valid (unweighted). Computed by
+  `scripts/pew-catholic-family-2015/prayer_style.py` →
+  `docs/datasets/pew-catholic-family-2015/prayer-style.json`, rendered by
+  `scripts/pew-catholic-family-2015/render_prayer_style.py` →
+  `public/data-explorer/pew-catholic-family-2015/prayer-style.png` (13
+  rows, checked by reading the PNG directly — no label collision). Wired
+  into `src/lib/data-explorer.ts` (`prayerStyleGraphic()`). This dataset's
+  remaining untouched candidates (qa3a-c favorability of Pope
+  Francis/Obama/Putin — political, weak fit; qf2/qf5 importance-of-
+  religion/prayer-frequency — likely near-duplicates of items already
+  shipped elsewhere; qh3 childhood religion — demographic, no belief
+  content) all look thin or duplicative; consider this dataset close to
+  fully mined.
