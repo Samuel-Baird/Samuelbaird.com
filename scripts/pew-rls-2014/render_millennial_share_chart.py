@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Which traditions skew young?",
         subtitle="Share born 1981-1996 (Millennials),\nby religious tradition, 2014.",
         caption_paragraphs=[],

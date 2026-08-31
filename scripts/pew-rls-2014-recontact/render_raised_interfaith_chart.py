@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Raised in more than one religion?",
         subtitle="Share who think of themselves as having been raised\nin more than one religion, by current tradition.",
         caption_paragraphs=[],

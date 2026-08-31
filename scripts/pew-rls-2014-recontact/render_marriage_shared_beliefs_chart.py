@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Sharing faith with a spouse",
         subtitle="Share who say shared religious beliefs are very\nimportant for a successful marriage, by tradition.",
         caption_paragraphs=[],

@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who stays in the religion they were raised in?",
         subtitle="Share raised in each tradition who still identify\nwith that same tradition as adults.",
         caption_paragraphs=[],

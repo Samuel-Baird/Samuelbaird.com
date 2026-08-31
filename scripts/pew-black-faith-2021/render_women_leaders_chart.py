@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Should women lead congregations?",
         subtitle="Share of Black Americans saying women should be allowed to\nserve as a congregation's senior religious leader, by religion.",
         caption_paragraphs=[],

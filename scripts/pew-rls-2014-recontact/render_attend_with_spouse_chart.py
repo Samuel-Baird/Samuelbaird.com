@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Do you attend with your spouse?",
         subtitle="Share who typically attend religious services with\ntheir spouse or partner, by current tradition.",
         caption_paragraphs=[],

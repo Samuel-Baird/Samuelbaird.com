@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Where does the Book of Mormon say Jesus appeared?",
         subtitle="Share correctly saying the Americas, by the\nrespondent's own religion.",
         caption_paragraphs=[],

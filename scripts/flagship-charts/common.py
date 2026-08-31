@@ -95,7 +95,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -165,17 +165,38 @@ def render_magnitude_bar(
     fonts: dict[str, fm.FontProperties] | None = None,
     value_suffix: str = "%",
     axes_left: float = 0.36,
+    group_identity: bool = False,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
-    order), reading its value from `values[row]`. Rows in `highlight_rows`
-    (or every row, if None - a single-population "which of these items
-    mattered" chart rather than a by-group comparison) are drawn in
-    --accent; everything else in a bar-safe gray. `caption_paragraphs`,
+    order), reading its value from `values[row]`. `caption_paragraphs`,
     `handle`, and `handle_color` are passed straight to
     chart_style.draw_caption_bottom - per the site-wide caption convention
     (BRANDING_AND_DESIGN.md's "Charts" section), pass `caption_paragraphs=[]`
     and `handle="@ithinkisam | data: <short title>"` rather than building a
     multi-line citation block.
+
+    Two coloring modes, chosen by `group_identity`:
+
+    - `group_identity=True` (a by-religious-group comparison chart): every
+      row is colored by `chart_style.color_for_group`, its own locked
+      identity hex rather than a binary highlight. `highlight_rows` is
+      ignored in this mode - pass `highlight_rows=None`. This is the
+      site-wide rule for any chart whose rows are named religious groups
+      (BRANDING_AND_DESIGN.md's "Charts" section): no single group,
+      including Latter-day Saints, gets singled out in --accent against a
+      gray field of everyone else.
+    - `group_identity=False` (default): rows in `highlight_rows` (or every
+      row, if `highlight_rows` is None - a single-population "which of
+      these items mattered" chart with no group axis at all) are drawn in
+      --accent, everything else in a bar-safe gray. This remains legitimate
+      for a chart whose subject is a specific country/time-period/tracked
+      category rather than a religious identity (e.g. highlighting "United
+      States" among a list of countries) - it isn't the "gray out everyone
+      but the one favored group" pattern this rule targets.
+
+    In both modes the y-axis tick label itself is always plain ink, never
+    colored to match its bar - a row's color lives on the bar, not the
+    label.
 
     `axes_left` reserves that figure-fraction for the row labels before the
     bars start; raise it above the 0.36 default when a row label is long
@@ -205,10 +226,13 @@ def render_magnitude_bar(
 
     display_rows = rows[::-1]
     vals = [values[r] for r in display_rows]
-    colors = [
-        ACCENT if (highlight_rows is None or r in highlight_rows) else CONTEXT_GRAY
-        for r in display_rows
-    ]
+    if group_identity:
+        colors = [color_for_group(r) for r in display_rows]
+    else:
+        colors = [
+            ACCENT if (highlight_rows is None or r in highlight_rows) else CONTEXT_GRAY
+            for r in display_rows
+        ]
 
     bar_h = 0.62 if n_rows <= 8 else 0.68
     ax.barh(display_rows, vals, height=bar_h, color=colors, zorder=3)
@@ -218,7 +242,7 @@ def render_magnitude_bar(
     for tick_label, r in zip(ax.get_yticklabels(), display_rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
-        tick_label.set_color(ACCENT if (highlight_rows is None or r in highlight_rows) else INK)
+        tick_label.set_color(INK)
 
     for r, v, c in zip(display_rows, vals, colors):
         ax.text(

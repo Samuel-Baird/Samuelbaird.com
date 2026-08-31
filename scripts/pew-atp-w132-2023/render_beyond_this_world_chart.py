@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="A feeling of connection beyond this world",
         subtitle="Share who have ever had a sudden or unexpected feeling of\nconnection with something from beyond this world, by religion, 2023.",
         caption_paragraphs=[],

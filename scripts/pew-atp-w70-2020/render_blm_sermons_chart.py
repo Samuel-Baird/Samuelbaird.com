@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Hearing BLM support from the pulpit",
         subtitle="Share who heard a sermon expressing support for the\nBlack Lives Matter protests, by religious tradition, July 2020.",
         caption_paragraphs=[],

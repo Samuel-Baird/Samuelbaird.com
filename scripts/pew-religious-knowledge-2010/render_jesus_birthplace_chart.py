@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who knows where Jesus was born?",
         subtitle="Share correctly saying Bethlehem, by the\nrespondent's own religion.",
         caption_paragraphs=[],

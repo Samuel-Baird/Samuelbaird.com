@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Did your spouse's religion matter?",
         subtitle="Share of the ever-married saying their spouse's religion\nwas very important in deciding to marry them, by tradition.",
         caption_paragraphs=[],

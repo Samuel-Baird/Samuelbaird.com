@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who knows when Mormonism was founded?",
         subtitle="Share correctly saying the Mormon religion was founded\nsometime after 1800, by the respondent's own religion.",
         caption_paragraphs=[],

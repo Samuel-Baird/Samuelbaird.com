@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Is evolution the best explanation?",
         subtitle="Share who agree evolution is the best explanation\nfor human life on Earth, by religious tradition.",
         caption_paragraphs=[],

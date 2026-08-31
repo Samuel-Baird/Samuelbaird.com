@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who's back in the pews",
         subtitle="Share who attended religious services in person in\nthe past month, by religious tradition, November 2022.",
         caption_paragraphs=[],

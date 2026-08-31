@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Feeling out of step with mainstream culture",
         subtitle="Share who feel at least some conflict between their own\nreligious beliefs and mainstream American culture, Feb. 2025.",
         caption_paragraphs=[],

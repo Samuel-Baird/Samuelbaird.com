@@ -196,11 +196,16 @@ def _row_tier(label: str) -> int:
     total_pop_labels = {
         "u.s. adults", "general population", "total population", "all u.s. adults",
     }
-    if lower in total_pop_labels or "total population" in lower:
+    # Any "All <population>" baseline row (e.g. "All Black Americans", "All
+    # attenders") is the same kind of tier-3 aggregate as "All U.S. adults" -
+    # a survey-specific population baseline, not a named group of its own.
+    if lower in total_pop_labels or "total population" in lower or lower.startswith("all "):
         return 3
     if "average" in lower:
         return 2
-    if lower.startswith("other"):
+    # "Something else" is the same kind of named catch-all as an "Other X"
+    # row (tier 1) - it just doesn't start with the word "Other".
+    if lower.startswith("other") or lower == "something else":
         return 1
     return 0
 
@@ -262,22 +267,67 @@ GROUP_COLORS = {
     "Buddhist": "#9C8A1F",  # ochre
     "Jewish": "#7A6BA6",  # periwinkle
     "Religiously unaffiliated": "#6B4A2F",  # umber
+    # Added for the flagship-charts/ (one-off Pew dataset) and ryan-burge/
+    # pipelines, which break Protestant into three RLS-style sub-traditions
+    # that sometimes appear together as separate rows in the same chart
+    # (e.g. pew-atp-w117-2022's in-person-attendance chart), so each needs
+    # its own hex rather than all three collapsing onto generic Protestant's
+    # amber. Kept in the amber family since they're still the same broad
+    # tradition as "Protestant" - just distinguishable from each other.
+    "Evangelical Protestant": "#D68A2E",
+    "Mainline Protestant": "#E8B15E",
+    "Historically Black Protestant": "#8B5A2B",
+    # Non-religious / non-affiliated identity rows that appear as their own
+    # named categories (not lumped into "Religiously unaffiliated") across
+    # the ATP wave and ryan-burge charts.
+    "Agnostic": "#4A6B7A",  # slate blue-gray
+    "Atheist": "#2F4858",  # dark navy-slate
+    "Nothing in particular": "#A67B5B",  # clay/tan
+    # ryan-burge/'s own two denomination-level rows (VOTER Survey Panel's
+    # pid-over-time series tracks specific denominations, not RLS-style
+    # traditions), each needing a color distinct from generic Protestant.
+    "Southern Baptist": "#7A3B2E",  # brick
+    "United Methodist": "#3E5C76",  # navy
+}
+
+# Exact-string variants of a canonical GROUP_COLORS label - different Pew
+# survey waves (and ryan-burge's own datasets) spell the same group
+# differently ("Mormon" vs "Latter-day Saint", "Orthodox" vs "Orthodox
+# Christian", "...Churches"/"...Tradition" suffixes on the RLS-style
+# Protestant sub-traditions, capitalization drift on "Nothing in
+# particular"). Resolved before the GROUP_COLORS lookup in color_for_group
+# so every wave's spelling of the same group reads as the same color,
+# without duplicating hex values across near-identical dict keys.
+GROUP_ALIASES = {
+    "Mormon": "Latter-day Saint",
+    "Orthodox": "Orthodox Christian",
+    "Unaffiliated": "Religiously unaffiliated",
+    'Unaffiliated (religious "nones")': "Religiously unaffiliated",
+    "Nothing in Particular": "Nothing in particular",
+    "Evangelical Protestant Churches": "Evangelical Protestant",
+    "Evangelical Protestant Tradition": "Evangelical Protestant",
+    "Mainline Protestant Churches": "Mainline Protestant",
+    "Mainline Protestant Tradition": "Mainline Protestant",
+    "Historically Black Protestant Churches": "Historically Black Protestant",
+    "Historically Black Protestant Tradition": "Historically Black Protestant",
 }
 
 
 def color_for_group(label: str) -> str:
     """Bar-fill color for one row of a per-group-identity magnitude bar
     chart. A named denomination/religion in `GROUP_COLORS` gets its own
-    locked identity hex. Everything else isn't a single identity to begin
-    with, so it shares a neutral token instead, matching its own sink-to-
-    bottom tier from `sort_groups` above: a named catch-all ("Other
-    Christian" and the like, tier 1) gets `CONTEXT_GRAY`; a population-
-    average aggregate or total-population row (tiers 2/3) gets `MUTED`.
+    locked identity hex (resolving spelling variants via `GROUP_ALIASES`
+    first). Everything else isn't a single identity to begin with, so it
+    shares a neutral token instead, matching its own sink-to-bottom tier
+    from `sort_groups` above: a named catch-all ("Other Christian",
+    "Something else", tier 1) gets `CONTEXT_GRAY`; a population-average
+    aggregate or total-population row (tiers 2/3) gets `MUTED`.
     See BRANDING_AND_DESIGN.md's "Charts" section for the full palette
     table and the accepted Muslim/Orthodox Christian color-distance
     tradeoff (legal here only because every bar also prints its group name
     and percentage directly on the chart - color is never the only
     encoding)."""
+    label = GROUP_ALIASES.get(label, label)
     if label in GROUP_COLORS:
         return GROUP_COLORS[label]
     return CONTEXT_GRAY if _row_tier(label) == 1 else MUTED

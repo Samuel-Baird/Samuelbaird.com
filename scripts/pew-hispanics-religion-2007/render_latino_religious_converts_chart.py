@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Latino converts to their faith",
         subtitle="Share of U.S. Latino adults who converted to their current\nreligion, rather than being raised in it, by religious group, 2006.",
         caption_paragraphs=[],

@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who prays daily?",
         subtitle="Share who pray at least once a day outside of\nreligious services, by religious tradition.",
         caption_paragraphs=[],

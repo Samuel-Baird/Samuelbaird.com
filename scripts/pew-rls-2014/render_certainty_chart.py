@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="How certain are people that God exists?",
         subtitle="Share of believers absolutely certain God exists,\nby religious tradition, 2014.",
         caption_paragraphs=[],

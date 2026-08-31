@@ -39,7 +39,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who scored best on the religious knowledge quiz?",
         subtitle=f"Average number correct out of {data['n_items']} questions,\nby the respondent's own religion.",
         caption_paragraphs=[],

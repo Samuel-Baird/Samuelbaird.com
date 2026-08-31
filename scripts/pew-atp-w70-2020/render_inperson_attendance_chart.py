@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who kept attending in person?",
         subtitle="Share who attended religious services in person in\nthe past month, by religious tradition, July 2020.",
         caption_paragraphs=[],

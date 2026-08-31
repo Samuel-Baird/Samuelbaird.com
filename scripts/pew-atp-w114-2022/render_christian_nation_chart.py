@@ -43,7 +43,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Should the U.S. be a Christian nation?",
         subtitle="Share saying yes, by religious affiliation,\nSeptember 2022.",
         caption_paragraphs=[],

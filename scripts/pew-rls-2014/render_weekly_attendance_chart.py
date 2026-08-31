@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Who attends religious services weekly?",
         subtitle="Share attending religious services once a week\nor more, by religious tradition, 2014.",
         caption_paragraphs=[],

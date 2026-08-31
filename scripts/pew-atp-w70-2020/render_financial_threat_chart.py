@@ -37,7 +37,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="COVID as a financial threat",
         subtitle="Share calling the coronavirus outbreak a major threat\nto their personal finances, by religious tradition, July 2020.",
         caption_paragraphs=[],

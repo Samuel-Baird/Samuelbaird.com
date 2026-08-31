@@ -38,7 +38,8 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"Mormon"},
+        highlight_rows=None,
+        group_identity=True,
         title="Do you and your spouse disagree about religion?",
         subtitle="Share saying they disagree with their spouse or\npartner about religion a lot, by current tradition.",
         caption_paragraphs=[],
