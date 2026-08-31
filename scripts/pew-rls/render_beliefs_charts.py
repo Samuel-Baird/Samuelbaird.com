@@ -50,7 +50,7 @@ FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 # this way rather than defaulting to Christian-only.
 GROUP_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
-    "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
+    "Muslim", "Hindu", "Orthodox Christian", "Buddhist",
     "Jewish", "Other world religions", "Other faiths",
     "All religious average", "Religiously unaffiliated",
 ]

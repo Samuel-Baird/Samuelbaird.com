@@ -56,11 +56,11 @@ DEFAULT_FONTS_DIR = (
 # convention as every other chart in this pipeline.
 CHILDREN_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-    "Jehovah's Witness", "Other Christian", "Christian average",
+    "Jehovah's Witness",
 ]
 KIDACT_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-    "Jehovah's Witness", "Other Christian", "Other religions",
+    "Jehovah's Witness", "Other religions",
     "Religiously affiliated average",
 ]
 

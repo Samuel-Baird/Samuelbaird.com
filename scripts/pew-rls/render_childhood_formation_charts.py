@@ -57,8 +57,6 @@ GROUP_ORDER = [
     "Protestant",
     "Orthodox Christian",
     "Jehovah's Witness",
-    "Other Christian",
-    "Christian average",
 ]
 
 DEFAULT_DATA_JSON = (

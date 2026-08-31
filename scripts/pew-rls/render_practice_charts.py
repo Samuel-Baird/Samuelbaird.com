@@ -59,16 +59,16 @@ FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
 CHRISTIAN_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-    "Jehovah's Witness", "Other Christian", "Christian average",
+    "Jehovah's Witness",
 ]
 CHRISTIAN_PLUS_OTHER_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-    "Jehovah's Witness", "Other Christian", "Other religions",
+    "Jehovah's Witness", "Other religions",
     "Religiously affiliated average",
 ]
 ALL_RELIGIOUS_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
-    "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
+    "Muslim", "Hindu", "Orthodox Christian", "Buddhist",
     "Jewish", "Other world religions", "Other faiths", "All religious average",
 ]
 

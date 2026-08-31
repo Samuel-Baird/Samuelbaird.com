@@ -38,7 +38,7 @@ FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
 
 GROUP_ORDER = [
     "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-    "Jehovah's Witness", "Other Christian", "Christian average",
+    "Jehovah's Witness",
 ]
 
 DEFAULT_DATA_JSON = (

@@ -127,15 +127,13 @@ const GENERALIZED_GROUP_ORDER = [
   "Protestant",
   "Orthodox Christian",
   "Jehovah's Witness",
-  "Other Christian",
-  "Christian average",
 ];
 
 /** Group order for children_with_kids_at_home, matching CHILDREN_ORDER in
  * scripts/pew-rls/render_family_household_charts.py. */
 const CHILDREN_GROUP_ORDER = [
   "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-  "Jehovah's Witness", "Other Christian", "Christian average",
+  "Jehovah's Witness",
 ];
 
 /** Group order for pray_or_read_scripture_with_kids, matching
@@ -144,7 +142,7 @@ const CHILDREN_GROUP_ORDER = [
  * item's own note. */
 const KIDACT_GROUP_ORDER = [
   "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
-  "Jehovah's Witness", "Other Christian", "Other religions",
+  "Jehovah's Witness", "Other religions",
   "Religiously affiliated average",
 ];
 
@@ -153,7 +151,7 @@ const KIDACT_GROUP_ORDER = [
  * ALL_RELIGIOUS_ORDER in scripts/pew-rls/render_practice_charts.py. */
 const ALL_RELIGIOUS_GROUP_ORDER = [
   "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
-  "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
+  "Muslim", "Hindu", "Orthodox Christian", "Buddhist",
   "Jewish", "Other world religions", "Other faiths", "All religious average",
 ];
 
@@ -163,7 +161,7 @@ const ALL_RELIGIOUS_GROUP_ORDER = [
  * section's own open-population resolution (see beliefs.py's docstring). */
 const BELIEFS_GROUP_ORDER = [
   "Latter-day Saint", "Catholic", "Protestant", "Jehovah's Witness",
-  "Muslim", "Hindu", "Orthodox Christian", "Other Christian", "Buddhist",
+  "Muslim", "Hindu", "Orthodox Christian", "Buddhist",
   "Jewish", "Other world religions", "Other faiths",
   "All religious average", "Religiously unaffiliated",
 ];
