@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design), broken out by self-reported activity level in the Church (q406). q408 asks respondents to choose between \"the Book of Mormon was WRITTEN by Joseph Smith\" and \"the Book of Mormon was written by ancient prophets and translated by Joseph Smith\"; this chart shows the ancient-prophets share. The other/neither/both response and don't know/refused are excluded from each row's denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "activity_order": [
+    "Very active",
+    "Somewhat active",
+    "Not too active",
+    "Not at all active",
+    "All Mormon adults"
+  ],
+  "ancient_prophets_pct": {
+    "Very active": {
+      "pct": 98.36,
+      "valid_unweighted_n": 744,
+      "group_unweighted_n": 746
+    },
+    "Somewhat active": {
+      "pct": 84.81,
+      "valid_unweighted_n": 142,
+      "group_unweighted_n": 144
+    },
+    "Not too active": {
+      "pct": 80.18,
+      "valid_unweighted_n": 74,
+      "group_unweighted_n": 76
+    },
+    "Not at all active": {
+      "pct": 56.16,
+      "valid_unweighted_n": 46,
+      "group_unweighted_n": 52
+    },
+    "All Mormon adults": {
+      "pct": 92.09,
+      "valid_unweighted_n": 1007,
+      "group_unweighted_n": 1019
+    }
+  }
+}

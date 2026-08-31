@@ -45,6 +45,9 @@ import essentialToBeingMormonData from "../../docs/datasets/pew-mormon-survey-20
 import tithingByActivityData from "../../docs/datasets/pew-mormon-survey-2011/tithing-by-activity.json";
 import missionTitheByConvertData from "../../docs/datasets/pew-mormon-survey-2011/mission-and-tithe-by-convert.json";
 import presidentReadinessData from "../../docs/datasets/pew-mormon-survey-2011/president-readiness-by-party.json";
+import bookOfMormonOriginByActivityData from "../../docs/datasets/pew-mormon-survey-2011/book-of-mormon-origin-by-activity.json";
+import templeRecommendByActivityData from "../../docs/datasets/pew-mormon-survey-2011/temple-recommend-by-activity.json";
+import dailyPrayerByActivityData from "../../docs/datasets/pew-mormon-survey-2011/daily-prayer-by-activity.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
@@ -703,6 +706,9 @@ const RAW_DATASETS: Dataset[] = [
       polygamyMoralityGraphic(),
       foodStorageByActivityGraphic(),
       coreBeliefsGraphic(),
+      bookOfMormonOriginByActivityGraphic(),
+      templeRecommendByActivityGraphic(),
+      dailyPrayerByActivityGraphic(),
     ],
   },
   {
@@ -1497,6 +1503,51 @@ function tithingByActivityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/tithing-by-activity.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons paying a full tithe, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function bookOfMormonOriginByActivityGraphic(): Graphic {
+  const { activity_order: order, ancient_prophets_pct: results } = bookOfMormonOriginByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "What do Mormons believe about the Book of Mormon?",
+    description:
+      "Share of Mormons who say the Book of Mormon was written by ancient prophets and " +
+      "translated by Joseph Smith, rather than written by Joseph Smith himself, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/book-of-mormon-origin-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons who say the Book of Mormon was written by ancient prophets and translated by Joseph Smith, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function templeRecommendByActivityGraphic(): Graphic {
+  const { activity_order: order, has_temple_recommend_pct: results } = templeRecommendByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do Mormons hold a current temple recommend?",
+    description: "Share of Mormons who hold a current temple recommend, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/temple-recommend-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons who hold a current temple recommend, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function dailyPrayerByActivityGraphic(): Graphic {
+  const { activity_order: order, prays_daily_pct: results } = dailyPrayerByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How often do Mormons pray?",
+    description:
+      "Share of Mormons who pray at least once a day outside of religious services, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/daily-prayer-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons who pray at least once a day, by activity level in the Church. ${alt}.`,
   };
 }
 
