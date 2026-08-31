@@ -326,3 +326,41 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   religious devotion and modern society), and q55a-c (family religious
   practices with children — q55a/b likely near-duplicates of 2014's
   qk10a/qk10b family-scripture-prayer chart, check before using).
+
+- **pew-catholic-family-2015** (2015 Survey of U.S. Catholics and Family
+  Life) — 2026-08-31: had 6 charts (5 from the qb12 "raised by [household
+  type]" battery, 1 Catholic-only annulment/Communion item). Added 3
+  more this pass, all broken out by present religion (relig, the same
+  general-public + Catholic-oversample sample as qb12) from the
+  qb15a-c battery — the adult-focused counterpart to qb12's child-
+  focused version, same "as good a way of life as any other" top-box
+  framing. `unmarried-cohabiting-couple.png` (17% of Mormons say an
+  unmarried couple living together is as good a way of life as any
+  other, lowest of any tradition — next-lowest is Jehovah's Witness at
+  34%, U.S. adults overall 56%), `samesex-couple-living-together.png`
+  (20% of Mormons, also lowest — Muslims next at 30%, U.S. adults 50%;
+  a distinct construct from the site's existing "favor same-sex
+  marriage" charts, which ask about legal marriage support rather than
+  acceptability of the living arrangement), and `childless-by-choice.png`
+  (41% of Mormons say a couple who choose not to have children is as
+  good a way of life as any other, again lowest — next-lowest Hindu at
+  59%, U.S. adults 80%, Protestants 79%, Catholics 73%). All three tie
+  to the Church's family/marriage teaching (the Family Proclamation) —
+  Mormons are the least-accepting group on all three adult-arrangement
+  items, mirroring the pattern already shown for the child-focused qb12
+  items. Mormon N is thin (88 total, ~83-87 valid per item) but clears
+  the 30-respondent floor; flagged as directional in the method note.
+  Row count landed at 14-15 (13-14 named religions + Mormon + a "U.S.
+  adults" catch-all pinned to the bottom by sort_groups) rather than the
+  usual ≤13 — this dataset's relig variable is already the coarsest
+  available grouping (no RELTRAD-style split to collapse further), and
+  all three PNGs render cleanly with no label overlap or clipping.
+  Remaining untouched candidates if this dataset gets a third pass: the
+  qj22/qj29/qj31/qj32 Pope Francis and Catholic-Church-reform batteries
+  and qn3/qp27 Catholic-identity and sin batteries are all Catholic-only
+  (no cross-tradition LDS comparison, weak fit for this site); qa3a-c
+  (favorability of groups/institutions, item content not yet checked)
+  and qf2/qf5/qf6/qh3 (importance of religion, prayer style, childhood
+  religion — likely near-duplicates of items already shipped elsewhere
+  from other datasets, check first) are the only remaining candidates
+  with a plausible religion breakout.
