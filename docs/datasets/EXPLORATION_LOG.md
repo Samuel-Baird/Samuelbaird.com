@@ -424,6 +424,28 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   pass and dropped as unremarkable. Consider this dataset close to fully
   mined.
 
+- **pew-atp-w132-2023** (American Trends Panel, Wave 132, spirituality
+  battery) — partial, third pass 2026-08-31: had 3 charts (beyond-this-world,
+  religious-community, has-cross). Added 2 more this pass, both by F_RELIG —
+  `spirituality-important.json` (66.5% of Mormons call spirituality "very
+  important" in their life, highest of any Christian tradition and
+  essentially tied with Muslims at 66.7% for the highest of any group in the
+  wave) and `tattoo-piercing-spiritual.json` (only 6.5% of Mormons have a
+  tattoo or piercing "for spiritual purposes," lowest of any Christian
+  tradition — Protestant 8.3%/Catholic 7.8%/Orthodox 10.4% — essentially
+  tied with Atheists at 6.0% and above only Muslims at 4.3% among all 12
+  groups; ties to the LDS body-as-temple/tattoo counsel). Checked
+  SPIRTHINGS_a (jewelry, Mormon 10.2% — thin, no clear doctrinal story) and
+  SPIRTHINGS_d (home shrine/altar/icon, Mormon 11.2% — not the lowest,
+  Protestant is lower at 7.2%, undercuts an LDS-distinctiveness story) and
+  dropped both; also checked LIFESPIR_W132 (became more/less spiritual over
+  lifetime, Mormon 50.1% — solidly mid-pack, no distinctive story) and
+  dropped it. Wave's DTHLKE_c (dead can provide guidance/protection) is
+  still untouched but flagged in the prior pass as overlapping W143's
+  shipped "ancestors' spirits" chart — check closely before using. Consider
+  this wave close to fully mined; only DTHLKE_c remains as a live candidate,
+  and it's a marginal one.
+
 - **pew-faith-in-flux-2008** (2008 Conversion Recontact Survey) — 2026-08-31:
   had 5 charts (never previously logged here, hence appearing "untouched" by
   this log's own summary at the top - it wasn't). Added 2 more this pass.

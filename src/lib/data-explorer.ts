@@ -128,6 +128,8 @@ import followsOwnLeadersData from "../../docs/datasets/pew-atp-w117-2022/follows
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
 import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religious-community.json";
+import spiritualityImportantData from "../../docs/datasets/pew-atp-w132-2023/spirituality-important.json";
+import tattooPiercingSpiritualData from "../../docs/datasets/pew-atp-w132-2023/tattoo-piercing-spiritual.json";
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
 import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
@@ -1214,7 +1216,13 @@ const RAW_DATASETS: Dataset[] = [
       "wave is a large battery of belief and experience items about spirituality, " +
       "likely feeding Pew's Dec. 2023 \"Spirituality Among Americans\" report.",
     sourceUrl: "https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/",
-    graphics: [beyondThisWorldGraphic(), religiousCommunityGraphic(), hasCrossGraphic()],
+    graphics: [
+      beyondThisWorldGraphic(),
+      religiousCommunityGraphic(),
+      hasCrossGraphic(),
+      spiritualityImportantGraphic(),
+      tattooPiercingSpiritualGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w143-2024",
@@ -2814,6 +2822,34 @@ function religiousCommunityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w132-2023/religious-community.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share involved in a religious community, by religion, 2023. ${alt}.`,
+  };
+}
+
+function spiritualityImportantGraphic(): Graphic {
+  const { group_order: order, spirituality_very_important: results } = spiritualityImportantData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is spirituality in your life?",
+    description: "Share saying spirituality is \"very important\" in their life, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/spirituality-important.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying spirituality is very important in their life, by religion, 2023. ${alt}.`,
+  };
+}
+
+function tattooPiercingSpiritualGraphic(): Graphic {
+  const { group_order: order, tattoo_or_piercing_for_spiritual_purposes: results } = tattooPiercingSpiritualData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you have a tattoo or piercing for spiritual purposes?",
+    description: "Share who have a tattoo or piercing \"for spiritual purposes,\" by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/tattoo-piercing-spiritual.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have a tattoo or piercing for spiritual purposes, by religion, 2023. ${alt}.`,
   };
 }
 
