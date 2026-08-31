@@ -280,14 +280,6 @@ def render_magnitude_bar(
         ]
 
     bar_h = 0.62 if n_rows <= 8 else 0.68
-    ax.barh(display_rows, vals, height=bar_h, color=colors, zorder=3)
-    ax.set_xlim(0, max(vals) * 1.22)
-    ax.margins(y=0.06 if n_rows > 8 else 0.11)
-
-    for tick_label, r in zip(ax.get_yticklabels(), display_rows):
-        tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.LEGEND)
-        tick_label.set_color(INK)
 
     # Wrap any row label onto multiple lines if a single unbroken line would
     # eat too much of the canvas - a caller whose rows are full survey-item
@@ -299,25 +291,27 @@ def render_magnitude_bar(
     # _draw_title uses: narrow the wrap width until every label's rendered
     # width clears the cap, floored so a single very-long word can't spin
     # this into an unbounded loop.
+    #
+    # Measured via throwaway fig.text() probes rather than the axes' own
+    # yticklabels, because the final row *positions* (below) depend on how
+    # many lines each label wrapped to - measuring has to happen before
+    # anything is actually plotted at a position.
     AXES_LEFT_CAP = 0.46
     label_pad_px = 8 / 72 * DPI  # matches tick_params(pad=8) above (points -> px)
     edge_margin_px = 0.045 * FIG_W_IN * DPI  # buffer so a wide label doesn't touch the canvas edge
     max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px
     row_wrap_width = 30
-    ax.set_yticks(range(len(display_rows)))
     while True:
         wrapped_labels = {r: "\n".join(textwrap.wrap(r, width=row_wrap_width)) for r in display_rows}
-        ax.set_yticklabels([wrapped_labels[r] for r in display_rows])
-        for tick_label, r in zip(ax.get_yticklabels(), display_rows):
-            tick_label.set_fontproperties(fonts["bold"])
-            tick_label.set_fontsize(MIN.LEGEND)
-            tick_label.set_color(INK)
+        probes = [
+            fig.text(0, 0, wrapped_labels[r], fontproperties=fonts["bold"], fontsize=MIN.LEGEND)
+            for r in display_rows
+        ]
         fig.canvas.draw()
         renderer = fig.canvas.get_renderer()
-        max_label_px = max(
-            (tl.get_window_extent(renderer=renderer).width for tl in ax.get_yticklabels()),
-            default=0,
-        )
+        max_label_px = max((t.get_window_extent(renderer=renderer).width for t in probes), default=0)
+        for t in probes:
+            t.remove()
         if max_label_px <= max_label_width_px or row_wrap_width <= 12:
             break
         row_wrap_width -= 2
@@ -339,9 +333,42 @@ def render_magnitude_bar(
         AXES_LEFT, AXES_WIDTH = required_left, 0.94 - required_left
         ax.set_position([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
 
-    for r, v, c in zip(display_rows, vals, colors):
+    # Row centers default to unit spacing (one slot per row - identical to
+    # matplotlib's own categorical 0..n-1 placement), but a row whose
+    # wrapped label spans multiple lines gets a proportionally taller slot.
+    # Without this, a chart with many rows (e.g. the 13-row full RELTRAD
+    # breakout used by view-of-god.png/certainty-of-god.png) packs rows too
+    # tightly for a 2-line label to fit inside its own slot - the label
+    # collides with the row above it - even though the same wrap-and-cap
+    # fix above already solved the single-row full-sentence-label version
+    # of this problem. A fixed row height was only ever enough for *one*
+    # oversized label at a time; several wrapping at once in the same
+    # narrow-row chart needs the row spacing itself to flex.
+    lines_per_row = {r: wrapped_labels[r].count("\n") + 1 for r in display_rows}
+    weights = [lines_per_row[r] for r in display_rows]
+    row_positions = []
+    running = 0.0
+    for i, w in enumerate(weights):
+        running += w / 2 if i == 0 else weights[i - 1] / 2 + w / 2
+        row_positions.append(running)
+
+    ax.barh(row_positions, vals, height=bar_h, color=colors, zorder=3)
+    ax.set_xlim(0, max(vals) * 1.22)
+    margin_frac = 0.06 if n_rows > 8 else 0.11
+    span = (row_positions[-1] + weights[-1] / 2) - (row_positions[0] - weights[0] / 2)
+    pad = span * margin_frac
+    ax.set_ylim(row_positions[0] - weights[0] / 2 - pad, row_positions[-1] + weights[-1] / 2 + pad)
+
+    ax.set_yticks(row_positions)
+    ax.set_yticklabels([wrapped_labels[r] for r in display_rows])
+    for tick_label in ax.get_yticklabels():
+        tick_label.set_fontproperties(fonts["bold"])
+        tick_label.set_fontsize(MIN.LEGEND)
+        tick_label.set_color(INK)
+
+    for r, v, c, y in zip(display_rows, vals, colors, row_positions):
         ax.text(
-            v + max(vals) * 0.02, r, f"{v:.0f}{value_suffix}", va="center", ha="left",
+            v + max(vals) * 0.02, y, f"{v:.0f}{value_suffix}", va="center", ha="left",
             color=c, fontproperties=fonts["bold"],
             fontsize=MIN.DATA_LABEL if n_rows > 8 else 15, zorder=4,
         )
