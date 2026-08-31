@@ -95,3 +95,32 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   (belief there's a lesson from COVID, and whether God sent it), and
   ATTENDFUT1/ATTENDFUT2_W70 (post-pandemic attendance intentions, but
   these are speculative/hypothetical and thematically thinner).
+
+- **pew-black-faith-2021** (Pew's "Faith Among Black Americans," fielded
+  2019-2020) — partial, 2026-08-31: had 1 chart (`women-leaders.json`).
+  Added 3 more this pass, all broken out by RELIGMOD using "black faith
+  black respondents.sav" (34 valid Mormon respondents, above the 30-N
+  floor) — `convert-duty.json` (61.4% of Black Mormons believe people of
+  faith have a religious duty to convert nonbelievers, near the top
+  alongside Jehovah's Witnesses at 65.2% and Protestants at 63.7% — ties to
+  LDS full-time missionary practice), `god-responds.json` (58.2% of Black
+  Mormons say God ever talks directly with them, 2nd only to Protestants
+  at 59.3% — ties to LDS personal-revelation doctrine), and
+  `turned-to-church-for-help.json` (58.2% of Black Mormons have ever
+  turned to their congregation for help with bills, housing, or food — the
+  highest of any group by a wide margin, nearly double Protestants' 32.1%
+  — reflects the Church's organized welfare system: fast offerings,
+  bishop's storehouses, Latter-day Saint Charities). Dataset has a large
+  untouched battery worth checking for remaining candidates: ESSENT_a-f
+  (what's essential to being a moral/religious person), PERSDO1_a-e
+  (meditate, read scripture, burn candles/incense, pray at a shrine,
+  consult a diviner), TYPEGODSUM/GODBELIEFSMOD_b/d (nature and character
+  of God), CLERGYSSM (should clergy perform same-sex marriages — plausible
+  but check for overlap with already-shipped SSM-favorability charts in
+  pew-rls-2014 and pew-latin-america-2014 first), COMMINFL1/2 and
+  BLKEQL1_c (predominantly Black churches' influence — Black-church-
+  specific framing, likely not a good LDS fit), and CHURCHLOOK_a-e
+  (what matters when choosing a new congregation). Also has an "all
+  respondents.sav" file (adds a ~4,574-person non-Black comparison sample,
+  109 total Mormon respondents) not yet used for anything — could support
+  a Black-vs-non-Black-Mormon comparison in a future pass.
