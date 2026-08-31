@@ -135,21 +135,50 @@ def load_fonts(fonts_dir: Path = FONTS_DIR) -> dict[str, fm.FontProperties]:
     return props
 
 
-def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
-    title_fontsize = 26
-    subtitle_fontsize = 13.5
-    title_lines = textwrap.wrap(title, width=27)
+def _draw_title(fig, fonts, title: str, subtitle: str, title_wrap_width: int = 42) -> float:
+    title_fontsize = 32
+    subtitle_fontsize = 16
     line_spacing = title_fontsize / 650
     title_top = 0.965
-    for i, line in enumerate(title_lines):
-        fig.text(
-            0.065, title_top - i * line_spacing, line,
-            fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+
+    # Wrap-then-measure-then-rewrap, same technique render_magnitude_bar
+    # uses for its left margin: a character-count wrap budget is only an
+    # approximation of RobotoSlab Bold's actual rendered width (an
+    # m/w/g-heavy title runs visibly wider than a same-length title with
+    # more i/l/t's), and this module's ~60 callers span too many
+    # independently-authored titles to hand-tune a wrap width per call
+    # site. Draw at `title_wrap_width`, measure the widest line's real
+    # pixel extent, and narrow the wrap (redrawing) until every line clears
+    # the same right-edge buffer render_magnitude_bar's label-width fix
+    # uses, flooring at 20 characters so a single very-wide word can't spin
+    # this into an unbounded loop.
+    edge_margin_px = 0.045 * FIG_W_IN * DPI
+    max_right_px = FIG_W_IN * DPI - edge_margin_px
+    wrap_width = title_wrap_width
+    while True:
+        title_lines = textwrap.wrap(title, width=wrap_width)
+        title_texts = [
+            fig.text(
+                0.065, title_top - i * line_spacing, line,
+                fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+            )
+            for i, line in enumerate(title_lines)
+        ]
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        max_right_reached = max(
+            (t.get_window_extent(renderer=renderer).x1 for t in title_texts), default=0,
         )
+        if max_right_reached <= max_right_px or wrap_width <= 20:
+            break
+        for t in title_texts:
+            t.remove()
+        wrap_width -= 2
+
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -216,6 +245,7 @@ def render_magnitude_bar(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
     )
     ax_top = subtitle_bottom - 0.03
     ax_bottom = caption_top + 0.03
@@ -347,6 +377,7 @@ def render_timeseries(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
     )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
@@ -536,6 +567,7 @@ def render_range_projection(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
     )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
@@ -665,6 +697,7 @@ def render_100_stack(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
     )
     ax_top = subtitle_bottom - 0.03
 
@@ -760,6 +793,7 @@ def render_timeseries_by_direction(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
     )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03
@@ -919,6 +953,7 @@ def render_dumbbell_log(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
     )
     legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
     ax_top = subtitle_bottom - 0.03

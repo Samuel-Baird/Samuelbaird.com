@@ -121,6 +121,54 @@ default keeps the default; only the ones that don't get widened, and each
 by exactly as much as its own longest label requires. Re-scanned all 63
 regenerated PNGs after this change: 0 flagged.
 
+## Bigger, black title/subtitle/footnote are now pipeline defaults
+
+As of 2026-08-31, this module also rolls out the title/subtitle/footnote
+readability treatment `scripts/pew-rls/` and `scripts/ryan-burge/` made
+their defaults the same day (see `scripts/pew-rls/STYLE.md`'s "Title/
+subtitle/footnote bigger and darker are now pipeline defaults" section for
+the full background) — a separate rollout from the row-label/edgecolor one
+above, this one about title/subtitle/footnote sizing and color:
+
+- **Title at 32pt** (up from 26pt), drawn by `_draw_title`.
+- **Subtitle at 16pt, `INK`** (up from 13.5pt, `MUTED`).
+- **Footnote/caption at 16pt, `INK`** (up from `chart_style.draw_caption_bottom`'s
+  own 11.5pt/`MUTED` default) — passed explicitly as `fontsize=16, color=INK`
+  on every `draw_caption_bottom` call in this file, since that helper's own
+  default is deliberately left alone; `scripts/state-of-theology-graphics/`
+  hasn't had this rollout yet and still expects the old default.
+
+Unlike `scripts/pew-rls/` and `scripts/ryan-burge/`, where every `render_*.py`
+duplicates its own local title-drawing code and so needed a per-file default
+change, this module's six render functions already share one `_draw_title`
+helper - so this was a single-function edit, not ~60 file edits. Every
+`draw_caption_bottom` call site (one per render function) gained explicit
+`fontsize=16, color=INK` arguments.
+
+**`_draw_title` gained a wrap-then-measure-then-rewrap auto-shrink loop**,
+the same technique `render_magnitude_bar`'s auto-widening left margin
+(above) uses for the same underlying reason: a character-count wrap budget
+is only an approximation of RobotoSlab Bold's actual rendered width, and
+this pipeline's ~60 independently-authored titles can't be hand-tuned one
+at a time the way pew-rls/ryan-burge fixed their handful of overflowing
+titles with per-chart `title_wrap_width` overrides. Starting from a 42-char
+default wrap width (same value pew-rls landed on for its own 9in canvas),
+an edge-pixel scan of all 63 regenerated PNGs flagged 15 (right edge)
+as clipped - clearly pipeline-wide, not a one-or-two-chart case, so
+`_draw_title` now draws the title once, measures the widest line's actual
+rendered pixel width via matplotlib's renderer, and - if it crosses the
+same right-edge buffer `render_magnitude_bar` uses - removes those text
+artists and redraws two characters narrower, repeating until the title
+clears the buffer (floored at 20 characters, so one very long word can't
+loop forever). A chart whose title already fits at 42 characters keeps
+the default; only the ones that don't get narrowed, each by exactly as
+much as its own title needs. Re-scanned all 63 PNGs after this change:
+0 flagged.
+
+`title_wrap_width` remains an optional parameter on `_draw_title` (starting
+point for the auto-shrink loop, not a hard override) for a caller that
+wants a narrower starting budget for its own reasons; none currently do.
+
 ## Regenerating
 
 Each dataset's own `scripts/<slug>/render_*.py` script is a thin CLI wrapper

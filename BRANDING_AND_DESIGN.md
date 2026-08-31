@@ -446,19 +446,29 @@ default 42-character wrap despite fitting the character count (RobotoSlab
 Bold's letterforms vary enough in width — an m/w/g-heavy title runs wider
 than a same-length title with more i/l's — that a character-count wrap
 budget alone isn't a reliable proxy for a title's actual rendered width).
-Rolled out to: `scripts/pew-rls/` (2026-08-31) and `scripts/ryan-burge/`
+Rolled out to: `scripts/pew-rls/` (2026-08-31), `scripts/ryan-burge/`
 (2026-08-31, same day, separate batch — see `scripts/ryan-burge/STYLE.md`'s
 "Bigger, black title/subtitle/footnote are now pipeline defaults" section
 for its own file-by-file rollout, its title-wrap-width measurement, and the
 one crowding fix it needed, on `render_heatmap`'s subtitle-to-legend-tick
-gap). Pending in separate batches: `scripts/flagship-charts/`,
+gap), and `scripts/flagship-charts/` (2026-08-31, same day, third batch —
+see `scripts/flagship-charts/STYLE.md`'s "Bigger, black title/subtitle/
+footnote are now pipeline defaults" section). Unlike the other two
+pipelines, this module's title/subtitle/caption drawing already lived
+behind one shared `_draw_title` helper (plus `chart_style.draw_caption_bottom`
+called from each render function), so this was a single-function default
+change rather than per-file edits across ~60 callers; it also needed a
+title-wrap auto-shrink loop in `_draw_title` itself (see that file's STYLE.md)
+rather than the per-chart wrap-width overrides pew-rls/ryan-burge used, since
+15 of the pipeline's 63 charts overflowed the canvas at the new default wrap
+width — pipeline-wide, not a one-or-two-chart case. Pending:
 `scripts/state-of-theology-graphics/` — `chart_style.draw_caption_bottom`'s
 own default fontsize/color are deliberately left unchanged (still 11.5pt/
-`MUTED`) rather than bumped to match pew-rls's/ryan-burge's new values,
-since those two remaining pipelines still expect the old default until
-their own batches land; each `scripts/pew-rls/*.py` and
-`scripts/ryan-burge/*.py` caption call now passes `fontsize=16, color=INK`
-explicitly instead.
+`MUTED`) rather than bumped to match the other three pipelines' new values,
+since that one remaining pipeline still expects the old default until its
+own batch lands; each `scripts/pew-rls/*.py`, `scripts/ryan-burge/*.py`, and
+`scripts/flagship-charts/common.py` caption call now passes `fontsize=16,
+color=INK` explicitly instead.
 
 ### Forms
 
