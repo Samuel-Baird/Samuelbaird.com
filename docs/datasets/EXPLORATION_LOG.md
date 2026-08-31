@@ -757,3 +757,51 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   collision). Wired into `src/lib/data-explorer.ts`
   (`prophetBeliefByActivityGraphic()`). With q421/q303-310 both weak
   fits, consider this dataset fully mined.
+
+- **pew-atp-w70-2020** (American Trends Panel, Wave 70, July 2020 —
+  religion during COVID) — ninth chart, 2026-08-31: re-read this log in
+  full and cross-referenced `data/` against `data-explorer.ts`'s
+  `DATASETS` array (no untouched dataset found). Checked several
+  candidates from prior passes' remaining-battery lists before landing
+  one: w114-2022's ESSENT_h/ESSENT_j (family traditions / community
+  belonging, by F_RELIG) both land Mormons squarely mid-pack (47.6%/
+  42.4%, no highest/lowest story — checked by weighted crosstab, not
+  assumed) and were dropped; w117-2022's SNSPOST3_W117 (posts about
+  religion on social media, by F_RELTRAD) has Mormons 4th of 16 groups
+  at 38.6%, too close to the Evangelical/Historically-Black-Protestant
+  cluster (~41%) for a clean distinctiveness story, dropped; this
+  dataset's own COVIDVOL2_b_W70 (turned to a religious org for help with
+  bills/housing/food, the receiving-side mirror of the already-shipped
+  `religious-org-giving-covid` chart) has Mormons at just 5.0%, but
+  that's mid-pack-low rather than a clean lowest (Buddhist 1.1%, Orthodox
+  and Other World Religions both 0%), dropped. Landed on COVIDLESSON1_W70
+  ("do you believe there's a lesson or set of lessons for humankind to
+  learn from the coronavirus outbreak"), by F_RELTRAD — a belief/
+  meaning-making item, distinct in kind from this folder's existing
+  coping-*behavior* charts (worship, prayer, scripture, giving).
+  `covid-lesson-belief.json`: 93.4% of Mormons believe there's a lesson,
+  tied with Historically Black Protestant for the highest of any
+  tradition in the wave, well above Catholic/Mainline Protestant (~87%),
+  Jewish (86.5%), Evangelical Protestant (86.2%), and Unaffiliated
+  (84.6%) — ties to LDS providential theology (God's hand active in the
+  affairs of mankind; D&C 122:7's "all these things shall give thee
+  experience"). Mormon n=167 valid, comfortably above the 30 floor.
+  Computed by `scripts/pew-atp-w70-2020/covid_lesson_belief.py` →
+  `docs/datasets/pew-atp-w70-2020/covid-lesson-belief.json`, rendered by
+  `scripts/pew-atp-w70-2020/render_covid_lesson_chart.py` →
+  `public/data-explorer/pew-atp-w70-2020/covid-lesson-belief.png` (7
+  RELTRAD rows + "All U.S. adults," checked by reading the PNG directly —
+  no label collision). Wired into `src/lib/data-explorer.ts`
+  (`covidLessonBeliefGraphic()`). `tsc --noEmit` clean. Committed and
+  pushed as `e735dca`. Wave's only remaining untouched item is
+  COVIDLESSON2_W70 (whether that lesson was specifically sent by God —
+  Mormon 64.1%, 4th highest, a weaker/more crowded story than
+  COVIDLESSON1); consider this wave fully mined after this pass. Broader
+  note: after 25+ passes across this session, essentially every dataset
+  in `data/` is now at or very near saturation — every remaining
+  candidate item checked this pass and in prior passes' notes either
+  lands mid-pack (no highest/lowest story) or duplicates an already-
+  shipped construct. This pass found exactly one defensible item; the
+  site appears to be approaching a genuine mining plateau, though a few
+  single-item candidates (COVIDLESSON2_W70 among them) remain if a future
+  pass wants to push further into thinner territory.
