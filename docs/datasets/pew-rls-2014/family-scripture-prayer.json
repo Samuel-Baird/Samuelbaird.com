@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is parents (respondents with children), classified by current religious tradition (RELTRAD). qk10a asked parents whether they pray or read Scripture with their child(ren); don't know/refused are excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 10057.458967441093,
+  "total_unweighted_n": 8340,
+  "group_order": [
+    "Jehovah's Witness",
+    "Mormon",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Orthodox Christian",
+    "Catholic",
+    "Mainline Protestant",
+    "Muslim",
+    "Hindu",
+    "Jewish",
+    "Buddhist",
+    "Unaffiliated",
+    "All parents"
+  ],
+  "prays_or_reads_scripture_with_children": {
+    "Evangelical Protestant": {
+      "pct": 85.33,
+      "valid_unweighted_n": 2166,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant": {
+      "pct": 62.84,
+      "valid_unweighted_n": 1215,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant": {
+      "pct": 84.63,
+      "valid_unweighted_n": 487,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 63.99,
+      "valid_unweighted_n": 1755,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 92.69,
+      "valid_unweighted_n": 242,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 71.06,
+      "valid_unweighted_n": 49,
+      "group_unweighted_n": 186
+    },
+    "Jehovah's Witness": {
+      "pct": 93.38,
+      "valid_unweighted_n": 62,
+      "group_unweighted_n": 245
+    },
+    "Jewish": {
+      "pct": 48.97,
+      "valid_unweighted_n": 183,
+      "group_unweighted_n": 847
+    },
+    "Muslim": {
+      "pct": 62.63,
+      "valid_unweighted_n": 89,
+      "group_unweighted_n": 237
+    },
+    "Buddhist": {
+      "pct": 42.96,
+      "valid_unweighted_n": 46,
+      "group_unweighted_n": 264
+    },
+    "Hindu": {
+      "pct": 52.36,
+      "valid_unweighted_n": 83,
+      "group_unweighted_n": 199
+    },
+    "Unaffiliated": {
+      "pct": 27.84,
+      "valid_unweighted_n": 1741,
+      "group_unweighted_n": 7556
+    },
+    "All parents": {
+      "pct": 63.49,
+      "valid_unweighted_n": 8340,
+      "group_unweighted_n": 8340
+    }
+  }
+}

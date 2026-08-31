@@ -64,6 +64,9 @@ import nonesGrowthData from "../../docs/datasets/pew-rls-2014/nones-growth-2007-
 import viewOfGod2014Data from "../../docs/datasets/pew-rls-2014/view-of-god.json";
 import eternalLifeNonChristianData from "../../docs/datasets/pew-rls-2014/eternal-life-non-christian.json";
 import bornAgainIdentityData from "../../docs/datasets/pew-rls-2014/born-again-identity.json";
+import familyScripturePrayerData from "../../docs/datasets/pew-rls-2014/family-scripture-prayer.json";
+import scriptureWordOfGodData from "../../docs/datasets/pew-rls-2014/scripture-word-of-god.json";
+import volunteerThroughChurchData from "../../docs/datasets/pew-rls-2014/volunteer-through-church.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
@@ -772,6 +775,9 @@ const RAW_DATASETS: Dataset[] = [
       viewOfGod2014Graphic(),
       eternalLifeNonChristianGraphic(),
       bornAgainIdentityGraphic(),
+      familyScripturePrayerGraphic(),
+      scriptureWordOfGodGraphic(),
+      volunteerThroughChurchGraphic(),
     ],
   },
   {
@@ -1809,6 +1815,48 @@ function bornAgainIdentityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/born-again-identity.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Christians who self-identify as \"born-again\" or evangelical, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function familyScripturePrayerGraphic(): Graphic {
+  const { group_order: order, prays_or_reads_scripture_with_children: results } = familyScripturePrayerData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Praying and reading scripture with the kids",
+    description: "Share of parents who pray or read Scripture with their child(ren), by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/family-scripture-prayer.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of parents who pray or read Scripture with their children, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function scriptureWordOfGodGraphic(): Graphic {
+  const { group_order: order, scripture_is_word_of_god: results } = scriptureWordOfGodData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is scripture the word of God?",
+    description: "Share who say their own scripture is the word of God, rather than a book written by men, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/scripture-word-of-god.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say their own scripture is the word of God rather than a book written by men, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function volunteerThroughChurchGraphic(): Graphic {
+  const { group_order: order, volunteered_through_religious_org: results } = volunteerThroughChurchData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Volunteering, channeled through church",
+    description: "Among people who volunteered in the past week, share whose volunteering was mainly through a church or religious organization, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/volunteer-through-church.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: among past-week volunteers, share whose volunteering was mainly through a church or religious organization, by religious tradition, 2014. ${alt}.`,
   };
 }
 

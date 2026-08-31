@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is respondents who did volunteer work in the past seven days (qi3=1), classified by current religious tradition (RELTRAD). qi3b asked whether that volunteering was mainly through a church or other religious organization; a volunteered \"both through a religious organization and in another way\" response is counted alongside \"mainly through a religious organization.\" Don't know/refused are excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 11475.591986487798,
+  "total_unweighted_n": 12559,
+  "group_order": [
+    "Jehovah's Witness",
+    "Mormon",
+    "Evangelical Protestant",
+    "Orthodox Christian",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Hindu",
+    "Buddhist",
+    "Muslim",
+    "Jewish",
+    "Unaffiliated",
+    "All volunteers"
+  ],
+  "volunteered_through_religious_org": {
+    "Evangelical Protestant": {
+      "pct": 43.44,
+      "valid_unweighted_n": 3294,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant": {
+      "pct": 32.06,
+      "valid_unweighted_n": 2368,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant": {
+      "pct": 38.5,
+      "valid_unweighted_n": 659,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 32.03,
+      "valid_unweighted_n": 2365,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 59.16,
+      "valid_unweighted_n": 406,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 38.97,
+      "valid_unweighted_n": 67,
+      "group_unweighted_n": 186
+    },
+    "Jehovah's Witness": {
+      "pct": 81.4,
+      "valid_unweighted_n": 131,
+      "group_unweighted_n": 245
+    },
+    "Jewish": {
+      "pct": 20.54,
+      "valid_unweighted_n": 344,
+      "group_unweighted_n": 847
+    },
+    "Muslim": {
+      "pct": 23.33,
+      "valid_unweighted_n": 75,
+      "group_unweighted_n": 237
+    },
+    "Buddhist": {
+      "pct": 24.99,
+      "valid_unweighted_n": 104,
+      "group_unweighted_n": 264
+    },
+    "Hindu": {
+      "pct": 26.83,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 199
+    },
+    "Unaffiliated": {
+      "pct": 9.64,
+      "valid_unweighted_n": 2254,
+      "group_unweighted_n": 7556
+    },
+    "All volunteers": {
+      "pct": 31.97,
+      "valid_unweighted_n": 12559,
+      "group_unweighted_n": 12559
+    }
+  }
+}
