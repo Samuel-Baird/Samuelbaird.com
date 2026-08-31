@@ -45,6 +45,11 @@ CHARTS = [
         title="Where do Muslims make a pilgrimage?",
         subtitle="Share correctly identifying Mecca as Islam's pilgrimage\ncity, by religion, February 2019.",
     ),
+    dict(
+        key="knows_protestantism_teaches_faith_alone", out="knows-protestantism-faith-alone.png",
+        title="Which tradition teaches salvation by faith alone?",
+        subtitle="Share correctly identifying Protestantism as the tradition\nteaching salvation through faith alone, by religion, February 2019.",
+    ),
 ]
 
 

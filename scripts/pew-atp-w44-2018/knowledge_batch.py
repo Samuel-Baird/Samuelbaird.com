@@ -20,6 +20,10 @@ wrap width.
 - JNEWYR: what Rosh Hashana is. Hook: Rosh Hashana, Sep 2026.
 - PLGRMG: which city Muslims make a pilgrimage to (Mecca/Hajj). Hook: Eid
   al-Adha, May 2027.
+- KFAITHMOD: which tradition traditionally teaches salvation through faith
+  alone (correct answer: Protestantism - sola fide). Hook: Reformation
+  Day, Oct 31 2026 - a knowledge-quiz companion to the State of Theology
+  belief chart on the same doctrine.
 
 Usage: python scripts/pew-atp-w44-2018/knowledge_batch.py
 """
@@ -73,7 +77,7 @@ def knowledge_by_group(col, weight, reltrad, correct_code, valid_codes):
 
 def main():
     cols = ["F_RELTRAD", "CONREL_W44", "EASTER_W44", "RMDN_W44", "JNEWYR_W44",
-            "PLGRMG_W44", "WEIGHT_W44"]
+            "PLGRMG_W44", "KFAITHMOD_W44", "WEIGHT_W44"]
     df, _ = pyreadstat.read_sav(SAV, usecols=cols)
     weight = df["WEIGHT_W44"].to_numpy()
     reltrad = df["F_RELTRAD"].to_numpy()
@@ -84,6 +88,7 @@ def main():
     ramadan = knowledge_by_group(df["RMDN_W44"].to_numpy(), weight, reltrad, 3.0, substantive)
     rosh_hashana = knowledge_by_group(df["JNEWYR_W44"].to_numpy(), weight, reltrad, 2.0, substantive)
     hajj = knowledge_by_group(df["PLGRMG_W44"].to_numpy(), weight, reltrad, 4.0, substantive)
+    faith_alone = knowledge_by_group(df["KFAITHMOD_W44"].to_numpy(), weight, reltrad, 1.0, substantive)
 
     out = {
         "source": "Pew Research Center. American Trends Panel Wave 44, fielded Feb. 4-19, 2019.",
@@ -97,6 +102,7 @@ def main():
         "knows_ramadan_is_islamic": ramadan,
         "knows_rosh_hashana_is_new_year": rosh_hashana,
         "knows_mecca_is_pilgrimage_city": hajj,
+        "knows_protestantism_teaches_faith_alone": faith_alone,
     }
     with open("docs/datasets/pew-atp-w44-2018/knowledge-batch.json", "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)

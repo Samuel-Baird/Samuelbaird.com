@@ -17,6 +17,7 @@ import spiritualExperienceData from "../../docs/datasets/pew-rls-2023-24/spiritu
 import publicLifeData from "../../docs/datasets/pew-rls-2023-24/public-life.json";
 import holidayBatchData from "../../docs/datasets/pew-rls-2023-24/holiday-batch.json";
 import holidayBatch2Data from "../../docs/datasets/pew-rls-2023-24/holiday-batch-2.json";
+import stayHomeParentGenderData from "../../docs/datasets/pew-rls-2023-24/stay-home-parent-gender.json";
 import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
 import foodStorageByActivityData from "../../docs/datasets/pew-mormon-survey-2011/food-storage-by-activity.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
@@ -485,6 +486,7 @@ const RAW_DATASETS: Dataset[] = [
       pewStayHomeParentGraphic(),
       pewReligiousSymbolsGraphic(),
       pewSchoolPrayerGraphic(),
+      pewStayHomeParentGenderGraphic(),
       pewSameFaithSpouseGraphic(),
       pewAsianShareGraphic(),
       pewTwoPlusChildrenGraphic(),
@@ -789,6 +791,7 @@ const RAW_DATASETS: Dataset[] = [
       w44RamadanGraphic(),
       w44RoshHashanaGraphic(),
       w44MeccaGraphic(),
+      w44FaithAloneGraphic(),
       w44WarmthGraphic(),
     ],
   },
@@ -2289,6 +2292,17 @@ function w44MeccaGraphic(): Graphic {
   };
 }
 
+function w44FaithAloneGraphic(): Graphic {
+  const results = w44KnowledgeBatchData.knows_protestantism_teaches_faith_alone;
+  return {
+    title: "Which tradition teaches salvation by faith alone?",
+    description: "Share correctly identifying Protestantism as the tradition teaching salvation through faith alone, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-protestantism-faith-alone.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Protestantism as teaching salvation by faith alone, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
 function w44WarmthGraphic(): Graphic {
   const results = w44WarmthData.warmth_toward_mormons;
   const alt = Object.entries(results).map(([g, r]) => `${g} ${r.mean}/100`).join(", ");
@@ -2769,6 +2783,17 @@ function pewTwoPlusChildrenGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-religious-landscape-study/two-or-more-children.png",
     width: 1080, height: 1350,
     alt: `Bar chart, share with two or more children ever born, by religious tradition: ${alt}.`,
+  };
+}
+
+function pewStayHomeParentGenderGraphic(): Graphic {
+  const alt = pctAlt(HOLIDAY_BATCH_ORDER, stayHomeParentGenderData.should_be_mother);
+  return {
+    title: "If a parent stays home, should it be the mother?",
+    description: "Of those who say a parent should stay home to focus on family, share saying specifically the mother, by tradition.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/stay-home-parent-gender.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart, share saying it should specifically be the mother who stays home, by tradition: ${alt}.`,
   };
 }
 

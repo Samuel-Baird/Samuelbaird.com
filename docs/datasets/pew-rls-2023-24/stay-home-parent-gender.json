@@ -1,0 +1,91 @@
+{
+  "group_order": [
+    "Protestant",
+    "Catholic",
+    "Latter-day Saint",
+    "Orthodox Christian",
+    "Jehovah's Witness",
+    "Other Christian",
+    "Jewish",
+    "Muslim",
+    "Buddhist",
+    "Hindu",
+    "Other world religions",
+    "Other faiths",
+    "Religiously unaffiliated",
+    "All groups average"
+  ],
+  "total_n": 36908,
+  "should_be_mother": {
+    "Protestant": {
+      "pct": 46.81,
+      "valid_unweighted_n": 8762,
+      "group_unweighted_n": 8792
+    },
+    "Catholic": {
+      "pct": 43.44,
+      "valid_unweighted_n": 3810,
+      "group_unweighted_n": 3824
+    },
+    "Latter-day Saint": {
+      "pct": 53.27,
+      "valid_unweighted_n": 456,
+      "group_unweighted_n": 458
+    },
+    "Orthodox Christian": {
+      "pct": 42.99,
+      "valid_unweighted_n": 127,
+      "group_unweighted_n": 127
+    },
+    "Jehovah's Witness": {
+      "pct": 48.65,
+      "valid_unweighted_n": 82,
+      "group_unweighted_n": 82
+    },
+    "Other Christian": {
+      "pct": 51.03,
+      "valid_unweighted_n": 136,
+      "group_unweighted_n": 136
+    },
+    "Jewish": {
+      "pct": 35.96,
+      "valid_unweighted_n": 347,
+      "group_unweighted_n": 350
+    },
+    "Muslim": {
+      "pct": 57.83,
+      "valid_unweighted_n": 174,
+      "group_unweighted_n": 175
+    },
+    "Buddhist": {
+      "pct": 34.33,
+      "valid_unweighted_n": 177,
+      "group_unweighted_n": 177
+    },
+    "Hindu": {
+      "pct": 37.58,
+      "valid_unweighted_n": 118,
+      "group_unweighted_n": 118
+    },
+    "Other world religions": {
+      "pct": 30.35,
+      "valid_unweighted_n": 63,
+      "group_unweighted_n": 64
+    },
+    "Other faiths": {
+      "pct": 16.44,
+      "valid_unweighted_n": 371,
+      "group_unweighted_n": 373
+    },
+    "Religiously unaffiliated": {
+      "pct": 24.96,
+      "valid_unweighted_n": 4758,
+      "group_unweighted_n": 4767
+    },
+    "All groups average": {
+      "pct": 39.84,
+      "valid_unweighted_n": 19611,
+      "group_unweighted_n": 19676
+    }
+  }
+}
