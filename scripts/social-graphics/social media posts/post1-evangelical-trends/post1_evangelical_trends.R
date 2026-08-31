@@ -154,8 +154,8 @@ scorecard <- tribble(
 # Footnote: handle only, muted, small — no sponsor/fielder/method/
 # panel-size/margin-of-error block, no per-slide notes.
 SRC <- paste0(
-  "Data: The State of Theology survey<br>",
-  "@ithinkisam")
+  "<b>Data: The State of Theology survey</b><br>",
+  "<b>@ithinkisam</b>")
 
 items <- list(
   trinity = list(n = 1, file = "1_nicaea_won.png", title = "Nicaea won", star = NA,
@@ -213,13 +213,13 @@ theme_burge <- function() {
       # plain element_text) so a long title wraps to a second line at
       # the canvas's real width instead of running off it.
       plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
-                                size = 48, colour = ink, lineheight = 1.05,
+                                size = 40, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
       plot.subtitle = element_markdown(family = "Roboto Condensed", size = 16,
                                        colour = muted, lineheight = 1.4,
                                        margin = margin(b = 22)),
       plot.caption = element_markdown(family = "Roboto Condensed", size = 11.5,
-                                      colour = muted, hjust = 0, lineheight = 1.6,
+                                      colour = ink, hjust = 0, lineheight = 1.6,
                                       margin = margin(t = 20)),
       plot.caption.position = "plot", plot.title.position = "plot",
       axis.title = element_blank(), legend.position = "none",
@@ -257,10 +257,11 @@ make_chart <- function(k) {
            "<span style='color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
   else paste0("<span style='color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
 
-  sub <- paste0("<i>\"", it$quote, "\"</i><br>",
-                "Share who <b>strongly ", dirword, " or somewhat ", dirword, "</b>",
-                if (!is.null(it$lead)) paste0("<br>", it$lead) else "",
-                "<br><br>", legend)
+  sub <- paste0(
+    "<span style='font-size:20pt;color:", ink, "'><b><i>\"", it$quote, "\"</i></b></span><br>",
+    "Share who <b>strongly ", dirword, " or somewhat ", dirword, "</b>",
+    if (!is.null(it$lead)) paste0("<br>", it$lead) else "",
+    "<br><br>", legend)
 
   p <- ggplot(d, aes(factor(year), pct, fill = group)) +
     geom_col(position = position_dodge2(width = .85, preserve = "single"), width = .78) +
@@ -313,8 +314,8 @@ make_scorecard <- function() {
     theme(panel.grid.major.y = element_blank(),
           panel.grid.major.x = element_line(colour = grid, linewidth = .4),
           axis.text.x = element_blank(),
-          axis.text.y = element_text(size = 15.5, colour = ink, hjust = 1,
-                                     lineheight = 1.1))
+          axis.text.y = element_text(size = 18, colour = ink, face = "bold",
+                                     hjust = 1, lineheight = 1.1))
   save_slide(p, "9_scorecard.png")
 }
 
@@ -323,25 +324,21 @@ make_scorecard <- function() {
 # ============================================================
 make_textcard <- function() {
   body <- paste0(
-    "<span style='font-size:29pt;color:", ink, "'>",
+    "<span style='font-size:32pt;color:", ink, "'>",
     "<b style='color:", amber, "'>92%</b> of evangelicals confess<br>",
     "one God in three persons.<br><br>",
     "<b style='color:", teal, "'>61%</b> say Jesus was created.<br>",
     "<b style='color:", teal, "'>55%</b> say the Spirit is a force.<br>",
     "<b style='color:", teal, "'>44%</b> say Jesus is not God.",
-    "</span><br><br>",
-    "<span style='font-size:22pt;color:", ink, "'>",
-    "The creed is affirmed, not understood.<br>",
-    "Moral positions are held more firmly<br>",
-    "than doctrines are grasped.",
     "</span><br><br><br>",
-    "<span style='font-size:17pt;color:", muted, "'>",
-    "Some of the most vocal evangelical apologists spend their time telling<br>",
-    "other traditions they've departed from historic Christianity. This is<br>",
-    "what that accusation looks like turned around.<br><br>",
-    "No tradition's members hold its teaching perfectly. Matthew 7 tells us<br>",
-    "what to do about that: the beam in our own eye before the mote in<br>",
-    "our brother's.",
+    "<span style='font-size:20pt;color:", ink, "'>",
+    "Some of the most vocal evangelical apologists spend their<br>",
+    "time telling other traditions they've departed from historic<br>",
+    "Christianity. This is what that accusation looks like<br>",
+    "turned around.<br><br>",
+    "No tradition's members hold its teaching perfectly.<br>",
+    "Matthew 7 tells us what to do about that: the beam in<br>",
+    "our own eye before the mote in our brother's.",
     "</span>")
 
   p <- ggplot() +
@@ -353,10 +350,10 @@ make_textcard <- function() {
     theme_void(base_family = "Roboto Condensed") +
     theme(
       plot.background = element_rect(fill = paper, colour = NA),
-      plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 48,
+      plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 40,
                                     colour = ink, lineheight = 1.15,
                                     margin = margin(b = 46)),
-      plot.caption = element_markdown(size = 11.5, colour = muted, hjust = 0,
+      plot.caption = element_markdown(size = 11.5, colour = ink, hjust = 0,
                                       lineheight = 1.6, margin = margin(t = 40)),
       plot.title.position = "plot", plot.caption.position = "plot",
       plot.margin = margin(60, 40, 30, 40))
@@ -379,7 +376,7 @@ make_hook <- function(file, big, lines, kicker = NULL) {
     labs(caption = SRC) +
     theme_void(base_family = "Roboto Condensed") +
     theme(plot.background = element_rect(fill = paper, colour = NA),
-          plot.caption = element_markdown(size = 11.5, colour = muted, hjust = 0,
+          plot.caption = element_markdown(size = 11.5, colour = ink, hjust = 0,
                                           lineheight = 1.6, margin = margin(t = 40)),
           plot.caption.position = "plot",
           plot.margin = margin(90, 40, 30, 40))
