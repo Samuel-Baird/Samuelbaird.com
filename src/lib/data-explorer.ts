@@ -94,6 +94,9 @@ import christianShareDeclineData from "../../docs/datasets/pew-religious-composi
 import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migration/global-migrant-composition.json";
 import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
+import nontechPrayerGroupsData from "../../docs/datasets/pew-atp-w117-2022/nontech-prayer-groups.json";
+import watchOnlineMonthlyData from "../../docs/datasets/pew-atp-w117-2022/watch-online-monthly.json";
+import followsOwnLeadersData from "../../docs/datasets/pew-atp-w117-2022/follows-own-leaders.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
 import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religious-community.json";
@@ -1122,7 +1125,12 @@ const RAW_DATASETS: Dataset[] = [
       "Pew reports on religious-service attendance, including \"How the Pandemic Has " +
       "Affected Attendance at U.S. Religious Services.\"",
     sourceUrl: "https://www.pewresearch.org/religion/2023/03/28/how-the-pandemic-has-affected-attendance-at-u-s-religious-services/",
-    graphics: [inpersonAttendanceW117Graphic()],
+    graphics: [
+      inpersonAttendanceW117Graphic(),
+      watchOnlineMonthlyGraphic(),
+      nontechPrayerGroupsGraphic(),
+      followsOwnLeadersGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w132-2023",
@@ -2235,6 +2243,48 @@ function inpersonAttendanceW117Graphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w117-2022/inperson-attendance.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share attending religious services in person in the past month, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function nontechPrayerGroupsGraphic(): Graphic {
+  const { group_order: order, participates_in_person_study_group: results } = nontechPrayerGroupsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Prayer groups and scripture study",
+    description: "Share who participate in in-person prayer groups, scripture study groups, or religious education programs, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/nontech-prayer-groups.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who participate in in-person prayer groups, scripture study groups, or religious education programs, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function watchOnlineMonthlyGraphic(): Graphic {
+  const { group_order: order, watches_online_monthly: results } = watchOnlineMonthlyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Watching church online",
+    description: "Share who watch religious services online or on TV at least monthly, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/watch-online-monthly.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who watch religious services online or on TV at least monthly, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function followsOwnLeadersGraphic(): Graphic {
+  const { group_order: order, follows_own_religious_leaders: results } = followsOwnLeadersData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Following their own religious leaders",
+    description: "Among social media users, share who follow or keep track of their own religious leaders online or on social media, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/follows-own-leaders.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: among social media users, share who follow or keep track of their own religious leaders online or on social media, by religious tradition, November 2022. ${alt}.`,
   };
 }
 
