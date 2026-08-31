@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
 import { DATASETS, categorySlug, graphicId } from "@/lib/data-explorer";
+import { STUDY_GRAPHICS } from "@/lib/study-graphics";
 
 const BASE = "https://latter-day-stats.vercel.app";
 
@@ -85,6 +86,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ]);
 
+  const studyGraphicsRoutes: MetadataRoute.Sitemap = STUDY_GRAPHICS.filter(
+    (e) => e.graphics.length > 0,
+  ).flatMap((e) => [
+    {
+      url: `${BASE}/studies/${e.studySlug}/graphics`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    ...e.graphics.map((g) => ({
+      url: `${BASE}/studies/${e.studySlug}/graphics/${graphicId(g)}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    })),
+  ]);
+
   const categorySlugs = [...new Set(DATASETS.filter((d) => d.category).map((d) => categorySlug(d.category!)))];
   const categoryRoutes: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({
     url: `${BASE}/data-explorer/category/${slug}`,
@@ -98,6 +114,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...studyRoutes,
     ...claimRoutes,
     ...datasetRoutes,
+    ...studyGraphicsRoutes,
     ...categoryRoutes,
   ];
 }

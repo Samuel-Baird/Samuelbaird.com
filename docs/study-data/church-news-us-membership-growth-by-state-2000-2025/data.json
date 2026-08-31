@@ -1,0 +1,36 @@
+{
+  "study_slug": "church-news-us-membership-growth-by-state-2000-2025",
+  "source_short_title": "Church News membership analysis",
+  "sources": [
+    {
+      "id": "article",
+      "citation": "David Schneider, \"Church membership growth by U.S. state, 2000-2025,\" Church News, Aug. 27, 2026 - percentage-growth and numerical-gain figures as summarized in the article's state comparison of official year-end 2000 vs. Dec. 31, 2025 membership records.",
+      "url": "https://www.thechurchnews.com/members/2026/08/27/church-membership-growth-by-united-states-2000-2025-jesus-christ-latter-day-saints/"
+    }
+  ],
+  "charts": {
+    "pct-growth-by-state": {
+      "source": "article",
+      "unit": "percent change in reported membership, 2000-2025",
+      "rows": [
+        { "label": "District of Columbia", "pct": 187 },
+        { "label": "North Dakota", "pct": 131 },
+        { "label": "Tennessee", "pct": 96 },
+        { "label": "Arkansas", "pct": 85 },
+        { "label": "Texas", "pct": 82 },
+        { "label": "North Carolina", "pct": 70 },
+        { "label": "U.S. overall", "pct": 33 }
+      ]
+    },
+    "gains-by-state": {
+      "source": "article",
+      "unit": "members added, 2000-2025",
+      "rows": [
+        { "label": "Utah", "added": 576368 },
+        { "label": "Texas", "added": 178239 },
+        { "label": "Idaho", "added": 134477 },
+        { "label": "Arizona", "added": 128817 }
+      ]
+    }
+  }
+}

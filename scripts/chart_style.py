@@ -15,7 +15,8 @@ DEFAULT_FONTS_DIR:
 
 Per scripts/state-of-theology-graphics/STYLE.md's sync contract: if you
 change anything in this module, update that STYLE.md, scripts/ryan-burge/STYLE.md,
-and scripts/pew-rls/STYLE.md together - an undocumented style isn't a style.
+scripts/pew-rls/STYLE.md, and scripts/study-graphics/STYLE.md together - an
+undocumented style isn't a style.
 This includes `sort_groups` below (the site-wide row-order rule) - see
 BRANDING_AND_DESIGN.md's "Charts" section for the canonical statement of the
 rule and scripts/pew-rls/STYLE.md for a worked example of applying it.

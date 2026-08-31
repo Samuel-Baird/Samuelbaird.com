@@ -199,3 +199,24 @@ Each dataset's own `scripts/<slug>/render_*.py` script is a thin CLI wrapper
 around one of this module's functions - see that script's own docstring for
 its exact `--out` usage. There's no single command that regenerates every
 flagship chart at once; regenerate the specific dataset(s) you changed.
+
+## Shared with the study-graphics pipeline (2026-08-31)
+
+This module's render shapes are also the shape library for per-study
+graphics (`scripts/study-graphics/` — see that folder's STYLE.md). Two
+additions came with that:
+
+- **`render_magnitude_bar` gained an optional `row_colors` map**, an
+  explicit per-row hex override for rows `chart_style.GROUP_COLORS`
+  doesn't cover (e.g. current-vs-former religious-status groups). The two
+  standard modes (`group_identity`, `highlight_rows`) remain the default
+  for every chart they can express; `row_colors` is for charts whose rows
+  aren't named denominations at all.
+- **`render_paired_bar`**: two horizontal bars per row, for comparing the
+  same items across exactly two populations (a study's subject group vs.
+  the U.S. general public). Series colors are caller-supplied (subject
+  group in its identity color, a general-public baseline in MUTED); bars
+  and legend swatches outline in INK per the pipeline-wide edgecolor
+  default; row labels reuse `render_magnitude_bar`'s wrap-and-measure +
+  auto-widening-margin logic. First caller:
+  `scripts/study-graphics/pew-mormons-in-america-2012/render_charts.py`.

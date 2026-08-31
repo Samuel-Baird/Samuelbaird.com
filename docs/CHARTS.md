@@ -167,3 +167,19 @@ for two different chart shapes (100%-stacked bar, ordinal-ramp
 `scripts/state-of-theology-graphics/STYLE.md`'s "Always check for overlap
 and spillover" section — open the actual PNG and check for it, every time
 a layout changes, not just the first render.
+
+## Study graphics: the same pipeline, keyed by study slug
+
+Per-study graphics on `/studies/<slug>` (and their
+`/studies/<slug>/graphics[/<graphicId>]` routes) are the same PNG pipeline
+pointed at the research library instead of a dataset: every number lives
+once in `docs/study-data/<study-slug>/data.json` (transcribed from the
+publication, with a `sources` array citing the exact table/page — the
+practical equivalent of "nothing hand-typed" when microdata isn't
+available), rendered by `scripts/study-graphics/<study-slug>/render_*.py`
+into `public/study-graphics/<study-slug>/`, and registered in
+`src/lib/study-graphics.ts` (which imports the same JSON for alt text).
+See `scripts/study-graphics/STYLE.md` for the folder contract, the
+current-vs-former group-color convention, and the `dataExplorerSlug`
+cross-link rule for studies whose data an existing dataset already
+charts.

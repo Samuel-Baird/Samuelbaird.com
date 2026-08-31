@@ -6,9 +6,14 @@ const SOURCE_TYPE_LABELS: Record<string, { label: string; ink: TagInk }> = {
   secondary_analysis: { label: "Secondary Analysis", ink: "muted" },
   blog_analysis: { label: "Blog Analysis", ink: "oxblood" },
 };
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Download } from "lucide-react";
 import { BookmarkButton } from "@/components/bookmark-button";
+import { GraphicShareButton } from "@/components/data-explorer/graphic-share-button";
+import { graphicId } from "@/lib/data-explorer";
+import { getStudyGraphics } from "@/lib/study-graphics";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CitationCopy } from "@/components/citation-copy";
 import { StudyProgressPanel } from "@/components/study-progress-panel";
@@ -59,6 +64,7 @@ export default async function StudyDetailPage({
 
   const pdfUrl = pdfPublicUrl(study.pdf_path);
   const previewImageUrl = storagePublicUrl(study.preview_image_path);
+  const graphicsEntry = getStudyGraphics(study.slug);
 
   return (
     <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
@@ -221,6 +227,82 @@ export default async function StudyDetailPage({
             ))}
           </ul>
         </section>
+      )}
+
+      {graphicsEntry && graphicsEntry.graphics.length > 0 && (
+        <section className="mt-12">
+          <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
+            Graphics
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
+            Charts made from this study&rsquo;s data. Free to download and share
+            — credit appears on each image.
+          </p>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            {graphicsEntry.graphics.map((graphic) => {
+              const id = graphicId(graphic);
+              const graphicHref = `/studies/${study.slug}/graphics/${id}`;
+              return (
+                <figure
+                  key={id}
+                  className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4"
+                >
+                  <Link
+                    href={graphicHref}
+                    className="block overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
+                  >
+                    <Image
+                      src={graphic.imageSrc}
+                      alt={graphic.alt}
+                      width={graphic.width}
+                      height={graphic.height}
+                      className="h-auto w-full"
+                    />
+                  </Link>
+                  <figcaption className="mt-3">
+                    <h3 className="serif text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)]">
+                      <Link href={graphicHref} className="hover:underline">
+                        {graphic.title}
+                      </Link>
+                    </h3>
+                    <div className="mt-2.5 flex items-center justify-end gap-2">
+                      <GraphicShareButton path={graphicHref} title={graphic.title} />
+                      <a
+                        href={graphic.imageSrc}
+                        download
+                        className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
+                      >
+                        <Download aria-hidden="true" size={13} />
+                        Download
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {graphicsEntry?.dataExplorerSlug && (
+        <div className="mt-8 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--accent-soft)]/30 p-4 text-sm text-[color:var(--foreground)]">
+          <p className="font-semibold">
+            {graphicsEntry.graphics.length > 0
+              ? "More graphics in the Data Explorer"
+              : "Graphics for this data live in the Data Explorer"}
+          </p>
+          <p className="mt-1 leading-relaxed">
+            This study&rsquo;s underlying data is charted in the{" "}
+            {graphicsEntry.dataExplorerName ?? "Data Explorer"} dataset —{" "}
+            <Link
+              href={`/data-explorer/${graphicsEntry.dataExplorerSlug}/graphics`}
+              className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+            >
+              browse its graphics
+            </Link>
+            .
+          </p>
+        </div>
       )}
 
       {pdfUrl && (

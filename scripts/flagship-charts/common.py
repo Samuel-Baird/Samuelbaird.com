@@ -200,6 +200,7 @@ def render_magnitude_bar(
     value_suffix: str = "%",
     axes_left: float = 0.36,
     group_identity: bool = False,
+    row_colors: dict[str, str] | None = None,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
     order), reading its value from `values[row]`. `caption_paragraphs`,
@@ -208,6 +209,13 @@ def render_magnitude_bar(
     (BRANDING_AND_DESIGN.md's "Charts" section), pass `caption_paragraphs=[]`
     and `handle="@ithinkisam | data: <short title>"` rather than building a
     multi-line citation block.
+
+    `row_colors`, when given, overrides both coloring modes below with an
+    explicit per-row hex map — for a chart whose rows aren't covered by
+    chart_style.GROUP_COLORS at all (e.g. scripts/study-graphics/'s
+    current-vs-former religious-status groups; see that folder's STYLE.md
+    for how those colors are chosen). The two standard modes stay the
+    default for every chart they can express.
 
     Two coloring modes, chosen by `group_identity`:
 
@@ -261,7 +269,9 @@ def render_magnitude_bar(
 
     display_rows = rows[::-1]
     vals = [values[r] for r in display_rows]
-    if group_identity:
+    if row_colors is not None:
+        colors = [row_colors[r] for r in display_rows]
+    elif group_identity:
         colors = [color_for_group(r) for r in display_rows]
     else:
         colors = [
@@ -1070,6 +1080,136 @@ def render_dumbbell_log(
         bbox_transform=fig.transFigure,
         ncol=len(handles), frameon=False, handlelength=1.6, columnspacing=1.2,
         fontsize=MIN.LEGEND, prop=fonts["bold"],
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def render_paired_bar(
+    *,
+    rows: list[str],
+    series_order: list[str],
+    series_colors: dict[str, str],
+    values: dict[str, dict[str, float]],
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+    value_suffix: str = "%",
+    axes_left: float = 0.36,
+) -> None:
+    """Two horizontal bars per `rows` entry (already in top-to-bottom
+    display order), one per `series_order` entry - the shape for comparing
+    the same items across exactly two populations (e.g. a study's subject
+    group vs. the U.S. general public). `values[row][series]` is that
+    series' value for that row. Series colors come from `series_colors`
+    (e.g. a group's chart_style identity hex for the subject population and
+    chart_style.MUTED for a general-public baseline); each bar prints its
+    own value in its series color, and a legend below the chart names the
+    two series - unavoidable here, since neither bar of a pair has room for
+    an inline series name. Bars and legend swatches outline in INK per the
+    pipeline-wide edgecolor default (see scripts/pew-rls/STYLE.md).
+
+    Row labels wrap-and-measure the same way render_magnitude_bar's do, and
+    the left margin auto-widens identically - see that function for why.
+    """
+    assert len(series_order) == 2, "render_paired_bar is a two-series shape"
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
+    )
+    legend_bottom_y = caption_top + 0.02
+    legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = legend_top_y + 0.02
+
+    AXES_LEFT, AXES_WIDTH = axes_left, 0.94 - axes_left
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    ax.set_xticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.tick_params(axis="y", length=0, pad=8)
+
+    display_rows = rows[::-1]
+    n_rows = len(display_rows)
+    bar_h = 0.36
+    offsets = {series_order[0]: bar_h / 2, series_order[1]: -bar_h / 2}
+
+    all_vals = [values[r][s] for r in rows for s in series_order]
+    x_max = max(all_vals) * 1.22
+
+    for series in series_order:
+        color = series_colors[series]
+        ys = [i + offsets[series] for i in range(n_rows)]
+        vals = [values[r][series] for r in display_rows]
+        ax.barh(ys, vals, height=bar_h, color=color, edgecolor=INK,
+                linewidth=1.5, zorder=3)
+        for y, v in zip(ys, vals):
+            ax.text(
+                v + max(all_vals) * 0.02, y, f"{v:.0f}{value_suffix}",
+                va="center", ha="left", color=color,
+                fontproperties=fonts["bold"], fontsize=MIN.DATA_LABEL + 1, zorder=4,
+            )
+
+    ax.set_xlim(0, x_max)
+    ax.set_ylim(-0.75, n_rows - 0.25)
+
+    # Same wrap-then-measure-then-rewrap row labels as render_magnitude_bar,
+    # then the same auto-widening left margin - paired-bar rows are usually
+    # full survey-item phrases, not short group names.
+    AXES_LEFT_CAP = 0.46
+    label_pad_px = 8 / 72 * DPI
+    edge_margin_px = 0.045 * FIG_W_IN * DPI
+    max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px
+    row_wrap_width = 30
+    ax.set_yticks(range(n_rows))
+    while True:
+        wrapped = {r: "\n".join(textwrap.wrap(r, width=row_wrap_width)) for r in display_rows}
+        ax.set_yticklabels([wrapped[r] for r in display_rows])
+        for tick_label in ax.get_yticklabels():
+            tick_label.set_fontproperties(fonts["bold"])
+            tick_label.set_fontsize(MIN.LEGEND)
+            tick_label.set_color(INK)
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        max_label_px = max(
+            (tl.get_window_extent(renderer=renderer).width for tl in ax.get_yticklabels()),
+            default=0,
+        )
+        if max_label_px <= max_label_width_px or row_wrap_width <= 12:
+            break
+        row_wrap_width -= 2
+
+    required_left = min(AXES_LEFT_CAP, (max_label_px + label_pad_px + edge_margin_px) / (FIG_W_IN * DPI))
+    if required_left > AXES_LEFT:
+        AXES_LEFT, AXES_WIDTH = required_left, 0.94 - required_left
+        ax.set_position([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+
+    import matplotlib.patches as mpatches
+    handles = [
+        mpatches.Patch(facecolor=series_colors[s], edgecolor=INK, label=s)
+        for s in series_order
+    ]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=2, frameon=False, handlelength=1.6, handleheight=1.6,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
     )
     for text in legend.get_texts():
         text.set_color(INK)
