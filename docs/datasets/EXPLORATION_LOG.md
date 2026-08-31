@@ -184,3 +184,43 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   volunteering together), qi2t/qi2u (dietary restrictions, eating beef/
   pork), and qi3b (volunteering specifically through a religious
   organization, distinct from the general qi3 volunteering item).
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — partial, 2026-08-31
+  (second pass same day): had 8 charts after the pass above. Added 3 more
+  from that pass's remaining-battery list, all full 12-group RELTRAD —
+  `family-scripture-prayer.json` (92.7% of Mormon parents pray or read
+  Scripture with their child(ren), 2nd only to Jehovah's Witnesses at
+  93.4% and well above Evangelical/Historically Black Protestant at ~85%,
+  ties to the Church's family scripture study and family home evening
+  practice; qk10a is asked only of parents, so every group's N is smaller
+  than the full sample but all 12 groups still clear the 30-valid floor),
+  `scripture-word-of-god.json` (93.8% of Mormons call their own scripture
+  the literal word of God rather than a book written by men, 2nd only to
+  Jehovah's Witnesses at 97.6%, from qg7 which is worded to each
+  respondent's own tradition's scripture and asked of the full sample),
+  and `volunteer-through-church.json` (among people who volunteered in the
+  past week, 59.2% of Mormon volunteers channeled that service mainly
+  through their congregation, 2nd only to Jehovah's Witnesses at 81.4% and
+  well ahead of every other Christian tradition's ~32-43%, ties to the
+  Church's organized ward-level welfare/service culture; qi3b is
+  skip-gated to qi3=1 volunteers only, distinct from the general qi3 item
+  this site doesn't chart on its own). All three RELTRAD_CODES dicts in
+  this pass use the short canonical group labels ("Evangelical
+  Protestant," "Mainline Protestant," "Historically Black Protestant,"
+  "Unaffiliated") instead of the long "...Tradition"-suffixed Pew labels —
+  at 12-13 total rows the long two-line-wrapping forms of "Evangelical
+  Protestant Tradition" and "Historically Black Protestant Tradition"
+  visually collided with their neighboring rows in every one of this
+  pass's first draft renders (confirmed by reading the PNGs), the same
+  known row-label-wrap issue already flagged against
+  certainty-of-god.png/view-of-god.png. Switching to the short forms
+  (already the convention in the ATP-wave and RLS-2014-recontact scripts,
+  aliased to the same identity colors in chart_style.py's GROUP_ALIASES)
+  fixed the collision cleanly without touching the shared renderer — worth
+  using for any future 12-group RELTRAD chart in this folder, and
+  potentially for regenerating certainty-of-god.png/view-of-god.png too
+  when that follow-up task is picked up. Remaining untouched candidates
+  from the prior pass's list: qm5a/b/d, qh4, qg7b (literal vs.
+  not-everything-literal, a natural follow-up to this pass's qg7 chart),
+  qk10b-d (Sunday school, religious homeschooling, volunteering with
+  kids), qi2t/qi2u (dietary restrictions).
