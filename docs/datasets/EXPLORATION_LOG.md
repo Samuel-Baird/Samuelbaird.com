@@ -34,3 +34,22 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   streams services), `NONTECH2_b_W117`/`APPUSE2_b_W117` (religion-focused
   reading/podcasts/videos), `SNSPOST3_W117` (posts about religion on social
   media) — check screener sample sizes per group before charting.
+
+- **pew-atp-w114-2022** (American Trends Panel, Wave 114, September 2022) —
+  partial, 2026-08-31: had 1 chart (`christian-nation.json`). Added 3 more
+  this pass, all broken out by F_RELIG (this wave has no F_RELTRAD frame
+  variable) — `essent-jesus.json` (83.5% of Mormons call a personal
+  relationship with Jesus Christ essential to their faith, highest of any
+  Christian tradition, vs. 79.6% Protestant/64.2% Catholic/49.8% Orthodox),
+  `essent-attend.json` (49.1% of Mormons call regular service attendance
+  essential, 2nd only to Muslims at 57.5% and well above every other
+  Christian tradition), and `relfav-mormons.json` (how outsiders see
+  Latter-day Saints: Mormons rate their own group 81.1% favorable while
+  every other group clusters near the 18.9% national average — Hindu
+  highest among outsiders at 25.9%). Wave still has an untouched battery
+  worth checking for remaining candidates: other ESSENT_* sub-items
+  (a/g/h/i/j — believing in God, patriotism, family traditions, moral
+  living, community), other RELFAV_* sub-items (views of Evangelicals,
+  Catholics, Jews, Muslims, Atheists, Mainline Protestants by F_RELIG),
+  REL4_* ("do you personally know a Mormon" by F_RELIG), and CHRNAT1a/b
+  (awareness/favorability toward "Christian nationalism").
