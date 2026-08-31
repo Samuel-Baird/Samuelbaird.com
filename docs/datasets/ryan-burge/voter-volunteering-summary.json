@@ -1,0 +1,83 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, baseline wave (~2011), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "wave_note": "baseline wave (~2011, religpew_baseline). Unweighted.",
+  "excluded_groups": "Agnostic, Nothing in particular, and Something else dropped per this chart's own request; Orthodox/Muslim/Hindu dropped as too thin, matching every other chart in this family.",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist"
+  ],
+  "religious_org_pct": {
+    "Protestant": {
+      "pct": 29.69,
+      "valid_n": 3143,
+      "group_n": 3143
+    },
+    "Catholic": {
+      "pct": 20.33,
+      "valid_n": 1746,
+      "group_n": 1746
+    },
+    "Mormon": {
+      "pct": 55.32,
+      "valid_n": 141,
+      "group_n": 141
+    },
+    "Jewish": {
+      "pct": 21.93,
+      "valid_n": 269,
+      "group_n": 269
+    },
+    "Buddhist": {
+      "pct": 8.45,
+      "valid_n": 71,
+      "group_n": 71
+    },
+    "Atheist": {
+      "pct": 0.27,
+      "valid_n": 377,
+      "group_n": 377
+    }
+  },
+  "nonreligious_causes_avg": {
+    "Protestant": {
+      "avg_causes": 0.77,
+      "valid_n": 3143,
+      "group_n": 3143
+    },
+    "Catholic": {
+      "avg_causes": 0.76,
+      "valid_n": 1746,
+      "group_n": 1746
+    },
+    "Mormon": {
+      "avg_causes": 0.8,
+      "valid_n": 141,
+      "group_n": 141
+    },
+    "Jewish": {
+      "avg_causes": 0.96,
+      "valid_n": 269,
+      "group_n": 269
+    },
+    "Buddhist": {
+      "avg_causes": 1.06,
+      "valid_n": 71,
+      "group_n": 71
+    },
+    "Atheist": {
+      "avg_causes": 0.74,
+      "valid_n": 377,
+      "group_n": 377
+    }
+  }
+}

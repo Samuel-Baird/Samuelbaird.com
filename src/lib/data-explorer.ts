@@ -31,6 +31,7 @@ import voterIdeasPromisesData from "../../docs/datasets/ryan-burge/voter-ideas-p
 import voterIdeasMediaData from "../../docs/datasets/ryan-burge/voter-ideas-media.json";
 import voterIdeasOrgsData from "../../docs/datasets/ryan-burge/voter-ideas-orgs.json";
 import voterIdeasVolunteeringData from "../../docs/datasets/ryan-burge/voter-ideas-volunteering.json";
+import voterVolunteeringSummaryData from "../../docs/datasets/ryan-burge/voter-volunteering-summary.json";
 import voterIdeasPrideData from "../../docs/datasets/ryan-burge/voter-ideas-pride.json";
 import pidOverTimeData from "../../docs/datasets/ryan-burge/pid-over-time.json";
 import mormonOrdinationData from "../../docs/datasets/pew-mormon-survey-2011/ordination-by-activity.json";
@@ -541,6 +542,8 @@ export const DATASETS: Dataset[] = [
       voterMediaGraphic(),
       voterOrgsGraphic(),
       voterVolunteeringGraphic(),
+      voterNonreligiousCausesGraphic(),
+      voterReligiousOrgVolunteerGraphic(),
       voterPrideGraphic(),
     ],
   },
@@ -3635,6 +3638,52 @@ function voterVolunteeringGraphic(): Graphic {
     imageSrc: "/data-explorer/voter-survey-panel/idea-volunteering.png",
     width: 1080, height: 1350, credit: "via Ryan Burge",
     alt: `Heatmap, volunteering by cause type and religion. ${alt}.`,
+  };
+}
+
+/**
+ * Average number of non-religious causes volunteered for per person
+ * (mean count across the 16 non-religious categories in
+ * voter-ideas-volunteering.json's own battery, excluding religious
+ * organizations), baseline wave. Narrower group set than every other
+ * VOTER Panel chart - Agnostic, Nothing in particular, and Something else
+ * dropped, per this chart's own request (Orthodox/Muslim/Hindu still
+ * dropped as too thin, matching the rest of this family). Built from
+ * voter-volunteering-summary.json (scripts/ryan-burge/voter_volunteering_summary.py),
+ * rendered by scripts/ryan-burge/render_voter_volunteering_summary_chart.py.
+ */
+function voterNonreligiousCausesGraphic(): Graphic {
+  const { group_order: order, nonreligious_causes_avg: results } = voterVolunteeringSummaryData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].avg_causes.toFixed(2)}`)
+    .join(", ");
+  return {
+    title: "Average non-religious causes volunteered for",
+    description:
+      "Of 16 non-religious cause types, average number each person volunteered for in the " +
+      "past 12 months (baseline wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/volunteer-nonreligious-avg.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, average number of non-religious causes volunteered for per person, by religion: ${alt}.`,
+  };
+}
+
+/**
+ * Share who volunteered for a religious organization specifically - the
+ * one category the graphic above excludes. Same data source and render
+ * script as the graphic above.
+ */
+function voterReligiousOrgVolunteerGraphic(): Graphic {
+  const { group_order: order, religious_org_pct: results } = voterVolunteeringSummaryData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Volunteer for a religious organization",
+    description: "Share who volunteered for a religious organization in the past 12 months (baseline wave).",
+    imageSrc: "/data-explorer/voter-survey-panel/volunteer-religious-org.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share who volunteered for a religious organization, by religion: ${alt}.`,
   };
 }
 
