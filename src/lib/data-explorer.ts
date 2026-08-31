@@ -129,6 +129,16 @@ const GENERALIZED_GROUP_ORDER = [
   "Jehovah's Witness",
 ];
 
+/** GENERALIZED_GROUP_ORDER plus the religiously unaffiliated, for the
+ * "Christian only" variant graphics whose original wide-population chart
+ * already carried an unaffiliated row (the Beliefs section, and
+ * relimpact/vol12 in Public Life) - matching NARROW_PLUS_UNAFFILIATED_ORDER
+ * in scripts/pew-rls/render_christian_only_variants.py. */
+const CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER = [
+  ...GENERALIZED_GROUP_ORDER,
+  "Religiously unaffiliated",
+];
+
 /** Group order for children_with_kids_at_home, matching CHILDREN_ORDER in
  * scripts/pew-rls/render_family_household_charts.py. */
 const CHILDREN_GROUP_ORDER = [
@@ -404,18 +414,28 @@ export const DATASETS: Dataset[] = [
       pewRelimpGraphic(),
       pewBibimpGraphic(),
       pewAttendDistributionGraphic(),
+      pewAttendDistributionChristianGraphic(),
       pewAttendMonthlyPlusGraphic(),
+      pewAttendMonthlyPlusChristianGraphic(),
       pewMembGraphic(),
+      pewMembChristianGraphic(),
       pewPrayDistributionGraphic(),
+      pewPrayDistributionChristianGraphic(),
       pewPracbGraphic(),
+      pewPracbChristianGraphic(),
       pewPraccGraphic(),
       pewGraceGraphic(),
       pewPracaGraphic(),
       pewSoulBeliefGraphic(),
+      pewSoulBeliefChristianGraphic(),
       pewHeavenBeliefGraphic(),
+      pewHeavenBeliefChristianGraphic(),
       pewHellBeliefGraphic(),
+      pewHellBeliefChristianGraphic(),
       pewHeavenVsHellGraphic(),
+      pewHeavenVsHellChristianGraphic(),
       pewEvolutionGuidedGraphic(),
+      pewEvolutionGuidedChristianGraphic(),
       pewSpiritualMeaningGraphic(),
       pewSpiritualPeaceGraphic(),
       pewSpiritualPresenceGraphic(),
@@ -425,11 +445,13 @@ export const DATASETS: Dataset[] = [
       pewDivrelpopGraphic(),
       pewHumntrGraphic(),
       pewRelimpactGraphic(),
+      pewRelimpactChristianGraphic(),
       pewRelinstFGraphic(),
       pewRelinstGGraphic(),
       pewRelinstEGraphic(),
       pewScimpactGraphic(),
       pewVol12Graphic(),
+      pewVol12ChristianGraphic(),
     ],
   },
   {
@@ -2270,6 +2292,32 @@ function pewAttendDistributionGraphic(): Graphic {
 }
 
 /**
+ * Same as pewAttendDistributionGraphic, restricted to Christian traditions
+ * only (Latter-day Saint, Catholic, Protestant, Orthodox Christian,
+ * Jehovah's Witness). Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewAttendDistributionChristianGraphic(): Graphic {
+  const { attend_distribution: results, attend_order: order } = practiceData;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Attendance frequency, full distribution (Christian only)",
+    description: "How often each Christian tradition's members attend religious services in person.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-attend-distribution-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, religious attendance frequency by Christian tradition. ${alt}.`,
+  };
+}
+
+/**
  * Attend in-person and/or online, monthly or more (a derived flag: monthly+
  * on either item). Same data source and render script as the graphic above.
  */
@@ -2283,6 +2331,24 @@ function pewAttendMonthlyPlusGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share attending religious services monthly+ in person and/or online: ${alt}.`,
+  };
+}
+
+/**
+ * Same as pewAttendMonthlyPlusGraphic, restricted to Christian traditions
+ * only. Rendered by scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewAttendMonthlyPlusChristianGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.attend_monthly_plus_either);
+  return {
+    title: "Attend in-person and/or online, monthly+ (Christian only)",
+    description:
+      "Share of each Christian tradition attending religious services monthly or more, " +
+      "either in person or online/on TV.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-attend-monthly-plus-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share attending religious services monthly+ in person and/or online, Christian traditions only: ${alt}.`,
   };
 }
 
@@ -2301,6 +2367,24 @@ function pewMembGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who are a member of a house of worship, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Same as pewMembGraphic, restricted to Christian traditions only.
+ * Rendered by scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewMembChristianGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.memb_member);
+  return {
+    title: "Member of a house of worship (Christian only)",
+    description:
+      "Share of each Christian tradition personally a member of a church, synagogue, " +
+      "mosque, temple, or other house of worship.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-memb-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who are a member of a house of worship, by Christian tradition: ${alt}.`,
   };
 }
 
@@ -2330,6 +2414,30 @@ function pewPrayDistributionGraphic(): Graphic {
 }
 
 /**
+ * Same as pewPrayDistributionGraphic, restricted to Christian traditions
+ * only. Rendered by scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewPrayDistributionChristianGraphic(): Graphic {
+  const { pray_distribution: results, pray_order: order } = practiceData;
+  const alt = GENERALIZED_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Prayer frequency (Christian only)",
+    description: "How often each Christian tradition's members pray, outside of attending religious services.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-pray-distribution-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, prayer frequency by Christian tradition. ${alt}.`,
+  };
+}
+
+/**
  * Read scripture outside of services, weekly+, every religiously affiliated
  * tradition individually. Same data source and render script as the
  * graphic above.
@@ -2343,6 +2451,22 @@ function pewPracbGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share reading scripture weekly+ outside of services, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Same as pewPracbGraphic, restricted to Christian traditions only.
+ * Rendered by scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewPracbChristianGraphic(): Graphic {
+  const alt = pctAlt(GENERALIZED_GROUP_ORDER, practiceData.pracb_weekly_plus);
+  return {
+    title: "Read scripture outside of services, weekly+ (Christian only)",
+    description: "Share of each Christian tradition reading scripture at least once a week, outside of religious services.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/practice-pracb-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share reading scripture weekly+ outside of services, by Christian tradition: ${alt}.`,
   };
 }
 
@@ -2419,6 +2543,25 @@ function pewSoulBeliefGraphic(): Graphic {
 }
 
 /**
+ * Same as pewSoulBeliefGraphic, restricted to Christian traditions plus
+ * the religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewSoulBeliefChristianGraphic(): Graphic {
+  const alt = pctAlt(CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER, beliefsData.soul_belief);
+  return {
+    title: "Believe people have a soul or spirit (Christian only)",
+    description:
+      "Share of Christian traditions (plus the unaffiliated) who believe people have a soul " +
+      "or spirit in addition to their physical body.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-soul-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who believe in a soul or spirit, Christian traditions and the unaffiliated: ${alt}.`,
+  };
+}
+
+/**
  * Belief in heaven, by current tradition. Same data source and render
  * script as the graphic above.
  */
@@ -2437,6 +2580,25 @@ function pewHeavenBeliefGraphic(): Graphic {
 }
 
 /**
+ * Same as pewHeavenBeliefGraphic, restricted to Christian traditions plus
+ * the religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewHeavenBeliefChristianGraphic(): Graphic {
+  const alt = pctAlt(CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER, beliefsData.heaven_belief);
+  return {
+    title: "Believe in heaven (Christian only)",
+    description:
+      "Share of Christian traditions (plus the unaffiliated) who believe there is a heaven " +
+      "where people who led good lives are eternally rewarded.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-heaven-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who believe in heaven, Christian traditions and the unaffiliated: ${alt}.`,
+  };
+}
+
+/**
  * Belief in hell, by current tradition. Same data source and render
  * script as the graphic above.
  */
@@ -2451,6 +2613,25 @@ function pewHellBeliefGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who believe in hell, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Same as pewHellBeliefGraphic, restricted to Christian traditions plus
+ * the religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewHellBeliefChristianGraphic(): Graphic {
+  const alt = pctAlt(CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER, beliefsData.hell_belief);
+  return {
+    title: "Believe in hell (Christian only)",
+    description:
+      "Share of Christian traditions (plus the unaffiliated) who believe there is a hell " +
+      "where people who led bad lives are eternally punished.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-hell-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who believe in hell, Christian traditions and the unaffiliated: ${alt}.`,
   };
 }
 
@@ -2477,6 +2658,28 @@ function pewHeavenVsHellGraphic(): Graphic {
 }
 
 /**
+ * Same as pewHeavenVsHellGraphic, restricted to Christian traditions plus
+ * the religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewHeavenVsHellChristianGraphic(): Graphic {
+  const alt = CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER.map((group) => {
+    const h = beliefsData.heaven_belief[group as keyof typeof beliefsData.heaven_belief];
+    const l = beliefsData.hell_belief[group as keyof typeof beliefsData.hell_belief];
+    return `${group} heaven ${h.pct.toFixed(0)}%, hell ${l.pct.toFixed(0)}%`;
+  }).join(", ");
+
+  return {
+    title: "Belief in heaven vs. hell (Christian only)",
+    description: "The same two questions, compared side by side, Christian traditions and the unaffiliated.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-heaven-vs-hell-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Paired bar chart, belief in heaven vs. hell, Christian traditions and the unaffiliated: ${alt}.`,
+  };
+}
+
+/**
  * Evolution guided by God, by current tradition. Same data source and
  * render script as the graphics above.
  */
@@ -2490,6 +2693,25 @@ function pewEvolutionGuidedGraphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who say evolution was guided by God, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Same as pewEvolutionGuidedGraphic, restricted to Christian traditions
+ * plus the religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewEvolutionGuidedChristianGraphic(): Graphic {
+  const alt = pctAlt(CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER, beliefsData.evolution_guided_by_god);
+  return {
+    title: "Evolution guided by God (Christian only)",
+    description:
+      "Share of Christian traditions (plus the unaffiliated) who say humans evolved over " +
+      "time due to processes guided or allowed by God.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/beliefs-evolution-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say evolution was guided by God, Christian traditions and the unaffiliated: ${alt}.`,
   };
 }
 
@@ -2650,6 +2872,25 @@ function pewRelimpactGraphic(): Graphic {
 }
 
 /**
+ * Same as pewRelimpactGraphic, restricted to Christian traditions plus
+ * the religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewRelimpactChristianGraphic(): Graphic {
+  const alt = pctAlt(CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER, publicLifeData.relimpact_more_good);
+  return {
+    title: "Religion does more good than harm (Christian only)",
+    description:
+      "Share of Christian traditions (plus the unaffiliated) who say religion's overall " +
+      "impact on American society is more good than harm.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-relimpact-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who say religion does more good than harm, Christian traditions and the unaffiliated: ${alt}.`,
+  };
+}
+
+/**
  * Religious orgs bring people together, Christian only. Same data source
  * and render script as the graphic above.
  */
@@ -2732,6 +2973,23 @@ function pewVol12Graphic(): Graphic {
     width: 1080,
     height: 1350,
     alt: `Bar chart, share who volunteered in the past 12 months, by tradition: ${alt}.`,
+  };
+}
+
+/**
+ * Same as pewVol12Graphic, restricted to Christian traditions plus the
+ * religiously unaffiliated. Rendered by
+ * scripts/pew-rls/render_christian_only_variants.py.
+ */
+function pewVol12ChristianGraphic(): Graphic {
+  const alt = pctAlt(CHRISTIAN_ONLY_PLUS_UNAFFILIATED_GROUP_ORDER, publicLifeData.vol12_volunteered);
+  return {
+    title: "Volunteered in the past 12 months (Christian only)",
+    description: "Share of Christian traditions (plus the unaffiliated) who spent any time volunteering in the past 12 months.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/public-vol12-christian.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart, share who volunteered in the past 12 months, Christian traditions and the unaffiliated: ${alt}.`,
   };
 }
 
