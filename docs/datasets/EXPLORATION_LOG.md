@@ -150,3 +150,37 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   respondents.sav" file (adds a ~4,574-person non-Black comparison sample,
   109 total Mormon respondents) not yet used for anything — could support
   a Black-vs-non-Black-Mormon comparison in a future pass.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — partial, 2026-08-31:
+  had 5 charts (samesex-marriage, weekly-attendance, certainty-of-god,
+  millennial-share, nones-growth). Added 3 more this pass, all broken out
+  by RELTRAD — `view-of-god.json` (91.8% of Mormons say God is a person one
+  can have a relationship with rather than an impersonal force, highest of
+  any tradition, ties to LDS teaching of an embodied, personal Godhead),
+  `eternal-life-non-christian.json` (84.2% of Mormons say some non-Christian
+  religions can also lead to eternal life, well above Evangelical
+  Protestants' 64.1%, plausibly reflects LDS doctrine of vicarious
+  salvation for those who never heard the gospel; item is skip-logic-gated
+  to Christian-identified respondents only, so non-Christian/Unaffiliated
+  groups have no valid cases), and `born-again-identity.json` (only 24.0%
+  of Mormons call themselves "born-again" or evangelical, near the bottom
+  of Christian traditions despite the Church's own strong doctrine of
+  spiritual rebirth, "born-again" reads as a distinctly Evangelical
+  self-label most Latter-day Saints don't reach for; same Christian-only
+  skip-gate as above). Note: `view-of-god.png` inherits the same row-label
+  wrap collision ("Historically Black Protestant Tradition" / "Evangelical
+  Protestant Tradition" rows crowd each other) already present in the
+  existing `certainty-of-god.png` for this same 12-group RELTRAD list,
+  pre-existing to this pass, not introduced by it. Dataset has a large
+  untouched battery worth checking for remaining candidates: qm5a/b/d
+  (views that churches focus too much on rules / are too concerned with
+  money and power / are too involved in politics, note qm5e/f/g are
+  already charted, under different labels, in the 2023-24 wave's
+  public-life battery, so check for near-duplicate framing before using
+  these), qh4 (should one's church try to preserve traditional beliefs vs.
+  adjust to modern beliefs), qg7/qg7b (nature of scripture, word of God
+  vs. book written by man), qk10a-d (religious practices with children:
+  pray/scripture together, Sunday school, religious homeschooling,
+  volunteering together), qi2t/qi2u (dietary restrictions, eating beef/
+  pork), and qi3b (volunteering specifically through a religious
+  organization, distinct from the general qi3 volunteering item).
