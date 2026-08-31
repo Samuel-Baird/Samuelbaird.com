@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is current religious tradition (RELTRAD). qg1c asks respondents who believe in God or a universal spirit to pick between \"God is a person with whom people can have a relationship\" and \"God is an impersonal force\" (a small volunteered \"both/neither\" share is excluded, along with don't know/refused). Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 35070.98000337468,
+  "total_unweighted_n": 35071,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant Tradition",
+    "Jehovah's Witness",
+    "Historically Black Protestant Tradition",
+    "Mainline Protestant Tradition",
+    "Catholic",
+    "Orthodox Christian",
+    "Unaffiliated (religious \"nones\")",
+    "Hindu",
+    "Muslim",
+    "Jewish",
+    "Buddhist",
+    "All U.S. adults"
+  ],
+  "god_is_a_person": {
+    "Evangelical Protestant Tradition": {
+      "pct": 85.47,
+      "valid_unweighted_n": 8039,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant Tradition": {
+      "pct": 69.75,
+      "valid_unweighted_n": 5456,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant Tradition": {
+      "pct": 75.8,
+      "valid_unweighted_n": 1762,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 66.75,
+      "valid_unweighted_n": 6556,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 91.76,
+      "valid_unweighted_n": 640,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 66.73,
+      "valid_unweighted_n": 164,
+      "group_unweighted_n": 186
+    },
+    "Jehovah's Witness": {
+      "pct": 84.07,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 245
+    },
+    "Jewish": {
+      "pct": 35.94,
+      "valid_unweighted_n": 556,
+      "group_unweighted_n": 847
+    },
+    "Muslim": {
+      "pct": 37.86,
+      "valid_unweighted_n": 196,
+      "group_unweighted_n": 237
+    },
+    "Buddhist": {
+      "pct": 35.4,
+      "valid_unweighted_n": 159,
+      "group_unweighted_n": 264
+    },
+    "Hindu": {
+      "pct": 39.19,
+      "valid_unweighted_n": 162,
+      "group_unweighted_n": 199
+    },
+    "Unaffiliated (religious \"nones\")": {
+      "pct": 44.73,
+      "valid_unweighted_n": 3973,
+      "group_unweighted_n": 7556
+    },
+    "All U.S. adults": {
+      "pct": 68.85,
+      "valid_unweighted_n": 28576,
+      "group_unweighted_n": 35071
+    }
+  }
+}

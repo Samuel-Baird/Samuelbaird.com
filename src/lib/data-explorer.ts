@@ -61,6 +61,9 @@ import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-at
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
 import millennialShareData from "../../docs/datasets/pew-rls-2014/millennial-share.json";
 import nonesGrowthData from "../../docs/datasets/pew-rls-2014/nones-growth-2007-2014.json";
+import viewOfGod2014Data from "../../docs/datasets/pew-rls-2014/view-of-god.json";
+import eternalLifeNonChristianData from "../../docs/datasets/pew-rls-2014/eternal-life-non-christian.json";
+import bornAgainIdentityData from "../../docs/datasets/pew-rls-2014/born-again-identity.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
@@ -766,6 +769,9 @@ const RAW_DATASETS: Dataset[] = [
       certaintyOfGod2014Graphic(),
       millennialShareGraphic(),
       nonesGrowthGraphic(),
+      viewOfGod2014Graphic(),
+      eternalLifeNonChristianGraphic(),
+      bornAgainIdentityGraphic(),
     ],
   },
   {
@@ -1761,6 +1767,48 @@ function nonesGrowthGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/nones-growth-2007-2014.png",
     width: 1080, height: 1350,
     alt: `Bar chart: religiously unaffiliated share of U.S. adults, 2007 vs. 2014. ${alt}.`,
+  };
+}
+
+function viewOfGod2014Graphic(): Graphic {
+  const { group_order: order, god_is_a_person: results } = viewOfGod2014Data;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is God a person, or a force?",
+    description: "Share of believers who say God is a person one can have a relationship with, rather than an impersonal force, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/view-of-god.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say God is a person rather than an impersonal force, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function eternalLifeNonChristianGraphic(): Graphic {
+  const { group_order: order, non_christian_can_lead_to_eternal_life: results } = eternalLifeNonChristianData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Can other faiths lead to eternal life?",
+    description: "Share of Christians who say some non-Christian religions can also lead to eternal life, rather than only Christianity, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/eternal-life-non-christian.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Christians who say non-Christian religions can also lead to eternal life, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function bornAgainIdentityGraphic(): Graphic {
+  const { group_order: order, born_again_or_evangelical: results } = bornAgainIdentityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who calls themselves \"born-again\"?",
+    description: "Share of Christians who describe themselves as a \"born-again\" or evangelical Christian, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/born-again-identity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Christians who self-identify as \"born-again\" or evangelical, by religious tradition, 2014. ${alt}.`,
   };
 }
 

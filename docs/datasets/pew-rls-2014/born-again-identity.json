@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is current religious tradition (RELTRAD), restricted to Christian traditions - born was asked only of respondents the survey's skip logic had already classified as Christian; non-Christian and unaffiliated respondents have no valid cases on this item. Share shown self-describes as a \"born-again\" or evangelical Christian; don't know/refused/undesignated are excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 23781.835187681267,
+  "total_unweighted_n": 24125,
+  "group_order": [
+    "Evangelical Protestant Tradition",
+    "Historically Black Protestant Tradition",
+    "Mainline Protestant Tradition",
+    "Jehovah's Witness",
+    "Mormon",
+    "Catholic",
+    "Orthodox Christian",
+    "All Christian traditions"
+  ],
+  "born_again_or_evangelical": {
+    "Evangelical Protestant Tradition": {
+      "pct": 84.33,
+      "valid_unweighted_n": 8427,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant Tradition": {
+      "pct": 28.7,
+      "valid_unweighted_n": 5790,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant Tradition": {
+      "pct": 74.3,
+      "valid_unweighted_n": 1856,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 23.48,
+      "valid_unweighted_n": 6907,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 23.97,
+      "valid_unweighted_n": 632,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 18.82,
+      "valid_unweighted_n": 179,
+      "group_unweighted_n": 186
+    },
+    "Jehovah's Witness": {
+      "pct": 26.26,
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 245
+    },
+    "All Christian traditions": {
+      "pct": 51.62,
+      "valid_unweighted_n": 24125,
+      "group_unweighted_n": 24125
+    }
+  }
+}
