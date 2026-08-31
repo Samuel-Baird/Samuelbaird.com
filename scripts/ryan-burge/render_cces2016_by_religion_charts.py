@@ -30,7 +30,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom  # noqa: E402
+from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
 
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
@@ -124,7 +124,7 @@ def render_magnitude_bar(
         spine.set_visible(False)
     ax.tick_params(axis="y", length=0, pad=8)
 
-    rows = GROUP_ORDER[::-1]
+    rows = sort_groups(GROUP_ORDER, lambda g: results[g]["pct"])[::-1]
     values = [results[g]["pct"] for g in rows]
     colors = [color_for_group(g) for g in rows]
 
