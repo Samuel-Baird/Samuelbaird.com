@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share NOT answering \"I do not donate\" on CONGDONATE_W70 (\"since the start of the coronavirus outbreak, how much money have you donated to the house of worship you attend most often\") - i.e. any regular congregational giving, whether more, less, or about the same as usual; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10211.00001353193,
+  "total_unweighted_n": 10211,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "donates_to_congregation": {
+    "Evangelical Protestant": {
+      "pct": 85.93,
+      "valid_unweighted_n": 1385,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 85.64,
+      "valid_unweighted_n": 568,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 86.92,
+      "valid_unweighted_n": 290,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 77.22,
+      "valid_unweighted_n": 946,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 93.32,
+      "valid_unweighted_n": 147,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 76.59,
+      "valid_unweighted_n": 48,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 61.98,
+      "valid_unweighted_n": 118,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 82.67,
+      "valid_unweighted_n": 3690,
+      "group_unweighted_n": 10211
+    }
+  }
+}

@@ -74,3 +74,24 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   PRACTICEA_OTHSCRPT_W162 (scripture reading, but skip-logic-gated to a
   small subsample — only 35 and 100 valid Mormon respondents respectively).
   Consider this wave essentially fully mined.
+
+- **pew-atp-w70-2020** (American Trends Panel, Wave 70, July 2020 —
+  religion during COVID) — partial, 2026-08-31: had 5 charts (online
+  worship, prayer, in-person attendance, financial threat, BLM sermons).
+  Added 3 more this pass, all broken out by F_RELTRAD — `scripture-covid-coping.json`
+  (48.4% of Latter-day Saints read scripture daily to cope with the
+  pandemic, highest of any tradition, vs. 38.0% Historically Black
+  Protestant/36.3% Evangelical and far above Catholic/Mainline at ~13%),
+  `religious-org-giving-covid.json` (56.9% of Latter-day Saints volunteered
+  or donated through a religious organization because of COVID, well
+  ahead of 2nd-place Evangelical Protestant at 32.0%), and
+  `congregation-donating.json` (93.3% of Latter-day Saints who attend at
+  least monthly kept donating to their congregation during COVID, highest
+  of any tradition, vs. 86-87% for Evangelical/Mainline/Historically Black
+  Protestant and 77% for Catholic/Jewish). Wave still has an untouched
+  slate of items worth checking for remaining candidates: COVIDVOL2_b_W70
+  (turned to a religious org for help with bills/housing/food during
+  COVID — receiving rather than giving), COVIDLESSON1/COVIDLESSON2_W70
+  (belief there's a lesson from COVID, and whether God sent it), and
+  ATTENDFUT1/ATTENDFUT2_W70 (post-pandemic attendance intentions, but
+  these are speculative/hypothetical and thematically thinner).

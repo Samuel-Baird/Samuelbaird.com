@@ -82,6 +82,9 @@ import prayerCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/prayer-c
 import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/inperson-attendance-covid.json";
 import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/financial-threat-covid.json";
 import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
+import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scripture-covid-coping.json";
+import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
+import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
 import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
 import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
@@ -890,6 +893,9 @@ const RAW_DATASETS: Dataset[] = [
       inpersonAttendanceCovidGraphic(),
       financialThreatCovidGraphic(),
       blmSermonsGraphic(),
+      scriptureCovidCopingGraphic(),
+      religiousOrgGivingCovidGraphic(),
+      congregationDonatingGraphic(),
     ],
   },
   {
@@ -2033,6 +2039,48 @@ function blmSermonsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/blm-sermons.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of monthly attenders hearing a pro-Black Lives Matter sermon, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function scriptureCovidCopingGraphic(): Graphic {
+  const { group_order: order, read_scripture_daily_covid: results } = scriptureCovidCopingData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Reading scripture to cope with COVID",
+    description: "Share who read scripture daily to help cope with the coronavirus outbreak, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/scripture-covid-coping.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share reading scripture daily to cope with the coronavirus outbreak, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function religiousOrgGivingCovidGraphic(): Graphic {
+  const { group_order: order, gave_through_religious_org_covid: results } = religiousOrgGivingCovidData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Giving through a religious group during COVID",
+    description: "Share who volunteered or donated through a religious organization because of the coronavirus outbreak, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/religious-org-giving-covid.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who volunteered or donated through a religious organization because of the coronavirus outbreak, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function congregationDonatingGraphic(): Graphic {
+  const { group_order: order, donates_to_congregation: results } = congregationDonatingData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who kept donating to their congregation",
+    description: "Share of monthly attenders who donate to the house of worship they attend most often, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/congregation-donating.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of monthly attenders who donate to their house of worship, by religious tradition, July 2020. ${alt}.`,
   };
 }
 

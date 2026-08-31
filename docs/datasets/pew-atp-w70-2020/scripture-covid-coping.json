@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Top box (\"daily\") on SPIRIT2_b_W70 (\"how often, if ever, do you read scripture to help cope with the coronavirus outbreak\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10211.00001353193,
+  "total_unweighted_n": 10211,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Catholic",
+    "Mainline Protestant",
+    "Jewish",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "read_scripture_daily_covid": {
+    "Evangelical Protestant": {
+      "pct": 36.28,
+      "valid_unweighted_n": 2067,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 12.87,
+      "valid_unweighted_n": 1363,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 37.95,
+      "valid_unweighted_n": 457,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 13.46,
+      "valid_unweighted_n": 2217,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 48.43,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 9.86,
+      "valid_unweighted_n": 250,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 3.91,
+      "valid_unweighted_n": 3070,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 16.87,
+      "valid_unweighted_n": 10159,
+      "group_unweighted_n": 10211
+    }
+  }
+}
