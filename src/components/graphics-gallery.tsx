@@ -4,6 +4,7 @@ import { Search, SlidersHorizontal, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { FacetGroup } from "@/components/facet-group";
 import { Tag } from "@/components/tag";
 import { graphicId, type GalleryGraphic } from "@/lib/data-explorer";
 
@@ -19,44 +20,6 @@ function stripLeadingPunctuation(title: string): string {
 function firstYear(period: string): number {
   const match = period.match(/\d{4}/);
   return match ? Number(match[0]) : 0;
-}
-
-type FacetOption = { value: string; label: string; count: number };
-
-function FacetGroup({
-  title,
-  options,
-  selected,
-  onToggle,
-}: {
-  title: string;
-  options: FacetOption[];
-  selected: Set<string>;
-  onToggle: (value: string) => void;
-}) {
-  if (options.length === 0) return null;
-  return (
-    <div>
-      <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">{title}</h3>
-      <div className="mt-2 max-h-56 space-y-0.5 overflow-y-auto pr-1">
-        {options.map((opt) => (
-          <label
-            key={opt.value}
-            className="flex min-h-9 cursor-pointer items-center gap-2.5 rounded-[var(--radius)] px-1 text-sm hover:bg-[color:var(--muted-soft)]/60"
-          >
-            <input
-              type="checkbox"
-              checked={selected.has(opt.value)}
-              onChange={() => onToggle(opt.value)}
-              className="h-4 w-4 shrink-0 rounded border-[color:var(--border)] accent-[color:var(--accent)]"
-            />
-            <span className="min-w-0 flex-1 truncate">{opt.label}</span>
-            <span className="shrink-0 text-xs text-[color:var(--muted)]">({opt.count})</span>
-          </label>
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
@@ -174,7 +137,7 @@ export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
       </div>
       <div className="mt-4 space-y-6">
         <FacetGroup
-          title="Dataset"
+          title="Source"
           options={datasetOptions}
           selected={selectedDatasets}
           onToggle={(v) => toggle(selectedDatasets, setSelectedDatasets, v)}
@@ -248,7 +211,7 @@ export function GraphicsGallery({ graphics }: { graphics: GalleryGraphic[] }) {
               <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                 {visible.map((g) => {
                   const id = graphicId(g);
-                  const href = `/data-explorer/${g.datasetSlug}/graphics/${id}`;
+                  const href = g.href ?? `/data-explorer/${g.datasetSlug}/graphics/${id}`;
                   return (
                     <li key={`${g.datasetSlug}/${id}`}>
                       <Link

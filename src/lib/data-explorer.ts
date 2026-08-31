@@ -3118,6 +3118,11 @@ export type GalleryGraphic = Graphic & {
   datasetName: string;
   fieldedPeriod: string;
   traditions: string[];
+  /** Overrides the default `/data-explorer/<datasetSlug>/graphics/<id>`
+   * link - set by study-graphics.ts's getAllStudyGraphics() so a study's
+   * own graphics keep linking to their real `/studies/<slug>/graphics/<id>`
+   * URL when they're folded into this site-wide gallery. */
+  href?: string;
 };
 
 /** Every graphic across every dataset, flattened for the public gallery at
