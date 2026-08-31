@@ -302,6 +302,104 @@ size without adjustment - this is a per-chart fix, not a pipeline-wide
 margin change, per this doc's general rule that a crowding fix belongs on
 the specific chart that needs it.
 
+## Title/subtitle/footnote bigger and darker are now pipeline defaults
+
+`render_christian_only_variants.py`'s attendance-distribution chart
+(`practice-attend-distribution-christian.png`) — the same chart that
+originally introduced the bigger-row-labels/black-outlines treatments
+documented above as an *optional override* — also introduced three
+title/subtitle/footnote readability treatments the same way, passed
+explicitly to `render_practice_charts.render_distribution_stack` alongside
+that one chart's own tighter margins:
+
+- **Title at 32pt** (`title_fontsize`), up from the pipeline's old 26-27pt,
+  with a **wider wrap budget of 42 characters** (`title_wrap_width`), up
+  from 24-27 — the old value was conservative relative to the canvas's real
+  width (see `_draw_title`'s own docstring in `render_practice_charts.py`),
+  wrapping a line earlier than the 9in canvas actually required.
+- **Subtitle at 16pt** (`subtitle_fontsize`), up from 13.5-14pt, in `INK`
+  (`subtitle_color`) instead of `MUTED`.
+- **Footnote/caption at 16pt** (`caption_fontsize`), up from 11.5pt — the
+  pipeline-wide `draw_caption_bottom` default in `chart_style.py` — matching
+  the new subtitle size, in `INK` (`caption_color`) instead of `MUTED`.
+  Bold styling is unchanged; it already came from `draw_caption_bottom`'s
+  existing handle styling, nothing to touch there.
+
+As of 2026-08-31, all three are the *default* everywhere in this pipeline,
+not an override - every `render_*.py` in `scripts/pew-rls/` (except
+`render_christian_only_variants.py`, which only calls the others) now draws
+its title at 32pt/42-char wrap, its subtitle at 16pt `INK`, and its
+footnote at 16pt `INK`, unconditionally:
+
+- `render_practice_charts.py` - `_draw_title`'s `title_fontsize`/
+  `title_wrap_width`/`subtitle_fontsize`/`subtitle_color` defaults and
+  `_draw_caption`'s `caption_fontsize`/`caption_color` defaults changed to
+  the new values; `render_distribution_stack`'s same-named parameters'
+  defaults changed to match. The parameters themselves are unchanged -
+  `render_christian_only_variants.py` still passes all of them explicitly
+  to its one reference chart; those calls are now redundant with the new
+  defaults but harmless, left in place so that chart's own explicit intent
+  stays visible at the call site, same as the row-label/edgecolor rollout.
+- `render_beliefs_charts.py`, `render_birth_decade_chart.py`,
+  `render_childhood_formation_charts.py`, `render_family_household_charts.py`,
+  `render_public_life_charts.py`, `render_spiritual_experience_charts.py`,
+  `render_switching_generalized_chart.py` - each file's own local
+  title-drawing code (a `draw_title`/`_draw_title` function, or inline
+  `fig.text()` calls in `render_birth_decade_chart.py`'s and
+  `render_switching_generalized_chart.py`'s single render function - this
+  dataset's title/caption drawing was never behind one shared helper, each
+  file evolved its own copy) had its hardcoded `title_fontsize` (26-27 ->
+  32), wrap width (24-27 -> 42), `subtitle_fontsize` (13.5-14 -> 16), and
+  subtitle color (`MUTED` -> `INK`) changed directly; every
+  `draw_caption_bottom(...)` call gained explicit `fontsize=16, color=INK`
+  arguments, since `chart_style.draw_caption_bottom`'s own default
+  (11.5pt/`MUTED`) was deliberately left alone - it's shared by every other
+  Data Explorer pipeline, which haven't had this rollout yet (see
+  `BRANDING_AND_DESIGN.md`'s "Charts" section).
+
+**Several titles needed a narrower per-chart wrap-width override.** A
+character-count wrap budget is only an approximation of a title's actual
+rendered pixel width - RobotoSlab Bold's letterforms vary enough (an
+m/w/g-heavy title runs visibly wider than a same-length title with more
+i/l/t's) that the new 42-character default, while safe for most titles
+including the reference chart's own ("Attendance frequency, full
+distribution," 41 characters), let a handful of longer, wider-lettered
+titles run past the canvas's right edge despite fitting the 42-character
+count as a single (unwrapped) line. Caught by rendering every chart and
+edge-scanning each PNG's title band for dark pixels touching the canvas's
+right edge - the same triage technique used for the row-label/edgecolor
+rollout's clipping check, aimed at the top of the canvas instead of the
+bottom. Found and fixed by lowering that one title's own wrap width to 38
+(verified by actually measuring each candidate line's rendered width with
+matplotlib's text extent, not re-guessing a magic number) at these seven
+call sites, via a new `title_wrap_width`/`title_width` parameter added to
+whichever render function each one calls:
+
+- `render_practice_charts.py`'s `render_magnitude_bar` - previously took no
+  title-sizing parameters at all (unlike `render_distribution_stack`, which
+  already exposed them); gained an optional `title_wrap_width` passed
+  through to `_draw_title`. Used at the `attend_monthly_out` and
+  `praca_out` call sites ("Attend in-person and/or online, monthly or
+  more" and "Prayer or scripture study groups, weekly+").
+- `render_christian_only_variants.py`'s call for
+  `practice-attend-monthly-plus-christian.png` ("Attend in-person and/or
+  online, monthly+ (Christian only)") - same fix, same parameter.
+- `render_childhood_formation_charts.py`'s `render_magnitude_bar` and
+  `render_education_stack` - gained an optional `title_width` passed
+  through to `draw_title`. Used at `attendance_out` ("Grew up attending
+  church monthly or more") and `education_out` ("Religious education
+  received growing up").
+- `render_spiritual_experience_charts.py`'s `render_magnitude_bar` - gained
+  an optional `title_width` passed through to `draw_title`. Used at
+  `meaning_out` ("Think about life's meaning and purpose, weekly+") and
+  `presence_out` ("Feel a presence beyond this world, weekly+").
+
+Every other chart in this pipeline fits its own title inside the default
+42-character wrap without adjustment - this is a per-chart fix, not a
+pipeline-wide wrap-width change, per this doc's general rule (established
+by the row-label/edgecolor rollout's `axes_left` fix) that a crowding fix
+belongs on the specific chart that needs it.
+
 ## Title qualifiers render smaller than the primary title
 
 `render_christian_only_variants.py` builds titles like "Attendance

@@ -97,9 +97,9 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
 
 def _draw_title(
     fig, fonts, title: str, subtitle: str,
-    title_fontsize: float = 26, title_wrap_width: int = 27,
+    title_fontsize: float = 32, title_wrap_width: int = 42,
     left_margin: float = 0.065, top_margin: float = 0.965,
-    subtitle_fontsize: float = 13.5, subtitle_color: str = MUTED,
+    subtitle_fontsize: float = 16, subtitle_color: str = INK,
 ) -> float:
     """Returns the y-fraction where the subtitle block actually ends, so
     the caller can size its axes to the real available band instead of a
@@ -151,7 +151,7 @@ def _draw_title(
 def _draw_caption(
     fig, fonts, total_n: int, note: str,
     left_margin: float = 0.065, bottom_margin: float = 0.030,
-    caption_fontsize: float = 11.5, caption_color: str = MUTED,
+    caption_fontsize: float = 16, caption_color: str = INK,
 ) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
@@ -165,14 +165,25 @@ def _draw_caption(
 def render_magnitude_bar(
     results: dict, group_order: list[str], title: str, subtitle: str, note: str,
     total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
+    title_wrap_width: int | None = None,
 ) -> None:
+    """title_wrap_width: override the default 42-char wrap - see
+    _draw_title's docstring. A handful of titles in this pipeline are wide
+    enough at the default's letterforms (lots of m/w/g, few i/l) to overflow
+    the canvas at 42 chars/line even though they're the same length or
+    shorter than titles that fit; those call sites pass a narrower value
+    (38, found by actually measuring rendered text width - see STYLE.md's
+    "Title wrap width" note) rather than the pipeline eyeballing one number
+    for every title.
+    """
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
     # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
     # drawn first (bottom-anchored) so its real top edge is known.
-    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    title_kwargs = {} if title_wrap_width is None else {"title_wrap_width": title_wrap_width}
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle, **title_kwargs)
     caption_top = _draw_caption(fig, fonts, total_n, note)
     ax_top = subtitle_bottom - 0.03
     ax_bottom = caption_top + 0.03
@@ -215,12 +226,12 @@ def render_distribution_stack(
     results: dict, group_order: list[str], seg_order: list[str], title: str, subtitle: str,
     note: str, total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
     group_label_fontsize: float | None = None,
-    title_fontsize: float = 26, title_wrap_width: int = 27,
+    title_fontsize: float = 32, title_wrap_width: int = 42,
     box_edgecolor: str = INK,
     left_margin: float = 0.065, top_margin: float = 0.965,
     right_edge: float = 0.94, bottom_margin: float = 0.030,
-    subtitle_fontsize: float = 13.5, subtitle_color: str = MUTED,
-    caption_fontsize: float = 11.5, caption_color: str = MUTED,
+    subtitle_fontsize: float = 16, subtitle_color: str = INK,
+    caption_fontsize: float = 16, caption_color: str = INK,
 ) -> None:
     """left_margin/top_margin/right_edge/bottom_margin are the outer-edge
     canvas buffers (figure-fraction) - see _draw_title's docstring. Shrink
@@ -364,6 +375,10 @@ def main() -> None:
         note="Population: all religiously affiliated traditions, individually. Derived: "
              "monthly+ on ATTNDPERRLS or ATTNDONRLS.",
         total_n=total_n, out_path=args.attend_monthly_out, fonts=fonts,
+        # Default 42-char wrap overflows this title's canvas width at 32pt
+        # (wide letterforms: m/w/g-heavy) - see render_magnitude_bar's
+        # docstring.
+        title_wrap_width=38,
     )
     render_magnitude_bar(
         data["memb_member"], ALL_RELIGIOUS_ORDER,
@@ -407,6 +422,9 @@ def main() -> None:
         subtitle="Share participating in prayer groups, scripture study,\nor religious education programs weekly+.",
         note="Population: Christian only; \"at least once a week\" (the scale's own top category).",
         total_n=total_n, out_path=args.praca_out, fonts=fonts,
+        # See attend_monthly_out's call above - this title also overflows
+        # the default 42-char wrap.
+        title_wrap_width=38,
     )
 
 

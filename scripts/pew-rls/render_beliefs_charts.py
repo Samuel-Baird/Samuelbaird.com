@@ -86,10 +86,10 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
     """Returns the y-fraction where the subtitle block actually ends, so
     the caller can size its axes to the real available band instead of a
     fixed guess - see STYLE.md's "Vertical layout" section."""
-    title_fontsize = 26
-    subtitle_fontsize = 13.5
+    title_fontsize = 32
+    subtitle_fontsize = 16
     main_title, qualifier = split_title_qualifier(title)
-    title_lines = textwrap.wrap(main_title, width=27)
+    title_lines = textwrap.wrap(main_title, width=42)
     line_spacing = title_fontsize / 650
     title_top = 0.965
     for i, line in enumerate(title_lines):
@@ -108,7 +108,7 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
     subtitle_y = title_top - n_title_lines * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -118,7 +118,10 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
 def _draw_caption(fig, fonts, total_n: int, note: str) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    return draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
 
 
 def render_magnitude_bar(

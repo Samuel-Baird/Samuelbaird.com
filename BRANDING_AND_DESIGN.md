@@ -416,11 +416,44 @@ per-dataset pattern of stacking 2-3 caption paragraphs (a methodology note,
 an `N =` line, and a full "Pew Research Center. 2025. ... doi: ..." citation
 line) — that pattern is retired everywhere, not just on new charts. Draw it
 with `chart_style.draw_caption_bottom(fig, fonts, [], handle="@ithinkisam |
-data: <short title>")` — empty `paragraphs`, the whole line as `handle` (bold,
-`fontsize` defaults to 11.5, up from the pre-2026-08 default of 10 — "slightly
-larger," not a second subtitle). Every render script across every dataset
-folder draws its caption this same way; there is no dataset-specific
-exception.
+data: <short title>")` — empty `paragraphs`, the whole line as `handle` (bold;
+`chart_style.draw_caption_bottom`'s own default is still `fontsize=11.5`,
+`color=MUTED`, up from the pre-2026-08 default of 10pt — "slightly larger,"
+not a second subtitle — but see the title/subtitle/footnote paragraph below
+for `scripts/pew-rls/`'s own larger, darker override of that default). Every
+render script across every dataset folder draws its caption this same way;
+there is no dataset-specific exception beyond that one pipeline's override.
+
+**Title bigger and wraps wider; subtitle and footnote bigger and black —
+pew-rls default as of 2026-08-31.** A separate readability rollout from the
+row-label/edgecolor one above (that one is about label size and bar/segment
+outlines; this one is about title/subtitle/footnote sizing and color). Every
+chart title on a `scripts/pew-rls/` chart now draws at 32pt (up from 26-27pt)
+with a wider wrap budget (42 characters, up from 24-27) so a title doesn't
+wrap a line earlier than the canvas actually requires; every subtitle now
+draws at 16pt (up from 13.5-14pt) in `INK` (near-black) instead of `MUTED`
+(gray); every footnote/caption now draws at 16pt (matching the new subtitle
+size, up from 11.5pt) in `INK` instead of `MUTED`. Bold caption styling is
+unchanged — it already came from `draw_caption_bottom`'s existing handle
+styling. All three started as an *optional* override on one chart
+(`render_christian_only_variants.py`'s attendance-distribution chart, the
+same chart the row-label/edgecolor rollout above started on) and are now
+this pipeline's *default* everywhere; see `scripts/pew-rls/STYLE.md`'s
+"Title/subtitle/footnote bigger and darker are now pipeline defaults"
+section for the full file-by-file rollout and the title-wrap-width crowding
+fix it required on several charts whose titles overflowed the canvas at the
+default 42-character wrap despite fitting the character count (RobotoSlab
+Bold's letterforms vary enough in width — an m/w/g-heavy title runs wider
+than a same-length title with more i/l's — that a character-count wrap
+budget alone isn't a reliable proxy for a title's actual rendered width).
+Rolled out to: `scripts/pew-rls/` (2026-08-31, this rollout). Pending in
+separate batches: `scripts/ryan-burge/`, `scripts/flagship-charts/`,
+`scripts/state-of-theology-graphics/` — `chart_style.draw_caption_bottom`'s
+own default fontsize/color were deliberately left unchanged (still 11.5pt/
+`MUTED`) rather than bumped to match pew-rls's new values, since those three
+other pipelines still expect the old default until their own batches land;
+each `scripts/pew-rls/*.py` caption call now passes `fontsize=16, color=INK`
+explicitly instead.
 
 ### Forms
 

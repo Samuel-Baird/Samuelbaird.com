@@ -89,7 +89,10 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # Caption drawn first (bottom-anchored) - see STYLE.md's "Footnotes:
     # bottom-anchored" section - so the axes/legend/note stack above it can
     # be placed relative to its real top edge.
-    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
     note_y = caption_top + 0.04
 
     legend_ncol = 4
@@ -156,9 +159,9 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     )
 
     # --- Title / subtitle -------------------------------------------------
-    title_fontsize = 27
+    title_fontsize = 32
     title = "Birth-decade makeup, by tradition"
-    title_lines = textwrap.wrap(title, width=26)
+    title_lines = textwrap.wrap(title, width=42)
     line_spacing = title_fontsize / 650
     title_top = 0.965
     for i, line in enumerate(title_lines):
@@ -170,7 +173,7 @@ def render(data: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     fig.text(
         0.065, subtitle_y,
         "Share of each tradition's current members born in each decade.",
-        fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=16, color=INK, ha="left", va="top",
     )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

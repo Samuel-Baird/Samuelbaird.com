@@ -83,6 +83,9 @@ def main() -> None:
         note=CHRISTIAN_NOTE + " Derived: monthly+ on ATTNDPERRLS or ATTNDONRLS.",
         total_n=total_n,
         out_path=OUT_DIR / "practice-attend-monthly-plus-christian.png", fonts=fonts,
+        # Same title-overflow fix as the wide-population version of this
+        # chart in render_practice_charts.py's main().
+        title_wrap_width=38,
     )
     practice_r.render_magnitude_bar(
         practice["memb_member"], NARROW_ORDER,

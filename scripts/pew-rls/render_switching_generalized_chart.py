@@ -101,7 +101,10 @@ def render_panel(
     # STYLE.md's "Footnotes: bottom-anchored" section. The relative spacing
     # between caption -> denominator note -> axes bottom is preserved from
     # the old fixed layout; only the anchor point moved.
-    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
     denom_note_y = caption_top + 0.06
     legend_bottom_y = denom_note_y + 0.02
     legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT  # 2 items, 1 row
@@ -163,8 +166,8 @@ def render_panel(
     # scripts/state-of-theology-graphics/render_chart.py's long-statement
     # titles: line_spacing scales with fontsize so title/subtitle never
     # collide regardless of how many lines the title wraps to.
-    title_fontsize = 26
-    title_lines = textwrap.wrap(title, width=24)
+    title_fontsize = 32
+    title_lines = textwrap.wrap(title, width=42)
     line_spacing = title_fontsize / 650
     title_top = 0.965
     for i, line in enumerate(title_lines):
@@ -175,7 +178,7 @@ def render_panel(
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, "\n".join(subtitle_lines),
-        fontproperties=fonts["regular"], fontsize=14, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=16, color=INK, ha="left", va="top",
     )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

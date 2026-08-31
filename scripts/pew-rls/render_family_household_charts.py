@@ -81,13 +81,13 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
-                subtitle_fontsize: float = 14) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 42,
+                subtitle_fontsize: float = 16) -> float:
     """Dynamic wrap + spacing; returns the y-fraction where the subtitle
     block actually ends, so the caller can size its axes to the real
     available band instead of a fixed guess - see STYLE.md's "Vertical
     layout" section."""
-    title_fontsize = 27
+    title_fontsize = 32
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
     title_top = 0.965
@@ -99,7 +99,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -126,7 +126,10 @@ def render_magnitude_bar(
     # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
     # drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035
 

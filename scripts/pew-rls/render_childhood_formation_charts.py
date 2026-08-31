@@ -83,8 +83,8 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
-                subtitle_fontsize: float = 14) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 42,
+                subtitle_fontsize: float = 16) -> float:
     """Dynamic wrap + spacing, same approach as render_switching_generalized_chart.py.
     Returns the y-fraction where the subtitle block actually ends (not just
     where it starts) - see STYLE.md's "Vertical layout" section - so the
@@ -93,7 +93,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
     the subtitle is one fig.text() call with an embedded newline, so its
     height is matplotlib's default linespacing (1.2x fontsize) times its
     line count, converted from points to figure-fraction units."""
-    title_fontsize = 27
+    title_fontsize = 32
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
     title_top = 0.965
@@ -105,7 +105,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -115,20 +115,29 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
 def draw_caption(fig, fonts, total_n: int, extra_note: str | None) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
-    return draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    return draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
 
 
 def render_magnitude_bar(
     results: dict, title: str, subtitle: str, note: str, out_path: Path,
     fonts: dict[str, fm.FontProperties],
+    title_width: int = 42,
 ) -> None:
+    """title_width: passed through to draw_title - override on a chart-by-
+    chart basis when a title's actual rendered width overflows the canvas
+    at the default (some titles are wider than others at the same char
+    count, depending on letterforms) - see STYLE.md's "Title wrap width"
+    note."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
     # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
     # drawn first (bottom-anchored) so its real top edge is known.
-    subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle, width=title_width)
     caption_top = draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note)
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035
@@ -168,14 +177,16 @@ def render_magnitude_bar(
 def render_education_stack(
     results: dict, decade_order: list[str], title: str, subtitle: str, note: str,
     out_path: Path, fonts: dict[str, fm.FontProperties],
+    title_width: int = 42,
 ) -> None:
+    """title_width: see render_magnitude_bar's docstring above."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering, same approach as render_magnitude_bar above, with
     # exact room reserved for the legend row below the axes (via
     # LEGEND_ROW_HEIGHT, not a guessed constant).
-    subtitle_bottom = draw_title(fig, fonts, title, subtitle)
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle, width=title_width)
     caption_top = draw_caption(fig, fonts, results["Christian average"]["group_unweighted_n"], note)
     ax_top = subtitle_bottom - 0.035
     legend_ncol = 4
@@ -255,6 +266,9 @@ def main() -> None:
              "excludes don't know/refused.",
         out_path=args.attendance_out,
         fonts=fonts,
+        # Default 42-char wrap overflows this title's canvas width at 32pt
+        # (wide letterforms) - see render_magnitude_bar's docstring.
+        title_width=38,
     )
     render_magnitude_bar(
         data["chimprel_very_important"],
@@ -273,6 +287,8 @@ def main() -> None:
              "excludes don't know/refused.",
         out_path=args.education_out,
         fonts=fonts,
+        # Same title-overflow fix as attendance_out above.
+        title_width=38,
     )
 
 

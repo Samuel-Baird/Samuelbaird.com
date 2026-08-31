@@ -65,13 +65,13 @@ def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
     return props
 
 
-def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
-                subtitle_fontsize: float = 14) -> float:
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 42,
+                subtitle_fontsize: float = 16) -> float:
     """Dynamic wrap + spacing; returns the y-fraction where the subtitle
     block actually ends, so the caller can size its axes to the real
     available band instead of a fixed guess - see STYLE.md's "Vertical
     layout" section."""
-    title_fontsize = 27
+    title_fontsize = 32
     title_lines = textwrap.wrap(title, width=width)
     line_spacing = title_fontsize / 650
     title_top = 0.965
@@ -83,7 +83,7 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
     subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -93,15 +93,22 @@ def draw_title(fig, fonts, title: str, subtitle: str, width: int = 26,
 def render_magnitude_bar(
     results: dict, title: str, subtitle: str, total_n: int,
     out_path: Path, fonts: dict[str, fm.FontProperties],
+    title_width: int = 42,
 ) -> None:
+    """title_width: override on a chart-by-chart basis when a title's
+    actual rendered width overflows the canvas at the default - see
+    STYLE.md's "Title wrap width" note."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     # Vertical centering: size the axes to the real gap between the
     # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
     # drawn first (bottom-anchored) so its real top edge is known.
-    subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption_bottom(fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS")
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle, width=title_width)
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
     ax_top = subtitle_bottom - 0.035
     ax_bottom = caption_top + 0.035
 
@@ -156,6 +163,9 @@ def main() -> None:
         title="Think about life's meaning and purpose, weekly+",
         subtitle="Share who think about the meaning and purpose of life\nat least once a week.",
         total_n=total_n, out_path=args.meaning_out, fonts=fonts,
+        # Default 42-char wrap overflows this title's canvas width at 32pt
+        # (wide letterforms) - see render_magnitude_bar's docstring.
+        title_width=38,
     )
     render_magnitude_bar(
         data["spiritual_peace_weekly_plus"],
@@ -168,6 +178,8 @@ def main() -> None:
         title="Feel a presence beyond this world, weekly+",
         subtitle="Share who feel the presence of something from beyond\nthis world at least once a week.",
         total_n=total_n, out_path=args.presence_out, fonts=fonts,
+        # Same title-overflow fix as meaning_out above.
+        title_width=38,
     )
 
 
