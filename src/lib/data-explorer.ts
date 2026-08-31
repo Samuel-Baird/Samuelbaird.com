@@ -96,6 +96,7 @@ import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.jso
 import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scripture-covid-coping.json";
 import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
 import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
+import adultArrangementsData from "../../docs/datasets/pew-catholic-family-2015/adult-arrangements.json";
 import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
 import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
@@ -957,6 +958,9 @@ const RAW_DATASETS: Dataset[] = [
       raisedByDivorcedParentsGraphic(),
       raisedByCohabitingParentsGraphic(),
       raisedByGayLesbianCoupleGraphic(),
+      unmarriedCohabitingCoupleGraphic(),
+      samesexCoupleLivingTogetherGraphic(),
+      childlessByChoiceGraphic(),
     ],
   },
   {
@@ -2338,6 +2342,39 @@ function raisedByGayLesbianCoupleGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-gay-lesbian-couple.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying a gay or lesbian couple is as good an arrangement as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function unmarriedCohabitingCoupleGraphic(): Graphic {
+  const results = adultArrangementsData.unmarried_cohabiting_couple;
+  return {
+    title: "An unmarried couple living together?",
+    description: "Share saying this is as good a way of life as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/unmarried-cohabiting-couple.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying an unmarried couple living together is as good a way of life as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function samesexCoupleLivingTogetherGraphic(): Graphic {
+  const results = adultArrangementsData.samesex_couple_living_together;
+  return {
+    title: "A same-sex couple living together?",
+    description: "Share saying this is as good a way of life as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/samesex-couple-living-together.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying a same-sex couple living together is as good a way of life as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
+  };
+}
+
+function childlessByChoiceGraphic(): Graphic {
+  const results = adultArrangementsData.childless_by_choice;
+  return {
+    title: "A couple who choose not to have children?",
+    description: "Share saying this is as good a way of life as any other, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/childless-by-choice.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying a couple who choose not to have children is as good a way of life as any other, by religion, 2015. ${householdTypeAlt(results)}.`,
   };
 }
 
