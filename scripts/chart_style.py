@@ -23,6 +23,7 @@ rule and scripts/pew-rls/STYLE.md for a worked example of applying it.
 
 from __future__ import annotations
 
+import re
 import textwrap
 from typing import Callable
 
@@ -143,6 +144,24 @@ def draw_caption_bottom(
         y += line_step
 
     return y
+
+
+_TRAILING_QUALIFIER_RE = re.compile(r"^(.*\S)\s+(\([^()]*\))$")
+
+
+def split_title_qualifier(title: str) -> tuple[str, str | None]:
+    """Splits a trailing parenthetical qualifier - e.g. "Attendance
+    frequency, full distribution (Christian only)" -> ("Attendance
+    frequency, full distribution", "(Christian only)") - off the end of a
+    chart title. Returns (title, None) unchanged if there's no trailing
+    "(...)" group.
+
+    Every _draw_title/draw_title in this pipeline uses this so the
+    qualifier renders in a visibly smaller size than the primary title
+    text instead of being wrapped in as if it were equally important -
+    see BRANDING_AND_DESIGN.md's "Charts" section."""
+    m = _TRAILING_QUALIFIER_RE.match(title)
+    return (m.group(1), m.group(2)) if m else (title, None)
 
 
 def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:

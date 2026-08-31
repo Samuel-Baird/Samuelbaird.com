@@ -34,7 +34,10 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import (  # noqa: E402
+    LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups,
+    split_title_qualifier,
+)
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -43,9 +46,6 @@ from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bo
 INK = "#1A1A1A"
 PAPER = "#FFFFFF"
 MUTED = "#6E6A63"
-
-ACCENT = "#1f4f7a"
-HIGHLIGHT_GROUP = "Latter-day Saint"  # still used by render_distribution_stack's row labels
 
 # --chart-ordinal-1..7, light-mode values (src/app/globals.css) - the site's
 # one official ordinal ramp, reused here for two different frequency scales
@@ -120,7 +120,8 @@ def _draw_title(
     let that chart's content fill more of the canvas, same reasoning as
     title_wrap_width above."""
     subtitle_fontsize = 13.5
-    title_lines = textwrap.wrap(title, width=title_wrap_width)
+    main_title, qualifier = split_title_qualifier(title)
+    title_lines = textwrap.wrap(main_title, width=title_wrap_width)
     line_spacing = title_fontsize / 650
     title_top = top_margin
     for i, line in enumerate(title_lines):
@@ -128,7 +129,17 @@ def _draw_title(
             left_margin, title_top - i * line_spacing, line,
             fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
         )
-    subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
+    n_title_lines = len(title_lines)
+    if qualifier:
+        # Rendered on its own line, at a visibly smaller size than the
+        # primary title - see chart_style.split_title_qualifier's docstring.
+        qualifier_fontsize = title_fontsize * 0.55
+        fig.text(
+            left_margin, title_top - n_title_lines * line_spacing, qualifier,
+            fontproperties=fonts["title"], fontsize=qualifier_fontsize, color=INK, ha="left", va="top",
+        )
+        n_title_lines += qualifier_fontsize / title_fontsize
+    subtitle_y = title_top - n_title_lines * line_spacing - 0.015
     fig.text(
         left_margin, subtitle_y, subtitle,
         fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
@@ -274,7 +285,7 @@ def render_distribution_stack(
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(resolved_label_fontsize)
-        tick_label.set_color(ACCENT if g == HIGHLIGHT_GROUP else INK)
+        tick_label.set_color(INK)
 
     handles = [mpatches.Patch(facecolor=c, edgecolor=box_edgecolor, label=l)
                for l, c in zip(seg_order, colors)]

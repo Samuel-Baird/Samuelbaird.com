@@ -29,7 +29,10 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from chart_style import LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
+from chart_style import (  # noqa: E402
+    LEGEND_ROW_HEIGHT, MIN, color_for_group, draw_caption_bottom, sort_groups,
+    split_title_qualifier,
+)
 
 # ---------------------------------------------------------------------------
 # House style tokens - see STYLE.md. Keep this block and STYLE.md in sync.
@@ -85,7 +88,8 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
     fixed guess - see STYLE.md's "Vertical layout" section."""
     title_fontsize = 26
     subtitle_fontsize = 13.5
-    title_lines = textwrap.wrap(title, width=27)
+    main_title, qualifier = split_title_qualifier(title)
+    title_lines = textwrap.wrap(main_title, width=27)
     line_spacing = title_fontsize / 650
     title_top = 0.965
     for i, line in enumerate(title_lines):
@@ -93,7 +97,15 @@ def _draw_title(fig, fonts, title: str, subtitle: str) -> float:
             0.065, title_top - i * line_spacing, line,
             fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
         )
-    subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
+    n_title_lines = len(title_lines)
+    if qualifier:
+        qualifier_fontsize = title_fontsize * 0.55
+        fig.text(
+            0.065, title_top - n_title_lines * line_spacing, qualifier,
+            fontproperties=fonts["title"], fontsize=qualifier_fontsize, color=INK, ha="left", va="top",
+        )
+        n_title_lines += qualifier_fontsize / title_fontsize
+    subtitle_y = title_top - n_title_lines * line_spacing - 0.015
     fig.text(
         0.065, subtitle_y, subtitle,
         fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
