@@ -461,14 +461,22 @@ change rather than per-file edits across ~60 callers; it also needed a
 title-wrap auto-shrink loop in `_draw_title` itself (see that file's STYLE.md)
 rather than the per-chart wrap-width overrides pew-rls/ryan-burge used, since
 15 of the pipeline's 63 charts overflowed the canvas at the new default wrap
-width — pipeline-wide, not a one-or-two-chart case. Pending:
-`scripts/state-of-theology-graphics/` — `chart_style.draw_caption_bottom`'s
-own default fontsize/color are deliberately left unchanged (still 11.5pt/
-`MUTED`) rather than bumped to match the other three pipelines' new values,
-since that one remaining pipeline still expects the old default until its
-own batch lands; each `scripts/pew-rls/*.py`, `scripts/ryan-burge/*.py`, and
-`scripts/flagship-charts/common.py` caption call now passes `fontsize=16,
-color=INK` explicitly instead.
+width — pipeline-wide, not a one-or-two-chart case. Also rolled out to
+`scripts/state-of-theology-graphics/` (2026-08-31, fourth and final batch —
+see that folder's `STYLE.md` for its own note): subtitle 15pt `MUTED` → 16pt
+`INK`, footnote via its one `draw_caption_bottom` call now passes
+`fontsize=16, color=INK` explicitly. That pipeline's title size was left
+alone — its existing 34pt (27pt long-statement fallback) already exceeds
+every other pipeline's new 32pt default, and its wrap/fallback logic is
+purpose-built for a variable-length quoted survey statement rather than the
+fixed-length titles the wrap-width fix elsewhere targeted.
+
+Every Data Explorer pipeline now carries all three treatments as its
+default. `chart_style.draw_caption_bottom`'s own shared default fontsize/
+color remain the original, deliberately-unbumped values (11.5pt/`MUTED`) —
+every pipeline instead passes `fontsize=16, color=INK` explicitly at its own
+call site(s), so the shared helper's default stays a conservative fallback
+for any future caller rather than a silently-changed sitewide value.
 
 ### Forms
 

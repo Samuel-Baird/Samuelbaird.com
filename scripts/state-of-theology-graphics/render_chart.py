@@ -126,6 +126,7 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     # its real top edge instead of a fixed guess.
     caption_top = draw_caption_bottom(
         fig, fonts, [], handle="@ithinkisam | data: State of Theology survey",
+        fontsize=16, color=INK,
     )
 
     bar_height = 0.62
@@ -181,7 +182,7 @@ def render(item: dict, out_path: Path, fonts: dict[str, fm.FontProperties]) -> N
     fig.text(
         0.065, subtitle_y,
         f"Share who strongly agree or somewhat agree, {year}",
-        fontproperties=fonts["regular"], fontsize=15, color=MUTED,
+        fontproperties=fonts["regular"], fontsize=16, color=INK,
         ha="left", va="top",
     )
 

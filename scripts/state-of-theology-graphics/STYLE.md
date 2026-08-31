@@ -236,7 +236,7 @@ sizes at this pipeline's canvas (1080×1350px, dpi 120, so 1pt ≈ 1.67px):
 | Heatmap cell values (bold) | 12.5pt |
 | Heatmap gradient-strip legend (min/mid/max) | 12pt |
 | **Bar-chart legend/key text** | **24pt** |
-| Footnotes/captions | exempt — 11.5pt as today |
+| Footnotes/captions | exempt — this pipeline renders them at 16pt/INK, see below |
 
 These floors live in [`scripts/chart_style.py`](../chart_style.py) as `MIN`.
 A render script may go bigger than a floor, never smaller. If content can't
@@ -263,6 +263,23 @@ rows never crowd (the group set is fixed), so no per-chart margin or row-
 height adjustment was needed to fit the larger label — `render_chart.py`'s
 existing `left=0.30` margin already had room. The outline uses the same
 `edgecolor=INK, linewidth=1.2` convention as the other pipelines' bars.
+
+**Site-wide default, not an override: subtitle and footnote render bigger
+and black.** Subtitle is `16pt`/`INK` (was `15pt`/`MUTED`); the footnote
+(the `@ithinkisam` handle line, via `draw_caption_bottom`) is `16pt`/`INK`
+(was `11.5pt`/`MUTED` — this pipeline now passes `fontsize=16, color=INK`
+explicitly at its one `draw_caption_bottom` call site rather than relying
+on that shared helper's own default, which stays untouched since it's
+shared infrastructure). This completes the same title/subtitle/footnote
+rollout already landed in pew-rls, ryan-burge, and flagship-charts — see
+`BRANDING_AND_DESIGN.md`'s "Charts" section. **Title size was left as-is**
+(`34pt`, falling back to `27pt` for a long statement) — it already exceeds
+every other pipeline's new `32pt` default, and this file's hand-tuned
+wrap-width/fallback logic (see the "Titles IS the survey statement"
+comment in `render_chart.py`) is specific to rendering a variable-length
+quoted survey statement, not the fixed-length chart titles the other
+pipelines' wrap-width fix targeted — no crowding or clipping was found
+after the subtitle/footnote change, so no layout adjustment was needed.
 
 A matplotlib gotcha this floor ran into: **`ax.legend(fontsize=..., prop=a_FontProperties_instance)` silently ignores `fontsize`** — whichever
 size (if any) is already baked into `prop` wins, and every render script's
