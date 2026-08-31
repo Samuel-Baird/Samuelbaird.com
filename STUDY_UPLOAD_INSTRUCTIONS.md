@@ -44,6 +44,19 @@ When the user uploads a study (PDF, link, or pasted text), Claude must **deeply 
 - A study with an `n < 30` presented as a population finding → flag.
 - A study with adequate methodology but narrow scope → **do not** flag; note scope in `limitations`.
 
+## Adding graphics to a study (optional, after upload)
+
+A study whose findings carry chartable numbers can get its own downloadable
+graphics, rendered in the Data Explorer PNG style and shown in a "Graphics"
+section on the study page. Follow `scripts/study-graphics/STYLE.md`:
+transcribe the numbers (with source citations) into
+`docs/study-data/<slug>/data.json`, render with a
+`scripts/study-graphics/<slug>/render_*.py` script, and register the PNGs
+in `src/lib/study-graphics.ts` (keyed by the study's slug — keep entries in
+sync if a slug is renamed). A study that duplicates an existing Data
+Explorer dataset gets a `dataExplorerSlug` cross-link instead of duplicate
+PNGs.
+
 ## Reference
 
 Schema: `supabase/migrations/0001_init.sql`, `0005_studies_sections.sql`, `0016_studies_source_type_and_seed.sql`.

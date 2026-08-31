@@ -1,0 +1,33 @@
+{
+  "study_slug": "byu-studies-63-4-religion-and-perfectionism",
+  "source_short_title": "Goodman, BYU Studies 63:4",
+  "sources": [
+    {
+      "id": "article",
+      "citation": "Michael A. Goodman, \"Religion and Perfectionism,\" BYU Studies Quarterly 63(4), 2024 - high-toxic-perfectionism group rates by religious affiliation, and the high- vs. low-perfectionism introjected-motivation split, from the Foundations longitudinal panel (2,000+ youth in Utah, Arizona, and California).",
+      "url": "https://byustudies.byu.edu/issue/63-4"
+    }
+  ],
+  "charts": {
+    "high-perfectionism-by-group": {
+      "source": "article",
+      "unit": "percent of each group in the high-toxic-perfectionism category",
+      "rows": [
+        { "label": "Former Latter-day Saint", "pct": 27 },
+        { "label": "Former other religion", "pct": 24 },
+        { "label": "Atheist/agnostic", "pct": 20 },
+        { "label": "Other Christian", "pct": 13 },
+        { "label": "Latter-day Saint", "pct": 12 },
+        { "label": "Other religion", "pct": 11 }
+      ]
+    },
+    "introjected-motivation": {
+      "source": "article",
+      "unit": "percent in the high-introjected-motivation (guilt/shame-driven religion) group",
+      "rows": [
+        { "label": "High-perfectionism youth", "pct": 66 },
+        { "label": "Low-perfectionism youth", "pct": 27 }
+      ]
+    }
+  }
+}

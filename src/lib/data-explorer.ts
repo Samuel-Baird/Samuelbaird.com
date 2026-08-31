@@ -1290,7 +1290,7 @@ const RAW_DATASETS: Dataset[] = [
  * as ignorable there, but curly/smart quotes (voter-survey-panel's one
  * “...”-quoted title) don't, and would otherwise sort before every plain
  * letter instead of alongside its neighbors. */
-function sortGraphicsAlphabetically(graphics: Graphic[]): Graphic[] {
+export function sortGraphicsAlphabetically(graphics: Graphic[]): Graphic[] {
   const sortKey = (title: string) => title.replace(/^[^\p{L}\p{N}]+/u, "");
   return [...graphics].sort((a, b) =>
     sortKey(a.title).localeCompare(sortKey(b.title), "en", { sensitivity: "base" }),

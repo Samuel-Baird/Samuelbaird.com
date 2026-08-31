@@ -1,0 +1,52 @@
+{
+  "study_slug": "pew-mormons-in-america-2012",
+  "source_short_title": "Pew, Mormons in America 2012",
+  "sources": [
+    {
+      "id": "exec-summary",
+      "citation": "Pew Research Center, \"Mormons in America: Certain in Their Beliefs, Uncertain of Their Place in Society,\" Jan. 12, 2012, executive summary - survey of 1,019 self-identified Mormon adults, fielded Oct. 25-Nov. 16, 2011.",
+      "url": "https://www.pewresearch.org/religion/2012/01/12/mormons-in-america-executive-summary/"
+    }
+  ],
+  "charts": {
+    "religious-practice": {
+      "source": "exec-summary",
+      "unit": "percent of self-identified U.S. Mormon adults",
+      "rows": [
+        { "label": "Pray daily", "pct": 83 },
+        { "label": "Say religion is very important", "pct": 82 },
+        { "label": "Attend services weekly", "pct": 77 },
+        { "label": "All three of the above", "pct": 69 }
+      ]
+    },
+    "mormons-vs-public": {
+      "source": "exec-summary",
+      "unit": "percent agreeing/reporting, Mormons vs. U.S. general public",
+      "rows": [
+        { "label": "Premarital sex is morally wrong", "mormon": 79, "public": 35 },
+        { "label": "Prefer a smaller government", "mormon": 75, "public": 48 },
+        { "label": "Currently married", "mormon": 67, "public": 52 },
+        { "label": "Homosexuality should be discouraged", "mormon": 65, "public": 33 },
+        { "label": "Satisfied with their own life", "mormon": 87, "public": 75 }
+      ]
+    },
+    "mission-service": {
+      "source": "exec-summary",
+      "unit": "percent who have served a full-time mission",
+      "rows": [
+        { "label": "Men", "pct": 43 },
+        { "label": "Women", "pct": 11 },
+        { "label": "All Mormons", "pct": 27 }
+      ]
+    },
+    "perceived-discrimination": {
+      "source": "exec-summary",
+      "unit": "percent of Mormons saying there is a lot of discrimination against each group",
+      "rows": [
+        { "label": "Mormons", "pct": 46 },
+        { "label": "Black Americans", "pct": 31 },
+        { "label": "Atheists", "pct": 13 }
+      ]
+    }
+  }
+}
