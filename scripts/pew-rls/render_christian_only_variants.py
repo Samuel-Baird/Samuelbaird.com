@@ -74,7 +74,7 @@ def main() -> None:
         box_edgecolor=practice_r.INK,
         left_margin=0.04, top_margin=0.978, right_edge=0.965, bottom_margin=0.018,
         subtitle_fontsize=16, subtitle_color=practice_r.INK,
-        caption_fontsize=13, caption_color=practice_r.INK,
+        caption_fontsize=16, caption_color=practice_r.INK,
     )
     practice_r.render_magnitude_bar(
         practice["attend_monthly_plus_either"], NARROW_ORDER,
