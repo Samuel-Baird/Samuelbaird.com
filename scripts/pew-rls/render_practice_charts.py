@@ -99,6 +99,7 @@ def _draw_title(
     fig, fonts, title: str, subtitle: str,
     title_fontsize: float = 26, title_wrap_width: int = 27,
     left_margin: float = 0.065, top_margin: float = 0.965,
+    subtitle_fontsize: float = 13.5, subtitle_color: str = MUTED,
 ) -> float:
     """Returns the y-fraction where the subtitle block actually ends, so
     the caller can size its axes to the real available band instead of a
@@ -118,7 +119,6 @@ def _draw_title(
     other chart in this pipeline; shrink them on a chart-by-chart basis to
     let that chart's content fill more of the canvas, same reasoning as
     title_wrap_width above."""
-    subtitle_fontsize = 13.5
     main_title, qualifier = split_title_qualifier(title)
     title_lines = textwrap.wrap(main_title, width=title_wrap_width)
     line_spacing = title_fontsize / 650
@@ -141,7 +141,7 @@ def _draw_title(
     subtitle_y = title_top - n_title_lines * line_spacing - 0.015
     fig.text(
         left_margin, subtitle_y, subtitle,
-        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=MUTED, ha="left", va="top",
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=subtitle_color, ha="left", va="top",
     )
     subtitle_lines = subtitle.count("\n") + 1
     subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
@@ -151,12 +151,14 @@ def _draw_title(
 def _draw_caption(
     fig, fonts, total_n: int, note: str,
     left_margin: float = 0.065, bottom_margin: float = 0.030,
+    caption_fontsize: float = 11.5, caption_color: str = MUTED,
 ) -> float:
     """Bottom-anchored caption - see STYLE.md's "Footnotes: bottom-anchored"
     section. Returns caption_top for the vertical-centering contract."""
     return draw_caption_bottom(
         fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
         left=left_margin, bottom=bottom_margin,
+        fontsize=caption_fontsize, color=caption_color,
     )
 
 
@@ -196,7 +198,7 @@ def render_magnitude_bar(
 
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.AXIS_LABEL if n_rows > 8 else 14)
+        tick_label.set_fontsize(MIN.LEGEND)
         tick_label.set_color(INK)
 
     for g, v, c in zip(rows, values, colors):
@@ -214,9 +216,11 @@ def render_distribution_stack(
     note: str, total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
     group_label_fontsize: float | None = None,
     title_fontsize: float = 26, title_wrap_width: int = 27,
-    box_edgecolor: str = PAPER,
+    box_edgecolor: str = INK,
     left_margin: float = 0.065, top_margin: float = 0.965,
     right_edge: float = 0.94, bottom_margin: float = 0.030,
+    subtitle_fontsize: float = 13.5, subtitle_color: str = MUTED,
+    caption_fontsize: float = 11.5, caption_color: str = MUTED,
 ) -> None:
     """left_margin/top_margin/right_edge/bottom_margin are the outer-edge
     canvas buffers (figure-fraction) - see _draw_title's docstring. Shrink
@@ -231,8 +235,11 @@ def render_distribution_stack(
     # is drawn first (bottom-anchored) so its real top edge is known.
     subtitle_bottom = _draw_title(
         fig, fonts, title, subtitle, title_fontsize, title_wrap_width, left_margin, top_margin,
+        subtitle_fontsize, subtitle_color,
     )
-    caption_top = _draw_caption(fig, fonts, total_n, note, left_margin, bottom_margin)
+    caption_top = _draw_caption(
+        fig, fonts, total_n, note, left_margin, bottom_margin, caption_fontsize, caption_color,
+    )
     ax_top = subtitle_bottom - 0.03
 
     n_rows = len(group_order)
@@ -280,7 +287,7 @@ def render_distribution_stack(
     ax.set_xlim(0, 100)
     ax.margins(y=0.06 if n_rows > 8 else 0.11)
     resolved_label_fontsize = group_label_fontsize if group_label_fontsize is not None \
-        else (MIN.AXIS_LABEL if n_rows > 8 else 14)
+        else MIN.LEGEND
     for tick_label, g in zip(ax.get_yticklabels(), rows):
         tick_label.set_fontproperties(fonts["bold"])
         tick_label.set_fontsize(resolved_label_fontsize)
