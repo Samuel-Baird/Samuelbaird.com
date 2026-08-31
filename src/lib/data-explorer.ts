@@ -89,6 +89,9 @@ import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015
 import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
 import womenLeadersData from "../../docs/datasets/pew-black-faith-2021/women-leaders.json";
+import convertDutyData from "../../docs/datasets/pew-black-faith-2021/convert-duty.json";
+import godRespondsData from "../../docs/datasets/pew-black-faith-2021/god-responds.json";
+import turnedToChurchForHelpData from "../../docs/datasets/pew-black-faith-2021/turned-to-church-for-help.json";
 import religiousNationalIdentityData from "../../docs/datasets/pew-eastern-europe-2015/religious-national-identity.json";
 import pewGlobalRestrictionsGriData from "../../docs/datasets/pew-global-restrictions-religion/gri-trend.json";
 import christianNeighborAcceptanceData from "../../docs/datasets/pew-india-2021/christian-neighbor-acceptance.json";
@@ -968,7 +971,12 @@ const RAW_DATASETS: Dataset[] = [
       "Pew Research Center. \"Faith Among Black Americans,\" published Feb. 16, 2021 (survey fielded " +
       "Nov. 19, 2019-June 3, 2020).",
     sourceUrl: "https://www.pewresearch.org/religion/2021/02/16/faith-among-black-americans/",
-    graphics: [womenLeadersGraphic()],
+    graphics: [
+      womenLeadersGraphic(),
+      convertDutyGraphic(),
+      godRespondsGraphic(),
+      turnedToChurchForHelpGraphic(),
+    ],
   },
   {
     slug: "pew-eastern-europe-2015",
@@ -2184,6 +2192,48 @@ function womenLeadersGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-black-faith-2021/women-leaders.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Black Americans saying women should be allowed to serve as a congregation's senior religious leader, by religion. ${alt}.`,
+  };
+}
+
+function convertDutyGraphic(): Graphic {
+  const { group_order: order, believes_duty_to_convert: results } = convertDutyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "A duty to convert nonbelievers?",
+    description: "Share of Black Americans who believe people of faith have a religious duty to try to convert nonbelievers, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/convert-duty.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans who believe people of faith have a religious duty to try to convert nonbelievers, by religion. ${alt}.`,
+  };
+}
+
+function godRespondsGraphic(): Graphic {
+  const { group_order: order, god_talks_directly: results } = godRespondsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Does God talk directly with you?",
+    description: "Share of Black Americans who say God ever talks directly with them, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/god-responds.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans who say God ever talks directly with them, by religion. ${alt}.`,
+  };
+}
+
+function turnedToChurchForHelpGraphic(): Graphic {
+  const { group_order: order, turned_to_congregation_for_help: results } = turnedToChurchForHelpData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Turning to church for help",
+    description: "Share of Black Americans who have ever turned to their congregation for help with bills, housing, or food, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/turned-to-church-for-help.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans who have ever turned to their congregation for help with bills, housing, or food, by religion. ${alt}.`,
   };
 }
 
