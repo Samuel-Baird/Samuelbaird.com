@@ -75,6 +75,7 @@ import viewOfGod2014Data from "../../docs/datasets/pew-rls-2014/view-of-god.json
 import eternalLifeNonChristianData from "../../docs/datasets/pew-rls-2014/eternal-life-non-christian.json";
 import bornAgainIdentityData from "../../docs/datasets/pew-rls-2014/born-again-identity.json";
 import familyScripturePrayerData from "../../docs/datasets/pew-rls-2014/family-scripture-prayer.json";
+import sundaySchoolChildrenData from "../../docs/datasets/pew-rls-2014/sunday-school-children.json";
 import scriptureWordOfGodData from "../../docs/datasets/pew-rls-2014/scripture-word-of-god.json";
 import volunteerThroughChurchData from "../../docs/datasets/pew-rls-2014/volunteer-through-church.json";
 import preserveTraditionalBeliefsData from "../../docs/datasets/pew-rls-2014/preserve-traditional-beliefs.json";
@@ -808,6 +809,7 @@ const RAW_DATASETS: Dataset[] = [
       eternalLifeNonChristianGraphic(),
       bornAgainIdentityGraphic(),
       familyScripturePrayerGraphic(),
+      sundaySchoolChildrenGraphic(),
       scriptureWordOfGodGraphic(),
       volunteerThroughChurchGraphic(),
       preserveTraditionalBeliefsGraphic(),
@@ -2025,6 +2027,20 @@ function familyScripturePrayerGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/family-scripture-prayer.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of parents who pray or read Scripture with their children, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function sundaySchoolChildrenGraphic(): Graphic {
+  const { group_order: order, sends_children_to_sunday_school: results } = sundaySchoolChildrenData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Sending kids to Sunday school",
+    description: "Share of parents who send their child(ren) to Sunday school or another religious education program, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/sunday-school-children.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of parents who send their children to Sunday school or another religious education program, by religious tradition, 2014. ${alt}.`,
   };
 }
 

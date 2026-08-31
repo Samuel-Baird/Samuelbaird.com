@@ -594,3 +594,96 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   duplicative of already-shipped items, weak-fit, or unchecked pending a
   future pass — this pass built exactly the one defensible chart the
   remaining battery supported rather than forcing a full batch.
+
+- **pew-rls-2023-24** (2023-24 Religious Landscape Study) — backfill entry,
+  2026-08-31: heavily charted across many prior sessions but never logged
+  here. Already has 20+ shipped graphics spanning
+  `switching-generalized.json` (retention/switching), `birth-decade-
+  distribution.json`, `childhood-formation.json` (CHATTEND/CHIMPREL/
+  CHEDU2), `family-household.json`, `practice.json` (attendance/prayer/
+  membership/Bible-importance batteries, by both the full RELTRAD-style
+  frame and a generalized group set), `beliefs.json` (soul/heaven/hell/
+  evolution), `spiritual-experience.json`, `public-life.json`, two
+  `holiday-batch*.json` files, and `stay-home-parent-gender.json`. This
+  dataset has its own `docs/datasets/pew-rls-2023-24/GRAPHICS_TODO.md`
+  work-queue file — checked directly: its Pending section is empty of
+  buildable items, only a "Blocked" list of five ideas confirmed to have
+  no matching variable in the public-use file (denomination-level
+  detail, "absolutely clear standards of right and wrong," "moral
+  without believing in God," favorability toward other groups, "religion
+  and science are compatible" — all checked against the actual 654-
+  variable codebook, not assumed). Consider this dataset fully mined;
+  any future pass should re-check the codebook directly rather than
+  trust this note growing stale, but as of this backfill there is
+  nothing queued.
+
+- **ryan-burge** (curated LDS-relevant extracts from Ryan Burge's public
+  GitHub repos: CCES 2016, CES stacked 2006-2018, VOTER Survey Panel,
+  US Religion Census 2010 county file, plus thin tier-2 files) —
+  backfill entry, 2026-08-31: heavily charted across many prior sessions
+  but never logged here. Already has 20+ shipped graphics: CCES-2016-by-
+  religion (8 charts: immigration select-all battery, abortion, same-sex
+  marriage, attendance distribution), pid-by-gender and pid-over-time
+  (CES stacked), and the full 23-graphic VOTER Survey Panel set (stranger-
+  in-my-own-country, feeling-thermometer matrices, issue importance, and
+  all 20 ideas from `docs/datasets/ryan-burge/VOTER_PANEL_IDEAS.md` —
+  retention, religiosity trajectory, vote-switching, vote regret, trust in
+  government, child-rearing values, sexism/Muslim-distrust/immigration/
+  trade/promises/media/orgs/volunteering/pride heatmaps, military
+  household rate, populist distrust, gay-marriage shift). This dataset's
+  own `docs/datasets/ryan-burge/GRAPHICS_TODO.md` work-queue file's
+  Pending section is explicitly empty — "every item that was queued here
+  has shipped" — and it directly instructs against pulling more variables
+  from the 867-variable VOTER Survey Panel without being asked. The only
+  genuinely untouched material is the tier-1 `us_religion_census_2010_
+  county.DTA` aggregate file (county-level LDS congregation/adherent
+  counts, not survey microdata — a different chart shape than this
+  project's per-respondent bars) and several tier-2 small-n files
+  (Faith Matters 2006/2011 at n=49-53, ANES 2016 at n=52, GSS 2016 at
+  n=23-31) flagged in the dataset's own `INVENTORY.md` as underpowered
+  alone. Consider this dataset fully mined for now.
+
+- **state-of-theology** (Ligonier/LifeWay State of Theology survey,
+  2022/2025 waves, via the evangelical-quiz belief-modeling pipeline) —
+  backfill entry, 2026-08-31: unlike every other dataset in this log,
+  this one is charted automatically by construction —
+  `stateOfTheologyGraphics()` in `src/lib/data-explorer.ts` maps over
+  every item in `src/lib/evangelical-quiz/data.json` (`QUIZ_DATA.items`)
+  and produces one graphic per item, reading its own `pending_items`
+  field (confirmed empty, 0 items) for anything not yet modeled. Checked
+  directly: `data.json` currently has 36 items and
+  `public/data-explorer/state-of-theology/` has exactly 36 PNGs — full
+  1:1 coverage, nothing to backfill. Any future expansion of this
+  dataset means adding new items to the quiz's own belief-modeling
+  pipeline (`scripts/evangelical-quiz/build_data.py`), not building a
+  standalone Data Explorer chart — a different, heavier kind of work than
+  this log otherwise tracks. Consider this dataset fully mined as a
+  Data Explorer target.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — fifth chart,
+  2026-08-31: housekeeping pass on pew-rls-2023-24/ryan-burge/state-of-
+  theology (see the three backfill entries above) found no defensible
+  untouched item in any of the three — pew-rls-2023-24 and ryan-burge
+  both have their own GRAPHICS_TODO.md files with empty Pending sections,
+  and state-of-theology is auto-generated with 1:1 item-to-chart
+  coverage already. Fell back to this dataset's own remaining-battery
+  list from prior passes: `qk10b` (send child(ren) to Sunday school or
+  another religious education program), the untouched sibling of the
+  already-shipped `qk10a` "pray or read Scripture with your kids" chart
+  from the same battery. 86.8% of Mormon parents send their kids to
+  Sunday school/religious ed, highest of any of the 12 RELTRAD groups by
+  a wide margin (2nd-place Evangelical Protestant 77.0%), n=242 valid —
+  comfortably above the 30-respondent floor. Maps directly onto the
+  Church's Primary program (ages 3-11) and youth Sunday School classes, a
+  distinct formal-religious-education construct from qk10a's family-
+  devotional framing, so not a duplicate despite sharing a battery.
+  Computed by `scripts/pew-rls-2014/sunday_school_children.py` →
+  `docs/datasets/pew-rls-2014/sunday-school-children.json`, rendered by
+  `scripts/pew-rls-2014/render_sunday_school_children_chart.py` →
+  `public/data-explorer/pew-rls-2014/sunday-school-children.png` (12
+  RELTRAD rows + "All parents," checked by reading the PNG directly — no
+  label collision). Wired into `src/lib/data-explorer.ts`
+  (`sundaySchoolChildrenGraphic()`). Remaining untouched candidates from
+  prior passes' notes: qk10c (religious homeschooling — likely a much
+  thinner Mormon N given how rare it is), qk10d (volunteer work with
+  kids — weaker doctrinal tie), qm5a/b/d, qi2t/qi2u.
