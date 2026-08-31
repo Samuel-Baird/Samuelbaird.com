@@ -1,8 +1,11 @@
 import {
+  type GalleryGraphic,
   type Graphic,
+  deriveTraditions,
   graphicId,
   sortGraphicsAlphabetically,
 } from "@/lib/data-explorer";
+import type { Study } from "@/lib/types";
 import churchNewsStateGrowthData from "../../docs/study-data/church-news-us-membership-growth-by-state-2000-2025/data.json";
 import pewMormonsInAmericaData from "../../docs/study-data/pew-mormons-in-america-2012/data.json";
 import religionPerfectionismData from "../../docs/study-data/byu-studies-63-4-religion-and-perfectionism/data.json";
@@ -239,4 +242,36 @@ export function getStudyGraphics(studySlug: string): StudyGraphicsEntry | undefi
 
 export function getStudyGraphic(studySlug: string, id: string): Graphic | undefined {
   return getStudyGraphics(studySlug)?.graphics.find((g) => graphicId(g) === id);
+}
+
+/** Study slugs with graphics of their own - excludes the link-only entries
+ * above whose `dataExplorerSlug` already points readers at an existing
+ * dataset folder instead. This is the set that should surface as its own
+ * folder in the Data Explorer and its own rows in the site-wide gallery -
+ * never an empty folder for a study with nothing to show. */
+export function getStudyFolderSlugs(): string[] {
+  return STUDY_GRAPHICS.filter((e) => e.graphics.length > 0).map((e) => e.studySlug);
+}
+
+/** Every study-with-its-own-graphics, flattened into the same shape
+ * data-explorer.ts's getAllGraphics() produces, for folding into the
+ * site-wide gallery at /data-explorer/gallery. Takes the actual Study rows
+ * (fetched from the database by the caller, since this file has to stay
+ * synchronous like data-explorer.ts) rather than fetching them itself. */
+export function getAllStudyGraphics(
+  studies: Pick<Study, "slug" | "title" | "year">[],
+): GalleryGraphic[] {
+  const bySlug = new Map(studies.map((s) => [s.slug, s]));
+  return STUDY_GRAPHICS.flatMap((entry) => {
+    const study = bySlug.get(entry.studySlug);
+    if (!study || entry.graphics.length === 0) return [];
+    return entry.graphics.map((g) => ({
+      ...g,
+      datasetSlug: study.slug,
+      datasetName: study.title,
+      fieldedPeriod: study.year ? String(study.year) : "—",
+      traditions: deriveTraditions(g),
+      href: `/studies/${study.slug}/graphics/${graphicId(g)}`,
+    }));
+  });
 }

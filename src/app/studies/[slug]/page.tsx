@@ -9,10 +9,8 @@ const SOURCE_TYPE_LABELS: Record<string, { label: string; ink: TagInk }> = {
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Download } from "lucide-react";
+import { ArrowRight, BarChart3 } from "lucide-react";
 import { BookmarkButton } from "@/components/bookmark-button";
-import { GraphicShareButton } from "@/components/data-explorer/graphic-share-button";
-import { graphicId } from "@/lib/data-explorer";
 import { getStudyGraphics } from "@/lib/study-graphics";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CitationCopy } from "@/components/citation-copy";
@@ -230,58 +228,40 @@ export default async function StudyDetailPage({
       )}
 
       {graphicsEntry && graphicsEntry.graphics.length > 0 && (
-        <section className="mt-12">
-          <h2 className="small-caps text-xs font-medium text-[color:var(--accent)]">
+        <Link
+          href={`/studies/${study.slug}/graphics`}
+          className="group mt-12 block rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 no-underline transition-colors hover:border-[color:var(--accent)] sm:p-7"
+        >
+          <span className="small-caps inline-flex items-center gap-1.5 text-[11px] font-medium text-[color:var(--honey)]">
+            <BarChart3 aria-hidden="true" size={13} />
             Graphics
+          </span>
+          <h2 className="serif mt-2 text-2xl font-semibold tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+            {graphicsEntry.graphics.length}{" "}
+            {graphicsEntry.graphics.length === 1 ? "graphic" : "graphics"}
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
-            Charts made from this study&rsquo;s data. Free to download and share
-            — credit appears on each image.
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
+            Charts made from this study&rsquo;s data. Free to download and share — credit
+            appears on each image.
           </p>
-          <div className="mt-5 grid gap-5 sm:grid-cols-2">
-            {graphicsEntry.graphics.map((graphic) => {
-              const id = graphicId(graphic);
-              const graphicHref = `/studies/${study.slug}/graphics/${id}`;
-              return (
-                <figure
-                  key={id}
-                  className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4"
-                >
-                  <Link
-                    href={graphicHref}
-                    className="block overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
-                  >
-                    <Image
-                      src={graphic.imageSrc}
-                      alt={graphic.alt}
-                      width={graphic.width}
-                      height={graphic.height}
-                      className="h-auto w-full"
-                    />
-                  </Link>
-                  <figcaption className="mt-3">
-                    <h3 className="serif text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)]">
-                      <Link href={graphicHref} className="hover:underline">
-                        {graphic.title}
-                      </Link>
-                    </h3>
-                    <div className="mt-2.5 flex items-center justify-end gap-2">
-                      <GraphicShareButton path={graphicHref} title={graphic.title} />
-                      <a
-                        href={graphic.imageSrc}
-                        download
-                        className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius)] border border-[color:var(--border)] px-3 text-xs font-medium hover:bg-[color:var(--muted-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)]"
-                      >
-                        <Download aria-hidden="true" size={13} />
-                        Download
-                      </a>
-                    </div>
-                  </figcaption>
-                </figure>
-              );
-            })}
+          <div className="mt-4 w-40 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
+            <Image
+              src={graphicsEntry.graphics[0].imageSrc}
+              alt={graphicsEntry.graphics[0].alt}
+              width={graphicsEntry.graphics[0].width}
+              height={graphicsEntry.graphics[0].height}
+              className="h-auto w-full"
+            />
           </div>
-        </section>
+          <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)]">
+            View all graphics
+            <ArrowRight
+              aria-hidden="true"
+              size={13}
+              className="transition-transform group-hover:translate-x-0.5"
+            />
+          </span>
+        </Link>
       )}
 
       {graphicsEntry?.dataExplorerSlug && (

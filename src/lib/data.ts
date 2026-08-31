@@ -740,6 +740,21 @@ export const getStudyBySlug = unstable_cache(
   { tags: ["studies"], revalidate: 3600 },
 );
 
+/** Batch lookup by slug — used to join a static registry (e.g.
+ * study-graphics.ts's STUDY_GRAPHICS) against the studies that actually
+ * exist in the database, for surfacing them as Data Explorer folders. */
+export const getStudiesBySlugs = unstable_cache(
+  async (slugs: string[]): Promise<Study[]> => {
+    if (slugs.length === 0) return [];
+    const sb = publicClient();
+    const { data, error } = await sb.from("studies").select("*").in("slug", slugs);
+    if (error) throw error;
+    return (data ?? []) as Study[];
+  },
+  ["studies-by-slugs"],
+  { tags: ["studies"], revalidate: 3600 },
+);
+
 export const getSiteStats = cache(
   unstable_cache(
     async (): Promise<SiteStats | null> => {
