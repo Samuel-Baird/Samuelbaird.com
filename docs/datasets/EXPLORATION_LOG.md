@@ -364,3 +364,37 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   religion — likely near-duplicates of items already shipped elsewhere
   from other datasets, check first) are the only remaining candidates
   with a plausible religion breakout.
+
+- **pew-mormon-survey-2011** (2011 National Survey of Mormons) — 2026-08-31:
+  had 9 charts, all previously mined but never logged here. Added 3 more
+  this pass, following the dataset's existing by-activity-level (q406)
+  chart convention (tithing, ordination, food storage) since this survey
+  interviewed Mormons only, with no other-tradition comparison group —
+  `book-of-mormon-origin-by-activity.json` (92% of Mormons overall say
+  the Book of Mormon was written by ancient prophets and translated by
+  Joseph Smith rather than written by Joseph Smith himself, from q408,
+  ranging 56%→98% by activity level; checked against overlap with the
+  shipped pew-religious-knowledge-2010 `book-of-mormon-knowledge` chart —
+  distinct construct, that one is a factual-knowledge quiz item, not a
+  belief item, and asked of the general public not Mormons themselves),
+  `temple-recommend-by-activity.json` (66% of Mormons overall hold a
+  current temple recommend, from q419, ranging 2%→90% by activity level
+  — the Church's own worthiness-interview gate for temple worship, a
+  sharper engagement marker than attendance or activity self-report
+  alone), and `daily-prayer-by-activity.json` (84% of Mormons overall
+  pray at least once a day outside of religious services, from q412,
+  ranging 38%→96% by activity level; checked against the shipped
+  pew-rls-2007 `daily-prayer` chart — distinct construct, that one is a
+  cross-tradition RELTRAD breakout of the general population, this one
+  is an activity-level breakout within Mormons only). All three at
+  n=1,006-1,011 total respondents, comfortably clearing the floor at
+  every activity level (smallest cell: 46 "not at all active"). Wave's
+  remaining untouched battery worth checking for a future pass: q409c
+  (belief the LDS/Mormon Church president is a prophet of God — a
+  natural sibling to this pass's core_beliefs.py trio), q421a-d (how
+  similar own religion is seen to Catholic/Evangelical/Jewish/Muslim
+  faiths — more a social-distance item than a belief/practice one, check
+  fit first), and q303-q311 (perceived societal acceptance/political
+  friendliness toward Mormons — check for overlap with the already-
+  shipped `president_readiness_by_party` chart, which likely already
+  covers q311, before using q303-q310).
