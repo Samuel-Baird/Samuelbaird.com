@@ -189,13 +189,13 @@ make <- function(k) {
   ggsave(file.path(OUT, it$file), p, device = ragg::agg_png,
          width = 9, height = 11.25, dpi = 120, bg = paper)
 }
-card <- function(file, title, body) {
+card <- function(file, title, body, caption_override = NULL) {
   p <- ggplot() +
     geom_richtext(aes(x = 0, y = 1, label = body), hjust = 0, vjust = 1,
                   family = "Roboto Condensed", lineheight = 1.5,
                   fill = NA, label.colour = NA, label.padding = unit(0, "pt")) +
     scale_x_continuous(limits = c(0,1)) + scale_y_continuous(limits = c(0,1)) +
-    labs(title = title, caption = SRC) +
+    labs(title = title, caption = if (is.null(caption_override)) SRC else caption_override) +
     theme_void(base_family = "Roboto Condensed") +
     theme(plot.background = element_rect(fill = paper, colour = NA),
           plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 48,
@@ -217,21 +217,24 @@ card("0_intro.png", "Evangelicals won", paste0(
   "the strongest in the country.",
   "</span>"))
 
-card("11_closing.png", "Still the beam", paste0(
-  "<span style='font-size:26pt;color:", ink, "'>",
+card("11_closing.png", paste0(
+  "<span style='font-size:52pt'>Still the beam</span>"), paste0(
+  "<span style='font-size:30pt;color:", ink, "'>",
   "Across the four Christian traditions here:<br><br>",
   "<b>89&#8211;95%</b> confess the Trinity.<br>",
   "<b style='color:", wine, "'>61&#8211;78%</b> say Jesus was created.<br>",
   "<b style='color:", wine, "'>52&#8211;73%</b> say the Spirit is not a person.<br>",
   "<b style='color:", wine, "'>34&#8211;55%</b> say Jesus was not God.",
   "</span><br><br><br>",
-  "<span style='font-size:19pt;color:", muted, "'>",
-  "Last week the numbers made evangelicals look bad. This week<br>",
-  "they&#8217;re the best in the country, and it still isn&#8217;t good.<br><br>",
-  "The tradition with the strictest catechism and the tradition with<br>",
-  "none at all fail the same way. No one in this survey is positioned<br>",
-  "to correct anyone else before working on themselves.",
-  "</span>"))
+  "<span style='font-size:22pt;color:", ink, "'>",
+  "Last week the numbers made evangelicals look bad. This<br>",
+  "week they&#8217;re the best in the country, and it still isn&#8217;t good.<br><br>",
+  "The tradition with the strictest catechism and the<br>",
+  "tradition with none at all fail the same way. No one in<br>",
+  "this survey is positioned to correct anyone else before<br>",
+  "working on themselves.",
+  "</span>"),
+  caption_override = paste0("<span style='font-size:13pt;color:", ink, "'>", SRC, "</span>"))
 
 invisible(lapply(names(items), make))
 cat("done\n")
