@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, BarChart3, ClipboardList } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, ClipboardList, Share2 } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
 import { DATASETS, getDataset } from "@/lib/data-explorer";
@@ -127,6 +127,44 @@ export default async function DatasetPage({
                 />
               </span>
             </Link>
+          )}
+
+          {dataset.socialSets && dataset.socialSets.length > 0 && (
+            <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-6 sm:p-7">
+              <span className="small-caps inline-flex items-center gap-1.5 text-[11px] font-medium text-[color:var(--honey)]">
+                <Share2 aria-hidden="true" size={13} />
+                Social media posts
+              </span>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
+                Instagram carousels made from this dataset, with their own editorial
+                titles and a slightly different visual treatment from the graphics above.
+              </p>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                {dataset.socialSets.map((set) => (
+                  <Link
+                    key={set.href}
+                    href={set.href}
+                    className="group block rounded-[var(--radius)] border border-[color:var(--border)] p-4 no-underline transition-colors hover:border-[color:var(--accent)]"
+                  >
+                    <div className="w-28 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
+                      <Image
+                        src={set.previewSrc}
+                        alt=""
+                        width={set.previewWidth}
+                        height={set.previewHeight}
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <h3 className="serif mt-3 text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+                      {set.title}
+                    </h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-[color:var(--muted)]">
+                      {set.count} slides
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
           )}
         </div>
 

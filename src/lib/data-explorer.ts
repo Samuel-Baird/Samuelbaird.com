@@ -241,6 +241,10 @@ export type Dataset = {
   shortDescription: string;
   sponsor: string;
   fielder: string;
+  /** The survey's own fielding period, in the source's own words — e.g.
+   * "2011", "2023-24", "2000-2025". Free text, used as the gallery's date
+   * filter facet; not parsed for chronological sorting. */
+  fieldedPeriod: string;
   /** A paragraph or two, for the dataset's own page. */
   description: string;
   selfDescription?: SelfDescription;
@@ -1218,6 +1222,7 @@ const RAW_DATASETS: Dataset[] = [
       "A 2006 Pew survey of U.S. Latino adults focused on religious switching, with a small Mormon breakout.",
     sponsor: "Pew Research Center",
     fielder: "Pew Hispanic Center and Pew Forum on Religion & Public Life",
+    fieldedPeriod: "2006",
     description:
       "A telephone survey of 4,016 U.S. Hispanic adults, conducted August 10-October 4, 2006, " +
       "in English and Spanish. It deliberately oversampled 2,000 non-Catholic respondents to " +
@@ -2613,6 +2618,64 @@ for (const d of DATASETS) {
     }
     seenIds.add(id);
   }
+}
+
+/** GROUP_COLORS keys from scripts/chart_style.py, plus common alias phrases
+ * (from that file's GROUP_ALIASES) that graphic title/alt text uses instead
+ * of the canonical name - e.g. Ryan Burge's CCES graphics say "Mormon", not
+ * "Latter-day Saint". Keep in sync with chart_style.py when either changes. */
+const TRADITION_MATCHERS: { canonical: string; phrases: string[] }[] = [
+  { canonical: "Latter-day Saint", phrases: ["Latter-day Saint", "Mormon"] },
+  { canonical: "Catholic", phrases: ["Catholic"] },
+  { canonical: "Protestant", phrases: ["Protestant"] },
+  { canonical: "Orthodox Christian", phrases: ["Orthodox Christian", "Orthodox"] },
+  { canonical: "Jehovah's Witness", phrases: ["Jehovah's Witness"] },
+  { canonical: "Muslim", phrases: ["Muslim"] },
+  { canonical: "Hindu", phrases: ["Hindu"] },
+  { canonical: "Buddhist", phrases: ["Buddhist"] },
+  { canonical: "Jewish", phrases: ["Jewish"] },
+  { canonical: "Religiously unaffiliated", phrases: ["Religiously unaffiliated", "Unaffiliated", "religious \"nones\"", "the nones"] },
+  { canonical: "Evangelical Protestant", phrases: ["Evangelical Protestant", "Evangelical"] },
+  { canonical: "Mainline Protestant", phrases: ["Mainline Protestant", "Mainline"] },
+  { canonical: "Historically Black Protestant", phrases: ["Historically Black Protestant"] },
+  { canonical: "Agnostic", phrases: ["Agnostic"] },
+  { canonical: "Atheist", phrases: ["Atheist"] },
+  { canonical: "Nothing in particular", phrases: ["Nothing in particular"] },
+  { canonical: "Southern Baptist", phrases: ["Southern Baptist"] },
+  { canonical: "United Methodist", phrases: ["United Methodist"] },
+];
+
+/** Derives which religious traditions a graphic breaks its data out by, via
+ * a keyword pass over its title/alt text against TRADITION_MATCHERS - gives
+ * every existing graphic retroactive coverage for the gallery's tradition
+ * filter without hand-tagging 195 entries. Order follows TRADITION_MATCHERS,
+ * not order of appearance in the text. */
+export function deriveTraditions(graphic: Graphic): string[] {
+  const haystack = `${graphic.title} ${graphic.alt}`;
+  return TRADITION_MATCHERS.filter((m) =>
+    m.phrases.some((phrase) => haystack.includes(phrase)),
+  ).map((m) => m.canonical);
+}
+
+export type GalleryGraphic = Graphic & {
+  datasetSlug: string;
+  datasetName: string;
+  fieldedPeriod: string;
+  traditions: string[];
+};
+
+/** Every graphic across every dataset, flattened for the public gallery at
+ * /data-explorer/gallery. */
+export function getAllGraphics(): GalleryGraphic[] {
+  return DATASETS.flatMap((d) =>
+    d.graphics.map((g) => ({
+      ...g,
+      datasetSlug: d.slug,
+      datasetName: d.name,
+      fieldedPeriod: d.fieldedPeriod,
+      traditions: deriveTraditions(g),
+    })),
+  );
 }
 
 /** Kebab-cases a category label (e.g. "Mixed Datasets" -> "mixed-datasets")
