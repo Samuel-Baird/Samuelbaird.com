@@ -147,6 +147,21 @@ function perfectionismByGroupGraphic(): Graphic {
   };
 }
 
+function lowPerfectionismByGroupGraphic(): Graphic {
+  const { rows } = religionPerfectionismData.charts["low-perfectionism-by-group"];
+  const alt = rows.map((r) => `${r.label} ${r.pct}%`).join(", ");
+  return {
+    title: "Low toxic perfectionism, by religious group",
+    description:
+      "Share of youth in the low-toxic-perfectionism category by religious affiliation, from the Foundations longitudinal panel (Utah, Arizona, California).",
+    imageSrc:
+      "/study-graphics/byu-studies-63-4-religion-and-perfectionism/low-perfectionism-by-group.png",
+    width: 1080,
+    height: 1350,
+    alt: `Bar chart: share of youth in the low-toxic-perfectionism category, by religious group. ${alt}.`,
+  };
+}
+
 function perfectionismDistributionByGroupGraphic(): Graphic {
   const { rows, segments } = religionPerfectionismData.charts[
     "perfectionism-distribution-by-group"
@@ -240,6 +255,7 @@ const RAW_STUDY_GRAPHICS: StudyGraphicsEntry[] = [
     studySlug: "byu-studies-63-4-religion-and-perfectionism",
     graphics: [
       perfectionismByGroupGraphic(),
+      lowPerfectionismByGroupGraphic(),
       perfectionismDistributionByGroupGraphic(),
       introjectedMotivationGraphic(),
     ],

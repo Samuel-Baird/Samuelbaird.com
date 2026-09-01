@@ -1,6 +1,6 @@
-"""Renders the three study graphics for Goodman's "Religion and
-Perfectionism" (BYU Studies Quarterly 63:4, 2024) - a high-toxic-
-perfectionism-by-religious-group magnitude bar, the same study's full
+"""Renders the four study graphics for Goodman's "Religion and
+Perfectionism" (BYU Studies Quarterly 63:4, 2024) - high- and low-toxic-
+perfectionism-by-religious-group magnitude bars, the same study's full
 Low-through-High perfectionism-distribution stack (its Figure 1), and a
 high- vs. low-perfectionism introjected-motivation bar.
 
@@ -80,6 +80,20 @@ def main() -> None:
         fonts=fonts,
     )
 
+    low_groups = {r["label"]: r["pct"] for r in DATA["charts"]["low-perfectionism-by-group"]["rows"]}
+    render_magnitude_bar(
+        rows=sort_groups(list(low_groups), lambda label: low_groups[label]),
+        values=low_groups,
+        highlight_rows=None,
+        row_colors=ROW_COLORS,
+        title="Low toxic perfectionism, by religious group",
+        subtitle="Share of youth in the low-toxic-perfectionism category,\nFoundations panel (Utah, Arizona, California)",
+        caption_paragraphs=[],
+        handle=HANDLE,
+        out_path=OUT_DIR / "low-perfectionism-by-group.png",
+        fonts=fonts,
+    )
+
     # Segment colors for the full Low-through-High distribution stack
     # (Figure 1 in the source article). A caller-chosen ordinal ramp, not
     # religious-group identity colors (segments are perfectionism bands,
@@ -98,7 +112,12 @@ def main() -> None:
     }
     SEGMENT_TEXT_COLORS = {seg: "#FFFFFF" for seg in segment_order}
     render_ordinal_stack(
-        rows=sort_groups(list(dist), lambda label: dist[label]["High"]),
+        # Ordered by "Low" descending, not this pipeline's usual
+        # sort_groups (which pins "Other X" catch-alls to the bottom
+        # regardless of value) - a specific, requested reading of this
+        # chart as one continuous ranking from Latter-day Saint's 29% low-
+        # perfectionism rate down to Former Latter-day Saint's 12%.
+        rows=sorted(dist, key=lambda label: -dist[label]["Low"]),
         segment_order=segment_order,
         segment_colors=SEGMENT_COLORS,
         segment_text_colors=SEGMENT_TEXT_COLORS,

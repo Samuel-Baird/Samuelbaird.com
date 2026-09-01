@@ -26,6 +26,18 @@
         { "label": "Other religion", "pct": 11 }
       ]
     },
+    "low-perfectionism-by-group": {
+      "source": "figure-1",
+      "unit": "percent of each group in the low-toxic-perfectionism category",
+      "rows": [
+        { "label": "Latter-day Saint", "pct": 29 },
+        { "label": "Other religion", "pct": 27 },
+        { "label": "Other Christian", "pct": 26 },
+        { "label": "Atheist/agnostic", "pct": 20 },
+        { "label": "Former other religion", "pct": 18 },
+        { "label": "Former Latter-day Saint", "pct": 12 }
+      ]
+    },
     "perfectionism-distribution-by-group": {
       "source": "figure-1",
       "unit": "percent of each group falling in each perfectionism band (rows sum to ~100, rounding)",
