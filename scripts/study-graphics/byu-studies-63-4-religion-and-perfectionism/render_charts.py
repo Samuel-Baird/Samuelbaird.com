@@ -82,7 +82,11 @@ def main() -> None:
 
     low_groups = {r["label"]: r["pct"] for r in DATA["charts"]["low-perfectionism-by-group"]["rows"]}
     render_magnitude_bar(
-        rows=sort_groups(list(low_groups), lambda label: low_groups[label]),
+        # Strict descending by value, not sort_groups's usual "Other X"-
+        # pinned-to-bottom tiering - matches the distribution chart's own
+        # requested reading, one continuous ranking from Latter-day
+        # Saint's 29% down to Former Latter-day Saint's 12%.
+        rows=sorted(low_groups, key=lambda label: -low_groups[label]),
         values=low_groups,
         highlight_rows=None,
         row_colors=ROW_COLORS,
