@@ -6,6 +6,11 @@
       "id": "article",
       "citation": "Michael A. Goodman, \"Religion and Perfectionism,\" BYU Studies Quarterly 63(4), 2024 - high-toxic-perfectionism group rates by religious affiliation, and the high- vs. low-perfectionism introjected-motivation split, from the Foundations longitudinal panel (2,000+ youth in Utah, Arizona, and California).",
       "url": "https://byustudies.byu.edu/issue/63-4"
+    },
+    {
+      "id": "figure-1",
+      "citation": "Michael A. Goodman, \"Religion and Perfectionism,\" BYU Studies Quarterly 63(4), 2024, Figure 1, \"Perfectionism (Socially Prescribed, and Discrepancy) by Religious Identity\" - full Low/Mid-Low/Mid/Mid-High/High distribution by religious-identity group, from the same Foundations longitudinal panel.",
+      "url": "https://byustudies.byu.edu/issue/63-4"
     }
   ],
   "charts": {
@@ -19,6 +24,20 @@
         { "label": "Other Christian", "pct": 13 },
         { "label": "Latter-day Saint", "pct": 12 },
         { "label": "Other religion", "pct": 11 }
+      ]
+    },
+    "perfectionism-distribution-by-group": {
+      "source": "figure-1",
+      "unit": "percent of each group falling in each perfectionism band (rows sum to ~100, rounding)",
+      "segments": ["Low", "Mid-Low", "Mid", "Mid-High", "High"],
+      "rows": [
+        { "label": "Latter-day Saint", "Low": 29, "Mid-Low": 12, "Mid": 40, "Mid-High": 8, "High": 12 },
+        { "label": "Other Christian", "Low": 26, "Mid-Low": 13, "Mid": 43, "Mid-High": 5, "High": 13 },
+        { "label": "Other religion", "Low": 27, "Mid-Low": 7, "Mid": 42, "Mid-High": 13, "High": 11 },
+        { "label": "Believe in God, no religion", "Low": 24, "Mid-Low": 17, "Mid": 39, "Mid-High": 7, "High": 13 },
+        { "label": "Atheist/agnostic", "Low": 20, "Mid-Low": 9, "Mid": 45, "Mid-High": 7, "High": 20 },
+        { "label": "Former Latter-day Saint", "Low": 12, "Mid-Low": 7, "Mid": 47, "Mid-High": 7, "High": 27 },
+        { "label": "Former other religion", "Low": 18, "Mid-Low": 8, "Mid": 42, "Mid-High": 8, "High": 24 }
       ]
     },
     "introjected-motivation": {

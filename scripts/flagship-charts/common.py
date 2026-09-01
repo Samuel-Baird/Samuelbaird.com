@@ -88,6 +88,20 @@ distinction: here every entry gets its own real-vs-projected pair, so the
 dashed/solid device doesn't apply and confidence is instead marked with an
 asterisk on the row label (see `low_confidence_rows`) with the caption
 explaining which bodies that covers and why.
+
+render_ordinal_stack (added for the byu-studies-63-4-religion-and-
+perfectionism study's full perfectionism-distribution chart) is
+render_100_stack's general-purpose sibling: a 100%-stacked horizontal bar
+over a caller-supplied ordinal segment order (e.g. Low/Mid-Low/Mid/
+Mid-High/High) with a caller-supplied color AND text-color per segment,
+rather than the fixed Yes/No/Don't-know palette. render_100_stack itself
+stays untouched (its fixed palette is still the right, simpler default for
+an actual yes/no/don't-know item) - this is a new function, not a mode
+flag on it, per this module's own "add it as its own function" rule.
+`segment_text_colors` is caller-supplied rather than computed from
+contrast because a handful of ordinal charts is not worth a luminance
+heuristic; pick PAPER for a dark/saturated segment fill and INK for a
+light one, and eyeball the rendered PNG.
 """
 
 from __future__ import annotations
@@ -817,6 +831,108 @@ def render_100_stack(
 
     import matplotlib.patches as mpatches
     handles = [mpatches.Patch(facecolor=YES_NO_DK_COLORS[s], edgecolor=INK, label=s)
+               for s in segment_order]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=legend_ncol, frameon=False, handlelength=1.6, handleheight=1.6,
+        fontsize=MIN.LEGEND, prop=fonts["bold"], columnspacing=1.4, labelspacing=0.9,
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def render_ordinal_stack(
+    *,
+    rows: list[str],
+    segment_order: list[str],
+    segment_colors: dict[str, str],
+    segment_text_colors: dict[str, str],
+    values: dict[str, dict[str, float]],
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+    axes_left: float = 0.30,
+) -> None:
+    """render_100_stack's general-purpose sibling (see this module's
+    docstring for why it's a separate function): a 100%-stacked horizontal
+    bar over a caller-supplied `segment_order` (e.g. an ordinal Low/
+    Mid-Low/Mid/Mid-High/High scale), with a caller-supplied hex per
+    segment in `segment_colors` and its matching label color in
+    `segment_text_colors` (PAPER for a dark/saturated fill, INK for a
+    light one). `values[row][segment]` is that segment's share of that
+    row, 0-100. `caption_paragraphs` are passed straight to
+    chart_style.draw_caption_bottom, same convention as every other shape
+    in this module. `axes_left` reserves that figure-fraction for the row
+    labels before the bars start, same meaning as render_magnitude_bar's
+    own parameter of the same name - raise it above the 0.30 default (sized
+    for render_100_stack's own short "U.S. Mormons"/"U.S. general public"
+    labels) for a longer row label. This function has one caller so far, so
+    unlike render_magnitude_bar there's no wrap-and-auto-widen step yet;
+    add one here if a second caller's labels don't fit a manual bump.
+    """
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK,
+    )
+    ax_top = subtitle_bottom - 0.03
+
+    n_segs = len(segment_order)
+    legend_ncol = min(n_segs, 3)
+    legend_rows = -(-n_segs // legend_ncol)  # ceil division
+    legend_bottom_y = caption_top + 0.02
+    legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT * legend_rows
+    ax_bottom = legend_top_y + 0.02
+
+    AXES_LEFT, AXES_WIDTH = axes_left, 0.94 - axes_left
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    ax.set_xticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.tick_params(axis="y", length=0, pad=8)
+
+    display_rows = rows[::-1]
+    bar_h = 0.42
+
+    left = [0.0] * len(display_rows)
+    for seg in segment_order:
+        color = segment_colors[seg]
+        text_color = segment_text_colors[seg]
+        vals = [values[r][seg] for r in display_rows]
+        ax.barh(display_rows, vals, left=left, height=bar_h, color=color,
+                 edgecolor=INK, linewidth=1.5, zorder=3)
+        for r, v, l in zip(display_rows, vals, left):
+            if v >= 5:
+                ax.text(l + v / 2, r, f"{v:.0f}%", va="center", ha="center",
+                        color=text_color, fontproperties=fonts["bold"],
+                        fontsize=MIN.DATA_LABEL + 3, zorder=4)
+        left = [l + v for l, v in zip(left, vals)]
+
+    ax.set_xlim(0, 100)
+    ax.margins(y=0.35)
+    for tick_label in ax.get_yticklabels():
+        tick_label.set_fontproperties(fonts["bold"])
+        tick_label.set_fontsize(MIN.LEGEND)
+        tick_label.set_color(INK)
+
+    import matplotlib.patches as mpatches
+    handles = [mpatches.Patch(facecolor=segment_colors[s], edgecolor=INK, label=s)
                for s in segment_order]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),

@@ -147,6 +147,28 @@ function perfectionismByGroupGraphic(): Graphic {
   };
 }
 
+function perfectionismDistributionByGroupGraphic(): Graphic {
+  const { rows, segments } = religionPerfectionismData.charts[
+    "perfectionism-distribution-by-group"
+  ];
+  const alt = rows
+    .map(
+      (r) =>
+        `${r.label}: ${segments.map((s) => `${s} ${r[s as keyof typeof r]}%`).join(", ")}`,
+    )
+    .join("; ");
+  return {
+    title: "The full perfectionism spread, by religious identity",
+    description:
+      "Full Low-through-High distribution of socially prescribed and discrepancy perfectionism by religious-identity group (the source article's Figure 1), from the Foundations longitudinal panel.",
+    imageSrc:
+      "/study-graphics/byu-studies-63-4-religion-and-perfectionism/perfectionism-distribution-by-group.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart: share of each religious-identity group in each perfectionism band (Low, Mid-Low, Mid, Mid-High, High). ${alt}.`,
+  };
+}
+
 function introjectedMotivationGraphic(): Graphic {
   const { rows } = religionPerfectionismData.charts["introjected-motivation"];
   const alt = rows.map((r) => `${r.label} ${r.pct}%`).join(", ");
@@ -216,7 +238,11 @@ const RAW_STUDY_GRAPHICS: StudyGraphicsEntry[] = [
   },
   {
     studySlug: "byu-studies-63-4-religion-and-perfectionism",
-    graphics: [perfectionismByGroupGraphic(), introjectedMotivationGraphic()],
+    graphics: [
+      perfectionismByGroupGraphic(),
+      perfectionismDistributionByGroupGraphic(),
+      introjectedMotivationGraphic(),
+    ],
   },
   // Link-only entries: these studies duplicate an existing Data Explorer
   // dataset, so their pages point at its graphics instead of committing the

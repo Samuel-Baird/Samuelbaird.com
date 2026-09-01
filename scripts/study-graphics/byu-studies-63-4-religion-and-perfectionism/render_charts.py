@@ -1,7 +1,8 @@
-"""Renders the two study graphics for Goodman's "Religion and
+"""Renders the three study graphics for Goodman's "Religion and
 Perfectionism" (BYU Studies Quarterly 63:4, 2024) - a high-toxic-
-perfectionism-by-religious-group magnitude bar and a high- vs.
-low-perfectionism introjected-motivation bar.
+perfectionism-by-religious-group magnitude bar, the same study's full
+Low-through-High perfectionism-distribution stack (its Figure 1), and a
+high- vs. low-perfectionism introjected-motivation bar.
 
 Every number comes from docs/study-data/<study-slug>/data.json (see that
 file's `sources` for the transcription provenance); nothing is typed here.
@@ -27,8 +28,8 @@ SCRIPTS_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 sys.path.insert(0, str(SCRIPTS_DIR / "flagship-charts"))
 
-from chart_style import CONTEXT_GRAY, GROUP_COLORS, sort_groups  # noqa: E402
-from common import load_fonts, render_magnitude_bar  # noqa: E402
+from chart_style import GROUP_COLORS, sort_groups  # noqa: E402
+from common import CONTEXT_GRAY, OXBLOOD, load_fonts, render_magnitude_bar, render_ordinal_stack  # noqa: E402
 
 STUDY_SLUG = "byu-studies-63-4-religion-and-perfectionism"
 REPO = SCRIPTS_DIR.parent
@@ -44,12 +45,21 @@ ROW_COLORS = {
     # The combined category takes the Atheist anchor of the atheist/agnostic
     # pair (the darker, more distinguishable of the two tokens).
     "Atheist/agnostic": GROUP_COLORS["Atheist"],
-    # Named catch-alls take the shared bar-safe gray, per the site-wide
-    # tier-1 rule; "Former other religion" is a lighter shade of that same
-    # family, mirroring the former-LDS treatment above.
-    "Other Christian": CONTEXT_GRAY,
-    "Other religion": CONTEXT_GRAY,
-    "Former other religion": "#B3AFA5",
+    # "Other Christian" and "Other religion" used to share the same
+    # CONTEXT_GRAY tier-1 catch-all token, which read as one indistinct
+    # gray block next to "Former other religion"'s only-slightly-lighter
+    # gray - three near-identical bars in a six-row chart. Each catch-all
+    # gets its own locked hue instead, still outside GROUP_COLORS proper
+    # since neither is a single named tradition: amber for "Other
+    # Christian" (this study's broad non-LDS-Christian category, distinct
+    # from but in the same warm family as Protestant's amber) and plum for
+    # "Other religion" (this study's broad non-Christian category). Former
+    # Latter-day Saint above still sets the pattern every current/former
+    # pair here follows: former = a lighter shade of the current group's
+    # own family, never CONTEXT_GRAY or --oxblood.
+    "Other Christian": "#C9721C",
+    "Other religion": "#6B4472",
+    "Former other religion": "#B896C4",
 }
 
 
@@ -68,6 +78,41 @@ def main() -> None:
         handle=HANDLE,
         out_path=OUT_DIR / "high-perfectionism-by-group.png",
         fonts=fonts,
+    )
+
+    # Segment colors for the full Low-through-High distribution stack
+    # (Figure 1 in the source article). A caller-chosen ordinal ramp, not
+    # religious-group identity colors (segments are perfectionism bands,
+    # not groups) - distinct from the source figure's own blue/orange/
+    # gray/yellow/navy palette, and cool-to-warm so "High" (toxic
+    # perfectionism, the study's own negative outcome) lands on --oxblood,
+    # this pipeline's decline/negative token, same as it does elsewhere.
+    dist = {r["label"]: r for r in DATA["charts"]["perfectionism-distribution-by-group"]["rows"]}
+    segment_order = DATA["charts"]["perfectionism-distribution-by-group"]["segments"]
+    SEGMENT_COLORS = {
+        "Low": "#3E7CA6",
+        "Mid-Low": "#4F8C63",
+        "Mid": CONTEXT_GRAY,
+        "Mid-High": "#B8860B",
+        "High": OXBLOOD,
+    }
+    SEGMENT_TEXT_COLORS = {seg: "#FFFFFF" for seg in segment_order}
+    render_ordinal_stack(
+        rows=sort_groups(list(dist), lambda label: dist[label]["High"]),
+        segment_order=segment_order,
+        segment_colors=SEGMENT_COLORS,
+        segment_text_colors=SEGMENT_TEXT_COLORS,
+        values=dist,
+        title="The full perfectionism spread, by religious identity",
+        subtitle="Share of each group in each perfectionism band,\nFoundations panel (Utah, Arizona, California)",
+        caption_paragraphs=[],
+        handle=HANDLE,
+        out_path=OUT_DIR / "perfectionism-distribution-by-group.png",
+        fonts=fonts,
+        # render_100_stack's 0.30 default is sized for short two-row labels
+        # ("U.S. Mormons"); this chart's longest row ("Believe in God, no
+        # religion") needs more room.
+        axes_left=0.44,
     )
 
     motivation = {r["label"]: r["pct"] for r in DATA["charts"]["introjected-motivation"]["rows"]}
