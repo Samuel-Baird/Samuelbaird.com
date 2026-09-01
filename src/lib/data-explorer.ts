@@ -26,6 +26,7 @@ import voterStrangerData from "../../docs/datasets/ryan-burge/voter-stranger.jso
 import voterFtRacialData from "../../docs/datasets/ryan-burge/voter-ft-racial-religious.json";
 import voterFtPoliticalData from "../../docs/datasets/ryan-burge/voter-ft-political-social.json";
 import voterIssueImportanceData from "../../docs/datasets/ryan-burge/voter-issue-importance.json";
+import terrorismImportanceData from "../../docs/datasets/ryan-burge/terrorism-importance.json";
 import voterIdeasBarsData from "../../docs/datasets/ryan-burge/voter-ideas-bars.json";
 import voterIdeasLongitudinalData from "../../docs/datasets/ryan-burge/voter-ideas-longitudinal.json";
 import voterIdeasSexismData from "../../docs/datasets/ryan-burge/voter-ideas-sexism.json";
@@ -665,6 +666,7 @@ const RAW_DATASETS: Dataset[] = [
       voterFtRacialGraphic(),
       voterFtPoliticalGraphic(),
       voterIssueImportanceGraphic(),
+      terrorismImportanceGraphic(),
       voterRetentionGraphic(),
       voterReligimpTrendGraphic(),
       voterPrayerTrendGraphic(),
@@ -4979,6 +4981,21 @@ function voterFtPoliticalGraphic(): Graphic {
  * (2017 wave) - a heatmap/small-multiples matrix (23 issues x 9 religion
  * groups). Same data source and render script as the graphics above.
  */
+function terrorismImportanceGraphic(): Graphic {
+  const { group_order: order, terrorism_important: results } = terrorismImportanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is terrorism as an issue?",
+    description: "Share saying terrorism is a very or somewhat important issue, by religion, 2017.",
+    imageSrc: "/data-explorer/voter-survey-panel/terrorism-importance.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying terrorism is a very or somewhat important issue, by religion, 2017. ${alt}.`,
+  };
+}
+
 function voterIssueImportanceGraphic(): Graphic {
   const { matrix, target_order: targets, group_order: groups } = voterIssueImportanceData;
   const alt = voterMatrixAlt(matrix, targets, groups, "%");
