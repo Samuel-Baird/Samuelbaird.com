@@ -24,6 +24,50 @@ function firstYear(period: string): number {
   return match ? Number(match[0]) : 0;
 }
 
+type PublishFilter = "all" | "published" | "hidden";
+
+const PUBLISH_FILTER_OPTIONS: { value: PublishFilter; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "published", label: "Published" },
+  { value: "hidden", label: "Hidden" },
+];
+
+/** Admin-only tri-state toggle over publish status - exclusive, so a plain
+ * segmented control rather than FacetGroup's checkbox multi-select. */
+function PublishFilterToggle({
+  value,
+  onChange,
+  counts,
+}: {
+  value: PublishFilter;
+  onChange: (v: PublishFilter) => void;
+  counts: Record<PublishFilter, number>;
+}) {
+  return (
+    <div>
+      <h3 className="small-caps text-xs font-medium text-[color:var(--muted)]">Status</h3>
+      <div className="mt-2 flex overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
+        {PUBLISH_FILTER_OPTIONS.map((opt, i) => (
+          <button
+            key={opt.value}
+            type="button"
+            onClick={() => onChange(opt.value)}
+            className={`flex-1 px-2 py-2 text-xs font-medium transition-colors ${
+              i > 0 ? "border-l border-[color:var(--border)]" : ""
+            } ${
+              value === opt.value
+                ? "bg-[color:var(--accent-soft)] text-[color:var(--accent)]"
+                : "hover:bg-[color:var(--muted-soft)]"
+            }`}
+          >
+            {opt.label} ({counts[opt.value]})
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function GraphicsGallery({
   graphics,
   isAdmin = false,
@@ -40,8 +84,13 @@ export function GraphicsGallery({
   const [selectedDatasets, setSelectedDatasets] = useState<Set<string>>(new Set());
   const [selectedPeriods, setSelectedPeriods] = useState<Set<string>>(new Set());
   const [selectedTraditions, setSelectedTraditions] = useState<Set<string>>(new Set());
+  const [publishFilter, setPublishFilter] = useState<PublishFilter>("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  function isPublished(g: GalleryGraphic): boolean {
+    return postMap?.[`${g.datasetSlug}/${graphicId(g)}`]?.published === true;
+  }
 
   const sorted = useMemo(
     () =>
@@ -83,9 +132,21 @@ export function GraphicsGallery({
       .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
   }, [graphics]);
 
+  const publishCounts = useMemo(() => {
+    let published = 0;
+    for (const g of graphics) if (isPublished(g)) published += 1;
+    return { all: graphics.length, published, hidden: graphics.length - published };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [graphics, postMap]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return sorted.filter((g) => {
+      if (isAdmin && publishFilter !== "all") {
+        const published = isPublished(g);
+        if (publishFilter === "published" && !published) return false;
+        if (publishFilter === "hidden" && published) return false;
+      }
       if (selectedDatasets.size > 0 && !selectedDatasets.has(g.datasetSlug)) return false;
       if (selectedPeriods.size > 0 && !selectedPeriods.has(g.fieldedPeriod)) return false;
       if (selectedTraditions.size > 0 && !g.traditions.some((t) => selectedTraditions.has(t)))
@@ -94,7 +155,8 @@ export function GraphicsGallery({
       const haystack = `${g.title} ${g.description} ${g.alt} ${g.datasetName}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [sorted, query, selectedDatasets, selectedPeriods, selectedTraditions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sorted, query, selectedDatasets, selectedPeriods, selectedTraditions, isAdmin, publishFilter, postMap]);
 
   const firstRender = useRef(true);
   useEffect(() => {
@@ -103,7 +165,7 @@ export function GraphicsGallery({
       return;
     }
     setVisibleCount(PAGE_SIZE);
-  }, [query, selectedDatasets, selectedPeriods, selectedTraditions]);
+  }, [query, selectedDatasets, selectedPeriods, selectedTraditions, publishFilter]);
 
   useEffect(() => {
     if (!drawerOpen) return;
@@ -126,12 +188,17 @@ export function GraphicsGallery({
     setter(next);
   }
 
-  const activeFilterCount = selectedDatasets.size + selectedPeriods.size + selectedTraditions.size;
+  const activeFilterCount =
+    selectedDatasets.size +
+    selectedPeriods.size +
+    selectedTraditions.size +
+    (publishFilter !== "all" ? 1 : 0);
 
   function clearAll() {
     setSelectedDatasets(new Set());
     setSelectedPeriods(new Set());
     setSelectedTraditions(new Set());
+    setPublishFilter("all");
   }
 
   const sidebar = (
@@ -149,6 +216,9 @@ export function GraphicsGallery({
         )}
       </div>
       <div className="mt-4 space-y-6">
+        {isAdmin && (
+          <PublishFilterToggle value={publishFilter} onChange={setPublishFilter} counts={publishCounts} />
+        )}
         <FacetGroup
           title="Source"
           options={datasetOptions}
