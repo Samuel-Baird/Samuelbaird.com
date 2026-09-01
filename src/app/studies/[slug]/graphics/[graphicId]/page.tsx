@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
-import { GraphicAdminOverlay } from "@/components/admin/graphic-admin-overlay";
+import { GraphicAdminControls } from "@/components/admin/graphic-admin-controls";
 import { GraphicShareButton } from "@/components/data-explorer/graphic-share-button";
 import { Tag } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
@@ -90,7 +90,7 @@ export default async function StudyGraphicPage({
 
       <div className="mt-8 grid gap-8 md:grid-cols-[minmax(0,1fr)_320px]">
         <div
-          className={`relative overflow-hidden rounded-[var(--radius)] border ${
+          className={`overflow-hidden rounded-[var(--radius)] border ${
             isAdmin && !published
               ? "border-dashed border-[color:var(--oxblood)]/40"
               : "border-[color:var(--border)]"
@@ -104,16 +104,6 @@ export default async function StudyGraphicPage({
             priority
             className="h-auto w-full"
           />
-          {isAdmin && (
-            <GraphicAdminOverlay
-              slug={slug}
-              graphicId={graphicId}
-              published={published}
-              posted={status?.posted === true}
-              postedDates={status?.posted_dates ?? ""}
-              currentPath={`/studies/${slug}/graphics/${graphicId}`}
-            />
-          )}
         </div>
 
         <div>
@@ -131,6 +121,16 @@ export default async function StudyGraphicPage({
           )}
 
           <div className="mt-6 flex flex-wrap gap-3">
+            {isAdmin && (
+              <GraphicAdminControls
+                slug={slug}
+                graphicId={graphicId}
+                published={published}
+                posted={status?.posted === true}
+                postedDates={status?.posted_dates ?? ""}
+                currentPath={`/studies/${slug}/graphics/${graphicId}`}
+              />
+            )}
             <GraphicShareButton
               path={`/studies/${study.slug}/graphics/${graphicId}`}
               title={graphic.title}

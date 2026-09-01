@@ -4,7 +4,7 @@ import { Search, SlidersHorizontal, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { GraphicAdminOverlay } from "@/components/admin/graphic-admin-overlay";
+import { GraphicAdminControls } from "@/components/admin/graphic-admin-controls";
 import { FacetGroup } from "@/components/facet-group";
 import { Tag } from "@/components/tag";
 import { graphicId, type GalleryGraphic } from "@/lib/data-explorer";
@@ -228,59 +228,62 @@ export function GraphicsGallery({
                   const status = postMap?.[`${g.datasetSlug}/${id}`];
                   const published = status?.published === true;
                   return (
-                    <li key={`${g.datasetSlug}/${id}`} className="relative">
-                      <Link
-                        href={href}
+                    <li key={`${g.datasetSlug}/${id}`}>
+                      <div
                         className={`group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border bg-white transition-colors hover:border-[color:var(--accent)] ${
                           isAdmin && !published
                             ? "border-dashed border-[color:var(--oxblood)]/40"
                             : "border-[color:var(--border)]"
                         }`}
                       >
-                        <div className="overflow-hidden border-b border-[color:var(--border)]">
-                          <Image
-                            src={g.imageSrc}
-                            alt={g.alt}
-                            width={g.width}
-                            height={g.height}
-                            className="h-auto w-full"
-                          />
-                        </div>
-                        <div className="flex flex-1 flex-col p-4">
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            <Tag ink="ink">{g.datasetName}</Tag>
-                            <Tag ink="muted">{g.fieldedPeriod}</Tag>
-                            {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
+                        <Link href={href} className="flex flex-1 flex-col">
+                          <div className="overflow-hidden border-b border-[color:var(--border)]">
+                            <Image
+                              src={g.imageSrc}
+                              alt={g.alt}
+                              width={g.width}
+                              height={g.height}
+                              className="h-auto w-full"
+                            />
                           </div>
-                          <h3 className="serif mt-3 text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
-                            {g.title}
-                          </h3>
-                          {g.traditions.length > 0 && (
-                            <div className="mt-2 flex flex-wrap gap-1.5">
-                              {g.traditions.slice(0, 3).map((t) => (
-                                <Tag key={t} ink="accent">
-                                  {t}
-                                </Tag>
-                              ))}
-                              {g.traditions.length > 3 && (
-                                <Tag ink="muted" title={g.traditions.slice(3).join(", ")}>
-                                  +{g.traditions.length - 3} more
-                                </Tag>
-                              )}
+                          <div className="flex flex-1 flex-col p-4">
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <Tag ink="ink">{g.datasetName}</Tag>
+                              <Tag ink="muted">{g.fieldedPeriod}</Tag>
+                              {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
                             </div>
-                          )}
-                        </div>
-                      </Link>
-                      {isAdmin && (
-                        <GraphicAdminOverlay
-                          slug={g.datasetSlug}
-                          graphicId={id}
-                          published={published}
-                          posted={status?.posted === true}
-                          postedDates={status?.posted_dates ?? ""}
-                          currentPath="/data-explorer/gallery"
-                        />
-                      )}
+                            <h3 className="serif mt-3 text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
+                              {g.title}
+                            </h3>
+                            {g.traditions.length > 0 && (
+                              <div className="mt-2 flex flex-wrap gap-1.5">
+                                {g.traditions.slice(0, 3).map((t) => (
+                                  <Tag key={t} ink="accent">
+                                    {t}
+                                  </Tag>
+                                ))}
+                                {g.traditions.length > 3 && (
+                                  <Tag ink="muted" title={g.traditions.slice(3).join(", ")}>
+                                    +{g.traditions.length - 3} more
+                                  </Tag>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </Link>
+                        {isAdmin && (
+                          <div className="border-t border-[color:var(--border)] p-3">
+                            <GraphicAdminControls
+                              slug={g.datasetSlug}
+                              graphicId={id}
+                              published={published}
+                              posted={status?.posted === true}
+                              postedDates={status?.posted_dates ?? ""}
+                              currentPath="/data-explorer/gallery"
+                            />
+                          </div>
+                        )}
+                      </div>
                     </li>
                   );
                 })}

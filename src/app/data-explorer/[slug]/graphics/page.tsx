@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Download } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
 import { DeseretTitle } from "@/components/deseret-title";
-import { GraphicAdminOverlay } from "@/components/admin/graphic-admin-overlay";
+import { GraphicAdminControls } from "@/components/admin/graphic-admin-controls";
 import { GraphicShareButton } from "@/components/data-explorer/graphic-share-button";
 import { Tag } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
@@ -80,30 +80,18 @@ export default async function DatasetGraphicsPage({
                   : "border-[color:var(--border)]"
               }`}
             >
-              <div className="relative">
-                <Link
-                  href={graphicHref}
-                  className="block overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
-                >
-                  <Image
-                    src={graphic.imageSrc}
-                    alt={graphic.alt}
-                    width={graphic.width}
-                    height={graphic.height}
-                    className="h-auto w-full"
-                  />
-                </Link>
-                {isAdmin && (
-                  <GraphicAdminOverlay
-                    slug={slug}
-                    graphicId={id}
-                    published={published}
-                    posted={status?.posted === true}
-                    postedDates={status?.posted_dates ?? ""}
-                    currentPath={currentPath}
-                  />
-                )}
-              </div>
+              <Link
+                href={graphicHref}
+                className="block overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]"
+              >
+                <Image
+                  src={graphic.imageSrc}
+                  alt={graphic.alt}
+                  width={graphic.width}
+                  height={graphic.height}
+                  className="h-auto w-full"
+                />
+              </Link>
               <figcaption className="mt-4">
                 <div className="flex items-center gap-2">
                   <h2 className="serif text-lg font-semibold leading-snug tracking-tight text-[color:var(--foreground)]">
@@ -116,11 +104,21 @@ export default async function DatasetGraphicsPage({
                 <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--muted)]">
                   {graphic.description}
                 </p>
-                <div className="mt-3 flex items-center justify-between gap-3">
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
                   {graphic.credit && (
                     <span className="text-xs text-[color:var(--muted)]">{graphic.credit}</span>
                   )}
-                  <div className="ml-auto flex items-center gap-2">
+                  <div className="ml-auto flex flex-wrap items-center gap-2">
+                    {isAdmin && (
+                      <GraphicAdminControls
+                        slug={slug}
+                        graphicId={id}
+                        published={published}
+                        posted={status?.posted === true}
+                        postedDates={status?.posted_dates ?? ""}
+                        currentPath={currentPath}
+                      />
+                    )}
                     <GraphicShareButton path={graphicHref} title={graphic.title} />
                     <a
                       href={graphic.imageSrc}
