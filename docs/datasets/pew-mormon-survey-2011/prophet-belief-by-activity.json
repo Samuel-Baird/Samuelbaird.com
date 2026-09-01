@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design), broken out by self-reported activity level in the Church (q406). q409c asks whether the respondent believes the president of the LDS/Mormon Church is a prophet of God; its own don't know/refused is excluded from each row's denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "activity_order": [
+    "Very active",
+    "Somewhat active",
+    "Not too active",
+    "Not at all active",
+    "All Mormon adults"
+  ],
+  "believes_president_is_prophet_pct": {
+    "Very active": {
+      "pct": 99.15,
+      "valid_unweighted_n": 745,
+      "group_unweighted_n": 746
+    },
+    "Somewhat active": {
+      "pct": 96.14,
+      "valid_unweighted_n": 142,
+      "group_unweighted_n": 144
+    },
+    "Not too active": {
+      "pct": 89.26,
+      "valid_unweighted_n": 72,
+      "group_unweighted_n": 76
+    },
+    "Not at all active": {
+      "pct": 46.39,
+      "valid_unweighted_n": 49,
+      "group_unweighted_n": 52
+    },
+    "All Mormon adults": {
+      "pct": 95.07,
+      "valid_unweighted_n": 1009,
+      "group_unweighted_n": 1019
+    }
+  }
+}

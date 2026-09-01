@@ -532,3 +532,302 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   q55a-c (family religious practices with children, likely near-duplicate
   of 2014's qk10a/qk10b family-scripture-prayer chart). Consider this
   dataset close to fully mined.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — fourth pass, 2026-08-31:
+  had 11 charts. Added 2 more from the prior passes' remaining-battery lists,
+  both broken out by RELTRAD, using the short canonical group labels per this
+  dataset's own row-label-collision fix — `preserve-traditional-beliefs.json`
+  (qh4, 72.8% of Mormons say their own church or denomination should preserve
+  its traditional beliefs and practices rather than adjust or modernize them,
+  highest of any tradition — Jehovah's Witness 2nd at 69.3%, Evangelical
+  Protestant 3rd at 64.9% — ties to the LDS teaching that core doctrine is
+  eternal and unchanging even as the Church receives continuing revelation on
+  its application) and `scripture-literalism.json` (qg7b, a skip-gated
+  follow-up asked only of respondents who already call their own scripture
+  the word of God in qg7 — among that subset, only 37.9% of Mormons say
+  scripture is meant literally, word for word, near the bottom of Christian
+  traditions and well below Historically Black Protestant 71.7%/Evangelical
+  Protestant 65.2%, despite the already-shipped qg7 chart showing 93.8% of
+  Mormons calling scripture the word of God — a genuinely distinct construct
+  from that chart, not a duplicate, and plausibly reflects LDS doctrine of
+  imperfect ancient-text transmission (Articles of Faith 1:8, "as far as it
+  is translated correctly") alongside ongoing modern revelation). Both at
+  12-13 rows with no label collision (checked by reading each PNG directly).
+  Remaining untouched candidates from prior passes' lists: qm5a/b/d (church
+  too focused on rules/money-power/politics — still needs an overlap check
+  against the 2023-24 wave's public-life battery before use), qi2t/qi2u
+  (dietary restrictions, eating beef/pork — thin doctrinal tie, not really a
+  Word of Wisdom item), and qk10b-d (Sunday school, religious homeschooling,
+  volunteering with kids). Consider this dataset close to fully mined after
+  this pass.
+
+- **pew-black-faith-2021** (Pew's "Faith Among Black Americans," fielded
+  2019-2020) — fifth chart, 2026-08-31: did a fresh cross-reference of every
+  `data/` folder against `data-explorer.ts`'s `DATASETS` array first (no
+  dataset with zero graphics or unmentioned-anywhere-in-this-log turned up —
+  pew-rls-2023-24, ryan-burge, and state-of-theology are simply undocumented
+  here despite being heavily charted in earlier sessions, confirmed by
+  grepping their many existing imports/imageSrc entries). Fell back to the
+  single most defensible remaining item from this dataset's own prior-pass
+  notes: the untouched CHURCHLOOK battery ("how important would each of the
+  following be in choosing a new congregation"). Checked all five sub-items
+  by RELIGMOD (34-valid-N floor already established for this dataset/file);
+  CHURCHLOOK_a/b (welcoming, inspiring sermons) show Mormons mid-pack with
+  no distinctive story, and CHURCHLOOK_d/e (senior leaders/congregants
+  share your race) repeat the same Black-church-specific racial framing
+  already flagged as a weak LDS fit for this dataset's COMMINFL1/BLKEQL1_c
+  items — skipped all four. CHURCHLOOK_c ("belongs to your denomination")
+  had a genuine story and became `denomination-loyalty.json`
+  (`denomination_very_important`, RELIGMOD, n=33 valid Mormon respondents):
+  47.5% of Black Mormons say it's very important that a new congregation
+  belong to their own denomination, 2nd only to Jehovah's Witness at 64.6%
+  and well above Protestant 32.7%/Catholic 31.6%/Unaffiliated 20.1% — ties
+  to the Church's restorationist, exclusive-priesthood-authority claim
+  (not one interchangeable denomination among many). Also checked
+  ESSENT_a/ESSENT_b/ESSENT_f (believing in God / attending services /
+  avoiding premarital sex essential to being a moral/religious person) and
+  dropped all three: Mormon lands mid-pack on each (34.7%-42.5%), no
+  highest/lowest story despite ESSENT_f's superficial Law-of-Chastity tie.
+  This dataset's remaining untouched material (PERSDO1_a-e,
+  TYPEGODSUM/GODBELIEFSMOD_b/d, CLERGYSSM, ESSENTCHURCH_a-g, "all
+  respondents.sav" Black-vs-non-Black comparison) is either likely
+  duplicative of already-shipped items, weak-fit, or unchecked pending a
+  future pass — this pass built exactly the one defensible chart the
+  remaining battery supported rather than forcing a full batch.
+
+- **pew-rls-2023-24** (2023-24 Religious Landscape Study) — backfill entry,
+  2026-08-31: heavily charted across many prior sessions but never logged
+  here. Already has 20+ shipped graphics spanning
+  `switching-generalized.json` (retention/switching), `birth-decade-
+  distribution.json`, `childhood-formation.json` (CHATTEND/CHIMPREL/
+  CHEDU2), `family-household.json`, `practice.json` (attendance/prayer/
+  membership/Bible-importance batteries, by both the full RELTRAD-style
+  frame and a generalized group set), `beliefs.json` (soul/heaven/hell/
+  evolution), `spiritual-experience.json`, `public-life.json`, two
+  `holiday-batch*.json` files, and `stay-home-parent-gender.json`. This
+  dataset has its own `docs/datasets/pew-rls-2023-24/GRAPHICS_TODO.md`
+  work-queue file — checked directly: its Pending section is empty of
+  buildable items, only a "Blocked" list of five ideas confirmed to have
+  no matching variable in the public-use file (denomination-level
+  detail, "absolutely clear standards of right and wrong," "moral
+  without believing in God," favorability toward other groups, "religion
+  and science are compatible" — all checked against the actual 654-
+  variable codebook, not assumed). Consider this dataset fully mined;
+  any future pass should re-check the codebook directly rather than
+  trust this note growing stale, but as of this backfill there is
+  nothing queued.
+
+- **ryan-burge** (curated LDS-relevant extracts from Ryan Burge's public
+  GitHub repos: CCES 2016, CES stacked 2006-2018, VOTER Survey Panel,
+  US Religion Census 2010 county file, plus thin tier-2 files) —
+  backfill entry, 2026-08-31: heavily charted across many prior sessions
+  but never logged here. Already has 20+ shipped graphics: CCES-2016-by-
+  religion (8 charts: immigration select-all battery, abortion, same-sex
+  marriage, attendance distribution), pid-by-gender and pid-over-time
+  (CES stacked), and the full 23-graphic VOTER Survey Panel set (stranger-
+  in-my-own-country, feeling-thermometer matrices, issue importance, and
+  all 20 ideas from `docs/datasets/ryan-burge/VOTER_PANEL_IDEAS.md` —
+  retention, religiosity trajectory, vote-switching, vote regret, trust in
+  government, child-rearing values, sexism/Muslim-distrust/immigration/
+  trade/promises/media/orgs/volunteering/pride heatmaps, military
+  household rate, populist distrust, gay-marriage shift). This dataset's
+  own `docs/datasets/ryan-burge/GRAPHICS_TODO.md` work-queue file's
+  Pending section is explicitly empty — "every item that was queued here
+  has shipped" — and it directly instructs against pulling more variables
+  from the 867-variable VOTER Survey Panel without being asked. The only
+  genuinely untouched material is the tier-1 `us_religion_census_2010_
+  county.DTA` aggregate file (county-level LDS congregation/adherent
+  counts, not survey microdata — a different chart shape than this
+  project's per-respondent bars) and several tier-2 small-n files
+  (Faith Matters 2006/2011 at n=49-53, ANES 2016 at n=52, GSS 2016 at
+  n=23-31) flagged in the dataset's own `INVENTORY.md` as underpowered
+  alone. Consider this dataset fully mined for now.
+
+- **state-of-theology** (Ligonier/LifeWay State of Theology survey,
+  2022/2025 waves, via the evangelical-quiz belief-modeling pipeline) —
+  backfill entry, 2026-08-31: unlike every other dataset in this log,
+  this one is charted automatically by construction —
+  `stateOfTheologyGraphics()` in `src/lib/data-explorer.ts` maps over
+  every item in `src/lib/evangelical-quiz/data.json` (`QUIZ_DATA.items`)
+  and produces one graphic per item, reading its own `pending_items`
+  field (confirmed empty, 0 items) for anything not yet modeled. Checked
+  directly: `data.json` currently has 36 items and
+  `public/data-explorer/state-of-theology/` has exactly 36 PNGs — full
+  1:1 coverage, nothing to backfill. Any future expansion of this
+  dataset means adding new items to the quiz's own belief-modeling
+  pipeline (`scripts/evangelical-quiz/build_data.py`), not building a
+  standalone Data Explorer chart — a different, heavier kind of work than
+  this log otherwise tracks. Consider this dataset fully mined as a
+  Data Explorer target.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — fifth chart,
+  2026-08-31: housekeeping pass on pew-rls-2023-24/ryan-burge/state-of-
+  theology (see the three backfill entries above) found no defensible
+  untouched item in any of the three — pew-rls-2023-24 and ryan-burge
+  both have their own GRAPHICS_TODO.md files with empty Pending sections,
+  and state-of-theology is auto-generated with 1:1 item-to-chart
+  coverage already. Fell back to this dataset's own remaining-battery
+  list from prior passes: `qk10b` (send child(ren) to Sunday school or
+  another religious education program), the untouched sibling of the
+  already-shipped `qk10a` "pray or read Scripture with your kids" chart
+  from the same battery. 86.8% of Mormon parents send their kids to
+  Sunday school/religious ed, highest of any of the 12 RELTRAD groups by
+  a wide margin (2nd-place Evangelical Protestant 77.0%), n=242 valid —
+  comfortably above the 30-respondent floor. Maps directly onto the
+  Church's Primary program (ages 3-11) and youth Sunday School classes, a
+  distinct formal-religious-education construct from qk10a's family-
+  devotional framing, so not a duplicate despite sharing a battery.
+  Computed by `scripts/pew-rls-2014/sunday_school_children.py` →
+  `docs/datasets/pew-rls-2014/sunday-school-children.json`, rendered by
+  `scripts/pew-rls-2014/render_sunday_school_children_chart.py` →
+  `public/data-explorer/pew-rls-2014/sunday-school-children.png` (12
+  RELTRAD rows + "All parents," checked by reading the PNG directly — no
+  label collision). Wired into `src/lib/data-explorer.ts`
+  (`sundaySchoolChildrenGraphic()`). Remaining untouched candidates from
+  prior passes' notes: qk10c (religious homeschooling — likely a much
+  thinner Mormon N given how rare it is), qk10d (volunteer work with
+  kids — weaker doctrinal tie), qm5a/b/d, qi2t/qi2u.
+
+- **pew-catholic-family-2015** (2015 Survey of U.S. Catholics and Family
+  Life) — fourth chart, 2026-08-31: checked several other datasets'
+  remaining-battery notes first and rejected them — pew-black-faith-2021's
+  PERSDO1_a/c/d (meditate, burn candles/incense, pray at home altar) all
+  land Mormons mid-pack with no distinctive story once actually computed
+  (checked by weighted crosstab, not assumed), and PERSDO1_e (consult a
+  diviner) has Mormons *higher* than most Christian groups at n=33 — a
+  counter-doctrinal, thin-N result not worth shipping. Landed instead on
+  this dataset's own unchecked qf6 item ("when you pray, do you mainly say
+  memorized prayers ... or have a personal conversation with God"), broken
+  out by present religion (relig, same general-public + Catholic-oversample
+  sample as this folder's other three scripts). `prayer-style.json`:
+  89.8% of Mormons say they mainly have a personal conversation with God
+  rather than memorized prayers, 2nd only to Jehovah's Witness (96.1%,
+  thinner n=31) among 12 named groups clearing the 30-floor, well above
+  Protestant (83.6%) and far above Catholic (45.9%)/Orthodox (63.0%) —
+  ties directly to LDS teaching that personal prayer is an informal,
+  individual conversation rather than fixed liturgy, with no standard
+  congregational prayer text outside the sacrament prayers. Mormon n=87
+  valid (unweighted). Computed by
+  `scripts/pew-catholic-family-2015/prayer_style.py` →
+  `docs/datasets/pew-catholic-family-2015/prayer-style.json`, rendered by
+  `scripts/pew-catholic-family-2015/render_prayer_style.py` →
+  `public/data-explorer/pew-catholic-family-2015/prayer-style.png` (13
+  rows, checked by reading the PNG directly — no label collision). Wired
+  into `src/lib/data-explorer.ts` (`prayerStyleGraphic()`). This dataset's
+  remaining untouched candidates (qa3a-c favorability of Pope
+  Francis/Obama/Putin — political, weak fit; qf2/qf5 importance-of-
+  religion/prayer-frequency — likely near-duplicates of items already
+  shipped elsewhere; qh3 childhood religion — demographic, no belief
+  content) all look thin or duplicative; consider this dataset close to
+  fully mined.
+
+- **pew-mormon-survey-2011** (2011 National Survey of Mormons) — 13th
+  chart, 2026-08-31: read this log in full and cross-referenced `data/`
+  against `data-explorer.ts`'s `DATASETS` array — no untouched dataset
+  turned up, and every other family (pew-rls-2023-24, ryan-burge,
+  state-of-theology) is confirmed fully mined via its own
+  GRAPHICS_TODO.md/auto-generation note. Checked this dataset's own
+  remaining-candidate list from its most recent pass: q421a-d ("is [X]
+  religion similar to your own") is a social-distance item with no
+  belief/practice content, and q303-q310 (perceived societal awareness/
+  fairness/friendliness toward Mormons) mostly duplicate the already-
+  shipped `president-readiness-by-party` construct or read as thin
+  political-perception items — both skipped. Landed on q409c ("do you
+  believe the president of the LDS/Mormon Church is a prophet of God"),
+  the one item in the q409 core-belief battery not yet used anywhere on
+  the site (q409a/b/d already shipped as a single-population ranking in
+  `core-beliefs.json`; q409e already shipped in `ordination-by-
+  activity.json`). Built it by activity level (q406), matching this
+  dataset's existing by-activity convention (`book-of-mormon-origin-by-
+  activity.json`, `temple-recommend-by-activity.json`, `daily-prayer-by-
+  activity.json`) rather than repeating core_beliefs.py's single-ranking
+  shape — a foundational LDS truth claim (living prophetic leadership)
+  checked against real engagement data. `prophet-belief-by-activity.json`:
+  99.2% of "Very active" Mormons believe the Church president is a
+  prophet of God, falling to 96.1% Somewhat active, 89.3% Not too active,
+  and just 46.4% Not at all active (95.1% among all Mormon adults) — a
+  strong, clean activity gradient. All cells clear the 30-valid floor
+  (smallest: n=49, Not at all active). Computed by
+  `scripts/pew-mormon-survey-2011/prophet_belief_by_activity.py` →
+  `docs/datasets/pew-mormon-survey-2011/prophet-belief-by-activity.json`,
+  rendered by
+  `scripts/pew-mormon-survey-2011/render_prophet_belief_chart.py` →
+  `public/data-explorer/pew-mormon-survey-2011/prophet-belief-by-
+  activity.png` (5 rows, checked by reading the PNG directly — no label
+  collision). Wired into `src/lib/data-explorer.ts`
+  (`prophetBeliefByActivityGraphic()`). With q421/q303-310 both weak
+  fits, consider this dataset fully mined.
+
+- **pew-atp-w70-2020** (American Trends Panel, Wave 70, July 2020 —
+  religion during COVID) — ninth chart, 2026-08-31: re-read this log in
+  full and cross-referenced `data/` against `data-explorer.ts`'s
+  `DATASETS` array (no untouched dataset found). Checked several
+  candidates from prior passes' remaining-battery lists before landing
+  one: w114-2022's ESSENT_h/ESSENT_j (family traditions / community
+  belonging, by F_RELIG) both land Mormons squarely mid-pack (47.6%/
+  42.4%, no highest/lowest story — checked by weighted crosstab, not
+  assumed) and were dropped; w117-2022's SNSPOST3_W117 (posts about
+  religion on social media, by F_RELTRAD) has Mormons 4th of 16 groups
+  at 38.6%, too close to the Evangelical/Historically-Black-Protestant
+  cluster (~41%) for a clean distinctiveness story, dropped; this
+  dataset's own COVIDVOL2_b_W70 (turned to a religious org for help with
+  bills/housing/food, the receiving-side mirror of the already-shipped
+  `religious-org-giving-covid` chart) has Mormons at just 5.0%, but
+  that's mid-pack-low rather than a clean lowest (Buddhist 1.1%, Orthodox
+  and Other World Religions both 0%), dropped. Landed on COVIDLESSON1_W70
+  ("do you believe there's a lesson or set of lessons for humankind to
+  learn from the coronavirus outbreak"), by F_RELTRAD — a belief/
+  meaning-making item, distinct in kind from this folder's existing
+  coping-*behavior* charts (worship, prayer, scripture, giving).
+  `covid-lesson-belief.json`: 93.4% of Mormons believe there's a lesson,
+  tied with Historically Black Protestant for the highest of any
+  tradition in the wave, well above Catholic/Mainline Protestant (~87%),
+  Jewish (86.5%), Evangelical Protestant (86.2%), and Unaffiliated
+  (84.6%) — ties to LDS providential theology (God's hand active in the
+  affairs of mankind; D&C 122:7's "all these things shall give thee
+  experience"). Mormon n=167 valid, comfortably above the 30 floor.
+  Computed by `scripts/pew-atp-w70-2020/covid_lesson_belief.py` →
+  `docs/datasets/pew-atp-w70-2020/covid-lesson-belief.json`, rendered by
+  `scripts/pew-atp-w70-2020/render_covid_lesson_chart.py` →
+  `public/data-explorer/pew-atp-w70-2020/covid-lesson-belief.png` (7
+  RELTRAD rows + "All U.S. adults," checked by reading the PNG directly —
+  no label collision). Wired into `src/lib/data-explorer.ts`
+  (`covidLessonBeliefGraphic()`). `tsc --noEmit` clean. Committed and
+  pushed as `e735dca`. Wave's only remaining untouched item is
+  COVIDLESSON2_W70 (whether that lesson was specifically sent by God —
+  Mormon 64.1%, 4th highest, a weaker/more crowded story than
+  COVIDLESSON1); consider this wave fully mined after this pass. Broader
+  note: after 25+ passes across this session, essentially every dataset
+  in `data/` is now at or very near saturation — every remaining
+  candidate item checked this pass and in prior passes' notes either
+  lands mid-pack (no highest/lowest story) or duplicates an already-
+  shipped construct. This pass found exactly one defensible item; the
+  site appears to be approaching a genuine mining plateau, though a few
+  single-item candidates (COVIDLESSON2_W70 among them) remain if a future
+  pass wants to push further into thinner territory.
+
+- **Plateau check, 2026-08-31 (26th+ pass)** — read this entire log in full
+  and re-checked the last pass's one flagged open candidate,
+  COVIDLESSON2_W70 ("do you believe any of the lessons humankind should
+  learn from COVID were sent to us by God," ATP W70), by computing the real
+  weighted crosstab by F_RELTRAD directly from `ATP W70.sav` rather than
+  trusting the prior note: Mormon = 64.4% (n=156 valid), which lands 4th of
+  16 groups — behind Historically Black Protestant (74.6%), Muslim (69.5%),
+  and Evangelical Protestant (66.0%) — confirming the prior pass's read that
+  this is a crowded mid-upper-pack result with no highest/lowest
+  distinctiveness story, not worth shipping as a chart. Also did the full
+  final cross-reference requested: every one of the 28 folders under
+  `data/` maps to a slug (or, for `ryan-burge`, multiple sub-dataset slugs)
+  already present in `src/lib/data-explorer.ts`'s `DATASETS` array — no
+  dataset was found sitting entirely unmined and unlisted. With
+  COVIDLESSON2_W70 (the only concretely open candidate carried forward from
+  the prior pass) checked and rejected, and every dataset's own
+  remaining-battery notes in this log already exhausted or explicitly
+  marked "close to/fully mined" across 25+ prior passes, this pass found
+  zero defensible new charts. **Conclusion: the Data Explorer has reached
+  its natural mining plateau for this session.** No chart was built. Future
+  passes should not re-check pew-rls-2023-24, ryan-burge, state-of-theology,
+  the nine no-usable-breakout cross-national datasets, or any dataset marked
+  "fully mined" / "close to fully mined" above without first identifying a
+  genuinely new angle (e.g. a newly released Pew wave, a newly added data
+  file) rather than re-scanning the same exhausted batteries.

@@ -48,7 +48,7 @@ export default async function DatasetGraphicsPage({
   if (graphics.length === 0) notFound();
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+    <div className="w-full px-5 py-14 sm:px-8 sm:py-20">
       <Link
         href={`/data-explorer/${dataset.slug}`}
         className="inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent)] hover:underline"
@@ -65,7 +65,7 @@ export default async function DatasetGraphicsPage({
         appears on each image.
       </p>
 
-      <div className="mt-12 grid gap-8 sm:grid-cols-2">
+      <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         {graphics.map((graphic) => {
           const id = graphicId(graphic);
           const graphicHref = `/data-explorer/${dataset.slug}/graphics/${id}`;

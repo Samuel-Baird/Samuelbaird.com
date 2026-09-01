@@ -48,6 +48,7 @@ import presidentReadinessData from "../../docs/datasets/pew-mormon-survey-2011/p
 import bookOfMormonOriginByActivityData from "../../docs/datasets/pew-mormon-survey-2011/book-of-mormon-origin-by-activity.json";
 import templeRecommendByActivityData from "../../docs/datasets/pew-mormon-survey-2011/temple-recommend-by-activity.json";
 import dailyPrayerByActivityData from "../../docs/datasets/pew-mormon-survey-2011/daily-prayer-by-activity.json";
+import prophetBeliefByActivityData from "../../docs/datasets/pew-mormon-survey-2011/prophet-belief-by-activity.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
@@ -75,8 +76,11 @@ import viewOfGod2014Data from "../../docs/datasets/pew-rls-2014/view-of-god.json
 import eternalLifeNonChristianData from "../../docs/datasets/pew-rls-2014/eternal-life-non-christian.json";
 import bornAgainIdentityData from "../../docs/datasets/pew-rls-2014/born-again-identity.json";
 import familyScripturePrayerData from "../../docs/datasets/pew-rls-2014/family-scripture-prayer.json";
+import sundaySchoolChildrenData from "../../docs/datasets/pew-rls-2014/sunday-school-children.json";
 import scriptureWordOfGodData from "../../docs/datasets/pew-rls-2014/scripture-word-of-god.json";
 import volunteerThroughChurchData from "../../docs/datasets/pew-rls-2014/volunteer-through-church.json";
+import preserveTraditionalBeliefsData from "../../docs/datasets/pew-rls-2014/preserve-traditional-beliefs.json";
+import scriptureLiteralismData from "../../docs/datasets/pew-rls-2014/scripture-literalism.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
@@ -104,8 +108,10 @@ import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/finan
 import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
 import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scripture-covid-coping.json";
 import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
+import covidLessonBeliefData from "../../docs/datasets/pew-atp-w70-2020/covid-lesson-belief.json";
 import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
 import adultArrangementsData from "../../docs/datasets/pew-catholic-family-2015/adult-arrangements.json";
+import prayerStyleData from "../../docs/datasets/pew-catholic-family-2015/prayer-style.json";
 import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
 import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
@@ -113,6 +119,7 @@ import womenLeadersData from "../../docs/datasets/pew-black-faith-2021/women-lea
 import convertDutyData from "../../docs/datasets/pew-black-faith-2021/convert-duty.json";
 import godRespondsData from "../../docs/datasets/pew-black-faith-2021/god-responds.json";
 import turnedToChurchForHelpData from "../../docs/datasets/pew-black-faith-2021/turned-to-church-for-help.json";
+import denominationLoyaltyData from "../../docs/datasets/pew-black-faith-2021/denomination-loyalty.json";
 import religiousNationalIdentityData from "../../docs/datasets/pew-eastern-europe-2015/religious-national-identity.json";
 import pewGlobalRestrictionsGriData from "../../docs/datasets/pew-global-restrictions-religion/gri-trend.json";
 import christianNeighborAcceptanceData from "../../docs/datasets/pew-india-2021/christian-neighbor-acceptance.json";
@@ -718,6 +725,7 @@ const RAW_DATASETS: Dataset[] = [
       bookOfMormonOriginByActivityGraphic(),
       templeRecommendByActivityGraphic(),
       dailyPrayerByActivityGraphic(),
+      prophetBeliefByActivityGraphic(),
     ],
   },
   {
@@ -805,8 +813,11 @@ const RAW_DATASETS: Dataset[] = [
       eternalLifeNonChristianGraphic(),
       bornAgainIdentityGraphic(),
       familyScripturePrayerGraphic(),
+      sundaySchoolChildrenGraphic(),
       scriptureWordOfGodGraphic(),
       volunteerThroughChurchGraphic(),
+      preserveTraditionalBeliefsGraphic(),
+      scriptureLiteralismGraphic(),
     ],
   },
   {
@@ -950,6 +961,7 @@ const RAW_DATASETS: Dataset[] = [
       scriptureCovidCopingGraphic(),
       religiousOrgGivingCovidGraphic(),
       congregationDonatingGraphic(),
+      covidLessonBeliefGraphic(),
     ],
   },
   {
@@ -974,6 +986,7 @@ const RAW_DATASETS: Dataset[] = [
     sourceUrl: "https://www.pewresearch.org/religion/2015/09/02/u-s-catholics-open-to-non-traditional-families/",
     graphics: [
       annulmentCommunionGraphic(),
+      prayerStyleGraphic(),
       raisedByMarriedParentsGraphic(),
       raisedBySingleParentGraphic(),
       raisedByDivorcedParentsGraphic(),
@@ -1030,6 +1043,7 @@ const RAW_DATASETS: Dataset[] = [
       convertDutyGraphic(),
       godRespondsGraphic(),
       turnedToChurchForHelpGraphic(),
+      denominationLoyaltyGraphic(),
     ],
   },
   {
@@ -1574,6 +1588,21 @@ function dailyPrayerByActivityGraphic(): Graphic {
   };
 }
 
+function prophetBeliefByActivityGraphic(): Graphic {
+  const { activity_order: order, believes_president_is_prophet_pct: results } = prophetBeliefByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do Mormons believe the Church president is a prophet?",
+    description:
+      "Share of Mormons who believe the president of the LDS/Mormon Church is a prophet of God, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/prophet-belief-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons who believe the Church president is a prophet of God, by activity level in the Church. ${alt}.`,
+  };
+}
+
 function coreBeliefsGraphic(): Graphic {
   const { item_order: order, believe_pct: results } = coreBeliefsData;
   const alt = order
@@ -2022,6 +2051,20 @@ function familyScripturePrayerGraphic(): Graphic {
   };
 }
 
+function sundaySchoolChildrenGraphic(): Graphic {
+  const { group_order: order, sends_children_to_sunday_school: results } = sundaySchoolChildrenData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Sending kids to Sunday school",
+    description: "Share of parents who send their child(ren) to Sunday school or another religious education program, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/sunday-school-children.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of parents who send their children to Sunday school or another religious education program, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
 function scriptureWordOfGodGraphic(): Graphic {
   const { group_order: order, scripture_is_word_of_god: results } = scriptureWordOfGodData;
   const alt = order
@@ -2047,6 +2090,34 @@ function volunteerThroughChurchGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/volunteer-through-church.png",
     width: 1080, height: 1350,
     alt: `Bar chart: among past-week volunteers, share whose volunteering was mainly through a church or religious organization, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function preserveTraditionalBeliefsGraphic(): Graphic {
+  const { group_order: order, prefers_preserving_traditional_beliefs: results } = preserveTraditionalBeliefsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Preserve traditional beliefs and practices",
+    description: "Share who say their own church or denomination should preserve its traditional beliefs and practices, rather than adjust or modernize them, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/preserve-traditional-beliefs.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say their own church or denomination should preserve its traditional beliefs and practices rather than adjust or modernize them, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function scriptureLiteralismGraphic(): Graphic {
+  const { group_order: order, scripture_taken_literally: results } = scriptureLiteralismData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is scripture meant literally?",
+    description: "Among those who call their own scripture the word of God, share who say it is meant literally, word for word, rather than interpreted, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/scripture-literalism.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: among those who call their own scripture the word of God, share who say it is meant literally rather than interpreted, by religious tradition, 2014. ${alt}.`,
   };
 }
 
@@ -2442,6 +2513,20 @@ function congregationDonatingGraphic(): Graphic {
   };
 }
 
+function covidLessonBeliefGraphic(): Graphic {
+  const { group_order: order, believes_covid_lesson: results } = covidLessonBeliefData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "A lesson to learn from COVID",
+    description: "Share who believe there's a lesson (or set of lessons) for humankind to learn from the coronavirus outbreak, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/covid-lesson-belief.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe there's a lesson for humankind to learn from the coronavirus outbreak, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
 /** Formats a {pct} results record (insertion order) into alt text for the
  * five household-types graphics below. */
 function householdTypeAlt(results: Record<string, { pct: number }>): string {
@@ -2536,6 +2621,20 @@ function childlessByChoiceGraphic(): Graphic {
   };
 }
 
+function prayerStyleGraphic(): Graphic {
+  const results = prayerStyleData.personal_conversation_prayer;
+  const alt = Object.entries(results)
+    .map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`)
+    .join(", ");
+  return {
+    title: "Memorized prayers, or a personal conversation?",
+    description: "Share who say they mainly have a personal conversation with God when they pray, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/prayer-style.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who say they mainly have a personal conversation with God when they pray rather than mainly reciting memorized prayers, by religion, 2015. ${alt}.`,
+  };
+}
+
 function annulmentCommunionGraphic(): Graphic {
   const { group_order: order, should_allow_communion_after_remarriage: results } = annulmentCommunionData;
   const alt = order
@@ -2617,6 +2716,20 @@ function turnedToChurchForHelpGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-black-faith-2021/turned-to-church-for-help.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Black Americans who have ever turned to their congregation for help with bills, housing, or food, by religion. ${alt}.`,
+  };
+}
+
+function denominationLoyaltyGraphic(): Graphic {
+  const { group_order: order, denomination_very_important: results } = denominationLoyaltyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Sticking with your own denomination",
+    description: "Share of Black Americans saying it's very important that a new congregation belong to their own denomination, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/denomination-loyalty.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans saying it's very important that a new congregation belong to their own denomination, by religion. ${alt}.`,
   };
 }
 

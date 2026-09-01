@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share who believe there is a lesson or set of lessons for humankind to learn from the coronavirus outbreak (COVIDLESSON1_W70); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10211.00001353193,
+  "total_unweighted_n": 10211,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Catholic",
+    "Mainline Protestant",
+    "Jewish",
+    "Evangelical Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "believes_covid_lesson": {
+    "Evangelical Protestant": {
+      "pct": 86.24,
+      "valid_unweighted_n": 2069,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 86.74,
+      "valid_unweighted_n": 1363,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 93.4,
+      "valid_unweighted_n": 455,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 87.22,
+      "valid_unweighted_n": 2214,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 93.41,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 86.48,
+      "valid_unweighted_n": 250,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 84.58,
+      "valid_unweighted_n": 3072,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 86.57,
+      "valid_unweighted_n": 10161,
+      "group_unweighted_n": 10211
+    }
+  }
+}
