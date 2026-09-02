@@ -127,6 +127,23 @@ def fmt_millions(n: float) -> str:
     return f"{n / 1_000_000:.1f}M"
 
 
+def draw_mixed_line(fig, x: float, y: float, segments, fontsize: float, va: str = "top") -> float:
+    """Draws a left-to-right line built from (text, fontproperties, color)
+    segments -- e.g. a regular run, then one bold word, then more regular
+    text -- so a single line can bold one word without the whole line being
+    mathtext or a separate image. Widths are measured off the actual
+    renderer (not estimated), so segments never overlap regardless of font
+    metrics. Returns the figure-fraction x just past the last segment."""
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    cur_x = x
+    for text, fp, color in segments:
+        t = fig.text(cur_x, y, text, fontproperties=fp, fontsize=fontsize, color=color, ha="left", va=va)
+        fig.canvas.draw()
+        cur_x += t.get_window_extent(renderer=renderer).width / fig.bbox.width
+    return cur_x
+
+
 # ---------------------------------------------------------------------------
 # Fonts
 # ---------------------------------------------------------------------------
@@ -175,8 +192,12 @@ for i, line in enumerate(title_lines):
               fontsize=34, color=INK, ha="left", va="top")
 
 sub_y = title_top - len(title_lines) * line_step - 0.006
-fig.text(LEFT, sub_y, "Estimated Americans who agree, by tradition — not survey percentages",
-          fontproperties=fonts["regular"], fontsize=15.5, color=MUTED, ha="left", va="top")
+SUB_FONTSIZE = 18
+draw_mixed_line(fig, LEFT, sub_y, [
+    ("Estimated Americans who ", fonts["regular"], INK),
+    ("agree", fonts["bold"], INK),
+    (", by tradition", fonts["regular"], INK),
+], fontsize=SUB_FONTSIZE)
 
 # ---- Divider: splits the canvas into a top and bottom half ------------
 DIVIDER_Y = 0.500
@@ -196,7 +217,7 @@ for i, line in enumerate(bottom_title_lines):
               fontsize=34, color=INK, ha="left", va="top")
 bottom_sub_y = bottom_title_top - len(bottom_title_lines) * line_step - 0.006
 fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
-          fontproperties=fonts["regular"], fontsize=15.5, color=MUTED, ha="left", va="top")
+          fontproperties=fonts["regular"], fontsize=SUB_FONTSIZE, color=INK, ha="left", va="top")
 
 # ---- Bar geometry: top chart (5 bars: Total + 4 traditions) and the LDS
 # contrast bar (1 bar) share the SAME per-bar slot height in figure-fraction
@@ -204,14 +225,16 @@ fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
 # above or below the divider -- only its length differs, which is the only
 # thing that should differ. Both axes use explicit ylim (-0.5, n-0.5) with
 # zero margins so a "slot" is exactly 1 data unit tall, in both charts.
-CHART_LEFT = 0.30
-BAR_HEIGHT_FRAC = 0.74  # thicker than the previous 0.62
+CHART_LEFT = 0.24  # moved in from 0.30 so bars run longer / labels sit tighter
+BAR_HEIGHT_FRAC = 0.74
 N_TOP = len(ORDER)  # Total + 4 traditions
 
 # Available band for the top chart: from just under its subtitle down to
-# just above the divider (with a small gap).
-top_band_top = sub_y - 0.050
-top_band_bottom = DIVIDER_Y + 0.025
+# just above the divider (tightened gaps so the chart -- and the gaps
+# between its own bars -- claim more of the canvas instead of leaving it
+# white).
+top_band_top = sub_y - 0.028
+top_band_bottom = DIVIDER_Y + 0.015
 slot_height = (top_band_top - top_band_bottom) / N_TOP
 
 ax = fig.add_axes([CHART_LEFT, top_band_bottom, RIGHT - CHART_LEFT, top_band_top - top_band_bottom])
@@ -239,10 +262,14 @@ for g in ORDER:
              va="center", ha="left", color=COLOR[g], fontproperties=fonts["bold"], fontsize=19)
 
 # ---- LDS contrast bar: same x-scale AND same per-bar slot height as the
-# chart above, so the size gap reads purely from bar length. ----
-ax2_top = bottom_sub_y - 0.055
+# chart above, so the size gap reads purely from bar length. Centered in
+# the whole band between its subtitle and the caption (rather than pinned
+# just under the subtitle) so it claims the space that used to sit empty
+# below it.
+band_top = bottom_sub_y - 0.02
+band_bottom = caption_top + 0.02
 ax2_height = slot_height  # identical slot height to one bar's worth above the divider
-ax2_bottom = ax2_top - ax2_height
+ax2_bottom = band_bottom + (band_top - band_bottom - ax2_height) / 2
 ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_height])
 ax2.set_facecolor(PAPER)
 ax2.barh([""], [LDS_US_MEMBERS], height=BAR_HEIGHT_FRAC, color=ACCENT, edgecolor=INK, linewidth=1.2, zorder=3)
