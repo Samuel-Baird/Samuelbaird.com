@@ -18,7 +18,12 @@ const SLIDES = [
   {
     file: "1_trinity_headcount.png",
     title:
-      "“There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.”",
+      "“There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.” — who agree",
+  },
+  {
+    file: "1b_trinity_disagree_headcount.png",
+    title:
+      "“There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.” — who disagree",
   },
   { file: "2_arian_headcount.png", title: "“Jesus is the first and greatest being created by God.”" },
   { file: "3_teacher_headcount.png", title: "“Jesus was a great teacher, but he was not God.”" },
@@ -33,17 +38,39 @@ const SLIDES = [
   },
   {
     file: "6_nature_headcount.png",
-    title: "“Everyone sins a little, but most people are good by nature.”",
+    title: "“Everyone sins a little, but most people are good by nature.” — who agree",
   },
-  { file: "7_abortion_headcount.png", title: "“Abortion is a sin.”" },
-  { file: "8_sex_headcount.png", title: "“Sex outside of traditional marriage is a sin.”" },
+  {
+    file: "6b_nature_disagree_headcount.png",
+    title: "“Everyone sins a little, but most people are good by nature.” — who disagree",
+  },
+  { file: "7_abortion_headcount.png", title: "“Abortion is a sin.” — who agree" },
+  { file: "7b_abortion_disagree_headcount.png", title: "“Abortion is a sin.” — who disagree" },
+  {
+    file: "8_sex_headcount.png",
+    title: "“Sex outside of traditional marriage is a sin.” — who agree",
+  },
+  {
+    file: "8b_sex_disagree_headcount.png",
+    title: "“Sex outside of traditional marriage is a sin.” — who disagree",
+  },
   {
     file: "9_homo_headcount.png",
-    title: "“The Bible's condemnation of homosexual behavior doesn't apply today.”",
+    title: "“The Bible's condemnation of homosexual behavior doesn't apply today.” — who disagree",
+  },
+  {
+    file: "9b_homo_agree_headcount.png",
+    title: "“The Bible's condemnation of homosexual behavior doesn't apply today.” — who agree",
   },
   {
     file: "10_gender_headcount.png",
-    title: "“People should be able to choose their gender regardless of their biological sex.”",
+    title:
+      "“People should be able to choose their gender regardless of their biological sex.” — who disagree",
+  },
+  {
+    file: "10b_gender_agree_headcount.png",
+    title:
+      "“People should be able to choose their gender regardless of their biological sex.” — who agree",
   },
 ];
 

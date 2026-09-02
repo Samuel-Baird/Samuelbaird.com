@@ -147,6 +147,41 @@ ITEMS = [
          pct={"Evangelical": 77, "Black Protestant": 65, "Mainline": 61, "Catholic": 53}),
 ]
 
+# Companion slides for six of the above statements, plotting the OPPOSITE
+# direction from the original slide (e.g. trinity's original is "% who
+# agree"; this is "% who disagree"). These percentages are NOT simply
+# 100 - the original % -- State of Theology is a 5-point scale (strongly/
+# somewhat disagree, not sure, somewhat/strongly agree), so "100 - agree%"
+# would silently fold "not sure" into "disagree" and overstate it. Instead
+# each value here is strongly+somewhat on the OTHER end of the same
+# question, read directly from src/lib/evangelical-quiz/data.json's
+# per-tradition raw_pct (the quiz's own full 5-point breakdown, built by
+# scripts/evangelical-quiz/build_data.py -- the same source render_chart.py
+# reads from) rather than derived. That file's agree-side numbers for
+# these six items already match post2's hardcoded percentages above
+# (spot-checked while pulling these), confirming both sides come from the
+# same underlying State of Theology tradition-level breakout.
+COMPANIONS = [
+    dict(n=1, key="trinity_disagree", file="1b_trinity_disagree_headcount.png", direction="disagree", year="2025",
+         quote="There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.",
+         pct={"Evangelical": 3, "Black Protestant": 2, "Mainline": 3, "Catholic": 6}),
+    dict(n=6, key="nature_disagree", file="6b_nature_disagree_headcount.png", direction="disagree", year="2025",
+         quote="Everyone sins a little, but most people are good by nature.",
+         pct={"Evangelical": 42, "Black Protestant": 22, "Mainline": 17, "Catholic": 15}),
+    dict(n=7, key="abortion_disagree", file="7b_abortion_disagree_headcount.png", direction="disagree", year="2025",
+         quote="Abortion is a sin.",
+         pct={"Evangelical": 19, "Black Protestant": 24, "Mainline": 41, "Catholic": 36}),
+    dict(n=8, key="sex_disagree", file="8b_sex_disagree_headcount.png", direction="disagree", year="2025",
+         quote="Sex outside of traditional marriage is a sin.",
+         pct={"Evangelical": 15, "Black Protestant": 23, "Mainline": 38, "Catholic": 45}),
+    dict(n=9, key="homo_agree", file="9b_homo_agree_headcount.png", direction="agree", year="2025",
+         quote="The Bible's condemnation of homosexual behavior doesn't apply today.",
+         pct={"Evangelical": 20, "Black Protestant": 29, "Mainline": 38, "Catholic": 44}),
+    dict(n=10, key="gender_agree", file="10b_gender_agree_headcount.png", direction="agree", year="2025",
+         quote="People should be able to choose their gender regardless of their biological sex.",
+         pct={"Evangelical": 17, "Black Protestant": 26, "Mainline": 28, "Catholic": 38}),
+]
+
 
 def fmt_millions(n: float) -> str:
     return f"{n / 1_000_000:.1f}M"
@@ -254,7 +289,7 @@ def render_item(item: dict) -> None:
         fig, fonts,
         [
             "Tradition shares: Pew Religious Landscape Study, 2023-24.   Population: U.S. Census Bureau, 2025 national estimate.   "
-            f"Agreement: State of Theology {item['year']} survey, by tradition.   LDS U.S. membership: Church-published statistics, Dec. 31, 2025.",
+            f"{item['direction'].capitalize()}: State of Theology {item['year']} survey, by tradition.   LDS U.S. membership: Church-published statistics, Dec. 31, 2025.",
             "Estimated headcounts, not survey sample sizes.",
         ],
         left=LEFT,
@@ -354,7 +389,7 @@ def render_item(item: dict) -> None:
     print(f"wrote {out_path.name}: {len(title_lines)} title line(s), total={total:,.0f}, ratio={ratio:.1f}x")
 
 
-for item in ITEMS:
+for item in [*ITEMS, *COMPANIONS]:
     render_item(item)
 plt.close(_measure_fig)
 print("done")
