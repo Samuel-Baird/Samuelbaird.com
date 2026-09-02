@@ -15,7 +15,36 @@ export const metadata: Metadata = {
 };
 
 const SLIDES = [
-  { file: "1_teacher_headcount.png", title: "Great teacher, not God — by the numbers" },
+  {
+    file: "1_trinity_headcount.png",
+    title:
+      "“There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.”",
+  },
+  { file: "2_arian_headcount.png", title: "“Jesus is the first and greatest being created by God.”" },
+  { file: "3_teacher_headcount.png", title: "“Jesus was a great teacher, but he was not God.”" },
+  {
+    file: "4_spirit_headcount.png",
+    title: "“The Holy Spirit is a force but is not a personal being.”",
+  },
+  {
+    file: "5_relig_headcount.png",
+    title:
+      "“God accepts the worship of all religions, including Christianity, Judaism, and Islam.”",
+  },
+  {
+    file: "6_nature_headcount.png",
+    title: "“Everyone sins a little, but most people are good by nature.”",
+  },
+  { file: "7_abortion_headcount.png", title: "“Abortion is a sin.”" },
+  { file: "8_sex_headcount.png", title: "“Sex outside of traditional marriage is a sin.”" },
+  {
+    file: "9_homo_headcount.png",
+    title: "“The Bible's condemnation of homosexual behavior doesn't apply today.”",
+  },
+  {
+    file: "10_gender_headcount.png",
+    title: "“People should be able to choose their gender regardless of their biological sex.”",
+  },
 ];
 
 const BASE = "/social-graphics/state-of-theology/post3";
