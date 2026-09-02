@@ -199,26 +199,6 @@ draw_mixed_line(fig, LEFT, sub_y, [
     (", by tradition", fonts["regular"], INK),
 ], fontsize=SUB_FONTSIZE)
 
-# ---- Divider: splits the canvas into a top and bottom half ------------
-DIVIDER_Y = 0.500
-fig.add_artist(plt.Line2D([0.0, 1.0], [DIVIDER_Y, DIVIDER_Y], color=INK, linewidth=3.5,
-                           transform=fig.transFigure, zorder=5))
-
-# ---- Bottom half title, styled to match the top title exactly ---------
-# Deliberately the SAME size/weight as the survey-statement title above --
-# this number isn't a fifth tradition answering the same survey question,
-# it's a different metric (the Church's own reported membership count), and
-# giving it equal visual weight (not a smaller subordinate label) is what
-# signals that to the reader.
-bottom_title_top = DIVIDER_Y - 0.075
-bottom_title_lines = ["The Church of Jesus Christ", "of Latter-day Saints"]
-for i, line in enumerate(bottom_title_lines):
-    fig.text(LEFT, bottom_title_top - i * line_step, line, fontproperties=fonts["title"],
-              fontsize=34, color=INK, ha="left", va="top")
-bottom_sub_y = bottom_title_top - len(bottom_title_lines) * line_step - 0.006
-fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
-          fontproperties=fonts["regular"], fontsize=SUB_FONTSIZE, color=INK, ha="left", va="top")
-
 # ---- Bar geometry: top chart (5 bars: Total + 4 traditions) and the LDS
 # contrast bar (1 bar) share the SAME per-bar slot height in figure-fraction
 # units, so a bar reads as literally the same size/thickness whether it's
@@ -228,16 +208,17 @@ fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
 CHART_LEFT = 0.24  # moved in from 0.30 so bars run longer / labels sit tighter
 BAR_HEIGHT_FRAC = 0.74
 N_TOP = len(ORDER)  # Total + 4 traditions
+SLOT_HEIGHT = 0.078  # figure-fraction per bar slot -- the one number that sets
+# bar thickness (and, via BAR_HEIGHT_FRAC, the gaps between bars) everywhere.
+# Chosen as the largest value that still lets the bottom section's fixed
+# content (3-line title, subtitle, one bar, the gaps between them) fit
+# above the caption once the divider is placed -- see "Divider" below.
 
-# Available band for the top chart: from just under its subtitle down to
-# just above the divider (tightened gaps so the chart -- and the gaps
-# between its own bars -- claim more of the canvas instead of leaving it
-# white).
 top_band_top = sub_y - 0.028
-top_band_bottom = DIVIDER_Y + 0.015
-slot_height = (top_band_top - top_band_bottom) / N_TOP
+top_band_height = SLOT_HEIGHT * N_TOP
+top_band_bottom = top_band_top - top_band_height
 
-ax = fig.add_axes([CHART_LEFT, top_band_bottom, RIGHT - CHART_LEFT, top_band_top - top_band_bottom])
+ax = fig.add_axes([CHART_LEFT, top_band_bottom, RIGHT - CHART_LEFT, top_band_height])
 ax.set_facecolor(PAPER)
 
 xlim_top = total * 1.16  # Total is now the longest bar -- headroom for its own label
@@ -261,15 +242,38 @@ for g in ORDER:
     ax.text(v + xlim_top * 0.02, g, fmt_millions(v),
              va="center", ha="left", color=COLOR[g], fontproperties=fonts["bold"], fontsize=19)
 
+# ---- Divider: placed right below the chart, not at a fixed 0.5. The LDS
+# section below it needs far less content (a title, a subtitle, one bar)
+# than the 5-bar chart above, so pinning it to an exact half would just
+# leave that extra room as dead white space -- letting the chart's own
+# height decide where the divider falls means the bottom section is only
+# as tall as it actually needs to be.
+DIVIDER_Y = top_band_bottom - 0.02
+fig.add_artist(plt.Line2D([0.0, 1.0], [DIVIDER_Y, DIVIDER_Y], color=INK, linewidth=3.5,
+                           transform=fig.transFigure, zorder=5))
+
+# ---- Bottom section title, styled to match the top title exactly ------
+# Deliberately the SAME size/weight as the survey-statement title above --
+# this number isn't a fifth tradition answering the same survey question,
+# it's a different metric (the Church's own reported membership count), and
+# giving it equal visual weight (not a smaller subordinate label) is what
+# signals that to the reader.
+bottom_title_top = DIVIDER_Y - 0.035
+bottom_title_lines = ["Total membership of The", "Church of Jesus Christ of", "Latter-day Saints"]
+for i, line in enumerate(bottom_title_lines):
+    fig.text(LEFT, bottom_title_top - i * line_step, line, fontproperties=fonts["title"],
+              fontsize=34, color=INK, ha="left", va="top")
+bottom_sub_y = bottom_title_top - len(bottom_title_lines) * line_step - 0.006
+fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
+          fontproperties=fonts["regular"], fontsize=SUB_FONTSIZE, color=INK, ha="left", va="top")
+
 # ---- LDS contrast bar: same x-scale AND same per-bar slot height as the
-# chart above, so the size gap reads purely from bar length. Centered in
-# the whole band between its subtitle and the caption (rather than pinned
-# just under the subtitle) so it claims the space that used to sit empty
-# below it.
-band_top = bottom_sub_y - 0.02
-band_bottom = caption_top + 0.02
-ax2_height = slot_height  # identical slot height to one bar's worth above the divider
-ax2_bottom = band_bottom + (band_top - band_bottom - ax2_height) / 2
+# chart above, so the size gap reads purely from bar length -- and, per the
+# last revision, the same "6.9M" millions format the other bars use rather
+# than the full "6,929,770" figure (still spelled out in the caption).
+ax2_top = bottom_sub_y - 0.02
+ax2_height = SLOT_HEIGHT  # identical slot height to one bar's worth above the divider
+ax2_bottom = ax2_top - ax2_height
 ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_height])
 ax2.set_facecolor(PAPER)
 ax2.barh([""], [LDS_US_MEMBERS], height=BAR_HEIGHT_FRAC, color=ACCENT, edgecolor=INK, linewidth=1.2, zorder=3)
@@ -280,7 +284,7 @@ ax2.set_xticks([])
 ax2.set_yticks([])
 for spine in ax2.spines.values():
     spine.set_visible(False)
-ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, f"{LDS_US_MEMBERS:,}", va="center", ha="left",
+ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, fmt_millions(LDS_US_MEMBERS), va="center", ha="left",
           color=ACCENT, fontproperties=fonts["bold"], fontsize=20)
 
 OUT_PATH = OUT / "1_teacher_headcount.png"
