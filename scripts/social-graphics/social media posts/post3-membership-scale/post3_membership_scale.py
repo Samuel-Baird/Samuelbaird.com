@@ -53,7 +53,6 @@ via chart_style.draw_caption_bottom.
 from __future__ import annotations
 
 import sys
-import textwrap
 from pathlib import Path
 
 import matplotlib.font_manager as fm
@@ -106,13 +105,22 @@ COLOR = {
     "Black Protestant": MOSS,
     "Catholic": WINE,
 }
-ORDER = ["Catholic", "Black Protestant", "Mainline", "Evangelical"]  # bottom to top
+GROUPS = ["Catholic", "Black Protestant", "Mainline", "Evangelical"]
 
 LDS_US_MEMBERS = 6_929_770
 
-headcount = {g: POP_2025 * TRADITION_SHARE[g] * AGREE_PCT[g] for g in ORDER}
+headcount = {g: POP_2025 * TRADITION_SHARE[g] * AGREE_PCT[g] for g in GROUPS}
 total = sum(headcount.values())
 ratio = total / LDS_US_MEMBERS
+
+# "Total" is a summed aggregate, not a fifth tradition -- it sinks to the
+# bottom of the chart per the site-wide row-order rule (an aggregate row
+# always sits below every substantive row; see chart_style.sort_groups /
+# BRANDING_AND_DESIGN.md's "Charts" section) and renders in MUTED, the same
+# neutral non-identity color that rule uses for aggregate rows.
+headcount["Total"] = total
+COLOR["Total"] = MUTED
+ORDER = ["Total", *GROUPS]  # bottom to top
 
 
 def fmt_millions(n: float) -> str:
@@ -146,18 +154,19 @@ LEFT, RIGHT = 0.075, 0.94
 caption_top = draw_caption_bottom(
     fig, fonts,
     [
-        "Tradition shares: Pew Religious Landscape Study, 2023-24. Population: U.S. "
-        "Census Bureau, 2025 national estimate. Agreement: State of Theology 2025 survey, "
-        "by tradition. LDS U.S. membership: Church-published statistics, Dec. 31, 2025.",
+        "Tradition shares: Pew Religious Landscape Study, 2023-24.   Population: U.S. Census Bureau, 2025 national estimate.   "
+        "Agreement: State of Theology 2025 survey, by tradition.   LDS U.S. membership: Church-published statistics, Dec. 31, 2025.",
+        "Estimated headcounts, not survey sample sizes.",
     ],
     left=LEFT,
-    handle="Estimated headcounts, not survey sample sizes",
+    wrap_width=132,
     fontsize=11.5,
     color=MUTED,
-    handle_color=INK,
+    handle="@ithinkisam",
+    handle_color=AMBER,
 )
 
-# ---- Title + subtitle -------------------------------------------------
+# ---- Title + subtitle (top half) ---------------------------------------
 title_top = 0.965
 title_lines = ["“Jesus was a great teacher,", "but he was not God”"]
 line_step = 0.050
@@ -168,29 +177,52 @@ for i, line in enumerate(title_lines):
 sub_y = title_top - len(title_lines) * line_step - 0.006
 fig.text(LEFT, sub_y, "Estimated Americans who agree, by tradition — not survey percentages",
           fontproperties=fonts["regular"], fontsize=15.5, color=MUTED, ha="left", va="top")
-sub2_y = sub_y - 0.032
-fig.text(LEFT, sub2_y,
-          "State of Theology 2025 agreement % × each tradition's 2025 U.S. population (Pew RLS 2023-24 share × Census 2025 total)",
-          fontproperties=fonts["italic"], fontsize=11.5, color=MUTED, ha="left", va="top")
 
 # ---- Divider: splits the canvas into a top and bottom half ------------
-DIVIDER_Y = 0.535
+DIVIDER_Y = 0.500
 fig.add_artist(plt.Line2D([0.0, 1.0], [DIVIDER_Y, DIVIDER_Y], color=INK, linewidth=3.5,
                            transform=fig.transFigure, zorder=5))
 
-# ---- Top half: bar chart, 4 traditions ---------------------------------
+# ---- Bottom half title, styled to match the top title exactly ---------
+# Deliberately the SAME size/weight as the survey-statement title above --
+# this number isn't a fifth tradition answering the same survey question,
+# it's a different metric (the Church's own reported membership count), and
+# giving it equal visual weight (not a smaller subordinate label) is what
+# signals that to the reader.
+bottom_title_top = DIVIDER_Y - 0.075
+bottom_title_lines = ["The Church of Jesus Christ", "of Latter-day Saints"]
+for i, line in enumerate(bottom_title_lines):
+    fig.text(LEFT, bottom_title_top - i * line_step, line, fontproperties=fonts["title"],
+              fontsize=34, color=INK, ha="left", va="top")
+bottom_sub_y = bottom_title_top - len(bottom_title_lines) * line_step - 0.006
+fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
+          fontproperties=fonts["regular"], fontsize=15.5, color=MUTED, ha="left", va="top")
+
+# ---- Bar geometry: top chart (5 bars: Total + 4 traditions) and the LDS
+# contrast bar (1 bar) share the SAME per-bar slot height in figure-fraction
+# units, so a bar reads as literally the same size/thickness whether it's
+# above or below the divider -- only its length differs, which is the only
+# thing that should differ. Both axes use explicit ylim (-0.5, n-0.5) with
+# zero margins so a "slot" is exactly 1 data unit tall, in both charts.
 CHART_LEFT = 0.30
-chart_top = sub2_y - 0.055
-chart_bottom = DIVIDER_Y + 0.155
-ax = fig.add_axes([CHART_LEFT, chart_bottom, RIGHT - CHART_LEFT, chart_top - chart_bottom])
+BAR_HEIGHT_FRAC = 0.74  # thicker than the previous 0.62
+N_TOP = len(ORDER)  # Total + 4 traditions
+
+# Available band for the top chart: from just under its subtitle down to
+# just above the divider (with a small gap).
+top_band_top = sub_y - 0.050
+top_band_bottom = DIVIDER_Y + 0.025
+slot_height = (top_band_top - top_band_bottom) / N_TOP
+
+ax = fig.add_axes([CHART_LEFT, top_band_bottom, RIGHT - CHART_LEFT, top_band_top - top_band_bottom])
 ax.set_facecolor(PAPER)
 
-xmax = max(headcount.values())
-xlim_top = xmax * 1.42
-ax.barh(ORDER, [headcount[g] for g in ORDER], height=0.62,
+xlim_top = total * 1.16  # Total is now the longest bar -- headroom for its own label
+ax.barh(ORDER, [headcount[g] for g in ORDER], height=BAR_HEIGHT_FRAC,
          color=[COLOR[g] for g in ORDER], edgecolor=INK, linewidth=1.2, zorder=3)
+ax.set_ylim(-0.5, N_TOP - 0.5)
+ax.margins(y=0)
 ax.set_xlim(0, xlim_top)
-ax.margins(y=0.10)
 ax.set_xticks([])
 for spine in ax.spines.values():
     spine.set_visible(False)
@@ -206,23 +238,16 @@ for g in ORDER:
     ax.text(v + xlim_top * 0.02, g, fmt_millions(v),
              va="center", ha="left", color=COLOR[g], fontproperties=fonts["bold"], fontsize=19)
 
-total_y = chart_bottom - 0.045
-fig.text(LEFT, total_y,
-          f"≈ {total/1_000_000:,.0f} million Americans across just these four traditions",
-          fontproperties=fonts["bold"], fontsize=19, color=INK, ha="left", va="top")
-
-# ---- Bottom half: LDS contrast bar, same x-scale as the chart above ----
-label_y = DIVIDER_Y - 0.075
-fig.text(LEFT, label_y, "The Church of Jesus Christ of Latter-day Saints", fontproperties=fonts["bold"],
-          fontsize=19, color=INK, ha="left", va="top")
-fig.text(LEFT, label_y - 0.040, "Total U.S. membership, 2025", fontproperties=fonts["regular"],
-          fontsize=15.5, color=MUTED, ha="left", va="top")
-
-ax2_top = label_y - 0.095
-ax2_bottom = ax2_top - 0.075
-ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_top - ax2_bottom])
+# ---- LDS contrast bar: same x-scale AND same per-bar slot height as the
+# chart above, so the size gap reads purely from bar length. ----
+ax2_top = bottom_sub_y - 0.055
+ax2_height = slot_height  # identical slot height to one bar's worth above the divider
+ax2_bottom = ax2_top - ax2_height
+ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_height])
 ax2.set_facecolor(PAPER)
-ax2.barh([""], [LDS_US_MEMBERS], height=0.62, color=ACCENT, edgecolor=INK, linewidth=1.2, zorder=3)
+ax2.barh([""], [LDS_US_MEMBERS], height=BAR_HEIGHT_FRAC, color=ACCENT, edgecolor=INK, linewidth=1.2, zorder=3)
+ax2.set_ylim(-0.5, 0.5)
+ax2.margins(y=0)
 ax2.set_xlim(0, xlim_top)  # same scale as the chart above -- the point is the size gap
 ax2.set_xticks([])
 ax2.set_yticks([])
@@ -230,15 +255,6 @@ for spine in ax2.spines.values():
     spine.set_visible(False)
 ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, f"{LDS_US_MEMBERS:,}", va="center", ha="left",
           color=ACCENT, fontproperties=fonts["bold"], fontsize=20)
-
-note_y = ax2_bottom - 0.045
-note = (f"That’s {ratio:,.0f} people who say Jesus wasn’t God, in just these four "
-        f"traditions, for every one Latter-day Saint in the country — a tradition "
-        f"whose divinity-of-Christ doctrine is routinely singled out instead.")
-wrapped = textwrap.wrap(note, width=52)
-for i, line in enumerate(wrapped):
-    fig.text(LEFT, note_y - i * 0.028, line, fontproperties=fonts["italic"], fontsize=14.5,
-              color=INK, ha="left", va="top")
 
 OUT_PATH = OUT / "1_teacher_headcount.png"
 fig.savefig(OUT_PATH, facecolor=PAPER, dpi=DPI)
