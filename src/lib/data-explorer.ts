@@ -486,6 +486,19 @@ const RAW_DATASETS: Dataset[] = [
         previewWidth: 1080,
         previewHeight: 1350,
       },
+      {
+        title: "Raw numbers, not percentages",
+        description:
+          "Converts each of post2's survey percentages into an estimated headcount — a " +
+          "tradition's agreement (or disagreement) rate applied to that tradition's own " +
+          "share of the U.S. population — then contrasts the total against the Church of " +
+          "Jesus Christ of Latter-day Saints' own published U.S. membership, on the same scale.",
+        href: "/data-explorer/state-of-theology/social/post3",
+        count: 16,
+        previewSrc: "/social-graphics/state-of-theology/post3/1_trinity_headcount.png",
+        previewWidth: 1080,
+        previewHeight: 1350,
+      },
     ],
   },
   {
