@@ -15,4 +15,6 @@ alter table public.hub_claims drop column if exists claim_id;
 
 drop table if exists public.claims;
 
+drop function if exists public.claims_search_tsv_refresh();
+
 drop table if exists public.quiz_answers;
