@@ -95,7 +95,6 @@ npx tsx scripts/migrate.ts
 | [`AGENTS.md`](./AGENTS.md) | Rules for AI agents working in this repo |
 | [`BRANDING_AND_DESIGN.md`](./BRANDING_AND_DESIGN.md) | Design source of truth — type scale, colour tokens, card and pill styles, voice |
 | [`STUDY_UPLOAD_INSTRUCTIONS.md`](./STUDY_UPLOAD_INSTRUCTIONS.md) | Adding an academic study |
-| [`APOLOGETICS_HUB_INGEST.md`](./APOLOGETICS_HUB_INGEST.md) | Ingesting and analyzing critical-channel videos for the Apologetics Hub |
 
 ---
 

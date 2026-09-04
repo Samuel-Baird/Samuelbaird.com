@@ -84,36 +84,33 @@ function normalizeEmail(value: FormDataEntryValue | null) {
 }
 
 // ============================================================================
-// Unified access management — /admin/access grants premium, apologist, and
-// admin status from one email-keyed form instead of three separate screens.
-// Each role still lives in its own allowlist table (premium_users /
-// apologists / admins) so isPremiumUser()/isApologistUser()/requireAdmin()
-// and their RLS/cache posture are unchanged; this is only a UI + one new
-// table (admins) consolidating how those three tables are edited.
+// Unified access management — /admin/access grants premium and admin status
+// from one email-keyed form instead of separate screens. Each role still
+// lives in its own allowlist table (premium_users / admins) so
+// isPremiumUser()/requireAdmin() and their RLS/cache posture are unchanged;
+// this is only a UI + one table (admins) consolidating how they're edited.
 // ============================================================================
 
-export type UserRole = "premium" | "apologist" | "admin";
+export type UserRole = "premium" | "admin";
 
-const ROLE_TABLE: Record<UserRole, "premium_users" | "apologists" | "admins"> = {
+const ROLE_TABLE: Record<UserRole, "premium_users" | "admins"> = {
   premium: "premium_users",
-  apologist: "apologists",
   admin: "admins",
 };
 
 const ROLE_TAG: Record<UserRole, string> = {
   premium: "premium-users",
-  apologist: "apologists",
   admin: "admins",
 };
 
 function assertRole(role: string): asserts role is UserRole {
-  if (role !== "premium" && role !== "apologist" && role !== "admin") {
+  if (role !== "premium" && role !== "admin") {
     throw new Error("Invalid role.");
   }
 }
 
 // Adds a person with an initial set of roles, or updates their name/roles if
-// they're already on one of the three lists (upsert semantics per role).
+// they're already on one of the lists (upsert semantics per role).
 export async function upsertUserAccess(formData: FormData) {
   const auth = await requireAdmin();
   const email = normalizeEmail(formData.get("email"));
@@ -122,7 +119,7 @@ export async function upsertUserAccess(formData: FormData) {
     throw new Error("Enter a valid email address.");
   }
 
-  const roles: UserRole[] = (["premium", "apologist", "admin"] as const).filter(
+  const roles: UserRole[] = (["premium", "admin"] as const).filter(
     (r) => formData.get(r) === "on",
   );
 

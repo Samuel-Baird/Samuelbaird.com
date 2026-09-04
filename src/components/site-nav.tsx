@@ -11,7 +11,6 @@ import { CommandPaletteHost } from "@/components/command-palette-host";
 import { SiteNavClient, type SiteNavLink } from "@/components/site-nav-client";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
-import { isApologistUser } from "@/lib/permissions";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 const BASE_LINKS: SiteNavLink[] = [
@@ -26,12 +25,6 @@ const BASE_LINKS: SiteNavLink[] = [
 
 export async function SiteNav() {
   const auth = await getCurrentUser();
-  // Server-side filter, not a client-side hide: the hub is a hidden-404
-  // route, so the link itself must never reach non-apologists' HTML.
-  const showHub = auth ? await isApologistUser(auth) : false;
-  const links = showHub
-    ? [...BASE_LINKS, { href: "/apologetics-hub", label: "Hub" }]
-    : BASE_LINKS;
   const user: AuthMenuUser | null = auth
     ? {
         id: auth.user.id,
@@ -71,7 +64,7 @@ export async function SiteNav() {
         </Link>
 
         <div className="flex items-center gap-3">
-          <SiteNavClient links={links} user={user} signOut={signOutAction} />
+          <SiteNavClient links={BASE_LINKS} user={user} signOut={signOutAction} />
           <Suspense fallback={null}>
             <CommandPaletteHost />
           </Suspense>

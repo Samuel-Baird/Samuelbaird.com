@@ -14,35 +14,30 @@ type Person = {
   email: string;
   name: string | null;
   premium: boolean;
-  apologist: boolean;
   admin: boolean;
   addedAt: string | null;
 };
 
 const ROLES: { key: UserRole; label: string }[] = [
   { key: "premium", label: "Premium" },
-  { key: "apologist", label: "Apologist" },
   { key: "admin", label: "Admin" },
 ];
 
 export default async function AdminAccessPage() {
-  // Gate here, not just in admin/layout.tsx — see the note in
-  // src/app/admin/apologists/page.tsx's history for why a layout-only
-  // check isn't enough to keep this page's real data out of the response.
+  // Gate here, not just in admin/layout.tsx — a layout-only check isn't
+  // enough to keep this page's real data out of the response.
   await requireAdmin();
 
   const supabase = createSupabaseServiceClient();
 
   const [
     { data: premiumRows, error: premiumError },
-    { data: apologistRows, error: apologistError },
     { data: adminRows, error: adminError },
     { data: adminProfileRows, error: profileError },
     { data: digestRows, error: digestError },
     { data: subscriberRows, error: subscriberError },
   ] = await Promise.all([
     supabase.from("premium_users").select("email, name, created_at"),
-    supabase.from("apologists").select("email, name, created_at"),
     supabase.from("admins").select("email, name, created_at"),
     supabase.from("profiles").select("email, full_name").eq("is_admin", true),
     supabase.from("premium_users").select("email").eq("notify_weekly", true),
@@ -52,7 +47,6 @@ export default async function AdminAccessPage() {
       .is("unsubscribed_at", null),
   ]);
   if (premiumError) throw premiumError;
-  if (apologistError) throw apologistError;
   if (adminError) throw adminError;
   if (profileError) throw profileError;
   if (digestError) throw digestError;
@@ -66,7 +60,6 @@ export default async function AdminAccessPage() {
       email,
       name: null,
       premium: false,
-      apologist: false,
       admin: false,
       addedAt: null,
     };
@@ -77,7 +70,6 @@ export default async function AdminAccessPage() {
   }
 
   for (const r of (premiumRows ?? []) as RoleRow[]) upsert(r.email, r.name, r.created_at, "premium");
-  for (const r of (apologistRows ?? []) as RoleRow[]) upsert(r.email, r.name, r.created_at, "apologist");
   for (const r of (adminRows ?? []) as RoleRow[]) upsert(r.email, r.name, r.created_at, "admin");
   // Admins granted before this table existed (the hardcoded owner bootstrap)
   // still need to show up and be manageable here.
@@ -106,14 +98,14 @@ export default async function AdminAccessPage() {
         Access &amp; roles
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[color:var(--muted)]">
-        Grant premium, apologist, and admin access from one place — before or
-        after someone signs in. Check a role to add it, uncheck to remove it;
+        Grant premium and admin access from one place — before or after
+        someone signs in. Check a role to add it, uncheck to remove it;
         changes apply immediately.
       </p>
 
       <form
         action={upsertUserAccess}
-        className="mt-8 grid gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:grid-cols-[1fr_1fr_auto_auto_auto_auto]"
+        className="mt-8 grid gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:grid-cols-[1fr_1fr_auto_auto_auto]"
       >
         <label className="block">
           <span className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
@@ -215,7 +207,7 @@ export default async function AdminAccessPage() {
           </table>
         ) : (
           <div className="p-8 text-center text-sm text-[color:var(--muted)]">
-            Nobody has premium, apologist, or admin access yet.
+            Nobody has premium or admin access yet.
           </div>
         )}
       </div>
