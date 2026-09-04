@@ -14,8 +14,8 @@ pills, `rounded-2xl` white cards with soft shadows, and nineteen different brigh
 Tailwind pastels for tags. **Do not reintroduce those.**
 
 The organizing idea: every item on this site is *a record with a source*.
-Channels are a gazetteer, studies are a library catalog, timelines are annals.
-The design should make that reading feel obvious.
+Channels are a gazetteer, studies are a library catalog, the data explorer's
+datasets are a survey archive. The design should make that reading feel obvious.
 
 ## Brand Positioning
 
@@ -198,10 +198,8 @@ tint. It takes `ink`, one of five families:
 | `ink` | Neutral reference / orthodox baseline |
 | `muted` | Default, unknown, or de-emphasized |
 
-Channel types map to these in `src/lib/channel-types.ts` via `inkForType()`;
-timeline categories, hearsay grades, and correlation statuses map in
-`src/app/eternal-increase-timeline/constants.ts`. **Group new values into an
-existing family — never add a sixth color.** The families carry meaning; that's
+Channel types map to these in `src/lib/channel-types.ts` via `inkForType()`.
+**Group new values into an existing family — never add a sixth color.** The families carry meaning; that's
 the whole point of having only five.
 
 Tailwind v4 needs literal class strings, so keep these maps as literals rather

@@ -1,9 +1,12 @@
 # latter-day-stats-mcp
 
-An MCP server exposing the data behind [Latter-day Stats](https://github.com/Samuel-Baird/latter-day-stats): channels, studies, and timelines.
+An MCP server exposing the data behind [Latter-day Stats](https://github.com/Samuel-Baird/latter-day-stats): channels and studies.
 
 **Hosted, remote version — no setup required:** `https://latter-day-stats.vercel.app/api/mcp`
-(source: [`src/app/api/mcp/route.ts`](../src/app/api/mcp/route.ts), same tools as below).
+(source: [`src/app/api/mcp/route.ts`](../src/app/api/mcp/route.ts)). The hosted version also
+exposes Data Explorer dataset tools (`list_datasets`, `get_dataset`, `list_dataset_categories`),
+which this standalone local server does not — those datasets are static site content, not
+Supabase rows, so they're only served from the deployed app.
 Point any MCP client that supports remote/Streamable HTTP servers at that URL directly,
 or use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) for stdio-only clients:
 
@@ -23,7 +26,6 @@ to run against your own Supabase project or hack on the tools without redeployin
 
 - **Channels** — the tracked YouTube channels and their subscriber/view stats. Channels tagged `Critical` (critical-of-the-Church commentary) are always excluded, matching the site's own faithful-view filter.
 - **Studies** — the research library (surveys, papers, articles).
-- **Timelines** — the sourced doctrinal/historical timelines (graded primary sources with quotes and category tags). Read directly from the repo's `sources.json` files, no database needed.
 
 ## Setup
 
@@ -37,8 +39,6 @@ Channels and studies read from the site's Supabase project (public, read-only �
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-
-Timeline tools work without any env vars — they read the JSON files straight out of this checkout, so keep the repo up to date (`git pull`) to get new timeline data.
 
 ## Register with an MCP client
 
@@ -69,9 +69,6 @@ Claude Code / Claude Desktop `mcp.json` (or equivalent):
 | `list_studies` | Search/filter studies (full-text search, tags, year, category). |
 | `get_study` | One study's detail, by slug. |
 | `list_study_tags` | All study tags with counts. |
-| `list_timelines` | The available timelines (title, question, span, source count). |
-| `get_timeline_sources` | A timeline's sourced entries, filtered by referent/category/hearsay grade/date/search. |
-| `list_timeline_categories` | Quote category tags used within one timeline. |
 
 ## Development
 

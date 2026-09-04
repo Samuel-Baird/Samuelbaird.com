@@ -40,7 +40,7 @@ export default function PrivacyPage() {
       <div className="mt-10 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
         <div className="max-w-2xl">
           <Section id="what-we-collect" title="What we collect">
-            <p>Most of the site works with no account and no data collection — browsing channels, studies, and timelines doesn&apos;t require signing in.</p>
+            <p>Most of the site works with no account and no data collection — browsing channels and studies doesn&apos;t require signing in.</p>
             <p className="mt-3">If you create an account (via Google sign-in), we collect:</p>
             <ul className="mt-3 list-disc space-y-1.5 pl-5">
               <li>Your name, email address, and profile photo, from Google.</li>

@@ -2,7 +2,7 @@
 
 This is the house style for the hand-rolled SVG/HTML chart primitives under
 `src/components/charts/` and their call sites (channel growth, the premium
-comparison chart, the eternal-increase timeline). It draws on Ryan Burge's
+comparison chart). It draws on Ryan Burge's
 (Graphs About Religion, @ryanburge) ggplot2 conventions — direct labeling,
 minimal gridlines, highlight-vs-gray, a fixed caption grammar — translated
 onto this site's own tokens and fonts rather than copied wholesale. Read

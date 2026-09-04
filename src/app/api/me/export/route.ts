@@ -13,7 +13,7 @@ export async function GET() {
   const supabase = createSupabaseServiceClient();
   const userId = auth.user.id;
 
-  const [bookmarks, upvotes, studyProgress, newsletter, messages, quizAnswers] =
+  const [bookmarks, upvotes, studyProgress, newsletter, messages] =
     await Promise.all([
       supabase
         .from("bookmarks")
@@ -36,10 +36,6 @@ export async function GET() {
         .from("messages")
         .select("category, body, page_ref, created_at")
         .eq("user_id", userId),
-      supabase
-        .from("quiz_answers")
-        .select("timeline, question_id, option_id, updated_at")
-        .eq("user_id", userId),
     ]);
 
   const exportData = {
@@ -55,7 +51,6 @@ export async function GET() {
     study_progress: studyProgress.data ?? [],
     newsletter_subscription: newsletter.data ?? null,
     messages_sent: messages.data ?? [],
-    quiz_answers: quizAnswers.data ?? [],
   };
 
   return new NextResponse(JSON.stringify(exportData, null, 2), {

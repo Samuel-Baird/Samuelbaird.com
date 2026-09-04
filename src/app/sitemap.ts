@@ -15,12 +15,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { auth: { autoRefreshToken: false, persistSession: false } },
   );
 
-  // The anon key can only see published claims (RLS), which is exactly the
-  // set that belongs in a sitemap — drafts are filtered out by the database.
-  const [channelsRes, studiesRes, claimsRes, postMap] = await Promise.all([
+  const [channelsRes, studiesRes, postMap] = await Promise.all([
     sb.from("channels").select("slug, updated_at").eq("is_active", true),
     sb.from("studies").select("slug, updated_at"),
-    sb.from("claims").select("slug, updated_at").eq("status", "published"),
     getGraphicPostMap(),
   ]);
 
@@ -28,9 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/`, changeFrequency: "daily", priority: 1.0 },
     { url: `${BASE}/channels`, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/studies`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/claims`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/data-explorer`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE}/timelines`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/premium`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/faq`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/about`, changeFrequency: "monthly", priority: 0.5 },
@@ -58,15 +53,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: s.updated_at ? new Date(s.updated_at) : undefined,
       changeFrequency: "monthly",
       priority: 0.7,
-    }),
-  );
-
-  const claimRoutes: MetadataRoute.Sitemap = (claimsRes.data ?? []).map(
-    (c: { slug: string; updated_at: string | null }) => ({
-      url: `${BASE}/claims/${c.slug}`,
-      lastModified: c.updated_at ? new Date(c.updated_at) : undefined,
-      changeFrequency: "monthly",
-      priority: 0.8,
     }),
   );
 
@@ -119,7 +105,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoutes,
     ...channelRoutes,
     ...studyRoutes,
-    ...claimRoutes,
     ...datasetRoutes,
     ...studyGraphicsRoutes,
     ...categoryRoutes,

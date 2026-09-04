@@ -40,8 +40,8 @@ export default function DmcaPage() {
               thumbnails, and names retrieved through the YouTube Data API;
               hosts academic study PDFs and preview images with attribution
               and a link back to the original source; and publishes its own
-              original writing (methodology, source timelines, and site
-              copy). If you believe something on the site infringes your
+              original writing (methodology and site copy). If you believe
+              something on the site infringes your
               copyright, this page explains how to report it.
             </p>
           </Section>

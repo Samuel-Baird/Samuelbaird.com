@@ -1,6 +1,5 @@
-import { getPublishedClaims, getRecentlyAdded } from "@/lib/data";
+import { getRecentlyAdded } from "@/lib/data";
 import { SITE_URL } from "@/lib/site";
-import type { Claim } from "@/lib/types";
 
 export const revalidate = 3600;
 
@@ -19,16 +18,10 @@ export async function GET() {
   // palette degrades to an empty search index.
   let channels: Awaited<ReturnType<typeof getRecentlyAdded>>["channels"] = [];
   let studies: Awaited<ReturnType<typeof getRecentlyAdded>>["studies"] = [];
-  let claims: Claim[] = [];
   try {
     ({ channels, studies } = await getRecentlyAdded(90, 20));
   } catch (error) {
     console.error("feed.xml: recently-added data unavailable:", error);
-  }
-  try {
-    claims = (await getPublishedClaims()).slice(0, 20);
-  } catch (error) {
-    console.error("feed.xml: claims unavailable:", error);
   }
 
   const channelItems = channels.map((c) => ({
@@ -45,16 +38,7 @@ export async function GET() {
     pubDate: s.created_at,
   }));
 
-  const claimItems = claims
-    .filter((c) => c.published_at)
-    .map((c) => ({
-      title: `New claim response: ${c.title}`,
-      link: `${SITE_URL}/claims/${c.slug}`,
-      description: c.claim_text,
-      pubDate: c.published_at!,
-    }));
-
-  const items = [...channelItems, ...studyItems, ...claimItems].sort(
+  const items = [...channelItems, ...studyItems].sort(
     (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime(),
   );
 

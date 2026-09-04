@@ -7,8 +7,7 @@ import { useId, useState, type ReactNode } from "react";
  * A titled section that starts closed behind a button.
  *
  * The body stays in the DOM and is hidden with a class rather than with
- * `<details>` or conditional rendering — the same reason the timeline's
- * excerpts do (see docs/timelines/CONSTRUCTING.md §4): a closed `<details>`
+ * `<details>` or conditional rendering: a closed `<details>`
  * cannot be forced open for printing, and anything unmounted is invisible to
  * in-page search. `print:block` puts every section back for a printout.
  *

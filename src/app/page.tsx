@@ -65,12 +65,6 @@ export default async function Home() {
           >
             Read studies
           </Link>
-          <Link
-            href="/timelines"
-            className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
-          >
-            Explore timelines
-          </Link>
         </div>
       </section>
 

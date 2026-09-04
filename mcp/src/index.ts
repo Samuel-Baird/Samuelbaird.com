@@ -4,11 +4,6 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { listChannels, getChannel, listChannelTypes } from "./channels.js";
 import { listStudies, getStudy, listStudyTags } from "./studies.js";
-import {
-  listTimelines,
-  getTimelineSources,
-  listTimelineCategories,
-} from "./timelines.js";
 
 const server = new McpServer({
   name: "latter-day-stats",
@@ -110,53 +105,6 @@ server.registerTool(
     inputSchema: {},
   },
   async () => json(await listStudyTags()),
-);
-
-// ---------------------------------------------------------------------------
-// Timelines
-// ---------------------------------------------------------------------------
-
-server.registerTool(
-  "list_timelines",
-  {
-    title: "List timelines",
-    description:
-      "List the site's sourced doctrinal/historical timelines (e.g. the eternal-increase timeline), each a graded, cited chronology of primary sources on one question.",
-    inputSchema: {},
-  },
-  async () => json(await listTimelines()),
-);
-
-server.registerTool(
-  "get_timeline_sources",
-  {
-    title: "Get timeline sources",
-    description:
-      "Get the sourced entries in a timeline, with filters. Each entry is a graded primary/citing source (speaker, date, hearsay grade A-E, correlation status, quotes with category tags).",
-    inputSchema: {
-      href: z.string().describe("Timeline href from list_timelines, e.g. \"/eternal-increase-timeline\"."),
-      referent: z.enum(["father", "son", "ambiguous", "n/a"]).optional().describe("Who the claim is about."),
-      category: z.string().optional().describe("A quote category tag, e.g. \"FATHER-BECAME-GOD\". See list_timeline_categories."),
-      hearsay: z.enum(["A", "B", "C", "D", "E"]).optional().describe("Source-level provenance grade."),
-      yearFrom: z.number().int().optional(),
-      yearTo: z.number().int().optional(),
-      search: z.string().optional().describe("Case-insensitive substring match over title, speaker, and quote text."),
-      limit: z.number().int().positive().max(300).optional().describe("Default 50, max 300."),
-    },
-  },
-  async (args) => json(await getTimelineSources(args)),
-);
-
-server.registerTool(
-  "list_timeline_categories",
-  {
-    title: "List timeline categories",
-    description: "List the quote category tags used within one timeline, for use with get_timeline_sources' `category` filter.",
-    inputSchema: {
-      href: z.string().describe("Timeline href from list_timelines."),
-    },
-  },
-  async ({ href }) => json(await listTimelineCategories(href)),
 );
 
 async function main() {

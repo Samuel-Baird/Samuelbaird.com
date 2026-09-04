@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
 
 /**
  * Per-quiz results for the site owner. Structured as one section per quiz
- * so future quizzes (e.g. the timeline quiz) slot in as siblings; only the
+ * so future quizzes slot in as siblings; only the
  * evangelical quiz's section is built today. Reads evangelical_quiz_runs
  * (deny-all RLS) through the service client, aggregates in JS like
  * /admin/analytics.

@@ -94,48 +94,6 @@ export type SiteStats = {
 };
 
 // ============================================================================
-// Claim Library — the public face of the hub's work. A claim is the deduped,
-// canonical form of a criticism that recurs across many videos: stated at its
-// strongest, answered once, every citation verified. Published claims are
-// readable by anyone (RLS allows select where status = 'published'); drafts
-// and occurrence rows are apologist-only. See 0044_claim_library.sql.
-// ============================================================================
-
-export type ClaimStatus = "draft" | "published";
-
-// Same { title, url, note } shape as HubClaimSource — occurrences are promoted
-// from hub claims, and their sources come across unchanged.
-export type ClaimSource = HubClaimSource;
-
-export type Claim = {
-  id: string;
-  slug: string;
-  title: string;
-  // The criticism in the critic's own terms, stated as strongly as it can
-  // fairly be put. Kept distinct from `response` on purpose.
-  claim_text: string;
-  response: string;
-  status: ClaimStatus;
-  topic_tags: string[];
-  sources: ClaimSource[];
-  response_video_url: string | null;
-  published_at: string | null;
-  created_by: string | null;
-  created_at: string;
-  updated_at: string;
-};
-
-// What the public page may say about where a claim shows up. Deliberately an
-// aggregate: claim_occurrences names specific critical videos, and publishing
-// that mapping would send them traffic. Counts and a first-seen year carry the
-// "this is not a fringe complaint" signal without the links.
-export type ClaimReach = {
-  videoCount: number;
-  channelCount: number;
-  firstSeenYear: number | null;
-};
-
-// ============================================================================
 // Apologetics Hub — private, apologist-gated. All reads/writes go through
 // createSupabaseServiceClient() behind requireApologist(); RLS on these
 // tables is deny-all (see supabase/migrations/0039_apologetics_hub.sql).

@@ -7,57 +7,11 @@ import {
   getStudies,
   getStudyBySlug,
   getAllStudyTags,
-  getAllClaimTopicTags,
-  getClaimBySlug,
-  getPublishedClaims,
 } from "@/lib/data";
-import { TIMELINES } from "@/app/timelines/registry";
-import eternalIncreaseSources from "@/app/eternal-increase-timeline/sources.json";
-
-// Loosely typed to the documented shape (docs/timelines/SCHEMA.md) rather
-// than inferred from the JSON literal — the per-entry inferred union from
-// `typeof sources[number]` doesn't unify cleanly across entries with
-// different optional fields.
-type Quote = {
-  quoteId: string;
-  categories: string[];
-  excerpt: string;
-  referent?: string;
-};
-type SourceEntry = {
-  id: string;
-  date: string;
-  title: string;
-  speaker: string;
-  hearsay: string;
-  referent: string;
-  quotes: Quote[];
-};
-
-// Timelines are static content bundled with the site (not database rows).
-// Extend this map when a new timeline is added to the registry. A timeline
-// still in preparation belongs here with an empty array rather than being left
-// out: it is listed by list_timelines either way, and an omission would make
-// get_timeline_sources throw "unknown timeline" for a timeline that does exist.
-const TIMELINE_SOURCES: Record<string, SourceEntry[]> = {
-  "/eternal-increase-timeline": eternalIncreaseSources as SourceEntry[],
-  "/family-proclamation-timeline": [],
-  "/baptism-timeline": [],
-  "/sacrament-timeline": [],
-};
+import { DATASETS, getDataset, categorySlug } from "@/lib/data-explorer";
 
 function channelTags(c: { channel_types: string[]; channel_type: string | null }) {
   return c.channel_types?.length ? c.channel_types : c.channel_type ? [c.channel_type] : [];
-}
-
-function findTimeline(href: string) {
-  const meta = TIMELINES.find((t) => t.href === href);
-  const sources = TIMELINE_SOURCES[href];
-  if (!meta || !sources) {
-    const known = TIMELINES.map((t) => t.href).join(", ");
-    throw new Error(`Unknown timeline "${href}". Known timelines: ${known}`);
-  }
-  return { meta, sources };
 }
 
 const handler = createMcpHandler(
@@ -220,154 +174,97 @@ const handler = createMcpHandler(
       },
     );
 
-    // Claim library. Published claims only — drafts and the occurrence
-    // mapping (which names the critical videos making each claim) are
-    // apologist-only and never reach this surface.
+    // Data Explorer: survey/compiled datasets (Pew, Ryan Burge, membership
+    // history, etc), each with its own set of rendered chart graphics.
     server.registerTool(
-      "list_claims",
+      "list_datasets",
       {
-        title: "List claims",
+        title: "List Data Explorer datasets",
         description:
-          "List/search the Latter-day Stats claim library: common criticisms of the Church of Jesus Christ of Latter-day Saints, each stated at its strongest and answered from cited primary sources.",
+          "List/search the Data Explorer's datasets: surveys and compiled data series on Latter-day Saint demographics, belief, and culture, each with rendered chart graphics.",
         inputSchema: z.object({
-          search: z.string().optional().describe('Full-text search over the claim and response (websearch syntax, e.g. "seer stone").'),
-          tags: z.array(z.string()).optional().describe("Claims must carry all of these topic tags. See list_claim_topics."),
-          sort: z.enum(["recent", "title"]).optional().describe("Default: recent (most recently published first)."),
-          limit: z.number().int().positive().max(200).optional().describe("Default 25, max 200."),
+          search: z.string().optional().describe("Case-insensitive substring match on dataset name/description."),
+          category: z.string().optional().describe('Filter by category slug, e.g. "mixed-datasets". See list_dataset_categories.'),
+          limit: z.number().int().positive().max(200).optional().describe("Default 50, max 200."),
         }),
       },
       async (args) => {
-        const claims = await getPublishedClaims({
-          query: args.search,
-          tags: args.tags,
-          sort: args.sort,
-        });
-        const limit = Math.min(args.limit ?? 25, 200);
-        // Trimmed shape: the full response text can be long, and callers
-        // fetching a list usually want to pick one and call get_claim.
-        const rows = claims.slice(0, limit).map((c) => ({
-          slug: c.slug,
-          title: c.title,
-          claim_text: c.claim_text,
-          topic_tags: c.topic_tags,
-          source_count: c.sources.length,
-          published_at: c.published_at,
+        let rows = DATASETS.map((d) => ({
+          slug: d.slug,
+          name: d.name,
+          shortDescription: d.shortDescription,
+          sponsor: d.sponsor,
+          fielder: d.fielder,
+          fieldedPeriod: d.fieldedPeriod,
+          category: d.category ?? null,
+          graphic_count: d.graphics.length,
         }));
-        return { content: [{ type: "text", text: JSON.stringify(rows, null, 2) }] };
-      },
-    );
 
-    server.registerTool(
-      "get_claim",
-      {
-        title: "Get claim",
-        description:
-          "Get one claim's full detail by slug: the claim as critics state it, the sourced response, and every citation behind it.",
-        inputSchema: z.object({ slug: z.string() }),
-      },
-      async ({ slug }) => {
-        const claim = await getClaimBySlug(slug);
-        return { content: [{ type: "text", text: JSON.stringify(claim, null, 2) }] };
-      },
-    );
-
-    server.registerTool(
-      "list_claim_topics",
-      {
-        title: "List claim topics",
-        description: "List the topic tags used in the claim library with their counts, for use with list_claims' `tags` filter.",
-        inputSchema: z.object({}),
-      },
-      async () => {
-        const tags = await getAllClaimTopicTags();
-        return { content: [{ type: "text", text: JSON.stringify(tags, null, 2) }] };
-      },
-    );
-
-    server.registerTool(
-      "list_timelines",
-      {
-        title: "List timelines",
-        description:
-          "List the site's sourced doctrinal/historical timelines (e.g. the eternal-increase timeline), each a graded, cited chronology of primary sources on one question.",
-        inputSchema: z.object({}),
-      },
-      async () => {
-        return { content: [{ type: "text", text: JSON.stringify(TIMELINES, null, 2) }] };
-      },
-    );
-
-    server.registerTool(
-      "get_timeline_sources",
-      {
-        title: "Get timeline sources",
-        description:
-          "Get the sourced entries in a timeline, with filters. Each entry is a graded primary/citing source (speaker, date, hearsay grade A-E, correlation status, quotes with category tags).",
-        inputSchema: z.object({
-          href: z.string().describe('Timeline href from list_timelines, e.g. "/eternal-increase-timeline".'),
-          referent: z.enum(["father", "son", "ambiguous", "n/a"]).optional().describe("Who the claim is about."),
-          category: z.string().optional().describe('A quote category tag, e.g. "FATHER-BECAME-GOD". See list_timeline_categories.'),
-          hearsay: z.enum(["A", "B", "C", "D", "E"]).optional().describe("Source-level provenance grade."),
-          yearFrom: z.number().int().optional(),
-          yearTo: z.number().int().optional(),
-          search: z.string().optional().describe("Case-insensitive substring match over title, speaker, and quote text."),
-          limit: z.number().int().positive().max(300).optional().describe("Default 50, max 300."),
-        }),
-      },
-      async (args) => {
-        const { meta, sources } = findTimeline(args.href);
-        let rows: SourceEntry[] = sources;
-
-        if (args.referent) {
-          rows = rows.filter(
-            (s) => s.referent === args.referent || s.quotes?.some((q: Quote) => q.referent === args.referent),
-          );
-        }
-        if (args.hearsay) rows = rows.filter((s) => s.hearsay === args.hearsay);
-        if (args.category) {
-          const wanted = args.category.toUpperCase();
-          rows = rows.filter((s) => s.quotes?.some((q: Quote) => q.categories?.includes(wanted)));
-        }
-        if (args.yearFrom != null) rows = rows.filter((s) => Number(s.date.slice(0, 4)) >= args.yearFrom!);
-        if (args.yearTo != null) rows = rows.filter((s) => Number(s.date.slice(0, 4)) <= args.yearTo!);
         if (args.search) {
           const needle = args.search.toLowerCase();
           rows = rows.filter(
-            (s) =>
-              s.title.toLowerCase().includes(needle) ||
-              s.speaker.toLowerCase().includes(needle) ||
-              s.quotes?.some((q: Quote) => q.excerpt.toLowerCase().includes(needle)),
+            (r) =>
+              r.name.toLowerCase().includes(needle) ||
+              r.shortDescription.toLowerCase().includes(needle),
           );
         }
+        if (args.category) {
+          rows = rows.filter((r) => r.category && categorySlug(r.category) === args.category);
+        }
 
-        rows = [...rows].sort((a, b) => a.date.localeCompare(b.date));
-        const limit = Math.min(args.limit ?? 50, 300);
+        const limit = Math.min(args.limit ?? 50, 200);
+        return { content: [{ type: "text", text: JSON.stringify(rows.slice(0, limit), null, 2) }] };
+      },
+    );
+
+    server.registerTool(
+      "get_dataset",
+      {
+        title: "Get Data Explorer dataset",
+        description:
+          "Get one Data Explorer dataset's full detail by slug: description, methodology, citation, and its list of chart graphics (title/description/alt text per graphic).",
+        inputSchema: z.object({ slug: z.string() }),
+      },
+      async ({ slug }) => {
+        const dataset = getDataset(slug);
+        if (!dataset) return { content: [{ type: "text", text: "null" }] };
         const result = {
-          timeline: { href: meta.href, title: meta.title },
-          total: rows.length,
-          returned: Math.min(rows.length, limit),
-          sources: rows.slice(0, limit),
+          slug: dataset.slug,
+          name: dataset.name,
+          shortDescription: dataset.shortDescription,
+          sponsor: dataset.sponsor,
+          fielder: dataset.fielder,
+          fieldedPeriod: dataset.fieldedPeriod,
+          description: dataset.description,
+          methodology: dataset.methodology ?? null,
+          citation: dataset.citation ?? null,
+          doi: dataset.doi ?? null,
+          sourceUrl: dataset.sourceUrl ?? null,
+          category: dataset.category ?? null,
+          graphics: dataset.graphics.map((g) => ({
+            title: g.title,
+            description: g.description,
+            alt: g.alt,
+          })),
         };
         return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
       },
     );
 
     server.registerTool(
-      "list_timeline_categories",
+      "list_dataset_categories",
       {
-        title: "List timeline categories",
-        description: "List the quote category tags used within one timeline, for use with get_timeline_sources' `category` filter.",
-        inputSchema: z.object({
-          href: z.string().describe("Timeline href from list_timelines."),
-        }),
+        title: "List Data Explorer dataset categories",
+        description: "List the Data Explorer's dataset category labels and slugs, for use with list_datasets' `category` filter.",
+        inputSchema: z.object({}),
       },
-      async ({ href }) => {
-        const { sources } = findTimeline(href);
-        const set = new Set<string>();
-        for (const s of sources) {
-          for (const q of s.quotes ?? []) for (const c of q.categories ?? []) set.add(c);
+      async () => {
+        const seen = new Map<string, string>();
+        for (const d of DATASETS) {
+          if (d.category) seen.set(categorySlug(d.category), d.category);
         }
-        return { content: [{ type: "text", text: JSON.stringify([...set].sort(), null, 2) }] };
+        const rows = [...seen.entries()].map(([slug, label]) => ({ slug, label }));
+        return { content: [{ type: "text", text: JSON.stringify(rows, null, 2) }] };
       },
     );
   },

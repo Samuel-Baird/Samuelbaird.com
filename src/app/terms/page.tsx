@@ -55,8 +55,8 @@ export default function TermsPage() {
             <p>
               Latter-day Stats is an independent, self-funded research and
               statistics site covering the Latter-day Saint community —
-              creator statistics, curated academic studies, and source
-              timelines. It has no institutional affiliation with The Church
+              creator statistics and curated academic studies. It has no
+              institutional affiliation with The Church
               of Jesus Christ of Latter-day Saints, BYU, or any creator
               tracked on the site. Inclusion in the catalog does not imply
               endorsement of, or by, anyone listed. See the{" "}

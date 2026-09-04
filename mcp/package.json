@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "MCP server exposing Latter-day Stats channel, study, and timeline data.",
+  "description": "MCP server exposing Latter-day Stats channel and study data.",
   "bin": {
     "latter-day-stats-mcp": "./dist/index.js"
   },

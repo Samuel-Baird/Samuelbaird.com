@@ -1,8 +1,8 @@
 # Latter-day Stats
 
 An independent research site covering the Latter-day Saint community: creator
-statistics, curated academic studies, and source timelines tracing how
-particular teachings have been stated over time.
+statistics, curated academic studies, and a data explorer of survey and
+compiled datasets on Latter-day Saint demographics, belief, and culture.
 
 No institutional affiliation with The Church of Jesus Christ of Latter-day
 Saints, BYU, or any tracked creator.
@@ -39,8 +39,7 @@ npm run dev                        # http://localhost:3000
 the stats refresh, and the admin/cron secrets. It is gitignored — never commit
 real keys.
 
-Most pages need a reachable Supabase project. Source timelines are the
-exception: they read from a local JSON file and render without any backend.
+Most pages need a reachable Supabase project.
 
 ### Scripts
 
@@ -97,31 +96,6 @@ npx tsx scripts/migrate.ts
 | [`BRANDING_AND_DESIGN.md`](./BRANDING_AND_DESIGN.md) | Design source of truth — type scale, colour tokens, card and pill styles, voice |
 | [`STUDY_UPLOAD_INSTRUCTIONS.md`](./STUDY_UPLOAD_INSTRUCTIONS.md) | Adding an academic study |
 | [`APOLOGETICS_HUB_INGEST.md`](./APOLOGETICS_HUB_INGEST.md) | Ingesting and analyzing critical-channel videos for the Apologetics Hub |
-| [`docs/timelines/`](./docs/timelines/) | Source timelines — see below |
-
-### Source timelines
-
-Chronological, filterable collections of primary and official sources on a
-single question, built to show evidence rather than argue a conclusion. The
-first is the eternal regress / eternal increase timeline at
-`/eternal-increase-timeline`.
-
-| Document | Covers |
-|---|---|
-| [`docs/timelines/SOURCING.md`](./docs/timelines/SOURCING.md) | Where sources come from, hearsay grading, multi-witness handling, **and the hosts that must never be cited publicly** |
-| [`docs/timelines/CONSTRUCTING.md`](./docs/timelines/CONSTRUCTING.md) | The four analytical rules, category design, building a new timeline |
-| [`docs/timelines/SCHEMA.md`](./docs/timelines/SCHEMA.md) | Field-by-field data contract for `sources.json` |
-| [`docs/timelines/STANCE-TAXONOMY.md`](./docs/timelines/STANCE-TAXONOMY.md) | The six questions each quote is asked, their ordered answer scales, and the criteria for every band |
-| [`docs/timelines/TODO.md`](./docs/timelines/TODO.md) | Backlog: planned timelines and open verification items |
-
-Each timeline is a self-contained route folder. Its data lives in a single
-hand-edited `sources.json`, validated by a zod schema at module scope of a
-statically prerendered page — so a bad edit **fails the build** with the
-offending JSON path rather than shipping a broken page.
-
-Timelines are working research documents and start **unlisted**: no navigation
-link, omitted from the sitemap, and `noindex`. They are reachable by direct URL
-only, so treat the link itself as the access control.
 
 ---
 
