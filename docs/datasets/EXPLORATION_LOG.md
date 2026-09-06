@@ -1154,3 +1154,52 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   dropped this pass, see above), `SPIRTHINGS_a`/`SPIRTHINGS_c` (checked and
   dropped this pass), `LIFESPIR_W132` (checked and dropped this pass) -
   consider this dataset fully mined.
+
+- **pew-atp-w114-2022** (American Trends Panel, Wave 114, September 2022)
+  — fifth chart, 2026-09-06: the six most recently shipped commits were
+  pew-atp-w132-2023, pew-rls-2007, pew-rls-2014, pew-rls-2014-recontact,
+  pew-black-faith-2021, and pew-hispanics-religion-2007, all excluded per
+  this iteration's instructions. Confirmed against `data-explorer.ts`
+  that this dataset genuinely had only 4 graphics entries (matching this
+  log's own prior "partial" note, not stale this time). From this
+  dataset's own remaining-candidate list (other ESSENT_* sub-items,
+  RELFAV_* sub-items, REL4_*, CHRNAT1a/b), checked every unused ESSENT_*
+  sub-item directly by weighted F_RELIG crosstab (this wave has no
+  F_RELTRAD frame variable): ESSENT_g (patriotic, Mormon 37.9% — highest
+  among Christian groups but the framing is politically coded and weak
+  doctrinally), ESSENT_h (family traditions, Mormon 50.3% — basically
+  tied with Catholic 50.5%, no distinctive story), ESSENT_i (moral life,
+  Mormon 79.9% — mid-pack, Muslim/Orthodox both higher), and ESSENT_j
+  (community, Mormon 44.4% — mid-pack) were all checked and dropped as
+  thin or non-distinctive. ESSENT_a ("believing in God" essential to
+  faith identity) cleared both tests: 91.3% of Mormons say so, 2nd only
+  to Muslims (96.7%) among the 8 groups this item was piped to, and the
+  highest of any Christian tradition (Protestant 87.3%, Orthodox 81.1%,
+  Catholic 77.8%) — ties directly to LDS teaching on a personal, living
+  God with a corporeal form (D&C 130:22) and the First Vision. Confirmed
+  distinct from pew-rls-2014's already-shipped "absolutely certain God
+  exists" chart, which measures certainty of God's existence in the
+  abstract rather than centrality to one's own faith identity. Mormon
+  n=190 valid (unweighted), comfortably above the 30-respondent floor.
+  Also checked and dropped REL4_c ("do you know a Mormon" by F_RELIG) as
+  a weaker fit — it measures other groups' social contact with Mormons,
+  not an LDS belief/practice item. CHRNAT1a/b (Christian nationalism
+  awareness/favorability) also skipped as politically coded with no
+  clean doctrinal tie. Computed by
+  `scripts/pew-atp-w114-2022/essent_believe_god.py` (following this
+  folder's existing `essent_attend.py`/`essent_jesus.py` pattern exactly)
+  → `docs/datasets/pew-atp-w114-2022/essent-believe-god.json`, rendered
+  by `scripts/pew-atp-w114-2022/render_essent_believe_god_chart.py` →
+  `public/data-explorer/pew-atp-w114-2022/essent-believe-god.png` (8
+  rows, checked by reading the PNG directly — no label collision or
+  clipping). Wired into `src/lib/data-explorer.ts`
+  (`essentBelieveGodGraphic()`). `tsc --noEmit` clean; PNG confirmed
+  served at 200 OK, 1080x1350, via the local dev server, and the
+  dataset's page loads with no console errors (only benign dev-server HMR
+  websocket noise). Remaining untouched candidates for this dataset: the
+  rest of RELFAV_* (views of Evangelicals/Catholics/Jews/Muslims/
+  Atheists/Mainline Protestants, but these ask how *other* groups view
+  those traditions, not distinctively about Mormons — weaker fit unless a
+  clear angle emerges), REL4_* (checked and dropped this pass), and
+  CHRNAT1a/b (checked and dropped this pass) — this dataset is close to
+  fully mined.

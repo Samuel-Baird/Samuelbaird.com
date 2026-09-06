@@ -147,6 +147,7 @@ import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migra
 import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
 import essentJesusData from "../../docs/datasets/pew-atp-w114-2022/essent-jesus.json";
 import essentAttendData from "../../docs/datasets/pew-atp-w114-2022/essent-attend.json";
+import essentBelieveGodData from "../../docs/datasets/pew-atp-w114-2022/essent-believe-god.json";
 import relfavMormonsData from "../../docs/datasets/pew-atp-w114-2022/relfav-mormons.json";
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
 import nontechPrayerGroupsData from "../../docs/datasets/pew-atp-w117-2022/nontech-prayer-groups.json";
@@ -1245,7 +1246,13 @@ const RAW_DATASETS: Dataset[] = [
       "breakouts here use F_RELIG, which still separately identifies Mormon/LDS " +
       "respondents (coded 3.0).",
     sourceUrl: "https://www.pewresearch.org/religion/2022/10/27/45-of-americans-say-u-s-should-be-a-christian-nation/",
-    graphics: [christianNationGraphic(), essentJesusGraphic(), essentAttendGraphic(), relfavMormonsGraphic()],
+    graphics: [
+      christianNationGraphic(),
+      essentJesusGraphic(),
+      essentAttendGraphic(),
+      essentBelieveGodGraphic(),
+      relfavMormonsGraphic(),
+    ],
   },
   {
     slug: "pew-atp-w117-2022",
@@ -3011,6 +3018,20 @@ function essentAttendGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w114-2022/essent-attend.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying regular religious attendance is essential to their faith, by tradition, September 2022. ${alt}.`,
+  };
+}
+
+function essentBelieveGodGraphic(): Graphic {
+  const { group_order: order, believe_in_god_essential: results } = essentBelieveGodData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Is believing in God essential to your faith?",
+    description: "Share saying belief in God is essential to what being faithful to their tradition means, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/essent-believe-god.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying belief in God is essential to their faith, by tradition, September 2022. ${alt}.`,
   };
 }
 
