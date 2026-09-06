@@ -1510,3 +1510,43 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   46-47, 55, 60, 62-63 remain a general Bible/world-religion knowledge
   battery with no religious-tradition breakout angle checked yet at the
   individual-item level. Consider this dataset close to fully mined.
+
+- **pew-atp-w143-2024** (American Trends Panel, Wave 143, February 2024 —
+  religion/politics + Israel-Hamas war) — 12th chart, 2026-09-06: excluded
+  the thirteen datasets freshly mined earlier this session (see this log's
+  own recent entries) and confirmed against `data-explorer.ts` this dataset
+  genuinely had 11 graphics entries (matching the prior pass's own note).
+  Re-checked this dataset's own remaining-candidate list directly against
+  the real `.sav` file rather than trusting the old writeup: computed
+  `BELIEVE_SPEL_W143` ("spells, curses or other magic can influence
+  people's lives") by weighted F_RELIG crosstab. A prior pass had flagged
+  this item as lacking as clean a doctrinal tie as its two shipped
+  siblings, but the actual numbers support a real story once computed:
+  Mormon 25.5% is the lowest of the wave's four named Christian traditions
+  (Protestant 30.0%, Catholic 31.4%, Orthodox Christian 58.5%), ties to
+  Book of Mormon/Doctrine and Covenants counsel against sorcery and
+  divination (e.g. Alma 1:32, D&C 63:17 numbering sorcerers among "the
+  wicked and adulterous"). Checked for overlap against
+  pew-latin-america-2014's existing "magic, sorcery, or witchcraft" chart
+  first — similar wording, but that dataset folds Mormons into an
+  undifferentiated "Other religion" bucket with no Mormon-specific data
+  point, so not a duplicate; this is the first chart on the site with an
+  actual Latter-day Saint belief-in-magic figure. Mormon n=167 valid,
+  comfortably above the 30-respondent floor. Built
+  `believe-spells-magic.json`/`.png` via
+  `scripts/pew-atp-w143-2024/believe_spells_magic.py` (reusing
+  `holiday_batch.py`'s `binary_by_group` helper, same F_RELIG group set as
+  every other chart in this folder) →
+  `docs/datasets/pew-atp-w143-2024/believe-spells-magic.json`, rendered by
+  `scripts/pew-atp-w143-2024/render_believe_spells_magic_chart.py` →
+  `public/data-explorer/pew-atp-w143-2024/believe-spells-magic.png` (13
+  rows, checked by reading the PNG directly — no label collision or
+  clipping). Wired into `src/lib/data-explorer.ts`
+  (`w143BelieveSpellsMagicGraphic()`), inserted after
+  `w143FortuneTellerGraphic()` in the graphics array. `tsc --noEmit`
+  clean; PNG confirmed served at 200 OK, 101,844 bytes, 1080x1350, via the
+  local dev server, and the dataset's page
+  (`/data-explorer/pew-atp-w143-2024`) returns 200. This was the only
+  concretely open candidate left for this wave per the prior pass's own
+  note (`RELIGCONFLICT_W143` already checked and dropped as mid-pack
+  no-story); consider this dataset fully mined.

@@ -1,0 +1,73 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 143, fielded Feb. 13-25, 2024.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG). Share answering 'yes, I believe' that spells, curses, or other magic can influence people's lives; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by WEIGHT_W143.",
+  "total_weighted_n": 12693.000056380071,
+  "total_unweighted_n": 12693,
+  "believes_in_spells_magic": {
+    "Protestant": {
+      "pct": 29.98,
+      "valid_unweighted_n": 4304,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 31.42,
+      "valid_unweighted_n": 1999,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 25.46,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 58.53,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 15.0,
+      "valid_unweighted_n": 1914,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 46.22,
+      "valid_unweighted_n": 403,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 45.01,
+      "valid_unweighted_n": 101,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 29.76,
+      "valid_unweighted_n": 78,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 7.33,
+      "valid_unweighted_n": 602,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 20.23,
+      "valid_unweighted_n": 725,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 58.41,
+      "valid_unweighted_n": 243,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 34.68,
+      "valid_unweighted_n": 1840,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 30.14,
+      "valid_unweighted_n": 12493,
+      "group_unweighted_n": 12693
+    }
+  }
+}

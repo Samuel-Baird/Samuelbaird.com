@@ -179,6 +179,7 @@ import cathessentData from "../../docs/datasets/pew-atp-w162-2025/cathessent.jso
 import confessionFrequencyData from "../../docs/datasets/pew-atp-w162-2025/confession-frequency.json";
 import w143HolidayBatch3Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-3.json";
 import w143HolidayBatch4Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-4.json";
+import w143BelieveSpellsMagicData from "../../docs/datasets/pew-atp-w143-2024/believe-spells-magic.json";
 import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-beliefs.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
 import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-religious-items.json";
@@ -1349,6 +1350,7 @@ const RAW_DATASETS: Dataset[] = [
       w143WearsReligiousItemsGraphic(),
       w143ReincarnationGraphic(),
       w143FortuneTellerGraphic(),
+      w143BelieveSpellsMagicGraphic(),
     ],
   },
   {
@@ -3453,6 +3455,17 @@ function w143FortuneTellerGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w143-2024/consults-fortune-teller.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who consult a fortune teller, horoscope, or other way to see the future, by religion, February 2024. ${w143BatchAlt(results)}.`,
+  };
+}
+
+function w143BelieveSpellsMagicGraphic(): Graphic {
+  const results = w143BelieveSpellsMagicData.believes_in_spells_magic;
+  return {
+    title: "Who believes in spells, curses, or magic?",
+    description: "Share who believe spells, curses, or other magic can influence people's lives, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/believe-spells-magic.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe spells, curses, or other magic can influence people's lives, by religion, February 2024. ${w143BatchAlt(results)}.`,
   };
 }
 
