@@ -125,6 +125,7 @@ import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.jso
 import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scripture-covid-coping.json";
 import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
 import covidLessonBeliefData from "../../docs/datasets/pew-atp-w70-2020/covid-lesson-belief.json";
+import covidLessonFromGodData from "../../docs/datasets/pew-atp-w70-2020/covid-lesson-from-god.json";
 import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
 import adultArrangementsData from "../../docs/datasets/pew-catholic-family-2015/adult-arrangements.json";
 import prayerStyleData from "../../docs/datasets/pew-catholic-family-2015/prayer-style.json";
@@ -1016,6 +1017,7 @@ const RAW_DATASETS: Dataset[] = [
       religiousOrgGivingCovidGraphic(),
       congregationDonatingGraphic(),
       covidLessonBeliefGraphic(),
+      covidLessonFromGodGraphic(),
     ],
   },
   {
@@ -2662,6 +2664,20 @@ function covidLessonBeliefGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/covid-lesson-belief.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who believe there's a lesson for humankind to learn from the coronavirus outbreak, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+function covidLessonFromGodGraphic(): Graphic {
+  const { group_order: order, believes_lesson_from_god: results } = covidLessonFromGodData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Was that lesson sent by God?",
+    description: "Among those who believe there's a lesson to learn from COVID, share who believe it was sent by God, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/covid-lesson-from-god.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: among those who believe there's a lesson to learn from COVID, share who believe it was sent by God, by religious tradition, July 2020. ${alt}.`,
   };
 }
 

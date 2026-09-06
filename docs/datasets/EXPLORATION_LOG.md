@@ -1257,3 +1257,53 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   already-shipped `nontech-prayer-groups.json`'s NONTECH1_c item on the
   frequency scale rather than yes/no framing, skip) — are thin or
   redundant; consider this dataset close to fully mined.
+
+- **pew-atp-w70-2020** (American Trends Panel, Wave 70, July 2020 —
+  religion during COVID) — third pass, 2026-09-06: excluded the eight
+  datasets freshly mined this session (pew-atp-w117-2022,
+  pew-atp-w114-2022, pew-atp-w132-2023, pew-rls-2007, pew-rls-2014,
+  pew-rls-2014-recontact, pew-black-faith-2021, pew-hispanics-
+  religion-2007) and confirmed against `data-explorer.ts` that this
+  dataset genuinely had 9 graphics entries. Worked through the prior
+  pass's own remaining-candidate list: checked `COVIDVOL2_b_W70`
+  ("turned to a RELIGIOUS organization for help with bills, housing or
+  food" during COVID) and dropped it — Mormon 5.0%, essentially tied
+  with Catholic (5.1%) and Unaffiliated (5.0%), no distinctive story.
+  Shipped one chart from `COVIDLESSON2_W70` ("do you believe any of the
+  lessons humankind should learn from COVID were sent to us by God,"
+  asked only of the subset who first said yes to `COVIDLESSON1_W70`,
+  already charted as this folder's `covid-lesson-belief.json` — this is
+  a distinct attribution-to-God construct, not a duplicate):
+  `covid-lesson-from-god.json` — 64.4% of Latter-day Saints who believe
+  there's a COVID lesson also believe it was sent by God, 3rd of 7
+  traditions behind Historically Black Protestant (74.8%) and
+  Evangelical Protestant (66.4%), but well clear of Catholic (48.3%),
+  Mainline Protestant (46.2%), Unaffiliated (26.8%), and Jewish (25.7%)
+  — reads as the three traditionally most providence-minded Christian
+  groups clustering well above everyone else, ties to LDS providential
+  theology (an active God who intervenes in human affairs, e.g. D&C
+  1:17). Mormon n=156 valid, comfortably above the 30-respondent floor.
+  Computed by `scripts/pew-atp-w70-2020/covid_lesson_from_god.py`
+  (following this folder's existing `covid_lesson_belief.py` pattern
+  exactly) → `docs/datasets/pew-atp-w70-2020/covid-lesson-from-god.json`,
+  rendered by `scripts/pew-atp-w70-2020/render_covid_lesson_from_god_chart.py`
+  → `public/data-explorer/pew-atp-w70-2020/covid-lesson-from-god.png` (8
+  rows, checked by reading the PNG directly — no label collision or
+  clipping). Wired into `src/lib/data-explorer.ts`
+  (`covidLessonFromGodGraphic()`). `tsc --noEmit` clean; PNG confirmed
+  served at 200 OK, 1080x1350, via the local dev server, and the
+  dataset's page (`/data-explorer/pew-atp-w70-2020`) returns 200 with the
+  correct title and no non-benign console errors (only dev-server HMR
+  websocket noise). Note: the page's own graphic list is empty for a
+  non-admin/unauthenticated request in this local environment because
+  `graphic_posts` publish-gating (migrations 0049/0051/0054) defaults any
+  row-less graphic to hidden — this affects every graphic on every
+  dataset locally, not something introduced by this pass, and is outside
+  this log's scope (a separate admin-side publish step). Remaining
+  untouched items in this wave: `COVIDVOL2_b_W70` (checked and dropped
+  this pass), `COVIDCONG2/3/4_W70` (house-of-worship operating status —
+  infrastructure facts about the respondent's own congregation, not a
+  personal belief/practice, weak fit per prior pass's note), and
+  `COVIDRF_W70` (whether houses of worship should follow the same
+  social-distancing rules as other businesses — politically coded policy
+  question, no clean doctrinal tie); consider this dataset fully mined.
