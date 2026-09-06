@@ -171,6 +171,7 @@ import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-relig
 import importanceOfReligionHispanicsData from "../../docs/datasets/pew-hispanics-religion-2007/importance-of-religion.json";
 import volunteeredForChurchData from "../../docs/datasets/pew-hispanics-religion-2007/volunteered-for-church.json";
 import weeklyAttendanceHispanicsData from "../../docs/datasets/pew-hispanics-religion-2007/weekly-attendance.json";
+import bornAgainIdentityHispanicsData from "../../docs/datasets/pew-hispanics-religion-2007/born-again-identity.json";
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
@@ -1378,6 +1379,7 @@ const RAW_DATASETS: Dataset[] = [
       latinoReligiousConvertsGraphic(),
       importanceOfReligionHispanicsGraphic(),
       volunteeredForChurchGraphic(),
+      bornAgainIdentityHispanicsGraphic(),
       weeklyAttendanceHispanicsGraphic(),
     ],
   },
@@ -3468,6 +3470,20 @@ function weeklyAttendanceHispanicsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-hispanics-religion-2007/weekly-attendance.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of U.S. Latino adults attending religious services at least once a week, by religious group, 2006. ${alt}.`,
+  };
+}
+
+function bornAgainIdentityHispanicsGraphic(): Graphic {
+  const { group_order: order, born_again: results } = bornAgainIdentityHispanicsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Latino Mormons and the \"born-again\" label",
+    description: "Share of U.S. Latino adults describing themselves as \"born-again\" or evangelical Christian, by religious group, 2006.",
+    imageSrc: "/data-explorer/pew-hispanics-religion-2007/born-again-identity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. Latino adults describing themselves as "born-again" or evangelical Christian, by religious group, 2006. ${alt}.`,
   };
 }
 

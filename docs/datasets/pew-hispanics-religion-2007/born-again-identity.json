@@ -1,0 +1,34 @@
+{
+  "source": "Pew Research Center (Pew Hispanic Center and Pew Forum on Religion & Public Life). \"Changing Faiths: Latinos and the Transformation of American Religion,\" survey of 4,016 U.S. Hispanic adults, fielded Aug. 10-Oct. 4, 2006.",
+  "method": "Population is Hispanic adults currently belonging to each religious group (the survey's own recoded 'relig' variable). Share answering \"Yes\" (vs. \"No\") to qn25, \"Would you describe yourself as a born-again or evangelical Christian, or not?\"; don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own newweight variable, which corrects for a deliberate oversample of 2,000 non-Catholic respondents.",
+  "total_weighted_n": 4015.9999998,
+  "total_unweighted_n": 4016,
+  "group_order": [
+    "Protestant",
+    "Mormon",
+    "Catholic",
+    "Jehovah's Witness"
+  ],
+  "born_again": {
+    "Catholic": {
+      "pct": 30.25,
+      "valid_unweighted_n": 1906,
+      "group_unweighted_n": 2025
+    },
+    "Protestant": {
+      "pct": 82.98,
+      "valid_unweighted_n": 1062,
+      "group_unweighted_n": 1111
+    },
+    "Jehovah's Witness": {
+      "pct": 25.42,
+      "valid_unweighted_n": 101,
+      "group_unweighted_n": 104
+    },
+    "Mormon": {
+      "pct": 61.93,
+      "valid_unweighted_n": 32,
+      "group_unweighted_n": 34
+    }
+  }
+}

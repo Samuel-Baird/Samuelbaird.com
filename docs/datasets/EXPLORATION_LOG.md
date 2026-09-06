@@ -806,6 +806,41 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   single-item candidates (COVIDLESSON2_W70 among them) remain if a future
   pass wants to push further into thinner territory.
 
+- **pew-hispanics-religion-2007** (Pew Hispanic Center/Pew Forum Survey of
+  Latinos, 2006) — sixth chart, 2026-09-06: re-read this log's plateau-check
+  conclusion and re-verified it against the current `data/` folder list and
+  `data-explorer.ts`'s `DATASETS` array first — no new or unmined dataset
+  has appeared since the 2026-08-31 plateau check. Went back to this
+  dataset's own prior-pass remaining-candidate list (qn14_d, qn25, qn53) and
+  checked all three directly against the real .sav file rather than
+  trusting the old notes. Dropped qn14_d (favorability toward Mormons rated
+  by other groups) as too close in framing to the already-shipped
+  w114-2022 `relfav-mormons` chart, and dropped qn53 (crucifix/religious
+  objects at home) once computed — Mormon n=16, under the 30-valid floor.
+  Built `born-again-identity.json`/`.png` from qn25 ("would you describe
+  yourself as a born-again or evangelical Christian"), broken out by the
+  survey's own recoded `relig`: 61.9% of Latino Mormons accept the
+  "born-again" label (n=32 valid, just clears the floor), 2nd only to
+  Protestants (83.0%) and far above Catholics (30.2%) and Jehovah's
+  Witnesses (25.4%). This isn't a duplicate of the already-shipped
+  pew-rls-2014 `born-again-identity` chart (general U.S. population, where
+  only 24.0% of Mormons overall accept the label) — it's a genuinely
+  different population with a strikingly different result, worth reading
+  side by side as evidence that Latino Mormon converts carry over an
+  evangelical-style self-identification much more than Mormons in the
+  general population do. Computed by
+  `scripts/pew-hispanics-religion-2007/born_again_identity.py` →
+  `docs/datasets/pew-hispanics-religion-2007/born-again-identity.json`,
+  rendered by
+  `scripts/pew-hispanics-religion-2007/render_born_again_identity_chart.py`
+  → `public/data-explorer/pew-hispanics-religion-2007/born-again-identity.png`
+  (4 rows, checked by reading the PNG directly — no label collision). Wired
+  into `src/lib/data-explorer.ts` (`bornAgainIdentityHispanicsGraphic()`).
+  `tsc --noEmit` clean. This was the last concretely open candidate noted
+  for this dataset from its own prior passes; with all three of qn14_d/
+  qn25/qn53 now checked and resolved (two dropped, one shipped), consider
+  this dataset fully mined.
+
 - **Plateau check, 2026-08-31 (26th+ pass)** — read this entire log in full
   and re-checked the last pass's one flagged open candidate,
   COVIDLESSON2_W70 ("do you believe any of the lessons humankind should
