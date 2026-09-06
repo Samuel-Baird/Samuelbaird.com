@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. \"Faith Among Black Americans,\" published Feb. 16, 2021 (survey fielded Nov. 19, 2019-June 3, 2020).",
+  "method": "Population is Black American adults (\"black faith black respondents.sav\"), grouped by self-reported present religion (RELIGMOD): named affiliations shown individually; Atheist, Agnostic, and Nothing in particular combined into \"Religiously unaffiliated.\" Share who read scripture outside of religious services at least once a week (PERSDO1_b); not-answered excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT variable.",
+  "total_weighted_n": 3182.1186302210263,
+  "total_unweighted_n": 8660,
+  "group_order": [
+    "Mormon",
+    "Jehovah's Witness",
+    "Muslim",
+    "Protestant",
+    "Catholic",
+    "Religiously unaffiliated",
+    "All Black Americans"
+  ],
+  "reads_scripture_weekly": {
+    "Protestant": {
+      "pct": 51.81,
+      "valid_unweighted_n": 5664,
+      "group_unweighted_n": 5784
+    },
+    "Catholic": {
+      "pct": 30.31,
+      "valid_unweighted_n": 558,
+      "group_unweighted_n": 562
+    },
+    "Mormon": {
+      "pct": 69.9,
+      "valid_unweighted_n": 33,
+      "group_unweighted_n": 34
+    },
+    "Jehovah's Witness": {
+      "pct": 68.84,
+      "valid_unweighted_n": 144,
+      "group_unweighted_n": 147
+    },
+    "Muslim": {
+      "pct": 53.52,
+      "valid_unweighted_n": 98,
+      "group_unweighted_n": 100
+    },
+    "Religiously unaffiliated": {
+      "pct": 14.1,
+      "valid_unweighted_n": 1724,
+      "group_unweighted_n": 1735
+    },
+    "All Black Americans": {
+      "pct": 42.27,
+      "valid_unweighted_n": 8511,
+      "group_unweighted_n": 8660
+    }
+  }
+}

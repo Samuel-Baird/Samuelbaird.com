@@ -841,6 +841,46 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   qn25/qn53 now checked and resolved (two dropped, one shipped), consider
   this dataset fully mined.
 
+- **pew-black-faith-2021** (Pew's "Faith Among Black Americans," fielded
+  2019-2020) — seventh chart, 2026-09-06: picked a dataset different from the
+  most recent shipped pass (pew-hispanics-religion-2007's sixth chart) per
+  this iteration's instructions. Re-read this dataset's own prior-pass notes
+  and confirmed the six existing charts (women-leaders, convert-duty,
+  god-responds, turned-to-church-for-help, denomination-loyalty, and
+  job-skills-essential — the last of these was already live in
+  `data-explorer.ts` but had never been logged here; corrected that omission
+  now) before picking a new item. Checked this dataset's remaining PERSDO1
+  battery directly against the real .sav file: PERSDO1_a/c/d/e (meditate,
+  burn candles/incense, pray at a home altar, consult a diviner) were all
+  checked and dropped in an earlier pass per this log's own notes, but
+  PERSDO1_b ("read scripture outside of religious services") had never been
+  checked. Computed it by RELIGMOD, weighted by WEIGHT, same construction as
+  denomination-loyalty.py: Black Mormons read scripture outside of religious
+  services at least weekly at 69.9% (n=33 valid, just over the 30 floor) —
+  the highest of any tradition in the wave, edging out Jehovah's Witnesses
+  at 68.8% and well above Protestants (51.8%) and Catholics (30.3%) — ties to
+  the LDS emphasis on daily personal and family scripture study (e.g. Come,
+  Follow Me home study). Also checked PERSDO2_a (prayer/scripture-study
+  groups, Mormon 42.9% n=34, 2nd to JW's 56.3% — a real but less clean
+  story, dropped in favor of the cleaner PERSDO1_b result), ESSENTCHURCH_d
+  (help the needy with bills/housing/food — Mormon mid-pack at 53.7%, no
+  distinctive story, dropped), and GODBELIEFSMOD_b/d (God directs/judges
+  everything — Mormon mid-to-low on both, no distinctive story, dropped).
+  Built `scripture-reading.json`/`.png` via
+  `scripts/pew-black-faith-2021/scripture_reading.py` →
+  `docs/datasets/pew-black-faith-2021/scripture-reading.json`, rendered by
+  `scripts/pew-black-faith-2021/render_scripture_reading_chart.py` →
+  `public/data-explorer/pew-black-faith-2021/scripture-reading.png` (7 rows,
+  checked by reading the PNG directly — no label collision). Wired into
+  `src/lib/data-explorer.ts` (`scriptureReadingBlackFaithGraphic()`).
+  `tsc --noEmit` clean; verified the PNG serves 200 OK at 1080x1350 from the
+  local dev server. This dataset's remaining untouched candidates
+  (TYPEGODSUM, CLERGYSSM, ESSENTCHURCH_a/b/e/f/g, and the still-unused "all
+  respondents.sav" Black-vs-non-Black comparison sample) are either
+  weak-fit (political/racial framing already flagged elsewhere in this log)
+  or unchecked pending a future pass; consider this dataset close to fully
+  mined.
+
 - **Plateau check, 2026-08-31 (26th+ pass)** — read this entire log in full
   and re-checked the last pass's one flagged open candidate,
   COVIDLESSON2_W70 ("do you believe any of the lessons humankind should
