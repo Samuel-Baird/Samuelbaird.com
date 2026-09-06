@@ -98,13 +98,11 @@ export type SiteStats = {
 // Data Explorer dataset slug or a study slug, a flat key space (see
 // supabase/migrations/0049_graphic_posts.sql, 0051_graphic_published.sql).
 // `published` + `publish_at` gate public visibility (see
-// src/lib/graphic-publish.ts for the hidden/scheduled/published derivation);
-// `posted` just tracks whether it's gone out on social media — independent.
+// src/lib/graphic-publish.ts for the hidden/scheduled/published derivation).
+// The table's legacy posted/posted_dates columns are unused.
 export type GraphicPost = {
   dataset_slug: string;
   graphic_id: string;
-  posted: boolean;
-  posted_dates: string;
   published: boolean;
   /** ISO timestamp the graphic goes (or went) live; null = unscheduled. */
   publish_at: string | null;

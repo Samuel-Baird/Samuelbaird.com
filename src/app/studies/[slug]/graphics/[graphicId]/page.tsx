@@ -130,8 +130,6 @@ export default async function StudyGraphicPage({
                 graphicId={graphicId}
                 published={status?.published === true}
                 publishAt={status?.publish_at ?? null}
-                posted={status?.posted === true}
-                postedDates={status?.posted_dates ?? ""}
                 currentPath={`/studies/${slug}/graphics/${graphicId}`}
               />
             )}

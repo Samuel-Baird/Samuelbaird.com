@@ -10,9 +10,9 @@ import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { getStudyFolderSlugs, STUDY_GRAPHICS } from "@/lib/study-graphics";
 import type { GraphicPost } from "@/lib/types";
 
-type Filter = "all" | "posted" | "unposted" | "hidden" | "scheduled";
+type Filter = "all" | "hidden" | "scheduled";
 
-const FILTERS: Filter[] = ["all", "hidden", "scheduled", "unposted", "posted"];
+const FILTERS: Filter[] = ["all", "hidden", "scheduled"];
 
 type Section = {
   key: string;
@@ -40,7 +40,7 @@ export default async function AdminGraphicsPage({
   const [{ data, error }, studies] = await Promise.all([
     createSupabaseServiceClient()
       .from("graphic_posts")
-      .select("dataset_slug, graphic_id, posted, posted_dates, published, publish_at"),
+      .select("dataset_slug, graphic_id, published, publish_at"),
     getStudiesBySlugs(getStudyFolderSlugs()),
   ]);
   if (error) throw error;
@@ -94,7 +94,6 @@ export default async function AdminGraphicsPage({
   scheduled.sort((a, b) => Date.parse(a.publishAt) - Date.parse(b.publishAt));
 
   const totalGraphics = sections.reduce((n, s) => n + s.graphics.length, 0);
-  const totalPosted = [...statusByKey.values()].filter((s) => s.posted).length;
 
   const filterHref = (f: Filter) => (f === "all" ? "/admin/graphics" : `/admin/graphics?filter=${f}`);
 
@@ -105,7 +104,7 @@ export default async function AdminGraphicsPage({
           <h1 className="serif text-4xl font-semibold tracking-tight">Graphics</h1>
           <p className="mt-2 text-sm text-[color:var(--muted)]">
             {stateCounts.published} of {totalGraphics} published · {stateCounts.scheduled} scheduled ·{" "}
-            {stateCounts.hidden} hidden · {totalPosted} of {totalGraphics} posted
+            {stateCounts.hidden} hidden
           </p>
         </div>
         <nav className="flex gap-2">
@@ -155,19 +154,12 @@ export default async function AdminGraphicsPage({
               return {
                 graphic: g,
                 id,
-                posted: status?.posted ?? false,
-                postedDates: status?.posted_dates ?? "",
                 published: status?.published ?? false,
                 publishAt: status?.publish_at ?? null,
                 state: publishState(status),
               };
             })
-            .filter((r) => {
-              if (filter === "posted") return r.posted;
-              if (filter === "unposted") return !r.posted;
-              if (filter === "hidden" || filter === "scheduled") return r.state === filter;
-              return true;
-            });
+            .filter((r) => filter === "all" || r.state === filter);
 
           if (rows.length === 0) return null;
 
@@ -179,7 +171,7 @@ export default async function AdminGraphicsPage({
                 </Link>
               </h2>
               <div className="mt-3 divide-y divide-[color:var(--border)] rounded-[var(--radius)] border border-[color:var(--border)] bg-white">
-                {rows.map(({ graphic, id, posted, postedDates, published, publishAt }) => (
+                {rows.map(({ graphic, id, published, publishAt }) => (
                   <div key={id} className="flex flex-wrap items-center gap-4 p-4">
                     <Link
                       href={`${section.basePath}/${id}`}
@@ -202,8 +194,6 @@ export default async function AdminGraphicsPage({
                       <GraphicPostControls
                         datasetSlug={section.key}
                         graphicId={id}
-                        posted={posted}
-                        postedDates={postedDates}
                         published={published}
                         publishAt={publishAt}
                       />

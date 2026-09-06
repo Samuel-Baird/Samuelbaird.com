@@ -118,8 +118,6 @@ export default async function DatasetGraphicsPage({
                         graphicId={id}
                         published={status?.published === true}
                         publishAt={status?.publish_at ?? null}
-                        posted={status?.posted === true}
-                        postedDates={status?.posted_dates ?? ""}
                         currentPath={currentPath}
                       />
                     )}

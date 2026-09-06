@@ -324,7 +324,7 @@ export const STUDY_GRAPHICS: StudyGraphicsEntry[] = RAW_STUDY_GRAPHICS.map(
 // A study slug must also never collide with a Data Explorer dataset slug:
 // graphic_posts.dataset_slug is a flat key space shared by both registries
 // (see supabase/migrations/0049_graphic_posts.sql's doc comment), so a
-// collision would let a study's publish/posted state silently overwrite a
+// collision would let a study's publish state silently overwrite a
 // same-named dataset's, or vice versa.
 {
   const datasetSlugs = new Set(DATASETS.map((d) => d.slug));
@@ -336,7 +336,7 @@ export const STUDY_GRAPHICS: StudyGraphicsEntry[] = RAW_STUDY_GRAPHICS.map(
     if (datasetSlugs.has(e.studySlug)) {
       throw new Error(
         `Study slug "${e.studySlug}" collides with a Data Explorer dataset slug - ` +
-          `graphic_posts keys on slug alone, so this would corrupt publish/posted state.`,
+          `graphic_posts keys on slug alone, so this would corrupt publish state.`,
       );
     }
     seenSlugs.add(e.studySlug);

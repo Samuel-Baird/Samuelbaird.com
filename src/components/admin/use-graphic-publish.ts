@@ -16,7 +16,8 @@ import {
  * /admin/graphics). Three user intents map onto the one server action:
  *
  *   publishNow()     -> published = true,  publish_at = now
- *   schedule(iso)    -> published = true,  publish_at = iso (future => scheduled)
+ *   schedule(iso)    -> published = true,  publish_at = iso
+ *                       (future => scheduled; past => records when it was posted)
  *   hide()           -> published = false, publish_at untouched (kept as history)
  *
  * Optimistic: local state flips immediately and rolls back on error.
@@ -81,10 +82,9 @@ export function useGraphicPublish({
   }
 
   function openScheduler() {
-    // Prefill with the existing schedule if it's still in the future,
-    // otherwise with the current local time so the picker starts somewhere
-    // sensible.
-    setDraft(toDateTimeLocal(state === "scheduled" ? publishAt : null));
+    // Prefill with the existing publish time (past or future) so editing a
+    // recorded date starts from it; otherwise the current local time.
+    setDraft(toDateTimeLocal(publishAt));
     setSchedulerOpen(true);
   }
 

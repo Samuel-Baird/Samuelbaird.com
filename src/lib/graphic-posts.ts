@@ -11,8 +11,8 @@ import type { GraphicPost } from "@/lib/types";
 // 0051_graphic_published.sql, 0054_graphic_publish_at.sql) is RLS deny-all,
 // so every read here goes through the service client - safe inside
 // unstable_cache since it carries no per-request cookies. `published` +
-// `publish_at` gate public visibility everywhere a graphic can be shown;
-// `posted` is independent social-media tracking.
+// `publish_at` gate public visibility everywhere a graphic can be shown,
+// and publish_at doubles as the record of when it was posted.
 //
 // The time comparison happens per request (isLive -> Date.now()), NOT inside
 // the cache, so a scheduled graphic goes live on the first request after its
@@ -33,7 +33,7 @@ const fetchGraphicPostRows = unstable_cache(
   async (): Promise<GraphicPost[]> => {
     const { data, error } = await createSupabaseServiceClient()
       .from("graphic_posts")
-      .select("dataset_slug, graphic_id, posted, posted_dates, published, publish_at");
+      .select("dataset_slug, graphic_id, published, publish_at");
     if (error) throw error;
     return (data ?? []) as GraphicPost[];
   },

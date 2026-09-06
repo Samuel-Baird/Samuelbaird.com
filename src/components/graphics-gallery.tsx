@@ -76,7 +76,7 @@ export function GraphicsGallery({
   postMap,
 }: {
   graphics: GalleryGraphic[];
-  /** Admins see every graphic (unpublished included) plus the publish/posted
+  /** Admins see every graphic (unpublished included) plus the publish
    * overlay on each card; non-admins get only what the server already
    * filtered to published. */
   isAdmin?: boolean;
@@ -354,8 +354,6 @@ export function GraphicsGallery({
                               graphicId={id}
                               published={status?.published === true}
                               publishAt={status?.publish_at ?? null}
-                              posted={status?.posted === true}
-                              postedDates={status?.posted_dates ?? ""}
                               currentPath="/data-explorer/gallery"
                             />
                           </div>
