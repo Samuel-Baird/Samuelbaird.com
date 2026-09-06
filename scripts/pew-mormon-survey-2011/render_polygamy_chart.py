@@ -44,7 +44,11 @@ def main():
         handle="@ithinkisam | data: Pew 2011 Mormon Survey",
         out_path=args.out,
         fonts=load_fonts(),
-        axes_left=0.52,
+        # Only 4 rows - the standard low-row scaling in render_magnitude_bar
+        # still left this one visibly sparse, so pack it tighter than any
+        # other <7-row chart currently asks for.
+        bar_h_override=0.88,
+        margin_frac_override=0.03,
     )
 
 

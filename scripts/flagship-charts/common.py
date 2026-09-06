@@ -216,6 +216,8 @@ def render_magnitude_bar(
     group_identity: bool = False,
     row_colors: dict[str, str] | None = None,
     value_label_fontsize: float | None = None,
+    bar_h_override: float | None = None,
+    margin_frac_override: float | None = None,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
     order), reading its value from `values[row]`. `caption_paragraphs`,
@@ -266,6 +268,12 @@ def render_magnitude_bar(
     a caller that wants the two to read at the same weight - e.g. a chart
     meant to stand alone as a single shareable image rather than sit in a
     dense gallery grid. Leave unset to keep the pipeline default.
+
+    `bar_h_override`/`margin_frac_override` replace the automatic
+    n_rows-based bar_h/margin_frac below for one specific caller, without
+    touching the formula every other <7-row chart still uses - e.g. a
+    very-low-row-count chart (2-4 rows) that still reads as sparse at the
+    standard scaling. Leave both unset to keep the pipeline default.
     """
     fonts = fonts or load_fonts()
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
@@ -322,6 +330,11 @@ def render_magnitude_bar(
         t = max(0.0, (n_rows - 1) / 6.0)  # 0 at n_rows=1 -> ~0.83 at n_rows=6
         bar_h = 0.85 - 0.23 * t  # 0.85 at n_rows=1 -> ~0.66 at n_rows=6
         margin_frac = 0.05 + 0.06 * t  # 0.05 at n_rows=1 -> ~0.10 at n_rows=6
+
+    if bar_h_override is not None:
+        bar_h = bar_h_override
+    if margin_frac_override is not None:
+        margin_frac = margin_frac_override
 
     # Wrap any row label onto multiple lines if a single unbroken line would
     # eat too much of the canvas - a caller whose rows are full survey-item
