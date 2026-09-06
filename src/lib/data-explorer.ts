@@ -78,6 +78,7 @@ import prayerScriptureGroupsData from "../../docs/datasets/pew-rls-2007/prayer-s
 import volunteerWithChildrenData from "../../docs/datasets/pew-rls-2007/volunteer-with-children.json";
 import shareFaithNonbelieversData from "../../docs/datasets/pew-rls-2007/share-faith-nonbelievers.json";
 import angelsDemonsActiveData from "../../docs/datasets/pew-rls-2007/angels-demons-active.json";
+import divineHealingWitnessedData from "../../docs/datasets/pew-rls-2007/divine-healing-witnessed.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -826,6 +827,7 @@ const RAW_DATASETS: Dataset[] = [
       volunteerWithChildrenGraphic(),
       shareFaithNonbelieversGraphic(),
       angelsDemonsActiveGraphic(),
+      divineHealingWitnessedGraphic(),
     ],
   },
   {
@@ -1971,6 +1973,20 @@ function angelsDemonsActiveGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/angels-demons-active.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who agree angels and demons are active in the world, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+function divineHealingWitnessedGraphic(): Graphic {
+  const { group_order: order, divine_healing_witnessed: results } = divineHealingWitnessedData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Have you ever witnessed a divine healing?",
+    description: "Share who have ever experienced or witnessed a divine healing of an illness or injury, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/divine-healing-witnessed.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have ever experienced or witnessed a divine healing of an illness or injury, by religious tradition, 2007. ${alt}.`,
   };
 }
 

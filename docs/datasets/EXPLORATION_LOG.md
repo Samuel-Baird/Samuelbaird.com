@@ -1045,3 +1045,52 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   candidates from prior passes' notes (qi2t/qi2u dietary restrictions,
   qk10c/qk10d Sunday-school siblings) are both thinner/weaker-fit;
   consider this dataset fully mined after this pass.
+
+- **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — 11th chart,
+  2026-09-06: the four most recently shipped commits were pew-rls-2014
+  (church-too-* trio), pew-rls-2014-recontact, and pew-black-faith-2021
+  (x2), all excluded per this iteration's instructions, so picked a
+  different dataset. Re-checked this dataset's own remaining-candidate
+  list from prior passes directly against the real continental-US .sav
+  file rather than trusting old notes: q37/q38 (scripture literalism)
+  skipped without computing as too close to 2014's already-shipped
+  `scripture-word-of-god`/`scripture-literalism` pair (same construct,
+  same RELTRAD frame, just an earlier year of the same three-wave RLS
+  series); q55a/b (family scripture/Sunday-school practices with
+  children) skipped for the same reason against 2014's
+  `family-scripture-prayer`/`sunday-school-children` charts. Checked the
+  untouched q43 "spiritual experiences" battery's three unused sub-items
+  directly: q43a (deep sense of spiritual peace and well-being, weekly+)
+  computed at Mormon 72.5% but dropped as a near-duplicate of the
+  already-shipped pew-rls-2023-24 `spiritual-peace.png` (same "deep sense
+  of spiritual peace and well-being" wording, just a different wave);
+  q43b (sense of wonder about the universe, weekly+) computed at Mormon
+  41.2%, squarely mid-pack among the 12 RELTRAD groups, no
+  highest/lowest story, dropped. q43d ("have you ever experienced or
+  witnessed a divine healing of an illness or injury") had never been
+  checked and cleared both tests — built `divine-healing-witnessed.json`:
+  69.4% of Mormons say yes, the highest of any of the 12 RELTRAD groups
+  by 13 points over 2nd-place Historically Black Protestant (56.1%) and
+  well above Evangelical Protestant (51.6%)/Catholic (28.3%)/Mainline
+  Protestant (29.1%), against a 37.2% "All U.S. adults" baseline — ties
+  directly to LDS priesthood healing blessings (anointing with oil and
+  the laying on of hands, D&C 42:43-44/James 5:14-15), administered by
+  any worthy Melchizedek Priesthood holder rather than reserved to
+  clergy, plausibly explaining both the high witnessed-rate and
+  Jehovah's Witness's outlying low 7.7% (a tradition with its own
+  distinct theology of healing through faith alone, no ordinance).
+  Mormon n=572 valid (unweighted), comfortably above the 30-respondent
+  floor. Computed by `scripts/pew-rls-2007/divine_healing_witnessed.py`
+  (using `chart_style.sort_groups` for row order, a small convention
+  update from this folder's older manual-sort scripts) →
+  `docs/datasets/pew-rls-2007/divine-healing-witnessed.json`, rendered by
+  `scripts/pew-rls-2007/render_divine_healing_chart.py` →
+  `public/data-explorer/pew-rls-2007/divine-healing-witnessed.png` (13
+  rows, checked by reading the PNG directly — no label collision, long
+  RELTRAD "...Churches" labels wrap cleanly at this row count). Wired
+  into `src/lib/data-explorer.ts` (`divineHealingWitnessedGraphic()`).
+  `tsc --noEmit` clean; PNG confirmed served at 200 OK, 1080x1350, via
+  the local dev server, and the `/data-explorer` page loads without
+  error. This dataset's remaining untouched material (q37/q38, q55a-c)
+  is now confirmed duplicative of 2014-wave charts rather than merely
+  suspected; consider this dataset fully mined.
