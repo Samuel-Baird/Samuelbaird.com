@@ -1351,3 +1351,63 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   with the correct title. Remaining untouched candidates: `qf5` (prayer
   frequency, checked and deliberately deferred this pass, see above).
   Consider this dataset close to fully mined.
+
+- **pew-mormon-survey-2011** (2011 National Survey of Mormons) — 14th
+  chart, 2026-09-06: excluded the ten datasets freshly mined this session
+  (pew-atp-w70-2020, pew-atp-w117-2022, pew-atp-w114-2022,
+  pew-atp-w132-2023, pew-rls-2007, pew-rls-2014, pew-rls-2014-recontact,
+  pew-black-faith-2021, pew-hispanics-religion-2007,
+  pew-catholic-family-2015) and confirmed against `data-explorer.ts` that
+  this dataset genuinely had 13 graphics entries (matching the prior
+  pass's own "13th chart" note). First checked `pew-atp-w162-2025` as an
+  alternative target — re-read its full `.sav` variable list directly
+  (not trusting the prior pass's note) and confirmed the remaining battery
+  is Catholic-specific, foreign-policy content, or general
+  societal-perception items (`RELIG_INFL1/2_W162`, `SOCTRUST2_W162`) with
+  no personal belief/practice angle and no clean distinctiveness story
+  (computed `RELIG_INFL2_W162` by `RELIG_W162` directly: Mormon 67.8% say
+  the influence change is a "bad thing," but the item doesn't condition on
+  whether the respondent thinks religion is gaining or losing influence,
+  so "bad thing" is ambiguous and not a defensible chart); also confirmed
+  `RELSCHL2_W162` (years of religious education) would be a near-duplicate
+  of the already-shipped `pew-atp-w44-2018` "religious-ed-4plus-years"
+  construct. Returned to `pew-mormon-survey-2011` and re-read its own
+  `.sav` variable list in full: of the q409 core-belief battery, q409a/b/d
+  are already in `core-beliefs.json`, q409c in
+  `prophet-belief-by-activity.json`, and q409e in
+  `ordination-by-activity.json`; q409g (reincarnation) was checked and
+  skipped as a near-duplicate of the already-shipped
+  `pew-atp-w143-2024` `believes-in-reincarnation.png` (identical
+  construct, Mormons already reported there at 14.0%). That left q409f
+  ("do you believe in yoga, not just as exercise, but as a spiritual
+  practice") as the one item in that battery not yet used anywhere on the
+  site. Built `yoga-by-activity.json`/`.png` by activity level (q406),
+  matching this dataset's established by-activity convention exactly
+  (same construction as `prophet_belief_by_activity.py`): 27.4% of "Very
+  active" Mormons believe in yoga as a spiritual practice, rising to 42.1%
+  Somewhat active and 49.1% Not too active before dipping to 34.1% Not at
+  all active (32.6% among all Mormon adults) — a mostly-monotonic gradient
+  reading as more-engaged members being less likely to treat yoga as a
+  spiritual (rather than merely physical) practice, plausibly tied to
+  Word of Wisdom-era counsel favoring revealed worship over substitute
+  spiritual practices. All activity-level cells clear the 30-valid floor
+  (smallest: n=45, Not at all active). Computed by
+  `scripts/pew-mormon-survey-2011/yoga_by_activity.py` (following this
+  folder's existing `prophet_belief_by_activity.py` pattern exactly) →
+  `docs/datasets/pew-mormon-survey-2011/yoga-by-activity.json`, rendered
+  by `scripts/pew-mormon-survey-2011/render_yoga_chart.py` →
+  `public/data-explorer/pew-mormon-survey-2011/yoga-by-activity.png` (5
+  rows, checked by reading the PNG directly — no label collision or
+  clipping). Wired into `src/lib/data-explorer.ts`
+  (`yogaByActivityGraphic()`). `tsc --noEmit` clean; PNG confirmed served
+  at 200 OK, 1080x1350, via the local dev server, and the dataset's page
+  (`/data-explorer/pew-mormon-survey-2011`) returns 200 with the correct
+  title. Remaining battery: q421a-d (religious-similarity-to-other-faiths,
+  a social-distance item, checked and skipped by a prior pass),
+  q303/q305/q309/q310 (societal-perception items, checked and skipped by
+  a prior pass as thin/politically coded or duplicative), and q200a-e
+  (life-priority ranking items with no cross-tradition comparison
+  available in this Mormon-only survey — a candidate for a future pass if
+  broken out by activity level, but not built this pass to avoid a
+  circular "more-active members rate religion as more important" result).
+  Consider this dataset close to fully mined.

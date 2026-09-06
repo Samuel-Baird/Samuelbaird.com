@@ -60,6 +60,7 @@ import bookOfMormonOriginByActivityData from "../../docs/datasets/pew-mormon-sur
 import templeRecommendByActivityData from "../../docs/datasets/pew-mormon-survey-2011/temple-recommend-by-activity.json";
 import dailyPrayerByActivityData from "../../docs/datasets/pew-mormon-survey-2011/daily-prayer-by-activity.json";
 import prophetBeliefByActivityData from "../../docs/datasets/pew-mormon-survey-2011/prophet-belief-by-activity.json";
+import yogaByActivityData from "../../docs/datasets/pew-mormon-survey-2011/yoga-by-activity.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
@@ -777,6 +778,7 @@ const RAW_DATASETS: Dataset[] = [
       templeRecommendByActivityGraphic(),
       dailyPrayerByActivityGraphic(),
       prophetBeliefByActivityGraphic(),
+      yogaByActivityGraphic(),
     ],
   },
   {
@@ -1672,6 +1674,21 @@ function prophetBeliefByActivityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/prophet-belief-by-activity.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons who believe the Church president is a prophet of God, by activity level in the Church. ${alt}.`,
+  };
+}
+
+function yogaByActivityGraphic(): Graphic {
+  const { activity_order: order, believes_yoga_spiritual_pct: results } = yogaByActivityData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do Mormons believe in yoga as a spiritual practice?",
+    description:
+      "Share of Mormons who believe in yoga, not just as exercise but as a spiritual practice, by activity level.",
+    imageSrc: "/data-explorer/pew-mormon-survey-2011/yoga-by-activity.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Mormons who believe in yoga as a spiritual practice, by activity level in the Church. ${alt}.`,
   };
 }
 
