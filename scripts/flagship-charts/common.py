@@ -89,6 +89,20 @@ dashed/solid device doesn't apply and confidence is instead marked with an
 asterisk on the row label (see `low_confidence_rows`) with the caption
 explaining which bodies that covers and why.
 
+render_dumbbell_identity (added for the religious-tradition-shifts-2007-2023
+dataset, comparing EVERY RELTRAD tradition - not just Christian
+denominations, and not just ten hand-picked churches) is render_dumbbell_log's
+identity-colored sibling: rows are colored by `chart_style.color_for_group`
+(the same locked palette every other cross-religion chart on this site uses)
+rather than by accent/oxblood direction, since the point here is "which
+tradition is this" rather than "did it grow." Start and end values share one
+color per row, distinguished by marker shape (hollow circle vs. filled
+circle, captioned in a shape-only legend) instead of by a triangle. Log
+scale is optional (`log_scale=True` default) since RELTRAD shares span two
+orders of magnitude (Hindu ~0.1% to Unaffiliated ~29%). Value formatting is
+caller-supplied (`value_fmt`) since percentages need different precision at
+different magnitudes, unlike render_dumbbell_log's fixed K/M formatter.
+
 render_ordinal_stack (added for the byu-studies-63-4-religion-and-
 perfectionism study's full perfectionism-distribution chart) is
 render_100_stack's general-purpose sibling: a 100%-stacked horizontal bar
@@ -1269,6 +1283,200 @@ def render_dumbbell_log(
                markeredgecolor=ACCENT, markersize=8, label="2035: growing"),
         Line2D([0], [0], marker="v", color=PAPER, markerfacecolor=OXBLOOD,
                markeredgecolor=OXBLOOD, markersize=8, label="2035: declining"),
+    ]
+    legend = ax.legend(
+        handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),
+        bbox_transform=fig.transFigure,
+        ncol=len(handles), frameon=False, handlelength=1.6, columnspacing=1.2,
+        fontsize=MIN.LEGEND, prop=fonts["bold"],
+    )
+    for text in legend.get_texts():
+        text.set_color(INK)
+        text.set_fontsize(MIN.LEGEND)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def render_dumbbell_identity(
+    *,
+    rows: list[str],
+    row_labels: dict[str, str],
+    start_values: dict[str, float],
+    end_values: dict[str, float],
+    start_label: str,
+    end_label: str,
+    low_confidence_rows: set[str],
+    value_fmt,
+    title: str,
+    subtitle: str,
+    caption_paragraphs: list[str],
+    handle: str | None = None,
+    handle_color: str | None = None,
+    out_path: Path,
+    fonts: dict[str, fm.FontProperties] | None = None,
+    log_scale: bool = True,
+    caption_wrap_width: int = 72,
+) -> None:
+    """One row per `rows` entry (already in top-to-bottom display order) -
+    a hollow dot at `start_values[row]`, a filled dot at `end_values[row]`,
+    joined by a line, ALL colored by `chart_style.color_for_group(row_labels[row])`
+    - see this module's docstring for why identity color replaces
+    render_dumbbell_log's accent/oxblood direction coloring here. `value_fmt`
+    formats both the data labels and, when `log_scale`, the axis ticks (a
+    plain `f"{v:.0f}"`-style callable for a linear axis; ticks fall back to
+    matplotlib's own default when `log_scale=False`). Rows in
+    `low_confidence_rows` get an asterisk appended to their y-axis label.
+
+    Value labels sit HORIZONTALLY beside their own marker (left of whichever
+    marker has the smaller x, right of whichever has the larger) rather than
+    above/below it - render_dumbbell_log's vertical offset works for 10
+    widely-spaced rows, but this function's callers can have 15+ rows on a
+    log scale where two adjacent rows' values land close together in x, and
+    a vertical offset then collides with the next row's marker. Horizontal
+    placement never competes for vertical space, so it holds regardless of
+    row count or how close two rows' values are.
+
+    The left margin auto-widens (and, past a cap, wraps each row label onto
+    two lines) to fit long tradition names like "Historically Black
+    Protestant" - the same measure-then-fit technique render_magnitude_bar
+    uses for its own row labels (see that function's docstring).
+    """
+    import math
+    import textwrap as _textwrap
+    from matplotlib.lines import Line2D
+    from matplotlib.ticker import FixedLocator, FuncFormatter
+
+    fonts = fonts or load_fonts()
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
+    caption_top = draw_caption_bottom(
+        fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
+        fontsize=16, color=INK, wrap_width=caption_wrap_width,
+    )
+    legend_top_y = caption_top + 0.02 + LEGEND_ROW_HEIGHT
+    ax_top = subtitle_bottom - 0.03
+    ax_bottom = legend_top_y + 0.03
+
+    n = len(rows)
+    all_vals = [start_values[r] for r in rows] + [end_values[r] for r in rows]
+    x_min, x_max = min(all_vals), max(all_vals)
+
+    # ---- left margin: measure each row label, wrap if it won't fit even at
+    # the cap, and widen AXES_LEFT to clear the widest (possibly wrapped)
+    # label - mirrors render_magnitude_bar's wrap-then-measure-then-rewrap.
+    AXES_LEFT_DEFAULT, AXES_LEFT_CAP, AXES_RIGHT = 0.40, 0.50, 0.965
+    label_pad_px = 10 / 72 * DPI
+    edge_margin_px = 0.02 * FIG_W_IN * DPI
+    max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px
+    row_wrap_width = 24
+    while True:
+        wrapped_labels = {
+            r: "\n".join(_textwrap.wrap(row_labels[r], width=row_wrap_width))
+            for r in rows
+        }
+        probes = [
+            fig.text(0, 0, wrapped_labels[r] + ("*" if r in low_confidence_rows else ""),
+                      fontproperties=fonts["bold"], fontsize=MIN.LEGEND)
+            for r in rows
+        ]
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        max_label_px = max((t.get_window_extent(renderer=renderer).width for t in probes), default=0)
+        for t in probes:
+            t.remove()
+        if max_label_px <= max_label_width_px or row_wrap_width <= 10:
+            break
+        row_wrap_width -= 2
+    required_left = min(AXES_LEFT_CAP, (max_label_px + label_pad_px + edge_margin_px) / (FIG_W_IN * DPI))
+    AXES_LEFT = max(AXES_LEFT_DEFAULT, required_left)
+    AXES_WIDTH = AXES_RIGHT - AXES_LEFT
+
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    # Row slots widen for a 2-line wrapped label so it doesn't collide with
+    # the row above/below it (same weighted-position technique as
+    # render_magnitude_bar).
+    lines_per_row = {r: wrapped_labels[r].count("\n") + 1 for r in rows}
+    weights = [lines_per_row[r] for r in rows]
+    row_y = []
+    running = 0.0
+    for i, w in enumerate(weights):
+        running += w / 2 if i == 0 else weights[i - 1] / 2 + w / 2
+        row_y.append(running)
+    span = (row_y[-1] + weights[-1] / 2) - (row_y[0] - weights[0] / 2)
+    pad = span * (0.05 if n > 8 else 0.09)
+    y_top, y_bottom = row_y[0] - weights[0] / 2 - pad, row_y[-1] + weights[-1] / 2 + pad
+
+    if log_scale:
+        ax.set_xscale("log")
+        # Wider headroom than render_dumbbell_log's (/2.2, *1.9): labels sit
+        # beside the extreme markers here rather than riding tick headroom.
+        ax.set_xlim(x_min / 3.4, x_max * 2.7)
+        tick_vals = []
+        decade = 10 ** math.floor(math.log10(x_min))
+        while decade <= x_max * 10:
+            for mult in (1, 3):
+                t = decade * mult
+                if x_min / 3.4 <= t <= x_max * 2.7:
+                    tick_vals.append(t)
+            decade *= 10
+        ax.xaxis.set_major_locator(FixedLocator(tick_vals))
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _pos=None: value_fmt(v)))
+    else:
+        ax.set_xlim(0, x_max * 1.15)
+    ax.tick_params(axis="x", length=0, pad=10, labelsize=MIN.AXIS_LABEL)
+    for label in ax.get_xticklabels():
+        label.set_fontproperties(fonts["bold"])
+        label.set_color(INK)
+    ax.grid(axis="x", color=BORDER, linewidth=1, zorder=1, which="major")
+
+    ax.set_ylim(y_bottom, y_top)
+    ax.set_yticks(row_y)
+    ax.set_yticklabels([wrapped_labels[r] + ("*" if r in low_confidence_rows else "") for r in rows])
+    ax.tick_params(axis="y", length=0, pad=10)
+    for tick_label in ax.get_yticklabels():
+        tick_label.set_fontproperties(fonts["bold"])
+        tick_label.set_fontsize(MIN.LEGEND)
+        tick_label.set_color(INK)
+
+    value_fontsize = MIN.DATA_LABEL if n <= 10 else MIN.DATA_LABEL - 1
+    for y, r in zip(row_y, rows):
+        start, end = start_values[r], end_values[r]
+        color = color_for_group(row_labels[r])
+        ax.plot([start, end], [y, y], color=color, linewidth=2.4, zorder=3, solid_capstyle="round")
+        ax.plot(start, y, marker="o", markersize=8, markerfacecolor=PAPER,
+                 markeredgecolor=color, markeredgewidth=1.8, zorder=4)
+        ax.plot(end, y, marker="o", markersize=9, markerfacecolor=color,
+                 markeredgecolor=color, zorder=5)
+
+        # Each value sits on the OUTSIDE of its own marker (away from the
+        # other marker), so the pair reads "label  o——●  label" regardless
+        # of which wave is larger - never above/below, so it can't collide
+        # with an adjacent row.
+        for x, is_end in ((start, False), (end, True)):
+            other = end if not is_end else start
+            ha, dx = ("left", 7) if x >= other else ("right", -7)
+            ax.annotate(
+                value_fmt(x), xy=(x, y), xytext=(dx, 0), textcoords="offset points",
+                ha=ha, va="center",
+                color=INK if is_end else MUTED,
+                fontproperties=fonts["bold"] if is_end else fonts["regular"],
+                fontsize=value_fontsize, zorder=6,
+            )
+
+    handles = [
+        Line2D([0], [0], marker="o", color=PAPER, markerfacecolor=PAPER,
+               markeredgecolor=MUTED, markeredgewidth=1.8, markersize=8, label=start_label),
+        Line2D([0], [0], marker="o", color=PAPER, markerfacecolor=MUTED,
+               markeredgecolor=MUTED, markersize=9, label=end_label),
     ]
     legend = ax.legend(
         handles=handles, loc="upper left", bbox_to_anchor=(0.065, legend_top_y),

@@ -195,6 +195,7 @@ import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-200
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
 import tenLargestChurchesData from "../../docs/datasets/ten-largest-us-churches-2035/denominations.json";
+import religiousTraditionShiftsData from "../../docs/datasets/religious-tradition-shifts/shifts-2007-2023.json";
 
 export type Quiz = {
   title: string;
@@ -444,6 +445,29 @@ const RAW_DATASETS: Dataset[] = [
     sourceUrl: "https://gist.github.com/ryanburge/e785275206cd12584b73eb4ec9b3ad52",
     category: "Mixed Datasets",
     graphics: [tenLargestChurchesGraphic()],
+  },
+  {
+    slug: "religious-tradition-shifts",
+    name: "Religious Tradition Shifts, 2007-2023-24",
+    shortDescription:
+      "Every Religious Landscape Study tradition's share of U.S. adults, 2007 vs. 2023-24 - not just the Christian ones.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center",
+    fieldedPeriod: "2007 and 2023-24",
+    description:
+      "A fourth \"mixed data\" entry: this stitches together two different Pew Religious Landscape " +
+      "Study waves - the 2007 continental-U.S. telephone survey and the 2023-24 public-use file - " +
+      "to compare every one of Pew's 15 RELTRAD religious traditions against itself across 16 " +
+      "years, not just the handful of Christian denominations this site's other RLS graphics focus " +
+      "on. RELTRAD's codes are identical across every wave, so no recoding was needed. Small groups " +
+      "(Jehovah's Witness, Buddhist, Hindu, Orthodox Christian, and the three catch-all \"Other\" " +
+      "categories) carry real sampling uncertainty in both waves - flagged on the chart, not hidden.",
+    citation:
+      "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\" Pew Research Center. 2025. " +
+      "\"2023-24 Religious Landscape Study (RLS) Dataset.\" doi: 10.58094/3kwb-bf52.",
+    sourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
+    category: "Mixed Datasets",
+    graphics: [religiousTraditionShiftsGraphic()],
   },
   {
     slug: "state-of-theology",
@@ -1561,6 +1585,27 @@ function tenLargestChurchesGraphic(): Graphic {
     width: 1080, height: 1350,
     alt: `Log-scale dumbbell chart: ten denominations' last-reported U.S. membership (LDS Church figure is worldwide) ` +
       `vs. a linear-trend projection to 2035, largest to smallest. ${alt}. Neither projection is a forecast.`,
+  };
+}
+
+function religiousTraditionShiftsGraphic(): Graphic {
+  const { group_order: order, groups } = religiousTraditionShiftsData;
+  const bySlug = Object.fromEntries(groups.map((g) => [g.name, g]));
+  const alt = order
+    .map((name) => {
+      const g = bySlug[name as keyof typeof bySlug];
+      return `${name}: ${g.pct_2007}% in 2007 -> ${g.pct_2023_24}% in 2023-24 ` +
+        `(${g.relative_change_pct > 0 ? "+" : ""}${g.relative_change_pct}%)`;
+    })
+    .join(", ");
+  return {
+    title: "Every religious tradition's share of U.S. adults, 2007 vs. 2023-24",
+    description:
+      "All fifteen Religious Landscape Study traditions, not just the Christian ones - who grew, who shrank, and by how much.",
+    imageSrc: "/data-explorer/religious-tradition-shifts/shifts-2007-2023.png",
+    width: 1080, height: 1350,
+    alt: `Log-scale dumbbell chart: each religious tradition's share of U.S. adults, 2007 vs. 2023-24, ` +
+      `largest current share first. ${alt}. Groups with fewer than 300 unweighted respondents in a wave are marked approximate.`,
   };
 }
 
