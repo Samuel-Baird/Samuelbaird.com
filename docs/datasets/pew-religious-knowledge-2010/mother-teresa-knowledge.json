@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn48a asked all respondents to identify Mother Teresa's religion (Catholic, Jewish, Buddhist, Mormon, or Hindu); the correct answer is \"Catholic\". Broken out by the respondent's own present religion (qn20); don't know/refused excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Atheist",
+    "Mormon",
+    "Agnostic",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 92.06,
+      "valid_unweighted_n": 1264,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 91.84,
+      "valid_unweighted_n": 641,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 96.67,
+      "valid_unweighted_n": 199,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 87.04,
+      "valid_unweighted_n": 204,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 97.58,
+      "valid_unweighted_n": 68,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 95.35,
+      "valid_unweighted_n": 129,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 86.45,
+      "valid_unweighted_n": 302,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 91.26,
+      "valid_unweighted_n": 3106,
+      "group_unweighted_n": 3412
+    }
+  }
+}

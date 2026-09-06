@@ -63,6 +63,7 @@ import prophetBeliefByActivityData from "../../docs/datasets/pew-mormon-survey-2
 import yogaByActivityData from "../../docs/datasets/pew-mormon-survey-2011/yoga-by-activity.json";
 import mormonFoundingKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mormon-founding-knowledge.json";
 import josephSmithKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/joseph-smith-knowledge.json";
+import motherTeresaKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/mother-teresa-knowledge.json";
 import bookOfMormonKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/book-of-mormon-knowledge.json";
 import churchStateLawData from "../../docs/datasets/pew-religious-knowledge-2010/church-state-law.json";
 import jesusBirthplaceKnowledgeData from "../../docs/datasets/pew-religious-knowledge-2010/jesus-birthplace-knowledge.json";
@@ -803,6 +804,7 @@ const RAW_DATASETS: Dataset[] = [
     graphics: [
       mormonFoundingKnowledgeGraphic(),
       josephSmithKnowledgeGraphic(),
+      motherTeresaKnowledgeGraphic(),
       bookOfMormonKnowledgeGraphic(),
       churchStateLawGraphic(),
       jesusBirthplaceKnowledgeGraphic(),
@@ -1789,6 +1791,20 @@ function josephSmithKnowledgeGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-religious-knowledge-2010/joseph-smith-knowledge.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share correctly identifying Joseph Smith as Mormon, by respondent's own religion. ${alt}.`,
+  };
+}
+
+function motherTeresaKnowledgeGraphic(): Graphic {
+  const { group_order: order, correct_pct: results } = motherTeresaKnowledgeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Who knows Mother Teresa was Catholic?",
+    description: "Share correctly identifying Mother Teresa's religion, by the respondent's own religion.",
+    imageSrc: "/data-explorer/pew-religious-knowledge-2010/mother-teresa-knowledge.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Mother Teresa as Catholic, by respondent's own religion. ${alt}.`,
   };
 }
 
