@@ -182,6 +182,7 @@ import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-bel
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
 import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-religious-items.json";
 import w162AttendanceData from "../../docs/datasets/pew-atp-w162-2025/attendance.json";
+import religiousObjectsHomeData from "../../docs/datasets/pew-atp-w162-2025/religious-objects-home.json";
 import renewalistShareData from "../../docs/datasets/pew-10-country-religion-2007/renewalist-share.json";
 import latinoReligiousConvertsData from "../../docs/datasets/pew-hispanics-religion-2007/latino-religious-converts.json";
 import importanceOfReligionHispanicsData from "../../docs/datasets/pew-hispanics-religion-2007/importance-of-religion.json";
@@ -1371,6 +1372,7 @@ const RAW_DATASETS: Dataset[] = [
       confessionFrequencyGraphic(),
       wearReligiousItemsGraphic(),
       w162AttendanceGraphic(),
+      religiousObjectsHomeGraphic(),
     ],
   },
   {
@@ -3636,6 +3638,20 @@ function w162AttendanceGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w162-2025/attendance.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share attending religious services in person at least weekly, by present religion, February 2025. ${alt}.`,
+  };
+}
+
+function religiousObjectsHomeGraphic(): Graphic {
+  const { group_order: order, religious_objects_at_home: results } = religiousObjectsHomeData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Religious objects at home",
+    description: "Share who have religious objects or artwork displayed in their home, by present religion, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/religious-objects-home.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have religious objects or artwork displayed in their home, by present religion, February 2025. ${alt}.`,
   };
 }
 
