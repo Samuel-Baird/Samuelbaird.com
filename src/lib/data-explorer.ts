@@ -131,6 +131,8 @@ import convertDutyData from "../../docs/datasets/pew-black-faith-2021/convert-du
 import godRespondsData from "../../docs/datasets/pew-black-faith-2021/god-responds.json";
 import turnedToChurchForHelpData from "../../docs/datasets/pew-black-faith-2021/turned-to-church-for-help.json";
 import denominationLoyaltyData from "../../docs/datasets/pew-black-faith-2021/denomination-loyalty.json";
+import jobSkillsEssentialData from "../../docs/datasets/pew-black-faith-2021/job-skills-essential.json";
+import scriptureReadingBlackFaithData from "../../docs/datasets/pew-black-faith-2021/scripture-reading.json";
 import religiousNationalIdentityData from "../../docs/datasets/pew-eastern-europe-2015/religious-national-identity.json";
 import pewGlobalRestrictionsGriData from "../../docs/datasets/pew-global-restrictions-religion/gri-trend.json";
 import christianNeighborAcceptanceData from "../../docs/datasets/pew-india-2021/christian-neighbor-acceptance.json";
@@ -1080,6 +1082,8 @@ const RAW_DATASETS: Dataset[] = [
       godRespondsGraphic(),
       turnedToChurchForHelpGraphic(),
       denominationLoyaltyGraphic(),
+      jobSkillsEssentialGraphic(),
+      scriptureReadingBlackFaithGraphic(),
     ],
   },
   {
@@ -2767,6 +2771,34 @@ function denominationLoyaltyGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-black-faith-2021/denomination-loyalty.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Black Americans saying it's very important that a new congregation belong to their own denomination, by religion. ${alt}.`,
+  };
+}
+
+function jobSkillsEssentialGraphic(): Graphic {
+  const { group_order: order, job_skills_essential: results } = jobSkillsEssentialData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Should churches teach job skills?",
+    description: "Share of Black Americans saying it's essential for houses of worship to teach practical job and life skills, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/job-skills-essential.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans saying it's essential for houses of worship to teach practical job and life skills, by religion. ${alt}.`,
+  };
+}
+
+function scriptureReadingBlackFaithGraphic(): Graphic {
+  const { group_order: order, reads_scripture_weekly: results } = scriptureReadingBlackFaithData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Reading scripture on your own",
+    description: "Share of Black Americans who read scripture outside of religious services at least once a week, by religion.",
+    imageSrc: "/data-explorer/pew-black-faith-2021/scripture-reading.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Black Americans who read scripture outside of religious services at least once a week, by religion. ${alt}.`,
   };
 }
 

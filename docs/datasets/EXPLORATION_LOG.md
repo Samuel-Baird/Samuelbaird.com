@@ -866,3 +866,52 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   "fully mined" / "close to fully mined" above without first identifying a
   genuinely new angle (e.g. a newly released Pew wave, a newly added data
   file) rather than re-scanning the same exhausted batteries.
+
+- **pew-black-faith-2021** (Pew's "Faith Among Black Americans," fielded
+  2019-2020) — sixth chart, 2026-09-06: re-read this log's plateau-check
+  conclusion in full first and confirmed no new dataset had appeared since
+  2026-08-31 (28 `data/` folders, all still mapped in `data-explorer.ts`),
+  and that the most recent pass (pew-hispanics-religion-2007's sixth chart)
+  was a different dataset. Checked this dataset's own long-untouched
+  ESSENTCHURCH_a-g battery ("how important is it for houses of worship to do
+  each of the following"), never used by any prior pass, by computing the
+  real weighted crosstab by RELIGMOD for every sub-item rather than trusting
+  old notes. Dropped ESSENTCHURCH_a (moral guidance, Mormon 60.9% mid-pack,
+  below Protestant 74.2%/Jehovah's Witness 80.2%), ESSENTCHURCH_d (help the
+  needy with bills/housing/food, Mormon 53.7% mid-pack, and thematically
+  close to the already-shipped `turned-to-church-for-help.json`),
+  ESSENTCHURCH_e (community/fellowship, Mormon 64.9% mid-pack), and
+  ESSENTCHURCH_f/g (racial affirmation / political sermons, same
+  Black-church-specific racial/political framing already flagged as a weak
+  LDS fit for this dataset's COMMINFL1/BLKEQL1_c/CHURCHLOOK_d/e items). Also
+  spot-checked CLERGYSSM (same-sex-marriage-officiant item, Mormon 43.8% -
+  no clean story, close to the national average, and thematically
+  overlapping the site's existing SSM-favorability charts) and TYPEGODSUM
+  (belief in a personal God, Mormon 74.8% - solidly mid-pack behind
+  Jehovah's Witness 96.7%/Protestant 87.9%) and dropped both. Landed on
+  ESSENTCHURCH_c ("teach practical job and life skills"): Mormons rate this
+  "essential" at 70.5%, the highest of any group by a wide margin — next is
+  Muslim at 50.9%, then Protestant 47.5%, with Catholic/Jehovah's Witness/
+  Unaffiliated all clustered at 40-41% and "All Black Americans" at 45.3%.
+  This is a genuine LDS-institution-vs-data story: the Church runs practical
+  self-reliance/vocational programs as a congregational function (ward/stake
+  Self-Reliance Initiative career workshops and employment resource centers,
+  the Perpetual Education Fund, BYU-Pathway Worldwide) rather than treating
+  job/life-skills instruction as outside a house of worship's remit, and
+  Black Mormons are far more likely than any other named tradition to see
+  that as essential rather than merely a nice-to-have. Mormon n=33 valid
+  (unweighted), just over this dataset's established 30-floor, using the
+  "black faith black respondents.sav" file per this folder's established
+  convention. Computed by
+  `scripts/pew-black-faith-2021/job_skills_essential.py` →
+  `docs/datasets/pew-black-faith-2021/job-skills-essential.json`, rendered by
+  `scripts/pew-black-faith-2021/render_job_skills_essential_chart.py` →
+  `public/data-explorer/pew-black-faith-2021/job-skills-essential.png` (7
+  rows, checked by reading the PNG directly — no label collision). Wired
+  into `src/lib/data-explorer.ts` (`jobSkillsEssentialGraphic()`).
+  `tsc --noEmit` clean; PNG confirmed served at 200 OK, 1080x1350, via the
+  dev server. This dataset's remaining untouched material (PERSDO1_a/c/d
+  already checked and dropped in an earlier pass as mid-pack/counter-
+  doctrinal, PERSDO1_b likely a near-duplicate of already-shipped scripture-
+  reading items, and the "all respondents.sav" Black-vs-non-Black comparison
+  sample) is thin or duplicative — consider this dataset fully mined.
