@@ -60,34 +60,11 @@ def main() -> None:
     dn.legend_swatches(fig, fonts, [(name, color) for name, _, color, _, _ in SERIES],
                        x=dn.MARGIN_L, y=y_leg, swatch="line")
 
-    # ---- Footer ---------------------------------------------------------------
-    n = {k: waves[k]["n"] for k in WAVE_KEYS}
-    n_lds = {k: waves[k]["n_lds"] for k in WAVE_KEYS}
-    lds = {k: waves[k]["Latter-day Saints"] for k in WAVE_KEYS}
-    # Two explicit lines (a third line at draw_footer's spacing runs below the
-    # canvas). Line 1 follows the set-wide source template exactly:
-    #   "Source: Pew Research Center, Religious Landscape Study, <waves>;
-    #    public-use microdata, weighted."
+    # ---- Footer -----------------------------------------------------------
     footer_lines = [
-        f"Source: Pew Research Center, Religious Landscape Study, 2007, 2014 and 2023-24; "
-        f"public-use microdata, weighted (N={n['2007']:,}, {n['2014']:,} and {n['2023-24']:,}).",
-        f"Latter-day Saint share shown to one decimal "
-        f"({pct(lds['2007'], 1)}, {pct(lds['2014'], 1)}, {pct(lds['2023-24'], 1)}; unweighted "
-        f"n={n_lds['2007']}, {n_lds['2014']}, {n_lds['2023-24']}); Pew rounds all three to {pub_lds_round}%. "
-        f"2007 covers the continental U.S.",
+        "Source: Pew Research Center, Religious Landscape Study, 2007, 2014 and 2023-24.",
     ]
-    n_fig_texts_before = len(fig.texts)
     dn.draw_footer(fig, fonts, footer_lines)
-    # Measured fit: every footer line must end inside the text rail (not merely
-    # on the canvas), and draw_footer must not have wrapped either line.
-    fig.canvas.draw()
-    r0 = fig.canvas.get_renderer()
-    W0 = fig.get_figwidth() * fig.dpi
-    footer_texts = fig.texts[n_fig_texts_before:]
-    body = [t for t in footer_texts if t.get_text().startswith("Source:")][0]
-    assert body.get_text().count("\n") == len(footer_lines) - 1, "draw_footer wrapped a footer line"
-    assert body.get_window_extent(r0).x1 <= dn.MARGIN_R * W0 + 1, \
-        f"footer runs past the rail: {body.get_window_extent(r0).x1 / W0:.3f} > {dn.MARGIN_R}"
 
     # ---- Axes -----------------------------------------------------------------
     ax_left = 0.10                      # leaves room for "80%" tick labels on the rail

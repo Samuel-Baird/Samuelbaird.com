@@ -124,15 +124,7 @@ def main() -> None:
     fig = dn.new_figure()
     y_head = dn.draw_header(fig, fonts, TITLE, DEK)
 
-    # Two pre-broken lines: draw_footer's 165-char wrap is wider than the rail
-    # at this size, and three lines would run off the bottom of the canvas.
-    line1 = ("Source: Pew Research Center, Religious Landscape Study, 2023-24; "
-             "public-use microdata, weighted. Definitions follow Pew’s 2023-24 report")
-    line2 = ("(‘highly religious upbringing’ and ‘highly religious now’). "
-             f"Unweighted n of adults raised highly religious: {ns[n_min_i]:,} "
-             f"(born {rows[n_min_i]['birth_decade']}) to {ns[n_max_i]:,} "
-             f"(born {rows[n_max_i]['birth_decade']}).")
-    dn.draw_footer(fig, fonts, [line1, line2])
+    dn.draw_footer(fig, fonts, ["Source: Pew Research Center, Religious Landscape Study, 2023-24."])
 
     # ---- Axes -----------------------------------------------------------------
     ax_top = y_head - HEADER_GAP

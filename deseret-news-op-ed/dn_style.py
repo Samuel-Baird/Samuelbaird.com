@@ -67,8 +67,16 @@ SERIES = {
     "Religiously unaffiliated": GRAY2,
     "Religiously affiliated": GRAY1,
 }
-# Ordinal gray ramp (light -> dark) for the children-ever-born distribution.
+# Ordinal gray ramp (light -> dark), the neutral default for a 100%-stacked
+# ordinal distribution.
 ORDINAL_GRAYS = ["#e6e6e6", "#bdbdbd", "#8c8c8c", "#5c5c5c", "#2b2b2b"]
+
+# Ordinal gold ramp (light cream -> Deseret Yellow -> deep amber-brown), for a
+# single chart that wants a color pop without leaving the brand guide's hue
+# family. Not used for entity identity anywhere in the set (no chart pairs
+# this ramp against an actual Latter-day Saint series), so it doesn't
+# collide with YELLOW's "Latter-day Saints" meaning elsewhere.
+ORDINAL_GOLD = ["#faf0cf", "#f7dd8a", "#ffd217", "#c98f1e", "#7a4a0a"]
 
 # ---- Canvas -----------------------------------------------------------------
 FIG_W_IN, FIG_H_IN, DPI = 12, 8, 200          # 2400 x 1600 px, 3:2 web graphic

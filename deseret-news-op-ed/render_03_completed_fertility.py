@@ -118,46 +118,21 @@ def main() -> None:
     fig.text(dn.MARGIN_L, y_leg, lead, fontproperties=lead_prop, color=dn.MUTED,
              ha="left", va="center")
     x_leg = dn.MARGIN_L + text_width_frac(fig, renderer, lead, lead_prop) + 0.014
-    dn.legend_swatches(fig, fonts, list(zip(CATS, dn.ORDINAL_GRAYS)), x=x_leg, y=y_leg,
+    dn.legend_swatches(fig, fonts, list(zip(CATS, dn.ORDINAL_GOLD)), x=x_leg, y=y_leg,
                        swatch="square", gap=0.022)
 
-    # ---- footer + method note ---------------------------------------------
-    # dn.draw_footer's third line falls below the canvas at 10.5pt x 1.4, so the
-    # footer is held to two lines and the method caveat becomes a note block in
-    # the space between the axis and the footer rule.
+    # ---- footer -------------------------------------------------------------
     n_chr = groups["All Christians"]["unweighted_n"]
     n_un = groups["Religiously unaffiliated"]["unweighted_n"]
-    # Shared template across the set: "Source: Pew Research Center, Religious
-    # Landscape Study, <waves>; public-use microdata, weighted."
-    source = ("Source: Pew Research Center, Religious Landscape Study, 2023-24; "
-              "public-use microdata, weighted. "
-              f"Unweighted n: Christians {n_chr:,}; unaffiliated {n_un:,}.")
-    rounding = "Percentages are rounded and may not sum to 100."
-    method = (f"Note: Pew's published averages for adults ages 40-59 are {pub['Christians']} children "
-              f"among Christians and {pub['Religiously unaffiliated']} among the religiously "
-              "unaffiliated. The public-use file reports birth decade rather than exact age and "
-              "caps counts at '4 or more', so this chart shows the full distribution instead.")
-    src_prop = dn.fp(fonts, "sans", dn.SIZE["source"])
-    note_prop = dn.fp(fonts, "sans", dn.SIZE["note"])
-    rail = (dn.MARGIN_R - dn.MARGIN_L) * 0.995
-    footer_lines = (measured_wrap(fig, renderer, source, src_prop, rail)
-                    + measured_wrap(fig, renderer, rounding, src_prop, rail))
-    note_lines = measured_wrap(fig, renderer, method, note_prop, rail)
-    print("footer lines:", len(footer_lines), "| note lines:", len(note_lines))
-    for ln in footer_lines + note_lines:
-        print(f"  [{len(ln):3d} ch, {text_width_frac(fig, renderer, ln, src_prop):.3f} fig] {ln}")
-    if len(footer_lines) > 2:
-        raise SystemExit("footer would run off the canvas: keep it to 2 lines")
-    if len(note_lines) > 2:
-        raise SystemExit("method note too long: keep it to 2 lines")
+    footer_lines = ["Source: Pew Research Center, Religious Landscape Study, 2023-24."]
     dn.draw_footer(fig, fonts, footer_lines)
-    y_note_top = 0.205
-    fig.text(dn.MARGIN_L, y_note_top, "\n".join(note_lines), fontproperties=note_prop,
-             color=dn.MUTED, ha="left", va="top", linespacing=1.35)
 
     # ---- axes -------------------------------------------------------------
+    # The method note (Pew's published 2.2/1.8 vs. this chart's full
+    # distribution) moved out of the image and into README.md; reclaim that
+    # vertical space for the plot.
     ax_left, ax_right = dn.MARGIN_L, 0.77
-    ax_bottom, ax_top = 0.27, y_leg - 0.07
+    ax_bottom, ax_top = 0.16, y_leg - 0.07
     ax = fig.add_axes([ax_left, ax_bottom, ax_right - ax_left, ax_top - ax_bottom])
     ax.set_xlim(0, 100)
     ax.set_ylim(-0.5, 1.5)
@@ -178,7 +153,7 @@ def main() -> None:
         left = 0.0
         for k, cat in enumerate(CATS):
             v = dist[cat]
-            fill = dn.ORDINAL_GRAYS[k]
+            fill = dn.ORDINAL_GOLD[k]
             ax.barh(y, v, left=left, height=BAR_H, color=fill,
                     edgecolor=dn.PAPER, linewidth=2, zorder=3)
             if v >= MIN_LABEL_PCT:

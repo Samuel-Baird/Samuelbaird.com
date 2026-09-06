@@ -133,15 +133,8 @@ def main() -> None:
     dek_bottom = min(fig_box(fig, t, renderer)[1] for t in header_texts)
 
     # ---- footer (house) --------------------------------------------------------
-    # Two lines, each well under dn.draw_footer's 165-char wrap and measured
-    # against the right rail below, so the house helper draws them verbatim.
-    n = {g: pp[g]["parents_unweighted_n"] for g, _ in GROUPS}
     footer = [
-        "Source: Pew Research Center, Religious Landscape Study, 2023-24; public-use microdata, weighted. "
-        "Base: parents of children under 18 at home.",
-        f"Unweighted n: Latter-day Saints {n['Latter-day Saints']:,}, all Christians {n['All Christians']:,}, "
-        f"unaffiliated {n['Religiously unaffiliated']:,}. "
-        f"Pew publishes {pub['Latter-day Saints']}% (Latter-day Saint parents) and {pub['Christians']}% (Christian parents).",
+        "Source: Pew Research Center, Religious Landscape Study, 2023-24.",
     ]
     before = set(id(t) for t in fig.texts)
     dn.draw_footer(fig, fonts, footer)

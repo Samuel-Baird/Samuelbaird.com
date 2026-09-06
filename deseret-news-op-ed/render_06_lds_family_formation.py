@@ -86,24 +86,8 @@ def main() -> None:
            "by religious group, 2023-24.")
     y_header = dn.draw_header(fig, fonts, title, dek)
 
-    # ---- Footer (source + unweighted n, read from the JSON) -----------------
-    nm, nf = panels[0]["n"], panels[1]["n"]
-    # dn_style's footer band fits two 10.5pt lines (a third runs off the
-    # canvas), so source + caveat share line 1 and the six unweighted n share
-    # line 2. The source clause follows the template shared by every chart in
-    # the set: "Source: Pew Research Center, Religious Landscape Study,
-    # <waves>; public-use microdata, weighted." The right edge of line 1 is
-    # measured against MARGIN_R below (see the overflow check).
-    source_line = ("Source: Pew Research Center, Religious Landscape Study, 2023-24; "
-                   "public-use microdata, weighted. "
-                   "Latter-day Saint fertility bar is approximate (small cohort).")
-    n_line = (f"Unweighted n - married: Latter-day Saints {nm[0]:,}, all Christians {nm[1]:,}, "
-              f"unaffiliated {nm[2]:,}; three or more children: {nf[0]:,}, {nf[1]:,} "
-              f"and {nf[2]:,}, respectively.")
-    for para in (source_line, n_line):
-        for ln in textwrap.wrap(para, width=165):
-            print(f"footer[{len(ln):3d}]: {ln}")
-    dn.draw_footer(fig, fonts, [source_line, n_line])
+    # ---- Footer ---------------------------------------------------------------
+    dn.draw_footer(fig, fonts, ["Source: Pew Research Center, Religious Landscape Study, 2023-24."])
 
     # ---- Legend row (2+ series) just under the dek ---------------------------
     y_legend = y_header - 0.012

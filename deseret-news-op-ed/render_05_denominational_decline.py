@@ -210,40 +210,11 @@ def main():
         fig.text(dn.MARGIN_R, row_y_fig(yi), f"{sign}{abs(rel)}%", fontproperties=dn.fp(fonts, "numeral", 24),
                  color=dn.MUTED, ha="right", va="center")
 
-    # ---- footer (two lines; the module's geometry cannot fit a third) ------
-    rail_px = (dn.MARGIN_R - dn.MARGIN_L) * fig.get_figwidth() * fig.dpi
-
-    def fits(line: str, frac: float = 0.995) -> bool:
-        t = fig.text(0, 0, line, fontproperties=dn.fp(fonts, "sans", dn.SIZE["source"]))
-        w = t.get_window_extent(renderer=rend).width
-        t.remove()
-        return w <= frac * rail_px
-
-    # Set-wide template: "Source: Pew Research Center, Religious Landscape
-    # Study, <waves>; public-use microdata, weighted." + the smallest group's n.
-    src = "Source: Pew Research Center, Religious Landscape Study, 2007 and 2023-24; public-use microdata, weighted."
-    source_candidates = [
-        f"{src} Latter-day Saints n={n_lds_07:,} (2007), {n_lds_23:,} (2023-24), unweighted.",
-        f"{src} Latter-day Saints n={n_lds_07:,} (2007) and {n_lds_23:,} (2023-24).",
-        f"{src} Latter-day Saints n={n_lds_07:,} (2007), {n_lds_23:,} (2023-24).",
-        f"{src} Latter-day Saints n={n_lds_07:,} and {n_lds_23:,}, unweighted.",
-        f"{src} Latter-day Saints n={n_lds_07:,} and {n_lds_23:,}.",
-    ]
-    method_candidates = [
-        "Southern Baptist Convention and United Methodist Church shares for 2023-24 are Pew's published figures; "
-        "the public-use file withholds denomination detail.",
-        "Southern Baptist Convention and United Methodist Church 2023-24 shares are Pew's published figures; "
-        "the public-use file withholds denomination detail.",
-        "Southern Baptist and United Methodist shares for 2023-24 are Pew's published figures; "
-        "the public-use file withholds denomination detail.",
-    ]
-    source = next((c for c in source_candidates if fits(c)), None)
-    method = next((c for c in method_candidates if fits(c)), None)
-    if source is None or method is None:
-        raise SystemExit("no footer candidate fits the text rail at 10.5pt")
-    print("footer line 1 (candidate", source_candidates.index(source) + 1, "):", source)
-    print("footer line 2 (candidate", method_candidates.index(method) + 1, "):", method)
-    dn.draw_footer(fig, fonts, [source, method])
+    # ---- footer -------------------------------------------------------------
+    # Southern Baptist Convention / United Methodist Church 2023-24 provenance
+    # (Pew's published figures, not computed from this file - the PUF withholds
+    # denomination detail) is documented in README.md rather than on the image.
+    dn.draw_footer(fig, fonts, ["Source: Pew Research Center, Religious Landscape Study, 2007 and 2023-24."])
 
     # ---- self-check: every text artist inside the canvas and the rail --------
     fig.canvas.draw()

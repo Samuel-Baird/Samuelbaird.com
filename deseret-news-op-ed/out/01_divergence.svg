@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-06T13:00:36.995955</dc:date>
+    <dc:date>2026-09-06T15:06:54.880009</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -322,7 +322,7 @@ z
      <g id="line2d_4">
       <path d="M 86.4 457.92 
 L 816.48 457.92 
-" clip-path="url(#pf09b650d76)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
+" clip-path="url(#p0f466e259e)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
      </g>
      <g id="line2d_5"/>
      <g id="text_4">
@@ -411,7 +411,7 @@ z
      <g id="line2d_6">
       <path d="M 86.4 393.408 
 L 816.48 393.408 
-" clip-path="url(#pf09b650d76)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
+" clip-path="url(#p0f466e259e)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
      </g>
      <g id="line2d_7"/>
      <g id="text_5">
@@ -427,7 +427,7 @@ L 816.48 393.408
      <g id="line2d_8">
       <path d="M 86.4 328.896 
 L 816.48 328.896 
-" clip-path="url(#pf09b650d76)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
+" clip-path="url(#p0f466e259e)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
      </g>
      <g id="line2d_9"/>
      <g id="text_6">
@@ -443,7 +443,7 @@ L 816.48 328.896
      <g id="line2d_10">
       <path d="M 86.4 264.384 
 L 816.48 264.384 
-" clip-path="url(#pf09b650d76)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
+" clip-path="url(#p0f466e259e)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
      </g>
      <g id="line2d_11"/>
      <g id="text_7">
@@ -513,7 +513,7 @@ z
      <g id="line2d_12">
       <path d="M 86.4 199.872 
 L 816.48 199.872 
-" clip-path="url(#pf09b650d76)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
+" clip-path="url(#p0f466e259e)" style="fill: none; stroke: #e3e3e3; stroke-linecap: square"/>
      </g>
      <g id="line2d_13"/>
      <g id="text_8">
@@ -1818,7 +1818,7 @@ L 607.288125 453.0816
    </g>
    <g id="PathCollection_1">
     <defs>
-     <path id="C0_0_e8ba57906b" d="M 0 5 
+     <path id="C0_0_afe94838d0" d="M 0 5 
 C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
 C 4.473168 2.597899 5 1.326016 5 -0 
 C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
@@ -1830,13 +1830,13 @@ C -2.597899 4.473168 -1.326016 5 0 5
 z
 "/>
     </defs>
-    <use xlink:href="#C0_0_e8ba57906b" x="152.56" y="204.968448" style="fill: #ffffff"/>
-    <use xlink:href="#C0_0_e8ba57906b" x="345.474962" y="230.03136" style="fill: #ffffff"/>
-    <use xlink:href="#C0_0_e8ba57906b" x="607.288125" y="257.545728" style="fill: #ffffff"/>
+    <use xlink:href="#C0_0_afe94838d0" x="152.56" y="204.968448" style="fill: #ffffff"/>
+    <use xlink:href="#C0_0_afe94838d0" x="345.474962" y="230.03136" style="fill: #ffffff"/>
+    <use xlink:href="#C0_0_afe94838d0" x="607.288125" y="257.545728" style="fill: #ffffff"/>
    </g>
    <g id="PathCollection_2">
     <defs>
-     <path id="C1_0_a94d4466ea" d="M 0 3.6 
+     <path id="C1_0_e721f9b3ad" d="M 0 3.6 
 C 0.954731 3.6 1.870488 3.220681 2.545584 2.545584 
 C 3.220681 1.870488 3.6 0.954731 3.6 -0 
 C 3.6 -0.954731 3.220681 -1.870488 2.545584 -2.545584 
@@ -1848,13 +1848,13 @@ C -1.870488 3.220681 -0.954731 3.6 0 3.6
 z
 "/>
     </defs>
-    <use xlink:href="#C1_0_a94d4466ea" x="152.56" y="204.968448" style="fill: #424242"/>
-    <use xlink:href="#C1_0_a94d4466ea" x="345.474962" y="230.03136" style="fill: #424242"/>
-    <use xlink:href="#C1_0_a94d4466ea" x="607.288125" y="257.545728" style="fill: #424242"/>
+    <use xlink:href="#C1_0_e721f9b3ad" x="152.56" y="204.968448" style="fill: #424242"/>
+    <use xlink:href="#C1_0_e721f9b3ad" x="345.474962" y="230.03136" style="fill: #424242"/>
+    <use xlink:href="#C1_0_e721f9b3ad" x="607.288125" y="257.545728" style="fill: #424242"/>
    </g>
    <g id="PathCollection_3">
     <defs>
-     <path id="C2_0_3527ecc4ae" d="M 0 5 
+     <path id="C2_0_ccea1c54de" d="M 0 5 
 C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
 C 4.473168 2.597899 5 1.326016 5 -0 
 C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
@@ -1866,13 +1866,13 @@ C -2.597899 4.473168 -1.326016 5 0 5
 z
 "/>
     </defs>
-    <use xlink:href="#C2_0_3527ecc4ae" x="152.56" y="406.020096" style="fill: #ffffff"/>
-    <use xlink:href="#C2_0_3527ecc4ae" x="345.474962" y="384.311808" style="fill: #ffffff"/>
-    <use xlink:href="#C2_0_3527ecc4ae" x="607.288125" y="363.055104" style="fill: #ffffff"/>
+    <use xlink:href="#C2_0_ccea1c54de" x="152.56" y="406.020096" style="fill: #ffffff"/>
+    <use xlink:href="#C2_0_ccea1c54de" x="345.474962" y="384.311808" style="fill: #ffffff"/>
+    <use xlink:href="#C2_0_ccea1c54de" x="607.288125" y="363.055104" style="fill: #ffffff"/>
    </g>
    <g id="PathCollection_4">
     <defs>
-     <path id="C3_0_0112ee43f9" d="M 0 3.6 
+     <path id="C3_0_bc82894936" d="M 0 3.6 
 C 0.954731 3.6 1.870488 3.220681 2.545584 2.545584 
 C 3.220681 1.870488 3.6 0.954731 3.6 -0 
 C 3.6 -0.954731 3.220681 -1.870488 2.545584 -2.545584 
@@ -1884,13 +1884,13 @@ C -1.870488 3.220681 -0.954731 3.6 0 3.6
 z
 "/>
     </defs>
-    <use xlink:href="#C3_0_0112ee43f9" x="152.56" y="406.020096" style="fill: #8c8c8c"/>
-    <use xlink:href="#C3_0_0112ee43f9" x="345.474962" y="384.311808" style="fill: #8c8c8c"/>
-    <use xlink:href="#C3_0_0112ee43f9" x="607.288125" y="363.055104" style="fill: #8c8c8c"/>
+    <use xlink:href="#C3_0_bc82894936" x="152.56" y="406.020096" style="fill: #8c8c8c"/>
+    <use xlink:href="#C3_0_bc82894936" x="345.474962" y="384.311808" style="fill: #8c8c8c"/>
+    <use xlink:href="#C3_0_bc82894936" x="607.288125" y="363.055104" style="fill: #8c8c8c"/>
    </g>
    <g id="PathCollection_5">
     <defs>
-     <path id="C4_0_a035388f9b" d="M 0 5 
+     <path id="C4_0_397aac218c" d="M 0 5 
 C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
 C 4.473168 2.597899 5 1.326016 5 -0 
 C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
@@ -1902,13 +1902,13 @@ C -2.597899 4.473168 -1.326016 5 0 5
 z
 "/>
     </defs>
-    <use xlink:href="#C4_0_a035388f9b" x="152.56" y="452.533248" style="fill: #ffffff"/>
-    <use xlink:href="#C4_0_a035388f9b" x="345.474962" y="452.662272" style="fill: #ffffff"/>
-    <use xlink:href="#C4_0_a035388f9b" x="607.288125" y="453.0816" style="fill: #ffffff"/>
+    <use xlink:href="#C4_0_397aac218c" x="152.56" y="452.533248" style="fill: #ffffff"/>
+    <use xlink:href="#C4_0_397aac218c" x="345.474962" y="452.662272" style="fill: #ffffff"/>
+    <use xlink:href="#C4_0_397aac218c" x="607.288125" y="453.0816" style="fill: #ffffff"/>
    </g>
    <g id="PathCollection_6">
     <defs>
-     <path id="C5_0_3690264b50" d="M 0 3.6 
+     <path id="C5_0_bfa4d55d01" d="M 0 3.6 
 C 0.954731 3.6 1.870488 3.220681 2.545584 2.545584 
 C 3.220681 1.870488 3.6 0.954731 3.6 -0 
 C 3.6 -0.954731 3.220681 -1.870488 2.545584 -2.545584 
@@ -1920,9 +1920,9 @@ C -1.870488 3.220681 -0.954731 3.6 0 3.6
 z
 "/>
     </defs>
-    <use xlink:href="#C5_0_3690264b50" x="152.56" y="452.533248" style="fill: #ffd217"/>
-    <use xlink:href="#C5_0_3690264b50" x="345.474962" y="452.662272" style="fill: #ffd217"/>
-    <use xlink:href="#C5_0_3690264b50" x="607.288125" y="453.0816" style="fill: #ffd217"/>
+    <use xlink:href="#C5_0_bfa4d55d01" x="152.56" y="452.533248" style="fill: #ffd217"/>
+    <use xlink:href="#C5_0_bfa4d55d01" x="345.474962" y="452.662272" style="fill: #ffd217"/>
+    <use xlink:href="#C5_0_bfa4d55d01" x="607.288125" y="453.0816" style="fill: #ffd217"/>
    </g>
   </g>
   <g id="line2d_17">
@@ -4769,7 +4769,7 @@ z
    </g>
   </g>
   <g id="text_24">
-   <!-- Source: Pew Research Center, Religious Landscape Study, 2007, 2014 and 2023-24; public-use microdata, weighted (N=35,556, 35,071 and 36,908). -->
+   <!-- Source: Pew Research Center, Religious Landscape Study, 2007, 2014 and 2023-24. -->
    <g style="fill: #5f5f5f" transform="translate(47.52 543.207164) scale(0.105 -0.105)">
     <defs>
      <path id="LibreFranklin-Regular-322" d="M 992 2630 
@@ -4791,320 +4791,6 @@ Q 333 730 403 730
 L 928 730 
 Q 992 730 992 659 
 L 992 122 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-323" d="M 333 -922 
-Q 301 -922 288 -896 
-Q 275 -870 288 -832 
-L 576 -102 
-Q 614 0 525 0 
-L 442 0 
-Q 358 0 358 77 
-L 358 646 
-Q 358 717 416 717 
-L 954 717 
-Q 1018 717 1018 653 
-L 1018 128 
-Q 1018 90 998 51 
-L 531 -851 
-Q 512 -883 477 -902 
-Q 442 -922 403 -922 
-L 333 -922 
-L 333 -922 
-z
-M 429 2515 
-Q 333 2515 333 2611 
-L 333 3155 
-Q 333 3238 403 3238 
-L 928 3238 
-Q 992 3238 992 3168 
-L 992 2618 
-Q 992 2515 877 2515 
-L 429 2515 
-L 429 2515 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-108" d="M 595 0 
-Q 538 0 515 25 
-Q 493 51 493 102 
-L 493 4659 
-Q 493 4749 570 4749 
-L 966 4749 
-Q 1030 4749 1030 4659 
-L 1030 3091 
-Q 1030 3021 1056 3017 
-Q 1082 3014 1126 3053 
-Q 1184 3110 1315 3206 
-Q 1446 3302 1654 3379 
-Q 1862 3456 2150 3456 
-Q 2618 3456 2918 3225 
-Q 3219 2995 3369 2601 
-Q 3520 2208 3520 1715 
-Q 3520 896 3136 416 
-Q 2752 -64 2061 -64 
-Q 1766 -64 1558 25 
-Q 1350 115 1216 236 
-Q 1082 358 1018 442 
-Q 992 474 973 467 
-Q 954 461 947 422 
-L 915 102 
-Q 902 0 800 0 
-L 595 0 
-z
-M 1030 1146 
-Q 1030 915 1161 726 
-Q 1293 538 1504 429 
-Q 1715 320 1946 320 
-Q 2234 320 2464 464 
-Q 2694 608 2828 915 
-Q 2963 1222 2963 1702 
-Q 2963 2355 2713 2710 
-Q 2464 3066 1990 3066 
-Q 1690 3066 1443 2928 
-Q 1197 2790 1030 2592 
-L 1030 1146 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-15e" d="M 582 0 
-Q 493 0 493 83 
-L 493 3309 
-Q 493 3392 563 3392 
-L 947 3392 
-Q 1011 3392 1011 3322 
-L 1011 2950 
-Q 1011 2918 1027 2912 
-Q 1043 2906 1075 2931 
-Q 1280 3098 1456 3216 
-Q 1632 3334 1814 3395 
-Q 1997 3456 2208 3456 
-Q 2586 3456 2813 3283 
-Q 3040 3110 3117 2893 
-Q 3130 2867 3155 2873 
-Q 3181 2880 3206 2906 
-Q 3411 3078 3593 3200 
-Q 3776 3322 3965 3389 
-Q 4154 3456 4365 3456 
-Q 4832 3456 5088 3190 
-Q 5344 2925 5344 2477 
-L 5344 102 
-Q 5344 0 5248 0 
-L 4890 0 
-Q 4845 0 4825 22 
-Q 4806 45 4806 83 
-L 4806 2368 
-Q 4806 2682 4656 2858 
-Q 4506 3034 4186 3034 
-Q 4000 3034 3830 2963 
-Q 3661 2893 3523 2790 
-Q 3386 2688 3277 2598 
-Q 3226 2554 3206 2512 
-Q 3187 2470 3187 2406 
-L 3187 102 
-Q 3187 0 3091 0 
-L 2733 0 
-Q 2694 0 2672 22 
-Q 2650 45 2650 83 
-L 2650 2368 
-Q 2650 2682 2502 2858 
-Q 2355 3034 2035 3034 
-Q 1766 3034 1542 2906 
-Q 1318 2778 1030 2515 
-L 1030 96 
-Q 1030 0 934 0 
-L 582 0 
-L 582 0 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-337" d="M 1658 4749 
-Q 1696 4749 1705 4729 
-Q 1715 4710 1702 4691 
-Q 1389 4064 1174 3321 
-Q 960 2579 960 1818 
-Q 960 1094 1139 412 
-Q 1318 -269 1651 -992 
-Q 1664 -1011 1654 -1033 
-Q 1645 -1056 1606 -1056 
-L 1370 -1056 
-Q 1325 -1056 1293 -1011 
-Q 1030 -557 835 -115 
-Q 640 326 537 803 
-Q 435 1280 435 1824 
-Q 435 2624 688 3360 
-Q 941 4096 1338 4698 
-Q 1382 4749 1440 4749 
-L 1658 4749 
-L 1658 4749 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-74" d="M 4154 4749 
-Q 4224 4749 4224 4672 
-L 4224 77 
-Q 4224 38 4201 19 
-Q 4179 0 4141 0 
-L 3827 0 
-Q 3789 0 3757 6 
-Q 3725 13 3693 51 
-L 1222 3642 
-Q 1190 3686 1171 3680 
-Q 1152 3674 1152 3635 
-L 1152 83 
-Q 1152 0 1062 0 
-L 704 0 
-Q 621 0 621 83 
-L 621 4659 
-Q 621 4749 704 4749 
-L 1069 4749 
-Q 1120 4749 1145 4739 
-Q 1171 4730 1203 4685 
-L 3603 1171 
-Q 3642 1126 3670 1139 
-Q 3699 1152 3699 1190 
-L 3699 4672 
-Q 3699 4749 3776 4749 
-L 4154 4749 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-37c" d="M 3174 2893 
-Q 3174 2810 3072 2810 
-L 480 2803 
-Q 435 2803 416 2822 
-Q 397 2842 397 2880 
-L 397 3155 
-Q 397 3226 454 3226 
-L 3110 3232 
-Q 3174 3232 3174 3168 
-L 3174 2893 
-z
-M 3174 1453 
-Q 3174 1363 3072 1363 
-L 480 1357 
-Q 435 1357 416 1376 
-Q 397 1395 397 1434 
-L 397 1709 
-Q 397 1786 454 1786 
-L 3110 1786 
-Q 3174 1786 3174 1728 
-L 3174 1453 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-2e0" d="M 3482 4749 
-Q 3546 4749 3565 4729 
-Q 3584 4710 3578 4653 
-L 3552 4307 
-Q 3546 4262 3536 4249 
-Q 3526 4237 3462 4237 
-L 1286 4237 
-Q 1210 4237 1210 4166 
-L 1094 2778 
-Q 1088 2733 1113 2710 
-Q 1139 2688 1171 2701 
-Q 1408 2822 1648 2915 
-Q 1888 3008 2234 3008 
-Q 2656 3008 3021 2854 
-Q 3386 2701 3606 2381 
-Q 3827 2061 3827 1555 
-Q 3827 1043 3593 681 
-Q 3360 320 2947 128 
-Q 2534 -64 2003 -64 
-Q 1517 -64 1085 105 
-Q 653 275 352 602 
-Q 326 640 323 669 
-Q 320 698 365 730 
-L 640 954 
-Q 691 992 749 934 
-Q 922 774 1088 652 
-Q 1254 531 1456 464 
-Q 1658 397 1926 397 
-Q 2342 397 2630 544 
-Q 2918 691 3072 950 
-Q 3226 1210 3226 1536 
-Q 3226 1882 3078 2102 
-Q 2931 2323 2684 2432 
-Q 2438 2541 2138 2541 
-Q 1798 2541 1529 2419 
-Q 1261 2298 1037 2163 
-Q 986 2138 973 2144 
-Q 960 2150 922 2170 
-L 608 2349 
-Q 550 2381 553 2397 
-Q 557 2413 563 2490 
-L 736 4659 
-Q 742 4717 764 4733 
-Q 787 4749 877 4749 
-L 3482 4749 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-2e4" d="M 1869 -58 
-Q 1626 -58 1424 -6 
-Q 1222 45 1062 134 
-Q 902 224 784 336 
-Q 666 448 582 563 
-Q 570 589 566 617 
-Q 563 646 602 666 
-L 966 813 
-Q 998 832 1020 816 
-Q 1043 800 1062 774 
-Q 1197 608 1389 505 
-Q 1581 403 1869 403 
-Q 2323 403 2611 627 
-Q 2899 851 3036 1238 
-Q 3174 1626 3174 2112 
-Q 3174 2221 3158 2249 
-Q 3142 2278 3066 2240 
-Q 2822 2118 2550 2016 
-Q 2278 1914 1894 1914 
-Q 1414 1914 1065 2096 
-Q 717 2278 534 2592 
-Q 352 2906 352 3302 
-Q 352 3757 569 4096 
-Q 787 4435 1164 4620 
-Q 1542 4806 2003 4806 
-Q 2554 4806 2954 4528 
-Q 3354 4250 3571 3722 
-Q 3789 3194 3789 2445 
-Q 3789 1664 3555 1104 
-Q 3322 544 2896 243 
-Q 2470 -58 1869 -58 
-L 1869 -58 
-z
-M 1965 2362 
-Q 2150 2362 2348 2403 
-Q 2547 2445 2732 2521 
-Q 2918 2598 3046 2688 
-Q 3123 2739 3148 2793 
-Q 3174 2848 3174 2963 
-Q 3174 3187 3104 3430 
-Q 3034 3674 2890 3885 
-Q 2746 4096 2525 4227 
-Q 2304 4358 2003 4358 
-Q 1709 4358 1472 4224 
-Q 1235 4090 1097 3856 
-Q 960 3622 960 3328 
-Q 960 3059 1085 2838 
-Q 1210 2618 1434 2490 
-Q 1658 2362 1965 2362 
-L 1965 2362 
-z
-" transform="scale(0.015625)"/>
-     <path id="LibreFranklin-Regular-338" d="M 166 4749 
-L 166 4749 
-L 384 4749 
-Q 454 4749 493 4698 
-Q 890 4096 1142 3360 
-Q 1395 2624 1395 1824 
-Q 1395 1280 1289 803 
-Q 1184 326 992 -115 
-Q 800 -557 538 -1011 
-Q 506 -1056 461 -1056 
-L 224 -1056 
-Q 186 -1056 176 -1033 
-Q 166 -1011 179 -992 
-Q 518 -269 691 412 
-Q 864 1094 864 1818 
-Q 864 2579 656 3321 
-Q 448 4064 128 4691 
-Q 115 4710 124 4729 
-Q 134 4749 166 4749 
 z
 " transform="scale(0.015625)"/>
     </defs>
@@ -5186,253 +4872,12 @@ z
     <use xlink:href="#LibreFranklin-Regular-330" transform="translate(3702.234375 0)"/>
     <use xlink:href="#LibreFranklin-Regular-2dd" transform="translate(3740.328125 0)"/>
     <use xlink:href="#LibreFranklin-Regular-2df" transform="translate(3800.234375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-323" transform="translate(3865.140625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(3888.046875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-18e" transform="translate(3909.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1ad" transform="translate(3969.15625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-108" transform="translate(4027.0625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-155" transform="translate(4086.96875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(4110.875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-109" transform="translate(4134.78125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-330" transform="translate(4188.984375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1ad" transform="translate(4227.078125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-199" transform="translate(4284.984375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(4336.1875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4394.28125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-15e" transform="translate(4415.6875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(4506.28125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-109" transform="translate(4530.1875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-191" transform="translate(4584.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(4621.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(4681.296875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(4741.203125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(4794.703125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(4833.40625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(4888.203125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4909.40625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1c5" transform="translate(4930.8125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(5008.609375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(5066.703125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-131" transform="translate(5090.609375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-139" transform="translate(5150.8125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(5207.921875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(5245.328125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(5303.421875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(5363.328125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-337" transform="translate(5384.734375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-74" transform="translate(5413.328125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-37c" transform="translate(5489.03125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2de" transform="translate(5544.734375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(5608.828125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(5674.234375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(5695.4375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(5760.84375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e1" transform="translate(5826.25 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(5892.34375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(5913.546875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2de" transform="translate(5934.953125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(5999.046875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(6064.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2db" transform="translate(6085.65625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e2" transform="translate(6154.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dc" transform="translate(6214.359375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(6260.859375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(6282.265625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(6337.0625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(6395.46875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(6455.375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2de" transform="translate(6476.78125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e1" transform="translate(6540.875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(6606.96875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e4" transform="translate(6628.171875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2db" transform="translate(6693.96875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e3" transform="translate(6762.765625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-338" transform="translate(6829.5625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(6858.15625 0)"/>
-   </g>
-   <!-- Latter-day Saint share shown to one decimal (1.7%, 1.6%, 1.5%; unweighted n=581, 664, 565); Pew rounds all three to 2%. 2007 covers the continental U.S. -->
-   <g style="fill: #5f5f5f" transform="translate(47.52 559.119586) scale(0.105 -0.105)">
-    <defs>
-     <path id="LibreFranklin-Regular-1c4" d="M 3251 3392 
-Q 3296 3392 3315 3363 
-Q 3334 3334 3315 3296 
-L 2016 96 
-Q 1984 0 1869 0 
-L 1638 0 
-Q 1517 0 1478 90 
-L 186 3296 
-Q 173 3334 192 3363 
-Q 211 3392 256 3392 
-L 653 3392 
-Q 691 3392 716 3376 
-Q 742 3360 755 3322 
-L 1760 806 
-Q 1805 685 1862 813 
-L 2861 3322 
-Q 2874 3360 2896 3376 
-Q 2918 3392 2957 3392 
-L 3251 3392 
-L 3251 3392 
-z
-" transform="scale(0.015625)"/>
-    </defs>
-    <use xlink:href="#LibreFranklin-Regular-68"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(60.203125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(113.703125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(152.40625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(189.8125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-191" transform="translate(247.90625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-330" transform="translate(280.796875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(318.890625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(378.796875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1cb" transform="translate(432.59375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(485.59375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ad" transform="translate(507 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(571.09375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(625.890625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(649.796875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(706.90625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(745.609375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-199" transform="translate(767.015625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-139" transform="translate(818.21875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(876.625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-191" transform="translate(931.421875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(968.421875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(1026.515625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-199" transform="translate(1047.921875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-139" transform="translate(1099.125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(1157.53125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1c5" transform="translate(1215.640625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(1295.234375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(1353.640625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(1375.046875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(1412.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(1472.359375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(1493.765625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(1553.671875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(1612.078125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(1670.171875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(1691.578125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(1751.484375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-109" transform="translate(1809.578125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(1863.78125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-15e" transform="translate(1887.6875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(1978.28125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-155" transform="translate(2033.078125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(2056.984375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-337" transform="translate(2078.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dc" transform="translate(2106.984375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(2153.484375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e2" transform="translate(2174.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-391" transform="translate(2234.296875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(2325.890625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(2347.09375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dc" transform="translate(2368.5 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(2415 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e1" transform="translate(2435.90625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-391" transform="translate(2502 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(2593.59375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(2614.796875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dc" transform="translate(2636.203125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(2682.703125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(2703.609375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-391" transform="translate(2769.015625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-323" transform="translate(2860.609375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(2883.515625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1ad" transform="translate(2904.921875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(2962.828125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1c5" transform="translate(3019.9375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(3097.734375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(3155.828125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-131" transform="translate(3179.734375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-139" transform="translate(3239.9375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(3297.046875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(3334.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(3392.546875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(3452.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(3473.859375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-37c" transform="translate(3532.265625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(3587.96875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e3" transform="translate(3653.375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dc" transform="translate(3720.171875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(3766.671875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(3787.875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e1" transform="translate(3809.28125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e1" transform="translate(3875.375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2df" transform="translate(3941.46875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-321" transform="translate(4006.375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4027.578125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(4048.984375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e1" transform="translate(4114.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e0" transform="translate(4180.484375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-338" transform="translate(4245.890625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-323" transform="translate(4274.484375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4297.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-a2" transform="translate(4318.796875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(4382.59375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1c5" transform="translate(4439.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4518.984375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-191" transform="translate(4540.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(4577.390625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1ad" transform="translate(4637.296875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(4695.203125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-110" transform="translate(4753.609375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-199" transform="translate(4813.515625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4864.71875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(4886.125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-155" transform="translate(4940.921875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-155" transform="translate(4964.828125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(4988.734375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(5010.140625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-139" transform="translate(5048.84375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-191" transform="translate(5107.25 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(5144.25 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(5202.34375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(5260.4375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(5281.84375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(5319.25 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(5379.15625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dd" transform="translate(5400.5625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-391" transform="translate(5460.46875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(5552.0625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(5572.96875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2dd" transform="translate(5594.375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2db" transform="translate(5654.28125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2db" transform="translate(5723.078125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-2e2" transform="translate(5791.875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(5851.78125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-109" transform="translate(5873.1875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(5926.6875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1c4" transform="translate(5984 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(6036.109375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-191" transform="translate(6094.203125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-199" transform="translate(6131.5 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(6182.703125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(6204.109375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-139" transform="translate(6242.8125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(6301.21875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(6359.3125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-109" transform="translate(6380.71875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-16b" transform="translate(6434.21875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(6494.125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(6551.234375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-13e" transform="translate(6589.9375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(6613.84375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-118" transform="translate(6672.25 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-160" transform="translate(6730.34375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-1a5" transform="translate(6787.453125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ed" transform="translate(6826.15625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-155" transform="translate(6880.953125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-317" transform="translate(6904.859375 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-c0" transform="translate(6926.265625 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(6997.171875 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-ad" transform="translate(7018.078125 0)"/>
-    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(7082.171875 0)"/>
+    <use xlink:href="#LibreFranklin-Regular-320" transform="translate(3865.140625 0)"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pf09b650d76">
+  <clipPath id="p0f466e259e">
    <rect x="86.4" y="199.872" width="730.08" height="258.048"/>
   </clipPath>
  </defs>
