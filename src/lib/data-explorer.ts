@@ -2571,7 +2571,7 @@ function householdTypeAlt(results: Record<string, { pct: number }>): string {
 function raisedByMarriedParentsGraphic(): Graphic {
   const results = householdTypesData.raised_by_married_mother_father;
   return {
-    title: "Raised by a married mother and father?",
+    title: "Is a married mom and dad as good a way to raise kids as any?",
     description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-married-mother-father.png",
     width: 1080, height: 1350,
@@ -2582,7 +2582,7 @@ function raisedByMarriedParentsGraphic(): Graphic {
 function raisedBySingleParentGraphic(): Graphic {
   const results = householdTypesData.raised_by_single_parent;
   return {
-    title: "Raised by a single parent?",
+    title: "Is a single parent as good a way to raise kids as any?",
     description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-single-parent.png",
     width: 1080, height: 1350,
@@ -2593,7 +2593,7 @@ function raisedBySingleParentGraphic(): Graphic {
 function raisedByDivorcedParentsGraphic(): Graphic {
   const results = householdTypesData.raised_by_divorced_parents;
   return {
-    title: "Raised by divorced parents?",
+    title: "Are divorced parents as good a way to raise kids as any?",
     description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-divorced-parents.png",
     width: 1080, height: 1350,
@@ -2604,7 +2604,7 @@ function raisedByDivorcedParentsGraphic(): Graphic {
 function raisedByCohabitingParentsGraphic(): Graphic {
   const results = householdTypesData.raised_by_cohabiting_unmarried_parents;
   return {
-    title: "Raised by unmarried parents living together?",
+    title: "Are unmarried parents living together as good a way to raise kids as any?",
     description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-cohabiting-unmarried-parents.png",
     width: 1080, height: 1350,
@@ -2615,7 +2615,7 @@ function raisedByCohabitingParentsGraphic(): Graphic {
 function raisedByGayLesbianCoupleGraphic(): Graphic {
   const results = householdTypesData.raised_by_gay_lesbian_couple;
   return {
-    title: "Raised by a gay or lesbian couple?",
+    title: "Is a gay or lesbian couple as good a way to raise kids as any?",
     description: "Share saying this is as good an arrangement for raising children as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/raised-by-gay-lesbian-couple.png",
     width: 1080, height: 1350,
@@ -2626,7 +2626,7 @@ function raisedByGayLesbianCoupleGraphic(): Graphic {
 function unmarriedCohabitingCoupleGraphic(): Graphic {
   const results = adultArrangementsData.unmarried_cohabiting_couple;
   return {
-    title: "An unmarried couple living together?",
+    title: "Is living together unmarried as good a way of life as any?",
     description: "Share saying this is as good a way of life as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/unmarried-cohabiting-couple.png",
     width: 1080, height: 1350,
@@ -2637,7 +2637,7 @@ function unmarriedCohabitingCoupleGraphic(): Graphic {
 function samesexCoupleLivingTogetherGraphic(): Graphic {
   const results = adultArrangementsData.samesex_couple_living_together;
   return {
-    title: "A same-sex couple living together?",
+    title: "Is a same-sex couple living together as good a way of life as any?",
     description: "Share saying this is as good a way of life as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/samesex-couple-living-together.png",
     width: 1080, height: 1350,
@@ -2648,7 +2648,7 @@ function samesexCoupleLivingTogetherGraphic(): Graphic {
 function childlessByChoiceGraphic(): Graphic {
   const results = adultArrangementsData.childless_by_choice;
   return {
-    title: "A couple who choose not to have children?",
+    title: "Is choosing not to have kids as good a way of life as any?",
     description: "Share saying this is as good a way of life as any other, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/childless-by-choice.png",
     width: 1080, height: 1350,
@@ -2662,7 +2662,7 @@ function prayerStyleGraphic(): Graphic {
     .map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`)
     .join(", ");
   return {
-    title: "Memorized prayers, or a personal conversation?",
+    title: "When praying, personal conversation or memorized words?",
     description: "Share who say they mainly have a personal conversation with God when they pray, by religion, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/prayer-style.png",
     width: 1080, height: 1350,
@@ -2676,7 +2676,7 @@ function annulmentCommunionGraphic(): Graphic {
     .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
     .join(", ");
   return {
-    title: "Communion after remarriage, no annulment",
+    title: "Should remarried Catholics without an annulment receive Communion?",
     description: "Share of U.S. Catholics saying the Church should let divorced Catholics who remarry without an annulment take Communion, by Mass attendance, 2015.",
     imageSrc: "/data-explorer/pew-catholic-family-2015/annulment-communion.png",
     width: 1080, height: 1350,

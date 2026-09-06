@@ -22,17 +22,17 @@ OUT_DIR = Path("public/data-explorer/pew-catholic-family-2015")
 CHARTS = [
     dict(
         key="unmarried_cohabiting_couple", out="unmarried-cohabiting-couple.png",
-        title="An unmarried couple living together?",
+        title="Is living together unmarried as good a way of life as any?",
         subtitle="Share saying this is as good a way of life as any\nother, by religion, 2015.",
     ),
     dict(
         key="samesex_couple_living_together", out="samesex-couple-living-together.png",
-        title="A same-sex couple living together?",
+        title="Is a same-sex couple living together as good a way of life as any?",
         subtitle="Share saying this is as good a way of life as any\nother, by religion, 2015.",
     ),
     dict(
         key="childless_by_choice", out="childless-by-choice.png",
-        title="A couple who choose not to have children?",
+        title="Is choosing not to have kids as good a way of life as any?",
         subtitle="Share saying this is as good a way of life as any\nother, by religion, 2015.",
     ),
 ]

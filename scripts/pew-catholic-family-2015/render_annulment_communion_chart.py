@@ -39,7 +39,7 @@ def main():
         rows=rows,
         values=values,
         highlight_rows=None,
-        title="Communion after remarriage, no annulment",
+        title="Should remarried Catholics without an annulment receive Communion?",
         subtitle="Share of U.S. Catholics saying the Church should let\ndivorced Catholics who remarry without an annulment take\nCommunion, by Mass attendance, 2015.",
         caption_paragraphs=[],
         handle="@ithinkisam | data: Pew 2015 U.S. Catholics & Family Life",

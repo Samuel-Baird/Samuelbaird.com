@@ -22,27 +22,27 @@ OUT_DIR = Path("public/data-explorer/pew-catholic-family-2015")
 CHARTS = [
     dict(
         key="raised_by_married_mother_father", out="raised-by-married-mother-father.png",
-        title="Raised by a married mother and father?",
+        title="Is a married mom and dad as good a way to raise kids as any?",
         subtitle="Share saying this is as good an arrangement for raising\nchildren as any other, by religion, 2015.",
     ),
     dict(
         key="raised_by_single_parent", out="raised-by-single-parent.png",
-        title="Raised by a single parent?",
+        title="Is a single parent as good a way to raise kids as any?",
         subtitle="Share saying this is as good an arrangement for raising\nchildren as any other, by religion, 2015.",
     ),
     dict(
         key="raised_by_divorced_parents", out="raised-by-divorced-parents.png",
-        title="Raised by divorced parents?",
+        title="Are divorced parents as good a way to raise kids as any?",
         subtitle="Share saying this is as good an arrangement for raising\nchildren as any other, by religion, 2015.",
     ),
     dict(
         key="raised_by_cohabiting_unmarried_parents", out="raised-by-cohabiting-unmarried-parents.png",
-        title="Raised by unmarried parents living together?",
+        title="Are unmarried parents living together as good a way to raise kids as any?",
         subtitle="Share saying this is as good an arrangement for raising\nchildren as any other, by religion, 2015.",
     ),
     dict(
         key="raised_by_gay_lesbian_couple", out="raised-by-gay-lesbian-couple.png",
-        title="Raised by a gay or lesbian couple?",
+        title="Is a gay or lesbian couple as good a way to raise kids as any?",
         subtitle="Share saying this is as good an arrangement for raising\nchildren as any other, by religion, 2015.",
     ),
 ]

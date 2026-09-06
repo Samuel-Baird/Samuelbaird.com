@@ -33,7 +33,7 @@ def main():
         values=values,
         highlight_rows=None,
         group_identity=True,
-        title="Memorized prayers, or a personal conversation?",
+        title="When praying, personal conversation or memorized words?",
         subtitle="Share who say they mainly have a personal\nconversation with God when they pray, by religion, 2015.",
         caption_paragraphs=[],
         handle="@ithinkisam | data: Pew Catholics & Family Life (2015)",
