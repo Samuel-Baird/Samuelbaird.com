@@ -1453,3 +1453,60 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   (CATHESSENT_*, CATHATTEND*, CCHRCH_*, parish/Mass items) plus the
   split-form-risky PRACTICEA_OTHSCRPT_W162 flagged above. Consider this wave
   fully mined.
+
+- **pew-religious-knowledge-2010** (2010 U.S. Religious Knowledge Survey,
+  oversampled Mormons) — 9th chart, 2026-09-06: excluded the twelve
+  datasets freshly mined this session (pew-atp-w70-2020, pew-atp-w117-2022,
+  pew-atp-w114-2022, pew-atp-w132-2023, pew-atp-w162-2025, pew-rls-2007,
+  pew-rls-2014, pew-rls-2014-recontact, pew-black-faith-2021,
+  pew-hispanics-religion-2007, pew-catholic-family-2015,
+  pew-mormon-survey-2011). Confirmed against `data-explorer.ts` this
+  dataset genuinely had 8 graphics entries (matching the prior pass's own
+  note). Also checked `ryan-burge`'s own `GRAPHICS_TODO.md` first — its
+  Pending section is explicitly empty and its own workflow note says not
+  to pull more VOTER Survey Panel variables without being asked, so ruled
+  that whole family out for this pass. Read this dataset's full `.sav`
+  variable list directly (not trusting the prior pass's bucket note that
+  the remaining battery has "no LDS-specific angle") and found qn48a/b/d —
+  the same "identify this famous person's religion" battery as the
+  already-shipped Joseph Smith item (qn48c) — had three untouched
+  sub-items: Mother Teresa (Catholic), the Dalai Lama (Buddhist), and
+  Maimonides (Jewish). Computed all three by respondent's own religion
+  (qn20) to compare: Dalai Lama put Mormons mid-pack (57.9%, no story);
+  Maimonides had a real story (Mormons highest of the Christian traditions
+  at 32.7%) but its own Mormon cell is thin at n=57; Mother Teresa gave the
+  cleanest, most robust result. Built `mother-teresa-knowledge.json`/`.png`
+  — the mirror-image of the shipped Joseph Smith chart: instead of asking
+  who knows a fact about Latter-day Saints, this asks how well Latter-day
+  Saints know a fact about another tradition. 96.7% of Mormons correctly
+  identify Mother Teresa as Catholic, 2nd only to Atheists (97.6%) and
+  above Agnostics (95.3%), Protestants (92.1%), and Catholics themselves
+  (91.8%) — general religious-literacy comparison with LDS as one point
+  among several (pattern 3), not an LDS-specific item, but a genuine
+  cross-tradition comparison per this project's own quality bar. Mormon
+  n=199 valid, well above the 30-respondent floor. Computed by
+  `scripts/pew-religious-knowledge-2010/mother_teresa_knowledge.py`
+  (following this folder's existing `joseph_smith_knowledge.py` pattern
+  exactly, including its 30-valid-respondent floor and weighting) →
+  `docs/datasets/pew-religious-knowledge-2010/mother-teresa-knowledge.json`,
+  rendered by
+  `scripts/pew-religious-knowledge-2010/render_mother_teresa_chart.py` →
+  `public/data-explorer/pew-religious-knowledge-2010/mother-teresa-knowledge.png`
+  (8 rows, matching the Joseph Smith chart's own group-set size; checked by
+  reading the PNG directly — no label collision or clipping). Wired into
+  `src/lib/data-explorer.ts` (`motherTeresaKnowledgeGraphic()`), inserted
+  directly after `josephSmithKnowledgeGraphic()` in the graphics array.
+  `tsc --noEmit` clean; PNG confirmed served at 200 OK, 86,678 bytes,
+  1080x1350, via the local dev server, and the dataset's page
+  (`/data-explorer/pew-religious-knowledge-2010`) returns 200 with the
+  correct title (full client-side hydration could not be checked this pass
+  — the Browser pane reported itself hidden even after fronting the tab,
+  the known "hidden pane = no hydration" gotcha; relied on PNG/page
+  status-code checks only, same bar prior passes used). Remaining
+  candidates: Dalai Lama and Maimonides sub-items from the same qn48
+  battery (checked this pass, see above — Dalai Lama has no distinctive
+  story, Maimonides has a real story but a thin n=57 Mormon cell, live
+  candidate for a future pass if this dataset is revisited); qn35-40, 44,
+  46-47, 55, 60, 62-63 remain a general Bible/world-religion knowledge
+  battery with no religious-tradition breakout angle checked yet at the
+  individual-item level. Consider this dataset close to fully mined.
