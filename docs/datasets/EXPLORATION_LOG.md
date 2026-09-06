@@ -1203,3 +1203,57 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   clear angle emerges), REL4_* (checked and dropped this pass), and
   CHRNAT1a/b (checked and dropped this pass) — this dataset is close to
   fully mined.
+
+- **pew-atp-w117-2022** (American Trends Panel, Wave 117, religion &
+  technology) — second pass, 2026-09-06: excluded the seven datasets
+  freshly mined earlier this session (pew-atp-w114-2022, pew-atp-w132-2023,
+  pew-rls-2007, pew-rls-2014, pew-rls-2014-recontact, pew-black-faith-2021,
+  pew-hispanics-religion-2007) and confirmed against `data-explorer.ts`
+  that this dataset genuinely had 4 graphics entries (matching the prior
+  pass's own note). Worked through the prior pass's own remaining-
+  candidate list from its untouched religion-and-tech battery, checking
+  each item's F_RELTRAD-conditioned Mormon N before charting: dropped
+  `ATTENDPREF_W117` (Mormon n=65, above the floor but thin and a
+  preference/hypothetical framing) and `COVIDCONG2_W117` (n=108 but asks
+  whether *the respondent's own congregation* streams services — an
+  infrastructure fact about the ward, not a personal belief/practice, weak
+  doctrinal tie). Shipped 3 tight, well-powered charts from the remaining
+  candidates, all broken out by F_RELTRAD — `watch-religion-videos.json`
+  (APPUSE2_b_W117, "watch religion-focused online videos... for example on
+  YouTube or TikTok" — 51.0% of Latter-day Saints, highest of any
+  tradition, narrowly ahead of Historically Black Protestant at 49.1% and
+  well above Evangelical Protestant at 40.0%; n=197), `posts-about-
+  religion.json` (SNSPOST3_W117, among social media users, posts/shares
+  about their religion online — 57.1% of Latter-day Saints, highest of any
+  tradition, narrowly ahead of Evangelical Protestant 55.6%/Historically
+  Black Protestant 55.4%; n=106), and `reads-religion-books.json`
+  (NONTECH2_b_W117, collapsed from its 7-point frequency scale to "at
+  least weekly" — 59.0% of Latter-day Saints, highest of any Christian
+  tradition and 2nd only to Jewish at 73.6% [n=55, clears the 30 floor];
+  n=159). All three read as a coherent "religion & technology" cluster
+  distinct from the four already-shipped charts in this dataset
+  (in-person attendance, watching full services online, in-person study
+  groups, following own leaders online) — this pass adds video-watching,
+  social posting, and book-reading as three more distinct behaviors, with
+  Latter-day Saints coming out highest or near-highest on all three.
+  Computed by `scripts/pew-atp-w117-2022/watch_religion_videos.py`,
+  `posts_about_religion.py`, and `reads_religion_books.py` (following this
+  folder's existing `nontech_prayer_groups.py`/`follows_own_leaders.py`
+  pattern exactly) → `docs/datasets/pew-atp-w117-2022/watch-religion-
+  videos.json`/`posts-about-religion.json`/`reads-religion-books.json`,
+  rendered by the matching `render_*_chart.py` scripts →
+  `public/data-explorer/pew-atp-w117-2022/watch-religion-videos.png`/
+  `posts-about-religion.png`/`reads-religion-books.png` (9 rows each,
+  checked by reading all three PNGs directly — no label collision or
+  clipping). Wired into `src/lib/data-explorer.ts`
+  (`watchReligionVideosGraphic()`, `postsAboutReligionGraphic()`,
+  `readsReligionBooksGraphic()`). `tsc --noEmit` clean; all three PNGs
+  confirmed served at 200 OK, 1080x1350, via the local dev server, and the
+  dataset's page loads with no console errors (only benign dev-server HMR
+  websocket noise). This wave's remaining untouched items —
+  `NONTECH2_a_W117` (religious radio, likely thin/dated medium),
+  `APPUSE2_c_W117`/`APPUSE2_d_W117` (seeing/posting online prayer
+  requests, not yet checked), and `NONTECH2_c_W117` (duplicate of the
+  already-shipped `nontech-prayer-groups.json`'s NONTECH1_c item on the
+  frequency scale rather than yes/no framing, skip) — are thin or
+  redundant; consider this dataset close to fully mined.

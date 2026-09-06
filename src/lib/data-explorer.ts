@@ -153,6 +153,9 @@ import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/in
 import nontechPrayerGroupsData from "../../docs/datasets/pew-atp-w117-2022/nontech-prayer-groups.json";
 import watchOnlineMonthlyData from "../../docs/datasets/pew-atp-w117-2022/watch-online-monthly.json";
 import followsOwnLeadersData from "../../docs/datasets/pew-atp-w117-2022/follows-own-leaders.json";
+import watchReligionVideosData from "../../docs/datasets/pew-atp-w117-2022/watch-religion-videos.json";
+import postsAboutReligionData from "../../docs/datasets/pew-atp-w117-2022/posts-about-religion.json";
+import readsReligionBooksData from "../../docs/datasets/pew-atp-w117-2022/reads-religion-books.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import deadAwareLivingData from "../../docs/datasets/pew-atp-w132-2023/dead-aware-living.json";
 import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
@@ -1276,6 +1279,9 @@ const RAW_DATASETS: Dataset[] = [
       watchOnlineMonthlyGraphic(),
       nontechPrayerGroupsGraphic(),
       followsOwnLeadersGraphic(),
+      watchReligionVideosGraphic(),
+      postsAboutReligionGraphic(),
+      readsReligionBooksGraphic(),
     ],
   },
   {
@@ -3102,6 +3108,48 @@ function followsOwnLeadersGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w117-2022/follows-own-leaders.png",
     width: 1080, height: 1350,
     alt: `Bar chart: among social media users, share who follow or keep track of their own religious leaders online or on social media, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function watchReligionVideosGraphic(): Graphic {
+  const { group_order: order, watches_religion_videos: results } = watchReligionVideosData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Religion on the feed",
+    description: "Share who watch religion-focused online videos, like on YouTube or TikTok, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/watch-religion-videos.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who watch religion-focused online videos, like on YouTube or TikTok, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function postsAboutReligionGraphic(): Graphic {
+  const { group_order: order, posts_about_religion: results } = postsAboutReligionData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Posting about faith",
+    description: "Among social media users, share who post or share things about their religion online, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/posts-about-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: among social media users, share who post or share things about their religion online, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+function readsReligionBooksGraphic(): Graphic {
+  const { group_order: order, reads_religion_books_weekly: results } = readsReligionBooksData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Reading up on religion",
+    description: "Share who read religion-focused books at least weekly, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/reads-religion-books.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who read religion-focused books at least weekly, by religious tradition, November 2022. ${alt}.`,
   };
 }
 
