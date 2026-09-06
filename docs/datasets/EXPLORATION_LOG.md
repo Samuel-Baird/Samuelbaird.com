@@ -997,3 +997,51 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   errors and a clean PNG fetch). This dataset's remaining candidates
   (qb16, qc1a/b/d) are both weak-fit or likely underpowered — consider this
   dataset fully mined.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — sixth pass, 2026-09-06:
+  the three most recently shipped commits were pew-rls-2014-recontact,
+  pew-black-faith-2021 (x2), and pew-hispanics-religion-2007, so per this
+  iteration's instructions picked a dataset outside that exclusion list.
+  Went back to this dataset's own long-flagged qm5a/b/d "critique of
+  religious institutions" battery (churches too focused on rules / too
+  concerned with money and power / too involved in politics) — flagged as
+  an open candidate across several prior passes but never actually checked
+  because it needed an overlap review against the 2023-24 wave's
+  public-life battery first. Did that check directly against
+  `scripts/pew-rls/public_life.py`: that battery's RELINST_E/F/G items ask
+  the *positive*-framed counterparts (religious orgs protect/strengthen
+  morality, bring people together, help the poor), not this negative
+  "too many rules/too much money and power/too political" framing —
+  confirmed genuinely distinct, not a duplicate. Computed all three qm5
+  sub-items by RELTRAD directly from the .sav file (full sample, all 12
+  groups clear the 30-valid floor at n=629-8144) and found a striking,
+  consistent pattern: Mormons are the single lowest-agreeing group of all
+  12 traditions on all three items. Built all three as a tight thematic
+  cluster — `church-too-many-rules.json` (28.3% of Mormons agree churches
+  focus too much on rules, lowest of any tradition, next-lowest Jehovah's
+  Witness 38.9%), `church-too-much-money-power.json` (36.9% of Mormons
+  agree churches are too concerned with money and power, lowest of any
+  tradition, next-lowest Muslim 44.0%), and
+  `church-too-involved-politics.json` (30.7% of Mormons agree churches are
+  too involved with politics, lowest of any tradition, next-lowest
+  Evangelical Protestant 35.6%) — read together, a consistent story that
+  Latter-day Saints are markedly less inclined than any other tradition to
+  criticize religious institutions on any of these three dimensions,
+  plausibly reflecting a comparatively high baseline of institutional
+  trust in the Church's own leadership and covenant-based commandments
+  being understood as a path to blessing rather than excessive
+  restriction. Computed by
+  `scripts/pew-rls-2014/church_too_many_rules.py`,
+  `church_too_much_money_power.py`, and `church_too_involved_politics.py` →
+  `docs/datasets/pew-rls-2014/church-too-*.json`, rendered by the three
+  matching `render_church_too_*_chart.py` scripts (short RELTRAD labels,
+  matching this dataset's established row-label-collision fix) →
+  `public/data-explorer/pew-rls-2014/church-too-*.png` (13 rows each,
+  checked by reading all three PNGs directly — no label collision on any).
+  Wired into `src/lib/data-explorer.ts` (`churchTooManyRulesGraphic()`,
+  `churchTooMuchMoneyPowerGraphic()`, `churchTooInvolvedPoliticsGraphic()`).
+  `tsc --noEmit` clean; all three PNGs confirmed served at 200 OK,
+  1080x1350, via the local dev server. This dataset's remaining untouched
+  candidates from prior passes' notes (qi2t/qi2u dietary restrictions,
+  qk10c/qk10d Sunday-school siblings) are both thinner/weaker-fit;
+  consider this dataset fully mined after this pass.

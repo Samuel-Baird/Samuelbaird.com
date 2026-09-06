@@ -92,6 +92,9 @@ import scriptureWordOfGodData from "../../docs/datasets/pew-rls-2014/scripture-w
 import volunteerThroughChurchData from "../../docs/datasets/pew-rls-2014/volunteer-through-church.json";
 import preserveTraditionalBeliefsData from "../../docs/datasets/pew-rls-2014/preserve-traditional-beliefs.json";
 import scriptureLiteralismData from "../../docs/datasets/pew-rls-2014/scripture-literalism.json";
+import churchTooManyRulesData from "../../docs/datasets/pew-rls-2014/church-too-many-rules.json";
+import churchTooMuchMoneyPowerData from "../../docs/datasets/pew-rls-2014/church-too-much-money-power.json";
+import churchTooInvolvedPoliticsData from "../../docs/datasets/pew-rls-2014/church-too-involved-politics.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
 import currentMultireligiousData from "../../docs/datasets/pew-rls-2014-recontact/current-multireligious.json";
@@ -857,6 +860,9 @@ const RAW_DATASETS: Dataset[] = [
       volunteerThroughChurchGraphic(),
       preserveTraditionalBeliefsGraphic(),
       scriptureLiteralismGraphic(),
+      churchTooManyRulesGraphic(),
+      churchTooMuchMoneyPowerGraphic(),
+      churchTooInvolvedPoliticsGraphic(),
     ],
   },
   {
@@ -2161,6 +2167,48 @@ function scriptureLiteralismGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/scripture-literalism.png",
     width: 1080, height: 1350,
     alt: `Bar chart: among those who call their own scripture the word of God, share who say it is meant literally rather than interpreted, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function churchTooManyRulesGraphic(): Graphic {
+  const { group_order: order, agrees_church_too_many_rules: results } = churchTooManyRulesData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "“Churches focus too much on rules”",
+    description: "Share who agree churches and other religious organizations focus too much on rules, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/church-too-many-rules.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree churches and other religious organizations focus too much on rules, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function churchTooMuchMoneyPowerGraphic(): Graphic {
+  const { group_order: order, agrees_church_too_much_money_power: results } = churchTooMuchMoneyPowerData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "“Churches are too concerned with money and power”",
+    description: "Share who agree churches and other religious organizations are too concerned with money and power, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/church-too-much-money-power.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree churches and other religious organizations are too concerned with money and power, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function churchTooInvolvedPoliticsGraphic(): Graphic {
+  const { group_order: order, agrees_church_too_involved_politics: results } = churchTooInvolvedPoliticsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "“Churches are too involved with politics”",
+    description: "Share who agree churches and other religious organizations are too involved with politics, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/church-too-involved-politics.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree churches and other religious organizations are too involved with politics, by religious tradition, 2014. ${alt}.`,
   };
 }
 

@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is the full sample, classified by current religious tradition (RELTRAD). qm5a asked whether the respondent agrees or disagrees that \"churches and other religious organizations focus too much on rules\"; volunteered don't know/refused is excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 33271.64205725926,
+  "total_unweighted_n": 33005,
+  "group_order": [
+    "Buddhist",
+    "Unaffiliated",
+    "Hindu",
+    "Jewish",
+    "Muslim",
+    "Catholic",
+    "Orthodox Christian",
+    "Mainline Protestant",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Jehovah's Witness",
+    "Mormon",
+    "All U.S. adults"
+  ],
+  "agrees_church_too_many_rules": {
+    "Evangelical Protestant": {
+      "pct": 42.18,
+      "valid_unweighted_n": 8072,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant": {
+      "pct": 48.35,
+      "valid_unweighted_n": 5681,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant": {
+      "pct": 43.85,
+      "valid_unweighted_n": 1836,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 53.85,
+      "valid_unweighted_n": 6868,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 28.31,
+      "valid_unweighted_n": 629,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 48.8,
+      "valid_unweighted_n": 177,
+      "group_unweighted_n": 186
+    },
+    "Jehovah's Witness": {
+      "pct": 38.86,
+      "valid_unweighted_n": 214,
+      "group_unweighted_n": 245
+    },
+    "Jewish": {
+      "pct": 62.64,
+      "valid_unweighted_n": 782,
+      "group_unweighted_n": 847
+    },
+    "Muslim": {
+      "pct": 60.35,
+      "valid_unweighted_n": 221,
+      "group_unweighted_n": 237
+    },
+    "Buddhist": {
+      "pct": 76.71,
+      "valid_unweighted_n": 251,
+      "group_unweighted_n": 264
+    },
+    "Hindu": {
+      "pct": 70.26,
+      "valid_unweighted_n": 175,
+      "group_unweighted_n": 199
+    },
+    "Unaffiliated": {
+      "pct": 71.79,
+      "valid_unweighted_n": 7120,
+      "group_unweighted_n": 7556
+    },
+    "All U.S. adults": {
+      "pct": 53.99,
+      "valid_unweighted_n": 33005,
+      "group_unweighted_n": 35071
+    }
+  }
+}

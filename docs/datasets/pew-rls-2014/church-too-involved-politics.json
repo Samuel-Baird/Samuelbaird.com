@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is the full sample, classified by current religious tradition (RELTRAD). qm5d asked whether the respondent agrees or disagrees that \"churches and other religious organizations are too involved with politics\"; volunteered don't know/refused is excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 33302.54273441133,
+  "total_unweighted_n": 33241,
+  "group_order": [
+    "Jehovah's Witness",
+    "Unaffiliated",
+    "Buddhist",
+    "Jewish",
+    "Orthodox Christian",
+    "Hindu",
+    "Muslim",
+    "Mainline Protestant",
+    "Catholic",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Mormon",
+    "All U.S. adults"
+  ],
+  "agrees_church_too_involved_politics": {
+    "Evangelical Protestant": {
+      "pct": 35.63,
+      "valid_unweighted_n": 8144,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant": {
+      "pct": 47.23,
+      "valid_unweighted_n": 5733,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant": {
+      "pct": 41.54,
+      "valid_unweighted_n": 1816,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 45.88,
+      "valid_unweighted_n": 6866,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 30.67,
+      "valid_unweighted_n": 636,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 59.36,
+      "valid_unweighted_n": 175,
+      "group_unweighted_n": 186
+    },
+    "Jehovah's Witness": {
+      "pct": 83.39,
+      "valid_unweighted_n": 234,
+      "group_unweighted_n": 245
+    },
+    "Jewish": {
+      "pct": 61.61,
+      "valid_unweighted_n": 801,
+      "group_unweighted_n": 847
+    },
+    "Muslim": {
+      "pct": 48.22,
+      "valid_unweighted_n": 220,
+      "group_unweighted_n": 237
+    },
+    "Buddhist": {
+      "pct": 70.28,
+      "valid_unweighted_n": 256,
+      "group_unweighted_n": 264
+    },
+    "Hindu": {
+      "pct": 56.41,
+      "valid_unweighted_n": 181,
+      "group_unweighted_n": 199
+    },
+    "Unaffiliated": {
+      "pct": 70.82,
+      "valid_unweighted_n": 7187,
+      "group_unweighted_n": 7556
+    },
+    "All U.S. adults": {
+      "pct": 50.33,
+      "valid_unweighted_n": 33241,
+      "group_unweighted_n": 35071
+    }
+  }
+}
