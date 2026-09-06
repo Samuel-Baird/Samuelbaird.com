@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, 2017 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2017, weighted by weight_2017. Feeling-thermometer mean toward feminists (0=coldest/most unfavorable, 100=warmest/most favorable); sentinel codes excluded before averaging. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "ft_feminists": {
+    "Mormon": {
+      "mean": 35.6
+    },
+    "Protestant": {
+      "mean": 46.7
+    },
+    "Catholic": {
+      "mean": 47.0
+    },
+    "Jewish": {
+      "mean": 57.3
+    },
+    "Buddhist": {
+      "mean": 71.4
+    },
+    "Atheist": {
+      "mean": 69.5
+    },
+    "Agnostic": {
+      "mean": 64.0
+    },
+    "Nothing in particular": {
+      "mean": 47.4
+    },
+    "Something else": {
+      "mean": 44.2
+    }
+  }
+}

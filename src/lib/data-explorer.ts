@@ -27,9 +27,19 @@ import voterFtRacialData from "../../docs/datasets/ryan-burge/voter-ft-racial-re
 import voterFtPoliticalData from "../../docs/datasets/ryan-burge/voter-ft-political-social.json";
 import voterIssueImportanceData from "../../docs/datasets/ryan-burge/voter-issue-importance.json";
 import terrorismImportanceData from "../../docs/datasets/ryan-burge/terrorism-importance.json";
+import gayRightsImportanceData from "../../docs/datasets/ryan-burge/gay-rights-importance.json";
+import genderEqualityImportanceData from "../../docs/datasets/ryan-burge/gender-equality-importance.json";
+import ftFeministsData from "../../docs/datasets/ryan-burge/ft-feminists.json";
+import ftGaysLesbiansData from "../../docs/datasets/ryan-burge/ft-gays-lesbians.json";
 import voterIdeasBarsData from "../../docs/datasets/ryan-burge/voter-ideas-bars.json";
 import voterIdeasLongitudinalData from "../../docs/datasets/ryan-burge/voter-ideas-longitudinal.json";
 import voterIdeasSexismData from "../../docs/datasets/ryan-burge/voter-ideas-sexism.json";
+import sexismTraditionalRolesData from "../../docs/datasets/ryan-burge/sexism-traditional-roles.json";
+import sexismSpecialFavorsData from "../../docs/datasets/ryan-burge/sexism-special-favors.json";
+import sexismJobDiscriminationData from "../../docs/datasets/ryan-burge/sexism-job-discrimination.json";
+import sexismHarassmentComplaintsData from "../../docs/datasets/ryan-burge/sexism-harassment-complaints.json";
+import sexismHarassmentNotRealData from "../../docs/datasets/ryan-burge/sexism-harassment-not-real.json";
+import sexismOpportunitiesImprovedData from "../../docs/datasets/ryan-burge/sexism-opportunities-improved.json";
 import voterIdeasMuslimData from "../../docs/datasets/ryan-burge/voter-ideas-muslim-distrust.json";
 import voterIdeasImmigrationData from "../../docs/datasets/ryan-burge/voter-ideas-immigration.json";
 import voterIdeasTradeData from "../../docs/datasets/ryan-burge/voter-ideas-trade.json";
@@ -678,8 +688,12 @@ const RAW_DATASETS: Dataset[] = [
       voterStrangerGraphic(),
       voterFtRacialGraphic(),
       voterFtPoliticalGraphic(),
+      voterFtFeministsGraphic(),
+      voterFtGaysLesbiansGraphic(),
       voterIssueImportanceGraphic(),
       terrorismImportanceGraphic(),
+      voterGayRightsImportanceGraphic(),
+      voterGenderEqualityImportanceGraphic(),
       voterRetentionGraphic(),
       voterReligimpTrendGraphic(),
       voterPrayerTrendGraphic(),
@@ -695,6 +709,12 @@ const RAW_DATASETS: Dataset[] = [
       voterRiggedElitesGraphic(),
       voterMilitaryGraphic(),
       voterSexismGraphic(),
+      voterSexismTraditionalRolesGraphic(),
+      voterSexismSpecialFavorsGraphic(),
+      voterSexismJobDiscriminationGraphic(),
+      voterSexismHarassmentComplaintsGraphic(),
+      voterSexismHarassmentNotRealGraphic(),
+      voterSexismOpportunitiesImprovedGraphic(),
       voterMuslimDistrustGraphic(),
       voterImmigrationIdeaGraphic(),
       voterTradeGraphic(),
@@ -4990,6 +5010,47 @@ function voterFtPoliticalGraphic(): Graphic {
 }
 
 /**
+ * How warmly do Americans feel toward feminists, by religion (2017 wave)
+ * - a single-target pull-out from the political/social feeling-
+ * thermometer matrix above, in the same magnitude-bar shape as Pew ATP
+ * Wave 44's warmth-toward-Mormons graphic (value_suffix="/100").
+ */
+function voterFtFeministsGraphic(): Graphic {
+  const { group_order: order, ft_feminists: results } = ftFeministsData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].mean}`)
+    .join(", ");
+  return {
+    title: "How warmly do Americans feel toward feminists?",
+    description: "Mean feeling-thermometer rating toward feminists (0=coldest, 100=warmest), by religion, 2017.",
+    imageSrc: "/data-explorer/voter-survey-panel/ft-feminists.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: feeling-thermometer mean (0-100) toward feminists, by religion, 2017. ${alt}.`,
+  };
+}
+
+/**
+ * How warmly do Americans feel toward gays and lesbians, by religion
+ * (2017 wave) - a single-target pull-out from the political/social
+ * feeling-thermometer matrix above, same magnitude-bar shape.
+ */
+function voterFtGaysLesbiansGraphic(): Graphic {
+  const { group_order: order, ft_gays_lesbians: results } = ftGaysLesbiansData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].mean}`)
+    .join(", ");
+  return {
+    title: "How warmly do Americans feel toward gays and lesbians?",
+    description: "Mean feeling-thermometer rating toward gays and lesbians (0=coldest, 100=warmest), by religion, 2017.",
+    imageSrc: "/data-explorer/voter-survey-panel/ft-gays-lesbians.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: feeling-thermometer mean (0-100) toward gays and lesbians, by religion, 2017. ${alt}.`,
+  };
+}
+
+/**
  * Issue importance (top-two-box: very or somewhat important), by religion
  * (2017 wave) - a heatmap/small-multiples matrix (23 issues x 9 religion
  * groups). Same data source and render script as the graphics above.
@@ -5006,6 +5067,46 @@ function terrorismImportanceGraphic(): Graphic {
     width: 1080, height: 1350,
     credit: "via Ryan Burge",
     alt: `Bar chart: share saying terrorism is a very or somewhat important issue, by religion, 2017. ${alt}.`,
+  };
+}
+
+/**
+ * How important is gay rights as an issue, by religion (2017 wave) - a
+ * single-item pull-out from the issue-importance matrix above, in the
+ * same magnitude-bar shape as terrorismImportanceGraphic().
+ */
+function voterGayRightsImportanceGraphic(): Graphic {
+  const { group_order: order, gay_rights_important: results } = gayRightsImportanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is gay rights as an issue?",
+    description: "Share saying gay rights is a very or somewhat important issue, by religion, 2017.",
+    imageSrc: "/data-explorer/voter-survey-panel/gay-rights-importance.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying gay rights is a very or somewhat important issue, by religion, 2017. ${alt}.`,
+  };
+}
+
+/**
+ * How important is gender equality as an issue, by religion (2017 wave) -
+ * a single-item pull-out from the issue-importance matrix above, in the
+ * same magnitude-bar shape as terrorismImportanceGraphic().
+ */
+function voterGenderEqualityImportanceGraphic(): Graphic {
+  const { group_order: order, gender_equality_important: results } = genderEqualityImportanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "How important is gender equality as an issue?",
+    description: "Share saying gender equality is a very or somewhat important issue, by religion, 2017.",
+    imageSrc: "/data-explorer/voter-survey-panel/gender-equality-importance.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying gender equality is a very or somewhat important issue, by religion, 2017. ${alt}.`,
   };
 }
 
@@ -5250,6 +5351,84 @@ function voterSexismGraphic(): Graphic {
     imageSrc: "/data-explorer/voter-survey-panel/idea-sexism.png",
     width: 1080, height: 1350, credit: "via Ryan Burge",
     alt: `Heatmap, agreement with gender-role statements by religion. ${alt}.`,
+  };
+}
+
+/** Formats a {pct} result set into alt text, shared by the six
+ * single-statement VOTER sexism-battery magnitude-bar graphics below. */
+function voterSexismItemAlt(results: Record<string, { pct: number | null }>, groupOrder: readonly string[]): string {
+  return groupOrder.map((g) => `${g} ${results[g]!.pct?.toFixed(0) ?? "n/a"}%`).join(", ");
+}
+
+function voterSexismTraditionalRolesGraphic(): Graphic {
+  const { group_order: order, traditional_roles_agree: results } = sexismTraditionalRolesData;
+  const alt = voterSexismItemAlt(results, order);
+  return {
+    title: "Should women return to traditional roles?",
+    description: "Share who strongly or somewhat agree women should return to traditional roles in society, 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/sexism-traditional-roles.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing women should return to traditional roles, by religion: ${alt}.`,
+  };
+}
+
+function voterSexismSpecialFavorsGraphic(): Graphic {
+  const { group_order: order, special_favors_agree: results } = sexismSpecialFavorsData;
+  const alt = voterSexismItemAlt(results, order);
+  return {
+    title: "Is equality really about special favors?",
+    description: "Share who strongly or somewhat agree equality demands are really about special favors, 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/sexism-special-favors.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing equality demands are really about special favors, by religion: ${alt}.`,
+  };
+}
+
+function voterSexismJobDiscriminationGraphic(): Graphic {
+  const { group_order: order, job_discrimination_agree: results } = sexismJobDiscriminationData;
+  const alt = voterSexismItemAlt(results, order);
+  return {
+    title: "Do women miss out on jobs due to discrimination?",
+    description: "Share who strongly or somewhat agree women miss out on good jobs due to discrimination, 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/sexism-job-discrimination.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing women miss out on jobs due to discrimination, by religion: ${alt}.`,
+  };
+}
+
+function voterSexismHarassmentComplaintsGraphic(): Graphic {
+  const { group_order: order, harassment_complaints_agree: results } = sexismHarassmentComplaintsData;
+  const alt = voterSexismItemAlt(results, order);
+  return {
+    title: "Do harassment complaints cause more problems than they solve?",
+    description: "Share who strongly or somewhat agree complaints about sexual harassment cause more problems than they solve, 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/sexism-harassment-complaints.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing harassment complaints cause more problems than they solve, by religion: ${alt}.`,
+  };
+}
+
+function voterSexismHarassmentNotRealGraphic(): Graphic {
+  const { group_order: order, harassment_not_real_agree: results } = sexismHarassmentNotRealData;
+  const alt = voterSexismItemAlt(results, order);
+  return {
+    title: "Is workplace harassment no longer a real problem?",
+    description: "Share who strongly or somewhat agree workplace harassment of women is no longer a real problem, 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/sexism-harassment-not-real.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing workplace harassment is no longer a real problem, by religion: ${alt}.`,
+  };
+}
+
+function voterSexismOpportunitiesImprovedGraphic(): Graphic {
+  const { group_order: order, opportunities_improved_agree: results } = sexismOpportunitiesImprovedData;
+  const alt = voterSexismItemAlt(results, order);
+  return {
+    title: "Have opportunities for women improved quality of life?",
+    description: "Share who strongly or somewhat agree opportunities for women have improved their quality of life, 2016.",
+    imageSrc: "/data-explorer/voter-survey-panel/sexism-opportunities-improved.png",
+    width: 1080, height: 1350, credit: "via Ryan Burge",
+    alt: `Bar chart, share agreeing opportunities for women have improved quality of life, by religion: ${alt}.`,
   };
 }
 

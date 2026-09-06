@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted. Share who strongly or somewhat agree (top-two-box) that workplace harassment of women is no longer a real problem; don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "harassment_not_real_agree": {
+    "Mormon": {
+      "pct": 25.0
+    },
+    "Protestant": {
+      "pct": 21.2
+    },
+    "Catholic": {
+      "pct": 24.5
+    },
+    "Jewish": {
+      "pct": 13.5
+    },
+    "Buddhist": {
+      "pct": 20.6
+    },
+    "Atheist": {
+      "pct": 8.8
+    },
+    "Agnostic": {
+      "pct": 11.3
+    },
+    "Nothing in particular": {
+      "pct": 17.5
+    },
+    "Something else": {
+      "pct": 17.7
+    }
+  }
+}

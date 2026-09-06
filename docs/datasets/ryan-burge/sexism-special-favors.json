@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted. Share who strongly or somewhat agree (top-two-box) that equality demands are really about special favors; don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "special_favors_agree": {
+    "Mormon": {
+      "pct": 50.0
+    },
+    "Protestant": {
+      "pct": 42.1
+    },
+    "Catholic": {
+      "pct": 43.4
+    },
+    "Jewish": {
+      "pct": 25.7
+    },
+    "Buddhist": {
+      "pct": 25.4
+    },
+    "Atheist": {
+      "pct": 14.4
+    },
+    "Agnostic": {
+      "pct": 22.8
+    },
+    "Nothing in particular": {
+      "pct": 30.8
+    },
+    "Something else": {
+      "pct": 32.0
+    }
+  }
+}

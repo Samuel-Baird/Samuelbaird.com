@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, 2017 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2017, weighted by weight_2017. Feeling-thermometer mean toward gays and lesbians (0=coldest/most unfavorable, 100=warmest/most favorable); sentinel codes excluded before averaging. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "ft_gays_lesbians": {
+    "Mormon": {
+      "mean": 43.0
+    },
+    "Protestant": {
+      "mean": 50.4
+    },
+    "Catholic": {
+      "mean": 57.8
+    },
+    "Jewish": {
+      "mean": 68.3
+    },
+    "Buddhist": {
+      "mean": 76.5
+    },
+    "Atheist": {
+      "mean": 78.2
+    },
+    "Agnostic": {
+      "mean": 76.1
+    },
+    "Nothing in particular": {
+      "mean": 63.3
+    },
+    "Something else": {
+      "mean": 60.8
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted. Share who strongly or somewhat agree (top-two-box) that women should return to traditional roles in society; don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "traditional_roles_agree": {
+    "Mormon": {
+      "pct": 25.8
+    },
+    "Protestant": {
+      "pct": 19.7
+    },
+    "Catholic": {
+      "pct": 17.4
+    },
+    "Jewish": {
+      "pct": 10.1
+    },
+    "Buddhist": {
+      "pct": 14.3
+    },
+    "Atheist": {
+      "pct": 5.0
+    },
+    "Agnostic": {
+      "pct": 4.7
+    },
+    "Nothing in particular": {
+      "pct": 13.4
+    },
+    "Something else": {
+      "pct": 14.2
+    }
+  }
+}
