@@ -9,6 +9,7 @@ import { FacetGroup } from "@/components/facet-group";
 import { Tag } from "@/components/tag";
 import { graphicId, type GalleryGraphic } from "@/lib/data-explorer";
 import type { GraphicPostMap } from "@/lib/graphic-posts";
+import { publishState, type PublishState } from "@/lib/graphic-publish";
 
 const PAGE_SIZE = 24;
 
@@ -24,11 +25,12 @@ function firstYear(period: string): number {
   return match ? Number(match[0]) : 0;
 }
 
-type PublishFilter = "all" | "published" | "hidden";
+type PublishFilter = "all" | PublishState;
 
 const PUBLISH_FILTER_OPTIONS: { value: PublishFilter; label: string }[] = [
   { value: "all", label: "All" },
   { value: "published", label: "Published" },
+  { value: "scheduled", label: "Scheduled" },
   { value: "hidden", label: "Hidden" },
 ];
 
@@ -88,8 +90,8 @@ export function GraphicsGallery({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  function isPublished(g: GalleryGraphic): boolean {
-    return postMap?.[`${g.datasetSlug}/${graphicId(g)}`]?.published === true;
+  function stateOf(g: GalleryGraphic): PublishState {
+    return publishState(postMap?.[`${g.datasetSlug}/${graphicId(g)}`]);
   }
 
   const sorted = useMemo(
@@ -133,20 +135,21 @@ export function GraphicsGallery({
   }, [graphics]);
 
   const publishCounts = useMemo(() => {
-    let published = 0;
-    for (const g of graphics) if (isPublished(g)) published += 1;
-    return { all: graphics.length, published, hidden: graphics.length - published };
+    const counts: Record<PublishFilter, number> = {
+      all: graphics.length,
+      published: 0,
+      scheduled: 0,
+      hidden: 0,
+    };
+    for (const g of graphics) counts[stateOf(g)] += 1;
+    return counts;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphics, postMap]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return sorted.filter((g) => {
-      if (isAdmin && publishFilter !== "all") {
-        const published = isPublished(g);
-        if (publishFilter === "published" && !published) return false;
-        if (publishFilter === "hidden" && published) return false;
-      }
+      if (isAdmin && publishFilter !== "all" && stateOf(g) !== publishFilter) return false;
       if (selectedDatasets.size > 0 && !selectedDatasets.has(g.datasetSlug)) return false;
       if (selectedPeriods.size > 0 && !selectedPeriods.has(g.fieldedPeriod)) return false;
       if (selectedTraditions.size > 0 && !g.traditions.some((t) => selectedTraditions.has(t)))
@@ -296,14 +299,16 @@ export function GraphicsGallery({
                   const id = graphicId(g);
                   const href = g.href ?? `/data-explorer/${g.datasetSlug}/graphics/${id}`;
                   const status = postMap?.[`${g.datasetSlug}/${id}`];
-                  const published = status?.published === true;
+                  const state = publishState(status);
                   return (
                     <li key={`${g.datasetSlug}/${id}`}>
                       <div
                         className={`group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border bg-white transition-colors hover:border-[color:var(--accent)] ${
-                          isAdmin && !published
+                          isAdmin && state === "hidden"
                             ? "border-dashed border-[color:var(--oxblood)]/40"
-                            : "border-[color:var(--border)]"
+                            : isAdmin && state === "scheduled"
+                              ? "border-dashed border-[color:var(--accent)]/50"
+                              : "border-[color:var(--border)]"
                         }`}
                       >
                         <Link href={href} className="flex flex-1 flex-col">
@@ -320,7 +325,8 @@ export function GraphicsGallery({
                             <div className="flex flex-wrap items-center gap-1.5">
                               <Tag ink="ink">{g.datasetName}</Tag>
                               <Tag ink="muted">{g.fieldedPeriod}</Tag>
-                              {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
+                              {isAdmin && state === "hidden" && <Tag ink="oxblood">Hidden</Tag>}
+                              {isAdmin && state === "scheduled" && <Tag ink="accent">Scheduled</Tag>}
                             </div>
                             <h3 className="serif mt-3 text-base font-semibold leading-snug tracking-tight text-[color:var(--foreground)] group-hover:text-[color:var(--accent)]">
                               {g.title}
@@ -346,7 +352,8 @@ export function GraphicsGallery({
                             <GraphicAdminControls
                               slug={g.datasetSlug}
                               graphicId={id}
-                              published={published}
+                              published={status?.published === true}
+                              publishAt={status?.publish_at ?? null}
                               posted={status?.posted === true}
                               postedDates={status?.posted_dates ?? ""}
                               currentPath="/data-explorer/gallery"

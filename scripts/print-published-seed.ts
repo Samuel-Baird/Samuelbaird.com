@@ -4,6 +4,9 @@
  * src/lib/study-graphics.ts) as published = true in graphic_posts. Run once
  * against production right after migration 0051_graphic_published.sql lands,
  * so the new publish gate doesn't hide anything that was already live.
+ * (Migration 0054_graphic_publish_at.sql later backfilled publish_at from
+ * updated_at for these rows; a fresh run of this seed leaves publish_at
+ * NULL, which the gate treats as "live immediately".)
  *
  * Read-only - this only imports the registries and prints SQL; it does not
  * touch the database itself. Run with `npx tsx scripts/print-published-seed.ts

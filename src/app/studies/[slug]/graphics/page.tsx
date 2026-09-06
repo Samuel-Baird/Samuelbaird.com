@@ -12,6 +12,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { graphicId } from "@/lib/data-explorer";
 import { getStudyBySlug } from "@/lib/data";
 import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
+import { publishState } from "@/lib/graphic-publish";
 import { STUDY_GRAPHICS, getStudyGraphics } from "@/lib/study-graphics";
 
 export function generateStaticParams() {
@@ -78,7 +79,8 @@ export default async function StudyGraphicsPage({
           const id = graphicId(graphic);
           const graphicHref = `/studies/${study.slug}/graphics/${id}`;
           const status = postMap[`${slug}/${id}`];
-          const published = status?.published === true;
+          const state = publishState(status);
+          const published = state === "published";
           return (
             <figure
               key={id}
@@ -107,7 +109,8 @@ export default async function StudyGraphicsPage({
                       {graphic.title}
                     </Link>
                   </h2>
-                  {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
+                  {isAdmin && state === "hidden" && <Tag ink="oxblood">Hidden</Tag>}
+                  {isAdmin && state === "scheduled" && <Tag ink="accent">Scheduled</Tag>}
                 </div>
                 <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--muted)]">
                   {graphic.description}
@@ -121,7 +124,8 @@ export default async function StudyGraphicsPage({
                       <GraphicAdminControls
                         slug={slug}
                         graphicId={id}
-                        published={published}
+                        published={status?.published === true}
+                        publishAt={status?.publish_at ?? null}
                         posted={status?.posted === true}
                         postedDates={status?.posted_dates ?? ""}
                         currentPath={currentPath}

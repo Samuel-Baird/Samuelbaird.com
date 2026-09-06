@@ -10,6 +10,7 @@ import { Tag } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
 import { DATASETS, getDataset, getGraphic, graphicId as idOf } from "@/lib/data-explorer";
 import { isPublished, getGraphicPostMap } from "@/lib/graphic-posts";
+import { publishState } from "@/lib/graphic-publish";
 
 export function generateStaticParams() {
   return DATASETS.flatMap((d) =>
@@ -77,6 +78,7 @@ export default async function GraphicPage({
   if (!resolved) notFound();
   const { dataset, graphic, isAdmin, published, postMap } = resolved;
   const status = postMap[`${slug}/${graphicId}`];
+  const state = publishState(status);
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -111,7 +113,8 @@ export default async function GraphicPage({
             <h1 className="serif text-2xl font-semibold leading-snug tracking-tight">
               {graphic.title}
             </h1>
-            {isAdmin && !published && <Tag ink="oxblood">Unpublished</Tag>}
+            {isAdmin && state === "hidden" && <Tag ink="oxblood">Hidden</Tag>}
+            {isAdmin && state === "scheduled" && <Tag ink="accent">Scheduled</Tag>}
           </div>
           <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
             {graphic.description}
@@ -125,7 +128,8 @@ export default async function GraphicPage({
               <GraphicAdminControls
                 slug={slug}
                 graphicId={graphicId}
-                published={published}
+                published={status?.published === true}
+                publishAt={status?.publish_at ?? null}
                 posted={status?.posted === true}
                 postedDates={status?.posted_dates ?? ""}
                 currentPath={`/data-explorer/${slug}/graphics/${graphicId}`}

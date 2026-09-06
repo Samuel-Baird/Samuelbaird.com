@@ -52,5 +52,9 @@ export const graphicPublishSchema = z.object({
   datasetSlug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
   graphicId: z.string().max(120).regex(/^[a-z0-9][a-z0-9_-]*$/),
   published: z.boolean(),
+  /** ISO 8601 instant to go live. Only meaningful with published = true:
+   * omitted means "now". Ignored when hiding, so the previous publish time
+   * survives as a record. */
+  publishAt: z.iso.datetime({ offset: true }).optional(),
   currentPath: currentPathSchema,
 });

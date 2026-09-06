@@ -3,14 +3,22 @@ import { cache } from "react";
 import { unstable_cache } from "next/cache";
 import { getGraphic, graphicId, type Graphic } from "@/lib/data-explorer";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
+import { isLive } from "@/lib/graphic-publish";
 import { getStudyGraphic } from "@/lib/study-graphics";
 import type { GraphicPost } from "@/lib/types";
 
 // graphic_posts (supabase/migrations/0049_graphic_posts.sql,
-// 0051_graphic_published.sql) is RLS deny-all, so every read here goes
-// through the service client - safe inside unstable_cache since it carries
-// no per-request cookies. `published` gates public visibility everywhere a
-// graphic can be shown; `posted` is independent social-media tracking.
+// 0051_graphic_published.sql, 0054_graphic_publish_at.sql) is RLS deny-all,
+// so every read here goes through the service client - safe inside
+// unstable_cache since it carries no per-request cookies. `published` +
+// `publish_at` gate public visibility everywhere a graphic can be shown;
+// `posted` is independent social-media tracking.
+//
+// The time comparison happens per request (isLive -> Date.now()), NOT inside
+// the cache, so a scheduled graphic goes live on the first request after its
+// publish_at even though the row map itself is cached for an hour. Every
+// page that consumes the map also reads cookies (getCurrentUser), so those
+// renders are dynamic; only sitemap.ts / feed.xml (ISR, 1h) lag behind.
 //
 // Key format matches the table's unique(dataset_slug, graphic_id): a slug
 // (dataset OR study, flat key space - see study-graphics.ts's build guard)
@@ -25,7 +33,7 @@ const fetchGraphicPostRows = unstable_cache(
   async (): Promise<GraphicPost[]> => {
     const { data, error } = await createSupabaseServiceClient()
       .from("graphic_posts")
-      .select("dataset_slug, graphic_id, posted, posted_dates, published");
+      .select("dataset_slug, graphic_id, posted, posted_dates, published, publish_at");
     if (error) throw error;
     return (data ?? []) as GraphicPost[];
   },
@@ -43,7 +51,7 @@ export const getGraphicPostMap = cache(async (): Promise<GraphicPostMap> => {
 });
 
 export function isPublished(map: GraphicPostMap, slug: string, id: string): boolean {
-  return map[key(slug, id)]?.published === true;
+  return isLive(map[key(slug, id)]);
 }
 
 export function filterPublished<T extends Graphic>(

@@ -60,6 +60,9 @@ type SetGraphicPublishedInput = {
   datasetSlug: string;
   graphicId: string;
   published: boolean;
+  /** ISO instant to go live (may be in the future = scheduled). Omitted with
+   * published = true means "now". Ignored when published = false. */
+  publishAt?: string;
   currentPath?: string;
 };
 
@@ -73,6 +76,12 @@ export async function setGraphicPublished(input: SetGraphicPublishedInput) {
     throw new Error("Unknown graphic.");
   }
 
+  // Hiding leaves publish_at untouched on purpose: it is the record of when
+  // the graphic last went live (see 0054_graphic_publish_at.sql).
+  const publishAt = parsed.data.published
+    ? new Date(parsed.data.publishAt ?? Date.now()).toISOString()
+    : undefined;
+
   const { error } = await createSupabaseServiceClient()
     .from("graphic_posts")
     .upsert(
@@ -80,6 +89,7 @@ export async function setGraphicPublished(input: SetGraphicPublishedInput) {
         dataset_slug: parsed.data.datasetSlug,
         graphic_id: parsed.data.graphicId,
         published: parsed.data.published,
+        ...(publishAt !== undefined ? { publish_at: publishAt } : {}),
         created_by: auth.user.id,
         updated_at: new Date().toISOString(),
       },
@@ -90,5 +100,5 @@ export async function setGraphicPublished(input: SetGraphicPublishedInput) {
   revalidateTag("graphic-posts", { expire: 0 });
   revalidatePath("/admin/graphics");
   if (parsed.data.currentPath) revalidatePath(parsed.data.currentPath);
-  return parsed.data;
+  return { ...parsed.data, publishAt };
 }
