@@ -955,3 +955,45 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   doctrinal, PERSDO1_b likely a near-duplicate of already-shipped scripture-
   reading items, and the "all respondents.sav" Black-vs-non-Black comparison
   sample) is thin or duplicative — consider this dataset fully mined.
+
+- **pew-rls-2014-recontact** (2014 RLS recontact survey) — third pass,
+  2026-09-06: the two most recently shipped commits were both
+  pew-black-faith-2021 (job-skills-essential, then scripture-reading) with
+  pew-hispanics-religion-2007 before that, so per this iteration's
+  instructions picked a different dataset. Re-read this dataset's own
+  remaining-candidate list from its second pass: qb16 (parental disagreement
+  about religion growing up — a demographic/family-conflict item with no
+  clean LDS doctrinal angle, skipped without computing) and qc1a/b/d
+  (reasons for looking for a new congregation — flagged as likely under the
+  30-floor given sibling item qc3's Mormon n=29, not checked further).
+  Landed on qb21 ("do you CURRENTLY think of yourself as belonging to more
+  than one religion, or not") by reltrad — checked first for overlap against
+  the already-shipped `raised-interfaith.json` (qb19, "raised in more than
+  one religion" growing up) and confirmed it's a genuinely distinct
+  construct: current self-identification vs. childhood upbringing. Computed
+  the real weighted crosstab directly from the .sav file for all 15 reltrad
+  codes before committing to the chart; only 7 groups (Evangelical/Mainline/
+  Historically Black Protestant, Catholic, Mormon, Jewish, Unaffiliated) plus
+  "All U.S. adults" clear the 30-valid floor (Orthodox n=17, Muslim n=15,
+  Buddhist n=27, Jehovah's Witness n=18 all excluded). `current-
+  multireligious.json`: only 4.0% of Mormons currently think of themselves
+  as belonging to more than one religion, tied for lowest with Historically
+  Black Protestant (4.2%) among groups clearing the floor and well below
+  Mainline Protestant (7.6%)/Catholic (7.0%)/Unaffiliated (6.5%) — plausibly
+  reflects LDS restorationist theology's exclusive-priesthood-authority
+  claim ("the only true and living church," D&C 1:30) discouraging
+  simultaneous identification with another faith tradition. Mormon n=61
+  valid (unweighted), comfortably above the 30 floor. Computed by
+  `scripts/pew-rls-2014-recontact/current_multireligious.py` →
+  `docs/datasets/pew-rls-2014-recontact/current-multireligious.json`,
+  rendered by
+  `scripts/pew-rls-2014-recontact/render_current_multireligious_chart.py` →
+  `public/data-explorer/pew-rls-2014-recontact/current-multireligious.png`
+  (8 rows, checked by reading the PNG directly — no label collision). Wired
+  into `src/lib/data-explorer.ts` (`currentMultireligiousGraphic()`).
+  `tsc --noEmit` clean; PNG confirmed served at 200 OK, 1080x1350, via the
+  dev server (in-app page hydration couldn't be visually confirmed this pass
+  due to the known hidden-browser-pane-blocks-hydration issue, but no server
+  errors and a clean PNG fetch). This dataset's remaining candidates
+  (qb16, qc1a/b/d) are both weak-fit or likely underpowered — consider this
+  dataset fully mined.

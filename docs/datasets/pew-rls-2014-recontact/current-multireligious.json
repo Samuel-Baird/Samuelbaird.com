@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center, 2015 Religious Landscape Study Recontact Survey.",
+  "method": "Population is current religious tradition (reltrad). qb21 asks whether the respondent CURRENTLY thinks of themself as belonging to more than one religion (a distinct construct from qb19's \"raised in more than one religion,\" already charted separately); \"(VOL) not part of any religion\" and don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted (this recontact reached only 5,000 of the main 2014 RLS's 35,071 respondents). Weighted by the dataset's own `rweight` variable.",
+  "total_weighted_n": 5000.000004114336,
+  "total_unweighted_n": 5000,
+  "group_order": [
+    "Mainline Protestant",
+    "Catholic",
+    "Unaffiliated",
+    "Evangelical Protestant",
+    "Jewish",
+    "Historically Black Protestant",
+    "Mormon",
+    "All U.S. adults"
+  ],
+  "current_multireligious": {
+    "Evangelical Protestant": {
+      "pct": 4.88,
+      "valid_unweighted_n": 1024,
+      "group_unweighted_n": 1043
+    },
+    "Mainline Protestant": {
+      "pct": 7.61,
+      "valid_unweighted_n": 1135,
+      "group_unweighted_n": 1175
+    },
+    "Historically Black Protestant": {
+      "pct": 4.15,
+      "valid_unweighted_n": 328,
+      "group_unweighted_n": 335
+    },
+    "Catholic": {
+      "pct": 7.03,
+      "valid_unweighted_n": 941,
+      "group_unweighted_n": 956
+    },
+    "Mormon": {
+      "pct": 3.99,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 61
+    },
+    "Jewish": {
+      "pct": 4.87,
+      "valid_unweighted_n": 87,
+      "group_unweighted_n": 87
+    },
+    "Unaffiliated": {
+      "pct": 6.53,
+      "valid_unweighted_n": 1033,
+      "group_unweighted_n": 1149
+    },
+    "All U.S. adults": {
+      "pct": 6.26,
+      "valid_unweighted_n": 4782,
+      "group_unweighted_n": 5000
+    }
+  }
+}

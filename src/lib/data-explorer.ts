@@ -94,6 +94,7 @@ import preserveTraditionalBeliefsData from "../../docs/datasets/pew-rls-2014/pre
 import scriptureLiteralismData from "../../docs/datasets/pew-rls-2014/scripture-literalism.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
 import raisedInterfaithData from "../../docs/datasets/pew-rls-2014-recontact/raised-interfaith.json";
+import currentMultireligiousData from "../../docs/datasets/pew-rls-2014-recontact/current-multireligious.json";
 import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religion-mattered.json";
 import attendWithSpouseData from "../../docs/datasets/pew-rls-2014-recontact/attend-with-spouse.json";
 import spouseReligiousDisagreementData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religious-disagreement.json";
@@ -878,6 +879,7 @@ const RAW_DATASETS: Dataset[] = [
     graphics: [
       marriageSharedBeliefsGraphic(),
       raisedInterfaithGraphic(),
+      currentMultireligiousGraphic(),
       spouseReligionMatteredGraphic(),
       attendWithSpouseGraphic(),
       spouseReligiousDisagreementGraphic(),
@@ -2187,6 +2189,20 @@ function raisedInterfaithGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014-recontact/raised-interfaith.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share raised in more than one religion, by current religious tradition. ${alt}.`,
+  };
+}
+
+function currentMultireligiousGraphic(): Graphic {
+  const { group_order: order, current_multireligious: results } = currentMultireligiousData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Currently belong to more than one religion?",
+    description: "Share who CURRENTLY think of themselves as belonging to more than one religion, by tradition — a distinct construct from being raised interfaith.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/current-multireligious.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share currently belonging to more than one religion, by religious tradition. ${alt}.`,
   };
 }
 
