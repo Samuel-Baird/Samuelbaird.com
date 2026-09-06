@@ -1411,3 +1411,45 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   broken out by activity level, but not built this pass to avoid a
   circular "more-active members rate religion as more important" result).
   Consider this dataset close to fully mined.
+
+- **pew-atp-w162-2025** (American Trends Panel, Wave 162, February 2025 —
+  Catholicism/religion's place in American life) — 7th chart, 2026-09-06:
+  excluded the eleven datasets freshly mined earlier this session (see this
+  log's own recent entries) and re-verified via `data-explorer.ts` that this
+  wave genuinely had 6 graphics entries already. Re-read the prior pass's own
+  "essentially fully mined" note and its two flagged leftovers directly
+  against the `.sav` file rather than trusting the writeup: RELART_W162 (has
+  religious objects/artwork displayed at home) had been dismissed as "too
+  close to the shipped devotion-to-saints chart," but on inspection
+  devotion-to-saints is `PRACTICEA_SAINTS_W162`, an active devotional-
+  practice frequency item, a genuinely different construct from RELART's
+  passive home-display yes/no — not a duplicate. Also checked
+  PRACTICEA_OTHSCRPT_W162 (the other flagged leftover, "reads the Bible,
+  Torah, Quran or other scripture") directly: confirmed it's part of a
+  randomized split-form battery with PRACTICEA_BIB_W162 (Catholics get 100%
+  BIB-wording, 0% OTHSCRPT-wording; other groups get a random mix) — a real
+  mode-effect risk for a cross-tradition bar chart, so left it unbuilt as a
+  weaker candidate than a prior pass's write-up implied. Built
+  `religious-objects-home.json`/`.png` from RELART_W162 by present religion
+  (RELIG_W162, full sample, no split-form issue, all 135 unweighted Mormon
+  respondents asked): 78.2% of Latter-day Saints have religious objects or
+  artwork displayed at home, 2nd only to Catholics at 79.7% (Hindu's 88.9%
+  excluded, n=9, below the 30-valid floor) and well above Protestants at
+  53.9% — notable because the item's own example wording (cross, crucifix,
+  pictures of Jesus or the saints) is Catholic/Christian-coded, yet Mormons
+  essentially match Catholics on it. All included groups clear the 30-valid
+  floor (smallest: Buddhist n=31). Computed by
+  `scripts/pew-atp-w162-2025/religious_objects_home.py` (following this
+  folder's existing `wear_religious_items.py` pattern exactly) →
+  `docs/datasets/pew-atp-w162-2025/religious-objects-home.json`, rendered by
+  `scripts/pew-atp-w162-2025/render_religious_objects_home_chart.py` →
+  `public/data-explorer/pew-atp-w162-2025/religious-objects-home.png` (10
+  rows, checked by reading the PNG directly — no label collision or
+  clipping). Wired into `src/lib/data-explorer.ts`
+  (`religiousObjectsHomeGraphic()`). `tsc --noEmit` clean; PNG confirmed
+  served at 200 OK, 1080x1350, via the local dev server, and the dataset's
+  page (`/data-explorer/pew-atp-w162-2025`) returns 200 with the correct
+  title. Remaining battery is almost entirely Catholic-specific
+  (CATHESSENT_*, CATHATTEND*, CCHRCH_*, parish/Mass items) plus the
+  split-form-risky PRACTICEA_OTHSCRPT_W162 flagged above. Consider this wave
+  fully mined.
