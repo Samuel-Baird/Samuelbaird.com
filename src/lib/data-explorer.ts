@@ -129,6 +129,7 @@ import covidLessonFromGodData from "../../docs/datasets/pew-atp-w70-2020/covid-l
 import congregationDonatingData from "../../docs/datasets/pew-atp-w70-2020/congregation-donating.json";
 import adultArrangementsData from "../../docs/datasets/pew-catholic-family-2015/adult-arrangements.json";
 import prayerStyleData from "../../docs/datasets/pew-catholic-family-2015/prayer-style.json";
+import religiousImportanceData from "../../docs/datasets/pew-catholic-family-2015/religious-importance.json";
 import annulmentCommunionData from "../../docs/datasets/pew-catholic-family-2015/annulment-communion.json";
 import householdTypesData from "../../docs/datasets/pew-catholic-family-2015/household-types.json";
 import charismaticChristiansData from "../../docs/datasets/pew-subsaharan-africa-2010/charismatic-christians.json";
@@ -1043,6 +1044,7 @@ const RAW_DATASETS: Dataset[] = [
     graphics: [
       annulmentCommunionGraphic(),
       prayerStyleGraphic(),
+      religiousImportanceGraphic(),
       raisedByMarriedParentsGraphic(),
       raisedBySingleParentGraphic(),
       raisedByDivorcedParentsGraphic(),
@@ -2786,6 +2788,20 @@ function prayerStyleGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-catholic-family-2015/prayer-style.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who say they mainly have a personal conversation with God when they pray rather than mainly reciting memorized prayers, by religion, 2015. ${alt}.`,
+  };
+}
+
+function religiousImportanceGraphic(): Graphic {
+  const results = religiousImportanceData.religion_very_important_pct;
+  const alt = Object.entries(results)
+    .map(([g, r]) => `${g} ${r.pct.toFixed(0)}%`)
+    .join(", ");
+  return {
+    title: "How important is religion in your life?",
+    description: "Share saying religion is \"very important\" in their life, by religion, 2015.",
+    imageSrc: "/data-explorer/pew-catholic-family-2015/religious-importance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying religion is "very important" in their life, by religion, 2015. ${alt}.`,
   };
 }
 

@@ -1307,3 +1307,47 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   `COVIDRF_W70` (whether houses of worship should follow the same
   social-distancing rules as other businesses — politically coded policy
   question, no clean doctrinal tie); consider this dataset fully mined.
+
+- **pew-catholic-family-2015** (2015 Survey of U.S. Catholics and Family
+  Life) — fourth pass, 2026-09-06: excluded the nine datasets freshly
+  mined earlier this session (pew-atp-w70-2020, pew-atp-w117-2022,
+  pew-atp-w114-2022, pew-atp-w132-2023, pew-rls-2007, pew-rls-2014,
+  pew-rls-2014-recontact, pew-black-faith-2021,
+  pew-hispanics-religion-2007) and confirmed against `data-explorer.ts`
+  that this dataset genuinely had 10 graphics entries (matching the prior
+  pass's own note of 9 plus the third pass's `prayer-style.json` add).
+  Checked the prior pass's own remaining-candidate list directly against
+  the .sav metadata: `qa3a-c` (favorability of Pope Francis/Obama/Putin)
+  confirmed thin/politically coded with no doctrinal tie, skipped; `qh3`
+  (childhood religion) would only support a retention/switching angle
+  already well covered by the RLS family, skipped. Shipped 1 chart from
+  `qf2` ("how important is religion in your life"), general public by
+  present religion (relig), same construction as `prayer_style.py`:
+  `religious-importance.json` — 81.4% of Mormons say religion is "very
+  important" in their life, 2nd only to Jehovah's Witness (87.9%, n=32)
+  among named traditions and well above Protestant (73.1%) and far above
+  Catholic (62.5%), consistent with LDS emphasis on religion as daily
+  lived practice. Mormon n=88 valid, above the 30-respondent floor.
+  Checked against overlap with this dataset's own charts (none) and
+  against CHIMPREL-style "importance growing up" items shipped elsewhere
+  on the site (distinct construct: present-day importance, not
+  childhood). Also checked `qf5` (prayer frequency, several times a day)
+  — Mormon 62.1%, a decent secondary story, but skipped to avoid
+  crowding this dataset's page with a second prayer-adjacent chart next
+  to the already-shipped `prayer-style.json` (qf6); flagged as a live
+  candidate for a future pass if this dataset is revisited. Computed by
+  `scripts/pew-catholic-family-2015/religious_importance.py` (following
+  this folder's existing `prayer_style.py` pattern exactly) →
+  `docs/datasets/pew-catholic-family-2015/religious-importance.json`,
+  rendered by
+  `scripts/pew-catholic-family-2015/render_religious_importance.py` →
+  `public/data-explorer/pew-catholic-family-2015/religious-importance.png`
+  (14 rows, matching this dataset's own established group-set size in
+  `prayer-style.json`; checked by reading the PNG directly — no label
+  collision or clipping). Wired into `src/lib/data-explorer.ts`
+  (`religiousImportanceGraphic()`). `tsc --noEmit` clean; PNG confirmed
+  served at 200 OK, 1080x1350, via the local dev server, and the
+  dataset's page (`/data-explorer/pew-catholic-family-2015`) returns 200
+  with the correct title. Remaining untouched candidates: `qf5` (prayer
+  frequency, checked and deliberately deferred this pass, see above).
+  Consider this dataset close to fully mined.

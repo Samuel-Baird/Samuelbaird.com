@@ -1,0 +1,83 @@
+{
+  "source": "Pew Research Center. 2015 Survey of U.S. Catholics and Family Life, fielded May 5-June 7, 2015.",
+  "method": "Population is all respondents (a general-public sample with a Catholic oversample), grouped by present religion (relig). qf2 asks how important religion is in the respondent's life: very important, somewhat important, not too important, or not at all important -- only don't know/refused is excluded from the denominator. Share is top box ('very important'). Groups under 30 valid respondents omitted -- Mormon N is thin (88 valid respondents) and should be read directionally. Weighted by the dataset's own weight variable.",
+  "total_weighted_n": 14217.4,
+  "total_unweighted_n": 5122,
+  "religion_very_important_pct": {
+    "Protestant": {
+      "pct": 73.12,
+      "valid_unweighted_n": 1852,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 62.51,
+      "valid_unweighted_n": 1009,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 81.38,
+      "valid_unweighted_n": 88,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 39.49,
+      "valid_unweighted_n": 40,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 42.55,
+      "valid_unweighted_n": 105,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 58.93,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 43
+    },
+    "Buddhist": {
+      "pct": 25.41,
+      "valid_unweighted_n": 32,
+      "group_unweighted_n": 32
+    },
+    "Hindu": {
+      "pct": 37.82,
+      "valid_unweighted_n": 38,
+      "group_unweighted_n": 38
+    },
+    "Atheist": {
+      "pct": 0.34,
+      "valid_unweighted_n": 171,
+      "group_unweighted_n": 171
+    },
+    "Agnostic": {
+      "pct": 3.12,
+      "valid_unweighted_n": 205,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 40.66,
+      "valid_unweighted_n": 98,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 19.65,
+      "valid_unweighted_n": 717,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 76.04,
+      "valid_unweighted_n": 574,
+      "group_unweighted_n": 582
+    },
+    "Jehovah's Witness": {
+      "pct": 87.93,
+      "valid_unweighted_n": 32,
+      "group_unweighted_n": 32
+    },
+    "U.S. adults": {
+      "pct": 55.37,
+      "valid_unweighted_n": 5074,
+      "group_unweighted_n": 5122
+    }
+  }
+}
