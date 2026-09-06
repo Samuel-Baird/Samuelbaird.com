@@ -1,0 +1,490 @@
+{
+  "generated": "2026-09-06",
+  "sources": {
+    "2007": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\" Continental-US file, N=35,556.",
+    "2014": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\" N=35,071.",
+    "2023-24": "Pew Research Center. 2025. \"2023-24 Religious Landscape Study (RLS) Dataset.\" doi: 10.58094/3kwb-bf52. Public-use file, N=36,908."
+  },
+  "methods": "Computes every number the Deseret News op-ed graphics use, from the three Pew\nReligious Landscape Study public-use files, and writes data/oped_data.json.\n\nMicrodata (gitignored, see docs/datasets/pew-rls-*/README.md):\n  data/pew-rls-2007/Religious Landscape Survey Data - Continental US.sav   (N=35,556)\n  data/pew-rls-2014/Dataset - ... 2014 Religious Landscape Study ... .sav    (N=35,071)\n  data/pew-rls-2023-24/2023-24 RLS Public Use File Feb 19.csv                (N=36,908)\n\nConventions (all match Pew's published practice unless noted):\n- Every wave weighted by its own full-sample weight (weight / WEIGHT / WEIGHT).\n- Population shares (Christian, unaffiliated, LDS, denominations) are % of ALL\n  adults, don't-know/refused kept in the denominator - that is how Pew reports\n  \"62% of U.S. adults are Christian\".\n- Parents' practices (KIDACT_A/B/C) are % of parents/guardians of children\n  under 18 at home (CHILDREN=1). The headline \"at least one\" uses all such\n  parents as the base (a respondent who refused all three items counts as not\n  doing any); an `excl_dk` variant drops respondents who refused all three.\n  The three component items use that same all-parents base (item-level\n  don't-know/refused counted as not doing it), matching Pew's published\n  figures for Christian parents (58% pray/read scripture, 48% religious\n  education).\n- Completed fertility uses FERTREC, which the PUF caps at \"4 or more\", and\n  BIRTHDECADE, the PUF's only age proxy. Pew's published averages (Christians\n  2.2, unaffiliated 1.8, ages 40-59) come from the restricted file's exact age\n  and uncapped counts, so they cannot be reproduced exactly here. We report the\n  full 0/1/2/3/4+ distribution for adults born in the 1960s and 1970s (roughly\n  ages 44-64 at fielding, the nearest \"finished childbearing\" cohort) plus a\n  floor mean that counts \"4 or more\" as 4.\n- Transmission uses Pew's own definitions from the 2023-24 overview report:\n  \"highly religious upbringing\" = attended weekly or more (CHATTEND 1-2) AND\n  religion very important to the family (CHIMPREL_B=1); \"highly religious\n  now\" = attends weekly or more (ATTNDPERRLS 1-2) AND religion very important\n  (RELIMP=1). Age groups are BIRTHDECADE buckets: born 1940s or earlier ~ ages\n  74+, born 2000s ~ ages 18-24, which is exactly how Pew's 51% / 28% is cut.\n- 2023-24 denominational shares (Southern Baptist Convention, United\n  Methodist Church) are NOT computable from the PUF (DENOM/FAMILY are\n  restricted-use and blank), so those two 2023-24 values are Pew's published\n  figures and flagged as such in the JSON.\n\nUsage (from the repo root):  python deseret-news-op-ed/compute_data.py",
+  "published": {
+    "source_overview": "Pew Research Center, 'Decline of Christianity in the U.S. Has Slowed, May Have Leveled Off' (Feb. 26, 2025), https://www.pewresearch.org/religion/2025/02/26/decline-of-christianity-in-the-us-has-slowed-may-have-leveled-off/",
+    "source_fertility": "Pew Research Center, 2023-24 RLS chapter 'Religion, fertility and child-rearing', https://www.pewresearch.org/religion/2025/02/26/religion-fertility-and-child-rearing/",
+    "shares_rounded": {
+      "Christian": {
+        "2007": 78,
+        "2014": 71,
+        "2023-24": 62
+      },
+      "Religiously unaffiliated": {
+        "2007": 16,
+        "2014": 23,
+        "2023-24": 29
+      },
+      "Latter-day Saints": {
+        "2007": 2,
+        "2014": 2,
+        "2023-24": 2
+      },
+      "Southern Baptist Convention": {
+        "2007": 6.7,
+        "2014": 5.3,
+        "2023-24": 4.4
+      },
+      "United Methodist Church": {
+        "2007": 5.1,
+        "2014": 3.6,
+        "2023-24": 2.7
+      },
+      "Mainline Protestant": {
+        "2007": 18,
+        "2023-24": 11
+      },
+      "Evangelical Protestant": {
+        "2007": 26,
+        "2023-24": 23
+      }
+    },
+    "fertility_ages_40_59_mean_children": {
+      "Christians": 2.2,
+      "Religiously unaffiliated": 1.8,
+      "Non-Christian religions": 1.8,
+      "Jewish": 2.0
+    },
+    "parents_at_least_one_practice": {
+      "Latter-day Saints": 84,
+      "Christians": 70,
+      "Evangelical Protestants": 82
+    },
+    "parents_unaffiliated_religious_education_only": 9,
+    "transmission_still_highly_religious": {
+      "ages 74+": 51,
+      "ages 18-24": 28
+    },
+    "transmission_definition": "Raised: attended religious services weekly in a family in which religion was very important. Now: attends weekly and says religion is very important."
+  },
+  "waves": {
+    "2007": {
+      "Christian": 78.42,
+      "Religiously unaffiliated": 16.09,
+      "Latter-day Saints": 1.67,
+      "Evangelical Protestant": 26.28,
+      "Mainline Protestant": 18.08,
+      "Historically Black Protestant": 6.92,
+      "Catholic": 23.86,
+      "Don't know/refused": 0.82,
+      "n": 35556,
+      "n_lds": 581,
+      "Southern Baptist Convention": 6.71,
+      "United Methodist Church": 5.05,
+      "n_sbc": 2539,
+      "n_umc": 2239
+    },
+    "2014": {
+      "Christian": 70.65,
+      "Religiously unaffiliated": 22.82,
+      "Latter-day Saints": 1.63,
+      "Evangelical Protestant": 25.36,
+      "Mainline Protestant": 14.67,
+      "Historically Black Protestant": 6.47,
+      "Catholic": 20.82,
+      "Don't know/refused": 0.64,
+      "n": 35071,
+      "n_lds": 664,
+      "Southern Baptist Convention": 5.29,
+      "United Methodist Church": 3.63,
+      "n_sbc": 1845,
+      "n_umc": 1637
+    },
+    "2023-24": {
+      "Christian": 62.12,
+      "Religiously unaffiliated": 29.41,
+      "Latter-day Saints": 1.5,
+      "Evangelical Protestant": 23.08,
+      "Mainline Protestant": 11.49,
+      "Historically Black Protestant": 5.39,
+      "Catholic": 18.89,
+      "Don't know/refused": 1.4,
+      "n": 36908,
+      "n_lds": 565,
+      "Southern Baptist Convention": null,
+      "United Methodist Church": null,
+      "denomination_note": "DENOM/FAMILY are restricted-use and blank in the PUF; use PUBLISHED.shares_rounded for SBC/UMC 2023-24."
+    }
+  },
+  "parents_practice_2023_24": {
+    "Latter-day Saints": {
+      "at_least_one_pct": 84.36,
+      "at_least_one_excl_dk_pct": 84.91,
+      "pray_or_read_scripture_pct": 79.87,
+      "religious_education_pct": 66.41,
+      "religious_school_or_homeschool_pct": 17.23,
+      "parents_unweighted_n": 195
+    },
+    "All Christians": {
+      "at_least_one_pct": 70.21,
+      "at_least_one_excl_dk_pct": 71.37,
+      "pray_or_read_scripture_pct": 57.66,
+      "religious_education_pct": 48.15,
+      "religious_school_or_homeschool_pct": 21.7,
+      "parents_unweighted_n": 4969
+    },
+    "Religiously unaffiliated": {
+      "at_least_one_pct": 20.73,
+      "at_least_one_excl_dk_pct": 20.9,
+      "pray_or_read_scripture_pct": 12.86,
+      "religious_education_pct": 9.24,
+      "religious_school_or_homeschool_pct": 7.68,
+      "parents_unweighted_n": 2679
+    },
+    "Religiously affiliated": {
+      "at_least_one_pct": 67.61,
+      "at_least_one_excl_dk_pct": 68.72,
+      "pray_or_read_scripture_pct": 55.32,
+      "religious_education_pct": 45.63,
+      "religious_school_or_homeschool_pct": 21.29,
+      "parents_unweighted_n": 5579
+    },
+    "Evangelical Protestant": {
+      "at_least_one_pct": 82.08,
+      "at_least_one_excl_dk_pct": 83.07,
+      "pray_or_read_scripture_pct": 71.64,
+      "religious_education_pct": 60.48,
+      "religious_school_or_homeschool_pct": 27.66,
+      "parents_unweighted_n": 1972
+    },
+    "Mainline Protestant": {
+      "at_least_one_pct": 57.47,
+      "at_least_one_excl_dk_pct": 58.99,
+      "pray_or_read_scripture_pct": 41.01,
+      "religious_education_pct": 39.94,
+      "religious_school_or_homeschool_pct": 13.22,
+      "parents_unweighted_n": 920
+    },
+    "Catholic": {
+      "at_least_one_pct": 59.95,
+      "at_least_one_excl_dk_pct": 61.23,
+      "pray_or_read_scripture_pct": 43.78,
+      "religious_education_pct": 35.84,
+      "religious_school_or_homeschool_pct": 20.25,
+      "parents_unweighted_n": 1393
+    },
+    "All U.S. adults": {
+      "at_least_one_pct": 52.79,
+      "at_least_one_excl_dk_pct": 53.51,
+      "pray_or_read_scripture_pct": 41.88,
+      "religious_education_pct": 34.1,
+      "religious_school_or_homeschool_pct": 17.04,
+      "parents_unweighted_n": 8319
+    }
+  },
+  "fertility_2023_24": {
+    "born_1960s_1970s": {
+      "label": "Born 1960s-1970s (about ages 44-64 when surveyed)",
+      "groups": {
+        "Religiously affiliated": {
+          "distribution_pct": {
+            "None": 15.22,
+            "1": 15.32,
+            "2": 33.14,
+            "3": 21.19,
+            "4 or more": 15.13
+          },
+          "mean_children_floor_4plus_as_4": 2.06,
+          "share_3_or_more_pct": 36.32,
+          "share_none_pct": 15.22,
+          "unweighted_n": 8011
+        },
+        "Religiously unaffiliated": {
+          "distribution_pct": {
+            "None": 24.27,
+            "1": 16.12,
+            "2": 33.8,
+            "3": 15.35,
+            "4 or more": 10.45
+          },
+          "mean_children_floor_4plus_as_4": 1.72,
+          "share_3_or_more_pct": 25.8,
+          "share_none_pct": 24.27,
+          "unweighted_n": 3070
+        },
+        "All Christians": {
+          "distribution_pct": {
+            "None": 14.83,
+            "1": 15.22,
+            "2": 33.04,
+            "3": 21.55,
+            "4 or more": 15.36
+          },
+          "mean_children_floor_4plus_as_4": 2.07,
+          "share_3_or_more_pct": 36.91,
+          "share_none_pct": 14.83,
+          "unweighted_n": 7327
+        },
+        "Latter-day Saints": {
+          "distribution_pct": {
+            "None": 11.96,
+            "1": 7.26,
+            "2": 13.28,
+            "3": 33.02,
+            "4 or more": 34.48
+          },
+          "mean_children_floor_4plus_as_4": 2.71,
+          "share_3_or_more_pct": 67.5,
+          "share_none_pct": 11.96,
+          "unweighted_n": 171
+        },
+        "All U.S. adults": {
+          "distribution_pct": {
+            "None": 17.53,
+            "1": 15.5,
+            "2": 33.33,
+            "3": 19.74,
+            "4 or more": 13.9
+          },
+          "mean_children_floor_4plus_as_4": 1.97,
+          "share_3_or_more_pct": 33.64,
+          "share_none_pct": 17.53,
+          "unweighted_n": 11192
+        }
+      }
+    },
+    "born_1950s_1970s": {
+      "label": "Born 1950s-1970s (about ages 44-74)",
+      "groups": {
+        "Religiously affiliated": {
+          "distribution_pct": {
+            "None": 14.85,
+            "1": 15.38,
+            "2": 34.25,
+            "3": 20.96,
+            "4 or more": 14.56
+          },
+          "mean_children_floor_4plus_as_4": 2.05,
+          "share_3_or_more_pct": 35.52,
+          "share_none_pct": 14.85,
+          "unweighted_n": 13954
+        },
+        "Religiously unaffiliated": {
+          "distribution_pct": {
+            "None": 24.11,
+            "1": 16.89,
+            "2": 33.81,
+            "3": 14.89,
+            "4 or more": 10.3
+          },
+          "mean_children_floor_4plus_as_4": 1.7,
+          "share_3_or_more_pct": 25.19,
+          "share_none_pct": 24.11,
+          "unweighted_n": 4708
+        },
+        "All Christians": {
+          "distribution_pct": {
+            "None": 14.48,
+            "1": 15.18,
+            "2": 34.14,
+            "3": 21.45,
+            "4 or more": 14.76
+          },
+          "mean_children_floor_4plus_as_4": 2.07,
+          "share_3_or_more_pct": 36.21,
+          "share_none_pct": 14.48,
+          "unweighted_n": 12783
+        },
+        "Latter-day Saints": {
+          "distribution_pct": {
+            "None": 9.78,
+            "1": 10.07,
+            "2": 15.16,
+            "3": 28.99,
+            "4 or more": 36.0
+          },
+          "mean_children_floor_4plus_as_4": 2.71,
+          "share_3_or_more_pct": 64.98,
+          "share_none_pct": 9.78,
+          "unweighted_n": 276
+        },
+        "All U.S. adults": {
+          "distribution_pct": {
+            "None": 16.95,
+            "1": 15.68,
+            "2": 34.22,
+            "3": 19.62,
+            "4 or more": 13.54
+          },
+          "mean_children_floor_4plus_as_4": 1.97,
+          "share_3_or_more_pct": 33.16,
+          "share_none_pct": 16.95,
+          "unweighted_n": 18859
+        }
+      }
+    },
+    "born_1970s": {
+      "label": "Born 1970s (about ages 44-54)",
+      "groups": {
+        "Religiously affiliated": {
+          "distribution_pct": {
+            "None": 15.74,
+            "1": 14.58,
+            "2": 33.34,
+            "3": 20.71,
+            "4 or more": 15.63
+          },
+          "mean_children_floor_4plus_as_4": 2.06,
+          "share_3_or_more_pct": 36.34,
+          "share_none_pct": 15.74,
+          "unweighted_n": 3280
+        },
+        "Religiously unaffiliated": {
+          "distribution_pct": {
+            "None": 23.8,
+            "1": 16.18,
+            "2": 32.53,
+            "3": 15.35,
+            "4 or more": 12.14
+          },
+          "mean_children_floor_4plus_as_4": 1.76,
+          "share_3_or_more_pct": 27.49,
+          "share_none_pct": 23.8,
+          "unweighted_n": 1597
+        },
+        "All Christians": {
+          "distribution_pct": {
+            "None": 15.11,
+            "1": 14.28,
+            "2": 33.1,
+            "3": 21.21,
+            "4 or more": 16.3
+          },
+          "mean_children_floor_4plus_as_4": 2.09,
+          "share_3_or_more_pct": 37.51,
+          "share_none_pct": 15.11,
+          "unweighted_n": 2948
+        },
+        "Latter-day Saints": {
+          "distribution_pct": {
+            "None": 6.0,
+            "1": 5.6,
+            "2": 13.04,
+            "3": 34.49,
+            "4 or more": 40.87
+          },
+          "mean_children_floor_4plus_as_4": 2.99,
+          "share_3_or_more_pct": 75.36,
+          "share_none_pct": 6.0,
+          "unweighted_n": 95
+        },
+        "All U.S. adults": {
+          "distribution_pct": {
+            "None": 18.13,
+            "1": 15.03,
+            "2": 33.15,
+            "3": 19.18,
+            "4 or more": 14.5
+          },
+          "mean_children_floor_4plus_as_4": 1.97,
+          "share_3_or_more_pct": 33.69,
+          "share_none_pct": 18.13,
+          "unweighted_n": 4925
+        }
+      }
+    }
+  },
+  "marital_2023_24": {
+    "Latter-day Saints": {
+      "married_pct": 68.11,
+      "living_with_partner_pct": 5.45,
+      "divorced_or_separated_pct": 7.71,
+      "widowed_pct": 4.72,
+      "never_married_pct": 14.01,
+      "unweighted_n": 558
+    },
+    "All Christians": {
+      "married_pct": 55.55,
+      "living_with_partner_pct": 8.12,
+      "divorced_or_separated_pct": 12.07,
+      "widowed_pct": 7.46,
+      "never_married_pct": 16.8,
+      "unweighted_n": 22908
+    },
+    "Religiously unaffiliated": {
+      "married_pct": 41.95,
+      "living_with_partner_pct": 17.02,
+      "divorced_or_separated_pct": 10.02,
+      "widowed_pct": 2.64,
+      "never_married_pct": 28.38,
+      "unweighted_n": 10629
+    },
+    "All U.S. adults": {
+      "married_pct": 50.98,
+      "living_with_partner_pct": 11.08,
+      "divorced_or_separated_pct": 11.33,
+      "widowed_pct": 5.75,
+      "never_married_pct": 20.85,
+      "unweighted_n": 36466
+    }
+  },
+  "transmission_2023_24": {
+    "definition": "Raised: attended religious services weekly in a family in which religion was very important. Now: attends weekly and says religion is very important.",
+    "by_birth_decade": [
+      {
+        "birth_decade": "1940s or earlier",
+        "approx_age_at_survey": "74+",
+        "still_highly_religious_pct": 51.1,
+        "raised_highly_religious_unweighted_n": 2355,
+        "share_of_cohort_raised_highly_religious_pct": 38.9,
+        "share_of_cohort_highly_religious_now_pct": 34.65
+      },
+      {
+        "birth_decade": "1950s",
+        "approx_age_at_survey": "64-74",
+        "still_highly_religious_pct": 38.97,
+        "raised_highly_religious_unweighted_n": 3035,
+        "share_of_cohort_raised_highly_religious_pct": 39.14,
+        "share_of_cohort_highly_religious_now_pct": 26.66
+      },
+      {
+        "birth_decade": "1960s",
+        "approx_age_at_survey": "54-64",
+        "still_highly_religious_pct": 34.83,
+        "raised_highly_religious_unweighted_n": 2373,
+        "share_of_cohort_raised_highly_religious_pct": 36.65,
+        "share_of_cohort_highly_religious_now_pct": 21.91
+      },
+      {
+        "birth_decade": "1970s",
+        "approx_age_at_survey": "44-54",
+        "still_highly_religious_pct": 34.09,
+        "raised_highly_religious_unweighted_n": 1869,
+        "share_of_cohort_raised_highly_religious_pct": 37.19,
+        "share_of_cohort_highly_religious_now_pct": 21.27
+      },
+      {
+        "birth_decade": "1980s",
+        "approx_age_at_survey": "34-44",
+        "still_highly_religious_pct": 30.59,
+        "raised_highly_religious_unweighted_n": 1896,
+        "share_of_cohort_raised_highly_religious_pct": 35.19,
+        "share_of_cohort_highly_religious_now_pct": 16.37
+      },
+      {
+        "birth_decade": "1990s",
+        "approx_age_at_survey": "24-34",
+        "still_highly_religious_pct": 28.86,
+        "raised_highly_religious_unweighted_n": 1515,
+        "share_of_cohort_raised_highly_religious_pct": 34.35,
+        "share_of_cohort_highly_religious_now_pct": 14.77
+      },
+      {
+        "birth_decade": "2000s",
+        "approx_age_at_survey": "18-24",
+        "still_highly_religious_pct": 27.55,
+        "raised_highly_religious_unweighted_n": 410,
+        "share_of_cohort_raised_highly_religious_pct": 34.32,
+        "share_of_cohort_highly_religious_now_pct": 13.55
+      }
+    ],
+    "all_adults_pct": 35.01,
+    "latter_day_saints_pct": 69.31,
+    "latter_day_saints_raised_hr_unweighted_n": 354
+  }
+}
