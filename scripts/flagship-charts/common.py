@@ -300,7 +300,28 @@ def render_magnitude_bar(
             for r in display_rows
         ]
 
-    bar_h = 0.62 if n_rows <= 8 else 0.68
+    # Bar thickness (in row-slot units) and top/bottom padding (as a
+    # fraction of the y-data span). The plotting band's *pixel* height is
+    # basically fixed regardless of row count (it's whatever's left between
+    # the title and the caption), while the y-data range grows with
+    # n_rows - so a low-row-count chart (e.g. 4 rows) divides that same
+    # fixed pixel band into far fewer, far taller slots than an 8-row
+    # chart does. At the old fixed bar_h/margin_frac, each of those tall
+    # slots was mostly blank gap around a comparatively thin bar, reading
+    # as excess vertical whitespace (e.g. polygamy-morality.png's 4 rows).
+    # Scale bar_h up and margin_frac down as n_rows drops below 7, so bars
+    # fill proportionally more of each oversized slot; n_rows>=7 keeps the
+    # original constants exactly (no change to any 7/8+-row chart).
+    if n_rows > 8:
+        bar_h = 0.68
+        margin_frac = 0.06
+    elif n_rows >= 7:
+        bar_h = 0.62
+        margin_frac = 0.11
+    else:
+        t = max(0.0, (n_rows - 1) / 6.0)  # 0 at n_rows=1 -> ~0.83 at n_rows=6
+        bar_h = 0.85 - 0.23 * t  # 0.85 at n_rows=1 -> ~0.66 at n_rows=6
+        margin_frac = 0.05 + 0.06 * t  # 0.05 at n_rows=1 -> ~0.10 at n_rows=6
 
     # Wrap any row label onto multiple lines if a single unbroken line would
     # eat too much of the canvas - a caller whose rows are full survey-item
@@ -375,7 +396,6 @@ def render_magnitude_bar(
 
     ax.barh(row_positions, vals, height=bar_h, color=colors, zorder=3)
     ax.set_xlim(0, max(vals) * 1.22)
-    margin_frac = 0.06 if n_rows > 8 else 0.11
     span = (row_positions[-1] + weights[-1] / 2) - (row_positions[0] - weights[0] / 2)
     pad = span * margin_frac
     ax.set_ylim(row_positions[0] - weights[0] / 2 - pad, row_positions[-1] + weights[-1] / 2 + pad)

@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted. Share who strongly or somewhat agree (top-two-box) that complaints about sexual harassment cause more problems than they solve; don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "harassment_complaints_agree": {
+    "Mormon": {
+      "pct": 36.4
+    },
+    "Protestant": {
+      "pct": 36.0
+    },
+    "Catholic": {
+      "pct": 36.9
+    },
+    "Jewish": {
+      "pct": 22.4
+    },
+    "Buddhist": {
+      "pct": 25.4
+    },
+    "Atheist": {
+      "pct": 10.7
+    },
+    "Agnostic": {
+      "pct": 18.5
+    },
+    "Nothing in particular": {
+      "pct": 28.0
+    },
+    "Something else": {
+      "pct": 28.8
+    }
+  }
+}

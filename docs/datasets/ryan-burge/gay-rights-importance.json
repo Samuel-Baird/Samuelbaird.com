@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, 2017 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2017, weighted by weight_2017. Share saying gay rights is a very or somewhat important issue (top-two-box); don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "gay_rights_important": {
+    "Mormon": {
+      "pct": 33.2
+    },
+    "Protestant": {
+      "pct": 36.6
+    },
+    "Catholic": {
+      "pct": 42.3
+    },
+    "Jewish": {
+      "pct": 65.0
+    },
+    "Buddhist": {
+      "pct": 49.3
+    },
+    "Atheist": {
+      "pct": 84.0
+    },
+    "Agnostic": {
+      "pct": 80.8
+    },
+    "Nothing in particular": {
+      "pct": 51.5
+    },
+    "Something else": {
+      "pct": 47.6
+    }
+  }
+}

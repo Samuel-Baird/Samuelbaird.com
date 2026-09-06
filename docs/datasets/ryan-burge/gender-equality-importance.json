@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, 2017 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2017, weighted by weight_2017. Share saying gender equality is a very or somewhat important issue (top-two-box); don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "gender_equality_important": {
+    "Mormon": {
+      "pct": 51.2
+    },
+    "Protestant": {
+      "pct": 63.2
+    },
+    "Catholic": {
+      "pct": 63.5
+    },
+    "Jewish": {
+      "pct": 71.5
+    },
+    "Buddhist": {
+      "pct": 91.5
+    },
+    "Atheist": {
+      "pct": 83.0
+    },
+    "Agnostic": {
+      "pct": 81.3
+    },
+    "Nothing in particular": {
+      "pct": 67.7
+    },
+    "Something else": {
+      "pct": 63.1
+    }
+  }
+}

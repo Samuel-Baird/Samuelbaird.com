@@ -73,6 +73,35 @@ def main() -> None:
         fonts=fonts,
     )
 
+    # A second, narrower cut of the same mormons-vs-public rows: drops
+    # "Satisfied with their own life" and "Prefer a smaller government",
+    # leaving the three items that read as a "core values" comparison
+    # (morality, family, and social issues) rather than mixing in general
+    # well-being and political preference. Reuses the same data.json rows
+    # (nothing new to transcribe) - just a filtered view, rendered
+    # alongside (not replacing) the original 5-row chart above.
+    core_labels = [
+        "Premarital sex is morally wrong",
+        "Currently married",
+        "Homosexuality should be discouraged",
+    ]
+    vs_core_values = {label: vs_values[label] for label in core_labels}
+    render_paired_bar(
+        rows=sorted(vs_core_values, key=lambda label: -vs_core_values[label]["Mormons"]),
+        series_order=["Mormons", "U.S. general public"],
+        series_colors={
+            "Mormons": color_for_group("Latter-day Saint"),
+            "U.S. general public": MUTED,
+        },
+        values=vs_core_values,
+        title="Mormons and the public on core values",
+        subtitle="Percent of each group, 2011",
+        caption_paragraphs=[],
+        handle=HANDLE,
+        out_path=OUT_DIR / "mormons-vs-public-core-values.png",
+        fonts=fonts,
+    )
+
     mission = {r["label"]: r["pct"] for r in DATA["charts"]["mission-service"]["rows"]}
     render_magnitude_bar(
         rows=["Men", "Women", "All Mormons"],

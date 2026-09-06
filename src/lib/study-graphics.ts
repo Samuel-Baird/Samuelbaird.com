@@ -103,6 +103,29 @@ function pewMormonsVsPublicGraphic(): Graphic {
   };
 }
 
+function pewMormonsVsPublicCoreGraphic(): Graphic {
+  const { rows } = pewMormonsInAmericaData.charts["mormons-vs-public"];
+  const coreLabels = new Set([
+    "Premarital sex is morally wrong",
+    "Currently married",
+    "Homosexuality should be discouraged",
+  ]);
+  const coreRows = rows.filter((r) => coreLabels.has(r.label));
+  const alt = coreRows
+    .map((r) => `${r.label}: Mormons ${r.mormon}%, general public ${r.public}%`)
+    .join("; ");
+  return {
+    title: "Mormons and the public on core values",
+    description:
+      "Where self-identified Mormons and the U.S. general public diverged on morality, marriage, and social issues, excluding the life-satisfaction and small-government items, 2011.",
+    imageSrc:
+      "/study-graphics/pew-mormons-in-america-2012/mormons-vs-public-core-values.png",
+    width: 1080,
+    height: 1350,
+    alt: `Paired bar chart comparing self-identified U.S. Mormons with the general public on core values, 2011. ${alt}.`,
+  };
+}
+
 function pewMissionServiceGraphic(): Graphic {
   const { rows } = pewMormonsInAmericaData.charts["mission-service"];
   const alt = rows.map((r) => `${r.label} ${r.pct}%`).join(", ");
@@ -247,6 +270,7 @@ const RAW_STUDY_GRAPHICS: StudyGraphicsEntry[] = [
     graphics: [
       pewReligiousPracticeGraphic(),
       pewMormonsVsPublicGraphic(),
+      pewMormonsVsPublicCoreGraphic(),
       pewMissionServiceGraphic(),
       pewPerceivedDiscriminationGraphic(),
     ],

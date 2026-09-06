@@ -118,25 +118,58 @@ def _draw_title(
     9x11.25in canvas) before the title text starts - defaults match every
     other chart in this pipeline; shrink them on a chart-by-chart basis to
     let that chart's content fill more of the canvas, same reasoning as
-    title_wrap_width above."""
+    title_wrap_width above.
+
+    title_wrap_width is only a character-count budget - an approximation of
+    RobotoSlab Bold's actual rendered width, since a m/w/g-heavy title runs
+    visibly wider than a same-length title with more i/l/t's - and with no
+    safety net a manually-guessed width (or the 42-char default) can overflow
+    the canvas's right edge for a particular title (e.g. "Is a stay-at-home
+    parent better for kids?"). Guard against that the same way
+    scripts/flagship-charts/common.py's _draw_title does: draw at
+    title_wrap_width, measure the widest line's real pixel extent (including
+    the qualifier line, if any), and narrow the wrap (redrawing) until every
+    line clears the right-edge buffer, flooring at 20 characters so a single
+    very-wide word can't spin this into an unbounded loop."""
     main_title, qualifier = split_title_qualifier(title)
-    title_lines = textwrap.wrap(main_title, width=title_wrap_width)
     line_spacing = title_fontsize / 650
     title_top = top_margin
-    for i, line in enumerate(title_lines):
-        fig.text(
-            left_margin, title_top - i * line_spacing, line,
-            fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+
+    edge_margin_px = 0.045 * FIG_W_IN * DPI
+    max_right_px = FIG_W_IN * DPI - edge_margin_px
+    wrap_width = title_wrap_width
+    while True:
+        title_lines = textwrap.wrap(main_title, width=wrap_width)
+        texts = [
+            fig.text(
+                left_margin, title_top - i * line_spacing, line,
+                fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+            )
+            for i, line in enumerate(title_lines)
+        ]
+        n_title_lines = len(title_lines)
+        qualifier_text = None
+        if qualifier:
+            # Rendered on its own line, at a visibly smaller size than the
+            # primary title - see chart_style.split_title_qualifier's docstring.
+            qualifier_fontsize = title_fontsize * 0.55
+            qualifier_text = fig.text(
+                left_margin, title_top - n_title_lines * line_spacing, qualifier,
+                fontproperties=fonts["title"], fontsize=qualifier_fontsize, color=INK, ha="left", va="top",
+            )
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        probe_texts = texts + ([qualifier_text] if qualifier_text is not None else [])
+        max_right_reached = max(
+            (t.get_window_extent(renderer=renderer).x1 for t in probe_texts), default=0,
         )
-    n_title_lines = len(title_lines)
+        if max_right_reached <= max_right_px or wrap_width <= 20:
+            break
+        for t in probe_texts:
+            t.remove()
+        wrap_width -= 2
+
     if qualifier:
-        # Rendered on its own line, at a visibly smaller size than the
-        # primary title - see chart_style.split_title_qualifier's docstring.
-        qualifier_fontsize = title_fontsize * 0.55
-        fig.text(
-            left_margin, title_top - n_title_lines * line_spacing, qualifier,
-            fontproperties=fonts["title"], fontsize=qualifier_fontsize, color=INK, ha="left", va="top",
-        )
         n_title_lines += qualifier_fontsize / title_fontsize
     subtitle_y = title_top - n_title_lines * line_spacing - 0.015
     fig.text(
