@@ -1966,7 +1966,7 @@ function samesexMarriage2014Graphic(): Graphic {
     .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
     .join(", ");
   return {
-    title: "Support for same-sex marriage, 2014",
+    title: "Favor legal recognition of same-sex marriage (2014)",
     description: "Share who favor allowing gays and lesbians to marry legally, by religious tradition.",
     imageSrc: "/data-explorer/pew-rls-2014/samesex-marriage.png",
     width: 1080, height: 1350,
@@ -4803,7 +4803,7 @@ function cces2016ProlifeGraphic(): Graphic {
 function cces2016GaymGraphic(): Graphic {
   const alt = cces2016PctAlt(cces2016Data.gaym_favor);
   return {
-    title: "Favor same-sex marriage",
+    title: "Favor legal recognition of same-sex marriage (2016)",
     description: "Share who favor allowing gays and lesbians to marry legally.",
     imageSrc: "/data-explorer/cces-2016/gaym.png",
     width: 1080,
