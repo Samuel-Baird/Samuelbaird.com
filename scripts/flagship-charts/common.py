@@ -357,7 +357,14 @@ def render_magnitude_bar(
     max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px
     row_wrap_width = 30
     while True:
-        wrapped_labels = {r: "\n".join(textwrap.wrap(r, width=row_wrap_width)) for r in display_rows}
+        # A row label that already contains a literal newline is a caller's
+        # own deliberate line break (e.g. forcing a short label onto two
+        # lines to free up horizontal space for the bars) - respect it
+        # exactly instead of re-wrapping by character width.
+        wrapped_labels = {
+            r: r if "\n" in r else "\n".join(textwrap.wrap(r, width=row_wrap_width))
+            for r in display_rows
+        }
         probes = [
             fig.text(0, 0, wrapped_labels[r], fontproperties=fonts["bold"], fontsize=MIN.LEGEND)
             for r in display_rows
