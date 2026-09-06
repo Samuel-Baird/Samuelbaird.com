@@ -470,6 +470,101 @@ const RAW_DATASETS: Dataset[] = [
     graphics: [religiousTraditionShiftsGraphic()],
   },
   {
+    slug: "family-proclamation-oped",
+    name: "Family Proclamation Op-Ed Graphics",
+    shortDescription:
+      "Six charts built for a Deseret News op-ed on marriage, parenting, and religious practice, thirty years after the Family Proclamation.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center",
+    fieldedPeriod: "2007, 2014, and 2023-24",
+    description:
+      "Six charts built for the op-ed \"Thirty Years After the Family Proclamation, the Data " +
+      "Shows Three Americas,\" drawn from Pew's 2007, 2014, and 2023-24 Religious Landscape " +
+      "Studies. The set covers Christian/unaffiliated/Latter-day Saint trends since 2007, " +
+      "parents' religious practice with their children, completed fertility, how much a " +
+      "religious upbringing \"sticks\" by birth decade, five Christian traditions' shares over " +
+      "16 years, and marriage and family size by religious group. Styled in the Deseret News' " +
+      "public brand colors (see BRANDING.md and deseret-news-op-ed/README.md in the site's " +
+      "repository for the full palette and every number's source) as an independent Latter-day " +
+      "Stats production - not made by, or affiliated with, Deseret News.",
+    citation:
+      "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\" Pew Research Center. " +
+      "2015. \"2014 Religious Landscape Study.\" Pew Research Center. 2025. \"2023-24 Religious " +
+      "Landscape Study (RLS) Dataset.\" doi: 10.58094/3kwb-bf52.",
+    sourceUrl: "https://www.pewresearch.org/religious-landscape-study/",
+    category: "Op-Ed Graphics",
+    graphics: [
+      {
+        title: "Christian, religiously unaffiliated, and Latter-day Saint shares of U.S. adults, 2007-2023-24",
+        description:
+          "Share of U.S. adults identifying as Christian, religiously unaffiliated, or Latter-day " +
+          "Saint across Pew's three Religious Landscape Studies.",
+        imageSrc: "/data-explorer/family-proclamation-oped/divergence-2007-2023-24.png",
+        width: 2400, height: 1600,
+        alt: "Line chart: Christian share of U.S. adults fell from 78% (2007) to 62% (2023-24); " +
+          "religiously unaffiliated rose from 16% to 29%; Latter-day Saint held from 1.7% to 1.5%.",
+        credit: "Latter-day Stats",
+      },
+      {
+        title: "Parents who pray with, provide religious education to, or send their children to religious school, by religious group",
+        description:
+          "Share of parents of children under 18 who do at least one of three religious " +
+          "practices with their children, 2023-24.",
+        imageSrc: "/data-explorer/family-proclamation-oped/parents-practice.png",
+        width: 2400, height: 1600,
+        alt: "Horizontal bar chart: 84% of Latter-day Saint parents, 70% of all Christian " +
+          "parents, and 21% of religiously unaffiliated parents pray or read scripture with, " +
+          "provide religious education to, or send to religious school their children under 18.",
+        credit: "Latter-day Stats",
+      },
+      {
+        title: "Number of children ever born, Christians vs. religiously unaffiliated adults born in the 1960s and 1970s",
+        description:
+          "Full distribution of children ever born - none, 1, 2, 3, or 4 or more - Christians " +
+          "compared with the religiously unaffiliated, 2023-24.",
+        imageSrc: "/data-explorer/family-proclamation-oped/completed-fertility.png",
+        width: 2400, height: 1600,
+        alt: "Stacked bar chart: 37% of Christians vs. 26% of religiously unaffiliated adults " +
+          "born in the 1960s-70s have had three or more children; 15% vs. 24% have had none.",
+        credit: "Latter-day Stats",
+      },
+      {
+        title: "Share of adults raised highly religious who are still highly religious today, by birth decade",
+        description:
+          "Among U.S. adults raised attending religious services weekly in a family where " +
+          "religion was very important, the share who still attend weekly and consider " +
+          "religion very important today, by birth decade, 2023-24.",
+        imageSrc: "/data-explorer/family-proclamation-oped/transmission-gap.png",
+        width: 2400, height: 1600,
+        alt: "Column chart declining from 51% among adults born in the 1940s or earlier to 28% " +
+          "among adults born in the 2000s.",
+        credit: "Latter-day Stats",
+      },
+      {
+        title: "Evangelical, Mainline, Southern Baptist, United Methodist, and Latter-day Saint shares of U.S. adults, 2007 vs. 2023-24",
+        description: "Share of U.S. adults identifying with five Christian groups in 2007 and 2023-24.",
+        imageSrc: "/data-explorer/family-proclamation-oped/denominational-decline.png",
+        width: 2400, height: 1600,
+        alt: "Dumbbell chart: Evangelical Protestant 26% to 23%, Mainline Protestant 18% to " +
+          "11%, Southern Baptist Convention 6.7% to 4.4%, United Methodist Church 5.1% to " +
+          "2.7%, Latter-day Saint 1.7% to 1.5%.",
+        credit: "Latter-day Stats",
+      },
+      {
+        title: "Marriage and family size among Latter-day Saints, Christians, and the religiously unaffiliated",
+        description:
+          "Share currently married, and share with three or more children among adults born " +
+          "in the 1960s and 1970s, by religious group, 2023-24.",
+        imageSrc: "/data-explorer/family-proclamation-oped/lds-family-formation.png",
+        width: 2400, height: 1600,
+        alt: "Grouped bar chart: currently married - Latter-day Saints 68%, all Christians " +
+          "56%, religiously unaffiliated 42%. Three or more children - Latter-day Saints 68%, " +
+          "all Christians 37%, religiously unaffiliated 26%.",
+        credit: "Latter-day Stats",
+      },
+    ],
+  },
+  {
     slug: "state-of-theology",
     name: "State of Theology Survey",
     shortDescription:
