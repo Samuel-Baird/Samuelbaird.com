@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 132, fielded July 31-Aug. 6, 2023.",
+  "method": "Population is respondent's religion (F_RELIG; this wave has no F_RELTRAD frame variable, see this dataset's README). Share answering \"definitely true\" or \"probably true\" to DTHLKE_f_W132 (\"Do you believe people who have died can be united with other loved ones who have already died?\", one item in a six-part battery asked of all respondents); \"not sure\" and refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W132 variable.",
+  "total_weighted_n": 11201.000070994847,
+  "total_unweighted_n": 11201,
+  "group_order": [
+    "Mormon",
+    "Orthodox Christian",
+    "Catholic",
+    "Protestant",
+    "Other",
+    "Hindu",
+    "Nothing in particular",
+    "Buddhist",
+    "Muslim",
+    "Jewish",
+    "Agnostic",
+    "Atheist",
+    "All U.S. adults"
+  ],
+  "reunited_with_loved_ones": {
+    "Protestant": {
+      "pct": 79.82,
+      "valid_unweighted_n": 3879,
+      "group_unweighted_n": 4667
+    },
+    "Catholic": {
+      "pct": 84.51,
+      "valid_unweighted_n": 1800,
+      "group_unweighted_n": 2153
+    },
+    "Mormon": {
+      "pct": 98.44,
+      "valid_unweighted_n": 175,
+      "group_unweighted_n": 185
+    },
+    "Orthodox Christian": {
+      "pct": 95.16,
+      "valid_unweighted_n": 38,
+      "group_unweighted_n": 47
+    },
+    "Jewish": {
+      "pct": 46.56,
+      "valid_unweighted_n": 168,
+      "group_unweighted_n": 222
+    },
+    "Muslim": {
+      "pct": 56.63,
+      "valid_unweighted_n": 63,
+      "group_unweighted_n": 77
+    },
+    "Buddhist": {
+      "pct": 60.04,
+      "valid_unweighted_n": 75,
+      "group_unweighted_n": 100
+    },
+    "Hindu": {
+      "pct": 66.63,
+      "valid_unweighted_n": 62,
+      "group_unweighted_n": 90
+    },
+    "Atheist": {
+      "pct": 10.84,
+      "valid_unweighted_n": 599,
+      "group_unweighted_n": 658
+    },
+    "Agnostic": {
+      "pct": 37.94,
+      "valid_unweighted_n": 480,
+      "group_unweighted_n": 678
+    },
+    "Other": {
+      "pct": 76.08,
+      "valid_unweighted_n": 219,
+      "group_unweighted_n": 271
+    },
+    "Nothing in particular": {
+      "pct": 64.39,
+      "valid_unweighted_n": 1499,
+      "group_unweighted_n": 1981
+    },
+    "All U.S. adults": {
+      "pct": 70.8,
+      "valid_unweighted_n": 9108,
+      "group_unweighted_n": 11201
+    }
+  }
+}

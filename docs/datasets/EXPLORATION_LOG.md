@@ -1094,3 +1094,63 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   error. This dataset's remaining untouched material (q37/q38, q55a-c)
   is now confirmed duplicative of 2014-wave charts rather than merely
   suspected; consider this dataset fully mined.
+
+- **pew-atp-w132-2023** (American Trends Panel, Wave 132, spirituality
+  battery) — sixth/seventh chart, 2026-09-06: the five most recently
+  shipped commits were pew-rls-2007, pew-rls-2014, pew-rls-2014-recontact,
+  pew-black-faith-2021, and pew-hispanics-religion-2007 — all excluded per
+  this iteration's instructions, so picked a different dataset. This log's
+  own entry for this dataset was stale: it said "had 1 chart" but a check
+  of `data-explorer.ts` and `scripts/pew-atp-w132-2023/` found the dataset
+  already had 5 shipped charts (an older, never-logged commit `1097185`
+  had added `spirituality-important.json`/`SPIRIMP_W132` and
+  `tattoo-piercing-spiritual.json`/`SPIRTHINGS_b` - both items this log's
+  stale entry still listed as "remaining candidates"). Backfilled the
+  dataset's own `README.md` Status section to list all 5 pre-existing
+  charts accurately before adding more. From the wave's untouched six-part
+  "Do you believe people who have died can..." (DTHLKE) battery, checked
+  all six sub-items directly by weighted F_RELIG crosstab (this wave has
+  no F_RELTRAD) rather than trusting the old candidate list, and shipped
+  two as a tight cluster: `dead-aware-living.json` (DTHLKE_a, "be aware of
+  things going on among the living" - 89.9% of Latter-day Saints say
+  definitely/probably true, highest of any named tradition by a wide
+  margin over 2nd-place Catholic at 73.6%, ties to LDS spirit-world
+  doctrine in D&C 138 and to temple/family-history work done on behalf of
+  the dead) and `reunited-with-loved-ones.json` (DTHLKE_f, "be united with
+  other loved ones who have already died" - 98.4% of Latter-day Saints say
+  definitely/probably true, highest of any named tradition over 2nd-place
+  Orthodox Christian at 95.2%, maps directly onto LDS eternal-marriage/
+  family-sealing doctrine in D&C 132). Both Mormon n=170-175 valid,
+  comfortably above the 30-floor. Checked the battery's other four
+  sub-items and skipped them: DTHLKE_c ("provide assistance, protection or
+  guidance") confirmed as the item this log had already flagged as
+  overlapping `pew-atp-w143-2024`'s shipped `believe-ancestor-spirits.json`
+  help/harm framing; DTHLKE_b ("communicate with the living") is
+  thematically too close to this pass's own DTHLKE_a pick from the same
+  battery; DTHLKE_d (dead can harm the living) is a negative-framing
+  sibling with a weaker doctrinal tie; DTHLKE_e (reincarnation) likely
+  duplicates `pew-atp-w143-2024`'s already-shipped
+  `believes-in-reincarnation.json`. Also checked and dropped
+  `SPIRTHINGS_c`/`SPIRTHINGS_a` (crystals/jewelry for spiritual purposes -
+  Mormon 8.1%/mid-pack, no distinctive story once computed) and
+  `LIFESPIR_W132` (became more/less spiritual over time - Mormon 50.1%,
+  essentially tied with Protestant 51.2%, no distinctiveness story).
+  Computed by `scripts/pew-atp-w132-2023/dead_aware_living.py` and
+  `reunited_with_loved_ones.py` → `docs/datasets/pew-atp-w132-2023/dead-
+  aware-living.json`/`reunited-with-loved-ones.json`, rendered by the
+  matching `render_*_chart.py` scripts (manual `\n` subtitle breaks added
+  after the first render caught a clipped subtitle on the one-line-title
+  chart — this dataset's existing scripts hadn't needed one since their
+  titles wrap to two lines on their own) → `public/data-explorer/pew-atp-
+  w132-2023/dead-aware-living.png`/`reunited-with-loved-ones.png` (13 rows
+  each, checked by reading both PNGs directly — no label collision or
+  clipping after the subtitle fix). Wired into `src/lib/data-explorer.ts`
+  (`deadAwareLivingGraphic()`, `reunitedWithLovedOnesGraphic()`).
+  `tsc --noEmit` clean; both PNGs confirmed served at 200 OK, 1080x1350,
+  via the local dev server, and the dataset's page loads with no console
+  errors (only benign dev-server HMR websocket noise, unrelated to this
+  change). Remaining untouched candidates, now narrowed to genuinely thin
+  material: `DTHLKE_b`/`DTHLKE_c`/`DTHLKE_d`/`DTHLKE_e` (all checked and
+  dropped this pass, see above), `SPIRTHINGS_a`/`SPIRTHINGS_c` (checked and
+  dropped this pass), `LIFESPIR_W132` (checked and dropped this pass) -
+  consider this dataset fully mined.

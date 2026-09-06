@@ -153,7 +153,9 @@ import nontechPrayerGroupsData from "../../docs/datasets/pew-atp-w117-2022/nonte
 import watchOnlineMonthlyData from "../../docs/datasets/pew-atp-w117-2022/watch-online-monthly.json";
 import followsOwnLeadersData from "../../docs/datasets/pew-atp-w117-2022/follows-own-leaders.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
+import deadAwareLivingData from "../../docs/datasets/pew-atp-w132-2023/dead-aware-living.json";
 import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
+import reunitedWithLovedOnesData from "../../docs/datasets/pew-atp-w132-2023/reunited-with-loved-ones.json";
 import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religious-community.json";
 import spiritualityImportantData from "../../docs/datasets/pew-atp-w132-2023/spirituality-important.json";
 import tattooPiercingSpiritualData from "../../docs/datasets/pew-atp-w132-2023/tattoo-piercing-spiritual.json";
@@ -1291,6 +1293,8 @@ const RAW_DATASETS: Dataset[] = [
       hasCrossGraphic(),
       spiritualityImportantGraphic(),
       tattooPiercingSpiritualGraphic(),
+      deadAwareLivingGraphic(),
+      reunitedWithLovedOnesGraphic(),
     ],
   },
   {
@@ -3147,6 +3151,34 @@ function tattooPiercingSpiritualGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w132-2023/tattoo-piercing-spiritual.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who have a tattoo or piercing for spiritual purposes, by religion, 2023. ${alt}.`,
+  };
+}
+
+function deadAwareLivingGraphic(): Graphic {
+  const { group_order: order, dead_aware_of_living: results } = deadAwareLivingData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Are the dead still aware of the living?",
+    description: "Share who believe people who have died can be aware of things going on among the living, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/dead-aware-living.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe the dead can be aware of things going on among the living, by religion, 2023. ${alt}.`,
+  };
+}
+
+function reunitedWithLovedOnesGraphic(): Graphic {
+  const { group_order: order, reunited_with_loved_ones: results } = reunitedWithLovedOnesData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Will you be reunited with loved ones who have died?",
+    description: "Share who believe people who have died can be united with other loved ones who have already died, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/reunited-with-loved-ones.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who believe they will be reunited with loved ones who have died, by religion, 2023. ${alt}.`,
   };
 }
 

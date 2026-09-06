@@ -51,7 +51,7 @@ here.
 
 ## Status
 
-Three charts shipped, wired into the Data Explorer entry
+Seven charts shipped, wired into the Data Explorer entry
 (`src/lib/data-explorer.ts`, slug `pew-atp-w132-2023`), using the shared
 chart shape in `scripts/flagship-charts/common.py`:
 
@@ -79,7 +79,53 @@ chart shape in `scripts/flagship-charts/common.py`:
   tradition (Protestant 41.7%, Catholic 72.8%, Orthodox Christian 82.0%) —
   tracks the Church's well-known choice not to use the cross as a symbol of
   the faith.
+- `spirituality-important.json` (share calling spirituality "very
+  important" in their life, `SPIRIMP_W132`, asked of all respondents) —
+  computed by `spirituality_important.py`, rendered by
+  `render_spirituality_important_chart.py`. Latter-day Saints report this
+  at 66.5%, the highest of any Christian tradition (Protestant 60.1%,
+  Catholic 36.3%) and essentially tied with Muslims (66.7%).
+- `tattoo-piercing-spiritual.json` (share who have a tattoo or piercing
+  "for spiritual purposes," `SPIRTHINGS_b_W132`, one item in the same
+  battery as `has-cross.json`) — computed by
+  `tattoo_piercing_spiritual.py`, rendered by
+  `render_tattoo_piercing_spiritual_chart.py`.
+- `dead-aware-living.json` (share who believe people who have died "can be
+  aware of things going on among those who are still living,"
+  `DTHLKE_a_W132`, one item in a six-part "Do you believe people who have
+  died can..." battery asked of all respondents) — computed by
+  `dead_aware_living.py`, rendered by `render_dead_aware_living_chart.py`.
+  Latter-day Saints report this at 89.9%, the highest of any named
+  tradition by a wide margin (next: Catholic 73.6%, Orthodox Christian
+  64.2%, Protestant 57.6%) — ties to LDS doctrine of an active spirit world
+  (D&C 138) and to temple/family-history work performed on behalf of
+  deceased ancestors.
+- `reunited-with-loved-ones.json` (share who believe people who have died
+  "can be united with other loved ones who have already died,"
+  `DTHLKE_f_W132`, the last item in the same battery as
+  `dead-aware-living.json`) — computed by `reunited_with_loved_ones.py`,
+  rendered by `render_reunited_with_loved_ones_chart.py`. Latter-day Saints
+  report this at 98.4%, the highest of any named tradition (next: Orthodox
+  Christian 95.2%, Catholic 84.5%, Protestant 79.8%) — maps directly onto
+  the LDS doctrine of eternal marriage and family sealing (D&C 132), which
+  makes permanent reunion with family a defining, distinctive feature of
+  LDS theology rather than a generic afterlife hope. Shipped alongside
+  `dead-aware-living.json` as a tight two-chart cluster from the same
+  DTHLKE battery — distinct from `has-cross.json`/`tattoo-piercing-
+  spiritual.json` (physical objects, not beliefs) and from
+  `pew-atp-w143-2024`'s `believe-ancestor-spirits.json` (a different
+  wave's merged help/harm framing).
 
 Further charts from this dataset should follow the same two-stage pattern.
 Groups under 30 valid respondents are dropped (`MIN_VALID_N` convention,
-same as every other chart in this pipeline).
+same as every other chart in this pipeline). Remaining untouched
+candidates in the DTHLKE/SPIRTHINGS battery: `DTHLKE_b`/`DTHLKE_c` (both
+close to already-shipped material - `c`'s "assistance/protection/guidance"
+framing overlaps `pew-atp-w143-2024`'s ancestor-spirits chart, `b`'s
+"communicate with the living" is close to this pass's `dead-aware-living`),
+`DTHLKE_d` (dead can harm the living, negative framing), `DTHLKE_e`
+(reincarnation, likely close to `pew-atp-w143-2024`'s already-shipped
+reincarnation chart), `SPIRTHINGS_a`/`SPIRTHINGS_c` (jewelry/crystals for
+spiritual purposes, weak/no distinctive LDS story once computed), and
+`LIFESPIR_W132` (became more/less spiritual over time - Mormon 50.1% is
+mid-pack, no distinctiveness story).
