@@ -33,6 +33,10 @@ import faithMattersConvertOkData from "../../docs/datasets/ryan-burge/faith-matt
 import faithMattersReligiousGivingData from "../../docs/datasets/ryan-burge/faith-matters-religious-giving.json";
 import faithMattersMarryWithinFaithData from "../../docs/datasets/ryan-burge/faith-matters-marry-within-faith.json";
 import faithMattersTalkReligionData from "../../docs/datasets/ryan-burge/faith-matters-talk-religion.json";
+import faithMatters2011WorldEndingData from "../../docs/datasets/ryan-burge/faith-matters-2011-world-ending.json";
+import faithMatters2011SalvationDeedsData from "../../docs/datasets/ryan-burge/faith-matters-2011-salvation-deeds.json";
+import faithMatters2011MosqueData from "../../docs/datasets/ryan-burge/faith-matters-2011-mosque.json";
+import faithMatters2011ReligionInfluenceData from "../../docs/datasets/ryan-burge/faith-matters-2011-religion-influence.json";
 import ftFeministsData from "../../docs/datasets/ryan-burge/ft-feminists.json";
 import ftGaysLesbiansData from "../../docs/datasets/ryan-burge/ft-gays-lesbians.json";
 import voterIdeasBarsData from "../../docs/datasets/ryan-burge/voter-ideas-bars.json";
@@ -895,6 +899,34 @@ const RAW_DATASETS: Dataset[] = [
       faithMattersReligiousGivingGraphic(),
       faithMattersMarryWithinFaithGraphic(),
       faithMattersTalkReligionGraphic(),
+    ],
+  },
+  {
+    slug: "faith-matters-2011",
+    name: "Faith Matters Survey 2011",
+    shortDescription:
+      "The second American Grace wave: 2,322 U.S. adults re-interviewed or newly sampled in 2011, with new items on the end times, salvation, and religious tolerance.",
+    sponsor: "Robert D. Putnam and David E. Campbell (Harvard / Notre Dame)",
+    fielder: "International Communications Research",
+    fieldedPeriod: "2011",
+    description:
+      "The 2011 Faith Matters Survey is the follow-up wave to Putnam and Campbell's 2006 " +
+      "survey behind American Grace — 1,361 of the 2006 respondents re-interviewed, plus a " +
+      "fresh sample of 751 adults and 210 young adults, for 2,322 interviews in all. It " +
+      "repeats most of the 2006 battery and adds new items: whether the world is soon " +
+      "coming to an end, whether salvation comes through deeds or faith, how respondents " +
+      "would react to a mosque or church being built in their community, and whether " +
+      "organized religion has too much or too little influence on politics. Its own " +
+      "religious-tradition coding keeps Latter-day Saints separate (49 respondents), so " +
+      "full-sample items can be broken out by tradition. Because most respondents are " +
+      "2006 panelists, the two waves are shown as separate datasets rather than pooled. " +
+      "This copy is redistributed by Ryan Burge (github.com/ryanburge).",
+    sourceUrl: "https://www.thearda.com/data-archive?fid=FTHMAT11",
+    graphics: [
+      faithMatters2011WorldEndingGraphic(),
+      faithMatters2011SalvationDeedsGraphic(),
+      faithMatters2011MosqueGraphic(),
+      faithMatters2011ReligionInfluenceGraphic(),
     ],
   },
   {
@@ -5653,6 +5685,64 @@ function faithMattersTalkReligionGraphic(): Graphic {
     width: 1080, height: 1350,
     credit: "via Ryan Burge",
     alt: `Bar chart: share saying they talk about religion with family and friends roughly daily, by religious tradition, 2006. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+/**
+ * Faith Matters 2011 (the second American Grace wave, via Ryan Burge): four
+ * items new in 2011, by the survey's own religious-tradition coding. Same
+ * shape and helpers as the 2006 set above; computed by
+ * scripts/ryan-burge/faith_matters_2011.py, rendered by
+ * scripts/ryan-burge/render_faith_matters_2011_charts.py.
+ */
+function faithMatters2011WorldEndingGraphic(): Graphic {
+  const { group_order: order, world_ending_soon: results } = faithMatters2011WorldEndingData;
+  return {
+    title: "Believe the world is soon coming to an end",
+    description: "Share saying yes, by religious tradition, 2011.",
+    imageSrc: "/data-explorer/faith-matters-2011/world-ending-soon.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying they believe the world is soon coming to an end, by religious tradition, 2011. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function faithMatters2011SalvationDeedsGraphic(): Graphic {
+  const { group_order: order, salvation_through_deeds: results } = faithMatters2011SalvationDeedsData;
+  return {
+    title: "The path to salvation comes through our actions or deeds",
+    description:
+      "Share choosing that over “the path to salvation lies in our beliefs or faith,” by religious tradition, 2011.",
+    imageSrc: "/data-explorer/faith-matters-2011/salvation-through-deeds.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying the path to salvation comes through our actions or deeds rather than beliefs or faith, by religious tradition, 2011. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function faithMatters2011MosqueGraphic(): Graphic {
+  const { group_order: order, mosque_not_bothered_or_welcome: results } = faithMatters2011MosqueData;
+  return {
+    title: "A large mosque built in my community would not bother me",
+    description:
+      "Share saying a large mosque built in their community would not bother them or would be something they welcome, by religious tradition, 2011.",
+    imageSrc: "/data-explorer/faith-matters-2011/mosque-in-community.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying a large mosque built in their community would not bother them or would be welcome, by religious tradition, 2011. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function faithMatters2011ReligionInfluenceGraphic(): Graphic {
+  const { group_order: order, religion_too_little_influence: results } = faithMatters2011ReligionInfluenceData;
+  return {
+    title: "Organized religion has too little influence on American politics",
+    description:
+      "Share saying organized religion has too little influence on American politics, versus about the right amount or too much, by religious tradition, 2011.",
+    imageSrc: "/data-explorer/faith-matters-2011/religion-too-little-influence.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying organized religion has too little influence on American politics, by religious tradition, 2011. ${faithMattersAlt(order, results)}.`,
   };
 }
 

@@ -1,0 +1,70 @@
+{
+  "source": "Faith Matters Survey 2011 (Robert D. Putnam and David E. Campbell), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: 2011 respondents with a coded religious tradition (RELTRA11), weighted by WGTTOT11. Share saying a large mosque built in their community would 'not bother' them or would 'be something you welcome' (vs. bother them a lot or a little), Q13-4. Split-sample item; Latter-day Saint n=34. Don't know/refused excluded from the base. Latter-day Saint = RELTRA11 6 (Mormon), 49 unweighted respondents in the 2011 sample.",
+  "total_unweighted_n": 2322,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other non-Christian",
+    "Other Protestant/Christian",
+    "All U.S. adults"
+  ],
+  "mosque_not_bothered_or_welcome": {
+    "Latter-day Saint": {
+      "pct": 68.05,
+      "valid_unweighted_n": 34,
+      "group_unweighted_n": 49
+    },
+    "Evangelical Protestant": {
+      "pct": 48.1,
+      "valid_unweighted_n": 331,
+      "group_unweighted_n": 533
+    },
+    "Historically Black Protestant": {
+      "pct": 74.79,
+      "valid_unweighted_n": 113,
+      "group_unweighted_n": 167
+    },
+    "Mainline Protestant": {
+      "pct": 62.15,
+      "valid_unweighted_n": 216,
+      "group_unweighted_n": 371
+    },
+    "Catholic": {
+      "pct": 67.36,
+      "valid_unweighted_n": 297,
+      "group_unweighted_n": 462
+    },
+    "Jewish": {
+      "pct": 62.54,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 60
+    },
+    "Religiously unaffiliated": {
+      "pct": 82.98,
+      "valid_unweighted_n": 286,
+      "group_unweighted_n": 416
+    },
+    "Other non-Christian": {
+      "pct": 77.16,
+      "valid_unweighted_n": 56,
+      "group_unweighted_n": 81
+    },
+    "Other Protestant/Christian": {
+      "pct": 51.32,
+      "valid_unweighted_n": 109,
+      "group_unweighted_n": 166
+    },
+    "All U.S. adults": {
+      "pct": 65.13,
+      "valid_unweighted_n": 1485,
+      "group_unweighted_n": 2305
+    }
+  }
+}

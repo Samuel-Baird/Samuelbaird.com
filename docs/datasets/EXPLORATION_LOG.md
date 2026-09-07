@@ -1608,3 +1608,58 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   `RELTRA11==6`) is a re-interview of many 2006 respondents plus a fresh
   sample — usable as a replication wave but not poolable with 2006 without
   double-counting panelists.
+
+- **faith-matters-2011** (Faith Matters Survey 2011, the second *American
+  Grace* wave, `data/ryan-burge/tier2-small-n/faith_matters_2011.DTA`, via
+  Ryan Burge) — first pass, 2026-09-06: the prior pass (faith-matters-2006)
+  left this wave flagged as a replication file; opened it and diffed its 496
+  variables against 2006's to chart only items **new in 2011** rather than
+  re-running 2006's battery under a different year. Structure gotchas
+  recorded in the compute script's docstring: the .dta has 4,069 rows but
+  only 2,322 are 2011 interviews (1,361 recontacts + 751 fresh + 210 youth,
+  `SAMPLE11`); the rest are 2006 dropouts with no 2011 data — filter on
+  `WGTTOT11` non-null. `RELTRA11` keeps Mormon separate (code 6, n=49) and
+  adds an "Other Protestant/Christian" catch-all (code 8) split out of 2006's
+  combined evangelical category. Duplicate check dropped `GRACE11` (site
+  already has "Always say grace before meals") and `TRUST11` ("Most people
+  can be trusted" is live from the VOTER panel); `BJEW11`/`BMUSL11`
+  (Jewish/Muslim close friend) are n=9 for LDS, unusable; `WHOHVN11`
+  duplicates "Can other faiths lead to eternal life?". Built 4 charts,
+  weighted by `WGTTOT11`, new Dataset `faith-matters-2011` (ARDA
+  `FTHMAT11`; also confirmed 2006's `FTHMATT` id against ARDA's own catalog):
+  `world-ending-soon.png` (WRLDEN11: 41.6% of Latter-day Saints believe the
+  world is soon coming to an end — 4th of 9, *below* Historically Black
+  Protestant 52.6% and Evangelical 49.4%, vs 30.8% overall; the story is that
+  "Latter-day" Saints are not the most apocalyptic tradition),
+  `salvation-through-deeds.png` (FTHDEE11: 72.8% of LDS say the path to
+  salvation comes through actions or deeds, highest of any Christian
+  tradition — Catholic 63.9%, Evangelical 23.6% — vs 48.1% overall; faith-vs-
+  works distinctiveness. NOTE: this file's value labels for codes 2/3 are
+  swapped relative to 2006 — the marginals prove code 2 is really "faith" —
+  so only code 1 is charted), `mosque-in-community.png` (BLDMUS11,
+  split-sample, LDS n=34: 68.0% would not be bothered by / would welcome a
+  large mosque, 4th of 9, well above Evangelical 48.1%; religious-liberty
+  angle), `religion-too-little-influence.png` (RELINF11: 62.3% of LDS say
+  organized religion has too little influence on American politics, highest,
+  vs Evangelical 54.2% and 32.7% overall). Compute
+  `scripts/ryan-burge/faith_matters_2011.py` → `docs/datasets/ryan-burge/
+  faith-matters-2011-*.json`; render
+  `scripts/ryan-burge/render_faith_matters_2011_charts.py` →
+  `public/data-explorer/faith-matters-2011/`; wired in
+  `src/lib/data-explorer.ts` (`faithMatters2011*Graphic()`, reusing
+  `faithMattersAlt`). `tsc --noEmit` clean; PNG read directly (10 rows incl.
+  two gray "Other" catch-alls, no collisions). Same verification gotcha as
+  the previous pass: the other concurrent session's uncommitted
+  `BIRTH_DECADE_SELECTED_GROUP_ORDER` TDZ bug still 500s every Data Explorer
+  page locally, so the wiring was verified by tsx-loading a staged copy (HEAD
+  + this pass's hunks only) and `data-explorer.ts` was staged as a plumbing
+  blob again. Remaining 2011 candidates (all full-sample, LDS n=47-49, but
+  each a cross-wave near-duplicate of a construct already live from RLS or
+  the 2006 set, so low priority): `DECFAM11` (religion very important in
+  career/family decisions, LDS 83.7% highest), `EXPGOD11` (experienced God's
+  presence, LDS 60%, mid-pack), `BLDXCH11` (church-building analogue to the
+  mosque item, ~92% everywhere, no spread), `RELCH511` (religiosity changed
+  in last 4-5 years, LDS 16%), `GODSOC11` (split-sample, n=38).
+  Consider both Faith Matters waves fully mined for magnitude-bar purposes;
+  the only untouched shape is a 3-way faith/deeds/mixture stack, blocked by
+  the 2011 label ambiguity above.
