@@ -2164,3 +2164,37 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   RELFAV_* rated by other groups toward Evangelicals/Catholics/etc. (not
   Mormon-specific), REL1 (harder for non-believers, LDS 31% vs 36%).
   Consider this dataset fully mined apart from a possible wellbeing chart.
+
+- **pew-atp-w162-2025** (American Trends Panel Wave 162, February 2025 —
+  Catholics in America) — third pass, 2026-09-06: full sweep of all 131
+  variables against every live title, and this one genuinely is nearly
+  exhausted: ~90 of the variables are Catholic-only (CATH*, CCHRCH_*,
+  PARISH*, MASS*, LATMASS, CONFESS/COMMUNION — LDS n=33-35 on the
+  half-sample CCHRCH items), and the all-respondent items are almost all
+  live constructs elsewhere — SOCTRUST2 (LDS 71% trust most people vs 56%,
+  but "Most people can be trusted" is live from the VOTER panel),
+  TRUSTFEDGOV (live VOTER trend), CHRELIG retention (raised-Mormon 198 →
+  still 108, 55%; live retention charts), PRACTICEA_BIB/OTHSCRPT (scripture-
+  reading construct live; n=35/100), RELIGCONFLICT (live), PRACTICEA_WEAR/
+  CNDL/SAINTS/OBJ + RELART (live), RELIG_INFL1/2 (checked by the prior
+  pass, ambiguous item), RELSCHL1/2 (W44 construct live), ABUSE1/ABUSE3
+  (perceptions of Catholic abuse reports — LDS 43% say more common among
+  priests vs 36%, a real but uncomfortable-fit item, not built), CATHASIDE
+  (LDS 18.5% "Catholic in some way aside from religion," asked of non-
+  Catholics — niche). Built the one clean remaining item:
+  `pope-francis-favorable.png` (PPLFAV_a among those who had heard of him,
+  RELIG_W162 frame per this folder's convention, LDS n=118, weighted by
+  WEIGHT_W162: 62.8% of Latter-day Saints held a favorable opinion of Pope
+  Francis in the last weeks of his papacy, 6th of 12 and just above the 62.0%
+  national figure — well above Protestants 53.4% and far above Orthodox
+  Christians 28.4% (n=41), below Catholics 80.8%; PPLFAV_PBen Benedict XVI
+  shows no LDS story, 44% vs 45%). Hand-written
+  `scripts/pew-atp-w162-2025/pope_francis_favorable.py` +
+  `render_pope_francis_favorable_chart.py`, JSON in
+  `docs/datasets/pew-atp-w162-2025/`, PNG in
+  `public/data-explorer/pew-atp-w162-2025/`; wired in
+  (`popeFrancisFavorableGraphic()`; dataset now 8 graphics). `tsc --noEmit`
+  clean; 13-row PNG read directly (clean); PNG served 200; same local-page
+  500 gotcha, verified via tsx on the staged copy; staged and committed in
+  one command. Consider this dataset fully mined — the sweep found nothing
+  else that is both LDS-usable and not already live.

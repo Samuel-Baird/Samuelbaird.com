@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 162, fielded February 3-9, 2025.",
+  "method": "Population is present religion (RELIG_W162; this wave has no F_RELTRAD). Share with a very or mostly favorable opinion of Pope Francis (PPLFAV_a_W162) among respondents who had heard of him; 'never heard of this person' and refused are excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W162 variable.",
+  "total_weighted_n": 8122.856019025123,
+  "total_unweighted_n": 8452,
+  "group_order": [
+    "Catholic",
+    "Buddhist",
+    "Hindu",
+    "Agnostic",
+    "Jewish",
+    "Mormon",
+    "Nothing in particular",
+    "Muslim",
+    "Protestant",
+    "Atheist",
+    "Orthodox Christian",
+    "Something else",
+    "All U.S. adults"
+  ],
+  "pope_francis_favorable": {
+    "Protestant": {
+      "pct": 53.37,
+      "valid_unweighted_n": 3525,
+      "group_unweighted_n": 4037
+    },
+    "Catholic": {
+      "pct": 80.83,
+      "valid_unweighted_n": 1745,
+      "group_unweighted_n": 1787
+    },
+    "Mormon": {
+      "pct": 62.78,
+      "valid_unweighted_n": 118,
+      "group_unweighted_n": 135
+    },
+    "Orthodox Christian": {
+      "pct": 28.44,
+      "valid_unweighted_n": 41,
+      "group_unweighted_n": 44
+    },
+    "Jewish": {
+      "pct": 67.44,
+      "valid_unweighted_n": 358,
+      "group_unweighted_n": 390
+    },
+    "Muslim": {
+      "pct": 54.07,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 123
+    },
+    "Buddhist": {
+      "pct": 76.96,
+      "valid_unweighted_n": 70,
+      "group_unweighted_n": 89
+    },
+    "Hindu": {
+      "pct": 76.9,
+      "valid_unweighted_n": 53,
+      "group_unweighted_n": 66
+    },
+    "Atheist": {
+      "pct": 52.53,
+      "valid_unweighted_n": 542,
+      "group_unweighted_n": 609
+    },
+    "Agnostic": {
+      "pct": 71.27,
+      "valid_unweighted_n": 647,
+      "group_unweighted_n": 713
+    },
+    "Something else": {
+      "pct": 54.41,
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 262
+    },
+    "Nothing in particular": {
+      "pct": 59.37,
+      "valid_unweighted_n": 1010,
+      "group_unweighted_n": 1261
+    },
+    "All U.S. adults": {
+      "pct": 62.05,
+      "valid_unweighted_n": 8452,
+      "group_unweighted_n": 9544
+    }
+  }
+}

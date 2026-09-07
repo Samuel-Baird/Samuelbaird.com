@@ -229,6 +229,7 @@ import w143HolidayBatch4Data from "../../docs/datasets/pew-atp-w143-2024/holiday
 import w143BelieveSpellsMagicData from "../../docs/datasets/pew-atp-w143-2024/believe-spells-magic.json";
 import coreBeliefsData from "../../docs/datasets/pew-mormon-survey-2011/core-beliefs.json";
 import religiousConflictData from "../../docs/datasets/pew-atp-w162-2025/religious-conflict.json";
+import popeFrancisFavorableData from "../../docs/datasets/pew-atp-w162-2025/pope-francis-favorable.json";
 import wearReligiousItemsData from "../../docs/datasets/pew-atp-w162-2025/wear-religious-items.json";
 import w162AttendanceData from "../../docs/datasets/pew-atp-w162-2025/attendance.json";
 import religiousObjectsHomeData from "../../docs/datasets/pew-atp-w162-2025/religious-objects-home.json";
@@ -1667,6 +1668,7 @@ const RAW_DATASETS: Dataset[] = [
       wearReligiousItemsGraphic(),
       w162AttendanceGraphic(),
       religiousObjectsHomeGraphic(),
+      popeFrancisFavorableGraphic(),
     ],
   },
   {
@@ -4459,6 +4461,28 @@ function religiousMinorityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w143-2024/religious-minority.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share considering themselves part of a religious minority, by religion, February 2024. ${alt}.`,
+  };
+}
+
+/**
+ * Opinion of Pope Francis by present religion (PPLFAV_a_W162) - the one
+ * all-respondent item in this Catholic-focused wave not already live as a
+ * construct elsewhere on the site. Built by
+ * scripts/pew-atp-w162-2025/pope_francis_favorable.py (group_order already
+ * sorted via chart_style.sort_groups), rendered by
+ * render_pope_francis_favorable_chart.py.
+ */
+function popeFrancisFavorableGraphic(): Graphic {
+  const { group_order: order, pope_francis_favorable: results } = popeFrancisFavorableData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Opinion of Pope Francis",
+    description: "Share with a very or mostly favorable opinion of Pope Francis, among those who had heard of him, by present religion, February 2025.",
+    imageSrc: "/data-explorer/pew-atp-w162-2025/pope-francis-favorable.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share with a very or mostly favorable opinion of Pope Francis among those who had heard of him, by present religion, February 2025. ${alt}.`,
   };
 }
 
