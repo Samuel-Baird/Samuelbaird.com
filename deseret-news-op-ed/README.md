@@ -21,6 +21,7 @@ appears, and the credit line on every chart reads "Chart: Latter-day Stats".
 | `out/04_transmission.png` / `.svg` | Share of adults raised highly religious who are still highly religious, by birth decade |
 | `out/05_denominational_decline.png` / `.svg` | 2007 vs. 2023-24 dumbbell: evangelical, mainline, SBC, UMC, Latter-day Saints (optional substitute for 01) |
 | `out/06_lds_family_formation.png` / `.svg` | Married share and 3+-children share, Latter-day Saints vs. all Christians vs. unaffiliated |
+| `out/07_membership_by_source.png` / `.svg` | U.S. Latter-day Saint membership, 1925-2025, as reported by four separate unreconciled sources |
 | `data/oped_data.json` | Every number the charts use, with unweighted n's and Pew's published comparison figures |
 | `compute_data.py` | Rebuilds `data/oped_data.json` from the microdata |
 | `render_NN_*.py` | One render script per chart; each reads the JSON at runtime |
@@ -136,6 +137,20 @@ blank).
 (n = 558), all Christians 55.6%, unaffiliated 42.0%. Three or more children
 among adults born 1960s-70s: Latter-day Saints 67.5% (n = 171, small), all
 Christians 36.9%, unaffiliated 25.8%.
+
+**07 Membership by source.** Not part of the Family Proclamation op-ed —
+a general-purpose reference chart built from
+`docs/datasets/lds-usa-membership-source-comparison/`, showing that the
+"how many Latter-day Saints live in the U.S." question has four different,
+legitimate, unreconciled answers depending on the source and its
+definition (the Church's own membership rolls via Newsroom and the
+Almanac; the Yearbook of American and Canadian Churches' "inclusive
+membership"; the U.S. Religion Census's survey-based "adherents"
+estimate). Regenerate with `python render_07_membership_by_source.py`
+(reads the four CSVs directly, no separate compute step). U.S. Religion
+Census is plotted as unconnected diamond markers rather than a line —
+its seven data points are 8 to 30 years apart, and a connecting line
+would imply a trend the sparse sampling doesn't support.
 
 ## Where the op-ed draft and the data disagree
 
