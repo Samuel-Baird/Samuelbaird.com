@@ -190,6 +190,10 @@ import followsOwnLeadersData from "../../docs/datasets/pew-atp-w117-2022/follows
 import watchReligionVideosData from "../../docs/datasets/pew-atp-w117-2022/watch-religion-videos.json";
 import postsAboutReligionData from "../../docs/datasets/pew-atp-w117-2022/posts-about-religion.json";
 import readsReligionBooksData from "../../docs/datasets/pew-atp-w117-2022/reads-religion-books.json";
+import scriptureAppData from "../../docs/datasets/pew-atp-w117-2022/scripture-app.json";
+import religionPodcastsData from "../../docs/datasets/pew-atp-w117-2022/religion-podcasts.json";
+import searchReligionOnlineData from "../../docs/datasets/pew-atp-w117-2022/search-religion-online.json";
+import connectionAtServicesData from "../../docs/datasets/pew-atp-w117-2022/connection-at-services.json";
 import beyondThisWorldData from "../../docs/datasets/pew-atp-w132-2023/beyond-this-world.json";
 import deadAwareLivingData from "../../docs/datasets/pew-atp-w132-2023/dead-aware-living.json";
 import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
@@ -1558,6 +1562,10 @@ const RAW_DATASETS: Dataset[] = [
       watchReligionVideosGraphic(),
       postsAboutReligionGraphic(),
       readsReligionBooksGraphic(),
+      scriptureAppGraphic(),
+      religionPodcastsGraphic(),
+      searchReligionOnlineGraphic(),
+      connectionAtServicesGraphic(),
     ],
   },
   {
@@ -3754,6 +3762,61 @@ function readsReligionBooksGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w117-2022/reads-religion-books.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who read religion-focused books at least weekly, by religious tradition, November 2022. ${alt}.`,
+  };
+}
+
+/**
+ * ATP W117 digital-devotion cluster (APPUSE1_c, APPUSE2_a, PRAYGRP1_b) plus
+ * felt connection at in-person services (CNCTPER), four items never charted
+ * anywhere on the site, by this wave's F_RELTRAD 8-group set. Built by the
+ * matching scripts/pew-atp-w117-2022/<slug>.py scripts (group_order already
+ * sorted via chart_style.sort_groups), rendered by render_<slug>_chart.py.
+ */
+function w117PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function scriptureAppGraphic(): Graphic {
+  const { group_order: order, uses_scripture_app: results } = scriptureAppData;
+  return {
+    title: "Use an app or website to read scripture",
+    description: "Share who ever use apps or websites that remind them or help them to read scripture, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/scripture-app.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who use apps or websites that remind them or help them to read scripture, by religious tradition, November 2022. ${w117PctAlt(order, results)}.`,
+  };
+}
+
+function religionPodcastsGraphic(): Graphic {
+  const { group_order: order, listens_religion_podcasts: results } = religionPodcastsData;
+  return {
+    title: "Listen to religion-focused podcasts",
+    description: "Share who ever listen to religion-focused podcasts, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/religion-podcasts.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who ever listen to religion-focused podcasts, by religious tradition, November 2022. ${w117PctAlt(order, results)}.`,
+  };
+}
+
+function searchReligionOnlineGraphic(): Graphic {
+  const { group_order: order, searches_religion_online: results } = searchReligionOnlineData;
+  return {
+    title: "Go online to search for information about religion",
+    description: "Share who ever go online to search for information about religion, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/search-religion-online.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who ever go online to search for information about religion, by religious tradition, November 2022. ${w117PctAlt(order, results)}.`,
+  };
+}
+
+function connectionAtServicesGraphic(): Graphic {
+  const { group_order: order, great_deal_connection_at_services: results } = connectionAtServicesData;
+  return {
+    title: "Feel a great deal of connection with others at services",
+    description: "Share of in-person attenders who feel a great deal of connection with the other people in attendance when they attend religious services, by religious tradition, November 2022.",
+    imageSrc: "/data-explorer/pew-atp-w117-2022/connection-at-services.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of in-person attenders who feel a great deal of connection with the other people in attendance, by religious tradition, November 2022. ${w117PctAlt(order, results)}.`,
   };
 }
 

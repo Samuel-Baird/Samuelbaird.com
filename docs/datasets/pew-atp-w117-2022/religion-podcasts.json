@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share saying yes, they ever listen to religion-focused podcasts, APPUSE2_a_W117; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 10920.464376751928,
+  "total_unweighted_n": 11128,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Orthodox Christian",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "listens_religion_podcasts": {
+    "Evangelical Protestant": {
+      "pct": 33.23,
+      "valid_unweighted_n": 2433,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 12.12,
+      "valid_unweighted_n": 1495,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 27.72,
+      "valid_unweighted_n": 753,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 11.45,
+      "valid_unweighted_n": 2164,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 40.37,
+      "valid_unweighted_n": 196,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 25.78,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 6.87,
+      "valid_unweighted_n": 227,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 4.08,
+      "valid_unweighted_n": 3293,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 15.52,
+      "valid_unweighted_n": 11128,
+      "group_unweighted_n": 11377
+    }
+  }
+}

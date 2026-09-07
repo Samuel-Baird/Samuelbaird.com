@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share saying yes, they ever go online to search for information about religion, PRAYGRP1_b_W117; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 10927.431202679436,
+  "total_unweighted_n": 11126,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Jewish",
+    "Orthodox Christian",
+    "Mainline Protestant",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "searches_religion_online": {
+    "Evangelical Protestant": {
+      "pct": 47.1,
+      "valid_unweighted_n": 2429,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 29.34,
+      "valid_unweighted_n": 1494,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 42.47,
+      "valid_unweighted_n": 756,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 27.34,
+      "valid_unweighted_n": 2161,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 53.1,
+      "valid_unweighted_n": 197,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 33.73,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 36.61,
+      "valid_unweighted_n": 229,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 18.78,
+      "valid_unweighted_n": 3294,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 31.57,
+      "valid_unweighted_n": 11126,
+      "group_unweighted_n": 11377
+    }
+  }
+}

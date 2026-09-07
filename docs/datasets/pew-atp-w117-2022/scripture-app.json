@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share saying yes, they use apps or websites that remind them or help them to read scripture, APPUSE1_c_W117; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 10932.36664528296,
+  "total_unweighted_n": 11141,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Orthodox Christian",
+    "Mainline Protestant",
+    "Jewish",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "uses_scripture_app": {
+    "Evangelical Protestant": {
+      "pct": 40.42,
+      "valid_unweighted_n": 2435,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 19.0,
+      "valid_unweighted_n": 1496,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 51.0,
+      "valid_unweighted_n": 755,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 15.48,
+      "valid_unweighted_n": 2165,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 58.64,
+      "valid_unweighted_n": 197,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 28.64,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 16.96,
+      "valid_unweighted_n": 229,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 6.45,
+      "valid_unweighted_n": 3295,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 21.88,
+      "valid_unweighted_n": 11141,
+      "group_unweighted_n": 11377
+    }
+  }
+}

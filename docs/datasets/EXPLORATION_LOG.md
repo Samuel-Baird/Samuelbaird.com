@@ -2083,3 +2083,41 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   RELEFFECT_a/c (religion gives meaning / encourages doing right — likely
   LDS-high but close to the W143 tolerance chart). Consider this dataset
   fully mined.
+
+- **pew-atp-w117-2022** (American Trends Panel Wave 117, November 2022 —
+  religion and technology) — third pass, 2026-09-06: full sweep of all 150
+  variables against every live title. Skipped: the election/vote-validation
+  battery (VOTECHOICE2020 by religion is a real item — LDS 71.5% Republican
+  among 155 validated voters — but political and cross-dataset-adjacent to
+  the CCES 2016 vote chart; left for a future political pass), the
+  online-watching follow-ups (ONLINE*/WATCH*/VIRSAT*/CNCTVIR, small
+  subsamples, live watch-online-monthly covers the headline), NONTECH2_c
+  (live), APPUSE1_a/b/d (meditation/gratitude/prayer apps — LDS 20/19/12%
+  vs 19/19/15% nationally, no story, deliberately not charted), APPUSE2_c/d
+  and PRAYGRP1_a (prayer requests online, online study groups — thin).
+  Built a 4-chart cluster (F_RELTRAD 8-group set per this folder's
+  template, Mormon n=163-197, weighted by WEIGHT_W117, refused excluded,
+  rows via sort_groups in the compute script): `scripture-app.png`
+  (APPUSE1_c: 58.6% of Mormons use an app or website that reminds or helps
+  them read scripture, HIGHEST by 8 points over Historically Black
+  Protestant 51.0%, nearly 3x the 21.9% national figure — Gospel Library /
+  Come, Follow Me in the data), `religion-podcasts.png` (APPUSE2_a: 40.4%
+  listen to religion-focused podcasts, HIGHEST, vs 15.5%),
+  `search-religion-online.png` (PRAYGRP1_b: 53.1% go online to search for
+  information about religion, HIGHEST, vs 31.6%), `connection-at-
+  services.png` (CNCTPER, in-person attenders only: 45.4% feel a great deal
+  of connection with others at services, in a three-way tie for highest
+  with Jewish 45.5% (n=65) and Historically Black Protestant 45.4%, vs 34.9%
+  of attenders; Orthodox dropped n<30). One-script-per-chart from a scratch
+  generator (`scripts/pew-atp-w117-2022/{scripture_app,religion_podcasts,
+  search_religion_online,connection_at_services}.py` + `render_*_chart.py`),
+  JSON in `docs/datasets/pew-atp-w117-2022/`, PNGs in
+  `public/data-explorer/pew-atp-w117-2022/`; wired in (four builders
+  sharing `w117PctAlt`; dataset now 11 graphics). `tsc --noEmit` clean; PNG
+  read directly (9 rows, clean); PNGs served 200; same local-page 500
+  gotcha, verified via tsx on the staged copy; staged and committed in one
+  command. Remaining: LEADERFOLLOW1 (follow celebrities/pastors online, LDS
+  28% vs 14%, n=147 — a fair 5th but thinner construct), NONTECH1_a
+  (religious radio, LDS 36% vs 25%), UNFOLREL (unfollowed someone over
+  religion, LDS 18% vs 22%, no story), ATTENDPREF (n=65). Consider this
+  dataset fully mined apart from the political vote-validation item.
