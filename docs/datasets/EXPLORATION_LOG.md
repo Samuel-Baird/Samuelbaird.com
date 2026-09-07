@@ -1934,3 +1934,31 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   the previous pass's staged files were swept into a concurrent session's
   commit (d8d003d) in the shared index. Consider this dataset fully mined:
   every remaining item is n<30 for Mormons or already live.
+
+- **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — 16th-18th
+  charts, 2026-09-06: built the "religion in society" cluster the previous
+  2007 sweep had queued (numbers verified then, re-computed now; Mormon
+  n=535-570, weighted by `weight`, DK/refused excluded, rows via
+  `chart_style.sort_groups`): `church-social-activities.png` (q28d,
+  attenders only: 68.4% of Mormons take part in meals, club meetings, or
+  other gatherings at their place of worship at least monthly, HIGHEST of 12
+  by 13 points over Historically Black Protestant 55.0%, vs 39.4% overall —
+  ward activity culture), `values-threatened-hollywood.png` (q10a: 69.1% of
+  Mormons agree their values are threatened by Hollywood and the
+  entertainment industry, HIGHEST by 13 points over JW 56.2%, vs 43.0%),
+  `religion-causes-problems.png` (q39c: 14.1% of Mormons agree religion
+  causes more problems in society than it solves, LOWEST of 12, vs
+  Evangelical 21.1% and 35.3% overall). Checked and dropped: q46 (conflict
+  between devout religion and modern society, Mormon 36%, mid-pack), q9
+  (churches should express political views, Mormon 47%, mid), q28a (choir
+  weekly, 20%, thin construct), q5a-g political pairs (CCES/VOTER cover
+  these). One-script-per-chart (`scripts/pew-rls-2007/
+  {church_social_activities,values_threatened_hollywood,
+  religion_causes_problems}.py` + `render_*_chart.py`), JSON in
+  `docs/datasets/pew-rls-2007/`, PNGs in `public/data-explorer/pew-rls-2007/`;
+  wired in (three builders reusing `rls2007PctAlt`; dataset now 18
+  graphics). `tsc --noEmit` clean; 13-row PNG with a 3-line subtitle read
+  directly (tight but clean); PNGs served 200; same local-page 500 gotcha,
+  verified via tsx on the staged copy; staged and committed in one command.
+  After two full sweeps this dataset is now genuinely fully mined: every
+  remaining substantive item is live, duplicative, mid-pack, or political.

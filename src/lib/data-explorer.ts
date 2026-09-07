@@ -98,6 +98,9 @@ import miraclesOccurTodayData from "../../docs/datasets/pew-rls-2007/miracles-oc
 import answerToPrayerWeeklyData from "../../docs/datasets/pew-rls-2007/answer-to-prayer-weekly.json";
 import oneTrueFaithData from "../../docs/datasets/pew-rls-2007/one-true-faith.json";
 import oneTrueInterpretationData from "../../docs/datasets/pew-rls-2007/one-true-interpretation.json";
+import churchSocialActivitiesData from "../../docs/datasets/pew-rls-2007/church-social-activities.json";
+import valuesThreatenedHollywoodData from "../../docs/datasets/pew-rls-2007/values-threatened-hollywood.json";
+import religionCausesProblemsData from "../../docs/datasets/pew-rls-2007/religion-causes-problems.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -1078,6 +1081,9 @@ const RAW_DATASETS: Dataset[] = [
       answerToPrayerWeeklyGraphic(),
       oneTrueFaithGraphic(),
       oneTrueInterpretationGraphic(),
+      churchSocialActivitiesGraphic(),
+      valuesThreatenedHollywoodGraphic(),
+      religionCausesProblemsGraphic(),
     ],
   },
   {
@@ -2366,6 +2372,44 @@ function oneTrueInterpretationGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/one-true-interpretation.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying there is only one true way to interpret the teachings of their religion, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
+  };
+}
+
+/**
+ * 2007 RLS religion-in-society cluster (q28d, q10a, q39c), three items
+ * never charted anywhere on the site. Same helpers and scripts pattern as
+ * the experience-and-exclusivity cluster above.
+ */
+function churchSocialActivitiesGraphic(): Graphic {
+  const { group_order: order, church_social_activities_monthly: results } = churchSocialActivitiesData;
+  return {
+    title: "Take part in social activities at church, monthly+",
+    description: "Share of religious-service attenders who take part in meals, club meetings, or other gatherings at their place of worship at least once or twice a month, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/church-social-activities.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of attenders who take part in social activities at their place of worship at least monthly, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
+  };
+}
+
+function valuesThreatenedHollywoodGraphic(): Graphic {
+  const { group_order: order, values_threatened_hollywood_agree: results } = valuesThreatenedHollywoodData;
+  return {
+    title: "“My values are threatened by Hollywood and the entertainment industry”",
+    description: "Share who completely or mostly agree that they often feel their values are threatened by Hollywood and the entertainment industry, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/values-threatened-hollywood.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree their values are threatened by Hollywood and the entertainment industry, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
+  };
+}
+
+function religionCausesProblemsGraphic(): Graphic {
+  const { group_order: order, religion_causes_problems_agree: results } = religionCausesProblemsData;
+  return {
+    title: "“Religion causes more problems in society than it solves”",
+    description: "Share who completely or mostly agree that religion causes more problems in society than it solves, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/religion-causes-problems.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who agree religion causes more problems in society than it solves, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
   };
 }
 
