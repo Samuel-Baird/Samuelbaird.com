@@ -1663,3 +1663,55 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   Consider both Faith Matters waves fully mined for magnitude-bar purposes;
   the only untouched shape is a 3-way faith/deeds/mixture stack, blocked by
   the 2011 label ambiguity above.
+
+- **anes-2016** (American National Election Studies 2016 Time Series,
+  `data/ryan-burge/tier2-small-n/anes_2016.dta`, via Ryan Burge) — first
+  pass, 2026-09-06: the last never-charted survey file with a usable LDS
+  sample (INVENTORY.md: `V161264x==301`, 52 pre-election, 43 with a
+  post-election interview). Read all 1,836 variable labels with pyreadstat
+  and picked one tight cluster: the post-election moral-traditionalism /
+  gender-role battery, which is the closest thing in `data/` to the
+  Proclamation on the Family's teachings on gender roles and the home.
+  Group set: `V161265x` (major religion summary) with LDS pulled out of
+  "Other religion"; Black Protestant (31 pre, <30 post) dropped, not shown;
+  ANES's "Undifferentiated Christian" kept as its own row, labeled
+  "Christian (no denomination given)" (falls to `color_for_group`'s MUTED
+  fallback since it's not a palette group). Weighted by `V160102` (post-
+  election full-sample weight). Duplicate check: the site's existing "Is a
+  stay-at-home parent better for kids?" (Pew ATP) is a different item (any
+  parent at home, ungendered) from ANES's gendered breadwinner question, so
+  both stand. Built 4 charts under new Dataset `anes-2016`:
+  `man-works-woman-home.png` (V162230x: 62.2% of Latter-day Saints say it's
+  better if the man is the achiever outside the home and the woman takes
+  care of the home and family, highest by 17 points over Evangelical 45.5%,
+  vs 35.7% overall), `working-mother-bond.png` (V162229x: 81.0% of LDS say
+  it's harder for a working mother to bond with her child, highest by 18
+  points, vs 58.5% overall), `traditional-family-ties.png` (V162210: 73.8%
+  of LDS agree the country would have fewer problems with more emphasis on
+  traditional family ties, highest but only narrowly over Evangelical 70.9%,
+  vs 60.0% overall), `newer-lifestyles.png` (V162208: 62.1% of LDS agree
+  newer lifestyles are contributing to the breakdown of society, 2nd behind
+  Evangelical 68.5%, vs 50.0% overall). LDS n=42-43 on every item. Compute
+  `scripts/ryan-burge/anes_2016_family_values.py` →
+  `docs/datasets/ryan-burge/anes-2016-*.json`; render
+  `scripts/ryan-burge/render_anes_2016_family_values_charts.py` →
+  `public/data-explorer/anes-2016/`; wired in `src/lib/data-explorer.ts`
+  (`anes2016*Graphic()`). `tsc --noEmit` clean; PNG read directly (9 rows,
+  the parenthesized "Christian (no denomination given)" label wraps to two
+  lines cleanly, no collisions); PNG served 200. Same local-verification
+  gotcha as the two previous passes (the other session's uncommitted
+  `BIRTH_DECADE_SELECTED_GROUP_ORDER` TDZ bug still 500s every Data Explorer
+  page locally), so wiring was verified by tsx-loading the staged copy and
+  `data-explorer.ts` was staged as a plumbing blob with only this pass's
+  hunks. Remaining ANES 2016 candidates: `V162209` (be more tolerant of
+  other moral standards — LDS 30/43 agree, a mirror-image of this cluster,
+  skipped to keep it to four), `V162018c` (gave money to a religious org in
+  past 12 months, LDS 31/43 = 72% unweighted — real but overlaps the
+  Faith Matters $1,000+ giving chart in construct), `V161243` (Bible
+  literalism, LDS 12/52 literal — RLS already covers this construct), the
+  post-election group thermometers (`V162095`-`V162113`, e.g. LDS warmth
+  toward Muslims/Christian fundamentalists/gay men and lesbians — the VOTER
+  panel already has FT-by-religion heatmaps), `V161230` gay adoption and
+  `V161228x` transgender bathroom policy (political; CCES same-sex marriage
+  already live). Consider this dataset close to fully mined for the site's
+  purposes; the thermometers are the only distinct shape left.

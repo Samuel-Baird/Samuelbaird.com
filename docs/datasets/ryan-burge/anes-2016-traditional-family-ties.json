@@ -1,0 +1,64 @@
+{
+  "source": "American National Election Studies, 2016 Time Series Study, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: respondents with a post-election interview, weighted by V160102 (post-election full-sample weight). Groups from V161265x (major religion summary) with Latter-day Saints pulled out of 'Other religion' via V161264x == 301; Black Protestant dropped (fewer than 30 post-election respondents). Share agreeing strongly or somewhat that this country would have many fewer problems if there were more emphasis on traditional family ties, V162210. Refused/don't know/no post interview excluded from the base. Latter-day Saint n=43 with a post-election interview. 'All U.S. adults' includes Black Protestants.",
+  "total_unweighted_n": 3648,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Christian (no denomination given)",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other religion",
+    "All U.S. adults"
+  ],
+  "traditional_family_ties_agree": {
+    "Latter-day Saint": {
+      "pct": 73.81,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 43
+    },
+    "Evangelical Protestant": {
+      "pct": 70.88,
+      "valid_unweighted_n": 642,
+      "group_unweighted_n": 643
+    },
+    "Mainline Protestant": {
+      "pct": 62.08,
+      "valid_unweighted_n": 548,
+      "group_unweighted_n": 550
+    },
+    "Catholic": {
+      "pct": 67.8,
+      "valid_unweighted_n": 790,
+      "group_unweighted_n": 792
+    },
+    "Christian (no denomination given)": {
+      "pct": 68.87,
+      "valid_unweighted_n": 580,
+      "group_unweighted_n": 580
+    },
+    "Jewish": {
+      "pct": 41.82,
+      "valid_unweighted_n": 74,
+      "group_unweighted_n": 74
+    },
+    "Religiously unaffiliated": {
+      "pct": 38.9,
+      "valid_unweighted_n": 747,
+      "group_unweighted_n": 751
+    },
+    "Other religion": {
+      "pct": 42.09,
+      "valid_unweighted_n": 153,
+      "group_unweighted_n": 155
+    },
+    "All U.S. adults": {
+      "pct": 60.01,
+      "valid_unweighted_n": 3603,
+      "group_unweighted_n": 3614
+    }
+  }
+}

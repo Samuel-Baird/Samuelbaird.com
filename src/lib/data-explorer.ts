@@ -37,6 +37,10 @@ import faithMatters2011WorldEndingData from "../../docs/datasets/ryan-burge/fait
 import faithMatters2011SalvationDeedsData from "../../docs/datasets/ryan-burge/faith-matters-2011-salvation-deeds.json";
 import faithMatters2011MosqueData from "../../docs/datasets/ryan-burge/faith-matters-2011-mosque.json";
 import faithMatters2011ReligionInfluenceData from "../../docs/datasets/ryan-burge/faith-matters-2011-religion-influence.json";
+import anes2016ManWorksWomanHomeData from "../../docs/datasets/ryan-burge/anes-2016-man-works-woman-home.json";
+import anes2016WorkingMotherBondData from "../../docs/datasets/ryan-burge/anes-2016-working-mother-bond.json";
+import anes2016TraditionalFamilyTiesData from "../../docs/datasets/ryan-burge/anes-2016-traditional-family-ties.json";
+import anes2016NewerLifestylesData from "../../docs/datasets/ryan-burge/anes-2016-newer-lifestyles.json";
 import ftFeministsData from "../../docs/datasets/ryan-burge/ft-feminists.json";
 import ftGaysLesbiansData from "../../docs/datasets/ryan-burge/ft-gays-lesbians.json";
 import voterIdeasBarsData from "../../docs/datasets/ryan-burge/voter-ideas-bars.json";
@@ -927,6 +931,33 @@ const RAW_DATASETS: Dataset[] = [
       faithMatters2011SalvationDeedsGraphic(),
       faithMatters2011MosqueGraphic(),
       faithMatters2011ReligionInfluenceGraphic(),
+    ],
+  },
+  {
+    slug: "anes-2016",
+    name: "ANES 2016 Time Series",
+    shortDescription:
+      "The American National Election Studies' 2016 pre/post-election survey of 4,270 adults, with a religion summary that keeps Latter-day Saints separate.",
+    sponsor: "American National Election Studies (University of Michigan and Stanford University)",
+    fielder: "Westat (face-to-face) and GfK (web)",
+    fieldedPeriod: "2016",
+    description:
+      "The ANES Time Series is the long-running academic election survey, fielded before " +
+      "and after each presidential election since 1948. The 2016 study interviewed 4,270 " +
+      "adults (3,648 of them again after the election) in a mixed face-to-face and web " +
+      "design. Beyond vote choice it carries a religion battery and, in the post-election " +
+      "wave, a moral-traditionalism and gender-role battery: whether it is better if the " +
+      "man works and the woman keeps the home, whether a working mother can bond with her " +
+      "child, and whether society needs more emphasis on traditional family ties. ANES's " +
+      "full religion summary codes Latter-day Saints separately (52 respondents, 43 with " +
+      "a post-election interview), so those items can be broken out by tradition. This " +
+      "copy is redistributed by Ryan Burge (github.com/ryanburge).",
+    sourceUrl: "https://electionstudies.org/data-center/2016-time-series-study/",
+    graphics: [
+      anes2016ManWorksWomanHomeGraphic(),
+      anes2016WorkingMotherBondGraphic(),
+      anes2016TraditionalFamilyTiesGraphic(),
+      anes2016NewerLifestylesGraphic(),
     ],
   },
   {
@@ -5743,6 +5774,65 @@ function faithMatters2011ReligionInfluenceGraphic(): Graphic {
     width: 1080, height: 1350,
     credit: "via Ryan Burge",
     alt: `Bar chart: share saying organized religion has too little influence on American politics, by religious tradition, 2011. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+/**
+ * ANES 2016 (via Ryan Burge): the post-election moral-traditionalism and
+ * gender-role battery by religious tradition, with Latter-day Saints pulled
+ * out of ANES's "Other religion" group. Same shape and helpers as the Faith
+ * Matters sets above; computed by scripts/ryan-burge/anes_2016_family_values.py,
+ * rendered by scripts/ryan-burge/render_anes_2016_family_values_charts.py.
+ */
+function anes2016ManWorksWomanHomeGraphic(): Graphic {
+  const { group_order: order, man_works_woman_home_better: results } = anes2016ManWorksWomanHomeData;
+  return {
+    title: "Better if the man works and the woman takes care of the home",
+    description:
+      "Share saying it is much, somewhat, or slightly better if the man is the achiever outside the home and the woman takes care of the home and family, versus no difference or worse, by religious tradition, 2016.",
+    imageSrc: "/data-explorer/anes-2016/man-works-woman-home.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying it is better if the man works outside the home and the woman takes care of the home, by religious tradition, 2016. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function anes2016WorkingMotherBondGraphic(): Graphic {
+  const { group_order: order, working_mother_bond_harder: results } = anes2016WorkingMotherBondData;
+  return {
+    title: "Harder for a working mother to bond with her child",
+    description:
+      "Share saying it is slightly, somewhat, or a great deal harder for a working mother to bond with her child, by religious tradition, 2016.",
+    imageSrc: "/data-explorer/anes-2016/working-mother-bond.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying it is harder for a working mother to bond with her child, by religious tradition, 2016. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function anes2016TraditionalFamilyTiesGraphic(): Graphic {
+  const { group_order: order, traditional_family_ties_agree: results } = anes2016TraditionalFamilyTiesData;
+  return {
+    title: "Fewer problems with more emphasis on traditional family ties",
+    description:
+      "Share agreeing strongly or somewhat that this country would have many fewer problems if there were more emphasis on traditional family ties, by religious tradition, 2016.",
+    imageSrc: "/data-explorer/anes-2016/traditional-family-ties.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share agreeing the country would have fewer problems with more emphasis on traditional family ties, by religious tradition, 2016. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function anes2016NewerLifestylesGraphic(): Graphic {
+  const { group_order: order, newer_lifestyles_breakdown_agree: results } = anes2016NewerLifestylesData;
+  return {
+    title: "Newer lifestyles are contributing to the breakdown of society",
+    description:
+      "Share agreeing strongly or somewhat that the newer lifestyles are contributing to the breakdown of our society, by religious tradition, 2016.",
+    imageSrc: "/data-explorer/anes-2016/newer-lifestyles.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share agreeing that newer lifestyles are contributing to the breakdown of society, by religious tradition, 2016. ${faithMattersAlt(order, results)}.`,
   };
 }
 
