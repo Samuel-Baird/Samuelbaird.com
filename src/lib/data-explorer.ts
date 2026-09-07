@@ -94,6 +94,10 @@ import volunteerWithChildrenData from "../../docs/datasets/pew-rls-2007/voluntee
 import shareFaithNonbelieversData from "../../docs/datasets/pew-rls-2007/share-faith-nonbelievers.json";
 import angelsDemonsActiveData from "../../docs/datasets/pew-rls-2007/angels-demons-active.json";
 import divineHealingWitnessedData from "../../docs/datasets/pew-rls-2007/divine-healing-witnessed.json";
+import miraclesOccurTodayData from "../../docs/datasets/pew-rls-2007/miracles-occur-today.json";
+import answerToPrayerWeeklyData from "../../docs/datasets/pew-rls-2007/answer-to-prayer-weekly.json";
+import oneTrueFaithData from "../../docs/datasets/pew-rls-2007/one-true-faith.json";
+import oneTrueInterpretationData from "../../docs/datasets/pew-rls-2007/one-true-interpretation.json";
 import samesexMarriage2014Data from "../../docs/datasets/pew-rls-2014/samesex-marriage.json";
 import weeklyAttendance2014Data from "../../docs/datasets/pew-rls-2014/weekly-attendance.json";
 import certaintyOfGod2014Data from "../../docs/datasets/pew-rls-2014/certainty-of-god.json";
@@ -1066,6 +1070,10 @@ const RAW_DATASETS: Dataset[] = [
       shareFaithNonbelieversGraphic(),
       angelsDemonsActiveGraphic(),
       divineHealingWitnessedGraphic(),
+      miraclesOccurTodayGraphic(),
+      answerToPrayerWeeklyGraphic(),
+      oneTrueFaithGraphic(),
+      oneTrueInterpretationGraphic(),
     ],
   },
   {
@@ -2296,6 +2304,60 @@ function divineHealingWitnessedGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2007/divine-healing-witnessed.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who have ever experienced or witnessed a divine healing of an illness or injury, by religious tradition, 2007. ${alt}.`,
+  };
+}
+
+/**
+ * 2007 RLS religious-experience-and-exclusivity cluster (q39a, q43c, q40a,
+ * q40b), four items never charted anywhere on the site. Built by the matching
+ * scripts/pew-rls-2007/<slug>.py scripts (group_order already sorted via
+ * chart_style.sort_groups), rendered by render_<slug>_chart.py.
+ */
+function rls2007PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function miraclesOccurTodayGraphic(): Graphic {
+  const { group_order: order, miracles_completely_agree: results } = miraclesOccurTodayData;
+  return {
+    title: "“Miracles still occur today as in ancient times”",
+    description: "Share who completely agree that miracles still occur today as in ancient times, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/miracles-occur-today.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who completely agree that miracles still occur today as in ancient times, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
+  };
+}
+
+function answerToPrayerWeeklyGraphic(): Graphic {
+  const { group_order: order, answer_to_prayer_weekly: results } = answerToPrayerWeeklyData;
+  return {
+    title: "Receive a definite answer to a specific prayer, weekly+",
+    description: "Share who receive a definite answer to a specific prayer request at least once a week, by religious tradition (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/answer-to-prayer-weekly.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who receive a definite answer to a specific prayer request at least once a week, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
+  };
+}
+
+function oneTrueFaithGraphic(): Graphic {
+  const { group_order: order, one_true_faith: results } = oneTrueFaithData;
+  return {
+    title: "“My religion is the one, true faith leading to eternal life”",
+    description: "Share choosing “my religion is the one, true faith leading to eternal life” over “many religions can lead to eternal life,” by religious tradition, among religiously affiliated adults (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/one-true-faith.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying their religion is the one, true faith leading to eternal life rather than many religions can lead to eternal life, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
+  };
+}
+
+function oneTrueInterpretationGraphic(): Graphic {
+  const { group_order: order, one_true_interpretation: results } = oneTrueInterpretationData;
+  return {
+    title: "“There is only one true way to interpret the teachings of my religion”",
+    description: "Share choosing “there is only one true way to interpret the teachings of my religion” over “more than one true way,” by religious tradition, among religiously affiliated adults (2007).",
+    imageSrc: "/data-explorer/pew-rls-2007/one-true-interpretation.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying there is only one true way to interpret the teachings of their religion, by religious tradition, 2007. ${rls2007PctAlt(order, results)}.`,
   };
 }
 

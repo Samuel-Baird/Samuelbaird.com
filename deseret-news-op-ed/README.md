@@ -22,7 +22,8 @@ appears, and the credit line on every chart reads "Chart: Latter-day Stats".
 | `out/05_denominational_decline.png` / `.svg` | 2007 vs. 2023-24 dumbbell: evangelical, mainline, SBC, UMC, Latter-day Saints (optional substitute for 01) |
 | `out/06_lds_family_formation.png` / `.svg` | Married share and 3+-children share, Latter-day Saints vs. all Christians vs. unaffiliated |
 | `out/07_membership_by_source.png` / `.svg` | U.S. Latter-day Saint membership, 1925-2025, as reported by four separate unreconciled sources |
-| `out/08_membership_by_source_2000s.png` / `.svg` | Church Newsroom, the Church Almanac, and the Yearbook, zoomed to 2000-2025 (no dek, no U.S. Religion Census) |
+| `out/08_membership_by_source_2000s.png` / `.svg` | Church Newsroom and the Church Almanac, zoomed to 2000-2025 |
+| `out/09_membership_by_source_since_almanac.png` / `.svg` | Church Newsroom and the Church Almanac, from 1973 (the Almanac's first year) to 2025 |
 | `data/oped_data.json` | Every number the charts use, with unweighted n's and Pew's published comparison figures |
 | `compute_data.py` | Rebuilds `data/oped_data.json` from the microdata |
 | `render_NN_*.py` | One render script per chart; each reads the JSON at runtime |
@@ -139,31 +140,34 @@ blank).
 among adults born 1960s-70s: Latter-day Saints 67.5% (n = 171, small), all
 Christians 36.9%, unaffiliated 25.8%.
 
-**07 Membership by source.** Not part of the Family Proclamation op-ed —
-a general-purpose reference chart built from
-`docs/datasets/lds-usa-membership-source-comparison/`, showing that the
-"how many Latter-day Saints live in the U.S." question has four different,
-legitimate, unreconciled answers depending on the source and its
-definition (the Church's own membership rolls via Newsroom and the
-Almanac; the Yearbook of American and Canadian Churches' "inclusive
-membership"; the U.S. Religion Census's survey-based "adherents"
-estimate). Regenerate with `python render_07_membership_by_source.py`
-(reads the four CSVs directly, no separate compute step). U.S. Religion
-Census is plotted as unconnected diamond markers rather than a line —
-its seven data points are 8 to 30 years apart, and a connecting line
-would imply a trend the sparse sampling doesn't support.
+**07/08/09 Membership by source.** Not part of the Family Proclamation
+op-ed — a family of general-purpose reference charts built from
+`docs/datasets/lds-usa-membership-source-comparison/`, sharing plotting
+logic in `membership_by_source_common.py` (each render script is a short
+list of *what's different about this one* — sources, year range, title).
+None of the three replace each other; each is its own PNG/SVG.
 
-**08 Membership by source, since 2000.** A companion to chart 07, zoomed
-to 2000-2025 — not a replacement; chart 07 keeps the full 1925-2025,
-four-source view. Regenerate with
-`python render_08_membership_by_source_2000s.py`. Three sources only
-(Church Newsroom, the Church Almanac, the Yearbook) — U.S. Religion
-Census is left out here, both because its three points are 10-30 years
-apart at this narrower time scale and because its low 2000 figure (4.22M)
-was pulling the y-axis floor down more than a million below where the
-other three sources sit. No dek/subtitle, title only. The y-axis does not
-start at zero (matching this pipeline's line-chart convention) — chart 07
-shows the full-history 0-anchored view.
+- **07** (`render_07_membership_by_source.py`) — the full 1925-2025 view,
+  all four sources: Church Newsroom and the Almanac (the Church's own
+  membership rolls), the Yearbook of American and Canadian Churches
+  ("inclusive membership"), and the U.S. Religion Census ("adherents").
+  Shows that "how many Latter-day Saints live in the U.S." has four
+  different, legitimate, unreconciled answers depending on the source and
+  its definition. Religion Census is plotted as unconnected diamond
+  markers rather than a line — its seven points are 8 to 30 years apart,
+  and a connecting line would imply a trend the sparse sampling doesn't
+  support. 0-anchored y-axis, 1M gridline steps.
+- **08** (`render_08_membership_by_source_2000s.py`) — zoomed to
+  2000-2025, Church Newsroom and the Almanac only (Yearbook and Religion
+  Census both dropped — Yearbook duplicates the Almanac's own "membership"
+  story here at nearly identical values, and Religion Census's sparse
+  points and low 2000 figure were pulling the y-axis floor down more than
+  a million below where these two sources sit). No dek/subtitle, title
+  only. Non-zero y-axis floor (~5M), 500K gridline steps.
+- **09** (`render_09_membership_by_source_since_almanac.py`) — starts in
+  1973, the earliest year the Almanac reports a figure, running the same
+  two sources (Newsroom, Almanac) all the way to 2025. No dek/subtitle,
+  title only. Non-zero y-axis floor (~2.5M), 500K gridline steps.
 
 ## Where the op-ed draft and the data disagree
 
