@@ -196,6 +196,10 @@ import hasCrossData from "../../docs/datasets/pew-atp-w132-2023/has-cross.json";
 import reunitedWithLovedOnesData from "../../docs/datasets/pew-atp-w132-2023/reunited-with-loved-ones.json";
 import religiousCommunityData from "../../docs/datasets/pew-atp-w132-2023/religious-community.json";
 import spiritualityImportantData from "../../docs/datasets/pew-atp-w132-2023/spirituality-important.json";
+import spiritualLovedOnesPassedData from "../../docs/datasets/pew-atp-w132-2023/spiritual-loved-ones-passed.json";
+import spiritualFollowingFaithData from "../../docs/datasets/pew-atp-w132-2023/spiritual-following-faith.json";
+import feltDeceasedCommunicatingData from "../../docs/datasets/pew-atp-w132-2023/felt-deceased-communicating.json";
+import moreReligiousOverLifetimeData from "../../docs/datasets/pew-atp-w132-2023/more-religious-over-lifetime.json";
 import tattooPiercingSpiritualData from "../../docs/datasets/pew-atp-w132-2023/tattoo-piercing-spiritual.json";
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
@@ -1580,6 +1584,10 @@ const RAW_DATASETS: Dataset[] = [
       tattooPiercingSpiritualGraphic(),
       deadAwareLivingGraphic(),
       reunitedWithLovedOnesGraphic(),
+      spiritualLovedOnesPassedGraphic(),
+      spiritualFollowingFaithGraphic(),
+      feltDeceasedCommunicatingGraphic(),
+      moreReligiousOverLifetimeGraphic(),
     ],
   },
   {
@@ -3788,6 +3796,61 @@ function religiousCommunityGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w132-2023/religious-community.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share involved in a religious community, by religion, 2023. ${alt}.`,
+  };
+}
+
+/**
+ * ATP W132 spiritual-meaning-and-trajectory cluster (SPIRESSENT1_h,
+ * SPIRESSENT1_b, SPIRSPEAK, LIFEDIR), four items never charted anywhere on
+ * the site, by this wave's own F_RELIG group set. Built by the matching
+ * scripts/pew-atp-w132-2023/<slug>.py scripts (group_order already sorted
+ * via chart_style.sort_groups), rendered by render_<slug>_chart.py.
+ */
+function w132PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function spiritualLovedOnesPassedGraphic(): Graphic {
+  const { group_order: order, loved_ones_passed_essential: results } = spiritualLovedOnesPassedData;
+  return {
+    title: "Connection with loved ones who have passed is essential to being spiritual",
+    description: "Share saying being connected with loved ones who have passed is an essential part of what being spiritual means to them, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/spiritual-loved-ones-passed.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying connection with loved ones who have passed is an essential part of what being spiritual means to them, by religion, 2023. ${w132PctAlt(order, results)}.`,
+  };
+}
+
+function spiritualFollowingFaithGraphic(): Graphic {
+  const { group_order: order, following_faith_essential: results } = spiritualFollowingFaithData;
+  return {
+    title: "Following a religious faith is essential to being spiritual",
+    description: "Share saying following a religious faith is an essential part of what being spiritual means to them, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/spiritual-following-faith.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying following a religious faith is an essential part of what being spiritual means to them, by religion, 2023. ${w132PctAlt(order, results)}.`,
+  };
+}
+
+function feltDeceasedCommunicatingGraphic(): Graphic {
+  const { group_order: order, felt_deceased_communicating: results } = feltDeceasedCommunicatingData;
+  return {
+    title: "Felt someone who passed away was communicating with you",
+    description: "Share who have ever had a strong feeling that someone who has passed away was communicating with them from beyond this world, by religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/felt-deceased-communicating.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who have felt someone who passed away communicating with them from beyond this world, by religion, 2023. ${w132PctAlt(order, results)}.`,
+  };
+}
+
+function moreReligiousOverLifetimeGraphic(): Graphic {
+  const { group_order: order, more_religious_over_lifetime: results } = moreReligiousOverLifetimeData;
+  return {
+    title: "Become more religious over your lifetime",
+    description: "Share saying they have generally become more religious over the course of their lifetime, rather than less religious, some of both, or about the same, by current religion, 2023.",
+    imageSrc: "/data-explorer/pew-atp-w132-2023/more-religious-over-lifetime.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying they have generally become more religious over their lifetime, by current religion, 2023. ${w132PctAlt(order, results)}.`,
   };
 }
 

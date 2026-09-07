@@ -2040,3 +2040,46 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   superstition — LDS 44% = national 43%, no story), PRES1_MORAL (moral life
   very important, LDS 73% vs 65%, thin spread), DISCRRIM_EVANG. Consider
   this dataset fully mined.
+
+- **pew-atp-w132-2023** (American Trends Panel Wave 132, August 2023 —
+  spirituality) — fourth pass, 2026-09-06: full sweep of all 140 variables
+  against every live title. Skipped as live/duplicate-construct: RTWRNG_a
+  (religious beliefs as guide to right and wrong — 2014 RLS chart shipped
+  this session), SPIRACT1_a meditate (2014 RLS), SPIRCOM2a (sibling of live
+  religious-community), SPIREXP_a/b/c (live spiritual-peace/wonder/beyond-
+  this-world), RELEFFECT_d division (near-construct of W143 tolerance),
+  GOD/GODBIBLE/BELIEVE_* (RLS belief charts), SOUL (96% of LDS, near-
+  universal), DTHLKE_* (checked by the prior pass), the AI battery (no
+  religious angle), WHYNONE_* (nones only). Built a 4-chart spiritual-
+  meaning-and-trajectory cluster (F_RELIG group set, Mormon n=176-185,
+  weighted by WEIGHT_W132, refused excluded, rows via sort_groups in the
+  compute script since this folder's renders read group_order as-is):
+  `spiritual-loved-ones-passed.png` (SPIRESSENT1_h, half-sample: 49.9% of
+  Mormons say being connected with loved ones who have passed is an
+  essential part of what being spiritual means, 3rd of 12 behind Muslim
+  52.1%/Hindu 51.7% (n=69/79), vs 31.1% overall and Protestant 25.8% —
+  eternal families; distinct from live reunited-with-loved-ones DTHLKE_f),
+  `spiritual-following-faith.png` (SPIRESSENT1_b: 64.1% say following a
+  religious faith is essential to being spiritual, 2nd to Muslim 66.5%, vs
+  39.9%; only 4.5% call it unimportant), `felt-deceased-communicating.png`
+  (SPIRSPEAK: 54.0% have felt someone who passed away communicating with
+  them, HIGHEST of 12 named groups, vs 38.7%), `more-religious-over-
+  lifetime.png` (LIFEDIR: 48.5% of current Mormons say they have become
+  more religious over their lifetime, 2nd to Muslim 49.1%, twice the 24.4%
+  national figure; only 18% say less religious vs 34%). One-script-per-
+  chart from a scratch generator (`scripts/pew-atp-w132-2023/
+  {spiritual_loved_ones_passed,spiritual_following_faith,
+  felt_deceased_communicating,more_religious_over_lifetime}.py` +
+  `render_*_chart.py`), JSON in `docs/datasets/pew-atp-w132-2023/`, PNGs in
+  `public/data-explorer/pew-atp-w132-2023/`; wired in (four builders
+  sharing `w132PctAlt`; dataset now 11 graphics). `tsc --noEmit` clean;
+  13-row PNG with 3-line title read directly (clean); PNGs served 200; same
+  local-page 500 gotcha, verified via tsx on the staged copy; staged and
+  committed in one command. Remaining after the sweep: SPIRESSENT1_d
+  (connected with God essential, LDS 81% vs 70% — same construct family as
+  the two shipped, thinner spread), SPIRENC (encountered a spirit, LDS 55%
+  vs 48%), SPIRENERGY_a-d (nature/objects/animals/graveyards have spirits,
+  LDS 58% vs 49% on nature — an odd fit), ALTID_d (identify as spiritual),
+  RELEFFECT_a/c (religion gives meaning / encourages doing right — likely
+  LDS-high but close to the W143 tolerance chart). Consider this dataset
+  fully mined.

@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 132, fielded July 31-Aug. 6, 2023.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG; this wave has no F_RELTRAD). Share saying following a religious faith is an essential part of what being spiritual means to them (vs. important but not essential, or not important), SPIRESSENT1_b_W132; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W132 variable.",
+  "total_weighted_n": 8623.095164450875,
+  "total_unweighted_n": 8858,
+  "group_order": [
+    "Muslim",
+    "Mormon",
+    "Protestant",
+    "Orthodox Christian",
+    "Catholic",
+    "Hindu",
+    "Jewish",
+    "Buddhist",
+    "Nothing in particular",
+    "Atheist",
+    "Agnostic",
+    "Other",
+    "U.S. adults"
+  ],
+  "following_faith_essential": {
+    "Protestant": {
+      "pct": 53.16,
+      "valid_unweighted_n": 4294,
+      "group_unweighted_n": 4667
+    },
+    "Catholic": {
+      "pct": 42.88,
+      "valid_unweighted_n": 1869,
+      "group_unweighted_n": 2153
+    },
+    "Mormon": {
+      "pct": 64.13,
+      "valid_unweighted_n": 177,
+      "group_unweighted_n": 185
+    },
+    "Orthodox Christian": {
+      "pct": 51.09,
+      "valid_unweighted_n": 40,
+      "group_unweighted_n": 47
+    },
+    "Jewish": {
+      "pct": 24.59,
+      "valid_unweighted_n": 148,
+      "group_unweighted_n": 222
+    },
+    "Muslim": {
+      "pct": 66.49,
+      "valid_unweighted_n": 68,
+      "group_unweighted_n": 77
+    },
+    "Buddhist": {
+      "pct": 18.51,
+      "valid_unweighted_n": 83,
+      "group_unweighted_n": 100
+    },
+    "Hindu": {
+      "pct": 37.5,
+      "valid_unweighted_n": 79,
+      "group_unweighted_n": 90
+    },
+    "Atheist": {
+      "pct": 2.18,
+      "valid_unweighted_n": 136,
+      "group_unweighted_n": 658
+    },
+    "Agnostic": {
+      "pct": 0.92,
+      "valid_unweighted_n": 323,
+      "group_unweighted_n": 678
+    },
+    "Other": {
+      "pct": 14.26,
+      "valid_unweighted_n": 243,
+      "group_unweighted_n": 271
+    },
+    "Nothing in particular": {
+      "pct": 11.69,
+      "valid_unweighted_n": 1342,
+      "group_unweighted_n": 1981
+    },
+    "U.S. adults": {
+      "pct": 39.88,
+      "valid_unweighted_n": 8858,
+      "group_unweighted_n": 11201
+    }
+  }
+}

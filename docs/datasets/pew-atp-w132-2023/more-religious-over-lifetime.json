@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 132, fielded July 31-Aug. 6, 2023.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG; this wave has no F_RELTRAD). Share saying they have generally become more religious over the course of their lifetime (vs. less religious, some of both, or stayed about the same), LIFEDIR_W132; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W132 variable.",
+  "total_weighted_n": 11097.35362376993,
+  "total_unweighted_n": 11105,
+  "group_order": [
+    "Muslim",
+    "Mormon",
+    "Protestant",
+    "Orthodox Christian",
+    "Hindu",
+    "Catholic",
+    "Buddhist",
+    "Jewish",
+    "Nothing in particular",
+    "Agnostic",
+    "Atheist",
+    "Other",
+    "U.S. adults"
+  ],
+  "more_religious_over_lifetime": {
+    "Protestant": {
+      "pct": 39.24,
+      "valid_unweighted_n": 4625,
+      "group_unweighted_n": 4667
+    },
+    "Catholic": {
+      "pct": 25.42,
+      "valid_unweighted_n": 2144,
+      "group_unweighted_n": 2153
+    },
+    "Mormon": {
+      "pct": 48.55,
+      "valid_unweighted_n": 185,
+      "group_unweighted_n": 185
+    },
+    "Orthodox Christian": {
+      "pct": 30.39,
+      "valid_unweighted_n": 47,
+      "group_unweighted_n": 47
+    },
+    "Jewish": {
+      "pct": 13.2,
+      "valid_unweighted_n": 220,
+      "group_unweighted_n": 222
+    },
+    "Muslim": {
+      "pct": 49.14,
+      "valid_unweighted_n": 75,
+      "group_unweighted_n": 77
+    },
+    "Buddhist": {
+      "pct": 16.36,
+      "valid_unweighted_n": 98,
+      "group_unweighted_n": 100
+    },
+    "Hindu": {
+      "pct": 28.66,
+      "valid_unweighted_n": 89,
+      "group_unweighted_n": 90
+    },
+    "Atheist": {
+      "pct": 0.4,
+      "valid_unweighted_n": 654,
+      "group_unweighted_n": 658
+    },
+    "Agnostic": {
+      "pct": 1.74,
+      "valid_unweighted_n": 674,
+      "group_unweighted_n": 678
+    },
+    "Other": {
+      "pct": 12.55,
+      "valid_unweighted_n": 269,
+      "group_unweighted_n": 271
+    },
+    "Nothing in particular": {
+      "pct": 5.67,
+      "valid_unweighted_n": 1960,
+      "group_unweighted_n": 1981
+    },
+    "U.S. adults": {
+      "pct": 24.39,
+      "valid_unweighted_n": 11105,
+      "group_unweighted_n": 11201
+    }
+  }
+}

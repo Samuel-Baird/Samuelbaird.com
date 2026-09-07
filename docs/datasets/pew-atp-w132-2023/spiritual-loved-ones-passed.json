@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 132, fielded July 31-Aug. 6, 2023.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG; this wave has no F_RELTRAD). Share saying being connected with loved ones who have passed is an essential part of what being spiritual means to them (vs. important but not essential, or not important), SPIRESSENT1_h_W132; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W132 variable.",
+  "total_weighted_n": 8603.536904722549,
+  "total_unweighted_n": 8849,
+  "group_order": [
+    "Muslim",
+    "Hindu",
+    "Mormon",
+    "Orthodox Christian",
+    "Catholic",
+    "Agnostic",
+    "Buddhist",
+    "Nothing in particular",
+    "Atheist",
+    "Jewish",
+    "Protestant",
+    "Other",
+    "U.S. adults"
+  ],
+  "loved_ones_passed_essential": {
+    "Protestant": {
+      "pct": 25.8,
+      "valid_unweighted_n": 4290,
+      "group_unweighted_n": 4667
+    },
+    "Catholic": {
+      "pct": 39.05,
+      "valid_unweighted_n": 1858,
+      "group_unweighted_n": 2153
+    },
+    "Mormon": {
+      "pct": 49.9,
+      "valid_unweighted_n": 176,
+      "group_unweighted_n": 185
+    },
+    "Orthodox Christian": {
+      "pct": 48.34,
+      "valid_unweighted_n": 40,
+      "group_unweighted_n": 47
+    },
+    "Jewish": {
+      "pct": 29.12,
+      "valid_unweighted_n": 147,
+      "group_unweighted_n": 222
+    },
+    "Muslim": {
+      "pct": 52.13,
+      "valid_unweighted_n": 69,
+      "group_unweighted_n": 77
+    },
+    "Buddhist": {
+      "pct": 32.6,
+      "valid_unweighted_n": 83,
+      "group_unweighted_n": 100
+    },
+    "Hindu": {
+      "pct": 51.7,
+      "valid_unweighted_n": 79,
+      "group_unweighted_n": 90
+    },
+    "Atheist": {
+      "pct": 29.86,
+      "valid_unweighted_n": 137,
+      "group_unweighted_n": 658
+    },
+    "Agnostic": {
+      "pct": 32.78,
+      "valid_unweighted_n": 324,
+      "group_unweighted_n": 678
+    },
+    "Other": {
+      "pct": 44.82,
+      "valid_unweighted_n": 243,
+      "group_unweighted_n": 271
+    },
+    "Nothing in particular": {
+      "pct": 30.44,
+      "valid_unweighted_n": 1346,
+      "group_unweighted_n": 1981
+    },
+    "U.S. adults": {
+      "pct": 31.05,
+      "valid_unweighted_n": 8849,
+      "group_unweighted_n": 11201
+    }
+  }
+}
