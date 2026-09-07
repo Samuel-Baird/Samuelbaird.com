@@ -21,6 +21,7 @@ import stayHomeParentGenderData from "../../docs/datasets/pew-rls-2023-24/stay-h
 import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
 import foodStorageByActivityData from "../../docs/datasets/pew-mormon-survey-2011/food-storage-by-activity.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
+import cces2016VoteGunsData from "../../docs/datasets/ryan-burge/cces2016-vote-guns.json";
 import pidByGenderData from "../../docs/datasets/ryan-burge/pid-by-gender.json";
 import voterStrangerData from "../../docs/datasets/ryan-burge/voter-stranger.json";
 import voterFtRacialData from "../../docs/datasets/ryan-burge/voter-ft-racial-religious.json";
@@ -798,6 +799,10 @@ const RAW_DATASETS: Dataset[] = [
       cces2016GaymGraphic(),
       cces2016AttendGraphic(),
       cces2016UnionGraphic(),
+      cces2016Vote2016Graphic(),
+      cces2016GunBackgroundChecksGraphic(),
+      cces2016GunAssaultBanGraphic(),
+      cces2016GunConcealedCarryGraphic(),
     ],
   },
   {
@@ -5243,6 +5248,78 @@ function cces2016PctAlt(results: Record<string, { pct: number | null }>): string
   return CCES2016_GROUP_ORDER
     .map((group) => `${group} ${results[group]!.pct?.toFixed(0) ?? "n/a"}%`)
     .join(", ");
+}
+/**
+ * 2016 presidential vote choice (CC16_410a) by religion - a four-segment
+ * nominal distribution stack (Trump / Clinton / McMullin / Other candidate),
+ * the one CCES 2016 item where Latter-day Saints stand alone: McMullin took
+ * 14% of LDS voters and under 1% of every other group. Built from
+ * cces2016-vote-guns.json (scripts/ryan-burge/cces2016_vote_guns.py),
+ * rendered by scripts/ryan-burge/render_cces2016_vote_guns_charts.py.
+ */
+function cces2016Vote2016Graphic(): Graphic {
+  const { vote16_distribution: results, vote16_order: order } = cces2016VoteGunsData;
+  const alt = CCES2016_GROUP_ORDER.map((group) => {
+    const g = results[group as keyof typeof results];
+    const shares = order
+      .map((label) => `${label} ${g.shares_pct[label as keyof typeof g.shares_pct]?.toFixed(0) ?? "n/a"}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "2016 presidential vote, by religion",
+    description:
+      "How each religion group's voters split between Trump, Clinton, McMullin, and other candidates in 2016, among respondents who named a candidate they voted for.",
+    imageSrc: "/data-explorer/cces-2016/vote-2016.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `100%-stacked bar chart, 2016 presidential vote by religion: ${alt}.`,
+  };
+}
+
+/** Gun regulation (CC16_330a/d/e) support items by religion - same shape,
+ * population, and data file as the vote-choice graphic above. */
+function cces2016GunBackgroundChecksGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016VoteGunsData.background_support);
+  return {
+    title: "Background checks for all gun sales",
+    description:
+      "Share who support background checks for all gun sales, including at gun shows and over the Internet, by religion.",
+    imageSrc: "/data-explorer/cces-2016/gun-background-checks.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share supporting background checks for all gun sales, by religion: ${alt}.`,
+  };
+}
+
+function cces2016GunAssaultBanGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016VoteGunsData.assaultban_support);
+  return {
+    title: "Ban assault rifles",
+    description: "Share who support banning assault rifles, by religion.",
+    imageSrc: "/data-explorer/cces-2016/gun-assault-ban.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share supporting a ban on assault rifles, by religion: ${alt}.`,
+  };
+}
+
+function cces2016GunConcealedCarryGraphic(): Graphic {
+  const alt = cces2016PctAlt(cces2016VoteGunsData.conceal_support);
+  return {
+    title: "Make concealed-carry permits easier to get",
+    description:
+      "Share who support making it easier for people to obtain a concealed-carry permit, by religion.",
+    imageSrc: "/data-explorer/cces-2016/gun-concealed-carry.png",
+    width: 1080,
+    height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart, share supporting easier concealed-carry permits, by religion: ${alt}.`,
+  };
 }
 
 /**

@@ -150,12 +150,24 @@ def render_magnitude_bar(
 def render_distribution_stack(
     results: dict, seg_order: list[str], title: str, subtitle: str, note: str,
     total_n: int, out_path: Path, fonts: dict[str, fm.FontProperties],
+    seg_colors: list[str] | None = None, seg_text_colors: list[str] | None = None,
+    handle: str | None = None,
 ) -> None:
+    """100%-stacked bar, one row per religion group. By default the segments
+    take the site's ordinal blue ramp (for an ordered scale like attendance
+    frequency). `seg_colors`/`seg_text_colors`, when given, override that
+    with one explicit fill/label-ink per segment - for a *nominal* scale
+    (e.g. render_cces2016_vote_guns_charts.py's vote-choice segments), where
+    a light-to-dark ramp would falsely imply an ordering. `handle` overrides
+    the caption's data credit line (default: "Ryan Burge, CCES 2016")."""
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
 
     subtitle_bottom = draw_title(fig, fonts, title, subtitle)
-    caption_top = draw_caption(fig, fonts, total_n, note)
+    if handle is None:
+        caption_top = draw_caption(fig, fonts, total_n, note)
+    else:
+        caption_top = draw_caption_bottom(fig, fonts, [], handle=handle, fontsize=16, color=INK)
     ax_top = subtitle_bottom - 0.03
 
     n_segs = len(seg_order)
@@ -164,9 +176,14 @@ def render_distribution_stack(
     legend_bottom_y = caption_top + 0.02
     legend_top_y = legend_bottom_y + LEGEND_ROW_HEIGHT * legend_rows
     ax_bottom = legend_top_y + 0.02
-    step_idxs = [round(i * (len(ORDINAL_RAMP_7) - 1) / (n_segs - 1)) for i in range(n_segs)]
-    colors = [ORDINAL_RAMP_7[i] for i in step_idxs]
-    text_colors = [LABEL_INK_FOR_STEP_7[i] for i in step_idxs]
+    if seg_colors is not None:
+        assert len(seg_colors) == n_segs and seg_text_colors is not None and len(seg_text_colors) == n_segs
+        colors = list(seg_colors)
+        text_colors = list(seg_text_colors)
+    else:
+        step_idxs = [round(i * (len(ORDINAL_RAMP_7) - 1) / (n_segs - 1)) for i in range(n_segs)]
+        colors = [ORDINAL_RAMP_7[i] for i in step_idxs]
+        text_colors = [LABEL_INK_FOR_STEP_7[i] for i in step_idxs]
 
     AXES_LEFT, AXES_WIDTH = 0.36, 0.58
     ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])

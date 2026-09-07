@@ -1,0 +1,320 @@
+{
+  "source": "Ryan Burge (github.com/ryanburge), CCES 2016 common content extract (cces2016_small_cces.csv).",
+  "via": "Ryan Burge",
+  "method": "Population: all 12 religpew categories individually (not collapsed - see cces2016_by_religion.py's docstring for why). Unweighted (this file carries no survey weight column) - good for shape/direction, not exact figures. Vote choice (CC16_410a): base is respondents naming a candidate; didn't vote / not sure / skipped excluded; Johnson, Stein, and 'Other' combined as 'Other candidate'. Gun items (CC16_330a/d/e) are support/oppose; not asked/skipped excluded.",
+  "total_n": 64600,
+  "vote16_distribution": {
+    "Protestant": {
+      "shares_pct": {
+        "Trump": 54.08,
+        "Clinton": 38.24,
+        "McMullin": 0.24,
+        "Other candidate": 7.45
+      },
+      "valid_n": 17018,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "shares_pct": {
+        "Trump": 47.52,
+        "Clinton": 45.59,
+        "McMullin": 0.14,
+        "Other candidate": 6.75
+      },
+      "valid_n": 9805,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "shares_pct": {
+        "Trump": 49.84,
+        "Clinton": 19.57,
+        "McMullin": 14.13,
+        "Other candidate": 16.46
+      },
+      "valid_n": 644,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "shares_pct": {
+        "Trump": 50.41,
+        "Clinton": 41.32,
+        "McMullin": 0.0,
+        "Other candidate": 8.26
+      },
+      "valid_n": 242,
+      "group_n": 362
+    },
+    "Jewish": {
+      "shares_pct": {
+        "Trump": 25.94,
+        "Clinton": 68.1,
+        "McMullin": 0.08,
+        "Other candidate": 5.88
+      },
+      "valid_n": 1276,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "shares_pct": {
+        "Trump": 11.43,
+        "Clinton": 81.71,
+        "McMullin": 0.0,
+        "Other candidate": 6.86
+      },
+      "valid_n": 175,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "shares_pct": {
+        "Trump": 18.06,
+        "Clinton": 65.97,
+        "McMullin": 0.0,
+        "Other candidate": 15.97
+      },
+      "valid_n": 382,
+      "group_n": 621
+    },
+    "Hindu": {
+      "shares_pct": {
+        "Trump": 20.87,
+        "Clinton": 78.26,
+        "McMullin": 0.0,
+        "Other candidate": 0.87
+      },
+      "valid_n": 115,
+      "group_n": 299
+    },
+    "Atheist": {
+      "shares_pct": {
+        "Trump": 10.12,
+        "Clinton": 78.19,
+        "McMullin": 0.07,
+        "Other candidate": 11.62
+      },
+      "valid_n": 2985,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "shares_pct": {
+        "Trump": 18.3,
+        "Clinton": 69.44,
+        "McMullin": 0.03,
+        "Other candidate": 12.22
+      },
+      "valid_n": 2929,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "shares_pct": {
+        "Trump": 33.3,
+        "Clinton": 56.62,
+        "McMullin": 0.11,
+        "Other candidate": 9.97
+      },
+      "valid_n": 7031,
+      "group_n": 11986
+    },
+    "Something else": {
+      "shares_pct": {
+        "Trump": 35.35,
+        "Clinton": 52.79,
+        "McMullin": 0.26,
+        "Other candidate": 11.6
+      },
+      "valid_n": 2294,
+      "group_n": 3621
+    }
+  },
+  "vote16_order": [
+    "Trump",
+    "Clinton",
+    "McMullin",
+    "Other candidate"
+  ],
+  "background_support": {
+    "Protestant": {
+      "pct": 88.38,
+      "valid_n": 22794,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 91.09,
+      "valid_n": 13835,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 80.28,
+      "valid_n": 867,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 86.39,
+      "valid_n": 360,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 94.6,
+      "valid_n": 1537,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 90.78,
+      "valid_n": 434,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 94.35,
+      "valid_n": 619,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 95.65,
+      "valid_n": 299,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 94.75,
+      "valid_n": 4019,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 93.4,
+      "valid_n": 3985,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 90.65,
+      "valid_n": 11952,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 89.59,
+      "valid_n": 3611,
+      "group_n": 3621
+    }
+  },
+  "assaultban_support": {
+    "Protestant": {
+      "pct": 62.4,
+      "valid_n": 22706,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 66.25,
+      "valid_n": 13797,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 48.03,
+      "valid_n": 862,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 61.52,
+      "valid_n": 356,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 79.78,
+      "valid_n": 1538,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 74.01,
+      "valid_n": 431,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 76.18,
+      "valid_n": 617,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 87.46,
+      "valid_n": 295,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 78.72,
+      "valid_n": 4009,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 72.75,
+      "valid_n": 3974,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 67.27,
+      "valid_n": 11899,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 63.49,
+      "valid_n": 3594,
+      "group_n": 3621
+    }
+  },
+  "conceal_support": {
+    "Protestant": {
+      "pct": 43.18,
+      "valid_n": 22749,
+      "group_n": 22888
+    },
+    "Catholic": {
+      "pct": 38.95,
+      "valid_n": 13787,
+      "group_n": 13880
+    },
+    "Mormon": {
+      "pct": 57.87,
+      "valid_n": 864,
+      "group_n": 870
+    },
+    "Orthodox": {
+      "pct": 43.18,
+      "valid_n": 359,
+      "group_n": 362
+    },
+    "Jewish": {
+      "pct": 25.73,
+      "valid_n": 1531,
+      "group_n": 1546
+    },
+    "Muslim": {
+      "pct": 41.01,
+      "valid_n": 434,
+      "group_n": 436
+    },
+    "Buddhist": {
+      "pct": 27.48,
+      "valid_n": 615,
+      "group_n": 621
+    },
+    "Hindu": {
+      "pct": 30.41,
+      "valid_n": 296,
+      "group_n": 299
+    },
+    "Atheist": {
+      "pct": 20.11,
+      "valid_n": 4007,
+      "group_n": 4025
+    },
+    "Agnostic": {
+      "pct": 25.36,
+      "valid_n": 3974,
+      "group_n": 3993
+    },
+    "Nothing in particular": {
+      "pct": 36.52,
+      "valid_n": 11929,
+      "group_n": 11986
+    },
+    "Something else": {
+      "pct": 38.03,
+      "valid_n": 3605,
+      "group_n": 3621
+    }
+  }
+}

@@ -1715,3 +1715,51 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   `V161228x` transgender bathroom policy (political; CCES same-sex marriage
   already live). Consider this dataset close to fully mined for the site's
   purposes; the thermometers are the only distinct shape left.
+
+- **cces-2016** (CCES 2016, Ryan Burge's 33-variable extract,
+  `data/ryan-burge/tier1-strong/cces2016_small_cces.csv`, LDS n=870) —
+  second pass, 2026-09-06: with every small-n file now charted, went back
+  to the largest LDS sample in `data/` and checked which of its 33 columns
+  the first pass (9 charts: immigration x4, abortion x2, same-sex marriage,
+  attendance, union) had left untouched: 2016 presidential vote (`vote16`,
+  CC16_410a), the four gun items (CC16_330a/b/d/e), `ideo5`, and the
+  economy/police items. Built 4 charts, same population/unweighted
+  conventions as `cces2016_by_religion.py` (the file has no weight column):
+  `vote-2016.png` — a four-segment **nominal** distribution stack (Trump /
+  Clinton / McMullin / Other candidate) among voters naming a candidate:
+  Latter-day Saints split Trump 50% / Clinton 20% / McMullin 14% / other 16%,
+  and McMullin is under 1% in every other group — the famous 2016 LDS
+  third-party story, verified in microdata; `gun-background-checks.png`
+  (LDS 80.3% support, LOWEST of 12 groups, vs 88-96% everywhere else),
+  `gun-assault-ban.png` (LDS 48.0%, lowest, vs Protestant 62.4% and 63-88%
+  for everyone else), `gun-concealed-carry.png` (LDS 57.9% support easier
+  permits, HIGHEST, vs Protestant 43.2%). CC16_330b (prohibit publishing gun
+  owners' names) skipped for its double-negative wording. Duplicate check:
+  the site's only 2016-vote-adjacent chart is the VOTER panel's 2012→2016
+  switching chart, a different survey and construct. Compute
+  `scripts/ryan-burge/cces2016_vote_guns.py` (imports the first pass's
+  helpers rather than copying them) → `docs/datasets/ryan-burge/
+  cces2016-vote-guns.json`; render `scripts/ryan-burge/
+  render_cces2016_vote_guns_charts.py` reuses
+  `render_cces2016_by_religion_charts.py`'s own `render_magnitude_bar` and
+  `render_distribution_stack` — the latter gained optional
+  `seg_colors`/`seg_text_colors`/`handle` parameters (default behavior
+  unchanged; the existing `attend-distribution.png` re-rendered
+  pixel-identical) so a nominal scale like vote choice doesn't get the
+  ordinal blue ramp. Vote segment colors follow
+  `render_pid_by_gender_chart.py`'s documented party convention (`--accent`
+  Clinton, `--honey` Trump, bar-safe gray for other) plus
+  `chart_style.DIV_POS_GREEN` for McMullin — named tokens, no hand-picked
+  hex. Wired into the existing `cces-2016` Dataset (now 13 graphics;
+  `cces2016Vote2016Graphic()` + three `cces2016Gun*Graphic()`), `tsc
+  --noEmit` clean, vote PNG read directly (12 rows, all segment labels ≥8%
+  print, legend 2x2 clear of caption), PNGs served 200. Same
+  local-verification gotcha as the three previous passes (other session's
+  uncommitted TDZ bug 500s every Data Explorer page); verified via tsx on
+  the staged copy and staged `data-explorer.ts` as a plumbing blob.
+  Remaining CCES 2016 candidates: `ideo5` (5-point ideology distribution by
+  religion — real but near-duplicates the CES `pid-over-time` partisanship
+  story), CC16_330b (skipped, see above), `natecon`/`econfuture`/`mymoney`
+  (retrospective/prospective economy, 2016-specific and partisan-coded),
+  `police` (feel safe around police — no religious angle). Consider this
+  dataset fully mined.
