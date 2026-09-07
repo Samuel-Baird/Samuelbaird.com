@@ -1804,3 +1804,50 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   is now fully used or deliberately skipped; remaining leftovers from prior
   notes (qk10c/qk10d Sunday-school siblings) are still weak-fit. Consider
   this dataset fully mined.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — eighth pass,
+  2026-09-06: instead of working from prior passes' leftover notes, dumped
+  all 199 variable labels and cross-checked every substantive item against
+  every live title on the site. Already-live constructs skipped: qa1
+  happiness ("Who says they're very happy with life?"), qb30/qb30b
+  evolution (two charts), qf5 congregation membership ("Member of a house
+  of worship"), qi4a spiritual peace and qi4d meaning/purpose (2023-24
+  wave), qk10a-d family practices (family-scripture-prayer /
+  sunday-school-children / religious-school). Four full-sample items had
+  never been charted and form one tight moral-and-family-outlook cluster,
+  built as 4 charts (Mormon n=642-663, weighted by WEIGHT, DK/refused
+  excluded, rows via `chart_style.sort_groups`):
+  `children-without-marriage-worse.png` (qb1c: 84.2% of Mormons call "more
+  people having children without getting married" a change for the worse,
+  HIGHEST of 12, vs Evangelical 75.3% and 57.1% overall — the family
+  proclamation's birth-within-marriage teaching in members' own social
+  read), `absolute-standards-right-wrong.png` (qb2d: 57.5% of Mormons say
+  there are clear and absolute standards for right and wrong, 2nd to
+  Jehovah's Witness 58.0%, vs 33.4% overall), `guidance-religious-
+  teachings.png` (qb31: 66.0% of Mormons look most to religious teachings
+  for guidance on right and wrong, 2nd to JW 81.8%, above Evangelical
+  61.2%, vs 34.1% overall), `very-satisfied-family-life.png` (qa2a: 78.1%
+  of Mormons very satisfied with family life, HIGHEST of 12, vs 70.5%
+  overall). Compute/render scripts are one-per-chart per this folder's
+  convention (`scripts/pew-rls-2014/{children_without_marriage_worse,
+  absolute_standards_right_wrong,guidance_religious_teachings,
+  very_satisfied_family_life}.py` + matching `render_*_chart.py`), JSON in
+  `docs/datasets/pew-rls-2014/`, PNGs in `public/data-explorer/pew-rls-2014/`;
+  wired in (four builders sharing a small `rls2014PctAlt` helper; dataset
+  now 23 graphics). `tsc --noEmit` clean; 3-line-title PNG read directly
+  (13 rows, wraps cleanly, no collisions); PNGs served 200. Same local-page
+  500 gotcha as every pass this session (other session's uncommitted TDZ
+  bug), verified via tsx on the staged copy, `data-explorer.ts` staged as a
+  plumbing blob. Genuinely remaining in this file after the full sweep:
+  `qi4c` (feel a strong sense of gratitude weekly+, Mormon 599/661 ≈ 91%
+  unweighted — probably highest, worth a chart), `qi4b` (sense of wonder
+  weekly+, Mormon 337/661 ≈ 51%, mid-pack per the 2007 sibling check),
+  `qb1b` (more women in the workforce a change for the better, Mormon
+  ~49%), `qb1a` (immigrants — VOTER panel has a views-of-immigrants chart),
+  `qb2a-c` (homosexuality accepted/discouraged, government aid to the
+  poor, environmental regulation — political-values items, qb2a partly
+  covered by same-sex-marriage charts), `qb20`/`qb21` (government size,
+  abortion — CCES abortion charts exist), `qp99` (knows someone gay,
+  Mormon 87%, no teaching angle), `qk10c` (religious/home school, Mormon
+  11%). Of these only qi4c and qb1b/qb2a have a clean story; the rest are
+  political or duplicative.

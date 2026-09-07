@@ -111,6 +111,10 @@ import scriptureLiteralismData from "../../docs/datasets/pew-rls-2014/scripture-
 import churchTooManyRulesData from "../../docs/datasets/pew-rls-2014/church-too-many-rules.json";
 import shareFaithWeeklyData from "../../docs/datasets/pew-rls-2014/share-faith-weekly.json";
 import meditateWeeklyData from "../../docs/datasets/pew-rls-2014/meditate-weekly.json";
+import childrenWithoutMarriageWorseData from "../../docs/datasets/pew-rls-2014/children-without-marriage-worse.json";
+import absoluteStandardsRightWrongData from "../../docs/datasets/pew-rls-2014/absolute-standards-right-wrong.json";
+import guidanceReligiousTeachingsData from "../../docs/datasets/pew-rls-2014/guidance-religious-teachings.json";
+import verySatisfiedFamilyLifeData from "../../docs/datasets/pew-rls-2014/very-satisfied-family-life.json";
 import churchTooMuchMoneyPowerData from "../../docs/datasets/pew-rls-2014/church-too-much-money-power.json";
 import churchTooInvolvedPoliticsData from "../../docs/datasets/pew-rls-2014/church-too-involved-politics.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
@@ -1101,6 +1105,10 @@ const RAW_DATASETS: Dataset[] = [
       churchTooInvolvedPoliticsGraphic(),
       shareFaithWeeklyGraphic(),
       meditateWeeklyGraphic(),
+      childrenWithoutMarriageWorseGraphic(),
+      absoluteStandardsRightWrongGraphic(),
+      guidanceReligiousTeachingsGraphic(),
+      verySatisfiedFamilyLifeGraphic(),
     ],
   },
   {
@@ -2535,6 +2543,63 @@ function meditateWeeklyGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/meditate-weekly.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who meditate at least once a week, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+/**
+ * 2014 RLS moral-and-family-outlook cluster (qb1c, qb2d, qb31, qa2a), four
+ * full-sample items never charted anywhere on the site. Built by the
+ * matching scripts/pew-rls-2014/<slug>.py scripts (group_order already
+ * sorted via chart_style.sort_groups), rendered by render_<slug>_chart.py.
+ */
+function rls2014PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function childrenWithoutMarriageWorseGraphic(): Graphic {
+  const { group_order: order, children_without_marriage_worse: results } = childrenWithoutMarriageWorseData;
+  return {
+    title: "“More people having children without getting married” is a change for the worse",
+    description:
+      "Share saying that more people having children without getting married has been a change for the worse, versus a change for the better, no difference, or mixed, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/children-without-marriage-worse.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying more people having children without getting married has been a change for the worse, by religious tradition, 2014. ${rls2014PctAlt(order, results)}.`,
+  };
+}
+
+function absoluteStandardsRightWrongGraphic(): Graphic {
+  const { group_order: order, absolute_standards_right_wrong: results } = absoluteStandardsRightWrongData;
+  return {
+    title: "There are clear and absolute standards for right and wrong",
+    description:
+      "Share choosing “there are clear and absolute standards for what is right and wrong” over “whether something is right or wrong often depends on the situation,” by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/absolute-standards-right-wrong.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying there are clear and absolute standards for what is right and wrong, by religious tradition, 2014. ${rls2014PctAlt(order, results)}.`,
+  };
+}
+
+function guidanceReligiousTeachingsGraphic(): Graphic {
+  const { group_order: order, guidance_religious_teachings: results } = guidanceReligiousTeachingsData;
+  return {
+    title: "Religious teachings are my main guide to right and wrong",
+    description:
+      "Share who look most to religious teachings and beliefs, rather than philosophy and reason, practical experience and common sense, or scientific information, for guidance on questions of right and wrong, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/guidance-religious-teachings.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who look most to religious teachings and beliefs for guidance on questions of right and wrong, by religious tradition, 2014. ${rls2014PctAlt(order, results)}.`,
+  };
+}
+
+function verySatisfiedFamilyLifeGraphic(): Graphic {
+  const { group_order: order, very_satisfied_family_life: results } = verySatisfiedFamilyLifeData;
+  return {
+    title: "Very satisfied with family life",
+    description: "Share very satisfied with their family life, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/very-satisfied-family-life.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share very satisfied with their family life, by religious tradition, 2014. ${rls2014PctAlt(order, results)}.`,
   };
 }
 
