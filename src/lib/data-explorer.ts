@@ -29,6 +29,10 @@ import voterIssueImportanceData from "../../docs/datasets/ryan-burge/voter-issue
 import terrorismImportanceData from "../../docs/datasets/ryan-burge/terrorism-importance.json";
 import gayRightsImportanceData from "../../docs/datasets/ryan-burge/gay-rights-importance.json";
 import genderEqualityImportanceData from "../../docs/datasets/ryan-burge/gender-equality-importance.json";
+import faithMattersConvertOkData from "../../docs/datasets/ryan-burge/faith-matters-convert-ok.json";
+import faithMattersReligiousGivingData from "../../docs/datasets/ryan-burge/faith-matters-religious-giving.json";
+import faithMattersMarryWithinFaithData from "../../docs/datasets/ryan-burge/faith-matters-marry-within-faith.json";
+import faithMattersTalkReligionData from "../../docs/datasets/ryan-burge/faith-matters-talk-religion.json";
 import ftFeministsData from "../../docs/datasets/ryan-burge/ft-feminists.json";
 import ftGaysLesbiansData from "../../docs/datasets/ryan-burge/ft-gays-lesbians.json";
 import voterIdeasBarsData from "../../docs/datasets/ryan-burge/voter-ideas-bars.json";
@@ -864,6 +868,33 @@ const RAW_DATASETS: Dataset[] = [
       voterNonreligiousCausesGraphic(),
       voterReligiousOrgVolunteerGraphic(),
       voterPrideGraphic(),
+    ],
+  },
+  {
+    slug: "faith-matters-2006",
+    name: "Faith Matters Survey 2006",
+    shortDescription:
+      "Putnam and Campbell's American Grace survey: 3,108 U.S. adults on religious practice, belief, and social ties.",
+    sponsor: "Robert D. Putnam and David E. Campbell (Harvard / Notre Dame)",
+    fielder: "International Communications Research",
+    fieldedPeriod: "2006",
+    description:
+      "The Faith Matters Survey is the national survey behind Robert Putnam and David " +
+      "Campbell's American Grace: How Religion Divides and Unites Us (2010) — 3,108 U.S. " +
+      "adults interviewed by telephone in summer 2006 on religious practice, belief, " +
+      "congregational life, giving, volunteering, and attitudes toward other religious " +
+      "groups. Unlike the standard seven-category RELTRAD typology, its own religious-" +
+      "tradition coding keeps Latter-day Saints as a separate category (53 respondents), " +
+      "so every item asked of the full sample can be broken out by tradition. This copy is " +
+      "redistributed by Ryan Burge (github.com/ryanburge); the charts here use only the " +
+      "full-sample items — the survey's split-sample battery leaves the Latter-day Saint " +
+      "cell too thin to report.",
+    sourceUrl: "https://www.thearda.com/data-archive?fid=FTHMATT",
+    graphics: [
+      faithMattersConvertOkGraphic(),
+      faithMattersReligiousGivingGraphic(),
+      faithMattersMarryWithinFaithGraphic(),
+      faithMattersTalkReligionGraphic(),
     ],
   },
   {
@@ -5558,6 +5589,73 @@ function voterGayRightsImportanceGraphic(): Graphic {
  * a single-item pull-out from the issue-importance matrix above, in the
  * same magnitude-bar shape as terrorismImportanceGraphic().
  */
+/**
+ * Faith Matters 2006 (Putnam & Campbell's American Grace survey, via Ryan
+ * Burge): four full-sample items by the survey's own religious-tradition
+ * coding, which keeps Latter-day Saints as a separate category. Same
+ * magnitude-bar shape as voterGayRightsImportanceGraphic(); computed by
+ * scripts/ryan-burge/faith_matters_2006.py, rendered by
+ * scripts/ryan-burge/render_faith_matters_2006_charts.py.
+ */
+function faithMattersAlt(
+  order: string[],
+  results: Record<string, { pct: number | null }>,
+): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function faithMattersConvertOkGraphic(): Graphic {
+  const { group_order: order, convert_ok: results } = faithMattersConvertOkData;
+  return {
+    title: "Okay for religious people to try to convert others",
+    description:
+      "Share choosing that over “everyone should leave everyone else alone,” by religious tradition, 2006.",
+    imageSrc: "/data-explorer/faith-matters-2006/convert-ok.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying it is okay for religious people to try to convert others, by religious tradition, 2006. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function faithMattersReligiousGivingGraphic(): Graphic {
+  const { group_order: order, gave_1000_plus_religious: results } = faithMattersReligiousGivingData;
+  return {
+    title: "Gave $1,000 or more to religious causes last year",
+    description:
+      "Share of households giving $1,000 or more to religious causes in the past 12 months, by religious tradition, 2006.",
+    imageSrc: "/data-explorer/faith-matters-2006/religious-giving-1000-plus.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share of households giving $1,000 or more to religious causes in the past year, by religious tradition, 2006. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function faithMattersMarryWithinFaithGraphic(): Graphic {
+  const { group_order: order, marry_within_faith_very_important: results } = faithMattersMarryWithinFaithData;
+  return {
+    title: "Very important that my children marry within my faith",
+    description:
+      "Share of parents saying it is very important that their children marry someone of their own faith, by religious tradition, 2006.",
+    imageSrc: "/data-explorer/faith-matters-2006/marry-within-faith.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share of parents saying it is very important that their children marry someone of their own faith, by religious tradition, 2006. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
+function faithMattersTalkReligionGraphic(): Graphic {
+  const { group_order: order, talk_religion_daily: results } = faithMattersTalkReligionData;
+  return {
+    title: "Talk about religion with family and friends daily",
+    description:
+      "Share saying they talk about religion with family and friends roughly daily, by religious tradition, 2006.",
+    imageSrc: "/data-explorer/faith-matters-2006/talk-religion-daily.png",
+    width: 1080, height: 1350,
+    credit: "via Ryan Burge",
+    alt: `Bar chart: share saying they talk about religion with family and friends roughly daily, by religious tradition, 2006. ${faithMattersAlt(order, results)}.`,
+  };
+}
+
 function voterGenderEqualityImportanceGraphic(): Graphic {
   const { group_order: order, gender_equality_important: results } = genderEqualityImportanceData;
   const alt = order

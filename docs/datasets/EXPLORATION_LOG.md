@@ -1550,3 +1550,61 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   concretely open candidate left for this wave per the prior pass's own
   note (`RELIGCONFLICT_W143` already checked and dropped as mid-pack
   no-story); consider this dataset fully mined.
+
+- **faith-matters-2006** (Faith Matters Survey 2006, Putnam & Campbell's
+  *American Grace* survey, `data/ryan-burge/tier2-small-n/faith_matters_2006.DTA`,
+  via Ryan Burge) — first pass, 2026-09-06: every dataset above was marked
+  fully/close-to-fully mined, so this pass opened the one file the ryan-burge
+  entry flagged as "underpowered alone" and checked that claim against the
+  real .dta with pyreadstat rather than trusting it. The survey's own
+  `reltrad` variable (unlike standard 7-cat RELTRAD) keeps Mormon as its own
+  category (code 6, n=53 unweighted), so any item asked of the **full sample**
+  (~3,100) clears the 30-valid floor (42-53 LDS valid); the survey's
+  split-sample battery (~1,550 asked: grace before meals `grace`, religious
+  abstinence from food/drink/tobacco `tetotl`, morality of homosexuality
+  `okgay`, feeling God's love `godslov`, God's-law-vs-society `GOD_SOC`) leaves
+  LDS at n=21-30 and was checked and deliberately NOT charted. Duplicate check
+  dropped two otherwise strong full-sample items: `whohvn` (good person of
+  another faith can attain salvation, LDS 96%) duplicates the live "Can other
+  faiths lead to eternal life?" chart, and `ftmormn` (0-100 thermometer toward
+  Mormons) duplicates pew-atp-w44-2018's `warmth-toward-mormons`. Registered a
+  new Dataset `faith-matters-2006` (fielder ICR, sourceUrl ARDA FTHMATT) and
+  built 4 charts, all weighted by `weight`, DK/refused excluded, rows via
+  `chart_style.sort_groups`, colors via `color_for_group` (survey labels
+  mapped to site spellings; its "Evangelical Protestant/Other Protestant"
+  category is labeled "Evangelical Protestant"): `convert-ok.png` (CONV_OK:
+  85.9% of LDS say it's okay for religious people to try to convert others,
+  highest of 8 traditions by 21 points over Evangelical 64.8%, vs 43.4% of all
+  adults — missionary work), `religious-giving-1000-plus.png` (giverel: 67.3%
+  of LDS households gave $1,000+ to religious causes in 2006 dollars, highest
+  by 29 points over Jewish 38.4%/Evangelical 36.4%, vs 26.9% overall — tithing;
+  n=45), `marry-within-faith.png` (wedinrel, parents only: 53.1% of LDS say
+  it's very important their children marry within the faith, highest by 20
+  points over Evangelical 33.5%, vs 22.4% overall — temple marriage; n=42),
+  `talk-religion-daily.png` (talkrel: 46.3% of LDS talk about religion with
+  family/friends roughly daily, highest by 10 points over Historically Black
+  Protestant 36.7%, vs 18.4% overall). Compute
+  `scripts/ryan-burge/faith_matters_2006.py` → 4 JSONs
+  `docs/datasets/ryan-burge/faith-matters-*.json`; render
+  `scripts/ryan-burge/render_faith_matters_2006_charts.py` →
+  `public/data-explorer/faith-matters-2006/`. Wired into
+  `src/lib/data-explorer.ts` (`faithMatters*Graphic()`), `tsc --noEmit` clean,
+  PNGs read directly (9 rows, "Historically Black Protestant" wraps cleanly, no
+  collisions) and served 200 from the dev server. Verification gotcha: the
+  graphic pages 500'd on the local dev server because a *different* concurrent
+  session's uncommitted birth-decade work in `data-explorer.ts` references
+  `BIRTH_DECADE_SELECTED_GROUP_ORDER` before its declaration (a TDZ error at
+  module load) — not this change; verified the wiring instead by loading a
+  copy of the staged file (HEAD + only this pass's hunks) with tsx and
+  confirming `getGraphic("faith-matters-2006", "convert-ok")` resolves.
+  Staged `data-explorer.ts` via a plumbing blob (HEAD + own insertions) so
+  the other session's hunks were not swept into this commit. Remaining
+  full-sample candidates worth a future look here: `FTH_DEED` (salvation by
+  deeds/faith/mixture — LDS 43% deeds, 40% mixture, a 3-way stacked shape,
+  not a magnitude bar), `trthrel` (one religion is true, LDS 27.6% highest but
+  a thin construct), `relonfam` (religion very important in career/family
+  decisions, LDS 70%), `pray` (several times a day, LDS 58%), `literal`, and
+  `obednce`. Faith Matters 2011 (`faith_matters_2011.DTA`, LDS n=49,
+  `RELTRA11==6`) is a re-interview of many 2006 respondents plus a fresh
+  sample — usable as a replication wave but not poolable with 2006 without
+  double-counting panelists.

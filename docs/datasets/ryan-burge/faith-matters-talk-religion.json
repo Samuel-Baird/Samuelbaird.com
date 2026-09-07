@@ -1,0 +1,64 @@
+{
+  "source": "Faith Matters Survey 2006 (Robert D. Putnam and David E. Campbell), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: all respondents with a coded religious tradition (reltrad), weighted by `weight`. Share saying they talk about religion with family and friends 'roughly daily' (top of a five-point never-to-daily scale), Q11-4. Don't know/refused excluded from the base. Latter-day Saint = reltrad 6 (Mormon), 53 unweighted respondents in the full sample.",
+  "total_unweighted_n": 3108,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other non-Christian",
+    "All U.S. adults"
+  ],
+  "talk_religion_daily": {
+    "Latter-day Saint": {
+      "pct": 46.31,
+      "valid_unweighted_n": 53,
+      "group_unweighted_n": 53
+    },
+    "Evangelical Protestant": {
+      "pct": 27.22,
+      "valid_unweighted_n": 910,
+      "group_unweighted_n": 913
+    },
+    "Historically Black Protestant": {
+      "pct": 36.7,
+      "valid_unweighted_n": 241,
+      "group_unweighted_n": 242
+    },
+    "Mainline Protestant": {
+      "pct": 10.41,
+      "valid_unweighted_n": 496,
+      "group_unweighted_n": 499
+    },
+    "Catholic": {
+      "pct": 11.14,
+      "valid_unweighted_n": 723,
+      "group_unweighted_n": 726
+    },
+    "Jewish": {
+      "pct": 11.88,
+      "valid_unweighted_n": 68,
+      "group_unweighted_n": 68
+    },
+    "Religiously unaffiliated": {
+      "pct": 9.38,
+      "valid_unweighted_n": 469,
+      "group_unweighted_n": 471
+    },
+    "Other non-Christian": {
+      "pct": 13.6,
+      "valid_unweighted_n": 103,
+      "group_unweighted_n": 103
+    },
+    "All U.S. adults": {
+      "pct": 18.41,
+      "valid_unweighted_n": 3063,
+      "group_unweighted_n": 3075
+    }
+  }
+}

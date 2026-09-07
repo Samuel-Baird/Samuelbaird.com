@@ -1,0 +1,64 @@
+{
+  "source": "Faith Matters Survey 2006 (Robert D. Putnam and David E. Campbell), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: all respondents with a coded religious tradition (reltrad), weighted by `weight`. Share saying it is okay for religious people to try to convert others (vs. 'everyone should leave everyone else alone'), Q12-13. Don't know/refused excluded from the base. Latter-day Saint = reltrad 6 (Mormon), 53 unweighted respondents in the full sample.",
+  "total_unweighted_n": 3108,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other non-Christian",
+    "All U.S. adults"
+  ],
+  "convert_ok": {
+    "Latter-day Saint": {
+      "pct": 85.88,
+      "valid_unweighted_n": 52,
+      "group_unweighted_n": 53
+    },
+    "Evangelical Protestant": {
+      "pct": 64.84,
+      "valid_unweighted_n": 885,
+      "group_unweighted_n": 913
+    },
+    "Historically Black Protestant": {
+      "pct": 62.38,
+      "valid_unweighted_n": 236,
+      "group_unweighted_n": 242
+    },
+    "Mainline Protestant": {
+      "pct": 41.32,
+      "valid_unweighted_n": 479,
+      "group_unweighted_n": 499
+    },
+    "Catholic": {
+      "pct": 28.63,
+      "valid_unweighted_n": 695,
+      "group_unweighted_n": 726
+    },
+    "Jewish": {
+      "pct": 13.5,
+      "valid_unweighted_n": 68,
+      "group_unweighted_n": 68
+    },
+    "Religiously unaffiliated": {
+      "pct": 23.47,
+      "valid_unweighted_n": 457,
+      "group_unweighted_n": 471
+    },
+    "Other non-Christian": {
+      "pct": 12.87,
+      "valid_unweighted_n": 100,
+      "group_unweighted_n": 103
+    },
+    "All U.S. adults": {
+      "pct": 43.37,
+      "valid_unweighted_n": 2972,
+      "group_unweighted_n": 3075
+    }
+  }
+}
