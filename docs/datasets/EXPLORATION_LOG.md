@@ -1851,3 +1851,51 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   Mormon 87%, no teaching angle), `qk10c` (religious/home school, Mormon
   11%). Of these only qi4c and qb1b/qb2a have a clean story; the rest are
   political or duplicative.
+
+- **pew-rls-2007** (2007 U.S. Religious Landscape Survey) — 12th-15th
+  charts, 2026-09-06: applied the previous pass's lesson to this file —
+  dumped all 135 variable labels and cross-checked every substantive item
+  against every live title, rather than trusting the "fully mined" note
+  (which had only ever re-checked prior passes' own short candidate lists).
+  Already-live constructs skipped: q10b/q10d (absolute standards, guidance
+  on right and wrong — just shipped from 2014), q10c evolution, q3b family
+  satisfaction (2014), q33/q35/q36 afterlife/heaven/hell, q34c
+  reincarnation, q42a-d (2007 versions of already-shipped practice items),
+  q43a/q43d, q55a-c, q40c (preserve-traditional-beliefs, 2014). Found a
+  four-item religious-experience-and-exclusivity cluster never charted
+  anywhere (Mormon n=509-579, weighted by `weight`, DK/refused excluded,
+  rows via `chart_style.sort_groups`): `miracles-occur-today.png` (q39a:
+  79.8% of Mormons COMPLETELY agree miracles still occur today as in ancient
+  times, HIGHEST of 12 by 17 points over Evangelical 62.6%, vs 48.1%
+  overall; top box used because completely-or-mostly is near-universal
+  among Christians), `answer-to-prayer-weekly.png` (q43c: 36.6% of Mormons
+  receive a definite answer to a specific prayer request at least weekly,
+  4th of 12 behind JW 43.5%/Muslim 41.0%/HBP 40.0%, vs 26.7% overall —
+  monthly+ would put Mormons first at 61.9% but the family's weekly+ top-box
+  convention was kept), `one-true-faith.png` (q40a, affiliated only: 57.9%
+  of Mormons say their religion is the one true faith leading to eternal
+  life vs "many religions can," 2nd to JW 83.1%, 20 points above Evangelical
+  37.9%; distinct from 2014's qh2 non-Christian follow-up chart),
+  `one-true-interpretation.png` (q40b, affiliated only: 55.0% say there is
+  only one true way to interpret their religion's teachings, 2nd to JW
+  79.9%, vs 28.3% overall). One-script-per-chart per this folder's
+  convention (`scripts/pew-rls-2007/{miracles_occur_today,
+  answer_to_prayer_weekly,one_true_faith,one_true_interpretation}.py` +
+  matching `render_*_chart.py`, stamped from the divine-healing template),
+  JSON in `docs/datasets/pew-rls-2007/`, PNGs in
+  `public/data-explorer/pew-rls-2007/`; wired in (four builders sharing
+  `rls2007PctAlt`; dataset now 15 graphics). `tsc --noEmit` clean; the
+  3-line-title PNG read directly (12 rows, long "...Churches" labels wrap
+  cleanly); PNGs served 200. Same local-page 500 gotcha as every pass this
+  session, verified via tsx on the staged copy, `data-explorer.ts` staged
+  as a plumbing blob. Genuinely remaining after the full sweep — a good
+  "religion in society" cluster for a future pass: `q28d` (participate in
+  social activities at your place of worship monthly+, Mormon 68.4%
+  HIGHEST vs 39.4% overall — ward activities), `q10a` (values threatened by
+  Hollywood/entertainment industry, agree, Mormon 69.1% HIGHEST vs 43.0%),
+  `q39c` (religion causes more problems than it solves, agree, Mormon 14.1%
+  LOWEST vs 35.3%), `q46` (natural conflict between devout religion and
+  modern society, Mormon 36%, mid-pack), `q28a` (choir/musical program
+  weekly, Mormon 20%), `q9` (churches should express political views,
+  Mormon 47%, mid), `q5a-g` (political-values pairs, largely duplicative of
+  CCES/VOTER charts), `q1/q2` (satisfaction with country/personal life).
