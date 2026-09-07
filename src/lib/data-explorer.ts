@@ -109,6 +109,8 @@ import volunteerThroughChurchData from "../../docs/datasets/pew-rls-2014/volunte
 import preserveTraditionalBeliefsData from "../../docs/datasets/pew-rls-2014/preserve-traditional-beliefs.json";
 import scriptureLiteralismData from "../../docs/datasets/pew-rls-2014/scripture-literalism.json";
 import churchTooManyRulesData from "../../docs/datasets/pew-rls-2014/church-too-many-rules.json";
+import shareFaithWeeklyData from "../../docs/datasets/pew-rls-2014/share-faith-weekly.json";
+import meditateWeeklyData from "../../docs/datasets/pew-rls-2014/meditate-weekly.json";
 import churchTooMuchMoneyPowerData from "../../docs/datasets/pew-rls-2014/church-too-much-money-power.json";
 import churchTooInvolvedPoliticsData from "../../docs/datasets/pew-rls-2014/church-too-involved-politics.json";
 import marriageSharedBeliefsData from "../../docs/datasets/pew-rls-2014-recontact/marriage-shared-beliefs.json";
@@ -1097,6 +1099,8 @@ const RAW_DATASETS: Dataset[] = [
       churchTooManyRulesGraphic(),
       churchTooMuchMoneyPowerGraphic(),
       churchTooInvolvedPoliticsGraphic(),
+      shareFaithWeeklyGraphic(),
+      meditateWeeklyGraphic(),
     ],
   },
   {
@@ -2494,6 +2498,43 @@ function churchTooManyRulesGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014/church-too-many-rules.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who agree churches and other religious organizations focus too much on rules, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+/**
+ * 2014 RLS qi2 practice battery, the two items not yet charted anywhere on
+ * the site: sharing your faith with non-believers (qi2g, affiliated adults
+ * only) and meditating (qi2c, full sample), both weekly+ top-box like the
+ * site's other qi2 charts. Built by scripts/pew-rls-2014/share_faith_weekly.py
+ * and meditate_weekly.py (group_order already sorted via chart_style.sort_groups),
+ * rendered by the matching render_*_chart.py scripts.
+ */
+function shareFaithWeeklyGraphic(): Graphic {
+  const { group_order: order, shares_faith_weekly: results } = shareFaithWeeklyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Share your faith with non-believers, weekly+",
+    description:
+      "Share who share their faith with non-believers or people from other religious backgrounds at least once a week, by religious tradition, among religiously affiliated adults, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/share-faith-weekly.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who share their faith with non-believers or people from other religious backgrounds at least once a week, by religious tradition, 2014. ${alt}.`,
+  };
+}
+
+function meditateWeeklyGraphic(): Graphic {
+  const { group_order: order, meditates_weekly: results } = meditateWeeklyData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Meditate, weekly+",
+    description: "Share who meditate at least once a week, by religious tradition, 2014.",
+    imageSrc: "/data-explorer/pew-rls-2014/meditate-weekly.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who meditate at least once a week, by religious tradition, 2014. ${alt}.`,
   };
 }
 

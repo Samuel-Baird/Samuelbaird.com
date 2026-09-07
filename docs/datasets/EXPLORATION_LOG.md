@@ -1763,3 +1763,44 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   (retrospective/prospective economy, 2016-specific and partisan-coded),
   `police` (feel safe around police — no religious angle). Consider this
   dataset fully mined.
+
+- **pew-rls-2014** (2014 Religious Landscape Study) — seventh pass,
+  2026-09-06: first re-verified the log's standing claim that the nine
+  cross-national datasets have no usable LDS breakout by scanning every
+  value label in the Latin America 2014, Sub-Saharan Africa 2010, and
+  10-country 2007 .sav files for a Mormon code: Latin America has none at
+  all, Africa's `denom` code 11 has n=15 pooled across 19 countries, and
+  the 10-country file has 50 Mormons scattered across five countries with
+  country-specific weights — claim holds, don't re-check. Then re-examined
+  this dataset's own "thinner/weaker-fit" leftovers (qi2t/qi2u): they are
+  "do you ever eat beef/pork," not a Word of Wisdom item — the prior pass
+  was right to skip them. But the same qi2 practice battery had two items
+  never charted anywhere on the site (duplicate-checked against every
+  scripture/prayer-group/practice title): `qi2g` and `qi2c`. qi2a/qi2b are
+  already live under the 2023-24 wave's "Prayer or scripture study groups,
+  weekly+"/"Read scripture outside of services, weekly+" and were skipped as
+  same-construct duplicates; qi2d (pray in tongues, Christians only,
+  Mormon 10.6%, mid-pack) and qi2m (home shrine, Buddhists only) dropped.
+  Built `share-faith-weekly.png` (qi2g, affiliated adults only — the
+  unaffiliated were not asked and drop out under the 30 floor: 33.3% of
+  Mormons share their faith with non-believers at least weekly, 4th of 11
+  behind Jehovah's Witness 77.4%, Historically Black Protestant 45.4%, and
+  Evangelical 36.1%, vs 26.1% of all affiliated adults — a genuinely
+  interesting non-highest result given the missionary program) and
+  `meditate-weekly.png` (qi2c, full sample: 60.5% of Mormons meditate
+  weekly+, 3rd of 12 behind JW 80.5% and Buddhist 66.7%, vs 41.1% overall;
+  "pondering" as everyday LDS devotion). Mormon n=650-653. Compute
+  `scripts/pew-rls-2014/share_faith_weekly.py` / `meditate_weekly.py`
+  (this folder's template plus `chart_style.sort_groups` for group_order,
+  same convention update pew-rls-2007's 11th chart made) → JSON in
+  `docs/datasets/pew-rls-2014/`; render `render_share_faith_weekly_chart.py`
+  / `render_meditate_weekly_chart.py` → `public/data-explorer/pew-rls-2014/`.
+  Wired in (`shareFaithWeeklyGraphic()`, `meditateWeeklyGraphic()`; dataset
+  now 19 graphics), `tsc --noEmit` clean, meditate PNG read directly (13
+  rows, "Historically Black Protestant" wraps cleanly, no collisions), PNGs
+  served 200. Same local-page 500 gotcha as every pass this session (other
+  session's uncommitted TDZ bug), verified via tsx on the staged copy,
+  `data-explorer.ts` staged as a plumbing blob. This dataset's qi2 battery
+  is now fully used or deliberately skipped; remaining leftovers from prior
+  notes (qk10c/qk10d Sunday-school siblings) are still weak-fit. Consider
+  this dataset fully mined.
