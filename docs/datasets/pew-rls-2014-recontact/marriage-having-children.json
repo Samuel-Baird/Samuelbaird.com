@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. 2016. \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
+  "method": "Population is current religious tradition (reltrad). qd1e asks whether having children is very important, somewhat important, or not important for a successful marriage; this reads the 'very important' top box; don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted (this recontact reached only 5,000 of the main 2014 RLS's 35,071 respondents). Weighted by the dataset's own `rweight` variable.",
+  "total_weighted_n": 4885.376344971994,
+  "total_unweighted_n": 4880,
+  "group_order": [
+    "Mormon",
+    "Catholic",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "having_children_very_important": {
+    "Evangelical Protestant": {
+      "pct": 46.7,
+      "valid_unweighted_n": 1010,
+      "group_unweighted_n": 1043
+    },
+    "Mainline Protestant": {
+      "pct": 42.2,
+      "valid_unweighted_n": 1148,
+      "group_unweighted_n": 1175
+    },
+    "Historically Black Protestant": {
+      "pct": 51.38,
+      "valid_unweighted_n": 330,
+      "group_unweighted_n": 335
+    },
+    "Catholic": {
+      "pct": 52.12,
+      "valid_unweighted_n": 939,
+      "group_unweighted_n": 956
+    },
+    "Mormon": {
+      "pct": 60.23,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 61
+    },
+    "Unaffiliated": {
+      "pct": 26.12,
+      "valid_unweighted_n": 1121,
+      "group_unweighted_n": 1149
+    },
+    "All U.S. adults": {
+      "pct": 42.12,
+      "valid_unweighted_n": 4880,
+      "group_unweighted_n": 5000
+    }
+  }
+}

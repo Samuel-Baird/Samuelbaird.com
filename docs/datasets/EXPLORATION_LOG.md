@@ -1899,3 +1899,38 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   weekly, Mormon 20%), `q9` (churches should express political views,
   Mormon 47%, mid), `q5a-g` (political-values pairs, largely duplicative of
   CCES/VOTER charts), `q1/q2` (satisfaction with country/personal life).
+
+- **pew-rls-2014-recontact** (2014 RLS recontact survey) — fourth pass,
+  2026-09-06: full sweep of all 69 variables against every live title (the
+  prior pass's leftover list — qb16, qb21, qc1a/b/d — was either shipped
+  already or n<30). Found a four-item marriage-and-family cluster never
+  charted (weighted by `rweight`, this folder's 6-group set, DK/refused
+  excluded, rows via `chart_style.sort_groups`):
+  `parents-shared-upbringing.png` (qb3: 76.6% of Mormons say both parents
+  shared their religious upbringing about equally vs mother or father
+  more, HIGHEST by 15 points over Evangelical 61.1%, vs 59.0% overall —
+  the proclamation's "equal partners"; n=54, those volunteering no
+  religious upbringing excluded), `marriage-having-children.png` (qd1e:
+  60.2% of Mormons say having children is very important for a successful
+  marriage, HIGHEST, vs 42.1% overall; n=61), `marriage-adequate-income.png`
+  (qd1a: 31.0% say an adequate income is very important, LOWEST of 6 vs
+  47.0% overall — the counterpart: children over income; n=61),
+  `spouse-talk-religion.png` (qd4, married/partnered only: 64.3% of Mormons
+  talk about religion with their spouse "a lot," HIGHEST by 23 points over
+  Evangelical 41.5%, vs 25.5% overall; n=43). Checked and dropped: qd1c/qd1d
+  (sexual relationship, chores — no religious angle, LDS mid-pack), qb17/
+  qb18 (childhood importance, duplicate construct), qc4*/qc5* congregation-
+  shopping battery (Mormon n=30 asked, each cell 7-21 — and LDS wards are
+  geographically assigned, so the item barely applies), qd8/qd9a (n<30).
+  One-script-per-chart per this folder's convention
+  (`scripts/pew-rls-2014-recontact/{parents_shared_upbringing,
+  marriage_having_children,marriage_adequate_income,spouse_talk_religion}.py`
+  + `render_*_chart.py`), JSON in `docs/datasets/pew-rls-2014-recontact/`,
+  PNGs in `public/data-explorer/pew-rls-2014-recontact/`; wired in (four
+  builders sharing `recontactPctAlt`; dataset now 12 graphics). `tsc
+  --noEmit` clean, PNG read directly (7 rows, 2-line subtitle clear), PNGs
+  served 200; same local-page 500 gotcha, verified via tsx on the staged
+  copy. Process note: this pass staged and committed in ONE command, after
+  the previous pass's staged files were swept into a concurrent session's
+  commit (d8d003d) in the shared index. Consider this dataset fully mined:
+  every remaining item is n<30 for Mormons or already live.

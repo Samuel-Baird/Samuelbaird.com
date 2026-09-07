@@ -128,6 +128,10 @@ import spouseReligionMatteredData from "../../docs/datasets/pew-rls-2014-reconta
 import attendWithSpouseData from "../../docs/datasets/pew-rls-2014-recontact/attend-with-spouse.json";
 import spouseReligiousDisagreementData from "../../docs/datasets/pew-rls-2014-recontact/spouse-religious-disagreement.json";
 import parentsTalkedReligionData from "../../docs/datasets/pew-rls-2014-recontact/parents-talked-religion.json";
+import parentsSharedUpbringingData from "../../docs/datasets/pew-rls-2014-recontact/parents-shared-upbringing.json";
+import marriageHavingChildrenData from "../../docs/datasets/pew-rls-2014-recontact/marriage-having-children.json";
+import marriageAdequateIncomeData from "../../docs/datasets/pew-rls-2014-recontact/marriage-adequate-income.json";
+import spouseTalkReligionData from "../../docs/datasets/pew-rls-2014-recontact/spouse-talk-religion.json";
 import attendanceStabilityData from "../../docs/datasets/pew-rls-2014-recontact/attendance-stability.json";
 import mormonsAsChristianData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian.json";
 import transubstantiationData from "../../docs/datasets/pew-latin-america-2014/transubstantiation.json";
@@ -1145,6 +1149,10 @@ const RAW_DATASETS: Dataset[] = [
       spouseReligiousDisagreementGraphic(),
       parentsTalkedReligionGraphic(),
       attendanceStabilityGraphic(),
+      parentsSharedUpbringingGraphic(),
+      marriageHavingChildrenGraphic(),
+      marriageAdequateIncomeGraphic(),
+      spouseTalkReligionGraphic(),
     ],
   },
   {
@@ -2788,6 +2796,60 @@ function parentsTalkedReligionGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-rls-2014-recontact/parents-talked-religion.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share who say their parents talked about religion a lot growing up, by current tradition. ${alt}.`,
+  };
+}
+
+/**
+ * 2014 RLS recontact marriage-and-family cluster (qb3, qd1e, qd1a, qd4),
+ * four items never charted anywhere on the site. Built by the matching
+ * scripts/pew-rls-2014-recontact/<slug>.py scripts (group_order already
+ * sorted via chart_style.sort_groups), rendered by render_<slug>_chart.py.
+ */
+function recontactPctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function parentsSharedUpbringingGraphic(): Graphic {
+  const { group_order: order, parents_shared_upbringing_equally: results } = parentsSharedUpbringingData;
+  return {
+    title: "Both parents shared my religious upbringing equally",
+    description: "Share saying their parents shared responsibility for their religious upbringing about equally, rather than the mother or father doing more, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/parents-shared-upbringing.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying their parents shared responsibility for their religious upbringing about equally, by current tradition. ${recontactPctAlt(order, results)}.`,
+  };
+}
+
+function marriageHavingChildrenGraphic(): Graphic {
+  const { group_order: order, having_children_very_important: results } = marriageHavingChildrenData;
+  return {
+    title: "Having children is very important for a successful marriage",
+    description: "Share saying having children is very important, rather than somewhat or not important, for a successful marriage, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/marriage-having-children.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying having children is very important for a successful marriage, by current tradition. ${recontactPctAlt(order, results)}.`,
+  };
+}
+
+function marriageAdequateIncomeGraphic(): Graphic {
+  const { group_order: order, adequate_income_very_important: results } = marriageAdequateIncomeData;
+  return {
+    title: "An adequate income is very important for a successful marriage",
+    description: "Share saying an adequate income is very important, rather than somewhat or not important, for a successful marriage, by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/marriage-adequate-income.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying an adequate income is very important for a successful marriage, by current tradition. ${recontactPctAlt(order, results)}.`,
+  };
+}
+
+function spouseTalkReligionGraphic(): Graphic {
+  const { group_order: order, talk_religion_with_spouse_a_lot: results } = spouseTalkReligionData;
+  return {
+    title: "Talk about religion with my spouse — a lot",
+    description: "Share of married or partnered adults who talk about religion with their spouse or partner \"a lot,\" by current tradition.",
+    imageSrc: "/data-explorer/pew-rls-2014-recontact/spouse-talk-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of married or partnered adults who talk about religion with their spouse a lot, by current tradition. ${recontactPctAlt(order, results)}.`,
   };
 }
 
