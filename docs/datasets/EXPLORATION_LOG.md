@@ -2001,3 +2001,42 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   groups is the one untouched shape (a "what Latter-day Saints think of
   others" reversal of the live warmth-toward-Mormons chart). Consider this
   dataset close to fully mined.
+
+- **pew-atp-w143-2024** (American Trends Panel Wave 143, February 2024) —
+  third pass, 2026-09-06: full sweep of all 140 variables against every live
+  title. Skipped: RELIMPCT_SOC (religion helps vs hurts society — near-
+  construct of the live 2007 "religion causes more problems" chart),
+  NATCHRc3/CHRNATc (two live Christian-nation charts), AFTDTH (live
+  definitely-life-after-death), the shipped BELIEVE_*/PRACTICE_*/DISCRRIM_*/
+  PRES1_STRREL/SAMEREL items, the Israel-Hamas and internet-use batteries
+  (no religious-practice angle), CCHRCH_* (Catholic-policy opinions),
+  TOOFARCON/TOOFARLIB and BIBLE_INFL* (political framing), RELIG_INFL1
+  (no spread), CHRASIDE (not asked of Mormons). Built a 4-chart
+  religion-in-public-life cluster (F_RELIG group set, Mormon n=165-173,
+  weighted by WEIGHT_W143, refused excluded, rows via sort_groups at
+  render time as this folder's template does): `religious-disagreement.png`
+  (RELIGDISAGREE: 73.2% of Mormons say the best thing to do when someone
+  disagrees about religion is understand their beliefs and agree to
+  disagree — effectively tied for highest with Orthodox 73.8% n=56, vs
+  53.7% overall; only 20% would avoid the subject vs 41.5%),
+  `religion-encourages-tolerance.png` (RELIMPCT_TOL: 84.4% say religion
+  encourages tolerance, 2nd to Muslim 87.9%, vs 65.3%),
+  `conflict-mainstream-culture.png` (RELIGCONFLICT: 58.1% feel a great deal
+  or some conflict with mainstream culture, 4th of 12 behind Other/Atheist/
+  Jewish, vs 49.5% — companion to the live religious-minority chart, kept as
+  a mid-upper result because it completes that pairing),
+  `president-stands-up.png` (PRES1_STAND: 46.9% say a president who stands
+  up for people with their beliefs is very important, 3rd behind Muslim
+  57.4%/Jewish 51.6%, vs 31.5% — completes the live PRES1 battery). One-
+  script-per-chart from a scratch generator (`scripts/pew-atp-w143-2024/
+  {religious_disagreement,religion_encourages_tolerance,
+  conflict_mainstream_culture,president_stands_up}.py` +
+  `render_*_chart.py`), JSON in `docs/datasets/pew-atp-w143-2024/`, PNGs in
+  `public/data-explorer/pew-atp-w143-2024/`; wired in (four builders sharing
+  `w143PctAlt`; dataset now 18 graphics). `tsc --noEmit` clean; 13-row PNG
+  with 3-line subtitle read directly (clean); PNGs served 200; same
+  local-page 500 gotcha, verified via tsx on the staged copy; staged and
+  committed in one command. Remaining: RELIMPCT_SUP (religion encourages
+  superstition — LDS 44% = national 43%, no story), PRES1_MORAL (moral life
+  very important, LDS 73% vs 65%, thin spread), DISCRRIM_EVANG. Consider
+  this dataset fully mined.

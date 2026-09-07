@@ -203,6 +203,10 @@ import w44KnowledgeBatch2Data from "../../docs/datasets/pew-atp-w44-2018/knowled
 import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
 import w44EngagementBatchData from "../../docs/datasets/pew-atp-w44-2018/religious-engagement-batch.json";
 import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
+import religiousDisagreementData from "../../docs/datasets/pew-atp-w143-2024/religious-disagreement.json";
+import religionEncouragesToleranceData from "../../docs/datasets/pew-atp-w143-2024/religion-encourages-tolerance.json";
+import conflictMainstreamCultureData from "../../docs/datasets/pew-atp-w143-2024/conflict-mainstream-culture.json";
+import presidentStandsUpData from "../../docs/datasets/pew-atp-w143-2024/president-stands-up.json";
 import w143HolidayBatchData from "../../docs/datasets/pew-atp-w143-2024/holiday-batch.json";
 import w143HolidayBatch2Data from "../../docs/datasets/pew-atp-w143-2024/holiday-batch-2.json";
 import w162HolidayBatchData from "../../docs/datasets/pew-atp-w162-2025/holiday-batch.json";
@@ -1609,6 +1613,10 @@ const RAW_DATASETS: Dataset[] = [
       w143ReincarnationGraphic(),
       w143FortuneTellerGraphic(),
       w143BelieveSpellsMagicGraphic(),
+      w143ReligiousDisagreementGraphic(),
+      w143ReligionEncouragesToleranceGraphic(),
+      w143ConflictMainstreamCultureGraphic(),
+      w143PresidentStandsUpGraphic(),
     ],
   },
   {
@@ -4193,6 +4201,61 @@ function communionBeliefGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w44-2018/communion-belief.png",
     width: 1080, height: 1350,
     alt: `Bar chart: what U.S. Catholics personally believe about Communion bread and wine, February 2019. ${alt}.`,
+  };
+}
+
+/**
+ * ATP W143 religion-in-public-life cluster (RELIGDISAGREE, RELIMPCT_TOL,
+ * RELIGCONFLICT, PRES1_STAND), four items never charted anywhere on the
+ * site, by this wave's own F_RELIG group set. Built by the matching
+ * scripts/pew-atp-w143-2024/<slug>.py scripts, rendered by
+ * render_<slug>_chart.py (rows sorted at render time via sort_groups).
+ */
+function w143PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function w143ReligiousDisagreementGraphic(): Graphic {
+  const { group_order: order, religious_disagreement_understand: results } = religiousDisagreementData;
+  return {
+    title: "When someone disagrees with you about religion",
+    description: "Share saying the best thing to do is try to understand the person's beliefs and agree to disagree, rather than try to persuade them or avoid discussing religion, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/religious-disagreement.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying the best response to religious disagreement is to understand the other person's beliefs and agree to disagree, by religion, February 2024. ${w143PctAlt(order, results)}.`,
+  };
+}
+
+function w143ReligionEncouragesToleranceGraphic(): Graphic {
+  const { group_order: order, religion_encourages_tolerance: results } = religionEncouragesToleranceData;
+  return {
+    title: "Does religion encourage tolerance or intolerance?",
+    description: "Share saying religion encourages tolerance rather than intolerance, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/religion-encourages-tolerance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying religion encourages tolerance rather than intolerance, by religion, February 2024. ${w143PctAlt(order, results)}.`,
+  };
+}
+
+function w143ConflictMainstreamCultureGraphic(): Graphic {
+  const { group_order: order, conflict_with_mainstream_culture: results } = conflictMainstreamCultureData;
+  return {
+    title: "Conflict between my religious beliefs and mainstream culture",
+    description: "Share saying there is a great deal or some conflict between their own religious beliefs and mainstream American culture, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/conflict-mainstream-culture.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying there is a great deal or some conflict between their religious beliefs and mainstream American culture, by religion, February 2024. ${w143PctAlt(order, results)}.`,
+  };
+}
+
+function w143PresidentStandsUpGraphic(): Graphic {
+  const { group_order: order, president_stands_up_very_important: results } = presidentStandsUpData;
+  return {
+    title: "A president who stands up for people with my religious beliefs",
+    description: "Share saying it is very important to have a president who stands up for people with their religious beliefs, by religion, February 2024.",
+    imageSrc: "/data-explorer/pew-atp-w143-2024/president-stands-up.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying it is very important to have a president who stands up for people with their religious beliefs, by religion, February 2024. ${w143PctAlt(order, results)}.`,
   };
 }
 

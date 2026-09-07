@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 143, fielded Feb. 13-25, 2024.",
+  "method": "Population is all respondents, grouped by religious affiliation (F_RELIG) - this wave does not carry the F_RELTRAD frame variable other ATP waves in this repo use. Share saying it is very important (vs. somewhat, not too, or not at all) to have a president who stands up for people with their religious beliefs, PRES1_STAND_W143; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W143 variable.",
+  "total_weighted_n": 12644.212921076232,
+  "total_unweighted_n": 12637,
+  "group_order": [
+    "Protestant",
+    "Catholic",
+    "Mormon",
+    "Orthodox Christian",
+    "Jewish",
+    "Muslim",
+    "Buddhist",
+    "Hindu",
+    "Atheist",
+    "Agnostic",
+    "Other",
+    "Nothing in particular",
+    "U.S. adults"
+  ],
+  "president_stands_up_very_important": {
+    "Protestant": {
+      "pct": 44.53,
+      "valid_unweighted_n": 4368,
+      "group_unweighted_n": 4385
+    },
+    "Catholic": {
+      "pct": 32.86,
+      "valid_unweighted_n": 2009,
+      "group_unweighted_n": 2019
+    },
+    "Mormon": {
+      "pct": 46.92,
+      "valid_unweighted_n": 173,
+      "group_unweighted_n": 173
+    },
+    "Orthodox Christian": {
+      "pct": 33.67,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 57
+    },
+    "Jewish": {
+      "pct": 51.61,
+      "valid_unweighted_n": 1936,
+      "group_unweighted_n": 1941
+    },
+    "Muslim": {
+      "pct": 57.37,
+      "valid_unweighted_n": 411,
+      "group_unweighted_n": 414
+    },
+    "Buddhist": {
+      "pct": 15.52,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 103
+    },
+    "Hindu": {
+      "pct": 14.81,
+      "valid_unweighted_n": 78,
+      "group_unweighted_n": 79
+    },
+    "Atheist": {
+      "pct": 11.51,
+      "valid_unweighted_n": 603,
+      "group_unweighted_n": 604
+    },
+    "Agnostic": {
+      "pct": 6.74,
+      "valid_unweighted_n": 727,
+      "group_unweighted_n": 731
+    },
+    "Other": {
+      "pct": 20.67,
+      "valid_unweighted_n": 247,
+      "group_unweighted_n": 249
+    },
+    "Nothing in particular": {
+      "pct": 14.3,
+      "valid_unweighted_n": 1860,
+      "group_unweighted_n": 1870
+    },
+    "U.S. adults": {
+      "pct": 31.54,
+      "valid_unweighted_n": 12637,
+      "group_unweighted_n": 12693
+    }
+  }
+}
