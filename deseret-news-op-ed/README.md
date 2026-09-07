@@ -22,7 +22,7 @@ appears, and the credit line on every chart reads "Chart: Latter-day Stats".
 | `out/05_denominational_decline.png` / `.svg` | 2007 vs. 2023-24 dumbbell: evangelical, mainline, SBC, UMC, Latter-day Saints (optional substitute for 01) |
 | `out/06_lds_family_formation.png` / `.svg` | Married share and 3+-children share, Latter-day Saints vs. all Christians vs. unaffiliated |
 | `out/07_membership_by_source.png` / `.svg` | U.S. Latter-day Saint membership, 1925-2025, as reported by four separate unreconciled sources |
-| `out/08_membership_by_source_2000s.png` / `.svg` | The same four sources, zoomed to 2000-2025 |
+| `out/08_membership_by_source_2000s.png` / `.svg` | Church Newsroom, the Church Almanac, and the Yearbook, zoomed to 2000-2025 (no dek, no U.S. Religion Census) |
 | `data/oped_data.json` | Every number the charts use, with unweighted n's and Pew's published comparison figures |
 | `compute_data.py` | Rebuilds `data/oped_data.json` from the microdata |
 | `render_NN_*.py` | One render script per chart; each reads the JSON at runtime |
@@ -154,16 +154,16 @@ its seven data points are 8 to 30 years apart, and a connecting line
 would imply a trend the sparse sampling doesn't support.
 
 **08 Membership by source, since 2000.** A companion to chart 07, zoomed
-to 2000-2025 — not a replacement; chart 07 keeps the full 1925-2025 view.
-Regenerate with `python render_08_membership_by_source_2000s.py`. In this
-window the story is different from the full-history chart: the Religion
-Census's 2000 "adherents" figure (4.22M) sits nearly a million below every
-other source's ~5.2M for the same year, but by 2010 all four sources land
-within about 13,000 of each other (three of them — Newsroom, Almanac, and
-Census — report the exact same 6,144,582), and the Census's 2020 figure
-(6,721,031) is within 1 of Church Newsroom's 2019 figure (6,721,032). The
-y-axis does not start at zero here (matching this pipeline's line-chart
-convention) — chart 07 shows the full-history 0-anchored view.
+to 2000-2025 — not a replacement; chart 07 keeps the full 1925-2025,
+four-source view. Regenerate with
+`python render_08_membership_by_source_2000s.py`. Three sources only
+(Church Newsroom, the Church Almanac, the Yearbook) — U.S. Religion
+Census is left out here, both because its three points are 10-30 years
+apart at this narrower time scale and because its low 2000 figure (4.22M)
+was pulling the y-axis floor down more than a million below where the
+other three sources sit. No dek/subtitle, title only. The y-axis does not
+start at zero (matching this pipeline's line-chart convention) — chart 07
+shows the full-history 0-anchored view.
 
 ## Where the op-ed draft and the data disagree
 
