@@ -1962,3 +1962,42 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   verified via tsx on the staged copy; staged and committed in one command.
   After two full sweeps this dataset is now genuinely fully mined: every
   remaining substantive item is live, duplicative, mid-pack, or political.
+
+- **pew-atp-w44-2018** (American Trends Panel Wave 44, February 2019 —
+  religious knowledge) — second pass, 2026-09-06: first ATP wave to get a
+  full variable sweep (113 vars) against every live title rather than a
+  candidate-list check. Skipped as already live or no-spread: RELMATCH2a
+  (Joseph Smith's religion — same construct as the 2010 knowledge survey's
+  live "Who knows Joseph Smith was a Mormon?"; LDS 100%), TRINITY (96%
+  everywhere, no spread), CHIMPRELa/b (duplicate of RLS childhood-
+  importance), REL3c/REL4c (live), the 2019 knowledge items already in
+  `knowledge-batch.json`. Dumping every remaining knowledge item's answer
+  distribution for Mormons vs all adults showed a clear pattern — Latter-day
+  Saints beat the national average on Bible/Christian-teaching items and
+  trail it on other traditions' doctrines — so built a 5-chart second batch
+  showing both sides (`knowledge_batch_2.py` imports the first batch's
+  `knowledge_by_group` and 13-group set; weighted by WEIGHT_W44; each item's
+  not-sure/refused excluded): `knows-sermon-on-mount-jesus.png` (SERMON:
+  LDS 84.7% vs 72.3% overall), `knows-golden-rule-not-commandment.png`
+  (COMMAND: LDS 76.7%, HIGHEST of 13, vs 63.5%), `knows-purgatory-
+  purification.png` (PRGTRY: LDS 32.2%, LOWEST by a wide margin vs 67.7%
+  overall — 61% of LDS chose "where evildoers go for eternal punishment"),
+  `knows-prosperity-gospel.png` (PROSGOSP, half-sample: LDS 26.5% vs 44.7%),
+  and `knows-about-mormonism.png` (RELTEACHc, not a quiz item: share saying
+  they know "a lot" or "some" about Mormonism — Protestant 56%, Catholic
+  49%, unaffiliated 55%, LDS 95%, vs 54.8% overall). LDS n=233-429. Rendered
+  by `render_knowledge_batch_2.py` → `public/data-explorer/pew-atp-w44-2018/`;
+  wired in (`w44SermonOnMountGraphic()` … `w44KnowsAboutMormonismGraphic()`,
+  reusing `w44BatchAlt`; dataset now 16 graphics). `tsc --noEmit` clean;
+  13-row PNG with 3-line subtitle read directly (clean); PNGs served 200;
+  same local-page 500 gotcha, verified via tsx on the staged copy; staged
+  and committed in one command. Remaining after the sweep: the other
+  knowledge items are either near-universal (BIBFIG1/2, ATHKNW ~95%),
+  mid-pack for LDS (AGKNW, JESNAZ, RELCOUNTRY*, JSBBTH, NUMREL*), or
+  further examples of the same "weaker on other religions" pattern already
+  shown (TURBAN/Sikhism LDS 38% vs 53%, HINDUTEXT, NBLTRTH, RELMATCH1b
+  Kabbalah, RELMATCH2b Maimonides, HOLKNOW3 6 million: LDS 48% vs 63%);
+  REL3a-i/REL4a-i/RELTEACHa-i as rated BY Latter-day Saints toward other
+  groups is the one untouched shape (a "what Latter-day Saints think of
+  others" reversal of the live warmth-toward-Mormons chart). Consider this
+  dataset close to fully mined.

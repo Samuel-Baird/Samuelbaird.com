@@ -199,6 +199,7 @@ import spiritualityImportantData from "../../docs/datasets/pew-atp-w132-2023/spi
 import tattooPiercingSpiritualData from "../../docs/datasets/pew-atp-w132-2023/tattoo-piercing-spiritual.json";
 import communionBeliefData from "../../docs/datasets/pew-atp-w44-2018/communion-belief.json";
 import w44KnowledgeBatchData from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch.json";
+import w44KnowledgeBatch2Data from "../../docs/datasets/pew-atp-w44-2018/knowledge-batch-2.json";
 import w44WarmthData from "../../docs/datasets/pew-atp-w44-2018/warmth-toward-mormons.json";
 import w44EngagementBatchData from "../../docs/datasets/pew-atp-w44-2018/religious-engagement-batch.json";
 import religiousMinorityData from "../../docs/datasets/pew-atp-w143-2024/religious-minority.json";
@@ -1249,6 +1250,11 @@ const RAW_DATASETS: Dataset[] = [
       w44LearnsOwnReligionGraphic(),
       w44KnowsAMormonGraphic(),
       w44ReligiousEd4PlusGraphic(),
+      w44SermonOnMountGraphic(),
+      w44GoldenRuleCommandmentGraphic(),
+      w44PurgatoryGraphic(),
+      w44ProsperityGospelGraphic(),
+      w44KnowsAboutMormonismGraphic(),
     ],
   },
   {
@@ -4065,6 +4071,69 @@ function w44FaithAloneGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w44-2018/knows-protestantism-faith-alone.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share correctly identifying Protestantism as teaching salvation by faith alone, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+/**
+ * Second ATP W44 knowledge batch (knowledge-batch-2.json, built by
+ * scripts/pew-atp-w44-2018/knowledge_batch_2.py, rendered by
+ * render_knowledge_batch_2.py): Latter-day Saints score above average on
+ * Bible/Christian-teaching items and below average on other traditions'
+ * doctrines, plus how much the rest of the country says it knows about
+ * Mormonism. Same alt helper as the first batch.
+ */
+function w44SermonOnMountGraphic(): Graphic {
+  const results = w44KnowledgeBatch2Data.knows_sermon_on_mount_jesus;
+  return {
+    title: "Who delivered the Sermon on the Mount?",
+    description: "Share correctly answering Jesus, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-sermon-on-mount-jesus.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying Jesus as the deliverer of the Sermon on the Mount, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44GoldenRuleCommandmentGraphic(): Graphic {
+  const results = w44KnowledgeBatch2Data.knows_golden_rule_not_commandment;
+  return {
+    title: "Which is NOT one of the Ten Commandments?",
+    description: "Share correctly identifying “do unto others as you would have them do unto you” as not one of the Ten Commandments, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-golden-rule-not-commandment.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying the Golden Rule as not one of the Ten Commandments, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44PurgatoryGraphic(): Graphic {
+  const results = w44KnowledgeBatch2Data.knows_purgatory_purification;
+  return {
+    title: "What is purgatory in Catholic teaching?",
+    description: "Share correctly identifying purgatory as where souls undergo purification before entering heaven, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-purgatory-purification.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying purgatory as a place of purification before heaven in Catholic teaching, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44ProsperityGospelGraphic(): Graphic {
+  const results = w44KnowledgeBatch2Data.knows_prosperity_gospel;
+  return {
+    title: "What does the prosperity gospel teach?",
+    description: "Share correctly identifying the prosperity gospel's teaching that the faithful will be blessed with financial success, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-prosperity-gospel.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share correctly identifying what the prosperity gospel teaches, by religion, February 2019. ${w44BatchAlt(results)}.`,
+  };
+}
+
+function w44KnowsAboutMormonismGraphic(): Graphic {
+  const results = w44KnowledgeBatch2Data.knows_about_mormonism_a_lot_or_some;
+  return {
+    title: "How much do you know about Mormonism?",
+    description: "Share saying they personally know “a lot” or “some” about Mormonism, by religion, February 2019.",
+    imageSrc: "/data-explorer/pew-atp-w44-2018/knows-about-mormonism.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying they know a lot or some about Mormonism, by religion, February 2019. ${w44BatchAlt(results)}.`,
   };
 }
 
