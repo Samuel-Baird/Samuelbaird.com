@@ -181,6 +181,10 @@ import globalMigrantCompositionData from "../../docs/datasets/pew-religion-migra
 import christianNationData from "../../docs/datasets/pew-atp-w114-2022/christian-nation.json";
 import essentJesusData from "../../docs/datasets/pew-atp-w114-2022/essent-jesus.json";
 import essentAttendData from "../../docs/datasets/pew-atp-w114-2022/essent-attend.json";
+import harderForReligiousData from "../../docs/datasets/pew-atp-w114-2022/harder-for-religious.json";
+import churchesEndorseCandidatesData from "../../docs/datasets/pew-atp-w114-2022/churches-endorse-candidates.json";
+import churchesTooMuchInfluenceData from "../../docs/datasets/pew-atp-w114-2022/churches-too-much-influence.json";
+import ldsViewsOfGroupsData from "../../docs/datasets/pew-atp-w114-2022/lds-views-of-groups.json";
 import essentBelieveGodData from "../../docs/datasets/pew-atp-w114-2022/essent-believe-god.json";
 import relfavMormonsData from "../../docs/datasets/pew-atp-w114-2022/relfav-mormons.json";
 import inpersonAttendanceW117Data from "../../docs/datasets/pew-atp-w117-2022/inperson-attendance.json";
@@ -1535,6 +1539,10 @@ const RAW_DATASETS: Dataset[] = [
       essentAttendGraphic(),
       essentBelieveGodGraphic(),
       relfavMormonsGraphic(),
+      harderForReligiousGraphic(),
+      churchesEndorseCandidatesGraphic(),
+      churchesTooMuchInfluenceGraphic(),
+      ldsViewsOfGroupsGraphic(),
     ],
   },
   {
@@ -3636,6 +3644,61 @@ function essentAttendGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w114-2022/essent-attend.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying regular religious attendance is essential to their faith, by tradition, September 2022. ${alt}.`,
+  };
+}
+
+/**
+ * ATP W114 religion-and-politics cluster (REL2, CHURCH_CAND, CHURCHPOL) plus
+ * the reverse of relfavMormonsGraphic(): how Latter-day Saints view other
+ * groups (RELFAV_a-f,i among LDS respondents; rows are the rated groups).
+ * Built by the matching scripts/pew-atp-w114-2022/<slug>.py scripts,
+ * rendered by render_<slug>_chart.py (rows sorted via sort_groups).
+ */
+function w114PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function harderForReligiousGraphic(): Graphic {
+  const { group_order: order, harder_for_strong_religious_faith: results } = harderForReligiousData;
+  return {
+    title: "Harder today for people with a strong religious faith",
+    description: "Share saying living in the U.S. today is harder than 10 years ago for people who have a strong religious faith, rather than easier or about the same, by religion, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/harder-for-religious.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying living in the U.S. is harder than 10 years ago for people with a strong religious faith, by religion, September 2022. ${w114PctAlt(order, results)}.`,
+  };
+}
+
+function churchesEndorseCandidatesGraphic(): Graphic {
+  const { group_order: order, churches_should_endorse_candidates: results } = churchesEndorseCandidatesData;
+  return {
+    title: "Should churches endorse candidates?",
+    description: "Share saying churches and other houses of worship should come out in favor of one candidate over another during political elections, by religion, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/churches-endorse-candidates.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying churches should come out in favor of one candidate over another during elections, by religion, September 2022. ${w114PctAlt(order, results)}.`,
+  };
+}
+
+function churchesTooMuchInfluenceGraphic(): Graphic {
+  const { group_order: order, churches_too_much_political_influence: results } = churchesTooMuchInfluenceData;
+  return {
+    title: "Do churches have too much influence in politics?",
+    description: "Share saying churches and religious organizations have too much influence in politics, rather than not enough or about the right amount, by religion, September 2022.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/churches-too-much-influence.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying churches and religious organizations have too much influence in politics, by religion, September 2022. ${w114PctAlt(order, results)}.`,
+  };
+}
+
+function ldsViewsOfGroupsGraphic(): Graphic {
+  const { group_order: order, lds_favorable_view_of_group: results } = ldsViewsOfGroupsData;
+  return {
+    title: "How Latter-day Saints view other religious groups",
+    description: "Share of Latter-day Saints with a very or somewhat favorable view of each religious group, among those who gave a rating, September 2022. Rows are the groups being rated.",
+    imageSrc: "/data-explorer/pew-atp-w114-2022/lds-views-of-groups.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Latter-day Saints with a favorable view of each religious group, among those who gave a rating, September 2022. ${w114PctAlt(order, results)}.`,
   };
 }
 

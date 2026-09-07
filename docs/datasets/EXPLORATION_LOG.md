@@ -2121,3 +2121,46 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   (religious radio, LDS 36% vs 25%), UNFOLREL (unfollowed someone over
   religion, LDS 18% vs 22%, no story), ATTENDPREF (n=65). Consider this
   dataset fully mined apart from the political vote-validation item.
+
+- **pew-atp-w114-2022** (American Trends Panel Wave 114, September 2022 —
+  religion and politics) — third pass, 2026-09-06: full sweep of all 166
+  variables against every live title. Skipped: NATCHR*/CHRNAT* (two live
+  Christian-nation charts; CHRNAT1b LDS n=54), DIVRELPOP (live "Religious
+  diversity strengthens society" construct on another dataset), ESSENT_a/b/k
+  (live), REL4_c (live knows-a-Mormon), KEEPOUT (LDS 45% say churches should
+  express views vs 32% — real but mid-story; logged), the science/COVID/
+  Ukraine/monkeypox/mental-health batteries (no religious-practice angle;
+  MH_TRACK_d "hopeful most or all of the time" is LDS 26% vs 17% and worth
+  a future wellbeing chart). Built 4 charts (F_RELIG frame, Mormon
+  n=166-190, weighted by WEIGHT_W114, refused excluded, rows via
+  sort_groups): `harder-for-religious.png` (REL2: 66.1% of Mormons say
+  living in the U.S. is harder than 10 years ago for people with a strong
+  religious faith, HIGHEST of 12, vs 48.1%), `churches-endorse-
+  candidates.png` (CHURCH_CAND: 11.0% of Mormons say churches should come
+  out in favor of candidates, LOWEST of any religious group — only atheists
+  4% and agnostics 7% lower — vs 20.7%; the Church's political-neutrality
+  policy in members' own views), `churches-too-much-influence.png`
+  (CHURCHPOL: 22.0% say churches have too much influence in politics, 2nd
+  lowest after Orthodox 20.1% n=49, vs 42.7%; distinct from the 2014 RLS
+  agree/disagree item and Faith Matters 2011's too-little framing),
+  `lds-views-of-groups.png` (RELFAV_a-f,i among LDS respondents only —
+  the reverse of the live relfav-mormons chart, rows = rated groups, same
+  DK-excluded convention as relfav_mormons.py: Jews 65%, mainline
+  Protestants 61%, Catholics 60%, evangelicals 57%, Muslims 53%, atheists
+  26%, own group 81% — each far above the corresponding national favorable
+  share; the first "how Latter-day Saints view others" chart on the site).
+  Three via a scratch generator (`scripts/pew-atp-w114-2022/
+  {harder_for_religious,churches_endorse_candidates,
+  churches_too_much_influence}.py`) plus hand-written
+  `lds_views_of_groups.py`, each with `render_*_chart.py`; JSON in
+  `docs/datasets/pew-atp-w114-2022/`, PNGs in
+  `public/data-explorer/pew-atp-w114-2022/`; wired in (four builders sharing
+  `w114PctAlt`; dataset now 9 graphics). `tsc --noEmit` clean; 7-row PNG
+  read directly (identity colors per rated group, clean); PNGs served 200;
+  same local-page 500 gotcha, verified via tsx on the staged copy; staged
+  and committed in one command. Remaining: ESSENT_g/h/i/j (patriotic /
+  family traditions / moral life / community as essential to faith — LDS
+  38/50/80/44% vs 32/45/75/41%, thin spreads), KEEPOUT, MH_TRACK_d,
+  RELFAV_* rated by other groups toward Evangelicals/Catholics/etc. (not
+  Mormon-specific), REL1 (harder for non-believers, LDS 31% vs 36%).
+  Consider this dataset fully mined apart from a possible wellbeing chart.
