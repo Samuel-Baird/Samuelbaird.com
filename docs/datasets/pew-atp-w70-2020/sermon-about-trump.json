@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD), restricted to respondents who attend religious services at least monthly (gated on XATTEND_W70). Share who heard a sermon in the past few months expressing support for, opposition to, or both about Donald Trump (vs. neither), SERMONTRUMP_W70; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 3766.860917968919,
+  "total_unweighted_n": 4117,
+  "group_order": [
+    "Jewish",
+    "Historically Black Protestant",
+    "Unaffiliated",
+    "Catholic",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Mormon",
+    "All attenders"
+  ],
+  "heard_sermon_about_trump": {
+    "Evangelical Protestant": {
+      "pct": 21.81,
+      "valid_unweighted_n": 1543,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 17.63,
+      "valid_unweighted_n": 642,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 47.35,
+      "valid_unweighted_n": 357,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 24.28,
+      "valid_unweighted_n": 990,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 11.71,
+      "valid_unweighted_n": 103,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 67.15,
+      "valid_unweighted_n": 60,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 42.06,
+      "valid_unweighted_n": 224,
+      "group_unweighted_n": 3079
+    },
+    "All attenders": {
+      "pct": 27.61,
+      "valid_unweighted_n": 4117,
+      "group_unweighted_n": 10211
+    }
+  }
+}

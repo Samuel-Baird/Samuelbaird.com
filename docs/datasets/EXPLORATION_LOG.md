@@ -2198,3 +2198,48 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   500 gotcha, verified via tsx on the staged copy; staged and committed in
   one command. Consider this dataset fully mined — the sweep found nothing
   else that is both LDS-usable and not already live.
+
+- **pew-atp-w70-2020** (American Trends Panel Wave 70, July 2020 — religion
+  during COVID) — fourth pass, 2026-09-06: full sweep of all 142 variables
+  against every live title. Skipped: the contact-tracing/data-privacy/
+  social-media batteries (no religious angle), SERMONISSUE_a/c-g (BLM-
+  opposition, COVID-precaution, government-order, voting, abortion sermons —
+  LDS mid-pack or thin; b is live), ATTENDFUT1 (post-outbreak attendance
+  intentions — no story once non-attenders are separated: LDS 8% expect to
+  attend less vs 9%), COVIDTHREAT_* (health-threat perceptions, no religious
+  angle), SPIRIT1/SPIRIT2 non-devotional coping items (outdoors/exercise/
+  phone/TV — LDS ≈ national), COVIDVOL1_c/COVIDVOL2_a-c (thin or checked
+  earlier), CONGRESTRICT2_a/b/d (same direction as the charted c item with
+  smaller gaps). Built a 4-chart COVID congregational-life cluster (this
+  folder's 7-group F_RELTRAD set, weighted by WEIGHT_W70, refused excluded,
+  rows via sort_groups): `sermon-about-trump.png` (SERMONTRUMP, monthly
+  attenders, LDS n=103: 11.7% of Mormon attenders heard a sermon expressing
+  support for, opposition to, or both about Donald Trump, LOWEST of 7 vs
+  27.6% of all attenders; the Biden item runs 8.7% vs 20.4% and is not
+  charted separately — the political-neutrality policy in what members
+  actually hear at church, pairing with W114's endorsement chart),
+  `restrict-attendance-covid.png` (CONGRESTRICT2_c, attenders, LDS n=96:
+  85.8% say their house of worship should limit how many can attend, 2nd
+  to Catholic 90.0%, vs 73.6%), `worship-rules-flexibility.png` (COVIDRF,
+  full sample, LDS n=163: 34.3% say houses of worship should get more
+  flexibility on distancing rules than other organizations, 2nd to
+  Evangelical 36.9%, vs 19.4% — a religious-liberty stance sitting alongside
+  strong in-congregation restriction support), `helped-neighbors-covid.png`
+  (COVIDVOL1_a, full sample, LDS n=167: 48.8% helped friends or neighbors
+  with groceries, errands or child care, HIGHEST (narrowly over
+  Historically Black Protestant 48.1%), vs 38.8% — ministering during the
+  first pandemic months). One-script-per-chart from a scratch generator
+  (`scripts/pew-atp-w70-2020/{sermon_about_trump,restrict_attendance_covid,
+  worship_rules_flexibility,helped_neighbors_covid}.py` + `render_*_chart.py`),
+  JSON in `docs/datasets/pew-atp-w70-2020/`, PNGs in
+  `public/data-explorer/pew-atp-w70-2020/`; wired in (four builders sharing
+  `w70PctAlt`; dataset now 14 graphics). `tsc --noEmit` clean; PNG read
+  directly (8 rows, 3-line subtitle, clean); PNGs served 200; same local-page
+  500 gotcha, verified via tsx on the staged copy; staged and committed in
+  one command. Consider this dataset fully mined. **Session status after
+  this pass:** every ATP wave in `data/` (44, 70, 114, 117, 132, 143, 162)
+  and every RLS file (2007, 2014, recontact) has now had a full
+  variable-level sweep; the only datasets not yet swept this way are
+  pew-mormon-survey-2011 (Mormon-only, by-activity charts) and
+  pew-hispanics-religion-2007 (LDS n=34), plus W117's held-back
+  VOTECHOICE2020 political item.

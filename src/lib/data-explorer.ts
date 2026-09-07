@@ -154,6 +154,10 @@ import prayerCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/prayer-c
 import inpersonAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/inperson-attendance-covid.json";
 import financialThreatCovidData from "../../docs/datasets/pew-atp-w70-2020/financial-threat-covid.json";
 import blmSermonsData from "../../docs/datasets/pew-atp-w70-2020/blm-sermons.json";
+import sermonAboutTrumpData from "../../docs/datasets/pew-atp-w70-2020/sermon-about-trump.json";
+import restrictAttendanceCovidData from "../../docs/datasets/pew-atp-w70-2020/restrict-attendance-covid.json";
+import worshipRulesFlexibilityData from "../../docs/datasets/pew-atp-w70-2020/worship-rules-flexibility.json";
+import helpedNeighborsCovidData from "../../docs/datasets/pew-atp-w70-2020/helped-neighbors-covid.json";
 import scriptureCovidCopingData from "../../docs/datasets/pew-atp-w70-2020/scripture-covid-coping.json";
 import religiousOrgGivingCovidData from "../../docs/datasets/pew-atp-w70-2020/religious-org-giving-covid.json";
 import covidLessonBeliefData from "../../docs/datasets/pew-atp-w70-2020/covid-lesson-belief.json";
@@ -1300,6 +1304,10 @@ const RAW_DATASETS: Dataset[] = [
       congregationDonatingGraphic(),
       covidLessonBeliefGraphic(),
       covidLessonFromGodGraphic(),
+      sermonAboutTrumpGraphic(),
+      restrictAttendanceCovidGraphic(),
+      worshipRulesFlexibilityGraphic(),
+      helpedNeighborsCovidGraphic(),
     ],
   },
   {
@@ -3186,6 +3194,61 @@ function financialThreatCovidGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-atp-w70-2020/financial-threat-covid.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share calling COVID a major threat to their personal finances, by religious tradition, July 2020. ${alt}.`,
+  };
+}
+
+/**
+ * ATP W70 COVID-era congregational-life cluster (SERMONTRUMP, CONGRESTRICT2_c,
+ * COVIDRF, COVIDVOL1_a), four items never charted anywhere on the site.
+ * Built by the matching scripts/pew-atp-w70-2020/<slug>.py scripts
+ * (group_order already sorted via chart_style.sort_groups), rendered by
+ * render_<slug>_chart.py. The first two are attender-gated (XATTEND_W70).
+ */
+function w70PctAlt(order: string[], results: Record<string, { pct: number }>): string {
+  return order.map((g) => `${g} ${results[g].pct}%`).join(", ");
+}
+
+function sermonAboutTrumpGraphic(): Graphic {
+  const { group_order: order, heard_sermon_about_trump: results } = sermonAboutTrumpData;
+  return {
+    title: "Heard a sermon about Donald Trump, summer 2020",
+    description: "Share of monthly attenders who heard a sermon in person, online, or on TV expressing support for, opposition to, or both about Donald Trump in the past few months, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/sermon-about-trump.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of monthly attenders who heard a sermon expressing support for or opposition to Donald Trump, by religious tradition, July 2020. ${w70PctAlt(order, results)}.`,
+  };
+}
+
+function restrictAttendanceCovidGraphic(): Graphic {
+  const { group_order: order, should_restrict_attendance: results } = restrictAttendanceCovidData;
+  return {
+    title: "My house of worship should limit how many can attend",
+    description: "Share of monthly attenders saying their house of worship should be restricting the number of people who can attend at one time in response to the coronavirus outbreak, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/restrict-attendance-covid.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of monthly attenders saying their house of worship should limit how many people can attend at one time during the outbreak, by religious tradition, July 2020. ${w70PctAlt(order, results)}.`,
+  };
+}
+
+function worshipRulesFlexibilityGraphic(): Graphic {
+  const { group_order: order, worship_more_flexibility: results } = worshipRulesFlexibilityData;
+  return {
+    title: "Should houses of worship get more flexibility on COVID rules?",
+    description: "Share saying houses of worship should be allowed more flexibility with social-distancing rules than other organizations and businesses, rather than being required to follow the same rules, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/worship-rules-flexibility.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying houses of worship should be allowed more flexibility with social-distancing rules than other organizations, by religious tradition, July 2020. ${w70PctAlt(order, results)}.`,
+  };
+}
+
+function helpedNeighborsCovidGraphic(): Graphic {
+  const { group_order: order, helped_neighbors_covid: results } = helpedNeighborsCovidData;
+  return {
+    title: "Helped friends or neighbors during the outbreak",
+    description: "Share who helped friends or neighbors by delivering groceries, running errands or caring for their children as a result of the coronavirus outbreak, by religious tradition, July 2020.",
+    imageSrc: "/data-explorer/pew-atp-w70-2020/helped-neighbors-covid.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who helped friends or neighbors with groceries, errands or child care as a result of the coronavirus outbreak, by religious tradition, July 2020. ${w70PctAlt(order, results)}.`,
   };
 }
 

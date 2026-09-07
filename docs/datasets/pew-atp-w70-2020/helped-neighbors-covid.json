@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD), all respondents. Share saying yes, they have helped friends or neighbors by delivering groceries, running errands or caring for their children as a result of the coronavirus outbreak, COVIDVOL1_a_W70; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10192.319185499035,
+  "total_unweighted_n": 10186,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Catholic",
+    "Jewish",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "helped_neighbors_covid": {
+    "Evangelical Protestant": {
+      "pct": 41.98,
+      "valid_unweighted_n": 2075,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 35.63,
+      "valid_unweighted_n": 1368,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 48.06,
+      "valid_unweighted_n": 457,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 38.28,
+      "valid_unweighted_n": 2226,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 48.82,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 36.23,
+      "valid_unweighted_n": 250,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 35.0,
+      "valid_unweighted_n": 3072,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 38.76,
+      "valid_unweighted_n": 10186,
+      "group_unweighted_n": 10211
+    }
+  }
+}
