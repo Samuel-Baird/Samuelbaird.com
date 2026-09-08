@@ -1,0 +1,108 @@
+# Pipeline
+
+Master workflow for any video edited through this repo's tools and the
+davinci-resolve MCP. Read this before starting a project; it routes to a
+type-specific branch in `types/` for the parts that differ.
+
+## 0. Intake
+
+1. Ask the user: video type (response / interview / solo-history), a short
+   slug (kebab-case, becomes the folder and Resolve project name), and where
+   the source files currently sit.
+2. Run `tools/new_project.ps1 <slug>` to create the project folder:
+
+   ```
+   D:\Videos\<slug>\
+     source\        camera files, external audio, downloaded reaction source
+     images\        gathered/supplied images for solo-history videos
+     transcripts\   whisper output (json/srt/txt)
+     script\        the pre-production .docx and its accepted-edit version
+     cards\         rendered quote-card PNGs
+     exports\       final renders
+   ```
+
+3. Copy or move source files into `source\`. Create the Resolve project named
+   `<slug>`, saved so it lives under the same folder tree (Resolve project
+   files live in Resolve's own database, not D:, but keep the project name
+   matched to the slug for traceability).
+
+## 1. Pre-production (response and solo-history only)
+
+Interview/podcast videos skip straight to §3 — see `types/interview.md`.
+
+For response and solo-history videos, **no timeline work happens until the
+user has reviewed and returned the script document.** This is a hard gate:
+building a timeline before the doc is approved risks cutting footage the user
+would have kept, or keeping footage they wanted flagged.
+
+1. **Transcribe.** `tools/transcribe.py` on every relevant audio/video source
+   (the external mic file when one exists, per source camera otherwise). See
+   `docs/transcription.md` for model choice and invocation.
+2. **Flag.** `tools/find_flags.py` on the transcript(s) produces `flags.json`:
+   CUT (confident repeat-take / false-start) and CHECK (possible — pacing
+   gaps, swallowed retakes) entries, each with start/end seconds and a reason.
+   See `docs/transcription.md` for the heuristics.
+3. **Gather images** (solo-history only). Search public-domain sources first
+   (Wikimedia Commons, Internet Archive, church/university history
+   collections relevant to the topic). For each beat that calls for a visual,
+   either find a usable image with a clear licence, or add it to the
+   doc's visual wish-list for the user to supply — never guess, never
+   generate an image to fill a gap. Document scans the user already has (in
+   `source\` or `images\`) take priority over generic stock photos.
+4. **Build the script doc.** `tools/build_script_docx.py` combines the
+   transcript, flags, and gathered images into `script\<slug>-script.docx`
+   per `docs/script-doc-format.md`. Send the user the file.
+5. **Wait.** The user edits the doc — removing CUT/CHECK markers they don't
+   want acted on, filling wish-list images, reordering or trimming text — and
+   returns it. Do not proceed to §2 on an unreviewed doc.
+
+## 2. Script ingest
+
+Parse the user's returned `.docx` back into a beat list: for each remaining
+paragraph, its source timestamp range (from the `[mm:ss]` prefix), whether it
+survived (any CUT text the user deleted is excluded; any CUT text they left
+in place is respected — i.e. still cut), and any inline image/quote-card
+placements with their intended on-screen duration. This beat list plus image
+placements is the input to the build stage.
+
+## 3. Build (per type)
+
+See the type-specific doc for what tracks and clip choices look like day to
+day. Shared mechanics, all from `docs/resolve-mcp-gotchas.md`:
+
+- Batch `media_pool.create_timeline_from_clips` in chunks of ~20 beats (its
+  undocumented cap is around 65-70 raw entries).
+- Use `media_pool.append_to_timeline` with positioned `clip_infos` for
+  anything added after the initial batch (images, cards, replacement audio).
+  Never rely on `create_timeline_from_clips` with `if_exists: "reuse"`.
+- **Never let two placements overlap on one track** — the earlier one wins
+  and the later is silently dropped, with no error. Cap each still/card's
+  placed duration at the next beat's record frame before appending.
+- After every batch: save the project, re-read the timeline's item count,
+  and re-append anything short (an errored append can appear in-session and
+  still be discarded by the save). Finish with `timeline.detect_gaps_overlaps`.
+- `media_type: 1` on a clip_info places video only — pair with a separate
+  audio-only entry at the same `record_frame` when substituting external
+  mic audio for a camera clip's own sound.
+- Quote cards and burned-in image credits are rendered PNGs (`tools/
+  make_quote_card.py`, `tools/burn_credit.py`) placed as stills, not Resolve
+  titles — deterministic, doesn't depend on the Text+ API. If an editable
+  on-timeline title is ever needed instead, the nested-timeline route in
+  `docs/resolve-mcp-gotchas.md` works on Resolve 21.0.4+; compound clips do
+  not (they sever the text).
+
+## 4. QC and render
+
+1. Re-run silence/retake detection on the assembled timeline (or use
+   `edit_engine.plan_tighten` / `plan_silence_ripple`, which build a variant
+   timeline and never touch the original) to catch anything the pre-production
+   pass missed.
+2. Grab a frame of every still/card placement and look at it — confirms
+   duration, crop, and legibility before render.
+3. Render to `exports\<slug>.mp4` (or the format the destination platform
+   wants).
+4. **The user does a full manual watch-through before publishing.** An
+   automated pass — even with transcript + silence-detection flags — has
+   missed real bloopers before (15+ on the sacrament edit). Don't report the
+   edit as finished until this watch-through has happened; report it as
+   "ready for review."
