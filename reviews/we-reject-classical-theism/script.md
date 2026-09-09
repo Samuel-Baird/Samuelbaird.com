@@ -1,6 +1,6 @@
 # Script — We Don't 'Distance' Ourselves From Classical Theism — We Reject It
 
-**Slug:** `we-reject-classical-theism` | **Estimated runtime:** 116.0s (budget 60-180s) | **Source time:** 27.1s (23%)
+**Slug:** `we-reject-classical-theism` | **Estimated runtime:** 122.2s (budget 60-180s) | **Source time:** 27.1s (22%)
 
 **Hook (title/description only, not shown on screen):** "He said we 'distanced' ourselves from classical theology. We didn't. We rejected it."
 
@@ -12,17 +12,17 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 0.0s–7.94s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~7.4s)
+## 02. `n01` (narration, ~5.2s)
 - **Original Video Transcript:** Father, son, and spirit are three distinct beings. LDS theology intentionally distanced itself from classical Christian doctrine in their written word.
 - **Pose:** teaching
-- **Narration:** He's right that we're three distinct beings. But 'distanced' is too soft. We didn't drift from classical theology -- we looked straight at it and rejected it.
+- **Narration:** He's right that we believe the Father, Son and Holy Spirit are three distinct beings. We reject classical theology.
 - **Sources:** critic-video
 - **Notes:** 
 
-## 03. `n02` (narration, ~6.3s)
+## 03. `n02` (narration, ~7.6s)
 - **Original Video Transcript:** Father, son, and spirit are three distinct beings. LDS theology intentionally distanced itself from classical Christian doctrine in their written word.
 - **Pose:** source
-- **Narration:** There's actually a name for our view: social trinitarianism. Three distinct persons, one in will, purpose, and love -- no single divine "blob."
+- **Narration:** There's actually a name for our view: social trinitarianism. Three distinct persons, one in will, purpose, and love -- no single divine substance, whatever a substance is anyways.
 - **Sources:** peterson-mormonism-trinity
 - **Notes:** 
 
@@ -41,10 +41,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** ostler-plan-to-heal-evil
 - **Notes:** 
 
-## 06. `n04` (narration, ~10.1s)
+## 06. `n04` (narration, ~10.9s)
 - **Original Video Transcript:** Father, son, and spirit are three distinct beings. LDS theology intentionally distanced itself from classical Christian doctrine in their written word.
 - **Pose:** source
-- **Narration:** Then look at the real, pointless evil in this world. An all-loving God who freely chose to create exactly this, from nothing? That's the problem of evil -- and it's never been cleanly solved on classical terms.
+- **Narration:** Then look at the real, pointless evil in this world. An all-loving God who freely chose to create exactly this, from nothing? That's the problem of evil -- and it's never been cleanly solved on classical terms. It can't be.
 - **Sources:** ostler-plan-to-heal-evil
 - **Notes:** 
 
@@ -54,10 +54,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 8.54s–20.76s @ speed 1.0
 - **Notes:** 
 
-## 08. `n05` (narration, ~7.6s)
+## 08. `n05` (narration, ~6.8s)
 - **Original Video Transcript:** And you may have talked to a Mormon, and I haven't seen this written down, but I've heard it a lot. They'll say, as we are, God wants was. As God is, we will one day be.
 - **Pose:** skeptical
-- **Narration:** I'd push back gently -- most members don't casually quote that line. It's not small talk. It's a specific, well-known teaching for those who actually know LDS doctrine.
+- **Narration:** I'd push back gently -- most members don't casually quote that line. He probably saw it in anti-mormon content and is quoting it from there.
 - **Sources:** critic-video
 - **Notes:** 
 
@@ -83,10 +83,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** ostler-of-god-and-gods
 - **Notes:** 
 
-## 12. `n08` (narration, ~6.0s)
+## 12. `n08` (narration, ~10.6s)
 - **Original Video Transcript:** And you may have talked to a Mormon, and I haven't seen this written down, but I've heard it a lot. They'll say, as we are, God wants was. As God is, we will one day be.
 - **Pose:** solemn
-- **Narration:** To be fair, most of those fathers meant something narrower than we do. That's a real difference, and we don't pretend otherwise.
+- **Narration:** To be fair, most of those fathers meant something different than we do. Since Latter-day Saints don't believe God is completely "other," we believe we do have the possibility of becoming like Him through the atonement of Jesus Christ.
 - **Sources:** ostler-of-god-and-gods
 - **Notes:** 
 
@@ -103,17 +103,17 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** dc-130-22
 - **Notes:** 
 
-## 15. `n10` (narration, ~4.9s)
+## 15. `n10` (narration, ~5.2s)
 - **Original Video Transcript:** Like, that's why they would want God to be embodied. Because that's like crucial to their eschatons. Like, that's like where we're going, yeah.
 - **Pose:** thoughtful
-- **Narration:** The embodiment isn't a wish borrowed from our eschatology. It's a claim about who God already is, today.
+- **Narration:** The embodiment isn't a wish borrowed from our eschatology. It's a claim about who the Father already is, today.
 - **Sources:** dc-130-22
 - **Notes:** 
 
-## 16. `n99` (narration, ~7.1s)
+## 16. `n99` (narration, ~9.3s)
 - **Original Video Transcript:** Like, that's why they would want God to be embodied. Because that's like crucial to their eschatons. Like, that's like where we're going, yeah.
 - **Pose:** encouraging
-- **Narration:** We didn't distance ourselves from classical theism. We looked at it, found it wanting, and chose something more coherent, more ancient, and more loving. God bless.
+- **Narration:** We didn't distance ourselves from classical theism. We accept what God has revealed about Himself. And it turns out that it's something more coherent, more ancient, and more loving than classical theism. God bless.
 - **Notes:** 
 
 ## Full source transcript
