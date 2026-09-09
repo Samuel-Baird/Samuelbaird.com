@@ -27,7 +27,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Notes:** 
 
 ## 04. `n03` (narration, ~5.7s)
-- **Original Video Transcript:** Lucifer is a created angel who fell, who rebelled against God. They are not brother.
+- **Original Video Transcript:** Lucifer is a created angel who fell, who rebelled against God. They are not brother. (remove everything about jesus and lucifer being brothers. just focus on polygamy)
 - **Pose:** solemn
 - **Narration:** Calling every spirit God's child, including a rebellious one, doesn't lower Christ. That 'Only Begotten' title stays reserved for him alone.
 - **Sources:** dc-76-lucifer
@@ -75,35 +75,35 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n07` (narration, ~6.5s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** Abraham and Jacob both practiced it, and the text never records God condemning the practice itself -- only specific abuses of it, like Solomon's.
+- **Narration:** Abraham and Jacob both practiced it, and the text never records God condemning the practice itself -- only specific abuses of it, like Solomon's. (it doesnt even say solomon abused it, the entire focus of solomon is that they turned his heart to idolotry)
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
 - **Notes:** 
 
 ## 12. `n08` (narration, ~12.0s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** skeptical
-- **Narration:** One popular counter-verse -- that God 'gave' David his wives in Second Samuel twelve, eight -- is actually disputed by evangelical scholars too. The same word describes God later giving those wives away as a punishment. That one's not a clean point either direction.
+- **Narration:** One popular counter-verse -- that God 'gave' David his wives in Second Samuel twelve, eight -- is actually disputed by evangelical scholars too. The same word describes God later giving those wives away as a punishment. That one's not a clean point either direction. (dont need to mention scholarship. just say, in fact: 2 sam 12:8 says God GAVE him his masters wives. that seems pretty strange for a God who condemns polygamy)
 - **Sources:** copan-moral-monster
 - **Notes:** 
 
 ## 13. `n09` (narration, ~7.1s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** concerned
-- **Narration:** And to be fair, the New Testament clearly moves toward monogamy as the standard -- which is exactly why the modern Church stopped practicing plural marriage.
+- **Narration:** And to be fair, the New Testament clearly moves toward monogamy as the standard -- which is exactly why the modern Church stopped practicing plural marriage. (remove this line)
 - **Sources:** copan-moral-monster
 - **Notes:** 
 
 ## 14. `n10` (narration, ~7.6s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** So the accurate claim isn't that the Bible endorses polygamy. It's that the Bible never treats plural marriage itself as inherently sinful -- only certain abuses of it.
+- **Narration:** So the accurate claim isn't that the Bible endorses polygamy. It's that the Bible never treats plural marriage itself as inherently sinful. (God does not condemn the practice of polygamy, and in cases even regulates it)
 - **Sources:** fair-plural-marriage-bible, copan-moral-monster
 - **Notes:** 
 
 ## 15. `n99` (narration, ~6.3s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** encouraging
-- **Narration:** We're not saying that settles everything about the 1800s. But the Bible itself is a lot more complicated than one verse. God bless.
+- **Narration:** We're not saying that settles everything about the 1800s. But the Bible itself is a lot more complicated than one verse. God bless. (before this section talk about how jacob 2 says the default is monogomy. in a strange turn of events, latter day saints are the ones with scripture that condemns polygamy and says monogomy is the standard, while evangelicals like Cliffe are stuck doing violence to the texts of the bible to reach the same conclusion)
 - **Notes:** 
 
 ## Full source transcript
