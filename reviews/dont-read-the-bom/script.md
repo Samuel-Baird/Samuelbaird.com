@@ -1,6 +1,6 @@
-# Script — Was Joseph Smith a "treasure digger" who "secretly" took 30+ wives?
+# Script — Was Joseph Smith really a "treasure digger" staring into a hat?
 
-**Slug:** `dont-read-the-bom` | **Estimated runtime:** 253.2s (budget 60-180s) | **Source time:** 12.8s (5%)
+**Slug:** `dont-read-the-bom` | **Estimated runtime:** 101.9s (budget 60-180s) | **Source time:** 5.1s (5%)
 
 **Hook (title/description only, not shown on screen):** 'They said RUN before you hear him out'
 
@@ -36,72 +36,27 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** mormonr-translation
 - **Notes:** 
 
-## 06. `c02` (clip, ~4.4s)
-- **Pose:** listening
-- **Clip:** Source video, 32.66s–37.06s @ speed 1.0
-- **Notes:** 
-
-## 07. `n03` (narration, ~12.8s)
-- **Pose:** solemn
-- **Narration:** Also true, and worth saying plainly: Joseph Smith was sealed to more than thirty plural wives, most of them in Nauvoo between 1841 and 1843. He did not announce it publicly.
-- **Sources:** hales-history
-- **Notes:** 
-
-## 08. `n03b` (narration, ~17.8s)
-- **Pose:** source
-- **Narration:** Also worth knowing: many of those sealings were what's called 'eternity-only' — a bond for the next life, with no shared household and no physical relationship in this one. Counting every sealing together, documented sexual relations appear in less than half of them.
-- **Sources:** joseph-smith-polygamy-sexual, hales-history
-- **Notes:** 
-
-## 09. `n03c` (narration, ~28.1s)
-- **Pose:** source
-- **Narration:** There's scriptural context too. In the Book of Mormon, Jacob condemns plural marriage whenever people take it up on their own — but says God can command it 'to raise up seed,' the same exception given for Abraham, Jacob, and David. Latter-day Saints believe Joseph Smith received that same kind of commandment. That exception comes from the Book of Mormon itself, not something invented later to explain Nauvoo.
-- **Sources:** book-of-mormon-jacob2
-- **Notes:** 
-
-## 10. `n04` (narration, ~19.9s)
-- **Pose:** source
-- **Narration:** Here's the part that's missing: this was not, and has never been since, ongoing Church practice. It began privately around 1841, was only publicly acknowledged in 1852, and the Church ended new plural marriages with the 1890 Manifesto, fully by 1904. Anyone who practices it today is excommunicated.
-- **Sources:** hales-history
-- **Notes:** 
-
-## 11. `n05` (narration, ~23.2s)
-- **Pose:** solemn
-- **Narration:** One more thing about that secrecy: Protestant hostility toward Latter-day Saints predates this by years — Missouri's governor ordered Mormons exterminated or driven out in 1838. But polygamy specifically helped kill Joseph Smith: a Nauvoo newspaper exposed it in June 1844, and the unrest that followed led straight to his murder at Carthage two weeks later.
-- **Sources:** encyclopedia-extermination-order, mormonr-martyrdom
-- **Notes:** 
-
-## 12. `c03` (clip, ~3.3s)
-- **Pose:** listening
-- **Clip:** Source video, 66.96s–70.28s @ speed 1.0
-- **Notes:** 
-
-## 13. `n06` (narration, ~20.3s)
-- **Pose:** skeptical
-- **Narration:** Notice the standard underneath a line like that: consenting adults should get to define marriage and relationships however they want. Fine — but that principle doesn't obviously stop at two people. If the real objection to plural marriage is consent, not headcount, what's the actual argument against consensual polygamy?
-- **Notes:** 
-
-## 14. `n99` (narration, ~25.7s)
+## 06. `n99` (narration, ~4.1s)
 - **Pose:** encouraging
-- **Narration:** The clip ends with the believer sarcastically saying ex-Mormons aren't a good place to get information about the Church. Honestly, she's not wrong — random TikTok commentary, from either side, isn't where you should stop. Good sources are the historical record itself: primary documents and real scholarship, much of which the Church has made public. Go check them yourself. Including on me.
+- **Narration:** Either way, that's not the profile of a con man.
 - **Notes:** 
 
-## 15. `outro-01` (outro, ~2.5s)
+## 07. `outro-01` (outro, ~2.5s)
 - **Pose:** sign-father
 - **Narration:** In the name of the Father,
 - **Notes:** 
 
-## 16. `outro-02` (outro, ~1.7s)
+## 08. `outro-02` (outro, ~1.7s)
 - **Pose:** sign-son
 - **Narration:** and of the Son,
 - **Notes:** 
 
-## 17. `outro-03` (outro, ~2.1s)
+## 09. `outro-03` (outro, ~2.1s)
 - **Pose:** sign-holy
 - **Narration:** and of the Holy Ghost,
 - **Notes:** 
 
-## 18. `outro-04` (outro, ~1.2s)
+## 10. `outro-04` (outro, ~1.2s)
 - **Pose:** sign-spirit-amen
 - **Narration:** Amen.
 - **Notes:** 
