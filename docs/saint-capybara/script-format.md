@@ -101,12 +101,31 @@ Field notes:
   Every factual beat needs at least one, unless `opinion: true`.
   (`excerpt` beats don't take `sources:` — the quoted source is implied
   and validated against `source/source.md` instead, see below.)
-- `stage: freeze | blank` — what a HOST-mode beat's background shows
-  (freeze = the last clip's final frame, full-bleed, blurred and dimmed
-  55%; blank = parchment + vignette). `freeze` is video-mode only — it is
-  a lint error on any beat with no preceding `clip` beat (an article
-  project has none, so its narration beats should omit `stage:` or use
-  `blank`).
+- `stage: freeze | blank | image | video` — what a HOST-mode beat's
+  background shows, all full-bleed with the same blur/dim treatment
+  except `blank` (2026-09-09: `image`/`video` added — "some background
+  images while he's talking" / "he can also be in front of the original
+  video being reacted to," both user-requested):
+  - `blank` — parchment + vignette (the default when `stage:` is omitted).
+  - `freeze` — the last clip's final frame, blurred/dimmed 55%.
+    Video-mode only — lint error on any beat with no preceding `clip`
+    beat.
+  - `image` — an arbitrary project image via `background: images/x.png`
+    (project-relative), same blur/dim treatment as `freeze`. Use this for
+    a historical painting, photo, map, or sketch behind the sprite while
+    he talks — see "Use real images, not just quote cards" below. Lint
+    error if `background:` is missing.
+  - `video` — the source video keeps *playing* behind the sprite (not a
+    frozen frame) — "capybara reacting in front of the video." Defaults
+    to picking up where the most recent preceding `clip` beat left off
+    (`background_start` inferred); set `background_start: <seconds>`
+    explicitly to start from a different point in `source/source.mp4`.
+    Loops if the beat's narration runs longer than the remaining
+    footage. Video-mode only — lint error with no preceding `clip` beat
+    and no explicit `background_start` (there's nothing to composite).
+    Composited live by `capy_render_beat_clips.py` (ffmpeg), same
+    mechanism as CLIP mode's full-bleed source video — `capy_beat_plates.py`
+    renders a transparent plate for these beats, not a baked-in still.
 - `evidence.placement:` is deprecated (no-op, info-level lint) — every
   `evidence` beat now renders in CARD mode; there is no longer a separate
   "panel beside the sprite" slot to promote away from.
@@ -270,6 +289,32 @@ beats specifically:
   the description) unless the beat sets `cite_byline: true`.
 - The excerpt beat precedes the response beats it's answering, the same
   steelman-first ordering a clip beat follows.
+
+## Use real images, not just quote cards (2026-09-09 user direction)
+
+Pictures are great — especially primary-source document pages and
+historical drawings/paintings/sketches/photos — and this pipeline
+under-uses them relative to plain quote cards. Prefer a real image when
+one is available and relevant:
+
+- **`kind: evidence` with `evidence.image`** — a cropped receipt (GSA
+  `get_page_image` for a manuscript/book page, a public-domain
+  painting/photo/sketch/map) with a citation line. This is the strongest
+  option when a real primary-source image exists — it's more convincing
+  on screen than a typed quote card and doubles as the "receipt" the
+  research protocol wants anyway.
+- **`stage: image` on a `narration`/`outro` beat** — a background image
+  (same source types) behind the sprite while he's *talking*, not just
+  during a dedicated evidence beat. Good for adding visual texture across
+  a run of narration beats without breaking into CARD mode every time.
+- Never fabricate or AI-generate a "historical" image, and never use a
+  screenshot of a PDF reader, search results, or any desktop chrome
+  (`brand.md` sec 10) — only clean crops/renders (GSA `get_page_image`) or
+  images with a clear public-domain/fair-use basis, credited on screen.
+- Still no image for its own sake — every image needs the same sourcing
+  discipline as a quote (`research-protocol.md`), and a beat with nothing
+  relevant to show should stay `blank`/`freeze`/CARD-with-quote rather
+  than reaching for a decorative picture.
 
 ## Sprite selection defaults
 

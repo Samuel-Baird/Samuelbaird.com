@@ -100,6 +100,10 @@ def validate_excerpt_beats(doc: dict) -> list:
 
         if beat.get("stage") == "freeze" and not seen_clip:
             issues.append(Issue("error", bid, "stage: freeze but no clip beat precedes it -- there is no frame to freeze (would render blank); use stage: blank"))
+        if beat.get("stage") == "video" and not seen_clip and beat.get("background_start") is None:
+            issues.append(Issue("error", bid, "stage: video with no preceding clip beat and no explicit 'background_start' -- there is no source-video position to composite; add background_start (seconds into source.mp4) or use stage: freeze/image/blank"))
+        if beat.get("stage") == "image" and not beat.get("background"):
+            issues.append(Issue("error", bid, "stage: image requires a 'background' field (project-relative image path)"))
         if kind == "clip":
             seen_clip = True
 

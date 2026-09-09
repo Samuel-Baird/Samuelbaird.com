@@ -114,13 +114,16 @@ def _clip_preview_frame(theme: Theme, frame: Image.Image) -> Image.Image:
     return out
 
 
-def _background_freeze(theme: Theme, freeze_frame: Image.Image) -> Image.Image:
-    """Full-bleed cover-crop of `freeze_frame` (the last clip's final
-    frame), blurred and dimmed per theme.layout.host.freeze -- the HOST
-    mode's `stage: freeze` background."""
+def _background_photo(theme: Theme, photo: Image.Image) -> Image.Image:
+    """Full-bleed cover-crop of `photo`, blurred and dimmed per
+    theme.layout.host.freeze -- shared by HOST mode's `stage: freeze`
+    (the last clip's final frame) and `stage: image` (an arbitrary
+    project image, e.g. a historical painting/photo/sketch supplied via
+    `background:`). Same treatment either way -- a backdrop the sprite
+    reads clearly against, not a full-detail photo."""
     w, h = theme.canvas_size
     spec = theme.freeze_spec()
-    cf = freeze_frame.convert("RGBA")
+    cf = photo.convert("RGBA")
     ratio = max(w / cf.width, h / cf.height)
     cf = cf.resize((max(1, round(cf.width * ratio)), max(1, round(cf.height * ratio))), Image.LANCZOS)
     ox = (cf.width - w) // 2
@@ -259,7 +262,16 @@ def render_plate(
     the CLIP beat's own source video, composited under the transparent
     plate so the contact sheet previews the real full-bleed look (never
     used by capy_render_beat_clips.py, which composites the real video
-    with ffmpeg instead)."""
+    with ffmpeg instead).
+
+    HOST-mode `stage:` values (brand.md sec 8, script-format.md):
+    `blank` (parchment+vignette), `freeze` (last clip's final frame,
+    blurred/dimmed), `image` (an arbitrary project image -- a historical
+    painting/photo/sketch -- via `beat.background`, same blur/dim
+    treatment), `video` (the source video playing continuously, not
+    frozen, behind the sprite -- rendered as a transparent plate here;
+    the real compositing happens in capy_render_beat_clips.py, same as
+    CLIP mode's live video)."""
     kind = beat.get("kind")
     mode = theme.mode_for(beat)
     w, h = theme.canvas_size
@@ -271,7 +283,22 @@ def render_plate(
     elif mode == "host":
         stage_mode = beat.get("stage", "blank")
         if stage_mode == "freeze" and freeze_frame is not None:
-            img = _background_freeze(theme, freeze_frame)
+            img = _background_photo(theme, freeze_frame)
+        elif stage_mode == "image" and beat.get("background"):
+            bg_path = project_dir / beat["background"]
+            try:
+                img = _background_photo(theme, Image.open(bg_path))
+            except Exception as e:
+                import sys
+                print(f"warning: could not load background image {bg_path} for beat {beat.get('id')}: {e}", file=sys.stderr)
+                img = _background(theme)
+        elif stage_mode == "video":
+            # Transparent plate -- capy_render_beat_clips.py composites the
+            # live, blurred/dimmed source video underneath, matching CLIP
+            # mode's approach rather than baking a still into the PNG.
+            img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+            if preview_video_frame is not None:
+                img.alpha_composite(_background_photo(theme, preview_video_frame))
         else:
             img = _background(theme)
     else:  # card

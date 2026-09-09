@@ -78,9 +78,13 @@ after Gate A approval:
      transparent except the small corner sprite — no chip, no hole
      concept. The real source video fills the whole canvas, composited
      underneath by ffmpeg in step 4.
-   - **HOST** (`narration`, `outro`): parchment+vignette background (or,
-     for `stage: freeze`, a full-bleed blurred/dimmed last-clip-frame
-     background) with a large centered sprite.
+   - **HOST** (`narration`, `outro`): parchment+vignette background by
+     default, or (`stage:` `freeze` / `image` / `video` — see
+     `script-format.md`) a full-bleed blurred/dimmed background from the
+     last clip frame, a supplied project image, or the source video
+     playing live, with a large centered sprite. `stage: video`'s plate
+     is transparent like CLIP mode — the live video is composited in
+     step 4, not baked into the PNG here.
    - **CARD** (`card`, `evidence`, `chart`, `excerpt`): the card/chart/
      evidence/pull-quote content on the upper ~2/3 of the frame, a
      medium sprite bottom-left.
@@ -233,6 +237,23 @@ specifics that mattered in practice, building the two videos above:
    documentation of the near-empty-stub failure mode.
 7. Then the metadata-strip remux and brand lint from the tooling list
    above.
+
+**A render can come out wrong even when the timeline API says it's
+correct (2026-09-09, hit on `dont-read-the-bom`'s first re-render after a
+mid-session project switch).** A rendered file had two beats' audio play
+out of order with one truncated mid-sentence, even though
+`timeline.detect_gaps_overlaps`, `get_start_frame`/`get_end_frame`, and a
+full `timeline_item.get_name` walk of every clip all reported the correct
+order and duration immediately after — and `render.verify_output`
+doesn't catch it either, since duration/frame-count still matched.
+Re-rendering (same timeline, no other changes) produced a correct file.
+**Verify a render's actual audio content, not just its duration/frame
+count**, whenever the session did anything unusual around the render
+(switching projects, several render jobs in one session, a drift warning
+on project load) — the cheapest check is `tools/transcribe.py` on the
+exported file, diffed by eye against the beat narration text; a
+duration/frame-count match alone is not sufficient evidence the content
+is right.
 
 ## Known gaps / open questions
 

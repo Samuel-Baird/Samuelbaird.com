@@ -99,7 +99,7 @@ def _fit(sw: int, sh: int, max_w: int, max_h: int) -> tuple[int, int]:
     return fw, fh
 
 
-def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list[dict], theme: Theme, out_path: Path) -> float:
+def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list[dict], theme: Theme, out_path: Path, *, video_bg_start: float | None = None) -> float:
     kind = beat["kind"]
     w, h = theme.canvas_size
     fps = theme.fps
@@ -108,7 +108,37 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
     filter_parts: list[str] = []
     audio_map: list[str] = []
 
-    if kind == "clip":
+    if theme.mode_for(beat) == "host" and beat.get("stage") == "video":
+        # "Capybara in front of the reacted video" -- the source video
+        # keeps playing (not a frozen frame) behind the big HOST-mode
+        # sprite, same blur/dim treatment as stage:freeze. bg_start is
+        # `beat.background_start` if given, else the caller passes the
+        # most recent preceding clip beat's end (video_bg_start) so this
+        # naturally continues where the last clip left off. Loops if the
+        # narration runs longer than the remaining source video.
+        bg_start = beat.get("background_start")
+        if bg_start is None:
+            bg_start = video_bg_start
+        wav = project / "audio" / f"{beat['id']}.norm.wav"
+        padded_duration = ffprobe_duration(wav)
+        duration = padded_duration - 2 * HEAD_PAD_SECONDS
+        source = project / "source" / "source.mp4"
+        sw, sh = ffprobe_size(source)
+        inputs += ["-ss", f"{bg_start:.3f}", "-stream_loop", "-1", "-i", str(source)]
+        inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(plate_path)]
+        inputs += ["-i", str(wav)]
+        spec = theme.freeze_spec()
+        filter_parts.append(
+            f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps={fps},"
+            f"gblur=sigma={spec['blur_sigma']},drawbox=c=black@{spec['dim']}:t=fill[vidbg]"
+        )
+        filter_parts.append("[1:v]format=rgba[plate0]")
+        filter_parts.append("[vidbg][plate0]overlay=0:0:format=auto[capbase0]")
+        filter_parts.append(
+            f"[2:a]atrim=start={HEAD_PAD_SECONDS}:end={padded_duration - HEAD_PAD_SECONDS},asetpts=PTS-STARTPTS[aout]"
+        )
+        audio_map = ["-map", "[aout]"]
+    elif kind == "clip":
         start, end = beat["start"], beat["end"]
         speed = beat.get("speed", 1.0) or 1.0
         duration = (end - start) / speed
@@ -176,10 +206,12 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
         )
         audio_map = ["-map", "[aout]"]
 
-    # Chain caption overlays, each windowed with enable=. Both branches
-    # above declare exactly 2 media inputs (source+plate, or plate+wav),
-    # so caption PNGs start at ffmpeg -i index 2 regardless of branch.
-    cap_first_index = 2
+    # Chain caption overlays, each windowed with enable=. The clip and
+    # narration-family branches each declare exactly 2 media inputs
+    # (source+plate, or plate+wav); the stage:video branch declares 3
+    # (source+plate+wav) -- caption PNGs start right after however many
+    # inputs the branch above actually used.
+    cap_first_index = len(inputs)
     label = "capbase0"
     for i, cap in enumerate(captions):
         idx = cap_first_index + i
@@ -255,8 +287,11 @@ def main() -> int:
     out_dir = project / "frames"
     manifest = []
     outro_handled = False
+    last_clip_end: float | None = None
     for beat in doc["beats"]:
         bid = beat["id"]
+        if beat.get("kind") == "clip":
+            last_clip_end = beat.get("end")
 
         if is_fixed_outro(beat) and not args.render_fixed_outro:
             if only and "outro" not in only and bid not in only:
@@ -277,7 +312,7 @@ def main() -> int:
         plate_path = project / plate["path"]
         captions = captions_by_beat.get(bid, [])
         out_path = out_dir / f"beat_{bid}.mp4"
-        duration = render_beat_clip(beat, project, plate_path, captions, theme, out_path)
+        duration = render_beat_clip(beat, project, plate_path, captions, theme, out_path, video_bg_start=last_clip_end)
         manifest.append({"id": bid, "kind": beat["kind"], "path": str(out_path.relative_to(project)), "duration": round(duration, 3)})
         print(f"{bid}: {duration:.2f}s -> {out_path.name} ({len(captions)} caption windows)")
 
