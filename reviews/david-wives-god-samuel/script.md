@@ -1,15 +1,15 @@
 # Script — Does the Bible Actually Condemn Polygamy?
 
-**Slug:** `david-wives-god-samuel` | **Estimated runtime:** 94.3s (budget 60-180s) | **Source time:** 25.9s (27%)
+**Slug:** `david-wives-god-samuel` | **Estimated runtime:** 119.2s (budget 60-180s) | **Source time:** 35.7s (30%)
 
 **Hook (title/description only, not shown on screen):** "He says the Bible proves polygamy is always wrong. Let's check that against the text itself."
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c02` (clip, ~7.6s) - need to add "And there are other reasons that I think it's very hard to follow Mormonism." so that its clear who he is talking about in video
-- **Original Video Transcript:** But boy, oh boy, did he ever twist some of the teachings of Christ, not the least of which is polygamy. You can't read the Bible and walk away saying polygamy is good. 
+## 01. `c02` (clip, ~17.4s)
+- **Original Video Transcript:** And there are other reasons that I think it's very hard to follow Mormonism. Intellectual reasons. You got to be intellectually honest. And Joseph Smith, nice guy in many ways. But boy, oh boy, did he ever twist some of the teachings of Christ, not the least of which is polygamy. You can't read the Bible and walk away saying polygamy is good.
 - **Pose:** listening
-- **Clip:** Source video, 18.56s–26.16s @ speed 1.0
+- **Clip:** Source video, 8.72s–26.16s @ speed 1.0
 - **Notes:** 
 
 ## 02. `c03` (clip, ~7.3s)
@@ -18,45 +18,45 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 26.7s–34.02s @ speed 1.0
 - **Notes:** 
 
-## 03. `n04` (narration, ~6.8s)
+## 03. `n04` (narration, ~8.7s)
 - **Original Video Transcript:** When Solomon had 700 wives and 300 concubines, the Bible's not saying, oh, that was good. When David had a few wives and some concubines, the Bible's not saying that was good.
 - **Pose:** source
-- **Narration:** First, Solomon's own downfall: the Bible blames it on foreign wives turning his heart to other gods -- not on having more than one wife. (move the 2 samuel verse directly after this)
+- **Narration:** First, look at Solomon's own downfall: the Bible blames it on his foreign wives turning his heart to other gods -- not on having more than one wife in the first place.
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
 - **Notes:** 
 
-## 04. `c04` (clip, ~10.9s)
+## 04. `n08` (narration, ~9.0s)
+- **Original Video Transcript:** When Solomon had 700 wives and 300 concubines, the Bible's not saying, oh, that was good. When David had a few wives and some concubines, the Bible's not saying that was good.
+- **Pose:** skeptical
+- **Narration:** In fact, in Second Samuel chapter twelve, verse eight, God himself says he gave David his master's wives. That's a pretty strange thing for God to say, if he actually condemns polygamy outright.
+- **Sources:** copan-moral-monster
+- **Notes:** 
+
+## 05. `c04` (clip, ~10.9s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** listening
 - **Clip:** Source video, 38.76s–49.7s @ speed 1.0
 - **Notes:** 
 
-## 05. `n05` (narration, ~4.9s)
+## 06. `n05` (narration, ~6.8s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** thoughtful
-- **Narration:** He's right that Genesis 2:24 describes one man and one wife becoming one flesh. That's the creation ideal.
+- **Narration:** He's right about one thing: Genesis 2:24 does describe one man and one wife becoming one flesh. That's genuinely the creation ideal, no argument there.
 - **Sources:** genesis-2-24
 - **Notes:** 
 
-## 06. `n06` (narration, ~7.4s)
+## 07. `n06` (narration, ~9.8s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** But four chapters after warning kings against multiplying wives, Deuteronomy itself gives inheritance rules for a man with two wives. You don't regulate something you've banned outright.
+- **Narration:** But just a few chapters after warning kings against multiplying wives, Deuteronomy itself turns around and gives inheritance rules for a man who has two wives. You don't write regulations for something you've already banned outright.
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
 - **Notes:** 
 
-## 07. `n07` (narration, ~8.7s)
+## 08. `n07` (narration, ~9.8s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** Abraham and Jacob both practiced it, and the text never records God condemning the practice. Solomon's downfall wasn't about having many wives -- it was his wives turning his heart to idolatry.
+- **Narration:** Abraham and Jacob both practiced it openly, and the text never once records God condemning the practice itself. Solomon's downfall wasn't about having many wives -- it was specifically his wives turning his heart toward idolatry.
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
-- **Notes:** 
-
-## 08. `n08` (narration, ~6.3s)
-- **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
-- **Pose:** skeptical
-- **Narration:** In fact, in Second Samuel twelve, eight, God says he gave David his master's wives. That's pretty strange, if God actually condemns polygamy.
-- **Sources:** copan-moral-monster
 - **Notes:** 
 
 ## 09. `n10` (narration, ~9.5s)
@@ -66,17 +66,17 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** fair-plural-marriage-bible, copan-moral-monster
 - **Notes:** 
 
-## 10. `n11` (narration, ~18.5s)
+## 10. `n11` (narration, ~22.4s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** And here's the irony: Latter-day Saint scripture actually sets a default. The Book of Mormon's Jacob chapter two states plainly that a man is to have only one wife, with any exception directed by God himself. We have a scripture that flatly states the standard is monogamy -- while critics like this one have to work against Genesis and Deuteronomy's own text just to reach the same conclusion.
+- **Narration:** And here's the real irony: Latter-day Saint scripture actually sets a default, in plain language. The Book of Mormon's Jacob chapter two states directly that a man is to have only one wife, with any exception coming only by God's own direction. We have a scripture that flatly states the standard is monogamy -- while critics like this one have to work against Genesis and Deuteronomy's own text, verse by verse, just to reach roughly the same conclusion we already state outright.
 - **Sources:** jacob-2-27-30
 - **Notes:** 
 
-## 11. `n99` (narration, ~6.3s)
+## 11. `n99` (narration, ~7.4s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** encouraging
-- **Narration:** We're not saying that settles everything about the 1800s. But the Bible itself is a lot more complicated than one verse. God bless.
+- **Narration:** We're not saying that settles absolutely everything about the 1800s. But the Bible itself is a lot more complicated than one single verse lets on. God bless.
 - **Notes:** 
 
 ## Full source transcript
