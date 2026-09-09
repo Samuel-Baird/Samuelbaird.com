@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n00` (narration, ~6.0s)
 - **Original Video Transcript:** Here's your 60-second reminder that if anyone tries to tell you that this book has undergone no meaningful changes except for spelling, grammar and formatting, then they're just wrong. Here's the most obvious example.
 - **Pose:** listening
-- **Narration:** He's right that real changes do exist beyond spelling and grammar -- here's the exact line he's talking about, in both editions.
+- **Narration:** He's right that real changes do exist beyond spelling and grammar. Let's talk about it.
 - **Notes:** 
 
 ## 03. `c02` (clip, ~16.1s)
@@ -34,7 +34,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n02` (narration, ~7.4s)
 - **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
 - **Pose:** teaching
-- **Narration:** Skousen's own explanation: Joseph likely disliked how Catholic the phrase 'mother of God' sounded. An earlier critic, Alexander Campbell, had already mocked that exact wording in print.
+- **Narration:** Skousen's own explanation: Joseph likely disliked how Catholic the phrase 'mother of God' sounded. An earlier critic, Alexander Campbell, had already mocked that exact wording in print. (add something like: its also totally plausible that "mother of God" is referring to jesus for this exact reason. jesus is god, so its fine to refer to the person of jesus as god. however, the father and holy spirit can also be called god, so updating the text to "son of God", a title exclusive to the person of jesus, is totally fine within christian terminology)
 - **Sources:** skousen-interpreter-changes
 - **Notes:** 
 
@@ -48,7 +48,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `q01` (card, ~5.5s)
 - **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
 - **Pose:** quote
-- **Narration:** As Skousen puts it himself, in his own words: 'I would argue that these changes are best interpreted as clarifications.'
+- **Narration:** As Skousen puts it himself, in his own words: 'I would argue that these changes are best interpreted as clarifications.' 
 - **Card quote:** “I would argue that these changes are best interpreted as clarifications.” — Royal Skousen, "Changes in the Book of Mormon," Interpreter (2014)
 - **Sources:** skousen-interpreter-changes
 - **Notes:** 
