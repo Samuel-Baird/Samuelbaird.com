@@ -1,6 +1,6 @@
 # Script — Was It Really Just a Hat and the Wrong Papyri?
 
-**Slug:** `five-reasons-not-mormon` | **Estimated runtime:** 119.8s (budget 60-180s) | **Source time:** 32.2s (27%)
+**Slug:** `five-reasons-not-mormon` | **Estimated runtime:** 133.9s (budget 60-180s) | **Source time:** 32.2s (24%)
 
 **Hook (title/description only, not shown on screen):** 'He said WHAT was in the hat?'
 
@@ -67,14 +67,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** official-boa-translation
 - **Notes:** 
 
-## 10. `n05` (narration, ~14.2s)
+## 10. `n05a` (narration, ~12.3s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** thoughtful
-- **Narration:** The Church's own explanation is what scholars call the catalyst theory: that the papyri prompted a revelation about Abraham's life, rather than serving as a literal source text. Whether that is a satisfying answer is a question of faith, not history -- and it's not one a capybara can settle for you. (instead i need to note that the historical record shows this isnt the scroll that joseph translated from. even if it was, there are theories like the catalyst theory that done rule out the impossibility)
+- **Narration:** But that finding is about the papyri that survived. Most of Joseph's original collection was lost after his death -- so historians call this the 'missing papyrus' theory: it's a live, disputed question whether the source text was even among the fragments Egyptologists have today.
+- **Sources:** missing-papyrus-theory, largey-poGP-companion
+- **Notes:** 
+
+## 11. `n05` (narration, ~16.1s)
+- **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
+- **Pose:** thoughtful
+- **Narration:** And even if it was, the Church's own catalyst theory holds that Joseph's translation was never meant to be a literal rendering of the papyri's Egyptian text in the first place. Either way, an Egyptological mismatch doesn't settle whether revelation happened. That's a question of faith, not history -- and it's not one a capybara can settle for you.
 - **Sources:** official-boa-translation
 - **Notes:** 
 
-## 11. `n06` (narration, ~6.8s)
+## 12. `n06` (narration, ~6.8s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** encouraging
 - **Narration:** Two claims, both true as stated, and both already acknowledged by the Church that makes them. We'll come back to the other three. God bless.
