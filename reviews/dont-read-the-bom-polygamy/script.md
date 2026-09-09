@@ -1,6 +1,6 @@
 # Script — Did Joseph Smith "secretly" marry 30+ women — and what's left out?
 
-**Slug:** `dont-read-the-bom-polygamy` | **Estimated runtime:** 121.9s (budget 60-180s) | **Source time:** 7.7s (6%)
+**Slug:** `dont-read-the-bom-polygamy` | **Estimated runtime:** 121.3s (budget 60-180s) | **Source time:** 7.7s (6%)
 
 **Hook (title/description only, not shown on screen):** "She said he did it in secret. Here's what she left out."
 
@@ -12,7 +12,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 32.66s–37.06s @ speed 1.0
 - **Notes:** 
 
-## 02. `n03` (narration, ~6.8s)
+## 02. `n03` (narration, ~6.3s)
 - **Original Video Transcript:** After he rose to power, he secretly married 30-plus women and girls.
 - **Pose:** solemn
 - **Narration:** Joseph Smith was sealed to more than thirty plural wives, most in Nauvoo between 1841 and 1843. He did not announce it publicly.
