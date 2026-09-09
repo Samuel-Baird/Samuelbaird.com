@@ -234,6 +234,9 @@ def main() -> int:
                 level = "error" if args.strict else "warning"
                 issues.append(Issue(level, bid, "relies only on apologetic-lead source(s) with no traced primary/scholarly backing among its citations"))
 
+        if beat.get("kind") == "clip" and beat.get("captions") == "source":
+            issues.append(Issue("warning", bid, "captions: source is deprecated (2026-09-09) -- generated captions are for capybara-only clips now; clip beats should stay uncaptioned regardless of whether the source video already has its own captions burned in (see script-format.md's caption rule)"))
+
         if beat.get("kind") == "card":
             quote = beat.get("card", {}).get("quote", "")
             src_ids = cited

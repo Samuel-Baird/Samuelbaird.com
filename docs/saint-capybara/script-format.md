@@ -322,6 +322,22 @@ yet); watch for it manually against each beat's estimated duration in
 
 ## Caption rules
 
+**Clip beats never get generated captions (2026-09-09 standing rule).**
+Before ingesting any new video source, ask the user whether the source
+video already has captions burned into its own footage, and pass the
+answer to `capy_ingest.py --captions-in-source yes|no|unknown` (recorded
+as `source_has_captions` in `source_info.json`, for the record). Either
+way — captions already present, or genuinely none — **do not set
+`captions: source` on a `clip` beat.** If the source already has its own
+captions, adding ours would duplicate them on screen; if it doesn't, the
+user's standing instruction is that the clip stays uncaptioned rather than
+having Saint Capybara caption someone else's footage for them. Generated
+captions are for **capybara-only clips** — `narration`/`card`/`evidence`/
+`chart`/`excerpt` beats — only. `captions: source` still works
+mechanically in `capy_caption_cards.py` (kept for older shipped projects,
+e.g. `dont-read-the-bom`) but must not be used on any new beat;
+`capy_check_sources.py` warns if it finds one.
+
 Max 2 lines, wrapped by **measured pixel width** against a 960px budget
 (`capy.text.fit_text` — never a character-count guess; the earlier
 ~34-char estimate is what produced a shipped caption clipped off both

@@ -82,8 +82,13 @@ slug substituted.
    - **Video:** a URL (yt_dlp download), an existing local file
      (`--file`), or both (local file + `--url` for metadata only). Always
      try to pull title/uploader/canonical-url metadata when a URL is
-     available, even if the media itself came from a local file. Writes
-     `source/source.mp4` + `source_info.json` (`kind: video`).
+     available, even if the media itself came from a local file. **Ask the
+     user whether the source video already has captions burned in** before
+     running this (standing rule, 2026-09-09) and pass
+     `--captions-in-source yes|no|unknown` — see `script-format.md`'s
+     caption rule for why this matters (short version: clip beats never
+     get generated captions either way). Writes `source/source.mp4` +
+     `source_info.json` (`kind: video`).
    - **Article:** fetch the page with the agent's own WebFetch (or take
      the user's paste, for paywalled pieces) into a cleaned,
      blank-line-separated text file, then `--article-file cleaned.md

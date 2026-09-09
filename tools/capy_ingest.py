@@ -156,6 +156,7 @@ def ingest_video(args: argparse.Namespace) -> int:
         "canonical_url": metadata.get("canonical_url") or url,
         "upload_date": metadata.get("upload_date"),
         "source_duration_seconds": duration if duration is not None else metadata.get("duration"),
+        "source_has_captions": {"yes": True, "no": False, "unknown": None}[args.captions_in_source],
     }
     info_path = args.project / "source" / "source_info.json"
     info_path.write_text(json.dumps(info, indent=2), encoding="utf-8")
@@ -372,6 +373,11 @@ def main() -> int:
     ap.add_argument("--max-height", type=int, default=1080)
     ap.add_argument("--model", default="small.en")
     ap.add_argument("--skip-transcribe", action="store_true")
+    ap.add_argument("--captions-in-source", choices=["yes", "no", "unknown"], default="unknown",
+                     help="Does the source video already have captions burned in? The agent must ask "
+                          "the user this before ingesting a video source -- see docs/saint-capybara/"
+                          "script-format.md's caption rule. Recorded as source_has_captions in "
+                          "source_info.json; does not change ingest behavior itself.")
 
     art = ap.add_argument_group("article (text) source")
     art.add_argument("--article-file", type=Path, default=None, help="cleaned article text (.md/.txt, blank-line separated paragraphs) fetched by the agent or pasted by the user")
