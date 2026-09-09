@@ -1,18 +1,19 @@
 # Script — two-takes-joseph-smith, Part 1: Where Did This Religion Come From?
 
-> Pushed here per the `reviews/<slug>/` convention (see `docs/pipeline.md`).
-> `research/claims.md`, `research/sources.yaml` still live only at
-> `D:\Videos\two-takes-joseph-smith\` — say the word if you'd like those
-> pushed here too.
-
 **Revised 2026-09-08** per your feedback: pushed back harder on the
 "recent confession" framing, added the "who actually answered the
 question" observation, and split the plural-marriage claim into its own
 video (**Part 2**, `D:\Videos\joseph-smith-plural-marriage\`) so it could
 get the depth you asked for without blowing the runtime.
 
-**Estimated total runtime: ~159.7s** (from `capy_check_sources.py`), well
+**Estimated total runtime: ~145.7s** (from `capy_check_sources.py`), well
 within the 60-180s window — this version has room to spare.
+
+**2026-09-08 second revision**: dropped the closing "some criticism is
+legitimate" beat (redundant once the video already addresses the claim
+on its merits) and removed "Sources are in the description" from the
+outro-lead line — both now documented as standing rules in
+`docs/saint-capybara/script-format.md`.
 
 **Sensitive: false** — the plural-marriage content (which was the only
 thing requiring `sensitive: true`) moved to Part 2.
@@ -54,9 +55,9 @@ thing requiring `sensitive: true`) moved to Part 2.
 > tend to lead with what's significant to daily faith, and some
 > former-member creators lead with something else."
 
-*(Per your note: this is meant as a pattern observation, paired with
-n05's fairness point below so the video names an issue on both sides,
-not just the critic's.)*
+*(Per your note: this is meant as a pattern observation about response
+quality, not a broader defense of critics — see `research/claims.md` for
+why the earlier "some criticism is legitimate" closing beat was cut.)*
 
 ---
 
@@ -94,14 +95,9 @@ Sources: `ensign-2015-snow`
 > question — a faith claim, not a historical one — and you can accept
 > all of this history and land on either side of that question."
 
-**n05** · narration · ~11.2s · function: explain · stage: blank · opinion: true
-> "One more thing worth saying: writing off every critic as 'just
-> offended' isn't a fair standard either. Some criticism is exactly this
-> — well documented, and worth sitting with."
-
-**n06** · outro (pre-sign-off) · ~8.3s · pose: encouraging
+**n05** · outro (pre-sign-off) · ~5.8s · pose: encouraging
 > "That's part one, honestly. Part two covers the plural-marriage claim —
-> it deserves its own video. Sources are in the description."
+> it deserves its own video."
 
 ---
 

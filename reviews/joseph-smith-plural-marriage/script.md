@@ -1,17 +1,16 @@
 # Script — joseph-smith-plural-marriage, Part 2: The Plural-Marriage Claim
 
-> Pushed here per the `reviews/<slug>/` convention (see `docs/pipeline.md`).
-> `research/claims.md`, `research/sources.yaml`, `research/ESCALATION.md`
-> still live only at `D:\Videos\joseph-smith-plural-marriage\` — say the
-> word if you'd like those pushed here too.
-
 **New project, split out of `two-takes-joseph-smith` on 2026-09-08** per
 your feedback — doing the plural-marriage claim justice (the
 sealing-vs-sexual-relations distinction, the marriage-standard question)
 didn't fit in the same 60-180s video as Part 1.
 
-**Estimated total runtime: ~146.0s** (from `capy_check_sources.py`),
+**Estimated total runtime: ~131.9s** (from `capy_check_sources.py`),
 within the 60-180s window.
+
+**2026-09-08 second revision**: dropped the closing "some criticism is
+legitimate" beat and the "Sources are in the description" outro line —
+see `docs/saint-capybara/script-format.md`'s closing conventions.
 
 **Sensitive: true** — no `amused`/`happy` poses anywhere below.
 
@@ -103,14 +102,8 @@ Sources: `od1-1890`
 > above is separate and serious — set that aside. We're not answering
 > either question, just asking for one consistent standard."
 
-**n07** · narration · ~11.2s · function: explain · stage: blank · opinion: true
-> "One more thing worth saying: writing off every critic as 'just
-> offended' isn't a fair standard either. Some criticism is exactly this
-> — well documented, and worth sitting with."
-
-**n08** · outro (pre-sign-off) · ~5.4s · pose: encouraging
-> "That's the honest version of the marriage claim. Sources are in the
-> description."
+**n07** · outro (pre-sign-off) · ~5.0s · pose: encouraging
+> "That's the honest version of the marriage claim."
 
 ---
 

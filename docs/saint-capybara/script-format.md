@@ -152,6 +152,25 @@ all five into one video):
   slugs rather than compress.** Do not shorten evidence coverage just to
   hit the ceiling.
 
+## Closing conventions (2026-09-08)
+
+- **Don't add a closing beat that generically re-validates critics** (e.g.
+  "some criticism is legitimate, worth sitting with") once the video has
+  already substantively addressed and re-sourced the specific claim in
+  question — the response itself is the demonstration that the criticism
+  had merit; restating that as a separate meta-point is redundant, not
+  additional charity. This doesn't change the standing rule against
+  polemics/ad hominem (`brand.md` sec 2) — it's specifically about not
+  *closing* on a validation that repeats what the video already showed.
+  A framing beat that critiques response *quality* (e.g. noting a
+  question wasn't actually answered) is a different thing and is fine.
+- **The outro-lead narration (the beat right before the mandatory
+  sign-of-the-cross sequence) should not reference "sources are in the
+  description."** State the closing line plainly; don't call out where
+  citations live. (The actual sources still belong in the description
+  text itself, per `research-protocol.md` — this is only about not
+  narrating that fact out loud.)
+
 ## One-argument rule
 
 Each response beat group should make one argument, not stack three
