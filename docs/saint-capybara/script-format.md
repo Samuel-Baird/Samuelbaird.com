@@ -248,6 +248,44 @@ beat trying to do both.
   original creator's clip is still shown verbatim on screen; only the
   attribution chip moved off-frame.
 
+## Response-to-clip alignment (2026-09-09 standing rule)
+
+Every non-clip beat's response must actually be answering a claim
+contained within its own most-recently-preceding `clip` beat's span — not
+a claim from elsewhere in the source that got trimmed out when the clip
+was tightened for length/budget. `capy_storyboard.py`'s "Original Video
+Transcript" field always shows the most recent `clip` beat's text for
+exactly this reason (see "`script.md` layout" below): if a response beat
+doesn't actually match what that field displays, that is an authoring
+bug, not a display quirk to shrug off. Caught 2026-09-09 on
+`mark-driscoll`: a beat responding to "he calls this a cult, a
+counterfeit Christ" was placed right after a clip beat that only covered
+an earlier, different claim ("a different Jesus") — the cult/counterfeit
+line had been trimmed out of the video entirely, so the response was
+answering something the viewer never saw or heard.
+
+Two ways to fix a mismatch like this:
+
+1. **Add a `clip` beat for the claim actually being addressed** (the
+   preferred fix, and what was done for the case above — a second short
+   clip was inserted so "cult"/"counterfeit Christ" is shown on screen
+   right before the beat responding to it). Re-check the source-time
+   budget (30% of runtime) after adding one.
+2. **If adding a clip isn't warranted** (the point is minor, or citing a
+   fact about what the critic said elsewhere in the source rather than
+   directly rebutting an on-screen claim), rephrase the response so it
+   doesn't imply the viewer saw or heard something they didn't — say "he
+   also says X elsewhere in the video" rather than "the very line he just
+   quoted," which asserts something visibly false once you check it
+   against what's actually on screen.
+
+Before sending Gate A, walk every beat group and confirm its response
+text is actually about the claim in its preceding clip beat, not a claim
+that only exists in the full source transcript. This is exactly what the
+Part A review checklist (`review-checklist.md`) should be doing already,
+but it wasn't explicit as its own check before this — call it out
+by name when doing that review.
+
 ## Excerpt fairness (article/text-source mode)
 
 The `excerpt` beat is the article-mode analog of a `clip` beat: the
