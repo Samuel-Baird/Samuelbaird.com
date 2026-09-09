@@ -210,8 +210,9 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
     # narration-family branches each declare exactly 2 media inputs
     # (source+plate, or plate+wav); the stage:video branch declares 3
     # (source+plate+wav) -- caption PNGs start right after however many
-    # inputs the branch above actually used.
-    cap_first_index = len(inputs)
+    # -i flags the branch above actually used (NOT len(inputs): -ss/-to/
+    # -loop/-t tokens share the list with -i and would over-count it).
+    cap_first_index = inputs.count("-i")
     label = "capbase0"
     for i, cap in enumerate(captions):
         idx = cap_first_index + i
