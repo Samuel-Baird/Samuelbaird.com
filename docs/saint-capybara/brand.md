@@ -387,7 +387,7 @@ frame modes, chosen by beat kind** (`capy.layout.Theme.mode_for`):
 
 | Mode | Beat kinds | Background | Sprite | Captions |
 |---|---|---|---|---|
-| **CLIP** | `clip` | The source video fills the whole canvas — cover-cropped for a 9:16-or-narrower source, or fit inside a letterbox band (y 230–850) over a blurred/darkened cover copy of the same footage for 16:9-or-wider | 400px box, bottom-left (x0: 32), 5px ink outline + a hard offset shadow so pixel edges read over busy video | y 860–1120, `style_source` (76px, teal pill) |
+| **CLIP** | `clip` | The source video fills the whole canvas — cover-cropped for a 9:16-or-narrower source, or fit inside a letterbox band (y 230–850) over a blurred/darkened cover copy of the same footage for 16:9-or-wider | 400px box, bottom-**right** (x0: 648 — 2026-09-09 user feedback, was bottom-left; mirrors the old 32px margin off the opposite edge), 5px ink outline + a hard offset shadow so pixel edges read over busy video | y 860–1120, `style_source` (76px, teal pill) |
 | **HOST** | `narration`, `outro` | Parchment + vignette (`stage: blank`), or a full-bleed last-clip-frame background blurred and dimmed 55% (`stage: freeze`) | 920px box, horizontally centered, the dominant element on screen, with a soft ground-shadow ellipse | y 300–660 (above his head), `style_capy` (84px) |
 | **CARD** | `card`, `evidence`, `chart`, `excerpt` | Parchment; the card/chart/evidence/pull-quote occupies x 40–1040, y 250–830 | 480px box, bottom-left, 4px outline | y 860–1120, `style_card` (76px) |
 
@@ -400,6 +400,16 @@ sound ticker, nav), right x>930 unsafe for y 1000–1650 (like/comment/
 share/avatar rail) — captions and card text stay entirely inside x
 60–1020, y 250–1580; the sprite's feet may brush the username band by
 design (a corner mascot doing so reads as normal on this platform).
+
+**CLIP mode is bottom-right, and does overlap the documented like/
+comment/share rail zone (x>930, y 1000–1650) on some platforms** — a
+known, accepted tradeoff of the 2026-09-09 bottom-right change, not an
+oversight. **The one thing that must never happen regardless of that
+tradeoff: the sprite box and burned-in caption text must never occupy
+the same vertical band.** Today they don't (CLIP captions: y 860–1120;
+CLIP sprite box: y 1200–1600, both anchored off `sprite_bottom`) — if a
+future layout change moves either one, captions keep their band and the
+sprite gets resized/repositioned to stay clear, never the reverse.
 
 **No chips, no wordmark, no on-screen hook text.** The v1 "Source video"/
 "SOURCE" label chips, the beat-1 hook chip, and the bottom-right wordmark

@@ -60,6 +60,34 @@ def extract_clip_frame(source_video: Path, at_seconds: float) -> Image.Image | N
     return None
 
 
+def _format_timestamp(seconds: float) -> str:
+    m, s = divmod(max(0.0, seconds), 60)
+    return f"{int(m):02d}:{s:05.2f}"
+
+
+def _load_transcript_lines(project: Path) -> list[str] | None:
+    """Timestamped lines from transcripts/source.json (Whisper segments),
+    for the full-transcript appendix in script.md -- lets a reviewer check
+    every response beat against exactly what the source video said, not
+    just the excerpted clip spans beats.yaml pulls from it."""
+    import json
+
+    transcript_path = project / "transcripts" / "source.json"
+    if not transcript_path.exists():
+        return None
+    try:
+        data = json.loads(transcript_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    segments = data.get("segments") or []
+    if not segments:
+        return None
+    return [
+        f"- `[{_format_timestamp(seg['start'])}–{_format_timestamp(seg['end'])}]` {seg['text'].strip()}"
+        for seg in segments
+    ]
+
+
 def render_script_md(doc: dict, per_beat: dict[str, float], total: float, project: Path | None = None) -> str:
     source_time = beats_mod.source_time_seconds(doc, per_beat)
     pct = (source_time / total * 100) if total else 0.0
@@ -123,6 +151,18 @@ def render_script_md(doc: dict, per_beat: dict[str, float], total: float, projec
             lines.append(f"- **Sources:** {', '.join(beat['sources'])}")
         lines.append("- **Notes:** ")
         lines.append("")
+
+    if project is not None and (source_info is None or source_info.kind != "article"):
+        transcript_lines = _load_transcript_lines(project)
+        if transcript_lines:
+            lines.append("## Full source transcript")
+            lines.append("")
+            lines.append("Every line of the source video, timestamped, for checking each response "
+                          "beat above against the full context -- not just the clip spans quoted from it.")
+            lines.append("")
+            lines.extend(transcript_lines)
+            lines.append("")
+
     return "\n".join(lines)
 
 
