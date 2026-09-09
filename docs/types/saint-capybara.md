@@ -44,11 +44,38 @@ Videos awaiting a reaction (before a project folder exists for them) are
 dropped in `D:\saint-capybara-videos-needing-reactions\` — a local-file
 staging folder, separate from any `D:\Videos\<slug>\` project. That folder
 also holds `need reaction.xlsx`, a running queue with columns `Link to
-original` / `Path` / `Video Generated` / `Notes` — check it before assuming
-you know the full backlog, and update its `Video Generated` column (mark
-`x`) once a project reaches Gate A or ships. Some queue rows are just a URL
-(no local file yet — ingest via `capy_ingest.py URL --project ...`, letting
-yt_dlp download it) rather than a path into this folder.
+original` / `Path` / `Does original video have captions?` / `Video
+Generated` / `Notes` / `script link` — check it before assuming you know
+the full backlog.
+
+**A queue row's `Path` points to a local file only until that file is
+ingested (2026-09-09 standing rule).** When a row has a local `Path` into
+the intake folder, ingest it with `capy_ingest.py --file <path> --project
+D:\Videos\<slug> ...` — this **moves** the file into
+`D:\Videos\<slug>\source\source.mp4` (not a copy; the intake folder is a
+staging area, not permanent storage, so nothing should linger there once
+a project owns it). Immediately after ingest:
+
+1. **Update that row's `Path`** to the new location
+   (`D:\Videos\<slug>\source\source.mp4`), so the sheet always reflects
+   where the file actually lives.
+2. **Rename a gibberish project slug once the transcript exists.** A
+   project created with a placeholder slug (a bare video ID, e.g.
+   `yt-pdm2bsfrm5k`) should be renamed to a short, descriptive slug that
+   summarizes the video (e.g. `bom-1837-wording-change`) as soon as the
+   transcript makes the actual content clear — rename the
+   `D:\Videos\<slug>\` folder itself, update `slug:` in
+   `script\beats.yaml`, and fix the `# Claims — <slug>` header in
+   `research\claims.md`. Do this before starting real research on the
+   project, not after — a script.md link pushed to GitHub under the old
+   slug would break if renamed later.
+3. Update the row's `Video Generated` column (mark `x`) once a project
+   reaches Gate A or ships, same as before.
+
+Some queue rows are just a URL (no local file yet — ingest via
+`capy_ingest.py URL --project ...`, letting yt_dlp download it directly
+into `source\source.mp4`) rather than a path into the intake folder; there
+is no intake-folder file to move or delete in that case.
 
 ## Project layout
 

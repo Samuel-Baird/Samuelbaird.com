@@ -4,7 +4,7 @@
 Two source kinds (source_info.json `kind`):
 
 VIDEO (default). Accepts either a URL (downloaded with yt_dlp) or an
-existing local file path (copied in) for the media itself -- and, when a
+existing local file path (moved in -- see note below) for the media itself -- and, when a
 URL is given (directly, or via --url alongside a local --file), always
 tries to pull metadata (title/uploader/canonical url) via yt_dlp so
 citation/description text has real attribution even when the media file
@@ -14,7 +14,7 @@ was already downloaded by other means.
     python tools/capy_ingest.py --file "D:\\some\\local.mp4" --url URL --project D:\\Videos\\<slug>
     python tools/capy_ingest.py --file "D:\\some\\local.mp4" --project D:\\Videos\\<slug>  # no URL -- no metadata
 
-Writes source\\source.mp4 (or a copy/link of the local file) and
+Writes source\\source.mp4 (moved from --file's local path, or downloaded) and
 source\\source_info.json (kind, title, uploader, canonical url, duration,
 and `media_from: "downloaded" | "local_file"`), then calls transcribe.py
 unchanged (--skip-transcribe to skip).
@@ -118,8 +118,8 @@ def ingest_video(args: argparse.Namespace) -> int:
         if not args.file.exists():
             print(f"error: --file not found: {args.file}")
             return 1
-        print(f"Copying local file into source\\: {args.file} -> {dest_media}")
-        shutil.copy2(args.file, dest_media)
+        print(f"Moving local file into source\\: {args.file} -> {dest_media}")
+        shutil.move(str(args.file), str(dest_media))
         media_from = "local_file"
     elif url:
         print(f"Downloading via yt_dlp: {url}")
@@ -368,7 +368,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("url", nargs="?", default=None, help="video source URL (downloaded if --file is not given)")
     ap.add_argument("--url", dest="url_opt", default=None, help="explicit video URL for metadata, usable alongside --file")
-    ap.add_argument("--file", type=Path, default=None, help="existing local media file to copy into source\\ instead of downloading")
+    ap.add_argument("--file", type=Path, default=None, help="existing local media file to MOVE into source\\ instead of downloading (e.g. from the videos-needing-reactions intake folder -- the original is relocated, not copied)")
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--max-height", type=int, default=1080)
     ap.add_argument("--model", default="small.en")
