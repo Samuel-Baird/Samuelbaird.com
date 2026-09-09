@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~10.9s)
 - **Original Video Transcript:** there are some red flags here. First, Smith's personal life. He practiced polygamy, married dozens of women, including teenagers and some who were already married. Second, his ambition.
 - **Pose:** concerned
-- **Narration:** Start with what's true. Joseph Smith did practice plural marriage -- historians count somewhere around thirty wives -- and yes, some were teenagers, and some were already married to other men. That's the Church's own history, not a hostile invention.
+- **Narration:** Start with what's true. Joseph Smith did practice plural marriage -- historians count somewhere around thirty wives -- and yes, some were teenagers, and some were already married to other men. Let's talk about it.
 - **Sources:** smith-plural-wives-count
 - **Notes:** 
 
@@ -44,14 +44,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n04` (narration, ~13.1s)
 - **Original Video Transcript:** there are some red flags here. First, Smith's personal life. He practiced polygamy, married dozens of women, including teenagers and some who were already married. Second, his ambition.
 - **Pose:** concerned
-- **Narration:** The fourteen-year-old this claim is likely pointing to is Helen Mar Kimball. Historians have found no evidence her sealing to Joseph ever became a sexual relationship -- when several other wives later testified under oath to one, she wasn't among them, despite living close enough to have testified.
+- **Narration:** The fourteen-year-old this claim is likely pointing to is Helen Mar Kimball. Historians have found no evidence that she was even alone with Joseph after her sealing to him, let alone that it ever became a sexual relationship.
 - **Sources:** helen-mar-kimball-no-evidence
 - **Notes:** 
 
 ## 07. `n05` (narration, ~12.8s)
 - **Original Video Transcript:** there are some red flags here. First, Smith's personal life. He practiced polygamy, married dozens of women, including teenagers and some who were already married. Second, his ambition.
 - **Pose:** concerned
-- **Narration:** None of that makes this history comfortable, and it shouldn't be flattened into either extreme -- 'nothing happened here,' or 'it was exactly what the worst framing implies.' It's real, it's serious, and it deserves more care than one line in a short video can give it.
+- **Narration:** None of that makes this history comfortable, and it shouldn't be flattened into either extreme -- 'nothing happened here,' or 'it was exactly what the worst framing implies.' It's real, it's serious, and it deserves more care than one line in a short video can give it. (remove line)
 - **Notes:** 
 
 ## 08. `c02` (clip, ~6.5s)
@@ -70,7 +70,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n07` (narration, ~6.5s)
 - **Original Video Transcript:** Beyond religious leadership, Smith declared himself to be a military general, ran for president, and lived a wealthy lifestyle. These actions raised some questions about his motives.
 - **Pose:** source
-- **Narration:** The presidential run is true. It was a real campaign with a published policy platform, covering prison reform, a national bank, and westward expansion.
+- **Narration:** The presidential run is true. It was a real campaign with a published policy platform, covering prison reform, a national bank, and westward expansion. (note abolition and religious liberty. in part he was running  since goverment had shown it would not protect mormons from protestant violence. maybe mention historical events before this like children being killed and quotes from anti-lds about better for a child to die then grow up to become a mormon)
 - **Sources:** 1844-campaign-general-smiths-views
 - **Notes:** 
 
@@ -125,7 +125,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 18. `n99` (narration, ~5.2s)
 - **Original Video Transcript:** Third, the nature of his visions. While witnesses claim to have seen the angel Moroni, their official accounts lack detailed descriptions of the angel's appearance, unlike the resurrection accounts we have in the Gospels. Fourth, the Book of Mormon.
 - **Pose:** encouraging
-- **Narration:** Three claims down, and none of them holds up quite as stated once you check the details. God bless.
+- **Narration:** Three claims down, and none of them holds up quite as stated once you check the details. God bless. (also note that the three witnesses never recanted, even though some were excommunicated/left the church. it would have been beneficial for them but they didnt deny it)
 - **Notes:** 
 
 ## Full source transcript
