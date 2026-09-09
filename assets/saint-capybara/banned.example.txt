@@ -1,0 +1,17 @@
+# tools/capy_check_brand.py reads assets/saint-capybara/banned.txt (which
+# is gitignored -- see docs/saint-capybara/brand.md). This example file is
+# committed so the mechanism is documented, but it only holds GENERIC
+# cross-promotion phrasing -- never the creator's real names, handles, or
+# other brand/project names. Copy this to banned.txt and add the specific
+# real terms locally; banned.txt itself must never be committed.
+#
+# One phrase per line, case-insensitive substring match.
+
+on my other channel
+as I've discussed before
+as I've mentioned before
+my other project
+my other account
+check out my other
+subscribe to my other
+if you follow my other work

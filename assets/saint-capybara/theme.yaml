@@ -1,0 +1,101 @@
+# Saint Capybara visual theme.
+#
+# Single source of truth for palette, typography, and frame layout. Read by
+# tools/capy/palette.py (sprite palette) and, from Step 6 onward, by
+# tools/capy/layout.py and tools/capy/plates.py (frame composition) and
+# tools/capy/captions.py (ASS caption styling).
+#
+# This is a DISTINCT visual system from docs/style-guide.md (the other
+# identity's charcoal/cream-serif quote-card style). Do not mix them.
+#
+# Hex values below are the Step 1 working palette. They are FROZEN once the
+# user approves a sprite candidate in Step 1/2 (compose.py reads this file at
+# render time, so "freezing" just means: stop editing this file casually
+# after that point).
+
+palette:
+  # Character (sprite) palette -- keys match tools/capy/parts.py part strings.
+  # v2: capybara-shaped (continuous body, two-tone muzzle patch), no
+  # robe, no permanent Bible -- just the halo and a crucifix necklace on
+  # bare fur, per the revised brief. A generic book/scroll/papers palette
+  # remains for the few evidence-adjacent poses that hold a prop.
+  transparent: [0, 0, 0, 0]
+  outline:     [42, 33, 23, 255]     # ink -- also used as the frame outline color
+  fur:         [196, 148, 92, 255]   # warm caramel-tan body fur
+  fur_shade:   [156, 110, 60, 255]   # ears, paws, back-shading band
+  snout:       [176, 122, 108, 255]  # dusty mauve-brown muzzle patch -- the key capybara "tell"
+  halo:        [217, 174, 59, 255]
+  halo_shade:  [181, 138, 35, 255]
+  crucifix:    [201, 130, 47, 255]   # ochre/gold crucifix -- distinct from halo gold
+  book_cover:  [122, 40, 34, 255]    # deep red-brown, pose-specific prop only
+  book_pages:  [242, 232, 210, 255]
+  paper:       [235, 224, 196, 255]
+  scroll:      [222, 205, 168, 255]
+  eye_white:   [247, 240, 224, 255]
+  eye:         [42, 33, 23, 255]
+  brow:        [80, 56, 32, 255]
+
+  # Frame / UI palette (for Step 6+ frame composition -- label chips, the
+  # wordmark, evidence-card borders -- kept as separate hex entries from
+  # the sprite RGBA palette above so frame code can read plain "#RRGGBB").
+  parchment:      "#E8DAC0"
+  ink:             "#2E2117"
+  fur_hex:         "#C4945C"
+  snout_hex:       "#B07A6C"
+  halo_gold_hex:   "#D9AE3B"
+  highlight_brick: "#B7431F"
+  source_teal:     "#2F6B5E"
+
+fonts:
+  display: "Press Start 2P"      # labels, hook chip, card attribution, wordmark
+  display_file: "fonts/PressStart2P-Regular.ttf"
+  body: "Pixelify Sans"          # captions, card body text
+  body_file: "fonts/PixelifySans-Regular.ttf"
+  license_note: "Both fonts are SIL Open Font License 1.1. OFL text files are bundled alongside each font in this folder. OFL permits embedding/burning into video; keep the OFL text with the font files and do not sell the fonts standalone."
+
+layout:
+  canvas: { width: 1080, height: 1920, fps: 30 }
+  # y-ranges, top to bottom. "reserved" zones avoid platform UI chrome
+  # (title/caption/like-share rails on Shorts/Reels/TikTok).
+  #
+  # Character position: bottom-left CORNER of frame (not a left-aligned
+  # "character row" floating above the bottom of the canvas). Sprite is
+  # anchored flush-ish to the left edge (x0: 8) and to the bottom of the
+  # visible frame, sitting entirely inside reserved_bottom's last ~300px
+  # band so it never collides with the stage/captions above it, while
+  # still leaving the very bottom platform-UI sliver (last ~40px) clear
+  # and leaving x 460-1040 free for the evidence panel at the same
+  # height. tools/capy/plates.py reads sprite/panel/reserved_bottom from
+  # this file rather than hardcoding any of these numbers.
+  reserved_top:    { y0: 0,    y1: 200 }   # hook chip may appear here in beat 1 only
+  stage:           { y0: 200,  y1: 808 }   # 1080x608 = exact 16:9; source clip / evidence / card / chart
+  captions:        { y0: 830,  y1: 1090 }  # centered, \an5 \pos(540,960)
+  character_row:   { y0: 1100, y1: 1880 }  # whole lower band the sprite+panel live in (excludes the UI sliver)
+  sprite:           { x0: 8,   y0: 1600, size: 280 }   # bottom-left corner, 280x280, bottom edge at y=1880
+  panel:            { x0: 320, y0: 1470, x1: 1040, y1: 1880 }  # inline evidence receipt, beside the corner sprite
+  reserved_bottom: { y0: 1880, y1: 1920 }  # last 40px sliver only, empty except wordmark -- kept clear of the sprite
+  wordmark:         { x1: 1040, y0: 1892, y1: 1916, align: "right" }
+
+sprite:
+  logical_canvas: 64        # 64x64 logical pixel grid
+  upscale: 8                 # -> 512x512 PNG, nearest-neighbor only
+
+captions:
+  style_capy:   { font: body, size: 68, primary: parchment, outline: ink, border: 1, outline_px: 6, shadow: 0, alignment: 5 }
+  style_source: { font: body, size: 56, primary: parchment, outline: source_teal, border: 1, outline_px: 6, shadow: 0, alignment: 5, italic: true }
+  style_hook:   { font: display, size: 44, primary: parchment, outline: ink, border: 1, outline_px: 6, shadow: 0, alignment: 5 }
+  highlight_color: highlight_brick
+  max_chars_per_line: 34
+  max_words_per_phrase: 6
+  gap_break_seconds: 0.35
+
+audio:
+  target_lufs: -16
+  head_pad_seconds: 0.25
+  sample_rate: 48000
+
+brand:
+  no_reuse_note: >
+    Do not reuse anything from the creator's other identity: docs/style-guide.md's
+    charcoal/cream-serif quote cards, bottom-left credit chip, or its fonts/music.
+    See docs/saint-capybara/brand.md for the full anonymity rules.

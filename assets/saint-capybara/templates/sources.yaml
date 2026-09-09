@@ -1,0 +1,27 @@
+# Saint Capybara research/sources.yaml template. One entry per source
+# actually consulted (whether or not it ends up cited on screen -- unused
+# sources are fine, capy_check_sources.py reports them as info).
+#
+# See docs/saint-capybara/research-protocol.md sec 13 for the field
+# reference and sec 2 for the type hierarchy.
+
+sources:
+  - id: REPLACE-source-id                 # short, kebab-case, referenced from beats.yaml `sources:` lists
+    type: primary                         # primary | scholarly | official | scripture | dataset | apologetic-lead | critic | other
+    title: "REPLACE: full title"
+    author: "REPLACE: author/speaker, or null for an institutional document"
+    date: "REPLACE: YYYY or YYYY-MM-DD"
+    locator: "REPLACE: url, Pulpit cite URL, GSA path+page, or dataset slug"
+    accessed: "REPLACE: YYYY-MM-DD"
+    inspected: false                      # true only once you've actually read/verified this source yourself
+    inspected_via: "REPLACE: e.g. mcp Pulpit read_paragraphs, GSA read_pages, direct url fetch"
+    quote: null                           # verbatim quote used on screen, or null if not directly quoted
+    verification:                         # required if `quote` is set and attributed
+      tool: "REPLACE: e.g. verify_quote, cite_page"
+      verdict: "REPLACE: e.g. verbatim, not-verbatim, not-found"
+      link: "REPLACE: url the tool returned"
+    grade_supports: fact                  # fact | inference | disputed | speculation
+    traced_to: null                       # REQUIRED (a source id) if type is apologetic-lead
+    used_on_screen: false
+    counter: false                        # true if this source is used to push back against the claim rather than support the response's framing
+    notes: "REPLACE: anything else worth recording"

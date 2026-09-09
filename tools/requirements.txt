@@ -4,3 +4,11 @@
 openai-whisper>=20250625
 python-docx>=1.2.0
 Pillow>=12.3.0
+
+# Saint Capybara type (docs/types/saint-capybara.md) -- also already
+# present on this machine as of 2026-09-08.
+pyyaml>=6.0.3
+kokoro>=0.7.16
+misaki[en]>=0.7.17
+soundfile>=0.13.1
+yt-dlp>=2026.07.04
