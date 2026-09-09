@@ -19,17 +19,11 @@ on the beat, else a role name via `voices:`, else the kind default
 (`excerpt` -> `voices.quote_default`, everything else -> the top-level
 `voice:`). `--voice`/`--speed` on this CLI now only override the
 project's *host* voice (doc["voice"]) rather than silently overriding
-every beat regardless of what beats.yaml says -- that mismatch used to
-mean the shared outro cache's key (voice+speed) could disagree with what
-was actually rendered.
+every beat regardless of what beats.yaml says.
 
 `audio/<id>.meta.json` records the {voice, speed} actually used for each
 beat, so a voice change invalidates the "already rendered" skip even
 though the wav/timing/norm files still exist.
-
-Fixed sign-of-the-cross outro beats (outro-01..05) are skipped by default
--- see tools/capy_outro.py -- pass --render-fixed-outro to render them
-anyway (used by capy_outro.py itself).
 
 `--project` mode renders real per-beat narration and is gated by Gate A
 (docs/saint-capybara/script-format.md) at the human-process level, not by
@@ -47,7 +41,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from capy.beats import load_beats, resolve_voice, is_fixed_outro, NARRATION_FAMILY_KINDS
+from capy.beats import load_beats, resolve_voice, NARRATION_FAMILY_KINDS
 
 try:  # IPA characters in printed lexicon overrides need a utf-8 stdout on Windows consoles
     sys.stdout.reconfigure(encoding="utf-8")
@@ -227,7 +221,6 @@ def render_project(
     only: set[str] | None = None,
     force: bool = False,
     print_phonemes: bool = False,
-    render_fixed_outro: bool = False,
 ) -> int:
     """Render real narration for every narration-family beat with `text`
     in `project`'s script/beats.yaml, using each beat's resolved voice
@@ -256,8 +249,6 @@ def render_project(
     for beat in doc["beats"]:
         bid, kind = beat["id"], beat["kind"]
         if kind not in BEAT_KINDS_WITH_NARRATION:
-            continue
-        if is_fixed_outro(beat) and not render_fixed_outro:
             continue
         text = speech_text(beat)
         if not text:
@@ -307,7 +298,6 @@ def main() -> int:
     ap.add_argument("--project", type=Path, default=None)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids (project mode)")
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--render-fixed-outro", action="store_true", help="also render outro-01..05 (used by capy_outro.py)")
     ap.add_argument("--timestamps", choices=["kokoro", "whisper"], default="kokoro")
     args = ap.parse_args()
 
@@ -324,7 +314,6 @@ def main() -> int:
         n = render_project(
             args.project, voice=args.voice, speed=args.speed,
             only=only, force=args.force, print_phonemes=args.print_phonemes,
-            render_fixed_outro=args.render_fixed_outro,
         )
         print(f"\n{n} beat(s) rendered.")
         return 0

@@ -15,13 +15,6 @@ over a blurred, darkened cover copy of the same footage (never plain
 black bars). The plate (transparent except the sprite) is overlaid on
 top. See docs/saint-capybara/hybrid-resolve-pipeline.md.
 
-The five fixed sign-of-the-cross outro beats (outro-01..05) are rendered
-once and cached -- see tools/capy_outro.py. This tool copies the cached
-frames/beat_outro.mp4 into the project and writes one merged manifest
-entry instead of re-rendering them, unless --render-fixed-outro is set
-(used by capy_outro.py itself when building the cache) or --no-auto-build
-is set (a missing cache then errors instead of silently re-rendering).
-
 Usage:
     python capy_render_beat_clips.py --project D:\\Videos\\<slug> [--only id,id]
 """
@@ -29,14 +22,13 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from capy.beats import load_beats, is_fixed_outro
+from capy.beats import load_beats
 from capy.layout import Theme
 
 HEAD_PAD_SECONDS = 0.25
@@ -245,31 +237,10 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
     return duration
 
 
-def _handle_fixed_outro(doc: dict, project: Path, theme: Theme, *, auto_build: bool) -> dict:
-    """Resolve (building if needed) the cached shared outro.mp4, copy it
-    into frames/, and return the manifest entry for it."""
-    from capy_outro import ensure_cached_outro  # local import: avoid a hard dependency for callers that never hit this path
-
-    entry = ensure_cached_outro(doc, theme, auto_build=auto_build)
-    out_dir = project / "frames"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    dest = out_dir / "beat_outro.mp4"
-    shutil.copy2(entry.mp4, dest)
-    return {
-        "id": "outro", "kind": "outro",
-        "beats": entry.beats,
-        "path": str(dest.relative_to(project)),
-        "duration": entry.duration,
-        "cache_key": entry.key,
-    }
-
-
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None)
-    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..05 individually instead of using the cache (used by capy_outro.py)")
-    ap.add_argument("--no-auto-build", action="store_true", help="error instead of building the outro cache if it's missing")
     args = ap.parse_args()
 
     project = args.project.resolve()
@@ -287,22 +258,11 @@ def main() -> int:
 
     out_dir = project / "frames"
     manifest = []
-    outro_handled = False
     last_clip_end: float | None = None
     for beat in doc["beats"]:
         bid = beat["id"]
         if beat.get("kind") == "clip":
             last_clip_end = beat.get("end")
-
-        if is_fixed_outro(beat) and not args.render_fixed_outro:
-            if only and "outro" not in only and bid not in only:
-                continue
-            if not outro_handled:
-                entry = _handle_fixed_outro(doc, project, theme, auto_build=not args.no_auto_build)
-                manifest.append(entry)
-                print(f"outro: {entry['duration']:.2f}s -> {Path(entry['path']).name} (cached, key {entry['cache_key']})")
-                outro_handled = True
-            continue
 
         if only and bid not in only:
             continue

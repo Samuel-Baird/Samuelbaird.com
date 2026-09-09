@@ -4,8 +4,9 @@
 # example content below.
 #
 # See docs/saint-capybara/script-format.md for the full field reference.
-# Do NOT hand-write the sign-of-the-cross outro sequence at the bottom of
-# `beats:` -- tools/capy/beats.py's load_beats() appends it automatically.
+# Every video's closing beat must end on "...God bless." (brand.md sec
+# 5a) -- capy_check_sources.py hard-errors if the last beat's text
+# doesn't.
 #
 # Article projects have no `clip` beats. The source's own words appear as
 # `excerpt` beats: verbatim text anchored to a numbered paragraph of
@@ -73,13 +74,11 @@ beats:
   #   pose: reading
   #   voice: quote_female
 
-  # Close, before the automatic outro.
+  # Closing beat -- must end on "...God bless."
   - id: n99
     kind: narration
-    text: "REPLACE: closing line."
+    text: "REPLACE: closing line. God bless."
     function: closing
+    pose: encouraging
     stage: blank
     opinion: true
-
-  # --- Do not add anything below here. The mandatory outro sequence is
-  # appended automatically by capy.beats.load_beats(). ---

@@ -3,11 +3,9 @@
 # slug already substituted) and replace the example content below.
 #
 # See docs/saint-capybara/script-format.md for the full field reference.
-# Do NOT hand-write the sign-of-the-cross outro sequence at the bottom of
-# `beats:` -- tools/capy/beats.py's load_beats() appends it automatically
-# if it isn't already present, and capy_check_sources.py hard-errors if a
-# beats.yaml's trailing 4 beats don't match it exactly (see
-# docs/saint-capybara/brand.md sec 5a).
+# Every video's closing beat must end on "...God bless." (brand.md sec
+# 5a) -- capy_check_sources.py hard-errors if the last beat's text
+# doesn't.
 
 version: 1
 slug: REPLACE-WITH-SLUG
@@ -71,12 +69,10 @@ beats:
       placement: panel
     sources: [REPLACE-source-id]
 
-  # Close, before the automatic outro.
+  # Closing beat -- must end on "...God bless."
   - id: n99
     kind: narration
-    text: "REPLACE: closing line, e.g. inviting the viewer to check the sources in the description."
+    text: "REPLACE: closing line. God bless."
     function: closing
+    pose: encouraging
     opinion: true
-
-  # --- Do not add anything below here. The mandatory outro sequence is
-  # appended automatically by capy.beats.load_beats(). ---

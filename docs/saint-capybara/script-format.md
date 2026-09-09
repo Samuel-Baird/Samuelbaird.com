@@ -54,10 +54,10 @@ beats: [ ... ]
 
 Every beat has `id` (unique, short, prefixed by kind: `c01` clip, `n01`
 narration, `q01` card, `e01` evidence, `ch01` chart, `x01` excerpt) and
-`kind`, one of: `clip | narration | card | evidence | chart | excerpt |
-outro`. Each kind renders in one of three frame modes (`brand.md` sec 8)
-— CLIP (`clip`), HOST (`narration`, `outro`), CARD (`card`, `evidence`,
-`chart`, `excerpt`) — chosen automatically by kind, not authored per-beat.
+`kind`, one of: `clip | narration | card | evidence | chart | excerpt`.
+Each kind renders in one of three frame modes (`brand.md` sec 8) — CLIP
+(`clip`), HOST (`narration`), CARD (`card`, `evidence`, `chart`,
+`excerpt`) — chosen automatically by kind, not authored per-beat.
 
 ```yaml
 - { id: c01, kind: clip, start: 12.4, end: 21.0, speed: 1.0, speaker: "Source video", captions: source, pose: listening }
@@ -134,56 +134,35 @@ Field notes:
   Forbidden on `excerpt` beats (coloring the source's own words
   editorializes).
 
-## The mandatory sign-of-the-cross outro (fixed, not authored per-video)
+## The closing beat: "...God bless." (not a fixed structural sequence)
 
-**This is a structural rule of the Saint Capybara type, not a per-video
-creative choice like Gate B decisions are.** Every video ends on exactly
-this five-beat sequence, automatically appended by
-`capy.beats.load_beats()` (which calls `ensure_mandatory_outro()`) if a
-`beats.yaml` doesn't already end with it — you do not need to hand-write
-it, and `capy_check_sources.py` hard-errors if it's missing or altered:
+**Retired 2026-09-09 — there is no more mandatory sign-of-the-cross
+outro.** An earlier version of this doc specified a fixed five-beat
+`kind: outro` sequence (sign-father/sign-son/sign-holy/sign-spirit-amen/
+prayerful poses, auto-appended by `capy.beats.load_beats()`, rendered
+once and cached by `tools/capy_outro.py`). All of that — the `outro`
+beat kind, the auto-append behavior, the shared cache — has been removed
+from the codebase, not just deprecated. See git history if it's ever
+needed for reference; don't reintroduce it without new, explicit user
+direction.
+
+**The rule now: every video's closing beat is an ordinary `narration`
+beat whose text ends on "...God bless."** — hand-authored like any other
+beat, no special kind, no shared/cached asset. Pick whatever pose fits
+the moment (`encouraging` is a reasonable default). `capy_check_sources.py`
+hard-errors if the last beat in `beats.yaml` doesn't end that way.
 
 ```yaml
-  - { id: outro-01, kind: outro, pose: sign-father,      text: "In the name of the Father," }
-  - { id: outro-02, kind: outro, pose: sign-son,          text: "and of the Son," }
-  - { id: outro-03, kind: outro, pose: sign-holy,         text: "and of the Holy" }
-  - { id: outro-04, kind: outro, pose: sign-spirit-amen,  text: "Spirit," }
-  - { id: outro-05, kind: outro, pose: prayerful,         text: "Amen." }
+  - id: n99
+    kind: narration
+    text: "REPLACE: closing line. God bless."
+    function: closing
+    pose: encouraging
+    opinion: true
 ```
 
-**Locked wording is "Holy Spirit," not "Holy Ghost"** (corrected
-2026-09-09 — a real wording fix, not a style preference; "Holy Ghost" was
-wrong and must not be reused anywhere in this brand). **"Holy" and
-"Spirit" are two separate beats/poses**, not one — `sign-holy` on "Holy",
-a quick cut to `sign-spirit-amen` on "Spirit" (both are short single-word
-beats so the cut reads as fast by construction, no extra timing tuning
-needed), then **"Amen" is its own fifth beat on the ordinary `prayerful`
-pose** (a normal, calm prayer posture — not another sign-of-the-cross
-gesture; the `sign-spirit-amen` pose's name is a filename leftover from
-the old 4-beat wording and is now on the "Spirit" beat only, "Amen" no
-longer shares it). The five poses and their order are fixed. Wording may
-be adjusted slightly per-project for natural TTS phrasing (e.g. splitting
-differently around a comma) but the overall line and the
-one-pose-per-clause structure must not change —
-`capy.beats.has_outro_sequence()` checks pose+kind+order, not verbatim
-text, but a script editor should not rewrite these beats' meaning.
-`kind: outro` durations use TTS length with a 1.2s floor (see
-`capy/beats.py: OUTRO_MIN_SECONDS`).
-
-**Rendered once, not per-video.** Because the wording (and therefore the
-plates/captions) of these five beats never changes, they are rendered
-once per (voice, speed) and cached — see
-`docs/saint-capybara/hybrid-resolve-pipeline.md` "The shared outro
-cache". This is invisible to script-writing: `beats.yaml` still carries
-these five beats exactly as shown, `capy_storyboard.py` still previews
-them at Gate A, and `capy_check_sources.py` still errors if they're
-missing or malformed. A *different*, per-project beat right before this
-sequence (the "outro-lead," e.g. `n05` with `pose: encouraging`) is
-ordinary hand-written narration and is never part of the cache.
-
-**Any change to the locked voice or its speed invalidates the cache** (it's
-keyed on `(voice, speed, theme)`) — run `tools/capy_outro.py --build
---force` after changing `capy.beats.DEFAULT_VOICE`, per `brand.md` sec 6.
+See "Closing conventions" below for what the closing beat should (and
+shouldn't) say beyond that.
 
 ## Five recurring response formats
 
@@ -218,8 +197,7 @@ all five into one video):
   top-level `hook:` field note above); no on-screen time budget.
 - Clip / excerpt: 5-25s.
 - Response: 25-150s across 2-4 evidence beats.
-- Close (pre-outro): 5-10s.
-- Outro (fixed, see above): typically ~4-6s total across the 4 beats.
+- Close (the "...God bless." beat): 5-10s.
 - Overall: 60-180s (`format.min_seconds`/`max_seconds`), enforced by
   `capy.beats.check_duration_budget()` — hard error normally, downgraded
   to a warning only when a tool is run with `--draft`.
@@ -241,12 +219,11 @@ all five into one video):
   *closing* on a validation that repeats what the video already showed.
   A framing beat that critiques response *quality* (e.g. noting a
   question wasn't actually answered) is a different thing and is fine.
-- **The outro-lead narration (the beat right before the mandatory
-  sign-of-the-cross sequence) should not reference "sources are in the
-  description."** State the closing line plainly; don't call out where
-  citations live. (The actual sources still belong in the description
-  text itself, per `research-protocol.md` — this is only about not
-  narrating that fact out loud.)
+- **The closing beat ("...God bless.") should not reference "sources are
+  in the description."** State the closing line plainly; don't call out
+  where citations live. (The actual sources still belong in the
+  description text itself, per `research-protocol.md` — this is only
+  about not narrating that fact out loud.)
 
 ## One-argument rule
 
@@ -310,7 +287,7 @@ one is available and relevant:
   option when a real primary-source image exists — it's more convincing
   on screen than a typed quote card and doubles as the "receipt" the
   research protocol wants anyway.
-- **`stage: image` on a `narration`/`outro` beat** — a background image
+- **`stage: image` on a `narration` beat** — a background image
   (same source types) behind the sprite while he's *talking*, not just
   during a dedicated evidence beat. Good for adding visual texture across
   a run of narration beats without breaking into CARD mode every time.

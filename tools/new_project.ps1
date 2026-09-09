@@ -84,8 +84,8 @@ if ($Type -eq 'saint-capybara') {
     }
 
     Write-Host ""
-    Write-Host "Saint Capybara templates copied: script\beats.yaml (from $beatsTemplate, with"
-    Write-Host "the mandatory sign-of-the-cross outro auto-appended at load time -- see"
+    Write-Host "Saint Capybara templates copied: script\beats.yaml (from $beatsTemplate --"
+    Write-Host "remember the closing beat must end on '...God bless.', see"
     Write-Host "docs/saint-capybara/script-format.md), research\claims.md,"
     Write-Host "research\sources.yaml, script\pronunciations.yaml."
     Write-Host ""

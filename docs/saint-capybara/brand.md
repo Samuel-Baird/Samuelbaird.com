@@ -270,30 +270,28 @@ chart/quote card, small bottom-left while reacting over a clip. He is
 never smaller than that CLIP-mode corner size and evidence never simply
 replaces him.
 
-### 5a. Outro sign-off sequence
+### 5a. Closing line: "God bless"
 
-**Corrected 2026-09-09 — "Holy Spirit," not "Holy Ghost."** Every video
-ends on the same five-pose sequence: the character making the sign of
-the cross while narration says *"In the name of the Father, and of the
-Son, and of the Holy Spirit, Amen."* "Holy" and "Spirit" are each their
-own beat/pose with a quick cut between them (both are single-word beats,
-so the cut is fast by construction); "Amen" gets its own fifth beat on
-the calm `prayerful` pose, not a sign-of-the-cross gesture.
+**Retired 2026-09-09 — there is no more fixed sign-of-the-cross outro
+sequence.** An earlier version of this brand mandated every video end on
+a multi-beat sign-of-the-cross gesture ("In the name of the Father, and
+of the Son, and of the Holy Spirit, Amen.") rendered as its own shared,
+cached clip. That whole mechanism (the four/five `sign-*` poses, the
+mandatory-append-to-every-`beats.yaml` behavior, `tools/capy_outro.py`'s
+shared-cache system) is gone — removed, not just deprecated. Don't
+resurrect it; see git history if the mechanics are ever needed for
+reference. The `sign-*` sprite art files still exist under
+`D:\saint-capybara\finalized images\` and may be reused for something
+else later, but they carry no special meaning now.
 
-| File | Beat |
-|---|---|
-| `saint-capybara-sign-father.png` | "...in the name of the Father," |
-| `saint-capybara-sign-son.png` | "...and of the Son," |
-| `saint-capybara-sign-holy.png` | "...and of the Holy" |
-| `saint-capybara-sign-spirit-amen.png` | "...Spirit," (pose name is a filename leftover from the old 4-beat wording — it now covers only "Spirit," not "Spirit, Amen") |
-| `saint-capybara-prayerful.png` | "...Amen." |
-
-This is the standard outro for every video, not a one-off for any single
-short — wire it into the beat-list template / compositor as a fixed
-closing sequence. See `script-format.md`'s outro section for the exact
-beat ids/fields and `hybrid-resolve-pipeline.md`'s shared outro cache
-(re-key and rebuild with `tools/capy_outro.py --build --force` whenever
-this wording, the voice, or its speed changes).
+**Every video's closing beat instead ends the narration line on "...God
+bless."** — an ordinary `narration` beat like any other (pick whatever
+pose fits the moment, `encouraging` is a reasonable default), not a
+special kind or a shared/cached asset. `capy_check_sources.py`
+hard-errors if the last beat's text doesn't end that way. See
+`script-format.md`'s closing-conventions section for the exact rule and
+`docs/saint-capybara/hybrid-resolve-pipeline.md` for the prior outro
+cache's removal note.
 
 ## 6. Voice and TTS spec
 
@@ -321,11 +319,9 @@ the quote voice (`af_heart`, `af_bella`, `af_nicole`, `bf_emma`,
 `af_sarah`) into `D:\saint-capybara\voice-audition\` for reference — see
 `audition.md` there for the upstream quality grade of each, kept for
 historical context now that the pick is locked. **Any future change to
-the voice or its speed must re-run `tools/capy_outro.py --build --force`**
-(the shared outro cache is keyed on `(voice, speed, theme)` — see
-`hybrid-resolve-pipeline.md`) and re-render every in-flight project's
-audio, since a stale project would otherwise mix an old-speed voice with
-a new-speed outro.
+the voice or its speed means re-rendering every in-flight project's
+audio** so nothing mixes an old-speed take with a new-speed one within
+the same video.
 
 **Quote voices (article/text-source mode, `kind: excerpt` beats).** A
 second Kokoro voice reads the source's own words aloud, sex-matched to
@@ -414,7 +410,7 @@ frame modes, chosen by beat kind** (`capy.layout.Theme.mode_for`):
 | Mode | Beat kinds | Background | Sprite | Captions |
 |---|---|---|---|---|
 | **CLIP** | `clip` | The source video fills the whole canvas — cover-cropped for a 9:16-or-narrower source, or fit inside a letterbox band (y 230–850) over a blurred/darkened cover copy of the same footage for 16:9-or-wider | 400px box, bottom-**right** (x0: 648 — 2026-09-09 user feedback, was bottom-left; mirrors the old 32px margin off the opposite edge), 5px ink outline + a hard offset shadow so pixel edges read over busy video | y 860–1120, `style_source` (76px, teal pill) |
-| **HOST** | `narration`, `outro` | Parchment + vignette (`stage: blank`); a full-bleed last-clip-frame background blurred/dimmed 55% (`stage: freeze`); an arbitrary project image, e.g. a historical painting/photo/sketch, same treatment (`stage: image`, 2026-09-09); or the source video playing continuously (not frozen) behind him — "capybara in front of the reacted video" (`stage: video`, 2026-09-09) — see `script-format.md` | 920px box, horizontally centered, the dominant element on screen, with a soft ground-shadow ellipse | y 300–660 (above his head), `style_capy` (84px) |
+| **HOST** | `narration` | Parchment + vignette (`stage: blank`); a full-bleed last-clip-frame background blurred/dimmed 55% (`stage: freeze`); an arbitrary project image, e.g. a historical painting/photo/sketch, same treatment (`stage: image`, 2026-09-09); or the source video playing continuously (not frozen) behind him — "capybara in front of the reacted video" (`stage: video`, 2026-09-09) — see `script-format.md` | 920px box, horizontally centered, the dominant element on screen, with a soft ground-shadow ellipse | y 300–660 (above his head), `style_capy` (84px) |
 | **CARD** | `card`, `evidence`, `chart`, `excerpt` | Parchment; the card/chart/evidence/pull-quote occupies x 40–1040, y 250–830 | 480px box, bottom-left, 4px outline | y 860–1120, `style_card` (76px) |
 
 Every mode anchors the sprite's feet to the same line
@@ -494,10 +490,8 @@ manual/user task:
   PNG text chunk by default, which is more of a "did this leak something
   odd" check than an expected problem here. Any tool this pipeline
   writes PNGs with (evidence crops, cards, cached sprite renders under
-  `D:\saint-capybara\cache\sprites\`, the outro cache's intermediates
-  under `D:\saint-capybara\cache\outro\`) should save without metadata
-  the same way — `tools/capy_outro.py --verify` checks its own cache dir
-  for this. No desktop screenshots with browser chrome, taskbars,
+  `D:\saint-capybara\cache\sprites\`) should save without metadata the
+  same way. No desktop screenshots with browser chrome, taskbars,
   usernames, bookmarks, or open tabs visible — evidence receipts are
   cropped page images (Gospel Scholar Archive `get_page_image`, Pulpit
   cite links) or clean crops, never a raw desktop capture.

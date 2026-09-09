@@ -16,10 +16,10 @@ real full-bleed look.
 
 --mock builds a synthetic beat list covering every frame mode/kind
 (clip 9:16, clip 16:9, narration blank/freeze, card, evidence, chart,
-excerpt, the non-square `quote` pose, the outro sequence) with a
-worst-case caption on each, and writes individual PNGs plus a contact
-sheet under theme.cache_dir("mock") -- no --project needed. Use this to
-eyeball a layout/font change before spending a real render.
+excerpt, the non-square `quote` pose) with a worst-case caption on each,
+and writes individual PNGs plus a contact sheet under
+theme.cache_dir("mock") -- no --project needed. Use this to eyeball a
+layout/font change before spending a real render.
 """
 from __future__ import annotations
 
@@ -215,8 +215,6 @@ def _mock_beats(mock_dir: Path) -> tuple[list[dict], Path, Path]:
         {"id": "x01", "kind": "excerpt", "pose": "reading", "para": 4,
          "text": "I grew up in the church and I loved it, but [...] nobody told me about the stone in the hat until I was thirty.",
          "_excerpt_attribution": "The Capybara Gazette · \u201cA Reporter's Story\u201d · Sep 1, 2026"},
-        {"id": "outro-01", "kind": "outro", "pose": "sign-father"},
-        {"id": "outro-lead", "kind": "outro", "pose": "encouraging"},
     ]
     return beats, portrait, landscape
 
@@ -260,8 +258,7 @@ def run_mock(out_dir: Path | None) -> int:
         img = render_plate(beat, theme, project_dir=mock_dir, freeze_frame=preview_frame, preview_video_frame=preview_frame)
         mode = theme.mode_for(beat)
         style_name = "style_source" if mode == "clip" else ("style_card" if mode == "card" else "style_capy")
-        if beat["kind"] != "outro" or beat["id"] == "outro-01":
-            _mock_caption(theme, img, mode, style_name)
+        _mock_caption(theme, img, mode, style_name)
         name = f"mock_{beat['id']}.png"
         img.save(mock_dir / name)
         labeled.append((f"{beat['id']} ({beat['kind']}, {mode})", img))

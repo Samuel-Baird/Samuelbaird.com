@@ -52,7 +52,7 @@ fonts:
   license_note: "Both fonts are SIL Open Font License 1.1. OFL text files are bundled alongside each font in this folder. OFL permits embedding/burning into video; keep the OFL text with the font files and do not sell the fonts standalone."
 
 layout:
-  version: 2                      # bump on any geometry change -> invalidates the outro cache (tools/capy_outro.py)
+  version: 2
   canvas: { width: 1080, height: 1920, fps: 30 }
 
   # Documented assumptions (union of TikTok / Reels / Shorts platform-UI
@@ -79,7 +79,7 @@ layout:
     sprite:   { x0: 648, size: 400, outline_px: 5, shadow: { dx: 10, dy: 10, alpha: 110 } }
     captions: { y0: 860, y1: 1120, max_width: 960 }
 
-  # HOST mode (kind: narration, outro) -- parchment or full-bleed freeze, big sprite.
+  # HOST mode (kind: narration) -- parchment or full-bleed freeze, big sprite.
   host:
     sprite:   { x_center: 540, size: 920, outline_px: 0, ground_shadow: { rx: 300, ry: 26, alpha: 60 } }
     captions: { y0: 300, y1: 660, max_width: 960 }
@@ -125,7 +125,6 @@ audio:
 cache:
   root: "D:/saint-capybara/cache"   # override with env CAPY_CACHE_DIR; beside the finalized art, outside the repo
   sprites: sprites
-  outro: outro
   mock: mock
 
 brand:

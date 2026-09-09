@@ -16,7 +16,7 @@ if str(TOOLS_DIR) not in sys.path:
 
 from capy import excerpts  # noqa: E402
 from capy import source  # noqa: E402
-from capy.beats import Issue, OUTRO_BEATS  # noqa: E402
+from capy.beats import Issue  # noqa: E402
 
 PARAS = [
     "Every July the floats roll down the avenue, and every July I ask the same question.",
@@ -36,7 +36,7 @@ def _doc(*beats: dict, voices: dict | None = None, voice: dict | None = None) ->
     d = {
         "slug": "t", "title": "t", "hook": "h",
         "voice": voice or {"name": "am_michael", "speed": 0.95},
-        "beats": list(beats) + [dict(b) for b in OUTRO_BEATS],
+        "beats": list(beats) + [{"id": "close-01", "kind": "narration", "pose": "encouraging", "text": "God bless.", "opinion": True}],
     }
     if voices is not None:
         d["voices"] = voices
@@ -233,6 +233,6 @@ def test_speech_text_and_caption_text():
 
 def test_source_time_counts_clips_and_excerpts():
     doc = _doc({"id": "c01", "kind": "clip", "start": 0, "end": 5}, _excerpt(), {"id": "n01", "kind": "narration", "text": "x", "opinion": True})
-    per_beat = {"c01": 5.0, "x01": 4.0, "n01": 20.0, "outro-01": 1.2}
+    per_beat = {"c01": 5.0, "x01": 4.0, "n01": 20.0, "close-01": 1.2}
     assert excerpts.source_time_seconds(doc, per_beat) == 9.0
     assert excerpts.excerpt_word_total(doc) == 10  # "The parade was once a memorial. The people who walked"

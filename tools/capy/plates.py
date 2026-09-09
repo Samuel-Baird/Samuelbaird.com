@@ -23,7 +23,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
-from capy.beats import resolve_pose, OUTRO_POSES
+from capy.beats import resolve_pose
 from capy.layout import Theme
 from capy.poses import SENSITIVE_FORBIDDEN
 from capy.sprites import render_sprite

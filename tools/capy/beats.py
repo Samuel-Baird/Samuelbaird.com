@@ -3,13 +3,15 @@ Saint Capybara video type.
 
 See docs/saint-capybara/script-format.md for the full field reference (this
 module's BEAT_KINDS / REQUIRED_FIELDS mirror that doc exactly -- if you
-change one, change the other) and docs/saint-capybara/brand.md sec 5a for
-why the outro sequence below is fixed and not something each project's
-beats.yaml hand-authors.
+change one, change the other). Every video's closing beat ends on "...God
+bless." (brand.md sec 5a) -- an ordinary narration beat, not a special kind;
+there is no fixed/mandatory structural sequence to auto-append (that was
+the sign-of-the-cross outro, retired 2026-09-09 -- see git history if ever
+needed).
 
     from capy.beats import load_beats, validate, resolve_durations
 
-    doc = load_beats(Path("script/beats.yaml"))   # auto-appends the outro
+    doc = load_beats(Path("script/beats.yaml"))
     issues = validate(doc)                         # list[Issue]
     total, per_beat = resolve_durations(doc, tts_durations={"n01": 4.2, ...})
 
@@ -34,13 +36,13 @@ try:
 except ImportError:  # pragma: no cover - allows use without tools/ on sys.path in ad-hoc tests
     FUNCTION_TO_POSE, SENSITIVE_FORBIDDEN, POSES = {}, set(), {}
 
-BEAT_KINDS = {"clip", "narration", "card", "evidence", "chart", "excerpt", "outro"}
+BEAT_KINDS = {"clip", "narration", "card", "evidence", "chart", "excerpt"}
 
 # Beat kinds that carry narration/spoken text and need a resolved voice
 # and duration from TTS (mirrors capy_tts.BEAT_KINDS_WITH_NARRATION, kept
 # here too since resolve_voice() needs it and beats.py has no reverse
 # dependency on capy_tts.py).
-NARRATION_FAMILY_KINDS = {"narration", "card", "evidence", "chart", "excerpt", "outro"}
+NARRATION_FAMILY_KINDS = {"narration", "card", "evidence", "chart", "excerpt"}
 
 # Words-per-minute used to *estimate* a hold/TTS duration before real TTS
 # has run (Step 3 lock: 0.9-0.95 speed, ~140-150 wpm target -- see brand.md
@@ -50,7 +52,6 @@ NARRATION_FAMILY_KINDS = {"narration", "card", "evidence", "chart", "excerpt", "
 ESTIMATE_WORDS_PER_SECOND = 220 / 60.0
 HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
-OUTRO_MIN_SECONDS = 1.2
 
 # Locked 2026-09-09 (user confirmed after watching dont-read-the-bom's
 # render) -- see docs/saint-capybara/brand.md sec 6. am_michael at speed
@@ -62,38 +63,6 @@ DEFAULT_VOICES = {
     "quote_female": {"name": "af_heart", "speed": 1.0},
     "quote_default": "quote_male",
 }
-
-# ---------------------------------------------------------------------------
-# Mandatory sign-of-the-cross outro (brand.md sec 5a). This is a fixed,
-# non-optional structural rule of the Saint Capybara type -- every project's
-# beats.yaml gets this appended automatically by load_beats() if it isn't
-# already present, and validate() rejects any beats.yaml whose trailing
-# outro sequence doesn't match this exactly in pose order/count (wording
-# may be adjusted slightly for TTS phrasing per the brief, but the five
-# poses, their order, and the overall line's meaning must not change).
-#
-# 5-beat version locked 2026-09-09 (user correction: "Holy Ghost" ->
-# "Holy Spirit", plus a real word/pose split -- "Holy" gets sign-holy,
-# "Spirit" gets sign-spirit-amen (quick cut, both short beats), then
-# "Amen" gets its own beat on the ordinary `prayerful` pose instead of
-# being folded into the sign-spirit-amen beat). Was a 4-beat sequence
-# before this; see git history for the prior wording/split if ever needed.
-#
-# These five beats (matched by id + pose, see is_fixed_outro()) are also
-# the ones tools/capy_outro.py renders once and caches -- see
-# docs/saint-capybara/hybrid-resolve-pipeline.md. A per-project outro-LEAD
-# beat (kind: outro, pose e.g. "encouraging", the beat right before this
-# fixed sequence) is NOT one of these and is never cached.
-# ---------------------------------------------------------------------------
-OUTRO_POSES = ["sign-father", "sign-son", "sign-holy", "sign-spirit-amen", "prayerful"]
-OUTRO_BEATS: list[dict] = [
-    {"id": "outro-01", "kind": "outro", "pose": "sign-father", "text": "In the name of the Father,"},
-    {"id": "outro-02", "kind": "outro", "pose": "sign-son", "text": "and of the Son,"},
-    {"id": "outro-03", "kind": "outro", "pose": "sign-holy", "text": "and of the Holy"},
-    {"id": "outro-04", "kind": "outro", "pose": "sign-spirit-amen", "text": "Spirit,"},
-    {"id": "outro-05", "kind": "outro", "pose": "prayerful", "text": "Amen."},
-]
-FIXED_OUTRO_IDS = {b["id"] for b in OUTRO_BEATS}
 
 
 @dataclass
@@ -123,45 +92,8 @@ def estimate_hold_seconds(text: str | None) -> float:
     return words / ESTIMATE_WORDS_PER_SECOND
 
 
-def has_outro_sequence(beats: list[dict]) -> bool:
-    """True if `beats` already ends with the exact outro pose sequence
-    (by pose + kind, not necessarily verbatim wording)."""
-    if len(beats) < len(OUTRO_POSES):
-        return False
-    tail = beats[-len(OUTRO_POSES):]
-    if any(b.get("kind") != "outro" for b in tail):
-        return False
-    return [b.get("pose") for b in tail] == OUTRO_POSES
-
-
-def is_fixed_outro(beat: dict) -> bool:
-    """True for exactly the fixed sign-of-the-cross beats (matched
-    by id AND pose, not just kind == "outro" -- a per-project outro-lead
-    beat is also kind: outro but has a different id/pose and must flow
-    through every tool as an ordinary HOST beat, never the shared cache)."""
-    return (
-        beat.get("kind") == "outro"
-        and beat.get("id") in FIXED_OUTRO_IDS
-        and beat.get("pose") in OUTRO_POSES
-    )
-
-
-def ensure_mandatory_outro(doc: dict) -> dict:
-    """Return a copy of `doc` with the fixed sign-of-the-cross outro
-    appended to `beats` if it isn't already present. Idempotent."""
-    doc = copy.deepcopy(doc)
-    beats = doc.setdefault("beats", [])
-    if not has_outro_sequence(beats):
-        beats.extend(copy.deepcopy(OUTRO_BEATS))
-    return doc
-
-
 def load_beats(path: Path | str) -> dict:
-    """Load beats.yaml, applying defaults and auto-appending the mandatory
-    outro sequence if the file doesn't already end with it. Does NOT
-    write the file back -- callers that want the outro persisted to disk
-    (e.g. `new_project.ps1` scaffolding, or an explicit `--write-outro`
-    flag on a tool) should re-dump the returned doc themselves."""
+    """Load beats.yaml, applying defaults. Does NOT write the file back."""
     path = Path(path)
     raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     raw.setdefault("version", 1)
@@ -177,7 +109,7 @@ def load_beats(path: Path | str) -> dict:
     fmt.setdefault("max_seconds", 180)
     raw.setdefault("voice", dict(DEFAULT_VOICE))
     raw.setdefault("voices", copy.deepcopy(DEFAULT_VOICES))
-    return ensure_mandatory_outro(raw)
+    return raw
 
 
 def dump_beats(doc: dict, path: Path | str) -> None:
@@ -279,8 +211,8 @@ def validate(doc: dict) -> list[Issue]:
         # stage:freeze-needs-a-prior-clip rule both live in
         # capy.excerpts.validate_excerpt_beats (delegated to below) so
         # article-mode and video-mode share one implementation.
-        if beat.get("stage") == "freeze" and kind not in ("narration", "outro"):
-            issues.append(Issue("warning", bid, "stage: freeze is only meaningful on narration/outro (HOST-mode) beats"))
+        if beat.get("stage") == "freeze" and kind != "narration":
+            issues.append(Issue("warning", bid, "stage: freeze is only meaningful on narration (HOST-mode) beats"))
 
         if kind == "evidence" and not beat.get("evidence", {}).get("image"):
             issues.append(Issue("error", bid, "evidence beat missing evidence.image"))
@@ -289,23 +221,15 @@ def validate(doc: dict) -> list[Issue]:
             issues.append(Issue("error", bid, "card beat missing card.quote"))
 
         pose = resolve_pose(beat, sensitive=bool(doc.get("sensitive")))
-        if pose and POSES and pose not in POSES and pose not in OUTRO_POSES:
+        if pose and POSES and pose not in POSES:
             issues.append(Issue("error", bid, f"pose '{pose}' is not in the sprite roster"))
         if doc.get("sensitive") and pose in SENSITIVE_FORBIDDEN:
             issues.append(Issue("error", bid, f"pose '{pose}' is forbidden on a sensitive-flagged video/beat"))
 
-    if not has_outro_sequence(beats):
-        issues.append(Issue("error", None, "beats.yaml does not end with the mandatory sign-of-the-cross outro sequence (" + " -> ".join(OUTRO_POSES) + "); run through capy.beats.load_beats/ensure_mandatory_outro to auto-append it"))
-    else:
-        tail = beats[-len(OUTRO_BEATS):]
-        expected_texts = [b["text"] for b in OUTRO_BEATS]
-        for got, exp in zip(tail, expected_texts):
-            if not got.get("text"):
-                issues.append(Issue("warning", got.get("id"), "outro beat has no narration text"))
-        expected_ids = [b["id"] for b in OUTRO_BEATS]
-        if [b.get("id") for b in tail] != expected_ids:
-            issues.append(Issue("info", None, "trailing outro beats don't use the standard ids (outro-01.." + f"{len(OUTRO_BEATS):02d}) -- "
-                                                "the shared outro cache (tools/capy_outro.py) keys on id+pose and will not match them"))
+    last_beat = beats[-1]
+    last_text = (last_beat.get("text") or "").strip().rstrip(".!…").rstrip()
+    if not last_text.lower().endswith("god bless"):
+        issues.append(Issue("error", last_beat.get("id"), "every video's closing beat must end on \"...God bless.\" (brand.md sec 5a) -- last beat's text doesn't"))
 
     hook = doc.get("hook")
     if not hook:
@@ -324,10 +248,8 @@ def resolve_durations(doc: dict, tts_durations: dict[str, float] | None = None) 
     """Compute per-beat duration in seconds and the total runtime.
 
     tts_durations: {beat_id: measured_seconds} for beats that have already
-    been rendered by capy_tts.py (or, for the fixed outro sequence, the
-    cached durations from tools/capy_outro.py). Any beat missing from
-    this map falls back to the pre-TTS estimate (word-count / wpm, or the
-    outro floor).
+    been rendered by capy_tts.py. Any beat missing from this map falls
+    back to the pre-TTS estimate (word-count / wpm).
     """
     tts_durations = tts_durations or {}
     per_beat: dict[str, float] = {}
@@ -339,12 +261,8 @@ def resolve_durations(doc: dict, tts_durations: dict[str, float] | None = None) 
             dur = (beat["end"] - beat["start"]) / speed
         elif bid in tts_durations:
             dur = tts_durations[bid]
-            if kind == "outro":
-                dur = max(dur, OUTRO_MIN_SECONDS)
         else:
             dur = estimate_hold_seconds(beat.get("text"))
-            if kind == "outro":
-                dur = max(dur, OUTRO_MIN_SECONDS)
         per_beat[bid] = round(dur, 3)
     total = round(sum(per_beat.values()), 3)
     return total, per_beat

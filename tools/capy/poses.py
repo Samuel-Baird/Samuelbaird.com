@@ -7,8 +7,9 @@ at `D:\\saint-capybara\\finalized images\\saint-capybara-<pose>.png` (see
 brand.md sec 5) -- this is what `capy.beats.validate()` checks beat poses
 against. Two poses were renamed from the original 21-pose brief in
 production: `reading_source` -> `source`, `explaining_quote` -> `quote`.
-The `sign-*` outro poses are handled separately in `capy.beats.OUTRO_POSES`,
-not listed here.
+The `sign-*` poses (originally generated for the retired sign-of-the-cross
+outro -- see git history) are not currently part of this roster; the art
+files still exist under FINALIZED_SPRITES_DIR if ever repurposed.
 
 The per-pose *recipe* dicts below (eyes/brows/mouth/paws/props/extras) are
 vestigial, left over from the retired code-drawn PIL renderer

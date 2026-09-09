@@ -39,7 +39,6 @@ FINALIZED_SPRITES_DIR = Path(r"D:\saint-capybara\finalized images")
 MODE_FOR_KIND = {
     "clip": "clip",
     "narration": "host",
-    "outro": "host",
     "card": "card",
     "evidence": "card",
     "chart": "card",
@@ -208,8 +207,8 @@ class Theme:
         return SPRITES_DIR / f"{pose}.png"
 
     def finalized_sprite_path(self, pose: str) -> Path:
-        """Path to the real, currently-used sprite art for `pose` (or one
-        of the four sign-* outro poses) -- see FINALIZED_SPRITES_DIR."""
+        """Path to the real, currently-used sprite art for `pose` -- see
+        FINALIZED_SPRITES_DIR."""
         return FINALIZED_SPRITES_DIR / f"saint-capybara-{pose}.png"
 
     def sprite_hash(self, pose: str) -> str:

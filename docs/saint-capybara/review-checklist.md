@@ -61,8 +61,9 @@ and send the Gate A message. **Stop there.**
 not part of this session's Gate-A-only scope, listed here for completeness
 and so future sessions on this project use the same checklist.)
 
-1. TTS listen-through of every narration/card/evidence/chart/outro beat —
-   pacing, mispronunciations, unnatural emphasis.
+1. TTS listen-through of every narration/card/evidence/chart beat —
+   pacing, mispronunciations, unnatural emphasis. Confirm the closing beat
+   actually lands on "...God bless." on screen and in audio.
    1b. **Quote-voice listen-through** of every `excerpt` beat — the second
    voice reads the source's words verbatim, its sex matches the person
    quoted (`voice: quote_male | quote_female`), the `[...]` pause lands

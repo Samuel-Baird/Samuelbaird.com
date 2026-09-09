@@ -10,10 +10,7 @@ card/chart/evidence/excerpt content).
 
 For HOST beats with `stage: freeze`, a real frame is grabbed from the
 source video at the timestamp of the most recently preceding `clip`
-beat's end. Fixed sign-of-the-cross outro beats (outro-01..05) are
-skipped by default -- see tools/capy_outro.py -- pass
---render-fixed-outro to render them anyway (used by capy_outro.py itself
-when building the shared cache).
+beat's end.
 
 Usage:
     python capy_beat_plates.py --project D:\\Videos\\<slug> [--only id,id] [--clean]
@@ -30,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from PIL import Image
 
-from capy.beats import load_beats, is_fixed_outro
+from capy.beats import load_beats
 from capy.layout import Theme
 from capy.plates import render_plate
 
@@ -67,7 +64,6 @@ def main() -> int:
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids")
     ap.add_argument("--clean", action="store_true", help="delete existing frames/plate_*.png and frames/beat_*.mp4 first")
-    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..05 too (used by capy_outro.py)")
     args = ap.parse_args()
 
     project = args.project.resolve()
@@ -105,13 +101,8 @@ def main() -> int:
 
         if kind == "clip":
             last_clip_end = beat.get("end")
-            if only and bid not in only:
-                continue
-        else:
-            if is_fixed_outro(beat) and not args.render_fixed_outro:
-                continue
-            if only and bid not in only:
-                continue
+        if only and bid not in only:
+            continue
 
         freeze_frame = None
         if beat.get("stage") == "freeze":

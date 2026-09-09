@@ -11,7 +11,7 @@ Rules (see docs/saint-capybara/research-protocol.md and script-format.md):
     beat relying ONLY on apologetic-lead sources (no traced primary/scholarly
     backing among its other cited sources) is a warning (--strict: error)
   - sensitive: true forbids amused/happy poses anywhere in the video
-  - the beats.yaml must end with the exact mandatory outro sequence
+  - the closing beat's text must end on "...God bless." (brand.md sec 5a)
   - unused sources (declared but never cited by any beat) are reported as info
   - source time (clip + excerpt beats) must be <= 30% of the runtime
     (error; --draft: warning)

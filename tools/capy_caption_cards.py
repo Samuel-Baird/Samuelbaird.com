@@ -9,7 +9,7 @@ Word timing sources, per beat kind:
     the beat's [start, end) range and shifted to beat-relative time.
   - `excerpt` beats: real per-word timing from audio/<id>.timing.json
     (Kokoro's own token timestamps for that beat's quote-voice reading).
-  - narration-family beats (`narration`/`card`/`evidence`/`chart`/`outro`):
+  - narration-family beats (`narration`/`card`/`evidence`/`chart`):
     real per-word timing from audio/<id>.timing.json if capy_tts.py has
     already rendered it (post-Gate-A); otherwise an evenly-spaced DRAFT
     estimate across capy.beats.estimate_hold_seconds() for testing this
@@ -24,7 +24,7 @@ shrink-to-fit) using the style and zone for the beat's frame mode
 -- see tools/capy/layout.py and assets/saint-capybara/theme.yaml.
 
 Usage:
-    python capy_caption_cards.py --project D:\\Videos\\<slug> [--only id,id] [--force-draft] [--render-fixed-outro]
+    python capy_caption_cards.py --project D:\\Videos\\<slug> [--only id,id] [--force-draft]
 """
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from PIL import Image, ImageDraw, ImageFont
 
-from capy.beats import load_beats, estimate_hold_seconds, is_fixed_outro
+from capy.beats import load_beats, estimate_hold_seconds
 from capy.captions import group_phrases, attach_punctuation
 from capy.layout import Theme
 from capy.text import fit_text, draw_lines
@@ -112,7 +112,6 @@ def main() -> int:
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids")
     ap.add_argument("--force-draft", action="store_true", help="use even-spaced draft timing even if real timing.json exists")
-    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..05 too (used by capy_outro.py)")
     args = ap.parse_args()
 
     project = args.project.resolve()
@@ -145,8 +144,6 @@ def main() -> int:
         bid = beat["id"]
         kind = beat.get("kind")
 
-        if is_fixed_outro(beat) and not args.render_fixed_outro:
-            continue
         if only and bid not in only:
             continue
 
@@ -159,7 +156,7 @@ def main() -> int:
             words = attach_punctuation(_clip_words(transcript, beat["start"], beat["end"]))
             style_key = "Source"
             draft = False
-        elif kind in ("narration", "card", "evidence", "chart", "excerpt", "outro"):
+        elif kind in ("narration", "card", "evidence", "chart", "excerpt"):
             text = beat.get("text")
             if not text:
                 continue

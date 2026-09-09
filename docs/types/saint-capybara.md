@@ -100,10 +100,9 @@ slug substituted.
    `research-protocol.md` sec 12 → write `research/ESCALATION.md` and
    treat that claim/beat as blocked pending the user's input.
 6. **Write `script/beats.yaml`.** Hand-authored per
-   `docs/saint-capybara/script-format.md`. **Do not hand-write the
-   sign-of-the-cross outro** — `capy.beats.load_beats()` appends it
-   automatically; it is a fixed structural rule of this type, not a
-   per-video creative choice.
+   `docs/saint-capybara/script-format.md`. **The closing beat must end on
+   "...God bless."** (brand.md sec 5a) — `capy_check_sources.py`
+   hard-errors if it doesn't.
 7. **Lint.** `tools/capy_check_sources.py` and `tools/capy_check_brand.py`
    must both pass (0 errors) before moving on.
 8. **Script doc.** `tools/capy_storyboard.py` renders `script/script.md`
