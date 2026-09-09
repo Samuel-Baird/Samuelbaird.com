@@ -38,6 +38,18 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
   usernames, thumbnails. See `docs/saint-capybara/brand.md` sec 9-10
   before doing anything else with this type.
 
+## Source intake
+
+Videos awaiting a reaction (before a project folder exists for them) are
+dropped in `D:\saint-capybara-videos-needing-reactions\` — a local-file
+staging folder, separate from any `D:\Videos\<slug>\` project. That folder
+also holds `need reaction.xlsx`, a running queue with columns `Link to
+original` / `Path` / `Video Generated` / `Notes` — check it before assuming
+you know the full backlog, and update its `Video Generated` column (mark
+`x`) once a project reaches Gate A or ships. Some queue rows are just a URL
+(no local file yet — ingest via `capy_ingest.py URL --project ...`, letting
+yt_dlp download it) rather than a path into this folder.
+
 ## Project layout
 
 ```
