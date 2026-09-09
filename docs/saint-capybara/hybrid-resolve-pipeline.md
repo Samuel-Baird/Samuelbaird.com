@@ -105,11 +105,13 @@ after Gate A approval:
    blurred/darkened cover copy for a 16:9-or-wider source — never plain
    black bars), and the caption overlays (each windowed to its own
    `[start, end)`), muxes in the beat's audio (the trimmed source clip's
-   own audio for `clip` beats; `audio/<id>.norm.wav` with its pad
-   trimmed back off — see below — for narration-family beats), and
-   writes `frames/beat_<id>.mp4` plus `frames/beat_clips_manifest.json`.
-   The five fixed outro beats collapse into one copied
-   `frames/beat_outro.mp4` (see below) instead of five fresh renders.
+   own audio, two-pass loudness-matched to the same target as
+   narration — see "Audio consistency" below — for `clip` beats;
+   `audio/<id>.norm.wav` with its pad trimmed back off — see below — for
+   narration-family beats), and writes `frames/beat_<id>.mp4` plus
+   `frames/beat_clips_manifest.json`. The five fixed outro beats collapse
+   into one copied `frames/beat_outro.mp4` (see below) instead of five
+   fresh renders.
 5. **Import + assemble in Resolve** (via the davinci-resolve MCP —
    there is no wrapper script for this step, drive the MCP directly
    following the checklist below). Note the beat count is now
@@ -120,6 +122,28 @@ after Gate A approval:
    -fflags +bitexact -metadata title="<title>" <slug>.mp4` pass, then
    `tools/capy_check_brand.py --project <dir> --mp4 <final path>` before
    calling a render final.
+
+## Audio consistency
+
+**All audio in the final video must sit at the same loudness target
+(`theme.yaml: audio.target_lufs`, -16 LUFS) — narration and the reacted-to
+source clip alike.** Found and fixed 2026-09-09: `capy_tts.py` has always
+loudness-normalized narration (two-pass `loudnorm`, since single-pass
+measured off by ~5 LU on a real test clip — the reason `capy_tts.py`
+never uses single-pass), but `capy_render_beat_clips.py`'s `clip`-beat
+branch originally muxed the source video's own audio through **raw,
+unnormalized** — on `dont-read-the-bom-polygamy`'s real source this
+measured **-33 LUFS**, roughly 17 LU quieter than the -16 LUFS narration,
+audibly "the reacted-to clip goes quiet" on every cut back to it.
+
+Fixed by giving `clip`-beat audio the same two-pass treatment
+(`measure_loudnorm()` + `loudnorm_apply_filter()` in
+`capy_render_beat_clips.py`, chained before `atempo` when a beat's
+`speed != 1.0`) — every beat's audio, clip or narration, now normalizes
+to the same target before it ever reaches the Resolve timeline. This is
+a standing requirement for the whole type, not a one-off fix: if
+`capy_render_beat_clips.py` or its audio filter chain is ever refactored,
+keep both branches loudness-matched to `theme.yaml: audio.target_lufs`.
 
 ## The shared outro cache
 

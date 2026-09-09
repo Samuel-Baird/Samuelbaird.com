@@ -3,8 +3,10 @@
 compositing, with ffmpeg: the beat's plate (chrome: background/vignette,
 sprite, card/chart/evidence/excerpt -- from capy_beat_plates.py), its
 caption phrase stills (from capy_caption_cards.py) timed with `enable=`
-windows, and its audio (the trimmed source clip's own audio for `clip`
-beats, audio/<id>.norm.wav for narration-family beats).
+windows, and its audio (the trimmed source clip's own audio, two-pass
+loudness-matched to the same target as narration -- see
+measure_loudnorm() -- for `clip` beats; audio/<id>.norm.wav for
+narration-family beats).
 
 CLIP-mode beats: the source video fills the whole 1080x1920 canvas. A
 9:16-or-narrower source is cover-scaled + center-cropped; a
@@ -38,6 +40,38 @@ from capy.beats import load_beats, is_fixed_outro
 from capy.layout import Theme
 
 HEAD_PAD_SECONDS = 0.25
+
+
+def measure_loudnorm(source: Path, start: float, end: float, target_lufs: float) -> dict:
+    """First pass of a two-pass loudnorm on a trimmed audio span -- returns
+    ffmpeg's measured_* stats for measure_loudnorm_filter() to apply on the
+    real render. Mirrors capy_tts.py's two-pass narration normalization
+    (2026-09-09: clip-beat audio was previously left raw/un-normalized,
+    which made the reacted-to source noticeably quieter than the
+    loudness-matched narration -- see hybrid-resolve-pipeline.md "Audio
+    consistency")."""
+    cmd = [
+        "ffmpeg", "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(source),
+        "-af", f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:print_format=json",
+        "-f", "null", "-",
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    stderr = result.stderr
+    start_i = stderr.rfind("{")
+    end_i = stderr.rfind("}")
+    if start_i == -1 or end_i == -1:
+        raise RuntimeError(f"loudnorm measurement pass produced no stats for {source} [{start}, {end}]")
+    return json.loads(stderr[start_i:end_i + 1])
+
+
+def loudnorm_apply_filter(stats: dict, target_lufs: float) -> str:
+    """Second-pass loudnorm filter string using measure_loudnorm()'s stats."""
+    return (
+        f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:"
+        f"measured_I={stats['input_i']}:measured_TP={stats['input_tp']}:"
+        f"measured_LRA={stats['input_lra']}:measured_thresh={stats['input_thresh']}:"
+        f"offset={stats['target_offset']}:linear=true:print_format=summary"
+    )
 
 
 def ffprobe_duration(path: Path) -> float:
@@ -112,10 +146,19 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
 
         filter_parts.append("[1:v]format=rgba[plate0]")
         filter_parts.append("[vid][plate0]overlay=0:0:format=auto[capbase0]")
+
+        # Loudness-match the reacted-to clip's own audio to the same
+        # target as narration (theme.yaml: audio.target_lufs) -- see
+        # measure_loudnorm()'s docstring. Two-pass: measure the trimmed
+        # span first, then apply as a real filter_complex stage (not a
+        # bare -filter:a) so it composes with atempo when speed != 1.0.
+        target_lufs = theme.data.get("audio", {}).get("target_lufs", -16)
+        stats = measure_loudnorm(source, start, end, target_lufs)
+        audio_chain = f"[0:a]{loudnorm_apply_filter(stats, target_lufs)}"
         if speed != 1.0:
-            audio_map = ["-filter:a", f"atempo={speed:.6f}", "-map", "0:a"]
-        else:
-            audio_map = ["-map", "0:a"]
+            audio_chain += f",atempo={speed:.6f}"
+        filter_parts.append(f"{audio_chain}[aout]")
+        audio_map = ["-map", "[aout]"]
     else:
         # Use the loudness-normalized wav but trim back the head/tail pad
         # for assembly -- in a single hard-cut track, that padding is just

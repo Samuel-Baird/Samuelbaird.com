@@ -361,9 +361,11 @@ cutting, and no rendering happen before the user replies with approval.**
 
 Also push a copy of `script/script.md` to this repo under
 `reviews/<slug>/script.md`, commit, and push before sending the Gate A
-message, so the message can link a readable GitHub URL instead of only a
-local file path — see `docs/pipeline.md` §1 step 4a for why (a standing
-user preference, not specific to this video type). Confirm the repo
+message, so the message can link a readable, **editable** GitHub URL
+instead of only a local file path — see `docs/pipeline.md` §1 step 4a for
+why (a standing user preference, not specific to this video type) and,
+critically, **link the branch, not the commit SHA** (same section) so the
+user can actually use GitHub's edit button on it. Confirm the repo
 remote is still private first (`docs/saint-capybara/brand.md` §9-10).
 
 > **Saint Capybara — script ready for review (Gate A)**
