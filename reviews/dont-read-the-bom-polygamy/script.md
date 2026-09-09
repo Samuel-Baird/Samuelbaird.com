@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n03` (narration, ~6.8s)
 - **Original Video Transcript:** After he rose to power, he secretly married 30-plus women and girls.
 - **Pose:** solemn
-- **Narration:** Also true: Joseph Smith was sealed to more than thirty plural wives, most in Nauvoo between 1841 and 1843. He did not announce it publicly.
+- **Narration:** Joseph Smith was sealed to more than thirty plural wives, most in Nauvoo between 1841 and 1843. He did not announce it publicly.
 - **Sources:** hales-history
 - **Notes:** 
 
