@@ -6,30 +6,30 @@
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c01` (clip, ~6.1s)
+## 01. `c01` (clip, ~6.1s) - start with "Mormonism is not a denomination, it's an abomination." so that we know who he is talking about
 - **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** listening
 - **Clip:** Source video, 10.34s–16.42s @ speed 1.0
 - **Notes:** 
 
 ## 02. `n01` (narration, ~6.8s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and their Jesus is a different Jesus.
 - **Pose:** thoughtful
 - **Narration:** He's right that Latter-day Saints describe the person of the Trinity quite differently in some real, meaningful ways. But 'different Jesus' really oversells that difference.
 - **Sources:** critic-video
 - **Notes:** 
 
 ## 03. `n02` (narration, ~11.7s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and their Jesus is a different Jesus.
 - **Pose:** source
 - **Narration:** Just look at the Book of Mormon's own title page -- it states plainly that its whole purpose is convincing 'Jew and Gentile that Jesus is the Christ, the Eternal God, manifesting himself unto all nations.' That's not a different Jesus at all.
 - **Sources:** bom-title-page
 - **Notes:** 
 
 ## 04. `n01b` (narration, ~8.2s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and their Jesus is a different Jesus.
 - **Pose:** source
-- **Narration:** Latter-day Saints affirm the virgin birth, the sinless life, the perfect atoning death, and the literal bodily resurrection of Jesus Christ -- the same core events the Gospels themselves describe.
+- **Narration:** Latter-day Saints affirm the virgin birth, the sinless life, the perfect atoning death, Godhood, and the literal bodily resurrection of Jesus Christ -- the same core events the Gospels themselves describe.
 - **Sources:** millet-different-jesus
 - **Notes:** 
 
@@ -62,7 +62,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n05` (narration, ~19.4s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** And the real reason we prefer the King James isn't a manuscript claim at all. The Church's own 1992 statement measures accuracy against the Book of Mormon and modern revelation, not against how old or accurate any set of Greek manuscripts is. Other translations are explicitly fine for personal study -- King James is just the standard used in church meetings and classes, to keep everyone reading from the same page.
+- **Narration:** And the real reason we prefer the King James isn't a manuscript claim at all. The Church's own 1992 statement measures accuracy against the Book of Mormon and modern revelation, not against how old or accurate any set of Greek manuscripts is. Other translations are explicitly fine for personal study -- King James is just the standard used in church meetings and classes, to keep everyone reading from the same page. (mention in other languages we also use preferred versions. like spanish reina valera or portuguese almeida)
 - **Sources:** mcclellan-translated-correctly, church-news-1992-kjv, church-bible-translations-page
 - **Notes:** 
 
