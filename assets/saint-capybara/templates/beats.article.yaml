@@ -1,0 +1,85 @@
+# Saint Capybara beats.yaml template -- ARTICLE (text) source. Copy into a
+# project's script/ folder (tools/new_project.ps1 -Type saint-capybara
+# -SourceKind article does this with the slug substituted) and replace the
+# example content below.
+#
+# See docs/saint-capybara/script-format.md for the full field reference.
+# Do NOT hand-write the sign-of-the-cross outro sequence at the bottom of
+# `beats:` -- tools/capy/beats.py's load_beats() appends it automatically.
+#
+# Article projects have no `clip` beats. The source's own words appear as
+# `excerpt` beats: verbatim text anchored to a numbered paragraph of
+# source/source.md (written by capy_ingest.py --article-file), validated
+# by capy_check_sources.py, rendered as a pull-quote card, read by a second
+# Kokoro voice (voices: below), captioned in the source style, and counted
+# against the same 30% source-time budget as clips. An excerpt precedes the
+# response to it, exactly like a clip would.
+#
+# Excerpt rules: verbatim including hedges; one anchored span (`para: 12`
+# or `para: [12, 13]` across one paragraph boundary); `[...]` marks an
+# editorial cut (drawn on the card, a pause for TTS, dropped from captions;
+# never at the start or end; each fragment >= 3 words); <= 60 words
+# (warning; > 100 error); `highlight:` is forbidden; no `sources:` needed.
+
+version: 1
+slug: REPLACE-WITH-SLUG
+title: "REPLACE: the on-screen/description title"
+hook: "REPLACE: a short, curiosity-driving line for the title/description"
+summary: "REPLACE: 1-2 sentence summary for the video description (Step 7, post-Gate-A)"
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+voice: { name: am_michael, speed: 0.95 }          # host
+voices:                                             # quote voices (tentative until the bake-off locks them)
+  quote_male:    { name: bm_george, speed: 1.0 }
+  quote_female:  { name: af_heart, speed: 1.0 }
+  quote_default: quote_male                         # used when an excerpt has no `voice:`
+sensitive: false
+music: null
+tags: [ldshistory]
+
+beats:
+  # Hook: the article's own words, from the paragraph that states the claim.
+  - id: x01
+    kind: excerpt
+    text: "REPLACE: verbatim sentence(s) from source/source.md"
+    para: 1                    # int, or [a, b] when spanning one paragraph boundary
+    pose: reading              # default via `function: listen` -> listening
+    voice: quote_female        # quote_male | quote_female | inline {name, speed}; default voices.quote_default
+    cite_byline: false         # true only for op-eds where the author is the point
+
+  # Response: 2-4 evidence/narration/card beats.
+  - id: n01
+    kind: narration
+    text: "REPLACE: response narration, cite a source id below."
+    function: evidence
+    stage: blank               # article projects have no clip frame to freeze
+    sources: [REPLACE-source-id]
+    opinion: false
+
+  - id: q01
+    kind: card
+    text: "REPLACE: narration introducing the primary-source quote on the card."
+    pose: quote
+    card:
+      quote: "REPLACE: verbatim, a substring of the source's recorded `quote`"
+      attribution: "REPLACE: who, where, when"
+      source: REPLACE-source-id
+    sources: [REPLACE-source-id]
+
+  # A second excerpt spanning a paragraph boundary, with an editorial cut.
+  # - id: x02
+  #   kind: excerpt
+  #   text: "REPLACE: end of one paragraph [...] start of the next"
+  #   para: [4, 5]
+  #   pose: reading
+  #   voice: quote_female
+
+  # Close, before the automatic outro.
+  - id: n99
+    kind: narration
+    text: "REPLACE: closing line."
+    function: closing
+    stage: blank
+    opinion: true
+
+  # --- Do not add anything below here. The mandatory outro sequence is
+  # appended automatically by capy.beats.load_beats(). ---

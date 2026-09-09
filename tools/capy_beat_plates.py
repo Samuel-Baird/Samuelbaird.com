@@ -1,30 +1,27 @@
 #!/usr/bin/env python3
-"""**TEST / EXPERIMENTAL — hybrid Resolve pipeline, not yet approved for
-production use.** See docs/saint-capybara/hybrid-resolve-pipeline.md.
+"""Renders one full-canvas 1080x1920 RGBA "plate" PNG per beat in
+script/beats.yaml (frames/plate_<id>.png), via capy.plates.render_plate.
 
-Renders one full-canvas 1080x1920 RGBA "plate" PNG per beat in
-script/beats.yaml, for placement as a Resolve timeline still (on the track
-directly above the raw source clip). Reuses capy.plates.render_plate,
-which already draws the parchment background/vignette, stage content
-(card/chart/evidence/freeze-frame), the bottom-left sprite (now sourced
-from the finalized AI art, not the retired code-drawn renderer), the
-beat-1 hook chip, and the bottom-right wordmark.
+CLIP-mode plates are transparent except the sprite layer -- the real
+source clip is composited underneath by ffmpeg in
+capy_render_beat_clips.py. HOST/CARD-mode plates are fully opaque
+(parchment or full-bleed dimmed freeze-frame background, sprite, and any
+card/chart/evidence/excerpt content).
 
-For `clip` beats, the stage rectangle is punched fully transparent
-(`punch_stage_hole=True`) instead of drawing a placeholder or a
-composited frame -- in the Resolve build, the real source clip sits on
-its own track underneath this plate and shows through the hole. For
-`narration`/`card`/`evidence`/`chart`/`outro` beats needing `stage:
-freeze`, a real frame is grabbed from the source video at the timestamp
-of the most recently preceding `clip` beat's end (via ffmpeg), matching
-the "last clip frame, dimmed 45%" rule in script-format.md.
+For HOST beats with `stage: freeze`, a real frame is grabbed from the
+source video at the timestamp of the most recently preceding `clip`
+beat's end. Fixed sign-of-the-cross outro beats (outro-01..04) are
+skipped by default -- see tools/capy_outro.py -- pass
+--render-fixed-outro to render them anyway (used by capy_outro.py itself
+when building the shared cache).
 
 Usage:
-    python capy_beat_plates.py --project D:\\Videos\\<slug> [--only id,id]
+    python capy_beat_plates.py --project D:\\Videos\\<slug> [--only id,id] [--clean]
 """
 from __future__ import annotations
 
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -33,9 +30,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from PIL import Image
 
-from capy.beats import load_beats
+from capy.beats import load_beats, is_fixed_outro
 from capy.layout import Theme
 from capy.plates import render_plate
+
+
+def _excerpt_attribution(project: Path, beat: dict) -> str:
+    try:
+        from capy.source import load_source_info, attribution_line
+        info = load_source_info(project)
+        return attribution_line(info, cite_byline=bool(beat.get("cite_byline")))
+    except Exception as e:
+        print(f"warning: could not resolve excerpt attribution for {beat.get('id')}: {e}", file=sys.stderr)
+        return ""
 
 
 def grab_frame(source: Path, timestamp: float) -> Image.Image | None:
@@ -59,6 +66,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids")
+    ap.add_argument("--clean", action="store_true", help="delete existing frames/plate_*.png and frames/beat_*.mp4 first")
+    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..04 too (used by capy_outro.py)")
     args = ap.parse_args()
 
     project = args.project.resolve()
@@ -75,50 +84,61 @@ def main() -> int:
     frames_dir = project / "frames"
     frames_dir.mkdir(parents=True, exist_ok=True)
 
+    if args.clean:
+        removed = 0
+        for pattern in ("plate_*.png", "beat_*.mp4"):
+            for p in frames_dir.glob(pattern):
+                p.unlink()
+                removed += 1
+        print(f"--clean: removed {removed} stale file(s) from {frames_dir}")
+
     theme = Theme.load()
     sensitive = bool(doc.get("sensitive"))
-    hook = doc.get("hook")
 
     manifest = []
     last_clip_end: float | None = None
     frame_cache: dict[float, Image.Image | None] = {}
 
-    for i, beat in enumerate(beats):
+    for beat in beats:
         bid = beat["id"]
-        if only and bid not in only:
-            if beat.get("kind") == "clip":
-                last_clip_end = beat.get("end")
-            continue
-
         kind = beat.get("kind")
-        clip_frame = None
-        punch_hole = kind == "clip"
 
         if kind == "clip":
             last_clip_end = beat.get("end")
-        elif beat.get("stage") == "freeze" and last_clip_end is not None:
-            if last_clip_end not in frame_cache:
-                frame_cache[last_clip_end] = grab_frame(source_video, last_clip_end)
-            clip_frame = frame_cache[last_clip_end]
+            if only and bid not in only:
+                continue
+        else:
+            if is_fixed_outro(beat) and not args.render_fixed_outro:
+                continue
+            if only and bid not in only:
+                continue
 
-        beat_for_render = dict(beat)
-        if i == 0 and hook:
-            beat_for_render["_is_first"] = True
-            beat_for_render["_hook"] = hook
+        freeze_frame = None
+        if beat.get("stage") == "freeze":
+            if last_clip_end is None:
+                print(f"warning: {bid} requests stage: freeze but no clip beat precedes it -- rendering blank "
+                      "(this should have been caught by capy.beats.validate())", file=sys.stderr)
+            else:
+                if last_clip_end not in frame_cache:
+                    frame_cache[last_clip_end] = grab_frame(source_video, last_clip_end)
+                freeze_frame = frame_cache[last_clip_end]
+
+        beat_for_render = beat
+        if kind == "excerpt":
+            beat_for_render = dict(beat)
+            beat_for_render["_excerpt_attribution"] = _excerpt_attribution(project, beat)
 
         img = render_plate(
             beat_for_render, theme,
             project_dir=project,
-            clip_frame=clip_frame,
+            freeze_frame=freeze_frame,
             sensitive=sensitive,
-            punch_stage_hole=punch_hole,
         )
         out_path = frames_dir / f"plate_{bid}.png"
         img.save(out_path)
-        manifest.append({"id": bid, "kind": kind, "path": str(out_path.relative_to(project)), "punch_stage_hole": punch_hole})
-        print(f"wrote {out_path.name}" + ("  [transparent stage hole]" if punch_hole else ""))
+        manifest.append({"id": bid, "kind": kind, "path": str(out_path.relative_to(project)), "mode": theme.mode_for(beat)})
+        print(f"wrote {out_path.name}  [{theme.mode_for(beat)}]")
 
-    import json
     manifest_path = frames_dir / "plates_manifest.json"
     if only and manifest_path.exists():
         existing = {m["id"]: m for m in json.loads(manifest_path.read_text(encoding="utf-8"))}

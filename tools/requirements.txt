@@ -12,3 +12,10 @@ kokoro>=0.7.16
 misaki[en]>=0.7.17
 soundfile>=0.13.1
 yt-dlp>=2026.07.04
+
+# Saint Capybara article (text-source) mode: tools/capy_ingest.py
+# --article/--fetch and --archive. Also already present on this machine
+# as of 2026-09-09 (trafilatura 2.1.0, requests 2.34.2); documenting the
+# pin, not a fresh install.
+trafilatura>=2.1.0
+requests>=2.32.0

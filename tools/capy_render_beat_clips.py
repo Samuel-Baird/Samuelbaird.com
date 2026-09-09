@@ -1,28 +1,24 @@
 #!/usr/bin/env python3
-"""**TEST / EXPERIMENTAL — hybrid Resolve pipeline, revised approach
-(2026-09-09).** See docs/saint-capybara/hybrid-resolve-pipeline.md.
+"""Renders one self-contained MP4 per beat (frames/beat_<id>.mp4) by
+compositing, with ffmpeg: the beat's plate (chrome: background/vignette,
+sprite, card/chart/evidence/excerpt -- from capy_beat_plates.py), its
+caption phrase stills (from capy_caption_cards.py) timed with `enable=`
+windows, and its audio (the trimmed source clip's own audio for `clip`
+beats, audio/<id>.norm.wav for narration-family beats).
 
-Renders one self-contained MP4 per beat (`frames/beat_<id>.mp4`) by
-compositing, with ffmpeg: the beat's plate (chrome: background, sprite,
-card/chart/evidence, wordmark -- from capy_beat_plates.py), its caption
-phrase stills (from capy_caption_cards.py) timed with `enable=` windows,
-and its audio (the trimmed source clip's own audio for `clip` beats,
-`audio/<id>.norm.wav` for narration-family beats).
+CLIP-mode beats: the source video fills the whole 1080x1920 canvas. A
+9:16-or-narrower source is cover-scaled + center-cropped; a
+16:9-or-wider source is letterboxed inside theme.layout.clip.letterbox_band
+over a blurred, darkened cover copy of the same footage (never plain
+black bars). The plate (transparent except the sprite) is overlaid on
+top. See docs/saint-capybara/hybrid-resolve-pipeline.md.
 
-**Why this replaces the original per-still-track Resolve plan:** placing
-each of a project's ~70-90 individual caption stills (plus ~15-18 plates)
-as separate Media Pool imports and timeline placements turned out to be
-extremely call-heavy through the davinci-resolve MCP (Resolve also
-auto-detects sequentially-numbered same-prefix PNGs as an image
-*sequence* rather than individual stills -- worth adding to
-docs/resolve-mcp-gotchas.md -- so even importing them needed one MCP call
-per file). Pre-compositing each beat into one flattened clip collapses
-the Resolve side back down to one import + one timeline placement per
-*beat* (matching the plate count, not the caption count), while the
-actual Resolve timeline still holds real, reorderable/trimmable clips a
-human editor can adjust afterward -- it just means the source clip's
-region and the caption overlay are pre-baked per beat instead of kept as
-separate live Resolve layers.
+The four fixed sign-of-the-cross outro beats (outro-01..04) are rendered
+once and cached -- see tools/capy_outro.py. This tool copies the cached
+frames/beat_outro.mp4 into the project and writes one merged manifest
+entry instead of re-rendering them, unless --render-fixed-outro is set
+(used by capy_outro.py itself when building the cache) or --no-auto-build
+is set (a missing cache then errors instead of silently re-rendering).
 
 Usage:
     python capy_render_beat_clips.py --project D:\\Videos\\<slug> [--only id,id]
@@ -31,13 +27,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from capy.beats import load_beats
+from capy.beats import load_beats, is_fixed_outro
 from capy.layout import Theme
 
 HEAD_PAD_SECONDS = 0.25
@@ -51,13 +48,27 @@ def ffprobe_duration(path: Path) -> float:
     return float(result.stdout.strip())
 
 
+def ffprobe_size(path: Path) -> tuple[int, int]:
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=width,height", "-of", "csv=p=0:s=x", str(path)],
+        capture_output=True, text=True, check=True,
+    )
+    w, h = result.stdout.strip().split("x")
+    return int(w), int(h)
+
+
+def _fit(sw: int, sh: int, max_w: int, max_h: int) -> tuple[int, int]:
+    ratio = min(max_w / sw, max_h / sh)
+    fw = max(2, int(sw * ratio) // 2 * 2)
+    fh = max(2, int(sh * ratio) // 2 * 2)
+    return fw, fh
+
+
 def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list[dict], theme: Theme, out_path: Path) -> float:
     kind = beat["kind"]
     w, h = theme.canvas_size
     fps = theme.fps
-    stage_box = theme.stage_box()
-    sx0, sy0, sx1, sy1 = stage_box
-    sw, sh = sx1 - sx0, sy1 - sy0
 
     inputs: list[str] = []
     filter_parts: list[str] = []
@@ -65,32 +76,55 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
 
     if kind == "clip":
         start, end = beat["start"], beat["end"]
-        duration = (end - start) / (beat.get("speed", 1.0) or 1.0)
-        audio_offset = 0.0
+        speed = beat.get("speed", 1.0) or 1.0
+        duration = (end - start) / speed
         source = project / "source" / "source.mp4"
+        sw, sh = ffprobe_size(source)
         inputs += ["-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(source)]
         inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(plate_path)]
-        # Background canvas + scaled/cropped source video positioned into the stage box, plate on top (its stage region is a transparent hole).
-        filter_parts.append(f"color=c=black:s={w}x{h}:d={duration:.3f}[bg]")
-        filter_parts.append(
-            f"[0:v]scale={sw}:{sh}:force_original_aspect_ratio=increase,crop={sw}:{sh},setsar=1,fps={fps}[vid]"
-        )
-        filter_parts.append(f"[bg][vid]overlay={sx0}:{sy0}[base0]")
+
+        speed_vf = f",setpts=PTS/{speed:.6f}" if speed != 1.0 else ""
+        if sw <= sh:
+            # 9:16-or-narrower source: cover-crop the whole canvas.
+            filter_parts.append(
+                f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1{speed_vf},fps={fps}[vid]"
+            )
+        else:
+            # 16:9-or-wider source: fit inside the letterbox band over a
+            # blurred, darkened cover copy of the same footage (never
+            # plain black bars) -- downscale/boxblur/upscale is far
+            # cheaper than a full-resolution gblur.
+            band_y0, band_y1 = theme.letterbox_band()
+            band_h = band_y1 - band_y0
+            fw, fh = _fit(sw, sh, w, band_h)
+            fx, fy = (w - fw) // 2, band_y0 + (band_h - fh) // 2
+            bg = theme.letterbox_bg()
+            filter_parts.append(
+                f"[0:v]fps={fps},setsar=1{speed_vf},split=2[bgsrc][fgsrc]"
+            )
+            filter_parts.append(
+                f"[bgsrc]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},"
+                f"scale={w//bg['blur_scale']}:{h//bg['blur_scale']},boxblur={bg['boxblur']},"
+                f"scale={w}:{h}:flags=bicubic,drawbox=c=black@{bg['dim']}:t=fill[bg]"
+            )
+            filter_parts.append(f"[fgsrc]scale={fw}:{fh}:flags=lanczos[fg]")
+            filter_parts.append(f"[bg][fg]overlay={fx}:{fy}[vid]")
+
         filter_parts.append("[1:v]format=rgba[plate0]")
-        filter_parts.append("[base0][plate0]overlay=0:0:format=auto[capbase0]")
-        audio_map = ["-map", "0:a"]
+        filter_parts.append("[vid][plate0]overlay=0:0:format=auto[capbase0]")
+        if speed != 1.0:
+            audio_map = ["-filter:a", f"atempo={speed:.6f}", "-map", "0:a"]
+        else:
+            audio_map = ["-map", "0:a"]
     else:
         # Use the loudness-normalized wav but trim back the head/tail pad
         # for assembly -- in a single hard-cut track, that padding is just
-        # ~0.5s of dead air per beat that pushed the whole video over the
-        # 180s ceiling budgeted without it (capy_resolve_build_plan.py's
-        # estimate uses the un-padded duration). The standalone
-        # audio/<id>.norm.wav file (with its pad) is left alone for anyone
-        # who wants it standalone; only the beat-clip copy is trimmed.
+        # ~0.5s of dead air per beat. The standalone audio/<id>.norm.wav
+        # file (with its pad) is left alone for anyone who wants it
+        # standalone; only the beat-clip copy is trimmed.
         wav = project / "audio" / f"{beat['id']}.norm.wav"
         padded_duration = ffprobe_duration(wav)
         duration = padded_duration - 2 * HEAD_PAD_SECONDS
-        audio_offset = 0.0
         inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(plate_path)]
         inputs += ["-i", str(wav)]
         filter_parts.append(f"[0:v]format=rgba,fps={fps}[capbase0]")
@@ -99,20 +133,15 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
         )
         audio_map = ["-map", "[aout]"]
 
-    # Chain caption overlays, each windowed with enable=.
-    cap_input_start = len(inputs) // 2 if False else None  # placeholder, computed below
-    n_media_inputs = 2 if kind == "clip" else 2
-    cap_first_index = 2  # inputs[0]=source or plate, inputs[1]=plate or audio -- see below per-branch indices
-    if kind == "clip":
-        cap_first_index = 2  # 0=source video(+audio), 1=plate
-    else:
-        cap_first_index = 2  # 0=plate, 1=audio(no video stream)
-
+    # Chain caption overlays, each windowed with enable=. Both branches
+    # above declare exactly 2 media inputs (source+plate, or plate+wav),
+    # so caption PNGs start at ffmpeg -i index 2 regardless of branch.
+    cap_first_index = 2
     label = "capbase0"
     for i, cap in enumerate(captions):
         idx = cap_first_index + i
         inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(project / cap["path"])]
-        cs, ce = cap["start"] + audio_offset, cap["end"] + audio_offset
+        cs, ce = cap["start"], cap["end"]
         next_label = f"capbase{i + 1}"
         filter_parts.append(
             f"[{idx}:v]format=rgba[cap{i}]; "
@@ -140,10 +169,31 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
     return duration
 
 
+def _handle_fixed_outro(doc: dict, project: Path, theme: Theme, *, auto_build: bool) -> dict:
+    """Resolve (building if needed) the cached shared outro.mp4, copy it
+    into frames/, and return the manifest entry for it."""
+    from capy_outro import ensure_cached_outro  # local import: avoid a hard dependency for callers that never hit this path
+
+    entry = ensure_cached_outro(doc, theme, auto_build=auto_build)
+    out_dir = project / "frames"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    dest = out_dir / "beat_outro.mp4"
+    shutil.copy2(entry.mp4, dest)
+    return {
+        "id": "outro", "kind": "outro",
+        "beats": entry.beats,
+        "path": str(dest.relative_to(project)),
+        "duration": entry.duration,
+        "cache_key": entry.key,
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None)
+    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..04 individually instead of using the cache (used by capy_outro.py)")
+    ap.add_argument("--no-auto-build", action="store_true", help="error instead of building the outro cache if it's missing")
     args = ap.parse_args()
 
     project = args.project.resolve()
@@ -161,8 +211,20 @@ def main() -> int:
 
     out_dir = project / "frames"
     manifest = []
+    outro_handled = False
     for beat in doc["beats"]:
         bid = beat["id"]
+
+        if is_fixed_outro(beat) and not args.render_fixed_outro:
+            if only and "outro" not in only and bid not in only:
+                continue
+            if not outro_handled:
+                entry = _handle_fixed_outro(doc, project, theme, auto_build=not args.no_auto_build)
+                manifest.append(entry)
+                print(f"outro: {entry['duration']:.2f}s -> {Path(entry['path']).name} (cached, key {entry['cache_key']})")
+                outro_handled = True
+            continue
+
         if only and bid not in only:
             continue
         plate = plates_manifest.get(bid)

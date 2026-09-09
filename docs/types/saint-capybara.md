@@ -38,8 +38,10 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
 
 ```
 D:\Videos\<slug>\
-  source\       source.mp4, source_info.json
-  transcripts\  source.json/.srt/.txt/.meta.json (tools/transcribe.py, unchanged)
+  source\       video:   source.mp4 + source_info.json (kind: video)
+                article: source.md (numbered ¶ paragraphs, sha256-pinned) +
+                         source_info.json (kind: article, url, archive_url, text_sha256)
+  transcripts\  source.json/.srt/.txt/.meta.json (tools/transcribe.py, unchanged; video only)
   research\     claims.md, sources.yaml, ESCALATION.md (only when open; renamed
                 ESCALATION-resolved.md once the user has signed off)
   images\       cropped evidence PNGs referenced by beats.yaml
@@ -52,22 +54,39 @@ D:\Videos\<slug>\
                 <slug>.mp4 (final, after the metadata-strip remux pass)
 ```
 
-Create with `tools/new_project.ps1 -Slug <slug> -Type saint-capybara` —
-this also copies the beats/sources/claims/pronunciations templates from
-`assets/saint-capybara/templates/` with the slug substituted.
+Create with `tools/new_project.ps1 -Slug <slug> -Type saint-capybara
+[-SourceKind video|article]` — this also copies the beats (`beats.yaml`,
+or `beats.article.yaml` for an article source) / sources / claims /
+pronunciations templates from `assets/saint-capybara/templates/` with the
+slug substituted.
 
 ## Pre-production (ends at Gate A — a hard stop)
 
-1. **Ingest.** `tools/capy_ingest.py` — a URL (yt_dlp download), an
-   existing local file (`--file`), or both (local file + `--url` for
-   metadata only). Always try to pull title/uploader/canonical-url
-   metadata when a URL is available, even if the media itself came from a
-   local file.
-2. **Transcribe.** Calls `tools/transcribe.py` unchanged.
+1. **Ingest.** `tools/capy_ingest.py`, by source kind:
+   - **Video:** a URL (yt_dlp download), an existing local file
+     (`--file`), or both (local file + `--url` for metadata only). Always
+     try to pull title/uploader/canonical-url metadata when a URL is
+     available, even if the media itself came from a local file. Writes
+     `source/source.mp4` + `source_info.json` (`kind: video`).
+   - **Article:** fetch the page with the agent's own WebFetch (or take
+     the user's paste, for paywalled pieces) into a cleaned,
+     blank-line-separated text file, then `--article-file cleaned.md
+     --article-url URL [--publication --byline --date --paywalled]
+     [--archive auto|fresh|skip | --archive-url …]`. Writes
+     `source/source.md` (one `¶n` paragraph per block) and
+     `source_info.json` (`kind: article`, url, archive receipt,
+     `text_sha256` pin). `--article URL --fetch` self-fetches with
+     requests + trafilatura and is opt-in (home IP). No media, no Whisper.
+2. **Transcribe.** Video only — calls `tools/transcribe.py` unchanged.
+   Article projects skip this; `source.md`'s paragraph numbers are the
+   anchors.
 3. **Triage.** List every discrete claim in `research/claims.md`
-   (`docs/saint-capybara/research-protocol.md` sec 1) — respond / concede
-   / skip, with a reason. Not every claim in a source video needs (or
-   should get) an on-screen response.
+   (`docs/saint-capybara/research-protocol.md` sec 1) — anchored by
+   timestamp (video) or paragraph number (article); respond / concede /
+   skip, with a reason. Not every claim in a source needs (or should get)
+   an on-screen response. On an article project the source's own words
+   reach the screen as `excerpt` beats (verbatim, `para`-anchored, read by
+   the quote voice, ≤30% of runtime together with any clips).
 4. **Research.** Pulpit / Gospel Scholar Archive / Latter-day Stats MCP
    tools, per `docs/saint-capybara/research-protocol.md`. Verify every
    quotation before treating it as attributable. Grade every claim

@@ -31,10 +31,14 @@ directly, but never by silently rewriting the user's own words.
 version: 1
 slug: adam-god-claim
 title: "Did Brigham Young teach Adam was God?"
-hook: "He said WHAT about Adam?"     # chip over the stage, first 3s
+hook: "He said WHAT about Adam?"     # title/description only (2026-09-09) -- never rendered on screen
 summary: "..."                        # for the description (Step 7, post-Gate-A)
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
-voice: { name: am_michael, speed: 0.95 }
+voice: { name: am_michael, speed: 0.95 }   # host voice
+voices:                                     # article-mode `excerpt` beats only, see below
+  quote_male: { name: am_michael, speed: 1.0 }
+  quote_female: { name: af_heart, speed: 1.0 }
+  quote_default: quote_male
 sensitive: false
 music: null
 tags: [ldshistory]
@@ -49,8 +53,11 @@ beats: [ ... ]
 ## Beat fields (mirrors `capy/beats.py` exactly)
 
 Every beat has `id` (unique, short, prefixed by kind: `c01` clip, `n01`
-narration, `q01` card, `e01` evidence, `ch01` chart) and `kind`, one of:
-`clip | narration | card | evidence | chart | outro`.
+narration, `q01` card, `e01` evidence, `ch01` chart, `x01` excerpt) and
+`kind`, one of: `clip | narration | card | evidence | chart | excerpt |
+outro`. Each kind renders in one of three frame modes (`brand.md` sec 8)
+— CLIP (`clip`), HOST (`narration`, `outro`), CARD (`card`, `evidence`,
+`chart`, `excerpt`) — chosen automatically by kind, not authored per-beat.
 
 ```yaml
 - { id: c01, kind: clip, start: 12.4, end: 21.0, speed: 1.0, speaker: "Source video", captions: source, pose: listening }
@@ -60,22 +67,29 @@ narration, `q01` card, `e01` evidence, `ch01` chart) and `kind`, one of:
   text: "That quote is real. It comes from the Journal of Discourses, volume one."
   pose: reading_source            # explicit pose, OR:
   function: evidence              # rhetorical function -> resolved via FUNCTION_TO_POSE
-  stage: freeze                   # freeze | blank
-  evidence: { image: images/jd1-p50.png, credit: "Journal of Discourses 1:50 (1852)", crop: [120,340,900,700], placement: panel }
+  stage: freeze                   # freeze | blank -- video-mode only, see field notes
+  evidence: { image: images/jd1-p50.png, credit: "Journal of Discourses 1:50 (1852)", crop: [120,340,900,700] }
   highlight: [real]
   sources: [jd-1-50]
   opinion: false
 
 - id: q01
-  kind: card                      # narration + quote card on the stage
+  kind: card                      # narration + quote card (CARD mode)
   text: "Here is the full sentence."
   pose: explaining_quote
   card: { quote: "...", attribution: "Brigham Young, Journal of Discourses 1:50", source: jd-1-50 }
   sources: [jd-1-50]
 
-- { id: e01, kind: evidence, text: "...", pose: pointing, evidence: { image: images/x.png, credit: "...", placement: stage }, sources: [x] }
+- { id: e01, kind: evidence, text: "...", pose: pointing, evidence: { image: images/x.png, credit: "..." }, sources: [x] }
 
 - { id: ch01, kind: chart, text: "...", pose: teaching, chart: { type: bar, title: "...", data: [["1850s", 4]], credit: "..." }, sources: [x] }
+
+- id: x01                          # article/text-source mode only, see "Excerpt fairness" below
+  kind: excerpt
+  text: "The church's response, she wrote, was [...] a pattern critics have long described."
+  para: 12                        # int, or [12, 13] across one paragraph boundary
+  pose: reading
+  voice: quote_female             # a `voices:` role, or an inline {name, speed} -- see the top-level voices: block
 ```
 
 Field notes:
@@ -85,15 +99,21 @@ Field notes:
   `SENSITIVE_FORBIDDEN` when `sensitive: true`.
 - `sources: [id, ...]` must resolve against `research/sources.yaml`.
   Every factual beat needs at least one, unless `opinion: true`.
-- `stage: freeze | blank` — what the stage shows on a narration beat that
-  isn't itself an evidence/card/chart beat (freeze = last clip frame,
-  dimmed 45%; blank = parchment background).
-- `evidence.placement: panel | stage` — `panel` keeps Saint Capybara on
-  screen with the receipt beside him in the character+panel band; `stage`
-  promotes the receipt to the full stage (use when the document needs to
-  actually be read).
+  (`excerpt` beats don't take `sources:` — the quoted source is implied
+  and validated against `source/source.md` instead, see below.)
+- `stage: freeze | blank` — what a HOST-mode beat's background shows
+  (freeze = the last clip's final frame, full-bleed, blurred and dimmed
+  55%; blank = parchment + vignette). `freeze` is video-mode only — it is
+  a lint error on any beat with no preceding `clip` beat (an article
+  project has none, so its narration beats should omit `stage:` or use
+  `blank`).
+- `evidence.placement:` is deprecated (no-op, info-level lint) — every
+  `evidence` beat now renders in CARD mode; there is no longer a separate
+  "panel beside the sprite" slot to promote away from.
 - `highlight: [word, ...]` — caption keyword(s) to color per
   `theme.yaml: captions.highlight_color`; never a loaded/charged word.
+  Forbidden on `excerpt` beats (coloring the source's own words
+  editorializes).
 
 ## The mandatory sign-of-the-cross outro (fixed, not authored per-video)
 
@@ -119,6 +139,17 @@ verbatim text, but a script editor should not rewrite these beats' meaning.
 `kind: outro` durations use TTS length with a 1.2s floor (see
 `capy/beats.py: OUTRO_MIN_SECONDS`).
 
+**Rendered once, not per-video.** Because the wording (and therefore the
+plates/captions) of these four beats never changes, they are rendered
+once per (voice, speed) and cached — see
+`docs/saint-capybara/hybrid-resolve-pipeline.md` "The shared outro
+cache". This is invisible to script-writing: `beats.yaml` still carries
+these four beats exactly as shown, `capy_storyboard.py` still previews
+them at Gate A, and `capy_check_sources.py` still errors if they're
+missing or malformed. A *different*, per-project beat right before this
+sequence (the "outro-lead," e.g. `n05` with `pose: encouraging`) is
+ordinary hand-written narration and is never part of the cache.
+
 ## Five recurring response formats
 
 Most response-format videos combine 2-4 of these beat groups (never force
@@ -141,8 +172,9 @@ all five into one video):
 
 ## Duration budget
 
-- Hook: 0-5s, claim visible on screen by 3s.
-- Clip: 5-25s.
+- Hook: title/description text only (never on screen — see the
+  top-level `hook:` field note above); no on-screen time budget.
+- Clip / excerpt: 5-25s.
 - Response: 25-150s across 2-4 evidence beats.
 - Close (pre-outro): 5-10s.
 - Outro (fixed, see above): typically ~4-6s total across the 4 beats.
@@ -189,9 +221,39 @@ beat trying to do both.
 - One continuous span per clip beat; never splice or reorder within a
   clip beat.
 - ≤20s continuous per clip beat (warning above that in `capy.beats.validate`).
-- Source clip time totals ≤30% of the video's total runtime.
-- Source title/creator visible on screen at least once (a caption or a
-  label chip), so the video is legibly a response to a specific source.
+- Source clip time totals ≤30% of the video's total runtime (enforced by
+  `capy_check_sources.py`, together with any `excerpt` beats — see below).
+- **Source title/creator lives in the video description, not on
+  screen** (changed 2026-09-09 — the v1 "Source video" label chip is
+  removed as part of the layout redesign, `brand.md` sec 8). The
+  original creator's clip is still shown verbatim on screen; only the
+  attribution chip moved off-frame.
+
+## Excerpt fairness (article/text-source mode)
+
+The `excerpt` beat is the article-mode analog of a `clip` beat: the
+source's own words, quoted verbatim. See `docs/types/saint-capybara.md`
+and `docs/saint-capybara/research-protocol.md` for the full article-mode
+workflow (ingest, paragraph-anchored claims triage); this section is
+just the fairness rules `capy_check_sources.py` enforces on `excerpt`
+beats specifically:
+
+- Verbatim, including hedges — same rule as clips.
+- One anchored span per excerpt beat (`para:`, a single paragraph number
+  or a `[a, b]` pair across one boundary); never combine non-adjacent
+  paragraphs into one excerpt.
+- `[...]` marks any internal omission and is shown on the card exactly
+  where it occurs — never at the very start or end of the excerpt (trim
+  the beat to the words actually quoted instead).
+- ≤60 words per excerpt (warning above that; ≤100 is a hard error).
+- Excerpt time totals, combined with any `clip` beats, ≤30% of the
+  video's runtime.
+- Publication/headline/date on screen at least once — automatic via the
+  excerpt card's attribution line (`capy.source.attribution_line`); the
+  byline is deliberately omitted from that line by default (it goes in
+  the description) unless the beat sets `cite_byline: true`.
+- The excerpt beat precedes the response beats it's answering, the same
+  steelman-first ordering a clip beat follows.
 
 ## Sprite selection defaults
 
@@ -201,10 +263,15 @@ phone viewer can actually read it (`capy.beats.estimate_hold_seconds`).
 
 ## Caption rules
 
-Max 2 lines, ~34 characters per line, at most one highlighted keyword per
-caption phrase group (a name, date, number, or key term — never a loaded
-word). Must be legible on a phone without pausing. See
-`capy/captions.py: group_phrases()` for the exact chunking algorithm.
+Max 2 lines, wrapped by **measured pixel width** against a 960px budget
+(`capy.text.fit_text` — never a character-count guess; the earlier
+~34-char estimate is what produced a shipped caption clipped off both
+frame edges), shrinking the font size to a floor before ever allowing a
+third line. At most one highlighted keyword per caption phrase group (a
+name, date, number, or key term — never a loaded word, and never on an
+`excerpt` beat, whose `highlight:` is forbidden). Must be legible on a
+phone without pausing. See `capy/captions.py: group_phrases()` for the
+chunking algorithm and `capy/text.py: fit_text()` for the wrap/shrink.
 
 ## `script.md` layout and user-edit directives
 

@@ -2,7 +2,9 @@
 """Anonymity / brand-separation lint for a Saint Capybara project.
 
 See docs/saint-capybara/brand.md sec 9-10. Scans beats.yaml narration
-text, research/sources.yaml notes, and (if present) the export
+text, research/sources.yaml notes, research/claims.md, the source text
+(source/source.md + source/source_info.json -- pasted article text or a
+local path can leak a home directory), and (if present) the export
 description, for:
   - banned phrases from assets/saint-capybara/banned.txt (gitignored,
     real names/handles) + banned.example.txt (generic cross-promotion
@@ -117,6 +119,13 @@ def collect_project_text(project: Path) -> dict[str, str]:
     claims_path = project / "research" / "claims.md"
     if claims_path.exists():
         out["research/claims.md"] = claims_path.read_text(encoding="utf-8")
+    # Article sources: pasted text or a local path can leak a home directory
+    # (plan Part 4.4). source_info.json is scanned for video projects too --
+    # its local_file_source is a literal path.
+    for rel in ("source/source.md", "source/source_info.json"):
+        p = project / rel
+        if p.exists():
+            out[rel] = p.read_text(encoding="utf-8")
     for desc in (project / "exports").glob("*-description.txt") if (project / "exports").exists() else []:
         out[f"exports/{desc.name}"] = desc.read_text(encoding="utf-8")
     return out
