@@ -1,108 +1,102 @@
 # Script — Is Mormonism a 'Different Jesus,' a Bad Translation, and a Closed Canon?
 
-**Slug:** `mark-driscoll` | **Estimated runtime:** 164.9s (budget 60-180s) | **Source time:** 49.3s (30%)
+**Slug:** `mark-driscoll` | **Estimated runtime:** 178.9s (budget 60-180s) | **Source time:** 53.4s (30%)
 
 **Hook (title/description only, not shown on screen):** "A pastor says we worship a different Jesus, dodge the Bible, and can't add new scripture. Let's check."
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c01` (clip, ~6.1s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+## 01. `c01` (clip, ~16.4s)
+- **Original Video Transcript:** Mormonism is not a denomination, it's an abomination. I love Mormon people, and I love them so much, I want them to know the truth, and the truth will set them free from Mormonism, and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** listening
-- **Clip:** Source video, 10.34s–16.42s @ speed 1.0
+- **Clip:** Source video, 0.0s–16.42s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~6.8s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+## 02. `n01` (narration, ~7.4s)
+- **Original Video Transcript:** Mormonism is not a denomination, it's an abomination. I love Mormon people, and I love them so much, I want them to know the truth, and the truth will set them free from Mormonism, and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** thoughtful
-- **Narration:** He's right that Latter-day Saints describe the person of the Trinity quite differently in some real, meaningful ways. But 'different Jesus' really oversells that difference.
+- **Narration:** He's right that Latter-day Saints describe the person of the Trinity quite differently in some real, meaningful ways. But calling it 'different Jesus' really oversells that difference.
 - **Sources:** critic-video
 - **Notes:** 
 
 ## 03. `n02` (narration, ~11.7s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+- **Original Video Transcript:** Mormonism is not a denomination, it's an abomination. I love Mormon people, and I love them so much, I want them to know the truth, and the truth will set them free from Mormonism, and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** source
 - **Narration:** Just look at the Book of Mormon's own title page -- it states plainly that its whole purpose is convincing 'Jew and Gentile that Jesus is the Christ, the Eternal God, manifesting himself unto all nations.' That's not a different Jesus at all.
 - **Sources:** bom-title-page
 - **Notes:** 
 
-## 04. `n01b` (narration, ~8.2s)
-- **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
+## 04. `n01b` (narration, ~8.7s)
+- **Original Video Transcript:** Mormonism is not a denomination, it's an abomination. I love Mormon people, and I love them so much, I want them to know the truth, and the truth will set them free from Mormonism, and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** source
-- **Narration:** Latter-day Saints affirm the virgin birth, the sinless life, the perfect atoning death, and the literal bodily resurrection of Jesus Christ -- the same core events the Gospels themselves describe.
+- **Narration:** Latter-day Saints affirm the virgin birth, the sinless life, the perfect atoning death, the Godhood, and the literal bodily resurrection of Jesus Christ -- the same core events the Gospels themselves describe.
 - **Sources:** millet-different-jesus
 - **Notes:** 
 
-## 05. `c01c` (clip, ~5.2s)
-- **Original Video Transcript:** The Mormons are a cult in that they profess a counterfeit Christ.
-- **Pose:** listening
-- **Clip:** Source video, 33.14s–38.36s @ speed 1.0
-- **Notes:** 
-
-## 06. `n03` (narration, ~11.2s)
-- **Original Video Transcript:** The Mormons are a cult in that they profess a counterfeit Christ.
+## 05. `n03` (narration, ~13.4s)
+- **Original Video Transcript:** Mormonism is not a denomination, it's an abomination. I love Mormon people, and I love them so much, I want them to know the truth, and the truth will set them free from Mormonism, and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** skeptical
-- **Narration:** He also calls this a cult, and a counterfeit Christ. In practice, that word mostly just means 'a group of Christians whose theology evangelicals happen to disagree with' -- it's not a neutral, agreed-upon term with any real checklist behind it.
+- **Narration:** He also goes on, elsewhere in this same video, to call this a cult and a counterfeit Christ. In practice, that word mostly just means 'a group of Christians whose theology evangelicals happen to disagree with' -- it's not a neutral, agreed-upon term with any real checklist behind it.
 - **Sources:** critic-video
 - **Notes:** 
 
-## 07. `c02` (clip, ~11.4s)
+## 06. `c02` (clip, ~10.4s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** listening
-- **Clip:** Source video, 46.08s–57.5s @ speed 1.0
+- **Clip:** Source video, 47.08s–57.5s @ speed 1.0
 - **Notes:** 
 
-## 08. `n04` (narration, ~9.0s)
+## 07. `n04` (narration, ~9.3s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** That's actually not at all what we say. Our own eighth Article of Faith reads plainly: we believe the Bible to be the word of God, as far as it is translated correctly.
+- **Narration:** That's actually not at all what we say, though. Our own eighth Article of Faith reads plainly: we believe the Bible to be the word of God, as far as it is translated correctly.
 - **Sources:** article-of-faith-8
 - **Notes:** 
 
-## 09. `n05` (narration, ~19.4s)
+## 08. `n05` (narration, ~25.1s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** And the real reason we prefer the King James isn't a manuscript claim at all. The Church's own 1992 statement measures accuracy against the Book of Mormon and modern revelation, not against how old or accurate any set of Greek manuscripts is. Other translations are explicitly fine for personal study -- King James is just the standard used in church meetings and classes, to keep everyone reading from the same page.
+- **Narration:** And the real reason we prefer the King James isn't a manuscript claim at all. The Church's own 1992 statement measures accuracy against the Book of Mormon and modern revelation, not against how old or accurate any set of Greek manuscripts is. Other translations are explicitly fine for personal study -- King James is just the standard used in church meetings and classes, to keep everyone reading from the same page. We do the same in Spanish and Portuguese too -- Reina Valera, Almeida -- preferred editions for consistency, not manuscript-accuracy claims.
 - **Sources:** mcclellan-translated-correctly, church-news-1992-kjv, church-bible-translations-page
 - **Notes:** 
 
-## 10. `c03` (clip, ~11.7s)
+## 09. `c03` (clip, ~11.7s)
 - **Original Video Transcript:** through John at the end of Revelation is, don't add anything to these words and don't take anything from these words. And someone comes along and says, I would like to add to these words. It's evil.
 - **Pose:** listening
 - **Clip:** Source video, 151.06s–162.78s @ speed 1.0
 - **Notes:** 
 
-## 11. `n07` (narration, ~9.0s)
+## 10. `n07` (narration, ~9.0s)
 - **Original Video Transcript:** through John at the end of Revelation is, don't add anything to these words and don't take anything from these words. And someone comes along and says, I would like to add to these words. It's evil.
 - **Pose:** source
 - **Narration:** Here's the actual, real problem: when John wrote that line down, the Bible didn't exist yet as one single, finished book. Revelation was written before some other New Testament books were even finished.
 - **Sources:** fair-closed-canon, rev-22-18-19
 - **Notes:** 
 
-## 12. `n08` (narration, ~12.8s)
+## 11. `n08` (narration, ~12.8s)
 - **Original Video Transcript:** through John at the end of Revelation is, don't add anything to these words and don't take anything from these words. And someone comes along and says, I would like to add to these words. It's evil.
 - **Pose:** source
 - **Narration:** Earlier in the very same book, John calls it 'this prophecy' -- his own scroll, sent to seven specific churches. And that same 'don't add' language is already in Deuteronomy and Proverbs, centuries before Revelation -- yet he still accepts everything written after those verses as scripture.
 - **Sources:** fair-closed-canon, rev-22-18-19
 - **Notes:** 
 
-## 13. `c04` (clip, ~14.8s)
+## 12. `c04` (clip, ~14.8s)
 - **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
 - **Pose:** listening
 - **Clip:** Source video, 163.06s–177.9s @ speed 1.0
 - **Notes:** 
 
-## 14. `n09` (narration, ~16.9s)
+## 13. `n09` (narration, ~17.2s)
 - **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
 - **Pose:** teaching
-- **Narration:** That question assumes revelation stopped with the apostles -- we're not claiming more wisdom, we're claiming that God kept speaking to prophets, the same way he always has. And most of that 'first-to-nineteenth-century Christianity' he's counting is Catholic and Orthodox history, which his own evangelical tradition doesn't treat as authoritative either -- so even he isn't really appealing to all of it.
+- **Narration:** That question assumes revelation stopped with the apostles -- we're not claiming more wisdom, we're simply claiming that God kept speaking to prophets, the same way he always has. And most of that 'first-to-nineteenth-century Christianity' he's counting is Catholic and Orthodox history, which his own evangelical tradition doesn't treat as authoritative either -- so even he isn't really appealing to all of it.
 - **Sources:** critic-video
 - **Notes:** 
 
-## 15. `n99` (narration, ~10.6s)
+## 14. `n99` (narration, ~10.9s)
 - **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
 - **Pose:** encouraging
-- **Narration:** This isn't a small technicality. Revelation's own warning never reaches the whole Bible, and the very same logic he's using would rule out most of the rest of the New Testament too, if he applied it consistently. God bless.
+- **Narration:** This really isn't a small technicality. Revelation's own warning never reaches the whole Bible, and the very same logic he's using would rule out most of the rest of the New Testament too, if he applied it consistently. God bless.
 - **Notes:** 
 
 ## Full source transcript
