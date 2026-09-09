@@ -27,7 +27,7 @@ title: "REPLACE: the on-screen/description title"
 hook: "REPLACE: a short, curiosity-driving line for the title/description"
 summary: "REPLACE: 1-2 sentence summary for the video description (Step 7, post-Gate-A)"
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
-voice: { name: am_michael, speed: 0.95 }          # host
+voice: { name: am_michael, speed: 1.5 }           # host
 voices:                                             # quote voices (tentative until the bake-off locks them)
   quote_male:    { name: bm_george, speed: 1.0 }
   quote_female:  { name: af_heart, speed: 1.0 }

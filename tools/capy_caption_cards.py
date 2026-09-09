@@ -112,7 +112,7 @@ def main() -> int:
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids")
     ap.add_argument("--force-draft", action="store_true", help="use even-spaced draft timing even if real timing.json exists")
-    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..04 too (used by capy_outro.py)")
+    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..05 too (used by capy_outro.py)")
     args = ap.parse_args()
 
     project = args.project.resolve()

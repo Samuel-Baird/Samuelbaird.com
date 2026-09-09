@@ -10,7 +10,7 @@ card/chart/evidence/excerpt content).
 
 For HOST beats with `stage: freeze`, a real frame is grabbed from the
 source video at the timestamp of the most recently preceding `clip`
-beat's end. Fixed sign-of-the-cross outro beats (outro-01..04) are
+beat's end. Fixed sign-of-the-cross outro beats (outro-01..05) are
 skipped by default -- see tools/capy_outro.py -- pass
 --render-fixed-outro to render them anyway (used by capy_outro.py itself
 when building the shared cache).
@@ -67,7 +67,7 @@ def main() -> int:
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids")
     ap.add_argument("--clean", action="store_true", help="delete existing frames/plate_*.png and frames/beat_*.mp4 first")
-    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..04 too (used by capy_outro.py)")
+    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..05 too (used by capy_outro.py)")
     args = ap.parse_args()
 
     project = args.project.resolve()

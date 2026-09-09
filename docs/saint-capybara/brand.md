@@ -261,45 +261,60 @@ replaces him.
 
 ### 5a. Outro sign-off sequence
 
-Every video ends on the same four-pose sequence: the character making
-the sign of the cross while narration says *"in the name of the Father,
-and of the Son, and of the Holy Ghost, Amen."*
+**Corrected 2026-09-09 — "Holy Spirit," not "Holy Ghost."** Every video
+ends on the same five-pose sequence: the character making the sign of
+the cross while narration says *"In the name of the Father, and of the
+Son, and of the Holy Spirit, Amen."* "Holy" and "Spirit" are each their
+own beat/pose with a quick cut between them (both are single-word beats,
+so the cut is fast by construction); "Amen" gets its own fifth beat on
+the calm `prayerful` pose, not a sign-of-the-cross gesture.
 
 | File | Beat |
 |---|---|
 | `saint-capybara-sign-father.png` | "...in the name of the Father," |
 | `saint-capybara-sign-son.png` | "...and of the Son," |
-| `saint-capybara-sign-holy.png` | "...and of the Holy Ghost," |
-| `saint-capybara-sign-spirit-amen.png` | "...Amen." |
+| `saint-capybara-sign-holy.png` | "...and of the Holy" |
+| `saint-capybara-sign-spirit-amen.png` | "...Spirit," (pose name is a filename leftover from the old 4-beat wording — it now covers only "Spirit," not "Spirit, Amen") |
+| `saint-capybara-prayerful.png` | "...Amen." |
 
 This is the standard outro for every video, not a one-off for any single
 short — wire it into the beat-list template / compositor as a fixed
-closing sequence.
+closing sequence. See `script-format.md`'s outro section for the exact
+beat ids/fields and `hybrid-resolve-pipeline.md`'s shared outro cache
+(re-key and rebuild with `tools/capy_outro.py --build --force` whenever
+this wording, the voice, or its speed changes).
 
 ## 6. Voice and TTS spec
 
 Kokoro, local, calm/measured/mildly warm delivery — never theatrical
-"debate bro" emphasis — speed 0.95, target ≈140–150 words per minute. A
-pronunciation dictionary (`docs/saint-capybara/pronunciations.md`,
-`script/pronunciations.yaml`) is mandatory; every new proper noun gets an
-entry before it is ever rendered — the merged dictionary is applied by
-`tools/capy_tts.py` via misaki's `[word](/ipa/)` inline override syntax.
+"debate bro" emphasis. A pronunciation dictionary
+(`docs/saint-capybara/pronunciations.md`, `script/pronunciations.yaml`)
+is mandatory; every new proper noun gets an entry before it is ever
+rendered — the merged dictionary is applied by `tools/capy_tts.py` via
+misaki's `[word](/ipa/)` inline override syntax.
 
-**Host voice id: `am_michael` (default, tentative pending the 2026-09-09
-bake-off).** `tools/capy_voice_audition.py` renders every English male
-Kokoro voice (13: `am_michael`, `am_fenrir`, `am_puck`, `bm_fable`,
-`bm_george`, `am_onyx`, `bm_lewis`, `am_echo`, `am_eric`, `am_liam`,
-`bm_daniel`, `am_adam`, `am_santa`) plus a female shortlist for the
-quote voice (`af_heart`, `af_bella`, `af_nicole`, `bf_emma`, `af_sarah`)
-against a brand-tone paragraph and a first-person quote paragraph,
-loudness-normalized so levels are comparable, into
-`D:\saint-capybara\voice-audition\` — see `audition.md` there for the
-upstream quality grade of each. `am_michael` remains the default
-(unchanged since it was the original shortlist's first entry) until the
-user picks from a real listen-through; once decided, update
-`voice.name` in `assets/saint-capybara/templates/beats.yaml`,
-`tools/capy/beats.py: DEFAULT_VOICE`, and this line, then re-run
-`tools/capy_outro.py --build` so the cached outro uses the locked voice.
+**Host voice id: `am_michael`, speed 1.5 — LOCKED 2026-09-09, not
+tentative.** The user confirmed this voice after watching
+`dont-read-the-bom`'s render and separately asked for the speed to be
+raised from the original 0.95 lock to 1.5 (~220 target words per minute,
+scaled up from the original ≈140–150 wpm/0.95 target). Both are
+standing rules for every Saint Capybara project from here on, encoded in
+`capy.beats.DEFAULT_VOICE = {"name": "am_michael", "speed": 1.5}` and
+`assets/saint-capybara/templates/beats.yaml`'s `voice:` block — do not
+regress either without a new, explicit user direction to change them.
+Before the lock, `tools/capy_voice_audition.py` had rendered every
+English male Kokoro voice (13: `am_michael`, `am_fenrir`, `am_puck`,
+`bm_fable`, `bm_george`, `am_onyx`, `bm_lewis`, `am_echo`, `am_eric`,
+`am_liam`, `bm_daniel`, `am_adam`, `am_santa`) plus a female shortlist for
+the quote voice (`af_heart`, `af_bella`, `af_nicole`, `bf_emma`,
+`af_sarah`) into `D:\saint-capybara\voice-audition\` for reference — see
+`audition.md` there for the upstream quality grade of each, kept for
+historical context now that the pick is locked. **Any future change to
+the voice or its speed must re-run `tools/capy_outro.py --build --force`**
+(the shared outro cache is keyed on `(voice, speed, theme)` — see
+`hybrid-resolve-pipeline.md`) and re-render every in-flight project's
+audio, since a stale project would otherwise mix an old-speed voice with
+a new-speed outro.
 
 **Quote voices (article/text-source mode, `kind: excerpt` beats).** A
 second Kokoro voice reads the source's own words aloud, sex-matched to

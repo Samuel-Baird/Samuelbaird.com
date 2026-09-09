@@ -47,14 +47,16 @@ NARRATION_FAMILY_KINDS = {"narration", "card", "evidence", "chart", "excerpt", "
 # sec 6). Only used pre-TTS (storyboard/lint preview); once capy_tts.py has
 # rendered a beat, its measured wav duration always wins in
 # resolve_durations() via the tts_durations map.
-ESTIMATE_WORDS_PER_SECOND = 145 / 60.0
+ESTIMATE_WORDS_PER_SECOND = 220 / 60.0
 HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
 OUTRO_MIN_SECONDS = 1.2
 
-DEFAULT_VOICE = {"name": "am_michael", "speed": 0.95}
-# Tentative pending the 2026-09-09 bake-off (tools/capy_voice_audition.py)
-# -- see docs/saint-capybara/brand.md sec 6 for the locked pick once chosen.
+# Locked 2026-09-09 (user confirmed after watching dont-read-the-bom's
+# render) -- see docs/saint-capybara/brand.md sec 6. am_michael at speed
+# 1.5 (raised from the original 0.95 lock the same day, also user
+# direction).
+DEFAULT_VOICE = {"name": "am_michael", "speed": 1.5}
 DEFAULT_VOICES = {
     "quote_male": {"name": "am_michael", "speed": 1.0},
     "quote_female": {"name": "af_heart", "speed": 1.0},
@@ -67,21 +69,29 @@ DEFAULT_VOICES = {
 # beats.yaml gets this appended automatically by load_beats() if it isn't
 # already present, and validate() rejects any beats.yaml whose trailing
 # outro sequence doesn't match this exactly in pose order/count (wording
-# may be adjusted slightly for TTS phrasing per the brief, but the four
+# may be adjusted slightly for TTS phrasing per the brief, but the five
 # poses, their order, and the overall line's meaning must not change).
 #
-# These four beats (matched by id + pose, see is_fixed_outro()) are also
+# 5-beat version locked 2026-09-09 (user correction: "Holy Ghost" ->
+# "Holy Spirit", plus a real word/pose split -- "Holy" gets sign-holy,
+# "Spirit" gets sign-spirit-amen (quick cut, both short beats), then
+# "Amen" gets its own beat on the ordinary `prayerful` pose instead of
+# being folded into the sign-spirit-amen beat). Was a 4-beat sequence
+# before this; see git history for the prior wording/split if ever needed.
+#
+# These five beats (matched by id + pose, see is_fixed_outro()) are also
 # the ones tools/capy_outro.py renders once and caches -- see
 # docs/saint-capybara/hybrid-resolve-pipeline.md. A per-project outro-LEAD
 # beat (kind: outro, pose e.g. "encouraging", the beat right before this
 # fixed sequence) is NOT one of these and is never cached.
 # ---------------------------------------------------------------------------
-OUTRO_POSES = ["sign-father", "sign-son", "sign-holy", "sign-spirit-amen"]
+OUTRO_POSES = ["sign-father", "sign-son", "sign-holy", "sign-spirit-amen", "prayerful"]
 OUTRO_BEATS: list[dict] = [
     {"id": "outro-01", "kind": "outro", "pose": "sign-father", "text": "In the name of the Father,"},
     {"id": "outro-02", "kind": "outro", "pose": "sign-son", "text": "and of the Son,"},
-    {"id": "outro-03", "kind": "outro", "pose": "sign-holy", "text": "and of the Holy Ghost,"},
-    {"id": "outro-04", "kind": "outro", "pose": "sign-spirit-amen", "text": "Amen."},
+    {"id": "outro-03", "kind": "outro", "pose": "sign-holy", "text": "and of the Holy"},
+    {"id": "outro-04", "kind": "outro", "pose": "sign-spirit-amen", "text": "Spirit,"},
+    {"id": "outro-05", "kind": "outro", "pose": "prayerful", "text": "Amen."},
 ]
 FIXED_OUTRO_IDS = {b["id"] for b in OUTRO_BEATS}
 
@@ -114,18 +124,18 @@ def estimate_hold_seconds(text: str | None) -> float:
 
 
 def has_outro_sequence(beats: list[dict]) -> bool:
-    """True if `beats` already ends with the exact 4-pose outro sequence
+    """True if `beats` already ends with the exact outro pose sequence
     (by pose + kind, not necessarily verbatim wording)."""
-    if len(beats) < 4:
+    if len(beats) < len(OUTRO_POSES):
         return False
-    tail = beats[-4:]
+    tail = beats[-len(OUTRO_POSES):]
     if any(b.get("kind") != "outro" for b in tail):
         return False
     return [b.get("pose") for b in tail] == OUTRO_POSES
 
 
 def is_fixed_outro(beat: dict) -> bool:
-    """True for exactly the four fixed sign-of-the-cross beats (matched
+    """True for exactly the fixed sign-of-the-cross beats (matched
     by id AND pose, not just kind == "outro" -- a per-project outro-lead
     beat is also kind: outro but has a different id/pose and must flow
     through every tool as an ordinary HOST beat, never the shared cache)."""
@@ -285,16 +295,16 @@ def validate(doc: dict) -> list[Issue]:
             issues.append(Issue("error", bid, f"pose '{pose}' is forbidden on a sensitive-flagged video/beat"))
 
     if not has_outro_sequence(beats):
-        issues.append(Issue("error", None, "beats.yaml does not end with the mandatory sign-of-the-cross outro sequence (sign-father -> sign-son -> sign-holy -> sign-spirit-amen); run through capy.beats.load_beats/ensure_mandatory_outro to auto-append it"))
+        issues.append(Issue("error", None, "beats.yaml does not end with the mandatory sign-of-the-cross outro sequence (" + " -> ".join(OUTRO_POSES) + "); run through capy.beats.load_beats/ensure_mandatory_outro to auto-append it"))
     else:
-        tail = beats[-4:]
+        tail = beats[-len(OUTRO_BEATS):]
         expected_texts = [b["text"] for b in OUTRO_BEATS]
         for got, exp in zip(tail, expected_texts):
             if not got.get("text"):
                 issues.append(Issue("warning", got.get("id"), "outro beat has no narration text"))
         expected_ids = [b["id"] for b in OUTRO_BEATS]
         if [b.get("id") for b in tail] != expected_ids:
-            issues.append(Issue("info", None, "trailing outro beats don't use the standard ids (outro-01..04) -- "
+            issues.append(Issue("info", None, "trailing outro beats don't use the standard ids (outro-01.." + f"{len(OUTRO_BEATS):02d}) -- "
                                                 "the shared outro cache (tools/capy_outro.py) keys on id+pose and will not match them"))
 
     hook = doc.get("hook")

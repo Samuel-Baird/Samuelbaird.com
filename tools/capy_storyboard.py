@@ -70,6 +70,16 @@ def _load_transcript_lines(project: Path) -> list[str] | None:
     for the full-transcript appendix in script.md -- lets a reviewer check
     every response beat against exactly what the source video said, not
     just the excerpted clip spans beats.yaml pulls from it."""
+    segments = _load_transcript_segments(project)
+    if not segments:
+        return None
+    return [
+        f"- `[{_format_timestamp(seg['start'])}–{_format_timestamp(seg['end'])}]` {seg['text'].strip()}"
+        for seg in segments
+    ]
+
+
+def _load_transcript_segments(project: Path) -> list[dict] | None:
     import json
 
     transcript_path = project / "transcripts" / "source.json"
@@ -79,13 +89,13 @@ def _load_transcript_lines(project: Path) -> list[str] | None:
         data = json.loads(transcript_path.read_text(encoding="utf-8"))
     except Exception:
         return None
-    segments = data.get("segments") or []
-    if not segments:
-        return None
-    return [
-        f"- `[{_format_timestamp(seg['start'])}–{_format_timestamp(seg['end'])}]` {seg['text'].strip()}"
-        for seg in segments
-    ]
+    return data.get("segments") or None
+
+
+def _transcript_span_text(segments: list[dict], start: float, end: float) -> str:
+    """Verbatim transcript text for segments overlapping [start, end]."""
+    words = [seg["text"].strip() for seg in segments if seg["start"] < end and seg["end"] > start]
+    return " ".join(words)
 
 
 def render_script_md(doc: dict, per_beat: dict[str, float], total: float, project: Path | None = None) -> str:
@@ -116,11 +126,20 @@ def render_script_md(doc: dict, per_beat: dict[str, float], total: float, projec
                   "unless you're comfortable with the YAML.")
     lines.append("")
 
+    video_segments = None
+    if project is not None and (source_info is None or source_info.kind != "article"):
+        video_segments = _load_transcript_segments(project)
+    last_clip_transcript = "(none yet)"
+
     for i, beat in enumerate(doc.get("beats", []), start=1):
         bid = beat["id"]
         kind = beat["kind"]
         dur = per_beat.get(bid, 0.0)
         lines.append(f"## {i:02d}. `{bid}` ({kind}, ~{dur:.1f}s)")
+        if video_segments is not None:
+            if kind == "clip":
+                last_clip_transcript = _transcript_span_text(video_segments, beat["start"], beat["end"]) or "(no transcript in this span)"
+            lines.append(f"- **Original Video Transcript:** {last_clip_transcript}")
         pose = beats_mod.resolve_pose(beat, sensitive=bool(doc.get("sensitive")))
         if pose:
             lines.append(f"- **Pose:** {pose}")

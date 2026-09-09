@@ -56,7 +56,7 @@ after Gate A approval:
    per project) — builds and caches the fixed sign-of-the-cross outro.
    See "The shared outro cache" below. `capy_tts.py`/`capy_beat_plates.py`/
    `capy_caption_cards.py`/`capy_render_beat_clips.py` below all skip the
-   four fixed outro beats (`outro-01..04`) automatically once a cache
+   five fixed outro beats (`outro-01..05`) automatically once a cache
    exists for the project's voice; if none exists yet, step 4
    auto-builds it (or errors, with `--no-auto-build`).
 1. **`tools/capy_tts.py --project <dir>`** — real Kokoro narration per
@@ -108,12 +108,12 @@ after Gate A approval:
    own audio for `clip` beats; `audio/<id>.norm.wav` with its pad
    trimmed back off — see below — for narration-family beats), and
    writes `frames/beat_<id>.mp4` plus `frames/beat_clips_manifest.json`.
-   The four fixed outro beats collapse into one copied
-   `frames/beat_outro.mp4` (see below) instead of four fresh renders.
+   The five fixed outro beats collapse into one copied
+   `frames/beat_outro.mp4` (see below) instead of five fresh renders.
 5. **Import + assemble in Resolve** (via the davinci-resolve MCP —
    there is no wrapper script for this step, drive the MCP directly
    following the checklist below). Note the beat count is now
-   N−3 (the four outro beats collapse to the one cached clip).
+   N−4 (the five outro beats collapse to the one cached clip).
 6. **Metadata-strip remux**: Resolve's render doesn't give fine enough
    control for the anonymity requirements in `brand.md` sec 10, so
    finish with one `ffmpeg -i <resolve-output> -c copy -map_metadata -1
@@ -123,22 +123,22 @@ after Gate A approval:
 
 ## The shared outro cache
 
-The four fixed sign-of-the-cross beats (`outro-01..04`) are byte-for-byte
+The five fixed sign-of-the-cross beats (`outro-01..05`) are byte-for-byte
 the same rendering work in every project — same plates, same caption
 timing, same wording — except for Kokoro's own waveform, which is
 length-deterministic but not bit-deterministic. `tools/capy_outro.py`
 renders them **once per (voice, speed, theme)** and caches the result
 under `D:\saint-capybara\cache\outro\<key>\outro.mp4` (a content-addressed
-key over the voice, the four beats' text/pose, every layout/caption/font/
+key over the voice, the five beats' text/pose, every layout/caption/font/
 sprite value that could change a pixel, and this tool's own version — see
 its docstring). `capy_tts.py`/`capy_beat_plates.py`/
-`capy_caption_cards.py` skip `outro-01..04` by default
+`capy_caption_cards.py` skip `outro-01..05` by default
 (`capy.beats.is_fixed_outro`, matched by id **and** pose, so a
 per-project *outro-lead* beat like `n05`/`n09` — `kind: outro` but a
 different id/pose — is never swept into the cache and renders normally).
 `capy_render_beat_clips.py` resolves (auto-building if missing) and
 copies the cached `outro.mp4` into `frames/beat_outro.mp4`, writing one
-merged manifest entry that lists all four beat ids and the cache key.
+merged manifest entry that lists all five beat ids and the cache key.
 
 Run `python tools/capy_outro.py --build` once after choosing/changing the
 locked voice (`brand.md` sec 6); `--verify` checks duration, the mp4 tag
@@ -191,7 +191,7 @@ specifics that mattered in practice, building the two videos above:
    `clip_ids` in beat order (the simple end-to-end append mode — no
    `record_frame` math needed since beat clips play back to back with no
    gaps by construction). Well under the ~65-70 raw-entry cap for a
-   10-14 beat video (N−3 after the outro collapses to one clip), so one
+   10-16 beat video (N−4 after the outro collapses to one clip), so one
    call suffices.
 5. **Verify before rendering**: `project_manager.save`, then
    `timeline.get_start_frame`/`get_end_frame` (duration = end − start,

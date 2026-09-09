@@ -119,7 +119,7 @@ Field notes:
 
 **This is a structural rule of the Saint Capybara type, not a per-video
 creative choice like Gate B decisions are.** Every video ends on exactly
-this four-beat sequence, automatically appended by
+this five-beat sequence, automatically appended by
 `capy.beats.load_beats()` (which calls `ensure_mandatory_outro()`) if a
 `beats.yaml` doesn't already end with it — you do not need to hand-write
 it, and `capy_check_sources.py` hard-errors if it's missing or altered:
@@ -127,28 +127,44 @@ it, and `capy_check_sources.py` hard-errors if it's missing or altered:
 ```yaml
   - { id: outro-01, kind: outro, pose: sign-father,      text: "In the name of the Father," }
   - { id: outro-02, kind: outro, pose: sign-son,          text: "and of the Son," }
-  - { id: outro-03, kind: outro, pose: sign-holy,         text: "and of the Holy Ghost," }
-  - { id: outro-04, kind: outro, pose: sign-spirit-amen,  text: "Amen." }
+  - { id: outro-03, kind: outro, pose: sign-holy,         text: "and of the Holy" }
+  - { id: outro-04, kind: outro, pose: sign-spirit-amen,  text: "Spirit," }
+  - { id: outro-05, kind: outro, pose: prayerful,         text: "Amen." }
 ```
 
-The four poses and their order are fixed. Wording may be adjusted slightly
-per-project for natural TTS phrasing (e.g. splitting differently around a
-comma) but the overall line and the one-pose-per-clause structure must not
-change — `capy.beats.has_outro_sequence()` checks pose+kind+order, not
-verbatim text, but a script editor should not rewrite these beats' meaning.
+**Locked wording is "Holy Spirit," not "Holy Ghost"** (corrected
+2026-09-09 — a real wording fix, not a style preference; "Holy Ghost" was
+wrong and must not be reused anywhere in this brand). **"Holy" and
+"Spirit" are two separate beats/poses**, not one — `sign-holy` on "Holy",
+a quick cut to `sign-spirit-amen` on "Spirit" (both are short single-word
+beats so the cut reads as fast by construction, no extra timing tuning
+needed), then **"Amen" is its own fifth beat on the ordinary `prayerful`
+pose** (a normal, calm prayer posture — not another sign-of-the-cross
+gesture; the `sign-spirit-amen` pose's name is a filename leftover from
+the old 4-beat wording and is now on the "Spirit" beat only, "Amen" no
+longer shares it). The five poses and their order are fixed. Wording may
+be adjusted slightly per-project for natural TTS phrasing (e.g. splitting
+differently around a comma) but the overall line and the
+one-pose-per-clause structure must not change —
+`capy.beats.has_outro_sequence()` checks pose+kind+order, not verbatim
+text, but a script editor should not rewrite these beats' meaning.
 `kind: outro` durations use TTS length with a 1.2s floor (see
 `capy/beats.py: OUTRO_MIN_SECONDS`).
 
 **Rendered once, not per-video.** Because the wording (and therefore the
-plates/captions) of these four beats never changes, they are rendered
+plates/captions) of these five beats never changes, they are rendered
 once per (voice, speed) and cached — see
 `docs/saint-capybara/hybrid-resolve-pipeline.md` "The shared outro
 cache". This is invisible to script-writing: `beats.yaml` still carries
-these four beats exactly as shown, `capy_storyboard.py` still previews
+these five beats exactly as shown, `capy_storyboard.py` still previews
 them at Gate A, and `capy_check_sources.py` still errors if they're
 missing or malformed. A *different*, per-project beat right before this
 sequence (the "outro-lead," e.g. `n05` with `pose: encouraging`) is
 ordinary hand-written narration and is never part of the cache.
+
+**Any change to the locked voice or its speed invalidates the cache** (it's
+keyed on `(voice, speed, theme)`) — run `tools/capy_outro.py --build
+--force` after changing `capy.beats.DEFAULT_VOICE`, per `brand.md` sec 6.
 
 ## Five recurring response formats
 
@@ -261,6 +277,20 @@ See `brand.md` sec 5's `FUNCTION_TO_POSE` table. Defaults only — a literal
 `pose:` always wins. Hold ≥3s + 0.15s/word on any evidence/image beat so a
 phone viewer can actually read it (`capy.beats.estimate_hold_seconds`).
 
+**Pose changes every 10-20s (2026-09-09 user direction — "the capybara
+needs to move more").** The current renderer draws one static sprite pose
+per beat (no intra-beat pose animation), so the only way to satisfy this
+is authoring: **no single beat's estimated duration should run past ~20s
+without a pose change.** A narration point that would naturally run
+25-40s straight through (e.g. laying out context + evidence + a
+follow-up point) should be split into 2-3 separate beats at its natural
+clause/sentence breaks, each with its own — still function-appropriate,
+still `SENSITIVE_FORBIDDEN`-respecting — pose, rather than one beat
+carrying a long, visually static block. This is a pacing/authoring rule,
+not a lint-enforced one (there's no `capy_check_sources.py` check for it
+yet); watch for it manually against each beat's estimated duration in
+`script.md` before Gate A.
+
 ## Caption rules
 
 Max 2 lines, wrapped by **measured pixel width** against a 960px budget
@@ -276,10 +306,38 @@ chunking algorithm and `capy/text.py: fit_text()` for the wrap/shrink.
 ## `script.md` layout and user-edit directives
 
 `capy_storyboard.py` renders `script/script.md` from `beats.yaml` as a
-numbered, human-readable walk-through: per beat, the id/kind, the pose
-name, the narration text (or clip in/out + speaker), any citation text
-that will appear on screen, and a blank "Notes" line. The user may write,
-inline, one of these directives against a beat and return the file:
+numbered, human-readable walk-through. **Per-beat field order (locked
+2026-09-09 — user direction, "so I can better understand what Saint
+Capybara is responding to in review"):**
+
+```
+## NN. `beat-id` (kind, ~Ns)
+Original Video Transcript:
+Pose:
+Narration:
+Sources:
+Notes:
+```
+
+- **Original Video Transcript** comes first, before Pose. For a `clip`
+  beat, it's the verbatim transcript text spanning that beat's
+  `start`–`end` (pulled from `transcripts/source.json`, not just the
+  timestamps — the reviewer should never have to look the words up
+  separately). For a response beat (`narration`/`card`/`evidence`/etc.),
+  it repeats the transcript text of the most recent preceding `clip`
+  beat, so the response is never separated from the claim it's answering
+  by a page-scroll — blank/`(none yet)` only for beats before the video's
+  first clip. Video-source projects only; article-source projects use
+  the per-`excerpt`-beat `¶N` anchor into `source/source.md` instead,
+  which already serves the same purpose.
+- **Pose** — the resolved pose name.
+- **Narration** — the beat's own text (or `Clip:`/`Card quote:` etc. for
+  kinds that don't carry plain narration).
+- **Sources** — the `sources:` list, if any.
+- **Notes** — always present, always blank, for the user to write into.
+
+The user may write, inline, one of these directives against a beat and
+return the file:
 
 - `DROP` — remove this beat entirely.
 - `SPLIT` — split this beat into two at a marked point (the user indicates

@@ -13,7 +13,7 @@ over a blurred, darkened cover copy of the same footage (never plain
 black bars). The plate (transparent except the sprite) is overlaid on
 top. See docs/saint-capybara/hybrid-resolve-pipeline.md.
 
-The four fixed sign-of-the-cross outro beats (outro-01..04) are rendered
+The five fixed sign-of-the-cross outro beats (outro-01..05) are rendered
 once and cached -- see tools/capy_outro.py. This tool copies the cached
 frames/beat_outro.mp4 into the project and writes one merged manifest
 entry instead of re-rendering them, unless --render-fixed-outro is set
@@ -192,7 +192,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--project", type=Path, required=True)
     ap.add_argument("--only", type=str, default=None)
-    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..04 individually instead of using the cache (used by capy_outro.py)")
+    ap.add_argument("--render-fixed-outro", action="store_true", help="render outro-01..05 individually instead of using the cache (used by capy_outro.py)")
     ap.add_argument("--no-auto-build", action="store_true", help="error instead of building the outro cache if it's missing")
     args = ap.parse_args()
 

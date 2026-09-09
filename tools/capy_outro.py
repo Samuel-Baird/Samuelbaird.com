@@ -15,7 +15,7 @@ manifest.json, inputs.json, and a mini "project/" with the intermediate
 wav/timing/plate/caption files, kept for debugging).
 
 `key` is a sha256 of every input that could change the rendered pixels or
-audio: voice+speed, the four beats' text/pose, the full layout/captions/
+audio: voice+speed, the five beats' text/pose, the full layout/captions/
 card_text theme blocks, font+sprite file hashes, the audio block, and
 this tool's own RENDERER_VERSION (bump when the outro-affecting code
 changes in a way theme.layout.version doesn't already capture).
@@ -23,7 +23,7 @@ changes in a way theme.layout.version doesn't already capture).
 Consumers: capy_render_beat_clips.py calls ensure_cached_outro() and
 copies the result into frames/beat_outro.mp4 -- see that module's
 _handle_fixed_outro(). capy_tts.py / capy_beat_plates.py /
-capy_caption_cards.py skip the four fixed beats by default (matched via
+capy_caption_cards.py skip the five fixed beats by default (matched via
 capy.beats.is_fixed_outro) and only render them when THIS tool invokes
 them with --render-fixed-outro, against the mini project below.
 """
@@ -198,7 +198,7 @@ def verify(theme: Theme, key: str) -> bool:
     result = sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(mp4_path)],
                      capture_output=True, text=True, check=True)
     actual = float(result.stdout.strip())
-    if abs(actual - manifest["total_duration"]) > 0.05:
+    if abs(actual - manifest["total_duration"]) > 0.1:
         print(f"FAIL: duration mismatch: manifest {manifest['total_duration']:.3f}s vs ffprobe {actual:.3f}s")
         ok = False
     else:

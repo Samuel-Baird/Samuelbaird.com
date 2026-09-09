@@ -1,63 +1,99 @@
 # Script — Was Joseph Smith really a "treasure digger" staring into a hat?
 
-**Slug:** `dont-read-the-bom` | **Estimated runtime:** 101.9s (budget 60-180s) | **Source time:** 5.1s (5%)
+**Slug:** `dont-read-the-bom` | **Estimated runtime:** 71.0s (budget 60-180s) | **Source time:** 5.1s (7%)
 
 **Hook (title/description only, not shown on screen):** 'They said RUN before you hear him out'
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
 ## 01. `c01` (clip, ~5.1s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** listening
 - **Clip:** Source video, 27.06s–32.16s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~14.5s)
+## 02. `n01` (narration, ~9.5s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** source
 - **Narration:** That part is true, and it's not a secret. Joseph Smith's own wife Emma and the witness David Whitmer both described him using a stone placed in a hat to dictate the Book of Mormon.
 - **Sources:** mormonr-translation
 - **Notes:** 
 
-## 03. `q01` (card, ~5.4s)
+## 03. `q01` (card, ~3.5s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** reading
 - **Narration:** The stone-in-a-hat method was well known even to hostile observers at the time.
 - **Card quote:** “‘Peep stones’ or pebbles, taken promiscuously from the brook or field, were placed in a hat or other situation excluded from the light.” — Abner Cole, Palmyra Reflector, 1831 (quoted in Bushman, 2023)
 - **Sources:** bushman-gold-plates
 - **Notes:** 
 
-## 04. `n02` (narration, ~28.6s)
+## 04. `n02` (narration, ~7.1s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** teaching
-- **Narration:** What the clip leaves out: firsthand witnesses also describe him using a separate device — often called the "interpreters" — at other points in the process. "Treasure digger" makes it sound like a con. What the record actually shows is a young man from a folk-magic milieu common to his time and place, using more than one method, over months, to produce five hundred pages he dictated without notes.
-- **Sources:** mormonr-translation, bushman-gold-plates
-- **Notes:** 
-
-## 05. `n02b` (narration, ~36.8s)
-- **Pose:** teaching
-- **Narration:** Sit with what she just conceded: his face was in the hat. No light, no page, no manuscript in front of him — nothing to read. And from that, she says, he produced a five-hundred-page book: names, places, doctrine, all internally consistent, dictated for weeks without ever going back to revise. If you believe that part of her own claim, you already believe Joseph Smith did something extraordinary. So which is it: was he one of the great unrecognized literary geniuses in American history, or was he actually inspired?
+- **Narration:** What the clip leaves out: firsthand witnesses also describe him using a separate device — often called the "interpreters" — at other points in the process.
 - **Sources:** mormonr-translation
 - **Notes:** 
 
-## 06. `n99` (narration, ~4.1s)
+## 05. `n02b` (narration, ~11.7s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
+- **Pose:** pointing
+- **Narration:** "Treasure digger" makes it sound like a con. What the record actually shows is a young man from a folk-magic milieu common to his time and place, using more than one method, over months, to produce five hundred pages he dictated without notes.
+- **Sources:** mormonr-translation, bushman-gold-plates
+- **Notes:** 
+
+## 06. `n02c` (narration, ~7.1s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
+- **Pose:** thoughtful
+- **Narration:** Sit with what she just conceded: his face was in the hat. No light, no page, no manuscript in front of him — nothing to read.
+- **Sources:** mormonr-translation
+- **Notes:** 
+
+## 07. `n02d` (narration, ~12.0s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
+- **Pose:** surprised
+- **Narration:** And from that, she says, he produced a five-hundred-page book — names, places, doctrine, all internally consistent — dictated for weeks without ever going back to revise. If you believe that part of her own claim, you already believe Joseph Smith did something extraordinary.
+- **Sources:** mormonr-translation
+- **Notes:** 
+
+## 08. `n02e` (narration, ~5.7s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
+- **Pose:** teaching
+- **Narration:** So which is it: was he one of the great unrecognized literary geniuses in American history, or was he actually inspired?
+- **Notes:** 
+
+## 09. `n99` (narration, ~2.7s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** encouraging
 - **Narration:** Either way, that's not the profile of a con man.
 - **Notes:** 
 
-## 07. `outro-01` (outro, ~2.5s)
+## 10. `outro-01` (outro, ~1.6s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** sign-father
 - **Narration:** In the name of the Father,
 - **Notes:** 
 
-## 08. `outro-02` (outro, ~1.7s)
+## 11. `outro-02` (outro, ~1.2s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** sign-son
 - **Narration:** and of the Son,
 - **Notes:** 
 
-## 09. `outro-03` (outro, ~2.1s)
+## 12. `outro-03` (outro, ~1.2s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** sign-holy
-- **Narration:** and of the Holy Ghost,
+- **Narration:** and of the Holy
 - **Notes:** 
 
-## 10. `outro-04` (outro, ~1.2s)
+## 13. `outro-04` (outro, ~1.2s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
 - **Pose:** sign-spirit-amen
+- **Narration:** Spirit,
+- **Notes:** 
+
+## 14. `outro-05` (outro, ~1.2s)
+- **Original Video Transcript:** said he could translate tablets given to him by God by putting his face in a hat.
+- **Pose:** prayerful
 - **Narration:** Amen.
 - **Notes:** 
 

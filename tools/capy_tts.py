@@ -27,7 +27,7 @@ was actually rendered.
 beat, so a voice change invalidates the "already rendered" skip even
 though the wav/timing/norm files still exist.
 
-Fixed sign-of-the-cross outro beats (outro-01..04) are skipped by default
+Fixed sign-of-the-cross outro beats (outro-01..05) are skipped by default
 -- see tools/capy_outro.py -- pass --render-fixed-outro to render them
 anyway (used by capy_outro.py itself).
 
@@ -307,7 +307,7 @@ def main() -> int:
     ap.add_argument("--project", type=Path, default=None)
     ap.add_argument("--only", type=str, default=None, help="comma-separated beat ids (project mode)")
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--render-fixed-outro", action="store_true", help="also render outro-01..04 (used by capy_outro.py)")
+    ap.add_argument("--render-fixed-outro", action="store_true", help="also render outro-01..05 (used by capy_outro.py)")
     ap.add_argument("--timestamps", choices=["kokoro", "whisper"], default="kokoro")
     args = ap.parse_args()
 
