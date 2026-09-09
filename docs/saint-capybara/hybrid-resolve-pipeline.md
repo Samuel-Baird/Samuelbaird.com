@@ -255,6 +255,20 @@ exported file, diffed by eye against the beat narration text; a
 duration/frame-count match alone is not sufficient evidence the content
 is right.
 
+**Second occurrence (2026-09-09) needed a different fix.** After editing
+one beat's text and regenerating its audio/plate/caption/clip, a full
+delete-timeline + delete-clips + fresh reimport + fresh timeline +
+re-render — the standard rebuild procedure above — reproduced the *old,
+pre-edit* audio for that one beat across three consecutive renders, even
+though `beat_<id>.mp4` was independently confirmed correct on disk each
+time. Total duration/frame count matched every time; only that one
+beat's audio content was stale. **Renaming the file** (e.g. `beat_n03.mp4`
+-> `beat_n03_v2.mp4`) **before reimporting** fixed it immediately —
+something in Resolve was caching by clip name/position, surviving even a
+full media-pool purge. If a plain re-render doesn't clear a content
+mismatch, rename the specific stale beat's file next, rather than
+re-rendering the same names again.
+
 ## Known gaps / open questions
 
 - Evidence-card and quote-card rendering (`capy/plates.py: draw_card`,
