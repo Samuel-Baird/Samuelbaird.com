@@ -1,6 +1,6 @@
 # Script — Did Joseph Smith Secretly Rewrite the Book of Mormon's Theology?
 
-**Slug:** `bom-1837-wording-change` | **Estimated runtime:** 124.3s (budget 60-180s) | **Source time:** 37.3s (30%)
+**Slug:** `bom-1837-wording-change` | **Estimated runtime:** 137.6s (budget 60-180s) | **Source time:** 37.3s (27%)
 
 **Hook (title/description only, not shown on screen):** "The Book of Mormon really did change this line about Jesus's mother -- here's what actually happened."
 
@@ -12,7 +12,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 0.0s–9.58s @ speed 1.0
 - **Notes:** 
 
-## 02. `n00` (narration, ~6.0s)
+## 02. `n00` (narration, ~4.1s)
 - **Original Video Transcript:** Here's your 60-second reminder that if anyone tries to tell you that this book has undergone no meaningful changes except for spelling, grammar and formatting, then they're just wrong. Here's the most obvious example.
 - **Pose:** listening
 - **Narration:** He's right that real changes do exist beyond spelling and grammar. Let's talk about it.
@@ -34,60 +34,72 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n02` (narration, ~7.4s)
 - **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
 - **Pose:** teaching
-- **Narration:** Skousen's own explanation: Joseph likely disliked how Catholic the phrase 'mother of God' sounded. An earlier critic, Alexander Campbell, had already mocked that exact wording in print. (add something like: its also totally plausible that "mother of God" is referring to jesus for this exact reason. jesus is god, so its fine to refer to the person of jesus as god. however, the father and holy spirit can also be called god, so updating the text to "son of God", a title exclusive to the person of jesus, is totally fine within christian terminology)
+- **Narration:** Skousen's own explanation: Joseph likely disliked how Catholic the phrase 'mother of God' sounded. An earlier critic, Alexander Campbell, had already mocked that exact wording in print.
 - **Sources:** skousen-interpreter-changes
 - **Notes:** 
 
-## 06. `n03` (narration, ~10.9s)
+## 06. `n02b` (narration, ~7.1s)
+- **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
+- **Pose:** thoughtful
+- **Narration:** And here's the thing -- 'mother of God' wasn't even wrong to begin with. Jesus is God, so that title is perfectly fine in Christian terms.
+- **Notes:** 
+
+## 07. `n02c` (narration, ~8.2s)
+- **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
+- **Pose:** pointing
+- **Narration:** But the Father and the Holy Spirit are called God too -- so updating it to 'the Son of God,' a title that means Jesus specifically, works just as well.
+- **Notes:** 
+
+## 08. `n03` (narration, ~10.9s)
 - **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
 - **Pose:** teaching
 - **Narration:** So Joseph went back and clarified it to 'mother of the Son of God' -- matching language this very same chapter already used just a few verses earlier, when the angel calls Jesus 'the Son of the most high God.'
 - **Sources:** gardner-second-witness
 - **Notes:** 
 
-## 07. `q01` (card, ~5.5s)
+## 09. `q01` (card, ~5.5s)
 - **Original Video Transcript:** This line from the 1830 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of God, after the manner of the flesh. The exact same line from the 1837 edition reads, And he said unto me, behold, the virgin whom thou seest is the mother of the son of God, after the manner of the flesh.
 - **Pose:** quote
-- **Narration:** As Skousen puts it himself, in his own words: 'I would argue that these changes are best interpreted as clarifications.' 
+- **Narration:** As Skousen puts it himself, in his own words: 'I would argue that these changes are best interpreted as clarifications.'
 - **Card quote:** “I would argue that these changes are best interpreted as clarifications.” — Royal Skousen, "Changes in the Book of Mormon," Interpreter (2014)
 - **Sources:** skousen-interpreter-changes
 - **Notes:** 
 
-## 08. `c03` (clip, ~11.6s)
+## 10. `c03` (clip, ~11.6s)
 - **Original Video Transcript:** Now, to be fair, the church's position these days seems to be to focus on the grammar and spelling changes using hedging terms like the majority of these changes to create plausible deniability for changes outside of that category.
 - **Pose:** listening
 - **Clip:** Source video, 29.1s–40.72s @ speed 1.0
 - **Notes:** 
 
-## 09. `n04` (narration, ~14.2s)
+## 11. `n04` (narration, ~14.2s)
 - **Original Video Transcript:** Now, to be fair, the church's position these days seems to be to focus on the grammar and spelling changes using hedging terms like the majority of these changes to create plausible deniability for changes outside of that category.
 - **Pose:** skeptical
 - **Narration:** That 'majority of the changes' phrase isn't hedging -- it's just an accurate description of the evidence. Skousen's own painstaking collation found over 100,000 changes across every edition ever printed, and even his own list of the roughly 700 most significant ones is dominated by spelling, punctuation, and chapter breaks, not theology.
 - **Sources:** skousen-interpreter-changes
 - **Notes:** 
 
-## 10. `n05` (narration, ~5.5s)
+## 12. `n05` (narration, ~5.5s)
 - **Original Video Transcript:** Now, to be fair, the church's position these days seems to be to focus on the grammar and spelling changes using hedging terms like the majority of these changes to create plausible deniability for changes outside of that category.
 - **Pose:** solemn
 - **Narration:** The genuinely theological-sounding edits, like this one, are a small handful -- and none of them add a new doctrine.
 - **Sources:** skousen-interpreter-changes
 - **Notes:** 
 
-## 11. `n06` (narration, ~10.6s)
+## 13. `n06` (narration, ~10.6s)
 - **Original Video Transcript:** Now, to be fair, the church's position these days seems to be to focus on the grammar and spelling changes using hedging terms like the majority of these changes to create plausible deniability for changes outside of that category.
 - **Pose:** pointing
 - **Narration:** The very same chapter already calls Jesus 'the Son of God' a few verses earlier -- and later verses elsewhere in the book that still call Christ 'the Eternal Father' were never touched by Joseph in 1837 at all.
 - **Sources:** gardner-second-witness
 - **Notes:** 
 
-## 12. `n07` (narration, ~11.2s)
+## 14. `n07` (narration, ~11.2s)
 - **Original Video Transcript:** Now, to be fair, the church's position these days seems to be to focus on the grammar and spelling changes using hedging terms like the majority of these changes to create plausible deniability for changes outside of that category.
 - **Pose:** source
 - **Narration:** None of this is hidden, either -- Skousen published his entire list of changes openly for anyone to check, and other LDS-affiliated scholars, including Brant Gardner, have written about this exact edit in detail, in print, for over a decade now.
 - **Sources:** skousen-interpreter-changes, gardner-second-witness
 - **Notes:** 
 
-## 13. `n99` (narration, ~6.5s)
+## 15. `n99` (narration, ~6.5s)
 - **Original Video Transcript:** Now, to be fair, the church's position these days seems to be to focus on the grammar and spelling changes using hedging terms like the majority of these changes to create plausible deniability for changes outside of that category.
 - **Pose:** encouraging
 - **Narration:** So yes, the wording changed. But clarifying one line to match this chapter's own language isn't hidden doctrine -- it's basic editing. God bless.
