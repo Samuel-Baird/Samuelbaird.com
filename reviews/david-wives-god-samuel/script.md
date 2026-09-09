@@ -6,8 +6,8 @@
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c02` (clip, ~7.6s)
-- **Original Video Transcript:** But boy, oh boy, did he ever twist some of the teachings of Christ, not the least of which is polygamy. You can't read the Bible and walk away saying polygamy is good.
+## 01. `c02` (clip, ~7.6s) - need to add "And there are other reasons that I think it's very hard to follow Mormonism." so that its clear who he is talking about in video
+- **Original Video Transcript:** But boy, oh boy, did he ever twist some of the teachings of Christ, not the least of which is polygamy. You can't read the Bible and walk away saying polygamy is good. 
 - **Pose:** listening
 - **Clip:** Source video, 18.56s–26.16s @ speed 1.0
 - **Notes:** 
@@ -21,7 +21,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n04` (narration, ~6.8s)
 - **Original Video Transcript:** When Solomon had 700 wives and 300 concubines, the Bible's not saying, oh, that was good. When David had a few wives and some concubines, the Bible's not saying that was good.
 - **Pose:** source
-- **Narration:** First, Solomon's own downfall: the Bible blames it on foreign wives turning his heart to other gods -- not on having more than one wife.
+- **Narration:** First, Solomon's own downfall: the Bible blames it on foreign wives turning his heart to other gods -- not on having more than one wife. (move the 2 samuel verse directly after this)
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
 - **Notes:** 
 
