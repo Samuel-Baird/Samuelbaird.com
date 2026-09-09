@@ -150,6 +150,17 @@ opening formula and a closing formula, used consistently across every
 video so they become recognizable. *Placeholder until Step 4; do not
 invent one before then.*
 
+**One-line summary of the personality** (2026-09-09): a **high-confidence
+Restorationist** — generous toward people, unsparing toward bad
+arguments, historically literate, willing to concede genuine problems,
+and unapologetic about saying LDS theology is often the better Christian
+explanation. See `docs/saint-capybara/apologetics-playbook.md` for the
+argument craft this tone runs on: the six-step response structure,
+audience-specific playbooks (Catholic / Protestant / atheist-and-ex-Mormon
+each need a different strongest counter-argument), the overclaiming
+discipline, shorts-vs-long-form structure, and the two-question test
+every script should pass before Gate A.
+
 ## 3. Fixed visual design (do not drift from this)
 
 Every image and every pose of Saint Capybara includes, without exception:
@@ -252,48 +263,76 @@ questionable premise → `skeptical` · factual failure → `disappointed` /
 or video discussing suffering or sensitive history must not select
 either pose; a `check_sources`/`check_brand`-style lint (see the pipeline
 plan) should enforce this once that tooling exists — until then it's a
-manual check. Saint Capybara stays visually secondary to the evidence
-when a document or chart matters: he stays in his fixed bottom-left
-corner (see §8 layout) and the full stage above is given over to the
-document/chart, rather than him shrinking further or moving.
+manual check. Saint Capybara's on-screen size follows the three-mode
+layout in §8, not a fixed corner position: full-screen dominant between
+clips (narration/response beats), medium bottom-left beside a document/
+chart/quote card, small bottom-left while reacting over a clip. He is
+never smaller than that CLIP-mode corner size and evidence never simply
+replaces him.
 
-### 5a. Outro sign-off sequence
+### 5a. Closing line: "God bless"
 
-Every video ends on the same four-pose sequence: the character making
-the sign of the cross while narration says *"in the name of the Father,
-and of the Son, and of the Holy Ghost, Amen."*
+**Retired 2026-09-09 — there is no more fixed sign-of-the-cross outro
+sequence.** An earlier version of this brand mandated every video end on
+a multi-beat sign-of-the-cross gesture ("In the name of the Father, and
+of the Son, and of the Holy Spirit, Amen.") rendered as its own shared,
+cached clip. That whole mechanism (the four/five `sign-*` poses, the
+mandatory-append-to-every-`beats.yaml` behavior, `tools/capy_outro.py`'s
+shared-cache system) is gone — removed, not just deprecated. Don't
+resurrect it; see git history if the mechanics are ever needed for
+reference. The `sign-*` sprite art files still exist under
+`D:\saint-capybara\finalized images\` and may be reused for something
+else later, but they carry no special meaning now.
 
-| File | Beat |
-|---|---|
-| `saint-capybara-sign-father.png` | "...in the name of the Father," |
-| `saint-capybara-sign-son.png` | "...and of the Son," |
-| `saint-capybara-sign-holy.png` | "...and of the Holy Ghost," |
-| `saint-capybara-sign-spirit-amen.png` | "...Amen." |
-
-This is the standard outro for every video, not a one-off for any single
-short — wire it into the beat-list template / compositor as a fixed
-closing sequence.
+**Every video's closing beat instead ends the narration line on "...God
+bless."** — an ordinary `narration` beat like any other (pick whatever
+pose fits the moment, `encouraging` is a reasonable default), not a
+special kind or a shared/cached asset. `capy_check_sources.py`
+hard-errors if the last beat's text doesn't end that way. See
+`script-format.md`'s closing-conventions section for the exact rule and
+`docs/saint-capybara/hybrid-resolve-pipeline.md` for the prior outro
+cache's removal note.
 
 ## 6. Voice and TTS spec
 
 Kokoro, local, calm/measured/mildly warm delivery — never theatrical
-"debate bro" emphasis — speed 0.95, target ≈140–150 words per minute. A
-pronunciation dictionary (`docs/saint-capybara/pronunciations.md`,
-`script/pronunciations.yaml`) is mandatory; every new proper noun gets an
-entry before it is ever rendered — the merged dictionary is applied by
-`tools/capy_tts.py` via misaki's `[word](/ipa/)` inline override syntax.
+"debate bro" emphasis. A pronunciation dictionary
+(`docs/saint-capybara/pronunciations.md`, `script/pronunciations.yaml`)
+is mandatory; every new proper noun gets an entry before it is ever
+rendered — the merged dictionary is applied by `tools/capy_tts.py` via
+misaki's `[word](/ipa/)` inline override syntax.
 
-**Voice id: `am_michael` (default, tentatively locked).** `tools/capy_tts.py
---sample` was run against all three shortlisted voices (`am_michael`,
-`am_onyx`, `bm_george`) with a test paragraph containing a dictionary word
-("Nauvoo") — all three rendered correctly with the lexicon override
-applied (confirmed in the printed phoneme-substituted text: `[Nauvoo](/nɔˈvu/)`)
-and produced plausible word timings. `am_michael` is set as the default
-per the plan's own shortlist ordering; this is a tentative pick pending an
-actual listen-through by the user (the agent cannot judge vocal quality by
-ear) — if the user prefers `am_onyx` or `bm_george` after listening to the
-three sample WAVs, just change `voice.name` in a project's `beats.yaml`
-(and this line) rather than treating the pick as unchangeable.
+**Host voice id: `am_michael`, speed 1.5 — LOCKED 2026-09-09, not
+tentative.** The user confirmed this voice after watching
+`dont-read-the-bom`'s render and separately asked for the speed to be
+raised from the original 0.95 lock to 1.5 (~220 target words per minute,
+scaled up from the original ≈140–150 wpm/0.95 target). Both are
+standing rules for every Saint Capybara project from here on, encoded in
+`capy.beats.DEFAULT_VOICE = {"name": "am_michael", "speed": 1.5}` and
+`assets/saint-capybara/templates/beats.yaml`'s `voice:` block — do not
+regress either without a new, explicit user direction to change them.
+Before the lock, `tools/capy_voice_audition.py` had rendered every
+English male Kokoro voice (13: `am_michael`, `am_fenrir`, `am_puck`,
+`bm_fable`, `bm_george`, `am_onyx`, `bm_lewis`, `am_echo`, `am_eric`,
+`am_liam`, `bm_daniel`, `am_adam`, `am_santa`) plus a female shortlist for
+the quote voice (`af_heart`, `af_bella`, `af_nicole`, `bf_emma`,
+`af_sarah`) into `D:\saint-capybara\voice-audition\` for reference — see
+`audition.md` there for the upstream quality grade of each, kept for
+historical context now that the pick is locked. **Any future change to
+the voice or its speed means re-rendering every in-flight project's
+audio** so nothing mixes an old-speed take with a new-speed one within
+the same video.
+
+**Quote voices (article/text-source mode, `kind: excerpt` beats).** A
+second Kokoro voice reads the source's own words aloud, sex-matched to
+the person being quoted — `voices.quote_male` / `voices.quote_female` in
+`beats.yaml`, resolved per beat by `capy.beats.resolve_voice`
+(`docs/saint-capybara/script-format.md` "Excerpt fairness"). Tentative
+picks pending the same bake-off/listen-through: `quote_male: am_michael`,
+`quote_female: af_heart` (`tools/capy/beats.py: DEFAULT_VOICES`) — these
+should end up **audibly distinct** from the locked host voice once
+chosen, since the whole point is "their words, then mine" staying
+audible to a muted-off/audio-only listener too.
 
 ## 7. Visual system
 
@@ -324,57 +363,87 @@ provisional until a compositor is actually built and can be checked
 against the real art side by side.
 
 **Typography** (SIL OFL 1.1, bundled in `assets/saint-capybara/fonts/`
-with each license text): **Press Start 2P** for labels, the hook chip,
-card attributions, and the wordmark; **Pixelify Sans** for captions and
-card body text. No serif anywhere in this identity, and neither font is
-shared with the other brand.
+with each license text): **Press Start 2P** for card attributions and
+chart labels; **Pixelify Sans** for captions and card body/quote text.
+No serif anywhere in this identity, and neither font is shared with the
+other brand. **No chips, no wordmark, no on-screen hook text** —
+removed 2026-09-09 as part of the layout redesign (§8); the hook line in
+`beats.yaml` still drives the title/description, it just never renders
+into the frame. The only on-screen text, ever, is a caption or card/quote
+text (including its attribution).
 
 **Evidence cards:** parchment card, thin ink pixel border, citation line
-top-left in Pixelify Sans (minimum legible size at 1080px width — see
-`script-format.md`), quotes verbatim with `[...]` for omissions, page
-images shown with a visible page number. No brand credit chip like the
-other identity's — the only recurring brand mark is a small wordmark,
-bottom-right, during reserved zones (see §8 layout below).
+top-left in Pixelify Sans (fit-to-width, shrinking from 48px down to a
+36px floor before ever wrapping past the card — see `script-format.md`),
+quotes verbatim with `[...]` for omissions, page images shown with a
+visible page number.
 
-**Captions:** always burned in (muted-viewing design). Max 2 lines, ~34
-characters per line, at most one highlighted keyword per caption chunk
-(a name, date, number, or key term — never a loaded/charged word).
-Legible on a phone without pausing.
+**Captions:** always burned in (muted-viewing design), Pixelify Sans,
+84px on parchment/freeze backgrounds (`style_capy`) or 76px over source
+video with a translucent teal pill behind the text for contrast
+(`style_source`), 76px over a card (`style_card`) — all with a 6px ink
+outline and shrinking to a floor (60/56/56px) before ever wrapping past
+2 lines. Lines wrap by **measured pixel width** against a 960px budget
+(`capy.text.fit_text`), never a character-count guess — the earlier
+34-char guess is what produced a shipped caption clipped at both frame
+edges. At most one highlighted keyword per caption chunk (a name, date,
+number, or key term — never a loaded/charged word). Legible on a phone
+without pausing.
 
 **No music in v1.** No intro/outro sting, no logo animation, no end card
 that echoes the other brand's look.
 
 ## 8. Frame layout (1080×1920, 30fps)
 
-Also encoded machine-readably in `assets/saint-capybara/theme.yaml:
-layout`, which is the authoritative version — this table mirrors it.
-Superseded from an earlier design (a centered "character row" with a
-square 512×512 bust) once the finalized art turned out to be full-body
-standing figures roughly square in their own visible bounding box
-(measured ~0.92–0.97 width/height across `neutral`, `pointing`,
-`sign-father`) rather than a compact icon — a bottom-left corner
-placement reads better for that proportion and leaves more width for
-evidence.
+**`layout.version 2` (2026-09-09).** Also encoded machine-readably in
+`assets/saint-capybara/theme.yaml: layout`, which is the authoritative
+version — this section mirrors it. Superseded the v1 fixed
+stage(200–808)/captions(830–1090)/character-band(1100–1920) zoning,
+which assumed a 16:9 source video cropped into a 1080×608 "stage"
+rectangle — every real source has instead been native 1080×1920, so v1
+left roughly two-thirds of every frame as empty parchment, kept the
+sprite at a 280px thumbnail, and set captions at 68px (a size that, at
+the old 34-character-per-line wrap, clipped off the frame edge on a
+real shipped caption). v2 replaces the single fixed zoning with **three
+frame modes, chosen by beat kind** (`capy.layout.Theme.mode_for`):
 
-| Zone | y-range | Contents |
-|---|---|---|
-| Reserved (top) | 0–200 | Empty except the 3-second hook chip on beat 1. Avoids platform UI. |
-| Stage | 200–808 | 1080×608 (exact 16:9): source clip, or full-width evidence/card/chart. |
-| Captions | 830–1090 | Centered, burned-in, word-timed. |
-| Character + panel band | 1100–1920 | Sprite in the bottom-left corner + evidence panel to its right (see below). |
-| Reserved (bottom) | 1880–1920 | Last 40px sliver only, empty except the wordmark. Avoids platform UI. |
+| Mode | Beat kinds | Background | Sprite | Captions |
+|---|---|---|---|---|
+| **CLIP** | `clip` | The source video fills the whole canvas — cover-cropped for a 9:16-or-narrower source, or fit inside a letterbox band (y 230–850) over a blurred/darkened cover copy of the same footage for 16:9-or-wider | 400px box, bottom-**right** (x0: 648 — 2026-09-09 user feedback, was bottom-left; mirrors the old 32px margin off the opposite edge), 5px ink outline + a hard offset shadow so pixel edges read over busy video | y 860–1120, `style_source` (76px, teal pill) |
+| **HOST** | `narration` | Parchment + vignette (`stage: blank`); a full-bleed last-clip-frame background blurred/dimmed 55% (`stage: freeze`); an arbitrary project image, e.g. a historical painting/photo/sketch, same treatment (`stage: image`, 2026-09-09); or the source video playing continuously (not frozen) behind him — "capybara in front of the reacted video" (`stage: video`, 2026-09-09) — see `script-format.md` | 920px box, horizontally centered, the dominant element on screen, with a soft ground-shadow ellipse | y 300–660 (above his head), `style_capy` (84px) |
+| **CARD** | `card`, `evidence`, `chart`, `excerpt` | Parchment; the card/chart/evidence/pull-quote occupies x 40–1040, y 250–830 | 480px box, bottom-left, 4px outline | y 860–1120, `style_card` (76px) |
 
-Within the character + panel band: the sprite sits flush to the bottom-left
-corner (`x0: 8, y0: 1600`, 280×280, bottom edge at `y: 1880`, an 8px margin
-from the left frame edge and no gap above the reserved-bottom sliver);
-the evidence panel sits beside it (`x: 320–1040, y: 1470–1880`) for inline
-receipts; the reserved sliver (`y: 1880–1920`) stays clear of the sprite
-itself; the wordmark is bottom-right (`x1: 1040, y: 1892–1916`).
+Every mode anchors the sprite's feet to the same line
+(`layout.sprite_bottom: 1600`) so cuts between modes don't make him jump
+vertically. Documented platform-UI safe-zone assumptions (union of
+TikTok/Reels/Shorts chrome at 1080×1920): top 0–250 unsafe (status bar,
+For You/Following tabs), bottom 1580–1920 unsafe (username, caption,
+sound ticker, nav), right x>930 unsafe for y 1000–1650 (like/comment/
+share/avatar rail) — captions and card text stay entirely inside x
+60–1020, y 250–1580; the sprite's feet may brush the username band by
+design (a corner mascot doing so reads as normal on this platform).
 
-Saint Capybara is always on screen. When a beat carries inline evidence he
-shares the band with it (panel to his right); when a document or chart
-needs real space to be readable, it takes over the full stage instead,
-and he stays in his corner at the bottom — never disappears, and evidence
+**CLIP mode is bottom-right, and does overlap the documented like/
+comment/share rail zone (x>930, y 1000–1650) on some platforms** — a
+known, accepted tradeoff of the 2026-09-09 bottom-right change, not an
+oversight. **The one thing that must never happen regardless of that
+tradeoff: the sprite box and burned-in caption text must never occupy
+the same vertical band.** Today they don't (CLIP captions: y 860–1120;
+CLIP sprite box: y 1200–1600, both anchored off `sprite_bottom`) — if a
+future layout change moves either one, captions keep their band and the
+sprite gets resized/repositioned to stay clear, never the reverse.
+
+**No chips, no wordmark, no on-screen hook text.** The v1 "Source video"/
+"SOURCE" label chips, the beat-1 hook chip, and the bottom-right wordmark
+are all removed — the only text drawn into any frame is a caption or
+card/quote text (with its attribution). The "source visible on screen"
+clip-fairness requirement (`script-format.md`) now lives in the video
+description instead.
+
+Saint Capybara is always on screen, at the size his current beat's mode
+sets: full-screen dominant between clips (HOST), medium beside a
+document/chart/quote card (CARD), small in the corner while reacting
+over a clip (CLIP) — never smaller than the CLIP-mode size, and evidence
 never simply replaces him.
 
 ## 9. Anonymity and brand separation
@@ -411,18 +480,21 @@ manual/user task:
   uploads, no other-brand slugs anywhere in `D:\Videos\<slug>\`.
 - **Exports:** `ffmpeg -map_metadata -1 -fflags +bitexact`, only a `title`
   tag written. Verify with `ffprobe` before calling a render final.
-- **Images:** no text/metadata chunks. Spot-checked
-  `saint-capybara-neutral.png` in `D:\saint-capybara\finalized images\` —
-  clean (`Image.info` empty). Worth re-checking the others: some
-  generators (ComfyUI included, depending on the save node) embed the
-  full prompt/workflow JSON into a PNG text chunk by default, which is
-  more of a "did this leak something odd" check than an expected problem
-  here. Any tool this pipeline writes PNGs with (evidence crops, cards)
-  should save without metadata the same way. No desktop screenshots with
-  browser chrome, taskbars, usernames, bookmarks, or open tabs visible —
-  evidence receipts are cropped page images (Gospel Scholar Archive
-  `get_page_image`, Pulpit cite links) or clean crops, never a raw
-  desktop capture.
+- **Images:** no text/metadata chunks. Spot-checked all 25 finalized
+  sprite files (2026-09-09) in `D:\saint-capybara\finalized images\` —
+  clean (`Image.info` empty) apart from `deadpan`, which has a separate,
+  unrelated defect (no alpha channel — see
+  `docs/saint-capybara/hybrid-resolve-pipeline.md` "Known gaps"). Worth
+  re-checking after any regeneration: some generators (ComfyUI included,
+  depending on the save node) embed the full prompt/workflow JSON into a
+  PNG text chunk by default, which is more of a "did this leak something
+  odd" check than an expected problem here. Any tool this pipeline
+  writes PNGs with (evidence crops, cards, cached sprite renders under
+  `D:\saint-capybara\cache\sprites\`) should save without metadata the
+  same way. No desktop screenshots with browser chrome, taskbars,
+  usernames, bookmarks, or open tabs visible — evidence receipts are
+  cropped page images (Gospel Scholar Archive `get_page_image`, Pulpit
+  cite links) or clean crops, never a raw desktop capture.
 - **Text:** `research/sources.yaml` notes, `script/beats.yaml` narration,
   and `exports/<slug>-description.txt` are scanned against
   `assets/saint-capybara/banned.txt` (gitignored — see below) plus

@@ -6,7 +6,11 @@ Resolve, but built differently than the other three types — see
 `docs/saint-capybara/hybrid-resolve-pipeline.md`), no shared visual
 identity with the other three types. Read `docs/saint-capybara/brand.md`
 first; it is the source of truth for tone, visual design, and the
-anonymity rules that make this type work at all.
+anonymity rules that make this type work at all. Read
+`docs/saint-capybara/apologetics-playbook.md` alongside it before writing
+any response-video script — it's the argument-craft companion to
+`brand.md` sec 2's tone (six-step structure, audience-specific
+playbooks, overclaiming discipline, the pre-publish two-question test).
 
 **Uses DaVinci Resolve, but not the other types' Build stage.** Saint
 Capybara videos ARE edited and rendered in Resolve (via the
@@ -34,12 +38,53 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
   usernames, thumbnails. See `docs/saint-capybara/brand.md` sec 9-10
   before doing anything else with this type.
 
+## Source intake
+
+Videos awaiting a reaction (before a project folder exists for them) are
+dropped in `D:\saint-capybara-videos-needing-reactions\` — a local-file
+staging folder, separate from any `D:\Videos\<slug>\` project. That folder
+also holds `need reaction.xlsx`, a running queue with columns `Link to
+original` / `Path` / `Does original video have captions?` / `Video
+Generated` / `Notes` / `script link` — check it before assuming you know
+the full backlog.
+
+**A queue row's `Path` points to a local file only until that file is
+ingested (2026-09-09 standing rule).** When a row has a local `Path` into
+the intake folder, ingest it with `capy_ingest.py --file <path> --project
+D:\Videos\<slug> ...` — this **moves** the file into
+`D:\Videos\<slug>\source\source.mp4` (not a copy; the intake folder is a
+staging area, not permanent storage, so nothing should linger there once
+a project owns it). Immediately after ingest:
+
+1. **Update that row's `Path`** to the new location
+   (`D:\Videos\<slug>\source\source.mp4`), so the sheet always reflects
+   where the file actually lives.
+2. **Rename a gibberish project slug once the transcript exists.** A
+   project created with a placeholder slug (a bare video ID, e.g.
+   `yt-pdm2bsfrm5k`) should be renamed to a short, descriptive slug that
+   summarizes the video (e.g. `bom-1837-wording-change`) as soon as the
+   transcript makes the actual content clear — rename the
+   `D:\Videos\<slug>\` folder itself, update `slug:` in
+   `script\beats.yaml`, and fix the `# Claims — <slug>` header in
+   `research\claims.md`. Do this before starting real research on the
+   project, not after — a script.md link pushed to GitHub under the old
+   slug would break if renamed later.
+3. Update the row's `Video Generated` column (mark `x`) once a project
+   reaches Gate A or ships, same as before.
+
+Some queue rows are just a URL (no local file yet — ingest via
+`capy_ingest.py URL --project ...`, letting yt_dlp download it directly
+into `source\source.mp4`) rather than a path into the intake folder; there
+is no intake-folder file to move or delete in that case.
+
 ## Project layout
 
 ```
 D:\Videos\<slug>\
-  source\       source.mp4, source_info.json
-  transcripts\  source.json/.srt/.txt/.meta.json (tools/transcribe.py, unchanged)
+  source\       video:   source.mp4 + source_info.json (kind: video)
+                article: source.md (numbered ¶ paragraphs, sha256-pinned) +
+                         source_info.json (kind: article, url, archive_url, text_sha256)
+  transcripts\  source.json/.srt/.txt/.meta.json (tools/transcribe.py, unchanged; video only)
   research\     claims.md, sources.yaml, ESCALATION.md (only when open; renamed
                 ESCALATION-resolved.md once the user has signed off)
   images\       cropped evidence PNGs referenced by beats.yaml
@@ -52,22 +97,44 @@ D:\Videos\<slug>\
                 <slug>.mp4 (final, after the metadata-strip remux pass)
 ```
 
-Create with `tools/new_project.ps1 -Slug <slug> -Type saint-capybara` —
-this also copies the beats/sources/claims/pronunciations templates from
-`assets/saint-capybara/templates/` with the slug substituted.
+Create with `tools/new_project.ps1 -Slug <slug> -Type saint-capybara
+[-SourceKind video|article]` — this also copies the beats (`beats.yaml`,
+or `beats.article.yaml` for an article source) / sources / claims /
+pronunciations templates from `assets/saint-capybara/templates/` with the
+slug substituted.
 
 ## Pre-production (ends at Gate A — a hard stop)
 
-1. **Ingest.** `tools/capy_ingest.py` — a URL (yt_dlp download), an
-   existing local file (`--file`), or both (local file + `--url` for
-   metadata only). Always try to pull title/uploader/canonical-url
-   metadata when a URL is available, even if the media itself came from a
-   local file.
-2. **Transcribe.** Calls `tools/transcribe.py` unchanged.
+1. **Ingest.** `tools/capy_ingest.py`, by source kind:
+   - **Video:** a URL (yt_dlp download), an existing local file
+     (`--file`), or both (local file + `--url` for metadata only). Always
+     try to pull title/uploader/canonical-url metadata when a URL is
+     available, even if the media itself came from a local file. **Ask the
+     user whether the source video already has captions burned in** before
+     running this (standing rule, 2026-09-09) and pass
+     `--captions-in-source yes|no|unknown` — see `script-format.md`'s
+     caption rule for why this matters (short version: clip beats never
+     get generated captions either way). Writes `source/source.mp4` +
+     `source_info.json` (`kind: video`).
+   - **Article:** fetch the page with the agent's own WebFetch (or take
+     the user's paste, for paywalled pieces) into a cleaned,
+     blank-line-separated text file, then `--article-file cleaned.md
+     --article-url URL [--publication --byline --date --paywalled]
+     [--archive auto|fresh|skip | --archive-url …]`. Writes
+     `source/source.md` (one `¶n` paragraph per block) and
+     `source_info.json` (`kind: article`, url, archive receipt,
+     `text_sha256` pin). `--article URL --fetch` self-fetches with
+     requests + trafilatura and is opt-in (home IP). No media, no Whisper.
+2. **Transcribe.** Video only — calls `tools/transcribe.py` unchanged.
+   Article projects skip this; `source.md`'s paragraph numbers are the
+   anchors.
 3. **Triage.** List every discrete claim in `research/claims.md`
-   (`docs/saint-capybara/research-protocol.md` sec 1) — respond / concede
-   / skip, with a reason. Not every claim in a source video needs (or
-   should get) an on-screen response.
+   (`docs/saint-capybara/research-protocol.md` sec 1) — anchored by
+   timestamp (video) or paragraph number (article); respond / concede /
+   skip, with a reason. Not every claim in a source needs (or should get)
+   an on-screen response. On an article project the source's own words
+   reach the screen as `excerpt` beats (verbatim, `para`-anchored, read by
+   the quote voice, ≤30% of runtime together with any clips).
 4. **Research.** Pulpit / Gospel Scholar Archive / Latter-day Stats MCP
    tools, per `docs/saint-capybara/research-protocol.md`. Verify every
    quotation before treating it as attributable. Grade every claim
@@ -77,10 +144,9 @@ this also copies the beats/sources/claims/pronunciations templates from
    `research-protocol.md` sec 12 → write `research/ESCALATION.md` and
    treat that claim/beat as blocked pending the user's input.
 6. **Write `script/beats.yaml`.** Hand-authored per
-   `docs/saint-capybara/script-format.md`. **Do not hand-write the
-   sign-of-the-cross outro** — `capy.beats.load_beats()` appends it
-   automatically; it is a fixed structural rule of this type, not a
-   per-video creative choice.
+   `docs/saint-capybara/script-format.md`. **The closing beat must end on
+   "...God bless."** (brand.md sec 5a) — `capy_check_sources.py`
+   hard-errors if it doesn't.
 7. **Lint.** `tools/capy_check_sources.py` and `tools/capy_check_brand.py`
    must both pass (0 errors) before moving on.
 8. **Script doc.** `tools/capy_storyboard.py` renders `script/script.md`

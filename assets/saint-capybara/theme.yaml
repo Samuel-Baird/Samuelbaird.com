@@ -1,33 +1,32 @@
 # Saint Capybara visual theme.
 #
 # Single source of truth for palette, typography, and frame layout. Read by
-# tools/capy/palette.py (sprite palette) and, from Step 6 onward, by
-# tools/capy/layout.py and tools/capy/plates.py (frame composition) and
-# tools/capy/captions.py (ASS caption styling).
+# tools/capy/layout.py (frame composition geometry) and tools/capy/plates.py,
+# tools/capy/sprites.py, tools/capy/text.py, tools/capy_caption_cards.py.
 #
 # This is a DISTINCT visual system from docs/style-guide.md (the other
 # identity's charcoal/cream-serif quote-card style). Do not mix them.
 #
-# Hex values below are the Step 1 working palette. They are FROZEN once the
-# user approves a sprite candidate in Step 1/2 (compose.py reads this file at
-# render time, so "freezing" just means: stop editing this file casually
-# after that point).
+# layout.version 2 (2026-09-09): full-bleed video, three frame modes
+# (clip/host/card), no chips/wordmark/hook-on-screen, measured-width
+# captions. See docs/saint-capybara/brand.md sec 8 for the rationale and
+# the plan at the top of this file's git history for the numbers' origin.
 
 palette:
-  # Character (sprite) palette -- keys match tools/capy/parts.py part strings.
-  # v2: capybara-shaped (continuous body, two-tone muzzle patch), no
-  # robe, no permanent Bible -- just the halo and a crucifix necklace on
-  # bare fur, per the revised brief. A generic book/scroll/papers palette
-  # remains for the few evidence-adjacent poses that hold a prop.
+  # Character (sprite) palette -- vestigial, left over from the retired
+  # PIL sprite renderer (tools/capy/parts.py, compose.py). Not read by the
+  # current (finalized-art) pipeline. Kept only so that old code doesn't
+  # error if ever run standalone. See brand.md sec 7 for the real,
+  # AI-generated art's representative sampled colors.
   transparent: [0, 0, 0, 0]
-  outline:     [42, 33, 23, 255]     # ink -- also used as the frame outline color
-  fur:         [196, 148, 92, 255]   # warm caramel-tan body fur
-  fur_shade:   [156, 110, 60, 255]   # ears, paws, back-shading band
-  snout:       [176, 122, 108, 255]  # dusty mauve-brown muzzle patch -- the key capybara "tell"
+  outline:     [42, 33, 23, 255]
+  fur:         [196, 148, 92, 255]
+  fur_shade:   [156, 110, 60, 255]
+  snout:       [176, 122, 108, 255]
   halo:        [217, 174, 59, 255]
   halo_shade:  [181, 138, 35, 255]
-  crucifix:    [201, 130, 47, 255]   # ochre/gold crucifix -- distinct from halo gold
-  book_cover:  [122, 40, 34, 255]    # deep red-brown, pose-specific prop only
+  crucifix:    [201, 130, 47, 255]
+  book_cover:  [122, 40, 34, 255]
   book_pages:  [242, 232, 210, 255]
   paper:       [235, 224, 196, 255]
   scroll:      [222, 205, 168, 255]
@@ -35,9 +34,8 @@ palette:
   eye:         [42, 33, 23, 255]
   brow:        [80, 56, 32, 255]
 
-  # Frame / UI palette (for Step 6+ frame composition -- label chips, the
-  # wordmark, evidence-card borders -- kept as separate hex entries from
-  # the sprite RGBA palette above so frame code can read plain "#RRGGBB").
+  # Frame / UI palette -- the live one. Card borders, caption
+  # fill/outline/pill colors, the parchment background.
   parchment:      "#E8DAC0"
   ink:             "#2E2117"
   fur_hex:         "#C4945C"
@@ -47,52 +45,99 @@ palette:
   source_teal:     "#2F6B5E"
 
 fonts:
-  display: "Press Start 2P"      # labels, hook chip, card attribution, wordmark
+  display: "Press Start 2P"      # card attribution, chart labels
   display_file: "fonts/PressStart2P-Regular.ttf"
-  body: "Pixelify Sans"          # captions, card body text
+  body: "Pixelify Sans"          # captions, card quote/body text
   body_file: "fonts/PixelifySans-Regular.ttf"
   license_note: "Both fonts are SIL Open Font License 1.1. OFL text files are bundled alongside each font in this folder. OFL permits embedding/burning into video; keep the OFL text with the font files and do not sell the fonts standalone."
 
 layout:
+  version: 2
   canvas: { width: 1080, height: 1920, fps: 30 }
-  # y-ranges, top to bottom. "reserved" zones avoid platform UI chrome
-  # (title/caption/like-share rails on Shorts/Reels/TikTok).
-  #
-  # Character position: bottom-left CORNER of frame (not a left-aligned
-  # "character row" floating above the bottom of the canvas). Sprite is
-  # anchored flush-ish to the left edge (x0: 8) and to the bottom of the
-  # visible frame, sitting entirely inside reserved_bottom's last ~300px
-  # band so it never collides with the stage/captions above it, while
-  # still leaving the very bottom platform-UI sliver (last ~40px) clear
-  # and leaving x 460-1040 free for the evidence panel at the same
-  # height. tools/capy/plates.py reads sprite/panel/reserved_bottom from
-  # this file rather than hardcoding any of these numbers.
-  reserved_top:    { y0: 0,    y1: 200 }   # hook chip may appear here in beat 1 only
-  stage:           { y0: 200,  y1: 808 }   # 1080x608 = exact 16:9; source clip / evidence / card / chart
-  captions:        { y0: 830,  y1: 1090 }  # centered, \an5 \pos(540,960)
-  character_row:   { y0: 1100, y1: 1880 }  # whole lower band the sprite+panel live in (excludes the UI sliver)
-  sprite:           { x0: 8,   y0: 1600, size: 280 }   # bottom-left corner, 280x280, bottom edge at y=1880
-  panel:            { x0: 320, y0: 1470, x1: 1040, y1: 1880 }  # inline evidence receipt, beside the corner sprite
-  reserved_bottom: { y0: 1880, y1: 1920 }  # last 40px sliver only, empty except wordmark -- kept clear of the sprite
-  wordmark:         { x1: 1040, y0: 1892, y1: 1916, align: "right" }
 
-sprite:
-  logical_canvas: 64        # 64x64 logical pixel grid
-  upscale: 8                 # -> 512x512 PNG, nearest-neighbor only
+  # Documented assumptions (union of TikTok / Reels / Shorts platform-UI
+  # chrome at 1080x1920): top 0-250 is status bar + For You/Following
+  # tabs; bottom 1580-1920 is username/caption/sound-ticker/nav; the
+  # right column x>930 for y 1000-1650 is the like/comment/share/avatar
+  # rail. All text (captions, card text) stays inside x 60-1020,
+  # y 250-1580. Sprite feet may brush the username band by design --
+  # see brand.md sec 8.
+  platform_safe: { top: 250, bottom: 340, right: 150 }
+  sprite_bottom: 1850              # every mode's sprite feet sit on this line
+  # 2026-09-09 (user feedback): moved down from 1600 to 1850 -- "slightly
+  # above bottom of image" -- since a caching bug (see capy/sprites.py
+  # _cache_key, fixed same day) had been silently reusing stale
+  # bottom-left-positioned sprite renders for CLIP-mode beats, which read
+  # as the sprite "covering" the source video's own burned-in captions.
+  # 1850 keeps every mode's sprite top comfortably clear of that mode's
+  # caption band even with the extra headroom: host top=930 (captions end
+  # 660), clip/card top=1450/1370 (captions end 1120).
+
+  # CLIP mode (kind: clip) -- source video fills the canvas.
+  # Sprite is bottom-LEFT (2026-09-09 user feedback -- REVERSED the
+  # 2026-09-09-earlier-that-day "bottom-right" change; see
+  # feedback_capy_clip_sprite_bottom_right.md, superseded). Also pushed
+  # lower than every other mode via its own `sprite_bottom` override
+  # (1900 vs the shared 1850 -- see top-level `sprite_bottom:` above) per
+  # the same feedback: "moved down lower... when overlaid on original
+  # clips". Captions sit in a separate vertical band (y 860-1120) above
+  # the sprite's box (top = 1900-400 = 1500), so the two never overlap --
+  # keep it that way if either number ever changes; captions win the
+  # band, resize/reposition the sprite instead.
+  clip:
+    letterbox_band: { y0: 230, y1: 850 }               # landscape sources fit here, over a blurred cover copy
+    letterbox_bg: { blur_scale: 4, boxblur: "10:2", dim: 0.45 }
+    sprite_bottom: 1900                                # per-mode override of the top-level sprite_bottom (1850)
+    sprite:   { x0: 32, size: 400, outline_px: 5, shadow: { dx: 10, dy: 10, alpha: 110 } }
+    captions: { y0: 860, y1: 1120, max_width: 960 }
+
+  # HOST mode (kind: narration) -- parchment or full-bleed freeze, big sprite.
+  host:
+    sprite:   { x_center: 540, size: 920, outline_px: 0, ground_shadow: { rx: 300, ry: 26, alpha: 60 } }
+    captions: { y0: 300, y1: 660, max_width: 960 }
+    freeze:   { dim: 0.55, blur_sigma: 8 }
+
+  # CARD mode (kind: card, evidence, chart, excerpt) -- card on top, medium sprite.
+  card:
+    box:      { x0: 40, y0: 250, x1: 1040, y1: 830 }
+    pad: 44
+    sprite:   { x0: 32, size: 480, outline_px: 4, shadow: null }
+    captions: { y0: 860, y1: 1120, max_width: 960 }
 
 captions:
-  style_capy:   { font: body, size: 68, primary: parchment, outline: ink, border: 1, outline_px: 6, shadow: 0, alignment: 5 }
-  style_source: { font: body, size: 56, primary: parchment, outline: source_teal, border: 1, outline_px: 6, shadow: 0, alignment: 5, italic: true }
-  style_hook:   { font: display, size: 44, primary: parchment, outline: ink, border: 1, outline_px: 6, shadow: 0, alignment: 5 }
+  # `size` is the starting px; the renderer (tools/capy/text.py) wraps by
+  # measured width (font.getlength) and steps size down by shrink_step
+  # until <= max_lines fit inside max_width. There is no character budget
+  # in the renderer -- max_chars_per_line below is only the phrase
+  # grouper's pre-estimate when no font measurer is supplied.
+  style_capy:   { font: body, size: 84, min_size: 60, primary: parchment, outline: ink, stroke_px: 6, pill: null }
+  style_source: { font: body, size: 76, min_size: 56, primary: parchment, outline: ink, stroke_px: 6,
+                  pill: { color: source_teal, alpha: 150, pad_x: 28, pad_y: 16 } }
+  style_card:   { font: body, size: 76, min_size: 56, primary: parchment, outline: ink, stroke_px: 6, pill: null }
   highlight_color: highlight_brick
-  max_chars_per_line: 34
+  line_height: 1.15
+  max_lines: 2
+  shrink_step: 4
+  max_chars_per_line: 24
   max_words_per_phrase: 6
   gap_break_seconds: 0.35
+  attach_punctuation: true
+
+card_text:
+  quote:       { font: body,    size: 48, min_size: 36, line_height: 1.20, color: ink }
+  attribution: { font: display, size: 26, min_size: 20, line_height: 1.40, color: source_teal }
+  chart:       { title: { font: display, size: 30 }, label: { font: body, size: 32 }, credit: { font: body, size: 24 } }
+  evidence_credit: { font: body, size: 26 }
 
 audio:
   target_lufs: -16
   head_pad_seconds: 0.25
   sample_rate: 48000
+
+cache:
+  root: "D:/saint-capybara/cache"   # override with env CAPY_CACHE_DIR; beside the finalized art, outside the repo
+  sprites: sprites
+  mock: mock
 
 brand:
   no_reuse_note: >

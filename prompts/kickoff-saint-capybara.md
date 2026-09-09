@@ -28,7 +28,17 @@ never bleed into Saint Capybara. If you're ever unsure whether something
 is identifying, treat it as identifying and leave it out.
 
 **I need from you before you start:**
-- Source video: a URL, a local file path, or both.
+- Source — one of:
+  - a **video**: a URL, a local file path, or both; or
+  - an **article** (text source): its URL, plus the pasted text if it is
+    paywalled. Create the project with `-SourceKind article`; fetch the
+    page with your own WebFetch, save the cleaned text, and run
+    `tools/capy_ingest.py --article-file … --article-url …`. Do not use
+    `--fetch` or `--archive auto` (both contact the publisher/archive.org
+    from this machine) without asking me first; I may supply an
+    `--archive-url` from a separate browser profile instead. The
+    article's own words go on screen as `excerpt` beats (verbatim,
+    paragraph-anchored, read by the quote voice), never as screenshots.
 - A short slug (kebab-case) for the project folder.
 - Anything already known about which claims in the source you'd like
   addressed (optional — the agent will triage and propose otherwise).

@@ -8,13 +8,22 @@ caught having skipped this step.
 
 ## 1. Claim triage
 
-Transcribe the source video (`tools/transcribe.py`, unchanged from the rest
-of the pipeline). List every discrete claim in `research/claims.md` as a
-table:
+Get the source into anchorable form first. **Video:** transcribe it
+(`tools/transcribe.py`, unchanged from the rest of the pipeline).
+**Article:** ingest the text (`tools/capy_ingest.py --article-file`) so
+`source/source.md` carries numbered paragraphs (`¶1`, `¶2`, …) and
+`source/source_info.json` pins the text's sha256 and archive URL — the
+paragraph numbers are the anchors. Then list every discrete claim in
+`research/claims.md` as a table:
 
-| # | Timestamp | Verbatim claim | Category | Triage decision | Classification | Chosen? |
+| # | Anchor | Verbatim claim | Category | Triage decision | Classification | Chosen? |
 |---|---|---|---|---|---|---|
 
+- **Anchor**: `m:ss–m:ss` for a video source; `¶12` or `¶4–¶5` for an
+  article. Before a claim is chosen, read the anchor's neighbours in full
+  (the ±10s around a clip; the paragraphs on either side of an excerpt)
+  and record that in the per-claim notes as "Anchor context" — an
+  excerpt must not change meaning once its neighbours are read.
 - **Category**: historical-fact / doctrinal / statistical / anecdotal /
   opinion.
 - **Triage decision**: respond / concede / skip (with a one-line reason —
@@ -33,6 +42,12 @@ table:
 
 ## 2. Source hierarchy
 
+See also `docs/saint-capybara/apologetics-playbook.md` "Source hierarchy
+— quote upstream" — the on-screen citation should match the audience
+(a Catholic source for a Catholic dialogue, Calvin/Reformed confessions
+for a Calvinist one) and should be the upstream primary/scholarly source
+an apologetic lead pointed to, not the lead itself.
+
 - **Primary**: the original document/discourse/record itself (Journal of
   Discourses, a diary, an official statement, a scripture text).
 - **Scholarly**: peer-reviewed or university-press historical/theological
@@ -46,10 +61,20 @@ table:
   — it must be traced to (and re-verified against) a primary or scholarly
   source before it can be used on screen. Record `traced_to` in
   `sources.yaml`. Never let an apologetic source be the terminal citation.
-- **Critic**: the critic's own clip/video is itself a legitimate `critic`
-  source when quoting or characterizing what they said.
-- Screenshots are **never** sources — a screenshot of a quote is not
-  verification; go to the original.
+- **Critic**: the critic's own clip/video — or, for an article source,
+  the article's own text in `source/source.md` — is itself a legitimate
+  `critic` source when quoting or characterizing what they said. An
+  article project records it as the `type: critic` entry with
+  `source_kind: article`, `locator: source/source.md`, `url`,
+  `archive_url`, and `quote: null`; `excerpt` beats are validated
+  verbatim against `source.md` (sha256-pinned at ingest), never against a
+  `quote` field.
+- Screenshots are **never** verification — a screenshot of a quote is
+  not a source; go to the original. Separately, the on-screen *receipt*
+  for an article is a rendered pull-quote (an `excerpt` beat drawn from
+  the hashed, archived text), not a browser screenshot — browser
+  screenshots stay banned for desktop-chrome/anonymity reasons
+  (`brand.md` sec 9-10).
 
 ## 3. Tool map
 
@@ -75,6 +100,13 @@ table:
 - A transcript-search / "RestoredTruth" style MCP, if present in a given
   session, is a **lead only** — same rule as apologetic sources: trace and
   re-verify before it's used on screen.
+- **Article text** — fetch the page with the agent's own WebFetch (or
+  have the user paste it, for paywalled pieces) into a cleaned, blank-line
+  separated text file, then `capy_ingest.py --article-file cleaned.md
+  --article-url URL`. `--article URL --fetch` (requests + trafilatura from
+  this machine) and `--archive auto` both contact the publisher /
+  archive.org from the home IP — opt-in only; prefer `--archive-url` with
+  a Wayback capture made from the separate publishing browser profile.
 
 ## 4. Evidence grading
 
@@ -245,7 +277,7 @@ whole video — other claims can proceed) until the user weighs in:
 # Escalation: <slug>
 
 ## Claim
-<verbatim claim + timestamp>
+<verbatim claim + anchor (m:ss–m:ss or ¶n)>
 
 ## Trigger
 <which of the 7 triggers, and why>
@@ -274,7 +306,12 @@ legitimate outcome). Fields — see
 `assets/saint-capybara/templates/sources.yaml` for the schema with
 comments: `id, type, title, author, date, locator, accessed, inspected,
 inspected_via, quote, verification, grade_supports, traced_to,
-used_on_screen, counter, notes`.
+used_on_screen, counter, notes`. Optional, for article sources:
+`source_kind` (`video` default | `article`), `url`, `archive_url`,
+`publication`. `capy_check_sources.py` requires the responded-to
+article's `critic` entry to carry `url` (error) and `archive_url`
+(warning; `--strict` error), and reports `quote:` set on it as a warning
+since excerpts are checked against `source/source.md` instead.
 
 ## 14. Adversarial review
 

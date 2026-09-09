@@ -16,6 +16,8 @@
     .\new_project.ps1 -Slug sacrament-2026
 .EXAMPLE
     .\new_project.ps1 -Slug adam-god-claim -Type saint-capybara
+.EXAMPLE
+    .\new_project.ps1 -Slug tribune-oped-response -Type saint-capybara -SourceKind article
 #>
 param(
     [Parameter(Mandatory = $true)]
@@ -24,6 +26,12 @@ param(
 
     [ValidateSet('standard', 'saint-capybara')]
     [string]$Type = 'standard',
+
+    # saint-capybara only: 'video' (a clip is reacted to) or 'article' (a
+    # text source; the beats template uses `excerpt` beats instead of clips
+    # and the source is ingested with capy_ingest.py --article-file).
+    [ValidateSet('video', 'article')]
+    [string]$SourceKind = 'video',
 
     [string]$Root = "D:\Videos"
 )
@@ -51,9 +59,10 @@ if ($Type -eq 'saint-capybara') {
     $repoRoot = Split-Path -Parent $PSScriptRoot
     $templatesDir = Join-Path $repoRoot 'assets\saint-capybara\templates'
 
+    $beatsTemplate = if ($SourceKind -eq 'article') { 'beats.article.yaml' } else { 'beats.yaml' }
     $scriptBeatsDest = Join-Path $projectPath 'script\beats.yaml'
     if (-not (Test-Path $scriptBeatsDest)) {
-        $beatsContent = Get-Content (Join-Path $templatesDir 'beats.yaml') -Raw
+        $beatsContent = Get-Content (Join-Path $templatesDir $beatsTemplate) -Raw
         $beatsContent = $beatsContent.Replace('REPLACE-WITH-SLUG', $Slug)
         Set-Content -Path $scriptBeatsDest -Value $beatsContent -NoNewline -Encoding utf8
     }
@@ -75,15 +84,29 @@ if ($Type -eq 'saint-capybara') {
     }
 
     Write-Host ""
-    Write-Host "Saint Capybara templates copied: script\beats.yaml (with the mandatory"
-    Write-Host "sign-of-the-cross outro auto-appended at load time -- see"
+    Write-Host "Saint Capybara templates copied: script\beats.yaml (from $beatsTemplate --"
+    Write-Host "remember the closing beat must end on '...God bless.', see"
     Write-Host "docs/saint-capybara/script-format.md), research\claims.md,"
     Write-Host "research\sources.yaml, script\pronunciations.yaml."
     Write-Host ""
-    Write-Host "Next: tools\capy_ingest.py (URL and/or local file) -> transcribe ->"
-    Write-Host "research (docs\saint-capybara\research-protocol.md) -> fill in"
-    Write-Host "script\beats.yaml -> capy_check_sources.py -> capy_storyboard.py"
-    Write-Host "--with-captions -> Gate A."
+    if ($SourceKind -eq 'article') {
+        Write-Host "Source kind: ARTICLE (text). Next:"
+        Write-Host "  1. Fetch the article with the agent's WebFetch (or have the user paste it"
+        Write-Host "     for paywalled pieces) into a cleaned .md, blank-line separated paragraphs."
+        Write-Host "  2. python tools\capy_ingest.py --article-file cleaned.md --article-url URL"
+        Write-Host "       --publication ... --byline ... --date YYYY-MM-DD [--paywalled]"
+        Write-Host "       [--archive auto|fresh|skip | --archive-url ...] --project $projectPath"
+        Write-Host "     -> source\source.md (numbered paragraphs) + source\source_info.json (kind: article, sha256 pin)."
+        Write-Host "  3. research\claims.md with paragraph anchors; research\sources.yaml with the"
+        Write-Host "     article as the type: critic / source_kind: article entry (see the template)."
+        Write-Host "  4. script\beats.yaml: excerpt beats (kind: excerpt, para: N) precede each response."
+        Write-Host "  5. capy_check_sources.py -> capy_check_brand.py -> capy_storyboard.py -> Gate A."
+    } else {
+        Write-Host "Source kind: VIDEO. Next: tools\capy_ingest.py (URL and/or local file) ->"
+        Write-Host "transcribe -> research (docs\saint-capybara\research-protocol.md) -> fill in"
+        Write-Host "script\beats.yaml -> capy_check_sources.py -> capy_check_brand.py ->"
+        Write-Host "capy_storyboard.py -> Gate A."
+    }
 } else {
     Write-Host "Next: copy source files into '$projectPath\source', then create a"
     Write-Host "Resolve project named '$Slug' via the davinci-resolve MCP."

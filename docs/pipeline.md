@@ -75,13 +75,27 @@ would have kept, or keeping footage they wanted flagged.
    addition to sending the file directly, copy the review document (the
    script doc, or for the Saint Capybara type, `script/script.md`) into
    this repo under `reviews/<slug>/`, commit, push, and give the user the
-   GitHub blob URL. This applies to every video type, not just Saint
+   GitHub URL. This applies to every video type, not just Saint
    Capybara — the user wants review documents to live somewhere linkable,
    not just referenced by local path. Only do this for markdown/text
    review documents, not source video/audio/binary output, and confirm
    the repo's remote is still private before pushing anything with
    sensitive content (see `docs/saint-capybara/brand.md` §9-10 for why
    that check matters specifically for the Saint Capybara brand).
+
+   **Link the branch, not a commit SHA (2026-09-09 correction).**
+   `https://github.com/<owner>/<repo>/blob/<branch-name>/reviews/<slug>/script.md`
+   — **never**
+   `https://github.com/<owner>/<repo>/blob/<commit-sha>/reviews/<slug>/script.md`.
+   GitHub's web editor refuses to let a user edit a file viewed at a
+   pinned commit ("You must be on a branch to make or propose changes to
+   this file") — a commit-SHA link is read-only by design, and the whole
+   point of this convention is that the user can open the link and edit
+   directly. Get the current branch name with `git branch
+   --show-current` (or `git rev-parse --abbrev-ref HEAD`) at link-construction
+   time, never hardcode it. A branch link also has the advantage of
+   always showing the latest push automatically, so it doesn't need to be
+   re-sent after every commit the way a commit-SHA link would.
 5. **Wait.** The user edits the doc — removing CUT/CHECK markers they don't
    want acted on, filling wish-list images, reordering or trimming text — and
    returns it. Do not proceed to §2 on an unreviewed doc.

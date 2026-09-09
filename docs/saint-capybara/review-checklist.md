@@ -13,7 +13,11 @@ Run through all 12 before sending the Gate A message in
    `capy_check_brand.py`'s banned-phrase scan.
 3. **Source lint** — `tools/capy_check_sources.py` passes (every factual
    beat cited, all ids resolve and are `inspected: true`, card quotes are
-   verbatim substrings of their source's recorded `quote`).
+   verbatim substrings of their source's recorded `quote`; on an article
+   project, every `excerpt` beat is a verbatim, in-order match of its
+   anchored paragraph(s) in `source/source.md`, whose sha256 still equals
+   the `text_sha256` pinned at ingest, and the article's `critic` entry
+   has `url` + `archive_url`).
 4. **Evidence grading** — every claim in `claims.md` has a
    fact/inference/disputed/speculation grade, and the narration's
    confidence language matches the grade (don't state an inference with
@@ -21,9 +25,15 @@ Run through all 12 before sending the Gate A message in
 5. **Doctrine-vs-opinion classification** — every doctrinal claim is
    pinned to one of the six tiers (`research-protocol.md` sec 5), dated,
    never a bare "the Church teaches" for tiers 4-6.
-6. **Clip fairness** — critic's own words, hedges kept, one continuous
-   span per clip beat, ≤20s continuous, source clip time ≤30% of runtime,
-   source title/creator visible on screen.
+6. **Clip/excerpt fairness** — the source's own words, hedges kept.
+   Clips: one continuous span per beat, ≤20s. Excerpts: one anchored
+   span (`para: N` or one paragraph boundary), ≤60 words, `[...]` marks
+   every cut and never sits at the edges, the neighbours were read
+   ("Anchor context" in `claims.md`), and the excerpt precedes the
+   response to it exactly as a clip would. Source time (clips +
+   excerpts) ≤30% of runtime — `capy_check_sources.py` now errors on
+   this. The source is credited in the description (title, creator or
+   publication, URL, archive URL for articles).
 7. **Duration** — `capy.beats.resolve_durations` + `check_duration_budget`
    report the total inside 60-180s (or a documented, deliberate decision
    to split into two slugs).
@@ -51,8 +61,14 @@ and send the Gate A message. **Stop there.**
 not part of this session's Gate-A-only scope, listed here for completeness
 and so future sessions on this project use the same checklist.)
 
-1. TTS listen-through of every narration/card/evidence/chart/outro beat —
-   pacing, mispronunciations, unnatural emphasis.
+1. TTS listen-through of every narration/card/evidence/chart beat —
+   pacing, mispronunciations, unnatural emphasis. Confirm the closing beat
+   actually lands on "...God bless." on screen and in audio.
+   1b. **Quote-voice listen-through** of every `excerpt` beat — the second
+   voice reads the source's words verbatim, its sex matches the person
+   quoted (`voice: quote_male | quote_female`), the `[...]` pause lands
+   where the cut is, and the contrast with the host voice is audible
+   (compare `audio/x01.norm.wav` against a neighbouring narration beat).
 2. Caption sync spot-check — a few beats compared by eye against the
    audio.
 3. Phone legibility — view `storyboard.png`/a real frame at actual phone
