@@ -69,14 +69,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n06` (narration, ~7.6s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** solemn
-- **Narration:** To be fair, some members really do use that line as a conversation-ending excuse for anything inconvenient. Even our own Church leaders have pushed back on that habit.
+- **Narration:** To be fair, some members really do use that line as a conversation-ending excuse for anything inconvenient. Even our own Church leaders have pushed back on that habit.(remove this line)
 - **Sources:** mcclellan-translated-correctly
 - **Notes:** 
 
 ## 11. `n06b` (narration, ~10.6s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** Most academic textual critics do actually prefer newer, older Greek manuscripts to the King James's own base text. That's a real, separate, much older debate -- it has nothing to do with the eighth Article of Faith at all.
+- **Narration:** Most academic textual critics do actually prefer newer, older Greek manuscripts to the King James's own base text. That's a real, separate, much older debate -- it has nothing to do with the eighth Article of Faith at all. (remove this line)
 - **Sources:** mcclellan-translated-correctly
 - **Notes:** 
 
@@ -116,7 +116,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 17. `n99` (narration, ~7.4s)
 - **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
 - **Pose:** encouraging
-- **Narration:** We're not asking you to take our word for any of this at all. Go read Revelation chapter 22 yourself, right next to chapter 1. God bless.
+- **Narration:** We're not asking you to take our word for any of this at all. Go read Revelation chapter 22 yourself, right next to chapter 1. God bless. (dont like the close. no need to say the "take our word" and invite to read revelation". maybe a bit stronger. 
 - **Notes:** 
 
 ## Full source transcript
