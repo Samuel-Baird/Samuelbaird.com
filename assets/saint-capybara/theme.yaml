@@ -74,16 +74,21 @@ layout:
   # 660), clip/card top=1450/1370 (captions end 1120).
 
   # CLIP mode (kind: clip) -- source video fills the canvas.
-  # Sprite is bottom-RIGHT (2026-09-09 user feedback -- was bottom-left in
-  # layout.version 2's initial numbers). x0 mirrors the old 32px left
-  # margin: 1080 - 32 - 400 = 648. Captions sit in a separate vertical
-  # band (y 860-1120) above the sprite's box, so the two never overlap --
+  # Sprite is bottom-LEFT (2026-09-09 user feedback -- REVERSED the
+  # 2026-09-09-earlier-that-day "bottom-right" change; see
+  # feedback_capy_clip_sprite_bottom_right.md, superseded). Also pushed
+  # lower than every other mode via its own `sprite_bottom` override
+  # (1900 vs the shared 1850 -- see top-level `sprite_bottom:` above) per
+  # the same feedback: "moved down lower... when overlaid on original
+  # clips". Captions sit in a separate vertical band (y 860-1120) above
+  # the sprite's box (top = 1900-400 = 1500), so the two never overlap --
   # keep it that way if either number ever changes; captions win the
   # band, resize/reposition the sprite instead.
   clip:
     letterbox_band: { y0: 230, y1: 850 }               # landscape sources fit here, over a blurred cover copy
     letterbox_bg: { blur_scale: 4, boxblur: "10:2", dim: 0.45 }
-    sprite:   { x0: 648, size: 400, outline_px: 5, shadow: { dx: 10, dy: 10, alpha: 110 } }
+    sprite_bottom: 1900                                # per-mode override of the top-level sprite_bottom (1850)
+    sprite:   { x0: 32, size: 400, outline_px: 5, shadow: { dx: 10, dy: 10, alpha: 110 } }
     captions: { y0: 860, y1: 1120, max_width: 960 }
 
   # HOST mode (kind: narration) -- parchment or full-bleed freeze, big sprite.

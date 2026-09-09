@@ -122,7 +122,7 @@ class Theme:
         m = self.layout[mode]
         s = m["sprite"]
         size = s["size"]
-        bottom = self.sprite_bottom
+        bottom = m.get("sprite_bottom", self.sprite_bottom)
         if "x_center" in s:
             x0 = s["x_center"] - size // 2
         else:
