@@ -68,7 +68,7 @@ def _cache_key(theme: Theme, pose: str, spec: SpriteSpec) -> str:
     ground = spec.ground_shadow or {}
     parts = [
         pose,
-        str(spec.box[2] - spec.box[0]),
+        f"b{spec.box[0]}_{spec.box[1]}_{spec.box[2]}_{spec.box[3]}",
         f"o{spec.outline_px}",
         f"s{shadow.get('dx',0)}x{shadow.get('dy',0)}a{shadow.get('alpha',0)}",
         f"g{ground.get('rx',0)}x{ground.get('ry',0)}a{ground.get('alpha',0)}",

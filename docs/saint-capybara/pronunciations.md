@@ -52,3 +52,37 @@ likely to recur across LDS-history/doctrine videos. Copy it into a new
 project's `script/pronunciations.yaml` and add project-specific proper
 nouns as they come up; delete entries that never appear in that project's
 narration if you want a lean file (optional — extra entries are harmless).
+
+## Book of Mormon name list (growing reference, not auto-copied)
+
+`assets/saint-capybara/templates/bofm-pronunciations.yaml` is a separate,
+much larger (342-entry) reference covering every proper noun in the
+Church's official Book of Mormon pronunciation guide
+(<https://www.churchofjesuschrist.org/study/scriptures/bofm/pronunciation?lang=eng>).
+Unlike the general seed list above, **this one is not meant to be copied
+wholesale into every project** — pull individual entries into a project's
+`script/pronunciations.yaml` as its narration actually needs them.
+
+Each entry carries:
+- `respelling:` — the Church guide's own diacritic notation, verbatim
+  (e.g. `nēʹfī` for Nephi) — the source of truth if the `ipa:` field ever
+  needs re-deriving.
+- `ipa:` — a **mechanical, rule-based conversion** of that respelling to
+  IPA (vowel-symbol and stress-mark substitution, no vowel reduction in
+  unstressed syllables, no dialect judgment calls). It is a reasonable
+  starting guess, not a verified transcription.
+- `status: unverified` on every entry, by design — none of these 342 have
+  been checked by ear against a real Kokoro render.
+
+**This is the "build on over time" list**: when a project actually uses a
+name from it, copy that one entry into the project's own
+`script/pronunciations.yaml`, listen to the render, fix the `ipa:` field
+by ear if it's off, and flip `status` to `verified-by-ear <date>` there.
+Consider periodically porting newly-verified entries back into this shared
+file so the next project that needs the same name starts from a checked
+pronunciation instead of the raw mechanical guess.
+
+Where a name also already exists in the general seed list above (Nephi,
+Moroni, Lehi, Mosiah, Zarahemla, Cumorah, Nauvoo, Nibley, ...), that seed
+entry is hand-curated and takes precedence over this file's mechanical
+conversion of the same name.

@@ -63,16 +63,23 @@ layout:
   # y 250-1580. Sprite feet may brush the username band by design --
   # see brand.md sec 8.
   platform_safe: { top: 250, bottom: 340, right: 150 }
-  sprite_bottom: 1600              # every mode's sprite feet sit on this line
+  sprite_bottom: 1850              # every mode's sprite feet sit on this line
+  # 2026-09-09 (user feedback): moved down from 1600 to 1850 -- "slightly
+  # above bottom of image" -- since a caching bug (see capy/sprites.py
+  # _cache_key, fixed same day) had been silently reusing stale
+  # bottom-left-positioned sprite renders for CLIP-mode beats, which read
+  # as the sprite "covering" the source video's own burned-in captions.
+  # 1850 keeps every mode's sprite top comfortably clear of that mode's
+  # caption band even with the extra headroom: host top=930 (captions end
+  # 660), clip/card top=1450/1370 (captions end 1120).
 
   # CLIP mode (kind: clip) -- source video fills the canvas.
   # Sprite is bottom-RIGHT (2026-09-09 user feedback -- was bottom-left in
   # layout.version 2's initial numbers). x0 mirrors the old 32px left
   # margin: 1080 - 32 - 400 = 648. Captions sit in a separate vertical
-  # band (y 860-1120) above the sprite's box (top = sprite_bottom(1600) -
-  # size(400) = y 1200), so the two never overlap -- keep it that way if
-  # either number ever changes; captions win the band, resize/reposition
-  # the sprite instead.
+  # band (y 860-1120) above the sprite's box, so the two never overlap --
+  # keep it that way if either number ever changes; captions win the
+  # band, resize/reposition the sprite instead.
   clip:
     letterbox_band: { y0: 230, y1: 850 }               # landscape sources fit here, over a blurred cover copy
     letterbox_bg: { blur_scale: 4, boxblur: "10:2", dim: 0.45 }
