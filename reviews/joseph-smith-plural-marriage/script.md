@@ -5,12 +5,26 @@ your feedback — doing the plural-marriage claim justice (the
 sealing-vs-sexual-relations distinction, the marriage-standard question)
 didn't fit in the same 60-180s video as Part 1.
 
-**Estimated total runtime: ~131.9s** (from `capy_check_sources.py`),
-within the 60-180s window.
+**Estimated total runtime: ~177.0s** (from `capy_check_sources.py`) —
+**close to the 180s ceiling now**, after the 2026-09-09 additions below.
+Still technically within budget, but there's very little margin left; if
+a real TTS pass pushes it over, n08 (the marriage-standard beat, ~27s) is
+the trim candidate.
 
-**2026-09-08 second revision**: dropped the closing "some criticism is
+**2026-09-08 revision**: dropped the closing "some criticism is
 legitimate" beat and the "Sources are in the description" outro line —
 see `docs/saint-capybara/script-format.md`'s closing conventions.
+
+**2026-09-09 revision**: two more precision passes per your feedback:
+- **n04** now names Fanny Alger specifically with her actual age range,
+  rather than a vague "sixteen or seventeen" — I could not verify your
+  recollection of "sealed a few days before she turned seventeen" (see
+  `research/claims.md` for exactly what I checked and what the record
+  supports instead).
+- **n05-n06** are new: plural marriage framed as a divinely commanded
+  *exception* to monogamy, not just "a 19th-century practice" — Jacob 2
+  (Book of Mormon) and D&C 132's citation of Abraham/Jacob/David via
+  2 Samuel 12:8.
 
 **Sensitive: true** — no `amused`/`happy` poses anywhere below.
 
@@ -74,12 +88,39 @@ Sources: `helen-kimball-nancy-winchester-ages`
 > civil husbands."* — Brian & Laura Hales, josephsmithspolygamy.org
 Sources: `josephsmithspolygamy-sexual-relations`
 
-**n04** · narration · ~7.9s · pose: solemn · stage: blank
-> "Among the wives where there is evidence of a sexual relationship, the
-> youngest were sixteen or seventeen — not fourteen."
-Sources: `helen-kimball-nancy-winchester-ages`, `josephsmithspolygamy-sexual-relations`
+**n04** · narration · ~17.0s · pose: solemn · stage: blank
+> "The youngest with any evidence at all was Fanny Alger, born in
+> September 1816 — historians estimate she was between sixteen and
+> nineteen when it began, most likely closer to eighteen or nineteen.
+> Everyone else with real evidence was seventeen or older."
+Sources: `fanny-alger-age`, `helen-kimball-nancy-winchester-ages`, `josephsmithspolygamy-sexual-relations`
 
-**n05** · narration · ~15.7s · pose: solemn · stage: blank
+---
+
+### NEW — a temporary, commanded exception, not the norm
+
+**n05** · narration · ~16.6s · pose: teaching · stage: blank
+> "Within the faith, this was always framed as a commanded exception, not
+> the norm. The Book of Mormon actually holds up monogamy as the
+> standard, and even calls David and Solomon's many wives 'abominable' —
+> but the same chapter adds an exception."
+Sources: `jacob-2-scripture`
+
+**q03** · card · ~2.5s · pose: quote
+> Narration: "Right there in Jacob chapter two."
+> On-screen card: *"For if I will, saith the Lord of Hosts, raise up seed
+> unto me, I will command my people; otherwise they shall hearken unto
+> these things."* — Jacob 2:30, Book of Mormon
+Sources: `jacob-2-scripture`
+
+**n06** · narration · ~15.7s · pose: reading · stage: blank
+> "Joseph Smith's revelation on plural marriage leaned on that same idea,
+> citing Abraham, Jacob, and David as men who were commanded to it —
+> tracing back to God telling David, 'I gave thee thy master's wives into
+> thy bosom.'"
+Sources: `dc132-2samuel12`
+
+**n07** · narration · ~15.7s · pose: solemn · stage: blank
 > "This was a nineteenth-century practice. The Church officially ended
 > new plural marriages in 1890, and it isn't how marriage works in the
 > Church today — saying that doesn't undo the history, it places it
@@ -94,7 +135,7 @@ Sources: `od1-1890`
 > Source ("the ex-Mormon"): "...and they believe that gay relationships
 > are an abomination."
 
-**n06** · narration · ~27.0s · function: explain · stage: blank · opinion: true
+**n08** · narration · ~27.0s · function: explain · stage: blank · opinion: true
 > "One more pattern: she calls plural marriage scandalous, but treats it
 > as obvious that consenting adults should be free to marry whoever they
 > love — she says as much about same-sex couples. If that's the
@@ -102,7 +143,7 @@ Sources: `od1-1890`
 > above is separate and serious — set that aside. We're not answering
 > either question, just asking for one consistent standard."
 
-**n07** · outro (pre-sign-off) · ~5.0s · pose: encouraging
+**n09** · outro (pre-sign-off) · ~5.0s · pose: encouraging
 > "That's the honest version of the marriage claim."
 
 ---

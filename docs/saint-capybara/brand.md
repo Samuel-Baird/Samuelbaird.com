@@ -69,6 +69,20 @@ acknowledge a critic's valid concerns; allow partial agreement ("Yes, that
 happened. Here is the context."); precision in comparison — never
 "Christians believe X" when the belief is particular to one tradition.
 
+**How "acknowledging a critic's valid concerns" actually happens (2026-09-09):**
+through the substantive response itself — conceding what's true, citing
+real sources, correcting imprecision without denying the underlying
+fact. **Don't also add a separate meta-statement praising critics as a
+class** ("some criticism is legitimate and worth sitting with," "not
+every critic is acting in bad faith") once a specific claim has already
+been fact-checked and clarified on screen — that's redundant, not extra
+charity: the fact-check *is* the acknowledgment. Reserve an explicit
+fairness callout for cases where the video hasn't otherwise addressed the
+specific unfairness (e.g. correcting an actual misquote, or naming a
+one-sided generalization the clip itself makes) — see
+`script-format.md`'s closing conventions for the concrete rule this
+produced.
+
 **Signature phrasing** (locked at Step 4 with the user, recorded here once
 chosen — deliberately new, never reused from the creator's other work): an
 opening formula and a closing formula, used consistently across every
