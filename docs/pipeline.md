@@ -52,6 +52,17 @@ would have kept, or keeping footage they wanted flagged.
 4. **Build the script doc.** `tools/build_script_docx.py` combines the
    transcript, flags, and gathered images into `script\<slug>-script.docx`
    per `docs/script-doc-format.md`. Send the user the file.
+4a. **Push a readable copy for review (2026-09-08 convention).** In
+   addition to sending the file directly, copy the review document (the
+   script doc, or for the Saint Capybara type, `script/script.md`) into
+   this repo under `reviews/<slug>/`, commit, push, and give the user the
+   GitHub blob URL. This applies to every video type, not just Saint
+   Capybara — the user wants review documents to live somewhere linkable,
+   not just referenced by local path. Only do this for markdown/text
+   review documents, not source video/audio/binary output, and confirm
+   the repo's remote is still private before pushing anything with
+   sensitive content (see `docs/saint-capybara/brand.md` §9-10 for why
+   that check matters specifically for the Saint Capybara brand).
 5. **Wait.** The user edits the doc — removing CUT/CHECK markers they don't
    want acted on, filling wish-list images, reordering or trimming text — and
    returns it. Do not proceed to §2 on an unreviewed doc.
