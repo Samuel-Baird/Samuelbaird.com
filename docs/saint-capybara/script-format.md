@@ -187,6 +187,13 @@ keyed on `(voice, speed, theme)`) — run `tools/capy_outro.py --build
 
 ## Five recurring response formats
 
+See also `docs/saint-capybara/apologetics-playbook.md`'s six-step
+response structure (steelman → name the assumption → test whether it's
+actually necessary → give the LDS position → positive evidence → compare
+explanatory power) — these five beat-group *shapes* and that six-step
+argument *arc* aren't competing systems; a beat group below is usually
+where one or two of the six steps live.
+
 Most response-format videos combine 2-4 of these beat groups (never force
 all five into one video):
 

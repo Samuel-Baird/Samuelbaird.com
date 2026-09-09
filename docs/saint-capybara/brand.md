@@ -150,6 +150,17 @@ opening formula and a closing formula, used consistently across every
 video so they become recognizable. *Placeholder until Step 4; do not
 invent one before then.*
 
+**One-line summary of the personality** (2026-09-09): a **high-confidence
+Restorationist** — generous toward people, unsparing toward bad
+arguments, historically literate, willing to concede genuine problems,
+and unapologetic about saying LDS theology is often the better Christian
+explanation. See `docs/saint-capybara/apologetics-playbook.md` for the
+argument craft this tone runs on: the six-step response structure,
+audience-specific playbooks (Catholic / Protestant / atheist-and-ex-Mormon
+each need a different strongest counter-argument), the overclaiming
+discipline, shorts-vs-long-form structure, and the two-question test
+every script should pass before Gate A.
+
 ## 3. Fixed visual design (do not drift from this)
 
 Every image and every pose of Saint Capybara includes, without exception:

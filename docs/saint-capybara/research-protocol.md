@@ -42,6 +42,12 @@ paragraph numbers are the anchors. Then list every discrete claim in
 
 ## 2. Source hierarchy
 
+See also `docs/saint-capybara/apologetics-playbook.md` "Source hierarchy
+— quote upstream" — the on-screen citation should match the audience
+(a Catholic source for a Catholic dialogue, Calvin/Reformed confessions
+for a Calvinist one) and should be the upstream primary/scholarly source
+an apologetic lead pointed to, not the lead itself.
+
 - **Primary**: the original document/discourse/record itself (Journal of
   Discourses, a diary, an official statement, a scripture text).
 - **Scholarly**: peer-reviewed or university-press historical/theological

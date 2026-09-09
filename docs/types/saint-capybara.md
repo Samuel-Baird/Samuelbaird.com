@@ -6,7 +6,11 @@ Resolve, but built differently than the other three types — see
 `docs/saint-capybara/hybrid-resolve-pipeline.md`), no shared visual
 identity with the other three types. Read `docs/saint-capybara/brand.md`
 first; it is the source of truth for tone, visual design, and the
-anonymity rules that make this type work at all.
+anonymity rules that make this type work at all. Read
+`docs/saint-capybara/apologetics-playbook.md` alongside it before writing
+any response-video script — it's the argument-craft companion to
+`brand.md` sec 2's tone (six-step structure, audience-specific
+playbooks, overclaiming discipline, the pre-publish two-question test).
 
 **Uses DaVinci Resolve, but not the other types' Build stage.** Saint
 Capybara videos ARE edited and rendered in Resolve (via the
