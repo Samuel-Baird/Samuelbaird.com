@@ -70,7 +70,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n05` (narration, ~14.2s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** thoughtful
-- **Narration:** The Church's own explanation is what scholars call the catalyst theory: that the papyri prompted a revelation about Abraham's life, rather than serving as a literal source text. Whether that is a satisfying answer is a question of faith, not history -- and it's not one a capybara can settle for you.
+- **Narration:** The Church's own explanation is what scholars call the catalyst theory: that the papyri prompted a revelation about Abraham's life, rather than serving as a literal source text. Whether that is a satisfying answer is a question of faith, not history -- and it's not one a capybara can settle for you. (instead i need to note that the historical record shows this isnt the scroll that joseph translated from. even if it was, there are theories like the catalyst theory that done rule out the impossibility)
 - **Sources:** official-boa-translation
 - **Notes:** 
 
