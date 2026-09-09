@@ -1,6 +1,6 @@
 # Script — Is Mormonism a 'Different Jesus,' a Bad Translation, and a Closed Canon?
 
-**Slug:** `mark-driscoll` | **Estimated runtime:** 149.6s (budget 60-180s) | **Source time:** 44.1s (29%)
+**Slug:** `mark-driscoll` | **Estimated runtime:** 146.9s (budget 60-180s) | **Source time:** 44.1s (30%)
 
 **Hook (title/description only, not shown on screen):** "A pastor says we worship a different Jesus, dodge the Bible, and can't add new scripture. Let's check."
 
@@ -12,24 +12,24 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 10.34s–16.42s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~4.9s)
+## 02. `n01` (narration, ~5.7s)
 - **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** thoughtful
 - **Narration:** He's right that Latter-day Saints describe the person of the Trinity differently in some real ways. But 'different Jesus' oversells that.
 - **Sources:** critic-video
 - **Notes:** 
 
-## 03. `n02` (narration, ~7.9s)
+## 03. `n02` (narration, ~10.9s)
 - **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
 - **Pose:** source
-- **Narration:** The Book of Mormon has its own testimony of Christ -- his resurrected, tangible body shown to about twenty-five hundred witnesses in the Americas. That's not a different Jesus. (this book of mormon bit doesnt seem related? maybe use BoM quotes or say that the book of mormon title page says that he is the eternal God)
-- **Sources:** millet-different-jesus
+- **Narration:** Look at the Book of Mormon's own title page -- it states plainly that its whole purpose is convincing 'Jew and Gentile that Jesus is the Christ, the Eternal God, manifesting himself unto all nations.' That's not a different Jesus.
+- **Sources:** bom-title-page
 - **Notes:** 
 
-## 04. `n03` (narration, ~8.7s)
+## 04. `n03` (narration, ~7.9s)
 - **Original Video Transcript:** and the truth is that Jesus Christ is the same yesterday, today, and forever, and there Jesus is a different Jesus.
-- **Pose:** concerned
-- **Narration:** What's actually different is how we describe the Godhead's nature -- not who Jesus is or what he did. He also called that a 'counterfeit Christ.' A real disagreement isn't a counterfeit. (remove this response)
+- **Pose:** skeptical
+- **Narration:** He also calls this a cult. In practice, that word mostly just means 'a group of Christians whose theology evangelicals disagree with' -- it's not a neutral, agreed-upon term.
 - **Sources:** critic-video
 - **Notes:** 
 
@@ -46,18 +46,18 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 46.08s–57.5s @ speed 1.0
 - **Notes:** 
 
-## 07. `n04` (narration, ~9.5s)
+## 07. `n04` (narration, ~7.9s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** That's not what we actually say. Our own Article of Faith reads: we believe the Bible to be the word of God, as far as it is translated correctly. 
+- **Narration:** That's not what we actually say. Our own Article of Faith reads: we believe the Bible to be the word of God, as far as it is translated correctly.
 - **Sources:** article-of-faith-8
 - **Notes:** 
 
-## 08. `n05` (narration, ~9.0s)
+## 08. `n05` (narration, ~12.3s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** And the real reason we prefer the King James isn't a manuscript claim. The Church's own 1992 statement measures accuracy against the Book of Mormon and modern revelation, not against other Bible translations. (check these sources: https://www.thechurchnews.com/1992/6/20/23259463/letter-reaffirms-use-of-king-james-version-of-bible/, https://www.churchofjesuschrist.org/study/manual/translations-and-downloads/scriptures/holy-bible?lang=eng the church handbook says other bible translations are fine to use but KJV is preferred version for church use)
-- **Sources:** mcclellan-translated-correctly
+- **Narration:** And the real reason we prefer the King James isn't a manuscript claim. The Church's own 1992 statement measures accuracy against the Book of Mormon and modern revelation. Other translations are fine for personal study -- King James is just the standard for church meetings.
+- **Sources:** mcclellan-translated-correctly, church-news-1992-kjv, church-bible-translations-page
 - **Notes:** 
 
 ## 09. `n06` (narration, ~6.5s)
@@ -70,7 +70,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n06b` (narration, ~9.0s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** Most academic textual critics do actually prefer newer critical Greek texts to the King James's base text. That's a separate, older debate that has nothing to do with the eighth Article of Faith. (remove this line)
+- **Narration:** Most textual critics do actually prefer newer Greek manuscripts to the King James's own base text. That's a separate, older debate -- it has nothing to do with the eighth Article of Faith.
 - **Sources:** mcclellan-translated-correctly
 - **Notes:** 
 
@@ -87,10 +87,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** fair-closed-canon, rev-22-18-19
 - **Notes:** 
 
-## 13. `n08` (narration, ~10.4s)
+## 13. `n08` (narration, ~10.6s)
 - **Original Video Transcript:** through John at the end of Revelation is, don't add anything to these words and don't take anything from these words. And someone comes along and says, I would like to add to these words. It's evil.
 - **Pose:** source
-- **Narration:** Earlier in the same book, John calls it 'this prophecy,' sent to seven specific churches. He's talking about his own scroll -- and the same 'don't add' language is in Deuteronomy and the very Proverbs verse he quoted. (maybe emphasize, but driscoll seems to accept books written after deuteronomy and proverbs as scripture. he seems to be pre-supposing all these text are referring to the 66 book protestant canon)
+- **Narration:** Earlier in the same book, John calls it 'this prophecy' -- his own scroll. That same 'don't add' language is already in Deuteronomy and the Proverbs verse he quoted, and he still accepts everything written after those as scripture.
 - **Sources:** fair-closed-canon, rev-22-18-19
 - **Notes:** 
 
@@ -100,28 +100,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 163.06s–177.9s @ speed 1.0
 - **Notes:** 
 
-## 15. `n09` (narration, ~5.7s)
+## 15. `n09` (narration, ~10.9s)
 - **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
 - **Pose:** teaching
-- **Narration:** That question assumes revelation stopped with the apostles. That's the actual debate -- not something either side gets to just assume. (we claim revelation, not more wisdom and insight. also, which christianity existed until the 19th century? i can tell you most of that christianity isnt evangelical)
+- **Narration:** That question assumes revelation stopped with the apostles -- we're not claiming more wisdom, we're claiming God kept speaking. And most of that 'first-to-nineteenth-century Christianity' he's counting is Catholic and Orthodox, which his own tradition doesn't treat as authoritative either.
 - **Sources:** critic-video
 - **Notes:** 
 
-## 16. `n10` (narration, ~6.0s)
-- **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
-- **Pose:** source
-- **Narration:** History doesn't show revelation stopping in one clean moment. It shows Christians disagreeing for centuries about which books even counted as scripture. (remove line)
-- **Sources:** fair-closed-canon, rev-22-18-19
-- **Notes:** 
-
-## 17. `n10b` (narration, ~6.8s)
-- **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
-- **Pose:** thoughtful
-- **Narration:** This is really the deeper Protestant-versus-Restorationist disagreement: whether centuries of church tradition, or a living prophet, gets the final say on what counts as scripture. (remove line)
-- **Sources:** critic-video
-- **Notes:** 
-
-## 18. `n99` (narration, ~6.3s)
+## 16. `n99` (narration, ~6.3s)
 - **Original Video Transcript:** Since we have Christianity from the first century all the way up to the 19th century, why do we think that anyone who is coming in the 1800s would have more wisdom and insight than those who walked with Jesus Christ?
 - **Pose:** encouraging
 - **Narration:** We're not asking you to take our word for any of this. Read Revelation 22 yourself, right next to chapter 1. God bless.
