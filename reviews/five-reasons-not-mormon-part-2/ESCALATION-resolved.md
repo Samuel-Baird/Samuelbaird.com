@@ -65,3 +65,30 @@ This claim is blocked pending your input. The rest of this video
 (claims 2 and 3, the ambition/wealth claim and the Moroni-witnesses
 comparison) does not depend on this claim and has proceeded
 independently to Gate A.
+
+## Resolution (2026-09-09)
+
+User provided direction: concede the practice plainly, note polygamy's
+biblical precedent, note that most marriages have no documented evidence
+of sexual relations, and specifically research whether Helen Mar Kimball
+(the likely 14-year-old referenced) has any evidence of a sexual
+relationship with Joseph Smith -- with a lead to
+josephsmithspolygamy.org/common-questions/plural-marriages-sexual/.
+
+That page was fetched and traced to its underlying scholarly source
+(Brian C. Hales, *Joseph Smith's Polygamy*, 2013, held in the Gospel
+Scholar Archive) per research-protocol.md's apologetic-lead rule. Findings:
+10 of Joseph Smith's ~30-33 documented plural wives have positive
+evidence of a sexual relationship (three testified to one under oath in
+the 1892 Temple Lot Case depositions); Helen Mar Kimball was not among
+the wives who so testified, despite living close enough to have done so
+-- an argument from absence, not a positive record, and scripted as such
+("no evidence has surfaced," not "did not happen").
+
+This resolved Option 3 from below, expanded slightly: a plain concession
+of the facts (roughly thirty wives, teenagers, women already married),
+the biblical-precedent point, the sexual-relations-evidence point, and
+the Helen Mar Kimball point, closing on an explicit refusal to flatten
+the history into either "nothing happened" or "the worst framing is
+exactly right." Scripted into `script/beats.yaml` beats c01/n01-n05 of
+`five-reasons-not-mormon-part-2`. Gate A unblocked.
