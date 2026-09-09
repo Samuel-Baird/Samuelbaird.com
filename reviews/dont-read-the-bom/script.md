@@ -1,6 +1,6 @@
 # Script — Was Joseph Smith a "treasure digger" who "secretly" took 30+ wives?
 
-**Slug:** `dont-read-the-bom` | **Estimated runtime:** 170.0s (budget 60-180s) | **Source time:** 9.5s (6%)
+**Slug:** `dont-read-the-bom` | **Estimated runtime:** 253.2s (budget 60-180s) | **Source time:** 12.8s (5%)
 
 **Hook (title/description only, not shown on screen):** 'They said RUN before you hear him out'
 
@@ -26,13 +26,13 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 04. `n02` (narration, ~28.6s)
 - **Pose:** teaching
-- **Narration:** What the clip leaves out: firsthand witnesses also describe him using a separate set of "spectacles," the Urim and Thummim, at other points in the process. "Treasure digger" makes it sound like a con. What the record actually shows is a young man from a folk-magic milieu common to his time and place, using more than one method, over months, to produce five hundred pages he dictated without notes.
+- **Narration:** What the clip leaves out: firsthand witnesses also describe him using a separate device — often called the "interpreters" — at other points in the process. "Treasure digger" makes it sound like a con. What the record actually shows is a young man from a folk-magic milieu common to his time and place, using more than one method, over months, to produce five hundred pages he dictated without notes.
 - **Sources:** mormonr-translation, bushman-gold-plates
 - **Notes:** 
 
-## 05. `n02b` (narration, ~23.2s)
+## 05. `n02b` (narration, ~36.8s)
 - **Pose:** teaching
-- **Narration:** So follow that through: no notes, no manuscript — just a stone in a hat. From that, he dictated five hundred connected pages — names, geography, doctrine — over weeks, without revising. That leaves two real options: either Joseph Smith was one of the great unrecognized literary geniuses in American history, or he was actually inspired.
+- **Narration:** Sit with what she just conceded: his face was in the hat. No light, no page, no manuscript in front of him — nothing to read. And from that, she says, he produced a five-hundred-page book: names, places, doctrine, all internally consistent, dictated for weeks without ever going back to revise. If you believe that part of her own claim, you already believe Joseph Smith did something extraordinary. So which is it: was he one of the great unrecognized literary geniuses in American history, or was he actually inspired?
 - **Sources:** mormonr-translation
 - **Notes:** 
 
@@ -47,39 +47,61 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** hales-history
 - **Notes:** 
 
-## 08. `n04` (narration, ~19.9s)
+## 08. `n03b` (narration, ~17.8s)
+- **Pose:** source
+- **Narration:** Also worth knowing: many of those sealings were what's called 'eternity-only' — a bond for the next life, with no shared household and no physical relationship in this one. Counting every sealing together, documented sexual relations appear in less than half of them.
+- **Sources:** joseph-smith-polygamy-sexual, hales-history
+- **Notes:** 
+
+## 09. `n03c` (narration, ~28.1s)
+- **Pose:** source
+- **Narration:** There's scriptural context too. In the Book of Mormon, Jacob condemns plural marriage whenever people take it up on their own — but says God can command it 'to raise up seed,' the same exception given for Abraham, Jacob, and David. Latter-day Saints believe Joseph Smith received that same kind of commandment. That exception comes from the Book of Mormon itself, not something invented later to explain Nauvoo.
+- **Sources:** book-of-mormon-jacob2
+- **Notes:** 
+
+## 10. `n04` (narration, ~19.9s)
 - **Pose:** source
 - **Narration:** Here's the part that's missing: this was not, and has never been since, ongoing Church practice. It began privately around 1841, was only publicly acknowledged in 1852, and the Church ended new plural marriages with the 1890 Manifesto, fully by 1904. Anyone who practices it today is excommunicated.
 - **Sources:** hales-history
 - **Notes:** 
 
-## 09. `n05` (narration, ~23.2s)
+## 11. `n05` (narration, ~23.2s)
 - **Pose:** solemn
 - **Narration:** One more thing about that secrecy: Protestant hostility toward Latter-day Saints predates this by years — Missouri's governor ordered Mormons exterminated or driven out in 1838. But polygamy specifically helped kill Joseph Smith: a Nauvoo newspaper exposed it in June 1844, and the unrest that followed led straight to his murder at Carthage two weeks later.
 - **Sources:** encyclopedia-extermination-order, mormonr-martyrdom
 - **Notes:** 
 
-## 10. `n99` (narration, ~25.7s)
+## 12. `c03` (clip, ~3.3s)
+- **Pose:** listening
+- **Clip:** Source video, 66.96s–70.28s @ speed 1.0
+- **Notes:** 
+
+## 13. `n06` (narration, ~20.3s)
+- **Pose:** skeptical
+- **Narration:** Notice the standard underneath a line like that: consenting adults should get to define marriage and relationships however they want. Fine — but that principle doesn't obviously stop at two people. If the real objection to plural marriage is consent, not headcount, what's the actual argument against consensual polygamy?
+- **Notes:** 
+
+## 14. `n99` (narration, ~25.7s)
 - **Pose:** encouraging
 - **Narration:** The clip ends with the believer sarcastically saying ex-Mormons aren't a good place to get information about the Church. Honestly, she's not wrong — random TikTok commentary, from either side, isn't where you should stop. Good sources are the historical record itself: primary documents and real scholarship, much of which the Church has made public. Go check them yourself. Including on me.
 - **Notes:** 
 
-## 11. `outro-01` (outro, ~2.5s)
+## 15. `outro-01` (outro, ~2.5s)
 - **Pose:** sign-father
 - **Narration:** In the name of the Father,
 - **Notes:** 
 
-## 12. `outro-02` (outro, ~1.7s)
+## 16. `outro-02` (outro, ~1.7s)
 - **Pose:** sign-son
 - **Narration:** and of the Son,
 - **Notes:** 
 
-## 13. `outro-03` (outro, ~2.1s)
+## 17. `outro-03` (outro, ~2.1s)
 - **Pose:** sign-holy
 - **Narration:** and of the Holy Ghost,
 - **Notes:** 
 
-## 14. `outro-04` (outro, ~1.2s)
+## 18. `outro-04` (outro, ~1.2s)
 - **Pose:** sign-spirit-amen
 - **Narration:** Amen.
 - **Notes:** 
