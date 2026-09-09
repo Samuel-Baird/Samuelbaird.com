@@ -7,9 +7,10 @@
     solo-history — all use the same folder set and a Resolve project).
     See docs/types/saint-capybara.md and docs/saint-capybara/*.md for
     -Type saint-capybara, which uses a different folder set (no cards\,
-    adds research\/audio\/captions\/frames\) and no Resolve project at
-    all (ffmpeg-only render pipeline). Safe to re-run — existing
-    folders/files are left alone.
+    adds research\/audio\/captions\/frames\). Its Resolve project is
+    created later, at build time (see
+    docs/saint-capybara/hybrid-resolve-pipeline.md), not by this script.
+    Safe to re-run — existing folders/files are left alone.
 
 .EXAMPLE
     .\new_project.ps1 -Slug sacrament-2026

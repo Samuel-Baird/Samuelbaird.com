@@ -3,9 +3,12 @@
 This is the exact contract between `script/beats.yaml` (the single source
 of truth, hand-edited YAML) and everything downstream: `tools/capy/beats.py`
 (schema/validation/durations), `tools/capy_check_sources.py`,
-`tools/capy_check_brand.py`, `tools/capy_storyboard.py` (which also renders
-`script/script.md`, the human-reviewable document for Gate A), and
-`tools/capy_render.py` (not built yet — post-Gate-A).
+`tools/capy_check_brand.py`, `tools/capy_storyboard.py` (renders
+`script/script.md`, the human-reviewable document for Gate A), and, once
+approved, the post-Gate-A build tools — `tools/capy_tts.py`,
+`tools/capy_beat_plates.py`, `tools/capy_caption_cards.py`,
+`tools/capy_render_beat_clips.py` — documented end to end in
+`docs/saint-capybara/hybrid-resolve-pipeline.md`.
 
 ## Files
 

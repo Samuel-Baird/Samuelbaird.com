@@ -6,6 +6,24 @@ sessions and this server's own knowledge ledger
 (`mcp__davinci-resolve__knowledge`, topic `api-limitations`). Read before a
 build stage, not after something goes silently wrong.
 
+## Project settings
+
+- **`project_manager.safe_set_project_settings` silently reverts a
+  successful write unless `restore: false` is passed.** Without it, a
+  call to change e.g. `timelineResolutionWidth`/`timelineResolutionHeight`
+  reports `success: true` with each field's own `write: true` and a
+  correct `readback` value in the response — but a follow-up
+  `project_settings.get_setting` shows the *original* value; the wrapper
+  restored it after confirming the write worked, treating the whole
+  response as a dry-run-shaped preview by default. Also don't bundle a
+  setting the API can't actually accept (e.g. `timelinePlaybackFrameRate`
+  refused to write in one session) into the same call as one that *can*
+  write — a mixed-success call can revert the writable settings too even
+  with `restore: false` unset from a prior attempt. Pass only the
+  settings you've confirmed are writable, with `restore: false`, and
+  verify with `project_settings.get_setting` afterward — don't trust the
+  write response alone (reproduced 2026-09-09).
+
 ## Building timelines
 
 - **`create_timeline_from_clips` cap.** Fails opaquely ("requires
@@ -61,6 +79,19 @@ build stage, not after something goes silently wrong.
 
 ## Media pool / discovery
 
+- **`media_pool.safe_import_media` (and `import_media`) auto-detects
+  sequentially-numbered same-prefix files as an image/clip *sequence***
+  and merges them into one Media Pool item instead of importing each as
+  its own clip/still — triggered by passing several files like
+  `plate_c01.png`...`plate_c04.png` or `beat_c01.mp4`...`beat_c04.mp4` in
+  the same call (or, likely, having them sit together in the source
+  folder — not confirmed which). There is no documented flag to disable
+  this. Workaround: import one file per call when each file needs to
+  stay an independent clip (reproduced 2026-09-09 building the Saint
+  Capybara pipeline — see `docs/saint-capybara/hybrid-resolve-pipeline.md`).
+  If it happens anyway, `media_pool.delete_clips` (confirm-gated) the
+  grouped item and re-import one at a time; deleting a Media Pool
+  reference does not touch the file on disk.
 - Newly created timelines and freshly imported media sometimes don't show
   up in `folder.get_clips` for the expected folder even after
   `media_pool.refresh()` — a caching bug in the wrapper, not reality. Use

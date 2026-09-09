@@ -6,10 +6,22 @@ type-specific branch in `types/` for the parts that differ.
 
 ## 0. Intake
 
-1. Ask the user: video type (response / interview / solo-history), a short
-   slug (kebab-case, becomes the folder and Resolve project name), and where
-   the source files currently sit.
-2. Run `tools/new_project.ps1 <slug>` to create the project folder:
+1. Ask the user: video type (response / interview / solo-history / **saint-capybara**),
+   a short slug (kebab-case, becomes the folder and, for the first three
+   types, the Resolve project name), and where the source files currently
+   sit. For **saint-capybara**, also ask for the source URL (or confirm a
+   locally-downloaded file plus its URL for metadata) — see
+   `docs/types/saint-capybara.md`, which is a separate branch: no `.docx`
+   script, its own pre-production gate, and a Resolve build stage that
+   works differently from the other three types (see
+   `docs/saint-capybara/hybrid-resolve-pipeline.md` — each beat is
+   pre-composited into one clip before Resolve imports it, rather than
+   cutting raw camera footage). Also has an anonymity system that must
+   not be compromised by reusing anything from this repo's other identity
+   (brand, phrasing, filenames — see that doc's anonymity warning before
+   doing anything else on a saint-capybara project).
+2. Run `tools/new_project.ps1 <slug>` (add `-Type saint-capybara` for that
+   type) to create the project folder:
 
    ```
    D:\Videos\<slug>\
@@ -24,11 +36,18 @@ type-specific branch in `types/` for the parts that differ.
 3. Copy or move source files into `source\`. Create the Resolve project named
    `<slug>`, saved so it lives under the same folder tree (Resolve project
    files live in Resolve's own database, not D:, but keep the project name
-   matched to the slug for traceability).
+   matched to the slug for traceability). **Saint-capybara creates its
+   Resolve project later, at build time, not here** — use
+   `tools/capy_ingest.py` for intake instead; the rest of this document
+   (§1-4) does not apply to saint-capybara, which has its own gates and
+   stages documented start-to-finish in `docs/types/saint-capybara.md`.
 
 ## 1. Pre-production (response and solo-history only)
 
 Interview/podcast videos skip straight to §3 — see `types/interview.md`.
+Saint-capybara does not use this section at all — see
+`docs/types/saint-capybara.md` for its own pre-production stage (research,
+Gate A on `script/script.md`, distinct from the `.docx` script here).
 
 For response and solo-history videos, **no timeline work happens until the
 user has reviewed and returned the script document.** This is a hard gate:

@@ -13,21 +13,23 @@ per-beat wavs at 24kHz, applies gain-only normalization toward -16 LUFS
 with head/tail padding, and writes a 48kHz stereo `.norm.wav` alongside a
 `timing.json` of per-word {w, s, e} from Kokoro's own token timestamps.
 
-IMPORTANT (per this session's task): this tool is built and sanity-tested
-with `--sample` only. It is NOT run against a real project's narration
-beats in this session -- that is Gate A's hard stop (see
-docs/saint-capybara/script-format.md). `--project` mode is implemented per
-the plan for future sessions to use once a script is approved.
+`--project` mode renders real per-beat narration and is gated by Gate A
+(docs/saint-capybara/script-format.md) at the human-process level, not by
+this tool itself -- the caller must have the user's explicit script
+approval in hand before invoking it.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from capy.beats import load_beats
 
 try:  # IPA characters in printed lexicon overrides need a utf-8 stdout on Windows consoles
     sys.stdout.reconfigure(encoding="utf-8")
@@ -79,7 +81,8 @@ def apply_dictionary(text: str, entries: list[dict]) -> str:
     return out
 
 
-def render_sample(text: str, out_path: Path, voice: str, speed: float, *, print_phonemes: bool = False) -> float:
+def _synthesize(text: str, voice: str, speed: float, entries: list[dict], *, print_phonemes: bool = False):
+    """Run one text through Kokoro. Returns (audio: np.ndarray, timings: list[dict])."""
     try:
         from kokoro import KPipeline
     except ImportError as e:
@@ -87,9 +90,7 @@ def render_sample(text: str, out_path: Path, voice: str, speed: float, *, print_
         raise
 
     import numpy as np
-    import soundfile as sf
 
-    entries = load_pronunciation_dict(None)
     processed = apply_dictionary(text, entries)
     if print_phonemes:
         print(f"text with lexicon overrides applied:\n  {processed}")
@@ -116,7 +117,14 @@ def render_sample(text: str, out_path: Path, voice: str, speed: float, *, print_
     if not chunks:
         raise RuntimeError("kokoro produced no audio chunks")
 
-    full = np.concatenate(chunks)
+    return np.concatenate(chunks), timings
+
+
+def render_sample(text: str, out_path: Path, voice: str, speed: float, *, print_phonemes: bool = False) -> float:
+    import soundfile as sf
+
+    entries = load_pronunciation_dict(None)
+    full, timings = _synthesize(text, voice, speed, entries, print_phonemes=print_phonemes)
     sf.write(str(out_path), full, SAMPLE_RATE)
     duration = len(full) / SAMPLE_RATE
 
@@ -124,6 +132,102 @@ def render_sample(text: str, out_path: Path, voice: str, speed: float, *, print_
     timing_path.write_text(json.dumps(timings, indent=2), encoding="utf-8")
     print(f"Wrote {out_path} ({duration:.2f}s, {len(timings)} word timings) and {timing_path}")
     return duration
+
+
+def normalize_wav(src: Path, dst: Path, *, target_lufs: float = TARGET_LUFS, head_pad: float = HEAD_PAD_SECONDS) -> None:
+    """Gain-only loudness normalization to `target_lufs`, resampled to
+    48kHz stereo with `head_pad` seconds of silence padded on both ends.
+
+    Two-pass ffmpeg loudnorm: a single-pass filter is only a rough
+    estimate (confirmed off by ~5 LU on a 2s test clip here), especially
+    on short narration beats. Pass 1 measures the clip's actual
+    integrated loudness/true-peak/range; pass 2 feeds those measured
+    values back in with `linear=true`, which applies a single fixed gain
+    (no dynamic compression -- still "gain-only" per the plan) instead of
+    the coarse single-pass estimate. Word timings (measured against the
+    un-padded, pre-normalization .wav) still line up afterward since
+    gain-only normalization and the head-pad delay don't change timing.
+    """
+    measure_cmd = [
+        "ffmpeg", "-i", str(src),
+        "-af", f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:print_format=json",
+        "-f", "null", "-",
+    ]
+    result = subprocess.run(measure_cmd, capture_output=True, text=True, check=True)
+    stderr = result.stderr
+    json_start = stderr.rfind("{")
+    json_end = stderr.rfind("}") + 1
+    measured = json.loads(stderr[json_start:json_end])
+
+    filt = (
+        f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:"
+        f"measured_I={measured['input_i']}:measured_TP={measured['input_tp']}:"
+        f"measured_LRA={measured['input_lra']}:measured_thresh={measured['input_thresh']}:"
+        f"offset={measured['target_offset']}:linear=true:print_format=none,"
+        f"adelay={int(head_pad * 1000)}|{int(head_pad * 1000)},"
+        f"apad=pad_dur={head_pad}"
+    )
+    apply_cmd = [
+        "ffmpeg", "-y", "-i", str(src),
+        "-af", filt,
+        "-ar", "48000", "-ac", "2",
+        str(dst),
+    ]
+    subprocess.run(apply_cmd, capture_output=True, check=True)
+
+
+BEAT_KINDS_WITH_NARRATION = {"narration", "card", "evidence", "chart", "outro"}
+
+
+def render_project(
+    project: Path,
+    *,
+    voice: str,
+    speed: float,
+    only: set[str] | None = None,
+    force: bool = False,
+    print_phonemes: bool = False,
+) -> int:
+    """Render real narration for every narration-family beat with `text`
+    in `project`'s script/beats.yaml. Writes audio/<id>.wav (24kHz raw),
+    audio/<id>.timing.json (per-word {w,s,e}, relative to the un-padded
+    wav), and audio/<id>.norm.wav (48kHz stereo, -16 LUFS, head/tail
+    padded) for each. Returns the count of beats rendered."""
+    import soundfile as sf
+
+    beats_path = project / "script" / "beats.yaml"
+    doc = load_beats(beats_path)
+    entries = load_pronunciation_dict(project)
+    audio_dir = project / "audio"
+    audio_dir.mkdir(parents=True, exist_ok=True)
+
+    rendered = 0
+    for beat in doc["beats"]:
+        bid, kind = beat["id"], beat["kind"]
+        if kind not in BEAT_KINDS_WITH_NARRATION:
+            continue
+        text = beat.get("text")
+        if not text:
+            continue
+        if only and bid not in only:
+            continue
+
+        wav_path = audio_dir / f"{bid}.wav"
+        norm_path = audio_dir / f"{bid}.norm.wav"
+        timing_path = audio_dir / f"{bid}.timing.json"
+        if wav_path.exists() and norm_path.exists() and timing_path.exists() and not force:
+            print(f"skip {bid} (already rendered; use --force to re-render)")
+            continue
+
+        full, timings = _synthesize(text, voice, speed, entries, print_phonemes=print_phonemes)
+        sf.write(str(wav_path), full, SAMPLE_RATE)
+        timing_path.write_text(json.dumps(timings, indent=2), encoding="utf-8")
+        normalize_wav(wav_path, norm_path)
+        duration = len(full) / SAMPLE_RATE
+        print(f"{bid}: {duration:.2f}s raw, {len(timings)} word timings -> {norm_path.name}")
+        rendered += 1
+
+    return rendered
 
 
 def main() -> int:
@@ -145,13 +249,16 @@ def main() -> int:
         return 0
 
     if args.project:
-        print(
-            "error: --project (real per-beat narration rendering) is intentionally not exercised in this "
-            "session -- Gate A (docs/saint-capybara/script-format.md) requires the user's script approval "
-            "before any TTS is rendered for actual project beats. The --sample path above is the only mode "
-            "this session used, to sanity-check the tool and lock the voice choice."
+        only = set(args.only.split(",")) if args.only else None
+        if args.timestamps == "whisper":
+            print("error: --timestamps whisper (post-hoc realignment fallback) is not implemented yet; only 'kokoro' (the default) is supported.", file=sys.stderr)
+            return 4
+        n = render_project(
+            args.project, voice=args.voice, speed=args.speed,
+            only=only, force=args.force, print_phonemes=args.print_phonemes,
         )
-        return 3
+        print(f"\n{n} beat(s) rendered.")
+        return 0
 
     ap.print_help()
     return 1

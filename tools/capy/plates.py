@@ -246,15 +246,34 @@ def render_plate(
     # --- Hook chip (beat 1 only, in reserved_top) ---
     if beat.get("_is_first") and beat.get("_hook"):
         rz = theme.zone("reserved_top")
-        hook_font = _font(theme, "display", 30)
         w, _ = theme.canvas_size
         text = beat["_hook"]
-        bbox = draw.textbbox((0, 0), text, font=hook_font)
-        tw = bbox[2] - bbox[0]
+        max_w = w - 80
+        size = 30
+        while size > 16:
+            hook_font = _font(theme, "display", size)
+            bbox = draw.textbbox((0, 0), text, font=hook_font)
+            if bbox[2] - bbox[0] <= max_w:
+                break
+            size -= 2
+        else:
+            hook_font = _font(theme, "display", size)
+        lines = _wrap_text(draw, text, hook_font, max_w) if draw.textbbox((0, 0), text, font=hook_font)[2] > max_w else [text]
+        line_h = hook_font.size + 8
+        total_h = len(lines) * line_h
         cx = w // 2
         cy = (rz["y0"] + rz["y1"]) // 2
-        draw.rectangle([cx - tw // 2 - 20, cy - 30, cx + tw // 2 + 20, cy + 30], fill=theme.color_rgba("ink", 220), outline=theme.color_rgba("halo_gold_hex"))
-        draw.text((cx - tw // 2, cy - 18), text, font=hook_font, fill=theme.color_rgba("parchment"))
+        max_tw = max(draw.textbbox((0, 0), line, font=hook_font)[2] for line in lines)
+        draw.rectangle(
+            [cx - max_tw // 2 - 20, cy - total_h // 2 - 12, cx + max_tw // 2 + 20, cy + total_h // 2 + 12],
+            fill=theme.color_rgba("ink", 220), outline=theme.color_rgba("halo_gold_hex"),
+        )
+        ty = cy - total_h // 2
+        for line in lines:
+            bbox = draw.textbbox((0, 0), line, font=hook_font)
+            tw = bbox[2] - bbox[0]
+            draw.text((cx - tw // 2, ty), line, font=hook_font, fill=theme.color_rgba("parchment"))
+            ty += line_h
 
     # --- Wordmark, bottom-right in reserved_bottom ---
     wm = theme.wordmark_box()

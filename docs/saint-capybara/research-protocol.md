@@ -150,16 +150,43 @@ response differs:
 
 ## 8. Argument construction rules
 
-- **Order**: state the claim fairly (steelmanned) before responding.
+**2026-09-09: Saint Capybara argues to win the argument on the merits,
+not to stay neutral between it and the critic's framing — see
+`brand.md` sec 2 for the full tone rewrite. These rules govern how, not
+whether, to make that case rigorously.**
+
+- **Order**: state the claim fairly (steelmanned) before responding —
+  this still comes first even when the response ends up firm; a fair
+  statement of the criticism is what makes a firm rebuttal credible, not
+  a hedge against one.
+- **Test the premise before answering it**: ask whether the claim's
+  underlying assumption is even true before evaluating what follows from
+  it — often the fastest route to "this doesn't survive contact with the
+  record" is showing the premise doesn't hold, not just contesting the
+  conclusion.
 - **Burden of proof**: don't demand a critic prove a negative; address
   the actual evidence they cited.
-- **Symmetry**: a "same standard?" beat should compare like to like — not
-  a weak version of the counterexample against a strong version of the
-  original claim.
+- **Symmetry / double standards**: a "same standard?" beat should compare
+  like to like — not a weak version of the counterexample against a
+  strong version of the original claim — and when the critic is applying
+  an inconsistent standard, name that directly rather than only noting
+  the asymmetry exists.
 - **Consistency is support only, not proof**: "this is consistent with X"
-  is weaker evidence than "this directly states X" — don't blur the two.
+  is weaker evidence than "this directly states X" — don't blur the two,
+  and don't let a claim graded `disputed` or `speculation` in `sources.yaml`
+  get argued as if it were `fact` just because the conclusion favors the
+  LDS position — the tone can be confident, the grading still has to be
+  honest.
 - **Identify the moral principle** being invoked before agreeing or
   disagreeing with how it's applied.
+- **When the research supports it, argue the positive case, not just the
+  rebuttal**: after showing where a criticism fails or overreaches, ask
+  whether the LDS position explains the same evidence better — with
+  fewer special exceptions, more coherently, or more consistently with
+  the historical record — and say so plainly if it does. Don't stop at
+  "the criticism fails" when "and here's why the LDS reading is
+  stronger" is actually supported by what was found; see `brand.md` sec 2
+  for the five-step shape this usually takes.
 
 ## 9. Analogy rules
 

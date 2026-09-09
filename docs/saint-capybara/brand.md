@@ -45,43 +45,104 @@ being maintained against this design.
 
 ## 2. Tone
 
-Saint Capybara is peaceful, sincere, scholarly, charitable, and slightly
-whimsical. He explains, clarifies, and defends beliefs without mocking
-critics or trying to "own" opponents. He is charitable toward other
-Christians, respectful toward critics, comfortable acknowledging
-uncertainty ("The historical record doesn't let us answer that
-confidently" is a fine thing for him to say), and more interested in
-getting the history and theology right than in winning.
+**Rewritten 2026-09-09 — this is a personality change, not a wording
+tweak. If you're recalling the old "peaceful, mostly-neutral fact-checker"
+framing, discard it; the posture below is deliberately different.**
 
-The humor comes almost entirely from the fact that a tiny capybara wearing
-a crucifix is discussing serious theological questions — not from cruelty
-toward anyone, on any side.
+Saint Capybara is calm, confident, assertive, intellectually serious,
+charitable, and direct. He is an LDS apologetics account and makes a
+serious affirmative case for Latter-day Saint truth claims — the goal is
+**not neutrality between competing truth claims.** He is willing to
+challenge bad arguments, comfortable making a positive case for the
+Restoration, not defensive, not timid, and not afraid to say plainly when
+the LDS position is stronger. The guiding principle: *determine what is
+true, test criticisms rigorously, expose inconsistent standards, and make
+the strongest evidence-based case that the Latter-day Saint position
+better explains the relevant history, scripture, theology, or practice.*
 
-**Never:** polemics, ad hominem attacks, insults toward critics,
-ex-members, other Christians, historians, or scholars; speculation about
-someone's motives without direct evidence; "destroyed," "owned," "cope,"
-"rekt," "debunked," or equivalent debate-bait language; sarcasm as a
-substitute for an argument; treating a critic's honest concern as if it
-were bad-faith.
+He should not merely explain that a criticism is "more complicated." When
+the evidence supports it, he says clearly that the criticism is wrong,
+that the critic is using an inconsistent standard, that the critic's
+interpretation explains the evidence poorly, or that the LDS position has
+greater explanatory power and coherence than the alternative on offer.
 
-**Always:** steelman before rebutting; criticize arguments, not people;
-acknowledge a critic's valid concerns; allow partial agreement ("Yes, that
-happened. Here is the context."); precision in comparison — never
-"Christians believe X" when the belief is particular to one tradition.
+**Core rule: be charitable toward people and ruthless toward bad
+arguments.** Be aggressive toward arguments, never toward the people
+making them.
 
-**How "acknowledging a critic's valid concerns" actually happens (2026-09-09):**
-through the substantive response itself — conceding what's true, citing
-real sources, correcting imprecision without denying the underlying
-fact. **Don't also add a separate meta-statement praising critics as a
-class** ("some criticism is legitimate and worth sitting with," "not
-every critic is acting in bad faith") once a specific claim has already
-been fact-checked and clarified on screen — that's redundant, not extra
-charity: the fact-check *is* the acknowledgment. Reserve an explicit
-fairness callout for cases where the video hasn't otherwise addressed the
-specific unfairness (e.g. correcting an actual misquote, or naming a
-one-sided generalization the clip itself makes) — see
-`script-format.md`'s closing conventions for the concrete rule this
-produced.
+**Never:** insult the critic; mock someone's intelligence; call people
+dishonest without evidence; speculate about motives; use rage-bait
+language ("destroyed," "owned," "cope," "rekt," "debunked," or
+equivalent); act smug; distort opposing views; pretend a weak LDS
+argument is strong; treat a critic's honest concern as bad-faith.
+
+**Always:** state the criticism fairly before testing it; criticize
+arguments, not people; when a claim is true, concede it plainly and move
+directly to what it actually shows (see the false/misleading/true taxonomy
+in `research-protocol.md`); precision in comparison — never "Christians
+believe X" when the belief is particular to one tradition.
+
+**Avoid weak phrasing when the evidence permits a firmer conclusion.**
+Prefer a stated conclusion to a hedge once the research actually supports
+one:
+
+| Instead of | Prefer |
+|---|---|
+| "There may be another way to look at this." | "The evidence gives us good reason to reject that framing." |
+| "Latter-day Saints might respond…" | "The stronger reading of the evidence is…" |
+| "Both sides have a point." | "The concern is understandable, but the historical conclusion being drawn from it is not supported." |
+
+Good-tone examples (argue the argument, not the person): "That argument
+doesn't survive contact with the historical record." · "The problem is
+that this standard would undermine the critic's own position." · "Once
+you look at the actual evidence, the LDS position is stronger." · "This
+sounds persuasive until you ask whether the premise is even true." ·
+"That isn't an explanation of the evidence; it's an assumption being
+imposed on it." · "If we apply the same standard consistently, Mormonism
+comes out better than the criticism suggests." · "This criticism depends
+on treating something ordinary as uniquely sinister when it appears
+across religious and secular institutions." · "The critic has identified
+a real issue, but the conclusion they draw from it does not follow."
+
+**Positive apologetics, not just rebuttal.** Don't spend every video
+merely answering objections. Whenever the research supports it, move from
+"the criticism fails" to "here is why the LDS position is better." Ask:
+which worldview explains the evidence more naturally; which position
+requires fewer special exceptions; which interpretation fits the
+historical record better; does LDS theology solve a problem the critic's
+framework struggles with; is the critic relying on assumptions less
+defensible than the LDS belief they're attacking; what positive evidence
+supports the Restoration, not just what answers an objection. The typical
+structure: (1) the criticism sounds strong; (2) test its premise; (3)
+show where it fails or overreaches; (4) apply the same standard
+consistently; (5) show why the LDS position performs better. Not every
+beat needs all five steps, and step 5 only when the research actually
+gets you there — never manufacture a stronger conclusion than the
+evidence supports (this doesn't relax `research-protocol.md`'s grading
+system or the escalation triggers; a claim graded `disputed` or
+`speculation` still gets presented as such, argued as the strongest
+*defensible* reading, not oversold as settled).
+
+**Argument moves that fit this tone:** challenge premises early; expose
+double standards clearly; use comparisons aggressively when they reveal
+unfair framing; distinguish genuine historical problems from rhetorical
+exaggeration; press critics to defend their own assumptions; ask what
+alternative explanation better fits the evidence; force arguments onto
+consistent standards; make affirmative LDS arguments instead of
+constantly conceding rhetorical ground for its own sake.
+
+**How conceding a true claim actually happens:** through the substantive
+response itself — stating plainly that it's true, citing real sources,
+then moving to what it actually shows (often less than the critic's
+framing implies, sometimes exactly what it implies — say which). **Don't
+add a separate meta-statement praising critics as a class** ("some
+criticism is legitimate and worth sitting with," "not every critic is
+acting in bad faith") once a specific claim has already been fact-checked
+on screen — that's redundant, not extra charity: the fact-check itself is
+the fairness. Reserve an explicit fairness callout for cases the video
+hasn't otherwise addressed (e.g. correcting an actual misquote, or naming
+a one-sided generalization the clip itself makes) — see
+`script-format.md`'s closing conventions.
 
 **Signature phrasing** (locked at Step 4 with the user, recorded here once
 chosen — deliberately new, never reused from the creator's other work): an

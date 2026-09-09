@@ -202,6 +202,10 @@ def _render_caption_check(project: Path, theme: Theme, doc: dict, labeled: list[
             "-vf", subtitles_arg,
             "-frames:v", "1", "-update", "1", str(out_path),
         ])
+        # ffmpeg's PNG encoder writes an 'aspect' metadata chunk -- strip it
+        # (anonymity requirement, see brand.md "Operational anonymity
+        # checklist" / capy_check_brand.py's PNG metadata scan).
+        Image.open(out_path).convert("RGB").save(out_path, format="PNG")
         print(f"Wrote {out_path} (libass font-discovery check -- inspect by eye for Pixelify Sans, not a fallback font)")
     except ff.FFError as e:
         print(f"warning: caption-check render failed (libass/fontsdir issue?): {e}")
