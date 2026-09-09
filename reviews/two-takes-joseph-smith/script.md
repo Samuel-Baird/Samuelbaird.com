@@ -61,7 +61,7 @@ Notes: _______________________________________________
 ### Response group 1 — is the translation claim true?
 
 **n01** · narration · ~12.4s · pose: reading · stage: freeze
-> "That part's true, and it isn't a secret anymore. As a young man,
+> "That part's true, and it isn't a secret (find examples of this being well documented and public in church history). As a young man,
 > Joseph Smith did take part in treasure-seeking, using folk-magic
 > practices that were common where he grew up."
 Sources: `mackay-dirkmaat-2015`
@@ -69,7 +69,7 @@ Sources: `mackay-dirkmaat-2015`
 Notes: _______________________________________________
 
 **q01** · card · ~12s · pose: quote
-> Narration: "And the Church's own materials now openly teach that he
+> Narration: "And the Church's own materials openly teach that he
 > translated the Book of Mormon by putting a seer stone in a hat — not by
 > reading the plates directly."
 > On-screen card: *"One was the Urim and Thummim... The other instrument
