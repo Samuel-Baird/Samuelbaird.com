@@ -259,3 +259,35 @@ re-rendering the same names again.
   the pose is effectively unusable until the art is regenerated from the
   master prompt. `factual_failure` currently only resolves to
   `disappointed`.
+- **Reconsider live layers on the Resolve timeline (2026-09-09 user
+  feedback, not yet acted on).** The current "what actually shipped"
+  approach (above) pre-composites the sprite, captions, and source video
+  into one flat MP4 per beat, specifically because live per-layer
+  compositing hit the Resolve-importer image-sequence-grouping problem
+  (see "Why this exists" above). The user's complaint on
+  `bom-1837-wording-change`: with everything baked into one flat clip
+  per beat, the sprite can't be moved, resized, or otherwise adjusted
+  after the fact except by re-running the whole render pipeline and
+  re-tuning `theme.yaml` numbers blind — there's no way to just drag the
+  capybara in the Resolve UI the way an editor would expect. The user
+  wants the sprite (at minimum) on its own timeline layer/track, separate
+  from the source/background video, so it's independently
+  movable/resizable per-project or per-beat in Resolve itself.
+  **This is a real architecture trade-off to revisit, not a bug** — the
+  original "Original plan (superseded)" section above already describes
+  the live-layer approach and why it was dropped (Resolve auto-groups
+  sequentially-numbered same-prefix stills into one Media Pool item
+  instead of individual clips). That grouping problem is a real blocker
+  for the *caption*-stills layer specifically (~90 individual stills per
+  video), but may be more tractable for just the *sprite* layer alone
+  (one sprite plate per beat, ~13-18 per video, well within the
+  one-file-per-call workaround already used elsewhere in this pipeline
+  for beat-clip import) — worth a scoped experiment: sprite on its own
+  video track via individual per-beat sprite PNGs (already produced by
+  `capy_beat_plates.py`, just not currently kept as a separate importable
+  asset since they're baked into `beat_<id>.mp4`), background/source clip
+  on a track below, captions can stay baked into the background track for
+  now if the caption-stills grouping problem remains unsolved. Do **not**
+  apply this to already-shipped videos without explicit direction — this
+  is a forward-looking pipeline change, evaluate and prototype on a new
+  project first.
