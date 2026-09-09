@@ -1,6 +1,8 @@
 # Script — Was It Really Just a Hat and the Wrong Papyri?
 
-**Slug:** `five-reasons-not-mormon` | **Hook:** 'He said WHAT was in the hat?' | **Estimated runtime:** 175.4s (budget 60-180s)
+**Slug:** `five-reasons-not-mormon` | **Estimated runtime:** 175.4s (budget 60-180s) | **Source time:** 32.2s (18%)
+
+**Hook (title/description only, not shown on screen):** 'He said WHAT was in the hat?'
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
