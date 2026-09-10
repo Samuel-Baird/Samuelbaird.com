@@ -68,7 +68,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 11. `q01` (card, ~4.1s)
 - **Pose:** teaching
-- **Narration:** The Tribune's own scholar admits this idea isn't new. Here's how old it actually is.
+- **Narration:** Petrey noted, “In an era where popular voices and political leaders regularly disrespect women, Latter-day Saints are hoping to offer a different view of masculinity.”. Here's how old that view actually is.
 - **Card quote:** “By this ye may know if a man repenteth of his sins—behold, he will confess them and forsake them” — Doctrine and Covenants 58:43 (1831)
 - **Sources:** dc-58-43
 - **Notes:** 
@@ -132,7 +132,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 21. `n11` (narration, ~12.0s)
 - **Pose:** encouraging
-- **Narration:** I'm not asking for an apology for any of that -- everyone involved is dead. I'm asking for the same standard the paper just applied to an apostle: read your own sources before you build a headline out of a tension that isn't there.
+- **Narration:** I'm not asking for an apology for any of that -- everyone involved is dead. the tribunes founders certaintly real men under renlund and oaks standards. I'm asking for the same standard the paper just applied to an apostle: read your own sources before you build a headline out of a tension that isn't there.
 - **Sources:** critic-article
 - **Notes:** 
 
