@@ -87,20 +87,20 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 14. `n07` (narration, ~9.5s)
 - **Pose:** teaching
-- **Narration:** Now let's talk about the paper making this argument. Its own slogan is 'Utah's Independent Voice Since 1871.' It was founded by three men -- Godbe, Harrison, and Tullidge -- who broke with their faith.
+- **Narration:** Now let's talk about the paper making this argument. Its own slogan is 'Utah's Independent Voice Since 1871.' It was founded by three men -- Godbe, Harrison, and Tullidge, who had left the faith, and made it their life's mission to attack it.
 - **Sources:** sltrib-founding-godbeites
 - **Notes:** 
 
 ## 15. `n07b` (narration, ~4.1s)
 - **Pose:** skeptical
-- **Narration:** Independent. That's the word they chose. And in Utah, everybody knows what it's independent of.
+- **Narration:** Independent. That's the word they chose. And in Utah, everybody knows what it's independent of. 
 - **Sources:** sltrib-about-us-2026
 - **Notes:** 
 
 ## 16. `q03` (card, ~3.3s)
 - **Pose:** source
-- **Narration:** But by the paper's own account, published for its hundred fiftieth anniversary:
-- **Card quote:** “In some eras, the statewide paper became virulently anti-Mormon, mocking the faith's later-abandoned practice of polygamy — and its practitioners — or critiquing its hold on the Legislature.” — The Salt Lake Tribune, 150th-anniversary retrospective, April 2021
+- **Narration:** But by the paper's own account, published for its hundred fiftieth anniversary acknowledged their past without apology:
+- **Card quote:** “In some eras, the statewide paper became virulently anti-Mormon, mocking the faith's later-abandoned practice of polygamy — and its practitioners — or critiquing its hold on the Legislature.” — The Salt Lake Tribune, 150th-anniversary retrospective, April 2021 
 - **Sources:** sltrib-2021-retrospective
 - **Notes:** 
 
@@ -119,7 +119,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 19. `n09b` (narration, ~12.8s)
 - **Pose:** teaching
-- **Narration:** It wasn't only Brigham Young. In 1888 the same paper complained about Chinese men sleeping in a demolished store downtown; a year later it declared Salt Lake's Chinatown 'doomed.' It wasn't -- it lasted sixty more years, until the city paved it over for a parking garage.
+- **Narration:** It wasn't only Brigham Young. In 1888 the same paper complained about Chinese men sleeping in a demolished store downtown; a year later it declared Salt Lake's Chinatown 'doomed.' 
 - **Sources:** sltrib-1888-chinatown
 - **Notes:** 
 
@@ -131,7 +131,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 21. `q05` (card, ~3.5s)
 - **Pose:** solemn
-- **Narration:** In 1907, reporting a lynching out of Texas, the Tribune's own headline read:
+- **Narration:** In 1907, reporting a lynching out of Texas, the Tribune's own headline read "Negro Brute Lynched":
 - **Card quote:** “Negro Brute Lynched” — Salt Lake Tribune, Aug. 7, 1907, Page 1
 - **Sources:** sltrib-1907-lynching-headline
 - **Notes:** 
@@ -144,7 +144,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 23. `n11` (narration, ~18.0s)
 - **Pose:** encouraging
-- **Narration:** I'm not asking for an apology for any of that -- everyone involved is dead. By that same standard, the Tribune's own founders were certainly real men -- they broke with a church they thought was wrong, and said so. I'm asking the paper to apply that standard to itself: read your own sources before you build a headline out of a tension that isn't there.
+- **Narration:** I'm not asking for an apology for any of that -- everyone involved is dead. I'm asking the paper to apply that standard to itself: read your own sources before you build a headline out of a tension that isn't there. 
+Utah's Independent Voice Since 1871.
+Some things haven't changed.
+
 - **Sources:** critic-article
 - **Notes:** 
 
