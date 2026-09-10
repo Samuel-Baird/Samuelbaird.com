@@ -1,6 +1,6 @@
 # Script — Is There Really a Tension? (Responding to the Salt Lake Tribune)
 
-**Slug:** `sltrib-real-men-response` | **Estimated runtime:** 141.0s (budget 60-180s) | **Source time:** 22.6s (16%)
+**Slug:** `sltrib-real-men-response` | **Estimated runtime:** 156.5s (budget 60-180s) | **Source time:** 22.6s (14%)
 **Source:** article — “LDS apostle offers his definition of 'real men'” (The Salt Lake Tribune · Tamarra Kemsley · Sep 4, 2026)
 **URL:** https://www.sltrib.com/religion/2026/09/04/lds-apostle-dale-renlund-offers/
 **Archived:** (no archive url)
@@ -29,7 +29,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 04. `x02` (excerpt, ~8.7s)
 - **Pose:** reading
-- **Excerpt (¶13):** “Speaking with The Salt Lake Tribune in 2015, apostle Dallin H. Oaks, now the faith's president, stated that "the history of the church is not to seek apologies or to give them."” — The Salt Lake Tribune · “LDS apostle offers his definition of 'real men'” · Sep 4, 2026 · voice: quote_female
+- **Excerpt (¶13):** “Speaking with The Salt Lake Tribune in 2015, apostle Dallin H. Oaks, now the faith's president, stated that "the history of the church is not to seek apologies or to give them."” — The Salt Lake Tribune · “LDS apostle offers his definition of 'real men'” · Sep 4, 2026 · voice: quote_male
 - **Notes:** 
 
 ## 05. `x03` (excerpt, ~3.8s)
@@ -80,7 +80,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** oaks-2019-cleansed-by-repentance
 - **Notes:** 
 
-## 13. `n07` (narration, ~12.5s)
+## 13. `n07` (narration, ~9.5s)
 - **Pose:** teaching
 - **Narration:** Now let's talk about the paper making this argument. Its own slogan is 'Utah's Independent Voice Since 1871.' It was founded by three men -- Godbe, Harrison, and Tullidge -- who broke with their faith.
 - **Sources:** sltrib-founding-godbeites
@@ -106,19 +106,25 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** sltrib-american-party-1904-1911
 - **Notes:** 
 
-## 17. `n10` (narration, ~7.4s)
-- **Pose:** amused
-- **Narration:** That's the paper's own retrospective talking, not mine. Its current About page still calls that era 'a series of salty owners' in 'raucous duels' with the church. (i need to make it clear that they have never apologized for their anti-mormon rhetoric. also mention some of the other problematic things they have said. can be rapid fire here)
-- **Sources:** sltrib-about-us-2026
+## 17. `n09b` (narration, ~13.1s)
+- **Pose:** teaching
+- **Narration:** It wasn't only Brigham Young. In 1888 the same paper complained about Chinese men sleeping in a demolished store downtown; a year later it declared Salt Lake's Chinatown 'doomed.' It wasn't -- it lasted another sixty years, until the city itself paved it over for a parking garage.
+- **Sources:** sltrib-1888-chinatown
 - **Notes:** 
 
-## 18. `n11` (narration, ~12.0s)
+## 18. `n10` (narration, ~12.8s)
+- **Pose:** amused
+- **Narration:** None of that has ever been apologized for. That's the paper's own 150th-anniversary retrospective talking, not mine, and its current About page still calls that era only 'a series of salty owners' in 'raucous duels' with the church -- acknowledged, and moved past, in the same breath.
+- **Sources:** sltrib-about-us-2026, sltrib-2021-retrospective
+- **Notes:** 
+
+## 19. `n11` (narration, ~12.0s)
 - **Pose:** encouraging
 - **Narration:** I'm not asking for an apology for any of that -- everyone involved is dead. I'm asking for the same standard the paper just applied to an apostle: read your own sources before you build a headline out of a tension that isn't there.
 - **Sources:** critic-article
 - **Notes:** 
 
-## 19. `n99` (narration, ~3.3s)
+## 20. `n99` (narration, ~3.3s)
 - **Pose:** encouraging
 - **Narration:** Real men apologize. So, sometimes, should newspapers. Until then -- God bless.
 - **Notes:** 
