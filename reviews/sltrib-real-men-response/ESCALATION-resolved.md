@@ -1,4 +1,20 @@
-# Escalation: sltrib-real-men-response
+# Escalation: sltrib-real-men-response (RESOLVED 2026-09-09)
+
+**Resolution:** the user supplied the actual primary-source link
+(https://newspapers.lib.utah.edu/details?id=13802747 -- Salt Lake
+Tribune, Aug. 7, 1907, page 1). I read the scan directly via the Browser
+MCP (WebFetch/curl were both blocked by the site's anti-bot check) and
+confirmed the headline and article text. **Important correction to the
+original assumption**: this is a wire-service story about a lynching in
+Runge, Texas (victim named "Tom Hall"), not a Utah/local event -- the
+Tribune ran syndicated copy under this headline; it is not the same case
+as the well-documented 1883 Salt Lake lynching of William "Sam Joe"
+Harvey discussed in the original caution material, and must not be
+conflated with it. See `research/sources.yaml`: `sltrib-1907-lynching-headline`.
+
+Original escalation text follows, preserved for the record:
+
+---
 
 ## Claim
 
