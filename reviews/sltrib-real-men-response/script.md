@@ -34,7 +34,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 05. `x03` (excerpt, ~3.8s)
 - **Pose:** reading
-- **Excerpt (¶14):** “True, Petrey said Thursday, "Oaks was speaking at an institutional level, not about individuals."” — The Salt Lake Tribune · “LDS apostle offers his definition of 'real men'” · Sep 4, 2026 · voice: quote_female
+- **Excerpt (¶14):** “True, Petrey said Thursday, "Oaks was speaking at an institutional level, not about individuals."” — The Salt Lake Tribune · “LDS apostle offers his definition of 'real men'” · Sep 4, 2026 · voice: quote_male
 - **Notes:** 
 
 ## 06. `n03` (narration, ~8.7s)
@@ -45,7 +45,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 07. `x04` (excerpt, ~5.5s)
 - **Pose:** reading
-- **Excerpt (¶15):** “Nevertheless, the Kalamazoo College professor continued, "Renlund's praise for apologizing seems to challenge the principles that Oaks had laid out."” — The Salt Lake Tribune · “LDS apostle offers his definition of 'real men'” · Sep 4, 2026 · voice: quote_female
+- **Excerpt (¶15):** “Nevertheless, the Kalamazoo College professor continued, "Renlund's praise for apologizing seems to challenge the principles that Oaks had laid out."” — The Salt Lake Tribune · “LDS apostle offers his definition of 'real men'” · Sep 4, 2026 · voice: quote_male
 - **Notes:** 
 
 ## 08. `n04` (narration, ~9.3s)
@@ -82,7 +82,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 13. `n07` (narration, ~12.5s)
 - **Pose:** teaching
-- **Narration:** Now let's talk about the paper making this argument. Its own slogan is 'Utah's Independent Voice Since 1871.' It was founded by three men -- Godbe, Harrison, and Tullidge -- who broke with Brigham Young and hoped to reform their faith, not abandon it. Fair enough.
+- **Narration:** Now let's talk about the paper making this argument. Its own slogan is 'Utah's Independent Voice Since 1871.' It was founded by three men -- Godbe, Harrison, and Tullidge -- who broke with their faith.
 - **Sources:** sltrib-founding-godbeites
 - **Notes:** 
 
@@ -108,7 +108,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 
 ## 17. `n10` (narration, ~7.4s)
 - **Pose:** amused
-- **Narration:** That's the paper's own retrospective talking, not mine. Its current About page still calls that era 'a series of salty owners' in 'raucous duels' with the church.
+- **Narration:** That's the paper's own retrospective talking, not mine. Its current About page still calls that era 'a series of salty owners' in 'raucous duels' with the church. (i need to make it clear that they have never apologized for their anti-mormon rhetoric. also mention some of the other problematic things they have said. can be rapid fire here)
 - **Sources:** sltrib-about-us-2026
 - **Notes:** 
 
