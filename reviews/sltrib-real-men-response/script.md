@@ -1,6 +1,6 @@
 # Script — Is There Really a Tension? (Responding to the Salt Lake Tribune)
 
-**Slug:** `sltrib-real-men-response` | **Estimated runtime:** 156.5s (budget 60-180s) | **Source time:** 22.6s (14%)
+**Slug:** `sltrib-real-men-response` | **Estimated runtime:** 178.6s (budget 60-180s) | **Source time:** 22.6s (13%)
 **Source:** article — “LDS apostle offers his definition of 'real men'” (The Salt Lake Tribune · Tamarra Kemsley · Sep 4, 2026)
 **URL:** https://www.sltrib.com/religion/2026/09/04/lds-apostle-dale-renlund-offers/
 **Archived:** (no archive url)
@@ -86,45 +86,57 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** sltrib-founding-godbeites
 - **Notes:** 
 
-## 14. `q03` (card, ~3.3s)
+## 14. `n07b` (narration, ~4.1s)
+- **Pose:** skeptical
+- **Narration:** Independent. That's the word they chose. And in Utah, everybody knows what it's independent of.
+- **Sources:** sltrib-about-us-2026
+- **Notes:** 
+
+## 15. `q03` (card, ~3.3s)
 - **Pose:** source
 - **Narration:** But by the paper's own account, published for its hundred fiftieth anniversary:
 - **Card quote:** “In some eras, the statewide paper became virulently anti-Mormon, mocking the faith's later-abandoned practice of polygamy — and its practitioners — or critiquing its hold on the Legislature.” — The Salt Lake Tribune, 150th-anniversary retrospective, April 2021
 - **Sources:** sltrib-2021-retrospective
 - **Notes:** 
 
-## 15. `q04` (card, ~3.8s)
+## 16. `q04` (card, ~3.8s)
 - **Pose:** teaching
 - **Narration:** In 1877, when Brigham Young died, that same paper ran this as his obituary:
 - **Card quote:** “He was illiterate... his public addresses [were] the greatest farrago of nonsense that ever was put in print... the system of religion he formulated was well nigh Satanic.” — Salt Lake Daily Tribune, Aug. 30, 1877
 - **Sources:** sltrib-1877-obituary
 - **Notes:** 
 
-## 16. `n09` (narration, ~5.2s)
+## 17. `n09` (narration, ~11.2s)
 - **Pose:** teaching
-- **Narration:** Decades later, its owner ran the paper as the mouthpiece of a political party organized specifically against Latter-day Saints.
+- **Narration:** Decades later, from 1904 to 1911, owner Thomas Kearns and editor Frank Cannon ran the paper as the mouthpiece of the American Party -- a party organized specifically against Latter-day Saints. Historians call it plainly: the organ of the anti-Mormon party.
 - **Sources:** sltrib-american-party-1904-1911
 - **Notes:** 
 
-## 17. `n09b` (narration, ~13.1s)
+## 18. `n09b` (narration, ~13.1s)
 - **Pose:** teaching
 - **Narration:** It wasn't only Brigham Young. In 1888 the same paper complained about Chinese men sleeping in a demolished store downtown; a year later it declared Salt Lake's Chinatown 'doomed.' It wasn't -- it lasted another sixty years, until the city itself paved it over for a parking garage.
 - **Sources:** sltrib-1888-chinatown
 - **Notes:** 
 
-## 18. `n10` (narration, ~12.8s)
+## 19. `n09c` (narration, ~12.0s)
+- **Pose:** teaching
+- **Narration:** In 1895, as Utah's constitutional convention debated giving women the vote, the Tribune's own reporting noted a strong sentiment among delegates in favor. Its editorial page still warned that suffrage would put Utah among the small group of, quote, 'freak' states whose women voted.
+- **Sources:** sltrib-1895-suffrage
+- **Notes:** 
+
+## 20. `n10` (narration, ~12.8s)
 - **Pose:** amused
 - **Narration:** None of that has ever been apologized for. That's the paper's own 150th-anniversary retrospective talking, not mine, and its current About page still calls that era only 'a series of salty owners' in 'raucous duels' with the church -- acknowledged, and moved past, in the same breath.
 - **Sources:** sltrib-about-us-2026, sltrib-2021-retrospective
 - **Notes:** 
 
-## 19. `n11` (narration, ~12.0s)
+## 21. `n11` (narration, ~12.0s)
 - **Pose:** encouraging
 - **Narration:** I'm not asking for an apology for any of that -- everyone involved is dead. I'm asking for the same standard the paper just applied to an apostle: read your own sources before you build a headline out of a tension that isn't there.
 - **Sources:** critic-article
 - **Notes:** 
 
-## 20. `n99` (narration, ~3.3s)
+## 22. `n99` (narration, ~3.3s)
 - **Pose:** encouraging
 - **Narration:** Real men apologize. So, sometimes, should newspapers. Until then -- God bless.
 - **Notes:** 
