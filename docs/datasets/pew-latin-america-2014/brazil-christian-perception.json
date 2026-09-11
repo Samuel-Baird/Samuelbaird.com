@@ -1,0 +1,36 @@
+{
+  "source": "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a Historically Catholic Region.\"",
+  "method": "Population is Brazil respondents only (Country=Brazil). Share answering \"yes\" to each of Q63a/Q63b/Q63d/Q63e/Q63f (\"Do you personally consider [group] to be followers of the Christian faith, or not?\"); don't know/refused excluded, \"never heard of group\" retained as a valid non-yes response. Weighted by the dataset's own combined base/post-stratification WEIGHT.",
+  "brazil_weighted_n": 1999.9999999999986,
+  "brazil_unweighted_n": 2000,
+  "highlight": "Mormons",
+  "group_order": [
+    "Protestants/Evangelicals",
+    "Catholics",
+    "Jehovah's Witnesses",
+    "Mormons",
+    "Spiritists/Kardecists"
+  ],
+  "consider_christian_brazil": {
+    "Catholics": {
+      "pct": 91.0,
+      "valid_unweighted_n": 1949
+    },
+    "Protestants/Evangelicals": {
+      "pct": 92.83,
+      "valid_unweighted_n": 1949
+    },
+    "Jehovah's Witnesses": {
+      "pct": 63.81,
+      "valid_unweighted_n": 1739
+    },
+    "Mormons": {
+      "pct": 42.68,
+      "valid_unweighted_n": 1435
+    },
+    "Spiritists/Kardecists": {
+      "pct": 41.27,
+      "valid_unweighted_n": 1680
+    }
+  }
+}

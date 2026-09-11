@@ -1,0 +1,106 @@
+{
+  "source": "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a Historically Catholic Region.\"",
+  "method": "Share answering \"yes\" to Q63e (\"Do you personally consider Mormons to be followers of the Christian faith, or not?\"), by country/territory; don't know/refused excluded, \"never heard of group\" retained as a valid non-yes response. Weighted by the dataset's own combined base/post-stratification WEIGHT.",
+  "total_weighted_n": 30326.60869018281,
+  "total_unweighted_n": 30326,
+  "highlight": "Brazil",
+  "country_order": [
+    "Chile",
+    "Bolivia",
+    "Dominican Republic",
+    "Uruguay",
+    "Guatemala",
+    "Peru",
+    "Brazil",
+    "Puerto Rico",
+    "Mexico",
+    "Panama",
+    "Paraguay",
+    "Argentina",
+    "El Salvador",
+    "Colombia",
+    "Honduras",
+    "Costa Rica",
+    "Ecuador",
+    "Nicaragua",
+    "Venezuela"
+  ],
+  "consider_mormons_christian_by_country": {
+    "Argentina": {
+      "pct": 38.87,
+      "valid_unweighted_n": 1028
+    },
+    "Bolivia": {
+      "pct": 56.02,
+      "valid_unweighted_n": 1168
+    },
+    "Brazil": {
+      "pct": 42.68,
+      "valid_unweighted_n": 1435
+    },
+    "Chile": {
+      "pct": 56.6,
+      "valid_unweighted_n": 1207
+    },
+    "Colombia": {
+      "pct": 33.38,
+      "valid_unweighted_n": 1087
+    },
+    "Costa Rica": {
+      "pct": 31.6,
+      "valid_unweighted_n": 1205
+    },
+    "Dominican Republic": {
+      "pct": 52.69,
+      "valid_unweighted_n": 1441
+    },
+    "Ecuador": {
+      "pct": 31.23,
+      "valid_unweighted_n": 1510
+    },
+    "El Salvador": {
+      "pct": 34.67,
+      "valid_unweighted_n": 1252
+    },
+    "Guatemala": {
+      "pct": 44.46,
+      "valid_unweighted_n": 1279
+    },
+    "Honduras": {
+      "pct": 32.05,
+      "valid_unweighted_n": 1328
+    },
+    "Mexico": {
+      "pct": 42.0,
+      "valid_unweighted_n": 1722
+    },
+    "Nicaragua": {
+      "pct": 28.23,
+      "valid_unweighted_n": 1302
+    },
+    "Panama": {
+      "pct": 42.0,
+      "valid_unweighted_n": 1248
+    },
+    "Paraguay": {
+      "pct": 39.71,
+      "valid_unweighted_n": 982
+    },
+    "Peru": {
+      "pct": 44.16,
+      "valid_unweighted_n": 1192
+    },
+    "Puerto Rico": {
+      "pct": 42.07,
+      "valid_unweighted_n": 1312
+    },
+    "Uruguay": {
+      "pct": 47.86,
+      "valid_unweighted_n": 1021
+    },
+    "Venezuela": {
+      "pct": 23.7,
+      "valid_unweighted_n": 1296
+    }
+  }
+}

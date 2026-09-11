@@ -59,3 +59,32 @@ Mormons think."
 
 Further charts from this dataset should follow the same two-stage
 pattern.
+
+Three additional Brazil-specific charts (a deliberate, one-time exception
+to this pipeline's locked color palette - see
+`scripts/pew-latin-america-2014/brazil_theme.py`'s own docstring - flag
+green/blue/yellow rather than `--accent`/`CONTEXT_GRAY`, at the site
+owner's explicit request):
+
+- `never-heard-of-mormons.json` (share across all 19 countries/territories
+  who volunteered "never heard of group" to Q63e, i.e. awareness rather
+  than the Christian-identity question itself) - computed by
+  `never_heard_of_mormons.py`, rendered by
+  `render_never_heard_of_mormons_chart.py`. Brazil is the only country at
+  0.0%.
+- `mormons-as-christian-by-country.json` (the same Q63e item as
+  `mormons-as-christian.json`, but broken out by country instead of by the
+  respondent's own religion) - computed by
+  `mormons_as_christian_by_country.py`, rendered by
+  `render_mormons_as_christian_by_country_chart.py`. Brazil, home to the
+  region's largest LDS population, sits mid-pack at 42.7% - LDS presence
+  doesn't obviously buy the "Christian" label.
+- `brazil-christian-perception.json` (Q63a/Q63b/Q63d/Q63e/Q63f - the same
+  "do you consider [group] Christian" item asked of Catholics,
+  Protestants/Evangelicals, Jehovah's Witnesses, Mormons, and Spiritists/
+  Kardecists in turn - filtered to Brazil only, unlike every other chart in
+  this dataset, which pools all countries) - computed by
+  `brazil_christian_perception.py`, rendered by
+  `render_brazil_christian_perception_chart.py`. Catholics are included as
+  a ceiling case (91%, next to Protestants/Evangelicals' 93%) against which
+  Mormons' 43% and Spiritists' 41% read.

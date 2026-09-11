@@ -142,6 +142,9 @@ import latinAmericaWeeklyAttendanceData from "../../docs/datasets/pew-latin-amer
 import latinAmericaReligionImportanceData from "../../docs/datasets/pew-latin-america-2014/religion-importance.json";
 import latinAmericaSamesexMarriageData from "../../docs/datasets/pew-latin-america-2014/samesex-marriage.json";
 import witchcraftBeliefData from "../../docs/datasets/pew-latin-america-2014/witchcraft-belief.json";
+import neverHeardOfMormonsData from "../../docs/datasets/pew-latin-america-2014/never-heard-of-mormons.json";
+import mormonsAsChristianByCountryData from "../../docs/datasets/pew-latin-america-2014/mormons-as-christian-by-country.json";
+import brazilChristianPerceptionData from "../../docs/datasets/pew-latin-america-2014/brazil-christian-perception.json";
 import reasonsJoinedLdsData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-joined-lds.json";
 import reasonsLeftReligionData from "../../docs/datasets/pew-faith-in-flux-2008/reasons-left-religion.json";
 import leaveVsJoinData from "../../docs/datasets/pew-faith-in-flux-2008/leave-vs-join.json";
@@ -1232,6 +1235,9 @@ const RAW_DATASETS: Dataset[] = [
       latinAmericaReligionImportanceGraphic(),
       latinAmericaSamesexMarriageGraphic(),
       witchcraftBeliefGraphic(),
+      neverHeardOfMormonsGraphic(),
+      mormonsAsChristianByCountryGraphic(),
+      brazilChristianPerceptionGraphic(),
     ],
   },
   {
@@ -2992,6 +2998,48 @@ function mormonsAsChristianGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-latin-america-2014/mormons-as-christian.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share considering Mormons to be followers of the Christian faith, by respondent's own religion, across Latin America. ${alt}.`,
+  };
+}
+
+function neverHeardOfMormonsGraphic(): Graphic {
+  const { country_order: order, never_heard_of_mormons: results } = neverHeardOfMormonsData;
+  const alt = order
+    .map((c) => `${c} ${results[c as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "“Never heard of” the Mormons?",
+    description: "Asked “Do you personally consider Mormons to be followers of the Christian faith, or not?” — share who volunteered they'd never heard of the group, by country. Brazil is the only one at zero.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/never-heard-of-mormons.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share who volunteered they'd never heard of Mormons, by country, across Latin America. ${alt}.`,
+  };
+}
+
+function mormonsAsChristianByCountryGraphic(): Graphic {
+  const { country_order: order, consider_mormons_christian_by_country: results } = mormonsAsChristianByCountryData;
+  const alt = order
+    .map((c) => `${c} ${results[c as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you consider Mormons to be Christian?",
+    description: "Share answering yes, by country. Brazil, home to the region's largest LDS population, sits mid-pack.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/mormons-as-christian-by-country.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share considering Mormons to be followers of the Christian faith, by country, across Latin America. ${alt}.`,
+  };
+}
+
+function brazilChristianPerceptionGraphic(): Graphic {
+  const { group_order: order, consider_christian_brazil: results } = brazilChristianPerceptionData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results].pct}%`)
+    .join(", ");
+  return {
+    title: "Do you consider them to be Christian?",
+    description: "Share of Brazilians answering yes, asked individually about each group — including Catholics, the country's own majority tradition, as a ceiling case.",
+    imageSrc: "/data-explorer/pew-latin-america-2014/brazil-christian-perception.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of Brazilians who consider each group to be followers of the Christian faith. ${alt}.`,
   };
 }
 
