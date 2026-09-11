@@ -2279,3 +2279,49 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   PNGs in `public/data-explorer/lds-brazil-2022/`; wired in as a new
   single dataset with three graphics under the "Mixed Datasets" category.
   `tsc --noEmit` clean; all three PNGs read directly and visually checked.
+
+- **lds-brazil-census-2010** (IBGE 2010 Census, SIDRA table 137) — new
+  dataset, 2026-09-11, follow-up to lds-brazil-2022: three graphics, this
+  site's second Brazil-specific entry. Unlike the 2022 Census, IBGE's
+  **2010** Census religion table published "Igreja de Jesus Cristo dos
+  Santos dos Ultimos Dias" as its own real, government-tabulated category
+  (SIDRA table 137, classification 133, category 100423) - genuine
+  LDS-specific counts, not a mixed bucket, hence a separate dataset from
+  lds-brazil-2022 rather than a fourth chart bolted onto it. Verified live
+  against apisidra.ibge.gov.br this session (not just taken from a prior
+  brief): national query confirms 1991 and 2000 both return "..."
+  (suppressed) at this category - only 2010 has a real figure (226,509) -
+  so no 1991-2010 LDS-specific time series was built, per the "don't
+  fabricate a series with no real data" instruction. `lds-by-state-2010.png`
+  ranks all 27 states/DF by LDS share of each state's own population
+  (not raw count - Sao Paulo has the most members absolutely but a lower
+  share than several smaller states); Amazonas (0.245%) and Rio Grande do
+  Sul (0.245%) are effectively tied at the top once computed to more
+  precision than the source brief carried. `self-id-vs-membership-2010.png`
+  is a two-bar comparison (226,509 self-identified to the census vs.
+  1,138,740 on the Church's own 2010 membership rolls, the same figure
+  already cited in lds-brazil-2022/membership-by-year.json) - framed
+  factually as two different measures, not attributing the ~5:1 gap to a
+  single cause. `top-cities-2010.png` ranks municipalities (population
+  50,000+, to exclude small-town noise - 4,548 of 5,565 municipalities
+  come back suppressed at this category, and most of the rest are tiny
+  towns) by LDS share; Sant'Ana do Livramento, RS tops the list at 1.04%,
+  and 5 of the top 10 are in Rio Grande do Sul, including two Uruguay
+  border cities. Added a `value_decimals` param to `render_magnitude_bar`
+  (scripts/flagship-charts/common.py, default 0/unchanged for every
+  existing caller) since this dataset's state-level shares (0.03%-0.25%)
+  would otherwise all round to "0%" under the pipeline's fixed `.0f`
+  value-label format. Hand-written
+  `scripts/lds-brazil-census-2010/{build_lds_by_state_2010,
+  build_self_id_vs_membership_2010,build_top_cities_2010}.py` + matching
+  `render_*_chart.py` scripts (the two-bar comparison reuses
+  `render_magnitude_bar` at 2 rows rather than a new shape, following the
+  latin-america-comparison-2025.png precedent for K-suffixed raw counts),
+  JSON in `docs/datasets/lds-brazil-census-2010/`, PNGs in
+  `public/data-explorer/lds-brazil-census-2010/`; wired in as a new
+  single dataset with three graphics under the "Mixed Datasets" category.
+  `tsc --noEmit` clean, `next build` clean, all three PNGs read directly
+  and visually checked, dataset page verified in a local dev server (the
+  `/graphics` subpage hit a pre-existing local-dev-only rendering quirk
+  that also affects the already-shipped lds-brazil-2022/graphics page -
+  not something this change introduced).

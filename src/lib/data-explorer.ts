@@ -9,6 +9,8 @@
 import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-quiz";
 import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switching-generalized.json";
 import birthDecadeData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution.json";
+import birthDecadeAllGroupsData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution-all-groups.json";
+import birthDecadeSelectedData from "../../docs/datasets/pew-rls-2023-24/birth-decade-distribution-selected.json";
 import childhoodFormationData from "../../docs/datasets/pew-rls-2023-24/childhood-formation.json";
 import familyHouseholdData from "../../docs/datasets/pew-rls-2023-24/family-household.json";
 import practiceData from "../../docs/datasets/pew-rls-2023-24/practice.json";
@@ -252,6 +254,9 @@ import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-member
 import brazilMembershipByYearData from "../../docs/datasets/lds-brazil-2022/membership-by-year.json";
 import brazilLatinAmericaComparisonData from "../../docs/datasets/lds-brazil-2022/latin-america-comparison-2025.json";
 import brazilSmallerFaithsByStateData from "../../docs/datasets/lds-brazil-2022/smaller-faiths-by-state-2022.json";
+import brazilLdsByState2010Data from "../../docs/datasets/lds-brazil-census-2010/lds-by-state-2010.json";
+import brazilSelfIdVsMembership2010Data from "../../docs/datasets/lds-brazil-census-2010/self-id-vs-membership-2010.json";
+import brazilTopCities2010Data from "../../docs/datasets/lds-brazil-census-2010/top-cities-2010.json";
 import tenLargestChurchesData from "../../docs/datasets/ten-largest-us-churches-2035/denominations.json";
 import religiousTraditionShiftsData from "../../docs/datasets/religious-tradition-shifts/shifts-2007-2023.json";
 
@@ -780,6 +785,8 @@ const RAW_DATASETS: Dataset[] = [
       pewSwitchingCurrentCompositionGraphic(),
       pewSwitchingRaisedCohortGraphic(),
       pewBirthDecadeGraphic(),
+      pewBirthDecadeAllGroupsGraphic(),
+      pewBirthDecadeSelectedGraphic(),
       pewChildhoodAttendanceGraphic(),
       pewChildhoodImportanceGraphic(),
       pewChildhoodEducationGraphic(),
@@ -1792,6 +1799,35 @@ const RAW_DATASETS: Dataset[] = [
       brazilSmallerFaithsByStateGraphic(),
     ],
   },
+  {
+    slug: "lds-brazil-census-2010",
+    name: "Latter-day Saints in Brazil: the 2010 Census",
+    shortDescription:
+      "The one Brazilian Census year that published a real, LDS-specific category — by state, by city, and against the Church's own membership rolls.",
+    sponsor: "Brazilian Institute of Geography and Statistics (IBGE); The Church of Jesus Christ of Latter-day Saints",
+    fielder: "IBGE 2010 Census (SIDRA table 137); Church membership records via cumorah.com",
+    fieldedPeriod: "2010",
+    description:
+      "Unlike the 2022 Census (see the lds-brazil-2022 dataset's third chart), IBGE's 2010 Census " +
+      "religion table published \"Igreja de Jesus Cristo dos Santos dos Últimos Dias\" as its own " +
+      "real, government-tabulated category — genuine LDS-specific counts, not a mixed bucket. The " +
+      "first chart ranks all 27 states/DF by LDS self-identification as a share of each state's " +
+      "population. The second compares that same self-identified count against the Church's own " +
+      "reported Brazil membership total for 2010, without attributing the roughly 5:1 gap to any " +
+      "single cause. The third ranks the cities (population 50,000+, to avoid small-town noise) " +
+      "with the highest concentration of self-identified Latter-day Saints. See " +
+      "docs/datasets/lds-brazil-census-2010/README.md for every figure's source and verification.",
+    citation:
+      "2010 Brazilian Census (IBGE), SIDRA aggregate table 137, and cumorah.com's LDS Growth Case " +
+      "Studies (Matt Martinich), \"Expanding LDS Outreach in Brazil.\"",
+    sourceUrl: "https://apisidra.ibge.gov.br/values/t/137/n1/all/v/93/p/all/c133/100423",
+    category: "Mixed Datasets",
+    graphics: [
+      brazilLdsByState2010Graphic(),
+      brazilSelfIdVsMembership2010Graphic(),
+      brazilTopCities2010Graphic(),
+    ],
+  },
 ];
 
 /** Site-wide Data Explorer rule: every dataset's graphics gallery
@@ -1930,6 +1966,45 @@ function brazilSmallerFaithsByStateGraphic(): Graphic {
     imageSrc: "/data-explorer/lds-brazil-2022/smaller-faiths-by-state-2022.png",
     width: 1080, height: 1350,
     alt: `Horizontal bar chart, ranked: share of each Brazilian state's population age 10+ in IBGE's 2022 Census "Outras religiosidades" (Other religions) bucket - a mixed group including Latter-day Saints, Jehovah's Witnesses, Spiritualists, Jews, Muslims, Buddhists, and more, NOT an LDS-specific estimate. ${alt}. Roraima is the highest at roughly double the national rate of 4.0%.`,
+  };
+}
+
+function brazilLdsByState2010Graphic(): Graphic {
+  const { state_order: states, states: data } = brazilLdsByState2010Data;
+  const alt = states.map((s) => `${s}: ${data[s as keyof typeof data].pct}%`).join(", ");
+  return {
+    title: "Where self-identified Latter-day Saints concentrate",
+    description:
+      "Real, LDS-specific 2010 Census data by state - the one census year IBGE broke this category out. Ranked by share, not raw count.",
+    imageSrc: "/data-explorer/lds-brazil-census-2010/lds-by-state-2010.png",
+    width: 1080, height: 1350,
+    alt: `Horizontal bar chart, ranked: share of each Brazilian state's population that self-identified as Latter-day Saint to the 2010 Census taker (IBGE SIDRA table 137, category 100423 - a real LDS-specific category, unlike the 2022 Census). ${alt}. Amazonas and Rio Grande do Sul are effectively tied at the top, both near 0.245%.`,
+  };
+}
+
+function brazilSelfIdVsMembership2010Graphic(): Graphic {
+  const { row_order: rows, rows: data } = brazilSelfIdVsMembership2010Data;
+  const alt = rows.map((r) => `${r}: ${data[r as keyof typeof data].value.toLocaleString()}`).join(", ");
+  return {
+    title: "Two ways to count Latter-day Saints, 2010",
+    description:
+      "226,509 self-identified to the 2010 Census taker vs. 1,138,740 on the Church's own membership rolls that year - different measures, not a correction of one by the other.",
+    imageSrc: "/data-explorer/lds-brazil-census-2010/self-id-vs-membership-2010.png",
+    width: 1080, height: 1350,
+    alt: `Two-bar comparison chart, Brazil, 2010: ${alt}. About a 5:1 gap between the two counts; the chart does not attribute the gap to a single cause.`,
+  };
+}
+
+function brazilTopCities2010Graphic(): Graphic {
+  const { city_order: cities, cities: data } = brazilTopCities2010Data;
+  const alt = cities.map((c) => `${c}: ${data[c as keyof typeof data].pct}%`).join(", ");
+  return {
+    title: "Where Latter-day Saints concentrate, city by city",
+    description:
+      "The Brazilian cities (population 50,000+) with the highest share of self-identified Latter-day Saints, 2010 Census.",
+    imageSrc: "/data-explorer/lds-brazil-census-2010/top-cities-2010.png",
+    width: 1080, height: 1350,
+    alt: `Horizontal bar chart, ranked: share of population self-identifying as Latter-day Saint, 2010 Census, municipalities with population 50,000+ only. ${alt}. Sant'Ana do Livramento, RS tops the list; half of the top 10 are in Rio Grande do Sul, including border cities with Uruguay.`,
   };
 }
 
@@ -5051,6 +5126,87 @@ function pewBirthDecadeGraphic(): Graphic {
 }
 
 /**
+ * Birth-decade makeup by tradition - all groups. Built from
+ * birth-decade-distribution-all-groups.json
+ * (scripts/pew-rls/birth_decade_distribution_all_groups.py), rendered by
+ * scripts/pew-rls/render_birth_decade_chart_all_groups.py. Wider companion
+ * to pewBirthDecadeGraphic() above: uses RELTRAD (15 traditions - Protestant
+ * split into Evangelical/Mainline/Historically Black, plus every non-
+ * Christian tradition and the unaffiliated) instead of CURREL's six-way
+ * Christian-only set.
+ */
+function pewBirthDecadeAllGroupsGraphic(): Graphic {
+  const { distribution, decade_order: decadeOrder } = birthDecadeAllGroupsData;
+  const alt = Object.keys(distribution)
+    .map((group) => {
+      const g = distribution[group as keyof typeof distribution];
+      const shares = decadeOrder
+        .map((d) => `${d} ${g.shares_pct[d as keyof typeof g.shares_pct].toFixed(0)}%`)
+        .join(", ");
+      return `${group}: ${shares}`;
+    })
+    .join("; ");
+
+  return {
+    title: "Birth-decade makeup, by tradition (all groups)",
+    description:
+      "Share of each RELTRAD tradition's current members born in each decade - Protestant " +
+      "split into Evangelical, Mainline, and Historically Black, plus every non-Christian " +
+      "tradition and the unaffiliated.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/birth-decade-distribution-all-groups.png",
+    width: 1080,
+    height: 1358,
+    alt: `100%-stacked bar chart, birth-decade share of every RELTRAD tradition's current members. ${alt}.`,
+  };
+}
+
+/**
+ * Birth-decade makeup by tradition - a curated six-group follow-up to
+ * pewBirthDecadeAllGroupsGraphic(), picked after reviewing that wider
+ * chart. Built from birth-decade-distribution-selected.json
+ * (scripts/pew-rls/birth_decade_distribution_selected.py, itself a filter
+ * over birth-decade-distribution-all-groups.json - no new computation),
+ * rendered by scripts/pew-rls/render_birth_decade_chart_selected.py.
+ *
+ * Group order (keep in sync with
+ * scripts/pew-rls/render_birth_decade_chart_selected.py's GROUP_ORDER) is
+ * inlined here rather than a module-level const: RAW_DATASETS (above, near
+ * the top of this file) calls this function eagerly as part of its own
+ * array literal, which runs before a module-level const declared this far
+ * down the file would be initialized.
+ */
+function pewBirthDecadeSelectedGraphic(): Graphic {
+  const { distribution, decade_order: decadeOrder } = birthDecadeSelectedData;
+  const groupOrder = [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Historically Black Protestant",
+    "Catholic",
+    "Religiously Unaffiliated",
+  ];
+  const alt = groupOrder.map((group) => {
+    const g = distribution[group as keyof typeof distribution];
+    const shares = decadeOrder
+      .map((d) => `${d} ${g.shares_pct[d as keyof typeof g.shares_pct].toFixed(0)}%`)
+      .join(", ");
+    return `${group}: ${shares}`;
+  }).join("; ");
+
+  return {
+    title: "Birth-decade makeup, by tradition (selected groups)",
+    description:
+      "Share of each tradition's current members born in each decade — Latter-day Saint, " +
+      "Evangelical/Mainline/Historically Black Protestant, Catholic, and the religiously " +
+      "unaffiliated.",
+    imageSrc: "/data-explorer/pew-religious-landscape-study/birth-decade-distribution-selected.png",
+    width: 1080,
+    height: 1350,
+    alt: `100%-stacked bar chart, birth-decade share of each tradition's current members. ${alt}.`,
+  };
+}
+
+/**
  * Grew up attending church monthly or more, by tradition raised in. Built
  * from childhood-formation.json (scripts/pew-rls/childhood_formation.py),
  * rendered by scripts/pew-rls/render_childhood_formation_charts.py.
@@ -6085,6 +6241,7 @@ function cces2016PctAlt(results: Record<string, { pct: number | null }>): string
     .map((group) => `${group} ${results[group]!.pct?.toFixed(0) ?? "n/a"}%`)
     .join(", ");
 }
+
 /**
  * 2016 presidential vote choice (CC16_410a) by religion - a four-segment
  * nominal distribution stack (Trump / Clinton / McMullin / Other candidate),

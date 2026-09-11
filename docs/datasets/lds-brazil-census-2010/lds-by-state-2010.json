@@ -1,0 +1,178 @@
+{
+  "national_total_2010": 226509,
+  "highest_state": "Amazonas",
+  "highest_state_pct": 0.245,
+  "lowest_state": "Maranhão",
+  "lowest_state_pct": 0.033,
+  "sources_summary": [
+    "2010 Brazilian Census (IBGE), SIDRA aggregate table 137 (\"Populacao residente, por religiao\"), classification 133 (Religiao), category 100423 (\"Igreja de Jesus Cristo dos Santos dos Ultimos Dias\") - a real, government-tabulated LDS-specific category, unlike the 2022 Census (see lds-brazil-2022/smaller-faiths-by-state-2022.json for why that year can't isolate LDS).",
+    "Percentage is each state's LDS count divided by that state's own total resident population (SIDRA table 137, category 0/Total), both queried at the state level (n3) for 2010 - ranked by share, not raw count, since state population varies hugely (Sao Paulo has far more members in absolute terms but a lower share than several smaller states)."
+  ],
+  "method": "Public SIDRA API queries: https://apisidra.ibge.gov.br/values/t/137/n3/all/v/93/p/2010/c133/100423 (LDS counts by state) and https://apisidra.ibge.gov.br/values/t/137/n3/all/v/93/p/2010/c133/0 (total population by state), joined on state, all 27 states/DF non-suppressed for both queries.",
+  "state_order": [
+    "Amazonas",
+    "Rio Grande do Sul",
+    "Paraná",
+    "Ceará",
+    "São Paulo",
+    "Alagoas",
+    "Roraima",
+    "Mato Grosso do Sul",
+    "Pernambuco",
+    "Rio Grande do Norte",
+    "Amapá",
+    "Distrito Federal",
+    "Paraíba",
+    "Sergipe",
+    "Acre",
+    "Santa Catarina",
+    "Piauí",
+    "Espírito Santo",
+    "Pará",
+    "Goiás",
+    "Mato Grosso",
+    "Rio de Janeiro",
+    "Bahia",
+    "Rondônia",
+    "Minas Gerais",
+    "Tocantins",
+    "Maranhão"
+  ],
+  "states": {
+    "Amazonas": {
+      "lds": 8539,
+      "population": 3483985,
+      "pct": 0.245
+    },
+    "Rio Grande do Sul": {
+      "lds": 26206,
+      "population": 10693929,
+      "pct": 0.245
+    },
+    "Paraná": {
+      "lds": 21448,
+      "population": 10444526,
+      "pct": 0.205
+    },
+    "Ceará": {
+      "lds": 14011,
+      "population": 8452381,
+      "pct": 0.166
+    },
+    "São Paulo": {
+      "lds": 65556,
+      "population": 41262199,
+      "pct": 0.159
+    },
+    "Alagoas": {
+      "lds": 4920,
+      "population": 3120494,
+      "pct": 0.158
+    },
+    "Roraima": {
+      "lds": 676,
+      "population": 450479,
+      "pct": 0.15
+    },
+    "Mato Grosso do Sul": {
+      "lds": 3236,
+      "population": 2449024,
+      "pct": 0.132
+    },
+    "Pernambuco": {
+      "lds": 11518,
+      "population": 8796448,
+      "pct": 0.131
+    },
+    "Rio Grande do Norte": {
+      "lds": 4015,
+      "population": 3168027,
+      "pct": 0.127
+    },
+    "Amapá": {
+      "lds": 799,
+      "population": 669526,
+      "pct": 0.119
+    },
+    "Distrito Federal": {
+      "lds": 3002,
+      "population": 2570160,
+      "pct": 0.117
+    },
+    "Paraíba": {
+      "lds": 4266,
+      "population": 3766528,
+      "pct": 0.113
+    },
+    "Sergipe": {
+      "lds": 2326,
+      "population": 2068017,
+      "pct": 0.112
+    },
+    "Acre": {
+      "lds": 815,
+      "population": 733559,
+      "pct": 0.111
+    },
+    "Santa Catarina": {
+      "lds": 6928,
+      "population": 6248436,
+      "pct": 0.111
+    },
+    "Piauí": {
+      "lds": 2520,
+      "population": 3118360,
+      "pct": 0.081
+    },
+    "Espírito Santo": {
+      "lds": 2853,
+      "population": 3514952,
+      "pct": 0.081
+    },
+    "Pará": {
+      "lds": 5615,
+      "population": 7581051,
+      "pct": 0.074
+    },
+    "Goiás": {
+      "lds": 4405,
+      "population": 6003788,
+      "pct": 0.073
+    },
+    "Mato Grosso": {
+      "lds": 2193,
+      "population": 3035122,
+      "pct": 0.072
+    },
+    "Rio de Janeiro": {
+      "lds": 9994,
+      "population": 15989929,
+      "pct": 0.063
+    },
+    "Bahia": {
+      "lds": 7426,
+      "population": 14016906,
+      "pct": 0.053
+    },
+    "Rondônia": {
+      "lds": 815,
+      "population": 1562409,
+      "pct": 0.052
+    },
+    "Minas Gerais": {
+      "lds": 9744,
+      "population": 19597330,
+      "pct": 0.05
+    },
+    "Tocantins": {
+      "lds": 496,
+      "population": 1383445,
+      "pct": 0.036
+    },
+    "Maranhão": {
+      "lds": 2186,
+      "population": 6574789,
+      "pct": 0.033
+    }
+  }
+}

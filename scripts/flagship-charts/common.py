@@ -233,6 +233,7 @@ def render_magnitude_bar(
     bar_h_override: float | None = None,
     margin_frac_override: float | None = None,
     row_label_fontsize: float | None = None,
+    value_decimals: int = 0,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
     order), reading its value from `values[row]`. `caption_paragraphs`,
@@ -295,6 +296,14 @@ def render_magnitude_bar(
     touching the formula every other <7-row chart still uses - e.g. a
     very-low-row-count chart (2-4 rows) that still reads as sparse at the
     standard scaling. Leave both unset to keep the pipeline default.
+
+    `value_decimals` sets the bar-end value label's decimal places (default
+    0, unchanged for every existing caller - every prior chart's values
+    were large enough that whole-number rounding didn't erase the signal).
+    Raise it for a caller whose values are all well under 1 at this
+    suffix - e.g. lds-brazil-census-2010's state-level LDS shares, which
+    run 0.03%-0.25%; at the default 0 decimals every single row would
+    round to the same "0%" label.
     """
     fonts = fonts or load_fonts()
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
@@ -456,7 +465,7 @@ def render_magnitude_bar(
     )
     for r, v, c, y in zip(display_rows, vals, colors, row_positions):
         ax.text(
-            v + max(vals) * 0.02, y, f"{v:.0f}{value_suffix}", va="center", ha="left",
+            v + max(vals) * 0.02, y, f"{v:.{value_decimals}f}{value_suffix}", va="center", ha="left",
             color=c, fontproperties=fonts["bold"],
             fontsize=data_label_fontsize, zorder=4,
         )
