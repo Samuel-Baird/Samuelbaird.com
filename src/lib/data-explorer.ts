@@ -249,6 +249,9 @@ import bornAgainIdentityHispanicsData from "../../docs/datasets/pew-hispanics-re
 import usMembershipGrowthData from "../../docs/datasets/us-membership-growth-2000-2025/membership-by-year.json";
 import usMembershipProjectionData from "../../docs/datasets/us-membership-growth-2000-2025/membership-projection-2050.json";
 import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-membership-history/membership-by-year.json";
+import brazilMembershipByYearData from "../../docs/datasets/lds-brazil-2022/membership-by-year.json";
+import brazilLatinAmericaComparisonData from "../../docs/datasets/lds-brazil-2022/latin-america-comparison-2025.json";
+import brazilSmallerFaithsByStateData from "../../docs/datasets/lds-brazil-2022/smaller-faiths-by-state-2022.json";
 import tenLargestChurchesData from "../../docs/datasets/ten-largest-us-churches-2035/denominations.json";
 import religiousTraditionShiftsData from "../../docs/datasets/religious-tradition-shifts/shifts-2007-2023.json";
 
@@ -1754,6 +1757,41 @@ const RAW_DATASETS: Dataset[] = [
       weeklyAttendanceHispanicsGraphic(),
     ],
   },
+  {
+    slug: "lds-brazil-2022",
+    name: "Latter-day Saints in Brazil",
+    shortDescription:
+      "Brazil's Church membership growth since 1940, how it now compares to the rest of Latin America, and where the country's smaller faiths concentrate.",
+    sponsor: "The Church of Jesus Christ of Latter-day Saints; Brazilian Institute of Geography and Statistics (IBGE)",
+    fielder: "Compiled by this site from multiple public sources; IBGE 2022 Census (own tabulation)",
+    fieldedPeriod: "1940-2025",
+    description:
+      "Three angles on the Church in Brazil, the country that in 2025 overtook Mexico to become " +
+      "the nation with the most Latter-day Saints outside the United States. The first chart is a " +
+      "compiled historical membership timeline, 1940-2025 — sparser than this site's other " +
+      "membership timelines, since fewer annual Brazil-only figures are publicly documented; every " +
+      "point is a real reported or rounded figure, with irregular gaps left as gaps rather than " +
+      "filled in. The second compares Brazil against the four other largest Latin American Church " +
+      "populations (Mexico, Peru, Chile, Argentina) as of Dec. 31, 2025. The third uses the 2022 " +
+      "Brazilian Census (IBGE) — but is deliberately NOT an LDS-specific figure: IBGE's public " +
+      "religion variable only breaks out 9 broad groups, so \"Outras religiosidades\" (Other " +
+      "religions) is a mixed bucket covering Latter-day Saints alongside Jehovah's Witnesses, " +
+      "Spiritualists, Jews, Muslims, Buddhists, and more, by state. See " +
+      "docs/datasets/lds-brazil-2022/README.md for every figure's citation and the full framing " +
+      "note on that last chart.",
+    citation:
+      "Compiled from Wikipedia's \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" " +
+      "cumorah.com's LDS Growth Case Studies, the Church's official facts-and-statistics pages " +
+      "(2025), and this site's own weighted tabulation of the 2022 Brazilian Census (IBGE) " +
+      "Pessoas microdata.",
+    sourceUrl: "https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng",
+    category: "Mixed Datasets",
+    graphics: [
+      brazilMembershipByYearGraphic(),
+      brazilLatinAmericaComparisonGraphic(),
+      brazilSmallerFaithsByStateGraphic(),
+    ],
+  },
 ];
 
 /** Site-wide Data Explorer rule: every dataset's graphics gallery
@@ -1846,6 +1884,52 @@ function usMembershipProjectionGraphic(): Graphic {
     imageSrc: "/data-explorer/us-membership-growth-2000-2025/membership-projection-2050.png",
     width: 1080, height: 1350,
     alt: `Line and range chart: U.S. Church membership, reported through ${anchor_year}, then a projected range through 2050 between a "trend continues" high estimate and a "deceleration continues" low estimate. ${alt}. Neither bound is a forecast.`,
+  };
+}
+
+function brazilMembershipByYearGraphic(): Graphic {
+  const { year_order: years, series } = brazilMembershipByYearData;
+  const alt = years
+    .map((y) => {
+      const r = series[String(y) as keyof typeof series];
+      return `${y}: ${r.members.toLocaleString()}${r.status === "rounded" ? " (rounded)" : ""}`;
+    })
+    .join(", ");
+  return {
+    title: "Brazil Church membership, 1940-2025",
+    description:
+      "A sparse compiled timeline of reported Brazilian membership - real figures only, gaps left as gaps.",
+    imageSrc: "/data-explorer/lds-brazil-2022/membership-by-year.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: Brazil Church membership by year, 1940 to 2025, irregularly spaced (only years with a real reported or rounded figure are plotted). ${alt}.`,
+  };
+}
+
+function brazilLatinAmericaComparisonGraphic(): Graphic {
+  const { country_order: countries, countries: data } = brazilLatinAmericaComparisonData;
+  const alt = countries
+    .map((c) => `${c}: ${data[c as keyof typeof data].members.toLocaleString()}`)
+    .join(", ");
+  return {
+    title: "Brazil overtakes Mexico",
+    description:
+      "Brazil surpassed Mexico in total membership in 2025, becoming the country with the most Latter-day Saints outside the U.S.",
+    imageSrc: "/data-explorer/lds-brazil-2022/latin-america-comparison-2025.png",
+    width: 1080, height: 1350,
+    alt: `Horizontal bar chart: total Church membership, five largest Latin American Latter-day Saint populations, as of Dec. 31, 2025. ${alt}. Brazil is now the largest, narrowly ahead of Mexico by 1,073 members.`,
+  };
+}
+
+function brazilSmallerFaithsByStateGraphic(): Graphic {
+  const { state_order: states, states: data } = brazilSmallerFaithsByStateData;
+  const alt = states.map((s) => `${s}: ${data[s as keyof typeof data].pct}%`).join(", ");
+  return {
+    title: "Where Brazil's smaller faiths are concentrated",
+    description:
+      "NOT an LDS-specific figure - IBGE's \"Other religions\" bucket by state, 2022 Census. See the dataset README for the full framing note.",
+    imageSrc: "/data-explorer/lds-brazil-2022/smaller-faiths-by-state-2022.png",
+    width: 1080, height: 1350,
+    alt: `Horizontal bar chart, ranked: share of each Brazilian state's population age 10+ in IBGE's 2022 Census "Outras religiosidades" (Other religions) bucket - a mixed group including Latter-day Saints, Jehovah's Witnesses, Spiritualists, Jews, Muslims, Buddhists, and more, NOT an LDS-specific estimate. ${alt}. Roraima is the highest at roughly double the national rate of 4.0%.`,
   };
 }
 

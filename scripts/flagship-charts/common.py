@@ -232,6 +232,7 @@ def render_magnitude_bar(
     value_label_fontsize: float | None = None,
     bar_h_override: float | None = None,
     margin_frac_override: float | None = None,
+    row_label_fontsize: float | None = None,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
     order), reading its value from `values[row]`. `caption_paragraphs`,
@@ -282,6 +283,12 @@ def render_magnitude_bar(
     a caller that wants the two to read at the same weight - e.g. a chart
     meant to stand alone as a single shareable image rather than sit in a
     dense gallery grid. Leave unset to keep the pipeline default.
+
+    `row_label_fontsize` overrides the y-tick row-label size (default
+    `MIN.LEGEND`/24pt) for a caller with far more rows than this pipeline's
+    ~7-13 row norm (e.g. a full 27-state/DF ranked bar) - at 24pt, that many
+    rows overlap vertically in the fixed plotting band every chart shares.
+    Leave unset to keep the pipeline default for every other caller.
 
     `bar_h_override`/`margin_frac_override` replace the automatic
     n_rows-based bar_h/margin_frac below for one specific caller, without
@@ -370,6 +377,7 @@ def render_magnitude_bar(
     edge_margin_px = 0.045 * FIG_W_IN * DPI  # buffer so a wide label doesn't touch the canvas edge
     max_label_width_px = (AXES_LEFT_CAP * FIG_W_IN * DPI) - label_pad_px - edge_margin_px
     row_wrap_width = 30
+    label_fontsize = row_label_fontsize if row_label_fontsize is not None else MIN.LEGEND
     while True:
         # A row label that already contains a literal newline is a caller's
         # own deliberate line break (e.g. forcing a short label onto two
@@ -380,7 +388,7 @@ def render_magnitude_bar(
             for r in display_rows
         }
         probes = [
-            fig.text(0, 0, wrapped_labels[r], fontproperties=fonts["bold"], fontsize=MIN.LEGEND)
+            fig.text(0, 0, wrapped_labels[r], fontproperties=fonts["bold"], fontsize=label_fontsize)
             for r in display_rows
         ]
         fig.canvas.draw()
@@ -438,7 +446,7 @@ def render_magnitude_bar(
     ax.set_yticklabels([wrapped_labels[r] for r in display_rows])
     for tick_label in ax.get_yticklabels():
         tick_label.set_fontproperties(fonts["bold"])
-        tick_label.set_fontsize(MIN.LEGEND)
+        tick_label.set_fontsize(label_fontsize)
         tick_label.set_color(INK)
 
     data_label_fontsize = (

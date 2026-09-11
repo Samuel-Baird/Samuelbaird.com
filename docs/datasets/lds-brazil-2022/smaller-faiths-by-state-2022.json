@@ -1,0 +1,150 @@
+{
+  "national_pct_2022": 4.0,
+  "national_pct_2010": 2.7,
+  "highest_state": "Roraima",
+  "highest_state_pct": 7.78,
+  "sources_summary": [
+    "2022 Census microdata (Pessoas file), Brazilian Institute of Geography and Statistics (IBGE) - own weighted tabulation, weighted by the P0110 sample weight, restricted to population age 10+ (religion was not asked of under-10s).",
+    "Cross-checked against IBGE's own published national and state figures in \"Censo Demografico 2022 Religioes: Resultados preliminares da amostra\" (official report), which states a national \"Outras religiosidades\" share of 2.7% (2010) to 4.0% (2022), and Roraima as the highest state at approximately 7.8%."
+  ],
+  "method": "IBGE's public 2022 Census microdata sorts religious affiliation into 9 broad groups; \"Outras religiosidades\" (religion code 6) is a mixed bucket covering every religion outside the 8 other named categories - including Latter-day Saints, Jehovah's Witnesses, Spiritualists, Jews, Muslims, Buddhists, and esoteric traditions, among others. IBGE has not released a more granular 33-category breakout that would isolate any single one of those groups (including LDS) from this bucket, in either the public microdata, the SIDRA agregados API, or the official preliminary-sample report checked for this chart. This chart is NOT an estimate of Latter-day Saint population by state and should never be read as one.",
+  "state_order": [
+    "Roraima",
+    "Rio de Janeiro",
+    "São Paulo",
+    "Distrito Federal",
+    "Amazonas",
+    "Bahia",
+    "Goiás",
+    "Acre",
+    "Mato Grosso do Sul",
+    "Rondônia",
+    "Espírito Santo",
+    "Pernambuco",
+    "Santa Catarina",
+    "Amapá",
+    "Minas Gerais",
+    "Paraná",
+    "Mato Grosso",
+    "Paraíba",
+    "Rio Grande do Sul",
+    "Rio Grande do Norte",
+    "Sergipe",
+    "Tocantins",
+    "Ceará",
+    "Pará",
+    "Maranhão",
+    "Alagoas",
+    "Piauí"
+  ],
+  "states": {
+    "Roraima": {
+      "pct": 7.78,
+      "weighted_persons": 39591
+    },
+    "Rio de Janeiro": {
+      "pct": 5.86,
+      "weighted_persons": 828745
+    },
+    "São Paulo": {
+      "pct": 5.4,
+      "weighted_persons": 2113849
+    },
+    "Distrito Federal": {
+      "pct": 4.9,
+      "weighted_persons": 120767
+    },
+    "Amazonas": {
+      "pct": 4.62,
+      "weighted_persons": 148630
+    },
+    "Bahia": {
+      "pct": 4.52,
+      "weighted_persons": 555519
+    },
+    "Goiás": {
+      "pct": 4.34,
+      "weighted_persons": 265050
+    },
+    "Acre": {
+      "pct": 4.11,
+      "weighted_persons": 28106
+    },
+    "Mato Grosso do Sul": {
+      "pct": 4.1,
+      "weighted_persons": 96360
+    },
+    "Rondônia": {
+      "pct": 3.91,
+      "weighted_persons": 52807
+    },
+    "Espírito Santo": {
+      "pct": 3.75,
+      "weighted_persons": 125327
+    },
+    "Pernambuco": {
+      "pct": 3.65,
+      "weighted_persons": 285650
+    },
+    "Santa Catarina": {
+      "pct": 3.42,
+      "weighted_persons": 227812
+    },
+    "Amapá": {
+      "pct": 3.32,
+      "weighted_persons": 19894
+    },
+    "Minas Gerais": {
+      "pct": 3.23,
+      "weighted_persons": 584120
+    },
+    "Paraná": {
+      "pct": 3.19,
+      "weighted_persons": 318892
+    },
+    "Mato Grosso": {
+      "pct": 3.16,
+      "weighted_persons": 97885
+    },
+    "Paraíba": {
+      "pct": 3.04,
+      "weighted_persons": 104427
+    },
+    "Rio Grande do Sul": {
+      "pct": 3.04,
+      "weighted_persons": 291959
+    },
+    "Rio Grande do Norte": {
+      "pct": 2.82,
+      "weighted_persons": 81185
+    },
+    "Sergipe": {
+      "pct": 2.8,
+      "weighted_persons": 53267
+    },
+    "Tocantins": {
+      "pct": 2.74,
+      "weighted_persons": 35025
+    },
+    "Ceará": {
+      "pct": 2.48,
+      "weighted_persons": 188483
+    },
+    "Pará": {
+      "pct": 2.46,
+      "weighted_persons": 167701
+    },
+    "Maranhão": {
+      "pct": 2.33,
+      "weighted_persons": 133074
+    },
+    "Alagoas": {
+      "pct": 2.31,
+      "weighted_persons": 61454
+    },
+    "Piauí": {
+      "pct": 1.84,
+      "weighted_persons": 51933
+    }
+  }
+}

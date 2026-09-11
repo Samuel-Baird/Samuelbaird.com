@@ -1,0 +1,106 @@
+{
+  "sources_summary": [
+    "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline (1940-1979, 1989, 1999, 2009, 2019): https://en.wikipedia.org/wiki/The_Church_of_Jesus_Christ_of_Latter-day_Saints_in_Brazil",
+    "cumorah.com LDS Growth Case Studies (Matt Martinich), \"Expanding LDS Outreach in Brazil\" (2000, 2010): https://www.cumorah.com/articles/ldsGrowthCaseStudies/487?get_pdf=true",
+    "Church official facts-and-statistics page (2025): https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+  ],
+  "method": "A compiled historical timeline, not one survey's microdata - each point is a separately cited Church-reported (or Church-published rounded) figure, spaced irregularly across 1940-2025 rather than on a fixed annual grid. No point is interpolated or estimated: years with no findable real figure (most of 1940-2024 outside the points listed here) are simply omitted rather than filled in. See each year's own `source`.",
+  "milestones": [
+    {
+      "year": 1966,
+      "label": "First Brazilian stake organized (Sao Paulo)"
+    },
+    {
+      "year": 1978,
+      "label": "First temple in Brazil and South America dedicated (Sao Paulo)"
+    },
+    {
+      "year": 1985,
+      "label": "End of Brazil's military dictatorship"
+    },
+    {
+      "year": 1993,
+      "label": "Brazil becomes the 3rd country to reach 100 stakes"
+    },
+    {
+      "year": 2025,
+      "label": "Brazil overtakes Mexico in total membership"
+    }
+  ],
+  "year_order": [
+    1940,
+    1950,
+    1960,
+    1970,
+    1979,
+    1989,
+    1999,
+    2000,
+    2009,
+    2010,
+    2019,
+    2025
+  ],
+  "series": {
+    "1940": {
+      "members": 233,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "1950": {
+      "members": 648,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "1960": {
+      "members": 2644,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "1970": {
+      "members": 33104,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "1979": {
+      "members": 71510,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "1989": {
+      "members": 302000,
+      "status": "rounded",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil\" - published as a rounded number."
+    },
+    "1999": {
+      "members": 743182,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "2000": {
+      "members": 775822,
+      "status": "reported",
+      "source": "cumorah.com LDS Growth Case Studies (Matt Martinich), \"Expanding LDS Outreach in Brazil.\""
+    },
+    "2009": {
+      "members": 1102674,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "2010": {
+      "members": 1138740,
+      "status": "reported",
+      "source": "cumorah.com LDS Growth Case Studies (Matt Martinich), \"Expanding LDS Outreach in Brazil.\""
+    },
+    "2019": {
+      "members": 1429935,
+      "status": "reported",
+      "source": "Wikipedia, \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" compiled historical timeline."
+    },
+    "2025": {
+      "members": 1573360,
+      "status": "reported",
+      "source": "Church official facts-and-statistics page, as of Dec. 31, 2025: https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+    }
+  }
+}

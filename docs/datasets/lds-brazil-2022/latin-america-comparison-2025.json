@@ -1,0 +1,63 @@
+{
+  "as_of": "December 31, 2025",
+  "sources_summary": [
+    "Church official facts-and-statistics pages, one per country, as of Dec. 31, 2025 (churchofjesuschrist.org/learn/facts-statistics/<country>).",
+    "http://ldschurchgrowth.blogspot.com/2026/04/country-by-country-membership.html (secondary source noting Brazil's overtake of Mexico)."
+  ],
+  "method": "Total Church membership, congregations (wards + branches), missions, and operating temples for the five Latin American countries with the largest Latter-day Saint populations, each pulled directly from that country's own official Church facts-and-statistics page as of Dec. 31, 2025 - a single-source snapshot, not a compiled timeline.",
+  "headline": "Brazil surpassed Mexico in total membership in 2025 (by 1,073 members) to become the country with the most Latter-day Saints of any nation outside the United States.",
+  "country_order": [
+    "Brazil",
+    "Mexico",
+    "Peru",
+    "Chile",
+    "Argentina"
+  ],
+  "countries": {
+    "Brazil": {
+      "members": 1573360,
+      "congregations": 2008,
+      "wards": 1650,
+      "branches": 358,
+      "missions": 37,
+      "operating_temples": 11,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+    },
+    "Mexico": {
+      "members": 1572287,
+      "congregations": 1875,
+      "wards": 1401,
+      "branches": 474,
+      "missions": 34,
+      "operating_temples": 14,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/mexico?lang=eng"
+    },
+    "Peru": {
+      "members": 667836,
+      "congregations": 809,
+      "wards": 684,
+      "branches": 125,
+      "missions": 15,
+      "operating_temples": 4,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/peru?lang=eng"
+    },
+    "Chile": {
+      "members": 624203,
+      "congregations": 578,
+      "wards": 456,
+      "branches": 122,
+      "missions": 11,
+      "operating_temples": 3,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/chile?lang=eng"
+    },
+    "Argentina": {
+      "members": 505819,
+      "congregations": 742,
+      "wards": 506,
+      "branches": 236,
+      "missions": 14,
+      "operating_temples": 5,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/argentina?lang=eng"
+    }
+  }
+}

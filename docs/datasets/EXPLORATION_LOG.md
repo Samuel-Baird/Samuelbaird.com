@@ -2243,3 +2243,39 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   pew-mormon-survey-2011 (Mormon-only, by-activity charts) and
   pew-hispanics-religion-2007 (LDS n=34), plus W117's held-back
   VOTECHOICE2020 political item.
+
+- **lds-brazil-2022** (compiled Brazil membership timeline + Church
+  facts-and-statistics pages + 2022 Census/IBGE) — new dataset, 2026-09-11:
+  three graphics, this site's first Brazil-specific entry. `membership-by-year.png`
+  compiles a sparse 1940-2025 Brazil membership timeline (Wikipedia's
+  "The Church of Jesus Christ of Latter-day Saints in Brazil" compiled
+  timeline for 1940-1979/1989/1999/2009/2019, cumorah.com's "Expanding LDS
+  Outreach in Brazil" case study for 2000/2010, the Church's own
+  facts-and-statistics page for 2025's 1,573,360) — additional WebSearch/
+  WebFetch against the Church newsroom country page (Wayback Machine
+  unreachable from this environment), Wikipedia's broader membership-
+  statistics article, and ldschurchgrowth.blogspot.com's annual
+  country-by-country posts (2019/2021/2022/2024) did not turn up further
+  real annual totals for the 2011-2018/2020-2024 gaps — those years are
+  left as genuine gaps, not interpolated. `latin-america-comparison-2025.png`
+  is a single-source-per-country snapshot (Brazil, Mexico, Peru, Chile,
+  Argentina facts-and-statistics pages, Dec. 31, 2025): Brazil (1,573,360)
+  narrowly overtook Mexico (1,572,287) by 1,073 members to become the
+  largest Latter-day Saint population outside the U.S. `smaller-faiths-by-state-2022.png`
+  is IBGE's 2022 Census "Outras religiosidades" ("Other religions") share
+  by state, 10+ population, weighted by P0110, from a pre-computed
+  tabulation cross-checked against the official report's own Roraima
+  (~7.8%, computed 7.78%) and national (2.7%→4.0%, 2010→2022) figures —
+  framed explicitly, in title/subtitle/caption and this dataset's README,
+  as NOT an LDS-specific number, since IBGE's public microdata only
+  breaks religion into 9 broad groups and has never released a granular
+  breakout isolating LDS from that mixed bucket. Added a `row_label_fontsize`
+  override param to `render_magnitude_bar` (scripts/flagship-charts/common.py,
+  default unchanged/`MIN.LEGEND` for every other caller) since the
+  27-state/DF chart's row labels overlapped at the pipeline's normal
+  24pt floor. Hand-written `scripts/lds-brazil-2022/{build_membership_by_year,
+  build_latin_america_comparison,build_smaller_faiths_by_state}.py` +
+  matching `render_*_chart.py` scripts, JSON in `docs/datasets/lds-brazil-2022/`,
+  PNGs in `public/data-explorer/lds-brazil-2022/`; wired in as a new
+  single dataset with three graphics under the "Mixed Datasets" category.
+  `tsc --noEmit` clean; all three PNGs read directly and visually checked.
