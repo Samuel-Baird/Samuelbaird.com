@@ -120,3 +120,19 @@ inspected, rather than edited blind.
   gallery pages at `src/app/data-explorer/state-of-theology/social/post1`
   and `post2` had their own `SLIDES` captions updated to match the new
   quoted titles.
+
+## What changed (round three: subtitle color, hook-slide type)
+
+- **Per-statement chart subtitles are now ink (black), not muted gray** —
+  both scripts' `plot.subtitle`, plus post1's scorecard (shares
+  `theme_burge()`). Only the direction word itself (`agree`/`disagree`) is
+  bold now, not the whole "strongly ... or somewhat ..." phrase — was
+  `Share who <b>strongly agree or somewhat agree</b>`, now `Share who
+  strongly <b>agree</b> or somewhat <b>agree</b>`.
+- **Hook slides** (`make_hook`, post1 only — `hook_a_created.png`,
+  `hook_b_not_god.png`, `hook_c_combined.png`): every non-headline text
+  size bumped and recolored to ink/black — the `lines` block 30→34pt, the
+  optional `kicker` 24→28pt (was muted gray), and hook_c's nested
+  "61%/44%/55%" list 26→30pt. The giant headline stat (96pt) stays teal —
+  it's the slide's de facto title, there's no `labs(title=...)` on a hook
+  card to hold that role instead.

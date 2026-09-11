@@ -166,7 +166,7 @@ make <- function(k) {
     scale_fill_manual(values = pal) + scale_colour_manual(values = pal) +
     scale_x_continuous(limits = c(0, xtop * 1.14), expand = expansion(mult = c(0, 0))) +
     labs(title = title_text,
-         subtitle = paste0("Share who <b>strongly ", it$dir, " or somewhat ", it$dir,
+         subtitle = paste0("Share who strongly <b>", it$dir, "</b> or somewhat <b>", it$dir,
                            "</b>, ", it$year),
          caption = SRC) +
     theme_minimal(base_family = "Roboto Condensed", base_size = 15) +
@@ -181,7 +181,7 @@ make <- function(k) {
       plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
                                 size = title_size, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
-      plot.subtitle = element_markdown(size = 18, colour = muted, lineheight = 1.4,
+      plot.subtitle = element_markdown(size = 18, colour = ink, lineheight = 1.4,
                                        margin = margin(b = 34)),
       plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                       lineheight = 1.6, margin = margin(t = 34)),

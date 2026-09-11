@@ -216,7 +216,7 @@ theme_burge <- function() {
                                 size = 40, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
       plot.subtitle = element_markdown(family = "Roboto Condensed", size = 18,
-                                       colour = muted, lineheight = 1.4,
+                                       colour = ink, lineheight = 1.4,
                                        margin = margin(b = 22)),
       plot.caption = element_markdown(family = "Roboto Condensed", size = 16,
                                       colour = ink, hjust = 0, lineheight = 1.6,
@@ -266,7 +266,7 @@ make_chart <- function(k) {
   title_size <- if (nchar(title_text) > 95) 30 else if (nchar(title_text) > 65) 34 else 40
 
   sub <- paste0(
-    "Share who <b>strongly ", dirword, " or somewhat ", dirword, "</b>",
+    "Share who strongly <b>", dirword, "</b> or somewhat <b>", dirword, "</b>",
     if (!is.null(it$lead)) paste0("<br>", it$lead) else "",
     "<br><br>", legend)
 
@@ -313,7 +313,7 @@ make_scorecard <- function() {
     labs(
       title = "Firmer, but not firm",
       subtitle = paste0(
-        "Share of <b>evangelicals by affiliation</b> who strongly agree or somewhat agree, 2022<br>",
+        "Share of <b>evangelicals by affiliation</b> who strongly <b>agree</b> or somewhat <b>agree</b>, 2022<br>",
         "No statement clears 80%.<br><br>",
         "<span style='color:", amber, "'><b>&#9632; Contested moral issues</b></span>",
         "<span style='color:", grid, "'> &#124; </span>",
@@ -374,9 +374,9 @@ make_textcard <- function() {
 make_hook <- function(file, big, lines, kicker = NULL) {
   body <- paste0(
     "<span style='font-size:96pt;color:", teal, "'><b>", big, "</b></span><br>",
-    "<span style='font-size:30pt;color:", ink, "'>", lines, "</span>",
+    "<span style='font-size:34pt;color:", ink, "'>", lines, "</span>",
     if (!is.null(kicker))
-      paste0("<br><br><br><span style='font-size:24pt;color:", muted, "'>", kicker, "</span>")
+      paste0("<br><br><br><span style='font-size:28pt;color:", ink, "'>", kicker, "</span>")
     else "")
   p <- ggplot() +
     geom_richtext(aes(x = 0, y = 1, label = body), hjust = 0, vjust = 1,
@@ -403,7 +403,7 @@ make_hook("hook_b_not_god.png", "44%",
 
 make_hook("hook_c_combined.png", "92%",
   paste0("of American evangelicals say they<br>believe in the Trinity.<br><br>",
-         "<span style='font-size:26pt'>",
+         "<span style='font-size:30pt;color:", ink, "'>",
          "<b style='color:", teal, "'>61%</b> say Jesus was created.<br>",
          "<b style='color:", teal, "'>44%</b> say Jesus was not God.<br>",
          "<b style='color:", teal, "'>55%</b> say the Spirit is a force.</span>"))
