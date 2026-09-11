@@ -407,3 +407,29 @@ New post: `post5-membership-scale-widescreen/post5_membership_scale_widescreen.p
   `/social-graphics/state-of-theology/post5/` with 1920×1080 image
   dimensions and post4's two-column grid instead of post3's three-column
   one) and a new `socialSets` entry in `src/lib/data-explorer.ts`.
+
+## What changed (round twelve: post2 gap, LDS bar label, post5 rescaled)
+
+- **post2's `0_intro.png`**: the gap between "Last week's numbers looked
+  bad." and "Compared to every other..." tightened from five `<br>`s to
+  three.
+- **post3 and post5's LDS bar** is now labeled `"6.9M LDS"`, not just
+  `"6.9M"` - the top chart's bars all carry a tradition name next to
+  their own value already (`fmt_millions(v)` next to each `ax.barh`
+  label); the contrast bar was the one value on the slide without a name
+  attached.
+- **post5 rescaled**: `LEFT`/`CHART_LEFT` were carried over unchanged
+  from post3's 9in-wide canvas (0.075/0.30), leaving an oversized left
+  gutter on this 16in-wide one - `CHART_LEFT=0.30` alone reserved 4.8in
+  for a label column that only needs ~2.2in even at "Black Protestant"'s
+  width (measured directly with the script's own `text_width_px`).
+  `LEFT` 0.075→0.045, `CHART_LEFT` 0.30→0.19 - both title and row labels
+  now sit flush with the same left margin. The reclaimed width goes
+  straight to the bars: `RIGHT - CHART_LEFT` (the bars' own pixel span)
+  grew from 0.64 to 0.75 of the canvas, so every bar draws longer at the
+  same data-to-pixel scale, without changing `xlim_top`'s formula.
+  Checked with a pixel-level scan (band-by-band leftmost/rightmost
+  non-white column) across every regenerated slide: the leftmost content
+  is always exactly the intended margin (never 0, i.e. never touching the
+  canvas edge) except the full-width divider line, which is edge-to-edge
+  by design.

@@ -269,10 +269,21 @@ def draw_mixed_line(fig, x: float, y: float, segments, fontsize: float, va: str 
 # Shared layout constants -- fixed across every slide so the whole set
 # reads as one consistent series (same bar thickness, same margins).
 # ---------------------------------------------------------------------------
-LEFT, RIGHT = 0.075, 0.94
-# 0.24 -> 0.30: the y-axis row labels bumped from 20pt to 24pt (see below)
-# need more room so "Black Protestant" clears the figure's left edge.
-CHART_LEFT = 0.30
+# post3's LEFT/RIGHT/CHART_LEFT margins were all tuned for a 9in-wide
+# canvas; carried over unchanged they left a wide, unused gutter on this
+# 16in-wide one (CHART_LEFT=0.30 alone reserved 4.8in for a label column
+# that only needs ~2.2in even at "Black Protestant"'s width) - explicit
+# whitespace the bars should get instead. LEFT: 0.075 -> 0.045 (title/
+# caption/subtitle's own left margin - was 1.2in, now 0.72in, still a
+# real margin, just not an oversized one). CHART_LEFT: 0.30 -> 0.19,
+# measured (`text_width_px`) against "Black Protestant" bold 24pt (the
+# widest row label, ~2.20in / 0.138 of 16in) plus the axis tick padding
+# and a small buffer - so labels still clear the left edge with room to
+# spare. The freed-up width (RIGHT - CHART_LEFT grows from 0.64 to 0.75)
+# goes straight to the bars: same `xlim_top` formula below, but now
+# mapped across a wider pixel span, so every bar draws longer.
+LEFT, RIGHT = 0.045, 0.94
+CHART_LEFT = 0.19
 BAR_HEIGHT_FRAC = 0.74
 N_TOP = len(ORDER)  # Total + 4 traditions
 TITLE_FONTSIZE = 34
@@ -434,7 +445,7 @@ def render_item(item: dict) -> None:
     ax2.set_yticks([])
     for spine in ax2.spines.values():
         spine.set_visible(False)
-    ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, fmt_millions(LDS_US_MEMBERS), va="center", ha="left",
+    ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, f"{fmt_millions(LDS_US_MEMBERS)} LDS", va="center", ha="left",
               color=ACCENT, fontproperties=fonts["bold"], fontsize=20)
 
     if ax2_bottom < caption_top:

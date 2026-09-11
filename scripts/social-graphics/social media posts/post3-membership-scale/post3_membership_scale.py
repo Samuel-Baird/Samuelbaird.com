@@ -401,7 +401,7 @@ def render_item(item: dict) -> None:
     ax2.set_yticks([])
     for spine in ax2.spines.values():
         spine.set_visible(False)
-    ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, fmt_millions(LDS_US_MEMBERS), va="center", ha="left",
+    ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, f"{fmt_millions(LDS_US_MEMBERS)} LDS", va="center", ha="left",
               color=ACCENT, fontproperties=fonts["bold"], fontsize=20)
 
     if ax2_bottom < caption_top:
