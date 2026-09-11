@@ -34,9 +34,19 @@ bold Roboto Slab title, `element_markdown()` subtitle/caption via `ggtext`,
 legend off, title/caption pinned to plot edge with `*.position = "plot"`).
  
 **Title/subtitle/caption convention:**
-- Title: short, punchy claim (`"America's Arianism problem"`), not a variable name.
-- Subtitle doubles as the legend: the survey question in italics, then a
-  markdown-colored key (`<span style='color:...'>■ Group</span>`) built with
+- Title: for a per-statement chart (one slide, one survey item), the
+  statement itself, quoted verbatim (`"There is one true God in three
+  persons..."`) — not a punchy claim. This replaced the older "short,
+  punchy claim" rule (`"America's Arianism problem"`) after it was found
+  to duplicate the survey question that was also sitting in the subtitle:
+  one slide, two places making the same statement, is clutter. A punchy
+  claim is still fine for a slide that *isn't* about one measured
+  statement — a hook card, an intro/closing text card — since there's no
+  single question for the title to quote there.
+- Subtitle no longer repeats the quote (see above) — just the direction
+  line ("Share who strongly agree or somewhat agree, {year}") and, where a
+  chart uses more than one series, a markdown-colored legend key
+  (`<span style='color:...'>■ Group</span>`) built with
   `element_markdown()` — no separate ggplot legend.
 - Caption (`cap_txt`) holds, in order: any asterisked methodology footnotes,
   then the dataset/methodology line in **bold**, sample size + margin of
@@ -82,19 +92,21 @@ the site's Data Explorer, documented at
 [../state-of-theology-graphics/STYLE.md](../state-of-theology-graphics/STYLE.md).
 That doc departs from this one on two points, both website-specific:
 
-- **Title wording.** Here (social), a title *may* be a short, punchy claim
-  when one fits ("America's Arianism problem") — that's a judgment call per
-  post, not a requirement every post needs a claim. On the website, a title
-  must be either the survey statement/item verbatim (a *measurement*
-  title) or a plain, verifiable-from-the-chart summary of the finding (a
-  *factual-summary* title) — spin, judgment words, and unplotted claims are
-  banned in both website modes, but a punchy line like "America's Arianism
-  problem" still isn't legal there (it's a judgment word, not a direction
-  word, and it isn't literally readable off a bar). See
+- **Title wording.** Here (social), a per-statement chart's title is now
+  the survey statement itself, quoted verbatim — same as the website's
+  *measurement* title (see "Title/subtitle/caption convention" above). The
+  remaining latitude this guide keeps over the website: a slide that isn't
+  about one measured statement (a hook card, an intro/closing text card)
+  *may* still use a short, punchy claim ("Evangelicals won", "Still the
+  beam") — that's a judgment call per post, not a requirement every such
+  slide needs a claim. The website has no equivalent slide type, so it has
+  no equivalent exception; every website chart title is either a
+  measurement title or a plain, verifiable-from-the-chart *factual-summary*
+  title — spin, judgment words, and unplotted claims stay banned there. See
   `state-of-theology-graphics/STYLE.md`'s "Titles: accurate, not editorial"
-  for the full rule. Don't pull the website's spin ban back into posts made
-  from this guide, and don't treat "punchy is fine" as license to
-  editorialize a website chart.
+  for the full website rule. Don't pull the website's spin ban back into a
+  social hook/text-card title, and don't treat "punchy is fine for a hook
+  card" as license to editorialize a per-statement chart on either side.
 - **Background.** Here, `paper` is the cream `#F7F5F0`. On the website it's
   pure white. Everything else in the palette is shared between the two.
 

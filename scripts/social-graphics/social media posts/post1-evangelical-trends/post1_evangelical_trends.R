@@ -215,10 +215,10 @@ theme_burge <- function() {
       plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
                                 size = 40, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
-      plot.subtitle = element_markdown(family = "Roboto Condensed", size = 16,
+      plot.subtitle = element_markdown(family = "Roboto Condensed", size = 18,
                                        colour = muted, lineheight = 1.4,
                                        margin = margin(b = 22)),
-      plot.caption = element_markdown(family = "Roboto Condensed", size = 11.5,
+      plot.caption = element_markdown(family = "Roboto Condensed", size = 16,
                                       colour = ink, hjust = 0, lineheight = 1.6,
                                       margin = margin(t = 20)),
       plot.caption.position = "plot", plot.title.position = "plot",
@@ -252,13 +252,20 @@ make_chart <- function(k) {
   if (ytop - max(d$pct) < 5) ytop <- ytop + 10
   ystep <- if (ytop >= 80) 20 else 10
   legend <- if (length(it$series) == 2)
-    paste0("<span style='color:", amber, "'><b>&#9632; Evangelicals by affiliation</b></span>",
+    paste0("<span style='font-size:20pt;color:", amber, "'><b>&#9632; Evangelicals by affiliation</b></span>",
            "<span style='color:", grid, "'> &#124; </span>",
-           "<span style='color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
-  else paste0("<span style='color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
+           "<span style='font-size:20pt;color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
+  else paste0("<span style='font-size:20pt;color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
+
+  # Title IS the survey statement (see "Titles: accurate, not editorial"
+  # in scripts/state-of-theology-graphics/STYLE.md) — no separate quote
+  # line in the subtitle duplicating it. Manual <br> breaks in `quote`
+  # were tuned for the old, narrower subtitle placement; strip them here
+  # and let element_textbox_simple's own auto-wrap handle the title box.
+  title_text <- paste0("“", gsub("<br>", " ", it$quote), "”")
+  title_size <- if (nchar(title_text) > 95) 30 else if (nchar(title_text) > 65) 34 else 40
 
   sub <- paste0(
-    "<span style='font-size:20pt;color:", ink, "'><b><i>\"", it$quote, "\"</i></b></span><br>",
     "Share who <b>strongly ", dirword, " or somewhat ", dirword, "</b>",
     if (!is.null(it$lead)) paste0("<br>", it$lead) else "",
     "<br><br>", legend)
@@ -274,13 +281,16 @@ make_chart <- function(k) {
     scale_y_continuous(limits = c(0, ytop), breaks = seq(0, ytop, ystep),
                        labels = function(x) paste0(x, "%"),
                        expand = expansion(mult = c(0, .04))) +
-    labs(title = it$title, subtitle = sub, caption = SRC) +
+    labs(title = title_text, subtitle = sub, caption = SRC) +
     theme_burge() +
     theme(panel.grid.major.x = element_blank(),
           panel.grid.major.y = element_line(colour = grid, linewidth = .4),
-          axis.text.x = element_text(size = 17, colour = ink, face = "bold",
+          plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
+                                    size = title_size, colour = ink, lineheight = 1.05,
+                                    width = unit(7.8, "in"), margin = margin(b = 10)),
+          axis.text.x = element_text(size = 19, colour = ink, face = "bold",
                                      margin = margin(t = 6)),
-          axis.text.y = element_text(size = 12.5, colour = muted))
+          axis.text.y = element_text(size = 14, colour = muted))
   save_slide(p, it$file)
 }
 
@@ -353,7 +363,7 @@ make_textcard <- function() {
       plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 40,
                                     colour = ink, lineheight = 1.15,
                                     margin = margin(b = 46)),
-      plot.caption = element_markdown(size = 11.5, colour = ink, hjust = 0,
+      plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                       lineheight = 1.6, margin = margin(t = 40)),
       plot.title.position = "plot", plot.caption.position = "plot",
       plot.margin = margin(60, 40, 30, 40))
@@ -376,7 +386,7 @@ make_hook <- function(file, big, lines, kicker = NULL) {
     labs(caption = SRC) +
     theme_void(base_family = "Roboto Condensed") +
     theme(plot.background = element_rect(fill = paper, colour = NA),
-          plot.caption = element_markdown(size = 11.5, colour = ink, hjust = 0,
+          plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                           lineheight = 1.6, margin = margin(t = 40)),
           plot.caption.position = "plot",
           plot.margin = margin(90, 40, 30, 40))

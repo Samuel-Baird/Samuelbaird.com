@@ -88,3 +88,35 @@ R wasn't installed on this machine — it was installed for this task
 (`winget install RProject.R`, packages into a user library) specifically
 so both scripts could actually be run and every PNG regenerated and
 inspected, rather than edited blind.
+
+## What changed (round two: titles, decluttering, larger type)
+
+- **Titles now quote the survey statement**, not a punchy claim — every
+  per-statement chart slide in both scripts (post1's `make_chart`, post2's
+  `make`). See `../STATISTICS_STYLE_GUIDE.md`'s updated "Title/subtitle/caption
+  convention" for the rule. Hook cards, the intro/closing text cards, and
+  post1's scorecard slide keep their thematic titles — none of them is
+  about one measured statement, so there's no single question to quote.
+  Long quotes step the title font down (post1: 40/34/30pt; post2: 48/40/34pt,
+  by quote length) so the longest statements still wrap to at most three
+  lines without crowding the chart below — checked every regenerated PNG,
+  nothing clips or overlaps.
+- **Decluttered subtitles**: the quote used to appear twice per slide (once
+  in the subtitle, again — now — as the title). The subtitle line that
+  restated it in italics is gone; each chart's subtitle is now just the
+  direction line ("Share who strongly agree or somewhat agree, {year}")
+  plus, where relevant, the color legend.
+- **Larger type for readability**: subtitle 16→18pt; footnote/caption
+  11.5→16pt everywhere (both scripts' chart, card, and hook functions),
+  recolored to ink (was muted in a couple of spots) to match; post1's
+  inline legend swatches (`■ Group`) bumped to an explicit 20pt so the
+  color key survives Instagram's scaled-down feed view; post2's y-axis
+  group labels 20→24pt, matching the site-wide "group/identity labels
+  render at MIN.LEGEND" convention documented in
+  `../../state-of-theology-graphics/STYLE.md`; post1's x/y axis tick labels
+  17→19pt / 12.5→14pt.
+- Both scripts' every PNG was regenerated and copied into
+  `public/social-graphics/state-of-theology/post1/` and `post2/`; the
+  gallery pages at `src/app/data-explorer/state-of-theology/social/post1`
+  and `post2` had their own `SLIDES` captions updated to match the new
+  quoted titles.

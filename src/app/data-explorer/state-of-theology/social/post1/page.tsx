@@ -17,15 +17,32 @@ const SLIDES = [
   { file: "hook_c_combined.png", title: "Hook — 92% believe in the Trinity" },
   { file: "hook_a_created.png", title: "Hook — 61% say Jesus was created" },
   { file: "hook_b_not_god.png", title: "Hook — 44% say Jesus was not God" },
-  { file: "1_nicaea_won.png", title: "Nicaea won" },
-  { file: "2_nicaea_lost.png", title: "Nicaea lost" },
-  { file: "3_one_god_two_persons.png", title: "One God, two persons" },
-  { file: "4_many_roads.png", title: "Many roads" },
-  { file: "5_pelagius_undefeated.png", title: "Pelagius, still at large" },
-  { file: "6_abortion.png", title: "Abortion is a sin" },
-  { file: "7_sex_outside_marriage.png", title: "Sex outside traditional marriage" },
-  { file: "8_condemnation.png", title: "Biblical authority on sexuality" },
-  { file: "jesus_not_god.png", title: "Great teacher, not God" },
+  {
+    file: "1_nicaea_won.png",
+    title:
+      "“There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.”",
+  },
+  { file: "2_nicaea_lost.png", title: "“Jesus is the first and greatest being created by God.”" },
+  {
+    file: "3_one_god_two_persons.png",
+    title: "“The Holy Spirit is a force but is not a personal being.”",
+  },
+  {
+    file: "4_many_roads.png",
+    title:
+      "“God accepts the worship of all religions, including Christianity, Judaism, and Islam.”",
+  },
+  {
+    file: "5_pelagius_undefeated.png",
+    title: "“Everyone sins a little, but most people are good by nature.”",
+  },
+  { file: "6_abortion.png", title: "“Abortion is a sin.”" },
+  { file: "7_sex_outside_marriage.png", title: "“Sex outside of traditional marriage is a sin.”" },
+  {
+    file: "8_condemnation.png",
+    title: "“The Bible's condemnation of homosexual behavior doesn't apply today.”",
+  },
+  { file: "jesus_not_god.png", title: "“Jesus was a great teacher, but he was not God.”" },
   { file: "9_scorecard.png", title: "Firmer, but not firm" },
   { file: "10_thesis.png", title: "Words without weight" },
 ];

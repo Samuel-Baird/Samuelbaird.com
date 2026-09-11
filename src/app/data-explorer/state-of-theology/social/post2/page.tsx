@@ -15,16 +15,30 @@ export const metadata: Metadata = {
 
 const SLIDES = [
   { file: "0_intro.png", title: "Evangelicals won" },
-  { file: "1_trinity.png", title: "Nearly everyone confesses it" },
-  { file: "2_arian.png", title: "A majority also deny the Trinity" },
-  { file: "3_teacher.png", title: "In most traditions, half say he isn't God" },
-  { file: "4_spirit.png", title: "Surprisingly binitarian" },
-  { file: "5_relig.png", title: "Most say God accepts every religion" },
-  { file: "6_nature.png", title: "Pelagius, still at large" },
-  { file: "7_abortion.png", title: "Abortion is a sin" },
-  { file: "8_sex.png", title: "Sex outside traditional marriage" },
-  { file: "9_homo.png", title: "Biblical authority on sexuality" },
-  { file: "10_gender.png", title: "Most reject choosing one's gender" },
+  {
+    file: "1_trinity.png",
+    title:
+      "“There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.”",
+  },
+  { file: "2_arian.png", title: "“Jesus is the first and greatest being created by God.”" },
+  { file: "3_teacher.png", title: "“Jesus was a great teacher, but he was not God.”" },
+  { file: "4_spirit.png", title: "“The Holy Spirit is a force but is not a personal being.”" },
+  {
+    file: "5_relig.png",
+    title:
+      "“God accepts the worship of all religions, including Christianity, Judaism, and Islam.”",
+  },
+  { file: "6_nature.png", title: "“Everyone sins a little, but most people are good by nature.”" },
+  { file: "7_abortion.png", title: "“Abortion is a sin.”" },
+  { file: "8_sex.png", title: "“Sex outside of traditional marriage is a sin.”" },
+  {
+    file: "9_homo.png",
+    title: "“The Bible's condemnation of homosexual behavior doesn't apply today.”",
+  },
+  {
+    file: "10_gender.png",
+    title: "“People should be able to choose their gender regardless of their biological sex.”",
+  },
   { file: "11_closing.png", title: "Still the beam" },
 ];
 

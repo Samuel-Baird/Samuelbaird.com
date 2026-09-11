@@ -150,6 +150,14 @@ make <- function(k) {
   dd <- filter(d, item == k)
   xtop <- ceiling(max(dd$pct)/10)*10; if (xtop - max(dd$pct) < 6) xtop <- xtop + 10
 
+  # Title IS the survey statement (see "Titles: accurate, not editorial"
+  # in scripts/state-of-theology-graphics/STYLE.md) — no separate quote
+  # line in the subtitle duplicating it. Manual <br> breaks in `quote`
+  # were tuned for the old subtitle placement; strip them and let
+  # element_textbox_simple's own auto-wrap handle the title box.
+  title_text <- paste0("“", gsub("<br>", " ", it$quote), "”")
+  title_size <- if (nchar(title_text) > 95) 34 else if (nchar(title_text) > 65) 40 else 48
+
   p <- ggplot(dd, aes(pct, group, fill = group)) +
     geom_col(width = .70) +
     geom_text(aes(label = paste0(pct, "%"), colour = group), hjust = -0.22,
@@ -157,33 +165,33 @@ make <- function(k) {
               show.legend = FALSE) +
     scale_fill_manual(values = pal) + scale_colour_manual(values = pal) +
     scale_x_continuous(limits = c(0, xtop * 1.14), expand = expansion(mult = c(0, 0))) +
-    labs(title = it$title,
-         subtitle = paste0("<i>\"", it$quote, "\"</i><br>Share who <b>strongly ",
-                           it$dir, " or somewhat ", it$dir, "</b>, ", it$year),
+    labs(title = title_text,
+         subtitle = paste0("Share who <b>strongly ", it$dir, " or somewhat ", it$dir,
+                           "</b>, ", it$year),
          caption = SRC) +
     theme_minimal(base_family = "Roboto Condensed", base_size = 15) +
     theme(
       plot.background = element_rect(fill = paper, colour = NA),
       panel.background = element_rect(fill = paper, colour = NA),
       panel.grid = element_blank(),
-      # 34 -> 48pt: bigger titles, matching the Data Explorer chart
-      # pipeline's own bump from 26/27pt to 32pt for the same reasoning
-      # (legible at Instagram's scaled-down feed size) taken further, per
-      # this rollout's explicit target. Wrap width trimmed from 8.1in so
-      # the wider glyphs at 48pt still clear the canvas's right margin —
-      # verified against every title in `items` above, none clip or wrap
-      # badly (see the rollout note for the one title that came closest,
-      # "In most traditions, half say he isn't God").
+      # Wrap width trimmed from 8.1in so the wider glyphs at the largest
+      # size still clear the canvas's right margin; `title_size` above
+      # steps down for a long quoted statement so it wraps to at most a
+      # few lines instead of crowding the chart below it.
       plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
-                                size = 48, colour = ink, lineheight = 1.05,
+                                size = title_size, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
-      plot.subtitle = element_markdown(size = 16, colour = muted, lineheight = 1.4,
+      plot.subtitle = element_markdown(size = 18, colour = muted, lineheight = 1.4,
                                        margin = margin(b = 34)),
-      plot.caption = element_markdown(size = 11.5, colour = muted, hjust = 0,
+      plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                       lineheight = 1.6, margin = margin(t = 34)),
       plot.title.position = "plot", plot.caption.position = "plot",
       axis.title = element_blank(), axis.text.x = element_blank(),
-      axis.text.y = element_text(size = 20, colour = ink, hjust = 1, face = "bold"),
+      # 20 -> 24pt (MIN.LEGEND): matches the site-wide convention that
+      # y-axis group/identity labels render at the same size as a chart
+      # legend key — see state-of-theology-graphics/STYLE.md's
+      # "At-a-glance legibility and mobile floors".
+      axis.text.y = element_text(size = 24, colour = ink, hjust = 1, face = "bold"),
       legend.position = "none",
       plot.margin = margin(28, 30, 20, 28))
   ggsave(file.path(OUT, it$file), p, device = ragg::agg_png,
@@ -201,7 +209,7 @@ card <- function(file, title, body, caption_override = NULL) {
           plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 48,
                                         colour = ink, lineheight = 1.15,
                                         margin = margin(b = 46)),
-          plot.caption = element_markdown(size = 11.5, colour = muted, hjust = 0,
+          plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                           lineheight = 1.6, margin = margin(t = 40)),
           plot.title.position = "plot", plot.caption.position = "plot",
           plot.margin = margin(60, 40, 30, 40))
@@ -234,7 +242,7 @@ card("11_closing.png", paste0(
   "this survey is positioned to correct anyone else before<br>",
   "working on themselves.",
   "</span>"),
-  caption_override = paste0("<span style='font-size:13pt;color:", ink, "'>", SRC, "</span>"))
+  caption_override = paste0("<span style='font-size:16pt;color:", ink, "'>", SRC, "</span>"))
 
 invisible(lapply(names(items), make))
 cat("done\n")
