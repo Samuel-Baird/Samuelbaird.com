@@ -1,17 +1,29 @@
 # Social media posts — restyled to the Data Explorer look
 
-Two standalone R/ggplot2 scripts that generate Instagram carousel slides
-(1080×1350) for the State of Theology survey, restyled to match this repo's
-Data Explorer chart pipeline instead of an ad-hoc palette.
+Standalone scripts that generate Instagram-carousel-style slides for the
+State of Theology survey, restyled to match this repo's Data Explorer
+chart pipeline instead of an ad-hoc palette.
 
 - `post1-evangelical-trends/post1_evangelical_trends.R` — evangelicals vs.
-  all U.S. adults, 2016–2025.
+  all U.S. adults, 2016–2025. R/ggplot2, 1080×1350 (4:5).
 - `post2-tradition-comparison/post2_tradition_comparison.R` — four
-  traditions compared on nine statements.
+  traditions compared on nine statements. R/ggplot2, 1080×1350 (4:5).
+- `post3-membership-scale/post3_membership_scale.py` — post2's same ten
+  statements, converted from survey percentages to estimated raw
+  headcounts, contrasted against the Church's own published U.S.
+  membership. Python/matplotlib (see its own module docstring for why),
+  1080×1350 (4:5).
+- `post4-tradition-comparison-widescreen/post4_tradition_comparison_widescreen.R`
+  — post2's exact data, copy, and styling, reformatted 1920×1080 (16:9)
+  for platforms that want landscape instead of an Instagram-portrait
+  carousel. R/ggplot2. If post2's data or copy ever changes, mirror the
+  change here too - see "What changed (round nine..." below for the
+  layout differences this reformat required.
 
 Each folder gets its own `png/` output directory when you run its script
 (`Rscript post1_evangelical_trends.R` from inside that folder, or with a
-full path — the script locates its own directory either way).
+full path — the script locates its own directory either way; post3's
+script is run the same way but with `python3` instead of `Rscript`).
 
 ## Requirements
 
@@ -257,9 +269,62 @@ opposite of what the two Ethics bars did, without saying so.
   agree numbers, and the recomputed spirit_force disagree% (34.2→34)
   matches Ligonier's own published bullet exactly.
 - The value-label text is much longer now ("NN% Disagree" vs. the old
-  bare "NN%"), so `scale_x_continuous`'s upper limit widened 118→200 to
-  keep it clear of the canvas edge - checked with a pixel-level scan
-  (rightmost non-white column), not just a visual read, since the
-  chat-preview image viewer's downscaled thumbnail was misleadingly
-  showing what looked like clipping that isn't actually present in the
-  file.
+  bare "NN%"), so `scale_x_continuous`'s upper limit widened 118→200. A
+  pixel-level scan (rightmost non-white column, not just a visual read)
+  showed nothing past the canvas edge at 200, but the longest labels were
+  touching the plot margin with zero breathing room - which reads as
+  clipped even though it technically isn't, and did read that way once
+  seen at full size outside this scan. Widened again, 200→260, which
+  scanned back to a comfortable margin.
+
+## What changed (round eight: post3 whitespace filled, two titles now match)
+
+- **Both titles on every post3 slide now share one fontsize**: the
+  bottom "U.S. LDS MEMBERSHIP, 2025" line used to always render at the
+  fixed `TITLE_FONTSIZE` (34pt), while the top quoted-statement title
+  steps down to 27pt for a long quote (>4 wrapped lines) - so a slide
+  with a long quote had two visibly different-sized titles. The bottom
+  title now reuses the top one's own `title_fontsize`/`line_step`
+  variables instead of the fixed constants, so they always match.
+- **Filled the whitespace between the LDS bar and the caption** by
+  widening four gap constants (subtitle→chart, chart→divider,
+  divider→bottom title, bottom title→bottom bar), without touching any
+  font size or the bar-thickness constant (`SLOT_HEIGHT`, shared with the
+  chart above and sized for the worst-case 3-line title). Before: gap
+  ranged 0.105–0.205 (figure-fraction) depending on how many lines the
+  top title took; after: 0.030–0.130. Checked every regenerated PNG
+  against the script's own overlap warning (none fired) and
+  visually spot-checked the tightest (3-line title) and loosest (1-line,
+  "Abortion is a sin") cases.
+
+## What changed (round nine: post4, post2 reformatted 16:9)
+
+New post: `post4-tradition-comparison-widescreen/post4_tradition_comparison_widescreen.R`.
+Same data, same per-item copy, same palette/fonts/sizes as
+`post2-tradition-comparison` - only the canvas dimensions (1920×1080
+instead of 1080×1350) and the layout math that depends on them changed.
+If post2's data or copy ever changes, mirror the change here too.
+
+- **Canvas**: `FIG_W_IN`/`FIG_H_IN` = 16/9 (vs. post2's 9/11.25), same
+  120dpi. ggplot lays the panel out automatically around the title/
+  subtitle/caption margins, so no manual axis positioning was needed
+  (unlike post3's Python script) - changing the two dimensions was
+  enough for the bar chart slides to reflow correctly.
+- **Title wrap width**: 7.8in → 14.6in. The same quoted statements that
+  wrapped to 2-3 lines in post2's narrower canvas now mostly fit on one
+  line - checked every item, longest is 2 lines (`10_gender.png`,
+  `9_homo.png`).
+- **Text cards** (`0_intro.png`, `11_closing.png`) needed real
+  rewrapping, not just a dimension change: post2's `<br>` breaks were
+  short lines tuned for a 9in-wide canvas, which at 16in left the text
+  stranded in a narrow left column against a mostly-empty right
+  two-thirds of the frame - rewrapped onto fewer, longer lines so the
+  text uses more of the width. That in turn overflowed `11_closing.png`
+  past its caption (this canvas is 9in tall, 20% shorter than post2's
+  11.25in, with the same absolute point-sized gaps) - fixed by shrinking
+  two `<br><br><br><br>`/`<br><br><br>` paragraph gaps down to
+  `<br><br>`, not by shrinking any font size.
+- New Next.js page (`src/app/data-explorer/state-of-theology/social/post4/page.tsx`,
+  copied from post2's own page and pointed at
+  `/social-graphics/state-of-theology/post4/` with 1920×1080 image
+  dimensions) and a new `socialSets` entry in `src/lib/data-explorer.ts`.

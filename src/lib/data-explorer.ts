@@ -700,6 +700,17 @@ const RAW_DATASETS: Dataset[] = [
         previewWidth: 1080,
         previewHeight: 1350,
       },
+      {
+        title: "Comparing four traditions, widescreen",
+        description:
+          "Post2's four-tradition comparison, reformatted 16:9 for platforms that want a " +
+          "landscape image instead of an Instagram-portrait carousel.",
+        href: "/data-explorer/state-of-theology/social/post4",
+        count: 12,
+        previewSrc: "/social-graphics/state-of-theology/post4/1_trinity.png",
+        previewWidth: 1920,
+        previewHeight: 1080,
+      },
     ],
   },
   {

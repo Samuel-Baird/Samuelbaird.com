@@ -343,10 +343,12 @@ make_scorecard <- function() {
               fontface = "bold", size = 8, show.legend = FALSE) +
     scale_fill_manual(values = c(Ethics = amber, Doctrine = teal)) +
     scale_colour_manual(values = c(Ethics = amber, Doctrine = teal)) +
-    # 118 -> 200: the longer "NN% Disagree"/"NN% Agree" labels are ~3x the
-    # width of the old bare "NN%" labels, so they need proportionally more
-    # headroom past the longest bar (77) to clear the right edge.
-    scale_x_continuous(limits = c(0, 200), expand = expansion(mult = c(0, 0))) +
+    # 118 -> 260: the longer "NN% Disagree"/"NN% Agree" labels are ~3x the
+    # width of the old bare "NN%" labels. 200 still left the longest labels
+    # touching the plot margin with zero breathing room (reads as clipped
+    # even though it technically wasn't) - widened further so every label
+    # clears with visible margin.
+    scale_x_continuous(limits = c(0, 260), expand = expansion(mult = c(0, 0))) +
     labs(
       # The old punchy title ("Firmer, but not firm") is gone - the title
       # now names what EVERY bar measures now that direction varies by row:

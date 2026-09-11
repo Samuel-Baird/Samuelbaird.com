@@ -330,7 +330,12 @@ def render_item(item: dict) -> None:
     ], fontsize=SUB_FONTSIZE)
 
     # ---- Top chart: Total + 4 traditions --------------------------------
-    top_band_top = sub_y - 0.028
+    # 0.028 -> 0.048: spacing widened (here and at the three other gap
+    # points below - divider, bottom title, bottom bar) to use up the
+    # canvas's own leftover whitespace between the LDS bar and the caption,
+    # without touching any font size or the bar-thickness constant
+    # (SLOT_HEIGHT) that's shared with the chart above.
+    top_band_top = sub_y - 0.048
     top_band_height = SLOT_HEIGHT * N_TOP
     top_band_bottom = top_band_top - top_band_height
 
@@ -362,7 +367,7 @@ def render_item(item: dict) -> None:
                  va="center", ha="left", color=COLOR[g], fontproperties=fonts["bold"], fontsize=19)
 
     # ---- Divider: right below the chart, not at a fixed half -----------
-    divider_y = top_band_bottom - 0.02
+    divider_y = top_band_bottom - 0.035
     fig.add_artist(plt.Line2D([0.0, 1.0], [divider_y, divider_y], color=INK, linewidth=3.5,
                                transform=fig.transFigure, zorder=5))
 
@@ -370,11 +375,14 @@ def render_item(item: dict) -> None:
     # One line, all caps, replacing the old three-line "Total membership of
     # The Church of Jesus Christ of Latter-day Saints" + separate "Total
     # U.S. membership, 2025" subtitle -- shorter and reads at a glance.
-    bottom_title_top = divider_y - 0.035
+    # Same fontsize as the top title's own `title_fontsize` (not the fixed
+    # TITLE_FONTSIZE) so the two titles always match, even on a slide where
+    # a long quoted statement dropped the top title to the 27pt fallback.
+    bottom_title_top = divider_y - 0.055
     fig.text(LEFT, bottom_title_top, "U.S. LDS MEMBERSHIP, 2025", fontproperties=fonts["title"],
-              fontsize=TITLE_FONTSIZE, color=INK, ha="left", va="top")
+              fontsize=title_fontsize, color=INK, ha="left", va="top")
 
-    ax2_top = bottom_title_top - LINE_STEP - 0.02
+    ax2_top = bottom_title_top - line_step - 0.04
     ax2_height = SLOT_HEIGHT  # identical slot height to one bar's worth above the divider
     ax2_bottom = ax2_top - ax2_height
     ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_height])
