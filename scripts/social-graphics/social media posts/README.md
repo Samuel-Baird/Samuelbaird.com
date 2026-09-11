@@ -185,3 +185,31 @@ inspected, rather than edited blind.
   to both, though only `11_closing.png`'s own body text was resized. Every
   `<br>` break in both cards was rechecked/retightened at the new sizes —
   none clip.
+
+## What changed (round six: post3 matched to post1/post2's type sizes)
+
+`post3-membership-scale/post3_membership_scale.py` (Python/matplotlib, not
+R — see its own module docstring for why) generates a third carousel using
+the same house style. It already had post1/post2's quote-as-title
+convention and black/bold subtitle from earlier rounds; this round matched
+its remaining type sizes to post1/post2's rounds three/four bumps:
+
+- Subtitle (`SUB_FONTSIZE`) 18→22pt, matching post1/post2's chart subtitle.
+- Y-axis tradition row labels 20→24pt, matching post2's y-axis group-label
+  convention (MIN.LEGEND) — this pushed "Black Protestant" wide enough to
+  clip past the figure's left edge, so `CHART_LEFT` widened 0.24→0.30 to
+  give the bigger label room.
+- Caption 11.5pt/muted → 16pt/ink, matching post1/post2's footnote. The
+  caption's wrap width is character-count-based (`textwrap`), so it had to
+  shrink roughly in proportion to the fontsize increase (132→95 chars) or
+  the now-bigger text would run past the canvas edge.
+- The bottom LDS-contrast block's old three-line title ("Total membership
+  of The Church of Jesus Christ of Latter-day Saints") plus separate
+  "Total U.S. membership, 2025" subtitle collapsed into one all-caps line,
+  "U.S. LDS MEMBERSHIP, 2025", per explicit request — shorter, and reads
+  at a glance same as the rest of the slide.
+
+Every regenerated PNG was checked for the script's own built-in overlap
+warning (LDS bar vs. caption) and visually spot-checked (longest 3-line
+title, and the widest "Black Protestant" row) — no warnings, nothing
+clips.

@@ -259,12 +259,17 @@ def draw_mixed_line(fig, x: float, y: float, segments, fontsize: float, va: str 
 # reads as one consistent series (same bar thickness, same margins).
 # ---------------------------------------------------------------------------
 LEFT, RIGHT = 0.075, 0.94
-CHART_LEFT = 0.24
+# 0.24 -> 0.30: the y-axis row labels bumped from 20pt to 24pt (see below)
+# need more room so "Black Protestant" clears the figure's left edge.
+CHART_LEFT = 0.30
 BAR_HEIGHT_FRAC = 0.74
 N_TOP = len(ORDER)  # Total + 4 traditions
 TITLE_FONTSIZE = 34
 LINE_STEP = 0.050
-SUB_FONTSIZE = 18
+# 18 -> 22pt, matching post1/post2's round-four subtitle bump (see those
+# scripts' own `plot.subtitle` size) so this post's type reads consistently
+# with the rest of the State of Theology social series.
+SUB_FONTSIZE = 22
 TITLE_MAX_WIDTH_PX = (RIGHT - LEFT) * FIG_W_IN * DPI
 
 # The one number that sets bar thickness (and, via BAR_HEIGHT_FRAC, the
@@ -293,9 +298,14 @@ def render_item(item: dict) -> None:
             "Estimated headcounts, not survey sample sizes.",
         ],
         left=LEFT,
-        wrap_width=132,
-        fontsize=11.5,
-        color=MUTED,
+        # 132 -> 95 chars: the wrap width is character-based (textwrap), so
+        # it has to shrink roughly in proportion to the fontsize bump below
+        # (132 * 11.5/16 ≈ 95) or the wrapped lines run past the canvas.
+        wrap_width=95,
+        # 11.5pt/MUTED -> 16pt/INK, matching post1/post2's footnote size and
+        # color (both bumped in that rollout; see their own `plot.caption`).
+        fontsize=16,
+        color=INK,
         handle="@ithinkisam",
         handle_color=AMBER,
     )
@@ -339,7 +349,10 @@ def render_item(item: dict) -> None:
     ax.tick_params(axis="y", length=0, pad=10)
     for label in ax.get_yticklabels():
         label.set_fontproperties(fonts["bold"])
-        label.set_fontsize(20)
+        # 20 -> 24pt (MIN.LEGEND): matches post2's y-axis group/identity
+        # labels, same site-wide convention (state-of-theology-graphics/
+        # STYLE.md's "At-a-glance legibility and mobile floors").
+        label.set_fontsize(24)
         label.set_color(INK)
         label.set_linespacing(1.05)
 
@@ -354,16 +367,14 @@ def render_item(item: dict) -> None:
                                transform=fig.transFigure, zorder=5))
 
     # ---- Bottom section: LDS total, same visual weight as the title ----
+    # One line, all caps, replacing the old three-line "Total membership of
+    # The Church of Jesus Christ of Latter-day Saints" + separate "Total
+    # U.S. membership, 2025" subtitle -- shorter and reads at a glance.
     bottom_title_top = divider_y - 0.035
-    bottom_title_lines = ["Total membership of The", "Church of Jesus Christ of", "Latter-day Saints"]
-    for i, line in enumerate(bottom_title_lines):
-        fig.text(LEFT, bottom_title_top - i * LINE_STEP, line, fontproperties=fonts["title"],
-                  fontsize=TITLE_FONTSIZE, color=INK, ha="left", va="top")
-    bottom_sub_y = bottom_title_top - len(bottom_title_lines) * LINE_STEP - 0.006
-    fig.text(LEFT, bottom_sub_y, "Total U.S. membership, 2025",
-              fontproperties=fonts["regular"], fontsize=SUB_FONTSIZE, color=INK, ha="left", va="top")
+    fig.text(LEFT, bottom_title_top, "U.S. LDS MEMBERSHIP, 2025", fontproperties=fonts["title"],
+              fontsize=TITLE_FONTSIZE, color=INK, ha="left", va="top")
 
-    ax2_top = bottom_sub_y - 0.02
+    ax2_top = bottom_title_top - LINE_STEP - 0.02
     ax2_height = SLOT_HEIGHT  # identical slot height to one bar's worth above the divider
     ax2_bottom = ax2_top - ax2_height
     ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_height])
