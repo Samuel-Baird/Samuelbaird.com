@@ -221,11 +221,14 @@ card <- function(file, title, body, caption_override = NULL) {
 }
 
 card("0_intro.png", "Evangelicals won", paste0(
-  "<span style='font-size:32pt;color:", ink, "'>",
-  "Last week&#8217;s numbers looked bad.<br><br>",
-  "Compared to every other Christian<br>",
-  "tradition in the survey, they are<br>",
-  "the strongest in the country.",
+  "<span style='font-size:48pt;color:", ink, "'>",
+  "Last week&#8217;s numbers<br>looked bad.<br><br><br><br><br>",
+  "Compared to every<br>",
+  "other Christian<br>",
+  "tradition in the<br>",
+  "survey, they are<br>",
+  "the strongest in<br>",
+  "the country.",
   "</span>"))
 
 card("11_closing.png", paste0(

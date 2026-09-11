@@ -293,21 +293,27 @@ def render_item(item: dict) -> None:
     caption_top = draw_caption_bottom(
         fig, fonts,
         [
-            "Tradition shares: Pew Religious Landscape Study, 2023-24.   Population: U.S. Census Bureau, 2025 national estimate.   "
-            f"{item['direction'].capitalize()}: State of Theology {item['year']} survey, by tradition.   LDS U.S. membership: Church-published statistics, Dec. 31, 2025.",
-            "Estimated headcounts, not survey sample sizes.",
+            # One flowing paragraph, methodology note leading straight into
+            # the sources inline (was two separate hard-broken lines) - the
+            # sentence order matters: "estimated headcounts" first sets up
+            # what the numbers even are before naming where they came from.
+            "Estimated headcounts, not survey sample sizes. Tradition shares: Pew Religious "
+            "Landscape Study, 2023-24. Population: U.S. Census Bureau, 2025 national estimate. "
+            f"{item['direction'].capitalize()}: State of Theology {item['year']} survey, by "
+            "tradition. LDS U.S. membership: Church-published statistics, Dec. 31, 2025.",
         ],
         left=LEFT,
-        # 132 -> 95 chars: the wrap width is character-based (textwrap), so
-        # it has to shrink roughly in proportion to the fontsize bump below
-        # (132 * 11.5/16 ≈ 95) or the wrapped lines run past the canvas.
-        wrap_width=95,
-        # 11.5pt/MUTED -> 16pt/INK, matching post1/post2's footnote size and
-        # color (both bumped in that rollout; see their own `plot.caption`).
+        # 95 -> 85 chars: 95 still let a couple of the widest-character
+        # lines in this merged paragraph run past the canvas's right edge
+        # (checked with a pixel-level scan, not just a visual read - see
+        # this rollout's own note on how easy that clipping is to miss by
+        # eye). 85 clears every regenerated line with margin to spare.
+        wrap_width=85,
+        # Gray (MUTED), not ink - this caption (methodology note + sources
+        # + the @ithinkisam credit) is fine print, not a second subtitle.
         fontsize=16,
-        color=INK,
+        color=MUTED,
         handle="@ithinkisam",
-        handle_color=AMBER,
     )
 
     # ---- Title: the survey statement itself, verbatim, in quotes -------
@@ -379,7 +385,7 @@ def render_item(item: dict) -> None:
     # TITLE_FONTSIZE) so the two titles always match, even on a slide where
     # a long quoted statement dropped the top title to the 27pt fallback.
     bottom_title_top = divider_y - 0.055
-    fig.text(LEFT, bottom_title_top, "U.S. LDS MEMBERSHIP, 2025", fontproperties=fonts["title"],
+    fig.text(LEFT, bottom_title_top, "U.S. LDS membership, 2025", fontproperties=fonts["title"],
               fontsize=title_fontsize, color=INK, ha="left", va="top")
 
     ax2_top = bottom_title_top - line_step - 0.04

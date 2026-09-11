@@ -328,3 +328,30 @@ If post2's data or copy ever changes, mirror the change here too.
   copied from post2's own page and pointed at
   `/social-graphics/state-of-theology/post4/` with 1920×1080 image
   dimensions) and a new `socialSets` entry in `src/lib/data-explorer.ts`.
+
+## What changed (round ten: post2 intro fills the canvas, post3 caption/title tweaks)
+
+- **post2's `0_intro.png` ("Evangelicals won") now fills the canvas**:
+  body text 32→48pt, rewrapped onto more/shorter lines (was 5 lines
+  across two paragraphs, now 8) so the bigger text still fits without
+  clipping and spreads further down toward the caption instead of
+  leaving the bottom third empty. Note this was post2 only, per the
+  request - `post4`'s copy of this same card (`post4-tradition-comparison-widescreen/png/0_intro.png`)
+  is unchanged and now out of sync with post2's; mirror this edit there
+  too next time post4 gets touched (see that script's own "SAME
+  content... mirror the change here too" header comment).
+- **post3's bottom title is now "U.S. LDS membership, 2025"**, not
+  all-caps "MEMBERSHIP" - matches the top title's normal sentence case.
+- **post3's caption is now one flowing gray paragraph, not two black
+  lines**: color 16pt/INK → 16pt/MUTED (including the `@ithinkisam`
+  handle - no amber highlight now, a deliberate one-off departure from
+  the site-wide "handle stays amber" convention, per explicit request),
+  and the old two-paragraph list (sources, then a separate "Estimated
+  headcounts..." line) merged into one paragraph that leads with
+  "Estimated headcounts, not survey sample sizes." before flowing
+  straight into the source list inline. The merge changed how
+  `textwrap.wrap` breaks the text, and the old `wrap_width=95` let the
+  widest resulting lines run past the canvas edge (caught with the same
+  pixel-level scan used earlier for post1's scorecard labels, not a
+  visual read - this is genuinely easy to miss by eye at this
+  resolution); narrowed to 85, checked clear with real margin.
