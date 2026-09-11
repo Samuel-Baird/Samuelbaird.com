@@ -213,3 +213,53 @@ Every regenerated PNG was checked for the script's own built-in overlap
 warning (LDS bar vs. caption) and visually spot-checked (longest 3-line
 title, and the widest "Black Protestant" row) — no warnings, nothing
 clips.
+
+## What changed (round seven: scorecard bars are now all "tradition-consistent", not always "agree")
+
+post1's scorecard (`9_scorecard.png`) used to plot every statement's %
+agree, even though "agree" means something different depending on the
+statement: agreeing with an orthodox social statement (the two Ethics
+rows) is the tradition-consistent position, but agreeing with a Doctrine
+row is NOT - every one of those five rows states a historic heresy
+(Arianism, denial of the Trinity/Christ's deity, Pelagianism, religious
+pluralism), so DISAGREEING is what's tradition-consistent there. Mixing
+both under one "% agree" axis made the five Doctrine bars measure the
+opposite of what the two Ethics bars did, without saying so.
+
+- **Every bar is now "% giving the tradition-consistent response"**,
+  and each bar's own label says which direction that was (`"77% Agree"`,
+  `"30% Disagree"` - `dirword_cap()`), not just a bare percentage. Title
+  changed from the (already non-editorial, previous-round) description
+  to name this directly: "Share of evangelicals giving the
+  tradition-consistent response, 2022".
+- **The five Doctrine rows' plotted values flipped from % agree to %
+  disagree**: arian 61→30, all_religions 58→35, spirit_force 55→34,
+  good_by_nature 55→40, jesus_not_god 44→53. The Ethics rows are
+  unchanged (sex/abortion stay % agree - already tradition-consistent
+  agreeing; the homo row stays at 65, already % disagree from its
+  original sourcing, just with the "— disagree" now-redundant suffix
+  dropped from its statement text since the bar's own label says it).
+- **Where the new disagree numbers came from**: `arian`'s disagree% (30)
+  was already implicit in data.json's raw_pct. The other four had no
+  disagree% published anywhere in this repo - Ligonier's public 2022
+  report only breaks agree/disagree out by tradition for one of them
+  (spirit_force: "Evangelicals are the mostly likely to Disagree (34%)").
+  Recomputed all four directly from the State of Theology 2022
+  respondent microdata (`responses-2022.csv`, same file
+  `ARIAN_CSV_URL`/`build_data.py`'s `arian_wave_reference` already uses
+  for `arian`'s own number): WT-weighted response share among RELTRAD==1
+  (Evangelical) rows, summing strongly_disagree + somewhat_disagree,
+  using each item's own 2022 Q-column (all_religions=Q21_3,
+  jesus_not_god=Q22_3, spirit_force=Q23_1, good_by_nature=Q24_1, per the
+  2022 Full Report PDF's own item numbering). Cross-checked two ways
+  before trusting the numbers: the same computation's agree% for all
+  five items lands within 1pt of this script's existing (unchanged) 2022
+  agree numbers, and the recomputed spirit_force disagree% (34.2→34)
+  matches Ligonier's own published bullet exactly.
+- The value-label text is much longer now ("NN% Disagree" vs. the old
+  bare "NN%"), so `scale_x_continuous`'s upper limit widened 118→200 to
+  keep it clear of the canvas edge - checked with a pixel-level scan
+  (rightmost non-white column), not just a visual read, since the
+  chat-preview image viewer's downscaled thumbnail was misleadingly
+  showing what looked like clipping that isn't actually present in the
+  file.

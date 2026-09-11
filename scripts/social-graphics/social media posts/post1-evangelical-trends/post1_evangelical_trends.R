@@ -135,17 +135,47 @@ dat <- tribble(
   filter(!is.na(pct)) |>
   mutate(group = fct_relevel(group, EV))
 
-# Slide 9: evangelicals by belief, 2022 wave only.
+# Slide 9: evangelicals by affiliation, 2022 wave only. Every bar is now the
+# TRADITION-CONSISTENT response, not always "agree" - which direction counts
+# as tradition-consistent depends on what kind of statement it is:
+#   - orthodox social statements (the two Ethics rows below): agree.
+#   - morally liberal statements (the homo row): disagree.
+#   - heterodox theology statements (all five Doctrine rows - each one
+#     states a historic heresy, e.g. Arianism, Pelagianism, denial of the
+#     Trinity/Christ's deity): disagree. (There's no orthodox-theology row
+#     in this set - a statement that stated the orthodox position directly,
+#     e.g. the Trinity statement, would use agree instead - but if one is
+#     ever added here, it belongs in this comment's fourth category.)
+# Doctrine rows' pct switched from % agree to % disagree accordingly - see
+# ../../evangelical-quiz/README.md-style sourcing note below for where the
+# disagree numbers came from, since the workbook/data.json only carry each
+# item's agree-side 2022 number.
+#
+# Disagree percentages for the four Doctrine items that AREN'T `arian`
+# (which already had a 2022 disagree% in data.json/render_chart.py's own
+# source) were computed the same way build_data.py's `arian_wave_reference`
+# validates arian's own number: WT-weighted response distribution among
+# RELTRAD==1 (Evangelical) rows in the State of Theology 2022 respondent
+# microdata (https://thestateoftheology.com/assets/data/us/responses-2022.csv),
+# summing the strongly_disagree + somewhat_disagree weight shares. Column
+# per item, per the 2022 report's own item numbering (Ligonier State of
+# Theology 2022 Full Report PDF): all_religions=Q21_3, jesus_not_god=Q22_3,
+# spirit_force=Q23_1, good_by_nature=Q24_1. Cross-checked two ways: the
+# recomputed agree% for all five items lands within 1pt of this script's own
+# existing (unchanged) 2022 agree numbers, and the recomputed spirit_force
+# disagree% (34%) matches the 2022 Full Report's own published bullet
+# ("Evangelicals are the mostly likely to Disagree (34%)") exactly.
+dirword_cap <- function(d) if (d == "agree") "Agree" else "Disagree"
 scorecard <- tribble(
-  ~statement,                                                  ~pct, ~kind,
-  "Sex outside of traditional marriage is a sin",                77, "Ethics",
-  "Abortion is a sin",                                           74, "Ethics",
-  "The Bible's condemnation of homosexual behavior\ndoesn't apply today — disagree", 65, "Ethics",
-  "Jesus is the first and greatest being created by God",        61, "Doctrine",
-  "God accepts the worship of all religions",                    58, "Doctrine",
-  "The Holy Spirit is a force but is not a personal being",      55, "Doctrine",
-  "Everyone sins a little, but most people are good by nature",  55, "Doctrine",
-  "Jesus was a great teacher, but he was not God",               44, "Doctrine"
+  ~statement,                                                  ~pct, ~kind,     ~dir,
+  "Sex outside of traditional marriage is a sin",                77, "Ethics",   "agree",
+  "Abortion is a sin",                                           74, "Ethics",   "agree",
+  "The Bible's condemnation of homosexual behavior\ndoesn't apply today", 65, "Ethics", "disagree",
+  "Jesus is the first and greatest being created by God",        30, "Doctrine", "disagree",
+  "God accepts the worship of all religions",                    35, "Doctrine", "disagree",
+  "The Holy Spirit is a force but is not a personal being",      34, "Doctrine", "disagree",
+  "Everyone sins a little, but most people are good by nature",  40, "Doctrine", "disagree",
+  "Jesus was a great teacher, but he was not God",               53, "Doctrine", "disagree"
 ) |> filter(!is.na(pct))
 
 # ============================================================
@@ -304,19 +334,27 @@ make_scorecard <- function() {
 
   p <- ggplot(d, aes(pct, statement, fill = kind)) +
     geom_col(width = .68) +
-    geom_text(aes(label = paste0(pct, "%"), colour = kind),
-              hjust = -0.18, family = "Roboto Condensed",
+    # Label now names the direction ("Agree"/"Disagree") alongside the
+    # value, since bars mix both directions - see the tribble's own
+    # top-of-block comment for which statement uses which.
+    geom_text(aes(label = paste0(pct, "% ", vapply(dir, dirword_cap, character(1))),
+                  colour = kind),
+              hjust = -0.06, family = "Roboto Condensed",
               fontface = "bold", size = 8, show.legend = FALSE) +
     scale_fill_manual(values = c(Ethics = amber, Doctrine = teal)) +
     scale_colour_manual(values = c(Ethics = amber, Doctrine = teal)) +
-    scale_x_continuous(limits = c(0, 118), expand = expansion(mult = c(0, 0))) +
+    # 118 -> 200: the longer "NN% Disagree"/"NN% Agree" labels are ~3x the
+    # width of the old bare "NN%" labels, so they need proportionally more
+    # headroom past the longest bar (77) to clear the right edge.
+    scale_x_continuous(limits = c(0, 200), expand = expansion(mult = c(0, 0))) +
     labs(
-      # The old punchy title ("Firmer, but not firm") is gone — the
-      # description that used to live in the subtitle is promoted to the
-      # title instead, so this slide leads with what it measures.
-      title = paste0(
-        "Share of evangelicals by affiliation who strongly agree or ",
-        "somewhat agree, 2022"),
+      # The old punchy title ("Firmer, but not firm") is gone - the title
+      # now names what EVERY bar measures now that direction varies by row:
+      # not "% who agree" but "% giving the response consistent with the
+      # tradition's own historic teaching" (agree for the orthodox social
+      # statements, disagree for the heterodox theology ones and the one
+      # morally liberal statement) - see the tribble's own comment above.
+      title = "Share of evangelicals giving the tradition-consistent response, 2022",
       subtitle = paste0(
         "<span style='color:", amber, "'><b>&#9632; Contested moral issues</b></span>",
         "<span style='color:", grid, "'> &#124; </span>",
