@@ -433,3 +433,16 @@ New post: `post5-membership-scale-widescreen/post5_membership_scale_widescreen.p
   is always exactly the intended margin (never 0, i.e. never touching the
   canvas edge) except the full-width divider line, which is edge-to-edge
   by design.
+
+## What changed (round thirteen: "LDS" is a row label, not text after the number)
+
+Last round's `"{fmt_millions} LDS"` fix (post3 and post5) put "LDS" in the
+wrong place - appended after the value, it read as part of the number
+("6.9M LDS") rather than a label naming the bar the way "Evangelical"/
+"Mainline"/"Black Protestant"/"Catholic" do above it. Reverted the value
+text back to a bare `fmt_millions(...)` and gave the LDS bar a real
+y-axis tick label instead (`ax2.barh(["LDS"], ...)` in place of the old
+empty-string category), styled identically to the top chart's own row
+labels (bold INK, same fontsize, same `tick_params`/`pad`) - "LDS" now
+sits to the left of its bar, in front of it, exactly like every other row
+label in the chart above.

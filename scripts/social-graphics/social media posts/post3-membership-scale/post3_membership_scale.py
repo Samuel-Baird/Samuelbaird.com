@@ -393,15 +393,23 @@ def render_item(item: dict) -> None:
     ax2_bottom = ax2_top - ax2_height
     ax2 = fig.add_axes([CHART_LEFT, ax2_bottom, RIGHT - CHART_LEFT, ax2_height])
     ax2.set_facecolor(PAPER)
-    ax2.barh([""], [LDS_US_MEMBERS], height=BAR_HEIGHT_FRAC, color=ACCENT, edgecolor=INK, linewidth=1.2, zorder=3)
+    # "LDS" is a real y-axis row label, styled exactly like the top chart's
+    # own group labels (bold INK, same fontsize) - not text appended after
+    # the value, which read as part of the number rather than a label
+    # naming the bar the way "Evangelical"/"Mainline"/etc. do above it.
+    ax2.barh(["LDS"], [LDS_US_MEMBERS], height=BAR_HEIGHT_FRAC, color=ACCENT, edgecolor=INK, linewidth=1.2, zorder=3)
     ax2.set_ylim(-0.5, 0.5)
     ax2.margins(y=0)
     ax2.set_xlim(0, xlim_top)  # same scale as the chart above -- the point is the size gap
     ax2.set_xticks([])
-    ax2.set_yticks([])
     for spine in ax2.spines.values():
         spine.set_visible(False)
-    ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, f"{fmt_millions(LDS_US_MEMBERS)} LDS", va="center", ha="left",
+    ax2.tick_params(axis="y", length=0, pad=10)
+    for label in ax2.get_yticklabels():
+        label.set_fontproperties(fonts["bold"])
+        label.set_fontsize(24)
+        label.set_color(INK)
+    ax2.text(LDS_US_MEMBERS + xlim_top * 0.02, 0, fmt_millions(LDS_US_MEMBERS), va="center", ha="left",
               color=ACCENT, fontproperties=fonts["bold"], fontsize=20)
 
     if ax2_bottom < caption_top:
