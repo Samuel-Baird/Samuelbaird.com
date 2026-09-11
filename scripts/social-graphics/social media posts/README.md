@@ -136,3 +136,27 @@ inspected, rather than edited blind.
   "61%/44%/55%" list 26→30pt. The giant headline stat (96pt) stays teal —
   it's the slide's de facto title, there's no `labs(title=...)` on a hook
   card to hold that role instead.
+
+## What changed (round four: subtitles bigger, hook body ~half the headline, text-card sizes matched)
+
+- **Chart subtitles bumped again**: 18→22pt in both scripts (`theme_burge()`
+  in post1, `make()`'s `plot.subtitle` in post2), plus post1's inline
+  legend swatches 20→22pt to match. post1's scorecard subtitle needed a
+  manual `<br>` added (`Share of evangelicals by affiliation who strongly
+  agree` / `or somewhat agree, 2022`) — at 22pt the un-wrapped line ran off
+  the canvas edge.
+- **Hook slides' `lines` text is now ~half the headline stat's size**:
+  34→48pt (96pt headline / 2 = 48pt), per this rollout's explicit target.
+  `kicker` and hook_c's nested percentage list went 28/30→36pt to keep the
+  hierarchy under the bigger `lines` text. All three hook calls' manual
+  `<br>` breaks had to be retightened for the larger size (e.g. "of
+  American evangelicals say" → "of American evangelicals<br>say", to stop
+  the line running off the right edge) — checked every regenerated PNG for
+  clipping after the resize, not just after the initial edit.
+- **"Words without weight" (post1) and "Still the beam" (post2) matched**:
+  post1's text-card stats block 32→36pt and paragraph 20→24pt; post2's
+  closing-card stats block 30→36pt and paragraph 22→24pt (now identical to
+  post1's), 0_intro's single block 27→32pt. Both cards' `<br>` breaks were
+  retightened for the larger sizes — "Across the four Christian traditions
+  here:" and one Spirit-not-a-person line needed new breaks to stop
+  clipping.

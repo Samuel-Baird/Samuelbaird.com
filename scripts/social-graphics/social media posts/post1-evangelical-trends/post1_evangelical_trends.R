@@ -215,7 +215,7 @@ theme_burge <- function() {
       plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
                                 size = 40, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
-      plot.subtitle = element_markdown(family = "Roboto Condensed", size = 18,
+      plot.subtitle = element_markdown(family = "Roboto Condensed", size = 22,
                                        colour = ink, lineheight = 1.4,
                                        margin = margin(b = 22)),
       plot.caption = element_markdown(family = "Roboto Condensed", size = 16,
@@ -252,10 +252,10 @@ make_chart <- function(k) {
   if (ytop - max(d$pct) < 5) ytop <- ytop + 10
   ystep <- if (ytop >= 80) 20 else 10
   legend <- if (length(it$series) == 2)
-    paste0("<span style='font-size:20pt;color:", amber, "'><b>&#9632; Evangelicals by affiliation</b></span>",
+    paste0("<span style='font-size:22pt;color:", amber, "'><b>&#9632; Evangelicals by affiliation</b></span>",
            "<span style='color:", grid, "'> &#124; </span>",
-           "<span style='font-size:20pt;color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
-  else paste0("<span style='font-size:20pt;color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
+           "<span style='font-size:22pt;color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
+  else paste0("<span style='font-size:22pt;color:", teal, "'><b>&#9632; All U.S. adults</b></span>")
 
   # Title IS the survey statement (see "Titles: accurate, not editorial"
   # in scripts/state-of-theology-graphics/STYLE.md) — no separate quote
@@ -313,7 +313,8 @@ make_scorecard <- function() {
     labs(
       title = "Firmer, but not firm",
       subtitle = paste0(
-        "Share of <b>evangelicals by affiliation</b> who strongly <b>agree</b> or somewhat <b>agree</b>, 2022<br>",
+        "Share of <b>evangelicals by affiliation</b> who strongly <b>agree</b><br>",
+        "or somewhat <b>agree</b>, 2022<br>",
         "No statement clears 80%.<br><br>",
         "<span style='color:", amber, "'><b>&#9632; Contested moral issues</b></span>",
         "<span style='color:", grid, "'> &#124; </span>",
@@ -334,21 +335,21 @@ make_scorecard <- function() {
 # ============================================================
 make_textcard <- function() {
   body <- paste0(
-    "<span style='font-size:32pt;color:", ink, "'>",
+    "<span style='font-size:36pt;color:", ink, "'>",
     "<b style='color:", amber, "'>92%</b> of evangelicals confess<br>",
     "one God in three persons.<br><br>",
     "<b style='color:", teal, "'>61%</b> say Jesus was created.<br>",
     "<b style='color:", teal, "'>55%</b> say the Spirit is a force.<br>",
     "<b style='color:", teal, "'>44%</b> say Jesus is not God.",
     "</span><br><br><br>",
-    "<span style='font-size:20pt;color:", ink, "'>",
-    "Some of the most vocal evangelical apologists spend their<br>",
-    "time telling other traditions they've departed from historic<br>",
-    "Christianity. This is what that accusation looks like<br>",
-    "turned around.<br><br>",
+    "<span style='font-size:24pt;color:", ink, "'>",
+    "Some of the most vocal evangelical apologists<br>",
+    "spend their time telling other traditions they've<br>",
+    "departed from historic Christianity. This is what<br>",
+    "that accusation looks like turned around.<br><br>",
     "No tradition's members hold its teaching perfectly.<br>",
-    "Matthew 7 tells us what to do about that: the beam in<br>",
-    "our own eye before the mote in our brother's.",
+    "Matthew 7 tells us what to do about that: the beam<br>",
+    "in our own eye before the mote in our brother's.",
     "</span>")
 
   p <- ggplot() +
@@ -374,9 +375,11 @@ make_textcard <- function() {
 make_hook <- function(file, big, lines, kicker = NULL) {
   body <- paste0(
     "<span style='font-size:96pt;color:", teal, "'><b>", big, "</b></span><br>",
-    "<span style='font-size:34pt;color:", ink, "'>", lines, "</span>",
+    # Subtitle line ("lines") sized at roughly half the headline stat
+    # (96pt / 2 = 48pt) per this rollout's explicit target — was 34pt.
+    "<span style='font-size:48pt;color:", ink, "'>", lines, "</span>",
     if (!is.null(kicker))
-      paste0("<br><br><br><span style='font-size:28pt;color:", ink, "'>", kicker, "</span>")
+      paste0("<br><br><br><span style='font-size:36pt;color:", ink, "'>", kicker, "</span>")
     else "")
   p <- ggplot() +
     geom_richtext(aes(x = 0, y = 1, label = body), hjust = 0, vjust = 1,
@@ -394,16 +397,16 @@ make_hook <- function(file, big, lines, kicker = NULL) {
 }
 
 make_hook("hook_a_created.png", "61%",
-  "of American evangelicals say<br>Jesus was <b>created</b>.",
+  "of American evangelicals<br>say Jesus was <b>created</b>.",
   "They also say they believe<br>in the Trinity.")
 
 make_hook("hook_b_not_god.png", "44%",
-  "of American evangelicals say<br>Jesus was <b>not God</b>.",
+  "of American evangelicals<br>say Jesus was <b>not God</b>.",
   "They also say they believe<br>in the Trinity.")
 
 make_hook("hook_c_combined.png", "92%",
-  paste0("of American evangelicals say they<br>believe in the Trinity.<br><br>",
-         "<span style='font-size:30pt;color:", ink, "'>",
+  paste0("of American evangelicals<br>say they believe in<br>the Trinity.<br><br>",
+         "<span style='font-size:36pt;color:", ink, "'>",
          "<b style='color:", teal, "'>61%</b> say Jesus was created.<br>",
          "<b style='color:", teal, "'>44%</b> say Jesus was not God.<br>",
          "<b style='color:", teal, "'>55%</b> say the Spirit is a force.</span>"))

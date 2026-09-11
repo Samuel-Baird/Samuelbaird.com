@@ -181,7 +181,7 @@ make <- function(k) {
       plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
                                 size = title_size, colour = ink, lineheight = 1.05,
                                 width = unit(7.8, "in"), margin = margin(b = 10)),
-      plot.subtitle = element_markdown(size = 18, colour = ink, lineheight = 1.4,
+      plot.subtitle = element_markdown(size = 22, colour = ink, lineheight = 1.4,
                                        margin = margin(b = 34)),
       plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                       lineheight = 1.6, margin = margin(t = 34)),
@@ -218,7 +218,7 @@ card <- function(file, title, body, caption_override = NULL) {
 }
 
 card("0_intro.png", "Evangelicals won", paste0(
-  "<span style='font-size:27pt;color:", ink, "'>",
+  "<span style='font-size:32pt;color:", ink, "'>",
   "Last week&#8217;s numbers looked bad.<br><br>",
   "Compared to every other Christian<br>",
   "tradition in the survey, they are<br>",
@@ -227,20 +227,21 @@ card("0_intro.png", "Evangelicals won", paste0(
 
 card("11_closing.png", paste0(
   "<span style='font-size:52pt'>Still the beam</span>"), paste0(
-  "<span style='font-size:30pt;color:", ink, "'>",
-  "Across the four Christian traditions here:<br><br>",
+  "<span style='font-size:36pt;color:", ink, "'>",
+  "Across the four Christian<br>traditions here:<br><br>",
   "<b>89&#8211;95%</b> confess the Trinity.<br>",
   "<b style='color:", wine, "'>61&#8211;78%</b> say Jesus was created.<br>",
-  "<b style='color:", wine, "'>52&#8211;73%</b> say the Spirit is not a person.<br>",
+  "<b style='color:", wine, "'>52&#8211;73%</b> say the Spirit is<br>not a person.<br>",
   "<b style='color:", wine, "'>34&#8211;55%</b> say Jesus was not God.",
   "</span><br><br><br>",
-  "<span style='font-size:22pt;color:", ink, "'>",
-  "Last week the numbers made evangelicals look bad. This<br>",
-  "week they&#8217;re the best in the country, and it still isn&#8217;t good.<br><br>",
+  "<span style='font-size:24pt;color:", ink, "'>",
+  "Last week the numbers made evangelicals look bad.<br>",
+  "This week they&#8217;re the best in the country, and<br>",
+  "it still isn&#8217;t good.<br><br>",
   "The tradition with the strictest catechism and the<br>",
-  "tradition with none at all fail the same way. No one in<br>",
-  "this survey is positioned to correct anyone else before<br>",
-  "working on themselves.",
+  "tradition with none at all fail the same way. No one<br>",
+  "in this survey is positioned to correct anyone else<br>",
+  "before working on themselves.",
   "</span>"),
   caption_override = paste0("<span style='font-size:16pt;color:", ink, "'>", SRC, "</span>"))
 
