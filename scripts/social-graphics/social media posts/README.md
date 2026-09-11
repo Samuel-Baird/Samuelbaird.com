@@ -19,6 +19,13 @@ chart pipeline instead of an ad-hoc palette.
   carousel. R/ggplot2. If post2's data or copy ever changes, mirror the
   change here too - see "What changed (round nine..." below for the
   layout differences this reformat required.
+- `post5-membership-scale-widescreen/post5_membership_scale_widescreen.py`
+  — post3's exact data, copy, and styling, reformatted 1920×1080 (16:9),
+  the same relationship post4 has to post2. Python/matplotlib. If post3's
+  data or copy ever changes, mirror the change here too - see "What
+  changed (round eleven..." below for the layout differences this
+  reformat required (more involved than post4's, since this script hand-
+  positions everything rather than relying on ggplot's automatic layout).
 
 Each folder gets its own `png/` output directory when you run its script
 (`Rscript post1_evangelical_trends.R` from inside that folder, or with a
@@ -355,3 +362,48 @@ If post2's data or copy ever changes, mirror the change here too.
   pixel-level scan used earlier for post1's scorecard labels, not a
   visual read - this is genuinely easy to miss by eye at this
   resolution); narrowed to 85, checked clear with real margin.
+
+## What changed (round eleven: post1 hook_c bold words, new post5 (post3 in 16:9))
+
+- **post1's `hook_c_combined.png`** ("92% believe in the Trinity"): the
+  words `created`, `not God`, and `a force` in its nested 61%/44%/55% list
+  are now bold, matching the emphasis already given to the percentages
+  themselves.
+
+New post: `post5-membership-scale-widescreen/post5_membership_scale_widescreen.py`
+- post3's exact data, per-item copy, and styling, reformatted 1920×1080
+  (16:9) the same way post4 is post2 reformatted widescreen. If post3's
+  data or copy ever changes, mirror the change here too.
+- Unlike post4 (ggplot, automatic layout), post3/post5 hand-position every
+  element with `fig.add_axes`/`fig.text` at figure-fraction coordinates -
+  changing `FIG_W_IN`/`FIG_H_IN` alone does NOT reflow this script the way
+  it did post4's. A figure-fraction *distance* means less absolute (inch)
+  space at a shorter canvas height, which is backwards for anything that
+  has to clear a fixed-size (point) font - most visibly, stacked title
+  lines at the same point size would sit closer together with less
+  leading. Introduced `VSCALE = 11.25 / FIG_H_IN` and multiplied every
+  constant that exists to clear a line of text by it (`LINE_STEP`, the
+  title's own top margin, the caption's `line_step`/`bottom`) so those
+  hold their absolute size across both canvas heights. Left the pure
+  whitespace/bar-thickness constants (section gaps, `SLOT_HEIGHT`) alone -
+  nothing sets a minimum absolute size they have to clear, so letting the
+  whole chart get proportionally shorter at the shorter canvas is fine.
+- Title wrap width scales automatically from `TITLE_MAX_WIDTH_PX`
+  (already a `FIG_W_IN`-derived formula in post3) - at 16in wide, every
+  quote now wraps to at most 2 lines, down from up to 3 in post3's 9in.
+- Caption `wrap_width` scaled up too (85 → 151, roughly ×16/9) - this is a
+  character count, not a distance, so it doesn't need `VSCALE`; it needs
+  to grow with the extra WIDTH instead, or the caption wraps into more
+  (needlessly short) lines than the wider canvas actually requires.
+- Verified with the same two checks as post3's own rollout: the script's
+  built-in overlap warning (none fired across all 16 regenerated PNGs)
+  and a pixel-level scan for the rightmost non-background pixel, run
+  twice - once naively (caught the full-width divider line, a false
+  positive - it's drawn edge-to-edge on purpose) and once restricted to
+  the palette's actual text/bar colors (clean, 150px+ margin on every
+  slide).
+- New Next.js page (`src/app/data-explorer/state-of-theology/social/post5/page.tsx`,
+  copied from post3's own page, pointed at
+  `/social-graphics/state-of-theology/post5/` with 1920×1080 image
+  dimensions and post4's two-column grid instead of post3's three-column
+  one) and a new `socialSets` entry in `src/lib/data-explorer.ts`.

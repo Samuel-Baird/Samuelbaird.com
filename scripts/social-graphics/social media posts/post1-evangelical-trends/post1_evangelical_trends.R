@@ -459,9 +459,9 @@ make_hook("hook_b_not_god.png", "44%",
 make_hook("hook_c_combined.png", "92%",
   paste0("of American evangelicals<br>say they believe in<br>the Trinity.<br><br>",
          "<span style='font-size:36pt;color:", ink, "'>",
-         "<b style='color:", teal, "'>61%</b> say Jesus was created.<br>",
-         "<b style='color:", teal, "'>44%</b> say Jesus was not God.<br>",
-         "<b style='color:", teal, "'>55%</b> say the Spirit is a force.</span>"))
+         "<b style='color:", teal, "'>61%</b> say Jesus was <b>created</b>.<br>",
+         "<b style='color:", teal, "'>44%</b> say Jesus was <b>not God</b>.<br>",
+         "<b style='color:", teal, "'>55%</b> say the Spirit is <b>a force</b>.</span>"))
 
 invisible(lapply(names(items), make_chart))
 make_scorecard()

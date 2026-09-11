@@ -711,6 +711,17 @@ const RAW_DATASETS: Dataset[] = [
         previewWidth: 1920,
         previewHeight: 1080,
       },
+      {
+        title: "Raw numbers, widescreen",
+        description:
+          "Post3's headcount-not-percentage set, reformatted 16:9 for platforms that want a " +
+          "landscape image instead of an Instagram-portrait carousel.",
+        href: "/data-explorer/state-of-theology/social/post5",
+        count: 16,
+        previewSrc: "/social-graphics/state-of-theology/post5/1_trinity_headcount.png",
+        previewWidth: 1920,
+        previewHeight: 1080,
+      },
     ],
   },
   {
