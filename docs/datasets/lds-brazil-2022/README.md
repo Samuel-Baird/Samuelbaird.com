@@ -1,6 +1,6 @@
 # Latter-day Saints in Brazil
 
-Three angles on the Church in Brazil, the country that in 2025 became the
+Five angles on the Church in Brazil, the country that in 2025 became the
 nation with the most Latter-day Saints outside the United States.
 
 ## What's in here
@@ -23,6 +23,20 @@ nation with the most Latter-day Saints outside the United States.
   state's population age 10+, ranked. Built by
   `scripts/lds-brazil-2022/build_smaller_faiths_by_state.py` from a
   pre-computed weighted tabulation of the raw Census microdata.
+- **`temples-dedicated-by-year.json`** — cumulative count of dedicated
+  Brazil temples by dedication year, 1978-2026 (all 12 currently-dedicated
+  temples), built by
+  `scripts/lds-brazil-2022/build_temples_dedicated_by_year.py`. Every point
+  is a real, exact dedication date, cross-verified against the Church's
+  official chronology page and temple list. Counts only DEDICATED
+  temples — those under construction or merely announced are noted
+  separately, not plotted as completed milestones.
+- **`missions-by-decade.json`** — real decade-by-decade Brazil mission
+  counts, 1950-2025 (8 data points), built by
+  `scripts/lds-brazil-2022/build_missions_by_decade.py`. Quoted directly
+  from cumorah.com's "Reaching the Nations" Brazil country report plus the
+  Church's current facts-and-statistics figure — same sparse,
+  no-interpolation pattern as `membership-by-year.json`.
 
 ## Sources, by year (membership-by-year.json)
 
@@ -89,9 +103,57 @@ with the report's *separate* "Sem religião"/no-religion pair of
 7.9%→9.3%; the corrected 2.7%→4.0% figures are what's used throughout this
 dataset.)
 
+## Temples dedicated by year — sources and verification
+
+All 12 currently-dedicated Brazil temples with exact dedication dates,
+cross-verified against both the Church's official chronology page
+(<https://www.churchofjesuschrist.org/study/history/global-histories/brazil/br-chronology?lang=eng>)
+and its temple list (<https://www.churchofjesuschrist.org/temples/list?lang=eng>).
+The most recent (#12, Belo Horizonte) was confirmed via a direct search:
+Church Newsroom, "President Oaks Dedicates the Belo Horizonte Brazil
+Temple" (<https://newsroom.churchofjesuschrist.org/article/president-oaks-dedicates-belo-horizonte-brazil-temple>),
+which explicitly states it as "the Church's 12th dedicated temple in
+Brazil."
+
+**The pace accelerates:** 22 years passed between temple #1 (Sao Paulo,
+1978) and temples #2/#3 (Recife and Porto Alegre, both Dec. 2000); after
+that, a temple roughly every 2-4 years; then 5 of the 12 — Rio de
+Janeiro, Belem, Brasilia, Salvador, and Belo Horizonte — dedicated in
+just the last 4 years (2022-2026). That count was independently
+recomputed directly from the temple table during this session (not
+carried over from an earlier draft) and confirmed as 5, not 6.
+
+As of this writing, Brazil also has temples under construction (Natal,
+Teresina, Santos, Joao Pessoa, Ribeirao Preto, Londrina) and announced
+(Maceio, Campo Grande, Florianopolis, Sao Paulo East, Goiania, Vitoria) —
+noted in the chart's subtitle as a passing count, but not plotted, since
+the chart tracks only completed (dedicated) milestones.
+
+## Missions by decade — sources and verification
+
+Real decade-by-decade mission counts, quoted verbatim from cumorah.com's
+"Reaching the Nations" Brazil country report (Matt Martinich) —
+<https://cumorah.com/countries/viewReports/191/Brazil> — the same source
+family already cited for the 2000/2010 membership figures above: "The
+number of missions increased from one in 1950 to two in 1960, three in
+1970, six in 1980, 12 in 1990, 26 in 2000, and 27 in 2010." The current
+figure, 37 missions as of Dec. 31, 2025, comes from the Church's official
+facts-and-statistics page (already cited above for the Latin America
+comparison and 2025 membership total).
+
+**A different shape than membership:** mission counts roughly doubled
+each decade from 1950 to 1990 (1 → 2 → 3 → 6 → 12), then grew far more
+slowly over the next 25 years (12 → 26 → 27 → 37) even as Brazil's
+membership kept climbing steadily over that same period (see
+`membership-by-year.json` above). Each mission likely covers a larger
+member base today than in the growth-spurt decades — a genuinely
+different curve shape than membership's, though no single cause is
+asserted for it here.
+
 ## Recommended citation
 
 > Compiled from Wikipedia's "The Church of Jesus Christ of Latter-day
-> Saints in Brazil," cumorah.com's LDS Growth Case Studies, the Church's
-> official facts-and-statistics pages (2025), and this site's own weighted
+> Saints in Brazil," cumorah.com's LDS Growth Case Studies and "Reaching
+> the Nations" country report, the Church's official facts-and-statistics
+> and temple/chronology pages (2025-2026), and this site's own weighted
 > tabulation of the 2022 Brazilian Census (IBGE) Pessoas microdata.

@@ -1,0 +1,59 @@
+{
+  "sources_summary": [
+    "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich), 1950-2010: https://cumorah.com/countries/viewReports/191/Brazil",
+    "Church official facts-and-statistics page (2025): https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+  ],
+  "method": "8 real data points spanning 75 years, quoted directly from cumorah.com's decade-by-decade sentence (1950-2010) plus the Church's own current figure (2025). No point between these is interpolated or estimated - years with no findable real figure are simply omitted, following the same rule as membership-by-year.json in this dataset.",
+  "year_order": [
+    1950,
+    1960,
+    1970,
+    1980,
+    1990,
+    2000,
+    2010,
+    2025
+  ],
+  "series": {
+    "1950": {
+      "missions": 1,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"The number of missions increased from one in 1950...\""
+    },
+    "1960": {
+      "missions": 2,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"...to two in 1960...\""
+    },
+    "1970": {
+      "missions": 3,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"...three in 1970...\""
+    },
+    "1980": {
+      "missions": 6,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"...six in 1980...\""
+    },
+    "1990": {
+      "missions": 12,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"...12 in 1990...\""
+    },
+    "2000": {
+      "missions": 26,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"...26 in 2000...\""
+    },
+    "2010": {
+      "missions": 27,
+      "status": "reported",
+      "source": "cumorah.com \"Reaching the Nations\" Brazil country report (Matt Martinich): \"...and 27 in 2010.\""
+    },
+    "2025": {
+      "missions": 37,
+      "status": "reported",
+      "source": "Church official facts-and-statistics page, as of Dec. 31, 2025: https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+    }
+  }
+}

@@ -2325,3 +2325,57 @@ not yet listed here haven't been through a dedicated pass — cross-reference
   `/graphics` subpage hit a pre-existing local-dev-only rendering quirk
   that also affects the already-shipped lds-brazil-2022/graphics page -
   not something this change introduced).
+
+- **lds-brazil-2022** (organizational/administrative Church data - temple
+  chronology + "Reaching the Nations" mission counts) - two more graphics,
+  2026-09-11, third Brazil follow-up batch (after the two above):
+  `temples-dedicated-by-year.png` and `missions-by-decade.png`, both added
+  to the existing lds-brazil-2022 dataset (now 5 graphics) rather than a
+  third new dataset slug, since both are Church-reported organizational
+  stats in the same spirit as that dataset's existing membership/Latin-
+  America charts. `temples-dedicated-by-year.png` is a cumulative count of
+  all 12 currently-dedicated Brazil temples by dedication year, 1978-2026,
+  cross-verified against the Church's official chronology and temple-list
+  pages, with #12 (Belo Horizonte, Aug 16, 2026) confirmed via a direct
+  search of Church Newsroom's own dedication article. The pace visibly
+  accelerates: 22 years between temple #1 (1978) and #2/#3 (2000), then
+  roughly one every 2-4 years, then 5 of the 12 dedicated in just the last
+  4 years (2022-2026) - that "5" was independently recomputed from the
+  full temple table in this pass (an `assert` in the build script checks
+  it), not trusted from the source brief's own prose, per this session's
+  own instruction to double-check after an earlier unrelated counting
+  slip; it checked out at exactly 5. Two calendar years (2000, 2002 for
+  the year-only view; more precisely 2000 twice and 2022 twice) had two
+  dedications apiece, collapsed into one plotted point per year carrying
+  that year's ending cumulative total. `missions-by-decade.png` is 8 real,
+  sparse decade-by-decade mission counts, 1950-2025, quoted verbatim from
+  cumorah.com's "Reaching the Nations" Brazil country report (1 in 1950 to
+  27 in 2010) plus the Church's own current 2025 figure (37) - no
+  interpolation, same pattern as this dataset's own membership-by-year.json.
+  Notes in its subtitle that mission counts roughly doubled each decade
+  through 1990 then grew far more slowly after 2000, a different shape
+  than the membership curve's steady climb over the same period, without
+  asserting a specific cause. Both use `render_timeseries`
+  (scripts/flagship-charts/common.py) - the same shape as this dataset's
+  membership-by-year chart - with non-default `y_step`/`y_label_divisor`/
+  `y_label_suffix` since these are small whole-number counts (temples 1-12,
+  missions 1-37), not the module's membership-scale default. The temples
+  chart also needed `x_tick_step=10` rather than a denser step: with only
+  10 plotted points several fall within 1-2 years of each other (2000/2002,
+  then 2022/2023/2024/2026), and labeling every real year collided their
+  4-digit x-axis labels into an unreadable run - `x_tick_step=10` keeps
+  only round-decade labels plus the series' own forced first/last year,
+  while every real point still gets its own plotted marker regardless of
+  whether its year is separately labeled. Hand-written
+  `scripts/lds-brazil-2022/{build_temples_dedicated_by_year,
+  build_missions_by_decade}.py` + matching `render_*_chart.py` scripts,
+  JSON in `docs/datasets/lds-brazil-2022/`, PNGs in
+  `public/data-explorer/lds-brazil-2022/`; wired in as two more graphics
+  on the existing dataset entry. `tsc --noEmit` clean, `next build` clean,
+  both PNGs read directly and visually checked (including a re-render
+  after the x-axis label-collision fix), dataset page verified in a local
+  dev server - both PNGs served 200 directly; the `/graphics` subpage hit
+  the same pre-existing local-dev-only rendering quirk already noted above
+  for this dataset and lds-brazil-census-2010, confirmed again this pass
+  by reproducing it on the latter's own `/graphics` page too - not
+  something this change introduced.

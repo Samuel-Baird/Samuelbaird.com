@@ -254,6 +254,8 @@ import worldwideMembershipHistoryData from "../../docs/datasets/worldwide-member
 import brazilMembershipByYearData from "../../docs/datasets/lds-brazil-2022/membership-by-year.json";
 import brazilLatinAmericaComparisonData from "../../docs/datasets/lds-brazil-2022/latin-america-comparison-2025.json";
 import brazilSmallerFaithsByStateData from "../../docs/datasets/lds-brazil-2022/smaller-faiths-by-state-2022.json";
+import brazilTemplesDedicatedByYearData from "../../docs/datasets/lds-brazil-2022/temples-dedicated-by-year.json";
+import brazilMissionsByDecadeData from "../../docs/datasets/lds-brazil-2022/missions-by-decade.json";
 import brazilLdsByState2010Data from "../../docs/datasets/lds-brazil-census-2010/lds-by-state-2010.json";
 import brazilSelfIdVsMembership2010Data from "../../docs/datasets/lds-brazil-census-2010/self-id-vs-membership-2010.json";
 import brazilTopCities2010Data from "../../docs/datasets/lds-brazil-census-2010/top-cities-2010.json";
@@ -1768,12 +1770,12 @@ const RAW_DATASETS: Dataset[] = [
     slug: "lds-brazil-2022",
     name: "Latter-day Saints in Brazil",
     shortDescription:
-      "Brazil's Church membership growth since 1940, how it now compares to the rest of Latin America, and where the country's smaller faiths concentrate.",
+      "Brazil's Church membership growth since 1940, how it now compares to the rest of Latin America, where the country's smaller faiths concentrate, and the accelerating pace of its temples and missions.",
     sponsor: "The Church of Jesus Christ of Latter-day Saints; Brazilian Institute of Geography and Statistics (IBGE)",
     fielder: "Compiled by this site from multiple public sources; IBGE 2022 Census (own tabulation)",
-    fieldedPeriod: "1940-2025",
+    fieldedPeriod: "1940-2026",
     description:
-      "Three angles on the Church in Brazil, the country that in 2025 overtook Mexico to become " +
+      "Five angles on the Church in Brazil, the country that in 2025 overtook Mexico to become " +
       "the nation with the most Latter-day Saints outside the United States. The first chart is a " +
       "compiled historical membership timeline, 1940-2025 — sparser than this site's other " +
       "membership timelines, since fewer annual Brazil-only figures are publicly documented; every " +
@@ -1783,9 +1785,13 @@ const RAW_DATASETS: Dataset[] = [
       "Brazilian Census (IBGE) — but is deliberately NOT an LDS-specific figure: IBGE's public " +
       "religion variable only breaks out 9 broad groups, so \"Outras religiosidades\" (Other " +
       "religions) is a mixed bucket covering Latter-day Saints alongside Jehovah's Witnesses, " +
-      "Spiritualists, Jews, Muslims, Buddhists, and more, by state. See " +
+      "Spiritualists, Jews, Muslims, Buddhists, and more, by state. The fourth tracks the " +
+      "cumulative count of dedicated Brazil temples, 1978-2026 — an accelerating pace, with 5 of " +
+      "the 12 dedicated in just the last 4 years. The fifth tracks the country's mission count, " +
+      "1950-2025 — real decade-by-decade figures that roughly doubled each decade through 1990, " +
+      "then grew far more slowly even as membership kept climbing steadily. See " +
       "docs/datasets/lds-brazil-2022/README.md for every figure's citation and the full framing " +
-      "note on that last chart.",
+      "note on the smaller-faiths chart.",
     citation:
       "Compiled from Wikipedia's \"The Church of Jesus Christ of Latter-day Saints in Brazil,\" " +
       "cumorah.com's LDS Growth Case Studies, the Church's official facts-and-statistics pages " +
@@ -1797,6 +1803,8 @@ const RAW_DATASETS: Dataset[] = [
       brazilMembershipByYearGraphic(),
       brazilLatinAmericaComparisonGraphic(),
       brazilSmallerFaithsByStateGraphic(),
+      brazilTemplesDedicatedByYearGraphic(),
+      brazilMissionsByDecadeGraphic(),
     ],
   },
   {
@@ -1966,6 +1974,36 @@ function brazilSmallerFaithsByStateGraphic(): Graphic {
     imageSrc: "/data-explorer/lds-brazil-2022/smaller-faiths-by-state-2022.png",
     width: 1080, height: 1350,
     alt: `Horizontal bar chart, ranked: share of each Brazilian state's population age 10+ in IBGE's 2022 Census "Outras religiosidades" (Other religions) bucket - a mixed group including Latter-day Saints, Jehovah's Witnesses, Spiritualists, Jews, Muslims, Buddhists, and more, NOT an LDS-specific estimate. ${alt}. Roraima is the highest at roughly double the national rate of 4.0%.`,
+  };
+}
+
+function brazilTemplesDedicatedByYearGraphic(): Graphic {
+  const { year_order: years, series } = brazilTemplesDedicatedByYearData;
+  const alt = years
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].count}`)
+    .join(", ");
+  return {
+    title: "Brazil temples dedicated, 1978-2026",
+    description:
+      "22 years passed between Brazil's first temple and its second - then the pace kept accelerating, with 5 of the 12 dedicated in just the last 4 years.",
+    imageSrc: "/data-explorer/lds-brazil-2022/temples-dedicated-by-year.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: cumulative count of dedicated Brazil temples by dedication year, 1978 to 2026 (12 temples total). ${alt}. The pace accelerates over time: 22 years between the 1st and 2nd/3rd temples, then a temple roughly every 2-4 years, then 5 of the 12 dedicated in the last 4 years (2022-2026) alone.`,
+  };
+}
+
+function brazilMissionsByDecadeGraphic(): Graphic {
+  const { year_order: years, series } = brazilMissionsByDecadeData;
+  const alt = years
+    .map((y) => `${y}: ${series[String(y) as keyof typeof series].missions}`)
+    .join(", ");
+  return {
+    title: "Brazil LDS missions, 1950-2025",
+    description:
+      "Mission counts roughly doubled each decade through 1990, then grew far more slowly even as membership kept climbing.",
+    imageSrc: "/data-explorer/lds-brazil-2022/missions-by-decade.png",
+    width: 1080, height: 1350,
+    alt: `Line chart: number of Church missions organized in Brazil, 1950 to 2025 (8 data points, decade-by-decade). ${alt}. Missions roughly doubled each decade from 1950 to 1990, then grew far more slowly over the following 25 years even as Brazil's membership kept climbing steadily over the same period.`,
   };
 }
 
