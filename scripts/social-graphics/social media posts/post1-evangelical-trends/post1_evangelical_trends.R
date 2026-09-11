@@ -311,22 +311,29 @@ make_scorecard <- function() {
     scale_colour_manual(values = c(Ethics = amber, Doctrine = teal)) +
     scale_x_continuous(limits = c(0, 118), expand = expansion(mult = c(0, 0))) +
     labs(
-      title = "Firmer, but not firm",
+      # The old punchy title ("Firmer, but not firm") is gone — the
+      # description that used to live in the subtitle is promoted to the
+      # title instead, so this slide leads with what it measures.
+      title = paste0(
+        "Share of evangelicals by affiliation who strongly agree or ",
+        "somewhat agree, 2022"),
       subtitle = paste0(
-        "Share of <b>evangelicals by affiliation</b> who strongly <b>agree</b><br>",
-        "or somewhat <b>agree</b>, 2022<br>",
-        "No statement clears 80%.<br><br>",
         "<span style='color:", amber, "'><b>&#9632; Contested moral issues</b></span>",
         "<span style='color:", grid, "'> &#124; </span>",
         "<span style='color:", teal, "'><b>&#9632; Ancient heresies</b></span>"),
-      caption = paste0(
-        "Every statement is shown as the survey worded it; all bars are share who agree.<br><br>", SRC)) +
+      caption = SRC) +
     theme_burge() +
     theme(panel.grid.major.y = element_blank(),
           panel.grid.major.x = element_line(colour = grid, linewidth = .4),
           axis.text.x = element_blank(),
           axis.text.y = element_text(size = 18, colour = ink, face = "bold",
-                                     hjust = 1, lineheight = 1.1))
+                                     hjust = 1, lineheight = 1.1),
+          # This title is a plain description, not a short punchy claim or
+          # a short quoted statement — same >65-char step-down `make_chart`
+          # uses for a long quoted title, applied here for the same reason.
+          plot.title = element_textbox_simple(family = "Roboto Slab", face = "bold",
+                                    size = 34, colour = ink, lineheight = 1.05,
+                                    width = unit(7.8, "in"), margin = margin(b = 10)))
   save_slide(p, "9_scorecard.png")
 }
 
@@ -335,39 +342,44 @@ make_scorecard <- function() {
 # ============================================================
 make_textcard <- function() {
   body <- paste0(
-    "<span style='font-size:36pt;color:", ink, "'>",
+    "<span style='font-size:40pt;color:", ink, "'>",
     "<b style='color:", amber, "'>92%</b> of evangelicals confess<br>",
     "one God in three persons.<br><br>",
     "<b style='color:", teal, "'>61%</b> say Jesus was created.<br>",
     "<b style='color:", teal, "'>55%</b> say the Spirit is a force.<br>",
     "<b style='color:", teal, "'>44%</b> say Jesus is not God.",
-    "</span><br><br><br>",
-    "<span style='font-size:24pt;color:", ink, "'>",
-    "Some of the most vocal evangelical apologists<br>",
-    "spend their time telling other traditions they've<br>",
-    "departed from historic Christianity. This is what<br>",
-    "that accusation looks like turned around.<br><br>",
-    "No tradition's members hold its teaching perfectly.<br>",
-    "Matthew 7 tells us what to do about that: the beam<br>",
-    "in our own eye before the mote in our brother's.",
+    "</span><br><br><br><br>",
+    "<span style='font-size:28pt;color:", ink, "'>",
+    "Some of the most vocal evangelical<br>",
+    "apologists spend their time telling other<br>",
+    "traditions they've departed from historic<br>",
+    "Christianity. This is what that accusation<br>",
+    "looks like turned around.<br><br><br>",
+    "No tradition's members hold its teaching<br>",
+    "perfectly. Matthew 7 tells us what to do<br>",
+    "about that: the beam in our own eye before<br>",
+    "the mote in our brother's.",
     "</span>")
 
   p <- ggplot() +
     geom_richtext(aes(x = 0, y = 1, label = body), hjust = 0, vjust = 1,
-                  family = "Roboto Condensed", lineheight = 1.5,
+                  family = "Roboto Condensed", lineheight = 1.55,
                   fill = NA, label.colour = NA, label.padding = unit(0, "pt")) +
     scale_x_continuous(limits = c(0, 1)) + scale_y_continuous(limits = c(0, 1)) +
     labs(title = "Words without weight", caption = SRC) +
     theme_void(base_family = "Roboto Condensed") +
     theme(
       plot.background = element_rect(fill = paper, colour = NA),
+      # Title moved up (margin(b=..) shrunk from 46 to 30) and the bigger
+      # body text/wider paragraph gaps above fill the whitespace that used
+      # to sit empty at the bottom of the canvas.
       plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 40,
                                     colour = ink, lineheight = 1.15,
-                                    margin = margin(b = 46)),
+                                    margin = margin(b = 30)),
       plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                       lineheight = 1.6, margin = margin(t = 40)),
       plot.title.position = "plot", plot.caption.position = "plot",
-      plot.margin = margin(60, 40, 30, 40))
+      plot.margin = margin(30, 40, 30, 40))
   save_slide(p, "10_thesis.png")
 }
 

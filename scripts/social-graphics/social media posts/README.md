@@ -160,3 +160,28 @@ inspected, rather than edited blind.
   retightened for the larger sizes — "Across the four Christian traditions
   here:" and one Spirit-not-a-person line needed new breaks to stop
   clipping.
+
+## What changed (round five: scorecard title dropped, text cards fill the canvas)
+
+- **post1's scorecard (`9_scorecard.png`) lost its punchy title.** "Firmer,
+  but not firm" is gone; the description that used to live in the subtitle
+  ("Share of evangelicals by affiliation who strongly agree or somewhat
+  agree, 2022") is now the title itself (34pt — the same >65-char step-down
+  `make_chart` uses for a long title, since this description runs long).
+  The subtitle is now just the color-key legend. Also dropped: "No
+  statement clears 80%." (was the first subtitle line) and "Every statement
+  is shown as the survey worded it; all bars are share who agree." (was the
+  first caption line, above `SRC`) — the caption is now just `SRC`. The
+  gallery page's own caption for this slide
+  (`src/app/.../post1/page.tsx`) was updated to match the new title text.
+- **"Words without weight" (post1) and "Still the beam" (post2) now fill
+  the canvas instead of leaving empty space at the bottom**: title moved up
+  (`plot.title`'s bottom margin and the plot's own top margin both shrunk),
+  the smaller paragraph text bumped again (post1: 24→28pt; post2: 24→28pt),
+  the stats block also bumped in post1 (36→40pt) to stay proportionate, and
+  extra `<br>` breaks added between blocks so the larger text spreads
+  further down the canvas. post2's shared `card()` function backs both
+  `0_intro.png` and `11_closing.png`, so the title-position change applies
+  to both, though only `11_closing.png`'s own body text was resized. Every
+  `<br>` break in both cards was rechecked/retightened at the new sizes —
+  none clip.

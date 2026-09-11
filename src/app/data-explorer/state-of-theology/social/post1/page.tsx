@@ -43,7 +43,10 @@ const SLIDES = [
     title: "“The Bible's condemnation of homosexual behavior doesn't apply today.”",
   },
   { file: "jesus_not_god.png", title: "“Jesus was a great teacher, but he was not God.”" },
-  { file: "9_scorecard.png", title: "Firmer, but not firm" },
+  {
+    file: "9_scorecard.png",
+    title: "Share of evangelicals by affiliation who strongly agree or somewhat agree, 2022",
+  },
   { file: "10_thesis.png", title: "Words without weight" },
 ];
 

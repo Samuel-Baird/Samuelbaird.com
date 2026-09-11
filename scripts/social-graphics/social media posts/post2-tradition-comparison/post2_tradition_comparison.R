@@ -200,19 +200,22 @@ make <- function(k) {
 card <- function(file, title, body, caption_override = NULL) {
   p <- ggplot() +
     geom_richtext(aes(x = 0, y = 1, label = body), hjust = 0, vjust = 1,
-                  family = "Roboto Condensed", lineheight = 1.5,
+                  family = "Roboto Condensed", lineheight = 1.55,
                   fill = NA, label.colour = NA, label.padding = unit(0, "pt")) +
     scale_x_continuous(limits = c(0,1)) + scale_y_continuous(limits = c(0,1)) +
     labs(title = title, caption = if (is.null(caption_override)) SRC else caption_override) +
     theme_void(base_family = "Roboto Condensed") +
     theme(plot.background = element_rect(fill = paper, colour = NA),
+          # Title moved up (margin(b=..) shrunk from 46 to 30, plot.margin's
+          # top shrunk from 60 to 30 below) — matches post1's textcard, see
+          # its own "Words without weight" comment.
           plot.title = element_markdown(family = "Roboto Slab", face = "bold", size = 48,
                                         colour = ink, lineheight = 1.15,
-                                        margin = margin(b = 46)),
+                                        margin = margin(b = 30)),
           plot.caption = element_markdown(size = 16, colour = ink, hjust = 0,
                                           lineheight = 1.6, margin = margin(t = 40)),
           plot.title.position = "plot", plot.caption.position = "plot",
-          plot.margin = margin(60, 40, 30, 40))
+          plot.margin = margin(30, 40, 30, 40))
   ggsave(file.path(OUT, file), p, device = ragg::agg_png,
          width = 9, height = 11.25, dpi = 120, bg = paper)
 }
@@ -233,15 +236,16 @@ card("11_closing.png", paste0(
   "<b style='color:", wine, "'>61&#8211;78%</b> say Jesus was created.<br>",
   "<b style='color:", wine, "'>52&#8211;73%</b> say the Spirit is<br>not a person.<br>",
   "<b style='color:", wine, "'>34&#8211;55%</b> say Jesus was not God.",
-  "</span><br><br><br>",
-  "<span style='font-size:24pt;color:", ink, "'>",
-  "Last week the numbers made evangelicals look bad.<br>",
-  "This week they&#8217;re the best in the country, and<br>",
-  "it still isn&#8217;t good.<br><br>",
-  "The tradition with the strictest catechism and the<br>",
-  "tradition with none at all fail the same way. No one<br>",
-  "in this survey is positioned to correct anyone else<br>",
-  "before working on themselves.",
+  "</span><br><br><br><br>",
+  "<span style='font-size:28pt;color:", ink, "'>",
+  "Last week the numbers made evangelicals<br>",
+  "look bad. This week they&#8217;re the best in<br>",
+  "the country, and it still isn&#8217;t good.<br><br><br>",
+  "The tradition with the strictest catechism<br>",
+  "and the tradition with none at all fail the<br>",
+  "same way. No one in this survey is positioned<br>",
+  "to correct anyone else before working on<br>",
+  "themselves.",
   "</span>"),
   caption_override = paste0("<span style='font-size:16pt;color:", ink, "'>", SRC, "</span>"))
 
