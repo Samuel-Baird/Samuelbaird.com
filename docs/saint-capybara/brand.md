@@ -308,44 +308,139 @@ cache's removal note.
 
 ## 6. Voice and TTS spec
 
-Kokoro, local, calm/measured/mildly warm delivery — never theatrical
-"debate bro" emphasis. A pronunciation dictionary
-(`docs/saint-capybara/pronunciations.md`, `script/pronunciations.yaml`)
-is mandatory; every new proper noun gets an entry before it is ever
-rendered — the merged dictionary is applied by `tools/capy_tts.py` via
-misaki's `[word](/ipa/)` inline override syntax.
+**Chatterbox TTS (Resemble AI, MIT license), local, zero-shot voice
+cloning from a reference clip — RE-LOCKED 2026-09-11, replacing
+Kokoro.** Kokoro is still fully supported as an engine (`tools/capy_tts.py`
+never removed the Kokoro code path — see "Engine selection" below) but
+is no longer the default for any locked voice. Calm/measured/mildly warm
+delivery — never theatrical "debate bro" emphasis — remains the
+delivery bar; it's now achieved by the *choice of reference clip*
+rather than a Kokoro voice id.
 
-**Host voice id: `am_michael`, speed 1.5 — LOCKED 2026-09-09, not
-tentative.** The user confirmed this voice after watching
-`dont-read-the-bom`'s render and separately asked for the speed to be
-raised from the original 0.95 lock to 1.5 (~220 target words per minute,
-scaled up from the original ≈140–150 wpm/0.95 target). Both are
-standing rules for every Saint Capybara project from here on, encoded in
-`capy.beats.DEFAULT_VOICE = {"name": "am_michael", "speed": 1.5}` and
+**Host voice: cloned from `assets/saint-capybara/voices/
+host_andrew_kennedy.wav` — LOCKED 2026-09-11, not tentative.** A ~12s
+public-domain LibriVox clip (Andrew Kennedy reading Booker T.
+Washington's *Up from Slavery* — see `PROVENANCE.md` in that folder for
+the full source/license record). Chosen after two audition rounds: first
+several LibriVox nonfiction narrators (rejected — read too
+oratorical/"reciter" for a calm host), then several Mozilla Common Voice
+speakers filtered to *verified, self-reported* metadata (US English
+accent, male, twenties/thirties) rather than guessed from source-text
+choice. Encoded in `capy.beats.DEFAULT_VOICE = {"engine": "chatterbox",
+"ref": "assets/saint-capybara/voices/host_andrew_kennedy.wav", "speed":
+1.25, "exaggeration": 0.5, "cfg_weight": 0.5}` and
 `assets/saint-capybara/templates/beats.yaml`'s `voice:` block — do not
-regress either without a new, explicit user direction to change them.
-Before the lock, `tools/capy_voice_audition.py` had rendered every
-English male Kokoro voice (13: `am_michael`, `am_fenrir`, `am_puck`,
-`bm_fable`, `bm_george`, `am_onyx`, `bm_lewis`, `am_echo`, `am_eric`,
-`am_liam`, `bm_daniel`, `am_adam`, `am_santa`) plus a female shortlist for
-the quote voice (`af_heart`, `af_bella`, `af_nicole`, `bf_emma`,
-`af_sarah`) into `D:\saint-capybara\voice-audition\` for reference — see
-`audition.md` there for the upstream quality grade of each, kept for
-historical context now that the pick is locked. **Any future change to
-the voice or its speed means re-rendering every in-flight project's
-audio** so nothing mixes an old-speed take with a new-speed one within
-the same video.
+regress without a new, explicit user direction. **Any future change to
+the voice/ref/speed/exaggeration/cfg_weight means re-rendering every
+in-flight project's audio**, same reasoning as the old Kokoro
+speed-lock.
 
-**Quote voices (article/text-source mode, `kind: excerpt` beats).** A
-second Kokoro voice reads the source's own words aloud, sex-matched to
-the person being quoted — `voices.quote_male` / `voices.quote_female` in
-`beats.yaml`, resolved per beat by `capy.beats.resolve_voice`
-(`docs/saint-capybara/script-format.md` "Excerpt fairness"). Tentative
-picks pending the same bake-off/listen-through: `quote_male: am_michael`,
-`quote_female: af_heart` (`tools/capy/beats.py: DEFAULT_VOICES`) — these
-should end up **audibly distinct** from the locked host voice once
-chosen, since the whole point is "their words, then mine" staying
-audible to a muted-off/audio-only listener too.
+**Speed: 1.25x, LOCKED 2026-09-12 — implemented as ffmpeg `atempo`
+post-processing, not a native model parameter.** Chatterbox's
+`generate()` has no speed/rate argument at all (confirmed by reading the
+installed package source) — unlike Kokoro, where `speed` was a native
+`KPipeline` argument. So a chatterbox-engine voice's `speed` field is
+applied as a pitch-preserving ffmpeg time-stretch
+(`capy_tts.apply_speed_change`, `atempo=<speed>` by default) run on the
+raw Chatterbox render, **before** the Whisper timing-reconciliation pass
+(`capy.align.align_timing`) so `timing.json` describes the actual
+final-tempo audio, not the model's natural-cadence output. `rubberband`
+(ffmpeg's `-af rubberband=tempo=...`) is available as a higher-quality
+alternative (`CHATTERBOX_SPEED_METHOD` in `capy_tts.py`) but isn't the
+default since it needs an ffmpeg build with `--enable-librubberband`,
+not guaranteed on every machine this pipeline runs on. Applies to the
+host and both quote pools identically (`capy.beats.DEFAULT_VOICE`,
+`QUOTE_MALE_POOL`, `QUOTE_FEMALE_POOL` all set `speed: 1.25`).
+Re-verified against a real project (`baptism-for-dead-thought`,
+2026-09-12): per-beat Whisper match rates were effectively unchanged
+(88-100% at both 1.0x and 1.25x, same beats hitting the same rates
+within 1-2 points), and narration audio duration measured after the
+atempo pass divided out to 1.25x exactly (e.g. one beat: 9.80s raw model
+output -> 7.84s post-stretch = 9.80/1.25). Total beat-clip runtime
+dropped from ~109.0s to ~89.8s (only narration sped up; clip beats are
+unaffected, so the shrink is less than a flat 1/1.25 of the whole
+video).
+
+**Pronunciation dictionary — accepted regression, Chatterbox-voiced
+beats only.** The mandatory pronunciation dictionary
+(`docs/saint-capybara/pronunciations.md`, `script/pronunciations.yaml`)
+is Kokoro/misaki-specific: it rewrites a matched word as misaki's
+`[word](/ipa/)` inline IPA-override syntax, which only Kokoro's
+tokenizer understands. Chatterbox's tokenizer is a plain grapheme BPE
+tokenizer with no phoneme-override mechanism of any kind (confirmed by
+reading the installed package source) — `tools/capy_tts.py` skips the
+IPA-wrapping step entirely for Chatterbox beats (`apply_dictionary(...,
+ipa=False)`, still expands `D&C` -> "Doctrine and Covenants" as a plain
+literal substitution). **User-approved 2026-09-11: accept this
+regression** rather than block the engine swap on it — spot-check
+LDS/biblical proper-noun pronunciation by ear per project instead of
+relying on the dictionary to force it.
+
+**Quote voices — POOLS, LOCKED 2026-09-11.** `voices.quote_male` /
+`voices.quote_female` in `beats.yaml` are now POOLS (lists) of Chatterbox
+reference-clip voices, not one Kokoro voice each:
+`capy.beats.QUOTE_MALE_POOL` (4 voices: `quote_male_1.wav` through
+`quote_male_4.wav`) and `QUOTE_FEMALE_POOL` (1 voice so far,
+`quote_female_1.wav` — every female-voiced quote sounds identical until
+more are added; the pool is a plain list, trivially extensible, see
+`assets/saint-capybara/voices/PROVENANCE.md`). A beat resolves to one
+pool member via `capy.voice_pool.assign()`, keyed on the beat's
+`speaker:` slug (`docs/saint-capybara/script-format.md`) — **the same
+quoted person always gets the same voice**, both within one project and
+across every future project that quotes them again, via the persisted
+`assets/saint-capybara/voice_pool_assignments.json`. All 5 quote-pool
+voices came from Mozilla Common Voice / LibriVox with the same
+verified-metadata approach as the host voice; see `PROVENANCE.md` for
+each one's source, license, and recorded accent/gender/age.
+
+**Engine selection is additive, not a replacement.** Every voice spec
+(the host default, a `voices:` pool member, or an inline `voice: {...}`
+on a beat) carries an `engine` key (`"chatterbox"` or `"kokoro"`) that
+`tools/capy_tts.py`'s `_synthesize_kokoro`/Chatterbox-batch dispatch
+reads per beat. The Kokoro code path is untouched and fully working —
+set any beat's `voice:` to an inline `{engine: kokoro, name: am_michael,
+speed: 1.5}` to force it back for a specific beat (e.g. to isolate a
+regression) without any code changes.
+
+**Timing/captions without Kokoro's native word timestamps.** Chatterbox
+exposes no word/token-level timing of any kind (confirmed by reading its
+`generate()`/`T3.inference()`/tokenizer source — it's a purely
+autoregressive token-to-audio model, no duration predictor or alignment
+head). `tools/capy_tts.py` instead runs `openai-whisper`
+(`word_timestamps=True`, already installed/pinned for
+`tools/transcribe.py`'s clip-beat captions, reused in-process here —
+`tools/capy/align.py`) on the rendered wav and reconciles its recognized
+words against the *known script text* via sequence matching, so
+`timing.json` always contains the script's own words with the
+best-matched timestamps; falls back to evenly-spaced timing (scoped to
+the wav's real measured duration) on a poor match, logging a warning so
+a human knows to spot-check that beat's captions. Empirically validated
+against a real Chatterbox render before this was wired in: Whisper's
+recognized text matched the script word-for-word. Pose-swap timing is
+unaffected either way — poses are one static sprite per beat (see
+`script-format.md`'s "Pose changes every 10-20s" note), never
+word-level, so losing Kokoro's fine-grained timestamps only ever
+affected captions.
+
+**Chatterbox lives in its own virtualenv.** `tools/.venv-chatterbox`
+(gitignored, set up per `tools/requirements-chatterbox.txt`) — its
+dependency stack conflicts with the pinned Kokoro/Whisper versions the
+rest of this repo's tools use, so it's invoked as a subprocess
+(`tools/capy/tts_chatterbox.py` -> `tools/capy/_chatterbox_worker.py`),
+never imported in-process, mirroring how `tools/transcribe.py` already
+shells out to a separate `whisper` CLI process rather than importing it.
+Chatterbox also embeds an inaudible Resemble AI "Perth" watermark in
+every output wav (a provenance/responsible-AI feature, not a licensing
+restriction) — FYI, doesn't affect audible quality.
+
+Before the Kokoro-era lock (2026-09-09, since superseded above),
+`tools/capy_voice_audition.py` had rendered every English male Kokoro
+voice (13: `am_michael`, `am_fenrir`, `am_puck`, `bm_fable`, `bm_george`,
+`am_onyx`, `bm_lewis`, `am_echo`, `am_eric`, `am_liam`, `bm_daniel`,
+`am_adam`, `am_santa`) plus a female shortlist (`af_heart`, `af_bella`,
+`af_nicole`, `bf_emma`, `af_sarah`) into
+`D:\saint-capybara\voice-audition\` — kept for historical context only,
+superseded by the Chatterbox pick above.
 
 ## 7. Visual system
 

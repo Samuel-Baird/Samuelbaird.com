@@ -40,17 +40,22 @@ EXCERPT_MIN_FRAGMENT_WORDS = 3  # each `[...]`-separated piece
 EXCERPT_MAX_PARAGRAPHS = 2      # one paragraph boundary at most
 SOURCE_TIME_MAX_FRACTION = 0.30 # clips + excerpts vs total runtime
 
-# Voice roles. `host` is doc["voice"]; the quote voices are TENTATIVE
-# until the Part 3 bake-off locks them (quote_male is a locally-present
-# pack so TTS works offline; af_heart is upstream's top-graded female
-# voice and auto-downloads ~520 KB on first use).
+# Voice roles. `host` is doc["voice"]. quote_male/quote_female are POOLS
+# (lists of voice specs, not a single voice) -- LOCKED 2026-09-11 to
+# Chatterbox reference-clip pools (host_andrew_kennedy stays HOST-only;
+# see assets/saint-capybara/voices/PROVENANCE.md for every clip's
+# source/license). Each role resolves to one pool member via
+# capy.voice_pool.assign(), keyed on the beat's `speaker:` slug so the
+# same quoted person always gets the same voice.
 VOICE_ROLES = {"quote_male", "quote_female"}
+from capy.beats import DEFAULT_VOICE as _HOST_VOICE, QUOTE_MALE_POOL, QUOTE_FEMALE_POOL  # noqa: E402
+
 DEFAULT_VOICES: dict[str, Any] = {
-    "quote_male": {"name": "bm_george", "speed": 1.0},
-    "quote_female": {"name": "af_heart", "speed": 1.0},
+    "quote_male": QUOTE_MALE_POOL,
+    "quote_female": QUOTE_FEMALE_POOL,
     "quote_default": "quote_male",
 }
-DEFAULT_HOST_VOICE = {"name": "am_michael", "speed": 0.95}
+DEFAULT_HOST_VOICE = _HOST_VOICE
 
 
 def is_excerpt(beat: dict) -> bool:
@@ -66,7 +71,7 @@ def _voices_table(doc: dict) -> dict:
 
 def known_voice_roles(doc: dict) -> set[str]:
     table = _voices_table(doc)
-    return {k for k, v in table.items() if isinstance(v, dict)} | {"host"}
+    return {k for k, v in table.items() if isinstance(v, (dict, list))} | {"host"}
 
 
 # ---------------------------------------------------------------------------
@@ -151,13 +156,22 @@ def validate_excerpt_beats(doc: dict) -> list:
 
         v = beat.get("voice")
         if isinstance(v, dict):
-            if not v.get("name"):
-                issues.append(Issue("error", bid, "inline voice needs 'name' (and optional 'speed')"))
+            engine = v.get("engine")
+            if not engine:
+                issues.append(Issue("error", bid, "inline voice needs 'engine' (kokoro|chatterbox)"))
+            elif engine == "kokoro" and not v.get("name"):
+                issues.append(Issue("error", bid, "inline kokoro voice needs 'name' (and optional 'speed')"))
+            elif engine == "chatterbox" and not v.get("ref"):
+                issues.append(Issue("error", bid, "inline chatterbox voice needs 'ref' (path to a reference clip, and optional speed/exaggeration/cfg_weight)"))
         elif isinstance(v, str):
             if v not in roles:
-                issues.append(Issue("error", bid, f"unknown voice role '{v}' (expected one of {sorted(roles)} or an inline {{name, speed}} dict)"))
+                issues.append(Issue("error", bid, f"unknown voice role '{v}' (expected one of {sorted(roles)} or an inline {{engine, ...}} dict)"))
         elif v is not None:
-            issues.append(Issue("error", bid, "voice must be a role name or an inline {name, speed} dict"))
+            issues.append(Issue("error", bid, "voice must be a role name or an inline {engine, ...} dict"))
+
+        speaker = beat.get("speaker")
+        if speaker is not None and not isinstance(speaker, str):
+            issues.append(Issue("error", bid, "'speaker' must be a string (a stable name/slug for the quoted person -- see capy.voice_pool)"))
 
         if beat.get("sources"):
             issues.append(Issue("info", bid, "excerpt beats are validated against source.md, not sources:; the sources list here is ignored"))
@@ -168,33 +182,59 @@ def validate_excerpt_beats(doc: dict) -> list:
 # Voice resolution
 # ---------------------------------------------------------------------------
 
-def resolve_voice(doc: dict, beat: dict) -> dict:
-    """{name, speed, role}: inline dict wins; else a role name looked up in
-    doc["voices"] (merged over DEFAULT_VOICES); else the kind default --
-    excerpt -> voices.quote_default, everything else -> doc["voice"]."""
+def resolve_voice(doc: dict, beat: dict, *, default_speaker: str | None = None) -> dict:
+    """The beat's full effective voice spec, tagged with `role` for
+    debugging/logging: an inline `voice: {...}` dict wins (engine
+    required, everything else engine-specific -- e.g. {engine: kokoro,
+    name, speed} or {engine: chatterbox, ref, speed, exaggeration,
+    cfg_weight}); else a role name looked up in doc["voices"] (merged
+    over DEFAULT_VOICES) -- when that role is a POOL (a list of voice
+    specs: quote_male/quote_female), the member is picked by
+    capy.voice_pool.assign(), keyed on the beat's `speaker:` slug (falls
+    back to `default_speaker`, e.g. the source's byline for excerpt
+    beats, then to a shared 'unknown' slot -- see
+    capy.voice_pool.speaker_slug) so the same quoted person always gets
+    the same voice; else the kind default -- excerpt ->
+    voices.quote_default, everything else -> doc["voice"]."""
+    from capy.voice_pool import assign, speaker_slug
+
     v = beat.get("voice")
     table = _voices_table(doc)
     host = dict(DEFAULT_HOST_VOICE)
     host.update(doc.get("voice") or {})
 
+    def _with_role(spec: dict, role: str) -> dict:
+        out = dict(spec)
+        out["role"] = role
+        return out
+
+    def _resolve_role(role: str) -> dict:
+        if role == "host":
+            return _with_role(host, "host")
+        spec = table.get(role)
+        if spec is None:
+            raise KeyError(f"beat {beat.get('id')}: unknown voice role {role!r} (defined: {sorted(known_voice_roles(doc))})")
+        if isinstance(spec, list):  # a pool -- pick this speaker's assigned member
+            if not spec:
+                raise KeyError(f"beat {beat.get('id')}: voice role {role!r} is an empty pool")
+            slug = speaker_slug(beat, default=default_speaker)
+            return _with_role(assign(role, slug, spec), role)
+        if not isinstance(spec, dict):
+            raise KeyError(f"beat {beat.get('id')}: voice role {role!r} is neither a voice dict nor a pool (defined: {sorted(known_voice_roles(doc))})")
+        return _with_role(spec, role)
+
     if isinstance(v, dict):
-        if not v.get("name"):
-            raise ValueError(f"beat {beat.get('id')}: inline voice needs 'name'")
-        return {"name": v["name"], "speed": float(v.get("speed", 1.0)), "role": "inline"}
+        if not v.get("engine"):
+            raise ValueError(f"beat {beat.get('id')}: inline voice needs 'engine' (kokoro|chatterbox)")
+        return _with_role(v, "inline")
 
     if isinstance(v, str):
-        role = v
-    elif is_excerpt(beat):
-        role = table.get("quote_default", "quote_male")
-    else:
-        return {"name": host["name"], "speed": float(host.get("speed", 0.95)), "role": "host"}
+        return _resolve_role(v)
 
-    if role == "host":
-        return {"name": host["name"], "speed": float(host.get("speed", 0.95)), "role": "host"}
-    spec = table.get(role)
-    if not isinstance(spec, dict) or not spec.get("name"):
-        raise KeyError(f"beat {beat.get('id')}: unknown voice role {role!r} (defined: {sorted(known_voice_roles(doc))})")
-    return {"name": spec["name"], "speed": float(spec.get("speed", 1.0)), "role": role}
+    if is_excerpt(beat):
+        return _resolve_role(table.get("quote_default", "quote_male"))
+
+    return _with_role(host, "host")
 
 
 # ---------------------------------------------------------------------------

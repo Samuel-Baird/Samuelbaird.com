@@ -57,17 +57,28 @@ pre-flattened rather than built from live layers.
 All of these are real, non-experimental tools now. Run in this order
 after Gate A approval:
 
-1. **`tools/capy_tts.py --project <dir>`** — real Kokoro narration per
-   beat, using each beat's resolved voice (`capy.beats.resolve_voice`:
-   an inline `voice:` override, else a `voices:` role — `excerpt` beats
-   default to `voices.quote_default` — else the project's host
-   `voice:`). Writes `audio/<id>.wav` (24kHz raw), `audio/<id>.timing.json`
-   (per-word `{w,s,e}`), `audio/<id>.norm.wav` (48kHz stereo, two-pass
-   loudness-normalized to -16 LUFS with head/tail padding — single-pass
-   `loudnorm` measured off by ~5 LU on a real test clip, so this tool
-   always does the two-pass measure-then-apply version), and
-   `audio/<id>.meta.json` ({voice, speed} actually used, so a voice
-   change is detected even though the wav/timing files still exist).
+1. **`tools/capy_tts.py --project <dir>`** — real narration per beat,
+   using each beat's resolved voice (`capy.beats.resolve_voice`: an
+   inline `voice:` override, else a `voices:` role — `excerpt` beats
+   default to `voices.quote_default`, resolved per-speaker if the role
+   is a pool — else the project's host `voice:`). The resolved voice's
+   `engine` key (`chatterbox` or `kokoro`) picks the synthesis path per
+   beat — LOCKED default is Chatterbox for both host and quote roles as
+   of 2026-09-11 (see `brand.md` sec 6); Kokoro is still fully supported,
+   just no longer the default. Chatterbox beats are batched into one
+   subprocess call to `tools/.venv-chatterbox` (model loads once for the
+   whole project) via `capy.tts_chatterbox.render_batch`. Writes
+   `audio/<id>.wav` (24kHz raw), `audio/<id>.timing.json` (per-word
+   `{w,s,e}` — Kokoro's own token timestamps, or `capy.align`'s
+   whisper-based reconciliation against the known script text for
+   Chatterbox beats, which expose no timing of their own),
+   `audio/<id>.norm.wav` (48kHz stereo, two-pass loudness-normalized to
+   -16 LUFS with head/tail padding — single-pass `loudnorm` measured off
+   by ~5 LU on a real test clip, so this tool always does the two-pass
+   measure-then-apply version), and `audio/<id>.meta.json` (the full
+   resolved voice spec actually used, so ANY change — voice, speed,
+   engine, ref clip — is detected even though the wav/timing files still
+   exist).
 2. **`tools/capy_beat_plates.py --project <dir>`** — one full-canvas
    PNG per beat (`frames/plate_<id>.png`) via `capy.plates.render_plate`,
    which picks one of three frame modes per beat kind (`capy.layout.

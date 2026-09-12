@@ -13,13 +13,22 @@ title: "REPLACE: the on-screen/description title"
 hook: "REPLACE: a short, curiosity-driving line for the first 3 seconds"
 summary: "REPLACE: 1-2 sentence summary for the video description (Step 7, post-Gate-A)"
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
-voice: { name: am_michael, speed: 1.5 }
+# Host voice -- LOCKED 2026-09-11, Chatterbox TTS cloned from a public-domain
+# reference clip (assets/saint-capybara/voices/PROVENANCE.md). Don't change
+# without a new, explicit user direction (brand.md sec 6).
+voice: { engine: chatterbox, ref: assets/saint-capybara/voices/host_andrew_kennedy.wav, speed: 1.25, exaggeration: 0.5, cfg_weight: 0.5 }
 # Quote voices for `excerpt` beats (article sources -- see
-# templates/beats.article.yaml). Optional here; defaults live in
-# capy.excerpts.DEFAULT_VOICES and are tentative until the voice bake-off.
+# templates/beats.article.yaml) and any other beat with an explicit
+# `voice: quote_male` / `voice: quote_female` role. Optional here --
+# omit entirely to use the repo-wide pools (capy.beats.QUOTE_MALE_POOL /
+# QUOTE_FEMALE_POOL); each pool member is assigned per-speaker (a beat's
+# `speaker:` field) and persisted in
+# assets/saint-capybara/voice_pool_assignments.json so the same quoted
+# person always gets the same voice. Only set `voices:` here to pin a
+# role to one specific inline voice for this project:
 # voices:
-#   quote_male:    { name: bm_george, speed: 1.0 }
-#   quote_female:  { name: af_heart, speed: 1.0 }
+#   quote_male:    { engine: chatterbox, ref: assets/saint-capybara/voices/quote_male_2.wav, speed: 1.25 }
+#   quote_female:  { engine: chatterbox, ref: assets/saint-capybara/voices/quote_female_1.wav, speed: 1.25 }
 #   quote_default: quote_male
 sensitive: false
 music: null

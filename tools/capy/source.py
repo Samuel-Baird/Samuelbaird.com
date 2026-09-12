@@ -481,7 +481,9 @@ def excerpt_script_line(beat: dict, info: SourceInfo, *, voice: str | None = Non
     if voice_label is None:
         v = beat.get("voice")
         if isinstance(v, dict):
-            voice_label = f"inline {v.get('name')}"
+            engine = v.get("engine", "kokoro")
+            ident = v.get("name") if engine == "kokoro" else Path(v.get("ref", "?")).name
+            voice_label = f"inline {ident} ({engine})"
         elif isinstance(v, str):
             voice_label = v
         else:

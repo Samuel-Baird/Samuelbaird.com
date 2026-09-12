@@ -12,3 +12,8 @@ assets/saint-capybara/music/
 
 __pycache__/
 *.pyc
+
+# Chatterbox TTS's isolated virtualenv (see tools/requirements-chatterbox.txt
+# for why it's separate from the main environment). Machine-local, not
+# committed -- re-create with the setup steps documented there.
+tools/.venv-chatterbox/

@@ -1,5 +1,18 @@
 # Saint Capybara — pronunciation dictionary
 
+**2026-09-11: this mechanism is Kokoro-only.** Since the host/quote
+voices moved to Chatterbox TTS (`brand.md` sec 6), this dictionary no
+longer has any effect on the beats that use it — Chatterbox's tokenizer
+has no phoneme-override mechanism at all (plain grapheme BPE), so
+`capy_tts.py` skips the `[word](/ipa/)` wrapping step for Chatterbox
+beats entirely (still expands `D&C` -> "Doctrine and Covenants" as a
+plain literal substitution, since that's engine-agnostic). This is an
+accepted, user-approved regression, not a bug: proper-noun pronunciation
+on Chatterbox-voiced beats has to be spot-checked by ear per project
+instead of forced via this dictionary. This file/mechanism is kept
+as-is for any beat still explicitly rendered via `voice: {engine:
+kokoro, ...}`.
+
 ## Mechanism
 
 `tools/capy_tts.py` applies the merged dictionary (project

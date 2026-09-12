@@ -31,7 +31,8 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
 - No `docs/style-guide.md` visual system (charcoal quote cards, cream
   serif, bottom-left credit chip, music). Saint Capybara has its own
   palette/fonts/layout in `assets/saint-capybara/theme.yaml`.
-- No camera footage, no creator voice — TTS narration (Kokoro) and
+- No camera footage, no creator voice — TTS narration (Chatterbox,
+  cloned from a public-domain reference clip; see `brand.md` sec 6) and
   pixel-art sprites only. (The source clip being reacted to is real
   footage, same as a response video — it's the *host* that's synthetic.)
 - No reuse of any of the creator's other identity: filenames, phrasing,

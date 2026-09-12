@@ -53,14 +53,61 @@ ESTIMATE_WORDS_PER_SECOND = 220 / 60.0
 HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
 
-# Locked 2026-09-09 (user confirmed after watching dont-read-the-bom's
-# render) -- see docs/saint-capybara/brand.md sec 6. am_michael at speed
-# 1.5 (raised from the original 0.95 lock the same day, also user
-# direction).
-DEFAULT_VOICE = {"name": "am_michael", "speed": 1.5}
+# Locked 2026-09-09 (Kokoro am_michael @ 1.5), then RE-LOCKED 2026-09-11
+# to Chatterbox TTS with a cloned reference voice -- see brand.md sec 6.
+# The `engine` key is what capy_tts._synthesize() dispatches on; every
+# voice spec (host default, a `voices:` role entry, or an inline
+# `voice: {...}` on a beat) carries one. "kokoro" is still fully
+# supported (see capy_tts.py) -- this is an additive engine choice, not
+# a removal of the Kokoro code path, specifically so a regression can
+# fall back to `voice: {engine: kokoro, name: am_michael, speed: 1.5}`
+# on any beat without code changes.
+#
+# speed: 1.25 (2026-09-12) -- Chatterbox's generate() has no native
+# speed param (confirmed by reading the installed package source), so
+# `speed` on a chatterbox-engine voice is applied as an ffmpeg
+# atempo/rubberband post-process pass instead (capy_tts.apply_speed_change)
+# -- same config field/meaning as Kokoro's native speed, different
+# mechanism under the hood. 1.25 chosen as a mild, pitch-preserving
+# speed-up (mirrors the Kokoro-era speed lock, though that was 1.5 --
+# not directly comparable since Chatterbox's natural cadence differs
+# from Kokoro's).
+#
+# ref paths are relative to the repo root (REPO_ROOT / ref).
+DEFAULT_VOICE = {
+    "engine": "chatterbox",
+    "ref": "assets/saint-capybara/voices/host_andrew_kennedy.wav",
+    "speed": 1.25,
+    "exaggeration": 0.5,
+    "cfg_weight": 0.5,
+}
+
+# Quote voice POOLS (article/text-source `excerpt` beats, and any beat
+# that explicitly sets voice: quote_male / quote_female). Each pool is a
+# plain list -- append a new ref clip + list entry to extend it, no
+# other code changes needed (see assets/saint-capybara/voices/
+# PROVENANCE.md). A given quoted person always gets the SAME pool
+# member across every beat/project that quotes them again -- see
+# capy.voice_pool.assign() (keyed by the beat's `speaker:` slug), not a
+# per-beat random pick. speed: 1.25 for consistency with the host default
+# (see DEFAULT_VOICE's note above) -- override per-role in a project's
+# `voices:` block if a specific pool needs a different pace.
+QUOTE_MALE_POOL = [
+    {"engine": "chatterbox", "ref": "assets/saint-capybara/voices/quote_male_1.wav", "speed": 1.25, "exaggeration": 0.5, "cfg_weight": 0.5},
+    {"engine": "chatterbox", "ref": "assets/saint-capybara/voices/quote_male_2.wav", "speed": 1.25, "exaggeration": 0.5, "cfg_weight": 0.5},
+    {"engine": "chatterbox", "ref": "assets/saint-capybara/voices/quote_male_3.wav", "speed": 1.25, "exaggeration": 0.5, "cfg_weight": 0.5},
+    {"engine": "chatterbox", "ref": "assets/saint-capybara/voices/quote_male_4.wav", "speed": 1.25, "exaggeration": 0.5, "cfg_weight": 0.5},
+]
+QUOTE_FEMALE_POOL = [
+    # Only one voice so far (2026-09-11) -- every female-voiced quote
+    # will sound identical until more are added. Append here (and add
+    # the matching .wav + PROVENANCE.md entry) to extend; nothing else
+    # needs to change.
+    {"engine": "chatterbox", "ref": "assets/saint-capybara/voices/quote_female_1.wav", "speed": 1.25, "exaggeration": 0.5, "cfg_weight": 0.5},
+]
 DEFAULT_VOICES = {
-    "quote_male": {"name": "am_michael", "speed": 1.0},
-    "quote_female": {"name": "af_heart", "speed": 1.0},
+    "quote_male": QUOTE_MALE_POOL,
+    "quote_female": QUOTE_FEMALE_POOL,
     "quote_default": "quote_male",
 }
 
@@ -131,34 +178,49 @@ def resolve_pose(beat: dict, *, sensitive: bool) -> str | None:
     return candidates[0] if candidates else None
 
 
-def resolve_voice(doc: dict, beat: dict) -> dict:
-    """{name, speed[, role]}: delegates to capy.excerpts.resolve_voice
-    (an inline `voice: {name, speed}` dict wins; else a role name via
-    doc['voices'] merged over capy.excerpts.DEFAULT_VOICES; else the kind
-    default -- excerpt -> voices.quote_default, everything else ->
-    doc['voice']). Falls back to a local, more permissive implementation
-    (never raises on an unknown role) if capy.excerpts isn't importable,
-    so this module has no hard dependency on the article-mode workstream."""
+def resolve_voice(doc: dict, beat: dict, *, default_speaker: str | None = None) -> dict:
+    """The beat's full effective voice spec (engine-dependent fields --
+    {engine: kokoro, name, speed} or {engine: chatterbox, ref, speed,
+    exaggeration, cfg_weight}): delegates to capy.excerpts.resolve_voice
+    (an inline `voice: {...}` dict wins; else a role name via doc['voices']
+    merged over capy.excerpts.DEFAULT_VOICES -- when a role resolves to a
+    POOL (a list of voice specs, e.g. quote_male/quote_female), the pool
+    member is picked by capy.voice_pool.assign() keyed on the beat's
+    `speaker:` slug (or `default_speaker`, e.g. the source's byline for
+    excerpt beats) so the same person always gets the same voice; else
+    the kind default -- excerpt -> voices.quote_default, everything else
+    -> doc['voice']). Falls back to a local, more permissive
+    implementation (never raises on an unknown role) if capy.excerpts
+    isn't importable, so this module has no hard dependency on the
+    article-mode workstream."""
     try:
         from capy.excerpts import resolve_voice as _resolve_voice
-        return _resolve_voice(doc, beat)
+        return _resolve_voice(doc, beat, default_speaker=default_speaker)
     except ImportError:
         pass
+
+    from capy.voice_pool import assign, speaker_slug
+
+    def _pick(spec, role_name: str | None = None):
+        if isinstance(spec, list):  # a pool
+            slug = speaker_slug(beat, default=default_speaker)
+            return dict(assign(role_name or "quote", slug, spec))
+        return dict(spec)
+
     v = beat.get("voice")
     if isinstance(v, dict):
-        return {"name": v["name"], "speed": v.get("speed", 1.0)}
+        return dict(v)
     voices = doc.get("voices") or {}
     if isinstance(v, str):
         role = voices.get(v)
-        if isinstance(role, dict):
-            return {"name": role["name"], "speed": role.get("speed", 1.0)}
+        if role is not None:
+            return _pick(role, v)
     if beat.get("kind") == "excerpt":
         default_role = voices.get("quote_default", "quote_male")
         role = voices.get(default_role)
-        if isinstance(role, dict):
-            return {"name": role["name"], "speed": role.get("speed", 1.0)}
-    host = doc.get("voice") or DEFAULT_VOICE
-    return {"name": host["name"], "speed": host.get("speed", 1.0)}
+        if role is not None:
+            return _pick(role, default_role)
+    return dict(doc.get("voice") or DEFAULT_VOICE)
 
 
 def validate(doc: dict) -> list[Issue]:

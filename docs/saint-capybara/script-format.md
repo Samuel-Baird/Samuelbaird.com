@@ -34,11 +34,16 @@ title: "Did Brigham Young teach Adam was God?"
 hook: "He said WHAT about Adam?"     # title/description only (2026-09-09) -- never rendered on screen
 summary: "..."                        # for the description (Step 7, post-Gate-A)
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
-voice: { name: am_michael, speed: 0.95 }   # host voice
-voices:                                     # article-mode `excerpt` beats only, see below
-  quote_male: { name: am_michael, speed: 1.0 }
-  quote_female: { name: af_heart, speed: 1.0 }
-  quote_default: quote_male
+voice: { engine: chatterbox, ref: assets/saint-capybara/voices/host_andrew_kennedy.wav, speed: 1.0, exaggeration: 0.5, cfg_weight: 0.5 }   # host voice -- LOCKED, see brand.md sec 6
+# voices: block is OPTIONAL -- omit it entirely to use the repo-wide
+# quote_male/quote_female POOLS (capy.beats.QUOTE_MALE_POOL /
+# QUOTE_FEMALE_POOL, currently 4 and 1 reference-clip voices -- see
+# assets/saint-capybara/voices/PROVENANCE.md). Only set `voices:` here to
+# override a role for THIS project specifically, e.g. to pin one quoted
+# person to a single inline voice regardless of the pool assignment:
+# voices:
+#   quote_male: { engine: chatterbox, ref: assets/saint-capybara/voices/quote_male_2.wav, speed: 1.0 }
+#   quote_default: quote_male
 sensitive: false
 music: null
 tags: [ldshistory]
@@ -96,10 +101,26 @@ Each kind renders in one of three frame modes (`brand.md` sec 8) — CLIP
   text: "The church's response, she wrote, was [...] a pattern critics have long described."
   para: 12                        # int, or [12, 13] across one paragraph boundary
   pose: reading
-  voice: quote_female             # a `voices:` role, or an inline {name, speed} -- see the top-level voices: block
+  voice: quote_female              # a `voices:` role (a pool, resolved per-speaker -- see below), or an inline {engine, ...} dict
+  speaker: jane-doe                 # OPTIONAL: stable id for the quoted person -- see below
 ```
 
 Field notes:
+- `speaker: <slug-or-name>` (optional, `excerpt`/`card`/`evidence`/`chart`
+  beats -- i.e. any beat whose `voice:` can resolve to a POOL) — a
+  stable identifier for the person being quoted, e.g. `speaker:
+  brigham-young` or `speaker: "Brigham Young"` (non-slug strings are
+  slugified automatically — see `capy.voice_pool.slugify`). Every beat
+  that quotes the SAME person should use the SAME `speaker:` value so
+  `capy.voice_pool.assign()` gives them the same pooled Chatterbox
+  voice consistently, both within this project and in any future
+  project that quotes them again. Unset on an `excerpt` beat falls back
+  to the source's own byline (`source/source_info.json`, slugified);
+  unset with no byline falls back to a single shared 'unknown' slot
+  (every unattributed quote in every project sounds the same until
+  given a real `speaker:`). NOT the same thing as a `clip` beat's
+  `speaker: "Source video"` field (a display-only on-screen label, no
+  voice-pool meaning — clip beats never resolve a quote-pool voice).
 - `pose` vs `function`: name a literal pose when the beat needs something
   specific; otherwise set `function` and let `FUNCTION_TO_POSE` (see
   `brand.md` sec 5) pick the default, skipping any pose in

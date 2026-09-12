@@ -12,9 +12,11 @@
 # `excerpt` beats: verbatim text anchored to a numbered paragraph of
 # source/source.md (written by capy_ingest.py --article-file), validated
 # by capy_check_sources.py, rendered as a pull-quote card, read by a second
-# Kokoro voice (voices: below), captioned in the source style, and counted
-# against the same 30% source-time budget as clips. An excerpt precedes the
-# response to it, exactly like a clip would.
+# Chatterbox voice pool (voices: below -- resolved per-speaker, same person
+# always gets the same pooled voice, see script-format.md's `speaker:`
+# field), captioned in the source style, and counted against the same 30%
+# source-time budget as clips. An excerpt precedes the response to it,
+# exactly like a clip would.
 #
 # Excerpt rules: verbatim including hedges; one anchored span (`para: 12`
 # or `para: [12, 13]` across one paragraph boundary); `[...]` marks an
@@ -28,11 +30,14 @@ title: "REPLACE: the on-screen/description title"
 hook: "REPLACE: a short, curiosity-driving line for the title/description"
 summary: "REPLACE: 1-2 sentence summary for the video description (Step 7, post-Gate-A)"
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
-voice: { name: am_michael, speed: 1.5 }           # host
-voices:                                             # quote voices (tentative until the bake-off locks them)
-  quote_male:    { name: bm_george, speed: 1.0 }
-  quote_female:  { name: af_heart, speed: 1.0 }
-  quote_default: quote_male                         # used when an excerpt has no `voice:`
+voice: { engine: chatterbox, ref: assets/saint-capybara/voices/host_andrew_kennedy.wav, speed: 1.25, exaggeration: 0.5, cfg_weight: 0.5 }  # host -- LOCKED, see brand.md sec 6
+# voices: block is OPTIONAL -- omit to use the repo-wide quote_male/
+# quote_female pools (capy.beats.QUOTE_MALE_POOL / QUOTE_FEMALE_POOL).
+# Only set this to pin a role to one specific voice for this project:
+# voices:
+#   quote_male:    { engine: chatterbox, ref: assets/saint-capybara/voices/quote_male_1.wav, speed: 1.25 }
+#   quote_female:  { engine: chatterbox, ref: assets/saint-capybara/voices/quote_female_1.wav, speed: 1.25 }
+#   quote_default: quote_male
 sensitive: false
 music: null
 tags: [ldshistory]
@@ -44,7 +49,8 @@ beats:
     text: "REPLACE: verbatim sentence(s) from source/source.md"
     para: 1                    # int, or [a, b] when spanning one paragraph boundary
     pose: reading              # default via `function: listen` -> listening
-    voice: quote_female        # quote_male | quote_female | inline {name, speed}; default voices.quote_default
+    voice: quote_female        # quote_male | quote_female | inline {engine, ...}; default voices.quote_default
+    speaker: REPLACE-with-a-stable-id-for-the-quoted-person  # omit to default to the source's byline
     cite_byline: false         # true only for op-eds where the author is the point
 
   # Response: 2-4 evidence/narration/card beats.
