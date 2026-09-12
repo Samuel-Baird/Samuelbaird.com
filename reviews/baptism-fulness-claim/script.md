@@ -59,7 +59,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n06a` (narration, ~9.3s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** solemn
-- **Narration:** And the emphasis complaint is fair. The Church's own current teaching page on baptism names church membership before it ever mentions forgiveness of sins. The baptismal prayer itself says nothing about sin at all.
+- **Narration:** And the emphasis complaint is fair. The Church's own current teaching page on baptism names church membership before it ever mentions forgiveness of sins. The baptismal prayer itself says nothing about sin at all. (cut line)
 - **Sources:** gospel-topics-baptism-2026, dc20-73-baptismal-prayer
 - **Notes:** 
 
@@ -73,14 +73,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n07` (narration, ~22.9s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** teaching
-- **Narration:** And here's where the Latter-day Saint account actually explains more than a one-time washing does. Scripture doesn't just say your sins are removed at the font. It commands you to retain that remission, and warns that former sins can return to someone who stops repenting. That's not a weaker doctrine of forgiveness. It's a more complete one. It accounts for the part every honest Christian already knows from experience: the sinning doesn't stop at the water, so neither does the need to keep repenting.
+- **Narration:** And here's where the Latter-day Saint account actually explains more than a one-time washing does. Scripture doesn't just say your sins are removed at the font. It commands you to retain that remission, and warns that former sins can return to someone who stops repenting. That's not a weaker doctrine of forgiveness. It's a more complete one. It accounts for the part every honest Christian already knows from experience: the sinning doesn't stop at the water, so neither does the need to keep repenting. (remove line)
 - **Sources:** mosiah-4-12-retain-remission, dc-82-7-former-sins-return
 - **Notes:** 
 
 ## 11. `n99` (narration, ~6.8s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** encouraging
-- **Narration:** So no -- this isn't a quiet admission that Mormon baptism skips forgiveness. It's one gate doing what it's always claimed to do. God bless.
+- **Narration:** So no -- this isn't a quiet admission that Mormon baptism skips forgiveness. God bless.
 - **Notes:** 
 
 ## Full source transcript
