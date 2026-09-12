@@ -2,7 +2,7 @@
 
 ## Part A — pre-Gate-A (before presenting `script.md` for approval)
 
-Run through all 12 before sending the Gate A message in
+Run through all 15 before sending the Gate A message in
 `script-format.md`:
 
 1. **Adversarial review** done for every claim responded to (`claims.md`
@@ -51,8 +51,21 @@ Run through all 12 before sending the Gate A message in
 12. **Pronunciations** — every proper noun appearing in narration has an
     entry in `script/pronunciations.yaml` (or an explicit "ok-as-is"
     note) per `docs/saint-capybara/pronunciations.md`.
+13. **Clip-beat pose variety** — `clip` beats react to what the source is
+    saying (see `brand.md`), not blanket `pose: listening`. Flag if most
+    or all `clip` beats in the video share the same pose.
+14. **Response-to-clip alignment** — every beat group's response text is
+    actually about the claim in its immediately preceding clip/excerpt
+    beat, not a claim that only exists in the fuller source transcript or
+    article (see `script-format.md`'s "Response-to-clip alignment"
+    standing rule).
+15. **Critique** — `/capy-critique` (`research-protocol.md` sec 15;
+    `.claude/skills/capy-critique/`) has been run against the rendered
+    `script.md`; `research/critique.md` exists with no open BLOCKER
+    finding, and any MAJOR/MINOR findings are summarized in the Gate A
+    message for the user's review.
 
-Only after all 12 pass: render `frames/storyboard.png` + `script/script.md`
+Only after all 15 pass: render `frames/storyboard.png` + `script/script.md`
 and send the Gate A message. **Stop there.**
 
 ## Part B — post-approval, before calling a render "ready for review"

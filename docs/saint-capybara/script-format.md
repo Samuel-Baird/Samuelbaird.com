@@ -61,6 +61,13 @@ Each kind renders in one of three frame modes (`brand.md` sec 8) — CLIP
 
 ```yaml
 - { id: c01, kind: clip, start: 12.4, end: 21.0, speed: 1.0, speaker: "Source video", captions: source, pose: listening }
+  # `pose:` on a clip beat should reflect what the clip is actually saying,
+  # not default to `listening` on every beat -- see brand.md's
+  # "clip beats should react to what the source clip is actually saying"
+  # note. Use `listening` only for genuinely neutral stretches; otherwise
+  # pick from the same full-emotion roster narration beats use
+  # (thoughtful/concerned/skeptical/surprised/confused/disappointed/amused,
+  # respecting `sensitive: true`).
 
 - id: n01
   kind: narration
@@ -450,6 +457,20 @@ why (a standing user preference, not specific to this video type) and,
 critically, **link the branch, not the commit SHA** (same section) so the
 user can actually use GitHub's edit button on it. Confirm the repo
 remote is still private first (`docs/saint-capybara/brand.md` §9-10).
+
+Before this, run `/capy-critique` (`docs/saint-capybara/research-protocol.md`
+sec 15; `review-checklist.md` Part A item 15). It fixes any BLOCKER finding
+itself and produces `research/critique.md`, also mirrored to
+`reviews/<slug>/critique.md` alongside `script.md`. **Prepend a short
+critique summary before the fixed message below** — it is not part of the
+fixed wording and may vary run to run, but it must always be present,
+even when the critique found nothing:
+
+> Critique before Gate A: *N* BLOCKER(s) found and fixed (beats: …).
+> *M* MAJOR / *K* MINOR left for your review:
+> - `<beat id>`: *finding* — suggested: "*rewrite*"
+
+Then send the fixed message itself, unmodified:
 
 > **Saint Capybara — script ready for review (Gate A)**
 >

@@ -240,3 +240,9 @@ Before treating any script as ready for Gate A, ask:
 Run this alongside (not instead of) `research-protocol.md` sec 14's
 adversarial review and `review-checklist.md`'s Part A — this is a
 tone/argument-quality check, those are a factual/sourcing check.
+
+`/capy-critique`'s `capy-critic-opponent` lens (`research-protocol.md`
+sec 15) operationalises both questions as an independent check rather
+than a self-assessment: it plays the informed opponent of the video's
+audience against the finished script and runs this exact two-question
+test per beat and for the script as a whole, before Gate A.

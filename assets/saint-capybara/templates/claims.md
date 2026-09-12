@@ -10,9 +10,14 @@ grading system, and adversarial-review requirement below.
 Anchor = `m:ss–m:ss` for a video source, or a paragraph number (`¶12`,
 `¶4–¶5`) from `source/source.md` for an article source.
 
-| # | Anchor | Verbatim claim | Category | Triage decision | Classification | Chosen? |
-|---|---|---|---|---|---|---|
-| 1 | 0:00 | REPLACE | historical-fact | respond | fact | yes |
+Audience = `catholic | protestant | exmo | atheist | media | general` — see
+`docs/saint-capybara/apologetics-playbook.md`'s audience-specific playbooks
+and `research-protocol.md` sec 15's category→roster mapping, which is keyed
+on this column.
+
+| # | Anchor | Verbatim claim | Category | Audience | Triage decision | Classification | Chosen? |
+|---|---|---|---|---|---|---|---|
+| 1 | 0:00 | REPLACE | historical-fact | general | respond | fact | yes |
 
 ## Per-claim notes (adversarial review required for every "Chosen: yes" claim)
 
@@ -28,6 +33,13 @@ Anchor = `m:ss–m:ss` for a video source, or a paragraph number (`¶12`,
   current handbook-practice / leader teaching / older historical belief /
   individual speculation.
 - **Adversarial Q1** — strongest objection a knowledgeable critic could
-  still make after this response:
+  still make after this response: (seeded by the red-team brief when
+  `/capy-research` was used — see `research-protocol.md` sec 15)
 - **Adversarial Q2** — what was left out of the critic's original clip /
-  paragraph that changes how fair this response is:
+  paragraph that changes how fair this response is: (seeded by the
+  red-team brief when `/capy-research` was used)
+- **Briefs**: `research/briefs/claim1-*.md` (list the actual files used,
+  when `/capy-research` fanned this claim out to multiple angles).
+- **Red-team persona**: which persona the red-team brief argued from
+  (catholic / protestant / exmo / atheist / secular-journalist /
+  believing-member), when applicable.

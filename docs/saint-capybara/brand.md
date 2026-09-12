@@ -259,6 +259,19 @@ questionable premise → `skeptical` · factual failure → `disappointed` /
 `pointing` · listen → `listening` · closing → `encouraging` /
 `prayerful`.
 
+**`clip` beats should react to what the source clip is actually saying,
+not default to `listening` on every one.** `listening` is the fallback
+for a genuinely neutral stretch (introductions, throat-clearing, nothing
+worth a reaction yet) — once the clip says something uncertain, alarming,
+dubious, or funny, pick the matching full-emotion pose instead (same
+roster as narration beats: `thoughtful`, `concerned`/`solemn`,
+`skeptical`, `surprised`, `confused`, `disappointed`/`deadpan`,
+`amused`/`happy` where not sensitive-forbidden). This uses only the
+existing 21-pose roster — no new art — the fix is authoring habit, not a
+missing pose. A script with `pose: listening` on most/all of its clip
+beats is a sign this wasn't applied and should be revisited before Gate
+A.
+
 **Hard rule — never `amused` or `happy` on a sensitive topic.** Any beat
 or video discussing suffering or sensitive history must not select
 either pose; a `check_sources`/`check_brand`-style lint (see the pipeline

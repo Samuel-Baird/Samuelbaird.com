@@ -59,6 +59,10 @@ if ($Type -eq 'saint-capybara') {
     $repoRoot = Split-Path -Parent $PSScriptRoot
     $templatesDir = Join-Path $repoRoot 'assets\saint-capybara\templates'
 
+    # research/briefs/ holds the multi-angle research subagents' output
+    # (docs/saint-capybara/research-protocol.md sec 15, /capy-research skill).
+    New-Item -ItemType Directory -Force -Path (Join-Path $projectPath 'research\briefs') | Out-Null
+
     $beatsTemplate = if ($SourceKind -eq 'article') { 'beats.article.yaml' } else { 'beats.yaml' }
     $scriptBeatsDest = Join-Path $projectPath 'script\beats.yaml'
     if (-not (Test-Path $scriptBeatsDest)) {

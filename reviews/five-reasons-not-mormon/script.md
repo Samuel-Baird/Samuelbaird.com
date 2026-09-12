@@ -1,6 +1,6 @@
 # Script — Was It Really Just a Hat and the Wrong Papyri?
 
-**Slug:** `five-reasons-not-mormon` | **Estimated runtime:** 133.9s (budget 60-180s) | **Source time:** 32.2s (24%)
+**Slug:** `five-reasons-not-mormon` | **Estimated runtime:** 162.9s (budget 60-180s) | **Source time:** 32.2s (20%)
 
 **Hook (title/description only, not shown on screen):** 'He said WHAT was in the hat?'
 
@@ -39,27 +39,40 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** official-bom-translation
 - **Notes:** 
 
-## 06. `n03` (narration, ~17.7s)
+## 06. `n02b` (narration, ~13.4s)
+- **Original Video Transcript:** unlike the resurrection accounts we have in the Gospels. Fourth, the Book of Mormon. Eleven people reportedly saw the golden plate Smith used for translation. However, the translation method involved a seer stone and a hat, and the supposed history of the book contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book
+- **Pose:** teaching
+- **Narration:** That's worth sitting with. Dictating a five-hundred-plus-page, internally consistent narrative aloud, hours at a time, without notes to revise from, at roughly eight printed pages a day, is a strange way to fake a book. Impressive, even if you think it's uninspired -- harder to explain if you don't.
+- **Sources:** bom-translation-rate
+- **Notes:** 
+
+## 07. `n03` (narration, ~17.7s)
 - **Original Video Transcript:** unlike the resurrection accounts we have in the Gospels. Fourth, the Book of Mormon. Eleven people reportedly saw the golden plate Smith used for translation. However, the translation method involved a seer stone and a hat, and the supposed history of the book contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book
 - **Pose:** teaching
 - **Narration:** Eleven witnesses did sign their names to statements saying they saw the plates -- that part is real, printed in the front of every Book of Mormon. The archaeology claim is true too, as far as it goes. But comparing that directly to the Gospels compares two different kinds of evidence -- physical remains against ancient manuscripts -- as if they were the same kind.
 - **Sources:** bom-witnesses-testimony
 - **Notes:** 
 
-## 07. `c03` (clip, ~10.5s)
+## 08. `n03b` (narration, ~16.4s)
+- **Original Video Transcript:** unlike the resurrection accounts we have in the Gospels. Fourth, the Book of Mormon. Eleven people reportedly saw the golden plate Smith used for translation. However, the translation method involved a seer stone and a hat, and the supposed history of the book contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book
+- **Pose:** skeptical
+- **Narration:** And what archaeological confirmation do we actually have for the resurrection itself? We don't know for certain which tomb was Jesus's, and no excavation has ever produced physical evidence of a resurrection -- that isn't how the claim works. Christians rely on witness testimony there too. Demanding archaeology from one and accepting testimony for the other is the double standard.
+- **Notes:** 
+
+## 09. `c03` (clip, ~10.5s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** listening
 - **Clip:** Testify — "5 Reasons I'm Not Mormon", 46.72s–57.26s @ speed 1.0
 - **Notes:** 
 
-## 08. `n04` (narration, ~15.5s)
+## 10. `n04` (narration, ~15.5s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** source
 - **Narration:** This one the Church concedes plainly. Its own essay on the Book of Abraham states that the surviving papyri are ordinary funerary texts, dated centuries after Abraham, and that none of their characters match the text Joseph published. A peer-reviewed Latter-day Saint academic journal independently identifies the exact scroll: a funeral text for a woman named Tshemmin.
 - **Sources:** official-boa-translation, smoot-byu-studies-papyri
 - **Notes:** 
 
-## 09. `q02` (card, ~2.2s)
+## 11. `q02` (card, ~2.2s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** quote
 - **Narration:** Here is that essay, in its own words.
@@ -67,21 +80,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** official-boa-translation
 - **Notes:** 
 
-## 10. `n05a` (narration, ~12.3s)
+## 12. `n05a` (narration, ~12.3s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** thoughtful
 - **Narration:** But that finding is about the papyri that survived. Most of Joseph's original collection was lost after his death -- so historians call this the 'missing papyrus' theory: it's a live, disputed question whether the source text was even among the fragments Egyptologists have today.
 - **Sources:** missing-papyrus-theory, largey-poGP-companion
 - **Notes:** 
 
-## 11. `n05` (narration, ~16.1s)
+## 13. `n05` (narration, ~15.3s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** thoughtful
-- **Narration:** And even if it was, the Church's own catalyst theory holds that Joseph's translation was never meant to be a literal rendering of the papyri's Egyptian text in the first place. Either way, an Egyptological mismatch doesn't settle whether revelation happened. That's a question of faith, not history -- and it's not one a capybara can settle for you.
+- **Narration:** And even if it was, the catalyst theory holds that Joseph's translation was never meant to be a literal rendering of the papyri's Egyptian text in the first place, but instead the papyri acted as a catalyst to inspire Joseph to receive the text through revelation. Either way, an Egyptological mismatch doesn't settle whether revelation happened.
 - **Sources:** official-boa-translation
 - **Notes:** 
 
-## 12. `n06` (narration, ~6.8s)
+## 14. `n06` (narration, ~6.8s)
 - **Original Video Transcript:** contains no solid archaeological confirmation, unlike we have in the Gospels. Fifth, the Book of Abraham. Smith claimed to have translated this text from Egyptian papyri. However, Egyptologists believed that these were funerary texts unrelated to Abraham, calling into question Smith's supposed translation powers. For these reasons, I could never be LDS.
 - **Pose:** encouraging
 - **Narration:** Two claims, both true as stated, and both already acknowledged by the Church that makes them. We'll come back to the other three. God bless.
