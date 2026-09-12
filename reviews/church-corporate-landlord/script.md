@@ -49,7 +49,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n03` (narration, ~12.8s)
 - **Original Video Transcript:** They don't have caffeine, alcohol, tobacco, and gambling companies. But there's a ton of data center related companies, crypto, oil companies, and a whole lot of weapons makers. Because missiles and church. And for some reason, TKO, which owns a WWE and UFC.
 - **Pose:** concerned
-- **Narration:** But the fund does screen out alcohol, tobacco, gambling, and caffeine on purpose. It hasn't extended that to weapons makers. That's a real gap a diversification defense doesn't explain away -- and it's not the only place this fund's story gets more complicated on a closer look.
+- **Narration:** This is factually incorrect, they do own stock in alcohol, tobacco, and gambling through the Vanguard S&P 500 ETF. Yet again, normal investments.
 - **Sources:** sec-13f-ensignpeak-2026q2-infotable
 - **Notes:** 
 
@@ -112,7 +112,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n06` (narration, ~13.1s)
 - **Original Video Transcript:** The real estate wing property reserve has offices, apartments, they even have a parking business. This is somehow still a non-profit. Is the Mormon Church the new Blackstone BlackRock? Why do they work so hard to keep it a secret?
 - **Pose:** solemn
-- **Narration:** Honest caveat: a university endowment publishes a public tax return every year. This fund's size only came out through an SEC investigation -- never through anything the Church chose to disclose. The endowment comparison shouldn't paper over that gap. And that gap is exactly where this gets worse.
+- **Narration:** Why would they publish it? They are not legally obligated to disclose the information, and people will use any information they can to criticize the Church. 
 - **Sources:** sec-order-2023-96951
 - **Notes:** 
 
@@ -125,7 +125,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 16. `n07` (narration, ~11.2s)
 - **Original Video Transcript:** And that's probably due to the fact that the church failed to properly fill out their 13F forms for over 22 years. 1997 to 2019, they were supposed to file just one 13F, but instead they filed as 13 different shell companies.
 - **Pose:** source
-- **Narration:** That part is exactly right, and the SEC's order says why: leaders adopted the shell-company structure specifically to keep the fund's size from becoming public. Settled fact -- the Church accepted it by settling. I'm not going to argue that away.
+- **Narration:** That part is exactly right, and the SEC's order says why: leaders adopted the shell-company structure specifically to keep the fund's size from becoming public. Settled fact -- the Church accepted it by settling. I'm not going to argue that away. (remove this clip)
 - **Sources:** sec-order-2023-96951, sec-2023-35-press-release
 - **Notes:** 
 
@@ -138,14 +138,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 18. `n08` (narration, ~11.5s)
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** thoughtful
-- **Narration:** So why not just disclose it, like I just did? The Church's own 2023 statement says it relied on legal counsel to keep the portfolio private -- a real answer, not a good one. Wanting reserves and hiding them are different questions.
+- **Narration:** So why not just disclose it, like I just did? The Church's own 2023 statement says it relied on legal counsel to keep the portfolio private -- a real answer, not a good one. Wanting reserves and hiding them are different questions. (remove this line as well)
 - **Sources:** sec-order-2023-96951, church-newsroom-sec-statement-2023
 - **Notes:** 
 
 ## 19. `n09` (narration, ~6.3s)
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** encouraging
-- **Narration:** What the clip leaves out: this ended. Since 2019, one honest report every year, and the SEC's full penalty, paid. Concealed, caught, corrected.
+- **Narration:** What the clip leaves out: this ended. Since 2019, one honest report every year, and the SEC's full penalty, paid. Concealed, caught, corrected. (remove this line)
 - **Sources:** church-news-2023-compliance-since-2019, sec-2023-35-press-release
 - **Notes:** 
 
@@ -166,7 +166,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 22. `n99` (narration, ~9.5s)
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** encouraging
-- **Narration:** So: not a hedge fund, not Blackstone, not spotless either. A non-profit reserve, honestly justified, dishonestly hidden for two decades, openly corrected since. Hold all three at once -- that's what actually happened. God bless.
+- **Narration:** So: not a hedge fund and not Blackstone. A non-profit reserve, honestly justified. God bless.
 - **Notes:** 
 
 ## Full source transcript
