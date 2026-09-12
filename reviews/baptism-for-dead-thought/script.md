@@ -43,14 +43,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n03` (narration, ~7.4s)
 - **Original Video Transcript:** Stella stop you fucking bitch. And then like wouldn't it make sense that somebody would do baptisms for the dead for Jesus? Because he's not a member of the Mormon church and isn't that why
 - **Pose:** teaching
-- **Narration:** Baptism for the dead isn't a catch-all for anyone who isn't LDS. It's specifically for people who died without ever getting a valid, authorized baptism at all.
+- **Narration:** Uh oh. Someone didn't pay attention in Sunday school. That's not why baptisms for the dead are done. In Latter-day Saint theology, baptism is a saving ordinance—it's tied to remission of sins and spiritual rebirth. That's why it's performed for the dead, not to simply “make them Mormon".
 - **Sources:** hunter-1971-elijah-the-prophet, nelson-1994-the-spirit-of-elijah
 - **Notes:** 
 
 ## 07. `n04` (narration, ~6.5s)
 - **Original Video Transcript:** Stella stop you fucking bitch. And then like wouldn't it make sense that somebody would do baptisms for the dead for Jesus? Because he's not a member of the Mormon church and isn't that why
 - **Pose:** pointing
-- **Narration:** Jesus already had one. John the Baptist baptized him in the Jordan, and Latter-day Saints believe John held real priesthood authority to do it.
+- **Narration:** There is, in fact, a pretty famous Bible story about Jesus getting baptized. You know, the one basically every four-year-old in Sunday School can tell you. John the Baptist baptized Jesus in the Jordan. So there's no need to perform a baptsim for the dead for Jesus. 
 - **Sources:** mcconkie-1977-the-ten-blessings-of-the-priesthood, eyring-2010-act-in-all-diligence
 - **Notes:** 
 
