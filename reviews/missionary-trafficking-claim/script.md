@@ -1,8 +1,16 @@
 # Script — Are Mormon missionaries being trafficked?
 
-**Slug:** `missionary-trafficking-claim` | **Estimated runtime:** 61.3s (budget 60-180s) | **Source time:** 17.9s (29%)
+**Slug:** `missionary-trafficking-claim` | **Estimated runtime:** ~95.4s (budget 60-180s) | **Source time:** ~18.0s (~19%)
 
 **Hook (title/description only, not shown on screen):** 'Are missionaries actually being trafficked?'
+
+**Revised 2026-09-12 per your inline notes on `n03`/`n99` and your chat message.** Changes:
+
+1. `n01` (passport) rewritten -- the old wording read as self-contradictory ("offering... to let them keep" immediately followed by "kept... at the mission office," which doesn't actually say it's optional). Now states plainly: it's optional safekeeping, not surrender, and it exists because losing a passport abroad is a bigger problem than losing one at home -- not because missionaries can't be trusted with their own documents.
+2. `n02` (the trafficking-checklist claim) now names the actual gap directly: matching a DHS indicator checklist isn't evidence of a federal crime, and the source video cites no police report, legal filing, or on-record account -- just the checklist. This is the "does he have data to back it up" question from your note, made explicit on screen rather than only implied.
+3. `n03` **rewritten, not just softened** -- your note flagged the old version as factually wrong ("this just isnt true... its safety based," no legal consequences). The old beat conceded that missionaries "genuinely can't leave their area" as if that were a real restriction worth taking seriously as a partial admission. It wasn't accurate: it's a companionship/safety program rule with no legal or punitive mechanism, and nothing stops a missionary from leaving, calling home, or calling police on a mission-provided phone. That fact (mission-issued phones) is what actually answers the trafficking accusation, so I moved it here from the old closing beat.
+4. `n04` **added** -- the nuance from your note about a missionary asking to go home and not getting an immediate yes: framed as the mission president trying to find the actual fixable problem (bad companion pairing, homesickness) before an expensive, hard-to-reverse early flight home over what's often a same-day crisis decision. This is a new claim about internal mission-president practice; **I don't have a source for it yet** (flagged, not fabricated) -- if this is from your own mission experience the way `n01`'s original "I myself had this happen in Brazil" line was, say so and I'll frame it as first-person host testimony instead, which doesn't need an external citation the way a general policy claim does.
+5. `n99` rewritten per your note's exact caution: "no documented cases of police getting involved or the law proving this," not a blanket "this never happened." Also moved the "missionaries have phones, could call police" point out of here (now in `n03`) so the closing beat doesn't have to carry it alongside everything else.
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
@@ -18,10 +26,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 10.44s–15.22s @ speed 1.0
 - **Notes:** 
 
-## 03. `n01` (narration, ~8.7s)
+## 03. `n01` (narration, ~13.4s)
 - **Original Video Transcript:** And yet for many Mormon missionaries, their passport is being taken away, kept for safekeeping at the mission office.
 - **Pose:** concerned
-- **Narration:** Some missions do have a practice of offering missionaries to let them keep their passport in a safe location, like a safe inside of the mission office safe. I myself had this happen during the beginning of my mission in Brazil.
+- **Narration:** That's true, but incomplete: keeping a passport at the mission office is optional safekeeping, not a mandatory surrender -- missionaries can keep their own. Some missions actually encourage the mission-office option because losing a passport abroad, especially somewhere passport theft is common, is a much bigger problem than losing it at home.
 - **Sources:** lds-missionary-standards-supplement-appendix
 - **Notes:** 
 
@@ -31,24 +39,31 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 43.5s–54.76s @ speed 1.0
 - **Notes:** 
 
-## 05. `n02` (narration, ~12.8s)
+## 05. `n02` (narration, ~15.3s)
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
 - **Pose:** teaching
-- **Narration:** He runs through a whole checklist like that earlier in his own video. But matching a few indicators isn't the same as proving trafficking -- none of the actual legal elements are there: no force, no fraud, no coercion. The government's own guidance says as much itself.
+- **Narration:** He runs through a whole checklist like that earlier in his own video. But matching a few indicators isn't evidence -- trafficking is a specific federal crime, and he doesn't cite a single police report, legal filing, or on-record missionary account to back the accusation, just the checklist itself. The government's own guidance says matching indicators isn't proof either.
 - **Sources:** dhs-bluecampaign-2026-identify-victim
 - **Notes:** 
 
-## 06. `n03` (narration, ~11.5s)
+## 06. `n03` (narration, ~13.4s)
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
-- **Pose:** solemn
-- **Narration:** Here's what is real, though: missionaries genuinely can't leave their assigned area without permission up the chain, by the Church's own current, publicly posted rule. That's a fair thing to ask about honestly -- we're not going to pretend it isn't there. (this just isnt true. its a mission rule, but they arent going to have something like legal precussions for it. its safety based.
+- **Pose:** teaching
+- **Narration:** Missionaries are expected to stay with a companion and in their assigned area -- that's real, and it's a program safety rule, not a legal restriction. There's no penalty beyond mission counsel, and nothing stops a missionary from leaving, calling home, or calling the police on the phone the mission itself provides.
 - **Sources:** lds-missionary-standards-2-2-2-staying-together
 - **Notes:** 
 
-## 07. `n99` (narration, ~10.4s)
+## 07. `n04` (narration, ~17.1s) — NEW
+- **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
+- **Pose:** thoughtful
+- **Narration:** Occasionally a missionary who's struggling asks to go home immediately, and a mission president doesn't approve it within the hour. That's not confinement -- it's trying to find the actual problem first, since a companion clash or homesickness is often solvable by switching areas or companions, and flying someone home early is expensive and hard to undo for a decision made in a moment of crisis.
+- **Sources:** NEEDS SOURCE -- see note above script (flag whether this is first-person host testimony, like `n01`'s original Brazil line, or a general claim needing a Missionary Handbook / General Handbook citation)
+- **Notes:** 
+
+## 08. `n99` (narration, ~18.2s)
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
 - **Pose:** solemn
-- **Narration:** Calling it trafficking gets the legal and moral label wrong. But if some missionaries genuinely felt trapped or unsafe, that feeling deserves to be taken seriously on its own, not just waved off with a definition. God bless. (that deserves to be taken seriously, which is why they could call law enforcement. missionaries are provided with phones and would easily be able to do this. however, there are no verifiable cases of a missionary's passport being held against their will. a few ex mormons have claimed this, so wording needs to be careful like no documented cases of police getting involved or the law proving this)
+- **Narration:** Calling this trafficking gets the legal definition wrong, and there's no documented case of a missionary's passport being held against their will -- no police report, no court finding, just a handful of secondhand claims. Missionaries carry phones and could call law enforcement themselves if that ever happened. But if a missionary genuinely felt trapped or unsafe, that feeling deserves a real answer, not just a definition check. God bless.
 - **Notes:** 
 
 ## Full source transcript
