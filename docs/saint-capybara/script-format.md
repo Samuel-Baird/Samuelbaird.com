@@ -162,6 +162,14 @@ Field notes:
   Forbidden on `excerpt` beats (coloring the source's own words
   editorializes).
 
+## Narration punctuation rule (2026-09-12)
+
+**Never use `--` (double hyphen) inside a beat's `text:` for a spoken
+beat** (`narration`/`card`/`evidence`/`chart` — anything the TTS engine
+reads aloud). Use an em dash (`—`), a comma, or a period/new sentence
+instead. This applies to the narration wording itself, not to code,
+file paths, or doc prose elsewhere in the repo.
+
 ## The closing beat: "...God bless." (not a fixed structural sequence)
 
 **Retired 2026-09-09 — there is no more mandatory sign-of-the-cross
