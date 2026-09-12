@@ -21,21 +21,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n01` (narration, ~7.1s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** concerned
-- **Narration:** That's true. Joseph Smith was sealed to Helen Mar Kimball in May 1843, when she was fourteen years old. That's worth taking seriously, not waving away.
+- **Narration:** Many prophets have had angles appear to them, that's true. Lets address Joseph Smith's polygamy and so-called child bride. Joseph Smith was sealed to Helen Mar Kimball in May 1843, when she was fourteen years old. 
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
 ## 04. `n02` (narration, ~8.2s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** skeptical
-- **Narration:** But "child bride" does a lot of work in one phrase. It implies a sexual, cohabiting marriage like his adult wives -- and that's actually the part historians disagree about.
+- **Narration:** But "child bride" does a lot of work in one phrase. It implies a sexual, cohabiting marriage like his adult wives, but thats not what history shows.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
 ## 05. `q01` (card, ~3.8s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** quote
-- **Narration:** Here's LDS historian Spencer Fluhman, after reviewing the full record of Helen's own writings.
+- **Narration:** Here's LDS historian Spencer Fluhman, after reviewing the full record of Helen's own writings. It's noteworthy that Helen's father, Scholar Richard L. Anderson observed: “Helen says several times that her father took the initiative to arrange the marriage and very possibly he did so with a view to committing her to the Prophet before her budding social life produced a choice or a proposal”. The historical record shows no indication that Joseph initiated the proposal.
 - **Card quote:** “There is no documentary evidence that such was the case with Helen. In fact, her reminiscences convey little social interaction with Joseph Smith after the marriage, let alone an intimate physical relationship.” — Spencer Fluhman, quoted in Brian C. Hales, Joseph Smith's Polygamy, Vol. 2: History (2013)
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
@@ -57,7 +57,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n05` (narration, ~15.7s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** surprised
-- **Narration:** Worth naming directly, since you're Catholic: the Church's own current Code of Canon Law -- canon 1083, section 1 -- still sets fourteen as the valid minimum marriage age for a woman. That's not a retired rule; it's binding today.
+- **Narration:** Worth naming directly, since Joe Heschmeyer is Catholic: the Catholic Church’s own current Code of Canon Law—Canon 1083 §1—still sets fourteen as the minimum age at which a woman can validly marry under universal canon law. Before the 1917 Code took effect, that age was twelve. And unlike Joseph Smith’s sealings to some of the younger women, where sexual relations are unsupported by evidence, these canonical ages referred to actual marriages—marriages in which conjugal relations were permitted. Gross.
 - **Sources:** vatican-cic-cann998-1165
 - **Notes:** NEW -- "same standard" beat for the Catholic side of the audience. Source: Code of Canon Law, Can. 1083 §1 (https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html) -- "A man before he has completed his sixteenth year of age and a woman before she has completed her fourteenth year of age cannot enter into a valid marriage." This is the validity floor; §2 lets bishops' conferences set a higher age for *lawful* (licit) celebration in their territory, but the floor itself hasn't moved. Needs a `vatican-cic-cann998-1165` entry added to `research/sources.yaml` before this can pass Gate A build tooling -- flagging since I don't have this project's `beats.yaml`/`research/sources.yaml` locally to add it myself.
 
@@ -77,21 +77,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n07` (narration, ~10.9s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** thoughtful
-- **Narration:** As for having "more wives than Muhammad" -- Joseph Smith's own count is well documented, somewhere around thirty-five women by the time he died. Muhammad's isn't something I can verify from the sources I have, so I won't pretend to.
-- **Sources:** mormonr-js-polygamy, compton-33-wives
+- **Narration:** As for having "more wives than Muhammad" -- Joseph Smith's own count is well documented, somewhere around thirty-five women by the time he died. Muhammad's isn't something I can verify from the sources I have, so I won't pretend to. Many of these relationships were sealings with no evidence of sexual relations. Only 10 of the women Joseph was sealed to have any amount of evidence of sexual relations with him, and among those some of the evidence is shak
+- **Sources:** mormonr-js-polygamy, compton-33-wives, https://josephsmithspolygamy.org/common-questions/plural-marriages-sexual/
 - **Notes:** (was `n06`)
 
 ## 12. `n08` (narration, ~7.9s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** teaching
-- **Narration:** The real question was never the scoreboard. It's what those marriages actually were -- and for the one everyone brings up, the record doesn't support what "child bride" implies.
+- **Narration:** The real question is what those marriages entail. The record doesn't support what "child bride" implies. These marriages were consensual and consensual.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** (was `n07`)
 
 ## 13. `n99` (narration, ~9.0s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** encouraging
-- **Narration:** Fourteen is young, and that's fair to sit with. But "child bride" claims more certainty than the record actually gives us. That's not spin -- that's just what the evidence says. God bless.
+- **Narration:** The sad part is I spent so much time giving context that I don't have time to go into too much depth on the next points, but I'll keep it short: the Bible never condemns polygamy. God bless.
 - **Notes:** 
 
 ## Full source transcript
