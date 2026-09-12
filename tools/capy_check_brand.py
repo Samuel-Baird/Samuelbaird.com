@@ -128,6 +128,19 @@ def collect_project_text(project: Path) -> dict[str, str]:
             out[rel] = p.read_text(encoding="utf-8")
     for desc in (project / "exports").glob("*-description.txt") if (project / "exports").exists() else []:
         out[f"exports/{desc.name}"] = desc.read_text(encoding="utf-8")
+    # Multi-angle research briefs and script critique files (research-protocol.md
+    # sec 15) -- exactly where a subagent's own chatter ("as an AI...", a local
+    # path it happened to mention, etc.) is most likely to leak, since they are
+    # free-form prose rather than the structured beats.yaml/sources.yaml/claims.md
+    # above. Glob broadly rather than naming exact filenames so a future brief/
+    # critique naming convention change doesn't silently stop being scanned.
+    research_dir = project / "research"
+    if research_dir.exists():
+        for md in research_dir.rglob("*.md"):
+            rel = md.relative_to(project).as_posix()
+            if rel in out:
+                continue
+            out[rel] = md.read_text(encoding="utf-8")
     return out
 
 

@@ -135,9 +135,13 @@ slug substituted.
    an on-screen response. On an article project the source's own words
    reach the screen as `excerpt` beats (verbatim, `para`-anchored, read by
    the quote voice, ≤30% of runtime together with any clips).
-4. **Research.** Pulpit / Gospel Scholar Archive / Latter-day Stats MCP
-   tools, per `docs/saint-capybara/research-protocol.md`. Verify every
-   quotation before treating it as attributable. Grade every claim
+4. **Research.** `/capy-research` (`docs/saint-capybara/research-protocol.md`
+   sec 15) fans each chosen claim out to 2-3 expert-angle subagents plus a
+   red-team subagent, in parallel, then merges their tool-verified briefs
+   into `research/sources.yaml` and `research/claims.md`. Pulpit / Gospel
+   Scholar Archive / Latter-day Stats MCP tools are used by those
+   subagents, not researched conversationally by the main session. Verify
+   every quotation before treating it as attributable. Grade every claim
    fact/inference/disputed/speculation. Never fabricate a source, page
    number, or quote.
 5. **Escalation check.** Any of the 7 triggers in
@@ -154,14 +158,20 @@ slug substituted.
    vestigial from the retired all-ffmpeg pipeline — the current pipeline
    doesn't burn captions via libass at all, see
    `docs/saint-capybara/hybrid-resolve-pipeline.md` — skip that flag.)
-9. **Part A review** (`docs/saint-capybara/review-checklist.md`) — all 12
+9. **Part A review** (`docs/saint-capybara/review-checklist.md`) — all 15
    items — before presenting anything.
-10. **Wait — Gate A.** Send the exact message in
-    `docs/saint-capybara/script-format.md` ("Gate A — the fixed wording").
-    **No TTS, no clip cutting, no rendering happens before the user
-    approves.** If they return edits (directly, or via `DROP`/`SPLIT`/
+9b. **Critique.** `/capy-critique` (`docs/saint-capybara/research-protocol.md`
+    sec 15) runs three independent script critics in parallel — does it
+    defend the Church well, is it accurate, is it compelling — fixes any
+    BLOCKER finding, and produces `research/critique.md` for the Gate A
+    message's critique summary (`script-format.md`).
+10. **Wait — Gate A.** Send the critique summary, then the exact message
+    in `docs/saint-capybara/script-format.md` ("Gate A — the fixed
+    wording"). **No TTS, no clip cutting, no rendering happens before the
+    user approves.** If they return edits (directly, or via `DROP`/`SPLIT`/
     `MOVE AFTER Bxx` directives on `script.md`), apply them to
-    `beats.yaml`, re-lint, re-storyboard, and send Gate A again.
+    `beats.yaml`, re-lint, re-storyboard, re-run `/capy-critique`, and
+    send Gate A again.
 
 ## Build (post-approval — official pipeline, see `docs/saint-capybara/hybrid-resolve-pipeline.md`)
 

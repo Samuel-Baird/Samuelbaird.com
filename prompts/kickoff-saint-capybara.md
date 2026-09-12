@@ -13,13 +13,22 @@ Latter-day Saint history/doctrine/scripture/practice.
    This is non-negotiable — read all of it, not a skim.
 2. `docs/types/saint-capybara.md` — the type's stage-by-stage workflow and
    project layout.
-3. `docs/saint-capybara/research-protocol.md` — how to triage, research,
-   grade, and (when needed) escalate a claim.
-4. `docs/saint-capybara/script-format.md` — the `beats.yaml` schema, the
+3. `docs/saint-capybara/apologetics-playbook.md` — the argument-craft
+   companion to `brand.md` sec 2: six-step response structure,
+   audience-specific playbooks, overclaiming discipline, the pre-publish
+   two-question test.
+4. `docs/saint-capybara/research-protocol.md` — how to triage, research
+   (sec 15: the `/capy-research` multi-angle subagent fan-out), grade, and
+   (when needed) escalate a claim.
+5. `docs/saint-capybara/script-format.md` — the `beats.yaml` schema, the
    mandatory outro, duration budget, clip fairness, and the exact Gate A
-   message.
-5. `docs/saint-capybara/review-checklist.md` — Part A, before Gate A.
-6. `assets/saint-capybara/theme.yaml` — machine-readable palette/fonts/layout.
+   message (preceded by the `/capy-critique` summary).
+6. `docs/saint-capybara/review-checklist.md` — Part A, all 15 items,
+   before Gate A.
+7. `docs/saint-capybara/common-issues/README.md` — the accumulated-topic
+   index; check it for the claims you're about to research, and ask
+   before adding anything new to it.
+8. `assets/saint-capybara/theme.yaml` — machine-readable palette/fonts/layout.
 
 **Do NOT read or reuse anything from:** `docs/style-guide.md`,
 `docs/script-doc-format.md`, or any other identity's phrasing/filenames —
@@ -44,8 +53,9 @@ is identifying, treat it as identifying and leave it out.
   addressed (optional — the agent will triage and propose otherwise).
 
 **Then:** run the full pre-production stage in
-`docs/types/saint-capybara.md` — ingest, transcribe, triage, research,
-escalation check, `beats.yaml`, lints, storyboard/`script.md`, Part A
-review — and **stop at Gate A**. Send the exact fixed message from
-`script-format.md`. Do not render audio, cut clips, or produce a video
-before I've approved the script.
+`docs/types/saint-capybara.md` — ingest, transcribe, triage, research
+(`/capy-research`), escalation check, `beats.yaml`, lints,
+storyboard/`script.md`, Part A review, critique (`/capy-critique`) — and
+**stop at Gate A**. Send the critique summary, then the exact fixed
+message from `script-format.md`. Do not render audio, cut clips, or
+produce a video before I've approved the script.

@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__2b2805da-b0f2-43f2-97e9-c50e458634fb__search_concordance",
+      "mcp__2b2805da-b0f2-43f2-97e9-c50e458634fb__read_paragraphs",
+      "mcp__2b2805da-b0f2-43f2-97e9-c50e458634fb__talks_by_speaker",
+      "mcp__2b2805da-b0f2-43f2-97e9-c50e458634fb__verify_quote",
+      "mcp__2b2805da-b0f2-43f2-97e9-c50e458634fb__list_conferences",
+      "mcp__2b2805da-b0f2-43f2-97e9-c50e458634fb__corpus_stats",
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__search_concordance",
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages",
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__cite_page",
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__get_page_image",
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__get_volume_info",
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__list_shelf",
+      "mcp__latter-day-stats__list_datasets",
+      "mcp__latter-day-stats__get_dataset",
+      "mcp__latter-day-stats__list_studies",
+      "mcp__latter-day-stats__get_study",
+      "mcp__latter-day-stats__list_channels",
+      "mcp__latter-day-stats__get_channel",
+      "mcp__latter-day-stats__list_channel_types",
+      "mcp__latter-day-stats__list_dataset_categories",
+      "mcp__latter-day-stats__list_study_tags",
+      "mcp__9b13862d-0aae-4047-8be9-8c49ed0c789a__search_transcripts",
+      "mcp__9b13862d-0aae-4047-8be9-8c49ed0c789a__read_transcript",
+      "mcp__9b13862d-0aae-4047-8be9-8c49ed0c789a__list_videos",
+      "mcp__9b13862d-0aae-4047-8be9-8c49ed0c789a__get_video",
+      "mcp__9b13862d-0aae-4047-8be9-8c49ed0c789a__corpus_stats",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "deny": [
+      "mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__save_brief"
+    ]
+  }
+}

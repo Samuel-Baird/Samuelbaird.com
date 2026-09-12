@@ -25,13 +25,21 @@ sources:
     quote: null                           # verbatim quote used on screen, or null if not directly quoted
     verification:                         # required if `quote` is set and attributed
       tool: "REPLACE: e.g. verify_quote, cite_page"
-      verdict: "REPLACE: e.g. verbatim, not-verbatim, not-found"
+      verdict: "REPLACE: verify_quote returns exact | word-forms | not-verbatim | not-found;
+                GSA context-checks are page-read; a plain web fetch is direct-read"
       link: "REPLACE: url the tool returned"
     grade_supports: fact                  # fact | inference | disputed | speculation
     traced_to: null                       # REQUIRED (a source id) if type is apologetic-lead
     used_on_screen: false
     counter: false                        # true if this source is used to push back against the claim rather than support the response's framing
     notes: "REPLACE: anything else worth recording"
+    found_by: null                        # optional; set by tools/capy_merge_briefs.py to the
+                                           # researcher role (e.g. capy-historian) that found this
+                                           # source -- see research-protocol.md sec 15. Ignored by
+                                           # capy_check_sources.py.
+    claims: []                            # optional; claim number(s) (research/claims.md) this
+                                           # source supports. Set by capy_merge_briefs.py. Ignored
+                                           # by capy_check_sources.py.
 
   # --- Article project: the responded-to article itself (delete for video projects) ---
   # - id: critic-article

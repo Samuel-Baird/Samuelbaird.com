@@ -16,16 +16,20 @@ Get the source into anchorable form first. **Video:** transcribe it
 paragraph numbers are the anchors. Then list every discrete claim in
 `research/claims.md` as a table:
 
-| # | Anchor | Verbatim claim | Category | Triage decision | Classification | Chosen? |
-|---|---|---|---|---|---|---|
+| # | Anchor | Verbatim claim | Category | Audience | Triage decision | Classification | Chosen? |
+|---|---|---|---|---|---|---|---|
 
 - **Anchor**: `m:ss–m:ss` for a video source; `¶12` or `¶4–¶5` for an
   article. Before a claim is chosen, read the anchor's neighbours in full
   (the ±10s around a clip; the paragraphs on either side of an excerpt)
   and record that in the per-claim notes as "Anchor context" — an
   excerpt must not change meaning once its neighbours are read.
-- **Category**: historical-fact / doctrinal / statistical / anecdotal /
-  opinion.
+- **Category**: historical-fact / doctrinal / scriptural-textual /
+  statistical / philosophical / anecdotal / opinion.
+- **Audience**: catholic / protestant / exmo / atheist / media / general —
+  see `apologetics-playbook.md`'s audience-specific playbooks. Infer from
+  the source if not obvious; note the inference rather than blocking on
+  it. Sec 15 below keys its researcher-roster mapping on this column.
 - **Triage decision**: respond / concede / skip (with a one-line reason —
   "already well covered elsewhere," "too minor to matter," "unverifiable
   either way").
@@ -327,3 +331,100 @@ up something real:
 Record both answers directly in `claims.md` next to the claim. If the
 adversarial pass surfaces a real problem, fix the response and repeat the
 pass once more before moving on.
+
+**When `/capy-research` (sec 15) was used for a claim**, these two answers
+are not self-assessed — they are seeded by the `capy-red-team` subagent's
+independent brief ("Strongest objection after the response" and "Omitted
+from the clip" sections) and pasted into `claims.md` by the orchestrator.
+The orchestrator still owns the "fix and repeat once" step: if the
+red-team brief surfaces a real problem, fix the response and re-check
+before moving on, same as a self-assessed pass would. For a claim
+researched without the fan-out (rare — e.g. a trivial concede-only claim),
+this section's original self-assessed procedure still applies.
+
+## 15. Multi-angle research (`/capy-research`)
+
+For every claim triaged `Chosen: yes`, research it from 2-3 independent
+expert angles plus an always-on adversarial angle, run in parallel as
+Claude Code subagents, rather than one agent researching and self-checking
+alone. This section is the roster, the mapping from claim category to
+roster, and the contract between a researcher subagent and the orchestrator
+(the main session) that merges their output. The skill that runs this
+procedure is `.claude/skills/capy-research/SKILL.md` (invoke as
+`/capy-research`); the subagent definitions are `.claude/agents/capy-*.md`.
+
+### Roster
+
+- **capy-historian** — primary documents, dating, what contemporaries
+  understood, what has been exaggerated (the historical-controversy
+  formula from `apologetics-playbook.md`).
+- **capy-scripture-theologian** — biblical text in context, early-Christian
+  parallels, Catholic/Protestant interpretive-framework analysis, and
+  Book of Mormon/JST textual questions.
+- **capy-doctrine-scholar** — what LDS leaders have actually taught over
+  time (Pulpit), current handbook position, the sec 5 doctrine tier + date.
+- **capy-philosopher** — evidential/philosophical argument structure,
+  double standards, epistemic-standard analysis for atheist/ex-Mormon
+  trust objections.
+- **capy-data-analyst** — Latter-day Stats datasets/studies for
+  statistical claims and "uniquely X" baseline comparisons (sec 10).
+- **capy-red-team** — always runs, on every chosen claim, regardless of
+  category. Picks a persona (catholic / protestant / exmo / atheist /
+  secular-journalist / believing-member) and argues the critic's case
+  *better than the critic did*; its brief seeds sec 14's two adversarial
+  questions.
+
+### Category → roster mapping (red-team always added; hard cap 3 researchers + red-team)
+
+| Category | Always | + if catholic/protestant | + if exmo | + if atheist | + if numbers / "uniquely X" |
+|---|---|---|---|---|---|
+| historical-fact | historian, doctrine-scholar | scripture-theologian | — | — | data-analyst |
+| doctrinal | doctrine-scholar, scripture-theologian | — | historian (if "changed over time") | philosopher | — |
+| scriptural-textual | scripture-theologian, historian | — | — | — | — |
+| statistical | data-analyst, historian | — | doctrine-scholar (if about practice) | — | — |
+| philosophical | philosopher, scripture-theologian | — | historian (trust claims) | — | — |
+| anecdotal | historian only | — | — | — | — |
+| opinion (respond) | doctrine-scholar only | — | — | — | — |
+
+Concede/skip claims get no fan-out. A typical video (2-3 chosen claims)
+launches roughly 6-12 subagents total, in one parallel batch.
+
+### The brief contract
+
+A researcher subagent never writes to `sources.yaml`, `claims.md`, or
+`ESCALATION.md` directly — it writes one file,
+`research/briefs/claim<N>-<role>.md`, and returns a ≤200-word summary to
+the orchestrator. This exists because an earlier ad-hoc use of a research
+subagent produced `sources.yaml` entries marked `inspected: true` with
+`inspected_via: "Research agent WebFetch"` — the orchestrator trusted the
+subagent's word instead of the subagent's own tool-verified provenance
+being checked. Every agent definition carries the rule explicitly: a
+source may be marked `inspected: true` only if the agent itself opened it
+with a tool (`read_paragraphs`, `verify_quote`, `read_pages`, `cite_page`,
+`get_dataset`/`get_study`, `WebFetch`) in that run; anything recalled from
+memory goes under "Could not verify" with `inspected: false`.
+
+`tools/capy_merge_briefs.py --project <dir>` is the only thing that ever
+writes a brief's sources into `sources.yaml`. It re-validates
+`inspected_via` against a list of real tool-name patterns (a vague phrase
+like "research agent" does not pass), requires a `verification.link` or
+`verify_quote`/`cite_page` tool for any set `quote`, refuses `type: critic`
+unless the id is the real `critic-article` entry (so a researcher-added
+entry can't get picked up first by `find_critic_article_entry`'s
+first-match logic in `capy_check_sources.py`), and **appends** rather than
+prepends to `sources.yaml`. Anything that fails validation is imported
+anyway, but with `inspected: false` — `capy_check_sources.py`'s existing
+"not inspected" error then blocks citing it until someone actually
+verifies it. See the brief's required section structure in each
+`.claude/agents/capy-*.md` file, or `.claude/skills/capy-research/SKILL.md`.
+
+### Merging into claims.md
+
+The orchestrator reads each claim's brief files (not all of them at once —
+one claim's worth at a time) and fills in Research / Grading (most
+cautious grade when briefs disagree, with the disagreement noted) /
+Doctrine tier / the two adversarial questions (from the red-team brief) /
+a `Briefs:` line listing the files used. An unresolvable grade
+disagreement is sec 12 trigger 1; a brief with `status: blocked` also
+escalates. `tools/capy_check_sources.py` must still pass on the merged
+`sources.yaml` before `beats.yaml` is written.
