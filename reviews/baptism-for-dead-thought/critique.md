@@ -1,19 +1,84 @@
 # Critique — baptism-for-dead-thought
 
+Re-run after the n03/n04 script edits (typo fix, opinion tagging, n03 sarcastic-tone
+rewrite). Supersedes the prior critique.md round (which covered the n06 "membership
+roll" BLOCKER — already fixed and re-verified clean in that earlier pass).
+
+**Disposition: user reviewed the findings below and explicitly elected to proceed to
+render on the current script as-is, without further edits.** The BLOCKER and MAJOR
+findings are carried forward here, unresolved, for the record — not fixed, not
+laundered, not silently dropped.
+
 ## BLOCKER
-- [factcheck] n06 — stated "Nobody gets added to a roll" as flat fact, but `research/claims.md` explicitly records this sub-claim as "Could not verify" against the available corpus (no cited source -- Burton 1965, Nelson 1994, McGregor 1920 -- mentions membership rolls/records at all). **Fixed**: reworded to "It's an offer, not an enrollment. The person on the other side still has to accept it themselves -- nothing about that is automatic," which keeps the sourced agency/choice point and drops the unverified roll-mechanics assertion. Re-checked clean against `capy_check_sources.py`/`capy_check_brand.py`.
+- [factcheck] n03 — The added claim "baptism is a saving ordinance -- it's tied to
+  remission of sins and spiritual rebirth" is not supported by either cited source
+  (hunter-1971-elijah-the-prophet, nelson-1994-the-spirit-of-elijah). Both talks are
+  entirely about the ordinance's *opportunity/scope* for the dead (should people be
+  denied the chance because they died without it?) — neither uses "remission of sins"
+  or "rebirth" in connection with baptism for the dead. This specific theological claim
+  never went through `claims.md` triage/research/adversarial review before being added
+  to the script; the citations create a false impression of sourcing for content the
+  sources don't contain. **Status: flagged; user elected to proceed to render without
+  fixing.**
 
 ## MAJOR
-- [opponent] n04/e01 — state "real priesthood authority" with more certainty than the research supports. `claims.md` grades the overall conclusion as *inference*, and the claim-3 red-team brief explicitly flags this as an overclaim: John's priesthood authority is demonstrated within LDS canon, not independently verifiable, and the steelmanned circularity objection ("what non-circular test distinguishes John's authority from any other tradition's claimed succession?") is never raised or answered on screen.
-- [opponent] Unaddressed red-team objections on claims 2 and 4 — the "grace-through-means arguments prove too much" objection (claim 2) and the unfalsifiability-of-postmortem-choice objection (claim 4) are both surfaced in research but not acknowledged in the script, even briefly.
-- [opponent] Script-level Q2 (playbook pre-publish test) — the script corrects three misconceptions but never makes the positive case that the LDS account is *better*, only that the critic's framing isn't airtight.
-- [editor] Sprawl across three claims — the title/hook promise the flagship "does Jesus need one too" question, but claims 2 and 4 get comparable runtime, pushing the flagship claim to ~18.6s in and diluting it against the apologetics-playbook's "one argument per short" guidance.
-- [editor] n01 skips naming/testing the grace-vs-ordinance hidden assumption (playbook step 2/3, "the move most often skipped") before asserting the LDS position.
-- [editor] n99's closing theme ("nobody's faith gets overridden") was never actually argued in the body — it doesn't land the video on its own flagship argument (Jesus already validly baptized by an authorized priesthood holder).
-- [factcheck] n01 ("Grace and ordinances aren't rivals here") states an inference-grade claim without the hedge ("Latter-day Saints believe...") that the adjacent card (n02) correctly uses.
+- [opponent] n99 (closing) — overclaims certainty on the agency/non-coercion point.
+  The claim-4 red-team brief caps this response at "supported," not "demonstrated,"
+  and explicitly flags "it's offered, not forced" as functionally unfalsifiable
+  ("the deceased can still reject it" as an escape valve with no way to tell the
+  difference from the alternative). n99's closing line states the agency claim with
+  more finality than that ceiling allows and closes the whole video on an unhedged
+  version of exactly the claim flagged as unfalsifiable. **Status: flagged; user
+  elected to proceed to render without fixing.**
+- [opponent] n01/n02 (claim 2, protestant) — never name or test the hidden assumption
+  that "grace operates through appointed means" picks out this specific LDS system
+  rather than any other tradition's sacramental system; the red-team's own "proves too
+  much" objection on this point is left unaddressed. **Status: flagged; user elected to
+  proceed to render without fixing.**
+- [opponent] e01 — "That's the actual distinction -- not membership, authority" states
+  John's priesthood authority as though it settles the matter. The claim-3 red-team
+  brief grades this "supported-within-the-framework," not "demonstrated" independently
+  of LDS canon — the line reads more final than that. **Status: flagged; user elected
+  to proceed to render without fixing.**
+- [editor] Whole script (c01/n00-n02, c02/n03-e01, c03/n05-n06) — three largely
+  independent arguments (grace-vs-ordinance, Jesus-needs-baptism, baptism-as-
+  membership-drive) are stacked into one short instead of the apologetics playbook's
+  "one argument per short" rule; no single beat group gets the full six-step
+  treatment, and the closing beat can't land as *the* argument because there isn't
+  one. **Status: flagged; user elected to proceed to render without fixing.**
+- [editor] n01 — skips playbook steps 2/3 (name and test the hidden assumption behind
+  "isn't that why Jesus died, so we don't have to save each other") before asserting
+  the LDS position; reads as an assertion the viewer has to take on faith rather than
+  an argument that dismantles the objection's premise. **Status: flagged; user elected
+  to proceed to render without fixing.**
 
 ## MINOR
-- [opponent] e01's card quote (McConkie 1977) is a reasonable but not tight match to the narration's specific point about John's authority vs. Jesus' need.
-- [opponent] Internal tension between "ordinances matter enough to require" (n01/n02) and "it's just an offer" (n06) isn't reconciled on screen.
-- [editor] c02's "Original Video Transcript" field in `script.md` displays the whole overlapping Whisper segment, including the profanity cut from the actual clip span (13.5s-20.84s) -- a display quirk in `capy_storyboard.py`'s segment-level lookup, not an error in the clip's actual boundaries (the profanity is correctly excluded from what plays).
-- [factcheck] Minor sources.yaml data-hygiene items (a malformed `verification` field on the McConkie entry; a near-duplicate Nelson-1994 source-id pair) -- both independently re-verified as fine, no actual inaccuracy.
+- [factcheck] n03 — even setting sourcing aside, "tied to remission of sins and
+  spiritual rebirth" is real LDS doctrine (cf. Moroni 6:2, D&C 20:37, Articles of Faith
+  4) but is asserted with flat certainty rather than being dated/tiered per
+  research-protocol.md sec 5; if a proper source is ever substituted it should be
+  doctrine-tier-appropriate (scripture/current handbook), not Hunter/Nelson.
+- [factcheck] e01 card quote (McConkie 1977) — `sources.yaml` records
+  `verification.verdict: null`; direct `verify_quote` re-check confirms **exact**
+  against `1977-10-mcconkie-the-ten-blessings-of-the-priesthood` ¶10. Not a script
+  issue — worth updating the stale `null` to "exact" in `sources.yaml` opportunistically
+  since it's a one-line data-hygiene fix, not a script change.
+- [opponent] Script-wide — audience shifts from protestant (claim 2) to exmo (claims
+  3-4) without any signal; a texture issue, not a strawman, but a viewer fluent in
+  either tradition may notice the tonal seam.
+- [editor] e01 and n05 — "membership" is used as the pivot word in two separate
+  response beats close together, which reads as repetitive even though they answer two
+  distinct clip claims.
+- [editor] n99 (closing) — ties cleanly to the group-3 offer/consent argument but
+  doesn't gather up the grace/authority arguments from groups 1-2; reads as a general
+  capstone rather than the video's unified thesis landing (symptom of the sprawl
+  finding above, not a wording problem on its own). Still satisfies the hard
+  "...God bless." requirement.
+
+## Summary
+
+1 BLOCKER, 5 MAJOR, 5 MINOR. Per the user's explicit decision, none of these are being
+fixed in this round — the script proceeds to render as-is. The single most load-bearing
+item to remember: **n03's "tied to remission of sins and spiritual rebirth" claim is
+not actually supported by its cited sources** and never went through this project's
+claims research pipeline.
