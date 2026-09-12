@@ -21,7 +21,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n00` (narration, ~4.1s)
 - **Original Video Transcript:** 0.2% you heard me. That's it. So they are Definitely the true church. Yeah Yeah, definitely. It's definitely them
 - **Pose:** neutral
-- **Narration:** That 0.2% figure is accurate -- about 17.9 million members worldwide. That's not in dispute.
+- **Narration:** That 0.2% figure is accurate, there are about 17.9 million Latter-day Saints worldwide.
 - **Sources:** worldwide-membership-history
 - **Notes:** 
 
