@@ -62,21 +62,22 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n10` (narration, ~9.5s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** So the accurate claim isn't that the Bible endorses polygamy. It's that the Bible never treats plural marriage itself as inherently sinful. God doesn't condemn the practice -- in some cases, he even regulates it.
+- **Narration:** So the accurate claim isn't that the Bible endorses polygamy. It's that the Bible never treats plural marriage itself as inherently sinful. God doesn't condemn the practice -- in some cases, he even regulates it and commands it.
 - **Sources:** fair-plural-marriage-bible, copan-moral-monster
 - **Notes:** 
 
 ## 10. `n11` (narration, ~22.4s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** And here's the real irony: Latter-day Saint scripture actually sets a default, in plain language. The Book of Mormon's Jacob chapter two states directly that a man is to have only one wife, with any exception coming only by God's own direction. We have a scripture that flatly states the standard is monogamy -- while critics like this one have to work against Genesis and Deuteronomy's own text, verse by verse, just to reach roughly the same conclusion we already state outright.
+- **Narration:** And here's the real irony: Latter-day Saint scripture actually sets a default, in plain language. The Book of Mormon's Jacob chapter two states directly that a man is to have only one wife, with any exception coming only by God's own direction. We have a scripture that flatly states the standard is monogamy -- while critics like this one have to work against Genesis and Deuteronomy's own text, to reach a conclusion that is opposite of what the texts actually say.
 - **Sources:** jacob-2-27-30
 - **Notes:** 
 
 ## 11. `n99` (narration, ~7.4s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** encouraging
-- **Narration:** We're not saying that settles absolutely everything about the 1800s. But the Bible itself is a lot more complicated than one single verse lets on. God bless.
+- **Narration:** Latter-day Saints have a strong leg to stand on when discussing the morality of polygamy: monogamy is the default, but God may command plural marriage when He sees fit. Evangelicals, meanwhile, are left insisting that the practice is inherently sinful while struggling to produce a single verse that actually condemns it. God bless.
+
 - **Notes:** 
 
 ## Full source transcript

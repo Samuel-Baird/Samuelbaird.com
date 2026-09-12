@@ -49,7 +49,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n04` (narration, ~9.3s)
 - **Original Video Transcript:** based upon the least recent and accurate manuscripts, quote, so far as it is accurately translated. So if you talk to a Mormon, they'll say, well, we only believe in the King James translation of the Bible.
 - **Pose:** source
-- **Narration:** That's actually not at all what we say, though. Our own eighth Article of Faith reads plainly: we believe the Bible to be the word of God, as far as it is translated correctly.
+- **Narration:** That's actually not at all what we say. Our own eighth Article of Faith reads plainly: we believe the Bible to be the word of God, as far as it is translated correctly.
 - **Sources:** article-of-faith-8
 - **Notes:** 
 
