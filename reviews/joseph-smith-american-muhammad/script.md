@@ -1,32 +1,38 @@
 # Script — Was Joseph Smith's Youngest Wife Really a "Child Bride"?
 
-**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 85.7s (budget 60-180s) | **Source time:** 15.6s (18%)
+**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 108.5s (budget 60-180s) | **Source time:** 22.7s (21%)
 
 **Hook (title/description only, not shown on screen):** 'He called Joseph Smith\'s 14-year-old wife a "child bride" -- here\'s what the record actually says'
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c01` (clip, ~11.6s)
+## 01. `c01` (clip, ~7.2s)
+- **Original Video Transcript:** Tell me about why Joseph Smith could be thought of as the American Muhammad, if you even agree with that. Oh, man. Think about it.
+- **Pose:** listening
+- **Clip:** Source video, 0.00s–7.20s @ speed 1.0
+- **Notes:** NEW — sets up the framing question the rest of the video is responding to, before the "child bride" claim clip.
+
+## 02. `c02` (clip, ~11.6s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** listening
 - **Clip:** Source video, 7.34s–18.98s @ speed 1.0
-- **Notes:** 
+- **Notes:** (was `c01`)
 
-## 02. `n01` (narration, ~7.1s)
+## 03. `n01` (narration, ~7.1s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** concerned
 - **Narration:** That's true. Joseph Smith was sealed to Helen Mar Kimball in May 1843, when she was fourteen years old. That's worth taking seriously, not waving away.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 03. `n02` (narration, ~8.2s)
+## 04. `n02` (narration, ~8.2s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** skeptical
 - **Narration:** But "child bride" does a lot of work in one phrase. It implies a sexual, cohabiting marriage like his adult wives -- and that's actually the part historians disagree about.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 04. `q01` (card, ~3.8s)
+## 05. `q01` (card, ~3.8s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** quote
 - **Narration:** Here's LDS historian Spencer Fluhman, after reviewing the full record of Helen's own writings.
@@ -34,48 +40,55 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 05. `n03` (narration, ~9.8s)
+## 06. `n03` (narration, ~9.8s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** reading
 - **Narration:** Helen's own later writing backs this up -- she described the marriage as cutting her off from friends her own age, not a physical one. Even critical, non-LDS historians call the evidence genuinely ambiguous, not settled.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 06. `n04` (narration, ~8.2s)
+## 07. `n04` (narration, ~8.2s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** teaching
 - **Narration:** And fourteen wasn't as far outside the norm in 1840s America as it sounds today. A census of the Nauvoo area found over forty percent of wives were under twenty.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 07. `n05` (narration, ~5.2s)
+## 08. `n05` (narration, ~15.7s)
+- **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
+- **Pose:** surprised
+- **Narration:** Worth naming directly, since you're Catholic: the Church's own current Code of Canon Law -- canon 1083, section 1 -- still sets fourteen as the valid minimum marriage age for a woman. That's not a retired rule; it's binding today.
+- **Sources:** vatican-cic-cann998-1165
+- **Notes:** NEW -- "same standard" beat for the Catholic side of the audience. Source: Code of Canon Law, Can. 1083 §1 (https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html) -- "A man before he has completed his sixteenth year of age and a woman before she has completed her fourteenth year of age cannot enter into a valid marriage." This is the validity floor; §2 lets bishops' conferences set a higher age for *lawful* (licit) celebration in their territory, but the floor itself hasn't moved. Needs a `vatican-cic-cann998-1165` entry added to `research/sources.yaml` before this can pass Gate A build tooling -- flagging since I don't have this project's `beats.yaml`/`research/sources.yaml` locally to add it myself.
+
+## 09. `n06` (narration, ~5.2s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** thoughtful
 - **Narration:** That doesn't make it comfortable. But it does mean "child bride" imports a modern category onto a nineteenth-century marriage.
 - **Sources:** hales-js-polygamy-2-history
-- **Notes:** 
+- **Notes:** (was `n05`)
 
-## 08. `c02` (clip, ~3.9s)
+## 10. `c03` (clip, ~3.9s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** listening
 - **Clip:** Source video, 19.32s–23.24s @ speed 1.0
-- **Notes:** 
+- **Notes:** (was `c02`)
 
-## 09. `n06` (narration, ~10.9s)
+## 11. `n07` (narration, ~10.9s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** thoughtful
 - **Narration:** As for having "more wives than Muhammad" -- Joseph Smith's own count is well documented, somewhere around thirty-five women by the time he died. Muhammad's isn't something I can verify from the sources I have, so I won't pretend to.
 - **Sources:** mormonr-js-polygamy, compton-33-wives
-- **Notes:** 
+- **Notes:** (was `n06`)
 
-## 10. `n07` (narration, ~7.9s)
+## 12. `n08` (narration, ~7.9s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** teaching
 - **Narration:** The real question was never the scoreboard. It's what those marriages actually were -- and for the one everyone brings up, the record doesn't support what "child bride" implies.
 - **Sources:** hales-js-polygamy-2-history
-- **Notes:** 
+- **Notes:** (was `n07`)
 
-## 11. `n99` (narration, ~9.0s)
+## 13. `n99` (narration, ~9.0s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** encouraging
 - **Narration:** Fourteen is young, and that's fair to sit with. But "child bride" claims more certainty than the record actually gives us. That's not spin -- that's just what the evidence says. God bless.
