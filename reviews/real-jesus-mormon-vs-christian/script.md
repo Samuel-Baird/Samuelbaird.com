@@ -30,7 +30,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n03` (narration, ~7.9s)
 - **Original Video Transcript:** i'm a mormon and i'm a christian no you're not no mormons are not christian sorry i believe in
 - **Pose:** teaching
-- **Narration:** And the word itself didn't start out meaning 'holds to the Nicene Creed.' It was a label outsiders gave believers in Antioch -- nearly three centuries before Nicaea existed.
+- **Narration:** And the word itself didn't start out meaning 'holds to the Nicene Creed.' It was a label outsiders gave believers in Antioch -- nearly three centuries before Nicaea existed. (no need to bring up nicea. just ask here what she would even define a christian as, and why she gets to gatekeep the term)
 - **Sources:** acts-11-26-called-christians-antioch, sanders-wilken-christians-as-romans-saw-them
 - **Notes:** 
 
