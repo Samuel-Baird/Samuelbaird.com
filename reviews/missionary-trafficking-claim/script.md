@@ -21,7 +21,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n01` (narration, ~8.7s)
 - **Original Video Transcript:** And yet for many Mormon missionaries, their passport is being taken away, kept for safekeeping at the mission office.
 - **Pose:** concerned
-- **Narration:** Passport safekeeping does seem to happen in some missions, at least. What we couldn't find anywhere official is why, for how long, or how a missionary actually gets it back on request.
+- **Narration:** Some missions do have a practice of offering missionaries to let them keep their passport in a safe location, like a safe inside of the mission office safe. I myself had this happen during the beginning of my mission in Brazil.
 - **Sources:** lds-missionary-standards-supplement-appendix
 - **Notes:** 
 
@@ -41,14 +41,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n03` (narration, ~11.5s)
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
 - **Pose:** solemn
-- **Narration:** Here's what is real, though: missionaries genuinely can't leave their assigned area without permission up the chain, by the Church's own current, publicly posted rule. That's a fair thing to ask about honestly -- we're not going to pretend it isn't there.
+- **Narration:** Here's what is real, though: missionaries genuinely can't leave their assigned area without permission up the chain, by the Church's own current, publicly posted rule. That's a fair thing to ask about honestly -- we're not going to pretend it isn't there. (this just isnt true. its a mission rule, but they arent going to have something like legal precussions for it. its safety based.
 - **Sources:** lds-missionary-standards-2-2-2-staying-together
 - **Notes:** 
 
 ## 07. `n99` (narration, ~10.4s)
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
 - **Pose:** solemn
-- **Narration:** Calling it trafficking gets the legal and moral label wrong. But if some missionaries genuinely felt trapped or unsafe, that feeling deserves to be taken seriously on its own, not just waved off with a definition. God bless.
+- **Narration:** Calling it trafficking gets the legal and moral label wrong. But if some missionaries genuinely felt trapped or unsafe, that feeling deserves to be taken seriously on its own, not just waved off with a definition. God bless. (that deserves to be taken seriously, which is why they could call law enforcement. missionaries are provided with phones and would easily be able to do this. however, there are no verifiable cases of a missionary's passport being held against their will. a few ex mormons have claimed this, so wording needs to be careful like no documented cases of police getting involved or the law proving this)
 - **Notes:** 
 
 ## Full source transcript
