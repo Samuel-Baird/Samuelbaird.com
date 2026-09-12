@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~5.7s)
 - **Original Video Transcript:** The whole idea that he finds a series of tablets in upstate New York, nobody else can read the writings on the tablets except him who has these special spectacles. That's pretty suspect. But then when we move on, my problem becomes that he claims to be a
 - **Pose:** source
-- **Narration:** Two corrections. It wasn't 'tablets' -- it was thin gold plates. And Joseph wasn't the only one who ever saw them.
+- **Narration:** Two corrections. It wasn't 'tablets' -- it was thin gold plates. And Joseph wasn't the only one who ever saw them. 
 - **Sources:** eight-witnesses-testimony
 - **Notes:** 
 
@@ -30,14 +30,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n02` (narration, ~7.9s)
 - **Original Video Transcript:** The whole idea that he finds a series of tablets in upstate New York, nobody else can read the writings on the tablets except him who has these special spectacles. That's pretty suspect. But then when we move on, my problem becomes that he claims to be a
 - **Pose:** source
-- **Narration:** Three of them said an angel showed them the plates. Eight said Joseph just handed the plates over in daylight and let them hold, turn, and heft them themselves.
+- **Narration:** Three of them said an angel showed them the plates. Eight said Joseph just handed the plates over in daylight and let them hold, turn, and heft them themselves. There are also a dozen or so "unnoficial" witnesses who didn't sign the affidavits. 
 - **Sources:** eight-witnesses-testimony
 - **Notes:** 
 
 ## 05. `n03` (narration, ~9.0s)
 - **Original Video Transcript:** The whole idea that he finds a series of tablets in upstate New York, nobody else can read the writings on the tablets except him who has these special spectacles. That's pretty suspect. But then when we move on, my problem becomes that he claims to be a
 - **Pose:** skeptical
-- **Narration:** And that standard also disqualifies Moses. Scripture says he alone climbed the mountain to meet God face to face -- and the actual stone tablets he brought down have been lost for millennia.
+- **Narration:** And that standard also disqualifies Moses. Scripture says he alone climbed the mountain to meet God face to face, and the actual stone tablets he brought down have been lost for millennia.
 - **Sources:** exodus-sinai
 - **Notes:** 
 
@@ -50,29 +50,29 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n04` (narration, ~6.8s)
 - **Original Video Transcript:** That's pretty suspect. But then when we move on, my problem becomes that he claims to be a follower of Jesus Christ, but then he blatantly contradicts Jesus. On such issues as polygamy,
 - **Pose:** skeptical
-- **Narration:** Where does Jesus condemn polygamy? He never mentions it -- and the Old Testament he grew up reading wasn't a monogamy-only system to begin with.
+- **Narration:** Where does Jesus condemn polygamy? He never mentions it, and the Old Testament he grew up reading wasn't a monogamy-only system to begin with.
 - **Sources:** 2-samuel-12
 - **Notes:** 
 
 ## 08. `q02` (card, ~2.2s)
 - **Original Video Transcript:** That's pretty suspect. But then when we move on, my problem becomes that he claims to be a follower of Jesus Christ, but then he blatantly contradicts Jesus. On such issues as polygamy,
 - **Pose:** quote
-- **Narration:** God, through the prophet Nathan, telling David this.
-- **Card quote:** “I gave thee thy master's house, and thy master's wives into thy bosom” — 2 Samuel 12:8
+- **Narration:** God, through the prophet Nathan, telling David: “I gave you your master’s house and your master’s wives into your bosom”
+- **Card quote:** “I gave you your master’s house and your master’s wives into your bosom” — 2 Samuel 12:8 NRSVue
 - **Sources:** 2-samuel-12
 - **Notes:** 
 
 ## 09. `n05` (narration, ~6.5s)
 - **Original Video Transcript:** That's pretty suspect. But then when we move on, my problem becomes that he claims to be a follower of Jesus Christ, but then he blatantly contradicts Jesus. On such issues as polygamy,
 - **Pose:** source
-- **Narration:** Abraham, Jacob, and David were all plural husbands the Bible treats as men God worked through -- not as men committing an unforgivable sin.
+- **Narration:** Abraham, Jacob, and David were all polygamists the Bible treats as men God worked through, and their plurality of wives is never treated as a sin.
 - **Sources:** 2-samuel-12
 - **Notes:** 
 
 ## 10. `n06` (narration, ~7.6s)
 - **Original Video Transcript:** That's pretty suspect. But then when we move on, my problem becomes that he claims to be a follower of Jesus Christ, but then he blatantly contradicts Jesus. On such issues as polygamy,
 - **Pose:** source
-- **Narration:** Joseph Smith taught plural marriage came the same way -- by specific revelation, recorded in Doctrine and Covenants 132. And the Church ended the practice entirely in 1890.
+- **Narration:** Joseph Smith taught plural marriage came the same way. By specific revelation, recorded in Doctrine and Covenants 132. And the Church ended the practice entirely in 1890, also by revelation.
 - **Sources:** dc-132, official-declaration-1
 - **Notes:** 
 
@@ -85,7 +85,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 12. `n07` (narration, ~8.7s)
 - **Original Video Transcript:** on such issues as dark skin is a result of sin. And the reason certain people have dark skin is because they're part of a race that's sinned and dark skin is a curse from God.
 - **Pose:** concerned
-- **Narration:** This one deserves care, not a quick comeback. The Church does have a real, documented history: a priesthood and temple restriction on Black members that lasted until 1978. That's true, full stop.
+- **Narration:** The Church does have a real, documented history: a priesthood and temple restriction on Black members that lasted for years. 
 - **Sources:** race-priesthood-essay
 - **Notes:** 
 
@@ -99,14 +99,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n09` (narration, ~4.1s)
 - **Original Video Transcript:** on such issues as dark skin is a result of sin. And the reason certain people have dark skin is because they're part of a race that's sinned and dark skin is a curse from God.
 - **Pose:** source
-- **Narration:** The race-based ban came after Joseph died, under Brigham Young, and lasted over a century.
+- **Narration:** The race-based ban came after Joseph died, under Brigham Young, and lasted over a century. This stemmed from 19th century Protestant beliefs about the hamitic hypothesis, which claimed people with dark skin were Ham's descendants and were "natural slaves" to justify the slave trade.
 - **Sources:** byu-studies-abel-ordination, race-priesthood-essay
 - **Notes:** 
 
 ## 15. `q03` (card, ~2.7s)
 - **Original Video Transcript:** on such issues as dark skin is a result of sin. And the reason certain people have dark skin is because they're part of a race that's sinned and dark skin is a curse from God.
 - **Pose:** quote
-- **Narration:** The Church's own 2013 statement -- in its own words.
+- **Narration:** The Church's own 2013 statement says the Church "disavows the theories advanced in the past that black skin is a sign of divine disfavor."
 - **Card quote:** “disavows the theories advanced in the past that black skin is a sign of divine disfavor” — The Church of Jesus Christ of Latter-day Saints, "Race and the Priesthood," 2013
 - **Sources:** race-priesthood-essay
 - **Notes:** 
@@ -114,7 +114,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 16. `n99` (narration, ~5.2s)
 - **Original Video Transcript:** on such issues as dark skin is a result of sin. And the reason certain people have dark skin is because they're part of a race that's sinned and dark skin is a curse from God.
 - **Pose:** encouraging
-- **Narration:** Get the details right, and this criticism holds up far worse than one clip makes it look. God bless.
+- **Narration:** Cliffe does amazing work evangelizing, but boy does he get a lot wrong about Joseph Smith. God bless.
 - **Notes:** 
 
 ## Full source transcript
