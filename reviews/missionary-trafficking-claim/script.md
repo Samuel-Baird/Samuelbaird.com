@@ -56,14 +56,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n04` (narration, ~17.1s) — NEW
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
 - **Pose:** thoughtful
-- **Narration:** Occasionally a missionary who's struggling asks to go home immediately, and a mission president doesn't approve it within the hour. That's not confinement -- it's trying to find the actual problem first, since a companion clash or homesickness is often solvable by switching areas or companions, and flying someone home early is expensive and hard to undo for a decision made in a moment of crisis.
+- **Narration:** The closest thing that may realistically happen is a missionary who's struggling asks to go home immediately, and a mission president doesn't approve it within the hour. That's not confinement, it's trying to find the actual problem first, since a companion clash or homesickness is often solvable by switching areas or companions, and flying someone home early is expensive and hard to undo for a decision made in a momement.
 - **Sources:** NEEDS SOURCE -- see note above script (flag whether this is first-person host testimony, like `n01`'s original Brazil line, or a general claim needing a Missionary Handbook / General Handbook citation)
 - **Notes:** 
 
 ## 08. `n99` (narration, ~18.2s)
 - **Original Video Transcript:** And so on that last point at least, knowing that some missionaries are having their passports taken away and knowing that they aren't free to come and go as they please, it seems only fair, if not a little provocative, to ask.
 - **Pose:** solemn
-- **Narration:** Calling this trafficking gets the legal definition wrong, and there's no documented case of a missionary's passport being held against their will -- no police report, no court finding, just a handful of secondhand claims. Missionaries carry phones and could call law enforcement themselves if that ever happened. But if a missionary genuinely felt trapped or unsafe, that feeling deserves a real answer, not just a definition check. God bless.
+- **Narration:** Calling this trafficking gets the legal definition wrong and is sensationalist, and there's no documented case of a missionary's passport being held against their will. Nemo has failed to provide a single police report or court finding, he has just made a handful of secondhand claims. Missionaries carry phones and could call law enforcement themselves if that ever happened. But if a missionaries was being trafficked, there would be evidence to reflect that. God bless.
 - **Notes:** 
 
 ## Full source transcript
