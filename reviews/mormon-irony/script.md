@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n00` (narration, ~7.6s)
 - **Original Video Transcript:** Something ironic about Mormons is that they are really insistent that they're Christians too, but Mormons believe in something that's called the Great Apostasy.
 - **Pose:** neutral
-- **Narration:** That's a fair summary -- Latter-day Saints really do teach that the fulness of gospel authority was lost and later restored. That's real Restoration doctrine, not a strawman.
+- **Narration:** Latter-day Saints really do teach that the fulness of gospel authority was lost and later restored. Let's hear what David has to say.
 - **Sources:** packer-only-true-church-1985
 - **Notes:** 
 
@@ -28,7 +28,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n01` (narration, ~8.5s)
 - **Original Video Transcript:** while at the same time wanting to be included in the Christian group. So to the Mormons out there, if you say that we're all false churches, then don't get offended whenever we don't consider you to be Christians like us. Whenever you claim that you're the only true Christians, you are the one separating yourself from the group. So really the statement that
 - **Pose:** teaching
-- **Narration:** That argument only works if believing your own church has the fulness of authority is the same move as refusing to call anyone else Christian. Those aren't actually the same claim.
+- **Narration:** That argument only works if believing your own church has the fulness of authority is the same move as refusing to recognize anyone else as a true, believing Christian. Those aren't actually the same claim.
 - **Notes:** 
 
 ## 05. `n02` (narration, ~6.3s)
@@ -49,13 +49,13 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n03` (narration, ~11.5s)
 - **Original Video Transcript:** while at the same time wanting to be included in the Christian group. So to the Mormons out there, if you say that we're all false churches, then don't get offended whenever we don't consider you to be Christians like us. Whenever you claim that you're the only true Christians, you are the one separating yourself from the group. So really the statement that
 - **Pose:** concerned
-- **Narration:** To be fair, the Latter-day Saint claim is bigger than that -- it's not just 'your orders aren't valid,' it's that the whole church lost its authority for centuries. That's a real difference in degree, and it's fair to press on it.
+- **Narration:** Protestants do the same thing. They recognize other denominations as being "incorrect", but they still generally recognize other denominations as valid christians. To be fair, the Latter-day Saint claim is bigger than that. It's not just 'your orders aren't valid,' it's that the whole church lost its authority for centuries. That's a real difference in degree, and it's fair to press on it.
 - **Notes:** 
 
 ## 08. `n04` (narration, ~8.2s)
 - **Original Video Transcript:** while at the same time wanting to be included in the Christian group. So to the Mormons out there, if you say that we're all false churches, then don't get offended whenever we don't consider you to be Christians like us. Whenever you claim that you're the only true Christians, you are the one separating yourself from the group. So really the statement that
 - **Pose:** teaching
-- **Narration:** But differing in degree from other groups' exclusivity claims isn't the same as being unique in kind -- and it still doesn't make 'you excluded yourself' a logically sound move.
+- **Narration:** But differing in degree from other groups' exclusivity claims isn't the same as being unique in kind, and it still doesn't make 'you excluded yourself' a logically sound move.
 - **Sources:** packer-only-true-church-1985
 - **Notes:** 
 
@@ -68,14 +68,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n05` (narration, ~7.1s)
 - **Original Video Transcript:** you are the one separating yourself from the group. So really the statement that Mormons aren't Christians is a historically accurate statement.
 - **Pose:** teaching
-- **Narration:** That's only true under one definition of 'Christian' -- the creedal one, tied to the councils at Nicaea. The word itself didn't start out meaning that.
+- **Narration:** That's only true under one definition of 'Christian', the creedal one, tied to the councils at Nicaea. The word itself didn't start out meaning that.
 - **Sources:** fitzmyer-acts-anchor-yale-1998, mason-planted-2019-p136
 - **Notes:** 
 
 ## 11. `n06` (card, ~4.1s)
 - **Original Video Transcript:** you are the one separating yourself from the group. So really the statement that Mormons aren't Christians is a historically accurate statement.
 - **Pose:** quote
-- **Narration:** Latter-day Saints reject that creedal definition on purpose -- and use an older one instead.
+- **Narration:** Latter-day Saints reject that creedal definition on purpose, and use an older one instead.
 - **Card quote:** “We do not accept the Athanasian Creed. We do not accept the Nicene Creed, nor any other creed based on tradition and the conclusions of men.” — Gordon B. Hinckley, General Conference, Oct. 1998
 - **Sources:** hinckley-1998-rejects-nicene-creed
 - **Notes:** 
@@ -83,14 +83,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 12. `n07` (narration, ~8.2s)
 - **Original Video Transcript:** you are the one separating yourself from the group. So really the statement that Mormons aren't Christians is a historically accurate statement.
 - **Pose:** pointing
-- **Narration:** Faith in and reliance on Jesus Christ -- that's the measure they use instead. Calling the creedal version 'historically accurate' just assumes the answer to the actual question being argued.
+- **Narration:** Faith in and reliance on Jesus Christ, that's the measure they use instead. Calling the creedal version 'historically accurate' just assumes the answer to the actual question being argued.
 - **Sources:** hinckley-1998-what-are-people-asking-about-us
 - **Notes:** 
 
 ## 13. `n99` (narration, ~10.6s)
 - **Original Video Transcript:** you are the one separating yourself from the group. So really the statement that Mormons aren't Christians is a historically accurate statement.
 - **Pose:** encouraging
-- **Narration:** Call the theology whatever you want to call it. But deciding in advance which definition of 'Christian' counts, then declaring the other side excluded by 'history,' isn't irony -- it's just picking the ruler before you measure. God bless.
+- **Narration:** Call the theology whatever you want to call it. But deciding in advance which definition of 'Christian' counts, then declaring the other side excluded by 'history,' isn't irony. It's just picking the ruler before you measure. God bless.
 - **Notes:** 
 
 ## Full source transcript
