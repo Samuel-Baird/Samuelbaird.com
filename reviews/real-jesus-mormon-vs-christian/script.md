@@ -38,7 +38,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n03` (narration, ~16.5s)
 - **Original Video Transcript:** i'm a mormon and i'm a christian no you're not no mormons are not christian sorry i believe in
 - **Pose:** skeptical
-- **Narration:** So what definition of 'Christian' is she actually using, and where does she get the authority to enforce it? The word didn't start out meaning 'affirms the Nicene Creed' -- it's what outsiders called believers in Antioch, nearly three centuries before that creed existed. By her own standard, Paul wasn't a Christian either.
+- **Narration:** So what definition of 'Christian' is she actually using, and where does she get the authority to enforce it? 
 - **Sources:** acts-11-26-called-christians-antioch, sanders-wilken-christians-as-romans-saw-them
 - **Notes:** 
 
@@ -79,7 +79,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n08` (narration, ~15.7s)
 - **Original Video Transcript:** i'm a mormon and i'm a christian no you're not no mormons are not christian sorry i believe in jesus same jesus that you believe in no it's a very different jesus in fact your jesus came to america my jesus did not but they both died on the cross a lot of people died on crosses
 - **Pose:** teaching
-- **Narration:** And that reading isn't imported into the text, it's what the text keeps showing: a Father and Son who pray to each other, whose voices and presence are described separately at the very moment the New Testament is supposedly at its most Trinitarian.
+- **Narration:** And that reading isn't imported into the text, it's what the bibical texts show.
 - **Sources:** hales-2012-being-a-more-christian-christian (scripture citation for the baptism/prayer claims still needed -- see note above script)
 - **Notes:** 
 
