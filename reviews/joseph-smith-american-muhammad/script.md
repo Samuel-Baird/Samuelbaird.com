@@ -1,6 +1,6 @@
 # Script — Was Joseph Smith's Youngest Wife Really a "Child Bride"?
 
-**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 146.6s (budget 60-180s) | **Source time:** 22.8s (16%)
+**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 143.3s (budget 60-180s) | **Source time:** 22.8s (16%)
 
 **Hook (title/description only, not shown on screen):** 'He called Joseph Smith\'s 14-year-old wife a "child bride" -- here\'s what the record actually says'
 
@@ -126,22 +126,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** hales-plural-marriages-sexual-faq
 - **Notes:** 
 
-## 18. `e03` (evidence, ~3.3s)
-- **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
-- **Pose:** pointing
-- **Narration:** Here's that same breakdown: strong, moderate, weak, or none, wife by wife.
-- **Evidence:** `images/joseph-smith-s-polygamy/sexuality-in-plural-marriages-chart.jpg` — Evidence of sexual relations by plural wife -- Brian C. Hales, josephsmithspolygamy.org (placement: panel)
-- **Sources:** hales-plural-marriages-sexual-faq
-- **Notes:** 
-
-## 19. `n10` (narration, ~4.4s)
+## 18. `n10` (narration, ~4.4s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** teaching
 - **Narration:** The real question is what those marriages entail. The record doesn't support what "child bride" implies.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 20. `n99` (narration, ~6.8s)
+## 19. `n99` (narration, ~6.8s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** encouraging
 - **Narration:** Fourteen is young, and it's fair to raise alarms with it. But "child bride" implies things that the historical record just doesn't demonstrate. God bless.
