@@ -1,6 +1,6 @@
 # Script — Was Joseph Smith's Youngest Wife Really a "Child Bride"?
 
-**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 143.3s (budget 60-180s) | **Source time:** 22.8s (16%)
+**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 144.1s (budget 60-180s) | **Source time:** 22.8s (16%)
 
 **Hook (title/description only, not shown on screen):** 'He called Joseph Smith\'s 14-year-old wife a "child bride" -- here\'s what the record actually says'
 
@@ -91,7 +91,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** churchlifejournal-canon-law-child-marriage
 - **Notes:** 
 
-## 13. `n07` (narration, ~7.6s)
+## 13. `n07` (narration, ~8.5s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** thoughtful
 - **Narration:** That doesn't make it comfortable for a modern reader. But it does mean "child bride" imports a modern category onto a nineteenth-century sealing that has no evidence of a sexual relationship.
