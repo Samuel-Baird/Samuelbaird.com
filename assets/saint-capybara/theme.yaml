@@ -98,11 +98,20 @@ layout:
     freeze:   { dim: 0.55, blur_sigma: 8 }
 
   # CARD mode (kind: card, evidence, chart, excerpt) -- card on top, medium sprite.
+  # box enlarged 2026-09-13 (user feedback: "images should be larger") --
+  # x1 pulled in to 930 (from 1040) to stay clear of the right-side
+  # like/comment/share icon rail (platform_safe.right, active y 1000-1650)
+  # now that the box extends down into that band; y1 pushed from 830 to
+  # 1150 to give evidence images meaningfully more room. Captions moved
+  # down to match (was y0/y1 860/1120) -- buffer to the sprite's top
+  # (1850 - 480 = 1370) is now ~40px, down from ~250px; a real, deliberate
+  # tradeoff per that same feedback ("captions can be moved lower if
+  # needed"), not an oversight.
   card:
-    box:      { x0: 40, y0: 250, x1: 1040, y1: 830 }
+    box:      { x0: 40, y0: 250, x1: 930, y1: 1150 }
     pad: 44
     sprite:   { x0: 32, size: 480, outline_px: 4, shadow: null }
-    captions: { y0: 860, y1: 1120, max_width: 960 }
+    captions: { y0: 1170, y1: 1330, max_width: 960 }
 
 captions:
   # `size` is the starting px; the renderer (tools/capy/text.py) wraps by

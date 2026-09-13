@@ -67,6 +67,23 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", folded).strip().lower()
 
 
+def quote_matches_source(card_quote: str, src_quote: str) -> bool:
+    """Substring check for a card beat's quote against its source's recorded
+    quote, treating any `[bracketed text]` in `card_quote` as an editorial
+    substitution (standard scholarly convention, e.g. `[sealing]` swapped in
+    for the source's own `marriage`) rather than requiring a literal match.
+    Each bracketed span becomes a non-greedy wildcard; everything else is
+    matched literally (normalized the same way as the plain substring
+    check)."""
+    needle = normalize(card_quote)
+    haystack = normalize(src_quote)
+    if "[" not in needle:
+        return needle in haystack
+    parts = re.split(r"\[[^\]]*\]", needle)
+    pattern = r".*?".join(re.escape(p) for p in parts)
+    return re.search(pattern, haystack, re.DOTALL) is not None
+
+
 def sha256_text(text: str) -> str:
     """sha256 of `text` with line endings normalised to LF, UTF-8."""
     canon = (text or "").replace("\r\n", "\n").replace("\r", "\n")

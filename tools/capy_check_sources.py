@@ -44,6 +44,7 @@ from capy import excerpts as excerpts_mod
 from capy import source as source_mod
 from capy.poses import SENSITIVE_FORBIDDEN
 from capy.source import normalize  # noqa: F401  (re-exported; was defined here before capy.source existed)
+from capy.source import quote_matches_source
 
 try:  # ¶ in hints needs a utf-8 console on Windows
     sys.stdout.reconfigure(encoding="utf-8")
@@ -244,7 +245,7 @@ def main() -> int:
                 matched = False
                 for sid in src_ids:
                     src = sources.get(sid)
-                    if src and src.get("quote") and normalize(quote) in normalize(src["quote"]):
+                    if src and src.get("quote") and quote_matches_source(quote, src["quote"]):
                         matched = True
                         break
                 if not matched:
