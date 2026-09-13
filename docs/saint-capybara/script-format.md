@@ -374,6 +374,20 @@ one is available and relevant:
   relevant to show should stay `blank`/`freeze`/CARD-with-quote rather
   than reaching for a decorative picture.
 
+**`evidence.image` rendering (2026-09-13 update):** no bordered/parchment
+box is drawn around the photo anymore — it sits directly in the blank
+space of the beat's own background, and `evidence.credit` always renders
+in a fixed strip at the very bottom of the frame regardless of the
+photo's own size or position (`theme.yaml: layout.citation`). The photo
+itself is never baked into the beat's rendered clip at all — it's
+composited live as its own layer on a second Resolve video track,
+independently resizable in the Inspector without re-rendering anything.
+See `docs/saint-capybara/hybrid-resolve-pipeline.md`'s "Evidence photos:
+no box, bottom-pinned citation, live overlay layer" for the full
+mechanism. `evidence.crop` still works as before (cropping happens before
+the fit-to-box sizing, whether that's the storyboard preview's paste or
+the Resolve overlay's starting size).
+
 ## Sprite selection defaults
 
 See `brand.md` sec 5's `FUNCTION_TO_POSE` table. Defaults only — a literal

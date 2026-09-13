@@ -216,10 +216,28 @@ def draw_bar_chart(img: Image.Image, theme: Theme, box: tuple[int, int, int, int
         draw.text((x0 + pad, y1 - 28), credit, font=cfont, fill=theme.color_rgba("source_teal"))
 
 
-def _paste_evidence(img: Image.Image, theme: Theme, box: tuple[int, int, int, int], project_dir: Path, evidence: dict) -> None:
+def _paste_evidence(img: Image.Image, theme: Theme, box: tuple[int, int, int, int], project_dir: Path, evidence: dict, *, bake_image: bool = True) -> None:
+    """Evidence-photo layout (2026-09-13 user direction, superseding the
+    original boxed-card look): no border/parchment box drawn around the
+    photo -- it sits directly in the mode's own background ("blank
+    space") -- and the citation is never drawn here at all (see
+    `_draw_citation`, always pinned to the fixed bottom-of-canvas zone
+    regardless of where/how large the photo ends up).
+
+    `bake_image=True` (the storyboard/mock-preview path only) still
+    pastes the photo into the flat plate so a human reviewer sees roughly
+    what's intended. `bake_image=False` (capy_beat_plates.py's real
+    build path) never pastes it -- the real photo becomes its own live,
+    independently resizable clip on a separate Resolve track instead (see
+    docs/saint-capybara/hybrid-resolve-pipeline.md, "Raw evidence photos
+    on their own timeline layer"), composited by the Resolve build step,
+    not baked in here. `box` is now only a *default fit/position hint*
+    for that preview and for the Resolve overlay's starting placement --
+    not a drawn boundary."""
+    if not bake_image:
+        return
     draw = ImageDraw.Draw(img)
     x0, y0, x1, y1 = box
-    draw.rectangle(box, fill=theme.color_rgba("parchment"), outline=theme.color_rgba("ink"), width=4)
     image_rel = evidence.get("image")
     if image_rel:
         img_path = project_dir / image_rel
@@ -229,22 +247,41 @@ def _paste_evidence(img: Image.Image, theme: Theme, box: tuple[int, int, int, in
             if crop and any(crop):
                 ev = ev.crop(tuple(crop))
             pad = theme.card_pad
-            avail_w, avail_h = (x1 - x0 - pad * 2), (y1 - y0 - pad * 2 - 40)
+            avail_w, avail_h = (x1 - x0 - pad * 2), (y1 - y0 - pad * 2)
             ratio = min(avail_w / ev.width, avail_h / ev.height, 1.0)
             ev = ev.resize((max(1, int(ev.width * ratio)), max(1, int(ev.height * ratio))), Image.LANCZOS)
-            img.alpha_composite(ev, (x0 + pad, y0 + pad))
+            paste_x = x0 + pad + (avail_w - ev.width) // 2
+            paste_y = y0 + pad + (avail_h - ev.height) // 2
+            img.alpha_composite(ev, (paste_x, paste_y))
         else:
             ec = theme.data["card_text"]["evidence_credit"]
             draw.text((x0 + 12, y0 + 12), "[missing evidence image]", font=_font(theme, ec["font"], ec["size"]), fill=theme.color_rgba("highlight_brick"))
-    credit = evidence.get("credit")
-    if credit:
-        ec = theme.data["card_text"]["evidence_credit"]
-        cfont = _font(theme, ec["font"], ec["size"])
-        lines = _wrap_text(draw, credit, cfont, (x1 - x0) - 24)
-        cy = y1 - 12 - len(lines) * (ec["size"] + 4)
-        for line in lines:
-            draw.text((x0 + 12, cy), line, font=cfont, fill=theme.color_rgba("source_teal"))
-            cy += ec["size"] + 4
+
+
+def _draw_citation(img: Image.Image, theme: Theme, credit: str) -> None:
+    """Citation/credit line for an evidence or chart beat, always pinned
+    to the fixed bottom-of-canvas zone (`theme.layout['citation']`) --
+    2026-09-13 user direction: previously this was drawn at the bottom of
+    the (now-removed) evidence box, which meant it moved around with the
+    photo's own size/position. It now has a single, predictable location
+    regardless of what the photo does."""
+    if not credit:
+        return
+    draw = ImageDraw.Draw(img)
+    w, _h = theme.canvas_size
+    zone = theme.data["layout"]["citation"]
+    ec = theme.data["card_text"]["evidence_credit"]
+    cfont = _font(theme, ec["font"], ec["size"])
+    max_width = zone["max_width"]
+    lines = _wrap_text(draw, credit, cfont, max_width)
+    line_h = ec["size"] + 4
+    total_h = len(lines) * line_h
+    cy = zone["y1"] - total_h
+    for line in lines:
+        lw = draw.textlength(line, font=cfont)
+        cx = (w - lw) / 2
+        draw.text((cx, cy), line, font=cfont, fill=theme.color_rgba("source_teal"))
+        cy += line_h
 
 
 def render_plate(
@@ -255,6 +292,7 @@ def render_plate(
     freeze_frame: Image.Image | None = None,
     sensitive: bool = False,
     preview_video_frame: Image.Image | None = None,
+    bake_evidence_image: bool = True,
 ) -> Image.Image:
     """Render one beat's plate. `freeze_frame`: the last clip's final
     frame, used only when `beat.stage == "freeze"` in HOST mode.
@@ -271,7 +309,15 @@ def render_plate(
     treatment), `video` (the source video playing continuously, not
     frozen, behind the sprite -- rendered as a transparent plate here;
     the real compositing happens in capy_render_beat_clips.py, same as
-    CLIP mode's live video)."""
+    CLIP mode's live video).
+
+    `bake_evidence_image`: whether an `evidence` beat's photo gets pasted
+    into this plate at all (2026-09-13). Storyboard/mock preview calls
+    leave this `True` so the contact sheet still shows the photo; the
+    real build (`capy_beat_plates.py`) passes `False` -- the photo is a
+    live, separately-resizable Resolve overlay clip instead, never baked
+    in. Either way the citation is drawn at the fixed bottom-of-canvas
+    zone, independent of the photo."""
     kind = beat.get("kind")
     mode = theme.mode_for(beat)
     w, h = theme.canvas_size
@@ -311,7 +357,9 @@ def render_plate(
             chart = beat.get("chart", {})
             draw_bar_chart(img, theme, box, chart.get("title", ""), chart.get("data", []), chart.get("credit", ""))
         elif kind == "evidence":
-            _paste_evidence(img, theme, box, project_dir, beat.get("evidence", {}))
+            evidence = beat.get("evidence", {})
+            _paste_evidence(img, theme, box, project_dir, evidence, bake_image=bake_evidence_image)
+            _draw_citation(img, theme, evidence.get("credit", ""))
         elif kind == "excerpt":
             attribution = beat.get("_excerpt_attribution", "")
             draw_excerpt_card(img, theme, box, beat.get("text", ""), attribution, beat_id=beat.get("id"))

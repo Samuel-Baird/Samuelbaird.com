@@ -284,35 +284,92 @@ only a single beat changed and creating a whole new project feels like
 overkill. Either way, remember the render-format gotcha above — a new
 project needs `set_format_and_codec` called again, it does not inherit it.
 
-## Raw evidence photos in the Media Pool (2026-09-13 user direction)
+## Evidence photos: no box, bottom-pinned citation, live overlay layer (2026-09-13 user direction)
+
+**Superseded the original boxed-card look for `evidence` beats (photos)
+specifically — this section replaces the 2026-09-13-earlier-that-day "Raw
+evidence photos in the Media Pool" note below with the full workflow.**
+Three linked changes, all shipped together:
+
+1. **No more bordered/filled box around the photo.** `capy/plates.py:
+   _paste_evidence` no longer draws `card.box` as a rectangle — the photo
+   (when baked at all, see point 3) sits directly in the mode's own
+   background ("blank space"), not inside a parchment card panel.
+   `card.box` in `theme.yaml` still exists but is now only a *default
+   fit/position hint*, not a drawn boundary. `card`/`excerpt` quote-card
+   kinds are unaffected — they still draw a real bordered box.
+2. **The citation always renders in a fixed strip at the very bottom of
+   the canvas** (`theme.yaml: layout.citation`, `capy/plates.py:
+   _draw_citation`), completely independent of the photo's own size or
+   position. Previously the credit was drawn at the bottom of the evidence
+   box, so it moved around with the photo; now it has one predictable
+   location no matter how the photo ends up sized. This only applies to
+   `evidence` beats so far — `chart`-kind beats (native bar rendering,
+   `draw_bar_chart`) still draw their own inline box + credit; nobody has
+   used `chart` kind in a real project yet, so extending this convention
+   to it is deferred until that actually comes up.
+3. **The photo itself is a live, independently-resizable layer in
+   Resolve, not baked into the beat's flat MP4 at all.**
+   `capy_beat_plates.py` calls `render_plate(..., bake_evidence_image=False)`
+   — the real per-project build never pastes the photo into the plate PNG,
+   leaving that region of the beat's background plain. (The storyboard
+   contact sheet / `--mock` preview still call `render_plate` with the
+   default `bake_evidence_image=True` so a human reviewer sees roughly
+   what's intended before Gate A — that preview paste is cosmetic only and
+   never reaches the real render.) The real photo instead becomes its own
+   clip on a second video track in the Resolve timeline, time-aligned to
+   its evidence beat's span on the main track, left at Resolve's own
+   default fit/transform — the user resizes/repositions it directly in
+   Resolve's Inspector (`timeline_item.set_transform`) exactly like any
+   other clip, no re-render of the beat's MP4 required to adjust it.
+
+**Resolve build checklist addition** (after building the main beat-clip
+track per steps 1-5 above):
+
+a. `timeline.add_track({"track_type": "video"})` — a second video track,
+   above the main one, dedicated to evidence-photo overlays.
+b. For each `evidence` beat, compute its `[start_frame, end_frame)` on the
+   timeline from the beat-clip manifest's cumulative durations (same
+   arithmetic as the gap/duration check in step 5) — this is the record
+   range its overlay should occupy on the new track, matching exactly
+   where that beat sits on the main track underneath it.
+c. Place that beat's already-imported raw photo (see "Raw evidence photos
+   in the Media Pool" below — same import, now also placed on the
+   timeline, not just left sitting in the pool) onto the new track at
+   that record range. Leave its Transform at Resolve's own default — don't
+   try to hand-compute a "correct" ZoomX/ZoomY/Pan/Tilt, the user is
+   expected to size it themselves in the Inspector; the point of this
+   whole change is giving them that control, not pre-empting it.
+d. Re-verify `timeline.get_track_count("video")` is now 2 and
+   `timeline.get_items_in_track` on the new track shows exactly the
+   evidence-beat clips at their expected positions before moving on to
+   render.
+
+## Raw evidence photos in the Media Pool (2026-09-13 user direction, superseded above)
 
 **Every evidence-beat's raw source photo (the file at `evidence.image:` in
 `beats.yaml`) gets imported into the Resolve project's Media Pool as its
-own item, in addition to — not instead of — the composited
-`beat_<id>.mp4` that actually goes on the timeline.** These raw photos are
-never placed on the timeline themselves; they just sit in the Media Pool
-(in their own subfolder, e.g. `Evidence Photos` — see the build checklist
-step 3b) so the original, uncropped, full-resolution image is sitting
-right there in the project if the user wants to reposition it, resize it,
-swap it into a different beat, or build something with it manually in
-Resolve later.
+own item** (in a subfolder, e.g. `Evidence Photos` — build checklist step
+3b), in addition to the composited `beat_<id>.mp4`. Originally written
+when these photos were meant to sit in the pool only for manual reference;
+now (see above) they're also placed on the timeline itself as a live
+overlay layer, so this import step is a prerequisite for that, not just a
+nice-to-have.
 
-**Why:** every image in this pipeline gets baked flat into its beat's
-plate PNG and then into that beat's composited MP4 (see "What actually
-shipped" above) — there is no way to get back to the original photo from
-inside Resolve once that's done, short of reopening the source file on
-disk outside the app entirely. Importing the raw photo alongside costs
-one extra `media_pool.safe_import_media` call per evidence beat and
-removes that dead end.
+**Why:** every image in this pipeline used to get baked flat into its
+beat's plate PNG and then into that beat's composited MP4 (see "What
+actually shipped" above) — there was no way to get back to the original
+photo from inside Resolve once that happened, short of reopening the
+source file on disk outside the app entirely. Importing the raw photo (and
+now placing it as its own layer) removes that dead end.
 
-**How to apply:** any time a project has one or more `evidence`/`chart`
-beats (or any other beat kind that carries an `image:`/`background:` path
-— `stage: image` narration beats count too), import each of those source
-image files into the Media Pool during the Resolve build checklist's
-import step, alongside the beat clips. This is a standing rule for every
-project going forward, not specific to any one video — update an
-already-shipped project's Resolve file too if it's reopened for edits and
-doesn't have its evidence photos in the pool yet.
+**How to apply:** any time a project has one or more `evidence` beats,
+import each one's source image file into the Media Pool during the
+Resolve build checklist's import step, alongside the beat clips, then
+place it on the overlay track per the checklist above. This is a standing
+rule for every project going forward, not specific to any one video —
+update an already-shipped project's Resolve file too if it's reopened for
+edits and doesn't have this yet.
 
 ## Known gaps / open questions
 

@@ -108,10 +108,30 @@ layout:
   # tradeoff per that same feedback ("captions can be moved lower if
   # needed"), not an oversight.
   card:
+    # box (2026-09-13 update): no longer drawn as a bordered/filled
+    # rectangle for `evidence` beats (see plates.py: _paste_evidence) --
+    # it's now only a default fit/position hint, both for the
+    # storyboard-preview paste and for where the live Resolve overlay
+    # clip (see hybrid-resolve-pipeline.md) starts out before the user
+    # resizes it. `card`/`excerpt` quote-card kinds still draw this as a
+    # real bordered box (draw_card/draw_excerpt_card) -- unchanged.
     box:      { x0: 40, y0: 250, x1: 930, y1: 1150 }
     pad: 44
     sprite:   { x0: 32, size: 480, outline_px: 4, shadow: null }
     captions: { y0: 1170, y1: 1330, max_width: 960 }
+
+  # Citation/credit zone (2026-09-13 user direction) -- a fixed
+  # bottom-of-canvas strip for an `evidence` beat's source credit,
+  # independent of `card.box` above: previously the credit was drawn at
+  # the bottom of the (now unbordered) evidence box, so it moved around
+  # with wherever the photo ended up. It now always renders in this same
+  # spot regardless of the photo's size/position. Deliberately sits
+  # inside the documented platform-unsafe bottom band (platform_safe.bottom,
+  # y>1580) -- same accepted trade-off as sprite_bottom: 1850 above.
+  citation:
+    y0: 1840
+    y1: 1910
+    max_width: 1000
 
 captions:
   # `size` is the starting px; the renderer (tools/capy/text.py) wraps by

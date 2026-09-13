@@ -124,6 +124,7 @@ def main() -> int:
             project_dir=project,
             freeze_frame=freeze_frame,
             sensitive=sensitive,
+            bake_evidence_image=False,
         )
         out_path = frames_dir / f"plate_{bid}.png"
         img.save(out_path)
