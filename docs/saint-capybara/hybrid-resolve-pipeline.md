@@ -125,7 +125,11 @@ after Gate A approval:
    `frames/beat_clips_manifest.json`.
 5. **Import + assemble in Resolve** (via the davinci-resolve MCP —
    there is no wrapper script for this step, drive the MCP directly
-   following the checklist below).
+   following the checklist below). **Also import each evidence-beat's raw
+   source photo** (the file at that beat's `evidence.image:` path — a
+   chart, a manuscript-page crop, a painting, whatever's on screen), not
+   just the composited `beat_<id>.mp4` it's baked into — see "Raw evidence
+   photos in the Media Pool" below.
 6. **Metadata-strip remux**: Resolve's render doesn't give fine enough
    control for the anonymity requirements in `brand.md` sec 10, so
    finish with one `ffmpeg -i <resolve-output> -c copy -map_metadata -1
@@ -194,6 +198,13 @@ specifics that mattered in practice, building the two videos above:
    happens anyway, `media_pool.delete_clips` (confirm-gated) the grouped
    item and re-import one at a time — deleting a Media Pool reference
    does not touch the file on disk.
+3b. **Also import each evidence-beat's raw photo as its own Media Pool
+   item** (same one-file-per-call rule as beat clips) — see "Raw evidence
+   photos in the Media Pool" below for why. Import these into their own
+   Media Pool subfolder (`media_pool.add_subfolder`, e.g. `Evidence
+   Photos`) so they're easy to find and clearly distinct from the
+   timeline-ready beat clips; they are never added to the timeline
+   themselves.
 4. **Build the timeline**: `media_pool.create_timeline_from_clips` with
    `clip_ids` in beat order (the simple end-to-end append mode — no
    `record_frame` math needed since beat clips play back to back with no
@@ -205,7 +216,17 @@ specifics that mattered in practice, building the two videos above:
    `timeline.detect_gaps_overlaps` (expect zero of each).
 6. **Render**: `render.set_format_and_codec` (`mp4`/`H264`),
    `render.set_settings` with `TargetDir`/`CustomName`, `render.add_job`,
-   `render.start`. Poll `render.get_job_status` — completion percentage
+   `render.start`. **Render format/codec is per-project, not a Resolve-wide
+   default — a brand-new project (e.g. one created specifically to dodge
+   the stale-clip-caching gotcha below) does NOT inherit it from a
+   previous project in the same session.** Skipping `set_format_and_codec`
+   on a fresh project silently rendered to some other default (hit
+   2026-09-12: a ~2GB single-file output in an `apv`-codec container
+   instead of the expected ~50MB H.264 file) — `render.verify_output`
+   caught it immediately via `output_probe.streams[0].codec_name`, but
+   don't rely on catching it after the fact: call
+   `set_format_and_codec` explicitly every time a new project is created
+   for a render, never assume it carries over. Poll `render.get_job_status` — completion percentage
    can sit at one value for 20-30s on a several-minute render before
    jumping, that's normal, not a stall (cross-check
    `resolve_control.runtime_mode`'s `database_attached` if truly
@@ -246,6 +267,52 @@ something in Resolve was caching by clip name/position, surviving even a
 full media-pool purge. If a plain re-render doesn't clear a content
 mismatch, rename the specific stale beat's file next, rather than
 re-rendering the same names again.
+
+**Simpler alternative, used successfully 2026-09-12 on
+`joseph-smith-american-muhammad` across three separate re-renders (v2, v3,
+v4) after script edits touching different beats each time: just create a
+brand-new Resolve project (`-v2`/`-v3`/... suffix) instead of reusing the
+old one, every time any beat clip's *content* changed (not just a new beat
+appended).** A fresh project has never once reproduced stale audio in this
+pipeline's history so far — it sidesteps whatever Resolve caches by
+clip name/position entirely, at the cost of redoing the
+create-project/set-format/import/timeline/render steps each time (a couple
+minutes, not the multi-step forensic work the single-file-rename fix
+above requires). Prefer this over the per-file-rename fix when more than
+one or two beats changed; reach for the rename-one-file fix instead when
+only a single beat changed and creating a whole new project feels like
+overkill. Either way, remember the render-format gotcha above — a new
+project needs `set_format_and_codec` called again, it does not inherit it.
+
+## Raw evidence photos in the Media Pool (2026-09-13 user direction)
+
+**Every evidence-beat's raw source photo (the file at `evidence.image:` in
+`beats.yaml`) gets imported into the Resolve project's Media Pool as its
+own item, in addition to — not instead of — the composited
+`beat_<id>.mp4` that actually goes on the timeline.** These raw photos are
+never placed on the timeline themselves; they just sit in the Media Pool
+(in their own subfolder, e.g. `Evidence Photos` — see the build checklist
+step 3b) so the original, uncropped, full-resolution image is sitting
+right there in the project if the user wants to reposition it, resize it,
+swap it into a different beat, or build something with it manually in
+Resolve later.
+
+**Why:** every image in this pipeline gets baked flat into its beat's
+plate PNG and then into that beat's composited MP4 (see "What actually
+shipped" above) — there is no way to get back to the original photo from
+inside Resolve once that's done, short of reopening the source file on
+disk outside the app entirely. Importing the raw photo alongside costs
+one extra `media_pool.safe_import_media` call per evidence beat and
+removes that dead end.
+
+**How to apply:** any time a project has one or more `evidence`/`chart`
+beats (or any other beat kind that carries an `image:`/`background:` path
+— `stage: image` narration beats count too), import each of those source
+image files into the Media Pool during the Resolve build checklist's
+import step, alongside the beat clips. This is a standing rule for every
+project going forward, not specific to any one video — update an
+already-shipped project's Resolve file too if it's reopened for edits and
+doesn't have its evidence photos in the pool yet.
 
 ## Known gaps / open questions
 
