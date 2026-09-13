@@ -1,6 +1,6 @@
 # Script — Was Joseph Smith's Youngest Wife Really a "Child Bride"?
 
-**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 144.9s (budget 60-180s) | **Source time:** 22.8s (16%)
+**Slug:** `joseph-smith-american-muhammad` | **Estimated runtime:** 145.2s (budget 60-180s) | **Source time:** 22.8s (16%)
 
 **Hook (title/description only, not shown on screen):** 'He called Joseph Smith\'s 14-year-old wife a "child bride" -- here\'s what the record actually says'
 
@@ -70,17 +70,17 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
-## 10. `n05` (narration, ~12.0s)
+## 10. `n05` (narration, ~11.2s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** surprised
-- **Narration:** Worth naming directly for any Catholic viewers here: the Church's own current Code of Canon Law -- canon 1083, section 1 -- still sets fourteen as the minimum age at which a woman can validly marry. That's binding law today, not a historical footnote.
+- **Narration:** Worth naming directly, since Joe Heschmeyer is Catholic: the Catholic Church's own current Code of Canon Law -- canon 1083, section 1 -- still sets fourteen as the minimum age at which a woman can validly marry under universal canon law.
 - **Sources:** vatican-cic-cann998-1165
 - **Notes:** 
 
-## 11. `n06` (narration, ~7.9s)
+## 11. `n06` (narration, ~11.5s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** teaching
-- **Narration:** And before the 1917 Code, that floor was twelve for both sexes -- younger than Helen Mar Kimball's age, in marriages where, unlike hers, conjugal relations were fully permitted.
+- **Narration:** Before the 1917 Code took effect, that age was twelve. And unlike Joseph Smith's sealings to the younger wives, where sexual relations are unsupported by evidence, these canonical ages refer to actual marriages -- marriages in which conjugal relations are fully permitted.
 - **Sources:** churchlifejournal-canon-law-child-marriage
 - **Notes:** 
 
@@ -127,10 +127,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** hales-plural-marriages-sexual-faq
 - **Notes:** 
 
-## 18. `n10` (narration, ~7.9s)
+## 18. `n10` (narration, ~5.5s)
 - **Original Video Transcript:** You know, he had more wives than Muhammad. He had more wives than Muhammad? Yeah.
 - **Pose:** teaching
-- **Narration:** The real question was never the scoreboard. It's what those marriages actually were -- and for the one everyone brings up, the record doesn't support what "child bride" implies.
+- **Narration:** The real question is what those marriages entail. The record doesn't support what "child bride" implies. These marriages were consensual.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
