@@ -94,7 +94,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 13. `n07` (narration, ~7.6s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** thoughtful
-- **Narration:** That doesn't make it comfortable for a modern reader. But it does mean "child bride" imports a modern category onto a nineteenth-century sealing that entailed no sexual relationship.
+- **Narration:** That doesn't make it comfortable for a modern reader. But it does mean "child bride" imports a modern category onto a nineteenth-century sealing that has no evidence of a sexual relationship.
 - **Sources:** hales-js-polygamy-2-history
 - **Notes:** 
 
