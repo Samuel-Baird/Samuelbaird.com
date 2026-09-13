@@ -73,14 +73,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n05` (narration, ~11.2s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** surprised
-- **Narration:** Worth naming directly, since Joe Heschmeyer is Catholic: the Catholic Church's own current Code of Canon Law -- canon 1083, section 1 -- still sets fourteen as the minimum age at which a woman can validly marry under universal canon law.
+- **Narration:** Worth naming directly, since Matt Fradd, the host of this show is Catholic: the Catholic Church's own current Code of Canon Law -- canon 1083, section 1 -- still sets fourteen as the minimum age at which a woman can validly marry under universal canon law.
 - **Sources:** vatican-cic-cann998-1165
 - **Notes:** 
 
 ## 11. `n06` (narration, ~11.5s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** teaching
-- **Narration:** Before the 1917 Code took effect, that age was twelve. And unlike Joseph Smith's sealings to the younger wives, where sexual relations are unsupported by evidence, these canonical ages refer to actual marriages -- marriages in which conjugal relations are fully permitted.
+- **Narration:** Before the 1917 Code took effect, that age was twelve. And unlike Joseph Smith's sealings to the younger wives, where sexual relations are unsupported by evidence, these canonical ages refer to actual marriages, marriages in which conjugal relations are fully permitted.
 - **Sources:** churchlifejournal-canon-law-child-marriage
 - **Notes:** 
 
@@ -94,7 +94,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 13. `e02` (evidence, ~5.7s)
 - **Original Video Transcript:** I mean, both of them claim they had an angel appear to them, and they were going to fix the world religions because they've gone astray, they have multiple wives, including a child bride. Joseph Smith had a child bride? Probably a 14-year-old.
 - **Pose:** pointing
-- **Narration:** Age by itself doesn't predict what people assume -- here's every wife with a documented answer either way, youngest to oldest.
+- **Narration:** Age by itself doesn't predict what people assume, here's every wife with a documented answer either way, youngest to oldest.
 - **Evidence:** `images/joseph-smith-s-polygamy/plural-marriage-age-and-likelihood-of-sexual-relations.png` — Plural wife age and evidence of sexual relations -- Brian C. Hales, josephsmithspolygamy.org (placement: panel)
 - **Sources:** hales-plural-marriages-sexual-faq
 - **Notes:** 
