@@ -14,6 +14,14 @@ export const metadata: Metadata = {
 };
 
 const SLIDES = [
+  {
+    file: "a_survey.png",
+    title: "The State of Theology: commissioned by Ligonier Ministries, fielded by Lifeway Research.",
+  },
+  {
+    file: "b_before_we_start.png",
+    title: "Before we start: two things.",
+  },
   { file: "0_intro.png", title: "Evangelicals won" },
   {
     file: "1_trinity.png",
