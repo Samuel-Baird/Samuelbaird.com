@@ -2,7 +2,7 @@
 
 **Slug:** `baptism-fulness-claim` | **Estimated runtime:** 149.5s (budget 60-180s) | **Source time:** 11.5s (8%)
 
-**Hook (title/description only, not shown on screen):** "He says Mormon baptism is about joining a church, not forgiving sin. Half of that's right -- and the other half makes our case, not his."
+**Hook (title/description only, not shown on screen):** "She says Mormon baptism is about joining a church, not forgiving sin. Half of that's right, and the other half makes our case, not hers."
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~16.4s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** thoughtful
-- **Narration:** Half of that is exactly right, and worth saying plainly: baptism does make you a member of the Church. The Church's own materials say so. But the sentence carries a second, unstated claim -- that if baptism is for membership, it isn't also for forgiveness of sins. That's the part to test, and it's the part that doesn't hold up.
+- **Narration:** Half of that is exactly right, and worth saying plainly: baptism does make you a member of the Church. The Church's own materials say so. But the sentence carries a second, unstated claim, that if baptism is for membership, it isn't also for forgiveness of sins. That's the part to test, and it's the part that doesn't hold up.
 - **Notes:** 
 
 ## 03. `q02` (card, ~15.0s)
@@ -29,7 +29,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `q03` (card, ~13.1s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** quote
-- **Narration:** Here's the other half of that gate, the part the clip never sees. In Latter-day Saint practice, baptism and confirmation are one gate, not two -- converts are confirmed at the baptismal service, or as soon as possible after. Second Nephi puts the full sequence in one verse.
+- **Narration:** Here's the other half of that gate, the part the clip never sees. In Latter-day Saint practice, baptism and confirmation are one gate, not two. converts are confirmed at the baptismal service, or as soon as possible after. Second Nephi puts the full sequence in one verse.
 - **Card quote:** “For the gate by which ye should enter is repentance and baptism by water; and then cometh a remission of your sins by fire and by the Holy Ghost.” — 2 Nephi 31:17
 - **Sources:** 2nephi31-1830, handbook-18-8-confirmation-timing
 - **Notes:** 
@@ -66,7 +66,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n06b` (narration, ~18.8s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** concerned
-- **Narration:** The handbook even says membership isn't final until both ordinances are, quote, completed and properly recorded. An apostle said as much from the pulpit -- that many members don't fully understand what happened when they went into the water. If someone came away thinking membership was the whole point, that's a real gap in how we teach it. What it isn't is a gate with the forgiveness taken out.
+- **Narration:** The handbook even says membership isn't final until both ordinances are, quote, completed and properly recorded. An apostle said as much from the pulpit, that many members don't fully understand what happened when they went into the water. 
 - **Sources:** handbook-18-8-confirmation-timing, hales-2000-members-dont-understand
 - **Notes:** 
 
@@ -80,7 +80,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n99` (narration, ~4.1s)
 - **Original Video Transcript:** Today I realized that Christians get baptized to wash away their sins, but members of the Mormon Church get baptized to become members of their church.
 - **Pose:** encouraging
-- **Narration:** So no -- this isn't a quiet admission that Mormon baptism skips forgiveness. God bless.
+- **Narration:** So no, this isn't a quiet admission that Mormon baptism skips forgiveness. God bless.
 - **Notes:** 
 
 ## Full source transcript
