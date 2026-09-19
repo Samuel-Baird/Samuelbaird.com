@@ -24,14 +24,23 @@ framing, which overclaims beyond what any single case establishes.
   detection, not that they raise abuse, and none of it tests confession
   exemptions. Don't repeat that claim on screen; use the narrower
   confidentiality argument.
-- **Church guidance:** leaders and members "should fulfill all legal
-  obligations to report" and leaders must never counsel anyone not to
-  report; the help line exists to help leaders comply with local law
-  (Church abuse guidance pages, newsroom "Getting it right" piece). Wording
-  came via summarized fetches; re-check live pages before quoting.
-- **Section numbers:** abuse is General Handbook **38.6.2**. Critics
-  sometimes cite "38.16.6" (doesn't exist) or the old "Handbook of
-  Instruction" name.
+- **General Handbook (verified verbatim 2026-09-18):** 38.6.2 says "If
+  members become aware of instances of abuse, they report it to civil
+  authorities and counsel with the bishop." 38.6.2.7: "Church leaders and
+  members should fulfill all legal obligations to report abuse to civil
+  authorities," and "in many locations, any person who learns of abuse is
+  required to report it." 38.6.2.1 sends bishops to the help line to
+  "comply with legal requirements for reporting abuse." Gospel Topics /
+  "Preventing and Responding to Abuse": leaders "should never disregard a
+  report of abuse or counsel a member not to report criminal activity."
+  **Don't dispute critics on this:** a critic who says the Handbook tells
+  members to report is right. Critics sometimes cite "38.16.6" (no such
+  section exists; the real one is 38.6.2) or the old "Handbook of
+  Instruction" name; that is a garbled cite, not a false claim.
+- **Utah (H.B. 432, 2024, enrolled text):** clergy are exempt only for a
+  confession "made directly" by the perpetrator where clergy are bound to
+  confidentiality; a cleric who learns of abuse "from any source other
+  than confession of the perpetrator" must report.
 - **Law:** Child Welfare Information Gateway, "Clergy as Mandatory
   Reporters" (2023): ~16 states require any person to report (Utah,
   Arizona's statute reaches "any person"); ~29 list clergy; privilege
