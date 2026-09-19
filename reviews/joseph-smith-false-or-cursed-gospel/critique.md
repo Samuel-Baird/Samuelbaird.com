@@ -7,9 +7,9 @@ Three critics (opponent, factcheck, editor) ran on the first draft; the factchec
 
 ## MAJOR (left for review)
 - [opponent] script-level — The script does not say why Joseph Smith's own message passes Galatians 1:8 (which covers "an angel from heaven"), and makes only a thin positive case for the Restoration. n01 and n04 now name the point ("a message, even one from an angel"; "restored, not replaced") but do not prove it.
-- [factcheck|opponent] n04 — JS-H 1:19 does not itself say "authority and fullness were lost and restored"; the beat is marked `opinion: true` and reads the "abomination" language as blunt language about the creeds and their teachers, not a curse on Christians today. A stronger fix needs a cited apostasy source (Gospel Topics essay, not yet opened).
+- [factcheck|opponent] n04 — RESOLVED 2026-09-18: n04 now rests on the Gospel Topics apostasy page (actual page text read: "the Lord withdrew the authority of the priesthood from the earth"; "restored, not reformed, Christianity") and is worded to match it; the JS-H 1:19 reading stays `opinion: true`.
 - [factcheck|opponent] n03 — Trent's anathema on a proposition is set beside Paul's curse on a preacher; the equivalence is shown by usage, not proven. The pope-as-antichrist clause targets an office, and Schaff notes it "does not unchurch" Rome. The beat now says some condemnations were lifted or reworded (JDDJ 1999, WCF revision).
-- [factcheck] n09 — The CCC 818 wording is accurate; the two-questions framing is the script's own synthesis, and the quote was read through a summarising fetch. Re-open the Vatican page before shipping.
+- [factcheck] n09 — Quote RE-VERIFIED 2026-09-18 against the actual vatican.va page text (CCC 818: "one cannot charge with the sin of the separation those who at present are born into these communities"). The two-questions framing remains the script's own synthesis.
 - [factcheck] n06 — The 1978 statement names "great religious leaders" including the Reformers, not other Christians' sincerity in general; the beat says "the Reformers, among other great religious leaders".
 
 ## MINOR (left for review)

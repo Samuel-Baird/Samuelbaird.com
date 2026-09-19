@@ -1,6 +1,6 @@
 # Script — Is it Joseph Smith or historic Christianity that preaches a cursed gospel?
 
-**Slug:** `joseph-smith-false-or-cursed-gospel` | **Estimated runtime:** 123.3s (budget 60-180s) | **Source time:** 19.6s (16%)
+**Slug:** `joseph-smith-false-or-cursed-gospel` | **Estimated runtime:** 124.3s (budget 60-180s) | **Source time:** 19.6s (16%)
 
 **Hook (title/description only, not shown on screen):** "Either Joseph Smith is false or historic Christianity is cursed. Apply that test evenly and see who's left."
 **Exemplars modeled:** offenders-are-mormons-christian, sola-scriptura-protestant, succession-catholic
@@ -34,11 +34,11 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** tanner-1990-trent-session6, schaff-1877-wcf-25-6, schaff-1877-wcf-original-and-revision, jddj-1999-paras-41-42
 - **Notes:** 
 
-## 05. `n04` (narration, ~13.4s)
+## 05. `n04` (narration, ~14.5s)
 - **Original Video Transcript:** Well, either Joseph Smith is false or historic Christianity, uh, preach a curse gospel. Both cannot be true.
 - **Pose:** talking
-- **Narration:** Latter-day Saints say authority and fullness were lost and restored, and that Christ's gospel was restored, not replaced. The First Vision does call the creeds an abomination, and that is blunt language about those creeds and their teachers. It is not the same as calling every Christian today accursed.
-- **Sources:** js-h-1-19
+- **Narration:** Latter-day Saints say priesthood authority was withdrawn and later restored, so this is restored Christianity, not reformed Christianity, and not a replacement. The First Vision does call the creeds an abomination, and that is blunt language about those creeds and their teachers. It is not the same as calling every Christian today accursed.
+- **Sources:** js-h-1-19, gospel-topics-apostasy
 - **Notes:** 
 
 ## 06. `c02` (clip, ~12.9s)
