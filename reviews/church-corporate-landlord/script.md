@@ -152,7 +152,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 20. `n10a` (narration, ~10.6s) — NEW
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** teaching
-- **Narration:** One more sanity check on the headline numbers: even a wildly generous estimate -- three hundred billion, well above anything actually disclosed -- divided across the Church's roughly seventeen million members comes out to about seventeen thousand dollars a person.
+- **Narration:** One more sanity check on the headline numbers: even a wildly generous estimate -- three hundred billion, well above anything actually disclosed -- divided across the Church's roughly seventeen million members comes out to about seventeen thousand dollars, really not that much.
 - **Sources:** NEEDS SOURCE -- current published membership figure (not pulled yet, see note above script; "$300 billion" is stated on screen as a hypothetical ceiling, not a claimed total, and needs no source for that reason)
 - **Notes:** 
 
