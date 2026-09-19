@@ -122,7 +122,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 46.0s–55.0s @ speed 1.0
 - **Notes:** 
 
-## 17. `c06` (clip, ~9.0s)
+## 16. `c06` (clip, ~9.0s)
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** disappointed
 - **Clip:** Source video, 58.0s–67.0s @ speed 1.0
