@@ -122,48 +122,27 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 46.0s–55.0s @ speed 1.0
 - **Notes:** 
 
-## 16. `n07` (narration, ~11.2s)
-- **Original Video Transcript:** And that's probably due to the fact that the church failed to properly fill out their 13F forms for over 22 years. 1997 to 2019, they were supposed to file just one 13F, but instead they filed as 13 different shell companies.
-- **Pose:** source
-- **Narration:** That part is exactly right, and the SEC's order says why: leaders adopted the shell-company structure specifically to keep the fund's size from becoming public. Settled fact -- the Church accepted it by settling. I'm not going to argue that away. (remove this clip)
-- **Sources:** sec-order-2023-96951, sec-2023-35-press-release
-- **Notes:** 
-
 ## 17. `c06` (clip, ~9.0s)
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** disappointed
 - **Clip:** Source video, 58.0s–67.0s @ speed 1.0
 - **Notes:** 
 
-## 18. `n08` (narration, ~11.5s)
-- **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
-- **Pose:** thoughtful
-- **Narration:** So why not just disclose it, like I just did? The Church's own 2023 statement says it relied on legal counsel to keep the portfolio private -- a real answer, not a good one. Wanting reserves and hiding them are different questions. (remove this line as well)
-- **Sources:** sec-order-2023-96951, church-newsroom-sec-statement-2023
-- **Notes:** 
-
-## 19. `n09` (narration, ~6.3s)
-- **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
-- **Pose:** encouraging
-- **Narration:** What the clip leaves out: this ended. Since 2019, one honest report every year, and the SEC's full penalty, paid. Concealed, caught, corrected. (remove this line)
-- **Sources:** church-news-2023-compliance-since-2019, sec-2023-35-press-release
-- **Notes:** 
-
-## 20. `n10a` (narration, ~10.6s) — NEW
+## 17. `n10a` (narration, ~10.6s) — NEW
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** teaching
 - **Narration:** One more sanity check on the headline numbers: even a wildly generous estimate -- three hundred billion, well above anything actually disclosed -- divided across the Church's roughly seventeen million members comes out to about seventeen thousand dollars, really not that much.
 - **Sources:** NEEDS SOURCE -- current published membership figure (not pulled yet, see note above script; "$300 billion" is stated on screen as a hypothetical ceiling, not a claimed total, and needs no source for that reason)
 - **Notes:** 
 
-## 21. `n10b` (narration, ~11.1s) — NEW
+## 18. `n10b` (narration, ~11.1s) — NEW
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** encouraging
 - **Narration:** And Church humanitarian aid already goes to non-members as a matter of policy, not exception. A reserve that size isn't a war chest -- it's what you'd want on hand to help everyone, member or not, if something genuinely catastrophic happened.
 - **Sources:** NEEDS SOURCE -- Church humanitarian aid non-member policy (likely already sourced elsewhere in the pipeline's common-issues docs; not attached to this project yet)
 - **Notes:** 
 
-## 22. `n99` (narration, ~9.5s)
+## 19. `n99` (narration, ~9.5s)
 - **Original Video Transcript:** They tried to hide the fact that they had a lot of money, so they split it up into 13 different companies. When in reality, by 2018, they already had $32 billion. Because they thought if people really knew how much money they had, there'd be a negative reaction.
 - **Pose:** encouraging
 - **Narration:** So: not a hedge fund and not Blackstone. A non-profit reserve, honestly justified. God bless.
