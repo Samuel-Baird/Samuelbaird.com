@@ -74,14 +74,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n05` (narration, ~8.2s)
 - **Original Video Transcript:** from any kind of other religion. It was started to be different from Christian. And then only recently do you have this evolution in Mormonism where the Mormons are trying to claim like, no, we are Christians because that's just antithetical to everything that they've ever taught in their history. Why? I don't know why they're trying to pretend that they're Christians now. Either there
 - **Pose:** teaching
-- **Narration:** That's backwards. Latter-day Saints have called themselves Christian since at least 1863, and it was an official Church position by 1907 -- over a century before now, not 'only recently.'
+- **Narration:** That's backwards. Latter-day Saints have called themselves Christian since at least the beggining, not 'only recently.'
 - **Sources:** young-1863-christian-or-unchristian, conference-record-1907-address-to-the-world
 - **Notes:** 
 
 ## 12. `n06` (narration, ~13.4s)
 - **Original Video Transcript:** from any kind of other religion. It was started to be different from Christian. And then only recently do you have this evolution in Mormonism where the Mormons are trying to claim like, no, we are Christians because that's just antithetical to everything that they've ever taught in their history. Why? I don't know why they're trying to pretend that they're Christians now. Either there
 - **Pose:** concerned
-- **Narration:** What has genuinely shifted is emphasis, not the underlying claim itself. In 2018 the Church's own president gave a full conference address admitting the 'Mormon' branding had let public focus drift away from Christ's own name -- a real, recent change, just not the one actually being described here.
+- **Narration:** What has genuinely shifted is emphasis, not the underlying claim itself. In 2018 the Church's own president gave a full conference address saying that the 'Mormon' branding had let public focus drift away from Christ's own name -- a real, recent change, just not the one actually being described here.
 - **Sources:** nelson-2018-correct-name-of-the-church
 - **Notes:** 
 
