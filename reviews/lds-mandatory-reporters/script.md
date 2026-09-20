@@ -23,7 +23,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n02` (narration, ~13.1s)
 - **Original Video Transcript:** Well, I wish it didn't legally fight for the right to protect ecclesiastical leaders in their efforts to protect sexual predators. Also, just to let members of the Church of Jesus
 - **Pose:** concerned
-- **Narration:** The court held that judges must give substantial deference to a church's own definition of confession, which is a lot of trust to place in an institution. But that is a dispute about where the law draws a line, not proof that anyone set out to shield abusers.
+- **Narration:** It was not proof that anyone set out to shield abusers.
 - **Sources:** az-doe-v-corporation-2026
 - **Notes:** 
 
@@ -36,14 +36,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n03a` (narration, ~12.0s)
 - **Original Video Transcript:** mandatory reporters. It says in Policy 38.16.6 and 2, that if a member suspects sexual abuse or physical abuse, that they should to local law enforcement. Of note, it says members should
 - **Pose:** pointing
-- **Narration:** The General Handbook does tell members to report abuse to civil authorities. Section 38.6.2 says that if members become aware of abuse, they report it and counsel with the bishop. That is likely the section she means, since there is no thirty-eight sixteen six.
+- **Narration:** The General Handbook does tell members to report abuse to civil authorities. Section 38.6.2 says that if members become aware of abuse, they report it and counsel with the bishop. That is likely the section he means, since there is no 38.16.6.
 - **Sources:** general-handbook-38, critic-video
 - **Notes:** 
 
 ## 06. `n03b` (narration, ~12.8s)
 - **Original Video Transcript:** mandatory reporters. It says in Policy 38.16.6 and 2, that if a member suspects sexual abuse or physical abuse, that they should to local law enforcement. Of note, it says members should
 - **Pose:** teaching
-- **Narration:** Subsection 38.6.2.7 adds that leaders and members should fulfill all legal obligations to report, and that in many places any person who learns of abuse must report. Utah and Arizona are two of those places. So the Church's own book tells members what she says it does.
+- **Narration:** Subsection 38.6.2.7 adds that leaders and members should fulfill all legal obligations to report, and that in many places any person who learns of abuse must report. Utah and Arizona are two of those places. So the Church's own book tells members what he says it does.
 - **Sources:** general-handbook-38, childwelfare-clergy-2023
 - **Notes:** 
 
@@ -70,7 +70,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n05` (narration, ~12.0s)
 - **Original Video Transcript:** do that. Your bishop is not going to do that because he has a different policy. The Church wants to protect bishops' right to have have confessions. They legally are fighting for the
 - **Pose:** solemn
-- **Narration:** Whether that exemption helps or hurts is a real question. Church counsel says more abuse surfaces where privilege exists, but I found no independent check of that. Research on universal reporting laws hasn't shown they improve detection, and none of it tests confession exemptions.
+- **Narration:** Whether that exemption helps or hurts is a real question. Church counsel says more abuse surfaces where privilege exists, but I found no independent check of that. Research on universal reporting laws hasn't shown they improve detection, and none of it tests confession exemptions. (use FAIR source and find things like protected reporting. can look into things like catholic confession for data)
 - **Sources:** austin-2025-deseret, ldi-reporting-research
 - **Notes:** 
 
