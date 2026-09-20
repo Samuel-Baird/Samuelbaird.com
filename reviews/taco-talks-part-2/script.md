@@ -1,6 +1,6 @@
 # Script — Did Joseph Smith call Moroni an 'angel of light'?
 
-**Slug:** `taco-talks-part-2` | **Estimated runtime:** 72.8s (budget 60-180s) | **Source time:** 18.8s (26%)
+**Slug:** `taco-talks-part-2` | **Estimated runtime:** ~91s (budget 60-180s) | **Source time:** 18.8s (26%)
 
 **Hook (title/description only, not shown on screen):** 'Wait, did he actually call it an angel of light?'
 
@@ -15,14 +15,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~9.8s)
 - **Original Video Transcript:** all and that he lied. But then he had another testament of Jesus Christ, which he just completely made up. He claimed that he made it up. No, he claimed that an angel of light gave it to him.
 - **Pose:** teaching
-- **Narration:** Smith's own account doesn't actually use that phrase for this. He describes the messenger plainly as 'a messenger sent from the presence of God... and that his name was Moroni' -- not an angel of light.
+- **Narration:** Smith's own account doesn't actually use that phrase for this. He describes the messenger plainly as 'a messenger sent from the presence of God... and that his name was Moroni', not an angel of light.
 - **Sources:** js-history-1838-v27-35
 - **Notes:** 
 
 ## 03. `n02` (narration, ~10.4s)
 - **Original Video Transcript:** all and that he lied. But then he had another testament of Jesus Christ, which he just completely made up. He claimed that he made it up. No, he claimed that an angel of light gave it to him.
 - **Pose:** pointing
-- **Narration:** Smith does use the phrase 'angel of light' elsewhere in his own history -- but for a completely different story, about detecting an impostor spirit claiming to be an angel. It's not his description of Moroni at all.
+- **Narration:** Smith does use the phrase 'angel of light' elsewhere in his own history, but for a completely different story about detecting an impostor spirit claiming to be an angel. It's not his description of Moroni at all.
 - **Sources:** quinn-1994-mormon-hierarchy
 - **Notes:** 
 
@@ -32,30 +32,39 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 81.0s–90.9s @ speed 1.0
 - **Notes:** 
 
-## 05. `n03` (narration, ~7.6s)
+## 05. `n03` (narration, ~13.5s)
 - **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
 - **Pose:** teaching
-- **Narration:** That verse isn't a general angel-identification test either. Paul is talking about specific rival preachers, physically present, undermining his authority in the Corinthian church at that exact moment.
-- **Sources:** nicnt-2cor-hafemann, baylor-handbook-2cor
+- **Narration:** That verse isn't a test for angels. Second Corinthians 11:14 says, quote, 'Satan himself masquerades as an angel of light,' but the line before it names who Paul means: 'false apostles, deceitful workers, masquerading as apostles of Christ.' Rival preachers, in Corinth, at that moment.
+- **Sources:** niv-2cor-11-13-14, nicnt-2cor-hafemann, baylor-handbook-2cor
 - **Notes:** 
 
-## 06. `n04` (narration, ~9.0s)
+## 06. `n04` (narration, ~11.5s)
 - **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
 - **Pose:** thoughtful
-- **Narration:** That test cuts both ways, though. Paul elsewhere warns specifically about a messenger preaching 'a different gospel', so look at what this messenger's own message actually says, not just how it's described.
-- **Sources:** galatians-1-6-9-different-gospel
+- **Narration:** The other verse he's leaning on is Galatians 1:8. 'Even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God's curse.' Notice what that verse tests: not how the angel is described, but which gospel he preaches.
+- **Sources:** niv-gal-1-8-9, galatians-1-6-9-different-gospel
 - **Notes:** 
 
-## 07. `n05` (narration, ~10.1s)
+## 07. `n04b` (narration, ~15.0s)
 - **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
 - **Pose:** teaching
-- **Narration:** The Book of Mormon testifies of Jesus Christ as the resurrected, literal Savior of the world on nearly every page. That's not exactly the content you'd expect from a spirit trying to pull people away from Christ.
+- **Narration:** So which gospel? Paul defines it himself, in First Corinthians 15. Quote, 'that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day.' Death for sins, burial, resurrection. That's the measuring stick.
+- **Sources:** niv-1cor-15-1-4
 - **Notes:** 
 
-## 08. `n99` (narration, ~7.1s)
+## 08. `n05` (narration, ~18.0s)
+- **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
+- **Pose:** teaching
+- **Narration:** Now hold the Book of Mormon up to it. Christ 'lifted up upon the cross,' in Third Nephi 27. 'Risen from the dead' so that 'the grave hath no victory,' in Mosiah 16. 'I have laid down my life, and have taken it up again,' in Third Nephi 9. Paul's gospel, on the page, in the book's own words.
+- **Sources:** bofm-3-ne-27-13-14, bofm-mosiah-16-7-8, bofm-3-ne-9-22
+- **Notes:** 
+
+## 09. `n99` (narration, ~10.5s)
 - **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
 - **Pose:** encouraging
-- **Narration:** A deceiving spirit doesn't usually spend four hundred pages testifying of Jesus Christ. Whatever else gets debated here, that part points the other way. God bless.
+- **Narration:** By Paul's own test, a messenger preaching that gospel is an odd candidate for the curse. Whatever else is debated, the cursed gospel is supposed to be the different one. God bless.
+- **Sources:** niv-gal-1-8-9, niv-1cor-15-1-4
 - **Notes:** 
 
 ## Full source transcript
