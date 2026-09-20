@@ -23,7 +23,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `q01` (card, ~4.1s)
 - **Original Video Transcript:** Did you know that Brigham Young wanted to hand over the keys of the presidency of the church to one of Joseph Smith's sons? Yeah, he actually talked about that quite a bit for a couple decades after Joseph and Hiram's deaths.
 - **Pose:** quote
-- **Narration:** Whatever hope he kept for a Smith son ran through the Church, not around it.
+- **Narration:** Whatever hope he kept for a Smith son ran through the Church, not around it. “Joseph Smith the son of the prophet will never lead the Latter-day Saints, he may lead the apostates” 
 - **Card quote:** “Joseph Smith the son of the prophet will never lead the Latter-day Saints, he may lead the apostates” — Clerk's report of Brigham Young, October 7, 1863
 - **Sources:** young-1863-10-07-sons
 - **Notes:** 
