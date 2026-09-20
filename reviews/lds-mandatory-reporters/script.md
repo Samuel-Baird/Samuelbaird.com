@@ -70,7 +70,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n05` (narration, ~12.0s)
 - **Original Video Transcript:** do that. Your bishop is not going to do that because he has a different policy. The Church wants to protect bishops' right to have have confessions. They legally are fighting for the
 - **Pose:** solemn
-- **Narration:** Does the exemption help or hurt? FAIR argues confidentiality draws offenders to seek help, but its two cited sources are opinion essays, not studies. Australia's Royal Commission found priests who confessed abusing children and then reoffended, and urged ending the exemption.
+- **Narration:** Does the exemption help or hurt? FAIR argues confidentiality draws offenders to seek help, but its two cited sources are opinion essays, not studies. Australia's Royal Commission found priests who confessed abusing children and then reoffended, and urged ending the exemption. (remove line)
 - **Sources:** fair-mandatory-reporting, royal-commission-2017, ldi-reporting-research
 - **Notes:** 
 
