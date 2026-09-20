@@ -36,14 +36,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n03` (narration, ~12.3s)
 - **Original Video Transcript:** and yet they are different people. Mormons believe that Jesus was the spirit child of the Heavenly Father and the Heavenly Mother, but Christians believe that Jesus was uncreated and the uncaused cause, and we don't believe in a Heavenly Mother at all. The Book of Mormon
 - **Pose:** pointing
-- **Narration:** Uncaused cause is not the Nicene Creed's word for the Son. The Nicene Creed says the Son is begotten of the Father before all worlds, begotten, not made. Both sides say the Son comes from the Father. The real question is whether that ever began.
+- **Narration:** Uncaused cause is not the Nicene Creed's word for the Son. The Nicene Creed says the Son is begotten of the Father before all worlds, begotten, not made. Both sides say the Son comes from the Father. 
 - **Sources:** nicene-creed-schaff
 - **Notes:** 
 
 ## 06. `n04` (narration, ~14.7s)
 - **Original Video Transcript:** and yet they are different people. Mormons believe that Jesus was the spirit child of the Heavenly Father and the Heavenly Mother, but Christians believe that Jesus was uncreated and the uncaused cause, and we don't believe in a Heavenly Mother at all. The Book of Mormon
 - **Pose:** teaching
-- **Narration:** Latter-day Saints answer plainly: yes, as the Father's firstborn spirit child. He says, I was in the beginning with the Father, and am the Firstborn. That is a real difference about one Son. On a Heavenly Mother, the Church's own essay says knowledge is limited, and Elder Renlund said very little has been revealed.
+- **Narration:** Latter-day Saints answer plainly: yes, as the Father's firstborn spirit child. He says, I was in the beginning with the Father, and am the Firstborn. On a Heavenly Mother, the Church's own essay says knowledge is limited, and Elder Renlund said very little has been revealed.
 - **Sources:** dc-93-21, ballard-2021-10, gospel-topics-mother-in-heaven, renlund-2022-04
 - **Notes:** 
 
@@ -56,7 +56,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n05` (narration, ~15.0s)
 - **Original Video Transcript:** and the uncaused cause, and we don't believe in a Heavenly Mother at all. The Book of Mormon prophesies that Jesus would be born at Jerusalem, but in the Bible we see that Jesus was born at Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father,
 - **Pose:** source
-- **Narration:** Alma 7:10 says at Jerusalem, which is the land of our forefathers, and the Book of Mormon uses the phrase the land of Jerusalem forty-five times. An Amarna letter from Jerusalem's own ruler calls Bit-Lahmi, which scholars identify as Bethlehem, a town of the land of Jerusalem. That makes the regional reading supported, not proven.
+- **Narration:** Alma 7:10 says at Jerusalem, which is the land of our forefathers, and the Book of Mormon uses the phrase the land of Jerusalem forty-five times. An Amarna letter from Jerusalem's own ruler calls Bit-Lahmi, which scholars identify as Bethlehem, a town of the land of Jerusalem. That makes the regional reading supported.
 - **Sources:** alma-7-10, skousen-2006-atv-alma7-10, chavalas-2006-ea290
 - **Notes:** 
 
@@ -76,28 +76,28 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n07` (narration, ~13.9s)
 - **Original Video Transcript:** Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father, but we Christians believe that Jesus is God and that he is the same substance as the Father, homo usios, and that Jesus is the second member of the Trinity.
 - **Pose:** pointing
-- **Narration:** Latter-day Saints say Jesus is the Great Jehovah of the Old Testament, and that he and the Father are separate beings, one in every significant and eternal aspect except substance. Elder Holland said exactly that at General Conference. The difference is real, and it is about how one God is one.
+- **Narration:** Latter-day Saints say Jesus is the Great Jehovah of the Old Testament, and that he and the Father are separate beings, one in every significant and eternal aspect except substance. Elder Holland said exactly that at General Conference. The difference in how we conceptualize His nature and one God is one is real.
 - **Sources:** living-christ-2000, holland-2007-only-true-god
 - **Notes:** 
 
 ## 12. `n08` (narration, ~13.9s)
 - **Original Video Transcript:** Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father, but we Christians believe that Jesus is God and that he is the same substance as the Father, homo usios, and that Jesus is the second member of the Trinity.
 - **Pose:** source
-- **Narration:** The Bible shows Father and Son distinct at the same moment, at the baptism and in John 17, where Jesus prays that his followers may be one, even as we are one. Same substance is later vocabulary: Athanasius himself conceded the word was not in scripture, and argued its meaning was.
+- **Narration:** The Bible shows Jesus praying that his followers may be one, even as Him and the Father are one, indicating unity in purpose. "Same substance" is  later vocabulary, as the concept is foreign to the Bible.
 - **Sources:** kjv-matt3-2026, kjv-john17-2026, eec-homoousios-2010
 - **Notes:** 
 
 ## 13. `n09` (narration, ~10.4s)
-- **Original Video Transcript:** Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father, but we Christians believe that Jesus is God and that he is the same substance as the Father, homo usios, and that Jesus is the second member of the Trinity.
+- **Original Video Transcript:** Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father, but we Christians believe that Jesus is God and that he is the same substance as the Father, homoousios, and that Jesus is the second member of the Trinity.
 - **Pose:** skeptical
-- **Narration:** Historian R. P. C. Hanson wrote that until at least 355, virtually every theologian except Athanasius accepted some form of subordinationism. The Trinity he treats as the definition of Jesus was still being argued thirty years after Nicaea.
+- **Narration:** Historian R. P. C. Hanson wrote that until at least 355, virtually every theologian except Athanasius accepted some form of subordinationism. The Trinity he treats as the definition of Jesus was still being argued thirty years after Nicaea, at a council that David himself would say is fallible.
 - **Sources:** hanson-2005-search-p15
 - **Notes:** 
 
 ## 14. `n99` (narration, ~6.8s)
 - **Original Video Transcript:** Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father, but we Christians believe that Jesus is God and that he is the same substance as the Father, homo usios, and that Jesus is the second member of the Trinity.
 - **Pose:** encouraging
-- **Narration:** A different description of one man is a disagreement. A different man is a different Jesus, and he never named the second one. God bless.
+- **Narration:** A different description of one man is a disagreement. A different man is a different Jesus, and he never provided evidence we worship the second one. God bless.
 - **Notes:** 
 
 ## Full source transcript
