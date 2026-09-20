@@ -38,7 +38,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `q03` (card, ~2.2s)
 - **Original Video Transcript:** If Joseph Smith was proven to be a convicted felon, would Mormons still choose to follow him?
 - **Pose:** quote
-- **Narration:** The Joseph Smith Papers put it this way.
+- **Narration:** The Joseph Smith Papers put it this way. “the lack of verifiable contemporary records renders tentative any conclusion about the case's outcome”
 - **Card quote:** “the lack of verifiable contemporary records renders tentative any conclusion about the case's outcome” — Joseph Smith Papers, Introduction to State of New York v. JS-A
 - **Sources:** jsp-2021-state-v-js-a, madsen-1990-hearing
 - **Notes:** 
@@ -52,7 +52,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n04` (narration, ~16.6s)
 - **Original Video Transcript:** There's also a letter from Judge Joe Noble dated 1842 recording Smith as guilty and condemned for his glass-looking activities, which is an occult, satanic practice.
 - **Pose:** pointing
-- **Narration:** That letter is a private note from Joel King Noble to Jonathan Turner, not a court record. Noble and Benton both say condemned, but both then say he got away, which fits a disorderly person charge, not a felony sentence. The satanic label is a separate argument, about divination under Deuteronomy 18, and it needs its own answer, not a conviction.
+- **Narration:** That letter is a private note from Joel King Noble to Jonathan Turner, not a court record. Noble and Benton both say condemned, but both then say he got away, which fits a disorderly person charge, not a felony sentence.
 - **Sources:** noble-1842-turner, benton-1831-mormonites, kjv-deut-18-9-14
 - **Notes:** 
 
@@ -86,14 +86,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 12. `n06` (narration, ~16.9s)
 - **Original Video Transcript:** Therefore, Joseph, as a prophet of truth and light, is severely compromised as his character and truthfulness is seriously impeached, if not utterly destroyed.
 - **Pose:** teaching
-- **Narration:** That verdict rests on a court record that shows a hearing, not a conviction. And scripture's own messengers fail a no-record test: Paul and Silas were beaten and jailed at Philippi, and David arranged Uriah's death. The stronger objection is the seer-stone treasure-seeking, which the Church's own essays acknowledge. That question is about what a seer stone is, not about a conviction.
+- **Narration:** That verdict rests on a court record that shows a hearing, not a conviction. And scripture's own messengers fail a no-record test: Paul and Silas were beaten and jailed at Philippi, and David arranged Uriah's death, and Jesus Christ himself was executed by the Roman empire on criminal charges.
 - **Sources:** kjv-acts-16-22-24, kjv-2sam-11-14-17, lds-topics-treasure-seeking
 - **Notes:** 
 
 ## 13. `q06` (card, ~2.5s)
 - **Original Video Transcript:** Therefore, Joseph, as a prophet of truth and light, is severely compromised as his character and truthfulness is seriously impeached, if not utterly destroyed.
 - **Pose:** quote
-- **Narration:** In his own words, and quoted by Elder Oaks.
+- **Narration:** In Joseph's own words “I frequently fell into many foolish errors, and displayed the weakness of youth, and the foibles of human nature”. Joseph never claimed to be infallible, but he was transparent about his character and flaws.
 - **Card quote:** “I frequently fell into many foolish errors, and displayed the weakness of youth, and the foibles of human nature” — Joseph Smith—History 1:28, quoted by Dallin H. Oaks, April 1996
 - **Sources:** oaks-1996-joseph-man-prophet
 - **Notes:** 
@@ -101,7 +101,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n99` (narration, ~4.1s)
 - **Original Video Transcript:** Therefore, Joseph, as a prophet of truth and light, is severely compromised as his character and truthfulness is seriously impeached, if not utterly destroyed.
 - **Pose:** encouraging
-- **Narration:** The video found a bill for a hearing and called it a verdict. God bless.
+- **Narration:** The video found a bill for a hearing equivocated it as a verdict. God bless.
 - **Notes:** 
 
 ## Full source transcript
