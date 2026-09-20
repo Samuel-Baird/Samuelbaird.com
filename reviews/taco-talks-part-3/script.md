@@ -15,7 +15,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (card, ~2.2s)
 - **Original Video Transcript:** literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually believe that Jesus is the eternal God. How so? Because they believe that everyone and everything
 - **Pose:** quote
-- **Narration:** It's stated plainly, by name, on the title page of the Book of Mormon.
+- **Narration:** It's stated plainly, by name, on the title page of the Book of Mormon. “Jesus is the Christ, the Eternal God”. If Taco would have done as much research as opening to the first page in the most fundamental Book to Mormonism, he could have debunked his own video. 
 - **Card quote:** “Jesus is the Christ, the Eternal God” — Book of Mormon, title page
 - **Sources:** benson-1984-new-witness-for-christ
 - **Notes:** 
@@ -43,7 +43,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n04` (narration, ~14.2s)
 - **Original Video Transcript:** believe that Jesus is the eternal God. How so? Because they believe that everyone and everything is eternal, even though eternality is an exclusive attribute of God, of Jesus, that Jesus, Yahweh, is the only thing that is eternal. Yeah, that's not biblical. Correct. And further than that,
 - **Pose:** reading
-- **Narration:** That teaching is an answer to a problem, not a weak spot. D&C 93:29 says, 'Intelligence, or the light of truth, was not created or made.' Most Christians hold that God created people and placed them where they could choose sin, with eternal conscious torment attached. In the Latter-day Saint view we consented to come here, which resolves much of the problem of evil around hell.
+- **Narration:** That teaching is an answer to a problem, not a weak spot. D&C 93:29 says, 'Intelligence, or the light of truth, was not created or made.' Most Christians hold that God created people and placed them where he knew they would choose sin, with eternal conscious torment attached. In the Latter-day Saint view we consented to come here, which resolves much of the problem of evil around hell.
 - **Sources:** smith-1844-character-and-being-of-god, dc-93-29
 - **Notes:** 
 
