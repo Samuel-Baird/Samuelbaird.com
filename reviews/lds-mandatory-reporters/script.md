@@ -67,14 +67,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** utah-hb432-2024, childwelfare-clergy-2023, az-doe-v-corporation-2026
 - **Notes:** 
 
-## 10. `n05` (narration, ~12.0s)
-- **Original Video Transcript:** do that. Your bishop is not going to do that because he has a different policy. The Church wants to protect bishops' right to have have confessions. They legally are fighting for the
-- **Pose:** solemn
-- **Narration:** Does the exemption help or hurt? FAIR argues confidentiality draws offenders to seek help, but its two cited sources are opinion essays, not studies. Australia's Royal Commission found priests who confessed abusing children and then reoffended, and urged ending the exemption. (remove line)
-- **Sources:** fair-mandatory-reporting, royal-commission-2017, ldi-reporting-research
-- **Notes:** 
-
-## 11. `n99` (narration, ~4.6s)
+## 10. `n99` (narration, ~4.6s)
 - **Original Video Transcript:** do that. Your bishop is not going to do that because he has a different policy. The Church wants to protect bishops' right to have have confessions. They legally are fighting for the
 - **Pose:** encouraging
 - **Narration:** The exemption covers one thing, an abuser's own confession. Everything else, in Utah, gets reported. God bless.
