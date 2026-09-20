@@ -50,7 +50,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Notes:** 
 
 ## 07. `c02` (clip, ~12.9s)
-- **Original Video Transcript:** Um, you might see folks try to soften this claim. Um, again, from LDS beliefs, four 61, this does not mean that men and women of other Christian faiths are not sincere believers in truth and genuine fathers of Christ.
+- **Original Video Transcript:** Um, you might see folks try to soften this claim. Um, again, from LDS beliefs 461, this does not mean that men and women of other Christian faiths are not sincere believers in truth and genuine fathers of Christ.
 - **Pose:** concerned
 - **Clip:** Source video, 7.34s–20.2s @ speed 1.0
 - **Notes:** 
@@ -73,8 +73,8 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `q08` (card, ~4.9s)
 - **Original Video Transcript:** Um, you might see folks try to soften this claim. Um, again, from LDS beliefs, four 61, this does not mean that men and women of other Christian faiths are not sincere believers in truth and genuine fathers of Christ.
 - **Pose:** teaching
-- **Narration:** When the disciples tried to stop a man casting out demons in Jesus's name, this was his answer.
-- **Card quote:** “Forbid him not: for he that is not against us is for us.” — Luke 9:50 (KJV)
+- **Narration:** When the disciples tried to stop a man casting out demons in Jesus's name, this was his answer. 
+- **Card quote:** “Do not stop him, for whoever is not against you is for you.” — Luke 9:50 (NRSVue)
 - **Sources:** byuntc-luke-9-50
 - **Notes:** 
 
