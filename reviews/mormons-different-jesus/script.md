@@ -16,14 +16,15 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~12.3s)
 - **Original Video Transcript:** actor. Now these two people in explaining these two different Michael Jordans, they could use many of the same descriptions, but they're still not talking about the same person. And similarly, the Jesus of the Bible slash Christianity and the Jesus of Mormonism can sound a lot alike, and yet they are different people. Mormons believe that Jesus was the spirit child of
 - **Pose:** teaching
-- **Narration:** The Michael Jordan analogy needs two different men, the basketball player and the actor, and he never names a second Jesus. Latter-day Saints and traditional Christians both mean the man born of the virgin Mary, the Son of God, and they disagree about his nature.
+- **Narration:** The Michael Jordan analogy needs two different men with a shared name, the basketball player and the actor, and he never names a second Jesus. Unlike the two Michael Jordan's, Latter-day Saints use the same reference as traditional Christians. Both mean the man born of the virgin Mary, the Son of God, as described in the New Testament. The disagreement is about his nature, not who he is. 
 - **Sources:** alma-7-10, apostles-creed-ccel
 - **Notes:** 
 
 ## 03. `n02` (narration, ~13.4s)
 - **Original Video Transcript:** actor. Now these two people in explaining these two different Michael Jordans, they could use many of the same descriptions, but they're still not talking about the same person. And similarly, the Jesus of the Bible slash Christianity and the Jesus of Mormonism can sound a lot alike, and yet they are different people. Mormons believe that Jesus was the spirit child of
 - **Pose:** thoughtful
-- **Narration:** Philosophers separate who you are talking about from what you believe about him. On the leading causal account of names, people who disagree about one man can still be talking about that man. That does not settle whose description is true. It does mean this is not two men.
+- **Narration:** Philosophers separate who you are talking about from what you believe about him. On the leading causal account of names, people who disagree about one man can still be talking about that man. That does not settle whose description is true. It does mean this is not two men. If I believe michael jordan is 6 feet 6 inches and you think hes 6 feet 7 inches, we can both be talking about the former NBA player born February 17, 1963 in Cumberland Hospital to 
+Deloris and James R. Jordan. 
 - **Sources:** sep-reference-causal, sep-names-kripke
 - **Notes:** 
 
@@ -36,7 +37,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n03` (narration, ~12.3s)
 - **Original Video Transcript:** and yet they are different people. Mormons believe that Jesus was the spirit child of the Heavenly Father and the Heavenly Mother, but Christians believe that Jesus was uncreated and the uncaused cause, and we don't believe in a Heavenly Mother at all. The Book of Mormon
 - **Pose:** pointing
-- **Narration:** Uncaused cause is not the Nicene Creed's word for the Son. The Nicene Creed says the Son is begotten of the Father before all worlds, begotten, not made. Both sides say the Son comes from the Father. 
+- **Narration:** Uncaused cause is not the Nicene Creed's word for the Son. The Nicene Creed says the Son is begotten of the Father before all worlds, begotten, not made. Both sides say the Son comes from the Father. (remove this line)
 - **Sources:** nicene-creed-schaff
 - **Notes:** 
 
@@ -63,7 +64,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n06` (narration, ~9.8s)
 - **Original Video Transcript:** and the uncaused cause, and we don't believe in a Heavenly Mother at all. The Book of Mormon prophesies that Jesus would be born at Jerusalem, but in the Bible we see that Jesus was born at Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father,
 - **Pose:** teaching
-- **Narration:** A disputed place name for one birth is a textual question about one man, which his own analogy says is not about two. The same verse calls him the Son of God, born of a virgin.
+- **Narration:** A disputed place name for one birth is a textual question about one man, which his own analogy says is not about two. The same verse calls him the Son of God, born of a virgin, it seems like we are talking about the same Jesus.
 - **Sources:** alma-7-10
 - **Notes:** 
 
@@ -76,7 +77,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n07` (narration, ~13.9s)
 - **Original Video Transcript:** Bethlehem. Mormons believe that Jesus is a God who is a separate being from God the Father, but we Christians believe that Jesus is God and that he is the same substance as the Father, homo usios, and that Jesus is the second member of the Trinity.
 - **Pose:** pointing
-- **Narration:** Latter-day Saints say Jesus is the Great Jehovah of the Old Testament, and that he and the Father are separate beings, one in every significant and eternal aspect except substance. Elder Holland said exactly that at General Conference. The difference in how we conceptualize His nature and one God is one is real.
+- **Narration:** Latter-day Saints say Jesus is the Great Jehovah of the Old Testament, and that he and the Father are separate beings, one in every significant and eternal aspect except substance. Elder Holland said exactly that at General Conference. The difference in how we conceptualize His nature, not on the person being addressed.
 - **Sources:** living-christ-2000, holland-2007-only-true-god
 - **Notes:** 
 
