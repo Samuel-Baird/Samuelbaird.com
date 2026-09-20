@@ -29,7 +29,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n03` (narration, ~13.1s)
 - **Original Video Transcript:** are responsible for their bodies. A female in the Mormon Church can't make a decision without approval from a male. You can't make a decision without approval. You have to have a man approve it. My wife, for example, had some
 - **Pose:** teaching
-- **Narration:** The Church's published teaching on family decisions doesn't make a wife answer to her husband's approval. The family proclamation calls fathers and mothers equal partners, and Elder Richard G. Scott said in 2008 that whether that happens depends on the husband, and that many husbands don't practice it, but that he encourages "any man who is reluctant to develop an equal partnership with his wife to obey the counsel inspired by the Lord and do it".
+- **Narration:** The Church's published teaching on family decisions doesn't make a wife answer to her husband's approval. The family proclamation calls fathers and mothers equal partners, and Elder Richard G. Scott said in 2008 that whether that happens depends on the husband, and that many husbands don't practice it. He then urged "any man who is reluctant to develop an equal partnership with his wife to obey the counsel inspired by the Lord and do it."
 - **Sources:** proclamation-family-1995-equal-partners, scott-2008-honor-priesthood
 - **Notes:** 
 
@@ -64,7 +64,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n06b` (narration, ~10.6s)
 - **Original Video Transcript:** were comfortable. Both her and I felt we needed to get permission from God and from our bishop in order to have that surgery. And as a church employee, we had to jump through hoops because their policy literally said as a church employee, you can't have elective surgery without after having five kids. She had to have five kids first. So her doctor had to write a letter to say,
 - **Pose:** concerned
-- **Narration:** Two of his wife's doctors advised her to stop having children, and the couple felt they needed permission from God and their bishop. What they went through was a real burden, and any honest answer starts by saying so. (cut this line)
+- **Narration:** Two of his wife's doctors advised her to stop having children, and the couple felt they needed permission from God and their bishop. What they went through was a real burden.
 - **Sources:** critic-video-mormonism-purity-culture
 - **Notes:** 
 
@@ -78,14 +78,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n08` (narration, ~16.6s)
 - **Original Video Transcript:** were comfortable. Both her and I felt we needed to get permission from God and from our bishop in order to have that surgery. And as a church employee, we had to jump through hoops because their policy literally said as a church employee, you can't have elective surgery without after having five kids. She had to have five kids first. So her doctor had to write a letter to say,
 - **Pose:** concerned
-- **Narration:** I couldn't find that employer rule's own document, so it seems to be an unverifiable claim. The 2010 handbook section has no five-child threshold, covers vasectomy as well as tubal ligation, so it isn't about women alone, and it calls for competent medical judgment.
+- **Narration:** He also says a doctor's letter was required. I couldn't find that employer rule's own document, so I can't confirm it. The 2010 handbook section has no five-child threshold, covers vasectomy as well as tubal ligation, so it isn't about women alone, and it calls for competent medical judgment.
 - **Sources:** chi-book2-2010-21-4-15, critic-video-mormonism-purity-culture
 - **Notes:** 
 
 ## 12. `n99` (narration, ~6.3s)
 - **Original Video Transcript:** were comfortable. Both her and I felt we needed to get permission from God and from our bishop in order to have that surgery. And as a church employee, we had to jump through hoops because their policy literally said as a church employee, you can't have elective surgery without after having five kids. She had to have five kids first. So her doctor had to write a letter to say,
 - **Pose:** prayerful
-- **Narration:** I'd treat these claims with caution. It seems like they genuinely went through a standard insurance process in addition to counseling with their Bishop, but the claims that they needed to get permission are overstated. God bless.
+- **Narration:** I'd treat the permission claim with caution: I can't verify the employer rule, and the handbook doesn't say what the reel says it does. Counseling with a bishop is not the same as asking his permission. God bless.
 - **Notes:** 
 
 ## Full source transcript
