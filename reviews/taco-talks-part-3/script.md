@@ -15,55 +15,49 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (card, ~2.2s)
 - **Original Video Transcript:** literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually believe that Jesus is the eternal God. How so? Because they believe that everyone and everything
 - **Pose:** quote
-- **Narration:** That's stated plainly, by name, in General Conference. (instead just read from title page of the book of mormon)
-- **Card quote:** “Jesus is the Christ, the Eternal God” — Book of Mormon title page, quoted by Ezra Taft Benson, General Conference
+- **Narration:** It's stated plainly, by name, on the title page of the Book of Mormon.
+- **Card quote:** “Jesus is the Christ, the Eternal God” — Book of Mormon, title page
 - **Sources:** benson-1984-new-witness-for-christ
 - **Notes:** 
 
 ## 03. `n02` (narration, ~10.4s)
 - **Original Video Transcript:** literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually believe that Jesus is the eternal God. How so? Because they believe that everyone and everything
 - **Pose:** teaching
-- **Narration:** That claim only really works if 'eternal God' has to mean one-substance Trinitarian unity. LDS theology affirms Jesus as eternal and divine -- it just describes the Godhead as three distinct beings, unified in purpose, not one substance.
+- **Narration:** That claim only really works if 'eternal God' has to mean one-substance Trinitarian unity. LDS theology affirms Jesus as eternal and divine — it just describes the Godhead as three distinct beings, unified in purpose, not one substance.
 - **Sources:** tanner-1978-basis-for-faith, oaks-2017-godhead-plan-of-salvation
 - **Notes:** 
 
 ## 04. `n02b` (narration, ~11.7s)
 - **Original Video Transcript:** literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually believe that Jesus is the eternal God. How so? Because they believe that everyone and everything
 - **Pose:** pointing
-- **Narration:** And that's testable. 'Everlasting God' -- el olam -- is an ancient Hebrew title for God, used as far back as Genesis, centuries before anyone had formulated one-substance Trinitarian language at all. The word itself was never carrying that specific, later metaphysical claim.
+- **Narration:** And that's testable. 'Everlasting God' — el olam -- is an ancient Hebrew title for God, used as far back as Genesis, centuries before anyone had formulated one-substance Trinitarian language at all. The word itself was never carrying that specific, later metaphysical claim.
 - **Sources:** el-olam-everlasting-god-genesis-21-33
 - **Notes:** 
 
-## 05. `n03` (narration, ~6.0s)
-- **Original Video Transcript:** literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually believe that Jesus is the eternal God. How so? Because they believe that everyone and everything
-- **Pose:** concerned
-- **Narration:** That's still a real, substantial difference from the Nicene one-substance view, though -- not a technicality, and not something to wave away. (remove line)
-- **Notes:** 
-
-## 06. `c02` (clip, ~12.1s)
+## 05. `c02` (clip, ~12.1s)
 - **Original Video Transcript:** believe that Jesus is the eternal God. How so? Because they believe that everyone and everything is eternal, even though eternality is an exclusive attribute of God, of Jesus, that Jesus, Yahweh, is the only thing that is eternal. Yeah, that's not biblical. Correct. And further than that,
 - **Pose:** thoughtful
 - **Clip:** Source video, 98.32s–110.44s @ speed 1.0
 - **Notes:** 
 
-## 07. `n04` (narration, ~14.2s)
+## 06. `n04` (narration, ~14.2s)
 - **Original Video Transcript:** believe that Jesus is the eternal God. How so? Because they believe that everyone and everything is eternal, even though eternality is an exclusive attribute of God, of Jesus, that Jesus, Yahweh, is the only thing that is eternal. Yeah, that's not biblical. Correct. And further than that,
 - **Pose:** reading
-- **Narration:** That's correct. Latter-day Saints teach that we were uncreated and co-eternal with God, meaning that unlike most Christians who believe God created humanity and put them into a situation where they would choose sin, with the affixed punishment being eternal conscious toermnet, that all of us consented to come to earth, which resolves a large part of the problem of evil in relation to hell. 
-- **Sources:** smith-1844-character-and-being-of-god, perry-2015-why-marriage-and-family-matter
+- **Narration:** That teaching is an answer to a problem, not a weak spot. D&C 93:29 says, 'Intelligence, or the light of truth, was not created or made.' Most Christians hold that God created people and placed them where they could choose sin, with eternal conscious torment attached. In the Latter-day Saint view we consented to come here, which resolves much of the problem of evil around hell.
+- **Sources:** smith-1844-character-and-being-of-god, dc-93-29
 - **Notes:** 
 
-## 08. `n05` (narration, ~15.0s)
+## 07. `n05` (narration, ~15.0s)
 - **Original Video Transcript:** believe that Jesus is the eternal God. How so? Because they believe that everyone and everything is eternal, even though eternality is an exclusive attribute of God, of Jesus, that Jesus, Yahweh, is the only thing that is eternal. Yeah, that's not biblical. Correct. And further than that,
 - **Pose:** pointing
-- **Narration:** And the premise underneath the objection, that eternality has to be exclusive to God alone,  isn't something the Bible actually states either. Ecclesiastes even says God 'has put eternity into man's heart,' whatever exactly that means. It's a theological conclusion drawn from other verses, not a direct claim sitting in the text.
+- **Narration:** And the premise underneath the objection, that eternality has to be exclusive to God alone, isn't something the Bible actually states. Ecclesiastes 3:11 in the NIV says God 'has set eternity in the human heart,' whatever exactly that means. It's a theological conclusion drawn from other verses, not a direct claim sitting in the text.
 - **Sources:** hess-ot-introduction-ecclesiastes-311
 - **Notes:** 
 
-## 09. `n99` (narration, ~13.6s)
+## 08. `n99` (narration, ~13.6s)
 - **Original Video Transcript:** believe that Jesus is the eternal God. How so? Because they believe that everyone and everything is eternal, even though eternality is an exclusive attribute of God, of Jesus, that Jesus, Yahweh, is the only thing that is eternal. Yeah, that's not biblical. Correct. And further than that,
 - **Pose:** encouraging
-- **Narration:** Jesus is repeatedly and explicitly called the eternal God in LDS scripture and teaching, that's not actually in dispute. What's in dispute is a specific, later theological formula for how that's true. Those are two different questions, and treating them as one is the real mistake here. God bless.
+- **Narration:** Jesus is repeatedly and explicitly called the eternal God in LDS scripture and teaching. That's not actually in dispute. What's in dispute is a specific, later theological formula for how that's true. Those are two different questions, and treating them as one is the real mistake here. God bless.
 - **Notes:** 
 
 ## Full source transcript
