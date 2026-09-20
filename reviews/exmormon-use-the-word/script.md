@@ -77,7 +77,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n06` (narration, ~16.4s)
 - **Original Video Transcript:** I like the fact that my reproductive and mating choices are relatively controlled by the church. Yes, I like the fact that the church tells me what I can and can't wear and what's right and what's wrong in every single way.
 - **Pose:** teaching
-- **Narration:** The Church doesn't assign spouses or set family size: its guidance calls how many children to have, and when, a private matter for a husband and wife. It does set a sexual standard, the law of chastity. On dress, young people are told to ask whether they're honoring their body, and only endowed adults are asked to wear the garment.
+- **Narration:** The Church doesn't assign spouses or set family size: its guidance calls how many children to have, and when, a private matter for a husband and wife. It does set a sexual standard, the law of chastity. On dress, young people are told to ask whether they're honoring their body, and only endowed adults are asked to wear the garment. Sexual ethics and modesty standards don't make you a part of a cult, they make you an average person.
 - **Sources:** gospel-topics-chastity, gt-birth-control, ftsoy-body, handbook-38-garment
 - **Notes:** 
 
@@ -104,7 +104,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 15. `n99` (narration, ~4.4s)
 - **Original Video Transcript:** or to eat. I don't have to make those decisions. I know what's right because they tell me what's right. I like it. Yes, I like being financially beholden to an organization that tells me these things because I want to support that organization.
 - **Pose:** encouraging
-- **Narration:** A checklist that can't tell commitment from control isn't finding cults, it's finding seriousness. God bless.
+- **Narration:** When all that you have to do to stop being "controlled" by the cult is not show up on Sunday, you aren't in a cult. A checklist that can't tell normal commitments to religious beliefs or institutions from control isn't finding cults, it's finding that you don't understand what a cult is. God bless.
 - **Notes:** 
 
 ## Full source transcript
