@@ -36,7 +36,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 05. `n04` (narration, ~10.4s)
 - **Original Video Transcript:** are responsible for their bodies. A female in the Mormon Church can't make a decision without approval from a male. You can't make a decision without approval. You have to have a man approve it. My wife, for example, had some
 - **Pose:** pointing
-- **Narration:** Fathers are to preside, the family is patriarchal in Elder Oaks's word, and the bishops who interview and issue temple recommends are men, so male authority is real. But First Corinthians seven makes authority over the body mutual.
+- **Narration:** Fathers are to preside, the family is patriarchal in Elder Oaks's word, and the bishops who interview and issue temple recommends are men, so male authority is real. But First Corinthians seven makes authority over the body mutual. And as previously mentioned, men and women are to be equal partners, each with unique responsabilities in the family.
 - **Sources:** proclamation-family-1995, oaks-2005-priesthood-family, oaks-2005-priesthood-authority-family-church, kjv-1cor-7-2026
 - **Notes:** 
 
@@ -44,7 +44,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Original Video Transcript:** are responsible for their bodies. A female in the Mormon Church can't make a decision without approval from a male. You can't make a decision without approval. You have to have a man approve it. My wife, for example, had some
 - **Pose:** quote
 - **Narration:** So the claim that women don't own their bodies runs into Paul's own words to Corinth.
-- **Card quote:** “The wife hath not power of her own body, but the husband: and likewise also the husband hath not power of his own body, but the wife.” — 1 Corinthians 7:4 (KJV)
+- **Card quote:** “The wife does not have authority over her own body but yields it to her husband. In the same way, the husband does not have authority over his own body but yields it to his wife..” — 1 Corinthians 7:4 (NIV)
 - **Sources:** kjv-1cor-7-2026
 - **Notes:** 
 
@@ -64,7 +64,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n06b` (narration, ~10.6s)
 - **Original Video Transcript:** were comfortable. Both her and I felt we needed to get permission from God and from our bishop in order to have that surgery. And as a church employee, we had to jump through hoops because their policy literally said as a church employee, you can't have elective surgery without after having five kids. She had to have five kids first. So her doctor had to write a letter to say,
 - **Pose:** concerned
-- **Narration:** Two of his wife's doctors advised her to stop having children, and the couple felt they needed permission from God and their bishop. What they went through was a real burden.
+- **Narration:** Two of his wife's doctors advised her to stop having children, and the couple felt they needed permission from God and their bishop. What they went through was a real burden. It is very unfortunate that they misunderstood the Church's own teachings on this. 
 - **Sources:** critic-video-mormonism-purity-culture
 - **Notes:** 
 
@@ -78,14 +78,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n08` (narration, ~16.6s)
 - **Original Video Transcript:** were comfortable. Both her and I felt we needed to get permission from God and from our bishop in order to have that surgery. And as a church employee, we had to jump through hoops because their policy literally said as a church employee, you can't have elective surgery without after having five kids. She had to have five kids first. So her doctor had to write a letter to say,
 - **Pose:** concerned
-- **Narration:** He also says a doctor's letter was required. I couldn't find that employer rule's own document, so I can't confirm it. The 2010 handbook section has no five-child threshold, covers vasectomy as well as tubal ligation, so it isn't about women alone, and it calls for competent medical judgment.
+- **Narration:** He also says a doctor's letter was required. I couldn't find that employer rule's own document, so I can't confirm it, I'd treat his claim with caution. The 2010 handbook section has no "five-child threshold", covers vasectomy as well as tubal ligation, so it isn't about women alone, and it calls for competent medical judgment.
 - **Sources:** chi-book2-2010-21-4-15, critic-video-mormonism-purity-culture
 - **Notes:** 
 
 ## 12. `n99` (narration, ~6.3s)
 - **Original Video Transcript:** were comfortable. Both her and I felt we needed to get permission from God and from our bishop in order to have that surgery. And as a church employee, we had to jump through hoops because their policy literally said as a church employee, you can't have elective surgery without after having five kids. She had to have five kids first. So her doctor had to write a letter to say,
 - **Pose:** prayerful
-- **Narration:** I'd treat the permission claim with caution: I can't verify the employer rule, and the handbook doesn't say what the reel says it does. Counseling with a bishop is not the same as asking his permission. God bless.
+- **Narration:** I'd treat this man's claims with caution: I can't verify the employer rule, and the handbook doesn't say what the reel says it does. Counseling with a bishop is not the same as asking his permission. Many of the things he has stated have been twisted and do not reflect actual Church teachings or policy. God bless.
 - **Notes:** 
 
 ## Full source transcript
