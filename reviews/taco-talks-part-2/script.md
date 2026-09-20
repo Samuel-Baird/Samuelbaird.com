@@ -56,7 +56,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n05` (narration, ~18.0s)
 - **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
 - **Pose:** teaching
-- **Narration:** Now hold the Book of Mormon up to it. Christ 'lifted up upon the cross,' in Third Nephi 27. 'Risen from the dead' so that 'the grave hath no victory,' in Mosiah 16. 'I have laid down my life, and have taken it up again,' in Third Nephi 9. Paul's gospel, on the page, in the book's own words.
+- **Narration:** Now hold the Book of Mormon up to it. Christ 'lifted up upon the cross,' in Third Nephi 27. 'Risen from the dead' so that 'the grave hath no victory,' in Mosiah 16. 'I have laid down my life, and have taken it up again,' in Third Nephi 9. In other words, it sounds an awful lot like Paul's gospel.
 - **Sources:** bofm-3-ne-27-13-14, bofm-mosiah-16-7-8, bofm-3-ne-9-22
 - **Notes:** 
 
