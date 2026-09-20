@@ -40,6 +40,7 @@ anonymity scan `capy_check_brand.py` runs elsewhere in this repo.
 
 - [adam-god-teachings.md](./adam-god-teachings.md)
 - [additional-scripture-beyond-the-bible.md](./additional-scripture-beyond-the-bible.md)
+- [angel-of-light-and-a-different-gospel.md](./angel-of-light-and-a-different-gospel.md)
 - [baptism-for-the-dead.md](./baptism-for-the-dead.md)
 - [blood-atonement-rhetoric.md](./blood-atonement-rhetoric.md)
 - [book-of-abraham-translation.md](./book-of-abraham-translation.md)

@@ -65,6 +65,10 @@ an apologetic lead pointed to, not the lead itself.
   Mormon parallel, a specific rendering an opponent relies on, the JST) and
   label it on screen. Never quote from memory: confirm the NRSVue wording
   before it goes in a card or excerpt.
+  **Exception: when answering a critic who quotes a specific translation
+  (evangelical critics usually the NIV), quote that translation** so the
+  exchange isn't about renderings; the topic file says which (e.g.
+  `common-issues/angel-of-light-and-a-different-gospel.md` uses NIV).
 - **Dataset**: Latter-day Stats datasets/studies for empirical/statistical
   claims — cite the dataset/study, not a paraphrase of it.
 - **Apologetic-lead**: an apologetics site or forum post is a *lead only*

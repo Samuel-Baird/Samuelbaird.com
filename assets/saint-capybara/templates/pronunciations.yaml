@@ -124,6 +124,10 @@ entries:
     ipa: "ok-as-is"
     status: unverified
     note: "LDS temple garments -- plain English word, watch tone/emphasis rather than pronunciation."
+  - word: homoousios
+    ipa: "/ˌhoʊmoʊˈuːsiɒs/"
+    status: unverified
+    note: "Nicene Greek term (\"of the same substance\"). Respelling ho-moh-OO-see-os, given by the user 2026-09-19. Not a web-sourced or by-ear check yet."
 
 expansion_rules:
   - pattern: "D&C"
