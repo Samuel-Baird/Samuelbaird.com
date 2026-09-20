@@ -42,7 +42,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n04` (narration, ~9.0s)
 - **Original Video Transcript:** An angel of light? Yes. You mean like exactly how the Bible warns that Satan will appear in order to deceive people by bringing a false message that is against Christianity? That is literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually
 - **Pose:** thoughtful
-- **Narration:** That test cuts both ways, though. Paul elsewhere warns specifically about a messenger preaching 'a different gospel' -- so look at what this messenger's own message actually says, not just how it's described.
+- **Narration:** That test cuts both ways, though. Paul elsewhere warns specifically about a messenger preaching 'a different gospel', so look at what this messenger's own message actually says, not just how it's described.
 - **Sources:** galatians-1-6-9-different-gospel
 - **Notes:** 
 
