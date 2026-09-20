@@ -15,19 +15,25 @@ Latter-day Saint history/doctrine/scripture/practice.
    project layout.
 3. `docs/saint-capybara/apologetics-playbook.md` — the argument-craft
    companion to `brand.md` sec 2: six-step response structure,
-   audience-specific playbooks, overclaiming discipline, the pre-publish
-   two-question test.
+   audience-specific playbooks, overclaiming discipline, the "Sharpness"
+   rules (opening/closing/the jab), and the pre-publish four-question
+   test.
 4. `docs/saint-capybara/research-protocol.md` — how to triage, research
    (sec 15: the `/capy-research` multi-angle subagent fan-out), grade, and
    (when needed) escalate a claim.
 5. `docs/saint-capybara/script-format.md` — the `beats.yaml` schema, the
    mandatory outro, duration budget, clip fairness, and the exact Gate A
    message (preceded by the `/capy-critique` summary).
-6. `docs/saint-capybara/review-checklist.md` — Part A, all 15 items,
+6. `docs/saint-capybara/review-checklist.md` — Part A, all 16 items,
    before Gate A.
 7. `docs/saint-capybara/common-issues/README.md` — the accumulated-topic
    index; check it for the claims you're about to research, and ask
    before adding anything new to it.
+7b. `docs/saint-capybara/exemplars/README.md` — the register ladder and
+   worked examples of the "Sharpness" rules in real texts. Before writing
+   the first response beat and the closing beat, read the 2-3 exemplars
+   matching this video's topic and audience ("By topic"/"By move" indexes)
+   — model the move, never paste the words.
 8. `assets/saint-capybara/theme.yaml` — machine-readable palette/fonts/layout.
 
 **Do NOT read or reuse anything from:** `docs/style-guide.md`,

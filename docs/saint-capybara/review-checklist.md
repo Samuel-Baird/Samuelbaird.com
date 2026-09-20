@@ -2,7 +2,7 @@
 
 ## Part A — pre-Gate-A (before presenting `script.md` for approval)
 
-Run through all 15 before sending the Gate A message in
+Run through all 16 before sending the Gate A message in
 `script-format.md`:
 
 1. **Adversarial review** done for every claim responded to (`claims.md`
@@ -10,7 +10,9 @@ Run through all 15 before sending the Gate A message in
 2. **Tone lint** — no polemics, ad hominem, "destroyed/owned/cope/rekt,"
    sarcasm-as-argument, or treating a critic's honest concern as bad
    faith (see `brand.md` sec 2 "Never" list). Manual read-through plus
-   `capy_check_brand.py`'s banned-phrase scan.
+   `capy_check_brand.py`'s banned-phrase scan, plus
+   `tools/capy_check_tone.py` passing with 0 errors (concession tells in
+   the opening/closing position, polemic vocabulary, jab adjectives).
 3. **Source lint** — `tools/capy_check_sources.py` passes (every factual
    beat cited, all ids resolve and are `inspected: true`, card quotes are
    verbatim substrings of their source's recorded `quote`; on an article
@@ -50,7 +52,8 @@ Run through all 15 before sending the Gate A message in
     sensitive-forbidden.
 12. **Pronunciations** — every proper noun appearing in narration has an
     entry in `script/pronunciations.yaml` (or an explicit "ok-as-is"
-    note) per `docs/saint-capybara/pronunciations.md`.
+    note) per `docs/saint-capybara/pronunciations.md`; unique names
+    are looked up online, not guessed ("Look up unique names online").
 13. **Clip-beat pose variety** — `clip` beats react to what the source is
     saying (see `brand.md`), not blanket `pose: listening`. Flag if most
     or all `clip` beats in the video share the same pose.
@@ -64,8 +67,17 @@ Run through all 15 before sending the Gate A message in
     `script.md`; `research/critique.md` exists with no open BLOCKER
     finding, and any MAJOR/MINOR findings are summarized in the Gate A
     message for the user's review.
+16. **Sharpness** (`apologetics-playbook.md` "Sharpness"; pre-publish
+    check 4) — read the first sentence of the first response beat and
+    the last sentence before "God bless." in isolation: both are Saint
+    Capybara's position, neither agrees with the critic or hedges. At
+    most one jab in a short (two in long-form), placed at the close or
+    right after the strongest evidence beat, adjective-free, aimed at a
+    standard or a tradition's record, never the person. If any red-team
+    brief's `Turnabout` section had material, the script used it or the
+    Gate A message says why not.
 
-Only after all 15 pass: render `frames/storyboard.png` + `script/script.md`
+Only after all 16 pass: render `frames/storyboard.png` + `script/script.md`
 and send the Gate A message. **Stop there.**
 
 ## Part B — post-approval, before calling a render "ready for review"

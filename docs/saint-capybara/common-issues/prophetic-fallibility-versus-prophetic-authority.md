@@ -28,12 +28,13 @@ than a prospective, clearly-marked category.
 
 Many Protestant traditions reject any living infallible human authority
 in favor of scripture alone (see `rejection-of-sola-scriptura.md`) —
-this file's honest engagement should concede that the LDS model, which
-grants real but bounded authority to living leaders, does carry the risk
-this objection identifies (leaders can and have taught things later
-disavowed) in a way sola scriptura in principle avoids, while making the
-case that scripture alone has its own, different problems (interpretive
-authority questions covered in `rejection-of-sola-scriptura.md`).
+the LDS model, which grants real but bounded authority to living
+leaders, does carry the risk this objection identifies (leaders can and
+have taught things later disavowed) in a way sola scriptura avoids only
+in principle, because scripture alone has its own, different problems
+(interpretive authority questions covered in
+`rejection-of-sola-scriptura.md`), so the comparison to make on screen
+is which model handles its risk better, not which model has none.
 
 ## Exmo/atheist response
 
@@ -42,10 +43,11 @@ current LDS practice increasingly relies on a retrospective/consensus
 test (canonization, sustained unanimous teaching across multiple
 leadership generations, formal disavowal when something is later judged
 wrong) rather than a clean, prospective rule members can apply in real
-time to a leader's current statement. Concede that gap plainly — it means
-members genuinely cannot always know in the moment whether a given
-teaching will later be treated as binding doctrine or personal opinion,
-which is a real practical and epistemic problem, not merely a rhetorical
-one, and route the specific historical evidence for the gap to
+time to a leader's current statement. State that gap once, precisely:
+members cannot always know in the moment whether a given teaching will
+later be treated as binding doctrine or personal opinion, a practical
+and epistemic cost that follows from the Church's own stated model
+(fallible leaders, binding canon) rather than a flaw critics uncovered,
+and route the specific historical evidence for the gap to
 `changes-in-prophetic-teachings-without-clear-mechanisms-for-
 correction.md`.

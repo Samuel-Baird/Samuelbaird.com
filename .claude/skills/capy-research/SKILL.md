@@ -65,7 +65,11 @@ inference in the table rather than blocking.
 
 7. **Common-issues**: if a brief surfaces a source, argument, or approach relevant to
    one of the topics in `docs/saint-capybara/common-issues/*.md`, ask the user before
-   adding it there — don't add silently (standing rule).
+   adding it there — don't add silently (standing rule). (A FAIR/Scripture-Central
+   argument specifically follows the seeding workflow instead — write a
+   `docs/saint-capybara/common-issues/proposals/<topic>.md` item in that format via
+   `/capy-seed-issues`, or by hand in the same shape, and tell the user; never edit
+   the topic file directly from a research brief.)
 
 ## What this skill does NOT do
 

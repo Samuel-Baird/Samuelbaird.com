@@ -48,9 +48,10 @@ theological conclusion imported from outside scripture. Sources:
 For this audience, reframe from doctrine to epistemology: the real
 question isn't "should there be a closed canon" but "how do you know
 which claimed continuing revelation is genuine, given that unfettered
-continuing revelation has no obvious stopping point or check." That's a
-fair question and deserves a direct epistemic answer (prophetic checks
-and balances — common consent, First Presidency/Quorum of the Twelve
-unanimity requirements, canonization process) rather than a purely
+continuing revelation has no obvious stopping point or check." Answer
+that on its own epistemic ground: continuing revelation in the LDS
+model does have checks (prophetic checks and balances — common consent,
+First Presidency/Quorum of the Twelve unanimity requirements,
+canonization process), so lead with those rather than a purely
 scriptural rebuttal, since this audience typically isn't granting
 scriptural authority as a starting premise anyway.

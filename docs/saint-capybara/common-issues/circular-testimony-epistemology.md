@@ -31,8 +31,10 @@ confirm (which of many competing truth claims a similar feeling has been
 reported to confirm) — see
 `spiritual-witnesses-not-being-unique-to-mormonism.md` and
 `emotional-elevation-being-mistaken-for-revelation.md` for the specific
-sourcing on that distinction. Don't claim the method is fully vindicated
-philosophically; concede it has a real structural weakness as a
-stand-alone epistemic method, while arguing it can function legitimately
-as *corroborating*, rather than founding, evidence alongside historical
-and rational argument.
+sourcing on that distinction. The method's limits as a stand-alone
+epistemic test are precisely why the LDS position should be presented
+as one where the felt witness functions as *corroborating*, rather than
+founding, evidence alongside historical and rational argument — the
+objection only lands against the stand-alone version, so don't defend
+that version or claim the method is fully vindicated philosophically on
+its own.

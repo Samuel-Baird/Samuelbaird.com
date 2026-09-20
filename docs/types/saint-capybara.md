@@ -10,7 +10,7 @@ anonymity rules that make this type work at all. Read
 `docs/saint-capybara/apologetics-playbook.md` alongside it before writing
 any response-video script — it's the argument-craft companion to
 `brand.md` sec 2's tone (six-step structure, audience-specific
-playbooks, overclaiming discipline, the pre-publish two-question test).
+playbooks, overclaiming discipline, the pre-publish four-question test).
 
 **Uses DaVinci Resolve, but not the other types' Build stage.** Saint
 Capybara videos ARE edited and rendered in Resolve (via the
@@ -153,17 +153,21 @@ slug substituted.
    `research-protocol.md` sec 12 → write `research/ESCALATION.md` and
    treat that claim/beat as blocked pending the user's input.
 6. **Write `script/beats.yaml`.** Hand-authored per
-   `docs/saint-capybara/script-format.md`. **The closing beat must end on
-   "...God bless."** (brand.md sec 5a) — `capy_check_sources.py`
-   hard-errors if it doesn't.
-7. **Lint.** `tools/capy_check_sources.py` and `tools/capy_check_brand.py`
-   must both pass (0 errors) before moving on.
+   `docs/saint-capybara/script-format.md`. Before drafting the first
+   response beat and the closing beat, read the matching exemplars in
+   `docs/saint-capybara/exemplars/README.md` ("By topic"/"By move") and
+   record which ids you modeled in `beats.yaml`'s `exemplars:` field.
+   **The closing beat must end on "...God bless."** (brand.md sec 5a) —
+   `capy_check_sources.py` hard-errors if it doesn't.
+7. **Lint.** `tools/capy_check_sources.py`, `tools/capy_check_brand.py`,
+   and `tools/capy_check_tone.py` must all pass (0 errors) before moving
+   on.
 8. **Script doc.** `tools/capy_storyboard.py` renders `script/script.md`
    for human review. (Its `--with-captions` libass font-discovery check is
    vestigial from the retired all-ffmpeg pipeline — the current pipeline
    doesn't burn captions via libass at all, see
    `docs/saint-capybara/hybrid-resolve-pipeline.md` — skip that flag.)
-9. **Part A review** (`docs/saint-capybara/review-checklist.md`) — all 15
+9. **Part A review** (`docs/saint-capybara/review-checklist.md`) — all 16
    items — before presenting anything.
 9b. **Critique.** `/capy-critique` (`docs/saint-capybara/research-protocol.md`
     sec 15) runs three independent script critics in parallel — does it

@@ -63,13 +63,14 @@ This audience's version is usually less "is this heretical" and more
 not divine revelation." Take that framing seriously rather than only
 rebutting the theological question:
 
-- Acknowledge the historical point: this teaching developed and
-  sharpened over Joseph Smith's career (compare early Book of Mormon /
-  1835 D&C language on the Godhead to the 1843-44 King Follett-era
-  teaching) — a fact worth conceding plainly per the research-protocol's
-  fact/inference distinction, before making the separate argument that
-  development of doctrine isn't itself disqualifying (every tradition's
-  theology developed, including Nicene Trinitarianism).
+- The historical point is true and is where the answer starts: this
+  teaching developed and sharpened over Joseph Smith's career (compare
+  early Book of Mormon / 1835 D&C language on the Godhead to the 1843-44
+  King Follett-era teaching), and per the research-protocol's
+  fact/inference distinction that fact carries the critic's conclusion
+  only if development of doctrine is itself disqualifying, which it
+  isn't (every tradition's theology developed, including Nicene
+  Trinitarianism). Spend the beat on that inference, not on the fact.
 - Terryl Givens, *Wrestling the Angel* (Oxford), gives the fullest serious
   historical-theological treatment of how this doctrine emerged and its
   intellectual context — useful for showing it wasn't ad hoc borrowing

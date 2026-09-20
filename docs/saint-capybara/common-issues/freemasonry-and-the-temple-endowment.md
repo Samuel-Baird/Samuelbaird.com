@@ -38,13 +38,13 @@ defensively:
 
 ## Exmo/atheist response
 
-This is one of the more evidentially solid critical points in the whole
-canon of LDS objections — treat it that way rather than minimizing.
-Concede fully: the timeline (initiation → endowment six weeks later) and
+Because the timeline (initiation → endowment six weeks later) and
 structural parallels are well documented and not seriously disputed by
 faithful LDS historians either (Bushman himself, a faithful LDS
-biographer, states it plainly). The actual disagreement is entirely at
-the level of interpretation — "borrowed ritual form used to convey
-revealed content" versus "wholesale invention with religious packaging" —
-not at the level of the underlying facts. Keep that distinction explicit
-on screen rather than contesting facts that aren't actually in dispute.
+biographer, states it plainly), the entire argument lives at the level
+of interpretation — "borrowed ritual form used to convey revealed
+content" versus "wholesale invention with religious packaging" — and not
+at the level of the underlying facts. Don't minimize or contest facts
+that aren't actually in dispute; keep that distinction explicit on
+screen and spend the runtime on why borrowed form doesn't settle the
+question of revealed content (the liturgical-borrowing parallels above).

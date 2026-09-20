@@ -36,6 +36,9 @@ try:
 except ImportError:  # pragma: no cover - allows use without tools/ on sys.path in ad-hoc tests
     FUNCTION_TO_POSE, SENSITIVE_FORBIDDEN, POSES = {}, set(), {}
 
+# tools/capy/beats.py -> tools/capy -> tools -> repo root
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+
 BEAT_KINDS = {"clip", "narration", "card", "evidence", "chart", "excerpt"}
 
 # Beat kinds that carry narration/spoken text and need a resolved voice
@@ -147,6 +150,7 @@ def load_beats(path: Path | str) -> dict:
     raw.setdefault("sensitive", False)
     raw.setdefault("music", None)
     raw.setdefault("tags", [])
+    raw.setdefault("exemplars", [])
     raw.setdefault("format", {})
     fmt = raw["format"]
     fmt.setdefault("width", 1080)
@@ -233,6 +237,11 @@ def validate(doc: dict) -> list[Issue]:
     for key in ("slug", "title", "beats"):
         if not doc.get(key):
             issues.append(Issue("error", None, f"missing required top-level field: {key}"))
+
+    for eid in doc.get("exemplars") or []:
+        exemplar_path = REPO_ROOT / "docs" / "saint-capybara" / "exemplars" / f"{eid}.md"
+        if not exemplar_path.exists():
+            issues.append(Issue("warning", None, f"exemplars: '{eid}' has no matching docs/saint-capybara/exemplars/{eid}.md"))
 
     beats = doc.get("beats", [])
     if not beats:

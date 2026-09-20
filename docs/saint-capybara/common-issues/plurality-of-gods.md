@@ -44,10 +44,11 @@ The strongest version of this objection from this audience isn't
 philosophical, it's historical: plurality-of-Gods teaching (Orson Pratt's
 especially) went through real doctrinal correction and internal
 Church dispute in the 1860s (Brigham Young's own qualifications of
-Pratt's speculative theology). That's worth conceding directly —
-19th-century LDS theology on this point was actively worked out in real
-time, not handed down as a finished system, and speculative excess by
-individual leaders (Pratt) was later reined in by other leaders (Young).
-This is a case where "the doctrine developed and got corrected" is itself
-the honest and sufficient answer, rather than pretending the teaching
-was always stable.
+Pratt's speculative theology). That correction is the answer, not the
+problem: 19th-century LDS theology on this point was actively worked out
+in real time, not handed down as a finished system, and speculative
+excess by individual leaders (Pratt) was later reined in by other
+leaders (Young), which is the correction mechanism working, not a
+doctrine collapsing. "The doctrine developed and got corrected" is
+itself the sufficient answer, rather than pretending the teaching was
+always stable.

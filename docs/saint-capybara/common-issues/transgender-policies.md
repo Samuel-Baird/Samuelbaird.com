@@ -21,8 +21,9 @@ scrutiny rather than assuming uniformity.
 
 ## Exmo/atheist response
 
-Acknowledge directly that this is an area of real, current tension and
-documented harm concerns (elevated mental-health risk for LGBTQ and
+Name the tension and the harm concerns once, precisely, and in the same
+breath separate the general-population finding from the institutional
+claim the critic builds on it (elevated mental-health risk for LGBTQ and
 especially transgender youth is well-established in general population
 research, independent of any specific religious context, and is
 frequently cited by critics as a reason institutional policy in this area

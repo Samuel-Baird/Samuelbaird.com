@@ -47,6 +47,7 @@ voice: { engine: chatterbox, ref: assets/saint-capybara/voices/host_andrew_kenne
 sensitive: false
 music: null
 tags: [ldshistory]
+exemplars: [hales-helen-mar-kimball, offenders-are-mormons-christian]   # optional; ids from docs/saint-capybara/exemplars/
 beats: [ ... ]
 ```
 
@@ -54,6 +55,11 @@ beats: [ ... ]
   this video (see `capy/poses.py: SENSITIVE_FORBIDDEN`) and triggers the
   sensitive-topic handling rules in `research-protocol.md`.
 - `music` stays `null` in v1 — no music bed for this type.
+- `exemplars` (2026-09-13, optional) — which `docs/saint-capybara/exemplars/*.md`
+  ids this script modeled its opening, closing, or a jab on. Documentation only,
+  no render effect; `tools/capy_storyboard.py` prints it as a header line in
+  `script.md` and `tools/capy/beats.py` warns (doesn't error) on an id with no
+  matching file. Omit entirely, or leave `[]`, if none apply.
 
 ## Beat fields (mirrors `capy/beats.py` exactly)
 
@@ -91,6 +97,8 @@ Each kind renders in one of three frame modes (`brand.md` sec 8) — CLIP
   pose: explaining_quote
   card: { quote: "...", attribution: "Brigham Young, Journal of Discourses 1:50", source: jd-1-50 }
   sources: [jd-1-50]
+  # Bible verses on a card: quote the NRSVue and put it in the attribution,
+  # e.g. attribution: "Romans 3:28 (NRSVue)". See research-protocol.md (Scripture).
 
 - { id: e01, kind: evidence, text: "...", pose: pointing, evidence: { image: images/x.png, credit: "..." }, sources: [x] }
 
@@ -260,6 +268,15 @@ all five into one video):
   where citations live. (The actual sources still belong in the
   description text itself, per `research-protocol.md` — this is only
   about not narrating that fact out loud.)
+- **The closing beat is the punchline (2026-09-13).** Delete "God bless."
+  and what's left must be the sharpest sentence in the script — a
+  verdict, a turnabout, or the overlooked fact restated. Never "we're not
+  saying," "it's fair to," "both true," "however it lands for you," or a
+  recap of what the Church has admitted. A needed caveat goes in the beat
+  *before* the close, as a clause. Full rule and the channel's own
+  examples: `apologetics-playbook.md`, "Sharpness". Same section governs
+  the *first* response beat: its first sentence is Saint Capybara's
+  position, never "that part's true."
 
 ## One-argument rule
 

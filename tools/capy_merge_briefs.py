@@ -27,6 +27,14 @@ What this tool checks, that capy_check_sources.py deliberately does not:
     in capy_check_sources.py takes the FIRST type:critic match in file order --
     a researcher-introduced critic entry ahead of the real one would silently break
     Gate A's article checks).
+  - (2026-09-13) a `locator`/`verification.link` pointing at an apologetics site
+    (FAIR, Scripture Central, Evidence Central, Interpreter -- APOLOGETIC_LEAD_HOST_HINTS)
+    can never verify a `quote`, and any entry pointing at one of those hosts must be
+    `type: apologetic-lead`. An `apologetic-lead` entry must have `quote: null` and a
+    `traced_to` that resolves (in this brief or in the existing sources.yaml) to an
+    upstream `primary/scholarly/official/scripture/dataset` entry -- never to another
+    lead, a critic entry, or nothing at all. See research-protocol.md sec 2 and
+    apologetics-playbook.md "Source hierarchy -- quote upstream".
   - anything failing validation is imported anyway, but with `inspected: false`
     (so capy_check_sources.py's existing "not inspected" error blocks citing it
     until a human or a future run actually verifies it) and a note explaining why.
@@ -77,6 +85,24 @@ ALLOWED_LINK_HOST_HINTS = (
     "churchofjesuschrist.org", "latter-day-stats",
 )
 
+# Apologetics-lead hosts (2026-09-13, apologetics-playbook.md "Source hierarchy" /
+# research-protocol.md sec 2). A page on one of these is a LEAD ONLY -- it can never
+# be the verification for a `quote`, and any source entry whose locator/verification
+# link points here MUST be `type: apologetic-lead` with `traced_to` set. See
+# validate_entry's apologetic-lead checks below.
+APOLOGETIC_LEAD_HOST_HINTS = (
+    "fairlatterdaysaints.org", "fairmormon.org",
+    "scripturecentral.org", "bookofmormoncentral.org", "evidencecentral.org",
+    "interpreterfoundation.org",
+)
+
+
+def _is_apologetic_lead_host(link: str | None) -> bool:
+    if not link:
+        return False
+    low = link.lower()
+    return any(hint in low for hint in APOLOGETIC_LEAD_HOST_HINTS)
+
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 YAML_BLOCK_RE = re.compile(r"```yaml\n(.*?)\n```", re.DOTALL)
 VERIFICATION_LOG_RE = re.compile(r"## Verification log\n(.*?)(?:\n##|\Z)", re.DOTALL)
@@ -119,11 +145,21 @@ def looks_like_valid_link(link: str | None) -> bool:
     return any(hint in low for hint in ALLOWED_LINK_HOST_HINTS) or low.startswith("http")
 
 
-def validate_entry(entry: dict, verification_log: str, role: str) -> list[str]:
+UPSTREAM_TRACE_TYPES = {"primary", "scholarly", "official", "scripture", "dataset"}
+
+
+def validate_entry(entry: dict, verification_log: str, role: str, known_types: dict[str, str] | None = None) -> list[str]:
     """Returns a list of problems. An entry with any problem is imported with
-    inspected: false regardless of what the brief claimed."""
+    inspected: false regardless of what the brief claimed.
+
+    known_types maps source id -> type for every entry already in sources.yaml
+    plus every entry merged so far in this run (see merge()) -- used to validate
+    `traced_to` actually resolves to an upstream primary/scholarly/etc. entry,
+    not to another lead or to nothing at all.
+    """
     problems = []
     sid = entry.get("id", "<no id>")
+    known_types = known_types or {}
 
     if entry.get("type") == "critic" and sid != "critic-article":
         problems.append(f"{sid}: type 'critic' is reserved for the real critic-article entry")
@@ -136,10 +172,12 @@ def validate_entry(entry: dict, verification_log: str, role: str) -> list[str]:
                 f"recognized tool call"
             )
 
+    verification = entry.get("verification") or {}
+    link = verification.get("link") if isinstance(verification, dict) else None
+    tool = verification.get("tool") if isinstance(verification, dict) else None
+    locator = entry.get("locator")
+
     if entry.get("quote"):
-        verification = entry.get("verification") or {}
-        link = verification.get("link") if isinstance(verification, dict) else None
-        tool = verification.get("tool") if isinstance(verification, dict) else None
         has_valid_link = looks_like_valid_link(link)
         has_verify_tool = tool in ("verify_quote", "cite_page")
         webfetch_logged = "webfetch" in verification_log.lower() and sid.lower() in verification_log.lower()
@@ -148,9 +186,44 @@ def validate_entry(entry: dict, verification_log: str, role: str) -> list[str]:
                 f"{sid}: quote is set but has no traceable verification (link/tool/"
                 f"verification-log entry)"
             )
+        # An apologetic-lead host (FAIR/Scripture Central/etc.) can never verify a
+        # quote -- 2026-09-13: closes the hole where looks_like_valid_link() accepts
+        # any http(s) URL. A lead's own words are never the terminal citation.
+        if _is_apologetic_lead_host(link) or _is_apologetic_lead_host(locator):
+            problems.append(
+                f"{sid}: quote is verified against an apologetic-lead host ({link or locator}) "
+                f"-- a lead can never be the terminal citation for a quote; trace it to the "
+                f"primary/scholarly source it cites instead"
+            )
 
-    if entry.get("traced_to") is None and entry.get("type") == "apologetic-lead":
-        problems.append(f"{sid}: type 'apologetic-lead' requires traced_to")
+    entry_type = entry.get("type")
+    is_lead_host = _is_apologetic_lead_host(link) or _is_apologetic_lead_host(locator)
+
+    if is_lead_host and entry_type != "apologetic-lead":
+        problems.append(
+            f"{sid}: locator/verification link points at an apologetics site "
+            f"({link or locator}) but type is '{entry_type}', not 'apologetic-lead'"
+        )
+
+    if entry_type == "apologetic-lead":
+        traced_to = entry.get("traced_to")
+        if traced_to is None:
+            problems.append(f"{sid}: type 'apologetic-lead' requires traced_to")
+        else:
+            traced_type = known_types.get(traced_to)
+            if traced_type is None:
+                problems.append(
+                    f"{sid}: traced_to '{traced_to}' does not resolve to any source id "
+                    f"in this brief or in sources.yaml"
+                )
+            elif traced_type not in UPSTREAM_TRACE_TYPES:
+                problems.append(
+                    f"{sid}: traced_to '{traced_to}' resolves to a '{traced_type}' source -- "
+                    f"apologetic-lead must trace to an upstream primary/scholarly/official/"
+                    f"scripture/dataset source, not to another lead, critic, or 'other' entry"
+                )
+        if entry.get("quote"):
+            problems.append(f"{sid}: type 'apologetic-lead' must have quote: null -- quote the traced_to source instead")
 
     return problems
 
@@ -171,6 +244,12 @@ def merge(project: Path, dry_run: bool) -> int:
     doc = load_sources_doc(sources_path)
     existing_ids = {s["id"] for s in doc["sources"] if s.get("id")}
     existing_locators = {s.get("locator") for s in doc["sources"] if s.get("locator")}
+    # id -> type, for validating traced_to. Seeded from sources.yaml, and updated as
+    # each brief's entries are accepted below -- so a lead in one brief can legitimately
+    # trace to a primary/scholarly source another researcher found in the same run,
+    # as long as that source is processed first (briefs are processed in filename
+    # order, i.e. claim<N> order, which is the natural dependency order in practice).
+    known_types = {s["id"]: s.get("type") for s in doc["sources"] if s.get("id")}
 
     added = []
     conflicts = []
@@ -188,7 +267,7 @@ def merge(project: Path, dry_run: bool) -> int:
                 conflicts.append(f"{bp.name}: id '{sid}' already exists, skipped (rename in the brief and re-run if this is actually a different source)")
                 continue
 
-            problems = validate_entry(entry, brief["verification_log"], role)
+            problems = validate_entry(entry, brief["verification_log"], role, known_types)
             if problems:
                 entry["inspected"] = False
                 entry.setdefault("notes", "")
@@ -207,6 +286,7 @@ def merge(project: Path, dry_run: bool) -> int:
 
             doc["sources"].append(entry)  # append, never prepend
             existing_ids.add(sid)
+            known_types[sid] = entry.get("type")
             if locator:
                 existing_locators.add(locator)
             added.append(sid)

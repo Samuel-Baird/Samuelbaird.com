@@ -43,6 +43,24 @@ check on whether the critic quoted the leader fairly.
   `inspected: false`.
 - Write **only** `research/briefs/claim<N>-capy-doctrine-scholar.md`.
 
+## Apologetic leads
+
+FAIR Answers, Scripture Central KnoWhy, Evidence Central, and the Interpreter
+Foundation website are **leads only** (`research-protocol.md` sec 2/3) — useful for
+finding a footnote to chase, never for the on-screen citation. Prefer the Gospel
+Scholar Archive's own FAIR mirror (`search_concordance(path_contains="FAIR/FAIR")` →
+`read_pages` → `cite_page`) over the live wiki when both exist; use `WebFetch` for
+Scripture Central / Evidence Central / Interpreter's website (the *journal*, when
+it's in the GSA, is `scholarly`, not a lead). Record a lead as
+`type: apologetic-lead`, `quote: null`, `inspected_via` naming the tool that opened
+it, and `traced_to: <id of the primary/scholarly/official/scripture/dataset entry
+its footnote led to>` — `tools/capy_merge_briefs.py` rejects an apologetic-lead host
+used to verify a `quote`, and rejects a `traced_to` that doesn't resolve to an
+upstream entry. Also check `docs/saint-capybara/common-issues/proposals/<topic>.md`
+if it exists — a prior seeding pass may already have traced this topic's strongest
+FAIR/KnoWhy arguments upstream. And check `docs/saint-capybara/exemplars/README.md`'s
+"By topic" index for a worked model of how a similar argument reads on screen.
+
 ## Output — the brief file
 
 ```markdown

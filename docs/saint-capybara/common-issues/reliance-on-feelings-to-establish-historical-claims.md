@@ -24,12 +24,14 @@ additional, not primary or substitute, support.
 
 ## Exmo/atheist response
 
-Concede the category point directly rather than defending feelings as
-historical evidence: a spiritual witness cannot by itself establish that
-ancient Nephites existed, any more than a Christian's feeling that the
-Bible is true establishes the historicity of specific Old Testament
-events. The defensible position separates the questions — historical
-claims get evaluated by historical method (see the Book of Mormon
+The category point is the LDS position's own premise, not a hit against
+it, so don't defend feelings as historical evidence: a spiritual witness
+cannot by itself establish that ancient Nephites existed, any more than
+a Christian's feeling that the Bible is true establishes the historicity
+of specific Old Testament events, and the objection only bites against a
+position that asks it to. The defensible position separates the
+questions — historical claims get evaluated by historical method (see
+the Book of Mormon
 historicity cluster of files), and spiritual confirmation, whatever its
 epistemic status (`circular-testimony-epistemology.md`), answers a
 different question (is this project worth engaging with as a spiritual

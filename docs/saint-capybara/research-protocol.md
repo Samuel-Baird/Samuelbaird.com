@@ -58,13 +58,36 @@ an apologetic lead pointed to, not the lead itself.
   work (Gospel Scholar Archive).
 - **Official**: current Church statements, handbooks, or newsroom
   material — cite as *current practice/position*, dated.
-- **Scripture**: canonical text citation.
+- **Scripture**: canonical text citation. **Bible quotations use the NRSVue
+  (New Revised Standard Version, Updated Edition) by default** — record the
+  translation in the source's `quote`/citation (e.g. "John 3:16 (NRSVue)"). Use
+  another translation only when the claim turns on it (a KJV-dependent Book of
+  Mormon parallel, a specific rendering an opponent relies on, the JST) and
+  label it on screen. Never quote from memory: confirm the NRSVue wording
+  before it goes in a card or excerpt.
 - **Dataset**: Latter-day Stats datasets/studies for empirical/statistical
   claims — cite the dataset/study, not a paraphrase of it.
 - **Apologetic-lead**: an apologetics site or forum post is a *lead only*
   — it must be traced to (and re-verified against) a primary or scholarly
   source before it can be used on screen. Record `traced_to` in
   `sources.yaml`. Never let an apologetic source be the terminal citation.
+  **Named go-to leads (2026-09-13):** FAIR Answers
+  (`fairlatterdaysaints.org` — prefer the Gospel Scholar Archive's mirror
+  under `Read/Articles/FAIR/FAIR/…`, searchable with `search_concordance`
+  and citable with `cite_page`, over the live wiki), Scripture Central
+  KnoWhy (`scripturecentral.org`), Evidence Central
+  (`evidencecentral.org`), and the Interpreter Foundation *website*
+  (`interpreterfoundation.org` — the *journal*, when it's in the GSA, is
+  `scholarly`, not a lead). **Chase the footnote, not the page**: a lead's
+  value is the citation trail inside it, not its own prose. The traced
+  entry itself must be `inspected: true` this run — a lead pointing at an
+  uninspected source is still unusable on screen. `tools/capy_merge_briefs.py`
+  and `tools/capy_check_sources.py` both enforce this mechanically: an
+  entry whose `locator`/`verification.link` is one of these hosts must be
+  `type: apologetic-lead` with `quote: null`, and its `traced_to` must
+  resolve to an inspected, upstream `primary/scholarly/official/scripture/
+  dataset` entry — never to another lead, a critic entry, or nothing at
+  all.
 - **Critic**: the critic's own clip/video — or, for an article source,
   the article's own text in `source/source.md` — is itself a legitimate
   `critic` source when quoting or characterizing what they said. An
@@ -104,6 +127,13 @@ an apologetic lead pointed to, not the lead itself.
 - A transcript-search / "RestoredTruth" style MCP, if present in a given
   session, is a **lead only** — same rule as apologetic sources: trace and
   re-verify before it's used on screen.
+- **Apologetic leads** (FAIR Answers, Scripture Central KnoWhy, Evidence
+  Central, Interpreter Foundation website) — sec 2's named go-to sites.
+  Fetch with `WebFetch`, or (for FAIR) prefer the Gospel Scholar Archive
+  mirror via `search_concordance`/`read_pages`/`cite_page`. Use only to
+  find a footnote to chase upstream; record the lead itself as
+  `type: apologetic-lead` with `traced_to` set, never as the terminal
+  citation.
 - **Article text** — fetch the page with the agent's own WebFetch (or
   have the user paste it, for paywalled pieces) into a cleaned, blank-line
   separated text file, then `capy_ingest.py --article-file cleaned.md
@@ -219,11 +249,18 @@ response differs:
   omission, framing, or decontextualization. Rebut by restoring context,
   not by disputing the literal words.
 - **True but out of context** — the quote/fact is accurate; the argument
-  built on it doesn't follow. Concede the fact, dispute the inference.
+  built on it doesn't follow. State the fact and dispute the inference in
+  the same beat — never a standalone concession beat with the rebuttal
+  left implicit or deferred to a later beat.
 - **True and damaging** — sometimes the honest answer is "yes, that
-  happened, and it's a fair thing to raise." Concede it; Saint Capybara's
-  credibility depends on not spinning every fact into a win (see
-  escalation trigger 6 below).
+  happened." State it plainly (never deny a verifiable fact — Saint
+  Capybara's credibility depends on that), but pair it immediately with
+  the strongest available mitigating context, positive counter-evidence,
+  or explanatory frame the research actually supports — don't let the
+  claim stand alone as a concession. **If genuinely no defensible
+  reframing exists for a load-bearing claim, that is escalation trigger 6
+  below** — a design question for the user, not something to resolve by
+  either spinning the fact or leaving it unanswered on screen.
 
 ## 8. Argument construction rules
 
@@ -368,15 +405,22 @@ up something real:
    make after this response?"
 2. "What did I leave out of the critic's original clip that changes how
    fair this response is?"
+3. (Added 2026-09-13.) "Where does the standard the critic is applying,
+   applied consistently, cut against the critic's own tradition — a
+   canon, a confession, a council, a dated statement, their own
+   scholarship?" This is the **turnabout**: the raw material for the
+   script's one permitted jab (`apologetics-playbook.md`, "Sharpness").
+   "None found" is an acceptable answer; a forced one is not.
 
-Record both answers directly in `claims.md` next to the claim. If the
-adversarial pass surfaces a real problem, fix the response and repeat the
-pass once more before moving on.
+Record all three answers directly in `claims.md` next to the claim
+(`Turnabout:` line). If the adversarial pass surfaces a real problem, fix
+the response and repeat the pass once more before moving on.
 
-**When `/capy-research` (sec 15) was used for a claim**, these two answers
+**When `/capy-research` (sec 15) was used for a claim**, these answers
 are not self-assessed — they are seeded by the `capy-red-team` subagent's
-independent brief ("Strongest objection after the response" and "Omitted
-from the clip" sections) and pasted into `claims.md` by the orchestrator.
+independent brief ("Strongest objection after the response," "Omitted
+from the clip," and "Turnabout" sections) and pasted into `claims.md` by
+the orchestrator.
 The orchestrator still owns the "fix and repeat once" step: if the
 red-team brief surfaces a real problem, fix the response and re-check
 before moving on, same as a self-assessed pass would. For a claim

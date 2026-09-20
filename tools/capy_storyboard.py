@@ -120,6 +120,8 @@ def render_script_md(doc: dict, per_beat: dict[str, float], total: float, projec
             pass
     lines.append("")
     lines.append(f"**Hook (title/description only, not shown on screen):** {doc.get('hook','')!r}")
+    exemplars = doc.get("exemplars") or []
+    lines.append(f"**Exemplars modeled:** {', '.join(exemplars) if exemplars else 'none'}")
     lines.append("")
     lines.append("Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes "
                   "(see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly "

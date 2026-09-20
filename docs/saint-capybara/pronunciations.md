@@ -38,7 +38,7 @@ part of Part A review checklist item 12.
 ```yaml
 - word: Nauvoo
   ipa: "/nɔˈvu/"
-  status: unverified          # unverified | verified-by-ear <date>
+  status: unverified          # unverified | web-sourced <date> | ok-as-is | verified-by-ear <date>
   note: "optional context, e.g. alternate stress heard in practice"
 ```
 
@@ -46,6 +46,31 @@ part of Part A review checklist item 12.
 confirmed by listening to a real render. Once the user (or the agent)
 listens to a sample containing the word and confirms it sounds right,
 update to `verified-by-ear <YYYY-MM-DD>`.
+
+## Look up unique names online (2026-09-18 standing rule)
+
+For any proper noun in a project's narration that is not already in the seed
+list or `bofm-pronunciations.yaml` (church fathers, scholars, obscure places,
+non-English names, e.g. Athanasius, Eusebius, Deuteronomy), **search the web
+for its pronunciation before writing the entry** instead of guessing from
+spelling: `WebSearch` "<name> pronunciation IPA", prefer Wiktionary, Collins /
+Merriam-Webster / Cambridge, or BibleSpeak.org for biblical and patristic
+names, and the Church's own guide for Book of Mormon names. Then:
+
+- Record the IPA and a plain respelling in the `note:`, and name the source.
+- Set `status: web-sourced <YYYY-MM-DD>` (between `unverified` and
+  `verified-by-ear`). Only a listen-through of a real render earns
+  `verified-by-ear`.
+- If sources disagree (British vs US, two stresses), pick the US form, and
+  note the alternative.
+- Common words (Corinthians, Isaiah, Moses) may be marked `status: ok-as-is`
+  with no lookup.
+- Port newly web-sourced or verified entries back into the shared seed list
+  so the next project starts from a checked pronunciation.
+
+Chatterbox ignores this dictionary (see the top of this file), so for
+Chatterbox beats the entry is a spot-check reference for the listen-through
+(Part B item 1 of `review-checklist.md`), not something the renderer applies.
 
 ## Expansion / abbreviation rules
 

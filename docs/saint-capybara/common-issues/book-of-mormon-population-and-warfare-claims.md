@@ -30,6 +30,8 @@ given regional population density estimates for the relevant
 Mesoamerican periods — this is a live scholarly argument, not a
 conclusively settled one, so present it as `plausible`, not
 `demonstrated`. If pressed on the hemispheric/large-population reading
-many members grew up assuming, concede directly that the Limited
-Geography Model requires abandoning that older reading, which is itself
-worth being upfront about rather than eliding.
+many members grew up assuming, say outright that the Limited Geography
+Model requires abandoning that older reading, and that this is the
+point: the shift to a limited geography is what brings the text's
+population and warfare figures into line with regional density
+estimates, so state it upfront rather than eliding it.

@@ -25,6 +25,13 @@ the orchestrator merges every angle's brief itself.
 3. The matching `docs/saint-capybara/common-issues/<topic>.md`, if it exists and isn't
    just `_TODO_`.
 
+## Bible translation
+
+Quote the Bible in the **NRSVue** unless the claim depends on a different
+rendering (KJV parallels in the Book of Mormon, the JST, a translation the
+opponent relies on). Label the translation in every citation, e.g. "Romans 3:28
+(NRSVue)", and never quote scripture from memory.
+
 ## Method
 
 State the objection in its strongest form, then name the assumption that makes it
@@ -45,6 +52,24 @@ show the range of live theological possibility was wider than later creeds, no m
 - A web source's Verification log line needs the fetched URL and a verbatim ≥20-word
   excerpt you actually found on the page.
 - Write **only** `research/briefs/claim<N>-capy-scripture-theologian.md`.
+
+## Apologetic leads
+
+FAIR Answers, Scripture Central KnoWhy, Evidence Central, and the Interpreter
+Foundation website are **leads only** (`research-protocol.md` sec 2/3) — useful for
+finding a footnote to chase, never for the on-screen citation. Prefer the Gospel
+Scholar Archive's own FAIR mirror (`search_concordance(path_contains="FAIR/FAIR")` →
+`read_pages` → `cite_page`) over the live wiki when both exist; use `WebFetch` for
+Scripture Central / Evidence Central / Interpreter's website (the *journal*, when
+it's in the GSA, is `scholarly`, not a lead). Record a lead as
+`type: apologetic-lead`, `quote: null`, `inspected_via` naming the tool that opened
+it, and `traced_to: <id of the primary/scholarly/official/scripture/dataset entry
+its footnote led to>` — `tools/capy_merge_briefs.py` rejects an apologetic-lead host
+used to verify a `quote`, and rejects a `traced_to` that doesn't resolve to an
+upstream entry. Also check `docs/saint-capybara/common-issues/proposals/<topic>.md`
+if it exists — a prior seeding pass may already have traced this topic's strongest
+FAIR/KnoWhy arguments upstream. And check `docs/saint-capybara/exemplars/README.md`'s
+"By topic" index for a worked model of how a similar argument reads on screen.
 
 ## Output — the brief file
 

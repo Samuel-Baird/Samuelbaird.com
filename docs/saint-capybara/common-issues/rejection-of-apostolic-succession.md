@@ -45,11 +45,13 @@ Protestant traditions have historically struggled to give a clear one to.
 
 ## Exmo/atheist response
 
-Concede plainly: the succession claimed by any single institution
-(Catholic, Orthodox, or LDS) rests on documentary and archaeological
-evidence that gets thinner the further back it goes, especially in the
-first two centuries. That's a real and shared evidentiary problem, not
-unique to LDS claims — cite McDonald, *The Formation of the Biblical
+The evidentiary thinness the critic points to cuts against every
+institution's succession claim equally, not LDS claims specifically:
+the succession claimed by any single institution (Catholic, Orthodox,
+or LDS) rests on documentary and archaeological evidence that gets
+thinner the further back it goes, especially in the first two
+centuries, which makes this a shared condition of the whole field
+rather than an LDS-specific vulnerability — cite McDonald, *The Formation of the Biblical
 Canon* vol. 2, on how thin and contested even canon-related apostolic
 attribution is by the ["mid-second century after the eyewitnesses...were
 gone"](https://corpus.noahairmet.com/b/mcdonald-the-formation-of-the-biblical-canon-29cb/35).

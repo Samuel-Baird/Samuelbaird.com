@@ -10,6 +10,10 @@ Rules (see docs/saint-capybara/research-protocol.md and script-format.md):
   - a source whose type is apologetic-lead must have traced_to set, and any
     beat relying ONLY on apologetic-lead sources (no traced primary/scholarly
     backing among its other cited sources) is a warning (--strict: error)
+  - (2026-09-13) an apologetic-lead's traced_to must resolve to an inspected,
+    upstream (primary/scholarly/official/scripture/dataset) entry in this same
+    sources.yaml -- unresolved, or pointing at another lead/critic/other entry,
+    or pointing at an entry not itself inspected: true, is an error
   - sensitive: true forbids amused/happy poses anywhere in the video
   - the closing beat's text must end on "...God bless." (brand.md sec 5a)
   - unused sources (declared but never cited by any beat) are reported as info
@@ -55,6 +59,34 @@ Issue = beats_mod.Issue
 
 EXCERPT_ARTICLE_WARN_FRACTION = 0.25
 EXCERPT_ARTICLE_MAX_FRACTION = 0.40
+
+# Mirrors capy_merge_briefs.py's UPSTREAM_TRACE_TYPES -- an apologetic-lead's
+# traced_to must resolve to one of these, not to another lead/critic/other entry.
+UPSTREAM_TRACE_TYPES = {"primary", "scholarly", "official", "scripture", "dataset"}
+
+
+def check_traced_to(sources: dict) -> list:
+    """2026-09-13: validate every apologetic-lead's traced_to resolves to an
+    inspected, upstream source in this same sources.yaml. capy_merge_briefs.py
+    checks this at import time for briefs it merges, but sources.yaml can also be
+    hand-edited afterward, so this re-checks the file as it stands at Gate A."""
+    issues: list = []
+    for sid, src in sources.items():
+        if src.get("type") != "apologetic-lead":
+            continue
+        traced_to = src.get("traced_to")
+        if not traced_to:
+            continue  # already an error via the existing per-beat check / field check
+        target = sources.get(traced_to)
+        if target is None:
+            issues.append(Issue("error", None, f"source '{sid}': traced_to '{traced_to}' does not resolve to any source id in sources.yaml"))
+            continue
+        if target.get("type") not in UPSTREAM_TRACE_TYPES:
+            issues.append(Issue("error", None, f"source '{sid}': traced_to '{traced_to}' is a '{target.get('type')}' source -- must trace to an upstream primary/scholarly/official/scripture/dataset source"))
+            continue
+        if not target.get("inspected"):
+            issues.append(Issue("error", None, f"source '{sid}': traced_to '{traced_to}' is not itself marked inspected: true"))
+    return issues
 
 
 def load_sources(path: Path) -> dict:
@@ -254,6 +286,7 @@ def main() -> int:
     field_issues, article = check_source_fields(args.project, doc, info, sources, strict=args.strict)
     issues += field_issues
     issues += check_excerpts(doc, article)
+    issues += check_traced_to(sources)
     critic = find_critic_article_entry(sources) if info.kind == "article" else None
     if critic and critic.get("id"):
         used_ids.add(critic["id"])  # the excerpt beats are its citations

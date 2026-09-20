@@ -50,6 +50,15 @@ rather than an external objection.
    could still raise afterward? This becomes `research-protocol.md` §14 Q1.
 5. **Omitted from the clip**: what did the critic's original source leave out that
    changes how fair *the critic's* framing is? This becomes §14 Q2.
+6. **Turnabout**: still in persona, name the one thing you would least want raised
+   about your *own* tradition on this exact topic — the place where the standard the
+   critic is applying, applied consistently, cuts against the critic's own church,
+   scholarship, or worldview. Be specific (a canon, a confession, a council, a
+   dated statement, a scholar's own concession), because this is the raw material
+   for the script's one permitted jab (`apologetics-playbook.md`, "Sharpness" — the
+   turnabout is the preferred form). If there genuinely isn't one, say so rather
+   than manufacturing a weak one; a forced turnabout reads as polemic. This becomes
+   §14 Q3.
 
 ## Hard rules — tool-verified only
 
@@ -57,6 +66,24 @@ rather than an external objection.
   a quote, a statistic), verify it this run with a tool before stating it as fact;
   otherwise flag it as your own reasonable supposition, not a verified fact.
 - Write **only** `research/briefs/claim<N>-capy-red-team.md`.
+
+## Apologetic leads
+
+FAIR Answers, Scripture Central KnoWhy, Evidence Central, and the Interpreter
+Foundation website are **leads only** (`research-protocol.md` sec 2/3) — useful for
+finding a footnote to chase, never for the on-screen citation. Prefer the Gospel
+Scholar Archive's own FAIR mirror (`search_concordance(path_contains="FAIR/FAIR")` →
+`read_pages` → `cite_page`) over the live wiki when both exist; use `WebFetch` for
+Scripture Central / Evidence Central / Interpreter's website (the *journal*, when
+it's in the GSA, is `scholarly`, not a lead). Record a lead as
+`type: apologetic-lead`, `quote: null`, `inspected_via` naming the tool that opened
+it, and `traced_to: <id of the primary/scholarly/official/scripture/dataset entry
+its footnote led to>` — `tools/capy_merge_briefs.py` rejects an apologetic-lead host
+used to verify a `quote`, and rejects a `traced_to` that doesn't resolve to an
+upstream entry. Also check `docs/saint-capybara/common-issues/proposals/<topic>.md`
+if it exists — a prior seeding pass may already have traced this topic's strongest
+FAIR/KnoWhy arguments upstream. And check `docs/saint-capybara/exemplars/README.md`'s
+"By topic" index for a worked model of how a similar argument reads on screen.
 
 ## Output — the brief file
 
@@ -83,6 +110,11 @@ research-protocol.md sec 14 Q1 — feed this directly into claims.md.
 ## Omitted from the clip
 research-protocol.md sec 14 Q2 — feed this directly into claims.md.
 
+## Turnabout
+research-protocol.md sec 14 Q3 — the specific place the critic's own standard cuts
+against the critic's own tradition, tool-verified, or "none found" with one line on
+why. Feed this directly into claims.md.
+
 ## Escalation triggers hit
 none | trigger #N + why
 
@@ -92,5 +124,5 @@ any factual premise in this brief you did not confirm with a tool this run
 
 ## Return to the orchestrator
 
-≤200 words: persona chosen, the one-sentence strongest-objection (Q1), and the
-brief's file path.
+≤200 words: persona chosen, the one-sentence strongest-objection (Q1), the
+one-sentence turnabout (Q3, or "none"), and the brief's file path.

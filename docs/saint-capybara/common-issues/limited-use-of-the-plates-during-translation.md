@@ -6,8 +6,9 @@ Multiple witness accounts describe the plates as often covered with a
 cloth, kept in another room, or otherwise not directly consulted during
 much of the translation/dictation process — consistent with the
 seer-stone-in-hat method (see `seer-stone-hat-translation-method.md`).
-State this plainly as part of the same acknowledged translation picture
-rather than as a separate, newly-conceded fact.
+State this plainly as part of the same translation picture the channel
+already teaches rather than as a separate fact surfaced for the first
+time.
 
 ## Catholic and Protestant response
 
@@ -24,14 +25,15 @@ mechanically, not as an embarrassment to explain away.
 ## Exmo/atheist response
 
 The direct question this raises: if the plates weren't being actively
-read, what were they for? Give the straightforward LDS answer plus the
-critical alternative honestly: LDS explanation is that the physical
-plates authenticated the record's ancient existence and were shown to
-witnesses (see `three-and-eight-witnesses.md`) even though the actual
-English wording came through the seer stone by revelation, not direct
-reading; critics argue the plates' limited functional role during
+read, what were they for? Lead with the LDS answer and state the
+critical inference as an inference: the physical plates authenticated
+the record's ancient existence and were shown to witnesses (see
+`three-and-eight-witnesses.md`) even though the actual English wording
+came through the seer stone by revelation, not direct reading, which is
+a reading that accounts for both the witness accounts and the limited
+consultation. Critics argue the plates' limited functional role during
 dictation is more consistent with them being unnecessary altogether to
 the production of the text — i.e., evidence against their functional
-necessity, if not their existence. Present both readings and let the
-certainty-scale language do the work rather than declaring the question
-settled either way.
+necessity, if not their existence — and that inference is the thing to
+test on screen, with the certainty-scale language marking it as disputed
+rather than settled either way.

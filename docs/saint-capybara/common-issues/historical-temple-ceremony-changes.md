@@ -3,10 +3,11 @@
 ## General response
 
 The endowment ceremony has changed multiple times since Nauvoo (1927,
-1990, 2005, 2019, among others) — a documented, undisputed fact, not a
-critical allegation to rebut. Frame directly: continuing revelation
-applies to *how* eternal ordinances are administered, not only to new
-doctrine — see `continuing-prophets-and-revelation.md`.
+1990, 2005, 2019, among others), a documented fact that is exactly what
+continuing revelation predicts: revelation applies to *how* eternal
+ordinances are administered, not only to new doctrine — see
+`continuing-prophets-and-revelation.md`. State the fact once and put
+the beat's weight on that frame.
 
 ## Catholic response
 
@@ -45,9 +46,9 @@ as evasive to an audience that already knows some of it:
   removal/adjustment of specific covenant language and gestures,
   including changes affecting women's covenant wording).
 
-State plainly: this is one of the clearest cases where "the doctrine and
-practice has changed" is simply true, documented by the Church's own
-apologetic arm, and not something to argue around — the substantive
-question is whether legitimate ongoing revelation can change ritual form
-(general response and Catholic-parallel arguments above), not whether
-change happened.
+"The practice has changed" is simply true and documented by the Church's
+own apologetic arm, which is why the critic's argument has to carry a
+second premise to land: that legitimate ongoing revelation cannot change
+ritual form. That premise is the substantive question (general response
+and Catholic-parallel arguments above), and it's the one the beat should
+argue, not whether change happened.

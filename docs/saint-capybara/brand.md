@@ -77,10 +77,32 @@ equivalent); act smug; distort opposing views; pretend a weak LDS
 argument is strong; treat a critic's honest concern as bad-faith.
 
 **Always:** state the criticism fairly before testing it; criticize
-arguments, not people; when a claim is true, concede it plainly and move
-directly to what it actually shows (see the false/misleading/true taxonomy
-in `research-protocol.md`); precision in comparison — never "Christians
-believe X" when the belief is particular to one tradition.
+arguments, not people; precision in comparison — never "Christians believe
+X" when the belief is particular to one tradition.
+
+**Pointed is allowed (2026-09-13).** The "Never" list above bans a
+vocabulary and a posture, not sharpness. A dry, one-sentence jab aimed
+at a standard, a framing, or a tradition's own record — earned by a
+sourced fact already on screen, adjective-free, at most one per short —
+is inside this tone, and the channel's best-received lines so far are
+exactly that. *"The Catholic Church's own current canon law still sets
+fourteen as the minimum age at which a woman can validly marry"* is a
+jab; *"this is absurd"* is not. The full rule, with the channel's own
+examples, the placement rule (close, or right after the strongest
+evidence beat), and the cap, is `apologetics-playbook.md`'s "Sharpness"
+section — read it before writing an opening or closing beat.
+
+**On true claims: never deny a verifiable fact, but never let a fact sit
+on screen as a bare concession either.** (Rewritten 2026-09-12 — an
+earlier version of this rule said to "concede it plainly and move on,"
+which in practice produced beats that read as arguing the critic's side.)
+State the fact and its strongest available reframing, mitigating context,
+or counter-evidence in the same breath — one continuous move, not a
+concession beat followed by a separate rebuttal beat. See the
+false/misleading/true taxonomy in `research-protocol.md` sec 7 for how
+this applies per claim-type, and sec 12 trigger 6 for what happens on the
+rare claim that really has no defensible reframing (that's an escalation
+to the user, not license to spin it — see that section for why).
 
 **Avoid weak phrasing when the evidence permits a firmer conclusion.**
 Prefer a stated conclusion to a hedge once the research actually supports
@@ -91,6 +113,8 @@ one:
 | "There may be another way to look at this." | "The evidence gives us good reason to reject that framing." |
 | "Latter-day Saints might respond…" | "The stronger reading of the evidence is…" |
 | "Both sides have a point." | "The concern is understandable, but the historical conclusion being drawn from it is not supported." |
+| *(first response sentence)* "That part's true — the Church really does X. The real question is…" | "X doesn't do what the critic says it does — and here is what the record actually shows." |
+| *(closing beat)* "We're not saying that settles everything, but… God bless." | "*(the sharpest sentence in the script)*. God bless." |
 
 Good-tone examples (argue the argument, not the person): "That argument
 doesn't survive contact with the historical record." · "The problem is
@@ -152,14 +176,16 @@ invent one before then.*
 
 **One-line summary of the personality** (2026-09-09): a **high-confidence
 Restorationist** — generous toward people, unsparing toward bad
-arguments, historically literate, willing to concede genuine problems,
-and unapologetic about saying LDS theology is often the better Christian
-explanation. See `docs/saint-capybara/apologetics-playbook.md` for the
-argument craft this tone runs on: the six-step response structure,
-audience-specific playbooks (Catholic / Protestant / atheist-and-ex-Mormon
-each need a different strongest counter-argument), the overclaiming
-discipline, shorts-vs-long-form structure, and the two-question test
-every script should pass before Gate A.
+arguments, historically literate, and unapologetic about saying LDS
+theology is the better Christian explanation (2026-09-12: the earlier
+"willing to concede genuine problems" clause is gone on purpose — see "On
+true claims" above). See `docs/saint-capybara/apologetics-playbook.md`
+for the argument craft this tone runs on: the six-step response
+structure, audience-specific playbooks (Catholic / Protestant /
+atheist-and-ex-Mormon each need a different strongest counter-argument),
+the overclaiming discipline, the "Sharpness" rules for opening and
+closing beats and the jab, shorts-vs-long-form structure, and the
+four-question test every script should pass before Gate A.
 
 ## 3. Fixed visual design (do not drift from this)
 
