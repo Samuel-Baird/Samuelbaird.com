@@ -30,7 +30,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n02b` (narration, ~11.7s)
 - **Original Video Transcript:** literally exactly right. But they say that they believe in Jesus. Correct. But they don't actually believe that Jesus is the eternal God. How so? Because they believe that everyone and everything
 - **Pose:** pointing
-- **Narration:** And that's testable. 'Everlasting God' — el olam -- is an ancient Hebrew title for God, used as far back as Genesis, centuries before anyone had formulated one-substance Trinitarian language at all. The word itself was never carrying that specific, later metaphysical claim.
+- **Narration:** And that's testable. 'Everlasting God' — el olam — is an ancient Hebrew title for God, used as far back as Genesis, centuries before anyone had formulated one-substance Trinitarian language at all. The word itself was never carrying that specific, later metaphysical claim.
 - **Sources:** el-olam-everlasting-god-genesis-21-33
 - **Notes:** 
 
