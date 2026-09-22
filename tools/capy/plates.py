@@ -21,7 +21,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from capy.beats import resolve_pose
 from capy.layout import Theme
@@ -61,20 +62,31 @@ def _background(theme: Theme) -> Image.Image:
     w, h = theme.canvas_size
     parchment = theme.color_rgba("parchment")
     img = Image.new("RGBA", (w, h), parchment)
-    # Subtle pixel-dither vignette: darken toward the edges.
-    vignette = Image.new("L", (w, h), 0)
-    vdraw = ImageDraw.Draw(vignette)
+    # Vignette: darken toward the edges only, computed directly from radial
+    # distance (0 at dead center, VIGNETTE_MAX_ALPHA at the far corners).
+    #
+    # BUG FIXED 2026-09-22: the previous implementation built the falloff by
+    # overwriting 24 concentric ellipses of increasing alpha (0..38) and
+    # decreasing radius onto an all-zero "L" canvas, then inverted the whole
+    # thing and rescaled by 0.35 before using it as the composite mask. The
+    # invert turned the *unfilled* corners (still 0, since the widest circle
+    # at i=0 already had radius == the full diagonal and so covered every
+    # pixel, corners included) into the mask's highest values, and the
+    # actual 0..38 falloff signal survived only as a ~217-255 band after the
+    # invert -- so after *0.35 the composite mask sat at roughly 76-89
+    # (~30-35%) almost everywhere, including dead center, instead of ramping
+    # from 0 at the center. Confirmed on a rendered frame: the theme's own
+    # parchment (232, 218, 192) rendered as ~(164, 154, 136) at frame center,
+    # not the near-unmodified parchment a vignette should leave there.
+    yy, xx = np.mgrid[0:h, 0:w]
+    cx, cy = w / 2, h / 2
     max_r = ((w / 2) ** 2 + (h / 2) ** 2) ** 0.5
-    steps = 24
-    for i in range(steps):
-        t = i / steps
-        radius = max_r * (1 - t * 0.5)
-        alpha = int(40 * t)
-        cx, cy = w / 2, h / 2
-        vdraw.ellipse([cx - radius, cy - radius, cx + radius, cy + radius], fill=alpha)
-    vignette = ImageOps.invert(vignette)
+    dist = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2) / max_r  # 0 at center, 1 at the far corners
+    VIGNETTE_MAX_ALPHA = 90  # ~35% dark at the far corners, matching the old target strength
+    alpha = (np.clip(dist, 0.0, 1.0) ** 2) * VIGNETTE_MAX_ALPHA  # squared falloff: subtle near center
+    mask = Image.fromarray(alpha.astype("uint8"), mode="L")
     dark = Image.new("RGBA", (w, h), (0, 0, 0, 255))
-    img = Image.composite(dark, img, vignette.point(lambda p: int(p * 0.35)))
+    img = Image.composite(dark, img, mask)
     return img
 
 

@@ -153,8 +153,13 @@ captions:
   attach_punctuation: true
 
 card_text:
-  quote:       { font: body,    size: 48, min_size: 36, line_height: 1.20, color: ink }
-  attribution: { font: display, size: 26, min_size: 20, line_height: 1.40, color: source_teal }
+  # quote/attribution sizes raised 2026-09-22 -- at the old 48/26px, a
+  # typical (not even worst-case) quote card filled well under half of its
+  # own 890x900 box, and the 26px attribution was hard to read on a phone.
+  # fit_text still shrinks toward min_size for a longer quote before ever
+  # wrapping past max_lines, so this only raises the common case's size.
+  quote:       { font: body,    size: 72, min_size: 44, line_height: 1.20, color: ink }
+  attribution: { font: display, size: 34, min_size: 22, line_height: 1.40, color: source_teal }
   chart:       { title: { font: display, size: 30 }, label: { font: body, size: 32 }, credit: { font: body, size: 24 } }
   evidence_credit: { font: body, size: 26 }
 
