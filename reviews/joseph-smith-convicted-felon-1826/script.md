@@ -73,7 +73,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `n05` (narration, ~18.5s)
 - **Original Video Transcript:** The Mormon Church cannot prove or say this is falsified. This account even appeared in Fraser's Magazine February 1873 and is vindicated by the 1971 discovery of the original bill.
 - **Pose:** thoughtful
-- **Narration:** The video says the 1971 bill vindicates Fraser's, but a bill that shows a hearing can't vindicate a guilty line. Fraser's printed it in 1873, and printing is not proving. The Joseph Smith Papers say questions remain about that text's reliability. The Church doesn't need to call the bill fake. Its own history pages already say Joseph appeared before Neely and that the accounts of the outcome conflict.
+- **Narration:** The video says the 1971 bill vindicates Fraser's, but a bill that shows a hearing can't vindicate a guilty line. Fraser's printed it in 1873, and printing is not proving. Questions remain about that text's reliability. The Church doesn't need to call the bill fake. Its own history pages already say Joseph appeared before Neely and that the accounts of the outcome conflict.
 - **Sources:** church-history-topic-1826-trial, jsp-state-of-ny-v-js-a, marshall-1873-fraser
 - **Notes:** 
 
@@ -101,7 +101,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n99` (narration, ~4.1s)
 - **Original Video Transcript:** Therefore, Joseph, as a prophet of truth and light, is severely compromised as his character and truthfulness is seriously impeached, if not utterly destroyed.
 - **Pose:** encouraging
-- **Narration:** The video found a bill for a hearing equivocated it as a verdict. God bless.
+- **Narration:** The video found a bill for a hearing and equivocated it as a verdict. God bless.
 - **Notes:** 
 
 ## Full source transcript
