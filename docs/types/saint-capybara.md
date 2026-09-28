@@ -77,6 +77,52 @@ Some queue rows are just a URL (no local file yet — ingest via
 into `source\source.mp4`) rather than a path into the intake folder; there
 is no intake-folder file to move or delete in that case.
 
+### Batch-downloading URL-only queue rows
+
+When told to do so, `tools/capy_fetch_queue.py` downloads every
+Instagram/Facebook/YouTube row in `need reaction.xlsx` that doesn't have
+a real `Path` yet, straight into the intake folder — this is a separate
+step from `capy_ingest.py`, which still does the actual per-project
+ingest (transcribe, source_info.json, moving the file into
+`D:\Videos\<slug>\source\`) afterwards.
+
+**One-time setup:**
+- `pip install -r tools/requirements.txt` (adds `yt-dlp`, `openpyxl`).
+- ffmpeg on PATH — yt_dlp needs it to merge separate video/audio streams
+  into one MP4 (same requirement `tools/capy/ff.py` already has).
+- Keep yt-dlp current (`pip install -U yt-dlp`) — the Instagram and
+  Facebook extractors break often and this is usually the fix.
+- Close Chrome before a run that needs cookies — Chrome locks its cookie
+  database on Windows, and yt_dlp can't read it while Chrome is running.
+
+**Run it:**
+```
+python tools\capy_fetch_queue.py --dry-run   # preview first
+python tools\capy_fetch_queue.py             # close Excel first
+```
+It downloads the best available video+audio and merges to MP4, naming
+each file `<prefix>-<id>.mp4` (`ig-`/`fb-`/`yt-` + the post/Reel/video ID)
+in `D:\saint-capybara-videos-needing-reactions\`. A file already on disk,
+or a duplicate URL already queued in an earlier row, is skipped rather
+than re-downloaded; a duplicate row's `Path` is set to `Duplicate of row
+N`. A failed row's `Path` is set to `Download failed <date>: <reason>` and
+the run continues to the next row — it never stops the whole batch. The
+sheet is backed up to `need reaction.backup.xlsx` before any writes.
+
+Instagram/Facebook mostly require a logged-in session: the tool tries
+without cookies first, then retries once with
+`--cookies-from-browser chrome` only on a login/rate-limit/private
+failure. **Anonymity note:** that sends the logged-in Chrome account's
+session to Instagram/Facebook (read-only, but it can link the viewing
+account to the downloaded posts) — see `brand.md` "Upload account
+hygiene." If this brand uses a separate Chrome profile, pass
+`--cookies-browser "chrome:Profile 2"` (yt_dlp's `BROWSER:PROFILE`
+syntax) instead of the default.
+
+Once a row has a real `Path`, continue as before:
+`capy_ingest.py --file <Path> --project D:\Videos\<slug> --url <link>
+--captions-in-source yes|no|unknown`.
+
 ## Project layout
 
 ```

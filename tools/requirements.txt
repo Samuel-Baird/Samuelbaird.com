@@ -19,3 +19,7 @@ yt-dlp>=2026.07.04
 # pin, not a fresh install.
 trafilatura>=2.1.0
 requests>=2.32.0
+
+# Saint Capybara reaction-queue batch downloader: tools/capy_fetch_queue.py
+# reads/writes need reaction.xlsx.
+openpyxl>=3.1
