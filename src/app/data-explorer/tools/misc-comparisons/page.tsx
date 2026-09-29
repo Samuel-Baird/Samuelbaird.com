@@ -2,20 +2,18 @@ import type { Metadata } from "next";
 import { DataExplorerTabs } from "@/components/data-explorer-tabs";
 import { DeseretTitle } from "@/components/deseret-title";
 import { ToolsPaneTabs } from "@/components/tools-pane-tabs";
-import { BananaComparisonMap } from "@/components/banana-map/banana-comparison-map";
+import { MiscComparisonMap } from "@/components/misc-map/misc-comparison-map";
 import { buildWorldMap } from "@/lib/world-map";
-import comparisonData from "../../../../../docs/datasets/misc/bananas-vs-lds/comparison.json";
+import comparisonData from "../../../../../docs/datasets/misc/misc-comparisons/comparison.json";
 
 export const metadata: Metadata = {
-  title: "LDS Members vs. Banana Truckloads",
+  title: "LDS Stats vs. The World",
   description:
-    "A world map comparing Latter-day Saint membership against banana production converted to semi-truck loads, by country.",
-  alternates: { canonical: "/data-explorer/tools/bananas-vs-lds" },
+    "A world map comparing Latter-day Saint statistics against bananas, hospital beds, military personnel, and volcanoes.",
+  alternates: { canonical: "/data-explorer/tools/misc-comparisons" },
 };
 
-const TRUCKLOAD_TONNES = comparisonData.truckload_tonnes;
-
-export default function BananasVsLdsPage() {
+export default function MiscComparisonsPage() {
   const countries = comparisonData.countries as Record<
     string,
     {
@@ -29,7 +27,9 @@ export default function BananasVsLdsPage() {
       lds_temples: number;
       lds_family_history_centers: number;
       banana_tonnes?: number;
-      banana_truckloads?: number;
+      hospital_beds_per_1000?: number;
+      armed_forces?: number;
+      volcanoes?: number;
     }
   >;
 
@@ -47,33 +47,34 @@ export default function BananasVsLdsPage() {
     lds_temples: data.lds_temples,
     lds_family_history_centers: data.lds_family_history_centers,
     banana_tonnes: data.banana_tonnes ?? null,
+    hospital_beds_per_1000: data.hospital_beds_per_1000 ?? null,
+    armed_forces: data.armed_forces ?? null,
+    volcanoes: data.volcanoes ?? null,
   }));
 
   const ldsYear = comparisonData.lds_year.split(" ")[0]; // "2025 (per-country...)" -> "2025"
-  const bananaYear = String(comparisonData.banana_year);
+
+  const TRUCKLOAD_TONNES = comparisonData.truckload_tonnes;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <h1 className="serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-        <DeseretTitle text="LDS Members vs. Banana Truckloads" />
+        <DeseretTitle text="LDS Stats vs. The World" />
       </h1>
       <div className="mt-8">
         <DataExplorerTabs />
       </div>
       <ToolsPaneTabs />
       <p className="mb-8 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
-        For every country: does it have more Latter-day Saint members, or more semi-truck loads of
-        bananas? One truckload = {TRUCKLOAD_TONNES} metric tonnes. Dark blue means LDS wins; bright
-        yellow means bananas win. LDS data from the Church&apos;s own facts-and-statistics pages
-        ({ldsYear}); banana production from FAOSTAT via Our World in Data ({bananaYear}).
+        For every country: does it have more Latter-day Saint members, or more hospital beds per 1,000 people? Or volcanoes? Dark blue means the LDS stat is higher; bright yellow means the comparison stat wins.
       </p>
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] p-4 sm:p-7">
-        <BananaComparisonMap
+        <MiscComparisonMap
           map={map}
           items={items}
-          title="LDS Members vs. Semi-Truck Loads of Bananas"
-          source={`Church facts and statistics ${ldsYear}; FAOSTAT ${bananaYear}`}
-          filename="lds-members-vs-banana-truckloads"
+          title="LDS Stats vs. The World"
+          source="Church facts and statistics; FAOSTAT; World Bank; Smithsonian GVP"
+          filename="lds-stats-vs-the-world"
           truckloadTonnes={TRUCKLOAD_TONNES}
         />
       </section>
