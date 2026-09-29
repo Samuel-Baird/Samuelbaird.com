@@ -39,3 +39,6 @@ The things most often gotten wrong:
   Tailwind ramp like `emerald-100`.
 - All badges use the shared `<Tag>` component with one of its five ink families.
 - Gate any new animation on `prefers-reduced-motion`.
+- **Maps:** read [docs/MAPS.md](docs/MAPS.md). Every world map uses the shared
+  `ChoroplethMap` (banded colors, round legend cut-offs, zoom, Save PNG). Do not
+  build a one-off map.

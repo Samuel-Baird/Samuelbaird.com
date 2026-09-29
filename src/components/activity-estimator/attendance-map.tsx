@@ -51,7 +51,7 @@ export function AttendanceMap({
       subtitle={`Estimated attenders as a share of reported members, assuming ${assumptions.ward.mid} people per ward and ${assumptions.branch.mid} per branch. Not a measured activity rate.`}
       source="Church facts and statistics, 2025; author's estimate"
       filename="lds-implied-attendance-by-country"
-      rankTitle="Highest implied attendance"
+      rankTitle="Top 10: implied attendance"
       tooltip={tooltip}
     />
   );

@@ -195,7 +195,7 @@ export function MapExplorer({
           }
           source="Church facts and statistics, 2025"
           filename={`lds-${metric.id}${per ? "-per-100k" : ""}-by-country`}
-          rankTitle={`Highest ${label.toLowerCase()}`}
+          rankTitle={`Top 10: ${label.toLowerCase()}`}
           tooltip={tooltip}
         />
       </section>
