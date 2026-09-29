@@ -18,9 +18,10 @@ export default function ToolsPage() {
       <div className="mt-8">
         <DataExplorerTabs />
       </div>
+      <div className="grid gap-4 md:grid-cols-2">
       <Link
         href="/data-explorer/tools/activity-estimator"
-        className="block max-w-xl rounded-[var(--radius)] border border-[color:var(--border)] p-6 hover:border-[color:var(--accent)]"
+        className="block rounded-[var(--radius)] border border-[color:var(--border)] p-6 hover:border-[color:var(--accent)]"
       >
         <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">Calculator</p>
         <h2 className="serif mt-2 text-xl font-semibold">Activity estimator</h2>
@@ -29,6 +30,18 @@ export default function ToolsPage() {
           country&apos;s unit counts imply.
         </p>
       </Link>
+      <Link
+        href="/data-explorer/tools/map-explorer"
+        className="block rounded-[var(--radius)] border border-[color:var(--border)] p-6 hover:border-[color:var(--accent)]"
+      >
+        <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">Map</p>
+        <h2 className="serif mt-2 text-xl font-semibold">Map explorer</h2>
+        <p className="mt-2 text-sm text-[color:var(--muted)]">
+          Members, wards, stakes, missions, temples and more, by country. Hover for the full
+          record.
+        </p>
+      </Link>
+      </div>
     </div>
   );
 }
