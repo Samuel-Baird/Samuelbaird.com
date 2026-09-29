@@ -1,0 +1,31 @@
+{
+  "source_url": "https://www.churchofjesuschrist.org/study/manual/general-handbook/36-creating-changing-and-naming-new-units?lang=eng",
+  "retrieved": "2026-09-28",
+  "note": "Minimums for creating a unit, not averages.",
+  "ward": {
+    "section": "36.2",
+    "members": 250,
+    "participating_adults": 100,
+    "mp_holders": 20,
+    "participating_youth": 20
+  },
+  "branch_in_stake": {
+    "section": "36.2",
+    "members": 20,
+    "mp_holders": 4
+  },
+  "branch_in_mission": {
+    "section": "36.3",
+    "members": null,
+    "priesthood_holders": 4,
+    "mp_holders": 1
+  },
+  "stake": {
+    "section": "36.1",
+    "members": 2000,
+    "participating_adults": 500,
+    "mp_holders": 150,
+    "participating_youth": 100,
+    "wards": 5
+  }
+}

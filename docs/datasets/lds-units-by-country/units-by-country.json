@@ -1,0 +1,43 @@
+{
+  "as_of": "December 31, 2025",
+  "source_note": "Church facts-and-statistics page for each country. Add countries to this file as they are gathered; the estimator sums whatever is here.",
+  "country_order": [
+    "Brazil",
+    "Mexico",
+    "Peru",
+    "Chile",
+    "Argentina"
+  ],
+  "countries": {
+    "Brazil": {
+      "members": 1573360,
+      "wards": 1650,
+      "branches": 358,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+    },
+    "Mexico": {
+      "members": 1572287,
+      "wards": 1401,
+      "branches": 474,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/mexico?lang=eng"
+    },
+    "Peru": {
+      "members": 667836,
+      "wards": 684,
+      "branches": 125,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/peru?lang=eng"
+    },
+    "Chile": {
+      "members": 624203,
+      "wards": 456,
+      "branches": 122,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/chile?lang=eng"
+    },
+    "Argentina": {
+      "members": 505819,
+      "wards": 506,
+      "branches": 236,
+      "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/argentina?lang=eng"
+    }
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BeehiveMark } from "@/components/beehive-mark";
+import { DataExplorerTabs } from "@/components/data-explorer-tabs";
 import { DeseretTitle } from "@/components/deseret-title";
 import { FolderExplorer } from "@/components/folder-explorer";
 import { getCurrentUser } from "@/lib/auth";
@@ -50,7 +51,10 @@ export default async function DataExplorerPage() {
       <h1 className="serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
         <DeseretTitle text="Data Explorer" />
       </h1>
-      <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
+      <div className="mt-8">
+        <DataExplorerTabs />
+      </div>
+      <p className="max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
         Public survey and statistical datasets, and what we&apos;ve done with each one —
         quizzes you can take, graphics, and write-ups — plus every study with its own
         downloadable charts.
