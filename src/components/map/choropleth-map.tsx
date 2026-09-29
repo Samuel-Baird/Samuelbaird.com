@@ -30,6 +30,9 @@ type Props = {
   exportCrop?: number;
   /** Legend text for items with a null value. */
   noDataLabel?: string;
+  /** What the legend bands and the ranked list are built from, when that isn't one
+   * value per drawn item (a continent map colors many countries with six values). */
+  rankItems?: MapItem[];
 };
 
 const SITE = "latterdaystats.samuelbaird.com";
@@ -79,6 +82,7 @@ export function ChoroplethMap({
   onItemClick,
   exportCrop = 0.88,
   noDataLabel = "No data",
+  rankItems,
 }: Props) {
   const [view, setView] = useState<View>({ k: 1, x: 0, y: 0 });
   const [active, setActive] = useState<{ name: string; x: number; y: number } | null>(null);
@@ -89,14 +93,15 @@ export function ChoroplethMap({
   const pinch = useRef<number | null>(null);
 
   const values = useMemo(() => new Map(items.map((i) => [i.name, i.value])), [items]);
-  const classing = useMemo(() => classify(items.map((i) => i.value), format), [items, format]);
+  const rankSource = rankItems ?? items;
+  const classing = useMemo(() => classify(rankSource.map((i) => i.value), format), [rankSource, format]);
   const drawn = items.filter((i) => map.shapes[i.name]);
   const ranked = useMemo(
     () =>
-      items
+      rankSource
         .filter((i): i is { name: string; value: number } => i.value !== null && i.value > 0)
         .sort((a, b) => b.value - a.value),
-    [items],
+    [rankSource],
   );
 
   const W = map.width;
@@ -238,7 +243,9 @@ export function ChoroplethMap({
     const cropH = view.k === 1 ? H * exportCrop : H / view.k;
     // Fit the map into whatever height the legend, ranked list and footer leave;
     // a tall map (the U.S.) is narrowed and centered rather than crowding them.
-    const legendRows = Math.ceil(((classing.hasZero ? 1 : 0) + classing.classes.length + 1) / 3);
+    const legendRows = Math.ceil(
+      ((classing.hasZero ? 1 : 0) + classing.classes.length + 1) / (classing.classes.some((c) => c.label.length > 15) ? 2 : 3),
+    );
     const maxMapH = CH - y - (legendRows * 48 + 74) - 330 - 110;
     const aspect = W / view.k / cropH;
     const mh = Math.min((CW - 80) / aspect, maxMapH);
@@ -270,7 +277,8 @@ export function ChoroplethMap({
     swatches.push({ fill: NO_DATA_FILL, label: noDataLabel });
     // Three per row so the labels can stay large (legend text is the first
     // thing lost when a PNG is viewed small; see docs/MAPS.md).
-    const PER_ROW = 3;
+    // Long labels ("1,000,000–4,999,999") get two per row so they can't collide.
+    const PER_ROW = swatches.some((sw) => sw.label.length > 15) ? 2 : 3;
     const slot = (CW - 108) / PER_ROW;
     swatches.forEach((sw, idx) => {
       const x = 54 + (idx % PER_ROW) * slot;

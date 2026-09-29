@@ -22,6 +22,14 @@ const NAME_ALIASES: Record<string, string> = {
   "Saint Vincent and the Grenadines": "St. Vin. and Gren.",
   "Antigua and Barbuda": "Antigua and Barb.",
   "Bosnia and Herzegovina": "Bosnia and Herz.",
+  "Democratic Republic of the Congo": "Dem. Rep. Congo",
+  "Cote d'Ivoire": "Côte d'Ivoire",
+  Swaziland: "eSwatini",
+  "Central African Republic": "Central African Rep.",
+  "Cayman Islands": "Cayman Is.",
+  "Saint Kitts and Nevis": "St. Kitts and Nevis",
+  Curacao: "Curaçao",
+  "Virgin Islands": "U.S. Virgin Is.",
 };
 
 export type MapShape = {

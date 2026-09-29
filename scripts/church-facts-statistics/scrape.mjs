@@ -120,6 +120,19 @@ for (const slug of continentSlugs) {
 // Countries the user specifically named may not be linked from a continent page.
 for (const s of ['mongolia']) if (!countrySlugs.has(s)) countrySlugs.set(s, null);
 
+// Continent pages only feature a handful of countries. The Newsroom's facts-and-statistics
+// menu lists every country the Church reports on, so seed from it (most of those slugs
+// resolve to a page here). Slugs that don't resolve are covered by scrape-newsroom.mjs.
+{
+  const res = await fetch('https://newsroom.churchofjesuschrist.org/facts-and-statistics/state/utah', {
+    headers: { 'user-agent': 'Mozilla/5.0 latter-day-stats-scraper/1.0' },
+  });
+  const html = res.ok ? await res.text() : '';
+  for (const m of html.matchAll(/href="\/facts-and-statistics\/country\/([a-z0-9-]+)"/g)) {
+    if (!countrySlugs.has(m[1])) countrySlugs.set(m[1], null);
+  }
+}
+
 const countries = [];
 const skipped = [];
 const slugify = (name) =>
