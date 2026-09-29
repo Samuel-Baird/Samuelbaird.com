@@ -99,22 +99,38 @@ export type ContinentStats = Omit<CountryStats, "continent" | "source_url"> & {
   countries_with_data: number;
 };
 
-const US = "United States";
+/** Countries that open their own map when clicked. `unit` is the noun for one
+ * subdivision; `note` says what the map covers. */
+const SUB: Record<string, { unit: string; plural: string; slug: string; note: (n: number) => string }> = {
+  "United States": {
+    unit: "U.S. state",
+    plural: "states",
+    slug: "us-states",
+    note: (n) => `All ${n} states and D.C., from the Church's statistics pages.`,
+  },
+  Canada: {
+    unit: "province",
+    plural: "provinces and territories",
+    slug: "canada-provinces",
+    note: (n) => `${n} of 13 provinces and territories. Nunavut has no figures of its own, so it is grey.`,
+  },
+};
 
 const COUNT_COLUMNS = METRICS.filter((m) => m.count).map((m) => ({ key: m.count!, label: m.label }));
 
 export function MapExplorer({
   map,
-  usMap,
+  subMaps,
   countries,
   states,
   continents,
   asOf,
 }: {
   map: WorldMap;
-  usMap: WorldMap;
+  /** One map per country in `states` that can be opened by clicking it. */
+  subMaps: Record<string, WorldMap>;
   countries: Record<string, CountryStats>;
-  /** Published state records per country name; only the United States has any so far. */
+  /** Subdivision records per country name (U.S. states, Canadian provinces). */
   states: Record<string, Record<string, StateStats>>;
   /** The Church's own continent totals, keyed by continent name. */
   continents: Record<string, ContinentStats>;
@@ -126,9 +142,11 @@ export function MapExplorer({
   const [group, setGroup] = useState<"countries" | "continents">("countries");
   const inContinents = group === "continents";
 
-  const stateRecords = states[US] ?? {};
+  const stateRecords = (focus && states[focus]) || {};
   const publishedStates = Object.keys(stateRecords).length;
-  const inStates = !inContinents && focus === US && publishedStates > 0;
+  const inStates = !inContinents && !!focus && !!SUB[focus] && !!subMaps[focus] && publishedStates > 0;
+  const sub = inStates && focus ? SUB[focus] : null;
+  const subMap = inStates && focus ? subMaps[focus] : null;
 
   // One record set per level, so the rest of the component doesn't care which is showing.
   const records = useMemo<Record<string, CountryStats>>(() => {
@@ -141,12 +159,12 @@ export function MapExplorer({
     }
     if (!inStates) return countries;
     const out: Record<string, CountryStats> = {};
-    for (const name of Object.keys(usMap.shapes)) {
+    for (const name of Object.keys(subMap?.shapes ?? {})) {
       const st = stateRecords[name];
-      if (st) out[name] = { ...st, continent: st.capital ? `capital ${st.capital}` : "state" };
+      if (st) out[name] = { ...st, continent: st.capital ? `capital ${st.capital}` : (focus ? SUB[focus]?.unit.replace("U.S. ", "") : "") ?? "" };
     }
     return out;
-  }, [inContinents, inStates, countries, continents, stateRecords, usMap]);
+  }, [inContinents, inStates, countries, continents, stateRecords, subMap]);
 
   const metrics = METRICS;
   const metric = metrics.find((m) => m.id === metricId) ?? METRICS[0];
@@ -165,7 +183,7 @@ export function MapExplorer({
 
   const fmt = (v: number) => (per ? nf1.format(v) : metric.format(v));
   const label = per ? `${metric.label} per 100,000 members` : metric.label;
-  const shownMap = inStates ? usMap : map;
+  const shownMap = subMap ?? map;
   // On the continent view every country takes its continent's value.
   const items = Object.keys(shownMap.shapes).map((name) => ({
     name,
@@ -187,7 +205,7 @@ export function MapExplorer({
         <>
           <p className="serif text-sm font-semibold">{name}</p>
           <p className="mt-1 text-[color:var(--muted)]">
-            No statistics from the Church for this {inStates ? "state" : "country"}.
+            No statistics from the Church for this {sub ? sub.unit.replace("U.S. ", "") : "country"}.
           </p>
         </>
       );
@@ -219,7 +237,7 @@ export function MapExplorer({
     setFocus((f) => (f === name ? null : name));
   }
 
-  const level = inStates ? "U.S. state" : inContinents ? "continent" : "country";
+  const level = sub ? sub.unit : inContinents ? "continent" : "country";
   const focusedRecord = focus && !inStates && !inContinents ? records[focus] : null;
 
   const tableRows = Object.entries(records).map(([name, c]) => ({
@@ -293,11 +311,11 @@ export function MapExplorer({
             {inContinents
               ? "Each country is shaded with its continent's total. Hover for the continent's figures."
               : inStates
-              ? `All ${publishedStates} states and D.C., from the Church's statistics pages.`
+              ? sub!.note(publishedStates)
               : focus
                 ? `Zoomed to ${focus}. Click it again, or use the button, to go back.`
                 : publishedStates > 0
-                  ? "Click any country to zoom in. Click the United States to explore it by state."
+                  ? "Click any country to zoom in. Click the United States or Canada to explore it by state or province."
                   : "Click any country to zoom in."}
           </p>
         </div>
@@ -305,11 +323,11 @@ export function MapExplorer({
           map={shownMap}
           items={items}
           format={fmt}
-          title={inStates ? `${label} by U.S. state` : inContinents ? `${label} by continent` : `${label} by country`}
+          title={sub ? `${label} by ${sub.unit}` : inContinents ? `${label} by continent` : `${label} by country`}
           subtitle={
             (showTotal
               ? inStates
-                ? `Total across the ${withData} states and D.C.: ${nf.format(total)}. `
+                ? `Total across the ${withData} ${sub!.plural} shown: ${nf.format(total)}. `
                 : inContinents
                   ? `Total across the ${withData} continents: ${nf.format(total)}. `
                   : `Total across the ${items.length} countries shown: ${nf.format(total)}. `
@@ -318,8 +336,8 @@ export function MapExplorer({
               ? `Each country is shaded with its continent's total. Church-reported figures for ${asOf.split(" ")[0]}.`
               : `Church-reported figures for ${asOf.split(" ")[0]}.`)
           }
-          source={inStates ? "Church facts and statistics state pages, 2025" : "Church facts and statistics, 2025"}
-          filename={`lds-${inStates ? "us-states-" : ""}${metric.id}${per ? "-per-100k" : ""}-by-${inStates ? "state" : inContinents ? "continent" : "country"}`}
+          source={sub ? `Church facts and statistics, ${sub.plural}, 2025` : "Church facts and statistics, 2025"}
+          filename={`lds-${sub ? `${sub.slug}-` : ""}${metric.id}${per ? "-per-100k" : ""}-by-${sub ? "subdivision" : inContinents ? "continent" : "country"}`}
           rankTitle={inContinents ? `By continent: ${label.toLowerCase()}` : `Top 10: ${label.toLowerCase()}`}
           rankItems={continentItems}
           tooltip={tooltip}
@@ -337,14 +355,14 @@ export function MapExplorer({
 
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] p-6 sm:p-7">
         <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">
-          {inStates ? "By state" : inContinents ? "By continent" : "By country"}
+          {sub ? `By ${sub.unit.replace("U.S. ", "")}` : inContinents ? "By continent" : "By country"}
         </p>
         <div className="mt-4">
           <DataTable
-            key={inStates ? "states" : inContinents ? "continents" : "countries"}
+            key={focus && inStates ? focus : inContinents ? "continents" : "countries"}
             rows={tableRows}
             columns={COUNT_COLUMNS}
-            nameLabel={inStates ? "State" : inContinents ? "Continent" : "Country"}
+            nameLabel={sub ? sub.unit.replace("U.S. ", "").replace(/^./, (c) => c.toUpperCase()) : inContinents ? "Continent" : "Country"}
             highlight={metric.count}
           />
         </div>

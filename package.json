@@ -34,6 +34,8 @@
     "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/topojson-server": "^3.0.4",
+    "@types/topojson-simplify": "^3.0.3",
     "@types/topojson-specification": "^1.0.5",
     "dotenv": "^17.4.2",
     "eslint": "^9",
@@ -42,6 +44,8 @@
     "pg": "^8.20.0",
     "pngjs": "^7.0.0",
     "tailwindcss": "^4",
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3",
     "tsx": "^4.22.1",
     "typescript": "^5",
     "xlsx": "^0.18.5"

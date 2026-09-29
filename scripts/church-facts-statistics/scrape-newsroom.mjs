@@ -1,7 +1,8 @@
 // Scrapes newsroom.churchofjesuschrist.org/facts-and-statistics: every country and every
 // U.S. state, which is a fuller list than churchofjesuschrist.org/learn/facts-statistics
 // (that site had 116 countries and nine states when this was written; this one has
-// 160 countries and all 50 states plus D.C.).
+// 160 countries and all 50 states plus D.C.). Canada's provinces live on its own
+// Newsroom (news-ca.churchofjesuschrist.org); no other country Newsroom has subdivisions.
 //
 // The site lists every country and state in its own menu, so nothing is hard-coded: the
 // script reads the menu from one page, then fetches each page. Figures are read from the
@@ -10,19 +11,21 @@
 // of" date, only charts that end at 2025, so every row is recorded as 2025.
 //
 // Usage: node scripts/church-facts-statistics/scrape-newsroom.mjs
-// Output: newsroom-countries.csv, newsroom-states.csv (next to this script)
+// Output: newsroom-countries.csv, newsroom-states.csv, newsroom-provinces.csv
+//         (next to this script)
 
 import { writeFileSync } from 'node:fs';
 
 const BASE = 'https://newsroom.churchofjesuschrist.org';
+const CA_BASE = 'https://news-ca.churchofjesuschrist.org';
 const OUT = new URL('./', import.meta.url);
 const DELAY_MS = 250;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function fetchHtml(path) {
+async function fetchHtml(path, base = BASE) {
   for (let attempt = 1; attempt <= 4; attempt++) {
     try {
-      const res = await fetch(`${BASE}${path}`, { headers: { 'user-agent': 'Mozilla/5.0 latter-day-stats-scraper/1.0' } });
+      const res = await fetch(`${base}${path}`, { headers: { 'user-agent': 'Mozilla/5.0 latter-day-stats-scraper/1.0' } });
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.text();
@@ -35,7 +38,10 @@ async function fetchHtml(path) {
 
 /** Visible text of the statistics block as a "|"-separated token list. */
 function tokens(html) {
-  const start = Math.max(html.indexOf('Show map'), 0);
+  // Start at the map controls, or (Canada's template has none) at the first stat, so
+  // the page <title> ("... | Total Church Membership") isn't mistaken for the figure.
+  const at = html.indexOf('Show map');
+  const start = at >= 0 ? at : Math.max(html.indexOf('class="stat-value"') - 600, 0);
   const tail = html.slice(start);
   // "Family History Centers" also contains the word, so match the heading tag; some
   // pages use a different wrapper, so fall back to a fixed window.
@@ -45,11 +51,16 @@ function tokens(html) {
     .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<svg[\s\S]*?<\/svg>|<!--[\s\S]*?-->/g, '')
     // Tags, allowing '>' inside quoted attribute values.
     .replace(/<(?:"[^"]*"|'[^']*'|[^'">])*>/g, '|')
-    .replace(/&amp;/g, '&');
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;|&#160;|&#8239;/g, ' ');
   return block.split('|').map((t) => t.trim()).filter(Boolean);
 }
 
-const toNum = (s) => (s && /^[\d,]+$/.test(s) ? Number(s.replace(/,/g, '')) : null);
+// Canada's pages group thousands with a (non-breaking) space: "85 916".
+const toNum = (s) => {
+  const t = s?.replace(/[\s,  ]/g, '');
+  return t && /^\d+$/.test(t) ? Number(t) : null;
+};
 
 /** The number immediately before a label, e.g. ["647", "Stakes"] -> 647. */
 function before(toks, label) {
@@ -57,8 +68,13 @@ function before(toks, label) {
   return i > 0 ? toNum(toks[i - 1]) : null;
 }
 
-function parse(html, code, path) {
-  const t = tokens(html);
+function parse(html, code, path, base = BASE) {
+  let t = tokens(html);
+  // A state or province page shows its own block and then its country's; keep only
+  // the first so a missing figure can't be filled from the country's.
+  const firstMembership = t.indexOf('Total Church Membership');
+  const secondMembership = t.indexOf('Total Church Membership', firstMembership + 1);
+  if (secondMembership > 0) t = t.slice(0, secondMembership - 1);
   const mi = t.indexOf('Total Church Membership');
   return {
     name: nameOf.get(path) ?? (mi > 1 ? t[mi - 2] : code),
@@ -75,8 +91,9 @@ function parse(html, code, path) {
     // Pages with no temples still show a stray number before the label; no country has
     // anywhere near this many operating temples (the U.S. has 101).
     temples: (() => { const n = before(t, 'Temples'); return n !== null && n > 150 ? 0 : n; })(),
-    family_history_centers: before(t, 'FamilySearch Centers'),
-    url: `${BASE}/facts-and-statistics/${path}`,
+    // Canada's pages still say "Family History Centers".
+    family_history_centers: before(t, 'FamilySearch Centers') ?? before(t, 'Family History Centers'),
+    url: `${base}/facts-and-statistics/${path}`,
   };
 }
 
@@ -105,18 +122,26 @@ for (const m of menu.matchAll(/id="fas-countries-([a-z-]+)"([\s\S]*?)<\/ul>/g)) 
 const links = [...new Set([...menu.matchAll(/href="\/facts-and-statistics\/(country|state)\/([a-z0-9-]+)"/g)].map((m) => `${m[1]}/${m[2]}`))];
 const countrySlugs = links.filter((l) => l.startsWith('country/'));
 const stateSlugs = links.filter((l) => l.startsWith('state/'));
-console.log(`${countrySlugs.length} countries, ${stateSlugs.length} states in the menu`);
+// Canada's provinces come from the Canadian Newsroom's own menu.
+const caMenu = await fetchHtml('/facts-and-statistics/province/alberta', CA_BASE);
+// Nunavut is not in the menu. Its URL loads, but shows Canada's totals (no figures of
+// its own), so it is deliberately left out and stays grey on the map.
+const provinceSlugs = [...new Set([...caMenu.matchAll(/href="\/facts-and-statistics\/(province\/[a-z0-9-]+)"/g)].map((m) => m[1]))];
+for (const m of caMenu.matchAll(/href="\/facts-and-statistics\/(province\/[a-z0-9-]+)"[^>]*>([^<]+)</g)) {
+  if (!nameOf.has(m[1])) nameOf.set(m[1], m[2].trim());
+}
+console.log(`${countrySlugs.length} countries, ${stateSlugs.length} states, ${provinceSlugs.length} provinces in the menus`);
 
-const scrape = async (paths) => {
+const scrape = async (paths, base = BASE) => {
   const rows = [];
   for (const p of paths) {
     await sleep(DELAY_MS);
-    const html = await fetchHtml(`/facts-and-statistics/${p}`);
+    const html = await fetchHtml(`/facts-and-statistics/${p}`, base);
     if (!html) {
       console.warn(`skip ${p} (404)`);
       continue;
     }
-    const row = parse(html, p.split('/')[1], p);
+    const row = parse(html, p.split('/')[1], p, base);
     if (row.membership === null) {
       console.warn(`skip ${p} (no membership found)`);
       continue;
@@ -141,4 +166,6 @@ const states = (await scrape(stateSlugs)).sort((a, b) => a.name.localeCompare(b.
 if (!countries.length || !states.length) throw new Error('nothing scraped; refusing to overwrite output');
 writeFileSync(new URL('newsroom-countries.csv', OUT), csv(countries));
 writeFileSync(new URL('newsroom-states.csv', OUT), csv(states));
-console.log(`\n${countries.length} countries, ${states.length} states`);
+const provinces = (await scrape(provinceSlugs, CA_BASE)).sort((a, b) => a.name.localeCompare(b.name));
+if (provinces.length) writeFileSync(new URL('newsroom-provinces.csv', OUT), csv(provinces));
+console.log(`\n${countries.length} countries, ${states.length} states, ${provinces.length} provinces`);
