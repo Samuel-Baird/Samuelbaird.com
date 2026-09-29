@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ActivityEstimator } from "@/components/activity-estimator/activity-estimator";
 import { DataExplorerTabs } from "@/components/data-explorer-tabs";
 import { DeseretTitle } from "@/components/deseret-title";
+import { ToolsPaneTabs } from "@/components/tools-pane-tabs";
 import { buildWorldMap } from "@/lib/world-map";
 import units from "../../../../../docs/datasets/lds-units-by-country/units-by-country.json";
 import baselines from "../../../../../docs/datasets/lds-units-by-country/activity-baselines.json";
@@ -24,6 +25,7 @@ export default function ActivityEstimatorPage() {
       <div className="mt-8">
         <DataExplorerTabs />
       </div>
+      <ToolsPaneTabs />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
         <div>
           <p className="mb-8 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
