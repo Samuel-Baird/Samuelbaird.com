@@ -1,0 +1,1044 @@
+{
+ "as_of": "2025 (per-country data year in each row)",
+ "source_note": "scripts/church-facts-statistics/countries.csv, scraped from Church facts-and-statistics pages. Omitted: Andorra.",
+ "worldwide_members": 17887212,
+ "country_order": [
+  "United States",
+  "Brazil",
+  "Mexico",
+  "Philippines",
+  "Peru",
+  "Chile",
+  "Argentina",
+  "Guatemala",
+  "Ecuador",
+  "Nigeria",
+  "Bolivia",
+  "Colombia",
+  "Canada",
+  "Honduras",
+  "Venezuela",
+  "Australia",
+  "Dominican Republic",
+  "El Salvador",
+  "Japan",
+  "Ghana",
+  "New Zealand",
+  "Uruguay",
+  "Nicaragua",
+  "Paraguay",
+  "Samoa",
+  "South Korea",
+  "South Africa",
+  "Spain",
+  "Tonga",
+  "Panama",
+  "Taiwan",
+  "Costa Rica",
+  "Zimbabwe",
+  "Portugal",
+  "Papua New Guinea",
+  "Sierra Leone",
+  "France",
+  "Mozambique",
+  "French Polynesia",
+  "Italy",
+  "Haiti",
+  "Puerto Rico",
+  "Liberia",
+  "Hong Kong",
+  "Fiji",
+  "Thailand",
+  "Kenya",
+  "Kiribati",
+  "Madagascar",
+  "Russia",
+  "Cambodia",
+  "American Samoa",
+  "Cape Verde",
+  "India",
+  "Republic of the Congo",
+  "Vanuatu",
+  "Mongolia",
+  "Malaysia",
+  "Ukraine",
+  "Switzerland",
+  "Sweden",
+  "Netherlands",
+  "Angola",
+  "Togo",
+  "Benin",
+  "Malawi",
+  "Jamaica",
+  "Zambia",
+  "Indonesia",
+  "Belgium",
+  "Marshall Islands",
+  "Micronesia",
+  "Belize",
+  "Botswana",
+  "Hungary",
+  "Finland",
+  "Ireland",
+  "Austria",
+  "Norway",
+  "Denmark",
+  "Cameroon",
+  "Armenia",
+  "Trinidad and Tobago",
+  "Albania",
+  "Singapore",
+  "Romania",
+  "Guam",
+  "Czech Republic",
+  "Bulgaria",
+  "Poland",
+  "Cook Islands",
+  "Macau",
+  "Namibia",
+  "Latvia",
+  "Estonia",
+  "Bahamas",
+  "Barbados",
+  "Lithuania",
+  "Reunion",
+  "Greece",
+  "Saint Vincent and the Grenadines",
+  "Aruba",
+  "Mauritius",
+  "Belarus",
+  "Slovenia",
+  "Iceland",
+  "Serbia",
+  "Antigua and Barbuda",
+  "Senegal",
+  "Slovakia",
+  "Malta",
+  "Bahrain",
+  "Bermuda",
+  "Bosnia and Herzegovina",
+  "Burkina Faso"
+ ],
+ "countries": {
+  "United States": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 6929770,
+   "wards": 12821,
+   "branches": 1820,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/united-states-of-america?lang=eng"
+  },
+  "Brazil": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 1573360,
+   "wards": 1650,
+   "branches": 358,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/brazil?lang=eng"
+  },
+  "Mexico": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 1572287,
+   "wards": 1401,
+   "branches": 474,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/mexico?lang=eng"
+  },
+  "Philippines": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 905082,
+   "wards": 890,
+   "branches": 480,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/philippines?lang=eng"
+  },
+  "Peru": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 667836,
+   "wards": 684,
+   "branches": 125,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/peru?lang=eng"
+  },
+  "Chile": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 624203,
+   "wards": 456,
+   "branches": 122,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/chile?lang=eng"
+  },
+  "Argentina": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 505819,
+   "wards": 506,
+   "branches": 236,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/argentina?lang=eng"
+  },
+  "Guatemala": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 297143,
+   "wards": 296,
+   "branches": 145,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/guatemala?lang=eng"
+  },
+  "Ecuador": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 279046,
+   "wards": 276,
+   "branches": 62,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/ecuador?lang=eng"
+  },
+  "Nigeria": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 274043,
+   "wards": 569,
+   "branches": 311,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/nigeria?lang=eng"
+  },
+  "Bolivia": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 235773,
+   "wards": 220,
+   "branches": 70,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/bolivia?lang=eng"
+  },
+  "Colombia": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 223090,
+   "wards": 182,
+   "branches": 78,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/colombia?lang=eng"
+  },
+  "Canada": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 211581,
+   "wards": 359,
+   "branches": 142,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/canada?lang=eng"
+  },
+  "Honduras": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 197073,
+   "wards": 180,
+   "branches": 62,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/honduras?lang=eng"
+  },
+  "Venezuela": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 179389,
+   "wards": 176,
+   "branches": 59,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/venezuela?lang=eng"
+  },
+  "Australia": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 165272,
+   "wards": 232,
+   "branches": 68,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/australia?lang=eng"
+  },
+  "Dominican Republic": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 156358,
+   "wards": 145,
+   "branches": 58,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/dominican-republic?lang=eng"
+  },
+  "El Salvador": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 132399,
+   "wards": 126,
+   "branches": 28,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/el-salvador?lang=eng"
+  },
+  "Japan": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 131776,
+   "wards": 142,
+   "branches": 88,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/japan?lang=eng"
+  },
+  "Ghana": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 122978,
+   "wards": 216,
+   "branches": 185,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/ghana?lang=eng"
+  },
+  "New Zealand": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 120992,
+   "wards": 171,
+   "branches": 48,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/new-zealand?lang=eng"
+  },
+  "Uruguay": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 112449,
+   "wards": 100,
+   "branches": 32,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/uruguay?lang=eng"
+  },
+  "Nicaragua": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 106953,
+   "wards": 71,
+   "branches": 38,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/nicaragua?lang=eng"
+  },
+  "Paraguay": {
+   "continent": "South America",
+   "year": 2025,
+   "members": 106345,
+   "wards": 63,
+   "branches": 72,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/paraguay?lang=eng"
+  },
+  "Samoa": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 90706,
+   "wards": 162,
+   "branches": 8,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/samoa?lang=eng"
+  },
+  "South Korea": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 89092,
+   "wards": 60,
+   "branches": 39,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/south-korea?lang=eng"
+  },
+  "South Africa": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 78689,
+   "wards": 112,
+   "branches": 85,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/south-africa?lang=eng"
+  },
+  "Spain": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 71995,
+   "wards": 95,
+   "branches": 55,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/spain?lang=eng"
+  },
+  "Tonga": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 69594,
+   "wards": 141,
+   "branches": 34,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/tonga?lang=eng"
+  },
+  "Panama": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 63936,
+   "wards": 48,
+   "branches": 32,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/panama?lang=eng"
+  },
+  "Taiwan": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 63425,
+   "wards": 87,
+   "branches": 10,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/taiwan?lang=eng"
+  },
+  "Costa Rica": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 58373,
+   "wards": 61,
+   "branches": 20,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/costa-rica?lang=eng"
+  },
+  "Zimbabwe": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 52430,
+   "wards": 77,
+   "branches": 46,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/zimbabwe?lang=eng"
+  },
+  "Portugal": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 50341,
+   "wards": 47,
+   "branches": 17,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/portugal?lang=eng"
+  },
+  "Papua New Guinea": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 46583,
+   "wards": 33,
+   "branches": 63,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/papua-new-guinea?lang=eng"
+  },
+  "Sierra Leone": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 41775,
+   "wards": 78,
+   "branches": 40,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/sierra-leone?lang=eng"
+  },
+  "France": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 40546,
+   "wards": 70,
+   "branches": 39,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/france?lang=eng"
+  },
+  "Mozambique": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 39282,
+   "wards": 59,
+   "branches": 31,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/mozambique?lang=eng"
+  },
+  "French Polynesia": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 30350,
+   "wards": 74,
+   "branches": 20,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/french-polynesia?lang=eng"
+  },
+  "Italy": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 30105,
+   "wards": 62,
+   "branches": 29,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/italy?lang=eng"
+  },
+  "Haiti": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 27550,
+   "wards": 31,
+   "branches": 25,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/haiti?lang=eng"
+  },
+  "Puerto Rico": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 26947,
+   "wards": 27,
+   "branches": 11,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/puerto-rico?lang=eng"
+  },
+  "Liberia": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 25767,
+   "wards": 51,
+   "branches": 35,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/liberia?lang=eng"
+  },
+  "Hong Kong": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 24930,
+   "wards": 20,
+   "branches": 6,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/hong-kong?lang=eng"
+  },
+  "Fiji": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 24847,
+   "wards": 26,
+   "branches": 26,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/fiji?lang=eng"
+  },
+  "Thailand": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 24825,
+   "wards": 21,
+   "branches": 23,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/thailand?lang=eng"
+  },
+  "Kenya": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 24547,
+   "wards": 23,
+   "branches": 79,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/kenya?lang=eng"
+  },
+  "Kiribati": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 23585,
+   "wards": 20,
+   "branches": 25,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/kiribati?lang=eng"
+  },
+  "Madagascar": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 20395,
+   "wards": 30,
+   "branches": 22,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/madagascar?lang=eng"
+  },
+  "Russia": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 18306,
+   "wards": 11,
+   "branches": 40,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/russia?lang=eng"
+  },
+  "Cambodia": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 18070,
+   "wards": 9,
+   "branches": 21,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/cambodia?lang=eng"
+  },
+  "American Samoa": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 17646,
+   "wards": 38,
+   "branches": 6,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/american-samoa?lang=eng"
+  },
+  "Cape Verde": {
+   "continent": "Africa",
+   "year": 2021,
+   "members": 16334,
+   "wards": 27,
+   "branches": 14,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/cape-verde?lang=eng"
+  },
+  "India": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 15664,
+   "wards": 21,
+   "branches": 26,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/india?lang=eng"
+  },
+  "Republic of the Congo": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 15482,
+   "wards": 32,
+   "branches": 11,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/republic-of-the-congo?lang=eng"
+  },
+  "Vanuatu": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 14042,
+   "wards": 11,
+   "branches": 32,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/vanuatu?lang=eng"
+  },
+  "Mongolia": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 13250,
+   "wards": 12,
+   "branches": 12,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/mongolia?lang=eng"
+  },
+  "Malaysia": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 11769,
+   "wards": 0,
+   "branches": 24,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/malaysia?lang=eng"
+  },
+  "Ukraine": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 10014,
+   "wards": 11,
+   "branches": 30,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/ukraine?lang=eng"
+  },
+  "Switzerland": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 9630,
+   "wards": 26,
+   "branches": 8,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/switzerland?lang=eng"
+  },
+  "Sweden": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 9569,
+   "wards": 25,
+   "branches": 13,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/sweden?lang=eng"
+  },
+  "Netherlands": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 9027,
+   "wards": 19,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/netherlands?lang=eng"
+  },
+  "Angola": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 8779,
+   "wards": 13,
+   "branches": 20,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/angola?lang=eng"
+  },
+  "Togo": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 8349,
+   "wards": 19,
+   "branches": 12,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/togo?lang=eng"
+  },
+  "Benin": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 8286,
+   "wards": 22,
+   "branches": 12,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/benin?lang=eng"
+  },
+  "Malawi": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 7857,
+   "wards": 10,
+   "branches": 11,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/malawi?lang=eng"
+  },
+  "Jamaica": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 7856,
+   "wards": 6,
+   "branches": 12,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/jamaica?lang=eng"
+  },
+  "Zambia": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 7823,
+   "wards": 6,
+   "branches": 14,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/zambia?lang=eng"
+  },
+  "Indonesia": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 7655,
+   "wards": 16,
+   "branches": 8,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/indonesia?lang=eng"
+  },
+  "Belgium": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 7164,
+   "wards": 9,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/belgium?lang=eng"
+  },
+  "Marshall Islands": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 6927,
+   "wards": 12,
+   "branches": 1,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/marshall-islands?lang=eng"
+  },
+  "Micronesia": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 6241,
+   "wards": 5,
+   "branches": 17,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/micronesia?lang=eng"
+  },
+  "Belize": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 5741,
+   "wards": 0,
+   "branches": 12,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/belize?lang=eng"
+  },
+  "Botswana": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 5465,
+   "wards": 7,
+   "branches": 16,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/botswana?lang=eng"
+  },
+  "Hungary": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 5274,
+   "wards": 5,
+   "branches": 14,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/hungary?lang=eng"
+  },
+  "Finland": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 5024,
+   "wards": 18,
+   "branches": 11,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/finland?lang=eng"
+  },
+  "Ireland": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 4923,
+   "wards": 6,
+   "branches": 6,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/ireland?lang=eng"
+  },
+  "Austria": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 4753,
+   "wards": 14,
+   "branches": 3,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/austria?lang=eng"
+  },
+  "Norway": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 4547,
+   "wards": 10,
+   "branches": 9,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/norway?lang=eng"
+  },
+  "Denmark": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 4426,
+   "wards": 13,
+   "branches": 8,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/denmark?lang=eng"
+  },
+  "Cameroon": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 3673,
+   "wards": 5,
+   "branches": 15,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/cameroon?lang=eng"
+  },
+  "Armenia": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 3579,
+   "wards": 0,
+   "branches": 8,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/armenia?lang=eng"
+  },
+  "Trinidad and Tobago": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 3458,
+   "wards": 5,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/trinidad-and-tobago?lang=eng"
+  },
+  "Albania": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 3285,
+   "wards": 5,
+   "branches": 8,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/albania?lang=eng"
+  },
+  "Singapore": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 3262,
+   "wards": 6,
+   "branches": 0,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/singapore?lang=eng"
+  },
+  "Romania": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 3127,
+   "wards": 0,
+   "branches": 15,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/romania?lang=eng"
+  },
+  "Guam": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 2768,
+   "wards": 4,
+   "branches": 0,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/guam?lang=eng"
+  },
+  "Czech Republic": {
+   "continent": "Europe",
+   "year": 2021,
+   "members": 2628,
+   "wards": 7,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/czech-republic?lang=eng"
+  },
+  "Bulgaria": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 2424,
+   "wards": 0,
+   "branches": 7,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/bulgaria?lang=eng"
+  },
+  "Poland": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 2315,
+   "wards": 0,
+   "branches": 11,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/poland?lang=eng"
+  },
+  "Cook Islands": {
+   "continent": "Oceania (Pacific)",
+   "year": 2025,
+   "members": 1890,
+   "wards": 0,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/cook-islands?lang=eng"
+  },
+  "Macau": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 1595,
+   "wards": 0,
+   "branches": 2,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/macau?lang=eng"
+  },
+  "Namibia": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 1492,
+   "wards": 0,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/namibia?lang=eng"
+  },
+  "Latvia": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 1281,
+   "wards": 0,
+   "branches": 4,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/latvia?lang=eng"
+  },
+  "Estonia": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 1149,
+   "wards": 0,
+   "branches": 4,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/estonia?lang=eng"
+  },
+  "Bahamas": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 1125,
+   "wards": 0,
+   "branches": 3,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/bahamas?lang=eng"
+  },
+  "Barbados": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 1082,
+   "wards": 0,
+   "branches": 3,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/barbados?lang=eng"
+  },
+  "Lithuania": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 1024,
+   "wards": 0,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/lithuania?lang=eng"
+  },
+  "Reunion": {
+   "continent": "Africa",
+   "year": 2024,
+   "members": 859,
+   "wards": 0,
+   "branches": 4,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/reunion?lang=eng"
+  },
+  "Greece": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 818,
+   "wards": 0,
+   "branches": 2,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/greece?lang=eng"
+  },
+  "Saint Vincent and the Grenadines": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 767,
+   "wards": 0,
+   "branches": 3,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/saint-vincent-and-the-grenadines?lang=eng"
+  },
+  "Aruba": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 686,
+   "wards": 0,
+   "branches": 2,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/aruba?lang=eng"
+  },
+  "Mauritius": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 612,
+   "wards": 0,
+   "branches": 3,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/mauritius?lang=eng"
+  },
+  "Belarus": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 478,
+   "wards": 1,
+   "branches": 0,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/belarus?lang=eng"
+  },
+  "Slovenia": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 466,
+   "wards": 0,
+   "branches": 2,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/slovenia?lang=eng"
+  },
+  "Iceland": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 445,
+   "wards": 0,
+   "branches": 4,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/iceland?lang=eng"
+  },
+  "Serbia": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 422,
+   "wards": 0,
+   "branches": 1,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/serbia?lang=eng"
+  },
+  "Antigua and Barbuda": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 366,
+   "wards": 0,
+   "branches": 1,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/antigua-and-barbuda?lang=eng"
+  },
+  "Senegal": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 338,
+   "wards": 0,
+   "branches": 5,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/senegal?lang=eng"
+  },
+  "Slovakia": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 334,
+   "wards": 0,
+   "branches": 4,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/slovakia?lang=eng"
+  },
+  "Malta": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 320,
+   "wards": 0,
+   "branches": 1,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/malta?lang=eng"
+  },
+  "Bahrain": {
+   "continent": "Asia",
+   "year": 2025,
+   "members": 231,
+   "wards": 1,
+   "branches": 0,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/bahrain?lang=eng"
+  },
+  "Bermuda": {
+   "continent": "North America",
+   "year": 2025,
+   "members": 227,
+   "wards": 0,
+   "branches": 1,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/bermuda?lang=eng"
+  },
+  "Bosnia and Herzegovina": {
+   "continent": "Europe",
+   "year": 2025,
+   "members": 91,
+   "wards": 0,
+   "branches": 1,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/bosnia-and-herzegovina?lang=eng"
+  },
+  "Burkina Faso": {
+   "continent": "Africa",
+   "year": 2025,
+   "members": 6,
+   "wards": 0,
+   "branches": 0,
+   "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/burkina-faso?lang=eng"
+  }
+ }
+}
