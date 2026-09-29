@@ -37,7 +37,7 @@ before touching that type at all.
 - `docs/transcription.md` — Whisper invocation, model choice, chunking notes.
 - `docs/resolve-mcp-gotchas.md` — API traps and the workarounds that avoid them.
 - `docs/saint-capybara/` — brand bible, research protocol, script format, review checklist, pronunciation dictionary (Saint Capybara only).
-- `tools/` — the scripts the pipeline calls at each stage (see each file's docstring); `tools/capy/` and `tools/capy_*.py` are Saint-Capybara-only.
+- `tools/` — the scripts the pipeline calls at each stage (see each file's docstring); `tools/capy/` and `tools/capy_*.py` are Saint-Capybara-only. `tools/capy_fetch_queue.py` batch-downloads the Saint Capybara reaction queue (`docs/types/saint-capybara.md` "Batch-downloading URL-only queue rows").
 
 ## Video types
 
