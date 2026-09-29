@@ -30,6 +30,10 @@ export default function MiscComparisonsPage() {
       hospital_beds_per_1000?: number;
       armed_forces?: number;
       volcanoes?: number;
+      debt_percent_gdp?: number;
+      forest_area_1000_ha?: number;
+      equality_score?: number;
+      nuclear_reactors?: number;
     }
   >;
 
@@ -50,6 +54,10 @@ export default function MiscComparisonsPage() {
     hospital_beds_per_1000: data.hospital_beds_per_1000 ?? null,
     armed_forces: data.armed_forces ?? null,
     volcanoes: data.volcanoes ?? null,
+    debt_percent_gdp: data.debt_percent_gdp ?? null,
+    forest_area_1000_ha: data.forest_area_1000_ha ?? null,
+    equality_score: data.equality_score ?? null,
+    nuclear_reactors: data.nuclear_reactors ?? null,
   }));
 
   const ldsYear = comparisonData.lds_year.split(" ")[0]; // "2025 (per-country...)" -> "2025"

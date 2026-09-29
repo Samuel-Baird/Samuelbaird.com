@@ -19,9 +19,13 @@ export type BananaItem = {
   hospital_beds_per_1000: number | null;
   armed_forces: number | null;
   volcanoes: number | null;
+  debt_percent_gdp: number | null;
+  forest_area_1000_ha: number | null;
+  equality_score: number | null;
+  nuclear_reactors: number | null;
 };
 
-type LdsStat = keyof Omit<BananaItem, "name" | "banana_tonnes" | "hospital_beds_per_1000" | "armed_forces" | "volcanoes">;
+type LdsStat = keyof Omit<BananaItem, "name" | "banana_tonnes" | "hospital_beds_per_1000" | "armed_forces" | "volcanoes" | "debt_percent_gdp" | "forest_area_1000_ha" | "equality_score" | "nuclear_reactors">;
 
 type Metric = {
   id: LdsStat;
@@ -41,7 +45,7 @@ const METRICS: Metric[] = [
   { id: "lds_family_history_centers",label: "Family history centers",shortLabel: "FHCs" },
 ];
 
-type ComparisonUnit = "banana_truckloads" | "banana_tonnes" | "hospital_beds" | "armed_forces" | "volcanoes";
+type ComparisonUnit = "banana_truckloads" | "banana_tonnes" | "hospital_beds" | "armed_forces" | "volcanoes" | "debt" | "forest" | "equality" | "nuclear";
 
 type Props = {
   map: WorldMap;
@@ -53,8 +57,28 @@ type Props = {
 };
 
 const LDS_FILL    = "#1e3a5f";
-const BANANA_FILL = "#f5d800";
 const NO_DATA_FILL = "#efece5";
+
+function getComparisonFill(unit: ComparisonUnit): string {
+  switch (unit) {
+    case "banana_truckloads":
+    case "banana_tonnes": return "#f5d800"; // Yellow
+    case "volcanoes": return "#dc2626"; // Red
+    case "armed_forces": return "#16a34a"; // Green
+    case "hospital_beds": return "#ea580c"; // Orange
+    case "debt": return "#9333ea"; // Purple
+    case "forest": return "#059669"; // Emerald
+    case "nuclear": return "#db2777"; // Pink
+    case "equality": return "#4f46e5"; // Indigo
+    default: return "#f5d800";
+  }
+}
+
+function getComparisonTextFill(unit: ComparisonUnit): string {
+  // Use a darker shade for yellow so it's readable on white tooltip background
+  if (unit === "banana_truckloads" || unit === "banana_tonnes") return "#b5a000";
+  return getComparisonFill(unit);
+}
 
 const SITE  = "latterdaystats.samuelbaird.com";
 const MIN_K = 1;
@@ -94,6 +118,10 @@ function comparisonValue(item: BananaItem, unit: ComparisonUnit, truckloadTonnes
   if (unit === "hospital_beds") return item.hospital_beds_per_1000;
   if (unit === "armed_forces") return item.armed_forces;
   if (unit === "volcanoes") return item.volcanoes;
+  if (unit === "debt") return item.debt_percent_gdp;
+  if (unit === "forest") return item.forest_area_1000_ha;
+  if (unit === "equality") return item.equality_score;
+  if (unit === "nuclear") return item.nuclear_reactors;
   return null;
 }
 
@@ -103,6 +131,10 @@ function comparisonLabel(unit: ComparisonUnit, truckloadTonnes: number): string 
   if (unit === "hospital_beds") return "Hospital beds (per 1k)";
   if (unit === "armed_forces") return "Armed forces personnel";
   if (unit === "volcanoes") return "Volcanoes";
+  if (unit === "debt") return "Debt (% of GDP)";
+  if (unit === "forest") return "Forest Area (1k ha)";
+  if (unit === "equality") return "EQOSOGI Score";
+  if (unit === "nuclear") return "Nuclear Reactors";
   return "";
 }
 
@@ -110,7 +142,7 @@ function fillFor(item: BananaItem, metric: Metric, unit: ComparisonUnit, trucklo
   const ldsVal  = item[metric.id] as number;
   const banVal  = comparisonValue(item, unit, truckloadTonnes);
   if (ldsVal === 0 && banVal === null) return NO_DATA_FILL;
-  return ldsVal >= (banVal ?? 0) ? LDS_FILL : BANANA_FILL;
+  return ldsVal >= (banVal ?? 0) ? LDS_FILL : getComparisonFill(unit);
 }
 
 const pillOn  = "rounded-[var(--radius)] border border-[color:var(--accent)] bg-[color:var(--accent-soft)] px-3 py-1.5 text-sm font-medium text-[color:var(--accent)]";
@@ -249,7 +281,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
     parts.push(`<svg x="${(CW-mw)/2}" y="${y}" width="${mw}" height="${mh}" viewBox="${vb}" preserveAspectRatio="xMidYMid meet"><path d="${map.land}" fill="${NO_DATA_FILL}" stroke="#ffffff" stroke-width="0.4" vector-effect="non-scaling-stroke"/>${shapes}</svg>`);
     y += mh + 34;
 
-    [{ fill: LDS_FILL, label: `More LDS ${metric.label.toLowerCase()}` }, { fill: BANANA_FILL, label: `More ${activeLabel.toLowerCase()}` }, { fill: NO_DATA_FILL, label: "No data" }].forEach((sw, idx) => {
+    [{ fill: LDS_FILL, label: `More LDS ${metric.label.toLowerCase()}` }, { fill: getComparisonFill(unit), label: `More ${activeLabel.toLowerCase()}` }, { fill: NO_DATA_FILL, label: "No data" }].forEach((sw, idx) => {
       const currentY = y + idx * 36;
       parts.push(`<rect x="54" y="${currentY}" width="36" height="28" fill="${sw.fill}" stroke="#d9d5cc"/>`);
       parts.push(`<text x="100" y="${currentY + 23}" font-family="${SERIF}" font-size="26" fill="${INK}">${esc(sw.label)}</text>`);
@@ -324,7 +356,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
     return (
       <>
         <p className="serif text-sm font-semibold">{name}</p>
-        <p className="mt-1 text-xs font-medium" style={{ color: winner === "lds" ? LDS_FILL : winner === "banana" ? "#b5a000" : "var(--muted)" }}>
+        <p className="mt-1 text-xs font-medium" style={{ color: winner === "lds" ? LDS_FILL : winner === "banana" ? getComparisonTextFill(unit) : "var(--muted)" }}>
           {winner === "none" ? "No data" : winner === "lds" ? `More LDS ${metric.label.toLowerCase()}` : `More ${activeLabel.toLowerCase()}`}
         </p>
         <dl className="mt-2 grid grid-cols-[1fr_auto] gap-x-3 gap-y-0.5 text-xs tabular-nums text-[color:var(--muted)]">
@@ -383,6 +415,18 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
               </button>
               <button type="button" className={unit === "volcanoes" ? pillOn : pillOff} onClick={() => setUnit("volcanoes")}>
                 Volcanoes
+              </button>
+              <button type="button" className={unit === "debt" ? pillOn : pillOff} onClick={() => setUnit("debt")}>
+                Debt (% of GDP)
+              </button>
+              <button type="button" className={unit === "forest" ? pillOn : pillOff} onClick={() => setUnit("forest")}>
+                Forest Area (1k ha)
+              </button>
+              <button type="button" className={unit === "nuclear" ? pillOn : pillOff} onClick={() => setUnit("nuclear")}>
+                Nuclear Reactors
+              </button>
+              <button type="button" className={unit === "equality" ? pillOn : pillOff} onClick={() => setUnit("equality")}>
+                EQOSOGI Score
               </button>
             </div>
           </div>
@@ -480,7 +524,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
       <p className="small-caps mt-5 text-xs font-medium text-[color:var(--muted)]">Key</p>
       <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-sm">
         <Swatch fill={LDS_FILL}    label={`More LDS ${metric.label.toLowerCase()}`} />
-        <Swatch fill={BANANA_FILL} label={`More ${activeLabel.toLowerCase()}`} />
+        <Swatch fill={getComparisonFill(unit)} label={`More ${activeLabel.toLowerCase()}`} />
         <Swatch fill={NO_DATA_FILL} label="No data" />
       </div>
 

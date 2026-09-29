@@ -1,20 +1,27 @@
 import csv
 import json
 import pathlib
-import sys
 import re
+import pandas as pd
 
 ROOT = pathlib.Path(__file__).parent.parent.parent
 LDS_JSON = ROOT / "docs/datasets/lds-units-by-country/country-stats.json"
-BANANA_CSV = pathlib.Path("D:/latter-day-stats-data/funny/banana-production.csv")
-BEDS_CSV = pathlib.Path(r"D:\latter-day-stats-data\funny\beds\API_SH.MED.BEDS.ZS_DS2_en_csv_v2_413810.csv")
-MILITARY_CSV = pathlib.Path(r"D:\latter-day-stats-data\funny\military\API_MS.MIL.TOTL.P1_DS2_en_csv_v2_362772.csv")
-VOLCANOES_XLS = pathlib.Path(r"D:\latter-day-stats-data\funny\GVP_Volcano_List_Holocene_202609291629.xls")
+
+FUNNY_DIR = pathlib.Path("D:/latter-day-stats-data/funny")
+BANANA_CSV = FUNNY_DIR / "banana-production.csv"
+BEDS_CSV = FUNNY_DIR / "beds/API_SH.MED.BEDS.ZS_DS2_en_csv_v2_413810.csv"
+MILITARY_CSV = FUNNY_DIR / "military/API_MS.MIL.TOTL.P1_DS2_en_csv_v2_362772.csv"
+VOLCANOES_XLS = FUNNY_DIR / "GVP_Volcano_List_Holocene_202609291629.xls"
+
+DEBT_CSV = FUNNY_DIR / "debt data.csv"
+FOREST_CSV = FUNNY_DIR / "FAO_GFRA.csv"
+NUCLEAR_XLSX = FUNNY_DIR / "nuclear reactor data.xlsx"
+EQUALITY_CSV = FUNNY_DIR / "gender and minority equality.csv"
+
 OUT_JSON = ROOT / "docs/datasets/misc/misc-comparisons/comparison.json"
 
 TRUCKLOAD_TONNES = 20
 
-# Manual mappings for known divergences (World Bank, OWID, Volcanoes -> Church)
 MANUAL_MAPPING = {
     "Congo": "Republic of the Congo",
     "Congo, Rep.": "Republic of the Congo",
@@ -51,14 +58,10 @@ MANUAL_MAPPING = {
 
 def map_name(name, church_names):
     name = name.strip()
-    if name in church_names:
-        return name
-    if name in MANUAL_MAPPING and MANUAL_MAPPING[name] in church_names:
-        return MANUAL_MAPPING[name]
-    # some reverse mapping logic
+    if name in church_names: return name
+    if name in MANUAL_MAPPING and MANUAL_MAPPING[name] in church_names: return MANUAL_MAPPING[name]
     for c in church_names:
-        if c in name or name in c:
-            return c
+        if c in name or name in c: return c
     return name
 
 def load_banana_data():
@@ -68,13 +71,11 @@ def load_banana_data():
         for row in reader:
             entity = row["Entity"].strip()
             code = row.get("Code", "").strip()
-            if not code or code.startswith("OWID_") or "(FAO)" in entity:
-                continue
+            if not code or code.startswith("OWID_") or "(FAO)" in entity: continue
             try:
                 year = int(row["Year"])
                 tonnes = float(row["Bananas - Production (tonnes)"].strip())
-            except (ValueError, KeyError):
-                continue
+            except (ValueError, KeyError): continue
             if entity not in latest or year > latest[entity][0]:
                 latest[entity] = (year, tonnes)
     return {k: v[1] for k, v in latest.items()}
@@ -95,8 +96,7 @@ def get_latest_wb(file_path):
 
 def get_volcano_counts():
     counts = {}
-    with open(VOLCANOES_XLS, 'r', encoding='utf-8') as f:
-        content = f.read()
+    with open(VOLCANOES_XLS, 'r', encoding='utf-8') as f: content = f.read()
     rows = re.findall(r'<Row>(.*?)</Row>', content, re.DOTALL)
     for row in rows:
         cells = re.findall(r'<Cell[^>]*><Data[^>]*>(.*?)</Data></Cell>', row, re.DOTALL)
@@ -104,26 +104,44 @@ def get_volcano_counts():
             country = cells[2].strip()
             for c in country.split('-'):
                 c = c.strip()
-                if c and c != "Country":
-                    counts[c] = counts.get(c, 0) + 1
+                if c and c != "Country": counts[c] = counts.get(c, 0) + 1
     return counts
+
+def parse_simple_csv(file_path, country_col, val_col):
+    res = {}
+    with open(file_path, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            c = row.get(country_col)
+            if c:
+                val = row.get(val_col, "")
+                if val.strip(): res[c] = float(val)
+    return res
+
+def parse_nuclear():
+    try:
+        df = pd.read_excel(NUCLEAR_XLSX)
+        counts = df['Country'].value_counts().to_dict()
+        return counts
+    except:
+        return {}
 
 def main():
     with open(LDS_JSON, encoding="utf-8") as f:
         lds_raw = json.load(f)
-    lds_countries = lds_raw["countries"]
-    church_names = set(lds_countries.keys())
+    church_names = set(lds_raw["countries"].keys())
 
-    banana_raw = load_banana_data()
-    beds_raw = get_latest_wb(BEDS_CSV)
-    military_raw = get_latest_wb(MILITARY_CSV)
-    volcano_raw = get_volcano_counts()
+    def mm(raw): return {map_name(k, church_names): v for k, v in raw.items()}
 
-    # Map names
-    banana_mapped = {map_name(k, church_names): v for k, v in banana_raw.items()}
-    beds_mapped = {map_name(k, church_names): v for k, v in beds_raw.items()}
-    military_mapped = {map_name(k, church_names): v for k, v in military_raw.items()}
-    volcano_mapped = {map_name(k, church_names): v for k, v in volcano_raw.items()}
+    banana_mapped = mm(load_banana_data())
+    beds_mapped = mm(get_latest_wb(BEDS_CSV))
+    military_mapped = mm(get_latest_wb(MILITARY_CSV))
+    volcano_mapped = mm(get_volcano_counts())
+
+    debt_mapped = mm(parse_simple_csv(DEBT_CSV, "REF_AREA_LABEL", "OBS_VALUE"))
+    forest_mapped = mm(parse_simple_csv(FOREST_CSV, "REF_AREA_LABEL", "OBS_VALUE"))
+    equality_mapped = mm(parse_simple_csv(EQUALITY_CSV, "REF_AREA_LABEL", "OBS_VALUE"))
+    nuclear_mapped = mm(parse_nuclear())
 
     LDS_STAT_FIELDS = [
         "members", "congregations", "wards", "branches",
@@ -131,32 +149,26 @@ def main():
     ]
 
     countries_out = {}
-    for country, lds in lds_countries.items():
+    for country, lds in lds_raw["countries"].items():
         entry = {}
         for field in LDS_STAT_FIELDS:
             entry[f"lds_{field}"] = lds.get(field, 0) or 0
 
-        # Bananas
         if country in banana_mapped:
             entry["banana_tonnes"] = round(banana_mapped[country], 2)
             entry["banana_truckloads"] = round(banana_mapped[country] / TRUCKLOAD_TONNES, 2)
-        
-        # Beds
-        if country in beds_mapped:
-            entry["hospital_beds_per_1000"] = round(beds_mapped[country], 2)
-
-        # Military
-        if country in military_mapped:
-            entry["armed_forces"] = int(military_mapped[country])
-
-        # Volcanoes
-        if country in volcano_mapped:
-            entry["volcanoes"] = volcano_mapped[country]
+        if country in beds_mapped: entry["hospital_beds_per_1000"] = round(beds_mapped[country], 2)
+        if country in military_mapped: entry["armed_forces"] = int(military_mapped[country])
+        if country in volcano_mapped: entry["volcanoes"] = volcano_mapped[country]
+        if country in debt_mapped: entry["debt_percent_gdp"] = round(debt_mapped[country], 2)
+        if country in forest_mapped: entry["forest_area_1000_ha"] = round(forest_mapped[country], 2)
+        if country in equality_mapped: entry["equality_score"] = round(equality_mapped[country], 2)
+        if country in nuclear_mapped: entry["nuclear_reactors"] = int(nuclear_mapped[country])
 
         countries_out[country] = entry
 
     output = {
-        "source": "LDS: Church facts-and-statistics; Bananas: FAOSTAT; Beds & Military: World Bank; Volcanoes: Smithsonian GVP",
+        "source": "LDS stats; FAOSTAT; World Bank; Smithsonian GVP; PRIS",
         "lds_year": lds_raw.get("as_of", "2025"),
         "truckload_tonnes": TRUCKLOAD_TONNES,
         "countries": countries_out,
