@@ -212,7 +212,7 @@ export function BananaComparisonMap({ map, items, title, source, filename, truck
     const parts: string[] = [];
     parts.push(`<rect width="${CW}" height="${CH}" fill="#ffffff"/>`);
 
-    const titleLines = wrap(`${metric.label} vs. ${unit === "truckloads" ? "Banana Truckloads" : "Banana Tonnes"}`, 32);
+    const titleLines = wrap(`LDS ${metric.label} vs. Banana ${unit === "truckloads" ? "Truckloads" : "Tonnes"}`, 32);
     titleLines.forEach((l, i) =>
       parts.push(`<text x="54" y="${92 + i * 54}" font-family="${SERIF}" font-size="46" font-weight="700" fill="${INK}">${esc(l)}</text>`)
     );
@@ -290,7 +290,8 @@ export function BananaComparisonMap({ map, items, title, source, filename, truck
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = `${filename}-${metric.id}-${unit}.png`;
+        const shortId = metric.id.replace("lds_", "").replace(/_/g, "-");
+        a.download = `lds-${shortId}-vs-banana-${unit}.png`;
         a.click();
         setTimeout(() => URL.revokeObjectURL(url), 2000);
       }, "image/png");
