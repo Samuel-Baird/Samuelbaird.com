@@ -2,7 +2,7 @@
 
 Ward and branch counts and membership per country, used by the Activity Estimator (Data Explorer > Tools).
 
-- `units-by-country.json`: Church facts-and-statistics pages, as of Dec 31, 2025. Starts with five Latin American countries; add more.
+- `units-by-country.json`: Church facts-and-statistics pages, as of Dec 31, 2025. All countries from scripts/church-facts-statistics/countries.csv (regenerate after each scrape).
 - `activity-baselines.json`: self-identification / membership ratios from surveys or censuses. Optional per country.
 - `handbook-thresholds.json`: General Handbook ch. 36 minimums for creating units.
 

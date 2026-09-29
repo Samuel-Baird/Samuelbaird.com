@@ -18,6 +18,7 @@ export type Baseline = { self_id: number; members: number; ratio: number; year: 
 
 type Props = {
   asOf: string;
+  worldwideMembers: number;
   countries: Record<string, CountryUnits>;
   order: string[];
   baselines: Record<string, Baseline>;
@@ -68,7 +69,7 @@ const btn =
 const eyebrow = "small-caps text-[11px] font-medium text-[color:var(--muted)]";
 const card = "rounded-[var(--radius)] border border-[color:var(--border)] p-6 sm:p-7";
 
-export function ActivityEstimator({ asOf, countries, order, baselines }: Props) {
+export function ActivityEstimator({ asOf, worldwideMembers, countries, order, baselines }: Props) {
   const [a, setA] = useState<Assumptions>(PRESETS.Default);
 
   const rows = useMemo(
@@ -108,17 +109,18 @@ export function ActivityEstimator({ asOf, countries, order, baselines }: Props) 
     URL.revokeObjectURL(url);
   }
 
+  const chartRows = rows.slice(0, 15);
   const chartMax =
     Math.max(
       0.6,
-      ...rows.map((r) => r.est.high.rate),
-      ...rows.map((r) => r.baseline?.ratio ?? 0),
+      ...chartRows.map((r) => r.est.high.rate),
+      ...chartRows.map((r) => r.baseline?.ratio ?? 0),
     ) * 1.05;
   const W = 640;
   const LEFT = 90;
   const RIGHT = 20;
   const ROW = 34;
-  const H = rows.length * ROW + 40;
+  const H = chartRows.length * ROW + 40;
   const x = (v: number) => LEFT + (v / chartMax) * (W - LEFT - RIGHT);
   const ticks = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1].filter((t) => t <= chartMax);
 
@@ -179,13 +181,13 @@ export function ActivityEstimator({ asOf, countries, order, baselines }: Props) 
         </div>
       </section>
       <p className="-mt-4 flex flex-wrap items-center gap-2 text-sm text-[color:var(--muted)]">
-        <Tag ink="honey">Partial coverage</Tag>
-        {rows.length} countries, {nf.format(total.members)} members, as of {asOf}. This is not a
-        worldwide figure.
+        <Tag ink="honey">{pct(total.members / worldwideMembers)} of membership</Tag>
+        {rows.length} countries, {nf.format(total.members)} of {nf.format(worldwideMembers)} members
+        worldwide, as of {asOf}.
       </p>
 
       <section className={card}>
-        <p className={eyebrow}>Implied rate by country</p>
+        <p className={eyebrow}>Implied rate, 15 largest countries</p>
         <svg
           viewBox={`0 0 ${W} ${H}`}
           className="mt-4 w-full"
@@ -200,7 +202,7 @@ export function ActivityEstimator({ asOf, countries, order, baselines }: Props) 
               </text>
             </g>
           ))}
-          {rows.map((r, i) => {
+          {chartRows.map((r, i) => {
             const cy = 26 + i * ROW;
             return (
               <g key={r.name}>
@@ -244,9 +246,9 @@ export function ActivityEstimator({ asOf, countries, order, baselines }: Props) 
             <Download aria-hidden="true" size={14} /> Export CSV
           </button>
         </div>
-        <div className="mt-4 overflow-x-auto">
+        <div className="mt-4 max-h-[36rem] overflow-auto">
           <table className="w-full min-w-[640px] text-sm tabular-nums">
-            <thead>
+            <thead className="sticky top-0 bg-[color:var(--background)]">
               <tr className="border-b border-[color:var(--border)] text-left text-[color:var(--muted)]">
                 <th className="py-2 pr-3 font-medium">Country</th>
                 <th className="py-2 pr-3 text-right font-medium">Members</th>

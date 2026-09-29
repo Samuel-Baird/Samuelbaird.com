@@ -32,6 +32,7 @@ export default function ActivityEstimatorPage() {
           </p>
           <ActivityEstimator
             asOf={units.as_of}
+            worldwideMembers={units.worldwide_members}
             countries={units.countries}
             order={units.country_order}
             baselines={baselines.baselines}
