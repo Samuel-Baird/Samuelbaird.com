@@ -25,7 +25,7 @@ export default function MapExplorerPage() {
       </div>
       <ToolsPaneTabs />
       <p className="mb-8 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
-        Pick a statistic, then hover a country for its full record. Figures come from the
+        Pick a statistic, then hover or tap a country for its full record. Figures come from the
         Church&apos;s own facts-and-statistics page for each country.
       </p>
       <MapExplorer map={map} countries={stats.countries} asOf={stats.as_of} />

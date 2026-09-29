@@ -235,13 +235,7 @@ export function ActivityEstimator({ asOf, worldwideMembers, map, countries, orde
       </p>
 
       <section className={card}>
-        <p className={eyebrow}>Implied attendance by country</p>
-        <p className="mt-1 text-sm text-[color:var(--muted)]">
-          Darker means a higher implied rate at the mid assumptions. Hover a country for details.
-        </p>
-        <div className="mt-4">
-          <AttendanceMap map={map} rows={rows} />
-        </div>
+        <AttendanceMap map={map} rows={rows} assumptions={a} />
       </section>
 
       <section className={card}>
