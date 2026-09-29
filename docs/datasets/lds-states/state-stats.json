@@ -1,5 +1,5 @@
 {
- "note": "U.S. states and D.C. Newsroom pages carry no as-of date; their charts end at 2025.",
+ "note": "U.S. states and D.C., and Canada's provinces and territories (no figures for Nunavut). Newsroom pages carry no as-of date; their charts end at 2025.",
  "countries": {
   "United States": {
    "Alabama": {
@@ -715,6 +715,176 @@
     "temples": 2,
     "family_history_centers": 46,
     "source_url": "https://newsroom.churchofjesuschrist.org/facts-and-statistics/state/wyoming"
+   }
+  },
+  "Canada": {
+   "Alberta": {
+    "capital": "",
+    "year": 2025,
+    "members": 85916,
+    "congregations": 241,
+    "wards": 203,
+    "branches": 38,
+    "stakes": 30,
+    "districts": 0,
+    "missions": 2,
+    "temples": 3,
+    "family_history_centers": 43,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/alberta"
+   },
+   "British Columbia": {
+    "capital": "",
+    "year": 2025,
+    "members": 31885,
+    "congregations": 74,
+    "wards": 49,
+    "branches": 25,
+    "stakes": 8,
+    "districts": 0,
+    "missions": 1,
+    "temples": 1,
+    "family_history_centers": 43,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/british-columbia"
+   },
+   "Manitoba": {
+    "capital": "",
+    "year": 2025,
+    "members": 5252,
+    "congregations": 16,
+    "wards": 8,
+    "branches": 8,
+    "stakes": 2,
+    "districts": 0,
+    "missions": 1,
+    "temples": 1,
+    "family_history_centers": 7,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/manitoba"
+   },
+   "New Brunswick": {
+    "capital": "",
+    "year": 2025,
+    "members": 2684,
+    "congregations": 6,
+    "wards": 5,
+    "branches": 1,
+    "stakes": 1,
+    "districts": 0,
+    "missions": 0,
+    "temples": 0,
+    "family_history_centers": 3,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/new-brunswick"
+   },
+   "Newfoundland and Labrador": {
+    "capital": "",
+    "year": 2025,
+    "members": 830,
+    "congregations": 2,
+    "wards": 0,
+    "branches": 2,
+    "stakes": 0,
+    "districts": 0,
+    "missions": 0,
+    "temples": 0,
+    "family_history_centers": 3,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/newfoundland"
+   },
+   "Northwest Territories": {
+    "capital": "",
+    "year": 2025,
+    "members": 163,
+    "congregations": 1,
+    "wards": 0,
+    "branches": 1,
+    "stakes": 0,
+    "districts": 0,
+    "missions": 0,
+    "temples": 0,
+    "family_history_centers": 2,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/northwest-territories"
+   },
+   "Nova Scotia": {
+    "capital": "",
+    "year": 2025,
+    "members": 5159,
+    "congregations": 12,
+    "wards": 5,
+    "branches": 7,
+    "stakes": 1,
+    "districts": 0,
+    "missions": 0,
+    "temples": 1,
+    "family_history_centers": 7,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/nova-scotia"
+   },
+   "Ontario": {
+    "capital": "",
+    "year": 2025,
+    "members": 57969,
+    "congregations": 94,
+    "wards": 60,
+    "branches": 34,
+    "stakes": 9,
+    "districts": 1,
+    "missions": 1,
+    "temples": 1,
+    "family_history_centers": 54,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/ontario"
+   },
+   "Prince Edward Island": {
+    "capital": "",
+    "year": 2025,
+    "members": 568,
+    "congregations": 3,
+    "wards": 1,
+    "branches": 2,
+    "stakes": 0,
+    "districts": 0,
+    "missions": 0,
+    "temples": 0,
+    "family_history_centers": 1,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/prince-edward-island"
+   },
+   "Quebec": {
+    "capital": "",
+    "year": 2025,
+    "members": 14949,
+    "congregations": 34,
+    "wards": 20,
+    "branches": 14,
+    "stakes": 3,
+    "districts": 1,
+    "missions": 1,
+    "temples": 1,
+    "family_history_centers": 16,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/quebec"
+   },
+   "Saskatchewan": {
+    "capital": "",
+    "year": 2025,
+    "members": 5925,
+    "congregations": 17,
+    "wards": 8,
+    "branches": 9,
+    "stakes": 2,
+    "districts": 0,
+    "missions": 0,
+    "temples": 1,
+    "family_history_centers": 8,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/saskatchewan"
+   },
+   "Yukon": {
+    "capital": "",
+    "year": 2025,
+    "members": 264,
+    "congregations": 1,
+    "wards": 0,
+    "branches": 1,
+    "stakes": 0,
+    "districts": 0,
+    "missions": 0,
+    "temples": 0,
+    "family_history_centers": 2,
+    "source_url": "https://news-ca.churchofjesuschrist.org/facts-and-statistics/province/yukon"
    }
   }
  }

@@ -115,33 +115,37 @@ Data Explorer PNG house style in `docs/CHARTS.md`:
   parent owns that state (`onItemClick` + `focusName`), so any map can opt in.
   The zoom animates unless the visitor prefers reduced motion.
 - **Countries with subnational data drill down** to their own map instead:
-  today only the United States (`buildUsStateMap()` in `src/lib/world-map.ts`,
-  Albers USA with Alaska and Hawaii as insets, D.C. included, territories
-  excluded). It returns the same `WorldMap` shape as the world map, so the same
-  component draws it. Pass `exportCrop={1}` (nothing to crop) and a
-  `noDataLabel` such as "Not yet published".
+  the United States (`buildUsStateMap()` in `src/lib/world-map.ts`, Albers USA
+  with Alaska and Hawaii as insets, D.C. included, territories excluded) and
+  Canada (`buildCanadaProvinceMap()`, Lambert conformal conic, geometry from
+  `scripts/maps/build_canada_topology.mjs`). Each returns the same `WorldMap`
+  shape as the world map, so the same component draws it. Pass `exportCrop={1}`
+  (nothing to crop).
 - The map explorer also shows a sortable table (`data-table.tsx`) for whichever
   level is on screen.
 - **Two Church sites publish these figures, and they differ in coverage.**
   `churchofjesuschrist.org/learn/facts-statistics` has ~120 countries and, so far,
   nine state pages. `newsroom.churchofjesuschrist.org/facts-and-statistics` lists
-  every country it reports (160) and all 50 states plus D.C. The build scripts
-  merge them (learn preferred, Newsroom fills the gaps); no Canadian provinces
-  or other subdivisions exist on either. Anything a source omits stays grey with
-  a plain "no data" note. Never fill the gaps with guesses. To refresh:
+  every country it reports (160) and all 50 states plus D.C.
+  `news-ca.churchofjesuschrist.org` has Canada's provinces (12; Nunavut has no
+  figures of its own, its URL just repeats Canada's totals). No other country
+  Newsroom has subdivisions. The build scripts merge the sources (learn
+  preferred, Newsroom fills the gaps). Anything a source omits stays grey with a
+  plain "no data" note. Never fill the gaps with guesses. To refresh:
 
   ```bash
   node scripts/church-facts-statistics/scrape.mjs               # learn site: countries.csv, continents.csv
-  node scripts/church-facts-statistics/scrape-newsroom.mjs      # Newsroom: newsroom-countries.csv, newsroom-states.csv
+  node scripts/church-facts-statistics/scrape-newsroom.mjs      # Newsroom: newsroom-countries/-states/-provinces.csv
   node scripts/church-facts-statistics/scrape-subnational.mjs   # learn state pages: states.csv (capitals, Hawaii)
   python scripts/church-facts-statistics/build_country_stats.py # country-stats, continent-stats, units-by-country JSON
   python scripts/church-facts-statistics/build_state_stats.py   # docs/datasets/lds-states/state-stats.json
   ```
 
-  The scraper crawls every country page for "The Church in ..." cards and probes
-  every U.S. state name directly, so a new country's provinces are found without
-  code changes. To draw a new country's map, add a `build<Country>Map()` next to
-  `buildUsStateMap()` and a `states[<country>]` branch in `map-explorer.tsx`.
+  To add another country's subdivisions: scrape them into a CSV, add them to
+  `build_state_stats.py`, add a `build<Country>Map()` next to
+  `buildCanadaProvinceMap()`, and add the country to `SUB` and `subMaps` in
+  `map-explorer.tsx` / its page. Simplify any new geometry (topojson-simplify)
+  so the page doesn't ship megabytes of coastline.
 - Blank counts mean zero. The learn site's family-history-center field is the
   literal placeholder `fhcs`, so it is dropped there (Hawaii, read from the learn
   site, therefore shows 0).

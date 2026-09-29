@@ -1,9 +1,10 @@
-import { geoAlbersUsa, geoNaturalEarth1, geoPath } from "d3-geo";
+import { geoAlbersUsa, geoConicConformal, geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
 import countries50 from "world-atlas/countries-50m.json";
 import usStates from "us-atlas/states-10m.json";
+import canadaProvinces from "@/data/canada-provinces.topo.json";
 
 export const MAP_WIDTH = 960;
 export const MAP_HEIGHT = 500;
@@ -141,4 +142,42 @@ export function buildUsStateMap(): WorldMap {
     };
   }
   return { width: US_MAP_WIDTH, height: US_MAP_HEIGHT, land: "", shapes };
+}
+
+const CA_MAP_WIDTH = 960;
+const CA_MAP_HEIGHT = 640;
+
+/** Canada's provinces and territories on a Lambert conformal conic projection (the
+ * standard for Canada). Geometry is built by scripts/maps/build_canada_topology.mjs. */
+export function buildCanadaProvinceMap(): WorldMap {
+  const topo = canadaProvinces as unknown as Topology;
+  const all = feature(topo, topo.objects.provinces as GeometryCollection);
+  const projection = geoConicConformal()
+    .parallels([49, 77])
+    .rotate([96, 0])
+    .center([0, 62])
+    .fitExtent(
+      [
+        [4, 4],
+        [CA_MAP_WIDTH - 4, CA_MAP_HEIGHT - 4],
+      ],
+      all,
+    );
+  const path = geoPath(projection).digits(1);
+  const shapes: Record<string, MapShape> = {};
+  for (const f of all.features) {
+    const name = String((f.properties as { name?: string }).name);
+    const d = path(f);
+    if (!d) continue;
+    const [[x0, y0], [x1, y1]] = path.bounds(f);
+    const [cx, cy] = path.centroid(f);
+    shapes[name] = {
+      d,
+      cx: Math.round(cx * 10) / 10,
+      cy: Math.round(cy * 10) / 10,
+      small: Math.max(x1 - x0, y1 - y0) < 12,
+      bbox: [x0, y0, x1, y1].map((n) => Math.round(n * 10) / 10) as MapShape["bbox"],
+    };
+  }
+  return { width: CA_MAP_WIDTH, height: CA_MAP_HEIGHT, land: "", shapes };
 }
