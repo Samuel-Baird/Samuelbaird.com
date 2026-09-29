@@ -51,10 +51,15 @@ its shape for a new map).
   tokens-only rule in `BRANDING_AND_DESIGN.md`): the PNG export renders on its
   own white canvas and must match the on-screen map exactly. Same reasoning as
   the Python PNG pipeline's own palette in `docs/CHARTS.md`.
-- Cut-offs: quintile targets, snapped to round numbers (1-2.5-5-10 for values
-  ≥ 1,000; a finer set below that). If ties collapse the bands (temples, say),
-  cut-offs spread evenly on a log scale instead. Some metrics end up with fewer
-  than five bands; that is correct.
+- **Every color is used in every view.** `classify` picks four cut points at
+  distinct data values, each within 30% of an ideal band's size of an equal split
+  (ties can't be split), then rounds each cut to the roundest number that leaves
+  the split unchanged (1, 5, 2, 2.5 ... times a power of ten). So the key is
+  rebuilt for each view, whether that is countries, continents, states, a
+  different statistic, or per-100,000 mode, and always shows five bands. The only
+  exception is data with fewer than five distinct positive values (state
+  districts, for one): those get one band per value, because a color with no
+  countries in it would only be a lie in the key.
 - Legend labels read `1,000–9,999` for counts and `10%–15%` for rates. The top
   band is open-ended (`100,000+`), never a fixed maximum. The lowest positive
   band is `1–999` for counts or `Under 10%` for rates.

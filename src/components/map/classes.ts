@@ -25,21 +25,30 @@ export type Classing = {
   fillFor: (v: number | null) => string;
 };
 
-/** Round to a friendly number. Big counts snap to 1-2.5-5 (1,000 / 2,500 /
- * 5,000); smaller values and rates use a slightly finer set so they still
- * split into several bands. */
-function nice(x: number): number {
-  const mag = 10 ** Math.floor(Math.log10(x));
-  const m = x / mag;
-  const steps = x >= 1000 ? [1, 2.5, 5, 10] : [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
-  const best = steps.reduce((a, b) => (Math.abs(b - m) < Math.abs(a - m) ? b : a));
-  return best * mag;
+/** Leading digits ordered from roundest to least round. */
+const DIGITS = [1, 5, 2, 2.5, 3, 4, 6, 8, 1.5, 7.5];
+
+/** The roundest number in (lo, hi] (1, 5, 2, 2.5, ... times a power of ten),
+ * preferring the larger on a tie; `hi` itself if nothing rounder fits. Any
+ * number in that interval splits the data identically, so rounding never moves
+ * a country between bands. */
+function roundest(lo: number, hi: number, integer: boolean): { n: number; rank: number } {
+  let best: { n: number; rank: number } | null = null;
+  const top = Math.ceil(Math.log10(hi));
+  for (let m = top; m >= Math.floor(Math.log10(lo)) - 2; m--) {
+    DIGITS.forEach((d, rank) => {
+      const n = Number((d * 10 ** m).toPrecision(12));
+      if (n <= lo || n > hi || (integer && !Number.isInteger(n))) return;
+      if (!best || rank < best.rank || (rank === best.rank && n > best.n)) best = { n, rank };
+    });
+  }
+  return best ?? { n: hi, rank: DIGITS.length };
 }
 
 /** Splits the positive values into up to five bands with round boundaries,
- * placed near the quintiles so the bands stay roughly balanced. Ties and
- * rounding can merge bands, so some metrics get fewer swatches. Zero gets its
- * own swatch. Labels read "1,000–4,999" for counts, "10%–15%" for rates, with
+ * placed so the bands hold roughly equal numbers of countries, and every
+ * color is used whenever there are enough distinct values (fewer than five
+ * distinct values get one band each). Zero gets its own swatch. Labels read "1,000–4,999" for counts, "10%–15%" for rates, with
  * the last band open-ended ("100,000+"). */
 export function classify(values: (number | null)[], format: (v: number) => string): Classing {
   const nums = values.filter((v): v is number => v !== null);
@@ -48,18 +57,47 @@ export function classify(values: (number | null)[], format: (v: number) => strin
   const integer = positive.every(Number.isInteger);
   const n = RAMP.length;
 
-  const min = positive[0];
-  const max = positive[positive.length - 1];
-  const raw = [1, 2, 3, 4].map((q) => positive[Math.floor((q / n) * positive.length)]);
-  const snap = (x: number) => (integer ? Math.max(1, Math.round(nice(x))) : nice(x));
-  const inRange = (bs: number[]) =>
-    [...new Set(bs)].filter((b) => b > min && b <= max).sort((a, b) => a - b);
-  let breaks = inRange(raw.filter((x) => x !== undefined).map(snap));
-  // Many tied low values (e.g. temples) collapse the quintiles into two bands;
-  // spread the cut-offs evenly on a log scale instead.
-  if (breaks.length < 3 && max / min >= 20) {
-    breaks = inRange([1, 2, 3, 4].map((j) => snap(min * (max / min) ** (j / n))));
+  // Distinct positive values and how many countries sit below each.
+  const uniq: number[] = [];
+  const before: number[] = [];
+  positive.forEach((v, idx) => {
+    if (uniq[uniq.length - 1] !== v) {
+      uniq.push(v);
+      before.push(idx);
+    }
+  });
+
+  // Every band is used whenever the data allows: pick four cut points at
+  // distinct values. Each may drift up to 30% of an ideal band's size from an
+  // equal split to land on a rounder number (1,000 beats 1,137); ties can't be
+  // split, so this can't be a plain quintile.
+  const cutIdx: number[] = [];
+  if (uniq.length <= n) {
+    for (let idx = 1; idx < uniq.length; idx++) cutIdx.push(idx);
+  } else {
+    let prev = 0;
+    for (let j = 1; j < n; j++) {
+      const target = (j * positive.length) / n;
+      const tol = (0.3 * positive.length) / n;
+      const maxIdx = uniq.length - (n - j); // leave room for the cuts still to come
+      let bestIdx = prev + 1;
+      let bestScore = Infinity;
+      for (let idx = prev + 1; idx <= maxIdx; idx++) {
+        const dev = Math.abs(before[idx] - target);
+        // Outside the tolerance only the closest cut wins; inside it, roundness does.
+        const score =
+          dev <= tol ? roundest(uniq[idx - 1], uniq[idx], integer).rank * 1e6 + dev : 1e12 + dev;
+        if (score < bestScore) {
+          bestScore = score;
+          bestIdx = idx;
+        }
+      }
+      cutIdx.push(bestIdx);
+      prev = bestIdx;
+    }
   }
+  const breaks = cutIdx.map((idx) => roundest(uniq[idx - 1], uniq[idx], integer).n);
+  const min = positive[0];
 
   const k = breaks.length + 1;
   const fills = Array.from({ length: k }, (_, i) =>
