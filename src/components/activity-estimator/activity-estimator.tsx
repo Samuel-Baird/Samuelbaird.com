@@ -72,6 +72,19 @@ const btn =
 const eyebrow = "small-caps text-[11px] font-medium text-[color:var(--muted)]";
 const card = "rounded-[var(--radius)] border border-[color:var(--border)] p-6 sm:p-7";
 
+type SortKey = "name" | "members" | "wards" | "branches" | "active" | "rate" | "survey";
+type SortDir = "asc" | "desc";
+
+const COLUMNS: { key: SortKey; label: string }[] = [
+  { key: "name", label: "Country" },
+  { key: "members", label: "Members" },
+  { key: "wards", label: "Wards" },
+  { key: "branches", label: "Branches" },
+  { key: "active", label: "Active (mid)" },
+  { key: "rate", label: "Rate (low–mid–high)" },
+  { key: "survey", label: "Survey" },
+];
+
 export function ActivityEstimator({ asOf, worldwideMembers, map, countries, order, baselines }: Props) {
   const [a, setA] = useState<Assumptions>(PRESETS.Default);
 
@@ -86,6 +99,38 @@ export function ActivityEstimator({ asOf, worldwideMembers, map, countries, orde
     [a, countries, order, baselines],
   );
   const total = totals(rows);
+
+  const [sort, setSort] = useState<{ key: SortKey; dir: SortDir }>({ key: "members", dir: "desc" });
+  const sortedRows = useMemo(() => {
+    const val = (r: (typeof rows)[number]): string | number | null => {
+      switch (sort.key) {
+        case "name": return r.name;
+        case "members": return r.units.members;
+        case "wards": return r.units.wards;
+        case "branches": return r.units.branches;
+        case "active": return r.est.mid.active;
+        case "rate": return r.est.mid.rate;
+        case "survey": return r.baseline?.ratio ?? null;
+      }
+    };
+    const sign = sort.dir === "asc" ? 1 : -1;
+    return [...rows].sort((x, y) => {
+      const a = val(x);
+      const b = val(y);
+      if (a === null && b === null) return 0;
+      if (a === null) return 1; // missing values stay last in either direction
+      if (b === null) return -1;
+      return (typeof a === "string" ? a.localeCompare(b as string) : a - (b as number)) * sign;
+    });
+  }, [rows, sort]);
+
+  function sortBy(key: SortKey) {
+    setSort((s) =>
+      s.key === key
+        ? { key, dir: s.dir === "asc" ? "desc" : "asc" }
+        : { key, dir: key === "name" ? "asc" : "desc" },
+    );
+  }
 
   function downloadCsv() {
     const head =
@@ -263,17 +308,31 @@ export function ActivityEstimator({ asOf, worldwideMembers, map, countries, orde
           <table className="w-full min-w-[640px] text-sm tabular-nums">
             <thead className="sticky top-0 bg-[color:var(--background)]">
               <tr className="border-b border-[color:var(--border)] text-left text-[color:var(--muted)]">
-                <th className="py-2 pr-3 font-medium">Country</th>
-                <th className="py-2 pr-3 text-right font-medium">Members</th>
-                <th className="py-2 pr-3 text-right font-medium">Wards</th>
-                <th className="py-2 pr-3 text-right font-medium">Branches</th>
-                <th className="py-2 pr-3 text-right font-medium">Active (mid)</th>
-                <th className="py-2 pr-3 text-right font-medium">Rate (low–mid–high)</th>
-                <th className="py-2 text-right font-medium">Survey</th>
+                {COLUMNS.map((c, idx) => (
+                  <th
+                    key={c.key}
+                    scope="col"
+                    aria-sort={
+                      sort.key === c.key ? (sort.dir === "asc" ? "ascending" : "descending") : "none"
+                    }
+                    className={`py-2 font-medium ${idx === COLUMNS.length - 1 ? "" : "pr-3"} ${idx === 0 ? "" : "text-right"}`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => sortBy(c.key)}
+                      className={`inline-flex items-center gap-1 hover:text-[color:var(--foreground)] ${sort.key === c.key ? "text-[color:var(--foreground)]" : ""}`}
+                    >
+                      {c.label}
+                      <span aria-hidden="true" className="w-3 text-[10px]">
+                        {sort.key === c.key ? (sort.dir === "asc" ? "▲" : "▼") : ""}
+                      </span>
+                    </button>
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {rows.map((r) => (
+              {sortedRows.map((r) => (
                 <tr key={r.name} className="border-b border-[color:var(--border)] last:border-0">
                   <td className="py-2 pr-3">
                     <a href={r.units.source_url} className="text-[color:var(--accent)] hover:underline">
