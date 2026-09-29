@@ -1,0 +1,89 @@
+{
+ "as_of": "2025",
+ "continents": {
+  "Africa": {
+   "year": 2025,
+   "members": 1046270,
+   "congregations": 3220,
+   "wards": 1882,
+   "branches": 1311,
+   "stakes": 271,
+   "districts": 106,
+   "missions": 54,
+   "temples": 8,
+   "family_history_centers": 665,
+   "countries_with_data": 33,
+   "note": "Continent totals are the Church's own; wards and branches are summed from the countries listed."
+  },
+  "Asia": {
+   "year": 2025,
+   "members": 1343071,
+   "congregations": 2192,
+   "wards": 1291,
+   "branches": 758,
+   "stakes": 212,
+   "districts": 105,
+   "missions": 51,
+   "temples": 11,
+   "family_history_centers": 420,
+   "countries_with_data": 20,
+   "note": "Continent totals are the Church's own; wards and branches are summed from the countries listed."
+  },
+  "Europe": {
+   "year": 2025,
+   "members": 528704,
+   "congregations": 1280,
+   "wards": 811,
+   "branches": 481,
+   "stakes": 131,
+   "districts": 21,
+   "missions": 38,
+   "temples": 14,
+   "family_history_centers": 669,
+   "countries_with_data": 44,
+   "note": "Continent totals are the Church's own; wards and branches are summed from the countries listed."
+  },
+  "North America": {
+   "year": 2025,
+   "members": 9807340,
+   "congregations": 18501,
+   "wards": 15577,
+   "branches": 2911,
+   "stakes": 2196,
+   "districts": 105,
+   "missions": 187,
+   "temples": 135,
+   "family_history_centers": 2799,
+   "countries_with_data": 31,
+   "note": "Continent totals are the Church's own; wards and branches are summed from the countries listed."
+  },
+  "Oceania (Pacific)": {
+   "year": 2025,
+   "members": 629697,
+   "congregations": 1306,
+   "wards": 936,
+   "branches": 370,
+   "stakes": 146,
+   "districts": 24,
+   "missions": 17,
+   "temples": 12,
+   "family_history_centers": 315,
+   "countries_with_data": 21,
+   "note": "Continent totals are the Church's own; wards and branches are summed from the countries listed."
+  },
+  "South America": {
+   "year": 2025,
+   "members": 4517233,
+   "congregations": 5547,
+   "wards": 4313,
+   "branches": 1233,
+   "stakes": 739,
+   "districts": 127,
+   "missions": 104,
+   "temples": 31,
+   "family_history_centers": 1595,
+   "countries_with_data": 13,
+   "note": "Continent totals are the Church's own; wards and branches are summed from the countries listed."
+  }
+ }
+}

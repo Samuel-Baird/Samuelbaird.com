@@ -117,24 +117,33 @@ Data Explorer PNG house style in `docs/CHARTS.md`:
   `noDataLabel` such as "Not yet published".
 - The map explorer also shows a sortable table (`data-table.tsx`) for whichever
   level is on screen.
-- **The Church publishes state and province pages one at a time.** As of
-  Sep 2026 only nine U.S. states exist (Alabama, Alaska, Arizona, Arkansas,
-  California, Colorado, Connecticut, Delaware, Hawaii); no Canadian provinces or
-  any other country. Unpublished states draw grey with a plain "not published
-  yet" note, and the page says how many are published. Never fill the gaps with
-  guesses. To pick up new pages:
+- **Two Church sites publish these figures, and they differ in coverage.**
+  `churchofjesuschrist.org/learn/facts-statistics` has ~120 countries and, so far,
+  nine state pages. `newsroom.churchofjesuschrist.org/facts-and-statistics` lists
+  every country it reports (160) and all 50 states plus D.C. The build scripts
+  merge them (learn preferred, Newsroom fills the gaps); no Canadian provinces
+  or other subdivisions exist on either. Anything a source omits stays grey with
+  a plain "no data" note. Never fill the gaps with guesses. To refresh:
 
   ```bash
-  node scripts/church-facts-statistics/scrape-subnational.mjs   # writes states.csv / states.json
-  python scripts/church-facts-statistics/build_state_stats.py   # writes docs/datasets/lds-states/state-stats.json
+  node scripts/church-facts-statistics/scrape.mjs               # learn site: countries.csv, continents.csv
+  node scripts/church-facts-statistics/scrape-newsroom.mjs      # Newsroom: newsroom-countries.csv, newsroom-states.csv
+  node scripts/church-facts-statistics/scrape-subnational.mjs   # learn state pages: states.csv (capitals, Hawaii)
+  python scripts/church-facts-statistics/build_country_stats.py # country-stats, continent-stats, units-by-country JSON
+  python scripts/church-facts-statistics/build_state_stats.py   # docs/datasets/lds-states/state-stats.json
   ```
 
   The scraper crawls every country page for "The Church in ..." cards and probes
   every U.S. state name directly, so a new country's provinces are found without
   code changes. To draw a new country's map, add a `build<Country>Map()` next to
   `buildUsStateMap()` and a `states[<country>]` branch in `map-explorer.tsx`.
-- Blank counts in the state pages mean zero; the family-history-center field is
-  the literal placeholder `fhcs`, so it is dropped.
+- Blank counts mean zero. The learn site's family-history-center field is the
+  literal placeholder `fhcs`, so it is dropped there (Hawaii, read from the learn
+  site, therefore shows 0).
+- **Continent view.** A "Group by: Continents" toggle shades every country with
+  its continent's total (the Church's own continent figures; wards and branches
+  are summed from countries). The legend bands and the ranked list are built
+  from the six continent values, not the many countries (`rankItems`).
 
 ## Checklist for a new or changed map
 

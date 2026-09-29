@@ -6,6 +6,7 @@ import { ToolsPaneTabs } from "@/components/tools-pane-tabs";
 import { buildUsStateMap, buildWorldMap } from "@/lib/world-map";
 import stats from "../../../../../docs/datasets/lds-units-by-country/country-stats.json";
 import stateStats from "../../../../../docs/datasets/lds-states/state-stats.json";
+import continentStats from "../../../../../docs/datasets/lds-units-by-country/continent-stats.json";
 
 export const metadata: Metadata = {
   title: "Map Explorer",
@@ -35,6 +36,7 @@ export default function MapExplorerPage() {
         usMap={usMap}
         countries={stats.countries}
         states={stateStats.countries}
+        continents={continentStats.continents}
         asOf={stats.as_of}
       />
     </div>
