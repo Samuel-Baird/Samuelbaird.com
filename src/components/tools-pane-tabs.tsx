@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const PANES = [
   { href: "/data-explorer/tools/activity-estimator", label: "Activity estimator" },
   { href: "/data-explorer/tools/map-explorer", label: "Map explorer" },
+  { href: "/data-explorer/tools/bananas-vs-lds", label: "Misc" },
 ];
 
 /** Switches between the tools; each is its own route so it's linkable. */

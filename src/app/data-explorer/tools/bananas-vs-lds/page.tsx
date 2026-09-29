@@ -18,7 +18,19 @@ const TRUCKLOAD_TONNES = comparisonData.truckload_tonnes;
 export default function BananasVsLdsPage() {
   const countries = comparisonData.countries as Record<
     string,
-    { lds_members: number; banana_tonnes?: number; banana_truckloads?: number }
+    {
+      lds_members: number;
+      lds_congregations: number;
+      lds_wards: number;
+      lds_branches: number;
+      lds_stakes: number;
+      lds_districts: number;
+      lds_missions: number;
+      lds_temples: number;
+      lds_family_history_centers: number;
+      banana_tonnes?: number;
+      banana_truckloads?: number;
+    }
   >;
 
   const map = buildWorldMap(Object.keys(countries));
@@ -26,6 +38,14 @@ export default function BananasVsLdsPage() {
   const items = Object.entries(countries).map(([name, data]) => ({
     name,
     lds_members: data.lds_members,
+    lds_congregations: data.lds_congregations,
+    lds_wards: data.lds_wards,
+    lds_branches: data.lds_branches,
+    lds_stakes: data.lds_stakes,
+    lds_districts: data.lds_districts,
+    lds_missions: data.lds_missions,
+    lds_temples: data.lds_temples,
+    lds_family_history_centers: data.lds_family_history_centers,
     banana_tonnes: data.banana_tonnes ?? null,
   }));
 
@@ -52,7 +72,6 @@ export default function BananasVsLdsPage() {
           map={map}
           items={items}
           title="LDS Members vs. Semi-Truck Loads of Bananas"
-          subtitle={`Dark blue: country has more LDS members than banana truckloads (1 truck = ${TRUCKLOAD_TONNES} t). Bright yellow: banana truckloads outnumber LDS members. LDS: Church-reported ${ldsYear}; bananas: FAOSTAT ${bananaYear}.`}
           source={`Church facts and statistics ${ldsYear}; FAOSTAT ${bananaYear}`}
           filename="lds-members-vs-banana-truckloads"
           truckloadTonnes={TRUCKLOAD_TONNES}

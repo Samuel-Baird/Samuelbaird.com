@@ -86,10 +86,15 @@ def main() -> None:
         church_name = OWID_TO_CHURCH.get(owid_name, owid_name)
         banana_by_church[church_name] = tonnes
 
+    # LDS stat fields to carry through (all come from country-stats.json)
+    LDS_STAT_FIELDS = [
+        "members", "congregations", "wards", "branches",
+        "stakes", "districts", "missions", "temples", "family_history_centers",
+    ]
+
     # Build merged output
     countries_out: dict[str, dict] = {}
     for country, lds in lds_countries.items():
-        members = lds.get("members", 0) or 0
         banana_tonnes = banana_by_church.get(country)
         # Also try the reverse mapping (Church name -> OWID name -> back)
         if banana_tonnes is None:
@@ -97,7 +102,10 @@ def main() -> None:
             if owid_alt:
                 banana_tonnes = banana_by_owid.get(owid_alt)
 
-        entry: dict = {"lds_members": members}
+        entry: dict = {}
+        for field in LDS_STAT_FIELDS:
+            entry[f"lds_{field}"] = lds.get(field, 0) or 0
+
         if banana_tonnes is not None:
             entry["banana_tonnes"] = round(banana_tonnes, 2)
             entry["banana_truckloads"] = round(banana_tonnes / TRUCKLOAD_TONNES, 2)
