@@ -1836,6 +1836,27 @@ const RAW_DATASETS: Dataset[] = [
       brazilTopCities2010Graphic(),
     ],
   },
+  {
+    slug: "bananas-vs-lds",
+    name: "LDS Members vs. Semi-Truck Loads of Bananas",
+    shortDescription:
+      "For every country: does it have more Latter-day Saints or more semi-truck loads of bananas? One truckload = 20 metric tonnes.",
+    sponsor: "The Church of Jesus Christ of Latter-day Saints; FAOSTAT (UN Food and Agriculture Organization)",
+    fielder: "Compiled by this site from Church facts-and-statistics pages and FAOSTAT via Our World in Data",
+    fieldedPeriod: "LDS 2025; bananas 2022",
+    description:
+      "A country-by-country comparison of two very different quantities: Latter-day Saint membership " +
+      "(Church-reported, from the same source as the Map Explorer) and banana production in semi-truck " +
+      "loads, where one truckload equals 20 metric tonnes. Banana production data is from the UN Food " +
+      "and Agriculture Organization (FAOSTAT) via Our World in Data. Countries colored dark blue have " +
+      "more LDS members than banana truckloads; countries colored bright yellow have more banana " +
+      "truckloads. Gray means no data for either.",
+    howWeUseIt:
+      "See the interactive world map at /data-explorer/tools/bananas-vs-lds — hover or tap any country " +
+      "to see its exact LDS membership and banana truckload count side by side.",
+    category: "Misc",
+    graphics: [],
+  },
 ];
 
 /** Site-wide Data Explorer rule: every dataset's graphics gallery

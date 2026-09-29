@@ -1,0 +1,732 @@
+{
+  "source": "LDS: Church of Jesus Christ facts-and-statistics pages; Bananas: FAOSTAT via Our World in Data (ourworldindata.org/grapher/banana-production)",
+  "lds_year": "2025 (per-country data year in each row)",
+  "banana_year": 2020,
+  "truckload_tonnes": 20,
+  "countries": {
+    "United States": {
+      "lds_members": 6929770,
+      "banana_tonnes": 3560.59,
+      "banana_truckloads": 178.03
+    },
+    "Brazil": {
+      "lds_members": 1573360,
+      "banana_tonnes": 7046345.0,
+      "banana_truckloads": 352317.25
+    },
+    "Mexico": {
+      "lds_members": 1572287,
+      "banana_tonnes": 2670291.0,
+      "banana_truckloads": 133514.55
+    },
+    "Philippines": {
+      "lds_members": 905082,
+      "banana_tonnes": 5641130.0,
+      "banana_truckloads": 282056.5
+    },
+    "Peru": {
+      "lds_members": 667836,
+      "banana_tonnes": 2343310.5,
+      "banana_truckloads": 117165.52
+    },
+    "Chile": {
+      "lds_members": 624203
+    },
+    "Argentina": {
+      "lds_members": 505819,
+      "banana_tonnes": 177081.84,
+      "banana_truckloads": 8854.09
+    },
+    "Guatemala": {
+      "lds_members": 297143,
+      "banana_tonnes": 2843486.8,
+      "banana_truckloads": 142174.34
+    },
+    "Ecuador": {
+      "lds_members": 279046,
+      "banana_tonnes": 7585653.0,
+      "banana_truckloads": 379282.65
+    },
+    "Nigeria": {
+      "lds_members": 274043,
+      "banana_tonnes": 6907142.5,
+      "banana_truckloads": 345357.12
+    },
+    "Bolivia": {
+      "lds_members": 235773,
+      "banana_tonnes": 301638.28,
+      "banana_truckloads": 15081.91
+    },
+    "Colombia": {
+      "lds_members": 223090,
+      "banana_tonnes": 2638063.8,
+      "banana_truckloads": 131903.19
+    },
+    "Canada": {
+      "lds_members": 211581
+    },
+    "Honduras": {
+      "lds_members": 197073,
+      "banana_tonnes": 550868.6,
+      "banana_truckloads": 27543.43
+    },
+    "United Kingdom": {
+      "lds_members": 190066
+    },
+    "Venezuela": {
+      "lds_members": 179389,
+      "banana_tonnes": 533896.06,
+      "banana_truckloads": 26694.8
+    },
+    "Australia": {
+      "lds_members": 165272,
+      "banana_tonnes": 368735.0,
+      "banana_truckloads": 18436.75
+    },
+    "Democratic Republic of the Congo": {
+      "lds_members": 159771,
+      "banana_tonnes": 811021.0,
+      "banana_truckloads": 40551.05
+    },
+    "Dominican Republic": {
+      "lds_members": 156358,
+      "banana_tonnes": 2038904.6,
+      "banana_truckloads": 101945.23
+    },
+    "El Salvador": {
+      "lds_members": 132399,
+      "banana_tonnes": 20053.72,
+      "banana_truckloads": 1002.69
+    },
+    "Japan": {
+      "lds_members": 131776,
+      "banana_tonnes": 17.99,
+      "banana_truckloads": 0.9
+    },
+    "Ghana": {
+      "lds_members": 122978,
+      "banana_tonnes": 135062.73,
+      "banana_truckloads": 6753.14
+    },
+    "New Zealand": {
+      "lds_members": 120992
+    },
+    "Uruguay": {
+      "lds_members": 112449
+    },
+    "Nicaragua": {
+      "lds_members": 106953,
+      "banana_tonnes": 90616.08,
+      "banana_truckloads": 4530.8
+    },
+    "Paraguay": {
+      "lds_members": 106345,
+      "banana_tonnes": 88870.53,
+      "banana_truckloads": 4443.53
+    },
+    "Samoa": {
+      "lds_members": 90706,
+      "banana_tonnes": 21853.44,
+      "banana_truckloads": 1092.67
+    },
+    "South Korea": {
+      "lds_members": 89092,
+      "banana_tonnes": 27345.0,
+      "banana_truckloads": 1367.25
+    },
+    "South Africa": {
+      "lds_members": 78689,
+      "banana_tonnes": 430924.97,
+      "banana_truckloads": 21546.25
+    },
+    "Spain": {
+      "lds_members": 71995,
+      "banana_tonnes": 421320.0,
+      "banana_truckloads": 21066.0
+    },
+    "Cote d'Ivoire": {
+      "lds_members": 71182,
+      "banana_tonnes": 534242.9,
+      "banana_truckloads": 26712.15
+    },
+    "Tonga": {
+      "lds_members": 69594,
+      "banana_tonnes": 817.1,
+      "banana_truckloads": 40.86
+    },
+    "Panama": {
+      "lds_members": 63936,
+      "banana_tonnes": 387690.1,
+      "banana_truckloads": 19384.5
+    },
+    "Taiwan": {
+      "lds_members": 63425,
+      "banana_tonnes": 341390.22,
+      "banana_truckloads": 17069.51
+    },
+    "Costa Rica": {
+      "lds_members": 58373,
+      "banana_tonnes": 2630020.0,
+      "banana_truckloads": 131501.0
+    },
+    "Zimbabwe": {
+      "lds_members": 52430,
+      "banana_tonnes": 325400.0,
+      "banana_truckloads": 16270.0
+    },
+    "Portugal": {
+      "lds_members": 50341,
+      "banana_tonnes": 30230.0,
+      "banana_truckloads": 1511.5
+    },
+    "Papua New Guinea": {
+      "lds_members": 46583,
+      "banana_tonnes": 1272779.2,
+      "banana_truckloads": 63638.96
+    },
+    "Germany": {
+      "lds_members": 42229,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Sierra Leone": {
+      "lds_members": 41775
+    },
+    "France": {
+      "lds_members": 40546,
+      "banana_tonnes": 210920.0,
+      "banana_truckloads": 10546.0
+    },
+    "Mozambique": {
+      "lds_members": 39282,
+      "banana_tonnes": 387740.0,
+      "banana_truckloads": 19387.0
+    },
+    "French Polynesia": {
+      "lds_members": 30350,
+      "banana_tonnes": 283.48,
+      "banana_truckloads": 14.17
+    },
+    "Italy": {
+      "lds_members": 30105,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Haiti": {
+      "lds_members": 27550,
+      "banana_tonnes": 264881.28,
+      "banana_truckloads": 13244.06
+    },
+    "Puerto Rico": {
+      "lds_members": 26947,
+      "banana_tonnes": 107393.28,
+      "banana_truckloads": 5369.66
+    },
+    "Uganda": {
+      "lds_members": 26304,
+      "banana_tonnes": 560000.0,
+      "banana_truckloads": 28000.0
+    },
+    "Liberia": {
+      "lds_members": 25767,
+      "banana_tonnes": 142551.39,
+      "banana_truckloads": 7127.57
+    },
+    "Hong Kong": {
+      "lds_members": 24930
+    },
+    "Fiji": {
+      "lds_members": 24847,
+      "banana_tonnes": 13388.3,
+      "banana_truckloads": 669.41
+    },
+    "Thailand": {
+      "lds_members": 24825,
+      "banana_tonnes": 1298997.8,
+      "banana_truckloads": 64949.89
+    },
+    "Kenya": {
+      "lds_members": 24547,
+      "banana_tonnes": 2061285.0,
+      "banana_truckloads": 103064.25
+    },
+    "Kiribati": {
+      "lds_members": 23585,
+      "banana_tonnes": 7411.62,
+      "banana_truckloads": 370.58
+    },
+    "Madagascar": {
+      "lds_members": 20395,
+      "banana_tonnes": 399939.78,
+      "banana_truckloads": 19996.99
+    },
+    "Russia": {
+      "lds_members": 18306
+    },
+    "Cambodia": {
+      "lds_members": 18070,
+      "banana_tonnes": 374922.78,
+      "banana_truckloads": 18746.14
+    },
+    "American Samoa": {
+      "lds_members": 17646
+    },
+    "Cape Verde": {
+      "lds_members": 16334,
+      "banana_tonnes": 3903.0,
+      "banana_truckloads": 195.15
+    },
+    "India": {
+      "lds_members": 15664,
+      "banana_tonnes": 37614360.0,
+      "banana_truckloads": 1880718.0
+    },
+    "Republic of the Congo": {
+      "lds_members": 15482,
+      "banana_tonnes": 86253.57,
+      "banana_truckloads": 4312.68
+    },
+    "Vanuatu": {
+      "lds_members": 14042,
+      "banana_tonnes": 17870.85,
+      "banana_truckloads": 893.54
+    },
+    "Mongolia": {
+      "lds_members": 13250
+    },
+    "Malaysia": {
+      "lds_members": 11769,
+      "banana_tonnes": 335443.97,
+      "banana_truckloads": 16772.2
+    },
+    "Ukraine": {
+      "lds_members": 10014
+    },
+    "Switzerland": {
+      "lds_members": 9630
+    },
+    "Sweden": {
+      "lds_members": 9569,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Netherlands": {
+      "lds_members": 9027,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Angola": {
+      "lds_members": 8779,
+      "banana_tonnes": 5213106.0,
+      "banana_truckloads": 260655.3
+    },
+    "Togo": {
+      "lds_members": 8349,
+      "banana_tonnes": 25513.31,
+      "banana_truckloads": 1275.67
+    },
+    "Benin": {
+      "lds_members": 8286,
+      "banana_tonnes": 20972.97,
+      "banana_truckloads": 1048.65
+    },
+    "Malawi": {
+      "lds_members": 7857,
+      "banana_tonnes": 1131259.4,
+      "banana_truckloads": 56562.97
+    },
+    "Jamaica": {
+      "lds_members": 7856,
+      "banana_tonnes": 62997.8,
+      "banana_truckloads": 3149.89
+    },
+    "Zambia": {
+      "lds_members": 7823,
+      "banana_tonnes": 683.84,
+      "banana_truckloads": 34.19
+    },
+    "Indonesia": {
+      "lds_members": 7655,
+      "banana_tonnes": 9260387.0,
+      "banana_truckloads": 463019.35
+    },
+    "Guyana": {
+      "lds_members": 7400,
+      "banana_tonnes": 21136.0,
+      "banana_truckloads": 1056.8
+    },
+    "Belgium": {
+      "lds_members": 7164,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Marshall Islands": {
+      "lds_members": 6927
+    },
+    "Tanzania": {
+      "lds_members": 6259,
+      "banana_tonnes": 3269969.5,
+      "banana_truckloads": 163498.48
+    },
+    "Micronesia": {
+      "lds_members": 6241,
+      "banana_tonnes": 2041.46,
+      "banana_truckloads": 102.07
+    },
+    "Belize": {
+      "lds_members": 5741,
+      "banana_tonnes": 85071.99,
+      "banana_truckloads": 4253.6
+    },
+    "Botswana": {
+      "lds_members": 5465
+    },
+    "Hungary": {
+      "lds_members": 5274,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Finland": {
+      "lds_members": 5024,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Ireland": {
+      "lds_members": 4923,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Austria": {
+      "lds_members": 4753,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Norway": {
+      "lds_members": 4547
+    },
+    "Denmark": {
+      "lds_members": 4426,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Cameroon": {
+      "lds_members": 3673,
+      "banana_tonnes": 805352.56,
+      "banana_truckloads": 40267.63
+    },
+    "Rwanda": {
+      "lds_members": 3625,
+      "banana_tonnes": 2437236.0,
+      "banana_truckloads": 121861.8
+    },
+    "Armenia": {
+      "lds_members": 3579
+    },
+    "Trinidad and Tobago": {
+      "lds_members": 3458,
+      "banana_tonnes": 3245.59,
+      "banana_truckloads": 162.28
+    },
+    "Albania": {
+      "lds_members": 3285
+    },
+    "Singapore": {
+      "lds_members": 3262,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Solomon Islands": {
+      "lds_members": 3232,
+      "banana_tonnes": 320.13,
+      "banana_truckloads": 16.01
+    },
+    "Romania": {
+      "lds_members": 3127,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Guam": {
+      "lds_members": 2768
+    },
+    "Czech Republic": {
+      "lds_members": 2628,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Ethiopia": {
+      "lds_members": 2626,
+      "banana_tonnes": 1190101.2,
+      "banana_truckloads": 59505.06
+    },
+    "Swaziland": {
+      "lds_members": 2598,
+      "banana_tonnes": 30362.68,
+      "banana_truckloads": 1518.13
+    },
+    "New Caledonia": {
+      "lds_members": 2585,
+      "banana_tonnes": 2211.17,
+      "banana_truckloads": 110.56
+    },
+    "Bulgaria": {
+      "lds_members": 2424,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Poland": {
+      "lds_members": 2315,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Lesotho": {
+      "lds_members": 2278
+    },
+    "Burundi": {
+      "lds_members": 2070,
+      "banana_tonnes": 1207926.4,
+      "banana_truckloads": 60396.32
+    },
+    "United Arab Emirates": {
+      "lds_members": 2002,
+      "banana_tonnes": 327.0,
+      "banana_truckloads": 16.35
+    },
+    "Suriname": {
+      "lds_members": 1991,
+      "banana_tonnes": 3586.26,
+      "banana_truckloads": 179.31
+    },
+    "Cook Islands": {
+      "lds_members": 1890,
+      "banana_tonnes": 9.83,
+      "banana_truckloads": 0.49
+    },
+    "Sri Lanka": {
+      "lds_members": 1732
+    },
+    "Macau": {
+      "lds_members": 1595
+    },
+    "Namibia": {
+      "lds_members": 1492
+    },
+    "Latvia": {
+      "lds_members": 1281,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Estonia": {
+      "lds_members": 1149,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Bahamas": {
+      "lds_members": 1125,
+      "banana_tonnes": 10540.86,
+      "banana_truckloads": 527.04
+    },
+    "Barbados": {
+      "lds_members": 1082,
+      "banana_tonnes": 981.37,
+      "banana_truckloads": 49.07
+    },
+    "Lithuania": {
+      "lds_members": 1024,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Northern Mariana Islands": {
+      "lds_members": 938
+    },
+    "Reunion": {
+      "lds_members": 859,
+      "banana_tonnes": 10000.0,
+      "banana_truckloads": 500.0
+    },
+    "Greece": {
+      "lds_members": 818,
+      "banana_tonnes": 1090.0,
+      "banana_truckloads": 54.5
+    },
+    "Turkey": {
+      "lds_members": 808,
+      "banana_tonnes": 875000.0,
+      "banana_truckloads": 43750.0
+    },
+    "Saint Vincent and the Grenadines": {
+      "lds_members": 767,
+      "banana_tonnes": 59514.64,
+      "banana_truckloads": 2975.73
+    },
+    "Croatia": {
+      "lds_members": 739,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Virgin Islands": {
+      "lds_members": 704
+    },
+    "Cyprus": {
+      "lds_members": 701,
+      "banana_tonnes": 5870.0,
+      "banana_truckloads": 293.5
+    },
+    "Aruba": {
+      "lds_members": 686
+    },
+    "Curacao": {
+      "lds_members": 639
+    },
+    "Guadeloupe": {
+      "lds_members": 628,
+      "banana_tonnes": 52250.0,
+      "banana_truckloads": 2612.5
+    },
+    "Mauritius": {
+      "lds_members": 612,
+      "banana_tonnes": 10843.1,
+      "banana_truckloads": 542.15
+    },
+    "Palau": {
+      "lds_members": 572
+    },
+    "Luxembourg": {
+      "lds_members": 526,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "French Guiana": {
+      "lds_members": 522,
+      "banana_tonnes": 3582.0,
+      "banana_truckloads": 179.1
+    },
+    "Georgia": {
+      "lds_members": 498
+    },
+    "Belarus": {
+      "lds_members": 478
+    },
+    "Moldova": {
+      "lds_members": 471
+    },
+    "Slovenia": {
+      "lds_members": 466,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Iceland": {
+      "lds_members": 445
+    },
+    "Saint Lucia": {
+      "lds_members": 435,
+      "banana_tonnes": 2843.7,
+      "banana_truckloads": 142.19
+    },
+    "Grenada": {
+      "lds_members": 429,
+      "banana_tonnes": 1502.0,
+      "banana_truckloads": 75.1
+    },
+    "Serbia": {
+      "lds_members": 422
+    },
+    "Israel": {
+      "lds_members": 422,
+      "banana_tonnes": 197001.0,
+      "banana_truckloads": 9850.05
+    },
+    "Niue": {
+      "lds_members": 400,
+      "banana_tonnes": 82.28,
+      "banana_truckloads": 4.11
+    },
+    "Tuvalu": {
+      "lds_members": 381,
+      "banana_tonnes": 293.52,
+      "banana_truckloads": 14.68
+    },
+    "Kuwait": {
+      "lds_members": 369,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Antigua and Barbuda": {
+      "lds_members": 366,
+      "banana_tonnes": 2.37,
+      "banana_truckloads": 0.12
+    },
+    "Sint Maarten": {
+      "lds_members": 358
+    },
+    "Central African Republic": {
+      "lds_members": 357,
+      "banana_tonnes": 57239.58,
+      "banana_truckloads": 2861.98
+    },
+    "Senegal": {
+      "lds_members": 338,
+      "banana_tonnes": 38625.0,
+      "banana_truckloads": 1931.25
+    },
+    "Slovakia": {
+      "lds_members": 334,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Malta": {
+      "lds_members": 320,
+      "banana_tonnes": 0.0,
+      "banana_truckloads": 0.0
+    },
+    "Saint Kitts and Nevis": {
+      "lds_members": 292
+    },
+    "Isle of Man": {
+      "lds_members": 285
+    },
+    "Martinique": {
+      "lds_members": 285,
+      "banana_tonnes": 245798.0,
+      "banana_truckloads": 12289.9
+    },
+    "Jersey": {
+      "lds_members": 269
+    },
+    "Cayman Islands": {
+      "lds_members": 264
+    },
+    "Kazakhstan": {
+      "lds_members": 245
+    },
+    "Bahrain": {
+      "lds_members": 231,
+      "banana_tonnes": 710.0,
+      "banana_truckloads": 35.5
+    },
+    "Bermuda": {
+      "lds_members": 227
+    },
+    "Dominica": {
+      "lds_members": 180,
+      "banana_tonnes": 11535.15,
+      "banana_truckloads": 576.76
+    },
+    "Nauru": {
+      "lds_members": 146
+    },
+    "Bosnia and Herzegovina": {
+      "lds_members": 91
+    },
+    "Montenegro": {
+      "lds_members": 65
+    },
+    "Guernsey": {
+      "lds_members": 60
+    },
+    "Burkina Faso": {
+      "lds_members": 6,
+      "banana_tonnes": 46922.05,
+      "banana_truckloads": 2346.1
+    }
+  }
+}

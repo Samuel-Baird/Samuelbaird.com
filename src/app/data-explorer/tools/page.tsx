@@ -41,6 +41,17 @@ export default function ToolsPage() {
           record.
         </p>
       </Link>
+      <Link
+        href="/data-explorer/tools/bananas-vs-lds"
+        className="block rounded-[var(--radius)] border border-[color:var(--border)] p-6 hover:border-[color:var(--accent)]"
+      >
+        <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">Map · Misc</p>
+        <h2 className="serif mt-2 text-xl font-semibold">LDS Members vs. Banana Truckloads</h2>
+        <p className="mt-2 text-sm text-[color:var(--muted)]">
+          Does your country have more Latter-day Saints or more semi-truck loads of bananas?
+          One truckload = 20 metric tonnes.
+        </p>
+      </Link>
       </div>
     </div>
   );
