@@ -75,7 +75,7 @@ export function ChoroplethMap({
   const pinch = useRef<number | null>(null);
 
   const values = useMemo(() => new Map(items.map((i) => [i.name, i.value])), [items]);
-  const classing = useMemo(() => classify(items.map((i) => i.value)), [items]);
+  const classing = useMemo(() => classify(items.map((i) => i.value), format), [items, format]);
   const drawn = items.filter((i) => map.shapes[i.name]);
   const ranked = useMemo(
     () =>
@@ -218,7 +218,7 @@ export function ChoroplethMap({
     const swatches: { fill: string; label: string }[] = [];
     if (classing.hasZero) swatches.push({ fill: ZERO_FILL, label: "0" });
     classing.classes.forEach((c) =>
-      swatches.push({ fill: c.fill, label: c.min === c.max ? format(c.min) : `${format(c.min)}–${format(c.max)}` }),
+      swatches.push({ fill: c.fill, label: c.label }),
     );
     swatches.push({ fill: NO_DATA_FILL, label: "No data" });
     const slot = (CW - 108) / swatches.length;
@@ -402,13 +402,13 @@ export function ChoroplethMap({
           <Swatch
             key={c.fill}
             fill={c.fill}
-            label={c.min === c.max ? format(c.min) : `${format(c.min)}–${format(c.max)}`}
+            label={c.label}
           />
         ))}
         <Swatch fill={NO_DATA_FILL} label="No data" />
       </div>
       <p className="mt-2 text-xs text-[color:var(--muted)]">
-        Countries are grouped into equal-sized bands from lowest to highest. Ctrl + scroll or pinch to
+        Countries are grouped into bands from lowest to highest, with round cut-offs. Ctrl + scroll or pinch to
         zoom, then drag to move.
       </p>
       <span className="sr-only" aria-live="polite">
