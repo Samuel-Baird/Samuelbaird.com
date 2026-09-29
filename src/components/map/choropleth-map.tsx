@@ -21,11 +21,20 @@ type Props = {
   tooltip: (name: string) => React.ReactNode;
   /** Label for the ranked list on the PNG. */
   rankTitle?: string;
+  /** Zooms to this item and dims the rest; null shows the whole map. */
+  focusName?: string | null;
+  /** Called when an item is clicked or tapped. */
+  onItemClick?: (name: string) => void;
+  /** Share of the map height kept in an unzoomed PNG. The world map crops
+   * Antarctica (0.88); maps with nothing to crop pass 1. */
+  exportCrop?: number;
+  /** Legend text for items with a null value. */
+  noDataLabel?: string;
 };
 
 const SITE = "latterdaystats.samuelbaird.com";
 const MIN_K = 1;
-const MAX_K = 12;
+const MAX_K = 40;
 const SERIF = "'Roboto Slab', Georgia, 'Times New Roman', serif";
 
 type View = { k: number; x: number; y: number };
@@ -66,9 +75,14 @@ export function ChoroplethMap({
   filename,
   tooltip,
   rankTitle = "Highest",
+  focusName = null,
+  onItemClick,
+  exportCrop = 0.88,
+  noDataLabel = "No data",
 }: Props) {
   const [view, setView] = useState<View>({ k: 1, x: 0, y: 0 });
   const [active, setActive] = useState<{ name: string; x: number; y: number } | null>(null);
+  const [animating, setAnimating] = useState(false);
   const svgRef = useRef<SVGSVGElement>(null);
   const pointers = useRef(new Map<number, { x: number; y: number }>());
   const drag = useRef<{ moved: number } | null>(null);
@@ -93,6 +107,28 @@ export function ChoroplethMap({
     const r = svgRef.current!.getBoundingClientRect();
     return { x: ((cx - r.left) / r.width) * W, y: ((cy - r.top) / r.height) * H };
   }
+
+  // Zoom to the focused item's outline (and back out when focus clears).
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setAnimating(!reduce);
+    if (!focusName) {
+      setView({ k: 1, x: 0, y: 0 });
+    } else {
+      const b = map.shapes[focusName]?.bbox;
+      if (b) {
+        const bw = Math.max(b[2] - b[0], 8);
+        const bh = Math.max(b[3] - b[1], 8);
+        const k = Math.min(MAX_K, 0.8 * Math.min(W / bw, H / bh));
+        const cx = (b[0] + b[2]) / 2;
+        const cy = (b[1] + b[3]) / 2;
+        setView(clampView({ k, x: W / 2 - k * cx, y: H / 2 - k * cy }, W, H));
+      }
+    }
+    const t = setTimeout(() => setAnimating(false), 500);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusName, map]);
 
   function zoomAt(factor: number, ux: number, uy: number) {
     setView((v) => {
@@ -158,6 +194,7 @@ export function ChoroplethMap({
     if (drag.current && drag.current.moved > 6) return;
     const box = svgRef.current!.getBoundingClientRect();
     setActive({ name, x: e.clientX - box.left, y: e.clientY - box.top });
+    onItemClick?.(name);
   }
 
   function hoverAt(name: string, e: React.MouseEvent) {
@@ -198,9 +235,14 @@ export function ChoroplethMap({
     // The map, as currently zoomed.
     // Unzoomed, drop the bottom strip (Antarctica) so the map isn't padded
     // with empty land the data never touches.
-    const cropH = view.k === 1 ? H * 0.88 : H / view.k;
-    const mw = CW - 80;
-    const mh = (mw * cropH) / (W / view.k);
+    const cropH = view.k === 1 ? H * exportCrop : H / view.k;
+    // Fit the map into whatever height the legend, ranked list and footer leave;
+    // a tall map (the U.S.) is narrowed and centered rather than crowding them.
+    const legendRows = Math.ceil(((classing.hasZero ? 1 : 0) + classing.classes.length + 1) / 3);
+    const maxMapH = CH - y - (legendRows * 48 + 74) - 330 - 110;
+    const aspect = W / view.k / cropH;
+    const mh = Math.min((CW - 80) / aspect, maxMapH);
+    const mw = mh * aspect;
     const vb = `${-view.x / view.k} ${-view.y / view.k} ${W / view.k} ${cropH}`;
     const shapes = drawn
       .map((i) => {
@@ -209,11 +251,12 @@ export function ChoroplethMap({
         const circle = s.small
           ? `<circle cx="${s.cx}" cy="${s.cy}" r="${3 / view.k}" fill="${f}" stroke="${INK}" stroke-width="0.5" vector-effect="non-scaling-stroke"/>`
           : "";
-        return `<path d="${s.d}" fill="${f}" stroke="#ffffff" stroke-width="0.4" vector-effect="non-scaling-stroke"/>${circle}`;
+        const dim = focusName && focusName !== i.name ? ' opacity="0.28"' : "";
+        return `<path d="${s.d}" fill="${f}"${dim} stroke="#ffffff" stroke-width="0.4" vector-effect="non-scaling-stroke"/>${circle}`;
       })
       .join("");
     parts.push(
-      `<svg x="40" y="${y}" width="${mw}" height="${mh}" viewBox="${vb}" preserveAspectRatio="xMidYMid meet">` +
+      `<svg x="${(CW - mw) / 2}" y="${y}" width="${mw}" height="${mh}" viewBox="${vb}" preserveAspectRatio="xMidYMid meet">` +
         `<path d="${map.land}" fill="${NO_DATA_FILL}" stroke="#ffffff" stroke-width="0.4" vector-effect="non-scaling-stroke"/>${shapes}</svg>`,
     );
     y += mh + 34;
@@ -224,7 +267,7 @@ export function ChoroplethMap({
     classing.classes.forEach((c) =>
       swatches.push({ fill: c.fill, label: c.label }),
     );
-    swatches.push({ fill: NO_DATA_FILL, label: "No data" });
+    swatches.push({ fill: NO_DATA_FILL, label: noDataLabel });
     // Three per row so the labels can stay large (legend text is the first
     // thing lost when a PNG is viewed small; see docs/MAPS.md).
     const PER_ROW = 3;
@@ -326,7 +369,13 @@ export function ChoroplethMap({
             zoomAt(2, x, y);
           }}
         >
-          <g transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
+          <g
+            style={{
+              transform: `translate(${view.x}px, ${view.y}px) scale(${view.k})`,
+              transformOrigin: "0 0",
+              transition: animating ? "transform 450ms ease" : "none",
+            }}
+          >
             <path d={map.land} fill={NO_DATA_FILL} stroke="var(--surface)" strokeWidth="0.4" vectorEffect="non-scaling-stroke" />
             {drawn.map((i) => {
               const s = map.shapes[i.name];
@@ -341,6 +390,7 @@ export function ChoroplethMap({
                     vectorEffect="non-scaling-stroke"
                     tabIndex={0}
                     aria-label={`${i.name}: ${i.value === null ? "no data" : format(i.value)}`}
+                    opacity={focusName && focusName !== i.name ? 0.28 : 1}
                     className="cursor-pointer outline-none focus-visible:stroke-[color:var(--foreground)]"
                     onMouseMove={(e) => hoverAt(i.name, e)}
                     onClick={(e) => select(i.name, e)}
@@ -356,6 +406,7 @@ export function ChoroplethMap({
                       stroke="var(--foreground)"
                       strokeWidth="0.5"
                       vectorEffect="non-scaling-stroke"
+                      opacity={focusName && focusName !== i.name ? 0.28 : 1}
                       className="cursor-pointer"
                       onMouseMove={(e) => hoverAt(i.name, e)}
                       onClick={(e) => select(i.name, e)}
@@ -414,7 +465,7 @@ export function ChoroplethMap({
             label={c.label}
           />
         ))}
-        <Swatch fill={NO_DATA_FILL} label="No data" />
+        <Swatch fill={NO_DATA_FILL} label={noDataLabel} />
       </div>
       <p className="mt-3 text-sm text-[color:var(--muted)]">
         Countries are grouped into bands from lowest to highest, with round cut-offs. Ctrl + scroll or pinch to

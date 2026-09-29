@@ -103,6 +103,39 @@ Data Explorer PNG house style in `docs/CHARTS.md`:
   system-safe fonts. Look at a real export before merging: check the footer
   fits inside the margins and the last ranked row clears the footer rule.
 
+## Zooming into a country, and state/province maps
+
+- **Click a country** on the world map and `ChoroplethMap` zooms to its outline
+  (`focusName`) and dims everything else; a "← World map" button returns. The
+  parent owns that state (`onItemClick` + `focusName`), so any map can opt in.
+  The zoom animates unless the visitor prefers reduced motion.
+- **Countries with subnational data drill down** to their own map instead:
+  today only the United States (`buildUsStateMap()` in `src/lib/world-map.ts`,
+  Albers USA with Alaska and Hawaii as insets, D.C. included, territories
+  excluded). It returns the same `WorldMap` shape as the world map, so the same
+  component draws it. Pass `exportCrop={1}` (nothing to crop) and a
+  `noDataLabel` such as "Not yet published".
+- The map explorer also shows a sortable table (`data-table.tsx`) for whichever
+  level is on screen.
+- **The Church publishes state and province pages one at a time.** As of
+  Sep 2026 only nine U.S. states exist (Alabama, Alaska, Arizona, Arkansas,
+  California, Colorado, Connecticut, Delaware, Hawaii); no Canadian provinces or
+  any other country. Unpublished states draw grey with a plain "not published
+  yet" note, and the page says how many are published. Never fill the gaps with
+  guesses. To pick up new pages:
+
+  ```bash
+  node scripts/church-facts-statistics/scrape-subnational.mjs   # writes states.csv / states.json
+  python scripts/church-facts-statistics/build_state_stats.py   # writes docs/datasets/lds-states/state-stats.json
+  ```
+
+  The scraper crawls every country page for "The Church in ..." cards and probes
+  every U.S. state name directly, so a new country's provinces are found without
+  code changes. To draw a new country's map, add a `build<Country>Map()` next to
+  `buildUsStateMap()` and a `states[<country>]` branch in `map-explorer.tsx`.
+- Blank counts in the state pages mean zero; the family-history-center field is
+  the literal placeholder `fhcs`, so it is dropped.
+
 ## Checklist for a new or changed map
 
 - [ ] Uses `ChoroplethMap`; no custom SVG map.
@@ -111,3 +144,4 @@ Data Explorer PNG house style in `docs/CHARTS.md`:
 - [ ] Save PNG works, and you have opened the PNG and read it.
 - [ ] Works on a phone: tap shows details under the map, + zooms, page scrolls.
 - [ ] Data is in a committed JSON file with a regenerating script.
+- [ ] Missing data is shown as missing (grey, labelled), never estimated.

@@ -1,0 +1,124 @@
+{
+ "note": "State/province records from states.csv. The Church publishes these page by page, so most states are absent; blank counts in the source are zero.",
+ "countries": {
+  "United States": {
+   "Alabama": {
+    "capital": "Montgomery",
+    "year": 2025,
+    "members": 41252,
+    "congregations": 75,
+    "wards": 47,
+    "branches": 28,
+    "stakes": 8,
+    "districts": 0,
+    "missions": 1,
+    "temples": 1,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/alabama?lang=eng"
+   },
+   "Alaska": {
+    "capital": "Juneau",
+    "year": 2025,
+    "members": 33574,
+    "congregations": 82,
+    "wards": 59,
+    "branches": 23,
+    "stakes": 9,
+    "districts": 0,
+    "missions": 1,
+    "temples": 1,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/alaska?lang=eng"
+   },
+   "Arizona": {
+    "capital": "Phoenix",
+    "year": 2025,
+    "members": 442094,
+    "congregations": 892,
+    "wards": 806,
+    "branches": 86,
+    "stakes": 120,
+    "districts": 3,
+    "missions": 6,
+    "temples": 6,
+    "source_url": "https://www.churchofjesuschrist.org/learn/the-church-in-arizona?lang=eng"
+   },
+   "Arkansas": {
+    "capital": "Little Rock",
+    "year": 2025,
+    "members": 38035,
+    "congregations": 79,
+    "wards": 55,
+    "branches": 24,
+    "stakes": 8,
+    "districts": 0,
+    "missions": 2,
+    "temples": 1,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/arkansas?lang=eng"
+   },
+   "California": {
+    "capital": "Sacramento",
+    "year": 2025,
+    "members": 725648,
+    "congregations": 1085,
+    "wards": 946,
+    "branches": 139,
+    "stakes": 145,
+    "districts": 0,
+    "missions": 16,
+    "temples": 8,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/california?lang=eng"
+   },
+   "Colorado": {
+    "capital": "Denver",
+    "year": 2025,
+    "members": 148945,
+    "congregations": 315,
+    "wards": 279,
+    "branches": 36,
+    "stakes": 36,
+    "districts": 0,
+    "missions": 4,
+    "temples": 3,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/colorado?lang=eng"
+   },
+   "Connecticut": {
+    "capital": "Hartford",
+    "year": 2025,
+    "members": 16442,
+    "congregations": 31,
+    "wards": 25,
+    "branches": 6,
+    "stakes": 3,
+    "districts": 0,
+    "missions": 0,
+    "temples": 1,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/connecticut?lang=eng"
+   },
+   "Delaware": {
+    "capital": "Dover",
+    "year": 2025,
+    "members": 6018,
+    "congregations": 10,
+    "wards": 9,
+    "branches": 1,
+    "stakes": 2,
+    "districts": 0,
+    "missions": 0,
+    "temples": 0,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/delaware?lang=eng"
+   },
+   "Hawaii": {
+    "capital": "Honolulu",
+    "year": 2025,
+    "members": 75827,
+    "congregations": 146,
+    "wards": 131,
+    "branches": 15,
+    "stakes": 17,
+    "districts": 0,
+    "missions": 2,
+    "temples": 2,
+    "source_url": "https://www.churchofjesuschrist.org/learn/facts-statistics/hawaii?lang=eng"
+   }
+  }
+ }
+}
