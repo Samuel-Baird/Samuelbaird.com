@@ -1,8 +1,9 @@
-import { geoNaturalEarth1, geoPath } from "d3-geo";
+import { geoAlbersUsa, geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
 import countries50 from "world-atlas/countries-50m.json";
+import usStates from "us-atlas/states-10m.json";
 
 export const MAP_WIDTH = 960;
 export const MAP_HEIGHT = 500;
@@ -29,6 +30,8 @@ export type MapShape = {
   cx: number;
   cy: number;
   small: boolean;
+  /** Bounding box [x0, y0, x1, y1], so a view can zoom to the country. */
+  bbox: [number, number, number, number];
 };
 
 export type WorldMap = {
@@ -78,7 +81,56 @@ export function buildWorldMap(churchCountries: string[]): WorldMap {
       cx: Math.round(cx * 10) / 10,
       cy: Math.round(cy * 10) / 10,
       small: Math.max(x1 - x0, y1 - y0) < 7,
+      bbox: [x0, y0, x1, y1].map((n) => Math.round(n * 10) / 10) as MapShape["bbox"],
     };
   }
   return { width: MAP_WIDTH, height: MAP_HEIGHT, land: landPath, shapes };
+}
+
+const US_MAP_WIDTH = 960;
+const US_MAP_HEIGHT = 600;
+/** The five territories in us-atlas; the Albers USA projection can't place them. */
+const TERRITORIES = new Set([
+  "American Samoa",
+  "Guam",
+  "Commonwealth of the Northern Mariana Islands",
+  "Puerto Rico",
+  "United States Virgin Islands",
+]);
+
+/** The 50 states and D.C. on the Albers USA projection (Alaska and Hawaii as
+ * insets), in the same shape as the world map so one map component draws both. */
+export function buildUsStateMap(): WorldMap {
+  const projection = geoAlbersUsa().fitExtent(
+    [
+      [4, 4],
+      [US_MAP_WIDTH - 4, US_MAP_HEIGHT - 4],
+    ],
+    feature(
+      usStates as unknown as Topology,
+      (usStates as unknown as Topology).objects.states as GeometryCollection,
+    ),
+  );
+  const path = geoPath(projection).digits(1);
+  const all = feature(
+    usStates as unknown as Topology,
+    (usStates as unknown as Topology).objects.states as GeometryCollection,
+  );
+  const shapes: Record<string, MapShape> = {};
+  for (const f of all.features) {
+    const name = String((f.properties as { name?: string }).name);
+    if (TERRITORIES.has(name)) continue;
+    const d = path(f);
+    if (!d) continue;
+    const [[x0, y0], [x1, y1]] = path.bounds(f);
+    const [cx, cy] = path.centroid(f);
+    shapes[name] = {
+      d,
+      cx: Math.round(cx * 10) / 10,
+      cy: Math.round(cy * 10) / 10,
+      small: Math.max(x1 - x0, y1 - y0) < 12,
+      bbox: [x0, y0, x1, y1].map((n) => Math.round(n * 10) / 10) as MapShape["bbox"],
+    };
+  }
+  return { width: US_MAP_WIDTH, height: US_MAP_HEIGHT, land: "", shapes };
 }

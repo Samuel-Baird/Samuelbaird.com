@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ChoroplethMap } from "@/components/map/choropleth-map";
+import { DataTable } from "./data-table";
 import type { WorldMap } from "@/lib/world-map";
 
 export type CountryStats = {
@@ -92,41 +93,81 @@ const btn = (on: boolean) =>
     ? "border-[color:var(--accent)] bg-[color:var(--accent-soft)] text-[color:var(--accent)]"
     : "border-[color:var(--border)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]");
 
+export type StateStats = Omit<CountryStats, "continent" | "family_history_centers"> & { capital: string };
+
+const US = "United States";
+
+const COUNT_COLUMNS = METRICS.filter((m) => m.count).map((m) => ({ key: m.count!, label: m.label }));
+
 export function MapExplorer({
   map,
+  usMap,
   countries,
+  states,
   asOf,
 }: {
   map: WorldMap;
+  usMap: WorldMap;
   countries: Record<string, CountryStats>;
+  /** Published state records per country name; only the United States has any so far. */
+  states: Record<string, Record<string, StateStats>>;
   asOf: string;
 }) {
   const [metricId, setMetricId] = useState("members");
   const [perCapita, setPerCapita] = useState(false);
+  const [focus, setFocus] = useState<string | null>(null);
 
-  const metric = METRICS.find((m) => m.id === metricId)!;
+  const stateRecords = states[US] ?? {};
+  const publishedStates = Object.keys(stateRecords).length;
+  const inStates = focus === US && publishedStates > 0;
+
+  // One record set per level, so the rest of the component doesn't care which is showing.
+  const records = useMemo<Record<string, CountryStats>>(() => {
+    if (!inStates) return countries;
+    const out: Record<string, CountryStats> = {};
+    for (const name of Object.keys(usMap.shapes)) {
+      const st = stateRecords[name];
+      if (st) out[name] = { ...st, continent: `capital ${st.capital}`, family_history_centers: 0 };
+    }
+    return out;
+  }, [inStates, countries, stateRecords, usMap]);
+
+  const metrics = inStates ? METRICS.filter((m) => m.id !== "family_history_centers") : METRICS;
+  const metric = metrics.find((m) => m.id === metricId) ?? METRICS[0];
   // "Members per 100,000 members" is 100,000 everywhere, so it is not offered.
   const canScale = !!metric.count && metric.id !== "members";
   const per = perCapita && canScale;
 
   const values = useMemo(() => {
     const out: Record<string, number | null> = {};
-    for (const [name, c] of Object.entries(countries)) {
+    for (const [name, c] of Object.entries(records)) {
       const v = metric.value(c);
       out[name] = v === null ? null : per ? (c.members > 0 ? (v / c.members) * 100000 : null) : v;
     }
     return out;
-  }, [countries, metric, per]);
+  }, [records, metric, per]);
 
   const fmt = (v: number) => (per ? nf1.format(v) : metric.format(v));
   const label = per ? `${metric.label} per 100,000 members` : metric.label;
-  const items = Object.keys(countries).map((name) => ({ name, value: values[name] }));
+  const shownMap = inStates ? usMap : map;
+  const items = Object.keys(shownMap.shapes).map((name) => ({ name, value: values[name] ?? null }));
   const total = items.reduce((n, i) => n + (i.value ?? 0), 0);
   const showTotal = !per && !!metric.count;
+  const withData = items.filter((i) => i.value !== null).length;
 
   const tooltip = (name: string) => {
-    const hc = countries[name];
+    const hc = records[name];
     const hv = values[name];
+    if (!hc) {
+      return (
+        <>
+          <p className="serif text-sm font-semibold">{name}</p>
+          <p className="mt-1 text-[color:var(--muted)]">
+            {inStates ? "The Church has not published statistics for this state yet." : "No data."}
+          </p>
+        </>
+      );
+    }
     return (
       <>
         <p className="serif text-sm font-semibold">
@@ -137,7 +178,7 @@ export function MapExplorer({
           <span className="text-[color:var(--muted)]">{label.toLowerCase()}</span>
         </p>
         <dl className="mt-2 grid grid-cols-[1fr_auto] gap-x-3 gap-y-0.5 tabular-nums text-[color:var(--muted)]">
-          {STAT_LINES.map(([k, l]) => (
+          {STAT_LINES.filter(([k]) => !(inStates && k === "family_history_centers")).map(([k, l]) => (
             <div key={k} className="contents">
               <dt>{l}</dt>
               <dd className="text-right text-[color:var(--foreground)]">{nf.format(hc[k])}</dd>
@@ -149,18 +190,31 @@ export function MapExplorer({
     );
   };
 
+  function onItemClick(name: string) {
+    if (inStates) return;
+    setFocus((f) => (f === name ? null : name));
+  }
+
+  const level = inStates ? "U.S. state" : "country";
+  const focusedRecord = focus && !inStates ? records[focus] : null;
+
+  const tableRows = Object.entries(records).map(([name, c]) => ({
+    name,
+    cells: Object.fromEntries(COUNT_COLUMNS.map((col) => [col.key, c[col.key as CountKey]])),
+  }));
+
   return (
     <div className="space-y-6">
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] p-6 sm:p-7">
         <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">Show on the map</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          {METRICS.map((m) => (
+          {metrics.map((m) => (
             <button
               key={m.id}
               type="button"
-              aria-pressed={m.id === metricId}
+              aria-pressed={m.id === metric.id}
               onClick={() => setMetricId(m.id)}
-              className={btn(m.id === metricId)}
+              className={btn(m.id === metric.id)}
             >
               {m.label}
             </button>
@@ -179,25 +233,75 @@ export function MapExplorer({
             onChange={(e) => setPerCapita(e.target.checked)}
             className="accent-[color:var(--accent)]"
           />
-          Per 100,000 members (adjusts for how large the Church is in each country)
+          Per 100,000 members (adjusts for how large the Church is in each {level})
         </label>
       </section>
 
       <section className="rounded-[var(--radius)] border border-[color:var(--border)] p-4 sm:p-7">
+        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm">
+          {focus ? (
+            <button
+              type="button"
+              onClick={() => setFocus(null)}
+              className="inline-flex h-10 items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] px-3 hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
+            >
+              <span aria-hidden="true">←</span> World map
+            </button>
+          ) : null}
+          <p className="text-[color:var(--muted)]">
+            {inStates
+              ? `${publishedStates} of 50 states and D.C. have Church-published statistics so far; the rest are grey.`
+              : focus
+                ? `Zoomed to ${focus}. Click it again, or use the button, to go back.`
+                : publishedStates > 0
+                  ? "Click any country to zoom in. Click the United States to explore it by state."
+                  : "Click any country to zoom in."}
+          </p>
+        </div>
         <ChoroplethMap
-          map={map}
+          map={shownMap}
           items={items}
           format={fmt}
-          title={`${label} by country`}
+          title={inStates ? `${label} by U.S. state` : `${label} by country`}
           subtitle={
-            (showTotal ? `Worldwide total across the ${items.length} countries shown: ${nf.format(total)}. ` : "") +
-            `Church-reported figures for ${asOf.split(" ")[0]}.`
+            (showTotal
+              ? inStates
+                ? `Total across the ${withData} states with published figures: ${nf.format(total)}. `
+                : `Worldwide total across the ${items.length} countries shown: ${nf.format(total)}. `
+              : "") +
+            (inStates
+              ? `Church-reported figures for ${asOf.split(" ")[0]}. States the Church has not published yet are grey.`
+              : `Church-reported figures for ${asOf.split(" ")[0]}.`)
           }
-          source="Church facts and statistics, 2025"
-          filename={`lds-${metric.id}${per ? "-per-100k" : ""}-by-country`}
+          source={inStates ? "Church facts and statistics state pages, 2025" : "Church facts and statistics, 2025"}
+          filename={`lds-${inStates ? "us-states-" : ""}${metric.id}${per ? "-per-100k" : ""}-by-${inStates ? "state" : "country"}`}
           rankTitle={`Top 10: ${label.toLowerCase()}`}
           tooltip={tooltip}
+          focusName={inStates ? null : focus}
+          onItemClick={onItemClick}
+          exportCrop={inStates ? 1 : 0.88}
+          noDataLabel={inStates ? "Not yet published" : "No data"}
         />
+        {focusedRecord ? (
+          <div className="mt-4 rounded-[var(--radius)] border border-[color:var(--border)] p-4 text-sm">
+            {tooltip(focus!)}
+          </div>
+        ) : null}
+      </section>
+
+      <section className="rounded-[var(--radius)] border border-[color:var(--border)] p-6 sm:p-7">
+        <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">
+          {inStates ? "By state" : "By country"}
+        </p>
+        <div className="mt-4">
+          <DataTable
+            key={inStates ? "states" : "countries"}
+            rows={tableRows}
+            columns={inStates ? COUNT_COLUMNS.filter((c) => c.key !== "family_history_centers") : COUNT_COLUMNS}
+            nameLabel={inStates ? "State" : "Country"}
+            highlight={metric.count}
+          />
+        </div>
       </section>
     </div>
   );
