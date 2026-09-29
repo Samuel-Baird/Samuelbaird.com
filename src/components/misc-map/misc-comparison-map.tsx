@@ -188,6 +188,10 @@ export function MiscComparisonMap({ map, items, title, source, filename }: Props
   const H = map.height;
 
   const activeLabel = comparisonLabel(unit, divisor, normUnitStr);
+  const baseLabel = getBaseLabel(unit);
+  const normalizationNote = (divisor !== 1 && normUnitStr.trim()) 
+    ? `1 ${normUnitStr.trim()} = ${nf.format(divisor)} ${baseLabel}` 
+    : "";
 
   function toSvg(cx: number, cy: number) {
     const r = svgRef.current!.getBoundingClientRect();
@@ -279,7 +283,12 @@ export function MiscComparisonMap({ map, items, title, source, filename }: Props
       parts.push(`<text x="54" y="${92 + i * 54}" font-family="${SERIF}" font-size="46" font-weight="700" fill="${INK}">${esc(l)}</text>`)
     );
     let y = 92 + (titleLines.length - 1) * 54 + 44;
-    const sub = `Dark blue: LDS ${metric.label.toLowerCase()} > ${activeLabel.toLowerCase()}. Bright yellow: ${activeLabel.toLowerCase()} wins. Data from LDS Church, World Bank, FAOSTAT, and Smithsonian GVP.`;
+    
+    let sub = `Dark blue: LDS ${metric.label.toLowerCase()} > ${activeLabel.toLowerCase()}. Bright yellow: ${activeLabel.toLowerCase()} wins. Data from LDS Church, World Bank, FAOSTAT, and Smithsonian GVP.`;
+    if (normalizationNote) {
+      sub += ` (${normalizationNote})`;
+    }
+    
     wrap(sub, 68).forEach((l, i) =>
       parts.push(`<text x="54" y="${y + i * 38}" font-family="${SERIF}" font-size="28" fill="${MUTED}">${esc(l)}</text>`)
     );
@@ -500,10 +509,17 @@ export function MiscComparisonMap({ map, items, title, source, filename }: Props
         </button>
       </div>
 
-      <p className="mt-4 text-sm text-[color:var(--muted)]">
-        <span className="font-medium text-[color:var(--foreground)]">{metric.label}</span> vs.{" "}
-        <span className="font-medium text-[color:var(--foreground)]">{activeLabel}</span> — dark blue means the country has more LDS {metric.label.toLowerCase()}; bright yellow means {activeLabel.toLowerCase()} wins.
-      </p>
+      <div className="mt-4 text-sm text-[color:var(--muted)]">
+        <p>
+          <span className="font-medium text-[color:var(--foreground)]">{metric.label}</span> vs.{" "}
+          <span className="font-medium text-[color:var(--foreground)]">{activeLabel}</span> — dark blue means the country has more LDS {metric.label.toLowerCase()}; bright yellow means {activeLabel.toLowerCase()} wins.
+        </p>
+        {normalizationNote && (
+          <p className="mt-1">
+            * {normalizationNote}
+          </p>
+        )}
+      </div>
 
       <div className="relative mt-4 overflow-hidden rounded-[var(--radius)] border border-[color:var(--border)]">
         <svg
