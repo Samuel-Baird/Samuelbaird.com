@@ -1,7 +1,6 @@
 {
   "source": "LDS stats; FAOSTAT; World Bank; Smithsonian GVP; PRIS",
   "lds_year": "2025 (per-country data year in each row)",
-  "truckload_tonnes": 20,
   "countries": {
     "United States": {
       "lds_members": 6929770,
@@ -14,13 +13,15 @@
       "lds_temples": 101,
       "lds_family_history_centers": 1598,
       "banana_tonnes": 3560.59,
-      "banana_truckloads": 178.03,
       "hospital_beds_per_1000": 2.68,
       "armed_forces": 1395000,
       "volcanoes": 165,
-      "debt_percent_gdp": 71.4,
       "forest_area_1000_ha": 302450.0,
-      "nuclear_reactors": 177
+      "nuclear_reactors": 177,
+      "freshwater_withdrawals": 444.29,
+      "cereal_production_mt": 454987916.06,
+      "patent_applications": 262244,
+      "tourist_arrivals": 45037000
     },
     "Brazil": {
       "lds_members": 1573360,
@@ -33,12 +34,14 @@
       "lds_temples": 11,
       "lds_family_history_centers": 611,
       "banana_tonnes": 7046345.0,
-      "banana_truckloads": 352317.25,
       "hospital_beds_per_1000": 2.52,
       "armed_forces": 762000,
-      "debt_percent_gdp": 34.02,
       "forest_area_1000_ha": 502082.1,
-      "nuclear_reactors": 3
+      "nuclear_reactors": 3,
+      "freshwater_withdrawals": 67.94,
+      "cereal_production_mt": 138980898.51,
+      "patent_applications": 4666,
+      "tourist_arrivals": 6353000
     },
     "Mexico": {
       "lds_members": 1572287,
@@ -51,14 +54,15 @@
       "lds_temples": 14,
       "lds_family_history_centers": 588,
       "banana_tonnes": 2670291.0,
-      "banana_truckloads": 133514.55,
       "hospital_beds_per_1000": 1.01,
       "armed_forces": 341000,
       "volcanoes": 30,
-      "debt_percent_gdp": 58.43,
       "forest_area_1000_ha": 70591.65,
-      "equality_score": 6.4,
-      "nuclear_reactors": 2
+      "nuclear_reactors": 2,
+      "freshwater_withdrawals": 89.8,
+      "cereal_production_mt": 37015878.83,
+      "patent_applications": 1117,
+      "tourist_arrivals": 51128000
     },
     "Philippines": {
       "lds_members": 905082,
@@ -71,13 +75,15 @@
       "lds_temples": 3,
       "lds_family_history_centers": 192,
       "banana_tonnes": 5641130.0,
-      "banana_truckloads": 282056.5,
       "hospital_beds_per_1000": 0.97,
       "armed_forces": 157000,
       "volcanoes": 23,
-      "debt_percent_gdp": 57.06,
       "forest_area_1000_ha": 7778.81,
-      "nuclear_reactors": 1
+      "nuclear_reactors": 1,
+      "freshwater_withdrawals": 91.04,
+      "cereal_production_mt": 28465199.05,
+      "patent_applications": 490,
+      "tourist_arrivals": 1483000
     },
     "Peru": {
       "lds_members": 667836,
@@ -90,12 +96,14 @@
       "lds_temples": 4,
       "lds_family_history_centers": 211,
       "banana_tonnes": 2343310.5,
-      "banana_truckloads": 117165.52,
       "hospital_beds_per_1000": 1.56,
       "armed_forces": 158000,
       "volcanoes": 13,
-      "debt_percent_gdp": 32.73,
-      "forest_area_1000_ha": 76448.54
+      "forest_area_1000_ha": 76448.54,
+      "freshwater_withdrawals": 25.92,
+      "cereal_production_mt": 5923490.54,
+      "patent_applications": 94,
+      "tourist_arrivals": 1119000
     },
     "Chile": {
       "lds_members": 624203,
@@ -110,8 +118,11 @@
       "hospital_beds_per_1000": 1.94,
       "armed_forces": 114000,
       "volcanoes": 90,
-      "debt_percent_gdp": 47.16,
-      "forest_area_1000_ha": 16725.26
+      "forest_area_1000_ha": 16725.26,
+      "freshwater_withdrawals": 35.37,
+      "cereal_production_mt": 2555898.6,
+      "patent_applications": 402,
+      "tourist_arrivals": 5431000
     },
     "Argentina": {
       "lds_members": 505819,
@@ -124,13 +135,15 @@
       "lds_temples": 5,
       "lds_family_history_centers": 236,
       "banana_tonnes": 177081.84,
-      "banana_truckloads": 8854.09,
       "hospital_beds_per_1000": 3.36,
       "armed_forces": 103000,
       "volcanoes": 32,
-      "debt_percent_gdp": 85.33,
       "forest_area_1000_ha": 29097.0,
-      "nuclear_reactors": 4
+      "nuclear_reactors": 4,
+      "freshwater_withdrawals": 37.69,
+      "cereal_production_mt": 85727345.71,
+      "patent_applications": 406,
+      "tourist_arrivals": 7399000
     },
     "Guatemala": {
       "lds_members": 297143,
@@ -143,12 +156,14 @@
       "lds_temples": 3,
       "lds_family_history_centers": 145,
       "banana_tonnes": 2843486.8,
-      "banana_truckloads": 142174.34,
       "hospital_beds_per_1000": 0.45,
       "armed_forces": 43000,
       "volcanoes": 20,
-      "debt_percent_gdp": 28.24,
-      "forest_area_1000_ha": 3722.6
+      "forest_area_1000_ha": 3722.6,
+      "freshwater_withdrawals": 3.32,
+      "cereal_production_mt": 2184608.77,
+      "patent_applications": 9,
+      "tourist_arrivals": 594000
     },
     "Ecuador": {
       "lds_members": 279046,
@@ -161,12 +176,14 @@
       "lds_temples": 2,
       "lds_family_history_centers": 74,
       "banana_tonnes": 7585653.0,
-      "banana_truckloads": 379282.65,
       "hospital_beds_per_1000": 1.32,
       "armed_forces": 42000,
       "volcanoes": 36,
-      "debt_percent_gdp": 42.99,
-      "forest_area_1000_ha": 12497.83
+      "forest_area_1000_ha": 12497.83,
+      "freshwater_withdrawals": 9.92,
+      "cereal_production_mt": 2789553.4,
+      "patent_applications": 35,
+      "tourist_arrivals": 2108000
     },
     "Nigeria": {
       "lds_members": 274043,
@@ -179,13 +196,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 153,
       "banana_tonnes": 6907142.5,
-      "banana_truckloads": 345357.12,
       "hospital_beds_per_1000": 0.5,
       "armed_forces": 223000,
       "volcanoes": 1,
-      "debt_percent_gdp": 52.9,
       "forest_area_1000_ha": 21953.55,
-      "equality_score": 0.0
+      "freshwater_withdrawals": 12.47,
+      "cereal_production_mt": 28473079.21,
+      "patent_applications": 410,
+      "tourist_arrivals": 5265000
     },
     "Bolivia": {
       "lds_members": 235773,
@@ -198,12 +216,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 72,
       "banana_tonnes": 301638.28,
-      "banana_truckloads": 15081.91,
       "hospital_beds_per_1000": 1.49,
       "armed_forces": 71000,
       "volcanoes": 7,
-      "debt_percent_gdp": 100.86,
-      "forest_area_1000_ha": 55101.39
+      "forest_area_1000_ha": 55101.39,
+      "freshwater_withdrawals": 0.36,
+      "cereal_production_mt": 3737131.71,
+      "patent_applications": 5,
+      "tourist_arrivals": 323299
     },
     "Colombia": {
       "lds_members": 223090,
@@ -216,12 +236,14 @@
       "lds_temples": 2,
       "lds_family_history_centers": 73,
       "banana_tonnes": 2638063.8,
-      "banana_truckloads": 131903.19,
       "hospital_beds_per_1000": 1.7,
       "armed_forces": 428000,
       "volcanoes": 14,
-      "debt_percent_gdp": 31.12,
-      "forest_area_1000_ha": 60807.79
+      "forest_area_1000_ha": 60807.79,
+      "freshwater_withdrawals": 24.26,
+      "cereal_production_mt": 4342473.35,
+      "patent_applications": 432,
+      "tourist_arrivals": 1396000
     },
     "Canada": {
       "lds_members": 211581,
@@ -236,10 +258,12 @@
       "hospital_beds_per_1000": 2.54,
       "armed_forces": 72000,
       "volcanoes": 24,
-      "debt_percent_gdp": 102.88,
       "forest_area_1000_ha": 347115.71,
-      "equality_score": 6.8,
-      "nuclear_reactors": 26
+      "nuclear_reactors": 26,
+      "freshwater_withdrawals": 36.13,
+      "cereal_production_mt": 59240420.77,
+      "patent_applications": 4710,
+      "tourist_arrivals": 32430000
     },
     "Honduras": {
       "lds_members": 197073,
@@ -252,12 +276,14 @@
       "lds_temples": 2,
       "lds_family_history_centers": 89,
       "banana_tonnes": 550868.6,
-      "banana_truckloads": 27543.43,
       "hospital_beds_per_1000": 0.53,
       "armed_forces": 23000,
       "volcanoes": 3,
-      "debt_percent_gdp": 39.57,
-      "forest_area_1000_ha": 6463.83
+      "forest_area_1000_ha": 6463.83,
+      "freshwater_withdrawals": 1.61,
+      "cereal_production_mt": 773845.23,
+      "patent_applications": 8,
+      "tourist_arrivals": 669000
     },
     "United Kingdom": {
       "lds_members": 190066,
@@ -272,9 +298,12 @@
       "hospital_beds_per_1000": 2.42,
       "armed_forces": 153000,
       "volcanoes": 14,
-      "debt_percent_gdp": 100.16,
       "forest_area_1000_ha": 2954.0,
-      "nuclear_reactors": 47
+      "nuclear_reactors": 47,
+      "freshwater_withdrawals": 8.42,
+      "cereal_production_mt": 22047420.0,
+      "patent_applications": 11592,
+      "tourist_arrivals": 11101000
     },
     "Venezuela": {
       "lds_members": 179389,
@@ -287,11 +316,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 91,
       "banana_tonnes": 533896.06,
-      "banana_truckloads": 26694.8,
       "hospital_beds_per_1000": 0.99,
       "armed_forces": 343000,
-      "debt_percent_gdp": 164.27,
-      "forest_area_1000_ha": 47505.0
+      "forest_area_1000_ha": 47505.0,
+      "freshwater_withdrawals": 22.62,
+      "cereal_production_mt": 2101402.38,
+      "patent_applications": 96,
+      "tourist_arrivals": 429000
     },
     "Australia": {
       "lds_members": 165272,
@@ -304,12 +335,14 @@
       "lds_temples": 5,
       "lds_family_history_centers": 137,
       "banana_tonnes": 368735.0,
-      "banana_truckloads": 18436.75,
       "hospital_beds_per_1000": 3.82,
       "armed_forces": 60000,
       "volcanoes": 4,
-      "debt_percent_gdp": 49.83,
-      "forest_area_1000_ha": 134005.1
+      "forest_area_1000_ha": 134005.1,
+      "freshwater_withdrawals": 11.62,
+      "cereal_production_mt": 52350446.71,
+      "patent_applications": 2966,
+      "tourist_arrivals": 1828000
     },
     "Democratic Republic of the Congo": {
       "lds_members": 159771,
@@ -322,11 +355,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 58,
       "banana_tonnes": 811021.0,
-      "banana_truckloads": 40551.05,
       "hospital_beds_per_1000": 0.8,
       "armed_forces": 134000,
-      "debt_percent_gdp": 19.31,
-      "forest_area_1000_ha": 143899.0
+      "forest_area_1000_ha": 143899.0,
+      "freshwater_withdrawals": 0.68,
+      "cereal_production_mt": 4388403.09,
+      "patent_applications": 72,
+      "tourist_arrivals": 351000
     },
     "Dominican Republic": {
       "lds_members": 156358,
@@ -339,11 +374,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 61,
       "banana_tonnes": 2038904.6,
-      "banana_truckloads": 101945.23,
       "hospital_beds_per_1000": 0.75,
       "armed_forces": 71000,
-      "debt_percent_gdp": 46.12,
-      "forest_area_1000_ha": 2111.74
+      "forest_area_1000_ha": 2111.74,
+      "freshwater_withdrawals": 7.14,
+      "cereal_production_mt": 1049756.97,
+      "patent_applications": 7,
+      "tourist_arrivals": 2748000
     },
     "El Salvador": {
       "lds_members": 132399,
@@ -356,12 +393,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 52,
       "banana_tonnes": 20053.72,
-      "banana_truckloads": 1002.69,
       "hospital_beds_per_1000": 1.21,
       "armed_forces": 42000,
       "volcanoes": 17,
-      "debt_percent_gdp": 87.58,
-      "forest_area_1000_ha": 606.38
+      "forest_area_1000_ha": 606.38,
+      "freshwater_withdrawals": 1.94,
+      "cereal_production_mt": 895000.0,
+      "patent_applications": 2,
+      "tourist_arrivals": 707000
     },
     "Japan": {
       "lds_members": 131776,
@@ -374,14 +413,15 @@
       "lds_temples": 4,
       "lds_family_history_centers": 56,
       "banana_tonnes": 17.99,
-      "banana_truckloads": 0.9,
       "hospital_beds_per_1000": 12.59,
       "armed_forces": 261000,
       "volcanoes": 116,
-      "debt_percent_gdp": 67.54,
       "forest_area_1000_ha": 24950.0,
-      "equality_score": 0.0,
-      "nuclear_reactors": 62
+      "nuclear_reactors": 62,
+      "freshwater_withdrawals": 79.7,
+      "cereal_production_mt": 11498533.52,
+      "patent_applications": 222452,
+      "tourist_arrivals": 4115799
     },
     "Ghana": {
       "lds_members": 122978,
@@ -394,11 +434,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 89,
       "banana_tonnes": 135062.73,
-      "banana_truckloads": 6753.14,
       "hospital_beds_per_1000": 0.69,
       "armed_forces": 16000,
-      "debt_percent_gdp": 70.51,
-      "forest_area_1000_ha": 7978.48
+      "forest_area_1000_ha": 7978.48,
+      "freshwater_withdrawals": 1.45,
+      "cereal_production_mt": 5765040.5,
+      "patent_applications": 12,
+      "tourist_arrivals": 897000
     },
     "New Zealand": {
       "lds_members": 120992,
@@ -413,8 +455,11 @@
       "hospital_beds_per_1000": 2.51,
       "armed_forces": 10000,
       "volcanoes": 23,
-      "debt_percent_gdp": 51.15,
-      "forest_area_1000_ha": 9855.15
+      "forest_area_1000_ha": 9855.15,
+      "freshwater_withdrawals": 9.88,
+      "cereal_production_mt": 1102880.6,
+      "patent_applications": 330,
+      "tourist_arrivals": 996000
     },
     "Uruguay": {
       "lds_members": 112449,
@@ -428,9 +473,11 @@
       "lds_family_history_centers": 43,
       "hospital_beds_per_1000": 2.44,
       "armed_forces": 22000,
-      "debt_percent_gdp": 68.7,
       "forest_area_1000_ha": 1731.3,
-      "equality_score": 8.4
+      "freshwater_withdrawals": 4.51,
+      "cereal_production_mt": 4116826.06,
+      "patent_applications": 23,
+      "tourist_arrivals": 3480000
     },
     "Nicaragua": {
       "lds_members": 106953,
@@ -443,12 +490,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 38,
       "banana_tonnes": 90616.08,
-      "banana_truckloads": 4530.8,
       "hospital_beds_per_1000": 0.97,
       "armed_forces": 12000,
       "volcanoes": 13,
-      "debt_percent_gdp": 51.62,
-      "forest_area_1000_ha": 3407.53
+      "forest_area_1000_ha": 3407.53,
+      "freshwater_withdrawals": 1.27,
+      "cereal_production_mt": 881420.38,
+      "patent_applications": 1,
+      "tourist_arrivals": 474000
     },
     "Paraguay": {
       "lds_members": 106345,
@@ -461,11 +510,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 31,
       "banana_tonnes": 88870.53,
-      "banana_truckloads": 4443.53,
       "hospital_beds_per_1000": 1.04,
       "armed_forces": 29000,
-      "debt_percent_gdp": 45.24,
-      "forest_area_1000_ha": 25545.86
+      "forest_area_1000_ha": 25545.86,
+      "freshwater_withdrawals": 2.41,
+      "cereal_production_mt": 6872271.79,
+      "patent_applications": 10,
+      "tourist_arrivals": 1077000
     },
     "Samoa": {
       "lds_members": 90706,
@@ -478,11 +529,11 @@
       "lds_temples": 1,
       "lds_family_history_centers": 20,
       "banana_tonnes": 21853.44,
-      "banana_truckloads": 1092.67,
       "hospital_beds_per_1000": 0.95,
       "volcanoes": 2,
-      "debt_percent_gdp": 27.71,
-      "forest_area_1000_ha": 176.13
+      "forest_area_1000_ha": 176.13,
+      "patent_applications": 1,
+      "tourist_arrivals": 23899
     },
     "South Korea": {
       "lds_members": 89092,
@@ -495,12 +546,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 24,
       "banana_tonnes": 27345.0,
-      "banana_truckloads": 1367.25,
       "hospital_beds_per_1000": 12.81,
       "armed_forces": 569000,
       "volcanoes": 2,
-      "debt_percent_gdp": 92.87,
-      "forest_area_1000_ha": 6551.0
+      "forest_area_1000_ha": 6551.0,
+      "freshwater_withdrawals": 29.2,
+      "cereal_production_mt": 5134022.24,
+      "patent_applications": 186245,
+      "tourist_arrivals": 2519000
     },
     "South Africa": {
       "lds_members": 78689,
@@ -513,14 +566,15 @@
       "lds_temples": 2,
       "lds_family_history_centers": 106,
       "banana_tonnes": 430924.97,
-      "banana_truckloads": 21546.25,
       "hospital_beds_per_1000": 2.25,
       "armed_forces": 89000,
       "volcanoes": 2,
-      "debt_percent_gdp": 76.36,
       "forest_area_1000_ha": 17232.09,
-      "equality_score": 5.2,
-      "nuclear_reactors": 2
+      "nuclear_reactors": 2,
+      "freshwater_withdrawals": 21.11,
+      "cereal_production_mt": 15313961.1,
+      "patent_applications": 1804,
+      "tourist_arrivals": 3886600
     },
     "Spain": {
       "lds_members": 71995,
@@ -533,13 +587,15 @@
       "lds_temples": 1,
       "lds_family_history_centers": 56,
       "banana_tonnes": 421320.0,
-      "banana_truckloads": 21066.0,
       "hospital_beds_per_1000": 2.91,
       "armed_forces": 199000,
       "volcanoes": 8,
-      "debt_percent_gdp": 49.77,
       "forest_area_1000_ha": 13904.66,
-      "nuclear_reactors": 14
+      "nuclear_reactors": 14,
+      "freshwater_withdrawals": 29.02,
+      "cereal_production_mt": 20862990.0,
+      "patent_applications": 1308,
+      "tourist_arrivals": 36410000
     },
     "Cote d'Ivoire": {
       "lds_members": 71182,
@@ -552,10 +608,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 57,
       "banana_tonnes": 534242.9,
-      "banana_truckloads": 26712.15,
       "hospital_beds_per_1000": 0.4,
       "armed_forces": 27000,
-      "forest_area_1000_ha": 3288.26
+      "forest_area_1000_ha": 3288.26,
+      "freshwater_withdrawals": 1.16,
+      "cereal_production_mt": 3390058.49,
+      "patent_applications": 26,
+      "tourist_arrivals": 668000
     },
     "Tonga": {
       "lds_members": 69594,
@@ -568,11 +627,10 @@
       "lds_temples": 1,
       "lds_family_history_centers": 21,
       "banana_tonnes": 817.1,
-      "banana_truckloads": 40.86,
       "hospital_beds_per_1000": 2.48,
       "volcanoes": 21,
-      "debt_percent_gdp": 39.43,
-      "forest_area_1000_ha": 8.95
+      "forest_area_1000_ha": 8.95,
+      "tourist_arrivals": 94000
     },
     "Panama": {
       "lds_members": 63936,
@@ -585,12 +643,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 28,
       "banana_tonnes": 387690.1,
-      "banana_truckloads": 19384.5,
       "hospital_beds_per_1000": 1.95,
       "armed_forces": 28000,
       "volcanoes": 1,
-      "debt_percent_gdp": 56.62,
-      "forest_area_1000_ha": 4607.4
+      "forest_area_1000_ha": 4607.4,
+      "freshwater_withdrawals": 1.21,
+      "cereal_production_mt": 461850.0,
+      "patent_applications": 35,
+      "tourist_arrivals": 647000
     },
     "Taiwan": {
       "lds_members": 63425,
@@ -603,9 +663,7 @@
       "lds_temples": 1,
       "lds_family_history_centers": 16,
       "banana_tonnes": 341390.22,
-      "banana_truckloads": 17069.51,
       "volcanoes": 2,
-      "debt_percent_gdp": 26.17,
       "nuclear_reactors": 1
     },
     "Costa Rica": {
@@ -619,13 +677,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 30,
       "banana_tonnes": 2630020.0,
-      "banana_truckloads": 131501.0,
       "hospital_beds_per_1000": 1.14,
       "armed_forces": 10000,
       "volcanoes": 10,
-      "debt_percent_gdp": 60.17,
       "forest_area_1000_ha": 3018.5,
-      "equality_score": 3.2
+      "freshwater_withdrawals": 3.45,
+      "cereal_production_mt": 72255.75,
+      "patent_applications": 15,
+      "tourist_arrivals": 1146500
     },
     "Zimbabwe": {
       "lds_members": 52430,
@@ -638,11 +697,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 32,
       "banana_tonnes": 325400.0,
-      "banana_truckloads": 16270.0,
       "hospital_beds_per_1000": 1.95,
       "armed_forces": 51000,
-      "debt_percent_gdp": 94.59,
-      "forest_area_1000_ha": 18826.68
+      "forest_area_1000_ha": 18826.68,
+      "freshwater_withdrawals": 4.91,
+      "cereal_production_mt": 1167830.07,
+      "patent_applications": 8,
+      "tourist_arrivals": 639000
     },
     "Portugal": {
       "lds_members": 50341,
@@ -655,12 +716,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 24,
       "banana_tonnes": 30230.0,
-      "banana_truckloads": 1511.5,
       "hospital_beds_per_1000": 3.48,
       "armed_forces": 52000,
       "volcanoes": 13,
-      "debt_percent_gdp": 66.37,
-      "forest_area_1000_ha": 3312.0
+      "forest_area_1000_ha": 3312.0,
+      "freshwater_withdrawals": 6.13,
+      "cereal_production_mt": 1017320.0,
+      "patent_applications": 711,
+      "tourist_arrivals": 4208000
     },
     "Papua New Guinea": {
       "lds_members": 46583,
@@ -673,12 +736,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 1272779.2,
-      "banana_truckloads": 63638.96,
       "hospital_beds_per_1000": 0.62,
       "armed_forces": 4000,
       "volcanoes": 39,
-      "debt_percent_gdp": 53.7,
-      "forest_area_1000_ha": 36399.68
+      "forest_area_1000_ha": 36399.68,
+      "freshwater_withdrawals": 0.39,
+      "cereal_production_mt": 18719.75,
+      "patent_applications": 1,
+      "tourist_arrivals": 39000
     },
     "Germany": {
       "lds_members": 42229,
@@ -691,13 +756,15 @@
       "lds_temples": 2,
       "lds_family_history_centers": 99,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 7.55,
       "armed_forces": 183000,
       "volcanoes": 1,
-      "debt_percent_gdp": 50.49,
       "forest_area_1000_ha": 11300.0,
-      "nuclear_reactors": 42
+      "nuclear_reactors": 42,
+      "freshwater_withdrawals": 25.79,
+      "cereal_production_mt": 42462800.0,
+      "patent_applications": 39822,
+      "tourist_arrivals": 12449000
     },
     "Sierra Leone": {
       "lds_members": 41775,
@@ -711,8 +778,10 @@
       "lds_family_history_centers": 22,
       "hospital_beds_per_1000": 0.4,
       "armed_forces": 9000,
-      "debt_percent_gdp": 43.0,
-      "forest_area_1000_ha": 2534.88
+      "forest_area_1000_ha": 2534.88,
+      "freshwater_withdrawals": 0.21,
+      "cereal_production_mt": 1536756.31,
+      "tourist_arrivals": 71000
     },
     "France": {
       "lds_members": 40546,
@@ -725,13 +794,15 @@
       "lds_temples": 1,
       "lds_family_history_centers": 71,
       "banana_tonnes": 210920.0,
-      "banana_truckloads": 10546.0,
       "hospital_beds_per_1000": 5.65,
       "armed_forces": 304000,
       "volcanoes": 20,
-      "debt_percent_gdp": 71.75,
       "forest_area_1000_ha": 15288.0,
-      "nuclear_reactors": 71
+      "nuclear_reactors": 71,
+      "freshwater_withdrawals": 24.43,
+      "cereal_production_mt": 53553470.0,
+      "patent_applications": 13386,
+      "tourist_arrivals": 117109000
     },
     "Mozambique": {
       "lds_members": 39282,
@@ -744,12 +815,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 18,
       "banana_tonnes": 387740.0,
-      "banana_truckloads": 19387.0,
       "hospital_beds_per_1000": 0.74,
       "armed_forces": 11000,
-      "debt_percent_gdp": 96.63,
       "forest_area_1000_ha": 41188.0,
-      "equality_score": 0.0
+      "freshwater_withdrawals": 1.47,
+      "cereal_production_mt": 2656063.0,
+      "patent_applications": 30,
+      "tourist_arrivals": 2033000
     },
     "French Polynesia": {
       "lds_members": 30350,
@@ -762,8 +834,8 @@
       "lds_temples": 1,
       "lds_family_history_centers": 30,
       "banana_tonnes": 283.48,
-      "banana_truckloads": 14.17,
-      "forest_area_1000_ha": 149.46
+      "forest_area_1000_ha": 149.46,
+      "tourist_arrivals": 89400
     },
     "Italy": {
       "lds_members": 30105,
@@ -776,13 +848,15 @@
       "lds_temples": 1,
       "lds_family_history_centers": 60,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 3.06,
       "armed_forces": 338000,
       "volcanoes": 13,
-      "debt_percent_gdp": 47.53,
       "forest_area_1000_ha": 9028.04,
-      "nuclear_reactors": 7
+      "nuclear_reactors": 7,
+      "freshwater_withdrawals": 33.78,
+      "cereal_production_mt": 15452820.0,
+      "patent_applications": 10281,
+      "tourist_arrivals": 38419000
     },
     "Haiti": {
       "lds_members": 27550,
@@ -795,11 +869,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 14,
       "banana_tonnes": 264881.28,
-      "banana_truckloads": 13244.06,
       "hospital_beds_per_1000": 4.9,
       "armed_forces": 1000,
-      "debt_percent_gdp": 14.95,
-      "forest_area_1000_ha": 382.92
+      "forest_area_1000_ha": 382.92,
+      "freshwater_withdrawals": 1.45,
+      "cereal_production_mt": 330000.0,
+      "patent_applications": 2,
+      "tourist_arrivals": 938000
     },
     "Puerto Rico": {
       "lds_members": 26947,
@@ -812,9 +888,11 @@
       "lds_temples": 1,
       "lds_family_history_centers": 13,
       "banana_tonnes": 107393.28,
-      "banana_truckloads": 5369.66,
       "hospital_beds_per_1000": 3.32,
-      "forest_area_1000_ha": 320.33
+      "forest_area_1000_ha": 320.33,
+      "freshwater_withdrawals": 0.88,
+      "cereal_production_mt": 3952.42,
+      "tourist_arrivals": 3882000
     },
     "Uganda": {
       "lds_members": 26304,
@@ -827,12 +905,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 17,
       "banana_tonnes": 560000.0,
-      "banana_truckloads": 28000.0,
       "hospital_beds_per_1000": 0.5,
       "armed_forces": 46000,
       "volcanoes": 2,
-      "debt_percent_gdp": 51.83,
-      "forest_area_1000_ha": 3575.47
+      "forest_area_1000_ha": 3575.47,
+      "freshwater_withdrawals": 0.64,
+      "cereal_production_mt": 5670000.0,
+      "patent_applications": 14,
+      "tourist_arrivals": 473000
     },
     "Liberia": {
       "lds_members": 25767,
@@ -845,11 +925,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 17,
       "banana_tonnes": 142551.39,
-      "banana_truckloads": 7127.57,
       "hospital_beds_per_1000": 1.59,
       "armed_forces": 2000,
-      "debt_percent_gdp": 56.47,
-      "forest_area_1000_ha": 8525.24
+      "forest_area_1000_ha": 8525.24,
+      "freshwater_withdrawals": 0.15,
+      "cereal_production_mt": 256200.0,
+      "patent_applications": 14
     },
     "Hong Kong": {
       "lds_members": 24930,
@@ -862,7 +943,9 @@
       "lds_temples": 1,
       "lds_family_history_centers": 9,
       "hospital_beds_per_1000": 4.89,
-      "debt_percent_gdp": 17.43
+      "cereal_production_mt": 0.06,
+      "patent_applications": 401,
+      "tourist_arrivals": 3569000
     },
     "Fiji": {
       "lds_members": 24847,
@@ -875,12 +958,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 11,
       "banana_tonnes": 13388.3,
-      "banana_truckloads": 669.41,
       "hospital_beds_per_1000": 1.89,
       "armed_forces": 4000,
       "volcanoes": 2,
-      "debt_percent_gdp": 76.95,
-      "forest_area_1000_ha": 1073.24
+      "forest_area_1000_ha": 1073.24,
+      "freshwater_withdrawals": 0.08,
+      "cereal_production_mt": 9194.18,
+      "patent_applications": 2,
+      "tourist_arrivals": 168000
     },
     "Thailand": {
       "lds_members": 24825,
@@ -893,11 +978,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 29,
       "banana_tonnes": 1298997.8,
-      "banana_truckloads": 64949.89,
       "hospital_beds_per_1000": 2.39,
       "armed_forces": 455000,
-      "debt_percent_gdp": 63.76,
-      "forest_area_1000_ha": 19361.0
+      "forest_area_1000_ha": 19361.0,
+      "freshwater_withdrawals": 57.31,
+      "cereal_production_mt": 38532088.18,
+      "patent_applications": 867,
+      "tourist_arrivals": 39916000
     },
     "Kenya": {
       "lds_members": 24547,
@@ -910,12 +997,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 17,
       "banana_tonnes": 2061285.0,
-      "banana_truckloads": 103064.25,
       "hospital_beds_per_1000": 1.33,
       "armed_forces": 24000,
       "volcanoes": 21,
-      "debt_percent_gdp": 65.59,
-      "forest_area_1000_ha": 3961.19
+      "forest_area_1000_ha": 3961.19,
+      "freshwater_withdrawals": 4.03,
+      "cereal_production_mt": 5146069.64,
+      "patent_applications": 160,
+      "tourist_arrivals": 2049000
     },
     "Kiribati": {
       "lds_members": 23585,
@@ -928,10 +1017,9 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 7411.62,
-      "banana_truckloads": 370.58,
       "hospital_beds_per_1000": 1.86,
-      "debt_percent_gdp": 9.92,
-      "forest_area_1000_ha": 1.18
+      "forest_area_1000_ha": 1.18,
+      "tourist_arrivals": 12000
     },
     "Madagascar": {
       "lds_members": 20395,
@@ -944,11 +1032,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 16,
       "banana_tonnes": 399939.78,
-      "banana_truckloads": 19996.99,
       "hospital_beds_per_1000": 0.32,
       "armed_forces": 22000,
-      "debt_percent_gdp": 50.41,
-      "forest_area_1000_ha": 13693.45
+      "forest_area_1000_ha": 13693.45,
+      "freshwater_withdrawals": 13.46,
+      "cereal_production_mt": 5389921.52,
+      "patent_applications": 6,
+      "tourist_arrivals": 87099
     },
     "Russia": {
       "lds_members": 18306,
@@ -963,9 +1053,12 @@
       "hospital_beds_per_1000": 6.81,
       "armed_forces": 1454000,
       "volcanoes": 11,
-      "debt_percent_gdp": 22.68,
       "forest_area_1000_ha": 815135.6,
-      "nuclear_reactors": 66
+      "nuclear_reactors": 66,
+      "freshwater_withdrawals": 64.82,
+      "cereal_production_mt": 136708406.91,
+      "patent_applications": 19569,
+      "tourist_arrivals": 6359000
     },
     "Cambodia": {
       "lds_members": 18070,
@@ -978,11 +1071,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 12,
       "banana_tonnes": 374922.78,
-      "banana_truckloads": 18746.14,
       "hospital_beds_per_1000": 0.73,
       "armed_forces": 191000,
-      "debt_percent_gdp": 26.62,
-      "forest_area_1000_ha": 8068.37
+      "forest_area_1000_ha": 8068.37,
+      "freshwater_withdrawals": 2.18,
+      "cereal_production_mt": 14380000.0,
+      "patent_applications": 1,
+      "tourist_arrivals": 1306000
     },
     "American Samoa": {
       "lds_members": 17646,
@@ -994,7 +1089,8 @@
       "lds_missions": 0,
       "lds_temples": 0,
       "lds_family_history_centers": 6,
-      "forest_area_1000_ha": 17.13
+      "forest_area_1000_ha": 17.13,
+      "tourist_arrivals": 899
     },
     "Cape Verde": {
       "lds_members": 16334,
@@ -1007,12 +1103,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 6,
       "banana_tonnes": 3903.0,
-      "banana_truckloads": 195.15,
       "hospital_beds_per_1000": 2.21,
       "armed_forces": 1000,
       "volcanoes": 2,
-      "debt_percent_gdp": 113.74,
-      "forest_area_1000_ha": 15.38
+      "forest_area_1000_ha": 15.38,
+      "freshwater_withdrawals": 0.18,
+      "cereal_production_mt": 5.0,
+      "patent_applications": 1,
+      "tourist_arrivals": 180000
     },
     "India": {
       "lds_members": 15664,
@@ -1025,14 +1123,15 @@
       "lds_temples": 0,
       "lds_family_history_centers": 22,
       "banana_tonnes": 37614360.0,
-      "banana_truckloads": 1880718.0,
       "hospital_beds_per_1000": 1.59,
       "armed_forces": 3068000,
       "volcanoes": 1,
-      "debt_percent_gdp": 81.29,
       "forest_area_1000_ha": 63938.0,
-      "equality_score": 1.6,
-      "nuclear_reactors": 33
+      "nuclear_reactors": 33,
+      "freshwater_withdrawals": 647.5,
+      "cereal_production_mt": 391123857.84,
+      "patent_applications": 26267,
+      "tourist_arrivals": 17914000
     },
     "Republic of the Congo": {
       "lds_members": 15482,
@@ -1045,11 +1144,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 10,
       "banana_tonnes": 86253.57,
-      "banana_truckloads": 4312.68,
       "hospital_beds_per_1000": 1.6,
       "armed_forces": 12000,
-      "debt_percent_gdp": 95.44,
-      "forest_area_1000_ha": 22315.0
+      "forest_area_1000_ha": 22315.0,
+      "freshwater_withdrawals": 0.05,
+      "cereal_production_mt": 30358.59,
+      "patent_applications": 19,
+      "tourist_arrivals": 158000
     },
     "Vanuatu": {
       "lds_members": 14042,
@@ -1062,11 +1163,11 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 17870.85,
-      "banana_truckloads": 893.54,
       "hospital_beds_per_1000": 1.73,
       "volcanoes": 2,
-      "debt_percent_gdp": 44.6,
-      "forest_area_1000_ha": 442.3
+      "forest_area_1000_ha": 442.3,
+      "cereal_production_mt": 985.44,
+      "tourist_arrivals": 82400
     },
     "Mongolia": {
       "lds_members": 13250,
@@ -1081,8 +1182,11 @@
       "hospital_beds_per_1000": 8.58,
       "armed_forces": 18000,
       "volcanoes": 2,
-      "debt_percent_gdp": 44.36,
-      "forest_area_1000_ha": 14175.0
+      "forest_area_1000_ha": 14175.0,
+      "freshwater_withdrawals": 0.46,
+      "cereal_production_mt": 470337.11,
+      "patent_applications": 109,
+      "tourist_arrivals": 66900
     },
     "Malaysia": {
       "lds_members": 11769,
@@ -1095,11 +1199,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 10,
       "banana_tonnes": 335443.97,
-      "banana_truckloads": 16772.2,
       "hospital_beds_per_1000": 1.96,
       "armed_forces": 136000,
-      "debt_percent_gdp": 70.39,
-      "forest_area_1000_ha": 20618.5
+      "forest_area_1000_ha": 20618.5,
+      "freshwater_withdrawals": 6.71,
+      "cereal_production_mt": 2167306.44,
+      "patent_applications": 883,
+      "tourist_arrivals": 4333000
     },
     "Ukraine": {
       "lds_members": 10014,
@@ -1113,10 +1219,12 @@
       "lds_family_history_centers": 35,
       "hospital_beds_per_1000": 6.14,
       "armed_forces": 298000,
-      "debt_percent_gdp": 89.84,
       "forest_area_1000_ha": 9274.0,
-      "equality_score": 0.0,
-      "nuclear_reactors": 25
+      "nuclear_reactors": 25,
+      "freshwater_withdrawals": 4.86,
+      "cereal_production_mt": 55651880.0,
+      "patent_applications": 1302,
+      "tourist_arrivals": 3382000
     },
     "Switzerland": {
       "lds_members": 9630,
@@ -1130,9 +1238,12 @@
       "lds_family_history_centers": 13,
       "hospital_beds_per_1000": 4.38,
       "armed_forces": 20000,
-      "debt_percent_gdp": 127.59,
       "forest_area_1000_ha": 1153.5,
-      "nuclear_reactors": 6
+      "nuclear_reactors": 6,
+      "freshwater_withdrawals": 1.7,
+      "cereal_production_mt": 809466.0,
+      "patent_applications": 1288,
+      "tourist_arrivals": 11818000
     },
     "Sweden": {
       "lds_members": 9569,
@@ -1145,12 +1256,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 38,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 1.9,
       "armed_forces": 15000,
-      "debt_percent_gdp": 112.98,
       "forest_area_1000_ha": 27980.0,
-      "nuclear_reactors": 13
+      "nuclear_reactors": 13,
+      "freshwater_withdrawals": 2.48,
+      "cereal_production_mt": 4328000.0,
+      "patent_applications": 1771,
+      "tourist_arrivals": 1957000
     },
     "Netherlands": {
       "lds_members": 9027,
@@ -1163,13 +1276,15 @@
       "lds_temples": 1,
       "lds_family_history_centers": 10,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 2.42,
       "armed_forces": 41000,
       "volcanoes": 2,
-      "debt_percent_gdp": 97.03,
       "forest_area_1000_ha": 359.5,
-      "nuclear_reactors": 2
+      "nuclear_reactors": 2,
+      "freshwater_withdrawals": 8.23,
+      "cereal_production_mt": 1044680.0,
+      "patent_applications": 2080,
+      "tourist_arrivals": 7265000
     },
     "Angola": {
       "lds_members": 8779,
@@ -1182,11 +1297,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 5213106.0,
-      "banana_truckloads": 260655.3,
       "hospital_beds_per_1000": 0.75,
       "armed_forces": 117000,
-      "debt_percent_gdp": 62.5,
-      "forest_area_1000_ha": 68272.57
+      "forest_area_1000_ha": 68272.57,
+      "freshwater_withdrawals": 0.71,
+      "cereal_production_mt": 3335449.0,
+      "patent_applications": 2,
+      "tourist_arrivals": 218000
     },
     "Togo": {
       "lds_members": 8349,
@@ -1199,11 +1316,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 25513.31,
-      "banana_truckloads": 1275.67,
       "hospital_beds_per_1000": 0.33,
       "armed_forces": 10000,
-      "debt_percent_gdp": 70.62,
-      "forest_area_1000_ha": 1212.23
+      "forest_area_1000_ha": 1212.23,
+      "freshwater_withdrawals": 0.22,
+      "cereal_production_mt": 1514448.12,
+      "tourist_arrivals": 482000
     },
     "Benin": {
       "lds_members": 8286,
@@ -1216,11 +1334,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 20972.97,
-      "banana_truckloads": 1048.65,
       "hospital_beds_per_1000": 0.43,
       "armed_forces": 12000,
-      "debt_percent_gdp": 54.03,
-      "forest_area_1000_ha": 3335.15
+      "forest_area_1000_ha": 3335.15,
+      "freshwater_withdrawals": 0.13,
+      "cereal_production_mt": 2905684.72,
+      "tourist_arrivals": 337000
     },
     "Malawi": {
       "lds_members": 7857,
@@ -1233,11 +1352,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 1131259.4,
-      "banana_truckloads": 56562.97,
       "hospital_beds_per_1000": 1.3,
       "armed_forces": 15000,
-      "debt_percent_gdp": 74.38,
-      "forest_area_1000_ha": 3501.7
+      "forest_area_1000_ha": 3501.7,
+      "freshwater_withdrawals": 1.36,
+      "cereal_production_mt": 3795155.5,
+      "patent_applications": 3,
+      "tourist_arrivals": 871000
     },
     "Jamaica": {
       "lds_members": 7856,
@@ -1250,12 +1371,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 8,
       "banana_tonnes": 62997.8,
-      "banana_truckloads": 3149.89,
       "hospital_beds_per_1000": 1.65,
       "armed_forces": 6000,
-      "debt_percent_gdp": 69.92,
       "forest_area_1000_ha": 521.28,
-      "equality_score": 0.0
+      "freshwater_withdrawals": 1.34,
+      "cereal_production_mt": 2291.0,
+      "patent_applications": 16,
+      "tourist_arrivals": 1329699
     },
     "Zambia": {
       "lds_members": 7823,
@@ -1268,11 +1390,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 5,
       "banana_tonnes": 683.84,
-      "banana_truckloads": 34.19,
       "hospital_beds_per_1000": 2.0,
       "armed_forces": 16000,
-      "debt_percent_gdp": 114.94,
-      "forest_area_1000_ha": 47412.0
+      "forest_area_1000_ha": 47412.0,
+      "freshwater_withdrawals": 1.57,
+      "cereal_production_mt": 3658965.82,
+      "patent_applications": 13,
+      "tourist_arrivals": 502000
     },
     "Indonesia": {
       "lds_members": 7655,
@@ -1285,13 +1409,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 12,
       "banana_tonnes": 9260387.0,
-      "banana_truckloads": 463019.35,
       "hospital_beds_per_1000": 1.37,
       "armed_forces": 676000,
       "volcanoes": 101,
-      "debt_percent_gdp": 77.22,
       "forest_area_1000_ha": 93949.8,
-      "equality_score": 0.0
+      "freshwater_withdrawals": 222.63,
+      "cereal_production_mt": 73966646.0,
+      "patent_applications": 1397,
+      "tourist_arrivals": 4053000
     },
     "Guyana": {
       "lds_members": 7400,
@@ -1304,11 +1429,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 21136.0,
-      "banana_truckloads": 1056.8,
       "hospital_beds_per_1000": 3.24,
       "armed_forces": 3000,
-      "debt_percent_gdp": 24.27,
-      "forest_area_1000_ha": 18564.22
+      "forest_area_1000_ha": 18564.22,
+      "freshwater_withdrawals": 1.44,
+      "cereal_production_mt": 999000.0,
+      "patent_applications": 40,
+      "tourist_arrivals": 86400
     },
     "Belgium": {
       "lds_members": 7164,
@@ -1321,12 +1448,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 8,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 5.42,
       "armed_forces": 24000,
-      "debt_percent_gdp": 58.79,
       "forest_area_1000_ha": 689.3,
-      "nuclear_reactors": 8
+      "nuclear_reactors": 8,
+      "freshwater_withdrawals": 4.3,
+      "cereal_production_mt": 2754890.0,
+      "patent_applications": 799,
+      "tourist_arrivals": 2584000
     },
     "Marshall Islands": {
       "lds_members": 6927,
@@ -1339,8 +1468,8 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "hospital_beds_per_1000": 2.8,
-      "debt_percent_gdp": 16.68,
-      "forest_area_1000_ha": 9.4
+      "forest_area_1000_ha": 9.4,
+      "tourist_arrivals": 6099
     },
     "Tanzania": {
       "lds_members": 6259,
@@ -1353,12 +1482,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 3269969.5,
-      "banana_truckloads": 163498.48,
       "hospital_beds_per_1000": 0.84,
       "armed_forces": 28000,
       "volcanoes": 5,
-      "debt_percent_gdp": 48.21,
-      "forest_area_1000_ha": 49950.01
+      "forest_area_1000_ha": 49950.01,
+      "freshwater_withdrawals": 5.18,
+      "cereal_production_mt": 12789232.32,
+      "patent_applications": 1,
+      "tourist_arrivals": 1527000
     },
     "Micronesia": {
       "lds_members": 6241,
@@ -1371,10 +1502,10 @@
       "lds_temples": 0,
       "lds_family_history_centers": 11,
       "banana_tonnes": 2041.46,
-      "banana_truckloads": 102.07,
       "hospital_beds_per_1000": 3.22,
-      "debt_percent_gdp": 10.92,
-      "forest_area_1000_ha": 63.58
+      "forest_area_1000_ha": 63.58,
+      "cereal_production_mt": 289.81,
+      "tourist_arrivals": 18000
     },
     "Belize": {
       "lds_members": 5741,
@@ -1387,11 +1518,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 85071.99,
-      "banana_truckloads": 4253.6,
       "hospital_beds_per_1000": 1.0,
       "armed_forces": 2000,
-      "debt_percent_gdp": 60.95,
-      "forest_area_1000_ha": 1321.68
+      "forest_area_1000_ha": 1321.68,
+      "freshwater_withdrawals": 0.1,
+      "cereal_production_mt": 160169.0,
+      "patent_applications": 1,
+      "tourist_arrivals": 487000
     },
     "Botswana": {
       "lds_members": 5465,
@@ -1405,8 +1538,11 @@
       "lds_family_history_centers": 4,
       "hospital_beds_per_1000": 2.36,
       "armed_forces": 9000,
-      "debt_percent_gdp": 32.79,
-      "forest_area_1000_ha": 15373.0
+      "forest_area_1000_ha": 15373.0,
+      "freshwater_withdrawals": 0.21,
+      "cereal_production_mt": 54553.76,
+      "patent_applications": 3,
+      "tourist_arrivals": 1830000
     },
     "Hungary": {
       "lds_members": 5274,
@@ -1419,12 +1555,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 12,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 6.63,
       "armed_forces": 46000,
-      "debt_percent_gdp": 20.62,
       "forest_area_1000_ha": 1813.9,
-      "nuclear_reactors": 5
+      "nuclear_reactors": 5,
+      "freshwater_withdrawals": 4.69,
+      "cereal_production_mt": 12689330.0,
+      "patent_applications": 433,
+      "tourist_arrivals": 31641000
     },
     "Finland": {
       "lds_members": 5024,
@@ -1437,12 +1575,14 @@
       "lds_temples": 1,
       "lds_family_history_centers": 29,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 2.61,
       "armed_forces": 22000,
-      "debt_percent_gdp": 76.59,
       "forest_area_1000_ha": 21875.33,
-      "nuclear_reactors": 5
+      "nuclear_reactors": 5,
+      "freshwater_withdrawals": 3.0,
+      "cereal_production_mt": 3006670.0,
+      "patent_applications": 1557,
+      "tourist_arrivals": 896000
     },
     "Ireland": {
       "lds_members": 4923,
@@ -1455,11 +1595,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 2.96,
       "armed_forces": 9000,
-      "debt_percent_gdp": 29.29,
-      "forest_area_1000_ha": 720.38
+      "forest_area_1000_ha": 720.38,
+      "freshwater_withdrawals": 1.67,
+      "cereal_production_mt": 1896580.0,
+      "patent_applications": 75,
+      "tourist_arrivals": 10951000
     },
     "Austria": {
       "lds_members": 4753,
@@ -1472,12 +1614,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 12,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 6.7,
       "armed_forces": 23000,
-      "debt_percent_gdp": 44.97,
       "forest_area_1000_ha": 3891.97,
-      "nuclear_reactors": 1
+      "nuclear_reactors": 1,
+      "freshwater_withdrawals": 3.14,
+      "cereal_production_mt": 4880410.0,
+      "patent_applications": 1872,
+      "tourist_arrivals": 15091000
     },
     "Norway": {
       "lds_members": 4547,
@@ -1492,8 +1636,11 @@
       "hospital_beds_per_1000": 3.3,
       "armed_forces": 25000,
       "volcanoes": 2,
-      "debt_percent_gdp": 91.97,
-      "forest_area_1000_ha": 12132.0
+      "forest_area_1000_ha": 12132.0,
+      "freshwater_withdrawals": 2.69,
+      "cereal_production_mt": 1181400.0,
+      "patent_applications": 946,
+      "tourist_arrivals": 1397000
     },
     "Denmark": {
       "lds_members": 4426,
@@ -1506,11 +1653,13 @@
       "lds_temples": 1,
       "lds_family_history_centers": 13,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 2.43,
       "armed_forces": 15000,
-      "debt_percent_gdp": 90.03,
-      "forest_area_1000_ha": 626.56
+      "forest_area_1000_ha": 626.56,
+      "freshwater_withdrawals": 0.93,
+      "cereal_production_mt": 7496360.0,
+      "patent_applications": 1090,
+      "tourist_arrivals": 15595000
     },
     "Cameroon": {
       "lds_members": 3673,
@@ -1523,12 +1672,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 805352.56,
-      "banana_truckloads": 40267.63,
       "hospital_beds_per_1000": 2.65,
       "armed_forces": 34000,
       "volcanoes": 3,
-      "debt_percent_gdp": 39.54,
-      "forest_area_1000_ha": 20564.48
+      "forest_area_1000_ha": 20564.48,
+      "freshwater_withdrawals": 1.09,
+      "cereal_production_mt": 3846198.51,
+      "tourist_arrivals": 1021000
     },
     "Rwanda": {
       "lds_members": 3625,
@@ -1541,12 +1691,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 2437236.0,
-      "banana_truckloads": 121861.8,
       "hospital_beds_per_1000": 0.75,
       "armed_forces": 35000,
       "volcanoes": 1,
-      "debt_percent_gdp": 67.24,
-      "forest_area_1000_ha": 317.0
+      "forest_area_1000_ha": 317.0,
+      "freshwater_withdrawals": 0.61,
+      "cereal_production_mt": 975198.81,
+      "patent_applications": 14,
+      "tourist_arrivals": 1634000
     },
     "Armenia": {
       "lds_members": 3579,
@@ -1561,9 +1713,12 @@
       "hospital_beds_per_1000": 4.24,
       "armed_forces": 47000,
       "volcanoes": 5,
-      "debt_percent_gdp": 50.3,
       "forest_area_1000_ha": 334.73,
-      "nuclear_reactors": 2
+      "nuclear_reactors": 2,
+      "freshwater_withdrawals": 3.07,
+      "cereal_production_mt": 215133.3,
+      "patent_applications": 40,
+      "tourist_arrivals": 375000
     },
     "Trinidad and Tobago": {
       "lds_members": 3458,
@@ -1576,11 +1731,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 3245.59,
-      "banana_truckloads": 162.28,
       "hospital_beds_per_1000": 2.37,
       "armed_forces": 5000,
-      "debt_percent_gdp": 64.48,
-      "forest_area_1000_ha": 242.06
+      "forest_area_1000_ha": 242.06,
+      "freshwater_withdrawals": 0.34,
+      "cereal_production_mt": 5326.0,
+      "patent_applications": 2,
+      "tourist_arrivals": 141000
     },
     "Albania": {
       "lds_members": 3285,
@@ -1594,8 +1751,11 @@
       "lds_family_history_centers": 5,
       "hospital_beds_per_1000": 2.9,
       "armed_forces": 8000,
-      "debt_percent_gdp": 55.65,
-      "forest_area_1000_ha": 789.19
+      "forest_area_1000_ha": 789.19,
+      "freshwater_withdrawals": 0.8,
+      "cereal_production_mt": 701314.38,
+      "patent_applications": 23,
+      "tourist_arrivals": 2658000
     },
     "Singapore": {
       "lds_members": 3262,
@@ -1608,11 +1768,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 2.81,
       "armed_forces": 59000,
-      "debt_percent_gdp": 177.0,
-      "forest_area_1000_ha": 14.83
+      "forest_area_1000_ha": 14.83,
+      "freshwater_withdrawals": 0.2,
+      "patent_applications": 2024,
+      "tourist_arrivals": 2742000
     },
     "Solomon Islands": {
       "lds_members": 3232,
@@ -1625,11 +1786,11 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 320.13,
-      "banana_truckloads": 16.01,
       "hospital_beds_per_1000": 2.75,
       "volcanoes": 7,
-      "debt_percent_gdp": 22.02,
-      "forest_area_1000_ha": 2544.91
+      "forest_area_1000_ha": 2544.91,
+      "cereal_production_mt": 2752.61,
+      "tourist_arrivals": 4400
     },
     "Romania": {
       "lds_members": 3127,
@@ -1642,12 +1803,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 7.23,
       "armed_forces": 128000,
-      "debt_percent_gdp": 94.03,
       "forest_area_1000_ha": 6929.05,
-      "nuclear_reactors": 5
+      "nuclear_reactors": 5,
+      "freshwater_withdrawals": 8.15,
+      "cereal_production_mt": 20784510.0,
+      "patent_applications": 772,
+      "tourist_arrivals": 5023000
     },
     "Guam": {
       "lds_members": 2768,
@@ -1659,7 +1822,8 @@
       "lds_missions": 1,
       "lds_temples": 1,
       "lds_family_history_centers": 3,
-      "forest_area_1000_ha": 28.0
+      "forest_area_1000_ha": 28.0,
+      "tourist_arrivals": 328000
     },
     "Czech Republic": {
       "lds_members": 2628,
@@ -1672,12 +1836,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 6.54,
       "armed_forces": 27000,
-      "debt_percent_gdp": 94.87,
       "forest_area_1000_ha": 2669.85,
-      "nuclear_reactors": 8
+      "nuclear_reactors": 8,
+      "freshwater_withdrawals": 1.45,
+      "cereal_production_mt": 7995530.0,
+      "patent_applications": 541,
+      "tourist_arrivals": 37202000
     },
     "Ethiopia": {
       "lds_members": 2626,
@@ -1690,12 +1856,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 1190101.2,
-      "banana_truckloads": 59505.06,
       "hospital_beds_per_1000": 0.33,
       "armed_forces": 138000,
       "volcanoes": 49,
-      "debt_percent_gdp": 32.3,
-      "forest_area_1000_ha": 19258.5
+      "forest_area_1000_ha": 19258.5,
+      "freshwater_withdrawals": 10.55,
+      "cereal_production_mt": 31763173.56,
+      "patent_applications": 6,
+      "tourist_arrivals": 518000
     },
     "Swaziland": {
       "lds_members": 2598,
@@ -1708,11 +1876,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 30362.68,
-      "banana_truckloads": 1518.13,
       "hospital_beds_per_1000": 2.02,
       "armed_forces": 3000,
-      "debt_percent_gdp": 37.21,
-      "forest_area_1000_ha": 473.28
+      "forest_area_1000_ha": 473.28,
+      "freshwater_withdrawals": 1.07,
+      "cereal_production_mt": 87172.99,
+      "tourist_arrivals": 345299
     },
     "New Caledonia": {
       "lds_members": 2585,
@@ -1725,8 +1894,9 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 2211.17,
-      "banana_truckloads": 110.56,
-      "forest_area_1000_ha": 831.13
+      "forest_area_1000_ha": 831.13,
+      "cereal_production_mt": 2914.66,
+      "tourist_arrivals": 31000
     },
     "Bulgaria": {
       "lds_members": 2424,
@@ -1739,12 +1909,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 8.2,
       "armed_forces": 37000,
-      "debt_percent_gdp": 29.55,
       "forest_area_1000_ha": 3880.0,
-      "nuclear_reactors": 8
+      "nuclear_reactors": 8,
+      "freshwater_withdrawals": 5.44,
+      "cereal_production_mt": 10345650.0,
+      "patent_applications": 165,
+      "tourist_arrivals": 4973000
     },
     "Poland": {
       "lds_members": 2315,
@@ -1757,12 +1929,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 7,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 6.04,
       "armed_forces": 189000,
-      "debt_percent_gdp": 23.49,
       "forest_area_1000_ha": 8882.0,
-      "nuclear_reactors": 2
+      "nuclear_reactors": 2,
+      "freshwater_withdrawals": 9.38,
+      "cereal_production_mt": 35183860.0,
+      "patent_applications": 3377,
+      "tourist_arrivals": 88515000
     },
     "Lesotho": {
       "lds_members": 2278,
@@ -1776,8 +1950,11 @@
       "lds_family_history_centers": 2,
       "hospital_beds_per_1000": 1.3,
       "armed_forces": 2000,
-      "debt_percent_gdp": 59.75,
-      "forest_area_1000_ha": 34.52
+      "forest_area_1000_ha": 34.52,
+      "freshwater_withdrawals": 0.04,
+      "cereal_production_mt": 143079.9,
+      "patent_applications": 1,
+      "tourist_arrivals": 1142000
     },
     "Burundi": {
       "lds_members": 2070,
@@ -1790,11 +1967,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 1207926.4,
-      "banana_truckloads": 60396.32,
       "hospital_beds_per_1000": 0.69,
       "armed_forces": 31000,
-      "debt_percent_gdp": 43.18,
-      "forest_area_1000_ha": 279.64
+      "forest_area_1000_ha": 279.64,
+      "freshwater_withdrawals": 0.28,
+      "cereal_production_mt": 789542.22,
+      "patent_applications": 2,
+      "tourist_arrivals": 299000
     },
     "United Arab Emirates": {
       "lds_members": 2002,
@@ -1807,12 +1986,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 327.0,
-      "banana_truckloads": 16.35,
       "hospital_beds_per_1000": 1.87,
       "armed_forces": 63000,
-      "debt_percent_gdp": 32.11,
       "forest_area_1000_ha": 245.0,
-      "nuclear_reactors": 4
+      "nuclear_reactors": 4,
+      "freshwater_withdrawals": 2.26,
+      "cereal_production_mt": 22013.6,
+      "patent_applications": 69,
+      "tourist_arrivals": 8084000
     },
     "Suriname": {
       "lds_members": 1991,
@@ -1825,11 +2006,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 3586.26,
-      "banana_truckloads": 179.31,
       "hospital_beds_per_1000": 2.87,
       "armed_forces": 2000,
-      "debt_percent_gdp": 87.22,
-      "forest_area_1000_ha": 15299.86
+      "forest_area_1000_ha": 15299.86,
+      "freshwater_withdrawals": 0.62,
+      "cereal_production_mt": 203185.3,
+      "tourist_arrivals": 279000
     },
     "Cook Islands": {
       "lds_members": 1890,
@@ -1842,7 +2024,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 9.83,
-      "banana_truckloads": 0.49,
       "forest_area_1000_ha": 15.59
     },
     "Sri Lanka": {
@@ -1857,8 +2038,11 @@
       "lds_family_history_centers": 3,
       "hospital_beds_per_1000": 3.93,
       "armed_forces": 317000,
-      "debt_percent_gdp": 99.43,
-      "forest_area_1000_ha": 2350.33
+      "forest_area_1000_ha": 2350.33,
+      "freshwater_withdrawals": 12.95,
+      "cereal_production_mt": 4744648.0,
+      "patent_applications": 266,
+      "tourist_arrivals": 540000
     },
     "Macau": {
       "lds_members": 1595,
@@ -1870,7 +2054,9 @@
       "lds_missions": 0,
       "lds_temples": 0,
       "lds_family_history_centers": 1,
-      "hospital_beds_per_1000": 5.3
+      "hospital_beds_per_1000": 5.3,
+      "patent_applications": 2,
+      "tourist_arrivals": 5897000
     },
     "Namibia": {
       "lds_members": 1492,
@@ -1884,8 +2070,11 @@
       "lds_family_history_centers": 2,
       "hospital_beds_per_1000": 2.7,
       "armed_forces": 16000,
-      "debt_percent_gdp": 67.7,
-      "forest_area_1000_ha": 8769.17
+      "forest_area_1000_ha": 8769.17,
+      "freshwater_withdrawals": 0.1,
+      "cereal_production_mt": 153012.0,
+      "patent_applications": 8,
+      "tourist_arrivals": 187100
     },
     "Latvia": {
       "lds_members": 1281,
@@ -1898,11 +2087,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 3,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 4.95,
       "armed_forces": 9000,
-      "debt_percent_gdp": 22.71,
-      "forest_area_1000_ha": 3173.0
+      "forest_area_1000_ha": 3173.0,
+      "freshwater_withdrawals": 0.17,
+      "cereal_production_mt": 2715800.0,
+      "patent_applications": 104,
+      "tourist_arrivals": 3204000
     },
     "Estonia": {
       "lds_members": 1149,
@@ -1915,11 +2106,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 4.13,
       "armed_forces": 7000,
-      "debt_percent_gdp": 41.29,
-      "forest_area_1000_ha": 2438.4
+      "forest_area_1000_ha": 2438.4,
+      "freshwater_withdrawals": 1.21,
+      "cereal_production_mt": 1200650.0,
+      "patent_applications": 25,
+      "tourist_arrivals": 1695000
     },
     "Bahamas": {
       "lds_members": 1125,
@@ -1932,11 +2125,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 10540.86,
-      "banana_truckloads": 527.04,
       "hospital_beds_per_1000": 2.17,
       "armed_forces": 2000,
-      "debt_percent_gdp": 77.79,
-      "forest_area_1000_ha": 509.86
+      "forest_area_1000_ha": 509.86,
+      "cereal_production_mt": 604.91,
+      "patent_applications": 4,
+      "tourist_arrivals": 1794500
     },
     "Barbados": {
       "lds_members": 1082,
@@ -1949,11 +2143,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 981.37,
-      "banana_truckloads": 49.07,
       "hospital_beds_per_1000": 6.4,
       "armed_forces": 1000,
-      "debt_percent_gdp": 104.38,
-      "forest_area_1000_ha": 6.3
+      "forest_area_1000_ha": 6.3,
+      "freshwater_withdrawals": 0.07,
+      "cereal_production_mt": 1.1,
+      "patent_applications": 73,
+      "tourist_arrivals": 966000
     },
     "Lithuania": {
       "lds_members": 1024,
@@ -1966,12 +2162,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 5.71,
       "armed_forces": 37000,
-      "debt_percent_gdp": 31.2,
       "forest_area_1000_ha": 2170.0,
-      "nuclear_reactors": 3
+      "nuclear_reactors": 3,
+      "freshwater_withdrawals": 0.3,
+      "cereal_production_mt": 5629750.0,
+      "patent_applications": 81,
+      "tourist_arrivals": 2284000
     },
     "Northern Mariana Islands": {
       "lds_members": 938,
@@ -1983,7 +2181,8 @@
       "lds_missions": 0,
       "lds_temples": 0,
       "lds_family_history_centers": 1,
-      "forest_area_1000_ha": 33.61
+      "forest_area_1000_ha": 33.61,
+      "tourist_arrivals": 487000
     },
     "Reunion": {
       "lds_members": 859,
@@ -1996,7 +2195,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 5,
       "banana_tonnes": 10000.0,
-      "banana_truckloads": 500.0,
       "forest_area_1000_ha": 96.04
     },
     "Greece": {
@@ -2010,12 +2208,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 1090.0,
-      "banana_truckloads": 54.5,
       "hospital_beds_per_1000": 4.27,
       "armed_forces": 147000,
       "volcanoes": 5,
-      "debt_percent_gdp": 44.24,
-      "forest_area_1000_ha": 3901.8
+      "forest_area_1000_ha": 3901.8,
+      "freshwater_withdrawals": 10.05,
+      "cereal_production_mt": 2873990.0,
+      "patent_applications": 394,
+      "tourist_arrivals": 7406000
     },
     "Turkey": {
       "lds_members": 808,
@@ -2028,13 +2228,15 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 875000.0,
-      "banana_truckloads": 43750.0,
       "hospital_beds_per_1000": 3.05,
       "armed_forces": 512000,
       "volcanoes": 7,
-      "debt_percent_gdp": 22.91,
       "forest_area_1000_ha": 21630.3,
-      "nuclear_reactors": 4
+      "nuclear_reactors": 4,
+      "freshwater_withdrawals": 64.47,
+      "cereal_production_mt": 39017292.0,
+      "patent_applications": 8234,
+      "tourist_arrivals": 15971000
     },
     "Saint Vincent and the Grenadines": {
       "lds_members": 767,
@@ -2047,7 +2249,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 59514.64,
-      "banana_truckloads": 2975.73,
       "volcanoes": 1
     },
     "Croatia": {
@@ -2061,11 +2262,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 5.6,
       "armed_forces": 20000,
-      "debt_percent_gdp": 32.71,
-      "forest_area_1000_ha": 1924.12
+      "forest_area_1000_ha": 1924.12,
+      "freshwater_withdrawals": 0.68,
+      "cereal_production_mt": 3191010.0,
+      "patent_applications": 77,
+      "tourist_arrivals": 21608000
     },
     "Virgin Islands": {
       "lds_members": 704,
@@ -2078,7 +2281,8 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "hospital_beds_per_1000": 18.68,
-      "forest_area_1000_ha": 24.54
+      "forest_area_1000_ha": 24.54,
+      "tourist_arrivals": 8612000
     },
     "Cyprus": {
       "lds_members": 701,
@@ -2091,11 +2295,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 4,
       "banana_tonnes": 5870.0,
-      "banana_truckloads": 293.5,
       "hospital_beds_per_1000": 2.15,
       "armed_forces": 13000,
-      "debt_percent_gdp": 74.41,
-      "forest_area_1000_ha": 161.11
+      "forest_area_1000_ha": 161.11,
+      "freshwater_withdrawals": 0.22,
+      "cereal_production_mt": 28890.0,
+      "patent_applications": 1,
+      "tourist_arrivals": 4117000
     },
     "Aruba": {
       "lds_members": 686,
@@ -2107,7 +2313,9 @@
       "lds_missions": 0,
       "lds_temples": 0,
       "lds_family_history_centers": 2,
-      "forest_area_1000_ha": 0.42
+      "forest_area_1000_ha": 0.42,
+      "patent_applications": 1,
+      "tourist_arrivals": 1951000
     },
     "Curacao": {
       "lds_members": 639,
@@ -2119,7 +2327,8 @@
       "lds_missions": 0,
       "lds_temples": 0,
       "lds_family_history_centers": 1,
-      "forest_area_1000_ha": 0.07
+      "forest_area_1000_ha": 0.07,
+      "tourist_arrivals": 1293000
     },
     "Guadeloupe": {
       "lds_members": 628,
@@ -2132,7 +2341,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 52250.0,
-      "banana_truckloads": 2612.5,
       "forest_area_1000_ha": 73.17
     },
     "Mauritius": {
@@ -2146,11 +2354,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 10843.1,
-      "banana_truckloads": 542.15,
       "hospital_beds_per_1000": 3.8,
       "armed_forces": 3000,
-      "debt_percent_gdp": 80.23,
-      "forest_area_1000_ha": 41.07
+      "forest_area_1000_ha": 41.07,
+      "freshwater_withdrawals": 0.63,
+      "cereal_production_mt": 1502.0,
+      "patent_applications": 6,
+      "tourist_arrivals": 316000
     },
     "Palau": {
       "lds_members": 572,
@@ -2163,7 +2373,8 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "hospital_beds_per_1000": 4.34,
-      "forest_area_1000_ha": 38.15
+      "forest_area_1000_ha": 38.15,
+      "tourist_arrivals": 18399
     },
     "Luxembourg": {
       "lds_members": 526,
@@ -2176,11 +2387,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 3.95,
       "armed_forces": 1000,
-      "debt_percent_gdp": 61.87,
-      "forest_area_1000_ha": 88.7
+      "forest_area_1000_ha": 88.7,
+      "freshwater_withdrawals": 0.05,
+      "cereal_production_mt": 148070.0,
+      "patent_applications": 112,
+      "tourist_arrivals": 525000
     },
     "French Guiana": {
       "lds_members": 522,
@@ -2193,7 +2406,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 3582.0,
-      "banana_truckloads": 179.1,
       "forest_area_1000_ha": 8125.0
     },
     "Georgia": {
@@ -2209,8 +2421,11 @@
       "hospital_beds_per_1000": 4.04,
       "armed_forces": 26000,
       "volcanoes": 2,
-      "debt_percent_gdp": 37.87,
-      "forest_area_1000_ha": 2822.4
+      "forest_area_1000_ha": 2822.4,
+      "freshwater_withdrawals": 1.29,
+      "cereal_production_mt": 399752.4,
+      "patent_applications": 90,
+      "tourist_arrivals": 1513000
     },
     "Belarus": {
       "lds_members": 478,
@@ -2224,9 +2439,12 @@
       "lds_family_history_centers": 1,
       "hospital_beds_per_1000": 9.77,
       "armed_forces": 158000,
-      "debt_percent_gdp": 44.38,
       "forest_area_1000_ha": 8724.1,
-      "nuclear_reactors": 2
+      "nuclear_reactors": 2,
+      "freshwater_withdrawals": 1.41,
+      "cereal_production_mt": 7731917.71,
+      "patent_applications": 276,
+      "tourist_arrivals": 3598000
     },
     "Moldova": {
       "lds_members": 471,
@@ -2240,8 +2458,11 @@
       "lds_family_history_centers": 1,
       "hospital_beds_per_1000": 5.54,
       "armed_forces": 6000,
-      "debt_percent_gdp": 38.13,
-      "forest_area_1000_ha": 325.4
+      "forest_area_1000_ha": 325.4,
+      "freshwater_withdrawals": 0.85,
+      "cereal_production_mt": 3177124.1,
+      "patent_applications": 64,
+      "tourist_arrivals": 29000
     },
     "Slovenia": {
       "lds_members": 466,
@@ -2254,12 +2475,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 4.11,
       "armed_forces": 7000,
-      "debt_percent_gdp": 27.65,
       "forest_area_1000_ha": 1188.0,
-      "nuclear_reactors": 1
+      "nuclear_reactors": 1,
+      "freshwater_withdrawals": 0.83,
+      "cereal_production_mt": 672960.0,
+      "patent_applications": 222,
+      "tourist_arrivals": 1216000
     },
     "Iceland": {
       "lds_members": 445,
@@ -2274,8 +2497,11 @@
       "hospital_beds_per_1000": 2.83,
       "armed_forces": 0,
       "volcanoes": 35,
-      "debt_percent_gdp": 73.8,
-      "forest_area_1000_ha": 17.07
+      "forest_area_1000_ha": 17.07,
+      "freshwater_withdrawals": 0.29,
+      "cereal_production_mt": 7679.0,
+      "patent_applications": 34,
+      "tourist_arrivals": 488000
     },
     "Saint Lucia": {
       "lds_members": 435,
@@ -2288,7 +2514,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 2,
       "banana_tonnes": 2843.7,
-      "banana_truckloads": 142.19,
       "volcanoes": 1
     },
     "Grenada": {
@@ -2302,11 +2527,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 1502.0,
-      "banana_truckloads": 75.1,
       "hospital_beds_per_1000": 3.01,
       "volcanoes": 2,
-      "debt_percent_gdp": 73.18,
-      "forest_area_1000_ha": 17.7
+      "forest_area_1000_ha": 17.7,
+      "freshwater_withdrawals": 0.01,
+      "cereal_production_mt": 177.21,
+      "tourist_arrivals": 217000
     },
     "Serbia": {
       "lds_members": 422,
@@ -2320,8 +2546,11 @@
       "lds_family_history_centers": 2,
       "hospital_beds_per_1000": 5.78,
       "armed_forces": 32000,
-      "debt_percent_gdp": 44.48,
-      "forest_area_1000_ha": 2460.0
+      "forest_area_1000_ha": 2460.0,
+      "freshwater_withdrawals": 5.09,
+      "cereal_production_mt": 10833519.42,
+      "patent_applications": 138,
+      "tourist_arrivals": 446000
     },
     "Israel": {
       "lds_members": 422,
@@ -2334,11 +2563,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 197001.0,
-      "banana_truckloads": 9850.05,
       "hospital_beds_per_1000": 3.14,
       "armed_forces": 178000,
-      "debt_percent_gdp": 51.5,
-      "forest_area_1000_ha": 132.0
+      "forest_area_1000_ha": 132.0,
+      "freshwater_withdrawals": 1.53,
+      "cereal_production_mt": 232342.59,
+      "patent_applications": 1592,
+      "tourist_arrivals": 4905000
     },
     "Niue": {
       "lds_members": 400,
@@ -2351,7 +2582,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 82.28,
-      "banana_truckloads": 4.11,
       "forest_area_1000_ha": 18.93
     },
     "Tuvalu": {
@@ -2365,10 +2595,9 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 293.52,
-      "banana_truckloads": 14.68,
       "hospital_beds_per_1000": 4.16,
-      "debt_percent_gdp": 3.87,
-      "forest_area_1000_ha": 1.0
+      "forest_area_1000_ha": 1.0,
+      "tourist_arrivals": 3599
     },
     "Kuwait": {
       "lds_members": 369,
@@ -2381,11 +2610,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 2.33,
       "armed_forces": 25000,
-      "debt_percent_gdp": 3.04,
-      "forest_area_1000_ha": 6.25
+      "forest_area_1000_ha": 6.25,
+      "freshwater_withdrawals": 0.77,
+      "cereal_production_mt": 30954.56,
+      "patent_applications": 1,
+      "tourist_arrivals": 2161000
     },
     "Antigua and Barbuda": {
       "lds_members": 366,
@@ -2398,11 +2629,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 2.37,
-      "banana_truckloads": 0.12,
       "hospital_beds_per_1000": 3.42,
       "armed_forces": 0,
-      "debt_percent_gdp": 67.06,
-      "forest_area_1000_ha": 10.11
+      "forest_area_1000_ha": 10.11,
+      "freshwater_withdrawals": 0.0,
+      "cereal_production_mt": 50.37,
+      "patent_applications": 5,
+      "tourist_arrivals": 384500
     },
     "Sint Maarten": {
       "lds_members": 358,
@@ -2414,7 +2647,8 @@
       "lds_missions": 0,
       "lds_temples": 0,
       "lds_family_history_centers": 0,
-      "forest_area_1000_ha": 0.37
+      "forest_area_1000_ha": 0.37,
+      "tourist_arrivals": 1952000
     },
     "Central African Republic": {
       "lds_members": 357,
@@ -2427,11 +2661,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 57239.58,
-      "banana_truckloads": 2861.98,
       "hospital_beds_per_1000": 1.0,
       "armed_forces": 10000,
-      "debt_percent_gdp": 60.67,
-      "forest_area_1000_ha": 23203.0
+      "forest_area_1000_ha": 23203.0,
+      "freshwater_withdrawals": 0.07,
+      "cereal_production_mt": 302591.56,
+      "tourist_arrivals": 87000
     },
     "Senegal": {
       "lds_members": 338,
@@ -2444,11 +2679,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 38625.0,
-      "banana_truckloads": 1931.25,
       "hospital_beds_per_1000": 0.71,
       "armed_forces": 19000,
-      "debt_percent_gdp": 113.67,
-      "forest_area_1000_ha": 9303.16
+      "forest_area_1000_ha": 9303.16,
+      "freshwater_withdrawals": 3.06,
+      "cereal_production_mt": 4253209.96,
+      "tourist_arrivals": 1376000
     },
     "Slovakia": {
       "lds_members": 334,
@@ -2461,12 +2697,14 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 5.57,
       "armed_forces": 18000,
-      "debt_percent_gdp": 45.88,
       "forest_area_1000_ha": 1902.48,
-      "nuclear_reactors": 9
+      "nuclear_reactors": 9,
+      "freshwater_withdrawals": 0.56,
+      "cereal_production_mt": 3687160.0,
+      "patent_applications": 146,
+      "tourist_arrivals": 15299000
     },
     "Malta": {
       "lds_members": 320,
@@ -2479,11 +2717,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 0.0,
-      "banana_truckloads": 0.0,
       "hospital_beds_per_1000": 4.09,
       "armed_forces": 2000,
-      "debt_percent_gdp": 57.45,
-      "forest_area_1000_ha": 0.35
+      "forest_area_1000_ha": 0.35,
+      "freshwater_withdrawals": 0.04,
+      "cereal_production_mt": 0.0,
+      "patent_applications": 5,
+      "tourist_arrivals": 718000
     },
     "Saint Kitts and Nevis": {
       "lds_members": 292,
@@ -2521,7 +2761,6 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "banana_tonnes": 245798.0,
-      "banana_truckloads": 12289.9,
       "forest_area_1000_ha": 51.29
     },
     "Jersey": {
@@ -2547,7 +2786,8 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "hospital_beds_per_1000": 3.0,
-      "forest_area_1000_ha": 12.72
+      "forest_area_1000_ha": 12.72,
+      "tourist_arrivals": 660000
     },
     "Kazakhstan": {
       "lds_members": 245,
@@ -2561,9 +2801,12 @@
       "lds_family_history_centers": 1,
       "hospital_beds_per_1000": 6.54,
       "armed_forces": 71000,
-      "debt_percent_gdp": 24.8,
       "forest_area_1000_ha": 3162.24,
-      "nuclear_reactors": 1
+      "nuclear_reactors": 1,
+      "freshwater_withdrawals": 24.97,
+      "cereal_production_mt": 24565948.19,
+      "patent_applications": 803,
+      "tourist_arrivals": 2035000
     },
     "Bahrain": {
       "lds_members": 231,
@@ -2576,11 +2819,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 710.0,
-      "banana_truckloads": 35.5,
       "hospital_beds_per_1000": 1.84,
       "armed_forces": 19000,
-      "debt_percent_gdp": 134.01,
-      "forest_area_1000_ha": 0.62
+      "forest_area_1000_ha": 0.62,
+      "freshwater_withdrawals": 0.16,
+      "patent_applications": 3,
+      "tourist_arrivals": 1909000
     },
     "Bermuda": {
       "lds_members": 227,
@@ -2593,7 +2837,8 @@
       "lds_temples": 0,
       "lds_family_history_centers": 1,
       "hospital_beds_per_1000": 6.3,
-      "forest_area_1000_ha": 1.0
+      "forest_area_1000_ha": 1.0,
+      "tourist_arrivals": 51400
     },
     "Dominica": {
       "lds_members": 180,
@@ -2606,11 +2851,12 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 11535.15,
-      "banana_truckloads": 576.76,
       "hospital_beds_per_1000": 3.97,
       "volcanoes": 5,
-      "debt_percent_gdp": 104.35,
-      "forest_area_1000_ha": 47.87
+      "forest_area_1000_ha": 47.87,
+      "freshwater_withdrawals": 0.02,
+      "cereal_production_mt": 193.13,
+      "tourist_arrivals": 140000
     },
     "Nauru": {
       "lds_members": 146,
@@ -2636,8 +2882,11 @@
       "lds_family_history_centers": 0,
       "hospital_beds_per_1000": 2.35,
       "armed_forces": 11000,
-      "debt_percent_gdp": 32.75,
-      "forest_area_1000_ha": 2187.91
+      "forest_area_1000_ha": 2187.91,
+      "freshwater_withdrawals": 0.31,
+      "cereal_production_mt": 1062500.0,
+      "patent_applications": 53,
+      "tourist_arrivals": 197000
     },
     "Montenegro": {
       "lds_members": 65,
@@ -2651,8 +2900,11 @@
       "lds_family_history_centers": 1,
       "hospital_beds_per_1000": 3.82,
       "armed_forces": 12000,
-      "debt_percent_gdp": 62.64,
-      "forest_area_1000_ha": 626.0
+      "forest_area_1000_ha": 626.0,
+      "freshwater_withdrawals": 2.21,
+      "cereal_production_mt": 6846.06,
+      "patent_applications": 5,
+      "tourist_arrivals": 351000
     },
     "Guernsey": {
       "lds_members": 60,
@@ -2677,11 +2929,13 @@
       "lds_temples": 0,
       "lds_family_history_centers": 0,
       "banana_tonnes": 46922.05,
-      "banana_truckloads": 2346.1,
       "hospital_beds_per_1000": 0.2,
       "armed_forces": 11000,
-      "debt_percent_gdp": 52.69,
-      "forest_area_1000_ha": 6716.5
+      "forest_area_1000_ha": 6716.5,
+      "freshwater_withdrawals": 0.82,
+      "cereal_production_mt": 5209425.36,
+      "patent_applications": 2,
+      "tourist_arrivals": 67000
     }
   }
 }

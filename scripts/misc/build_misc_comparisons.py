@@ -12,15 +12,16 @@ BANANA_CSV = FUNNY_DIR / "banana-production.csv"
 BEDS_CSV = FUNNY_DIR / "beds/API_SH.MED.BEDS.ZS_DS2_en_csv_v2_413810.csv"
 MILITARY_CSV = FUNNY_DIR / "military/API_MS.MIL.TOTL.P1_DS2_en_csv_v2_362772.csv"
 VOLCANOES_XLS = FUNNY_DIR / "GVP_Volcano_List_Holocene_202609291629.xls"
-
-DEBT_CSV = FUNNY_DIR / "debt data.csv"
 FOREST_CSV = FUNNY_DIR / "FAO_GFRA.csv"
 NUCLEAR_XLSX = FUNNY_DIR / "nuclear reactor data.xlsx"
-EQUALITY_CSV = FUNNY_DIR / "gender and minority equality.csv"
+
+# New datasets
+FRESHWATER_DIR = FUNNY_DIR / "Annual freshwater withdrawals"
+CEREAL_DIR = FUNNY_DIR / "API_AG.PRD.CREL.MT_DS2_en_csv_v2_46939"
+PATENTS_DIR = FUNNY_DIR / "API_IP.PAT.RESD_DS2_en_csv_v2_434388"
+TOURISTS_DIR = FUNNY_DIR / "API_ST.INT.ARVL_DS2_en_csv_v2_421778"
 
 OUT_JSON = ROOT / "docs/datasets/misc/misc-comparisons/comparison.json"
-
-TRUCKLOAD_TONNES = 20
 
 MANUAL_MAPPING = {
     "Congo": "Republic of the Congo",
@@ -81,6 +82,7 @@ def load_banana_data():
     return {k: v[1] for k, v in latest.items()}
 
 def get_latest_wb(file_path):
+    if not file_path or not file_path.exists(): return {}
     latest = {}
     with open(file_path, newline='', encoding='utf-8') as f:
         for _ in range(4): next(f)
@@ -108,6 +110,7 @@ def get_volcano_counts():
     return counts
 
 def parse_simple_csv(file_path, country_col, val_col):
+    if not file_path or not file_path.exists(): return {}
     res = {}
     with open(file_path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -126,6 +129,11 @@ def parse_nuclear():
     except:
         return {}
 
+def find_wb_csv(dir_path):
+    if not dir_path.exists(): return None
+    files = list(dir_path.glob("API_*.csv"))
+    return files[0] if files else None
+
 def main():
     with open(LDS_JSON, encoding="utf-8") as f:
         lds_raw = json.load(f)
@@ -138,10 +146,13 @@ def main():
     military_mapped = mm(get_latest_wb(MILITARY_CSV))
     volcano_mapped = mm(get_volcano_counts())
 
-    debt_mapped = mm(parse_simple_csv(DEBT_CSV, "REF_AREA_LABEL", "OBS_VALUE"))
     forest_mapped = mm(parse_simple_csv(FOREST_CSV, "REF_AREA_LABEL", "OBS_VALUE"))
-    equality_mapped = mm(parse_simple_csv(EQUALITY_CSV, "REF_AREA_LABEL", "OBS_VALUE"))
     nuclear_mapped = mm(parse_nuclear())
+    
+    freshwater_mapped = mm(get_latest_wb(find_wb_csv(FRESHWATER_DIR)))
+    cereal_mapped = mm(get_latest_wb(find_wb_csv(CEREAL_DIR)))
+    patents_mapped = mm(get_latest_wb(find_wb_csv(PATENTS_DIR)))
+    tourists_mapped = mm(get_latest_wb(find_wb_csv(TOURISTS_DIR)))
 
     LDS_STAT_FIELDS = [
         "members", "congregations", "wards", "branches",
@@ -154,23 +165,23 @@ def main():
         for field in LDS_STAT_FIELDS:
             entry[f"lds_{field}"] = lds.get(field, 0) or 0
 
-        if country in banana_mapped:
-            entry["banana_tonnes"] = round(banana_mapped[country], 2)
-            entry["banana_truckloads"] = round(banana_mapped[country] / TRUCKLOAD_TONNES, 2)
+        if country in banana_mapped: entry["banana_tonnes"] = round(banana_mapped[country], 2)
         if country in beds_mapped: entry["hospital_beds_per_1000"] = round(beds_mapped[country], 2)
         if country in military_mapped: entry["armed_forces"] = int(military_mapped[country])
         if country in volcano_mapped: entry["volcanoes"] = volcano_mapped[country]
-        if country in debt_mapped: entry["debt_percent_gdp"] = round(debt_mapped[country], 2)
         if country in forest_mapped: entry["forest_area_1000_ha"] = round(forest_mapped[country], 2)
-        if country in equality_mapped: entry["equality_score"] = round(equality_mapped[country], 2)
         if country in nuclear_mapped: entry["nuclear_reactors"] = int(nuclear_mapped[country])
+        
+        if country in freshwater_mapped: entry["freshwater_withdrawals"] = round(freshwater_mapped[country], 2)
+        if country in cereal_mapped: entry["cereal_production_mt"] = round(cereal_mapped[country], 2)
+        if country in patents_mapped: entry["patent_applications"] = int(patents_mapped[country])
+        if country in tourists_mapped: entry["tourist_arrivals"] = int(tourists_mapped[country])
 
         countries_out[country] = entry
 
     output = {
         "source": "LDS stats; FAOSTAT; World Bank; Smithsonian GVP; PRIS",
         "lds_year": lds_raw.get("as_of", "2025"),
-        "truckload_tonnes": TRUCKLOAD_TONNES,
         "countries": countries_out,
     }
 

@@ -30,10 +30,12 @@ export default function MiscComparisonsPage() {
       hospital_beds_per_1000?: number;
       armed_forces?: number;
       volcanoes?: number;
-      debt_percent_gdp?: number;
       forest_area_1000_ha?: number;
-      equality_score?: number;
       nuclear_reactors?: number;
+      freshwater_withdrawals?: number;
+      cereal_production_mt?: number;
+      patent_applications?: number;
+      tourist_arrivals?: number;
     }
   >;
 
@@ -54,15 +56,15 @@ export default function MiscComparisonsPage() {
     hospital_beds_per_1000: data.hospital_beds_per_1000 ?? null,
     armed_forces: data.armed_forces ?? null,
     volcanoes: data.volcanoes ?? null,
-    debt_percent_gdp: data.debt_percent_gdp ?? null,
     forest_area_1000_ha: data.forest_area_1000_ha ?? null,
-    equality_score: data.equality_score ?? null,
     nuclear_reactors: data.nuclear_reactors ?? null,
+    freshwater_withdrawals: data.freshwater_withdrawals ?? null,
+    cereal_production_mt: data.cereal_production_mt ?? null,
+    patent_applications: data.patent_applications ?? null,
+    tourist_arrivals: data.tourist_arrivals ?? null,
   }));
 
   const ldsYear = comparisonData.lds_year.split(" ")[0]; // "2025 (per-country...)" -> "2025"
-
-  const TRUCKLOAD_TONNES = comparisonData.truckload_tonnes;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
@@ -83,7 +85,6 @@ export default function MiscComparisonsPage() {
           title="LDS Stats vs. The World"
           source="Church facts and statistics; FAOSTAT; World Bank; Smithsonian GVP"
           filename="lds-stats-vs-the-world"
-          truckloadTonnes={TRUCKLOAD_TONNES}
         />
       </section>
     </div>

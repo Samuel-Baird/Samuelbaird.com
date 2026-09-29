@@ -19,13 +19,15 @@ export type BananaItem = {
   hospital_beds_per_1000: number | null;
   armed_forces: number | null;
   volcanoes: number | null;
-  debt_percent_gdp: number | null;
   forest_area_1000_ha: number | null;
-  equality_score: number | null;
   nuclear_reactors: number | null;
+  freshwater_withdrawals: number | null;
+  cereal_production_mt: number | null;
+  patent_applications: number | null;
+  tourist_arrivals: number | null;
 };
 
-type LdsStat = keyof Omit<BananaItem, "name" | "banana_tonnes" | "hospital_beds_per_1000" | "armed_forces" | "volcanoes" | "debt_percent_gdp" | "forest_area_1000_ha" | "equality_score" | "nuclear_reactors">;
+type LdsStat = keyof Omit<BananaItem, "name" | "banana_tonnes" | "hospital_beds_per_1000" | "armed_forces" | "volcanoes" | "forest_area_1000_ha" | "nuclear_reactors" | "freshwater_withdrawals" | "cereal_production_mt" | "patent_applications" | "tourist_arrivals">;
 
 type Metric = {
   id: LdsStat;
@@ -45,7 +47,7 @@ const METRICS: Metric[] = [
   { id: "lds_family_history_centers",label: "Family history centers",shortLabel: "FHCs" },
 ];
 
-type ComparisonUnit = "banana_truckloads" | "banana_tonnes" | "hospital_beds" | "armed_forces" | "volcanoes" | "debt" | "forest" | "equality" | "nuclear";
+type ComparisonUnit = "banana_tonnes" | "hospital_beds" | "armed_forces" | "volcanoes" | "forest" | "nuclear" | "freshwater" | "cereal" | "patents" | "tourists";
 
 type Props = {
   map: WorldMap;
@@ -53,7 +55,6 @@ type Props = {
   title: string;
   source: string;
   filename: string;
-  truckloadTonnes: number;
 };
 
 const LDS_FILL    = "#1e3a5f";
@@ -61,22 +62,22 @@ const NO_DATA_FILL = "#efece5";
 
 function getComparisonFill(unit: ComparisonUnit): string {
   switch (unit) {
-    case "banana_truckloads":
     case "banana_tonnes": return "#f5d800"; // Yellow
     case "volcanoes": return "#dc2626"; // Red
     case "armed_forces": return "#16a34a"; // Green
     case "hospital_beds": return "#ea580c"; // Orange
-    case "debt": return "#9333ea"; // Purple
     case "forest": return "#059669"; // Emerald
     case "nuclear": return "#db2777"; // Pink
-    case "equality": return "#4f46e5"; // Indigo
+    case "freshwater": return "#3b82f6"; // Blue
+    case "cereal": return "#ca8a04"; // Yellow-Orange
+    case "patents": return "#8b5cf6"; // Violet
+    case "tourists": return "#14b8a6"; // Teal
     default: return "#f5d800";
   }
 }
 
 function getComparisonTextFill(unit: ComparisonUnit): string {
-  // Use a darker shade for yellow so it's readable on white tooltip background
-  if (unit === "banana_truckloads" || unit === "banana_tonnes") return "#b5a000";
+  if (unit === "banana_tonnes" || unit === "cereal") return "#b5a000";
   return getComparisonFill(unit);
 }
 
@@ -112,35 +113,49 @@ function wrap(text: string, max: number): string[] {
 const nf  = new Intl.NumberFormat("en-US");
 const nf1 = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 });
 
-function comparisonValue(item: BananaItem, unit: ComparisonUnit, truckloadTonnes: number): number | null {
-  if (unit === "banana_truckloads") return item.banana_tonnes !== null ? item.banana_tonnes / truckloadTonnes : null;
+function getBaseValue(item: BananaItem, unit: ComparisonUnit): number | null {
   if (unit === "banana_tonnes") return item.banana_tonnes;
   if (unit === "hospital_beds") return item.hospital_beds_per_1000;
   if (unit === "armed_forces") return item.armed_forces;
   if (unit === "volcanoes") return item.volcanoes;
-  if (unit === "debt") return item.debt_percent_gdp;
   if (unit === "forest") return item.forest_area_1000_ha;
-  if (unit === "equality") return item.equality_score;
   if (unit === "nuclear") return item.nuclear_reactors;
+  if (unit === "freshwater") return item.freshwater_withdrawals;
+  if (unit === "cereal") return item.cereal_production_mt;
+  if (unit === "patents") return item.patent_applications;
+  if (unit === "tourists") return item.tourist_arrivals;
   return null;
 }
 
-function comparisonLabel(unit: ComparisonUnit, truckloadTonnes: number): string {
-  if (unit === "banana_truckloads") return `Banana truckloads (÷${truckloadTonnes}t)`;
-  if (unit === "banana_tonnes") return "Banana tonnes";
+function comparisonValue(item: BananaItem, unit: ComparisonUnit, divisor: number): number | null {
+  const val = getBaseValue(item, unit);
+  if (val === null) return null;
+  return val / divisor;
+}
+
+function getBaseLabel(unit: ComparisonUnit): string {
+  if (unit === "banana_tonnes") return "Banana (Tonnes)";
   if (unit === "hospital_beds") return "Hospital beds (per 1k)";
   if (unit === "armed_forces") return "Armed forces personnel";
   if (unit === "volcanoes") return "Volcanoes";
-  if (unit === "debt") return "Debt (% of GDP)";
   if (unit === "forest") return "Forest Area (1k ha)";
-  if (unit === "equality") return "EQOSOGI Score";
   if (unit === "nuclear") return "Nuclear Reactors";
+  if (unit === "freshwater") return "Freshwater Withdrawals (Billion m³)";
+  if (unit === "cereal") return "Cereal Production (MT)";
+  if (unit === "patents") return "Patent Applications";
+  if (unit === "tourists") return "International Tourists";
   return "";
 }
 
-function fillFor(item: BananaItem, metric: Metric, unit: ComparisonUnit, truckloadTonnes: number): string {
+function comparisonLabel(unit: ComparisonUnit, divisor: number, customUnit: string): string {
+  if (customUnit.trim()) return customUnit.trim();
+  const base = getBaseLabel(unit);
+  return divisor !== 1 ? `${base} (÷${divisor})` : base;
+}
+
+function fillFor(item: BananaItem, metric: Metric, unit: ComparisonUnit, divisor: number): string {
   const ldsVal  = item[metric.id] as number;
-  const banVal  = comparisonValue(item, unit, truckloadTonnes);
+  const banVal  = comparisonValue(item, unit, divisor);
   if (ldsVal === 0 && banVal === null) return NO_DATA_FILL;
   return ldsVal >= (banVal ?? 0) ? LDS_FILL : getComparisonFill(unit);
 }
@@ -149,12 +164,17 @@ const pillOn  = "rounded-[var(--radius)] border border-[color:var(--accent)] bg-
 const pillOff = "rounded-[var(--radius)] border border-[color:var(--border)] px-3 py-1.5 text-sm text-[color:var(--muted)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]";
 const tool    = "inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]";
 
-export function MiscComparisonMap({ map, items, title, source, filename, truckloadTonnes }: Props) {
+export function MiscComparisonMap({ map, items, title, source, filename }: Props) {
   const [metric, setMetric] = useState<Metric>(METRICS[0]);
-  const [unit,   setUnit]   = useState<ComparisonUnit>("banana_truckloads");
+  const [unit,   setUnit]   = useState<ComparisonUnit>("banana_tonnes");
   const [view,   setView]   = useState<View>({ k: 1, x: 0, y: 0 });
   const [active, setActive] = useState<{ name: string; x: number; y: number } | null>(null);
   const [animating, setAnimating] = useState(false);
+
+  const [normFactorStr, setNormFactorStr] = useState<string>("1");
+  const [normUnitStr, setNormUnitStr] = useState<string>("");
+
+  const divisor = parseFloat(normFactorStr) || 1;
 
   const svgRef   = useRef<SVGSVGElement>(null);
   const pointers = useRef(new Map<number, { x: number; y: number }>());
@@ -167,7 +187,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
   const W = map.width;
   const H = map.height;
 
-  const activeLabel = comparisonLabel(unit, truckloadTonnes);
+  const activeLabel = comparisonLabel(unit, divisor, normUnitStr);
 
   function toSvg(cx: number, cy: number) {
     const r = svgRef.current!.getBoundingClientRect();
@@ -274,7 +294,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
 
     const shapes = drawn.map((i) => {
       const s = map.shapes[i.name];
-      const f = fillFor(i, metric, unit, truckloadTonnes);
+      const f = fillFor(i, metric, unit, divisor);
       const c = s.small ? `<circle cx="${s.cx}" cy="${s.cy}" r="${3/view.k}" fill="${f}" stroke="${INK}" stroke-width="0.5" vector-effect="non-scaling-stroke"/>` : "";
       return `<path d="${s.d}" fill="${f}" stroke="#ffffff" stroke-width="0.4" vector-effect="non-scaling-stroke"/>${c}`;
     }).join("");
@@ -288,7 +308,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
     });
     
     const topLds = [...items].filter(i => (i[metric.id] as number) > 0).sort((a,b) => (b[metric.id] as number) - (a[metric.id] as number)).slice(0, 5);
-    const topBanana = [...items].filter(i => comparisonValue(i, unit, truckloadTonnes) !== null).sort((a,b) => (comparisonValue(b, unit, truckloadTonnes)!) - (comparisonValue(a, unit, truckloadTonnes)!)).slice(0, 5);
+    const topBanana = [...items].filter(i => comparisonValue(i, unit, divisor) !== null).sort((a,b) => (comparisonValue(b, unit, divisor)!) - (comparisonValue(a, unit, divisor)!)).slice(0, 5);
 
     const col2X = CW / 2 + 30;
     
@@ -306,7 +326,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
       }
       if (banItem) {
         parts.push(`<text x="${col2X}" y="${rowY}" font-family="${SERIF}" font-size="24" fill="${INK}">${i+1}. ${esc(banItem.name)}</text>`);
-        parts.push(`<text x="${CW - 54}" y="${rowY}" text-anchor="end" font-family="${SERIF}" font-size="24" font-weight="700" fill="${INK}">${nf1.format(comparisonValue(banItem, unit, truckloadTonnes)!)}</text>`);
+        parts.push(`<text x="${CW - 54}" y="${rowY}" text-anchor="end" font-family="${SERIF}" font-size="24" font-weight="700" fill="${INK}">${nf1.format(comparisonValue(banItem, unit, divisor)!)}</text>`);
       }
     }
     
@@ -348,7 +368,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
       </>
     );
     const ldsVal = item[metric.id] as number;
-    const banVal = comparisonValue(item, unit, truckloadTonnes);
+    const banVal = comparisonValue(item, unit, divisor);
     const ldsWins = ldsVal >= (banVal ?? 0);
     const winner = (ldsVal === 0 && banVal === null) ? "none"
       : ldsWins ? "lds" : "banana";
@@ -387,7 +407,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
   return (
     <div>
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div className="space-y-3">
+        <div className="space-y-4">
           <div>
             <p className="small-caps mb-1.5 text-[11px] font-medium text-[color:var(--muted)]">LDS stat to compare</p>
             <div className="flex flex-wrap gap-1.5">
@@ -401,11 +421,8 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
           <div>
             <p className="small-caps mb-1.5 text-[11px] font-medium text-[color:var(--muted)]">World stat to compare</p>
             <div className="flex flex-wrap gap-1.5">
-              <button type="button" className={unit === "banana_truckloads" ? pillOn : pillOff} onClick={() => setUnit("banana_truckloads")}>
-                Banana Truckloads (÷{truckloadTonnes}t)
-              </button>
               <button type="button" className={unit === "banana_tonnes" ? pillOn : pillOff} onClick={() => setUnit("banana_tonnes")}>
-                Banana Tonnes
+                Banana (Tonnes)
               </button>
               <button type="button" className={unit === "armed_forces" ? pillOn : pillOff} onClick={() => setUnit("armed_forces")}>
                 Armed Forces Personnel
@@ -416,18 +433,61 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
               <button type="button" className={unit === "volcanoes" ? pillOn : pillOff} onClick={() => setUnit("volcanoes")}>
                 Volcanoes
               </button>
-              <button type="button" className={unit === "debt" ? pillOn : pillOff} onClick={() => setUnit("debt")}>
-                Debt (% of GDP)
-              </button>
               <button type="button" className={unit === "forest" ? pillOn : pillOff} onClick={() => setUnit("forest")}>
                 Forest Area (1k ha)
               </button>
               <button type="button" className={unit === "nuclear" ? pillOn : pillOff} onClick={() => setUnit("nuclear")}>
                 Nuclear Reactors
               </button>
-              <button type="button" className={unit === "equality" ? pillOn : pillOff} onClick={() => setUnit("equality")}>
-                EQOSOGI Score
+              <button type="button" className={unit === "freshwater" ? pillOn : pillOff} onClick={() => setUnit("freshwater")}>
+                Freshwater (Billion m³)
               </button>
+              <button type="button" className={unit === "cereal" ? pillOn : pillOff} onClick={() => setUnit("cereal")}>
+                Cereal (MT)
+              </button>
+              <button type="button" className={unit === "patents" ? pillOn : pillOff} onClick={() => setUnit("patents")}>
+                Patents
+              </button>
+              <button type="button" className={unit === "tourists" ? pillOn : pillOff} onClick={() => setUnit("tourists")}>
+                Tourists
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-col gap-1.5 pt-1">
+            <p className="small-caps text-[11px] font-medium text-[color:var(--muted)]">Normalize data (optional)</p>
+            <div className="flex items-center gap-2">
+              <label className="flex items-center gap-1.5 text-sm text-[color:var(--muted)]">
+                Divide by
+                <input
+                  type="number"
+                  className="w-20 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] px-2 py-1 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted)]"
+                  placeholder="1"
+                  value={normFactorStr}
+                  onChange={(e) => setNormFactorStr(e.target.value)}
+                />
+              </label>
+              <label className="flex items-center gap-1.5 text-sm text-[color:var(--muted)]">
+                Custom Unit
+                <input
+                  type="text"
+                  className="w-32 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] px-2 py-1 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted)]"
+                  placeholder="e.g. truckloads"
+                  value={normUnitStr}
+                  onChange={(e) => setNormUnitStr(e.target.value)}
+                />
+              </label>
+              {(normFactorStr !== "1" || normUnitStr) && (
+                <button
+                  type="button"
+                  className="text-xs text-[color:var(--accent)] hover:underline ml-2"
+                  onClick={() => {
+                    setNormFactorStr("1");
+                    setNormUnitStr("");
+                  }}
+                >
+                  Clear
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -440,7 +500,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
         </button>
       </div>
 
-      <p className="mt-3 text-sm text-[color:var(--muted)]">
+      <p className="mt-4 text-sm text-[color:var(--muted)]">
         <span className="font-medium text-[color:var(--foreground)]">{metric.label}</span> vs.{" "}
         <span className="font-medium text-[color:var(--foreground)]">{activeLabel}</span> — dark blue means the country has more LDS {metric.label.toLowerCase()}; bright yellow means {activeLabel.toLowerCase()} wins.
       </p>
@@ -464,9 +524,9 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
             <path d={map.land} fill={NO_DATA_FILL} stroke="var(--surface)" strokeWidth="0.4" vectorEffect="non-scaling-stroke" />
             {drawn.map((i) => {
               const s = map.shapes[i.name];
-              const f = fillFor(i, metric, unit, truckloadTonnes);
+              const f = fillFor(i, metric, unit, divisor);
               const ldsVal = i[metric.id] as number;
-              const banVal = comparisonValue(i, unit, truckloadTonnes);
+              const banVal = comparisonValue(i, unit, divisor);
               const ldsWins = ldsVal >= (banVal ?? 0);
               const ariaLabel = `${i.name}: ${ldsWins ? nf.format(ldsVal) + " LDS " + metric.label.toLowerCase() : nf1.format(banVal ?? 0) + " " + activeLabel}`;
               return (
@@ -529,7 +589,7 @@ export function MiscComparisonMap({ map, items, title, source, filename, trucklo
       </div>
 
       <span className="sr-only" aria-live="polite">
-        {activeItem ? `${activeItem.name}: ${nf.format(activeItem[metric.id] as number)} LDS ${metric.label.toLowerCase()}, ${comparisonValue(activeItem, unit, truckloadTonnes) !== null ? nf1.format(comparisonValue(activeItem, unit, truckloadTonnes)!) + " " + activeLabel : "no comparison data"}` : ""}
+        {activeItem ? `${activeItem.name}: ${nf.format(activeItem[metric.id] as number)} LDS ${metric.label.toLowerCase()}, ${comparisonValue(activeItem, unit, divisor) !== null ? nf1.format(comparisonValue(activeItem, unit, divisor)!) + " " + activeLabel : "no comparison data"}` : ""}
       </span>
     </div>
   );
