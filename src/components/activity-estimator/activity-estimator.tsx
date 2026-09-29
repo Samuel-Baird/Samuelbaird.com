@@ -3,6 +3,8 @@
 import { Download } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Tag } from "@/components/tag";
+import type { WorldMap } from "@/lib/world-map";
+import { AttendanceMap } from "./attendance-map";
 import {
   PRESETS,
   SCENARIOS,
@@ -19,6 +21,7 @@ export type Baseline = { self_id: number; members: number; ratio: number; year: 
 type Props = {
   asOf: string;
   worldwideMembers: number;
+  map: WorldMap;
   countries: Record<string, CountryUnits>;
   order: string[];
   baselines: Record<string, Baseline>;
@@ -69,7 +72,7 @@ const btn =
 const eyebrow = "small-caps text-[11px] font-medium text-[color:var(--muted)]";
 const card = "rounded-[var(--radius)] border border-[color:var(--border)] p-6 sm:p-7";
 
-export function ActivityEstimator({ asOf, worldwideMembers, countries, order, baselines }: Props) {
+export function ActivityEstimator({ asOf, worldwideMembers, map, countries, order, baselines }: Props) {
   const [a, setA] = useState<Assumptions>(PRESETS.Default);
 
   const rows = useMemo(
@@ -185,6 +188,16 @@ export function ActivityEstimator({ asOf, worldwideMembers, countries, order, ba
         {rows.length} countries, {nf.format(total.members)} of {nf.format(worldwideMembers)} members
         worldwide, as of {asOf}.
       </p>
+
+      <section className={card}>
+        <p className={eyebrow}>Implied attendance by country</p>
+        <p className="mt-1 text-sm text-[color:var(--muted)]">
+          Darker means a higher implied rate at the mid assumptions. Hover a country for details.
+        </p>
+        <div className="mt-4">
+          <AttendanceMap map={map} rows={rows} />
+        </div>
+      </section>
 
       <section className={card}>
         <p className={eyebrow}>Implied rate, 15 largest countries</p>

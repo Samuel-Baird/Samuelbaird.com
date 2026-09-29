@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ActivityEstimator } from "@/components/activity-estimator/activity-estimator";
 import { DataExplorerTabs } from "@/components/data-explorer-tabs";
 import { DeseretTitle } from "@/components/deseret-title";
+import { buildWorldMap } from "@/lib/world-map";
 import units from "../../../../../docs/datasets/lds-units-by-country/units-by-country.json";
 import baselines from "../../../../../docs/datasets/lds-units-by-country/activity-baselines.json";
 import handbook from "../../../../../docs/datasets/lds-units-by-country/handbook-thresholds.json";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function ActivityEstimatorPage() {
+  const map = buildWorldMap(units.country_order);
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
       <h1 className="serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
@@ -33,6 +35,7 @@ export default function ActivityEstimatorPage() {
           <ActivityEstimator
             asOf={units.as_of}
             worldwideMembers={units.worldwide_members}
+            map={map}
             countries={units.countries}
             order={units.country_order}
             baselines={baselines.baselines}
