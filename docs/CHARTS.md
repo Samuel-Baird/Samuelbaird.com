@@ -135,6 +135,8 @@ every chart, not just the timeline:
   one silently wins; a single generous hit-test layer keeps every mark
   reachable at any chart width.
 
+World maps are a separate case with their own guide: **[docs/MAPS.md](MAPS.md)**.
+
 ## Data-explorer graphics: PNG only, nothing hand-typed
 
 Every graphic on a dataset's `/data-explorer/<slug>/graphics` page —

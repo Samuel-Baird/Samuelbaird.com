@@ -187,17 +187,21 @@ export function ChoroplethMap({
       ),
     );
     let y = 92 + (titleLines.length - 1) * 54 + 44;
-    wrap(subtitle, 68).forEach((l, i) =>
+    const subLines = wrap(subtitle, 66);
+    subLines.forEach((l, i) =>
       parts.push(
-        `<text x="54" y="${y + i * 32}" font-family="${SERIF}" font-size="24" fill="${MUTED}">${esc(l)}</text>`,
+        `<text x="54" y="${y + i * 38}" font-family="${SERIF}" font-size="28" fill="${MUTED}">${esc(l)}</text>`,
       ),
     );
-    y += wrap(subtitle, 68).length * 32 + 24;
+    y += subLines.length * 38 + 24;
 
     // The map, as currently zoomed.
+    // Unzoomed, drop the bottom strip (Antarctica) so the map isn't padded
+    // with empty land the data never touches.
+    const cropH = view.k === 1 ? H * 0.88 : H / view.k;
     const mw = CW - 80;
-    const mh = (mw * H) / W;
-    const vb = `${-view.x / view.k} ${-view.y / view.k} ${W / view.k} ${H / view.k}`;
+    const mh = (mw * cropH) / (W / view.k);
+    const vb = `${-view.x / view.k} ${-view.y / view.k} ${W / view.k} ${cropH}`;
     const shapes = drawn
       .map((i) => {
         const s = map.shapes[i.name];
@@ -221,19 +225,23 @@ export function ChoroplethMap({
       swatches.push({ fill: c.fill, label: c.label }),
     );
     swatches.push({ fill: NO_DATA_FILL, label: "No data" });
-    const slot = (CW - 108) / swatches.length;
-    swatches.forEach((s, i) => {
-      const x = 54 + i * slot;
-      parts.push(`<rect x="${x}" y="${y}" width="28" height="20" fill="${s.fill}" stroke="#d9d5cc"/>`);
+    // Three per row so the labels can stay large (legend text is the first
+    // thing lost when a PNG is viewed small; see docs/MAPS.md).
+    const PER_ROW = 3;
+    const slot = (CW - 108) / PER_ROW;
+    swatches.forEach((sw, idx) => {
+      const x = 54 + (idx % PER_ROW) * slot;
+      const yy = y + Math.floor(idx / PER_ROW) * 48;
+      parts.push(`<rect x="${x}" y="${yy}" width="36" height="28" fill="${sw.fill}" stroke="#d9d5cc"/>`);
       parts.push(
-        `<text x="${x + 36}" y="${y + 16}" font-family="${SERIF}" font-size="16" fill="${INK}">${esc(s.label)}</text>`,
+        `<text x="${x + 46}" y="${yy + 23}" font-family="${SERIF}" font-size="28" fill="${INK}">${esc(sw.label)}</text>`,
       );
     });
-    y += 74;
+    y += Math.ceil(swatches.length / PER_ROW) * 48 + 40;
 
     // Ranked list fills the space below the map and gives exact numbers.
     parts.push(
-      `<text x="54" y="${y}" font-family="${SERIF}" font-size="26" font-weight="700" fill="${INK}">${esc(rankTitle)}</text>`,
+      `<text x="54" y="${y}" font-family="${SERIF}" font-size="30" font-weight="700" fill="${INK}">${esc(rankTitle)}</text>`,
     );
     y += 20;
     const top = ranked.slice(0, 10);
@@ -242,12 +250,12 @@ export function ChoroplethMap({
       const col = Math.floor(i / 5);
       const row = i % 5;
       const x = 54 + col * colW;
-      const yy = y + 40 + row * 46;
+      const yy = y + 44 + row * 50;
       parts.push(
-        `<text x="${x}" y="${yy}" font-family="${SERIF}" font-size="24" fill="${INK}">${i + 1}. ${esc(r.name)}</text>`,
+        `<text x="${x}" y="${yy}" font-family="${SERIF}" font-size="28" fill="${INK}">${i + 1}. ${esc(r.name)}</text>`,
       );
       parts.push(
-        `<text x="${x + colW - 40}" y="${yy}" text-anchor="end" font-family="${SERIF}" font-size="24" font-weight="700" fill="${INK}">${esc(format(r.value))}</text>`,
+        `<text x="${x + colW - 40}" y="${yy}" text-anchor="end" font-family="${SERIF}" font-size="28" font-weight="700" fill="${INK}">${esc(format(r.value))}</text>`,
       );
     });
 
@@ -379,7 +387,7 @@ export function ChoroplethMap({
         {active ? (
           <div
             role="status"
-            className="pointer-events-none absolute z-10 hidden w-60 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] p-3 text-xs md:block"
+            className="pointer-events-none absolute z-10 hidden w-60 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--surface)] p-3 text-sm md:block"
             style={{ left: `min(${active.x + 14}px, calc(100% - 15rem))`, top: Math.min(active.y + 14, 9999) }}
           >
             {tooltip(active.name)}
@@ -388,7 +396,7 @@ export function ChoroplethMap({
       </div>
 
       {/* Phones: the selected country shows under the map instead of floating over it. */}
-      <div className="mt-3 min-h-[3rem] rounded-[var(--radius)] border border-[color:var(--border)] p-3 text-xs md:hidden">
+      <div className="mt-3 min-h-[3rem] rounded-[var(--radius)] border border-[color:var(--border)] p-3 text-sm md:hidden">
         {active ? (
           tooltip(active.name)
         ) : (
@@ -396,7 +404,8 @@ export function ChoroplethMap({
         )}
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+      <p className="small-caps mt-5 text-xs font-medium text-[color:var(--muted)]">Key</p>
+      <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-sm sm:text-base">
         {classing.hasZero ? <Swatch fill={ZERO_FILL} label="0" /> : null}
         {classing.classes.map((c) => (
           <Swatch
@@ -407,7 +416,7 @@ export function ChoroplethMap({
         ))}
         <Swatch fill={NO_DATA_FILL} label="No data" />
       </div>
-      <p className="mt-2 text-xs text-[color:var(--muted)]">
+      <p className="mt-3 text-sm text-[color:var(--muted)]">
         Countries are grouped into bands from lowest to highest, with round cut-offs. Ctrl + scroll or pinch to
         zoom, then drag to move.
       </p>
@@ -420,9 +429,9 @@ export function ChoroplethMap({
 
 function Swatch({ fill, label }: { fill: string; label: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 tabular-nums text-[color:var(--muted)]">
+    <span className="inline-flex items-center gap-2 tabular-nums text-[color:var(--foreground)]">
       <span
-        className="inline-block h-3.5 w-5 border border-[color:var(--border)]"
+        className="inline-block h-5 w-7 border border-[color:var(--border)]"
         style={{ background: fill }}
         aria-hidden="true"
       />
