@@ -1,6 +1,6 @@
 # Script — Does the BITE model make college football a cult?
 
-**Slug:** `ig-dd4ahhgy8zj` | **Estimated runtime:** 145.1s (budget 60-180s) | **Source time:** 26.1s (18%)
+**Slug:** `ig-dd4ahhgy8zj` | **Estimated runtime:** 171.0s (budget 60-180s) | **Source time:** 26.1s (15%)
 
 **Hook (title/description only, not shown on screen):** 'Four boxes checked. Cult proven?'
 
@@ -70,33 +70,40 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** bite-study-2022
 - **Notes:** 
 
-## 11. `n10` (narration, ~10.1s)
+## 11. `n08a` (narration, ~25.9s)
+- **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
+- **Pose:** researching
+- **Narration:** Rapid-fire: the sample was a convenience sample, heavily weighted toward people who already identified as former members. There was no representative comparison with ordinary religions, schools, workplaces, sports teams, or families. Principal-component analysis can show that survey answers cluster; it does not show that the instrument separates harmful groups from normal ones. The criteria are elastic enough that the same behavior can be called discipline in one group and mind control in another. And the evaluator can start with the label 'cult' and then interpret every ambiguous behavior as confirmation. Those are serious validity problems.
+- **Sources:** bite-study-2022, bite-limitations-2022, young-griffith-1992-coercive-persuasion
+- **Notes:** 
+
+## 12. `n10` (narration, ~10.1s)
 - **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
 - **Pose:** skeptical
 - **Narration:** My objection is the shortcut from a suggested pattern to an institutional verdict. The same words can teach a commitment or shut down a question. Show which is happening. Naming four categories does not do that work.
 - **Notes:** 
 
-## 12. `c02` (clip, ~12.3s)
+## 13. `c02` (clip, ~12.3s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** concerned
 - **Clip:** Source video, 63.98s–76.25s @ speed 1.0
 - **Notes:** 
 
-## 13. `n09` (narration, ~9.5s)
+## 14. `n09` (narration, ~9.5s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** concerned
 - **Narration:** That is the serious allegation: fear of losing family and eternity. A football joke cannot answer it. We would need the actual talks, their context, and evidence of what happens when people question or leave.
 - **Sources:** source-video
 - **Notes:** 
 
-## 14. `n11` (narration, ~9.0s)
+## 15. `n11` (narration, ~9.0s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** teaching
 - **Narration:** A useful assessment asks about deception, enforced dependence, punishment for dissent, freedom to leave, and actual harm. Apply that scrutiny consistently, including to familiar institutions. Belonging by itself proves neither coercion nor safety.
 - **Sources:** bite-official
 - **Notes:** 
 
-## 15. `n99` (narration, ~7.4s)
+## 16. `n99` (narration, ~7.4s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** encouraging
 - **Narration:** Judge General Conference by what is actually taught and done. If your method cannot distinguish coercion from commitment, counting more boxes will not fix it. God bless.
