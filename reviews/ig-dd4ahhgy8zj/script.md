@@ -64,7 +64,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n08a` (narration, ~14.2s)
 - **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
 - **Pose:** researching
-- **Narration:** Rapid-fire: the sample was a convenience sample, heavily weighted toward people who already identified as former members. There was no representative comparison with ordinary religions, schools, workplaces, sports teams, or families. Principal-component analysis can show that survey answers cluster; it does not show that the instrument separates harmful groups from normal ones.
+- **Narration:** Here are a few of the issues with the study: the sample was a convenience sample, heavily weighted toward people who already identified as former members. There was no representative comparison with ordinary religions, schools, workplaces, sports teams, or families. Principal-component analysis can show that survey answers cluster; it does not show that the instrument separates harmful groups from normal ones.
 - **Sources:** bite-study-2022, bite-limitations-2022
 - **Notes:** 
 
@@ -104,7 +104,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 15. `n11a` (narration, ~14.2s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** thoughtful
-- **Narration:** It fits a normal family, too. Parents set the rules, decide what a child hears, teach what to believe, and make leaving feel like betrayal. Nobody calls that a cult, because what matters is how much freedom people have to question and to leave. Belonging by itself proves neither coercion nor safety.
+- **Narration:** It fits a normal family, too. Parents set the rules, decide what a child hears, teach what to believe, and leaving is often accompanied by strong emotions. Nobody calls that a cult, because what matters is how much freedom people have to question and to leave. Belonging by itself proves neither coercion nor safety.
 - **Sources:** bite-official
 - **Notes:** 
 
