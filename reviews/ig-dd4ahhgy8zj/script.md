@@ -45,13 +45,13 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n06` (narration, ~11.2s)
 - **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
 - **Pose:** teaching
-- **Narration:** That is satire, not a diagnosis. Choosing team coverage is different from having outside information suppressed. Shared schedules, specialized language, and loyalty could describe schools, workplaces, families, military units, or religions. The labels alone cannot settle whether the influence is coercive.
+- **Narration:** That is satire, not a diagnosis. Choosing team coverage is different from having outside information suppressed. Shared schedules, specialized language, and loyalty could describe schools, workplaces, families, military units, or religions. The labels alone cannot settle whether the influence is coercive. (remove line)
 - **Notes:** 
 
 ## 08. `n07` (narration, ~9.0s)
 - **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
 - **Pose:** source
-- **Narration:** Hassan actually tells readers to use BITE with his Influence Continuum. So this football example does not refute his entire framework. It exposes what goes wrong when broad similarities are treated as proof.
+- **Narration:** Hassan actually tells readers to use BITE with his Influence Continuum. So this football example does not refute his entire framework. It exposes what goes wrong when broad similarities are treated as proof. (remove line)
 - **Sources:** bite-official
 - **Notes:** 
 
@@ -85,21 +85,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 13. `n09` (narration, ~9.5s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** concerned
-- **Narration:** That is the serious allegation: fear of losing family and eternity. A football joke cannot answer it. We would need the actual talks, their context, and evidence of what happens when people question or leave.
+- **Narration:** That is the serious allegation: fear of losing family and eternity. But is that what Latter-day Saints threaten? And what's the alternative? If you are an atheist like this therapist, you don't believe in eternal life, let alone spending it with family. If you are a Christian your church likely teaches that familial relationships end at death. 
 - **Sources:** source-video
 - **Notes:** 
 
 ## 14. `n11` (narration, ~9.0s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** teaching
-- **Narration:** A useful assessment asks about deception, enforced dependence, punishment for dissent, freedom to leave, and actual harm. Apply that scrutiny consistently, including to familiar institutions. Belonging by itself proves neither coercion nor safety.
+- **Narration:** A useful assessment asks about deception, enforced dependence, punishment for dissent, freedom to leave, and actual harm. Apply that scrutiny consistently, including to familiar institutions, like the military, schools, workplaces, athletic teams, families, and traditional religions can all qualify as "high control groups" or "cults" under the model. Belonging by itself proves neither coercion nor safety.
 - **Sources:** bite-official
 - **Notes:** 
 
 ## 15. `n99` (narration, ~7.4s)
 - **Original Video Transcript:** Losing your family, losing eternity, losing yourself, that pairing is not accidental. It's conditioning. It teaches you to feel the cost of leaving before the thought is even complete.
 - **Pose:** encouraging
-- **Narration:** Judge General Conference by what is actually taught and done. If your method cannot distinguish coercion from commitment, counting more boxes will not fix it. God bless.
+- **Narration:** Judge General Conference by what is actually taught and done. If your method cannot distinguish coercion from commitment, you need a better method. God bless.
 - **Notes:** 
 
 ## Full source transcript
