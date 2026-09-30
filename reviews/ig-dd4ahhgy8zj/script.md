@@ -53,14 +53,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n08` (narration, ~9.8s)
 - **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
 - **Pose:** researching
-- **Narration:** That 2022 report finds a pattern among questionnaire responses. It does not establish a diagnostic cutoff separating an ordinary group from a destructive cult. A statistical pattern is not the same as an accurate classification test.
+- **Narration:** That 2022 report finds a pattern among questionnaire responses. It does not establish a diagnostic cutoff separating an ordinary group from a destructive cult. It fails as an accurate classification test.
 - **Sources:** bite-study-2022
 - **Notes:** 
 
 ## 09. `n08a` (narration, ~25.9s)
 - **Original Video Transcript:** This is what Stephen Hassan's bite model describes. It gives behavior, information, thought, and emotional control all running simultaneously. General Conference is one of the most observable examples of all four operating in a single broadcast.
 - **Pose:** researching
-- **Narration:** Rapid-fire: the sample was a convenience sample, heavily weighted toward people who already identified as former members. There was no representative comparison with ordinary religions, schools, workplaces, sports teams, or families. Principal-component analysis can show that survey answers cluster; it does not show that the instrument separates harmful groups from normal ones. The criteria are elastic enough that the same behavior can be called discipline in one group and mind control in another. And the evaluator can start with the label 'cult' and then interpret every ambiguous behavior as confirmation. Those are serious validity problems.
+- **Narration:** Rapid-fire: the sample was a convenience sample, heavily weighted toward people who already identified as former members. There was no representative comparison with ordinary religions, schools, workplaces, sports teams, or families. Principal-component analysis can show that survey answers cluster; it does not show that the instrument separates harmful groups from normal ones. The criteria are elastic enough that the same behavior can be called discipline in one group and mind control in another. And the evaluator can start with the label 'cult' and then interpret every ambiguous behavior as confirmation. These are serious validity problems.
 - **Sources:** bite-study-2022, bite-limitations-2022, young-griffith-1992-coercive-persuasion
 - **Notes:** 
 
