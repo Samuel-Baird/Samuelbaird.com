@@ -19,7 +19,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~16.1s)
 - **Original Video Transcript:** So in 1881, Oliver Huntington claimed that Joseph Smith, the prophet of the Mormon Church, taught that there were people living on the moon.
 - **Pose:** skeptical
-- **Narration:** This is a thirdhand story, and no record of Joseph Smith himself teaching it has turned up. Oliver Huntington wrote it down in 1881, thirty-seven years after Joseph died, and said he heard it from Philo Dibble. It would be a better story if it came from a sermon or a journal of Joseph's own. None has turned up.
+- **Narration:** This is a thirdhand story and no record of Joseph Smith himself teaching it has turned up. Oliver Huntington wrote it down in 1881, thirty-seven years after Joseph died, and said he heard it from Philo Dibble. It would be a better story if it came from a sermon or a journal of Joseph's own. None has turned up.
 - **Sources:** bitton-knowing-joseph-again-moon
 - **Notes:** 
 
