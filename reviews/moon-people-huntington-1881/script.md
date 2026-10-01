@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): Did Joseph Smith teach that people live on the moon?  
 > **Post caption** (goes with the upload, not shown on screen): The moon-people story is real. So is the fact that it reaches us thirdhand, thirty-seven years after Joseph Smith died. Who told it, and who was already saying the same thing?
 
-**Slug:** `moon-people-huntington-1881` | **Estimated runtime:** 88.9s (budget 60-180s) | **Source time:** 20.4s (23%)
+**Slug:** `moon-people-huntington-1881` | **Estimated runtime:** 96.8s (budget 60-180s) | **Source time:** 20.4s (21%)
 
 **Hook (title/description only, not shown on screen):** "A thirdhand story from 1881 is not a teaching, and the reel's own best evidence shows why."
 **Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
@@ -16,10 +16,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 4.1s–10.6s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~10.4s)
+## 02. `n01` (narration, ~16.1s)
 - **Original Video Transcript:** So in 1881, Oliver Huntington claimed that Joseph Smith, the prophet of the Mormon Church, taught that there were people living on the moon.
 - **Pose:** skeptical
-- **Narration:** This is a thirdhand story, and no record from Joseph Smith's lifetime has been found to support it. Oliver Huntington wrote it down in 1881, thirty-seven years after Joseph died, and said he heard it from Philo Dibble.
+- **Narration:** This is a thirdhand story, and no record of Joseph Smith himself teaching it has turned up. Oliver Huntington wrote it down in 1881, thirty-seven years after Joseph died, and said he heard it from Philo Dibble. It would be a better story if it came from a sermon or a journal of Joseph's own. None has turned up.
 - **Sources:** bitton-knowing-joseph-again-moon
 - **Notes:** 
 
@@ -88,10 +88,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** moses-1-35-raw
 - **Notes:** 
 
-## 12. `n99` (narration, ~6.0s)
+## 12. `n99` (narration, ~8.2s)
 - **Original Video Transcript:** There is scarcely any doubt now remaining in the philosophical world that the moon is a habitable globe, and that it was indeed inhabited.
 - **Pose:** encouraging
-- **Narration:** The revealed text gives worlds without number, an account of only this one, and leaves the moon to the astronomers. God bless.
+- **Narration:** Worlds without number, and an account of only this one. And if there is intelligent life out there, the God who made those worlds would redeem them too. God bless.
 - **Notes:** 
 
 ## Full source transcript
