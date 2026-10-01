@@ -98,4 +98,5 @@ Fresh review of the 2026-10-01 audience and analogy revision. Read current `scri
 
 Current totals: 0 BLOCKER, 0 MAJOR, 1 MINOR.
 
-`nFactcheck follow-up: the n03 citation suggestion was addressed by adding the Catholic and Protestant primary examples; no narration wording changed.
+
+Factcheck follow-up: the n03 citation suggestion was addressed by adding the Catholic and Protestant primary examples; no narration wording changed.
