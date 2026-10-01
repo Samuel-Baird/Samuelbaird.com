@@ -1,60 +1,92 @@
-# Did Joseph Smith Dress Up as the Holy Ghost?
+# Script — Joseph Smith in a Sheet? Check the Evidence
 
-Reaction script • approximately 2 minutes including source clip, depending on delivery.
+> **Video title** (upload title, not shown on screen): Joseph Smith in a Sheet? Check the Evidence  
+> **Post caption** (goes with the upload, not shown on screen): A ghost story at a baptism? What does the nineteenth-century newspaper actually give us?
 
-**Upload caption:** The 1835 newspaper allegation exists. What does it actually establish? Here is the claim, its source, and the contemporary denial.
+**Slug:** `smith-holy-ghost-sheet-claim` | **Estimated runtime:** 95.3s (budget 60-180s) | **Source time:** 12.1s (13%)
 
-**Opening source clip:** source.mp4, 00:09.20–00:21.30 (12.1 seconds). Preserve the speaker's complete claim through “Holy Ghost at baptism.”
+**Hook (title/description only, not shown on screen):** 'Joseph Smith in a sheet? Check the evidence.'
+**Exemplars modeled:** trent-horn-distill, mcclellan-delivery, peterson-breaking-the-rules
 
-## 02. n01 — source
+Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-There is a real newspaper story behind this claim. You can name it, date it, and read it. But the clip changes what the story actually alleges.
+## 01. `c01` (clip, ~12.1s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** skeptical
+- **Clip:** Source video, 9.2s–21.3s @ speed 1
+- **Notes:** 
 
-**Sources:** mormon-angel-1835, byu-newspaper-bibliography.
+## 02. `n01` (narration, ~8.7s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** source
+- **Narration:** This newspaper story does not establish that Joseph Smith staged a baptismal fraud. The argument depends on how reliable the account is, and that requires more than knowing it appeared in print.
+- **Sources:** ds-1835-mormon-angel-historian, critic-reel
+- **Notes:** 
 
-## 03. n02 — reading
+## 03. `q01` (card, ~11.2s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** reading
+- **Narration:** The June eighteen thirty-five article describes an angel, rather than the Holy Ghost. Its writer signs D. S. and says he heard the story from one of the three supposed captors. The printed name is only S, followed by a dash.
+- **Card quote:** “from the lips of one of the daring trio” — D. S., The Mormon Angel, June 6, 1835, p. 192 (transcription)
+- **Sources:** ds-1835-mormon-angel-historian
+- **Notes:** 
 
-The article is called The Mormon Angel, published June sixth, eighteen thirty-five, in the Evangelical Magazine and Gospel Advocate. It alleges that three men caught Joseph Smith posing as an angel during nighttime baptisms, wearing a sheet and hiding a lantern.
+## 04. `n02` (narration, ~12.0s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** thoughtful
+- **Narration:** The claimed eyewitness reaches us through someone else's report. The article gives no incident date or full name for its informant, and it supplies no separate accounts from the other two alleged captors. That limits how much of the story we can independently check.
+- **Sources:** ds-1835-mormon-angel-historian
+- **Notes:** 
 
-**Sources:** mormon-angel-1835.
+## 05. `n03` (narration, ~10.6s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** teaching
+- **Narration:** Counting the reprints tells us how far the accusation traveled. A university dissertation traces versions through thirty-one newspapers. That count does not identify thirty-one independent witnesses. Multiple copies of this account cannot establish that its underlying testimony was accurate.
+- **Sources:** chatelain-2018-press-historian
+- **Notes:** 
 
-## 04. n03 — teaching
+## 06. `n04` (narration, ~14.2s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** concerned
+- **Narration:** The contemporary LDS response also matters. That July, the Messenger and Advocate rejected the story and asserted Joseph had never attended a baptism near the alleged location. The denial came from his defenders, so it does not independently settle the event. It does establish that the allegation was challenged at the time.
+- **Sources:** cowdery-1835-slanderous-historian, red-team-messenger-july1835-ocr-inspected
+- **Notes:** 
 
-An angel. The article does not identify him as the Holy Ghost. And its writer, signing only D. S., does not claim to have witnessed it. He says one of the three men told him. That man's name is printed only as S, followed by a dash.
+## 07. `n05` (narration, ~8.7s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** reading
+- **Narration:** The early LDS ordinance is documented in an eighteen thirty-one newspaper printing: confirmation by laying on hands after baptism. That is evidence of prescribed practice; alleged unauthorized misconduct needs its own evidence.
+- **Sources:** articles-covenants-1831-painesville-confirmation
+- **Notes:** 
 
-**Sources:** mormon-angel-1835.
+## 08. `n06` (narration, ~15.0s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** pointing
+- **Narration:** As a reason to conclude Joseph was running a con, this story has a weak link: we cannot independently check its informant's account. Its publication and repetition are documented. Its alleged exposure of Joseph is not independently established by these sources. That makes withholding the fraud conclusion better supported than building it on this anecdote.
+- **Sources:** ds-1835-mormon-angel-historian, cowdery-1835-slanderous-historian, chatelain-2018-press-historian
+- **Notes:** 
 
-## 05. n04 — concerned
+## 09. `n99` (narration, ~2.7s)
+- **Original Video Transcript:** I think it was a con. I saw this recently. There were stories of, published in newspapers back in the 1800s, of Joseph Smith dressing in a white sheet and pretending to be the Holy Ghost at baptism.
+- **Pose:** encouraging
+- **Narration:** Thirty-one printings cannot supply the missing independent corroboration. God bless.
+- **Sources:** chatelain-2018-press-historian
+- **Notes:** 
 
-The story circulated widely. Historian Jeremy Chatelain identified thirty-one newspapers carrying versions in eighteen thirty-five, and cites one from January, months before this June article. So June is not a secure starting point. And reprints do not become independent eyewitnesses just because more editors print them.
+## Full source transcript
 
-**Sources:** chatelain-2018-angel.
+Every line of the source video, timestamped, for checking each response beat above against the full context -- not just the clip spans quoted from it.
 
-## 06. n05 — reading
-
-The church's Messenger and Advocate also reproduced the allegation that July and denied it. Its editor said Joseph had neither baptized nor attended a baptism near Painesville. That is a contemporary rebuttal to weigh alongside the accusation; it does not settle the case by itself.
-
-**Sources:** messenger-advocate-1835-denial.
-
-## 07. n99 — encouraging
-
-The evidence establishes that this allegation circulated in eighteen thirty-five. It does not, by itself, establish that Joseph did it. The clip gives us the conclusion without the source's limitations. A sheet makes a memorable story. It doesn't supply the missing corroboration. God bless.
-
-## Edit cues
-
-- Show the article title, June 6, 1835, and p. 192 during n02. Label the account “Newspaper allegation.”
-- During n03, show “angel,” “D. S.,” and “S——” in the historical text. Show “Purported participant → D. S. → newspaper”; this is the June account's stated provenance, not a proven origin for every version.
-- During n04, show “31 newspaper printings ≠ 31 independent witnesses.” Attribute the count and January citation to Chatelain.
-- During n05, show the July 1835 rebuttal with the label “Contemporary LDS denial.”
-
-## Source notes
-
-- **mormon-angel-1835:** D. S., “The Mormon Angel,” Evangelical Magazine and Gospel Advocate, June 6, 1835, p. 192. [Read source](https://bookofmormon.online/history/1835-06-06-the-mormon-angel)
-- **byu-newspaper-bibliography:** Harold B. Lee Library, nineteenth-century newspaper bibliography; independently lists article/date/page. [Read source](https://lib.byu.edu/collections/19th-century-publications-about-the-book-of-mormon/about/master-list-of-documents/)
-- **chatelain-2018-angel:** Jeremy John Chatelain, 2018 University of Utah dissertation, printed pp. 191–193 (PDF pp. 200–202), especially p. 192 and footnote 472. The January 29 citation is verified here through the dissertation, not by inspection of that newspaper issue. [Read source](https://collections.lib.utah.edu/dl_files/e5/e6/e5e6efb72641a8130fbce91a605af4278063bb18.pdf)
-- **messenger-advocate-1835-denial:** “Slanderous,” Latter Day Saints’ Messenger and Advocate 1, no. 10 (July 1835), pp. 148–149; historical text transcribed by FAIR. [Read source](https://www.fairlatterdaysaints.org/answers/Messenger_and_Advocate/1/10)
-
-## Editorial accuracy notes
-
-This revision replaces the earlier claims that the story could not be cited and appeared in only one paper. It does not treat the church's prescribed ordinance as proof that a purported off-book incident could not have occurred. It removes the unsupported Hurlbut comparison and the claim that the article was published a known number of years after the alleged incident. The exact origin and date of the alleged event remain uncertain. The periodical's denominational identity is omitted because it is unnecessary to the argument. Existing research/claims.md and research/critique.md predate this corrected script and should not be treated as validation of this revision.
-
+- `[00:00.00–00:02.50]` Do you think that they actually saw something
+- `[00:02.50–00:04.00]` or at the very least that Joseph Smith
+- `[00:04.00–00:05.06]` actually saw something,
+- `[00:05.26–00:06.76]` or do you think it was all a con?
+- `[00:07.14–00:08.52]` I think they could have seen something.
+- `[00:09.22–00:10.04]` I think it was a con.
+- `[00:10.36–00:10.98]` I saw this recently.
+- `[00:11.16–00:12.46]` There were stories of,
+- `[00:13.18–00:15.84]` published in newspapers back in the 1800s,
+- `[00:16.14–00:18.54]` of Joseph Smith dressing in a white sheet
+- `[00:19.16–00:21.22]` and pretending to be the Holy Ghost at baptism.
+- `[00:21.72–00:22.88]` Josh and the Giant.
+- `[00:23.42–00:25.30]` Josh, Josh and the Giant.
