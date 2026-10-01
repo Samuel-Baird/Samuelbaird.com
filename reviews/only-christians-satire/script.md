@@ -69,7 +69,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `q03` (card, ~1.6s)
 - **Original Video Transcript:** Catholics, not Christian. Protestants, not Christian. They're protesting, not worshiping. Lutherans, they don't worship Jesus, they worship Martin Luther.
 - **Pose:** quote
-- **Narration:** Luther, on being called a Lutheran.
+- **Narration:** Luther, on being called a Lutheran said: "What is Luther? The teaching is not mine. Nor was I crucified for anyone."
 - **Card quote:** “What is Luther? The teaching is not mine. Nor was I crucified for anyone.” — Martin Luther, quoted in Garland, 1 Corinthians
 - **Sources:** garland-1cor-luther-not-crucified
 - **Notes:** 
@@ -105,7 +105,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n07` (narration, ~15.8s)
 - **Original Video Transcript:** Calvinists worship Calvin and Hobbes, not Jesus. Pentecostals worship Pentagons, Pentagram, even worse.
 - **Pose:** solemn
-- **Narration:** That condition makes a name a claim of ownership, not a certificate of discipleship. The revelation calling the Church the only true and living church adds that it speaks to the church collectively and not individually, and a standard LDS reference states that this does not mean members of other Christian faiths are not genuine followers of Christ.
+- **Narration:** That condition makes a name a claim of ownership, not a certificate of discipleship. The revelation calling the Church the only true and living church adds that it speaks to the church collectively and not individually, and a standard Latter-day Saint reference states that this does not mean members of other Christian faiths are not genuine followers of Christ.
 - **Sources:** dc-1-30-collectively, largey-dc-companion-only-true-living
 - **Notes:** 
 
