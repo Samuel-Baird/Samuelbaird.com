@@ -56,7 +56,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n03` (narration, ~13.1s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** source
-- **Narration:** Then there is the detail that gets skipped. Alma and Helam went under the water together once. For the next person, the text says Alma baptized him according to the first, only he did not bury himself again. In the footage, the baptizer goes under with each man.
+- **Narration:** Then there is the detail that gets skipped. Alma and Helam went under the water together once. For the next person, the text says Alma baptized him according to the first, only he did not bury himself again. In the footage, the baptizer goes under with each man, claiming he is following a pattern that scripture itself records as a one-off.
 - **Sources:** bofm-mosiah-18-v14-15
 - **Notes:** 
 
