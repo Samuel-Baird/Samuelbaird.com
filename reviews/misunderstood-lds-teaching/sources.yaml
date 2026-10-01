@@ -1,0 +1,141 @@
+sources:
+- id: live-christian
+  type: official
+  title: Are “Mormons” Christian?
+  author: null
+  date: '2016'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/christians?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: null
+  verification:
+    tool: web.run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/christians?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Institutional or canonical source; narration paraphrases except the recorded
+    card quotation. Displayed essay edition; current page inspected 2026-10-01.
+- id: live-creator
+  type: official
+  title: Catechism of the Catholic Church §§295–297
+  author: null
+  date: '1992'
+  locator: https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: null
+  verification:
+    tool: web.run
+    verdict: direct-read
+    link: https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Institutional or canonical source; narration paraphrases except the recorded
+    card quotation.
+- id: live-dc93
+  type: scripture
+  title: Doctrine and Covenants 93:29, 33
+  author: null
+  date: '1833-05-06'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: null
+  verification:
+    tool: web.run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Institutional or canonical source; narration paraphrases except the recorded
+    card quotation.
+- id: live-becoming
+  type: official
+  title: Becoming Like God
+  author: null
+  date: '2016'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/becoming-like-god?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: Our progression will never change His identity as our Father and our God.
+  verification:
+    tool: web.run
+    verdict: exact
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/becoming-like-god?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Institutional or canonical source; narration paraphrases except the recorded
+    card quotation. Displayed essay edition; current page inspected 2026-10-01.
+- id: live-ccc460
+  type: official
+  title: Catechism of the Catholic Church §§460, 464–468
+  author: null
+  date: '1992'
+  locator: https://www.vatican.va/archive/ENG0015/__P1J.HTM
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: For the Son of God became man so that we might become God.
+  verification:
+    tool: web.run
+    verdict: exact
+    link: https://www.vatican.va/archive/ENG0015/__P1J.HTM
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Institutional or canonical source; narration paraphrases except the recorded
+    card quotation.
+- id: live-baptism
+  type: official
+  title: Response on the validity of Latter-day Saint baptism
+  author: null
+  date: '2001-06-05'
+  locator: https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010605_battesimo_mormoni_en.html
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: null
+  verification:
+    tool: web.run
+    verdict: direct-read
+    link: https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010605_battesimo_mormoni_en.html
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Institutional or canonical source; narration paraphrases except the recorded
+    card quotation.
+- id: source-newayne
+  type: critic
+  title: Most misunderstood teaching — Latter-day Saints
+  author: Newayne
+  date: '2026-09-24'
+  locator: https://www.instagram.com/reel/Ddr-ylUv6U6/
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Full existing timestamped transcript and source video storyboard
+    frames
+  quote: null
+  verification:
+    tool: transcript context read
+    verdict: direct-read
+    link: https://www.instagram.com/reel/Ddr-ylUv6U6/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Classification-only qualification at 1:59 onward preserved in review transcript.

@@ -1,0 +1,178 @@
+version: 1
+slug: misunderstood-lds-teaching
+title: Are Latter-day Saints Christian? Define the disagreement.
+hook: A definition of Christianity needs an argument.
+summary: A response distinguishing creedal boundaries, eternal elements, and exaltation
+  from misleading summaries.
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: false
+music: null
+tags:
+- lds
+- christianity
+- exaltation
+beats:
+- id: c01
+  kind: clip
+  start: 28.34
+  end: 33.84
+  speed: 1.0
+  speaker: Source video
+  pose: thoughtful
+- id: n01
+  kind: narration
+  text: He is using a creedal definition of Christianity. Under that definition, exclusion
+    follows. The disputed question is whether that definition should govern every
+    account of Christian identity.
+  pose: teaching
+  stage: blank
+  opinion: true
+- id: n02
+  kind: narration
+  text: The Church explicitly professes Jesus Christ as the divine Savior and teaches
+    salvation through Him. It also openly rejects important parts of the historic
+    creeds.
+  pose: reading
+  stage: blank
+  opinion: false
+  sources:
+  - live-christian
+- id: n03
+  kind: narration
+  text: The current Church essay claims a restoration of Christianity. Catholics defend
+    the creeds as expressions of apostolic faith. Those are competing accounts of
+    Christian authority; identifying the difference does not decide between them.
+  pose: teaching
+  stage: blank
+  opinion: false
+  sources:
+  - live-christian
+  - live-ccc460
+- id: n04
+  kind: narration
+  text: Rome ruled Latter-day Saint baptism invalid in 2001. His video explicitly
+    says it is not arguing for or against LDS theology. My objection concerns presenting
+    a creedal classification as an uncontested definition.
+  pose: thoughtful
+  stage: blank
+  opinion: false
+  sources:
+  - live-baptism
+  - source-newayne
+- id: c02
+  kind: clip
+  start: 39.62
+  end: 52.28
+  speed: 1.0
+  speaker: Source video
+  pose: neutral
+- id: n05
+  kind: narration
+  text: Catholic teaching affirms creation from nothing. Doctrine and Covenants ninety-three
+    teaches that intelligence was not created and that the elements are eternal. The
+    difference is real.
+  pose: reading
+  stage: blank
+  opinion: false
+  sources:
+  - live-creator
+  - live-dc93
+- id: n06
+  kind: narration
+  text: For Catholics, the distinction between the uncreated Creator and created beings
+    is fundamental. Latter-day Saints dispute that account of creation. This establishes
+    a theological divide; whether it excludes Christian identity depends on the definition.
+  pose: teaching
+  stage: blank
+  opinion: false
+  sources:
+  - live-creator
+- id: c03a
+  kind: clip
+  start: 52.52
+  end: 64.94
+  speed: 1.0
+  speaker: Source video
+  pose: thoughtful
+- id: c03
+  kind: clip
+  start: 65.62
+  end: 77.34
+  speed: 1.0
+  speaker: Source video
+  pose: skeptical
+- id: n07
+  kind: narration
+  text: He is questioning a change of essence. The current official essay does not
+    define exaltation in those philosophical terms. It does clearly affirm becoming
+    like God. Those are different claims, and we should distinguish them. An affirmation
+    of exaltation is not, by itself, an official answer to every metaphysical question.
+  pose: reading
+  stage: blank
+  opinion: false
+  sources:
+  - live-becoming
+- id: q01
+  kind: card
+  text: The essay says exalted people continue worshipping the Father, and their progression
+    never replaces Him. That clarifies worship and dependence; it does not settle
+    every question about divine nature.
+  pose: teaching
+  card:
+    quote: Our progression will never change His identity as our Father and our God.
+    attribution: Becoming Like God — Gospel Topics essay
+    source: live-becoming
+  sources:
+  - live-becoming
+- id: n08
+  kind: narration
+  text: That same essay describes receiving your own planet as a cartoonish reduction
+    of exaltation. That image should not substitute for the teaching itself.
+  pose: teaching
+  stage: blank
+  opinion: false
+  sources:
+  - live-becoming
+- id: q02
+  kind: card
+  text: 'The Catholic Catechism quotes Athanasius: For the Son of God became man so
+    that we might become God. Its context is participation in divine life.'
+  pose: reading
+  card:
+    quote: For the Son of God became man so that we might become God.
+    attribution: Catechism of the Catholic Church §460, quoting Athanasius
+    source: live-ccc460
+  sources:
+  - live-ccc460
+- id: n09
+  kind: narration
+  text: Catholic divinization means sharing in divine life, not becoming the uncreated
+    Creator. LDS exaltation rests on a different account of divine parentage. Shared
+    language does not erase that disagreement. It does require explaining it accurately.
+  pose: thoughtful
+  stage: blank
+  opinion: false
+  sources:
+  - live-becoming
+  - live-ccc460
+- id: n99
+  kind: narration
+  text: The positive LDS claim is that Christ can transform God’s children to become
+    like their Father. Evaluate that claim in its own terms, alongside the creedal
+    objection. God bless.
+  pose: encouraging
+  stage: blank
+  opinion: false
+  sources:
+  - live-becoming
