@@ -1,11 +1,11 @@
 # Script — Does Mosiah 18 let anyone baptize?
 
 > **Video title** (upload title, not shown on screen): Does Mosiah 18 let anyone baptize?  
-> **Post caption** (goes with the upload, not shown on screen): If Mosiah 18 is the pattern, why does the same chapter end with a church? Read past the water.
+> **Post caption** (goes with the upload, not shown on screen): Alma already had authority before he stepped into the water, and the chapter says so. Read Mosiah 18 all the way through.
 
-**Slug:** `bear-lake-mass-baptism` | **Estimated runtime:** 85.7s (budget 60-180s) | **Source time:** 17.2s (20%)
+**Slug:** `bear-lake-mass-baptism` | **Estimated runtime:** 81.8s (budget 60-180s) | **Source time:** 17.2s (21%)
 
-**Hook (title/description only, not shown on screen):** 'Mosiah 18 is a pattern with three parts, and water is only the first.'
+**Hook (title/description only, not shown on screen):** 'Mosiah 18 is the pattern for baptizing with authority, not without it.'
 **Exemplars modeled:** peterson-breaking-the-rules, sola-scriptura-protestant
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
@@ -19,51 +19,51 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~9.5s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** skeptical
-- **Narration:** Mosiah 18 is a pattern with three parts, and water is only the first. Alma baptizes Helam, having authority from the Almighty God. Then the chapter says the baptized were called the church of God.
-- **Sources:** bofm-mosiah-18, bofm-mosiah-18-v17-18
+- **Narration:** Mosiah 18 is a pattern for baptizing with authority. Alma was among King Noah's priests before he ever stood in that water, and the baptism itself states it. Authority came first. The water came second.
+- **Sources:** bofm-mosiah-17-23, bofm-mosiah-18
 - **Notes:** 
 
-## 03. `q02` (card, ~7.4s)
+## 03. `q02` (card, ~4.9s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** reading
-- **Narration:** That is verse 17. Verse 18 adds that Alma, having authority from God, ordained priests. Not into any church is the one line the chapter itself contradicts.
-- **Card quote:** “And they were called the church of God, or the church of Christ, from that time forward. And it came to pass that whosoever was baptized by the power and authority of God was added to his church.” — Mosiah 18:17
-- **Sources:** bofm-mosiah-18-v17-18
+- **Narration:** Verse 13. The authority is spoken aloud in the baptism itself, by a man who already held office.
+- **Card quote:** “Helam, I baptize thee, having authority from the Almighty God, as a testimony that ye have entered into a covenant to serve him until you are dead as to the mortal body” — Mosiah 18:13
+- **Sources:** bofm-mosiah-18
 - **Notes:** 
 
-## 04. `n03` (narration, ~12.0s)
+## 04. `n03` (narration, ~13.1s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** source
-- **Narration:** Where Alma got his authority, the text doesn't say. That authority was required, the text says more than once. When King Limhi's people wanted baptism, there was no one in the land with authority from God. Ammon, a righteous man, declined, and they waited.
-- **Sources:** bofm-mosiah-21-25, bofm-mosiah-18
+- **Narration:** Then there is the detail that gets skipped. Alma and Helam went under the water together once. For the next person, the text says Alma baptized him according to the first, only he did not bury himself again. In the footage, the baptizer goes under with each man.
+- **Sources:** bofm-mosiah-18-v14-15
 - **Notes:** 
 
-## 05. `q03` (card, ~4.9s)
+## 05. `q03` (card, ~3.3s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** reading
-- **Narration:** Here is Mosiah 21, verse 33. The people were willing. The only thing missing was authority from God.
-- **Card quote:** “king Limhi and many of his people were desirous to be baptized; but there was none in the land that had authority from God. And Ammon declined doing this thing, considering himself an unworthy servant.” — Mosiah 21:33
-- **Sources:** bofm-mosiah-21-25
+- **Narration:** Verse 15. A pattern that is being followed should match the text.
+- **Card quote:** “And again, Alma took another, and went forth a second time into the water, and baptized him according to the first, only he did not bury himself again in the water.” — Mosiah 18:15
+- **Sources:** bofm-mosiah-18-v14-15
 - **Notes:** 
 
-## 06. `n04` (narration, ~16.6s)
+## 06. `n04` (narration, ~16.4s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** teaching
-- **Narration:** That is the Church's position in one sentence: authority is received, not assumed. When the risen Christ visited the Nephites, he first gave Nephi power to baptize, and then gave the words to say: Having authority given me of Jesus Christ. Hebrews puts it the same way. No one presumes to take this honor, but takes it when called by God.
-- **Sources:** bofm-3-nephi-11, nrsvue-hebrews-5-4
+- **Narration:** Everywhere else in scripture, baptism comes with authority. When the risen Christ visited the Nephites, he first gave Nephi power to baptize. Joseph Smith and Oliver Cowdery, with no church yet, did not baptize each other on the strength of Mosiah. A heavenly messenger laid hands on them and conferred the Aaronic Priesthood first, and then told them to baptize.
+- **Sources:** bofm-3-nephi-11, jsh-1-68-72
 - **Notes:** 
 
-## 07. `n05` (narration, ~11.7s)
+## 07. `n05` (narration, ~12.3s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** pointing
-- **Narration:** As for who authorizes a baptism, the General Handbook answers in writing. A priest or Melchizedek Priesthood holder performs it, and whoever does must be approved by the bishop. That is the rule today, and it follows the same logic as Mosiah 21.
-- **Sources:** handbook-18-7-3
+- **Narration:** And when King Limhi's people wanted baptism, there was no one in the land with authority from God. Ammon, a righteous man, declined, and they waited. The Church's written rule today follows the same logic. The person who baptizes must be approved by the bishop.
+- **Sources:** bofm-mosiah-21-25, handbook-18-7-3
 - **Notes:** 
 
-## 08. `n99` (narration, ~6.3s)
+## 08. `n99` (narration, ~5.2s)
 - **Original Video Transcript:** First off, what makes you think that I'm unauthorized? Let's just start there. Here they are following a pattern. Steven, if you will read in Mosiah 18, this is a pattern where Alma baptized Helam in this manner. So we're just following that. We're not getting baptized into any church.
 - **Pose:** encouraging
-- **Narration:** Mosiah 18 is the chapter where the church gets its name, which makes it an odd citation for baptizing into none. God bless.
+- **Narration:** If Mosiah 18 is the pattern, it starts with authority from God and ends with a church. God bless.
 - **Notes:** 
 
 ## Full source transcript
