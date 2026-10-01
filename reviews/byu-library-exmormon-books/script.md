@@ -1,12 +1,11 @@
 # Script — Is BYU hiding ex-Mormon books in Special Collections?
 
-> **Video title** (upload title, not shown on screen): Is BYU hiding ex-Mormon books in Special Collections?  
-> **Post caption** (goes with the upload, not shown on screen): BYU buys the books, lists them in a public catalog, and lets anyone with an account request them. Which part of that is the hiding?
+> **Video title:** Is BYU hiding ex-Mormon books in Special Collections?
+> **Post caption:** The University of Utah publishes two-hour Special Collections appointments with two business days of notice. BYU says no appointment is needed. Compare the access rules before calling the reading room censorship.
 
-**Slug:** `byu-library-exmormon-books` | **Estimated runtime:** 112.9s (budget 60-180s) | **Source time:** 22.7s (20%)
+**Slug:** `byu-library-exmormon-books` | **Estimated runtime:** 106.9s (budget 60-180s) | **Source time:** 22.7s (21%)
 
-**Hook (title/description only, not shown on screen):** "BYU keeps these books in Special Collections, and BYU's own library explains why."
-**Exemplars modeled:** mcclellan-delivery, offenders-are-mormons-christian
+**Hook (title/description only, not shown on screen):** 'How does BYU Special Collections access compare with the University of Utah?'
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
@@ -16,19 +15,19 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 59.3s–71.6s @ speed 1.5
 - **Notes:** 
 
-## 02. `n01` (narration, ~12.3s)
+## 02. `n01` (narration, ~10.6s)
 - **Original Video Transcript:** You are not allowed to check out Bad Mormon from the library. You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
 - **Pose:** pointing
-- **Narration:** A supervised reading room is the field standard, and BYU's own curators wrote it down after being robbed. In 2018 a rare bookseller stole from BYU's circulating shelves and from Special Collections. Their published account repeats the guidance: staff should observe researchers at all times.
-- **Sources:** seppi-skeem-2020-rbm-theft
+- **Narration:** Yes, on-site reading is less convenient than taking a book home, and sensitive reading can feel less private. But staff supervision is a special-collections security practice. The library field's guidelines recommend keeping researchers in view to protect the materials.
+- **Sources:** acrl-rbms-security-2012
 - **Notes:** 
 
-## 03. `q01` (card, ~4.1s)
+## 03. `q01` (card, ~4.9s)
 - **Original Video Transcript:** You are not allowed to check out Bad Mormon from the library. You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
 - **Pose:** reading
-- **Narration:** Here is the sentence, as the two curators quote it from the library field guidelines.
-- **Card quote:** “Staff should observe researchers at all times and not allow them to work unobserved behind bookcases, book trucks, stacks of books, or any other obstacles” — Seppi and Skeem, RBM, 2020, quoting the ACRL/RBMS security guidelines
-- **Sources:** seppi-skeem-2020-rbm-theft
+- **Narration:** The guideline says staff should observe researchers at all times. That is a security rule for special collections.
+- **Card quote:** “Staff should observe researchers at all times” — ACRL/RBMS security guidelines (2012), section 6
+- **Sources:** acrl-rbms-security-2012
 - **Notes:** 
 
 ## 04. `c02` (clip, ~14.5s)
@@ -37,70 +36,59 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 103.5s–125.2s @ speed 1.5
 - **Notes:** 
 
-## 05. `n02` (narration, ~9.0s)
+## 05. `n02` (narration, ~8.7s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** teaching
-- **Narration:** Special Collections is not only for antiques. BYU's Americana collection is defined by subject, Mormonism, Utah and the West, and BYU's own library gives one reason these books cannot be checked out: preservation.
-- **Sources:** byu-ask-lib-2026-americana-faq
+- **Narration:** Special Collections is not only for antiques. BYU's Americana collection covers Mormonism, Utah and the West. Its posted collecting document explicitly extends to the present and includes works critical of the Church.
+- **Sources:** byu-ask-lib-2026-americana-faq, byu-lib-2018-americana-collecting-policy
 - **Notes:** 
 
-## 06. `q02` (card, ~3.0s)
+## 06. `q02` (card, ~5.2s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** quote
-- **Narration:** This is BYU's own answer, from its Ask a Librarian page.
+- **Narration:** BYU explains that these books are kept for preservation and may be read in the Special Collections reading room.
 - **Card quote:** “Because these books are being kept for preservation purposes, they may not be checked out.” — Harold B. Lee Library, BYU, Ask a Librarian: What is the Americana collection?
 - **Sources:** byu-ask-lib-2026-americana-faq
 - **Notes:** 
 
-## 07. `n03` (narration, ~11.5s)
-- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
-- **Pose:** quote
-- **Narration:** A subject-defined collection can hold new books. Whitworth University's policy says so in plain words, for books that are neither rare nor fragile. The collection's job is a focused research holding kept for the long term, and age is not the test.
-- **Sources:** whitworth-special-collections-policy
-- **Notes:** 
-
-## 08. `q03` (card, ~1.9s)
-- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
-- **Pose:** reading
-- **Narration:** Here is how Whitworth University states it.
-- **Card quote:** “they may include new or recent books that fall in the defined subject area but are neither rare nor exceptionally valuable nor particularly fragile.” — Special Collections policy, Whitworth University Library (rev. 2015)
-- **Sources:** whitworth-special-collections-policy
-- **Notes:** 
-
-## 09. `n04` (narration, ~11.7s)
-- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
-- **Pose:** source
-- **Narration:** BYU's own collecting policy runs the opposite way from hiding. It says Mormon-related books are collected comprehensively, and its list names anti-Mormon works. The restriction policy adds that every holding gets a publicly accessible catalog record, which is how she found these two. If they wanted to hide the books from students, why would they keep the books in the library in the first place?
-- **Sources:** byu-lib-2018-americana-collecting-policy, byu-lib-2016-restriction-policy
-- **Notes:** 
-
-## 10. `q04` (card, ~2.5s)
-- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
-- **Pose:** quote
-- **Narration:** This is the first line of that collecting policy.
-- **Card quote:** “Mormon-related books and other printed or published items are collected comprehensively.” — Americana Collection Development Policy, L. Tom Perry Special Collections, BYU
-- **Sources:** byu-lib-2018-americana-collecting-policy
-- **Notes:** 
-
-## 11. `n05` (narration, ~16.4s)
-- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
-- **Pose:** thoughtful
-- **Narration:** Libraries do move books to safer rooms after theft and vandalism. BYU's curators quote the guidance that related materials may be moved to a more secure area, and they write that BYU should have moved books with notable Mormon-related provenance out of circulation sooner.
-- **Sources:** seppi-skeem-2020-rbm-theft
-- **Notes:** 
-
-## 12. `n06` (narration, ~11.2s)
+## 07. `n03` (narration, ~10.1s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** pointing
-- **Narration:** Even the University of Utah, the library she holds up as the "secular" benchmark, runs its special collections reading room by appointment, with two business days' notice. Appointments and a reading room are how special collections work.
+- **Narration:** Elsewhere in her video, she mentions the University of Utah because it has her book. Let's compare the two reading rooms' published visit rules. The U asks for two business days' notice and offers two-hour appointment blocks.
 - **Sources:** utah-marriott-special-collections-reading-room
 - **Notes:** 
 
-## 13. `n99` (narration, ~6.8s)
+## 08. `n04` (narration, ~8.7s)
+- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
+- **Pose:** source
+- **Narration:** BYU's own FAQ says you do not need an appointment. You can visit during open hours. An online material request is not the same thing as booking a visit two days ahead.
+- **Sources:** byu-no-appointment-faq-2026, byu-special-collections-hours-2026
+- **Notes:** 
+
+## 09. `n05` (narration, ~9.3s)
+- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
+- **Pose:** teaching
+- **Narration:** The U posts reading-room hours of ten to four, Monday through Friday. BYU currently posts ten to five forty-five on weekdays, with a Tuesday devotional closure. On these published measures, BYU offers easier access.
+- **Sources:** utah-marriott-special-collections-reading-room, byu-special-collections-hours-2026
+- **Notes:** 
+
+## 10. `n06` (narration, ~9.3s)
+- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
+- **Pose:** thoughtful
+- **Narration:** That compares reading-room access. It does not tell us where the U shelves these memoirs. To establish selective treatment at BYU, compare critical and favorable recent Mormon books and how each can be borrowed.
+- **Notes:** 
+
+## 11. `n07` (narration, ~8.5s)
+- **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
+- **Pose:** source
+- **Narration:** The Americana collecting document linked on BYU's website specifically lists anti-Mormon works. That explains why critical books belong in the collection. It does not establish why these particular copies cannot circulate.
+- **Sources:** byu-lib-2018-americana-collecting-policy
+- **Notes:** 
+
+## 12. `n99` (narration, ~9.0s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** encouraging
-- **Narration:** A library that buys the books, lists them in a public catalog, and hands them to anyone who registers is hiding them badly. God bless.
-- **Sources:** byu-lib-2016-restriction-policy, byu-lib-sc-faq
+- **Narration:** You can argue that BYU should offer a circulating copy too. But a supervised reading room does not establish censorship. The evidence shown supports an access complaint, not the claimed motive. God bless.
 - **Notes:** 
 
 ## Full source transcript
@@ -142,3 +130,19 @@ Every line of the source video, timestamped, for checking each response beat abo
 - `[01:54.12–01:58.28]` These books were published in just the last few years, and they are definitely not antiques,
 - `[01:58.44–02:02.16]` so to me it seems pretty clear that BYU just wants to make it more difficult
 - `[02:02.16–02:05.18]` for BYU students to get their hands on a book like this.
+
+
+## Verified sources for this revision
+
+- [BYU: visits do not require an appointment](https://lib.byu.edu/faq/301280/)
+- [BYU: current hours and material requests](https://lib.byu.edu/special-collections/)
+- [U of U: reading-room hours, advance notice and appointment blocks](https://lib.utah.edu/collections/special-collections/index.php)
+- [BYU: Americana preservation and reading-room use](https://lib.byu.edu/faq/244808/)
+- [BYU: posted Americana collecting document](https://files.lib.byu.edu/special-collections/policies/collecting/Americana%20Collection.pdf)
+- [ACRL/RBMS: security guidelines, section 6](https://www2.archivists.org/sites/all/files/ACRL-RBMSGuidelinesReSecurityAndTheftInSpecialCollections_05232012.pdf)
+
+## Editorial notes
+
+Published pages were checked October 1, 2026. The friend's whole-day research sessions and 15-20-minute retrieval report informed the revision, but are not presented as guaranteed policy. Their reported 8 am-9 pm hours are omitted because BYU currently publishes 10 am-5:45 pm weekdays, with Tuesday devotional closure. Utah's two-hour blocks are described as appointment blocks, not a daily cap. The comparison concerns reading-room visit rules, not the shelving or checkout status of memoirs at Utah.
+
+The rewrite removes the theft/provenance and Whitworth detours and the suggestion that holding a book alone rules out suppression. It retains both original source clip spans. Source checks: zero errors; one existing raw-span warning for c02 (21.7 seconds of original footage, 14.5 seconds at the chosen 1.5x playback). Brand scan passed, using an empty optional banned-phrase list in this checkout.
