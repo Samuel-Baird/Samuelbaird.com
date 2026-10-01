@@ -78,3 +78,8 @@ The concessions in n06 and n99 materially improve fairness. On the reviewed evid
 ## Result
 0 BLOCKER / 0 MAJOR / 1 MINOR. Script and YAML reviewed with the expanded q01/q02 narration; no script or beat files modified by this critic.
 
+
+
+## User-directed closing revision
+
+The closing restores the public-catalog/walk-in joke and the suggestion that BYU take notes from the secular University of Utah. The phrase "on reading-room access" ties the joke to the documented visit rules. It does not assert that Utah hides these memoirs or that its appointment blocks are a daily limit. The distinction between collecting and circulation remains in n06/n07.

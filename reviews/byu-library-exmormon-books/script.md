@@ -3,7 +3,7 @@
 > **Video title:** Is BYU hiding ex-Mormon books in Special Collections?
 > **Post caption:** The University of Utah publishes two-hour Special Collections appointments with two business days of notice. BYU says no appointment is needed. Compare the access rules before calling the reading room censorship.
 
-**Slug:** `byu-library-exmormon-books` | **Estimated runtime:** 106.9s (budget 60-180s) | **Source time:** 22.7s (21%)
+**Slug:** `byu-library-exmormon-books` | **Estimated runtime:** 111.0s (budget 60-180s) | **Source time:** 22.7s (20%)
 
 **Hook (title/description only, not shown on screen):** 'How does BYU Special Collections access compare with the University of Utah?'
 
@@ -85,10 +85,11 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** byu-lib-2018-americana-collecting-policy
 - **Notes:** 
 
-## 12. `n99` (narration, ~9.0s)
+## 12. `n99` (narration, ~13.1s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** encouraging
-- **Narration:** You can argue that BYU should offer a circulating copy too. But a supervised reading room does not establish censorship. The evidence shown supports an access complaint, not the claimed motive. God bless.
+- **Narration:** A library that lists the books in a public catalog and lets you walk in to read them is doing a pretty bad job of hiding them. If Special Collections means hiding things, BYU should take notes on reading-room access from the "secular" University of Utah. God bless.
+- **Sources:** byu-lib-2016-restriction-policy, byu-no-appointment-faq-2026, utah-marriott-special-collections-reading-room
 - **Notes:** 
 
 ## Full source transcript
