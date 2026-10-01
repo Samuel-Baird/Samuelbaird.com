@@ -3,38 +3,38 @@
 > **Video title** (upload title, not shown on screen): Is BYU hiding ex-Mormon books in Special Collections?  
 > **Post caption** (goes with the upload, not shown on screen): BYU buys the books, lists them in a public catalog, and lets anyone with an account request them. Which part of that is the hiding?
 
-**Slug:** `byu-library-exmormon-books` | **Estimated runtime:** 120.9s (budget 60-180s) | **Source time:** 30.6s (25%)
+**Slug:** `byu-library-exmormon-books` | **Estimated runtime:** 112.9s (budget 60-180s) | **Source time:** 22.7s (20%)
 
 **Hook (title/description only, not shown on screen):** "BYU keeps these books in Special Collections, and BYU's own library explains why."
 **Exemplars modeled:** mcclellan-delivery, offenders-are-mormons-christian
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c01` (clip, ~8.9s)
-- **Original Video Transcript:** You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
+## 01. `c01` (clip, ~8.2s)
+- **Original Video Transcript:** You are not allowed to check out Bad Mormon from the library. You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
 - **Pose:** skeptical
-- **Clip:** Source video, 62.7s–71.6s @ speed 1.0
+- **Clip:** Source video, 59.3s–71.6s @ speed 1.5
 - **Notes:** 
 
 ## 02. `n01` (narration, ~12.3s)
-- **Original Video Transcript:** You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
+- **Original Video Transcript:** You are not allowed to check out Bad Mormon from the library. You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
 - **Pose:** pointing
 - **Narration:** A supervised reading room is the field standard, and BYU's own curators wrote it down after being robbed. In 2018 a rare bookseller stole from BYU's circulating shelves and from Special Collections. Their published account repeats the guidance: staff should observe researchers at all times.
 - **Sources:** seppi-skeem-2020-rbm-theft
 - **Notes:** 
 
 ## 03. `q01` (card, ~4.1s)
-- **Original Video Transcript:** You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
+- **Original Video Transcript:** You are not allowed to check out Bad Mormon from the library. You have to go to a special reading room, and someone will watch you while you read the book the entire time. You can see it says here, on-site use only.
 - **Pose:** reading
 - **Narration:** Here is the sentence, as the two curators quote it from the library field guidelines.
 - **Card quote:** “Staff should observe researchers at all times and not allow them to work unobserved behind bookcases, book trucks, stacks of books, or any other obstacles” — Seppi and Skeem, RBM, 2020, quoting the ACRL/RBMS security guidelines
 - **Sources:** seppi-skeem-2020-rbm-theft
 - **Notes:** 
 
-## 04. `c02` (clip, ~21.7s)
+## 04. `c02` (clip, ~14.5s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** confused
-- **Clip:** Source video, 103.5s–125.2s @ speed 1.0
+- **Clip:** Source video, 103.5s–125.2s @ speed 1.5
 - **Notes:** 
 
 ## 05. `n02` (narration, ~9.0s)
