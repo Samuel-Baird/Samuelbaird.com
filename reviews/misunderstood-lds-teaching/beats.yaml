@@ -50,25 +50,26 @@ beats:
   - live-christian
 - id: n03
   kind: narration
-  text: The current Church essay claims a restoration of Christianity. Catholics defend
-    the creeds as expressions of apostolic faith. Those are competing accounts of
-    Christian authority; identifying the difference does not decide between them.
+  text: The current Church essay claims a restoration of Christianity. Classical Christians
+    generally use historic creeds to define Christian orthodoxy. Those are competing
+    accounts of Christian identity; identifying the difference does not decide between
+    them.
   pose: teaching
   stage: blank
   opinion: false
   sources:
   - live-christian
   - live-ccc460
+  - live-westminster
 - id: n04
   kind: narration
-  text: Rome ruled Latter-day Saint baptism invalid in 2001. His video explicitly
-    says it is not arguing for or against LDS theology. My objection concerns presenting
-    a creedal classification as an uncontested definition.
+  text: His video explicitly says it is not arguing for or against LDS theology. My
+    objection concerns presenting a creedal classification as an uncontested definition,
+    rather than identifying the classical Christian framework behind it.
   pose: thoughtful
   stage: blank
-  opinion: false
+  opinion: true
   sources:
-  - live-baptism
   - source-newayne
 - id: c02
   kind: clip
@@ -79,25 +80,28 @@ beats:
   pose: neutral
 - id: n05
   kind: narration
-  text: Catholic teaching affirms creation from nothing. Doctrine and Covenants ninety-three
-    teaches that intelligence was not created and that the elements are eternal. The
-    difference is real.
+  text: Classical Christians affirm creation from nothing. Doctrine and Covenants
+    ninety-three teaches that intelligence was not created and that the elements are
+    eternal. The difference is real.
   pose: reading
   stage: blank
   opinion: false
   sources:
   - live-creator
   - live-dc93
+  - live-westminster
 - id: n06
   kind: narration
-  text: For Catholics, the distinction between the uncreated Creator and created beings
-    is fundamental. Latter-day Saints dispute that account of creation. This establishes
-    a theological divide; whether it excludes Christian identity depends on the definition.
+  text: For classical Christians, the distinction between the uncreated Creator and
+    created beings is fundamental. Latter-day Saints dispute that account of creation.
+    This establishes a theological divide; whether it excludes Christian identity
+    depends on the definition.
   pose: teaching
   stage: blank
   opinion: false
   sources:
   - live-creator
+  - live-westminster
 - id: c03a
   kind: clip
   start: 52.52
@@ -138,16 +142,27 @@ beats:
 - id: n08
   kind: narration
   text: That same essay describes receiving your own planet as a cartoonish reduction
-    of exaltation. That image should not substitute for the teaching itself.
+    of exaltation. It makes a similar comparison with images of heaven as sitting
+    on clouds and playing harps.
   pose: teaching
   stage: blank
   opinion: false
   sources:
   - live-becoming
+- id: n08a
+  kind: narration
+  text: Imagine an atheist reducing Christian heaven to just playing harps and singing
+    to God forever. That caricature would miss what Christians mean by eternal life.
+    The planet image can flatten exaltation in the same way.
+  pose: thoughtful
+  stage: blank
+  opinion: true
+  sources:
+  - live-becoming
 - id: q02
   kind: card
-  text: 'The Catholic Catechism quotes Athanasius: For the Son of God became man so
-    that we might become God. Its context is participation in divine life.'
+  text: 'Even the Catholic Catechism quotes Athanasius: For the Son of God became
+    man so that we might become God. Its context is participation in divine life.'
   pose: reading
   card:
     quote: For the Son of God became man so that we might become God.

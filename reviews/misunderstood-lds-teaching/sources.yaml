@@ -139,3 +139,24 @@ sources:
   used_on_screen: true
   counter: true
   notes: Classification-only qualification at 1:59 onward preserved in review transcript.
+- id: live-westminster
+  type: official
+  title: Westminster Confession of Faith, chapters 2 and 4
+  author: Westminster Assembly
+  date: '1646'
+  locator: https://opc.org/wcf.html
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Direct web page read
+  quote: null
+  verification:
+    tool: web.run
+    verdict: direct-read
+    link: https://opc.org/wcf.html
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Protestant confessional example: God as fountain of all being and creation
+    from nothing. Supports the classical Christian comparison alongside the Catholic
+    Catechism, without identifying the source speaker’s denomination.'

@@ -1,6 +1,6 @@
 # Script — Are Latter-day Saints Christian? Define the disagreement.
 
-**Slug:** `misunderstood-lds-teaching` | **Estimated runtime:** 142.7s (budget 60-180s) | **Source time:** 42.3s (30%)
+**Slug:** `misunderstood-lds-teaching` | **Estimated runtime:** 155.2s (budget 60-180s) | **Source time:** 42.3s (27%)
 
 **Hook (title/description only, not shown on screen):** 'A definition of Christianity needs an argument.'
 
@@ -25,18 +25,18 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** live-christian
 - **Notes:** 
 
-## 04. `n03` (narration, ~9.0s)
+## 04. `n03` (narration, ~9.3s)
 - **Original Video Transcript:** But I think if you have a firm grasp on what it actually means to be Christian, they just don't fit in that category.
 - **Pose:** teaching
-- **Narration:** The current Church essay claims a restoration of Christianity. Catholics defend the creeds as expressions of apostolic faith. Those are competing accounts of Christian authority; identifying the difference does not decide between them.
-- **Sources:** live-christian, live-ccc460
+- **Narration:** The current Church essay claims a restoration of Christianity. Classical Christians generally use historic creeds to define Christian orthodoxy. Those are competing accounts of Christian identity; identifying the difference does not decide between them.
+- **Sources:** live-christian, live-ccc460, live-westminster
 - **Notes:** 
 
-## 05. `n04` (narration, ~8.7s)
+## 05. `n04` (narration, ~9.0s)
 - **Original Video Transcript:** But I think if you have a firm grasp on what it actually means to be Christian, they just don't fit in that category.
 - **Pose:** thoughtful
-- **Narration:** Rome ruled Latter-day Saint baptism invalid in 2001. His video explicitly says it is not arguing for or against LDS theology. My objection concerns presenting a creedal classification as an uncontested definition.
-- **Sources:** live-baptism, source-newayne
+- **Narration:** His video explicitly says it is not arguing for or against LDS theology. My objection concerns presenting a creedal classification as an uncontested definition, rather than identifying the classical Christian framework behind it.
+- **Sources:** source-newayne
 - **Notes:** 
 
 ## 06. `c02` (clip, ~12.7s)
@@ -48,15 +48,15 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `n05` (narration, ~7.1s)
 - **Original Video Transcript:** One of the reasons for that is us Christians believe that God created everything from nothing, ex nihilo, whereas Mormons will believe that everything existed or matter has existed for eternity and God made us out of this already eternal matter.
 - **Pose:** reading
-- **Narration:** Catholic teaching affirms creation from nothing. Doctrine and Covenants ninety-three teaches that intelligence was not created and that the elements are eternal. The difference is real.
-- **Sources:** live-creator, live-dc93
+- **Narration:** Classical Christians affirm creation from nothing. Doctrine and Covenants ninety-three teaches that intelligence was not created and that the elements are eternal. The difference is real.
+- **Sources:** live-creator, live-dc93, live-westminster
 - **Notes:** 
 
-## 08. `n06` (narration, ~9.3s)
+## 08. `n06` (narration, ~9.5s)
 - **Original Video Transcript:** One of the reasons for that is us Christians believe that God created everything from nothing, ex nihilo, whereas Mormons will believe that everything existed or matter has existed for eternity and God made us out of this already eternal matter.
 - **Pose:** teaching
-- **Narration:** For Catholics, the distinction between the uncreated Creator and created beings is fundamental. Latter-day Saints dispute that account of creation. This establishes a theological divide; whether it excludes Christian identity depends on the definition.
-- **Sources:** live-creator
+- **Narration:** For classical Christians, the distinction between the uncreated Creator and created beings is fundamental. Latter-day Saints dispute that account of creation. This establishes a theological divide; whether it excludes Christian identity depends on the definition.
+- **Sources:** live-creator, live-westminster
 - **Notes:** 
 
 ## 09. `c03a` (clip, ~12.4s)
@@ -86,29 +86,36 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** live-becoming
 - **Notes:** 
 
-## 13. `n08` (narration, ~6.3s)
+## 13. `n08` (narration, ~8.2s)
 - **Original Video Transcript:** Now it may not be an official teaching because you can't really pin them down on it, but this has led many Mormons to believe that we have the potential to become a God just like our God and to rule over or to manage a planet just like he does.
 - **Pose:** teaching
-- **Narration:** That same essay describes receiving your own planet as a cartoonish reduction of exaltation. That image should not substitute for the teaching itself.
+- **Narration:** That same essay describes receiving your own planet as a cartoonish reduction of exaltation. It makes a similar comparison with images of heaven as sitting on clouds and playing harps.
 - **Sources:** live-becoming
 - **Notes:** 
 
-## 14. `q02` (card, ~6.8s)
+## 14. `n08a` (narration, ~9.5s)
+- **Original Video Transcript:** Now it may not be an official teaching because you can't really pin them down on it, but this has led many Mormons to believe that we have the potential to become a God just like our God and to rule over or to manage a planet just like he does.
+- **Pose:** thoughtful
+- **Narration:** Imagine an atheist reducing Christian heaven to just playing harps and singing to God forever. That caricature would miss what Christians mean by eternal life. The planet image can flatten exaltation in the same way.
+- **Sources:** live-becoming
+- **Notes:** 
+
+## 15. `q02` (card, ~7.1s)
 - **Original Video Transcript:** Now it may not be an official teaching because you can't really pin them down on it, but this has led many Mormons to believe that we have the potential to become a God just like our God and to rule over or to manage a planet just like he does.
 - **Pose:** reading
-- **Narration:** The Catholic Catechism quotes Athanasius: For the Son of God became man so that we might become God. Its context is participation in divine life.
+- **Narration:** Even the Catholic Catechism quotes Athanasius: For the Son of God became man so that we might become God. Its context is participation in divine life.
 - **Card quote:** “For the Son of God became man so that we might become God.” — Catechism of the Catholic Church §460, quoting Athanasius
 - **Sources:** live-ccc460
 - **Notes:** 
 
-## 15. `n09` (narration, ~9.5s)
+## 16. `n09` (narration, ~9.5s)
 - **Original Video Transcript:** Now it may not be an official teaching because you can't really pin them down on it, but this has led many Mormons to believe that we have the potential to become a God just like our God and to rule over or to manage a planet just like he does.
 - **Pose:** thoughtful
 - **Narration:** Catholic divinization means sharing in divine life, not becoming the uncreated Creator. LDS exaltation rests on a different account of divine parentage. Shared language does not erase that disagreement. It does require explaining it accurately.
 - **Sources:** live-becoming, live-ccc460
 - **Notes:** 
 
-## 16. `n99` (narration, ~7.9s)
+## 17. `n99` (narration, ~7.9s)
 - **Original Video Transcript:** Now it may not be an official teaching because you can't really pin them down on it, but this has led many Mormons to believe that we have the potential to become a God just like our God and to rule over or to manage a planet just like he does.
 - **Pose:** encouraging
 - **Narration:** The positive LDS claim is that Christ can transform God’s children to become like their Father. Evaluate that claim in its own terms, alongside the creedal objection. God bless.
