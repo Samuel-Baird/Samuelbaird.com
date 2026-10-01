@@ -47,3 +47,10 @@ Audience = `catholic | protestant | exmo | atheist | media | general`.
 ## User notes from `need reaction.xlsx` (not yet researched or incorporated)
 
 - "Yeah... That's what missionaries kind of do. Most missionaries are locals from Africa." (Needs a source before use: the historian and red-team briefs found no data on the makeup of missionaries serving in Africa.)
+
+
+## Script verification — 2026-10-01
+
+The local complete source transcript was read. Correct clip anchors are 0:00–0:12.28 for conversion/Joseph Smith and 0:13.44–0:19.20 for enclaves, including “Genuine question.” The earlier table anchors are approximate and conflict with the local transcript.
+
+The script uses five newly opened primary/official sources (verified-* entries). African missionary participation and cross-border service are facts supported by the 2007 Ghana/Nigeria example. Neither a current Africa-wide missionary majority nor a USA majority was verified; neither is narrated. Gathering is a dated 2006 leader statement, not proof that enclaves cannot exist. The enclave response explicitly distinguishes congregations from separate settlements and does not deny historical emigration. The aid distinction was researched but removed from the final script because the source does not ask about aid. No new doctrine claim or sensitive-topic argument is introduced.
