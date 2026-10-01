@@ -70,7 +70,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n04` (narration, ~11.7s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** source
-- **Narration:** BYU's own collecting policy runs the opposite way from hiding. It says Mormon-related books are collected comprehensively, and its list names anti-Mormon works. The restriction policy adds that every holding gets a publicly accessible catalog record, which is how she found these two.
+- **Narration:** BYU's own collecting policy runs the opposite way from hiding. It says Mormon-related books are collected comprehensively, and its list names anti-Mormon works. The restriction policy adds that every holding gets a publicly accessible catalog record, which is how she found these two. If they wanted to hide the books from students, why would they keep the books in the library in the first place?
 - **Sources:** byu-lib-2018-americana-collecting-policy, byu-lib-2016-restriction-policy
 - **Notes:** 
 
@@ -85,14 +85,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n05` (narration, ~16.4s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** thoughtful
-- **Narration:** Libraries do move books to safer rooms after theft and vandalism. BYU's curators quote the guidance that related materials may be moved to a more secure area, and they write that BYU should have moved books with notable Mormon-related provenance out of circulation sooner. None of that names these two memoirs, and no BYU page says why they sit there.
+- **Narration:** Libraries do move books to safer rooms after theft and vandalism. BYU's curators quote the guidance that related materials may be moved to a more secure area, and they write that BYU should have moved books with notable Mormon-related provenance out of circulation sooner.
 - **Sources:** seppi-skeem-2020-rbm-theft
 - **Notes:** 
 
 ## 12. `n06` (narration, ~11.2s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** pointing
-- **Narration:** Even the University of Utah, the library she holds up as the benchmark, runs its special collections reading room by appointment, with two business days' notice. Appointments and a reading room are how special collections work, at hers and at BYU.
+- **Narration:** Even the University of Utah, the library she holds up as the "secular" benchmark, runs its special collections reading room by appointment, with two business days' notice. Appointments and a reading room are how special collections work.
 - **Sources:** utah-marriott-special-collections-reading-room
 - **Notes:** 
 
