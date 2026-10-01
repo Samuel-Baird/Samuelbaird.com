@@ -20,6 +20,14 @@ Rules (see docs/saint-capybara/research-protocol.md and script-format.md):
   - source time (clip + excerpt beats) must be <= 30% of the runtime
     (error; --draft: warning)
   - `stage: freeze` before any clip beat is an error (nothing to freeze)
+  - (pose pacing) a narration-family beat whose estimated duration exceeds
+    ~20s is a warning (--strict: error) -- script-format.md's "pose changes
+    every 10-20s" rule, previously checked only by manual read-through
+  - (pronunciation coverage) a proper noun in a narration-family beat with
+    no entry (or `ok-as-is`) in the merged pronunciation dictionary is an
+    info -- heuristic proper-noun detection, so never escalated to
+    warning/error; previously checked only by manual read-through
+    (review-checklist.md Part A item 12)
   Article projects (source_info.json `kind: article`):
   - excerpt beats require kind: article; source.md's sha256 must equal
     source_info.json's text_sha256 (the text responded to is pinned)
@@ -37,6 +45,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -49,6 +58,7 @@ from capy import source as source_mod
 from capy.poses import SENSITIVE_FORBIDDEN
 from capy.source import normalize  # noqa: F401  (re-exported; was defined here before capy.source existed)
 from capy.source import quote_matches_source
+import capy_tts
 
 try:  # ¶ in hints needs a utf-8 console on Windows
     sys.stdout.reconfigure(encoding="utf-8")
@@ -112,6 +122,78 @@ def _excerpt_kind_shim(issues: list[Issue]) -> list[Issue]:
     if dropped:
         kept.append(Issue("info", None, f"{dropped} excerpt beat(s) validated by capy.excerpts (capy.beats.BEAT_KINDS does not list 'excerpt' yet)"))
     return kept
+
+
+def check_pose_pacing(doc: dict, per_beat: dict[str, float], *, strict: bool) -> list[Issue]:
+    """script-format.md 'pose changes every 10-20s': the renderer holds one
+    static sprite pose for a beat's whole duration, so a narration-family
+    beat estimated past ~20s IS the violation -- flag it for splitting into
+    2-3 beats at natural clause/sentence breaks. Uses the same per-beat
+    estimate resolve_durations() already computed for the duration-budget
+    check (pre-TTS word-count estimate, or the measured wav once rendered)."""
+    issues: list[Issue] = []
+    level = "error" if strict else "warning"
+    for beat in doc.get("beats", []):
+        if beat.get("kind") not in beats_mod.NARRATION_FAMILY_KINDS:
+            continue
+        bid = beat["id"]
+        dur = per_beat.get(bid, 0.0)
+        if dur > beats_mod.MAX_POSE_HOLD_SECONDS:
+            issues.append(Issue(level, bid, f"estimated duration {dur:.1f}s exceeds the {beats_mod.MAX_POSE_HOLD_SECONDS:.0f}s pose-hold limit -- split into 2-3 beats at natural clause/sentence breaks (script-format.md 'Pose changes every 10-20s')"))
+    return issues
+
+
+# Small stoplist of common capitalized words that are not proper nouns, to
+# cut heuristic false positives from check_pronunciation_coverage's
+# not-sentence-start capitalization scan. Deliberately short -- this check
+# is info-level precisely because the heuristic isn't perfect.
+_PROPER_NOUN_STOPLIST = {
+    "I", "But", "And", "So", "Yet", "Or", "Nor", "However", "Also", "If",
+    "When", "While", "Though", "Although", "Because", "This", "That",
+    "These", "Those", "It", "We", "They", "He", "She", "You", "There",
+    "Here", "Now", "Then", "Yes", "No",
+}
+
+
+def _find_proper_nouns(text: str) -> set[str]:
+    """Heuristic: a capitalized word not at the start of its sentence.
+    Sentences are split on . ! ? followed by whitespace (or start/end of
+    text); the first word of each sentence is exempt from the scan since a
+    plain sentence-initial capital carries no pronunciation signal."""
+    found: set[str] = set()
+    for sentence in re.split(r"(?<=[.!?])\s+", text or ""):
+        words = re.findall(r"[A-Za-z][A-Za-z'’-]*", sentence)
+        for w in words[1:]:
+            # Strip a trailing possessive ('s / 's) before checking -- the
+            # base word, not the possessive form, is what a dictionary
+            # entry covers (Smith's -> Smith).
+            base = re.sub(r"['’]s$", "", w)
+            if base[0].isupper() and base not in _PROPER_NOUN_STOPLIST:
+                found.add(base)
+    return found
+
+
+def check_pronunciation_coverage(project: Path, doc: dict) -> list[Issue]:
+    """review-checklist.md Part A item 12: every proper noun in narration
+    needs a pronunciation.yaml entry (or an explicit ok-as-is). Heuristic
+    proper-noun detection (capitalized, not sentence-initial) means this can
+    both miss real cases and flag non-proper-noun false positives, so it's
+    info-level only -- a pointer for the manual read-through, not a gate."""
+    entries = capy_tts.load_pronunciation_dict(project)
+    known = {e["word"].lower() for e in entries}
+    flagged: dict[str, set[str]] = {}
+    for beat in doc.get("beats", []):
+        if beat.get("kind") not in beats_mod.NARRATION_FAMILY_KINDS:
+            continue
+        text = beat.get("text") or ""
+        for word in _find_proper_nouns(text):
+            if word.lower() not in known:
+                flagged.setdefault(word, set()).add(beat["id"])
+    issues: list[Issue] = []
+    for word in sorted(flagged):
+        beat_ids = ", ".join(sorted(flagged[word]))
+        issues.append(Issue("info", None, f"'{word}' has no pronunciation dictionary entry (beats: {beat_ids}) -- add one to script/pronunciations.yaml or mark ok-as-is if the model already reads it correctly"))
+    return issues
 
 
 def check_source_time(doc: dict, total: float, per_beat: dict[str, float], *, draft: bool) -> list[Issue]:
@@ -244,6 +326,8 @@ def main() -> int:
     total, per_beat = beats_mod.resolve_durations(doc)
     issues += beats_mod.check_duration_budget(doc, total, draft=args.draft)
     issues += check_source_time(doc, total, per_beat, draft=args.draft)
+    issues += check_pose_pacing(doc, per_beat, strict=args.strict)
+    issues += check_pronunciation_coverage(args.project, doc)
 
     used_ids: set[str] = set()
     for beat in doc.get("beats", []):

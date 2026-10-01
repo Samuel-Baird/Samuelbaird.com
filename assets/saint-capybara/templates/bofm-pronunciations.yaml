@@ -32,18 +32,22 @@ entries:
   - word: Abinadi
     ipa: "/aˈbɪnadaɪ/"
     respelling: "a-bĭnʹa-dī"
+    spoken: "uhbinuhdye"
     status: unverified
   - word: Abinadom
     ipa: "/aˈbɪnadum/"
     respelling: "a-bĭnʹa-dum"
+    spoken: "uhbinuhduhm"
     status: unverified
   - word: Abish
     ipa: "/ˈeɪbɪʃ/"
     respelling: "āʹbĭsh"
+    spoken: "aybish"
     status: unverified
   - word: Ablom
     ipa: "/ˈæblum/"
     respelling: "ăbʹlum"
+    spoken: "abluhm"
     status: unverified
   - word: Abraham
     ipa: "/ˈeɪbrahæm/"
@@ -56,26 +60,32 @@ entries:
   - word: Agosh
     ipa: "/ˈeɪgɑʃ/"
     respelling: "āʹgäsh"
+    spoken: "aygahsh"
     status: unverified
   - word: Aha
     ipa: "/ˈeɪhɑ/"
     respelling: "āʹhä"
+    spoken: "ayhah"
     status: unverified
   - word: Ahah
     ipa: "/ˈeɪhɑ/"
     respelling: "āʹhä"
+    spoken: "ayhah"
     status: unverified
   - word: Ahaz
     ipa: "/ˈeɪhæz/"
     respelling: "āʹhăz"
+    spoken: "ayhaz"
     status: unverified
   - word: Aiath
     ipa: "/ˈaɪuθ/"
     respelling: "īʹuth"
+    spoken: "eyeuhth"
     status: unverified
   - word: Akish
     ipa: "/ˈeɪkɪʃ/"
     respelling: "āʹkĭsh"
+    spoken: "aykish"
     status: unverified
   - word: Alma
     ipa: "/ˈælma/"
@@ -88,22 +98,27 @@ entries:
   - word: Amaleki
     ipa: "/aˈmælakaɪ/"
     respelling: "a-mălʹa-kī"
+    spoken: "uhmaluhkye"
     status: unverified
   - word: Amalekite
     ipa: "/aˈmælakaɪt/"
     respelling: "a-mălʹa-kīt"
+    spoken: "uhmaluhkyet"
     status: unverified
   - word: Amalickiah
     ipa: "/aˈmælaˈkaɪa/"
     respelling: "a-mălʹa-kīʹa"
+    spoken: "uhmaluhkyuh"
     status: unverified
   - word: Amalickiahite
     ipa: "/aˈmælaˈkaɪaaɪt/"
     respelling: "a-mălʹa-kīʹa-īt"
+    spoken: "uhmaluhkyuheyet"
     status: unverified
   - word: Amaron
     ipa: "/aˈmeɪrɑn/"
     respelling: "a-māʹrän"
+    spoken: "uhmayrahn"
     status: unverified
   - word: Amgid
     ipa: "/ˈæmgɪd/"
@@ -112,18 +127,22 @@ entries:
   - word: Aminadab
     ipa: "/aˈmɪnadæb/"
     respelling: "a-mĭnʹa-dăb"
+    spoken: "uhminuhdab"
     status: unverified
   - word: Aminadi
     ipa: "/aˈmɪnadaɪ/"
     respelling: "a-mĭnʹa-dī"
+    spoken: "uhminuhdye"
     status: unverified
   - word: Amlici
     ipa: "/ˈæmlɪsaɪ/"
     respelling: "ămʹlĭ-sī"
+    spoken: "amlisye"
     status: unverified
   - word: Amlicite
     ipa: "/ˈæmlɪsaɪt/"
     respelling: "ămʹlĭ-sīt"
+    spoken: "amlisyet"
     status: unverified
   - word: Ammah
     ipa: "/ˈæmmɑ/"
@@ -132,6 +151,7 @@ entries:
   - word: Ammaron
     ipa: "/ˈæmarɑn/"
     respelling: "ămʹa-rän"
+    spoken: "amuhrahn"
     status: unverified
   - word: Ammon
     ipa: "/ˈæmun/"
@@ -140,34 +160,42 @@ entries:
   - word: Ammonihah
     ipa: "/æmaˈnaɪhɑ/"
     respelling: "ăm-a-nīʹhä"
+    spoken: "amuhnyehah"
     status: unverified
   - word: Ammonihahite
     ipa: "/æmaˈnaɪhɑaɪt/"
     respelling: "ăm-a-nīʹhä-īt"
+    spoken: "amuhnyehaheyet"
     status: unverified
   - word: Ammonite
     ipa: "/ˈæmanaɪt/"
     respelling: "ămʹa-nīt"
+    spoken: "amuhnyet"
     status: unverified
   - word: Ammoron
     ipa: "/ˈæmoʊrɑn/"
     respelling: "ămʹōr-än"
+    spoken: "amohrahn"
     status: unverified
   - word: Amnigaddah
     ipa: "/æmnɪˈgædɑ/"
     respelling: "ăm-nĭ-gădʹä"
+    spoken: "amnigadah"
     status: unverified
   - word: Amnihu
     ipa: "/æmˈnaɪhuː/"
     respelling: "ăm-nīʹhū"
+    spoken: "amnyehoo"
     status: unverified
   - word: Amnor
     ipa: "/ˈæmnoʊr/"
     respelling: "ămʹnōr"
+    spoken: "amnohr"
     status: unverified
   - word: Amoron
     ipa: "/aˈmoʊrɑn/"
     respelling: "a-mōrʹän"
+    spoken: "uhmohrahn"
     status: unverified
   - word: Amos
     ipa: "/ˈeɪmus/"
@@ -176,82 +204,102 @@ entries:
   - word: Amoz
     ipa: "/ˈeɪmuz/"
     respelling: "āʹmuz"
+    spoken: "aymuhz"
     status: unverified
   - word: Amulek
     ipa: "/ˈæmjuːlɛk/"
     respelling: "ămʹyū-lĕk"
+    spoken: "amyoolek"
     status: unverified
   - word: Amulon
     ipa: "/ˈæmjuːlɑn/"
     respelling: "ămʹyū-län"
+    spoken: "amyoolahn"
     status: unverified
   - word: Amulonites
     ipa: "/ˈæmjaˈlɑnaɪts/"
     respelling: "ămʹya-länʹīts"
+    spoken: "amyuhlahnyets"
     status: unverified
   - word: Anathoth
     ipa: "/ˈænatoʊθ/"
     respelling: "ănʹa-tōth"
+    spoken: "anuhtohth"
     status: unverified
   - word: Angola
     ipa: "/ænˈgoʊla/"
     respelling: "ăn-gōʹla"
+    spoken: "angohluh"
     status: unverified
   - word: Ani-Anti
     ipa: "/ˈænaɪˈæntaɪ/"
     respelling: "ănʹī–ănʹtī"
+    spoken: "anye-antye"
     status: unverified
   - word: Anti-Nephi-Lehi
     ipa: "/ˈæntaɪˈniːfaɪˈliːhaɪ/"
     respelling: "ănʹtī–nēʹfī–lēʹhī"
+    spoken: "antye-neefye-leehye"
     status: unverified
   - word: Anti-Nephi-Lehies
     ipa: "/ˈæntaɪˈniːfaɪˈliːhaɪz/"
     respelling: "ănʹtī–nēʹfī–lēʹhīz"
+    spoken: "antye-neefye-leehyez"
     status: unverified
   - word: Antiomno
     ipa: "/æntiːˈɑmnoʊ/"
     respelling: "ăn-tē-ämʹnō"
+    spoken: "anteeahmnoh"
     status: unverified
   - word: Antion
     ipa: "/ˈæntiːɑn/"
     respelling: "ănʹtē-än"
+    spoken: "anteeahn"
     status: unverified
   - word: Antionah
     ipa: "/æntiːˈɑna/"
     respelling: "ăn-tē-änʹa"
+    spoken: "anteeahnuh"
     status: unverified
   - word: Antionum
     ipa: "/æntiːˈoʊnum/"
     respelling: "ăn-tē-ōʹnum"
+    spoken: "anteeohnuhm"
     status: unverified
   - word: Antiparah
     ipa: "/æntɪˈpɑra/"
     respelling: "ăn-tĭ-pärʹa"
+    spoken: "antipahruh"
     status: unverified
   - word: Antipas
     ipa: "/ˈæntɪpɑs/"
     respelling: "ănʹtĭ-päs"
+    spoken: "antipahs"
     status: unverified
   - word: Antipus
     ipa: "/ˈæntɪpus/"
     respelling: "ănʹtĭ-pus"
+    spoken: "antipuhs"
     status: unverified
   - word: Antum
     ipa: "/ˈæntum/"
     respelling: "ănʹtum"
+    spoken: "antuhm"
     status: unverified
   - word: Archeantus
     ipa: "/ɑrkiːˈæntus/"
     respelling: "är-kē-ănʹtus"
+    spoken: "ahrkeeantuhs"
     status: unverified
   - word: Arpad
     ipa: "/ˈɑrpæd/"
     respelling: "ärʹpăd"
+    spoken: "ahrpad"
     status: unverified
   - word: Assyria
     ipa: "/aˈsɪriːa/"
     respelling: "a-sĭrʹē-a"
+    spoken: "uhsireeuh"
     status: unverified
   - word: Babylon
     ipa: "/ˈbæbɪlɑn/"
@@ -260,6 +308,7 @@ entries:
   - word: Bashan
     ipa: "/ˈbeɪʃɑn/"
     respelling: "bāʹshän"
+    spoken: "bayshahn"
     status: unverified
   - word: Benjamin
     ipa: "/ˈbɛndʒamɪn/"
@@ -268,10 +317,12 @@ entries:
   - word: Bethabara
     ipa: "/bɛθˈæbara/"
     respelling: "bĕth-ăbʹa-ra"
+    spoken: "bethabuhruh"
     status: unverified
   - word: Boaz
     ipa: "/ˈboʊæz/"
     respelling: "bōʹăz"
+    spoken: "bohaz"
     status: unverified
   - word: Bountiful
     ipa: "/ˈbountɪful/"
@@ -284,26 +335,32 @@ entries:
   - word: Calno
     ipa: "/ˈkælnoʊ/"
     respelling: "kălʹnō"
+    spoken: "kalnoh"
     status: unverified
   - word: Carchemish
     ipa: "/kɑrˈkɛmɪʃ/"
     respelling: "kär-kĕmʹĭsh"
+    spoken: "kahrkemish"
     status: unverified
   - word: Cezoram
     ipa: "/siːˈzoʊrum/"
     respelling: "sē-zōrʹum"
+    spoken: "seezohruhm"
     status: unverified
   - word: Chaldeans
     ipa: "/kælˈdiːunz/"
     respelling: "kăl-dēʹunz"
+    spoken: "kaldeeuhnz"
     status: unverified
   - word: Chaldees
     ipa: "/kælˈdiːz/"
     respelling: "kăl-dēzʹ"
+    spoken: "kaldeez"
     status: unverified
   - word: Chemish
     ipa: "/ˈkɛmɪʃ/"
     respelling: "kĕmʹĭsh"
+    spoken: "kemish"
     status: unverified
   - word: Cherubim
     ipa: "/ˈtʃɛrabɪm/"
@@ -312,70 +369,87 @@ entries:
   - word: Cohor
     ipa: "/ˈkoʊhoʊr/"
     respelling: "kōʹhōr"
+    spoken: "kohhohr"
     status: unverified
   - word: Com
     ipa: "/koʊm/"
     respelling: "kōm"
+    spoken: "kohm"
     status: unverified
   - word: Comnor
     ipa: "/ˈkoʊmnoʊr/"
     respelling: "kōmʹnōr"
+    spoken: "kohmnohr"
     status: unverified
   - word: Corianton
     ipa: "/koʊriːˈæntun/"
     respelling: "kōr-ē-ănʹtun"
+    spoken: "kohreeantuhn"
     status: unverified
   - word: Coriantor
     ipa: "/koʊriːˈæntoʊr/"
     respelling: "kōr-ē-ănʹtōr"
+    spoken: "kohreeantohr"
     status: unverified
   - word: Coriantum
     ipa: "/koʊriːˈæntum/"
     respelling: "kōr-ē-ănʹtum"
+    spoken: "kohreeantuhm"
     status: unverified
   - word: Coriantumr
     ipa: "/koʊriːˈæntamer/"
     respelling: "kōr-ē-ănʹta-mer"
+    spoken: "kohreeantuhmer"
     status: unverified
   - word: Corihor
     ipa: "/ˈkoʊrɪhoʊr/"
     respelling: "kōrʹĭ-hōr"
+    spoken: "kohrihohr"
     status: unverified
   - word: Corom
     ipa: "/ˈkoʊrum/"
     respelling: "kōrʹum"
+    spoken: "kohruhm"
     status: unverified
   - word: Cumeni
     ipa: "/ˈkuːmanaɪ/"
     respelling: "kūʹma-nī"
+    spoken: "koomuhnye"
     status: unverified
   - word: Cumenihah
     ipa: "/kuːmaˈnaɪhɑ/"
     respelling: "kū-ma-nīʹhä"
+    spoken: "koomuhnyehah"
     status: unverified
   - word: Cumom
     ipa: "/ˈkuːmum/"
     respelling: "kūʹmum"
+    spoken: "koomuhm"
     status: unverified
   - word: Cumorah
     ipa: "/kaˈmoʊra/"
     respelling: "ka-mōrʹa"
+    spoken: "kuhmohruh"
     status: unverified
   - word: Curelom
     ipa: "/kuːˈriːlum/"
     respelling: "kū-rēʹlum"
+    spoken: "kooreeluhm"
     status: unverified
   - word: Deseret
     ipa: "/dɛzaˈrɛt/"
     respelling: "dĕz-a-rĕtʹ"
+    spoken: "dezuhret"
     status: unverified
   - word: Desolation
     ipa: "/dɛsoʊˈleɪʃun/"
     respelling: "dĕs-ō-lāʹshun"
+    spoken: "desohlayshuhn"
     status: unverified
   - word: Edom
     ipa: "/ˈiːdum/"
     respelling: "ēʹdum"
+    spoken: "eeduhm"
     status: unverified
   - word: Egypt
     ipa: "/ˈiːdʒɪpt/"
@@ -388,6 +462,7 @@ entries:
   - word: Elam
     ipa: "/ˈiːlum/"
     respelling: "ēʹlum"
+    spoken: "eeluhm"
     status: unverified
   - word: Elijah
     ipa: "/iːˈlaɪdʒa/"
@@ -396,10 +471,12 @@ entries:
   - word: Emer
     ipa: "/ˈiːmer/"
     respelling: "ēʹmer"
+    spoken: "eemer"
     status: unverified
   - word: Emron
     ipa: "/ˈɛmrɑn/"
     respelling: "ĕmʹrän"
+    spoken: "emrahn"
     status: unverified
   - word: Enos
     ipa: "/ˈiːnus/"
@@ -408,6 +485,7 @@ entries:
   - word: Ephah
     ipa: "/ˈiːfɑ/"
     respelling: "ēʹfä"
+    spoken: "eefah"
     status: unverified
   - word: Ephraim
     ipa: "/ˈiːfrɛm/"
@@ -416,10 +494,12 @@ entries:
   - word: Esrom
     ipa: "/ˈɛzrum/"
     respelling: "ĕzʹrum"
+    spoken: "ezruhm"
     status: unverified
   - word: Ethem
     ipa: "/ˈiːθum/"
     respelling: "ēʹthum"
+    spoken: "eethuhm"
     status: unverified
   - word: Ether
     ipa: "/ˈiːθer/"
@@ -432,10 +512,12 @@ entries:
   - word: Ezias
     ipa: "/iːˈzaɪus/"
     respelling: "ē-zīʹus"
+    spoken: "eezyuhs"
     status: unverified
   - word: Ezrom
     ipa: "/ˈɛzrum/"
     respelling: "ĕzʹrum"
+    spoken: "ezruhm"
     status: unverified
   - word: Gad
     ipa: "/gæd/"
@@ -444,34 +526,42 @@ entries:
   - word: Gadiandi
     ipa: "/gædiːˈændaɪ/"
     respelling: "găd-ē-ănʹdī"
+    spoken: "gadeeandye"
     status: unverified
   - word: Gadianton
     ipa: "/gædiːˈæntun/"
     respelling: "găd-ē-ănʹtun"
+    spoken: "gadeeantuhn"
     status: unverified
   - word: Gadiomnah
     ipa: "/gædiːˈɑmna/"
     respelling: "găd-ē-ämʹna"
+    spoken: "gadeeahmnuh"
     status: unverified
   - word: Gallim
     ipa: "/ˈgælɪm/"
     respelling: "gălʹĭm"
+    spoken: "galim"
     status: unverified
   - word: Gazelem
     ipa: "/gaˈzeɪlɪm/"
     respelling: "ga-zāʹlĭm"
+    spoken: "guhzaylim"
     status: unverified
   - word: Geba
     ipa: "/ˈgiːba/"
     respelling: "gēʹba"
+    spoken: "geebuh"
     status: unverified
   - word: Gebim
     ipa: "/ˈgiːbɪm/"
     respelling: "gēʹbĭm"
+    spoken: "geebim"
     status: unverified
   - word: Gibeah
     ipa: "/ˈgɪbiːa/"
     respelling: "gĭbʹē-a"
+    spoken: "gibeeuh"
     status: unverified
   - word: Gid
     ipa: "/gɪd/"
@@ -480,10 +570,12 @@ entries:
   - word: Giddianhi
     ipa: "/gɪdiːˈænhaɪ/"
     respelling: "gĭd-ē-ănʹhī"
+    spoken: "gideeanhye"
     status: unverified
   - word: Giddonah
     ipa: "/gɪdˈdoʊnɑ/"
     respelling: "gĭd-dōʹnä"
+    spoken: "giddohnah"
     status: unverified
   - word: Gideon
     ipa: "/ˈgɪdiːun/"
@@ -492,14 +584,17 @@ entries:
   - word: Gidgiddonah
     ipa: "/gɪdgɪdˈdoʊnɑ/"
     respelling: "gĭd-gĭd-dōʹnä"
+    spoken: "gidgiddohnah"
     status: unverified
   - word: Gidgiddoni
     ipa: "/gɪdgɪdˈdoʊnaɪ/"
     respelling: "gĭd-gĭd-dōʹnī"
+    spoken: "gidgiddohnye"
     status: unverified
   - word: Gilead
     ipa: "/ˈgɪliːud/"
     respelling: "gĭlʹē-ud"
+    spoken: "gileeuhd"
     status: unverified
   - word: Gilgah
     ipa: "/ˈgɪlgɑ/"
@@ -508,10 +603,12 @@ entries:
   - word: Gilgal
     ipa: "/ˈgɪlgɑl/"
     respelling: "gĭlʹgäl"
+    spoken: "gilgahl"
     status: unverified
   - word: Gimgimno
     ipa: "/gɪmˈgɪmnoʊ/"
     respelling: "gĭm-gĭmʹnō"
+    spoken: "gimgimnoh"
     status: unverified
   - word: Gomorrah
     ipa: "/gaˈmoʊra/"
@@ -520,30 +617,37 @@ entries:
   - word: Hagoth
     ipa: "/ˈheɪgɑθ/"
     respelling: "hāʹgäth"
+    spoken: "haygahth"
     status: unverified
   - word: Hamath
     ipa: "/ˈheɪmuθ/"
     respelling: "hāʹmuth"
+    spoken: "haymuhth"
     status: unverified
   - word: Hearthom
     ipa: "/hiːˈɑrθum/"
     respelling: "hē-ärʹthum"
+    spoken: "heeahrthuhm"
     status: unverified
   - word: Helam
     ipa: "/ˈhiːlum/"
     respelling: "hēʹlum"
+    spoken: "heeluhm"
     status: unverified
   - word: Helaman
     ipa: "/ˈhiːlamun/"
     respelling: "hēʹla-mun"
+    spoken: "heeluhmuhn"
     status: unverified
   - word: Helem
     ipa: "/ˈhiːlɛm/"
     respelling: "hēʹlĕm"
+    spoken: "heelem"
     status: unverified
   - word: Helorum
     ipa: "/hiːˈloʊrum/"
     respelling: "hē-lōrʹum"
+    spoken: "heelohruhm"
     status: unverified
   - word: Hem
     ipa: "/hɛm/"
@@ -552,10 +656,12 @@ entries:
   - word: Hermounts
     ipa: "/ˈhermounts/"
     respelling: "herʹmounts"
+    spoken: "hermownts"
     status: unverified
   - word: Heshlon
     ipa: "/ˈhɛʃlɑn/"
     respelling: "hĕshʹlän"
+    spoken: "heshlahn"
     status: unverified
   - word: Heth
     ipa: "/hɛθ/"
@@ -564,10 +670,12 @@ entries:
   - word: Himni
     ipa: "/ˈhɪmnaɪ/"
     respelling: "hĭmʹnī"
+    spoken: "himnye"
     status: unverified
   - word: Horeb
     ipa: "/ˈhoʊrɛb/"
     respelling: "hōrʹĕb"
+    spoken: "hohreb"
     status: unverified
   - word: Immanuel
     ipa: "/ɪmˈmænjuːɛl/"
@@ -576,6 +684,7 @@ entries:
   - word: Irreantum
     ipa: "/ɪriːˈæntum/"
     respelling: "ĭ-rē-ănʹtum"
+    spoken: "ireeantuhm"
     status: unverified
   - word: Isaac
     ipa: "/ˈaɪzɪk/"
@@ -584,6 +693,7 @@ entries:
   - word: Isabel
     ipa: "/ˈɪzabɛl/"
     respelling: "ĭzʹa-bĕl"
+    spoken: "izuhbel"
     status: unverified
   - word: Isaiah
     ipa: "/aɪˈzeɪa/"
@@ -596,6 +706,7 @@ entries:
   - word: Ishmaelite
     ipa: "/ˈɪʃmɛlaɪt/"
     respelling: "ĭshʹmĕl-īt"
+    spoken: "ishmelyet"
     status: unverified
   - word: Israel
     ipa: "/ˈɪzrul/"
@@ -612,34 +723,42 @@ entries:
   - word: Jacobite
     ipa: "/ˈdʒeɪkubaɪt/"
     respelling: "jāʹkub-īt"
+    spoken: "jaykuhbyet"
     status: unverified
   - word: Jacobugath
     ipa: "/ˈdʒeɪkaˈbuːgæθ/"
     respelling: "jāʹka-būʹgăth"
+    spoken: "jaykuhboogath"
     status: unverified
   - word: Jacom
     ipa: "/ˈdʒeɪkum/"
     respelling: "jāʹkum"
+    spoken: "jaykuhm"
     status: unverified
   - word: Jared
     ipa: "/ˈdʒɛrud/"
     respelling: "jĕrʹud"
+    spoken: "jeruhd"
     status: unverified
   - word: Jaredite
     ipa: "/ˈdʒɛradaɪt/"
     respelling: "jĕrʹa-dīt"
+    spoken: "jeruhdyet"
     status: unverified
   - word: Jarom
     ipa: "/ˈdʒɛrum/"
     respelling: "jĕrʹum"
+    spoken: "jeruhm"
     status: unverified
   - word: Jashon
     ipa: "/ˈdʒeɪʃɑn/"
     respelling: "jāʹshän"
+    spoken: "jayshahn"
     status: unverified
   - word: Jeberechiah
     ipa: "/dʒɛbaraˈkaɪa/"
     respelling: "jĕb-a-ra-kīʹa"
+    spoken: "jebuhruhkyuh"
     status: unverified
   - word: Jehovah
     ipa: "/dʒiːˈhoʊva/"
@@ -648,6 +767,7 @@ entries:
   - word: Jeneum
     ipa: "/ˈdʒɛniːum/"
     respelling: "jĕnʹē-um"
+    spoken: "jeneeuhm"
     status: unverified
   - word: Jeremiah
     ipa: "/dʒɛraˈmaɪa/"
@@ -656,6 +776,7 @@ entries:
   - word: Jershon
     ipa: "/ˈdʒɛrʃɑn/"
     respelling: "jĕrʹshän"
+    spoken: "jershahn"
     status: unverified
   - word: Jerusalem
     ipa: "/dʒaˈruːsalɛm/"
@@ -676,6 +797,7 @@ entries:
   - word: Jonas
     ipa: "/ˈdʒoʊnus/"
     respelling: "jōʹnus"
+    spoken: "johnuhs"
     status: unverified
   - word: Jordan
     ipa: "/ˈdʒoʊrdun/"
@@ -688,10 +810,12 @@ entries:
   - word: Josephite
     ipa: "/ˈdʒoʊzɛfaɪt/"
     respelling: "jōʹzĕf-īt"
+    spoken: "johzefyet"
     status: unverified
   - word: Josh
     ipa: "/dʒɑʃ/"
     respelling: "jäsh"
+    spoken: "jahsh"
     status: unverified
   - word: Joshua
     ipa: "/ˈdʒɑʃuːwa/"
@@ -700,6 +824,7 @@ entries:
   - word: Jotham
     ipa: "/ˈdʒoʊθum/"
     respelling: "jōʹthum"
+    spoken: "johthuhm"
     status: unverified
   - word: Judah
     ipa: "/ˈdʒuːda/"
@@ -720,6 +845,7 @@ entries:
   - word: Kimnor
     ipa: "/ˈkɪmnoʊr/"
     respelling: "kĭmʹnōr"
+    spoken: "kimnohr"
     status: unverified
   - word: Kish
     ipa: "/kɪʃ/"
@@ -728,18 +854,22 @@ entries:
   - word: Kishkumen
     ipa: "/kɪʃˈkuːmun/"
     respelling: "kĭsh-kūʹmun"
+    spoken: "kishkoomuhn"
     status: unverified
   - word: Korihor
     ipa: "/ˈkoʊrɪhoʊr/"
     respelling: "kōʹrĭ-hōr"
+    spoken: "kohrihohr"
     status: unverified
   - word: Kumen
     ipa: "/ˈkuːmun/"
     respelling: "kūʹmun"
+    spoken: "koomuhn"
     status: unverified
   - word: Kumenonhi
     ipa: "/ˈkuːmaˈnɑnhaɪ/"
     respelling: "kūʹma-nänʹhī"
+    spoken: "koomuhnahnhye"
     status: unverified
   - word: Laban
     ipa: "/ˈleɪbun/"
@@ -748,26 +878,32 @@ entries:
   - word: Lachoneus
     ipa: "/laˈkoʊniːus/"
     respelling: "la-kōʹnē-us"
+    spoken: "luhkohneeuhs"
     status: unverified
   - word: Laish
     ipa: "/ˈleɪɪʃ/"
     respelling: "lāʹĭsh"
+    spoken: "layish"
     status: unverified
   - word: Lamah
     ipa: "/ˈleɪmɑ/"
     respelling: "lāʹmä"
+    spoken: "laymah"
     status: unverified
   - word: Laman
     ipa: "/ˈleɪmun/"
     respelling: "lāʹmun"
+    spoken: "laymuhn"
     status: unverified
   - word: Lamanite
     ipa: "/ˈleɪmunaɪt/"
     respelling: "lāʹmun-īt"
+    spoken: "laymuhnyet"
     status: unverified
   - word: Lamoni
     ipa: "/laˈmoʊnaɪ/"
     respelling: "la-mōʹnī"
+    spoken: "luhmohnye"
     status: unverified
   - word: Lebanon
     ipa: "/ˈlɛbanɑn/"
@@ -780,18 +916,22 @@ entries:
   - word: Lehi-Nephi
     ipa: "/ˈliːhaɪˈniːfaɪ/"
     respelling: "lēʹhī–nēʹfī"
+    spoken: "leehye-neefye"
     status: unverified
   - word: Lehonti
     ipa: "/liːˈhɑntaɪ/"
     respelling: "lē-hänʹtī"
+    spoken: "leehahntye"
     status: unverified
   - word: Lemuel
     ipa: "/ˈlɛmjuːl/"
     respelling: "lĕmʹyūl"
+    spoken: "lemyool"
     status: unverified
   - word: Lemuelite
     ipa: "/ˈlɛmjuːlaɪt/"
     respelling: "lĕmʹyūl-īt"
+    spoken: "lemyoolyet"
     status: unverified
   - word: Levi
     ipa: "/ˈliːvaɪ/"
@@ -800,6 +940,7 @@ entries:
   - word: Liahona
     ipa: "/ˈliːaˈhoʊna/"
     respelling: "lēʹa-hōʹna"
+    spoken: "leeuhhohnuh"
     status: unverified
   - word: Lib
     ipa: "/lɪb/"
@@ -816,6 +957,7 @@ entries:
   - word: Limhi
     ipa: "/ˈlɪmhaɪ/"
     respelling: "lĭmʹhī"
+    spoken: "limhye"
     status: unverified
   - word: Limnah
     ipa: "/ˈlɪmnɑ/"
@@ -824,14 +966,17 @@ entries:
   - word: Luram
     ipa: "/ˈluːrum/"
     respelling: "lūrʹum"
+    spoken: "looruhm"
     status: unverified
   - word: Madmenah
     ipa: "/mædˈmɛna/"
     respelling: "măd-mĕnʹa"
+    spoken: "madmenuh"
     status: unverified
   - word: Mahah
     ipa: "/ˈmeɪhɑ/"
     respelling: "māʹhä"
+    spoken: "mayhah"
     status: unverified
   - word: Malachi
     ipa: "/ˈmælakaɪ/"
@@ -844,6 +989,7 @@ entries:
   - word: Manti
     ipa: "/ˈmæntaɪ/"
     respelling: "mănʹtī"
+    spoken: "mantye"
     status: unverified
   - word: Mary
     ipa: "/ˈmɛriː/"
@@ -852,62 +998,77 @@ entries:
   - word: Mathoni
     ipa: "/maˈθoʊnaɪ/"
     respelling: "ma-thōʹnī"
+    spoken: "muhthohnye"
     status: unverified
   - word: Mathonihah
     ipa: "/mæθoʊˈnaɪhɑ/"
     respelling: "măth-ō-nīʹhä"
+    spoken: "mathohnyehah"
     status: unverified
   - word: Medes
     ipa: "/miːdz/"
     respelling: "mēdz"
+    spoken: "meedz"
     status: unverified
   - word: Melchizedek
     ipa: "/mɛlˈkɪzadɪk/"
     respelling: "mĕl-kĭzʹa-dĭk"
+    spoken: "melkizuhdik"
     status: unverified
   - word: Melek
     ipa: "/ˈmiːlɛk/"
     respelling: "mēʹlĕk"
+    spoken: "meelek"
     status: unverified
   - word: Michmash
     ipa: "/ˈmɪkmæʃ/"
     respelling: "mĭkʹmăsh"
+    spoken: "mikmash"
     status: unverified
   - word: Middoni
     ipa: "/mɪdˈdoʊnaɪ/"
     respelling: "mĭd-dōʹnī"
+    spoken: "middohnye"
     status: unverified
   - word: Midian
     ipa: "/ˈmɪdiːun/"
     respelling: "mĭdʹē-un"
+    spoken: "mideeuhn"
     status: unverified
   - word: Migron
     ipa: "/ˈmaɪgrɑn/"
     respelling: "mīʹgrän"
+    spoken: "myegrahn"
     status: unverified
   - word: Minon
     ipa: "/ˈmaɪnɑn/"
     respelling: "mīʹnän"
+    spoken: "myenahn"
     status: unverified
   - word: Moab
     ipa: "/ˈmoʊæb/"
     respelling: "mōʹăb"
+    spoken: "mohab"
     status: unverified
   - word: Mocum
     ipa: "/ˈmoʊkum/"
     respelling: "mōʹkum"
+    spoken: "mohkuhm"
     status: unverified
   - word: Moriancumer
     ipa: "/moʊriːˈænkamer/"
     respelling: "mōr-ē-ănʹka-mer"
+    spoken: "mohreeankuhmer"
     status: unverified
   - word: Morianton
     ipa: "/moʊriːˈæntun/"
     respelling: "mōr-ē-ănʹtun"
+    spoken: "mohreeantuhn"
     status: unverified
   - word: Moriantum
     ipa: "/moʊriːˈæntum/"
     respelling: "mōr-ē-ănʹtum"
+    spoken: "mohreeantuhm"
     status: unverified
   - word: Mormon
     ipa: "/ˈmoʊrmun/"
@@ -916,14 +1077,17 @@ entries:
   - word: Moron
     ipa: "/ˈmoʊrun/"
     respelling: "mōrʹun"
+    spoken: "mohruhn"
     status: unverified
   - word: Moroni
     ipa: "/moʊˈroʊnaɪ/"
     respelling: "mō-rōʹnī"
+    spoken: "moreohnigh"
     status: unverified
   - word: Moronihah
     ipa: "/moʊroʊˈnaɪhɑ/"
     respelling: "mō-rō-nīʹhä"
+    spoken: "moreohnighhah"
     status: unverified
   - word: Moses
     ipa: "/ˈmoʊzus/"
@@ -932,22 +1096,27 @@ entries:
   - word: Mosiah
     ipa: "/moʊˈsaɪa/"
     respelling: "mō-sīʹa"
+    spoken: "mozeyeyah"
     status: unverified
   - word: Mulek
     ipa: "/ˈmjuːlɛk/"
     respelling: "myūʹlĕk"
+    spoken: "myoolek"
     status: unverified
   - word: Muloki
     ipa: "/ˈmjuːlakaɪ/"
     respelling: "myūʹla-kī"
+    spoken: "myooluhkye"
     status: unverified
   - word: Nahom
     ipa: "/ˈneɪhum/"
     respelling: "nāʹhum"
+    spoken: "nayhuhm"
     status: unverified
   - word: Naphtali
     ipa: "/ˈnæftalaɪ/"
     respelling: "năfʹta-lī"
+    spoken: "naftuhlye"
     status: unverified
   - word: Nazareth
     ipa: "/ˈnæzarɛθ/"
@@ -956,26 +1125,32 @@ entries:
   - word: Neas
     ipa: "/ˈniːɑs/"
     respelling: "nēʹäs"
+    spoken: "neeahs"
     status: unverified
   - word: Nehor
     ipa: "/ˈniːhoʊr/"
     respelling: "nēʹhōr"
+    spoken: "neehohr"
     status: unverified
   - word: Nephi
     ipa: "/ˈniːfaɪ/"
     respelling: "nēʹfī"
+    spoken: "neefye"
     status: unverified
   - word: Nephihah
     ipa: "/niːˈfaɪhɑ/"
     respelling: "nē-fīʹhä"
+    spoken: "neefyehah"
     status: unverified
   - word: Nephite
     ipa: "/ˈniːfaɪt/"
     respelling: "nēʹfīt"
+    spoken: "neefyet"
     status: unverified
   - word: Neum
     ipa: "/ˈniːum/"
     respelling: "nēʹum"
+    spoken: "neeuhm"
     status: unverified
   - word: Nimrah
     ipa: "/ˈnɪmrɑ/"
@@ -984,6 +1159,7 @@ entries:
   - word: Nimrod
     ipa: "/ˈnɪmrɑd/"
     respelling: "nĭmʹräd"
+    spoken: "nimrahd"
     status: unverified
   - word: Noah
     ipa: "/ˈnoʊa/"
@@ -992,6 +1168,7 @@ entries:
   - word: Ogath
     ipa: "/ˈoʊgæθ/"
     respelling: "ōʹgăth"
+    spoken: "ohgath"
     status: unverified
   - word: Omega
     ipa: "/oʊˈmeɪga/"
@@ -1000,70 +1177,87 @@ entries:
   - word: Omer
     ipa: "/ˈoʊmer/"
     respelling: "ōʹmer"
+    spoken: "ohmer"
     status: unverified
   - word: Omner
     ipa: "/ˈɑmner/"
     respelling: "ämʹner"
+    spoken: "ahmner"
     status: unverified
   - word: Omni
     ipa: "/ˈɑmnaɪ/"
     respelling: "ämʹnī"
+    spoken: "ahmnye"
     status: unverified
   - word: Onidah
     ipa: "/oʊˈnaɪda/"
     respelling: "ō-nīʹda"
+    spoken: "ohnyeduh"
     status: unverified
   - word: Onihah
     ipa: "/oʊˈnaɪhɑ/"
     respelling: "ō-nīʹhä"
+    spoken: "ohnyehah"
     status: unverified
   - word: Onti
     ipa: "/ˈɑntaɪ/"
     respelling: "änʹtī"
+    spoken: "ahntye"
     status: unverified
   - word: Ophir
     ipa: "/ˈoʊfer/"
     respelling: "ōʹfer"
+    spoken: "ohfer"
     status: unverified
   - word: Oreb
     ipa: "/ˈoʊrɛb/"
     respelling: "ōrʹĕb"
+    spoken: "ohreb"
     status: unverified
   - word: Orihah
     ipa: "/oʊˈraɪhɑ/"
     respelling: "ō-rīʹhä"
+    spoken: "ohryehah"
     status: unverified
   - word: Paanchi
     ipa: "/peɪˈænkaɪ/"
     respelling: "pā-ănʹkī"
+    spoken: "payankye"
     status: unverified
   - word: Pachus
     ipa: "/ˈpeɪkus/"
     respelling: "pāʹkus"
+    spoken: "paykuhs"
     status: unverified
   - word: Pacumeni
     ipa: "/peɪˈkjuːmɛnaɪ/"
     respelling: "pā-kyūʹmĕn-ī"
+    spoken: "paykyoomenye"
     status: unverified
   - word: Pagag
     ipa: "/ˈpeɪgɑg/"
     respelling: "pāʹgäg"
+    spoken: "paygahg"
     status: unverified
   - word: Pahoran
     ipa: "/paˈhoʊrun/"
     respelling: "pa-hōrʹun"
+    spoken: "puhhohruhn"
     status: unverified
   - word: Palestina
     ipa: "/pælaˈstaɪna/"
     respelling: "păl-a-stīʹna"
+    spoken: "paluhstyenuh"
     status: unverified
   - word: Pathros
     ipa: "/ˈpeɪθroʊs/"
     respelling: "pāʹthrōs"
+    spoken: "paythrohs"
     status: unverified
   - word: Pekah
     ipa: "/ˈpiːkɑ/"
     respelling: "pēʹkä"
+    spoken: "peekah"
     status: unverified
   - word: Pharaoh
     ipa: "/ˈfeɪroʊ/"
@@ -1076,30 +1270,37 @@ entries:
   - word: Rabbanah
     ipa: "/raˈbæna/"
     respelling: "ra-bănʹa"
+    spoken: "ruhbanuh"
     status: unverified
   - word: Rahab
     ipa: "/ˈreɪhæb/"
     respelling: "rāʹhăb"
+    spoken: "rayhab"
     status: unverified
   - word: Ramah
     ipa: "/ˈrɑmɑ/"
     respelling: "räʹmä"
+    spoken: "rahmah"
     status: unverified
   - word: Ramath
     ipa: "/ˈreɪmuθ/"
     respelling: "rāʹmuth"
+    spoken: "raymuhth"
     status: unverified
   - word: Rameumptom
     ipa: "/ræmiːˈumptum/"
     respelling: "răm-ē-umpʹtum"
+    spoken: "rameeuhmptuhm"
     status: unverified
   - word: Remaliah
     ipa: "/rɛmaˈlaɪa/"
     respelling: "rĕm-a-līʹa"
+    spoken: "remuhlyuh"
     status: unverified
   - word: Rezin
     ipa: "/ˈriːzɪn/"
     respelling: "rēʹzĭn"
+    spoken: "reezin"
     status: unverified
   - word: Riplah
     ipa: "/ˈrɪplɑ/"
@@ -1108,10 +1309,12 @@ entries:
   - word: Riplakish
     ipa: "/rɪpˈleɪkɪʃ/"
     respelling: "rĭp-lāʹkĭsh"
+    spoken: "riplaykish"
     status: unverified
   - word: Ripliancum
     ipa: "/rɪpliːˈænkum/"
     respelling: "rĭp-lē-ănʹkum"
+    spoken: "ripleeankuhm"
     status: unverified
   - word: Salem
     ipa: "/ˈseɪlɛm/"
@@ -1124,6 +1327,7 @@ entries:
   - word: Samaria
     ipa: "/saˈmɛriːa/"
     respelling: "sa-mĕrʹē-a"
+    spoken: "suhmereeuh"
     status: unverified
   - word: Samuel
     ipa: "/ˈsæmjuːɛl/"
@@ -1136,6 +1340,7 @@ entries:
   - word: Sariah
     ipa: "/saˈraɪa/"
     respelling: "sa-rīʹa"
+    spoken: "suhryuh"
     status: unverified
   - word: Saul
     ipa: "/sɑl/"
@@ -1144,22 +1349,27 @@ entries:
   - word: Seantum
     ipa: "/siːˈæntum/"
     respelling: "sē-ănʹtum"
+    spoken: "seeantuhm"
     status: unverified
   - word: Sebus
     ipa: "/ˈsiːbus/"
     respelling: "sēʹbus"
+    spoken: "seebuhs"
     status: unverified
   - word: Seezoram
     ipa: "/siːˈzoʊrum/"
     respelling: "sē-zōrʹum"
+    spoken: "seezohruhm"
     status: unverified
   - word: Senine
     ipa: "/ˈsiːnaɪn/"
     respelling: "sēʹnīn"
+    spoken: "seenyen"
     status: unverified
   - word: Senum
     ipa: "/ˈsiːnum/"
     respelling: "sēʹnum"
+    spoken: "seenuhm"
     status: unverified
   - word: Seraphim
     ipa: "/ˈsɛrafɪm/"
@@ -1172,18 +1382,22 @@ entries:
   - word: Shared
     ipa: "/ˈʃeɪrud/"
     respelling: "shāʹrud"
+    spoken: "shayruhd"
     status: unverified
   - word: Shazer
     ipa: "/ˈʃeɪzer/"
     respelling: "shāʹzer"
+    spoken: "shayzer"
     status: unverified
   - word: Shearjashub
     ipa: "/ʃɪrˈdʒeɪʃub/"
     respelling: "shĭr-jāʹshub"
+    spoken: "shirjayshuhb"
     status: unverified
   - word: Shelem
     ipa: "/ˈʃiːlɛm/"
     respelling: "shēʹlĕm"
+    spoken: "sheelem"
     status: unverified
   - word: Shem
     ipa: "/ʃɛm/"
@@ -1192,22 +1406,27 @@ entries:
   - word: Shemlon
     ipa: "/ˈʃɛmlɑn/"
     respelling: "shĕmʹlän"
+    spoken: "shemlahn"
     status: unverified
   - word: Shemnon
     ipa: "/ˈʃɛmnɑn/"
     respelling: "shĕmʹnän"
+    spoken: "shemnahn"
     status: unverified
   - word: Sherem
     ipa: "/ˈʃɛrum/"
     respelling: "shĕrʹum"
+    spoken: "sheruhm"
     status: unverified
   - word: Sherrizah
     ipa: "/ʃɛrˈaɪza/"
     respelling: "shĕr-īʹza"
+    spoken: "sheryezuh"
     status: unverified
   - word: Sheum
     ipa: "/ˈʃiːum/"
     respelling: "shēʹum"
+    spoken: "sheeuhm"
     status: unverified
   - word: Shez
     ipa: "/ʃɛz/"
@@ -1216,22 +1435,27 @@ entries:
   - word: Shiblom
     ipa: "/ˈʃɪblum/"
     respelling: "shĭbʹlum"
+    spoken: "shibluhm"
     status: unverified
   - word: Shiblon
     ipa: "/ˈʃɪblun/"
     respelling: "shĭbʹlun"
+    spoken: "shibluhn"
     status: unverified
   - word: Shiblum
     ipa: "/ˈʃɪblum/"
     respelling: "shĭbʹlum"
+    spoken: "shibluhm"
     status: unverified
   - word: Shiloah
     ipa: "/ʃaɪˈloʊa/"
     respelling: "shī-lōʹa"
+    spoken: "shyelohuh"
     status: unverified
   - word: Shilom
     ipa: "/ˈʃaɪlum/"
     respelling: "shīʹlum"
+    spoken: "shyeluhm"
     status: unverified
   - word: Shim
     ipa: "/ʃɪm/"
@@ -1240,10 +1464,12 @@ entries:
   - word: Shimnilom
     ipa: "/ʃɪmˈnaɪlɑm/"
     respelling: "shĭm-nīʹläm"
+    spoken: "shimnyelahm"
     status: unverified
   - word: Shinar
     ipa: "/ˈʃaɪnɑr/"
     respelling: "shīʹnär"
+    spoken: "shyenahr"
     status: unverified
   - word: Shiz
     ipa: "/ʃɪz/"
@@ -1252,22 +1478,27 @@ entries:
   - word: Shule
     ipa: "/ʃuːl/"
     respelling: "shūl"
+    spoken: "shool"
     status: unverified
   - word: Shum
     ipa: "/ʃum/"
     respelling: "shum"
+    spoken: "shuhm"
     status: unverified
   - word: Shurr
     ipa: "/ʃer/"
     respelling: "sher"
+    spoken: "sher"
     status: unverified
   - word: Sidom
     ipa: "/ˈsaɪdum/"
     respelling: "sīʹdum"
+    spoken: "syeduhm"
     status: unverified
   - word: Sidon
     ipa: "/ˈsaɪdun/"
     respelling: "sīʹdun"
+    spoken: "syeduhn"
     status: unverified
   - word: Sinai
     ipa: "/ˈsaɪnaɪ/"
@@ -1276,10 +1507,12 @@ entries:
   - word: Sinim
     ipa: "/ˈsaɪnɪm/"
     respelling: "sīʹnĭm"
+    spoken: "syenim"
     status: unverified
   - word: Siron
     ipa: "/ˈsaɪrun/"
     respelling: "sīʹrun"
+    spoken: "syeruhn"
     status: unverified
   - word: Syria
     ipa: "/ˈsɪriːa/"
@@ -1288,18 +1521,22 @@ entries:
   - word: Tarshish
     ipa: "/ˈtɑrʃɪʃ/"
     respelling: "tärʹshĭsh"
+    spoken: "tahrshish"
     status: unverified
   - word: Teancum
     ipa: "/tiːˈænkum/"
     respelling: "tē-ănʹkum"
+    spoken: "teeankuhm"
     status: unverified
   - word: Teomner
     ipa: "/tiːˈɑmner/"
     respelling: "tē-ämʹner"
+    spoken: "teeahmner"
     status: unverified
   - word: Thummim
     ipa: "/ˈθumɪm/"
     respelling: "thumʹĭm"
+    spoken: "thuhmim"
     status: unverified
   - word: Timothy
     ipa: "/ˈtɪmaθiː/"
@@ -1308,6 +1545,7 @@ entries:
   - word: Tubaloth
     ipa: "/ˈtuːbalɑθ/"
     respelling: "tūʹba-läth"
+    spoken: "toobuhlahth"
     status: unverified
   - word: Uriah
     ipa: "/juːˈraɪa/"
@@ -1316,6 +1554,7 @@ entries:
   - word: Urim
     ipa: "/ˈjuːrɪm/"
     respelling: "yūrʹĭm"
+    spoken: "yoorim"
     status: unverified
   - word: Uzziah
     ipa: "/juːˈzaɪa/"
@@ -1324,10 +1563,12 @@ entries:
   - word: Zarahemla
     ipa: "/zɛraˈhɛmla/"
     respelling: "zĕr-a-hĕmʹla"
+    spoken: "zeruhhemluh"
     status: unverified
   - word: Zebulun
     ipa: "/ˈzɛbjuːlun/"
     respelling: "zĕbʹyū-lun"
+    spoken: "zebyooluhn"
     status: unverified
   - word: Zechariah
     ipa: "/ˈzɛkaˈraɪa/"
@@ -1340,42 +1581,52 @@ entries:
   - word: Zeezrom
     ipa: "/ziːˈɛzrum/"
     respelling: "zē-ĕzʹrum"
+    spoken: "zeeezruhm"
     status: unverified
   - word: Zemnarihah
     ipa: "/zɛmnaˈraɪhɑ/"
     respelling: "zĕm-na-rīʹhä"
+    spoken: "zemnuhryehah"
     status: unverified
   - word: Zenephi
     ipa: "/ˈziːnafaɪ/"
     respelling: "zēnʹa-fī"
+    spoken: "zeenuhfye"
     status: unverified
   - word: Zeniff
     ipa: "/ˈziːnɪf/"
     respelling: "zēʹnĭf"
+    spoken: "zeenif"
     status: unverified
   - word: Zenock
     ipa: "/ˈziːnuk/"
     respelling: "zēʹnuk"
+    spoken: "zeenuhk"
     status: unverified
   - word: Zenos
     ipa: "/ˈziːnus/"
     respelling: "zēʹnus"
+    spoken: "zeenuhs"
     status: unverified
   - word: Zerahemnah
     ipa: "/zɛraˈhɛmnɑ/"
     respelling: "zĕr-a-hĕmʹnä"
+    spoken: "zeruhhemnah"
     status: unverified
   - word: Zeram
     ipa: "/ˈziːrum/"
     respelling: "zēʹrum"
+    spoken: "zeeruhm"
     status: unverified
   - word: Zerin
     ipa: "/ˈziːrɪn/"
     respelling: "zēʹrĭn"
+    spoken: "zeerin"
     status: unverified
   - word: Ziff
     ipa: "/zɪf/"
     respelling: "zĭf"
+    spoken: "zif"
     status: unverified
   - word: Zion
     ipa: "/ˈzaɪun/"
@@ -1384,8 +1635,10 @@ entries:
   - word: Zoram
     ipa: "/ˈzoʊrum/"
     respelling: "zōʹrum"
+    spoken: "zohruhm"
     status: unverified
   - word: Zoramite
     ipa: "/ˈzoʊrumaɪt/"
     respelling: "zōrʹum-īt"
+    spoken: "zohruhmyet"
     status: unverified

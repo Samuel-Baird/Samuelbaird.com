@@ -25,6 +25,7 @@ structural rules that need no file access.
 from __future__ import annotations
 
 import copy
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -38,6 +39,9 @@ except ImportError:  # pragma: no cover - allows use without tools/ on sys.path 
 
 # tools/capy/beats.py -> tools/capy -> tools -> repo root
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+
+# Post caption (script-format.md "Post caption"): 2-3 sentences max.
+MAX_CAPTION_SENTENCES = 3
 
 BEAT_KINDS = {"clip", "narration", "card", "evidence", "chart", "excerpt"}
 
@@ -55,6 +59,14 @@ NARRATION_FAMILY_KINDS = {"narration", "card", "evidence", "chart", "excerpt"}
 ESTIMATE_WORDS_PER_SECOND = 220 / 60.0
 HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
+
+# script-format.md "Pose changes every 10-20s" (2026-09-09 user direction):
+# the renderer draws one static sprite pose per beat, so a single beat's
+# estimated duration running past this is itself the violation -- split it
+# into 2-3 beats at natural clause/sentence breaks instead. Checked by
+# capy_check_sources.py's check_pose_pacing() against resolve_durations()'s
+# per-beat estimate.
+MAX_POSE_HOLD_SECONDS = 20.0
 
 # Locked 2026-09-09 (Kokoro am_michael @ 1.5), then RE-LOCKED 2026-09-11
 # to Chatterbox TTS with a cloned reference voice -- see brand.md sec 6.
@@ -305,6 +317,20 @@ def validate(doc: dict) -> list[Issue]:
     hook = doc.get("hook")
     if not hook:
         issues.append(Issue("warning", None, "no 'hook' text set for the description/title"))
+
+    title = (doc.get("title") or "").strip()
+    if not title:
+        issues.append(Issue("warning", None, "no 'title' set -- every script needs a generated video title (script-format.md)"))
+    elif title == doc.get("slug"):
+        issues.append(Issue("warning", None, "'title' is just the slug -- write a real video title (script-format.md)"))
+
+    caption = (doc.get("caption") or "").strip()
+    if not caption:
+        issues.append(Issue("warning", None, "no 'caption' set -- every script needs a short post caption (script-format.md)"))
+    else:
+        n_sentences = len([s for s in re.split(r"(?<=[.!?])\s+", caption) if s.strip()])
+        if n_sentences > MAX_CAPTION_SENTENCES:
+            issues.append(Issue("error", None, f"'caption' is {n_sentences} sentences; max is {MAX_CAPTION_SENTENCES}"))
 
     try:
         from capy.excerpts import validate_excerpt_beats

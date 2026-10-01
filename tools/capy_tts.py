@@ -77,6 +77,7 @@ import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SEED_PRONUNCIATIONS = REPO_ROOT / "assets" / "saint-capybara" / "templates" / "pronunciations.yaml"
+BOFM_PRONUNCIATIONS = REPO_ROOT / "assets" / "saint-capybara" / "templates" / "bofm-pronunciations.yaml"
 
 VOICE_SHORTLIST = ["am_michael", "am_onyx", "bm_george"]
 DEFAULT_VOICE = "am_michael"
@@ -87,17 +88,21 @@ HEAD_PAD_SECONDS = 0.25
 
 
 def load_pronunciation_dict(project: Path | None) -> list[dict]:
+    """Merge, lowest to highest precedence: the full Book of Mormon guide,
+    the general seed list, then the project's own file. Entries for the same
+    word are merged field by field (a later layer overrides only the fields
+    it sets), so a project entry that lists just `ipa:` still inherits the
+    guide's `spoken:` respelling."""
     entries: dict[str, dict] = {}
-    if SEED_PRONUNCIATIONS.exists():
-        data = yaml.safe_load(SEED_PRONUNCIATIONS.read_text(encoding="utf-8")) or {}
-        for e in data.get("entries", []):
-            entries[e["word"].lower()] = e
+    paths = [BOFM_PRONUNCIATIONS, SEED_PRONUNCIATIONS]
     if project:
-        proj_path = project / "script" / "pronunciations.yaml"
-        if proj_path.exists():
-            data = yaml.safe_load(proj_path.read_text(encoding="utf-8")) or {}
-            for e in data.get("entries", []):
-                entries[e["word"].lower()] = e
+        paths.append(project / "script" / "pronunciations.yaml")
+    for path in paths:
+        if not path.exists():
+            continue
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        for e in data.get("entries", []):
+            entries.setdefault(e["word"].lower(), {}).update(e)
     return list(entries.values())
 
 
@@ -129,6 +134,50 @@ def apply_dictionary(text: str, entries: list[dict], *, ipa: bool = True) -> str
         pattern = re.compile(rf"\b{re.escape(word)}\b")
         out = pattern.sub(f"[{word}]({ipa_str})", out)
     return out
+
+
+def apply_spoken_respellings(text: str, entries: list[dict]) -> str:
+    """Chatterbox-only: rewrite entries that carry a `spoken:` respelling
+    (e.g. Moroni -> "Morohnee") in the text handed to the TTS model, since
+    Chatterbox has no phoneme override and only sees graphemes. Applied to
+    the synthesis text ONLY -- timing alignment and captions keep the real
+    spelling, so the on-screen word is never the respelling."""
+    out = text
+    for e in sorted(entries, key=lambda e: -len(e["word"])):
+        spoken = e.get("spoken")
+        if spoken:
+            out = re.sub(r"\b" + re.escape(e["word"]) + r"\b", spoken, out)
+    return out
+
+
+_ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+         "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+         "eighteen", "nineteen"]
+_TENS = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty", 7: "seventy", 8: "eighty", 9: "ninety"}
+
+
+def _num_words(n: int) -> str:
+    if n < 20:
+        return _ONES[n]
+    if n < 100:
+        t, o = divmod(n, 10)
+        return _TENS[t] + (f"-{_ONES[o]}" if o else "")
+    if n < 1000:
+        h, r = divmod(n, 100)
+        return f"{_ONES[h]} hundred" + (f" {_num_words(r)}" if r else "")
+    return str(n)
+
+
+def spoken_scripture_refs(text: str) -> str:
+    """Chatterbox-only: read a chapter:verse reference as words, so '11:14'
+    is spoken 'eleven fourteen' instead of 'eleven thousand four'. A verse
+    range 'N:M-K' becomes 'N M through K'. Applied to the synthesis text
+    only; captions keep the digits."""
+    def repl(m):
+        ch, v1, v2 = int(m.group(1)), int(m.group(2)), m.group(3)
+        out = f"{_num_words(ch)} {_num_words(v1)}"
+        return out + (f" through {_num_words(int(v2))}" if v2 else "")
+    return re.sub(r"\b(\d{1,3}):(\d{1,3})(?:[-–](\d{1,3}))?\b", repl, text)
 
 
 def speech_text(beat: dict) -> str:
@@ -248,6 +297,15 @@ def normalize_wav(src: Path, dst: Path, *, target_lufs: float = TARGET_LUFS, hea
     the coarse single-pass estimate. Word timings (measured against the
     un-padded, pre-normalization .wav) still line up afterward since
     gain-only normalization and the head-pad delay don't change timing.
+
+    Both Kokoro and Chatterbox render at SAMPLE_RATE (24kHz -- a fixed
+    property of each model, not configurable), so this 48kHz output is
+    always an upsample, never a native capture. The final `aresample`
+    stage explicitly selects ffmpeg's `soxr` resampler (this machine's
+    ffmpeg is `--enable-libsoxr`) instead of leaving `-ar 48000` to
+    trigger the default `swr` resampler -- soxr's higher-order filtering
+    gives a cleaner, better-anti-aliased upsample of the narration that
+    ends up in every final video.
     """
     measure_cmd = [
         "ffmpeg", "-i", str(src),
@@ -266,12 +324,13 @@ def normalize_wav(src: Path, dst: Path, *, target_lufs: float = TARGET_LUFS, hea
         f"measured_LRA={measured['input_lra']}:measured_thresh={measured['input_thresh']}:"
         f"offset={measured['target_offset']}:linear=true:print_format=none,"
         f"adelay={int(head_pad * 1000)}|{int(head_pad * 1000)},"
-        f"apad=pad_dur={head_pad}"
+        f"apad=pad_dur={head_pad},"
+        f"aresample=resampler=soxr:precision=28:osr=48000"
     )
     apply_cmd = [
         "ffmpeg", "-y", "-i", str(src),
         "-af", filt,
-        "-ar", "48000", "-ac", "2",
+        "-ac", "2",
         str(dst),
     ]
     subprocess.run(apply_cmd, capture_output=True, check=True)
@@ -427,7 +486,7 @@ def render_project(
         jobs = [
             {
                 "id": item["bid"],
-                "text": apply_dictionary(item["text"], entries, ipa=False),
+                "text": spoken_scripture_refs(apply_spoken_respellings(apply_dictionary(item["text"], entries, ipa=False), entries)),
                 "ref": REPO_ROOT / item["v"]["ref"],
                 "out_path": item["wav_path"],
                 "exaggeration": item["v"].get("exaggeration", 0.5),

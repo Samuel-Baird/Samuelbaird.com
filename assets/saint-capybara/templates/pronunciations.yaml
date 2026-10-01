@@ -10,24 +10,32 @@ entries:
     status: unverified
   - word: Nephi
     ipa: "/ˈniːfaɪ/"
+    spoken: "neefye"
     status: unverified
   - word: Moroni
-    ipa: "/məˈroʊnaɪ/"
-    status: unverified
+    ipa: "/moʊˈroʊnaɪ/"
+    respelling: "mō-rōʹnī"
+    spoken: "moreohnigh"
+    status: church-guide 2026-09-19
+    note: "mo-ROH-nye (Church guide mō-rōʹnī; ī as in 'idle'). An earlier 'fix' to -nee was a misreading and has been reverted. `spoken` feeds Chatterbox only."
   - word: Lehi
     ipa: "/ˈliːhaɪ/"
     status: unverified
   - word: Mosiah
     ipa: "/moʊˈzaɪə/"
-    status: unverified
+    spoken: "mozeyeyah"
+    status: user-specified 2026-09-20 (mo-zeye-yah)
   - word: Zarahemla
     ipa: "/zɛərəˈhɛmlə/"
+    spoken: "zeruhhemluh"
     status: unverified
   - word: Cumorah
     ipa: "/kjuːˈmɔːrə/"
+    spoken: "kuhmohruh"
     status: unverified
   - word: Deseret
     ipa: "/ˌdɛzəˈrɛt/"
+    spoken: "dezuhret"
     status: unverified
   - word: Elohim
     ipa: "/ˌɛloʊˈhiːm/"
@@ -46,6 +54,7 @@ entries:
     status: unverified
   - word: Melchizedek
     ipa: "/mɛlˈkɪzədɛk/"
+    spoken: "melkizuhdik"
     status: unverified
   - word: Givens
     ipa: "/ˈɡɪvənz/"
@@ -68,12 +77,15 @@ entries:
     note: "not the financial sense -- LDS temple ordinance, common source of TTS misreading."
   - word: Gadianton
     ipa: "/ˌɡeɪdiˈæntən/"
+    spoken: "gadeeantuhn"
     status: unverified
   - word: Jaredite
     ipa: "/ˈdʒɛərədaɪt/"
+    spoken: "jeruhdyet"
     status: unverified
   - word: Abinadi
     ipa: "/əˈbɪnədaɪ/"
+    spoken: "uhbinuhdye"
     status: unverified
   # Terms most likely to actually appear in a general "reasons I'm not
   # Mormon" reaction video (prioritized for this project):

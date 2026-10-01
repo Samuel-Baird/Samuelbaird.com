@@ -208,11 +208,13 @@ slug substituted.
 6. Metadata-strip remux (`ffmpeg -c copy -map_metadata -1 -fflags
    +bitexact`) to produce the final `exports/<slug>.mp4`, then
    `tools/capy_check_brand.py --project <dir> --mp4 <final path>`.
-7. `tools/capy_description.py` (not yet built) would produce the export
-   description package — for now, write `exports/<slug>-description.txt`
-   by hand per the description content described in the original pipeline
-   plan (hook, summary, sources grouped by tier, source-video credit,
-   fair-use line, disclaimer, tags) and run the brand lint on it too.
+7. `tools/capy_description.py --project <dir>` (built 2026-09-21) produces
+   `exports/<slug>-description.txt` from `beats.yaml`/`sources.yaml`/
+   `source_info.json` — hook, summary, sources grouped by tier,
+   source-video credit, disclaimer (brand.md §1's required sentence,
+   verbatim), fair-use line, tags. Then run
+   `tools/capy_check_brand.py --project <dir>` (it globs
+   `exports/*-description.txt` on its own, no extra flag needed).
 
 ## QC
 

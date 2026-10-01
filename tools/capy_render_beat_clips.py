@@ -28,6 +28,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from capy.banner import BANNER_FILENAME, banner_beat_ids, render_banner
 from capy.beats import load_beats
 from capy.layout import Theme
 
@@ -91,7 +92,7 @@ def _fit(sw: int, sh: int, max_w: int, max_h: int) -> tuple[int, int]:
     return fw, fh
 
 
-def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list[dict], theme: Theme, out_path: Path, *, video_bg_start: float | None = None) -> float:
+def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list[dict], theme: Theme, out_path: Path, *, video_bg_start: float | None = None, banner_path: Path | None = None) -> float:
     kind = beat["kind"]
     w, h = theme.canvas_size
     fps = theme.fps
@@ -206,6 +207,15 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
     # -loop/-t tokens share the list with -i and would over-count it).
     cap_first_index = inputs.count("-i")
     label = "capbase0"
+    if banner_path is not None:
+        # "RESPONSE INCOMING" -- whole beat (the caller only passes it for
+        # the leading run of clip beats), under the captions.
+        inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(banner_path)]
+        filter_parts.append(
+            f"[{cap_first_index}:v]format=rgba[banner]; [{label}][banner]overlay=0:0[capbanner]"
+        )
+        label = "capbanner"
+        cap_first_index += 1
     for i, cap in enumerate(captions):
         idx = cap_first_index + i
         inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(project / cap["path"])]
@@ -257,6 +267,8 @@ def main() -> int:
         lst.sort(key=lambda c: c["start"])
 
     out_dir = project / "frames"
+    banner_ids = banner_beat_ids(doc)
+    banner_path = render_banner(theme, out_dir / BANNER_FILENAME) if banner_ids else None
     manifest = []
     last_clip_end: float | None = None
     for beat in doc["beats"]:
@@ -273,7 +285,8 @@ def main() -> int:
         plate_path = project / plate["path"]
         captions = captions_by_beat.get(bid, [])
         out_path = out_dir / f"beat_{bid}.mp4"
-        duration = render_beat_clip(beat, project, plate_path, captions, theme, out_path, video_bg_start=last_clip_end)
+        duration = render_beat_clip(beat, project, plate_path, captions, theme, out_path, video_bg_start=last_clip_end,
+                                   banner_path=banner_path if bid in banner_ids else None)
         manifest.append({"id": bid, "kind": beat["kind"], "path": str(out_path.relative_to(project)), "duration": round(duration, 3)})
         print(f"{bid}: {duration:.2f}s -> {out_path.name} ({len(captions)} caption windows)")
 

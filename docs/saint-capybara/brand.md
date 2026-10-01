@@ -504,7 +504,9 @@ other brand. **No chips, no wordmark, no on-screen hook text** —
 removed 2026-09-09 as part of the layout redesign (§8); the hook line in
 `beats.yaml` still drives the title/description, it just never renders
 into the frame. The only on-screen text, ever, is a caption or card/quote
-text (including its attribution).
+text (including its attribution) — **plus one exception, the "RESPONSE
+INCOMING" banner (§8, 2026-09-20)**, shown only until Saint Capybara
+first speaks.
 
 **Evidence cards:** parchment card, thin ink pixel border, citation line
 top-left in Pixelify Sans (fit-to-width, shrinking from 48px down to a
@@ -567,10 +569,43 @@ CLIP sprite box: y 1200–1600, both anchored off `sprite_bottom`) — if a
 future layout change moves either one, captions keep their band and the
 sprite gets resized/repositioned to stay clear, never the reverse.
 
-**No chips, no wordmark, no on-screen hook text.** The v1 "Source video"/
-"SOURCE" label chips, the beat-1 hook chip, and the bottom-right wordmark
-are all removed — the only text drawn into any frame is a caption or
-card/quote text (with its attribution). The "source visible on screen"
+**"RESPONSE INCOMING" banner (2026-09-20 user direction).** A big
+"RESPONSE INCOMING" title sits at the top of the frame for the **opening
+clip only**, and disappears the moment Saint Capybara begins to speak. It
+tells a cold viewer that the footage they're watching is the thing being
+answered and that a reply is coming, so the reacted-to clip reads as setup
+rather than as the video itself.
+
+- **Window.** From t=0 (start of the first `clip` beat) to the start of the
+  first narration-family beat, i.e. the first time the capybara's own
+  voice plays. If the opening clip is split into several consecutive
+  `clip` beats, the banner spans all of them. It does **not** return on
+  later clips — one banner per video. A script that opens with narration
+  (no leading clip) gets no banner.
+- **Placement.** Top of the frame, but below the platform-unsafe status
+  bar: y 260–420, centered, inside x 60–1020 (`platform_safe.top` is 250,
+  so the banner never sits under the For You/Following tabs). It floats
+  over the top of the clip video (and over the top edge of the letterbox
+  band for a 16:9 source), so it is an *overlay*, never a change to the
+  clip's crop or letterbox math.
+- **Style.** Press Start 2P (the `display` font, already used for card
+  attributions), parchment fill with the ink outline used by captions and
+  a `highlight_brick` pill behind it so it stays legible over any footage.
+  Sized to fit on one line at ≤ 960px wide via `capy.text.fit_text`
+  shrink-to-fit, never a fixed character budget.
+- **Never overlaps captions.** The banner (y 260–420) sits above every
+  caption band (CLIP captions start at y 860); if the banner or a caption
+  band ever moves, the caption band wins and the banner is repositioned.
+- **Machine-readable spec:** `theme.yaml: layout.response_banner`.
+  **Implemented 2026-09-20** in `tools/capy/banner.py` +
+  `tools/capy_render_beat_clips.py` (see `hybrid-resolve-pipeline.md`,
+  "Response-incoming banner").
+
+**No chips, no wordmark, no on-screen hook text** (apart from the banner
+above). The v1 "Source video"/"SOURCE" label chips, the beat-1 hook chip,
+and the bottom-right wordmark are all removed — the only text drawn into
+any frame is a caption or card/quote text (with its attribution), and
+the one-time "RESPONSE INCOMING" banner. The "source visible on screen"
 clip-fairness requirement (`script-format.md`) now lives in the video
 description instead.
 

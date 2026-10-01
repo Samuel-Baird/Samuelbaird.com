@@ -13,6 +13,31 @@ instead of forced via this dictionary. This file/mechanism is kept
 as-is for any beat still explicitly rendered via `voice: {engine:
 kokoro, ...}`.
 
+## Chatterbox respellings and scripture references (2026-09-19)
+
+Two Chatterbox-only fixes in `tools/capy_tts.py`, applied to the text handed
+to the model and nowhere else (captions and timing keep the real spelling):
+
+- **`spoken:` on a dictionary entry** — a plain-English respelling that
+  Chatterbox reads instead of the word, e.g. `Moroni` -> `moreohnigh`
+  (Church guide *mō-rōʹnī*: mo-ROH-nye, ī as in "idle"; **not** -nee).
+  Kokoro still uses `ipa:`. Every Book of Mormon name in the Church guide
+  now has one, generated from its `respelling:` by
+  `tools/capy_bofm_spoken.py` (ī -> "ye"/"eye", ō -> "oh", ē -> "ee",
+  ĕ -> "e", ĭ -> "i", schwa -> "uh"; only the first of an "X or Y" pair;
+  stress can't be expressed). Familiar names the model already reads
+  correctly (Adam, Jacob, Mormon, Alma, Lehi, ...) are skipped
+  (`COMMON_OK` in that script). Re-run the script after editing a
+  `respelling:`. Verify by ear, then set `verified-by-ear`.
+- **Chapter:verse references are spoken as words** — `11:14` is read
+  "eleven fourteen" (not "eleven thousand four"), `1:8` "one eight",
+  `3:23-25` "three twenty-three through twenty-five". Automatic for every
+  `N:M` / `N:M-K` in narration; no per-project entry needed.
+- **Loading:** `capy_tts.load_pronunciation_dict` now merges, lowest to
+  highest precedence, the full guide (`bofm-pronunciations.yaml`), the seed
+  list, then the project file, field by field. The guide is therefore
+  active in every project with no copying.
+
 ## Mechanism
 
 `tools/capy_tts.py` applies the merged dictionary (project
@@ -30,8 +55,12 @@ does not work.
 **Every proper noun that appears in a project's narration needs either a
 dictionary entry or an explicit `ok-as-is` note** in that project's
 `script/pronunciations.yaml`, before it is ever rendered by
-`capy_tts.py`. This is checked manually today (no automated lint yet) —
-part of Part A review checklist item 12.
+`capy_tts.py`. `capy_check_sources.py`'s `check_pronunciation_coverage()`
+(added 2026-09-21) flags proper nouns missing from the merged dictionary
+as `info` — a heuristic capitalization scan, so it will miss real cases
+and flag some false positives (e.g. a sentence-initial proper noun after
+an em dash), never a Gate A blocker — still spot-check by eye per Part A
+review checklist item 12.
 
 ## Entry format
 
@@ -91,15 +120,15 @@ project's `script/pronunciations.yaml` and add project-specific proper
 nouns as they come up; delete entries that never appear in that project's
 narration if you want a lean file (optional — extra entries are harmless).
 
-## Book of Mormon name list (growing reference, not auto-copied)
+## Book of Mormon name list (loaded automatically)
 
-`assets/saint-capybara/templates/bofm-pronunciations.yaml` is a separate,
-much larger (342-entry) reference covering every proper noun in the
-Church's official Book of Mormon pronunciation guide
+`assets/saint-capybara/templates/bofm-pronunciations.yaml` is the 342-entry
+reference covering every proper noun in the Church's official Book of
+Mormon pronunciation guide
 (<https://www.churchofjesuschrist.org/study/scriptures/bofm/pronunciation?lang=eng>).
-Unlike the general seed list above, **this one is not meant to be copied
-wholesale into every project** — pull individual entries into a project's
-`script/pronunciations.yaml` as its narration actually needs them.
+**As of 2026-09-19 `capy_tts.py` loads it in every project** as the lowest
+precedence layer (see "Loading" above), so nothing needs copying. Copy an
+entry into a project's `script/pronunciations.yaml` only to override it.
 
 Each entry carries:
 - `respelling:` — the Church guide's own diacritic notation, verbatim
@@ -109,6 +138,7 @@ Each entry carries:
   IPA (vowel-symbol and stress-mark substitution, no vowel reduction in
   unstressed syllables, no dialect judgment calls). It is a reasonable
   starting guess, not a verified transcription.
+- `spoken:` — Chatterbox respelling derived from `respelling:` (see above).
 - `status: unverified` on every entry, by design — none of these 342 have
   been checked by ear against a real Kokoro render.
 

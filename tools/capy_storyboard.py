@@ -101,7 +101,10 @@ def _transcript_span_text(segments: list[dict], start: float, end: float) -> str
 def render_script_md(doc: dict, per_beat: dict[str, float], total: float, project: Path | None = None) -> str:
     source_time = beats_mod.source_time_seconds(doc, per_beat)
     pct = (source_time / total * 100) if total else 0.0
-    lines = [f"# Script — {doc.get('title', doc.get('slug'))}", ""]
+    lines = [f"# Script — {doc.get('title') or doc.get('slug')}", ""]
+    lines.append(f"> **Video title** (upload title, not shown on screen): {doc.get('title') or '(none yet)'}  ")
+    lines.append(f"> **Post caption** (goes with the upload, not shown on screen): {doc.get('caption') or '(none yet)'}")
+    lines.append("")
     lines.append(f"**Slug:** `{doc.get('slug')}` | **Estimated runtime:** {total:.1f}s "
                   f"(budget {doc['format']['min_seconds']}-{doc['format']['max_seconds']}s) | "
                   f"**Source time:** {source_time:.1f}s ({pct:.0f}%)")

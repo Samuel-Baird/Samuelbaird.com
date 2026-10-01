@@ -76,8 +76,13 @@ Run through all 16 before sending the Gate A message in
     standard or a tradition's record, never the person. If any red-team
     brief's `Turnabout` section had material, the script used it or the
     Gate A message says why not.
+17. **Title + post caption** (`script-format.md` "Video title and post
+    caption") — `beats.yaml` has a generated `title` (not the slug) and a
+    `caption` of 2-3 sentences max that is a sharp jab or a question
+    hook, doesn't spoil the rebuttal, and passes the same tone rules as
+    narration. Both appear at the top of `script.md`.
 
-Only after all 16 pass: render `frames/storyboard.png` + `script/script.md`
+Only after all 17 pass: render `frames/storyboard.png` + `script/script.md`
 and send the Gate A message. **Stop there.**
 
 ## Part B — post-approval, before calling a render "ready for review"
@@ -98,6 +103,10 @@ and so future sessions on this project use the same checklist.)
    audio.
 3. Phone legibility — view `storyboard.png`/a real frame at actual phone
    size, not just on a desktop monitor.
+3a. Response-incoming banner — a frame at t=0 shows "RESPONSE INCOMING"
+   at the top, clear of the platform status bar and the captions; a frame
+   just after the capybara first speaks does not; it never reappears on a
+   later clip (`brand.md` sec 8).
 4. Evidence hold — every evidence/card beat held long enough to actually
    read (`capy.beats.estimate_hold_seconds` honored, not undercut by a
    short TTS line).

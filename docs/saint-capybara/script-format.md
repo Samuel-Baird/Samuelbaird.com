@@ -30,7 +30,8 @@ directly, but never by silently rewriting the user's own words.
 ```yaml
 version: 1
 slug: adam-god-claim
-title: "Did Brigham Young teach Adam was God?"
+title: "Did Brigham Young teach Adam was God?"   # GENERATED video title -- see "Video title and post caption"
+caption: "Brigham Young said WHAT about Adam? The sermon is real, and so is the context it's usually pulled out of."   # GENERATED post caption, 2-3 sentences max
 hook: "He said WHAT about Adam?"     # title/description only (2026-09-09) -- never rendered on screen
 summary: "..."                        # for the description (Step 7, post-Gate-A)
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
@@ -405,6 +406,40 @@ mechanism. `evidence.crop` still works as before (cropping happens before
 the fit-to-box sizing, whether that's the storyboard preview's paste or
 the Resolve overlay's starting size).
 
+## Video title and post caption (2026-09-20 user direction)
+
+Every script gets a **generated video title** (`title:`) and a **generated
+post caption** (`caption:`), written by the agent at the same time as the
+beats and shown at the very top of `script.md` for Gate A review (the user
+can edit either there like any other line). Neither is ever rendered on
+screen — they're what goes on the upload.
+
+- **Title** — the public upload title. A real, specific title, never the
+  slug. Same sharpness bar as the caption: a claim stated plainly or a
+  question the video answers. Keep it short enough to read in a feed
+  (aim ≤ 70 characters). `hook` stays a separate, punchier line for the
+  description.
+- **Caption** — **2–3 sentences max** (hard limit, `capy.beats.
+  MAX_CAPTION_SENTENCES`; a 4th sentence is a validation error). It must
+  be interesting, in one of two shapes: **a sharp jab** (one dry
+  turnabout at the claim, per `apologetics-playbook.md` "Sharpness"; the
+  target is the argument, never the person) **or a hook**, typically a
+  question that makes a scroller want the answer. Do not summarize the
+  video, spoil the rebuttal, or open by agreeing with the other side.
+  Same tone rules as narration (`brand.md` §2): no polemic, no ad hominem,
+  no "destroyed/owned/cope".
+- `tools/capy/beats.py: validate()` warns on a missing/slug-only `title`,
+  warns on a missing `caption`, and errors on a caption over 3 sentences.
+
+## Response-incoming banner is automatic (2026-09-20)
+
+Do **not** add a beat, caption, or field for the "RESPONSE INCOMING" title.
+It is derived from beat order: shown over the opening `clip` beat(s) until
+the first narration-family beat begins, then never again (`brand.md` sec
+8). Practical consequence: open the script with the clip, not with a
+capybara narration beat, if you want the banner. Never write the phrase
+into a caption or beat `text:`.
+
 ## Sprite selection defaults
 
 See `brand.md` sec 5's `FUNCTION_TO_POSE` table. Defaults only — a literal
@@ -420,10 +455,11 @@ without a pose change.** A narration point that would naturally run
 follow-up point) should be split into 2-3 separate beats at its natural
 clause/sentence breaks, each with its own — still function-appropriate,
 still `SENSITIVE_FORBIDDEN`-respecting — pose, rather than one beat
-carrying a long, visually static block. This is a pacing/authoring rule,
-not a lint-enforced one (there's no `capy_check_sources.py` check for it
-yet); watch for it manually against each beat's estimated duration in
-`script.md` before Gate A.
+carrying a long, visually static block. `capy_check_sources.py`'s
+`check_pose_pacing()` (added 2026-09-21) warns (--strict: error) when a
+narration-family beat's estimated duration exceeds
+`capy.beats.MAX_POSE_HOLD_SECONDS` (20s) — still worth a manual glance at
+`script.md` before Gate A, since the estimate is pre-TTS word-count based.
 
 ## Caption rules
 

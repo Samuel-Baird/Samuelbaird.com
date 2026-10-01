@@ -156,6 +156,10 @@ class Theme:
     def letterbox_bg(self) -> dict:
         return self.layout["clip"]["letterbox_bg"]
 
+    def response_banner(self) -> dict:
+        """theme.yaml layout.response_banner (see capy.banner)."""
+        return self.layout["response_banner"]
+
     def freeze_spec(self) -> dict:
         return self.layout["host"]["freeze"]
 

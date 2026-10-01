@@ -137,6 +137,37 @@ after Gate A approval:
    `tools/capy_check_brand.py --project <dir> --mp4 <final path>` before
    calling a render final.
 
+## Response-incoming banner (2026-09-20 user direction)
+
+The opening clip carries a big **"RESPONSE INCOMING"** title at the top of
+the frame until Saint Capybara first speaks (spec: `brand.md` sec 8,
+`theme.yaml: layout.response_banner`). **Implemented 2026-09-20**
+(`tools/capy/banner.py`, `tools/capy_render_beat_clips.py`), shaped so it
+doesn't disturb the flattened one-MP4-per-beat model above:
+
+- **Window** is derived, not scripted: from t=0 of the first `clip` beat
+  to the `start` of the first narration-family beat (`narration`, `card`,
+  `evidence`, `chart`, `excerpt`). No `beats.yaml` field; a script's
+  structure decides it. If the first beat is not a `clip`, no banner.
+- **Where it's drawn.** It is a static transparent PNG
+  (`frames/banner_response_incoming.png`, rendered once via
+  `capy.text.fit_text` from the `response_banner` theme block) composited
+  by `capy_render_beat_clips.py` over each `clip` beat inside the window,
+  after the source video and the plate but *before* the caption overlays,
+  with `enable=between(t,0,<window end within this beat>)`. Beats that fall
+  wholly after the window get no banner overlay, so nothing to trim in
+  Resolve — the banner is baked into the affected beat MP4s like captions
+  are.
+- **Not in the plate PNG.** Keep it out of `frames/plate_<id>.png` (CLIP
+  plates are a pure transparent overlay with only the sprite, and the plate
+  cache key must not depend on banner state).
+- **Resolve.** No extra track needed; if a human editor later wants it
+  live and resizable, treat it like the evidence-photo overlay layer above
+  (a separate PNG on an overlay track) rather than re-baking.
+- **Verify.** Pull a frame from t=0 and from just after the first
+  narration beat starts (see `review-checklist.md` Part B): banner present,
+  then gone, and clear of the captions.
+
 ## Audio consistency
 
 **All audio in the final video must sit at the same loudness target
