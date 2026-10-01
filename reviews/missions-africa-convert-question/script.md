@@ -42,7 +42,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n05` (narration, ~12.3s)
 - **Original Video Transcript:** Are they trying to build little like Mormon enclaves in Kenya? Genuine question.
 - **Pose:** teaching
-- **Narration:** If by enclaves you mean communities of people who share the religion, then yes, building congregations is part of the goal. If you mean separate settlements, that's a different claim. The gathering model Russell Nelson described is people practicing their faith in their own countries.
+- **Narration:** If by enclaves you mean communities of people who share the religion, then yes, building congregations is part of the goal for missionaries from most religions. The gathering model Russell Nelson described is people practicing their faith in their own countries.
 - **Sources:** verified-pmg-purpose, verified-nelson-gathering
 - **Notes:** 
 
@@ -57,7 +57,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n99` (narration, ~6.0s)
 - **Original Video Transcript:** Are they trying to build little like Mormon enclaves in Kenya? Genuine question.
 - **Pose:** encouraging
-- **Narration:** So yes to teaching the faith and building congregations. The important distinction is what kind of community we're talking about. God bless.
+- **Narration:** So yes to teaching the faith and building congregations. God bless.
 - **Sources:** verified-pmg-purpose, verified-nelson-gathering
 - **Notes:** 
 
