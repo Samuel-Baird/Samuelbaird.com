@@ -49,6 +49,7 @@ anonymity scan `capy_check_brand.py` runs elsewhere in this repo.
 - [book-of-mormon-dna-issues.md](./book-of-mormon-dna-issues.md)
 - [book-of-mormon-historicity.md](./book-of-mormon-historicity.md)
 - [book-of-mormon-population-and-warfare-claims.md](./book-of-mormon-population-and-warfare-claims.md)
+- [book-of-mormon-skin-of-blackness.md](./book-of-mormon-skin-of-blackness.md)
 - [changes-in-doctrine-over-time.md](./changes-in-doctrine-over-time.md)
 - [changes-in-prophetic-teachings-without-clear-mechanisms-for-correction.md](./changes-in-prophetic-teachings-without-clear-mechanisms-for-correction.md)
 - [changes-in-teachings-on-interracial-marriage.md](./changes-in-teachings-on-interracial-marriage.md)
