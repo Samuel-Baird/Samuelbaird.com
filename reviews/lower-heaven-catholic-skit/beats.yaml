@@ -1,0 +1,181 @@
+version: 1
+slug: lower-heaven-catholic-skit
+title: Who Gets to Decide Your Place in Heaven?
+hook: A child can repeat a teaching without being qualified to pronounce a judgment.
+summary: 'A response to Annie’s comedy skit about Mormon children repeating church talk: what the sources say about
+  degrees of glory, racial teachings, outer darkness, and family sealing.'
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: true
+music: null
+tags:
+- ldsdoctrine
+- religioussatire
+beats:
+- id: c01
+  kind: clip
+  start: 0.0
+  end: 9.04
+  speed: 1.0
+  speaker: Source video
+  pose: skeptical
+- id: n01
+  kind: narration
+  text: This skit portrays children repeating church talk. That experience matters. Let’s compare the threats with
+    the teachings behind them.
+  pose: thoughtful
+  stage: blank
+  opinion: true
+- id: n02
+  kind: narration
+  text: Latter-day Saints believe in degrees of glory. Section seventy-six requires receiving Christ, authorized
+    baptism, and faithfulness for celestial glory. Those requirements are real. A Catholic label alone cannot establish
+    someone’s final judgment.
+  pose: teaching
+  stage: blank
+  sources:
+  - dc-76-scripture
+  - dc-137-scripture
+- id: n03
+  kind: narration
+  text: Section one hundred thirty-seven includes people who died without gospel knowledge but would have received
+    it. God judges works and hearts. This doctrine extends opportunity beyond death, accounting for what people
+    knew and would accept.
+  pose: pointing
+  stage: blank
+  sources:
+  - dc-137-scripture
+  - oaks-2023-kingdoms
+- id: c02
+  kind: clip
+  start: 9.04
+  end: 18.64
+  speed: 1.0
+  speaker: Source video
+  pose: concerned
+- id: n04
+  kind: narration
+  text: The racial history behind this is real, and it was harmful. In nineteen sixty, apostle Spencer W. Kimball
+    taught that Indigenous people were becoming physically lighter. His examples included children in the Church’s
+    placement program.
+  pose: solemn
+  stage: blank
+  sources:
+  - kimball-1960-whitening
+  - kimball-1960-lamanites
+- id: q01
+  kind: card
+  text: This is his wording from October nineteen sixty. It documents a racial teaching by an apostle; it does not
+    establish that anyone’s pigmentation actually changed.
+  pose: quote
+  sources:
+  - kimball-1960-whitening
+  card:
+    quote: For years they have been growing delightsome, and they are now becoming white and delightsome, as they
+      were promised.
+    attribution: Spencer W. Kimball, General Conference, October 1960
+    source: kimball-1960-whitening
+- id: n05
+  kind: narration
+  text: The Book of Mormon retains passages connecting dark skin with a curse and describing converted Lamanites
+    becoming white. Their interpretation is disputed. Claiming they could only ever mean a metaphor would evade
+    the historical record.
+  pose: reading
+  stage: blank
+  sources:
+  - bom-2-nephi-5
+  - bom-3-nephi-2
+  - kimball-1960-whitening
+- id: n06
+  kind: narration
+  text: Today, the Church’s race essay rejects theories that Black skin signifies divine disfavor or a curse. Joining
+    the Church is not a current doctrinal promise of lighter skin. That correction does not erase the older teaching.
+  pose: concerned
+  stage: blank
+  sources:
+  - race-priesthood-current-essay
+  - bom-3-nephi-2
+- id: c03
+  kind: clip
+  start: 19.28
+  end: 25.12
+  speed: 1.0
+  speaker: Source video
+  pose: surprised
+- id: n07
+  kind: narration
+  text: Declining an invitation does not meet the criteria for permanent outer darkness. Section seventy-six describes
+    people who knew and partook of God’s power, then denied the received Holy Spirit and defied God. A church pitch
+    does not establish that threshold.
+  pose: teaching
+  stage: blank
+  sources:
+  - dc-76-scripture
+  - hell-current
+- id: n08
+  kind: narration
+  text: The same revelation describes redemption through Christ for everyone except that exceptional category. Judgment
+    and different glories remain. An automatic threat of permanent damnation misrepresents that scope of redemption.
+    Adults should correct it.
+  pose: pointing
+  stage: blank
+  sources:
+  - dc-76-scripture
+  - hell-current
+- id: c04
+  kind: clip
+  start: 30.88
+  end: 46.16
+  speed: 1.0
+  speaker: Source video
+  pose: concerned
+- id: n09
+  kind: narration
+  text: There is a real restriction here. Current Church practice seals a husband and wife; it does not seal two
+    mothers’ marriage. Section one hundred thirty-one requires the marriage covenant for the highest celestial degree.
+    Describing that requirement accurately matters, especially to families excluded by it.
+  pose: solemn
+  stage: blank
+  sources:
+  - dc-131-scripture
+  - handbook-38-current
+  - handbook38-marriage
+- id: n10
+  kind: narration
+  text: That does not authorize a child to assign these mothers a kingdom or promise their friend complete loneliness.
+    Section one hundred thirty-two describes a single, nonexalted state, but it does not establish total isolation
+    or this family’s visiting schedule. Being saved differs from receiving the highest celestial degree or an eternal
+    family sealing.
+  pose: thoughtful
+  stage: blank
+  sources:
+  - dc-132-scripture
+  - dc-76-scripture
+  - handbook-38-current
+- id: n11
+  kind: narration
+  text: The handbook promises eventual blessings to faithful people unable to marry in mortality. That conditional
+    promise leaves this family’s future arrangement unspecified and retains the marriage restriction. Affirming
+    God’s justice requires honesty about what remains unrevealed.
+  pose: teaching
+  stage: blank
+  sources:
+  - handbook-38-current
+  - handbook38-marriage
+- id: n99
+  kind: narration
+  text: Adults should correct harmful teaching and explain these distinctions before children repeat them as threats.
+    A friend’s family circumstances are no license to pronounce their eternal sentence. God bless.
+  pose: encouraging
+  stage: blank
+  opinion: true
