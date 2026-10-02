@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): Is Twilight a Mormon allegory?  
 > **Post caption** (goes with the upload, not shown on screen): A viral reel says Twilight is a Mormon allegory built on 'white, exceedingly fair, and delightsome'. In 2 Nephi 5:21, that exact phrase describes the other brother.
 
-**Slug:** `twilight-mormon-allegory` | **Estimated runtime:** 155.7s (budget 60-180s) | **Source time:** 46.3s (30%)
+**Slug:** `twilight-mormon-allegory` | **Estimated runtime:** 174.2s (budget 60-180s) | **Source time:** 46.3s (27%)
 
 **Hook (title/description only, not shown on screen):** "The reel's 'white and delightsome' line is about the other brother."
 **Exemplars modeled:** hamblin-methodological
@@ -58,24 +58,24 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** bom-text-gsa-2ne5-21-23
 - **Notes:** 
 
-## 08. `n02b` (narration, ~14.2s)
+## 08. `n02b` (narration, ~17.5s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** thoughtful
-- **Narration:** The verse does tie the darkening to hardened hearts and to keeping the two peoples apart, and that is the passage some leaders read as literal pigment. The Church's editions have moved the other way. In 1981, a white and delightsome people in 2 Nephi 30:6 became a pure and delightsome people. (The phrase "white and delightsome" in 2 Nephi 30:6 of the Book of Mormon was changed to "pure and delightsome" in the 1840 edition by Joseph Smith see https://www.fairlatterdaysaints.org/answers/Book_of_Mormon/Textual_changes/%22white%22_changed_to_%22pure%22)
+- **Narration:** The verse does tie the darkening to hardened hearts and to keeping the two peoples apart, and that is the passage some leaders read as literal pigment. The Church's editions have moved the other way. Joseph Smith himself changed a white and delightsome people in 2 Nephi 30:6 to a pure and delightsome people in the 1840 edition, and the 1981 edition restored pure.
 - **Sources:** bom-text-gsa-2ne5-21-23, kimball-edward-1981-pure
 - **Notes:** 
 
-## 09. `n03` (narration, ~7.1s)
+## 09. `n03` (narration, ~4.4s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** teaching
 - **Narration:** Latter-day Saints do not claim to be Nephites. No idea where she is getting this from.
 - **Sources:** gospeltopics-lamanite-identity, church-patriarchal-blessings-lineage
 - **Notes:** 
 
-## 10. `n04` (narration, ~13.9s)
+## 10. `n04` (narration, ~10.4s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** pointing
-- **Narration:** The genetic link the reel states flatly, the Church states with care. Since 2006 the Book of Mormon's own introduction says the Lamanites are among the ancestors of the American Indians, where it used to say principal ancestors. Elder Larry Echo Hawk read that wording aloud in General Conference in 2012. (remove this line)
+- **Narration:** The genetic link the reel states flatly, the Church states with care. Since 2006 the Book of Mormon's own introduction says the Lamanites are among the ancestors of the American Indians, where it used to say principal ancestors.
 - **Sources:** gospeltopics-bofm-dna, church-dna-essay-2014, echohawk-2012-10-introduction
 - **Notes:** 
 
@@ -107,21 +107,43 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** bom-text-gsa-jacob3-8-9, bom-text-gsa-2ne26-33
 - **Notes:** 
 
-## 15. `n06` (narration, ~15.0s)
+## 15. `n05c` (narration, ~7.9s)
+- **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
+- **Pose:** teaching
+- **Narration:** Dark and white skin are also Hebrew idiom for condition, not ethnicity. In Lamentations 4, Jerusalem's princes go from whiter than milk to blacker than soot, after the siege.
+- **Sources:** nrsvue-lam-4-7-8
+- **Notes:** 
+
+## 16. `q05` (card, ~1.6s)
+- **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
+- **Pose:** quote
+- **Narration:** The Bible does the same thing.
+- **Card quote:** “Her princes were purer than snow, whiter than milk; their bodies were more ruddy than coral, their form cut like sapphire. Now their visage is blacker than soot; they are not recognized in the streets.” — Lamentations 4:7-8 (NRSVue)
+- **Sources:** nrsvue-lam-4-7-8
+- **Notes:** 
+
+## 17. `n05d` (narration, ~12.0s)
+- **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
+- **Pose:** thoughtful
+- **Narration:** Lamentations 5:10 names the cause, skin black as an oven from the scorching heat of famine, and Job 30:30 does the same for illness. That is why some Latter-day Saint scholars read a skin of blackness as language about condition and standing, not lineage.
+- **Sources:** nrsvue-lam-5-10, nrsvue-job-30-30, gardner-2007-second-witness-vol2-skin, steenblik-2021-demythicizing
+- **Notes:** 
+
+## 18. `n06` (narration, ~15.0s)
 - **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
 - **Pose:** solemn
 - **Narration:** For decades leaders read these verses as literal pigment. Spencer W. Kimball said in 1960 that Native Americans were now becoming white and delightsome, and Alma 3 says the mark was so the peoples would not mix. The reel calls that an order, and the text frames it as a curse with a stated purpose.
 - **Sources:** kimball-1960-10-lamanites, bom-text-gsa-alma3-6-15
 - **Notes:** 
 
-## 16. `n07` (narration, ~6.8s)
+## 19. `n07` (narration, ~6.8s)
 - **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
 - **Pose:** concerned
 - **Narration:** Today the Church President speaks to this directly. In General Conference in 2020, President Russell M. Nelson told the Church plainly where that reading ends.
 - **Sources:** nelson-2020-10-let-god-prevail
 - **Notes:** 
 
-## 17. `q04` (card, ~0.8s)
+## 20. `q04` (card, ~0.8s)
 - **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
 - **Pose:** quote
 - **Narration:** President Nelson, 2020.
@@ -129,7 +151,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** nelson-2020-10-let-god-prevail
 - **Notes:** 
 
-## 18. `n99` (narration, ~4.9s)
+## 21. `n99` (narration, ~4.9s)
 - **Original Video Transcript:** him and his descendants, the Lamanites, were cursed with dark skin. I will add that the Mormon Church disavows racism now. But back then, these two groups were at war with each other for centuries, and were ordered not to mingle.
 - **Pose:** encouraging
 - **Narration:** A decoder ring that hands white and delightsome to the wrong brother does not unlock Twilight. God bless.
