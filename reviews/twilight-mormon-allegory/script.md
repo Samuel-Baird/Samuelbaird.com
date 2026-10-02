@@ -61,21 +61,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n02b` (narration, ~14.2s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** thoughtful
-- **Narration:** The verse does tie the darkening to hardened hearts and to keeping the two peoples apart, and that is the passage some leaders read as literal pigment. The Church's editions have moved the other way. In 1981, a white and delightsome people in 2 Nephi 30:6 became a pure and delightsome people.
+- **Narration:** The verse does tie the darkening to hardened hearts and to keeping the two peoples apart, and that is the passage some leaders read as literal pigment. The Church's editions have moved the other way. In 1981, a white and delightsome people in 2 Nephi 30:6 became a pure and delightsome people. (The phrase "white and delightsome" in 2 Nephi 30:6 of the Book of Mormon was changed to "pure and delightsome" in the 1840 edition by Joseph Smith see https://www.fairlatterdaysaints.org/answers/Book_of_Mormon/Textual_changes/%22white%22_changed_to_%22pure%22)
 - **Sources:** bom-text-gsa-2ne5-21-23, kimball-edward-1981-pure
 - **Notes:** 
 
 ## 09. `n03` (narration, ~7.1s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** teaching
-- **Narration:** Latter-day Saints do not claim to be Nephites. Members are taught they belong to Israel by descent or adoption, through whichever tribe their patriarchal blessing names.
+- **Narration:** Latter-day Saints do not claim to be Nephites. No idea where she is getting this from.
 - **Sources:** gospeltopics-lamanite-identity, church-patriarchal-blessings-lineage
 - **Notes:** 
 
 ## 10. `n04` (narration, ~13.9s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** pointing
-- **Narration:** The genetic link the reel states flatly, the Church states with care. Since 2006 the Book of Mormon's own introduction says the Lamanites are among the ancestors of the American Indians, where it used to say principal ancestors. Elder Larry Echo Hawk read that wording aloud in General Conference in 2012.
+- **Narration:** The genetic link the reel states flatly, the Church states with care. Since 2006 the Book of Mormon's own introduction says the Lamanites are among the ancestors of the American Indians, where it used to say principal ancestors. Elder Larry Echo Hawk read that wording aloud in General Conference in 2012. (remove this line)
 - **Sources:** gospeltopics-bofm-dna, church-dna-essay-2014, echohawk-2012-10-introduction
 - **Notes:** 
 
