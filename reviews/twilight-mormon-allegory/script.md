@@ -61,7 +61,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n02b` (narration, ~17.5s)
 - **Original Video Transcript:** as white, exceedingly fair, and delightsome. The other son was wild and rebellious, and
 - **Pose:** thoughtful
-- **Narration:** The verse does tie the darkening to hardened hearts and to keeping the two peoples apart, and that is the passage some leaders read as literal pigment. The Church's editions have moved the other way. Joseph Smith himself changed a white and delightsome people in 2 Nephi 30:6 to a pure and delightsome people in the 1840 edition, and the 1981 edition restored pure.
+- **Narration:** The verse does tie the darkening to hardened hearts and to keeping the two peoples apart, and that is the passage some leaders read as literal pigment. The Church's editions have moved the other way. Joseph Smith himself changed a white and delightsome people in 2 Nephi 30:6 to a pure and delightsome people in the 1840 edition for clarification.
 - **Sources:** bom-text-gsa-2ne5-21-23, kimball-edward-1981-pure
 - **Notes:** 
 
