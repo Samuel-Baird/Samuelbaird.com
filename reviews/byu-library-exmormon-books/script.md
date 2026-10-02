@@ -68,20 +68,20 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `n05` (narration, ~9.3s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** teaching
-- **Narration:** The U posts reading-room hours of ten to four, Monday through Friday. BYU currently posts ten to five forty-five on weekdays, with a Tuesday devotional closure. On these published measures, BYU offers easier access.
+- **Narration:** The U posts reading-room hours of 10 AM to 4 PM, Monday through Friday. BYU currently posts 8 AM to 9 PM on weekdays, with a Tuesday devotional closure, in addition to be open 10 AM to 6 PM on Saturday. On these published measures, BYU offers easier access.
 - **Sources:** utah-marriott-special-collections-reading-room, byu-special-collections-hours-2026
 - **Notes:** 
 
 ## 10. `n06` (narration, ~9.3s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** thoughtful
-- **Narration:** That compares reading-room access. It does not tell us where the U shelves these memoirs. To establish selective treatment at BYU, compare critical and favorable recent Mormon books and how each can be borrowed.
+- **Narration:** That compares reading-room access. It does not tell us where the U shelves these memoirs. To establish selective treatment at BYU, compare critical and favorable recent Mormon books and how each can be borrowed. (remove line)
 - **Notes:** 
 
 ## 11. `n07` (narration, ~8.5s)
 - **Original Video Transcript:** So even though it sounds like Special Collections is meant to house books that are basically antiques, I think we all know what books like Devout and Bad Mormon are doing in that restricted area. These books were published in just the last few years, and they are definitely not antiques, so to me it seems pretty clear that BYU just wants to make it more difficult for BYU students to get their hands on a book like this.
 - **Pose:** source
-- **Narration:** The Americana collecting document linked on BYU's website specifically lists anti-Mormon works. That explains why critical books belong in the collection. It does not establish why these particular copies cannot circulate.
+- **Narration:** The Americana collecting document linked on BYU's website specifically lists anti-Mormon works. That explains why critical books belong in the collection. 
 - **Sources:** byu-lib-2018-americana-collecting-policy
 - **Notes:** 
 
