@@ -1,0 +1,122 @@
+version: 1
+slug: bom-dark-skin-question
+title: What does the Book of Mormon say about dark skin?
+hook: The curse language is real. What does it actually explain?
+summary: The Lamanite skin passages, past racial teachings, and the present rejection of racial curse theories are distinct questions. This response acknowledges the difficult language and the harm without turning a question-only clip into an argument it never makes.
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: true
+music: null
+tags:
+- BookOfMormon
+- RaceAndReligion
+- SaintCapybara
+beats:
+- id: c01
+  kind: clip
+  start: 0.0
+  end: 17.391995
+  speed: 1.0
+  speaker: Source video
+  pose: concerned
+- id: n01
+  kind: narration
+  text: Church leaders did teach racial curse explanations. For much of Church history, men of Black African descent were barred from priesthood ordination, and Black men and women were denied temple endowment and sealing ordinances. Those restrictions ended in nineteen seventy-eight.
+  pose: solemn
+  stage: blank
+  opinion: false
+  sources:
+  - race-essay-verified
+- id: n02
+  kind: narration
+  text: I will not defend those explanations or minimize that exclusion. The question asks what the Book of Mormon says about Black people getting dark skin. Here is the relevant passage.
+  pose: concerned
+  stage: blank
+  opinion: false
+  sources:
+  - source-question
+- id: q01
+  kind: card
+  text: Second Nephi, chapter five, links a curse with a skin of blackness and attributes that skin to God. The following verses also warn against mixing with that group. That language needs to be faced directly.
+  pose: source
+  card:
+    quote: the Lord God did cause a skin of blackness to come upon them
+    attribution: 2 Nephi 5:21
+    source: 2ne5-verified
+  sources:
+  - 2ne5-verified
+- id: n03
+  kind: narration
+  text: In context, the people being described are the Lamanites, from whom Nephi and his followers separated. In my reading, that context gives us no basis for treating this passage as an explanation of African skin color.
+  pose: teaching
+  stage: blank
+  opinion: false
+  sources:
+  - 2ne5-verified
+- id: n04
+  kind: narration
+  text: Identifying whom the passage describes leaves the curse language in place. Church leaders later used racial curse theories to justify restrictions against Black members. That history must be acknowledged too.
+  pose: thoughtful
+  stage: blank
+  opinion: false
+  sources:
+  - 2ne5-verified
+  - race-essay-verified
+- id: q02
+  kind: card
+  text: The Church now explicitly rejects the idea shown here, along with explanations based on alleged wrongdoing before birth. Those explanations were taught; they are now disavowed.
+  pose: solemn
+  card:
+    quote: Today, the Church disavows the theories advanced in the past that black skin is a sign of divine disfavor or curse
+    attribution: Race and the Priesthood (current official position)
+    source: race-essay-verified
+  sources:
+  - race-essay-verified
+- id: n05
+  kind: narration
+  text: There is also a direct command in the Book of Mormon against contempt based on skin color. Jacob calls the Lamanites more righteous than his own people in their family conduct, then tells his people to stop reviling them.
+  pose: reading
+  stage: blank
+  opinion: false
+  sources:
+  - jacob3-verified
+- id: q03
+  kind: card
+  text: 'Jacob, chapter three, verse nine: this is a command to stop the contempt, not a claim that the troubling language elsewhere is gone.'
+  pose: source
+  card:
+    quote: revile no more against them because of the darkness of their skins
+    attribution: Jacob 3:9
+    source: jacob3-verified
+  sources:
+  - jacob3-verified
+- id: n06
+  kind: narration
+  text: Second Nephi, chapter twenty-six, includes black and white in its invitation to come to God and says all are alike unto God. For me, that is a clear scriptural reason to reject racial superiority.
+  pose: teaching
+  stage: blank
+  opinion: false
+  sources:
+  - 2ne26-verified
+- id: n07
+  kind: narration
+  text: 'Those commands give me grounds to reject racial superiority. They still leave difficult questions: why does the text attribute dark skin to God, and why did prophetic leaders permit racial exclusion? This response does not settle those questions.'
+  pose: thoughtful
+  stage: blank
+  opinion: true
+- id: n99
+  kind: narration
+  text: An honest answer acknowledges the curse language, identifies its Lamanite setting, and rejects racial inferiority. I believe defending the Book of Mormon requires facing every part of that answer. God bless.
+  pose: encouraging
+  stage: blank
+  opinion: true
