@@ -1,0 +1,262 @@
+sources:
+- id: critic-video
+  type: critic
+  title: Video by girlscamppodcast
+  author: girlscamppodcast
+  date: '2026-06-07'
+  locator: https://www.instagram.com/reel/DZS5v4jPCok/
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: exec_command Get-Content transcripts/source.json and reviews transcript; pre-existing source metadata inspected
+  quote: null
+  verification:
+    tool: exec_command
+    verdict: transcript-read
+    link: https://www.instagram.com/reel/DZS5v4jPCok/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Source transcript, anchors and ingest metadata inspected. Quoted speech belongs to the podcast clip; do not assign every sentence to one identified speaker.
+- id: dc-1-24-28
+  type: scripture
+  title: Doctrine and Covenants 1:24–28
+  author: Joseph Smith (canonical revelation text)
+  date: '1831-11-01'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1?lang=eng&id=p24-p28#p24
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open({"ref_id":"https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1?lang=eng"}), then open({"ref_id":"turn3view1","lineno":190})
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Canonical text affirms divine commandments communicated through weak servants; error, instruction, repentance, and knowledge over time appear in surrounding verses. Does not identify any garment pattern as revelation.
+  found_by: capy-philosopher
+  claims:
+  - 1
+- id: articles-faith-9
+  type: scripture
+  title: Articles of Faith 1:9
+  author: Joseph Smith
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p9#p9
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open({"ref_id":"https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng"}), then open({"ref_id":"turn3view2","lineno":12})
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Canonical text explicitly anticipates continuing revelation; page does not supply a publication date. Evidence of LDS stated model, not external proof of its truth.
+  found_by: capy-philosopher
+  claims:
+  - 1
+- id: alma-7-15-24
+  type: scripture
+  title: Alma 7:15–24
+  author: Alma (Book of Mormon canonical attribution)
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/7?lang=eng&id=p15-p24#p15
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open({"ref_id":"https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/7?lang=eng"})
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/7?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Covenant to obey in v15; humility, gentleness, patience, temperance, and diligence in v23; faith, hope, charity in v24. Verses20–21 uphold divine righteousness. Verse25 spotless garments is not evidence about modern temple garment sleeves.
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: nelson-2001-garment-commitment
+  type: primary
+  title: Personal Preparation for Temple Blessings
+  author: Russell M. Nelson
+  date: '2001-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2001-04-nelson-personal-preparation-for-temple-blessings/#p16
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit mcp__codex_apps__pulpit_read_paragraphs; mcp__codex_apps__pulpit_verify_quote
+  quote: Wearing the temple garment has deep symbolic significance. It represents a continuing commitment.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2001-04-nelson-personal-preparation-for-temple-blessings/#p16
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Pulpit stamps April1 month-level convention; actual conference April2001. Paragraph16 connects garment to enduring commitment and eternal covenants; paragraph15 bridal long sleeves does not prescribe every everyday top. Exact quote verified. Footnote22 reproduces1988 FP letter tying covering/modesty to covenant; quote search excludes notes, so footnote only paraphrased.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: nelson-2019-garment-covenants
+  type: primary
+  title: Closing Remarks
+  author: Russell M. Nelson
+  date: '2019-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2019-10-nelson-closing-remarks/#p29
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit mcp__codex_apps__pulpit_read_paragraphs; mcp__codex_apps__pulpit_verify_quote
+  quote: It also reminds us to remain faithful each day to covenants made
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2019-10-nelson-closing-remarks/#p29
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Pulpit stamps October1 month-level convention. October2019 conference; ¶29 garment under regular clothing as inner commitment and covenant reminder. Five years before2024 authorization.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: church-2011-fsy-dress
+  type: official
+  title: For the Strength of Youth (2011), Dress and Appearance, printed pp.6–8
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: 2011-09
+  locator: https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/language-materials/09403_eng.pdf
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: tools.web__run open URL https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/language-materials/09403_eng.pdf; surrounding text and publication labels read
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/language-materials/09403_eng.pdf
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Copyright 2001,2011; English approval9/11. Shoulder prohibition on printed p7, PDF page index12; admonition that Lord's standards will not change follows in same paragraph. Also sends spiritual/identity message and prepares youth for temple covenants. Authentic official document, not mere local culture.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: church-2024-garment-redesign
+  type: official
+  title: First Presidency authorizes redesigned temple garments for members in hot, humid areas
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2024-10-17'
+  locator: https://www.thechurchnews.com/leaders/2024/10/17/first-presidency-redesign-temple-garments-humid-areas/
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: tools.web__run open URL https://www.thechurchnews.com/leaders/2024/10/17/first-presidency-redesign-temple-garments-humid-areas/; surrounding text and publication labels read
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.thechurchnews.com/leaders/2024/10/17/first-presidency-redesign-temple-garments-humid-areas/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Official Church News directly quotes spokesman Doug Andersen's Oct17 statement. Describes authorized style/fabric options and global rollout through end2025. Does not declare all shoulder exposure morally irrelevant. Article presently updated; stated rollout plan is not proof of completion in every location.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: church-2025-special-order-garments
+  type: official
+  title: Obtaining Special-Order Temple Garments and Ceremonial Clothing
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2025-10-28'
+  locator: https://www.churchofjesuschrist.org/tools/help/special-order-garments?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: tools.web__run open URL https://www.churchofjesuschrist.org/tools/help/special-order-garments?lang=eng; surrounding text and publication labels read
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/tools/help/special-order-garments?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Page's last-updated label October28,2025; distinguishes medical custom special orders from open-sleeve/slip garment styles gradually introduced worldwide. Supports design existence and gradual rollout; does not verify live size/stock inventory.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: church-2022-fsy-body
+  type: official
+  title: 'Your body is sacred — For the Strength of Youth: A Guide for Making Choices'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2022'
+  locator: https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-body?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: tools.web__run open URL https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-body?lang=eng; surrounding text and publication labels read
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-body?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current page identifies2022 guide. Gives body honor/respect and avoiding inappropriate attention principles; no explicit shoulder prohibition in section. Comparison establishes guidance wording changed; absence alone does not imply all clothing accepted.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: church-2026-handbook-garment
+  type: official
+  title: General Handbook38.5.5 Wearing the Garment
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: tools.web__run open URL https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng; surrounding text and publication labels read
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 2026 handbook label; accessed2026-10-02. Preserves covenant reminder, wearing day/night, restoring after necessary removal and no modification for clothing styles. Authority-made design changes differ from member alteration prohibition.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: handbook-38-5-garment
+  type: official
+  title: 'General Handbook 38.5.2, 38.5.5–38.5.8: Temple Clothing and Garments'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open({"ref_id":"https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng"}), find({"ref_id":"https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng","pattern":"38.5.5"})
+  quote: null
+  verification:
+    tool: web__run
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current text consulted 2026-10-02, no edition date asserted. Symbolism/covenants coexist with instructions to wear day/night, beneath outer clothing, and not alter for clothing styles. Multiple authorized fabrics/styles and physical-needs exceptions. Current text cannot establish what was said to this speaker.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
