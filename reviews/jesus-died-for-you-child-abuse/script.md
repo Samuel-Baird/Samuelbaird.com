@@ -1,91 +1,109 @@
-# Teaching children about Jesus and shame
+# Script — Does teaching children the Atonement require shame?
 
-**Slug:** jesus-died-for-you-child-abuse  
-**Type:** Response video  
-**Generated:** October 2, 2026  
-**Estimated runtime:** About 5–5½ minutes, including 59 seconds of source excerpts. Narration timing depends on delivery.  
-**Source:** Ashley Buckner, Instagram reel, approximately 97 seconds. The supplied claims document identifies the posting date as August 20, 2026. [Original reel](https://www.instagram.com/reel/DcRQE__JJ9f/).
+**Slug:** `jesus-died-for-you-child-abuse` | **Estimated runtime:** 137.3s (budget 60-180s) | **Source time:** 31.0s (23%)
 
-## Recording and editing directions
+**Hook (title/description only, not shown on screen):** 'Children are innocent in Christ. What should that change about how we teach?'
 
-Play each selected source segment full-screen at its original speed and volume, then pause and hard-cut to the response camera. Source audio stops during commentary. No music, quote cards, image overlays, or picture-in-picture. Read only the paragraphs marked **Say**; directions and citations are for production and review.
+Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-The timestamps below are SOURCE timestamps from the linked claims document, not positions in the finished video or recorded reaction. Confirm the in/out points and surrounding context against the actual reel before editing. This is a recording script; no reaction recording has been transcribed and no CUT/CHECK flags have been generated. Script approval precedes timeline work under the repository procedure.
+## 01. `c01` (clip, ~8.9s)
+- **Original Video Transcript:** Teaching children that Jesus died for their salvation is not only developmentally inappropriate, it can often be emotionally abusive.
+- **Pose:** concerned
+- **Clip:** Ashley Buckner, 0s–8.95s @ speed 1.0
+- **Notes:**
 
-## 1 The concern deserves an answer
+## 02. `n01` (narration, ~11.7s)
+- **Original Video Transcript:** Teaching children that Jesus died for their salvation is not only developmentally inappropriate, it can often be emotionally abusive.
+- **Pose:** solemn
+- **Narration:** If teaching leaves a child feeling bad as a person or responsible for Jesus’s suffering, that needs correction. Ashley’s clip addresses Christianity generally. I’ll answer from a Latter-day Saint perspective. Children need explanations they can understand; scripture alone cannot settle their developmental capacity.
+- **Sources:** verified-critic
+- **Notes:**
 
-**[00:00] PLAY SOURCE 00:00–00:10.** Opening claim that teaching children Jesus died for their salvation is developmentally inappropriate and can often be emotionally abusive. Hard-cut to presenter.
+## 03. `c02` (clip, ~12.4s)
+- **Original Video Transcript:** So when you tell a child that Jesus died and suffered for their sins, they may internalize it like this. I am bad. My badness caused someone to suffer. Someone died because of me.
+- **Pose:** thoughtful
+- **Clip:** Ashley Buckner, 36.2s–48.6s @ speed 1.0
+- **Notes:**
 
-**Say:**
+## 04. `n02` (narration, ~11.5s)
+- **Original Video Transcript:** So when you tell a child that Jesus died and suffered for their sins, they may internalize it like this. I am bad. My badness caused someone to suffer. Someone died because of me.
+- **Pose:** concerned
+- **Narration:** She says children may hear that they caused someone’s suffering. I accept that possibility. Good intentions don’t settle what a child actually hears. But that interpretation is not the only way to teach the Atonement. Here is a different doctrinal starting point.
+- **Sources:** verified-critic
+- **Notes:**
 
-If a child hears that they are bad, that they caused Jesus to suffer, and that God’s love depends on their obedience, that deserves to be taken seriously. Quoting a scripture doesn’t erase what a child experienced.
+## 05. `q01` (card, ~8.2s)
+- **Original Video Transcript:** So when you tell a child that Jesus died and suffered for their sins, they may internalize it like this. I am bad. My badness caused someone to suffer. Someone died because of me.
+- **Pose:** source
+- **Narration:** Moroni eight says, “little children are whole.” The chapter says they need neither repentance nor baptism and are alive in Christ. The Atonement is the basis for their protected status.
+- **Card quote:** “little children are whole” — Moroni 8:8
+- **Sources:** verified-moroni8
+- **Notes:**
 
-Ashley’s video doesn’t mention Latter-day Saints. I’m answering from that perspective because our teaching about children matters here.
+## 06. `n03` (narration, ~13.9s)
+- **Original Video Transcript:** So when you tell a child that Jesus died and suffered for their sins, they may internalize it like this. I am bad. My badness caused someone to suffer. Someone died because of me.
+- **Pose:** teaching
+- **Narration:** That is theology, not a safety study. Moses six says “conceived in sin,” but the previous verse rejects holding parents’ sins against their children. Mosiah three treats children’s ability to sin hypothetically and calls them blessed through Christ. My reading is that these passages affirm Christ’s protection rather than personal blame.
+- **Sources:** verified-moroni8, verified-moses6, verified-mosiah3
+- **Notes:**
 
-Moroni chapter eight says, “little children are whole.” It says they are alive in Christ and don’t need repentance or baptism. The Atonement is presented as the reason they’re already protected, rather than a reason to blame them.
+## 07. `n04` (narration, ~12.0s)
+- **Original Video Transcript:** So when you tell a child that Jesus died and suffered for their sins, they may internalize it like this. I am bad. My badness caused someone to suffer. Someone died because of me.
+- **Pose:** pointing
+- **Narration:** And this concern does reach our curriculum. The 2023 Primary manual tells younger children that because Jesus suffered and died for them, they can repent and be forgiven. It also says children under eight are not accountable. Teachers need to explain that distinction clearly.
+- **Sources:** verified-primary2023
+- **Notes:**
 
-That gives us a clear reason to reject teaching a young child that they are guilty before God. It doesn’t prove that every lesson or every parent communicates that well.
+## 08. `n05` (narration, ~12.3s)
+- **Original Video Transcript:** So when you tell a child that Jesus died and suffered for their sins, they may internalize it like this. I am bad. My badness caused someone to suffer. Someone died because of me.
+- **Pose:** thoughtful
+- **Narration:** Doctrine and Covenants sixty-eight requires teaching faith and repentance and specifies baptism for the remission of sins at eight. That religious threshold does not demonstrate developmental readiness. Moroni’s protection of little children does not answer every concern about an eight-year-old. We still need to listen.
+- **Sources:** verified-dc68, verified-moroni8
+- **Notes:**
 
-**Evidence:** [Moroni 8:8–12, 19–22](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng). Canonical text; psychological outcomes are not established by it.
+## 09. `c03` (clip, ~9.6s)
+- **Original Video Transcript:** And when that message is connected to repentance, obedience, and worthiness, we're using fear and guilt to shape behavior.
+- **Pose:** solemn
+- **Clip:** Ashley Buckner, 48.75s–58.38s @ speed 1.0
+- **Notes:**
 
-## 2 What children are actually taught
+## 10. `n06` (narration, ~12.8s)
+- **Original Video Transcript:** And when that message is connected to repentance, obedience, and worthiness, we're using fear and guilt to shape behavior.
+- **Pose:** concerned
+- **Narration:** Repentance should mean recognizing a wrong choice, apologizing, and making repairs while knowing you are loved. I reject using Jesus’s suffering to pressure a child into obedience, or making worthiness sound like whether they deserve love. These are teaching recommendations, not descriptions of every message children receive.
+- **Notes:**
 
-**[00:20] PLAY SOURCE 00:20–00:34.** Claim about young children’s capacity to understand complex theology and their concrete understanding. Hard-cut to presenter.
+## 11. `n07` (narration, ~10.6s)
+- **Original Video Transcript:** And when that message is connected to repentance, obedience, and worthiness, we're using fear and guilt to shape behavior.
+- **Pose:** teaching
+- **Narration:** Elsewhere in the reel she asks about love becoming an unrepayable debt. I would not teach Christ’s sacrifice as a debt a child must repay through perfect obedience. Her alternative of compassion, accountability, and repair belongs in our teaching.
+- **Sources:** verified-critic
+- **Notes:**
 
-**Say:**
+## 12. `n99` (narration, ~13.4s)
+- **Original Video Transcript:** And when that message is connected to repentance, obedience, and worthiness, we're using fear and guilt to shape behavior.
+- **Pose:** encouraging
+- **Narration:** Within LDS teaching, little children are already alive in Christ. That gives believers a doctrinal reason to teach compassion and repair without calling a child inherently bad. This is a case for improving how we teach our faith; it does not establish psychological superiority over secular teaching. God bless.
+- **Sources:** verified-moroni8
+- **Notes:**
 
-Children need explanations they can understand. I’m not going to use a religious text as proof of a child’s developmental capacity.
+## Full source transcript
 
-And we shouldn’t pretend the Church waits until adulthood to teach about Jesus’s suffering. The 2023 Primary manual has a lesson for younger children titled, “Because Jesus suffered and died for me, I can repent and be forgiven.” It also acknowledges that accounts of the Crucifixion might upset little children.
+Every line of the source video, timestamped, for checking each response beat above against the full context -- not just the clip spans quoted from it.
 
-So her concern reaches something our curriculum actually teaches. The same lesson says children under eight aren’t accountable, while encouraging them to learn repentance. Teachers need to explain that distinction clearly.
-
-For me, the question is what the child understands afterward. Do they hear that Jesus loves and helps them? Or do they hear that they are responsible for his pain? Good intentions don’t settle that question.
-
-**Evidence:** [Come, Follow Me—For Primary, June 19–25, 2023, younger children section](https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-primary-new-testament-2023/26?lang=eng). Dated curriculum example, not a claim about the 2026 lesson cycle. The last paragraph is the presenter’s proposed teaching standard, not an empirical finding.
-
-## 3 Accountability must not become shame
-
-**[00:34] PLAY SOURCE 00:34–01:02.** Concern that a child may connect Jesus’s suffering with their own badness, and that repentance, obedience, and worthiness can be used to shape behavior through fear and guilt. Hard-cut to presenter.
-
-**Say:**
-
-She says children may internalize that message. I accept that possibility. The innocence of little children doesn’t answer every concern about an eight-year-old.
-
-Doctrine and Covenants sixty-eight requires parents to teach faith and repentance, and specifies baptism for the remission of sins at eight. That is a religious requirement. It isn’t a scientific finding that every eight-year-old understands these ideas safely.
-
-I believe children can learn to recognize a wrong choice, apologize, and make repairs while knowing they are loved. If we use Jesus’s suffering to pressure a child into obedience, or make worthiness sound like a measure of whether they deserve love, we need to change how we teach.
-
-And yes, Moses six says “conceived in sin,” and Mosiah three speaks of Christ atoning “for their sins” while treating children’s ability to sin as hypothetical. Moses six also rejects passing parents’ sins onto their children, and Mosiah three says little children are blessed through Christ. My reading is that those passages should be taught together, with care about what children actually hear.
-
-I’m not claiming this reel establishes how common harmful teaching is, and I’m not claiming LDS doctrine proves it never happens. Her warning is worth hearing. The broader judgment about teaching the Atonement needs more than the possibility of a harmful interpretation.
-
-**Evidence:** [Doctrine and Covenants 68:25–28](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng); [Moses 6:53–57](https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng); [Mosiah 3:16–19](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng). Canonical wording is verified; the synthesis is explicitly an interpretation. No prevalence or clinical claim is asserted.
-
-## 4 Teach love and listen to the child
-
-**[01:20] PLAY SOURCE 01:20–01:27.** Her alternative: teach love, compassion, accountability, and repair without convincing children they need to be saved from themselves. Hard-cut to presenter.
-
-**Say:**
-
-I agree we can teach love, compassion, accountability, and repair. We don’t need to tell a little child they are bad to teach those things.
-
-Her question about an unrepayable debt matters too. I wouldn’t teach Christ’s sacrifice as a debt a child must repay by being perfectly obedient.
-
-As a Latter-day Saint, I also believe Jesus’s Atonement belongs in that teaching. I would begin with this: Jesus loves you. You can ask for help. When you hurt someone, you can make things right. Your mistakes don’t make you undeserving of love.
-
-Then listen. If the child hears blame or fear, take that seriously and correct the message. The faith I want to teach gives a child reasons for hope, forgiveness, and care for others.
-
-**Evidence:** Presenter’s faith statement and proposed teaching language, not a quotation from Church curriculum or a clinical prescription. Moroni 8 supplies the doctrinal foundation for little children’s innocence.
-
-## Description credit
-
-Responding to Ashley Buckner (@ashleysbuckner), Instagram reel: https://www.instagram.com/reel/DcRQE__JJ9f/. This response considers her concern about teaching children the Atonement from a Latter-day Saint perspective. It discusses both children’s innocence and the responsibilities of teaching repentance. References: Moroni 8; Doctrine and Covenants 68:25–28; Moses 6:53–57; Mosiah 3:16–19; Come, Follow Me—For Primary, June 19–25, 2023.
-
-## Review notes
-
-- The omitted 00:12–00:20 portion supplies her fear/shame/guilt/manipulation framing, reflected in the opening response. The 01:02–01:20 question about suffering and unrepayable debt is acknowledged explicitly in the closing response; it is not treated as a separate empirical claim.
-- Preserve her qualifiers: “can often” in the opener and “may” in the body. The response concedes the possibility of harm and challenges the wider conclusion without claiming she called all teaching abusive.
-- No developmental studies or population well-being studies are cited. The notes’ unverified leads do not establish outcomes for children taught the Atonement.
-- Affected-person pass: the script acknowledges harm before defending doctrine, accepts that official wording can raise the concern, and avoids analogies, diagnostic judgments, or questioning the critic’s motives.
-- Source intervals are inherited research anchors and still require direct media verification. Before building, obtain the source and reaction recordings, transcribe them, and flag only reaction bloopers and retakes. Review the selected source proportion in the actual cut and complete a manual watch-through before publication.
+- `[00:00.00–00:05.88]` Teaching children that Jesus died for their salvation is not only developmentally inappropriate,
+- `[00:06.64–00:11.78]` it can often be emotionally abusive. Hi, I'm Ashley. I'm a developmental trauma therapist,
+- `[00:12.06–00:18.00]` and I see the lasting impact religious messages in childhood can have on the nervous system.
+- `[00:18.18–00:24.00]` Emotional abuse can include using fear, shame, guilt, or manipulation to influence someone's
+- `[00:24.00–00:29.28]` behavior or sense of self. And young children do not have the developmental capacity to
+- `[00:29.28–00:35.36]` understand complex theology, symbolically or critically. They understand things much more
+- `[00:35.36–00:40.98]` concretely. So when you tell a child that Jesus died and suffered for their sins, they may
+- `[00:40.98–00:47.68]` internalize it like this. I am bad. My badness caused someone to suffer. Someone died because
+- `[00:47.68–00:54.34]` of me. And when that message is connected to repentance, obedience, and worthiness,
+- `[00:54.34–01:00.48]` we're using fear and guilt to shape behavior. We're also teaching children something about love.
+- `[01:00.80–01:08.52]` If one of their earliest frameworks for perfect love is about sacrifice and suffering and a debt
+- `[01:08.52–01:14.58]` they can never repay, what are they learning about love, obligation, and self-sacrifice?
+- `[01:15.24–01:21.44]` Children should not be taught that their normal human mistakes required someone to suffer and die.
+- `[01:21.44–01:27.76]` We can teach kids about love, compassion, accountability, and repair without first
+- `[01:27.76–01:31.54]` convincing them that they need to be saved from themselves. I'm curious,
+- `[01:32.18–01:36.54]` how did learning about Jesus as a child impact you positively or negatively?

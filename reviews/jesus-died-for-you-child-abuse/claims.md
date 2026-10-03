@@ -57,3 +57,31 @@ Do not claim D&C 68:27 is backed by child-development research. Innocence doctri
 - **Adversarial Q2** — Her alternative ('accountability and repair') requires guilt cognition; guilt vs shame distinction. Do not cite Holland 2016 'guilt trips' (a home-teaching joke, not about children or the Atonement). Renlund/Runia warning against shame suggests it is a live problem in the culture.
 - **Briefs**: `research/briefs/claim3-capy-doctrine-scholar.md`, `claim3-capy-scripture-theologian.md`, `claim3-capy-red-team.md`
 - **Red-team persona**: exmo (with atheist overlay)
+
+## Script-stage verification and adversarial follow-through
+
+Updated 2026-10-02 after reading the complete source transcript and ingest metadata. The existing multi-angle briefs are retained. Selected clips preserve the source’s qualifiers and sentence boundaries: 0.00–8.95; 36.20–48.60; 48.75–58.38. Word-level timestamps were checked; this is not a fresh audio-level certification. The developmental argument at 24.00–36.12 and debt/repair passage at 60.80–90.62 were read in full with neighbours.
+
+### Claim 1
+- Scope: the script acknowledges possible harmful interpretation and gives a theological teaching rationale. It does not measure abuse prevalence or claim religious teaching is empirically safe.
+- Grade: disputed for developmental/psychological propositions; fact for the cited scriptural wording; inference for the proposed synthesis and teaching application.
+- Strongest surviving objection: canonical innocence cannot establish actual childhood experience. Answer: n02 accepts that possibility; n03 rejects a safety-study inference; n04 acknowledges real curriculum; n05 addresses eight-year-olds.
+- Omitted context: her fear/shame definition and clinical self-description are outside the selected opener; the response does not redefine abuse or challenge her professional credibility. n07 explicitly attributes the omitted debt question to elsewhere in the reel.
+
+### Claim 2
+- Scope: n01 and n05 expressly decline to use scripture or the accountability threshold as developmental evidence. This script does not attempt an empirical rebuttal of complex-theology comprehension.
+- Grade: original developmental generalization remains inference/disputed; no unverified Piaget, Fowler, Lane/Barrett, or Tangney lead is used.
+- Strongest surviving objection: simplified wording is not demonstrated safe comprehension. Answer: the narration makes a teaching recommendation and leaves developmental readiness unproven.
+- Omitted context: her concrete-thinking sentence is not played as a separate clip; the opening contains her developmental charge, and the full transcript is appended to script.md. Nothing in the response claims she proved that children cannot learn any religious idea.
+
+### Claim 3
+- Scope: n04 uses the directly verified 2023 Primary lesson; n05 states baptism for remission at eight. n06–n07 recommend teaching changes rather than describing every message children receive.
+- Grade: disputed for internalization outcomes; fact for curriculum and canonical text; normative judgment for the proposed teaching approach.
+- Strongest surviving objection: institutional wording can create shame without an explicit accusation. Answer: n04 concedes the curriculum connection, n02 rejects relying on intent alone, and n06 acknowledges a recommendation rather than universal practice.
+- Omitted context: n07 names the unplayed debt concern and constructive alternative. The response does not imply she condemned all regret or called every Atonement lesson abusive.
+
+### Sensitive-topic and escalation audit
+- sensitive: true; no analogies, ridicule, clinical diagnosis, or motive allegation. Harm is addressed before the doctrinal response. The independent opponent review includes an affected-person pass.
+- Load-bearing wording was rechecked on canonical scripture and the dated official curriculum page. No unresolved source conflict is used to make an empirical claim; no allegation is made against a named person. No unresolved escalation beat remains in this script.
+- Broader research leads remain recorded as researched-but-unused; their inspected flags are not upgraded. The initial template source is retained as unused historical intake scaffolding.
+- Existing project host voice and pronunciation overrides are preserved. Older branch voice documentation differs from the later project template; no audio work is authorized at Gate A.

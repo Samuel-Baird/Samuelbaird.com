@@ -93,9 +93,21 @@ def _load_transcript_segments(project: Path) -> list[dict] | None:
 
 
 def _transcript_span_text(segments: list[dict], start: float, end: float) -> str:
-    """Verbatim transcript text for segments overlapping [start, end]."""
-    words = [seg["text"].strip() for seg in segments if seg["start"] < end and seg["end"] > start]
-    return " ".join(words)
+    """Use word timestamps so a partial segment doesn't quote unplayed words."""
+    parts = []
+    for seg in segments:
+        if seg["start"] >= end or seg["end"] <= start:
+            continue
+        words = seg.get("words")
+        if words:
+            # Whisper may assign a zero-duration word at a sentence boundary.
+            selected = [word["word"].strip() for word in words
+                        if (word["start"] + word["end"]) / 2 >= start
+                        and (word["start"] + word["end"]) / 2 < end]
+            parts.extend(selected)
+        else:
+            parts.append(seg["text"].strip())
+    return " ".join(parts)
 
 
 def render_script_md(doc: dict, per_beat: dict[str, float], total: float, project: Path | None = None) -> str:
@@ -168,7 +180,7 @@ def render_script_md(doc: dict, per_beat: dict[str, float], total: float, projec
             lines.append(f"- **Chart:** {ch.get('title','')} ({ch.get('type','bar')})")
         if beat.get("sources"):
             lines.append(f"- **Sources:** {', '.join(beat['sources'])}")
-        lines.append("- **Notes:** ")
+        lines.append("- **Notes:**")
         lines.append("")
 
     if project is not None and (source_info is None or source_info.kind != "article"):

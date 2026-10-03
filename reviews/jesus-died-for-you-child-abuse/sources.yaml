@@ -1,0 +1,1477 @@
+sources:
+- id: REPLACE-source-id
+  type: primary
+  title: 'REPLACE: full title'
+  author: 'REPLACE: author/speaker, or null for an institutional document'
+  date: 'REPLACE: YYYY or YYYY-MM-DD'
+  locator: 'REPLACE: url, Pulpit cite URL, GSA path+page, or dataset slug'
+  accessed: 'REPLACE: YYYY-MM-DD'
+  inspected: false
+  inspected_via: 'REPLACE: e.g. mcp Pulpit read_paragraphs, GSA read_pages, direct url fetch'
+  quote: null
+  verification:
+    tool: 'REPLACE: e.g. verify_quote, cite_page'
+    verdict: 'REPLACE: verify_quote returns exact | word-forms | not-verbatim | not-found; GSA context-checks
+      are page-read; a plain web fetch is direct-read'
+    link: 'REPLACE: url the tool returned'
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'REPLACE: anything else worth recording'
+  found_by: null
+  claims: []
+- id: chen-vanderweele-2018-aje
+  type: scholarly
+  title: 'Associations of Religious Upbringing With Subsequent Health and Well-Being From Adolescence
+    to Young Adulthood: An Outcome-Wide Analysis'
+  author: Ying Chen; Tyler J. VanderWeele
+  date: '2018-11-01'
+  locator: https://academic.oup.com/aje/article/187/11/2355/5094534
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://academic.oup.com/aje/article/187/11/2355/5094534 (abstract summary;
+    author/year from WebSearch results)
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: abstract read; observational, GUTS cohort, weekly attendance associated with higher life
+      satisfaction, possibly fewer depressive symptoms
+    link: https://academic.oup.com/aje/article/187/11/2355/5094534
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Observational; not about atonement teaching specifically; shows 'often' is not established by
+    the population data. Fetch tool returned a summarized paraphrase, not the raw abstract, so no verbatim
+    quote taken. Publication date approximate (volume 187 issue 11).
+  found_by: capy-philosopher
+  claims:
+  - 1
+- id: apsac-psych-maltreatment-definition
+  type: other
+  title: APSAC definitions of psychological maltreatment (2019 monograph / 2024-25 practice guidelines)
+  author: APSAC
+  date: '2019-12-16'
+  locator: https://apsac.org/wp-content/uploads/2019/12/APSAC-PM-Monograph-Final-as-of-2019.12.16.pdf
+  accessed: '2026-09-29'
+  inspected: false
+  inspected_via: WebSearch (snippet only); WebFetch on apsac.org PDFs and revision page failed (domain
+    unverifiable / PDF not parseable)
+  quote: null
+  verification:
+    tool: WebSearch
+    verdict: definition seen in search summary only, not opened
+    link: https://apsac.org/apsac-announces-revisions-to-its-definitions-of-psychological-maltreatment/
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'DO NOT use on screen until opened. Search summary: ''a repeated pattern of caregiver behavior
+    or extreme incident(s) that convey to children that they are worthless, flawed, unloved, unwanted,
+    endangered, or only of value in meeting another''s needs''; six subtypes incl. spurning, terrorizing.'
+  found_by: capy-philosopher
+  claims:
+  - 1
+- id: nrsvue-matt19-mark10-2026
+  type: scripture
+  title: Matthew 19:13-15 and Mark 10:13-16 (NRSVue)
+  author: NRSVue
+  date: '2021-01-01'
+  locator: https://www.biblegateway.com/passage/?search=Matthew+19%3A13-15%3B+Mark+10%3A13-16&version=NRSVUE
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Matthew+19%3A13-15%3B+Mark+10%3A13-16&version=NRSVUE
+  quote: Let the children come to me; do not stop them, for it is to such as these that the kingdom of
+    God belongs. Truly I tell you, whoever does not receive the kingdom of God as a little child will
+    never enter it. (Mark 10:14-15, NRSVue)
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Mark+10%3A13-16&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Matt 19:14 (NRSVue): ''Let the children come to me, and do not stop them, for it is to such
+    as these that the kingdom of heaven belongs.'' The WebFetch output is model-processed, so cross-check
+    the exact NRSVue wording against a printed edition before it goes on screen.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: bofm-moroni-8-2026
+  type: scripture
+  title: Moroni 8:8-24
+  author: Book of Mormon (Church of Jesus Christ of Latter-day Saints edition)
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng; cross-checked
+    in GSA with read_pages(Hardy, Annotated Book of Mormon.pdf, 744-745)
+  quote: little children are whole, for they are not capable of committing sin; wherefore the curse of
+    Adam is taken from them in me, that it hath no power over them
+  verification:
+    tool: cite_page
+    verdict: exact
+    link: https://corpus.noahairmet.com/b/hardy-annotated-book-of-mormon-56dc/744
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Moroni 8:8. Also verified: v.12 ''little children are alive in Christ, even from the foundation
+    of the world''; v.19 ''Little children cannot repent; wherefore, it is awful wickedness to deny the
+    pure mercies of God unto them''; v.20 ''he that saith that little children need baptism denieth the
+    mercies of Christ, and setteth at naught the atonement of him''; v.22 ''all little children are alive
+    in Christ''; v.10 ''humble themselves as their little children''. Hardy p.745 covers vv.9-17. The
+    Church site confirms vv.19-24.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: bofm-mosiah-3-2026
+  type: scripture
+  title: Mosiah 3:16-21
+  author: Book of Mormon
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  quote: even if it were possible that little children could sin they could not be saved; but I say unto
+    you they are blessed; for behold, as in Adam, or by nature, they fall, even so the blood of Christ
+    atoneth for their sins.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Mosiah 3:16. Text as fetched reads 'even if it were possible that little children could sin they
+    could not be saved', and the wording of this verse should be re-checked in a printed edition before
+    on-screen use because it is easy to misquote. v.18 'the infant perisheth not that dieth in his infancy';
+    v.21 'none shall be found blameless before God, except it be little children'. v.19 'natural man is
+    an enemy to God' is the adult-directed counter-text.
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: bofm-mosiah-15-2026
+  type: scripture
+  title: Mosiah 15:24-27
+  author: Book of Mormon
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/15?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/15?lang=eng
+  quote: And little children also have eternal life.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/15?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Mosiah 15:25. Short quote. v.24 (those who died in ignorance) and v.26-27 (wilful rebels) give
+    context.
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: dc-68-2026
+  type: scripture
+  title: Doctrine and Covenants 68:25-28
+  author: Doctrine and Covenants
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng
+  quote: And their children shall be baptized for the remission of their sins when eight years old, and
+    receive the laying on of the hands.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'D&C 68:27, the counter-text: it teaches that eight-year-olds are accountable and taught repentance.
+    v.25: parents who do not teach repentance, faith in Christ, baptism and the gift of the Holy Ghost
+    to children at eight, ''the sin be upon the heads of the parents''.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: dc-137-2026
+  type: scripture
+  title: Doctrine and Covenants 137:7-10
+  author: Doctrine and Covenants
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng
+  quote: all children who die before they arrive at the years of accountability are saved in the celestial
+    kingdom of heaven.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'D&C 137:10. Preceding v.9: ''I, the Lord, will judge all men according to their works, according
+    to the desire of their hearts.'''
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: aof-1-2-2026
+  type: scripture
+  title: Articles of Faith 1:2
+  author: Joseph Smith (Pearl of Great Price)
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng
+  quote: We believe that men will be punished for their own sins, and not for Adam's transgression.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Article of Faith 2 (Articles of Faith 1:2 in the Church's URL scheme).
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: moses-6-2026
+  type: scripture
+  title: Moses 6:53-55
+  author: Pearl of Great Price
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  quote: the Son of God hath atoned for original guilt, wherein the sins of the parents cannot be answered
+    upon the heads of the children, for they are whole from the foundation of the world.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Moses 6:54. Counter-text is v.55: ''thy children are conceived in sin, even so when they begin
+    to grow up, sin conceiveth in their hearts, and they taste the bitter, that they may know to prize
+    the good.'' This is a fallen-world statement, not inherited guilt.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: hardy-2019-annotated-bom
+  type: scholarly
+  title: The Annotated Book of Mormon
+  author: Grant Hardy
+  date: '2023-01-01'
+  locator: Read/Book of Mormon/Study Editions/Hardy, Annotated Book of Mormon.pdf, pp. 744-745 (printed
+    729-730)
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Book of Mormon/Study
+    Editions/Hardy, Annotated Book of Mormon.pdf, from_page=744, to_page=745)
+  quote: Little children inherit the curse of Adam, which has resulted in spiritual death, but the effects
+    are nullified by Christ's atonement until they reach an age at which they are capable of conscious
+    sin; cf. Mos 3.16.
+  verification:
+    tool: cite_page
+    verdict: exact
+    link: https://corpus.noahairmet.com/b/hardy-annotated-book-of-mormon-56dc/744
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Hardy''s note on Moro 8.8-11 (p. 744). Publication year is not shown on the page (date field
+    is a placeholder); check before citing. Gives the Adamic-curse-nullified reading, a scholar''s read
+    of the same passages, and on p. 745 note on v.12-15: ''Mormon''s argument is that condemning infants
+    who die without baptism to endless hell would make God arbitrary and unjust.'' Useful on-screen receipt
+    (get_page_image) if a page photo is wanted.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: lybbert-1994-special-status-children
+  type: primary
+  title: The Special Status of Children
+  author: Merlin R. Lybbert
+  date: '1994-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/1994-04-lybbert-the-special-status-of-children/#p12
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: Some may rationalize their failure to follow this God-given instruction by assuming that children
+    of tender years are not capable of understanding gospel principles. Parents who have followed the
+    practice of teaching their children know otherwise.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1994-04-lybbert-the-special-status-of-children/#p12
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 4. Also p5-9: children cannot sin before eight; teaching is to occur before accountability
+    (D&C 68:25); p9 ''dress them in armor'' framing (counter material).'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: packer-2002-children
+  type: primary
+  title: Children
+  author: Boyd K. Packer
+  date: '2002-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2002-04-packer-children/#p24
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: Only when a child reaches that age of accountability, set by the Lord at eight years of age (see
+    D&C 68:27), is their baptism essential. Before that age, they are innocent.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2002-04-packer-children/#p24
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 4. First verify attempt omitted ''(see D&C 68:27)'' and returned not-verbatim; the corrected
+    text is exact. Same talk p18 (verified exact): ''There is nothing in the scriptures, there is nothing
+    in what we publish, there is nothing in what we believe or teach that gives license to parents or
+    anyone else to neglect or abuse or molest our own or anyone else''s children.'' link .../#p18'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: burton-2012-atonement-child-can-understand
+  type: primary
+  title: Is Faith in the Atonement of Jesus Christ Written in Our Hearts?
+  author: Linda K. Burton
+  date: '2012-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2012-10-burton-is-faith-in-the-atonement-of-jesus-christ-written-in-our-hearts/#p21
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: There is a way to know when we have learned a doctrine or principle of the gospel. It is when
+    we are able to teach the doctrine or principle in a way that a child can understand it.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2012-10-burton-is-faith-in-the-atonement-of-jesus-christ-written-in-our-hearts/#p21
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 4. p22-23 quotes the ''woman in a pit with a ladder'' analogy from Primary 7: New Testament
+    (1997), p104 (endnotes 10-12), i.e. the Church''s child-level Atonement analogy is rescue, not debt
+    or guilt. Note: Burton says ''sinning is like falling into the pit'' and ''we must repent'' - a critic
+    can still call it obligation-laden.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: jones-2021-essential-conversations
+  type: primary
+  title: Essential Conversations
+  author: Joy D. Jones
+  date: '2021-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2021-04-jones-essential-conversations/#p2
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: That means we never harm them physically, verbally, or emotionally in any way, even when tensions
+    and pressures run high.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2021-04-jones-essential-conversations/#p2
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 4; speaker was Primary General President until Apr 2021 (calling listed as recently released).
+    Also verified exact: p24 ''Simple, caring conversations can lead children to know not only what they
+    believe, but most important, why they believe it.'' (#p24). p20 lists ''The Atonement of Jesus Christ''
+    among things to ''teach freely unto your children'' (Moses 6:58). COUNTER material, verified exact
+    p38: ''Children deserve to understand this great truth: eternity is the wrong thing to be wrong about.''
+    (#p38). p8: ''we cannot begin too soon'' (read, not separately verify_quote''d).'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: jones-2021-counter-eternity
+  type: primary
+  title: Essential Conversations (counter paragraph)
+  author: Joy D. Jones
+  date: '2021-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2021-04-jones-essential-conversations/#p38
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: 'Children deserve to understand this great truth: eternity is the wrong thing to be wrong about.'
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2021-04-jones-essential-conversations/#p38
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'What the critic could cite: stakes language directed at children.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: eyring-1999-power-teaching-doctrine
+  type: primary
+  title: The Power of Teaching Doctrine
+  author: Henry B. Eyring
+  date: '1999-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/1999-04-eyring-the-power-of-teaching-doctrine/#p22
+  accessed: '2026-09-29'
+  inspected: false
+  inspected_via: Pulpit verify_quote (snippet only; talk not opened via read_paragraphs)
+  quote: The best time to teach is early, while children are still immune to the temptations of their
+    mortal enemy
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1999-04-eyring-the-power-of-teaching-doctrine/#p22
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Tier 4. Only the verify_quote snippet was seen; context not read, so inspected:false. Fragment
+    quoted here is exact. (Jones 2021 cites Eyring with 'the mortal enemy'; the talk itself reads 'their
+    mortal enemy'.)
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: runia-2025-shame
+  type: primary
+  title: Your Repentance Doesn't Burden Jesus Christ; It Brightens His Joy
+  author: Tamara W. Runia
+  date: '2025-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2025-04-runia-your-repentance-doesnt-burden-jesus-christ-it-brightens-his-joy/#p29
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: uses shame to keep us from God
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2025-04-runia-your-repentance-doesnt-burden-jesus-christ-it-brightens-his-joy/#p29
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 4. Opened only p1-12 by read_paragraphs; p29 seen via search snippet (''Satan, the great
+    accuser and deceiver, uses shame to keep us from God''; the full sentence has an endnote marker, so
+    the fragment was the exact-match). About adult/Young Women audience, not children: use only as evidence
+    that Church leaders treat shame as opposed to the Atonement. Do not present as teaching-children guidance.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: cfm-primary-nt-2023-it-is-finished
+  type: official
+  title: 'Come, Follow Me - For Primary: New Testament 2023, June 19-25 ''It Is Finished'''
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2023-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-primary-new-testament-2023/26?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-primary-new-testament-2023/26?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 3, dated 2023. WebFetch returns a model-summarized page, so wording below is from that
+    summary and must be re-read on the live page before any on-screen use: ''Because Jesus suffered and
+    died for me, I can repent and be forgiven''; ''Jesus died for me because He loves me''; younger-children
+    adaptation about praying to Heavenly Father to ''fix our sins and mistakes and receive forgiveness.''
+    Cuts both ways: love/forgiveness framing (pro) but ''Jesus suffered and died for me'' is exactly the
+    critic''s target (con). Search snippet also says the lesson shows pictures of Gethsemane, the cross,
+    and the resurrection.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: teaching-no-greater-call-1999-children
+  type: official
+  title: 'Teaching, No Greater Call: A Resource Guide for Gospel Teaching, ''1: Teaching Children'''
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1999-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/c-teaching-different-age-groups/1-teaching-children?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/c-teaching-different-age-groups/1-teaching-children?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: '1999 manual (tier 3 as an official teaching resource, but old; check whether still in the Gospel
+    Library and not superseded by Teaching in the Savior''s Way 2022). First WebFetch on a different URL
+    form returned HTTP 503; second URL form worked. Summary text (re-verify on live page before quoting):
+    ''You have an obligation to teach them correct doctrine simply and clearly, with language and examples
+    that they can understand''; ''Everything is real to them. If you use complex metaphors to teach sacred
+    gospel principles, they may become confused.'' This is the most on-point official support for the
+    LDS position: the Church itself says children are concrete/literal thinkers.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: teaching-savior-way-2022-variety
+  type: official
+  title: Teaching in the Savior's Way (2022), 'Suggestions for a Variety of Teaching Settings and Learners'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2022-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/12-part-3/13-suggestions-for-a-variety-of-teaching?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/12-part-3/13-suggestions-for-a-variety-of-teaching?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 3, current (2022). Per WebFetch summary: stories, pictures/objects, songs; ''Most children
+    learn best when multiple senses are involved''; ''Even children who have not yet received the gift
+    of the Holy Ghost can feel His influence, especially when they are learning about Jesus Christ.''
+    Re-verify wording on live page. Note the sibling page ''Teach the Doctrine'' returned nothing about
+    simplifying doctrine for children.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: primary3-1994-lesson22
+  type: official
+  title: 'Primary 3 (1994), Lesson 22: The Atonement of Jesus Christ'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1994-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/primary-3/lesson-22-the-atonement-of-jesus-christ?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/primary-3/lesson-22-the-atonement-of-jesus-christ?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Tier 5 (older curriculum; a 1994 manual, not current). Per summary: purpose ''To help the children
+    realize that people can repent because Jesus Christ atoned for our sins''; uses a heavy rock in a
+    bag as a ''burden of sin'' object lesson with a child playing ''Josh,'' who stole something, then
+    removing the rock after repentance. This is the one item that resembles the critic''s picture of guilt-heavy
+    instruction, so treat as COUNTER material; it is also framed as relief. Do not present as current.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: nursery-manual-2008-lesson4
+  type: official
+  title: 'Behold Your Little Ones: Nursery Manual (2008), Lesson 4: Heavenly Father and Jesus Christ Love
+    Me'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2008-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/behold-your-little-ones-nursery-manual/lesson-4-heavenly-father-and-jesus-christ-love-me?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/behold-your-little-ones-nursery-manual/lesson-4-heavenly-father-and-jesus-christ-love-me?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Tier 3-5 (2008, may be superseded). Toddlers get a love-of-Jesus lesson and testimony 'in a simple,
+    concise way'; the Atonement is not the lesson. Useful to show the youngest age group is not taught
+    suffering-for-sins content.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: general-handbook-ch12-primary
+  type: official
+  title: General Handbook, 12. Primary
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/12-primary?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/general-handbook/12-primary?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 3, current as of access date (handbook has no fixed publication date in the fetch). Per
+    summary, 12.1.1: Primary helps children ''feel their Heavenly Father''s love and learn about His plan
+    of happiness'' and ''learn about Jesus Christ and His role in Heavenly Father''s plan''; classes are
+    grouped by age. Handbook did not surface anything on age-limits for Atonement content; do not claim
+    it says so. Section numbers come from the summary and should be checked.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: friend-2016-oaks-atonement
+  type: official
+  title: Why is the Savior's Atonement important? (Friend/Liahona)
+  author: Dallin H. Oaks
+  date: '2016-09-01'
+  locator: https://www.churchofjesuschrist.org/study/liahona/2016/09/children/why-is-the-saviors-atonement-important?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/liahona/2016/09/children/why-is-the-saviors-atonement-important?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Tier 4 (leader, in the Church''s children''s magazine). Per summary: ''made resurrection possible
+    so all of us will live again''; ''made it possible for us to be clean from our sins if we repent'';
+    ''Jesus suffered challenges of every kind so He could know how to help us feel better when we are
+    sad or struggling.'' Child-level wording is resurrection, cleansing, help; no debt language. Byline
+    is president Oaks per the search page; the fetch tool called him ''Elder''. Confirm on live page.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: childrens-songbook-i-feel-my-saviors-love
+  type: official
+  title: 'I Feel My Savior''s Love (Children''s Songbook #74)'
+  author: Ralph Rodgers Jr., K. Newell Dayley, Laurie Huffman
+  date: '1978-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-feel-my-saviors-love?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: WebFetch
+    verdict: unverified-paraphrase
+    link: https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-feel-my-saviors-love?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: The fetch returned credits and themes only (love, prayer, service; cites John 15:10-12), no lyrics.
+    A second search result gives 'I Know That My Savior Loves Me' (Tami Creamer, 2000, about 3 Nephi 17,
+    Jesus blessing the children) with the line 'The love that He felt for His little ones I know He feels
+    for me'; that came from search-result text only, not an opened page, so treat as a lead. Song repertoire
+    is love-centered, not sacrifice/debt-centered, but I did not audit the whole songbook.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: lane-wellman-evans-2010
+  type: scholarly
+  title: Children's understanding of ordinary and extraordinary minds
+  author: Lane JD, Wellman HM, Evans EM
+  date: '2010-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:20840235&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST record for PMID 20840235 (abstract only; PubMed page itself
+    returned a cookie wall). Child Development 2010.
+  quote: children within a specific age range reliably attributed fallible, human-like capacities to ordinary
+    humans and to several special agents (including God) for both tasks
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://pubmed.ncbi.nlm.nih.gov/20840235/
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 56 preschoolers. Supports the concrete/anthropomorphic half of the claim; 'in contrast to younger
+    and older peers' means the pattern is age-bounded, not universal.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: barrett-richert-driesenga-2001
+  type: scholarly
+  title: 'God''s beliefs versus mother''s: the development of nonhuman agent concepts'
+  author: Barrett JL, Richert RA, Driesenga A
+  date: '2001-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22God%27s%20beliefs%20versus%20mother%27s%22&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST search record (abstract only). Child Development 2001.
+  quote: Children are not bound to anthropomorphize, but they often do.
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22God%27s%20beliefs%20versus%20mother%27s%22&resultType=core&format=json
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Christian-background children aged about 3-8 (three experiments). Children can use different
+    agent concepts for God vs humans; undercuts 'no capacity.' Tension with Lane 2010 is real and unresolved
+    in the abstracts.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: kelemen-2004
+  type: scholarly
+  title: Are children 'intuitive theists'? Reasoning about purpose and design in nature
+  author: Kelemen D
+  date: '2004-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22Are%20children%20intuitive%20theists%22&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST search record (abstract only). Psychological Science 2004.
+  quote: by the time children are around 5 years of age, this description of them may have explanatory
+    value and practical relevance
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://doi.org/10.1111/j.0956-7976.2004.00672.x
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: A review/argument, not an experiment. Shows children reason about nonhuman design and unseen
+    intent, but does not show they understand atonement.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: evans-2001
+  type: scholarly
+  title: 'Cognitive and contextual factors in the emergence of diverse belief systems: creation versus
+    evolution'
+  author: Evans EM
+  date: '2001-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:11305883&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST record for PMID 11305883 (abstract only). Cognitive Psychology
+    2001.
+  quote: Children generate intuitive beliefs about origins, both natural and intentional, while communities
+    privilege certain beliefs and inhibit others
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://pubmed.ncbi.nlm.nih.gov/11305883/
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 185 children, 92 mothers. Supports the secular comparison (evolution non-intuitive, community-taught)
+    and shows children form intentional-origin beliefs; not about atonement.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: bering-bjorklund-2004
+  type: scholarly
+  title: The natural emergence of reasoning about the afterlife as a developmental regularity
+  author: Bering JM, Bjorklund DF
+  date: '2004-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1037/0012-1649.40.2.217&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST record (abstract only); also WebFetch of pure.qub.ac.uk record
+    (bibliographic only). Developmental Psychology 40(2), 2004.
+  quote: the youngest children were equally likely to state that both cognitive and psychobiological states
+    continued at death
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://pure.qub.ac.uk/en/publications/the-natural-emergence-of-reasoning-about-the-afterlife-as-a-devel/
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Preschoolers do not differentiate most psychological states of the dead; older children do. Shows
+    a real age gradient on death-related concepts, relevant to 'Jesus died' but not to atonement.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: heiphetz-2016
+  type: scholarly
+  title: How Children and Adults Represent God's Mind
+  author: Heiphetz L, Lane JD, Waytz A, Young LL
+  date: '2016-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1111/cogs.12232&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST record (abstract only). Cognitive Science 2016.
+  quote: children's religious cognition often matches adults' implicit responses, revealing anthropomorphic
+    notions of God's mind
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://onlinelibrary.wiley.com/doi/10.1111/cogs.12232
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Key nuance: adults show the same implicit anthropomorphism, so it is not a childhood-only deficit.'
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: shtulman-lindeman-2016
+  type: scholarly
+  title: 'Attributes of God: Conceptual Foundations of a Foundational Belief'
+  author: Shtulman A, Lindeman M
+  date: '2016-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1111/cogs.12253&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST record (abstract only). Cognitive Science 2016. Adult participants
+    only per abstract.
+  quote: God is conceptualized not as a person in general but as an agent in particular, attributed a
+    mind by default but attributed a body only upon further consideration
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://onlinelibrary.wiley.com/doi/10.1111/cogs.12253
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Adults (Christian and Hindu samples); mind-attribution to God is the default. Weak relevance
+    to children; do not present as a child study. The 'children more likely to assign physical attributes'
+    line came from a search snippet only, not verified.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: lane-harris-2014
+  type: scholarly
+  title: 'Confronting, Representing, and Believing Counterintuitive Concepts: Navigating the Natural and
+    the Supernatural'
+  author: Lane JD, Harris PL
+  date: '2014-01-01'
+  locator: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1177/1745691613518078&resultType=core&format=json
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch of Europe PMC REST record (abstract only). Perspectives on Psychological Science
+    2014.
+  quote: even preschoolers are skeptical; they frequently reject claims from other people when the claims
+    conflict with their own perceptions and concepts
+  verification:
+    tool: WebFetch
+    verdict: abstract verified
+    link: https://journals.sagepub.com/doi/10.1177/1745691613518078
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Review. Undercuts the picture of children as passive absorbers; also says conceptual development
+    for God and the afterlife shares the process of natural concepts. Full text not read.
+  found_by: capy-philosopher
+  claims:
+  - 2
+- id: nelson-2019-04-better
+  type: official
+  title: We Can Do Better and Be Better
+  author: Russell M. Nelson
+  date: '2019-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2019-04-nelson-we-can-do-better-and-be-better/#p3
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit verify_quote (matched paragraph 3; opened via search hit snippet only, not read_paragraphs)
+  quote: Too many people consider repentance as punishment
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2019-04-nelson-we-can-do-better-and-be-better/#p3
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Full sentence continues that the penalized feeling is engendered by Satan; that continuation
+    seen in Renlund 2022 p15 quoting Nelson, not verified in Nelson's own paragraph.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: nelson-2019-04-process
+  type: official
+  title: We Can Do Better and Be Better
+  author: Russell M. Nelson
+  date: '2019-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2019-04-nelson-we-can-do-better-and-be-better/#p6
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit verify_quote
+  quote: Repentance is not an event; it is a process. It is the key to happiness and peace of mind.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2019-04-nelson-we-can-do-better-and-be-better/#p6
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Adult-directed.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: renlund-2016-joyful-choice
+  type: official
+  title: 'Repentance: A Joyful Choice'
+  author: Dale G. Renlund
+  date: '2016-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2016-10-renlund-repentance-a-joyful-choice/#p11
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (8-11), verify_quote
+  quote: Without the Redeemer, the inherent hope and joy evaporate, and repentance becomes simply miserable
+    behavior modification.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2016-10-renlund-repentance-a-joyful-choice/#p11
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Also p10: joy is ''one of the inherent results of repentance.'' Same talk stresses ''confess
+    them and forsake them'' (D&C 58:42-43), a demanding standard.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: renlund-2022-divine-nature
+  type: official
+  title: Your Divine Nature and Eternal Destiny
+  author: Dale G. Renlund
+  date: '2022-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2022-04-renlund-your-divine-nature-and-eternal-destiny/#p15
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (14-17)
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-found
+    link: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Paraphrase only: Renlund quotes Nelson that repentance-as-punishment is engendered by Satan;
+    p16 says guilt is swept away. verify_quote not run on Renlund''s own words, so no direct attribution.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: holland-2017-toxic-perfectionism
+  type: official
+  title: Be Ye Therefore Perfect—Eventually
+  author: Jeffrey R. Holland
+  date: '2017-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2017-10-holland-be-ye-therefore-perfecteventually/#p13
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (10-15), verify_quote
+  quote: let's strive for steady improvement without obsessing over what behavioral scientists call "toxic
+    perfectionism."
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2017-10-holland-be-ye-therefore-perfecteventually/#p13
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Adult-directed. Same talk p11: ''Every one of us is a debtor'' and the Atonement is ''an unfathomable
+    gift given at an incomprehensible cost'' (p12), debt language critics can quote. I opened but did
+    not run verify_quote on those two.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: holland-2016-guilt-trips
+  type: official
+  title: Emissaries to the Church
+  author: Jeffrey R. Holland
+  date: '2016-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2016-10-holland-emissaries-to-the-church/#p8
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (6-10), verify_quote
+  quote: Certainly no Freudian travel agency anywhere could possibly arrange the number of guilt trips
+    this subject has provoked.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2016-10-holland-emissaries-to-the-church/#p8
+  grade_supports: speculation
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Context is home teaching. Do NOT use as evidence about children or the Atonement.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: burton-2012-atonement-pit
+  type: official
+  title: Is Faith in the Atonement of Jesus Christ Written in Our Hearts?
+  author: Linda K. Burton
+  date: '2012-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2012-10-burton-is-faith-in-the-atonement-of-jesus-christ-written-in-our-hearts/#p23
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (1-30), verify_quote
+  quote: Thus, after all we can do, the Atonement makes it possible for us to become worthy to return
+    to Heavenly Father's presence.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2012-10-burton-is-faith-in-the-atonement-of-jesus-christ-written-in-our-hearts/#p23
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Burton is quoting Primary 7: New Testament (1997), 104 (footnotes 10-12). p21 introduces it
+    as an analogy ''to teach children to understand the Atonement.'' Cuts both ways: pit/ladder frames
+    sin and Atonement as rescue, but also ''we must repent... to make the Atonement work'' and ''worthy.''
+    Says nothing about Jesus'' suffering being caused by the child''s badness.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: packer-2012-alive-in-christ
+  type: official
+  title: And a Little Child Shall Lead Them
+  author: Boyd K. Packer
+  date: '2012-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2012-04-packer-and-a-little-child-shall-lead-them/#p14
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (12-16), verify_quote
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-verbatim
+    link: https://pulpit.restorationcommons.org/talks/2012-04-packer-and-a-little-child-shall-lead-them/#p14
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'verify_quote returned not-verbatim on my transcription, likely footnote-marker/quote-mark punctuation,
+    so I paraphrase: paragraph 14 (which I read directly) says Mormon taught little children are alive
+    in Christ and need not repent (Moroni 8:12). Christensen 2016-10-01 p17 quotes Moroni 8 similarly
+    (seen only as a verify_quote candidate, not opened).'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: esplin-2012-teach-understand
+  type: official
+  title: Teaching Our Children to Understand
+  author: Cheryl A. Esplin
+  date: '2012-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2012-04-esplin-teaching-our-children-to-understand/#p4
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (3-8)
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-found
+    link: null
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Paraphrase: Primary presidency counselor says D&C 68:25, 28 instructs parents to teach children
+    to understand repentance, faith in Christ, baptism, and the Holy Ghost, and that the instruction is
+    to ''understand,'' not merely recite (p4, p6). Shows the official parental commission to teach repentance
+    to children, which is the practice Ashley criticizes.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: general-handbook-38-2-8-2
+  type: official
+  title: General Handbook 38.2.8.2 Minors (baptism interview)
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch (summarized by tool, not raw page text)
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-found
+    link: null
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Per WebFetch summary only (secondary to the primary page): conditions for child baptism are
+    parental permission and the interviewer discerning that the child understands the baptismal covenant
+    and will strive to keep it by obeying the commandments, including attending meetings. Summary reported
+    no exact interview questions and no wording on under-8 repentance. Re-open the raw page before any
+    on-screen citation.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: moroni-8-8-12-bofm
+  type: scripture
+  title: Moroni 8:8-12
+  author: Book of Mormon (Moroni, quoting Christ)
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng
+  quote: little children are whole, for they are not capable of committing sin; wherefore the curse of
+    Adam is taken from them in me, that it hath no power over them
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Official LDS edition. Also v.12: ''little children are alive in Christ, even from the foundation
+    of the world''.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: moses-6-53-54-pgp
+  type: scripture
+  title: Moses 6:53-54
+  author: Pearl of Great Price (Joseph Smith Translation of Genesis)
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  quote: the Son of God hath atoned for original guilt, wherein the sins of the parents cannot be answered
+    upon the heads of the children, for they are whole from the foundation of the world
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: JST-derived text; counts as scripture in the LDS canon, not a Bible verse.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: dc-93-38-39
+  type: scripture
+  title: Doctrine and Covenants 93:38-39
+  author: Doctrine and Covenants
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=eng
+  quote: Every spirit of man was innocent in the beginning; and God having redeemed man from the fall,
+    men became again, in their infant state, innocent before God.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'v.39 continues: the wicked one takes away light and truth ''because of the tradition of their
+    fathers'' (guilt comes from environment/tradition, not birth).'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: mosiah-3-11-16-bofm
+  type: scripture
+  title: Mosiah 3:11, 3:16
+  author: Book of Mormon (King Benjamin quoting an angel)
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+    (two single-verse calls)
+  quote: And even if it were possible that little children could sin they could not be saved; but I say
+    unto you they are blessed; for behold, as in Adam, or by nature, they fall, even so the blood of Christ
+    atoneth for their sins.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Counter-text a critic can cite. The fetch tool returned the text only for single-verse requests.
+    v.11: ''his blood atoneth for the sins of those who have fallen by the transgression of Adam, who
+    have died not knowing the will of God concerning them, or who have ignorantly sinned.'' The KJV-style
+    ''if it were possible'' in v.16 is hypothetical: children are ''blessed''.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: 2-nephi-9-21-22-bofm
+  type: scripture
+  title: 2 Nephi 9:21-22
+  author: Book of Mormon (Jacob)
+  date: '2026-09-29'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/9?lang=eng
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/9?lang=eng (two
+    single-verse calls)
+  quote: And he cometh into the world that he may save all men if they will hearken unto his voice; for
+    behold, he suffereth the pains of all men, yea, the pains of every living creature, both men, women,
+    and children, who belong to the family of Adam.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/9?lang=eng
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Two-sided. Christ's suffering is voluntary and for all (v.21); the purpose given in v.22 is 'that
+    the resurrection might pass upon all men'. A critic can quote 'children' in the list of those he suffers
+    for.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: john-3-16-17-nrsvue
+  type: scripture
+  title: John 3:16-17 (NRSVue)
+  author: Gospel of John
+  date: '2026-09-29'
+  locator: https://www.biblegateway.com/passage/?search=John+3%3A16-17&version=NRSVUE
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=John+3%3A16-17&version=NRSVUE
+  quote: For God so loved the world that he gave his only Son, so that everyone who believes in him may
+    not perish but may have eternal life.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=John+3%3A16-17&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'v.17 (NRSVue): ''Indeed, God did not send the Son into the world to condemn the world but in
+    order that the world might be saved through him.'''
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: romans-5-8-nrsvue
+  type: scripture
+  title: Romans 5:8 (NRSVue)
+  author: Paul
+  date: '2026-09-29'
+  locator: https://www.biblegateway.com/passage/?search=Romans+5%3A8&version=NRSVUE
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Romans+5%3A8&version=NRSVUE
+  quote: But God proves his love for us in that while we still were sinners Christ died for us.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Romans+5%3A8&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Love-first ordering. Caveat: Paul also says ''sinners'', which a critic pairs with the sinfulness
+    reading.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: 1-john-4-19-nrsvue
+  type: scripture
+  title: 1 John 4:19 (NRSVue)
+  author: First Epistle of John
+  date: '2026-09-29'
+  locator: https://www.biblegateway.com/passage/?search=1+John+4%3A19&version=NRSVUE
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=1+John+4%3A19&version=NRSVUE
+  quote: We love because he first loved us.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=1+John+4%3A19&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Only v.19 was returned; vv.9-10 (the 'sent his Son as atoning sacrifice' text) were NOT fetched
+    and are not verified here.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: ezekiel-18-20-nrsvue
+  type: scripture
+  title: Ezekiel 18:20 (NRSVue)
+  author: Ezekiel
+  date: '2026-09-29'
+  locator: https://www.biblegateway.com/passage/?search=Ezekiel+18%3A20&version=NRSVUE
+  accessed: '2026-09-29'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Ezekiel+18%3A20&version=NRSVUE
+  quote: A child shall not suffer for the iniquity of a parent nor a parent suffer for the iniquity of
+    a child; the righteousness of the righteous shall be their own, and the wickedness of the wicked shall
+    be their own.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Ezekiel+18%3A20&version=NRSVUE
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Ezekiel 18 is about individual responsibility, not infants and Adam. It supports the personal-guilt
+    principle, not directly the innocence of children. Do not overstate.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: verified-moroni8
+  type: scripture
+  title: Moroni 8:8–12, 19–22
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web.run open; direct canonical page read and adjacent context check
+  quote: little children are whole, for they are not capable of committing sin
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/8?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Tier 1. Wording verified. Doctrinal status does not establish psychological outcomes.
+- id: verified-primary2023
+  type: official
+  title: Come Follow Me for Primary June 19–25 2023 younger children
+  author: null
+  date: '2023'
+  locator: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-primary-new-testament-2023/26?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web.run open; direct canonical page read and adjacent context check
+  quote: Because Jesus suffered and died for me, I can repent and be forgiven.
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-primary-new-testament-2023/26?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Tier 3 dated curriculum. Also states under-eight non-accountability and warns Crucifixion accounts
+    may upset little children. Do not label this the 2026 curriculum.
+- id: verified-dc68
+  type: scripture
+  title: Doctrine and Covenants 68:25–28
+  author: null
+  date: '1831'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web.run open; direct canonical page read and adjacent context check
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Tier 1. Religious teaching and baptism threshold; not a child-development finding.
+- id: verified-moses6
+  type: scripture
+  title: Moses 6:53–57
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web.run open; direct canonical page read and adjacent context check
+  quote: conceived in sin
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Tier 1. Verse 54 rejects passing parental sins to children and calls them whole; verse 55 contains
+    the quoted wording. Synthesis is interpretation.
+- id: verified-mosiah3
+  type: scripture
+  title: Mosiah 3:16–19
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web.run open; direct canonical page read and adjacent context check
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Tier 1. Verse 16 treats children’s ability to sin hypothetically and calls them blessed; verse
+    18 rejects infant damnation.
+- id: verified-critic
+  type: critic
+  title: Video by ashleysbuckner
+  author: Ashley Buckner
+  date: '2026-08-20'
+  locator: source/source.mp4
+  url: https://www.instagram.com/reel/DcRQE__JJ9f/
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Local complete small.en transcript source.json and source.txt read; metadata source_info.json
+    read; word timestamps checked at clip boundaries
+  quote: null
+  verification:
+    tool: local transcript read
+    verdict: transcript-context-check
+    link: https://www.instagram.com/reel/DcRQE__JJ9f/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Source is already ingested, with a complete 97-second transcript. Attribution and date from ingest
+    metadata. No new media download. Qualifiers can often and may retained. No generated clip captions.
