@@ -44,14 +44,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 06. `n04` (narration, ~9.5s)
 - **Original Video Transcript:** That's what you gotta do. Also, if you join my church, your skin will become a lot lighter. It's kind of dark. It'll get lighter if you be Mormon. No, it's because your skin was cursed by God.
 - **Pose:** solemn
-- **Narration:** The racial history behind this is real, and it was harmful. In nineteen sixty, apostle Spencer W. Kimball taught that Indigenous people were becoming physically lighter. His examples included children in the Church’s placement program.
+- **Narration:** The racial history behind this is real, and it was harmful. (edit: however, theres no chance this would actually be taught. this was adopted as a protestant teaching but has been disavowed by the church)
 - **Sources:** kimball-1960-whitening, kimball-1960-lamanites
 - **Notes:** 
 
 ## 07. `q01` (card, ~6.8s)
 - **Original Video Transcript:** That's what you gotta do. Also, if you join my church, your skin will become a lot lighter. It's kind of dark. It'll get lighter if you be Mormon. No, it's because your skin was cursed by God.
 - **Pose:** quote
-- **Narration:** This is his wording from October nineteen sixty. It documents a racial teaching by an apostle; it does not establish that anyone’s pigmentation actually changed.
+- **Narration:** This is his wording from October nineteen sixty. It documents a racial teaching by an apostle; it does not establish that anyone’s pigmentation actually changed. (remove line)
 - **Card quote:** “For years they have been growing delightsome, and they are now becoming white and delightsome, as they were promised.” — Spencer W. Kimball, General Conference, October 1960
 - **Sources:** kimball-1960-whitening
 - **Notes:** 
@@ -59,14 +59,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n05` (narration, ~9.5s)
 - **Original Video Transcript:** That's what you gotta do. Also, if you join my church, your skin will become a lot lighter. It's kind of dark. It'll get lighter if you be Mormon. No, it's because your skin was cursed by God.
 - **Pose:** reading
-- **Narration:** The Book of Mormon retains passages connecting dark skin with a curse and describing converted Lamanites becoming white. Their interpretation is disputed. Claiming they could only ever mean a metaphor would evade the historical record.
+- **Narration:** The Book of Mormon retains passages connecting dark skin with a curse and describing converted Lamanites becoming white. Their interpretation is disputed. Claiming they could only ever mean a metaphor would evade the historical record. (update line, look at https://github.com/Samuel-Baird/content_creation/blob/saint-capybara-visual-overhaul/docs/saint-capybara/common-issues/book-of-mormon-skin-of-blackness.md )
 - **Sources:** bom-2-nephi-5, bom-3-nephi-2, kimball-1960-whitening
 - **Notes:** 
 
 ## 09. `n06` (narration, ~9.8s)
 - **Original Video Transcript:** That's what you gotta do. Also, if you join my church, your skin will become a lot lighter. It's kind of dark. It'll get lighter if you be Mormon. No, it's because your skin was cursed by God.
 - **Pose:** concerned
-- **Narration:** Today, the Church’s race essay rejects theories that Black skin signifies divine disfavor or a curse. Joining the Church is not a current doctrinal promise of lighter skin. That correction does not erase the older teaching.
+- **Narration:** Today, the Church’s race essay rejects theories that Black skin signifies divine disfavor or a curse. Theres no change it would be taught in a modern context, like this video implies. 
 - **Sources:** race-priesthood-current-essay, bom-3-nephi-2
 - **Notes:** 
 
@@ -79,14 +79,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `n07` (narration, ~10.9s)
 - **Original Video Transcript:** If I tell you about the Mormon church and you deny it, you're gonna go to outer darkness. That's basically hell.
 - **Pose:** teaching
-- **Narration:** Declining an invitation does not meet the criteria for permanent outer darkness. Section seventy-six describes people who knew and partook of God’s power, then denied the received Holy Spirit and defied God. A church pitch does not establish that threshold.
+- **Narration:** Declining an invitation does not meet the criteria for permanent outer darkness. Section seventy-six describes people who knew and partook of God’s power, then denied the received Holy Spirit and defied God. 
 - **Sources:** dc-76-scripture, hell-current
 - **Notes:** 
 
 ## 12. `n08` (narration, ~9.0s)
 - **Original Video Transcript:** If I tell you about the Mormon church and you deny it, you're gonna go to outer darkness. That's basically hell.
 - **Pose:** pointing
-- **Narration:** The same revelation describes redemption through Christ for everyone except that exceptional category. Judgment and different glories remain. An automatic threat of permanent damnation misrepresents that scope of redemption. Adults should correct it.
+- **Narration:** The same revelation describes redemption through Christ for everyone except that exceptional category. Judgment and different glories remain. An automatic threat of permanent damnation misrepresents that scope of redemption. A church pitch does not establish that threshold. Modern latter-day saints debate if figures like judas even qualify for outer darkness. 
 - **Sources:** dc-76-scripture, hell-current
 - **Notes:** 
 
@@ -99,14 +99,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n09` (narration, ~12.3s)
 - **Original Video Transcript:** No, you can't have two moms. You need a mom and a dad. Otherwise, you can't go to heaven with them. You'll be completely alone. They will have to go to the lower levels of heaven and you'd have to go visit them. But you would also have to get married to a Mormon girl at church.
 - **Pose:** solemn
-- **Narration:** There is a real restriction here. Current Church practice seals a husband and wife; it does not seal two mothers’ marriage. Section one hundred thirty-one requires the marriage covenant for the highest celestial degree. Describing that requirement accurately matters, especially to families excluded by it.
+- **Narration:** Like many religions, the Church recognizes marriage only between a husband and a wife. (this source is good, especially quote the family arrangements will be more wonderful than you can imagine.” https://www.churchofjesuschrist.org/study/ensign/2016/08/the-hope-of-eternal-family-love?lang=eng)
 - **Sources:** dc-131-scripture, handbook-38-current, handbook38-marriage
 - **Notes:** 
 
 ## 15. `n10` (narration, ~14.5s)
 - **Original Video Transcript:** No, you can't have two moms. You need a mom and a dad. Otherwise, you can't go to heaven with them. You'll be completely alone. They will have to go to the lower levels of heaven and you'd have to go visit them. But you would also have to get married to a Mormon girl at church.
 - **Pose:** thoughtful
-- **Narration:** That does not authorize a child to assign these mothers a kingdom or promise their friend complete loneliness. Section one hundred thirty-two describes a single, nonexalted state, but it does not establish total isolation or this family’s visiting schedule. Being saved differs from receiving the highest celestial degree or an eternal family sealing.
+- **Narration:** That does not authorize a child to assign these mothers a kingdom or promise their friend complete loneliness. Being saved differs from receiving the highest celestial degree or an eternal family sealing.
 - **Sources:** dc-132-scripture, dc-76-scripture, handbook-38-current
 - **Notes:** 
 
@@ -120,7 +120,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 17. `n99` (narration, ~7.9s)
 - **Original Video Transcript:** No, you can't have two moms. You need a mom and a dad. Otherwise, you can't go to heaven with them. You'll be completely alone. They will have to go to the lower levels of heaven and you'd have to go visit them. But you would also have to get married to a Mormon girl at church.
 - **Pose:** encouraging
-- **Narration:** Adults should correct harmful teaching and explain these distinctions before children repeat them as threats. A friend’s family circumstances are no license to pronounce their eternal sentence. God bless.
+- **Narration:** Adults should correct harmful teaching and explain these distinctions before children repeat them as threats. A friend’s family circumstances are no license to pronounce their eternal sentence. God bless. (this is a skit from someone antagonsitic. note that these sayings would be extremely unlikely for children, as either the idea hasnt been taught in 50 years, or isnt taught frequently like outer darkness)
 - **Notes:** 
 
 ## Full source transcript
