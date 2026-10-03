@@ -85,7 +85,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 12. `n08` (narration, ~9.5s)
 - **Original Video Transcript:** If I tell you about the Mormon church and you deny it, you're gonna go to outer darkness. That's basically hell.
 - **Pose:** pointing
-- **Narration:** A church pitch does not establish that threshold. An official Church manual even discusses uncertainty about whether Judas had the knowledge required for the unforgivable sin. We should be careful about assigning anyone that fate.
+- **Narration:** A church pitch does not establish that threshold. An official Church manual even discusses uncertainty about whether Judas had the knowledge required for the unforgivable sin. We should be careful about assigning anyone that fate. Modern Latter-day Saint scholars even disagree if Outer Darkness is a permanent state, or if it's possible to repent and leave.
 - **Sources:** dc76-revision-redemption, nt-student-judas
 - **Notes:**
 
@@ -112,7 +112,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 16. `q02` (card, ~6.0s)
 - **Original Video Transcript:** No, you can't have two moms. You need a mom and a dad. Otherwise, you can't go to heaven with them. You'll be completely alone. They will have to go to the lower levels of heaven and you'd have to go visit them. But you would also have to get married to a Mormon girl at church.
 - **Pose:** quote
-- **Narration:** President Henry B. Eyring shared counsel to live worthy of the celestial kingdom, with this assurance about the family arrangements that follow.
+- **Narration:** President Henry B. Eyring shared counsel to live worthy of the celestial kingdom, with this assurance about the family arrangements that follow: “family arrangements will be more wonderful than you can imagine”
 - **Card quote:** “family arrangements will be more wonderful than you can imagine” — Henry B. Eyring, The Hope of Eternal Family Love, August 2016
 - **Sources:** eyring-2016-family-love
 - **Notes:**
