@@ -1,84 +1,88 @@
-# Script — Is old-sounding English proof the Book of Mormon is fake?
+# Script — Does “and it came to pass” expose a fake—or preserve a Hebrew pattern?
 
-> **Video title** (upload title, not shown on screen): Is old-sounding English proof the Book of Mormon is fake?  
-> **Post caption** (goes with the upload, not shown on screen): "Nobody talked like that" is a strange test for scripture. Try it on the King James Bible.
+**Slug:** `bom-obvious-fake-kjv-english` | **Estimated runtime:** 129.4s (budget 60-180s) | **Source time:** 14.8s (11%)
 
-**Slug:** `bom-obvious-fake-kjv-english` | **Estimated runtime:** 89.2s (budget 60-180s) | **Source time:** 17.5s (20%)
-
-**Hook (title/description only, not shown on screen):** "A test that fails the King James Bible isn't much of a test."
-**Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
+**Hook (title/description only, not shown on screen):** 'The phrase being mocked has a Hebrew history—and a more interesting pattern.'
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
 ## 01. `c01` (clip, ~14.8s)
 - **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** skeptical
-- **Clip:** Source video, 6.3s–21.1s @ speed 1.0
-- **Notes:** 
+- **Clip:** Source video, 6.28s–21.1s @ speed 1.0
+- **Notes:**
 
-## 02. `n01` (narration, ~12.0s)
+## 02. `n01` (narration, ~11.5s)
 - **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** teaching
-- **Narration:** Old-sounding English is not evidence of a fake, because English scripture has always sounded old. A Purdue dissertation on the subject finds archaic features are characteristic of translated texts, and some critics called the King James Bible archaic in the very year it appeared.
-- **Sources:** bowen-2016-sounding-sacred, chm-1990-kjb-archaic
-- **Notes:** 
+- **Narration:** The English sounds biblical. That is true. But a translation does not have to sound like everyday conversation. Calling it fake on that basis skips the real question: what does the language preserve? The phrase he mocks has an ancient Hebrew counterpart.
+- **Sources:** hardy-kjv-oct2, parry-wayhi-oct2
+- **Notes:**
 
-## 03. `q02` (card, ~7.9s)
-- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
-- **Pose:** reading
-- **Narration:** Here is that finding. Its author reads the pattern as imitation of the King James Bible. Either way, a scripture register alone cannot tell a forgery from a translation.
-- **Card quote:** “Archaic features are characteristic of the translated texts, which make the most consistent and standard use of archaisms.” — Gregory A. Bowen, Purdue University dissertation, 2016
-- **Sources:** bowen-2016-sounding-sacred
-- **Notes:** 
-
-## 04. `n03` (narration, ~12.5s)
+## 03. `n02` (narration, ~12.8s)
 - **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** source
-- **Narration:** The question is also open. Linguist Stanford Carmack counts the phrase the more part of them twenty-six times in the earliest text, and the King James Bible never uses that form. Other scholars dispute what that shows, which is exactly why obvious is the wrong word.
-- **Sources:** carmack-2016-more-part, davis-2025-dialogue
-- **Notes:** 
+- **Narration:** Biblical Hebrew frequently uses wayhi, traditionally translated as “and it came to pass.” Donald Parry reports roughly twelve hundred instances in the Hebrew Bible. The King James translators often use shorter expressions or leave it unexpressed. Repetition can reflect the source language, rather than just awkward English.
+- **Sources:** parry-wayhi-oct2
+- **Notes:**
 
-## 05. `q03` (card, ~3.0s)
+## 04. `n03` (narration, ~11.5s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
+- **Pose:** pointing
+- **Narration:** Parry also observes a pattern: the Book of Mormon uses the phrase chiefly in historical narrative, connecting events and marking time. It appears less often in speeches, prayers, and poetry, resembling Hebrew biblical usage. That is more interesting than simply counting repetitions.
+- **Sources:** parry-wayhi-oct2
+- **Notes:**
+
+## 05. `e04` (evidence, ~11.7s)
 - **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** reading
-- **Narration:** This is Carmack's observation about the King James Bible's own wording.
-- **Card quote:** “The 1611 Bible only employs a truncated form of the phrase — without of.” — Stanford Carmack, Interpreter 18 (2016)
-- **Sources:** carmack-2016-more-part
-- **Notes:** 
+- **Narration:** Here is a sharper example. The eighteen thirty edition of Second Nephi, chapter four, verse ten, has “and it came to pass,” then a clause beginning with “when,” then “behold it came to pass that.” To English readers, that second construction sounds redundant.
+- **Evidence:** `images/double-construction-bom.png` — 2 Nephi 4:10, 1830 reading; Testaments, p. 225 (placement: panel)
+- **Sources:** testaments-double-oct2, skousen-revision-oct2, bom-1830-2nephi4-double
+- **Notes:**
 
-## 06. `c02` (clip, ~2.7s)
-- **Original Video Transcript:** But he was a convicted charlatan, he was a convicted con man.
-- **Pose:** disappointed
-- **Clip:** Source video, 40.3s–43.0s @ speed 1.0
-- **Notes:** 
-
-## 07. `n04` (narration, ~12.3s)
-- **Original Video Transcript:** But he was a convicted charlatan, he was a convicted con man.
-- **Pose:** pointing
-- **Narration:** Convicted is a stronger word than the record allows. The 1826 case was a misdemeanor complaint before a justice of the peace, and the only text of the court docket, printed decades later, ends with a guilty line but records no sentence and no fine.
-- **Sources:** vogel-emd4-2002-bainbridge-court-record, madsen-2014-sustaining-the-law-disorderly
-- **Notes:** 
-
-## 08. `q04` (card, ~4.4s)
-- **Original Video Transcript:** But he was a convicted charlatan, he was a convicted con man.
+## 06. `e05` (evidence, ~10.9s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** quote
-- **Narration:** Even Dan Vogel, a skeptical historian who edited these documents, reads that guilty line this way.
-- **Card quote:** “Neely's use of the term "guilty" does not imply that a final judgment had been reached, only that Neely found sufficient evidence to proceed with a formal trial.” — Dan Vogel, Early Mormon Documents, vol. 4 (2002)
-- **Sources:** vogel-emd4-p250-guilty
-- **Notes:** 
+- **Narration:** Genesis, chapter twenty-seven, verse thirty, has a comparable double construction in Hebrew. Both clauses use wayhi. The King James Version expresses “and it came to pass” only once. This comparison restores the second expression so you can see the parallel.
+- **Evidence:** `images/double-construction-genesis.png` — Genesis 27:30, restored rendering; Testaments, p. 225 (placement: panel)
+- **Sources:** testaments-double-oct2, genesis-hebrew-oct2, genesis-kjv-oct2
+- **Notes:**
 
-## 09. `n05` (narration, ~14.2s)
-- **Original Video Transcript:** But he was a convicted charlatan, he was a convicted con man.
+## 07. `n06` (narration, ~9.8s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
+- **Pose:** researching
+- **Narration:** Royal Skousen documents that Joseph Smith removed the second expression from Second Nephi in the eighteen thirty-seven edition. The earlier English contains a Hebrew-like construction that a direct copy of this King James verse would miss.
+- **Sources:** skousen-revision-oct2, testaments-double-oct2, genesis-kjv-oct2
+- **Notes:**
+
+## 08. `n07` (narration, ~13.1s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** thoughtful
-- **Narration:** The accounts of the outcome don't agree either. A critic in 1831 says he was condemned and allowed to escape. A local man in 1877 says he was discharged. Argue about the charge if you like. Convicted is a claim about the outcome, and the outcome is what the record doesn't give.
-- **Sources:** benton-1831-emd4, purple-1877-emd4
-- **Notes:** 
+- **Narration:** Brant Gardner offers a structural explanation too: “and it came to pass” marks movement in past narrative, while “and now” shifts into the narrator’s present discourse. He connects the phrase with the printer’s paragraph breaks. That suggests a function beyond filler; those breaks do not establish ancient paragraphing.
+- **Sources:** gardner-markers-oct2
+- **Notes:**
 
-## 10. `n99` (narration, ~5.5s)
-- **Original Video Transcript:** But he was a convicted charlatan, he was a convicted con man.
+## 09. `n08` (narration, ~12.3s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
+- **Pose:** concerned
+- **Narration:** But Joseph knew the King James Bible. Grant Hardy notes that the Book of Mormon broadly reads like biblical imitation. An imitator could use this phrase too, and narrative language naturally belongs in narratives. Even the doubled construction could result from composition in that style.
+- **Sources:** hardy-kjv-oct2, parry-wayhi-oct2, testaments-double-oct2
+- **Notes:**
+
+## 10. `n09` (narration, ~12.0s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
+- **Pose:** teaching
+- **Narration:** So frequency alone carries little weight. The better question is whether the detailed patterns favor an ancient source over modern imitation. That requires comparison with other biblical-style writing. These examples give us something concrete to investigate; they do not establish that imitation is unlikely.
+- **Sources:** parry-wayhi-oct2, testaments-double-oct2, hardy-kjv-oct2
+- **Notes:**
+
+## 11. `n99` (narration, ~9.0s)
+- **Original Video Transcript:** I mean, this is a 19th century book written in 16th century English, and it came to pass verily I say unto you and things like that. That's not the way people talked in the 19th century, it's a fake. So it's not beautiful, it's a work of charlatanry.
 - **Pose:** encouraging
-- **Narration:** A test that fails the King James Bible and skips the court record isn't much of a test. God bless.
-- **Notes:** 
+- **Narration:** I regard these Hebrew-like patterns as modest support for ancient origins, with a competing explanation still on the table. “It sounds old, therefore it is fake” does not address that evidence. God bless.
+- **Sources:** parry-wayhi-oct2, testaments-double-oct2, hardy-kjv-oct2
+- **Notes:**
 
 ## Full source transcript
 
