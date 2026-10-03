@@ -24,14 +24,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n02` (narration, ~8.7s)
 - **Original Video Transcript:** My mom said because you're Catholic, you're gonna go to a lower level of heaven. So to get to the higher one, you have to leave your church and go to my church. That's what you gotta do.
 - **Pose:** teaching
-- **Narration:** Latter-day Saints believe in degrees of glory. Section seventy-six requires receiving Christ, authorized baptism, and faithfulness for celestial glory. Those requirements are real. A Catholic label alone cannot establish someone’s final judgment.
+- **Narration:** Latter-day Saints believe in degrees of glory. Section seventy-six requires receiving Christ, authorized baptism, and faithfulness for celestial glory. Those requirements are real, and the catholic not only has this life but the next to accept them. A Catholic label alone cannot establish someone’s final judgment. Although the mormon will go to hell in the catholic view. 
 - **Sources:** dc-76-scripture, dc-137-scripture
 - **Notes:** 
 
 ## 04. `n03` (narration, ~9.5s)
 - **Original Video Transcript:** My mom said because you're Catholic, you're gonna go to a lower level of heaven. So to get to the higher one, you have to leave your church and go to my church. That's what you gotta do.
 - **Pose:** pointing
-- **Narration:** Section one hundred thirty-seven includes people who died without gospel knowledge but would have received it. God judges works and hearts. This doctrine extends opportunity beyond death, accounting for what people knew and would accept.
+- **Narration:** Section one hundred thirty-seven includes people who died without gospel knowledge but would have received it. God judges works and hearts. This doctrine extends opportunity beyond death, accounting for what people knew and would accept. mention mormons believe all will be saved from death and hell, with few exceptions, more on that later. 
 - **Sources:** dc-137-scripture, oaks-2023-kingdoms
 - **Notes:** 
 
