@@ -169,6 +169,21 @@ entries:
 - word: Church
   status: ok-as-is
   note: Standard English reading; verify by ear after script approval.
+- word: Lamentations
+  status: ok-as-is
+  note: lam-en-TAY-shuns; verify by ear after approval.
+- word: Judas
+  status: ok-as-is
+  note: JOO-dus; verify by ear after approval.
+- word: Henry B. Eyring
+  status: ok-as-is
+  note: Henry B. EYE-ring; verify by ear after approval.
+- word: Catechism
+  status: ok-as-is
+  note: CAT-uh-kiz-um; verify by ear after approval.
+- word: sons of perdition
+  status: ok-as-is
+  note: Standard English reading; verify by ear after approval.
 expansion_rules:
 - pattern: D&C
   expand_to: Doctrine and Covenants

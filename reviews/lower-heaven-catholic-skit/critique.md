@@ -1,96 +1,100 @@
-# Critique — lower-heaven-catholic-skit
+# Critique — lower-heaven-catholic-skit, revised script
 
 ## Final disposition
 
-0 BLOCKER / 0 MAJOR / 0 unresolved MINOR. Three independent lenses initially reported five minor observations covering four distinct issues. All four were addressed: n03 now states the doctrine directly; n10 explains the saved/highest-degree/sealing distinction; n99 assigns adults responsibility for correcting harmful teaching; citation dates distinguish conference month/current editions from inspection dates. The Kimball card hold was also extended before the editor completed review.
+0 unresolved BLOCKER / 0 MAJOR / 0 MINOR. One editor BLOCKER was found and fixed: the closing now answers the immediately preceding family clip. The editor independently rechecked that fix. Minor Catholic-condition and closing-ambiguity findings were also resolved and independently rechecked. The factcheck lens found no findings.
 
-Final estimated runtime: 163.3 seconds; source footage: 39.76 seconds (24.3%). Every pose hold is below 20 seconds. Source and brand checks pass. Audio runtime and audiovisual cut boundaries remain post-approval checks.
+Estimated runtime: 169.3 seconds (2:49); source footage: 39.76 seconds (23.5%). No audio was generated or video clips cut. Timing remains an estimate until approved audio exists.
 
-## Independent opponent report (before final minor revisions)
+## Independent opponent review
 
 # Critique — opponent lens — lower-heaven-catholic-skit
 
-Reviewed script/script.md, script/beats.yaml, research/claims.md, research/sources.yaml, the four independently written red-team briefs, brand section 2, and the apologetics playbook. Personas: informed Catholic for c01/c03; ex-Mormon for c02/c04, with affected-family concerns kept central. This is a critique of the proposed script, not a new verification of every source entry or a production approval.
+Fresh independent review of revised script/script.md and script/beats.yaml (estimated 169.3 seconds), updated source entries, claims synthesis, four original red-team briefs, and claim2-revision-red-team.md. Applied the previously read capy-critic-opponent definition, brand section 2 and apologetics playbook. Personas: informed Catholic for c01/c03; ex-Mormon for c02/c04. This review evaluates argument fairness and scope, not audiovisual delivery or an independent reinspection of every newly added source.
 
 ## Findings
-- [MINOR] n03 — “The positive case is” sounds like an internal drafting instruction and does not explicitly finish the comparison to the child's automatic sorting.
-  Why: The sourced postmortem-opportunity point is substantive and correctly qualified. A Catholic can still ask why LDS ordinances are necessary; n02 admits those requirements instead of pretending to settle their legitimacy. The appropriate positive comparison here is to this skit's automatic verdict, not to Catholic theology as a whole.
-  Suggested rewrite: "God's judgment accounts for what people knew and would accept, including opportunity beyond death. That is why a child's demand to change churches now cannot determine this Catholic friend's final destination."
-- [MINOR] n99 — The closing places emphasis on children turning teachings into threats; it could state adult accountability more directly.
-  Why: n04–n06 already concede harmful historical leader teaching, so this is not a strawman or a hidden denial of institutional responsibility. Nevertheless, someone affected could reasonably want the close to identify adults' obligation to correct inherited harmful ideas as well as doctrinal distinctions.
-  Suggested rewrite: "Adults should correct harmful inherited teachings and stop children using religion to threaten friends. A friend's family circumstances are no license to pronounce their eternal sentence. God bless."
+None. The final n99 revision resolves the earlier ambiguity by addressing the skit’s family verdict directly. The Catholic comparison now expressly retains grace, sincere seeking, and conscience conditions.
 
 ## Clip-response group assessment
 
-**c01 → n01–n03:** Strawman test passes. The skit is identified as child speech; the response rejects an automatic verdict while preserving actual covenant requirements. Hidden assumption tested: current Catholic affiliation plus a child's invitation supplies enough information to assign final glory. The easy comeback—LDS authority and ordinances still matter—is already conceded in n02. Red-team concern is addressed through explicit requirements, limited postmortem exception, and the close's rejection of interpersonal sentencing. The script does not prove LDS authority legitimate; that remains outside its stated correction.
+**c01 → n01/n02/n02b/n03: Pass.** The response identifies a skit, preserves actual celestial conditions, and rejects denominational labels as automatic personal judgments. Catholicism's actual conditional teaching replaces the user's proposed blanket hell claim; the wording does not insist Mormon affiliation proves knowing rejection. Postmortem instruction and the qualified D&C137 exception support the positive argument without universalizing equal exaltation. A Catholic may still dispute LDS authority, but the response concedes its requirements and does not claim to establish that authority here. The comparison is accurate within its limited purpose and does not portray Catholicism as unconditional ethnic/denominational sorting.
 
-**c02 → n04–n06/q01:** Strawman test passes. The strongest ex-Mormon comeback would be that leaders really taught whitening and scripture retains color/curse language. Both are explicitly acknowledged, with a dated apostolic example and the distinction between evidence of a teaching and evidence of biological change. Current disavowal is not used to erase the past. No claim that the comedian invented the association or that Indigenous and Black racial histories are identical. Hidden assumption tested: historical teaching and canonical narrative constitute a universal current conversion promise. Red-team objection survives as a real historical difficulty, but it is conceded rather than evaded.
+**c02 → n04/n05/n06: Pass.** The requested Kimball card is gone. The historical harmful teaching and leaders' repetition remain acknowledged. Broader American Christianity provides context without Protestant-only causal attribution or absolving LDS responsibility. Lamentations supports considering a condition-language reading; “does not settle” correctly preserves interpretive uncertainty. The modern official rejection is stated firmly, and the conversion promise is bounded to what the cited sources establish. No zero-incidence, frequency, 50-year-disappearance, or extreme-unlikelihood claim remains. Thus the easiest informed comeback—old ideas may still be transmitted, and leaders taught them—is not denied. The current doctrine correction does not purport to disprove anyone's childhood experience. The Bible comparison is textual evidence about language, not an analogy making light of harm.
 
-**c03 → n07–n08:** Strawman test passes. The answer specifies permanent perdition, cites its demanding conditions, and preserves accountability and differing glories. The easy comeback—religious warnings can still frighten children—is addressed by the adult-correction instruction, rather than treated as disproved by the doctrinal text. Hidden assumption tested: hearing an invitation and declining it establishes the exceptional scriptural threshold. The correction supplies a positive scope-of-redemption argument without claiming all judgment or all uses of hell disappear.
+**c03 → n07/n08, with n03: Pass.** Hearing an invitation is distinguished from the scriptural conditions for permanent perdition. The Judas illustration is attributed to a specific official manual rather than presented as measured modern-member debate. The manuscript does not diagnose Judas or a living individual as definitely damned. Broad eventual redemption remains separate from celestial/exalted outcomes. Claims about how infrequently the topic is taught have been removed. The social-pressure concern is addressed through the threshold correction and normative closing; this does not establish that all adults prevent misuse.
 
-**c04 → n09–n11:** Strawman test passes. The response keeps the two-mothers premise and acknowledges both the actual marriage restriction and the difficult single/nonexalted teaching. The easy comeback—there is still no recognized sealing for the mothers' marriage—is explicitly conceded in n09 and retained in n11. Hidden assumption tested: those general requirements determine these individuals' kingdoms, total social isolation, and a visiting itinerary. The script neither promises the family will stay together in its current form nor predicts its separation. Affected viewers may reject the restriction morally; their rejection is not an unanswered factual refutation of this scoped correction.
+**c04 → n09/n10/q02/n11: Pass.** Man-woman marriage and the highest-celestial-degree requirement remain explicit, and n11 retains the marriage restriction. Individual kingdom assignments and promised loneliness are rejected without saying the mothers' relationship will be eternally sealed. Eyring's card is verbally introduced with celestial worthiness and immediately followed by the same condition; its comfort is not an unconditional guarantee. Neither the card nor narration promises the family's existing marital arrangement, names a future spouse, or reverses the restriction. The affected-family objection—their marital relationship still lacks a recognized sealing—is acknowledged, though the viewer can continue to find that restriction painful or unacceptable. A conditional hope does not answer that moral objection completely, and the script does not pretend it does.
 
 ## Script-level (two-question test)
-Q1 (any beat failing the strawman test — cross-reference above): None. The title visible in the original footage, n01's framing, source description, historical concession, and family-exclusion acknowledgment consistently identify the subject as children repeating church talk. The response does not claim the comedian personally professes a doctrinal assertion or that formal textual correction disproves lived harm. The omitted final invitation is available in the full transcript; c01's conversion demand and n07's church-pitch wording preserve the relevant pressure, although retaining the invitation could sharpen that social context in an optional edit.
+Q1 (any beat failing the strawman test — cross-reference above): None. The source is explicitly described as children repeating church talk. Historical racial teaching remains real and harmful, current restrictions remain real, and correction targets the fictional child's categorical judgments. No unsupported allegations about the comedian's motives, no claim that no child could hear the ideas, and no blanket Catholic condemnation remain. The closing now stays with the family clip and rejects unsupported individual sentencing; it does not claim the source depicts what ought to be taught.
 
-Q2 (positive case made, or only negative case?): Pass for the stated scope. n03 gives judgment accounting for knowledge/desires and postmortem opportunity; n08 gives broad redemption through Christ. Together these explain why the child's automatic permanent verdicts are weaker readings of the cited LDS texts. The family and race sections responsibly concede real difficulties rather than manufacture doctrinal superiority. This is an affirmative case for a more accurate LDS account of judgment and responsible teaching, not a demonstration that LDS theology is true or superior to Catholic theology; the draft makes no such unsupported claim. Consider the n03 rewrite above for a more natural explicit comparison.
+Q2 (positive case made, or only negative case?): Pass for this response's defined scope. Postmortem instruction, knowledge-sensitive judgment, universal resurrection, broad eventual redemption, and conditional hope form an affirmative account of the cited LDS teaching. It explains why an automatic conversion threat is weaker than that account. It does not establish religious truth or claim superior theology to Catholicism in general, and the comparison does not require such an unsupported conclusion. The race/family sections concede genuine difficulties while accurately bounding what the sources establish.
 
-Severity totals: **0 BLOCKER, 0 MAJOR, 2 MINOR**. No new factual conflict, speculative family promise, or unavoidable escalation identified. No narration generated; this review does not certify audiovisual boundaries or actual voiced runtime.
+Severity totals: **0 BLOCKER, 0 MAJOR, 0 MINOR**. No new unavoidable escalation. All stated concerns from the user-revision brief are responsibly bounded. No narration generated; estimated runtime remains unverified by actual audio.
 
-
-## Independent factcheck report (before final minor revisions)
+## Independent factcheck review
 
 # Critique — factcheck lens — lower-heaven-catholic-skit
 
+Revision reviewed: script.md and beats.yaml, estimated166.9 seconds, 466 narration words; source/claims records reviewed2026-10-02.
+
 ## Findings
-- [MINOR] citation appendix (oaks-2023-kingdoms; handbook-38-current) — Displayed bare dates overstate the precision established in the source records. Use October 2023 for Oaks's conference label and explicitly label the handbook date as accessed 2026-10-02, or use its 2026 edition year.
-  Evidence: Pulpit read_paragraphs identifies the Oaks talk as October 2023 and Saturday Morning Session; its tool date is 2023-10-01, but the source record itself cautions that exact delivery day was not independently verified. The handbook source notes explicitly identify 2026-10-02 as access rather than publication; the official title labels the handbook 2026. [Oaks](https://pulpit.restorationcommons.org/talks/2023-10-oaks-kingdoms-of-glory/#p17), [Handbook](https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng).
+No BLOCKER, MAJOR or MINOR factual findings in this revision. Previous citation-date precision issue has been addressed in the displayed appendix.
 
-## Verification coverage
-Mechanical source/brand lint accepted as already clean per orchestrator; no redundant mechanical rerun. Read script.md, beats.yaml, sources.yaml, claims.md and the factcheck role.
+## Verification
+Mechanical source/brand lint accepted as already clean per orchestrator. This pass assesses evidential support and scope, not repeated ID/substring checks.
 
-- q01: Independently reran Pulpit verify_quote with the complete card wording and Spencer W. Kimball speaker filter. Verdict exact, paragraph 30. Reopened paragraphs 29–32; examples establish physical-lightening teaching, while narration correctly avoids asserting biological change. [Verified paragraph](https://pulpit.restorationcommons.org/talks/1960-10-kimball-some-years-ago-i-attended-a-conference/#p30).
-- n02–n03: Reopened official D&C 76 and 137 and Pulpit Oaks paragraphs 17–21. Canonical conditions, judgment by works/desires and opportunity for those lacking knowledge support the wording. No guarantee of a Catholic individual's outcome.
-- n04–n06: Reopened Kimball context, official 2 Nephi 5, 3 Nephi 2 and current Race and the Priesthood. Historical physical whitening is preserved; retained canonical passages acknowledged; present essay's disavowal is described specifically as Black-skin curse/disfavor theories. The script does not claim the essay deletes scripture or expressly resolves every Indigenous-color passage.
-- n07–n08: Official D&C 76 and Hell reopened. Permanent perdition distinguished from generic refusal, while judgment and differing glories remain explicit.
-- n09–n11: Official D&C 131, 132 and handbook reopened. D&C 132:15–19 describes single nonexalted status; it does not establish total social isolation. Handbook 38.1.4 gives conditional faithful-member promises. Previously read 38.4.2.2 and 38.6.16 establish husband-wife sealing restrictions. No specific family's future arrangement is invented.
-- All cited source IDs were reviewed; duplicate IDs share original locators and were assessed against the same original text. All web openings used actual web.run open/find, corresponding to the records' WebFetch-equivalent provenance.
-- Tier 4/5 Kimball teaching remains specifically attributed and dated; current official practice stays distinguished from old teaching. No inference/disputed interpretation is presented as demonstrated fact.
-- Narration for q01 was being strengthened in beats.yaml during review; both the earlier script wording and updated wording are factually supported. Regenerate script.md from final beats before delivery.
+- n02/n03: Reopened official D&C76,137,138 and Resurrection. Gospel teaching beyond death is canonical. Resurrection has no sons-of-perdition exception; the separate final-redemption clause places the exception correctly.
+- n02b: Independently opened Vatican Catechism846–848. The text establishes Church necessity, culpable informed refusal, and possible salvation for blamelessly ignorant people who seek God and respond to grace. Narration retains conditionality rather than condemning all Mormons.
+- n04/n06: Reopened official race essay and Pulpit Kimball1960 paragraphs30–32. Broad Christian/American racial context and LDS leader participation are supported. No exclusive Protestant causal-origin claim, empirical whitening assertion, denial of historical LDS responsibility, or claim that modern children cannot hear an old belief remains.
+- n05: Independently opened Lamentations4:7–9 and5:9–10. Famine-related darkened/withered appearance is supported. The Book of Mormon comparison is explicitly a proposed interpretation that does not settle meaning, matching inference-grade support. It does not become a demonstrated metaphor-only claim.
+- n07/n08: Reopened D&C76 and current Hell, and NT student-manual chapter27. The manual acknowledges uncertainty about Judas's qualifying knowledge; narration does not infer contemporary debate prevalence or pronounce his fate.
+- n09/n10/n11: D&C131 and handbook38 were independently reopened. Male-female marriage/sealing conditions remain real, while particular household outcomes and complete isolation are not asserted. Eyring's reassurance does not overturn the restriction.
+- q02: Reopened original August2016 Eyring article. Requested11-word phrase is exact in its counsel and concluding testimony; narration accurately introduces it as shared counsel. Independently reran Pulpit verify_quote, speaker HenryB.Eyring: exact at April2019 paragraph39. The2016 on-screen attribution is established by the original2016 page, not inferred from the later corpus occurrence.
+- q02/n11 preserve celestial-worthiness and covenant conditions; no guarantee of an unchanged specific household is added.
+- n99 is marked opinion and speaks of what children should be taught, not measured prevalence or the comedian's motives.
+- All cited IDs were reviewed against their originals. Duplicate source IDs share the same original locator. Existing doctrine-tier records distinguish canonical text, current official practice and dated leader teaching. No tier4–6 opinion is presented as bare current institutional doctrine.
+
+## Verification links
+- [Eyring original2016](https://www.churchofjesuschrist.org/study/ensign/2016/08/the-hope-of-eternal-family-love?lang=eng)
+- [Pulpit exact phrase,2019 paragraph39](https://pulpit.restorationcommons.org/talks/2019-04-eyring-a-home-where-the-spirit-of-the-lord-dwells/#p39)
+- [Catechism846–848](https://www.vatican.va/archive/ENG0015/__P29.HTM)
+- [Lamentations4](https://www.churchofjesuschrist.org/study/scriptures/ot/lam/4?lang=eng), [Lamentations5](https://www.churchofjesuschrist.org/study/scriptures/ot/lam/5?lang=eng)
+- [NT manual Judas discussion](https://www.churchofjesuschrist.org/study/manual/new-testament-student-manual/introduction-to-the-gospel-according-to-st-john/chapter-27-john-17-19?lang=eng)
+- [Resurrection](https://www.churchofjesuschrist.org/study/manual/gospel-topics/resurrection?lang=eng), [Hell](https://www.churchofjesuschrist.org/study/manual/gospel-topics/hell?lang=eng)
+- [D&C76](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng), [137](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng), [138](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=eng), [131](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/131?lang=eng)
+- [Race essay](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng)
+- [Kimball context](https://pulpit.restorationcommons.org/talks/1960-10-kimball-some-years-ago-i-attended-a-conference/#p30)
+- [Handbook38](https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng)
 
 ## Counts
 BLOCKER: 0
 MAJOR: 0
-MINOR: 1
+MINOR: 0
 
+## Independent editor review
 
-
-## Independent editor report (before final minor revisions)
-
-# Critique — editor lens — lower-heaven-catholic-skit
+# Critique — editor lens — lower-heaven-catholic-skit (revised script)
 
 ## Findings
-- [MINOR] n03 — "The positive case is" sounds like an argument-planning note instead of spoken explanation.
-  Why: The actual point is strong and accessible: mortality is not everyone's only opportunity. Naming the rhetorical move adds distance just as the response reaches its affirmative case.
-  Suggested rewrite: "God judges works and hearts. Opportunity beyond death accounts for what people knew and what they would accept."
+No unresolved findings after fix-and-recheck iteration 1.
 
-- [MINOR] n10 — The three-way distinction is named without defining its unfamiliar terms.
-  Why: A general viewer may not know why salvation and exaltation differ. The preceding examples do establish that the marriage restriction is real, but the final sentence would carry more weight if it briefly explained the relationship instead of listing terminology.
-  Suggested rewrite: "Being saved is not the same as receiving the highest celestial degree or an eternal family sealing."
-
+## Resolution log
+- Initial BLOCKER n99: resolved. The latest closing addresses real marriage requirements, this family, loneliness, and individual judgment—the claims in immediately preceding c04. It retains the closing argument and ends on "God bless."
+- Initial MINOR n02b: resolved. Latest wording explicitly identifies sincere seeking, conscience, and grace; salvation is described as possible and conditional, not a product of ignorance alone or a blanket judgment on Mormons.
+- Both resolutions were independently checked against latest script.md and beats.yaml. This iteration rechecked only the two reported findings; earlier passed checks remain applicable.
 ## Checks passed
-- Opening c01 presents the tension immediately; n01 recognizes the skit as portrayal of children repeating church talk. There is no buried hook.
-- The four groups form one intelligible umbrella argument: distinguish real doctrine and racial history from a child's categorical threats about a friend's destiny. Each group tests a particular overgeneralization rather than opening an independent denominational debate.
-- Response-to-clip alignment: n01–n03 answer c01's Catholic/kingdom claim; n04–n06 and q01 answer c02's racial claim; n07–n08 answer c03's outer-darkness threat; n09–n11 and n99 answer c04's family/sealing/individual-judgment claims. The metaphor sentence in n05 is an evidence qualification, not an accusation that the source advanced that interpretation.
-- Concessions are substantive: real historical whitening teaching and current sealing exclusion are acknowledged directly. No generic critic-praise aside, insult, or unsupported motive attribution.
-- The premise-testing move is present: a religious label, an ancient narrative or former leader teaching, hearing a church pitch, and a household arrangement each fail to support the skit's automatic modern judgment.
-- n99 lands on the video's practical argument and ends "God bless."
-- Latest q01 revision was checked: approximately 6.8 seconds, with faithful dating and a statement that the source documents teaching rather than biological change. That hold allows the displayed short quotation to be read. The earlier 4.6-second concern is resolved.
-- The approximately 161.1-second estimate remains below 180 seconds; clips account for approximately 25%. Narration is dense in theological terms and spoken section numbers, so the actual audio should determine timing after approval. This is an estimate, not an audio verification.
-- Every beat's estimated static pose is below 20 seconds; adjacent beats change pose. Sensitive-topic forbidden poses are absent.
+- Opening c01 contains the tension immediately; n01 identifies the source as a skit. No buried hook or accusation of the comedian's motives.
+- One coherent argument links the four doctrinal groups: real requirements and historical teachings do not justify the skit's automatic modern conversion threats.
+- n01–n03 answer c01; n04–n06 answer c02; n07–n08 answer c03; n09–n11 and q02 answer c04. The revised final n99 also answers c04.
+- Catholic comparison is expressly conditional and does not reproduce blanket condemnation of Mormons.
+- Lamentations parallel is explained concretely, with the transfer to Book of Mormon language limited to an interpretive possibility. "It does not settle their meaning" is a necessary evidence limitation, not gratuitous hedging.
+- n03 separates everyone's resurrection from eventual redemption from hell except sons of perdition; n07 supplies the exceptional knowledge/defiance threshold. This avoids flattening all salvation outcomes into one category.
+- The racial harm and marriage requirement are conceded in the substantive responses, without generic critic-praise or speculation about modern repetition rates.
+- q02 displays a short quotation for approximately six seconds. The narration supplies celestial-worthiness context before n11 reinforces the condition and explicitly preserves the restriction. The text is not presented as an unconditional promise to the particular family.
+- Every estimated static pose remains under 20 seconds. Poses vary and no sensitive-forbidden amused/happy pose appears.
+- Approximately 169.3 seconds with 39.8 seconds of source footage stays within the stated budgets. Actual post-approval audio remains the final timing check.
+- Closing ends on "God bless."
 
 ## Severity counts
-0 BLOCKER / 0 MAJOR / 2 MINOR. Neither minor changes the evidence or requires a new clip.
-
-
-
+0 unresolved BLOCKER / 0 MAJOR / 0 MINOR. Initial findings: 1 BLOCKER and 1 MINOR, both fixed and independently rechecked.
