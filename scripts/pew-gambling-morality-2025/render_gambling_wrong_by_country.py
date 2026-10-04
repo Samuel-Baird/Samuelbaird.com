@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Renders "Where is gambling seen as morally wrong?" from
 docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json.
-Shared magnitude-bar shape; each bar is filled with its country's flag
-(flags/<iso2>.png, from flagcdn.com) and a small flag sits beside the label.
+Shared magnitude-bar shape; each bar is a solid color taken from its country's
+flag (FLAG_COLORS) and a small flag (flags/<iso2>.png, from flagcdn.com) sits
+beside the label.
 
 Usage:
   python scripts/pew-gambling-morality-2025/render_gambling_wrong_by_country.py \
@@ -28,6 +29,16 @@ ISO2 = {
     "Australia": "au", "Sweden": "se", "France": "fr", "Germany": "de",
     "Hungary": "hu", "United States": "us", "Canada": "ca",
 }
+# One characteristic color from each flag, chosen to stay readable on white.
+FLAG_COLORS = {
+    "Indonesia": "#CE1126", "India": "#138808", "Turkey": "#E30A17", "South Korea": "#003478",
+    "Nigeria": "#008751", "Italy": "#009246", "Greece": "#0D5EAF", "Brazil": "#009C3B",
+    "Kenya": "#BB0000", "Israel": "#0038B8", "South Africa": "#007749", "Argentina": "#74ACDF",
+    "Mexico": "#006847", "Netherlands": "#21468B", "Poland": "#DC143C", "Spain": "#AA151B",
+    "Japan": "#BC002D", "United Kingdom": "#012169", "Australia": "#00247D", "Sweden": "#006AA7",
+    "France": "#0055A4", "Germany": "#DD0000", "Hungary": "#477050", "United States": "#B22234",
+    "Canada": "#D52B1E",
+}
 DATA_JSON = HERE.parent.parent / "docs" / "datasets" / "pew-gambling-morality-2025" / "gambling-morally-wrong-by-country.json"
 
 
@@ -42,6 +53,7 @@ def main():
         rows=rows,
         values=values,
         highlight_rows=None,
+        row_colors=FLAG_COLORS,
         bar_images={r: FLAG_DIR / f"{ISO2[r]}.png" for r in rows},
         title="Where is gambling seen as morally wrong?",
         subtitle="Share of adults who say gambling is morally wrong, 25 countries,\n2025.",
