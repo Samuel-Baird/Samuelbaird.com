@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Renders "Where is gambling seen as morally wrong?" from
 docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json.
-Shared magnitude-bar shape; the United States is the highlighted subject (a
-country, not a religious identity), with the 27-row-style label override.
+Shared magnitude-bar shape; each bar is filled with its country's flag
+(flags/<iso2>.png, from flagcdn.com) and a small flag sits beside the label.
 
 Usage:
   python scripts/pew-gambling-morality-2025/render_gambling_wrong_by_country.py \
@@ -19,6 +19,15 @@ sys.path.insert(0, str(HERE.parent))
 from common import load_fonts, render_magnitude_bar  # noqa: E402
 from chart_style import sort_groups  # noqa: E402
 
+FLAG_DIR = HERE / "flags"
+ISO2 = {
+    "Indonesia": "id", "India": "in", "Turkey": "tr", "South Korea": "kr", "Nigeria": "ng",
+    "Italy": "it", "Greece": "gr", "Brazil": "br", "Kenya": "ke", "Israel": "il",
+    "South Africa": "za", "Argentina": "ar", "Mexico": "mx", "Netherlands": "nl",
+    "Poland": "pl", "Spain": "es", "Japan": "jp", "United Kingdom": "gb",
+    "Australia": "au", "Sweden": "se", "France": "fr", "Germany": "de",
+    "Hungary": "hu", "United States": "us", "Canada": "ca",
+}
 DATA_JSON = HERE.parent.parent / "docs" / "datasets" / "pew-gambling-morality-2025" / "gambling-morally-wrong-by-country.json"
 
 
@@ -32,14 +41,15 @@ def main():
     render_magnitude_bar(
         rows=rows,
         values=values,
-        highlight_rows={"United States"},
+        highlight_rows=None,
+        bar_images={r: FLAG_DIR / f"{ISO2[r]}.png" for r in rows},
         title="Where is gambling seen as morally wrong?",
-        subtitle="Share of adults who say gambling is morally wrong, 25 countries,\n2025. The United States is highlighted.",
+        subtitle="Share of adults who say gambling is morally wrong, 25 countries,\n2025.",
         caption_paragraphs=[],
         handle="@ithinkisam | data: Pew Global Attitudes 2025",
         out_path=args.out,
         fonts=load_fonts(),
-        axes_left=0.26,
+        axes_left=0.30,
         row_label_fontsize=13,
         value_label_fontsize=12,
     )

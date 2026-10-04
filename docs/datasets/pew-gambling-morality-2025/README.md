@@ -11,3 +11,5 @@ Latter-day Saints; they give context for the Latter-day Saint figures in
 
 Values are transcribed from Pew's published charts and text. U.S. wording was
 "morally wrong"; other countries used "morally unacceptable".
+
+Flag images in `scripts/pew-gambling-morality-2025/flags/` come from flagcdn.com (320px PNGs, ISO 3166 codes) and are used to fill the country chart bars.

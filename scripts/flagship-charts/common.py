@@ -234,6 +234,7 @@ def render_magnitude_bar(
     margin_frac_override: float | None = None,
     row_label_fontsize: float | None = None,
     value_decimals: int = 0,
+    bar_images: dict[str, Path] | None = None,
 ) -> None:
     """One horizontal bar per `rows` entry (already in top-to-bottom display
     order), reading its value from `values[row]`. `caption_paragraphs`,
@@ -304,6 +305,13 @@ def render_magnitude_bar(
     suffix - e.g. lds-brazil-census-2010's state-level LDS shares, which
     run 0.03%-0.25%; at the default 0 decimals every single row would
     round to the same "0%" label.
+
+    `bar_images`, when given, maps a row label to an image file (e.g. a
+    country flag). That row's bar is filled with the image stretched to the
+    bar's extent (outlined in INK so a mostly-white image still reads), a
+    small copy of the image sits between the row label and the bar, and the
+    value label is drawn in INK. Rows missing from the map keep their normal
+    solid color. Default None leaves every existing caller unchanged.
     """
     fonts = fonts or load_fonts()
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
@@ -324,7 +332,7 @@ def render_magnitude_bar(
     ax.set_xticks([])
     for spine in ax.spines.values():
         spine.set_visible(False)
-    ax.tick_params(axis="y", length=0, pad=8)
+    ax.tick_params(axis="y", length=0, pad=8 + (36 if bar_images else 0))
 
     display_rows = rows[::-1]
     vals = [values[r] for r in display_rows]
@@ -445,7 +453,31 @@ def render_magnitude_bar(
         running += w / 2 if i == 0 else weights[i - 1] / 2 + w / 2
         row_positions.append(running)
 
-    ax.barh(row_positions, vals, height=bar_h, color=colors, zorder=3)
+    if bar_images:
+        from matplotlib.offsetbox import AnnotationBbox, OffsetImage
+        from PIL import Image
+        import numpy as np
+        bars = ax.barh(row_positions, vals, height=bar_h, color=colors, zorder=3)
+        for r, v, y, bar in zip(display_rows, vals, row_positions, bars):
+            if r not in bar_images:
+                continue
+            arr = np.asarray(Image.open(bar_images[r]).convert("RGBA"))
+            bar.set_visible(False)
+            ax.imshow(arr, extent=(0, v, y - bar_h / 2, y + bar_h / 2), aspect="auto",
+                      zorder=3, interpolation="bilinear")
+            ax.barh([y], [v], height=bar_h, fill=False, edgecolor=INK, linewidth=0.9, zorder=5)
+            icon_h_px = 17
+            zoom = icon_h_px / arr.shape[0] * 72 / DPI
+            ab = AnnotationBbox(
+                OffsetImage(arr, zoom=zoom), (0, y), xycoords=("axes fraction", "data"),
+                xybox=(-9, 0), boxcoords="offset points", box_alignment=(1, 0.5),
+                frameon=True, bboxprops=dict(edgecolor=BORDER, linewidth=0.8, facecolor="none"),
+                pad=0, annotation_clip=False, zorder=6,
+            )
+            ax.add_artist(ab)
+        colors = [INK if r in bar_images else c for r, c in zip(display_rows, colors)]
+    else:
+        ax.barh(row_positions, vals, height=bar_h, color=colors, zorder=3)
     ax.set_xlim(0, max(vals) * 1.22)
     span = (row_positions[-1] + weights[-1] / 2) - (row_positions[0] - weights[0] / 2)
     pad = span * margin_frac

@@ -1859,7 +1859,7 @@ const RAW_DATASETS: Dataset[] = [
     citation:
       "Gallup. 2016. \"U.S. Religious Groups Disagree on Five Key Moral Issues.\"",
     sourceUrl: "https://news.gallup.com/poll/191903/religious-groups-disagree-five-key-moral-issues.aspx",
-    graphics: [gallupGamblingGraphic(), gallupAttendanceGraphic()],
+    graphics: [gallupGamblingGraphic(), gallupAttendanceGraphic(), gallupAttendanceWrongGraphic()],
   },
   {
     slug: "pew-gambling-morality-2025",
@@ -2326,11 +2326,25 @@ function gallupAttendanceGraphic(): Graphic {
     .map((g) => `${g} ${results[g as keyof typeof results]}%`)
     .join(", ");
   return {
-    title: "Does attending church change views on gambling?",
+    title: "Share who view gambling as morally acceptable, by church attendance",
     description: "Share of U.S. adults who say gambling is morally acceptable, by religious service attendance, 2018.",
     imageSrc: "/data-explorer/gallup-values-beliefs-gambling/acceptable-by-attendance.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of U.S. adults saying gambling is morally acceptable, by attendance. ${alt}.`,
+  };
+}
+
+function gallupAttendanceWrongGraphic(): Graphic {
+  const { attendance_order: order, wrong_pct: results } = gallupAttendanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results]}%`)
+    .join(", ");
+  return {
+    title: "Share who view gambling as morally wrong, by church attendance",
+    description: "Share of U.S. adults who say gambling is morally wrong, by religious service attendance, 2018.",
+    imageSrc: "/data-explorer/gallup-values-beliefs-gambling/wrong-by-attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. adults saying gambling is morally wrong, by attendance. ${alt}.`,
   };
 }
 
@@ -2342,7 +2356,7 @@ function pewGamblingCountryGraphic(): Graphic {
     .join(", ");
   return {
     title: "Where is gambling seen as morally wrong?",
-    description: "Share of adults in 25 countries who say gambling is morally wrong, 2025.",
+    description: "Share of adults in 25 countries who say gambling is morally wrong, 2025, with each country's flag.",
     imageSrc: "/data-explorer/pew-gambling-morality-2025/gambling-morally-wrong-by-country.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share saying gambling is morally wrong, by country. ${alt}.`,

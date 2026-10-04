@@ -11,4 +11,4 @@ microdata. Gallup labels the groups "No religion" and "Mormon"; the chart uses
 "Unaffiliated" and "Latter-day Saint". Render:
 `scripts/gallup-values-beliefs-gambling/render_gallup_acceptable_by_religion.py`.
 
-Also: `acceptable-by-attendance.json`, share saying gambling is morally acceptable by religious service attendance (Gallup, 2018, https://news.gallup.com/poll/235379/acceptance-gambling-reaches-new-heights.aspx). All U.S. adults; Latter-day Saints not broken out. Transcribed from the article.
+Also: `acceptable-by-attendance.json`, share saying gambling is morally acceptable or morally wrong by religious service attendance (Gallup, 2018, https://news.gallup.com/poll/235379/acceptance-gambling-reaches-new-heights.aspx). All U.S. adults; Latter-day Saints not broken out. Transcribed from the article.
