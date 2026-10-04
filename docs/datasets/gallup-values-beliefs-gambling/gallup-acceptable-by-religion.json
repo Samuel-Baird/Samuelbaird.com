@@ -1,0 +1,11 @@
+{
+  "source": "Gallup Values and Beliefs poll, May 2001-2016 combined (16,754 U.S. adults; 295 Mormons, +/-7 pts). Published in 'U.S. Religious Groups Disagree on Five Key Moral Issues' (Gallup, 2016): https://news.gallup.com/poll/191903/religious-groups-disagree-five-key-moral-issues.aspx",
+  "method": "Transcribed from Gallup's published table, not computed from microdata. Share saying gambling is 'morally acceptable'.",
+  "acceptable_pct": {
+    "Unaffiliated": 81,
+    "Jewish": 81,
+    "Catholic": 74,
+    "Protestant": 56,
+    "Latter-day Saint": 37
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source": "The 2016 Next Mormons Survey (Jana Riess and Benjamin Knoll), 1,156 self-identified Mormons. Figures as reported in Religion News Service, 2025-02-06: https://religionnews.com/2025/02/06/is-it-ok-for-mormons-to-bet-on-the-super-bowl/",
+  "method": "Transcribed from published reporting, not computed from microdata (not verified against the survey release).",
+  "item_order": ["Morally wrong", "Not a moral issue", "Morally acceptable"],
+  "view_pct": {
+    "Morally wrong": 56,
+    "Not a moral issue": 30,
+    "Morally acceptable": 14
+  }
+}

@@ -21,6 +21,8 @@ import holidayBatchData from "../../docs/datasets/pew-rls-2023-24/holiday-batch.
 import holidayBatch2Data from "../../docs/datasets/pew-rls-2023-24/holiday-batch-2.json";
 import stayHomeParentGenderData from "../../docs/datasets/pew-rls-2023-24/stay-home-parent-gender.json";
 import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
+import gallupGamblingData from "../../docs/datasets/gallup-values-beliefs-gambling/gallup-acceptable-by-religion.json";
+import nextMormonsGamblingData from "../../docs/datasets/next-mormons-survey-2016/next-mormons-gambling-view.json";
 import foodStorageByActivityData from "../../docs/datasets/pew-mormon-survey-2011/food-storage-by-activity.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
 import cces2016VoteGunsData from "../../docs/datasets/ryan-burge/cces2016-vote-guns.json";
@@ -1836,6 +1838,42 @@ const RAW_DATASETS: Dataset[] = [
       brazilTopCities2010Graphic(),
     ],
   },
+  {
+    slug: "gallup-values-beliefs-gambling",
+    name: "Gallup Values and Beliefs: gambling by religion",
+    shortDescription:
+      "Gallup's annual poll on whether gambling is morally acceptable, combined 2001-2016 and split by religion.",
+    sponsor: "Gallup",
+    fielder: "Gallup",
+    fieldedPeriod: "2001-2016",
+    description:
+      "Gallup's Values and Beliefs poll is fielded each May among U.S. adults. Pooling 2001 through " +
+      "2016 (16,754 respondents) lets Gallup report results by religion. Latter-day Saints are the " +
+      "least likely group to call gambling morally acceptable (37%). Their subsample is 295 people, " +
+      "so the margin of error is about 7 points. Figures here are transcribed from Gallup's " +
+      "published table, not computed from microdata.",
+    citation:
+      "Gallup. 2016. \"U.S. Religious Groups Disagree on Five Key Moral Issues.\"",
+    sourceUrl: "https://news.gallup.com/poll/191903/religious-groups-disagree-five-key-moral-issues.aspx",
+    graphics: [gallupGamblingGraphic()],
+  },
+  {
+    slug: "next-mormons-survey-2016",
+    name: "The 2016 Next Mormons Survey",
+    shortDescription:
+      "An online survey of self-identified Latter-day Saints and former members, by Jana Riess and Benjamin Knoll.",
+    sponsor: "Jana Riess and Benjamin Knoll",
+    fielder: "Online panel",
+    fieldedPeriod: "2016",
+    description:
+      "The Next Mormons Survey collected 1,156 self-identified Mormons and 540 former Mormons in " +
+      "fall 2016. Among current members, 56% called gambling morally wrong, 30% said it is not a " +
+      "moral issue, and 14% called it morally acceptable. These figures are transcribed from " +
+      "published reporting (Religion News Service), not computed from the survey release.",
+    citation: "Riess, Jana, and Benjamin Knoll. 2016. The Next Mormons Survey.",
+    sourceUrl: "https://thenextmormons.org/methodology/",
+    graphics: [nextMormonsGamblingGraphic()],
+  },
 ];
 
 /** Site-wide Data Explorer rule: every dataset's graphics gallery
@@ -2255,6 +2293,35 @@ function coreBeliefsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/core-beliefs.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons who believe core Christian/LDS belief items. ${alt}.`,
+  };
+}
+
+function gallupGamblingGraphic(): Graphic {
+  const results = gallupGamblingData.acceptable_pct;
+  const alt = Object.entries(results)
+    .sort((a, b) => b[1] - a[1])
+    .map(([g, v]) => `${g} ${v}%`)
+    .join(", ");
+  return {
+    title: "Who says gambling is morally acceptable?",
+    description: "Share of U.S. adults who say gambling is morally acceptable, by religion, 2001-2016 combined.",
+    imageSrc: "/data-explorer/gallup-values-beliefs-gambling/gallup-acceptable-by-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. adults saying gambling is morally acceptable, by religion. ${alt}.`,
+  };
+}
+
+function nextMormonsGamblingGraphic(): Graphic {
+  const { item_order: order, view_pct: results } = nextMormonsGamblingData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results]}%`)
+    .join(", ");
+  return {
+    title: "How do Latter-day Saints view gambling?",
+    description: "Share of self-identified Latter-day Saints who say gambling is morally wrong, not a moral issue, or morally acceptable.",
+    imageSrc: "/data-explorer/next-mormons-survey-2016/next-mormons-gambling-view.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: Latter-day Saints' view of gambling. ${alt}.`,
   };
 }
 
