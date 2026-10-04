@@ -1,0 +1,11 @@
+{
+  "source": "Pew Research Center, Spring 2025 Global Attitudes Survey, 'In 25-Country Survey, Americans Especially Likely To View Fellow Citizens as Morally Bad' (2026-03-05), 'Mixed views on the morality of gambling' chart: https://www.pewresearch.org/religion/2026/03/05/in-25-country-survey-americans-especially-likely-to-view-fellow-citizens-as-morally-bad/",
+  "method": "Transcribed by reading the report's published chart, not computed from microdata. Share saying gambling is 'morally unacceptable' (U.S.: 'morally wrong'). Outside the U.S., 28,333 adults surveyed by phone Jan. 8-Apr. 26, 2025. Latter-day Saints are not broken out.",
+  "wrong_pct": {
+    "Indonesia": 89, "India": 83, "Turkey": 81, "South Korea": 78, "Nigeria": 72,
+    "Italy": 71, "Greece": 66, "Brazil": 61, "Kenya": 61, "Israel": 55,
+    "South Africa": 50, "Argentina": 49, "Mexico": 49, "Netherlands": 44, "Poland": 41,
+    "Spain": 40, "Japan": 40, "United Kingdom": 35, "Australia": 33, "Sweden": 32,
+    "France": 32, "Germany": 32, "Hungary": 31, "United States": 29, "Canada": 27
+  }
+}

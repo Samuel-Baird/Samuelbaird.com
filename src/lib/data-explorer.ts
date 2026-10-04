@@ -22,6 +22,9 @@ import holidayBatch2Data from "../../docs/datasets/pew-rls-2023-24/holiday-batch
 import stayHomeParentGenderData from "../../docs/datasets/pew-rls-2023-24/stay-home-parent-gender.json";
 import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
 import gallupGamblingData from "../../docs/datasets/gallup-values-beliefs-gambling/gallup-acceptable-by-religion.json";
+import gallupAttendanceData from "../../docs/datasets/gallup-values-beliefs-gambling/acceptable-by-attendance.json";
+import pewGamblingCountryData from "../../docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json";
+import pewGamblingReligionData from "../../docs/datasets/pew-gambling-morality-2025/us-gambling-wrong-by-religion.json";
 import nextMormonsGamblingData from "../../docs/datasets/next-mormons-survey-2016/next-mormons-gambling-view.json";
 import foodStorageByActivityData from "../../docs/datasets/pew-mormon-survey-2011/food-storage-by-activity.json";
 import cces2016Data from "../../docs/datasets/ryan-burge/cces2016-by-religion.json";
@@ -1845,17 +1848,38 @@ const RAW_DATASETS: Dataset[] = [
       "Gallup's annual poll on whether gambling is morally acceptable, combined 2001-2016 and split by religion.",
     sponsor: "Gallup",
     fielder: "Gallup",
-    fieldedPeriod: "2001-2016",
+    fieldedPeriod: "2001-2018",
     description:
       "Gallup's Values and Beliefs poll is fielded each May among U.S. adults. Pooling 2001 through " +
       "2016 (16,754 respondents) lets Gallup report results by religion. Latter-day Saints are the " +
       "least likely group to call gambling morally acceptable (37%). Their subsample is 295 people, " +
       "so the margin of error is about 7 points. Figures here are transcribed from Gallup's " +
-      "published table, not computed from microdata.",
+      "published table, not computed from microdata. A second chart splits 2018 results by how " +
+      "often people attend religious services; it covers all U.S. adults, not Latter-day Saints.",
     citation:
       "Gallup. 2016. \"U.S. Religious Groups Disagree on Five Key Moral Issues.\"",
     sourceUrl: "https://news.gallup.com/poll/191903/religious-groups-disagree-five-key-moral-issues.aspx",
-    graphics: [gallupGamblingGraphic()],
+    graphics: [gallupGamblingGraphic(), gallupAttendanceGraphic()],
+  },
+  {
+    slug: "pew-gambling-morality-2025",
+    name: "Pew 2025: the morality of gambling",
+    shortDescription:
+      "How adults in 25 countries, and Americans of different religions, rate the morality of gambling.",
+    sponsor: "Pew Research Center",
+    fielder: "Pew Research Center",
+    fieldedPeriod: "2025",
+    description:
+      "Pew's Spring 2025 Global Attitudes Survey asked adults in 25 countries whether gambling is " +
+      "morally wrong, morally acceptable, or not a moral issue. Outside the U.S., 28,333 adults were " +
+      "surveyed by phone Jan. 8 to Apr. 26, 2025. Latter-day Saints are not broken out in either " +
+      "chart; they give context for the Latter-day Saint figures elsewhere on this site. Figures are " +
+      "transcribed from Pew's published chart and short read, not computed from microdata.",
+    citation:
+      "Pew Research Center. 2026. \"In 25-Country Survey, Americans Especially Likely To View Fellow Citizens as Morally Bad.\"",
+    sourceUrl:
+      "https://www.pewresearch.org/religion/2026/03/05/in-25-country-survey-americans-especially-likely-to-view-fellow-citizens-as-morally-bad/",
+    graphics: [pewGamblingCountryGraphic(), pewGamblingReligionGraphic()],
   },
   {
     slug: "next-mormons-survey-2016",
@@ -2293,6 +2317,49 @@ function coreBeliefsGraphic(): Graphic {
     imageSrc: "/data-explorer/pew-mormon-survey-2011/core-beliefs.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of Mormons who believe core Christian/LDS belief items. ${alt}.`,
+  };
+}
+
+function gallupAttendanceGraphic(): Graphic {
+  const { attendance_order: order, acceptable_pct: results } = gallupAttendanceData;
+  const alt = order
+    .map((g) => `${g} ${results[g as keyof typeof results]}%`)
+    .join(", ");
+  return {
+    title: "Does attending church change views on gambling?",
+    description: "Share of U.S. adults who say gambling is morally acceptable, by religious service attendance, 2018.",
+    imageSrc: "/data-explorer/gallup-values-beliefs-gambling/acceptable-by-attendance.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share of U.S. adults saying gambling is morally acceptable, by attendance. ${alt}.`,
+  };
+}
+
+function pewGamblingCountryGraphic(): Graphic {
+  const results = pewGamblingCountryData.wrong_pct;
+  const alt = Object.entries(results)
+    .sort((a, b) => b[1] - a[1])
+    .map(([g, v]) => `${g} ${v}%`)
+    .join(", ");
+  return {
+    title: "Where is gambling seen as morally wrong?",
+    description: "Share of adults in 25 countries who say gambling is morally wrong, 2025.",
+    imageSrc: "/data-explorer/pew-gambling-morality-2025/gambling-morally-wrong-by-country.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying gambling is morally wrong, by country. ${alt}.`,
+  };
+}
+
+function pewGamblingReligionGraphic(): Graphic {
+  const results = pewGamblingReligionData.wrong_pct;
+  const alt = Object.entries(results)
+    .map(([g, v]) => `${g} ${v}%`)
+    .join(", ");
+  return {
+    title: "Do religious Americans see gambling as morally wrong?",
+    description: "Share of U.S. adults who say gambling is morally wrong, by religion, 2025.",
+    imageSrc: "/data-explorer/pew-gambling-morality-2025/us-gambling-wrong-by-religion.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: U.S. adults saying gambling is morally wrong, by religion. ${alt}.`,
   };
 }
 
