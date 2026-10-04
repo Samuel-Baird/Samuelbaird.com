@@ -1879,7 +1879,7 @@ const RAW_DATASETS: Dataset[] = [
       "Pew Research Center. 2026. \"In 25-Country Survey, Americans Especially Likely To View Fellow Citizens as Morally Bad.\"",
     sourceUrl:
       "https://www.pewresearch.org/religion/2026/03/05/in-25-country-survey-americans-especially-likely-to-view-fellow-citizens-as-morally-bad/",
-    graphics: [pewGamblingCountryGraphic(), pewGamblingReligionGraphic()],
+    graphics: [pewGamblingCountryGraphic(), pewGamblingAcceptableCountryGraphic(), pewGamblingReligionGraphic()],
   },
   {
     slug: "next-mormons-survey-2016",
@@ -2345,6 +2345,21 @@ function gallupAttendanceWrongGraphic(): Graphic {
     imageSrc: "/data-explorer/gallup-values-beliefs-gambling/wrong-by-attendance.png",
     width: 1080, height: 1350,
     alt: `Bar chart: share of U.S. adults saying gambling is morally wrong, by attendance. ${alt}.`,
+  };
+}
+
+function pewGamblingAcceptableCountryGraphic(): Graphic {
+  const results = pewGamblingCountryData.acceptable_pct;
+  const alt = Object.entries(results)
+    .sort((a, b) => b[1] - a[1])
+    .map(([g, v]) => `${g} ${v}%`)
+    .join(", ");
+  return {
+    title: "Where is gambling seen as morally acceptable?",
+    description: "Share of adults in 25 countries who say gambling is morally acceptable, 2025, with each country's flag.",
+    imageSrc: "/data-explorer/pew-gambling-morality-2025/gambling-morally-acceptable-by-country.png",
+    width: 1080, height: 1350,
+    alt: `Bar chart: share saying gambling is morally acceptable, by country. ${alt}.`,
   };
 }
 

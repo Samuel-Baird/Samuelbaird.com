@@ -13,3 +13,5 @@ Values are transcribed from Pew's published charts and text. U.S. wording was
 "morally wrong"; other countries used "morally unacceptable".
 
 Flag images in `scripts/pew-gambling-morality-2025/flags/` come from flagcdn.com (320px PNGs, ISO 3166 codes) and appear beside each country label; bar colors are one color per flag.
+
+`gambling-morally-wrong-by-country.json` also holds `acceptable_pct` (share saying gambling is morally acceptable, same chart). Indonesia, India and Turkey are unlabeled slivers in Pew's chart, so those three values are derived (total not-wrong minus not-a-moral-issue) and may be off by 1 point.

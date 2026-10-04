@@ -74,7 +74,7 @@ export function OgFrame({
       {children}
       <div style={FOOTER}>
         <BeehiveGlyph />
-        <span>latter-day-stats.vercel.app</span>
+        <span>latterdaystats.samuelbaird.com</span>
       </div>
     </div>
   );

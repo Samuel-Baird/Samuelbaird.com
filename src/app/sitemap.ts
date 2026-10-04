@@ -4,7 +4,7 @@ import { DATASETS, categorySlug, graphicId } from "@/lib/data-explorer";
 import { getGraphicPostMap, isPublished } from "@/lib/graphic-posts";
 import { STUDY_GRAPHICS } from "@/lib/study-graphics";
 
-const BASE = "https://latter-day-stats.vercel.app";
+const BASE = "https://latterdaystats.samuelbaird.com";
 
 export const revalidate = 3600;
 
