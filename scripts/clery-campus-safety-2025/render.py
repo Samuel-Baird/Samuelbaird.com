@@ -185,6 +185,83 @@ def scatter_chart(out, fonts):
     fig.savefig(out, dpi=DPI, facecolor=PAPER)
     plt.close(fig)
 
+def rate_scatter_chart(out, fonts):
+    d = json.loads((DATA / "scatter-2024.json").read_text(encoding="utf-8"))
+    pts = d["points"]
+    rate = d["pooled_rate_per_10k"]
+    for p in pts:
+        p["rate"] = p["rape24"] / p["enrollment"] * 1e4
+    YCAP = 50
+    n_off = sum(p["rate"] > YCAP for p in pts)
+    off_max = max(p["rate"] for p in pts)
+
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+    sub_bottom = _draw_title(fig, fonts, "Campus Size and Reported Rape Rates at U.S. Universities",
+                             "2024 Clery Act reports per 10,000 students. One dot per four-year\n"
+                             f"institution with at least {d['min_enrollment']:,} students ({len(pts):,} institutions).")
+    cap_top = draw_caption_bottom(
+        fig, fonts,
+        [f"Line = U.S. national rate ({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it, "
+         "which narrows as campuses get larger, so small campuses swing widely by chance. Enrollment is on a log scale. "
+         f"{n_off} small institutions with rates above {YCAP} (up to {off_max:.0f}) are off the top edge.", DISCLAIMER],
+        handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
+    ax = fig.add_axes([0.14, cap_top + 0.075, 0.82, sub_bottom - cap_top - 0.105])
+    ax.set_facecolor(PAPER)
+    for sp in ("top", "right"):
+        ax.spines[sp].set_visible(False)
+    for sp in ("left", "bottom"):
+        ax.spines[sp].set_color(MUTED)
+    ax.grid(color=BORDER, lw=0.8)
+    ax.set_axisbelow(True)
+
+    xmax = max(p["enrollment"] for p in pts) * 1.1
+    xs = np.geomspace(1000, xmax, 300)
+    exp = rate / 1e4 * xs
+    lo = np.maximum(exp - 1.96 * np.sqrt(exp), 0) / xs * 1e4
+    hi = (exp + 1.96 * np.sqrt(exp) + 1) / xs * 1e4
+    ax.fill_between(xs, lo, hi, color=CONTEXT_GRAY, alpha=0.18, lw=0)
+    ax.axhline(rate, color=INK, lw=2)
+    shown = [p for p in pts if p["rate"] <= YCAP]
+    ax.scatter([p["enrollment"] for p in shown], [p["rate"] for p in shown], s=22, color=CONTEXT_GRAY,
+               alpha=0.65, lw=0, zorder=3)
+
+    byu = next(p for p in pts if p["unitid"] == BYU_ID)
+    cornell = next(p for p in pts if p["unitid"] == "190415")
+    ax.scatter([byu["enrollment"]], [byu["rate"]], s=170, color=ACCENT, ec=PAPER, lw=1.5, zorder=5)
+    ax.scatter([cornell["enrollment"]], [cornell["rate"]], s=90, color=INK, ec=PAPER, lw=1.2, zorder=4)
+
+    ids = ["230764", "151111", "126614", "182670", "115755", "110714"]
+    place = {"230764": (12, 10, "left"), "151111": (-12, -16, "right"), "126614": (-12, 12, "right"),
+             "182670": (12, 14, "left"), "115755": (-14, 12, "right"), "110714": (-12, 6, "right"),
+             "190415": (12, 22, "left"), BYU_ID: (16, -32, "left")}
+    for p in [byu, cornell] + [next(q for q in pts if q["unitid"] == i) for i in ids]:
+        dx, dy, ha = place[p["unitid"]]
+        lab = ("BYU" if p["unitid"] == BYU_ID else "Cornell" if p["unitid"] == "190415"
+               else "CU Boulder" if p["unitid"] == "126614" else short(p["name"]))
+        bold = p["unitid"] in (BYU_ID, "190415")
+        ax.annotate(f"{lab} ({p['rate']:.1f})", (p["enrollment"], p["rate"]), xytext=(dx, dy),
+                    textcoords="offset points", ha=ha, fontsize=12.5,
+                    arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
+                    fontproperties=fonts["bold" if bold else "regular"],
+                    color=ACCENT if p["unitid"] == BYU_ID else INK, zorder=6)
+    ax.set_xscale("log")
+    ax.set_xlim(1000, xmax)
+    ax.set_ylim(-4, YCAP)
+    ticks = [1000, 2000, 5000, 10000, 20000, 50000, 100000]
+    ax.set_xticks([t for t in ticks if t <= xmax])
+    ax.xaxis.set_minor_locator(plt.NullLocator())
+    ax.xaxis.set_major_formatter(lambda v, _: f"{int(v/1000)}k")
+    for lab in ax.get_xticklabels() + ax.get_yticklabels():
+        lab.set_fontproperties(fonts["regular"])
+        lab.set_fontsize(13)
+    ax.set_xlabel("Total enrollment (log scale)", fontproperties=fonts["bold"], fontsize=14, color=INK)
+    ax.set_ylabel("Reported on-campus rapes per 10,000 students, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
+    ax.text(xmax * 0.97, rate + 0.8, "National rate", ha="right", va="bottom",
+            fontproperties=fonts["bold"], fontsize=13, color=INK)
+    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    plt.close(fig)
+
 
 def hist_chart(out, fonts):
     h = json.loads((DATA / "histogram-2024.json").read_text(encoding="utf-8"))
@@ -337,6 +414,7 @@ def main():
               out=args.out_dir / "reported-rapes-per-10k-students-2024.png", fonts=fonts)
 
     scatter_chart(args.out_dir / "campus-size-vs-reported-rapes-2024.png", fonts)
+    rate_scatter_chart(args.out_dir / "campus-size-vs-reported-rape-rate-2024.png", fonts)
     hist_chart(args.out_dir / "byu-vs-national-distribution-2024.png", fonts)
 
     m = json.loads((DATA / "rate-2022-24-top30.json").read_text(encoding="utf-8"))

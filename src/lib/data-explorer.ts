@@ -2399,6 +2399,12 @@ function cleryGraphics(): Graphic[] {
       `Scatter plot of enrollment against reported on-campus rapes in 2024 with a line for the pooled national rate of ${cleryStats.pooled_rate_per_10k_ge_1000.toFixed(1)} per 10,000. The University of Utah, Colorado Boulder and Indiana University Indianapolis sit far above it. BYU (${byu.rapes_2024} reports) sits below it.`,
     ),
     mk(
+      "Campus size and reported rape rates",
+      "Each four-year institution with 1,000+ students: enrollment against 2024 reports per 10,000 students, with the national rate and its expected chance range.",
+      "campus-size-vs-reported-rape-rate-2024.png",
+      `Scatter plot of enrollment (log scale) against 2024 reported on-campus rapes per 10,000 students, with a flat line at the national rate of ${cleryStats.pooled_rate_per_10k_ge_1000.toFixed(1)} and a band that narrows as campuses grow. Small campuses scatter widely above and below it. The University of Utah, Indiana University Indianapolis and Dartmouth sit far above the band. BYU (${byu.rate_2024.toFixed(1)}) is below the line.`,
+    ),
+    mk(
       "Where BYU falls among U.S. universities",
       "Histogram of 2024 reported on-campus rape rates for institutions with 5,000+ students, with BYU and the median marked.",
       "byu-vs-national-distribution-2024.png",
