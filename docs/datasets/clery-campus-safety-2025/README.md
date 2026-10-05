@@ -22,6 +22,9 @@ Method notes:
   institutions / their total enrollment x 10,000. Outlines come from `export-us-state-paths.mjs` (the site's Albers USA state map).
   Small states are dominated by one campus (e.g. Bennington College is 60% of Vermont's 2024 reports); `state-rates.json` records
   each state's largest contributor.
+- Fondling (`--offense fondling`): the same file's `FONDL22/23/24` columns, same method. `analyze.py --offense fondling` writes
+  `fondling/` (field names still say `rape`); `render.py` and `render_state_map.py` take the same flag and rewrite the wording.
+  Five fondling charts mirror the rape charts we compare against.
 - Four-year = sector "4-year or above" (public, private nonprofit, for-profit).
 - The file has one enrollment figure per institution; it is used for all three years.
 - Rate per 10,000 = rapes / enrollment x 10,000. Percentile = share of

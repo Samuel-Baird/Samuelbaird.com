@@ -37,12 +37,13 @@ BYU = "230038"
 MIN_ENR_BROAD, MIN_ENR_LARGE = 1000, 5000
 
 
-def load(src: Path) -> pd.DataFrame:
+def load(src: Path, col: str = "RAPE") -> pd.DataFrame:
     df = pd.read_excel(src / "Oncampuscrime222324.xls")
     df = df[df["Sector_desc"].str.contains("4-year or above")].copy()
     df["inst"] = df["UNITID_P"].astype(str).str[:-3]
     for y in ("22", "23", "24"):
-        df[f"RAPE{y}"] = pd.to_numeric(df[f"RAPE{y}"], errors="coerce")
+        # Internal column names say "rape" for both offenses; `col` picks the source column (RAPE or FONDL).
+        df[f"RAPE{y}"] = pd.to_numeric(df[f"{col}{y}"], errors="coerce")
     g = df.groupby("inst")
     out = pd.DataFrame({
         "name": g["INSTNM"].first(),
@@ -85,8 +86,13 @@ def dump(name, obj, indent=2):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", type=Path, default=DEFAULT_SRC)
+    ap.add_argument("--offense", choices=["rape", "fondling"], default="rape",
+                    help="fondling writes the same JSON files into a fondling/ subfolder; the field names still say rape")
     args = ap.parse_args()
-    d = load(args.src)
+    global OUT
+    if args.offense == "fondling":
+        OUT = OUT / "fondling"
+    d = load(args.src, "FONDL" if args.offense == "fondling" else "RAPE")
 
     # ---- 2024 ----
     y24 = d[d.ok24 & d.rape24.notna()].copy()

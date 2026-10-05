@@ -1,0 +1,15 @@
+{
+  "min_enrollment": 1000,
+  "n": 12,
+  "n_3yr": 12,
+  "median_rate_2024": 1.4514,
+  "median_rate_3yr": 2.0859,
+  "pooled_rate_per_10k": 4.8711,
+  "byu": {
+    "rank_raw": 2,
+    "rank_rate": 2,
+    "rank_3yr": 3,
+    "rate_2024": 3.9027,
+    "rate_3yr": 4.3673
+  }
+}

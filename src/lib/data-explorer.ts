@@ -25,6 +25,8 @@ import gallupGamblingData from "../../docs/datasets/gallup-values-beliefs-gambli
 import gallupAttendanceData from "../../docs/datasets/gallup-values-beliefs-gambling/acceptable-by-attendance.json";
 import cleryStats from "../../docs/datasets/clery-campus-safety-2025/stats.json";
 import cleryByu from "../../docs/datasets/clery-campus-safety-2025/byu-campuses.json";
+import cleryByuFondling from "../../docs/datasets/clery-campus-safety-2025/fondling/byu-campuses.json";
+import cleryFondlingStats from "../../docs/datasets/clery-campus-safety-2025/fondling/stats.json";
 import cleryUtah from "../../docs/datasets/clery-campus-safety-2025/utah-stats.json";
 import pewGamblingCountryData from "../../docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json";
 import pewGamblingReligionData from "../../docs/datasets/pew-gambling-morality-2025/us-gambling-wrong-by-religion.json";
@@ -2425,6 +2427,7 @@ function cleryGraphics(): Graphic[] {
     ),
     ...cleryUtahGraphics(),
     ...cleryByuCampusGraphics(),
+    ...cleryFondlingGraphics(),
   ];
 }
 
@@ -2493,6 +2496,49 @@ function cleryByuCampusGraphics(): Graphic[] {
       "Three-year average per 10,000 students for the three BYU campuses, the U.S. median, and well-known schools.",
       "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png",
       `Horizontal bar chart of the 2022-2024 average reported rate. BYU–Provo ${p.rate3.toFixed(1)} and BYU–Idaho ${i.rate3.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_3yr.toFixed(1)} and comparison schools.`,
+    ),
+  ];
+}
+
+function cleryFondlingGraphics(): Graphic[] {
+  const base = "/data-explorer/clery-campus-safety-2025/";
+  const row = (label: string) => cleryByuFondling.rows.find((r) => r.label === label)!;
+  const [p, i] = ["BYU–Provo", "BYU–Idaho"].map(row);
+  const uvu = cleryByuFondling.rows.find((r) => r.label === "Utah Valley University")!;
+  const byu = cleryFondlingStats.byu;
+  const mk = (title: string, description: string, file: string, alt: string): Graphic => ({
+    title, description, imageSrc: base + file, width: 1080, height: 1350, alt,
+  });
+  return [
+    mk(
+      "Fondling: BYU campuses, reported on-campus offenses per 10,000 students, 2024",
+      "2024 Clery Act fondling offenses per 10,000 students at BYU–Provo and BYU–Idaho, the U.S. median, and well-known schools.",
+      "byu-campuses-reported-fondling-per-10k-2024.png",
+      `Horizontal bar chart of 2024 reported on-campus fondling offenses per 10,000 students. BYU–Provo ${p.rate24.toFixed(1)} and BYU–Idaho ${i.rate24.toFixed(1)}, highlighted, against a U.S. median of ${cleryByuFondling.median_rate_2024.toFixed(1)} and comparison schools including the University of Utah (red), Cornell and Utah Valley University (${uvu.rate24.toFixed(1)}).`,
+    ),
+    mk(
+      "Fondling: BYU campuses, average reported on-campus rate, 2022-2024",
+      "Three-year average fondling offenses per 10,000 students for BYU–Provo and BYU–Idaho, the U.S. median, and well-known schools.",
+      "byu-campuses-reported-fondling-per-10k-3yr-average-2022-24.png",
+      `Horizontal bar chart of the 2022-2024 average reported on-campus fondling rate. BYU–Provo ${p.rate3.toFixed(1)} and BYU–Idaho ${i.rate3.toFixed(1)}, highlighted, against a U.S. median of ${cleryByuFondling.median_rate_3yr.toFixed(1)} and comparison schools.`,
+    ),
+    mk(
+      "Fondling: campus size and reported offenses, 2024",
+      "Each four-year institution with 1,000+ students: enrollment against 2024 reported on-campus fondling offenses, with the expected count at the national rate.",
+      "campus-size-vs-reported-fondling-2024.png",
+      `Scatter plot of enrollment against 2024 reported on-campus fondling offenses with a line for the pooled national rate of ${cleryFondlingStats.pooled_rate_per_10k_ge_1000.toFixed(1)} per 10,000. UC Davis, the University of Utah and the University of Virginia sit far above it. BYU (${byu.rapes_2024}, blue), Cornell and Utah Valley University are labeled.`,
+    ),
+    mk(
+      "Fondling: campus size and average reported rates, 2022-2024",
+      "Each four-year institution with 1,000+ students: enrollment against the three-year average fondling rate per 10,000 students.",
+      "campus-size-vs-reported-fondling-rate-3yr-2022-24.png",
+      `Scatter plot of enrollment against the 2022-2024 average annual reported on-campus fondling offenses per 10,000 students, with a flat line at the national rate and a band that narrows as campuses grow. BYU–Provo (${p.rate3.toFixed(1)}) and BYU–Idaho (${i.rate3.toFixed(1)}) are blue, Utah Valley University is green, and the University of Utah is red.`,
+    ),
+    mk(
+      "Fondling: offenses per 10,000 students by state, 2022-2024, without the University of Utah",
+      "State heat map of three-year average reported on-campus fondling offenses per 10,000 four-year students, with the University of Utah removed from Utah and shown as a circle.",
+      "state-map-reported-fondling-per-10k-2022-24-without-university-of-utah.png",
+      "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus fondling offenses per 10,000 four-year students. Iowa, Alaska and Vermont are highest. Nevada, Arizona and Florida are lowest. The University of Utah appears as a separate circle at 15.5.",
     ),
   ];
 }

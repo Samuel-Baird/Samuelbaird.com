@@ -16,7 +16,9 @@ import re
 import sys
 from pathlib import Path
 
+import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.text
 from matplotlib.patches import PathPatch
 from matplotlib.path import Path as MPath
 
@@ -26,7 +28,28 @@ sys.path.insert(0, str(HERE.parent))
 from common import FIG_H_IN, FIG_W_IN, DPI, INK, MUTED, PAPER, _draw_title, load_fonts  # noqa: E402
 from chart_style import draw_caption_bottom  # noqa: E402
 
-DATA = HERE.parent.parent / "docs" / "datasets" / "clery-campus-safety-2025"
+GEO_DIR = HERE.parent.parent / "docs" / "datasets" / "clery-campus-safety-2025"
+DATA = GEO_DIR
+OFFENSE = "rape"  # --offense fondling reads fondling/state-rates.json and rewrites the wording (JSON keys still say rape)
+
+
+def T(text):
+    if OFFENSE == "rape":
+        return text
+    for a, b in (("Rapes", "Fondling Offenses"), ("rapes", "fondling offenses"), ("Rape", "Fondling"), ("rape", "fondling")):
+        text = text.replace(a, b)
+    return text
+
+
+def fname(name):
+    return name if OFFENSE == "rape" else name.replace("rapes", "fondling").replace("rape", "fondling")
+
+
+_draw_title_base = _draw_title
+
+
+def _draw_title(fig, fonts, title, subtitle):  # noqa: F811 - reword before the title is wrapped to fit
+    return _draw_title_base(fig, fonts, T(title), T(subtitle))
 HANDLE = "@ithinkisam | data: U.S. Dept. of Education, Clery Act 2025"
 DISCLAIMER = ("These figures represent incidents reported under the Clery Act, not estimates of the actual "
               "prevalence of sexual assault. Differences may reflect both differences in victimization and "
@@ -149,7 +172,7 @@ def polygon_center(polys):
 def render(rates, key, title, subtitle, out, fonts, circle=None):
     states = rates[key]
     by_name = {v["state"]: v for v in states.values()}
-    geo = json.loads((DATA / "us-state-paths.json").read_text(encoding="utf-8"))
+    geo = json.loads((GEO_DIR / "us-state-paths.json").read_text(encoding="utf-8"))
     values = [v["rate_per_10k"] for v in by_name.values()] + ([circle["rate"]] if circle else [])
     breaks = classify(values)
     labels = band_labels(breaks)
@@ -223,28 +246,41 @@ def render(rates, key, title, subtitle, out, fonts, circle=None):
             fig.text(xx, yy, f"{rank}. {v['state']}", fontproperties=fonts["regular"], fontsize=15, color=INK, va="top")
             fig.text(xx + 0.40, yy, f"{v['rate_per_10k']:.1f}", fontproperties=fonts["bold"], fontsize=15, color=INK,
                      va="top", ha="right")
+    if OFFENSE != "rape":
+        for t in fig.findobj(matplotlib.text.Text):
+            t.set_text(T(t.get_text()))
     fig.savefig(out, dpi=DPI, facecolor=PAPER)
     plt.close(fig)
     print("wrote", out, "bands", breaks)
 
 
-def main_ex_uofu(rates, out_dir, fonts):
+def main_ex_uofu(rates, out_dir, fonts, only=None):
     u = rates["uofu"]
     for key, rkey, per, sub in (("rate_2022_24_ex_uofu", "rate_2022_24", "2022–2024", "Three-year Clery Act average."),
                                 ("rate_2024_ex_uofu", "rate_2024", "2024", "Clery Act reports.")):
+        if only and rkey != only:
+            continue
         render(rates, key, f"Reported On-Campus Rapes per 10,000 Students by State, {per}",
                "Utah excludes the University of Utah, shown as the circle." + chr(10) + sub + " All other four-year institutions pooled.",
-               out_dir / f"state-map-reported-rapes-per-10k-{'2022-24' if '22' in rkey else '2024'}-without-university-of-utah.png",
+               out_dir / fname(f"state-map-reported-rapes-per-10k-{'2022-24' if '22' in rkey else '2024'}-without-university-of-utah.png"),
                fonts, circle={"rate": u[rkey], "label": "University" + chr(10) + "of Utah"})
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", type=Path, required=True)
+    ap.add_argument("--offense", choices=["rape", "fondling"], default="rape")
     args = ap.parse_args()
+    global DATA, OFFENSE
+    OFFENSE = args.offense
+    if OFFENSE == "fondling":
+        DATA = GEO_DIR / "fondling"
     args.out_dir.mkdir(parents=True, exist_ok=True)
     fonts = load_fonts()
     rates = json.loads((DATA / "state-rates.json").read_text(encoding="utf-8"))
+    if OFFENSE == "fondling":  # only the 2022-24 map without the University of Utah mirrors a rape chart we compare against
+        main_ex_uofu(rates, args.out_dir, fonts, only="rate_2022_24")
+        return
     render(rates, "rate_2022_24", "Reported On-Campus Rapes per 10,000 Students by State, 2022–2024",
            "Three-year Clery Act average. All four-year institutions in each state, pooled.",
            args.out_dir / "state-map-reported-rapes-per-10k-2022-24.png", fonts)

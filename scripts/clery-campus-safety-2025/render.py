@@ -16,7 +16,9 @@ import re
 import sys
 from pathlib import Path
 
+import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.text
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
@@ -29,6 +31,34 @@ from common import (  # noqa: E402
 from chart_style import BORDER, draw_caption_bottom  # noqa: E402
 
 DATA = HERE.parent.parent / "docs" / "datasets" / "clery-campus-safety-2025"
+OFFENSE = "rape"  # --offense fondling swaps DATA to its fondling/ folder and rewrites every chart's wording
+
+
+def T(text):
+    """Rewrites chart wording for the selected offense (the JSON field names still say 'rape')."""
+    if OFFENSE == "rape":
+        return text
+    for a, b in (("Rapes", "Fondling Offenses"), ("rapes", "fondling offenses"), ("Rape", "Fondling"), ("rape", "fondling")):
+        text = text.replace(a, b)
+    return text
+
+
+_draw_title_base = _draw_title
+
+
+def _draw_title(fig, fonts, title, subtitle):  # noqa: F811 - reword before the title is wrapped to fit
+    return _draw_title_base(fig, fonts, T(title), T(subtitle))
+
+
+def fname(name):
+    return name if OFFENSE == "rape" else name.replace("rapes", "fondling").replace("rape", "fondling")
+
+
+def save(fig, out):
+    if OFFENSE != "rape":
+        for t in fig.findobj(matplotlib.text.Text):
+            t.set_text(T(t.get_text()))
+    fig.savefig(out, dpi=DPI, facecolor=PAPER)
 HANDLE = "@ithinkisam | data: U.S. Dept. of Education, Clery Act 2025"
 BYU_ID = "230038"
 UTAH_ID = "230764"
@@ -108,7 +138,7 @@ def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, ex
         order.insert(idx, lab)
     render_magnitude_bar(
         rows=order, values=values, highlight_rows=None, row_colors=colors,
-        title=title, subtitle=subtitle, caption_paragraphs=[DISCLAIMER], caption_wrap_width=80, caption_line_step=0.0215, handle=HANDLE, out_path=out, fonts=fonts,
+        title=T(title), subtitle=T(subtitle), caption_paragraphs=[DISCLAIMER], caption_wrap_width=80, caption_line_step=0.0215, handle=HANDLE, out_path=out, fonts=fonts,
         value_suffix="", value_decimals=decimals, axes_left=0.40,
         row_label_fontsize=12.5, value_label_fontsize=12.5, bar_h_override=0.72, margin_frac_override=0.015,
     )
@@ -127,6 +157,7 @@ def scatter_chart(out, fonts, hide=()):
     pts = d["points"]
     XCAP = 85000
     n_off = sum(p["enrollment"] > XCAP for p in pts)
+    off_max = int(max(p["rape24"] for p in pts if p["enrollment"] > XCAP))
     pts_all, pts = pts, [p for p in pts if p["enrollment"] <= XCAP]
     hidden = [p for p in pts if p["unitid"] in hide]
     pts = [p for p in pts if p["unitid"] not in hide]
@@ -147,7 +178,7 @@ def scatter_chart(out, fonts, hide=()):
         [f"Line = expected reports if every campus reported at the pooled national rate "
          f"({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it. "
          "Labeled dots are the largest departures above the line, plus BYU and Cornell for comparison. "
-         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported 13 or fewer."
+         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported {off_max} or fewer."
          + (" The three highest-count institutions are removed to improve the scale; arrows give their values." if hide else ""),
          DISCLAIMER],
         handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
@@ -196,6 +227,8 @@ def scatter_chart(out, fonts, hide=()):
             continue
         done.add(p["unitid"])
         dx, dy, ha = place.get(p["unitid"], (8, 4, "left"))
+        if p["unitid"] == UVU_ID and p["rape24"] < 5:
+            dy = 14  # low count: keep the label off the axis
         lab = short(p["name"]) if p["unitid"] != BYU_ID else "BYU"
         if p["unitid"] == UVU_ID:
             lab = "Utah Valley"
@@ -227,7 +260,7 @@ def scatter_chart(out, fonts, hide=()):
     ax.set_ylabel("Reported on-campus rapes, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(xs.max() * 0.98, rate / 1e4 * xs.max() * 0.98 + 6, "Expected at national rate", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
-    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    save(fig, out)
     plt.close(fig)
 
 def rate_scatter_chart(out, fonts):
@@ -304,7 +337,7 @@ def rate_scatter_chart(out, fonts):
     ax.set_ylabel("Reported on-campus rapes per 10,000 students, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(xmax * 0.97, rate + 0.8, "National rate", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
-    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    save(fig, out)
     plt.close(fig)
 
 def rate_scatter_3yr_chart(out, fonts):
@@ -381,7 +414,7 @@ def rate_scatter_3yr_chart(out, fonts):
     ax.set_ylabel("Avg. annual reported rapes per 10,000 students", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(XCAP * 0.98, rate + 0.8, f"National rate: {rate:.1f}", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
-    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    save(fig, out)
     plt.close(fig)
 
 
@@ -441,7 +474,7 @@ def hist_chart(out, fonts):
         f"National mean: {dist['mean']:.2f}",
         f"BYU percentile: {b['percentile_ge_5000']:.0f}th",
     ], y=0.80)
-    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    save(fig, out)
     plt.close(fig)
 
 
@@ -508,7 +541,7 @@ def utah_scatter(out, fonts):
     ax.set_ylabel("Reported on-campus rapes, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(41000, YTOP + 0.4, "Expected at national rate", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
-    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    save(fig, out)
     plt.close(fig)
 
 
@@ -583,17 +616,53 @@ def utah_rate_scatter(out, fonts):
     ax.set_ylabel("Reported on-campus rapes per 10,000 students, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(21000, rate + 0.2, "National rate", ha="left", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
-    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    save(fig, out)
     plt.close(fig)
+
+
+def byu_campus_bars(args, fonts, include_raw=True):
+    # ---- BYU's three campuses ----
+    bc = json.loads((DATA / "byu-campuses.json").read_text(encoding="utf-8"))
+    crow = bc["rows"]
+    cmp_colors = {**{i: ACCENT for i in bc["byu_ids"]}, UTAH_ID: UTAH_RED, UVU_ID: UVU_GREEN, CORNELL_ID: CORNELL_RED}
+    kw = dict(byu=None, rank_key=None, accent_ids=set(bc["byu_ids"]), label_key="label", fonts=fonts, color_map=cmp_colors)
+    sub = "BYU's three campuses against the U.S. median and well-known schools."
+    if include_raw:
+        bar_chart(rows=sorted(crow, key=lambda r: (-r["rape24"], -r["enrollment"])), value_key="rape24", decimals=0,
+                  title="Reported On-Campus Rapes at BYU's Campuses and Comparison Schools, 2024",
+                  subtitle="Raw number of incidents reported under the Clery Act.\n" + "BYU's three campuses and well-known schools.",
+                  out=args.out_dir / fname("byu-campuses-reported-rapes-2024.png"), **kw)
+    no_hi = [r for r in crow if r["unitid"] != "230047"]  # per-10k charts omit BYU-Hawaii
+    sub2 = "BYU"+chr(0x2013)+"Provo and BYU"+chr(0x2013)+"Idaho vs. the U.S. median and well-known schools."
+    bar_chart(rows=sorted(no_hi, key=lambda r: -r["rate24"]), value_key="rate24", decimals=1,
+              extra_rows=[("U.S. median", bc["median_rate_2024"], INK)],
+              title="Reported On-Campus Rapes per 10,000 Students at BYU's Campuses and Comparison Schools, 2024",
+              subtitle="Clery Act reports adjusted for enrollment.\n" + sub2,
+              out=args.out_dir / fname("byu-campuses-reported-rapes-per-10k-2024.png"), **kw)
+    bar_chart(rows=sorted(no_hi, key=lambda r: -r["rate3"]), value_key="rate3", decimals=1,
+              extra_rows=[("U.S. median", bc["median_rate_3yr"], INK)],
+              title="Average Reported On-Campus Rape Rate at BYU's Campuses and Comparison Schools, 2022–2024",
+              subtitle="Three-year Clery Act average per 10,000 students.\n" + sub2,
+              out=args.out_dir / fname("byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png"), **kw)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", type=Path, required=True)
+    ap.add_argument("--offense", choices=["rape", "fondling"], default="rape")
     args = ap.parse_args()
+    global DATA, OFFENSE
+    OFFENSE = args.offense
+    if OFFENSE == "fondling":
+        DATA = DATA / "fondling"
     args.out_dir.mkdir(parents=True, exist_ok=True)
     fonts = load_fonts()
     FONTS.update(fonts)
+    if OFFENSE == "fondling":  # the five charts that mirror the rape set we are comparing
+        scatter_chart(args.out_dir / fname("campus-size-vs-reported-rapes-2024.png"), fonts)
+        rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-3yr-2022-24.png"), fonts)
+        byu_campus_bars(args, fonts, include_raw=False)
+        return
     s = json.loads((DATA / "stats.json").read_text(encoding="utf-8"))
 
     scatter_chart(args.out_dir / "campus-size-vs-reported-rapes-2024.png", fonts)
@@ -627,28 +696,7 @@ def main():
     utah_scatter(args.out_dir / "utah-campus-size-vs-reported-rapes-2024.png", fonts)
     utah_rate_scatter(args.out_dir / "utah-campus-size-vs-reported-rape-rate-2024.png", fonts)
 
-    # ---- BYU's three campuses ----
-    bc = json.loads((DATA / "byu-campuses.json").read_text(encoding="utf-8"))
-    crow = bc["rows"]
-    cmp_colors = {**{i: ACCENT for i in bc["byu_ids"]}, UTAH_ID: UTAH_RED, UVU_ID: UVU_GREEN, CORNELL_ID: CORNELL_RED}
-    kw = dict(byu=None, rank_key=None, accent_ids=set(bc["byu_ids"]), label_key="label", fonts=fonts, color_map=cmp_colors)
-    sub = "BYU's three campuses against the U.S. median and well-known schools."
-    bar_chart(rows=sorted(crow, key=lambda r: (-r["rape24"], -r["enrollment"])), value_key="rape24", decimals=0,
-              title="Reported On-Campus Rapes at BYU's Campuses and Comparison Schools, 2024",
-              subtitle="Raw number of incidents reported under the Clery Act.\n" + "BYU's three campuses and well-known schools.",
-              out=args.out_dir / "byu-campuses-reported-rapes-2024.png", **kw)
-    no_hi = [r for r in crow if r["unitid"] != "230047"]  # per-10k charts omit BYU-Hawaii
-    sub2 = "BYU"+chr(0x2013)+"Provo and BYU"+chr(0x2013)+"Idaho vs. the U.S. median and well-known schools."
-    bar_chart(rows=sorted(no_hi, key=lambda r: -r["rate24"]), value_key="rate24", decimals=1,
-              extra_rows=[("U.S. median", bc["median_rate_2024"], INK)],
-              title="Reported On-Campus Rapes per 10,000 Students at BYU's Campuses and Comparison Schools, 2024",
-              subtitle="Clery Act reports adjusted for enrollment.\n" + sub2,
-              out=args.out_dir / "byu-campuses-reported-rapes-per-10k-2024.png", **kw)
-    bar_chart(rows=sorted(no_hi, key=lambda r: -r["rate3"]), value_key="rate3", decimals=1,
-              extra_rows=[("U.S. median", bc["median_rate_3yr"], INK)],
-              title="Average Reported On-Campus Rape Rate at BYU's Campuses and Comparison Schools, 2022–2024",
-              subtitle="Three-year Clery Act average per 10,000 students.\n" + sub2,
-              out=args.out_dir / "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png", **kw)
+    byu_campus_bars(args, fonts)
 
 
 if __name__ == "__main__":
