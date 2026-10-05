@@ -199,6 +199,14 @@ def main():
         "rows": [{**rec(i, r, ["rape22", "rape23", "rape24", "enrollment", "rate24", "rate3"]),
                   "label": byu_ids.get(i, r["name"])} for i, r in cmp_df.iterrows()]})
 
+    # ---- 3-year scatter (>=1,000): average annual reports vs enrollment ----
+    sc3 = m_all[m_all.enrollment >= MIN_ENR_BROAD].copy()
+    pooled3 = sc3.avg_rapes.sum() / sc3.enrollment.sum()
+    sc3["expected"] = pooled3 * sc3.enrollment
+    dump("scatter-2022-24.json", {
+        "min_enrollment": MIN_ENR_BROAD, "pooled_rate_per_10k": round(float(pooled3 * 1e4), 4),
+        "points": table(sc3, ["avg_rapes", "enrollment", "rate3", "expected"])}, indent=1)
+
     print(json.dumps(stats, indent=2))
     print(json.dumps(ut_stats, indent=2))
     for t, df, c in (

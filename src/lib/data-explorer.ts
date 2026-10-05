@@ -2406,6 +2406,12 @@ function cleryGraphics(): Graphic[] {
       `Scatter plot of enrollment (log scale) against 2024 reported on-campus rapes per 10,000 students, with a flat line at the national rate of ${cleryStats.pooled_rate_per_10k_ge_1000.toFixed(1)} and a band that narrows as campuses grow. Small campuses scatter widely above and below it. The University of Utah, Indiana University Indianapolis and Dartmouth sit far above the band. BYU (${byu.rate_2024.toFixed(1)}) is below the line.`,
     ),
     mk(
+      "Campus size and average reported rape rates, 2022-2024",
+      "Each four-year institution with 1,000+ students: enrollment (linear scale) against the three-year average rate per 10,000 students, with all three BYU campuses labeled.",
+      "campus-size-vs-reported-rape-rate-3yr-2022-24.png",
+      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus rapes per 10,000 students, with a flat line at the national rate of 3.8 and a band that narrows as campuses grow. BYU-Provo (1.0), BYU-Idaho (1.2) and BYU-Hawaii (5.7) are highlighted in blue. The University of Utah (30.4) and Indiana University Indianapolis (35.4) sit far above the band.",
+    ),
+    mk(
       "Where BYU falls among U.S. universities",
       "Histogram of 2024 reported on-campus rape rates for institutions with 5,000+ students, with BYU and the median marked.",
       "byu-vs-national-distribution-2024.png",
