@@ -18,6 +18,10 @@ Method notes:
 - A year counts if any of an institution's campus rows has data for it (`FILTER` = 1); branches opened later have
   blank years and must not drop the institution.
 - Utah charts use every four-year institution with State = UT and 1,000+ students; the Utah median is over those.
+- State maps (`render_state_map.py`): pooled rate per state = all reported on-campus rapes at the state's four-year
+  institutions / their total enrollment x 10,000. Outlines come from `export-us-state-paths.mjs` (the site's Albers USA state map).
+  Small states are dominated by one campus (e.g. Bennington College is 60% of Vermont's 2024 reports); `state-rates.json` records
+  each state's largest contributor.
 - Four-year = sector "4-year or above" (public, private nonprofit, for-profit).
 - The file has one enrollment figure per institution; it is used for all three years.
 - Rate per 10,000 = rapes / enrollment x 10,000. Percentile = share of

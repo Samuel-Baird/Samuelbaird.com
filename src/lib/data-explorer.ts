@@ -2399,6 +2399,18 @@ function cleryGraphics(): Graphic[] {
       "campus-size-vs-reported-rape-rate-3yr-2022-24.png",
       "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus rapes per 10,000 students, with a flat line at the national rate of 3.8 and a band that narrows as campuses grow. BYU-Provo (1.0), BYU-Idaho (1.2) and BYU-Hawaii (5.7) are highlighted in blue. The University of Utah (30.4, red) and Indiana University Indianapolis (35.4) sit far above the band.",
     ),
+    mk(
+      "Reported on-campus rapes per 10,000 students by state, 2022-2024",
+      "Heat map of states: the three-year average of reported on-campus rapes at all four-year institutions in each state, divided by that state's four-year enrollment.",
+      "state-map-reported-rapes-per-10k-2022-24.png",
+      "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus rapes per 10,000 four-year students in the state. Vermont is highest at 16.4, then Maine, Montana, Rhode Island and Iowa. Florida, Nevada and Idaho are among the lowest. States with one very large reporting campus (Vermont, Montana, Alaska) are driven by that campus.",
+    ),
+    mk(
+      "Reported on-campus rapes per 10,000 students by state, 2024",
+      "Heat map of states: 2024 reported on-campus rapes at all four-year institutions in each state, divided by that state's four-year enrollment.",
+      "state-map-reported-rapes-per-10k-2024.png",
+      "Map of U.S. states shaded in five bands by 2024 reported on-campus rapes per 10,000 four-year students in the state. Vermont is highest at 26.4, then Utah, Maine, Rhode Island and Indiana. Single-year rates in small states swing widely.",
+    ),
     ...cleryUtahGraphics(),
     ...cleryByuCampusGraphics(),
   ];

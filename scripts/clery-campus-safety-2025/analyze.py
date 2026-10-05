@@ -207,6 +207,34 @@ def main():
         "min_enrollment": MIN_ENR_BROAD, "pooled_rate_per_10k": round(float(pooled3 * 1e4), 4),
         "points": table(sc3, ["avg_rapes", "enrollment", "rate3", "expected"])}, indent=1)
 
+    # ---- State level: pooled rate per 10,000 students within each state ----
+    ST = {"AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
+          "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia",
+          "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas",
+          "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts",
+          "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi", "MO": "Missouri", "MT": "Montana",
+          "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico",
+          "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma",
+          "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
+          "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia",
+          "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming"}
+
+    def by_state(df, col):
+        g = df[df.state.isin(ST)].groupby("state")
+        out = {}
+        for ab, grp in g:
+            enr = float(grp.enrollment.sum())
+            top = grp.assign(_c=grp[col]).sort_values("_c", ascending=False).iloc[0]
+            out[ab] = {"state": ST[ab], "institutions": int(len(grp)), "enrollment": int(enr),
+                       "reports": round(float(grp[col].sum()), 4), "rate_per_10k": round(float(grp[col].sum() / enr * 1e4), 4),
+                       "largest_contributor": top["name"], "largest_contributor_share": round(float(top[col] / grp[col].sum()), 3) if grp[col].sum() else 0}
+        return out
+
+    dump("state-rates.json", {
+        "note": "Pooled rate: all reported on-campus rapes at a state's four-year institutions / their total enrollment x 10,000.",
+        "rate_2024": by_state(y24, "rape24"),
+        "rate_2022_24": by_state(m_all, "avg_rapes")})
+
     print(json.dumps(stats, indent=2))
     print(json.dumps(ut_stats, indent=2))
     for t, df, c in (
