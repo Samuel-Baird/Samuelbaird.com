@@ -2408,22 +2408,10 @@ function cleryGraphics(): Graphic[] {
       "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus rapes per 10,000 four-year students in the state. Vermont is highest at 16.4, then Maine, Montana, Rhode Island and Iowa. Florida, Nevada and Idaho are among the lowest. States with one very large reporting campus (Vermont, Montana, Alaska) are driven by that campus.",
     ),
     mk(
-      "Reported on-campus rapes per 10,000 students by state, 2024",
-      "Heat map of states: 2024 reported on-campus rapes at all four-year institutions in each state, divided by that state's four-year enrollment.",
-      "state-map-reported-rapes-per-10k-2024.png",
-      "Map of U.S. states shaded in five bands by 2024 reported on-campus rapes per 10,000 four-year students in the state. Vermont is highest at 26.4, then Utah, Maine, Rhode Island and Indiana. Single-year rates in small states swing widely.",
-    ),
-    mk(
       "Reported on-campus rapes per 10,000 students by state, 2022-2024, without the University of Utah",
       "Same state heat map with the University of Utah taken out of Utah and shown on its own as a circle beside the map.",
       "state-map-reported-rapes-per-10k-2022-24-without-university-of-utah.png",
       "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus rapes per 10,000 four-year students. Utah's shading excludes the University of Utah (1.7 for the rest of Utah), which appears as a separate circle at 30.4.",
-    ),
-    mk(
-      "Reported on-campus rapes per 10,000 students by state, 2024, without the University of Utah",
-      "Same 2024 state heat map with the University of Utah taken out of Utah and shown on its own as a circle beside the map.",
-      "state-map-reported-rapes-per-10k-2024-without-university-of-utah.png",
-      "Map of U.S. states shaded in five bands by 2024 reported on-campus rapes per 10,000 four-year students. Utah's shading excludes the University of Utah (1.8 for the rest of Utah), which appears as a separate circle at 37.9.",
     ),
     ...cleryUtahGraphics(),
     ...cleryByuCampusGraphics(),
@@ -2456,18 +2444,6 @@ function cleryUtahGraphics(): Graphic[] {
       "utah-reported-rapes-per-10k-3yr-average-2022-24.png",
       `Horizontal bar chart of the 2022-2024 average reported rate at ${u.n_3yr} Utah institutions. The Utah median is ${u.median_rate_3yr.toFixed(1)} and the U.S. median is ${cleryByu.median_rate_3yr.toFixed(1)}. BYU, highlighted, is at ${u.byu.rate_3yr.toFixed(1)}, ranking ${u.byu.rank_3yr} of ${u.n_3yr}.`,
     ),
-    mk(
-      "Utah: campus size and reported rapes",
-      "Utah's four-year institutions with 1,000+ students: enrollment against 2024 reports, with the expected count at the U.S. national rate.",
-      "utah-campus-size-vs-reported-rapes-2024.png",
-      `Scatter plot of enrollment against 2024 reported on-campus rapes at ${u.n} Utah institutions with a line for the U.S. national rate. The University of Utah (140) is far above it and off the chart; BYU (4) is below it.`,
-    ),
-    mk(
-      "Utah: campus size and reported rape rates",
-      "Utah's four-year institutions with 1,000+ students: enrollment against 2024 reports per 10,000 students, with the U.S. national rate and its expected chance range.",
-      "utah-campus-size-vs-reported-rape-rate-2024.png",
-      `Scatter plot of enrollment against 2024 reported on-campus rapes per 10,000 students at ${u.n} Utah institutions, with a flat line at the U.S. national rate. The University of Utah (37.9, red) is above the top edge; Snow College (9.0) is above the chance band; BYU (1.1, blue) is below the line.`,
-    ),
   ];
 }
 
@@ -2490,12 +2466,6 @@ function cleryByuCampusGraphics(): Graphic[] {
       "2024 rates for the three BYU campuses, the U.S. median, and well-known schools.",
       "byu-campuses-reported-rapes-per-10k-2024.png",
       `Horizontal bar chart of 2024 reported on-campus rapes per 10,000 students. BYU–Provo ${p.rate24.toFixed(1)} and BYU–Idaho ${i.rate24.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_2024.toFixed(1)} and comparison schools including the University of Utah (red).`,
-    ),
-    mk(
-      "BYU campuses: average reported on-campus rape rate, 2022-2024",
-      "Three-year average per 10,000 students for the three BYU campuses, the U.S. median, and well-known schools.",
-      "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png",
-      `Horizontal bar chart of the 2022-2024 average reported rate. BYU–Provo ${p.rate3.toFixed(1)} and BYU–Idaho ${i.rate3.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_3yr.toFixed(1)} and comparison schools.`,
     ),
   ];
 }
@@ -2533,18 +2503,6 @@ function cleryFondlingGraphics(): Graphic[] {
       "Each four-year institution with 1,000+ students: enrollment against the three-year average fondling rate per 10,000 students.",
       "campus-size-vs-reported-fondling-rate-3yr-2022-24.png",
       `Scatter plot of enrollment against the 2022-2024 average annual reported on-campus fondling offenses per 10,000 students, with a flat line at the national rate and a band that narrows as campuses grow. BYU–Provo (${p.rate3.toFixed(1)}) and BYU–Idaho (${i.rate3.toFixed(1)}) are blue, Utah Valley University is green, and the University of Utah is red.`,
-    ),
-    mk(
-      "Fondling: campus size and average reported offenses, 2022-2024",
-      "Each four-year institution with 1,000+ students: enrollment against the 2022-2024 average annual reported on-campus fondling offenses.",
-      "campus-size-vs-reported-fondling-2022-24-average.png",
-      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus fondling offenses with a line for the pooled national rate and a band that narrows as campuses grow. An arrow at the top marks Ohio State (160), which is off the chart. The University of Utah (57, red), Indiana University Indianapolis and Florida Institute of Technology sit far above the line. BYU (15.7, blue), Cornell (red) and Utah Valley University (green) are labeled.",
-    ),
-    mk(
-      "Fondling: campus size and reported offenses per 10,000 students, 2024",
-      "Each four-year institution with 1,000+ students: enrollment against 2024 reported on-campus fondling offenses per 10,000 students.",
-      "campus-size-vs-reported-fondling-rate-2024.png",
-      "Scatter plot of enrollment against 2024 reported on-campus fondling offenses per 10,000 students, with a flat line at the national rate of 2.8 and a band that narrows as campuses grow. BYU-Provo (3.9) and BYU-Idaho (0.7) are blue, Utah Valley University (0.4) is green, and the University of Utah (20.6) is red.",
     ),
     mk(
       "Fondling: offenses per 10,000 students by state, 2022-2024",
