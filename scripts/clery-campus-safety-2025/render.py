@@ -184,7 +184,7 @@ def scatter_chart(out, fonts, hide=()):
         "230764": (9, -3, "left"), "126614": (9, -3, "left"), "151111": (9, -3, "left"),
         "173957": (9, 66 if not hide else 86, "left"), "182670": (12, 26 if hide else 8, "left"),
         "115755": (12, -26 if hide else 6, "left"),
-        "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"), UVU_ID: (12, 26, "left"),
+        "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"), UVU_ID: (26, -8, "left"),
     }
     done = set()
     for p in over + under + [byu, cornell, uvu]:
@@ -625,7 +625,8 @@ def main():
     # ---- BYU's three campuses ----
     bc = json.loads((DATA / "byu-campuses.json").read_text(encoding="utf-8"))
     crow = bc["rows"]
-    kw = dict(byu=None, rank_key=None, accent_ids=set(bc["byu_ids"]), label_key="label", fonts=fonts)
+    cmp_colors = {**{i: ACCENT for i in bc["byu_ids"]}, UTAH_ID: UTAH_RED, UVU_ID: UVU_GREEN}
+    kw = dict(byu=None, rank_key=None, accent_ids=set(bc["byu_ids"]), label_key="label", fonts=fonts, color_map=cmp_colors)
     sub = "BYU's three campuses against the U.S. median and well-known schools."
     bar_chart(rows=sorted(crow, key=lambda r: (-r["rape24"], -r["enrollment"])), value_key="rape24", decimals=0,
               title="Reported On-Campus Rapes at BYU's Campuses and Comparison Schools, 2024",

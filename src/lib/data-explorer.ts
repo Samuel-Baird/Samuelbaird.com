@@ -2480,7 +2480,7 @@ function cleryByuCampusGraphics(): Graphic[] {
       "BYU campuses: reported on-campus rapes, 2024",
       "Raw 2024 Clery Act counts at BYU–Provo, BYU–Idaho and BYU–Hawaii next to well-known schools.",
       "byu-campuses-reported-rapes-2024.png",
-      `Horizontal bar chart of 2024 reported on-campus rapes. BYU–Provo ${p.rape24}, BYU–Idaho ${i.rape24} and BYU–Hawaii ${h.rape24}, highlighted, against the University of Utah (140), Stanford (27), Cornell (23), Yale, Liberty, Baylor, Harvard and Notre Dame.`,
+      `Horizontal bar chart of 2024 reported on-campus rapes. BYU–Provo ${p.rape24}, BYU–Idaho ${i.rape24} and BYU–Hawaii ${h.rape24}, highlighted, against the University of Utah (140, red), Utah Valley University (9, green), Stanford (27), Cornell (23), Yale, Liberty, Baylor, Harvard and Notre Dame.`,
     ),
     mk(
       "BYU campuses: reported on-campus rapes per 10,000 students, 2024",

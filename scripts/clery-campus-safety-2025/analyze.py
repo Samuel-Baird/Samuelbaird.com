@@ -186,7 +186,7 @@ def main():
 
     # ---- BYU's three campuses vs. comparison schools ----
     byu_ids = {"230038": "BYU–Provo", "142522": "BYU–Idaho", "230047": "BYU–Hawaii"}
-    comp_ids = ["230764", "152080", "223232", "232557", "130794", "166027", "243744", "190415"]
+    comp_ids = ["230764", "230737", "152080", "223232", "232557", "130794", "166027", "243744", "190415"]
     cmp_df = d.loc[list(byu_ids) + comp_ids].copy()
     cmp_df["rate24"] = cmp_df.rape24 / cmp_df.enrollment * 1e4
     cmp_df["rate3"] = cmp_df[["rape22", "rape23", "rape24"]].mean(axis=1) / cmp_df.enrollment * 1e4

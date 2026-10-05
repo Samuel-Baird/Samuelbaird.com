@@ -57,6 +57,18 @@
       "label": "University of Utah"
     },
     {
+      "unitid": "230737",
+      "name": "Utah Valley University",
+      "state": "UT",
+      "rape22": 9.0,
+      "rape23": 3.0,
+      "rape24": 9,
+      "enrollment": 46807.0,
+      "rate24": 1.9228,
+      "rate3": 1.4955,
+      "label": "Utah Valley University"
+    },
+    {
       "unitid": "152080",
       "name": "University of Notre Dame",
       "state": "IN",
