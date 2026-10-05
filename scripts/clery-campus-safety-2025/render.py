@@ -31,6 +31,8 @@ from chart_style import BORDER, draw_caption_bottom  # noqa: E402
 DATA = HERE.parent.parent / "docs" / "datasets" / "clery-campus-safety-2025"
 HANDLE = "@ithinkisam | data: U.S. Dept. of Education, Clery Act 2025"
 BYU_ID = "230038"
+UTAH_ID = "230764"
+UTAH_RED = "#9C2B2B"  # crimson from chart_style; the University of Utah is red on every chart
 BYU_LABEL = "Brigham Young University"
 DISCLAIMER = ("These figures represent incidents reported under the Clery Act, not estimates of the actual "
               "prevalence of sexual assault. Differences may reflect both differences in victimization and "
@@ -72,13 +74,14 @@ def uniq_labels(rows):
     return out
 
 
-def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, extra_rows=(), rank_key, accent_ids=(BYU_ID,), label_key=None):
+def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, extra_rows=(), rank_key, accent_ids=(BYU_ID,), label_key=None, red_ids=(UTAH_ID,)):
     """rows: top-30 records; byu appended if not already present."""
     ids = [r["unitid"] for r in rows]
     labels = [r[label_key] for r in rows] if label_key else uniq_labels(rows)
     values = {l: r[value_key] for l, r in zip(labels, rows)}
     order = list(labels)
-    colors = {l: (ACCENT if r["unitid"] in accent_ids else CONTEXT_GRAY) for l, r in zip(labels, rows)}
+    colors = {l: (ACCENT if r["unitid"] in accent_ids else UTAH_RED if r["unitid"] in red_ids else CONTEXT_GRAY)
+              for l, r in zip(labels, rows)}
     if not any(i in ids for i in accent_ids) and BYU_ID not in ids:
         lab = f"{BYU_LABEL} (#{byu[rank_key]:,})"
         order.append(lab)
@@ -105,12 +108,14 @@ def stat_box(ax, lines, x=0.97, y=0.97):
             fontproperties=FONTS["regular"], fontsize=15, color=INK, bbox=dict(boxstyle="square,pad=0.6", fc=PAPER, ec=BORDER, lw=1))
 
 
-def scatter_chart(out, fonts):
+def scatter_chart(out, fonts, hide=()):
     d = json.loads((DATA / "scatter-2024.json").read_text(encoding="utf-8"))
     pts = d["points"]
     XCAP = 85000
     n_off = sum(p["enrollment"] > XCAP for p in pts)
     pts_all, pts = pts, [p for p in pts if p["enrollment"] <= XCAP]
+    hidden = [p for p in pts if p["unitid"] in hide]
+    pts = [p for p in pts if p["unitid"] not in hide]
     x = np.array([p["enrollment"] for p in pts])
     y = np.array([p["rape24"] for p in pts])
     z = np.array([p["resid_z"] for p in pts])
@@ -118,7 +123,9 @@ def scatter_chart(out, fonts):
 
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
-    sub_bottom = _draw_title(fig, fonts, "Campus Size and Reported Rapes at U.S. Universities",
+    title = ("Campus Size and Reported Rapes at U.S. Universities" if not hide
+             else "Campus Size and Reported Rapes, Without the Three Largest Outliers")
+    sub_bottom = _draw_title(fig, fonts, title,
                              "2024 Clery Act reports. One dot per four-year institution with\n"
                              f"at least {d['min_enrollment']:,} students ({len(pts):,} institutions).")
     cap_top = draw_caption_bottom(
@@ -126,7 +133,9 @@ def scatter_chart(out, fonts):
         [f"Line = expected reports if every campus reported at the pooled national rate "
          f"({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it. "
          "Labeled dots are the largest departures above the line, plus BYU and Cornell for comparison. "
-         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported 13 or fewer.", DISCLAIMER],
+         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported 13 or fewer."
+         + (" The three highest-count institutions are removed to improve the scale; arrows give their values." if hide else ""),
+         DISCLAIMER],
         handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
     ax = fig.add_axes([0.14, cap_top + 0.075, 0.82, sub_bottom - cap_top - 0.105])
     ax.set_facecolor(PAPER)
@@ -148,14 +157,19 @@ def scatter_chart(out, fonts):
     cornell = next(p for p in pts if p["unitid"] == "190415")
     ax.scatter([byu["enrollment"]], [byu["rape24"]], s=170, color=ACCENT, ec=PAPER, lw=1.5, zorder=5)
     ax.scatter([cornell["enrollment"]], [cornell["rape24"]], s=90, color=INK, ec=PAPER, lw=1.2, zorder=4)
+    for u in (p for p in pts if p["unitid"] == UTAH_ID):
+        ax.scatter([u["enrollment"]], [u["rape24"]], s=110, color=UTAH_RED, ec=PAPER, lw=1.2, zorder=4)
 
     top = sorted(pts, key=lambda p: -abs(p["resid_z"]))
     over = [p for p in top if p["resid_z"] > 0][:6]
+    if hide:
+        over = [p for p in over if p["unitid"] in ("173957", "182670", "115755", "110714")]
     under = []
     # (label, dx, dy in points, ha) hand-placed to avoid collisions
     place = {
         "230764": (9, -3, "left"), "126614": (9, -3, "left"), "151111": (9, -3, "left"),
-        "173957": (9, 66, "left"), "182670": (9, 8, "left"), "115755": (9, 6, "left"),
+        "173957": (9, 66 if not hide else 86, "left"), "182670": (12, 26 if hide else 8, "left"),
+        "115755": (12, -26 if hide else 6, "left"),
         "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"),
     }
     done = set()
@@ -171,9 +185,19 @@ def scatter_chart(out, fonts):
                     textcoords="offset points", ha=ha, fontsize=12.5,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
                     fontproperties=fonts["bold" if p["unitid"] in (BYU_ID, "190415") else "regular"],
-                    color=ACCENT if p["unitid"] == BYU_ID else INK, zorder=6)
+                    color=ACCENT if p["unitid"] == BYU_ID else UTAH_RED if p["unitid"] == UTAH_ID else INK, zorder=6)
+    ylim = y.max() * (1.30 if hidden else 1.08)
+    for k, p in enumerate(sorted(hidden, key=lambda q: q["enrollment"])):
+        lab = {"126614": "CU Boulder", "151111": "IU Indianapolis"}.get(p["unitid"]) or short(p["name"])
+        left = p["unitid"] != "126614"
+        ytxt = ylim * (0.84 if p["unitid"] == UTAH_ID else 0.93)
+        ax.annotate("", xy=(p["enrollment"], ylim * 0.995), xytext=(p["enrollment"], ytxt - ylim * 0.012),
+                    arrowprops=dict(arrowstyle="-|>", color=UTAH_RED if p["unitid"] == UTAH_ID else INK, lw=1.8))
+        ax.text(p["enrollment"] + (-900 if left else 900), ytxt, f"{lab}: {p['rape24']}", ha="right" if left else "left",
+                va="center", fontproperties=fonts["bold"], fontsize=13,
+                color=UTAH_RED if p["unitid"] == UTAH_ID else INK)
     ax.set_xlim(0, XCAP)
-    ax.set_ylim(0, y.max() * 1.08)
+    ax.set_ylim(0, ylim)
     ax.xaxis.set_major_formatter(lambda v, _: f"{int(v/1000)}k" if v else "0")
     for lab in ax.get_xticklabels() + ax.get_yticklabels():
         lab.set_fontproperties(fonts["regular"])
@@ -308,7 +332,8 @@ def rate_scatter_3yr_chart(out, fonts):
         if p["unitid"] in byu_ids:
             ax.scatter([p["enrollment"]], [p["rate3"]], s=170, color=ACCENT, ec=PAPER, lw=1.5, zorder=5)
         elif p["unitid"] in place:
-            ax.scatter([p["enrollment"]], [p["rate3"]], s=60, color=INK, ec=PAPER, lw=1.2, zorder=4)
+            ax.scatter([p["enrollment"]], [p["rate3"]], s=90 if p["unitid"] == UTAH_ID else 60,
+                       color=UTAH_RED if p["unitid"] == UTAH_ID else INK, ec=PAPER, lw=1.2, zorder=4)
         else:
             continue
         isb = p["unitid"] in byu_ids
@@ -318,7 +343,7 @@ def rate_scatter_3yr_chart(out, fonts):
                     textcoords="offset points", ha=ha, fontsize=13 if isb else 12.5,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
                     fontproperties=fonts["bold" if isb else "regular"],
-                    color=ACCENT if isb else INK, zorder=6)
+                    color=ACCENT if isb else UTAH_RED if p["unitid"] == UTAH_ID else INK, zorder=6)
     ax.set_xlim(0, XCAP)
     ax.set_ylim(-3, YCAP)
     ax.xaxis.set_major_formatter(lambda v, _: f"{int(v/1000)}k" if v else "0")
@@ -430,8 +455,9 @@ def utah_scatter(out, fonts):
         isb = p["unitid"] == BYU_ID
         off = p["rape24"] > YTOP
         y = YTOP - 0.9 if off else p["rape24"]
-        ax.scatter([p["enrollment"]], [y], s=170 if isb else 60, marker="^" if off else "o",
-                   color=ACCENT if isb else CONTEXT_GRAY, ec=PAPER, lw=1.2, zorder=5 if isb else 4)
+        isu = p["unitid"] == UTAH_ID
+        ax.scatter([p["enrollment"]], [y], s=170 if isb else 90 if isu else 60, marker="^" if off else "o",
+                   color=ACCENT if isb else UTAH_RED if isu else CONTEXT_GRAY, ec=PAPER, lw=1.2, zorder=5 if isb else 4)
         if p["name"] in grouped:
             continue
         lab = "BYU" if isb else short(p["name"])
@@ -439,7 +465,7 @@ def utah_scatter(out, fonts):
         dx, dy, ha = (-12, -4, "right") if off else place.get(p["name"], (10, 6, "left"))
         ax.annotate(txt, (p["enrollment"], y), xytext=(dx, dy), textcoords="offset points",
                     ha=ha, fontsize=12.5, fontproperties=fonts["bold" if isb else "regular"],
-                    color=ACCENT if isb else INK, zorder=6,
+                    color=ACCENT if isb else UTAH_RED if isu else INK, zorder=6,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4))
     gp = next(p for p in pts if p["name"] == grouped[1])
     ax.annotate("Westminster, Joyce, Rocky Mountain (0 each)", (gp["enrollment"], 0), xytext=(14, 70),
@@ -459,6 +485,81 @@ def utah_scatter(out, fonts):
     plt.close(fig)
 
 
+def utah_rate_scatter(out, fonts):
+    u = json.loads((DATA / "utah-2024.json").read_text(encoding="utf-8"))
+    s = json.loads((DATA / "stats.json").read_text(encoding="utf-8"))
+    rate = s["pooled_rate_per_10k_ge_1000"]
+    pts = u["rows"]
+    YTOP, xmax = 16, 50000
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+    sub_bottom = _draw_title(fig, fonts, "Campus Size and Reported Rape Rates at Utah Universities",
+                             "2024 Clery Act reports per 10,000 students. All four-year\n"
+                             f"Utah institutions with at least {u['min_enrollment']:,} students ({len(pts)} institutions).")
+    cap_top = draw_caption_bottom(
+        fig, fonts,
+        [f"Line = U.S. national rate ({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it, "
+         "which narrows as campuses get larger. The University of Utah's rate is above the top edge.", DISCLAIMER],
+        handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
+    ax = fig.add_axes([0.14, cap_top + 0.075, 0.82, sub_bottom - cap_top - 0.105])
+    ax.set_facecolor(PAPER)
+    for sp in ("top", "right"):
+        ax.spines[sp].set_visible(False)
+    for sp in ("left", "bottom"):
+        ax.spines[sp].set_color(MUTED)
+    ax.grid(color=BORDER, lw=0.8)
+    ax.set_axisbelow(True)
+    xs = np.linspace(1000, xmax, 300)
+    exp = rate / 1e4 * xs
+    ax.fill_between(xs, np.maximum(exp - 1.96 * np.sqrt(exp), 0) / xs * 1e4,
+                    (exp + 1.96 * np.sqrt(exp) + 1) / xs * 1e4, color=CONTEXT_GRAY, alpha=0.18, lw=0)
+    ax.axhline(rate, color=INK, lw=2)
+    place = {"Snow College": (14, 8, "left"), "Utah Tech University": (14, 10, "left")}
+    pos = {"Utah State University": (29000, 7.0, "center"), "Weber State University": (33000, 9.3, "center"),
+           "Brigham Young University": (41500, 5.6, "center"), "Utah Valley University": (44500, 8.0, "center"),
+           "Southern Utah University": (15400, 2.6, "center"), "Ensign College": (8500, -1.1, "left")}
+    grouped = ("Westminster University", "Joyce University of Nursing and Health Sciences",
+               "Rocky Mountain University of Health Professions")
+    leader = dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4)
+    for p in pts:
+        isb, isu = p["unitid"] == BYU_ID, p["unitid"] == UTAH_ID
+        off = p["rate24"] > YTOP
+        y = YTOP - 0.7 if off else p["rate24"]
+        ax.scatter([p["enrollment"]], [y], s=170 if isb else 90 if isu else 60, marker="^" if off else "o",
+                   color=ACCENT if isb else UTAH_RED if isu else CONTEXT_GRAY, ec=PAPER, lw=1.2,
+                   zorder=5 if (isb or isu) else 4)
+        if p["name"] in grouped:
+            continue
+        lab = "BYU" if isb else short(p["name"])
+        txt = f"{lab} ({p['rate24']:.1f}, off chart)" if off else f"{lab} ({p['rate24']:.1f})"
+        kw = dict(ha="left", fontsize=12.5, fontproperties=fonts["bold" if (isb or isu) else "regular"],
+                  color=ACCENT if isb else UTAH_RED if isu else INK, zorder=6, arrowprops=leader)
+        if p["name"] in pos:
+            x0, y0, ha = pos[p["name"]]
+            kw["ha"] = ha
+            ax.annotate(txt, (p["enrollment"], y), xytext=(x0, y0), textcoords="data", **kw)
+        else:
+            dx, dy, ha = (-12, -4, "right") if off else place.get(p["name"], (10, 6, "left"))
+            kw["ha"] = ha
+            ax.annotate(txt, (p["enrollment"], y), xytext=(dx, dy), textcoords="offset points", **kw)
+    gp = next(p for p in pts if p["name"] == grouped[1])
+    ax.annotate("Westminster, Joyce, Rocky" + chr(10) + "Mountain (0 each)", (gp["enrollment"], 0), xytext=(1200, 6.3),
+                textcoords="data", ha="left", va="center", fontsize=12.5, fontproperties=fonts["regular"], color=INK,
+                arrowprops=leader)
+    ax.set_xlim(0, xmax)
+    ax.set_ylim(-2, YTOP + 1)
+    ax.xaxis.set_major_formatter(lambda v, _: f"{int(v/1000)}k" if v else "0")
+    for lab in ax.get_xticklabels() + ax.get_yticklabels():
+        lab.set_fontproperties(fonts["regular"])
+        lab.set_fontsize(13)
+    ax.set_xlabel("Total enrollment", fontproperties=fonts["bold"], fontsize=14, color=INK)
+    ax.set_ylabel("Reported on-campus rapes per 10,000 students, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
+    ax.text(1500, rate + 0.4, "National rate", ha="left", va="bottom",
+            fontproperties=fonts["bold"], fontsize=13, color=INK)
+    fig.savefig(out, dpi=DPI, facecolor=PAPER)
+    plt.close(fig)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", type=Path, required=True)
@@ -468,33 +569,10 @@ def main():
     FONTS.update(fonts)
     s = json.loads((DATA / "stats.json").read_text(encoding="utf-8"))
 
-    raw = json.loads((DATA / "raw-rapes-2024-top30.json").read_text(encoding="utf-8"))
-    bar_chart(rows=raw["rows"], byu=raw["byu"], value_key="rape24", rank_key="rank_raw", decimals=0,
-              title="Reported On-Campus Rapes by University, 2024",
-              subtitle="Raw number of incidents reported under the Clery Act.\n"
-                       f"Top 30 of {raw['n']:,} four-year institutions, plus BYU.",
-              out=args.out_dir / "reported-rapes-by-university-2024.png", fonts=fonts)
-
-    rt = json.loads((DATA / "rate-2024-top30.json").read_text(encoding="utf-8"))
-    bar_chart(rows=rt["rows"], byu=rt["byu"], value_key="rate24", rank_key="rank_rate", decimals=1,
-              extra_rows=[("National median", rt["median"], INK)],
-              title="Reported On-Campus Rapes per 10,000 Students, 2024",
-              subtitle="Clery Act reports adjusted for university enrollment.\n"
-                       f"Top 30 of {rt['n']:,} four-year institutions with 1,000+ students, plus BYU and the median.",
-              out=args.out_dir / "reported-rapes-per-10k-students-2024.png", fonts=fonts)
-
     scatter_chart(args.out_dir / "campus-size-vs-reported-rapes-2024.png", fonts)
-    rate_scatter_chart(args.out_dir / "campus-size-vs-reported-rape-rate-2024.png", fonts)
+    scatter_chart(args.out_dir / "campus-size-vs-reported-rapes-2024-without-outliers.png", fonts,
+                  hide=(UTAH_ID, "126614", "151111"))
     rate_scatter_3yr_chart(args.out_dir / "campus-size-vs-reported-rape-rate-3yr-2022-24.png", fonts)
-    hist_chart(args.out_dir / "byu-vs-national-distribution-2024.png", fonts)
-
-    m = json.loads((DATA / "rate-2022-24-top30.json").read_text(encoding="utf-8"))
-    bar_chart(rows=m["rows"], byu=m["byu"], value_key="rate3", rank_key="rank3", decimals=1,
-              extra_rows=[(f"National median", m["median"], INK)],
-              title="Average Reported On-Campus Rape Rate, 2022–2024",
-              subtitle="Three-year Clery Act average per 10,000 students.\n"
-                       f"Top 30 of {m['n']:,} institutions with 5,000+ students, plus BYU and the median.",
-              out=args.out_dir / "reported-rapes-per-10k-3yr-average-2022-24.png", fonts=fonts)
 
     # ---- Utah only ----
     ut = json.loads((DATA / "utah-2024.json").read_text(encoding="utf-8"))
@@ -519,6 +597,7 @@ def main():
               subtitle=f"Three-year Clery Act average per 10,000 students.\n{sub_ut}, plus the median.",
               out=args.out_dir / "utah-reported-rapes-per-10k-3yr-average-2022-24.png", fonts=fonts)
     utah_scatter(args.out_dir / "utah-campus-size-vs-reported-rapes-2024.png", fonts)
+    utah_rate_scatter(args.out_dir / "utah-campus-size-vs-reported-rape-rate-2024.png", fonts)
 
     # ---- BYU's three campuses ----
     bc = json.loads((DATA / "byu-campuses.json").read_text(encoding="utf-8"))
@@ -529,15 +608,17 @@ def main():
               title="Reported On-Campus Rapes at BYU's Campuses and Comparison Schools, 2024",
               subtitle="Raw number of incidents reported under the Clery Act.\n" + "BYU's three campuses and well-known schools.",
               out=args.out_dir / "byu-campuses-reported-rapes-2024.png", **kw)
-    bar_chart(rows=sorted(crow, key=lambda r: -r["rate24"]), value_key="rate24", decimals=1,
+    no_hi = [r for r in crow if r["unitid"] != "230047"]  # per-10k charts omit BYU-Hawaii
+    sub2 = "BYU"+chr(0x2013)+"Provo and BYU"+chr(0x2013)+"Idaho vs. the U.S. median and well-known schools."
+    bar_chart(rows=sorted(no_hi, key=lambda r: -r["rate24"]), value_key="rate24", decimals=1,
               extra_rows=[("U.S. median", bc["median_rate_2024"], INK)],
               title="Reported On-Campus Rapes per 10,000 Students at BYU's Campuses and Comparison Schools, 2024",
-              subtitle="Clery Act reports adjusted for enrollment.\n" + sub.replace("U.S. median", "U.S. median (1,000+ students)"),
+              subtitle="Clery Act reports adjusted for enrollment.\n" + sub2,
               out=args.out_dir / "byu-campuses-reported-rapes-per-10k-2024.png", **kw)
-    bar_chart(rows=sorted(crow, key=lambda r: -r["rate3"]), value_key="rate3", decimals=1,
+    bar_chart(rows=sorted(no_hi, key=lambda r: -r["rate3"]), value_key="rate3", decimals=1,
               extra_rows=[("U.S. median", bc["median_rate_3yr"], INK)],
               title="Average Reported On-Campus Rape Rate at BYU's Campuses and Comparison Schools, 2022–2024",
-              subtitle="Three-year Clery Act average per 10,000 students.\n" + sub.replace("U.S. median", "U.S. median (1,000+ students)"),
+              subtitle="Three-year Clery Act average per 10,000 students.\n" + sub2,
               out=args.out_dir / "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png", **kw)
 
 

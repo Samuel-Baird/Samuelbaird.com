@@ -2382,46 +2382,22 @@ function cleryGraphics(): Graphic[] {
   });
   return [
     mk(
-      "Reported on-campus rapes by university, 2024",
-      "Raw number of on-campus rapes reported under the Clery Act in 2024: the top 30 institutions plus BYU.",
-      "reported-rapes-by-university-2024.png",
-      `Horizontal bar chart of the 30 four-year institutions reporting the most on-campus rapes in 2024, led by the University of Utah (140), University of Colorado Boulder (96) and Indiana University Indianapolis (87). BYU, highlighted, reported ${byu.rapes_2024}, ranking ${byu.rank_raw_2024} of ${byu.of_raw}.`,
-    ),
-    mk(
-      "Reported on-campus rapes per 10,000 students, 2024",
-      "Clery Act reports adjusted for enrollment, institutions with 1,000+ students: the top 30 plus BYU.",
-      "reported-rapes-per-10k-students-2024.png",
-      `Horizontal bar chart of on-campus rapes reported per 10,000 students in 2024, top 30 of ${cleryStats.n_ge_1000} institutions with 1,000+ students, with the national median bar. BYU, highlighted, is at ${byu.rate_2024.toFixed(1)}, rank ${byu.rank_rate_ge_1000}, the ${Math.round(byu.percentile_ge_1000)}th percentile.`,
-    ),
-    mk(
       "Campus size and reported rapes",
       "Each four-year institution with 1,000+ students: enrollment against 2024 reports, with the expected count at the national rate.",
       "campus-size-vs-reported-rapes-2024.png",
       `Scatter plot of enrollment against reported on-campus rapes in 2024 with a line for the pooled national rate of ${cleryStats.pooled_rate_per_10k_ge_1000.toFixed(1)} per 10,000. The University of Utah, Colorado Boulder and Indiana University Indianapolis sit far above it. BYU (${byu.rapes_2024} reports) sits below it.`,
     ),
     mk(
-      "Campus size and reported rape rates",
-      "Each four-year institution with 1,000+ students: enrollment against 2024 reports per 10,000 students, with the national rate and its expected chance range.",
-      "campus-size-vs-reported-rape-rate-2024.png",
-      `Scatter plot of enrollment (log scale) against 2024 reported on-campus rapes per 10,000 students, with a flat line at the national rate of ${cleryStats.pooled_rate_per_10k_ge_1000.toFixed(1)} and a band that narrows as campuses grow. Small campuses scatter widely above and below it. The University of Utah, Indiana University Indianapolis and Dartmouth sit far above the band. BYU (${byu.rate_2024.toFixed(1)}) is below the line.`,
+      "Campus size and reported rapes, without the three largest outliers",
+      "Same chart as campus size and reported rapes, with the University of Utah, CU Boulder and Indiana University Indianapolis removed from the plot (arrows give their counts) to improve the scale.",
+      "campus-size-vs-reported-rapes-2024-without-outliers.png",
+      "Scatter plot of enrollment against 2024 reported on-campus rapes with the University of Utah (140, red), University of Colorado Boulder (96) and Indiana University Indianapolis (87) marked by arrows at the top edge instead of plotted. The remaining institutions scatter around the national-rate line. BYU (4) is below it.",
     ),
     mk(
       "Campus size and average reported rape rates, 2022-2024",
       "Each four-year institution with 1,000+ students: enrollment (linear scale) against the three-year average rate per 10,000 students, with all three BYU campuses labeled.",
       "campus-size-vs-reported-rape-rate-3yr-2022-24.png",
-      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus rapes per 10,000 students, with a flat line at the national rate of 3.8 and a band that narrows as campuses grow. BYU-Provo (1.0), BYU-Idaho (1.2) and BYU-Hawaii (5.7) are highlighted in blue. The University of Utah (30.4) and Indiana University Indianapolis (35.4) sit far above the band.",
-    ),
-    mk(
-      "Where BYU falls among U.S. universities",
-      "Histogram of 2024 reported on-campus rape rates for institutions with 5,000+ students, with BYU and the median marked.",
-      "byu-vs-national-distribution-2024.png",
-      `Histogram of reported on-campus rapes per 10,000 students, ${cleryStats.n_ge_5000} institutions with 5,000+ students. BYU's rate is ${byu.rate_2024.toFixed(2)}; the median is ${cleryStats.distribution_ge_5000_2024.median.toFixed(2)} and the mean ${cleryStats.distribution_ge_5000_2024.mean.toFixed(2)}. BYU is at the ${Math.round(byu.percentile_ge_5000)}th percentile.`,
-    ),
-    mk(
-      "Average reported on-campus rape rate, 2022-2024",
-      "Three-year average per 10,000 students, institutions with 5,000+ students: the top 30, the national median, and BYU.",
-      "reported-rapes-per-10k-3yr-average-2022-24.png",
-      `Horizontal bar chart of the three-year average reported on-campus rape rate per 10,000 students, led by Indiana University Indianapolis (35.4) and the University of Utah (30.4). The national median is ${cleryStats.distribution_3yr_ge_5000.median.toFixed(1)}. BYU is ${byu.rate_3yr.toFixed(1)}, ranking ${byu.rank_3yr} of ${byu.of_3yr}.`,
+      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus rapes per 10,000 students, with a flat line at the national rate of 3.8 and a band that narrows as campuses grow. BYU-Provo (1.0), BYU-Idaho (1.2) and BYU-Hawaii (5.7) are highlighted in blue. The University of Utah (30.4, red) and Indiana University Indianapolis (35.4) sit far above the band.",
     ),
     ...cleryUtahGraphics(),
     ...cleryByuCampusGraphics(),
@@ -2459,6 +2435,12 @@ function cleryUtahGraphics(): Graphic[] {
       "utah-campus-size-vs-reported-rapes-2024.png",
       `Scatter plot of enrollment against 2024 reported on-campus rapes at ${u.n} Utah institutions with a line for the U.S. national rate. The University of Utah (140) is far above it and off the chart; BYU (4) is below it.`,
     ),
+    mk(
+      "Utah: campus size and reported rape rates",
+      "Utah's four-year institutions with 1,000+ students: enrollment against 2024 reports per 10,000 students, with the U.S. national rate and its expected chance range.",
+      "utah-campus-size-vs-reported-rape-rate-2024.png",
+      `Scatter plot of enrollment against 2024 reported on-campus rapes per 10,000 students at ${u.n} Utah institutions, with a flat line at the U.S. national rate. The University of Utah (37.9, red) is above the top edge; Snow College (9.0) is above the chance band; BYU (1.1, blue) is below the line.`,
+    ),
   ];
 }
 
@@ -2480,13 +2462,13 @@ function cleryByuCampusGraphics(): Graphic[] {
       "BYU campuses: reported on-campus rapes per 10,000 students, 2024",
       "2024 rates for the three BYU campuses, the U.S. median, and well-known schools.",
       "byu-campuses-reported-rapes-per-10k-2024.png",
-      `Horizontal bar chart of 2024 reported on-campus rapes per 10,000 students. BYU–Provo ${p.rate24.toFixed(1)}, BYU–Idaho ${i.rate24.toFixed(1)} and BYU–Hawaii ${h.rate24.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_2024.toFixed(1)} and comparison schools. BYU–Hawaii has about 2,900 students, so two reports make its rate volatile.`,
+      `Horizontal bar chart of 2024 reported on-campus rapes per 10,000 students. BYU–Provo ${p.rate24.toFixed(1)} and BYU–Idaho ${i.rate24.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_2024.toFixed(1)} and comparison schools including the University of Utah (red).`,
     ),
     mk(
       "BYU campuses: average reported on-campus rape rate, 2022-2024",
       "Three-year average per 10,000 students for the three BYU campuses, the U.S. median, and well-known schools.",
       "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png",
-      `Horizontal bar chart of the 2022-2024 average reported rate. BYU–Provo ${p.rate3.toFixed(1)}, BYU–Idaho ${i.rate3.toFixed(1)} and BYU–Hawaii ${h.rate3.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_3yr.toFixed(1)} and comparison schools.`,
+      `Horizontal bar chart of the 2022-2024 average reported rate. BYU–Provo ${p.rate3.toFixed(1)} and BYU–Idaho ${i.rate3.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_3yr.toFixed(1)} and comparison schools.`,
     ),
   ];
 }
