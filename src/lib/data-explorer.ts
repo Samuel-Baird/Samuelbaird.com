@@ -2395,9 +2395,9 @@ function cleryGraphics(): Graphic[] {
     ),
     mk(
       "Campus size and average reported rape rates, 2022-2024",
-      "Each four-year institution with 1,000+ students: enrollment (linear scale) against the three-year average rate per 10,000 students, with all three BYU campuses labeled.",
+      "Each four-year institution with 1,000+ students: enrollment (linear scale) against the three-year average rate per 10,000 students, with BYU-Provo, BYU-Idaho and Utah Valley University labeled.",
       "campus-size-vs-reported-rape-rate-3yr-2022-24.png",
-      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus rapes per 10,000 students, with a flat line at the national rate of 3.8 and a band that narrows as campuses grow. BYU-Provo (1.0), BYU-Idaho (1.2) and BYU-Hawaii (5.7) are highlighted in blue. The University of Utah (30.4, red) and Indiana University Indianapolis (35.4) sit far above the band.",
+      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus rapes per 10,000 students, with a flat line at the national rate of 3.8 and a band that narrows as campuses grow. BYU-Provo (1.0) and BYU-Idaho (1.2) are highlighted in blue and Utah Valley University (1.5) in green. The University of Utah (30.4, red) and Indiana University Indianapolis (35.4) sit far above the band.",
     ),
     mk(
       "Reported on-campus rapes per 10,000 students by state, 2022-2024",

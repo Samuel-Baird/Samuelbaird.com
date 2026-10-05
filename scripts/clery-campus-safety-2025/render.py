@@ -40,6 +40,8 @@ SCHOOL_COLORS = {"230038": "#002E5D",  # BYU royal blue
                  "230737": "#275D38",  # Utah Valley green
                  "230603": "#C8102E",  # Southern Utah cardinal
                  "230171": "#E03C31"}  # Utah Tech red
+UVU_ID = "230737"
+UVU_GREEN = "#275D38"
 UTAH_RED = "#9C2B2B"  # crimson from chart_style; the University of Utah is red on every chart
 BYU_LABEL = "Brigham Young University"
 DISCLAIMER = ("These figures represent incidents reported under the Clery Act, not estimates of the actual "
@@ -169,6 +171,8 @@ def scatter_chart(out, fonts, hide=()):
     ax.scatter([cornell["enrollment"]], [cornell["rape24"]], s=90, color=INK, ec=PAPER, lw=1.2, zorder=4)
     for u in (p for p in pts if p["unitid"] == UTAH_ID):
         ax.scatter([u["enrollment"]], [u["rape24"]], s=110, color=UTAH_RED, ec=PAPER, lw=1.2, zorder=4)
+    uvu = next(p for p in pts if p["unitid"] == UVU_ID)
+    ax.scatter([uvu["enrollment"]], [uvu["rape24"]], s=110, color=UVU_GREEN, ec=PAPER, lw=1.2, zorder=4)
 
     top = sorted(pts, key=lambda p: -abs(p["resid_z"]))
     over = [p for p in top if p["resid_z"] > 0][:6]
@@ -180,22 +184,25 @@ def scatter_chart(out, fonts, hide=()):
         "230764": (9, -3, "left"), "126614": (9, -3, "left"), "151111": (9, -3, "left"),
         "173957": (9, 66 if not hide else 86, "left"), "182670": (12, 26 if hide else 8, "left"),
         "115755": (12, -26 if hide else 6, "left"),
-        "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"),
+        "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"), UVU_ID: (12, 26, "left"),
     }
     done = set()
-    for p in over + under + [byu, cornell]:
+    for p in over + under + [byu, cornell, uvu]:
         if p["unitid"] in done:
             continue
         done.add(p["unitid"])
         dx, dy, ha = place.get(p["unitid"], (8, 4, "left"))
         lab = short(p["name"]) if p["unitid"] != BYU_ID else "BYU"
+        if p["unitid"] == UVU_ID:
+            lab = "Utah Valley"
         if p["unitid"] == "190415":
             lab = "Cornell"
         ax.annotate(f"{lab} ({p['rape24']})", (p["enrollment"], p["rape24"]), xytext=(dx, dy),
                     textcoords="offset points", ha=ha, fontsize=12.5,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
-                    fontproperties=fonts["bold" if p["unitid"] in (BYU_ID, "190415") else "regular"],
-                    color=ACCENT if p["unitid"] == BYU_ID else UTAH_RED if p["unitid"] == UTAH_ID else INK, zorder=6)
+                    fontproperties=fonts["bold" if p["unitid"] in (BYU_ID, "190415", UVU_ID) else "regular"],
+                    color=ACCENT if p["unitid"] == BYU_ID else UTAH_RED if p["unitid"] == UTAH_ID
+                    else UVU_GREEN if p["unitid"] == UVU_ID else INK, zorder=6)
     ylim = y.max() * (1.30 if hidden else 1.08)
     for k, p in enumerate(sorted(hidden, key=lambda q: q["enrollment"])):
         lab = {"126614": "CU Boulder", "151111": "IU Indianapolis"}.get(p["unitid"]) or short(p["name"])
@@ -333,30 +340,33 @@ def rate_scatter_3yr_chart(out, fonts):
     ax.fill_between(xs, np.maximum(exp - half, 0) / xs * 1e4, (exp + half + 1 / 3) / xs * 1e4,
                     color=CONTEXT_GRAY, alpha=0.18, lw=0)
     ax.axhline(rate, color=INK, lw=2)
-    shown = [p for p in pts if p["enrollment"] <= XCAP and p["rate3"] <= YCAP and p["unitid"] not in byu_ids]
+    hi_ids = {"230038", "142522", UVU_ID}  # highlighted dots: BYU-Provo, BYU-Idaho (blue) and Utah Valley (green)
+    shown = [p for p in pts if p["enrollment"] <= XCAP and p["rate3"] <= YCAP and p["unitid"] not in hi_ids]
     ax.scatter([p["enrollment"] for p in shown], [p["rate3"] for p in shown], s=22, color=CONTEXT_GRAY,
                alpha=0.65, lw=0, zorder=3)
-    place = {"230038": (-16, 62, "right"), "142522": (16, 36, "left"), "230047": (22, 40, "left"),
+    place = {"230038": (-16, 62, "right"), "142522": (16, 36, "left"),
              "230764": (-14, 8, "right")}
-    no_label = {"230047"}  # BYU-Hawaii keeps its blue dot but no label
+    byu_ids = {k: v for k, v in byu_ids.items() if k != "230047"}  # BYU-Hawaii is an ordinary gray dot
+    place[UVU_ID] = (0, 80, "center")
     for p in pts:
         if p["unitid"] in byu_ids:
             ax.scatter([p["enrollment"]], [p["rate3"]], s=170, color=ACCENT, ec=PAPER, lw=1.5, zorder=5)
+        elif p["unitid"] == UVU_ID:
+            ax.scatter([p["enrollment"]], [p["rate3"]], s=110, color=UVU_GREEN, ec=PAPER, lw=1.5, zorder=5)
         elif p["unitid"] in place:
             ax.scatter([p["enrollment"]], [p["rate3"]], s=90 if p["unitid"] == UTAH_ID else 60,
                        color=UTAH_RED if p["unitid"] == UTAH_ID else INK, ec=PAPER, lw=1.2, zorder=4)
         else:
             continue
-        if p["unitid"] in no_label:
-            continue
         isb = p["unitid"] in byu_ids
-        lab = byu_ids.get(p["unitid"]) or short(p["name"])
+        lab = "Utah Valley" if p["unitid"] == UVU_ID else byu_ids.get(p["unitid"]) or short(p["name"])
         dx, dy, ha = place[p["unitid"]]
         ax.annotate(f"{lab} ({p['rate3']:.1f})", (p["enrollment"], p["rate3"]), xytext=(dx, dy),
                     textcoords="offset points", ha=ha, fontsize=13 if isb else 12.5,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
-                    fontproperties=fonts["bold" if isb else "regular"],
-                    color=ACCENT if isb else UTAH_RED if p["unitid"] == UTAH_ID else INK, zorder=6)
+                    fontproperties=fonts["bold" if (isb or p["unitid"] == UVU_ID) else "regular"],
+                    color=ACCENT if isb else UTAH_RED if p["unitid"] == UTAH_ID
+                    else UVU_GREEN if p["unitid"] == UVU_ID else INK, zorder=6)
     ax.set_xlim(0, XCAP)
     ax.set_ylim(-3, YCAP)
     ax.xaxis.set_major_formatter(lambda v, _: f"{int(v/1000)}k" if v else "0")
