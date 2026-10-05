@@ -16,8 +16,9 @@ Method
   private for-profit).
 - Rate per 10,000 = rapes / enrollment x 10,000. The file carries one
   enrollment figure per institution, applied to all three years.
-- A year counts only if FILTER<yy> == 1 for the institution's rows and the
-  count is not blank.
+- A year counts only if at least one of the institution's rows has
+  FILTER<yy> == 1 (branches opened later carry 0 and blank counts) and the
+  summed count is not blank.
 
 Usage: python scripts/clery-campus-safety-2025/analyze.py [--src DIR]
 Writes docs/datasets/clery-campus-safety-2025/*.json
@@ -52,7 +53,7 @@ def load(src: Path) -> pd.DataFrame:
     })
     for y in ("22", "23", "24"):
         out[f"rape{y}"] = g[f"RAPE{y}"].sum(min_count=1)
-        out[f"ok{y}"] = g[f"FILTER{y}"].min() == 1
+        out[f"ok{y}"] = g[f"FILTER{y}"].max() == 1
     return out.dropna(subset=["enrollment"])
 
 
@@ -97,10 +98,10 @@ def main():
     large["rank_rate"] = large.rate24.rank(ascending=False, method="min").astype(int)
 
     # ---- 2022-24 ----
-    m = d[d.ok22 & d.ok23 & d.ok24 & d[["rape22", "rape23", "rape24"]].notna().all(axis=1)
-          & (d.enrollment >= MIN_ENR_LARGE)].copy()
-    m["avg_rapes"] = m[["rape22", "rape23", "rape24"]].mean(axis=1)
-    m["rate3"] = m.avg_rapes / m.enrollment * 1e4
+    m_all = d[d.ok22 & d.ok23 & d.ok24 & d[["rape22", "rape23", "rape24"]].notna().all(axis=1)].copy()
+    m_all["avg_rapes"] = m_all[["rape22", "rape23", "rape24"]].mean(axis=1)
+    m_all["rate3"] = m_all.avg_rapes / m_all.enrollment * 1e4
+    m = m_all[m_all.enrollment >= MIN_ENR_LARGE].copy()
     m["rank3"] = m.rate3.rank(ascending=False, method="min").astype(int)
 
     # ---- trend model (>=1,000): expected = pooled national rate x enrollment ----
@@ -144,7 +145,7 @@ def main():
         "byu": rec(BYU, b, cols_raw)})
     cols_rate = ["rape24", "enrollment", "rate24", "rank_rate"]
     dump("rate-2024-top30.json", {
-        "min_enrollment": MIN_ENR_BROAD, "n": int(len(broad)),
+        "min_enrollment": MIN_ENR_BROAD, "n": int(len(broad)), "median": round(float(broad.rate24.median()), 4),
         "rows": table(broad.sort_values("rate24", ascending=False).head(30), cols_rate),
         "byu": rec(BYU, broad.loc[BYU], cols_rate)})
     cols_m = ["rape22", "rape23", "rape24", "avg_rapes", "enrollment", "rate3", "rank3"]
@@ -160,7 +161,31 @@ def main():
         "rates": [round(float(x), 4) for x in large.rate24.sort_values()],
         "byu_rate": stats["byu"]["rate_2024"]}, indent=None)
 
+    # ---- Utah only (all Utah four-year institutions with 1,000+ students) ----
+    ut = y24[(y24.state == "UT") & (y24.enrollment >= MIN_ENR_BROAD)].copy()
+    ut["rate24"] = ut.rape24 / ut.enrollment * 1e4
+    ut["rank_raw"] = ut.rape24.rank(ascending=False, method="min").astype(int)
+    ut["rank_rate"] = ut.rate24.rank(ascending=False, method="min").astype(int)
+    ut3 = m_all[(m_all.state == "UT") & (m_all.enrollment >= MIN_ENR_BROAD)].copy()
+    ut3["rank3"] = ut3.rate3.rank(ascending=False, method="min").astype(int)
+    pooled_ut = ut.rape24.sum() / ut.enrollment.sum()
+    ut["expected"] = pooled_ut * ut.enrollment
+    ut_stats = {
+        "min_enrollment": MIN_ENR_BROAD, "n": int(len(ut)), "n_3yr": int(len(ut3)),
+        "median_rate_2024": round(float(ut.rate24.median()), 4), "median_rate_3yr": round(float(ut3.rate3.median()), 4),
+        "pooled_rate_per_10k": round(pooled_ut * 1e4, 4),
+        "byu": {"rank_raw": int(ut.loc[BYU, "rank_raw"]), "rank_rate": int(ut.loc[BYU, "rank_rate"]),
+                "rank_3yr": int(ut3.loc[BYU, "rank3"]), "rate_2024": round(float(ut.loc[BYU, "rate24"]), 4),
+                "rate_3yr": round(float(ut3.loc[BYU, "rate3"]), 4)},
+    }
+    dump("utah-stats.json", ut_stats)
+    cu = ["rape24", "enrollment", "rate24", "rank_raw", "rank_rate", "expected"]
+    dump("utah-2024.json", {**ut_stats, "rows": table(ut.sort_values(["rape24", "enrollment"], ascending=False), cu)})
+    c3 = ["rape22", "rape23", "rape24", "avg_rapes", "enrollment", "rate3", "rank3"]
+    dump("utah-2022-24.json", {**ut_stats, "rows": table(ut3.sort_values("rate3", ascending=False), c3)})
+
     print(json.dumps(stats, indent=2))
+    print(json.dumps(ut_stats, indent=2))
     for t, df, c in (
         ("RAW top 30", y24.sort_values("rape24", ascending=False).head(30), ["name", "rape24", "enrollment", "rate24"]),
         ("RATE 2024 >=1000 top 30", broad.sort_values("rate24", ascending=False).head(30), ["name", "rape24", "enrollment", "rate24"]),

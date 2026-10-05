@@ -1,7 +1,7 @@
 {
   "min_enrollment": 5000,
-  "n": 621,
-  "median": 2.4614,
+  "n": 690,
+  "median": 2.5034,
   "rows": [
     {
       "unitid": "151111",
@@ -16,6 +16,18 @@
       "rank3": 1
     },
     {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "rape22": 24.0,
+      "rape23": 172.0,
+      "rape24": 140,
+      "avg_rapes": 112.0,
+      "enrollment": 36894.0,
+      "rate3": 30.3572,
+      "rank3": 2
+    },
+    {
       "unitid": "216597",
       "name": "Villanova University",
       "state": "PA",
@@ -25,7 +37,7 @@
       "avg_rapes": 26.3333,
       "enrollment": 10041.0,
       "rate3": 26.2258,
-      "rank3": 2
+      "rank3": 3
     },
     {
       "unitid": "130794",
@@ -37,7 +49,7 @@
       "avg_rapes": 35.3333,
       "enrollment": 15564.0,
       "rate3": 22.702,
-      "rank3": 3
+      "rank3": 4
     },
     {
       "unitid": "198695",
@@ -49,7 +61,7 @@
       "avg_rapes": 14.0,
       "enrollment": 6331.0,
       "rate3": 22.1134,
-      "rank3": 4
+      "rank3": 5
     },
     {
       "unitid": "182670",
@@ -61,7 +73,31 @@
       "avg_rapes": 14.6667,
       "enrollment": 6938.0,
       "rate3": 21.1396,
-      "rank3": 5
+      "rank3": 6
+    },
+    {
+      "unitid": "115755",
+      "name": "California State Polytechnic University-Humboldt",
+      "state": "CA",
+      "rape22": 6.0,
+      "rape23": 7.0,
+      "rape24": 26,
+      "avg_rapes": 13.0,
+      "enrollment": 6237.0,
+      "rate3": 20.8434,
+      "rank3": 7
+    },
+    {
+      "unitid": "240471",
+      "name": "University of Wisconsin-River Falls",
+      "state": "WI",
+      "rape22": 6.0,
+      "rape23": 8.0,
+      "rape24": 14,
+      "avg_rapes": 9.3333,
+      "enrollment": 5243.0,
+      "rate3": 17.8015,
+      "rank3": 8
     },
     {
       "unitid": "160755",
@@ -73,7 +109,7 @@
       "avg_rapes": 22.6667,
       "enrollment": 13310.0,
       "rate3": 17.0298,
-      "rank3": 6
+      "rank3": 9
     },
     {
       "unitid": "180489",
@@ -85,7 +121,7 @@
       "avg_rapes": 18.0,
       "enrollment": 10811.0,
       "rate3": 16.6497,
-      "rank3": 7
+      "rank3": 10
     },
     {
       "unitid": "243744",
@@ -97,7 +133,7 @@
       "avg_rapes": 30.3333,
       "enrollment": 18625.0,
       "rate3": 16.2864,
-      "rank3": 8
+      "rank3": 11
     },
     {
       "unitid": "130934",
@@ -109,7 +145,7 @@
       "avg_rapes": 8.6667,
       "enrollment": 5327.0,
       "rate3": 16.2693,
-      "rank3": 9
+      "rank3": 12
     },
     {
       "unitid": "110714",
@@ -121,7 +157,7 @@
       "avg_rapes": 31.6667,
       "enrollment": 19938.0,
       "rate3": 15.8826,
-      "rank3": 10
+      "rank3": 13
     },
     {
       "unitid": "198516",
@@ -133,7 +169,7 @@
       "avg_rapes": 11.0,
       "enrollment": 7239.0,
       "rate3": 15.1955,
-      "rank3": 11
+      "rank3": 14
     },
     {
       "unitid": "199281",
@@ -145,7 +181,7 @@
       "avg_rapes": 11.3333,
       "enrollment": 7674.0,
       "rate3": 14.7685,
-      "rank3": 12
+      "rank3": 15
     },
     {
       "unitid": "192819",
@@ -157,7 +193,7 @@
       "avg_rapes": 9.3333,
       "enrollment": 6356.0,
       "rate3": 14.6843,
-      "rank3": 13
+      "rank3": 16
     },
     {
       "unitid": "183044",
@@ -169,7 +205,7 @@
       "avg_rapes": 19.6667,
       "enrollment": 13554.0,
       "rate3": 14.5099,
-      "rank3": 14
+      "rank3": 17
     },
     {
       "unitid": "217156",
@@ -181,7 +217,7 @@
       "avg_rapes": 17.0,
       "enrollment": 11956.0,
       "rate3": 14.2188,
-      "rank3": 15
+      "rank3": 18
     },
     {
       "unitid": "240189",
@@ -193,7 +229,19 @@
       "avg_rapes": 16.6667,
       "enrollment": 11746.0,
       "rate3": 14.1892,
-      "rank3": 16
+      "rank3": 19
+    },
+    {
+      "unitid": "227757",
+      "name": "Rice University",
+      "state": "TX",
+      "rape22": 12.0,
+      "rape23": 13.0,
+      "rape24": 12,
+      "avg_rapes": 12.3333,
+      "enrollment": 8961.0,
+      "rate3": 13.7633,
+      "rank3": 20
     },
     {
       "unitid": "196130",
@@ -205,7 +253,7 @@
       "avg_rapes": 8.3333,
       "enrollment": 6188.0,
       "rate3": 13.4669,
-      "rank3": 17
+      "rank3": 21
     },
     {
       "unitid": "169798",
@@ -217,7 +265,7 @@
       "avg_rapes": 17.0,
       "enrollment": 12631.0,
       "rate3": 13.459,
-      "rank3": 18
+      "rank3": 22
     },
     {
       "unitid": "126614",
@@ -229,7 +277,7 @@
       "avg_rapes": 52.0,
       "enrollment": 38799.0,
       "rate3": 13.4024,
-      "rank3": 19
+      "rank3": 23
     },
     {
       "unitid": "150163",
@@ -241,7 +289,7 @@
       "avg_rapes": 7.6667,
       "enrollment": 5746.0,
       "rate3": 13.3426,
-      "rank3": 20
+      "rank3": 24
     },
     {
       "unitid": "204024",
@@ -253,7 +301,7 @@
       "avg_rapes": 25.0,
       "enrollment": 18838.0,
       "rate3": 13.271,
-      "rank3": 21
+      "rank3": 25
     },
     {
       "unitid": "227526",
@@ -265,7 +313,19 @@
       "avg_rapes": 13.0,
       "enrollment": 9922.0,
       "rate3": 13.1022,
-      "rank3": 22
+      "rank3": 26
+    },
+    {
+      "unitid": "102614",
+      "name": "University of Alaska Fairbanks",
+      "state": "AK",
+      "rape22": 9.0,
+      "rape23": 13.0,
+      "rape24": 5,
+      "avg_rapes": 9.0,
+      "enrollment": 6893.0,
+      "rate3": 13.0567,
+      "rank3": 27
     },
     {
       "unitid": "140447",
@@ -277,7 +337,7 @@
       "avg_rapes": 12.0,
       "enrollment": 9196.0,
       "rate3": 13.0492,
-      "rank3": 23
+      "rank3": 28
     },
     {
       "unitid": "200004",
@@ -289,7 +349,7 @@
       "avg_rapes": 15.0,
       "enrollment": 11686.0,
       "rate3": 12.8359,
-      "rank3": 24
+      "rank3": 29
     },
     {
       "unitid": "196194",
@@ -301,66 +361,6 @@
       "avg_rapes": 8.3333,
       "enrollment": 6715.0,
       "rate3": 12.41,
-      "rank3": 25
-    },
-    {
-      "unitid": "129525",
-      "name": "University of Hartford",
-      "state": "CT",
-      "rape22": 8.0,
-      "rape23": 9.0,
-      "rape24": 5,
-      "avg_rapes": 7.3333,
-      "enrollment": 6015.0,
-      "rate3": 12.1917,
-      "rank3": 26
-    },
-    {
-      "unitid": "240480",
-      "name": "University of Wisconsin-Stevens Point",
-      "state": "WI",
-      "rape22": 5.0,
-      "rape23": 11.0,
-      "rape24": 14,
-      "avg_rapes": 10.0,
-      "enrollment": 8233.0,
-      "rate3": 12.1462,
-      "rank3": 27
-    },
-    {
-      "unitid": "123572",
-      "name": "Sonoma State University",
-      "state": "CA",
-      "rape22": 13.0,
-      "rape23": 5.0,
-      "rape24": 2,
-      "avg_rapes": 6.6667,
-      "enrollment": 5891.0,
-      "rate3": 11.3167,
-      "rank3": 28
-    },
-    {
-      "unitid": "167729",
-      "name": "Salem State University",
-      "state": "MA",
-      "rape22": 4.0,
-      "rape23": 8.0,
-      "rape24": 9,
-      "avg_rapes": 7.0,
-      "enrollment": 6230.0,
-      "rate3": 11.236,
-      "rank3": 29
-    },
-    {
-      "unitid": "110705",
-      "name": "University of California-Santa Barbara",
-      "state": "CA",
-      "rape22": 27.0,
-      "rape23": 24.0,
-      "rape24": 37,
-      "avg_rapes": 29.3333,
-      "enrollment": 26133.0,
-      "rate3": 11.2246,
       "rank3": 30
     }
   ],
@@ -374,6 +374,6 @@
     "avg_rapes": 3.6667,
     "enrollment": 35873.0,
     "rate3": 1.0221,
-    "rank3": 415
+    "rank3": 464
   }
 }

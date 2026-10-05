@@ -24,6 +24,7 @@ import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/pol
 import gallupGamblingData from "../../docs/datasets/gallup-values-beliefs-gambling/gallup-acceptable-by-religion.json";
 import gallupAttendanceData from "../../docs/datasets/gallup-values-beliefs-gambling/acceptable-by-attendance.json";
 import cleryStats from "../../docs/datasets/clery-campus-safety-2025/stats.json";
+import cleryUtah from "../../docs/datasets/clery-campus-safety-2025/utah-stats.json";
 import pewGamblingCountryData from "../../docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json";
 import pewGamblingReligionData from "../../docs/datasets/pew-gambling-morality-2025/us-gambling-wrong-by-religion.json";
 import nextMormonsGamblingData from "../../docs/datasets/next-mormons-survey-2016/next-mormons-gambling-view.json";
@@ -2389,7 +2390,7 @@ function cleryGraphics(): Graphic[] {
       "Reported on-campus rapes per 10,000 students, 2024",
       "Clery Act reports adjusted for enrollment, institutions with 1,000+ students: the top 30 plus BYU.",
       "reported-rapes-per-10k-students-2024.png",
-      `Horizontal bar chart of on-campus rapes reported per 10,000 students in 2024, top 30 of ${cleryStats.n_ge_1000} institutions with 1,000+ students. BYU, highlighted, is at ${byu.rate_2024.toFixed(1)}, rank ${byu.rank_rate_ge_1000}, the ${Math.round(byu.percentile_ge_1000)}th percentile.`,
+      `Horizontal bar chart of on-campus rapes reported per 10,000 students in 2024, top 30 of ${cleryStats.n_ge_1000} institutions with 1,000+ students, with the national median bar. BYU, highlighted, is at ${byu.rate_2024.toFixed(1)}, rank ${byu.rank_rate_ge_1000}, the ${Math.round(byu.percentile_ge_1000)}th percentile.`,
     ),
     mk(
       "Campus size and reported rapes",
@@ -2407,7 +2408,42 @@ function cleryGraphics(): Graphic[] {
       "Average reported on-campus rape rate, 2022-2024",
       "Three-year average per 10,000 students, institutions with 5,000+ students: the top 30, the national median, and BYU.",
       "reported-rapes-per-10k-3yr-average-2022-24.png",
-      `Horizontal bar chart of the three-year average reported on-campus rape rate per 10,000 students, led by Indiana University Indianapolis (35.4). The national median is ${cleryStats.distribution_3yr_ge_5000.median.toFixed(1)}. BYU is ${byu.rate_3yr.toFixed(1)}, ranking ${byu.rank_3yr} of ${byu.of_3yr}.`,
+      `Horizontal bar chart of the three-year average reported on-campus rape rate per 10,000 students, led by Indiana University Indianapolis (35.4) and the University of Utah (30.4). The national median is ${cleryStats.distribution_3yr_ge_5000.median.toFixed(1)}. BYU is ${byu.rate_3yr.toFixed(1)}, ranking ${byu.rank_3yr} of ${byu.of_3yr}.`,
+    ),
+    ...cleryUtahGraphics(),
+  ];
+}
+
+function cleryUtahGraphics(): Graphic[] {
+  const base = "/data-explorer/clery-campus-safety-2025/";
+  const u = cleryUtah;
+  const mk = (title: string, description: string, file: string, alt: string): Graphic => ({
+    title, description, imageSrc: base + file, width: 1080, height: 1350, alt,
+  });
+  return [
+    mk(
+      "Utah: reported on-campus rapes by university, 2024",
+      `Raw number of on-campus rapes reported under the Clery Act in 2024 at all ${u.n} four-year Utah institutions with 1,000+ students.`,
+      "utah-reported-rapes-by-university-2024.png",
+      `Horizontal bar chart of 2024 reported on-campus rapes at ${u.n} Utah institutions, led by the University of Utah (140). BYU, highlighted, reported 4, ranking ${u.byu.rank_raw} of ${u.n}.`,
+    ),
+    mk(
+      "Utah: reported on-campus rapes per 10,000 students, 2024",
+      "Clery Act reports adjusted for enrollment at Utah's four-year institutions with 1,000+ students, with the Utah median.",
+      "utah-reported-rapes-per-10k-students-2024.png",
+      `Horizontal bar chart of 2024 reports per 10,000 students at ${u.n} Utah institutions. The Utah median is ${u.median_rate_2024.toFixed(1)}. BYU, highlighted, is at ${u.byu.rate_2024.toFixed(1)}, ranking ${u.byu.rank_rate} of ${u.n}.`,
+    ),
+    mk(
+      "Utah: average reported on-campus rape rate, 2022-2024",
+      "Three-year average per 10,000 students at Utah's four-year institutions with 1,000+ students, with the Utah median.",
+      "utah-reported-rapes-per-10k-3yr-average-2022-24.png",
+      `Horizontal bar chart of the 2022-2024 average reported rate at ${u.n_3yr} Utah institutions. The Utah median is ${u.median_rate_3yr.toFixed(1)}. BYU, highlighted, is at ${u.byu.rate_3yr.toFixed(1)}, ranking ${u.byu.rank_3yr} of ${u.n_3yr}.`,
+    ),
+    mk(
+      "Utah: campus size and reported rapes",
+      "Utah's four-year institutions with 1,000+ students: enrollment against 2024 reports, with the expected count at the U.S. national rate.",
+      "utah-campus-size-vs-reported-rapes-2024.png",
+      `Scatter plot of enrollment against 2024 reported on-campus rapes at ${u.n} Utah institutions with a line for the U.S. national rate. The University of Utah (140) is far above it and off the chart; BYU (4) is below it.`,
     ),
   ];
 }
