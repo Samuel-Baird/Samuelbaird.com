@@ -2449,9 +2449,9 @@ function cleryUtahGraphics(): Graphic[] {
     ),
     mk(
       "Utah: reported on-campus rapes per 10,000 students, 2022-24",
-      "Three-year average per 10,000 students at Utah's four-year institutions with 1,000+ students, with the Utah median.",
+      "Three-year average per 10,000 students at Utah's four-year institutions with 1,000+ students, with the Utah and U.S. medians.",
       "utah-reported-rapes-per-10k-3yr-average-2022-24.png",
-      `Horizontal bar chart of the 2022-2024 average reported rate at ${u.n_3yr} Utah institutions. The Utah median is ${u.median_rate_3yr.toFixed(1)}. BYU, highlighted, is at ${u.byu.rate_3yr.toFixed(1)}, ranking ${u.byu.rank_3yr} of ${u.n_3yr}.`,
+      `Horizontal bar chart of the 2022-2024 average reported rate at ${u.n_3yr} Utah institutions. The Utah median is ${u.median_rate_3yr.toFixed(1)} and the U.S. median is ${cleryByu.median_rate_3yr.toFixed(1)}. BYU, highlighted, is at ${u.byu.rate_3yr.toFixed(1)}, ranking ${u.byu.rank_3yr} of ${u.n_3yr}.`,
     ),
     mk(
       "Utah: campus size and reported rapes",
