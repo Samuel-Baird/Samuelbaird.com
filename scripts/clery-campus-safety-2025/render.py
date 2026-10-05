@@ -32,6 +32,9 @@ DATA = HERE.parent.parent / "docs" / "datasets" / "clery-campus-safety-2025"
 HANDLE = "@ithinkisam | data: U.S. Dept. of Education, Clery Act 2025"
 BYU_ID = "230038"
 BYU_LABEL = "Brigham Young University"
+DISCLAIMER = ("These figures represent incidents reported under the Clery Act, not estimates of the actual "
+              "prevalence of sexual assault. Differences may reflect both differences in victimization and "
+              "differences in reporting practices.")
 
 SHORT = [
     (r"^Louisiana State University and Agricultural & Mechanical College$", "Louisiana State University"),
@@ -88,7 +91,7 @@ def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, ex
         order.insert(idx, lab)
     render_magnitude_bar(
         rows=order, values=values, highlight_rows=None, row_colors=colors,
-        title=title, subtitle=subtitle, caption_paragraphs=[], handle=HANDLE, out_path=out, fonts=fonts,
+        title=title, subtitle=subtitle, caption_paragraphs=[DISCLAIMER], caption_wrap_width=80, caption_line_step=0.0215, handle=HANDLE, out_path=out, fonts=fonts,
         value_suffix="", value_decimals=decimals, axes_left=0.40,
         row_label_fontsize=12.5, value_label_fontsize=12.5, bar_h_override=0.72, margin_frac_override=0.015,
     )
@@ -123,7 +126,7 @@ def scatter_chart(out, fonts):
         [f"Line = expected reports if every campus reported at the pooled national rate "
          f"({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it. "
          "Labeled dots are the largest departures above the line, plus BYU and Cornell for comparison. "
-         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported 13 or fewer."],
+         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported 13 or fewer.", DISCLAIMER],
         handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
     ax = fig.add_axes([0.14, cap_top + 0.075, 0.82, sub_bottom - cap_top - 0.105])
     ax.set_facecolor(PAPER)
@@ -198,8 +201,7 @@ def hist_chart(out, fonts):
     cap_top = draw_caption_bottom(
         fig, fonts,
         [f"Percentile = share of institutions reporting a lower rate than BYU. {dist['share_zero']:.0f}% of institutions "
-         "reported zero. Rates above 20 per 10,000 are grouped in the last bar. Clery counts are reports made, "
-         "not a measure of how much assault occurs."],
+         "reported zero. Rates above 20 per 10,000 are grouped in the last bar.", DISCLAIMER],
         handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
     ax = fig.add_axes([0.13, cap_top + 0.07, 0.82, sub_bottom - cap_top - 0.10])
     ax.set_facecolor(PAPER)

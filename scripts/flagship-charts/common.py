@@ -229,6 +229,8 @@ def render_magnitude_bar(
     axes_left: float = 0.36,
     group_identity: bool = False,
     row_colors: dict[str, str] | None = None,
+    caption_wrap_width: int = 98,
+    caption_line_step: float = 0.0165,
     value_label_fontsize: float | None = None,
     bar_h_override: float | None = None,
     margin_frac_override: float | None = None,
@@ -319,7 +321,7 @@ def render_magnitude_bar(
     subtitle_bottom = _draw_title(fig, fonts, title, subtitle)
     caption_top = draw_caption_bottom(
         fig, fonts, caption_paragraphs, handle=handle, handle_color=handle_color,
-        fontsize=16, color=INK,
+        fontsize=16, color=INK, wrap_width=caption_wrap_width, line_step=caption_line_step,
     )
     ax_top = subtitle_bottom - 0.03
     ax_bottom = caption_top + 0.03
