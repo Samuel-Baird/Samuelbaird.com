@@ -166,7 +166,9 @@ def render(rates, key, title, subtitle, out, fonts, circle=None):
     cap_top = draw_caption_bottom(fig, fonts, [DISCLAIMER], handle=HANDLE, fontsize=14, color=INK,
                                   wrap_width=80, line_step=0.0185)
 
-    ranked = sorted(by_name.values(), key=lambda v: -v["rate_per_10k"])[:10]
+    ordered = sorted(by_name.values(), key=lambda v: -v["rate_per_10k"])
+    highest = [(i + 1, v) for i, v in enumerate(ordered[:5])]
+    lowest = [(len(ordered) - i, v) for i, v in enumerate(reversed(ordered[-5:]))]
     rank_h = 0.0225 * 5 + 0.02
     rank_bottom = cap_top + 0.02
     key_y = rank_bottom + rank_h + 0.012
@@ -212,16 +214,15 @@ def render(rates, key, title, subtitle, out, fonts, circle=None):
     fig.text(0.065, key_y + 0.028, "Reported on-campus rapes per 10,000 students",
              fontproperties=fonts["bold"], fontsize=14, color=INK, va="center")
 
-    # top 10, two columns
-    fig.text(0.065, rank_bottom + rank_h - 0.002, "Highest ten states", fontproperties=fonts["bold"], fontsize=14,
-             color=INK, va="top")
-    for i, v in enumerate(ranked):
-        col, row = divmod(i, 5)
+    # highest five (left) and lowest five (right)
+    for col, (head, rows) in enumerate((("Highest five states", highest), ("Lowest five states", lowest))):
         xx = 0.065 + col * 0.46
-        yy = rank_bottom + rank_h - 0.026 - row * 0.0215
-        fig.text(xx, yy, f"{i + 1}. {v['state']}", fontproperties=fonts["regular"], fontsize=15, color=INK, va="top")
-        fig.text(xx + 0.40, yy, f"{v['rate_per_10k']:.1f}", fontproperties=fonts["bold"], fontsize=15, color=INK,
-                 va="top", ha="right")
+        fig.text(xx, rank_bottom + rank_h - 0.002, head, fontproperties=fonts["bold"], fontsize=14, color=INK, va="top")
+        for row, (rank, v) in enumerate(rows):
+            yy = rank_bottom + rank_h - 0.026 - row * 0.0215
+            fig.text(xx, yy, f"{rank}. {v['state']}", fontproperties=fonts["regular"], fontsize=15, color=INK, va="top")
+            fig.text(xx + 0.40, yy, f"{v['rate_per_10k']:.1f}", fontproperties=fonts["bold"], fontsize=15, color=INK,
+                     va="top", ha="right")
     fig.savefig(out, dpi=DPI, facecolor=PAPER)
     plt.close(fig)
     print("wrote", out, "bands", breaks)
