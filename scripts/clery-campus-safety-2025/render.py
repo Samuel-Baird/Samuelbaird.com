@@ -32,6 +32,14 @@ DATA = HERE.parent.parent / "docs" / "datasets" / "clery-campus-safety-2025"
 HANDLE = "@ithinkisam | data: U.S. Dept. of Education, Clery Act 2025"
 BYU_ID = "230038"
 UTAH_ID = "230764"
+# School colors for the Utah-only charts (primary color of each school; schools not listed stay gray).
+SCHOOL_COLORS = {"230038": "#002E5D",  # BYU royal blue
+                 "230764": "#9C2B2B",  # University of Utah red (site-wide Utah red)
+                 "230728": "#0F2439",  # Utah State navy
+                 "230782": "#4B2E83",  # Weber State purple
+                 "230737": "#275D38",  # Utah Valley green
+                 "230603": "#C8102E",  # Southern Utah cardinal
+                 "230171": "#E03C31"}  # Utah Tech red
 UTAH_RED = "#9C2B2B"  # crimson from chart_style; the University of Utah is red on every chart
 BYU_LABEL = "Brigham Young University"
 DISCLAIMER = ("These figures represent incidents reported under the Clery Act, not estimates of the actual "
@@ -74,7 +82,7 @@ def uniq_labels(rows):
     return out
 
 
-def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, extra_rows=(), rank_key, accent_ids=(BYU_ID,), label_key=None, red_ids=(UTAH_ID,)):
+def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, extra_rows=(), rank_key, accent_ids=(BYU_ID,), label_key=None, red_ids=(UTAH_ID,), color_map=None):
     """rows: top-30 records; byu appended if not already present."""
     ids = [r["unitid"] for r in rows]
     labels = [r[label_key] for r in rows] if label_key else uniq_labels(rows)
@@ -82,6 +90,8 @@ def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, ex
     order = list(labels)
     colors = {l: (ACCENT if r["unitid"] in accent_ids else UTAH_RED if r["unitid"] in red_ids else CONTEXT_GRAY)
               for l, r in zip(labels, rows)}
+    if color_map:
+        colors = {l: color_map.get(r["unitid"], CONTEXT_GRAY) for l, r in zip(labels, rows)}
     if not any(i in ids for i in accent_ids) and BYU_ID not in ids:
         lab = f"{BYU_LABEL} (#{byu[rank_key]:,})"
         order.append(lab)
@@ -327,7 +337,8 @@ def rate_scatter_3yr_chart(out, fonts):
     ax.scatter([p["enrollment"] for p in shown], [p["rate3"] for p in shown], s=22, color=CONTEXT_GRAY,
                alpha=0.65, lw=0, zorder=3)
     place = {"230038": (-16, 62, "right"), "142522": (16, 36, "left"), "230047": (22, 40, "left"),
-             "230764": (-14, 8, "right"), "151111": (14, 8, "left")}
+             "230764": (-14, 8, "right")}
+    no_label = {"230047"}  # BYU-Hawaii keeps its blue dot but no label
     for p in pts:
         if p["unitid"] in byu_ids:
             ax.scatter([p["enrollment"]], [p["rate3"]], s=170, color=ACCENT, ec=PAPER, lw=1.5, zorder=5)
@@ -335,6 +346,8 @@ def rate_scatter_3yr_chart(out, fonts):
             ax.scatter([p["enrollment"]], [p["rate3"]], s=90 if p["unitid"] == UTAH_ID else 60,
                        color=UTAH_RED if p["unitid"] == UTAH_ID else INK, ec=PAPER, lw=1.2, zorder=4)
         else:
+            continue
+        if p["unitid"] in no_label:
             continue
         isb = p["unitid"] in byu_ids
         lab = byu_ids.get(p["unitid"]) or short(p["name"])
@@ -457,7 +470,7 @@ def utah_scatter(out, fonts):
         y = YTOP - 0.9 if off else p["rape24"]
         isu = p["unitid"] == UTAH_ID
         ax.scatter([p["enrollment"]], [y], s=170 if isb else 90 if isu else 60, marker="^" if off else "o",
-                   color=ACCENT if isb else UTAH_RED if isu else CONTEXT_GRAY, ec=PAPER, lw=1.2, zorder=5 if isb else 4)
+                   color=SCHOOL_COLORS.get(p["unitid"], CONTEXT_GRAY), ec=PAPER, lw=1.2, zorder=5 if isb else 4)
         if p["name"] in grouped:
             continue
         lab = "BYU" if isb else short(p["name"])
@@ -465,7 +478,7 @@ def utah_scatter(out, fonts):
         dx, dy, ha = (-12, -4, "right") if off else place.get(p["name"], (10, 6, "left"))
         ax.annotate(txt, (p["enrollment"], y), xytext=(dx, dy), textcoords="offset points",
                     ha=ha, fontsize=12.5, fontproperties=fonts["bold" if isb else "regular"],
-                    color=ACCENT if isb else UTAH_RED if isu else INK, zorder=6,
+                    color=SCHOOL_COLORS.get(p["unitid"], INK), zorder=6,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4))
     gp = next(p for p in pts if p["name"] == grouped[1])
     ax.annotate("Westminster, Joyce, Rocky Mountain (0 each)", (gp["enrollment"], 0), xytext=(14, 70),
@@ -526,14 +539,14 @@ def utah_rate_scatter(out, fonts):
         off = p["rate24"] > YTOP
         y = YTOP - 0.7 if off else p["rate24"]
         ax.scatter([p["enrollment"]], [y], s=170 if isb else 90 if isu else 60, marker="^" if off else "o",
-                   color=ACCENT if isb else UTAH_RED if isu else CONTEXT_GRAY, ec=PAPER, lw=1.2,
+                   color=SCHOOL_COLORS.get(p["unitid"], CONTEXT_GRAY), ec=PAPER, lw=1.2,
                    zorder=5 if (isb or isu) else 4)
         if p["name"] in grouped:
             continue
         lab = "BYU" if isb else short(p["name"])
         txt = f"{lab} ({p['rate24']:.1f}, off chart)" if off else f"{lab} ({p['rate24']:.1f})"
         kw = dict(ha="left", fontsize=12.5, fontproperties=fonts["bold" if (isb or isu) else "regular"],
-                  color=ACCENT if isb else UTAH_RED if isu else INK, zorder=6, arrowprops=leader)
+                  color=SCHOOL_COLORS.get(p["unitid"], INK), zorder=6, arrowprops=leader)
         if p["name"] in pos:
             x0, y0, ha = pos[p["name"]]
             kw["ha"] = ha
@@ -554,7 +567,7 @@ def utah_rate_scatter(out, fonts):
         lab.set_fontsize(13)
     ax.set_xlabel("Total enrollment", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.set_ylabel("Reported on-campus rapes per 10,000 students, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
-    ax.text(1500, rate + 0.4, "National rate", ha="left", va="bottom",
+    ax.text(21000, rate + 0.2, "National rate", ha="left", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
     fig.savefig(out, dpi=DPI, facecolor=PAPER)
     plt.close(fig)
@@ -582,20 +595,20 @@ def main():
     bar_chart(rows=ut["rows"], byu=ub, value_key="rape24", rank_key="rank_raw", decimals=0,
               title="Reported On-Campus Rapes at Utah Universities, 2024",
               subtitle=f"Raw number of incidents reported under the Clery Act.\n{sub_ut}.",
-              out=args.out_dir / "utah-reported-rapes-by-university-2024.png", fonts=fonts)
+              out=args.out_dir / "utah-reported-rapes-by-university-2024.png", fonts=fonts, color_map=SCHOOL_COLORS)
     by_rate = sorted(ut["rows"], key=lambda r: -r["rate24"])
     bar_chart(rows=by_rate, byu=ub, value_key="rate24", rank_key="rank_rate", decimals=1,
               extra_rows=[("Utah median", ut["median_rate_2024"], INK)],
               title="Reported On-Campus Rapes per 10,000 Students at Utah Universities, 2024",
               subtitle=f"Clery Act reports adjusted for enrollment.\n{sub_ut}, plus the median.",
-              out=args.out_dir / "utah-reported-rapes-per-10k-students-2024.png", fonts=fonts)
+              out=args.out_dir / "utah-reported-rapes-per-10k-students-2024.png", fonts=fonts, color_map=SCHOOL_COLORS)
     u3 = json.loads((DATA / "utah-2022-24.json").read_text(encoding="utf-8"))
     b3 = next(r for r in u3["rows"] if r["unitid"] == BYU_ID)
     bar_chart(rows=u3["rows"], byu=b3, value_key="rate3", rank_key="rank3", decimals=1,
               extra_rows=[("Utah median", u3["median_rate_3yr"], INK)],
               title="Average Reported On-Campus Rape Rate at Utah Universities, 2022–2024",
               subtitle=f"Three-year Clery Act average per 10,000 students.\n{sub_ut}, plus the median.",
-              out=args.out_dir / "utah-reported-rapes-per-10k-3yr-average-2022-24.png", fonts=fonts)
+              out=args.out_dir / "utah-reported-rapes-per-10k-3yr-average-2022-24.png", fonts=fonts, color_map=SCHOOL_COLORS)
     utah_scatter(args.out_dir / "utah-campus-size-vs-reported-rapes-2024.png", fonts)
     utah_rate_scatter(args.out_dir / "utah-campus-size-vs-reported-rape-rate-2024.png", fonts)
 
