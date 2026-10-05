@@ -40,6 +40,8 @@ SCHOOL_COLORS = {"230038": "#002E5D",  # BYU royal blue
                  "230737": "#275D38",  # Utah Valley green
                  "230603": "#C8102E",  # Southern Utah cardinal
                  "230171": "#E03C31"}  # Utah Tech red
+CORNELL_ID = "190415"
+CORNELL_RED = "#B31B1B"  # Cornell carnelian red
 UVU_ID = "230737"
 UVU_GREEN = "#275D38"
 UTAH_RED = "#9C2B2B"  # crimson from chart_style; the University of Utah is red on every chart
@@ -168,7 +170,7 @@ def scatter_chart(out, fonts, hide=()):
     byu = next(p for p in pts if p["unitid"] == BYU_ID)
     cornell = next(p for p in pts if p["unitid"] == "190415")
     ax.scatter([byu["enrollment"]], [byu["rape24"]], s=170, color=ACCENT, ec=PAPER, lw=1.5, zorder=5)
-    ax.scatter([cornell["enrollment"]], [cornell["rape24"]], s=90, color=INK, ec=PAPER, lw=1.2, zorder=4)
+    ax.scatter([cornell["enrollment"]], [cornell["rape24"]], s=90, color=CORNELL_RED, ec=PAPER, lw=1.2, zorder=4)
     for u in (p for p in pts if p["unitid"] == UTAH_ID):
         ax.scatter([u["enrollment"]], [u["rape24"]], s=110, color=UTAH_RED, ec=PAPER, lw=1.2, zorder=4)
     uvu = next(p for p in pts if p["unitid"] == UVU_ID)
@@ -176,6 +178,8 @@ def scatter_chart(out, fonts, hide=()):
 
     top = sorted(pts, key=lambda p: -abs(p["resid_z"]))
     over = [p for p in top if p["resid_z"] > 0][:6]
+    if not hide:  # Mayo Clinic, Dartmouth and Lycoming labels removed from the main scatter
+        over = [p for p in over if p["unitid"] not in ("173957", "182670", "213668")]
     if hide:
         over = [p for p in over if p["unitid"] in ("173957", "182670", "115755", "110714")]
     under = []
@@ -202,7 +206,7 @@ def scatter_chart(out, fonts, hide=()):
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
                     fontproperties=fonts["bold" if p["unitid"] in (BYU_ID, "190415", UVU_ID) else "regular"],
                     color=ACCENT if p["unitid"] == BYU_ID else UTAH_RED if p["unitid"] == UTAH_ID
-                    else UVU_GREEN if p["unitid"] == UVU_ID else INK, zorder=6)
+                    else UVU_GREEN if p["unitid"] == UVU_ID else CORNELL_RED if p["unitid"] == CORNELL_ID else INK, zorder=6)
     ylim = y.max() * (1.30 if hidden else 1.08)
     for k, p in enumerate(sorted(hidden, key=lambda q: q["enrollment"])):
         lab = {"126614": "CU Boulder", "151111": "IU Indianapolis"}.get(p["unitid"]) or short(p["name"])
@@ -375,7 +379,7 @@ def rate_scatter_3yr_chart(out, fonts):
         lab.set_fontsize(13)
     ax.set_xlabel("Total enrollment", fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.set_ylabel("Avg. annual reported rapes per 10,000 students", fontproperties=fonts["bold"], fontsize=14, color=INK)
-    ax.text(XCAP * 0.98, rate + 0.8, "National rate", ha="right", va="bottom",
+    ax.text(XCAP * 0.98, rate + 0.8, f"National rate: {rate:.1f}", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
     fig.savefig(out, dpi=DPI, facecolor=PAPER)
     plt.close(fig)
@@ -625,7 +629,7 @@ def main():
     # ---- BYU's three campuses ----
     bc = json.loads((DATA / "byu-campuses.json").read_text(encoding="utf-8"))
     crow = bc["rows"]
-    cmp_colors = {**{i: ACCENT for i in bc["byu_ids"]}, UTAH_ID: UTAH_RED, UVU_ID: UVU_GREEN}
+    cmp_colors = {**{i: ACCENT for i in bc["byu_ids"]}, UTAH_ID: UTAH_RED, UVU_ID: UVU_GREEN, CORNELL_ID: CORNELL_RED}
     kw = dict(byu=None, rank_key=None, accent_ids=set(bc["byu_ids"]), label_key="label", fonts=fonts, color_map=cmp_colors)
     sub = "BYU's three campuses against the U.S. median and well-known schools."
     bar_chart(rows=sorted(crow, key=lambda r: (-r["rape24"], -r["enrollment"])), value_key="rape24", decimals=0,
