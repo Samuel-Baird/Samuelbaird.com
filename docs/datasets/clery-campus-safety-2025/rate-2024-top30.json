@@ -1,0 +1,285 @@
+{
+  "min_enrollment": 1000,
+  "n": 1684,
+  "rows": [
+    {
+      "unitid": "173957",
+      "name": "Mayo Clinic College of Medicine and Science",
+      "state": "MN",
+      "rape24": 20,
+      "enrollment": 1439.0,
+      "rate24": 138.9854,
+      "rank_rate": 1
+    },
+    {
+      "unitid": "213668",
+      "name": "Lycoming College",
+      "state": "PA",
+      "rape24": 10,
+      "enrollment": 1012.0,
+      "rate24": 98.8142,
+      "rank_rate": 2
+    },
+    {
+      "unitid": "168591",
+      "name": "Alma College",
+      "state": "MI",
+      "rape24": 9,
+      "enrollment": 1197.0,
+      "rate24": 75.188,
+      "rank_rate": 3
+    },
+    {
+      "unitid": "131450",
+      "name": "Gallaudet University",
+      "state": "DC",
+      "rape24": 10,
+      "enrollment": 1335.0,
+      "rate24": 74.9064,
+      "rank_rate": 4
+    },
+    {
+      "unitid": "239017",
+      "name": "Lawrence University",
+      "state": "WI",
+      "rape24": 10,
+      "enrollment": 1417.0,
+      "rate24": 70.5716,
+      "rank_rate": 5
+    },
+    {
+      "unitid": "165574",
+      "name": "Dean College",
+      "state": "MA",
+      "rape24": 6,
+      "enrollment": 1092.0,
+      "rate24": 54.9451,
+      "rank_rate": 6
+    },
+    {
+      "unitid": "206589",
+      "name": "The College of Wooster",
+      "state": "OH",
+      "rape24": 9,
+      "enrollment": 1738.0,
+      "rate24": 51.7837,
+      "rank_rate": 7
+    },
+    {
+      "unitid": "191630",
+      "name": "Hobart William Smith Colleges",
+      "state": "NY",
+      "rape24": 9,
+      "enrollment": 1841.0,
+      "rate24": 48.8865,
+      "rank_rate": 8
+    },
+    {
+      "unitid": "212009",
+      "name": "Dickinson College",
+      "state": "PA",
+      "rape24": 11,
+      "enrollment": 2314.0,
+      "rate24": 47.5367,
+      "rank_rate": 9
+    },
+    {
+      "unitid": "153108",
+      "name": "Central College",
+      "state": "IA",
+      "rape24": 5,
+      "enrollment": 1084.0,
+      "rate24": 46.1255,
+      "rank_rate": 10
+    },
+    {
+      "unitid": "128902",
+      "name": "Connecticut College",
+      "state": "CT",
+      "rape24": 9,
+      "enrollment": 1990.0,
+      "rate24": 45.2261,
+      "rank_rate": 11
+    },
+    {
+      "unitid": "209922",
+      "name": "Reed College",
+      "state": "OR",
+      "rape24": 6,
+      "enrollment": 1358.0,
+      "rate24": 44.1826,
+      "rank_rate": 12
+    },
+    {
+      "unitid": "139621",
+      "name": "East Georgia State College",
+      "state": "GA",
+      "rape24": 8,
+      "enrollment": 1820.0,
+      "rate24": 43.956,
+      "rank_rate": 13
+    },
+    {
+      "unitid": "214704",
+      "name": "Pennsylvania State University-Penn State Berks",
+      "state": "PA",
+      "rape24": 8,
+      "enrollment": 1884.0,
+      "rate24": 42.4628,
+      "rank_rate": 14
+    },
+    {
+      "unitid": "153144",
+      "name": "Coe College",
+      "state": "IA",
+      "rape24": 5,
+      "enrollment": 1195.0,
+      "rate24": 41.841,
+      "rank_rate": 15
+    },
+    {
+      "unitid": "115755",
+      "name": "California State Polytechnic University-Humboldt",
+      "state": "CA",
+      "rape24": 26,
+      "enrollment": 6237.0,
+      "rate24": 41.6867,
+      "rank_rate": 16
+    },
+    {
+      "unitid": "182670",
+      "name": "Dartmouth College",
+      "state": "NH",
+      "rape24": 28,
+      "enrollment": 6938.0,
+      "rate24": 40.3575,
+      "rank_rate": 17
+    },
+    {
+      "unitid": "195304",
+      "name": "Sarah Lawrence College",
+      "state": "NY",
+      "rape24": 7,
+      "enrollment": 1798.0,
+      "rate24": 38.9321,
+      "rank_rate": 18
+    },
+    {
+      "unitid": "151111",
+      "name": "Indiana University-Indianapolis",
+      "state": "IN",
+      "rape24": 87,
+      "enrollment": 22534.0,
+      "rate24": 38.6083,
+      "rank_rate": 19
+    },
+    {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "rape24": 140,
+      "enrollment": 36894.0,
+      "rate24": 37.9465,
+      "rank_rate": 20
+    },
+    {
+      "unitid": "198385",
+      "name": "Davidson College",
+      "state": "NC",
+      "rape24": 7,
+      "enrollment": 1869.0,
+      "rate24": 37.4532,
+      "rank_rate": 21
+    },
+    {
+      "unitid": "173902",
+      "name": "Macalester College",
+      "state": "MN",
+      "rape24": 8,
+      "enrollment": 2138.0,
+      "rate24": 37.4181,
+      "rank_rate": 22
+    },
+    {
+      "unitid": "164465",
+      "name": "Amherst College",
+      "state": "MA",
+      "rape24": 7,
+      "enrollment": 1914.0,
+      "rate24": 36.5726,
+      "rank_rate": 23
+    },
+    {
+      "unitid": "211291",
+      "name": "Bucknell University",
+      "state": "PA",
+      "rape24": 14,
+      "enrollment": 3969.0,
+      "rate24": 35.2734,
+      "rank_rate": 24
+    },
+    {
+      "unitid": "212911",
+      "name": "Haverford College",
+      "state": "PA",
+      "rape24": 5,
+      "enrollment": 1431.0,
+      "rate24": 34.9406,
+      "rank_rate": 25
+    },
+    {
+      "unitid": "161518",
+      "name": "Saint Joseph's College of Maine",
+      "state": "ME",
+      "rape24": 5,
+      "enrollment": 1454.0,
+      "rate24": 34.3879,
+      "rank_rate": 26
+    },
+    {
+      "unitid": "153278",
+      "name": "University of Dubuque",
+      "state": "IA",
+      "rape24": 6,
+      "enrollment": 1757.0,
+      "rate24": 34.1491,
+      "rank_rate": 27
+    },
+    {
+      "unitid": "239318",
+      "name": "Milwaukee School of Engineering",
+      "state": "WI",
+      "rape24": 10,
+      "enrollment": 2953.0,
+      "rate24": 33.8639,
+      "rank_rate": 28
+    },
+    {
+      "unitid": "236328",
+      "name": "University of Puget Sound",
+      "state": "WA",
+      "rape24": 6,
+      "enrollment": 1864.0,
+      "rate24": 32.1888,
+      "rank_rate": 29
+    },
+    {
+      "unitid": "212674",
+      "name": "Gettysburg College",
+      "state": "PA",
+      "rape24": 9,
+      "enrollment": 2812.0,
+      "rate24": 32.0057,
+      "rank_rate": 30
+    }
+  ],
+  "byu": {
+    "unitid": "230038",
+    "name": "Brigham Young University",
+    "state": "UT",
+    "rape24": 4,
+    "enrollment": 35873.0,
+    "rate24": 1.115,
+    "rank_rate": 855
+  }
+}

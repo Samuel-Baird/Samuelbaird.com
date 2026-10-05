@@ -23,6 +23,7 @@ import stayHomeParentGenderData from "../../docs/datasets/pew-rls-2023-24/stay-h
 import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/polygamy-morality.json";
 import gallupGamblingData from "../../docs/datasets/gallup-values-beliefs-gambling/gallup-acceptable-by-religion.json";
 import gallupAttendanceData from "../../docs/datasets/gallup-values-beliefs-gambling/acceptable-by-attendance.json";
+import cleryStats from "../../docs/datasets/clery-campus-safety-2025/stats.json";
 import pewGamblingCountryData from "../../docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json";
 import pewGamblingReligionData from "../../docs/datasets/pew-gambling-morality-2025/us-gambling-wrong-by-religion.json";
 import nextMormonsGamblingData from "../../docs/datasets/next-mormons-survey-2016/next-mormons-gambling-view.json";
@@ -1882,6 +1883,29 @@ const RAW_DATASETS: Dataset[] = [
     graphics: [pewGamblingCountryGraphic(), pewGamblingAcceptableCountryGraphic(), pewGamblingReligionGraphic()],
   },
   {
+    slug: "clery-campus-safety-2025",
+    name: "Campus Safety and Security (Clery Act) data, 2022-2024",
+    shortDescription:
+      "Reported on-campus rapes at U.S. four-year colleges, raw and per 10,000 students, with BYU in context.",
+    sponsor: "U.S. Department of Education",
+    fielder: "U.S. Department of Education",
+    fieldedPeriod: "2022-2024",
+    description:
+      "Every Title IV college must report crimes to the Department of Education each year under the Clery " +
+      "Act. These charts use the on-campus criminal offenses file for 2022 to 2024, summed to the " +
+      "institution level (residence halls are already inside on-campus counts, so they are not added). " +
+      "Enrollment is the single figure in the file. These are reports made, not a measure of how much " +
+      "assault occurs, and campuses differ in how readily students report. " +
+      `In 2024 BYU reported ${cleryStats.byu.rapes_2024} rapes on ${cleryStats.byu.enrollment.toLocaleString("en-US")} ` +
+      `students, ${cleryStats.byu.rate_2024.toFixed(2)} per 10,000: the ${Math.round(cleryStats.byu.percentile_ge_5000)}th percentile among ` +
+      `${cleryStats.n_ge_5000} institutions with 5,000+ students (median ${cleryStats.distribution_ge_5000_2024.median.toFixed(2)}). ` +
+      `Over 2022-2024 its average rate was ${cleryStats.byu.rate_3yr.toFixed(2)}, ranking ${cleryStats.byu.rank_3yr} of ${cleryStats.byu.of_3yr}.`,
+    citation:
+      "U.S. Department of Education, Office of Postsecondary Education. 2025. Campus Safety and Security Data Analysis Cutting Tool, on-campus criminal offenses, 2022-2024.",
+    sourceUrl: "https://ope.ed.gov/campussafety/#/datafile/list",
+    graphics: cleryGraphics(),
+  },
+  {
     slug: "next-mormons-survey-2016",
     name: "The 2016 Next Mormons Survey",
     shortDescription:
@@ -2346,6 +2370,46 @@ function gallupAttendanceWrongGraphic(): Graphic {
     width: 1080, height: 1350,
     alt: `Bar chart: share of U.S. adults saying gambling is morally wrong, by attendance. ${alt}.`,
   };
+}
+
+function cleryGraphics(): Graphic[] {
+  const base = "/data-explorer/clery-campus-safety-2025/";
+  const byu = cleryStats.byu;
+  const mk = (title: string, description: string, file: string, alt: string): Graphic => ({
+    title, description, imageSrc: base + file, width: 1080, height: 1350, alt,
+  });
+  return [
+    mk(
+      "Reported on-campus rapes by university, 2024",
+      "Raw number of on-campus rapes reported under the Clery Act in 2024: the top 30 institutions plus BYU.",
+      "reported-rapes-by-university-2024.png",
+      `Horizontal bar chart of the 30 four-year institutions reporting the most on-campus rapes in 2024, led by the University of Utah (140), University of Colorado Boulder (96) and Indiana University Indianapolis (87). BYU, highlighted, reported ${byu.rapes_2024}, ranking ${byu.rank_raw_2024} of ${byu.of_raw}.`,
+    ),
+    mk(
+      "Reported on-campus rapes per 10,000 students, 2024",
+      "Clery Act reports adjusted for enrollment, institutions with 1,000+ students: the top 30 plus BYU.",
+      "reported-rapes-per-10k-students-2024.png",
+      `Horizontal bar chart of on-campus rapes reported per 10,000 students in 2024, top 30 of ${cleryStats.n_ge_1000} institutions with 1,000+ students. BYU, highlighted, is at ${byu.rate_2024.toFixed(1)}, rank ${byu.rank_rate_ge_1000}, the ${Math.round(byu.percentile_ge_1000)}th percentile.`,
+    ),
+    mk(
+      "Campus size and reported rapes",
+      "Each four-year institution with 1,000+ students: enrollment against 2024 reports, with the expected count at the national rate.",
+      "campus-size-vs-reported-rapes-2024.png",
+      `Scatter plot of enrollment against reported on-campus rapes in 2024 with a line for the pooled national rate of ${cleryStats.pooled_rate_per_10k_ge_1000.toFixed(1)} per 10,000. The University of Utah, Colorado Boulder and Indiana University Indianapolis sit far above it. BYU (${byu.rapes_2024} reports) sits below it.`,
+    ),
+    mk(
+      "Where BYU falls among U.S. universities",
+      "Histogram of 2024 reported on-campus rape rates for institutions with 5,000+ students, with BYU and the median marked.",
+      "byu-vs-national-distribution-2024.png",
+      `Histogram of reported on-campus rapes per 10,000 students, ${cleryStats.n_ge_5000} institutions with 5,000+ students. BYU's rate is ${byu.rate_2024.toFixed(2)}; the median is ${cleryStats.distribution_ge_5000_2024.median.toFixed(2)} and the mean ${cleryStats.distribution_ge_5000_2024.mean.toFixed(2)}. BYU is at the ${Math.round(byu.percentile_ge_5000)}th percentile.`,
+    ),
+    mk(
+      "Average reported on-campus rape rate, 2022-2024",
+      "Three-year average per 10,000 students, institutions with 5,000+ students: the top 30, the national median, and BYU.",
+      "reported-rapes-per-10k-3yr-average-2022-24.png",
+      `Horizontal bar chart of the three-year average reported on-campus rape rate per 10,000 students, led by Indiana University Indianapolis (35.4). The national median is ${cleryStats.distribution_3yr_ge_5000.median.toFixed(1)}. BYU is ${byu.rate_3yr.toFixed(1)}, ranking ${byu.rank_3yr} of ${byu.of_3yr}.`,
+    ),
+  ];
 }
 
 function pewGamblingAcceptableCountryGraphic(): Graphic {
