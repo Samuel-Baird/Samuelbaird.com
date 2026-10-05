@@ -152,7 +152,7 @@ def stat_box(ax, lines, x=0.97, y=0.97):
             fontproperties=FONTS["regular"], fontsize=15, color=INK, bbox=dict(boxstyle="square,pad=0.6", fc=PAPER, ec=BORDER, lw=1))
 
 
-def scatter_chart(out, fonts, hide=(), period="2024"):
+def scatter_chart(out, fonts, hide=(), period="2024", quiet=False):
     """Counts vs enrollment. period "3yr" plots the 2022-24 average annual count (rape24 holds the average)."""
     three = period == "3yr"
     if three:
@@ -170,6 +170,7 @@ def scatter_chart(out, fonts, hide=(), period="2024"):
     n_off = sum(p["enrollment"] > XCAP for p in pts)
     off_max = max(p["rape24"] for p in pts if p["enrollment"] > XCAP)
     pts_all, pts = pts, [p for p in pts if p["enrollment"] <= XCAP]
+    outliers = bool(hide) and not quiet  # the "without the three largest outliers" chart; quiet = just arrow(s) off the edge
     hidden = [p for p in pts if p["unitid"] in hide]
     pts = [p for p in pts if p["unitid"] not in hide]
     x = np.array([p["enrollment"] for p in pts])
@@ -179,7 +180,7 @@ def scatter_chart(out, fonts, hide=(), period="2024"):
 
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
-    title = ("Campus Size and Reported Rapes at U.S. Universities" if not hide
+    title = ("Campus Size and Reported Rapes at U.S. Universities" if not outliers
              else "Campus Size and Reported Rapes, Without the Three Largest Outliers")
     if three:
         title = "Campus Size and Average Reported Rapes at U.S. Universities, 2022" + chr(0x2013) + "2024"
@@ -193,7 +194,8 @@ def scatter_chart(out, fonts, hide=(), period="2024"):
          f"({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it. "
          "Labeled dots are the largest departures above the line, plus BYU and Cornell for comparison. "
          f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported {cnt(off_max)} or fewer."
-         + (" The three highest-count institutions are removed to improve the scale; arrows give their values." if hide else ""),
+         + (" The three highest-count institutions are removed to improve the scale; arrows give their values." if outliers else "")
+         + (" An arrow marks " + " and ".join(short(h["name"]) for h in hidden) + ", which is off the top of the chart; the scale is set without it." if (hide and quiet) else ""),
          DISCLAIMER],
         handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
     ax = fig.add_axes([0.14, cap_top + 0.075, 0.82, sub_bottom - cap_top - 0.105])
@@ -223,9 +225,9 @@ def scatter_chart(out, fonts, hide=(), period="2024"):
 
     top = sorted(pts, key=lambda p: -abs(p["resid_z"]))
     over = [p for p in top if p["resid_z"] > 0][:6]
-    if not hide:  # Mayo Clinic, Dartmouth and Lycoming labels removed from the main scatter
+    if not outliers:  # Mayo Clinic, Dartmouth and Lycoming labels removed from the main scatter
         over = [p for p in over if p["unitid"] not in ("173957", "182670", "213668")]
-    if hide:
+    if outliers:
         over = [p for p in over if p["unitid"] in ("173957", "182670", "115755", "110714")]
     under = []
     if three:  # keep the crowded low-count cluster unlabeled, but always label the University of Utah
@@ -234,8 +236,8 @@ def scatter_chart(out, fonts, hide=(), period="2024"):
     # (label, dx, dy in points, ha) hand-placed to avoid collisions
     place = {
         "230764": (9, -3, "left"), "126614": (9, -3, "left"), "151111": (9, -3, "left"),
-        "173957": (9, 66 if not hide else 86, "left"), "182670": (12, 26 if hide else 8, "left"),
-        "115755": (12, -26 if hide else 6, "left"),
+        "173957": (9, 66 if not outliers else 86, "left"), "182670": (12, 26 if outliers else 8, "left"),
+        "115755": (12, -26 if outliers else 6, "left"),
         "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"), UVU_ID: (26, -8, "left"),
     }
     if three:
@@ -268,7 +270,7 @@ def scatter_chart(out, fonts, hide=(), period="2024"):
         ytxt = ylim * (0.84 if p["unitid"] == UTAH_ID else 0.93)
         ax.annotate("", xy=(p["enrollment"], ylim * 0.995), xytext=(p["enrollment"], ytxt - ylim * 0.012),
                     arrowprops=dict(arrowstyle="-|>", color=UTAH_RED if p["unitid"] == UTAH_ID else INK, lw=1.8))
-        ax.text(p["enrollment"] + (-900 if left else 900), ytxt, f"{lab}: {cnt(p['rape24'])}", ha="right" if left else "left",
+        ax.text(p["enrollment"] + (-900 if left else 900), ytxt, f"{lab}: {cnt(p['rape24'])}" + (" (off chart)" if quiet else ""), ha="right" if left else "left",
                 va="center", fontproperties=fonts["bold"], fontsize=13,
                 color=UTAH_RED if p["unitid"] == UTAH_ID else INK)
     ax.set_xlim(0, XCAP)
@@ -691,7 +693,8 @@ def main():
     FONTS.update(fonts)
     if OFFENSE == "fondling":  # the five charts that mirror the rape set we are comparing
         scatter_chart(args.out_dir / fname("campus-size-vs-reported-rapes-2024.png"), fonts)
-        scatter_chart(args.out_dir / fname("campus-size-vs-reported-rapes-2022-24-average.png"), fonts, period="3yr")
+        scatter_chart(args.out_dir / fname("campus-size-vs-reported-rapes-2022-24-average.png"), fonts, period="3yr",
+                      hide=("204796",), quiet=True)  # Ohio State (160) is off the chart
         rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-3yr-2022-24.png"), fonts)
         rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-2024.png"), fonts, period="2024")
         byu_campus_bars(args, fonts, include_raw=False)
