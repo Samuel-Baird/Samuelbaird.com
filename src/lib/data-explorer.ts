@@ -2535,10 +2535,28 @@ function cleryFondlingGraphics(): Graphic[] {
       `Scatter plot of enrollment against the 2022-2024 average annual reported on-campus fondling offenses per 10,000 students, with a flat line at the national rate and a band that narrows as campuses grow. BYU–Provo (${p.rate3.toFixed(1)}) and BYU–Idaho (${i.rate3.toFixed(1)}) are blue, Utah Valley University is green, and the University of Utah is red.`,
     ),
     mk(
-      "Fondling: offenses per 10,000 students by state, 2022-2024, without the University of Utah",
-      "State heat map of three-year average reported on-campus fondling offenses per 10,000 four-year students, with the University of Utah removed from Utah and shown as a circle.",
-      "state-map-reported-fondling-per-10k-2022-24-without-university-of-utah.png",
-      "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus fondling offenses per 10,000 four-year students. Iowa, Alaska and Vermont are highest. Nevada, Arizona and Florida are lowest. The University of Utah appears as a separate circle at 15.5.",
+      "Fondling: campus size and average reported offenses, 2022-2024",
+      "Each four-year institution with 1,000+ students: enrollment against the 2022-2024 average annual reported on-campus fondling offenses.",
+      "campus-size-vs-reported-fondling-2022-24-average.png",
+      "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus fondling offenses with a line for the pooled national rate and a band that narrows as campuses grow. Ohio State (160), the University of Utah (57, red), Indiana University Indianapolis and Florida Institute of Technology sit far above it. BYU (15.7, blue), Cornell (red) and Utah Valley University (green) are labeled.",
+    ),
+    mk(
+      "Fondling: campus size and reported rates, 2024",
+      "Each four-year institution with 1,000+ students: enrollment against 2024 reported on-campus fondling offenses per 10,000 students.",
+      "campus-size-vs-reported-fondling-rate-2024.png",
+      "Scatter plot of enrollment against 2024 reported on-campus fondling offenses per 10,000 students, with a flat line at the national rate of 2.8 and a band that narrows as campuses grow. BYU-Provo (3.9) and BYU-Idaho (0.7) are blue, Utah Valley University (0.4) is green, and the University of Utah (20.6) is red.",
+    ),
+    mk(
+      "Fondling: offenses per 10,000 students by state, 2022-2024",
+      "State heat map of three-year average reported on-campus fondling offenses per 10,000 students at all four-year institutions in each state, University of Utah included in Utah.",
+      "state-map-reported-fondling-per-10k-2022-24.png",
+      "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus fondling offenses per 10,000 four-year students. Iowa (5.9), Alaska, Vermont, Ohio and Rhode Island are highest; Nevada (0.5), Arizona, Florida, Mississippi and Delaware are lowest. Utah is 4.3.",
+    ),
+    mk(
+      "Fondling: offenses per 10,000 students by state, 2024",
+      "State heat map of 2024 reported on-campus fondling offenses per 10,000 students at all four-year institutions in each state, University of Utah included in Utah.",
+      "state-map-reported-fondling-per-10k-2024.png",
+      "Map of U.S. states shaded in five bands by 2024 reported on-campus fondling offenses per 10,000 four-year students. Iowa (7.1), Virginia, Alaska, Kansas and Rhode Island are highest; Nevada (0.5), Arizona, Florida, Alabama and Wyoming are lowest. Utah is 4.9.",
     ),
   ];
 }

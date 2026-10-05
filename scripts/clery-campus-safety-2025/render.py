@@ -152,12 +152,23 @@ def stat_box(ax, lines, x=0.97, y=0.97):
             fontproperties=FONTS["regular"], fontsize=15, color=INK, bbox=dict(boxstyle="square,pad=0.6", fc=PAPER, ec=BORDER, lw=1))
 
 
-def scatter_chart(out, fonts, hide=()):
-    d = json.loads((DATA / "scatter-2024.json").read_text(encoding="utf-8"))
-    pts = d["points"]
+def scatter_chart(out, fonts, hide=(), period="2024"):
+    """Counts vs enrollment. period "3yr" plots the 2022-24 average annual count (rape24 holds the average)."""
+    three = period == "3yr"
+    if three:
+        d = json.loads((DATA / "scatter-2022-24.json").read_text(encoding="utf-8"))
+        pts = [{**q, "rape24": q["avg_rapes"], "resid_z": (q["avg_rapes"] - q["expected"]) / np.sqrt(q["expected"] / 3)}
+               for q in d["points"]]
+    else:
+        d = json.loads((DATA / "scatter-2024.json").read_text(encoding="utf-8"))
+        pts = d["points"]
+    vdiv = 3 if three else 1  # variance of the three-year mean is the single-year variance / 3
+
+    def cnt(v):
+        return f"{v:.1f}" if three else f"{v:g}"
     XCAP = 85000
     n_off = sum(p["enrollment"] > XCAP for p in pts)
-    off_max = int(max(p["rape24"] for p in pts if p["enrollment"] > XCAP))
+    off_max = max(p["rape24"] for p in pts if p["enrollment"] > XCAP)
     pts_all, pts = pts, [p for p in pts if p["enrollment"] <= XCAP]
     hidden = [p for p in pts if p["unitid"] in hide]
     pts = [p for p in pts if p["unitid"] not in hide]
@@ -170,15 +181,18 @@ def scatter_chart(out, fonts, hide=()):
     fig.patch.set_facecolor(PAPER)
     title = ("Campus Size and Reported Rapes at U.S. Universities" if not hide
              else "Campus Size and Reported Rapes, Without the Three Largest Outliers")
+    if three:
+        title = "Campus Size and Average Reported Rapes at U.S. Universities, 2022" + chr(0x2013) + "2024"
     sub_bottom = _draw_title(fig, fonts, title,
-                             "2024 Clery Act reports. One dot per four-year institution with\n"
+                             ("2022" + chr(0x2013) + "2024 average annual Clery Act reports. One dot per four-year institution with" if three
+                              else "2024 Clery Act reports. One dot per four-year institution with") + chr(10) +
                              f"at least {d['min_enrollment']:,} students ({len(pts):,} institutions).")
     cap_top = draw_caption_bottom(
         fig, fonts,
         [f"Line = expected reports if every campus reported at the pooled national rate "
          f"({rate:.1f} per 10,000 students); shaded band = 95% Poisson range around it. "
          "Labeled dots are the largest departures above the line, plus BYU and Cornell for comparison. "
-         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported {off_max} or fewer."
+         f"{n_off} very large, mostly online, institutions (enrollment above {XCAP:,}) are off the right edge; each reported {cnt(off_max)} or fewer."
          + (" The three highest-count institutions are removed to improve the scale; arrows give their values." if hide else ""),
          DISCLAIMER],
         handle=HANDLE, fontsize=14, color=INK, wrap_width=80, line_step=0.0185)
@@ -193,7 +207,7 @@ def scatter_chart(out, fonts, hide=()):
 
     xs = np.linspace(0, XCAP, 200)
     exp = rate / 1e4 * xs
-    ax.fill_between(xs, np.maximum(exp - 1.96 * np.sqrt(exp), 0), exp + 1.96 * np.sqrt(exp) + 1,
+    ax.fill_between(xs, np.maximum(exp - 1.96 * np.sqrt(exp / vdiv), 0), exp + 1.96 * np.sqrt(exp / vdiv) + 1 / vdiv,
                     color=CONTEXT_GRAY, alpha=0.18, lw=0)
     ax.plot(xs, exp, color=INK, lw=2)
     ax.scatter(x, y, s=22, color=CONTEXT_GRAY, alpha=0.65, lw=0, zorder=3)
@@ -214,6 +228,9 @@ def scatter_chart(out, fonts, hide=()):
     if hide:
         over = [p for p in over if p["unitid"] in ("173957", "182670", "115755", "110714")]
     under = []
+    if three:  # keep the crowded low-count cluster unlabeled, but always label the University of Utah
+        over = [p for p in over if p["rape24"] > 25]
+        over += [p for p in pts if p["unitid"] == UTAH_ID and p not in over]
     # (label, dx, dy in points, ha) hand-placed to avoid collisions
     place = {
         "230764": (9, -3, "left"), "126614": (9, -3, "left"), "151111": (9, -3, "left"),
@@ -221,6 +238,10 @@ def scatter_chart(out, fonts, hide=()):
         "115755": (12, -26 if hide else 6, "left"),
         "110714": (9, 6, "left"), "190415": (12, -16, "left"), BYU_ID: (12, -6, "left"), UVU_ID: (26, -8, "left"),
     }
+    if three:
+        place["190415"] = (-12, 12, "right")
+        place["151111"] = (8, -6, "left")
+        place["133881"] = (8, -12, "left")
     done = set()
     for p in over + under + [byu, cornell, uvu]:
         if p["unitid"] in done:
@@ -234,7 +255,7 @@ def scatter_chart(out, fonts, hide=()):
             lab = "Utah Valley"
         if p["unitid"] == "190415":
             lab = "Cornell"
-        ax.annotate(f"{lab} ({p['rape24']})", (p["enrollment"], p["rape24"]), xytext=(dx, dy),
+        ax.annotate(f"{lab} ({cnt(p['rape24'])})", (p["enrollment"], p["rape24"]), xytext=(dx, dy),
                     textcoords="offset points", ha=ha, fontsize=12.5,
                     arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8, shrinkA=2, shrinkB=4),
                     fontproperties=fonts["bold" if p["unitid"] in (BYU_ID, "190415", UVU_ID) else "regular"],
@@ -247,7 +268,7 @@ def scatter_chart(out, fonts, hide=()):
         ytxt = ylim * (0.84 if p["unitid"] == UTAH_ID else 0.93)
         ax.annotate("", xy=(p["enrollment"], ylim * 0.995), xytext=(p["enrollment"], ytxt - ylim * 0.012),
                     arrowprops=dict(arrowstyle="-|>", color=UTAH_RED if p["unitid"] == UTAH_ID else INK, lw=1.8))
-        ax.text(p["enrollment"] + (-900 if left else 900), ytxt, f"{lab}: {p['rape24']}", ha="right" if left else "left",
+        ax.text(p["enrollment"] + (-900 if left else 900), ytxt, f"{lab}: {cnt(p['rape24'])}", ha="right" if left else "left",
                 va="center", fontproperties=fonts["bold"], fontsize=13,
                 color=UTAH_RED if p["unitid"] == UTAH_ID else INK)
     ax.set_xlim(0, XCAP)
@@ -257,7 +278,8 @@ def scatter_chart(out, fonts, hide=()):
         lab.set_fontproperties(fonts["regular"])
         lab.set_fontsize(13)
     ax.set_xlabel("Total enrollment", fontproperties=fonts["bold"], fontsize=14, color=INK)
-    ax.set_ylabel("Reported on-campus rapes, 2024", fontproperties=fonts["bold"], fontsize=14, color=INK)
+    ax.set_ylabel("Avg. annual reported on-campus rapes, 2022" + chr(0x2013) + "2024" if three else "Reported on-campus rapes, 2024",
+                  fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(xs.max() * 0.98, rate / 1e4 * xs.max() * 0.98 + 6, "Expected at national rate", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
     save(fig, out)
@@ -340,10 +362,16 @@ def rate_scatter_chart(out, fonts):
     save(fig, out)
     plt.close(fig)
 
-def rate_scatter_3yr_chart(out, fonts):
-    """Linear-x funnel plot of the 2022-24 average annual rate; all three BYU campuses blue and labeled."""
-    d = json.loads((DATA / "scatter-2022-24.json").read_text(encoding="utf-8"))
-    pts = d["points"]
+def rate_scatter_3yr_chart(out, fonts, period="3yr"):
+    """Linear-x funnel plot of the rate per 10,000 (2022-24 average, or 2024 alone); BYU campuses blue, labeled."""
+    three = period == "3yr"
+    k = 3 if three else 1  # variance of the three-year mean is the single-year variance / 3
+    if three:
+        d = json.loads((DATA / "scatter-2022-24.json").read_text(encoding="utf-8"))
+        pts = d["points"]
+    else:
+        d = json.loads((DATA / "scatter-2024.json").read_text(encoding="utf-8"))
+        pts = [{**q, "rate3": q["rape24"] / q["enrollment"] * 1e4} for q in d["points"]]
     rate = d["pooled_rate_per_10k"]
     byu_ids = {"230038": "BYU–Provo", "142522": "BYU–Idaho", "230047": "BYU–Hawaii"}
     XCAP, YCAP = 85000, 50
@@ -353,8 +381,10 @@ def rate_scatter_3yr_chart(out, fonts):
 
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
-    sub_bottom = _draw_title(fig, fonts, "Campus Size and Average Reported Rape Rates, 2022–2024",
-                             "Three-year Clery Act average per 10,000 students. One dot per\n"
+    sub_bottom = _draw_title(fig, fonts, "Campus Size and Average Reported Rape Rates, 2022" + chr(0x2013) + "2024" if three
+                             else "Campus Size and Reported Rape Rates, 2024",
+                             ("Three-year Clery Act average per 10,000 students. One dot per" if three
+                              else "2024 Clery Act reports per 10,000 students. One dot per") + chr(10) +
                              f"four-year institution with 1,000+ students ({len(pts):,} institutions).")
     cap_top = draw_caption_bottom(
         fig, fonts,
@@ -373,8 +403,8 @@ def rate_scatter_3yr_chart(out, fonts):
 
     xs = np.linspace(500, XCAP, 400)
     exp = rate / 1e4 * xs
-    half = 1.96 * np.sqrt(exp / 3)
-    ax.fill_between(xs, np.maximum(exp - half, 0) / xs * 1e4, (exp + half + 1 / 3) / xs * 1e4,
+    half = 1.96 * np.sqrt(exp / k)
+    ax.fill_between(xs, np.maximum(exp - half, 0) / xs * 1e4, (exp + half + 1 / k) / xs * 1e4,
                     color=CONTEXT_GRAY, alpha=0.18, lw=0)
     ax.axhline(rate, color=INK, lw=2)
     hi_ids = {"230038", "142522", UVU_ID}  # highlighted dots: BYU-Provo, BYU-Idaho (blue) and Utah Valley (green)
@@ -411,7 +441,8 @@ def rate_scatter_3yr_chart(out, fonts):
         lab.set_fontproperties(fonts["regular"])
         lab.set_fontsize(13)
     ax.set_xlabel("Total enrollment", fontproperties=fonts["bold"], fontsize=14, color=INK)
-    ax.set_ylabel("Avg. annual reported rapes per 10,000 students", fontproperties=fonts["bold"], fontsize=14, color=INK)
+    ax.set_ylabel("Avg. annual reported rapes per 10,000 students" if three else "Reported rapes per 10,000 students, 2024",
+                  fontproperties=fonts["bold"], fontsize=14, color=INK)
     ax.text(XCAP * 0.98, rate + 0.8, f"National rate: {rate:.1f}", ha="right", va="bottom",
             fontproperties=fonts["bold"], fontsize=13, color=INK)
     save(fig, out)
@@ -660,7 +691,9 @@ def main():
     FONTS.update(fonts)
     if OFFENSE == "fondling":  # the five charts that mirror the rape set we are comparing
         scatter_chart(args.out_dir / fname("campus-size-vs-reported-rapes-2024.png"), fonts)
+        scatter_chart(args.out_dir / fname("campus-size-vs-reported-rapes-2022-24-average.png"), fonts, period="3yr")
         rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-3yr-2022-24.png"), fonts)
+        rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-2024.png"), fonts, period="2024")
         byu_campus_bars(args, fonts, include_raw=False)
         return
     s = json.loads((DATA / "stats.json").read_text(encoding="utf-8"))

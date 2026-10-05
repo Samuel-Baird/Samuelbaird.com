@@ -278,8 +278,13 @@ def main():
     args.out_dir.mkdir(parents=True, exist_ok=True)
     fonts = load_fonts()
     rates = json.loads((DATA / "state-rates.json").read_text(encoding="utf-8"))
-    if OFFENSE == "fondling":  # only the 2022-24 map without the University of Utah mirrors a rape chart we compare against
-        main_ex_uofu(rates, args.out_dir, fonts, only="rate_2022_24")
+    if OFFENSE == "fondling":  # both periods, University of Utah included in Utah
+        render(rates, "rate_2022_24", "Reported On-Campus Rapes per 10,000 Students by State, 2022" + chr(0x2013) + "2024",
+               "Three-year Clery Act average. All four-year institutions in each state, pooled.",
+               args.out_dir / fname("state-map-reported-rapes-per-10k-2022-24.png"), fonts)
+        render(rates, "rate_2024", "Reported On-Campus Rapes per 10,000 Students by State, 2024",
+               "Clery Act reports. All four-year institutions in each state, pooled.",
+               args.out_dir / fname("state-map-reported-rapes-per-10k-2024.png"), fonts)
         return
     render(rates, "rate_2022_24", "Reported On-Campus Rapes per 10,000 Students by State, 2022–2024",
            "Three-year Clery Act average. All four-year institutions in each state, pooled.",

@@ -24,7 +24,7 @@ Method notes:
   each state's largest contributor.
 - Fondling (`--offense fondling`): the same file's `FONDL22/23/24` columns, same method. `analyze.py --offense fondling` writes
   `fondling/` (field names still say `rape`); `render.py` and `render_state_map.py` take the same flag and rewrite the wording.
-  Five fondling charts mirror the rape charts we compare against.
+  Fondling charts exist for both 2024 alone and the 2022-24 average (BYU comparison bars, both scatters, state maps).
 - Four-year = sector "4-year or above" (public, private nonprofit, for-profit).
 - The file has one enrollment figure per institution; it is used for all three years.
 - Rate per 10,000 = rapes / enrollment x 10,000. Percentile = share of
