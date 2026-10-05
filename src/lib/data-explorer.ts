@@ -2558,6 +2558,12 @@ function cleryFondlingGraphics(): Graphic[] {
       "state-map-reported-fondling-per-10k-2024.png",
       "Map of U.S. states shaded in five bands by 2024 reported on-campus fondling offenses per 10,000 four-year students. Iowa (7.1), Virginia, Alaska, Kansas and Rhode Island are highest; Nevada (0.5), Arizona, Florida, Alabama and Wyoming are lowest. Utah is 4.9.",
     ),
+    mk(
+      "Fondling: Utah, reported on-campus offenses by university, 2024",
+      "Raw 2024 Clery Act fondling counts at all 12 four-year Utah institutions with 1,000+ students, in school colors.",
+      "utah-reported-fondling-by-university-2024.png",
+      "Horizontal bar chart of 2024 reported on-campus fondling offenses at 12 Utah institutions, led by the University of Utah (76, red). BYU (14, blue) is second, then Weber State (7), Utah State (4) and Southern Utah (4).",
+    ),
   ];
 }
 

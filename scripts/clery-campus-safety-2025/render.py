@@ -698,6 +698,12 @@ def main():
         rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-3yr-2022-24.png"), fonts)
         rate_scatter_3yr_chart(args.out_dir / fname("campus-size-vs-reported-rape-rate-2024.png"), fonts, period="2024")
         byu_campus_bars(args, fonts, include_raw=False)
+        ut = json.loads((DATA / "utah-2024.json").read_text(encoding="utf-8"))
+        ub = next(r for r in ut["rows"] if r["unitid"] == BYU_ID)
+        bar_chart(rows=ut["rows"], byu=ub, value_key="rape24", rank_key="rank_raw", decimals=0,
+                  title="Reported On-Campus Rapes at Utah Universities, 2024",
+                  subtitle=f"Raw number of incidents reported under the Clery Act.{chr(10)}All {ut['n']} four-year Utah institutions with 1,000+ students.",
+                  out=args.out_dir / fname("utah-reported-rapes-by-university-2024.png"), fonts=fonts, color_map=SCHOOL_COLORS)
         return
     s = json.loads((DATA / "stats.json").read_text(encoding="utf-8"))
 
