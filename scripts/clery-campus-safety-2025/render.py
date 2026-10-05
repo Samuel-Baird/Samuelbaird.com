@@ -72,14 +72,14 @@ def uniq_labels(rows):
     return out
 
 
-def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, extra_rows=(), rank_key):
+def bar_chart(*, rows, byu, value_key, title, subtitle, out, fonts, decimals, extra_rows=(), rank_key, accent_ids=(BYU_ID,), label_key=None):
     """rows: top-30 records; byu appended if not already present."""
     ids = [r["unitid"] for r in rows]
-    labels = uniq_labels(rows)
+    labels = [r[label_key] for r in rows] if label_key else uniq_labels(rows)
     values = {l: r[value_key] for l, r in zip(labels, rows)}
     order = list(labels)
-    colors = {l: (ACCENT if r["unitid"] == BYU_ID else CONTEXT_GRAY) for l, r in zip(labels, rows)}
-    if BYU_ID not in ids:
+    colors = {l: (ACCENT if r["unitid"] in accent_ids else CONTEXT_GRAY) for l, r in zip(labels, rows)}
+    if not any(i in ids for i in accent_ids) and BYU_ID not in ids:
         lab = f"{BYU_LABEL} (#{byu[rank_key]:,})"
         order.append(lab)
         values[lab] = byu[value_key]
@@ -448,6 +448,26 @@ def main():
               subtitle=f"Three-year Clery Act average per 10,000 students.\n{sub_ut}, plus the median.",
               out=args.out_dir / "utah-reported-rapes-per-10k-3yr-average-2022-24.png", fonts=fonts)
     utah_scatter(args.out_dir / "utah-campus-size-vs-reported-rapes-2024.png", fonts)
+
+    # ---- BYU's three campuses ----
+    bc = json.loads((DATA / "byu-campuses.json").read_text(encoding="utf-8"))
+    crow = bc["rows"]
+    kw = dict(byu=None, rank_key=None, accent_ids=set(bc["byu_ids"]), label_key="label", fonts=fonts)
+    sub = "BYU's three campuses against the U.S. median and well-known schools."
+    bar_chart(rows=sorted(crow, key=lambda r: (-r["rape24"], -r["enrollment"])), value_key="rape24", decimals=0,
+              title="Reported On-Campus Rapes at BYU's Campuses and Comparison Schools, 2024",
+              subtitle="Raw number of incidents reported under the Clery Act.\n" + "BYU's three campuses and well-known schools.",
+              out=args.out_dir / "byu-campuses-reported-rapes-2024.png", **kw)
+    bar_chart(rows=sorted(crow, key=lambda r: -r["rate24"]), value_key="rate24", decimals=1,
+              extra_rows=[("U.S. median", bc["median_rate_2024"], INK)],
+              title="Reported On-Campus Rapes per 10,000 Students at BYU's Campuses and Comparison Schools, 2024",
+              subtitle="Clery Act reports adjusted for enrollment.\n" + sub.replace("U.S. median", "U.S. median (1,000+ students)"),
+              out=args.out_dir / "byu-campuses-reported-rapes-per-10k-2024.png", **kw)
+    bar_chart(rows=sorted(crow, key=lambda r: -r["rate3"]), value_key="rate3", decimals=1,
+              extra_rows=[("U.S. median", bc["median_rate_3yr"], INK)],
+              title="Average Reported On-Campus Rape Rate at BYU's Campuses and Comparison Schools, 2022–2024",
+              subtitle="Three-year Clery Act average per 10,000 students.\n" + sub.replace("U.S. median", "U.S. median (1,000+ students)"),
+              out=args.out_dir / "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png", **kw)
 
 
 if __name__ == "__main__":

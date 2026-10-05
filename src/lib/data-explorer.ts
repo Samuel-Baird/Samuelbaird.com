@@ -24,6 +24,7 @@ import polygamyMoralityData from "../../docs/datasets/pew-mormon-survey-2011/pol
 import gallupGamblingData from "../../docs/datasets/gallup-values-beliefs-gambling/gallup-acceptable-by-religion.json";
 import gallupAttendanceData from "../../docs/datasets/gallup-values-beliefs-gambling/acceptable-by-attendance.json";
 import cleryStats from "../../docs/datasets/clery-campus-safety-2025/stats.json";
+import cleryByu from "../../docs/datasets/clery-campus-safety-2025/byu-campuses.json";
 import cleryUtah from "../../docs/datasets/clery-campus-safety-2025/utah-stats.json";
 import pewGamblingCountryData from "../../docs/datasets/pew-gambling-morality-2025/gambling-morally-wrong-by-country.json";
 import pewGamblingReligionData from "../../docs/datasets/pew-gambling-morality-2025/us-gambling-wrong-by-religion.json";
@@ -2417,6 +2418,7 @@ function cleryGraphics(): Graphic[] {
       `Horizontal bar chart of the three-year average reported on-campus rape rate per 10,000 students, led by Indiana University Indianapolis (35.4) and the University of Utah (30.4). The national median is ${cleryStats.distribution_3yr_ge_5000.median.toFixed(1)}. BYU is ${byu.rate_3yr.toFixed(1)}, ranking ${byu.rank_3yr} of ${byu.of_3yr}.`,
     ),
     ...cleryUtahGraphics(),
+    ...cleryByuCampusGraphics(),
   ];
 }
 
@@ -2450,6 +2452,35 @@ function cleryUtahGraphics(): Graphic[] {
       "Utah's four-year institutions with 1,000+ students: enrollment against 2024 reports, with the expected count at the U.S. national rate.",
       "utah-campus-size-vs-reported-rapes-2024.png",
       `Scatter plot of enrollment against 2024 reported on-campus rapes at ${u.n} Utah institutions with a line for the U.S. national rate. The University of Utah (140) is far above it and off the chart; BYU (4) is below it.`,
+    ),
+  ];
+}
+
+function cleryByuCampusGraphics(): Graphic[] {
+  const base = "/data-explorer/clery-campus-safety-2025/";
+  const row = (label: string) => cleryByu.rows.find((r) => r.label === label)!;
+  const [p, i, h] = ["BYU–Provo", "BYU–Idaho", "BYU–Hawaii"].map(row);
+  const mk = (title: string, description: string, file: string, alt: string): Graphic => ({
+    title, description, imageSrc: base + file, width: 1080, height: 1350, alt,
+  });
+  return [
+    mk(
+      "BYU campuses: reported on-campus rapes, 2024",
+      "Raw 2024 Clery Act counts at BYU–Provo, BYU–Idaho and BYU–Hawaii next to well-known schools.",
+      "byu-campuses-reported-rapes-2024.png",
+      `Horizontal bar chart of 2024 reported on-campus rapes. BYU–Provo ${p.rape24}, BYU–Idaho ${i.rape24} and BYU–Hawaii ${h.rape24}, highlighted, against the University of Utah (140), Stanford (27), Cornell (23), Yale, Liberty, Baylor, Harvard and Notre Dame.`,
+    ),
+    mk(
+      "BYU campuses: reported on-campus rapes per 10,000 students, 2024",
+      "2024 rates for the three BYU campuses, the U.S. median, and well-known schools.",
+      "byu-campuses-reported-rapes-per-10k-2024.png",
+      `Horizontal bar chart of 2024 reported on-campus rapes per 10,000 students. BYU–Provo ${p.rate24.toFixed(1)}, BYU–Idaho ${i.rate24.toFixed(1)} and BYU–Hawaii ${h.rate24.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_2024.toFixed(1)} and comparison schools. BYU–Hawaii has about 2,900 students, so two reports make its rate volatile.`,
+    ),
+    mk(
+      "BYU campuses: average reported on-campus rape rate, 2022-2024",
+      "Three-year average per 10,000 students for the three BYU campuses, the U.S. median, and well-known schools.",
+      "byu-campuses-reported-rapes-per-10k-3yr-average-2022-24.png",
+      `Horizontal bar chart of the 2022-2024 average reported rate. BYU–Provo ${p.rate3.toFixed(1)}, BYU–Idaho ${i.rate3.toFixed(1)} and BYU–Hawaii ${h.rate3.toFixed(1)}, highlighted, against a U.S. median of ${cleryByu.median_rate_3yr.toFixed(1)} and comparison schools.`,
     ),
   ];
 }

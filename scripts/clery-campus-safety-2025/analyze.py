@@ -184,6 +184,21 @@ def main():
     c3 = ["rape22", "rape23", "rape24", "avg_rapes", "enrollment", "rate3", "rank3"]
     dump("utah-2022-24.json", {**ut_stats, "rows": table(ut3.sort_values("rate3", ascending=False), c3)})
 
+    # ---- BYU's three campuses vs. comparison schools ----
+    byu_ids = {"230038": "BYU–Provo", "142522": "BYU–Idaho", "230047": "BYU–Hawaii"}
+    comp_ids = ["230764", "152080", "223232", "232557", "130794", "166027", "243744", "190415"]
+    cmp_df = d.loc[list(byu_ids) + comp_ids].copy()
+    cmp_df["rate24"] = cmp_df.rape24 / cmp_df.enrollment * 1e4
+    cmp_df["rate3"] = cmp_df[["rape22", "rape23", "rape24"]].mean(axis=1) / cmp_df.enrollment * 1e4
+    med24 = float(broad.rate24.median())
+    med3 = float(m_all[m_all.enrollment >= MIN_ENR_BROAD].rate3.median())
+    dump("byu-campuses.json", {
+        "median_rate_2024": round(med24, 4), "median_rate_3yr": round(med3, 4),
+        "median_basis": f"four-year institutions with {MIN_ENR_BROAD:,}+ students",
+        "byu_ids": list(byu_ids),
+        "rows": [{**rec(i, r, ["rape22", "rape23", "rape24", "enrollment", "rate24", "rate3"]),
+                  "label": byu_ids.get(i, r["name"])} for i, r in cmp_df.iterrows()]})
+
     print(json.dumps(stats, indent=2))
     print(json.dumps(ut_stats, indent=2))
     for t, df, c in (
