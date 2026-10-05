@@ -2541,7 +2541,7 @@ function cleryFondlingGraphics(): Graphic[] {
       "Scatter plot of enrollment against the 2022-2024 average annual reported on-campus fondling offenses with a line for the pooled national rate and a band that narrows as campuses grow. An arrow at the top marks Ohio State (160), which is off the chart. The University of Utah (57, red), Indiana University Indianapolis and Florida Institute of Technology sit far above the line. BYU (15.7, blue), Cornell (red) and Utah Valley University (green) are labeled.",
     ),
     mk(
-      "Fondling: campus size and reported rates, 2024",
+      "Fondling: campus size and reported offenses per 10,000 students, 2024",
       "Each four-year institution with 1,000+ students: enrollment against 2024 reported on-campus fondling offenses per 10,000 students.",
       "campus-size-vs-reported-fondling-rate-2024.png",
       "Scatter plot of enrollment against 2024 reported on-campus fondling offenses per 10,000 students, with a flat line at the national rate of 2.8 and a band that narrows as campuses grow. BYU-Provo (3.9) and BYU-Idaho (0.7) are blue, Utah Valley University (0.4) is green, and the University of Utah (20.6) is red.",

@@ -384,7 +384,7 @@ def rate_scatter_3yr_chart(out, fonts, period="3yr"):
     fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
     fig.patch.set_facecolor(PAPER)
     sub_bottom = _draw_title(fig, fonts, "Campus Size and Average Reported Rape Rates, 2022" + chr(0x2013) + "2024" if three
-                             else "Campus Size and Reported Rape Rates, 2024",
+                             else "Campus Size and Reported Rapes per 10,000 Students, 2024",
                              ("Three-year Clery Act average per 10,000 students. One dot per" if three
                               else "2024 Clery Act reports per 10,000 students. One dot per") + chr(10) +
                              f"four-year institution with 1,000+ students ({len(pts):,} institutions).")
