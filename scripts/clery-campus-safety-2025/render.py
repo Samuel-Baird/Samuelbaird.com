@@ -616,7 +616,7 @@ def main():
     b3 = next(r for r in u3["rows"] if r["unitid"] == BYU_ID)
     bar_chart(rows=u3["rows"], byu=b3, value_key="rate3", rank_key="rank3", decimals=1,
               extra_rows=[("Utah median", u3["median_rate_3yr"], INK)],
-              title="Average Reported On-Campus Rape Rate at Utah Universities, 2022–2024",
+              title="Reported On-Campus Rapes per 10,000 Students at Utah Universities, 2022–2024",
               subtitle=f"Three-year Clery Act average per 10,000 students.\n{sub_ut}, plus the median.",
               out=args.out_dir / "utah-reported-rapes-per-10k-3yr-average-2022-24.png", fonts=fonts, color_map=SCHOOL_COLORS)
     utah_scatter(args.out_dir / "utah-campus-size-vs-reported-rapes-2024.png", fonts)
