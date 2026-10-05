@@ -146,11 +146,11 @@ def polygon_center(polys):
     return (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
 
 
-def render(rates, key, title, subtitle, out, fonts):
+def render(rates, key, title, subtitle, out, fonts, circle=None):
     states = rates[key]
     by_name = {v["state"]: v for v in states.values()}
     geo = json.loads((DATA / "us-state-paths.json").read_text(encoding="utf-8"))
-    values = [v["rate_per_10k"] for v in by_name.values()]
+    values = [v["rate_per_10k"] for v in by_name.values()] + ([circle["rate"]] if circle else [])
     breaks = classify(values)
     labels = band_labels(breaks)
 
@@ -192,6 +192,16 @@ def render(rates, key, title, subtitle, out, fonts):
     for cx, cy, ab, col in labels_to_draw:  # after every shape so no neighbor paints over a label
         ax.text(cx, cy, ab, ha="center", va="center", fontsize=10.5, fontproperties=fonts["bold"], color=col, zorder=5)
 
+    if circle:  # a campus shown on its own, as a circle off the Atlantic coast
+        from matplotlib.patches import Circle
+        cx, cy, r = 905, 600 - 462, 36
+        v = circle["rate"]
+        ax.add_patch(Circle((cx, cy), r, facecolor=ZERO_FILL if v <= 0 else RAMP[band(v)], edgecolor=PAPER, lw=1.5, zorder=4))
+        ax.text(cx, cy, f"{v:.1f}", ha="center", va="center", fontsize=15, fontproperties=fonts["bold"],
+                color=PAPER if (v > 0 and band(v) >= 3) else INK, zorder=5)
+        ax.text(cx, cy - r - 8, circle["label"], ha="center", va="top", fontsize=11.5, fontproperties=fonts["bold"],
+                color=INK, zorder=5, linespacing=1.15)
+
     # key: five swatches in one row
     sw_w, sw_h, x = 0.025, 0.014, 0.065
     for i, lab in enumerate(labels):
@@ -217,6 +227,16 @@ def render(rates, key, title, subtitle, out, fonts):
     print("wrote", out, "bands", breaks)
 
 
+def main_ex_uofu(rates, out_dir, fonts):
+    u = rates["uofu"]
+    for key, rkey, per, sub in (("rate_2022_24_ex_uofu", "rate_2022_24", "2022–2024", "Three-year Clery Act average."),
+                                ("rate_2024_ex_uofu", "rate_2024", "2024", "Clery Act reports.")):
+        render(rates, key, f"Reported On-Campus Rapes per 10,000 Students by State, {per}",
+               "Utah excludes the University of Utah, shown as the circle." + chr(10) + sub + " All other four-year institutions pooled.",
+               out_dir / f"state-map-reported-rapes-per-10k-{'2022-24' if '22' in rkey else '2024'}-without-university-of-utah.png",
+               fonts, circle={"rate": u[rkey], "label": "University" + chr(10) + "of Utah"})
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", type=Path, required=True)
@@ -230,6 +250,7 @@ def main():
     render(rates, "rate_2024", "Reported On-Campus Rapes per 10,000 Students by State, 2024",
            "Clery Act reports. All four-year institutions in each state, pooled.",
            args.out_dir / "state-map-reported-rapes-per-10k-2024.png", fonts)
+    main_ex_uofu(rates, args.out_dir, fonts)
 
 
 if __name__ == "__main__":

@@ -921,5 +921,935 @@
       "largest_contributor": "University of Wyoming",
       "largest_contributor_share": 0.659
     }
+  },
+  "rate_2024_ex_uofu": {
+    "AK": {
+      "state": "Alaska",
+      "institutions": 7,
+      "enrollment": 22430,
+      "reports": 12.0,
+      "rate_per_10k": 5.35,
+      "largest_contributor": "University of Alaska Anchorage",
+      "largest_contributor_share": 0.583
+    },
+    "AL": {
+      "state": "Alabama",
+      "institutions": 32,
+      "enrollment": 222584,
+      "reports": 56.0,
+      "rate_per_10k": 2.5159,
+      "largest_contributor": "The University of Alabama",
+      "largest_contributor_share": 0.286
+    },
+    "AR": {
+      "state": "Arkansas",
+      "institutions": 27,
+      "enrollment": 112792,
+      "reports": 31.0,
+      "rate_per_10k": 2.7484,
+      "largest_contributor": "Arkansas State University",
+      "largest_contributor_share": 0.226
+    },
+    "AZ": {
+      "state": "Arizona",
+      "institutions": 40,
+      "enrollment": 519334,
+      "reports": 83.0,
+      "rate_per_10k": 1.5982,
+      "largest_contributor": "Arizona State University Campus Immersion",
+      "largest_contributor_share": 0.325
+    },
+    "CA": {
+      "state": "California",
+      "institutions": 246,
+      "enrollment": 1673394,
+      "reports": 459.0,
+      "rate_per_10k": 2.7429,
+      "largest_contributor": "University of California-Santa Cruz",
+      "largest_contributor_share": 0.1
+    },
+    "CO": {
+      "state": "Colorado",
+      "institutions": 40,
+      "enrollment": 330357,
+      "reports": 183.0,
+      "rate_per_10k": 5.5395,
+      "largest_contributor": "University of Colorado Boulder",
+      "largest_contributor_share": 0.525
+    },
+    "CT": {
+      "state": "Connecticut",
+      "institutions": 28,
+      "enrollment": 157602,
+      "reports": 62.0,
+      "rate_per_10k": 3.934,
+      "largest_contributor": "Yale University",
+      "largest_contributor_share": 0.21
+    },
+    "DC": {
+      "state": "District of Columbia",
+      "institutions": 15,
+      "enrollment": 88023,
+      "reports": 42.0,
+      "rate_per_10k": 4.7715,
+      "largest_contributor": "George Washington University",
+      "largest_contributor_share": 0.405
+    },
+    "DE": {
+      "state": "Delaware",
+      "institutions": 6,
+      "enrollment": 58010,
+      "reports": 15.0,
+      "rate_per_10k": 2.5858,
+      "largest_contributor": "University of Delaware",
+      "largest_contributor_share": 0.667
+    },
+    "FL": {
+      "state": "Florida",
+      "institutions": 123,
+      "enrollment": 1010320,
+      "reports": 106.0,
+      "rate_per_10k": 1.0492,
+      "largest_contributor": "University of Central Florida",
+      "largest_contributor_share": 0.123
+    },
+    "GA": {
+      "state": "Georgia",
+      "institutions": 66,
+      "enrollment": 449213,
+      "reports": 151.0,
+      "rate_per_10k": 3.3614,
+      "largest_contributor": "Mercer University",
+      "largest_contributor_share": 0.106
+    },
+    "HI": {
+      "state": "Hawaii",
+      "institutions": 9,
+      "enrollment": 39086,
+      "reports": 11.0,
+      "rate_per_10k": 2.8143,
+      "largest_contributor": "University of Hawaii at Manoa",
+      "largest_contributor_share": 0.545
+    },
+    "IA": {
+      "state": "Iowa",
+      "institutions": 37,
+      "enrollment": 119909,
+      "reports": 74.0,
+      "rate_per_10k": 6.1713,
+      "largest_contributor": "University of Iowa",
+      "largest_contributor_share": 0.189
+    },
+    "ID": {
+      "state": "Idaho",
+      "institutions": 11,
+      "enrollment": 114143,
+      "reports": 16.0,
+      "rate_per_10k": 1.4018,
+      "largest_contributor": "University of Idaho",
+      "largest_contributor_share": 0.5
+    },
+    "IL": {
+      "state": "Illinois",
+      "institutions": 89,
+      "enrollment": 453238,
+      "reports": 131.0,
+      "rate_per_10k": 2.8903,
+      "largest_contributor": "University of Illinois Urbana-Champaign",
+      "largest_contributor_share": 0.191
+    },
+    "IN": {
+      "state": "Indiana",
+      "institutions": 57,
+      "enrollment": 318595,
+      "reports": 205.0,
+      "rate_per_10k": 6.4345,
+      "largest_contributor": "Indiana University-Indianapolis",
+      "largest_contributor_share": 0.424
+    },
+    "KS": {
+      "state": "Kansas",
+      "institutions": 33,
+      "enrollment": 119535,
+      "reports": 72.0,
+      "rate_per_10k": 6.0233,
+      "largest_contributor": "University of Kansas",
+      "largest_contributor_share": 0.486
+    },
+    "KY": {
+      "state": "Kentucky",
+      "institutions": 37,
+      "enrollment": 200210,
+      "reports": 77.0,
+      "rate_per_10k": 3.846,
+      "largest_contributor": "University of Kentucky",
+      "largest_contributor_share": 0.532
+    },
+    "LA": {
+      "state": "Louisiana",
+      "institutions": 31,
+      "enrollment": 186350,
+      "reports": 93.0,
+      "rate_per_10k": 4.9906,
+      "largest_contributor": "Louisiana State University and Agricultural & Mechanical College",
+      "largest_contributor_share": 0.419
+    },
+    "MA": {
+      "state": "Massachusetts",
+      "institutions": 82,
+      "enrollment": 396280,
+      "reports": 174.0,
+      "rate_per_10k": 4.3908,
+      "largest_contributor": "University of Massachusetts-Amherst",
+      "largest_contributor_share": 0.08
+    },
+    "MD": {
+      "state": "Maryland",
+      "institutions": 32,
+      "enrollment": 239977,
+      "reports": 106.0,
+      "rate_per_10k": 4.4171,
+      "largest_contributor": "Johns Hopkins University",
+      "largest_contributor_share": 0.113
+    },
+    "ME": {
+      "state": "Maine",
+      "institutions": 21,
+      "enrollment": 59515,
+      "reports": 45.0,
+      "rate_per_10k": 7.5611,
+      "largest_contributor": "University of Southern Maine",
+      "largest_contributor_share": 0.222
+    },
+    "MI": {
+      "state": "Michigan",
+      "institutions": 59,
+      "enrollment": 346957,
+      "reports": 157.0,
+      "rate_per_10k": 4.5251,
+      "largest_contributor": "Michigan State University",
+      "largest_contributor_share": 0.204
+    },
+    "MN": {
+      "state": "Minnesota",
+      "institutions": 49,
+      "enrollment": 299797,
+      "reports": 102.0,
+      "rate_per_10k": 3.4023,
+      "largest_contributor": "Mayo Clinic College of Medicine and Science",
+      "largest_contributor_share": 0.196
+    },
+    "MO": {
+      "state": "Missouri",
+      "institutions": 69,
+      "enrollment": 288075,
+      "reports": 69.0,
+      "rate_per_10k": 2.3952,
+      "largest_contributor": "Saint Louis University",
+      "largest_contributor_share": 0.13
+    },
+    "MS": {
+      "state": "Mississippi",
+      "institutions": 17,
+      "enrollment": 96432,
+      "reports": 24.0,
+      "rate_per_10k": 2.4888,
+      "largest_contributor": "University of Mississippi",
+      "largest_contributor_share": 0.542
+    },
+    "MT": {
+      "state": "Montana",
+      "institutions": 13,
+      "enrollment": 40453,
+      "reports": 18.0,
+      "rate_per_10k": 4.4496,
+      "largest_contributor": "The University of Montana",
+      "largest_contributor_share": 0.556
+    },
+    "NC": {
+      "state": "North Carolina",
+      "institutions": 69,
+      "enrollment": 341391,
+      "reports": 185.0,
+      "rate_per_10k": 5.419,
+      "largest_contributor": "East Carolina University",
+      "largest_contributor_share": 0.081
+    },
+    "ND": {
+      "state": "North Dakota",
+      "institutions": 15,
+      "enrollment": 45832,
+      "reports": 17.0,
+      "rate_per_10k": 3.7092,
+      "largest_contributor": "North Dakota State University-Main Campus",
+      "largest_contributor_share": 0.353
+    },
+    "NE": {
+      "state": "Nebraska",
+      "institutions": 23,
+      "enrollment": 96051,
+      "reports": 47.0,
+      "rate_per_10k": 4.8932,
+      "largest_contributor": "University of Nebraska-Lincoln",
+      "largest_contributor_share": 0.191
+    },
+    "NH": {
+      "state": "New Hampshire",
+      "institutions": 15,
+      "enrollment": 229888,
+      "reports": 76.0,
+      "rate_per_10k": 3.306,
+      "largest_contributor": "Dartmouth College",
+      "largest_contributor_share": 0.368
+    },
+    "NJ": {
+      "state": "New Jersey",
+      "institutions": 63,
+      "enrollment": 269168,
+      "reports": 99.0,
+      "rate_per_10k": 3.678,
+      "largest_contributor": "Rutgers University-New Brunswick",
+      "largest_contributor_share": 0.192
+    },
+    "NM": {
+      "state": "New Mexico",
+      "institutions": 15,
+      "enrollment": 72247,
+      "reports": 30.0,
+      "rate_per_10k": 4.1524,
+      "largest_contributor": "University of New Mexico-Main Campus",
+      "largest_contributor_share": 0.567
+    },
+    "NV": {
+      "state": "Nevada",
+      "institutions": 15,
+      "enrollment": 115986,
+      "reports": 25.0,
+      "rate_per_10k": 2.1554,
+      "largest_contributor": "University of Nevada-Reno",
+      "largest_contributor_share": 0.84
+    },
+    "NY": {
+      "state": "New York",
+      "institutions": 223,
+      "enrollment": 892257,
+      "reports": 332.0,
+      "rate_per_10k": 3.7209,
+      "largest_contributor": "Cornell University",
+      "largest_contributor_share": 0.069
+    },
+    "OH": {
+      "state": "Ohio",
+      "institutions": 125,
+      "enrollment": 543459,
+      "reports": 244.0,
+      "rate_per_10k": 4.4898,
+      "largest_contributor": "Ohio State University-Main Campus",
+      "largest_contributor_share": 0.238
+    },
+    "OK": {
+      "state": "Oklahoma",
+      "institutions": 32,
+      "enrollment": 152549,
+      "reports": 40.0,
+      "rate_per_10k": 2.6221,
+      "largest_contributor": "University of Oklahoma-Norman Campus",
+      "largest_contributor_share": 0.325
+    },
+    "OR": {
+      "state": "Oregon",
+      "institutions": 30,
+      "enrollment": 149837,
+      "reports": 45.0,
+      "rate_per_10k": 3.0033,
+      "largest_contributor": "Oregon State University",
+      "largest_contributor_share": 0.267
+    },
+    "PA": {
+      "state": "Pennsylvania",
+      "institutions": 137,
+      "enrollment": 509983,
+      "reports": 291.0,
+      "rate_per_10k": 5.7061,
+      "largest_contributor": "Pennsylvania State University-Main Campus",
+      "largest_contributor_share": 0.172
+    },
+    "RI": {
+      "state": "Rhode Island",
+      "institutions": 12,
+      "enrollment": 60487,
+      "reports": 45.0,
+      "rate_per_10k": 7.4396,
+      "largest_contributor": "Brown University",
+      "largest_contributor_share": 0.222
+    },
+    "SC": {
+      "state": "South Carolina",
+      "institutions": 40,
+      "enrollment": 178125,
+      "reports": 78.0,
+      "rate_per_10k": 4.3789,
+      "largest_contributor": "University of South Carolina-Columbia",
+      "largest_contributor_share": 0.218
+    },
+    "SD": {
+      "state": "South Dakota",
+      "institutions": 14,
+      "enrollment": 45320,
+      "reports": 15.0,
+      "rate_per_10k": 3.3098,
+      "largest_contributor": "University of South Dakota",
+      "largest_contributor_share": 0.4
+    },
+    "TN": {
+      "state": "Tennessee",
+      "institutions": 56,
+      "enrollment": 243934,
+      "reports": 74.0,
+      "rate_per_10k": 3.0336,
+      "largest_contributor": "The University of Tennessee-Knoxville",
+      "largest_contributor_share": 0.243
+    },
+    "TX": {
+      "state": "Texas",
+      "institutions": 148,
+      "enrollment": 1387720,
+      "reports": 347.0,
+      "rate_per_10k": 2.5005,
+      "largest_contributor": "Texas A&M University-College Station",
+      "largest_contributor_share": 0.112
+    },
+    "UT": {
+      "state": "Utah",
+      "institutions": 18,
+      "enrollment": 193425,
+      "reports": 35.0,
+      "rate_per_10k": 1.8095,
+      "largest_contributor": "Utah Valley University",
+      "largest_contributor_share": 0.257
+    },
+    "VA": {
+      "state": "Virginia",
+      "institutions": 67,
+      "enrollment": 409797,
+      "reports": 146.0,
+      "rate_per_10k": 3.5627,
+      "largest_contributor": "University of Virginia-Main Campus",
+      "largest_contributor_share": 0.144
+    },
+    "VT": {
+      "state": "Vermont",
+      "institutions": 12,
+      "enrollment": 33315,
+      "reports": 88.0,
+      "rate_per_10k": 26.4145,
+      "largest_contributor": "Bennington College",
+      "largest_contributor_share": 0.602
+    },
+    "WA": {
+      "state": "Washington",
+      "institutions": 66,
+      "enrollment": 328698,
+      "reports": 64.0,
+      "rate_per_10k": 1.9471,
+      "largest_contributor": "Spokane Falls Community College",
+      "largest_contributor_share": 0.125
+    },
+    "WI": {
+      "state": "Wisconsin",
+      "institutions": 45,
+      "enrollment": 232843,
+      "reports": 131.0,
+      "rate_per_10k": 5.6261,
+      "largest_contributor": "University of Wisconsin-Madison",
+      "largest_contributor_share": 0.145
+    },
+    "WV": {
+      "state": "West Virginia",
+      "institutions": 25,
+      "enrollment": 118492,
+      "reports": 40.0,
+      "rate_per_10k": 3.3758,
+      "largest_contributor": "West Virginia University",
+      "largest_contributor_share": 0.5
+    },
+    "WY": {
+      "state": "Wyoming",
+      "institutions": 5,
+      "enrollment": 21350,
+      "reports": 10.0,
+      "rate_per_10k": 4.6838,
+      "largest_contributor": "University of Wyoming",
+      "largest_contributor_share": 0.5
+    }
+  },
+  "rate_2022_24_ex_uofu": {
+    "AK": {
+      "state": "Alaska",
+      "institutions": 7,
+      "enrollment": 22430,
+      "reports": 14.6667,
+      "rate_per_10k": 6.5389,
+      "largest_contributor": "University of Alaska Fairbanks",
+      "largest_contributor_share": 0.614
+    },
+    "AL": {
+      "state": "Alabama",
+      "institutions": 32,
+      "enrollment": 222584,
+      "reports": 69.3333,
+      "rate_per_10k": 3.1149,
+      "largest_contributor": "The University of Alabama",
+      "largest_contributor_share": 0.356
+    },
+    "AR": {
+      "state": "Arkansas",
+      "institutions": 26,
+      "enrollment": 112785,
+      "reports": 33.6667,
+      "rate_per_10k": 2.985,
+      "largest_contributor": "University of Arkansas",
+      "largest_contributor_share": 0.257
+    },
+    "AZ": {
+      "state": "Arizona",
+      "institutions": 40,
+      "enrollment": 519334,
+      "reports": 105.6667,
+      "rate_per_10k": 2.0347,
+      "largest_contributor": "University of Arizona",
+      "largest_contributor_share": 0.366
+    },
+    "CA": {
+      "state": "California",
+      "institutions": 243,
+      "enrollment": 1672319,
+      "reports": 477.6667,
+      "rate_per_10k": 2.8563,
+      "largest_contributor": "University of California-Los Angeles",
+      "largest_contributor_share": 0.078
+    },
+    "CO": {
+      "state": "Colorado",
+      "institutions": 39,
+      "enrollment": 330021,
+      "reports": 140.6667,
+      "rate_per_10k": 4.2624,
+      "largest_contributor": "University of Colorado Boulder",
+      "largest_contributor_share": 0.37
+    },
+    "CT": {
+      "state": "Connecticut",
+      "institutions": 27,
+      "enrollment": 157268,
+      "reports": 91.6667,
+      "rate_per_10k": 5.8287,
+      "largest_contributor": "Yale University",
+      "largest_contributor_share": 0.385
+    },
+    "DC": {
+      "state": "District of Columbia",
+      "institutions": 15,
+      "enrollment": 88023,
+      "reports": 43.3333,
+      "rate_per_10k": 4.923,
+      "largest_contributor": "George Washington University",
+      "largest_contributor_share": 0.3
+    },
+    "DE": {
+      "state": "Delaware",
+      "institutions": 6,
+      "enrollment": 58010,
+      "reports": 19.3333,
+      "rate_per_10k": 3.3328,
+      "largest_contributor": "University of Delaware",
+      "largest_contributor_share": 0.517
+    },
+    "FL": {
+      "state": "Florida",
+      "institutions": 119,
+      "enrollment": 1008605,
+      "reports": 136.0,
+      "rate_per_10k": 1.3484,
+      "largest_contributor": "University of Florida",
+      "largest_contributor_share": 0.098
+    },
+    "GA": {
+      "state": "Georgia",
+      "institutions": 66,
+      "enrollment": 449213,
+      "reports": 143.0,
+      "rate_per_10k": 3.1833,
+      "largest_contributor": "Emory University",
+      "largest_contributor_share": 0.093
+    },
+    "HI": {
+      "state": "Hawaii",
+      "institutions": 9,
+      "enrollment": 39086,
+      "reports": 9.3333,
+      "rate_per_10k": 2.3879,
+      "largest_contributor": "University of Hawaii at Manoa",
+      "largest_contributor_share": 0.536
+    },
+    "IA": {
+      "state": "Iowa",
+      "institutions": 37,
+      "enrollment": 119909,
+      "reports": 89.3333,
+      "rate_per_10k": 7.4501,
+      "largest_contributor": "University of Iowa",
+      "largest_contributor_share": 0.291
+    },
+    "ID": {
+      "state": "Idaho",
+      "institutions": 11,
+      "enrollment": 114143,
+      "reports": 22.0,
+      "rate_per_10k": 1.9274,
+      "largest_contributor": "Boise State University",
+      "largest_contributor_share": 0.288
+    },
+    "IL": {
+      "state": "Illinois",
+      "institutions": 88,
+      "enrollment": 452899,
+      "reports": 148.0,
+      "rate_per_10k": 3.2678,
+      "largest_contributor": "University of Illinois Urbana-Champaign",
+      "largest_contributor_share": 0.142
+    },
+    "IN": {
+      "state": "Indiana",
+      "institutions": 57,
+      "enrollment": 318595,
+      "reports": 193.3333,
+      "rate_per_10k": 6.0683,
+      "largest_contributor": "Indiana University-Indianapolis",
+      "largest_contributor_share": 0.412
+    },
+    "KS": {
+      "state": "Kansas",
+      "institutions": 32,
+      "enrollment": 119134,
+      "reports": 60.0,
+      "rate_per_10k": 5.0363,
+      "largest_contributor": "University of Kansas",
+      "largest_contributor_share": 0.4
+    },
+    "KY": {
+      "state": "Kentucky",
+      "institutions": 37,
+      "enrollment": 200210,
+      "reports": 86.6667,
+      "rate_per_10k": 4.3288,
+      "largest_contributor": "University of Kentucky",
+      "largest_contributor_share": 0.385
+    },
+    "LA": {
+      "state": "Louisiana",
+      "institutions": 29,
+      "enrollment": 183797,
+      "reports": 79.6667,
+      "rate_per_10k": 4.3345,
+      "largest_contributor": "Louisiana State University and Agricultural & Mechanical College",
+      "largest_contributor_share": 0.351
+    },
+    "MA": {
+      "state": "Massachusetts",
+      "institutions": 82,
+      "enrollment": 396280,
+      "reports": 205.6667,
+      "rate_per_10k": 5.1899,
+      "largest_contributor": "Boston College",
+      "largest_contributor_share": 0.076
+    },
+    "MD": {
+      "state": "Maryland",
+      "institutions": 32,
+      "enrollment": 239977,
+      "reports": 107.3333,
+      "rate_per_10k": 4.4727,
+      "largest_contributor": "University of Maryland-College Park",
+      "largest_contributor_share": 0.158
+    },
+    "ME": {
+      "state": "Maine",
+      "institutions": 21,
+      "enrollment": 59515,
+      "reports": 51.6667,
+      "rate_per_10k": 8.6813,
+      "largest_contributor": "University of Maine",
+      "largest_contributor_share": 0.194
+    },
+    "MI": {
+      "state": "Michigan",
+      "institutions": 59,
+      "enrollment": 346957,
+      "reports": 177.3333,
+      "rate_per_10k": 5.1111,
+      "largest_contributor": "University of Michigan-Ann Arbor",
+      "largest_contributor_share": 0.212
+    },
+    "MN": {
+      "state": "Minnesota",
+      "institutions": 49,
+      "enrollment": 299797,
+      "reports": 113.6667,
+      "rate_per_10k": 3.7915,
+      "largest_contributor": "University of Minnesota-Twin Cities",
+      "largest_contributor_share": 0.211
+    },
+    "MO": {
+      "state": "Missouri",
+      "institutions": 69,
+      "enrollment": 288075,
+      "reports": 77.6667,
+      "rate_per_10k": 2.6961,
+      "largest_contributor": "Saint Louis University",
+      "largest_contributor_share": 0.15
+    },
+    "MS": {
+      "state": "Mississippi",
+      "institutions": 17,
+      "enrollment": 96432,
+      "reports": 33.3333,
+      "rate_per_10k": 3.4567,
+      "largest_contributor": "University of Mississippi",
+      "largest_contributor_share": 0.38
+    },
+    "MT": {
+      "state": "Montana",
+      "institutions": 13,
+      "enrollment": 40453,
+      "reports": 34.6667,
+      "rate_per_10k": 8.5696,
+      "largest_contributor": "The University of Montana",
+      "largest_contributor_share": 0.519
+    },
+    "NC": {
+      "state": "North Carolina",
+      "institutions": 68,
+      "enrollment": 341138,
+      "reports": 212.6667,
+      "rate_per_10k": 6.234,
+      "largest_contributor": "University of North Carolina at Chapel Hill",
+      "largest_contributor_share": 0.082
+    },
+    "ND": {
+      "state": "North Dakota",
+      "institutions": 15,
+      "enrollment": 45832,
+      "reports": 18.6667,
+      "rate_per_10k": 4.0728,
+      "largest_contributor": "North Dakota State University-Main Campus",
+      "largest_contributor_share": 0.339
+    },
+    "NE": {
+      "state": "Nebraska",
+      "institutions": 23,
+      "enrollment": 96051,
+      "reports": 57.3333,
+      "rate_per_10k": 5.9691,
+      "largest_contributor": "University of Nebraska-Lincoln",
+      "largest_contributor_share": 0.378
+    },
+    "NH": {
+      "state": "New Hampshire",
+      "institutions": 15,
+      "enrollment": 229888,
+      "reports": 57.6667,
+      "rate_per_10k": 2.5085,
+      "largest_contributor": "University of New Hampshire-Main Campus",
+      "largest_contributor_share": 0.341
+    },
+    "NJ": {
+      "state": "New Jersey",
+      "institutions": 63,
+      "enrollment": 269168,
+      "reports": 87.0,
+      "rate_per_10k": 3.2322,
+      "largest_contributor": "Rutgers University-New Brunswick",
+      "largest_contributor_share": 0.188
+    },
+    "NM": {
+      "state": "New Mexico",
+      "institutions": 15,
+      "enrollment": 72247,
+      "reports": 33.0,
+      "rate_per_10k": 4.5677,
+      "largest_contributor": "University of New Mexico-Main Campus",
+      "largest_contributor_share": 0.576
+    },
+    "NV": {
+      "state": "Nevada",
+      "institutions": 14,
+      "enrollment": 115693,
+      "reports": 12.6667,
+      "rate_per_10k": 1.0949,
+      "largest_contributor": "University of Nevada-Reno",
+      "largest_contributor_share": 0.737
+    },
+    "NY": {
+      "state": "New York",
+      "institutions": 220,
+      "enrollment": 891892,
+      "reports": 399.6667,
+      "rate_per_10k": 4.4811,
+      "largest_contributor": "Hartwick College",
+      "largest_contributor_share": 0.102
+    },
+    "OH": {
+      "state": "Ohio",
+      "institutions": 123,
+      "enrollment": 543218,
+      "reports": 284.6667,
+      "rate_per_10k": 5.2404,
+      "largest_contributor": "Ohio State University-Main Campus",
+      "largest_contributor_share": 0.238
+    },
+    "OK": {
+      "state": "Oklahoma",
+      "institutions": 32,
+      "enrollment": 152549,
+      "reports": 41.6667,
+      "rate_per_10k": 2.7314,
+      "largest_contributor": "Oklahoma State University-Main Campus",
+      "largest_contributor_share": 0.264
+    },
+    "OR": {
+      "state": "Oregon",
+      "institutions": 30,
+      "enrollment": 149837,
+      "reports": 48.3333,
+      "rate_per_10k": 3.2257,
+      "largest_contributor": "Oregon State University",
+      "largest_contributor_share": 0.221
+    },
+    "PA": {
+      "state": "Pennsylvania",
+      "institutions": 137,
+      "enrollment": 509983,
+      "reports": 324.0,
+      "rate_per_10k": 6.3532,
+      "largest_contributor": "Pennsylvania State University-Main Campus",
+      "largest_contributor_share": 0.139
+    },
+    "RI": {
+      "state": "Rhode Island",
+      "institutions": 12,
+      "enrollment": 60487,
+      "reports": 51.6667,
+      "rate_per_10k": 8.5418,
+      "largest_contributor": "Brown University",
+      "largest_contributor_share": 0.329
+    },
+    "SC": {
+      "state": "South Carolina",
+      "institutions": 40,
+      "enrollment": 178125,
+      "reports": 79.6667,
+      "rate_per_10k": 4.4725,
+      "largest_contributor": "University of South Carolina-Columbia",
+      "largest_contributor_share": 0.163
+    },
+    "SD": {
+      "state": "South Dakota",
+      "institutions": 14,
+      "enrollment": 45320,
+      "reports": 18.0,
+      "rate_per_10k": 3.9718,
+      "largest_contributor": "University of South Dakota",
+      "largest_contributor_share": 0.407
+    },
+    "TN": {
+      "state": "Tennessee",
+      "institutions": 55,
+      "enrollment": 243733,
+      "reports": 76.6667,
+      "rate_per_10k": 3.1455,
+      "largest_contributor": "The University of Tennessee-Knoxville",
+      "largest_contributor_share": 0.261
+    },
+    "TX": {
+      "state": "Texas",
+      "institutions": 145,
+      "enrollment": 1384850,
+      "reports": 376.3333,
+      "rate_per_10k": 2.7175,
+      "largest_contributor": "Texas A&M University-College Station",
+      "largest_contributor_share": 0.148
+    },
+    "UT": {
+      "state": "Utah",
+      "institutions": 18,
+      "enrollment": 193425,
+      "reports": 32.6667,
+      "rate_per_10k": 1.6889,
+      "largest_contributor": "Utah Valley University",
+      "largest_contributor_share": 0.214
+    },
+    "VA": {
+      "state": "Virginia",
+      "institutions": 65,
+      "enrollment": 409300,
+      "reports": 167.6667,
+      "rate_per_10k": 4.0964,
+      "largest_contributor": "Virginia Commonwealth University",
+      "largest_contributor_share": 0.151
+    },
+    "VT": {
+      "state": "Vermont",
+      "institutions": 12,
+      "enrollment": 33315,
+      "reports": 54.6667,
+      "rate_per_10k": 16.409,
+      "largest_contributor": "Bennington College",
+      "largest_contributor_share": 0.335
+    },
+    "WA": {
+      "state": "Washington",
+      "institutions": 66,
+      "enrollment": 328698,
+      "reports": 100.6667,
+      "rate_per_10k": 3.0626,
+      "largest_contributor": "Western Washington University",
+      "largest_contributor_share": 0.172
+    },
+    "WI": {
+      "state": "Wisconsin",
+      "institutions": 45,
+      "enrollment": 232843,
+      "reports": 130.3333,
+      "rate_per_10k": 5.5975,
+      "largest_contributor": "University of Wisconsin-Madison",
+      "largest_contributor_share": 0.146
+    },
+    "WV": {
+      "state": "West Virginia",
+      "institutions": 25,
+      "enrollment": 118492,
+      "reports": 37.6667,
+      "rate_per_10k": 3.1788,
+      "largest_contributor": "West Virginia University",
+      "largest_contributor_share": 0.504
+    },
+    "WY": {
+      "state": "Wyoming",
+      "institutions": 5,
+      "enrollment": 21350,
+      "reports": 13.6667,
+      "rate_per_10k": 6.4012,
+      "largest_contributor": "University of Wyoming",
+      "largest_contributor_share": 0.659
+    }
+  },
+  "uofu": {
+    "name": "University of Utah",
+    "enrollment": 36894,
+    "reports_2024": 140,
+    "rate_2024": 37.9465,
+    "reports_avg_2022_24": 112.0,
+    "rate_2022_24": 30.3572
   }
 }

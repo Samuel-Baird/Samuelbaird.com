@@ -233,7 +233,15 @@ def main():
     dump("state-rates.json", {
         "note": "Pooled rate: all reported on-campus rapes at a state's four-year institutions / their total enrollment x 10,000.",
         "rate_2024": by_state(y24, "rape24"),
-        "rate_2022_24": by_state(m_all, "avg_rapes")})
+        "rate_2022_24": by_state(m_all, "avg_rapes"),
+        # Same, with the University of Utah removed from Utah and reported on its own.
+        "rate_2024_ex_uofu": by_state(y24.drop(index="230764"), "rape24"),
+        "rate_2022_24_ex_uofu": by_state(m_all.drop(index="230764"), "avg_rapes"),
+        "uofu": {"name": "University of Utah", "enrollment": int(y24.loc["230764", "enrollment"]),
+                 "reports_2024": int(y24.loc["230764", "rape24"]),
+                 "rate_2024": round(float(y24.loc["230764", "rape24"] / y24.loc["230764", "enrollment"] * 1e4), 4),
+                 "reports_avg_2022_24": round(float(m_all.loc["230764", "avg_rapes"]), 4),
+                 "rate_2022_24": round(float(m_all.loc["230764", "avg_rapes"] / m_all.loc["230764", "enrollment"] * 1e4), 4)}})
 
     print(json.dumps(stats, indent=2))
     print(json.dumps(ut_stats, indent=2))

@@ -2411,6 +2411,18 @@ function cleryGraphics(): Graphic[] {
       "state-map-reported-rapes-per-10k-2024.png",
       "Map of U.S. states shaded in five bands by 2024 reported on-campus rapes per 10,000 four-year students in the state. Vermont is highest at 26.4, then Utah, Maine, Rhode Island and Indiana. Single-year rates in small states swing widely.",
     ),
+    mk(
+      "Reported on-campus rapes per 10,000 students by state, 2022-2024, without the University of Utah",
+      "Same state heat map with the University of Utah taken out of Utah and shown on its own as a circle beside the map.",
+      "state-map-reported-rapes-per-10k-2022-24-without-university-of-utah.png",
+      "Map of U.S. states shaded in five bands by the 2022-2024 average reported on-campus rapes per 10,000 four-year students. Utah's shading excludes the University of Utah (1.7 for the rest of Utah), which appears as a separate circle at 30.4.",
+    ),
+    mk(
+      "Reported on-campus rapes per 10,000 students by state, 2024, without the University of Utah",
+      "Same 2024 state heat map with the University of Utah taken out of Utah and shown on its own as a circle beside the map.",
+      "state-map-reported-rapes-per-10k-2024-without-university-of-utah.png",
+      "Map of U.S. states shaded in five bands by 2024 reported on-campus rapes per 10,000 four-year students. Utah's shading excludes the University of Utah (1.8 for the rest of Utah), which appears as a separate circle at 37.9.",
+    ),
     ...cleryUtahGraphics(),
     ...cleryByuCampusGraphics(),
   ];
