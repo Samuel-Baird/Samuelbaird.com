@@ -1,0 +1,188 @@
+version: 1
+slug: lower-heaven-catholic-skit
+title: Who Gets to Decide Your Place in Heaven?
+hook: A child can repeat a teaching without being qualified to pronounce a judgment.
+summary: 'A sourced response to a Mormon-child comedy skit: postmortem opportunity, biblical color-language parallels,
+  current racial teaching, the narrow perdition exception, and hope for eternal family arrangements.'
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: true
+music: null
+tags:
+- ldsdoctrine
+- religioussatire
+beats:
+- id: c01
+  kind: clip
+  start: 0.0
+  end: 9.04
+  speed: 1.0
+  speaker: Source video
+  pose: skeptical
+- id: n01
+  kind: narration
+  text: This skit portrays children repeating church talk. That experience matters. Let’s compare the threats with
+    the teachings behind them.
+  pose: thoughtful
+  stage: blank
+  opinion: true
+- id: n02
+  kind: narration
+  text: Latter-day Saints believe in degrees of glory. Section seventy-six requires receiving Christ, authorized
+    baptism, and faithfulness for celestial glory. Those requirements are real, and gospel instruction continues
+    after death. A Catholic label alone cannot establish someone’s final judgment.
+  pose: teaching
+  stage: blank
+  sources:
+  - dc-76-scripture
+  - dc-137-scripture
+  - dc-138-postmortem
+- id: n02b
+  kind: narration
+  pose: reading
+  stage: blank
+  text: Catholicism also claims its Church is necessary for salvation. The Catechism distinguishes knowing rejection
+    from innocent ignorance. Those who sincerely seek God and follow conscience under grace may still attain salvation.
+    This is conditional, rather than a blanket sentence on every Mormon.
+  sources:
+  - ccc-846-848-salvation
+- id: n03
+  kind: narration
+  text: Section one hundred thirty-seven includes people who died without gospel knowledge but would have received
+    it. Everyone will be resurrected; all except the sons of perdition will eventually be redeemed from hell. More
+    on that exception shortly.
+  pose: pointing
+  stage: blank
+  sources:
+  - dc-137-scripture
+  - resurrection-current
+  - dc76-revision-redemption
+- id: c02
+  kind: clip
+  start: 9.04
+  end: 18.64
+  speed: 1.0
+  speaker: Source video
+  pose: concerned
+- id: n04
+  kind: narration
+  text: The racial history behind this is real, and it was harmful. Racial-curse theories circulated in American
+    Christianity, and Church leaders repeated them. The Church’s own race essay describes that background and disavows
+    those theories.
+  pose: solemn
+  stage: blank
+  sources:
+  - race-priesthood-revision-context
+  - kimball-1960-whitening
+- id: n05
+  kind: narration
+  text: In Lamentations, a bright, healthy appearance becomes dark and withered through famine. Biblical color language
+    can describe condition rather than ancestry. That supports considering a similar reading of the Book of Mormon’s
+    dark-skin and whitening passages. It does not settle their meaning.
+  pose: reading
+  stage: blank
+  sources:
+  - bom-2-nephi-5
+  - bom-3-nephi-2
+  - lam-4-kjv-color-condition
+  - lam-5-kjv-famine-skin
+- id: n06
+  kind: narration
+  text: Today, the Church’s race essay expressly rejects theories that Black skin signifies divine disfavor or a
+    curse. The child’s diagnosis contradicts that statement. These sources establish no universal promise that conversion
+    lightens skin. Historical teaching and current disavowal must be distinguished.
+  pose: concerned
+  stage: blank
+  sources:
+  - race-priesthood-current-essay
+  - bom-3-nephi-2
+- id: c03
+  kind: clip
+  start: 19.28
+  end: 25.12
+  speed: 1.0
+  speaker: Source video
+  pose: surprised
+- id: n07
+  kind: narration
+  text: Declining an invitation does not meet the criteria for permanent outer darkness. Section seventy-six describes
+    people who knew and partook of God’s power, then denied the received Holy Spirit and defied God.
+  pose: teaching
+  stage: blank
+  sources:
+  - dc-76-scripture
+  - hell-current
+- id: n08
+  kind: narration
+  text: A church pitch does not establish that threshold. An official Church manual even discusses uncertainty about
+    whether Judas had the knowledge required for the unforgivable sin. We should be careful about assigning anyone
+    that fate.
+  pose: pointing
+  stage: blank
+  sources:
+  - dc76-revision-redemption
+  - nt-student-judas
+- id: c04
+  kind: clip
+  start: 30.88
+  end: 46.16
+  speed: 1.0
+  speaker: Source video
+  pose: concerned
+- id: n09
+  kind: narration
+  text: The Church recognizes marriage between a husband and a wife. Temple sealing and the marriage covenant are
+    required for the highest celestial degree. That requirement is real; it does not establish a particular family’s
+    final judgment.
+  pose: solemn
+  stage: blank
+  sources:
+  - dc-131-scripture
+  - handbook-38-current
+- id: n10
+  kind: narration
+  text: That does not authorize a child to assign these mothers a kingdom or promise their friend complete loneliness.
+    Being saved differs from receiving the highest celestial degree or an eternal family sealing.
+  pose: thoughtful
+  stage: blank
+  sources:
+  - dc-76-scripture
+  - handbook-38-current
+- id: q02
+  kind: card
+  pose: quote
+  text: President Henry B. Eyring shared counsel to live worthy of the celestial kingdom, with this assurance about
+    the family arrangements that follow.
+  card:
+    quote: family arrangements will be more wonderful than you can imagine
+    attribution: Henry B. Eyring, The Hope of Eternal Family Love, August 2016
+    source: eyring-2016-family-love
+  sources:
+  - eyring-2016-family-love
+- id: n11
+  kind: narration
+  text: That promise is conditioned on celestial worthiness. It offers hope without specifying this family’s future
+    arrangement or reversing the marriage restriction. The handbook likewise promises eventual blessings to faithful
+    people unable to marry in mortality.
+  pose: teaching
+  stage: blank
+  sources:
+  - eyring-2016-family-love
+  - handbook-38-current
+- id: n99
+  kind: narration
+  text: The skit turns real marriage requirements into a verdict about someone’s family. Those requirements do not
+    authorize us to predict complete loneliness or pronounce an individual’s eternal sentence. God bless.
+  pose: encouraging
+  stage: blank
+  opinion: true
