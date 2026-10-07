@@ -1,0 +1,106 @@
+sources:
+- id: critic-video
+  type: critic
+  title: Video by analyzing.mormonism on Church-owned property leased to brothels
+  author: analyzing.mormonism
+  date: '2026-04-18'
+  locator: https://www.instagram.com/reel/DXQKfSnEVWq/
+  accessed: '2026-10-07'
+  inspected: true
+  inspected_via: 'transcript.txt in review folder, read in full; clip boundaries from the existing medium.en transcript timings'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Source video, 85.4 seconds. Credited in the description only.
+- id: quinn-ext-1897
+  type: scholarly
+  title: The Mormon Hierarchy, Extensions of Power, appendix 5 (printed p. 798, archive p. 828), 1897 entry
+  author: D. Michael Quinn
+  date: '1997'
+  locator: https://corpus.noahairmet.com/b/quinn-the-mormon-hierarchy-extensions-of-power-5180/828
+  accessed: '2026-10-07'
+  inspected: true
+  inspected_via: 'GSA read_pages (path Read/LDS History/Misc/Quinn, The Mormon Hierarchy: Extensions of Power.pdf, page 828)'
+  quote: Apostle Brigham Young, Jr. temporarily resigns as vice-president of Brigham Young Trust Co. because first counselor George Q. Cannon allows its property to become "a first class" brothel on Commercial Street (now Regent Street), Salt Lake City. Apostle Heber J. Grant is invited to its opening reception and is stunned to discover himself inside "a regular whore-house." This situation begins in 1891, and for fifty years church-controlled real estate companies lease houses of prostitution.
+  verification:
+    tool: GSA read_pages
+    verdict: page-read, wording matches the printed entry; the page text hyphenates whore-house across a line break
+    link: https://corpus.noahairmet.com/b/quinn-the-mormon-hierarchy-extensions-of-power-5180/828
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Quinn's chronology is a secondary scholarly summary. The underlying diaries and ledgers were not inspected. Quinn attributes the dating, 1891 to 1941, and the motive for the resignation. The entry does not name the lessees or the rent.
+- id: quinn-ext-1941
+  type: scholarly
+  title: The Mormon Hierarchy, Extensions of Power, appendix 5 (printed p. 828, archive p. 858), 1941 entry
+  author: D. Michael Quinn
+  date: '1997'
+  locator: https://corpus.noahairmet.com/b/quinn-the-mormon-hierarchy-extensions-of-power-5180/858
+  accessed: '2026-10-07'
+  inspected: true
+  inspected_via: 'GSA read_pages (path Read/LDS History/Misc/Quinn, The Mormon Hierarchy: Extensions of Power.pdf, page 858)'
+  quote: First Presidency orders Clayton Investment Company to get rid of its "whorehouses," no matter the financial loss, so that church-affiliated company can merge with church-owned Zion's Securities Corp. Ends fifty years of church's leases to brothels.
+  verification:
+    tool: GSA read_pages
+    verdict: page-read, wording matches; the page text hyphenates whore-houses across a line break
+    link: https://corpus.noahairmet.com/b/quinn-the-mormon-hierarchy-extensions-of-power-5180/858
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: The same entry gives a merger as the stated purpose, so the order is not purely a moral statement. The card keeps that clause. The on-screen card omits the crude word with [...].
+- id: quinn-wealth-bytc
+  type: scholarly
+  title: The Mormon Hierarchy, Wealth and Corporate Power, Brigham Young Trust Company entry (archive p. 271)
+  author: D. Michael Quinn
+  date: '2017'
+  locator: https://corpus.noahairmet.com/b/quinn-the-mormon-hierarchy-wealth-and-corporate-11a8/271
+  accessed: '2026-10-07'
+  inspected: true
+  inspected_via: 'GSA read_pages (path Read/LDS History/Misc/Quinn, The Mormon Hierarchy: Wealth and Corporate Power.pdf, page 271)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Inc. Feb. 24, 1891. President George Q. Cannon (1891-1901), vice-president Brigham Young Jr. (1891-97, 1899-1901). Holding company for LDS properties. Succeeded by Clayton Investment Company. Publication year of the volume was not checked.'
+- id: quinn-wealth-clayton
+  type: scholarly
+  title: The Mormon Hierarchy, Wealth and Corporate Power, Clayton Investment Company entry (archive p. 296)
+  author: D. Michael Quinn
+  date: '2017'
+  locator: https://corpus.noahairmet.com/b/quinn-the-mormon-hierarchy-wealth-and-corporate-11a8/296
+  accessed: '2026-10-07'
+  inspected: true
+  inspected_via: 'GSA read_pages (path Read/LDS History/Misc/Quinn, The Mormon Hierarchy: Wealth and Corporate Power.pdf, page 296)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Inc. June 6, 1905. Trustees Heber J. Grant, Anthony W. Ivins, Charles W. Nibley. Successor to Brigham Young Trust Company, later sister company of Zion's Securities Corporation.
+- id: smith-1907-audit
+  type: primary
+  title: An Emphatic Response to Vital Questions, auditing committee report dated March 20, 1907
+  author: Joseph F. Smith (reading the report of the General Church Auditing Committee)
+  date: '1907-04-06'
+  locator: https://pulpit.restorationcommons.org/talks/1907-04-smith-response-to-questions/#p13
+  accessed: '2026-10-07'
+  inspected: true
+  inspected_via: 'Pulpit read_paragraphs (paragraphs 8 to 16)'
+  quote: the Church bonds have been redeemed, that the Church is entirely free from debt
+  verification:
+    tool: Pulpit read_paragraphs
+    verdict: page-read, paragraph 13; verify_quote not run because the quote is not used on a card
+    link: https://pulpit.restorationcommons.org/talks/1907-04-smith-response-to-questions/#p13
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Report dated March 20, 1907, in the conference record of April 6, 1907 (corpus date). It does not say on what day the final debt payment cleared, so the video's April 5 cannot be confirmed or refuted from it.

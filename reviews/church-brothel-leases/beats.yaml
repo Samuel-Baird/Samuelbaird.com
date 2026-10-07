@@ -1,0 +1,134 @@
+version: 1
+slug: church-brothel-leases
+title: Church-controlled companies and brothel leases, 1891-1941
+hook: The brothel leases are documented. Does the record prove the Church did it for money?
+summary: Concede the documented leases and the harm first, then correct the arithmetic and the debt-free date, and test the one step the record does not support, that money was the reason. Quinn records objections from inside the leadership in 1897 and a 1941 order to end the leases regardless of financial loss.
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  name: am_michael
+  speed: 1.5
+sensitive: true
+music: null
+tags:
+- ldshistory
+- churchfinances
+beats:
+- id: c01
+  kind: clip
+  start: 0.0
+  end: 10.94
+  speed: 1.0
+  speaker: Source video
+  pose: concerned
+  sources:
+  - critic-video
+- id: n01
+  kind: narration
+  text: Start with what holds up. Church-controlled real estate companies leased property on Commercial Street, now Regent Street, to brothels. Historian D. Michael Quinn dates it from eighteen ninety-one and counts fifty years of leases.
+  pose: solemn
+  stage: blank
+  sources:
+  - quinn-ext-1897
+  - quinn-ext-1941
+  opinion: false
+- id: n01b
+  kind: narration
+  text: The video also mentions a newspaper article and a specific rent figure elsewhere. I could not verify those, so I am not relying on them. The leasing itself rests on Quinn.
+  pose: reading
+  stage: blank
+  sources:
+  - quinn-ext-1897
+  opinion: false
+- id: n02
+  kind: narration
+  text: That is a real moral failure, and it should be said plainly. The women in those houses are the ones who paid for it. Being only the landlord does not make the rent clean.
+  pose: concerned
+  stage: blank
+  sources: []
+  opinion: true
+- id: c02
+  kind: clip
+  start: 39.84
+  end: 56.28
+  speed: 1.0
+  speaker: Source video
+  pose: thoughtful
+  sources:
+  - critic-video
+- id: n03
+  kind: narration
+  text: The video is right that leaders saw the problem. Quinn records that in January eighteen ninety-seven, Apostle Brigham Young Junior temporarily resigned as vice-president of the Brigham Young Trust Company over a brothel on its property.
+  pose: source
+  stage: blank
+  sources:
+  - quinn-ext-1897
+  - quinn-wealth-bytc
+  opinion: false
+- id: q01
+  kind: card
+  text: Heber J. Grant, invited to the opening, was stunned to find himself inside one. So the objection came from inside the leadership, and it still took decades to end the leases.
+  pose: quote
+  sources:
+  - quinn-ext-1897
+  card:
+    quote: Apostle Brigham Young, Jr. temporarily resigns as vice-president of Brigham Young Trust Co. because first counselor George Q. Cannon allows its property to become "a first class" brothel on Commercial Street (now Regent Street), Salt Lake City.
+    attribution: D. Michael Quinn · Extensions of Power, appendix 5 · 15 Jan. 1897
+    source: quinn-ext-1897
+- id: c03
+  kind: clip
+  start: 70.92
+  end: 85.4
+  speed: 1.0
+  speaker: Source video
+  pose: skeptical
+  sources:
+  - critic-video
+- id: n04
+  kind: narration
+  text: Two corrections. Nineteen oh seven to nineteen forty-one is thirty-four years, not thirty-seven. And the report declaring the Church free of debt is dated March twentieth, nineteen oh seven, and the conference record has it read on April sixth. Neither correction shortens a long delay.
+  pose: teaching
+  stage: blank
+  sources:
+  - smith-1907-audit
+  opinion: false
+- id: n05
+  kind: narration
+  text: Now the real question, was it money? In the pages I checked, there is no statement of why. Quinn documents what happened, not why it lasted thirty-four years past the debt. That can look damning. But money as the reason is an inference, not something this record shows.
+  pose: thoughtful
+  stage: blank
+  sources:
+  - quinn-ext-1897
+  - quinn-ext-1941
+  opinion: true
+- id: q02
+  kind: card
+  text: Here is the one recorded moment where money and morality were weighed. March nineteen forty-one. The First Presidency ordered the company to sell off the houses regardless of financial loss.
+  pose: quote
+  sources:
+  - quinn-ext-1941
+  card:
+    quote: no matter the financial loss, so that church-affiliated company can merge with church-owned Zion's Securities Corp. Ends fifty years of church's leases to brothels.
+    attribution: D. Michael Quinn · Extensions of Power, appendix 5 · 10 Mar. 1941
+    source: quinn-ext-1941
+- id: n06
+  kind: narration
+  text: That cuts against the video's conclusion. A Church that simply loved the income would not order a sale at a loss. The stronger reading is a standard leaders recognized by eighteen ninety-seven, enforced far too slowly, and finally enforced at a cost. That is serious. It does not establish a Church that simply loves money.
+  pose: teaching
+  stage: blank
+  sources:
+  - quinn-ext-1897
+  - quinn-ext-1941
+  opinion: true
+- id: n99
+  kind: narration
+  text: The leases were wrong, the correction was late, and the record shows both. What it does not show is motive. God bless.
+  pose: prayerful
+  function: closing
+  stage: blank
+  sources: []
+  opinion: true
