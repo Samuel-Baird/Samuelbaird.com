@@ -1,0 +1,777 @@
+sources:
+- id: dc76
+  type: official
+  title: Doctrine and Covenants 76
+  author: Joseph Smith (with Sidney Rigdon for section 76)
+  date: '1832-02-16'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Read 50–79: celestial requirements and terrestrial distinction, not a denominational list.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: dc137
+  type: official
+  title: Doctrine and Covenants 137
+  author: Joseph Smith (with Sidney Rigdon for section 76)
+  date: '1836-01-21'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Read 7–9: those who lacked knowledge but would have received gospel; not universal exemption
+    for knowing rejection.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: handbook1-ordinances
+  type: official
+  title: General Handbook 1.3
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/1-work-of-salvation-and-exaltation?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Necessary ordinance list includes sealing. Edition year, not exact revision date.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: oaks-2023-kingdoms
+  type: primary
+  title: Kingdoms of Glory
+  author: Dallin H. Oaks
+  date: '2023-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2023-10-oaks-kingdoms-of-glory/#p8
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Read paragraphs 1–22. Covenant marriage, three kingdoms, redemption and proxy ordinances. Date
+    is corpus month label; exact delivery day not verified.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: dc-76-scripture
+  type: scripture
+  title: Doctrine and Covenants 76
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1832-02-16'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Verses 31–44; 50–79; 81–89. Read current official edition.
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: dc-137-scripture
+  type: scripture
+  title: Doctrine and Covenants 137
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1836-01-21'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/137?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Verses 5–10; eligibility beyond lifetime membership.
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: kimball-1960-lamanites
+  type: primary
+  title: Some Years Ago I Attended A Conference...
+  author: Spencer W. Kimball
+  date: '1960-10-07'
+  locator: https://pulpit.restorationcommons.org/talks/1960-10-kimball-some-years-ago-i-attended-a-conference/#p32
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Read 27–34: physical comparisons in 30–32. Indigenous/Lamanite context distinct from Black priesthood
+    restrictions. Phrase verification exact; all prose paraphrased.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: race-priesthood-current
+  type: official
+  title: Race and the Priesthood
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2016'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Current official disavowal; historical restrictions acknowledged. Date is collection edition,
+    not original publication day.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: 2ne5-race
+  type: official
+  title: 2 Nephi 5:20–23
+  author: Book of Mormon
+  date: '1830'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Current canonical dark-skin and curse narrative read with surrounding verses. No metaphor-only
+    interpretation asserted.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: 3ne2-race
+  type: official
+  title: 3 Nephi 2:14–16
+  author: Book of Mormon
+  date: '1830'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/2?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Current converted-Lamanite whitening passage retained; particular narrative, not universal medical
+    prediction.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: kimball-1960-whitening
+  type: primary
+  title: Some Years Ago I Attended A Conference...
+  author: Spencer W. Kimball
+  date: '1960-10-07'
+  locator: https://pulpit.restorationcommons.org/talks/1960-10-kimball-some-years-ago-i-attended-a-conference/#p30
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: mcp__codex_apps__pulpit_read_paragraphs(talk_id=1960-10-kimball-some-years-ago-i-attended-a-conference,
+    from_paragraph=26, count=8)
+  quote: For years they have been growing delightsome, and they are now becoming white and delightsome,
+    as they were promised.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1960-10-kimball-some-years-ago-i-attended-a-conference/#p30
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Paragraphs 30–32; Native American/Indian Placement context; historical leader teaching, not proof
+    of physiological change.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: harris-second-class-saints-whitening
+  type: scholarly
+  title: 'Second-Class Saints: Black Mormons and the Struggle for Racial Equality'
+  author: Matthew L. Harris
+  date: n.d. (edition date not verified this run)
+  locator: https://corpus.noahairmet.com/b/harris-second-class-saints-black-mormons-and-5528/292
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'mcp__codex_apps__gsa_read_pages(path=Read/LDS History/Race/Harris, Second-Class Saints:
+    Black Mormons and the Struggle for Racial Equality.pdf, from_page=291, to_page=293); mcp__codex_apps__gsa_cite_page(page=292)'
+  quote: null
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.noahairmet.com/b/harris-second-class-saints-black-mormons-and-5528/292
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Historical reception context only; authorial claims of motive and later editorial causation not
+    adopted as settled fact.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: race-priesthood-current-essay
+  type: official
+  title: Race and the Priesthood
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2016'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current edition, publication label 2016; disavowal and acknowledgment of former racial explanations.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: bom-2-nephi-5
+  type: scripture
+  title: 2 Nephi 5
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1830'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Verses 20–23: color language exists; not established here as exclusively symbolic.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: bom-3-nephi-2
+  type: scripture
+  title: 3 Nephi 2
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1830'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/2?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/2?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/2?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Verses 12–16: conversion, joining Nephites, curse removal and white skin in narrative.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: hell-current
+  type: official
+  title: Hell, Topics and Questions
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2023'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics/hell?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current official overview distinguishes temporary spirit prison from permanent perdition. Edition
+    date only.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: oaks-2019-trust
+  type: primary
+  title: Trust in the Lord
+  author: Dallin H. Oaks
+  date: '2019-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2019-10-oaks-trust-in-the-lord/#p7
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Read 1–18. Paragraph 7 uses outer-darkness vocabulary for temporary spirit prison; 8–10 give
+    opportunities and limits. Date is corpus month label.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: dc131
+  type: official
+  title: Doctrine and Covenants 131
+  author: Joseph Smith (with Sidney Rigdon for section 76)
+  date: '1843-05-16'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/131?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Read 1–4: covenant marriage for highest celestial degree, distinct from all heavenly glory.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 5
+- id: handbook38-marriage
+  type: official
+  title: General Handbook 38.1.4, 38.4.2.2, 38.6.16
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch (actual tool: web.run open/find; official original page read this run)'
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Read unmarried-member promises, sealing context and husband-wife rule, and same-sex-marriage
+    policy. No blanket loneliness verdict.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 5
+- id: andersen-2026-marriage
+  type: primary
+  title: Eternal Marriage Is an Eternal Journey
+  author: Neil L. Andersen
+  date: '2026-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2026-04-andersen-eternal-marriage-is-an-eternal-journey/#p18
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Read 13–22. Paragraph 18 and note 13: eventual voluntary sealing for true disciples. Date is
+    corpus month label; exact delivery day not established.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 5
+- id: dc-131-scripture
+  type: scripture
+  title: Doctrine and Covenants 131
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1843-05-16'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/131?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/131?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/131?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Verses 1–4: highest degree within celestial glory.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 5
+- id: dc-132-scripture
+  type: scripture
+  title: Doctrine and Covenants 132
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '1843-07-12'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/132?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/132?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/132?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Verses 7, 15–19: sealing authority and covenant; single saved state is explicit.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 5
+- id: handbook-38-current
+  type: official
+  title: 'General Handbook 38: Church Policies and Guidelines'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026-10-02'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng)'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Access date is not publication date; sections 38.6.15–16: covenant promises and male-female
+    marriage.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 5
+- id: dc-138-postmortem
+  type: scripture
+  title: Doctrine and Covenants 138
+  author: Joseph F. Smith
+  date: '1918-10-03'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Verses 30–35 and 57–59: gospel teaching to the dead including those who rejected prophets; repentance
+    and ordinances remain conditions.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+  - 3
+- id: resurrection-current
+  type: official
+  title: Resurrection, Topics and Questions
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: n.d. (current page inspected 2026-10-02)
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics/resurrection?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics/resurrection?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: All mortal people are resurrected; salvation from physical death universal; glory/exaltation
+    conditional.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+  - 3
+- id: dc76-revision-redemption
+  type: scripture
+  title: Doctrine and Covenants 76
+  author: Joseph Smith and Sidney Rigdon
+  date: '1832-02-16'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Read 31–44: sons of perdition exception concerns second death and redemption, not exclusion
+    from bodily resurrection.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+  - 3
+- id: dc76-student-resurrection
+  type: official
+  title: Section 76, The Vision of the Degrees of Glory, Doctrine and Covenants Student Manual
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: n.d. (edition date not verified)
+  locator: https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-76-the-vision-of-the-degrees-of-glory?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/doctrine-and-covenants-student-manual/section-76-the-vision-of-the-degrees-of-glory?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Commentary on 76:38–39 explicitly includes mortal sons of perdition in resurrection. This page
+    contains no Judas match; do not cite it as the Judas source.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: nt-student-judas
+  type: official
+  title: 'Chapter 27: John 17–19, New Testament Student Manual'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: n.d. (edition date not verified)
+  locator: https://www.churchofjesuschrist.org/study/manual/new-testament-student-manual/introduction-to-the-gospel-according-to-st-john/chapter-27-john-17-19?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/new-testament-student-manual/introduction-to-the-gospel-according-to-st-john/chapter-27-john-17-19?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: John17:12 commentary cites Holland2009 caution against judging Judas and Joseph F. Smith uncertainty
+    from Gospel Doctrine1939p433. Paraphrase of inspected official manual; historical original book not
+    separately opened.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: race-priesthood-revision-context
+  type: official
+  title: Race and the Priesthood
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: 2016 (collection edition)
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: American Christian racial culture and Cain/Ham theories predated LDS restrictions; current disavowal.
+    Does not establish Protestant-only derivation of Indigenous whitening teaching.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 2
+- id: eyring-2016-family-love
+  type: official
+  title: The Hope of Eternal Family Love
+  author: Henry B. Eyring
+  date: 2016-08
+  locator: https://www.churchofjesuschrist.org/study/ensign/2016/08/the-hope-of-eternal-family-love?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent (actual tool: web.run open/find; original official page read this
+    run)'
+  quote: family arrangements will be more wonderful than you can imagine
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/ensign/2016/08/the-hope-of-eternal-family-love?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: First Presidency Message. Phrase occurs in counsel reported from an unnamed prophet and Eyring's
+    own concluding assurance; conditional on celestial worthiness, not a specified household arrangement.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 5
+- id: eyring-2019-family-counsel
+  type: primary
+  title: A Home Where the Spirit of the Lord Dwells
+  author: Henry B. Eyring
+  date: 2019-04 (conference month)
+  locator: https://pulpit.restorationcommons.org/talks/2019-04-eyring-a-home-where-the-spirit-of-the-lord-dwells/#p39
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs (37–41)
+  quote: family arrangements will be more wonderful than you can imagine
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2019-04-eyring-a-home-where-the-spirit-of-the-lord-dwells/#p39
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Independent Pulpit verification of the phrase, also present in August2016 original. Eyring reports
+    an apostle's counsel as best remembered and retains celestial-worthiness condition.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 5
+- id: ccc-846-848-salvation
+  type: official
+  title: Catechism of the Catholic Church, paragraphs 846–848
+  author: Catholic Church
+  date: current web edition (accessed 2026-10-02)
+  locator: https://www.vatican.va/archive/ENG0015/__P29.HTM
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.vatican.va/archive/ENG0015/__P29.HTM);
+    web__run find'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.vatican.va/archive/ENG0015/__P29.HTM
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Official Vatican text. Necessity of Christ and Church; knowing refusal; salvation possible for
+    people ignorant through no fault.
+  found_by: capy-scripture-theologian
+  claims:
+  - 1
+- id: lam-4-kjv-color-condition
+  type: scripture
+  title: Lamentations 4:7–9 (KJV)
+  author: Bible, King James Version
+  date: 1611 translation; current online LDS edition
+  locator: https://www.churchofjesuschrist.org/study/scriptures/ot/lam/4?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/ot/lam/4?lang=eng);
+    web__run find'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/ot/lam/4?lang=eng
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: White-to-black appearance imagery within famine/siege context. Supports possible condition-language
+    parallel, not definitive BoM interpretation.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: lam-5-kjv-famine-skin
+  type: scripture
+  title: Lamentations 5:9–10 (KJV)
+  author: Bible, King James Version
+  date: 1611 translation; current online LDS edition
+  locator: https://www.churchofjesuschrist.org/study/scriptures/ot/lam/5?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/scriptures/ot/lam/5?lang=eng);
+    web__run find'
+  quote: null
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/ot/lam/5?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Verse 10 explicitly associates black skin with famine, not a change of ancestry. This may describe
+    actual bodily effects through simile; not proof of purely symbolic meaning.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: bom-student-2018-curse-sign
+  type: official
+  title: 'Chapter 8: 2 Nephi 4–8, Book of Mormon Student Manual'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: 2018 (edition label on inspected page)
+  locator: https://www.churchofjesuschrist.org/study/manual/book-of-mormon-student-manual-2018/chapter-8-2-nephi-4-8?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: 'WebFetch equivalent: web__run open(https://www.churchofjesuschrist.org/study/manual/book-of-mormon-student-manual-2018/chapter-8-2-nephi-4-8?lang=eng);
+    web__run find(pattern=dark skin)'
+  quote: null
+  verification:
+    tool: web__run open/find
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/book-of-mormon-student-manual-2018/chapter-8-2-nephi-4-8?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Inspected 2 Nephi 5:20–25 commentary, returned lines 139–161. Retains dated Joseph Fielding Smith
+    explanation of dark skin as sign distinct from the curse itself, with converted persons' skin no longer
+    a curse sign. Verifies presence in this edition, not present classroom use, prevalence, skin-lightening
+    promise, or current authoritative endorsement of every historical interpretation. No narration proposed.
+  found_by: revision-red-team
+  claims:
+  - 2

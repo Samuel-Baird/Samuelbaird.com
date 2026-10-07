@@ -1,0 +1,174 @@
+version: 1
+slug: changing-doctrine-shoulders
+title: Changed sleeves, unchanged covenant?
+hook: The shoulder rule was real. Does changing it prove the faith false?
+summary: Acknowledge the former shoulder standard and the cost of obeying it, then test what garment redesign actually shows. Before-change teaching documents covenant continuity without proving every design decision divinely revealed.
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: true
+music: null
+tags:
+- ldshistory
+- templegarments
+- continuingrevelation
+beats:
+- id: c01
+  kind: clip
+  start: 11.14
+  end: 20.64
+  speed: 1.0
+  speaker: girlscamppodcast source clip
+  pose: concerned
+  sources:
+  - critic-video
+- id: n01
+  kind: narration
+  text: Being shamed over your shoulders, then watching the expectations change, can feel like your sacrifice has been dismissed. I would not answer that by pretending the old rule was imaginary.
+  pose: solemn
+  stage: blank
+  sources: []
+  opinion: true
+- id: n02
+  kind: narration
+  text: The twenty-eleven For the Strength of Youth guide explicitly told young women to cover their shoulders. It placed that instruction beside language about the Lord's standards not changing. That was official guidance, not just a local dress preference.
+  pose: source
+  stage: blank
+  sources:
+  - church-2011-fsy-dress
+  opinion: false
+- id: n03
+  kind: narration
+  text: 'And the changes are real: the twenty-twenty-two youth guide uses principles without that shoulder checklist. In twenty-twenty-four, the First Presidency authorized redesigned garments. Those are related changes, but youth dress guidance and the garment itself are different things.'
+  pose: teaching
+  stage: blank
+  sources:
+  - church-2022-fsy-body
+  - church-2024-garment-redesign
+  opinion: false
+- id: c02
+  kind: clip
+  start: 0.0
+  end: 11.14
+  speed: 1.0
+  speaker: girlscamppodcast source clip
+  pose: thoughtful
+  sources:
+  - critic-video
+- id: n04
+  kind: narration
+  text: 'A changed requirement can be a reason to question how confidently it was taught. But the argument needs another step: was a particular clothing requirement an eternally fixed doctrine, or an application that could change? Calling both doctrine does not establish that they are the same.'
+  pose: teaching
+  stage: blank
+  sources:
+  - church-2011-fsy-dress
+  - articles-faith-9
+  opinion: true
+- id: n05
+  kind: narration
+  text: The ninth Article of Faith explicitly anticipates future revelation. That is the Latter-day Saint model to evaluate. It does not prove that any particular redesign came from God, and it does not make every explanation of a change equally convincing.
+  pose: reading
+  stage: blank
+  sources:
+  - articles-faith-9
+  opinion: true
+- id: c03
+  kind: clip
+  start: 36.62
+  end: 43.82
+  speed: 1.0
+  speaker: girlscamppodcast source clip
+  pose: solemn
+  sources:
+  - critic-video
+- id: n06
+  kind: narration
+  text: Her connection between the garment and outer clothing is reasonable. The current handbook says to wear the garment beneath outer clothing and not alter it to accommodate clothing styles. The cut has practical consequences. An authorized new design is different from members privately changing their garments.
+  pose: pointing
+  stage: blank
+  sources:
+  - handbook-38-5-garment
+  opinion: true
+- id: c04
+  kind: clip
+  start: 49.1
+  end: 58.46
+  speed: 1.0
+  speaker: girlscamppodcast source clip
+  pose: concerned
+  sources:
+  - critic-video
+- id: n07
+  kind: narration
+  text: I would not defend the phrase never about sleeve length. The older instructions really affected what members wore. But covenant language was not invented after the redesign. Here is Russell M. Nelson in April two-thousand-one, more than twenty years before that change.
+  pose: researching
+  stage: blank
+  sources:
+  - church-2011-fsy-dress
+  - nelson-2001-garment-commitment
+  opinion: true
+- id: q01
+  kind: card
+  text: The covenant meaning predates this controversy. It does not erase older clothing limits. Both were taught together, years before the new designs were authorized.
+  pose: quote
+  sources:
+  - nelson-2001-garment-commitment
+  - church-2024-garment-redesign
+  card:
+    quote: Wearing the temple garment has deep symbolic significance. It represents a continuing commitment.
+    attribution: Russell M. Nelson · April 2001 · Personal Preparation for Temple Blessings
+    source: nelson-2001-garment-commitment
+- id: n08
+  kind: narration
+  text: 'The stronger Latter-day Saint account holds both together: real covenant commitment and real instructions about its expression. The institution can authorize a different design while continuing to require garment wearing. That describes continuity without rewriting what obedience previously cost people.'
+  pose: teaching
+  stage: blank
+  sources:
+  - handbook-38-5-garment
+  - nelson-2001-garment-commitment
+  - church-2024-garment-redesign
+  opinion: true
+- id: c05
+  kind: clip
+  start: 58.46
+  end: 66.66
+  speed: 1.0
+  speaker: girlscamppodcast source clip
+  pose: thoughtful
+  sources:
+  - critic-video
+- id: n09
+  kind: narration
+  text: This change does not establish that the whole faith came from nowhere true. The record supports covenant meaning alongside real clothing instructions, before and after the redesign. That continuity is documented; divine direction is not independently demonstrated by it.
+  pose: source
+  stage: blank
+  sources:
+  - nelson-2001-garment-commitment
+  - handbook-38-5-garment
+  opinion: true
+- id: n10
+  kind: narration
+  text: 'The trust question remains: why was a changeable application taught with such certainty? Covenant continuity does not fully answer that. But the question does not settle the truth of every covenant and every revelation.'
+  pose: solemn
+  stage: blank
+  sources:
+  - church-2011-fsy-dress
+  - articles-faith-9
+  opinion: true
+- id: n99
+  kind: narration
+  text: Changed sleeves do not settle the truth of the Restoration. The honest case is covenant continuity, with candor about what changed. God bless.
+  pose: encouraging
+  stage: blank
+  sources:
+  - nelson-2001-garment-commitment
+  opinion: true
