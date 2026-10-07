@@ -16,13 +16,13 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~8.2s)
 - **Original Video Transcript:** Like being so heavily shamed around showing my shoulders and then suddenly the church allows that, it does roil my blood.
 - **Pose:** solemn
-- **Narration:** Being shamed over your shoulders, then watching the expectations change, can feel like your sacrifice has been dismissed. I would not answer that by pretending the old rule was imaginary.
+- **Narration:** Being shamed over your shoulders, then watching the expectations change, can feel like your sacrifice has been dismissed. I would not answer that by pretending the old customs were imaginary.
 - **Notes:**
 
 ## 03. `n02` (narration, ~10.4s)
 - **Original Video Transcript:** Like being so heavily shamed around showing my shoulders and then suddenly the church allows that, it does roil my blood.
 - **Pose:** source
-- **Narration:** The twenty-eleven For the Strength of Youth guide explicitly told young women to cover their shoulders. It placed that instruction beside language about the Lord's standards not changing. That was official guidance, not just a local dress preference.
+- **Narration:** The twenty-eleven For the Strength of Youth guide explicitly told young women to cover their shoulders. That was official guidance, not just a local dress preference.
 - **Sources:** church-2011-fsy-dress
 - **Notes:**
 
@@ -114,7 +114,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 16. `n10` (narration, ~9.3s)
 - **Original Video Transcript:** And to your point, it seems like the most logical conclusion would be, oh none of this came from anywhere true in the first place.
 - **Pose:** solemn
-- **Narration:** The trust question remains: why was a changeable application taught with such certainty? Covenant continuity does not fully answer that. But the question does not settle the truth of every covenant and every revelation.
+- **Narration:** The trust question remains: why was a changeable application taught with such certainty? But the question does not settle the truth of every covenant and every revelation.
 - **Sources:** church-2011-fsy-dress, articles-faith-9
 - **Notes:**
 
