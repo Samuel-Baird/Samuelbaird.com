@@ -38,6 +38,20 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
   usernames, thumbnails. See `docs/saint-capybara/brand.md` sec 9-10
   before doing anything else with this type.
 
+## Short vs. long form
+
+Every Saint Capybara video is a **short** (60-180s, vertical) unless the
+user explicitly says that video should be **long form** — an Instagram
+feed video of up to 20 minutes that reaches followers only (no
+algorithmic promotion, which is why it's never the default and never the
+agent's call). Long form uses the same pipeline, gates, and per-beat rules
+at a bigger budget: `tools/new_project.ps1 ... -Length long`, `length:
+long` + `long_form_requested:` in `beats.yaml`. See `script-format.md`
+"Long form" for the structure and lint rules.
+
+Memes/edits featuring the capybara are a separate type —
+`docs/types/meme-edit.md` with `-Brand saint-capybara`.
+
 ## Source intake
 
 Videos awaiting a reaction (before a project folder exists for them) are
@@ -98,7 +112,7 @@ D:\Videos\<slug>\
 ```
 
 Create with `tools/new_project.ps1 -Slug <slug> -Type saint-capybara
-[-SourceKind video|article]` — this also copies the beats (`beats.yaml`,
+[-SourceKind video|article] [-Length short|long]` — this also copies the beats (`beats.yaml`,
 or `beats.article.yaml` for an article source) / sources / claims /
 pronunciations templates from `assets/saint-capybara/templates/` with the
 slug substituted.

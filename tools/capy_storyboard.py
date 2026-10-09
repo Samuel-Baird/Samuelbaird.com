@@ -102,7 +102,9 @@ def render_script_md(doc: dict, per_beat: dict[str, float], total: float, projec
     source_time = beats_mod.source_time_seconds(doc, per_beat)
     pct = (source_time / total * 100) if total else 0.0
     lines = [f"# Script — {doc.get('title', doc.get('slug'))}", ""]
-    lines.append(f"**Slug:** `{doc.get('slug')}` | **Estimated runtime:** {total:.1f}s "
+    length = doc.get("length", "short")
+    length_label = "Long form (Instagram, followers-only)" if length == "long" else "Short"
+    lines.append(f"**Slug:** `{doc.get('slug')}` | **Length:** {length_label} | **Estimated runtime:** {total:.1f}s "
                   f"(budget {doc['format']['min_seconds']}-{doc['format']['max_seconds']}s) | "
                   f"**Source time:** {source_time:.1f}s ({pct:.0f}%)")
     source_info = None

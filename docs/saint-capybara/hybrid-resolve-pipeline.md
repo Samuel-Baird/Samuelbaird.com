@@ -187,7 +187,11 @@ specifics that mattered in practice, building the two videos above:
    `clip_ids` in beat order (the simple end-to-end append mode — no
    `record_frame` math needed since beat clips play back to back with no
    gaps by construction). Well under the ~65-70 raw-entry cap for a
-   10-16 beat video, so one call suffices.
+   10-16 beat video, so one call suffices. A long-form video
+   (`length: long`, up to 20 min, often 100+ beats) is not: create the
+   timeline from the first ~20 beats, then `media_pool.append_to_timeline`
+   the rest in ~20-beat batches, saving and re-reading the item count
+   after each batch (`docs/pipeline.md` §3).
 5. **Verify before rendering**: `project_manager.save`, then
    `timeline.get_start_frame`/`get_end_frame` (duration = end − start,
    confirm it matches the beat-clip manifest's summed duration) and

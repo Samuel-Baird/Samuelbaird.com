@@ -53,6 +53,13 @@ ESTIMATE_WORDS_PER_SECOND = 220 / 60.0
 HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
 
+# Runtime budgets by `length:` (script-format.md "Duration budget"). Long
+# form is an Instagram followers-only format the user opts into explicitly
+# per video -- it gets no algorithmic promotion, so it is never chosen by
+# the agent to make an over-long short fit. `length: long` must carry
+# `long_form_requested:` recording the user's own request.
+LENGTH_BUDGETS = {"short": (60, 180), "long": (180, 1200)}
+
 # Locked 2026-09-09 (user confirmed after watching dont-read-the-bom's
 # render) -- see docs/saint-capybara/brand.md sec 6. am_michael at speed
 # 1.5 (raised from the original 0.95 lock the same day, also user
@@ -100,13 +107,15 @@ def load_beats(path: Path | str) -> dict:
     raw.setdefault("sensitive", False)
     raw.setdefault("music", None)
     raw.setdefault("tags", [])
+    raw.setdefault("length", "short")
     raw.setdefault("format", {})
     fmt = raw["format"]
     fmt.setdefault("width", 1080)
     fmt.setdefault("height", 1920)
     fmt.setdefault("fps", 30)
-    fmt.setdefault("min_seconds", 60)
-    fmt.setdefault("max_seconds", 180)
+    lo, hi = LENGTH_BUDGETS.get(raw["length"], LENGTH_BUDGETS["short"])
+    fmt.setdefault("min_seconds", lo)
+    fmt.setdefault("max_seconds", hi)
     raw.setdefault("voice", dict(DEFAULT_VOICE))
     raw.setdefault("voices", copy.deepcopy(DEFAULT_VOICES))
     return raw
@@ -235,12 +244,38 @@ def validate(doc: dict) -> list[Issue]:
     if not hook:
         issues.append(Issue("warning", None, "no 'hook' text set for the description/title"))
 
+    issues.extend(validate_length(doc))
+
     try:
         from capy.excerpts import validate_excerpt_beats
         issues.extend(validate_excerpt_beats(doc))
     except ImportError:
         pass  # capy.excerpts not present yet (article-mode workstream)
 
+    return issues
+
+
+def validate_length(doc: dict) -> list[Issue]:
+    """`length: short | long` and the format budget it permits. A
+    `format.max_seconds` above the short ceiling is only allowed on a
+    `length: long` video, and `length: long` is only allowed with
+    `long_form_requested:` set -- so a short can't drift long by editing
+    the budget, and long form can't be chosen without the user asking."""
+    issues: list[Issue] = []
+    length = doc.get("length", "short")
+    if length not in LENGTH_BUDGETS:
+        return [Issue("error", None, f"unknown length '{length}' (expected one of {sorted(LENGTH_BUDGETS)})")]
+    _, short_hi = LENGTH_BUDGETS["short"]
+    _, budget_hi = LENGTH_BUDGETS[length]
+    hi = doc.get("format", {}).get("max_seconds", budget_hi)
+    if length == "short" and hi > short_hi:
+        issues.append(Issue("error", None, f"format.max_seconds {hi}s exceeds the {short_hi}s short-form ceiling -- "
+                                           "split into two slugs, or use length: long only if the user explicitly asked for long form"))
+    if hi > budget_hi:
+        issues.append(Issue("error", None, f"format.max_seconds {hi}s exceeds the {budget_hi}s {length}-form ceiling"))
+    if length == "long" and not str(doc.get("long_form_requested") or "").strip():
+        issues.append(Issue("error", None, "length: long requires long_form_requested: (date + the user's own words asking for long form) -- "
+                                           "never choose long form on the agent's own initiative"))
     return issues
 
 
@@ -281,11 +316,16 @@ def source_time_seconds(doc: dict, per_beat: dict[str, float]) -> float:
 
 def check_duration_budget(doc: dict, total_seconds: float, *, draft: bool = False) -> list[Issue]:
     fmt = doc.get("format", {})
-    lo, hi = fmt.get("min_seconds", 60), fmt.get("max_seconds", 180)
+    length = doc.get("length", "short")
+    default_lo, default_hi = LENGTH_BUDGETS.get(length, LENGTH_BUDGETS["short"])
+    lo, hi = fmt.get("min_seconds", default_lo), fmt.get("max_seconds", default_hi)
     level = "warning" if draft else "error"
     issues = []
     if total_seconds < lo:
-        issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s is under the {lo}s minimum"))
+        hint = " -- too short for long form; make it a short (length: short)" if length == "long" else ""
+        issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s is under the {lo}s minimum{hint}"))
     if total_seconds > hi:
-        issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s exceeds the {hi}s maximum -- consider splitting into two slugs"))
+        hint = ("trim or split into two long-form slugs" if length == "long"
+                else "consider splitting into two slugs (long form only if the user explicitly asks for it)")
+        issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s exceeds the {hi}s maximum -- {hint}"))
     return issues

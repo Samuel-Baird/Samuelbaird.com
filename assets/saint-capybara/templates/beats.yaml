@@ -12,6 +12,9 @@ slug: REPLACE-WITH-SLUG
 title: "REPLACE: the on-screen/description title"
 hook: "REPLACE: a short, curiosity-driving line for the first 3 seconds"
 summary: "REPLACE: 1-2 sentence summary for the video description (Step 7, post-Gate-A)"
+# Short (60-180s) by default. Long form (Instagram, up to 1200s) only when the
+# user explicitly asks -- tools/new_project.ps1 -Length long writes `length: long`
+# + `long_form_requested:` here (script-format.md "Long form").
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
 voice: { name: am_michael, speed: 1.5 }
 # Quote voices for `excerpt` beats (article sources -- see
