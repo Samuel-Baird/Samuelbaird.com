@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { DonateButtons } from "@/components/donate-buttons";
+import { StripeDonateForm } from "@/components/stripe-donate-form";
+import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
+import { isStripeConfigured } from "@/lib/stripe";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -14,7 +17,10 @@ export const metadata: Metadata = {
 const PAYPAL_URL = "https://paypal.me/Baird90";
 const VENMO_URL = "https://venmo.com/Samuel-J-Baird";
 
-export default function DonatePage() {
+export default async function DonatePage() {
+  const stripe = isStripeConfigured();
+  const signedIn = stripe ? Boolean(await getCurrentUser()) : false;
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
       <header className="border-b border-[color:var(--border)] pb-10">
@@ -33,35 +39,47 @@ export default function DonatePage() {
             directly toward hosting and keeping it that way. Anything helps
             and is appreciated.
           </p>
-          <DonateButtons paypalUrl={PAYPAL_URL} venmoUrl={VENMO_URL} />
-          <p className="text-sm text-[color:var(--muted)]">
-            You&apos;ll be taken to {PAYPAL_URL.replace("https://", "")} or{" "}
-            {VENMO_URL.replace("https://", "")} to complete the donation.
-          </p>
+          {stripe ? (
+            <>
+              <StripeDonateForm signedIn={signedIn} />
+              <p className="text-sm text-[color:var(--muted)]">
+                Card payments are processed by Stripe. To change or cancel a
+                monthly donation, email{" "}
+                <a
+                  href={mailto("Monthly donation")}
+                  className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+                .
+              </p>
+            </>
+          ) : null}
 
-          <div className="rounded-[var(--radius)] border border-[color:var(--honey)]/40 bg-[color:var(--honey-soft)] p-5 text-sm sm:text-base">
-            <p className="font-medium text-[color:var(--foreground)]">
-              Donate $5+ once, get premium.
-            </p>
-            <p className="mt-2 leading-relaxed text-[color:var(--foreground)]">
-              A one-time donation of $5 or more unlocks{" "}
-              <Link
-                href="/premium"
-                className="text-[color:var(--honey)] underline underline-offset-2 hover:no-underline"
-              >
-                premium features
-              </Link>{" "}
-              — risers &amp; fallers, channel comparison, CSV exports, and
-              more. After donating, forward your receipt to{" "}
+          <section
+            className={
+              stripe ? "border-t border-[color:var(--border)] pt-6" : undefined
+            }
+          >
+            {stripe ? (
+              <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+                Other ways to give
+              </h2>
+            ) : null}
+            <DonateButtons paypalUrl={PAYPAL_URL} venmoUrl={VENMO_URL} />
+            <p className="mt-3 text-sm text-[color:var(--muted)]">
+              You&apos;ll be taken to {PAYPAL_URL.replace("https://", "")} or{" "}
+              {VENMO_URL.replace("https://", "")} to complete the donation.
+              For premium via PayPal or Venmo, forward your receipt to{" "}
               <a
                 href={mailto("Premium access — donation receipt")}
-                className="text-[color:var(--honey)] underline underline-offset-2 hover:no-underline"
+                className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
                 {CONTACT_EMAIL}
               </a>{" "}
               and you&apos;ll be added by hand.
             </p>
-          </div>
+          </section>
         </div>
 
         <aside className="mt-14 space-y-8 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
@@ -73,6 +91,23 @@ export default function DonatePage() {
               <li>Hosting and infrastructure costs.</li>
               <li>Keeping the site free, public, and without ads.</li>
             </ul>
+          </section>
+
+          <section>
+            <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+              Premium
+            </h2>
+            <p className="mt-3 border-t border-[color:var(--border)] pt-3 text-sm leading-relaxed text-[color:var(--muted)]">
+              A donation of $5 or more unlocks{" "}
+              <Link
+                href="/premium"
+                className="text-[color:var(--honey)] underline underline-offset-2 hover:no-underline"
+              >
+                premium features
+              </Link>{" "}
+              — risers &amp; fallers, channel comparison, CSV exports, and
+              more.
+            </p>
           </section>
 
           <section>

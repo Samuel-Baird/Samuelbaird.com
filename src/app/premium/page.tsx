@@ -157,9 +157,10 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
         Unlock premium with a $5+ donation.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
-        Donate any amount over $5, once, via PayPal or Venmo. Then forward
-        your receipt to Sam and you&apos;ll be added by hand — anything helps
-        and is appreciated.
+        Donate $5 or more by card and premium is added to your account
+        automatically. Giving through PayPal or Venmo instead? Forward your
+        receipt to Sam and you&apos;ll be added by hand. Anything helps and is
+        appreciated.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <Link
