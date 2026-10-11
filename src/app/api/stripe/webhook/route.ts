@@ -1,7 +1,7 @@
 import { revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import type Stripe from "stripe";
-import { getStripe, PREMIUM_MIN_CENTS } from "@/lib/stripe";
+import { getStripe, isOurSession, PREMIUM_MIN_CENTS } from "@/lib/stripe";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 // Stripe webhook. Configure the endpoint (dashboard, or `stripe listen
@@ -36,7 +36,8 @@ export async function POST(req: NextRequest) {
     const session = event.data.object;
     // Bank-debit style methods complete as "unpaid" and settle later via
     // async_payment_succeeded; only act once money has actually moved.
-    if (session.payment_status === "paid") {
+    // This Stripe account is shared with other sites; skip their checkouts.
+    if (session.payment_status === "paid" && isOurSession(session.metadata)) {
       await recordDonation(session);
     }
   }

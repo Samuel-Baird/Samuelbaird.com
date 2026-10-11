@@ -8,6 +8,7 @@ import {
   getStripe,
   MAX_DONATION_CENTS,
   MIN_DONATION_CENTS,
+  SITE_TAG,
 } from "@/lib/stripe";
 
 export type DonateState = { error: string | null };
@@ -69,7 +70,8 @@ export async function startDonationCheckout(
       client_reference_id: auth?.user.id,
       // The account premium should land on. Falls back to the email typed
       // into Checkout when the donor isn't signed in.
-      metadata: email ? { premium_email: email } : {},
+      // `site` lets the webhook ignore other sites' sessions: they share this Stripe account.
+      metadata: { site: SITE_TAG, ...(email ? { premium_email: email } : {}) },
       success_url: `${origin}/donate/thanks?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/donate`,
     });

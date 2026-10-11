@@ -6,6 +6,15 @@ import Stripe from "stripe";
 // automatically (via the webhook at /api/stripe/webhook). Mirrors the "$5+
 // once" rule the site has always advertised.
 export const PREMIUM_MIN_CENTS = 500;
+// Several sites share this Stripe account, so every Checkout session carries `metadata.site`
+// and the webhook acts only on its own. Never reuse this value on another site.
+export const SITE_TAG = "latter-day-stats";
+
+export function isOurSession(metadata: Record<string, string> | null | undefined): boolean {
+  const site = metadata?.site;
+  // Sessions created before tagging have no site, and no application_id (the other site's marker).
+  return site ? site === SITE_TAG : !metadata?.application_id;
+}
 export const MIN_DONATION_CENTS = 100;
 export const MAX_DONATION_CENTS = 1_000_000;
 
