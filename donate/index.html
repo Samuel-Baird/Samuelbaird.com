@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donate · Samuel Baird</title>
+<meta name="description" content="Support Samuel Baird's projects and videos.">
+<link rel="stylesheet" href="/style.css">
+</head><body><main>
+<header>
+  <p class="back"><a href="/">&larr; samuelbaird.com</a></p>
+  <h1>Donate</h1>
+  <p class="tag">Help keep the projects and videos going. Anything helps and is appreciated.</p>
+</header>
+<section id="give" aria-labelledby="amt">
+  <p id="err" class="error" role="alert" hidden></p>
+  <form method="post" action="/api/checkout" class="donate">
+    <fieldset>
+      <legend>Frequency</legend>
+      <div class="seg">
+        <label><input type="radio" name="frequency" value="once" checked><span>One time</span></label>
+        <label><input type="radio" name="frequency" value="monthly"><span>Monthly</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend id="amt">Amount (USD)</legend>
+      <div class="seg presets">
+        <button type="button" data-v="5">$5</button>
+        <button type="button" data-v="10" aria-pressed="true">$10</button>
+        <button type="button" data-v="25">$25</button>
+        <button type="button" data-v="50">$50</button>
+        <label class="custom"><span class="sr">Custom amount in dollars</span><b aria-hidden="true">$</b>
+          <input type="number" name="amount" id="amount" value="10" min="1" max="10000" step="0.01" inputmode="decimal" required></label>
+      </div>
+    </fieldset>
+    <button class="primary" type="submit" id="go">Donate with card &rarr;</button>
+    <p class="note">Card payments are processed by Stripe. To change or cancel a monthly donation, email <a href="mailto:b13llama@gmail.com?subject=Monthly%20donation">b13llama@gmail.com</a>.</p>
+  </form>
+</section>
+</main>
+<script>
+const a=document.getElementById('amount'),go=document.getElementById('go'),btns=document.querySelectorAll('.presets button'),
+freq=()=>document.querySelector('input[name=frequency]:checked').value;
+function label(){const d=Number(a.value);go.textContent='Donate'+(d>0?' $'+(d%1?d.toFixed(2):d):'')+(freq()==='monthly'?' / month':'')+' with card →';
+btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===a.value)))}
+btns.forEach(b=>b.onclick=()=>{a.value=b.dataset.v;label()});
+a.oninput=label;document.querySelectorAll('input[name=frequency]').forEach(r=>r.onchange=label);label();
+const e=new URLSearchParams(location.search).get('error');
+if(e){const m={amount:'Enter an amount between $1 and $10,000.',config:'Donations are temporarily unavailable.',stripe:"Couldn't start checkout. Please try again."};
+const p=document.getElementById('err');p.textContent=m[e]||m.stripe;p.hidden=false}
+</script>
+</body></html>

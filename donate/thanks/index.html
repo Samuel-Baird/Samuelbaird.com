@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Thank you · Samuel Baird</title>
+<link rel="stylesheet" href="/style.css">
+</head><body><main>
+<header>
+  <h1>Thank you!</h1>
+  <p class="tag" id="msg">Your contribution helps make this work possible. A receipt is on its way to your inbox.</p>
+</header>
+<p><a href="/">&larr; Back to samuelbaird.com</a></p>
+<p class="note">Something not right? Email <a href="mailto:b13llama@gmail.com?subject=Donation">b13llama@gmail.com</a>.</p>
+</main>
+<script>
+const id=new URLSearchParams(location.search).get('session_id');
+if(id)fetch('/api/session?session_id='+encodeURIComponent(id)).then(r=>r.json()).then(s=>{
+if(s&&s.amountCents)document.getElementById('msg').textContent='Your '+(s.monthly?'monthly ':'')+'donation of $'+(s.amountCents/100).toFixed(2)+' helps make this work possible. A receipt is on its way to your inbox.'}).catch(()=>{})
+</script>
+</body></html>
