@@ -49,6 +49,10 @@ export async function startDonationCheckout(
   try {
     const session = await getStripe().checkout.sessions.create({
       mode: monthly ? "subscription" : "payment",
+      // Stripe's Managed Payments (merchant of record) is on by default for new
+      // accounts and rejects line items without a product tax code. Donations
+      // aren't covered by it, so opt each session out.
+      managed_payments: { enabled: false },
       line_items: [
         {
           quantity: 1,
