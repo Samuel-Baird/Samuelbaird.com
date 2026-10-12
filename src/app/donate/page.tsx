@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { DonateButtons } from "@/components/donate-buttons";
-import { StripeDonateForm } from "@/components/stripe-donate-form";
-import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
-import { isStripeConfigured } from "@/lib/stripe";
+import { PAYPAL_URL, VENMO_URL } from "@/lib/donate-links";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -14,13 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/donate" },
 };
 
-const PAYPAL_URL = "https://paypal.me/Baird90";
-const VENMO_URL = "https://venmo.com/Samuel-J-Baird";
 
-export default async function DonatePage() {
-  const stripe = isStripeConfigured();
-  const signedIn = stripe ? Boolean(await getCurrentUser()) : false;
-
+export default function DonatePage() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
       <header className="border-b border-[color:var(--border)] pb-10">
@@ -39,33 +32,7 @@ export default async function DonatePage() {
             directly toward hosting and keeping it that way. Anything helps
             and is appreciated.
           </p>
-          {stripe ? (
-            <>
-              <StripeDonateForm signedIn={signedIn} />
-              <p className="text-sm text-[color:var(--muted)]">
-                Card payments are processed by Stripe. To change or cancel a
-                monthly donation, email{" "}
-                <a
-                  href={mailto("Monthly donation")}
-                  className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-                >
-                  {CONTACT_EMAIL}
-                </a>
-                .
-              </p>
-            </>
-          ) : null}
-
-          <section
-            className={
-              stripe ? "border-t border-[color:var(--border)] pt-6" : undefined
-            }
-          >
-            {stripe ? (
-              <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-                Other ways to give
-              </h2>
-            ) : null}
+          <section>
             <DonateButtons paypalUrl={PAYPAL_URL} venmoUrl={VENMO_URL} />
             <p className="mt-3 text-sm text-[color:var(--muted)]">
               You&apos;ll be taken to {PAYPAL_URL.replace("https://", "")} or{" "}
