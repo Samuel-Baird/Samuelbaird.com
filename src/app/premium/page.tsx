@@ -10,7 +10,9 @@ import { DeseretTitle } from "@/components/deseret-title";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { RisersFallers } from "@/components/risers-fallers";
 import { WeeklyDigestToggle } from "@/components/weekly-digest-toggle";
+import { DonateButtons } from "@/components/donate-buttons";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
+import { PAYPAL_URL, VENMO_URL } from "@/lib/donate-links";
 import {
   getChannelBySlug,
   getChannelStatsHistory,
@@ -157,18 +159,12 @@ function LockedNotice({ signedIn }: { signedIn: boolean }) {
         Unlock premium with a $5+ donation.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--foreground)]">
-        Donate $5 or more by card and premium is added to your account
-        automatically. Giving through PayPal or Venmo instead? Forward your
-        receipt to Sam and you&apos;ll be added by hand. Anything helps and is
+        Donate $5 or more through PayPal or Venmo, then forward your receipt
+        to Sam and you&apos;ll be added by hand. Anything helps and is
         appreciated.
       </p>
-      <div className="mt-5 flex flex-wrap gap-3">
-        <Link
-          href="/donate"
-          className="inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--honey)] px-5 text-sm font-medium text-white hover:opacity-90"
-        >
-          Donate →
-        </Link>
+      <DonateButtons paypalUrl={PAYPAL_URL} venmoUrl={VENMO_URL} />
+      <div className="mt-3 flex flex-wrap gap-3">
         <a
           href={mailto("Premium access — donation receipt")}
           className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--honey)]/50 bg-[color:var(--honey-soft)] px-5 text-sm font-medium text-[color:var(--foreground)] hover:bg-[color:var(--honey)]/15"
