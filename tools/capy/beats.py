@@ -53,12 +53,22 @@ ESTIMATE_WORDS_PER_SECOND = 220 / 60.0
 HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
 
-# Runtime budgets by `length:` (script-format.md "Duration budget"). Long
-# form is an Instagram followers-only format the user opts into explicitly
-# per video -- it gets no algorithmic promotion, so it is never chosen by
-# the agent to make an over-long short fit. `length: long` must carry
-# `long_form_requested:` recording the user's own request.
-LENGTH_BUDGETS = {"short": (60, 180), "long": (180, 1200)}
+# The three Saint Capybara video types (script-format.md "Video types"):
+# runtime budget (min, max -- max None means no ceiling), canvas
+# orientation, and canvas size. YouTube long form has no length cap
+# (2026-10-13 user direction: "can run as long as it needs to in order to
+# react"). Both long-form types are opted into explicitly by the user per
+# video -- never chosen by the agent to make an over-long short fit -- and
+# must carry `long_form_requested:` recording the user's own request.
+VIDEO_TYPES = {
+    "short":          {"budget": (60, 180),   "orientation": "portrait",  "size": (1080, 1920)},
+    "long-instagram": {"budget": (180, 1200), "orientation": "portrait",  "size": (1080, 1920)},
+    "long-youtube":   {"budget": (180, None), "orientation": "landscape", "size": (1920, 1080)},
+}
+LONG_FORM_TYPES = {"long-instagram", "long-youtube"}
+# `length: long` (2026-10-09, before YouTube long form existed) meant
+# Instagram long form; still accepted when `video_type:` is absent.
+LEGACY_LENGTH_TO_TYPE = {"short": "short", "long": "long-instagram"}
 
 # Locked 2026-09-09 (user confirmed after watching dont-read-the-bom's
 # render) -- see docs/saint-capybara/brand.md sec 6. am_michael at speed
@@ -107,13 +117,15 @@ def load_beats(path: Path | str) -> dict:
     raw.setdefault("sensitive", False)
     raw.setdefault("music", None)
     raw.setdefault("tags", [])
-    raw.setdefault("length", "short")
+    if "video_type" not in raw:
+        raw["video_type"] = LEGACY_LENGTH_TO_TYPE.get(raw.get("length", "short"), raw.get("length"))
+    spec = VIDEO_TYPES.get(raw["video_type"], VIDEO_TYPES["short"])
     raw.setdefault("format", {})
     fmt = raw["format"]
-    fmt.setdefault("width", 1080)
-    fmt.setdefault("height", 1920)
+    fmt.setdefault("width", spec["size"][0])
+    fmt.setdefault("height", spec["size"][1])
     fmt.setdefault("fps", 30)
-    lo, hi = LENGTH_BUDGETS.get(raw["length"], LENGTH_BUDGETS["short"])
+    lo, hi = spec["budget"]
     fmt.setdefault("min_seconds", lo)
     fmt.setdefault("max_seconds", hi)
     raw.setdefault("voice", dict(DEFAULT_VOICE))
@@ -244,7 +256,7 @@ def validate(doc: dict) -> list[Issue]:
     if not hook:
         issues.append(Issue("warning", None, "no 'hook' text set for the description/title"))
 
-    issues.extend(validate_length(doc))
+    issues.extend(validate_video_type(doc))
 
     try:
         from capy.excerpts import validate_excerpt_beats
@@ -255,27 +267,43 @@ def validate(doc: dict) -> list[Issue]:
     return issues
 
 
-def validate_length(doc: dict) -> list[Issue]:
-    """`length: short | long` and the format budget it permits. A
-    `format.max_seconds` above the short ceiling is only allowed on a
-    `length: long` video, and `length: long` is only allowed with
+def orientation_for(doc: dict) -> str:
+    """'portrait' (9:16) or 'landscape' (16:9) for a loaded beats.yaml."""
+    return VIDEO_TYPES.get(doc.get("video_type", "short"), VIDEO_TYPES["short"])["orientation"]
+
+
+def validate_video_type(doc: dict) -> list[Issue]:
+    """`video_type: short | long-instagram | long-youtube` and the format it
+    permits. A `format.max_seconds` above the short ceiling is only allowed
+    on a long-form type, and a long-form type is only allowed with
     `long_form_requested:` set -- so a short can't drift long by editing
-    the budget, and long form can't be chosen without the user asking."""
+    its budget, and long form can't be chosen without the user asking.
+    `format.width/height` must match the type's orientation (the render
+    tools pick the 9:16 or 16:9 layout from `video_type`, not from
+    `format`)."""
     issues: list[Issue] = []
-    length = doc.get("length", "short")
-    if length not in LENGTH_BUDGETS:
-        return [Issue("error", None, f"unknown length '{length}' (expected one of {sorted(LENGTH_BUDGETS)})")]
-    _, short_hi = LENGTH_BUDGETS["short"]
-    _, budget_hi = LENGTH_BUDGETS[length]
-    hi = doc.get("format", {}).get("max_seconds", budget_hi)
-    if length == "short" and hi > short_hi:
-        issues.append(Issue("error", None, f"format.max_seconds {hi}s exceeds the {short_hi}s short-form ceiling -- "
-                                           "split into two slugs, or use length: long only if the user explicitly asked for long form"))
-    if hi > budget_hi:
-        issues.append(Issue("error", None, f"format.max_seconds {hi}s exceeds the {budget_hi}s {length}-form ceiling"))
-    if length == "long" and not str(doc.get("long_form_requested") or "").strip():
-        issues.append(Issue("error", None, "length: long requires long_form_requested: (date + the user's own words asking for long form) -- "
+    vt = doc.get("video_type", "short")
+    if vt not in VIDEO_TYPES:
+        return [Issue("error", None, f"unknown video_type '{vt}' (expected one of {sorted(VIDEO_TYPES)})")]
+    spec = VIDEO_TYPES[vt]
+    fmt = doc.get("format", {})
+    _, short_hi = VIDEO_TYPES["short"]["budget"]
+    _, budget_hi = spec["budget"]
+    hi = fmt.get("max_seconds", budget_hi)
+    if budget_hi is not None and (hi is None or hi > budget_hi):
+        shown = "no maximum" if hi is None else f"format.max_seconds {hi}s"
+        if vt == "short":
+            issues.append(Issue("error", None, f"{shown} exceeds the {short_hi}s short-form ceiling -- "
+                                               "split into two slugs, or use a long-form video_type only if the user explicitly asked for long form"))
+        else:
+            issues.append(Issue("error", None, f"{shown} exceeds the {budget_hi}s {vt} ceiling"))
+    if vt in LONG_FORM_TYPES and not str(doc.get("long_form_requested") or "").strip():
+        issues.append(Issue("error", None, f"video_type: {vt} requires long_form_requested: (date + the user's own words asking for it) -- "
                                            "never choose long form on the agent's own initiative"))
+    w, h = fmt.get("width", spec["size"][0]), fmt.get("height", spec["size"][1])
+    if (w > h) != (spec["orientation"] == "landscape"):
+        issues.append(Issue("error", None, f"format {w}x{h} doesn't match video_type {vt} "
+                                           f"({spec['orientation']}, {spec['size'][0]}x{spec['size'][1]})"))
     return issues
 
 
@@ -316,16 +344,16 @@ def source_time_seconds(doc: dict, per_beat: dict[str, float]) -> float:
 
 def check_duration_budget(doc: dict, total_seconds: float, *, draft: bool = False) -> list[Issue]:
     fmt = doc.get("format", {})
-    length = doc.get("length", "short")
-    default_lo, default_hi = LENGTH_BUDGETS.get(length, LENGTH_BUDGETS["short"])
+    vt = doc.get("video_type", "short")
+    default_lo, default_hi = VIDEO_TYPES.get(vt, VIDEO_TYPES["short"])["budget"]
     lo, hi = fmt.get("min_seconds", default_lo), fmt.get("max_seconds", default_hi)
     level = "warning" if draft else "error"
     issues = []
     if total_seconds < lo:
-        hint = " -- too short for long form; make it a short (length: short)" if length == "long" else ""
+        hint = " -- too short for long form; make it a short (video_type: short)" if vt in LONG_FORM_TYPES else ""
         issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s is under the {lo}s minimum{hint}"))
-    if total_seconds > hi:
-        hint = ("trim or split into two long-form slugs" if length == "long"
+    if hi is not None and total_seconds > hi:
+        hint = ("trim or split into two long-form slugs" if vt in LONG_FORM_TYPES
                 else "consider splitting into two slugs (long form only if the user explicitly asks for it)")
         issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s exceeds the {hi}s maximum -- {hint}"))
     return issues

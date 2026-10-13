@@ -74,6 +74,7 @@ def _cache_key(theme: Theme, pose: str, spec: SpriteSpec) -> str:
         f"g{ground.get('rx',0)}x{ground.get('ry',0)}a{ground.get('alpha',0)}",
         theme.sprite_hash(pose)[:8],
         f"v{theme.layout_version}",
+        "c{}x{}".format(*theme.canvas_size),
     ]
     return "__".join(parts)
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Renders one transparent 1080x1920 PNG per caption phrase group
+"""Renders one transparent full-canvas (1080x1920, or 1920x1080 for YouTube long form) PNG per caption phrase group
 (captions/<id>_<n>.png), for compositing into each beat's clip by
 capy_render_beat_clips.py.
 
@@ -86,7 +86,7 @@ def _render_phrase_png(theme: Theme, phrase, mode: str, style_name: str) -> Imag
     highlight_color = theme.color_rgba(theme.data["captions"]["highlight_color"])
     highlight_words = set(phrase.highlight or [])
 
-    max_lines = theme.data["captions"]["max_lines"]
+    max_lines = zone.max_lines or theme.data["captions"]["max_lines"]
     font, lines = fit_text(
         phrase.text, font_path,
         size=style["size"], min_size=style["min_size"],
@@ -122,7 +122,7 @@ def main() -> int:
 
     doc = load_beats(beats_path)
     only = set(args.only.split(",")) if args.only else None
-    theme = Theme.load()
+    theme = Theme.for_doc(doc)
 
     captions_dir = project / "captions"
     captions_dir.mkdir(parents=True, exist_ok=True)

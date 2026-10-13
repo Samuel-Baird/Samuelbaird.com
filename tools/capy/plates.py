@@ -1,4 +1,4 @@
-"""Render one 1080x1920 RGBA "plate" (a single frame representing a beat)
+"""Render one full-canvas (1080x1920, or 1920x1080 for YouTube long form) RGBA "plate" (a single frame representing a beat)
 for the storyboard contact sheet and capy_render_beat_clips.py's per-beat
 video composition.
 
@@ -80,22 +80,23 @@ def _background(theme: Theme) -> Image.Image:
 
 def _clip_preview_frame(theme: Theme, frame: Image.Image) -> Image.Image:
     """Storyboard-only preview of the CLIP-mode full-bleed compositing:
-    9:16-or-narrower sources cover-crop the whole canvas; 16:9-or-wider
-    sources fit inside the letterbox band over a blurred, darkened cover
-    copy -- mirrors capy_render_beat_clips.py's ffmpeg filter graph so the
-    contact sheet doesn't lie about the real look."""
+    a source whose orientation matches the canvas cover-crops the whole
+    canvas; the other orientation (16:9 on a 9:16 canvas, or 9:16 on the
+    16:9 YouTube canvas) fits inside theme.fit_box() over a blurred,
+    darkened cover copy -- mirrors capy_render_beat_clips.py's ffmpeg
+    filter graph so the contact sheet doesn't lie about the real look."""
     w, h = theme.canvas_size
     cf = frame.convert("RGBA")
     out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    if cf.width <= cf.height:
+    if theme.source_fills_canvas(cf.width, cf.height):
         ratio = max(w / cf.width, h / cf.height)
         cf = cf.resize((max(1, round(cf.width * ratio)), max(1, round(cf.height * ratio))), Image.LANCZOS)
         ox, oy = (cf.width - w) // 2, (cf.height - h) // 2
         out.alpha_composite(cf.crop((ox, oy, ox + w, oy + h)))
         return out
 
-    band_y0, band_y1 = theme.letterbox_band()
-    band_h = band_y1 - band_y0
+    band_x0, band_y0, band_x1, band_y1 = theme.fit_box()
+    band_w, band_h = band_x1 - band_x0, band_y1 - band_y0
     bg = theme.letterbox_bg()
     bg_ratio = max(w / cf.width, h / cf.height)
     bg_img = cf.resize((max(1, round(cf.width * bg_ratio)), max(1, round(cf.height * bg_ratio))), Image.LANCZOS)
@@ -106,10 +107,10 @@ def _clip_preview_frame(theme: Theme, frame: Image.Image) -> Image.Image:
     bg_img = Image.alpha_composite(bg_img, dim)
     out.alpha_composite(bg_img)
 
-    fit_ratio = min(w / cf.width, band_h / cf.height)
+    fit_ratio = min(band_w / cf.width, band_h / cf.height)
     fw, fh = max(1, round(cf.width * fit_ratio)), max(1, round(cf.height * fit_ratio))
     fg = cf.resize((fw, fh), Image.LANCZOS)
-    fx, fy = (w - fw) // 2, band_y0 + (band_h - fh) // 2
+    fx, fy = band_x0 + (band_w - fw) // 2, band_y0 + (band_h - fh) // 2
     out.alpha_composite(fg, (fx, fy))
     return out
 

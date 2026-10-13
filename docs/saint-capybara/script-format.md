@@ -33,9 +33,9 @@ slug: adam-god-claim
 title: "Did Brigham Young teach Adam was God?"
 hook: "He said WHAT about Adam?"     # title/description only (2026-09-09) -- never rendered on screen
 summary: "..."                        # for the description (Step 7, post-Gate-A)
-length: short                         # short (default) | long -- see "Long form" below
-# long_form_requested: "2026-10-09: 'make this one long form'"   # required when length: long
-format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+video_type: short                     # short (default) | long-instagram | long-youtube -- see "Video types" below
+# long_form_requested: "2026-10-13: 'make this a youtube long form'"   # required for either long type
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }   # 1920x1080 for long-youtube
 voice: { name: am_michael, speed: 0.95 }   # host voice
 voices:                                     # article-mode `excerpt` beats only, see below
   quote_male: { name: am_michael, speed: 1.0 }
@@ -207,8 +207,9 @@ all five into one video):
 - Clip / excerpt: 5-25s.
 - Response: 25-150s across 2-4 evidence beats.
 - Close (the "...God bless." beat): 5-10s.
-- Overall: 60-180s for a short; 180-1200s for long form (`length: long`,
-  see "Long form" below) (`format.min_seconds`/`max_seconds`), enforced by
+- Overall: 60-180s for a short; 180-1200s for Instagram long form; 180s+
+  with no ceiling for YouTube long form (see
+  "Video types" below) (`format.min_seconds`/`max_seconds`), enforced by
   `capy.beats.check_duration_budget()` — hard error normally, downgraded
   to a warning only when a tool is run with `--draft`.
 - Target ~145 words per minute (`capy.beats.ESTIMATE_WORDS_PER_SECOND`) —
@@ -218,23 +219,39 @@ all five into one video):
   hit the ceiling. Going long form is *not* the fix for an over-long
   short — see below.
 
-### Long form (2026-10-09 user direction)
+### Video types (2026-10-09 / 2026-10-13 user direction)
 
-Instagram long-form videos (feed video, not a Reel) can run up to 20
-minutes. They don't get promoted by the algorithm — they reach followers
-only — so **long form is used only when the user explicitly says a video
-should be long form.** Never pick it on the agent's own initiative, never
-propose it as a way to fit an over-long short, and never infer it from a
-topic being big.
+Three distinct Saint Capybara video types, set by `video_type:`:
 
-- `length: long` plus `long_form_requested:` (the date and the user's own
-  words) at the top of `beats.yaml`. Default budget becomes
-  `min_seconds: 180`, `max_seconds: 1200`. `tools/new_project.ps1
-  -Length long` writes both lines.
-- Enforced by `capy.beats.validate_length()`: `length: long` without
-  `long_form_requested:` is an error; a `length: short` video with
-  `format.max_seconds` above 180 is an error (a short can't quietly drift
-  long by editing its budget); nothing may exceed 1200s.
+| Type | `video_type:` | Canvas | Budget |
+|---|---|---|---|
+| Short form | `short` (default) | 9:16, 1080×1920 | 60-180s |
+| Long form (Instagram) | `long-instagram` | 9:16, 1080×1920 | 180-1200s |
+| Long form (YouTube) | `long-youtube` | 16:9, 1920×1080 | 180s+, no cap |
+
+Instagram long form is a feed video (not a Reel) that reaches followers
+only, with no algorithmic promotion; YouTube long form is a standard
+widescreen upload. **Either long form is used only when the user
+explicitly asks for that type.** Never pick one on the agent's own
+initiative, never propose it as a way to fit an over-long short, and
+never infer it from a topic being big.
+
+- `video_type:` plus `long_form_requested:` (the date and the user's own
+  words) at the top of `beats.yaml`. Instagram long form's default
+  budget is `min_seconds: 180`, `max_seconds: 1200`. **YouTube long form
+  has no length cap** (2026-10-13 user direction — it runs as long as the
+  reaction needs): `min_seconds: 180` and no `max_seconds`, and its
+  `format` defaults to 1920×1080. `tools/new_project.ps1 -VideoType <type>`
+  writes all of it. (`length: long`, from before YouTube long form
+  existed, is still read as `long-instagram`.)
+- Enforced by `capy.beats.validate_video_type()`: a long type without
+  `long_form_requested:` is an error; a `short` with `format.max_seconds`
+  above 180 is an error (a short can't quietly drift long by editing its
+  budget); Instagram long form may not exceed 1200s; `format`'s
+  width/height must match the type's orientation.
+
+**Both long forms:**
+
 - Structure: 3-6 sections, each a complete response arc (the five
   response formats above, the playbook's six steps) with its own clip(s)
   and its own payoff — a long video is several strong segments, not one
@@ -248,6 +265,28 @@ topic being big.
 - Build: ~100+ beats exceeds Resolve's ~65-70-entry
   `create_timeline_from_clips` cap — assemble in batches (see
   `hybrid-resolve-pipeline.md` step 4).
+
+**YouTube long form specifically (16:9):** same principles on a wider
+screen, re-laid out to use the extra room (`brand.md` sec 8, "16:9
+layout"; `theme.yaml: layout.landscape`):
+
+- No length cap, but no padding either: length comes from how much the
+  source needs answering, not from a target. Every other rule still
+  holds — source time ≤30% of runtime, clips ≤20s continuous, 3+
+  sections each with its own payoff.
+- Every render tool picks the 16:9 layout from `video_type` on its own —
+  nothing per beat changes, and the beat kinds / frame modes / `stage:`
+  options are identical.
+- A 16:9 source fills the whole frame in CLIP mode (no letterbox — the
+  common case for YouTube critics); a 9:16 source is pillarboxed
+  full-height in the center over a blurred copy.
+- HOST puts the big sprite on the left and captions in the right column
+  (up to 3 lines there); CARD gives the card the left ~70% of the frame
+  with the sprite beside it — use the bigger card for longer quotes and
+  larger evidence crops rather than splitting them.
+- Viewers watch with sound far more often than on Shorts, but captions
+  stay on every narration-family beat, same rule as the 9:16 types.
+- Preview the layout with `tools/capy_storyboard.py --mock --landscape`.
 
 ## Closing conventions (2026-09-08)
 

@@ -104,6 +104,63 @@ layout:
     sprite:   { x0: 32, size: 480, outline_px: 4, shadow: null }
     captions: { y0: 860, y1: 1120, max_width: 960 }
 
+  # 16:9 landscape layout -- YouTube long form only (`video_type:
+  # long-youtube` in beats.yaml; capy.layout.Theme.for_doc picks it).
+  # Same three modes and principles as the 9:16 `layout` above, re-laid
+  # out to use the width: the sprite moves beside the text instead of
+  # under it, and cards/captions grow into the extra room. `overrides`
+  # is deep-merged over the top-level `captions`/`card_text` blocks
+  # while this layout is active (text can start bigger on a TV/monitor).
+  #
+  # No permanent platform chrome on YouTube, but the player's control +
+  # progress bar covers roughly the bottom 8% on hover/pause and TVs can
+  # overscan ~5%, so all text stays inside title-safe x 96-1824,
+  # y 54-1010. Sprite feet may sit below that, same as 9:16.
+  landscape:
+    version: 2
+    canvas: { width: 1920, height: 1080, fps: 30 }
+    platform_safe: { top: 54, bottom: 70, right: 96 }
+    sprite_bottom: 1050
+
+    # CLIP: a 16:9 source fills the canvas (cover-crop); a 9:16 source is
+    # pillarboxed full-height in the center over a blurred cover copy --
+    # the mirror image of the 9:16 layout's letterbox band. Sprite
+    # bottom-left; captions (unused on clip beats today -- see
+    # script-format.md caption rules) sit beside it, never overlapping.
+    clip:
+      fit_band: { x0: 0, y0: 0, x1: 1920, y1: 1080 }
+      letterbox_bg: { blur_scale: 4, boxblur: "10:2", dim: 0.45 }
+      sprite_bottom: 1060
+      sprite:   { x0: 40, size: 340, outline_px: 5, shadow: { dx: 10, dy: 10, alpha: 110 } }
+      captions: { y0: 830, y1: 1000, max_width: 1100 }
+
+    # HOST: big sprite on the left ~half, captions in the right column at
+    # head height (3 lines allowed -- the column is narrower than a 9:16
+    # frame's full width).
+    host:
+      sprite:   { x_center: 520, size: 960, outline_px: 0, ground_shadow: { rx: 320, ry: 26, alpha: 60 } }
+      captions: { y0: 260, y1: 760, x_center: 1420, max_width: 800, max_lines: 3 }
+      freeze:   { dim: 0.55, blur_sigma: 8 }
+
+    # CARD: card fills the left ~70% of the frame, sprite bottom-right,
+    # captions under the card.
+    card:
+      box:      { x0: 96, y0: 60, x1: 1400, y1: 820 }
+      pad: 56
+      sprite:   { x0: 1420, size: 480, outline_px: 4, shadow: null }
+      captions: { y0: 840, y1: 1010, x_center: 748, max_width: 1240 }
+
+    overrides:
+      captions:
+        style_capy:   { size: 80, min_size: 60 }
+        style_source: { size: 68, min_size: 52 }
+        style_card:   { size: 68, min_size: 52 }
+      card_text:
+        quote:       { size: 72, min_size: 44 }
+        attribution: { size: 28, min_size: 22 }
+        chart:       { title: { size: 34 }, label: { size: 34 }, credit: { size: 26 } }
+        evidence_credit: { size: 28 }
+
 captions:
   # `size` is the starting px; the renderer (tools/capy/text.py) wraps by
   # measured width (font.getlength) and steps size down by shrink_step

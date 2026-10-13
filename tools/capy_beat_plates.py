@@ -88,7 +88,7 @@ def main() -> int:
                 removed += 1
         print(f"--clean: removed {removed} stale file(s) from {frames_dir}")
 
-    theme = Theme.load()
+    theme = Theme.for_doc(doc)
     sensitive = bool(doc.get("sensitive"))
 
     manifest = []

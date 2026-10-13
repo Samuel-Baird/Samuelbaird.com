@@ -10,8 +10,10 @@ type-specific branch in `types/` for the parts that differ.
    **meme-edit** / **saint-capybara**), and for meme-edit which brand it's
    for (standard or saint-capybara — see `docs/types/meme-edit.md`, which
    has its own edit-plan gate instead of §1's `.docx`; §3-4's Resolve
-   mechanics still apply). A saint-capybara video is a short unless the
-   user explicitly says long form (`docs/types/saint-capybara.md`). Also:
+   mechanics still apply). A saint-capybara video is one of three types —
+   short form (default), long form (Instagram), or long form (YouTube,
+   16:9) — and is a short unless the user explicitly asks for a long
+   form (`docs/types/saint-capybara.md`). Also:
    a short slug (kebab-case, becomes the folder and, for the first three
    types and meme-edit, the Resolve project name), and where the source files currently
    sit. For **saint-capybara**, also ask for the source URL (or confirm a

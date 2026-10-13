@@ -85,7 +85,9 @@ and so future sessions on this project use the same checklist.)
 2. Caption sync spot-check — a few beats compared by eye against the
    audio.
 3. Phone legibility — view `storyboard.png`/a real frame at actual phone
-   size, not just on a desktop monitor.
+   size, not just on a desktop monitor. For a `long-youtube` (16:9)
+   video, check both a phone held sideways and a TV/desktop-size frame,
+   and that no text sits in the bottom ~8% (the player's control bar).
 4. Evidence hold — every evidence/card beat held long enough to actually
    read (`capy.beats.estimate_hold_seconds` honored, not undercut by a
    short TTS line).

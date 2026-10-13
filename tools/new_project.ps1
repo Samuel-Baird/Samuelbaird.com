@@ -13,9 +13,11 @@
     See docs/types/meme-edit.md for -Type meme-edit (base video + inserts +
     meme text + TTS voice lines); -Brand is required for it, since a meme
     can be made for either identity and the anonymity rules depend on it.
-    -Length long (saint-capybara only) sets up an Instagram long-form video
-    (up to 20 min) -- use it ONLY when the user explicitly asked for long
-    form (docs/saint-capybara/script-format.md "Duration budget").
+    -VideoType (saint-capybara only) picks one of the three Saint Capybara
+    video types: short (default, 9:16, 60-180s), long-instagram (9:16, up
+    to 20 min) or long-youtube (16:9, no length cap). Use a long type ONLY
+    when the user explicitly asked for it (docs/saint-capybara/
+    script-format.md "Video types").
     Safe to re-run — existing folders/files are left alone.
 
 .EXAMPLE
@@ -25,7 +27,9 @@
 .EXAMPLE
     .\new_project.ps1 -Slug tribune-oped-response -Type saint-capybara -SourceKind article
 .EXAMPLE
-    .\new_project.ps1 -Slug book-of-abraham-deep-dive -Type saint-capybara -Length long
+    .\new_project.ps1 -Slug book-of-abraham-deep-dive -Type saint-capybara -VideoType long-instagram
+.EXAMPLE
+    .\new_project.ps1 -Slug kinderhook-plates-explained -Type saint-capybara -VideoType long-youtube
 .EXAMPLE
     .\new_project.ps1 -Slug potluck-desserts -Type meme-edit -Brand standard
 #>
@@ -43,10 +47,11 @@ param(
     [ValidateSet('video', 'article')]
     [string]$SourceKind = 'video',
 
-    # saint-capybara only: 'short' (60-180s, the default) or 'long'
-    # (Instagram long form, 180-1200s). Only when the user explicitly asks.
-    [ValidateSet('short', 'long')]
-    [string]$Length = 'short',
+    # saint-capybara only: 'short' (9:16, 60-180s, the default),
+    # 'long-instagram' (9:16, 180-1200s) or 'long-youtube' (16:9, 180s+,
+    # no length cap). Long types only when the user explicitly asks.
+    [ValidateSet('short', 'long-instagram', 'long-youtube')]
+    [string]$VideoType = 'short',
 
     # meme-edit only (required there): which identity the meme is for.
     [ValidateSet('standard', 'saint-capybara')]
@@ -60,8 +65,8 @@ $projectPath = Join-Path $Root $Slug
 if ($Type -eq 'meme-edit' -and -not $Brand) {
     throw "-Type meme-edit needs -Brand standard|saint-capybara (see docs/types/meme-edit.md 'Brand')"
 }
-if ($Length -eq 'long' -and $Type -ne 'saint-capybara') {
-    throw "-Length long is only for -Type saint-capybara"
+if ($VideoType -ne 'short' -and $Type -ne 'saint-capybara') {
+    throw "-VideoType $VideoType is only for -Type saint-capybara"
 }
 
 if ($Type -eq 'saint-capybara') {
@@ -96,10 +101,18 @@ if ($Type -eq 'saint-capybara') {
     if (-not (Test-Path $scriptBeatsDest)) {
         $beatsContent = Get-Content (Join-Path $templatesDir $beatsTemplate) -Raw
         $beatsContent = $beatsContent.Replace('REPLACE-WITH-SLUG', $Slug)
-        if ($Length -eq 'long') {
+        if ($VideoType -ne 'short') {
+            # long-youtube: no max_seconds -- no length cap (capy.beats.VIDEO_TYPES).
+            $size = if ($VideoType -eq 'long-youtube') { 'width: 1920, height: 1080' } else { 'width: 1080, height: 1920' }
+            $maxPart = if ($VideoType -eq 'long-youtube') { '' } else { ', max_seconds: 1200' }
+            # Two single-line replaces (not one spanning a newline) so a CRLF
+            # checkout of the template still matches.
+            $beatsContent = $beatsContent.Replace(
+                'video_type: short',
+                "video_type: $VideoType`nlong_form_requested: `"REPLACE: date + the user's own words asking for long form`"")
             $beatsContent = $beatsContent.Replace(
                 'format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }',
-                "length: long`nlong_form_requested: `"REPLACE: date + the user's own words asking for long form`"`nformat: { width: 1080, height: 1920, fps: 30, min_seconds: 180, max_seconds: 1200 }")
+                "format: { $size, fps: 30, min_seconds: 180$maxPart }")
         }
         Set-Content -Path $scriptBeatsDest -Value $beatsContent -NoNewline -Encoding utf8
     }
@@ -126,8 +139,8 @@ if ($Type -eq 'saint-capybara') {
     Write-Host "docs/saint-capybara/script-format.md), research\claims.md,"
     Write-Host "research\sources.yaml, script\pronunciations.yaml."
     Write-Host ""
-    if ($Length -eq 'long') {
-        Write-Host "LENGTH: LONG (Instagram long form, 180-1200s). Fill in long_form_requested:"
+    if ($VideoType -ne 'short') {
+        Write-Host "VIDEO TYPE: $VideoType. Fill in long_form_requested:"
         Write-Host "in script\beats.yaml with the user's own request -- the lint errors without it."
         Write-Host ""
     }

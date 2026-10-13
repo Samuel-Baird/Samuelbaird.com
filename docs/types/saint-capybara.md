@@ -38,16 +38,23 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
   usernames, thumbnails. See `docs/saint-capybara/brand.md` sec 9-10
   before doing anything else with this type.
 
-## Short vs. long form
+## The three Saint Capybara video types
 
-Every Saint Capybara video is a **short** (60-180s, vertical) unless the
-user explicitly says that video should be **long form** — an Instagram
-feed video of up to 20 minutes that reaches followers only (no
-algorithmic promotion, which is why it's never the default and never the
-agent's call). Long form uses the same pipeline, gates, and per-beat rules
-at a bigger budget: `tools/new_project.ps1 ... -Length long`, `length:
-long` + `long_form_requested:` in `beats.yaml`. See `script-format.md`
-"Long form" for the structure and lint rules.
+| Type | `video_type:` | Canvas | Runtime | Where it goes |
+|---|---|---|---|---|
+| **Short form** | `short` (default) | 9:16, 1080×1920 | 60-180s | Shorts / Reels / TikTok |
+| **Long form (Instagram)** | `long-instagram` | 9:16, 1080×1920 | 180s-20 min | Instagram feed video — reaches followers only, no algorithmic promotion |
+| **Long form (YouTube)** | `long-youtube` | 16:9, 1920×1080 | 180s+, no cap | Standard YouTube widescreen — runs as long as the reaction needs |
+
+Every video is a **short** unless the user explicitly asks for one of the
+long forms — never the agent's call, and never a way to fit a short that
+ran long. All three share the same pipeline, gates (Gate A), research and
+critique, tone, and per-beat rules; they differ in budget and canvas.
+Set with `tools/new_project.ps1 ... -VideoType <type>`, which writes
+`video_type:` + `long_form_requested:` into `beats.yaml`. The render tools
+pick the 9:16 or 16:9 layout from `video_type` automatically
+(`capy.layout.Theme.for_doc`). See `script-format.md` "Video types" for
+structure and lint rules, and `brand.md` sec 8 for the 16:9 frame layout.
 
 Memes/edits featuring the capybara are a separate type —
 `docs/types/meme-edit.md` with `-Brand saint-capybara`.
@@ -112,7 +119,7 @@ D:\Videos\<slug>\
 ```
 
 Create with `tools/new_project.ps1 -Slug <slug> -Type saint-capybara
-[-SourceKind video|article] [-Length short|long]` — this also copies the beats (`beats.yaml`,
+[-SourceKind video|article] [-VideoType short|long-instagram|long-youtube]` — this also copies the beats (`beats.yaml`,
 or `beats.article.yaml` for an article source) / sources / claims /
 pronunciations templates from `assets/saint-capybara/templates/` with the
 slug substituted.

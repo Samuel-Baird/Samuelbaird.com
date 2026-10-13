@@ -2,13 +2,12 @@
 
 Reusable video-editing pipeline for DaVinci Resolve, built around the
 [davinci-resolve MCP server](https://github.com/) and local Whisper
-transcription. All five video types render through Resolve; the
-anonymous **Saint Capybara** brand builds its Resolve timeline
-differently from the other three (each beat pre-composited into one clip
+transcription. Every video type renders through Resolve; the three
+anonymous **Saint Capybara** types build their Resolve timeline
+differently from the rest (each beat pre-composited into one clip
 with ffmpeg before Resolve imports it — see
 [`docs/saint-capybara/hybrid-resolve-pipeline.md`](docs/saint-capybara/hybrid-resolve-pipeline.md)).
-One playbook, five video types (Saint Capybara in short or, on explicit
-request, Instagram long form; memes/edits for either brand).
+One playbook, seven video types (table below).
 
 Start here: [`docs/pipeline.md`](docs/pipeline.md) — the master workflow and
 the table that routes a new project to its type-specific branch. Saint
@@ -49,7 +48,9 @@ before touching that type at all.
 | Interview/podcast | Multicam simultaneous recording | Camera cuts only, no image overlays | No |
 | Solo/history | Single presenter, single or dual camera | Images + quote cards at topic beats | Yes |
 | Meme/edit | A base video + short insert clips (either brand — ask) | Meme text overlays, synthetic TTS voice lines, SFX, cut-aways | Yes — `script/edit-plan.md` cue sheet |
-| Saint Capybara | Downloaded source clip + a pixel-art capybara host (no camera) | Vertical 9:16, TTS narration, burned-in captions, evidence cards/charts, edited in Resolve from pre-composited per-beat clips. 60-180s short by default; up to 20 min Instagram long form only when explicitly requested | Yes — `script/beats.yaml`/`script.md`, Gate A |
+| Saint Capybara — short form | Downloaded source clip + a pixel-art capybara host (no camera) | Vertical 9:16, 60-180s. TTS narration, burned-in captions, evidence cards/charts, edited in Resolve from pre-composited per-beat clips. The default Saint Capybara type | Yes — `script/beats.yaml`/`script.md`, Gate A |
+| Saint Capybara — long form (Instagram) | Same as short form | Vertical 9:16, up to 20 min; Instagram feed video, reaches followers only. Only when explicitly requested | Yes — same, `video_type: long-instagram` |
+| Saint Capybara — long form (YouTube) | Same as short form | Widescreen 16:9, no length cap (as long as the reaction needs); the same frame modes re-laid out to use the width. Only when explicitly requested | Yes — same, `video_type: long-youtube` |
 
 Response/interview/solo-history projects live on `D:\Videos\<slug>\` with
 the layout in `docs/pipeline.md` §0. Saint Capybara projects live in the
