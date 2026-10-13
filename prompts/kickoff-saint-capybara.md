@@ -52,7 +52,8 @@ is identifying, treat it as identifying and leave it out.
 - Video type — one of:
   - **short form** (9:16, 60-180s) — the default;
   - **long form (Instagram)** (9:16, up to 20 min, followers-only);
-  - **long form (YouTube)** (16:9 widescreen, up to 20 min).
+  - **long form (YouTube)** (16:9 widescreen, no length cap — as long as the
+    reaction needs).
   Don't choose a long form yourself; if I didn't say which, it's a short.
 - Anything already known about which claims in the source you'd like
   addressed (optional — the agent will triage and propose otherwise).

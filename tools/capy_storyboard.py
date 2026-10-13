@@ -99,6 +99,11 @@ def _transcript_span_text(segments: list[dict], start: float, end: float) -> str
     return " ".join(words)
 
 
+def _budget_label(fmt: dict) -> str:
+    hi = fmt.get("max_seconds")
+    return f"{fmt['min_seconds']}s+, no cap" if hi is None else f"{fmt['min_seconds']}-{hi}s"
+
+
 VIDEO_TYPE_LABELS = {
     "short": "Short form (9:16)",
     "long-instagram": "Long form — Instagram (9:16, followers-only)",
@@ -112,7 +117,7 @@ def render_script_md(doc: dict, per_beat: dict[str, float], total: float, projec
     lines = [f"# Script — {doc.get('title', doc.get('slug'))}", ""]
     type_label = VIDEO_TYPE_LABELS.get(doc.get("video_type", "short"), doc.get("video_type"))
     lines.append(f"**Slug:** `{doc.get('slug')}` | **Type:** {type_label} | **Estimated runtime:** {total:.1f}s "
-                  f"(budget {doc['format']['min_seconds']}-{doc['format']['max_seconds']}s) | "
+                  f"(budget {_budget_label(doc['format'])}) | "
                   f"**Source time:** {source_time:.1f}s ({pct:.0f}%)")
     source_info = None
     if project is not None:

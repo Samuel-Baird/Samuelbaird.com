@@ -54,14 +54,16 @@ HOLD_BASE_SECONDS = 3.0
 HOLD_PER_WORD_SECONDS = 0.15
 
 # The three Saint Capybara video types (script-format.md "Video types"):
-# runtime budget, canvas orientation, and canvas size. Both long-form
-# types are opted into explicitly by the user per video -- never chosen
-# by the agent to make an over-long short fit -- and must carry
-# `long_form_requested:` recording the user's own request.
+# runtime budget (min, max -- max None means no ceiling), canvas
+# orientation, and canvas size. YouTube long form has no length cap
+# (2026-10-13 user direction: "can run as long as it needs to in order to
+# react"). Both long-form types are opted into explicitly by the user per
+# video -- never chosen by the agent to make an over-long short fit -- and
+# must carry `long_form_requested:` recording the user's own request.
 VIDEO_TYPES = {
     "short":          {"budget": (60, 180),   "orientation": "portrait",  "size": (1080, 1920)},
     "long-instagram": {"budget": (180, 1200), "orientation": "portrait",  "size": (1080, 1920)},
-    "long-youtube":   {"budget": (180, 1200), "orientation": "landscape", "size": (1920, 1080)},
+    "long-youtube":   {"budget": (180, None), "orientation": "landscape", "size": (1920, 1080)},
 }
 LONG_FORM_TYPES = {"long-instagram", "long-youtube"}
 # `length: long` (2026-10-09, before YouTube long form existed) meant
@@ -288,11 +290,13 @@ def validate_video_type(doc: dict) -> list[Issue]:
     _, short_hi = VIDEO_TYPES["short"]["budget"]
     _, budget_hi = spec["budget"]
     hi = fmt.get("max_seconds", budget_hi)
-    if vt == "short" and hi > short_hi:
-        issues.append(Issue("error", None, f"format.max_seconds {hi}s exceeds the {short_hi}s short-form ceiling -- "
-                                           "split into two slugs, or use a long-form video_type only if the user explicitly asked for long form"))
-    if hi > budget_hi:
-        issues.append(Issue("error", None, f"format.max_seconds {hi}s exceeds the {budget_hi}s {vt} ceiling"))
+    if budget_hi is not None and (hi is None or hi > budget_hi):
+        shown = "no maximum" if hi is None else f"format.max_seconds {hi}s"
+        if vt == "short":
+            issues.append(Issue("error", None, f"{shown} exceeds the {short_hi}s short-form ceiling -- "
+                                               "split into two slugs, or use a long-form video_type only if the user explicitly asked for long form"))
+        else:
+            issues.append(Issue("error", None, f"{shown} exceeds the {budget_hi}s {vt} ceiling"))
     if vt in LONG_FORM_TYPES and not str(doc.get("long_form_requested") or "").strip():
         issues.append(Issue("error", None, f"video_type: {vt} requires long_form_requested: (date + the user's own words asking for it) -- "
                                            "never choose long form on the agent's own initiative"))
@@ -348,7 +352,7 @@ def check_duration_budget(doc: dict, total_seconds: float, *, draft: bool = Fals
     if total_seconds < lo:
         hint = " -- too short for long form; make it a short (video_type: short)" if vt in LONG_FORM_TYPES else ""
         issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s is under the {lo}s minimum{hint}"))
-    if total_seconds > hi:
+    if hi is not None and total_seconds > hi:
         hint = ("trim or split into two long-form slugs" if vt in LONG_FORM_TYPES
                 else "consider splitting into two slugs (long form only if the user explicitly asks for it)")
         issues.append(Issue(level, None, f"total runtime {total_seconds:.1f}s exceeds the {hi}s maximum -- {hint}"))

@@ -190,7 +190,7 @@ specifics that mattered in practice, building the two videos above:
    `record_frame` math needed since beat clips play back to back with no
    gaps by construction). Well under the ~65-70 raw-entry cap for a
    10-16 beat video, so one call suffices. A long-form video
-   (`video_type: long-instagram` or `long-youtube`, up to 20 min, often
+   (`video_type: long-instagram` up to 20 min, or `long-youtube` with no cap, often
    100+ beats) is not: create the
    timeline from the first ~20 beats, then `media_pool.append_to_timeline`
    the rest in ~20-beat batches, saving and re-reading the item count

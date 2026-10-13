@@ -44,7 +44,7 @@ Resolve build checklist in `hybrid-resolve-pipeline.md` instead.
 |---|---|---|---|---|
 | **Short form** | `short` (default) | 9:16, 1080×1920 | 60-180s | Shorts / Reels / TikTok |
 | **Long form (Instagram)** | `long-instagram` | 9:16, 1080×1920 | 180s-20 min | Instagram feed video — reaches followers only, no algorithmic promotion |
-| **Long form (YouTube)** | `long-youtube` | 16:9, 1920×1080 | 180s-20 min | Standard YouTube widescreen |
+| **Long form (YouTube)** | `long-youtube` | 16:9, 1920×1080 | 180s+, no cap | Standard YouTube widescreen — runs as long as the reaction needs |
 
 Every video is a **short** unless the user explicitly asks for one of the
 long forms — never the agent's call, and never a way to fit a short that

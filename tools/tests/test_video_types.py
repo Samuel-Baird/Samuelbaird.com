@@ -53,10 +53,10 @@ def test_long_instagram_is_9x16_180_1200(tmp_path):
     assert _errors(beats.validate_video_type(doc)) == []
 
 
-def test_long_youtube_is_16x9_180_1200(tmp_path):
+def test_long_youtube_is_16x9_with_no_length_cap(tmp_path):
     doc = _load(tmp_path, f"video_type: long-youtube\n{REQ}")
     f = doc["format"]
-    assert (f["width"], f["height"], f["min_seconds"], f["max_seconds"]) == (1920, 1080, 180, 1200)
+    assert (f["width"], f["height"], f["min_seconds"], f["max_seconds"]) == (1920, 1080, 180, None)
     assert beats.orientation_for(doc) == "landscape"
     assert _errors(beats.validate_video_type(doc)) == []
 
@@ -77,9 +77,21 @@ def test_short_cannot_raise_its_ceiling(tmp_path):
     assert any("short-form ceiling" in m for m in _errors(beats.validate_video_type(doc)))
 
 
-def test_long_cannot_exceed_20_minutes(tmp_path):
-    doc = _load(tmp_path, f"video_type: long-youtube\n{REQ}\nformat: {{max_seconds: 1500}}")
-    assert any("1200s long-youtube ceiling" in m for m in _errors(beats.validate_video_type(doc)))
+def test_instagram_cannot_exceed_20_minutes(tmp_path):
+    doc = _load(tmp_path, f"video_type: long-instagram\n{REQ}\nformat: {{max_seconds: 1500}}")
+    assert any("1200s long-instagram ceiling" in m for m in _errors(beats.validate_video_type(doc)))
+
+
+def test_instagram_and_short_cannot_drop_their_cap(tmp_path):
+    for vt in ("short", "long-instagram"):
+        doc = _load(tmp_path, f"video_type: {vt}\n{REQ}\nformat: {{max_seconds: null}}")
+        assert any("no maximum exceeds" in m for m in _errors(beats.validate_video_type(doc))), vt
+
+
+def test_youtube_has_no_ceiling(tmp_path):
+    doc = _load(tmp_path, f"video_type: long-youtube\n{REQ}")
+    assert _errors(beats.validate_video_type(doc)) == []
+    assert _errors(beats.check_duration_budget(doc, 3 * 3600.0)) == []
 
 
 def test_format_must_match_orientation(tmp_path):
@@ -93,7 +105,7 @@ def test_unknown_video_type_is_an_error(tmp_path):
 
 
 def test_duration_budget_uses_long_bounds(tmp_path):
-    doc = _load(tmp_path, f"video_type: long-youtube\n{REQ}")
+    doc = _load(tmp_path, f"video_type: long-instagram\n{REQ}")
     assert _errors(beats.check_duration_budget(doc, 900.0)) == []
     assert _errors(beats.check_duration_budget(doc, 1300.0))
     assert any("too short for long form" in m for m in _errors(beats.check_duration_budget(doc, 120.0)))

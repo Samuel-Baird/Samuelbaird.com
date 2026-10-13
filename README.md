@@ -50,7 +50,7 @@ before touching that type at all.
 | Meme/edit | A base video + short insert clips (either brand — ask) | Meme text overlays, synthetic TTS voice lines, SFX, cut-aways | Yes — `script/edit-plan.md` cue sheet |
 | Saint Capybara — short form | Downloaded source clip + a pixel-art capybara host (no camera) | Vertical 9:16, 60-180s. TTS narration, burned-in captions, evidence cards/charts, edited in Resolve from pre-composited per-beat clips. The default Saint Capybara type | Yes — `script/beats.yaml`/`script.md`, Gate A |
 | Saint Capybara — long form (Instagram) | Same as short form | Vertical 9:16, up to 20 min; Instagram feed video, reaches followers only. Only when explicitly requested | Yes — same, `video_type: long-instagram` |
-| Saint Capybara — long form (YouTube) | Same as short form | Widescreen 16:9, up to 20 min; the same frame modes re-laid out to use the width. Only when explicitly requested | Yes — same, `video_type: long-youtube` |
+| Saint Capybara — long form (YouTube) | Same as short form | Widescreen 16:9, no length cap (as long as the reaction needs); the same frame modes re-laid out to use the width. Only when explicitly requested | Yes — same, `video_type: long-youtube` |
 
 Response/interview/solo-history projects live on `D:\Videos\<slug>\` with
 the layout in `docs/pipeline.md` §0. Saint Capybara projects live in the

@@ -207,7 +207,8 @@ all five into one video):
 - Clip / excerpt: 5-25s.
 - Response: 25-150s across 2-4 evidence beats.
 - Close (the "...God bless." beat): 5-10s.
-- Overall: 60-180s for a short; 180-1200s for either long form (see
+- Overall: 60-180s for a short; 180-1200s for Instagram long form; 180s+
+  with no ceiling for YouTube long form (see
   "Video types" below) (`format.min_seconds`/`max_seconds`), enforced by
   `capy.beats.check_duration_budget()` — hard error normally, downgraded
   to a warning only when a tool is run with `--draft`.
@@ -226,7 +227,7 @@ Three distinct Saint Capybara video types, set by `video_type:`:
 |---|---|---|---|
 | Short form | `short` (default) | 9:16, 1080×1920 | 60-180s |
 | Long form (Instagram) | `long-instagram` | 9:16, 1080×1920 | 180-1200s |
-| Long form (YouTube) | `long-youtube` | 16:9, 1920×1080 | 180-1200s |
+| Long form (YouTube) | `long-youtube` | 16:9, 1920×1080 | 180s+, no cap |
 
 Instagram long form is a feed video (not a Reel) that reaches followers
 only, with no algorithmic promotion; YouTube long form is a standard
@@ -236,16 +237,18 @@ initiative, never propose it as a way to fit an over-long short, and
 never infer it from a topic being big.
 
 - `video_type:` plus `long_form_requested:` (the date and the user's own
-  words) at the top of `beats.yaml`. The long types' default budget is
-  `min_seconds: 180`, `max_seconds: 1200`; `long-youtube` also defaults
-  `format` to 1920×1080. `tools/new_project.ps1 -VideoType <type>`
+  words) at the top of `beats.yaml`. Instagram long form's default
+  budget is `min_seconds: 180`, `max_seconds: 1200`. **YouTube long form
+  has no length cap** (2026-10-13 user direction — it runs as long as the
+  reaction needs): `min_seconds: 180` and no `max_seconds`, and its
+  `format` defaults to 1920×1080. `tools/new_project.ps1 -VideoType <type>`
   writes all of it. (`length: long`, from before YouTube long form
   existed, is still read as `long-instagram`.)
 - Enforced by `capy.beats.validate_video_type()`: a long type without
   `long_form_requested:` is an error; a `short` with `format.max_seconds`
   above 180 is an error (a short can't quietly drift long by editing its
-  budget); nothing may exceed 1200s; `format`'s width/height must match
-  the type's orientation.
+  budget); Instagram long form may not exceed 1200s; `format`'s
+  width/height must match the type's orientation.
 
 **Both long forms:**
 
@@ -267,6 +270,10 @@ never infer it from a topic being big.
 screen, re-laid out to use the extra room (`brand.md` sec 8, "16:9
 layout"; `theme.yaml: layout.landscape`):
 
+- No length cap, but no padding either: length comes from how much the
+  source needs answering, not from a target. Every other rule still
+  holds — source time ≤30% of runtime, clips ≤20s continuous, 3+
+  sections each with its own payoff.
 - Every render tool picks the 16:9 layout from `video_type` on its own —
   nothing per beat changes, and the beat kinds / frame modes / `stage:`
   options are identical.

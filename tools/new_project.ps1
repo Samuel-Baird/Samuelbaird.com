@@ -15,7 +15,7 @@
     can be made for either identity and the anonymity rules depend on it.
     -VideoType (saint-capybara only) picks one of the three Saint Capybara
     video types: short (default, 9:16, 60-180s), long-instagram (9:16, up
-    to 20 min) or long-youtube (16:9, up to 20 min). Use a long type ONLY
+    to 20 min) or long-youtube (16:9, no length cap). Use a long type ONLY
     when the user explicitly asked for it (docs/saint-capybara/
     script-format.md "Video types").
     Safe to re-run — existing folders/files are left alone.
@@ -48,8 +48,8 @@ param(
     [string]$SourceKind = 'video',
 
     # saint-capybara only: 'short' (9:16, 60-180s, the default),
-    # 'long-instagram' (9:16, 180-1200s) or 'long-youtube' (16:9,
-    # 180-1200s). Long types only when the user explicitly asks.
+    # 'long-instagram' (9:16, 180-1200s) or 'long-youtube' (16:9, 180s+,
+    # no length cap). Long types only when the user explicitly asks.
     [ValidateSet('short', 'long-instagram', 'long-youtube')]
     [string]$VideoType = 'short',
 
@@ -102,7 +102,9 @@ if ($Type -eq 'saint-capybara') {
         $beatsContent = Get-Content (Join-Path $templatesDir $beatsTemplate) -Raw
         $beatsContent = $beatsContent.Replace('REPLACE-WITH-SLUG', $Slug)
         if ($VideoType -ne 'short') {
+            # long-youtube: no max_seconds -- no length cap (capy.beats.VIDEO_TYPES).
             $size = if ($VideoType -eq 'long-youtube') { 'width: 1920, height: 1080' } else { 'width: 1080, height: 1920' }
+            $maxPart = if ($VideoType -eq 'long-youtube') { '' } else { ', max_seconds: 1200' }
             # Two single-line replaces (not one spanning a newline) so a CRLF
             # checkout of the template still matches.
             $beatsContent = $beatsContent.Replace(
@@ -110,7 +112,7 @@ if ($Type -eq 'saint-capybara') {
                 "video_type: $VideoType`nlong_form_requested: `"REPLACE: date + the user's own words asking for long form`"")
             $beatsContent = $beatsContent.Replace(
                 'format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }',
-                "format: { $size, fps: 30, min_seconds: 180, max_seconds: 1200 }")
+                "format: { $size, fps: 30, min_seconds: 180$maxPart }")
         }
         Set-Content -Path $scriptBeatsDest -Value $beatsContent -NoNewline -Encoding utf8
     }
@@ -138,7 +140,7 @@ if ($Type -eq 'saint-capybara') {
     Write-Host "research\sources.yaml, script\pronunciations.yaml."
     Write-Host ""
     if ($VideoType -ne 'short') {
-        Write-Host "VIDEO TYPE: $VideoType (180-1200s). Fill in long_form_requested:"
+        Write-Host "VIDEO TYPE: $VideoType. Fill in long_form_requested:"
         Write-Host "in script\beats.yaml with the user's own request -- the lint errors without it."
         Write-Host ""
     }

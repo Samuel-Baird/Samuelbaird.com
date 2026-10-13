@@ -510,7 +510,8 @@ pacing, and presentation style.
 
 **YouTube long form is 16:9 — the same aspect ratio as the other
 identity's videos — so it loses that one distinguisher and leans harder
-on the rest.** On a 16:9 Saint Capybara video, be stricter, not looser:
+on the rest.** It stays fully anonymous and uses Saint Capybara branding
+only (user-confirmed 2026-10-13). On a 16:9 Saint Capybara video, be stricter, not looser:
 no camera footage of anyone but the source being responded to, only the
 pixel-art palette/fonts/card style above, no title-card, lower-third,
 intro, chapter-card, or end-screen convention borrowed from the other
