@@ -6,9 +6,14 @@ type-specific branch in `types/` for the parts that differ.
 
 ## 0. Intake
 
-1. Ask the user: video type (response / interview / solo-history / **saint-capybara**),
+1. Ask the user: video type (response / interview / solo-history /
+   **meme-edit** / **saint-capybara**), and for meme-edit which brand it's
+   for (standard or saint-capybara — see `docs/types/meme-edit.md`, which
+   has its own edit-plan gate instead of §1's `.docx`; §3-4's Resolve
+   mechanics still apply). A saint-capybara video is a short unless the
+   user explicitly says long form (`docs/types/saint-capybara.md`). Also:
    a short slug (kebab-case, becomes the folder and, for the first three
-   types, the Resolve project name), and where the source files currently
+   types and meme-edit, the Resolve project name), and where the source files currently
    sit. For **saint-capybara**, also ask for the source URL (or confirm a
    locally-downloaded file plus its URL for metadata) — see
    `docs/types/saint-capybara.md`, which is a separate branch: no `.docx`
@@ -20,8 +25,9 @@ type-specific branch in `types/` for the parts that differ.
    not be compromised by reusing anything from this repo's other identity
    (brand, phrasing, filenames — see that doc's anonymity warning before
    doing anything else on a saint-capybara project).
-2. Run `tools/new_project.ps1 <slug>` (add `-Type saint-capybara` for that
-   type) to create the project folder:
+2. Run `tools/new_project.ps1 <slug>` (add `-Type saint-capybara` or
+   `-Type meme-edit -Brand <brand>` for those types — each has its own
+   folder set, see its type doc) to create the project folder:
 
    ```
    D:\Videos\<slug>\

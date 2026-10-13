@@ -33,6 +33,8 @@ slug: adam-god-claim
 title: "Did Brigham Young teach Adam was God?"
 hook: "He said WHAT about Adam?"     # title/description only (2026-09-09) -- never rendered on screen
 summary: "..."                        # for the description (Step 7, post-Gate-A)
+length: short                         # short (default) | long -- see "Long form" below
+# long_form_requested: "2026-10-09: 'make this one long form'"   # required when length: long
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
 voice: { name: am_michael, speed: 0.95 }   # host voice
 voices:                                     # article-mode `excerpt` beats only, see below
@@ -205,14 +207,47 @@ all five into one video):
 - Clip / excerpt: 5-25s.
 - Response: 25-150s across 2-4 evidence beats.
 - Close (the "...God bless." beat): 5-10s.
-- Overall: 60-180s (`format.min_seconds`/`max_seconds`), enforced by
+- Overall: 60-180s for a short; 180-1200s for long form (`length: long`,
+  see "Long form" below) (`format.min_seconds`/`max_seconds`), enforced by
   `capy.beats.check_duration_budget()` — hard error normally, downgraded
   to a warning only when a tool is run with `--draft`.
 - Target ~145 words per minute (`capy.beats.ESTIMATE_WORDS_PER_SECOND`) —
   use this to budget narration word counts before TTS exists.
 - **If a topic doesn't fit in 180s while doing it justice, split into two
   slugs rather than compress.** Do not shorten evidence coverage just to
-  hit the ceiling.
+  hit the ceiling. Going long form is *not* the fix for an over-long
+  short — see below.
+
+### Long form (2026-10-09 user direction)
+
+Instagram long-form videos (feed video, not a Reel) can run up to 20
+minutes. They don't get promoted by the algorithm — they reach followers
+only — so **long form is used only when the user explicitly says a video
+should be long form.** Never pick it on the agent's own initiative, never
+propose it as a way to fit an over-long short, and never infer it from a
+topic being big.
+
+- `length: long` plus `long_form_requested:` (the date and the user's own
+  words) at the top of `beats.yaml`. Default budget becomes
+  `min_seconds: 180`, `max_seconds: 1200`. `tools/new_project.ps1
+  -Length long` writes both lines.
+- Enforced by `capy.beats.validate_length()`: `length: long` without
+  `long_form_requested:` is an error; a `length: short` video with
+  `format.max_seconds` above 180 is an error (a short can't quietly drift
+  long by editing its budget); nothing may exceed 1200s.
+- Structure: 3-6 sections, each a complete response arc (the five
+  response formats above, the playbook's six steps) with its own clip(s)
+  and its own payoff — a long video is several strong segments, not one
+  argument stretched. Open with the strongest segment, not background.
+- Every short-form rule still applies per beat: clip ≤20s continuous,
+  source time ≤30% of total runtime, pose change every 10-20s,
+  response-to-clip alignment, one argument per beat group, the closing
+  "...God bless." beat.
+- Research and critique scale with it: every chosen claim goes through
+  `/capy-research`, and `/capy-critique` runs on the whole script.
+- Build: ~100+ beats exceeds Resolve's ~65-70-entry
+  `create_timeline_from_clips` cap — assemble in batches (see
+  `hybrid-resolve-pipeline.md` step 4).
 
 ## Closing conventions (2026-09-08)
 
