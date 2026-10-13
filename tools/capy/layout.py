@@ -4,7 +4,8 @@ sprites.py, text.py, and capy_caption_cards.py never hardcode a zone's
 pixel coordinates -- everything is read from theme.yaml.
 
     from capy.layout import Theme
-    theme = Theme.load()
+    theme = Theme.load()                 # 9:16 (shorts, Instagram long form)
+    theme = Theme.for_doc(doc)           # picks 16:9 for video_type: long-youtube
     theme.mode_for(beat)                 # "clip" | "host" | "card"
     theme.sprite_spec("clip")            # SpriteSpec(...)
     theme.caption_zone("host")           # CaptionZone(y0, y1, max_width)
@@ -12,9 +13,16 @@ pixel coordinates -- everything is read from theme.yaml.
 layout.version 2 (2026-09-09): three frame modes (clip/host/card) replacing
 the old fixed stage/captions/character-band zoning. See
 docs/saint-capybara/brand.md sec 8.
+
+Orientation: theme.yaml's `layout` is the 9:16 portrait layout;
+`layout.landscape` is the 16:9 YouTube long-form layout. Loading with
+orientation="landscape" swaps it in as `self.layout` and deep-merges its
+`overrides` over the captions/card_text blocks, so every caller keeps
+reading the same accessors without caring which canvas it's on.
 """
 from __future__ import annotations
 
+import copy
 import hashlib
 import os
 from dataclasses import dataclass
@@ -65,22 +73,55 @@ class CaptionZone:
     y1: int
     max_width: int
     x_center: int = 540
+    max_lines: int | None = None     # per-zone override of captions.max_lines
 
 
 class ThemeError(RuntimeError):
     pass
 
 
+ORIENTATIONS = ("portrait", "landscape")
+
+
+def _deep_merge(base: dict, over: dict) -> None:
+    for k, v in over.items():
+        if isinstance(v, dict) and isinstance(base.get(k), dict):
+            _deep_merge(base[k], v)
+        else:
+            base[k] = copy.deepcopy(v)
+
+
 class Theme:
     def __init__(self, data: dict):
         self.data = data
+        self.orientation = "portrait"
         self._sprite_hash_cache: dict[str, str] = {}
         self._font_hash_cache: dict[str, str] = {}
 
     @classmethod
-    def load(cls, path: Path | None = None) -> "Theme":
+    def load(cls, path: Path | None = None, *, orientation: str = "portrait") -> "Theme":
+        if orientation not in ORIENTATIONS:
+            raise ThemeError(f"unknown orientation {orientation!r} (expected one of {ORIENTATIONS})")
         path = path or THEME_PATH
-        return cls(yaml.safe_load(path.read_text(encoding="utf-8")))
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if orientation == "landscape":
+            landscape = data["layout"].get("landscape")
+            if not landscape:
+                raise ThemeError("theme.yaml has no layout.landscape block")
+            data["layout"] = copy.deepcopy(landscape)
+            _deep_merge(data, data["layout"].pop("overrides", {}) or {})
+        else:
+            data["layout"] = {k: v for k, v in data["layout"].items() if k != "landscape"}
+        theme = cls(data)
+        theme.orientation = orientation
+        return theme
+
+    @classmethod
+    def for_doc(cls, doc: dict, path: Path | None = None) -> "Theme":
+        """The theme for a loaded beats.yaml: 16:9 for a long-youtube
+        video, 9:16 otherwise (capy.beats.orientation_for)."""
+        from capy.beats import orientation_for
+        return cls.load(path, orientation=orientation_for(doc))
 
     # ---- basics -----------------------------------------------------
 
@@ -139,7 +180,8 @@ class Theme:
     def caption_zone(self, mode: str) -> CaptionZone:
         c = self.layout[mode]["captions"]
         w, _ = self.canvas_size
-        return CaptionZone(y0=c["y0"], y1=c["y1"], max_width=c["max_width"], x_center=w // 2)
+        return CaptionZone(y0=c["y0"], y1=c["y1"], max_width=c["max_width"],
+                           x_center=c.get("x_center", w // 2), max_lines=c.get("max_lines"))
 
     def card_box(self) -> tuple[int, int, int, int]:
         b = self.layout["card"]["box"]
@@ -152,6 +194,25 @@ class Theme:
     def letterbox_band(self) -> tuple[int, int]:
         b = self.layout["clip"]["letterbox_band"]
         return b["y0"], b["y1"]
+
+    def fit_box(self) -> tuple[int, int, int, int]:
+        """(x0, y0, x1, y1) a CLIP-mode source of the *other* orientation is
+        fitted into: the 9:16 layout's full-width letterbox band, or the
+        16:9 layout's `fit_band` (full height, pillarboxed)."""
+        clip = self.layout["clip"]
+        if "fit_band" in clip:
+            b = clip["fit_band"]
+            return b["x0"], b["y0"], b["x1"], b["y1"]
+        w, _ = self.canvas_size
+        y0, y1 = self.letterbox_band()
+        return 0, y0, w, y1
+
+    def source_fills_canvas(self, sw: int, sh: int) -> bool:
+        """True when a source's orientation matches the canvas (cover-crop
+        it full-bleed); False means fit it inside fit_box() over a blurred
+        cover copy instead."""
+        w, h = self.canvas_size
+        return (sw <= sh) == (w <= h)
 
     def letterbox_bg(self) -> dict:
         return self.layout["clip"]["letterbox_bg"]

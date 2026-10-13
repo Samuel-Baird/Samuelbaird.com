@@ -167,7 +167,9 @@ specifics that mattered in practice, building the two videos above:
    slug.
 2. **Set the timeline format**: `project_manager.safe_set_project_settings`
    with `timelineResolutionWidth: "1080"`, `timelineResolutionHeight:
-   "1920"`, `timelineFrameRate: "30"`, and **`restore: false`** — without
+   "1920"` (**`"1920"` / `"1080"` for a `long-youtube` video** — match
+   `beats.yaml`'s `format`), `timelineFrameRate: "30"`, and **`restore:
+   false`** — without
    that flag the wrapper silently reverts resolution changes (frame rate
    alone stuck; width/height didn't) even though it reports `success:
    true` and each field's own `write`/`readback` looks correct. Verify
@@ -188,7 +190,8 @@ specifics that mattered in practice, building the two videos above:
    `record_frame` math needed since beat clips play back to back with no
    gaps by construction). Well under the ~65-70 raw-entry cap for a
    10-16 beat video, so one call suffices. A long-form video
-   (`length: long`, up to 20 min, often 100+ beats) is not: create the
+   (`video_type: long-instagram` or `long-youtube`, up to 20 min, often
+   100+ beats) is not: create the
    timeline from the first ~20 beats, then `media_pool.append_to_timeline`
    the rest in ~20-beat batches, saving and re-reading the item count
    after each batch (`docs/pipeline.md` §3).

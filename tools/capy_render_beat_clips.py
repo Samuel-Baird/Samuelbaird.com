@@ -140,20 +140,21 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
         inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(plate_path)]
 
         speed_vf = f",setpts=PTS/{speed:.6f}" if speed != 1.0 else ""
-        if sw <= sh:
-            # 9:16-or-narrower source: cover-crop the whole canvas.
+        if theme.source_fills_canvas(sw, sh):
+            # Source orientation matches the canvas: cover-crop it.
             filter_parts.append(
                 f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1{speed_vf},fps={fps}[vid]"
             )
         else:
-            # 16:9-or-wider source: fit inside the letterbox band over a
+            # Other orientation (16:9 on a 9:16 canvas, or 9:16 on the
+            # 16:9 YouTube canvas): fit inside theme.fit_box() over a
             # blurred, darkened cover copy of the same footage (never
             # plain black bars) -- downscale/boxblur/upscale is far
             # cheaper than a full-resolution gblur.
-            band_y0, band_y1 = theme.letterbox_band()
-            band_h = band_y1 - band_y0
-            fw, fh = _fit(sw, sh, w, band_h)
-            fx, fy = (w - fw) // 2, band_y0 + (band_h - fh) // 2
+            band_x0, band_y0, band_x1, band_y1 = theme.fit_box()
+            band_w, band_h = band_x1 - band_x0, band_y1 - band_y0
+            fw, fh = _fit(sw, sh, band_w, band_h)
+            fx, fy = band_x0 + (band_w - fw) // 2, band_y0 + (band_h - fh) // 2
             bg = theme.letterbox_bg()
             filter_parts.append(
                 f"[0:v]fps={fps},setsar=1{speed_vf},split=2[bgsrc][fgsrc]"
@@ -246,7 +247,7 @@ def main() -> int:
     project = args.project.resolve()
     doc = load_beats(project / "script" / "beats.yaml")
     only = set(args.only.split(",")) if args.only else None
-    theme = Theme.load()
+    theme = Theme.for_doc(doc)
 
     plates_manifest = {m["id"]: m for m in json.loads((project / "frames" / "plates_manifest.json").read_text(encoding="utf-8"))}
     captions_manifest = json.loads((project / "captions" / "manifest.json").read_text(encoding="utf-8"))

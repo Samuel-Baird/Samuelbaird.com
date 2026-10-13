@@ -406,7 +406,7 @@ without pausing.
 **No music in v1.** No intro/outro sting, no logo animation, no end card
 that echoes the other brand's look.
 
-## 8. Frame layout (1080×1920, 30fps)
+## 8. Frame layout (1080×1920, 30fps; 1920×1080 for YouTube long form)
 
 **`layout.version 2` (2026-09-09).** Also encoded machine-readably in
 `assets/saint-capybara/theme.yaml: layout`, which is the authoritative
@@ -459,6 +459,29 @@ document/chart/quote card (CARD), small in the corner while reacting
 over a clip (CLIP) — never smaller than the CLIP-mode size, and evidence
 never simply replaces him.
 
+### 16:9 layout — YouTube long form (2026-10-13)
+
+`video_type: long-youtube` renders on a 1920×1080 canvas
+(`theme.yaml: layout.landscape`, picked automatically by
+`capy.layout.Theme.for_doc`). Same three modes, same rules above (sprite
+always on screen, captions and sprite never overlap, no chips/wordmark),
+re-laid out so the extra width is used instead of left as parchment —
+the sprite moves *beside* the text rather than below it:
+
+| Mode | Background | Sprite | Captions |
+|---|---|---|---|
+| **CLIP** | A 16:9 source fills the whole frame (cover-crop). A 9:16 source is pillarboxed full-height in the center over a blurred/darkened cover copy — the mirror of the 9:16 letterbox | 340px box, bottom-left, outline + hard shadow | x-centered, y 830–1000, max 1100px wide — clear of the sprite |
+| **HOST** | Same `stage:` options as 9:16 | 960px box centered at x 520 — the left half, dominant | Right column centered at x 1420, y 260–760, max 800px wide, up to 3 lines, `style_capy` 80px |
+| **CARD** | Parchment; card x 96–1400, y 60–820 (~70% of the frame) | 480px box, bottom-right beside the card | Under the card, centered at x 748, y 840–1010 |
+
+Text sizes start larger than on 9:16 (`layout.landscape.overrides`:
+captions 68-80px, card quotes 72px) since the frame is viewed bigger.
+Safe area: no permanent platform chrome on YouTube, but the player's
+control/progress bar covers roughly the bottom 8% on hover/pause and TVs
+can overscan ~5%, so all text stays inside x 96–1824, y 54–1010; the
+sprite's feet may sit below that, same as 9:16. Preview with
+`tools/capy_storyboard.py --mock --landscape`.
+
 ## 9. Anonymity and brand separation
 
 Saint Capybara must remain clearly separated from the creator's other
@@ -481,8 +504,19 @@ its own).
 
 Distinct by construction, not just by omission: synthetic Kokoro voice
 (never the creator's own voice or a clone of it), pixel art (never a
-camera), 9:16 vertical (the other identity's Resolve types are landscape),
-its own recurring phrasing, pacing, and presentation style.
+camera), 9:16 vertical for shorts and Instagram long form (the other
+identity's Resolve types are landscape), its own recurring phrasing,
+pacing, and presentation style.
+
+**YouTube long form is 16:9 — the same aspect ratio as the other
+identity's videos — so it loses that one distinguisher and leans harder
+on the rest.** On a 16:9 Saint Capybara video, be stricter, not looser:
+no camera footage of anyone but the source being responded to, only the
+pixel-art palette/fonts/card style above, no title-card, lower-third,
+intro, chapter-card, or end-screen convention borrowed from the other
+identity's landscape videos, no upload-schedule or thumbnail habits in
+common, and publish from the Saint Capybara account only (sec 10).
+`capy_check_brand.py` still runs on every export.
 
 ## 10. Operational anonymity checklist
 

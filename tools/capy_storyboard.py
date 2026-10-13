@@ -3,7 +3,7 @@
 script.md from script/beats.yaml.
 
     python tools/capy_storyboard.py --project D:\\Videos\\<slug> [--cols 4]
-    python tools/capy_storyboard.py --mock [--out DIR]
+    python tools/capy_storyboard.py --mock [--landscape] [--out DIR]
 
 Outputs:
     frames/storyboard.png   -- one plate per beat, labeled, on a contact sheet
@@ -19,7 +19,8 @@ real full-bleed look.
 excerpt, the non-square `quote` pose) with a worst-case caption on each,
 and writes individual PNGs plus a contact sheet under
 theme.cache_dir("mock") -- no --project needed. Use this to eyeball a
-layout/font change before spending a real render.
+layout/font change before spending a real render. --landscape previews
+the 16:9 YouTube long-form layout instead of 9:16.
 """
 from __future__ import annotations
 
@@ -98,13 +99,19 @@ def _transcript_span_text(segments: list[dict], start: float, end: float) -> str
     return " ".join(words)
 
 
+VIDEO_TYPE_LABELS = {
+    "short": "Short form (9:16)",
+    "long-instagram": "Long form — Instagram (9:16, followers-only)",
+    "long-youtube": "Long form — YouTube (16:9)",
+}
+
+
 def render_script_md(doc: dict, per_beat: dict[str, float], total: float, project: Path | None = None) -> str:
     source_time = beats_mod.source_time_seconds(doc, per_beat)
     pct = (source_time / total * 100) if total else 0.0
     lines = [f"# Script — {doc.get('title', doc.get('slug'))}", ""]
-    length = doc.get("length", "short")
-    length_label = "Long form (Instagram, followers-only)" if length == "long" else "Short"
-    lines.append(f"**Slug:** `{doc.get('slug')}` | **Length:** {length_label} | **Estimated runtime:** {total:.1f}s "
+    type_label = VIDEO_TYPE_LABELS.get(doc.get("video_type", "short"), doc.get("video_type"))
+    lines.append(f"**Slug:** `{doc.get('slug')}` | **Type:** {type_label} | **Estimated runtime:** {total:.1f}s "
                   f"(budget {doc['format']['min_seconds']}-{doc['format']['max_seconds']}s) | "
                   f"**Source time:** {source_time:.1f}s ({pct:.0f}%)")
     source_info = None
@@ -237,7 +244,7 @@ def _mock_caption(theme: Theme, img: Image.Image, mode: str, style_name: str) ->
     phrase = phrases[0]
     font, lines = fit_text(phrase.text, font_path, size=style["size"], min_size=style["min_size"],
                             step=theme.data["captions"]["shrink_step"], max_w=zone.max_width,
-                            max_lines=theme.data["captions"]["max_lines"], stroke=style["stroke_px"])
+                            max_lines=zone.max_lines or theme.data["captions"]["max_lines"], stroke=style["stroke_px"])
     pill = style.get("pill")
     pill_color = theme.color_rgba(pill["color"], pill["alpha"]) if pill else None
     draw_lines(img, lines, font, zone, fill=theme.color_rgba(style["primary"]), stroke_px=style["stroke_px"],
@@ -246,8 +253,8 @@ def _mock_caption(theme: Theme, img: Image.Image, mode: str, style_name: str) ->
                pill=pill, pill_color=pill_color)
 
 
-def run_mock(out_dir: Path | None) -> int:
-    theme = Theme.load()
+def run_mock(out_dir: Path | None, orientation: str = "portrait") -> int:
+    theme = Theme.load(orientation=orientation)
     mock_dir = out_dir or theme.cache_dir("mock")
     mock_dir.mkdir(parents=True, exist_ok=True)
     beats, portrait, landscape = _mock_beats(mock_dir)
@@ -296,10 +303,11 @@ def main() -> int:
     ap.add_argument("--cols", type=int, default=4)
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--out", type=Path, default=None, help="--mock only: output directory")
+    ap.add_argument("--landscape", action="store_true", help="--mock only: preview the 16:9 YouTube long-form layout")
     args = ap.parse_args()
 
     if args.mock:
-        return run_mock(args.out)
+        return run_mock(args.out, "landscape" if args.landscape else "portrait")
 
     if not args.project:
         ap.error("--project is required unless --mock is given")
@@ -315,7 +323,7 @@ def main() -> int:
         print(f"\n{len(errors)} error(s) -- fix beats.yaml (or run capy_check_sources.py) before storyboarding.")
         return 1
 
-    theme = Theme.load()
+    theme = Theme.for_doc(doc)
     total, per_beat = beats_mod.resolve_durations(doc)
 
     source_video = project / "source" / "source.mp4"
