@@ -7,44 +7,50 @@
 </head><body><main>
 <header>
   <p class="back"><a href="/">&larr; samuelbaird.com</a></p>
-  <h1>Donate</h1>
-  <p class="tag">Help keep the projects and videos going. Anything helps and is appreciated.</p>
+  <p class="eyebrow">Donate</p>
+  <h1>Help keep the projects going.</h1>
 </header>
-<section id="give" aria-labelledby="amt">
-  <p id="err" class="error" role="alert" hidden></p>
-  <form method="post" action="/api/checkout" class="donate">
-    <fieldset>
-      <legend>Frequency</legend>
-      <div class="seg">
-        <label><input type="radio" name="frequency" value="once" checked><span>One time</span></label>
-        <label><input type="radio" name="frequency" value="monthly"><span>Monthly</span></label>
+<div class="donate-grid">
+  <div class="donate-main">
+    <p>These projects and videos are free, independent, and ad-free. Donations go directly toward hosting and the time it takes to keep making them. Anything helps and is appreciated.</p>
+    <section id="give">
+      <div class="btns">
+        <a class="primary" href="https://paypal.me/Baird90" target="_blank" rel="noopener noreferrer" data-thanks>Donate via PayPal &rarr;</a>
+        <a class="secondary" href="https://venmo.com/Samuel-J-Baird" target="_blank" rel="noopener noreferrer" data-thanks>Donate via Venmo &rarr;</a>
       </div>
-    </fieldset>
-    <fieldset>
-      <legend id="amt">Amount (USD)</legend>
-      <div class="seg presets">
-        <button type="button" data-v="5">$5</button>
-        <button type="button" data-v="10" aria-pressed="true">$10</button>
-        <button type="button" data-v="25">$25</button>
-        <button type="button" data-v="50">$50</button>
-        <label class="custom"><span class="sr">Custom amount in dollars</span><b aria-hidden="true">$</b>
-          <input type="number" name="amount" id="amount" value="10" min="1" max="10000" step="0.01" inputmode="decimal" required></label>
-      </div>
-    </fieldset>
-    <button class="primary" type="submit" id="go">Donate with card &rarr;</button>
-    <p class="note">Card payments are processed by Stripe. To change or cancel a monthly donation, email <a href="mailto:b13llama@gmail.com?subject=Monthly%20donation">b13llama@gmail.com</a>.</p>
-  </form>
-</section>
+      <p class="note">You'll be taken to paypal.me/Baird90 or venmo.com/Samuel-J-Baird to complete the donation.</p>
+    </section>
+  </div>
+  <aside>
+    <section>
+      <h2>Where it goes</h2>
+      <ul class="side">
+        <li>Hosting and infrastructure costs.</li>
+        <li>Time spent building projects and making videos.</li>
+        <li>Keeping everything free, public, and without ads.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Questions</h2>
+      <p class="side">Email <a href="mailto:b13llama@gmail.com?subject=Samuel%20Baird">b13llama@gmail.com</a>.</p>
+    </section>
+  </aside>
+</div>
 </main>
+<div id="thanks" class="modal" role="dialog" aria-modal="true" aria-labelledby="thanks-title" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="panel">
+    <button type="button" class="x" data-close aria-label="Close">&times;</button>
+    <h2 id="thanks-title">Thank you!</h2>
+    <p>Your contribution helps make this work possible.</p>
+    <button type="button" class="secondary" data-close>Close</button>
+  </div>
+</div>
 <script>
-const a=document.getElementById('amount'),go=document.getElementById('go'),btns=document.querySelectorAll('.presets button'),
-freq=()=>document.querySelector('input[name=frequency]:checked').value;
-function label(){const d=Number(a.value);go.textContent='Donate'+(d>0?' $'+(d%1?d.toFixed(2):d):'')+(freq()==='monthly'?' / month':'')+' with card →';
-btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===a.value)))}
-btns.forEach(b=>b.onclick=()=>{a.value=b.dataset.v;label()});
-a.oninput=label;document.querySelectorAll('input[name=frequency]').forEach(r=>r.onchange=label);label();
-const e=new URLSearchParams(location.search).get('error');
-if(e){const m={amount:'Enter an amount between $1 and $10,000.',config:'Donations are temporarily unavailable.',stripe:"Couldn't start checkout. Please try again."};
-const p=document.getElementById('err');p.textContent=m[e]||m.stripe;p.hidden=false}
+const m=document.getElementById('thanks');let last;
+const close=()=>{m.hidden=true;document.body.style.overflow='';last&&last.focus()};
+document.querySelectorAll('[data-thanks]').forEach(a=>a.addEventListener('click',()=>{last=a;m.hidden=false;document.body.style.overflow='hidden';m.querySelector('.x').focus()}));
+m.querySelectorAll('[data-close]').forEach(b=>b.onclick=close);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close()});
 </script>
 </body></html>
