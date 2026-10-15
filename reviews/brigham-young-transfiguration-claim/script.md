@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): The Brigham Young transfiguration story is older than 1857  
 > **Post caption** (goes with the upload, not shown on screen): A viral video says nobody mentioned it for twelve years. A church newspaper and two letters from 1844 did.
 
-**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 374.3s (budget 240-480s) | **Source time:** 98.3s (26%)
+**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 385.2s (budget 240-480s) | **Source time:** 98.3s (26%)
 
 **Hook (title/description only, not shown on screen):** "'We can't find it for twelve years.' The 1844 record is in print."
 **Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
@@ -113,15 +113,15 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** young-1857-07-19-carrington
 - **Notes:** 
 
-## 16. `q03` (card, ~2.2s)
+## 16. `q03` (card, ~10.4s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** quote
-- **Narration:** Here is the sentence that date comes from: “It may appear strange to some that he could not tell me from Joseph Smith, when I was speaking in the stand in Nauvoo during the October Conference of 1844.”
+- **Narration:** Here is the sentence that date comes from: It may appear strange to some that he could not tell me from Joseph Smith, when I was speaking in the stand in Nauvoo during the October Conference of 1844.
 - **Card quote:** “It may appear strange to some that he could not tell me from Joseph Smith, when I was speaking in the stand in Nauvoo during the October Conference of 1844.” — Brigham Young, July 19, 1857 (Journal of Discourses 5:57-58)
 - **Sources:** young-1857-07-19-carrington
 - **Notes:** 
 
-## 17. `n09` (narration, ~9.0s)
+## 17. `n09` (narration, ~6.3s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** teaching
 - **Narration:** Brigham is the speaker, the event is the October 1844 conference, and he's referring back to something Carrington had just told that congregation.
@@ -217,65 +217,82 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 31. `n17` (narration, ~10.4s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** thoughtful
-- **Narration:** Jorgensen notes that no account was written on the day itself, that Brigham's own diary entry that day doesn't mention it, and that the accounts disagree on details, which Jorgensen reads as independent memories rather than one script. 
+- **Narration:** Jorgensen notes that no account was written on the day itself, that Brigham's own diary entry that day doesn't mention it, and that the accounts disagree on details, which Jorgensen reads as independent memories rather than one script.
 - **Sources:** jorgensen-welch-mantle-chapter, young-1844-aug8-diary-and-epistle
 - **Notes:** 
 
-## 32. `e02` (evidence, ~9.8s)
+## 32. `e02` (evidence, ~5.2s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** source
-- **Narration:** In 1851, six years before the video's claimed date, Caroline Crosby wrote her memoirs on the island of Tubuai: it was the first time she ever recorded the thought that he resembled Brother Joseph during the meeting. (add quote card)
+- **Narration:** In 1851, six years before the video's claimed date, Caroline Crosby wrote her memoirs on the island of Tubuai.
 - **Evidence:** `images/byustudies-36-4-p141-crosby-1851.jpg` — Caroline Barnes Crosby, Memoirs, 1851, in Jorgensen, BYU Studies 36:4, p. 139 (placement: panel)
 - **Sources:** jorgensen-1996-byu-studies-36-4
 - **Notes:** 
 
-## 33. `e03` (evidence, ~10.4s)
+## 33. `q04` (card, ~7.9s)
+- **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
+- **Pose:** quote
+- **Narration:** In her words: it was the first time that I ever thought he resembled Brother Joseph. But almost everyone exclaimed that the mantle of Joseph had fallen on Brigham.
+- **Card quote:** “It was the first time that I ever thought he [Brigham] resembled bro Joseph. But almost every one exclaimed that the mantle of Joseph had fallen on Brigham.” — Caroline Barnes Crosby, Memoirs, 1851
+- **Sources:** jorgensen-1996-byu-studies-36-4
+- **Notes:** 
+
+## 34. `e03` (evidence, ~3.5s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** source
-- **Narration:** Emily Hoyt, Joseph Smith's cousin, wrote in the same year that she knew Joseph was dead, and yet involuntarily looked at the stand to see if it was him. It was not, she writes. It was Brigham Young. (add quote card)
+- **Narration:** Emily Hoyt, Joseph Smith's cousin, wrote in the same year about the meeting.
 - **Evidence:** `images/byustudies-36-4-p144-hoyt-1851.jpg` — Emily Smith Hoyt, Reminiscences, 1851, in Jorgensen, BYU Studies 36:4, p. 142 (placement: panel)
 - **Sources:** hoyt-1851-reminiscences
 - **Notes:** 
 
-## 34. `n18` (narration, ~10.9s)
+## 35. `q05` (card, ~9.0s)
+- **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
+- **Pose:** quote
+- **Narration:** She wrote: I knew that Joseph was dead. And yet I often startled and involuntarily looked at the stand to see if it was not Joseph. It was not, it was Brigham Young.
+- **Card quote:** “I knew that Joseph was dead. And yet I often startled and involuntarily looked at the stand to see if it was not Joseph. It was not, it was Brigham Young” — Emily Smith Hoyt, Reminiscences, 1851
+- **Sources:** hoyt-1851-reminiscences
+- **Notes:** 
+
+## 36. `n18` (narration, ~8.5s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** teaching
 - **Narration:** Neither reads like a script. Crosby says it was the first time she saw a resemblance, and Hoyt says she knew exactly who was standing there. Both predate the 1857 date.
 - **Sources:** jorgensen-welch-mantle-chapter, jorgensen-1996-byu-studies-36-4, hoyt-1851-reminiscences
 - **Notes:** 
 
-## 35. `n18b` (narration, ~11.2s)
+## 37. `n18b` (narration, ~11.2s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** teaching
 - **Narration:** The early accounts and the later ones describe the same things: his voice, his manner, his look. Egan, Brooke and Hoyt line up with what Duncan, Hancock and others wrote decades later, and later accounts get weighed like any later accounts.
 - **Sources:** egan-little-1844-12-08, brooke-1844-11-15, hoyt-1851-reminiscences, jorgensen-welch-mantle-chapter
 - **Notes:** 
 
-## 36. `n18c` (narration, ~11.7s)
+## 38. `n18c` (narration, ~11.7s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** thoughtful
 - **Narration:** Recalling something later isn't the same as inventing it. If a parent told a child about 9/11 in 2026, we would trust that testimony. Jorgensen documents families retelling this one to their children and grandchildren for generations. The record was preserved by transmission.
 - **Sources:** jorgensen-1996-byu-studies-36-4, jorgensen-welch-mantle-chapter
 - **Notes:** 
 
-## 37. `n19` (narration, ~9.3s)
+## 39. `n19` (narration, ~9.3s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** teaching
 - **Narration:** No Latter-day Saint has to believe the transfiguration to believe the Twelve led the Church. Brigham's argument that day was about the keys of the Twelve, and the mantle story is testimony, not doctrine.
 - **Sources:** young-1844-08-08-discourse, jorgensen-welch-mantle-chapter
 - **Notes:** 
 
-## 38. `n20` (narration, ~13.6s)
+## 40. `n20` (narration, ~13.6s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** thoughtful
 - **Narration:** Of the explanations on offer, invented in 1857 is the only one the dates rule out. People in that crowd experienced something striking and said so fits every source on this list. Whether it was a miracle is a question of faith, and the record doesn't settle it either way.
 - **Sources:** jorgensen-welch-mantle-chapter, quinn-1994-hierarchy, vanwagoner-1995-dialogue-28-4
 - **Notes:** 
 
-## 39. `n99` (narration, ~10.4s)
+## 41. `n99` (narration, ~12.8s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** encouraging
-- **Narration:** Late is a reason to weigh a story, not to delete it, and this one was written down in 1844. (change this to we have x sources before 1857 like this creator claims) The sources don't settle the miracle, but they are far more trustworthy than this creator's narrative. God bless.
+- **Narration:** Late is a reason to weigh a story, not to delete it, and we have at least nine sources from before 1857, where the video says there are none. The sources don't settle the miracle, but they are far more trustworthy than this creator's narrative. God bless.
+- **Sources:** ts-1844-09-02-special-meeting, brooke-1844-11-15, hinckley-1844-11-20, egan-little-1844-12-08, woodruff-1845-02, burton-1845-05, jorgensen-1996-byu-studies-36-4, hoyt-1851-reminiscences, bullock-1851-millennial-star
 - **Notes:** 
 
 ## Full source transcript
