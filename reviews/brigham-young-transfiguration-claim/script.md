@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): The Brigham Young transfiguration story is older than 1857  
 > **Post caption** (goes with the upload, not shown on screen): I don't know whether @HANDLE was being dishonest or just didn't do the research and over-claimed, and I'm not assuming either. The 1844 record says otherwise. I hope a correction video follows.
 
-**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 385.8s (budget 240-480s) | **Source time:** 98.3s (25%)
+**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 386.1s (budget 240-480s) | **Source time:** 98.6s (26%)
 
 **Hook (title/description only, not shown on screen):** "'We can't find it for twelve years.' The 1844 record is in print."
 **Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
@@ -35,10 +35,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 33.2s–43.9s @ speed 1.0
 - **Notes:** 
 
-## 05. `c04` (clip, ~10.0s)
+## 05. `c04` (clip, ~10.4s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** concerned
-- **Clip:** Source video, 44.3s–54.3s @ speed 1.0
+- **Clip:** Source video, 44.3s–54.72s @ speed 1.0
 - **Notes:** 
 
 ## 06. `n02` (narration, ~7.1s)
@@ -100,10 +100,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Narration:** Even if the video's date were right, late would not mean false. A later source earns less confidence, not none, and silence in the earliest records is not a denial. Historians lower confidence. They don't rule things out.
 - **Notes:** 
 
-## 14. `c05` (clip, ~9.6s)
+## 14. `c05` (clip, ~9.5s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** skeptical
-- **Clip:** Source video, 54.7s–64.3s @ speed 1.0
+- **Clip:** Source video, 54.8s–64.3s @ speed 1.0
 - **Notes:** 
 
 ## 15. `n08` (narration, ~4.4s)
