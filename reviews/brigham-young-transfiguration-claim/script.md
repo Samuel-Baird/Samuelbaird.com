@@ -1,9 +1,9 @@
 # Script — The Brigham Young transfiguration story is older than 1857
 
 > **Video title** (upload title, not shown on screen): The Brigham Young transfiguration story is older than 1857  
-> **Post caption** (goes with the upload, not shown on screen): A viral video says nobody mentioned it for twelve years. A church newspaper and two letters from 1844 did, and one of those letters is in a Yale library.
+> **Post caption** (goes with the upload, not shown on screen): A viral video says nobody mentioned it for twelve years. A church newspaper and two letters from 1844 did.
 
-**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 330.4s (budget 240-480s) | **Source time:** 98.3s (30%)
+**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 333.7s (budget 240-480s) | **Source time:** 98.3s (29%)
 
 **Hook (title/description only, not shown on screen):** "'We can't find it for twelve years.' The 1844 record is in print."
 **Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
@@ -48,10 +48,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** ts-1844-09-02-special-meeting
 - **Notes:** 
 
-## 07. `q01` (card, ~1.1s)
+## 07. `q01` (card, ~4.6s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** quote
-- **Narration:** Here is the line. (insert the card quote here to read it)
+- **Narration:** Here is the line: every saint could see that Elijah's mantle had truly fallen upon the Twelve.
 - **Card quote:** “every saint could see that Elijah's mantle had truly fallen upon the Twelve” — Times and Seasons, September 2, 1844, p. 637
 - **Sources:** ts-1844-09-02-special-meeting
 - **Notes:** 
@@ -63,15 +63,23 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** ts-1844-09-02-special-meeting
 - **Notes:** 
 
-## 09. `e01` (evidence, ~9.5s)
+## 09. `e01` (evidence, ~5.2s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** source
-- **Narration:** On November 15, 1844, three months after the meeting, Henry and Catharine Brooke wrote from Nauvoo that Brigham Young favours Brother Joseph, in person and manner of speaking, more than any person ever you saw. (add a card with exact quote)
+- **Narration:** On November 15, 1844, three months after the meeting, Henry and Catharine Brooke wrote from Nauvoo about Brigham Young.
 - **Evidence:** `images/byustudies-36-4-p137-quinn-brooke-hinckley.jpg` — Henry and Catharine Brooke, Nov. 15, 1844, quoted in D. Michael Quinn, The Mormon Hierarchy, p. 166 (BYU Studies 36:4, p. 135) (placement: panel)
 - **Sources:** brooke-1844-11-15, quinn-1994-hierarchy
 - **Notes:** 
 
-## 10. `q02` (card, ~4.1s)
+## 10. `q01b` (card, ~5.5s)
+- **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
+- **Pose:** quote
+- **Narration:** They wrote that he favours Brother Joseph, in person and manner of speaking, more than any person ever you saw.
+- **Card quote:** “favours Br Joseph, both in person, & manner of speaking more than any person ever you saw, looks like another” — Henry and Catharine Brooke to Leonard Pickel, Nov. 15, 1844
+- **Sources:** brooke-1844-11-15
+- **Notes:** 
+
+## 11. `q02` (card, ~4.1s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** quote
 - **Narration:** Within four months, a letter to Brigham Young himself quoted Howard Egan about the conference.
@@ -79,18 +87,11 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** egan-little-1844-12-08
 - **Notes:** 
 
-## 11. `n04` (narration, ~10.1s)
+## 12. `n04` (narration, ~10.1s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** teaching
 - **Narration:** A newspaper line, a letter about how he looked and spoke, and a letter about what a blind man would have heard, all before the end of 1844. The video says nobody mentioned it for twelve years.
 - **Sources:** ts-1844-09-02-special-meeting, brooke-1844-11-15, egan-little-1844-12-08
-- **Notes:** 
-
-## 12. `n05` (narration, ~7.4s)
-- **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
-- **Pose:** skeptical
-- **Narration:** We can't find is a statement about the search. The Brooke letter sits in a Yale library, and it has been in print since at least 1994. (not sure what this is referring to, remove it) 
-- **Sources:** brooke-1844-11-15, quinn-1994-hierarchy
 - **Notes:** 
 
 ## 13. `n06` (narration, ~10.4s)
@@ -216,11 +217,11 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 31. `n17` (narration, ~10.4s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** thoughtful
-- **Narration:** He notes that no account was written on the day itself, that Brigham's own diary entry that day doesn't mention it, and that the accounts disagree on details, which he reads as independent memories rather than one script.
+- **Narration:** Jorgensen notes that no account was written on the day itself, that Brigham's own diary entry that day doesn't mention it, and that the accounts disagree on details, which Jorgensen reads as independent memories rather than one script.
 - **Sources:** jorgensen-welch-mantle-chapter, young-1844-aug8-diary-and-epistle
 - **Notes:** 
 
-## 32. `e02` (evidence, ~8.2s)
+## 32. `e02` (evidence, ~9.8s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** source
 - **Narration:** In 1851, six years before the video's date, Caroline Crosby wrote her memoirs on the island of Tubuai: it was the first time she ever recorded the thought that he resembled Brother Joseph during the meeting.
@@ -257,10 +258,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** jorgensen-welch-mantle-chapter, quinn-1994-hierarchy, vanwagoner-1995-dialogue-28-4
 - **Notes:** 
 
-## 37. `n99` (narration, ~6.0s)
+## 37. `n99` (narration, ~10.4s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** encouraging
-- **Narration:** Late is a reason to weigh a story, not to delete it, and this one was written down in 1844. God bless. (add something like, while the historical sources don't prove anything conclusively, we can be certain they are more trust worthy than this creators narrative, God bless)
+- **Narration:** Late is a reason to weigh a story, not to delete it, and this one was written down in 1844. The sources don't settle the miracle, but they are far more trustworthy than this creator's narrative. God bless.
 - **Notes:** 
 
 ## Full source transcript

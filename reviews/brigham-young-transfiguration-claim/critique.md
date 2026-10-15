@@ -10,7 +10,6 @@
 - **MAJOR (fixed): Sep 2 1844 line is about "the Twelve".** n03 says so explicitly, and calls it the mildest item.
 - **MINOR (open): "over a hundred".** Counts differ by edition (101/57 in 1996; 129/68 in the Welch volume). n16 says "over a hundred" for that reason.
 - **MINOR (open): handcart deaths "about 220".** Turner: Willie "nearly seventy", Martin "roughly 150". Total is Turner's sum; other counts run 200-280. Narration says "about 220".
-- **MINOR (open): "in print since at least 1994".** Based on Quinn 1994 p.182 citing the letter at Yale; an earlier printing may exist. Wording is "at least".
 - **MINOR (open): Welch edition year not confirmed.** sources.yaml says 2005.
 - **Unverified:** Times and Seasons pages themselves were not opened (read via Complete Discourses of Brigham Young and via Quinn/Jorgensen). The 15 Oct 1844 anonymous letter is second-hand (Van Wagoner n.54) and is not on screen.
 - Hyde: "diaries put him in Nauvoo five days after the meeting" — Welch n.75 (Woodruff diary, Aug 13). OK.
@@ -23,9 +22,13 @@
 
 ## Editor lens (compelling / tone)
 
-- Sharpness: first response sentence (n01) is the position, no agreement. Closing (n99) is the punchline. Two jabs total (long-form cap): n05 (Yale letter, dry, aimed at "we can't find") and n99.
+- Sharpness: first response sentence (n01) is the position, no agreement. Closing (n99) is the punchline. One jab (long-form cap is two): the closing beat. The earlier Yale-letter jab (n05) was removed at the user's request after Gate A edits. The user also asked for a closing line saying the sources are more trustworthy than the creator's narrative; it was added as 'far more trustworthy' (not 'certain', which would outrun the evidence grade of the transfiguration itself).
 - Concession tells: `capy_check_tone.py` clean.
 - Length: ~330s estimate vs 60-180 default; `format` widened to 240-480 deliberately (user asked for long-form).
 - Weak spots to consider at Gate A: n11 is long (about 13s); n20's two middle sentences are a little abstract; c07 (15.5s) is the longest clip.
 - Sensitive: `sensitive: true` set because of the handcart deaths; no amused/happy poses; the handcart beats lead with the harm.
 - `deadpan` pose swapped out (sprite defect flagged by the storyboard).
+
+## Post-Gate-A edits (user)
+
+q01 now reads the quote aloud; new card q01b carries the exact Brooke quote; n05 removed; n17 uses 'Jorgensen' instead of a pronoun (author's pronouns not stated in the source); e02 reworded to 'first time she ever recorded the thought'; closing extended; caption no longer mentions Yale. Lints: 0 errors; source time 29.5% of runtime.
