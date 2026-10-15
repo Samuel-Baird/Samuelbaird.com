@@ -1,7 +1,7 @@
 # Script — The Brigham Young transfiguration story is older than 1857
 
 > **Video title** (upload title, not shown on screen): The Brigham Young transfiguration story is older than 1857  
-> **Post caption** (goes with the upload, not shown on screen): A viral video says nobody mentioned it for twelve years. A church newspaper and two letters from 1844 did.
+> **Post caption** (goes with the upload, not shown on screen): I don't know whether @HANDLE was being dishonest or just didn't do the research and over-claimed, and I'm not assuming either. The 1844 record says otherwise. I hope a correction video follows.
 
 **Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 385.2s (budget 240-480s) | **Source time:** 98.3s (26%)
 
