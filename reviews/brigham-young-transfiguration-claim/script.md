@@ -51,7 +51,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `q01` (card, ~1.1s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** quote
-- **Narration:** Here is the line.
+- **Narration:** Here is the line. (insert the card quote here to read it)
 - **Card quote:** “every saint could see that Elijah's mantle had truly fallen upon the Twelve” — Times and Seasons, September 2, 1844, p. 637
 - **Sources:** ts-1844-09-02-special-meeting
 - **Notes:** 
@@ -66,7 +66,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 09. `e01` (evidence, ~9.5s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** source
-- **Narration:** On November 15, 1844, three months after the meeting, Henry and Catharine Brooke wrote from Nauvoo that Brigham Young favours Brother Joseph, in person and manner of speaking, more than any person ever you saw.
+- **Narration:** On November 15, 1844, three months after the meeting, Henry and Catharine Brooke wrote from Nauvoo that Brigham Young favours Brother Joseph, in person and manner of speaking, more than any person ever you saw. (add a card with exact quote)
 - **Evidence:** `images/byustudies-36-4-p137-quinn-brooke-hinckley.jpg` — Henry and Catharine Brooke, Nov. 15, 1844, quoted in D. Michael Quinn, The Mormon Hierarchy, p. 166 (BYU Studies 36:4, p. 135) (placement: panel)
 - **Sources:** brooke-1844-11-15, quinn-1994-hierarchy
 - **Notes:** 
@@ -89,7 +89,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 12. `n05` (narration, ~7.4s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** skeptical
-- **Narration:** We can't find is a statement about the search. The Brooke letter sits in a Yale library, and it has been in print since at least 1994.
+- **Narration:** We can't find is a statement about the search. The Brooke letter sits in a Yale library, and it has been in print since at least 1994. (not sure what this is referring to, remove it) 
 - **Sources:** brooke-1844-11-15, quinn-1994-hierarchy
 - **Notes:** 
 
@@ -216,14 +216,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 31. `n17` (narration, ~10.4s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** thoughtful
-- **Narration:** She notes that no account was written on the day itself, that Brigham's own diary entry that day doesn't mention it, and that the accounts disagree on details, which she reads as independent memories rather than one script.
+- **Narration:** He notes that no account was written on the day itself, that Brigham's own diary entry that day doesn't mention it, and that the accounts disagree on details, which he reads as independent memories rather than one script.
 - **Sources:** jorgensen-welch-mantle-chapter, young-1844-aug8-diary-and-epistle
 - **Notes:** 
 
 ## 32. `e02` (evidence, ~8.2s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** source
-- **Narration:** In 1851, six years before the video's date, Caroline Crosby wrote her memoirs on the island of Tubuai: it was the first time she ever thought he resembled Brother Joseph.
+- **Narration:** In 1851, six years before the video's date, Caroline Crosby wrote her memoirs on the island of Tubuai: it was the first time she ever recorded the thought that he resembled Brother Joseph during the meeting.
 - **Evidence:** `images/byustudies-36-4-p141-crosby-1851.jpg` — Caroline Barnes Crosby, Memoirs, 1851, in Jorgensen, BYU Studies 36:4, p. 139 (placement: panel)
 - **Sources:** jorgensen-1996-byu-studies-36-4
 - **Notes:** 
@@ -260,7 +260,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 37. `n99` (narration, ~6.0s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** encouraging
-- **Narration:** Late is a reason to weigh a story, not to delete it, and this one was written down in 1844. God bless.
+- **Narration:** Late is a reason to weigh a story, not to delete it, and this one was written down in 1844. God bless. (add something like, while the historical sources don't prove anything conclusively, we can be certain they are more trust worthy than this creators narrative, God bless)
 - **Notes:** 
 
 ## Full source transcript
