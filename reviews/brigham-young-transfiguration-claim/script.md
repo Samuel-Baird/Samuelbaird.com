@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): The Brigham Young transfiguration story is older than 1857  
 > **Post caption** (goes with the upload, not shown on screen): I don't know whether @HANDLE was being dishonest or just didn't do the research and over-claimed, and I'm not assuming either. The 1844 record says otherwise. I hope a correction video follows.
 
-**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 385.2s (budget 240-480s) | **Source time:** 98.3s (26%)
+**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 385.8s (budget 240-480s) | **Source time:** 98.3s (25%)
 
 **Hook (title/description only, not shown on screen):** "'We can't find it for twelve years.' The 1844 record is in print."
 **Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
@@ -41,10 +41,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 44.3s–54.3s @ speed 1.0
 - **Notes:** 
 
-## 06. `n02` (narration, ~6.8s)
+## 06. `n02` (narration, ~7.1s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** pointing
-- **Narration:** The first record isn't 1857. The Nauvoo church newspaper, the Times and Seasons, printed this on September 2, 1844, within a month of the meeting.
+- **Narration:** The first record is not 1857. The Nauvoo church newspaper, the Times and Seasons, printed this on September 2, 1844, within a month of the meeting.
 - **Sources:** ts-1844-09-02-special-meeting
 - **Notes:** 
 
@@ -221,10 +221,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** jorgensen-welch-mantle-chapter, young-1844-aug8-diary-and-epistle
 - **Notes:** 
 
-## 32. `e02` (evidence, ~5.2s)
+## 32. `e02` (evidence, ~5.5s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** source
-- **Narration:** In 1851, six years before the video's claimed date, Caroline Crosby wrote her memoirs on the island of Tubuai.
+- **Narration:** In 1851, six years before the date the video gives, Caroline Crosby wrote her memoirs on the island of Tubuai.
 - **Evidence:** `images/byustudies-36-4-p141-crosby-1851.jpg` — Caroline Barnes Crosby, Memoirs, 1851, in Jorgensen, BYU Studies 36:4, p. 139 (placement: panel)
 - **Sources:** jorgensen-1996-byu-studies-36-4
 - **Notes:** 
