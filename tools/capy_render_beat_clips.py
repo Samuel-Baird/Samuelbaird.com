@@ -34,6 +34,12 @@ from capy.layout import Theme
 
 HEAD_PAD_SECONDS = 0.25
 
+# Minimum on-screen time for an `evidence` beat (a page image / receipt),
+# even when its narration is shorter -- user direction 2026-10-15:
+# screenshots stay up at least 2-3s so a viewer can actually register them.
+# Narration-length beats longer than this are untouched.
+MIN_EVIDENCE_HOLD_SECONDS = 3.0
+
 
 def measure_loudnorm(source: Path, start: float, end: float, target_lufs: float) -> dict:
     """First pass of a two-pass loudnorm on a trimmed audio span -- returns
@@ -191,11 +197,16 @@ def render_beat_clip(beat: dict, project: Path, plate_path: Path, captions: list
         wav = project / "audio" / f"{beat['id']}.norm.wav"
         padded_duration = ffprobe_duration(wav)
         duration = padded_duration - 2 * HEAD_PAD_SECONDS
+        audio_tail = ""
+        if kind == "evidence" and duration < MIN_EVIDENCE_HOLD_SECONDS:
+            # Pad the beat's audio with silence so the image holds >= the minimum.
+            audio_tail = f",apad=whole_dur={MIN_EVIDENCE_HOLD_SECONDS:.3f}"
+            duration = MIN_EVIDENCE_HOLD_SECONDS
         inputs += ["-loop", "1", "-t", f"{duration:.3f}", "-i", str(plate_path)]
         inputs += ["-i", str(wav)]
         filter_parts.append(f"[0:v]format=rgba,fps={fps}[capbase0]")
         filter_parts.append(
-            f"[1:a]atrim=start={HEAD_PAD_SECONDS}:end={padded_duration - HEAD_PAD_SECONDS},asetpts=PTS-STARTPTS[aout]"
+            f"[1:a]atrim=start={HEAD_PAD_SECONDS}:end={padded_duration - HEAD_PAD_SECONDS},asetpts=PTS-STARTPTS{audio_tail}[aout]"
         )
         audio_map = ["-map", "[aout]"]
 

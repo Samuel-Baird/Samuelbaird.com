@@ -56,6 +56,14 @@ build stage, not after something goes silently wrong.
   save as the real verification boundary: save, re-read the timeline's item
   count from the saved project, and re-append whatever is missing. Never
   report a build as complete on a pre-save read alone.
+- **`append_to_timeline` `record_frame` is relative to the timeline start,** not an absolute
+  timecode frame (a clip placed at the absolute end frame landed 108000 frames past it on a
+  `01:00:00:00`-start timeline). It also requires `track_index`, and `start_frame`/`end_frame`
+  as a source range; a **still** is placed at 150 frames regardless of `end_frame` -- use an
+  exact-length looped MP4 for overlays (`hybrid-resolve-pipeline.md` "Evidence overlays").
+- **`timeline_item.set_transform` (`Tilt`/`Pan`/zoom) reported success and read back correctly but
+  did not affect the rendered frame** (free edition, bridge; 2026-10-15). Verify with
+  `timeline_frame.capture` before relying on it; bake position into the asset instead.
 - **Mixed-fps sources floor to the frame below,** leaving a 1-frame gap
   before the next clip when a clip's native fps differs from the timeline's.
   Plan durations in timeline frames

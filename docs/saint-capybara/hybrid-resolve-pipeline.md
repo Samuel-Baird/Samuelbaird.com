@@ -376,6 +376,42 @@ d. Re-verify `timeline.get_track_count("video")` is now 2 and
    evidence-beat clips at their expected positions before moving on to
    render.
 
+## Evidence overlays: build them as exact-length clips (2026-10-15)
+
+What actually works for the evidence-photo overlay track, learned on
+`brigham-young-transfiguration-claim` (Resolve free edition, bridge):
+
+- **Do not place the raw still.** A still imported into the pool is 1
+  frame and lands on the timeline at Resolve's default **150 frames**;
+  `append_to_timeline`'s `end_frame` does not change that, and there is no
+  trim/duration setter on `timeline_item`. A 107-frame beat ended up with a
+  150-frame image running 43 frames into the next beat.
+- **Instead make a looped MP4 per overlay at exactly the beat's frame
+  count** from the *cropped* passage:
+  `ffmpeg -loop 1 -framerate 30 -i crop.png -frames:v <N> -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p" -c:v libx264 -crf 14 -r 30 -an overlay.mp4`
+  (N = the beat clip's frame count from `ffprobe -count_frames`; no audio).
+  Import it into the `Evidence Photos` folder and place it on video track 2
+  with `append_to_timeline` (`track_index: 2`, `media_type: 1`).
+- **`record_frame` is relative to the timeline start**, not absolute
+  (the timeline starts at frame 108000 at 30fps): pass the cumulative frame
+  count, not `108000 +` it. Passing the absolute value put a clip a hundred
+  thousand frames past the end.
+- **`timeline_item.set_transform` / `set_property` (`Tilt`, `Pan`, zoom) were
+  stored but did not change the rendered frame** (confirmed with
+  `timeline_frame.capture` and a full render). Position an overlay by
+  changing the asset: crop it shorter, or pad it horizontally with white so
+  Resolve's fit-to-width scales it smaller. The raw page scan still goes in
+  the pool (`Evidence Photos`) for hand-editing.
+- Re-derive overlay record frames from `ffprobe` frame counts of the
+  current `beat_<id>.mp4` files every build; a text/TTS change shifts
+  every later beat, so also rebuild the overlay for any beat whose length
+  changed.
+- A render can silently die if the scripting bridge drops
+  (`resolve_control.runtime_mode`, `RESOLVE_NOT_RUNNING`): the output MP4
+  is then missing its `moov` atom. `render.verify_output` + `ffprobe`
+  catch it; restart Resolve and its bridge, then rebuild in a **fresh
+  project** (see above) rather than retrying in place.
+
 ## Raw evidence photos in the Media Pool (2026-09-13 user direction, superseded above)
 
 **Every evidence-beat's raw source photo (the file at `evidence.image:` in

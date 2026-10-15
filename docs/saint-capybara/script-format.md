@@ -179,6 +179,16 @@ reads aloud). Use an em dash (`—`), a comma, or a period/new sentence
 instead. This applies to the narration wording itself, not to code,
 file paths, or doc prose elsewhere in the repo.
 
+## Narration wording the TTS can invert (2026-10-15)
+
+Chatterbox can swallow the "n't" of a contraction: "The first record
+**isn't** 1857" came out "is **in** 1857" in the real render (caught only by
+transcribing the export), which flips the claim. In any sentence whose
+meaning turns on a negative, a number, or a name, write the negative out
+("is not", "does not") and re-listen or transcribe that beat. Also
+re-transcribe any beat whose wording is claim-critical after the TTS pass
+(see `review-checklist.md` Part B).
+
 ## The closing beat: "...God bless." (not a fixed structural sequence)
 
 **Retired 2026-09-09 — there is no more mandatory sign-of-the-cross
@@ -294,6 +304,15 @@ beat trying to do both.
 - One continuous span per clip beat; never splice or reorder within a
   clip beat.
 - ≤20s continuous per clip beat (warning above that in `capy.beats.validate`).
+- **End a clip on the silence after its last word, not on the word's
+  Whisper start time (2026-10-15).** Whisper's word `start` for a number
+  or long word is the *start*; "1857" is spoken "eighteen fifty-seven" and
+  runs ~1.6s past it. A clip cut at the timestamp plus a fraction cut the
+  word in half on `brigham-young-transfiguration-claim`. Pick `end` in the
+  energy dip after the word (loudness envelope, or the next word's start
+  minus ~0.1s), then transcribe the rendered `beat_<id>.mp4` and confirm the
+  last word comes out whole. Start the *next* clip at or after that dip so
+  nothing repeats.
 - Source clip time totals ≤30% of the video's total runtime (enforced by
   `capy_check_sources.py`, together with any `excerpt` beats — see below).
 - **Source title/creator lives in the video description, not on
@@ -391,6 +410,39 @@ one is available and relevant:
   discipline as a quote (`research-protocol.md`), and a beat with nothing
   relevant to show should stay `blank`/`freeze`/CARD-with-quote rather
   than reaching for a decorative picture.
+
+## Show the receipt: page images, often, held on screen (2026-10-15 user direction)
+
+**Default to showing the page, not only the quote.** On the
+`brigham-young-transfiguration-claim` build the user singled out the
+cropped page-scan beats ("the screenshots", e.g. the Brooke letter at
+1:09) as the best moments of the video and asked for more of them. Rule:
+
+- **Every distinct printed or handwritten primary or scholarly source
+  that a beat quotes or leans on gets an `evidence` beat with its page
+  image whenever a clean page image can be obtained** (GSA
+  `get_page_image` -- BYU Studies and Dialogue scans are high-resolution;
+  some book scans are only ~660px wide and read soft). A `card` with the
+  quote alone is the fallback, not the default. The usual shape is an
+  evidence beat (setup line + the image) followed by a `card` that reads
+  the exact quote aloud -- image and spoken quote, not one or the other.
+  Aim for an image on screen at least once per ~60-90s of a long-form
+  video when sources allow; a short may carry one or two.
+- **Crop to the cited passage** (`evidence.crop`; in the real build the
+  crop is baked into the overlay clip, see `hybrid-resolve-pipeline.md`).
+  Never a desktop screenshot, PDF-reader chrome or search page (`brand.md`
+  sec 10) -- "screenshot" in conversation means these clean page crops.
+- **Hold: the image stays on screen at least 3 seconds** (user: "at least
+  2-3 seconds"), and long enough to read. `capy_render_beat_clips.py`
+  enforces the floor (`MIN_EVIDENCE_HOLD_SECONDS = 3.0`): an `evidence`
+  beat whose narration is shorter than 3s is padded with silence to 3s.
+  Writing the beat's `text:` to run past ~4-5s is better than relying on
+  the pad. Count the *overlay's* span on the timeline, not just the beat.
+- **Do not let the image cover the captions.** In CARD mode the captions
+  sit around y 1180-1320 on the 1080x1920 canvas and the photo is
+  centered vertically (fit-to-width), so a crop taller than ~2.3:1
+  (width:height) will overlap the first caption line. Crop shorter, or
+  pad the overlay horizontally so it fits narrower. Check one frame.
 
 **`evidence.image` rendering (2026-09-13 update):** no bordered/parchment
 box is drawn around the photo anymore — it sits directly in the blank

@@ -2,7 +2,7 @@
 
 ## Part A — pre-Gate-A (before presenting `script.md` for approval)
 
-Run through all 16 before sending the Gate A message in
+Run through all 18 before sending the Gate A message in
 `script-format.md`:
 
 1. **Adversarial review** done for every claim responded to (`claims.md`
@@ -82,7 +82,13 @@ Run through all 16 before sending the Gate A message in
     hook, doesn't spoil the rebuttal, and passes the same tone rules as
     narration. Both appear at the top of `script.md`.
 
-Only after all 17 pass: render `frames/storyboard.png` + `script/script.md`
+18. **Receipts** (`script-format.md` "Show the receipt") — every printed
+    or handwritten primary/scholarly source quoted on screen has its page
+    image on an `evidence` beat where a clean one exists (card-only is the
+    fallback, with a reason), the image is cropped to the cited passage, and
+    there is roughly one per 60-90s in a long-form video.
+
+Only after all 18 pass: render `frames/storyboard.png` + `script/script.md`
 and send the Gate A message. **Stop there.**
 
 ## Part B — post-approval, before calling a render "ready for review"
@@ -109,7 +115,18 @@ and so future sessions on this project use the same checklist.)
    later clip (`brand.md` sec 8).
 4. Evidence hold — every evidence/card beat held long enough to actually
    read (`capy.beats.estimate_hold_seconds` honored, not undercut by a
-   short TTS line).
+   short TTS line), and every page image on screen **at least 3s**
+   (`capy_render_beat_clips.py` pads short `evidence` beats to
+   `MIN_EVIDENCE_HOLD_SECONDS`; check the *overlay's* timeline span, and one
+   frame to confirm the image doesn't cover the caption lines).
+4b. **Audio content + pauses** — transcribe the exported MP4
+   (`tools/transcribe.py`) and diff against `beats.yaml`: spelling-only
+   differences are fine; a changed word ("isn't" -> "is in") is a defect.
+   Scan `audio/*.norm.wav` for internal silences over ~0.7s
+   (`ffmpeg -af silencedetect=n=-35dB:d=0.55`); trim a stray 1s+ pause (and
+   shift that beat's `timing.json` words by the same amount) or re-render.
+   For each `clip` beat transcribe the rendered `beat_<id>.mp4` and confirm
+   the last word is whole.
 5. Metadata clean — `ffprobe` tags allow-list only (`title` and required
    container fields), no `encoder` tag, no home-directory paths anywhere.
 6. Muted-viewing pass — captions alone convey the argument (many viewers

@@ -213,7 +213,7 @@ slug substituted.
    vestigial from the retired all-ffmpeg pipeline — the current pipeline
    doesn't burn captions via libass at all, see
    `docs/saint-capybara/hybrid-resolve-pipeline.md` — skip that flag.)
-9. **Part A review** (`docs/saint-capybara/review-checklist.md`) — all 16
+9. **Part A review** (`docs/saint-capybara/review-checklist.md`) — all 18
    items — before presenting anything.
 9b. **Critique.** `/capy-critique` (`docs/saint-capybara/research-protocol.md`
     sec 15) runs three independent script critics in parallel — does it
