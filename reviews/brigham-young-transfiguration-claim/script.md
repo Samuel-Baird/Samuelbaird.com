@@ -82,7 +82,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 11. `q02` (card, ~4.1s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** quote
-- **Narration:** Within four months, a letter to Brigham Young himself quoted Howard Egan about the conference.
+- **Narration:** Within four months, a letter to Brigham Young himself quoted Howard Egan about the conference. Egan talking about hearing brother Brigham, said “if a man had been blinded he would hardly have known if it were not Joseph”
 - **Card quote:** “if a man had been blinded he would hardly have known if it were not Joseph” — Jesse C. Little to Brigham Young, Dec. 8, 1844, quoting Howard Egan
 - **Sources:** egan-little-1844-12-08
 - **Notes:** 
@@ -90,7 +90,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 12. `n04` (narration, ~10.1s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** teaching
-- **Narration:** A newspaper line, a letter about how he looked and spoke, and a letter about what a blind man would have heard, all before the end of 1844. The video says nobody mentioned it for twelve years.
+- **Narration:** A newspaper line, a letter about how he looked and spoke, and a letter about what a blind man would have heard, all before the end of 1844. The video says nobody mentioned it for twelve years. Either the creator is lying or didnt due his due diligence in his research before making his strong claims
 - **Sources:** ts-1844-09-02-special-meeting, brooke-1844-11-15, egan-little-1844-12-08
 - **Notes:** 
 
@@ -103,7 +103,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 14. `n07` (narration, ~7.9s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** source
-- **Narration:** That cuts both ways, and it should. Orson Hyde's 1869 account of the day gets less confidence, because the diaries put him in Nauvoo five days after the meeting.
+- **Narration:** That cuts both ways, and it should. Orson Hyde's 1869 account of the day gets less confidence, because the diaries put him in Nauvoo five days after the meeting. (remove this line)
 - **Sources:** jorgensen-welch-mantle-chapter, vanwagoner-1995-dialogue-28-4
 - **Notes:** 
 
@@ -191,7 +191,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 27. `n15` (narration, ~13.9s)
 - **Original Video Transcript:** him. Put yourself in their shoes. They needed this. Some cost fallacy had kicked in. They had
 - **Pose:** teaching
-- **Narration:** Sunk cost can only explain what happens after the cost is sunk. Henry Brooke wrote in 1844, before the exodus and before any handcart, and Quinn notes he later left for another church. The same theory would explain every follower of every succession claimant, so it explains nothing about this one.
+- **Narration:** Sunk cost can only explain what happens after the cost is sunk. Henry Brooke wrote in 1844, before the exodus and before any handcart, and Quinn notes he later left for another church. The same theory would explain every follower of every succession claimant, so it explains nothing about this one. it relies on the creators incorrect claim that no source mentions the account before 1857. 
 - **Sources:** brooke-1844-11-15, quinn-1994-hierarchy
 - **Notes:** 
 
