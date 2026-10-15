@@ -32,3 +32,7 @@
 ## Post-Gate-A edits (user)
 
 q01 now reads the quote aloud; new card q01b carries the exact Brooke quote; n05 removed; n17 uses 'Jorgensen' instead of a pronoun (author's pronouns not stated in the source); e02 reworded to 'first time she ever recorded the thought'; closing extended; caption no longer mentions Yale. Lints: 0 errors; source time 29.5% of runtime.
+
+## Second revision (user)
+
+Added: n11b (the Saints were in the Great Basin because they were driven out: Missouri 1838 extermination order, Nauvoo 1846), n18b/n18c (early and later accounts line up; recall-by-transmission, with the user's 9/11 comparison). Applied: q02 reads the Egan quote; n04 gained a sentence that the 'twelve years' claim does not survive a check against the record (the user's 'creator is lying or didn't do due diligence' wording was NOT used: it imputes motive or bad faith, which brand.md sec 2 forbids); n07 (Hyde) dropped; n15 gained the 'depends on the incorrect pre-1857 claim' sentence. Open flags: (1) 'Protestant' not used: no source in hand says who the mobs were; (2) n18c's 9/11 analogy conflicts with research-protocol sec 11 ('No analogies' on sensitive videos); kept because the user asked for it explicitly; (3) the Egan sentence is Little quoting Egan 'at the time of the Conference'; the user's wording 'talking about hearing Brother Brigham' was NOT used because the source does not say what Egan was describing.

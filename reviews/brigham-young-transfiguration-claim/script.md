@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): The Brigham Young transfiguration story is older than 1857  
 > **Post caption** (goes with the upload, not shown on screen): A viral video says nobody mentioned it for twelve years. A church newspaper and two letters from 1844 did.
 
-**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 333.7s (budget 240-480s) | **Source time:** 98.3s (29%)
+**Slug:** `brigham-young-transfiguration-claim` | **Estimated runtime:** 374.3s (budget 240-480s) | **Source time:** 98.3s (26%)
 
 **Hook (title/description only, not shown on screen):** "'We can't find it for twelve years.' The 1844 record is in print."
 **Exemplars modeled:** hamblin-methodological, peterson-breaking-the-rules
@@ -79,18 +79,18 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** brooke-1844-11-15
 - **Notes:** 
 
-## 11. `q02` (card, ~4.1s)
+## 11. `q02` (card, ~9.0s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** quote
-- **Narration:** Within four months, a letter to Brigham Young himself quoted Howard Egan about the conference. Egan talking about hearing brother Brigham, said “if a man had been blinded he would hardly have known if it were not Joseph”
+- **Narration:** Within four months, a letter to Brigham Young himself quoted Howard Egan about the conference. Egan said if a man had been blinded he would hardly have known if it were not Joseph.
 - **Card quote:** “if a man had been blinded he would hardly have known if it were not Joseph” — Jesse C. Little to Brigham Young, Dec. 8, 1844, quoting Howard Egan
 - **Sources:** egan-little-1844-12-08
 - **Notes:** 
 
-## 12. `n04` (narration, ~10.1s)
+## 12. `n04` (narration, ~12.8s)
 - **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
 - **Pose:** teaching
-- **Narration:** A newspaper line, a letter about how he looked and spoke, and a letter about what a blind man would have heard, all before the end of 1844. The video says nobody mentioned it for twelve years. Either the creator is lying or didnt due his due diligence in his research before making his strong claims
+- **Narration:** A newspaper line, a letter about how he looked and spoke, and a letter about what a blind man would have heard, all before the end of 1844. The video says nobody mentioned it for twelve years, and that claim doesn't survive a check against the record.
 - **Sources:** ts-1844-09-02-special-meeting, brooke-1844-11-15, egan-little-1844-12-08
 - **Notes:** 
 
@@ -100,27 +100,20 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Narration:** Even if the video's date were right, late would not mean false. A later source earns less confidence, not none, and silence in the earliest records is not a denial. Historians lower confidence. They don't rule things out.
 - **Notes:** 
 
-## 14. `n07` (narration, ~7.9s)
-- **Original Video Transcript:** that happened in August of 1844. The first record that we can find of someone actually making that claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named
-- **Pose:** source
-- **Narration:** That cuts both ways, and it should. Orson Hyde's 1869 account of the day gets less confidence, because the diaries put him in Nauvoo five days after the meeting. (remove this line)
-- **Sources:** jorgensen-welch-mantle-chapter, vanwagoner-1995-dialogue-28-4
-- **Notes:** 
-
-## 15. `c05` (clip, ~9.6s)
+## 14. `c05` (clip, ~9.6s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** skeptical
 - **Clip:** Source video, 54.7s–64.3s @ speed 1.0
 - **Notes:** 
 
-## 16. `n08` (narration, ~4.4s)
+## 15. `n08` (narration, ~4.4s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** pointing
 - **Narration:** In 1857 Brigham Young preached a sermon that mentioned Carrington. That's not where the story begins.
 - **Sources:** young-1857-07-19-carrington
 - **Notes:** 
 
-## 17. `q03` (card, ~2.2s)
+## 16. `q03` (card, ~2.2s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** quote
 - **Narration:** Here is the sentence that date comes from.
@@ -128,31 +121,38 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** young-1857-07-19-carrington
 - **Notes:** 
 
-## 18. `n09` (narration, ~9.0s)
+## 17. `n09` (narration, ~9.0s)
 - **Original Video Transcript:** claim that he turned into the image or sounded like Joseph Smith was in 1857. This guy named Albert Carrington gave a speech, and it really caught on this idea that Brigham Young transformed into Joseph Smith somehow. Because, and this is my take, it was only the year before that the Martin
 - **Pose:** teaching
 - **Narration:** Brigham is the speaker, the event is the October 1844 conference, and he's referring back to something Carrington had just told that congregation. A sermon that refers back is not a first record.
 - **Sources:** young-1857-07-19-carrington
 - **Notes:** 
 
-## 19. `c06` (clip, ~11.5s)
+## 18. `c06` (clip, ~11.5s)
 - **Original Video Transcript:** across a continent to go live in a desert with these people, wondering was this all worth it, and then suddenly you find out 220 innocent people died because of horrible awful decisions by stupid church leaders. That's why it happened. So imagine being there in Utah during this time
 - **Pose:** concerned
 - **Clip:** Source video, 81.2s–92.7s @ speed 1.0
 - **Notes:** 
 
-## 20. `n10` (narration, ~11.7s)
+## 19. `n10` (narration, ~11.7s)
 - **Original Video Transcript:** across a continent to go live in a desert with these people, wondering was this all worth it, and then suddenly you find out 220 innocent people died because of horrible awful decisions by stupid church leaders. That's why it happened. So imagine being there in Utah during this time
 - **Pose:** solemn
 - **Narration:** About 220 people died in the Willie and Martin handcart companies in the fall of 1856. Brigham Young's own biographer writes that church leaders could have prevented most of those deaths, and Young himself denounced the men who sent the companies out late.
 - **Sources:** turner-2012-brigham-young-handcarts
 - **Notes:** 
 
-## 21. `n11` (narration, ~13.1s)
+## 20. `n11` (narration, ~13.1s)
 - **Original Video Transcript:** across a continent to go live in a desert with these people, wondering was this all worth it, and then suddenly you find out 220 innocent people died because of horrible awful decisions by stupid church leaders. That's why it happened. So imagine being there in Utah during this time
 - **Pose:** concerned
 - **Narration:** The plan had a reason on the record. The emigration fund was nearly fifty thousand dollars in debt after 1855, and handcarts were Young's cheaper way to keep bringing poor converts. Historians argue about the timing and the planning. None of them argue that there was no reason.
 - **Sources:** turner-2012-brigham-young-handcarts
+- **Notes:** 
+
+## 21. `n11b` (narration, ~13.6s)
+- **Original Video Transcript:** across a continent to go live in a desert with these people, wondering was this all worth it, and then suddenly you find out 220 innocent people died because of horrible awful decisions by stupid church leaders. That's why it happened. So imagine being there in Utah during this time
+- **Pose:** solemn
+- **Narration:** And the Saints weren't in the Great Basin for fun. Missouri ordered them out or exterminated in 1838, and mob violence that killed Joseph and Hyrum ended with the abandonment of Nauvoo in 1846. The handcart emigrants were poor converts gathering to a people who had fled for their lives.
+- **Sources:** turner-2012-missouri-expulsion, jorgensen-welch-mantle-chapter
 - **Notes:** 
 
 ## 22. `n12` (narration, ~5.2s)
@@ -188,10 +188,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 122.8s–127.9s @ speed 1.0
 - **Notes:** 
 
-## 27. `n15` (narration, ~13.9s)
+## 27. `n15` (narration, ~18.3s)
 - **Original Video Transcript:** him. Put yourself in their shoes. They needed this. Some cost fallacy had kicked in. They had
 - **Pose:** teaching
-- **Narration:** Sunk cost can only explain what happens after the cost is sunk. Henry Brooke wrote in 1844, before the exodus and before any handcart, and Quinn notes he later left for another church. The same theory would explain every follower of every succession claimant, so it explains nothing about this one. it relies on the creators incorrect claim that no source mentions the account before 1857. 
+- **Narration:** Sunk cost can only explain what happens after the cost is sunk. Henry Brooke wrote in 1844, before the exodus and before any handcart, and Quinn notes he later left for another church. The same theory would explain every follower of every succession claimant, so it explains nothing about this one. It also depends on the claim that no source mentions this before 1857, which is incorrect.
 - **Sources:** brooke-1844-11-15, quinn-1994-hierarchy
 - **Notes:** 
 
@@ -244,21 +244,35 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** jorgensen-welch-mantle-chapter, jorgensen-1996-byu-studies-36-4, hoyt-1851-reminiscences
 - **Notes:** 
 
-## 35. `n19` (narration, ~9.3s)
+## 35. `n18b` (narration, ~11.2s)
+- **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
+- **Pose:** teaching
+- **Narration:** The early accounts and the later ones describe the same things: his voice, his manner, his look. Egan, Brooke and Hoyt line up with what Duncan, Hancock and others wrote decades later, and later accounts get weighed like any later accounts.
+- **Sources:** egan-little-1844-12-08, brooke-1844-11-15, hoyt-1851-reminiscences, jorgensen-welch-mantle-chapter
+- **Notes:** 
+
+## 36. `n18c` (narration, ~11.7s)
+- **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
+- **Pose:** thoughtful
+- **Narration:** Recalling something later isn't the same as inventing it. If a parent told a child about 9/11 in 2026, we would trust that testimony. Jorgensen documents families retelling this one to their children and grandchildren for generations. The record was preserved by transmission.
+- **Sources:** jorgensen-1996-byu-studies-36-4, jorgensen-welch-mantle-chapter
+- **Notes:** 
+
+## 37. `n19` (narration, ~9.3s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** teaching
 - **Narration:** No Latter-day Saint has to believe the transfiguration to believe the Twelve led the Church. Brigham's argument that day was about the keys of the Twelve, and the mantle story is testimony, not doctrine.
 - **Sources:** young-1844-08-08-discourse, jorgensen-welch-mantle-chapter
 - **Notes:** 
 
-## 36. `n20` (narration, ~13.6s)
+## 38. `n20` (narration, ~13.6s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** thoughtful
 - **Narration:** Of the explanations on offer, invented in 1857 is the only one the dates rule out. People in that crowd experienced something striking and said so fits every source on this list. Whether it was a miracle is a question of faith, and the record doesn't settle it either way.
 - **Sources:** jorgensen-welch-mantle-chapter, quinn-1994-hierarchy, vanwagoner-1995-dialogue-28-4
 - **Notes:** 
 
-## 37. `n99` (narration, ~10.4s)
+## 39. `n99` (narration, ~10.4s)
 - **Original Video Transcript:** 100 people telling the same story be wrong? But that's why it happened. And that's why all of these 100 people made this claim at the earliest in 1857, some of them many years later than that.
 - **Pose:** encouraging
 - **Narration:** Late is a reason to weigh a story, not to delete it, and this one was written down in 1844. The sources don't settle the miracle, but they are far more trustworthy than this creator's narrative. God bless.
