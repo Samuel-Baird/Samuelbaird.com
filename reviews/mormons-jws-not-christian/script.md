@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): Is a God With a Body Un-Christian?  
 > **Post caption** (goes with the upload, not shown on screen): Christianity's central claim is that God became a man. So which part of a God with a body is supposed to be un-Christian?
 
-**Slug:** `mormons-jws-not-christian` | **Estimated runtime:** 93.6s (budget 60-180s) | **Source time:** 23.2s (25%)
+**Slug:** `mormons-jws-not-christian` | **Estimated runtime:** 95.0s (budget 60-180s) | **Source time:** 23.2s (24%)
 
 **Hook (title/description only, not shown on screen):** 'Is a God with a body un-Christian?'
 **Exemplars modeled:** offenders-are-mormons-christian, theosis-interpreter
@@ -19,7 +19,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 02. `n01` (narration, ~7.1s)
 - **Original Video Transcript:** Mormonism teaches that God the Father was once a man, has a physical body and that humans can become gods. That is not the Christian God.
 - **Pose:** teaching
-- **Narration:** A God with a body is not outside Christianity, it is the center of it. Paul says the whole fullness of deity dwells in Christ bodily.
+- **Narration:** A God with a body is not outside Christianity, it is the center of it. Colossians says the whole fullness of deity dwells in Christ bodily.
 - **Sources:** col-2-9-nrsvue
 - **Notes:** 
 
@@ -31,10 +31,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** luke-24-39-nrsvue
 - **Notes:** 
 
-## 04. `n02` (narration, ~9.5s)
+## 04. `n02` (narration, ~11.5s)
 - **Original Video Transcript:** Mormonism teaches that God the Father was once a man, has a physical body and that humans can become gods. That is not the Christian God.
 - **Pose:** pointing
-- **Narration:** The Nicene Creed, as expanded in 381, says the Son was made man, rose, and ascended to sit at the Father's right hand. So Christianity's God already includes a man, with a body, in heaven.
+- **Narration:** The Nicene Creed, as expanded in 381, says the Son was made man, rose, and ascended to sit at the Father's right hand. So the Christian God already includes a man who rose with flesh and bones and still sits in heaven.
 - **Sources:** constantinopolitan-creed-schaff, luke-24-39-nrsvue
 - **Notes:** 
 
@@ -59,10 +59,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** athanasius-incarnation-54-npnf
 - **Notes:** 
 
-## 08. `n05` (narration, ~4.6s)
+## 08. `n05` (narration, ~5.2s)
 - **Original Video Transcript:** Mormonism teaches that God the Father was once a man, has a physical body and that humans can become gods. That is not the Christian God.
 - **Pose:** thoughtful
-- **Narration:** Christians read that differently than Latter-day Saints do, but the sentence was Christian before it was Mormon.
+- **Narration:** Catholics and Protestants read that differently than Latter-day Saints do, but the sentence was Christian before it was Mormon.
 - **Sources:** athanasius-incarnation-54-npnf
 - **Notes:** 
 
@@ -72,10 +72,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 47.25s–60.8s @ speed 1.0
 - **Notes:** 
 
-## 10. `n06` (narration, ~9.3s)
+## 10. `n06` (narration, ~8.2s)
 - **Original Video Transcript:** So if you've changed who God is, and you changed who Jesus is and added a whole nother book of scripture, it is not another Christian denomination, it is another religion using the same Christian vocabulary.
 - **Pose:** teaching
-- **Narration:** Adding scripture cannot make another religion, because Christianity did exactly that. The New Testament was added to the Old, and the list of twenty-seven books was first named by Athanasius in the year 367.
+- **Narration:** Adding scripture is not new to Christianity. The New Testament was added to the Old, and the list of twenty-seven books was first named by Athanasius in the year 367.
 - **Sources:** metzger-nt-canon-athanasius-367
 - **Notes:** 
 
@@ -83,7 +83,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Original Video Transcript:** So if you've changed who God is, and you changed who Jesus is and added a whole nother book of scripture, it is not another Christian denomination, it is another religion using the same Christian vocabulary.
 - **Pose:** quote
 - **Narration:** Bruce Metzger puts it this way.
-- **Card quote:** “Athanasius was the first to name (in his Festal Letter for A.D. 367) exactly the twenty-seven books of the New Testament as exclusively canonical.” — Bruce M. Metzger, The New Testament: Its Background, Growth, and Content
+- **Card quote:** “In the East, Athanasius was the first to name (in his Festal Letter for A.D. 367) exactly the twenty-seven books of the New Testament as exclusively canonical.” — Bruce M. Metzger, The New Testament: Its Background, Growth, and Content
 - **Sources:** metzger-nt-canon-athanasius-367
 - **Notes:** 
 
