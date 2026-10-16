@@ -1,0 +1,503 @@
+sources:
+- id: coates-1978-indian-policies
+  type: scholarly
+  title: 'Brigham Young and Mormon Indian Policies: The Formative Period, 1836-1851'
+  author: Lawrence G. Coates
+  date: '1978-04-01'
+  locator: https://corpus.restorationcommons.org/b/18-3-e071/174 (GSA Read/Articles/BYU Studies/18-3.pdf, pp. 174-177 of PDF; journal pp. 444-447)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Articles/BYU Studies/18-3.pdf', from_page=172, to_page=180); contents page via read_pages(from_page=1,to_page=3)
+  quote: legion leaders were ordered to stop the depredations and if necessary to exterminate those who do not separate themselves from their hostile clans and sue for peace
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/18-3-e071/174
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'OCR text is lowercase and unpunctuated, so exact punctuation unverified. Coates (p. 174) says Young ''directed daniel wells to order the nauvoo legion to subdue the hostile indians''; the orders
+    are Wells''s Special Order No. 1, 31 Jan 1850, in Nauvoo Legion correspondence (Coates fn. 70). P. 175 quotes a later order: ''let it be with them extermination or peace'' (fn. 74, Wells 9 Feb 1850).
+    P. 176: ''probably not more than forty indians'' of the Timpanogos band died; Legion ''did not execute to the letter'' the order. P. 177: leaders ''abandoned their plans to exterminate all hostiles'',
+    prisoners released; Young ''much chagrined at the conduct of the settlers at fort utah''. P. 173: Young asked ''why should men have a disposition to kill a destitute naked indian who may steal a shirt
+    or a horse''. Coates writes from a Church-affiliated press (BYU Studies), so tilts sympathetic to Young; the ''forty'' figure rests on Stansbury/Gottfredson estimates and may be low. Page 178 also records
+    Young''s 1851 reprimand and ''cheaper by far'' remark.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: turner-2012-young-pioneer-prophet
+  type: scholarly
+  title: 'Brigham Young: Pioneer Prophet'
+  author: John G. Turner
+  date: '2012-01-01'
+  locator: https://corpus.restorationcommons.org/b/turner-brigham-young-pioneer-prophet-e29d/228 (also /354, /355, /356, /357)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=''Read/LDS History/Brigham Young/Turner, Brigham Young: Pioneer Prophet .pdf'', from_page=226, to_page=229) and (from_page=351,
+    to_page=357)'
+  quote: While some of Young's decisions had tragic consequences, he was not an "exterminator."
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/turner-brigham-young-pioneer-prophet-e29d/354
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Year is my recollection of the publication date (Belknap/Harvard 2012); not shown on the pages I read. P. 228: Young in 1853 attributed settlement survival to willingness to ''kill every soul
+    of them [the Indians] if we had been obliged to do so''; Young''s 1852 policy ''better and cheaper to feed and clothe the Indians, than to fight them''; he ''meted out harsh retribution'' once prodded.
+    P. 352: despite the maxim, neither Mormons nor agents gave enough food ''to compensate them for their steady loss of traditional resources'' and ''native populations steadily fell''. P. 352-353: Bear
+    River, Connor''s men ''guided by the Mormon scout Porter Rockwell'', killed many women and children; Deseret News initially praised, Young later criticized Connor. P. 354: Connor ordered ''attack and
+    kill every male Indian over twelve years of age''; Connor hailed ''the exterminator''. P. 355: Young told Utes ''we shall occupy this valley and the next, and the next''. P. 356: Young ordered ''treat
+    them as Enemies''; Squaw Fight killed more than a dozen men, women and children. P. 357: Circleville massacre; no evidence Young investigated.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: reeve-parshall-2010-encyclopedia
+  type: scholarly
+  title: 'Mormonism: A Historical Encyclopedia (Eras entry; Mormonism and Native Americans)'
+  author: W. Paul Reeve and Ardis E. Parshall (eds.)
+  date: '2010-01-01'
+  locator: https://corpus.restorationcommons.org/b/reeve-and-parshall-mormonism-a-historical-39f3/62 (also /340, /341)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=''Read/LDS History/General History/Reeve & Parshall, Mormonism: A Historical Encyclopedia.pdf'', from_page=61, to_page=62) and
+    (from_page=340, to_page=342)'
+  quote: Troops led by Connor and assisted by Mormon guides attacked the Shoshone village on Bear River in the early morning of January 29.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/reeve-and-parshall-mormonism-a-historical-39f3/62
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Year of publication is my recollection, not on the pages read. P. 62: Cache Valley settlers ''had requested protection from the California Volunteers''; Connor''s soldiers ''hunted down and murdered
+    fleeing women and children''; ''disputed number (in the hundreds)''. P. 340-341: Young''s conflict framing; ''Indians were forced to change their culture or beg, steal, or starve''; Provo War 1850,
+    Walker War 1853-54, Black Hawk War 1865-72 with ''retaliatory atrocities on both sides''; ''troops slaughtered well over 200 Northwestern Shoshone'' at Bear River. The entry author is not identified
+    on the pages I read. P. 342 uses ''cultural genocide'' only for critics of the Indian Student Placement Program, not for the 19th-century wars.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: reeve-2015-religion-different-color
+  type: scholarly
+  title: 'Religion of a Different Color: Race and the Mormon Struggle for Whiteness'
+  author: W. Paul Reeve
+  date: '2015-01-01'
+  locator: https://corpus.restorationcommons.org/b/reeve-religion-of-a-different-color-race-and-afc7/94
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=''Read/LDS History/Race/Reeve, Religion of a Different Color: Race and the Mormon Struggle for Whiteness.pdf'', from_page=93,
+    to_page=95)'
+  quote: It was a struggle in which raiding, killing, and atrocities were committed by Indians and Mormons alike.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/reeve-religion-of-a-different-color-race-and-afc7/94
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Publication year from memory. Describes the Walker War (July 1853 to May 1854). Also: Black Hawk War, at least seventy whites and twice as many Native Americans died. P. 93: Young in 1851 invoked
+    ''Gadianton robbers'' for Indians; p. 94-95: Young''s ''savage'' rhetoric for outsiders. Useful for exmo/media register on dehumanizing language.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: byustudies-2021-danite-constitution
+  type: scholarly
+  title: Danite Constitution article, BYU Studies Quarterly 60:1 (quotes Boggs Executive Order 44)
+  author: BYU Studies Quarterly (author not read on the pages opened)
+  date: '2021-01-01'
+  locator: https://corpus.restorationcommons.org/b/60-1-cb80/63
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Articles/BYU Studies/60-1.pdf', from_page=62, to_page=64)
+  quote: must be treated as enemies, and must be exterminated or driven from the State if necessary for the public peace
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/60-1-cb80/63
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Secondary quotation of Lilburn Boggs, executive order, 27 Oct 1838 (later Executive Order #44), Mormon War Papers, Missouri State Archives (footnote 40). Year/author are from the volume, not confirmed.
+    Shows the ''extermination order'' is Boggs''s, aimed at Latter-day Saints; the same page notes Rigdon ''threaten[ed] a war of extermination'' in the Danite context.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: church-history-american-indians
+  type: official
+  title: American Indians (Church History Topics)
+  author: The Church of Jesus Christ of Latter-day Saints, Church History Department
+  date: n.d.
+  locator: https://www.churchofjesuschrist.org/study/history/topics/american-indians?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch(url='https://www.churchofjesuschrist.org/study/history/topics/american-indians?lang=eng')
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/history/topics/american-indians?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'WebFetch returned only summaries and short fragments under a quotation cap, so I could not capture a 20-word verbatim excerpt. Fragments returned: Young ''pursued a peace policy to facilitate
+    the Saints'' settlement''; policy ''emerged unevenly and was inconsistently applied''; ''These misunderstandings led to friction and sometimes violence between the peoples.'' The summary says the Walker
+    War (1853-54) and Black Hawk War (1865-72) began as small clashes and that violence declined as disease and starvation sharply reduced Indigenous populations and federal action moved Indians to reservations.
+    Does not mention Fort Utah or Bear River. No Gospel Topics essay on this was found. Re-verify exact wording before on-screen use.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: church-history-native-saints-events
+  type: official
+  title: 'Native Saints: Events (Bear River Massacre entry)'
+  author: Church History Department / Church Historian's Press
+  date: n.d.
+  locator: https://www.churchhistorianspress.org/native-saints/events?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch(url='https://www.churchhistorianspress.org/native-saints/events?lang=eng')
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchhistorianspress.org/native-saints/events?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Entry (35 words per WebFetch) says the US Army under Col. Patrick Edward Connor attacked a Northwestern Shoshone winter encampment, 'killing more than three hundred men, women, and children'. WebFetch
+    said the entry does not mention Latter-day Saint settlers. Verbatim >=20-word excerpt not obtainable through WebFetch; re-verify wording before use.
+  found_by: capy-historian
+  claims:
+  - 3
+- id: wells-1850-special-orders
+  type: primary
+  title: Daniel H. Wells, Special Order No. 1 (31 Jan 1850) and orders of 9 Feb 1850, Nauvoo Legion correspondence
+  author: Daniel H. Wells
+  date: '1850-01-31'
+  locator: Utah State Archives, Utah Territory Military Nauvoo Legion Correspondence 1849-1863 (as cited in Coates fn. 70, 74)
+  accessed: '2026-10-15'
+  inspected: false
+  inspected_via: none (secondary quotation only, see coates-1978-indian-policies)
+  quote: null
+  verification:
+    tool: null
+    verdict: not-found
+    link: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Not opened. Needed to confirm exact wording and whether Young co-signed or only directed it.
+  found_by: capy-historian
+  claims:
+  - 3
+- id: compton-hamblin-paiute-epidemics
+  type: scholarly
+  title: 'A Frontier Life: Jacob Hamblin, Explorer and Indian Missionary (pp. 354-355, 446-447)'
+  author: Todd M. Compton
+  date: '2013-01-01'
+  locator: 'Read/LDS History/Misc/Compton, A Frontier Life: Jacob Hamblin: Explorer and Indian Missionary.pdf pp. 377-378, 469-470; https://corpus.restorationcommons.org/b/compton-a-frontier-life-jacob-hamblin-explorer-c4da/470'
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Gospel Scholar Archive read_pages
+  quote: null
+  verification: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: States 'we do not have precise Indian population numbers in nineteenth-century Utah'; documents Santa Clara Paiute epidemic, Kaibab measles (about 100 deaths), starvation raising disease susceptibility;
+    engages Stoffle and Evans (1976) as 'main argument has validity' but with 'mistakes'. Date is approximate; confirm via get_volume_info.
+  found_by: capy-data-analyst
+  claims:
+  - 4
+- id: tom-holt-paiute-ch4
+  type: scholarly
+  title: The Paiute Tribe of Utah, in A History of Utah's American Indians
+  author: Gary Tom and Ronald Holt
+  date: '2000-01-01'
+  locator: https://historytogo.utah.gov/uhg-history-american-indians-ch-4/
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Source of the Paiute-only 90% in under 25 years; no pre-contact count; 528 Paiutes in Utah in 1873; disease plus land/food loss; skirmishes 'few'; does not name starvation. Fetch summarized by
+    a small model, so exact quotes must be re-checked before on-screen use.
+  found_by: capy-data-analyst
+  claims:
+  - 4
+- id: nps-survival-southern-paiute
+  type: official
+  title: Survival of the Southern Paiute
+  author: U.S. National Park Service
+  date: '2025-05-05'
+  locator: https://www.nps.gov/articles/survival-of-the-southern-paiute.htm
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification: null
+  grade_supports: disputed
+  traced_to: tom-holt-paiute-ch4
+  used_on_screen: false
+  counter: false
+  notes: Repeats the 90% as Paiute-only with causes listed as disease, loss of farmland, plants and water; footnoted to Tom and Holt.
+  found_by: capy-data-analyst
+  claims:
+  - 4
+- id: lewis-native-americans-utah-he
+  type: scholarly
+  title: Native Americans in Utah (Utah History Encyclopedia)
+  author: David Rich Lewis
+  date: '1994-01-01'
+  locator: https://historytogo.utah.gov/post/native-americans/
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Gives 'more than 20,000' in Utah proper at migration start; Ute 'weakened by disease and starvation'; Walker and Black Hawk wars tied to subsistence raiding; no decline percentage.
+  found_by: capy-data-analyst
+  claims:
+  - 4
+- id: alexander-utah-right-place
+  type: scholarly
+  title: Native American and European Relations (Utah, The Right Place)
+  author: Thomas G. Alexander
+  date: null
+  locator: https://historytogo.utah.gov/native-american-european
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: '''Fewer than 20,000'' in 1847, many already dead ''principally from disease''; settlers depleted fish and gathering lands; no decline figures. Page undated.'
+  found_by: capy-data-analyst
+  claims:
+  - 4
+- id: reeve-parshall-encyclopedia-bear-river
+  type: scholarly
+  title: 'Mormonism: A Historical Encyclopedia (Bear River Massacre passage, p. 62)'
+  author: W. Paul Reeve and Ardis E. Parshall (eds.)
+  date: '2010-01-01'
+  locator: 'Read/LDS History/General History/Reeve & Parshall, Mormonism: A Historical Encyclopedia.pdf p. 62; https://corpus.restorationcommons.org/b/reeve-and-parshall-mormonism-a-historical-39f3/62'
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Gospel Scholar Archive read_pages
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Bear River, Jan 1863, just north of the Utah border: ''a disputed number (in the hundreds)'' of Shoshone killed; Cache Valley settlers had requested troops; Mormon guides assisted. Date approximate.'
+  found_by: capy-data-analyst
+  claims:
+  - 4
+- id: turner-2012-pioneer-prophet
+  type: scholarly
+  title: 'Brigham Young: Pioneer Prophet, ch. ''The Monster in the Vale'''
+  author: John G. Turner
+  date: '2012-01-01'
+  locator: https://corpus.restorationcommons.org/b/turner-brigham-young-pioneer-prophet-e29d/352 (pp. 352-360)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Brigham Young/Turner, Brigham Young: Pioneer Prophet .pdf from_page=352 to_page=359; from_page=360'
+  quote: Young presided over the military and demographic conquest and diminution of Utah's Indians.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/turner-brigham-young-pioneer-prophet-e29d/359
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Same chapter: ''As traditional means of subsistence disappeared, native populations steadily fell'' (p.352); Bear River 235 dead counted by two settlers (352-353); Circleville executions, no evidence
+    of investigation (357); Black Hawk War ''perhaps seventy whites and probably twice that many Indians'' (359); ''he was not an exterminator'' (354). Note on date: 2012 per my recollection, not tool-verified.'
+  found_by: capy-historian
+  claims:
+  - 4
+- id: alexander-2019-expansion
+  type: scholarly
+  title: Brigham Young and the Expansion of the Mormon Faith
+  author: Thomas G. Alexander
+  date: '2019-01-01'
+  locator: https://corpus.restorationcommons.org/b/alexander-brigham-young-and-the-expansion-of-a8e2/132 (pp. 132-135, 285, 321-322)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Brigham Young/Alexander, Brigham Young and the Expansion of the Mormon Faith.pdf pages 132-135, 285-286, 321-322
+  quote: null
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/alexander-brigham-young-and-the-expansion-of-a8e2/133
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Fort Utah: Old Bishop killing, Young and advisors recommend extermination, Wells order ''exterminating such as do not separate themselves from their hostile clans'' (p.133); Rock Canyon 8 Utes
+    killed, West Mountain 11 killed, 3+3 more (133). 1851 turn to ''cheaper to feed'' (134). Walker War causes and Nephi massacre of eight Indians seeking ''protection and bread'' (134-135). Bear River:
+    Connor reported 224, Jesperson 493, Warner 156; ''nearly 300'' (285). Circleville: 20 Paiutes arrested, massacred except four children; Young condemned it (321).'
+  found_by: capy-historian
+  claims:
+  - 4
+- id: walker-1989-byustudies
+  type: scholarly
+  title: Toward a Reconstruction of Mormon and Indian Relations, 1847-1877
+  author: Ronald W. Walker
+  date: '1989-01-01'
+  locator: https://corpus.restorationcommons.org/b/29-4-40f4/31 (BYU Studies 29:4, pp. 31-32 of the PDF)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/Articles/BYU Studies/29-4.pdf from_page=24 to_page=34
+  quote: most surveys place Utah's indigenous population at the arrival of the Mormons somewhere between twelve thousand and thirty-five thousand
+  verification:
+    tool: cite_page
+    verdict: word-forms
+    link: https://corpus.restorationcommons.org/b/29-4-40f4/31
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'OCR text is lowercase and unpunctuated, so the quote is normalized (word-forms). Also: ''basic questions such as Indian population and mortality can be posed but not readily answered''; disease
+    (measles, smallpox, syphilis) ''wreaked terrible havoc''; one mountain man thought decline began two decades before large-scale settlement, ''thereafter it continued apace or accelerated'' (p.32); Black
+    Hawk''s band cited infirmity and death in ending its warfare. Surveys the Christy/O''Neil/Campbell revisionist versus Arrington/Coates traditional historiography. Publication year 1989 is from my recollection,
+    not tool-verified (get_volume_info failed twice).'
+  found_by: capy-historian
+  claims:
+  - 4
+- id: compton-2013-hamblin
+  type: scholarly
+  title: 'A Frontier Life: Jacob Hamblin, Explorer and Indian Missionary, ch. 24 ''The Fate of the Santa Clara Paiutes, 1871'''
+  author: Todd M. Compton
+  date: '2013-01-01'
+  locator: https://corpus.restorationcommons.org/b/compton-a-frontier-life-jacob-hamblin-explorer-c4da/378 (pp. 377-379)
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Misc/Compton, A Frontier Life: Jacob Hamblin: Explorer and Indian Missionary.pdf from_page=377 to_page=379'
+  quote: decrease in the Paiute quality of life, including intense hunger and near starvation, would have made the Indians increasingly susceptible to disease.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/compton-a-frontier-life-jacob-hamblin-explorer-c4da/378
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Santa Clara Paiute epidemic (probably smallpox, early 1870s); 'White disease, white appropriation of water resources, and overgrazing from the whites' cattle' reduced the homeland (p.379); Ute
+    chief 1858 said Mormons' 'bad medicine' was killing Indians (p.378). Compton's reading is explicit that Mormons did not intentionally cause the epidemics. His Diamond 95% figure is continental and not
+    Utah-specific; do not use for Utah.
+  found_by: capy-historian
+  claims:
+  - 4
+- id: reeve-2015-different-color
+  type: scholarly
+  title: 'Religion of a Different Color: Race and the Mormon Struggle for Whiteness'
+  author: W. Paul Reeve
+  date: '2015-01-01'
+  locator: https://corpus.restorationcommons.org/b/reeve-religion-of-a-different-color-race-and-afc7/94
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Race/Reeve, Religion of a Different Color: Race and the Mormon Struggle for Whiteness.pdf from_page=93 to_page=95'
+  quote: At least seventy whites and twice as many Native Americans died in that struggle, making it the worst Mormon-Indian conflict in Utah history.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/reeve-religion-of-a-different-color-race-and-afc7/94
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Corroborates Turner''s Black Hawk War toll. Walker War: ''raiding, killing, and atrocities were committed by Indians and Mormons alike.'''
+  found_by: capy-historian
+  claims:
+  - 4
+- id: compton-1980-measles-manti
+  type: scholarly
+  title: Brigham Young's Indian policy, Manti colony (BYU Studies 18:3, pp. 170-172 of the PDF)
+  author: unattributed in the pages I read (author and title not shown)
+  date: unknown
+  locator: https://corpus.restorationcommons.org/b/18-3-e071/171
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/Articles/BYU Studies/18-3.pdf from_page=170 to_page=172
+  quote: null
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/18-3-e071/171
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Winter 1849-50 at Manti: ''an epidemic of measles which caused deaths among both peoples''; settlers shared medicine and food. Also confirms the Old Bishop killing at Fort Utah (p.172). The id
+    says compton by mistake; the author is NOT Compton and is unidentified. Use only after identifying the author.'
+  found_by: capy-historian
+  claims:
+  - 4
+- id: saints-v2-2020-notes
+  type: official
+  title: 'Saints, vol. 2: No Unhallowed Hand (1846-1893), ch. 13 notes'
+  author: The Church of Jesus Christ of Latter-day Saints, Church History Department
+  date: '2020-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-no-unhallowed-hand-1846-1893-0c1a/718
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/General History/Saints/2 - No Unhallowed Hand (1846-1893).pdf from_page=716 to_page=719
+  quote: null
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/2-no-unhallowed-hand-1846-1893-0c1a/718
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: I read only endnotes, which are a bibliography of the Walker War and Fort Utah literature (Christy 'Open Hand and Mailed Fist', 'Walker War'; Peterson Utah's Black Hawk War; Farmer On Zion's Mount;
+    Wimmer 'Walker War Reconsidered'; Gottfredson). They are leads for the Church narrative, not a finding. I did not read the chapter text.
+  found_by: capy-historian
+  claims:
+  - 4
+- id: church-history-topics-american-indians
+  type: official
+  title: American Indians (Church History Topics)
+  author: Church History Department
+  date: unknown
+  locator: https://www.churchofjesuschrist.org/study/history/topics/american-indians?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch url=https://www.churchofjesuschrist.org/study/history/topics/american-indians?lang=eng
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/history/topics/american-indians?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: WebFetch returns only a model-summarized answer and refused a 40-word verbatim passage. The only phrase it returned verbatim is 'disease and starvation severely reduced Indigenous populations'
+    (Intermountain West), plus 'had vastly different assumptions about the use of land and property and did not understand each other well.' Summary says the page does not mention Fort Utah. Re-verify the
+    wording in a real browser before any on-screen quote.
+  found_by: capy-historian
+  claims:
+  - 4

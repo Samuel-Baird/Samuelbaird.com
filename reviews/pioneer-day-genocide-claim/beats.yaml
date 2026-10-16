@@ -1,0 +1,92 @@
+version: 1
+slug: pioneer-day-genocide-claim
+title: "Did Brigham Young sign an extermination order, and was 90% of Utah's Native population destroyed?"
+caption: "A Pioneer Day reel says Brigham Young signed an extermination order and 90% of Utah's Native people were destroyed. What do the 1850 orders, the historians and the population numbers actually say?"
+hook: "The orders that matter in Utah were issued in 1850, and the 90% figure is sourced for one people, not all of them."
+summary: "A Pioneer Day reel says Brigham Young signed an extermination order, that settlers committed genocide, and that 90% of the Indigenous population was destroyed mostly by starvation, massacres, violence, relocation and disease. We look at the 1850 Fort Utah orders, how Young's own biographer describes his role, where the 90% figure is and is not sourced, and what the sources say about causes of death. The reel's lines about Lamanites and the label cult are not addressed."
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+voice: { name: am_michael, speed: 1.5 }
+sensitive: true
+music: null
+tags: [ldshistory]
+exemplars: [peterson-breaking-the-rules, mcclellan-delivery]
+
+beats:
+  # Claims 3 and 4: genocide, extermination order, 90%.
+  - id: c01
+    kind: clip
+    start: 22.4
+    end: 38.6
+    speed: 1.0
+    speaker: "Source video"
+    pose: concerned
+
+  - id: n01
+    kind: narration
+    text: "Brigham Young directed the 1850 campaign against the Timpanogos Utes at Fort Utah, and the orders issued under him said to exterminate, if necessary, those who would not make peace. No order signed by Young himself has turned up. The orders that did exist are enough to answer on their own."
+    function: serious
+    pose: solemn
+    sources: [coates-1978-indian-policies]
+    opinion: false
+
+  - id: q01
+    kind: card
+    text: "This is historian Lawrence Coates on the 1850 orders."
+    pose: reading
+    card: { quote: "legion leaders were ordered to stop the depredations and if necessary to exterminate those who do not separate themselves from their hostile clans and sue for peace", attribution: "Lawrence G. Coates, BYU Studies, 1978", source: coates-1978-indian-policies }
+    sources: [coates-1978-indian-policies]
+
+  - id: n02
+    kind: narration
+    text: "Whether to call it genocide is a question about a word, and the sources I opened do not use it. Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record."
+    function: explain
+    pose: concerned
+    sources: [turner-2012-young-pioneer-prophet, turner-2012-pioneer-prophet]
+    opinion: false
+
+  - id: q02
+    kind: card
+    text: "This is Young's biographer, John Turner."
+    pose: quote
+    card: { quote: "Young presided over the military and demographic conquest and diminution of Utah's Indians.", attribution: "John G. Turner, Brigham Young: Pioneer Prophet, 2012", source: turner-2012-pioneer-prophet }
+    sources: [turner-2012-pioneer-prophet]
+
+  # The 90% claim is in c01; answer it before the causes clip.
+  - id: n04
+    kind: narration
+    text: "The ninety percent figure is sourced for the Southern Paiute, who lost about ninety percent in under twenty-five years, according to the National Park Service and to Tom and Holt. I found no source I could verify for the same figure across all Native people in Utah. Estimates of the population when the settlers arrived run from twelve thousand to thirty-five thousand."
+    function: uncertainty
+    pose: thoughtful
+    sources: [nps-survival-southern-paiute, tom-holt-paiute-ch4, walker-1989-byustudies]
+    opinion: false
+
+  - id: c02
+    kind: clip
+    start: 39.1
+    end: 46.4
+    speed: 1.0
+    speaker: "Source video"
+    pose: concerned
+
+  - id: n03
+    kind: narration
+    text: "The causes she lists are all documented. Settlement took Native food, water and land. Turner records executions at Circleville with no evidence of an investigation, and the Bear River massacre in 1863, by the U.S. Army with Mormon guides. No source I found gives a percentage by cause. Disease and starvation caused by settlement cannot be separated, and the sources link them. None of that makes it smaller."
+    function: explain
+    pose: teaching
+    sources: [turner-2012-pioneer-prophet, reeve-parshall-2010-encyclopedia, compton-2013-hamblin]
+    opinion: false
+
+  - id: q03
+    kind: card
+    text: "This is historian Todd Compton on the Santa Clara Paiutes."
+    pose: reading
+    card: { quote: "decrease in the Paiute quality of life, including intense hunger and near starvation, would have made the Indians increasingly susceptible to disease.", attribution: "Todd M. Compton, A Frontier Life: Jacob Hamblin, 2013", source: compton-2013-hamblin }
+    sources: [compton-2013-hamblin]
+
+  - id: n99
+    kind: narration
+    text: "The record is serious enough that it needs no number it cannot source. God bless."
+    function: closing
+    pose: prayerful
+    sources: [walker-1989-byustudies]
+    opinion: true
