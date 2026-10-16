@@ -1,0 +1,695 @@
+sources:
+- id: REPLACE-source-id
+  type: primary
+  title: 'REPLACE: full title'
+  author: 'REPLACE: author/speaker, or null for an institutional document'
+  date: 'REPLACE: YYYY or YYYY-MM-DD'
+  locator: 'REPLACE: url, Pulpit cite URL, GSA path+page, or dataset slug'
+  accessed: 'REPLACE: YYYY-MM-DD'
+  inspected: false
+  inspected_via: 'REPLACE: e.g. mcp Pulpit read_paragraphs, GSA read_pages, direct url fetch'
+  quote: null
+  verification:
+    tool: 'REPLACE: e.g. verify_quote, cite_page'
+    verdict: 'REPLACE: verify_quote returns exact | word-forms | not-verbatim | not-found; GSA context-checks
+      are page-read; a plain web fetch is direct-read'
+    link: 'REPLACE: url the tool returned'
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'REPLACE: anything else worth recording'
+  found_by: null
+  claims: []
+- id: dialogue-34-1-masonry-timeline
+  type: scholarly
+  title: Dialogue 34:1 (V34N0102), p.106 (Nauvoo Masonic timeline)
+  author: 'Dialogue: A Journal of Mormon Thought'
+  date: '2001-01-01'
+  locator: https://corpus.restorationcommons.org/b/v34n0102-bf2d/106
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/Articles/Dialogue: A
+    Journal of Mormon Thought/V34N0102.pdf pages 106-106'
+  quote: Joseph was formally initiated as an entered apprentice Mason on 15 March 1842 and received the
+    fellow craft and master degrees the next day.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/v34n0102-bf2d/106
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Same page: petitioned Nauvoo Lodge 30 Dec 1841; favorable report 3 Feb 1842. Author/year not
+    read from the page; confirm before on-screen use (cite volume 34 only).'
+  found_by: capy-historian
+  claims:
+  - 1
+- id: method-infinite-2022-joseph-sr
+  type: scholarly
+  title: 'Method Infinite: Freemasonry and the Mormon Restoration, pp.67-68, 95'
+  author: Bruno, Swick III, Literski
+  date: '2022-01-01'
+  locator: https://corpus.restorationcommons.org/b/bruno-joe-steve-swick-iii-and-nicholas-s-7f36/68
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Temples/Bruno...
+    Method Infinite...pdf pages 67-68 and 95-96
+  quote: null
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/bruno-joe-steve-swick-iii-and-nicholas-s-7f36/68
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Ontario Lodge No. 23 records a ''Joseph Smith'' initiated 26 Dec 1817, raised 7 May 1818; authors
+    note some historians question whether it is Joseph Sr. p.95: March 1826 ''glass looker'' charge; speculates
+    about Morgan-Smith links (hypothesis, flagged by the authors as circumstantial). Publication year
+    not read from page.'
+  found_by: capy-historian
+  claims:
+  - 1
+- id: madsen-sustaining-the-law-1826
+  type: scholarly
+  title: 'Sustaining the Law: Joseph Smith''s Legal Encounters, pp.96-100'
+  author: Gordon A. Madsen
+  date: '2014-01-01'
+  locator: https://corpus.restorationcommons.org/b/madsen-sustaining-the-law-joseph-smith-s-legal-70f6/96
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Joseph Smith/Madsen,
+    Sustaining the Law...pdf pages 96-100
+  quote: such practices were common enough that these activities would not, in and of themselves, have
+    been considered criminal; only "pretending" or deceptively using such practices could give rise, under
+    the statute, to a charge of disorderly conduct.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/madsen-sustaining-the-law-joseph-smith-s-legal-70f6/96
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Bills specify misdemeanor; single justice (Neely) likely; 'Glass Looker' likely identifier not
+    charge. Madsen is an LDS-affiliated legal historian arguing acquittal; Walters (cited therein) argued
+    special sessions/conviction. Publication year not read from page.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: vogel-edm4-benton-1831
+  type: primary
+  title: Abram W. Benton reminiscence, March 1831 (Early Mormon Documents vol. 4, pp.102-103)
+  author: Abram W. Benton, ed. Dan Vogel
+  date: '1831-03-01'
+  locator: https://corpus.restorationcommons.org/b/volume-4-62d5/102
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Old Documents/Early
+    Mormon Documents - Dan Vogel/Volume 4.pdf pages 102-103
+  quote: had him arrested as a disorderly person, tried and condemned before a court of Justice. But,
+    considering his youth, (he then being a minor) and thinking he might reform his conduct, he was designedly
+    allowed to escape.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/volume-4-62d5/103
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Hostile 1831 newspaper letter, earliest published account; text spans the page 102-103 break
+    (quote joins them). Editorial note 2 confirms Neely bill reads 'Joseph Smith / The Glass looker'.
+    Hostile source; 'con man' framing originates here and in Howe-era sources.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: quinn-magic-worldview-bainbridge
+  type: scholarly
+  title: Early Mormonism and the Magic Worldview, p.192
+  author: D. Michael Quinn
+  date: '1998-01-01'
+  locator: https://corpus.restorationcommons.org/b/quinn-early-mormonism-and-the-magic-worldview-f352/192
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Misc/Quinn,
+    Early Mormonism and the Magic Worldview.pdf page 192
+  quote: That claim was consistent with early New York statutes defining the criminal status (misdemeanor)
+    of "Disorderly Persons."
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/quinn-early-mormonism-and-the-magic-worldview-f352/192
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Stowell funded treasure quests 1825-26; nephew Peter Bridgeman filed complaint; Cowdery 1835
+    acknowledged the trial; Quinn says Mormon writers long denied it. Non-apologetic, critical-leaning
+    scholar; edition year not read from page.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: jsp-histories-1832-1844-note157
+  type: primary
+  title: Joseph Smith Papers, Histories 1832-1844, p.279 editorial note 157
+  author: Joseph Smith Papers
+  date: '2012-01-01'
+  locator: https://corpus.restorationcommons.org/b/1-joseph-smith-histories-1832-1844-6bea/279
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages path=Read/LDS History/Joseph Smith/Joseph
+    Smith Papers (JSP)/Histories/1 - Joseph Smith Histories, 1832-1844.pdf page 279
+  quote: Cowdery here referred to an 1826 hearing in South Bainbridge, New York, in which JS was charged
+    with disorderly conduct related to his activities as a "glass looker."
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/1-joseph-smith-histories-1832-1844-6bea/279
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Best neutral editorial wording for what the charge was. Publication year not read from page.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: lds-essay-book-of-mormon-translation
+  type: official
+  title: 'Gospel Topics essay: Book of Mormon Translation'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2013-12-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/book-of-mormon-translation?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/book-of-mormon-translation?lang=eng
+  quote: As a young man during the 1820s, Joseph Smith, like others in his day, used a seer stone to look
+    for lost objects and buried treasure.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/book-of-mormon-translation?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Quote returned by WebFetch summarizer model (may be abbreviated); re-check the verbatim sentence
+    directly before on-screen use. Date approximate, not read from page.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: hales-2013-jsp-vol2-ch33
+  type: scholarly
+  title: 'Joseph Smith''s Polygamy, Vol. 2: History, Ch. 33 ''A Review of Joseph Smith''s Wives'''
+  author: Brian C. Hales
+  date: '2013-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-history-c025/145
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e...__read_pages(path='Read/LDS History/Polygamy/Joseph Smith's Polygamy
+    - Brian Hales/2 - History.pdf', from_page=144, to_page=154)
+  quote: I have found evidence and/or reports that the number of women sealed to the Prophet during his
+    lifetime could have been as few as twenty-nine and as many as fifty-two. Ultimately, I have settled
+    on thirty-five as the most reliable number.
+  verification:
+    tool: cite_page
+    verdict: direct-read
+    link: https://corpus.restorationcommons.org/b/2-history-c025/145
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Hales is a faithful-LDS scholar but this is a scholarly monograph with complete lists. Table
+    33.2 (p.152) gives each compiler''s count: Brodie 46 after duplicates (48 raw), Quinn 46, Cook 37,
+    Bergera 36, Ivins 52, Bachman 31, Marquardt 26, Brown 42, G.D. Smith 33+ (adds Emma). Compton 33 plus
+    eight ''possible wives'' (p.153).'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: hales-2013-jsp-vol2-categories
+  type: scholarly
+  title: 'Joseph Smith''s Polygamy, Vol. 2, Ch. 33: time / eternity-only / time-and-eternity categories'
+  author: Brian C. Hales
+  date: '2013-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-history-c025/154
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e...__read_pages(same path, 154)
+  quote: 'three for “time” only: Fanny Alger, Agnes M. Coolbrith, and Delcena Johnson (with Martha McBride
+    as possible); thirteen for “eternity only”'
+  verification:
+    tool: cite_page
+    verdict: direct-read
+    link: https://corpus.restorationcommons.org/b/2-history-c025/154
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Hales''s own classification, flagged by him as interpretive. Also: ''I found no credible evidence
+    of sexual polyandry in these or any cases.'' Lucinda Pendleton: Hales has ''doubts about including''
+    her (p.156). Contrast Compton below.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: hales-2013-jsp-vol2-ages
+  type: scholarly
+  title: 'Joseph Smith''s Polygamy, Vol. 2, Ch. 33: sealings to young wives'
+  author: Brian C. Hales
+  date: '2013-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-history-c025/157
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e...__read_pages(same path, 155-160)
+  quote: Compton’s list of thirty-three wives of Joseph Smith contains the names of ten women under age
+    twenty.
+  verification:
+    tool: cite_page
+    verdict: direct-read
+    link: https://corpus.restorationcommons.org/b/2-history-c025/157
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Same page: three were 19 (Emily Partridge, Maria Lawrence, Malissa Lott), three were 17 (Sarah
+    Ann Whitney, Sarah Lawrence, Lucy Walker), Flora Woodworth 16, Helen Mar Kimball 14, Nancy Winchester
+    probably 14 but maybe 15, Fanny Alger 16 to 19. p.156: two aged 14. p.160: Compton on Helen Mar: ''the
+    evidence for Helen Mar is entirely ambiguous in my view.'' Hales''s context arguments (era norms)
+    are apologetic framing, do not use as rebuttal on a sensitive topic; the ages themselves are the fact.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: compton-2015-bruno-secret-covenants-ch8
+  type: scholarly
+  title: Were There 'Eternity-Only' Plural Marriages in Nauvoo? (in Bruno, Secret Covenants)
+  author: Todd Compton
+  date: '2019-01-01'
+  locator: https://corpus.restorationcommons.org/b/bruno-secret-covenants-new-insights-on-early-fcb7/161
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e...__read_pages(path=''Read/LDS History/Polygamy/Bruno, Secret Covenants:
+    New Insights on Early Mormon Polygamy.pdf'', 160-162)'
+  quote: he married some women at the same time they were married to other men—eleven out of thirty-three
+    plural wives, by my count.
+  verification:
+    tool: cite_page
+    verdict: direct-read
+    link: https://corpus.restorationcommons.org/b/bruno-secret-covenants-new-insights-on-early-fcb7/161
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Compton: ''I have not found convincing evidence to support this theory [eternity-only]''. Publication
+    year/date of the collection not verified (date field is a placeholder); confirm before on-screen citation.
+    Compton also traces the ''eternity-only'' idea to RLDS and to Widtsoe (1946), p.162.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: church-gospel-topics-2014-plural-marriage-kirtland-nauvoo
+  type: official
+  title: Plural Marriage in Kirtland and Nauvoo (Gospel Topics essay)
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2014-10-22'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/plural-marriage-in-kirtland-and-nauvoo?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch (two calls); output is a small-model summary with short quotes, not a raw page
+  quote: Careful estimates put the number between 30 and 40.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/plural-marriage-in-kirtland-and-nauvoo?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'WebFetch returned: ''The exact number of women to whom he was sealed in his lifetime is unknown
+    because the evidence is fragmentary.''; footnote ''Estimates of the number of these sealings range
+    from 12 to 14.'' (already-married women); Helen Mar Kimball ''was sealed to Joseph several months
+    before her 15th birthday.'' All are summarizer-relayed fragments, under 20 contiguous verbatim words
+    each as returned; re-read the raw page (or a GSA copy) before any on-screen quote. Publication date
+    2014 is from memory, not verified.'
+  found_by: capy-historian
+  claims:
+  - 3
+- id: harper-2012-first-vision-guide-p75
+  type: scholarly
+  title: 'Joseph Smith''s First Vision: A Guide to the Historical Accounts'
+  author: Steven C. Harper
+  date: '2012-01-01'
+  locator: https://corpus.restorationcommons.org/b/harper-joseph-smith-s-first-vision-a-guide-to-5dfe/75
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(Harper, from_page=74, to_page=76)
+  quote: In 1832 he wrote, "the <Lord> opened the heavens upon me and I saw the Lord." His 1838 account
+    says clearly, "I saw two personages" and the 1842 account adds, "two glorious personages."
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/harper-joseph-smith-s-first-vision-a-guide-to-5dfe/75
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Publication date of 2012 not verified by tool; treat as approximate. Also p.76 says 1832 'seems
+    plausible' Joseph used 'Lord' for two beings (interpretation).
+  found_by: capy-historian
+  claims:
+  - 4
+- id: harper-2012-first-vision-guide-p91
+  type: scholarly
+  title: 'Joseph Smith''s First Vision: A Guide to the Historical Accounts'
+  author: Steven C. Harper
+  date: '2012-01-01'
+  locator: https://corpus.restorationcommons.org/b/harper-joseph-smith-s-first-vision-a-guide-to-5dfe/91
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(Harper, from_page=90, to_page=92)
+  quote: It is a historical fact that Joseph's accounts of his vision became more specific over time and
+    that they emphasized different dimensions of his experience.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/harper-joseph-smith-s-first-vision-a-guide-to-5dfe/91
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Same page also: 1835 ''many angels''; 1832 age 16 inserted by scribe Williams vs ''about 14''
+    elsewhere. Harper calls the textual facts ''not disputed by well-informed individuals''; the meaning
+    is contested.'
+  found_by: capy-historian
+  claims:
+  - 4
+- id: gospel-topics-first-vision-accounts
+  type: official
+  title: First Vision Accounts (Gospel Topics Essay)
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/first-vision-accounts?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch(https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/first-vision-accounts?lang=eng)
+  quote: The various accounts of the First Vision tell a consistent story, though naturally they differ
+    in emphasis and detail.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/first-vision-accounts?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: WebFetch returns a model-processed summary; the quoted sentence was returned in quotation marks
+    but full-page verbatim check not done. Re-verify before on-screen use. Date field is the access date,
+    not the publication date.
+  found_by: capy-historian
+  claims:
+  - 4
+- id: thompson-ncbc-john-p76
+  type: scholarly
+  title: 'John (New Cambridge Bible Commentary), A Closer Look: Jesus, the Appearing Deity of the Scriptures'
+  author: NCBC volume author (not confirmed by tool in the page text)
+  date: unknown
+  locator: https://corpus.restorationcommons.org/b/john-a4e5/76
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(NCBC John, from_page=76, to_page=76)
+  quote: Philo argues that the theophanies in the Bible were not visions of God but revelations by God's
+    Logos or a Power of God.
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/john-a4e5/76
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Same page quotes Justin Martyr, Dial. 127 (secondhand; the Dialogue itself not opened). It also
+    asserts 'no one... ever saw God' as John's view, which is the critic's reading from a Christian scholar.
+    This is a useful counter.
+  found_by: capy-historian
+  claims:
+  - 4
+- id: ntl-john-2015-p179
+  type: scholarly
+  title: John (New Testament Library), on John 5:37
+  author: NTL John commentary (author not confirmed on the page read)
+  date: '2015-09-01'
+  locator: https://corpus.restorationcommons.org/b/john-1d71/179
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(NTL John, from_page=179, to_page=179)
+  quote: 'There are numerous biblical descriptions of various visual encounters with God: Jacob saw God
+    face-to-face; Moses saw a burning bush and God, passing by in his glory; Isaiah had a vision in the
+    temple; Ezekiel saw a heavenly chariot; Daniel spoke of seeing the Ancient of Days.'
+  verification:
+    tool: null
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/john-1d71/179
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: The same page says such visions are radically different from seeing a fellow creature and that
+    in John no other visions of God are available apart from Jesus (supports the critic's reading of John's
+    theology). Date inferred from the page footer.
+  found_by: capy-historian
+  claims:
+  - 4
+- id: nrsvue-exod-24-33-2026
+  type: scripture
+  title: Exodus 24:9-11; 33:11, 33:18-23 (NRSVue)
+  author: National Council of Churches
+  date: '2021-01-01'
+  locator: https://www.biblegateway.com/passage/?search=Exodus+24%3A10-11&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Exodus+24%3A10-11&version=NRSVUE
+    (also ...Exodus+33%3A20-23...)
+  quote: and they saw the God of Israel. ... they beheld God, and they ate and drank.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Exodus+24%3A10-11&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Exod 33:20 NRSVue: ''you cannot see my face, for no one shall see me and live.'' 33:23: ''then
+    I will take away my hand, and you shall see my back, but my face shall not be seen.'' 33:11: ''Thus
+    the Lord used to speak to Moses face to face, as one speaks to a friend.'' Exod 24:11 has a Hebrew
+    footnote reading ''He''. WebFetch returns short excerpts only; full-verse wording not obtained.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: nrsvue-genesis-theophanies-2026
+  type: scripture
+  title: Genesis 32:30; 12:7; 17:1; 18:1 (NRSVue)
+  author: National Council of Churches
+  date: '2021-01-01'
+  locator: https://www.biblegateway.com/passage/?search=Genesis+32%3A30%2C+Genesis+12%3A7%2C+Genesis+17%3A1%2C+Genesis+18%3A1&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Genesis+32%3A30%2C+Genesis+12%3A7%2C+Genesis+17%3A1%2C+Genesis+18%3A1&version=NRSVUE
+  quote: For I have seen God face to face, yet my life is preserved.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Genesis+32%3A30%2C+Genesis+12%3A7%2C+Genesis+17%3A1%2C+Genesis+18%3A1&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 12:7 'the Lord appeared to Abram'; 17:1 'the Lord appeared to Abram and said to him, I am God
+    Almighty'; 18:1 'The Lord appeared to Abraham by the oaks of Mamre'. These say 'appeared', not 'saw';
+    Gen 32:30 (Jacob) is the explicit 'seen God'. Abraham is therefore an 'appeared to' case; do not overstate.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: nrsvue-visions-isa-ezek-dan-2026
+  type: scripture
+  title: Isaiah 6:1, 6:5; Ezekiel 1:26, 1:28; Daniel 7:9 (NRSVue)
+  author: National Council of Churches
+  date: '2021-01-01'
+  locator: https://www.biblegateway.com/passage/?search=Isaiah+6%3A5-7&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch Biblegateway NRSVUE for Isaiah 6:1, Isaiah 6:5-7, Ezekiel 1:26, Ezekiel 1:28,
+    Daniel 7:9 (five separate fetches)
+  quote: yet my eyes have seen the King, the Lord of hosts!
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Isaiah+6%3A5-7&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Isa 6:1 'I saw the Lord sitting on a throne, high and lofty'. Ezek 1:26 'something that seemed
+    like a human form'; 1:28 'the appearance of the likeness of the glory of the Lord'. Dan 7:9 'an Ancient
+    One took his throne'. Ezekiel and Daniel use hedged 'likeness' language, which supports the Reformed
+    accommodation reading; Isaiah is direct.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: nrsvue-num12-acts7-john-2026
+  type: scripture
+  title: Numbers 12:6-8; Acts 7:55-56; John 1:18; 1 Timothy 6:16; 1 John 4:12 (NRSVue)
+  author: National Council of Churches
+  date: '2021-01-01'
+  locator: https://www.biblegateway.com/passage/?search=Acts+7%3A55-56%2C+Numbers+12%3A6-8%2C+John+1%3A18%2C+1+Timothy+6%3A16%2C+1+John+4%3A12&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Acts+7%3A55-56%2C+Numbers+12%3A6-8%2C+John+1%3A18%2C+1+Timothy+6%3A16%2C+1+John+4%3A12&version=NRSVUE
+  quote: With him I speak face to face-clearly, not in riddles, and he beholds the form of the Lord.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Acts+7%3A55-56%2C+Numbers+12%3A6-8%2C+John+1%3A18%2C+1+Timothy+6%3A16%2C+1+John+4%3A12&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Acts 7:55 'he gazed into heaven and saw the glory of God and Jesus standing at the right hand
+    of God.' John 1:18 'No one has ever seen God. It is the only Son, himself God, who is close to the
+    Father's heart, who has made him known.' 1 Tim 6:16 '...whom no one has ever seen or can see'. 1 John
+    4:12 'No one has ever seen God'. Fetch tool paraphrased/split some text and flagged quote limits;
+    re-check exact wording against a printed NRSVue before any on-screen use.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: nrsvue-revelation-4-22-2026
+  type: scripture
+  title: Revelation 4:2-3, 4:8; 22:3-4 (NRSVue)
+  author: National Council of Churches
+  date: '2021-01-01'
+  locator: https://www.biblegateway.com/passage/?search=Revelation+4%3A8&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch Biblegateway NRSVUE for Revelation 4 (summary), Revelation 4:8, Revelation 4:2-3,
+    Revelation 22:3-4
+  quote: Holy, holy, holy, the Lord God the Almighty, who was and is and is to come.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Revelation+4%3A8&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 4:2 'there in heaven stood a throne, with one seated on the throne!' 4:3 'the one seated there
+    looks like jasper and carnelian'. 22:4 'they will see his face'. The 4:8 'holy' line is the creatures'
+    recorded speech in ch. 4; the text says nothing of them 'seeing' God as a distinct privilege. Verses
+    4:9-11 are from a summary only.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: beasley-murray-wbc-john-1987
+  type: scholarly
+  title: John (Word Biblical Commentary), comment on 1:18
+  author: George R. Beasley-Murray
+  date: '1987-01-01'
+  locator: https://corpus.restorationcommons.org/b/john-bb31/279
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Bible/Commentaries/Word
+    Biblical Commentary (WBC, 62 vols)/New Testament/John.pdf', from_page=279, to_page=279)
+  quote: claimants to open visions and revelations from God must be judged in the light of such facts.
+  verification:
+    tool: read_pages
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/john-bb31/279
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Counter-evidence. Treats John 1:18 as having Moses principally in view and as a standard for
+    judging visionary claims. Author and date are as I recall (GSA page text does not show them); verify
+    bibliographic data before on-screen use. The page cites 'Exod 34:18-20' for the Moses passage, which
+    is the commentary's own reference; the passage verified above is Exod 33:20-23.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: accs-john-1-10-vision-of-god
+  type: scholarly
+  title: 'Ancient Christian Commentary on Scripture: John 1-10, on John 1:18 (Pseudo-Dionysius, Theodoret,
+    Eusebius, Augustine)'
+  author: Joel C. Elowsky, ed.
+  date: '2006-01-01'
+  locator: https://corpus.restorationcommons.org/b/john-1-10-f1eb/116
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Ancient Christianity/Ancient
+    Christian Commentary on Scripture/New Testament/John 1-10.pdf', from_page=116, to_page=116)
+  quote: we are saying that they have seen, not the divine nature but certain visions adapted to their
+    capability.
+  verification:
+    tool: read_pages
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/john-1-10-f1eb/116
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Theodoret of Cyr, quoted in ACCS (the quote in my source line is a verbatim clause from the page,
+    which reads 'we are saying that they have seen, not the divine nature but certain visions adapted
+    to their capability'). Also Pseudo-Dionysius on theophany as 'sacred visions fashioned to suit the
+    beholders' and Eusebius that the Word was seen by the fathers. This is the historic essence/manifestation
+    harmonisation. Editor and year are from memory of the series; verify.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: carson-niv-exodus-24-33
+  type: scholarly
+  title: 'NIV Application Commentary: Exodus (on 24:1-18)'
+  author: Peter Enns
+  date: '2000-01-01'
+  locator: https://corpus.restorationcommons.org/b/exodus-319a/504
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Bible/Commentaries/NIV
+    Application Commentary (NIVAC, 8 vols)/Exodus.pdf', from_page=504, to_page=504)
+  quote: As the Old Testament stresses, even Moses was limited in what he was permitted to see.
+  verification:
+    tool: read_pages
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/exodus-319a/504
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Evangelical commentary that accepts the OT 'theophanies' (Exod 24, 33; Isa 6) as real encounters
+    while reading Moses as limited and Christ as having the unique vantage (John 1:18, 6:46). Author/year
+    not printed on the page; verify. The page text says Isaiah 6 is 'not a face-to-face encounter'. Source
+    id is a misnomer (not Carson); keep or rename on merge.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
+- id: calvin-institutes-1-11
+  type: primary
+  title: Institutes of the Christian Religion, on divine appearances in human form and accommodation
+  author: John Calvin
+  date: '1559-01-01'
+  locator: https://www.ccel.org/ccel/calvin/institutes.iii.xii.html
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.ccel.org/ccel/calvin/institutes.iii.xii.html
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.ccel.org/ccel/calvin/institutes.iii.xii.html
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: WebFetch's summarising model reported Calvin saying God 'sometimes appeared in the form of a
+    man' as an anticipation of Christ, that Moses was refused a sight of God's face, and that Scripture
+    accommodates to human capacity. That is a tool summary, not a verified verbatim excerpt, so quote
+    is null and the section/chapter number was not confirmed. Do not use on screen without a verbatim
+    re-fetch.
+  found_by: capy-scripture-theologian
+  claims:
+  - 4
