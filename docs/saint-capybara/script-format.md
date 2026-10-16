@@ -606,13 +606,16 @@ critically, **link the branch, not the commit SHA** (same section) so the
 user can actually use GitHub's edit button on it. Confirm the repo
 remote is still private first (`docs/saint-capybara/brand.md` §9-10).
 
-**If this project has a row in `D:\saint-capybara-videos-needing-reactions\
+**MUST — every time a script is written, its link goes in `D:\saint-capybara-videos-needing-reactions\
 need reaction.xlsx`** (see `docs/types/saint-capybara.md`'s "Source
-intake"), update that row's `script link` column with the same branch URL
-in this same step — don't leave it for later, and don't wait for the
-video to ship (that's the separate `Video Generated` column, updated at
-a later milestone). Only the first Gate A send for a project needs this;
-a re-send after user edits reuses the same branch URL.
+intake" item 3): fill that project's row `script link` column with the same
+branch URL in this same step (add a row if there isn't one), re-read the
+file to confirm it saved, and only then send Gate A. Don't leave it for
+later, and don't wait for the video to ship (that's the separate `Video
+Generated` column, updated at a later milestone). If the sheet is locked
+(open in Excel), tell the user rather than skipping. Only the first Gate A
+send for a project needs this; a re-send after user edits reuses the same
+branch URL.
 
 Before this, run `/capy-critique` (`docs/saint-capybara/research-protocol.md`
 sec 15; `review-checklist.md` Part A item 15). It fixes any BLOCKER finding
