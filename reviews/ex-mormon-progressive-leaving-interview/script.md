@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): When Someone Leaves the Church: What an Apostle Said  
 > **Post caption** (goes with the upload, not shown on screen): Her family stayed kind when she left. Here is what the Church's own apostle says about people in exactly that position.
 
-**Slug:** `ex-mormon-progressive-leaving-interview` | **Estimated runtime:** 59.1s (budget 60-180s) | **Source time:** 8.4s (14%)
+**Slug:** `ex-mormon-progressive-leaving-interview` | **Estimated runtime:** 61.8s (budget 60-180s) | **Source time:** 8.4s (14%)
 
 **Hook (title/description only, not shown on screen):** 'Kindness after leaving is the standard, not the exception.'
 **Exemplars modeled:** none
@@ -31,10 +31,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
-## 04. `n02` (narration, ~12.8s)
+## 04. `n02` (narration, ~15.5s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** solemn
-- **Narration:** This script will not argue with her reasons for leaving. She gave them, and they are hers. What it can do is say plainly that the response she describes, no one cut off and a family that stayed kind, is the response the Church's teaching asks for.
+- **Narration:** This script will not argue with her reasons for leaving. She gave them, and they are hers to give. What it can do is say plainly that the response she describes, no one cut off and a family that stayed kind, is the response the Church's teaching asks for, from a family and from a congregation alike.
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
