@@ -3,9 +3,9 @@
 > **Video title** (upload title, not shown on screen): Did Brigham Young sign an extermination order, and was 90% of Utah's Native population destroyed?  
 > **Post caption** (goes with the upload, not shown on screen): A Pioneer Day reel says Brigham Young signed an extermination order and 90% of Utah's Native people were destroyed. What do the 1850 orders, the historians and the population numbers actually say?
 
-**Slug:** `pioneer-day-genocide-claim` | **Estimated runtime:** 97.7s (budget 60-180s) | **Source time:** 23.5s (24%)
+**Slug:** `pioneer-day-genocide-claim` | **Estimated runtime:** 124.1s (budget 60-180s) | **Source time:** 23.5s (19%)
 
-**Hook (title/description only, not shown on screen):** 'The orders that matter in Utah were issued in 1850, and the 90% figure is sourced for one people, not all of them.'
+**Hook (title/description only, not shown on screen):** 'The orders that matter in Utah were issued in 1850, and the 90% figure spans fifty years, not a couple of decades.'
 **Exemplars modeled:** peterson-breaking-the-rules, mcclellan-delivery
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
@@ -31,7 +31,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** coates-1978-indian-policies
 - **Notes:** 
 
-## 04. `n02` (narration, ~13.9s)
+## 04. `n02` (narration, ~11.2s)
 - **Original Video Transcript:** Like any group of white people who believes they're divinely chosen, they commit a genocide. Brigham Young signed an extermination order, and within a couple decades of the Mormons arriving to Utah, 90% of the indigenous population was destroyed.
 - **Pose:** concerned
 - **Narration:** Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record, but neither indicate he was setting out to commit genocide.
@@ -46,27 +46,55 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** turner-2012-pioneer-prophet
 - **Notes:** 
 
-## 06. `n04` (narration, ~16.9s)
+## 06. `n04` (narration, ~15.8s)
 - **Original Video Transcript:** Like any group of white people who believes they're divinely chosen, they commit a genocide. Brigham Young signed an extermination order, and within a couple decades of the Mormons arriving to Utah, 90% of the indigenous population was destroyed.
 - **Pose:** thoughtful
-- **Narration:** The ninety percent figure is sourced for the Southern Paiute, who lost about ninety percent in under twenty-five years, according to the National Park Service and to Tom and Holt. I found no source I could verify for the same figure across all Native people in Utah. Estimates of the population when the settlers arrived run from twelve thousand to thirty-five thousand.
-- **Sources:** nps-survival-southern-paiute, tom-holt-paiute-ch4, walker-1989-byustudies
+- **Narration:** The ninety percent figure has a basis, but not the timeline. A Utah Indian curriculum guide estimates twenty thousand Native people in Utah in eighteen forty-seven and about two thousand by nineteen hundred. That is fifty years, not a couple of decades. Historian Ronald Walker notes estimates of the starting population run from twelve thousand to thirty-five thousand.
+- **Sources:** utah-indian-curriculum-hsus, walker-1989-byustudies
 - **Notes:** 
 
-## 07. `c02` (clip, ~7.3s)
+## 07. `n07` (narration, ~7.1s)
+- **Original Video Transcript:** Like any group of white people who believes they're divinely chosen, they commit a genocide. Brigham Young signed an extermination order, and within a couple decades of the Mormons arriving to Utah, 90% of the indigenous population was destroyed.
+- **Pose:** concerned
+- **Narration:** A narrower figure is also sourced. The Park Service reports that the Southern Paiute lost about ninety percent in under twenty-five years, citing Tom and Holt.
+- **Sources:** nps-survival-southern-paiute, tom-holt-paiute-ch4
+- **Notes:** 
+
+## 08. `c02` (clip, ~7.3s)
 - **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
 - **Pose:** concerned
 - **Clip:** Source video, 39.1s–46.4s @ speed 1.0
 - **Notes:** 
 
-## 08. `n03` (narration, ~18.5s)
+## 09. `n05` (narration, ~14.7s)
 - **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
 - **Pose:** teaching
-- **Narration:** The causes he lists are all documented. Settlement took Native food, water and land. However, no source I found gives a percentage by cause. Disease is and starvation caused by settlement cannot be separated from violence.
+- **Narration:** Disease comes last in that list, and the sources I opened put it near the front. Historian Ronald Walker writes that measles, smallpox and syphilis wreaked terrible havoc. Thomas Alexander says many Native people had already died, principally from disease, before the pioneers arrived in eighteen forty-seven. Todd Compton documents epidemics among the Paiutes.
+- **Sources:** walker-1989-byustudies, alexander-utah-right-place, compton-hamblin-paiute-epidemics
+- **Notes:** 
+
+## 10. `n06` (narration, ~3.0s)
+- **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
+- **Pose:** thoughtful
+- **Narration:** The violence I could document in Utah runs in the hundreds.
+- **Sources:** reeve-2015-different-color, reeve-parshall-2010-encyclopedia
+- **Notes:** 
+
+## 11. `n08` (narration, ~14.5s)
+- **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
+- **Pose:** teaching
+- **Narration:** Elsewhere, epidemics alone caused collapses: the Park Service says an eighteen thirty-seven smallpox epidemic reduced the Mandan to as few as one hundred twenty-five people. So it is not unreasonable to conclude Utah looked like other regions, with disease as the driving factor. That is an inference, and it is not a percentage.
+- **Sources:** nps-mandan-smallpox-1837
+- **Notes:** 
+
+## 12. `n03` (narration, ~9.5s)
+- **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
+- **Pose:** teaching
+- **Narration:** The causes he lists are all documented. Settlement took Native food, water and land. However, no source I found gives a percentage by cause. Disease and starvation caused by settlement cannot be separated from violence.
 - **Sources:** turner-2012-pioneer-prophet, reeve-parshall-2010-encyclopedia, compton-2013-hamblin
 - **Notes:** 
 
-## 09. `q03` (card, ~2.7s)
+## 13. `q03` (card, ~2.7s)
 - **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
 - **Pose:** reading
 - **Narration:** This is historian Todd Compton on the Santa Clara Paiutes.
@@ -74,7 +102,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** compton-2013-hamblin
 - **Notes:** 
 
-## 10. `n99` (narration, ~4.1s)
+## 14. `n99` (narration, ~4.1s)
 - **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
 - **Pose:** prayerful
 - **Narration:** The record is serious enough that it needs no number it cannot source. God bless.

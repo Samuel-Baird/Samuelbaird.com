@@ -2,7 +2,7 @@ version: 1
 slug: pioneer-day-genocide-claim
 title: "Did Brigham Young sign an extermination order, and was 90% of Utah's Native population destroyed?"
 caption: "A Pioneer Day reel says Brigham Young signed an extermination order and 90% of Utah's Native people were destroyed. What do the 1850 orders, the historians and the population numbers actually say?"
-hook: "The orders that matter in Utah were issued in 1850, and the 90% figure is sourced for one people, not all of them."
+hook: "The orders that matter in Utah were issued in 1850, and the 90% figure spans fifty years, not a couple of decades."
 summary: "A Pioneer Day reel says Brigham Young signed an extermination order, that settlers committed genocide, and that 90% of the Indigenous population was destroyed mostly by starvation, massacres, violence, relocation and disease. We look at the 1850 Fort Utah orders, how Young's own biographer describes his role, where the 90% figure is and is not sourced, and what the sources say about causes of death. The reel's lines about Lamanites and the label cult are not addressed."
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
 voice: { name: am_michael, speed: 1.5 }
@@ -38,7 +38,7 @@ beats:
 
   - id: n02
     kind: narration
-    text: "Whether to call it genocide is a question about a word, and the sources I opened do not use it. Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record."
+    text: "Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record, but neither indicate he was setting out to commit genocide."
     function: explain
     pose: concerned
     sources: [turner-2012-young-pioneer-prophet, turner-2012-pioneer-prophet]
@@ -54,10 +54,18 @@ beats:
   # The 90% claim is in c01; answer it before the causes clip.
   - id: n04
     kind: narration
-    text: "The ninety percent figure is sourced for the Southern Paiute, who lost about ninety percent in under twenty-five years, according to the National Park Service and to Tom and Holt. I found no source I could verify for the same figure across all Native people in Utah. Estimates of the population when the settlers arrived run from twelve thousand to thirty-five thousand."
+    text: "The ninety percent figure has a basis, but not the timeline. A Utah Indian curriculum guide estimates twenty thousand Native people in Utah in eighteen forty-seven and about two thousand by nineteen hundred. That is fifty years, not a couple of decades. Historian Ronald Walker notes estimates of the starting population run from twelve thousand to thirty-five thousand."
     function: uncertainty
     pose: thoughtful
-    sources: [nps-survival-southern-paiute, tom-holt-paiute-ch4, walker-1989-byustudies]
+    sources: [utah-indian-curriculum-hsus, walker-1989-byustudies]
+    opinion: false
+
+  - id: n07
+    kind: narration
+    text: "A narrower figure is also sourced. The Park Service reports that the Southern Paiute lost about ninety percent in under twenty-five years, citing Tom and Holt."
+    function: explain
+    pose: concerned
+    sources: [nps-survival-southern-paiute, tom-holt-paiute-ch4]
     opinion: false
 
   - id: c02
@@ -68,9 +76,34 @@ beats:
     speaker: "Source video"
     pose: concerned
 
+  # Disease is last in the reel's list; the user's question was what share it makes up.
+  - id: n05
+    kind: narration
+    text: "Disease comes last in that list, and the sources I opened put it near the front. Historian Ronald Walker writes that measles, smallpox and syphilis wreaked terrible havoc. Thomas Alexander says many Native people had already died, principally from disease, before the pioneers arrived in eighteen forty-seven. Todd Compton documents epidemics among the Paiutes."
+    function: explain
+    pose: teaching
+    sources: [walker-1989-byustudies, alexander-utah-right-place, compton-hamblin-paiute-epidemics]
+    opinion: false
+
+  - id: n06
+    kind: narration
+    text: "The violence I could document in Utah runs in the hundreds."
+    function: uncertainty
+    pose: thoughtful
+    sources: [reeve-2015-different-color, reeve-parshall-2010-encyclopedia]
+    opinion: false
+
+  - id: n08
+    kind: narration
+    text: "Elsewhere, epidemics alone caused collapses: the Park Service says an eighteen thirty-seven smallpox epidemic reduced the Mandan to as few as one hundred twenty-five people. So it is not unreasonable to conclude Utah looked like other regions, with disease as the driving factor. That is an inference, and it is not a percentage."
+    function: explain
+    pose: teaching
+    sources: [nps-mandan-smallpox-1837]
+    opinion: false
+
   - id: n03
     kind: narration
-    text: "The causes she lists are all documented. Settlement took Native food, water and land. Turner records executions at Circleville with no evidence of an investigation, and the Bear River massacre in 1863, by the U.S. Army with Mormon guides. No source I found gives a percentage by cause. Disease and starvation caused by settlement cannot be separated, and the sources link them. None of that makes it smaller."
+    text: "The causes he lists are all documented. Settlement took Native food, water and land. However, no source I found gives a percentage by cause. Disease and starvation caused by settlement cannot be separated from violence."
     function: explain
     pose: teaching
     sources: [turner-2012-pioneer-prophet, reeve-parshall-2010-encyclopedia, compton-2013-hamblin]

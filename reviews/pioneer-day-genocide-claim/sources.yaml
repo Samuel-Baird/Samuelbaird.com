@@ -501,3 +501,47 @@ sources:
   found_by: capy-historian
   claims:
   - 4
+- id: utah-indian-curriculum-hsus
+  type: scholarly
+  title: We Shall Remain, Utah Indian Curriculum Guide (History of Utah's American Indians section, p. 26 of the guide)
+  author: Utah Indian Curriculum Project
+  date: unknown
+  locator: https://utahindians.org/Curriculum/pdf/HSUS.pdf (PDF page 6)
+  accessed: '2026-10-16'
+  inspected: true
+  inspected_via: WebFetch saved the PDF; text extracted locally with pypdf
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://utahindians.org/Curriculum/pdf/HSUS.pdf
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Teaching guide, not a census. Reads (PDF text, lightly cleaned): an estimated 20,000 Native Americans occupied Utah on the eve of the Mormon arrival; by 1900 about 2,000, a ninety percent decline over fifty years. Walker (1989) gives 12,000 to 35,000 for the starting population, so 20,000 is an estimate. 1900 census figure (2,623) was supplied by the user and not opened.'
+  found_by: capy-orchestrator
+  claims:
+  - 4
+- id: nps-mandan-smallpox-1837
+  type: official
+  title: Mandan (Knife River Indian Villages National Historic Site)
+  author: U.S. National Park Service
+  date: unknown
+  locator: https://www.nps.gov/knri/learn/historyculture/mandan.htm
+  accessed: '2026-10-16'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.nps.gov/knri/learn/historyculture/mandan.htm
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Returned verbatim: an 1837 smallpox epidemic reduced the Mandan to as few as 125 individuals. Used only as an example of an epidemic-driven collapse elsewhere. Not Utah evidence. California comparison (Yale: about 150,000 to 30,000, 1846-1873) opened at yalebooks.yale.edu but California is a case where Madley documents large-scale killing, so it is not used as a disease example. The user-supplied Cook 60% disease share and Madley 9,492 to 16,094 killings did not verify (ucpress 403; no search hit) and are not used.'
+  found_by: capy-orchestrator
+  claims:
+  - 4
