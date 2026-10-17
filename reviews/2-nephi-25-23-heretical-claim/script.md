@@ -26,7 +26,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `q02` (card, ~3.5s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** reading
-- **Narration:** Here is how Daniel McClellan reads the clause, in a 2020 scholarly article.
+- **Narration:** Here is how Daniel McClellan reads the clause, in a 2020 scholarly article. “The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.””
 - **Card quote:** “The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.”” — Daniel O. McClellan, 2 Nephi 25:23 in Literary and Rhetorical Context, 2020
 - **Sources:** mcclellan-2020-2nephi-25-23
 - **Notes:** 
@@ -34,14 +34,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n03` (narration, ~14.2s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** teaching
-- **Narration:** Church leaders have read the word after differently. President Packer said in nineteen ninety-five that grace comes only after all we can do. President Uchtdorf said in twenty fifteen that after does not equal because. Both are leaders speaking, not scripture. McClellan is a scholar offering a reading, not an official one.
+- **Narration:** President Uchtdorf said in twenty fifteen that after does not equal because. McClellan is a scholar offering a reading, not an official one.
 - **Sources:** packer-1995-brilliant-morning, uchtdorf-2015-gift-of-grace, mcclellan-2020-2nephi-25-23
 - **Notes:** 
 
 ## 05. `q03` (card, ~1.6s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** quote
-- **Narration:** This is President Uchtdorf, April 2015.
+- **Narration:** This is President Uchtdorf, April 2015. “We must understand that “after” does not equal “because.””
 - **Card quote:** “We must understand that “after” does not equal “because.”” — Dieter F. Uchtdorf, General Conference, April 2015
 - **Sources:** uchtdorf-2015-gift-of-grace
 - **Notes:** 
@@ -62,7 +62,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `q04` (card, ~2.2s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** quote
-- **Narration:** This is Second Nephi chapter thirty-one, verse nineteen.
+- **Narration:** This is Second Nephi chapter thirty-one, verse nineteen. “relying wholly upon the merits of him who is mighty to save.”
 - **Card quote:** “relying wholly upon the merits of him who is mighty to save.” — 2 Nephi 31:19
 - **Sources:** scripture-2ne-31-19
 - **Notes:** 
@@ -77,7 +77,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 10. `q05` (card, ~3.5s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** reading
-- **Narration:** Here is Philippians chapter two, in the New Revised Standard Version Updated Edition.
+- **Narration:** Here is Philippians chapter two, in the New Revised Standard Version Updated Edition. “work on your own salvation with fear and trembling, for it is God who is at work in you, enabling you both to will and to work for his good pleasure.”
 - **Card quote:** “work on your own salvation with fear and trembling, for it is God who is at work in you, enabling you both to will and to work for his good pleasure.” — Philippians 2:12–13 (NRSVue)
 - **Sources:** nrsvue-phil-2-12-13
 - **Notes:** 
