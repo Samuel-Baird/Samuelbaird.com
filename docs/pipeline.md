@@ -7,7 +7,10 @@ type-specific branch in `types/` for the parts that differ.
 ## 0. Intake
 
 1. Ask the user: video type (response / interview / solo-history /
-   **meme-edit** / **saint-capybara**), and for meme-edit which brand it's
+   **meme-edit** / **clips** / **saint-capybara**). **Clips** — several
+   short clips cut from one long-form video — has its own clip-selection
+   gate (numbered `script/clips.md`, built only after written approval)
+   instead of §1's `.docx`; see `docs/types/clips.md`. For meme-edit, ask which brand it's
    for (standard or saint-capybara — see `docs/types/meme-edit.md`, which
    has its own edit-plan gate instead of §1's `.docx`; §3-4's Resolve
    mechanics still apply). A saint-capybara video is one of three types —
@@ -27,8 +30,8 @@ type-specific branch in `types/` for the parts that differ.
    not be compromised by reusing anything from this repo's other identity
    (brand, phrasing, filenames — see that doc's anonymity warning before
    doing anything else on a saint-capybara project).
-2. Run `tools/new_project.ps1 <slug>` (add `-Type saint-capybara` or
-   `-Type meme-edit -Brand <brand>` for those types — each has its own
+2. Run `tools/new_project.ps1 <slug>` (add `-Type saint-capybara`,
+   `-Type meme-edit -Brand <brand>`, or `-Type clips -Kind <kind>` for those types — each has its own
    folder set, see its type doc) to create the project folder:
 
    ```

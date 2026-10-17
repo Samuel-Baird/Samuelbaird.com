@@ -13,6 +13,9 @@
     See docs/types/meme-edit.md for -Type meme-edit (base video + inserts +
     meme text + TTS voice lines); -Brand is required for it, since a meme
     can be made for either identity and the anonymity rules depend on it.
+    See docs/types/clips.md for -Type clips (several short clips cut from
+    one long-form video); -Kind solo|dialogue|interview|debate is optional
+    and pre-fills script\clips.yaml.
     -VideoType (saint-capybara only) picks one of the three Saint Capybara
     video types: short (default, 9:16, 60-180s), long-instagram (9:16, up
     to 20 min) or long-youtube (16:9, no length cap). Use a long type ONLY
@@ -32,14 +35,20 @@
     .\new_project.ps1 -Slug kinderhook-plates-explained -Type saint-capybara -VideoType long-youtube
 .EXAMPLE
     .\new_project.ps1 -Slug potluck-desserts -Type meme-edit -Brand standard
+.EXAMPLE
+    .\new_project.ps1 -Slug episode-42-clips -Type clips -Kind interview
 #>
 param(
     [Parameter(Mandatory = $true)]
     [ValidatePattern('^[a-z0-9]+(-[a-z0-9]+)*$')]
     [string]$Slug,
 
-    [ValidateSet('standard', 'saint-capybara', 'meme-edit')]
+    [ValidateSet('standard', 'saint-capybara', 'meme-edit', 'clips')]
     [string]$Type = 'standard',
+
+    # clips only: what the long-form source is (pre-fills clips.yaml).
+    [ValidateSet('solo', 'dialogue', 'interview', 'debate')]
+    [string]$Kind,
 
     # saint-capybara only: 'video' (a clip is reacted to) or 'article' (a
     # text source; the beats template uses `excerpt` beats instead of clips
@@ -68,11 +77,16 @@ if ($Type -eq 'meme-edit' -and -not $Brand) {
 if ($VideoType -ne 'short' -and $Type -ne 'saint-capybara') {
     throw "-VideoType $VideoType is only for -Type saint-capybara"
 }
+if ($Kind -and $Type -ne 'clips') {
+    throw "-Kind is only for -Type clips"
+}
 
 if ($Type -eq 'saint-capybara') {
     $subfolders = @('source', 'transcripts', 'research', 'images', 'script', 'audio', 'captions', 'frames', 'exports')
 } elseif ($Type -eq 'meme-edit') {
     $subfolders = @('source', 'transcripts', 'inserts', 'overlays', 'audio', 'script', 'exports')
+} elseif ($Type -eq 'clips') {
+    $subfolders = @('source', 'transcripts', 'script', 'captions', 'exports')
 } else {
     $subfolders = @('source', 'images', 'transcripts', 'script', 'cards', 'exports')
 }
@@ -181,6 +195,22 @@ if ($Type -eq 'saint-capybara') {
     } else {
         Write-Host "  Standard brand: no Saint Capybara assets (sprites, pixel fonts, am_michael voice)."
     }
+} elseif ($Type -eq 'clips') {
+    $repoRoot = Split-Path -Parent $PSScriptRoot
+    $planDest = Join-Path $projectPath 'script\clips.yaml'
+    if (-not (Test-Path $planDest)) {
+        $plan = Get-Content (Join-Path $repoRoot 'assets\clips\clips.yaml') -Raw
+        $kindValue = if ($Kind) { $Kind } else { 'REPLACE-WITH-KIND' }
+        $plan = $plan.Replace('REPLACE-WITH-SLUG', $Slug).Replace('REPLACE-WITH-KIND', $kindValue)
+        Set-Content -Path $planDest -Value $plan -NoNewline -Encoding utf8
+    }
+    Write-Host ""
+    Write-Host "Clips project. script\clips.yaml copied. Next:"
+    Write-Host "  1. Long-form video into source\source.mp4 (capy_ingest.py URL, or copy a local file)."
+    Write-Host "  2. python tools\transcribe.py source\source.mp4 --out-dir transcripts"
+    Write-Host "  3. Pick the clips in script\clips.yaml, then python tools\clips_plan.py --project $projectPath"
+    Write-Host "  4. Push script\clips.md to reviews\$Slug\ and WAIT for written approval."
+    Write-Host "  5. Record approval in clips.yaml, clips_plan.py --build-plan, then build/render in Resolve."
 } else {
     Write-Host "Next: copy source files into '$projectPath\source', then create a"
     Write-Host "Resolve project named '$Slug' via the davinci-resolve MCP."
