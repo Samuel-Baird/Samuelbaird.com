@@ -3,7 +3,7 @@
 > **Video title** (upload title, not shown on screen): Madam Pattirini, Lorenzo Snow's Son-in-Law, and a Birthday Party  
 > **Post caption** (goes with the upload, not shown on screen): A prophet's son-in-law sang in costume at his birthday party. Does that make it prophetic counsel, or a family evening?
 
-**Slug:** `brigham-young-son-drag-madame-petarini` | **Estimated runtime:** 78.9s (budget 60-180s) | **Source time:** 23.8s (30%)
+**Slug:** `brigham-young-son-drag-madame-petarini` | **Estimated runtime:** 82.2s (budget 60-180s) | **Source time:** 23.8s (29%)
 
 **Hook (title/description only, not shown on screen):** 'What a birthday party does and does not prove.'
 **Exemplars modeled:** none
@@ -44,17 +44,17 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** wikipedia-bmorris-young
 - **Notes:** 
 
-## 06. `n03` (narration, ~14.5s)
+## 06. `n03` (narration, ~16.6s)
 - **Original Video Transcript:** So, the Mormon prophet, Lorenzo Snow, celebrated his final birthday watching a drag show. So during this month of June, as Pride Month and not Fidelity Month, be like the Mormon prophet. Go watch a drag show.
 - **Pose:** teaching
-- **Narration:** A leader attending a relative's performance sets no doctrine, any more than a bishop at his nephew's school play sets doctrine for his ward. By that standard, be like the prophet means go to your son-in-law's show. The order to go watch a drag show belongs to the reel, not to Lorenzo Snow.
+- **Narration:** A leader attending a relative's performance sets no doctrine, any more than a bishop at his nephew's school play sets doctrine for his ward. By that standard, be like the prophet means go to your son-in-law's show. The order to go watch a drag show belongs to the reel, and nothing in the cited record shows it came from Lorenzo Snow.
 - **Sources:** wikipedia-bmorris-young, reel-transcript
 - **Notes:** 
 
-## 07. `n99` (narration, ~4.6s)
+## 07. `n99` (narration, ~5.7s)
 - **Original Video Transcript:** So, the Mormon prophet, Lorenzo Snow, celebrated his final birthday watching a drag show. So during this month of June, as Pride Month and not Fidelity Month, be like the Mormon prophet. Go watch a drag show.
 - **Pose:** encouraging
-- **Narration:** On this record, the prophet's example is showing up when family performs. Go do that. God bless.
+- **Narration:** On this record, the prophet's example is showing up when family performs. Go do that, and bring a card. God bless.
 - **Notes:** 
 
 ## Full source transcript
