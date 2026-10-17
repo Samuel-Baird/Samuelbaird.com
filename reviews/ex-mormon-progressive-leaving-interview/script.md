@@ -3,27 +3,40 @@
 > **Video title** (upload title, not shown on screen): When Someone Leaves the Church: What an Apostle Said  
 > **Post caption** (goes with the upload, not shown on screen): Her family stayed kind when she left. Here is what the Church's own apostle says about people in exactly that position.
 
-**Slug:** `ex-mormon-progressive-leaving-interview` | **Estimated runtime:** 61.8s (budget 60-180s) | **Source time:** 8.4s (14%)
+**Slug:** `ex-mormon-progressive-leaving-interview` | **Estimated runtime:** 83.6s (budget 60-180s) | **Source time:** 13.2s (16%)
 
 **Hook (title/description only, not shown on screen):** 'Kindness after leaving is the standard, not the exception.'
 **Exemplars modeled:** none
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
 
-## 01. `c01` (clip, ~8.4s)
+## 01. `c01` (clip, ~4.8s)
+- **Original Video Transcript:** You were still a practicing Mormon. Yeah. Your politics were in the progressive realm.
+- **Pose:** listening
+- **Clip:** Source video, 0.0s–4.85s @ speed 1.0
+- **Notes:** 
+
+## 02. `n00` (narration, ~15.0s)
+- **Original Video Transcript:** You were still a practicing Mormon. Yeah. Your politics were in the progressive realm.
+- **Pose:** thoughtful
+- **Narration:** That is an interviewer asking a former Latter-day Saint, a member of The Church of Jesus Christ of Latter-day Saints, often called Mormons. She says she left because she was campaigning for LGBTQ rights in her twenties while attending a church that did not support that. Here is what she says happened with her family.
+- **Sources:** reel-transcript
+- **Notes:** 
+
+## 03. `c02` (clip, ~8.4s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** listening
 - **Clip:** Source video, 51.4s–59.76s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~8.7s)
+## 04. `n01` (narration, ~9.8s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** thoughtful
-- **Narration:** Her family's kindness is the standard the Church sets, not an exception to it. An apostle told the whole Church in April 2020 that people who step away are still beloved children.
+- **Narration:** Her family's kindness is the standard the Latter-day Saint faith sets, not an exception to it. An apostle of the Church told its members in April 2020 that people who step away are still beloved children.
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
-## 03. `q01` (card, ~4.6s)
+## 05. `q01` (card, ~4.6s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** quote
 - **Narration:** Elder Dieter Uchtdorf, Come and Belong, April 2020. The next line is, even those who reject Him.
@@ -31,28 +44,28 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
-## 04. `n02` (narration, ~15.5s)
+## 06. `n02` (narration, ~15.5s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** solemn
 - **Narration:** This script will not argue with her reasons for leaving. She gave them, and they are hers to give. What it can do is say plainly that the response she describes, no one cut off and a family that stayed kind, is the response the Church's teaching asks for, from a family and from a congregation alike.
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
-## 05. `n02b` (narration, ~11.2s)
+## 07. `n02b` (narration, ~12.0s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** neutral
-- **Narration:** She also said that something had to give. Many people describe leaving that way, and the Church's teaching does not ask anyone to pretend otherwise. It asks the people around them to stay kind, and by her own account hers did.
+- **Narration:** Elsewhere in the interview she says that something had to give. Many people describe leaving that way, and the Church's teaching does not ask anyone to pretend otherwise. It asks the people around them to stay kind, and by her own account hers did.
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
-## 06. `n03` (narration, ~7.9s)
+## 08. `n03` (narration, ~7.9s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** concerned
 - **Narration:** She is right that not everyone has that experience. A family that cuts someone off is not following the same teaching, and nothing in that talk asks for it.
 - **Sources:** uchtdorf-2020-p25
 - **Notes:** 
 
-## 07. `n99` (narration, ~5.5s)
+## 09. `n99` (narration, ~5.5s)
 - **Original Video Transcript:** I wasn't cut off from anyone. I feel very lucky. Not everyone has that experience, but my family were very kind.
 - **Pose:** encouraging
 - **Narration:** Kindness to someone who leaves is not a tactic. It is the standard, and her family met it. God bless.
