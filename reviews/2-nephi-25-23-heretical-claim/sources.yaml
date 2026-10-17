@@ -943,3 +943,26 @@ sources:
   found_by: capy-scripture-theologian
   claims:
   - 3
+
+- id: cobbett-1829-french-grammar
+  type: primary
+  title: "A French Grammar: Or Plain Instructions for the Learning of French. In a Series of Letters. A New Edition"
+  author: William Cobbett
+  date: '1829-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/8
+  accessed: '2026-10-16'
+  inspected: true
+  inspected_via: mcp__3302d05e... read_pages (McClellan article pp. 8-9; the Cobbett quotation is read as McClellan quotes it, London 1829, pp. 68-69; the book itself was NOT opened)
+  quote: And this, after all that Grammarians can do; after all the rules that they can give, is the only sure way of learning (from books) the Gender of the French Nouns.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/8
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Secondary quotation. McClellan p. 9 reads it as "despite" because memorizing is not the only sure way only after other methods are exhausted. McClellan p. 8 concedes the sense of following in time is not precluded in this idiom generally. One scholar''s reading of one example.'
+  found_by: user-request
+  claims:
+  - 2

@@ -2,7 +2,7 @@ version: 1
 slug: 2-nephi-25-23-heretical-claim
 title: "Does 2 Nephi 25:23 make works a prerequisite for grace?"
 caption: "A reel says 2 Nephi 25:23 contradicts the Bible because works come before grace. What does the verse say, and what does her own tradition say about works?"
-hook: "The word after carries her whole argument, and it can be read two ways."
+hook: "The word after carries her whole argument, and a French grammar book from 1829 shows what it meant."
 summary: "A Protestant reel says 2 Nephi 25:23 makes works a prerequisite for grace and so contradicts 2 Timothy 1:9. We look at the verse itself, how a scholar and Church leaders have read the word after, what 2 Timothy 1:9 does and does not say, and how the same New Testament letters and Reformed writers place works beside grace."
 format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
 voice: { name: am_michael, speed: 1.5 }
@@ -24,15 +24,31 @@ beats:
   # Frame: position first. No agreement in the opening sentence.
   - id: n01
     kind: narration
-    text: "The verse says it is by grace that we are saved. It does not say works come first, and her argument depends on that. The word after is the whole question. Around eighteen hundred, Protestant writers used the phrase after all you can do to say salvation is a free gift, as McClellan documents. Whether the Book of Mormon uses it that way, the verse alone does not settle."
+    text: "The verse says it is by grace that we are saved. It does not say works come first, and her argument depends on that. In the English of Joseph Smith's day, after all we can do meant despite all we can do. A French grammar book from eighteen twenty-nine shows the idiom at work."
     function: questionable_premise
     pose: skeptical
     sources: [scripture-2ne-25-23, mcclellan-2020-2nephi-25-23]
     opinion: false
 
+  # The user-requested French grammar example (McClellan pp. 8-9, quoting Cobbett 1829 pp. 68-69).
+  - id: q01
+    kind: card
+    text: "Here is William Cobbett, A French Grammar, eighteen twenty-nine, quoted in McClellan's article."
+    pose: reading
+    card: { quote: "And this, after all that Grammarians can do; after all the rules that they can give, is the only sure way of learning (from books) the Gender of the French Nouns.", attribution: "William Cobbett, A French Grammar, 1829, p. 69, as quoted by Daniel O. McClellan", source: cobbett-1829-french-grammar }
+    sources: [cobbett-1829-french-grammar, mcclellan-2020-2nephi-25-23]
+
+  - id: n02
+    kind: narration
+    text: "Memorizing doesn't become the only way after the grammarians finish. It's the only way despite everything they do. That is the same idiom as after all we can do. If after all we can do were a temporal condition, the sentence would make no sense."
+    function: explain
+    pose: teaching
+    sources: [cobbett-1829-french-grammar, mcclellan-2020-2nephi-25-23]
+    opinion: false
+
   - id: q02
     kind: card
-    text: "Here is how Daniel McClellan reads the clause, in a 2020 scholarly article."
+    text: "And here is where McClellan lands, in a 2020 scholarly article."
     pose: reading
     card: { quote: "The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.”", attribution: "Daniel O. McClellan, 2 Nephi 25:23 in Literary and Rhetorical Context, 2020", source: mcclellan-2020-2nephi-25-23 }
     sources: [mcclellan-2020-2nephi-25-23]
@@ -40,7 +56,7 @@ beats:
   # The other reading, stated fairly, without implying a leader taught "despite".
   - id: n03
     kind: narration
-    text: "Church leaders have read the word after differently. President Packer said in nineteen ninety-five that grace comes only after all we can do. President Uchtdorf said in twenty fifteen that after does not equal because. Both are leaders speaking, not scripture. McClellan is a scholar offering a reading, not an official one."
+    text: "Church leaders have also read the word after as a sequence. President Packer said in nineteen ninety-five that grace comes only after all we can do. President Uchtdorf said in twenty fifteen that after does not equal because. Both are leaders speaking, not scripture, and McClellan's reading is a scholar's, not an official one."
     function: explain
     pose: teaching
     sources: [packer-1995-brilliant-morning, uchtdorf-2015-gift-of-grace, mcclellan-2020-2nephi-25-23]

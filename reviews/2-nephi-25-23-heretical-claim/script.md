@@ -3,9 +3,9 @@
 > **Video title** (upload title, not shown on screen): Does 2 Nephi 25:23 make works a prerequisite for grace?  
 > **Post caption** (goes with the upload, not shown on screen): A reel says 2 Nephi 25:23 contradicts the Bible because works come before grace. What does the verse say, and what does her own tradition say about works?
 
-**Slug:** `2-nephi-25-23-heretical-claim` | **Estimated runtime:** 127.5s (budget 60-180s) | **Source time:** 29.0s (23%)
+**Slug:** `2-nephi-25-23-heretical-claim` | **Estimated runtime:** ~150s (budget 60-180s) | **Source time:** 29.0s (23%)
 
-**Hook (title/description only, not shown on screen):** 'The word after carries her whole argument, and it can be read two ways.'
+**Hook (title/description only, not shown on screen):** 'The word after carries her whole argument, and a French grammar book from 1829 shows what it meant.'
 **Exemplars modeled:** peterson-breaking-the-rules, mcclellan-delivery
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
@@ -16,29 +16,44 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 4.3s–21.7s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~18.8s)
+## 02. `n01` (narration, ~14.5s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** skeptical
-- **Narration:** The verse says it is by grace that we are saved. It does not say works come first, and her argument depends on that. The word after is the whole question. Around eighteen hundred, Protestant writers used the phrase after all you can do to say salvation is a free gift, as McClellan documents. Whether the Book of Mormon uses it that way, the verse alone does not settle.
+- **Narration:** The verse says it is by grace that we are saved. It does not say works come first, and her argument depends on that. In the English of Joseph Smith's day, after all we can do meant despite all we can do. A French grammar book from eighteen twenty-nine shows the idiom at work.
 - **Sources:** scripture-2ne-25-23, mcclellan-2020-2nephi-25-23
 - **Notes:** 
 
-## 03. `q02` (card, ~3.5s)
+## 03. `q01` (card, ~9s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** reading
-- **Narration:** Here is how Daniel McClellan reads the clause, in a 2020 scholarly article. “The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.””
+- **Narration:** Here is William Cobbett, A French Grammar, eighteen twenty-nine, quoted in McClellan's article. “And this, after all that Grammarians can do; after all the rules that they can give, is the only sure way of learning (from books) the Gender of the French Nouns.”
+- **Card quote:** “And this, after all that Grammarians can do; after all the rules that they can give, is the only sure way of learning (from books) the Gender of the French Nouns.” — William Cobbett, A French Grammar, 1829, p. 69, as quoted by Daniel O. McClellan
+- **Sources:** cobbett-1829-french-grammar, mcclellan-2020-2nephi-25-23
+- **Notes:** 
+
+## 04. `n02` (narration, ~14s)
+- **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
+- **Pose:** teaching
+- **Narration:** Memorizing doesn't become the only way after the grammarians finish. It's the only way despite everything they do. That is the same idiom as after all we can do. If after all we can do were a temporal condition, the sentence would make no sense.
+- **Sources:** cobbett-1829-french-grammar, mcclellan-2020-2nephi-25-23
+- **Notes:** 
+
+## 05. `q02` (card, ~3.5s)
+- **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
+- **Pose:** reading
+- **Narration:** And here is where McClellan lands, in a 2020 scholarly article. “The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.””
 - **Card quote:** “The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.”” — Daniel O. McClellan, 2 Nephi 25:23 in Literary and Rhetorical Context, 2020
 - **Sources:** mcclellan-2020-2nephi-25-23
 - **Notes:** 
 
-## 04. `n03` (narration, ~14.2s)
+## 06. `n03` (narration, ~14.2s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** teaching
 - **Narration:** President Uchtdorf said in twenty fifteen that after does not equal because. McClellan is a scholar offering a reading, not an official one.
 - **Sources:** packer-1995-brilliant-morning, uchtdorf-2015-gift-of-grace, mcclellan-2020-2nephi-25-23
 - **Notes:** 
 
-## 05. `q03` (card, ~1.6s)
+## 07. `q03` (card, ~1.6s)
 - **Original Video Transcript:** You have your Book of Mormon, let's look over to 2 Nephi 25 verse 23, where it says, For we know that it is by grace that we are saved after all we can do. See, this verse seems as though your works are a prerequisite for grace and salvation.
 - **Pose:** quote
 - **Narration:** This is President Uchtdorf, April 2015. “We must understand that “after” does not equal “because.””
@@ -46,20 +61,20 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** uchtdorf-2015-gift-of-grace
 - **Notes:** 
 
-## 06. `c02` (clip, ~11.6s)
+## 08. `c02` (clip, ~11.6s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** listening
 - **Clip:** Source video, 44.3s–55.9s @ speed 1.0
 - **Notes:** 
 
-## 07. `n04` (narration, ~15.8s)
+## 09. `n04` (narration, ~15.8s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** pointing
 - **Narration:** Second Timothy one nine, the verse she reads, says salvation is not according to our works, and the Book of Mormon says the same. Alma twenty-two says man could not merit anything of himself. Second Nephi thirty-one says we come only by relying wholly upon the merits of Christ. On that point her verse and its verse agree.
 - **Sources:** nrsvue-2021-2tim-1, scripture-alma-22-14, scripture-2ne-31-19
 - **Notes:** 
 
-## 08. `q04` (card, ~2.2s)
+## 10. `q04` (card, ~2.2s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** quote
 - **Narration:** This is Second Nephi chapter thirty-one, verse nineteen. “relying wholly upon the merits of him who is mighty to save.”
@@ -67,14 +82,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** scripture-2ne-31-19
 - **Notes:** 
 
-## 09. `n05` (narration, ~16.4s)
+## 11. `n05` (narration, ~16.4s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** teaching
 - **Narration:** Her question is whether works come before grace. The letters she cites put them after. Ephesians says we are saved not by works, then says we are created in Christ Jesus for good works. Philippians says work on your own salvation, because it is God who is at work in you. The Westminster Confession says justifying faith is never alone.
 - **Sources:** nrsvue-eph-2-8-10, nrsvue-phil-2-12-13, wcf-1647-ch11-16
 - **Notes:** 
 
-## 10. `q05` (card, ~3.5s)
+## 12. `q05` (card, ~3.5s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** reading
 - **Narration:** Here is Philippians chapter two, in the New Revised Standard Version Updated Edition. “work on your own salvation with fear and trembling, for it is God who is at work in you, enabling you both to will and to work for his good pleasure.”
@@ -82,14 +97,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** nrsvue-phil-2-12-13
 - **Notes:** 
 
-## 11. `n06` (narration, ~15.3s)
+## 13. `n06` (narration, ~15.3s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** teaching
 - **Narration:** Latter-day Saint leaders say works do not earn salvation. Elder Bednar said our works and desires alone do not and cannot save us. That is leader teaching, not scripture. The real difference is whether obedience and ordinances are only the fruit of faith or also how we receive grace. That is not works coming before grace.
 - **Sources:** bednar-2015-hushed-fears
 - **Notes:** 
 
-## 12. `q06` (card, ~1.6s)
+## 14. `q06` (card, ~1.6s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** quote
 - **Narration:** This is Elder Bednar, April 2015.
@@ -97,7 +112,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** bednar-2015-hushed-fears
 - **Notes:** 
 
-## 13. `n99` (narration, ~5.5s)
+## 15. `n99` (narration, ~5.5s)
 - **Original Video Transcript:** So it is pretty clear in the Bible that before you were even created, God had extended his grace and mercy to you without your works. So your works are not a prerequisite for grace and salvation.
 - **Pose:** encouraging
 - **Narration:** A one-verse test has to read Romans two six too. He will repay according to each one's deeds. God bless.
