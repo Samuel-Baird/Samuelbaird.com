@@ -34,7 +34,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 04. `n02` (narration, ~13.9s)
 - **Original Video Transcript:** Like any group of white people who believes they're divinely chosen, they commit a genocide. Brigham Young signed an extermination order, and within a couple decades of the Mormons arriving to Utah, 90% of the indigenous population was destroyed.
 - **Pose:** concerned
-- **Narration:** Whether to call it genocide is a question about a word, and the sources I opened do not use it. Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record.
+- **Narration:** Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record, but neither indicate he was setting out to commit genocide.
 - **Sources:** turner-2012-young-pioneer-prophet, turner-2012-pioneer-prophet
 - **Notes:** 
 
@@ -62,7 +62,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n03` (narration, ~18.5s)
 - **Original Video Transcript:** Mostly through starvation, massacres, protracted violence, forced relocation, disease.
 - **Pose:** teaching
-- **Narration:** The causes she lists are all documented. Settlement took Native food, water and land. Turner records executions at Circleville with no evidence of an investigation, and the Bear River massacre in 1863, by the U.S. Army with Mormon guides. No source I found gives a percentage by cause. Disease and starvation caused by settlement cannot be separated, and the sources link them. None of that makes it smaller.
+- **Narration:** The causes he lists are all documented. Settlement took Native food, water and land. However, no source I found gives a percentage by cause. Disease is and starvation caused by settlement cannot be separated from violence.
 - **Sources:** turner-2012-pioneer-prophet, reeve-parshall-2010-encyclopedia, compton-2013-hamblin
 - **Notes:** 
 
