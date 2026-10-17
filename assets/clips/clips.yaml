@@ -1,0 +1,47 @@
+# Clips plan — see docs/types/clips.md. Hand-authored after transcribing the
+# long-form source; `python tools/clips_plan.py --project <dir>` validates it
+# and renders script/clips.md for review. Nothing is built in Resolve until
+# `approval:` records the user's written approval.
+slug: REPLACE-WITH-SLUG
+source:
+  title: "REPLACE: episode / video title"
+  creator: "REPLACE: channel or show"
+  url: "REPLACE: URL, or blank for a local file"
+  kind: REPLACE-WITH-KIND   # solo | dialogue | interview | debate
+
+format: vertical      # vertical 1080x1920 (default) | landscape 1920x1080 | square 1080x1080
+captions: burned      # burned (default) | none
+min_seconds: 15
+max_seconds: 90
+
+# Who is on camera and where, so `reframe:` can follow them (dialogue,
+# interview, debate). Positions are where they sit in the wide shot.
+speakers:
+  - {id: A, name: "REPLACE", position: left}
+  - {id: B, name: "REPLACE", position: right}
+
+# Filled in ONLY after the user approves in writing. `clips` is `all` or a
+# list of clip numbers (the NN in script/clips.md), `words` is their reply
+# quoted verbatim.
+approval:
+  date:
+  words:
+  clips: []
+
+clips:
+  # Numbered in this order (01, 02, ...). Times are source timestamps:
+  # seconds, "mm:ss.s" or "h:mm:ss.s". Snap start/end to word edges and end
+  # on a finished sentence (the lint warns otherwise).
+  - id: c01
+    title: "REPLACE: working title"
+    start: "00:00.0"
+    end: "00:45.0"
+    hook: "REPLACE (optional): on-screen hook text for the first ~3s"
+    why: "REPLACE: why this moment stands alone and lands"
+    speakers: [A]
+    reframe: left       # center | left | right | 0-1 crop centre, or a list:
+    #   - {at: "00:00.0", x: left}
+    #   - {at: "00:21.4", x: right}
+    cuts: []            # optional [start, end] spans removed inside the clip
+    caption: "REPLACE (optional): post caption"
+    context: "REPLACE (dialogue/debate): does the clip represent the speaker's point fairly?"
