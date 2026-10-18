@@ -3,9 +3,9 @@
 > **Video title** (upload title, not shown on screen): Church-linked brothel leases: what the record shows about motive  
 > **Post caption** (goes with the upload, not shown on screen): The leases are in historian Michael Quinn's record, and I don't dispute them. I checked the dates, the arithmetic, and whether money is what the record shows. I hope a follow-up looks at the 1941 order too.
 
-**Slug:** `church-brothel-leases` | **Estimated runtime:** 109.4s (budget 60-180s) | **Source time:** 31.6s (29%)
+**Slug:** `church-brothel-leases` | **Estimated runtime:** 121.6s (budget 60-180s) | **Source time:** 31.6s (26%)
 
-**Hook (title/description only, not shown on screen):** "The leases are in the record. 'Money' is the part that doesn't hold up."
+**Hook (title/description only, not shown on screen):** "The leases are in the record. 'Money' is the part the record doesn't show."
 **Exemplars modeled:** knowhy-seer-stone, hales-helen-mar-kimball
 
 Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-language notes (see docs/saint-capybara/script-format.md) and return it -- do not edit beats.yaml directly unless you're comfortable with the YAML.
@@ -16,10 +16,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 0.0s–10.94s @ speed 1.0
 - **Notes:** 
 
-## 02. `n01` (narration, ~6.3s)
+## 02. `n01` (narration, ~6.8s)
 - **Original Video Transcript:** Did you know that the Mormon Church was making money off of whorehouses in the early 1900s? So in the early 1900s, the Mormon Church was struggling financially. It was for this reason that the church allowed these houses of ill-repute to continue.
-- **Pose:** source
-- **Narration:** The historian she cites is D. Michael Quinn, and his chronology of the hierarchy does record this. It dates the arrangement to 1891.
+- **Pose:** skeptical
+- **Narration:** The video's reason is money. Historian Michael Quinn, whom it cites, does record the leases. The entries on them never give money as the reason.
 - **Sources:** quinn-ext-1897
 - **Notes:** 
 
@@ -45,11 +45,11 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** quinn-ext-1897, quinn-wealth-bytc
 - **Notes:** 
 
-## 06. `n04` (narration, ~7.1s)
+## 06. `n04` (narration, ~9.8s)
 - **Original Video Transcript:** Did you know that the Mormon Church was making money off of whorehouses in the early 1900s? So in the early 1900s, the Mormon Church was struggling financially. It was for this reason that the church allowed these houses of ill-repute to continue.
 - **Pose:** pointing
-- **Narration:** The video says money explains it. A protest from inside the leadership, six years in, says some of them saw a moral problem and said so.
-- **Sources:** quinn-ext-1897
+- **Narration:** A protest from inside the leadership, six years in, shows some leaders saw a moral problem. It did not end the leases: Young was vice-president again by 1899. So objection shows conscience, not a clean record.
+- **Sources:** quinn-ext-1897, quinn-wealth-bytc
 - **Notes:** 
 
 ## 07. `c02` (clip, ~6.3s)
@@ -73,10 +73,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** quinn-ext-1941
 - **Notes:** 
 
-## 10. `n06` (narration, ~7.4s)
+## 10. `n06` (narration, ~9.8s)
 - **Original Video Transcript:** But the shift didn't happen immediately. In fact, the Mormon Church did not divest its houses of prostitution until 1941.
 - **Pose:** thoughtful
-- **Narration:** That order accepted a financial loss. Quinn also ties it to a merger, so it was no sudden moral awakening. It was late, and it cost money.
+- **Narration:** Quinn also ties the order to a merger, and he does not say whether conscience played a part. What the entry does say is that the company was told to proceed no matter the financial loss.
 - **Sources:** quinn-ext-1941
 - **Notes:** 
 
@@ -86,10 +86,10 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Clip:** Source video, 70.92s–85.28s @ speed 1.0
 - **Notes:** 
 
-## 12. `n07` (narration, ~9.5s)
+## 12. `n07` (narration, ~12.0s)
 - **Original Video Transcript:** Interestingly, the Mormon Church climbed out of debt on April 5th of 1907. So why did they keep profiting off of brothels for 37 years after they no longer needed the money? Why did they allow brothels at all? Could it be that the church really cares about money?
-- **Pose:** disappointed
-- **Narration:** Two corrections. Nineteen oh seven to nineteen forty-one is thirty-four years, not thirty-seven. And the report that the Church was free from debt is dated March twentieth, and was read to conference on April sixth.
+- **Pose:** concerned
+- **Narration:** Two corrections. Nineteen oh seven to nineteen forty-one is thirty-four years, not thirty-seven. And the debt-free report is dated March twentieth and was read to conference on April sixth. It does not say when the last debt was paid, so April fifth is unsupported.
 - **Sources:** audit-report-1907
 - **Notes:** 
 
@@ -101,17 +101,17 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 - **Sources:** audit-report-1907
 - **Notes:** 
 
-## 14. `n08` (narration, ~11.7s)
+## 14. `n08` (narration, ~13.6s)
 - **Original Video Transcript:** Interestingly, the Mormon Church climbed out of debt on April 5th of 1907. So why did they keep profiting off of brothels for 37 years after they no longer needed the money? Why did they allow brothels at all? Could it be that the church really cares about money?
 - **Pose:** teaching
-- **Narration:** Thirty-four years is still long. But money alone does not explain a protest in 1897 or a loss accepted in 1941. Slow, divided leadership explains both. That is the stronger reading, though not a proven one, since Quinn gives no man's private reasons.
+- **Narration:** Thirty-four years is still long. But the record has an objection in 1897 and, in 1941, an order that set the financial loss aside. A single motive of money fits neither. Neither does it prove conscience. The fair reading is a divided leadership acting late, and that is an inference.
 - **Sources:** quinn-ext-1897, quinn-ext-1941, audit-report-1907
 - **Notes:** 
 
-## 15. `n99` (narration, ~7.9s)
+## 15. `n99` (narration, ~10.1s)
 - **Original Video Transcript:** Interestingly, the Mormon Church climbed out of debt on April 5th of 1907. So why did they keep profiting off of brothels for 37 years after they no longer needed the money? Why did they allow brothels at all? Could it be that the church really cares about money?
-- **Pose:** encouraging
-- **Narration:** The leases were wrong, they lasted fifty years, and ending them cost money. That describes a Church slow to act, more than one that simply counted rent. God bless.
+- **Pose:** prayerful
+- **Narration:** The leases were wrong, and they lasted fifty years. The record shows objection in 1897 and an order in 1941 that set money aside. It does not show a Church that only cared about rent. God bless.
 - **Notes:** 
 
 ## Full source transcript
