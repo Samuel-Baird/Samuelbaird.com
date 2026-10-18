@@ -55,7 +55,7 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 07. `q02` (card, ~1.1s)
 - **Original Video Transcript:** We're just gonna establish a term called Modern Revelation, brother. Basically means if the society isn't responding well to some of the things that we're gonna introduce it to this church, we can just change it.
 - **Pose:** quote
-- **Narration:** Article of Faith nine.
+- **Narration:** Article of Faith nine. “We believe all that God has revealed, all that He does now reveal, and we believe that He will yet reveal many great and important things pertaining to the Kingdom of God.”
 - **Card quote:** “We believe all that God has revealed, all that He does now reveal, and we believe that He will yet reveal many great and important things pertaining to the Kingdom of God.” — Articles of Faith 1:9
 - **Sources:** aof-9
 - **Notes:** 
