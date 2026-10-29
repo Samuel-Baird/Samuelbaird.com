@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 };
 
 const SLIDES = [
+  { file: "m1_how_it_works.png", title: "How the raw numbers are estimated" },
+  { file: "m2_worked_example.png", title: "The same math, four traditions" },
   {
     file: "1_trinity_headcount.png",
     title:

@@ -26,6 +26,13 @@ chart pipeline instead of an ad-hoc palette.
   changed (round eleven..." below for the layout differences this
   reformat required (more involved than post4's, since this script hand-
   positions everything rather than relying on ggplot's automatic layout).
+- `post5-membership-scale-widescreen/post5_method_cards.py` — two
+  methodology cards (`m1_how_it_works.png`, `m2_worked_example.png`)
+  explaining how survey percentages become estimated headcounts, meant to
+  lead post5's carousel. Python/matplotlib.
+- `post4-tradition-comparison-widescreen/post4_doctrine_vs_culture_war.py` —
+  `12_doctrine_vs_culture_war.png`, a two-column companion to "Still the
+  beam" comparing doctrine ranges with culture-war ranges. Python/matplotlib.
 
 Each folder gets its own `png/` output directory when you run its script
 (`Rscript post1_evangelical_trends.R` from inside that folder, or with a

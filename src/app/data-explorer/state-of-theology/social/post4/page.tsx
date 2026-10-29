@@ -48,6 +48,7 @@ const SLIDES = [
     title: "“People should be able to choose their gender regardless of their biological sex.”",
   },
   { file: "11_closing.png", title: "Still the beam" },
+  { file: "12_doctrine_vs_culture_war.png", title: "Doctrine and culture war" },
 ];
 
 const BASE = "/social-graphics/state-of-theology/post4";
