@@ -7,17 +7,17 @@
 <title>Sleep Timer</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314172b'/%3E%3Cpath d='M62 22a30 30 0 1 0 16 46A26 26 0 0 1 62 22z' fill='%23f2d58a'/%3E%3C/svg%3E">
 <style>
-:root{--bg:#14172b;--bg2:#1d2142;--card:#222750;--fg:#eef0ff;--muted:#9aa0cc;--accent:#f2d58a;--accent-fg:#14172b;--stop:#ff8a7a;--line:#303667}
+:root{--bg:#000;--bg2:#000;--card:rgba(18,18,18,.7);--fg:#8c8c8c;--muted:#6f6f6f;--accent:#a8a8a8;--accent-fg:#000;--stop:#ff8a7a;--line:#262626;--hover:#d2d2d2}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%}
-body{margin:0;background:radial-gradient(120% 80% at 50% 0%,var(--bg2),var(--bg));color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
 .app{max-width:480px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top)) 16px calc(20px + env(safe-area-inset-bottom))}
 header{text-align:center;color:var(--muted)}
 header h1{margin:0;font-size:1rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center}
 .status{color:var(--muted);min-height:1.5em}
 .clock{font-size:clamp(3rem,16vw,4.5rem);font-weight:300;font-variant-numeric:tabular-nums;letter-spacing:.02em}
-.big{width:200px;height:200px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-fg);font:700 1.5rem system-ui,sans-serif;cursor:pointer;box-shadow:0 0 0 12px rgba(242,213,138,.12),0 10px 40px rgba(0,0,0,.4);transition:transform .1s}
+.big{width:200px;height:200px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-fg);font:700 1.5rem system-ui,sans-serif;cursor:pointer;box-shadow:0 0 0 12px rgba(168,168,168,.12),0 10px 40px rgba(0,0,0,.4);transition:transform .1s}
 .big:active{transform:scale(.97)}
 .big.running{background:var(--stop);box-shadow:0 0 0 12px rgba(255,138,122,.14),0 10px 40px rgba(0,0,0,.4);animation:pulse 3s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 22px rgba(255,138,122,.06),0 10px 40px rgba(0,0,0,.4)}}
@@ -61,7 +61,11 @@ h3{margin:20px 0 10px;font-size:.8rem;letter-spacing:.12em;text-transform:upperc
 .row{display:flex;gap:10px;flex-wrap:wrap}
 form label{display:block;margin:10px 0 4px;color:var(--muted);font-size:.85rem}
 form input{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:inherit;color-scheme:dark}
+.status:hover,.hint:hover,.last:hover,.clock:hover,header h1:hover,.stat:hover b,.stat:hover span,.item:hover .t b,.item:hover .t span,.empty:hover,h3:hover{color:var(--hover)}
+.big:hover{background:var(--hover)}.big.running:hover{background:var(--stop)}
 </style>
+<link rel="stylesheet" href="/bg/bg.css">
+<script src="/bg/glyphwind.js" defer></script><script src="/bg/bg.js" defer></script>
 </head><body>
 <div class="app">
   <header><h1>Sleep Timer</h1></header>

@@ -1,8 +1,7 @@
-:root{--bg:#f7f4ee;--panel:#fffdf8;--ink:#2a2620;--muted:#6f675b;--line:#e3dccd;--accent:#7a4e2d}
-@media (prefers-color-scheme:dark){:root{--bg:#1d1b18;--panel:#26231f;--ink:#efe9dd;--muted:#a79d8d;--line:#3b362f;--accent:#e0a870}}
+:root{--bg:#000;--panel:rgba(0,0,0,.62);--ink:#8c8c8c;--muted:#6f6f6f;--line:#262626;--accent:#a8a8a8;--hover:#d2d2d2;color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
-body{display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+body{display:flex;flex-direction:column;background:transparent;color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
 header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
 h1{font:600 20px Georgia,serif;margin:0}
 nav a{margin-left:14px;color:var(--accent);font-weight:600;text-decoration:none}
@@ -45,3 +44,12 @@ ul{list-style:none;margin:0;padding:0}
 #lightbox[hidden]{display:none}
 #lightbox img{max-width:94vw;max-height:94vh;object-fit:contain}
 #lightbox button{position:absolute;top:12px;right:18px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}
+
+/* map tiles darkened to match the black theme; markers and popups are unaffected */
+#map{background:#000}
+#map .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) grayscale(.85) brightness(.75) contrast(.9)}
+.leaflet-container .leaflet-control-zoom a{background:#111;color:#a8a8a8;border-color:#262626}
+.leaflet-container .leaflet-control-attribution{background:rgba(0,0,0,.6);color:#6f6f6f}
+.leaflet-container .leaflet-control-attribution a{color:#8c8c8c}
+h1:hover,h2:hover,.hint:hover,.site:hover,.com:hover,nav a:hover,#stats span:hover,#stats b:hover{color:var(--hover)}
+.site,.com,nav a,h1,h2,.hint{transition:color .2s}

@@ -1,0 +1,6 @@
+/* Black page with a field of gray glyphs behind the content (see bg.js). */
+html{background:#000}
+body{background:transparent!important}
+.glyph-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;contain:strict;opacity:0;transition:opacity 2500ms ease-out;
+  font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;color:#7a7a7a}
+.glyph-bg .absolute{position:absolute}.glyph-bg .block{display:block}
