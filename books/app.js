@@ -3,7 +3,17 @@ const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-US", { year: "
 for (const b of window.BOOKS) {
   const li = document.createElement("li");
   li.className = "book";
+  // Anything that isn't an Amazon (book) link is an article, unless data.js says otherwise.
+  li.dataset.type = b.type || (/amazon\./.test(b.link) ? "book" : "article");
   li.innerHTML = `<a href="${b.link}" target="_blank" rel="noopener">${b.cover ? `<img src="${b.cover}" alt="Cover of ${b.title}" loading="lazy">` : `<div class="blank" role="img" aria-label="No cover"></div>`}<h3></h3><time datetime="${b.read}">${fmt(b.read)}</time></a>`;
   li.querySelector("h3").textContent = b.title;
   list.append(li);
+}
+
+const buttons = document.querySelectorAll(".filters button");
+for (const btn of buttons) {
+  btn.addEventListener("click", () => {
+    for (const o of buttons) o.setAttribute("aria-pressed", String(o === btn));
+    for (const li of list.children) li.hidden = btn.dataset.filter !== "all" && li.dataset.type !== btn.dataset.filter;
+  });
 }
