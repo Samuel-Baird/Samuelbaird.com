@@ -4,3 +4,4 @@
 .book h3{margin:8px 0 2px;font-size:1rem;line-height:1.3}
 .book time{color:var(--muted);font:.85rem system-ui,sans-serif}
 .book a:hover h3,.book a:focus-visible h3{color:var(--accent)}
+.book .blank{aspect-ratio:2/3;border:1px solid var(--line);border-radius:8px;background:var(--card)}
