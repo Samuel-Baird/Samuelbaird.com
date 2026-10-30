@@ -43,7 +43,8 @@ function popupHtml(s) {
   const first = s.visits[s.visits.length - 1], repeats = s.visits.slice(0, -1);
   const rows = row(first) + (repeats.length ? `<li><details><summary>${repeats.length} repeat visit${repeats.length > 1 ? "s" : ""} (not counted)</summary><ul>${repeats.map(row).join("")}</ul></details></li>` : "");
   const label = (communityOf(s.denom) || {}).name || s.denom;
-  return `<div class="pop"><h3>${esc(s.name)}</h3><div class="sub">${esc(s.city)}, ${esc(s.state)} · ${esc(label)} · first visited ${fmt(first[0])}</div><ul>${rows}</ul></div>`;
+  const pics = (PHOTOS[s.id] || []).length ? `<div class="gallery" data-id="${s.id}"><img alt="${esc(s.name)}" referrerpolicy="no-referrer"><button class="prev" aria-label="Previous photo">&lsaquo;</button><button class="next" aria-label="Next photo">&rsaquo;</button><span class="count"></span></div>` : "";
+  return `<div class="pop">${pics}<h3>${esc(s.name)}</h3><div class="sub">${esc(s.city)}, ${esc(s.state)} · ${esc(label)} · first visited ${fmt(first[0])}</div><ul>${rows}</ul></div>`;
 }
 
 const markers = {};
@@ -93,3 +94,28 @@ new ResizeObserver(() => {
   map.invalidateSize();
   if (!fitted && map.getSize().x > 100) { fitted = true; render(); }
 }).observe(document.getElementById("map"));
+
+// Photo carousel inside popups + fullscreen lightbox
+const photoUrl = (p, w) => `${PHOTO_BASE}${p[0]}=w${w}`;
+const box = document.createElement("div");
+box.id = "lightbox"; box.hidden = true;
+box.innerHTML = '<img alt="" referrerpolicy="no-referrer"><button aria-label="Close">&times;</button>';
+document.body.appendChild(box);
+box.onclick = () => { box.hidden = true; };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") box.hidden = true; });
+
+map.on("popupopen", (e) => {
+  const g = e.popup.getElement().querySelector(".gallery");
+  if (!g) return;
+  const list = PHOTOS[g.dataset.id]; let i = 0;
+  const img = g.querySelector("img"), count = g.querySelector(".count");
+  const show = () => {
+    img.src = photoUrl(list[i], 600);
+    count.textContent = `${i + 1} / ${list.length}`;
+    g.classList.toggle("single", list.length < 2);
+  };
+  g.querySelector(".prev").onclick = () => { i = (i - 1 + list.length) % list.length; show(); };
+  g.querySelector(".next").onclick = () => { i = (i + 1) % list.length; show(); };
+  img.onclick = () => { box.querySelector("img").src = photoUrl(list[i], 1600); box.hidden = false; };
+  show();
+});
