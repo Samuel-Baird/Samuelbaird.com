@@ -6,11 +6,9 @@
 const GlyphWind = (() => {
   const clamp = (value, min=0, max=1) => Math.max(min,Math.min(max,value));
   const smooth = value => { const x=clamp(value); return x*x*(3-2*x); };
-  const charsets = {
-    mixed:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-    lettered:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    figured:'0123456789ABCDEFabcdef'
-  };
+  // Site edit: one mixed set (English, Portuguese/Spanish, Greek, Hebrew, Arabic, scholarly marks).
+  // Each character is one atlas slot (16 per row); repeats weight a character more heavily.
+  const charsets = {scholar:'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúâêôãõàçñü¿¡ÁÉÑÇαβγδεζηθλμπσφψωΣΩΔΦΨāīūṭḥṣḍšʾʿ†‡§¶∴⸫ʼאבגדהוזחטיכלמנסעפצקרשתابتثجحخدذرزسشصضطظعغفقكلمنهوي'};
   function defaults() {
     return {
       seed:undefined, look:undefined,
@@ -58,7 +56,7 @@ const GlyphWind = (() => {
 precision highp float;
 precision highp int;
 uniform vec2 viewport, cellSize, gridOrigin, pane;
-uniform int columns, sequence[64], sequenceLength;
+uniform int columns, sequenceLength;
 uniform float seed, clockTime, wallTime, reveal, fillRate, changeRate;
 uniform vec4 flow, bending, textureShape, activity;
 uniform vec4 quiet;
@@ -136,9 +134,9 @@ void main(){
   luminance=(min(1.,lit+push)+activity.x)*calm*shown;
   blue=glow*activity.y;
   int stepIndex=int(floor(clockTime*changeRate*(.6+.8*hash(cell+9.))+hash(cell)*50.+push*5.));
-  int glyph=sequence[(int(hash(cell+77.)*997.)+stepIndex)%sequenceLength];
+  int glyph=(int(hash(cell+77.)*997.)+stepIndex)%sequenceLength;
   vec2 corner=corners[gl_VertexID];
-  atlasUV=(vec2(glyph%16,glyph/16)+corner)/vec2(16.,6.);
+  atlasUV=(vec2(glyph%16,glyph/16)+corner)/vec2(16.,12.);
   vec2 location=gridOrigin+(cell+corner)*cellSize;
   gl_Position=vec4(location/viewport*vec2(2.,-2.)+vec2(-1.,1.),0,1);
 }`;
@@ -203,13 +201,13 @@ void main(){
       if(!view){canvas.style.visibility='hidden';return;}
       canvas.width=Math.round(bounds.width*view.scale);canvas.height=Math.round(bounds.height*view.scale);
       canvas.style.width=bounds.width+'px';canvas.style.height=bounds.height+'px';
-      const atlas=document.createElement('canvas');atlas.width=view.cellWidth*16;atlas.height=view.cellHeight*6;
+      const atlas=document.createElement('canvas');atlas.width=view.cellWidth*16;atlas.height=view.cellHeight*12;
       const context=atlas.getContext('2d'),config=settings();
       const family=getComputedStyle(element).fontFamily,weight=config.surface.weight+(view.scale<1.5?100:0);
       context.font=`${weight} 100px ${family}`;
       const size=Math.min(Math.round(config.surface.glyphCss*view.scale),Math.floor((view.cellWidth-2)/(context.measureText('0').width/100)));
       context.font=`${weight} ${size}px ${family}`;context.fillStyle='#fff';context.textAlign='center';context.textBaseline='middle';
-      for(let slot=0;slot<96;slot++)context.fillText(slot===95?'·':String.fromCharCode(slot+32),(slot%16+.5)*view.cellWidth,(Math.floor(slot/16)+.5)*view.cellHeight);
+      const faces=[...charsets.scholar];for(let slot=0;slot<faces.length;slot++)context.fillText(faces[slot],(slot%16+.5)*view.cellWidth,(Math.floor(slot/16)+.5)*view.cellHeight);
       gl.bindTexture(gl.TEXTURE_2D,atlasTexture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,atlas);
       draw();
     }
@@ -233,11 +231,9 @@ void main(){
       integer('tapCount',taps.length);integer('wakeCount',wakes.length);
       if(taps.length)gl.uniform4fv(location('taps'),new Float32Array(taps.flat()));
       if(wakes.length)gl.uniform4fv(location('wakes'),new Float32Array(wakes.flat()));
-      const charset=charsets[config.look]||charsets.mixed;
+      const charset=charsets.scholar;
       if(charset!==lastCharset){
-        lastCharset=charset;const sequence=new Int32Array(64);
-        [...charset].forEach((character,index)=>sequence[index]=character.charCodeAt(0)-32);
-        gl.uniform1iv(location('sequence'),sequence);integer('sequenceLength',charset.length);
+        lastCharset=charset;integer('sequenceLength',[...charset].length);
       }
       ink();gl.uniform3fv(location('glowColor'),config.glow.color.light);
       gl.drawArraysInstanced(gl.TRIANGLES,0,6,view.columns*view.rows);
