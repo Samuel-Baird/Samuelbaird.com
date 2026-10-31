@@ -3,7 +3,6 @@ import {
   ArrowRight,
   BarChart3,
   BookOpen,
-  GitCompareArrows,
   Globe2,
   Sparkles,
   Users,
@@ -24,7 +23,6 @@ export type HomeFeatureIcon =
   | "studies"
   | "data"
   | "map"
-  | "compare"
   | "ai";
 
 const ICONS: Record<HomeFeatureIcon, LucideIcon> = {
@@ -32,7 +30,6 @@ const ICONS: Record<HomeFeatureIcon, LucideIcon> = {
   studies: BookOpen,
   data: BarChart3,
   map: Globe2,
-  compare: GitCompareArrows,
   ai: Sparkles,
 };
 

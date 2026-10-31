@@ -17,7 +17,6 @@ const BASE_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
   { href: "/data-explorer", label: "Data Explorer" },
-  { href: "/compare", label: "Compare" },
   { href: "/connect", label: "Use with AI" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -31,7 +30,6 @@ const SIDEBAR_PRIMARY: SidebarLink[] = [
   { href: "/channels", label: "Channels", icon: "channels" },
   { href: "/studies", label: "Studies", icon: "studies" },
   { href: "/data-explorer", label: "Data Explorer", icon: "data" },
-  { href: "/compare", label: "Compare", icon: "compare" },
 ];
 const SIDEBAR_SECONDARY: SidebarLink[] = [
   { href: "/connect", label: "Use with AI", icon: "ai" },

@@ -5,7 +5,6 @@ import {
   Bell,
   BookOpen,
   Bookmark,
-  GitCompareArrows,
   Heart,
   Home,
   Info,
@@ -28,7 +27,6 @@ export type SidebarIcon =
   | "channels"
   | "studies"
   | "data"
-  | "compare"
   | "ai"
   | "about"
   | "contact"
@@ -45,7 +43,6 @@ const ICONS: Record<SidebarIcon, LucideIcon> = {
   channels: Users,
   studies: BookOpen,
   data: BarChart3,
-  compare: GitCompareArrows,
   ai: Sparkles,
   about: Info,
   contact: Mail,

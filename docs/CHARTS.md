@@ -1,8 +1,7 @@
 # Chart style guide
 
 This is the house style for the hand-rolled SVG/HTML chart primitives under
-`src/components/charts/` and their call sites (channel growth, the
-comparison chart). It draws on Ryan Burge's
+`src/components/charts/` and their call sites (channel growth). It draws on Ryan Burge's
 (Graphs About Religion, @ryanburge) ggplot2 conventions — direct labeling,
 minimal gridlines, highlight-vs-gray, a fixed caption grammar — translated
 onto this site's own tokens and fonts rather than copied wholesale. Read
@@ -69,7 +68,7 @@ don't resurrect the twin pattern that motivated removing them.
   — the same four ink families the rest of the site already uses, so a
   chart never introduces a color the reader hasn't learned elsewhere.
 - **Hard cap: 4 distinct chart colors** (`MAX_SERIES`). This is why the
-  channel comparison chart caps channel selection at four.
+  chart never needs more than four series.
 - **Highlight-vs-gray.** When one series is the point of the chart (LDS
   against several other groups), draw the focal series in a house color and
   every other series in `CONTEXT_GRAY` (`var(--muted)`) at reduced opacity,
@@ -111,7 +110,7 @@ the reader has to guess the meaning of.
   `nearestByX`/`nearestDot` generalize the pointer-hit-testing logic; don't
   reimplement per-dot hit circles (see `nearestDot`'s comment for why).
 - **Empty state**: a dashed-border card with a muted one-line explanation —
-  the existing pattern in `growth-chart.tsx` and `comparison-chart.tsx`.
+  the existing pattern in `growth-chart.tsx`.
 - Charts add no animation; if one ever does, gate it on
   `prefers-reduced-motion` per `BRANDING_AND_DESIGN.md`'s Motion section.
 

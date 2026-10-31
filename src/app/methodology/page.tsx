@@ -90,9 +90,8 @@ export default function MethodologyPage() {
               ID. Each snapshot records the values at a single point in time.
             </p>
             <p className="mt-3">
-              Stats are refreshed automatically once per day. Growth charts and
-              the Risers &amp; Fallers widget are computed from the snapshot
-              history — no estimates or projections are used.
+              Stats are refreshed automatically once per day. Growth charts are
+              computed from the snapshot history — no estimates or projections are used.
             </p>
             <p className="mt-3">
               YouTube API data is public. No non-public data is accessed.

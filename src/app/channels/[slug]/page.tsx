@@ -241,14 +241,6 @@ export default async function ChannelDetailPage({
           }))}
           label="Views"
         />
-        <div className="mt-4 text-right">
-          <Link
-            href={`/compare?slugs=${encodeURIComponent(channel.slug)}`}
-            className="text-sm text-amber-600 hover:underline"
-          >
-            Compare with another channel →
-          </Link>
-        </div>
       </div>
 
       <p className="mt-6 text-xs text-[color:var(--muted)]">

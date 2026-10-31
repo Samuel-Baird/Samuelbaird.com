@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import {
   getChannelsWithLatest,
   getRecentlyAdded,
-  getRisersAndFallers,
   getSiteStats,
   getStudies,
   getStudiesBySlugs,
@@ -28,7 +27,6 @@ import {
 import { DeseretTitle } from "@/components/deseret-title";
 import { HomeFeatureGrid, type HomeFeature } from "@/components/home-feature-grid";
 import { HomeGraphicsStrip, type HomeGraphic } from "@/components/home-graphics-strip";
-import { HomeMovers } from "@/components/home-movers";
 import { Tag } from "@/components/tag";
 import { inkForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
@@ -66,14 +64,13 @@ function graphicPool(all: GalleryGraphic[]): HomeGraphic[] {
 export default async function Home() {
   const includeCritical = true;
   const studySlugs = getStudyFolderSlugs();
-  const [stats, channels, randomStudies, recent, allStudies, movers, postMap, graphicStudies] =
+  const [stats, channels, randomStudies, recent, allStudies, postMap, graphicStudies] =
     await Promise.all([
       getSiteStats(),
       getChannelsWithLatest({ includeCritical }),
       getStudiesCarouselMix(20),
       getRecentlyAdded(30, 3, { studies: false, includeCritical }),
       getStudies(),
-      getRisersAndFallers(30, 3),
       getGraphicPostMap(),
       getStudiesBySlugs(studySlugs),
     ]);
@@ -86,7 +83,6 @@ export default async function Home() {
   ].filter((g) => isPublished(postMap, g.datasetSlug, graphicId(g)));
   const graphicsPool = graphicPool(publishedGraphics);
 
-  const topRiser = movers.risers[0];
   const features: HomeFeature[] = [
     {
       href: "/channels",
@@ -119,16 +115,6 @@ export default async function Home() {
         "A world map of membership, congregations, stakes, missions and temples by country.",
       figure: "Membership by country",
       icon: "map",
-    },
-    {
-      href: "/compare",
-      title: "Compare",
-      description:
-        "Risers and fallers, and side-by-side growth for up to four channels.",
-      figure: topRiser
-        ? `Top riser: ${topRiser.name}`
-        : "Channel growth, side by side",
-      icon: "compare",
     },
     {
       href: "/connect",
@@ -202,9 +188,7 @@ export default async function Home() {
         <BeehiveMark className="h-3.5 w-3.5" />
       </div>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-2">
-        <HomeMovers risers={movers.risers} fallers={movers.fallers} />
-
+      <div className="mt-16">
         {recent.channels.length > 0 && (
           <section aria-labelledby="home-new">
             <div className="flex items-baseline justify-between gap-3">
@@ -225,7 +209,7 @@ export default async function Home() {
             <p className="mt-1 text-sm text-[color:var(--muted)]">
               Added in the last 30 days.
             </p>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {recent.channels.map((c) => {
                 const tags = channelTagsOf(c);
                 return (

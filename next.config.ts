@@ -22,6 +22,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    // Compare was removed; keep old links and bookmarks working.
+    return [{ source: "/compare", destination: "/channels", permanent: true }];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

@@ -131,7 +131,6 @@ export async function runStatsRefresh(
   revalidateTag("channels", { expire: 0 });
   revalidatePath("/");
   revalidatePath("/channels");
-  revalidatePath("/compare");
 
   const summary: RefreshSummary = {
     total: ytIds.length,

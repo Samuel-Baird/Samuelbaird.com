@@ -22,6 +22,5 @@ export async function setWeeklyNotification(formData: FormData) {
     .upsert({ email, notify_weekly: enabled }, { onConflict: "email" });
   if (error) throw error;
 
-  revalidatePath("/compare");
   revalidatePath("/admin/access");
 }

@@ -51,19 +51,15 @@ export default function HomeLoading() {
         </ul>
       </section>
 
-      {/* Movers + new this month */}
-      <div className="mt-16 grid gap-12 lg:grid-cols-2">
-        {Array.from({ length: 2 }).map((_, col) => (
-          <section key={col}>
-            <div className={`h-8 w-48 ${BONE}`} />
-            <div className="mt-6 space-y-3">
-              {Array.from({ length: 3 }).map((_, row) => (
-                <div key={row} className={`h-16 ${BONE}`} />
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+      {/* New this month */}
+      <section className="mt-16">
+        <div className={`h-8 w-48 ${BONE}`} />
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className={`h-24 ${BONE}`} />
+          ))}
+        </div>
+      </section>
 
       {/* Featured studies */}
       <section className="mt-20">

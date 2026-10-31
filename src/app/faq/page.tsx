@@ -61,12 +61,12 @@ const FAQS: Faq[] = [
   {
     question: "How often are channel statistics updated?",
     answerText:
-      "Subscriber counts, total views, and video counts refresh automatically once a day. Growth charts and the Risers & Fallers widget are computed from that snapshot history — no estimates or projections.",
+      "Subscriber counts, total views, and video counts refresh automatically once a day. Growth charts are computed from that snapshot history — no estimates or projections.",
     answer: (
       <p>
         Subscriber counts, total views, and video counts refresh
-        automatically once a day. Growth charts and the Risers &amp; Fallers
-        widget are computed from that snapshot history — no estimates or
+        automatically once a day. Growth charts are computed from that snapshot
+        history — no estimates or
         projections.
       </p>
     ),
