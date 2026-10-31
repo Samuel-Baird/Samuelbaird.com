@@ -21,7 +21,7 @@ const handler = createMcpHandler(
       {
         title: "List channels",
         description:
-          "List LDS-related YouTube channels tracked by Latter-day Stats (faith-affiliated, cultural, news, education, etc). Critical-of-the-Church channels are always excluded.",
+          "List LDS-related YouTube channels tracked by Latter-day Stats (faith-affiliated, cultural, news, education, etc). Includes channels tagged Critical.",
         inputSchema: z.object({
           search: z.string().optional().describe("Case-insensitive substring match on channel name."),
           type: z.string().optional().describe('Filter by channel type/tag, e.g. "Church", "BYU", "Music", "Apologetics". See list_channel_types.'),
@@ -33,7 +33,7 @@ const handler = createMcpHandler(
         }),
       },
       async (args) => {
-        let rows = (await getChannelsWithLatest({ includeCritical: false })).map((c) => ({
+        let rows = (await getChannelsWithLatest({ includeCritical: true })).map((c) => ({
           slug: c.slug,
           youtube_channel_id: c.youtube_channel_id,
           name: c.name,
@@ -91,7 +91,7 @@ const handler = createMcpHandler(
       {
         title: "Get channel",
         description:
-          "Get one channel's full detail plus its subscriber/view history over time. Provide slug or youtubeChannelId. Returns null if not found or if the channel is Critical-tagged.",
+          "Get one channel's full detail plus its subscriber/view history over time. Provide slug or youtubeChannelId. Returns null if not found.",
         inputSchema: z.object({
           slug: z.string().optional(),
           youtubeChannelId: z.string().optional(),
@@ -101,7 +101,7 @@ const handler = createMcpHandler(
         const key = slug ?? youtubeChannelId;
         if (!key) throw new Error("Provide either slug or youtubeChannelId.");
         const channel = await getChannelBySlug(key);
-        if (!channel || channelTags(channel).includes("Critical")) {
+        if (!channel) {
           return { content: [{ type: "text", text: "null" }] };
         }
         const history = await getChannelStatsHistory(channel.id);
@@ -117,11 +117,11 @@ const handler = createMcpHandler(
       "list_channel_types",
       {
         title: "List channel types",
-        description: "List the distinct channel type/tag values in use (excluding Critical), for use with list_channels' `type` filter.",
+        description: "List the distinct channel type/tag values in use (including Critical), for use with list_channels' `type` filter.",
         inputSchema: z.object({}),
       },
       async () => {
-        const channels = await getChannelsWithLatest({ includeCritical: false });
+        const channels = await getChannelsWithLatest({ includeCritical: true });
         const set = new Set<string>();
         for (const c of channels) for (const t of channelTags(c)) set.add(t);
         return { content: [{ type: "text", text: JSON.stringify([...set].sort(), null, 2) }] };

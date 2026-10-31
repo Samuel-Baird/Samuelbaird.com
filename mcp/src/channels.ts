@@ -1,23 +1,7 @@
 import { supabase } from "./supabase.js";
 
-// Channels tagged Critical (critical-of-the-Church perspectives) are
-// excluded from every tool in this server, matching the exclusion the
-// website itself applies to its "faithful" views. See
-// src/lib/channel-types.ts / getChannelsWithLatest({ includeCritical:false })
-// in the main app for the same rule.
-const EXCLUDED_TYPES = new Set(["Critical"]);
-
-function isCritical(row: {
-  channel_type: string | null;
-  channel_types: string[] | null;
-}): boolean {
-  const tags = row.channel_types?.length
-    ? row.channel_types
-    : row.channel_type
-      ? [row.channel_type]
-      : [];
-  return tags.some((t) => EXCLUDED_TYPES.has(t));
-}
+// Every active channel is returned, including those tagged Critical: the
+// website lists them for everyone, so the MCP server does too.
 
 export type ChannelSummary = {
   slug: string;
@@ -74,7 +58,7 @@ export async function listChannels(opts: {
   const { data, error } = await q;
   if (error) throw error;
 
-  let rows = ((data ?? []) as any[]).filter((r) => !isCritical(r));
+  let rows = (data ?? []) as any[];
 
   if (opts.country) {
     const wanted = opts.country.toLowerCase();
@@ -114,7 +98,7 @@ export async function getChannel(opts: {
 
   const { data, error } = await q.maybeSingle();
   if (error) throw error;
-  if (!data || isCritical(data as any)) return null;
+  if (!data) return null;
 
   const summary = toSummary(data);
 
@@ -138,9 +122,7 @@ export async function listChannelTypes(): Promise<string[]> {
   if (error) throw error;
   const set = new Set<string>();
   for (const row of (data ?? []) as { channel_types: string[] }[]) {
-    for (const t of row.channel_types ?? []) {
-      if (!EXCLUDED_TYPES.has(t)) set.add(t);
-    }
+    for (const t of row.channel_types ?? []) set.add(t);
   }
   return [...set].sort();
 }

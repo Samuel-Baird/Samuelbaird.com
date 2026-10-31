@@ -15,8 +15,8 @@ function json(data: unknown) {
 }
 
 // ---------------------------------------------------------------------------
-// Channels — always excludes channels tagged "Critical" (critical-of-the-
-// Church commentary channels), matching the site's faithful-view filter.
+// Channels — every tracked channel, including those tagged Critical (the
+// website lists them for everyone).
 // ---------------------------------------------------------------------------
 
 server.registerTool(
@@ -24,7 +24,7 @@ server.registerTool(
   {
     title: "List channels",
     description:
-      "List LDS-related YouTube channels tracked by Latter-day Stats (faith-affiliated, cultural, news, education, etc). Critical-of-the-Church channels are always excluded.",
+      "List LDS-related YouTube channels tracked by Latter-day Stats (faith-affiliated, cultural, news, education, etc). Includes channels tagged Critical.",
     inputSchema: {
       search: z.string().optional().describe("Case-insensitive substring match on channel name."),
       type: z.string().optional().describe("Filter by channel type/tag, e.g. \"Church\", \"BYU\", \"Music\", \"Apologetics\". See list_channel_types."),
@@ -43,7 +43,7 @@ server.registerTool(
   {
     title: "Get channel",
     description:
-      "Get one channel's full detail plus its subscriber/view history over time. Provide slug or youtubeChannelId. Returns null if not found or if the channel is Critical-tagged.",
+      "Get one channel's full detail plus its subscriber/view history over time. Provide slug or youtubeChannelId. Returns null if not found.",
     inputSchema: {
       slug: z.string().optional(),
       youtubeChannelId: z.string().optional(),
@@ -56,7 +56,7 @@ server.registerTool(
   "list_channel_types",
   {
     title: "List channel types",
-    description: "List the distinct channel type/tag values in use (excluding Critical), for use with list_channels' `type` filter.",
+    description: "List the distinct channel type/tag values in use (including Critical), for use with list_channels' `type` filter.",
     inputSchema: {},
   },
   async () => json(await listChannelTypes()),

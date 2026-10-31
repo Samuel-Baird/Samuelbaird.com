@@ -65,8 +65,7 @@ const TROUBLE: { q: string; a: React.ReactNode }[] = [
         Only the public, read-only data you can already browse on this site:
         tracked channels and their stats, the research library, and the Data
         Explorer datasets. It never sees your account, bookmarks, or anything
-        you type into the site. Channels tagged Critical are left out of the
-        connection.
+        you type into the site.
       </>
     ),
   },

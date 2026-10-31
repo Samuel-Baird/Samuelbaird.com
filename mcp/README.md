@@ -25,7 +25,7 @@ or use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) for stdio-only c
 The rest of this document covers the standalone local server below — useful if you want
 to run against your own Supabase project or hack on the tools without redeploying.
 
-- **Channels** — the tracked YouTube channels and their subscriber/view stats. Channels tagged `Critical` (critical-of-the-Church commentary) are always excluded, matching the site's own faithful-view filter.
+- **Channels** — the tracked YouTube channels and their subscriber/view stats. Channels tagged `Critical` are included, matching the website, which lists every channel for everyone.
 - **Studies** — the research library (surveys, papers, articles).
 
 ## Setup
