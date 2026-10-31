@@ -8,7 +8,7 @@ import { PAYPAL_URL, VENMO_URL } from "@/lib/donate-links";
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support Latter-day Stats — donations go toward hosting and keeping the site free and ad-free. $5+ once unlocks premium features.",
+    "Support Latter-day Stats — donations go toward hosting and keeping the site free and ad-free.",
   alternates: { canonical: "/donate" },
 };
 
@@ -37,14 +37,6 @@ export default function DonatePage() {
             <p className="mt-3 text-sm text-[color:var(--muted)]">
               You&apos;ll be taken to {PAYPAL_URL.replace("https://", "")} or{" "}
               {VENMO_URL.replace("https://", "")} to complete the donation.
-              For premium via PayPal or Venmo, forward your receipt to{" "}
-              <a
-                href={mailto("Premium access — donation receipt")}
-                className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-              >
-                {CONTACT_EMAIL}
-              </a>{" "}
-              and you&apos;ll be added by hand.
             </p>
           </section>
         </div>
@@ -58,23 +50,6 @@ export default function DonatePage() {
               <li>Hosting and infrastructure costs.</li>
               <li>Keeping the site free, public, and without ads.</li>
             </ul>
-          </section>
-
-          <section>
-            <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-              Premium
-            </h2>
-            <p className="mt-3 border-t border-[color:var(--border)] pt-3 text-sm leading-relaxed text-[color:var(--muted)]">
-              A donation of $5 or more unlocks{" "}
-              <Link
-                href="/premium"
-                className="text-[color:var(--honey)] underline underline-offset-2 hover:no-underline"
-              >
-                premium features
-              </Link>{" "}
-              — risers &amp; fallers, channel comparison, CSV exports, and
-              more.
-            </p>
           </section>
 
           <section>

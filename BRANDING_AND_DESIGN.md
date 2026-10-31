@@ -53,7 +53,7 @@ Core product language:
 
 ## Color System
 
-Tokens live in `src/app/globals.css` (`:root` and `html.dark`) and are exposed to
+**The site is dark only.** The light "aged paper" theme was removed (Oct 2026): `<html>` always carries `class="dark"`, there is no theme toggle, and the `Light` column below is historical. Tokens live in `src/app/globals.css` (`:root`) and are exposed to
 Tailwind v4 through `@theme inline`. **Always reference tokens** — never hardcode
 a hex value or reach for a default Tailwind color ramp (`emerald-100`, `red-600`,
 etc.) in site UI.
@@ -81,13 +81,12 @@ emphasized data series). Don't let honey become a second link color.
 
 ### Surfaces and texture
 
-The body carries `--page-texture`, an inline-SVG `feTurbulence` tile: fine umber
-fiber grain on light, low-frequency stone mottle plus sparse pale specks on dark.
+The body carries `--page-texture`, an inline-SVG `feTurbulence` tile: low-frequency stone mottle plus sparse pale specks.
 It is a data URI in a custom property — no image assets, no network requests.
 
 Cards stay **flat and untextured** and sit on `--surface`, reading as clean sheets
 laid on an aged desk. Card markup is authored as `bg-white`; an unlayered rule in
-`globals.css` remaps `.bg-white` to `var(--surface)` in both themes, so no call
+`globals.css` remaps `.bg-white` to `var(--surface)`, so no call
 site needs a `dark:` variant. Prefer writing `bg-white` for card surfaces to match
 existing code. Never texture a card, table, or chart surface — texture belongs to
 the page only.
@@ -526,5 +525,5 @@ Checklist when adding UI:
 - [ ] Page fills the `max-w-6xl` rail; prose still capped at a readable measure.
 - [ ] Labels and eyebrows use `.small-caps`; dates in prose use `.serif-onum`.
 - [ ] Any new animation is gated on `prefers-reduced-motion`.
-- [ ] Works in both light and dark mode.
+- [ ] Reads well on the dark stone background.
 - [ ] New charts follow [docs/CHARTS.md](docs/CHARTS.md).

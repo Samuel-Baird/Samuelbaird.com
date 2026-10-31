@@ -6,7 +6,6 @@ import { FreshnessBadge } from "@/components/freshness-badge";
 import { getCurrentUser } from "@/lib/auth";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { getBookmarkSetForUser, getChannelsWithLatest } from "@/lib/data";
-import { getPremiumStatus } from "@/lib/permissions";
 
 export const metadata: Metadata = {
   title: "Channels",
@@ -15,14 +14,10 @@ export const metadata: Metadata = {
 };
 
 export default async function ChannelsPage() {
-  const [auth, premiumStatus] = await Promise.all([
-    getCurrentUser(),
-    getPremiumStatus(),
-  ]);
+  const auth = await getCurrentUser();
   const [channels, bookmarks] = await Promise.all([
     getChannelsWithLatest({
       includeInactive: true,
-      includeCritical: premiumStatus.premium,
     }),
     auth
       ? getBookmarkSetForUser(auth.user.id)
@@ -62,7 +57,6 @@ export default async function ChannelsPage() {
           channels={channels}
           bookmarkedSet={bookmarks.channels}
           signedIn={Boolean(auth)}
-          premium={premiumStatus.premium}
         />
       </div>
 

@@ -16,7 +16,7 @@ const SECTIONS: { id: string; title: string }[] = [
   { id: "accounts", title: "Accounts" },
   { id: "acceptable-use", title: "Acceptable use" },
   { id: "content", title: "Content and ownership" },
-  { id: "donations", title: "Donations and premium" },
+  { id: "donations", title: "Donations" },
   { id: "disclaimers", title: "Disclaimers" },
   { id: "liability", title: "Limitation of liability" },
   { id: "third-party-links", title: "Third-party links" },
@@ -136,22 +136,14 @@ export default function TermsPage() {
             </p>
           </Section>
 
-          <Section id="donations" title="Donations and premium">
+          <Section id="donations" title="Donations">
             <p>
               Donations are processed entirely off-site through PayPal or
               Venmo — this site never collects or stores payment
               information. Donations are voluntary support for hosting costs,
-              not a purchase of goods or a guaranteed service. A one-time
-              donation of $5 or more is currently used as the basis for
-              granting premium features, which are added by hand after you
-              send proof of your donation; see{" "}
-              <Link
-                href="/premium"
-                className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-              >
-                the premium page
-              </Link>{" "}
-              for current details. Donations are not tax-deductible unless
+              not a purchase of goods or a guaranteed service. Every feature on
+              the site is free for everyone; donating does not unlock anything.
+              Donations are not tax-deductible unless
               stated otherwise, and are non-refundable.
             </p>
           </Section>

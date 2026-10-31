@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
-import { getStripe, isStripeConfigured, PREMIUM_MIN_CENTS } from "@/lib/stripe";
+import { getStripe, isStripeConfigured } from "@/lib/stripe";
 
 export const metadata: Metadata = {
   title: "Thank you",
@@ -40,7 +39,6 @@ export default async function DonateThanksPage({
 }) {
   const { session_id } = await searchParams;
   const summary = await getSummary(session_id);
-  const premium = summary !== null && summary.amountCents >= PREMIUM_MIN_CENTS;
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
@@ -60,25 +58,6 @@ export default async function DonateThanksPage({
             : "Your contribution helps make this website possible."}{" "}
           A receipt is on its way to your inbox.
         </p>
-
-        {premium && summary ? (
-          <div className="rounded-[var(--radius)] border border-[color:var(--honey)]/40 bg-[color:var(--honey-soft)] p-5 text-sm sm:text-base">
-            <p className="font-medium">Premium is unlocked.</p>
-            <p className="mt-2 leading-relaxed">
-              {summary.paid
-                ? "It's been added to"
-                : "It will be added once your payment clears, to"}{" "}
-              {summary.email ? <strong>{summary.email}</strong> : "your account"}. Sign
-              in with that email to use it — it may take a minute to show up.
-            </p>
-            <Link
-              href="/premium"
-              className="mt-4 inline-flex h-11 items-center rounded-[var(--radius)] bg-[color:var(--honey)] px-5 text-sm font-medium text-white hover:opacity-90"
-            >
-              Go to premium →
-            </Link>
-          </div>
-        ) : null}
 
         <p className="text-sm text-[color:var(--muted)]">
           Something not right? Email{" "}

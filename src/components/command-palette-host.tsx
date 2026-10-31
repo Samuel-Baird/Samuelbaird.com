@@ -1,6 +1,5 @@
 import { CommandPalette } from "@/components/command-palette";
 import { getSearchIndex, type SearchItem } from "@/lib/data";
-import { getPremiumStatus } from "@/lib/permissions";
 
 export async function CommandPaletteHost() {
   // This renders inside the nav on every page and there is no error boundary
@@ -8,8 +7,7 @@ export async function CommandPaletteHost() {
   // Degrade to an empty palette instead.
   let items: SearchItem[] = [];
   try {
-    const status = await getPremiumStatus();
-    items = await getSearchIndex({ includeCritical: status.premium });
+    items = await getSearchIndex({ includeCritical: true });
   } catch (error) {
     console.error("command palette search index unavailable:", error);
   }

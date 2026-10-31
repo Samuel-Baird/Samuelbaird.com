@@ -4,7 +4,6 @@ import { useActionState, useState } from "react";
 import { startDonationCheckout, type DonateState } from "@/app/actions/donate";
 
 const PRESETS = [5, 10, 25, 50];
-const PREMIUM_MIN_DOLLARS = 5;
 
 const INITIAL: DonateState = { error: null };
 
@@ -15,7 +14,7 @@ const choiceOn =
 const choiceOff =
   "border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--foreground)] hover:bg-[color:var(--muted-soft)]";
 
-export function StripeDonateForm({ signedIn }: { signedIn: boolean }) {
+export function StripeDonateForm() {
   const [state, formAction, pending] = useActionState(
     startDonationCheckout,
     INITIAL,
@@ -23,7 +22,6 @@ export function StripeDonateForm({ signedIn }: { signedIn: boolean }) {
   const [amount, setAmount] = useState("10");
   const [frequency, setFrequency] = useState<"once" | "monthly">("once");
   const dollars = Number(amount);
-  const unlocksPremium = Number.isFinite(dollars) && dollars >= PREMIUM_MIN_DOLLARS;
 
   return (
     <form action={formAction} className="space-y-5">
@@ -90,21 +88,6 @@ export function StripeDonateForm({ signedIn }: { signedIn: boolean }) {
           </label>
         </div>
       </fieldset>
-
-      <p className="text-sm leading-relaxed text-[color:var(--muted)]">
-        {unlocksPremium ? (
-          signedIn ? (
-            <>Premium is added to your account automatically once the payment goes through.</>
-          ) : (
-            <>
-              Premium is added automatically to the email you enter at
-              checkout. Sign in with that same email to use it.
-            </>
-          )
-        ) : (
-          <>Donations of ${PREMIUM_MIN_DOLLARS} or more also unlock premium.</>
-        )}
-      </p>
 
       <button
         type="submit"

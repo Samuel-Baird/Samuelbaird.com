@@ -2,7 +2,6 @@
 
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { toDeseretText } from "@/lib/deseret";
 
 const THANK_YOU = "Thank You!";
@@ -119,20 +118,6 @@ function ThankYouModal({ onClose }: { onClose: () => void }) {
         <p className="mt-4 text-sm leading-relaxed text-[color:var(--muted)]">
           Your contribution helps make this website possible.
         </p>
-
-        <div className="mt-5 rounded-[var(--radius)] border border-[color:var(--border)] bg-[color:var(--muted-soft)] p-4 text-left text-sm leading-relaxed text-[color:var(--foreground)]">
-          <p>
-            To receive premium, forward your donation receipt to{" "}
-            <a
-              href={mailto("Premium access — donation receipt")}
-              className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-            >
-              {CONTACT_EMAIL}
-            </a>
-            , along with the email address on the account you&apos;d like it
-            applied to.
-          </p>
-        </div>
 
         <button
           type="button"

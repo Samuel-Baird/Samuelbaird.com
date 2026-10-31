@@ -12,7 +12,6 @@ type Props = {
   channels: ChannelWithStats[];
   bookmarkedSet: Set<string>;
   signedIn: boolean;
-  premium: boolean;
 };
 
 type FilterKey = FilterGroup["key"];
@@ -105,7 +104,6 @@ export function ChannelsExplorer({
   channels,
   bookmarkedSet,
   signedIn,
-  premium,
 }: Props) {
   const searchParams = useSearchParams();
   const initialType = searchParams.get("type");
@@ -348,7 +346,6 @@ export function ChannelsExplorer({
             <ExportCsvButton
               href={exportHref}
               rowCount={filteredChannels.length}
-              premium={premium}
             />
           </div>
 

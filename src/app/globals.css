@@ -3,44 +3,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Aged paper. The page is warm creme; cards sit on it as cleaner sheets. */
-  --background: #f4eeda;
-  --surface: #fcf9ef;
-  --foreground: #1a1a1a;
-  --muted: #63605a;
-  --muted-soft: #ece4cf;
-  --border: #ded5bf;
-  --accent: #1f4f7a;
-  --accent-soft: #e8eff6;
-  /* Deseret seasoning: honey is the identity accent (logomark, active
-     states, chart highlight, dinkus); oxblood is a second ink family for
-     tags. Both are tuned to sit on --background at AA text contrast. */
-  --honey: #8a5a06;
-  --honey-soft: #f6ecd6;
-  --oxblood: #7c2d2d;
-  --oxblood-soft: #f4e6e3;
+  /* Dark stone only (the light "aged paper" theme was removed). The page is a
+     low-frequency mottle with sparse pale specks; cards sit on it as flat
+     sheets. This is the same canvas samuelbaird.com uses. */
   /* The one radius. Archive surfaces are flat panels, not pills. */
   --radius: 3px;
-  /* Single-hue ordinal ramp for charts (e.g. birth-decade shares), lightest
-     to most-intense. Authored per theme rather than computed from --accent
-     via color-mix(): every semantic token flips which end is "light" between
-     themes (dark mode reads light text on a dark surface), so mixing toward
-     --foreground or --accent-soft as a "light" anchor inverts the ramp's
-     order in dark mode. These are their own tokens for that reason. */
-  --chart-ordinal-1: #e8eff6;
-  --chart-ordinal-2: #c3d7e8;
-  --chart-ordinal-3: #96b9d6;
-  --chart-ordinal-4: #5e8db8;
-  --chart-ordinal-5: #1f4f7a;
-  --chart-ordinal-6: #163a5c;
-  --chart-ordinal-7: #0d2740;
-  /* Fine fibrous grain, umber, capped at 8% alpha. The anisotropic
-     baseFrequency stretches the noise horizontally so it reads as laid
-     paper rather than TV static. stitchTiles keeps the tile seamless. */
-  --page-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.30 0 0 0 0 0.24 0 0 0 0 0.12 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23p)'/%3E%3C/svg%3E");
-}
-
-html.dark {
   /* Dark stone: a broad low-frequency mottle plus sparse pale specks. */
   --background: #0f1115;
   --surface: #161a20;
@@ -209,4 +176,23 @@ body {
     background: #fff;
     background-image: none;
   }
+}
+
+/* Drifting Deseret glyphs behind the page (public/bg/, same field as
+   samuelbaird.com). Hover wakes the letters; click sends a blue ripple. */
+.glyph-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  contain: strict;
+  opacity: 0;
+  transition: opacity 2500ms ease-out;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: #7a7a7a;
+}
+.glyph-bg .absolute { position: absolute; }
+.glyph-bg .block { display: block; }
+@media print {
+  .glyph-bg { display: none; }
 }

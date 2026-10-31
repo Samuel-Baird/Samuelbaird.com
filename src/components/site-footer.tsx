@@ -21,6 +21,8 @@ export function SiteFooter() {
             <Link href="/channels" className="hover:text-[color:var(--foreground)] transition-colors">Channels</Link>
             <Link href="/studies" className="hover:text-[color:var(--foreground)] transition-colors">Studies</Link>
             <Link href="/data-explorer" className="hover:text-[color:var(--foreground)] transition-colors">Data Explorer</Link>
+            <Link href="/compare" className="hover:text-[color:var(--foreground)] transition-colors">Compare</Link>
+            <Link href="/connect" className="hover:text-[color:var(--foreground)] transition-colors">Use with AI</Link>
             <Link href="/about" className="hover:text-[color:var(--foreground)] transition-colors">About</Link>
             <Link href="/faq" className="hover:text-[color:var(--foreground)] transition-colors">FAQ</Link>
             <Link href="/contact" className="hover:text-[color:var(--foreground)] transition-colors">Contact</Link>

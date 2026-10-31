@@ -1,7 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { toCsv } from "@/lib/csv";
 import { fiveColumnPct, QUIZ_DATA } from "@/lib/evangelical-quiz";
-import { requireCapability } from "@/lib/permissions";
 
 const GROUP_ORDER = [
   "Evangelical",
@@ -13,10 +12,7 @@ const GROUP_ORDER = [
 
 type Row = { itemId: string; statement: string; year: number | null; group: string; pcts: number[] };
 
-export async function GET(req: NextRequest) {
-  const nextPath = `${req.nextUrl.pathname}${req.nextUrl.search}`;
-  await requireCapability("download_evangelical_quiz_data", nextPath);
-
+export async function GET() {
   const rows: Row[] = [];
   for (const item of QUIZ_DATA.items) {
     for (const group of GROUP_ORDER) {

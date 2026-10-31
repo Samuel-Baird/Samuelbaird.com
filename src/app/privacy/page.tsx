@@ -78,8 +78,8 @@ export default function PrivacyPage() {
             <p>
               To run your account (sign-in, bookmarks, reading progress), send
               the monthly newsletter if you&apos;ve opted in, respond to
-              messages sent through the contact form, and grant premium
-              access after a donation. We don&apos;t sell your data or use it
+              messages sent through the contact form, and send the
+              weekly digest if you&apos;ve opted in. We don&apos;t sell your data or use it
               for advertising — the site doesn&apos;t run ads.
             </p>
           </Section>

@@ -107,12 +107,13 @@ two rules most easily got wrong:
   by concatenation. Map variants to full strings in a `Record` — see
   `src/lib/channel-types.ts`.
 - **Card surfaces use `bg-white`.** `globals.css` remaps `.bg-white` under
-  `html.dark` to a dark surface, so do not add `dark:bg-*` variants for cards.
+  to the dark surface, so do not add `dark:bg-*` variants for cards.
   Consume colours as `text-[color:var(--muted)]`,
   `border-[color:var(--border)]`, and so on.
 
-Dark mode is class-based (`html.dark`) and set before paint by an inline script
-in the root layout. Serif type is the global `.serif` utility (Fraunces), not
+The site is dark only: the root layout puts `class="dark"` on `<html>` and there
+is no theme toggle. A drifting-glyph background (`public/bg/glyph-field.js`)
+sits behind every page. Serif type is the global `.serif` utility (Fraunces), not
 `font-serif`.
 
 ---
@@ -123,4 +124,4 @@ Commit messages and pull requests should explain **why**, not just what. When a
 change fixes a bug, say what the bug actually was.
 
 Before pushing: `npm run lint` and `npm run build` both clean, and the affected
-pages checked in light and dark mode at mobile and desktop widths.
+pages checked at mobile and desktop widths.

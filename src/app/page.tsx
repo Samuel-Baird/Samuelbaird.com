@@ -8,7 +8,6 @@ import {
   getRecentlyAdded,
   getSiteStats,
 } from "@/lib/data";
-import { getPremiumStatus } from "@/lib/permissions";
 import { ChannelsCarousel } from "@/components/channels-carousel";
 import { StudiesCarousel } from "@/components/studies-carousel";
 import {
@@ -26,8 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const premiumStatus = await getPremiumStatus();
-  const includeCritical = premiumStatus.premium;
+  const includeCritical = true;
   const [stats, channels, featuredPool, randomStudies, recent] =
     await Promise.all([
       getSiteStats(),

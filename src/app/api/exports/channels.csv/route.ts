@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getChannelsWithLatest } from "@/lib/data";
-import { requireCapability } from "@/lib/permissions";
 import { toCsv } from "@/lib/csv";
 import { fmtAvgViews } from "@/lib/format";
 import type { ChannelWithStats } from "@/lib/types";
@@ -55,9 +54,6 @@ function youtubeUrl(channel: ChannelWithStats) {
 }
 
 export async function GET(req: NextRequest) {
-  const nextPath = `${req.nextUrl.pathname}${req.nextUrl.search}`;
-  await requireCapability("download_channel_csv", nextPath);
-
   const selections = {
     type: selectedValues(req, "type"),
     country: selectedValues(req, "country"),

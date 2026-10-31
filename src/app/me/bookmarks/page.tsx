@@ -47,7 +47,7 @@ export default async function BookmarksPage({
       {tab === "channels" && channels.length >= 2 && (
         <div className="mt-6">
           <Link
-            href={`/premium?slugs=${channels
+            href={`/compare?slugs=${channels
               .slice(0, 4)
               .map((c) => encodeURIComponent(c.slug))
               .join(",")}`}

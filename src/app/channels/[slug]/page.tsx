@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound, redirect } from "next/navigation";
-import { getPremiumStatus } from "@/lib/permissions";
+import { notFound } from "next/navigation";
 import { BookmarkButton } from "@/components/bookmark-button";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { FreshnessBadge } from "@/components/freshness-badge";
@@ -59,20 +58,11 @@ export default async function ChannelDetailPage({
   params: Promise<RouteParams>;
 }) {
   const { slug } = await params;
-  const [channel, auth, premiumStatus] = await Promise.all([
+  const [channel, auth] = await Promise.all([
     getChannelBySlug(slug),
     getCurrentUser(),
-    getPremiumStatus(),
   ]);
   if (!channel) notFound();
-  const channelTags = channel.channel_types?.length
-    ? channel.channel_types
-    : channel.channel_type
-      ? [channel.channel_type]
-      : [];
-  if (channelTags.includes("Critical") && !premiumStatus.premium) {
-    redirect("/premium");
-  }
   const [bookmarks, history] = await Promise.all([
     auth ? getBookmarkSetForUser(auth.user.id) : Promise.resolve(null),
     getChannelStatsHistory(channel.id),
@@ -253,7 +243,7 @@ export default async function ChannelDetailPage({
         />
         <div className="mt-4 text-right">
           <Link
-            href={`/premium?slugs=${encodeURIComponent(channel.slug)}`}
+            href={`/compare?slugs=${encodeURIComponent(channel.slug)}`}
             className="text-sm text-amber-600 hover:underline"
           >
             Compare with another channel →

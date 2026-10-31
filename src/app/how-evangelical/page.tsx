@@ -7,7 +7,6 @@ import { SurveyFooter } from "@/components/evangelical-quiz/survey-footer";
 import { getCurrentUser } from "@/lib/auth";
 import { DATASETS } from "@/lib/data-explorer";
 import { getEvangelicalQuizAnswersForUser } from "@/lib/evangelical-quiz/answers";
-import { getPremiumStatus } from "@/lib/permissions";
 
 // Unlisted: not in the nav, not in sitemap.ts, shared by direct link only.
 export const metadata: Metadata = {
@@ -17,13 +16,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Reads the signed-in reader's premium status and saved answers.
+// Reads the signed-in reader's saved answers.
 export const dynamic = "force-dynamic";
 
 const HOME_DATASET = DATASETS.find((d) => d.quiz?.href === "/how-evangelical");
 
 export default async function HowEvangelicalPage() {
-  const [{ premium }, auth] = await Promise.all([getPremiumStatus(), getCurrentUser()]);
+  const auth = await getCurrentUser();
   const initialAnswers = auth ? await getEvangelicalQuizAnswersForUser(auth.user.id) : {};
 
   return (
@@ -51,7 +50,7 @@ export default async function HowEvangelicalPage() {
             inside each quiz step. Stacks below the quiz on mobile. */}
         <aside className="mt-10 space-y-6 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
           <SurveyFooter />
-          <DownloadDataButton premium={premium} />
+          <DownloadDataButton />
         </aside>
       </div>
     </div>

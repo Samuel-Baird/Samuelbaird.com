@@ -9,7 +9,6 @@ import {
 import { AuthMenu, type AuthMenuUser } from "@/components/auth-menu";
 import { CommandPaletteHost } from "@/components/command-palette-host";
 import { SiteNavClient, type SiteNavLink } from "@/components/site-nav-client";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { getCurrentUser, signOutAction } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
@@ -17,7 +16,7 @@ const BASE_LINKS: SiteNavLink[] = [
   { href: "/channels", label: "Channels" },
   { href: "/studies", label: "Studies" },
   { href: "/data-explorer", label: "Data Explorer" },
-  { href: "/premium", label: "Premium", premium: true },
+  { href: "/compare", label: "Compare" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/donate", label: "Donate" },
@@ -74,7 +73,6 @@ export async function SiteNav() {
               previews={messageNotifications.previews}
             />
           ) : null}
-          <ThemeToggle />
           <AuthMenu user={user} signOut={signOutAction} />
         </div>
       </div>

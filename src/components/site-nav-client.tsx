@@ -9,7 +9,6 @@ import { AuthAvatar, type AuthMenuUser } from "@/components/auth-menu";
 export type SiteNavLink = {
   href: string;
   label: string;
-  premium?: boolean;
   betaOnly?: boolean;
 };
 
@@ -32,13 +31,9 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
       <nav className="small-caps hidden gap-7 text-[13px] md:flex">
         {links.map((link) => {
           const active = isActive(pathname, link.href);
-          const baseClass = link.premium
-            ? active
-              ? "text-[color:var(--honey)] underline decoration-1 underline-offset-4 transition-colors"
-              : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--honey)]"
-            : active
-              ? "text-[color:var(--foreground)] underline decoration-1 underline-offset-4"
-              : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--foreground)]";
+          const baseClass = active
+            ? "text-[color:var(--foreground)] underline decoration-1 underline-offset-4"
+            : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--foreground)]";
           return (
             <Link key={link.href} href={link.href} className={baseClass}>
               {link.label}
@@ -64,13 +59,9 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
               const active = isActive(pathname, link.href);
               const className =
                 "rounded-[var(--radius)] px-2 py-3 text-base " +
-                (link.premium
-                  ? active
-                    ? "bg-[color:var(--muted-soft)] text-[color:var(--honey)]"
-                    : "text-[color:var(--muted)] hover:text-[color:var(--honey)]"
-                  : active
-                    ? "bg-[color:var(--muted-soft)] text-[color:var(--foreground)]"
-                    : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]");
+                (active
+                  ? "bg-[color:var(--muted-soft)] text-[color:var(--foreground)]"
+                  : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]");
               return (
                 <Link
                   key={link.href}

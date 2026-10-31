@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter, Fraunces, Noto_Sans_Deseret } from "next/font/google";
+import Script from "next/script";
 import { Suspense } from "react";
 import { AgeGateModal } from "@/components/age-gate-modal";
 import { AuthPromptProvider } from "@/components/auth-prompt";
@@ -43,6 +44,11 @@ export const metadata: Metadata = {
     "Statistics, research, and creator data on the Latter-day Saint community.",
 };
 
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#0f1115",
+};
+
 // Site-wide structured data. Kept minimal and factual — no aggregate
 // ratings, no org logo claims, nothing that overstates what the site is.
 const JSON_LD = {
@@ -74,16 +80,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fraunces.variable} ${notoDeseret.variable} h-full`}
+      className={`${inter.variable} ${fraunces.variable} ${notoDeseret.variable} dark h-full`}
       suppressHydrationWarning
     >
       <head>
-        <script
-          // Set theme before paint to avoid flash. Safe inline boot script.
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
@@ -110,6 +110,7 @@ export default function RootLayout({
           </AuthPromptProvider>
         </Suspense>
         <Analytics />
+        <Script src="/bg/glyph-field.js" strategy="afterInteractive" charSet="utf-8" />
       </body>
     </html>
   );
