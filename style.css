@@ -1,9 +1,6 @@
 :root{
-  /* Latter-day Stats palette: dark ink on creme paper (light), pale ink on stone (dark). Text goes gray on hover. */
-  --bg:var(--page-bg); --fg:#1a1a1a; --muted:#63605a; --card:rgba(252,249,239,.82); --line:#ded5bf; --accent:#1f4f7a; --hover:#8a8780; --on-accent:#fff;
-}
-@media (prefers-color-scheme:dark){
-  :root{--fg:#e9e7e2; --muted:#9a9a9a; --card:rgba(22,26,32,.82); --line:#2a2e36; --accent:#7fb0d8; --hover:#9a9a9a; --on-accent:#0f1115}
+  /* Dark stone, pale ink; text goes gray on hover. The glyph field lives in /bg/. */
+  --bg:var(--page-bg); --fg:#e9e7e2; --muted:#9a9a9a; --card:rgba(22,26,32,.82); --line:#2a2e36; --accent:#7fb0d8; --hover:#9a9a9a; --on-accent:#0f1115;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,"Times New Roman",serif}

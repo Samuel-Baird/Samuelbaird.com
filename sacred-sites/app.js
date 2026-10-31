@@ -1,4 +1,4 @@
-// Map page: filters, timeline, visit categories, wishlist and clustering.
+// Map page: filters, timeline, visit categories and wishlist.
 const state = { group: null, denom: null, country: "", year: "", cat: "", wish: false, from: 0, to: 0 };
 
 // Timeline = every month from the first to the last logged visit.
@@ -20,12 +20,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
 }).addTo(map);
 
-const clusterIcon = (hollow) => (cluster) =>
-  L.divIcon({ html: `<span>${cluster.getChildCount()}</span>`, className: "sscluster" + (hollow ? " hollow" : ""), iconSize: [38, 38] });
-const makeCluster = (hollow) => L.markerClusterGroup({
-  showCoverageOnHover: false, maxClusterRadius: 48, iconCreateFunction: clusterIcon(hollow),
-}).addTo(map);
-const visitedLayer = makeCluster(false), wishLayer = makeCluster(true);
+const visitedLayer = L.layerGroup().addTo(map), wishLayer = L.layerGroup().addTo(map);
 const markers = {};
 
 // ---- filtering ----
@@ -85,8 +80,8 @@ function render() {
 
 function openSite(id) {
   const m = markers[id]; if (!m) return;
-  const layer = m.options.fillOpacity < 0.5 ? wishLayer : visitedLayer;
-  layer.zoomToShowLayer(m, () => m.openPopup());
+  map.setView(m.getLatLng(), Math.max(map.getZoom(), 13), { animate: false });
+  m.openPopup();
 }
 
 // ---- controls ----

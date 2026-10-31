@@ -1,5 +1,4 @@
-:root{--panel:rgba(252,249,239,.78);--ink:#1a1a1a;--muted:#63605a;--line:#ded5bf;--accent:#1f4f7a;--hover:#8a8780}
-@media (prefers-color-scheme:dark){:root{--panel:rgba(15,17,21,.72);--ink:#e9e7e2;--muted:#9a9a9a;--line:#2a2e36;--accent:#7fb0d8;--hover:#9a9a9a}}
+:root{--panel:rgba(15,17,21,.72);--ink:#e9e7e2;--muted:#9a9a9a;--line:#2a2e36;--accent:#7fb0d8;--hover:#9a9a9a;color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{display:flex;flex-direction:column;background:transparent;color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -46,14 +45,12 @@ ul{list-style:none;margin:0;padding:0}
 #lightbox img{max-width:94vw;max-height:94vh;object-fit:contain}
 #lightbox button{position:absolute;top:12px;right:18px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}
 
-/* in dark mode the map tiles are darkened to match; markers and popups are unaffected */
+/* map tiles are darkened to match; markers and popups are unaffected */
 #map{background:var(--page-bg)}
-@media (prefers-color-scheme:dark){
 #map .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) grayscale(.85) brightness(.75) contrast(.9)}
 .leaflet-container .leaflet-control-zoom a{background:#161a20;color:#9a9a9a;border-color:#2a2e36}
 .leaflet-container .leaflet-control-attribution{background:rgba(15,17,21,.7);color:#9a9a9a}
 .leaflet-container .leaflet-control-attribution a{color:#9a9a9a}
-}
 h1:hover,h2:hover,.hint:hover,.site:hover,.com:hover,nav a:hover,#stats span:hover,#stats b:hover{color:var(--hover)}
 .site,.com,nav a,h1,h2,.hint{transition:color .2s}
 
@@ -73,12 +70,6 @@ nav a[aria-current]{color:var(--hover)}
 label.wish{display:flex;align-items:center;gap:8px;margin:8px 0 4px;cursor:pointer}
 button.link{font:inherit;font-size:12px;color:var(--muted);background:none;border:0;padding:2px 0;cursor:pointer;text-decoration:underline}
 button.link:hover{color:var(--hover)}
-
-/* ---- clusters ---- */
-.sscluster{display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(31,79,122,.88);color:#fff;border:3px solid rgba(255,255,255,.85);font:600 13px system-ui,sans-serif;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
-.sscluster.hollow{background:rgba(255,255,255,.12);color:#1f4f7a;border:3px solid #1f4f7a;box-shadow:none;font-weight:700}
-@media (prefers-color-scheme:dark){.sscluster.hollow{color:#7fb0d8;border-color:#7fb0d8}}
-.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:none}
 
 /* ---- visit categories ---- */
 .cat{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.02em;padding:1px 7px;border-radius:999px;border:1px solid currentColor;vertical-align:1px}
