@@ -6,9 +6,9 @@
 const GlyphWind = (() => {
   const clamp = (value, min=0, max=1) => Math.max(min,Math.min(max,value));
   const smooth = value => { const x=clamp(value); return x*x*(3-2*x); };
-  // Site edit: one mixed set (English, Portuguese/Spanish, Greek, Hebrew, Arabic, Deseret, scholarly marks).
-  // Each character is one atlas slot (16 per row); repeats weight a character more heavily.
-  const charsets = {scholar:'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúâêôãõàçñü¿¡ÁÉÑÇαβγδεζηθλμπσφψωΣΩΔΦΨāīūṭḥṣḍš†‡§¶∴אבגדהוזחטיכלמנסעפצקרשתابتثجحخدذرزسشصضطظعغفقكلمنهوي𐐨𐐩𐐪𐐫𐐬𐐭𐐮𐐯𐐰𐐱𐐲𐐳𐐴𐐵𐐶𐐷𐐸𐐹𐐺𐐻𐐼𐐽𐐾𐐿𐑀𐑁𐑂𐑃𐑄𐑅𐑆𐑇𐑈𐑉𐑊𐑋𐑌𐑍𐑎𐑏'};
+  // Site edit: Deseret Alphabet only (U+10400-1044F, both cases).
+  // Each character is one atlas slot (16 per row, 5 rows).
+  const charsets = {scholar:'𐐀𐐁𐐂𐐃𐐄𐐅𐐆𐐇𐐈𐐉𐐊𐐋𐐌𐐍𐐎𐐏𐐐𐐑𐐒𐐓𐐔𐐕𐐖𐐗𐐘𐐙𐐚𐐛𐐜𐐝𐐞𐐟𐐠𐐡𐐢𐐣𐐤𐐥𐐦𐐧𐐨𐐩𐐪𐐫𐐬𐐭𐐮𐐯𐐰𐐱𐐲𐐳𐐴𐐵𐐶𐐷𐐸𐐹𐐺𐐻𐐼𐐽𐐾𐐿𐑀𐑁𐑂𐑃𐑄𐑅𐑆𐑇𐑈𐑉𐑊𐑋𐑌𐑍𐑎𐑏'};
   function defaults() {
     return {
       seed:undefined, look:undefined,
@@ -136,7 +136,7 @@ void main(){
   int stepIndex=int(floor(clockTime*changeRate*(.6+.8*hash(cell+9.))+hash(cell)*50.+push*5.));
   int glyph=(int(hash(cell+77.)*997.)+stepIndex)%sequenceLength;
   vec2 corner=corners[gl_VertexID];
-  atlasUV=(vec2(glyph%16,glyph/16)+corner)/vec2(16.,16.);
+  atlasUV=(vec2(glyph%16,glyph/16)+corner)/vec2(16.,5.);
   vec2 location=gridOrigin+(cell+corner)*cellSize;
   gl_Position=vec4(location/viewport*vec2(2.,-2.)+vec2(-1.,1.),0,1);
 }`;
@@ -201,7 +201,7 @@ void main(){
       if(!view){canvas.style.visibility='hidden';return;}
       canvas.width=Math.round(bounds.width*view.scale);canvas.height=Math.round(bounds.height*view.scale);
       canvas.style.width=bounds.width+'px';canvas.style.height=bounds.height+'px';
-      const atlas=document.createElement('canvas');atlas.width=view.cellWidth*16;atlas.height=view.cellHeight*16;
+      const atlas=document.createElement('canvas');atlas.width=view.cellWidth*16;atlas.height=view.cellHeight*5;
       const context=atlas.getContext('2d'),config=settings();
       const family=getComputedStyle(element).fontFamily,weight=config.surface.weight+(view.scale<1.5?100:0);
       context.font=`${weight} 100px ${family}`;
