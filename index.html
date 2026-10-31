@@ -4,73 +4,159 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Samuel Baird</title>
-<meta name="description" content="Samuel Baird — projects, videos, and links.">
+<meta name="description" content="Samuel Baird builds data tools and makes videos about religion, history and ideas. Projects, writing, and contact.">
 <meta property="og:title" content="Samuel Baird">
-<meta property="og:description" content="Projects, videos, and links.">
+<meta property="og:description" content="Data tools and videos about religion, history and ideas.">
 <meta property="og:url" content="https://samuelbaird.com">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231b1a17'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='%23e8c48a' font-family='Georgia,serif'%3ESB%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#0f1115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='46' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/bg/bg.css">
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
 </head>
 <body>
-<main>
-  <header>
-    <h1>Samuel Baird</h1>
-    <p class="tag">Projects, videos, and things I'm figuring out.</p>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="rail">
+  <a class="wordmark" href="/" aria-label="Samuel Baird, home"><span class="mono" aria-hidden="true">SB</span>Samuel Baird</a>
+  <nav class="nav" aria-label="Main"><a href="/#projects">Projects</a><a href="/#writing">Writing &amp; video</a><a href="/#contact">Contact</a><a href="/donate">Donate</a></nav>
+</div></header>
+<main id="main" class="rail">
+  <div class="hero">
+    <div>
+      <p class="eyebrow small-caps">Samuel Baird</p>
+      <h1>Data tools and videos about religion, history and ideas.</h1>
+      <p class="lede">I build public data projects, keep a map of the sacred places I visit, and make videos about what people believe and why. Everything here is free and independent.</p>
+      <div class="btns">
+        <a class="primary" href="#projects">See projects</a>
+        <a class="secondary" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <aside class="now" aria-labelledby="now-h">
+      <h2 id="now-h" class="small-caps">Lately</h2>
+      <ul>
+        <li id="now-read"><b>My Reading</b><span>Books and articles, with the date I finished each one.</span></li>
+        <li><b>Sacred Sites Visited</b><span>A map, photo gallery and stats of places of worship since January 2025.</span></li>
+      </ul>
+    </aside>
+  </div>
 
-  <section aria-labelledby="projects">
-    <h2 id="projects">Projects</h2>
-    <div class="cards">
-      <a class="card" href="https://latterdaystats.samuelbaird.com/">
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h" class="small-caps">Projects</h2>
+    <p class="section-title serif">Things I&rsquo;ve built</p>
+    <p class="section-sub">Start with Latter-day Stats, the largest of them.</p>
+    <a class="feature" href="https://latterdaystats.samuelbaird.com/">
+      <div>
+        <span class="label small-caps">Data hub &middot; Research</span>
         <h3>Latter-day Stats</h3>
-        <p>Survey data and charts on Latter-day Saint belief, practice, and history.</p>
+        <p>A public, independent hub for statistics, research and creator data on the Latter-day Saint community: survey data, charts, a research library and a directory of LDS YouTube creators.</p>
         <span class="go">latterdaystats.samuelbaird.com &rarr;</span>
-      </a>
-      <a class="card" href="https://wca.samuelbaird.com/">
-        <h3>WCA</h3>
-        <p>wca.samuelbaird.com</p>
-        <span class="go">wca.samuelbaird.com &rarr;</span>
-      </a>
+      </div>
+      <ul aria-label="Highlights">
+        <li>Data Explorer: charts from Pew and other surveys</li>
+        <li>Studies: curated academic research library</li>
+        <li>Channels: LDS YouTube creators, tracked</li>
+      </ul>
+    </a>
+    <div class="grid" style="margin-top:16px">
       <a class="card" href="/sacred-sites">
+        <span class="label small-caps">Map &middot; Photos &middot; Stats</span>
         <h3>Sacred Sites Visited</h3>
-        <p>A map of the churches, temples, and houses of worship I've visited since January 2025.</p>
+        <p>The churches, temples and houses of worship I&rsquo;ve visited since January 2025, filterable by tradition, place and year.</p>
         <span class="go">samuelbaird.com/sacred-sites &rarr;</span>
       </a>
       <a class="card" href="/books">
+        <span class="label small-caps">Reading log</span>
         <h3>My Reading</h3>
-        <p>Books and articles I've been reading, with the date I finished each one.</p>
+        <p>Books and articles I&rsquo;ve read, with the date I finished each one and a link to the source.</p>
         <span class="go">samuelbaird.com/books &rarr;</span>
       </a>
     </div>
   </section>
 
-  <section aria-labelledby="about">
-    <h2 id="about">About</h2>
-    <p>Hi, I'm Samuel. I make videos and build tools around history, data, and ideas. This page collects the things I'm working on and where to find me.</p>
+  <section id="writing" aria-labelledby="writing-h">
+    <h2 id="writing-h" class="small-caps">Writing &amp; video</h2>
+    <p class="section-title serif">Where I talk it through</p>
+    <div class="grid" style="margin-top:20px">
+      <a class="card" href="https://www.youtube.com/@ithinkthereforeisam" rel="me noopener">
+        <span class="label small-caps">Video</span>
+        <h3>YouTube</h3>
+        <p>Videos on history, belief and data.</p>
+        <span class="go">@ithinkthereforeisam &rarr;</span>
+      </a>
+      <a class="card" href="https://ithinkisam.substack.com/" rel="me noopener">
+        <span class="label small-caps">Newsletter</span>
+        <h3>Substack</h3>
+        <p>Written pieces and notes.</p>
+        <span class="go">ithinkisam.substack.com &rarr;</span>
+      </a>
+      <a class="card" href="https://pulpit.restorationcommons.org/time/" rel="noopener">
+        <span class="label small-caps">Contributed to</span>
+        <h3>Pulpit</h3>
+        <p>Every General Conference discourse since 1830, each traced to its best surviving witness. A Restoration Commons project I contributed to.</p>
+        <span class="go">pulpit.restorationcommons.org &rarr;</span>
+      </a>
+    </div>
   </section>
 
-  <section aria-labelledby="find">
-    <h2 id="find">Find me</h2>
-    <ul class="links">
-      <li><a href="https://www.youtube.com/@ithinkthereforeisam" rel="me noopener">YouTube <small>@ithinkthereforeisam</small></a></li>
-      <li><a href="https://www.instagram.com/ithinkisam/" rel="me noopener">Instagram <small>@ithinkisam</small></a></li>
-      <li><a href="https://ithinkisam.substack.com/" rel="me noopener">Substack <small>ithinkisam</small></a></li>
-      <li><a href="https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4" rel="noopener">Amazon wishlist</a></li>
-      <li><a href="https://github.com/Samuel-Baird" rel="me noopener">GitHub <small>Samuel-Baird</small></a></li>
-    </ul>
+  <div class="dinkus" aria-hidden="true">&#9670;</div>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="contact">
+      <div>
+        <h2 id="contact-h" class="small-caps">Contact</h2>
+        <p class="section-title serif">Get in touch</p>
+        <p class="section-sub">Questions, corrections, collaboration or press: email is best.</p>
+        <div class="email-row">
+          <a class="email" id="email" href="mailto:ithinksamofficial@gmail.com?subject=Samuel%20Baird">ithinksamofficial@gmail.com</a>
+          <button type="button" class="copy" id="copy">Copy address</button>
+          <span id="copied" role="status" aria-live="polite" class="note" style="margin:0"></span>
+        </div>
+      </div>
+      <div>
+        <h2 class="small-caps" style="color:var(--muted)">Elsewhere</h2>
+        <ul class="links">
+          <li><a href="https://www.instagram.com/ithinkisam/" rel="me noopener">Instagram <small>@ithinkisam</small></a></li>
+          <li><a href="https://github.com/Samuel-Baird" rel="me noopener">GitHub <small>Samuel-Baird</small></a></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <section aria-labelledby="support">
-    <h2 id="support">Support</h2>
-    <p>If my projects or videos have been useful, you can chip in toward hosting and keeping them going.</p>
-    <a class="cta" href="/donate/">Donate &rarr;</a>
+  <section id="support" aria-labelledby="support-h">
+    <h2 id="support-h" class="small-caps">Support</h2>
+    <p class="section-sub" style="margin-bottom:16px">If these projects or videos have been useful, you can chip in toward hosting, or send a book from my wishlist.</p>
+    <div class="btns">
+      <a class="primary" href="/donate">Donate</a>
+      <a class="secondary" href="https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4" target="_blank" rel="noopener noreferrer">Amazon wishlist</a>
+    </div>
   </section>
-
-  <footer>&copy; <span id="y">2026</span> Samuel Baird</footer>
 </main>
+<footer><div class="rail">
+  <span>&copy; <span id="y">2026</span> Samuel Baird</span>
+  <span><a href="https://latterdaystats.samuelbaird.com/">Latter-day Stats</a> &middot; <a href="/sacred-sites">Sacred Sites</a> &middot; <a href="/books">My Reading</a></span>
+</div></footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script src="/books/data.js"></script>
+<script>
+(function(){
+  var b=window.BOOKS&&window.BOOKS[0],el=document.getElementById('now-read');
+  if(b&&el){
+    var d=new Date(b.read+'T00:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+    el.innerHTML='<b></b><span></span>';
+    el.firstChild.textContent='Just finished: '+b.title;
+    el.lastChild.textContent='Finished '+d+'. More in My Reading.';
+  }
+  var c=document.getElementById('copy'),m=document.getElementById('copied');
+  c.addEventListener('click',function(){
+    var t=document.getElementById('email').textContent;
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){m.textContent='Copied.'},function(){m.textContent='Select the address and copy it.'});
+  });
+})();
+</script>
 </body>
 </html>
