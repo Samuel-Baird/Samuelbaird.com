@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sacred Sites Visited</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
 <link rel="stylesheet" href="/sacred-sites/style.css">
 <link rel="stylesheet" href="/bg/bg.css">
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
@@ -13,6 +14,9 @@
 <header>
   <h1>Sacred Sites Visited</h1>
   <nav>
+    <a href="/sacred-sites" aria-current="page">Map</a>
+    <a href="/sacred-sites/photos">Photos</a>
+    <a href="/sacred-sites/stats">Stats</a>
     <a href="/">Home</a>
     <a href="https://ithinkisam.substack.com/" target="_blank" rel="noopener">Substack</a>
   </nav>
@@ -21,6 +25,23 @@
   <aside id="panel">
     <div id="stats"></div>
     <p class="hint">Since January 2025. Each site is counted once; repeat visits (especially LDS temples) are tucked inside the popup.</p>
+    <h2>Show only</h2>
+    <div id="groups" class="chips" role="group" aria-label="Tradition"></div>
+    <div class="selects">
+      <label>Denomination<select id="denom"></select></label>
+      <label>Country<select id="country"></select></label>
+      <label>Year<select id="year"></select></label>
+      <label>Visit type<select id="cat"></select></label>
+    </div>
+    <h2>Timeline</h2>
+    <div class="timeline">
+      <div id="range-label" class="range-label"></div>
+      <input id="from" type="range" min="0" step="1" aria-label="From month">
+      <input id="to" type="range" min="0" step="1" aria-label="To month">
+    </div>
+    <label class="wish"><input id="wish" type="checkbox"> Show wishlist</label>
+    <p id="legend" class="hint" hidden>● visited &nbsp; ○ wishlist (sites I'd like to visit)</p>
+    <button id="reset" class="link">Reset filters</button>
     <h2>Worldview Communities / Sites Visited</h2>
     <p class="hint">Click a community to filter the map. Click again to show all.</p>
     <ul id="communities"></ul>
@@ -30,7 +51,9 @@
   <div id="map" role="application" aria-label="Map of sacred sites visited"></div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
 <script src="/sacred-sites/data.js"></script>
+<script src="/sacred-sites/lib.js"></script>
 <script src="/sacred-sites/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sacred Sites Photos</title>
+<link rel="stylesheet" href="/sacred-sites/style.css">
+<link rel="stylesheet" href="/bg/bg.css">
+<script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
+</head>
+<body class="page">
+<header>
+  <h1>Sacred Sites Visited</h1>
+  <nav>
+    <a href="/sacred-sites">Map</a>
+    <a href="/sacred-sites/photos" aria-current="page">Photos</a>
+    <a href="/sacred-sites/stats">Stats</a>
+    <a href="/">Home</a>
+  </nav>
+</header>
+<main class="wide">
+  <h2 class="title">Photos</h2>
+  <div id="groups" class="chips" role="group" aria-label="Tradition"></div>
+  <p id="count" class="hint"></p>
+  <ul id="grid" class="photo-grid"></ul>
+</main>
+<div id="viewer" hidden>
+  <button class="close" aria-label="Close">&times;</button>
+  <button class="nav prev" aria-label="Previous photo">&lsaquo;</button>
+  <figure><img alt="" referrerpolicy="no-referrer"><figcaption id="details"></figcaption></figure>
+  <button class="nav next" aria-label="Next photo">&rsaquo;</button>
+</div>
+<script src="/sacred-sites/data.js"></script>
+<script src="/sacred-sites/lib.js"></script>
+<script src="/sacred-sites/photos.js"></script>
+</body>
+</html>

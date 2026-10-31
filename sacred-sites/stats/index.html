@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sacred Sites Stats</title>
+<link rel="stylesheet" href="/sacred-sites/style.css">
+<link rel="stylesheet" href="/bg/bg.css">
+<script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
+</head>
+<body class="page">
+<header>
+  <h1>Sacred Sites Visited</h1>
+  <nav>
+    <a href="/sacred-sites">Map</a>
+    <a href="/sacred-sites/photos">Photos</a>
+    <a href="/sacred-sites/stats" aria-current="page">Stats</a>
+    <a href="/">Home</a>
+  </nav>
+</header>
+<main class="wide">
+  <h2 class="title">Statistics</h2>
+  <div id="big" class="big-stats"></div>
+  <h2>Faith traditions visited</h2>
+  <ul id="traditions" class="traditions"></ul>
+  <h2>Logged visits by year (repeats included)</h2>
+  <div id="years" class="bars"></div>
+  <p class="hint" id="notes"></p>
+</main>
+<script src="/sacred-sites/data.js"></script>
+<script src="/sacred-sites/lib.js"></script>
+<script src="/sacred-sites/stats.js"></script>
+</body>
+</html>
