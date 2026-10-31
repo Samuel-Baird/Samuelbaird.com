@@ -13,6 +13,11 @@ const COMMUNITIES = [
   { name: "Seventh-day Adventist", match: ["SDA"], color: "#d53f8c", listed: true },
   // Not visited yet; used by the wishlist.
   { name: "Jewish", match: ["Jewish"], color: "#00a3c4", listed: false },
+  { name: "Presbyterian", match: ["Presbyterian"], color: "#c53030", listed: false },
+  { name: "Community of Christ", match: ["Community of Christ"], color: "#dd6b20", listed: false },
+  { name: "Other Latter Day Saint movements", match: ["Restoration (non-LDS)"], color: "#38a169", listed: false },
+  { name: "Neo-Pentecostal", match: ["Neo-Pentecostal"], color: "#d69e2e", listed: false },
+  { name: "Islam", match: ["Islam"], color: "#319795", listed: false },
   { name: "Other", match: ["Other"], color: "#718096", listed: false },
 ];
 
@@ -21,6 +26,7 @@ const GROUPS = [
   { key: "catholic", label: "Catholic" },
   { key: "lds", label: "LDS" },
   { key: "protestant", label: "Protestant" },
+  { key: "restoration", label: "Restoration (non-LDS)" },
   { key: "orthodox", label: "Orthodox" },
   { key: "jewish", label: "Jewish" },
   { key: "other", label: "Other" },
@@ -28,6 +34,8 @@ const GROUPS = [
 const GROUP_OF = {
   Catholic: "catholic", LDS: "lds", "Greek Orthodox": "orthodox", Jewish: "jewish",
   Anglican: "protestant", Episcopalian: "protestant", Lutheran: "protestant", SDA: "protestant", SBC: "protestant",
+  Presbyterian: "protestant", "Neo-Pentecostal": "protestant",
+  "Community of Christ": "restoration", "Restoration (non-LDS)": "restoration",
 };
 const groupOf = (denom) => GROUP_OF[denom] || "other";
 const communityOf = (denom) => COMMUNITIES.find((c) => c.match.includes(denom));
@@ -52,10 +60,9 @@ const fmt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString(undefined, {
 const photoUrl = (p, w) => `${PHOTO_BASE}${p[0]}=w${w}`;
 
 // Google Maps links. Skipped for events held outside a church building (JW gathering, UVU campus mass).
-const NO_MAPS = new Set(["jw", "uvu"]);
-const mapsQuery = (s) => encodeURIComponent([s.name, s.city, s.state].filter(Boolean).join(", "));
-const mapsUrl = (s) => `https://www.google.com/maps/search/?api=1&query=${mapsQuery(s)}`;
-const directionsUrl = (s) => `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery(s)}`;
+// Also skipped for wishlist entries with no specific place to search for (town-level pins, private property).
+const NO_MAPS = new Set(["jw", "uvu", "w-aub", "w-righteous", "w-tlc", "w-flds", "w-covenant", "w-swudoc", "w-benbow"]);
+const mapsQuery = (s) => encodeURIComponent(s.q || [s.name, s.city, s.state].filter(Boolean).join(", "));
 const mapsEmbedUrl = (s) => `https://www.google.com/maps?q=${mapsQuery(s)}&ll=${s.lat},${s.lon}&output=embed`;
 
 // Visited sites, newest visit first inside each site.
@@ -66,8 +73,8 @@ const SITES = Object.entries(PLACES).map(([id, [name, denom, city, state, lat, l
   })).sort((a, b) => b.date.localeCompare(a.date)),
 })).filter((s) => s.visits.length);
 
-const WISH = WISHLIST.map(([id, name, denom, city, state, country, lat, lon, note]) => ({
-  id, name, denom, city, state, country, lat, lon, note, wish: true, visits: [],
+const WISH = WISHLIST.map(([id, name, denom, city, state, country, lat, lon, note, q]) => ({
+  id, name, denom, city, state, country, lat, lon, note, q, wish: true, visits: [],
 }));
 
 // Every photo with the visit it belongs to.
