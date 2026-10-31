@@ -104,7 +104,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <AuthPromptProvider>
             <SiteNav />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 lg:pl-64">{children}</main>
             <SiteFooter />
             <AgeGateModal />
           </AuthPromptProvider>

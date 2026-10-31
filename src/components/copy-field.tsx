@@ -35,7 +35,9 @@ export function CopyField({ value, label, wrap = false }: Props) {
       ) : null}
       <code
         className={`min-w-0 flex-1 text-sm text-[color:var(--foreground)] ${
-          wrap ? "whitespace-normal leading-relaxed" : "truncate"
+          wrap
+            ? "whitespace-normal leading-relaxed [overflow-wrap:anywhere]"
+            : "truncate"
         }`}
       >
         {value}

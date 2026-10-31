@@ -1,7 +1,11 @@
 import { CommandPalette } from "@/components/command-palette";
 import { getSearchIndex, type SearchItem } from "@/lib/data";
 
-export async function CommandPaletteHost() {
+export async function CommandPaletteHost({
+  variant = "bar",
+}: {
+  variant?: "bar" | "sidebar";
+}) {
   // This renders inside the nav on every page and there is no error boundary
   // above it, so a Supabase outage here would 500 even static content pages.
   // Degrade to an empty palette instead.
@@ -11,5 +15,5 @@ export async function CommandPaletteHost() {
   } catch (error) {
     console.error("command palette search index unavailable:", error);
   }
-  return <CommandPalette items={items} />;
+  return <CommandPalette items={items} variant={variant} />;
 }

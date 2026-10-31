@@ -3,11 +3,13 @@
 import { Command } from "cmdk";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { SearchItem } from "@/lib/data";
 
 type Props = {
   items: SearchItem[];
+  /** "sidebar" renders a full-width row for the left sidebar. */
+  variant?: "bar" | "sidebar";
 };
 
 const KIND_LABEL: Record<SearchItem["kind"], string> = {
@@ -22,12 +24,15 @@ function hrefFor(item: SearchItem): string {
   return `/studies?tag=${encodeURIComponent(item.slug)}`;
 }
 
-export function CommandPalette({ items }: Props) {
+export function CommandPalette({ items, variant = "bar" }: Props) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const trigger = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      // The top bar and the sidebar each mount a palette; only the visible one answers shortcuts.
+      if (!trigger.current || trigger.current.offsetParent === null) return;
       const isToggle =
         (e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey);
       const isSlash =
@@ -68,13 +73,18 @@ export function CommandPalette({ items }: Props) {
   return (
     <>
       <button
+        ref={trigger}
         type="button"
         aria-label="Open search (⌘K)"
         onClick={() => setOpen(true)}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)] md:w-auto md:justify-start md:gap-2 md:px-3"
+        className={
+          variant === "sidebar"
+            ? "flex h-10 w-full items-center gap-2 rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-3 text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+            : "inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white text-sm text-[color:var(--muted)] hover:text-[color:var(--foreground)] md:w-auto md:justify-start md:gap-2 md:px-3"
+        }
       >
         <Search size={16} aria-hidden="true" />
-        <span className="hidden md:inline">Search…</span>
+        <span className={variant === "sidebar" ? "" : "hidden md:inline"}>Search…</span>
       </button>
 
       {open && (

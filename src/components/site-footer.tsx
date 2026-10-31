@@ -3,7 +3,7 @@ import { BeehiveMark } from "@/components/beehive-mark";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[color:var(--border)] bg-[color:var(--muted-soft)]/40">
+    <footer className="border-t border-[color:var(--border)] bg-[color:var(--muted-soft)]/40 lg:pl-64">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
         <div className="flex flex-col gap-6 text-sm text-[color:var(--muted)] md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">

@@ -28,32 +28,18 @@ export function SiteNavClient({ links, user, signOut }: SiteNavClientProps) {
 
   return (
     <>
-      <nav className="small-caps hidden gap-7 text-[13px] md:flex">
-        {links.map((link) => {
-          const active = isActive(pathname, link.href);
-          const baseClass = active
-            ? "text-[color:var(--foreground)] underline decoration-1 underline-offset-4"
-            : "text-[color:var(--muted)] transition-colors hover:text-[color:var(--foreground)]";
-          return (
-            <Link key={link.href} href={link.href} className={baseClass}>
-              {link.label}
-            </Link>
-          );
-        })}
-      </nav>
-
       <button
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] md:hidden"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius)] border border-[color:var(--border)] lg:hidden"
         onClick={() => setOpen((value) => !value)}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
 
       {open ? (
-        <div className="absolute inset-x-0 top-full border-t border-[color:var(--border)] bg-[color:var(--background)] md:hidden">
+        <div className="absolute inset-x-0 top-full border-t border-[color:var(--border)] bg-[color:var(--background)] lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
             {links.map((link) => {
               const active = isActive(pathname, link.href);
