@@ -108,3 +108,15 @@ ul.side{list-style:none;display:grid;gap:10px}
 .panel p{color:var(--muted);margin:0 0 24px}
 .x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;border-radius:50%;background:none;color:var(--muted);font-size:1.5rem;line-height:1;cursor:pointer}
 .x:hover{background:var(--muted-soft);color:var(--foreground)}
+
+/* collection */
+.collection{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.item{display:grid;gap:20px;padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
+@media (min-width:760px){.item{grid-template-columns:16rem minmax(0,1fr);gap:32px}}
+.item .ph{display:grid;place-items:center;aspect-ratio:4/3;border:1px dashed var(--border);border-radius:var(--radius);background:var(--muted-soft);color:var(--muted);font-size:.9rem;text-align:center}
+.item .label{font-size:.85rem;color:var(--honey)}
+.item h2{margin:2px 0 8px;font:600 1.5rem/1.25 var(--font-serif)}
+.item .meta{color:var(--muted);font-size:.92rem}
+.item p{margin:0 0 12px}
+.item h3{font-size:.82rem;color:var(--muted);margin:18px 0 8px}
+.item ul{margin:0;padding-left:1.2rem;display:grid;gap:8px}
