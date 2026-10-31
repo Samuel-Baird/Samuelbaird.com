@@ -26,21 +26,22 @@ const GROUPS = [
   { key: "catholic", label: "Catholic" },
   { key: "lds", label: "LDS" },
   { key: "protestant", label: "Protestant" },
-  { key: "restoration", label: "Restoration (non-LDS)" },
+  { key: "restoration", label: "Restorationist" },
   { key: "orthodox", label: "Orthodox" },
   { key: "jewish", label: "Jewish" },
   { key: "other", label: "Other" },
 ];
 const GROUP_OF = {
   Catholic: "catholic", LDS: "lds", "Greek Orthodox": "orthodox", Jewish: "jewish",
-  Anglican: "protestant", Episcopalian: "protestant", Lutheran: "protestant", SDA: "protestant", SBC: "protestant",
+  Anglican: "protestant", Episcopalian: "protestant", Lutheran: "protestant", SBC: "protestant",
   Presbyterian: "protestant", "Neo-Pentecostal": "protestant",
+  SDA: "restoration", "Jehovah's Witnesses": "restoration",
   "Community of Christ": "restoration", "Restoration (non-LDS)": "restoration",
 };
-const groupOf = (denom) => GROUP_OF[denom] || "other";
+const groupOf = (denom) => GROUP_OF[denom] || (LEAF_BY_DENOM[denom] || {}).group || "other";
 const communityOf = (denom) => COMMUNITIES.find((c) => c.match.includes(denom));
-const colorOf = (denom) => (communityOf(denom) || {}).color || "#718096";
-const labelOf = (denom) => (communityOf(denom) || {}).name || denom;
+const colorOf = (denom) => (communityOf(denom) || {}).color || (LEAF_BY_DENOM[denom] || {}).color || "#718096";
+const labelOf = (denom) => (communityOf(denom) || {}).name || (LEAF_BY_DENOM[denom] || {}).label || denom;
 
 // What kind of visit it was.
 const CATEGORIES = [
@@ -84,29 +85,100 @@ const ALL_PHOTOS = SITES.flatMap((s) => (PHOTOS[s.id] || []).map((p) => {
   return { site: s, p, date: p[3], visit };
 })).sort((a, b) => b.date.localeCompare(a.date));
 
-// Faith tree for the stats page. Leaves point at denominations in the data; a leaf shows once it has
-// visited sites (or is `listed`, i.e. visited but not yet logged).
-const leaf = (label, match) => ({ label, match, color: (communityOf(match[0]) || {}).color || "#718096" });
+// Faith tree for the stats page and the backend schema for traditions. Branches follow
+// theapotheosisnarrative.wordpress.com/worldview-communities-sites-visited. Nothing is shown publicly until a
+// leaf has a visited site (or is `listed`), so unvisited leaves are placeholders: to log a first visit, give
+// the place a denomination equal to the leaf's label (or to the short key used by existing data, see `m`).
+const GROUP_COLOR = { catholic: "#c05621", orthodox: "#b7791f", protestant: "#2c7a7b", restoration: "#38a169", jewish: "#00a3c4", other: "#718096" };
+// spec: "Label" | { l: "Label", m: [denominations in the data] } | ["Group name", [specs...]]
+const specLeaf = (spec, group) => {
+  const label = typeof spec === "string" ? spec : spec.l;
+  const match = typeof spec === "string" ? [spec] : spec.m;
+  const c = COMMUNITIES.find((x) => x.match.some((m) => match.includes(m)));
+  return { label, match, group, color: (c || {}).color || GROUP_COLOR[group] };
+};
+const specNode = (spec, group) =>
+  Array.isArray(spec) ? { name: spec[0], children: spec[1].map((s) => specNode(s, group)) } : specLeaf(spec, group);
+const branch = (name, group, specs) => ({ name, group, children: specs.map((s) => specNode(s, group)) });
 const TREE = [
   { name: "Christian", children: [
-    { name: "Catholic", children: [leaf("Roman Catholic", ["Catholic"])] },
-    { name: "Orthodox", children: [leaf("Greek Orthodox", ["Greek Orthodox"])] },
-    { name: "Protestant", children: [
-      { name: "Anglican", children: [leaf("Episcopal", ["Episcopalian"]), leaf("Anglican Church in North America (ACNA)", ["Anglican"])] },
-      leaf("Lutheran (ELCA)", ["Lutheran"]),
-      leaf("Southern Baptist Convention (SBC)", ["SBC"]),
-      leaf("Seventh-day Adventist", ["SDA"]),
-      leaf("Presbyterian", ["Presbyterian"]),
-      leaf("Neo-Pentecostal", ["Neo-Pentecostal"]),
-    ] },
-    { name: "Restorationist and/or Non-Trinitarian", children: [
-      leaf("The Church of Jesus Christ of Latter-day Saints (LDS)", ["LDS"]),
-      leaf("Jehovah's Witnesses", ["Jehovah's Witnesses"]),
-      leaf("Community of Christ", ["Community of Christ"]),
-      leaf("Other Latter Day Saint movements", ["Restoration (non-LDS)"]),
-    ] },
+    branch("Catholic", "catholic", [{ l: "Roman Catholic", m: ["Catholic"] }, "Byzantine Catholic", "Gnostic Catholic"]),
+    branch("Orthodox", "orthodox", [
+      ["Eastern Orthodox", [{ l: "Greek Orthodox", m: ["Greek Orthodox"] }, "Russian Orthodox (Old Believer)"]],
+      ["Oriental Orthodox", ["Armenian Apostolic"]],
+    ]),
+    branch("Protestant", "protestant", [
+      ["Anglican", [{ l: "The Episcopal Church (TEC)", m: ["Episcopalian"] }, { l: "Anglican Church in North America (ACNA)", m: ["Anglican"] }]],
+      ["Baptist", [{ l: "Southern Baptist Convention (SBC)", m: ["SBC"] }, "Independent Fundamentalist Baptist (IFB)", "Reformed Baptist (Calvinist)"]],
+      ["Presbyterian", [{ l: "Presbyterian Church (U.S.A.)", m: ["Presbyterian"] }, "Orthodox Presbyterian Church (OPC)"]],
+      ["Lutheran", [{ l: "Evangelical Lutheran Church in America (ELCA)", m: ["Lutheran"] }, "Lutheran Church \u2013 Missouri Synod"]],
+      ["Methodist", ["United Methodist Church (UMC)", "African Methodist Episcopal Church (AME)"]],
+      "United Church of Christ (UCC)",
+      ["Non-Denominational Evangelical", ["Charismatic Non-Denominational"]],
+      { l: "Neo-Pentecostal", m: ["Neo-Pentecostal"] },
+      "Church of the Nazarene",
+      ["Molokan (Spiritual Christian)", ["First Russian Christian Molokan Church"]],
+      ["Radical Pietist", ["Society of Separatists of Zoar"]],
+    ]),
+    branch("Restorationist and/or Non-Trinitarian", "restoration", [
+      { l: "Jehovah's Witnesses", m: ["Jehovah's Witnesses"] },
+      "Christian Scientist",
+      "Oneness Pentecostal",
+      "United Society of Believers in Christ's Second-Coming (Shakers)",
+      ["Adventist", [{ l: "Seventh-day Adventist", m: ["SDA"] }, "Millerite"]],
+      ["Swedenborgian", ["Boston Society of the New Jerusalem"]],
+      "Oneida Community",
+      "Iglesia Ni Cristo",
+      "Iglesia La Luz del Mundo",
+      "World Church of Messiah",
+      ["Latter Day Saint", [
+        { l: "The Church of Jesus Christ of Latter-day Saints (LDS)", m: ["LDS"] },
+        { l: "Fundamentalist Church of Jesus Christ of Latter-day Saints (FLDS)", m: ["FLDS"] },
+        "Independent Fundamentalist Mormon",
+        { l: "Community of Christ (CoC)", m: ["Community of Christ"] },
+        "Reorganized Church of Jesus Christ of Latter-day Saints Branch (RLDS)",
+        "The Remnant (Snufferite)",
+        "The Church of Jesus Christ (Bickertonite)",
+        "The Restoration Church of Jesus Christ (RCJC)",
+        { l: "Other Latter Day Saint movements", m: ["Restoration (non-LDS)"] },
+      ]],
+    ]),
   ] },
-  { name: "Jewish", children: [leaf("Jewish", ["Jewish"])] },
-  { name: "Islamic", children: [leaf("Islam", ["Islam"])] },
-  { name: "Other", children: [leaf("Other", ["Other"])] },
+  branch("Jewish", "jewish", [{ l: "Jewish (general)", m: ["Jewish"] }, "Reform", "Conservative"]),
+  branch("Islamic", "other", [{ l: "Islam (general)", m: ["Islam"] }, "Sunni", "Shia", "Sufi", "Nation of Islam"]),
+  branch("Middle-Eastern, Additional", "other", ["Mandaean", "Yazidi", "Druze", "Zoroastrian", "Bah\u00e1\u02bc\u00ed Faith"]),
+  branch("Dharmic Religions", "other", [
+    ["Hindu", ["Pan-Denominational Hindu", "Bochasanwasi Akshar Purushottam Swaminarayan Sanstha (BAPS)", "International Society for Krishna Consciousness (ISKCON)", "The Vedanta Society"]],
+    ["Sikh", ["Mainstream Sikh", "Sikh Dharma International"]],
+    "Jain",
+    ["Buddhist", ["Zen Buddhist", "Tibetan Buddhist", "Soka Gakkai International (SGI)", "Chinese Esoteric Buddhist", "Won Buddhist", "New Kadampa Tradition (NKT-IKBU)"]],
+  ]),
+  branch("Asian, Additional", "other", ["Taoist", ["Shint\u014d", ["Konk\u014dky\u014d"]], "Tenrikyo", "Happy Science", "Seich\u014d-no-Ie", "Falun Gong", "Cao Dai"]),
+  branch("New Age and/or Western Esoteric", "other", [
+    ["Thelema/Thelemic-derived", ["Ordo Templi Orientis", "Ecclesia Babalon"]],
+    "Santa Muerte", "Spiritualism", "Builders of the Adytum (BOTA)", "Unity Church (New Thought/Christian)", "Eckankar",
+    "Fourth Way (Gurdjieff)", "Full Circle", "Urantia", "Self-Realization Fellowship (SRF)",
+    ["Theosophy", ["The Theosophical Society", "United Lodge of Theosophists (ULT)", "Share International"]],
+    "Ecclesia Gnostica", ["The Gnostic Society", ["Besant Lodge"]], "The Rosicrucian Fellowship (Mount Ecclesia)", "The Lemurian Fellowship",
+  ]),
+  branch("UFO/Extraterrestrial New Religious Movement", "other", ["Aetherius Society", "Church of Scientology", "International Ra\u00ebl\u00efan Movement", "Unarius Academy of Science"]),
+  branch("Neo-Paganism / Pagan Reconstructionist", "other", [
+    "Wicca", ["Ukrainian Pagan", ["Native Ukrainian National Faith (RUNVira)"]],
+    ["Nordic Pagan (Asatru)", ["Asatru (Inclusive)", "Asatru Folk Assembly"]],
+    ["Armenian Hetanist", ["Order of the Children of Ari"]],
+  ]),
+  branch("Humanistic, Atheistic, and/or Secular", "other", [
+    ["Contemporary Satanism", ["The Satanic Temple (TST)", "The Church of Satan / LaVeyan Satanism"]],
+    ["Secular Humanist", ["Humanist Society of Greater Phoenix"]],
+    "Unitarian Universalist",
+  ]),
+  branch("Other", "other", [{ l: "Other", m: ["Other"] }]),
 ];
+// Lookup by denomination, and make sure every leaf has a COMMUNITIES entry (colors, filters).
+const LEAVES = [];
+(function walk(nodes, group) { for (const n of nodes) { if (n.children) walk(n.children, n.group || group); else LEAVES.push({ ...n, group: n.group || group }); } })(TREE);
+const LEAF_BY_DENOM = {};
+for (const lf of LEAVES) for (const m of lf.match) LEAF_BY_DENOM[m] = lf;
+for (const lf of LEAVES) {
+  if (!COMMUNITIES.some((c) => c.match.some((m) => lf.match.includes(m)))) COMMUNITIES.push({ name: lf.label, match: lf.match, color: lf.color, listed: false });
+}

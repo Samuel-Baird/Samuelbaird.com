@@ -44,7 +44,7 @@ function render(n, depth) {
     return `<details class="tleaf"><summary>${dot(n.color)}<span class="t-name">${esc(n.label)}</span><span class="t-count">${n.sites.length ? plural(n.sites.length, "site") : "not yet logged"}</span></summary>${body}</details>`;
   }
   const tag = `h${Math.min(depth + 2, 5)}`;
-  return `<section class="tgroup d${depth}"><${tag}>${esc(n.name)}<small>${plural(n.count, "site")}</small></${tag}>${n.kids.map((k) => render(k, depth + 1)).join("")}</section>`;
+  return `<section class="tgroup d${depth}"><${tag}>${esc(n.name)}${n.count ? `<small>${plural(n.count, "site")}</small>` : ""}</${tag}>${n.kids.map((k) => render(k, depth + 1)).join("")}</section>`;
 }
 document.getElementById("tree").innerHTML = TREE.map(build).filter(Boolean).map((n) => render(n, 1)).join("");
 
