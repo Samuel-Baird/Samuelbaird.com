@@ -2,43 +2,70 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Donate · Samuel Baird</title>
-<meta name="description" content="Support Samuel Baird's projects and videos.">
+<meta name="description" content="Support Samuel Baird's projects and videos with a donation or a book from the Amazon wishlist.">
+<meta name="theme-color" content="#0f1115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='46' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/tokens.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/bg/bg.css">
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
-</head><body><main>
-<header>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="rail">
+  <a class="wordmark" href="/" aria-label="Samuel Baird, home"><span class="mono" aria-hidden="true">SB</span>Samuel Baird</a>
+  <nav class="nav" aria-label="Main"><a href="/#projects">Projects</a><a href="/#writing">Writing &amp; video</a><a href="/#contact">Contact</a><a href="/donate" aria-current="page">Donate</a></nav>
+</div></header>
+<main id="main" class="rail">
+<div class="pagehead">
   <p class="back"><a href="/">&larr; samuelbaird.com</a></p>
-  <p class="eyebrow">Donate</p>
+  <p class="eyebrow small-caps">Donate</p>
   <h1>Help keep the projects going.</h1>
-</header>
+</div>
 <div class="donate-grid">
   <div class="donate-main">
     <p>These projects and videos are free, independent, and ad-free. Donations go directly toward hosting and the time it takes to keep making them. Anything helps and is appreciated.</p>
     <section id="give">
+      <h2 class="small-caps">Give money</h2>
       <div class="btns">
         <a class="primary" href="https://paypal.me/Baird90" target="_blank" rel="noopener noreferrer" data-thanks>Donate via PayPal &rarr;</a>
         <a class="secondary" href="https://venmo.com/Samuel-J-Baird" target="_blank" rel="noopener noreferrer" data-thanks>Donate via Venmo &rarr;</a>
       </div>
-      <p class="note">You'll be taken to paypal.me/Baird90 or venmo.com/Samuel-J-Baird to complete the donation.</p>
+      <p class="note">You&rsquo;ll be taken to paypal.me/Baird90 or venmo.com/Samuel-J-Baird to complete the donation.</p>
+    </section>
+    <section id="wishlist">
+      <h2 class="small-caps">Or send a book</h2>
+      <p>Prefer to give something tangible? My Amazon wishlist is mostly books for research.</p>
+      <div class="btns">
+        <a class="secondary" href="https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4" target="_blank" rel="noopener noreferrer">View Amazon wishlist &rarr;</a>
+      </div>
+      <p class="note">Opens my wishlist on amazon.com. Amazon handles the purchase and shipping.</p>
     </section>
   </div>
   <aside>
     <section>
-      <h2>Where it goes</h2>
+      <h2 class="small-caps">Where it goes</h2>
       <ul class="side">
         <li>Hosting and infrastructure costs.</li>
         <li>Time spent building projects and making videos.</li>
+        <li>Books and research materials from the wishlist.</li>
         <li>Keeping everything free, public, and without ads.</li>
       </ul>
     </section>
     <section>
-      <h2>Questions</h2>
-      <p class="side">Email <a href="mailto:b13llama@gmail.com?subject=Samuel%20Baird">b13llama@gmail.com</a>.</p>
+      <h2 class="small-caps">Questions</h2>
+      <p class="side">Email <a href="mailto:ithinksamofficial@gmail.com?subject=Samuel%20Baird">ithinksamofficial@gmail.com</a>.</p>
     </section>
   </aside>
 </div>
 </main>
+<footer><div class="rail">
+  <span>&copy; <span id="y">2026</span> Samuel Baird</span>
+  <span><a href="https://latterdaystats.samuelbaird.com/">Latter-day Stats</a> &middot; <a href="/sacred-sites">Sacred Sites</a> &middot; <a href="/books">My Reading</a></span>
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 <div id="thanks" class="modal" role="dialog" aria-modal="true" aria-labelledby="thanks-title" hidden>
   <div class="backdrop" data-close></div>
   <div class="panel">

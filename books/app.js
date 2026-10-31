@@ -17,3 +17,7 @@ for (const btn of buttons) {
     for (const li of list.children) li.hidden = btn.dataset.filter !== "all" && li.dataset.type !== btn.dataset.filter;
   });
 }
+
+const nb = [...list.children].filter(li => li.dataset.type === "book").length;
+const na = list.children.length - nb;
+document.getElementById("count").textContent = `${nb} book${nb === 1 ? "" : "s"} and ${na} article${na === 1 ? "" : "s"}, newest first, with the date I finished each one.`;
