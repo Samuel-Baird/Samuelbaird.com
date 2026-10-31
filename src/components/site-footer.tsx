@@ -16,6 +16,16 @@ export function SiteFooter() {
               community. Not affiliated with The Church of Jesus Christ of
               Latter-day Saints.
             </p>
+            <p>
+              A project by{" "}
+              <a
+                href="https://samuelbaird.com"
+                className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
+              >
+                Samuel Baird
+              </a>
+              .
+            </p>
           </div>
           <nav className="small-caps flex flex-wrap gap-x-6 gap-y-2 text-[13px]">
             <Link href="/channels" className="hover:text-[color:var(--foreground)] transition-colors">Channels</Link>

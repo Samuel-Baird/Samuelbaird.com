@@ -3,7 +3,7 @@ import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { DonateButtons } from "@/components/donate-buttons";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
-import { PAYPAL_URL, VENMO_URL } from "@/lib/donate-links";
+import { AMAZON_WISHLIST_URL, PAYPAL_URL, VENMO_URL } from "@/lib/donate-links";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -39,6 +39,27 @@ export default function DonatePage() {
               {VENMO_URL.replace("https://", "")} to complete the donation.
             </p>
           </section>
+          <section>
+            <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
+              Or send a book
+            </h2>
+            <p className="mt-3">
+              Prefer to give something tangible? My Amazon wishlist is mostly
+              books and research materials.
+            </p>
+            <a
+              href={AMAZON_WISHLIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-6 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+            >
+              View Amazon wishlist →
+            </a>
+            <p className="mt-3 text-sm text-[color:var(--muted)]">
+              Opens my wishlist on amazon.com. Amazon handles the purchase and
+              shipping.
+            </p>
+          </section>
         </div>
 
         <aside className="mt-14 space-y-8 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
@@ -48,6 +69,7 @@ export default function DonatePage() {
             </h2>
             <ul className="mt-3 space-y-3 border-t border-[color:var(--border)] pt-3 text-sm leading-relaxed text-[color:var(--muted)]">
               <li>Hosting and infrastructure costs.</li>
+              <li>Books and research materials from the wishlist.</li>
               <li>Keeping the site free, public, and without ads.</li>
             </ul>
           </section>
