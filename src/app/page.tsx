@@ -1,20 +1,34 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import {
   getChannelsWithLatest,
-  getFeaturedChannelsCarouselPool,
-  getStudiesCarouselMix,
   getRecentlyAdded,
+  getRisersAndFallers,
   getSiteStats,
+  getStudies,
+  getStudiesBySlugs,
+  getStudiesCarouselMix,
 } from "@/lib/data";
-import { ChannelsCarousel } from "@/components/channels-carousel";
+import {
+  DATASETS,
+  getAllGraphics,
+  graphicId,
+  type GalleryGraphic,
+} from "@/lib/data-explorer";
+import { getGraphicPostMap, isPublished } from "@/lib/graphic-posts";
+import { getAllStudyGraphics, getStudyFolderSlugs } from "@/lib/study-graphics";
+import { BeehiveMark } from "@/components/beehive-mark";
 import { StudiesCarousel } from "@/components/studies-carousel";
 import {
   TopStatsCarousel,
   type TopStatSlide,
 } from "@/components/top-stats-carousel";
 import { DeseretTitle } from "@/components/deseret-title";
+import { HomeFeatureGrid, type HomeFeature } from "@/components/home-feature-grid";
+import { HomeGraphicsStrip, type HomeGraphic } from "@/components/home-graphics-strip";
+import { HomeMovers } from "@/components/home-movers";
 import { Tag } from "@/components/tag";
 import { inkForType } from "@/lib/channel-types";
 import { fmtCompact, fmtNumber } from "@/lib/format";
@@ -24,31 +38,122 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const GRAPHICS_ON_HOME = 4;
+
+// One graphic per dataset, so the strip shows range rather than several charts
+// from one survey. The client component shuffles this pool on every visit.
+function graphicPool(all: GalleryGraphic[]): HomeGraphic[] {
+  const seen = new Set<string>();
+  const pool: HomeGraphic[] = [];
+  for (const g of all) {
+    if (seen.has(g.datasetSlug)) continue;
+    seen.add(g.datasetSlug);
+    const id = graphicId(g);
+    pool.push({
+      key: `${g.datasetSlug}/${id}`,
+      href: g.href ?? `/data-explorer/${g.datasetSlug}/graphics/${id}`,
+      imageSrc: g.imageSrc,
+      width: g.width,
+      height: g.height,
+      alt: g.alt,
+      title: g.title,
+      datasetName: g.datasetName,
+    });
+  }
+  return pool;
+}
+
 export default async function Home() {
   const includeCritical = true;
-  const [stats, channels, featuredPool, randomStudies, recent] =
+  const studySlugs = getStudyFolderSlugs();
+  const [stats, channels, randomStudies, recent, allStudies, movers, postMap, graphicStudies] =
     await Promise.all([
       getSiteStats(),
       getChannelsWithLatest({ includeCritical }),
-      getFeaturedChannelsCarouselPool(24, { includeCritical }),
       getStudiesCarouselMix(20),
-      getRecentlyAdded(30, 6, { studies: false, includeCritical }),
+      getRecentlyAdded(30, 3, { studies: false, includeCritical }),
+      getStudies(),
+      getRisersAndFallers(30, 3),
+      getGraphicPostMap(),
+      getStudiesBySlugs(studySlugs),
     ]);
   const topStatSlides = buildTopStatSlides(channels);
+
+  // Public visitors only ever see published graphics (same rule as the gallery).
+  const publishedGraphics = [
+    ...getAllGraphics(),
+    ...getAllStudyGraphics(graphicStudies),
+  ].filter((g) => isPublished(postMap, g.datasetSlug, graphicId(g)));
+  const graphicsPool = graphicPool(publishedGraphics);
+
+  const topRiser = movers.risers[0];
+  const features: HomeFeature[] = [
+    {
+      href: "/channels",
+      title: "Channels",
+      description:
+        "Latter-day Saint YouTube creators, with subscriber, view and video counts refreshed regularly.",
+      figure: stats ? `${fmtNumber(stats.total_channels)} creators tracked` : "Browse creators",
+      icon: "channels",
+    },
+    {
+      href: "/studies",
+      title: "Studies",
+      description:
+        "Academic studies and research on the Latter-day Saint community, searchable by topic.",
+      figure: `${fmtNumber(allStudies.length)} studies`,
+      icon: "studies",
+    },
+    {
+      href: "/data-explorer",
+      title: "Data Explorer",
+      description:
+        "Public survey and statistical datasets, with quizzes, charts and write-ups for each.",
+      figure: `${fmtNumber(DATASETS.length)} datasets · ${fmtNumber(publishedGraphics.length)} graphics`,
+      icon: "data",
+    },
+    {
+      href: "/data-explorer/tools/map-explorer",
+      title: "Map Explorer",
+      description:
+        "A world map of membership, congregations, stakes, missions and temples by country.",
+      figure: "Membership by country",
+      icon: "map",
+    },
+    {
+      href: "/compare",
+      title: "Compare",
+      description:
+        "Risers and fallers, and side-by-side growth for up to four channels.",
+      figure: topRiser
+        ? `Top riser: ${topRiser.name}`
+        : "Channel growth, side by side",
+      icon: "compare",
+    },
+    {
+      href: "/connect",
+      title: "Use with AI",
+      description:
+        "Connect the data to Claude or ChatGPT and ask questions in plain language. Free, no account.",
+      figure: "Claude · ChatGPT",
+      icon: "ai",
+    },
+  ];
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
       {/* Hero */}
       <section className="max-w-3xl">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--accent)]">
+        <p className="small-caps text-xs font-medium text-[color:var(--accent)]">
           Latter-day Stats
         </p>
         <h1 className="serif mt-4 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
           <DeseretTitle text="Statistics, research, and creator data on the Latter-day Saint community." />
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-          A public hub tracking LDS YouTube creators, academic studies, and
-          community trends — sourced from public data and refreshed regularly.
+          A public hub tracking LDS YouTube creators, academic studies, survey
+          datasets, and community trends — sourced from public data and
+          refreshed regularly.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
@@ -63,87 +168,106 @@ export default async function Home() {
           >
             Read studies
           </Link>
+          <Link
+            href="/data-explorer"
+            className="inline-flex h-11 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-5 text-sm font-medium text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--muted-soft)]"
+          >
+            Explore data
+          </Link>
         </div>
       </section>
 
-      {/* Core metric tiles */}
-      {stats && (
-        <section className="mt-16 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-          <MetricTile
-            label="Channels tracked"
-            value={fmtNumber(stats.total_channels)}
-          />
-          <MetricTile
-            label="Combined subscribers"
-            value={fmtCompact(stats.total_subscribers)}
-          />
-          <MetricTile
-            label="Combined views"
-            value={fmtCompact(stats.total_views)}
-          />
-          <MetricTile
-            label="Total videos"
-            value={fmtCompact(stats.total_videos)}
-          />
-        </section>
-      )}
+      {/* Site-wide numbers */}
+      <section
+        aria-label="The site at a glance"
+        className="mt-16 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4"
+      >
+        {stats && (
+          <>
+            <MetricTile label="Channels tracked" value={fmtNumber(stats.total_channels)} />
+            <MetricTile label="Combined subscribers" value={fmtCompact(stats.total_subscribers)} />
+          </>
+        )}
+        <MetricTile label="Studies" value={fmtNumber(allStudies.length)} />
+        <MetricTile label="Graphics" value={fmtNumber(publishedGraphics.length)} />
+      </section>
+
+      <HomeFeatureGrid features={features} />
 
       <TopStatsCarousel slides={topStatSlides} />
 
-      <ChannelsCarousel channels={featuredPool} />
+      <HomeGraphicsStrip pool={graphicsPool} count={GRAPHICS_ON_HOME} />
 
-      {recent.channels.length > 0 && (
-        <section className="mt-20">
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
-            <h2 className="serif text-2xl font-semibold tracking-tight sm:text-3xl">
-              New this month
-            </h2>
-            <span className="text-sm text-[color:var(--muted)]">
-              Added in the last 30 days
-            </span>
-          </div>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {recent.channels.map((c) => {
-              const tags = channelTagsOf(c);
-              return (
-                <li key={c.id}>
-                  <Link
-                    href={`/channels/${c.slug}`}
-                    className="group flex h-full items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
-                  >
-                    {c.thumbnail_url ? (
-                      <Image
-                        src={c.thumbnail_url}
-                        alt=""
-                        width={56}
-                        height={56}
-                        className="h-14 w-14 shrink-0 rounded-full object-cover"
-                      />
-                    ) : (
-                      <div className="h-14 w-14 shrink-0 rounded-full bg-[color:var(--muted-soft)]" />
-                    )}
-                    <div className="min-w-0 flex-1">
-                      <h3 className="truncate text-sm font-semibold group-hover:text-[color:var(--accent)]">
-                        {c.name}
-                      </h3>
-                      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
-                        {tags.map((tag) => (
-                          <Tag key={tag} ink={inkForType(tag)}>
-                            {tag}
-                          </Tag>
-                        ))}
-                        <span className="tabular-nums">
-                          {fmtCompact(c.latest?.subscribers)} subs
-                        </span>
+      <div className="dinkus mt-20" aria-hidden="true">
+        <BeehiveMark className="h-3.5 w-3.5" />
+      </div>
+
+      <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <HomeMovers risers={movers.risers} fallers={movers.fallers} />
+
+        {recent.channels.length > 0 && (
+          <section aria-labelledby="home-new">
+            <div className="flex items-baseline justify-between gap-3">
+              <h2
+                id="home-new"
+                className="serif text-2xl font-semibold tracking-tight sm:text-3xl"
+              >
+                New this month
+              </h2>
+              <Link
+                href="/channels"
+                className="inline-flex items-center gap-1 text-sm font-medium text-[color:var(--accent)] hover:underline"
+              >
+                All channels
+                <ArrowRight aria-hidden="true" size={14} />
+              </Link>
+            </div>
+            <p className="mt-1 text-sm text-[color:var(--muted)]">
+              Added in the last 30 days.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {recent.channels.map((c) => {
+                const tags = channelTagsOf(c);
+                return (
+                  <li key={c.id}>
+                    <Link
+                      href={`/channels/${c.slug}`}
+                      className="group flex items-center gap-4 rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-4 transition-colors hover:border-[color:var(--accent)]"
+                    >
+                      {c.thumbnail_url ? (
+                        <Image
+                          src={c.thumbnail_url}
+                          alt=""
+                          width={56}
+                          height={56}
+                          className="h-14 w-14 shrink-0 rounded-full object-cover"
+                        />
+                      ) : (
+                        <div className="h-14 w-14 shrink-0 rounded-full bg-[color:var(--muted-soft)]" />
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <h3 className="truncate text-sm font-semibold group-hover:text-[color:var(--accent)]">
+                          {c.name}
+                        </h3>
+                        <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[color:var(--muted)]">
+                          {tags.map((tag) => (
+                            <Tag key={tag} ink={inkForType(tag)}>
+                              {tag}
+                            </Tag>
+                          ))}
+                          <span className="tabular-nums">
+                            {fmtCompact(c.latest?.subscribers)} subs
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+      </div>
 
       <StudiesCarousel studies={randomStudies} />
     </div>
@@ -153,7 +277,7 @@ export default async function Home() {
 function MetricTile({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5">
-      <div className="text-[11px] font-medium uppercase tracking-wider text-[color:var(--muted)]">
+      <div className="small-caps text-[11px] font-medium text-[color:var(--muted)]">
         {label}
       </div>
       <div className="serif mt-2 text-3xl font-semibold tabular-nums sm:text-4xl">
