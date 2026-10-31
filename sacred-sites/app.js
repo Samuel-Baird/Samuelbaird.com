@@ -47,7 +47,12 @@ function popupHtml(s) {
   const vs = shownVisits(s), first = vs[vs.length - 1], repeats = vs.slice(0, -1);
   const rows = row(first) + (repeats.length ? `<li><details><summary>${repeats.length} repeat visit${repeats.length > 1 ? "s" : ""} (not counted)</summary><ul>${repeats.map(row).join("")}</ul></details></li>` : "");
   const pics = (PHOTOS[s.id] || []).length ? `<div class="gallery" data-id="${s.id}"><img alt="${esc(s.name)}" referrerpolicy="no-referrer"><button class="prev" aria-label="Previous photo">&lsaquo;</button><button class="next" aria-label="Next photo">&rsaquo;</button><span class="count"></span></div>` : "";
-  return `<div class="pop">${pics}<h3>${esc(s.name)}</h3><div class="sub">${esc(s.city)}, ${esc(s.state)} · ${esc(labelOf(s.denom))} · first visited ${fmt(first.date)}</div><ul>${rows}</ul></div>`;
+  const gmaps = NO_MAPS.has(s.id) ? "" :
+    `<div class="gmaps"><a href="${mapsUrl(s)}" target="_blank" rel="noopener">Google Maps</a>` +
+    `<a href="${directionsUrl(s)}" target="_blank" rel="noopener">Directions</a>` +
+    `<button type="button" class="gm-toggle" data-id="${s.id}" aria-expanded="false">Ratings &amp; website</button></div>` +
+    `<div class="gm-embed" hidden></div>`;
+  return `<div class="pop">${pics}<h3>${esc(s.name)}</h3><div class="sub">${esc(s.city)}, ${esc(s.state)} · ${esc(labelOf(s.denom))} · first visited ${fmt(first.date)}</div>${gmaps}<ul>${rows}</ul></div>`;
 }
 
 function render() {
@@ -152,6 +157,20 @@ document.body.appendChild(box);
 box.onclick = () => { box.hidden = true; };
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") box.hidden = true; });
 map.on("popupopen", (e) => {
+  const tg = e.popup.getElement().querySelector(".gm-toggle");
+  if (tg) tg.onclick = () => {
+    const wrap = tg.parentElement.nextElementSibling, open = wrap.hidden;
+    if (open && !wrap.firstChild) {
+      const iframe = document.createElement("iframe");
+      iframe.src = mapsEmbedUrl(SITES.find((x) => x.id === tg.dataset.id));
+      iframe.loading = "lazy"; iframe.referrerPolicy = "no-referrer-when-downgrade";
+      iframe.title = "Google Maps preview"; iframe.allowFullscreen = true;
+      wrap.appendChild(iframe);
+    }
+    wrap.hidden = !open; tg.setAttribute("aria-expanded", String(open));
+    // popup.update() would rebuild the content and drop the iframe; just re-measure and keep it in view.
+    e.popup._updateLayout(); e.popup._updatePosition(); e.popup._adjustPan();
+  };
   const g = e.popup.getElement().querySelector(".gallery");
   if (!g) return;
   const list = PHOTOS[g.dataset.id]; let i = 0;

@@ -51,6 +51,13 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 const fmt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 const photoUrl = (p, w) => `${PHOTO_BASE}${p[0]}=w${w}`;
 
+// Google Maps links. Skipped for events held outside a church building (JW gathering, UVU campus mass).
+const NO_MAPS = new Set(["jw", "uvu"]);
+const mapsQuery = (s) => encodeURIComponent([s.name, s.city, s.state].filter(Boolean).join(", "));
+const mapsUrl = (s) => `https://www.google.com/maps/search/?api=1&query=${mapsQuery(s)}`;
+const directionsUrl = (s) => `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery(s)}`;
+const mapsEmbedUrl = (s) => `https://www.google.com/maps?q=${mapsQuery(s)}&ll=${s.lat},${s.lon}&output=embed`;
+
 // Visited sites, newest visit first inside each site.
 const SITES = Object.entries(PLACES).map(([id, [name, denom, city, state, lat, lon]]) => ({
   id, name, denom, city, state, country: COUNTRY, lat, lon,
