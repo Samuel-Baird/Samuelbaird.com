@@ -60,9 +60,10 @@ const fmt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString(undefined, {
 const photoUrl = (p, w) => `${PHOTO_BASE}${p[0]}=w${w}`;
 
 // Google Maps links. Skipped for events held outside a church building (JW gathering, UVU campus mass).
-// Also skipped for wishlist entries with no specific place to search for (town-level pins, private property).
-const NO_MAPS = new Set(["jw", "uvu", "w-aub", "w-righteous", "w-tlc", "w-flds", "w-covenant", "w-swudoc", "w-benbow"]);
+// Also skipped for Benbow Farm (private property).
+const NO_MAPS = new Set(["jw", "uvu", "w-benbow"]);
 const mapsQuery = (s) => encodeURIComponent(s.q || [s.name, s.city, s.state].filter(Boolean).join(", "));
+const mapsUrl = (s) => `https://www.google.com/maps/search/?api=1&query=${mapsQuery(s)}`;
 const mapsEmbedUrl = (s) => `https://www.google.com/maps?q=${mapsQuery(s)}&ll=${s.lat},${s.lon}&output=embed`;
 
 // Visited sites, newest visit first inside each site.
@@ -82,3 +83,30 @@ const ALL_PHOTOS = SITES.flatMap((s) => (PHOTOS[s.id] || []).map((p) => {
   const visit = s.visits.find((v) => v.date === p[3]) || s.visits[0];
   return { site: s, p, date: p[3], visit };
 })).sort((a, b) => b.date.localeCompare(a.date));
+
+// Faith tree for the stats page. Leaves point at denominations in the data; a leaf shows once it has
+// visited sites (or is `listed`, i.e. visited but not yet logged).
+const leaf = (label, match) => ({ label, match, color: (communityOf(match[0]) || {}).color || "#718096" });
+const TREE = [
+  { name: "Christian", children: [
+    { name: "Catholic", children: [leaf("Roman Catholic", ["Catholic"])] },
+    { name: "Orthodox", children: [leaf("Greek Orthodox", ["Greek Orthodox"])] },
+    { name: "Protestant", children: [
+      { name: "Anglican", children: [leaf("Episcopal", ["Episcopalian"]), leaf("Anglican Church in North America (ACNA)", ["Anglican"])] },
+      leaf("Lutheran (ELCA)", ["Lutheran"]),
+      leaf("Southern Baptist Convention (SBC)", ["SBC"]),
+      leaf("Seventh-day Adventist", ["SDA"]),
+      leaf("Presbyterian", ["Presbyterian"]),
+      leaf("Neo-Pentecostal", ["Neo-Pentecostal"]),
+    ] },
+    { name: "Restorationist and/or Non-Trinitarian", children: [
+      leaf("The Church of Jesus Christ of Latter-day Saints (LDS)", ["LDS"]),
+      leaf("Jehovah's Witnesses", ["Jehovah's Witnesses"]),
+      leaf("Community of Christ", ["Community of Christ"]),
+      leaf("Other Latter Day Saint movements", ["Restoration (non-LDS)"]),
+    ] },
+  ] },
+  { name: "Jewish", children: [leaf("Jewish", ["Jewish"])] },
+  { name: "Islamic", children: [leaf("Islam", ["Islam"])] },
+  { name: "Other", children: [leaf("Other", ["Other"])] },
+];

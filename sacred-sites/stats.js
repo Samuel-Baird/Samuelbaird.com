@@ -10,8 +10,6 @@ const listed = COMMUNITIES.filter((c) => c.listed).map((c) => {
     first: dates[0], last: dates[dates.length - 1],
   };
 });
-const logged = listed.filter((t) => t.sites.length);
-const unlogged = listed.filter((t) => !t.sites.length);
 
 const big = [
   [SITES.length, "Sacred sites visited"],
@@ -21,16 +19,34 @@ const big = [
 ];
 document.getElementById("big").innerHTML = big.map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join("");
 
-const dot = (c) => `<span class="dot" style="background:${c.color}"></span>`;
-document.getElementById("traditions").innerHTML = [...logged].sort((a, b) => b.sites.length - a.sites.length).map((t) => {
-  const bits = [`${t.sites.length} site${t.sites.length > 1 ? "s" : ""}`];
-  if (t.services.length) bits.push(`${t.services.length} service${t.services.length > 1 ? "s" : ""}`);
-  const other = t.visits.length - t.services.length;
-  if (other) bits.push(`${other} other visit${other > 1 ? "s" : ""}`);
-  const when = t.first === t.last ? `visited ${fmt(t.first)}` : `${fmt(t.first)} – ${fmt(t.last)}`;
-  return `<li><div class="t-name">${dot(t.c)}${esc(t.c.name)}</div><div class="t-meta">${bits.join(" · ")}</div><div class="t-when">${when}</div></li>`;
-}).join("") + unlogged.map((t) =>
-  `<li class="muted"><div class="t-name">${dot(t.c)}${esc(t.c.name)}</div><div class="t-meta">visited · not yet logged</div><div class="t-when"></div></li>`).join("");
+const dot = (color) => `<span class="dot" style="background:${color}"></span>`;
+const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+const listedNames = new Set(listed.map((t) => t.c.name));
+
+// Build the tree, dropping branches with nothing visited.
+function build(n) {
+  if (n.match) {
+    const sites = SITES.filter((s) => n.match.includes(s.denom)).sort((a, b) => a.name.localeCompare(b.name));
+    const pending = COMMUNITIES.some((c) => c.listed && listedNames.has(c.name) && c.match.some((m) => n.match.includes(m)));
+    return sites.length || pending ? { ...n, sites } : null;
+  }
+  const kids = n.children.map(build).filter(Boolean);
+  return kids.length ? { ...n, kids, count: kids.reduce((t, x) => t + (x.sites ? x.sites.length : x.count), 0) } : null;
+}
+function placeRow(s) {
+  const first = s.visits[s.visits.length - 1].date;
+  const link = NO_MAPS.has(s.id) ? "" : `<a href="${mapsUrl(s)}" target="_blank" rel="noopener">Google Maps</a>`;
+  return `<li><div><b>${esc(s.name)}</b><small>${esc(s.city)}, ${esc(s.state)} · ${plural(s.visits.length, "visit")} · first ${fmt(first)}</small></div>${link}</li>`;
+}
+function render(n, depth) {
+  if (n.sites) {
+    const body = n.sites.length ? `<ul class="places">${n.sites.map(placeRow).join("")}</ul>` : `<p class="hint">Visited, not yet logged.</p>`;
+    return `<details class="tleaf"><summary>${dot(n.color)}<span class="t-name">${esc(n.label)}</span><span class="t-count">${n.sites.length ? plural(n.sites.length, "site") : "not yet logged"}</span></summary>${body}</details>`;
+  }
+  const tag = `h${Math.min(depth + 2, 5)}`;
+  return `<section class="tgroup d${depth}"><${tag}>${esc(n.name)}<small>${plural(n.count, "site")}</small></${tag}>${n.kids.map((k) => render(k, depth + 1)).join("")}</section>`;
+}
+document.getElementById("tree").innerHTML = TREE.map(build).filter(Boolean).map((n) => render(n, 1)).join("");
 
 // Visits per year (every logged visit, repeats included).
 const byYear = {};
