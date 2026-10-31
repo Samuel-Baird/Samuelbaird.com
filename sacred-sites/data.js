@@ -209,4 +209,5 @@ const WISHLIST = [
   ["w-mesquitabrasil", "Mesquita Brasil", "Islam", "São Paulo", "São Paulo", "Brazil", -23.5386, -46.607, "⭐ Historically significant mosque serving São Paulo's Muslim community"],
   ["w-salomao", "Templo de Salomão", "Neo-Pentecostal", "São Paulo", "São Paulo", "Brazil", -23.5456, -46.6193, "⭐ Headquarters of the Universal Church of the Kingdom of God, inaugurated in 2014"],
   ["w-museujudaico", "Museu Judaico de São Paulo", "Jewish", "São Paulo", "São Paulo", "Brazil", -23.5486, -46.6479, "Housed in the historic Beth-El synagogue, documenting Brazilian Jewish life"],
+  ["w-stpaullcms", "St. Paul Lutheran Church (LCMS)", "Lutheran Church \u2013 Missouri Synod", "Ogden", "Utah", "USA", 41.202832, -111.949692, "3329 Harrison Blvd", "St. Paul Lutheran Church (LCMS), 3329 Harrison Blvd, Ogden, UT 84403"],
 ];
