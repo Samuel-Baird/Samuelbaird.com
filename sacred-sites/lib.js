@@ -14,6 +14,7 @@ const COMMUNITIES = [
   // Not visited yet; used by the wishlist.
   { name: "Jewish", match: ["Jewish"], color: "#00a3c4", listed: false },
   { name: "Presbyterian", match: ["Presbyterian"], color: "#c53030", listed: false },
+  { name: "Eastern Orthodox (other jurisdictions)", match: ["Eastern Orthodox"], color: "#b7791f", listed: false },
   { name: "Community of Christ", match: ["Community of Christ"], color: "#dd6b20", listed: false },
   { name: "Other Latter Day Saint movements", match: ["Restoration (non-LDS)"], color: "#38a169", listed: false },
   { name: "Neo-Pentecostal", match: ["Neo-Pentecostal"], color: "#d69e2e", listed: false },
@@ -34,7 +35,7 @@ const GROUPS = [
 const GROUP_OF = {
   Catholic: "catholic", LDS: "lds", "Greek Orthodox": "orthodox", Jewish: "jewish",
   Anglican: "protestant", Episcopalian: "protestant", Lutheran: "protestant", SBC: "protestant",
-  Presbyterian: "protestant", "Neo-Pentecostal": "protestant",
+  Presbyterian: "protestant", "Neo-Pentecostal": "protestant", "Eastern Orthodox": "orthodox",
   SDA: "restoration", "Jehovah's Witnesses": "restoration",
   "Community of Christ": "restoration", "Restoration (non-LDS)": "restoration",
 };
@@ -110,8 +111,8 @@ const TREE = [
     branch("Protestant", "protestant", [
       ["Anglican", [{ l: "The Episcopal Church (TEC)", m: ["Episcopalian"] }, { l: "Anglican Church in North America (ACNA)", m: ["Anglican"] }]],
       ["Baptist", [{ l: "Southern Baptist Convention (SBC)", m: ["SBC"] }, "Independent Fundamentalist Baptist (IFB)", "Reformed Baptist (Calvinist)"]],
-      ["Presbyterian", [{ l: "Presbyterian Church (U.S.A.)", m: ["Presbyterian"] }, "Orthodox Presbyterian Church (OPC)"]],
-      ["Lutheran", [{ l: "Evangelical Lutheran Church in America (ELCA)", m: ["Lutheran"] }, "Lutheran Church \u2013 Missouri Synod"]],
+      ["Presbyterian", [{ l: "Presbyterian Church (U.S.A.)", m: ["Presbyterian"] }, "Presbyterian Church in America (PCA)", "Orthodox Presbyterian Church (OPC)"]],
+      ["Lutheran", [{ l: "Evangelical Lutheran Church in America (ELCA)", m: ["Lutheran"] }, "Lutheran Church \u2013 Missouri Synod", "Lutheran Congregations in Mission for Christ (LCMC)", "Wisconsin Evangelical Lutheran Synod (WELS)", "Evangelical Lutheran Synod (ELS)"]],
       ["Methodist", ["United Methodist Church (UMC)", "African Methodist Episcopal Church (AME)"]],
       "United Church of Christ (UCC)",
       ["Non-Denominational Evangelical", ["Charismatic Non-Denominational"]],
