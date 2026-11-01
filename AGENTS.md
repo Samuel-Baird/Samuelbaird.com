@@ -27,6 +27,11 @@ Read [BRANDING_AND_DESIGN.md](BRANDING_AND_DESIGN.md) before writing or changing
 any UI. It is the design source of truth, not a suggestion — new pages and
 components must follow it so the site stays coherent.
 
+Branding is shared with samuelbaird.com (static site, repo
+`Samuel-Baird/Samuelbaird.com`) and must stay consistent between the two; see
+"Consistency with samuelbaird.com" in the design doc before changing tokens,
+fonts, or the Deseret title reveal.
+
 The things most often gotten wrong:
 
 - **Every public page fills the `mx-auto max-w-6xl px-5 sm:px-8` rail.** Do not

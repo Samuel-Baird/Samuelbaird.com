@@ -506,6 +506,16 @@ studies", "independent", "not affiliated".
 Avoid: overclaiming authority or official status, marketing hype, insider-only
 language without context, and any copy implying endorsement by the Church.
 
+## Consistency with samuelbaird.com
+
+This site's design system is also used by `samuelbaird.com` (repo
+`Samuel-Baird/Samuelbaird.com`, plain static HTML). Branding must stay
+consistent between the two: same dark tokens, Fraunces + Inter, 3px radius,
+honey identity accent, small-caps labels, and the Deseret title reveal on page
+H1s. Its `tokens.css` and `deseret.js` are ports of the tokens above and of
+`DeseretTitle`, so a change to a token, the glyph mapping, or the reveal timing
+here needs the same change there (and vice versa).
+
 ## Implementation Notes
 
 - Next.js `16.2.6`, React `19.2.4`, Tailwind CSS v4 (`@import "tailwindcss"` +
