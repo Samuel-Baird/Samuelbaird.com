@@ -41,7 +41,12 @@
       <input id="from" type="range" min="0" step="1" aria-label="From month">
       <input id="to" type="range" min="0" step="1" aria-label="To month">
     </div>
-    <label class="wish"><input id="wish" type="checkbox"> Show wishlist</label>
+    <h2>Show</h2>
+    <div id="show" class="chips" role="group" aria-label="Show visited sites, wishlist, or both">
+      <button class="chip" data-show="visited" aria-pressed="true">Visited</button>
+      <button class="chip" data-show="wish" aria-pressed="false">Wishlist</button>
+      <button class="chip" data-show="both" aria-pressed="false">Both</button>
+    </div>
     <p id="legend" class="hint" hidden>● visited &nbsp; ○ wishlist (sites I'd like to visit)</p>
     <button id="reset" class="link">Reset filters</button>
     <h2>Worldview Communities / Sites Visited</h2>

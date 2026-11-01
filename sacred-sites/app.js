@@ -1,5 +1,5 @@
 // Map page: filters, timeline, visit categories and wishlist.
-const state = { group: null, denom: null, country: "", year: "", cat: "", wish: false, from: 0, to: 0 };
+const state = { group: null, denom: null, country: "", year: "", cat: "", show: "visited", from: 0, to: 0 };
 
 // Timeline = every month from the first to the last logged visit.
 const monthKeys = (() => {
@@ -30,8 +30,8 @@ const siteMatches = (s) =>
   (!state.denom || state.denom.match.includes(s.denom)) &&
   (!state.country || s.country === state.country);
 const shownVisits = (s) => s.visits.filter((v) => monthOk(v) && (!state.cat || v.cat === state.cat));
-const visibleSites = () => SITES.filter((s) => siteMatches(s) && shownVisits(s).length);
-const visibleWish = () => (state.wish ? WISH.filter(siteMatches) : []);
+const visibleSites = () => state.show === "wish" ? [] : SITES.filter((s) => siteMatches(s) && shownVisits(s).length);
+const visibleWish = () => (state.show === "visited" ? [] : WISH.filter(siteMatches));
 
 // One "Google Maps" button; clicking it opens the embedded Google Maps card (rating, website, directions).
 const gmapsHtml = (s) => NO_MAPS.has(s.id) ? "" :
@@ -74,11 +74,12 @@ function render() {
     || '<li class="hint">No sites match these filters.</li>';
   document.querySelectorAll(".site").forEach((b) => b.onclick = () => openSite(b.dataset.id));
 
-  const traditions = new Set(sites.map((s) => labelOf(s.denom)));
-  const countries = new Set(sites.map((s) => s.country));
+  const counted = state.show === "wish" ? wish : sites;
+  const traditions = new Set(counted.map((s) => labelOf(s.denom)));
+  const countries = new Set(counted.map((s) => s.country));
   document.getElementById("stats").innerHTML =
-    `<div><b>${sites.length}</b><span>${sites.length === 1 ? 'unique site' : 'unique sites'}</span></div><div><b>${traditions.size}</b><span>${traditions.size === 1 ? 'tradition' : 'traditions'}</span></div><div><b>${countries.size}</b><span>${countries.size === 1 ? 'country' : 'countries'}</span></div>`;
-  document.getElementById("legend").hidden = !state.wish;
+    `<div><b>${counted.length}</b><span>${counted.length === 1 ? 'unique site' : 'unique sites'}</span></div><div><b>${traditions.size}</b><span>${traditions.size === 1 ? 'tradition' : 'traditions'}</span></div><div><b>${countries.size}</b><span>${countries.size === 1 ? 'country' : 'countries'}</span></div>`;
+  document.getElementById("legend").hidden = state.show !== "both";
   syncControls();
 }
 
@@ -109,7 +110,7 @@ function buildControls() {
   for (const id of ["from", "to"]) { $(id).max = monthKeys.length - 1; }
   $("from").oninput = () => { state.from = Math.min(+$("from").value, state.to); state.year = ""; render(); };
   $("to").oninput = () => { state.to = Math.max(+$("to").value, state.from); state.year = ""; render(); };
-  $("wish").onchange = () => { state.wish = $("wish").checked; render(); };
+  document.querySelectorAll("#show .chip").forEach((b) => b.onclick = () => { state.show = b.dataset.show; render(); });
   $("reset").onclick = () => {
     Object.assign(state, { group: null, denom: null, country: "", year: "", cat: "", from: 0, to: monthKeys.length - 1 });
     render();
@@ -117,7 +118,7 @@ function buildControls() {
 }
 
 function syncControls() {
-  const pool = [...SITES, ...(state.wish ? WISH : [])];
+  const pool = [...(state.show === "wish" ? [] : SITES), ...(state.show === "visited" ? [] : WISH)];
   document.querySelectorAll("#groups .chip").forEach((b) => {
     const on = (b.dataset.g || null) === state.group;
     b.setAttribute("aria-pressed", String(on));
@@ -132,7 +133,7 @@ function syncControls() {
   $("cat").value = state.cat;
   $("from").value = state.from; $("to").value = state.to;
   $("range-label").textContent = `${monthLabel(monthKeys[state.from])} – ${monthLabel(monthKeys[state.to])}`;
-  $("wish").checked = state.wish;
+  document.querySelectorAll("#show .chip").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.show === state.show)));
   document.querySelectorAll(".com").forEach((b) => b.classList.toggle("active", COMMUNITIES[b.dataset.i] === state.denom));
 }
 
