@@ -30,19 +30,19 @@
       "kind": "talk",
       "year": 1990,
       "conference": "1990 April General Conference",
-      "talk": "1990-04-nelson-thus-shall-my-church-be-called",
-      "para": 3,
-      "en": "… Class, Instructor’s Guide* [Salt Lake City: The Church of Jesus Christ of Latter-day Saints, 1982], p. 2). Before any …",
-      "tr": "… Instructor’s Guide*, Salt Lake City: A Igreja de Jesus Cristo dos Santos dos Últimos Dias, 1982, p. 2.) Antes …"
+      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+      "para": 35,
+      "en": "Such prophecy has been fulfilled as The Church of Jesus Christ of Latter-day Saints has been established and as the …",
+      "tr": "… evangelho e o estabelecimento de A Igreja de Jesus Cristo dos Santos dos Últimos Dias em todo o mundo."
      },
      {
       "kind": "talk",
-      "year": 2021,
-      "conference": "2021 April General Conference",
-      "talk": "2021-04-andersen-the-personal-journey-of-a-child-of-god",
-      "para": 47,
-      "en": "… see also [General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints](https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng&id=title98#title98), 38.6.1, ChurchofJesusChrist.org).\n[^11]: Gordon B. …",
-      "tr": "… também [Manual Geral: Servir em A Igreja de Jesus Cristo dos Santos dos Últimos Dias](https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=por&id=title98#title98), 38.6.1, ChurchofJesusChrist.org).\n[^11]: Gordon …"
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-ballard-god-is-at-the-helm",
+      "para": 34,
+      "en": "… sail on within the glorious ship, The Church of Jesus Christ of Latter-day Saints, and we will reach our …",
+      "tr": "… a bordo do glorioso barco, A Igreja de Jesus Cristo dos Santos dos Últimos Dias, e chegaremos a nosso …"
      }
     ],
     "share": 1.0
@@ -50,25 +50,13 @@
   ],
   "inferred": [
    {
-    "term": "santos",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 126,
-    "share_of_uncovered": 0.768,
-    "ratio": 20.2,
-    "source": "1990-04-oaks-world-peace",
-    "kind": "talk",
-    "sample": "Na Igreja de Jesus Cristo dos Santos dos Últimos Dias, seguimos a receita prescrita pelo rei-profeta Benjamim. Ele e"
-   },
-   {
     "term": "últimos",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 114,
     "share_of_uncovered": 0.695,
-    "ratio": 19.3,
+    "ratio": 21.1,
     "source": "1990-04-oaks-world-peace",
     "kind": "talk",
     "sample": "Na Igreja de Jesus Cristo dos Santos dos Últimos Dias, seguimos a receita prescrita pelo rei-profeta Benjamim. Ele ensinava que"
@@ -80,7 +68,7 @@
     ],
     "paragraphs": 33,
     "share_of_uncovered": 0.201,
-    "ratio": 11.0,
+    "ratio": 10.1,
     "source": "1992-04-oaks-the-relief-society-and-the-church",
     "kind": "talk",
     "sample": "obres, mas para salvar almas” (atas, 9 de junho de 1842, página 63; *History of the Church*, 5:25). Uma Primeira Presidência posterior explicou: “Um dos propósitos"

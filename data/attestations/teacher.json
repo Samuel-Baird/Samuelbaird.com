@@ -20,29 +20,29 @@
     "snippets": [
      {
       "kind": "scripture",
-      "ref": "Efésios 4:11",
-      "ref_en": "Ephesians 4:11",
-      "en": "And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers;",
-      "tr": "E ele mesmo deu uns para apóstolos, e outros para profetas, e outros para evangelistas, e outros para pastores e mestres,",
-      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/eph/4?lang=por&id=p11"
+      "ref": "Mosias 23:14",
+      "ref_en": "Mosiah 23:14",
+      "en": "And also trust no one to be your teacher nor your minister, except he be a man of God, walking in his ways and keeping his commandments.",
+      "tr": "E também, que em ninguém confieis para ser vosso mestre ou ministro, a não ser que seja um homem de Deus, que ande em seus caminhos e guarde os mandamentos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/23?lang=por&id=p14"
      },
      {
       "kind": "talk",
       "year": 1990,
       "conference": "1990 April General Conference",
-      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
-      "para": 14,
-      "en": "One of the great teachers and prophet-leaders in Israel was Ezra, who “had prepared his …",
-      "tr": "Esdras foi um dos grandes mestres e líderes-profetas de Israel, que “tinha preparado o seu coração …"
+      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+      "para": 13,
+      "en": "… by “an appeal to the Bible” so long as teachers of religion understand the same passage of scripture so differently …",
+      "tr": "… por meio de “uma consulta à Bíblia”, enquanto os mestres de religião interpretarem as mesmas passagens da escritura tão diferentemente. …"
      },
      {
       "kind": "talk",
-      "year": 2014,
-      "conference": "2014 April General Conference",
-      "talk": "2014-04-corbridge-the-prophet-joseph-smith",
-      "para": 22,
-      "en": "… apostles, Melchizedek and Levitical Priesthoods, elders, high priests, deacons, teachers, bishops, and the seventy, all as described in the …",
-      "tr": "… o Sacerdócio Levítico, com anciãos (élderes), sumos sacerdotes, diáconos, mestres, bispos e setentas, conforme descrito na Bíblia."
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-callister-the-book-of-mormona-book-from-god",
+      "para": 2,
+      "en": "… ‘I’m ready to accept Jesus as a great moral teacher, but I don’t accept His claim to be God.’ …",
+      "tr": "… Dele: ‘Estou disposto a aceitar Jesus como um grande mestre moralista, mas não aceito Sua afirmação de que é Deus’.Essa …"
      }
     ],
     "share": 1.0
@@ -54,36 +54,36 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 104,
-    "share_of_uncovered": 0.416,
-    "ratio": 87.6,
-    "source": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+    "paragraphs": 96,
+    "share_of_uncovered": 0.384,
+    "ratio": 85.4,
+    "source": "1990-04-cutler-the-greatest-joy",
     "kind": "talk",
-    "sample": "exercitava uma fé simples, mas profunda, no Senhor. Sua escola foi o lar, seus professores, pais amorosos, e sua cartilha, a Bíblia Sagrada. Mesmo assim, nos seus tenros"
+    "sample": "xemplo em nossa família, ao mostrar o caminho que seus filhos devem seguir; nos professores, conselheiros e nos muitos companheiros queridos desses anos todos."
    },
    {
     "term": "professora",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 51,
-    "share_of_uncovered": 0.204,
-    "ratio": 74.2,
-    "source": "2010-04-dibb-be-of-a-good-courage",
+    "paragraphs": 62,
+    "share_of_uncovered": 0.248,
+    "ratio": 99.2,
+    "source": "2025-10-holland-forsake-not-your-own-mercy",
     "kind": "talk",
-    "sample": "Depois que os alunos se colocaram em seus respectivos lados, a professora colocou-se entre os que se opunham. Escolhendo uma jovem do lado dos que apoiav"
+    "sample": "Certa vez, uma professora ensinou que uma baleia — mesmo sendo grande — não conseguiria engolir uma pesso"
    },
    {
-    "term": "pais",
+    "term": "líderes",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 55,
-    "share_of_uncovered": 0.22,
-    "ratio": 6.0,
-    "source": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+    "paragraphs": 50,
+    "share_of_uncovered": 0.2,
+    "ratio": 9.2,
+    "source": "1991-04-ballard-teach-the-children",
     "kind": "talk",
-    "sample": "ma fé simples, mas profunda, no Senhor. Sua escola foi o lar, seus professores, pais amorosos, e sua cartilha, a Bíblia Sagrada. Mesmo assim, nos seus tenros quator"
+    "sample": "o, com o rosto sujo e buracos nos joelhos das calças. Verdadeiros professores e líderes vêem nas crianças o que elas poderão vir a ser. Vêem o valoroso missionário que"
    }
   ]
  },

@@ -26,22 +26,10 @@
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.333,
-    "ratio": 32.5,
+    "ratio": 29.0,
     "source": "dc/88/127",
     "kind": "scripture",
     "sample": "onvém, sim, para todos os oficiais da igreja ou, em outras palavras, os que são chamados para o ministério da igreja, a começar pelos sumos sacerdotes, até os diáconos"
-   },
-   {
-    "term": "vos",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.333,
-    "ratio": 9.8,
-    "source": "dc/88/136",
-    "kind": "scripture",
-    "sample": "Eis que em verdade vos digo: Isto vos é um exemplo de saudação na casa de Deus, na escola dos profetas"
    }
   ]
  },

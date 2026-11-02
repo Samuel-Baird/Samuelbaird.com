@@ -39,11 +39,11 @@
      {
       "kind": "talk",
       "year": 2026,
-      "conference": "2026 October General Conference",
-      "talk": "2026-10-sikahema-prophets-seers-and-revelators",
-      "para": 1,
-      "en": "… Americans, Tongan couples like the Wolfgramms were routinely called to serve on neighboring islands or in villages as “senior” couple …",
-      "tr": "… jovens casais tonganeses como os Wolfgramm eram frequentemente chamados para servir em ilhas ou aldeias vizinhas como casais missionários “seniores”."
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-becerra-tithingputting-god-first",
+      "para": 7,
+      "en": "… life. As a young married father, I was called to serve in a branch presidency. Elder Clinton L. Cutler of …",
+      "tr": "… vida. Quando era um jovem pai casado, fui chamado para servir na presidência de um ramo. O élder Clinton L. …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 23,
     "share_of_uncovered": 0.575,
-    "ratio": 56.1,
+    "ratio": 50.0,
     "source": "1990-04-jack-i-will-go-and-do",
     "kind": "talk",
     "sample": "Benson é um profeta de Deus. Eu seguirei seus conselhos, bem como os dos Irmãos chamados a servir com ele. Sei que Jesus é o Cristo, e que dirigirá meus passos, se for"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 27,
     "share_of_uncovered": 0.675,
-    "ratio": 23.5,
+    "ratio": 26.5,
     "source": "1990-04-jack-i-will-go-and-do",
     "kind": "talk",
     "sample": "profeta de Deus. Eu seguirei seus conselhos, bem como os dos Irmãos chamados a servir com ele. Sei que Jesus é o Cristo, e que dirigirá meus passos, se for digna de"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 12,
     "share_of_uncovered": 0.3,
-    "ratio": 14.6,
+    "ratio": 17.4,
     "source": "2001-04-hinckley-the-miracle-of-faith",
     "kind": "talk",
     "sample": "avia cerca de 180 pessoas na reunião. Na primeira fileira estavam sentados oito missionários — seis élderes e duas sísteres. Na congregação havia homens e mulheres, meninos"

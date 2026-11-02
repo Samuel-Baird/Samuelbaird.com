@@ -29,21 +29,21 @@
      },
      {
       "kind": "talk",
-      "year": 2010,
-      "conference": "2010 October General Conference",
-      "talk": "2010-10-uchtdorf-pride-and-the-priesthood",
-      "para": 24,
-      "en": "… opportunity to drive President James E. Faust to a stake conference. During the hours we spent in the car, …",
-      "tr": "… Presidente James E. Faust de carro para uma conferência de estaca. Nas horas que passamos dentro do carro, o …"
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-packer-prayer-and-promptings",
+      "para": 18,
+      "en": "… drive to the airport for a flight to a stake conference in California. But the cow was expecting a calf …",
+      "tr": "… e pegar um avião para chegar a uma conferência de estaca na Califórnia. Mas nossa vaca estava para dar à …"
      },
      {
       "kind": "talk",
       "year": 2026,
-      "conference": "2026 October General Conference",
-      "talk": "2026-10-chigbundu-spiritual-immunity",
-      "para": 17,
-      "en": "While serving as an Area Seventy, I attended a stake conference in Côte d’Ivoire. After the Saturday adult session, the …",
-      "tr": "… servia como setenta de área, participei de uma conferência de estaca na Costa do Marfim. Depois da sessão de adultos …"
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-oaks-alive-in-christ",
+      "para": 14,
+      "en": "… witnessed this uncommon loving of an adversary at a stake conference many years ago. As I looked over the audience …",
+      "tr": "… esse amor incomum a um adversário em uma conferência de estaca há muitos anos. Ao olhar para as pessoas na …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.786,
-    "ratio": 73.1,
+    "ratio": 57.2,
     "source": "1990-04-monson-my-brothers-keeper",
     "kind": "talk",
     "sample": "Em 1975, compareci à conferência da estaca dos Parleys, onde tivemos uma reunião de liderança do sacerdócio logo cedo, na"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.786,
-    "ratio": 35.7,
+    "ratio": 31.4,
     "source": "1990-04-monson-my-brothers-keeper",
     "kind": "talk",
     "sample": "Em 1975, compareci à conferência da estaca dos Parleys, onde tivemos uma reunião de liderança do sacerdócio logo"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.357,
-    "ratio": 15.4,
+    "ratio": 16.2,
     "source": "1990-04-monson-my-brothers-keeper",
     "kind": "talk",
     "sample": "uperar qualquer um que se tenha desviado. Gil Warner pediu a palavra e contou a história de Douglas, concluindo com a pergunta: “A quem cabe a responsabilidade de cuida"

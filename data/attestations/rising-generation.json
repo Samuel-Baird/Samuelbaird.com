@@ -4,7 +4,7 @@
   "en_paragraphs": 115,
   "en_talks": 78,
   "en_verses": 5,
-  "uncovered_paragraphs": 22,
+  "uncovered_paragraphs": 12,
   "renderings": [
    {
     "term": "nova geração",
@@ -12,8 +12,8 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 95,
-    "talks": 65,
+    "paragraphs": 105,
+    "talks": 72,
     "verses": 3,
     "first_year": 2001,
     "last_year": 2026,
@@ -28,21 +28,21 @@
      },
      {
       "kind": "talk",
-      "year": 2001,
-      "conference": "2001 October General Conference",
-      "talk": "2001-10-dew-are-we-not-all-mothers",
-      "para": 11,
-      "en": "… have the responsibility to love and help lead the rising generation. How will our young women learn to live …",
-      "tr": "… a responsabilidade de amar e ajudar a conduzir a nova geração. Como nossas jovens irão aprender a viver como …"
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-rasband-our-rising-generation",
+      "para": 7,
+      "en": "… came to pass that there were many of the rising generation that could not understand the words of king Benjamin, …",
+      "tr": "“Ora, aconteceu que havia muitos da nova geração que não podiam compreender as palavras do rei Benjamim, …"
      },
      {
       "kind": "talk",
-      "year": 2018,
-      "conference": "2018 October General Conference",
-      "talk": "2018-10-franco-the-joy-of-unselfish-service",
-      "para": 14,
-      "en": "… we sacrificing of our time and talents so the rising generation can learn to love the Lord and keep His …",
-      "tr": "… sacrificando nosso tempo e nossos talentos para que a nova geração aprenda a amar o Senhor e a guardar Seus …"
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-grow-and-this-is-life-eternal",
+      "para": 0,
+      "en": "I speak to you, the rising generation—youth and young adults, single or married—you who are …",
+      "tr": "Dirijo-me a vocês, a nova geração — jovens e jovens adultos, solteiros ou casados —, …"
      }
     ],
     "share": 1.0
@@ -50,25 +50,13 @@
   ],
   "inferred": [
    {
-    "term": "novas gerações",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 10,
-    "share_of_uncovered": 0.455,
-    "ratio": 909.3,
-    "source": "2009-10-allred-every-woman-needs-relief-society",
-    "kind": "talk",
-    "sample": "- Reconheço minha responsabilidade de influenciar para o bem as novas gerações."
-   },
-   {
     "term": "geração",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 11,
-    "share_of_uncovered": 0.5,
-    "ratio": 95.3,
+    "paragraphs": 10,
+    "share_of_uncovered": 0.833,
+    "ratio": 111.1,
     "source": "1990-04-cuthbert-the-spirituality-of-service",
     "kind": "talk",
     "sample": "comunidade e obra missionária durante as férias. É desta forma que salvaremos a geração que surge, evitando que se torne totalmente egoísta e indulgente. Nós não a sal"
@@ -78,12 +66,24 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 7,
-    "share_of_uncovered": 0.318,
-    "ratio": 12.1,
+    "paragraphs": 6,
+    "share_of_uncovered": 0.5,
+    "ratio": 18.9,
     "source": "1990-04-cuthbert-the-spirituality-of-service",
     "kind": "talk",
     "sample": "ncantado em ouvir falar de todos os tipos de projetos de serviço realizados por jovens, tais como batismos pelos mortos no templo, trabalhos de limpeza na comunidade"
+   },
+   {
+    "term": "juventude",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 53.3,
+    "source": "1990-04-monson-conference-is-here",
+    "kind": "talk",
+    "sample": "A juventude da Igreja — o Presidente Benson há muito vem sendo vosso paladino e defensor. E"
    }
   ]
  },

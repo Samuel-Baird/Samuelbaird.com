@@ -20,21 +20,21 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1996,
-      "conference": "1996 October General Conference",
-      "talk": "1996-10-wirthlin-christians-in-belief-and-action",
-      "para": 8,
-      "en": "… is a God, one of the three in the Godhead. He is the Savior and Redeemer of the human …",
-      "tr": "… Ele é um Deus, um dos três membros da Trindade. E o Salvador e Redentor da raça humana. No …"
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-dew-we-are-not-alone",
+      "para": 4,
+      "en": "… the constant companionship of the third member of the Godhead and hence the privilege of receiving revelation for our own …",
+      "tr": "… a promessa da companhia constante do terceiro membro da Trindade e, conseqüentemente, o privilégio de receber revelação para nossa própria …"
      },
      {
       "kind": "talk",
-      "year": 2017,
-      "conference": "2017 April General Conference",
-      "talk": "2017-04-oaks-the-godhead-and-the-plan-of-salvation",
-      "para": 1,
-      "en": "… clarifying that the then-prevailing beliefs concerning God and the Godhead were not true.",
-      "tr": "… o mundo cristão chama de a doutrina da santa Trindade. Em sua Primeira Visão, Joseph Smith viu dois personagens …"
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-hales-the-holy-ghost",
+      "para": 2,
+      "en": "… of Christ. He is the third member of the Godhead, a distinct personage of spirit with sacred responsibilities, and …",
+      "tr": "… Luz de Cristo. Ele é o terceiro membro da Trindade, um personagem distinto de espírito com responsabilidades sagradas, sendo …"
      },
      {
       "kind": "talk",
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.333,
-    "ratio": 29.6,
+    "ratio": 41.7,
     "source": "2003-04-wirthlin-the-unspeakable-gift",
     "kind": "talk",
     "sample": "sta “que dá ouvidos à voz”[^3] para encontrar o evangelho verdadeiro e a Igreja verdadeira, e desse modo receber o Espírito Santo."
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.25,
-    "ratio": 66.7,
+    "ratio": 76.9,
     "source": "acts/17/29",
     "kind": "scripture",
     "sample": "Sendo, pois, geração de Deus, não havemos de pensar que a divindade seja semelhante ao ouro, ou à prata, ou à pedra esculpida por artifício e imagi"

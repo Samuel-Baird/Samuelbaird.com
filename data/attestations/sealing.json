@@ -28,21 +28,21 @@
      },
      {
       "kind": "talk",
-      "year": 1992,
-      "conference": "1992 April General Conference",
-      "talk": "1992-04-haight-come-to-the-house-of-the-lord",
-      "para": 40,
-      "en": "… my testimony that your faithfulness to your endowment and sealing covenants assures you a fulness of the blessings promised. The …",
-      "tr": "… que vossa fidelidade à investidura e aos convênios do selamento vos assegura a plenitude das bênçãos prometidas. A infidelidade, transgressão …"
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-okazaki-strength-in-the-savior",
+      "para": 28,
+      "en": "… of a nonmember, then a partner in a temple sealing, a mother, a mother-in-law and grandmother, and now a …",
+      "tr": "… a esposa de um não-membro, depois companheira em um selamento no templo, mãe, sogra, avó e agora, viúva. Em todas …"
      },
      {
       "kind": "talk",
-      "year": 2018,
-      "conference": "2018 April General Conference",
-      "talk": "2018-04-wakolo-saving-ordinances-will-bring-us-marvelous-light",
-      "para": 16,
-      "en": "… Likewise, our temptations do not end after baptism or sealing, but receiving the sacred ordinances and honoring the associated …",
-      "tr": "… nossas tentações não terminam depois do batismo ou do selamento, mas receber as ordenanças sagradas e honrar os convênios …"
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-andersen-whoso-receiveth-them-receiveth-me",
+      "para": 19,
+      "en": "… of the Salt Lake Temple and told about the sealing ordinances. From that moment, I had the desire of one …",
+      "tr": "… de Salt Lake e contaram sobre as ordenanças de selamento. A partir daquele momento, tive o desejo de, um …"
      }
     ],
     "share": 1.0
@@ -50,28 +50,28 @@
   ],
   "inferred": [
    {
-    "term": "chaves",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 11,
-    "share_of_uncovered": 0.256,
-    "ratio": 25.6,
-    "source": "1990-04-packer-the-library-of-the-lord",
-    "kind": "talk",
-    "sample": "emonstrar o poder selador e Malaquias profetizar que Elias seria enviado com as chaves da autoridade seladora."
-   },
-   {
     "term": "ordenanças",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 13,
     "share_of_uncovered": 0.302,
-    "ratio": 14.4,
+    "ratio": 14.9,
     "source": "1994-10-nelson-the-spirit-of-elijah",
     "kind": "talk",
     "sample": "ós o que não podíamos fazer nós mesmos. De maneira semelhante, podemos realizar ordenanças por aqueles que não tiveram a oportunidade de realizá-las em vida.”"
+   },
+   {
+    "term": "chaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.256,
+    "ratio": 20.9,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "emonstrar o poder selador e Malaquias profetizar que Elias seria enviado com as chaves da autoridade seladora."
    },
    {
     "term": "autoridade",
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 9,
     "share_of_uncovered": 0.209,
-    "ratio": 12.7,
+    "ratio": 12.1,
     "source": "1990-04-packer-the-library-of-the-lord",
     "kind": "talk",
     "sample": "o poder selador e Malaquias profetizar que Elias seria enviado com as chaves da autoridade seladora."

@@ -14,28 +14,28 @@
   ],
   "inferred": [
    {
-    "term": "recorde",
+    "term": "recordes",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.5,
     "ratio": 2000.5,
-    "source": "2025-04-palmer-return-unto-me-that-i-may-heal-you",
+    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
     "kind": "talk",
-    "sample": "Jesus promete. E, ao contrário das narrativas que às vezes circulam, um número recorde de nossos jovens está optando por permanecer firme e aumentar sua fé em Jesus C"
+    "sample": "apazes e moças estão enviando seus papéis para o serviço missionário em números recordes. A nova geração está *se erguendo* como vigorosos seguidores de Jesus Cristo."
    },
    {
-    "term": "números",
+    "term": "número recorde",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.5,
-    "ratio": 250.1,
-    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
+    "ratio": 666.8,
+    "source": "2025-04-palmer-return-unto-me-that-i-may-heal-you",
     "kind": "talk",
-    "sample": "Nossos rapazes e moças estão enviando seus papéis para o serviço missionário em números recordes. A nova geração está *se erguendo* como vigorosos seguidores de Jesus"
+    "sample": "ura que Jesus promete. E, ao contrário das narrativas que às vezes circulam, um número recorde de nossos jovens está optando por permanecer firme e aumentar sua fé em Jesus C"
    },
    {
     "term": "buscando",
@@ -44,7 +44,7 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.5,
-    "ratio": 222.3,
+    "ratio": 250.1,
     "source": "2025-04-nelson-confidence-in-the-presence-of-god",
     "kind": "talk",
     "sample": "lmente inspirado por nossos jovens. Eles estão servindo em grande número. Estão buscando seus antepassados e realizando as ordenanças no templo. Nossos rapazes e moças"

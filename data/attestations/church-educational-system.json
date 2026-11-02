@@ -63,28 +63,28 @@
     "sample": "sign*, novembro de 1997, p. 110.\n[^13]: Mark Skousen para Dallin H. Oaks, 15 de fevereiro de 2009."
    },
    {
-    "term": "liahona",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 6,
-    "share_of_uncovered": 0.667,
-    "ratio": 36.5,
-    "source": "2001-10-golden-our-fathers-plan",
-    "kind": "talk",
-    "sample": "es/dc-testament/dc/1?lang=por&id=p30#p30) \"Testemunhas Especiais de Cristo\", A *Liahona,* abril de 2001, p. 24.\n[^15]: Ver [Moisés 4:3-4](https://www.churchofjesuschri"
-   },
-   {
     "term": "broadcasts",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.444,
-    "ratio": 197.6,
+    "ratio": 222.3,
     "source": "2012-10-oaks-protect-the-children",
     "kind": "talk",
     "sample": "onal do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion Not Only Where, but How We Live, Says Elder H"
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 30.3,
+    "source": "2001-10-golden-our-fathers-plan",
+    "kind": "talk",
+    "sample": "es/dc-testament/dc/1?lang=por&id=p30#p30) \"Testemunhas Especiais de Cristo\", A *Liahona,* abril de 2001, p. 24.\n[^15]: Ver [Moisés 4:3-4](https://www.churchofjesuschri"
    }
   ]
  },

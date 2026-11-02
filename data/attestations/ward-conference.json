@@ -14,18 +14,6 @@
   ],
   "inferred": [
    {
-    "term": "secretário",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 2667.3,
-    "source": "2001-10-monson-duty-calls",
-    "kind": "talk",
-    "sample": "Quando eu tinha doze anos, tive o privilégio de servir como secretário do quórum de diáconos. Lembro-me com alegria das várias designações que nós, me"
-   },
-   {
     "term": "quórum, tivemos",
     "evidence": [
      "inferred"
@@ -48,6 +36,18 @@
     "source": "2001-10-monson-duty-calls",
     "kind": "talk",
     "sample": "e cumprir. De imediato, lembro-me de distribuir o sagrado sacramento, arrecadar ofertas mensais de jejum e cuidar uns dos outros. A tarefa mais assustadora, porém, ocorreu num"
+   },
+   {
+    "term": "monson, secretário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "m e depois, sem o menor aviso, levam tou-se e disse: “Ouviremos agora Thomas S. Monson, secretário do quórum dos diáconos. Ele nos dará um relato de seu serviço e prestará seu te"
    }
   ]
  },

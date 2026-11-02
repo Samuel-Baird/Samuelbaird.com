@@ -51,6 +51,18 @@
   ],
   "inferred": [
    {
+    "term": "selado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.231,
+    "ratio": 307.8,
+    "source": "2010-04-aoyagi-helping-hands-saving-hands",
+    "kind": "talk",
+    "sample": "do pela gratidão ao Senhor e àquela irmã que me resgatou. Depois da missão, fui selado no templo a uma moça maravilhosa, e fomos abençoados com quatro filhos. Sem ser"
+   },
+   {
     "term": "selada",
     "evidence": [
      "inferred"
@@ -63,25 +75,13 @@
     "sample": "Os filhos nascidos dessa união são “herança do Senhor”.[^26] Quando a família é selada no templo, ela se torna eterna como o próprio reino de Deus.[^27]"
    },
    {
-    "term": "selado",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 6,
-    "share_of_uncovered": 0.231,
-    "ratio": 153.9,
-    "source": "2010-04-aoyagi-helping-hands-saving-hands",
-    "kind": "talk",
-    "sample": "do pela gratidão ao Senhor e àquela irmã que me resgatou. Depois da missão, fui selado no templo a uma moça maravilhosa, e fomos abençoados com quatro filhos. Sem ser"
-   },
-   {
     "term": "fomos",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.231,
-    "ratio": 27.2,
+    "ratio": 25.0,
     "source": "1993-10-condie-a-mighty-change-of-heart",
     "kind": "talk",
     "sample": "Recentemente fomos selados para a eternidade e agora passamos um dia por semana juntos no templo."

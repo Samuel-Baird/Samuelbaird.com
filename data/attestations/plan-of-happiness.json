@@ -30,19 +30,19 @@
       "kind": "talk",
       "year": 1993,
       "conference": "1993 October General Conference",
-      "talk": "1993-10-oaks-the-great-plan-of-happiness",
-      "para": 0,
-      "en": "… it the plan of salvation and “the great plan of happiness” ([Alma 42:8](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=eng&id=p8#p8)). Through inspiration we can understand this …",
-      "tr": "… de o plano de salvação ou “o grande plano de felicidade” ([Alma 42:8](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=por&id=p8#p8)). Por meio da inspiração podemos compreender …"
+      "talk": "1993-10-packer-for-time-and-all-eternity",
+      "para": 15,
+      "en": "… complementing differences are the very key to the plan of happiness.",
+      "tr": "… que se complementam são as verdadeiras chaves do plano de felicidade."
      },
      {
       "kind": "talk",
-      "year": 2015,
-      "conference": "2015 April General Conference",
-      "talk": "2015-04-christofferson-why-marriage-why-family",
-      "para": 11,
-      "en": "… had chosen to participate in the Father’s great plan of happiness.[^12] Their Fall created the conditions needed for our …",
-      "tr": "… de todos os que escolheram participar do grande plano de felicidade elaborado pelo Pai.[^12] A Queda criou as condições necessárias …"
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-bednar-we-believe-in-being-chaste",
+      "para": 22,
+      "en": "… physical body is so central to the Father’s plan of happiness and our spiritual development, Lucifer seeks to frustrate our …",
+      "tr": "… o corpo físico é uma parte essencial do plano de felicidade estabelecido pelo Pai e de nosso desenvolvimento espiritual, Lúcifer …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 24,
     "share_of_uncovered": 0.8,
-    "ratio": 34.4,
+    "ratio": 33.0,
     "source": "1993-10-nelson-constancy-amid-change",
     "kind": "talk",
     "sample": "Falo agora da segunda categoria: planos imutáveis. Um grande conselho reuniu-se nos céus e parece-me que todos partici"
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 17,
     "share_of_uncovered": 0.567,
-    "ratio": 34.4,
+    "ratio": 31.9,
     "source": "1993-10-nelson-constancy-amid-change",
     "kind": "talk",
     "sample": "eidade ou para demonstrar seu amplo alcance, ele foi também chamado de plano da felicidade,[^10] plano de salvação,[^11] plano da redenção,[^12] plano da restauração,[^13"
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.367,
-    "ratio": 20.4,
+    "ratio": 23.3,
     "source": "1993-10-nelson-constancy-amid-change",
     "kind": "talk",
     "sample": "tauração,[^13] plano de misericórdia,[^14] plano de libertação[^15] e evangelho eterno.[^16] Os profetas têm usado esses termos alternadamente, com o mesmo sentido. I"

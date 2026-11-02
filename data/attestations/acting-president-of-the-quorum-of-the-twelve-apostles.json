@@ -57,7 +57,7 @@
     ],
     "paragraphs": 15,
     "share_of_uncovered": 1.0,
-    "ratio": 1333.7,
+    "ratio": 4001.0,
     "source": "1995-10-monson-the-sustaining-of-church-officers",
     "kind": "talk",
     "sample": "on como Presidente do Quórum dos Doze Apóstolos, Boyd K. Packer como Presidente Interino do Quórum dos Doze Apóstolos e os seguin­tes mem­bros desse quó­rum: Boyd K. Pa"
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 14,
     "share_of_uncovered": 0.933,
-    "ratio": 1244.8,
+    "ratio": 3734.3,
     "source": "1995-10-monson-the-sustaining-of-church-officers",
     "kind": "talk",
     "sample": "al A. Maxwell, Russell M. Nelson, Dallin H. Oaks, M. Russell Ballard, Joseph B. Wirthlin, Richard G. Scott, Robert D. Hales, Jeffrey R. Holland, e Henry B. Eyring. Os que esti­v"
    },
    {
-    "term": "scott, robert",
+    "term": "russell ballard, joseph",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 14,
     "share_of_uncovered": 0.933,
-    "ratio": 1244.8,
+    "ratio": 3734.3,
     "source": "1995-10-monson-the-sustaining-of-church-officers",
     "kind": "talk",
-    "sample": "l M. Nelson, Dallin H. Oaks, M. Russell Ballard, Joseph B. Wirthlin, Richard G. Scott, Robert D. Hales, Jeffrey R. Holland, e Henry B. Eyring. Os que esti­ve­rem a favor, ma"
+    "sample": "Perry, David B. Haight, Neal A. Maxwell, Russell M. Nelson, Dallin H. Oaks, M. Russell Ballard, Joseph B. Wirthlin, Richard G. Scott, Robert D. Hales, Jeffrey R. Holland, e Henry B."
    }
   ]
  },

@@ -51,16 +51,16 @@
   ],
   "inferred": [
    {
-    "term": "padrão",
+    "term": "obras-­padrão",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.6,
-    "ratio": 77.4,
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 800.2,
     "source": "1994-10-holland-miracles-of-the-restoration",
     "kind": "talk",
-    "sample": "io), fizeram cursos em nível universitário por correspondência e lêem as obras-­padrão continuamente."
+    "sample": "seminário), fizeram cursos em nível universitário por correspondência e lêem as obras-­padrão continuamente."
    },
    {
     "term": "encontram",
@@ -75,16 +75,16 @@
     "sample": "ceiro, vocês têm o mandamento de ensinar os princípios do evangelho conforme se encontram nas obraspadrão da Igreja, de ensinar as palavras dos profetas e apóstolos mode"
    },
    {
-    "term": "período",
+    "term": "estudar",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.4,
-    "ratio": 69.6,
-    "source": "1994-10-holland-miracles-of-the-restoration",
+    "ratio": 80.0,
+    "source": "1994-10-rector-endure-to-the-end-in-charity",
     "kind": "talk",
-    "sample": ", deitada de costas há dezessete anos, sem nunca ter saído da cama durante esse período. Nem uma vez em dezessete anos ela observou o nascer do sol ou o seu ocaso, tam"
+    "sample": "a Ala Valencia Park, em San Diego. Devido ao meu curso de preparação, não podia estudar e ir à igreja como desejava, e sonhava com o dia em que poderia fazê-lo. Encont"
    }
   ]
  },

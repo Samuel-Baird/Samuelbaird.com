@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1998,
-      "conference": "1998 October General Conference",
-      "talk": "1998-10-faust-by-what-power-have-ye-done-this",
-      "para": 17,
-      "en": "… your priesthood. This priesthood holds “the key of the ministering of angels.”[^15] Priests may be permitted to perform the sacred …",
-      "tr": "… o seu sacerdócio. Esse sacerdócio possui “a chave da ministração dos anjos”.[^15] Os sacerdotes podem realizar a sagrada ordenança do …"
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-wickman-but-if-not",
+      "para": 11,
+      "en": "… still grieve for our little boy, although the tender ministering of the Spirit and the passage of the years have …",
+      "tr": "… sinceramente, ainda sofro por nosso filhinho, embora a terna ministração do Espírito e o passar dos anos tenham amenizado nossa …"
      },
      {
       "kind": "talk",
-      "year": 2020,
-      "conference": "2020 October General Conference",
-      "talk": "2020-10-godoy-i-believe-in-angels",
-      "para": 28,
-      "en": "This is a gospel of love, a gospel of ministering. Of this I testify in the name of Jesus …",
-      "tr": "Este é um evangelho de amor, um evangelho de ministração. Presto testemunho disso em nome de Jesus Cristo. Amém."
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-dube-pressing-toward-the-mark",
+      "para": 15,
+      "en": "… 1:3–7](https://www.churchofjesuschrist.org/study/scriptures/nt/2-cor/1?lang=eng&id=p3-p7#p3).\n[^4]: [Philippians 3:8](https://www.churchofjesuschrist.org/study/scriptures/nt/philip/3?lang=eng&id=p8#p8).\n[^5]: Russell M. Nelson, “[Ministering](https://www.churchofjesuschrist.org/study/general-conference/2018/04/ministering?lang=eng&id=p6#p6),” Ensign or Liahona, May 2018, 100.\n[^6]: [Matthew 16:25](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/16?lang=eng&id=p25#p25). …",
+      "tr": "… 1:3–7](https://www.churchofjesuschrist.org/study/scriptures/nt/2-cor/1?lang=por&id=p3-p7#p3).\n[^4]: [Filipenses 3:8](https://www.churchofjesuschrist.org/study/scriptures/nt/philip/3?lang=por&id=p8#p8).\n[^5]: Russell M. Nelson, \"[Ministração](https://www.churchofjesuschrist.org/study/general-conference/2018/04/ministering?lang=por&id=p6#p6)\", Liahona, maio de 2018, p. 100.\n[^6]: [Mateus 16:25](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/16?lang=por&id=p25#p25). …"
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 April General Conference",
-      "talk": "2026-04-gilbert-come-home",
-      "para": 15,
-      "en": "… her back to church. I met Tammy on a ministering visit just after her temple endowment. She had been away …",
-      "tr": "… voltar à Igreja. Conheci Tammy em uma visita de ministração logo após sua investidura no templo. Ela esteve afastada da …"
+      "talk": "2026-04-stevenson-lost-luggage-redeemed-souls",
+      "para": 33,
+      "en": "… implement small acts of kindness and care into your ministering, becoming better ministers of Jesus Christ.",
+      "tr": "… implementar pequenos atos de bondade e cuidado em sua ministração, tornando-se melhores ministros de Jesus Cristo."
      }
     ],
     "share": 1.0
@@ -55,9 +55,9 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 90,
-    "share_of_uncovered": 0.36,
-    "ratio": 110.8,
+    "paragraphs": 91,
+    "share_of_uncovered": 0.364,
+    "ratio": 104.0,
     "source": "2002-10-pingree-charity-one-family-one-home-at-a-time",
     "kind": "talk",
     "sample": "r demonstrou o significado da caridade por meio de Suas próprias ações. Além de ministrar a multidões, Jesus demonstrou a intensidade de Seu amor e preocupação com a pró"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 85,
     "share_of_uncovered": 0.34,
-    "ratio": 41.2,
+    "ratio": 34.9,
     "source": "1990-04-lybbert-a-latter-day-samaritan",
     "kind": "talk",
     "sample": "Para um melhor entendimento desta parábola, lembremos que a obra do ministério no santuário havia sido designada à tribo de Levi. Era dever dos levitas ajudar"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 77,
     "share_of_uncovered": 0.308,
-    "ratio": 35.2,
+    "ratio": 41.1,
     "source": "2000-04-packer-the-cloven-tongues-of-fire",
     "kind": "talk",
     "sample": "Batista restaurou “o Sacerdócio de Aarão, que possui as chaves do ministério de anjos e do evangelho do arrependimento e do batismo por imersão para remissão de peca"

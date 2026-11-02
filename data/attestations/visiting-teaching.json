@@ -51,7 +51,7 @@
   ],
   "inferred": [
    {
-    "term": "visitante",
+    "term": "professora visitante",
     "evidence": [
      "inferred"
     ],
@@ -60,19 +60,7 @@
     "ratio": 762.1,
     "source": "1992-04-kikuchi-the-pure-love-of-god",
     "kind": "talk",
-    "sample": "não-membros, dentro da estrutura dos programas de mestre familiar e professora visitante. Essas pessoas serão tocadas por este amor. Quando Néfi viu o Salvador, exclamo"
-   },
-   {
-    "term": "professora",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 16,
-    "share_of_uncovered": 0.762,
-    "ratio": 277.1,
-    "source": "1992-04-kikuchi-the-pure-love-of-god",
-    "kind": "talk",
-    "sample": "s ativos ou não-membros, dentro da estrutura dos programas de mestre familiar e professora visitante. Essas pessoas serão tocadas por este amor. Quando Néfi viu o Salvado"
+    "sample": "s ativos ou não-membros, dentro da estrutura dos programas de mestre familiar e professora visitante. Essas pessoas serão tocadas por este amor. Quando Néfi viu o Salvador, exclamo"
    },
    {
     "term": "visitas",
@@ -81,10 +69,22 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.524,
-    "ratio": 209.6,
+    "ratio": 349.3,
     "source": "2001-10-smoot-steadfast-and-immovable",
     "kind": "talk",
     "sample": "Quando ouço algumas irmãs dizerem: “É difícil demais fazer minhas visitas de professora visitante” ou “Simplesmente não tenho tempo para orar e ler as es"
+   },
+   {
+    "term": "familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.286,
+    "ratio": 31.8,
+    "source": "1992-04-kikuchi-the-pure-love-of-god",
+    "kind": "talk",
+    "sample": "embros menos ativos ou não-membros, dentro da estrutura dos programas de mestre familiar e professora visitante. Essas pessoas serão tocadas por este amor. Quando Néfi"
    }
   ]
  },

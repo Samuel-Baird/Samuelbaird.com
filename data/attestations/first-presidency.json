@@ -37,12 +37,12 @@
      },
      {
       "kind": "talk",
-      "year": 2011,
-      "conference": "2011 October General Conference",
-      "talk": "2011-10-packer-counsel-to-youth",
-      "para": 52,
-      "en": "The scriptures require that the First Presidency and Quorum of the Twelve work in councils and …",
-      "tr": "As escrituras exigem que a Primeira Presidência e o Quórum dos Doze trabalhem em conselhos e …"
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-stevenson-sacred-homes-sacred-temples",
+      "para": 0,
+      "en": "… blessed we are to hear the counsel of the First Presidency and the Quorum of the Twelve, whom we sustain …",
+      "tr": "… tendo! Como somos abençoados por ouvir os conselhos da Primeira Presidência e do Quórum dos Doze, a quem apoiamos como …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 16,
     "share_of_uncovered": 0.533,
-    "ratio": 2133.9,
+    "ratio": 1066.9,
     "source": "1999-04-faust-this-is-our-day",
     "kind": "talk",
     "sample": "of the Church,* 4:609-610.\n[^2]: James R. Clark (org.), *Messages of the First Presidency of The Church of Jesus Christ of Latter-day Saints,* 6 volumes, 1966, 3:333.\n[^"
@@ -68,22 +68,22 @@
     ],
     "paragraphs": 16,
     "share_of_uncovered": 0.533,
-    "ratio": 1066.9,
+    "ratio": 533.5,
     "source": "1999-04-faust-this-is-our-day",
     "kind": "talk",
     "sample": "istory of the Church,* 4:609-610.\n[^2]: James R. Clark (org.), *Messages of the First Presidency of The Church of Jesus Christ of Latter-day Saints,* 6 volumes, 1966"
    },
    {
-    "term": "the",
+    "term": "saints",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 16,
-    "share_of_uncovered": 0.533,
-    "ratio": 29.2,
+    "paragraphs": 9,
+    "share_of_uncovered": 0.3,
+    "ratio": 400.1,
     "source": "1999-04-faust-this-is-our-day",
     "kind": "talk",
-    "sample": "[^1]: *History of the Church,* 4:609-610.\n[^2]: James R. Clark (org.), *Messages of the First Preside"
+    "sample": ", *Messages of the First Presidency of The Church of Jesus Christ of Latter-day Saints,* 6 volumes, 1966, 3:333.\n[^3]: Jacob M. Braude (org.), *Braude's Treasury of W"
    }
   ]
  },

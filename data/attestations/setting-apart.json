@@ -4,7 +4,7 @@
   "en_paragraphs": 11,
   "en_talks": 10,
   "en_verses": 0,
-  "uncovered_paragraphs": 6,
+  "uncovered_paragraphs": 5,
   "renderings": [
    {
     "term": "designação",
@@ -12,20 +12,20 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 5,
-    "talks": 5,
+    "paragraphs": 6,
+    "talks": 6,
     "verses": 0,
-    "first_year": 2017,
+    "first_year": 1993,
     "last_year": 2021,
     "snippets": [
      {
       "kind": "talk",
-      "year": 2017,
-      "conference": "2017 April General Conference",
-      "talk": "2017-04-causs-prepare-the-way",
-      "para": 22,
-      "en": "… dear bishops, you have, included in your ordination and setting apart as bishop of your ward, the sacred calling to …",
-      "tr": "Meus queridos bispos, incluído em sua ordenação e designação como bispo de sua ala está o sagrado chamado de …"
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-packer-the-temple-the-priesthood",
+      "para": 48,
+      "en": "… to which one is set apart. Unauthorized ordinations or settings apart convey nothing, neither power nor authority of the priesthood.",
+      "tr": "… chamado para o qual alguém foi designado. Ordenações e designações não autorizadas nada transmitem, nem poder, nem autoridade do sacerdócio."
      },
      {
       "kind": "talk",
@@ -51,40 +51,40 @@
   ],
   "inferred": [
    {
-    "term": "ofício",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.333,
-    "ratio": 222.3,
-    "source": "1993-04-packer-the-temple-the-priesthood",
-    "kind": "talk",
-    "sample": "foi conferido, um indivíduo não possui autoridade além daquela que pertence ao ofício específico para o qual ele foi ordenado. Estes limites aplicam-se também ao cha"
-   },
-   {
     "term": "sob",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
-    "share_of_uncovered": 0.333,
-    "ratio": 32.5,
+    "share_of_uncovered": 0.4,
+    "ratio": 39.0,
     "source": "1992-04-oaks-the-relief-society-and-the-church",
     "kind": "talk",
     "sample": "acontece com a autoridade do sacerdócio e com a autoridade associada, exercida sob a direção do sacerdócio. As organizações podem canalizar o exercício dessa auto"
    },
    {
-    "term": "autoridade",
+    "term": "líderes",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
-    "share_of_uncovered": 0.333,
-    "ratio": 20.2,
-    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "share_of_uncovered": 0.4,
+    "ratio": 18.4,
+    "source": "2008-04-tanner-stand-as-a-witness",
     "kind": "talk",
-    "sample": "As chaves são conferidas a pessoas, não a organizações. O mesmo acontece com a autoridade do sacerdócio e com a autoridade associada, exercida sob a direção do sacerdóci"
+    "sample": "Fortalecida por essas mulheres, por meus familiares, pelos jovens e líderes firmes e inamovíveis do mundo inteiro, sinto-me rodeada “de uma tão grande nuve"
+   },
+   {
+    "term": "será",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 11.7,
+    "source": "1995-04-peterson-easter-reflections",
+    "kind": "talk",
+    "sample": "por todos os Seus ­filhos. Hoje, como na Páscoa de 1968, a Páscoa de 1995 nunca será esque­ci­da."
    }
   ]
  },

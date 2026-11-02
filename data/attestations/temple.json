@@ -20,29 +20,29 @@
     "snippets": [
      {
       "kind": "scripture",
-      "ref": "Atos 3:8",
-      "ref_en": "Acts 3:8",
-      "en": "And he leaping up stood, and walked, and entered with them into the temple, walking, and leaping, and praising God.",
-      "tr": "E saltando ele, pôs-se em pé, e andou, e entrou com eles no templo, andando, e saltando, e louvando a Deus;",
-      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/acts/3?lang=por&id=p8"
+      "ref": "Lucas 1:9",
+      "ref_en": "Luke 1:9",
+      "en": "According to the custom of the priest’s office, his lot was to burn incense when he went into the temple of the Lord.",
+      "tr": "Segundo o costume sacerdotal, coube-lhe em sorte entrar no templo do Senhor para oferecer o incenso.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/luke/1?lang=por&id=p9"
      },
      {
       "kind": "talk",
       "year": 1990,
-      "conference": "1990 April General Conference",
-      "talk": "1990-04-hinckley-keeping-the-temple-holy",
-      "para": 37,
-      "en": "… therefore becomes a standard of eligibility to enter the temples of the Church.",
-      "tr": "… se torna um padrão de dignidade para entrar no templo."
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-rector-the-resurrection",
+      "para": 21,
+      "en": "… the Church so that they can go to the temple, which they must do to prepare for a glorious …",
+      "tr": "… plena atividade na Igreja para que possa ir ao templo, o que precisa fazer para preparar-se para uma ressurreição …"
      },
      {
       "kind": "talk",
-      "year": 2013,
-      "conference": "2013 October General Conference",
-      "talk": "2013-10-monson-true-shepherds",
-      "para": 24,
-      "en": "… and a year later entered that beautiful St. George Temple and there received his endowment and sealing blessings.",
-      "tr": "… e um ano depois a família entrou no belo Templo de St. George e recebeu sua investidura e as bênçãos …"
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-walker-live-true-to-the-faith",
+      "para": 28,
+      "en": "… which you and I heard and [experienced] in the Temple of the Lord.”",
+      "tr": "… coisas que você e eu ouvimos e [vivenciamos] no Templo do Senhor”."
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 22,
     "share_of_uncovered": 0.239,
-    "ratio": 106.3,
+    "ratio": 318.9,
     "source": "1990-04-monson-my-brothers-keeper",
     "kind": "talk",
     "sample": "e vai mantê-lo agasalhado. Eu trabalho logo ali do outro lado.” Era a Rua South Temple. O bom samaritano que entrou no Edifício da Administração da Igreja para o trab"

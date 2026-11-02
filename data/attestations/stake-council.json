@@ -42,31 +42,31 @@
   ],
   "inferred": [
    {
-    "term": "parceira",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 2667.3,
-    "source": "2015-10-nelson-a-plea-to-my-sisters",
-    "kind": "talk",
-    "sample": "os conselhos de ala e de estaca. Precisamos que cada irmã casada fale como “uma parceira *participativa* e *plena* de direitos”[^10] ao se unir a seu marido no governo"
-   },
-   {
     "term": "conselhos",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 1.0,
-    "ratio": 166.7,
+    "ratio": 153.9,
     "source": "2015-10-nelson-a-plea-to-my-sisters",
     "kind": "talk",
     "sample": "e de sua inspiração. Precisamos que vocês falem abertamente e manifestem-se nos conselhos de ala e de estaca. Precisamos que cada irmã casada fale como “uma parceira *pa"
    },
    {
-    "term": "estaca",
+    "term": "parceira",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2015-10-nelson-a-plea-to-my-sisters",
+    "kind": "talk",
+    "sample": "os conselhos de ala e de estaca. Precisamos que cada irmã casada fale como “uma parceira *participativa* e *plena* de direitos”[^10] ao se unir a seu marido no governo"
+   },
+   {
+    "term": "ala",
     "evidence": [
      "inferred"
     ],
@@ -75,7 +75,7 @@
     "ratio": 93.0,
     "source": "2015-10-nelson-a-plea-to-my-sisters",
     "kind": "talk",
-    "sample": "recisamos que vocês falem abertamente e manifestem-se nos conselhos de ala e de estaca. Precisamos que cada irmã casada fale como “uma parceira *participativa* e *ple"
+    "sample": "iração. Precisamos que vocês falem abertamente e manifestem-se nos conselhos de ala e de estaca. Precisamos que cada irmã casada fale como “uma parceira *participa"
    }
   ]
  },

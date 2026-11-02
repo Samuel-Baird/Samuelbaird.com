@@ -56,7 +56,7 @@
     ],
     "paragraphs": 8,
     "share_of_uncovered": 1.0,
-    "ratio": 40.0,
+    "ratio": 45.0,
     "source": "1997-04-hinckley-true-to-the-faith",
     "kind": "talk",
     "sample": "s que zombam de nós. Vamos viver acima disso. Há os que ainda nos consideram um povo estranho. Vamos aceitar isso como um cumprimento e continuar mostrando, por int"
@@ -68,22 +68,22 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.5,
-    "ratio": 24.1,
+    "ratio": 22.2,
     "source": "2001-10-holland-like-a-watered-garden",
     "kind": "talk",
     "sample": "idade. Devido a esse ato, dizemos — de fato — que somos diferentes, que somos o próprio povo de Deus. Em uma sociedade que nos diz que o dinheiro é o nosso bem mais im"
    },
    {
-    "term": "estranho",
+    "term": "boas",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.25,
-    "ratio": 500.1,
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 34.1,
     "source": "1997-04-hinckley-true-to-the-faith",
     "kind": "talk",
-    "sample": "zombam de nós. Vamos viver acima disso. Há os que ainda nos consideram um povo estranho. Vamos aceitar isso como um cumprimento e continuar mostrando, por intermédio d"
+    "sample": "m cumprimento e continuar mostrando, por intermédio de nossa vida, a força e as boas qualidades das coisas maravilhosas nas quais acreditamos."
    }
   ]
  },

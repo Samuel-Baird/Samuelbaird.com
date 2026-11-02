@@ -4,7 +4,7 @@
   "en_paragraphs": 29,
   "en_talks": 25,
   "en_verses": 0,
-  "uncovered_paragraphs": 25,
+  "uncovered_paragraphs": 24,
   "renderings": [
    {
     "term": "reunião de testemunhos",
@@ -12,8 +12,8 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 4,
-    "talks": 4,
+    "paragraphs": 5,
+    "talks": 5,
     "verses": 0,
     "first_year": 2000,
     "last_year": 2026,
@@ -29,12 +29,12 @@
      },
      {
       "kind": "talk",
-      "year": 2025,
-      "conference": "2025 October General Conference",
-      "talk": "2025-10-cuvelier-the-name-by-which-ye-are-called",
-      "para": 14,
-      "en": "… small group of Saints. A man invited them to testimony meeting. Martin was touched by the Spirit and was …",
-      "tr": "… da Igreja. Um homem os convidou para a reunião de testemunhos. Martin foi tocado pelo Espírito e ficou tão …"
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-holland-because-of-your-faith",
+      "para": 3,
+      "en": "… and, without shampoo, showers, or mascara, turn smoky, campfire testimony meetings into some of the most riveting spiritual experiences those …",
+      "tr": "… e, sem xampu, chuveiro nem maquiagem, transformam esfumaçadas reuniões de testemunhos ao redor da fogueira em algumas das mais marcantes …"
      },
      {
       "kind": "talk",
@@ -56,8 +56,8 @@
      "inferred"
     ],
     "paragraphs": 13,
-    "share_of_uncovered": 0.52,
-    "ratio": 260.1,
+    "share_of_uncovered": 0.542,
+    "ratio": 154.8,
     "source": "1990-10-oaks-witnesses-of-christ",
     "kind": "talk",
     "sample": "cebi de um membro dos Estados Unidos. Ele descreveu o que ouviu numa reunião de jejum e testemunho:"
@@ -68,8 +68,8 @@
      "inferred"
     ],
     "paragraphs": 16,
-    "share_of_uncovered": 0.64,
-    "ratio": 44.9,
+    "share_of_uncovered": 0.667,
+    "ratio": 42.3,
     "source": "1990-10-oaks-witnesses-of-christ",
     "kind": "talk",
     "sample": "ente que recebi de um membro dos Estados Unidos. Ele descreveu o que ouviu numa reunião de jejum e testemunho:"
@@ -79,9 +79,9 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 11,
-    "share_of_uncovered": 0.44,
-    "ratio": 176.0,
+    "paragraphs": 10,
+    "share_of_uncovered": 0.417,
+    "ratio": 104.2,
     "source": "2004-10-ballard-pure-testimony",
     "kind": "talk",
     "sample": "ras. Precisamos substituir as histórias, os relatos de viagens e os sermões por testemunhos puros. As pessoas encarregadas de falar e ensinar em nossas reuniões precisam f"

@@ -12,36 +12,36 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 242,
-    "share_of_uncovered": 0.968,
-    "ratio": 322.7,
-    "source": "4-ne/1/17",
+    "paragraphs": 234,
+    "share_of_uncovered": 0.936,
+    "ratio": 535.0,
+    "source": "morm/4/15",
     "kind": "scripture",
-    "sample": "Não havia ladrões nem assassinos; nem havia lamanitas nem qualquer espécie de itas, mas eram um, os filhos de Cristo e herdeiros do r"
+    "sample": "E aconteceu que no tricentésimo sexagésimo sétimo ano, indignados por terem os lamanitas sacrificado as suas mulheres e os seus filhos, os nefitas os atacaram com tanta"
    },
    {
     "term": "aconteceu",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 81,
-    "share_of_uncovered": 0.324,
-    "ratio": 28.8,
-    "source": "morm/2/2",
+    "paragraphs": 78,
+    "share_of_uncovered": 0.312,
+    "ratio": 31.2,
+    "source": "morm/4/15",
     "kind": "scripture",
-    "sample": "Portanto, aconteceu que aos dezesseis anos segui à frente de um exército nefita contra os lamanitas"
+    "sample": "E aconteceu que no tricentésimo sexagésimo sétimo ano, indignados por terem os lamanitas sa"
    },
    {
     "term": "nefitas",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 50,
-    "share_of_uncovered": 0.2,
-    "ratio": 34.8,
-    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
-    "kind": "talk",
-    "sample": "Encontramos evidências de que isso ocorreu com os nefitas e lamanitas no milagre que o Senhor realizou com suas criancinhas. Ele separou"
+    "paragraphs": 59,
+    "share_of_uncovered": 0.236,
+    "ratio": 94.4,
+    "source": "morm/4/15",
+    "kind": "scripture",
+    "sample": "gnados por terem os lamanitas sacrificado as suas mulheres e os seus filhos, os nefitas os atacaram com tanta fúria que os derrotaram e novamente os expulsaram de suas"
    }
   ]
  },

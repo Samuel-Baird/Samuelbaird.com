@@ -29,10 +29,10 @@ def en_variants(w: str):
 def _word_pat(w: str) -> str:
     """Folded pt/es word -> regex allowing gender/number inflection."""
     e = re.escape
-    if len(w) > 3 and w.endswith(("o", "a")):
-        return e(w[:-1]) + "[oa]s?"
     if w.endswith("ao"):
         return e(w[:-2]) + "(?:ao|oes|aos)"
+    if len(w) > 3 and w.endswith(("o", "a")):
+        return e(w[:-1]) + "[oa]s?"
     if w.endswith("z"):
         return e(w[:-1]) + "(?:z|ces)"
     if w.endswith(("e", "i", "u")) or len(w) <= 3:

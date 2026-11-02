@@ -31,18 +31,18 @@
       "year": 1990,
       "conference": "1990 October General Conference",
       "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
-      "para": 5,
-      "en": "… large and flexible in terms of the number of quorums that might be organized. Each of the presidents, who is …",
-      "tr": "… que podem ser organizados. Cada presidente chamado pelo Primeiro Quorum dos Setenta, é co-igual com os outros, sendo que um …"
+      "para": 6,
+      "en": "… be a bishopric, stake presidency, Aaronic or Melchizedek priesthood quorum presidency, mission presidency, temple presidency, auxiliary organization presidency, Area Presidency, …",
+      "tr": "No caso do quorum dos sacerdotes, o bispo serve como presidente. Tratando-se, porém, de …"
      },
      {
       "kind": "talk",
-      "year": 2008,
-      "conference": "2008 April General Conference",
-      "talk": "2008-04-monson-looking-back-and-moving-forward",
-      "para": 3,
-      "en": "… in the Quorum of the Twelve Apostles, and that quorum became the presiding authority of the Church.",
-      "tr": "… conselheiros do Presidente Hinckley, voltamos para nosso lugar no Quórum dos Doze Apóstolos, que se tornou a autoridade presidente da …"
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-beck-the-magnificent-aaronic-priesthood",
+      "para": 17,
+      "en": "Your parents, leaders, and quorum members play an important role in the Duty to God …",
+      "tr": "Seus pais, os líderes e membros do quórum têm um importante papel no programa Dever para com Deus. …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 144,
     "share_of_uncovered": 0.923,
-    "ratio": 230.8,
+    "ratio": 194.4,
     "source": "1990-04-packer-the-library-of-the-lord",
     "kind": "talk",
     "sample": "uxílio de excelentes guias de estudo, é possível ensinar melhor o evangelho nos quoruns do sacerdócio, auxiliares, Escola Dominical, bem como ser pregado melhor nas re"
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 32,
     "share_of_uncovered": 0.205,
-    "ratio": 16.4,
+    "ratio": 13.5,
     "source": "1992-04-oaks-the-relief-society-and-the-church",
     "kind": "talk",
     "sample": "Sob a autoridade do sacerdócio do bispo, a presidente da Sociedade de Socorro de uma ala preside e dirige as atividades da Sociedade de Socorro na ala. A pre"

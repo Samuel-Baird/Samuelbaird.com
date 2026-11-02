@@ -20,34 +20,34 @@
     ],
     "paragraphs": 20,
     "share_of_uncovered": 0.87,
-    "ratio": 1159.7,
+    "ratio": 695.8,
     "source": "2004-04-oaks-preparation-for-the-second-coming",
     "kind": "talk",
     "sample": "em os sinais de Sua vinda, “[saberão] que ele está próximo, às portas”. (Joseph Smith—Mateus 1:38–39; ver também Mateus 24:32–33; D&C 45:37–38.)"
    },
    {
-    "term": "liahona",
+    "term": "joseph smith",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 14,
-    "share_of_uncovered": 0.609,
-    "ratio": 33.4,
-    "source": "2005-10-mcmullin-be-prepared-be-ye-strong-from-henceforth",
+    "paragraphs": 22,
+    "share_of_uncovered": 0.957,
+    "ratio": 31.6,
+    "source": "2004-04-oaks-preparation-for-the-second-coming",
     "kind": "talk",
-    "sample": "p.), 1954, p. 89.\n[^19]: Romanos 13:12–14.\n[^20]: \"Esta É a Obra do Mestre\", *A Liahona*, julho de 1995, p. 76; ver também \"Comentários de Abertura\", *A Liahona*, maio"
+    "sample": "tos virem os sinais de Sua vinda, “[saberão] que ele está próximo, às portas”. (Joseph Smith—Mateus 1:38–39; ver também Mateus 24:32–33; D&C 45:37–38.)"
    },
    {
-    "term": "pgp",
+    "term": "ensinamentos dos presidentes",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 12,
-    "share_of_uncovered": 0.522,
-    "ratio": 54.9,
-    "source": "2013-10-ochoa-look-up",
+    "paragraphs": 10,
+    "share_of_uncovered": 0.435,
+    "ratio": 116.0,
+    "source": "2010-04-cook-we-follow-jesus-christ",
     "kind": "talk",
-    "sample": "[Joseph Smith—Mateus 1:37](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-m/1?lang=por&id=p37#p37)). Devemos colocar essas coisas em prática."
+    "sample": "]: James E. Talmage, *Jesus, o Cristo*, p. 592.\n[^6]: Ver 2 Néfi 9:6–24.\n[^7]: *Ensinamentos dos Presidentes da Igreja: Joseph Smith, *2007, pp. 52–53; ver também Doutrina e Convênios 20:2"
    }
   ]
  },

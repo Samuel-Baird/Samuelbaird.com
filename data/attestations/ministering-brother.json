@@ -57,10 +57,22 @@
     ],
     "paragraphs": 19,
     "share_of_uncovered": 0.905,
-    "ratio": 905.0,
+    "ratio": 362.0,
     "source": "2018-04-bingham-ministering-as-the-savior-does",
     "kind": "talk",
     "sample": "oas e as famílias pessoalmente quando as designações são dadas a irmãos e irmãs ministradores. Acontece quando caminhamos com alguém, jogamos um jogo juntos, oferecemos serv"
+   },
+   {
+    "term": "irmãs",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.619,
+    "ratio": 16.2,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "s pessoas e as famílias pessoalmente quando as designações são dadas a irmãos e irmãs ministradores. Acontece quando caminhamos com alguém, jogamos um jogo juntos, o"
    },
    {
     "term": "socorro",
@@ -69,22 +81,10 @@
     ],
     "paragraphs": 9,
     "share_of_uncovered": 0.429,
-    "ratio": 34.3,
+    "ratio": 28.1,
     "source": "2018-04-bingham-ministering-as-the-savior-does",
     "kind": "talk",
     "sample": "istração acontece quando a presidência do quórum de élderes e a da Sociedade de Socorro se aconselham em espírito de oração sobre as designações. Em vez de vermos líde"
-   },
-   {
-    "term": "sociedade",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 9,
-    "share_of_uncovered": 0.429,
-    "ratio": 25.6,
-    "source": "2018-04-bingham-ministering-as-the-savior-does",
-    "kind": "talk",
-    "sample": "A ministração acontece quando a presidência do quórum de élderes e a da Sociedade de Socorro se aconselham em espírito de oração sobre as designações. Em vez de"
    }
   ]
  },

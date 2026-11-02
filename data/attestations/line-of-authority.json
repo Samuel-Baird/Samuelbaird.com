@@ -51,28 +51,28 @@
   ],
   "inferred": [
    {
-    "term": "joão batista",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 666.8,
-    "source": "2012-04-bednar-the-powers-of-heaven",
-    "kind": "talk",
-    "sample": "i trazida de volta à Terra nesta dispensação por mensageiros celestes, sim, por João Batista, e por Pedro, Tiago e João. Portanto, todo homem que recebe o Sacerdócio de Mel"
-   },
-   {
     "term": "autoridade",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 1.0,
-    "ratio": 60.6,
+    "ratio": 58.0,
     "source": "2005-04-holland-our-most-distinguishing-feature",
     "kind": "talk",
     "sample": "desafio, nós, da Igreja restaurada de Jesus Cristo podemos traçar as origens da autoridade do sacerdócio exercida pelo mais novo diácono da ala, a do bispo (seu president"
+   },
+   {
+    "term": "joão batista",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 266.7,
+    "source": "2012-04-bednar-the-powers-of-heaven",
+    "kind": "talk",
+    "sample": "i trazida de volta à Terra nesta dispensação por mensageiros celestes, sim, por João Batista, e por Pedro, Tiago e João. Portanto, todo homem que recebe o Sacerdócio de Mel"
    },
    {
     "term": "linha",
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.667,
-    "ratio": 205.2,
+    "ratio": 140.4,
     "source": "2012-04-bednar-the-powers-of-heaven",
     "kind": "talk",
     "sample": ". Portanto, todo homem que recebe o Sacerdócio de Melquisedeque pode seguir sua linha pessoal de autoridade diretamente até o Senhor Jesus Cristo. Espero que sejamos"

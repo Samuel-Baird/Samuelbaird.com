@@ -29,21 +29,21 @@
      },
      {
       "kind": "talk",
-      "year": 2017,
-      "conference": "2017 October General Conference",
-      "talk": "2017-10-christofferson-the-living-bread-which-came-down-from-heaven",
-      "para": 39,
-      "en": "… comp. Lynne F. Cannegieter (2011), 267.\n[^27]: See Joseph Smith Translation, Matthew 16:25–26 (in [Matthew 16:24](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/16?lang=eng&id=p24#p24), footnote *e*); [Luke …",
-      "tr": "… Lynne F. Cannegieter, 2011, p. 267.\n[^27]: Ver Tradução de Joseph Smith, Mateus 16:25–26 (em [Mateus 16:24](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/16?lang=por&id=p24#p24), nota de …"
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-ashton-the-father",
+      "para": 40,
+      "en": "… [Luke 11:10–13](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=eng&id=p10-p13#p10); [James 1:17](https://www.churchofjesuschrist.org/study/scriptures/nt/james/1?lang=eng&id=p17#p17).\n[^22]: See [Luke 11:5–10](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=eng&id=p5-p10#p5); Joseph Smith Translation, [Luke 11:5–6](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=eng&id=p5-p6#p5) (in Luke 11:5, footnote *a*); [3 …",
+      "tr": "… [Lucas 11:10–13](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=por&id=p10-p13#p10); [Tiago 1:17](https://www.churchofjesuschrist.org/study/scriptures/nt/james/1?lang=por&id=p17#p17).\n[^22]: Ver [Lucas 11:5–10](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=por&id=p5-p10#p5); Tradução de Joseph Smith, [Lucas 11:5–6](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=por&id=p5-p6#p5) (em Lucas 11:5, nota de …"
      },
      {
       "kind": "talk",
-      "year": 2026,
-      "conference": "2026 April General Conference",
-      "talk": "2026-04-renlund-because-of-jesus-christ",
-      "para": 19,
-      "en": "… Testimony of the Apostles](https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng),” Gospel Library.\n[^3]: See Joseph Smith Translation, Matthew 27:54 (in [Matthew 27:50](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/27?lang=eng&id=p50#p50), footnote *a*).\n[^4]: …",
-      "tr": "… Testemunho dos Apóstolos](https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=por)\", Biblioteca do Evangelho.\n[^3]: Ver Tradução de Joseph Smith, Mateus 27:54 (em [Mateus 27:50](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/27?lang=por&id=p50#p50), nota de …"
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-right-before-our-eyes",
+      "para": 28,
+      "en": "… provided by the Church’s Missionary Department.\n[^16]: [Joseph Smith Translation, Matthew 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=eng&id=p38#p38) (in [Matthew 6:33](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=eng&id=p33#p33), footnote *a*).\n[^17]: …",
+      "tr": "… fornecidas pelo Departamento Missionário da Igreja.\n[^16]: [Tradução de Joseph Smith, Mateus 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=por&id=p38#p38) ([Mateus 6:33](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=por&id=p33#p33), nota de rodapé …"
      }
     ],
     "share": 1.0
@@ -51,7 +51,7 @@
   ],
   "inferred": [
    {
-    "term": "smith translation",
+    "term": "translation",
     "evidence": [
      "inferred"
     ],
@@ -60,7 +60,7 @@
     "ratio": 1818.6,
     "source": "2002-10-nelson-blessed-are-the-peacemakers",
     "kind": "talk",
-    "sample": "s 9:6.\n[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mateus 22:37.\n[^13]: Mateus 22:39; ver também Lucas 10:27;"
+    "sample": "[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mateus 22:37.\n[^13]: Mateus 22:39; ver também Lucas 10:27;"
    },
    {
     "term": "mateus",
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 9,
     "share_of_uncovered": 0.818,
-    "ratio": 49.6,
+    "ratio": 43.1,
     "source": "2002-10-nelson-blessed-are-the-peacemakers",
     "kind": "talk",
     "sample": "érbios 29:8.\n[^8]: Mosias 3:19.\n[^9]: Isaías 9:6.\n[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mate"
    },
    {
-    "term": "romanos",
+    "term": "smith",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 5,
-    "share_of_uncovered": 0.455,
-    "ratio": 181.9,
+    "paragraphs": 9,
+    "share_of_uncovered": 0.818,
+    "ratio": 24.1,
     "source": "2002-10-nelson-blessed-are-the-peacemakers",
     "kind": "talk",
-    "sample": "ver também Joseph Smith Translation, Marcos 11:27–28.\n[^23]: Ver Mateus 12:36; Romanos 14:10–12; I João 4:16–21; Alma 41:3; 3 Néfi 27:16–22.\n[^24]: Ver Alma 43:45–47;"
+    "sample": "s 9:6.\n[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mateus 22:37.\n[^13]: Mateus 22:39; ver também"
    }
   ]
  },

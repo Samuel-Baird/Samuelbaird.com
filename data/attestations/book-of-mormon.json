@@ -28,21 +28,21 @@
      },
      {
       "kind": "talk",
-      "year": 1991,
-      "conference": "1991 April General Conference",
-      "talk": "1991-04-wirthlin-peace-within",
-      "para": 12,
-      "en": "… the fruit of the Spirit. Quoting from the Book of Mormon: “The disciples of Jesus had formed a church …",
-      "tr": "… e obtiveram o fruto do Espírito. Citando o Livro de Mórmon: “Os discípulos de Jesus organizaram a Igreja de …"
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-oaks-world-peace",
+      "para": 26,
+      "en": "… of the earth” ([2 Ne. 26:25](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=eng&id=p25#p25)). As the Book of Mormon teaches, he has created all flesh, “and the one …",
+      "tr": "… da terra.” ([2 Néfi 26:25](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=por&id=p25#p25).) Conforme ensina o Livro de Mórmon, ele criou toda a carne, e “para ele …"
      },
      {
       "kind": "talk",
-      "year": 2014,
-      "conference": "2014 October General Conference",
-      "talk": "2014-10-bednar-come-and-see",
-      "para": 21,
-      "en": "… in a volume of scripture known as the Book of Mormon highlights a dream received by an ancient prophet-leader named …",
-      "tr": "… encontrado num livro de escrituras conhecido como o Livro de Mórmon destaca o sonho que teve um antigo líder e …"
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-hawk-come-unto-me-o-ye-house-of-israel",
+      "para": 11,
+      "en": "The Book of Mormon is sacred scripture. It contains the fulness of the …",
+      "tr": "O Livro de Mórmon é uma escritura sagrada. Contém a plenitude do evangelho …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 8,
     "share_of_uncovered": 0.296,
-    "ratio": 169.4,
+    "ratio": 395.2,
     "source": "1992-04-maxwell-my-servant-joseph",
     "kind": "talk",
     "sample": "ressa nos dias de hoje. (Vide John W. Welch e Tim Rathbone, “The Translation of the Book of Mormon: Basic Historical Information”, Preliminary Report, F.A.R.M.S., Provo"
@@ -68,22 +68,22 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.407,
-    "ratio": 12.5,
+    "ratio": 11.5,
     "source": "1992-04-maxwell-my-servant-joseph",
     "kind": "talk",
     "sample": "as de hoje. (Vide John W. Welch e Tim Rathbone, “The Translation of the Book of Mormon: Basic Historical Information”, Preliminary Report, F.A.R.M.S., Provo, Utah, 19"
    },
    {
-    "term": "liahona",
+    "term": "joão",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 7,
     "share_of_uncovered": 0.259,
-    "ratio": 14.2,
-    "source": "1990-10-monson-god-be-with-you-till-we-meet-again",
+    "ratio": 12.5,
+    "source": "1995-04-samuelson-as-jesus-sees-us",
     "kind": "talk",
-    "sample": "iser, pretendo dedicar todos os dias que me restam a esse glorioso esforço” (*A Liahona,* janeiro de 1989, p. 5)."
+    "sample": "ponder ao aparentemente insignificante Natanael e suas perguntas pessoais. (Ver João 1:45–51.)"
    }
   ]
  },

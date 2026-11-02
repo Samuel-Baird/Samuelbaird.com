@@ -48,7 +48,7 @@
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.667,
-    "ratio": 56.8,
+    "ratio": 48.5,
     "source": "2016-10-rasband-lest-thou-forget",
     "kind": "talk",
     "sample": "Frequentem as reuniões da Igreja, especialmente a reunião sacramental, tomem o sacramento e renovem os convênios, inclusive a promessa de sempre se lembrarem do Salvador"
@@ -60,22 +60,22 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.333,
-    "ratio": 190.5,
+    "ratio": 333.4,
     "source": "2019-10-renlund-unwavering-commitment-to-jesus-christ",
     "kind": "talk",
     "sample": "Seus mandamentos. Frequentemente ouço a expressão que tomamos o sacramento para renovar os convênios feitos no batismo. Embora isso seja verdade, é muito mais do que i"
    },
    {
-    "term": "reunião sacramental",
+    "term": "frequentemente ouço",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.333,
-    "ratio": 133.4,
-    "source": "2009-04-lifferth-respect-and-reverence",
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 889.1,
+    "source": "2019-10-renlund-unwavering-commitment-to-jesus-christ",
     "kind": "talk",
-    "sample": "s outros; mas a reverência aumentará se as conversas ocorrerem no saguão e se a reunião sacramental começar com o prelúdio, não com a primeira oração. Incentivamos a reverência qu"
+    "sample": "im o nome de Jesus Cristo e de que estaria disposto a guardar Seus mandamentos. Frequentemente ouço a expressão que tomamos o sacramento para renovar os convênios feitos no batism"
    }
   ]
  },

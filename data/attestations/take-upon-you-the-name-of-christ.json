@@ -8,28 +8,28 @@
   "renderings": [],
   "inferred": [
    {
-    "term": "tomar sobre vós",
+    "term": "tomar",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 13,
-    "share_of_uncovered": 0.52,
-    "ratio": 2080.5,
-    "source": "2002-04-hales-out-of-darkness-into-his-marvelous-light",
+    "paragraphs": 16,
+    "share_of_uncovered": 0.64,
+    "ratio": 50.2,
+    "source": "2001-04-sorensen-you-cant-pet-a-rattlesnake",
     "kind": "talk",
-    "sample": "arrependendo-vos de vossos pecados, testemunhando ao Pai que estais dispostos a tomar sobre vós o nome de Cristo pelo batismo (…) então recebereis o Espírito Santo; sim, então"
+    "sample": "gora, neste local, junto comigo vocês se comprometessem mais uma vez a honrar e tomar sobre si o nome de Cristo. Com esse sacerdócio que vocês possuem, podem erguer-"
    },
    {
-    "term": "deveis tomar",
+    "term": "dizem que deveis",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 7,
-    "share_of_uncovered": 0.28,
-    "ratio": 1120.3,
+    "paragraphs": 6,
+    "share_of_uncovered": 0.24,
+    "ratio": 960.2,
     "source": "2005-04-packer-the-book-of-mormon-another-testament-of-jesus-christplain-and-precious-things",
     "kind": "talk",
-    "sample": "Não leram as escrituras, que dizem que deveis tomar sobre vós o nome de Cristo, que é o meu nome? Porque por esse nome sereis chama"
+    "sample": "Não leram as escrituras, que dizem que deveis tomar sobre vós o nome de Cristo, que é o meu nome? Porque por esse nome sereis"
    },
    {
     "term": "escrituras, que dizem",
@@ -38,7 +38,7 @@
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.24,
-    "ratio": 960.2,
+    "ratio": 480.1,
     "source": "2005-04-packer-the-book-of-mormon-another-testament-of-jesus-christplain-and-precious-things",
     "kind": "talk",
     "sample": "Não leram as escrituras, que dizem que deveis tomar sobre vós o nome de Cristo, que é o meu nome? Porque por esse"

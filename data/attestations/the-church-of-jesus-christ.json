@@ -31,19 +31,19 @@
       "kind": "talk",
       "year": 2020,
       "conference": "2020 April General Conference",
-      "talk": "2020-04-uchtdorf-come-and-belong",
-      "para": 21,
-      "en": "… could ever feel like I belong in the Church of Jesus Christ. God couldn’t be interested in someone like …",
-      "tr": "… vida. Nem sei se conseguiria sentir que a Igreja de Jesus Cristo é meu lugar. Deus não teria interesse em …"
+      "talk": "2020-04-oaks-the-melchizedek-priesthood-and-the-keys",
+      "para": 2,
+      "en": "… the eternities. Thus, the family organization and the Church of Jesus Christ have a mutually reinforcing relationship. The blessings of …",
+      "tr": "… nas eternidades. Assim, a organização familiar e a Igreja de Jesus Cristo apoiam uma à outra. As bênçãos do sacerdócio …"
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 October General Conference",
-      "talk": "2026-10-oaks-the-gospel-of-jesus-christ-is-for-all",
-      "para": 0,
-      "en": "This is the Church of Jesus Christ, so named because it is His Church …",
-      "tr": "Esta é a Igreja de Jesus Cristo, assim chamada porque é Sua Igreja com …"
+      "talk": "2026-10-uchtdorf-christ-centered-unity",
+      "para": 9,
+      "en": "In other words, when we join the Church of Jesus Christ, we say—humbly, gratefully, and with quiet confidence—that …",
+      "tr": "Em outras palavras, quando nos filiamos à Igreja de Jesus Cristo, dizemos — com humildade, gratidão e serena …"
      }
     ],
     "share": 1.0
@@ -51,28 +51,28 @@
   ],
   "inferred": [
    {
-    "term": "the",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 22,
-    "share_of_uncovered": 0.222,
-    "ratio": 12.2,
-    "source": "1993-04-merrell-power-of-the-church-rooted-in-christ",
-    "kind": "talk",
-    "sample": "Dr. Bloom sugere, podem ter um “receio saudável” do futuro poder dos mórmons (*The American Religion,* p. 86). A eles, respondemos humildemente: “Este é o trabalh"
-   },
-   {
     "term": "história",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 23,
     "share_of_uncovered": 0.232,
-    "ratio": 10.0,
+    "ratio": 10.6,
     "source": "2011-04-cook-lds-women-are-incredible",
     "kind": "talk",
     "sample": "ção de conversos, a ativação de membros menos ativos, o trabalho do templo e de história da família, o ensino do evangelho”[^13] e o cuidado dos pobres e necessitados.["
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.222,
+    "ratio": 11.1,
+    "source": "1993-04-merrell-power-of-the-church-rooted-in-christ",
+    "kind": "talk",
+    "sample": "Dr. Bloom sugere, podem ter um “receio saudável” do futuro poder dos mórmons (*The American Religion,* p. 86). A eles, respondemos humildemente: “Este é o trabalh"
    },
    {
     "term": "últimos",
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 24,
     "share_of_uncovered": 0.242,
-    "ratio": 6.7,
+    "ratio": 7.3,
     "source": "2001-04-mcmullin-an-invitation-with-promise",
     "kind": "talk",
     "sample": "u-se imediatamente para uma placa no balcão que dizia: “Somente para Santos dos Últimos Dias”. Fiquei surpreso com o que li. Uma pergunta veio-me à mente: “Por que a p"

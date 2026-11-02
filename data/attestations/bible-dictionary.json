@@ -51,16 +51,16 @@
   ],
   "inferred": [
    {
-    "term": "dictionary",
+    "term": "bible dictionary",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 50,
-    "share_of_uncovered": 0.515,
-    "ratio": 515.6,
+    "paragraphs": 49,
+    "share_of_uncovered": 0.505,
+    "ratio": 505.3,
     "source": "1990-04-lybbert-a-latter-day-samaritan",
     "kind": "talk",
-    "sample": "i, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"
+    "sample": "da lei, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"
    },
    {
     "term": "guia para estudo",
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 56,
     "share_of_uncovered": 0.577,
-    "ratio": 256.7,
+    "ratio": 192.5,
     "source": "2001-10-clayton-help-thou-mine-unbelief",
     "kind": "talk",
     "sample": "//www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p4#p4); Guia para Estudo das Escrituras, \"Fé\", pp. 85–86.\n[^5]: [Alma 32:21](https://www.churchofjesusch"
    },
    {
-    "term": "bible",
+    "term": "estudo das escrituras",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 49,
-    "share_of_uncovered": 0.505,
-    "ratio": 404.2,
-    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "paragraphs": 57,
+    "share_of_uncovered": 0.588,
+    "ratio": 87.1,
+    "source": "2001-04-haight-gratitude-and-service",
     "kind": "talk",
-    "sample": "da lei, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"
+    "sample": "alavra aposentadoria na Bíblia. Não creio que encontrem essa palavra no Guia de Estudo das Escrituras. Não é interessante pensar no que pode acontecer à nossa vida hoje e que possib"
    }
   ]
  },

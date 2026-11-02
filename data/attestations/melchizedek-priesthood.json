@@ -28,21 +28,21 @@
      },
      {
       "kind": "talk",
-      "year": 1991,
-      "conference": "1991 October General Conference",
-      "talk": "1991-10-haight-a-time-for-preparation",
-      "para": 38,
-      "en": "… continuing preparation is to be worthy to receive the Melchizedek Priesthood, keeping yourself clean and honorable and praying for …",
-      "tr": "… finalidade de vos tornar dignos de receber o Sacerdócio de Melquisedeque, de manter-vos limpos e honrados, orando para receberdes …"
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 0,
+      "en": "… to you our brethren who hold the higher priesthood—the Melchizedek Priesthood, the Priesthood after the Holiest Order of God, …",
+      "tr": "… a vós, portadores do sacerdócio maior — o Sacerdócio de Melquisedeque, o Sacerdócio segundo a Santa Ordem de Deus, …"
      },
      {
       "kind": "talk",
-      "year": 2010,
-      "conference": "2010 October General Conference",
-      "talk": "2010-10-perry-the-priesthood-of-aaron",
-      "para": 7,
-      "en": "… gave him 25 years ago. He later received the Melchizedek Priesthood, served a faithful mission, currently serves as an …",
-      "tr": "… dei há 25 anos. Ele posteriormente recebeu o Sacerdócio de Melquisedeque, foi missionário fiel, atualmente é presidente do quórum …"
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-hales-stand-strong-in-holy-places",
+      "para": 14,
+      "en": "… the law of chastity, prepare for and receive the Melchizedek Priesthood, and make sacred covenants in the temple, then …",
+      "tr": "… à lei da castidade, prepararmo-nos para receber o Sacerdócio de Melquisedeque e o recebermos, e fazermos convênios sagrados no templo, …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 27,
     "share_of_uncovered": 0.73,
-    "ratio": 146.0,
+    "ratio": 171.7,
     "source": "1990-04-packer-the-library-of-the-lord",
     "kind": "talk",
     "sample": "e poder de Deus. Aprendereis a respeito das chaves do Sacerdócio Aarônico e de Melquisedeque, da restauração das chaves seladoras em cumprimento da profecia de Malaquias."
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 25,
     "share_of_uncovered": 0.676,
-    "ratio": 81.9,
+    "ratio": 84.5,
     "source": "1990-04-packer-the-library-of-the-lord",
     "kind": "talk",
     "sample": "dução pelo dom e poder de Deus. Aprendereis a respeito das chaves do Sacerdócio Aarônico e de Melquisedeque, da restauração das chaves seladoras em cumprimento da profe"
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 9,
     "share_of_uncovered": 0.243,
-    "ratio": 8.9,
+    "ratio": 8.0,
     "source": "1994-10-faust-the-keys-that-never-rust",
     "kind": "talk",
     "sample": "ministração dos anjos são o direito do Sacerdócio Aarônico. [^11] O Sacerdócio maior, ou de Melquisedeque, “possui a chave dos mistérios do reino, mesmo a chave do"

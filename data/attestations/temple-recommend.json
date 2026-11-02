@@ -4,7 +4,7 @@
   "en_paragraphs": 111,
   "en_talks": 72,
   "en_verses": 0,
-  "uncovered_paragraphs": 26,
+  "uncovered_paragraphs": 23,
   "renderings": [
    {
     "term": "recomendação para o templo",
@@ -12,8 +12,8 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 85,
-    "talks": 54,
+    "paragraphs": 88,
+    "talks": 55,
     "verses": 0,
     "first_year": 1990,
     "last_year": 2025,
@@ -23,18 +23,18 @@
       "year": 1990,
       "conference": "1990 April General Conference",
       "talk": "1990-04-hinckley-keeping-the-temple-holy",
-      "para": 6,
-      "en": "To secure a temple recommend, the receiver must also have demonstrated his eligibility, …",
-      "tr": "Para obter uma recomendação para o templo, o contemplado precisa, igualmente, ter provado sua …"
+      "para": 5,
+      "en": "… card which I have is what we call a temple recommend. It represents a credit card with the Lord, …",
+      "tr": "… outro cartão que tenho aqui nós chamamos de recomendação para o templo. Representa uma espécie de cartão de crédito …"
      },
      {
       "kind": "talk",
-      "year": 2015,
-      "conference": "2015 April General Conference",
-      "talk": "2015-04-nielson-waiting-for-the-prodigal",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-reeves-protection-from-pornographya-christ-focused-home",
       "para": 17,
-      "en": "… of the Book of Mormon. She has received her temple recommend. She has served as an ordinance worker in …",
-      "tr": "… renovado do Livro de Mórmon. Ela recebeu a recomendação para o templo. Ela serve como oficiante do tempo e …"
+      "en": "… our lives as we keep ourselves worthy of a temple recommend.[^5] What promises!",
+      "tr": "… a vida se nos mantivermos dignos de uma recomendação para o templo.[^5] Que promessas!"
      },
      {
       "kind": "talk",
@@ -56,8 +56,8 @@
      "inferred"
     ],
     "paragraphs": 18,
-    "share_of_uncovered": 0.692,
-    "ratio": 307.8,
+    "share_of_uncovered": 0.783,
+    "ratio": 391.4,
     "source": "1990-04-hinckley-keeping-the-temple-holy",
     "kind": "talk",
     "sample": "postos, queixando-se de que bispos e presidentes de estaca lhes estão negando a recomendação por causa de suas atividades. No decorrer da história desta obra, houve ocasiõe"
@@ -68,23 +68,23 @@
      "inferred"
     ],
     "paragraphs": 6,
-    "share_of_uncovered": 0.231,
-    "ratio": 307.8,
+    "share_of_uncovered": 0.261,
+    "ratio": 1043.7,
     "source": "2017-04-eyring-gathering-the-family-of-god",
     "kind": "talk",
     "sample": "írito de Elias de modo inspirador. Muitos agora têm sua própria recomendação de uso limitado para o templo e a utilizam com frequência. Os batistérios dos templos estão mai"
    },
    {
-    "term": "recomendações",
+    "term": "últimos",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 6,
-    "share_of_uncovered": 0.231,
-    "ratio": 307.8,
+    "paragraphs": 9,
+    "share_of_uncovered": 0.391,
+    "ratio": 11.9,
     "source": "1990-04-hinckley-keeping-the-temple-holy",
     "kind": "talk",
-    "sample": "s desses homens em responsabilidades da Igreja, e alguns são, até portadores de recomendações para o templo. E falam de maus tratos, tanto sutil como abertamente. Falam de m"
+    "sample": "quando essa lei foi declarada constitucional, é obrigatória para os santos dos últimos dias, e por isso se torna um padrão de dignidade para entrar no templo."
    }
   ]
  },

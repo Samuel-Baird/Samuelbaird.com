@@ -8,28 +8,28 @@
   "renderings": [],
   "inferred": [
    {
-    "term": "religião",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 22,
-    "share_of_uncovered": 0.917,
-    "ratio": 193.0,
-    "source": "2004-10-bednar-in-the-strength-of-the-lord",
-    "kind": "talk",
-    "sample": "s para sempre. O Livro de Mórmon é a palavra de Deus e a pedra angular de nossa religião. Irmãos e irmãs, os céus não estão selados. Deus fala—para nós individualmente"
-   },
-   {
     "term": "pedra",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 22,
     "share_of_uncovered": 0.917,
-    "ratio": 193.0,
+    "ratio": 203.8,
     "source": "2004-10-bednar-in-the-strength-of-the-lord",
     "kind": "talk",
     "sample": "lmente permanecer unidas para sempre. O Livro de Mórmon é a palavra de Deus e a pedra angular de nossa religião. Irmãos e irmãs, os céus não estão selados. Deus fala"
+   },
+   {
+    "term": "religião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.917,
+    "ratio": 146.7,
+    "source": "2004-10-bednar-in-the-strength-of-the-lord",
+    "kind": "talk",
+    "sample": "s para sempre. O Livro de Mórmon é a palavra de Deus e a pedra angular de nossa religião. Irmãos e irmãs, os céus não estão selados. Deus fala—para nós individualmente"
    },
    {
     "term": "livro",
@@ -38,7 +38,7 @@
     ],
     "paragraphs": 24,
     "share_of_uncovered": 1.0,
-    "ratio": 31.3,
+    "ratio": 30.1,
     "source": "1994-10-pinegar-the-simple-things",
     "kind": "talk",
     "sample": "e que receberemos “uma bênção tal qual ainda não se viu” ao lermos fielmente o Livro de Mórmon juntos e “agirmos segundo seus preceitos.” (A Liahona, julho de 1986,"

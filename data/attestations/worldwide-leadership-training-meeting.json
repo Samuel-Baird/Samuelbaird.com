@@ -8,13 +8,25 @@
   "renderings": [],
   "inferred": [
    {
+    "term": "liderança",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 38,
+    "share_of_uncovered": 0.95,
+    "ratio": 223.6,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "pria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
+   },
+   {
     "term": "reunião mundial",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 32,
     "share_of_uncovered": 0.8,
-    "ratio": 1066.9,
+    "ratio": 533.5,
     "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
     "kind": "talk",
     "sample": "s que estão trabalhando em sua própria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
@@ -26,22 +38,10 @@
     ],
     "paragraphs": 38,
     "share_of_uncovered": 0.95,
-    "ratio": 271.5,
+    "ratio": 190.0,
     "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
     "kind": "talk",
     "sample": "ando em sua própria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
-   },
-   {
-    "term": "liderança",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 38,
-    "share_of_uncovered": 0.95,
-    "ratio": 135.7,
-    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
-    "kind": "talk",
-    "sample": "pria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
    }
   ]
  },

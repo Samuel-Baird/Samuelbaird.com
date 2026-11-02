@@ -51,7 +51,7 @@
   ],
   "inferred": [
    {
-    "term": "seniores",
+    "term": "missionários seniores",
     "evidence": [
      "inferred"
     ],
@@ -60,19 +60,7 @@
     "ratio": 1565.6,
     "source": "2010-04-rasband-the-divine-call-of-a-missionary",
     "kind": "talk",
-    "sample": "dor que Seus servos sabem onde esses maravilhosos rapazes e moças, missionários seniores e casais de missionários mais idosos devem servir. Naquela manhã, recebi mais u"
-   },
-   {
-    "term": "missionários",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 17,
-    "share_of_uncovered": 0.739,
-    "ratio": 36.1,
-    "source": "2002-10-oaks-ill-go-where-you-want-me-to-go",
-    "kind": "talk",
-    "sample": "elhante fé e devoção nos recantos mais remotos da vinha do Senhor. Nossos fiéis missionários idosos são o melhor exemplo que conheço."
+    "sample": "amor do Salvador que Seus servos sabem onde esses maravilhosos rapazes e moças, missionários seniores e casais de missionários mais idosos devem servir. Naquela manhã, recebi mais u"
    },
    {
     "term": "missão",
@@ -81,10 +69,22 @@
     ],
     "paragraphs": 10,
     "share_of_uncovered": 0.435,
-    "ratio": 15.5,
+    "ratio": 17.8,
     "source": "2001-04-holland-witnesses-unto-me",
     "kind": "talk",
     "sample": "ou vinte e um anos. Encontrei todo tipo de casais, inclusive ex-presidentes de missão e de templo com a respectiva esposa, que estavam em partes do mundo que lhes er"
+   },
+   {
+    "term": "jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.391,
+    "ratio": 14.8,
+    "source": "2002-10-oaks-ill-go-where-you-want-me-to-go",
+    "kind": "talk",
+    "sample": "rvir em tempo integral por um certo período. O mesmo acontece com o exército de jovens missionários que interrompem suas atividades, despedem-se da família e dos amig"
    }
   ]
  },

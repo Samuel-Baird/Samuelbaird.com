@@ -4,7 +4,7 @@
   "en_paragraphs": 167,
   "en_talks": 99,
   "en_verses": 22,
-  "uncovered_paragraphs": 160,
+  "uncovered_paragraphs": 155,
   "renderings": [
    {
     "term": "desobrigação",
@@ -12,29 +12,29 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 29,
-    "talks": 24,
+    "paragraphs": 34,
+    "talks": 29,
     "verses": 0,
-    "first_year": 2002,
+    "first_year": 1990,
     "last_year": 2025,
     "snippets": [
      {
       "kind": "talk",
-      "year": 2002,
-      "conference": "2002 October General Conference",
-      "talk": "2002-10-eyring-rise-to-your-call",
-      "para": 16,
-      "en": "The day of your release will teach you a great lesson. On the day I …",
-      "tr": "O dia de sua desobrigação lhe ensinará uma grande lição. No dia em que fui …"
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 53,
+      "en": "… and apostasy and martyrdom. You learn of calls and releases. You learn of temples and redemption of the dead, …",
+      "tr": "… respeito de oposição, apostasia e martírio; de chamados e desobrigações. Aprendereis sobre templos e redenção dos mortos, obra missionária …"
      },
      {
       "kind": "talk",
-      "year": 2013,
-      "conference": "2013 April General Conference",
-      "talk": "2013-04-uchtdorf-the-sustaining-of-church-officers",
-      "para": 17,
-      "en": "We likewise extend a release to all members of the Young Women general board.",
-      "tr": "Também estendemos a desobrigação a todas as integrantes da junta geral das Moças."
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-cook-the-songs-they-could-not-sing",
+      "para": 32,
+      "en": "… Mission Field,” *Millennial Star,* Apr. 18, 1912, 254: “Releases and Departures.—The following named missionaries have been honorably released and …",
+      "tr": "… Star,* 18 de abril de 1912, p. 254: \"Desobrigações e Partidas — Os seguintes missionários mencionados foram honrosamente desobrigados …"
      },
      {
       "kind": "talk",
@@ -56,8 +56,8 @@
      "inferred"
     ],
     "paragraphs": 64,
-    "share_of_uncovered": 0.4,
-    "ratio": 266.7,
+    "share_of_uncovered": 0.413,
+    "ratio": 206.5,
     "source": "1998-10-monson-the-sustaining-of-church-officers",
     "kind": "talk",
     "sample": "É proposto que desobriguemos com um voto de agradecimento os Élderes Monte J. Brough, W. Eugene Hansen e Jac"
@@ -68,23 +68,23 @@
      "inferred"
     ],
     "paragraphs": 65,
-    "share_of_uncovered": 0.406,
-    "ratio": 46.4,
+    "share_of_uncovered": 0.419,
+    "ratio": 49.3,
     "source": "1994-04-monson-the-sustaining-of-church-officers",
     "kind": "talk",
     "sample": "É proposto que apoiemos Merrill J. Bateman como Bispo Presidente, com H. David Burton como"
    },
    {
-    "term": "presidência",
+    "term": "setenta",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 45,
-    "share_of_uncovered": 0.281,
-    "ratio": 19.1,
-    "source": "1995-10-monson-the-sustaining-of-church-officers",
+    "paragraphs": 35,
+    "share_of_uncovered": 0.226,
+    "ratio": 50.2,
+    "source": "1994-04-monson-the-sustaining-of-church-officers",
     "kind": "talk",
-    "sample": ", os Élderes Rex D. Pinegar e Charles Didier de seu tra­ba­lho como mem­bros da Presidência dos Quóruns dos Setenta. Os que esti­ve­rem a favor, mani­fes­tem-se."
+    "sample": ". Simultaneamente, desobrigamos Élder Bateman como membro do Segundo Quórum dos Setenta."
    }
   ]
  },

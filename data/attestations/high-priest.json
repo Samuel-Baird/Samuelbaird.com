@@ -8,28 +8,40 @@
   "renderings": [],
   "inferred": [
    {
-    "term": "sumo",
+    "term": "sumo sacerdote",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 172,
-    "share_of_uncovered": 0.688,
-    "ratio": 458.8,
-    "source": "1990-10-monson-days-never-to-be-forgotten",
-    "kind": "talk",
-    "sample": "O irmão Mabey disse sim. Hoje ele é um sumo sacerdote e vive aqui no oeste. Todos os seus familiares já estiveram no templo"
-   },
-   {
-    "term": "sacerdote",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 167,
-    "share_of_uncovered": 0.668,
-    "ratio": 178.2,
+    "paragraphs": 163,
+    "share_of_uncovered": 0.652,
+    "ratio": 434.8,
     "source": "1990-10-monson-days-never-to-be-forgotten",
     "kind": "talk",
     "sample": "O irmão Mabey disse sim. Hoje ele é um sumo sacerdote e vive aqui no oeste. Todos os seus familiares já estiveram no templo e receber"
+   },
+   {
+    "term": "sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 96,
+    "share_of_uncovered": 0.384,
+    "ratio": 96.0,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um mestre familiar, e o irmão que jaz inativo à marge"
+   },
+   {
+    "term": "sumos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 85,
+    "share_of_uncovered": 0.34,
+    "ratio": 170.0,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "ha de semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um mestre familiar, e o irmão que jaz inat"
    }
   ]
  },

@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1991,
-      "conference": "1991 October General Conference",
-      "talk": "1991-10-scott-obtaining-help-from-the-lord",
-      "para": 31,
-      "en": "… the Lord give me a wife?” as though an eternal companion were a teddy bear to be acquired with no …",
-      "tr": "… não me dá uma esposa?” — como se um companheiro eterno fosse um ursinho de pelúcia a ser adquirido sem …"
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-johnson-the-motorcycle-ride",
+      "para": 8,
+      "en": "… and was taught the gospel. She is now my eternal companion. I will ever be grateful that was the …",
+      "tr": "… o evangelho me foi ensinado. Ela é agora minha companheira eterna. Sempre serei grato por ter sido aquele o …"
      },
      {
       "kind": "talk",
-      "year": 2012,
-      "conference": "2012 April General Conference",
-      "talk": "2012-04-ballard-that-the-lost-may-be-found",
-      "para": 22,
-      "en": "… not yet married, pay careful attention to finding your eternal companion. Young men, remember something else that President Joseph …",
-      "tr": "… prestem muita atenção ao escolherem seu companheiro ou sua companheira eterna. Rapazes, lembrem-se de outra coisa que o Presidente …"
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-scott-the-eternal-blessings-of-marriage",
+      "para": 14,
+      "en": "… mission. Then make your highest priority finding a worthy, eternal companion. When you find you are developing an interest …",
+      "tr": "… que sua mais alta prioridade seja encontrar uma digna companheira eterna. Quando achar que está desenvolvendo interesse por uma …"
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 April General Conference",
       "talk": "2026-04-mutombo-the-joy-of-a-covenant-relationship-with-god",
-      "para": 8,
-      "en": "… time in our lives as husband and wife and eternal companions. We have been blessed with 10 children. When …",
-      "tr": "… difícil de nossa vida como marido e mulher e companheiros eternos. Fomos abençoados com dez filhos. Quando menciono isso, …"
+      "para": 15,
+      "en": "… who were there, “I’m sorry, but Nathalie is my eternal companion. We are striving together to build an eternal …",
+      "tr": "… que estavam lá: “Desculpem-me, mas a Nathalie é minha companheira eterna. Estamos nos esforçando juntos para edificar uma família …"
      }
     ],
     "share": 1.0
@@ -51,28 +51,28 @@
   ],
   "inferred": [
    {
-    "term": "cônjuge",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.273,
-    "ratio": 363.7,
-    "source": "2009-10-bednar-more-diligent-and-concerned-at-home",
-    "kind": "talk",
-    "sample": "Irmãos e irmãs, quando foi a última vez que vocês tomaram seu cônjuge eterno nos braços e disseram: “Eu te amo”? Pais, quando foi a última vez que vo"
-   },
-   {
     "term": "companheira",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.273,
-    "ratio": 109.1,
+    "ratio": 136.4,
     "source": "1990-10-monson-days-never-to-be-forgotten",
     "kind": "talk",
     "sample": "concluída, Gustav Wacker faleceu serenamente, nos braços de sua amada e eterna companheira, vestido com roupa branca do templo, lá no Templo de Washington."
+   },
+   {
+    "term": "cônjuge",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 60.6,
+    "source": "2009-10-bednar-more-diligent-and-concerned-at-home",
+    "kind": "talk",
+    "sample": "Irmãos e irmãs, quando foi a última vez que vocês tomaram seu cônjuge eterno nos braços e disseram: “Eu te amo”? Pais, quando foi a última vez que vo"
    },
    {
     "term": "eterna",
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.364,
-    "ratio": 13.5,
+    "ratio": 12.8,
     "source": "1990-10-monson-days-never-to-be-forgotten",
     "kind": "talk",
     "sample": "alidade concluída, Gustav Wacker faleceu serenamente, nos braços de sua amada e eterna companheira, vestido com roupa branca do templo, lá no Templo de Washington."

@@ -28,21 +28,21 @@
      },
      {
       "kind": "talk",
-      "year": 2001,
-      "conference": "2001 April General Conference",
-      "talk": "2001-04-packer-the-touch-of-the-masters-hand",
-      "para": 0,
-      "en": "… given to any one to go forth to preach my gospel, or to build up my church, except he …",
-      "tr": "… ordenou “que a ninguém será permitido sair a pregar meu evangelho ou estabelecer minha igreja, a não ser que tenha …"
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-ballard-one-more",
+      "para": 28,
+      "en": "… Yesterday, Elder Richard G. Scott suggested that *Preach My Gospel,* the new guide that our missionaries are now …",
+      "tr": "… o Élder Richard G. Scott sugeriu que *Pregar Meu Evangelho,* o novo manual que nossos missionários usam agora …"
      },
      {
       "kind": "talk",
-      "year": 2016,
-      "conference": "2016 October General Conference",
-      "talk": "2016-10-cook-serve",
-      "para": 30,
-      "en": "… technologystudent.com/gears1/gears3.htm; “Compound Gear Reduction,” curriculum.vexrobotics.com.\n[^2]: See *Preach My Gospel: A Guide to Missionary Service* (2004), 87.\n[^3]: …",
-      "tr": "… [Redução de Engrenagem Composta], curriculum.vexrobotics.com.\n[^2]: Ver *Pregar Meu Evangelho: Guia para o Serviço Missionário*, 2004, p. 88. …"
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-durrant-teaching-in-the-homea-joyful-and-sacred-responsibility",
+      "para": 50,
+      "en": "… the Savior’s Way,* 16.\n[^13]: See “Listen,” *[Preach My Gospel: A Guide to Missionary Service](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/how-can-i-improve-my-teaching-skills?lang=eng)* (2004), 185–86.\n[^14]: …",
+      "tr": "… *p. 16.\n[^13]: Ver o tópico \"Ouvir\", *[Pregar Meu Evangelho: Guia para o Serviço Missionário](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/how-can-i-improve-my-teaching-skills?lang=por)*, 2004, p. 200. …"
      }
     ],
     "share": 1.0
@@ -62,28 +62,28 @@
     "sample": "disse: “Mas purificai o coração diante de mim; e depois ide por todo o mundo e pregai meu evangelho a toda criatura que não o tiver recebido”. ([D&C 112:28](https://"
    },
    {
-    "term": "ide",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 6,
-    "share_of_uncovered": 0.375,
-    "ratio": 375.1,
-    "source": "1990-10-ballard-purity-precedes-power",
-    "kind": "talk",
-    "sample": "ecede o poder. O Senhor disse: “Mas purificai o coração diante de mim; e depois ide por todo o mundo e pregai meu evangelho a toda criatura que não o tiver recebid"
-   },
-   {
     "term": "pregar",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 7,
     "share_of_uncovered": 0.438,
-    "ratio": 67.3,
+    "ratio": 116.7,
     "source": "1991-10-haight-a-time-for-preparation",
     "kind": "talk",
     "sample": "O Senhor perguntou: “Para que fostes ordenados?” e respondeu: “Para pregar o meu evangelho pelo Espírito,… para ensinar a verdade.” ([D&C 50:13–14](https:"
+   },
+   {
+    "term": "ide",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 250.1,
+    "source": "1990-10-ballard-purity-precedes-power",
+    "kind": "talk",
+    "sample": "ecede o poder. O Senhor disse: “Mas purificai o coração diante de mim; e depois ide por todo o mundo e pregai meu evangelho a toda criatura que não o tiver recebid"
    }
   ]
  },

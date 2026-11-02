@@ -51,16 +51,16 @@
   ],
   "inferred": [
    {
-    "term": "novembro",
+    "term": "jovens adultos",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 4,
-    "share_of_uncovered": 0.8,
-    "ratio": 91.5,
-    "source": "2008-10-hamula-winning-the-war-against-evil",
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 300.1,
+    "source": "2012-10-oaks-protect-the-children",
     "kind": "talk",
-    "sample": "10; Moisés 7:64.\n[^9]: Ver Bruce R. McConkie, \"The Caravan Moves On\",* Ensign*, novembro de 1984, p. 84.\n[^10]: Ver Daniel 2:44–45; D&C 38:9–15; 82:24.\n[^11]: Ver Josep"
+    "sample": "land, \"Israel, Israel, God Is Calling\", (Devocional do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion No"
    },
    {
     "term": "broadcasts",
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.6,
-    "ratio": 266.7,
+    "ratio": 300.1,
     "source": "2012-10-oaks-protect-the-children",
     "kind": "talk",
     "sample": "onal do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion Not Only Where, but How We Live, Says Elder H"
    },
    {
-    "term": "jovens adultos",
+    "term": "novembro",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.6,
-    "ratio": 218.2,
-    "source": "2012-10-oaks-protect-the-children",
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 68.1,
+    "source": "2008-10-hamula-winning-the-war-against-evil",
     "kind": "talk",
-    "sample": "land, \"Israel, Israel, God Is Calling\", (Devocional do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion No"
+    "sample": "10; Moisés 7:64.\n[^9]: Ver Bruce R. McConkie, \"The Caravan Moves On\",* Ensign*, novembro de 1984, p. 84.\n[^10]: Ver Daniel 2:44–45; D&C 38:9–15; 82:24.\n[^11]: Ver Josep"
    }
   ]
  },

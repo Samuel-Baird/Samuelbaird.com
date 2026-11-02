@@ -20,29 +20,29 @@
     "snippets": [
      {
       "kind": "scripture",
-      "ref": "Esdras 2:40",
-      "ref_en": "Ezra 2:40",
-      "en": "¶ The Levites: the children of Jeshua and Kadmiel, of the children of Hodaviah, seventy and four.",
-      "tr": "Os levitas: os filhos de Jesua e Cadmiel, dos filhos de Hodavias, setenta e quatro.",
-      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ezra/2?lang=por&id=p40"
+      "ref": "Neemias 7:43",
+      "ref_en": "Nehemiah 7:43",
+      "en": "¶ The Levites: the children of Jeshua, of Kadmiel, and of the children of Hodevah, seventy and four.",
+      "tr": "Os levitas: Os filhos de Jesua, de Cadmiel, dos filhos de Hodeva, setenta e quatro.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/neh/7?lang=por&id=p43"
      },
      {
       "kind": "talk",
       "year": 1990,
-      "conference": "1990 October General Conference",
-      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
-      "para": 4,
-      "en": "… president of the Quorum, and the Quorums of the Seventy, where there are seven presidents. I think I can …",
-      "tr": "… é presidido por um presidente, e os Quoruns dos Setenta, constituído de sete presidentes. Acho que posso compreender por …"
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-jeppsen-who-is-a-true-friend",
+      "para": 0,
+      "en": "A year ago when I was called as a Seventy, a nonmember patient of mine asked me an interesting …",
+      "tr": "Há um ano, quando fui chamado como setenta, uma paciente minha que não era membro da Igreja …"
      },
      {
       "kind": "talk",
-      "year": 2008,
-      "conference": "2008 April General Conference",
-      "talk": "2008-04-packer-the-twelve",
-      "para": 37,
-      "en": "“You read about the Seventies in the New Testament, and here are two of the …",
-      "tr": "Vocês lêem sobre os Setenta no Novo Testamento, e aqui estão dois Setentas vivos, o …"
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-packer-the-least-of-these",
+      "para": 43,
+      "en": "Eight weeks ago Elder William Walker of the Seventy and I held a zone conference in Naha for 44 …",
+      "tr": "Há oito semanas, o Élder William Walker, dos Setenta, e eu realizamos uma conferência de zona em Naha, …"
      }
     ],
     "share": 1.0
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 13,
     "share_of_uncovered": 0.419,
-    "ratio": 31.1,
+    "ratio": 25.8,
     "source": "2002-04-condie-becoming-a-great-benefit-to-our-fellow-beings",
     "kind": "talk",
     "sample": "Ao fim do primeiro ano de sua missão, ele relatou que tinha “viajado 5.228 quilômetros, realizado 170"
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 7,
     "share_of_uncovered": 0.226,
-    "ratio": 9.0,
+    "ratio": 10.2,
     "source": "2023-10-eyring-our-constant-companion",
     "kind": "talk",
     "sample": "deiros pontos da doutrina, recebendo diariamente muitas revelações, pregaram ao povo, de modo que puseram fim às suas contendas nesse mesmo ano”.[^2]"

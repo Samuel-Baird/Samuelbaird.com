@@ -51,16 +51,16 @@
   ],
   "inferred": [
    {
-    "term": "pensem",
+    "term": "nelson, \"[pensem",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 20,
-    "share_of_uncovered": 0.741,
-    "ratio": 211.7,
-    "source": "2023-10-nelson-think-celestial",
+    "paragraphs": 15,
+    "share_of_uncovered": 0.556,
+    "ratio": 1111.4,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
     "kind": "talk",
-    "sample": "o com o qual ressuscitarão e as pessoas com quem viverão para sempre. Portanto, pensem celestial."
+    "sample": "esuschrist.org/study/scriptures/nt/rom/8?lang=por&id=p17#p17).\n[^6]: Russell M. Nelson, \"[Pensem celestial!](https://www.churchofjesuschrist.org/study/general-conference/2023/1"
    },
    {
     "term": "liahona, novembro",
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 16,
     "share_of_uncovered": 0.593,
-    "ratio": 79.0,
+    "ratio": 60.8,
     "source": "2024-04-christofferson-the-testimony-of-jesus",
     "kind": "talk",
     "sample": "www.churchofjesuschrist.org/study/general-conference/2023/10/17oaks?lang=por)\", Liahona, novembro de 2023, p. 26.\n[^2]: [Doutrina e Convênios 76:39](https://www.churchofjesuschr"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 16,
     "share_of_uncovered": 0.593,
-    "ratio": 56.5,
+    "ratio": 48.4,
     "source": "2024-04-christofferson-the-testimony-of-jesus",
     "kind": "talk",
     "sample": "r Dallin H. Oaks, \"[Reinos de glória](https://www.churchofjesuschrist.org/study/general-conference/2023/10/17oaks?lang=por)\", Liahona, novembro de 2023, p. 26.\n[^2]: [Doutrina e"

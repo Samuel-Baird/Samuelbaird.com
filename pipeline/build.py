@@ -332,7 +332,30 @@ def glossary(concepts):
               f"({sum(e['confidence'] != 'hint' for e in entries)} evidenced)")
 
 
+def scripture_books():
+    """English book name -> Church-localized name per language (for deterministic citation rewriting)."""
+    from .config import SCRIPTURES
+    en = {}
+    for line in open(SCRIPTURES["en"], encoding="utf-8"):
+        r = json.loads(line)
+        en.setdefault(r["book"], r["book_name"])
+    out = {n: {} for n in en.values()}
+    for lang in LANGS:
+        seen = set()
+        for line in open(SCRIPTURES[lang], encoding="utf-8"):
+            r = json.loads(line)
+            if r["book"] in seen or r["book"] not in en:
+                continue
+            seen.add(r["book"])
+            out[en[r["book"]]][lang] = r["book_name"]
+    # Church citation convention observed in official pt/es conference text
+    for k in ("Doctrine and Covenants", "D&C"):
+        out[k] = {"pt": "D&C", "es": "D. y C."}
+    (DATA / "scripture_books.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main():
+    scripture_books()
     concepts, prov = load()
     sig, collapses = signals(concepts)
     (SITE / "c").mkdir(exist_ok=True)

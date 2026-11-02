@@ -29,21 +29,21 @@
      },
      {
       "kind": "talk",
-      "year": 2013,
-      "conference": "2013 April General Conference",
-      "talk": "2013-04-cook-personal-peace-the-reward-of-righteousness",
-      "para": 40,
-      "en": "… in the percentage of adults [submitting] family names for temple ordinances,” and the Cocody Cote d’Ivoire Stake is the …",
-      "tr": "… de adultos [que enviam] nomes da família para ordenanças do templo\", e a Estaca Cocody Costa do Marfim é …"
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-oscarson-sisterhood-oh-how-we-need-each-other",
+      "para": 19,
+      "en": "… We have access to the strength and power of temple ordinances and so much more.",
+      "tr": "… Temos acesso à força e ao poder das ordenanças do templo e muito mais."
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 October General Conference",
       "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
-      "para": 31,
-      "en": "… the temple workers cross the road? So God and temple ordinances can protect, bless, and inspire; bring forgiveness, healing, and …",
-      "tr": "… atravessaram a rua? Para que Deus e as ordenanças do templo possam proteger, abençoar e inspirar; trazer perdão, cura e …"
+      "para": 11,
+      "en": "We find hope and healing when we perform temple ordinances for family members with whom we may earlier have …",
+      "tr": "Encontramos esperança e cura quando realizamos ordenanças do templo por familiares com quem já tivemos dificuldades de relacionamento. …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 34,
     "share_of_uncovered": 0.723,
-    "ratio": 34.5,
+    "ratio": 35.7,
     "source": "1994-10-hunter-follow-the-son-of-god",
     "kind": "talk",
     "sample": "feiçoar os santos e redimir os mortos levam ao templo santo, e isto porque suas ordenanças são categoricamente decisivas. Não podemos voltar à presença de Deus sem elas."
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 12,
     "share_of_uncovered": 0.255,
-    "ratio": 9.7,
+    "ratio": 9.9,
     "source": "2019-04-bednar-prepared-to-obtain-every-needful-thing",
     "kind": "talk",
     "sample": "Por gerações desde o profeta Joseph Smith até o presidente Russell M. Nelson, o propósito doutrinário das ordenanças e dos convênios do templo tem sido exte"
    },
    {
-    "term": "receber",
+    "term": "russell",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 12,
-    "share_of_uncovered": 0.255,
-    "ratio": 9.5,
-    "source": "1994-10-hunter-follow-the-son-of-god",
+    "paragraphs": 11,
+    "share_of_uncovered": 0.234,
+    "ratio": 11.7,
+    "source": "2019-04-bednar-prepared-to-obtain-every-needful-thing",
     "kind": "talk",
-    "sample": "namente ou trabalhar para que chegue o dia de entrar nessa casa santa, a fim de receber vossas ordenanças e fazer vossos convênios."
+    "sample": "Por gerações desde o profeta Joseph Smith até o presidente Russell M. Nelson, o propósito doutrinário das ordenanças e dos convênios do templo tem"
    }
   ]
  },

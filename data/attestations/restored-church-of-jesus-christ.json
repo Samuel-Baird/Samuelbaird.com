@@ -57,19 +57,19 @@
     ],
     "paragraphs": 10,
     "share_of_uncovered": 1.0,
-    "ratio": 210.6,
+    "ratio": 200.1,
     "source": "2008-04-packer-the-twelve",
     "kind": "talk",
     "sample": "A Igreja de Jesus Cristo dos Santos dos Últimos Dias acabara de ser restaurada quando foi organizada a Primeira Presidência. Em seguida, veio o Quórum dos Doz"
    },
    {
-    "term": "santos dos últimos",
+    "term": "últimos",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 7,
     "share_of_uncovered": 0.7,
-    "ratio": 29.5,
+    "ratio": 21.2,
     "source": "2008-04-packer-the-twelve",
     "kind": "talk",
     "sample": "A Igreja de Jesus Cristo dos Santos dos Últimos Dias acabara de ser restaurada quando foi organizada a Primeira Presidência. Em"

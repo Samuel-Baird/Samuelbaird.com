@@ -37,33 +37,33 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 134,
-    "share_of_uncovered": 0.536,
-    "ratio": 153.2,
+    "paragraphs": 136,
+    "share_of_uncovered": 0.544,
+    "ratio": 241.8,
     "source": "1990-10-hinckley-this-work-will-go-forward",
     "kind": "talk",
     "sample": "o conselho de seus servos escolhidos em seus chamados como profetas, videntes e reveladores, eu vos prometo que o amor no lar e a obediência aos pais aumentarão; a fé se d"
    },
    {
-    "term": "profetas, videntes",
+    "term": "videntes",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 130,
-    "share_of_uncovered": 0.52,
-    "ratio": 160.0,
+    "paragraphs": 135,
+    "share_of_uncovered": 0.54,
+    "ratio": 240.1,
     "source": "1990-10-hinckley-this-work-will-go-forward",
     "kind": "talk",
-    "sample": "prestardes atenção ao conselho de seus servos escolhidos em seus chamados como profetas, videntes e reveladores, eu vos prometo que o amor no lar e a obediência aos pais aumenta"
+    "sample": "s atenção ao conselho de seus servos escolhidos em seus chamados como profetas, videntes e reveladores, eu vos prometo que o amor no lar e a obediência aos pais aumenta"
    },
    {
     "term": "primeira presidência",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 131,
-    "share_of_uncovered": 0.524,
-    "ratio": 52.4,
+    "paragraphs": 132,
+    "share_of_uncovered": 0.528,
+    "ratio": 51.5,
     "source": "1990-04-wirthlin-personal-integrity",
     "kind": "talk",
     "sample": "elador, é um exemplo de sublime integridade. A designação que lhe foi dada pela Primeira Presidência, de ir à Europa aliviar os sofrimentos dos santos, depois da II Guerra Mundial,"

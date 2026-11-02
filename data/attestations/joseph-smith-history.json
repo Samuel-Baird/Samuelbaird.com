@@ -39,10 +39,22 @@
     ],
     "paragraphs": 161,
     "share_of_uncovered": 0.953,
-    "ratio": 317.6,
+    "ratio": 272.3,
     "source": "2002-10-monson-models-to-follow",
     "kind": "talk",
     "sample": "Joseph L. Towsend, (1849–1942), *Hymns*, n.o 274 (tradução livre)\n[^17]: Joseph Smith — História 1:25.\n[^18]: Naomi W. Randall (1908–2001), *Hinos*, n.o 193.\n[^19]: Mateus 27:2"
+   },
+   {
+    "term": "joseph smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 169,
+    "share_of_uncovered": 1.0,
+    "ratio": 33.1,
+    "source": "1999-10-larsen-agencya-blessing-and-a-burden",
+    "kind": "talk",
+    "sample": "ecuando à medida que o Reino avança de “forma corajosa, nobre e independente”. (Joseph Smith, “The Wentworth Letter”, Encyclopedia of Mormonism, ed. Daniel H. Ludlow, 5 vol"
    },
    {
     "term": "pgp",
@@ -51,22 +63,10 @@
     ],
     "paragraphs": 94,
     "share_of_uncovered": 0.556,
-    "ratio": 58.6,
+    "ratio": 47.3,
     "source": "2002-04-cook-charity-perfect-and-everlasting-love",
     "kind": "talk",
     "sample": "vada (ver [Abraão 3:24–25](https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3?lang=por&id=p24-p25#p24); [D&C 98:13–14](https://www.churchofjesuschrist."
-   },
-   {
-    "term": "néfi",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 102,
-    "share_of_uncovered": 0.604,
-    "ratio": 15.5,
-    "source": "2002-04-cook-charity-perfect-and-everlasting-love",
-    "kind": "talk",
-    "sample": "jesuschrist.org/study/scriptures/bofm/moro/7?lang=por&id=p47#p47).\n[^2]: Ver [1 Néfi 11:22–23](https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/11?lan"
    }
   ]
  },

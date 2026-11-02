@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1995,
-      "conference": "1995 April General Conference",
-      "talk": "1995-04-washburn-the-temple-is-a-family-affair",
-      "para": 23,
-      "en": "… to the temple. I pray that we may become eternal families, that we may have eternal life. In the …",
-      "tr": "… juntos fortalecemos os laços que nos ajudarão a tornar-nos famílias eternas, onde realizamos a grande obra redentora por nossos …"
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-haight-come-to-the-house-of-the-lord",
+      "para": 36,
+      "en": "… the holy priesthood for time and all eternity, an eternal family is organized and is created. It is to exist …",
+      "tr": "… santo sacerdócio para o tempo e a eternidade, uma família eterna é criada e organizada. Deverá existir eternamente. Poderá tomar-se …"
      },
      {
       "kind": "talk",
-      "year": 2016,
-      "conference": "2016 April General Conference",
-      "talk": "2016-04-uchtdorf-in-praise-of-those-who-save",
-      "para": 7,
-      "en": "… Church. They require constant, intentional work. The doctrine of eternal families must inspire us to dedicate our best efforts to …",
-      "tr": "… esforço e trabalho constante e intencional. A doutrina das famílias eternas deve nos inspirar a dedicar-nos ao máximo para salvar …"
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-costa-to-the-friends-and-investigators-of-the-church",
+      "para": 4,
+      "en": "… could take her to the temple, of having an eternal family—and she declined my offer. I wanted to continue …",
+      "tr": "… alguém que poderia levá-la ao templo, de ter uma família eterna — e ela recusou o meu pedido. Eu queria …"
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 April General Conference",
       "talk": "2026-04-wakolo-come-unto-christtogether",
-      "para": 11,
-      "en": "… destiny is to exalt the children of God in eternal families.”[^7]",
-      "tr": "… é o de exaltar os filhos de Deus em famílias eternas.”[^7]"
+      "para": 10,
+      "en": "… The ordinances received there enable us to return as eternal families to the presence of our Heavenly Father. …",
+      "tr": "… templo. As ordenanças lá recebidas nos permitem retornar como famílias eternas à presença de nosso Pai Celestial. (…)"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.5,
-    "ratio": 54.1,
+    "ratio": 55.6,
     "source": "2000-10-oaks-the-challenge-to-become",
     "kind": "talk",
     "sample": "ornemos. Ao procedermos assim, devemos recordar que é em nossos relacionamentos familiares, ainda mais que em nossos chamados na Igreja, que ocorrerá a parte mais impor"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 11,
     "share_of_uncovered": 0.5,
-    "ratio": 18.5,
+    "ratio": 17.5,
     "source": "2000-10-oaks-the-challenge-to-become",
     "kind": "talk",
     "sample": "sta ser um líder bem-sucedido na Igreja. A exaltação é uma experiência familiar eterna e são nossas experiências familiares mortais que melhor nos prepararão para iss"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.227,
-    "ratio": 113.7,
+    "ratio": 82.7,
     "source": "2003-04-perry-the-importance-of-the-family",
     "kind": "talk",
     "sample": "s que isso se transforme em um empenho consciente e seguro na edificação de uma unidade familiar eterna. Uma grande quantidade de materiais da Igreja estarão à sua dis"

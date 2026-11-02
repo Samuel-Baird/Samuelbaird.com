@@ -4,7 +4,7 @@
   "en_paragraphs": 11,
   "en_talks": 9,
   "en_verses": 0,
-  "uncovered_paragraphs": 9,
+  "uncovered_paragraphs": 5,
   "renderings": [
    {
     "term": "designação de ministração",
@@ -12,11 +12,11 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 2,
-    "talks": 2,
+    "paragraphs": 6,
+    "talks": 5,
     "verses": 0,
     "first_year": 2018,
-    "last_year": 2023,
+    "last_year": 2026,
     "snippets": [
      {
       "kind": "talk",
@@ -35,6 +35,15 @@
       "para": 8,
       "en": "Some years ago, my wife, Isabelle, received an unusual ministering assignment. She was asked to visit an elderly widow …",
       "tr": "Há alguns anos, minha esposa, Isabelle, recebeu uma designação de ministração incomum. Pediram-lhe que visitasse uma viúva idosa de nossa …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 21,
+      "en": "… and invites us to do the same.[^38] We receive ministering assignments to grow our capacity to love others and to …",
+      "tr": "… e nos convida a fazer o mesmo.[^38] Recebemos designações de ministração para aumentar nossa capacidade de amar as pessoas e …"
      }
     ],
     "share": 1.0
@@ -42,40 +51,40 @@
   ],
   "inferred": [
    {
-    "term": "designações",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 6,
-    "share_of_uncovered": 0.667,
-    "ratio": 333.4,
-    "source": "2018-04-bingham-ministering-as-the-savior-does",
-    "kind": "talk",
-    "sample": "ao servirem ao lado de adultos no trabalho de salvação. Envolver os jovens nas designações para ministrar pode também aumentar o alcance da Sociedade de Socorro e do quór"
-   },
-   {
-    "term": "ministração",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 5,
-    "share_of_uncovered": 0.556,
-    "ratio": 185.2,
-    "source": "2019-04-waddell-just-as-he-did",
-    "kind": "talk",
-    "sample": "s coordenadas, realizadas por membros que cumprem fielmente suas designações de ministração, quanto em ações espontâneas, à medida que muitos demonstram amor cristão em op"
-   },
-   {
     "term": "ministrar",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 5,
-    "share_of_uncovered": 0.556,
-    "ratio": 171.0,
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 228.6,
     "source": "2018-04-bingham-ministering-as-the-savior-does",
     "kind": "talk",
     "sample": "os inspirados é a oportunidade que as moças de 14 a 18 anos de idade vão ter de ministrar como companheiras das irmãs da Sociedade de Socorro, assim como os rapazes da m"
+   },
+   {
+    "term": "designação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 141.2,
+    "source": "2018-10-cordon-becoming-a-shepherd",
+    "kind": "talk",
+    "sample": "dades das pessoas a quem ministramos, nossos olhos serão abertos. Nossa sagrada designação de ministrar nos dá o direito divino de receber inspiração. Podemos buscar essa"
+   },
+   {
+    "term": "modo cristão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 1600.4,
+    "source": "2026-04-stevenson-lost-luggage-redeemed-souls",
+    "kind": "talk",
+    "sample": "Considerem sua designação para ministrar de “modo cristão”[^7] aos bens mais preciosos do Senhor, que no final de sua jornada mortal pode"
    }
   ]
  },

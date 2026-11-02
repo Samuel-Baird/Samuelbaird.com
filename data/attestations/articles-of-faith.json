@@ -20,21 +20,21 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1990,
-      "conference": "1990 April General Conference",
-      "talk": "1990-04-hinckley-blessed-are-the-merciful",
-      "para": 54,
-      "en": "… of dogmas and the enunciation of theories” (*Articles of Faith,* 12th ed. [Salt Lake City: The Church of …",
-      "tr": "… de dogmas e a declaração de teorias.” (*Regras de Fé*, p. 388.)"
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-jack-relief-society-a-balm-in-gilead",
+      "para": 25,
+      "en": "… up wilderness camps for Laurels to teaching the Articles of Faith to Primary children to greeting at the door of …",
+      "tr": "… desde orga­ni­zar acam­pa­men­tos para Lauréis até ensi­nar as Regras de Fé às crian­ças da Primária e rece­ber as irmãs na …"
      },
      {
       "kind": "talk",
       "year": 2013,
       "conference": "2013 October General Conference",
-      "talk": "2013-10-cook-lamentations-of-jeremiah-beware-of-bondage",
-      "para": 30,
-      "en": "… Kings 17:6](https://www.churchofjesuschrist.org/study/scriptures/ot/2-kgs/17?lang=eng&id=p6#p6); [Doctrine and Covenants 110:11](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110?lang=eng&id=p11#p11).\n[^10]: [Articles of Faith 1:10](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p10#p10); see also [2 Nephi 10:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=eng&id=p22#p22).\n[^11]: Russell M. …",
-      "tr": "… Reis 17:6](https://www.churchofjesuschrist.org/study/scriptures/ot/2-kgs/17?lang=por&id=p6#p6); [Doutrina e Convênios 110:11](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110?lang=por&id=p11#p11).\n[^10]: [Regras de Fé 1:10](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p10#p10); ver também [2 Néfi 10:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=por&id=p22#p22).\n[^11]: Russell M. …"
+      "talk": "2013-10-perry-the-doctrines-and-principles-contained-in-the-articles-of-faith",
+      "para": 24,
+      "en": "The [tenth](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p10#p10), [eleventh](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p11#p11), and [twelfth](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p12#p12) articles of faith instruct us on how to conduct missionary work and …",
+      "tr": "… [décima](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p10#p10), a [décima primeira](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p11#p11) e a [décima segunda](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p12#p12) Regras de Fé nos instruem sobre como realizar o trabalho missionário e …"
      },
      {
       "kind": "talk",
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 8,
     "share_of_uncovered": 0.571,
-    "ratio": 163.3,
+    "ratio": 285.8,
     "source": "2002-10-perry-called-of-god",
     "kind": "talk",
     "sample": "[^1]: 5ª Regra de Fé.\n[^2]: \"A Família: Proclamação ao Mundo\", *A Liahona*, janeiro de 1996, p"
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.357,
-    "ratio": 1428.9,
+    "ratio": 476.3,
     "source": "1998-10-dew-we-are-not-alone",
     "kind": "talk",
     "sample": "isso conseguirmos ( … ) desfrutar o dom do Espírito Santo”. (A New Witness for the Articles of Faith, 1984, p. 253.) O que estamos dispostas a fazer, que fraquezas e indul"
    },
    {
-    "term": "witness",
+    "term": "faith",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 4,
-    "share_of_uncovered": 0.286,
-    "ratio": 1143.1,
+    "paragraphs": 5,
+    "share_of_uncovered": 0.357,
+    "ratio": 204.1,
     "source": "1998-10-dew-we-are-not-alone",
     "kind": "talk",
-    "sample": "mais, se com isso conseguirmos ( … ) desfrutar o dom do Espírito Santo”. (A New Witness for the Articles of Faith, 1984, p. 253.) O que estamos dispostas a fazer, que"
+    "sample": "os ( … ) desfrutar o dom do Espírito Santo”. (A New Witness for the Articles of Faith, 1984, p. 253.) O que estamos dispostas a fazer, que fraquezas e indulgências e"
    }
   ]
  },

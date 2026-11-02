@@ -8,28 +8,28 @@
   "renderings": [],
   "inferred": [
    {
-    "term": "edifício",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 6,
-    "share_of_uncovered": 0.75,
-    "ratio": 272.8,
-    "source": "1990-04-monson-my-brothers-keeper",
-    "kind": "talk",
-    "sample": "logo ali do outro lado.” Era a Rua South Temple. O bom samaritano que entrou no Edifício da Administração da Igreja para o trabalho diário, sem o seu sobretudo, foi o P"
-   },
-   {
     "term": "administrativo",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.625,
-    "ratio": 833.5,
+    "ratio": 625.2,
     "source": "2002-04-hinckley-the-church-goes-forward",
     "kind": "talk",
     "sample": "ifício Memorial Joseph Smith, as instalações de História da Família, o Edifício Administrativo da Igreja, o Edifício dos Escritórios da Igreja, as instalações de Bem-Estar, a"
+   },
+   {
+    "term": "edifício",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 176.5,
+    "source": "1990-04-monson-my-brothers-keeper",
+    "kind": "talk",
+    "sample": "logo ali do outro lado.” Era a Rua South Temple. O bom samaritano que entrou no Edifício da Administração da Igreja para o trabalho diário, sem o seu sobretudo, foi o P"
    },
    {
     "term": "escritório",
@@ -38,7 +38,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.5,
-    "ratio": 250.1,
+    "ratio": 166.7,
     "source": "1994-10-pinegar-the-simple-things",
     "kind": "talk",
     "sample": "a vez que encontrei o Presidente Howard W. Hunter foi em 1967, quando fui a seu escritório a fim de ser designado para um novo chamado. Conversamos sobre minha nova desig"

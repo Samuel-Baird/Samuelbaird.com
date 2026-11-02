@@ -29,12 +29,12 @@
      },
      {
       "kind": "talk",
-      "year": 2017,
-      "conference": "2017 April General Conference",
-      "talk": "2017-04-ballard-return-and-receive",
-      "para": 30,
-      "en": "… goal in mortality than to live eternally with our Heavenly Parents and our beloved Savior, the Lord Jesus Christ. But …",
-      "tr": "… que seja melhor do que viver eternamente com nossos Pais Celestiais e com nosso amado Salvador, o Senhor Jesus Cristo. …"
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-aburto-with-one-accord",
+      "para": 3,
+      "en": "… our heavenly home, where we will reunite with our Heavenly Parents.[^5] Like the butterflies, we have been given divine …",
+      "tr": "… a nosso lar celestial, onde nos reuniremos com nossos Pais Celestiais.[^5] Tal como às borboletas, foram-nos dados atributos divinos …"
      },
      {
       "kind": "talk",
@@ -51,28 +51,16 @@
   ],
   "inferred": [
    {
-    "term": "pais celestes",
+    "term": "celestes",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 13,
     "share_of_uncovered": 0.722,
-    "ratio": 2889.6,
+    "ratio": 577.9,
     "source": "1993-10-oaks-the-great-plan-of-happiness",
     "kind": "talk",
     "sample": "O evangelho nos ensina que somos filhos espirituais de pais celestes. Antes do nascimento mortal tivemos uma “personalidade espiritual, pré-existent"
-   },
-   {
-    "term": "hino",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 4,
-    "share_of_uncovered": 0.222,
-    "ratio": 98.8,
-    "source": "1995-10-oaks-powerful-ideas",
-    "kind": "talk",
-    "sample": "Ponderem o poder da idéia ensi­na­da no apre­cia­do hino “Sou Um Filho de Deus” (Hinos, 1990, nº 193), can­ta­do pelo coro no iní­cio de"
    },
    {
     "term": "somos",
@@ -81,10 +69,22 @@
     ],
     "paragraphs": 7,
     "share_of_uncovered": 0.389,
-    "ratio": 12.0,
+    "ratio": 10.7,
     "source": "1993-10-oaks-the-great-plan-of-happiness",
     "kind": "talk",
     "sample": "O evangelho nos ensina que somos filhos espirituais de pais celestes. Antes do nascimento mortal tivemos uma “pe"
+   },
+   {
+    "term": "hino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.222,
+    "ratio": 52.3,
+    "source": "1995-10-oaks-powerful-ideas",
+    "kind": "talk",
+    "sample": "Ponderem o poder da idéia ensi­na­da no apre­cia­do hino “Sou Um Filho de Deus” (Hinos, 1990, nº 193), can­ta­do pelo coro no iní­cio de"
    }
   ]
  },

@@ -29,20 +29,20 @@
      {
       "kind": "talk",
       "year": 1990,
-      "conference": "1990 April General Conference",
-      "talk": "1990-04-cuthbert-the-spirituality-of-service",
-      "para": 25,
-      "en": "… service, it helps us grow spiritually, “[put] off the natural man and [become] a saint” ([Mosiah 3:19](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng&id=p19#p19))—that is, one who …",
-      "tr": "… quando prestamos serviço cristão, crescemos espiritualmente, “se (despojando) do homem natural, tornando-se santo” ([Mosiah 3:19](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=por&id=p19#p19)) — ou seja, aquele …"
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-maxwell-put-off-the-natural-man-and-come-off-conqueror",
+      "para": 28,
+      "en": "… selfishness presents us with a sobering scene as the natural man acts out his wants. Many assert their needs—but where …",
+      "tr": "… coloca diante de uma cena realística, em que o homem natural age de acordo com seus desejos. Muitos declaram suas …"
      },
      {
       "kind": "talk",
       "year": 2012,
-      "conference": "2012 April General Conference",
-      "talk": "2012-04-soares-abide-in-the-lords-territory",
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-perkins-beware-concerning-yourselves",
       "para": 5,
-      "en": "… flesh as the physical or carnal nature of the natural man, which allows people to be influenced by passion, …",
-      "tr": "… à carne como a natureza física ou carnal do homem natural, que permite às pessoas serem influenciadas por paixões, …"
+      "en": "… knows that lurking within priesthood holders is a “natural man”[^6] “prone to wander.”[^7] Thus, prophets invite us to …",
+      "tr": "… interior de cada portador do sacerdócio há um “homem natural”,[^6] “propenso a desviar-se do rumo”.[^7] Portanto, os profetas …"
      }
     ],
     "share": 1.0
@@ -62,13 +62,25 @@
     "sample": "## Princípio 2: Há poder na Expiação para capacitar-nos a vencer o homem ou mulher natural e a tornar-nos verdadeiros discípulos de Jesus Cristo.[^9]"
    },
    {
+    "term": "homem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.765,
+    "ratio": 19.6,
+    "source": "1990-10-maxwell-put-off-the-natural-man-and-come-off-conqueror",
+    "kind": "talk",
+    "sample": "r&id=p5#p5)). Mas não podemos “sair vencedores” se não nos despojarmos antes do homem egoísta e natural!"
+   },
+   {
     "term": "ajuda",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.294,
-    "ratio": 9.4,
+    "ratio": 8.5,
     "source": "1990-10-maxwell-put-off-the-natural-man-and-come-off-conqueror",
     "kind": "talk",
     "sample": "ísmo está sendo eliminado — mesmo que seja apenas gradualmente? Recebemos muita ajuda divina para nosdespojarmos do egoísmo, “porque, que filho há a quem o pai não c"

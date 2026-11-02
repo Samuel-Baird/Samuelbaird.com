@@ -57,7 +57,7 @@
     ],
     "paragraphs": 6,
     "share_of_uncovered": 1.0,
-    "ratio": 67.8,
+    "ratio": 64.5,
     "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
     "kind": "talk",
     "sample": "hosas na Terra que me demonstram amor, especialmente as meninas da [classe] das Moças e as líderes que me ensinam por meio da linguagem de sinais e ajudam-me a apren"
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.333,
-    "ratio": 333.4,
+    "ratio": 190.5,
     "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
     "kind": "talk",
     "sample": "orque há pessoas maravilhosas na Terra que me demonstram amor, especialmente as meninas da [classe] das Moças e as líderes que me ensinam por meio da linguagem de sina"
    },
    {
-    "term": "classe",
+    "term": "aula",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.333,
-    "ratio": 83.4,
-    "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
+    "ratio": 121.2,
+    "source": "2015-10-mcconkie-here-to-serve-a-righteous-cause",
     "kind": "talk",
-    "sample": "soas maravilhosas na Terra que me demonstram amor, especialmente as meninas da [classe] das Moças e as líderes que me ensinam por meio da linguagem de sinais e ajudam"
+    "sample": "Vi as meninas em uma aula das Moças entrelaçar os braços juntas e assumir o compromisso de ministrar umas"
    }
   ]
  },

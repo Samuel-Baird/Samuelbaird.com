@@ -4,7 +4,7 @@
   "en_paragraphs": 682,
   "en_talks": 400,
   "en_verses": 28,
-  "uncovered_paragraphs": 48,
+  "uncovered_paragraphs": 47,
   "renderings": [
    {
     "term": "Restauração",
@@ -12,7 +12,7 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 639,
+    "paragraphs": 640,
     "talks": 374,
     "verses": 23,
     "first_year": 1990,
@@ -30,19 +30,19 @@
       "kind": "talk",
       "year": 1990,
       "conference": "1990 April General Conference",
-      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
-      "para": 7,
-      "en": "… for the dawning of a new day and the restoration of the gospel of Jesus Christ.",
-      "tr": "… pacientemente o alvorecer de um novo dia e a restauração do Evangelho de Jesus Cristo."
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 43,
+      "en": "… read prophecies of the coming Messiah and of the restoration of the gospel. You see Elijah demonstrate the sealing power …",
+      "tr": "… ofertas. Lereis profecias sobre a vinda do Messias e restauração do evangelho. Vereis Elias demonstrar o poder selador e Malaquias …"
      },
      {
       "kind": "talk",
-      "year": 2009,
-      "conference": "2009 October General Conference",
-      "talk": "2009-10-callister-joseph-smithprophet-of-the-restoration",
-      "para": 14,
-      "en": "… of pottage. They exchange the absolute certainty of the Restoration for a doubt, and in that process they fall into …",
-      "tr": "… um prato de lentilhas. Trocam a certeza absoluta da Restauração pela dúvida e, nesse processo, caem na armadilha de perder …"
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-closing-remarks",
+      "para": 36,
+      "en": "… School, and other Church callings—all vital parts of the Restoration of the gospel of Jesus Christ in its fulness.",
+      "tr": "… em outros chamados da Igreja — partes vitais da Restauração do evangelho de Jesus Cristo em sua plenitude."
      }
     ],
     "share": 1.0
@@ -50,13 +50,25 @@
   ],
   "inferred": [
    {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.277,
+    "ratio": 7.4,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "o físico. Sua mente tinha por ‘IDEAL’ a busca incessante.” (Leon R. Hartshorn, *Joseph Smith: Prophet of the Restoration*, Salt Lake City: Deseret Book Co., 1970, p."
+   },
+   {
     "term": "the",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 10,
-    "share_of_uncovered": 0.208,
-    "ratio": 11.4,
+    "share_of_uncovered": 0.213,
+    "ratio": 10.6,
     "source": "1990-04-wirthlin-personal-integrity",
     "kind": "talk",
     "sample": "por ‘IDEAL’ a busca incessante.” (Leon R. Hartshorn, *Joseph Smith: Prophet of the Restoration*, Salt Lake City: Deseret Book Co., 1970, p. 67.) “Sua grandeza não"
@@ -67,8 +79,8 @@
      "inferred"
     ],
     "paragraphs": 11,
-    "share_of_uncovered": 0.229,
-    "ratio": 6.3,
+    "share_of_uncovered": 0.234,
+    "ratio": 6.9,
     "source": "1990-04-wirthlin-personal-integrity",
     "kind": "talk",
     "sample": "o. Sua mente tinha por ‘IDEAL’ a busca incessante.” (Leon R. Hartshorn, *Joseph Smith: Prophet of the Restoration*, Salt Lake City: Deseret Book Co., 1970, p. 67.) “"

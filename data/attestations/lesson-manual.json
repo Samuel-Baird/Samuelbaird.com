@@ -33,28 +33,28 @@
   ],
   "inferred": [
    {
-    "term": "lições",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 3,
-    "share_of_uncovered": 1.0,
-    "ratio": 250.1,
-    "source": "2002-10-eyring-rise-to-your-call",
-    "kind": "talk",
-    "sample": "você provavelmente fará será assegurar-se de que recebam um manual, o livro de lições ou os registros que elas devem manter. Pode ser que você até entregue a elas um"
-   },
-   {
     "term": "manuais",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.667,
-    "ratio": 666.8,
+    "ratio": 2667.3,
     "source": "2005-04-beck-a-work-for-me-to-do",
     "kind": "talk",
     "sample": "a foi semelhante à dos primeiros pioneiros. Não tinhamos hinários, gravuras nem manuais de aula enviados pela sede da Igreja. Tudo o que era necessário para se ensinar"
+   },
+   {
+    "term": "lições",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 166.7,
+    "source": "2002-10-eyring-rise-to-your-call",
+    "kind": "talk",
+    "sample": "você provavelmente fará será assegurar-se de que recebam um manual, o livro de lições ou os registros que elas devem manter. Pode ser que você até entregue a elas um"
    },
    {
     "term": "aula",
@@ -63,7 +63,7 @@
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.667,
-    "ratio": 156.9,
+    "ratio": 242.5,
     "source": "2005-04-beck-a-work-for-me-to-do",
     "kind": "talk",
     "sample": "hante à dos primeiros pioneiros. Não tinhamos hinários, gravuras nem manuais de aula enviados pela sede da Igreja. Tudo o que era necessário para se ensinar o evang"

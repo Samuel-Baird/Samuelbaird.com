@@ -29,21 +29,21 @@
      },
      {
       "kind": "talk",
-      "year": 2010,
-      "conference": "2010 April General Conference",
-      "talk": "2010-04-rasband-the-divine-call-of-a-missionary",
-      "para": 10,
-      "en": "… Church. Part of my early training as a new General Authority included an opportunity to sit with members of the …",
-      "tr": "… Igreja como Setenta. Parte de meu treinamento inicial como Autoridade Geral incluía uma oportunidade de sentar-me com os membros dos …"
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+      "para": 11,
+      "en": "… business, who later became a mission president and a General Authority. The other counselor was a prominent judge in …",
+      "tr": "… empresa e mais tarde tornou-se presidente de missão e Autoridade Geral. O outro conselheiro era um preeminente juiz naquela …"
      },
      {
       "kind": "talk",
-      "year": 2024,
-      "conference": "2024 April General Conference",
-      "talk": "2024-04-nielson-a-record-of-what-i-have-both-seen-and-heard",
-      "para": 12,
-      "en": "… was limited. When I was called to be a General Authority, Marcia and I were assigned to serve in …",
-      "tr": "… da Igreja mundial era limitada. Quando fui chamado como autoridade geral, Marcia e eu fomos designados para servir na …"
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-shumway-participate-to-prepare-for-christs-return",
+      "para": 0,
+      "en": "… by. I had just been called as a new General Authority. Likely sensing my feelings of inadequacy, he smiled …",
+      "tr": "… por mim. Eu havia acabado de ser chamado como autoridade geral. Provavelmente percebendo meu sentimento de inadequação, ele sorriu …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 198,
     "share_of_uncovered": 0.93,
-    "ratio": 143.0,
+    "ratio": 186.0,
     "source": "1990-04-hinckley-keeping-the-temple-holy",
     "kind": "talk",
     "sample": "Nós apoiamos as autoridades locais e as Autoridades Gerais? Isto nada tem a ver com homenagens prestadas àqueles chamados por Deus para pr"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 82,
     "share_of_uncovered": 0.385,
-    "ratio": 96.3,
+    "ratio": 85.6,
     "source": "1994-10-faust-the-keys-that-never-rust",
     "kind": "talk",
     "sample": "pelos Doze. O mesmo foi feito pelo Presidente Rex D. Pinegar, representando os Setentas, e pelo Bispo Merril J. Bateman falando pelo Bispado Presidente. Todas as Autor"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 82,
     "share_of_uncovered": 0.385,
-    "ratio": 57.0,
+    "ratio": 48.1,
     "source": "1998-04-faust-the-sustaining-of-church-officers",
     "kind": "talk",
     "sample": "e que agora lhes apresentasse as Autoridades Gerais, os Setantas-Autoridades de Área e as presidências gerais das auxiliares da Igreja para seu voto de apoio."

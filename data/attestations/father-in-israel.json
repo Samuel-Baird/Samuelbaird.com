@@ -8,28 +8,28 @@
   "renderings": [],
   "inferred": [
    {
-    "term": "israel",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.75,
-    "ratio": 62.5,
-    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
-    "kind": "talk",
-    "sample": "Em um maravilhoso discurso dirigido aos pais de Israel, o Presidente Benson nos lembrou que o chamado mais importante, no tempo e na e"
-   },
-   {
     "term": "eternidade",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.75,
-    "ratio": 61.2,
+    "ratio": 75.0,
     "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
     "kind": "talk",
     "sample": "l, o Presidente Benson nos lembrou que o chamado mais importante, no tempo e na eternidade, é o de marido e pai. Passarei agora meu tempo na área Andersen da Igreja, um c"
+   },
+   {
+    "term": "israel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 66.7,
+    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
+    "kind": "talk",
+    "sample": "Em um maravilhoso discurso dirigido aos pais de Israel, o Presidente Benson nos lembrou que o chamado mais importante, no tempo e na e"
    },
    {
     "term": "importante",

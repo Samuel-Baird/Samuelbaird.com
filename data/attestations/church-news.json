@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1990,
-      "conference": "1990 April General Conference",
-      "talk": "1990-04-faust-gratitude-as-a-saving-principle",
-      "para": 32,
-      "en": "… here; yours is the part of cherishing them” (*Church News,* 14 June 1969, p. 2). As we come …",
-      "tr": "… obtê-las, elas estão aqui; vossa parte é apreciá-las.” (*Church News*, 14 de junho de 1969, p. 2.) Chegando …"
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-hinckley-christ-is-the-light-to-all-mankind",
+      "para": 4,
+      "en": "… sword’” (“Myriad of Lights to Remind of Savior,” *Church News,* 4 Dec. 1982, p. 10). But even to …",
+      "tr": "… evangelho por meio da coerção e da espadaʼ” (*Church News*, 4 de dezembro de 1982, p. 10). Mesmo …"
      },
      {
       "kind": "talk",
       "year": 2018,
       "conference": "2018 April General Conference",
-      "talk": "2018-04-stevenson-the-heart-of-a-prophet",
-      "para": 39,
-      "en": "… Thoughts about President Thomas S. Monson on Social Media](https://www.lds.org/church/news/apostles-share-thoughts-about-president-thomas-s-monson-on-social-media),” Church News section of LDS.org, Jan. 12, 2018, news.lds.org. …",
-      "tr": "… S. Monson nas mídias sociais], seção de notícias do Church News no site LDS.org, 12 de janeiro de 2018, news.LDS.org. …"
+      "talk": "2018-04-taylor-am-i-a-child-of-god",
+      "para": 29,
+      "en": "… a Child of God’ Teaches Children Their Divine Identity](https://www.lds.org/church/news/2018-primary-theme-i-am-a-child-of-god-teaches-children-their-divine-identity),” Church News section of LDS.org, Jan. 5, 2018, news.lds.org. …",
+      "tr": "… ensina as crianças sobre sua identidade divina], seção do Church News do LDS.org, 5 de janeiro de 2018, news.LDS.org.\n[^27]: …"
      },
      {
       "kind": "talk",
       "year": 2026,
-      "conference": "2026 October General Conference",
-      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
-      "para": 29,
-      "en": "… Lloyd, “A Jubilee Year for Missionary Language Instruction,” *Church News*, Feb. 4, 2012, thechurchnews.com).\n[^4]: In a talk …",
-      "tr": "… Lloyd, \"A Jubilee Year for Missionary Language Instruction\", *Church News*, 4 de fevereiro de 2012, thechurchnews.com).\n[^4]: Em …"
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-rowe-choose-jesus-christ-as-your-guide",
+      "para": 26,
+      "en": "… Oaks Says in First Interview as Church President](https://www.thechurchnews.com/leaders/2025/10/16/president-dallin-h-oaks-first-interview-as-church-president),” *Church News*, Oct. 16, 2025, thechurchnews.com.",
+      "tr": "… Oaks na primeira entrevista como presidente da Igreja](https://www.thechurchnews.com/leaders/2025/10/16/president-dallin-h-oaks-first-interview-as-church-president)\", *Church News*, 16 de outubro de 2025, thechurchnews.com."
      }
     ],
     "share": 1.0
@@ -57,22 +57,10 @@
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.4,
-    "ratio": 160.0,
+    "ratio": 145.5,
     "source": "2007-04-burton-if-these-old-walls-could-talk",
     "kind": "talk",
     "sample": "arks by President Gordon B. Hinckley\"*, 1º de outubro de 2004; ver www.newsroom.lds.org.\n[^2]: Ver Alma 46:36; 62:4.\n[^3]: Em Conference Report, outubro de 1918, p"
-   },
-   {
-    "term": "proclamação",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.4,
-    "ratio": 123.1,
-    "source": "2007-04-burton-if-these-old-walls-could-talk",
-    "kind": "talk",
-    "sample": "manhas do Mundo, *A Liahona*, janeiro de 1996, p. 114; ver também *\"A Família — Proclamação ao Mundo\"*, *A Liahona*, outubro de 2004, p. 49."
    },
    {
     "term": "liahona*, janeiro",
@@ -81,10 +69,22 @@
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.4,
-    "ratio": 84.2,
+    "ratio": 106.7,
     "source": "2007-04-burton-if-these-old-walls-could-talk",
     "kind": "talk",
     "sample": "n* maio de 1985, p. 11.\n[^7]: \"Enfrentar com Firmeza as Artimanhas do Mundo, *A Liahona*, janeiro de 1996, p. 114; ver também *\"A Família — Proclamação ao Mundo\"*, *A Liahona*,"
+   },
+   {
+    "term": "proclamação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 76.2,
+    "source": "2007-04-burton-if-these-old-walls-could-talk",
+    "kind": "talk",
+    "sample": "manhas do Mundo, *A Liahona*, janeiro de 1996, p. 114; ver também *\"A Família — Proclamação ao Mundo\"*, *A Liahona*, outubro de 2004, p. 49."
    }
   ]
  },

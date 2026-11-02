@@ -30,19 +30,19 @@
       "kind": "talk",
       "year": 1990,
       "conference": "1990 April General Conference",
-      "talk": "1990-04-hinckley-sacred-resolves",
-      "para": 17,
-      "en": "… bore testimonies one to another and partook of the sacrament of the Lord’s Supper, President Benson stood before his brethren …",
-      "tr": "… onde prestamos testemunho uns aos outros e participamos do sacramento da Ceia do Senhor, o Presidente Benson, diante de seus …"
+      "talk": "1990-04-nelson-thus-shall-my-church-be-called",
+      "para": 48,
+      "en": "… only His church can provide baptism, confirmation, ordination, the sacrament, patriarchal blessings, and the ordinances of the temple—all bestowed …",
+      "tr": "… de Jesus Cristo pode proporcionar batismo, confirmação, ordenação, o sacramento, bênçãos patriarcais e as ordenanças do templo — e …"
      },
      {
       "kind": "talk",
-      "year": 2013,
-      "conference": "2013 October General Conference",
-      "talk": "2013-10-reeves-claim-the-blessings-of-your-covenants",
-      "para": 5,
-      "en": "… does the Savior put so much importance upon the sacrament, dear sisters? What importance does this weekly renewal of …",
-      "tr": "Por que o Salvador dá tanta importância ao sacramento, queridas irmãs? Que importância essa renovação semanal de nossos …"
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-christensen-a-choice-seer-will-i-raise-up",
+      "para": 15,
+      "en": "… blessed their children, conferred priesthood authority, and administered the sacrament unto them.[^13] Joseph may not have realized it at the …",
+      "tr": "… crianças, conferiu-lhes a autoridade do sacerdócio e administrou o sacramento a eles.[^13] Joseph talvez não tenha percebido isso na época, …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 21,
     "share_of_uncovered": 0.618,
-    "ratio": 190.1,
+    "ratio": 154.5,
     "source": "2013-04-clayton-marriage-watch-and-learn",
     "kind": "talk",
     "sample": "casamento um valor inestimável praticam os padrões da fé: frequentam a reunião sacramental e outras reuniões toda semana, fazem noite familiar, oram e estudam as escritur"
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 8,
     "share_of_uncovered": 0.235,
-    "ratio": 16.5,
+    "ratio": 14.9,
     "source": "1994-04-didier-remember-your-covenants",
     "kind": "talk",
     "sample": "Foram também dias interessantes, em que participar da reunião do sacerdócio significava sentar em um círculo com dois missionários e outros d"
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 8,
     "share_of_uncovered": 0.235,
-    "ratio": 8.2,
+    "ratio": 8.6,
     "source": "2014-10-esplin-the-sacramenta-renewal-for-the-soul",
     "kind": "talk",
     "sample": "A oração sacramental também nos relembra que devemos “guardar [Seus] mandamentos”.[^9]"

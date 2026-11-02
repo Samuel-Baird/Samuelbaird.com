@@ -4,7 +4,7 @@
   "en_paragraphs": 25,
   "en_talks": 19,
   "en_verses": 0,
-  "uncovered_paragraphs": 3,
+  "uncovered_paragraphs": 2,
   "renderings": [
    {
     "term": "revelação contínua",
@@ -12,29 +12,29 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 22,
-    "talks": 16,
+    "paragraphs": 23,
+    "talks": 17,
     "verses": 0,
-    "first_year": 2000,
+    "first_year": 1996,
     "last_year": 2025,
     "snippets": [
      {
       "kind": "talk",
-      "year": 2000,
-      "conference": "2000 April General Conference",
-      "talk": "2000-04-ballard-how-is-it-with-us",
-      "para": 17,
-      "en": "… it is so natural to share the principle of continuing revelation and the organization of the Church and its doctrines …",
-      "tr": "… de Deus. Daí, é natural apresentar o princípio da revelação contínua e da organização da Igreja e de seus programas …"
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-wirthlin-christians-in-belief-and-action",
+      "para": 13,
+      "en": "… Lord Jesus Christ on the holy scriptures and on continuing revelation to latter-day prophets.",
+      "tr": "… do Senhor Jesus Cristo nas santas escrituras e nas revelações contínuas concedidas aos profetas modernos."
      },
      {
       "kind": "talk",
-      "year": 2018,
-      "conference": "2018 October General Conference",
-      "talk": "2018-10-gong-our-campfire-of-faith",
-      "para": 0,
-      "en": "Dear brothers and sisters, isn’t it marvelous to receive continuing revelation from heaven through President Russell M. Nelson and our …",
-      "tr": "… irmãos e irmãs, não é maravilhoso receber dos céus revelação contínua por intermédio do presidente Russell M. Nelson e de …"
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-eyring-continuing-revelation",
+      "para": 21,
+      "en": "… testing all over the world. President Packer was right. Continuing revelation comes to stake presidents to lift them above their …",
+      "tr": "… todo o mundo. O Presidente Packer estava certo. A revelação contínua chega aos presidentes de estaca para erguê-los acima de …"
      },
      {
       "kind": "talk",
@@ -47,44 +47,6 @@
      }
     ],
     "share": 1.0
-   }
-  ],
-  "inferred": [
-   {
-    "term": "contínuas",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 444.6,
-    "source": "1996-10-wirthlin-christians-in-belief-and-action",
-    "kind": "talk",
-    "sample": "ivina e da missão do Senhor Jesus Cristo nas santas escrituras e nas revelações contínuas concedidas aos profetas modernos."
-   },
-   {
-    "term": "revelação",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 38.1,
-    "source": "2009-10-beck-relief-society-a-sacred-work",
-    "kind": "talk",
-    "sample": "dentes e reveladores, e também por pertencer a uma Igreja dirigida por contínua revelação. Tenho certeza de que, se cada irmã fizer sua parte para garantir que os propós"
-   },
-   {
-    "term": "profetas",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 28.7,
-    "source": "1996-10-wirthlin-christians-in-belief-and-action",
-    "kind": "talk",
-    "sample": "or Jesus Cristo nas santas escrituras e nas revelações contínuas concedidas aos profetas modernos."
    }
   ]
  },

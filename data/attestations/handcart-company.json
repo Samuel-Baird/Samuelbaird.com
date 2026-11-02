@@ -14,22 +14,10 @@
     ],
     "paragraphs": 29,
     "share_of_uncovered": 0.935,
-    "ratio": 935.7,
+    "ratio": 1871.4,
     "source": "1990-04-faust-gratitude-as-a-saving-principle",
     "kind": "talk",
     "sample": "ngelho criasse raízes? Como se expressa gratidão pelos intrépidos pioneiros dos carrinhos-de-mão que, com a própria força bruta, trouxeram seus parcos pertences através"
-   },
-   {
-    "term": "mão",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 31,
-    "share_of_uncovered": 1.0,
-    "ratio": 63.5,
-    "source": "1990-04-faust-gratitude-as-a-saving-principle",
-    "kind": "talk",
-    "sample": "e raízes? Como se expressa gratidão pelos intrépidos pioneiros dos carrinhos-de-mão que, com a própria força bruta, trouxeram seus parcos pertences através das pla"
    },
    {
     "term": "willie",
@@ -38,10 +26,22 @@
     ],
     "paragraphs": 17,
     "share_of_uncovered": 0.548,
-    "ratio": 1097.0,
+    "ratio": 2194.1,
     "source": "1990-04-faust-gratitude-as-a-saving-principle",
     "kind": "talk",
     "sample": "o pode a dívida de gratidão ser paga pelos descendentes das companhias Martin e Willie e outras, pela fé dos antepassados?"
+   },
+   {
+    "term": "mão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 1.0,
+    "ratio": 52.0,
+    "source": "1990-04-faust-gratitude-as-a-saving-principle",
+    "kind": "talk",
+    "sample": "e raízes? Como se expressa gratidão pelos intrépidos pioneiros dos carrinhos-de-mão que, com a própria força bruta, trouxeram seus parcos pertences através das pla"
    }
   ]
  },

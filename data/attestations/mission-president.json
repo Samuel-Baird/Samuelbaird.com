@@ -20,21 +20,21 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1993,
-      "conference": "1993 April General Conference",
-      "talk": "1993-04-hinckley-a-prophets-testimony",
-      "para": 15,
-      "en": "… him, guided him. He has since served as a mission president and now serves as a General Authority of the …",
-      "tr": "… guiou-o e conduziu-o. Desde aí ele serviu como presidente de missão e agora é uma Autoridade Geral da Igreja."
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+      "para": 13,
+      "en": "… in the gospel. Then he’d been called as a mission president. He had apparently been a very effective mission …",
+      "tr": "… chamado para presidir uma missão. Aparentemente, fora um presidente de missão muito bom, e, subseqüentemente, voltara para seu estado de …"
      },
      {
       "kind": "talk",
-      "year": 2012,
-      "conference": "2012 October General Conference",
-      "talk": "2012-10-gay-what-shall-a-man-give-in-exchange-for-his-soul",
-      "para": 13,
-      "en": "While serving as a mission president in Africa, I was forever taught this great truth. …",
-      "tr": "Enquanto eu servia como presidente de missão na África, aprendi de modo indelével esta grande verdade. …"
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-cook-the-songs-they-could-not-sing",
+      "para": 24,
+      "en": "My beloved mission president, Elder Marion D. Hanks (who passed away in …",
+      "tr": "Meu querido presidente de missão, o Élder Marion D. Hanks (que faleceu em …"
      },
      {
       "kind": "talk",
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 46,
     "share_of_uncovered": 0.868,
-    "ratio": 31.0,
+    "ratio": 35.4,
     "source": "1990-10-monson-god-be-with-you-till-we-meet-again",
     "kind": "talk",
     "sample": "m jovem que o cumprimentou alegremente e contou que havia sido chamado para uma missão de tempo integral. O Presidente Benson tomou o recém-chamado missionário pela m"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 14,
     "share_of_uncovered": 0.264,
-    "ratio": 12.9,
+    "ratio": 15.3,
     "source": "1993-04-stanley-the-principle-of-work",
     "kind": "talk",
     "sample": "Pais e instrutores de futuros missionários. Jovens amigos que se preparam para a missão, ou que estão servindo. Se quereis"

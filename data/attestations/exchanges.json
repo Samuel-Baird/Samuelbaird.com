@@ -14,28 +14,28 @@
   ],
   "inferred": [
    {
-    "term": "tão",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 23.4,
-    "source": "1990-04-wirthlin-personal-integrity",
-    "kind": "talk",
-    "sample": "uma vantagem temporária. Maridos ou mulheres infiéis ao cônjuge trocam esse bem tão desejado por uma diversão momentânea. A integridade é tão preciosa que não tem"
-   },
-   {
     "term": "nunca",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.667,
-    "ratio": 21.7,
+    "ratio": 20.8,
     "source": "1990-04-wirthlin-personal-integrity",
     "kind": "talk",
     "sample": "Como Jó, na antigüidade, precisamos dizer: “Até que eu expire, nunca apartarei de mim a minha sinceridade.” ([Jó 27:5](https://www.churchofjesuschri"
+   },
+   {
+    "term": "tão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 20.4,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "uma vantagem temporária. Maridos ou mulheres infiéis ao cônjuge trocam esse bem tão desejado por uma diversão momentânea. A integridade é tão preciosa que não tem"
    }
   ]
  },

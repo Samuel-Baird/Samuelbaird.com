@@ -4,7 +4,7 @@
   "en_paragraphs": 18,
   "en_talks": 14,
   "en_verses": 0,
-  "uncovered_paragraphs": 11,
+  "uncovered_paragraphs": 8,
   "renderings": [
    {
     "term": "reunião do quórum",
@@ -12,8 +12,8 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 7,
-    "talks": 6,
+    "paragraphs": 10,
+    "talks": 8,
     "verses": 0,
     "first_year": 2004,
     "last_year": 2025,
@@ -29,12 +29,12 @@
      },
      {
       "kind": "talk",
-      "year": 2018,
-      "conference": "2018 April General Conference",
-      "talk": "2018-04-holmes-what-every-aaronic-priesthood-holder-needs-to-understand",
-      "para": 16,
-      "en": "… It may be an opportunity to teach in a quorum meeting or visit the home of a member. It may …",
-      "tr": "… Pode ser uma oportunidade de ensinar em uma reunião do quórum ou de visitar o lar de um membro. Pode …"
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-beck-your-sacred-duty-to-minister",
+      "para": 28,
+      "en": "… The youth curriculum encourages these kinds of interactions in quorum meetings, but this can happen only when every member …",
+      "tr": "… dos jovens incentiva esse tipo de interação nas reuniões do quórum, mas isso só pode acontecer quando todo membro …"
      },
      {
       "kind": "talk",
@@ -55,9 +55,9 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 11,
+    "paragraphs": 8,
     "share_of_uncovered": 1.0,
-    "ratio": 70.2,
+    "ratio": 61.6,
     "source": "2004-10-perry-what-is-a-quorum",
     "kind": "talk",
     "sample": "Vejo essa característica expressamente manifesta nas funções do Quórum dos Doze Apóstolos. Somos uma sala de aula, ao estudarmos juntos as doutrinas d"
@@ -67,24 +67,24 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 8,
-    "share_of_uncovered": 0.727,
-    "ratio": 66.1,
-    "source": "2006-10-eyring-a-priesthood-quorum",
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 78.1,
+    "source": "2010-04-beck-the-magnificent-aaronic-priesthood",
     "kind": "talk",
-    "sample": "diáconos no qual eu fora chamado para ensinar. Alguns dos diáconos faltavam às reuniões do quórum de vez em quando. Eu sabia que o ensino naquele quórum — e em todos o"
+    "sample": "membros do quórum têm um importante papel no programa Dever para com Deus. Suas reuniões dominicais do quórum proporcionarão oportunidades regulares de aprender, agir e"
    },
    {
-    "term": "quóruns",
+    "term": "reunião",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 5,
-    "share_of_uncovered": 0.455,
-    "ratio": 113.7,
-    "source": "2006-10-eyring-a-priesthood-quorum",
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 31.8,
+    "source": "2004-10-perry-what-is-a-quorum",
     "kind": "talk",
-    "sample": "o quórum de vez em quando. Eu sabia que o ensino naquele quórum — e em todos os quóruns — era responsabilidade do presidente, que tinha as chaves. Ele sentava-se em co"
+    "sample": "doutrinas do reino. Podem imaginar que experiência especial seria estar em uma reunião de quórum e aprender as doutrinas do evangelho com os Élderes Ezra Taft Benson,"
    }
   ]
  },

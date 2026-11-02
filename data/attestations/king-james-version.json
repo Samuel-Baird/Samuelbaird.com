@@ -51,7 +51,19 @@
   ],
   "inferred": [
    {
-    "term": "version",
+    "term": "new king james",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2025-04-uchtdorf-by-this-all-will-know-that-you-are-my-disciples",
+    "kind": "talk",
+    "sample": "[^1]: João 13:34–35, New King James Version; tradução livre.\n[^2]: [Doutrina e Convênios 1:21](https://www.churchof"
+   },
+   {
+    "term": "king james version",
     "evidence": [
      "inferred"
     ],
@@ -63,28 +75,16 @@
     "sample": "[^1]: João 13:34–35, New King James Version; tradução livre.\n[^2]: [Doutrina e Convênios 1:21](https://www.churchofjesuschr"
    },
    {
-    "term": "tradução livre",
+    "term": "lucas",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.375,
-    "ratio": 1500.4,
-    "source": "1996-04-wirthlin-faith-of-our-fathers",
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 50.0,
+    "source": "2017-04-uchtdorf-perfect-love-casteth-out-fear",
     "kind": "talk",
-    "sample": "[^15]: Citado em Church News, 10 de fevereiro de 1996, 3.\n[^16]: Hymns, no. 84, tradução livre.\n[^17]: History of Utah (História de Utah) [1890], 217.\n[^18]: Citado em A Comp"
-   },
-   {
-    "term": "new king james",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.375,
-    "ratio": 1500.4,
-    "source": "2025-04-uchtdorf-by-this-all-will-know-that-you-are-my-disciples",
-    "kind": "talk",
-    "sample": "[^1]: João 13:34–35, New King James Version; tradução livre.\n[^2]: [Doutrina e Convênios 1:21](https://www.churchof"
+    "sample": "ilho do Homem não veio para destruir a alma dos homens, mas para salvá-la\" (ver Lucas 9:51–56).\n[^5]: Ver [Moisés 1:39](https://www.churchofjesuschrist.org/study/scr"
    }
   ]
  },

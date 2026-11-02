@@ -29,21 +29,21 @@
      },
      {
       "kind": "talk",
-      "year": 2008,
-      "conference": "2008 April General Conference",
-      "talk": "2008-04-cook-anchors-of-testimony",
-      "para": 28,
-      "en": "… Miracle of Forgiveness* (1969), 236.\n[^7]: *For the Strength of Youth* (pamphlet, 2001), 2.\n[^8]: *For the Strength …",
-      "tr": "… do Perdão* (1999), p. 236.\n[^7]: *Para o Vigor da Juventude* (livreto, 2002), p. 2.\n[^8]: *Para o …"
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-uchtdorf-see-the-end-from-the-beginning",
+      "para": 21,
+      "en": "Living the standards set in *For the Strength of Youth* will make you feel good about yourself. …",
+      "tr": "O cumprimento dos padrões estabelecidos em *Para o Vigor da Juventude* fará com que se sintam bem a …"
      },
      {
       "kind": "talk",
       "year": 2022,
       "conference": "2022 October General Conference",
       "talk": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
-      "para": 33,
-      "en": "… new resource, a revised version of [For the Strength of Youth](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/000-title-page?lang=eng).",
-      "tr": "… novo recurso, uma versão revisada do guia Para o Vigor da Juventude, agora intitulado [Força dos Jovens](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/000-title-page?lang=por)."
+      "para": 34,
+      "en": "For over 50 years, For the Strength of Youth has been a guide for generations of Latter-day …",
+      "tr": "Por mais de 50 anos, o livreto Para o Vigor da Juventude tem sido um guia para gerações de jovens …"
      }
     ],
     "share": 1.0
@@ -63,28 +63,28 @@
     "sample": "Em janeiro de 2021, nossas três novas revistas mundiais — Meu Amigo, Força dos Jovens e Liahona — convidam todas as pessoas a participar e compartilhar experiências"
    },
    {
-    "term": "guia",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 21,
-    "share_of_uncovered": 0.6,
-    "ratio": 68.6,
-    "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
-    "kind": "talk",
-    "sample": "Essa nova versão do guia, Força dos Jovens, tem como subtítulo Um Guia para Fazer Escolhas."
-   },
-   {
     "term": "escolhas",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 20,
     "share_of_uncovered": 0.571,
-    "ratio": 55.8,
+    "ratio": 73.8,
     "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
     "kind": "talk",
     "sample": "sa nova versão do guia, Força dos Jovens, tem como subtítulo Um Guia para Fazer Escolhas."
+   },
+   {
+    "term": "guia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.6,
+    "ratio": 57.2,
+    "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+    "kind": "talk",
+    "sample": "Essa nova versão do guia, Força dos Jovens, tem como subtítulo Um Guia para Fazer Escolhas."
    }
   ]
  },

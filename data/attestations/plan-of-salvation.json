@@ -29,26 +29,38 @@
      {
       "kind": "talk",
       "year": 1991,
-      "conference": "1991 April General Conference",
-      "talk": "1991-04-howard-repentance",
-      "para": 21,
-      "en": "… was essentially about the means by which the plan of salvation would be implemented. It forever established the principle that …",
-      "tr": "… sobre os meios com que se realizaria o plano de salvação. Estabeleceu para sempre o princípio de que, mesmo …"
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-ballard-be-an-example-of-the-believers",
+      "para": 32,
+      "en": "… for being, or their prominent role in the plan of salvation.",
+      "tr": "… de sua existência, ou seu proeminente papel no plano de salvação."
      },
      {
       "kind": "talk",
-      "year": 2013,
-      "conference": "2013 October General Conference",
-      "talk": "2013-10-dyches-wilt-thou-be-made-whole",
-      "para": 25,
-      "en": "… Nephi 2:11](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2?lang=eng&id=p11#p11)) is not a flaw in the plan of salvation. Opposition, rather, is the indispensable element of mortality …",
-      "tr": "… ([2 Néfi 2:11](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2?lang=por&id=p11#p11)) não é uma falha no plano de salvação. Em vez disso, a oposição é o elemento …"
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-oaks-loving-others-and-living-with-differences",
+      "para": 31,
+      "en": "… teachings upon which they are based. The Father’s plan of salvation, which we know by prophetic revelation, places us …",
+      "tr": "… os ensinamentos sobre os quais se baseiam. O plano de salvação do Pai, que conhecemos por revelação profética, coloca-nos em …"
      }
     ],
     "share": 1.0
    }
   ],
   "inferred": [
+   {
+    "term": "the-plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.471,
+    "ratio": 1882.8,
+    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
+    "kind": "talk",
+    "sample": "christ.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. Oaks, \"[Comp"
+   },
    {
     "term": "service/lesson",
     "evidence": [
@@ -62,19 +74,7 @@
     "sample": "www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. O"
    },
    {
-    "term": "missionary-service",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 7,
-    "share_of_uncovered": 0.412,
-    "ratio": 1647.5,
-    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
-    "kind": "talk",
-    "sample": "o](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dall"
-   },
-   {
-    "term": "the-plan",
+    "term": "salvation",
     "evidence": [
      "inferred"
     ],
@@ -83,7 +83,7 @@
     "ratio": 627.6,
     "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
     "kind": "talk",
-    "sample": "christ.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. Oaks, \"[Comp"
+    "sample": "tudy/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. Oaks, \"[Compartilhar o ev"
    }
   ]
  },

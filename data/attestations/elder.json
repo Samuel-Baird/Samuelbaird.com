@@ -20,29 +20,29 @@
     "snippets": [
      {
       "kind": "scripture",
-      "ref": "Doutrina e Convênios 105:9",
-      "ref_en": "Doctrine and Covenants 105:9",
-      "en": "Therefore, in consequence of the transgressions of my people, it is expedient in me that mine elders should wait for a little season for the redemption of Zion—",
-      "tr": "Portanto, em consequência das transgressões de meu povo, é conveniente para mim que meus élderes esperem um pouco a redenção de Sião —",
-      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/105?lang=por&id=p9"
+      "ref": "Doutrina e Convênios 20:3",
+      "ref_en": "Doctrine and Covenants 20:3",
+      "en": "And to Oliver Cowdery, who was also called of God, an apostle of Jesus Christ, to be the second elder of this church, and ordained under his hand;",
+      "tr": "E a Oliver Cowdery, que foi também chamado por Deus como apóstolo de Jesus Cristo para ser o segundo élder desta igreja e ordenado sob sua mão;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?lang=por&id=p3"
      },
      {
       "kind": "talk",
-      "year": 1991,
-      "conference": "1991 April General Conference",
-      "talk": "1991-04-tingey-redemption-of-the-dead",
-      "para": 6,
-      "en": "… the dead. Speaking to a meeting of Regional Representatives, Elder Boyd K. Packer spoke of the marvelous capacity of the …",
-      "tr": "… dos mortos. Falando em uma reunião de Representantes Regionais, Elder Boyd K. Packer mencionou a capacidade maravilhosa do computador, e …"
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 8,
+      "en": "… made the king. He sought the counsel of the elders regarding how he should rule. “And they spake unto him, …",
+      "tr": "… para ser coroado rei. Ele procurou o conselho dos élderes sobre como reinar. “E eles lhe falaram, dizendo: Se hoje …"
      },
      {
       "kind": "talk",
-      "year": 2016,
-      "conference": "2016 October General Conference",
-      "talk": "2016-10-yamashita-be-ambitious-for-christ",
-      "para": 5,
-      "en": "Elder Cowan did not have a right leg because of a …",
-      "tr": "… à missão, seu companheiro me telefonou. A prótese do Élder Cowan havia se quebrado enquanto andavam de bicicleta. Nós o …"
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-mcconkie-teaching-with-the-power-and-authority-of-god",
+      "para": 19,
+      "en": "Elder Holland continued: “The fact of the matter is [teachers] are …",
+      "tr": "O Élder Holland prosseguiu, dizendo: “O fato é que os [professores] ainda …"
      }
     ],
     "share": 1.0
@@ -54,9 +54,9 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 166,
-    "share_of_uncovered": 0.664,
-    "ratio": 2656.7,
+    "paragraphs": 172,
+    "share_of_uncovered": 0.688,
+    "ratio": 2752.7,
     "source": "1990-04-lybbert-a-latter-day-samaritan",
     "kind": "talk",
     "sample": "e um mestre da lei, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"

@@ -51,40 +51,40 @@
   ],
   "inferred": [
    {
-    "term": "fundo perpétuo",
+    "term": "perpétuo",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 1.0,
-    "ratio": 1333.7,
+    "ratio": 1000.2,
     "source": "2001-04-hinckley-the-perpetual-education-fund",
     "kind": "talk",
-    "sample": "to. Somos profundamente gratos a eles. Baseado em princípios semelhantes aos do Fundo Perpétuo para Emigração, iremos chamá-lo de Fundo Perpétuo paraEducação."
+    "sample": "mos profundamente gratos a eles. Baseado em princípios semelhantes aos do Fundo Perpétuo para Emigração, iremos chamá-lo de Fundo Perpétuo paraEducação."
    },
    {
-    "term": "perpétuo para educação",
+    "term": "fundo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 250.1,
+    "source": "2001-04-hinckley-the-perpetual-education-fund",
+    "kind": "talk",
+    "sample": "plano que acreditamos ser inspirado pelo Senhor. A Igreja está estabelecendo um fundo com doações, em sua maioria feitas por santos dos últimos dias fiéis que contri"
+   },
+   {
+    "term": "educação",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 2,
     "share_of_uncovered": 0.667,
-    "ratio": 2667.3,
+    "ratio": 266.7,
     "source": "2001-04-hinckley-the-perpetual-education-fund",
     "kind": "talk",
-    "sample": "ntes no mercado de trabalho. A área educativa será de responsabilidade do Fundo Perpétuo para Educação. O funcionamento dos centros de emprego será responsabilidade do programa de be"
-   },
-   {
-    "term": "estar",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.667,
-    "ratio": 25.2,
-    "source": "2001-04-hinckley-the-perpetual-education-fund",
-    "kind": "talk",
-    "sample": "emos, em áreas limitadas, um serviço de empregos subordinado ao programa de bem-estar da Igreja, que consiste basicamente em escritórios que indicam vagas existentes"
+    "sample": "o de trabalho. A área educativa será de responsabilidade do Fundo Perpétuo para Educação. O funcionamento dos centros de emprego será responsabilidade do programa de be"
    }
   ]
  },

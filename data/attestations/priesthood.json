@@ -20,29 +20,29 @@
     "snippets": [
      {
       "kind": "scripture",
-      "ref": "Doutrina e Convênios 84:21",
-      "ref_en": "Doctrine and Covenants 84:21",
-      "en": "And without the ordinances thereof, and the authority of the priesthood, the power of godliness is not manifest unto men in the flesh;",
-      "tr": "E sem suas ordenanças e a autoridade do sacerdócio, o poder da divindade não se manifesta aos homens na carne;",
-      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=por&id=p21"
+      "ref": "Doutrina e Convênios 107:69",
+      "ref_en": "Doctrine and Covenants 107:69",
+      "en": "Nevertheless a bishop must be chosen from the High Priesthood, unless he is a literal descendant of Aaron;",
+      "tr": "Contudo, um bispo precisa ser escolhido dentre o sumo sacerdócio, a menos que seja descendente literal de Aarão;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=por&id=p69"
      },
      {
       "kind": "talk",
-      "year": 1991,
-      "conference": "1991 April General Conference",
-      "talk": "1991-04-clarke-to-honor-the-priesthood",
-      "para": 9,
-      "en": "To have the priesthood conferred upon us does not automatically bless us with power …",
-      "tr": "Receber o sacerdócio não nos abençoa automaticamente com poder, assim como receber uma …"
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-haight-come-to-the-house-of-the-lord",
+      "para": 41,
+      "en": "… now qualify for a temple recommend. Work with your priesthood leaders and change your life in order to worthily enter …",
+      "tr": "… recomendação para o templo. Achegai-vos a vossos líderes do sacerdócio e modificai vossa vida, a fim de entrardes dignamente no …"
      },
      {
       "kind": "talk",
-      "year": 2010,
-      "conference": "2010 April General Conference",
-      "talk": "2010-04-oaks-healing-the-sick",
-      "para": 33,
-      "en": "I testify of the power of the priesthood of God, of the power of the prayer of faith, …",
-      "tr": "Presto testemunho do poder do sacerdócio de Deus, do poder da oração da fé e da …"
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-monson-dare-to-stand-alone",
+      "para": 46,
+      "en": "… soul, I pray that every man who holds the priesthood will honor that priesthood and be true to the trust …",
+      "tr": "… alma, oro para que todo homem que possui o sacerdócio honre esse sacerdócio e seja leal à confiança transmitida quando …"
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 17,
     "share_of_uncovered": 0.236,
-    "ratio": 314.9,
+    "ratio": 157.4,
     "source": "2001-10-dew-are-we-not-all-mothers",
     "kind": "talk",
     "sample": "rchofjesuschrist.org/study/scriptures/pgp/moses/5?lang=por&id=p11#p11).\n[^10]: *Priesthood and Church Government,* comp. John A. Witsoe (1939), p. 85.\n[^11]: [Hebreus 12:"
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 17,
     "share_of_uncovered": 0.236,
-    "ratio": 12.9,
+    "ratio": 11.8,
     "source": "1996-04-wirthlin-faith-of-our-fathers",
     "kind": "talk",
     "sample": "tah (História de Utah) [1890], 217.\n[^18]: Citado em A Comprehensive History of the Church (História da Igreja), 3:45.\n[^19]: D&C 20:59.\n[^20]: Morôni 10:32\n[^21]:"
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 15,
     "share_of_uncovered": 0.208,
-    "ratio": 11.4,
+    "ratio": 9.5,
     "source": "1992-04-haight-come-to-the-house-of-the-lord",
     "kind": "talk",
     "sample": "essoal para abençoar vossa vida assim como abençoais aqueles que morreram.” (*A Liahona,* julho 1987, página 86.)."

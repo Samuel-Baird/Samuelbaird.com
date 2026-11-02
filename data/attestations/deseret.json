@@ -37,12 +37,12 @@
      },
      {
       "kind": "talk",
-      "year": 2008,
-      "conference": "2008 October General Conference",
-      "talk": "2008-10-uchtdorf-happiness-your-heritage",
-      "para": 60,
-      "en": "… 2:25](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2?lang=eng&id=p25#p25).\n[^5]: See [D&C 46:11–12](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/46?lang=eng&id=p11-p12#p11).\n[^6]: Brigham Young, *Deseret News,* Aug. 8, 1860, 177.\n[^7]: [D&C 81:5](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/81?lang=eng&id=p5#p5).\n[^8]: [Mosiah …",
-      "tr": "… 2:25.\n[^5]: Ver D&C 46:11–12.\n[^6]: Brigham Young, *Deseret News*, 8 de agosto de 1860, p. 177.\n[^7]: D&C …"
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-dibb-hold-on",
+      "para": 0,
+      "en": "… scaffolding they were working on collapsed” (“News Capsules,” *Deseret News,* June 9, 1993, A2).",
+      "tr": "… o andaime onde trabalhavam desabou (…) (“News Capsules”, *Deseret News,* 9 de junho de 1993)."
      }
     ],
     "share": 1.0
@@ -56,22 +56,22 @@
     ],
     "paragraphs": 14,
     "share_of_uncovered": 0.452,
-    "ratio": 25.8,
+    "ratio": 24.8,
     "source": "1990-10-oaks-witnesses-of-christ",
     "kind": "talk",
     "sample": "coisas que pertencem à nossa religião são meros complementos dessa verdade.” (*Ensinamentos do Profeta Joseph Smith,* p. 118.)"
    },
    {
-    "term": "brigham young",
+    "term": "joseph",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 10,
-    "share_of_uncovered": 0.323,
-    "ratio": 53.8,
-    "source": "1993-04-packer-the-temple-the-priesthood",
+    "paragraphs": 16,
+    "share_of_uncovered": 0.516,
+    "ratio": 13.8,
+    "source": "1990-10-oaks-witnesses-of-christ",
     "kind": "talk",
-    "sample": "auvoo, Illinois\", Don F. Colvin, tese de mestrado, agosto de 1962, Universidade Brigham Young.\n[^4]: Panfleto, discurso apresentado diante de A Sociedade Histórica de Pennsy"
+    "sample": "rgunta: “Quais são os princípios fundamentais de sua religião?” disse o Profeta Joseph Smith: “Os princípios fundamentais de nossa religião se constituem no testemunh"
    },
    {
     "term": "smith",
@@ -80,7 +80,7 @@
     ],
     "paragraphs": 15,
     "share_of_uncovered": 0.484,
-    "ratio": 13.3,
+    "ratio": 14.2,
     "source": "1990-10-oaks-witnesses-of-christ",
     "kind": "talk",
     "sample": "“Quais são os princípios fundamentais de sua religião?” disse o Profeta Joseph Smith: “Os princípios fundamentais de nossa religião se constituem no testemunho dos"

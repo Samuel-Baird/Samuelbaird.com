@@ -57,7 +57,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.4,
-    "ratio": 123.1,
+    "ratio": 84.2,
     "source": "2002-10-oaks-ill-go-where-you-want-me-to-go",
     "kind": "talk",
     "sample": "Há quase uma década, li uma carta de um missionário que retornou do campo, descrevendo esse processo em sua vida. Ele escreveu a carta para agradecer aos"
@@ -69,22 +69,22 @@
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.5,
-    "ratio": 32.8,
+    "ratio": 34.5,
     "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
     "kind": "talk",
     "sample": "erdócio Aarônico que serviram de exemplo para os rapazes. Um exemplo ideal é um missionário que retornou há pouco da missão, cheio de testemunho, a respeito de quem o port"
    },
    {
-    "term": "serviram",
+    "term": "missão",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 3,
-    "share_of_uncovered": 0.3,
-    "ratio": 171.5,
+    "paragraphs": 5,
+    "share_of_uncovered": 0.5,
+    "ratio": 20.4,
     "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
     "kind": "talk",
-    "sample": "Um dos segredos de seu sucesso foram os consultores do Sacerdócio Aarônico que serviram de exemplo para os rapazes. Um exemplo ideal é um missionário que retornou há p"
+    "sample": ", Alfred B. Smith e Alvin R. Dyer. Quase sem exceção, todos os jovens cumpriram missão e casaram-se no templo. Um dos segredos de seu sucesso foram os consultores do"
    }
   ]
  },

@@ -51,28 +51,28 @@
   ],
   "inferred": [
    {
-    "term": "conferência geral",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 15,
-    "share_of_uncovered": 0.938,
-    "ratio": 81.5,
-    "source": "2004-10-burton-more-holiness-give-me",
-    "kind": "talk",
-    "sample": "ferência de estaca, uma moça aproximou-se de mim e disse: Bispo seu discurso na conferência geral poderia ser bem melhor se o senhor sorrisse um pouco. Pensei em falar a ela sob"
-   },
-   {
     "term": "discurso",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 14,
     "share_of_uncovered": 0.875,
-    "ratio": 87.5,
+    "ratio": 109.4,
     "source": "2004-10-burton-more-holiness-give-me",
     "kind": "talk",
     "sample": "recente conferência de estaca, uma moça aproximou-se de mim e disse: Bispo seu discurso na conferência geral poderia ser bem melhor se o senhor sorrisse um pouco. Pens"
+   },
+   {
+    "term": "conferência geral",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.938,
+    "ratio": 75.0,
+    "source": "2004-10-burton-more-holiness-give-me",
+    "kind": "talk",
+    "sample": "ferência de estaca, uma moça aproximou-se de mim e disse: Bispo seu discurso na conferência geral poderia ser bem melhor se o senhor sorrisse um pouco. Pensei em falar a ela sob"
    },
    {
     "term": "outubro",
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 5,
     "share_of_uncovered": 0.312,
-    "ratio": 39.1,
+    "ratio": 32.9,
     "source": "2004-10-miller-bringing-peace-and-healing-to-your-soul",
     "kind": "talk",
     "sample": "é fruto, ou recompensa, do arrependimento e da obediência”. (Conference Report, outubro de 1963, p. 24.)"

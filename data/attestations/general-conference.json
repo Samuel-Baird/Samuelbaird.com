@@ -28,21 +28,21 @@
      },
      {
       "kind": "talk",
-      "year": 1990,
-      "conference": "1990 April General Conference",
-      "talk": "1990-04-cuthbert-the-spirituality-of-service",
-      "para": 4,
-      "en": "… Taft Benson, in Conference Report, Apr. 1979, [p. 48](https://www.churchofjesuschrist.org/study/general-conference/1979/04/this-is-a-day-of-sacrifice?lang=eng&id=p43#p43); or *Ensign,* May 1979, p. 34). We have a …",
-      "tr": "… descobrireis o segredo da vida plena e feliz.” (Conferência Geral de abril de 1979.) Perto de nossa casa mora …"
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-maxwell-lest-ye-be-wearied-and-faint-in-your-minds",
+      "para": 0,
+      "en": "Having all been richly nourished by this general conference, it is fitting to focus prescriptively on the …",
+      "tr": "Tendo sido todos fartamente alimentados por esta conferência geral, é adequado concentrarmo-nos no intento de ajudar as …"
      },
      {
       "kind": "talk",
-      "year": 2018,
-      "conference": "2018 April General Conference",
-      "talk": "2018-04-christofferson-the-elders-quorum",
-      "para": 18,
-      "en": "Twenty years ago in general conference, I related a story first told by Elder …",
-      "tr": "Há 20 anos, em uma conferência geral, relatei uma história que tinha sido contada anteriormente …"
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-teh-where-your-treasure-is",
+      "para": 0,
+      "en": "Shortly after general conference in October 2007, one of my brethren told me …",
+      "tr": "Pouco depois da conferência geral de outubro de 2007, um dos meus irmãos me …"
      }
     ],
     "share": 1.0
@@ -56,34 +56,34 @@
     ],
     "paragraphs": 215,
     "share_of_uncovered": 0.86,
-    "ratio": 47.1,
-    "source": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+    "ratio": 39.1,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
     "kind": "talk",
-    "sample": "[^1]: M. Russell Ballard, \"Preparar-se para servir\", A Liahona, julho de 1985, p. 47.\n[^2]: Ver Spencer W. Kimball, \"Quando o mundo for conver"
+    "sample": "e alegria de seus filhos\" (Gordon B. Hinckley, \"Deleitar-se nas escrituras\", A Liahona, junho de 1986, p. 2).\n[^27]: Russell M. Nelson, \"[Como seria sua vida sem o Li"
    },
    {
     "term": "conference",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 177,
-    "share_of_uncovered": 0.708,
-    "ratio": 59.0,
-    "source": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+    "paragraphs": 182,
+    "share_of_uncovered": 0.728,
+    "ratio": 51.1,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
     "kind": "talk",
-    "sample": ", \"[Bem-vindos à conferência](https://www.churchofjesuschrist.org/study/general-conference/2012/10/welcome-to-conference?lang=por&id=p9-p14#p9)\", A Liahona, novembro de 2"
+    "sample": "vida sem o Livro de Mórmon?](https://www.churchofjesuschrist.org/study/general-conference/2017/10/the-book-of-mormon-what-would-your-life-be-like-without-it?lang=por&id="
    },
    {
     "term": "general",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 172,
-    "share_of_uncovered": 0.688,
-    "ratio": 64.0,
-    "source": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+    "paragraphs": 176,
+    "share_of_uncovered": 0.704,
+    "ratio": 54.2,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
     "kind": "talk",
-    "sample": ". Monson, \"[Bem-vindos à conferência](https://www.churchofjesuschrist.org/study/general-conference/2012/10/welcome-to-conference?lang=por&id=p9-p14#p9)\", A Liahona, no"
+    "sample": "eria sua vida sem o Livro de Mórmon?](https://www.churchofjesuschrist.org/study/general-conference/2017/10/the-book-of-mormon-what-would-your-life-be-like-without-it?l"
    }
   ]
  },

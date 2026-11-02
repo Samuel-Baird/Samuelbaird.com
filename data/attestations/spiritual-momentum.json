@@ -8,28 +8,28 @@
   "renderings": [],
   "inferred": [
    {
-    "term": "ímpeto",
+    "term": "ímpeto espiritual",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 49,
-    "share_of_uncovered": 0.98,
-    "ratio": 980.2,
+    "paragraphs": 48,
+    "share_of_uncovered": 0.96,
+    "ratio": 640.2,
     "source": "2022-04-nelson-now-is-the-time",
     "kind": "talk",
-    "sample": "ito minha admoestação desta manhã para que façam as coisas que vão aumentar seu ímpeto espiritual positivo, a sustentação sobre a qual o élder Dieter F. Uchtdorf esta"
+    "sample": "ito minha admoestação desta manhã para que façam as coisas que vão aumentar seu ímpeto espiritual positivo, a sustentação sobre a qual o élder Dieter F. Uchtdorf estava falando,"
    },
    {
-    "term": "espiritual",
+    "term": "nelson",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 49,
-    "share_of_uncovered": 0.98,
-    "ratio": 26.1,
-    "source": "2021-10-dunn-one-percent-better",
+    "paragraphs": 31,
+    "share_of_uncovered": 0.62,
+    "ratio": 24.1,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
     "kind": "talk",
-    "sample": "ato de adoração, por menores e mais gradativos que sejam, aceleram nosso ritmo espiritual”.[^14] Na verdade, é por meio de coisas pequenas, simples e, sim, mesmo de apen"
+    "sample": "Deleitar-se nas escrituras\", A Liahona, junho de 1986, p. 2).\n[^27]: Russell M. Nelson, \"[Como seria sua vida sem o Livro de Mórmon?](https://www.churchofjesuschrist."
    },
    {
     "term": "liahona, maio",
@@ -38,7 +38,7 @@
     ],
     "paragraphs": 25,
     "share_of_uncovered": 0.5,
-    "ratio": 71.4,
+    "ratio": 50.0,
     "source": "2022-10-eddy-the-virtue-of-the-word",
     "kind": "talk",
     "sample": "esuschrist.org/study/general-conference/2022/04/47nelson?lang=por&id=p17#p17)\", Liahona, maio de 2022, p. 98).\n[^31]: Ver [Alma 5:11–13](https://www.churchofjesuschrist.org/"

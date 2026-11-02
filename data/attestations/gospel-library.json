@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 2017,
-      "conference": "2017 October General Conference",
-      "talk": "2017-10-stevenson-spiritual-eclipse",
-      "para": 22,
-      "en": "… websites like [LDS.org](https://lds.org) and [Mormon.org](https://mormon.org); mobile apps such as Gospel Library, Mormon Channel, LDS Tools, and Family Tree; and …",
-      "tr": "… [Mormon.org](http://mormon.org); aplicativos para dispositivos móveis, tais como a Biblioteca do Evangelho, o Mormon Channel, as Ferramentas SUD e a …"
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-nelson-becoming-exemplary-latter-day-saints",
+      "para": 12,
+      "en": "… general conference messages online at LDS.org and on the Gospel Library app. They will be printed in the *Ensign* and …",
+      "tr": "… geral online no site LDS.org e no aplicativo Biblioteca do evangelho. Elas serão impressas na revista *Liahona*. As revistas …"
      },
      {
       "kind": "talk",
-      "year": 2025,
-      "conference": "2025 April General Conference",
-      "talk": "2025-04-shumway-participate-to-prepare-for-christs-return",
-      "para": 33,
-      "en": "… 2.0](https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-young-adults/2024/11/13bednar?lang=eng&id=p49#p49)” [worldwide devotional for young adults, Nov. 3, 2024], Gospel Library).\n[^11]: See [Doctrine and Covenants 10:4](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/10?lang=eng&id=p4#p4).\n[^12]: See …",
-      "tr": "… para Jovens Adultos, 3 de novembro de 2024, Biblioteca do Evangelho).\n[^11]: Ver [Doutrina e Convênios 10:4](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/10?lang=por&id=p4#p4).\n[^12]: Ver …"
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+      "para": 23,
+      "en": "… Eternity](https://www.churchofjesuschrist.org/study/ya-weekly/2022/05/choices-for-eternity?lang=eng)” (worldwide devotional for young adults, May 15, 2022), Gospel Library; Russell M. Nelson, “[Children of the Covenant](https://www.churchofjesuschrist.org/study/general-conference/1995/04/children-of-the-covenant?lang=eng),” Ensign, …",
+      "tr": "… os Jovens Adultos, 15 de maio de 2022), Biblioteca do Evangelho; Russell M. Nelson, \"[Filhos do convênio](https://www.churchofjesuschrist.org/study/general-conference/1995/04/children-of-the-covenant?lang=por)\", A Liahona, …"
      },
      {
       "kind": "talk",
       "year": 2026,
-      "conference": "2026 April General Conference",
-      "talk": "2026-04-renlund-because-of-jesus-christ",
-      "para": 21,
-      "en": "… of Life, Living Water,” Hymns for Home and Church, Gospel Library.\n[^37]: “I Will Walk with Jesus,” Hymns for …",
-      "tr": "… — Para o Lar e para a Igreja, Biblioteca do Evangelho.\n[^37]: \"Quero andar com Cristo\", Hinos — Para …"
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-stevenson-fruit-to-make-one-happy",
+      "para": 27,
+      "en": "… (2025), 19.\n[^16]: “Gethsemane,” Hymns for Home and Church, Gospel Library.\n[^17]: [Doctrine and Covenants 130:22](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/130?lang=eng&id=p22#p22).\n[^18]: See [John …",
+      "tr": "… — Para o Lar e para a Igreja, Biblioteca do Evangelho.\n[^17]: [Doutrina e Convênios 130:22](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/130?lang=por&id=p22#p22).\n[^18]: Ver [João …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.75,
-    "ratio": 200.0,
+    "ratio": 272.8,
     "source": "2023-10-daines-sir-we-would-like-to-see-jesus",
     "kind": "talk",
     "sample": "/broadcasts/worldwide-devotional-for-young-adults/2023/01/14holland?lang=por)\", devocional mundial para jovens adultos, 8 de janeiro de 2023, broadcasts.ChurchofJesusChri"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.75,
-    "ratio": 100.0,
+    "ratio": 76.9,
     "source": "2023-10-daines-sir-we-would-like-to-see-jesus",
     "kind": "talk",
     "sample": "](https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-young-adults/2023/01/14holland?lang=por)\", devocional mundial para jovens adultos, 8"
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.75,
-    "ratio": 71.4,
+    "ratio": 61.2,
     "source": "2020-10-holland-the-exquisite-gift-of-the-son",
     "kind": "talk",
     "sample": "ll M. Nelson, \"[Perfeição incompleta](https://www.churchofjesuschrist.org/study/general-conference/1995/10/perfection-pending?lang=por)\", A Liahona, janeiro de 1996, p. 95.\n[^22]"

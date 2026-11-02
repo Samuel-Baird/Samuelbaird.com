@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1994,
-      "conference": "1994 October General Conference",
-      "talk": "1994-10-faust-the-keys-that-never-rust",
-      "para": 5,
-      "en": "… who was then the President of the Quorum of the Twelve Apostles, as follows: “I met Brigham Young in …",
-      "tr": "… com Brigham Young, que era o Presidente do Quórum dos Doze Apóstolos, como se segue: “… Encontrei-me com Brigham …"
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-merrell-power-of-the-church-rooted-in-christ",
+      "para": 6,
+      "en": "… authority of the First Presidency and the Quorum of the Twelve Apostles extend to Christ’s ordained work in all the …",
+      "tr": "… e a autoridade da Primeira Presidência e do Quorum dos Doze Apóstolos estendem-se ao trabalho ordenado por Cristo no mundo …"
      },
      {
       "kind": "talk",
-      "year": 2016,
-      "conference": "2016 October General Conference",
-      "talk": "2016-10-christensen-a-choice-seer-will-i-raise-up",
-      "para": 25,
-      "en": "… First Presidency; and the members of the Quorum of the Twelve Apostles. To their witnesses, I add my humble …",
-      "tr": "… conselheiros na Primeira Presidência e os membros do Quórum dos Doze Apóstolos. Aos seus testemunhos, acrescento o meu humilde, …"
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-renlund-latter-day-saints-keep-on-trying",
+      "para": 19,
+      "en": "… the sermons of the First Presidency and Quorum of the Twelve Apostles is striking. President Dieter F. Uchtdorf made this …",
+      "tr": "… aparece nos discursos da Primeira Presidência e do Quórum dos Doze Apóstolos é impressionante. O Presidente Dieter F. Uchtdorf transmitiu …"
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 April General Conference",
-      "talk": "2026-04-christofferson-solemn-assembly",
-      "para": 16,
-      "en": "Members of the Quorum of the Twelve Apostles will now vote. We invite the Quorum of …",
-      "tr": "Os membros do Quórum dos Doze Apóstolos darão o voto de apoio agora. Pedimos ao …"
+      "talk": "2026-04-larson-church-auditing-department-report-2025",
+      "para": 0,
+      "en": "… the Tithes—composed of the First Presidency, the Quorum of the Twelve Apostles, and the Presiding Bishopric—authorizes the expenditure of …",
+      "tr": "… Disposição dos Dízimos, formado pela Primeira Presidência, pelo Quórum dos Doze Apóstolos e pelo Bispado Presidente, autoriza a utilização dos …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 8,
     "share_of_uncovered": 0.615,
-    "ratio": 43.2,
+    "ratio": 37.9,
     "source": "2011-10-packer-counsel-to-youth",
     "kind": "talk",
     "sample": "como profetas, videntes e reveladores. Cada membro da Primeira Presidência e do Quórum dos Doze possui todas as chaves do sacerdócio necessárias para dirigir a Igreja"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.462,
-    "ratio": 52.8,
+    "ratio": 34.2,
     "source": "2010-10-costa-obedience-to-the-prophets",
     "kind": "talk",
     "sample": "80, quando o Presidente Ezra Taft Benson serviu como presidente do Conselho dos Doze Apóstolos, ele nos passou uma vigorosa mensagem sobre a obediência aos profetas"

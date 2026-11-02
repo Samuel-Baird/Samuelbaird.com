@@ -57,22 +57,10 @@
     ],
     "paragraphs": 10,
     "share_of_uncovered": 0.588,
-    "ratio": 235.4,
+    "ratio": 147.1,
     "source": "2003-04-faust-dear-are-the-sheep-that-have-wandered",
     "kind": "talk",
     "sample": "ança tinha sido gasta”.[^11] A misericórdia não roubará a justiça, e o poder de selamento dos pais fiéis somente terá efeito sobre os filhos rebeldes sob a condição de s"
-   },
-   {
-    "term": "chaves",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 5,
-    "share_of_uncovered": 0.294,
-    "ratio": 29.4,
-    "source": "2003-10-faust-lord-i-believe-help-thou-mine-unbelief",
-    "kind": "talk",
-    "sample": "uito convincente para mim o fato de que nenhuma outra religião alega possuir as chaves para selar o relacionamento familiar para toda a eternidade. O Presidente Hinck"
    },
    {
     "term": "elias",
@@ -81,10 +69,22 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.235,
-    "ratio": 67.2,
+    "ratio": 85.6,
     "source": "1994-10-nelson-the-spirit-of-elijah",
     "kind": "talk",
     "sample": "ncia da restauração da plenitude do evangelho e teve início14 com o espírito de Elias, o Profeta. “Que nós, portanto, como igreja e povo, e como santos dos últimos d"
+   },
+   {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.412,
+    "ratio": 11.0,
+    "source": "1998-04-ballard-marvelous-are-the-revelations-of-the-lord",
+    "kind": "talk",
+    "sample": "os juntos no templo de Kirtland e imaginamos como devia ter sido para o Profeta Joseph e Oliver Cowdery verem por meio da verdade revelada “o refulgente trono de Deus"
    }
   ]
  },

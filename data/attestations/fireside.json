@@ -4,7 +4,7 @@
   "en_paragraphs": 49,
   "en_talks": 47,
   "en_verses": 0,
-  "uncovered_paragraphs": 17,
+  "uncovered_paragraphs": 13,
   "renderings": [
    {
     "term": "serão",
@@ -12,8 +12,8 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 32,
-    "talks": 31,
+    "paragraphs": 36,
+    "talks": 34,
     "verses": 0,
     "first_year": 1990,
     "last_year": 2025,
@@ -21,20 +21,20 @@
      {
       "kind": "talk",
       "year": 1990,
-      "conference": "1990 October General Conference",
-      "talk": "1990-10-oaks-witnesses-of-christ",
-      "para": 35,
-      "en": "… Son of God” (address delivered at LDS Student Association Fireside, Utah State University, 10 Oct. 1971).",
-      "tr": "… era na verdade o Filho de Deus” (Discurso no Serão Domingueiro da Associação de Estudantes SUD, Universidade do Estado de …"
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-cuthbert-the-spirituality-of-service",
+      "para": 4,
+      "en": "… forgets herself in service to others as she gives firesides and helps wherever she can with a cheerful smile and …",
+      "tr": "… esquece de si mesma em benefício dos outros, realizando serões domingueiros e ajudando em tudo o que pode com um …"
      },
      {
       "kind": "talk",
       "year": 2011,
       "conference": "2011 October General Conference",
-      "talk": "2011-10-waddell-the-opportunity-of-a-lifetime",
-      "para": 7,
-      "en": "… elder from Madrid, Spain, all the way to a fireside in Arizona to let him know that he had not …",
-      "tr": "… enviara um élder lá de Madri, Espanha, até um serão no Arizona para que ele soubesse que não tinha sido …"
+      "talk": "2011-10-monson-dare-to-stand-alone",
+      "para": 49,
+      "en": "… *1979 Devotional Speeches of the Year: BYU Devotional and Fireside Addresses* (1980), 59.\n[^5]: Gordon B. Hinckley, in Conference Report, …",
+      "tr": "… Taft Benson, \"In His Steps\" [Seguir Seus Passos] (serão do Sistema Educacional da Igreja, 8 de fevereiro de 1987); …"
      },
      {
       "kind": "talk",
@@ -55,9 +55,9 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 5,
-    "share_of_uncovered": 0.294,
-    "ratio": 1176.8,
+    "paragraphs": 4,
+    "share_of_uncovered": 0.308,
+    "ratio": 1231.1,
     "source": "1991-10-malan-these-are-your-days",
     "kind": "talk",
     "sample": "o de Jesus Cristo, pois tendes uma causa, e a causa é gloriosa!” (Young Women — Fireside, 10 de novembro de 1985.)"
@@ -67,24 +67,24 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 7,
-    "share_of_uncovered": 0.412,
-    "ratio": 54.9,
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 47.3,
     "source": "1991-10-malan-these-are-your-days",
     "kind": "talk",
     "sample": "is do evangelho de Jesus Cristo, pois tendes uma causa, e a causa é gloriosa!” (Young Women — Fireside, 10 de novembro de 1985.)"
    },
    {
-    "term": "speeches",
+    "term": "brigham",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 5,
-    "share_of_uncovered": 0.294,
-    "ratio": 168.1,
+    "share_of_uncovered": 0.385,
+    "ratio": 51.3,
     "source": "1993-10-oaks-the-great-plan-of-happiness",
     "kind": "talk",
-    "sample": "ou, What Would I Do?” *Brigham Young University 1983-84 Fireside and Devotional Speeches,* Provo, Utah: University Publications, 1984, p. 11)."
+    "sample": "r resolvida entre o homem, a mulher e Deus” (“If I Were You, What Would I Do?” *Brigham Young University 1983-84 Fireside and Devotional Speeches,* Provo, Utah: Univer"
    }
   ]
  },

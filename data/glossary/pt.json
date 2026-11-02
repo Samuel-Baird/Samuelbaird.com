@@ -671,7 +671,7 @@
    "preferred": "revelação contínua",
    "confidence": "attested",
    "variants": [],
-   "uses": 22
+   "uses": 23
   },
   {
    "id": "concept.convert-baptism",
@@ -803,7 +803,7 @@
    "preferred": "ação disciplinar",
    "confidence": "attested",
    "variants": [],
-   "uses": 1
+   "uses": 2
   },
   {
    "id": "concept.disciplinary-council",
@@ -851,7 +851,7 @@
    "preferred": "dispensação",
    "confidence": "attested",
    "variants": [],
-   "uses": 278
+   "uses": 315
   },
   {
    "id": "concept.district-leader",
@@ -1163,7 +1163,7 @@
    "preferred": "serão",
    "confidence": "attested",
    "variants": [],
-   "uses": 32
+   "uses": 36
   },
   {
    "id": "concept.first-presidency",
@@ -1859,7 +1859,7 @@
    "preferred": "recomendação de uso limitado",
    "confidence": "attested",
    "variants": [],
-   "uses": 4
+   "uses": 5
   },
   {
    "id": "concept.line-of-authority",
@@ -2003,7 +2003,7 @@
    "preferred": "designação de ministração",
    "confidence": "attested",
    "variants": [],
-   "uses": 2
+   "uses": 6
   },
   {
    "id": "concept.ministering-brother",
@@ -2580,7 +2580,7 @@
    "preferred": "sessão do sacerdócio",
    "confidence": "attested",
    "variants": [],
-   "uses": 24
+   "uses": 25
   },
   {
    "id": "concept.priesthood",
@@ -2688,7 +2688,7 @@
    "preferred": "reunião do quórum",
    "confidence": "attested",
    "variants": [],
-   "uses": 7
+   "uses": 10
   },
   {
    "id": "concept.quorum-of-the-twelve-apostles",
@@ -2796,7 +2796,7 @@
    "preferred": "desobrigação",
    "confidence": "attested",
    "variants": [],
-   "uses": 29
+   "uses": 34
   },
   {
    "id": "concept.relief-society-meeting",
@@ -2868,7 +2868,7 @@
    "preferred": "Restauração",
    "confidence": "attested",
    "variants": [],
-   "uses": 662
+   "uses": 663
   },
   {
    "id": "concept.restored-church-of-jesus-christ",
@@ -2916,7 +2916,7 @@
    "preferred": "nova geração",
    "confidence": "attested",
    "variants": [],
-   "uses": 98
+   "uses": 108
   },
   {
    "id": "concept.robes-of-the-holy-priesthood",
@@ -3120,7 +3120,7 @@
    "preferred": "designação",
    "confidence": "attested",
    "variants": [],
-   "uses": 5
+   "uses": 6
   },
   {
    "id": "concept.seventy",
@@ -3600,7 +3600,7 @@
    "preferred": "recomendação para o templo",
    "confidence": "attested",
    "variants": [],
-   "uses": 85
+   "uses": 88
   },
   {
    "id": "concept.temple-worker",
@@ -3660,7 +3660,7 @@
    "preferred": "reunião de testemunhos",
    "confidence": "attested",
    "variants": [],
-   "uses": 4
+   "uses": 5
   },
   {
    "id": "concept.the-church-of-jesus-christ-of-latter-day-saints",

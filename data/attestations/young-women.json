@@ -29,20 +29,20 @@
      {
       "kind": "talk",
       "year": 1990,
-      "conference": "1990 October General Conference",
-      "talk": "1990-10-curtis-happiness-is-homemade",
-      "para": 12,
-      "en": "… Mothers and daughters should be active in Relief Society, Young Women, or Primary. Sister Curtis and I often reminisce …",
-      "tr": "… ser ativas na Sociedade de Socorro, na Organização das Moças ou Primária. A irmã Curtis e eu sempre nos lembramos …"
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-jack-i-will-go-and-do",
+      "para": 4,
+      "en": "… of vision, called by the Lord to lead the Young Women around the world at a most critical time. She …",
+      "tr": "… que eu cresça. Servi com alegria como conselheira das Moças."
      },
      {
       "kind": "talk",
-      "year": 2011,
-      "conference": "2011 April General Conference",
-      "talk": "2011-04-eyring-a-living-testimony",
-      "para": 11,
-      "en": "He then created an association of young women that has become what we now call in the …",
-      "tr": "… na Igreja do Senhor chamamos de organização das “Moças”. Vocês sentiram hoje alguns dos maravilhosos efeitos da decisão …"
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-ballard-be-anxiously-engaged",
+      "para": 28,
+      "en": "… you boys and girls, you young men and you young women, you single adults, and you fathers and mothers.",
+      "tr": "… Igreja, inclusive vocês, meninos e meninas, vocês, rapazes e moças, vocês, adultos solteiros, e vocês, pais e mães."
      }
     ],
     "share": 1.0
@@ -56,7 +56,7 @@
     ],
     "paragraphs": 76,
     "share_of_uncovered": 0.809,
-    "ratio": 30.8,
+    "ratio": 30.5,
     "source": "1991-10-ballard-be-an-example-of-the-believers",
     "kind": "talk",
     "sample": "Jovens e mulheres fiéis, que recentemente se uniram à Igreja, já estão participando de"
@@ -68,7 +68,7 @@
     ],
     "paragraphs": 19,
     "share_of_uncovered": 0.202,
-    "ratio": 10.0,
+    "ratio": 9.5,
     "source": "1991-10-ballard-be-an-example-of-the-believers",
     "kind": "talk",
     "sample": "Jovens e mulheres fiéis, que recentemente se uniram à Igreja, já estão participando desse trabalh"

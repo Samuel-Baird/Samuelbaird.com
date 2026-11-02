@@ -22,19 +22,19 @@
       "kind": "talk",
       "year": 1991,
       "conference": "1991 April General Conference",
-      "talk": "1991-04-tingey-redemption-of-the-dead",
-      "para": 17,
-      "en": "… homes, will soon allow members to go to their meetinghouses to clear names for temple work rather than waiting for …",
-      "tr": "… nomes para as ordenanças no templo em suas próprias capelas, em vez de esperar a aprovação dos escritórios centrais."
+      "talk": "1991-04-haight-linking-the-family-of-man",
+      "para": 36,
+      "en": "… Saints will be able to go to a Church meetinghouse near their homes and unlock the secrets of their ancestry.",
+      "tr": "… Londres, Inglaterra — os santos poderão ir a uma capela da Igreja, perto de sua casa, e desvendar os segredos …"
      },
      {
       "kind": "talk",
       "year": 2016,
-      "conference": "2016 October General Conference",
-      "talk": "2016-10-davies-the-blessings-of-worship",
-      "para": 51,
-      "en": "… began as a normal Sunday morning, in that normal meetinghouse, in that normal stake, even today I am moved …",
-      "tr": "… que começou como uma manhã de domingo normal, naquela capela normal, naquela estaca normal, mesmo hoje, sinto-me inspirado pela extraordinária …"
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-stevenson-where-are-the-keys-and-authority-of-the-priesthood",
+      "para": 7,
+      "en": "… parents; and a visitors’ center incorporated into a new meetinghouse, comprise the new Priesthood Restoration Site, dedicated by President …",
+      "tr": "… e o centro de visitantes, incorporados a uma nova capela, formam o Local da Restauração do Sacerdócio, dedicado pelo …"
      },
      {
       "kind": "talk",
@@ -51,28 +51,28 @@
   ],
   "inferred": [
    {
-    "term": "passava",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 2,
-    "share_of_uncovered": 0.333,
-    "ratio": 444.6,
-    "source": "2011-10-uchtdorf-you-matter-to-him",
-    "kind": "talk",
-    "sample": "istia a meu treinamento de pilotos e estudava o máximo que podia e, em seguida, passava a maior parte do meu tempo livre trabalhando no novo prédio. Lá eu aprendi que"
-   },
-   {
     "term": "estaca",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.5,
-    "ratio": 46.5,
+    "ratio": 36.4,
     "source": "1991-04-haight-linking-the-family-of-man",
     "kind": "talk",
     "sample": "do e com as centenas de centros de história da fámília localizados nas sedes de estaca e nas alas, espalhados por toda a terra, como posso desvendar os segredos escon"
+   },
+   {
+    "term": "passava",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 190.5,
+    "source": "2011-10-uchtdorf-you-matter-to-him",
+    "kind": "talk",
+    "sample": "istia a meu treinamento de pilotos e estudava o máximo que podia e, em seguida, passava a maior parte do meu tempo livre trabalhando no novo prédio. Lá eu aprendi que"
    },
    {
     "term": "houve",

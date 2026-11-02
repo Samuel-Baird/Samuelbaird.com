@@ -29,27 +29,39 @@
      },
      {
       "kind": "talk",
-      "year": 2009,
-      "conference": "2009 October General Conference",
-      "talk": "2009-10-matsumori-helping-others-recognize-the-whisperings-of-the-spirit",
-      "para": 5,
-      "en": "… in a classroom, a missionary discussion, or a family home evening, teaching the doctrine regarding the Holy Ghost can …",
-      "tr": "… sala de aula, durante uma palestra missionária ou numa noite familiar, o ensino da doutrina relativa ao Espírito Santo …"
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-beck-what-latter-day-saint-women-do-best-stand-strong-and-immovable",
+      "para": 15,
+      "en": "… family had family prayer daily and had a family home evening once a week, we would be stronger. If every …",
+      "tr": "… família fizesse a oração familiar diariamente e realizasse a noite familiar uma vez por semana, seríamos mais fortes. Se toda …"
      },
      {
       "kind": "talk",
       "year": 2023,
       "conference": "2023 October General Conference",
-      "talk": "2023-10-godoy-for-the-sake-of-your-posterity",
-      "para": 5,
-      "en": "… the Church. He had fond memories of sweet family home evening moments and some Primary songs. He then softly sang …",
-      "tr": "… membros ativos da Igreja. Ele tinha boas lembranças de noites familiares em sua casa e de algumas músicas da Primária. …"
+      "talk": "2023-10-wright-abide-the-day-in-christ",
+      "para": 23,
+      "en": "In that moment every family home evening lesson, scripture study session, prayer of faith offered, blessing …",
+      "tr": "Naquele momento, todas as lições nas noites familiares, o estudo das escrituras, as orações feitas com …"
      }
     ],
     "share": 1.0
    }
   ],
   "inferred": [
+   {
+    "term": "reunião familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.429,
+    "ratio": 1714.7,
+    "source": "2007-04-tanner-daughters-of-heavenly-father",
+    "kind": "talk",
+    "sample": "Nosso genro disse à filha Eliza, de três anos, que eles teriam na reunião familiar uma lição sobre um tema muito especial. Ela abriu um grande sorriso e tentou ad"
+   },
    {
     "term": "reuniões familiares",
     "evidence": [
@@ -63,25 +75,13 @@
     "sample": "rimária e guardar o dia do Senhor. Na verdade os blocos mais importantes são as reuniões familiares, respeitar e honrar o sacerdócio, e as orações familiares."
    },
    {
-    "term": "reunião familiar",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 9,
-    "share_of_uncovered": 0.429,
-    "ratio": 571.6,
-    "source": "2007-04-tanner-daughters-of-heavenly-father",
-    "kind": "talk",
-    "sample": "Nosso genro disse à filha Eliza, de três anos, que eles teriam na reunião familiar uma lição sobre um tema muito especial. Ela abriu um grande sorriso e tentou ad"
-   },
-   {
     "term": "lar",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 8,
     "share_of_uncovered": 0.381,
-    "ratio": 20.3,
+    "ratio": 20.9,
     "source": "1991-10-ballard-be-an-example-of-the-believers",
     "kind": "talk",
     "sample": "garantindo que todos estejam no lugar certo na hora certa. Tudo isso fazeis no lar. Fico cansado só de mencionar tantas atividades, sem falar na reunião de pais e"

@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1991,
-      "conference": "1991 April General Conference",
-      "talk": "1991-04-oaks-honour-thy-father-and-thy-mother",
-      "para": 0,
-      "en": "… They are still doing so. Stake, ward, quorum, and Relief Society leaders acted and are still acting in the best …",
-      "tr": "… trabalho continua. Líderes de estaca, ala, quorum, e Sociedade de Socorro atuaram e continuam atuando nas melhores tradições do serviço …"
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-winder-instruments-to-accomplish-his-purposes",
+      "para": 7,
+      "en": "The harvest of work accomplished: The work of Relief Society is focused on the pure and simple part of …",
+      "tr": "A colheita de trabalho realizado: O trabalho da Sociedade de Socorro está centralizado na parte pura e simples do evangelho, …"
      },
      {
       "kind": "talk",
-      "year": 2010,
-      "conference": "2010 October General Conference",
-      "talk": "2010-10-beck-daughters-in-my-kingdom-the-history-and-work-of-relief-society",
-      "para": 30,
-      "en": "… them toward the temple and their future responsibilities. In Relief Society they continue to progress toward the blessings of the …",
-      "tr": "… para o templo e para suas responsabilidades futuras.Na Sociedade de Socorro elas continuam a progredir rumo às bênçãos do templo …"
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-beck-relief-society-a-sacred-work",
+      "para": 49,
+      "en": "… of growth in the history of the Church, and Relief Society is part of making that history. Joseph Smith said, …",
+      "tr": "… de crescimento na história da Igreja, e a Sociedade de Socorro também escreve essa história. Joseph Smith disse: “Que todo …"
      },
      {
       "kind": "talk",
-      "year": 2022,
-      "conference": "2022 April General Conference",
-      "talk": "2022-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
-      "para": 16,
-      "en": "We have extended releases to the Relief Society General Presidency to be effective on August 1, 2022, …",
-      "tr": "Desobrigamos a presidência geral da Sociedade de Socorro, entrando em vigor a partir de 1º de …"
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-eubank-by-union-of-feeling-we-obtain-power-with-god",
+      "para": 32,
+      "en": "Relief Society and Young Women are not simply classes. They can …",
+      "tr": "A Sociedade de Socorro e as Moças não são apenas classes. Elas podem …"
      }
     ],
     "share": 1.0
@@ -51,40 +51,40 @@
   ],
   "inferred": [
    {
-    "term": "society",
+    "term": "relief society",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 17,
     "share_of_uncovered": 0.436,
-    "ratio": 581.3,
+    "ratio": 348.8,
     "source": "1992-04-oaks-the-relief-society-and-the-church",
     "kind": "talk",
-    "sample": "e dizia respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “Embora a"
+    "sample": "ente que dizia respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “Embora a"
    },
    {
-    "term": "relief",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 17,
-    "share_of_uncovered": 0.436,
-    "ratio": 581.3,
-    "source": "1992-04-oaks-the-relief-society-and-the-church",
-    "kind": "talk",
-    "sample": "ente que dizia respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “"
-   },
-   {
-    "term": "magazine",
+    "term": "society magazine",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 9,
     "share_of_uncovered": 0.231,
-    "ratio": 184.7,
+    "ratio": 307.8,
     "source": "1992-04-oaks-the-relief-society-and-the-church",
     "kind": "talk",
-    "sample": "respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “Embora as irmãs n"
+    "sample": "e dizia respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “Embora as irmãs n"
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.385,
+    "ratio": 19.2,
+    "source": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+    "kind": "talk",
+    "sample": "ay Derr, Jonath Russell Cannon. Maureen Ursenbach Beecher, *Women of Covenants: The Story of Relief Society *(Salt Lake City Deseret Book Co, 1992), p. 47.\n[^2]: I"
    }
   ]
  },

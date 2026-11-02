@@ -23,27 +23,27 @@
       "year": 1990,
       "conference": "1990 April General Conference",
       "talk": "1990-04-hinckley-keeping-the-temple-holy",
-      "para": 33,
-      "en": "Likewise, unless there is loyalty toward the bishop and stake president on a local level, there will be an absence …",
-      "tr": "… que exista lealdade para com o bispo e presidente de estaca em âmbito local, haverá ausência de harmonia, haverá suspeita …"
+      "para": 16,
+      "en": "… primarily and inescapably upon the shoulders of bishops and stake presidents. They become the judges of worthiness concerning those …",
+      "tr": "… obrigação cabe primordial e obrigatoriamente aos bispos e presidentes de estaca. Eles tornam-se os juízes da elegibilidade dos que …"
      },
      {
       "kind": "talk",
-      "year": 2013,
-      "conference": "2013 April General Conference",
-      "talk": "2013-04-andersen-its-a-miracle",
-      "para": 13,
-      "en": "… visited their doctors, been interviewed by their bishops and stake presidents, and submitted their missionary applications—all in just five …",
-      "tr": "… o médico, sido entrevistados pelo bispo e pelo presidente de estaca e enviado seus papéis para a missão — tudo …"
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-nelson-a-plea-to-my-sisters",
+      "para": 28,
+      "en": "… In 1964 President Kimball set me apart as a stake president and blessed me that the mortality rates would decline …",
+      "tr": "… Observação: Em 1964, o Presidente Kimball designou-me como presidente de estaca e abençoou-me para que o índice de mortalidade diminuísse …"
      },
      {
       "kind": "talk",
       "year": 2026,
-      "conference": "2026 April General Conference",
-      "talk": "2026-04-wakolo-come-unto-christtogether",
-      "para": 24,
-      "en": "… today, extended the call for me to serve as stake president while he was serving as Area President.",
-      "tr": "… fez o chamado para que eu servisse como presidente de estaca."
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-kearon-jesus-lives-to-lift",
+      "para": 52,
+      "en": "“I say to all of you, as that wise stake president said to this young man, seek friends and associates …",
+      "tr": "Digo a todos vocês, como aquele sábio presidente de estaca disse a esse rapaz: procurem amigos e colegas que …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 91,
     "share_of_uncovered": 0.938,
-    "ratio": 87.3,
+    "ratio": 68.2,
     "source": "1990-10-hinckley-in-counsellors-there-is-safety",
     "kind": "talk",
     "sample": "do sacerdócio: Como conselheiro de uma superintendência da Escola Dominical da estaca, como era chamada, antes de me tornar seu superintendente. Como conselheiro na"
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 21,
     "share_of_uncovered": 0.216,
-    "ratio": 18.8,
+    "ratio": 17.3,
     "source": "1994-10-haight-solemn-assemblies",
     "kind": "talk",
     "sample": "Em fevereiro de 1950, o bispo Howard W. Hunter foi chamado como novo presidente da Estaca Pasadena Califórnia"

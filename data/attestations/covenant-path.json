@@ -55,12 +55,12 @@
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 246,
-    "share_of_uncovered": 0.984,
-    "ratio": 53.2,
-    "source": "2013-04-cook-when-you-save-a-girl-you-save-generations",
+    "paragraphs": 247,
+    "share_of_uncovered": 0.988,
+    "ratio": 42.1,
+    "source": "2026-04-rowe-choose-jesus-christ-as-your-guide",
     "kind": "talk",
-    "sample": "Seu caminho de convênios teve início no momento em que foram batizadas e receberam o dom do Espírito Sa"
+    "sample": "caminhos na vida sejam singulares, cada um deles deve fazer parte do caminho do convênio. Pois esse é o caminho de Cristo. Entramos nesse caminho e nos conectamos a Jes"
    },
    {
     "term": "caminho",
@@ -69,10 +69,10 @@
     ],
     "paragraphs": 250,
     "share_of_uncovered": 1.0,
-    "ratio": 25.0,
-    "source": "2013-04-cook-when-you-save-a-girl-you-save-generations",
+    "ratio": 26.2,
+    "source": "2026-04-rowe-choose-jesus-christ-as-your-guide",
     "kind": "talk",
-    "sample": "Seu caminho de convênios teve início no momento em que foram batizadas e receberam o dom do"
+    "sample": "Embora nossos caminhos na vida sejam singulares, cada um deles deve fazer parte do caminho do convêni"
    }
   ]
  },

@@ -4,7 +4,7 @@
   "en_paragraphs": 36,
   "en_talks": 30,
   "en_verses": 0,
-  "uncovered_paragraphs": 12,
+  "uncovered_paragraphs": 11,
   "renderings": [
    {
     "term": "sessão do sacerdócio",
@@ -12,7 +12,7 @@
     "evidence": [
      "attested"
     ],
-    "paragraphs": 24,
+    "paragraphs": 25,
     "talks": 19,
     "verses": 0,
     "first_year": 1991,
@@ -29,12 +29,12 @@
      },
      {
       "kind": "talk",
-      "year": 2010,
-      "conference": "2010 October General Conference",
-      "talk": "2010-10-uchtdorf-pride-and-the-priesthood",
-      "para": 0,
-      "en": "… you for assembling all around the world for this priesthood session of general conference. Your presence shows your commitment to …",
-      "tr": "… obrigado por reunirem-se no mundo inteiro para esta sessão do sacerdócio da conferência geral. Sua presença mostra seu compromisso de …"
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-perry-raising-the-bar",
+      "para": 31,
+      "en": "… this will be your desire as you leave this priesthood session of general conference and start now to prepare yourself …",
+      "tr": "… esse seja o seu desejo, ao saírem desta sessão do sacerdócio da conferência geral, e que comecem agora a se …"
      },
      {
       "kind": "talk",
@@ -56,23 +56,23 @@
      "inferred"
     ],
     "paragraphs": 7,
-    "share_of_uncovered": 0.583,
-    "ratio": 2333.9,
+    "share_of_uncovered": 0.636,
+    "ratio": 1273.0,
     "source": "2010-04-ballard-mothers-and-daughters",
     "kind": "talk",
     "sample": "Irmãos e irmãs, há seis meses, falei na sessão geral do sacerdócio da conferência geral para os pais e os filhos. Como era de se esp"
    },
    {
-    "term": "portadores",
+    "term": "conferência",
     "evidence": [
      "inferred"
     ],
-    "paragraphs": 4,
-    "share_of_uncovered": 0.333,
-    "ratio": 58.0,
-    "source": "2005-10-johnson-the-blessings-of-general-conference",
+    "paragraphs": 5,
+    "share_of_uncovered": 0.455,
+    "ratio": 18.2,
+    "source": "2010-04-ballard-mothers-and-daughters",
     "kind": "talk",
-    "sample": "ença em minha vida hoje. Sei que elas têm influenciado meus filhos e milhões de portadores do Sacerdócio Aarônico no mundo todo."
+    "sample": "Irmãos e irmãs, há seis meses, falei na sessão geral do sacerdócio da conferência geral para os pais e os filhos. Como era de se esperar, minhas cinco filhas, 24"
    },
    {
     "term": "liahona*, maio",
@@ -80,8 +80,8 @@
      "inferred"
     ],
     "paragraphs": 4,
-    "share_of_uncovered": 0.333,
-    "ratio": 47.6,
+    "share_of_uncovered": 0.364,
+    "ratio": 36.4,
     "source": "2014-04-andersen-spiritual-whirlwinds",
     "kind": "talk",
     "sample": "1954, p. 72.\n[^3]: Ver Dallin H. Oaks, \"A Preparação para a Segunda Vinda\", *A Liahona*, maio de 2004, p. 7.\n[^4]: Ver A. Stokes, A. H. Fitter, and M. P. Coutts, \"Responses"

@@ -20,30 +20,30 @@
     "snippets": [
      {
       "kind": "talk",
-      "year": 1999,
-      "conference": "1999 October General Conference",
-      "talk": "1999-10-oaks-gospel-teaching",
-      "para": 26,
-      "en": "… Sundays of each month is the *Teachings of Presidents of the Church.* During the last two years we …",
-      "tr": "… da Igreja estão tendo aulas sobre os Ensinamentos dos Presidentes da Igreja. Nos últimos dois anos, temos estudado os …"
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-bednar-that-we-may-always-have-his-spirit-to-be-with-us",
+      "para": 32,
+      "en": "… the fruits of the kingdom” (see *Teachings of Presidents of the Church: Brigham Young* [1997], 41; emphasis added). …",
+      "tr": "… produzir os frutos do Reino” (ver *Ensinamentos dos Presidentes da Igreja: Brigham Young:*1997, p. 41, grifo do autor). …"
      },
      {
       "kind": "talk",
-      "year": 2018,
-      "conference": "2018 April General Conference",
-      "talk": "2018-04-oaks-the-powers-of-the-priesthood",
-      "para": 34,
-      "en": "[^1]: *[Teachings of Presidents of the Church: Joseph F. Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-f-smith/chapter-38?lang=eng)* (1998), 343.\n[^2]: …",
-      "tr": "[^1]: *[Ensinamentos dos Presidentes da Igreja: Joseph F. Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-f-smith/chapter-38?lang=por)*, 1998, p. 343.\n[^2]: …"
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-pingree-i-have-a-work-for-thee",
+      "para": 46,
+      "en": "… child of God, of infinite capacity” (*[Teachings of Presidents of the Church: Gordon B. Hinckley](https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-gordon-b-hinckley/chapter-3-cultivating-an-attitude-of-happiness-and-a-spirit-of-optimism?lang=eng)* [2016], 77).\n[^4]: …",
+      "tr": "… filhos de Deus, com capacidade infinita\" (*[Ensinamentos dos Presidentes da Igreja: Gordon B. Hinckley](https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-gordon-b-hinckley/chapter-3-cultivating-an-attitude-of-happiness-and-a-spirit-of-optimism?lang=por)*, 2016, p. 80).\n[^4]: …"
      },
      {
       "kind": "talk",
       "year": 2026,
       "conference": "2026 October General Conference",
-      "talk": "2026-10-soares-a-higher-and-holier-fast",
-      "para": 17,
-      "en": "… Saints, [38.8.17](https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng&id=title_number151-p2389#title_number151).\n[^6]: [Isaiah 58:6](https://www.churchofjesuschrist.org/study/scriptures/ot/isa/58?lang=eng&id=p6#p6).\n[^7]: [Teachings of Presidents of the Church: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-37?lang=eng&id=p12#p12) (2007), 426.\n[^8]: [Alma …",
-      "tr": "… item 38.8.17.\n[^6]: [Isaías 58:6](https://www.churchofjesuschrist.org/study/scriptures/ot/isa/58?lang=por&id=p6#p6).\n[^7]: [Ensinamentos dos Presidentes da Igreja: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-37?lang=por&id=p12#p12), 2007, p. 449.\n[^8]: [Alma …"
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 42,
+      "en": "… Covenants 68:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng&id=p6#p6).\n[^2]: [Acts 1:8](https://www.churchofjesuschrist.org/study/scriptures/nt/acts/1?lang=eng&id=p8#p8).\n[^3]: [Teachings of Presidents of the Church: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-3?lang=eng&id=p18#p18) (2007), 49.\n[^4]: [Doctrine …",
+      "tr": "… Convênios 68:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=por&id=p6#p6).\n[^2]: [Atos 1:8](https://www.churchofjesuschrist.org/study/scriptures/nt/acts/1?lang=por&id=p8#p8).\n[^3]: [Ensinamentos dos Presidentes da Igreja: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-3?lang=por&id=p18#p18), 2007, p. 52.\n[^4]: [Doutrina …"
      }
     ],
     "share": 1.0
@@ -57,7 +57,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 1.0,
-    "ratio": 114.3,
+    "ratio": 85.1,
     "source": "2010-04-beck-and-upon-the-handmaids-in-those-days-will-i-pour-out-my-spirit",
     "kind": "talk",
     "sample": "el 2:28–29.\n[^11]: Spencer W. Kimball, \"The Role of Righteous Women\", *Ensign,* novembro de 1979, pp. 103–104."
@@ -69,7 +69,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 1.0,
-    "ratio": 67.8,
+    "ratio": 69.0,
     "source": "2010-04-beck-and-upon-the-handmaids-in-those-days-will-i-pour-out-my-spirit",
     "kind": "talk",
     "sample": "[^1]: Ver Jacó 2:17; Mosias 4:26; Doutrina e Convênios 38:35; 44:6.\n[^2]: Ver Doutrina e Convênios 20:77.\n["
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 3,
     "share_of_uncovered": 0.75,
-    "ratio": 214.3,
+    "ratio": 250.1,
     "source": "2011-04-burton-the-sanctifying-work-of-welfare",
     "kind": "talk",
     "sample": "^2]: J. Reuben Clark Jr., \"Testimony of Divine Origin of Welfare Plan,\" *Church News,* 8 de agosto de 1951, p. 15; ver também Glen L. Rudd, *Pure Religion*, 1995, p"

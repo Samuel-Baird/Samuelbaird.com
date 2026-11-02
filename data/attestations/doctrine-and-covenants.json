@@ -38,11 +38,11 @@
      {
       "kind": "talk",
       "year": 2018,
-      "conference": "2018 October General Conference",
-      "talk": "2018-10-davies-come-listen-to-a-prophets-voice",
-      "para": 19,
-      "en": "… will not accept it at their hands” ([Doctrine and Covenants 115:14–15](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/115?lang=eng&id=p14-p15#p14)).",
-      "tr": "… presidência, não a aceitarei de suas mãos” ([Doutrina e Convênios 115:14–15](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/115?lang=por&id=p14-p15#p14))."
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-jergensen-church-auditing-department-report-2017",
+      "para": 0,
+      "en": "… directed by revelation in [section 120 of the Doctrine and Covenants](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=eng), the Council on the Disposition of the Tithes—composed …",
+      "tr": "… conforme ordenado por revelação na [seção 120 de Doutrina e Convênios](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=por), o Conselho de Disposição dos Dízimos, formado pela …"
      }
     ],
     "share": 1.0
@@ -50,13 +50,25 @@
   ],
   "inferred": [
    {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.368,
+    "ratio": 9.8,
+    "source": "1990-10-ayala-the-word-of-wisdom",
+    "kind": "talk",
+    "sample": "/scriptures/dc-testament/dc/89?lang=por&id=p8#p8)). Esta revelação recebida por Joseph Smith em fevereiro de 1833, foi motivo de muita controvérsia. Naqueles primeiro"
+   },
+   {
     "term": "testament",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.316,
-    "ratio": 12.5,
+    "ratio": 12.6,
     "source": "1990-10-ayala-the-word-of-wisdom",
     "kind": "talk",
     "sample": "ra o homem” ([D&C 89:8](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/89?lang=por&id=p8#p8)). Esta revelação recebida por Joseph Smith em fevereir"
@@ -68,22 +80,10 @@
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.316,
-    "ratio": 8.7,
+    "ratio": 9.3,
     "source": "1990-10-ayala-the-word-of-wisdom",
     "kind": "talk",
     "sample": "ures/dc-testament/dc/89?lang=por&id=p8#p8)). Esta revelação recebida por Joseph Smith em fevereiro de 1833, foi motivo de muita controvérsia. Naqueles primeiros temp"
-   },
-   {
-    "term": "the",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 4,
-    "share_of_uncovered": 0.211,
-    "ratio": 11.5,
-    "source": "1993-04-sorensen-prayer",
-    "kind": "talk",
-    "sample": "ção da fé é o segredo da força da Igreja”. (Hyrum M. Smith e Janne M. Sjodahl, *The Doctrine and Covenants Commentary,* rev. ed., Salt Lake City: Deseret Book Co."
    }
   ]
  },

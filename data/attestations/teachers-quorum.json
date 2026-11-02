@@ -51,28 +51,28 @@
   ],
   "inferred": [
    {
-    "term": "quórum",
-    "evidence": [
-     "inferred"
-    ],
-    "paragraphs": 8,
-    "share_of_uncovered": 1.0,
-    "ratio": 70.2,
-    "source": "2001-10-monson-duty-calls",
-    "kind": "talk",
-    "sample": "dial, quando eu era adolescente, tive o privilégio de servir como presidente do quórum dos mestres. Pediram-me que aprendesse e depois aplicasse o conselho que se enc"
-   },
-   {
     "term": "mestres",
     "evidence": [
      "inferred"
     ],
     "paragraphs": 6,
     "share_of_uncovered": 0.75,
-    "ratio": 176.5,
+    "ratio": 272.8,
     "source": "2001-10-monson-duty-calls",
     "kind": "talk",
     "sample": "o eu era adolescente, tive o privilégio de servir como presidente do quórum dos mestres. Pediram-me que aprendesse e depois aplicasse o conselho que se encontra em [Do"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 1.0,
+    "ratio": 61.6,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "dial, quando eu era adolescente, tive o privilégio de servir como presidente do quórum dos mestres. Pediram-me que aprendesse e depois aplicasse o conselho que se enc"
    },
    {
     "term": "diáconos",
@@ -81,7 +81,7 @@
     ],
     "paragraphs": 4,
     "share_of_uncovered": 0.5,
-    "ratio": 250.1,
+    "ratio": 222.3,
     "source": "2006-10-eyring-a-priesthood-quorum",
     "kind": "talk",
     "sample": "scar a união no quórum. Por exemplo, isso até modificará o modo de um quórum de diáconos jogar basquete. A meta dos membros será aumentar o entrosamento mais do que ape"
