@@ -62,9 +62,37 @@ def hl(text, term, lang):
     return E(text[:m.start()]) + "<mark>" + E(text[m.start():m.end()]) + "</mark>" + E(text[m.end():])
 
 
+_ICONS = {
+    "home": '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
+    "variants": '<path d="M7 4v13"/><path d="M3 8l4-4 4 4"/><path d="M17 20V7"/><path d="M13 16l4 4 4-4"/>',
+    "ai": '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+    "about": '<circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.5v.01"/>',
+    "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    "heart": '<path d="M12 20s-8-5-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 9c0 6-8 11-8 11z"/>',
+    "code": '<path d="M8 8l-5 4 5 4"/><path d="M16 8l5 4-5 4"/><path d="M14 5l-4 14"/>',
+    "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+    "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
+}
+
+
+def icon(name):
+    return ('<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{_ICONS[name]}</svg>')
+
+
+def _link(href, label, ic, current, ext=False):
+    cur = ' aria-current="page"' if href == current else ""
+    tgt = ' target="_blank" rel="noopener"' if ext else ""
+    return f'<a href="{href}"{cur}{tgt}>{icon(ic)}<span>{label}</span></a>'
+
+
 def page(title, body, desc, path="", current=""):
-    nav = [("/", "Atlas"), ("/variants", "Variants"), ("/connect", "Connect"), ("/donate", "Donate"), ("/about", "Method & data")]
-    links = "".join(f'<a href="{h}"{" aria-current=page" if h == current else ""}>{n}</a>' for h, n in nav)
+    top = [("/", "Atlas", "home"), ("/variants", "Variants", "variants")]
+    low = [("/connect", "Use with AI", "ai"), ("/about", "Method &amp; data", "about"),
+           ("mailto:ithinksamofficial@gmail.com?subject=Urim", "Contact", "mail"), ("/donate", "Donate", "heart")]
+    top_html = "".join(_link(h, n, i, current) for h, n, i in top)
+    low_html = "".join(_link(h, n, i, current) for h, n, i in low)
+    gh = _link("https://github.com/Samuel-Baird/urim", "Source", "code", current, ext=True)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -89,14 +117,26 @@ def page(title, body, desc, path="", current=""):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><div class="rail">
+<header class="mobilebar">
   <a class="wordmark" href="/" aria-label="Urim, home"><span class="mono" aria-hidden="true">U</span>Urim</a>
-  <nav class="nav" aria-label="Main">{links}</nav>
-</div></header>
+  <button type="button" class="menubtn" id="menubtn" aria-expanded="false" aria-controls="sidebar" aria-label="Menu">{icon("menu")}</button>
+</header>
+<div class="shell">
+<aside class="sidebar" id="sidebar">
+  <a class="wordmark" href="/" aria-label="Urim, home"><span class="mono" aria-hidden="true">U</span>Urim</a>
+  <form class="side-search" action="/" method="get" role="search">{icon("search")}<input type="search" name="q" placeholder="Search&hellip;" aria-label="Search terms" autocomplete="off"></form>
+  <nav class="side-nav" aria-label="Main">{top_html}</nav>
+  <nav class="side-nav lower" aria-label="More">{low_html}</nav>
+  <nav class="side-nav last" aria-label="Source">{gh}</nav>
+</aside>
+<div class="content">
 <main id="main" class="rail">
 {body}
 </main>
-<footer><div class="rail">Urim is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.<br><a href="/connect">Connect</a> &middot; <a href="/donate">Donate</a> &middot; <a href="https://github.com/Samuel-Baird/urim">GitHub</a></div></footer>
+<footer><div class="rail">Urim is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.</div></footer>
+</div>
+</div>
+<script src="/nav.js" defer></script>
 </body>
 </html>
 """

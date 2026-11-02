@@ -3,6 +3,7 @@
   var q = document.getElementById('q'), out = document.getElementById('results');
   if (!q || !out) return;
   var data = [];
+  try { var pre = new URLSearchParams(location.search).get('q'); if (pre) q.value = pre; } catch (e) {}
   function fold(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
   function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   fetch('/data/index.json').then(function (r) { return r.json(); }).then(function (d) {
