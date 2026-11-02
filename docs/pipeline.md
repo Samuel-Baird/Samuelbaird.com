@@ -7,7 +7,12 @@ type-specific branch in `types/` for the parts that differ.
 ## 0. Intake
 
 1. Ask the user: video type (response / interview / solo-history /
-   **meme-edit** / **clips** / **saint-capybara**). **Clips** — several
+   **presentation** / **meme-edit** / **clips** / **saint-capybara**).
+   **Presentation** — a talk over slides on two cameras + external mic,
+   delivered as a long-form plus highlight shorts, thumbnails and copy — is
+   built with ffmpeg rather than Resolve and has no pre-production gate; it
+   follows `docs/types/presentation.md` start to finish instead of §1-4
+   here (§4.4's user watch-through still applies). **Clips** — several
    short clips cut from one long-form video — has its own clip-selection
    gate (numbered `script/clips.md`, built only after written approval)
    instead of §1's `.docx`; see `docs/types/clips.md`. For meme-edit, ask which brand it's

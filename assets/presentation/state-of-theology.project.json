@@ -1,0 +1,847 @@
+{
+  "_note": "Worked example: the config the State of Theology long-form, its five highlight shorts, the St. George story short and their thumbnails/covers were built from (2026-11-01/02). Paths are relative to the original card dump at D:/FCA (camera card folders as copied); a new project uses the tools/presentation/new.py layout instead. Times are mic seconds per take.",
+  "slug": "state-of-theology",
+  "root": "D:/FCA",
+  "work_dir": "_edit/repo_work",
+  "takes": {
+    "1": {
+      "mic": "Mic/261030_001.TAKE/261030_001_Tr1.WAV",
+      "cameras": {
+        "A": {
+          "file": "Front facing camera/PRIVATE/M4ROOT/CLIP/A CAM9561.MP4",
+          "face": [
+            0.52,
+            0.37
+          ],
+          "offset": 5.3029
+        },
+        "B": {
+          "file": "Side angle camera/PRIVATE/M4ROOT/CLIP/B CAM9565.MP4",
+          "face": [
+            0.43,
+            0.33
+          ],
+          "offset": 5.3326
+        }
+      }
+    },
+    "2": {
+      "mic": "Mic/261030_002.TAKE/261030_002_Tr1.WAV",
+      "cameras": {
+        "A": {
+          "file": "Front facing camera/PRIVATE/M4ROOT/CLIP/A CAM9562.MP4",
+          "face": [
+            0.505,
+            0.33
+          ],
+          "offset": 13.4764
+        },
+        "B": {
+          "file": "Side angle camera/PRIVATE/M4ROOT/CLIP/B CAM9566.MP4",
+          "face": [
+            0.405,
+            0.33
+          ],
+          "offset": 13.5084
+        }
+      }
+    }
+  },
+  "longform": {
+    "take": "1",
+    "start": 19.6,
+    "end": 1011.4,
+    "slides_dir": "images",
+    "split_camera": "A",
+    "cuts": [
+      {
+        "start": 156.1,
+        "end": 159.85,
+        "why": "user asked to drop: \"I don't know if that's actually accurate. I made some random numbers up for this, I believe.\""
+      }
+    ],
+    "plan": [
+      [
+        19.6,
+        "cam"
+      ],
+      [
+        23.85,
+        "slide",
+        "01_intro_state_of_theology_survey"
+      ],
+      [
+        43.55,
+        "slide",
+        "02_before_we_start"
+      ],
+      [
+        78.8,
+        "slide",
+        "03_pct_trinity_agree"
+      ],
+      [
+        137.2,
+        "slide",
+        "12c_method_how_raw_numbers_estimated"
+      ],
+      [
+        170.0,
+        "slide",
+        "12d_method_worked_example_abortion"
+      ],
+      [
+        184.0,
+        "slide",
+        "13_count_trinity_agree"
+      ],
+      [
+        191.2,
+        "slide",
+        "14_count_trinity_disagree"
+      ],
+      [
+        230.45,
+        "slide",
+        "04_pct_jesus_first_created_being_agree"
+      ],
+      [
+        269.4,
+        "slide",
+        "15_count_jesus_first_created_being_agree"
+      ],
+      [
+        292.5,
+        "cam"
+      ],
+      [
+        370.45,
+        "slide",
+        "05_pct_jesus_great_teacher_not_god_agree"
+      ],
+      [
+        404.2,
+        "slide",
+        "16_count_jesus_great_teacher_not_god_agree"
+      ],
+      [
+        416.7,
+        "cam"
+      ],
+      [
+        447.0,
+        "slide",
+        "06_pct_holy_spirit_force_not_person_agree"
+      ],
+      [
+        492.2,
+        "slide",
+        "17_count_holy_spirit_force_not_person_agree"
+      ],
+      [
+        503.5,
+        "cam"
+      ],
+      [
+        586.8,
+        "slide",
+        "07_pct_god_accepts_all_religions_agree"
+      ],
+      [
+        618.2,
+        "slide",
+        "18_count_god_accepts_all_religions_agree"
+      ],
+      [
+        627.2,
+        "slide",
+        "08_pct_people_good_by_nature_agree"
+      ],
+      [
+        677.5,
+        "slide",
+        "19_count_people_good_by_nature_agree"
+      ],
+      [
+        690.4,
+        "slide",
+        "09_pct_abortion_is_sin_agree"
+      ],
+      [
+        710.8,
+        "slide",
+        "22_count_abortion_is_sin_disagree"
+      ],
+      [
+        740.3,
+        "slide",
+        "10_pct_sex_outside_marriage_sin_agree"
+      ],
+      [
+        754.1,
+        "slide",
+        "24_count_sex_outside_marriage_sin_disagree"
+      ],
+      [
+        766.1,
+        "slide",
+        "11_pct_bible_homosexuality_still_applies_disagree"
+      ],
+      [
+        800.8,
+        "slide",
+        "26_count_bible_homosexuality_doesnt_apply_agree"
+      ],
+      [
+        814.1,
+        "slide",
+        "12_pct_choose_gender_disagree"
+      ],
+      [
+        832.8,
+        "slide",
+        "28_count_choose_gender_agree"
+      ],
+      [
+        848.3,
+        "slide",
+        "12b_summary_doctrine_vs_culture_war"
+      ],
+      [
+        891.0,
+        "cam"
+      ],
+      [
+        914.5,
+        "slide",
+        "12b_summary_doctrine_vs_culture_war"
+      ],
+      [
+        966.0,
+        "cam"
+      ]
+    ],
+    "output": "Final/State of Theology - final.mp4"
+  },
+  "shorts_dir": "Final/Shorts",
+  "shorts": {
+    "arians": {
+      "take": 1,
+      "title": "19x More Arians Than Latter-day Saints",
+      "hook": "19× more Arians than\nLatter-day Saints?",
+      "ranges": [
+        [
+          230.6,
+          291.9
+        ],
+        [
+          342.1,
+          369.6
+        ]
+      ],
+      "graphics": [
+        {
+          "start": 245.9,
+          "end": 269.5,
+          "image": "_edit/social/post2/2_arian.png"
+        },
+        {
+          "start": 269.5,
+          "end": 291.9,
+          "image": "_edit/social/post3/2_arian_headcount.png"
+        }
+      ]
+    },
+    "trinity": {
+      "take": 1,
+      "title": "More Christians Reject the Trinity Than There Are Latter-day Saints",
+      "hook": "More Christians reject the Trinity\nthan there are Latter-day Saints",
+      "ranges": [
+        [
+          184.1,
+          229.4
+        ]
+      ],
+      "graphics": [
+        {
+          "start": 191.35,
+          "end": 212.9,
+          "image": "_edit/social/post3/1b_trinity_disagree_headcount.png"
+        }
+      ]
+    },
+    "teacher": {
+      "take": 1,
+      "title": "90 Million Christians Say Jesus Was Not God",
+      "hook": "90 million Christians say\nJesus was not God",
+      "ranges": [
+        [
+          370.6,
+          446.5
+        ]
+      ],
+      "graphics": [
+        {
+          "start": 377.2,
+          "end": 404.3,
+          "image": "_edit/social/post2/3_teacher.png"
+        },
+        {
+          "start": 404.3,
+          "end": 415.6,
+          "image": "_edit/social/post3/3_teacher_headcount.png"
+        }
+      ]
+    },
+    "spirit": {
+      "take": 1,
+      "title": "Losing the Tri in Trinity",
+      "hook": "Losing the \"tri\"\nin Trinity",
+      "ranges": [
+        [
+          446.9,
+          503.2
+        ]
+      ],
+      "graphics": [
+        {
+          "start": 455.0,
+          "end": 486.0,
+          "image": "_edit/social/post2/4_spirit.png"
+        },
+        {
+          "start": 492.3,
+          "end": 503.2,
+          "image": "_edit/social/post3/4_spirit_headcount.png"
+        }
+      ]
+    },
+    "culturewar": {
+      "take": 1,
+      "title": "Evangelicals Ace the Culture War but Fail on Doctrine",
+      "hook": "Evangelicals ace the culture war…\nbut fail on doctrine",
+      "ranges": [
+        [
+          914.7,
+          964.6
+        ],
+        [
+          980.9,
+          1008.0
+        ]
+      ],
+      "graphics": [
+        {
+          "start": 924.4,
+          "end": 940.3,
+          "image": "_edit/social/post2/0_intro.png"
+        },
+        {
+          "start": 947.9,
+          "end": 951.85,
+          "image": "_edit/social/post2/7_abortion.png"
+        },
+        {
+          "start": 951.85,
+          "end": 956.9,
+          "image": "_edit/social/post2/9_homo.png"
+        },
+        {
+          "start": 956.9,
+          "end": 960.4,
+          "image": "_edit/social/post2/10_gender.png"
+        },
+        {
+          "start": 960.4,
+          "end": 964.6,
+          "image": "_edit/social/post2/11_closing.png"
+        },
+        {
+          "start": 996.4,
+          "end": 1008.0,
+          "image": "_edit/social/post3/5_relig_headcount.png"
+        }
+      ]
+    },
+    "stgeorge": {
+      "take": 2,
+      "title": "The Latin Mass in the St. George Tabernacle",
+      "hook": "A Catholic Mass… inside a\nMormon tabernacle?",
+      "ranges": [
+        [
+          35.47,
+          72.33
+        ],
+        [
+          97.62,
+          121.12
+        ],
+        [
+          130.05,
+          157.33
+        ],
+        [
+          206.22,
+          231.68,
+          "exact_end"
+        ]
+      ],
+      "fade_out": 0.6,
+      "graphics": [
+        {
+          "start": 39.6,
+          "end": 44.9,
+          "image": "_edit/stg_photos/tabernacle_1914.jpg",
+          "label": "St. George Tabernacle"
+        },
+        {
+          "start": 44.9,
+          "end": 52.07,
+          "image": "_edit/stg_photos/temple_1870s.jpg",
+          "label": "St. George Temple, 1870s"
+        },
+        {
+          "start": 53.6,
+          "end": 60.07,
+          "image": "_edit/stg_photos/silver_reef_wells_fargo.jpg",
+          "label": "Silver Reef, Utah"
+        },
+        {
+          "start": 62.9,
+          "end": 72.33,
+          "image": "_edit/stg_photos/scanlan_1904.jpg",
+          "label": "Fr. Lawrence Scanlan"
+        },
+        {
+          "start": 99.2,
+          "end": 105.6,
+          "image": "_edit/stg_photos/macfarlane.jpg",
+          "label": "John M. Macfarlane"
+        },
+        {
+          "start": 110.4,
+          "end": 115.3,
+          "image": "_edit/stg_photos/erastus_snow.jpg",
+          "label": "Apostle Erastus Snow"
+        },
+        {
+          "start": 132.0,
+          "end": 138.5,
+          "image": "_edit/stg_photos/tabernacle_interior_west.jpg",
+          "label": "Inside the St. George Tabernacle",
+          "crop": [
+            0.025,
+            0.06,
+            0.975,
+            0.97
+          ]
+        },
+        {
+          "start": 142.2,
+          "end": 146.7,
+          "image": "_edit/stg_photos/tabernacle_interior_east.jpg",
+          "label": "Inside the St. George Tabernacle",
+          "crop": [
+            0.025,
+            0.06,
+            0.975,
+            0.97
+          ]
+        },
+        {
+          "start": 148.7,
+          "end": 153.0,
+          "image": "_edit/stg_photos/camp_floyd_1858.jpg",
+          "label": "Camp Floyd, c. 1858"
+        },
+        {
+          "start": 207.8,
+          "end": 213.77,
+          "image": "_edit/stg_photos/tabernacle_modern.jpg",
+          "label": "St. George Tabernacle today"
+        },
+        {
+          "start": 214.9,
+          "end": 217.9,
+          "image": [
+            "_edit/stg_photos/pope_francis_2020.jpg",
+            "_edit/stg_photos/nelson_2018.jpg"
+          ],
+          "label": "Pope Francis & President Russell M. Nelson"
+        },
+        {
+          "start": 221.7,
+          "end": 224.5,
+          "image": "_edit/stg_photos/scanlan_1904.jpg",
+          "label": "Fr. Lawrence Scanlan"
+        }
+      ]
+    }
+  },
+  "caption_fixes": {
+    "words": {
+      "st.": "St.",
+      "scanlon": "Scanlan",
+      "scanlon's": "Scanlan's",
+      "mcfarland": "Macfarlane",
+      "mcfarland's": "Macfarlane's",
+      "minor": "miner",
+      "m": "M.",
+      "1870": "1870s",
+      "reef": "Reef",
+      "aryan": "Arian",
+      "aryans": "Arians",
+      "aryanism": "Arianism"
+    },
+    "phrases": [
+      [
+        [
+          "you're",
+          "asked",
+          "to",
+          "snow"
+        ],
+        [
+          "Erastus",
+          "Snow"
+        ]
+      ],
+      [
+        [
+          "st",
+          "george"
+        ],
+        [
+          "St.",
+          "George"
+        ]
+      ]
+    ],
+    "insert": [
+      [
+        "themselves",
+        "May",
+        "On"
+      ]
+    ]
+  },
+  "thumbnails": [
+    {
+      "out": "Final/Thumbnails/thumb02_which_americans_reject_trinity.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "A",
+        "t": 479.4
+      },
+      "face_x": 0.76,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            60,
+            50
+          ],
+          "text": "WHICH AMERICANS",
+          "size": 66,
+          "stroke": 3
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            128
+          ],
+          "text": "REJECT THE TRINITY?",
+          "size": 66,
+          "color": "orange",
+          "stroke": 3
+        },
+        {
+          "type": "bars",
+          "xy": [
+            60,
+            280
+          ],
+          "width": 560,
+          "rows": [
+            {
+              "label": "U.S. Christians who reject it",
+              "value": "7.8M",
+              "frac": 1.0,
+              "color": "orange"
+            },
+            {
+              "label": "U.S. Latter-day Saints",
+              "value": "6.9M",
+              "frac": 0.885,
+              "color": "blue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "out": "Final/Thumbnails/thumb06_before_calling_mormons_heretics.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "A",
+        "t": 984.0
+      },
+      "face_x": 0.74,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            60,
+            50
+          ],
+          "text": "BEFORE CALLING",
+          "size": 70,
+          "stroke": 3
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            132
+          ],
+          "text": "MORMONS HERETICS",
+          "size": 70,
+          "color": "orange",
+          "stroke": 3
+        },
+        {
+          "type": "text",
+          "xy": [
+            62,
+            222
+          ],
+          "text": "look at this data",
+          "size": 50,
+          "font": "bold",
+          "stroke": 2
+        },
+        {
+          "type": "card",
+          "image": "_edit/social/post3/2_arian_headcount.png",
+          "xy": [
+            70,
+            300
+          ],
+          "width": 420,
+          "angle": 3,
+          "crop": [
+            0,
+            0,
+            1,
+            0.563
+          ]
+        }
+      ]
+    },
+    {
+      "out": "Final/Thumbnails/instagram_cover_19x_more_arians.jpg",
+      "size": [
+        1080,
+        1920
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "A",
+        "t": 477.6
+      },
+      "shade": "bottom",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            540,
+            850
+          ],
+          "text": "19×",
+          "size": 300,
+          "color": "orange",
+          "stroke": 5,
+          "anchor": "ma"
+        },
+        {
+          "type": "text",
+          "xy": [
+            540,
+            1170
+          ],
+          "text": "MORE ARIANS",
+          "size": 112,
+          "stroke": 4,
+          "anchor": "ma"
+        },
+        {
+          "type": "text",
+          "xy": [
+            540,
+            1300
+          ],
+          "text": "than Latter-day Saints",
+          "size": 64,
+          "font": "bold",
+          "stroke": 3,
+          "anchor": "ma"
+        },
+        {
+          "type": "pill",
+          "xy": [
+            540,
+            1400
+          ],
+          "text": "IN THE USA",
+          "size": 50,
+          "bg": "flag_red",
+          "font": "black",
+          "anchor": "ma"
+        }
+      ]
+    },
+    {
+      "out": "Final/Thumbnails/thumb01_19x_more_arians_usa.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "A",
+        "t": 477.6
+      },
+      "face_x": 0.7,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            60,
+            50
+          ],
+          "text": "19×",
+          "size": 250,
+          "color": "orange",
+          "stroke": 4
+        },
+        {
+          "type": "text",
+          "xy": [
+            66,
+            350
+          ],
+          "text": "MORE ARIANS",
+          "size": 92,
+          "stroke": 3
+        },
+        {
+          "type": "text",
+          "xy": [
+            70,
+            462
+          ],
+          "text": "than Latter-day Saints",
+          "size": 52,
+          "font": "bold",
+          "stroke": 2
+        },
+        {
+          "type": "pill",
+          "xy": [
+            72,
+            560
+          ],
+          "text": "IN THE USA",
+          "size": 44,
+          "bg": "flag_red",
+          "font": "black"
+        }
+      ]
+    },
+    {
+      "out": "Final/Thumbnails/instagram_cover_st_george_latin_mass.jpg",
+      "size": [
+        1080,
+        1920
+      ],
+      "frame": {
+        "take": "2",
+        "camera": "A",
+        "t": 143.0
+      },
+      "shift": 560,
+      "top_photo": "_edit/stg_photos/tabernacle_1914.jpg",
+      "shade": "band:760",
+      "elements": [
+        {
+          "type": "pill",
+          "xy": [
+            540,
+            345
+          ],
+          "text": "ST. GEORGE, UTAH",
+          "size": 34,
+          "anchor": "ma"
+        },
+        {
+          "type": "text",
+          "xy": [
+            540,
+            520
+          ],
+          "text": "1879",
+          "size": 190,
+          "color": "orange",
+          "stroke": 5,
+          "anchor": "ma"
+        },
+        {
+          "type": "text",
+          "xy": [
+            540,
+            730
+          ],
+          "text": "A CATHOLIC MASS",
+          "size": 96,
+          "stroke": 4,
+          "anchor": "ma"
+        },
+        {
+          "type": "text",
+          "xy": [
+            540,
+            840
+          ],
+          "text": "INSIDE A",
+          "size": 64,
+          "font": "bold",
+          "stroke": 3,
+          "anchor": "ma"
+        },
+        {
+          "type": "text",
+          "xy": [
+            540,
+            915
+          ],
+          "text": "MORMON TABERNACLE",
+          "size": 84,
+          "stroke": 4,
+          "anchor": "ma"
+        }
+      ]
+    }
+  ]
+}

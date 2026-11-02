@@ -10,6 +10,13 @@ real time roughly on the order of the audio's own length for `small.en`
 (slower than realtime; `base.en` is faster but less accurate — default to
 `small.en` unless a project is time-critical).
 
+**Presentation type uses `faster-whisper` instead** (`tools/presentation/
+transcribe.py`, model `medium.en`, int8 on CPU): same Whisper weights, about
+4× faster on this machine, word timestamps built in, and it runs the second
+"disfluent" pass that writes out ums for the shorts' filler trimming. Medium
+catches names the small model mangles; the rest still get a caption fix-up
+list. Either backend is fine for the other types.
+
 ## The "~90 second limit" — investigated, not reproduced locally
 
 The user recalled a ~90-second constraint from a past session but couldn't
