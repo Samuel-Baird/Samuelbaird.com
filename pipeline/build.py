@@ -63,7 +63,7 @@ def hl(text, term, lang):
 
 
 def page(title, body, desc, path="", current=""):
-    nav = [("/", "Atlas"), ("/variants", "Variants"), ("/about", "Method & data")]
+    nav = [("/", "Atlas"), ("/variants", "Variants"), ("/connect", "Connect"), ("/donate", "Donate"), ("/about", "Method & data")]
     links = "".join(f'<a href="{h}"{" aria-current=page" if h == current else ""}>{n}</a>' for h, n in nav)
     return f"""<!doctype html>
 <html lang="en">
@@ -82,6 +82,7 @@ def page(title, body, desc, path="", current=""):
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='50' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3EU%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/tokens.css">
 <link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/bg/bg.css">
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
 <script src="/deseret.js" defer></script>
@@ -95,7 +96,7 @@ def page(title, body, desc, path="", current=""):
 <main id="main" class="rail">
 {body}
 </main>
-<footer><div class="rail">Urim is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.</div></footer>
+<footer><div class="rail">Urim is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.<br><a href="/connect">Connect</a> &middot; <a href="/donate">Donate</a> &middot; <a href="https://github.com/Samuel-Baird/urim">GitHub</a></div></footer>
 </body>
 </html>
 """
@@ -304,32 +305,62 @@ def home_page(concepts, prov):
                 "A searchable atlas of how the Church translates Latter-day Saint terms into Portuguese and Spanish.", current="/")
 
 
+def entry_for(c, lang):
+    """Preferred rendering + allowed variants for one concept/language, or None if nothing is known."""
+    rs = [r for r in c["has"][lang] if "attested" in r["evidence"] or "approved_term" in r["evidence"]]
+    if rs:
+        approved = [r for r in rs if "approved_term" in r["evidence"]]
+        pref = approved[0] if approved else rs[0]
+        return {
+            "preferred": pref["term"], "confidence": "approved" if approved else "attested",
+            "variants": [{"term": r["term"], "share": r.get("share", 0)} for r in rs
+                         if r is not pref and r.get("share", 0) >= VARY_SHARE and uses(r) >= MIN_USES],
+            "uses": uses(pref),
+        }
+    hints = [h for h in c["candidates"].get(lang, []) if h["hint"].startswith("pulpit-glossary")]
+    if hints:
+        return {"preferred": hints[0]["term"], "confidence": "hint", "variants": [], "uses": 0}
+    return None
+
+
 def glossary(concepts):
     """Per-language machine glossary for the local translation MCP."""
     for lang in LANGS:
         entries = []
         for c in concepts:
-            rs = [r for r in c["has"][lang] if "attested" in r["evidence"] or "approved_term" in r["evidence"]]
-            if rs:
-                approved = [r for r in rs if "approved_term" in r["evidence"]]
-                pref = approved[0] if approved else rs[0]
-                entries.append({
-                    "id": c["id"], "slug": c["slug"], "en": c["en"]["match"], "category": c["category"],
-                    "preferred": pref["term"], "confidence": "approved" if approved else "attested",
-                    "variants": [{"term": r["term"], "share": r.get("share", 0)} for r in rs
-                                 if r is not pref and r.get("share", 0) >= VARY_SHARE and uses(r) >= MIN_USES],
-                    "uses": uses(pref),
-                })
-            else:
-                hints = [h for h in c["candidates"].get(lang, []) if h["hint"].startswith("pulpit-glossary")]
-                if hints:
-                    entries.append({"id": c["id"], "slug": c["slug"], "en": c["en"]["match"], "category": c["category"],
-                                    "preferred": hints[0]["term"], "confidence": "hint", "variants": [], "uses": 0})
+            e = entry_for(c, lang)
+            if e:
+                entries.append({"id": c["id"], "slug": c["slug"], "en": c["en"]["match"],
+                                "category": c["category"], **e})
         out = DATA / "glossary"
         out.mkdir(exist_ok=True)
         (out / f"{lang}.json").write_text(json.dumps({"lang": lang, "entries": entries}, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"glossary {lang}: {len(entries)} entries "
               f"({sum(e['confidence'] != 'hint' for e in entries)} evidenced)")
+
+
+def api_data(concepts, sig):
+    """Compact read-only dataset for the hosted MCP function (api/mcp.js)."""
+    out = []
+    for c in concepts:
+        langs = {}
+        for lang in LANGS:
+            e = entry_for(c, lang)
+            if not e:
+                continue
+            langs[lang] = {
+                **e,
+                "renderings": [{
+                    "term": r["term"], "evidence": r["evidence"], "talk_paragraphs": r.get("paragraphs", 0),
+                    "talks": r.get("talks", 0), "scripture_verses": r.get("verses", 0),
+                    "years": [r.get("first_year"), r.get("last_year")], "share": r.get("share", 0),
+                } for r in c["has"][lang]],
+            }
+        if langs:
+            out.append({"slug": c["slug"], "en": c["en"]["match"], "category": c["category"],
+                        "flags": sig.get(c["slug"], []), **langs})
+    (DATA / "api.json").write_text(json.dumps({"concepts": out}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"api.json: {len(out)} concepts")
 
 
 def scripture_books():
@@ -386,7 +417,12 @@ def main():
     (SITE / "index.html").write_text(home_page(concepts, prov), encoding="utf-8")
     (SITE / "variants.html").write_text(variants_page(concepts, sig, collapses), encoding="utf-8")
     (SITE / "about.html").write_text(about_page(prov, len(concepts), n), encoding="utf-8")
+    from .pages import connect_page, donate_page
+    for name, fn in (("connect", connect_page), ("donate", donate_page)):
+        t, b, d = fn()
+        (SITE / f"{name}.html").write_text(page(t, b, d, current=f"/{name}"), encoding="utf-8")
     glossary(concepts)
+    api_data(concepts, sig)
     print(f"pages: {n} concepts, {len(collapses)} collisions")
 
 

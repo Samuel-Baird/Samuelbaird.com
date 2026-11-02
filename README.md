@@ -27,6 +27,7 @@ as evidence. A term with no Church source stays blank.
 - `data/` generated attestations, glossaries, provenance
 - `site/` static site (Vercel root)
 - `mcp/` local, free translation MCP server (glossary-enforcing, cached)
+- `api/mcp.js` hosted read-only atlas MCP at `/api/mcp` (see the site's Connect page)
 
 ## Rebuild
 
