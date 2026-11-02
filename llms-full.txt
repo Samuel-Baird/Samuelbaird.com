@@ -1,0 +1,174 @@
+# Samuel Baird: full text
+
+> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-02. Original data licensed CC BY 4.0.
+
+## FAQ
+
+### Who is Samuel Baird?
+
+Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://latterdaystats.samuelbaird.com/), a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
+
+### What is Latter-day Stats?
+
+Latter-day Stats is a public, independent hub for statistics, research and creator data on the Latter-day Saint community. As of November 2026 it tracks 328 LDS YouTube channels with 16.6M combined subscribers, 73 academic studies and 58 survey-data graphics (Pew and other surveys). Its Data Explorer lets you chart public survey datasets, Studies is a curated research library, and Channels is a directory of LDS YouTube creators. It lives at [latterdaystats.samuelbaird.com](https://latterdaystats.samuelbaird.com/).
+
+### How many LDS YouTube channels are there?
+
+There is no official count. The most complete public list is the directory at [Latter-day Stats Channels](https://latterdaystats.samuelbaird.com/channels), which tracked 328 LDS-related YouTube channels with 16.6M combined subscribers as of November 2026. The directory is refreshed regularly, so check it for the current figure.
+
+### What is Pulpit?
+
+Pulpit is a critical digital edition of every General Conference discourse since 1830: 12,201 discourses as of November 2026, each traced to its best surviving witness and graded for fidelity (4,292 verbatim, 5,474 authoritative print, 2,225 contemporaneous report, 2 reconstructed, 208 fragmentary). It is a Restoration Commons project that Samuel Baird contributed to: [pulpit.restorationcommons.org](https://pulpit.restorationcommons.org/).
+
+### Which sacred sites has Samuel Baird visited?
+
+Since January 2025 he has visited 34 sacred sites in 8 traditions (Catholic, Greek Orthodox, Anglican, Baptist, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on June 20, 2026. Each site is counted once. Browse the [full directory](https://samuelbaird.com/sacred-sites/sites), the [interactive map](https://samuelbaird.com/sacred-sites), the [photo gallery](https://samuelbaird.com/sacred-sites/photos) or the [statistics](https://samuelbaird.com/sacred-sites/stats).
+
+### How many LDS temples has Samuel Baird visited?
+
+25 distinct Latter-day Saint temples as of November 2026: Bountiful Utah Temple, Brigham City Utah Temple, Cedar City Utah Temple, Deseret Peak Utah Temple, Draper Utah Temple, Idaho Falls Idaho Temple, Jordan River Utah Temple, Layton Utah Temple, Lindon Utah Temple, Logan Utah Temple, Manti Utah Temple, Monticello Utah Temple, Mount Timpanogos Utah Temple, Ogden Utah Temple, Oquirrh Mountain Utah Temple, Orem Utah Temple, Payson Utah Temple, Provo City Center Temple, Red Cliffs Utah Temple, Rexburg Idaho Temple, Saratoga Springs Utah Temple, St. George Utah Temple, Syracuse Utah Temple, Taylorsville Utah Temple, Vernal Utah Temple. Repeat visits to the same temple are counted once. Details are in the [sacred sites directory](https://samuelbaird.com/sacred-sites/sites#the-church-of-jesus-christ-of-latter-day-saints-lds).
+
+### What has Samuel Baird read recently?
+
+He has logged 38 books and 13 articles, newest first. The three most recent are The New Perspective on Paul: An Introduction, Let's Talk About the Law of Consecration, Out of Obscurity and into the Light; the latest was finished on October 30, 2026. See [My Reading](https://samuelbaird.com/books).
+
+### Is the data on this site free to use?
+
+Yes. The original datasets on this site (the sacred sites list and the reading log) are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them with attribution to Samuel Baird and a link to samuelbaird.com. Download them as CSV or JSON from [Open data](https://samuelbaird.com/data). Latter-day Stats publishes its own datasets, each with sources.
+
+### How should I cite this site?
+
+For the sacred sites data: Baird, Samuel. "Sacred Sites Visited." samuelbaird.com, 2025–2026. https://samuelbaird.com/data. For Latter-day Stats, cite the specific study, dataset or graphic page and its listed source.
+
+### Can AI assistants and search engines use this site?
+
+Yes. [robots.txt](https://samuelbaird.com/robots.txt) explicitly allows the major search and AI crawlers (including GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended and Applebot-Extended), and a plain-text summary for language models is at [/llms.txt](https://samuelbaird.com/llms.txt). Please attribute and link back when you use the content.
+
+### How can I contact Samuel Baird?
+
+Email [ithinksamofficial@gmail.com](mailto:ithinksamofficial@gmail.com?subject=Samuel%20Baird) for questions, corrections, collaboration or press. Corrections to any figure on this site are welcome.
+
+### How can I support the projects?
+
+The projects are free and ad-free. You can chip in toward hosting by [donating via PayPal or Venmo](https://samuelbaird.com/donate), or send a book from the [Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4).
+
+## Sacred sites visited (34 sites, 8 traditions, January 10, 2025 to June 20, 2026)
+
+### Roman Catholic (3)
+
+- Cathedral of the Madeleine, Salt Lake City, Utah: 1 visit, 2026-03-29
+- St John the Baptist Catholic Church, Draper, Utah: 1 visit, 2026-04-04
+- UVU Mass, Orem, Utah: 1 visit, 2026-04-23
+
+### Greek Orthodox (1)
+
+- Prophet Elias Greek Orthodox Church, Salt Lake City, Utah: 1 visit, 2026-06-14
+
+### Anglican (ACNA) (1)
+
+- St John's Anglican, Cottonwood Heights, Utah: 1 visit, 2026-02-18
+
+### Lutheran (ELCA) (1)
+
+- Zion Lutheran Church ELCA, Salt Lake City, Utah: 1 visit, 2026-05-31
+
+### Jehovah's Witnesses (1)
+
+- Jehovah's Witnesses (Utah County area), Lehi, Utah: 1 visit, 2026-04-02
+
+### The Church of Jesus Christ of Latter-day Saints (LDS) (25)
+
+- Bountiful Utah Temple, Bountiful, Utah: 1 visit, 2025-05-13
+- Brigham City Utah Temple, Brigham City, Utah: 1 visit, 2025-05-01
+- Cedar City Utah Temple, Cedar City, Utah: 1 visit, 2025-11-29
+- Deseret Peak Utah Temple, Tooele, Utah: 2 visits, 2025-06-21 to 2026-06-13
+- Draper Utah Temple, Draper, Utah: 3 visits, 2025-05-30 to 2025-06-14
+- Idaho Falls Idaho Temple, Idaho Falls, Idaho: 2 visits, 2025-07-26 to 2026-05-15
+- Jordan River Utah Temple, South Jordan, Utah: 2 visits, 2025-01-10 to 2025-08-23
+- Layton Utah Temple, Layton, Utah: 1 visit, 2025-07-12
+- Lindon Utah Temple, Lindon, Utah: 3 visits, 2026-04-06 to 2026-06-20
+- Logan Utah Temple, Logan, Utah: 1 visit, 2025-05-01
+- Manti Utah Temple, Manti, Utah: 2 visits, 2025-05-31 to 2025-07-19
+- Monticello Utah Temple, Monticello, Utah: 1 visit, 2025-12-26
+- Mount Timpanogos Utah Temple, American Fork, Utah: 1 visit, 2025-06-06
+- Ogden Utah Temple, Ogden, Utah: 2 visits, 2025-06-07 to 2026-03-21
+- Oquirrh Mountain Utah Temple, South Jordan, Utah: 3 visits, 2025-04-30 to 2026-02-07
+- Orem Utah Temple, Orem, Utah: 11 visits, 2025-01-17 to 2026-04-01
+- Payson Utah Temple, Payson, Utah: 1 visit, 2025-05-03
+- Provo City Center Temple, Provo, Utah: 1 visit, 2025-05-10
+- Red Cliffs Utah Temple, St. George, Utah: 1 visit, 2025-11-29
+- Rexburg Idaho Temple, Rexburg, Idaho: 1 visit, 2026-05-16
+- Saratoga Springs Utah Temple, Saratoga Springs, Utah: 2 visits, 2025-05-15 to 2025-07-05
+- St. George Utah Temple, St. George, Utah: 1 visit, 2025-11-26
+- Syracuse Utah Temple, Syracuse, Utah: 1 visit, 2025-06-28
+- Taylorsville Utah Temple, Taylorsville, Utah: 2 visits, 2025-05-23 to 2025-08-30
+- Vernal Utah Temple, Vernal, Utah: 1 visit, 2025-08-16
+
+### Episcopal (1)
+
+- St Mary's Episcopal Church, Provo, Utah: 1 visit, 2026-03-22
+
+### Seventh-day Adventist (1)
+
+- West Jordan Seventh-day Adventist Church, West Jordan, Utah: 1 visit, 2026-01-31
+
+## Reading log (38 books, 13 articles; newest first)
+
+- 2026-10-30: The New Perspective on Paul: An Introduction (book)
+- 2026-10-26: Let's Talk About the Law of Consecration (book)
+- 2026-10-23: Out of Obscurity and into the Light (article)
+- 2026-10-16: The Five Points of Calvinism: A Study Guide (book)
+- 2026-10-09: View of the Hebrews: or the Tribes of Israel in America (book)
+- 2026-10-09: How Can I Help (book)
+- 2026-10-09: Isaiah (John Goldingay) (book)
+- 2026-10-02: Torn: Why People We Love Are Leaving the Church and What We Can Learn from Them (book)
+- 2026-10-02: Investigating the Book of Mormon Witnesses (book)
+- 2026-10-02: Theirs Is the Kingdom: Celebrating the Gospel in Urban America (book)
+- 2026-10-02: The Cost of Discipleship (book)
+- 2026-09-18: Parley P. Pratt: The Apostle Paul of Mormonism (book)
+- 2026-09-18: Ecclesiastes: An Introduction and Commentary (Tyndale) (book)
+- 2026-09-11: Proverbs (Derek Kidner) (book)
+- 2026-09-11: Psalms: An Introduction and Commentary (Tyndale) (book)
+- 2026-08-28: Crucial Conversations: Tools for Talking When Stakes Are High (book)
+- 2026-08-21: Steps to Christ (book)
+- 2026-08-21: Meditations on First Philosophy (book)
+- 2026-08-21: God's Body: The Anthropomorphic God in the Old Testament (book)
+- 2026-08-14: In Tune With The World (book)
+- 2026-08-07: The Alchemist (book)
+- 2026-08-07: The Righteous Mind: Why Good People Are Divided by Politics and Religion (book)
+- 2026-07-31: The Doors of Faith (book)
+- 2026-07-24: Orthodoxy and Heresy (book)
+- 2026-07-03: The Sabbath (book)
+- 2026-07-03: Plural Marriage, as Taught by the Prophet Joseph: A Reply to Joseph Smith, Editor, Lamoni (Iowa) Herald (article)
+- 2026-07-03: "A Mother There": A Survey of Historical Teachings about Mother in Heaven (article)
+- 2026-06-26: Working the Angles: The Shape of Pastoral Integrity (book)
+- 2026-06-26: A Short Stay in Hell (book)
+- 2026-06-19: "Saving Christianity": The Nephite Fulfillment of Jesus (article)
+- 2026-06-12: The Sacrament: Coming Closer to Christ through This Sacred Ordinance (book)
+- 2026-06-05: The Wounded Healer: Ministry in Contemporary Society (book)
+- 2026-06-05: Military Chaplains as Peace Builders (book)
+- 2026-05-29: Of Souls, Symbols, and Sacraments (book)
+- 2026-05-29: The Things They Carried (book)
+- 2026-05-15: Life Together: The Classic Exploration of Christian Community (book)
+- 2026-05-08: Offenders for a Word (book)
+- 2026-05-01: Will the Real Heretics Please Stand Up: A New Look at Today's Evangelical Church in the Light of Early Christianity (book)
+- 2026-05-01: Out of Nothing: A History of Creation ex Nihilo in Early Christian Thought (article)
+- 2026-05-01: Defending Josiah (article)
+- 2026-05-01: Joseph Smith and the Trinity: An Analysis and Defense of the Social Model of the Godhead (article)
+- 2026-05-01: Psalm 82 in Contemporary Latter-day Saint Tradition (article)
+- 2026-05-01: Cognitive Perspectives on Early Christology (article)
+- 2026-05-01: Let's Talk About Faith and History (book)
+- 2026-05-01: 2 Nephi 25:23 in Literary and Rhetorical Context (article)
+- 2026-05-01: Notes on Mormonism and the Trinity (article)
+- 2026-05-01: Deification Through Sacramental Living in LDS and Eastern Orthodox Worship Practices: A Comparative Analysis (article)
+- 2026-05-01: NRSVue (New Testament) (book)
+- 2026-05-01: The Eucharist of the Latter-day Saints: The Sacrament in the Broader Christian Context (article)
+- 2026-05-01: The Bible Says So: What We Get Right (and Wrong) About Scripture's Most Controversial Issues (book)
+- 2026-05-01: A Modern Guide to an Old Testament (book)
+
+## Collection
+
+- The Deseret First Book (Book · 1868)
+- 1908 Northern States Mission Book of Mormon (Book · 1908)
+- The Latter-day Saints' Millennial Star - January 2, 1864 (Periodical · 1864)
+- Vintage LDS Glass Sacrament Cup (Artifact · Early 1900s)
