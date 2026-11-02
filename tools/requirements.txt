@@ -19,3 +19,10 @@ yt-dlp>=2026.07.04
 # pin, not a fresh install.
 trafilatura>=2.1.0
 requests>=2.32.0
+
+# Presentation type (docs/types/presentation.md, tools/presentation/): faster-whisper
+# for transcription + the filler pass, numpy for sync/levels. Present on this machine as of
+# 2026-11-01 (faster-whisper 1.2.1, numpy 2.5.4). Also needs ffmpeg on PATH or via
+# `winget install --id Gyan.FFmpeg -e` (full build: libass for burned captions).
+faster-whisper>=1.2.0
+numpy>=2.0

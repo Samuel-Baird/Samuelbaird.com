@@ -16,6 +16,18 @@ writing** — builds and renders every approved clip in DaVinci Resolve.
 | **Gate** | User approves in writing | recorded in `clips.yaml` `approval:` |
 | Build | One Resolve timeline + render per approved clip | `tools/clips_plan.py --build-plan` → davinci-resolve MCP |
 
+**Not for highlight shorts from a presentation-type video.** Those 2-3
+shorts are built straight from the camera originals by
+`tools/presentation/shorts.py` with no approval gate (the user reviews the
+renders) — see `docs/types/presentation.md`. This type and its written
+gate are for clips from someone else's show, a dialogue/interview/debate,
+or any long-form that only exists as a finished file.
+
+Look: same brand as every other vertical video — burned captions, hook
+card and Reel cover per `docs/style-guide.md` "Brand kit", and the shorts
+pacing rule there (tight trims, but angles/framings held 3.6-8 s, never
+flipping on every cut).
+
 Standard brand only. Never use anything from `assets/saint-capybara/` on
 a clip, and never put a Saint Capybara clip through this type — that brand
 has its own pipeline and anonymity rules (`docs/types/saint-capybara.md`).
@@ -136,10 +148,13 @@ for posting.
      speaker is actually centred** — the pan values assume scale-to-fill
      and haven't been calibrated against every Resolve version; adjust the
      speaker `x` in `clips.yaml` and regenerate rather than hand-nudging.
-   - Captions: import `captions\<id>.srt` onto the timeline's subtitle
-     track and burn it in at render. If the bridge can't place subtitles,
-     render the caption chunks as PNG stills (`tools/meme_text.py`) on V2
-     instead — never caption by hand-retyping.
+   - Captions: render the clip without captions, then burn them in the
+     brand style with ffmpeg + libass — the ASS header and per-word
+     highlight logic are in `tools/presentation/brand.py` /
+     `tools/presentation/shorts.py` (`write_ass`), fed from
+     `captions\<id>.srt`'s word timing. (Resolve's subtitle track can't do
+     the per-word highlight; the old "import the .srt onto the subtitle
+     track" route is superseded.) Never caption by hand-retyping.
    - Save, re-read the item count, `timeline.detect_gaps_overlaps`.
    - Queue a render job to the plan's `export` path (H.264 MP4).
 4. Render the queue; check every file exists and its duration matches
