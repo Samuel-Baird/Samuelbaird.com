@@ -1,0 +1,98 @@
+{
+ "id": "concept.elect-lady",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 3,
+  "en_verses": 2,
+  "uncovered_paragraphs": 7,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "eleita",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 3429.4,
+    "source": "2010-04-dalton-remember-who-you-are",
+    "kind": "talk",
+    "sample": "avras do Senhor a cada uma de Suas filhas preciosas: “Eis que (…) és uma mulher eleita, a quem chamei.”[^19] “[Anda] nos caminhos da virtude (…) [deixa] as coisas [do"
+   },
+   {
+    "term": "mulher",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 47.6,
+    "source": "1995-10-oaks-powerful-ideas",
+    "kind": "talk",
+    "sample": "Há alguns meses, fui ao fune­ral de uma mulher elei­ta. Um ora­dor des­cre­via três de suas qua­li­da­des: leal­da­de, obe­diê"
+   },
+   {
+    "term": "quem chamei",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 1143.1,
+    "source": "2010-04-dalton-remember-who-you-are",
+    "kind": "talk",
+    "sample": "enhor a cada uma de Suas filhas preciosas: “Eis que (…) és uma mulher eleita, a quem chamei.”[^19] “[Anda] nos caminhos da virtude (…) [deixa] as coisas [do] mundo. (…) Ap"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 3,
+  "en_verses": 2,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "dama elegida",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 2,
+    "verses": 1,
+    "first_year": 2010,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 25:3",
+      "ref_en": "Doctrine and Covenants 25:3",
+      "en": "Behold, thy sins are forgiven thee, and thou art an elect lady, whom I have called.",
+      "tr": "He aquí, tus pecados te son perdonados, y eres una dama elegida a quien he llamado.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/25?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-dalton-remember-who-you-are",
+      "para": 19,
+      "en": "… us, His precious daughters: “Behold, … thou art an elect lady, whom I have called.”[^19] “Walk in the paths …",
+      "tr": "… de nosotras, Sus preciadas hijas: “He aquí… eres una dama elegida a quien he llamado”[^19]. “Anda por las sendas de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-freeman-live-up-to-your-privileges",
+      "para": 20,
+      "en": "… window in Harmony, including the revelation given to the elect lady whom the Lord had called—a revelation that would strengthen, …",
+      "tr": "… ventana en Harmony, incluso la revelación dada a la dama elegida a quien el Señor había llamado; una revelación que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.confer-the-priesthood
+category: Priesthood Authority & Ordinances
+en:
+  term: confer the priesthood
+  match:
+  - confer the priesthood
+sources: {}
+candidates:
+  pt:
+  - term: conferir o sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: conferir el sacerdocio
+    hint: pulpit-glossary:verified
+related: []

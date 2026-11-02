@@ -1,0 +1,15 @@
+id: concept.high-priests-quorum
+category: Priesthood Offices & Quorums
+en:
+  term: high priests quorum
+  match:
+  - high priests quorum
+sources: {}
+candidates:
+  pt:
+  - term: quórum de sumos sacerdotes
+    hint: pulpit-glossary:verified
+  es:
+  - term: quórum de sumos sacerdotes
+    hint: pulpit-glossary:verified
+related: []

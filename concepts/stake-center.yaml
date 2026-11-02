@@ -1,0 +1,15 @@
+id: concept.stake-center
+category: Church Units & Facilities
+en:
+  term: stake center
+  match:
+  - stake center
+sources: {}
+candidates:
+  pt:
+  - term: centro de estaca
+    hint: pulpit-glossary:verified
+  es:
+  - term: centro de estaca
+    hint: pulpit-glossary:verified
+related: []

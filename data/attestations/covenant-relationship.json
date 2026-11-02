@@ -1,0 +1,155 @@
+{
+ "id": "concept.covenant-relationship",
+ "pt": {
+  "en_paragraphs": 38,
+  "en_talks": 23,
+  "en_verses": 0,
+  "uncovered_paragraphs": 33,
+  "renderings": [
+   {
+    "term": "relacionamento de convênio",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-wood-instruments-of-the-lords-peace",
+      "para": 4,
+      "en": "… of Mormon invited those who would enter into a covenant relationship with God to stand as witnesses of God and …",
+      "tr": "… Mórmon, convidou todos os que quisessem assumir um relacionamento de convênio com Deus a servir de testemunhas Dele e carregar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+      "para": 19,
+      "en": "… anyone”![^23] You are youth of the noble birthright. Your covenant relationship with God and Jesus Christ is a relationship of …",
+      "tr": "… pessoa, mas vocês não são qualquer pessoa”![^23] Seu relacionamento de convênio com Deus e Jesus Cristo é um relacionamento de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-renlund-how-long-will-it-be-ere-they-believe-me",
+      "para": 9,
+      "en": "… here and now because of Him and through our covenant relationship with Him.",
+      "tr": "… por causa Dele e por meio do nosso relacionamento de convênio com Ele."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "relacionamento por convênio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.576,
+    "ratio": 2303.6,
+    "source": "2019-04-clark-look-unto-jesus-christ",
+    "kind": "talk",
+    "sample": "106.\n[^29]: A oração sacramental do pão expressa com beleza a natureza de nosso relacionamento por convênio com o Pai Celestial. No plano de salvação do Pai, fazemos convênios com Ele, ma"
+   },
+   {
+    "term": "entrar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.242,
+    "ratio": 28.5,
+    "source": "1998-04-oaks-have-you-been-saved",
+    "kind": "talk",
+    "sample": "udy/scriptures/nt/john/3?lang=por&id=p3#p3)) da água e do Espírito, não poderia entrar no reino de Deus. (Ver [João 3:5](https://www.churchofjesuschrist.org/study/scr"
+   },
+   {
+    "term": "fim",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.212,
+    "ratio": 6.7,
+    "source": "1998-04-oaks-have-you-been-saved",
+    "kind": "talk",
+    "sample": "asamento eterno, no templo de Deus e a fidelidade a eles, perseverando-se até o fim. Se empregarmos a palavra salvação no sentido de “exaltação”, é precipitação de"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 40,
+  "en_talks": 25,
+  "en_verses": 0,
+  "uncovered_paragraphs": 32,
+  "renderings": [
+   {
+    "term": "relación de convenio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-clyde-confirmed-in-faith",
+      "para": 3,
+      "en": "… Savior goes before us and invites us to a covenant relationship with Him to help us find our way. In …",
+      "tr": "… ante nosotros y nos invita a tener una relación de convenio con El para ayudarnos a encontrar el camino. En …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-gong-covenant-belonging",
+      "para": 5,
+      "en": "… existential uncertainty and doubt but to rejoice in cherished covenant relationships “stronger than the cords of death.”[^8]",
+      "tr": "… vida terrenal, sino a regocijarnos en las preciadas relaciones de convenio que son “más fuerte[s] que los lazos de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-browning-seeking-answers-to-spiritual-questions",
+      "para": 10,
+      "en": "Our covenant relationship with Heavenly Father and Jesus Christ signals our prevailing …",
+      "tr": "Nuestra relación de convenio con el Padre Celestial y Jesucristo es señal de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "relación por convenio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.875,
+    "ratio": 1167.0,
+    "source": "2022-04-craven-do-what-mattereth-most",
+    "kind": "talk",
+    "sample": "os arrepintamos, más fortaleceremos nuestra relación con Dios por convenio. Esa relación por convenio nos lleva al templo, porque guardar los convenios del templo es la forma en que"
+   }
+  ]
+ }
+}

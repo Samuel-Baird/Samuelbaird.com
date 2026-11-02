@@ -1,0 +1,102 @@
+{
+ "id": "concept.high-council",
+ "pt": {
+  "en_paragraphs": 23,
+  "en_talks": 20,
+  "en_verses": 18,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Sumo Conselho",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 20,
+    "talks": 17,
+    "verses": 18,
+    "first_year": 1990,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 102:30",
+      "ref_en": "Doctrine and Covenants 102:30",
+      "en": "There is a distinction between the high council or traveling high priests abroad, and the traveling high council composed of the twelve apostles, in their decisions.",
+      "tr": "Há uma distinção entre o sumo conselho ou os sumos sacerdotes viajantes que estiverem fora e o sumo conselho viajante composto dos doze apóstolos, em suas decisões.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/102?lang=por&id=p30"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 15,
+      "en": "… of Zion’s Camp, the Prophet gave the newly organized high council detailed instructions regarding their callings and then told them, …",
+      "tr": "… Terminado o Acampamento de Sião, o Profeta deu ao sumo conselho instruções detalhadas sobre seus chamados e lhes disse: “E …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-gay-what-shall-a-man-give-in-exchange-for-his-soul",
+      "para": 21,
+      "en": "… Mrs. Harris. It went from the bishop to the high council to the First Presidency, all of whom agreed that …",
+      "tr": "… Sra. Harris. O caso passou do bispo para o sumo conselho e para a Primeira Presidência, e todos concordaram que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 16,
+  "en_talks": 13,
+  "en_verses": 18,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "sumo consejo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 13,
+    "verses": 18,
+    "first_year": 2001,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 107:38",
+      "ref_en": "Doctrine and Covenants 107:38",
+      "en": "It is the duty of the traveling high council to call upon the Seventy, when they need assistance, to fill the several calls for preaching and administering the gospel, instead of any others.",
+      "tr": "Es el deber del sumo consejo viajante, cuando necesite ayuda, llamar a los Setenta, en lugar de otros, para atender a los varios llamamientos de predicar y administrar el evangelio.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=spa&id=p38"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-monson-duty-calls",
+      "para": 15,
+      "en": "… by, but Bishop Warner, now a member of a high council, never ceased to wonder what had become of …",
+      "tr": "… el obispo Warner, que para entonces era miembro del sumo consejo, nunca dejó de pensar en qué habría sido …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-bednar-the-windows-of-heaven",
+      "para": 19,
+      "en": "… of the bishop and his council, and by my high council; and by mine own voice unto them, saith …",
+      "tr": "… por el obispo y su consejo, y por mi sumo consejo, así como por mi propia voz dirigida a …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

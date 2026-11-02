@@ -1,0 +1,23 @@
+id: concept.ordinance
+category: Priesthood Authority & Ordinances
+en:
+  term: ordinance
+  match:
+  - ordinance
+sources:
+  GS:
+  - ordinances
+  Topics:
+  - ordinances
+  TtF:
+  - ordinances
+  GH:
+  - 3-priesthood-principles#title_number18
+candidates:
+  pt:
+  - term: ordenança
+    hint: pulpit-glossary:standard
+  es:
+  - term: ordenanza
+    hint: approved-terms
+related: []

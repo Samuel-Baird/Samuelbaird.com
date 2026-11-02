@@ -1,0 +1,19 @@
+id: concept.patriarch
+category: Priesthood Offices & Quorums
+en:
+  term: patriarch
+  match:
+  - patriarch
+sources:
+  GS:
+  - patriarch-patriarchal
+  Topics:
+  - patriarch
+  GH:
+  - 6-stake-leadership#title_number23
+candidates:
+  pt: []
+  es:
+  - term: patriarca
+    hint: approved-terms
+related: []

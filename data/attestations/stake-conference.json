@@ -1,0 +1,179 @@
+{
+ "id": "concept.stake-conference",
+ "pt": {
+  "en_paragraphs": 96,
+  "en_talks": 89,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "conferência de estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 82,
+    "talks": 77,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-cuthbert-the-spirituality-of-service",
+      "para": 7,
+      "en": "As I travel to stake conferences I am delighted to hear of youth service projects …",
+      "tr": "Quando viajo, para assistir a conferências de estaca, fico encantado em ouvir falar de todos os …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-uchtdorf-pride-and-the-priesthood",
+      "para": 24,
+      "en": "… opportunity to drive President James E. Faust to a stake conference. During the hours we spent in the car, …",
+      "tr": "… Presidente James E. Faust de carro para uma conferência de estaca. Nas horas que passamos dentro do carro, o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-chigbundu-spiritual-immunity",
+      "para": 17,
+      "en": "While serving as an Area Seventy, I attended a stake conference in Côte d’Ivoire. After the Saturday adult session, the …",
+      "tr": "… servia como setenta de área, participei de uma conferência de estaca na Costa do Marfim. Depois da sessão de adultos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.786,
+    "ratio": 73.1,
+    "source": "1990-04-monson-my-brothers-keeper",
+    "kind": "talk",
+    "sample": "Em 1975, compareci à conferência da estaca dos Parleys, onde tivemos uma reunião de liderança do sacerdócio logo cedo, na"
+   },
+   {
+    "term": "conferência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.786,
+    "ratio": 35.7,
+    "source": "1990-04-monson-my-brothers-keeper",
+    "kind": "talk",
+    "sample": "Em 1975, compareci à conferência da estaca dos Parleys, onde tivemos uma reunião de liderança do sacerdócio logo"
+   },
+   {
+    "term": "história",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.357,
+    "ratio": 15.4,
+    "source": "1990-04-monson-my-brothers-keeper",
+    "kind": "talk",
+    "sample": "uperar qualquer um que se tenha desviado. Gil Warner pediu a palavra e contou a história de Douglas, concluindo com a pergunta: “A quem cabe a responsabilidade de cuida"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 90,
+  "en_talks": 85,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "conferencia de estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 80,
+    "talks": 76,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-jensen-the-power-of-a-good-life",
+      "para": 23,
+      "en": "… to return home following the final session of a stake conference to which I had been assigned. An elderly brother …",
+      "tr": "… casa después de la sesión final de una conferencia de estaca a la que me habían asignado. Un hermano anciano …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-monson-examples-of-righteousness",
+      "para": 13,
+      "en": "… experience I had some years ago while attending a stake conference. During the general session, I observed a young …",
+      "tr": "… tuve hace algunos años mientras asistía a una conferencia de estaca. Durante la sesión general, me fijé en un …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-matswagothata-he-knows-you-by-name",
+      "para": 0,
+      "en": "… as I nervously walked up to speak at a stake conference, my daughter, trying to calm my nerves, said, …",
+      "tr": "… acercarme nervioso al púlpito para hablar en una conferencia de estaca, mi hija, tratando de calmar mis nervios, me …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 1.0,
+    "ratio": 97.6,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "En 1975 asistí a la conferencia de la estaca del hermano Warner y tuvimos la reunión de líderes del sacerdocio temprano el d"
+   },
+   {
+    "term": "conferencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 1.0,
+    "ratio": 47.1,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "En 1975 asistí a la conferencia de la estaca del hermano Warner y tuvimos la reunión de líderes del sacerdocio"
+   },
+   {
+    "term": "discurso",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 47.1,
+    "source": "2004-10-maynes-keeping-our-covenants",
+    "kind": "talk",
+    "sample": "la Estaca Talisay, Filipinas. Durante la sesión general del domingo, comencé mi discurso agradeciendo a la congregación su reverencia. Mientras hablaba, miré a la izqui"
+   }
+  ]
+ }
+}

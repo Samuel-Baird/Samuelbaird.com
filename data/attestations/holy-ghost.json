@@ -1,0 +1,102 @@
+{
+ "id": "concept.holy-ghost",
+ "pt": {
+  "en_paragraphs": 1868,
+  "en_talks": 783,
+  "en_verses": 206,
+  "uncovered_paragraphs": 37,
+  "renderings": [
+   {
+    "term": "Espírito Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1832,
+    "talks": 774,
+    "verses": 205,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Atos 5:32",
+      "ref_en": "Acts 5:32",
+      "en": "And we are his witnesses of these things; and so is also the Holy Ghost, whom God hath given to them that obey him.",
+      "tr": "E nós somos testemunhas acerca dessas palavras, e também o Espírito Santo, que Deus deu àqueles que lhe obedecem.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/acts/5?lang=por&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-wood-come-unto-christ",
+      "para": 15,
+      "en": "… we can “be visited with fire and with the Holy Ghost, and … receive a remission of … sins” …",
+      "tr": "… batismo podemos ser “visitados com fogo e com o Espírito Santo e [receber a remissão dos] pecados”. ([3 Néfi 12:2](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/12?lang=por&id=p2#p2).) …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-gibson-fatherhoodour-eternal-destiny",
+      "para": 54,
+      "en": "… through the Atonement. He has blessed us with the Holy Ghost to be a witness, companion, and guide *to our …",
+      "tr": "… por meio da Expiação. Ele nos abençoou com o Espírito Santo para ser uma testemunha, um companheiro e um guia …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1861,
+  "en_talks": 785,
+  "en_verses": 207,
+  "uncovered_paragraphs": 34,
+  "renderings": [
+   {
+    "term": "Espiritu Santo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1829,
+    "talks": 772,
+    "verses": 205,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Jacob 7:13",
+      "ref_en": "Jacob 7:13",
+      "en": "And it came to pass that he said unto me: Show me a sign by this power of the Holy Ghost, in the which ye know so much.",
+      "tr": "Y aconteció que me dijo: Muéstrame una señal mediante este poder del Espíritu Santo, por medio del cual sabes tanto.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/7?lang=spa&id=p13"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-eyring-witnesses-for-god",
+      "para": 20,
+      "en": "… us to feel humble and meek so that the Holy Ghost may more easily be our companion. By our fast, …",
+      "tr": "… ser mas humildes y mas mansos para que al Espíritu Santo le sea mas fácil ser nuestro compañero. Por medio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-hales-coming-to-ourselves-the-sacrament-the-temple-and-sacrifice-in-service",
+      "para": 16,
+      "en": "… obtain a testimony of Heavenly Father, Jesus Christ, the Holy Ghost, the reality of the Atonement, and the truthfulness …",
+      "tr": "… obtener un testimonio del Padre Celestial, de Jesucristo, del Espíritu Santo, de la realidad de la Expiación y de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

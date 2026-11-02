@@ -1,0 +1,42 @@
+{
+ "id": "concept.name-and-blessing",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": []
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "nombre y la bendición",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-gong-covenant-belonging",
+      "para": 16,
+      "en": "… bless literally from cradle to grave—from an infant’s name and blessing to a grave dedication. Priesthood blessings heal, comfort, counsel. …",
+      "tr": "… desde la cuna hasta la tumba, desde el nombre y la bendición de un bebé hasta la dedicación de la …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

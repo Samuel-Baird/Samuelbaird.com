@@ -1,0 +1,105 @@
+{
+ "id": "concept.general-officer",
+ "pt": {
+  "en_paragraphs": 47,
+  "en_talks": 31,
+  "en_verses": 0,
+  "uncovered_paragraphs": 47,
+  "renderings": [
+   {
+    "term": "Oficial Geral",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "líderes gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 38,
+    "share_of_uncovered": 0.809,
+    "ratio": 1078.3,
+    "source": "2010-10-holland-because-of-your-faith",
+    "kind": "talk",
+    "sample": "o de apoio não apenas para o Presidente Monson, mas também para todos os outros líderes gerais da Igreja. Como meu nome está incluído na lista, tomo a liberdade de falar em n"
+   },
+   {
+    "term": "autoridades gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.745,
+    "ratio": 114.6,
+    "source": "1997-04-hinckley-our-testimony-to-the-world",
+    "kind": "talk",
+    "sample": "s por todos os que discursaram e gostaríamos que pudéssemos ter ouvido todos as Autoridades Gerais e de Área e a liderança geral. Isso teria levado uma semana."
+   },
+   {
+    "term": "setentas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.681,
+    "ratio": 170.3,
+    "source": "2016-04-uchtdorf-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Presidente Monson convidou-me a apresentar o nome das Autoridades Gerais e dos setentas de área para seu voto de apoio."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 48,
+  "en_talks": 32,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "oficial general",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 47,
+    "talks": 31,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-partakers-of-the-glories",
+      "para": 17,
+      "en": "… when my counselors and I were set apart as general officers of the Relief Society by the First Presidency. The …",
+      "tr": "… me apartó a mi y a mis consejeras como oficiales generales de la Sociedad de Socorro. La ocasión era formal …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 32,
+      "en": "… we sustain the other General Authorities, Area Seventies, and General Officers as presently constituted.",
+      "tr": "… a las demás Autoridades Generales, Setentas de Área y Oficiales Generales, tal y como se encuentran actualmente constituidos."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 18,
+      "en": "… we sustain the other General Authorities, Area Seventies, and General Officers as presently constituted.",
+      "tr": "… a las demás Autoridades Generales, Setentas de Área y Oficiales Generales tal y como se encuentran actualmente constituidos."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,23 @@
+id: concept.aaronic-priesthood
+category: Priesthood Offices & Quorums
+en:
+  term: Aaronic Priesthood
+  match:
+  - Aaronic Priesthood
+sources:
+  GS:
+  - aaronic-priesthood
+  Topics:
+  - aaronic-priesthood
+  TtF:
+  - aaronic-priesthood
+  GH:
+  - 18-priesthood-ordinances-and-blessings#title_number63
+candidates:
+  pt:
+  - term: Sacerdócio Aarônico
+    hint: pulpit-glossary:standard
+  es:
+  - term: Sacerdocio Aarónico
+    hint: approved-terms
+related: []

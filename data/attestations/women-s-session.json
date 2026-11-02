@@ -1,0 +1,141 @@
+{
+ "id": "concept.women-s-session",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "sessão geral das mulheres",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-kearon-refuge-from-the-storm",
+      "para": 16,
+      "en": "… women of the Church last weekend in the general women’s session. There are multiple helpful ideas, resources, and suggestions …",
+      "tr": "… às mulheres da Igreja na semana passada, na sessão geral das mulheres. Há várias sugestões úteis, recursos e sugestões …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-walker-the-gospel-light-of-truth-and-love",
+      "para": 31,
+      "en": "During the women’s session of general conference in October 2019, President Nelson said, …",
+      "tr": "Na sessão geral das mulheres da Conferência Geral de Outubro de 2019, o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-renlund-your-divine-nature-and-eternal-destiny",
+      "para": 0,
+      "en": "… being here. I am honored to participate in this women’s session of general conference. On occasion I have also been …",
+      "tr": "… por estarem aqui. Sinto-me honrado por participar desta sessão geral das mulheres. Já tive o privilégio de participar algumas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "sesión de mujeres",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2021,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-walker-the-gospel-light-of-truth-and-love",
+      "para": 31,
+      "en": "During the women’s session of general conference in October 2019, President Nelson said, …",
+      "tr": "Durante la sesión de mujeres de la Conferencia General de octubre de 2019, el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-porter-lessons-at-the-well",
+      "para": 0,
+      "en": "… to be gathered with each of you in this women’s session of general conference!",
+      "tr": "… reunirme con cada una de ustedes en la Sesión de mujeres de la conferencia general!"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-renlund-your-divine-nature-and-eternal-destiny",
+      "para": 0,
+      "en": "… being here. I am honored to participate in this women’s session of general conference. On occasion I have also been …",
+      "tr": "… aquí. Me siento honrado al participar en esta sesión de mujeres de la conferencia general. En ocasiones, he tenido el …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sesión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 222.3,
+    "source": "2016-04-kearon-refuge-from-the-storm",
+    "kind": "talk",
+    "sample": "na Burton lo presentó a las mujeres de la Iglesia el fin de semana pasado en la Sesión General de Mujeres. En el sitio [FuiForastero.lds.org](http://iwasastranger.lds"
+   },
+   {
+    "term": "mujeres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 38.8,
+    "source": "2016-04-kearon-refuge-from-the-storm",
+    "kind": "talk",
+    "sample": "todo el mundo[^10] las presidencias generales de la Sociedad de Socorro, de las Mujeres Jóvenes y de la Primaria han organizado un esfuerzo de socorro titulado “Fui fo"
+   },
+   {
+    "term": "jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 27.8,
+    "source": "2016-04-kearon-refuge-from-the-storm",
+    "kind": "talk",
+    "sample": "mundo[^10] las presidencias generales de la Sociedad de Socorro, de las Mujeres Jóvenes y de la Primaria han organizado un esfuerzo de socorro titulado “Fui forastero”"
+   }
+  ]
+ }
+}

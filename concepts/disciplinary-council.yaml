@@ -1,0 +1,15 @@
+id: concept.disciplinary-council
+category: Interviews, Repentance & Membership Councils
+en:
+  term: disciplinary council
+  match:
+  - disciplinary council
+sources: {}
+candidates:
+  pt:
+  - term: conselho disciplinar
+    hint: pulpit-glossary:standard
+  es:
+  - term: consejo disciplinario
+    hint: pulpit-glossary:verified
+related: []

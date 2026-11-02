@@ -1,0 +1,17 @@
+id: concept.stick-of-judah
+category: Scriptures & Study Helps
+en:
+  term: stick of Judah
+  match:
+  - stick of Judah
+sources:
+  GS:
+  - stick-of-judah
+candidates:
+  pt:
+  - term: vara de Judá
+    hint: pulpit-glossary:verified
+  es:
+  - term: Palo de Judá
+    hint: pulpit-glossary:verified
+related: []

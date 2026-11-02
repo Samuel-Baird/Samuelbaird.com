@@ -1,0 +1,13 @@
+id: concept.gospel-of-abraham
+category: Israel & Covenant People
+en:
+  term: gospel of Abraham
+  match:
+  - gospel of Abraham
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: evangelio de Abraham
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,15 @@
+id: concept.law-of-chastity
+category: Commandments & Laws
+en:
+  term: law of chastity
+  match:
+  - law of chastity
+sources: {}
+candidates:
+  pt:
+  - term: lei de castidade
+    hint: pulpit-glossary:verified
+  es:
+  - term: ley de castidad
+    hint: pulpit-glossary:verified
+related: []

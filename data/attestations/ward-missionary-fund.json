@@ -1,0 +1,48 @@
+{
+ "id": "concept.ward-missionary-fund",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "fundo missionário da ala",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "fondo misional de barrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2013,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-welcome-to-conference",
+      "para": 5,
+      "en": "… to contribute, as they are able, to their ward missionary fund or to the General Missionary Fund of the Church. …",
+      "tr": "… en el pasado que contribuyan, si pueden, al fondo misional de barrio o al Fondo general misional de la Iglesia. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

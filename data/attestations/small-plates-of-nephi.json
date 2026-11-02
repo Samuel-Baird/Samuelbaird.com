@@ -1,0 +1,67 @@
+{
+ "id": "concept.small-plates-of-nephi",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "placas menores de Néfi",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-hales-answers-to-prayer",
+      "para": 3,
+      "en": "… along. When he felt inspired to include the small plates of Nephi with his record, Mormon wrote: “And I do …",
+      "tr": "… cuidadosamente. Quando se sentiu inspirado a incluir as placas menores de Néfi em seu registro, Mórmon escreveu: “E faço isto …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "planchas menores de Nefi",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-hales-answers-to-prayer",
+      "para": 3,
+      "en": "… along. When he felt inspired to include the small plates of Nephi with his record, Mormon wrote: “And I do …",
+      "tr": "… cuidado. Cuando se sintió inspirado a incluir las planchas menores de Nefi en su registro, Mormón escribió: “Y hago esto …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

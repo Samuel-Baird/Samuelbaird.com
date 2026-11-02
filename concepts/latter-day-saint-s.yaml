@@ -1,0 +1,17 @@
+id: concept.latter-day-saint-s
+category: The Church & Members
+en:
+  term: Latter-day Saint(s)
+  match:
+  - Latter-day Saint
+sources:
+  GH:
+  - 38-church-policies-and-guidelines#title_number212
+candidates:
+  pt:
+  - term: Santos dos Últimos Dias
+    hint: pulpit-glossary:verified
+  es:
+  - term: Santos de los Últimos Días
+    hint: pulpit-glossary:verified
+related: []

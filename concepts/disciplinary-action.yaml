@@ -1,0 +1,15 @@
+id: concept.disciplinary-action
+category: Interviews, Repentance & Membership Councils
+en:
+  term: disciplinary action
+  match:
+  - disciplinary action
+sources: {}
+candidates:
+  pt:
+  - term: ação disciplinar
+    hint: pulpit-glossary:standard
+  es:
+  - term: acción disciplinaria
+    hint: pulpit-glossary:verified
+related: []

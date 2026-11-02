@@ -1,0 +1,19 @@
+id: concept.ward
+category: Church Units & Facilities
+en:
+  term: ward
+  match:
+  - ward
+sources:
+  TtF:
+  - ward
+  GH:
+  - 37-specialized-stakes-wards-and-branches#title_number14
+candidates:
+  pt:
+  - term: ala
+    hint: pulpit-glossary:standard
+  es:
+  - term: barrio
+    hint: approved-terms
+related: []

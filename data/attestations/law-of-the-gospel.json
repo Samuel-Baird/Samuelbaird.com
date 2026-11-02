@@ -1,0 +1,127 @@
+{
+ "id": "concept.law-of-the-gospel",
+ "pt": {
+  "en_paragraphs": 15,
+  "en_talks": 14,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "lei do evangelho",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 13,
+    "verses": 1,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 88:78",
+      "ref_en": "Doctrine and Covenants 88:78",
+      "en": "Teach ye diligently and my grace shall attend you, that you may be instructed more perfectly in theory, in principle, in doctrine, in the law of the gospel, in all things that pertain unto the kingdom of God, that are expedient for you to understand;",
+      "tr": "Ensinai diligentemente e minha graça acompanhar-vos-á, para que sejais instruídos mais perfeitamente em teoria, em princípio, em doutrina, na lei do evangelho, em todas as coisas pertinentes ao reino de Deus, que vos convém compreender;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p78"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-brewerton-light",
+      "para": 31,
+      "en": "… the priesthood, who live in harmony with the laws of the gospel, of the glory and the will of …",
+      "tr": "… à pessoa que vive em harmonia com as leis do evangelho, da glória e vontade do Pai. Então terão …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-bednar-prepared-to-obtain-every-needful-thing",
+      "para": 30,
+      "en": "… law of obedience, the law of sacrifice, the law of the gospel, the law of chastity, and the law …",
+      "tr": "… lei da obediência, a lei do sacrifício, a lei do evangelho, a lei da castidade e a lei da …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 12,
+  "en_verses": 1,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "ley del evangelio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 8,
+    "verses": 1,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 88:78",
+      "ref_en": "Doctrine and Covenants 88:78",
+      "en": "Teach ye diligently and my grace shall attend you, that you may be instructed more perfectly in theory, in principle, in doctrine, in the law of the gospel, in all things that pertain unto the kingdom of God, that are expedient for you to understand;",
+      "tr": "Enseñaos diligentemente, y mi gracia os acompañará, para que seáis más perfectamente instruidos en teoría, en principio, en doctrina, en la ley del evangelio, en todas las cosas que pertenecen al reino de Dios, que os conviene comprender;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=spa&id=p78"
+     },
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-hinckley-why-we-do-some-of-the-things-we-do",
+      "para": 6,
+      "en": "… in theory, in principle, in doctrine, in the law of the gospel, in all things that pertain unto the …",
+      "tr": "… en teoría, en principio, en doctrina, en la ley del evangelio, en todas las cosas que pertenecen al reino …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-renlund-accessing-gods-power-through-covenants",
+      "para": 20,
+      "en": "… obedience, obey the law of sacrifice, obey the law of the gospel of Jesus Christ, keep the law of chastity, …",
+      "tr": "… obediencia, obedecer la ley de sacrificio, obedecer la ley del evangelio de Jesucristo, guardar la ley de castidad y guardar …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "leyes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 150.0,
+    "source": "2004-04-nelson-roots-and-branches",
+    "kind": "talk",
+    "sample": "sólo podemos obtener la paz de la pureza personal si vivimos de acuerdo con las leyes del Evangelio."
+   },
+   {
+    "term": "palabra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 18.0,
+    "source": "1999-10-faust-of-seeds-and-soils",
+    "kind": "talk",
+    "sample": "tesoro en el cielo; y ven y sígueme”. Mateo escribe que “…oyendo el joven esta palabra, se fue triste, porque tenía muchas posesiones”[^6]. La semilla se había sembra"
+   }
+  ]
+ }
+}

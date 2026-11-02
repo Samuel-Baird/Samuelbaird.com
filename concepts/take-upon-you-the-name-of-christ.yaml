@@ -1,0 +1,13 @@
+id: concept.take-upon-you-the-name-of-christ
+category: Baptism, Confirmation & Blessings
+en:
+  term: take upon you the name of Christ
+  match:
+  - take upon you the name of Christ
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: tomar sobre vosotros el nombre de Cristo
+    hint: approved-terms
+related: []

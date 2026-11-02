@@ -1,0 +1,51 @@
+{
+ "id": "concept.accept-a-calling",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "aceitar um chamado",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2024,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-teixeira-bonded-to-jesus-christ-becoming-the-salt-of-the-earth",
+      "para": 17,
+      "en": "- Being willing to accept a calling and serving in the Church. Service in our local …",
+      "tr": "- Estar dispostos a aceitar um chamado e servir na Igreja. O serviço em nossa congregação …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-andersen-courage-born-of-our-faith-in-jesus-christ",
+      "para": 16,
+      "en": "… Jesus Christ that gives us the courage to accept a calling from our priesthood leaders even when we feel inadequate …",
+      "tr": "… Jesus Cristo que nos dá a coragem de aceitar um chamado de nossos líderes do sacerdócio mesmo quando nos sentimos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": []
+ }
+}

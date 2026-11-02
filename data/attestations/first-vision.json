@@ -1,0 +1,103 @@
+{
+ "id": "concept.first-vision",
+ "pt": {
+  "en_paragraphs": 91,
+  "en_talks": 66,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Primeira Visão",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 89,
+    "talks": 65,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+      "para": 9,
+      "en": "Joseph Smith’s prayer and first vision in 1820 were no small things, even though they …",
+      "tr": "A oração e a primeira visão de Joseph Smith, em 1820, não foram acontecimentos insignificantes, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-corbridge-the-prophet-joseph-smith",
+      "para": 0,
+      "en": "## The First Vision",
+      "tr": "## A Primeira Visão"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-brown-the-eternal-gift-of-testimony",
+      "para": 20,
+      "en": "… ask. “How could you believe that story?”—referring to the First Vision. “How could you read that book?”—referring to the …",
+      "tr": "… perguntavam eles. “Como pôde acreditar naquela história?”, referindo-se à Primeira Visão. “Como pôde ler aquele livro?”, referindo-se ao Livro …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 94,
+  "en_talks": 70,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Primera Visión",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 92,
+    "talks": 69,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-oaks-joseph-the-man-and-the-prophet",
+      "para": 3,
+      "en": "… of knowledge and maturity. He was 14 at the First Vision and 17 at the first visit from the angel …",
+      "tr": "… conocimiento y madurez. Tenía catorce años cuando tuvo la Primera Visión y diecisiete en la ocasión de la primera visita …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-golden-the-father-and-the-son",
+      "para": 8,
+      "en": "… writ are relatively rare, the remarkable fact of the First Vision is that it agrees so well with other recorded …",
+      "tr": "… en la Escritura sagrada, el hecho extraordinario de la Primera Visión es que concuerda tan bien con otros acontecimientos registrados …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-brown-the-eternal-gift-of-testimony",
+      "para": 20,
+      "en": "… ask. “How could you believe that story?”—referring to the First Vision. “How could you read that book?”—referring to the …",
+      "tr": "… preguntaban. “¿Cómo puedes creer esa historia?”, refiriéndose a la Primera Visión. “¿Cómo puedes leer ese libro?”, refiriéndose al Libro …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

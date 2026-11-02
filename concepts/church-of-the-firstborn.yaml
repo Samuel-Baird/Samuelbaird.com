@@ -1,0 +1,17 @@
+id: concept.church-of-the-firstborn
+category: The Church & Members
+en:
+  term: Church of the Firstborn
+  match:
+  - Church of the Firstborn
+sources: {}
+candidates:
+  pt:
+  - term: Igreja do Primogênito
+    hint: pulpit-glossary:verified
+  es:
+  - term: iglesia del Primogénito
+    hint: approved-terms
+related: []
+note: Scriptural title (D&C 76, 93) for those who attain celestial exaltation; distinct from "celestial
+  kingdom"

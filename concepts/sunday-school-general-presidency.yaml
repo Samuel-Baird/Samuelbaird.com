@@ -1,0 +1,13 @@
+id: concept.sunday-school-general-presidency
+category: Presiding Quorums & General Leadership
+en:
+  term: Sunday School General Presidency
+  match:
+  - Sunday School General Presidency
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Presidencia General de la Escuela Dominical
+    hint: pulpit-glossary:verified
+related: []

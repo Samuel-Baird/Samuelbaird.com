@@ -1,0 +1,21 @@
+id: concept.patriarchal-blessing
+category: Baptism, Confirmation & Blessings
+en:
+  term: patriarchal blessing
+  match:
+  - patriarchal blessing
+sources:
+  GS:
+  - patriarchal-blessings
+  Topics:
+  - patriarchal-blessings
+  TtF:
+  - patriarchal-blessings
+  GH:
+  - 18-priesthood-ordinances-and-blessings#title_number54
+candidates:
+  pt: []
+  es:
+  - term: bendición patriarcal
+    hint: approved-terms
+related: []

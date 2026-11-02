@@ -1,0 +1,16 @@
+id: concept.rising-generation
+category: Organizations & Youth
+en:
+  term: Rising Generation
+  match:
+  - Rising Generation
+sources: {}
+candidates:
+  pt:
+  - term: nova geração
+    hint: pulpit-glossary:verified
+  es:
+  - term: nueva generación
+    hint: approved-terms
+related: []
+note: Semi-technical current usage referring to today's children and youth collectively

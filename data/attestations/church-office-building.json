@@ -1,0 +1,123 @@
+{
+ "id": "concept.church-office-building",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Edifício dos Escritórios da Igreja",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-burton-heroes",
+      "para": 7,
+      "en": "One evening I was working late in the Church Office Building. When I called for an elevator to go …",
+      "tr": "Uma noite, trabalhei até tarde no Edifício dos Escritórios da Igreja. Quando chamei um elevador para ir para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-nelson-closing-remarks",
+      "para": 7,
+      "en": "… Temple Square, and the adjoining plaza near the Church Office Building will be announced on Friday, April 19, 2019.",
+      "tr": "… Templo e da praça adjacente perto do edifício dos escritórios da Igreja serão anunciados na sexta-feira, 19 de abril de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-spiritual-treasures",
+      "para": 30,
+      "en": "… Temple Square, and the adjoining plaza near the Church Office Building will be renewed in a project that will begin …",
+      "tr": "… do Templo e a praça próxima ao edifício dos escritórios da Igreja serão reformados em um projeto que começará no …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Oficinas de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 1993,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-burton-heroes",
+      "para": 7,
+      "en": "One evening I was working late in the Church Office Building. When I called for an elevator to go …",
+      "tr": "… trabajar hasta tarde en el edificio de las Oficinas de la Iglesia. Cuando apreté el botón para llamar el …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "oficinas generales",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "2002-04-hinckley-the-church-goes-forward",
+    "kind": "talk",
+    "sample": "historia familiar, el Edificio Administrativo de la Iglesia, el edificio de las Oficinas Generales de la Iglesia, nuestras instalaciones de bienestar, junto con cantidad de capil"
+   },
+   {
+    "term": "plaza",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2019-04-nelson-closing-remarks",
+    "kind": "talk",
+    "sample": "án los planes de renovación del Templo de Salt Lake, la Manzana del Templo y la plaza que se encuentra junto al edificio de las Oficinas Generales de la Iglesia."
+   },
+   {
+    "term": "edificio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 166.7,
+    "source": "2002-04-hinckley-the-church-goes-forward",
+    "kind": "talk",
+    "sample": "algo maravilloso resultaría para la Iglesia de este acontecimiento. Los grandes edificios que tenemos: el Templo, el Tabernáculo, este magnífico Centro de Conferencias,"
+   }
+  ]
+ }
+}

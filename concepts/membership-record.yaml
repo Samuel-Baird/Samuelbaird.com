@@ -1,0 +1,17 @@
+id: concept.membership-record
+category: Membership Records
+en:
+  term: membership record
+  match:
+  - membership record
+sources:
+  GH:
+  - 33-records-and-reports#title_number18
+candidates:
+  pt:
+  - term: registro de membro
+    hint: pulpit-glossary:standard
+  es:
+  - term: registro de membresía
+    hint: pulpit-glossary:verified
+related: []

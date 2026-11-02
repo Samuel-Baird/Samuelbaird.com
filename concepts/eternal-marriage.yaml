@@ -1,0 +1,15 @@
+id: concept.eternal-marriage
+category: Temple & Family History
+en:
+  term: eternal marriage
+  match:
+  - eternal marriage
+sources: {}
+candidates:
+  pt:
+  - term: casamento eterno
+    hint: pulpit-glossary:verified
+  es:
+  - term: matrimonio eterno
+    hint: pulpit-glossary:verified
+related: []

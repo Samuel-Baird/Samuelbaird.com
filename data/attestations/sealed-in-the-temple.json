@@ -1,0 +1,179 @@
+{
+ "id": "concept.sealed-in-the-temple",
+ "pt": {
+  "en_paragraphs": 56,
+  "en_talks": 52,
+  "en_verses": 0,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "selados no templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 30,
+    "talks": 30,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-didier-remember-your-covenants",
+      "para": 13,
+      "en": "… also reality as my companion and I were sealed in the temple in Zollikofen, Switzerland. As a husband and father …",
+      "tr": "… a realidade, quando eu e minha companheira fomos selados no templo em Zullikofen, Suíça. Sendo eu marido, pai e posteriormente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-nelson-the-sabbath-is-a-delight",
+      "para": 16,
+      "en": "… children, to return to Him as endowed Saints, sealed in the temple as families, to our ancestors, and to our …",
+      "tr": "… retorne à presença Dele como santos com investidura, selados no templo como família a nossos antepassados e a nossa posteridade.[^15]"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 20,
+      "en": "… temples were distant, faithful members sacrificed to be sealed in the temple. Some members could come to the temple …",
+      "tr": "… distantes, os membros fiéis se sacrificavam para serem selados no templo. Alguns membros só conseguiam ir a um templo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "selada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.231,
+    "ratio": 230.8,
+    "source": "2008-10-nelson-celestial-marriage",
+    "kind": "talk",
+    "sample": "Os filhos nascidos dessa união são “herança do Senhor”.[^26] Quando a família é selada no templo, ela se torna eterna como o próprio reino de Deus.[^27]"
+   },
+   {
+    "term": "selado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.231,
+    "ratio": 153.9,
+    "source": "2010-04-aoyagi-helping-hands-saving-hands",
+    "kind": "talk",
+    "sample": "do pela gratidão ao Senhor e àquela irmã que me resgatou. Depois da missão, fui selado no templo a uma moça maravilhosa, e fomos abençoados com quatro filhos. Sem ser"
+   },
+   {
+    "term": "fomos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.231,
+    "ratio": 27.2,
+    "source": "1993-10-condie-a-mighty-change-of-heart",
+    "kind": "talk",
+    "sample": "Recentemente fomos selados para a eternidade e agora passamos um dia por semana juntos no templo."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 54,
+  "en_talks": 50,
+  "en_verses": 0,
+  "uncovered_paragraphs": 25,
+  "renderings": [
+   {
+    "term": "sellado en el templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 29,
+    "talks": 28,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-scott-the-power-of-righteousness",
+      "para": 13,
+      "en": "… now make will help you prepare to be sealed in the temple to a worthy companion and to form and …",
+      "tr": "… te ayudaran a prepararte para ser sellado o sellada en el templo a una compañera o compañero dignos y para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-nelson-ministering-with-the-power-and-authority-of-god",
+      "para": 12,
+      "en": "… in the Church. He and Leonora had been sealed in the temple.[^8] Yet Wilbur had not participated for many …",
+      "tr": "… en la iglesia. Él y Leonora se habían sellado en el templo[^8]. Sin embargo, Wilbur no había participado durante …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-dube-come-unto-christ",
+      "para": 19,
+      "en": "… prayer. And just two months later they were sealed in the temple.",
+      "tr": "… rodillas, nos fuimos. Solo dos meses después fueron sellados en el templo."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sellaron",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.28,
+    "ratio": 373.4,
+    "source": "2005-04-hales-couple-missionaries-blessings-from-sacrifice-and-service",
+    "kind": "talk",
+    "sample": "Iglesia con nosotros y después de volver a casa se bautizó. Un año más tarde se sellaron en el templo”[^9]."
+   },
+   {
+    "term": "sellamos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.24,
+    "ratio": 960.2,
+    "source": "1993-10-condie-a-mighty-change-of-heart",
+    "kind": "talk",
+    "sample": "“Recientemente nos sellamos en el templo, y ahora pasamos un día por semana en el templo juntos. Bueno, el"
+   },
+   {
+    "term": "familias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.2,
+    "ratio": 12.1,
+    "source": "2001-04-scott-first-things-first",
+    "kind": "talk",
+    "sample": "e, y se allegará a su mujer” (Moisés 3:24). Tuvieron hijos que también formaron familias. “Y Adán y Eva, su esposa, no cesaron de invocar a Dios” (Moisés 5:16). Se esta"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.general-authorities-and-general-officers
+category: Presiding Quorums & General Leadership
+en:
+  term: general authorities and general officers
+  match:
+  - general authorities and general officers
+sources: {}
+candidates:
+  pt:
+  - term: Autoridades Gerais e Oficiais Gerais
+    hint: pulpit-glossary:verified
+  es:
+  - term: Autoridades Generales y Oficiales Generales
+    hint: pulpit-glossary:verified
+related: []

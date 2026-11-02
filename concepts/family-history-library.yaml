@@ -1,0 +1,15 @@
+id: concept.family-history-library
+category: Church Units & Facilities
+en:
+  term: Family History Library
+  match:
+  - Family History Library
+sources: {}
+candidates:
+  pt:
+  - term: Biblioteca de História da Família
+    hint: pulpit-glossary:verified
+  es:
+  - term: Centro de Historia Familiar
+    hint: pulpit-glossary:verified
+related: []

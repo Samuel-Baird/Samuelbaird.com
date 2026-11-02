@@ -1,0 +1,178 @@
+{
+ "id": "concept.general-conference",
+ "pt": {
+  "en_paragraphs": 1397,
+  "en_talks": 954,
+  "en_verses": 3,
+  "uncovered_paragraphs": 864,
+  "renderings": [
+   {
+    "term": "conferência geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 533,
+    "talks": 397,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:144",
+      "ref_en": "Doctrine and Covenants 124:144",
+      "en": "And a commandment I give unto you, that you should fill all these offices and approve of those names which I have mentioned, or else disapprove of them at my general conference;",
+      "tr": "E dou-vos o mandamento de preencherdes todos esses cargos e aprovardes ou desaprovardes, na minha conferência geral, os nomes que mencionei;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p144"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-cuthbert-the-spirituality-of-service",
+      "para": 4,
+      "en": "… Taft Benson, in Conference Report, Apr. 1979, [p. 48](https://www.churchofjesuschrist.org/study/general-conference/1979/04/this-is-a-day-of-sacrifice?lang=eng&id=p43#p43); or *Ensign,* May 1979, p. 34). We have a …",
+      "tr": "… descobrireis o segredo da vida plena e feliz.” (Conferência Geral de abril de 1979.) Perto de nossa casa mora …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-christofferson-the-elders-quorum",
+      "para": 18,
+      "en": "Twenty years ago in general conference, I related a story first told by Elder …",
+      "tr": "Há 20 anos, em uma conferência geral, relatei uma história que tinha sido contada anteriormente …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 215,
+    "share_of_uncovered": 0.86,
+    "ratio": 47.1,
+    "source": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+    "kind": "talk",
+    "sample": "[^1]: M. Russell Ballard, \"Preparar-se para servir\", A Liahona, julho de 1985, p. 47.\n[^2]: Ver Spencer W. Kimball, \"Quando o mundo for conver"
+   },
+   {
+    "term": "conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 177,
+    "share_of_uncovered": 0.708,
+    "ratio": 59.0,
+    "source": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+    "kind": "talk",
+    "sample": ", \"[Bem-vindos à conferência](https://www.churchofjesuschrist.org/study/general-conference/2012/10/welcome-to-conference?lang=por&id=p9-p14#p9)\", A Liahona, novembro de 2"
+   },
+   {
+    "term": "general",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 172,
+    "share_of_uncovered": 0.688,
+    "ratio": 64.0,
+    "source": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+    "kind": "talk",
+    "sample": ". Monson, \"[Bem-vindos à conferência](https://www.churchofjesuschrist.org/study/general-conference/2012/10/welcome-to-conference?lang=por&id=p9-p14#p9)\", A Liahona, no"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1407,
+  "en_talks": 961,
+  "en_verses": 3,
+  "uncovered_paragraphs": 869,
+  "renderings": [
+   {
+    "term": "conferencia general",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 538,
+    "talks": 397,
+    "verses": 3,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:144",
+      "ref_en": "Doctrine and Covenants 124:144",
+      "en": "And a commandment I give unto you, that you should fill all these offices and approve of those names which I have mentioned, or else disapprove of them at my general conference;",
+      "tr": "Y un mandamiento os doy, que llenéis todos estos oficios, y aprobéis o desaprobéis en mi conferencia general a las personas cuyos nombres he mencionado;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p144"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-beckham-sustaining-the-living-prophets",
+      "para": 14,
+      "en": "… uphold you by our confidence, faith, and prayers. In general conference next week, as we young women and leaders raise …",
+      "tr": "… nuestra fe y nuestras oraciones. Sabemos que en la conferencia general de la semana próxima, cuando las jovencitas y sus …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-ballard-family-councils",
+      "para": 3,
+      "en": "Until now, however, I have never talked in general conference about the most basic and fundamental—and perhaps the most …",
+      "tr": "Sin embargo, hasta ahora, nunca había hablado en la conferencia general acerca del consejo más básico y fundamental, y probablemente …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 231,
+    "share_of_uncovered": 0.924,
+    "ratio": 42.0,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "esuschrist.org/study/general-conference/2019/10/57nelson?lang=spa&id=p32#p32)\", Liahona, noviembre de 2019, pág. 122.\n[^9]: [Doctrina y Convenios 121:45](https://www.c"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 226,
+    "share_of_uncovered": 0.904,
+    "ratio": 32.0,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "-conference/2019/10/57nelson?lang=spa&id=p32#p32)\", Liahona, noviembre de 2019, pág. 122.\n[^9]: [Doctrina y Convenios 121:45](https://www.churchofjesuschrist.org/s"
+   },
+   {
+    "term": "conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 193,
+    "share_of_uncovered": 0.772,
+    "ratio": 50.6,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "lson, \"[Palabras de clausura](https://www.churchofjesuschrist.org/study/general-conference/2019/10/57nelson?lang=spa&id=p32#p32)\", Liahona, noviembre de 2019, pág. 122.\n["
+   }
+  ]
+ }
+}

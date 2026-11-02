@@ -1,0 +1,179 @@
+{
+ "id": "concept.sealing",
+ "pt": {
+  "en_paragraphs": 191,
+  "en_talks": 121,
+  "en_verses": 6,
+  "uncovered_paragraphs": 43,
+  "renderings": [
+   {
+    "term": "selamento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 151,
+    "talks": 103,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 138:48",
+      "ref_en": "Doctrine and Covenants 138:48",
+      "en": "Foreshadowing the great work to be done in the temples of the Lord in the dispensation of the fulness of times, for the redemption of the dead, and the sealing of the children to their parents, lest the whole earth be smitten with a curse and utterly wasted at his coming.",
+      "tr": "Prenunciando a grande obra a ser realizada nos templos do Senhor na dispensação da plenitude dos tempos, para a redenção dos mortos e o selamento dos filhos aos pais, a fim de que a Terra toda não fosse ferida com uma maldição e totalmente destruída na sua vinda.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=por&id=p48"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-haight-come-to-the-house-of-the-lord",
+      "para": 40,
+      "en": "… my testimony that your faithfulness to your endowment and sealing covenants assures you a fulness of the blessings promised. The …",
+      "tr": "… que vossa fidelidade à investidura e aos convênios do selamento vos assegura a plenitude das bênçãos prometidas. A infidelidade, transgressão …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-wakolo-saving-ordinances-will-bring-us-marvelous-light",
+      "para": 16,
+      "en": "… Likewise, our temptations do not end after baptism or sealing, but receiving the sacred ordinances and honoring the associated …",
+      "tr": "… nossas tentações não terminam depois do batismo ou do selamento, mas receber as ordenanças sagradas e honrar os convênios …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "chaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.256,
+    "ratio": 25.6,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "emonstrar o poder selador e Malaquias profetizar que Elias seria enviado com as chaves da autoridade seladora."
+   },
+   {
+    "term": "ordenanças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.302,
+    "ratio": 14.4,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "ós o que não podíamos fazer nós mesmos. De maneira semelhante, podemos realizar ordenanças por aqueles que não tiveram a oportunidade de realizá-las em vida.”"
+   },
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.209,
+    "ratio": 12.7,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "o poder selador e Malaquias profetizar que Elias seria enviado com as chaves da autoridade seladora."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 182,
+  "en_talks": 115,
+  "en_verses": 6,
+  "uncovered_paragraphs": 57,
+  "renderings": [
+   {
+    "term": "sellamiento",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 131,
+    "talks": 90,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-peterson-easter-reflections",
+      "para": 10,
+      "en": "… family, we are forever grateful for the binding and sealing effect the temple provides for the members of Jesus Christ’s …",
+      "tr": "… eternamente agradecidos por los lazos de unión y el sellamiento que proporciona el templo para los miembros de la Iglesia …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-marriott-yielding-our-hearts-to-god",
+      "para": 15,
+      "en": "… faith in His priesthood power, and faith in eternal sealings let us state our motto with conviction.",
+      "tr": "… el poder de Su sacerdocio, la fe en los sellamientos eternos nos permite declarar nuestro lema con convicción."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-bednar-sealed-by-the-holy-spirit-of-promise",
+      "para": 25,
+      "en": "The intended and prayed-for outcomes of a temple sealing between a man and a woman include a lifetime of …",
+      "tr": "… deseados, y por los que se ora, de un sellamiento en el templo entre un hombre y una mujer incluyen …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sellar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.509,
+    "ratio": 339.3,
+    "source": "1990-10-monson-days-never-to-be-forgotten",
+    "kind": "talk",
+    "sample": "de la piedra angular fue llamado por inspiración a tomar una paleta y ayudar a sellar la piedra."
+   },
+   {
+    "term": "ordenanzas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.316,
+    "ratio": 15.0,
+    "source": "1997-04-scott-jesus-christ-our-redeemer",
+    "kind": "talk",
+    "sample": ")Y que es lo esencial? Tiene que ver con la doctrina; se centra en las ordenanzas y comprende convenios vitales. Esas ordenanzas son el bautismo y la confirmació"
+   },
+   {
+    "term": "llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.228,
+    "ratio": 33.8,
+    "source": "1990-10-camargo-in-all-things-give-thanks",
+    "kind": "talk",
+    "sample": "Agradezco especialmente la restauración del sacerdocio, incluso de las mismas llaves selladoras que había prometido Jesucristo a sus Apóstoles y que permiten que en"
+   }
+  ]
+ }
+}

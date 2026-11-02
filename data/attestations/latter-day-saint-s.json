@@ -1,0 +1,141 @@
+{
+ "id": "concept.latter-day-saint-s",
+ "pt": {
+  "en_paragraphs": 713,
+  "en_talks": 471,
+  "en_verses": 5,
+  "uncovered_paragraphs": 225,
+  "renderings": [
+   {
+    "term": "Santos dos Últimos Dias",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 488,
+    "talks": 352,
+    "verses": 5,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 121:33",
+      "ref_en": "Doctrine and Covenants 121:33",
+      "en": "How long can rolling waters remain impure? What power shall stay the heavens? As well might man stretch forth his puny arm to stop the Missouri river in its decreed course, or to turn it up stream, as to hinder the Almighty from pouring down knowledge from heaven upon the heads of the Latter-day Saints.",
+      "tr": "Até quando podem águas correntes permanecer impuras? Que poder deterá os céus? Seria tão inútil o homem estender seu braço débil para deter o rio Missouri em seu curso ou fazê-lo ir correnteza acima, como o seria impedir que o Todo-Poderoso derramasse conhecimento do céu sobre a cabeça dos santos dos últimos dias.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=por&id=p33"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-gibbons-the-dual-aspects-of-prayer",
+      "para": 8,
+      "en": "… of secret prayer. The significance of this to the Latter-day Saint is profound, for by this means we are able …",
+      "tr": "… É o canal da oração secreta. Para os santos dos últimos dias, isto tem um significado profundo, pois desta …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-nelson-ask-the-missionaries-they-can-help-you",
+      "para": 24,
+      "en": "… understanding sacred scriptures. An independent study recently found that Latter-day Saints were the most knowledgeable about Christianity and the Bible.[^13] …",
+      "tr": "… escrituras. Um estudo independente revelou recentemente que os santos dos últimos dias são os que têm maior conhecimento sobre o …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "últimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 61,
+    "share_of_uncovered": 0.271,
+    "ratio": 7.5,
+    "source": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+    "kind": "talk",
+    "sample": "“a língua é um pequeno membro, e gloria-se de grandes coisas”. Nenhum santo dos últimos dias consciente permitirá que seus comentários, atitudes ou expressões sejam in"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 666,
+  "en_talks": 443,
+  "en_verses": 5,
+  "uncovered_paragraphs": 148,
+  "renderings": [
+   {
+    "term": "Santos de los Últimos Días",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 518,
+    "talks": 361,
+    "verses": 5,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 121:33",
+      "ref_en": "Doctrine and Covenants 121:33",
+      "en": "How long can rolling waters remain impure? What power shall stay the heavens? As well might man stretch forth his puny arm to stop the Missouri river in its decreed course, or to turn it up stream, as to hinder the Almighty from pouring down knowledge from heaven upon the heads of the Latter-day Saints.",
+      "tr": "¿Hasta cuándo pueden permanecer impuras las aguas que corren? ¿Qué poder hay que detenga los cielos? Tan inútil le sería al hombre extender su débil brazo para contener el río Misuri en su curso decretado, o volverlo hacia atrás, como evitar que el Todopoderoso derrame conocimiento desde el cielo sobre la cabeza de los Santos de los Últimos Días.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=spa&id=p33"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-hinckley-to-men-of-the-priesthood",
+      "para": 15,
+      "en": "… We have a substantial financial corpus contributed by faithful Latter-day Saints. We hope more will be forthcoming to make …",
+      "tr": "… dinero gracias a la contribución de fieles Santos de los Últimos Días. Esperamos que pronto tendremos más con el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-walker-live-true-to-the-faith",
+      "para": 5,
+      "en": "… Church. It would be a wonderful thing if every Latter-day Saint knew the conversion stories of their forefathers.",
+      "tr": "… la Iglesia. Sería maravilloso que todos los Santos de los Últimos Días conocieran la historia de la conversión de sus …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ultimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 89,
+    "share_of_uncovered": 0.601,
+    "ratio": 15.9,
+    "source": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+    "kind": "talk",
+    "sample": "gua es un miembro pequeño, pero se jacta de grandes cosas”. Ningún Santo de los Ultimos Días que sea razonable y reflexivo permitirá que sus comentarios, sus actitudes"
+   },
+   {
+    "term": "latter-day",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.209,
+    "ratio": 76.2,
+    "source": "1999-10-faust-of-seeds-and-soils",
+    "kind": "talk",
+    "sample": "28).\n[^5]: Véase Milton V Backman, hijo, *The Heavens Resound: A History of the Latter-day Saints in Ohio, 1830–1838*, 1983, págs. 93–94; y Donald Q. Cannon y Lyndon W Co"
+   }
+  ]
+ }
+}

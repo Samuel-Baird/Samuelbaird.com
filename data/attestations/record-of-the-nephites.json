@@ -1,0 +1,47 @@
+{
+ "id": "concept.record-of-the-nephites",
+ "pt": {
+  "en_paragraphs": 0,
+  "en_talks": 0,
+  "en_verses": 1,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "registro dos nefitas",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 1,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 1:29",
+      "ref_en": "Doctrine and Covenants 1:29",
+      "en": "And after having received the record of the Nephites, yea, even my servant Joseph Smith, Jun., might have power to translate through the mercy of God, by the power of God, the Book of Mormon.",
+      "tr": "Sim, e para que meu servo Joseph Smith Júnior depois de haver recebido o registro dos nefitas, tivesse poder para traduzir, pela misericórdia de Deus, pelo poder de Deus, o Livro de Mórmon.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1?lang=por&id=p29"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 0,
+  "en_talks": 0,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "registro de los nefitas",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ }
+}

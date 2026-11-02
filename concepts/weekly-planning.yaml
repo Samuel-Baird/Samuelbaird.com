@@ -1,0 +1,13 @@
+id: concept.weekly-planning
+category: Missionary Work
+en:
+  term: weekly planning
+  match:
+  - weekly planning
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: planificación semanal
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,103 @@
+{
+ "id": "concept.tabernacle-choir-at-temple-square",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Coro do Tabernáculo",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-oaks-truth-and-the-plan",
+      "para": 13,
+      "en": "We have just heard the Tabernacle Choir at Temple Square sing “I Will Follow God’s Plan.”[^3] That is …",
+      "tr": "Acabamos de ouvir o Coro do Tabernáculo da Praça do Templo cantar “Vou cumprir o plano …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-boom-knowing-loving-and-growing",
+      "para": 0,
+      "en": "In 2016 The Tabernacle Choir at Temple Square came to visit the Netherlands and Belgium. And …",
+      "tr": "Em 2016, o Coro do Tabernáculo da Praça do Templo visitou a Holanda e a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-andersen-the-name-of-the-church-is-not-negotiable",
+      "para": 25,
+      "en": "… Mormon Tabernacle Choir was changed to The Tabernacle Choir at Temple Square. The website LDS.org, which received more than …",
+      "tr": "Ao prosseguir com fé, o Coro do Tabernáculo Mórmon passou a ser chamado de O Coro do …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Coro del Tabernáculo de la Manzana del Templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-oaks-truth-and-the-plan",
+      "para": 13,
+      "en": "We have just heard the Tabernacle Choir at Temple Square sing “I Will Follow God’s Plan.”[^3] That is …",
+      "tr": "Acabamos de escuchar al Coro del Tabernáculo de la Manzana del Templo entonar “El plan de Dios puedo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-nelson-opening-the-heavens-for-help",
+      "para": 6,
+      "en": "… updated. Our beloved choir is now the Tabernacle Choir at Temple Square.",
+      "tr": "… amado coro es ahora el “Coro del Tabernáculo de la Manzana del Templo”."
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-andersen-the-name-of-the-church-is-not-negotiable",
+      "para": 25,
+      "en": "… Mormon Tabernacle Choir was changed to The Tabernacle Choir at Temple Square. The website LDS.org, which received more than …",
+      "tr": "… Tabernáculo Mormón fue cambiado a El Coro del Tabernáculo de la Manzana del Templo. El sitio web LDS.org, que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

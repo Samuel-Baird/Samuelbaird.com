@@ -1,0 +1,19 @@
+id: concept.gathering-of-israel
+category: Israel & Covenant People
+en:
+  term: gathering of Israel
+  match:
+  - gathering of Israel
+sources:
+  GS:
+  - gathering-of-israel
+  Topics:
+  - gathering-of-israel-study-guide
+candidates:
+  pt:
+  - term: coligação de Israel
+    hint: pulpit-glossary:standard
+  es:
+  - term: Congregación de Israel
+    hint: pulpit-glossary:verified
+related: []

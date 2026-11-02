@@ -1,0 +1,17 @@
+id: concept.temple-marriage
+category: Temple & Family History
+en:
+  term: temple marriage
+  match:
+  - temple marriage
+sources:
+  GS:
+  - temple-marriage
+candidates:
+  pt:
+  - term: casamento no templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: matrimonio en el templo
+    hint: pulpit-glossary:verified
+related: []

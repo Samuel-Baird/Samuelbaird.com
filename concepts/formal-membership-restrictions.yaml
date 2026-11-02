@@ -1,0 +1,17 @@
+id: concept.formal-membership-restrictions
+category: Interviews, Repentance & Membership Councils
+en:
+  term: formal membership restrictions
+  match:
+  - formal membership restrictions
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number70
+candidates:
+  pt:
+  - term: restrições formais à condição de membro
+    hint: pulpit-glossary:verified
+  es:
+  - term: restricciones formales de la condición de miembro
+    hint: approved-terms
+related: []

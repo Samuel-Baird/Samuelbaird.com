@@ -1,0 +1,19 @@
+id: concept.branch
+category: Church Units & Facilities
+en:
+  term: branch
+  match:
+  - branch
+sources:
+  GH:
+  - 30-callings-in-the-church#title_number24
+candidates:
+  pt:
+  - term: ramo
+    hint: pulpit-glossary:verified
+  es:
+  - term: Renuevo
+    hint: approved-terms
+  - term: rama
+    hint: pulpit-glossary:verified
+related: []

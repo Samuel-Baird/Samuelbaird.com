@@ -1,0 +1,17 @@
+id: concept.sunday-school-president
+category: Local Leadership & Callings
+en:
+  term: Sunday School president
+  match:
+  - Sunday School president
+sources:
+  GH:
+  - 13-sunday-school#title_number5
+candidates:
+  pt:
+  - term: presidente de Escola Dominical
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidente de la Escuela Dominical
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,17 @@
+id: concept.temple-and-family-history-consultant
+category: Local Leadership & Callings
+en:
+  term: temple and family history consultant
+  match:
+  - temple and family history consultant
+sources:
+  GH:
+  - 25-temple-and-family-history-work#title_number10
+candidates:
+  pt:
+  - term: consultor de templo e história da família
+    hint: pulpit-glossary:verified
+  es:
+  - term: consultor de templo e historia familiar
+    hint: pulpit-glossary:verified
+related: []

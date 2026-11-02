@@ -1,0 +1,124 @@
+{
+ "id": "concept.ministering-interview",
+ "pt": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "entrevista de ministração",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2023,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-gong-ministering",
+      "para": 18,
+      "en": "… president modestly shares how their quorum consistently conducts 100-percent ministering interviews. “We prayerfully organize companionships so everyone can care …",
+      "tr": "… seu quórum sempre realiza cem por cento das entrevistas de ministração. “Em espírito de oração, organizamos as duplas para …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ministração",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 333.4,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "A ministração acontece quando a presidência do quórum de élderes e a da Sociedade de Socorro"
+   },
+   {
+    "term": "entrevistas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 1000.3,
+    "source": "2018-10-stevenson-shepherding-souls",
+    "kind": "talk",
+    "sample": "ignados a famílias, duplas — incluindo rapazes e moças — foram organizadas e as entrevistas sobre a ministração estão sendo realizadas."
+   },
+   {
+    "term": "necessidades",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 85.7,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "eocupamos com ele ou ela. Acontece em uma entrevista sobre a ministração em que necessidades e pontos fortes são debatidos de modo sensível e apropriado. Acontece quando o"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "entrevista de ministración",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-bingham-ministering-as-the-savior-does",
+      "para": 5,
+      "en": "… about him or her. It also looks like a ministering interview in which needs and strengths are discussed sensitively and …",
+      "tr": "… preocuparse por él o ella. Es también una entrevista de ministración en la que se analizan las necesidades y fortalezas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-gong-ministering",
+      "para": 18,
+      "en": "… president modestly shares how their quorum consistently conducts 100-percent ministering interviews. “We prayerfully organize companionships so everyone can care …",
+      "tr": "… cómo su cuórum lleva a cabo habitualmente las entrevistas de ministración al cien por ciento. “En oración, organizamos compañerismos para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 44,
+      "en": "… times of spiritual or temporal need. Discuss needs during ministering interviews and at other times.",
+      "tr": "… espiritual o temporal. Analizar las necesidades durante las entrevistas de ministración y en otras ocasiones."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

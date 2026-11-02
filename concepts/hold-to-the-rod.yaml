@@ -1,0 +1,15 @@
+id: concept.hold-to-the-rod
+category: Discipleship & Ministering
+en:
+  term: hold to the rod
+  match:
+  - hold to the rod
+sources: {}
+candidates:
+  pt:
+  - term: segurar na barra
+    hint: pulpit-glossary:standard
+  es:
+  - term: aferrarse a la barra
+    hint: pulpit-glossary:verified
+related: []

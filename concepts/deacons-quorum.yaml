@@ -1,0 +1,15 @@
+id: concept.deacons-quorum
+category: Priesthood Offices & Quorums
+en:
+  term: deacons quorum
+  match:
+  - deacons quorum
+sources: {}
+candidates:
+  pt:
+  - term: quórum de diáconos
+    hint: pulpit-glossary:verified
+  es:
+  - term: quórum de diáconos
+    hint: pulpit-glossary:verified
+related: []

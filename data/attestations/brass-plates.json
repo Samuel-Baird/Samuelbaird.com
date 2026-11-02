@@ -1,0 +1,141 @@
+{
+ "id": "concept.brass-plates",
+ "pt": {
+  "en_paragraphs": 29,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "placas de latão",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 26,
+    "talks": 21,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-schultz-faith-obedience",
+      "para": 6,
+      "en": "… sacrifice; with faith, Nephi was obedient in obtaining the brass plates; with faith, a little child obediently jumps from …",
+      "tr": "… pela fé, Néfi foi obediente e obteve as placas de latão; e também pela fé, uma criancinha obedece e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-zwick-what-are-you-thinking",
+      "para": 15,
+      "en": "… had been sent back to Jerusalem to get the brass plates and had not returned. Sariah believed her sons were …",
+      "tr": "… enviados de volta a Jerusalém para buscar as placas de latão e não tinham retornado. Saria acreditava que seus filhos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-pieper-trust-in-the-lord",
+      "para": 15,
+      "en": "… were commanded to return to Jerusalem to obtain the brass plates. After their initial attempts failed, his brothers gave …",
+      "tr": "… ordenados a retornar a Jerusalém para obter as placas de latão. Depois que suas tentativas iniciais falharam, seus irmãos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "placas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 363.7,
+    "source": "2005-10-perry-blessings-resulting-from-reading-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "Quando a primeira tentativa de conseguir as placas fracassou, os irmãos de Néfi quiseram desistir e voltar para sua família, no de"
+   },
+   {
+    "term": "conduzido",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2005-10-perry-blessings-resulting-from-reading-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "Senhor, conseguiram o resultado desejado. Quando Néfi foi buscar os registros, conduzido pelo Espírito, Labão foi entregue em suas mãos. Por meio de sua fé e obediência"
+   },
+   {
+    "term": "labão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 889.1,
+    "source": "2005-10-perry-blessings-resulting-from-reading-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "sultado desejado. Quando Néfi foi buscar os registros, conduzido pelo Espírito, Labão foi entregue em suas mãos. Por meio de sua fé e obediência, Néfi garantiu para"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 28,
+  "en_talks": 20,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "planchas de bronce",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 28,
+    "talks": 20,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-schultz-faith-obedience",
+      "para": 6,
+      "en": "… sacrifice; with faith, Nephi was obedient in obtaining the brass plates; with faith, a little child obediently jumps from …",
+      "tr": "… con fe, Nefi fue obediente al obtener las planchas de bronce; con fe, se lanza el niño pequeño obedientemente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-zwick-what-are-you-thinking",
+      "para": 15,
+      "en": "… had been sent back to Jerusalem to get the brass plates and had not returned. Sariah believed her sons were …",
+      "tr": "… hijos de Saríah y Lehi a buscar las planchas de bronce y no habían regresado. Saríah creía que corrían peligro …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-pieper-trust-in-the-lord",
+      "para": 15,
+      "en": "… were commanded to return to Jerusalem to obtain the brass plates. After their initial attempts failed, his brothers gave …",
+      "tr": "… les mandó regresar a Jerusalén para obtener las planchas de bronce. Después de que fracasaran sus intentos iniciales, sus …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

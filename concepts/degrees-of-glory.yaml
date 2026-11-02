@@ -1,0 +1,16 @@
+id: concept.degrees-of-glory
+category: Plan of Salvation
+en:
+  term: Degrees of Glory
+  match:
+  - Degrees of Glory
+sources:
+  GS:
+  - degrees-of-glory
+candidates:
+  pt: []
+  es:
+  - term: Grados de gloria
+    hint: pulpit-glossary:verified
+related: []
+note: Umbrella term for the three kingdoms (celestial/terrestrial/telestial) already listed individually

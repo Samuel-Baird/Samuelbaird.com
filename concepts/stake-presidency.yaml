@@ -1,0 +1,17 @@
+id: concept.stake-presidency
+category: Local Leadership & Callings
+en:
+  term: stake presidency
+  match:
+  - stake presidency
+sources:
+  GH:
+  - 19-music#title_number20
+candidates:
+  pt:
+  - term: presidência da estaca
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidencia de estaca
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,14 @@
+id: concept.church-administration-building
+category: Church Units & Facilities
+en:
+  term: Church Administration Building
+  match:
+  - Church Administration Building
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Edificio de Administración de la Iglesia
+    hint: pulpit-glossary:verified
+related: []
+note: Distinct headquarters building from the Church Office Building — keep the two proper nouns separate

@@ -1,0 +1,20 @@
+id: concept.celestial-kingdom
+category: Plan of Salvation
+en:
+  term: celestial kingdom
+  match:
+  - celestial kingdom
+sources:
+  Topics:
+  - celestial-kingdom
+  TtF:
+  - celestial-kingdom
+candidates:
+  pt:
+  - term: reino celestial
+    hint: pulpit-glossary:verified
+  es:
+  - term: Reino Celestial
+    hint: approved-terms
+related: []
+note: Highest of the three kingdoms of glory

@@ -1,0 +1,179 @@
+{
+ "id": "concept.priesthood-authority",
+ "pt": {
+  "en_paragraphs": 189,
+  "en_talks": 128,
+  "en_verses": 0,
+  "uncovered_paragraphs": 38,
+  "renderings": [
+   {
+    "term": "autoridade do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 151,
+    "talks": 107,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-oaks-the-relief-society-and-the-church",
+      "para": 25,
+      "en": "… on individuals, not organizations. The same is true of priesthood authority and of the related authority exercised under priesthood direction. …",
+      "tr": "Sob a autoridade do sacerdócio do bispo, a presidente da Sociedade de Socorro de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-bednar-the-powers-of-heaven",
+      "para": 17,
+      "en": "Brethren, for a boy or a man to receive priesthood authority but neglect to do what is necessary to qualify …",
+      "tr": "… Senhor que um rapaz ou homem receba a autoridade do sacerdócio, mas deixe negligentemente de fazer o que é …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 35,
+      "en": "… women as well as men, and priesthood ordinances and priesthood authority pertain to women as well as men. …",
+      "tr": "… homens, e as ordenanças do sacerdócio e a autoridade do sacerdócio pertencem tanto às mulheres quanto aos homens. (…)"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.711,
+    "ratio": 43.1,
+    "source": "1990-10-hillam-no-more-strangers-and-foreigners",
+    "kind": "talk",
+    "sample": "Como acontece a todos os homens dignos da Igreja, ele recebeu o sacerdócio — autoridade para agir em nome do Pai Celestial — e tornou-se um líder da Igreja. O irmão Ai"
+   },
+   {
+    "term": "ordenanças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.368,
+    "ratio": 17.5,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "De Adão até o meridiano dos tempos realizaram-se as ordenanças do templo apenas para os vivos. As ordenanças pelos mortos tiveram que esperar"
+   },
+   {
+    "term": "chaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.263,
+    "ratio": 26.3,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "il de 1836, o Profeta Elias apareceu ao Profeta e a Oliver Cowdery e disse: “As chaves desta dispensação são postas em vossas mãos.”[^12]"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 162,
+  "en_talks": 112,
+  "en_verses": 0,
+  "uncovered_paragraphs": 24,
+  "renderings": [
+   {
+    "term": "autoridad del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 138,
+    "talks": 99,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-partakers-of-the-glories",
+      "para": 23,
+      "en": "… individually and then sealed together in families for eternity. Priesthood authority ensures that the covenants we make in the temple …",
+      "tr": "… sellados juntos en familias por la eternidad. La autoridad del sacerdocio asegura que los convenios que hacemos en el templo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-ballard-following-up",
+      "para": 24,
+      "en": "In other words, Peter didn’t simply invoke his priesthood authority and invite the man to rise up and walk. …",
+      "tr": "En otras palabras, Pedro no simplemente invocó su autoridad del sacerdocio e invitó al hombre a levantarse y andar; él …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-sikahema-prophets-seers-and-revelators",
+      "para": 23,
+      "en": "… the years that followed this momentous event, greater truths, priesthood authority, sacred ordinances, additional scriptures, and knowledge of God’s …",
+      "tr": "… mediante el profeta José Smith mayores verdades, la autoridad del sacerdocio, sagradas ordenanzas, Escrituras adicionales y el conocimiento del …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.958,
+    "ratio": 78.3,
+    "source": "1991-10-pinegar-follow-christ-in-word-and-deed",
+    "kind": "talk",
+    "sample": "os que hemos tomado sobre nosotros el nombre de Cristo y el maravilloso poder y autoridad de Su sacerdocio, también nos comprometamos de corazón a poner a Jesucristo pri"
+   },
+   {
+    "term": "llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.375,
+    "ratio": 55.6,
+    "source": "2016-04-stevenson-where-are-the-keys-and-authority-of-the-priesthood",
+    "kind": "talk",
+    "sample": "n rebosa de una gratitud incontenible por la restauración de la autoridad y las llaves del sacerdocio. Sin esta restauración, no podríamos acceder al vehículo necesar"
+   },
+   {
+    "term": "restaurada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.25,
+    "ratio": 62.5,
+    "source": "2012-10-nelson-ask-the-missionaries-they-can-help-you",
+    "kind": "talk",
+    "sample": "stial, Jesucristo volvió a establecer Su Iglesia. Ahora existe nuevamente, está restaurada y funciona bajo Su guía divina[^4]."
+   }
+  ]
+ }
+}

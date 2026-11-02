@@ -1,0 +1,15 @@
+id: concept.especial-witnesses
+category: Priesthood Offices & Quorums
+en:
+  term: especial witnesses
+  match:
+  - especial witnesses
+sources: {}
+candidates:
+  pt:
+  - term: testemunhas especiais
+    hint: pulpit-glossary:verified
+  es:
+  - term: testigos especiales
+    hint: pulpit-glossary:verified
+related: []

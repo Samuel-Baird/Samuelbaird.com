@@ -1,0 +1,57 @@
+{
+ "id": "concept.membership-record",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "registro de membro",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-renlund-the-priesthood-and-the-saviors-atoning-power",
+      "para": 16,
+      "en": "… informed him that after I restored his blessings, his membership record would show only his original baptism, confirmation, priesthood ordination, …",
+      "tr": "… que eu tivesse restaurado suas bênçãos, em seu registro de membro constariam apenas as datas originais de seu batismo, de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-cook-hearts-knit-in-righteousness-and-unity",
+      "para": 22,
+      "en": "… by race or culture. Race is not identified on membership records.",
+      "tr": "… ou cultura. A raça não é identificada nos registros de membro."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "registro de membresía",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ }
+}

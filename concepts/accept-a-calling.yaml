@@ -1,0 +1,13 @@
+id: concept.accept-a-calling
+category: Callings & Sustaining
+en:
+  term: accept a calling
+  match:
+  - accept a calling
+sources: {}
+candidates:
+  pt:
+  - term: aceitar um chamado
+    hint: pulpit-glossary:standard
+  es: []
+related: []

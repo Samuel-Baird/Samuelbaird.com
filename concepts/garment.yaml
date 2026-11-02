@@ -1,0 +1,21 @@
+id: concept.garment
+category: Temple & Family History
+en:
+  term: garment
+  match:
+  - garment
+sources:
+  Topics:
+  - garments
+  TtF:
+  - garments
+  GH:
+  - 38-church-policies-and-guidelines#title_number234
+candidates:
+  pt:
+  - term: garment
+    hint: pulpit-glossary:standard
+  es:
+  - term: gárment
+    hint: approved-terms
+related: []

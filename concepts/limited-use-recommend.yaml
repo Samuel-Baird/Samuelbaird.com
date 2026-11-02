@@ -1,0 +1,15 @@
+id: concept.limited-use-recommend
+category: Temple & Family History
+en:
+  term: limited-use recommend
+  match:
+  - limited-use recommend
+sources: {}
+candidates:
+  pt:
+  - term: recomendação de uso limitado
+    hint: pulpit-glossary:verified
+  es:
+  - term: recomendación de uso limitado
+    hint: pulpit-glossary:verified
+related: []

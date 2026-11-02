@@ -1,0 +1,15 @@
+id: concept.children-s-songbook
+category: Music
+en:
+  term: Children's Songbook
+  match:
+  - Children's Songbook
+sources: {}
+candidates:
+  pt:
+  - term: Músicas para Crianças
+    hint: pulpit-glossary:verified
+  es:
+  - term: Canciones para los niños
+    hint: pulpit-glossary:verified
+related: []

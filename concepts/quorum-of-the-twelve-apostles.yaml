@@ -1,0 +1,19 @@
+id: concept.quorum-of-the-twelve-apostles
+category: Presiding Quorums & General Leadership
+en:
+  term: Quorum of the Twelve Apostles
+  match:
+  - Quorum of the Twelve Apostles
+sources:
+  Topics:
+  - quorum-of-the-twelve-apostles
+  TtF:
+  - quorum-of-the-twelve-apostles
+candidates:
+  pt:
+  - term: Quórum dos Doze Apóstolos
+    hint: pulpit-glossary:verified
+  es:
+  - term: Quórum de los Doce Apóstoles
+    hint: pulpit-glossary:verified
+related: []

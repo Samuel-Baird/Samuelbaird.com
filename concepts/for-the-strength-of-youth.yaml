@@ -1,0 +1,15 @@
+id: concept.for-the-strength-of-youth
+category: Organizations & Youth
+en:
+  term: For the Strength of Youth
+  match:
+  - For the Strength of Youth
+sources: {}
+candidates:
+  pt:
+  - term: Para o Vigor da Juventude
+    hint: pulpit-glossary:verified
+  es:
+  - term: Para la Fortaleza de la Juventud
+    hint: pulpit-glossary:verified
+related: []

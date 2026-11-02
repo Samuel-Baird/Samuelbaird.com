@@ -1,0 +1,191 @@
+{
+ "id": "concept.deseret",
+ "pt": {
+  "en_paragraphs": 178,
+  "en_talks": 157,
+  "en_verses": 1,
+  "uncovered_paragraphs": 31,
+  "renderings": [
+   {
+    "term": "Deseret",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 147,
+    "talks": 134,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Éter 2:3",
+      "ref_en": "Ether 2:3",
+      "en": "And they did also carry with them deseret, which, by interpretation, is a honey bee; and thus they did carry with them swarms of bees, and all manner of that which was upon the face of the land, seeds of every kind.",
+      "tr": "E levaram também consigo deseret que, por interpretação, significa abelha de mel; e assim carregaram consigo enxames de abelhas e uma variedade de tudo que havia na face da terra, sementes de toda espécie.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/2?lang=por&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-cuthbert-the-spirituality-of-service",
+      "para": 24,
+      "en": "… and generous” (*So Shall Ye Reap* [Salt Lake City: Deseret Book Co., 1960], pp. 173–74).",
+      "tr": "… e generosos.” (*So Shall Ye Reap*, Salt Lake City: Deseret Book Co., 1960, pp. 173-174.)"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-uchtdorf-happiness-your-heritage",
+      "para": 60,
+      "en": "… 2:25](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2?lang=eng&id=p25#p25).\n[^5]: See [D&C 46:11–12](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/46?lang=eng&id=p11-p12#p11).\n[^6]: Brigham Young, *Deseret News,* Aug. 8, 1860, 177.\n[^7]: [D&C 81:5](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/81?lang=eng&id=p5#p5).\n[^8]: [Mosiah …",
+      "tr": "… 2:25.\n[^5]: Ver D&C 46:11–12.\n[^6]: Brigham Young, *Deseret News*, 8 de agosto de 1860, p. 177.\n[^7]: D&C …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ensinamentos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.452,
+    "ratio": 25.8,
+    "source": "1990-10-oaks-witnesses-of-christ",
+    "kind": "talk",
+    "sample": "coisas que pertencem à nossa religião são meros complementos dessa verdade.” (*Ensinamentos do Profeta Joseph Smith,* p. 118.)"
+   },
+   {
+    "term": "brigham young",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.323,
+    "ratio": 53.8,
+    "source": "1993-04-packer-the-temple-the-priesthood",
+    "kind": "talk",
+    "sample": "auvoo, Illinois\", Don F. Colvin, tese de mestrado, agosto de 1962, Universidade Brigham Young.\n[^4]: Panfleto, discurso apresentado diante de A Sociedade Histórica de Pennsy"
+   },
+   {
+    "term": "smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.484,
+    "ratio": 13.3,
+    "source": "1990-10-oaks-witnesses-of-christ",
+    "kind": "talk",
+    "sample": "“Quais são os princípios fundamentais de sua religião?” disse o Profeta Joseph Smith: “Os princípios fundamentais de nossa religião se constituem no testemunho dos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 138,
+  "en_talks": 133,
+  "en_verses": 1,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "Deseret",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 116,
+    "talks": 111,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Éter 2:3",
+      "ref_en": "Ether 2:3",
+      "en": "And they did also carry with them deseret, which, by interpretation, is a honey bee; and thus they did carry with them swarms of bees, and all manner of that which was upon the face of the land, seeds of every kind.",
+      "tr": "Y también llevaron con ellos deseret, que interpretado significa abeja obrera; y así llevaron consigo enjambres de abejas, y toda variedad de cuanto había sobre la faz de la tierra, semillas de todas clases.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/2?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-washburn-follow-the-prophet",
+      "para": 2,
+      "en": "… Dew, *Ezra Taft Benson: A Biography* [Salt Lake City: Deseret Book Co., 1987], pp. 13–14).",
+      "tr": "… Dew, Ezra Taft Benson: A Biography, Salt Lake City: Deseret Book Co., 1987, págs. 13-14.)"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-cook-seek-learning-you-have-a-work-to-do",
+      "para": 28,
+      "en": "… Cortez, “Mom’s Education Key to Halt Poverty Cycle,” *Deseret News,* Sept. 23, 2011, A1.\n[^10]: Olene Walker, “More Utah …",
+      "tr": "… Cortez, \"Mom's Education Key to Halt Poverty Cycle\", *Deseret News*, 23 de septiembre de 2011, pág. A1.\n[^10]: Olene …"
+     }
+    ],
+    "share": 1.0
+   },
+   {
+    "term": "colmena",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 0,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [],
+    "share": 0.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.591,
+    "ratio": 20.9,
+    "source": "1994-04-asay-if-a-man-die-shall-he-live-again",
+    "kind": "talk",
+    "sample": "inarios causados por el poder de Dios” (Guía para el estudio de las Escrituras, pág. 135). No son trucos engañosos ni actos de magia concebidos por hombres intelig"
+   },
+   {
+    "term": "discourses",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.227,
+    "ratio": 151.6,
+    "source": "2004-10-monson-choose-you-this-day",
+    "kind": "talk",
+    "sample": "[^1]: Josué 24:15.\n[^2]: En Brian H. Stuy, comp., *Collected Discourses delivered by President Wilford Woodruff, His Two Counselors, the Twelve Apostle"
+   },
+   {
+    "term": "brigham young",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.318,
+    "ratio": 31.8,
+    "source": "1998-10-maxwell-hope-through-the-atonement-of-jesus-christ",
+    "kind": "talk",
+    "sample": "ande razón de la esperanza que hay en [n]osotros” (1 Pedro 3:15). El presidente Brigham Young dijo que si no impartimos conocimiento a otros y hacemos el bien, se nos reduci"
+   }
+  ]
+ }
+}

@@ -1,0 +1,21 @@
+id: concept.articles-of-faith
+category: Scriptures & Study Helps
+en:
+  term: Articles of Faith
+  match:
+  - Articles of Faith
+sources:
+  GS:
+  - articles-of-faith
+  Topics:
+  - articles-of-faith
+  TtF:
+  - articles-of-faith
+candidates:
+  pt:
+  - term: Regras de Fé
+    hint: pulpit-glossary:verified
+  es:
+  - term: Artículos de Fe
+    hint: approved-terms
+related: []

@@ -1,0 +1,48 @@
+{
+ "id": "concept.sunbeams",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Raio de Sol",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "rayitos de sol",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2009,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-uchtdorf-the-love-of-god",
+      "para": 0,
+      "en": "… that produce popcorn, and children who want to become sunbeams.",
+      "tr": "… de maíz y de niños que quieren ser rayitos de sol."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

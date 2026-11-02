@@ -1,0 +1,17 @@
+id: concept.stake-council
+category: Councils & Conferences
+en:
+  term: stake council
+  match:
+  - stake council
+sources:
+  GH:
+  - 29-meetings-in-the-church#title_number23
+candidates:
+  pt:
+  - term: conselho da estaca
+    hint: pulpit-glossary:standard
+  es:
+  - term: consejo de estaca
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,48 @@
+{
+ "id": "concept.addiction-recovery-program",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "programa de recuperação do vício",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "programa para la recuperación de adicciones",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-ballard-o-that-cunning-plan-of-the-evil-one",
+      "para": 23,
+      "en": "… qualified licensed counselors and LDS Family Services. The addiction recovery program, adapted from the original 12 steps of Alcoholics …",
+      "tr": "… los Servicios para la familia SUD. El programa para la recuperación de adicciones adaptado de los doce pasos de Alcohólicos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

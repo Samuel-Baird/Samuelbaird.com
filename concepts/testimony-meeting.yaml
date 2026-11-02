@@ -1,0 +1,17 @@
+id: concept.testimony-meeting
+category: Sacrament & Meetings
+en:
+  term: testimony meeting
+  match:
+  - testimony meeting
+sources:
+  GH:
+  - 29-meetings-in-the-church#title_number5
+candidates:
+  pt:
+  - term: reunião de testemunhos
+    hint: pulpit-glossary:verified
+  es:
+  - term: reunión de testimonios
+    hint: pulpit-glossary:verified
+related: []

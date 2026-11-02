@@ -1,0 +1,180 @@
+{
+ "id": "concept.family-home-evening",
+ "pt": {
+  "en_paragraphs": 166,
+  "en_talks": 126,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "noite familiar",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 145,
+    "talks": 106,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 3,
+      "en": "… daughter in the temple dressed in white, then family home evening, family prayer, and scripture study assume their proper …",
+      "tr": "… de uma filha vestida de branco no templo, a noite familiar, a oração em família e o estudo das …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-matsumori-helping-others-recognize-the-whisperings-of-the-spirit",
+      "para": 5,
+      "en": "… in a classroom, a missionary discussion, or a family home evening, teaching the doctrine regarding the Holy Ghost can …",
+      "tr": "… sala de aula, durante uma palestra missionária ou numa noite familiar, o ensino da doutrina relativa ao Espírito Santo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-godoy-for-the-sake-of-your-posterity",
+      "para": 5,
+      "en": "… the Church. He had fond memories of sweet family home evening moments and some Primary songs. He then softly sang …",
+      "tr": "… membros ativos da Igreja. Ele tinha boas lembranças de noites familiares em sua casa e de algumas músicas da Primária. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "reuniões familiares",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.381,
+    "ratio": 1524.2,
+    "source": "1991-04-ballard-teach-the-children",
+    "kind": "talk",
+    "sample": "rimária e guardar o dia do Senhor. Na verdade os blocos mais importantes são as reuniões familiares, respeitar e honrar o sacerdócio, e as orações familiares."
+   },
+   {
+    "term": "reunião familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.429,
+    "ratio": 571.6,
+    "source": "2007-04-tanner-daughters-of-heavenly-father",
+    "kind": "talk",
+    "sample": "Nosso genro disse à filha Eliza, de três anos, que eles teriam na reunião familiar uma lição sobre um tema muito especial. Ela abriu um grande sorriso e tentou ad"
+   },
+   {
+    "term": "lar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.381,
+    "ratio": 20.3,
+    "source": "1991-10-ballard-be-an-example-of-the-believers",
+    "kind": "talk",
+    "sample": "garantindo que todos estejam no lugar certo na hora certa. Tudo isso fazeis no lar. Fico cansado só de mencionar tantas atividades, sem falar na reunião de pais e"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 186,
+  "en_talks": 126,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "noche de hogar",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 177,
+    "talks": 123,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-perry-serve-god-acceptably-with-reverence-and-godly-fear",
+      "para": 23,
+      "en": "It is during family home evenings, which are a part of our home life, …",
+      "tr": "Es durante las noches de hogar, que son parte de nuestra rutina familiar, donde …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-uchtdorf-lift-where-you-stand",
+      "para": 43,
+      "en": "… asked President Monson to organize and conduct our family home evening. He wants us, as fathers, to do this.",
+      "tr": "… al presidente Monson que organice y dirija la noche de hogar de nuestra familia; Él desea que nosotros, en calidad …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-sabin-hallmarks-of-happiness",
+      "para": 22,
+      "en": "… family was going to see a movie for family home evening. We were all in the van except for …",
+      "tr": "… e íbamos a ver una película para la noche de hogar. Estábamos todos en el auto, excepto uno de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 25.6,
+    "source": "1994-04-perry-therefore-i-was-taught",
+    "kind": "talk",
+    "sample": "un paseo que hicimos con nuestros nietos. A fin de gozar de una verdadera unión familiar, hicimos los planes para viajar en una camioneta todos juntos. En el vehículo í"
+   },
+   {
+    "term": "soportar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 46.8,
+    "source": "1994-10-tenorio-let-us-build-fortresses",
+    "kind": "talk",
+    "sample": "tener paz y felicidad en esta tierra y que proveen la fortaleza necesaria para soportar las pruebas y los sufrimientos que todo ser humano tiene que pasar. Debemos ens"
+   },
+   {
+    "term": "padres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 10.1,
+    "source": "1994-04-perry-therefore-i-was-taught",
+    "kind": "talk",
+    "sample": "comunicarnos, planear y organizarnos para cumplir mejor con nuestros deberes de padres."
+   }
+  ]
+ }
+}

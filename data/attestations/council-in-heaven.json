@@ -1,0 +1,136 @@
+{
+ "id": "concept.council-in-heaven",
+ "pt": {
+  "en_paragraphs": 23,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 23,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "conselho",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.957,
+    "ratio": 83.2,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "Falo agora da segunda categoria: planos imutáveis. Um grande conselho reuniu-se nos céus e parece-me que todos participamos dele.[^8] Nosso Pai Celes"
+   },
+   {
+    "term": "céus",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.565,
+    "ratio": 55.2,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "agora da segunda categoria: planos imutáveis. Um grande conselho reuniu-se nos céus e parece-me que todos participamos dele.[^8] Nosso Pai Celestial anunciou Seu p"
+   },
+   {
+    "term": "plano",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.652,
+    "ratio": 28.1,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "Falo agora da segunda categoria: planos imutáveis. Um grande conselho reuniu-se nos céus e parece-me que todos partici"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 21,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "Concilio de los cielos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-faust-whats-in-it-for-me",
+      "para": 3,
+      "en": "In the Grand Council in Heaven, when the great plan of salvation for God’s …",
+      "tr": "En el gran concilio de los cielos, durante la presentación del gran plan de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-packer-prayer-and-promptings",
+      "para": 2,
+      "en": "… existence. From the scriptures, we know of the Council in Heaven and the decision to send the sons and daughters …",
+      "tr": "… existencia preterrenal. Por las Escrituras, sabemos acerca del Concilio de los Cielos y de la decisión de enviar a los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-cook-safely-gathered-home",
+      "para": 13,
+      "en": "During the Council in Heaven in the premortal existence, the plan of salvation was …",
+      "tr": "Durante el concilio de los cielos, en la vida preterrenal, se trató y …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "concilio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.8,
+    "ratio": 1600.4,
+    "source": "2000-04-nelson-the-creation",
+    "kind": "talk",
+    "sample": "Toda la Creación fue planeada por Dios. Se convocó en el cielo un concilio en el cual nosotros participamos[^3]. Allí, nuestro Padre Celestial anunció Su"
+   },
+   {
+    "term": "cielos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.8,
+    "ratio": 62.8,
+    "source": "2010-10-gong-temple-mirrors-of-eternity-a-testimony-of-family",
+    "kind": "talk",
+    "sample": "Desde los concilios en los cielos, nuestro Salvador sólo procuró hacer la voluntad de Su Padre. Este modelo de Pa"
+   },
+   {
+    "term": "plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.7,
+    "ratio": 25.5,
+    "source": "2000-04-nelson-the-creation",
+    "kind": "talk",
+    "sample": "Toda la Creación fue planeada por Dios. Se convocó en el cielo un concilio en el cual nosotros participam"
+   }
+  ]
+ }
+}

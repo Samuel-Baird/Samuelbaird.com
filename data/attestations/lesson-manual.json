@@ -1,0 +1,143 @@
+{
+ "id": "concept.lesson-manual",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "manual de lições",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-eyring-act-in-all-diligence",
+      "para": 24,
+      "en": "… daily news can appear more interesting than the priesthood lesson manual. Sitting down to rest can be more attractive …",
+      "tr": "… parecer mais interessantes do que o estudo do manual de lições do sacerdócio. Sentar-se para descansar pode parecer mais agradável …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "lições",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 250.1,
+    "source": "2002-10-eyring-rise-to-your-call",
+    "kind": "talk",
+    "sample": "você provavelmente fará será assegurar-se de que recebam um manual, o livro de lições ou os registros que elas devem manter. Pode ser que você até entregue a elas um"
+   },
+   {
+    "term": "manuais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2005-04-beck-a-work-for-me-to-do",
+    "kind": "talk",
+    "sample": "a foi semelhante à dos primeiros pioneiros. Não tinhamos hinários, gravuras nem manuais de aula enviados pela sede da Igreja. Tudo o que era necessário para se ensinar"
+   },
+   {
+    "term": "aula",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 156.9,
+    "source": "2005-04-beck-a-work-for-me-to-do",
+    "kind": "talk",
+    "sample": "hante à dos primeiros pioneiros. Não tinhamos hinários, gravuras nem manuais de aula enviados pela sede da Igreja. Tudo o que era necessário para se ensinar o evang"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "manual de lecciones",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2005,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-beck-a-work-for-me-to-do",
+      "para": 13,
+      "en": "… early pioneers. We had no hymnbooks or pictures or lesson manuals sent from the headquarters of the Church. Everything that …",
+      "tr": "… primeros pioneros. No teníamos himnarios ni láminas, ni manuales de lecciones enviados por las Oficinas Generales de la Iglesia. Todo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "clases",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 140.4,
+    "source": "2010-04-eyring-act-in-all-diligence",
+    "kind": "talk",
+    "sample": "d. Estudiar las noticias del día puede parecer más interesante que el manual de clases del sacerdocio. Sentarse a descansar puede ser más atractivo que el fijar citas"
+   },
+   {
+    "term": "lecciones",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 111.1,
+    "source": "2002-10-eyring-rise-to-your-call",
+    "kind": "talk",
+    "sample": "Primero debe asegurarse de que ellos reciban un manual de instrucciones, de lecciones o los registros que deban llevar. Incluso puede darles una lista de las horas y"
+   },
+   {
+    "term": "asistir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 111.1,
+    "source": "2002-10-eyring-rise-to-your-call",
+    "kind": "talk",
+    "sample": "de darles una lista de las horas y los lugares de las reuniones a las que deban asistir. Después, puede ocuparse de hablarles de cómo se va a evaluar su labor, cuando"
+   }
+  ]
+ }
+}

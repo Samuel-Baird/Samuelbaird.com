@@ -1,0 +1,15 @@
+id: concept.priesthood-restoration
+category: Church History
+en:
+  term: priesthood restoration
+  match:
+  - priesthood restoration
+sources: {}
+candidates:
+  pt:
+  - term: restauração do sacerdócio
+    hint: pulpit-glossary:standard
+  es:
+  - term: restauración del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

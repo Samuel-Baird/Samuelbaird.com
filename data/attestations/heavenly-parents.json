@@ -1,0 +1,141 @@
+{
+ "id": "concept.heavenly-parents",
+ "pt": {
+  "en_paragraphs": 104,
+  "en_talks": 89,
+  "en_verses": 0,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "pais celestiais",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 86,
+    "talks": 74,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-hinckley-the-family-a-proclamation-to-the-world",
+      "para": 1,
+      "en": "… Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature …",
+      "tr": "… é um filho (ou filha) gerado em espírito por pais celestiais que o amam e, como tal, possui natureza e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-ballard-return-and-receive",
+      "para": 30,
+      "en": "… goal in mortality than to live eternally with our Heavenly Parents and our beloved Savior, the Lord Jesus Christ. But …",
+      "tr": "… que seja melhor do que viver eternamente com nossos Pais Celestiais e com nosso amado Salvador, o Senhor Jesus Cristo. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-runia-the-sculpting-of-our-souls",
+      "para": 33,
+      "en": "… we can grow and progress and become like our heavenly parents and Savior.",
+      "tr": "… maneira de crescermos, progredirmos e nos tornarmos como nossos pais celestiais e o Salvador."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pais celestes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.722,
+    "ratio": 2889.6,
+    "source": "1993-10-oaks-the-great-plan-of-happiness",
+    "kind": "talk",
+    "sample": "O evangelho nos ensina que somos filhos espirituais de pais celestes. Antes do nascimento mortal tivemos uma “personalidade espiritual, pré-existent"
+   },
+   {
+    "term": "hino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.222,
+    "ratio": 98.8,
+    "source": "1995-10-oaks-powerful-ideas",
+    "kind": "talk",
+    "sample": "Ponderem o poder da idéia ensi­na­da no apre­cia­do hino “Sou Um Filho de Deus” (Hinos, 1990, nº 193), can­ta­do pelo coro no iní­cio de"
+   },
+   {
+    "term": "somos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.389,
+    "ratio": 12.0,
+    "source": "1993-10-oaks-the-great-plan-of-happiness",
+    "kind": "talk",
+    "sample": "O evangelho nos ensina que somos filhos espirituais de pais celestes. Antes do nascimento mortal tivemos uma “pe"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 97,
+  "en_talks": 82,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Padres celestiales",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 97,
+    "talks": 82,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-hinckley-the-family-a-proclamation-to-the-world",
+      "para": 1,
+      "en": "… Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature …",
+      "tr": "… un amado hijo o hija procreado como espíritu por padres celestiales y, como tal, cada uno tiene una naturaleza y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-rasband-lest-thou-forget",
+      "para": 35,
+      "en": "… we are sons and daughters of living and loving Heavenly Parents, who desire only our eternal happiness. Of these …",
+      "tr": "… eternas: que ante todo, somos hijos e hijas de Padres Celestiales vivientes y amorosos que solo desean nuestra felicidad eterna. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-spannaus-god-is-at-your-side",
+      "para": 8,
+      "en": "… women, I testify that you are *beloved* daughters of heavenly parents, with a *divine* nature and an *eternal* destiny.[^5] …",
+      "tr": "… jóvenes, les testifico que ustedes son hijas *amadas* de padres celestiales, con una naturaleza *divina* y un destino *eterno*[^5]. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

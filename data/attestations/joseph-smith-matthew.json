@@ -1,0 +1,124 @@
+{
+ "id": "concept.joseph-smith-matthew",
+ "pt": {
+  "en_paragraphs": 23,
+  "en_talks": 20,
+  "en_verses": 0,
+  "uncovered_paragraphs": 23,
+  "renderings": [
+   {
+    "term": "Joseph Smith—Mateus",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "smith—mateus",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.87,
+    "ratio": 1159.7,
+    "source": "2004-04-oaks-preparation-for-the-second-coming",
+    "kind": "talk",
+    "sample": "em os sinais de Sua vinda, “[saberão] que ele está próximo, às portas”. (Joseph Smith—Mateus 1:38–39; ver também Mateus 24:32–33; D&C 45:37–38.)"
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.609,
+    "ratio": 33.4,
+    "source": "2005-10-mcmullin-be-prepared-be-ye-strong-from-henceforth",
+    "kind": "talk",
+    "sample": "p.), 1954, p. 89.\n[^19]: Romanos 13:12–14.\n[^20]: \"Esta É a Obra do Mestre\", *A Liahona*, julho de 1995, p. 76; ver também \"Comentários de Abertura\", *A Liahona*, maio"
+   },
+   {
+    "term": "pgp",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.522,
+    "ratio": 54.9,
+    "source": "2013-10-ochoa-look-up",
+    "kind": "talk",
+    "sample": "[Joseph Smith—Mateus 1:37](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-m/1?lang=por&id=p37#p37)). Devemos colocar essas coisas em prática."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 19,
+  "en_talks": 18,
+  "en_verses": 0,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "José Smith—Mateo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-mcconkie-gospel-learning-and-teaching",
+      "para": 28,
+      "en": "… 5:39](https://www.churchofjesuschrist.org/study/scriptures/nt/john/5?lang=eng&id=p39#p39).\n[^7]: See [2 Nephi 32:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/32?lang=eng&id=p3#p3).\n[^8]: See [Joseph Smith—Matthew 1:37](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-m/1?lang=eng&id=p37#p37).\n[^9]: See [Doctrine and Covenants 18:36](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/18?lang=eng&id=p36#p36); [84:52](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=eng&id=p52#p52).\n[^10]: …",
+      "tr": "… 13:39](https://www.churchofjesuschrist.org/study/scriptures/nt/john/5?lang=spa&id=p39#p39).\n[^7]: Véase [2 Nefi 32:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/32?lang=spa&id=p3#p3).\n[^8]: Véase [José Smith---Mateo 1:37](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-m/1?lang=spa&id=p37#p37).\n[^9]: Véase [Doctrina y Convenios 18:36](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/18?lang=spa&id=p36#p36); [84:52](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=spa&id=p52#p52).\n[^10]: …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "smith—mateo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "2005-10-mcmullin-be-prepared-be-ye-strong-from-henceforth",
+    "kind": "talk",
+    "sample": "k*, 12 de septiembre de 2005, pág. 44.\n[^2]: D. y C. 1:17, 37.\n[^3]: Véase José Smith—Mateo.\n[^4]: Véase D. y C. 45; 88; 101 y 133.\n[^5]: Lucas 10:40–42.\n[^6]: Mosíah 4:3."
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.889,
+    "ratio": 31.5,
+    "source": "2005-10-mcmullin-be-prepared-be-ye-strong-from-henceforth",
+    "kind": "talk",
+    "sample": ": Citado en \"The Lost City\", Evan Thomas, *Newsweek*, 12 de septiembre de 2005, pág. 44.\n[^2]: D. y C. 1:17, 37.\n[^3]: Véase José Smith—Mateo.\n[^4]: Véase D. y C."
+   },
+   {
+    "term": "pgp",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.667,
+    "ratio": 80.8,
+    "source": "2013-10-ochoa-look-up",
+    "kind": "talk",
+    "sample": "se [José Smith—Mateo 1:37](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-m/1?lang=spa&id=p37#p37)). Debemos hacer estas cosas."
+   }
+  ]
+ }
+}

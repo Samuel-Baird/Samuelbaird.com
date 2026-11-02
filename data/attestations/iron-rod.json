@@ -1,0 +1,103 @@
+{
+ "id": "concept.iron-rod",
+ "pt": {
+  "en_paragraphs": 59,
+  "en_talks": 44,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "barra de ferro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 57,
+    "talks": 43,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-ashton-a-pattern-in-all-things",
+      "para": 14,
+      "en": "… righteousness. He would have us hold fast to the iron rod with total commitment and strength.",
+      "tr": "… retidão. Ele quer que nos apeguemos firmemente à barra de ferro, com total compromisso e energia."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-hamilton-continually-holding-fast",
+      "para": 24,
+      "en": "… keeping covenants. May we continually hold fast to the iron rod that leads to the presence of our Heavenly Father …",
+      "tr": "… nossos convênios. Que nos mantenhamos continuamente agarrados à barra de ferro que conduz à presença de nosso Pai Celestial, é …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-dennis-cheering-each-other-on",
+      "para": 28,
+      "en": "Keep your eye on the Savior. *He* is your iron rod.[^34] Don’t let go of Him. I testify that …",
+      "tr": "Mantenha os olhos no Salvador. *Ele* é sua barra de ferro.[^34] Não se afaste Dele. Testifico que Ele vive …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 59,
+  "en_talks": 43,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "barra de hierro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 55,
+    "talks": 41,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-ashton-a-pattern-in-all-things",
+      "para": 14,
+      "en": "… righteousness. He would have us hold fast to the iron rod with total commitment and strength.",
+      "tr": "… duradera; Él desea que nos aferremos a la barra de hierro con total dedicación y firmeza."
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-nielson-waiting-for-the-prodigal",
+      "para": 16,
+      "en": "… the Book of Mormon. She let go of the iron rod and found herself in a mist of darkness (see …",
+      "tr": "… Libro de Mormón. Ella se soltó de la barra de hierro y se halló en el vapor de tinieblas (véase …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-dennis-cheering-each-other-on",
+      "para": 28,
+      "en": "Keep your eye on the Savior. *He* is your iron rod.[^34] Don’t let go of Him. I testify that …",
+      "tr": "… tu mirada en el Salvador; *Él* es tu barra de hierro[^34]. No lo sueltes. Testifico que Él vive y …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

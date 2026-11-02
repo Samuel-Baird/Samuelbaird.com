@@ -1,0 +1,13 @@
+id: concept.daily-planning
+category: Missionary Work
+en:
+  term: daily planning
+  match:
+  - daily planning
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: planificación diaria
+    hint: pulpit-glossary:verified
+related: []

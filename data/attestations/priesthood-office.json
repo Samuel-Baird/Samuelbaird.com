@@ -1,0 +1,179 @@
+{
+ "id": "concept.priesthood-office",
+ "pt": {
+  "en_paragraphs": 17,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "ofício do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-oaks-bishop-help",
+      "para": 6,
+      "en": "… at the temple, callings to ward positions, ordinations to priesthood offices, and the callings of missionaries. He administers formal …",
+      "tr": "… templo, designá-los para cargos na ala, ordená-los em ofícios do sacerdócio e chamá-los para serem missionários. Ele determina as medidas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-eyring-help-them-aim-high",
+      "para": 3,
+      "en": "… the dates of each boy’s baptism and ordination into priesthood offices, with his height marked at the date of …",
+      "tr": "… as datas do batismo e da ordenação aos ofícios do sacerdócio de cada rapaz, com a altura que tinham na …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-oaks-the-melchizedek-priesthood-and-the-keys",
+      "para": 1,
+      "en": "… is not those who have been ordained to a priesthood office or those who exercise its authority. Men who hold …",
+      "tr": "… não são aqueles que foram ordenados para um ofício do sacerdócio ou que exercem sua autoridade. Os homens que portam …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ofícios",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 666.8,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "tudy/scriptures/dc-testament/dc/86?lang=por&id=p8#p8)).[^36] A ordenação a seus ofícios tem implicações intemporais. O tempo de serviço no sacerdócio pode-se estender"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 35.1,
+    "source": "2002-10-perry-called-of-god",
+    "kind": "talk",
+    "sample": "s bênçãos que recebemos do sacerdócio é termos a oportunidade de pertencer a um quórum. Um quórum do sacerdócio é formado por um grupo específico de homens que possue"
+   },
+   {
+    "term": "quóruns",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 62.5,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "de tempos em tempos, começando com o profeta Joseph Smith, quando os ofícios e quóruns do sacerdócio foram estabelecidos em nossos dias. Ajustes significativos com re"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "oficio del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-wood-made-like-unto-the-son-of-god",
+      "para": 8,
+      "en": "… the priesthood leader who conscientiously interviews each candidate for priesthood office and receives from that candidate a report of prior …",
+      "tr": "… se debe ordenar en forma automática a ningún oficio del sacerdocio basado sólo en la edad o en las circunstancias. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-eyring-help-them-aim-high",
+      "para": 3,
+      "en": "… the dates of each boy’s baptism and ordination into priesthood offices, with his height marked at the date of …",
+      "tr": "… fecha de bautismo y de ordenación a los oficios del sacerdocio de cada uno, con la medida de su estatura …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-oaks-the-melchizedek-priesthood-and-the-keys",
+      "para": 1,
+      "en": "… is not those who have been ordained to a priesthood office or those who exercise its authority. Men who hold …",
+      "tr": "… es aquellos que han sido ordenados a un oficio del sacerdocio o aquellos que ejercen su autoridad. Los hombres que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 125.0,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "comenzando con el profeta José Smith, cuando se establecieron los oficios y los cuórums del sacerdocio en nuestra época. Durante la administración de los presidentes"
+   },
+   {
+    "term": "oficios",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 666.8,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "l sacerdocio, comenzando con el profeta José Smith, cuando se establecieron los oficios y los cuórums del sacerdocio en nuestra época. Durante la administración de los"
+   },
+   {
+    "term": "melquisedec",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 142.9,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "tenta, los sumos sacerdotes y otros oficios y cuórums tanto en el Sacerdocio de Melquisedec como en el Aarónico[^2]. Ahora, en una declaración histórica, hace tan solo uno"
+   }
+  ]
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "id": "concept.children-of-the-covenant",
+ "pt": {
+  "en_paragraphs": 37,
+  "en_talks": 26,
+  "en_verses": 1,
+  "uncovered_paragraphs": 38,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "convênio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.921,
+    "ratio": 49.8,
+    "source": "1990-10-packer-covenants",
+    "kind": "talk",
+    "sample": "/gen/6?lang=por&id=p18#p18).) E aos nefitas: “Em virtude de serdes os filhos do convênio.” ([3 Néfi 20:26](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-n"
+   },
+   {
+    "term": "the covenant",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.237,
+    "ratio": 947.6,
+    "source": "2018-10-andersen-wounded",
+    "kind": "talk",
+    "sample": "ptures/nt/matt/16?lang=por&id=p25#p25).\n[^28]: Russell M. Nelson, \"[Children of the Covenant](https://www.churchofjesuschrist.org/study/general-conference/1995/04/children-"
+   },
+   {
+    "term": "nelson",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.447,
+    "ratio": 17.0,
+    "source": "2013-10-stephens-we-have-great-reason-to-rejoice",
+    "kind": "talk",
+    "sample": "O Élder Russell M. Nelson ensinou: “Quando nos damos conta de que somos filhos do convênio, sabemos quem"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 37,
+  "en_talks": 25,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "hijos del convenio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 36,
+    "talks": 24,
+    "verses": 1,
+    "first_year": 2002,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Nefi 20:26",
+      "ref_en": "3 Nephi 20:26",
+      "en": "The Father having raised me up unto you first, and sent me to bless you in turning away every one of you from his iniquities; and this because ye are the children of the covenant—",
+      "tr": "Porque el Padre me ha levantado para venir a vosotros primero, y me envió a bendeciros, apartando a cada uno de vosotros de vuestras iniquidades; y esto, porque sois los hijos del convenio.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/20?lang=spa&id=p26"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-nelson-how-firm-our-foundation",
+      "para": 15,
+      "en": "***Children of the Covenant***",
+      "tr": "### Los hijos del convenio"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-bednar-abide-in-me-and-i-in-you-therefore-walk-with-me",
+      "para": 13,
+      "en": "… of Christ. The Savior’s doctrine draws us, as children of the covenant, closer to Him[^10] and will tell us …",
+      "tr": "… nos deleitamos en las palabras de Cristo. Como hijos del convenio, la doctrina del Salvador nos acerca más a …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

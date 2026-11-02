@@ -1,0 +1,15 @@
+id: concept.presiding-bishopric
+category: Presiding Quorums & General Leadership
+en:
+  term: Presiding Bishopric
+  match:
+  - Presiding Bishopric
+sources: {}
+candidates:
+  pt:
+  - term: Bispado Presidente
+    hint: pulpit-glossary:verified
+  es:
+  - term: Obispado Presidente
+    hint: pulpit-glossary:verified
+related: []

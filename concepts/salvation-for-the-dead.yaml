@@ -1,0 +1,17 @@
+id: concept.salvation-for-the-dead
+category: Temple & Family History
+en:
+  term: Salvation for the Dead
+  match:
+  - Salvation for the Dead
+sources:
+  GS:
+  - salvation-for-the-dead
+candidates:
+  pt: []
+  es:
+  - term: Salvación de los muertos
+    hint: pulpit-glossary:verified
+related: []
+note: Broader doctrine encompassing proxy temple ordinances — distinct from the narrower "baptism for
+  the dead" already listed

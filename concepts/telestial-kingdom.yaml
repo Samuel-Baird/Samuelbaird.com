@@ -1,0 +1,17 @@
+id: concept.telestial-kingdom
+category: Plan of Salvation
+en:
+  term: telestial kingdom
+  match:
+  - telestial kingdom
+sources:
+  TtF:
+  - telestial-kingdom
+candidates:
+  pt:
+  - term: reino telestial
+    hint: pulpit-glossary:verified
+  es:
+  - term: reino telestial
+    hint: approved-terms
+related: []

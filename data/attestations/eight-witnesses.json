@@ -1,0 +1,103 @@
+{
+ "id": "concept.eight-witnesses",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Oito Testemunhas",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-ballard-hyrum-smith-firm-as-the-pillars-of-heaven",
+      "para": 11,
+      "en": "… of the Book of Mormon as one of the Eight Witnesses who “had seen the plates with his eyes and …",
+      "tr": "… do Livro de Mórmon, na con­di­ção de uma das Oito Testemunhas que “viram as pla­cas com os pró­prios olhos e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-ardern-a-time-to-prepare",
+      "para": 10,
+      "en": "… *Ensign,* Nov. 2003, 96). Hiram Page, one of the Eight Witnesses of the Book of Mormon, taught us a valuable …",
+      "tr": "… novembro de 2003, p. 95). Hiram Page, uma das Oito Testemunhas do Livro de Mórmon, ensinou-nos uma lição valiosa sobre …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-renlund-a-framework-for-personal-revelation",
+      "para": 6,
+      "en": "… history of the Restoration. Hiram Page, one of the Eight Witnesses to the Book of Mormon, claimed to be receiving …",
+      "tr": "… início da história da Restauração. Hiram Page, uma das oito testemunhas do Livro de Mórmon, alegava estar recebendo revelações para …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Ocho Testigos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-carmack-united-in-love-and-testimony",
+      "para": 19,
+      "en": "… the Book of Mormon* (1997).\n[^7]: “The Testimony of Eight Witnesses,” Book of Mormon.\n[^8]: [D&C 20:11](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?lang=eng&id=p11#p11).\n[^9]: [Alma …",
+      "tr": "… the Book of Mormon, 1997.\n[^7]: \"El testimonio de ocho testigos\", Libro de Mormón.\n[^8]: D. y C. 20:11. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-bassett-for-our-spiritual-development-and-learning",
+      "para": 3,
+      "en": "… and testimonies of Joseph Smith and the Three and Eight Witnesses, who saw the actual plates Moroni delivered.",
+      "tr": "… de José Smith y de los Tres y los Ocho testigos que vieron las planchas que entregó Moroni."
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-renlund-a-framework-for-personal-revelation",
+      "para": 6,
+      "en": "… history of the Restoration. Hiram Page, one of the Eight Witnesses to the Book of Mormon, claimed to be receiving …",
+      "tr": "… historia de la Restauración. Hiram Page, unos de los Ocho Testigos del Libro de Mormón, afirmaba que recibía revelaciones para …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "id": "concept.temple-presidency",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "presidência do templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-hinckley-the-miracle-of-faith",
+      "para": 10,
+      "en": "… Uruguay Temple. Her husband is a counselor in the temple presidency.",
+      "tr": "… de Montevidéu Uruguai. Seu marido é conselheiro na presidência do templo."
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-cook-see-yourself-in-the-temple",
+      "para": 38,
+      "en": "… approved one small dedicatory session with just the new temple presidency and a few local leaders; no others were invited …",
+      "tr": "… uma pequena sessão dedicatória com apenas a nova presidência do templo e alguns líderes locais. Outras pessoas não foram convidadas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "presidencia del templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-hinckley-the-miracle-of-faith",
+      "para": 10,
+      "en": "… Uruguay Temple. Her husband is a counselor in the temple presidency.",
+      "tr": "… Montevideo, Uruguay. Su esposo es consejero de la presidencia del templo."
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-cook-see-yourself-in-the-temple",
+      "para": 38,
+      "en": "… approved one small dedicatory session with just the new temple presidency and a few local leaders; no others were invited …",
+      "tr": "… una pequeña sesión dedicatoria con solo la nueva presidencia del templo y unos líderes locales; no se invitó a nadie …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+id: concept.conference-address
+category: Scriptures & Study Helps
+en:
+  term: conference address
+  match:
+  - conference address
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: discurso de conferencia
+    hint: pulpit-glossary:verified
+related: []

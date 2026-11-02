@@ -1,0 +1,140 @@
+{
+ "id": "concept.liahona",
+ "pt": {
+  "en_paragraphs": 945,
+  "en_talks": 781,
+  "en_verses": 1,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Liahona",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 943,
+    "talks": 779,
+    "verses": 1,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 37:38",
+      "ref_en": "Alma 37:38",
+      "en": "And now, my son, I have somewhat to say concerning the thing which our fathers call a ball, or director—or our fathers called it Liahona, which is, being interpreted, a compass; and the Lord prepared it.",
+      "tr": "E agora, meu filho, tenho algo a dizer a respeito daquilo que nossos pais chamam de esfera ou guia — ou que nossos pais chamaram de Liahona, que é, por interpretação, uma bússola; e o Senhor preparou-a.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/37?lang=por&id=p38"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-packer-the-standard-of-truth-has-been-erected",
+      "para": 69,
+      "en": "… [^18]: “The Family: A Proclamation to the World,” *Liahona,* Oct. 1998, 24; *Ensign,* Nov. 1995, 102.\n[^19]: See …",
+      "tr": "… Hebreus 12:9.\n[^18]: \"A Família: Proclamação ao Mundo\", *A Liahona*, outubro de 1998, p. 24.\n[^19]: Ver \"A Família: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-eubank-christ-the-light-that-shines-in-darkness",
+      "para": 27,
+      "en": "… 24:14](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/24?lang=eng&id=p14#p14).\n[^3]: Jeffrey R. Holland, “[Bearing One Another’s Burdens](https://www.churchofjesuschrist.org/study/liahona/2018/06/bearing-one-anothers-burdens?lang=eng&id=p23#p23),” Ensign, June 2018, 28; Liahona, June 2018, 30.\n[^4]: …",
+      "tr": "… Jeffrey R. Holland, \"[Carregar os fardos uns dos outros](https://www.churchofjesuschrist.org/study/liahona/2018/06/bearing-one-anothers-burdens?lang=por&id=p23#p23)\", Liahona, junho de 2018, p. 30.\n[^4]: [Mateus 11:28](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/11?lang=por&id=p28#p28). …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 961,
+  "en_talks": 796,
+  "en_verses": 1,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "Liahona",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 957,
+    "talks": 793,
+    "verses": 1,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 37:38",
+      "ref_en": "Alma 37:38",
+      "en": "And now, my son, I have somewhat to say concerning the thing which our fathers call a ball, or director—or our fathers called it Liahona, which is, being interpreted, a compass; and the Lord prepared it.",
+      "tr": "Y ahora, hijo mío, tengo algo que decir concerniente a lo que nuestros padres llaman esfera o director, o que ellos llamaron Liahona, que interpretado quiere decir brújula; y el Señor la preparó.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/37?lang=spa&id=p38"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hughes-out-of-small-things",
+      "para": 7,
+      "en": "… the service that pertains to it” (“Priesthood Power,” *Liahona,* Jan. 2000, 60; *Ensign,* Nov. 1999, 51). Sisters, we …",
+      "tr": "… servicio que le corresponde” (“El poder del sacerdocio”, *Liahona,* enero de 2000, pág. 60). Hermanas, ¡podemos hacerlo! Oigo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 34,
+      "en": "… Quentin L. Cook, “[Adjustments to Strengthen Youth](https://www.churchofjesuschrist.org/study/general-conference/2019/10/25cook?lang=eng),” Ensign or Liahona, Nov. 2019, 40–43.\n[^6]: The use of the word …",
+      "tr": "… Quentin L. Cook, \"[Ajustes para fortalecer a los jóvenes](https://www.churchofjesuschrist.org/study/general-conference/2019/10/25cook?lang=spa)\", Liahona, noviembre de 2019, págs. 40–43.\n[^6]: El uso de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "bofm/mosiah",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 50.0,
+    "source": "2014-04-rasband-the-joyful-burden-of-discipleship",
+    "kind": "talk",
+    "sample": "#p88).\n[^8]: [Mosíah 18:8](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=spa&id=p8#p8).\n[^9]: [Mosíah 18:9](https://www.churchofjesuschrist.org/"
+   },
+   {
+    "term": "thomas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 42.6,
+    "source": "2014-04-rasband-the-joyful-burden-of-discipleship",
+    "kind": "talk",
+    "sample": "rchofjesuschrist.org/study/scriptures/ot/num/11?lang=spa&id=p16-p17#p16).\n[^2]: Thomas S. Monson, \"¿Qué he hecho hoy por alguien?\", noviembre de 2009, págs. 86, 87.\n["
+   },
+   {
+    "term": "noviembre",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 42.6,
+    "source": "2014-04-rasband-the-joyful-burden-of-discipleship",
+    "kind": "talk",
+    "sample": "=spa&id=p16-p17#p16).\n[^2]: Thomas S. Monson, \"¿Qué he hecho hoy por alguien?\", noviembre de 2009, págs. 86, 87.\n[^3]: [Mateo 19:20–21](https://www.churchofjesuschrist.o"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.tabernacle-choir-at-temple-square
+category: Music
+en:
+  term: Tabernacle Choir at Temple Square
+  match:
+  - Tabernacle Choir at Temple Square
+sources: {}
+candidates:
+  pt:
+  - term: Coro do Tabernáculo
+    hint: pulpit-glossary:standard
+  es:
+  - term: Coro del Tabernáculo de la Manzana del Templo
+    hint: pulpit-glossary:verified
+related: []

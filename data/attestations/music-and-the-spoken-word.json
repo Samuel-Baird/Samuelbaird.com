@@ -1,0 +1,49 @@
+{
+ "id": "concept.music-and-the-spoken-word",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Música e Palavra Inspirada",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "música",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 222.3,
+    "source": "1992-10-pearce-fear",
+    "kind": "talk",
+    "sample": "mal de esta ocasión, estoy segura de que muchas de nosotras, ya sea mediante la música, la palabra o simplemente la camaradería de las amigas que nos rodean, encontra"
+   },
+   {
+    "term": "final",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 45.2,
+    "source": "2007-10-hinckley-closing-remarks",
+    "kind": "talk",
+    "sample": "Mis queridos hermanos y hermanas, hemos llegado al final de una gran conferencia. Hemos sido edificados y elevados. Hemos sido inspirado"
+   }
+  ]
+ }
+}

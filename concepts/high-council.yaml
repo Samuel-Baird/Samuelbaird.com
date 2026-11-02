@@ -1,0 +1,21 @@
+id: concept.high-council
+category: Councils & Conferences
+en:
+  term: High Council
+  match:
+  - High Council
+sources:
+  GS:
+  - high-council
+  Topics:
+  - high-council
+  GH:
+  - 32-repentance-and-membership-councils#title_number56
+candidates:
+  pt:
+  - term: Sumo Conselho
+    hint: pulpit-glossary:verified
+  es:
+  - term: sumo consejo
+    hint: approved-terms
+related: []

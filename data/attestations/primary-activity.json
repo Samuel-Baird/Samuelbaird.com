@@ -1,0 +1,51 @@
+{
+ "id": "concept.primary-activity",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": []
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "actividad de la Primaria",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-aoyagi-helping-hands-saving-hands",
+      "para": 9,
+      "en": "As part of a Primary activity, my five-year-old granddaughter places a popcorn seed in …",
+      "tr": "Mi nieta de cinco años participa en una actividad de la Primaria en la cual, cada vez que hace una …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-cook-adjustments-to-strengthen-youth",
+      "para": 33,
+      "en": "… each organization. A sufficient amount will be provided for Primary activities.",
+      "tr": "… organización. Se proporcionará una cantidad suficiente para las actividades de la Primaria."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

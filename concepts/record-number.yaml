@@ -1,0 +1,13 @@
+id: concept.record-number
+category: Membership Records
+en:
+  term: record number
+  match:
+  - record number
+sources: {}
+candidates:
+  pt:
+  - term: número de registro
+    hint: pulpit-glossary:standard
+  es: []
+related: []

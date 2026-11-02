@@ -1,0 +1,13 @@
+id: concept.homecoming-talk
+category: Missionary Work
+en:
+  term: homecoming talk
+  match:
+  - homecoming talk
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: discurso de bienvenida
+    hint: pulpit-glossary:verified
+related: []

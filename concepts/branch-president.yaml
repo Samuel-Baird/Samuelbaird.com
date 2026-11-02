@@ -1,0 +1,19 @@
+id: concept.branch-president
+category: Local Leadership & Callings
+en:
+  term: branch president
+  match:
+  - branch president
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number57
+candidates:
+  pt:
+  - term: presidente do ramo
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidente de rama
+    hint: approved-terms
+  - term: presidente de la rama
+    hint: pulpit-glossary:verified
+related: []

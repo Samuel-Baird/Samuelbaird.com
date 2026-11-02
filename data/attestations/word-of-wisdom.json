@@ -1,0 +1,140 @@
+{
+ "id": "concept.word-of-wisdom",
+ "pt": {
+  "en_paragraphs": 116,
+  "en_talks": 85,
+  "en_verses": 12,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "Palavra de Sabedoria",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 111,
+    "talks": 81,
+    "verses": 11,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 89:1",
+      "ref_en": "Doctrine and Covenants 89:1",
+      "en": "A Word of Wisdom, for the benefit of the council of high priests, assembled in Kirtland, and the church, and also the saints in Zion—",
+      "tr": "Uma Palavra de Sabedoria, para o benefício do conselho de sumos sacerdotes, reunido em Kirtland, e da igreja e também dos santos de Sião —",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/89?lang=por&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 27,
+      "en": "… These concern such things as tithing and the Word of Wisdom.",
+      "tr": "… específico; dizem respeito a coisas como dízimo e Palavra de Sabedoria."
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-uchtdorf-see-the-end-from-the-beginning",
+      "para": 18,
+      "en": "… Are you morally clean? Do you keep the Word of Wisdom? Do you obey the law of tithing? And …",
+      "tr": "… Você é honesto? É moralmente limpo? Cumpre a Palavra de Sabedoria? Obedece à lei do dízimo? Apóia as autoridades …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "hoje",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 13.8,
+    "source": "1994-10-okazaki-rowing-your-boat",
+    "kind": "talk",
+    "sample": "vosco hoje, sentindo a força da fraternidade no evangelho de Jesus Cristo. Reunimo-nos com"
+   },
+   {
+    "term": "suficiente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 47.6,
+    "source": "2018-10-jones-for-him",
+    "kind": "talk",
+    "sample": "do amanhã. Mesmo assim, faça o bem. Se você der o melhor de si, talvez não seja suficiente. Mesmo assim, dê o melhor de si. Perceba que, no fim das contas, o que importa"
+   },
+   {
+    "term": "compartilhar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 39.2,
+    "source": "2018-10-jones-for-him",
+    "kind": "talk",
+    "sample": "Gostaria de compartilhar com vocês algumas sábias palavras que li no mural de um orfanato em Calcutá, Ín"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 93,
+  "en_talks": 75,
+  "en_verses": 12,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Palabra de Sabiduría",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 90,
+    "talks": 72,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 89:1",
+      "ref_en": "Doctrine and Covenants 89:1",
+      "en": "A Word of Wisdom, for the benefit of the council of high priests, assembled in Kirtland, and the church, and also the saints in Zion—",
+      "tr": "Una Palabra de Sabiduría para el beneficio del consejo de sumos sacerdotes reunido en Kirtland, y la iglesia, y también los santos de Sion",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/89?lang=spa&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 27,
+      "en": "… These concern such things as tithing and the Word of Wisdom.",
+      "tr": "… ejemplo las relacionadas con 108 diezmos y la Palabra de Sabiduría."
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-hales-agency-essential-to-the-plan-of-life",
+      "para": 23,
+      "en": "For example, when we hearken to the Word of Wisdom, we escape the captivity of poor health and …",
+      "tr": "Por ejemplo, cuando prestamos atención a la Palabra de Sabiduría, escapamos a la cautividad de la mala salud …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

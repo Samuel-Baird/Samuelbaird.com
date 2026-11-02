@@ -1,0 +1,161 @@
+{
+ "id": "concept.high-priests-quorum",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "quórum de sumos sacerdotes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-lund-the-opportunity-to-serve",
+      "para": 1,
+      "en": "… his wife. One day Elder Busche taught our high priests quorum, and he cited a scripture in the book …",
+      "tr": "… Um dia, o Élder Busche falou em nosso quórum de sumos sacerdotes e citou uma escritura no Livro de Alma …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-nelson-introductory-remarks",
+      "para": 4,
+      "en": "… presidency will continue to preside over the stake high priests quorum. But the composition of that quorum will be …",
+      "tr": "… a presidência da estaca continuará a presidir o quórum de sumos sacerdotes da estaca. Porém, a composição desse quórum terá …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 24,
+      "en": "… to hold an annual meeting of the stake high priests quorum as has been announced today.",
+      "tr": "… da estaca ainda terá uma reunião anual do quórum de sumos sacerdotes da estaca conforme anunciado hoje."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sumos sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 571.6,
+    "source": "2004-10-perry-what-is-a-quorum",
+    "kind": "talk",
+    "sample": "da quórum da Igreja. Vocês, quóruns de diáconos, mestres, sacerdotes, élderes e sumos sacerdotes, poderiam agora dar atenção, ao que acredito ser, uma das maiores bênçãos que u"
+   },
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 129.1,
+    "source": "2004-10-perry-what-is-a-quorum",
+    "kind": "talk",
+    "sample": "itido a cada quórum da Igreja. Vocês, quóruns de diáconos, mestres, sacerdotes, élderes e sumos sacerdotes, poderiam agora dar atenção, ao que acredito ser, uma das ma"
+   },
+   {
+    "term": "quóruns",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 187.5,
+    "source": "2004-10-perry-what-is-a-quorum",
+    "kind": "talk",
+    "sample": "emos por nosso Conselho pudesse ser transmitido a cada quórum da Igreja. Vocês, quóruns de diáconos, mestres, sacerdotes, élderes e sumos sacerdotes, poderiam agora da"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 10,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "quórum de sumos sacerdotes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2003,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-edgley-the-empowerment-of-humility",
+      "para": 0,
+      "en": "Some time ago in my high priests quorum meeting, the instructor introduced the lesson by asking each …",
+      "tr": "Hace tiempo, en una reunión de mi quórum de sumos sacerdotes, el maestro presentó la lección preguntándonos quién …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sumos sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.889,
+    "ratio": 889.1,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "para llevar a cabo la obra del Señor de manera más eficaz. *En cada barrio, los sumos sacerdotes y los élderes se combinarán en un cuórum de élderes*… [y] la composición [del]"
+   },
+   {
+    "term": "cuórums",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 444.6,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "us palabras: “Esta noche anunciamos una importante reestructuración de nuestros cuórums del Sacerdocio de Melquisedec para llevar a cabo la obra del Señor de manera má"
+   },
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 116.0,
+    "source": "2018-04-christofferson-the-elders-quorum",
+    "kind": "talk",
+    "sample": "bra del Señor de manera más eficaz. *En cada barrio, los sumos sacerdotes y los élderes se combinarán en un cuórum de élderes*… [y] la composición [del] cuórum [de los"
+   }
+  ]
+ }
+}

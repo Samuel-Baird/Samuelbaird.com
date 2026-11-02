@@ -1,0 +1,13 @@
+id: concept.opening-hymn
+category: Sacrament & Meetings
+en:
+  term: opening hymn
+  match:
+  - opening hymn
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: himno de apertura
+    hint: pulpit-glossary:verified
+related: []

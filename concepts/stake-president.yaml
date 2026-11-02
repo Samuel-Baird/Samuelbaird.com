@@ -1,0 +1,17 @@
+id: concept.stake-president
+category: Local Leadership & Callings
+en:
+  term: stake president
+  match:
+  - stake president
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number55
+candidates:
+  pt:
+  - term: presidente de estaca
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidente de estaca
+    hint: approved-terms
+related: []

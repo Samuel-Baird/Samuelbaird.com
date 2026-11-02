@@ -1,0 +1,18 @@
+id: concept.liahona
+category: Education & Publications
+en:
+  term: Liahona
+  match:
+  - Liahona
+sources:
+  GS:
+  - liahona
+candidates:
+  pt:
+  - term: Liahona
+    hint: pulpit-glossary:verified
+  es:
+  - term: Liahona
+    hint: approved-terms
+related: []
+note: Magazine title — check whether the target-language edition keeps the name

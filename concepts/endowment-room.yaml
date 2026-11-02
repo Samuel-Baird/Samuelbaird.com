@@ -1,0 +1,15 @@
+id: concept.endowment-room
+category: Temple & Family History
+en:
+  term: endowment room
+  match:
+  - endowment room
+sources: {}
+candidates:
+  pt:
+  - term: sala de investidura
+    hint: pulpit-glossary:standard
+  es:
+  - term: salón de investiduras
+    hint: pulpit-glossary:verified
+related: []

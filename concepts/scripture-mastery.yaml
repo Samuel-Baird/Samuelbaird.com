@@ -1,0 +1,13 @@
+id: concept.scripture-mastery
+category: Scriptures & Study Helps
+en:
+  term: scripture mastery
+  match:
+  - scripture mastery
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Dominio de las Escrituras
+    hint: pulpit-glossary:verified
+related: []

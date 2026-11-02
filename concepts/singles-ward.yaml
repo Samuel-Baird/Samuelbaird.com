@@ -1,0 +1,15 @@
+id: concept.singles-ward
+category: Church Units & Facilities
+en:
+  term: singles ward
+  match:
+  - singles ward
+sources: {}
+candidates:
+  pt:
+  - term: ala de solteiros
+    hint: pulpit-glossary:standard
+  es:
+  - term: barrio de solteros
+    hint: pulpit-glossary:verified
+related: []

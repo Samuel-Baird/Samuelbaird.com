@@ -1,0 +1,19 @@
+id: concept.calling
+category: Callings & Sustaining
+en:
+  term: calling
+  match:
+  - calling
+sources:
+  GS:
+  - call-called-of-god-calling
+  GH:
+  - 24#title_number58
+candidates:
+  pt:
+  - term: chamado
+    hint: pulpit-glossary:verified
+  es:
+  - term: llamamiento
+    hint: approved-terms
+related: []

@@ -1,0 +1,101 @@
+{
+ "id": "concept.especial-witnesses",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 2,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "testemunhas especiais",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 2,
+    "first_year": 1996,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 107:25",
+      "ref_en": "Doctrine and Covenants 107:25",
+      "en": "The Seventy are also called to preach the gospel, and to be especial witnesses unto the Gentiles and in all the world—thus differing from other officers in the church in the duties of their calling.",
+      "tr": "Os Setenta também são chamados para pregar o evangelho e ser testemunhas especiais junto aos gentios e em todo o mundo — diferindo assim dos outros oficiais da igreja nos deveres de seu chamado.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=por&id=p25"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-packer-the-twelve-apostles",
+      "para": 9,
+      "en": "… ordained you and confirmed you to be apostles, and especial witnesses of my name, and bear the keys of your …",
+      "tr": "… o Senhor: “(…) vos ordenei e confirmei apóstolos e testemunhas especiais do meu nome e para portar as chaves de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-nielson-a-record-of-what-i-have-both-seen-and-heard",
+      "para": 2,
+      "en": "… states, “The Seventy are also called … to be especial witnesses unto the Gentiles and in all the world.” As …",
+      "tr": "… diz: “Os Setenta também são chamados para (…) ser testemunhas especiais junto aos gentios e em todo o mundo”. Como …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 2,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "testigos especiales",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 2,
+    "first_year": 1997,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 107:25",
+      "ref_en": "Doctrine and Covenants 107:25",
+      "en": "The Seventy are also called to preach the gospel, and to be especial witnesses unto the Gentiles and in all the world—thus differing from other officers in the church in the duties of their calling.",
+      "tr": "Los Setenta también son llamados para predicar el evangelio y ser testigos especiales a los gentiles y en todo el mundo, y así se distinguen de otros oficiales de la iglesia en los deberes de su llamamiento.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=spa&id=p25"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-hinckley-may-we-be-faithful-and-true",
+      "para": 14,
+      "en": "… are called to preach the gospel and to be especial witnesses of the Lord Jesus Christ as set forth in …",
+      "tr": "… son llamados a predicar el Evangelio y a ser testigos especiales del Señor Jesucristo, en conformidad a lo que esta …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-uchtdorf-the-opportunity-to-testify",
+      "para": 5,
+      "en": "… love and admiration to the Seventy. They are truly especial witnesses of Christ. Instead of any others they are the …",
+      "tr": "… y mi admiración por los Setenta. Ellos son verdaderamente testigos especiales de Cristo. En lugar de otros, ellos son los …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

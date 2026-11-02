@@ -1,0 +1,93 @@
+{
+ "id": "concept.personal-progress",
+ "pt": {
+  "en_paragraphs": 45,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 45,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "progresso pessoal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 45,
+    "share_of_uncovered": 1.0,
+    "ratio": 666.8,
+    "source": "1996-04-beckham-sustaining-the-living-prophets",
+    "kind": "talk",
+    "sample": "s momentos e em todas as coisas e em todos os lugares”. (Mosias 18:9; citado em Progresso Pessoal, p. 6.) Creio que significa que nosso comportamento mostra em que acreditamos."
+   },
+   {
+    "term": "moças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.6,
+    "ratio": 40.7,
+    "source": "1996-04-beckham-sustaining-the-living-prophets",
+    "kind": "talk",
+    "sample": "Freqüentemente debato nosso tema com as moças e pergunto o que significa para elas “servir de testemunhas de Deus em todos os"
+   },
+   {
+    "term": "livreto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.289,
+    "ratio": 385.3,
+    "source": "2008-04-tanner-stand-as-a-witness",
+    "kind": "talk",
+    "sample": ", 5.\n[^5]: Isaías 41:10.\n[^6]: \"Tema das Moças\", *Progresso Pessoal das Moças* (livreto, 2002), p.5.\n[^7]: Mosias 5:15.\n[^8]: Mosias 5:4.\n[^9]: \"Louvai a Deus\", *Hinos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 53,
+  "en_talks": 38,
+  "en_verses": 0,
+  "uncovered_paragraphs": 53,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "progreso personal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 49,
+    "share_of_uncovered": 0.925,
+    "ratio": 1233.0,
+    "source": "1990-10-kapp-crickets-can-be-destroyed-through-spirituality",
+    "kind": "talk",
+    "sample": "Las insto a hacer lo que se indica en su libro de Progreso Personal, que no es sólo para mantenerlas ocupadas sino para edificarlas espiritualmente"
+   },
+   {
+    "term": "mujeres jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.528,
+    "ratio": 64.1,
+    "source": "1990-10-kapp-crickets-can-be-destroyed-through-spirituality",
+    "kind": "talk",
+    "sample": "iones, oren unas por otras y oren juntas. El poder de la oración es muy grande. Mujeres jóvenes, las instamos a aumentar su espiritualidad mediante el recto vivir. Eleven sus"
+   },
+   {
+    "term": "librito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.226,
+    "ratio": 181.2,
+    "source": "2010-04-dalton-remember-who-you-are",
+    "kind": "talk",
+    "sample": "^1]: Véase \"Lema de las Mujeres Jóvenes\", *Mujeres Jóvenes: Progreso Personal,* librito, 2009, pág. 3.\n[^2]: Doctrina y Convenios 87:8.\n[^3]: Véase 2 Nefi 25:26.\n[^4]:"
+   }
+  ]
+ }
+}

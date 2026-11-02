@@ -1,0 +1,13 @@
+id: concept.millennial-star
+category: Education & Publications
+en:
+  term: Millennial Star
+  match:
+  - Millennial Star
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Millennial Star
+    hint: pulpit-glossary:verified
+related: []

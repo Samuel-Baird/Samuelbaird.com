@@ -1,0 +1,111 @@
+{
+ "id": "concept.church-service-missionary",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "missionários de serviço na Igreja",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2003,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-hinckley-the-condition-of-the-church",
+      "para": 13,
+      "en": "… large number of older members who serve in a Church-service missionary capacity. More than 18,000 give all or a large …",
+      "tr": "… de membros mais velhos que servem como missionários de serviço na Igreja. Mais 18.000 dedicam todo o seu tempo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "missionários",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 48.8,
+    "source": "2011-04-hales-statistical-report-2010",
+    "kind": "talk",
+    "sample": "O número de missionários em serviço da Igreja atuantes era de 20.813, muitos dos quais moram na própria"
+   },
+   {
+    "term": "serviço",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 35.7,
+    "source": "2011-04-hales-statistical-report-2010",
+    "kind": "talk",
+    "sample": "O número de missionários em serviço da Igreja atuantes era de 20.813, muitos dos quais moram na própria casa e são"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "misioneros de servicio a la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-hinckley-the-condition-of-the-church",
+      "para": 13,
+      "en": "… large number of older members who serve in a Church-service missionary capacity. More than 18,000 give all or a large …",
+      "tr": "… gran número de miembros mayores que son misioneros de servicio a la Iglesia. Más de dieciocho mil [de ellos] …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-hales-statistical-report-2013",
+      "para": 20,
+      "en": "Church-Service Missionaries",
+      "tr": "Misioneros de servicio a la Iglesia"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-hales-statistical-report-2016",
+      "para": 20,
+      "en": "Church-Service Missionaries",
+      "tr": "Misioneros de servicio a la Iglesia"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

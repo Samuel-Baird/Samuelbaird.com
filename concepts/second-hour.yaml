@@ -1,0 +1,14 @@
+id: concept.second-hour
+category: Sacrament & Meetings
+en:
+  term: second hour
+  match:
+  - second hour
+sources: {}
+candidates:
+  pt:
+  - term: segunda hora
+    hint: pulpit-glossary:standard
+  es: []
+related: []
+note: Post-2019 meeting-schedule term

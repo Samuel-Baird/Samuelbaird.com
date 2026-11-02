@@ -1,0 +1,179 @@
+{
+ "id": "concept.priesthood-holder",
+ "pt": {
+  "en_paragraphs": 243,
+  "en_talks": 140,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "portador do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 229,
+    "talks": 135,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-hinckley-our-solemn-responsibilities",
+      "para": 23,
+      "en": "… especially and particularly despicable if the abuser is a priesthood holder.”",
+      "tr": "… e particularmente desprezível, se o ofensor for um portador do sacerdócio.”"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-bednar-the-powers-of-heaven",
+      "para": 0,
+      "en": "… we can worship together as a vast body of priesthood holders. I love and admire you for your worthiness …",
+      "tr": "… podermos adorar juntos como um imenso grupo de portadores do sacerdócio. Amo e admiro vocês por sua dignidade e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-eyring-sisters-in-zion",
+      "para": 26,
+      "en": "… service. The members were all older sisters without a priesthood holder in their homes. I watched my mother and those …",
+      "tr": "… infância. Meu irmão e eu éramos os únicos portadores do Sacerdócio Aarônico, e meu pai, o único portador do Sacerdócio …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "portadores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.286,
+    "ratio": 49.7,
+    "source": "2007-10-hales-personal-revelation-the-teachings-and-examples-of-the-prophets",
+    "kind": "talk",
+    "sample": "lgum tempo e disse que também não. Contudo, *fomos* inspirados a pedir que três portadores dignos do sacerdócio discursassem na sessão de sábado à noite da conferência. M"
+   },
+   {
+    "term": "bênção",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.214,
+    "ratio": 10.6,
+    "source": "1990-10-hillam-no-more-strangers-and-foreigners",
+    "kind": "talk",
+    "sample": "or favor, pode abençoar-me?” Com sua preciosa e terna fé ele estava pedindo uma bênção do sacerdócio, a mesma que a Bíblia registra e nos ensina. Lemos em [Tiago 5:14"
+   },
+   {
+    "term": "noite",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.214,
+    "ratio": 9.9,
+    "source": "1995-10-okazaki-a-living-network",
+    "kind": "talk",
+    "sample": "a­das de nosso amado pro­fe­ta, o Presidente Hinckley, prin­ci­pal­men­te nesta noite. Todas temos uma visão bas­tan­te clara do lar ideal, cujo cen­tro é o evan­ge­"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 236,
+  "en_talks": 135,
+  "en_verses": 0,
+  "uncovered_paragraphs": 16,
+  "renderings": [
+   {
+    "term": "poseedor del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 220,
+    "talks": 127,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-neuenschwander-to-a-missionary-son",
+      "para": 0,
+      "en": "… it is to be in the presence of worthy priesthood holders tonight! Among us are many young men. Though some …",
+      "tr": "… magnifico es hallarse en la presencia de dignos poseedores del sacerdocio! A pesar de que algunos de vosotros estáis …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-gibson-sacred-keys-of-the-aaronic-priesthood",
+      "para": 30,
+      "en": "… are on His errand, and He has shown all priesthood holders the way of faithful priesthood service.",
+      "tr": "… y que Él ha mostrado a todos los poseedores del sacerdocio el camino del fiel servicio del sacerdocio."
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-yamashita-when-to-receive-your-patriarchal-blessing",
+      "para": 5,
+      "en": "… her life, and because she did not have a priesthood holder in the home, she did not receive many priesthood …",
+      "tr": "… y debido a que no tenía a un poseedor del sacerdocio en su hogar, no recibió muchas bendiciones del sacerdocio. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mormón",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 11.5,
+    "source": "1992-10-coleman-jesus-christ-is-at-the-center-of-the-restoration-of-the-gospel",
+    "kind": "talk",
+    "sample": "ura para nuestro uso y capacitación en la actualidad. Ciertamente, ¡el Libro de Mormón es verdadero! Habla de Cristo; habla de los que se regocijan en Cristo; esta ll"
+   },
+   {
+    "term": "libro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 11.1,
+    "source": "1992-10-coleman-jesus-christ-is-at-the-center-of-the-restoration-of-the-gospel",
+    "kind": "talk",
+    "sample": "Me regocijo en extremo por la restauración de los libros de Escritura para nuestro uso y capacitación en la actualidad. Ciertamente, ¡e"
+   },
+   {
+    "term": "doctrina",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.25,
+    "ratio": 6.4,
+    "source": "1993-10-hales-how-will-our-children-remember-us",
+    "kind": "talk",
+    "sample": "La sección 121 de Doctrina y Convenios nos enseña: “Ningún poder o influencia se puede ni se debe mantener"
+   }
+  ]
+ }
+}

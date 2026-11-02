@@ -1,0 +1,15 @@
+id: concept.ministering-assignment
+category: Discipleship & Ministering
+en:
+  term: ministering assignment
+  match:
+  - ministering assignment
+sources:
+  GH:
+  - 21-ministering#title_number7
+candidates:
+  pt:
+  - term: designação de ministração
+    hint: pulpit-glossary:standard
+  es: []
+related: []

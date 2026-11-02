@@ -1,0 +1,133 @@
+{
+ "id": "concept.mormon-trail",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "trilha mórmon",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 1997,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-hinckley-true-to-the-faith",
+      "para": 43,
+      "en": "[^1]: *The Gathering of Zion: The Story of the Mormon Trail* (1964), 6–7.\n[^2]: *Teachings of the Prophet Joseph …",
+      "tr": "… Mormon Trail (A Coligação de Sião: A História da Trilha Mórmon), 1964, 6–7.\n[^2]: Ensinamentos do Profeta Joseph ⌦Smith, …"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-parkin-finding-faith-in-every-footstep",
+      "para": 7,
+      "en": "… to Zion: True Stories of Young Pioneers on the Mormon Trail* [1994], 30). The pioneer spirit is full of …",
+      "tr": "… Sião: Histórias Verídicas de Jovens Pioneiros que Percorreram a Trilha Mórmon), 1994, p. 30.] O espírito pioneiro é cheio …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "trail",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "2002-04-parkin-feel-the-love-of-the-lord",
+    "kind": "talk",
+    "sample": "[^1]: *The Gathering of Zion: The Story of the Mormon Trail* (1964), p. 13."
+   },
+   {
+    "term": "the mormon",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "2002-04-parkin-feel-the-love-of-the-lord",
+    "kind": "talk",
+    "sample": "[^1]: *The Gathering of Zion: The Story of the Mormon Trail* (1964), p. 13."
+   },
+   {
+    "term": "zion",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 800.2,
+    "source": "2002-04-parkin-feel-the-love-of-the-lord",
+    "kind": "talk",
+    "sample": "[^1]: *The Gathering of Zion: The Story of the Mormon Trail* (1964), p. 13."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "sendero mormón",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "trail",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "1997-04-parkin-finding-faith-in-every-footstep",
+    "kind": "talk",
+    "sample": "an Arrington Madsen, I Walked to Sion: True Stories of Young Pioneers on Mormon Trail [1994], pág. 30). (El espíritu pionero esta lleno de aventura!"
+   },
+   {
+    "term": "the mormon",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 1714.7,
+    "source": "2002-04-parkin-feel-the-love-of-the-lord",
+    "kind": "talk",
+    "sample": "[^1]: *The Gathering of Zion: The Story of the Mormon Trail*, 1964, pág. 13."
+   },
+   {
+    "term": "zion",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 1143.1,
+    "source": "2002-04-parkin-feel-the-love-of-the-lord",
+    "kind": "talk",
+    "sample": "[^1]: *The Gathering of Zion: The Story of the Mormon Trail*, 1964, pág. 13."
+   }
+  ]
+ }
+}

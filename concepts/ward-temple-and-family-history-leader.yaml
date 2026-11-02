@@ -1,0 +1,17 @@
+id: concept.ward-temple-and-family-history-leader
+category: Local Leadership & Callings
+en:
+  term: ward temple and family history leader
+  match:
+  - ward temple and family history leader
+sources:
+  GH:
+  - 25-temple-and-family-history-work#title_number9
+candidates:
+  pt:
+  - term: líder de templo e história da família da ala
+    hint: pulpit-glossary:verified
+  es:
+  - term: líder de templo e historia familiar de barrio
+    hint: pulpit-glossary:verified
+related: []

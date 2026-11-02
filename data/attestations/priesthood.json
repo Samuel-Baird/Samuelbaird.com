@@ -1,0 +1,178 @@
+{
+ "id": "concept.priesthood",
+ "pt": {
+  "en_paragraphs": 2409,
+  "en_talks": 722,
+  "en_verses": 127,
+  "uncovered_paragraphs": 72,
+  "renderings": [
+   {
+    "term": "sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2337,
+    "talks": 703,
+    "verses": 127,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 84:21",
+      "ref_en": "Doctrine and Covenants 84:21",
+      "en": "And without the ordinances thereof, and the authority of the priesthood, the power of godliness is not manifest unto men in the flesh;",
+      "tr": "E sem suas ordenanças e a autoridade do sacerdócio, o poder da divindade não se manifesta aos homens na carne;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=por&id=p21"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-clarke-to-honor-the-priesthood",
+      "para": 9,
+      "en": "To have the priesthood conferred upon us does not automatically bless us with power …",
+      "tr": "Receber o sacerdócio não nos abençoa automaticamente com poder, assim como receber uma …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-oaks-healing-the-sick",
+      "para": 33,
+      "en": "I testify of the power of the priesthood of God, of the power of the prayer of faith, …",
+      "tr": "Presto testemunho do poder do sacerdócio de Deus, do poder da oração da fé e da …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "priesthood",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.236,
+    "ratio": 314.9,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "rchofjesuschrist.org/study/scriptures/pgp/moses/5?lang=por&id=p11#p11).\n[^10]: *Priesthood and Church Government,* comp. John A. Witsoe (1939), p. 85.\n[^11]: [Hebreus 12:"
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.236,
+    "ratio": 12.9,
+    "source": "1996-04-wirthlin-faith-of-our-fathers",
+    "kind": "talk",
+    "sample": "tah (História de Utah) [1890], 217.\n[^18]: Citado em A Comprehensive History of the Church (História da Igreja), 3:45.\n[^19]: D&C 20:59.\n[^20]: Morôni 10:32\n[^21]:"
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.208,
+    "ratio": 11.4,
+    "source": "1992-04-haight-come-to-the-house-of-the-lord",
+    "kind": "talk",
+    "sample": "essoal para abençoar vossa vida assim como abençoais aqueles que morreram.” (*A Liahona,* julho 1987, página 86.)."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2267,
+  "en_talks": 699,
+  "en_verses": 127,
+  "uncovered_paragraphs": 54,
+  "renderings": [
+   {
+    "term": "sacerdocio",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 2213,
+    "talks": 682,
+    "verses": 127,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Hebreos 7:14",
+      "ref_en": "Hebrews 7:14",
+      "en": "For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood.",
+      "tr": "Porque es evidente que nuestro Señor nació de la tribu de Judá, sobre cuya tribu nada habló Moisés tocante al sacerdocio.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/7?lang=spa&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 1,
+      "en": "… years past, I have directed my remarks in these priesthood meetings to those of the Aaronic Priesthood. This evening, if …",
+      "tr": "… oportunidades en los años pasados, en estas reuniones del sacerdocio me he dirigido a los jóvenes del Sacerdocio Aarónico; sin …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-monson-priesthood-power",
+      "para": 25,
+      "en": "… dominion over [his wife] is unworthy to hold the priesthood. Though he may have been ordained, the heavens will …",
+      "tr": "… dominio sobre [su esposa], es indigno de poseer el sacerdocio. A pesar de que haya sido ordenado, los cielos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "priesthood",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.333,
+    "ratio": 190.5,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": ",Relief Society Magazine,diciembre de 1946, pág. 801.\n[^9]: Moisés 5:11.\n[^10]: Priesthood and Church Government,comp. John A. Widtsoe, 1939, pág. 85.\n[^11]: Hebreos 12:2"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.407,
+    "ratio": 14.4,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "sage of the First Presidency of the Church\",Improvement Era, noviembre de 1942, pág. 761.\n[^2]: Mosíah 5:15.\n[^3]: Moisés 4:26.\n[^4]: Véase Alma 13:2 –4, 7 –8.\n[^5"
+   },
+   {
+    "term": "and",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.278,
+    "ratio": 23.6,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "y, 1997, pág. 387.\n[^7]: Matthew Cowley Speaks, 1954,pág. 109.\n[^8]: \"Our Wives and Our Mothers in the Eternal Plan\",Relief Society Magazine,diciembre de 1946, pág"
+   }
+  ]
+ }
+}

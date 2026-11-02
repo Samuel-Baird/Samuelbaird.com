@@ -1,0 +1,167 @@
+{
+ "id": "concept.temple-marriage",
+ "pt": {
+  "en_paragraphs": 54,
+  "en_talks": 47,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "casamento no templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 33,
+    "talks": 29,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 63,
+      "en": "… they begin to catch one another! The percentage of temple marriages among graduates of seminaries and institutes is *more than …",
+      "tr": "… emocionante porque começam as conquistas. A percentagem de casamentos no templo entre formandos do seminário e instituto é *mais que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-nelson-celestial-marriage",
+      "para": 14,
+      "en": "… covenant with our Heavenly Father.[^23] This means that a temple marriage is not only between husband and wife; it embraces …",
+      "tr": "… com nosso Pai Celestial.[^23] Isso significa que o casamento no templo é realizado não apenas entre marido e mulher, mas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-bednar-sealed-by-the-holy-spirit-of-promise",
+      "para": 30,
+      "en": "… ask, “How can this be the case if a temple marriage does not endure?”",
+      "tr": "… se perguntar: “Como isso é possível se um casamento no templo não perdurar?”"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "casar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.381,
+    "ratio": 217.7,
+    "source": "1995-04-washburn-the-temple-is-a-family-affair",
+    "kind": "talk",
+    "sample": "e não se arrependeu completamente de pecados cometidos no passado vai ao templo casar-se, está começando o casamento em um terreno muito inseguro. Creio que essa é u"
+   },
+   {
+    "term": "casamento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.429,
+    "ratio": 38.1,
+    "source": "1994-10-hunter-follow-the-son-of-god",
+    "kind": "talk",
+    "sample": "rio do Senhor Jesus Cristo. Façamos do templo, com a adoração, os convênios e o casamento do templo nossa meta básica nesta vida e nossa experiência mortal mais importan"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 53,
+  "en_talks": 46,
+  "en_verses": 0,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "matrimonio en el templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 31,
+    "talks": 25,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-scott-receive-the-temple-blessings",
+      "para": 13,
+      "en": "… You do your part. Don’t abandon hope for a temple marriage.",
+      "tr": "… parte, y no abandones la esperanza de un matrimonio en el templo."
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-nelson-celestial-marriage",
+      "para": 26,
+      "en": "The full realization of the blessings of a temple marriage is almost beyond our mortal comprehension. Such a marriage …",
+      "tr": "La total comprensión de las bendiciones del matrimonio en el templo va más allá de nuestro entendimiento terrenal; ese …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 6,
+      "en": "Temple marriages are meant to last forever. Covenant belonging unites a …",
+      "tr": "Los matrimonios en el templo están destinados a durar para siempre. La pertenencia …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "casamiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.318,
+    "ratio": 636.5,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "cia del hogar es un factor predominante que determina el servicio misional y el casamiento en el templo."
+   },
+   {
+    "term": "casarse",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.318,
+    "ratio": 159.1,
+    "source": "1999-04-hales-strengthening-families-our-sacred-duty",
+    "kind": "talk",
+    "sample": "odo que sean dignos de tener una recomendación para el templo y prepararse para casarse en el templo."
+   },
+   {
+    "term": "padres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.227,
+    "ratio": 6.9,
+    "source": "1992-04-packer-our-moral-environment",
+    "kind": "talk",
+    "sample": "su fe y oraciones, no importa dónde vayan los hijos, ellos están ligados a sus padres por un vínculo eterno, y ningún poder en la tierra o en el infierno podrá separ"
+   }
+  ]
+ }
+}

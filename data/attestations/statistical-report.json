@@ -1,0 +1,98 @@
+{
+ "id": "concept.statistical-report",
+ "pt": {
+  "en_paragraphs": 13,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "relatório estatístico",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.923,
+    "ratio": 1231.1,
+    "source": "1990-04-watson-statistical-report-1989",
+    "kind": "talk",
+    "sample": "Para a informação dos membros da Igreja, a Primeira Presidência publicou o relatório estatístico a seguir, referente ao crescimento e posição da Igreja em 31 de dezembro de 198"
+   },
+   {
+    "term": "referente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.769,
+    "ratio": 342.0,
+    "source": "1990-04-watson-statistical-report-1989",
+    "kind": "talk",
+    "sample": "os da Igreja, a Primeira Presidência publicou o relatório estatístico a seguir, referente ao crescimento e posição da Igreja em 31 de dezembro de 1989. (Os números de me"
+   },
+   {
+    "term": "dezembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.846,
+    "ratio": 199.1,
+    "source": "1990-04-watson-statistical-report-1989",
+    "kind": "talk",
+    "sample": "rio estatístico a seguir, referente ao crescimento e posição da Igreja em 31 de dezembro de 1989. (Os números de membros incluem estimativas baseadas em relatórios refe"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Informe Estadístico",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-watson-statistical-report-2000",
+      "para": 0,
+      "en": "… the Church, the First Presidency has issued the following statistical report concerning the membership growth and standing of the Church …",
+      "tr": "… la Iglesia, la Primera Presidencia hace público el siguiente informe estadístico, el cual representa el crecimiento y el estado …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-hales-statistical-report-2013",
+      "para": 0,
+      "en": "… the Church, the First Presidency has issued the following statistical report regarding the growth and status of the Church as …",
+      "tr": "… la Iglesia, la Primera Presidencia ha emitido el siguiente informe estadístico respecto al crecimiento y al estado de la Iglesia …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-sustaining-of-church-officers",
+      "para": 0,
+      "en": "We note that the statistical report which has traditionally been presented during this session of …",
+      "tr": "Mencionamos que el Informe estadístico que tradicionalmente ha sido presentado durante esta sesión de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

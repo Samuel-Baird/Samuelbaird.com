@@ -1,0 +1,15 @@
+id: concept.zone-conference
+category: Missionary Work
+en:
+  term: zone conference
+  match:
+  - zone conference
+sources: {}
+candidates:
+  pt:
+  - term: conferência de zona
+    hint: pulpit-glossary:verified
+  es:
+  - term: conferencia de zona
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,179 @@
+{
+ "id": "concept.release",
+ "pt": {
+  "en_paragraphs": 167,
+  "en_talks": 99,
+  "en_verses": 22,
+  "uncovered_paragraphs": 160,
+  "renderings": [
+   {
+    "term": "desobrigação",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 29,
+    "talks": 24,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-eyring-rise-to-your-call",
+      "para": 16,
+      "en": "The day of your release will teach you a great lesson. On the day I …",
+      "tr": "O dia de sua desobrigação lhe ensinará uma grande lição. No dia em que fui …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-uchtdorf-the-sustaining-of-church-officers",
+      "para": 17,
+      "en": "We likewise extend a release to all members of the Young Women general board.",
+      "tr": "Também estendemos a desobrigação a todas as integrantes da junta geral das Moças."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-causs-compensating-blessings",
+      "para": 13,
+      "en": "… once comforted a young missionary grieving over his early release due to health reasons, despite his sincere prayers and earnest …",
+      "tr": "… consolou um jovem missionário que estava sofrendo por sua desobrigação antecipada por motivos de saúde, apesar de suas orações sinceras …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "desobriguemos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 64,
+    "share_of_uncovered": 0.4,
+    "ratio": 266.7,
+    "source": "1998-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "É proposto que desobriguemos com um voto de agradecimento os Élderes Monte J. Brough, W. Eugene Hansen e Jac"
+   },
+   {
+    "term": "proposto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 65,
+    "share_of_uncovered": 0.406,
+    "ratio": 46.4,
+    "source": "1994-04-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "É proposto que apoiemos Merrill J. Bateman como Bispo Presidente, com H. David Burton como"
+   },
+   {
+    "term": "presidência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 45,
+    "share_of_uncovered": 0.281,
+    "ratio": 19.1,
+    "source": "1995-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": ", os Élderes Rex D. Pinegar e Charles Didier de seu tra­ba­lho como mem­bros da Presidência dos Quóruns dos Setenta. Os que esti­ve­rem a favor, mani­fes­tem-se."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 161,
+  "en_talks": 99,
+  "en_verses": 22,
+  "uncovered_paragraphs": 142,
+  "renderings": [
+   {
+    "term": "relevo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 41,
+    "talks": 35,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-dvila-the-conversion-process",
+      "para": 6,
+      "en": "… of our Savior; receive with joy the callings and releases that come from the Lord through inspired leaders; be co-workers …",
+      "tr": "… nuestro Salvador; que reciban con gozo los llamamientos y relevos que vienen del Señor por medio de los líderes inspirados, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-nielsen-hastening-the-lords-game-plan",
+      "para": 28,
+      "en": "… return I met with him to extend an honorable release and saw his shoes were worn out. This young man …",
+      "tr": "… su regreso, me reuní con él para extenderle un relevo honorable y vi que sus zapatos estaban gastados. Ese joven …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 6,
+      "en": "We extend, with sincere gratitude, releases to the Primary General Presidency, effective on August 1, 2026, …",
+      "tr": "Extendemos, con sincera gratitud, los siguientes relevos de la Presidencia General de la Primaria a partir del …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "relevemos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 66,
+    "share_of_uncovered": 0.465,
+    "ratio": 619.9,
+    "source": "1997-10-faust-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Se propone que relevemos con un voto de agradecimiento al élder F. Burton Howard, como primer consejero"
+   },
+   {
+    "term": "propone",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 66,
+    "share_of_uncovered": 0.465,
+    "ratio": 68.9,
+    "source": "1994-04-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Se propone que sostengamos a Merrill J. Bateman como Obispo Presidente, con H. David Burto"
+   },
+   {
+    "term": "setenta",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.289,
+    "ratio": 41.3,
+    "source": "1994-04-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "ultáneamente, relevamos al elder Bateman como miembro del Segundo Quórum de los Setenta."
+   }
+  ]
+ }
+}

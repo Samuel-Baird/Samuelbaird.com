@@ -1,0 +1,15 @@
+id: concept.gospel-library
+category: Education & Publications
+en:
+  term: Gospel Library
+  match:
+  - Gospel Library
+sources: {}
+candidates:
+  pt:
+  - term: Biblioteca do Evangelho
+    hint: pulpit-glossary:standard
+  es:
+  - term: Biblioteca del Evangelio
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,108 @@
+{
+ "id": "concept.man-of-holiness",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 2,
+  "uncovered_paragraphs": 5,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "santidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 210.6,
+    "source": "2014-10-christofferson-free-forever-to-act-for-themselves",
+    "kind": "talk",
+    "sample": "oisa impura pode habitar (…) em sua presença; pois, no idioma de Adão, Homem de Santidade é seu nome e o nome de seu Unigênito é Filho do Homem [de Santidade]”.[^4] Segu"
+   },
+   {
+    "term": "presença; pois",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 2400.6,
+    "source": "2014-10-christofferson-free-forever-to-act-for-themselves",
+    "kind": "talk",
+    "sample": "ente como somos”, somos impuros e “nenhuma coisa impura pode habitar (…) em sua presença; pois, no idioma de Adão, Homem de Santidade é seu nome e o nome de seu Unigênito é F"
+   },
+   {
+    "term": "nenhuma coisa impura",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 1200.3,
+    "source": "2014-10-christofferson-free-forever-to-act-for-themselves",
+    "kind": "talk",
+    "sample": "atamente como somos”, primeiro porque “exatamente como somos”, somos impuros e “nenhuma coisa impura pode habitar (…) em sua presença; pois, no idioma de Adão, Homem de Santidade é"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 2,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "Varón de Santidad",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 0,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [],
+    "share": 0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "santidad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 228.6,
+    "source": "1999-10-edgley-behold-the-man",
+    "kind": "talk",
+    "sample": "lado de quién están ustedes?”. A nuestro Padre Celestial se le llama “Hombre de Santidad” ([Moisés 6:57](https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/"
+   },
+   {
+    "term": "ninguna cosa inmunda",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 1714.7,
+    "source": "2014-10-christofferson-free-forever-to-act-for-themselves",
+    "kind": "talk",
+    "sample": "alva “tal y como somos”; primero, porque “tal y como somos” no somos limpios y “ninguna cosa inmunda puede morar… en su presencia; porque en el lenguaje de Adán, su nombre es Hombr"
+   },
+   {
+    "term": "inmunda puede morar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 1714.7,
+    "source": "2014-10-christofferson-free-forever-to-act-for-themselves",
+    "kind": "talk",
+    "sample": "omo somos”; primero, porque “tal y como somos” no somos limpios y “ninguna cosa inmunda puede morar… en su presencia; porque en el lenguaje de Adán, su nombre es Hombre de Santida"
+   }
+  ]
+ }
+}

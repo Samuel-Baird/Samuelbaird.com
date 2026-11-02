@@ -1,0 +1,95 @@
+{
+ "id": "concept.ward-conference",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "conferência da ala",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "secretário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "Quando eu tinha doze anos, tive o privilégio de servir como secretário do quórum de diáconos. Lembro-me com alegria das várias designações que nós, me"
+   },
+   {
+    "term": "quórum, tivemos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "diáconos. Lembro-me com alegria das várias designações que nós, membros daquele quórum, tivemos a oportunidade de cumprir. De imediato, lembro-me de distribuir o sagrado sacra"
+   },
+   {
+    "term": "ofertas mensais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "e cumprir. De imediato, lembro-me de distribuir o sagrado sacramento, arrecadar ofertas mensais de jejum e cuidar uns dos outros. A tarefa mais assustadora, porém, ocorreu num"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "conferencia de barrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2009,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-monson-be-your-best-self",
+      "para": 7,
+      "en": "… one, however, happened at the leadership session of our ward conference. The member of our stake presidency who was …",
+      "tr": "… ocurrió en la sesión de liderazgo de nuestra conferencia de barrio. El miembro de la presidencia de estaca que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-matswagothata-he-knows-you-by-name",
+      "para": 20,
+      "en": "One Sunday, while driving to a ward conference, I poured my heart out to the Lord. …",
+      "tr": "Un domingo, mientras iba a una conferencia de barrio, derramé mi corazón al Señor. Al llegar al …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

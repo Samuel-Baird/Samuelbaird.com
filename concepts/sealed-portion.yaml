@@ -1,0 +1,15 @@
+id: concept.sealed-portion
+category: Scriptures & Study Helps
+en:
+  term: sealed portion
+  match:
+  - sealed portion
+sources: {}
+candidates:
+  pt:
+  - term: parte selada
+    hint: pulpit-glossary:standard
+  es:
+  - term: porción sellada
+    hint: pulpit-glossary:verified
+related: []

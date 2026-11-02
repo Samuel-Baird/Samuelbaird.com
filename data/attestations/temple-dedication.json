@@ -1,0 +1,149 @@
+{
+ "id": "concept.temple-dedication",
+ "pt": {
+  "en_paragraphs": 24,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "rededicação do Templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2005,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-beck-a-work-for-me-to-do",
+      "para": 15,
+      "en": "… to hear President Gordon B. Hinckley and celebrate the temple dedication. To me it was a miracle to see …",
+      "tr": "… ano passado, retornei ao Brasil para participar da rededicação do Templo de São Paulo. Nessa ocasião, fiquei sabendo que havia …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "dedicação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.955,
+    "ratio": 272.8,
+    "source": "1990-10-monson-days-never-to-be-forgotten",
+    "kind": "talk",
+    "sample": "Sempre que assisto à dedicação de um templo, penso no irmão e irmã Gustav e Margaret Wacker, de Kingston, Ontá"
+   },
+   {
+    "term": "jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.227,
+    "ratio": 8.7,
+    "source": "1990-10-monson-days-never-to-be-forgotten",
+    "kind": "talk",
+    "sample": "ntemente acontece em Kingston, o Presidente Wacker chamava um táxi e mandava os jovens para o apartamento deles de carro, embora ele mesmo, no final do dia, fechasse"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 22,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "dedicación del templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-beck-a-work-for-me-to-do",
+      "para": 15,
+      "en": "… to hear President Gordon B. Hinckley and celebrate the temple dedication. To me it was a miracle to see …",
+      "tr": "… al presidente Gordon B. Hinckley y celebrar la dedicación del templo. Para mí fue un milagro ver a miles …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-mazzagardi-the-sacred-place-of-restoration",
+      "para": 3,
+      "en": "… the night before a session of the São Paulo Temple dedication.",
+      "tr": "… octubre de 1978, la noche antes de la dedicación del Templo de São Paulo."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-gong-eternitys-great-gifts-jesus-christs-atonement-resurrection-restoration",
+      "para": 13,
+      "en": "At the Puebla Mexico Temple dedication, tears of happiness wet the face of a …",
+      "tr": "En la dedicación del Templo de Puebla, México, lágrimas de felicidad bañan el rostro …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "dedicación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 1.0,
+    "ratio": 235.4,
+    "source": "1990-10-monson-days-never-to-be-forgotten",
+    "kind": "talk",
+    "sample": "Siempre que asisto a la dedicación de un templo, recuerdo a los hermanos Gustav y Margarete Wacker, de Kingston, O"
+   },
+   {
+    "term": "distrito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 272.8,
+    "source": "2008-10-monson-welcome-to-conference",
+    "kind": "talk",
+    "sample": "as culturales. En Curitiba, Brasil, cuatro mil trescientos treinta miembros del distrito del templo, con el apoyo de un coro de mil setecientas voces, presentaron un pr"
+   },
+   {
+    "term": "cabo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.455,
+    "ratio": 25.3,
+    "source": "2008-10-monson-welcome-to-conference",
+    "kind": "talk",
+    "sample": "La noche antes de que se llevara a cabo la dedicación de cada uno de los templos, se efectuaron espléndidos programas c"
+   }
+  ]
+ }
+}

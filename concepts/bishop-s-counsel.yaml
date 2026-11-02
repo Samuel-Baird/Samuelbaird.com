@@ -1,0 +1,13 @@
+id: concept.bishop-s-counsel
+category: Interviews, Repentance & Membership Councils
+en:
+  term: bishop's counsel
+  match:
+  - bishop's counsel
+sources: {}
+candidates:
+  pt:
+  - term: conselho do bispo
+    hint: pulpit-glossary:standard
+  es: []
+related: []

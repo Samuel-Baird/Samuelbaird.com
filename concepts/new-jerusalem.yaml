@@ -1,0 +1,15 @@
+id: concept.new-jerusalem
+category: Zion & the Last Days
+en:
+  term: New Jerusalem
+  match:
+  - New Jerusalem
+sources:
+  GS:
+  - new-jerusalem
+candidates:
+  pt: []
+  es:
+  - term: Nueva Jerusalén
+    hint: approved-terms
+related: []

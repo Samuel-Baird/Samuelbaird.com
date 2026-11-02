@@ -1,0 +1,17 @@
+id: concept.aaronic-priesthood-quorum
+category: Priesthood Offices & Quorums
+en:
+  term: Aaronic Priesthood quorum
+  match:
+  - Aaronic Priesthood quorum
+sources:
+  GH:
+  - 10-aaronic-priesthood#title_number5
+candidates:
+  pt:
+  - term: quórum do Sacerdócio Aarônico
+    hint: pulpit-glossary:verified
+  es:
+  - term: quórumes del Sacerdocio Aarónico
+    hint: pulpit-glossary:verified
+related: []

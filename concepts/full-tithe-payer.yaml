@@ -1,0 +1,15 @@
+id: concept.full-tithe-payer
+category: Finances
+en:
+  term: full-tithe payer
+  match:
+  - full-tithe payer
+sources: {}
+candidates:
+  pt:
+  - term: dizimista integral
+    hint: pulpit-glossary:verified
+  es:
+  - term: diezmo íntegro
+    hint: pulpit-glossary:verified
+related: []

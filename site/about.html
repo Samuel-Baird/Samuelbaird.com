@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &amp; data | Urim</title>
+<meta name="description" content="How Urim gathers and labels evidence from Church translations.">
+<meta property="og:title" content="Method &amp; data | Urim">
+<meta property="og:description" content="How Urim gathers and labels evidence from Church translations.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Noto+Sans+Deseret&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='50' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3EU%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/bg/bg.css">
+<script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
+<script src="/deseret.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="rail">
+  <a class="wordmark" href="/" aria-label="Urim, home"><span class="mono" aria-hidden="true">U</span>Urim</a>
+  <nav class="nav" aria-label="Main"><a href="/">Atlas</a><a href="/variants">Variants</a><a href="/about" aria-current=page>Method & data</a></nav>
+</div></header>
+<main id="main" class="rail">
+<div class="hero"><p class="eyebrow small-caps">Method &amp; data</p><h1>How Urim works</h1>
+<p class="lede">Urim records how the Church&rsquo;s own published translations render Latter-day Saint vocabulary. It does not judge translations; it shows what was published, how often, and where.</p></div>
+<section class="prose"><h2>Evidence</h2>
+<ul>
+<li><b>Conference talks:</b> 63,662 Portuguese and 61,988 Spanish paragraph pairs from official Church translations of General Conference talks, aligned paragraph by paragraph. Pairs whose paragraph counts do not match are excluded, as is any machine-translated text.</li>
+<li><b>Scriptures:</b> verse-aligned Church editions of the Bible, Book of Mormon, Doctrine and Covenants and Pearl of Great Price (41,994 verses).</li>
+<li><b>Approved terms:</b> for Spanish, the Church&rsquo;s &ldquo;Approved Terms for Interpretation&rdquo; list.</li>
+</ul>
+<h2>Statuses</h2>
+<ul>
+<li><span class="badge approved">approved term</span> on the Church&rsquo;s approved list.</li>
+<li><span class="badge attested">attested</span> found in aligned Church text; counts and snippets link to the official page.</li>
+<li><span class="badge inferred">inferred</span> mined automatically, not reviewed. Never treated as verified.</li>
+</ul>
+<h2>Limits</h2>
+<ul>
+<li>Counts show published usage, not correctness or doctrine. A rendering that is common in one era may be rare in another.</li>
+<li>Matching is by word form and ignores context, so a count can include uses that do not carry the technical sense of the term.</li>
+<li>Official translations begin around 1990 for these languages, so earlier talks are not represented.</li>
+<li>367 of 481 seeded concepts currently have confirmed evidence in at least one language.</li>
+</ul>
+<h2>Data</h2>
+<p>Built from a snapshot of <a href="https://github.com/Noah-Airmet/pulpit-vault">pulpit-vault</a> (commit <code>f57f3ff446</code>, 2026-11-02).
+Download the table as <a href="/data/urim.csv">CSV</a> or the full index as <a href="/data/index.json">JSON</a>. Source code and pipeline: <a href="https://github.com/Samuel-Baird/urim">github.com/Samuel-Baird/urim</a>.</p>
+</section>
+</main>
+<footer><div class="rail">Urim is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.</div></footer>
+</body>
+</html>

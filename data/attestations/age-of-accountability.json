@@ -1,0 +1,98 @@
+{
+ "id": "concept.age-of-accountability",
+ "pt": {
+  "en_paragraphs": 16,
+  "en_talks": 16,
+  "en_verses": 0,
+  "uncovered_paragraphs": 16,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "idade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 1.0,
+    "ratio": 81.7,
+    "source": "1990-04-nelson-thus-shall-my-church-be-called",
+    "kind": "talk",
+    "sample": "tismo. Esta ordenança sagrada é reservada para crianças só depois que atingem a idade da responsabilidade, e para adultos verdadeiramente convertidos, preparados e d"
+   },
+   {
+    "term": "morrem antes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.312,
+    "ratio": 1250.3,
+    "source": "2009-04-cook-our-fathers-planbig-enough-for-all-his-children",
+    "kind": "talk",
+    "sample": ", inclusive àqueles que não ouviram falar de Cristo nesta vida, às crianças que morrem antes da idade da responsabilidade e àqueles que não têm entendimento.[^17]"
+   },
+   {
+    "term": "and",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 36.6,
+    "source": "2009-10-cook-stewardshipa-sacred-trust",
+    "kind": "talk",
+    "sample": "A9.\n[^8]: D&C 1:31.\n[^9]: \"Talk\", *Collected Poems of John Holmes,* http://hdl.handle.net/10427/14894.\n[^10]: Ver D&C 20:37; 2 Néfi 2:7; Alma 39; 3 Néfi 9:20. O Pr"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "edad de responsabilidad",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-hales-fulfilling-our-duty-to-god",
+      "para": 25,
+      "en": "… age, which the scriptures tell us is the age of accountability, when we have the ability to know right …",
+      "tr": "… la cual las Escrituras nos dicen es la edad de responsabilidad cuando tenemos la capacidad de distinguir el bien del …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-bednar-the-spirit-of-revelation",
+      "para": 7,
+      "en": "… every man, woman, and child who reaches the age of accountability and enters into sacred covenants. Sincere desire and worthiness …",
+      "tr": "… toda mujer y todo niño que alcanza la edad de responsabilidad y que entra en convenios sagrados. El deseo sincero …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-browning-tune-your-heart-to-jesus-christ-the-sacred-gift-of-primary-music",
+      "para": 39,
+      "en": "… partake of the sacrament before they reach the age of accountability so they can develop greater appreciation for Jesus Christ’s …",
+      "tr": "… la Santa Cena antes de llegar a la edad de responsabilidad para que puedan desarrollar mayor gratitud por el sacrificio …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

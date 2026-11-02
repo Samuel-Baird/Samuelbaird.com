@@ -1,0 +1,132 @@
+{
+ "id": "concept.familysearch",
+ "pt": {
+  "en_paragraphs": 35,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "Pesquisa Familiar",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 1991,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-haight-linking-the-family-of-man",
+      "para": 21,
+      "en": "… more! Now we have available a modern miracle called FamilySearch™. FamilySearch is a powerful, innovative computer system. In response …",
+      "tr": "… é assim! Agora dispomos de um milagre moderno chamado Pesquisa Familiar™. O Pesquisa Familiar é um sistema de computador …"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-tingey-redemption-of-the-dead",
+      "para": 11,
+      "en": "… hundred family history centers is the computer-aided resource entitled FamilySearch™, which has the following features:",
+      "tr": "… e quinhentos centros de história da família é a Pesquisa Familiar™, que tem as seguintes características:"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "familysearch",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.9,
+    "ratio": 1200.3,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "rodutivos e movimentados em todo o mundo. Por exemplo, o programa de computador FamilySearch® no Memorial Joseph Smith já foi utilizado por milhares de visitantes, dois ter"
+   },
+   {
+    "term": "antepassados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.367,
+    "ratio": 63.8,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "ais conseguiram encontrar algo nos arquivos computadorizados a respeito de seus antepassados."
+   },
+   {
+    "term": "nomes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.3,
+    "ratio": 85.7,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "r tesouro de registros de família do mundo. A Igreja hoje possui 660 milhões de nomes no site FamilySearch™ na Internet.[^25] Esses registros estão à inteira disposi"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 27,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "FamilySearch",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 26,
+    "talks": 16,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-faust-of-seeds-and-soils",
+      "para": 25,
+      "en": "… work throughout the world. As an example, the Church’s FamilySearch® web site has more than seven million hits a …",
+      "tr": "… A modo de ejemplo, el sitio de Internet de FamilySearch^(MR) (Historia Familiar) de la Iglesia recibe un promedio de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 33,
+      "en": "… parents in the Family Tree section of the Church’s FamilySearch Internet site. Sixty-five percent of adults do not have all …",
+      "tr": "… la sección del Árbol Familiar del sitio de internet FamilySearch de la Iglesia; el sesenta y cinco por ciento de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-nielson-a-record-of-what-i-have-both-seen-and-heard",
+      "para": 11,
+      "en": "My friends at FamilySearch have taught me that over one million new names are …",
+      "tr": "Mis amigos de FamilySearch me han enseñado que cada día se agregan más de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

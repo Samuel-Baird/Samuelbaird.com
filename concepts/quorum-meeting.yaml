@@ -1,0 +1,15 @@
+id: concept.quorum-meeting
+category: Sacrament & Meetings
+en:
+  term: quorum meeting
+  match:
+  - quorum meeting
+sources: {}
+candidates:
+  pt:
+  - term: reunião do quórum
+    hint: pulpit-glossary:verified
+  es:
+  - term: reunión de quórum
+    hint: pulpit-glossary:verified
+related: []

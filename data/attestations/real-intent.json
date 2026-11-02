@@ -1,0 +1,135 @@
+{
+ "id": "concept.real-intent",
+ "pt": {
+  "en_paragraphs": 112,
+  "en_talks": 92,
+  "en_verses": 5,
+  "uncovered_paragraphs": 117,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "real intenção",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 96,
+    "share_of_uncovered": 0.821,
+    "ratio": 820.7,
+    "source": "1991-04-maxwell-lest-ye-be-wearied-and-faint-in-your-minds",
+    "kind": "talk",
+    "sample": "onstrangedor e o mundo, atraente. Essas pessoas estão agindo mecanicamente, sem real intenção."
+   },
+   {
+    "term": "sincero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 52,
+    "share_of_uncovered": 0.444,
+    "ratio": 177.8,
+    "source": "1996-10-packer-the-twelve-apostles",
+    "kind": "talk",
+    "sample": "ensinou, nada mais do que pode ser revelado a alguém que busca, com um coração sincero e com real intenção, um testemunho individual do Espírito."
+   },
+   {
+    "term": "intenção, tendo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.239,
+    "ratio": 478.8,
+    "source": "2001-04-porter-to-bear-testimony-of-mine-only-begotten",
+    "kind": "talk",
+    "sample": "coisas não são verdadeiras; e se perguntardes com um coração sincero e com real intenção, tendo fé em Cristo, ele vos manifestará a verdade delas pelo poder do Espírito Santo."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 107,
+  "en_talks": 89,
+  "en_verses": 5,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "verdadera intención",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 103,
+    "talks": 87,
+    "verses": 5,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Moroni 7:9",
+      "ref_en": "Moroni 7:9",
+      "en": "And likewise also is it counted evil unto a man, if he shall pray and not with real intent of heart; yea, and it profiteth him nothing, for God receiveth none such.",
+      "tr": "E igualmente le es contado por mal a un hombre si ora y no lo hace con verdadera intención de corazón; sí, y nada le aprovecha, porque Dios no recibe a ninguno de estos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/7?lang=spa&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-oaks-always-have-his-spirit",
+      "para": 10,
+      "en": "… to know whether it is true, sincerely and with real intent, God will “manifest the truth of it unto …",
+      "tr": "… deseamos saber si es verdadero, con sinceridad y con verdadera intención, Dios nos “manifestara” la veracidad de ello “… …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-evans-the-truth-of-all-things",
+      "para": 5,
+      "en": "… the Book of Mormon with a sincere heart, with real intent, and ask God whether it is true.",
+      "tr": "… el Libro de Mormón con un corazón sincero, con verdadera intención y preguntar a Dios si era verdadero."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "decidimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 222.3,
+    "source": "2017-04-clayton-whatsoever-he-saith-unto-you-do-it",
+    "kind": "talk",
+    "sample": "Cuando decidimos hacer “todo lo que [Dios] nos diga”, nos comprometemos seriamente a alinear nue"
+   },
+   {
+    "term": "fortalece",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 181.9,
+    "source": "2017-04-clayton-whatsoever-he-saith-unto-you-do-it",
+    "kind": "talk",
+    "sample": "rgen desafíos, nuestro arraigo en Cristo aporta firmeza para nuestra alma. Dios fortalece nuestras debilidades, aumenta nuestras alegrías y hace que “todas las cosas [ob"
+   },
+   {
+    "term": "intención",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 83.4,
+    "source": "2017-04-clayton-whatsoever-he-saith-unto-you-do-it",
+    "kind": "talk",
+    "sample": "como estudiar las Escrituras diariamente, ayunar con frecuencia y orar con una intención sincera profundizan cada vez más nuestro pozo de capacidad espiritual para supe"
+   }
+  ]
+ }
+}

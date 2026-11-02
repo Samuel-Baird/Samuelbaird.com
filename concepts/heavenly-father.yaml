@@ -1,0 +1,19 @@
+id: concept.heavenly-father
+category: Deity
+en:
+  term: Heavenly Father
+  match:
+  - Heavenly Father
+sources:
+  GS:
+  - heavenly-father
+  TtF:
+  - heavenly-father
+candidates:
+  pt:
+  - term: Pai Celestial
+    hint: pulpit-glossary:verified
+  es:
+  - term: Padre Celestial
+    hint: approved-terms
+related: []

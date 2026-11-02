@@ -1,0 +1,13 @@
+id: concept.nursery-class
+category: Sacrament & Meetings
+en:
+  term: nursery class
+  match:
+  - nursery class
+sources: {}
+candidates:
+  pt:
+  - term: classe do berçário
+    hint: pulpit-glossary:standard
+  es: []
+related: []

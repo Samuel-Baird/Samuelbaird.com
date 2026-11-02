@@ -1,0 +1,23 @@
+id: concept.book-of-mormon
+category: Scriptures & Study Helps
+en:
+  term: Book of Mormon
+  match:
+  - Book of Mormon
+sources:
+  GS:
+  - book-of-mormon
+  Topics:
+  - book-of-mormon
+  TtF:
+  - book-of-mormon
+candidates:
+  pt:
+  - term: Livro de Mórmon
+    hint: pulpit-glossary:verified
+  es:
+  - term: Libro de Mormón
+    hint: approved-terms
+  - term: El
+    hint: approved-terms
+related: []

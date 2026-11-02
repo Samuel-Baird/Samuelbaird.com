@@ -1,0 +1,19 @@
+id: concept.hill-cumorah
+category: Church History
+en:
+  term: Hill Cumorah
+  match:
+  - Hill Cumorah
+sources:
+  GS:
+  - cumorah-hill
+candidates:
+  pt:
+  - term: monte Cumora
+    hint: pulpit-glossary:verified
+  es:
+  - term: cerro Cumorah
+    hint: approved-terms
+  - term: cerro de Cumorah
+    hint: pulpit-glossary:verified
+related: []

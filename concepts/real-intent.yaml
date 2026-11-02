@@ -1,0 +1,13 @@
+id: concept.real-intent
+category: Faith & Gospel Principles
+en:
+  term: real intent
+  match:
+  - real intent
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: verdadera intención
+    hint: pulpit-glossary:verified
+related: []

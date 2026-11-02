@@ -1,0 +1,104 @@
+{
+ "id": "concept.presidency-of-the-seventy",
+ "pt": {
+  "en_paragraphs": 26,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Presidência dos Setenta",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 25,
+    "talks": 16,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-watson-statistical-report-1997",
+      "para": 22,
+      "en": "… Elder Franklin D. Richards, former member of the Presidency of the Seventy; *Sister Janet Elaine Weech Sorensen,* wife of …",
+      "tr": "… do Élder Franklin D. Richards, antigo membro da Presidência dos Setenta; *Irmã Janet Elaine Weech Sorensen,* esposa do Élder …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-andersen-fruit",
+      "para": 42,
+      "en": "… University devotional address as a member of the Presidency of the Seventy to be given on March 4, 2007, I …",
+      "tr": "… devocional da Universidade Brigham Young como membro da presidência dos setenta, em 4 de março de 2007, perguntei ao …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 8,
+      "en": "… called to serve as a member of the Presidency of the Seventy, effective on August 1.",
+      "tr": "… Tai foi chamado para servir como membro da presidência dos setenta iniciando em 1º de agosto."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 27,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Presidencia de los Setenta",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 27,
+    "talks": 17,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-faust-the-sustaining-of-church-officers",
+      "para": 4,
+      "en": "… and Marlin K. Jensen as members of the Presidency of the Seventy. It is also proposed that we release …",
+      "tr": "… y Marlin K. Jensen como miembros de la Presidencia de los Setenta. También se propone que relevemos a los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-stevenson-shepherding-souls",
+      "para": 0,
+      "en": "… sits behind me as a member of the Presidency of the Seventy?",
+      "tr": "… sienta detrás de mí como miembro de la Presidencia de los Setenta?"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 8,
+      "en": "… called to serve as a member of the Presidency of the Seventy, effective on August 1.",
+      "tr": "… sido llamado a servir como miembro de la Presidencia de los Setenta a partir del 1 de agosto."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

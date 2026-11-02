@@ -1,0 +1,85 @@
+{
+ "id": "concept.worthiness-interview",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "entrevista de dignidade",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-washburn-the-temple-is-a-family-affair",
+      "para": 3,
+      "en": "… interviews the youth each year, it will include a worthiness interview.",
+      "tr": "… os jovens todos os anos, está incluída uma entrevista de dignidade."
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-wirthlin-true-to-the-truth",
+      "para": 48,
+      "en": "Worthiness interviews, sacrament meetings, temple attendance, and other Church meetings …",
+      "tr": "As entrevistas de dignidade, as reuniões sacramentais, a freqüência ao templo e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-eyring-bless-in-his-name",
+      "para": 18,
+      "en": "As a bishop, I learned while conducting worthiness interviews to pray for the Lord to let me sense …",
+      "tr": "Quando eu era bispo, ao fazer entrevistas de dignidade, aprendi a orar para que o Senhor me …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "entrevista de dignidad",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2021,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-eyring-bless-in-his-name",
+      "para": 18,
+      "en": "As a bishop, I learned while conducting worthiness interviews to pray for the Lord to let me sense …",
+      "tr": "Cuando era obispo y realizaba entrevistas de dignidad, aprendí a orar para que el Señor me …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

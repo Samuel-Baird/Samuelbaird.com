@@ -1,0 +1,141 @@
+{
+ "id": "concept.primary-class",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "classe da Primária",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-clegg-the-finished-story",
+      "para": 9,
+      "en": "… a mother of one of the six-year-olds in that Primary class, calling to let the teacher know that her …",
+      "tr": "… de uma das crianças de seis anos daquela classe da Primária, dizendo à professora que seu filho ajudou cuidadosamente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-waddell-a-pattern-for-peace",
+      "para": 0,
+      "en": "… daughter and son-in-law were asked to team teach a Primary class of five active four-year-old little boys. Our daughter was …",
+      "tr": "… nosso genro que, juntos, dessem aula a uma classe da Primária com cinco meninos muito ativos de 4 anos de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-porter-gods-love-the-most-joyous-to-the-soul",
+      "para": 19,
+      "en": "… our teacher and skip the first half of our Primary class. When we finally arrived, to our surprise, the …",
+      "tr": "… e não participar da primeira parte de nossa classe da Primária. Para nossa surpresa, quando finalmente chegamos, o professor …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "primária",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 222.3,
+    "source": "2021-04-stevenson-hearts-knit-together",
+    "kind": "talk",
+    "sample": "ainda estavam rindo dele. Foi então que me lembrei do que aprendi nas aulas da Primária: escolher o que é certo. (…) Disse aos meus colegas [que parassem] de rir dele."
+   },
+   {
+    "term": "aulas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 333.4,
+    "source": "2021-04-stevenson-hearts-knit-together",
+    "kind": "talk",
+    "sample": "os alunos ainda estavam rindo dele. Foi então que me lembrei do que aprendi nas aulas da Primária: escolher o que é certo. (…) Disse aos meus colegas [que parassem]"
+   },
+   {
+    "term": "estavam",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 36.0,
+    "source": "2021-04-stevenson-hearts-knit-together",
+    "kind": "talk",
+    "sample": "Mas os outros alunos ainda estavam rindo dele. Foi então que me lembrei do que aprendi nas aulas da Primária: esco"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 10,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "clase de la Primaria",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 9,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-clegg-the-finished-story",
+      "para": 9,
+      "en": "… a mother of one of the six-year-olds in that Primary class, calling to let the teacher know that her …",
+      "tr": "… de los niños de seis años de la clase de la Primaria para hacer saber a la maestra que su …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-franco-the-joy-of-unselfish-service",
+      "para": 9,
+      "en": "… the ingredients to make the chocolate cake for her Primary class. She always chose the chocolate cake over the …",
+      "tr": "… para hacer la torta de chocolate para su clase de la Primaria. Siempre eligió la torta de chocolate antes …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-reid-you-are-good-enough-to-teach",
+      "para": 20,
+      "en": "Many of my earliest Primary classes were held beneath the shade of a mango tree.",
+      "tr": "Muchas de mis primeras clases de la Primaria se llevaron a cabo bajo la sombra de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

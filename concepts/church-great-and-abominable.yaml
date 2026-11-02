@@ -1,0 +1,18 @@
+id: concept.church-great-and-abominable
+category: The Church & Members
+en:
+  term: Church, Great and Abominable
+  match:
+  - Church, Great and Abominable
+sources:
+  GS:
+  - church-great-and-abominable
+candidates:
+  pt:
+  - term: Igreja, Grande e Abominável
+    hint: pulpit-glossary:verified
+  es:
+  - term: Iglesia grande y abominable
+    hint: pulpit-glossary:verified
+related: []
+note: Book of Mormon apocalyptic term (1 Nephi 13-14); fixed phrase, not a literal editorial description

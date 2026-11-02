@@ -1,0 +1,19 @@
+id: concept.foreordination
+category: Plan of Salvation
+en:
+  term: foreordination
+  match:
+  - foreordination
+sources:
+  GS:
+  - foreordination
+  Topics:
+  - foreordination
+  TtF:
+  - foreordination
+candidates:
+  pt: []
+  es:
+  - term: preordenación
+    hint: approved-terms
+related: []

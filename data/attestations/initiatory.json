@@ -1,0 +1,121 @@
+{
+ "id": "concept.initiatory",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "iniciatórias",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-bednar-prepared-to-obtain-every-needful-thing",
+      "para": 30,
+      "en": "… video, and other formats to help us learn about initiatory ordinances, endowments, marriages, and other sealing ordinances.[^15] Information also is …",
+      "tr": "… formatos para nos ajudar a aprender sobre as ordenanças iniciatórias, a investidura, o casamento e outras ordenanças de selamento.[^15] …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-the-plan-of-mercy",
+      "para": 29,
+      "en": "… privilege to wear the garment as instructed in the initiatory ordinances, you will have greater access to the Savior’s mercy, …",
+      "tr": "… privilégio de usar o garment conforme instruído nas ordenanças iniciatórias, você terá maior acesso à misericórdia, à proteção, à …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "iniciatória",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2024-04-andersen-temples-houses-of-the-lord-dotting-the-earth",
+    "kind": "talk",
+    "sample": "se aproximou de mim e perguntou se eu tinha tempo para fazer mais uma ordenança iniciatória preparatória. O nome da pessoa que eu estava representando era incomum. Ele se"
+   },
+   {
+    "term": "tinha",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 21.3,
+    "source": "2024-04-andersen-temples-houses-of-the-lord-dotting-the-earth",
+    "kind": "talk",
+    "sample": "cerrar uma sessão no templo, um oficiante se aproximou de mim e perguntou se eu tinha tempo para fazer mais uma ordenança iniciatória preparatória. O nome da pessoa"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "obra iniciatoria",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "iniciatorias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 3334.2,
+    "source": "2008-10-allred-holy-temples-sacred-covenants",
+    "kind": "talk",
+    "sample": "o por los vivos como por los muertos. En esas ordenanzas se incluyen ordenanzas iniciatorias, investiduras, matrimonios, sellamientos, bautismos por los muertos y ordenacio"
+   },
+   {
+    "term": "investiduras",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 1333.7,
+    "source": "2008-10-allred-holy-temples-sacred-covenants",
+    "kind": "talk",
+    "sample": "s como por los muertos. En esas ordenanzas se incluyen ordenanzas iniciatorias, investiduras, matrimonios, sellamientos, bautismos por los muertos y ordenaciones."
+   },
+   {
+    "term": "ordenanzas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 31.8,
+    "source": "2008-10-allred-holy-temples-sacred-covenants",
+    "kind": "talk",
+    "sample": "Se nos ha instruido construir templos para que las sagradas ordenanzas se puedan efectuar tanto por los vivos como por los muertos. En esas ordenanzas"
+   }
+  ]
+ }
+}

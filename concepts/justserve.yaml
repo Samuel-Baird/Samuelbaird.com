@@ -1,0 +1,13 @@
+id: concept.justserve
+category: Welfare & Self-Reliance
+en:
+  term: JustServe
+  match:
+  - JustServe
+sources: {}
+candidates:
+  pt:
+  - term: JustServe
+    hint: pulpit-glossary:standard
+  es: []
+related: []

@@ -1,0 +1,15 @@
+id: concept.bread-and-water
+category: Sacrament & Meetings
+en:
+  term: bread and water
+  match:
+  - bread and water
+sources: {}
+candidates:
+  pt:
+  - term: do pão e da água
+    hint: pulpit-glossary:verified
+  es:
+  - term: del pan y del agua
+    hint: pulpit-glossary:verified
+related: []

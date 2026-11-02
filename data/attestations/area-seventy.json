@@ -1,0 +1,142 @@
+{
+ "id": "concept.area-seventy",
+ "pt": {
+  "en_paragraphs": 188,
+  "en_talks": 65,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Setenta de Área",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 188,
+    "talks": 65,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-hinckley-if-ye-are-prepared-ye-shall-not-fear",
+      "para": 5,
+      "en": "Two of our Area Seventies, Brother John Anderson, who resides in Florida, and …",
+      "tr": "Dois de nossos Setentas de Área, o irmão John Anderson, que mora na Flórida, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-eyring-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 0,
+      "en": "… I will now present to you the General Authorities, Area Seventies, and General Officers of the Church for your …",
+      "tr": "… e irmãs, apresento-lhes agora as autoridades gerais, os setentas de área e os líderes gerais da Igreja para voto de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 14,
+      "en": "We note that 91 new Area Seventies were sustained during the general conference leadership meetings on …",
+      "tr": "Ressaltamos que 91 novos setentas de área foram apoiados durante as reuniões de liderança da conferência …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 188,
+  "en_talks": 65,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "Setenta de Área",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 183,
+    "talks": 64,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-hinckley-if-ye-are-prepared-ye-shall-not-fear",
+      "para": 5,
+      "en": "Two of our Area Seventies, Brother John Anderson, who resides in Florida, and …",
+      "tr": "Dos de nuestros Setenta de Área, el hermano John Anderson, que reside en Florida, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-renlund-abound-with-blessings",
+      "para": 10,
+      "en": "… illustrate these principles. Michael and I served together as Area Seventies. I was always thrilled whenever he was called …",
+      "tr": "… estos principios. Michael y yo servimos juntos como Setentas de Área. Siempre me llenaba de entusiasmo cuando le pedían …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-solemn-assembly",
+      "para": 21,
+      "en": "It is proposed that all General Authority Seventies, Area Seventies, and members of the Presiding Bishopric sustain Dallin …",
+      "tr": "Se propone que todos los Setentas Autoridades Generales, Setentas de Área y miembros del Obispado Presidente sostengan a Dallin Harris …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "área",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 190.5,
+    "source": "2005-04-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "do que ahora presente a las Autoridades Generales, a los Setenta Autoridades de Área y a las presidencias generales de las organizaciones auxiliares de la Iglesia p"
+   },
+   {
+    "term": "autoridades",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 181.9,
+    "source": "2005-04-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "rmanos y hermanas, el presidente Hinckley me ha pedido que ahora presente a las Autoridades Generales, a los Setenta Autoridades de Área y a las presidencias generales de"
+   },
+   {
+    "term": "propone",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 118.5,
+    "source": "2005-04-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Se propone que relevemos a los siguientes Setenta Autoridades de Área a partir del 1 de ma"
+   }
+  ]
+ }
+}

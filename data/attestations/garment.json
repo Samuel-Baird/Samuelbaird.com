@@ -1,0 +1,132 @@
+{
+ "id": "concept.garment",
+ "pt": {
+  "en_paragraphs": 78,
+  "en_talks": 48,
+  "en_verses": 223,
+  "uncovered_paragraphs": 282,
+  "renderings": [
+   {
+    "term": "garment",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-faust-the-devils-throat",
+      "para": 17,
+      "en": "… instructions for Church activity and the wearing of the garment in the military, priesthood ordinances and blessings, gospel topics, and …",
+      "tr": "… para atividades da Igreja e para o uso do garment nas forças armadas, ordenanças e bênçãos do sacerdócio, tópicos do …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-dennis-put-ye-on-the-lord-jesus-christ",
+      "para": 14,
+      "en": "The garment of the holy priesthood is deeply symbolic and *also* points …",
+      "tr": "O garment do santo sacerdócio é profundamente simbólico e *também* nos direciona …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-the-plan-of-mercy",
+      "para": 29,
+      "en": "… consider the First Presidency’s statement on wearing the temple garment: “*As you keep your covenants*, including the sacred privilege …",
+      "tr": "… a declaração da Primeira Presidência sobre o uso do garment do templo: \"*Ao guardar seus convênios*, inclusive o sagrado privilégio …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "vestes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 102,
+    "share_of_uncovered": 0.408,
+    "ratio": 816.2,
+    "source": "alma/46/21",
+    "kind": "scripture",
+    "sample": "que o povo se aproximou com os lombos cingidos por suas armaduras, rasgando as vestes como símbolo, ou melhor, como convênio de que não abandonariam o Senhor seu Deu"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 74,
+  "en_talks": 47,
+  "en_verses": 223,
+  "uncovered_paragraphs": 278,
+  "renderings": [
+   {
+    "term": "gárment",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-faust-the-devils-throat",
+      "para": 17,
+      "en": "… instructions for Church activity and the wearing of the garment in the military, priesthood ordinances and blessings, gospel topics, and …",
+      "tr": "… a la actividad en la Iglesia, el uso del gárment en el servicio militar, las ordenanzas y bendiciones del sacerdocio, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-dennis-put-ye-on-the-lord-jesus-christ",
+      "para": 14,
+      "en": "The garment of the holy priesthood is deeply symbolic and *also* points …",
+      "tr": "El gárment del santo sacerdocio es profundamente simbólico y *también* señala hacia …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-the-plan-of-mercy",
+      "para": 29,
+      "en": "… consider the First Presidency’s statement on wearing the temple garment: “*As you keep your covenants*, including the sacred privilege …",
+      "tr": "… declaración de la Primera Presidencia sobre el uso del gárment del templo: \"*Al guardar sus convenios*, incluido el sagrado privilegio …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "vestidos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 73,
+    "share_of_uncovered": 0.292,
+    "ratio": 166.9,
+    "source": "2003-10-eyring-an-enduring-testimony-of-the-mission-of-the-prophet-joseph",
+    "kind": "talk",
+    "sample": "os, testificamos estas cosas. Y sabemos que si somos fieles en Cristo, nuestros vestidos quedarán limpios de la sangre de todos los hombres, y nos hallaremos sin mancha"
+   }
+  ]
+ }
+}

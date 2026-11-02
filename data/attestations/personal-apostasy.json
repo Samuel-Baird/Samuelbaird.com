@@ -1,0 +1,81 @@
+{
+ "id": "concept.personal-apostasy",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "apostasia *pessoal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "2024-04-pace-it-is-wisdom-in-the-lord-that-we-should-have-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "ra apostasia *geral*, precisamos estar atentos e ser cuidadosos para evitar uma apostasia *pessoal* — lembrando que, conforme ensinou o presidente Russell M. Nelson, “cada um de"
+   },
+   {
+    "term": "outra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 29.3,
+    "source": "2024-04-pace-it-is-wisdom-in-the-lord-that-we-should-have-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "Embora Deus tenha prometido que nunca haverá outra apostasia *geral*, precisamos estar atentos e ser cuidadosos para evitar uma ap"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "apostasía *personal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2024-04-pace-it-is-wisdom-in-the-lord-that-we-should-have-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "postasía *general*, necesitamos ser conscientes y prudentes a fin de evitar una apostasía *personal*, recordando, tal como ha enseñado el presidente Russell M. Nelson, que “todos"
+   },
+   {
+    "term": "prometido",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 102.6,
+    "source": "2024-04-pace-it-is-wisdom-in-the-lord-that-we-should-have-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "Aunque Dios ha prometido que nunca habrá otra apostasía *general*, necesitamos ser conscientes y prudent"
+   },
+   {
+    "term": "otra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 20.2,
+    "source": "2024-04-pace-it-is-wisdom-in-the-lord-that-we-should-have-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "Aunque Dios ha prometido que nunca habrá otra apostasía *general*, necesitamos ser conscientes y prudentes a fin de evitar un"
+   }
+  ]
+ }
+}

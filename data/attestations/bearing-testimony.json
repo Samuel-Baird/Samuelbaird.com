@@ -1,0 +1,178 @@
+{
+ "id": "concept.bearing-testimony",
+ "pt": {
+  "en_paragraphs": 23,
+  "en_talks": 17,
+  "en_verses": 2,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "prestar testemunho",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 9,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-oaks-witnesses-of-christ",
+      "para": 26,
+      "en": "… this great promise to those who were valiant in bearing testimony: “For I will forgive you of your sins …",
+      "tr": "Por outro lado o Senhor prometeu aos valentes em prestar testemunho:. “Pois vos perdoarei os vossos pecados com este …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-bednar-watching-with-all-perseverance",
+      "para": 14,
+      "en": "## Component Number Two: Bearing Testimony Spontaneously",
+      "tr": "## Componente Número Dois: Prestar Testemunho Espontaneamente"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-christofferson-worship",
+      "para": 16,
+      "en": "They also spoke of searching the scriptures, bearing testimony of Christ, performing charitable acts and service, receiving the …",
+      "tr": "Eles também falaram sobre examinar as escrituras, prestar testemunho de Cristo, realizar atos de caridade e serviço, receber …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "prestando",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.5,
+    "ratio": 500.1,
+    "source": "1993-10-groberg-the-lords-wind",
+    "kind": "talk",
+    "sample": "o inquebrantável, ao dizer: “Antes do pôr-do-sol estará ensinando o evangelho e prestando testemunho a uma família que quer ouvir”."
+   },
+   {
+    "term": "dele",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.357,
+    "ratio": 10.4,
+    "source": "2004-10-samuelson-perilous-times",
+    "kind": "talk",
+    "sample": "nda do Messias e Sua missão de redimir Seu povo, acrescentamos nosso testemunho Dele e de Sua sagrada obra de “levar a efeito a imortalidade e vida eterna do homem”"
+   },
+   {
+    "term": "ação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.214,
+    "ratio": 47.6,
+    "source": "2001-04-christenson-david-a-future-missionary",
+    "kind": "talk",
+    "sample": "s um testemunho e de podermos prestá-lo; e uma forma de prestá-lo é por meio da ação ou do exemplo."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 26,
+  "en_talks": 20,
+  "en_verses": 2,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "dar testimonio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 13,
+    "verses": 1,
+    "first_year": 1997,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 84:61",
+      "ref_en": "Doctrine and Covenants 84:61",
+      "en": "For I will forgive you of your sins with this commandment—that you remain steadfast in your minds in solemnity and the spirit of prayer, in bearing testimony to all the world of those things which are communicated unto you.",
+      "tr": "porque yo os perdonaré vuestros pecados con este mandamiento: Que os conservéis firmes en vuestras mentes en solemnidad y en el espíritu de oración, en dar testimonio a todo el mundo de las cosas que os son comunicadas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=spa&id=p61"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-jack-a-small-stone",
+      "para": 20,
+      "en": "… of gratitude and great joy. Rejoice with me in bearing testimony of the Savior: “Hosanna, hosanna to God and the …",
+      "tr": "… de gratitud y de gran gozo. Regocíjense conmigo al dar testimonio del Salvador: “¡Hosanna, hosanna a Dios y Jesús … …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-bednar-watching-with-all-perseverance",
+      "para": 14,
+      "en": "## Component Number Two: Bearing Testimony Spontaneously",
+      "tr": "## Componente número 2: Dar testimonio espontáneamente"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "dando",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 181.9,
+    "source": "2016-10-hales-come-follow-me-by-practicing-christian-love-and-service",
+    "kind": "talk",
+    "sample": "n porque viven fielmente una vida consagrada, utilizando su tiempo y talentos y dando testimonio para servir y bendecir a los demás. Al compartir su testimonio del E"
+   },
+   {
+    "term": "testificar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 57.4,
+    "source": "2009-10-bednar-more-diligent-and-concerned-at-home",
+    "kind": "talk",
+    "sample": "deben esforzarse por superar cualquier indecisión, vacilación o vergüenza para testificar del Evangelio. Debemos crear y buscar oportunidades para atestiguar de las verd"
+   },
+   {
+    "term": "ejemplo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 7.3,
+    "source": "2001-04-christenson-david-a-future-missionary",
+    "kind": "talk",
+    "sample": "estro testimonio, el cual también puede expresarse por medio de las obras o del ejemplo."
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.valiant
+category: Organizations & Youth
+en:
+  term: Valiant
+  match:
+  - Valiant
+sources:
+  GH:
+  - 12-primary#title_number21
+candidates:
+  pt:
+  - term: Valorosos
+    hint: pulpit-glossary:verified
+  es:
+  - term: Valientes
+    hint: pulpit-glossary:verified
+related: []

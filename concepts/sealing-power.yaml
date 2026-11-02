@@ -1,0 +1,15 @@
+id: concept.sealing-power
+category: Temple & Family History
+en:
+  term: sealing power
+  match:
+  - sealing power
+sources: {}
+candidates:
+  pt:
+  - term: poder selador
+    hint: pulpit-glossary:verified
+  es:
+  - term: poder para sellar
+    hint: pulpit-glossary:verified
+related: []

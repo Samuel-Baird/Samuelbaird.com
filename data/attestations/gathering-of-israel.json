@@ -1,0 +1,161 @@
+{
+ "id": "concept.gathering-of-israel",
+ "pt": {
+  "en_paragraphs": 94,
+  "en_talks": 65,
+  "en_verses": 2,
+  "uncovered_paragraphs": 16,
+  "renderings": [
+   {
+    "term": "coligação de Israel",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 80,
+    "talks": 60,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-faust-the-keys-that-never-rust",
+      "para": 2,
+      "en": "… of his ministry.[^3] Keys that pertain to the gathering of Israel, the dispensation of Abraham, and, indispensably, the sealing …",
+      "tr": "… chaves de Seu ministério.[^3] As chaves pertinentes à coligação de Israel, à dispensação de Abraão e, muito importante, as …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-nelson-let-god-prevail",
+      "para": 7,
+      "en": "… of *Israel* in mind, we find that the gathering of Israel takes on added meaning. The Lord is gathering those …",
+      "tr": "… hebraica de *Israel* em mente, vemos que a coligação de Israel adquire um significado adicional. O Senhor está reunindo aqueles …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-uchtdorf-by-this-all-will-know-that-you-are-my-disciples",
+      "para": 13,
+      "en": "… thinking about priesthood authority or ordinances or the gathering of Israel. What they’re likely to notice, above all else, …",
+      "tr": "… autoridade ou as ordenanças do sacerdócio ou a coligação de Israel. É mais provável que elas observem, acima de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "israel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.938,
+    "ratio": 78.1,
+    "source": "2013-10-cook-lamentations-of-jeremiah-beware-of-bondage",
+    "kind": "talk",
+    "sample": "O cativeiro dos judeus e a dispersão das tribos de Israel, incluindo as dez tribos, são fatores doutrinários importantes na Restauração d"
+   },
+   {
+    "term": "dez tribos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2013-10-cook-lamentations-of-jeremiah-beware-of-bondage",
+    "kind": "talk",
+    "sample": "O cativeiro dos judeus e a dispersão das tribos de Israel, incluindo as dez tribos, são fatores doutrinários importantes na Restauração do evangelho. As dez tribo"
+   },
+   {
+    "term": "chaves para coligar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2018-04-cook-prepare-to-meet-god",
+    "kind": "talk",
+    "sample": "**Em primeiro lugar,** Moisés apareceu e conferiu as chaves para coligar Israel das quatro partes da Terra, que é o trabalho missionário.[^9]"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 98,
+  "en_talks": 64,
+  "en_verses": 2,
+  "uncovered_paragraphs": 99,
+  "renderings": [
+   {
+    "term": "Congregación de Israel",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2002,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-nelson-blessed-are-the-peacemakers",
+      "para": 29,
+      "en": "… of hope for our day. Speaking of the gathering of Israel and the Restoration of the Church through the Prophet …",
+      "tr": "… posibilidades para nuestra época. Al hablar de la congregación de Israel y de la restauración de la Iglesia por conducto …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "recogimiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 95,
+    "share_of_uncovered": 0.96,
+    "ratio": 349.0,
+    "source": "2003-10-nelson-personal-priesthood-responsibility",
+    "kind": "talk",
+    "sample": ": Moroni tenía las llaves del Libro de Mormón[^11]; Moisés trajo las llaves del recogimiento de Israel y del liderazgo de las diez tribus[^12]; Elías entregó las llaves de"
+   },
+   {
+    "term": "israel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 99,
+    "share_of_uncovered": 1.0,
+    "ratio": 83.4,
+    "source": "2003-10-nelson-personal-priesthood-responsibility",
+    "kind": "talk",
+    "sample": "as llaves del Libro de Mormón[^11]; Moisés trajo las llaves del recogimiento de Israel y del liderazgo de las diez tribus[^12]; Elías entregó las llaves de la restaur"
+   },
+   {
+    "term": "moisés",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.283,
+    "ratio": 29.0,
+    "source": "2003-10-nelson-personal-priesthood-responsibility",
+    "kind": "talk",
+    "sample": "s específicas del sacerdocio: Moroni tenía las llaves del Libro de Mormón[^11]; Moisés trajo las llaves del recogimiento de Israel y del liderazgo de las diez tribus["
+   }
+  ]
+ }
+}

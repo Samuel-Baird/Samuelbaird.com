@@ -1,0 +1,172 @@
+{
+ "id": "concept.branch",
+ "pt": {
+  "en_paragraphs": 375,
+  "en_talks": 248,
+  "en_verses": 156,
+  "uncovered_paragraphs": 69,
+  "renderings": [
+   {
+    "term": "ramo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 342,
+    "talks": 232,
+    "verses": 120,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Jacó 5:6",
+      "ref_en": "Jacob 5:6",
+      "en": "And it came to pass that after many days it began to put forth somewhat a little, young and tender branches; but behold, the main top thereof began to perish.",
+      "tr": "E aconteceu que, passados muitos dias, começaram a brotar ramos pequenos, novos e tenros; mas eis que sua copa começou a morrer.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/5?lang=por&id=p6"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-pinegar-home-first",
+      "para": 0,
+      "en": "… bright, yellow balloons were seen floating from every tree branch and light post lining a winding, three-block road. It was …",
+      "tr": "… de alegres balões amarelos podiam ser vistos flutuando nos ramos das árvores e postes de luz alinhados ao longo da …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 17,
+      "en": "… need to be connected to both our roots and branches. The thought of being associated in the eternal realm …",
+      "tr": "… Precisamos conectar-nos tanto a nossas raízes quanto a nossos ramos. O conceito de que estaremos unidos por um vínculo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 358,
+  "en_talks": 244,
+  "en_verses": 156,
+  "uncovered_paragraphs": 59,
+  "renderings": [
+   {
+    "term": "rama",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 328,
+    "talks": 224,
+    "verses": 114,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Ezequiel 31:3",
+      "ref_en": "Ezekiel 31:3",
+      "en": "¶ Behold, the Assyrian was a cedar in Lebanon with fair branches, and with a shadowing shroud, and of an high stature; and his top was among the thick boughs.",
+      "tr": "He aquí, el asirio era cedro en el Líbano, de hermosas ramas, y frondoso, de amplia sombra y de gran altura; y su copa estaba entre densas ramas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ezek/31?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 33,
+      "en": "… took place when I first visited the St. Thomas Branch of the mission, situated about 120 miles from Toronto. My …",
+      "tr": "Otra evidencia de fe ocurrió cuando visitamos la Rama Santo Tomas, situada a unos 190 kilómetros de Toronto. Mi …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-eyring-you-are-not-alone-in-the-work",
+      "para": 23,
+      "en": "… recorded, “a number to the church.” He organized two branches but noted that “very few are alive in the cause.”[^3]",
+      "tr": "… “un número de miembros a la Iglesia”. Organizó dos ramas, pero observó que “muy pocos están con vida en …"
+     }
+    ],
+    "share": 0.969
+   },
+   {
+    "term": "Renuevo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 13,
+    "first_year": 2014,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Job 14:7",
+      "ref_en": "Job 14:7",
+      "en": "For there is hope of a tree, if it be cut down, that it will sprout again, and that the tender branch thereof will not cease.",
+      "tr": "Porque si el árbol es cortado, aún queda para él esperanza; retoñará aún,y sus renuevos no faltarán.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/job/14?lang=spa&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 2,
+      "en": "… that it will sprout again, and that the tender branch thereof will not cease … and bring forth boughs like …",
+      "tr": "… aún queda para él esperanza; retoñará aún, y sus renuevos no faltarán… y echará ramas como planta nueva”[^3]."
+     }
+    ],
+    "share": 0.031
+   }
+  ],
+  "inferred": [
+   {
+    "term": "vid",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.271,
+    "ratio": 542.5,
+    "source": "2004-04-holland-abide-in-me",
+    "kind": "talk",
+    "sample": "Cristo dijo: “Yo soy la vid verdadera, y… vosotros los pámpanos”[^2]. “Permaneced en mí, y yo en vosotros."
+   },
+   {
+    "term": "fruto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.288,
+    "ratio": 48.0,
+    "source": "2002-10-christofferson-that-they-may-be-one-in-us",
+    "kind": "talk",
+    "sample": "“Todo pámpano que en mí no lleva fruto, lo quitará; y todo aquel que lleva fruto, lo limpiará, para que lleve más frut"
+   },
+   {
+    "term": "permanece",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.22,
+    "ratio": 146.9,
+    "source": "2004-04-holland-abide-in-me",
+    "kind": "talk",
+    "sample": "Cristo dijo: “Yo soy la vid verdadera, y… vosotros los pámpanos”[^2]. “Permaneced en mí, y yo en vosotros. Como el pámpano no puede llevar fruto por sí mismo, s"
+   }
+  ]
+ }
+}

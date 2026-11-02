@@ -1,0 +1,17 @@
+id: concept.release
+category: Callings & Sustaining
+en:
+  term: release
+  match:
+  - release
+sources:
+  GH:
+  - 30-callings-in-the-church#title_number12
+candidates:
+  pt:
+  - term: desobrigação
+    hint: pulpit-glossary:verified
+  es:
+  - term: relevo
+    hint: pulpit-glossary:verified
+related: []

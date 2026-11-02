@@ -1,0 +1,132 @@
+{
+ "id": "concept.primary",
+ "pt": {
+  "en_paragraphs": 441,
+  "en_talks": 300,
+  "en_verses": 0,
+  "uncovered_paragraphs": 121,
+  "renderings": [
+   {
+    "term": "Primária",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 320,
+    "talks": 206,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-ballard-teach-the-children",
+      "para": 25,
+      "en": "… few minutes later, one of the counselors in the Primary presidency came out and asked him if he was lost. …",
+      "tr": "… minutos mais tarde, uma das conselheiras da presidência da Primária o encontrou e perguntou-lhe se estava perdido. Uma professora da …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oscarson-young-women-in-the-work",
+      "para": 9,
+      "en": "… youth groups to perform baptisms for the dead. Our Primary-age girls are now invited to attend Temple and Priesthood …",
+      "tr": "… oficiantes de ordenanças ou por voluntários. Nossas meninas da Primária agora são convidadas a participar da reunião “Preparação para o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-stevenson-fruit-to-make-one-happy",
+      "para": 1,
+      "en": "… friends. I am always impressed with children I meet. Primary children! Everywhere, most recently in Australia, New Caledonia, Samoa, Colombia, …",
+      "tr": "… impressionado com as crianças que encontro. As crianças da Primária! Em todos os lugares, mais recentemente na Austrália, Nova …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "principal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 54,
+    "share_of_uncovered": 0.446,
+    "ratio": 105.0,
+    "source": "1993-04-perry-back-to-gospel-basics",
+    "kind": "talk",
+    "sample": "A oração é o principal meio de comunicação entre Deus e o homem. A oração é parte importante de pratic"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 469,
+  "en_talks": 306,
+  "en_verses": 0,
+  "uncovered_paragraphs": 127,
+  "renderings": [
+   {
+    "term": "Primaria",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 342,
+    "talks": 210,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-perry-serve-god-acceptably-with-reverence-and-godly-fear",
+      "para": 13,
+      "en": "… dedicatory prayer that the next Tuesday when we held Primary he attended with us. He wanted to teach us to …",
+      "tr": "… oración dedicatoria, que el martes siguiente asistió a la Primaria con nosotros, porque quería enseñarnos a sentir respeto por la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-oscarson-sisterhood-oh-how-we-need-each-other",
+      "para": 6,
+      "en": "… women who are a little older need what you Primary-age girls have to offer. We can learn much from …",
+      "tr": "… necesitamos lo que las niñas en edad de la Primaria tienen que ofrecer; podemos aprender mucho de ustedes sobre el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-stevenson-lost-luggage-redeemed-souls",
+      "para": 36,
+      "en": "… on this investment than when it is made with Primary children, young men, young women, and young adults.",
+      "tr": "… que cuando se realiza con los niños de la Primaria, los hombres jóvenes, las mujeres jóvenes y los jóvenes …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "principal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 53,
+    "share_of_uncovered": 0.417,
+    "ratio": 87.9,
+    "source": "1990-10-camargo-in-all-things-give-thanks",
+    "kind": "talk",
+    "sample": "y por las muchas otras bendiciones que no puedo describir debidamente, el tema principal que se me ocurrió cuando me invitaron a hablar en esta conferencia fue el de la"
+   }
+  ]
+ }
+}

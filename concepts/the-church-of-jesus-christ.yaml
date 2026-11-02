@@ -1,0 +1,17 @@
+id: concept.the-church-of-jesus-christ
+category: The Church & Members
+en:
+  term: the Church of Jesus Christ
+  match:
+  - the Church of Jesus Christ
+sources:
+  GS:
+  - church-of-jesus-christ
+candidates:
+  pt:
+  - term: A Igreja de Jesus Cristo
+    hint: pulpit-glossary:verified
+  es:
+  - term: la Iglesia de Jesucristo
+    hint: pulpit-glossary:verified
+related: []

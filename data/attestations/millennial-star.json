@@ -1,0 +1,136 @@
+{
+ "id": "concept.millennial-star",
+ "pt": {
+  "en_paragraphs": 28,
+  "en_talks": 27,
+  "en_verses": 0,
+  "uncovered_paragraphs": 28,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "star",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.857,
+    "ratio": 857.4,
+    "source": "1992-04-maxwell-my-servant-joseph",
+    "kind": "talk",
+    "sample": "rica do Norte e do Sul e até mesmo o mundo. (Vide Wilford Woodruff, *Millennial Star,* 19 de setembro de 1892, página 605; vide também Conference Report, abril de 1"
+   },
+   {
+    "term": "millennial",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.857,
+    "ratio": 685.9,
+    "source": "1992-04-maxwell-my-servant-joseph",
+    "kind": "talk",
+    "sample": "ncher a América do Norte e do Sul e até mesmo o mundo. (Vide Wilford Woodruff, *Millennial Star,* 19 de setembro de 1892, página 605; vide também Conference Report, abril"
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.464,
+    "ratio": 25.4,
+    "source": "1993-10-packer-for-time-and-all-eternity",
+    "kind": "talk",
+    "sample": "residência, \"Origin of Man\" (nov. 1909), em James R. Clark, comp., *Messages of the First Presidency of the Church of Jesus Christ of Latter Day Saints,* 6 vols. ("
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 17,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "Millennial Star",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 13,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-mcmullin-jesus-the-very-thought-of-thee",
+      "para": 52,
+      "en": "… “[Christ](https://www.churchofjesuschrist.org/study/scriptures/bd/christ?lang=eng&id=p2#p2),” 633.\n[^22]: [Moses 1:39](https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/1?lang=eng&id=p39#p39).\n[^23]: “A Vision,” *Millennial Star,* Aug. 1843, 51; see Bruce R. McConkie, *Mormon …",
+      "tr": "… pág. 633.\n[^22]: Moisés 1:39.\n[^23]: \"A Vision\", *Millennial Star*, agosto de 1843, pág. 51, traducción libre; véase …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-eyring-the-holy-ghost-as-your-companion",
+      "para": 47,
+      "en": "… George Q. Cannon, in “Minutes of a Conference,” *Millennial Star,* May 2, 1863, 275–76.",
+      "tr": "… George Q. Cannon, en \"Minutes of a Conference\", *Millennial Star*, 2 de mayo de 1863, págs. 275–276."
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-stevenson-a-good-foundation-against-the-time-to-come",
+      "para": 47,
+      "en": "… 30, 1853, 150.\n[^5]: “Address by President Brigham Young,” Millennial Star, Apr. 22, 1854, 241.\n[^6]: “Remarks by President …",
+      "tr": "… 1853, pág. 150.\n[^5]: \"Address by President Brigham Young\", Millennial Star, 22 de abril de 1854, pág. 241.\n[^6]: …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 17.7,
+    "source": "2004-10-ballard-pure-testimony",
+    "kind": "talk",
+    "sample": "lo de lo que el Señor desea que testifique” (*Millenial Star,* suplemento, 1853 pág. 30)."
+   },
+   {
+    "term": "hecho",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 14.0,
+    "source": "1991-10-haight-a-time-for-preparation",
+    "kind": "talk",
+    "sample": "Confío en que ya hayan hecho la promesa a ustedes mismos y a su Padre Celestial de que le servirán en una mi"
+   },
+   {
+    "term": "sea",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 13.5,
+    "source": "1994-10-scott-making-the-right-choices",
+    "kind": "talk",
+    "sample": "ralmente limpio; si haces tu parte con todas tus fuerzas, el Señor hará que eso sea posible (véase 3 Nefi 18:20). El vive y te ama y, al esforzarte por obedecer, t"
+   }
+  ]
+ }
+}

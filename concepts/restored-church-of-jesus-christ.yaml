@@ -1,0 +1,15 @@
+id: concept.restored-church-of-jesus-christ
+category: The Church & Members
+en:
+  term: restored Church of Jesus Christ
+  match:
+  - restored Church of Jesus Christ
+sources: {}
+candidates:
+  pt:
+  - term: Igreja restaurada de Jesus Cristo
+    hint: pulpit-glossary:verified
+  es:
+  - term: Iglesia restaurada de Jesucristo
+    hint: pulpit-glossary:verified
+related: []

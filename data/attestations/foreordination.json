@@ -1,0 +1,90 @@
+{
+ "id": "concept.foreordination",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "preordenação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2001-10-hilbig-create-or-continue-priesthood-links",
+    "kind": "talk",
+    "sample": "sacerdócio, cada um de nós veio à Terra com uma herança pessoal de fidelidade e preordenação. Tal conhecimento gera em nós o sólido compromisso de sempre honrar o sacerdóci"
+   },
+   {
+    "term": "mortal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 65.3,
+    "source": "2023-10-cook-be-peaceable-followers-of-christ",
+    "kind": "talk",
+    "sample": "da pré-terrena, a preordenação, a Criação, a escolha de um Redentor e esta vida mortal, que é o segundo estado do homem.[^5] O Redentor declarou:"
+   },
+   {
+    "term": "jeremias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 76.2,
+    "source": "2013-10-cook-lamentations-of-jeremiah-beware-of-bondage",
+    "kind": "talk",
+    "sample": "As profecias e lamentações de Jeremias são importantes para os santos dos últimos dias. Jeremias e a Jerusalém de seus"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "preordenación",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-nelson-how-firm-our-foundation",
+      "para": 11,
+      "en": "***Foreordination for and Conferral of the Priesthood***",
+      "tr": "### La preordenación para recibir y conferir el sacerdocio"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-bangerter-foreordained-to-serve",
+      "para": 8,
+      "en": "… Israel.[^12] Those premortal promises and blessings are called your foreordination. “The doctrine of foreordination applies to all members of …",
+      "tr": "… de Israel[^12]. Esas promesas y bendiciones preterrenales constituyen su preordenación. “La doctrina de la preordenación se aplica a todos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

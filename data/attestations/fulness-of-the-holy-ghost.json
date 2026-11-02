@@ -1,0 +1,101 @@
+{
+ "id": "concept.fulness-of-the-holy-ghost",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 7,
+  "en_verses": 1,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "plenitude do Espírito Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 7,
+    "verses": 1,
+    "first_year": 2012,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 109:15",
+      "ref_en": "Doctrine and Covenants 109:15",
+      "en": "And that they may grow up in thee, and receive a fulness of the Holy Ghost, and be organized according to thy laws, and be prepared to obtain every needful thing;",
+      "tr": "E que cresçam em ti e recebam a plenitude do Espírito Santo e organizem-se de acordo com as tuas leis e preparem-se para obter todas as coisas necessárias;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/109?lang=por&id=p15"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-perkins-beware-concerning-yourselves",
+      "para": 17,
+      "en": "… In temple worship we may “receive a fulness of the Holy Ghost.”[^25]",
+      "tr": "… Espírito”.[^24] Na adoração no templo, podemos “[receber] a plenitude do Espírito Santo”.[^25]"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-renlund-accessing-gods-power-through-covenants",
+      "para": 20,
+      "en": "… Elder D. Todd Christofferson taught, “The ‘fulness of the Holy Ghost’ includes what Jesus described as ‘the promise …",
+      "tr": "… O élder D. Todd Christofferson ensinou: \"A 'plenitude do Espírito Santo' inclui aquilo que Jesus descreveu como 'a …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 7,
+  "en_verses": 1,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "plenitud del Espíritu Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 7,
+    "verses": 1,
+    "first_year": 2012,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 109:15",
+      "ref_en": "Doctrine and Covenants 109:15",
+      "en": "And that they may grow up in thee, and receive a fulness of the Holy Ghost, and be organized according to thy laws, and be prepared to obtain every needful thing;",
+      "tr": "y que crezcan en ti y reciban la plenitud del Espíritu Santo; y se organicen de acuerdo con tus leyes y se preparen para recibir cuanto fuere necesario;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/109?lang=spa&id=p15"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-perkins-beware-concerning-yourselves",
+      "para": 17,
+      "en": "… In temple worship we may “receive a fulness of the Holy Ghost.”[^25]",
+      "tr": "… Al adorar en el templo, podemos “[recibir] la plenitud del Espíritu Santo”[^25]."
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-renlund-accessing-gods-power-through-covenants",
+      "para": 20,
+      "en": "… Elder D. Todd Christofferson taught, “The ‘fulness of the Holy Ghost’ includes what Jesus described as ‘the promise …",
+      "tr": "… El élder D. Todd Christofferson enseñó: \"La 'plenitud del Espíritu Santo' incluye lo que Jesús describe como 'la …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,141 @@
+{
+ "id": "concept.standard-works",
+ "pt": {
+  "en_paragraphs": 37,
+  "en_talks": 26,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "obras-padrão",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 32,
+    "talks": 21,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 6,
+      "en": "… not altered. An innovative system of cross-referencing all the standard works, containing tens of thousands of footnotes which open …",
+      "tr": "… um inovador sistema de remissão recíproca de todas as obras-padrão, contendo dezenas de milhares de referências facultando centenas de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-duncan-our-very-survival",
+      "para": 14,
+      "en": "… living prophet is more vital to us than the standard works.",
+      "tr": "… vivo é mais importante para nós do que as obras-padrão."
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-pingree-eternal-truth",
+      "para": 64,
+      "en": "… fundamental doctrines of the Church as contained in the standard works and the teachings of the prophets, whose responsibility it …",
+      "tr": "… as doutrinas fundamentais da Igreja conforme se encontram nas obras-padrão e nos ensinamentos dos profetas, cuja responsabilidade é declarar a …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "padrão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 77.4,
+    "source": "1994-10-holland-miracles-of-the-restoration",
+    "kind": "talk",
+    "sample": "io), fizeram cursos em nível universitário por correspondência e lêem as obras-­padrão continuamente."
+   },
+   {
+    "term": "encontram",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 123.1,
+    "source": "2013-10-mcconkie-teaching-with-the-power-and-authority-of-god",
+    "kind": "talk",
+    "sample": "ceiro, vocês têm o mandamento de ensinar os princípios do evangelho conforme se encontram nas obraspadrão da Igreja, de ensinar as palavras dos profetas e apóstolos mode"
+   },
+   {
+    "term": "período",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 69.6,
+    "source": "1994-10-holland-miracles-of-the-restoration",
+    "kind": "talk",
+    "sample": ", deitada de costas há dezessete anos, sem nunca ter saído da cama durante esse período. Nem uma vez em dezessete anos ela observou o nascer do sol ou o seu ocaso, tam"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 23,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "libros canónicos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 23,
+    "talks": 19,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-oaks-the-living-prophet-our-source-of-pure-doctrine",
+      "para": 7,
+      "en": "… records [and he was speaking here of the four standard works], that would be the ‘end of the prophets.’ …",
+      "tr": "… registros sagrados ya publicados [se refería a nuestros cuatro libros canónicos], muchos pensaran que el ‘día de los profetas’ …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-we-never-walk-alone",
+      "para": 30,
+      "en": "… words of truth and inspiration found in our four standard works are prized possessions to me. I never tire of …",
+      "tr": "… verdad e inspiración que se encuentran en nuestros cuatro libros canónicos son posesiones muy preciadas para mí. Me siento espiritualmente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-pingree-eternal-truth",
+      "para": 64,
+      "en": "… fundamental doctrines of the Church as contained in the standard works and the teachings of the prophets, whose responsibility it …",
+      "tr": "… fundamentales de la Iglesia que se hallan en los libros canónicos y las enseñanzas de los profetas, cuya responsabilidad es …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.washing-and-anointing
+category: Temple & Family History
+en:
+  term: washing and anointing
+  match:
+  - washing and anointing
+sources: {}
+candidates:
+  pt:
+  - term: ablução e unção
+    hint: pulpit-glossary:standard
+  es:
+  - term: lavamiento y unción
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,15 @@
+id: concept.stakes-of-zion
+category: Zion & the Last Days
+en:
+  term: stakes of Zion
+  match:
+  - stakes of Zion
+sources: {}
+candidates:
+  pt:
+  - term: estacas de Sião
+    hint: pulpit-glossary:verified
+  es:
+  - term: estacas de Sión
+    hint: pulpit-glossary:verified
+related: []

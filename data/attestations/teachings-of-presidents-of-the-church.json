@@ -1,0 +1,179 @@
+{
+ "id": "concept.teachings-of-presidents-of-the-church",
+ "pt": {
+  "en_paragraphs": 278,
+  "en_talks": 270,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "Ensinamentos dos Presidentes da Igreja",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 274,
+    "talks": 266,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-oaks-gospel-teaching",
+      "para": 26,
+      "en": "… Sundays of each month is the *Teachings of Presidents of the Church.* During the last two years we …",
+      "tr": "… da Igreja estão tendo aulas sobre os Ensinamentos dos Presidentes da Igreja. Nos últimos dois anos, temos estudado os …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-powers-of-the-priesthood",
+      "para": 34,
+      "en": "[^1]: *[Teachings of Presidents of the Church: Joseph F. Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-f-smith/chapter-38?lang=eng)* (1998), 343.\n[^2]: …",
+      "tr": "[^1]: *[Ensinamentos dos Presidentes da Igreja: Joseph F. Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-f-smith/chapter-38?lang=por)*, 1998, p. 343.\n[^2]: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-soares-a-higher-and-holier-fast",
+      "para": 17,
+      "en": "… Saints, [38.8.17](https://www.churchofjesuschrist.org/study/manual/general-handbook/38-church-policies-and-guidelines?lang=eng&id=title_number151-p2389#title_number151).\n[^6]: [Isaiah 58:6](https://www.churchofjesuschrist.org/study/scriptures/ot/isa/58?lang=eng&id=p6#p6).\n[^7]: [Teachings of Presidents of the Church: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-37?lang=eng&id=p12#p12) (2007), 426.\n[^8]: [Alma …",
+      "tr": "… item 38.8.17.\n[^6]: [Isaías 58:6](https://www.churchofjesuschrist.org/study/scriptures/ot/isa/58?lang=por&id=p6#p6).\n[^7]: [Ensinamentos dos Presidentes da Igreja: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-37?lang=por&id=p12#p12), 2007, p. 449.\n[^8]: [Alma …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "novembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 114.3,
+    "source": "2010-04-beck-and-upon-the-handmaids-in-those-days-will-i-pour-out-my-spirit",
+    "kind": "talk",
+    "sample": "el 2:28–29.\n[^11]: Spencer W. Kimball, \"The Role of Righteous Women\", *Ensign,* novembro de 1979, pp. 103–104."
+   },
+   {
+    "term": "mosias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 67.8,
+    "source": "2010-04-beck-and-upon-the-handmaids-in-those-days-will-i-pour-out-my-spirit",
+    "kind": "talk",
+    "sample": "[^1]: Ver Jacó 2:17; Mosias 4:26; Doutrina e Convênios 38:35; 44:6.\n[^2]: Ver Doutrina e Convênios 20:77.\n["
+   },
+   {
+    "term": "news",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 214.3,
+    "source": "2011-04-burton-the-sanctifying-work-of-welfare",
+    "kind": "talk",
+    "sample": "^2]: J. Reuben Clark Jr., \"Testimony of Divine Origin of Welfare Plan,\" *Church News,* 8 de agosto de 1951, p. 15; ver também Glen L. Rudd, *Pure Religion*, 1995, p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 281,
+  "en_talks": 273,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "Enseñanzas de los Presidentes de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 276,
+    "talks": 268,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-oaks-give-thanks-in-all-things",
+      "para": 16,
+      "en": "… our modern prophets are compiled in *Teachings of Presidents of the Church,* our course of study for Melchizedek …",
+      "tr": "… modernos se compilan en las *Enseñanzas de los Presidentes de la Iglesia,* nuestro curso de estudio para el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-nelson-the-book-of-mormon-what-would-your-life-be-like-without-it",
+      "para": 83,
+      "en": "… [^12]: See [Alma 13:27](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/13?lang=eng&id=p27#p27).\n[^13]: See *[Teachings of Presidents of the Church: Brigham Young](https://www.churchofjesuschrist.org/study/manual/teachings-brigham-young/chapter-41?lang=eng)* (1997), 299. He was …",
+      "tr": "… Véase [Alma 13:27](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/13?lang=spa&id=p27#p27).\n[^13]: Véase *[Enseñanzas de los Presidentes de la Iglesia: Brigham Young](https://www.churchofjesuschrist.org/study/manual/teachings-brigham-young/chapter-41?lang=spa)*, 1997, pág. 299. Se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 42,
+      "en": "… Covenants 68:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng&id=p6#p6).\n[^2]: [Acts 1:8](https://www.churchofjesuschrist.org/study/scriptures/nt/acts/1?lang=eng&id=p8#p8).\n[^3]: [Teachings of Presidents of the Church: Joseph Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-3?lang=eng&id=p18#p18) (2007), 49.\n[^4]: [Doctrine …",
+      "tr": "… 68:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=spa&id=p6#p6).\n[^2]: [Hechos 1:8](https://www.churchofjesuschrist.org/study/scriptures/nt/acts/1?lang=spa&id=p8#p8).\n[^3]: [Enseñanzas de los Presidentes de la Iglesia: José Smith](https://www.churchofjesuschrist.org/study/manual/teachings-joseph-smith/chapter-3?lang=spa&id=p18#p18), 2007, pág. 51.\n[^4]: …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 28.3,
+    "source": "2010-04-beck-and-upon-the-handmaids-in-those-days-will-i-pour-out-my-spirit",
+    "kind": "talk",
+    "sample": "pine, Utah, 1868-1879, Biblioteca de la Historia de la Iglesia, Salt Lake City, págs. 26–27.\n[^9]: Véase *Predicad Mi Evangelio*, 2004, págs. 10–11.\n[^10]: Véase J"
+   },
+   {
+    "term": "smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 15.3,
+    "source": "2010-04-foster-mother-told-me",
+    "kind": "talk",
+    "sample": "orque éste representa el amor de nuestro Salvador. Como el presidente Joseph F. Smith dijo: “El amor de una buena madre se aproxima más al amor de Dios que cualquier"
+   },
+   {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 57.2,
+    "source": "2010-04-foster-mother-told-me",
+    "kind": "talk",
+    "sample": "adre sea porque éste representa el amor de nuestro Salvador. Como el presidente Joseph F. Smith dijo: “El amor de una buena madre se aproxima más al amor de Dios que"
+   }
+  ]
+ }
+}

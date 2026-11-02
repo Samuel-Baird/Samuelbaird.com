@@ -1,0 +1,152 @@
+{
+ "id": "concept.magnify-a-calling",
+ "pt": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "magnificar seu chamado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hughes-out-of-small-things",
+      "para": 7,
+      "en": "… said on the subject: “And how does one magnify a calling? Simply by performing the service that pertains to …",
+      "tr": "… um deles. Mas o quanto a frase “magnificar seu chamado” deixa vocês apreensivas? Ela me preocupou muito. Li …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-eyring-serve-with-the-spirit",
+      "para": 20,
+      "en": "… view of other men. And how does one magnify a calling? Simply by performing the service that pertains to …",
+      "tr": "… olhos dos outros homens. E como alguém pode magnificar seu chamado? Simplesmente desempenhando as funções a ele pertinentes”.[^5]"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "chamado? simplesmente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2005-10-monson-do-your-dutythat-is-best",
+    "kind": "talk",
+    "sample": "E como magnificamos um chamado? Simplesmente realizando o serviço a ele relacionado. O élder magnifica o chamado de élder ap"
+   },
+   {
+    "term": "magnifica",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 500.1,
+    "source": "2005-10-monson-do-your-dutythat-is-best",
+    "kind": "talk",
+    "sample": "E como magnificamos um chamado? Simplesmente realizando o serviço a ele relacionado. O élder mag"
+   },
+   {
+    "term": "simplesmente desempenhando",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2010-10-eyring-serve-with-the-spirit",
+    "kind": "talk",
+    "sample": "do a lição que o Presidente Monson ensinou: “Como alguém magnifica seu chamado? Simplesmente desempenhando as funções a ele pertinentes”."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "magnifiquen su llamamiento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2004,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hughes-out-of-small-things",
+      "para": 7,
+      "en": "… said on the subject: “And how does one magnify a calling? Simply by performing the service that pertains to …",
+      "tr": "… alguna vez al pensar en la frase “magnifiquen su llamamiento?”. ¡A mí me ha preocupado! Hace poco leí …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "llamamiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 102.6,
+    "source": "1999-10-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "¿Qué significa magnificar un llamamiento? Significa edificarlo en dignidad e importancia, hacerlo honorable y digno de e"
+   },
+   {
+    "term": "magnifica",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 357.2,
+    "source": "1999-10-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "¿Qué significa magnificar un llamamiento? Significa edificarlo en dignidad e importancia, hacerlo honora"
+   },
+   {
+    "term": "corresponde",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 357.2,
+    "source": "1999-10-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "ómo se magnifica un llamamiento? Simplemente llevando a cabo el servicio que le corresponde. Un élder magnifica su llamamiento al aprender cuáles son sus deberes como tal"
+   }
+  ]
+ }
+}

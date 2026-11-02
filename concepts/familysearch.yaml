@@ -1,0 +1,17 @@
+id: concept.familysearch
+category: Temple & Family History
+en:
+  term: FamilySearch
+  match:
+  - FamilySearch
+sources:
+  GH:
+  - 25-temple-and-family-history-work#title_number20
+candidates:
+  pt:
+  - term: Pesquisa Familiar
+    hint: pulpit-glossary:verified
+  es:
+  - term: FamilySearch
+    hint: pulpit-glossary:verified
+related: []

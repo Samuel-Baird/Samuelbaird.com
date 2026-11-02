@@ -1,0 +1,15 @@
+id: concept.budget-allowance
+category: Finances
+en:
+  term: budget allowance
+  match:
+  - budget allowance
+sources:
+  GH:
+  - 34-finances-and-audits#title_number22
+candidates:
+  pt: []
+  es:
+  - term: asignación presupuestaria
+    hint: pulpit-glossary:verified
+related: []

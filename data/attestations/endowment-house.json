@@ -1,0 +1,43 @@
+{
+ "id": "concept.endowment-house",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": []
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Casa de Investiduras",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-renlund-family-history-and-temple-work-sealing-and-healing",
+      "para": 37,
+      "en": "… his family performed over 2,600 proxy baptisms in the Endowment House in Salt Lake City for the deceased individuals in …",
+      "tr": "… de 2600 bautismos por los muertos, en la Casa de Investiduras de Salt Lake City, por los nombres recogidos en …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

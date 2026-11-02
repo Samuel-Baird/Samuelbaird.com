@@ -1,0 +1,15 @@
+id: concept.work-for-the-dead
+category: Temple & Family History
+en:
+  term: work for the dead
+  match:
+  - work for the dead
+sources: {}
+candidates:
+  pt:
+  - term: obra pelos mortos
+    hint: pulpit-glossary:standard
+  es:
+  - term: obra por los muertos
+    hint: pulpit-glossary:verified
+related: []

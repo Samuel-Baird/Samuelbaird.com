@@ -1,0 +1,15 @@
+id: concept.relief-society-meeting
+category: Sacrament & Meetings
+en:
+  term: Relief Society meeting
+  match:
+  - Relief Society meeting
+sources: {}
+candidates:
+  pt:
+  - term: reunião geral da Sociedade de Socorro
+    hint: pulpit-glossary:verified
+  es:
+  - term: reunión general de la Sociedad de Socorro
+    hint: pulpit-glossary:verified
+related: []

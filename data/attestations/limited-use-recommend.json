@@ -1,0 +1,103 @@
+{
+ "id": "concept.limited-use-recommend",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "recomendação de uso limitado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-cook-see-yourself-in-the-temple",
+      "para": 42,
+      "en": "… addition to the recommend held by endowed adults, a limited-use recommend for baptisms for the dead may be received by …",
+      "tr": "… quem a recebe, atestando a própria dignidade. A recomendação de uso limitado é válida por um ano e dá a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-rasband-recommended-to-the-lord",
+      "para": 16,
+      "en": "… carry﻿—a current temple recommend.”[^6] I would add that a limited-use recommend will set a clear path for our precious youth.",
+      "tr": "… válida e a carregasse consigo”.[^6] Acrescentaria que uma recomendação de uso limitado determinará um caminho claro para nossos preciosos jovens."
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-nelson-covid-19-and-temples",
+      "para": 3,
+      "en": "… allow our youth, new members, and others with a limited-use recommend to participate in proxy baptisms for their ancestors.",
+      "tr": "… membros novos e outros irmãos que possuam uma recomendação de uso limitado participem de batismos vicários por seus antepassados."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "recomendación de uso limitado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-cook-see-yourself-in-the-temple",
+      "para": 42,
+      "en": "… addition to the recommend held by endowed adults, a limited-use recommend for baptisms for the dead may be received by …",
+      "tr": "… no investidos que sean dignos pueden recibir una recomendación de uso limitado para efectuar bautismos por los muertos. Ambas recomendaciones …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-witnesses-aaronic-priesthood-quorums-and-young-women-classes",
+      "para": 1,
+      "en": "… by anyone holding a current temple recommend, including a limited-use recommend.",
+      "tr": "… una recomendación vigente para el templo, incluso una recomendación de uso limitado, puede ser testigo del bautismo para una …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-nelson-covid-19-and-temples",
+      "para": 3,
+      "en": "… allow our youth, new members, and others with a limited-use recommend to participate in proxy baptisms for their ancestors.",
+      "tr": "… nuevos miembros y otras personas que tengan una recomendación de uso limitado participen en bautismos mediante representante por sus antepasados."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

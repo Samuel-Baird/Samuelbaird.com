@@ -1,0 +1,141 @@
+{
+ "id": "concept.line-of-authority",
+ "pt": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "linha de autoridade",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-packer-the-cloven-tongues-of-fire",
+      "para": 73,
+      "en": "The priesthood is structured to ensure an unbroken line of authority to baptize and confer the Holy Ghost. Always nearby …",
+      "tr": "… sacerdócio está estruturado de modo a assegurar uma linha de autoridade ininterrupta para batizar e conferir o Espírito Santo. E …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-packer-the-twelve",
+      "para": 29,
+      "en": "There has been an unbroken line of authority. The priesthood keys given to the Apostles have …",
+      "tr": "Há uma linha de autoridade ininterrupta. As chaves do sacerdócio conferidas aos apóstolos sempre …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-gong-always-remember-him",
+      "para": 17,
+      "en": "… past while providing future patterns and hope. Priesthood lines of authority and patriarchal blessings witness of God’s hand across generations.",
+      "tr": "… dão esperança e padrões para o futuro. As linhas de autoridade do sacerdócio e as bênçãos patriarcais testificam da mão …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "joão batista",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2012-04-bednar-the-powers-of-heaven",
+    "kind": "talk",
+    "sample": "i trazida de volta à Terra nesta dispensação por mensageiros celestes, sim, por João Batista, e por Pedro, Tiago e João. Portanto, todo homem que recebe o Sacerdócio de Mel"
+   },
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 60.6,
+    "source": "2005-04-holland-our-most-distinguishing-feature",
+    "kind": "talk",
+    "sample": "desafio, nós, da Igreja restaurada de Jesus Cristo podemos traçar as origens da autoridade do sacerdócio exercida pelo mais novo diácono da ala, a do bispo (seu president"
+   },
+   {
+    "term": "linha",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 205.2,
+    "source": "2012-04-bednar-the-powers-of-heaven",
+    "kind": "talk",
+    "sample": ". Portanto, todo homem que recebe o Sacerdócio de Melquisedeque pode seguir sua linha pessoal de autoridade diretamente até o Senhor Jesus Cristo. Espero que sejamos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "línea de autoridad",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-holland-our-most-distinguishing-feature",
+      "para": 17,
+      "en": "… Church of Jesus Christ can trace the priesthood line of authority exercised by the newest deacon in the ward, the …",
+      "tr": "… la Iglesia restaurada de Jesucristo, podemos seguir la línea de autoridad del sacerdocio que ejerce el diácono más nuevo del …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-bednar-the-powers-of-heaven",
+      "para": 34,
+      "en": "… receives the Melchizedek Priesthood can trace his personal line of authority directly to the Lord Jesus Christ. I hope we …",
+      "tr": "… el Sacerdocio de Melquisedec puede trazar su propia línea de autoridad directamente hasta el Señor Jesucristo. Espero que estemos agradecidos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-lund-divine-authority-sublime-young-men",
+      "para": 3,
+      "en": "… men, connecting them through ordinance to a bright line of authority stretching back through the Restoration epoch to Joseph and …",
+      "tr": "… hombres jóvenes, conectándolos, mediante ordenanzas, con una brillante línea de autoridad que se remonta por la época de la Restauración …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

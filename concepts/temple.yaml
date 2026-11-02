@@ -1,0 +1,23 @@
+id: concept.temple
+category: Temple & Family History
+en:
+  term: temple
+  match:
+  - temple
+sources:
+  GS:
+  - temple-house-of-the-lord
+  Topics:
+  - temples
+  TtF:
+  - temples
+  GH:
+  - 20-activities#title_number39
+candidates:
+  pt:
+  - term: templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: templo
+    hint: approved-terms
+related: []

@@ -1,0 +1,178 @@
+{
+ "id": "concept.rising-generation",
+ "pt": {
+  "en_paragraphs": 115,
+  "en_talks": 78,
+  "en_verses": 5,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "nova geração",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 95,
+    "talks": 65,
+    "verses": 3,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Néfi 1:30",
+      "ref_en": "3 Nephi 1:30",
+      "en": "And thus were the Lamanites afflicted also, and began to decrease as to their faith and righteousness, because of the wickedness of the rising generation.",
+      "tr": "E assim os lamanitas também foram afligidos e começaram, devido à iniquidade da nova geração, a decair em sua fé e retidão.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/1?lang=por&id=p30"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-dew-are-we-not-all-mothers",
+      "para": 11,
+      "en": "… have the responsibility to love and help lead the rising generation. How will our young women learn to live …",
+      "tr": "… a responsabilidade de amar e ajudar a conduzir a nova geração. Como nossas jovens irão aprender a viver como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-franco-the-joy-of-unselfish-service",
+      "para": 14,
+      "en": "… we sacrificing of our time and talents so the rising generation can learn to love the Lord and keep His …",
+      "tr": "… sacrificando nosso tempo e nossos talentos para que a nova geração aprenda a amar o Senhor e a guardar Seus …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "novas gerações",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.455,
+    "ratio": 909.3,
+    "source": "2009-10-allred-every-woman-needs-relief-society",
+    "kind": "talk",
+    "sample": "- Reconheço minha responsabilidade de influenciar para o bem as novas gerações."
+   },
+   {
+    "term": "geração",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.5,
+    "ratio": 95.3,
+    "source": "1990-04-cuthbert-the-spirituality-of-service",
+    "kind": "talk",
+    "sample": "comunidade e obra missionária durante as férias. É desta forma que salvaremos a geração que surge, evitando que se torne totalmente egoísta e indulgente. Nós não a sal"
+   },
+   {
+    "term": "jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.318,
+    "ratio": 12.1,
+    "source": "1990-04-cuthbert-the-spirituality-of-service",
+    "kind": "talk",
+    "sample": "ncantado em ouvir falar de todos os tipos de projetos de serviço realizados por jovens, tais como batismos pelos mortos no templo, trabalhos de limpeza na comunidade"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 115,
+  "en_talks": 77,
+  "en_verses": 5,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "nueva generación",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 104,
+    "talks": 70,
+    "verses": 3,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Nefi 1:30",
+      "ref_en": "3 Nephi 1:30",
+      "en": "And thus were the Lamanites afflicted also, and began to decrease as to their faith and righteousness, because of the wickedness of the rising generation.",
+      "tr": "Y así fueron afligidos también los lamanitas, y empezaron a decaer en cuanto a su fe y rectitud, por causa de la iniquidad de la nueva generación.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/1?lang=spa&id=p30"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-dew-are-we-not-all-mothers",
+      "para": 12,
+      "en": "… our calling is to love and help lead the rising generation through the dangerous streets of mortality.",
+      "tr": "… Israely nuestro llamamiento es amar y guiar a la nueva generación por entre las peligrosas calles de la vida terrenal."
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-witnesses-aaronic-priesthood-quorums-and-young-women-classes",
+      "para": 8,
+      "en": "… bishops and other adult leaders as they serve this rising generation.",
+      "tr": "… líderes adultos a medida que prestan servicio a esta nueva generación."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "generación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.769,
+    "ratio": 171.0,
+    "source": "1998-04-maxwell-put-your-shoulder-to-the-wheel",
+    "kind": "talk",
+    "sample": "La generación actual determinará si los Santos de los Últimos Días seguirán siendo famosos po"
+   },
+   {
+    "term": "the rising generation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 923.3,
+    "source": "2018-04-durrant-teaching-in-the-homea-joyful-and-sacred-responsibility",
+    "kind": "talk",
+    "sample": "]: D. Todd Christofferson, \"Strengthening the Faith and Long-Term Conversion of the Rising Generation\", en Reunión de liderazgo de la conferencia general, septiembre de 2017.\n[^22]:"
+   },
+   {
+    "term": "teaching",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 923.3,
+    "source": "2018-04-durrant-teaching-in-the-homea-joyful-and-sacred-responsibility",
+    "kind": "talk",
+    "sample": "a Iglesia: Gordon B. Hinckley](https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-gordon-b-hinckley/chapter-11-home-the-basis-of-a-r"
+   }
+  ]
+ }
+}

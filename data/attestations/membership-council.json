@@ -1,0 +1,48 @@
+{
+ "id": "concept.membership-council",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "conselho de condição de membro da Igreja",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "consejo de membresía",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2021,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-oaks-the-need-for-a-church",
+      "para": 17,
+      "en": "… that assist us to repent. Their purpose, even in membership councils, is not punishment, like the outcome of a …",
+      "tr": "… ayudan a arrepentirnos y cuyo propósito, incluso en consejos de membresía, no es castigar, como ocurre en una corte …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

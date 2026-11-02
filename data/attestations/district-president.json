@@ -1,0 +1,180 @@
+{
+ "id": "concept.district-president",
+ "pt": {
+  "en_paragraphs": 15,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "presidente do distrito",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-monson-they-pray-and-they-go",
+      "para": 15,
+      "en": "… new and better job. He was still serving as district president nine years later when it was my privilege to …",
+      "tr": "… que o anterior. Ele ainda estava servindo como presidente do distrito, nove anos depois, quando tive o privilégio de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-eyring-we-are-one",
+      "para": 19,
+      "en": "… I was called as the counselor to a great district president who had been brought from disinterest in the Church …",
+      "tr": "… e ver o que Deus via nele. O presidente do distrito e eu percorremos de carro as montanhas e o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-eyring-sisters-in-zion",
+      "para": 28,
+      "en": "… is a temple there now, close to where the district president once lived. He had been brought into Church activity …",
+      "tr": "… um templo lá, perto de onde morava o presidente do distrito. Ele se tornou um membro ativo da Igreja …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "distrito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 685.9,
+    "source": "2007-10-falabella-why-are-we-members-of-the-only-true-church",
+    "kind": "talk",
+    "sample": "eternas. Fomos batizados e, quando meu pai começou a servir como presidente de distrito, sua primeira meta foi ir ao templo para receber as bênçãos resultantes desse s"
+   },
+   {
+    "term": "presidentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 59.1,
+    "source": "2007-10-gonzlez-today-is-the-time",
+    "kind": "talk",
+    "sample": "Os presidentes de estaca e distrito, juntamente com os bispos, saíram para ajudar seus membros"
+   },
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 39.9,
+    "source": "2007-10-gonzlez-today-is-the-time",
+    "kind": "talk",
+    "sample": "Os presidentes de estaca e distrito, juntamente com os bispos, saíram para ajudar seus membros, minutos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 12,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "presidente de distrito",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 12,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-watts-gratitude",
+      "para": 12,
+      "en": "… blessings derived from living the principles taught. One faithful district president expressed gratitude to have a bicycle for transportation to …",
+      "tr": "… de vivir los principios que enseña. Un fiel presidente de distrito expresó su gratitud por tener una bicicleta como medio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-eyring-continuing-revelation",
+      "para": 22,
+      "en": "… president. I have in turn been counselor to two district presidents and to a Presiding Bishop of the Church, a …",
+      "tr": "… de élderes. También he sido consejero de dos presidentes de distrito, de un Obispo Presidente de la Iglesia, miembro …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-funk-come-into-the-fold-of-god",
+      "para": 1,
+      "en": "… Brother Samad served as the branch president and then district president, driving throughout Central Java to fulfill his responsibilities. …",
+      "tr": "… sirvió como presidente de rama y luego como presidente de distrito; y para cumplir con sus responsabilidades, recorría toda …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "distrito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 1000.2,
+    "source": "2007-10-gonzlez-today-is-the-time",
+    "kind": "talk",
+    "sample": "Los presidentes de estaca y de distrito, junto con los obispos, salieron a visitar a sus miembros pocos minutos después"
+   },
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 97.6,
+    "source": "2007-10-gonzlez-today-is-the-time",
+    "kind": "talk",
+    "sample": "Los presidentes de estaca y de distrito, junto con los obispos, salieron a visitar a sus miembros pocos m"
+   },
+   {
+    "term": "presidentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 72.1,
+    "source": "2007-10-gonzlez-today-is-the-time",
+    "kind": "talk",
+    "sample": "Los presidentes de estaca y de distrito, junto con los obispos, salieron a visitar a sus miembr"
+   }
+  ]
+ }
+}

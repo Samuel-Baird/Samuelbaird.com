@@ -1,0 +1,102 @@
+{
+ "id": "concept.holy-spirit-of-promise",
+ "pt": {
+  "en_paragraphs": 38,
+  "en_talks": 20,
+  "en_verses": 8,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Santo Espírito da promessa",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 38,
+    "talks": 20,
+    "verses": 7,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 88:3",
+      "ref_en": "Doctrine and Covenants 88:3",
+      "en": "Wherefore, I now send upon you another Comforter, even upon you my friends, that it may abide in your hearts, even the Holy Spirit of promise; which other Comforter is the same that I promised unto my disciples, as is recorded in the testimony of John.",
+      "tr": "Portanto, agora vos envio outro Consolador, sim, a vós, meus amigos, para que habite em vosso coração, sim, o Santo Espírito da promessa; esse outro Consolador é o mesmo que prometi a meus discípulos, como registrado no testemunho de João.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-packer-the-temple-the-priesthood",
+      "para": 36,
+      "en": "… are the same, the covenants equally binding, the Holy Spirit of Promise equally present.",
+      "tr": "… os convênios têm o mesmo poder selador, o Santo Espírito da Promessa está igualmente presente."
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-renlund-a-framework-for-personal-revelation",
+      "para": 20,
+      "en": "… have repented and been baptized, and is the Holy Spirit of Promise (see Guide to the Scriptures, “[Holy Ghost](https://www.churchofjesuschrist.org/study/scriptures/gs/holy-ghost?lang=eng),” scriptures.ChurchofJesusChrist.org). …",
+      "tr": "… se arrependem e são batizados, e é o Santo Espírito da Promessa (ver Guia para Estudo das Escrituras, \"[Espírito Santo](https://www.churchofjesuschrist.org/study/scriptures/gs/holy-ghost?lang=por)\", …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 34,
+  "en_talks": 16,
+  "en_verses": 8,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "santo espíritu de la promesa",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 34,
+    "talks": 16,
+    "verses": 8,
+    "first_year": 2007,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 88:3",
+      "ref_en": "Doctrine and Covenants 88:3",
+      "en": "Wherefore, I now send upon you another Comforter, even upon you my friends, that it may abide in your hearts, even the Holy Spirit of promise; which other Comforter is the same that I promised unto my disciples, as is recorded in the testimony of John.",
+      "tr": "Por tanto, ahora os envío a vosotros, mis amigos, otro Consolador, el Santo Espíritu de la promesa, para que permanezca en vuestros corazones; y este otro Consolador es el mismo que prometí a mis discípulos, según se halla escrito en el testimonio de Juan.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-bednar-ye-must-be-born-again",
+      "para": 38,
+      "en": "… overcome by faith, and are sealed by the Holy Spirit of promise, which the Father sheds forth upon all …",
+      "tr": "… la fe, y son sellados por el Santo Espíritu de la promesa, que el Padre derrama sobre todos los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-carpenter-fruit-that-remains",
+      "para": 2,
+      "en": "… Holy Ghost, in His divine role as the Holy Spirit of Promise, will seal each ordinance upon those who …",
+      "tr": "… Espíritu Santo, en Su función divina como Santo Espíritu de la Promesa, sellará cada ordenanza sobre aquellos que son …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

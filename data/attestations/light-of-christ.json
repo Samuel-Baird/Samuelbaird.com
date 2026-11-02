@@ -1,0 +1,112 @@
+{
+ "id": "concept.light-of-christ",
+ "pt": {
+  "en_paragraphs": 117,
+  "en_talks": 83,
+  "en_verses": 4,
+  "uncovered_paragraphs": 121,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "luz",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 119,
+    "share_of_uncovered": 0.983,
+    "ratio": 38.6,
+    "source": "1991-10-brewerton-light",
+    "kind": "talk",
+    "sample": "A qual verdade brilha. Essa é a luz de Cristo. Como ele está também no sol, e é a luz do sol, e é o poder pelo qual"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 115,
+  "en_talks": 85,
+  "en_verses": 4,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "luz de Cristo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 107,
+    "talks": 78,
+    "verses": 4,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Moroni 7:19",
+      "ref_en": "Moroni 7:19",
+      "en": "Wherefore, I beseech of you, brethren, that ye should search diligently in the light of Christ that ye may know good from evil; and if ye will lay hold upon every good thing, and condemn it not, ye certainly will be a child of Christ.",
+      "tr": "Por tanto, os suplico, hermanos, que busquéis diligentemente en la luz de Cristo, para que podáis discernir el bien del mal; y si os aferráis a todo lo bueno, y no lo condenáis, ciertamente seréis hijos de Cristo.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/7?lang=spa&id=p19"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+      "para": 19,
+      "en": "… and therefore he is omnipotent; and through the Light of Christ he is omnipresent.",
+      "tr": "… esto, es omnipotente; y mediante Su luz, la Luz de Cristo, El es omnipresente."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-eyring-a-priceless-heritage-of-hope",
+      "para": 34,
+      "en": "Every person born into the world receives the Light of Christ, which helps us see and feel what is …",
+      "tr": "… persona que nace en el mundo recibe la Luz de Cristo, la cual nos ayuda a ver y sentir …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "infinita luz",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 1750.4,
+    "source": "2012-04-holland-the-laborers-in-the-vineyard",
+    "kind": "talk",
+    "sample": "o es posible que se hundan tan profundamente que no los alcance el brillo de la infinita luz de la expiación de Cristo."
+   },
+   {
+    "term": "hundan tan profundamente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 1750.4,
+    "source": "2012-04-holland-the-laborers-in-the-vineyard",
+    "kind": "talk",
+    "sample": "que *no* han viajado más allá del alcance del amor divino. No es posible que se hundan tan profundamente que no los alcance el brillo de la infinita luz de la expiación de Cristo."
+   },
+   {
+    "term": "brillo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 875.2,
+    "source": "2012-04-holland-the-laborers-in-the-vineyard",
+    "kind": "talk",
+    "sample": "mor divino. No es posible que se hundan tan profundamente que no los alcance el brillo de la infinita luz de la expiación de Cristo."
+   }
+  ]
+ }
+}

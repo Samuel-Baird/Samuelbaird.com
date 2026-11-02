@@ -1,0 +1,128 @@
+{
+ "id": "concept.stake",
+ "pt": {
+  "en_paragraphs": 488,
+  "en_talks": 340,
+  "en_verses": 25,
+  "uncovered_paragraphs": 40,
+  "renderings": [
+   {
+    "term": "estaca",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 448,
+    "talks": 313,
+    "verses": 25,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:134",
+      "ref_en": "Doctrine and Covenants 124:134",
+      "en": "Which ordinance is instituted for the purpose of qualifying those who shall be appointed standing presidents or servants over different stakes scattered abroad;",
+      "tr": "Ordenança essa instituída com o propósito de qualificar os que serão designados presidentes, ou seja, servos locais de diferentes estacas espalhadas fora daqui;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p134"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-watson-statistical-report-1989",
+      "para": 14,
+      "en": "(These statistics reflect an increase of 32 stakes and 747 wards and branches during 1989.)",
+      "tr": "(Esta estatística mostra um aumento de 32 estacas e 747 alas e ramos em 1989.)"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-clayton-the-time-shall-come",
+      "para": 17,
+      "en": "There are nearly 3,000 stakes in the worldwide Church today, from Boston to Bangkok and …",
+      "tr": "Hoje, há cerca de 3.000 estacas na Igreja no mundo, de Boston a Bangkok e da …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sociedade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.2,
+    "ratio": 11.9,
+    "source": "1994-10-jack-seek-and-ye-shall-find",
+    "kind": "talk",
+    "sample": "Na Argentina, as líderes da Sociedade de Socorro estão tentando ensinar a importância de armazenar alimentos. Elas es"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.2,
+    "ratio": 10.3,
+    "source": "1993-10-ballard-strength-in-counsel",
+    "kind": "talk",
+    "sample": ", sirvo em diversos conselhos e comitês gerais da Igreja. Reúno-me com diversos líderes das auxiliares. Juntos, aconselhamo-nos, examinamos as escrituras e oramos pedi"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 480,
+  "en_talks": 323,
+  "en_verses": 25,
+  "uncovered_paragraphs": 46,
+  "renderings": [
+   {
+    "term": "estaca",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 434,
+    "talks": 289,
+    "verses": 25,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:134",
+      "ref_en": "Doctrine and Covenants 124:134",
+      "en": "Which ordinance is instituted for the purpose of qualifying those who shall be appointed standing presidents or servants over different stakes scattered abroad;",
+      "tr": "ordenanza que se instituye con el propósito de habilitar a aquellos que serán nombrados presidentes residentes o siervos sobre diversas estacas esparcidas fuera de aquí;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p134"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-strengthened-in-charity",
+      "para": 30,
+      "en": "… tabernacle, in Texas, in tiny branches, sprawling wards, and stakes around the world, our efforts sound the theme “Charity Never …",
+      "tr": "… en Texas, en pequeñas ramas, en barrios y en estacas a través del mundo, nuestros esfuerzos proclaman el tema “la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-cook-personal-peace-the-reward-of-righteousness",
+      "para": 40,
+      "en": "… (2002), 226.\n[^18]: “Three of the five Ivory Coast stakes are among the top 25 in the Church in the …",
+      "tr": "… Grant*, 2002, pág. 244.\n[^18]: \"Tres de las cinco estacas de Costa de Marfil se encuentran entre las veinticinco estacas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

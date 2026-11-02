@@ -1,0 +1,177 @@
+{
+ "id": "concept.receive-the-holy-ghost",
+ "pt": {
+  "en_paragraphs": 83,
+  "en_talks": 63,
+  "en_verses": 13,
+  "uncovered_paragraphs": 70,
+  "renderings": [
+   {
+    "term": "receber o Espírito Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 25,
+    "talks": 20,
+    "verses": 1,
+    "first_year": 1994,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 130:23",
+      "ref_en": "Doctrine and Covenants 130:23",
+      "en": "A man may receive the Holy Ghost, and it may descend upon him and not tarry with him.",
+      "tr": "Um homem pode receber o Espírito Santo e esse pode descer sobre ele e não permanecer com ele.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/130?lang=por&id=p23"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-rector-endure-to-the-end-in-charity",
+      "para": 9,
+      "en": "… the waters of baptism, then comes forth and receives the Holy Ghost by the laying on of hands by priesthood …",
+      "tr": "… às águas do batismo e depois sai para receber o Espírito Santo pela imposição das mãos da autoridade do sacerdócio. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-bednar-the-spirit-of-revelation",
+      "para": 6,
+      "en": "… Ghost is a revelator,” and “no man can receive the Holy Ghost without receiving revelations” (*Teachings of Presidents of the …",
+      "tr": "… Espírito Santo é um revelador” e “ninguém pode receber o Espírito Santo sem receber revelações” (*Ensinamentos dos Presidentes da Igreja: …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "recebe",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.229,
+    "ratio": 45.7,
+    "source": "2001-04-nadauld-a-comforter-a-guide-a-testifier",
+    "kind": "talk",
+    "sample": "u batismo e confirmação, quando colocaram as mãos sobre sua cabeça e disseram: “Recebe o Espírito Santo”. É como se o Pai Celestial tivesse lhe dado um presente para"
+   },
+   {
+    "term": "batismo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.229,
+    "ratio": 20.8,
+    "source": "2001-04-nadauld-a-comforter-a-guide-a-testifier",
+    "kind": "talk",
+    "sample": "Por essa razão um dom sagrado foi-lhes dado por ocasião do seu batismo e confirmação, quando colocaram as mãos sobre sua cabeça e disseram: “Recebe o"
+   },
+   {
+    "term": "mãos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.257,
+    "ratio": 14.5,
+    "source": "1990-10-rector-the-resurrection",
+    "kind": "talk",
+    "sample": "dá-nos paz para o resto da vida. O Espírito Santo é recebido pela imposição das mãos de um élder de Á Igreja de Jesus Cristo dos Santos dos Últimos Dias, quando som"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 75,
+  "en_talks": 59,
+  "en_verses": 13,
+  "uncovered_paragraphs": 60,
+  "renderings": [
+   {
+    "term": "recibir el Espíritu Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 26,
+    "talks": 23,
+    "verses": 2,
+    "first_year": 1998,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 130:23",
+      "ref_en": "Doctrine and Covenants 130:23",
+      "en": "A man may receive the Holy Ghost, and it may descend upon him and not tarry with him.",
+      "tr": "El hombre puede recibir el Espíritu Santo, y este puede descender sobre él y no permanecer con él.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/130?lang=spa&id=p23"
+     },
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-eyring-that-we-may-be-one",
+      "para": 13,
+      "en": "… members of the Church—the promise that we might receive the Holy Ghost. Here are the words of the sacramental …",
+      "tr": "… ser confirmados miembros de la Iglesia: la de recibir el Espíritu Santo. Éstas son las palabras de la oración …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-hamula-the-sacrament-and-the-atonement",
+      "para": 10,
+      "en": "… and covenants of salvation, beginning with baptism; and receive the Holy Ghost. Upon our receipt of the Holy Ghost, …",
+      "tr": "… convenios de salvación, comenzando por el bautismo; y recibir el Espíritu Santo. Al recibir el Espíritu Santo, somos limpiados …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "recibe",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.35,
+    "ratio": 41.2,
+    "source": "2001-04-nadauld-a-comforter-a-guide-a-testifier",
+    "kind": "talk",
+    "sample": "nfirmación, cuando les fueron colocadas manos sobre la cabeza y les fue dicho: “Recibe el Espíritu Santo”. Es casi como si su Padre Celestial les hubiera dado un don"
+   },
+   {
+    "term": "manos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.3,
+    "ratio": 17.4,
+    "source": "2000-04-packer-the-cloven-tongues-of-fire",
+    "kind": "talk",
+    "sample": "amiento de bautizar en agua, y recibirán el Espíritu Santo por la imposición de manos, como lo hacían los antiguos apóstoles”[^26]."
+   },
+   {
+    "term": "bautismo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.217,
+    "ratio": 18.4,
+    "source": "2001-04-nadauld-a-comforter-a-guide-a-testifier",
+    "kind": "talk",
+    "sample": "Por esta razón, les fue dado un don sagrado al tiempo de su bautismo y confirmación, cuando les fueron colocadas manos sobre la cabeza y les fue dic"
+   }
+  ]
+ }
+}

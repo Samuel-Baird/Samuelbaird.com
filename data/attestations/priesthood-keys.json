@@ -1,0 +1,179 @@
+{
+ "id": "concept.priesthood-keys",
+ "pt": {
+  "en_paragraphs": 175,
+  "en_talks": 107,
+  "en_verses": 0,
+  "uncovered_paragraphs": 24,
+  "renderings": [
+   {
+    "term": "chaves do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 151,
+    "talks": 94,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-oaks-the-relief-society-and-the-church",
+      "para": 25,
+      "en": "No priesthood keys were delivered to the Relief Society. Keys are conferred …",
+      "tr": "… líder do sacerdócio a quem foram dadas as chaves do sacerdócio para dirigir os que trabalham em sua área de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-powers-of-the-priesthood",
+      "para": 3,
+      "en": "… direct its exercise (see [D&C 27:12–13](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/27?lang=eng&id=p12-p13#p12)). But not all priesthood keys were conferred at that time. The entire keys and …",
+      "tr": "… sacerdócio (ver [D&C 27:12–13](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/27?lang=por&id=p12-p13#p12)). Mas nem todas as chaves do sacerdócio foram conferidas naquela época. Todas as chaves e o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-sikahema-prophets-seers-and-revelators",
+      "para": 8,
+      "en": "They were sailing toward an Apostle, who held priesthood keys, held the authority for the ordinances that would …",
+      "tr": "… ao encontro de um apóstolo que possuía as chaves do sacerdócio e detinha a autoridade para as ordenanças que, mais …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "chaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.958,
+    "ratio": 95.9,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "ansporte, mas, sim, a Expiação do Salvador e a restauração do evangelho, com as chaves e autoridade do sacerdócio. Esses dois acontecimentos singulares continuarão a"
+   },
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.5,
+    "ratio": 30.3,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "algo melhor para elas do que uma constituição escrita. Sendo organizadas sob a autoridade do sacerdócio, elas deveriam rejeitar conceitos temporais de poder e buscar o p"
+   },
+   {
+    "term": "ordenanças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.25,
+    "ratio": 11.9,
+    "source": "2004-10-bednar-in-the-strength-of-the-lord",
+    "kind": "talk",
+    "sample": "intermédio do Profeta Joseph Smith. As chaves e a autoridade do sacerdócio e as ordenanças de salvação estão novamente na Terra. Pelo poder desse sacerdócio as famílias p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 163,
+  "en_talks": 105,
+  "en_verses": 0,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "llaves del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 137,
+    "talks": 87,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 October General Conference",
+      "talk": "2000-10-nadauld-the-joy-of-womanhood",
+      "para": 0,
+      "en": "… a prophet of God who holds all of the priesthood keys. I love and honor President Gordon B. Hinckley …",
+      "tr": "… un profeta de Dios que posee todas las llaves del sacerdocio. Amo y honro al presidente Gordon B. Hinckley …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-powers-of-the-priesthood",
+      "para": 29,
+      "en": "… no need to have the direction or approval of priesthood keys in order to counsel the members of his family, …",
+      "tr": "… tener la dirección ni la aprobación de las llaves del sacerdocio a fin de aconsejar a los miembros de su …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-cook-keys-covenants-and-easter",
+      "para": 11,
+      "en": "Elijah was a remarkable prophet who held sacred priesthood keys and through whom mighty miracles were performed.[^11] Christians, Muslims, …",
+      "tr": "… fue un extraordinario profeta que poseía las sagradas llaves del sacerdocio y por medio de quien se efectuaron grandes milagros[^11]. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 0.962,
+    "ratio": 142.5,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "orte; fueron la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. Esos dos singulares acontecimientos continuarán"
+   },
+   {
+    "term": "autoridad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.462,
+    "ratio": 37.7,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. Esos dos singulares acontecimientos continuarán siendo de impor"
+   },
+   {
+    "term": "restauración",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.308,
+    "ratio": 31.6,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "a ciencia, la tecnología y el transporte; fueron la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. Esos dos singulare"
+   }
+  ]
+ }
+}

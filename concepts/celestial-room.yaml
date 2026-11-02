@@ -1,0 +1,15 @@
+id: concept.celestial-room
+category: Temple & Family History
+en:
+  term: celestial room
+  match:
+  - celestial room
+sources: {}
+candidates:
+  pt:
+  - term: sala celestial
+    hint: pulpit-glossary:verified
+  es:
+  - term: sala celestial
+    hint: pulpit-glossary:verified
+related: []

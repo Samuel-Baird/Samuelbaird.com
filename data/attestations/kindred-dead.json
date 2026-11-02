@@ -1,0 +1,118 @@
+{
+ "id": "concept.kindred-dead",
+ "pt": {
+  "en_paragraphs": 15,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "falecidos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.867,
+    "ratio": 495.4,
+    "source": "1991-04-tingey-redemption-of-the-dead",
+    "kind": "talk",
+    "sample": "santos podem entrar e realizar as ordenanças sagradas a favor de seus parentes falecidos."
+   },
+   {
+    "term": "parentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.667,
+    "ratio": 533.5,
+    "source": "1991-04-tingey-redemption-of-the-dead",
+    "kind": "talk",
+    "sample": "em que os santos podem entrar e realizar as ordenanças sagradas a favor de seus parentes falecidos."
+   },
+   {
+    "term": "ordenanças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.533,
+    "ratio": 25.4,
+    "source": "1991-04-tingey-redemption-of-the-dead",
+    "kind": "talk",
+    "sample": "reja também construiu belos templos em que os santos podem entrar e realizar as ordenanças sagradas a favor de seus parentes falecidos."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 14,
+  "en_talks": 12,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "parientes fallecidos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2012,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-scott-the-joy-of-redeeming-the-dead",
+      "para": 9,
+      "en": "… they lose a blessing by not seeking their own kindred dead as divinely directed by latter-day prophets. …",
+      "tr": "… privan de la bendición de buscar a sus propios parientes fallecidos, tal como lo han mandado divinamente los profetas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fallecidos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.538,
+    "ratio": 718.1,
+    "source": "1991-10-dvila-the-conversion-process",
+    "kind": "talk",
+    "sample": "s y efectuando ordenanzas de salvación y exaltación por nuestros seres queridos fallecidos y por nosotros mismos."
+   },
+   {
+    "term": "antepasados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.692,
+    "ratio": 120.4,
+    "source": "2000-04-nelson-the-creation",
+    "kind": "talk",
+    "sample": "stino de la tierra y sus habitantes, también aquí han de ser redimidos nuestros antepasados fallecidos[^42]. Las familias han de ser selladas por toda la eternidad[^43]. D"
+   },
+   {
+    "term": "templos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 39.3,
+    "source": "2000-04-nelson-the-creation",
+    "kind": "talk",
+    "sample": "as las dispensaciones, llaves y poderes[^44]. Y para este sagrado fin hay ahora templos santos en muchas partes del mundo."
+   }
+  ]
+ }
+}

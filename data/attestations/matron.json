@@ -1,0 +1,103 @@
+{
+ "id": "concept.matron",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "diretora",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-hinckley-the-miracle-of-faith",
+      "para": 10,
+      "en": "… eternal marriage. She is today an assistant to the matron in the new Montevideo Uruguay Temple. Her husband is a …",
+      "tr": "… laços do casamento eterno. Hoje ela é assistente da diretora do Templo de Montevidéu Uruguai. Seu marido é conselheiro na …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-cook-hope-ya-know-we-had-a-hard-time",
+      "para": 19,
+      "en": "… four hours.”[^15] Later in her life she was the matron of the Salt Lake Temple and the fourth general president …",
+      "tr": "… viveu apenas quatro horas”.[^15] Ela mais tarde se tornou diretora do Templo de Salt Lake e a quarta presidente geral …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-boom-true-to-the-faith-that-our-parents-have-cherished",
+      "para": 0,
+      "en": "… hanging on the wall in the office of the matron.",
+      "tr": "… Wanlass intitulada *Avançar* pendurada na parede do escritório da diretora."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "directora",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-hinckley-the-miracle-of-faith",
+      "para": 10,
+      "en": "… eternal marriage. She is today an assistant to the matron in the new Montevideo Uruguay Temple. Her husband is a …",
+      "tr": "… Ella es actualmente una de las ayudantes de la directora de obreras del nuevo Templo de Montevideo, Uruguay. Su esposo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-cook-hope-ya-know-we-had-a-hard-time",
+      "para": 19,
+      "en": "… four hours.”[^15] Later in her life she was the matron of the Salt Lake Temple and the fourth general president …",
+      "tr": "… y sólo vivió cuatro horas”[^15]. Más tarde, ella fue directora de las obreras del Templo de Salt Lake y la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-boom-true-to-the-faith-that-our-parents-have-cherished",
+      "para": 0,
+      "en": "… hanging on the wall in the office of the matron.",
+      "tr": "… [Sigue adelante]*, que cuelga en la oficina de la directora de las obreras."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

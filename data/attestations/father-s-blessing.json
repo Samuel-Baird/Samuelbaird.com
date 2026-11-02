@@ -1,0 +1,129 @@
+{
+ "id": "concept.father-s-blessing",
+ "pt": {
+  "en_paragraphs": 12,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "bênção paterna",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-partakers-of-the-glories",
+      "para": 18,
+      "en": "… and again when he gave our oldest son a father’s blessing before Dave left for the Persian Gulf. Then our …",
+      "tr": "… uma vez na ocasião em que ele deu uma bênção paterna a nosso filho mais velho, Dave, quando foi enviado …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-perry-fatherhood-an-eternal-calling",
+      "para": 37,
+      "en": "“You give father’s blessings. You take an active part in establishing family …",
+      "tr": "Você concede bênçãos paternas. Participa ativamente no estabelecimento das regras e disciplina …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-packer-the-power-of-the-priesthood",
+      "para": 26,
+      "en": "… going away to war and want to receive a father’s blessing from him. If he does not know how, tell …",
+      "tr": "… partir para a guerra e que deseja receber uma bênção paterna dele. Se ele não souber fazê-lo, diga-lhe que você …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sei",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 33.3,
+    "source": "2009-10-allred-every-woman-needs-relief-society",
+    "kind": "talk",
+    "sample": "- Sei que todas as bênçãos do meu Pai me serão dadas se eu permanecer sempre fiel aos"
+   },
+   {
+    "term": "bênçãos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 18.5,
+    "source": "2009-10-allred-every-woman-needs-relief-society",
+    "kind": "talk",
+    "sample": "- Sei que todas as bênçãos do meu Pai me serão dadas se eu permanecer sempre fiel aos meus convênios."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "bendición de padre",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-partakers-of-the-glories",
+      "para": 18,
+      "en": "… and again when he gave our oldest son a father’s blessing before Dave left for the Persian Gulf. Then our …",
+      "tr": "… le dio a nuestro hijo mayor, Dave, una bendición de padre antes de que este saliera para el Golfo Pérsico. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-perry-fatherhood-an-eternal-calling",
+      "para": 37,
+      "en": "“You give father’s blessings. You take an active part in establishing family …",
+      "tr": "“Ofreces bendiciones de padre. Tomas parte activa en el establecimiento de reglas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-nelson-ministering-with-the-power-and-authority-of-god",
+      "para": 7,
+      "en": "… baby was to be given a name and a father’s blessing. The young father held his precious infant in …",
+      "tr": "… que se había de dar nombre y una bendición de padre a una bebé recién nacida. El joven padre sostuvo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

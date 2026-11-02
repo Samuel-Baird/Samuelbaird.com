@@ -1,0 +1,15 @@
+id: concept.probationary-state
+category: Plan of Salvation
+en:
+  term: probationary state
+  match:
+  - probationary state
+sources: {}
+candidates:
+  pt:
+  - term: estado probatório
+    hint: pulpit-glossary:verified
+  es:
+  - term: estado de probación
+    hint: pulpit-glossary:verified
+related: []

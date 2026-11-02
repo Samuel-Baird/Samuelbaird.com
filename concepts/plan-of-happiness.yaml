@@ -1,0 +1,17 @@
+id: concept.plan-of-happiness
+category: Plan of Salvation
+en:
+  term: plan of happiness
+  match:
+  - plan of happiness
+sources:
+  GH:
+  - 1-work-of-salvation-and-exaltation#title_number2
+candidates:
+  pt:
+  - term: plano de felicidade
+    hint: pulpit-glossary:verified
+  es:
+  - term: plan de felicidad
+    hint: pulpit-glossary:verified
+related: []

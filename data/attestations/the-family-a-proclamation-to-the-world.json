@@ -1,0 +1,105 @@
+{
+ "id": "concept.the-family-a-proclamation-to-the-world",
+ "pt": {
+  "en_paragraphs": 167,
+  "en_talks": 138,
+  "en_verses": 0,
+  "uncovered_paragraphs": 167,
+  "renderings": [
+   {
+    "term": "A Família: Proclamação ao Mundo",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "proclamação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 167,
+    "share_of_uncovered": 1.0,
+    "ratio": 307.8,
+    "source": "1996-04-warner-remember-how-thou-hast-received-and-heard",
+    "kind": "talk",
+    "sample": "estiais que o amam e, como tal, possui natureza e destino divinos” (A Família — Proclamação ao Mundo A Liahona, janeiro de 1996, p.114). Ao recordarmos sentimentos espirit"
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 123,
+    "share_of_uncovered": 0.737,
+    "ratio": 40.4,
+    "source": "1996-04-warner-remember-how-thou-hast-received-and-heard",
+    "kind": "talk",
+    "sample": "omo tal, possui natureza e destino divinos” (A Família — Proclamação ao Mundo A Liahona, janeiro de 1996, p.114). Ao recordarmos sentimentos espirituais, lembramo-nos"
+   },
+   {
+    "term": "última contracapa",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 63,
+    "share_of_uncovered": 0.377,
+    "ratio": 503.1,
+    "source": "2010-04-vias-things-pertaining-to-righteousness",
+    "kind": "talk",
+    "sample": "ado dever de criar os filhos com amor e retidão” (*A Liahona,* outubro de 2004, última contracapa)."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 178,
+  "en_talks": 148,
+  "en_verses": 0,
+  "uncovered_paragraphs": 178,
+  "renderings": [
+   {
+    "term": "La Familia: Una Proclamación para el Mundo",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "proclamación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 178,
+    "share_of_uncovered": 1.0,
+    "ratio": 174.0,
+    "source": "1996-10-hafen-covenant-marriage",
+    "kind": "talk",
+    "sample": "11]: La Primera Presidencia y el Quórum de los Doce Apóstoles, \"La familia: Una proclamación para el mundo\", 23 de septiembre de 1995.\n[^12]: Wendell Berry, Sex, Economy, F"
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 131,
+    "share_of_uncovered": 0.736,
+    "ratio": 33.5,
+    "source": "1998-04-robbins-agency-and-anger",
+    "kind": "talk",
+    "sample": "s dentro del amor y la rectitud …” (La familia: Una proclamación para el mundo, Liahona, junio de 1996, págs. 10-11)."
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 131,
+    "share_of_uncovered": 0.736,
+    "ratio": 26.1,
+    "source": "1996-10-hafen-covenant-marriage",
+    "kind": "talk",
+    "sample": "Barbara Dafoe Whitehead, \"Dan Quayle Was Right,\" Atlantic Monthly, abril 1993, pág. 47.\n[^9]: Maggie Gallagher, The Abolition of Marriage (1996), pág.4.\n[^10]: Vé"
+   }
+  ]
+ }
+}

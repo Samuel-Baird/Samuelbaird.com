@@ -1,0 +1,142 @@
+{
+ "id": "concept.emeritus-status",
+ "pt": {
+  "en_paragraphs": 13,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "condição de emérito",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2023,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 14,
+      "en": "… Seventies will be released from their assignments and given emeritus status, effective on August 1, 2023: Elders Benjamín De …",
+      "tr": "… serão desobrigados de sua designação e receberão a condição de emérito a partir de 1º de agosto de 2023: os …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 14,
+      "en": "… Seventies will be released from their assignments and given emeritus status,[^1] effective on August 1, 2025: Elders David S. …",
+      "tr": "… serão desobrigados de sua designação e receberão a condição de emérito[^1] a partir de 1º de agosto de 2025: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 2,
+      "en": "… many years, General Authority Seventies are released and granted emeritus status in the year a General Authority Seventy turns 70. …",
+      "tr": "… setentas autoridades gerais são desobrigados e recebem a condição de eméritos no ano em que um setenta autoridade geral completa …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "setentas autoridades gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.889,
+    "ratio": 889.1,
+    "source": "2016-10-eyring-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "aniel L. Johnson, Jairo Mazzagardi, Kent F. Richards e Francisco J. Viñas, como Setentas Autoridades Gerais, e que os designemos autoridades gerais eméritas. Reconhecemos o serviço do Éld"
+   },
+   {
+    "term": "gerais eméritas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.778,
+    "ratio": 1037.3,
+    "source": "2016-10-eyring-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "sco J. Viñas, como Setentas Autoridades Gerais, e que os designemos autoridades gerais eméritas. Reconhecemos o serviço do Élder Per G. Malm, que faleceu em 26 de julho de 201"
+   },
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.778,
+    "ratio": 100.4,
+    "source": "2016-10-eyring-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "É proposto que desobriguemos com gratidão pelo excelente serviço prestado os Élderes Daniel L. Johnson, Jairo Mazzagardi, Kent F. Richards e Francisco J. Viñas, com"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "condición de emérito",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estatus",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 1.0,
+    "ratio": 800.2,
+    "source": "2016-10-eyring-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "ds y Francisco J. Viñas como Setentas Autoridades Generales y se les otorgue el estatus de eméritos. Hacemos notar el servicio del élder Per G. Malm, que falleció el p"
+   },
+   {
+    "term": "setentas autoridades generales",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.846,
+    "ratio": 846.4,
+    "source": "2016-10-eyring-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Daniel L. Johnson, Jairo Mazzagardi, Kent F. Richards y Francisco J. Viñas como Setentas Autoridades Generales y se les otorgue el estatus de eméritos. Hacemos notar el servicio del élder Pe"
+   },
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.846,
+    "ratio": 147.2,
+    "source": "2016-10-eyring-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Se propone que relevemos con agradecimiento por su distinguido servicio a los élderes Daniel L. Johnson, Jairo Mazzagardi, Kent F. Richards y Francisco J. Viñas como"
+   }
+  ]
+ }
+}

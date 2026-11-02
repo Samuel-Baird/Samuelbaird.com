@@ -1,0 +1,15 @@
+id: concept.fast-sunday
+category: Sacrament & Meetings
+en:
+  term: fast Sunday
+  match:
+  - fast Sunday
+sources: {}
+candidates:
+  pt:
+  - term: domingo de jejum
+    hint: pulpit-glossary:verified
+  es:
+  - term: domingo de ayuno
+    hint: approved-terms
+related: []

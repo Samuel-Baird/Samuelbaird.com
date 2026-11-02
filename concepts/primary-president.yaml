@@ -1,0 +1,15 @@
+id: concept.primary-president
+category: Local Leadership & Callings
+en:
+  term: Primary president
+  match:
+  - Primary president
+sources: {}
+candidates:
+  pt:
+  - term: presidente da Primária
+    hint: pulpit-glossary:standard
+  es:
+  - term: presidenta de la Primaria
+    hint: pulpit-glossary:verified
+related: []

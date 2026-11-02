@@ -1,0 +1,130 @@
+{
+ "id": "concept.elder",
+ "pt": {
+  "en_paragraphs": 1765,
+  "en_talks": 900,
+  "en_verses": 314,
+  "uncovered_paragraphs": 268,
+  "renderings": [
+   {
+    "term": "élder",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1699,
+    "talks": 877,
+    "verses": 112,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 105:9",
+      "ref_en": "Doctrine and Covenants 105:9",
+      "en": "Therefore, in consequence of the transgressions of my people, it is expedient in me that mine elders should wait for a little season for the redemption of Zion—",
+      "tr": "Portanto, em consequência das transgressões de meu povo, é conveniente para mim que meus élderes esperem um pouco a redenção de Sião —",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/105?lang=por&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-tingey-redemption-of-the-dead",
+      "para": 6,
+      "en": "… the dead. Speaking to a meeting of Regional Representatives, Elder Boyd K. Packer spoke of the marvelous capacity of the …",
+      "tr": "… dos mortos. Falando em uma reunião de Representantes Regionais, Elder Boyd K. Packer mencionou a capacidade maravilhosa do computador, e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-yamashita-be-ambitious-for-christ",
+      "para": 5,
+      "en": "Elder Cowan did not have a right leg because of a …",
+      "tr": "… à missão, seu companheiro me telefonou. A prótese do Élder Cowan havia se quebrado enquanto andavam de bicicleta. Nós o …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "anciãos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 166,
+    "share_of_uncovered": 0.664,
+    "ratio": 2656.7,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "e um mestre da lei, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1718,
+  "en_talks": 877,
+  "en_verses": 314,
+  "uncovered_paragraphs": 270,
+  "renderings": [
+   {
+    "term": "élder",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1650,
+    "talks": 847,
+    "verses": 112,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 84:1",
+      "ref_en": "Doctrine and Covenants 84:1",
+      "en": "A revelation of Jesus Christ unto his servant Joseph Smith, Jun., and six elders, as they united their hearts and lifted their voices on high.",
+      "tr": "Una revelación de Jesucristo a su siervo José Smith, hijo, y a seis élderes, cuando unieron sus corazones y elevaron sus voces al cielo.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=spa&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-jensen-the-power-of-a-good-life",
+      "para": 5,
+      "en": "Of one particularly tedious night, Elder Parley P. Pratt wrote:",
+      "tr": "El elder Parley P. Pratt escribió algo conmovedor sobre una noche particularmente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-andersen-faith-is-not-by-chance-but-by-choice",
+      "para": 7,
+      "en": "… first of many blessings. The bank that had employed Elder Cavalcante unexpectedly doubled the money he was to receive as …",
+      "tr": "… muchas bendiciones. El banco en el que trabajaba el élder Cavalcante inesperadamente duplicó el dinero que iba a recibir al …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ancianos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 174,
+    "share_of_uncovered": 0.696,
+    "ratio": 696.2,
+    "source": "1-ne/4/22",
+    "kind": "scripture",
+    "sample": "Y me habló concerniente a los ancianos de los judíos, porque sabía que su amo Labán había estado entre ellos durante l"
+   }
+  ]
+ }
+}

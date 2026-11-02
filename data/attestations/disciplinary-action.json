@@ -1,0 +1,48 @@
+{
+ "id": "concept.disciplinary-action",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "ação disciplinar",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-reeves-the-great-plan-of-redemption",
+      "para": 4,
+      "en": "… be devastated—and they were; and that there would be disciplinary action and a release from his calling—and there was. He …",
+      "tr": "… e eles ficaram —, e de que haveria uma ação disciplinar e a desobrigação de seu chamado — o que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "acción disciplinaria",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ }
+}

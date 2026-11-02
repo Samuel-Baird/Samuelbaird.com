@@ -1,0 +1,144 @@
+{
+ "id": "concept.stake-president",
+ "pt": {
+  "en_paragraphs": 317,
+  "en_talks": 223,
+  "en_verses": 0,
+  "uncovered_paragraphs": 97,
+  "renderings": [
+   {
+    "term": "presidente de estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 220,
+    "talks": 177,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 33,
+      "en": "Likewise, unless there is loyalty toward the bishop and stake president on a local level, there will be an absence …",
+      "tr": "… que exista lealdade para com o bispo e presidente de estaca em âmbito local, haverá ausência de harmonia, haverá suspeita …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-andersen-its-a-miracle",
+      "para": 13,
+      "en": "… visited their doctors, been interviewed by their bishops and stake presidents, and submitted their missionary applications—all in just five …",
+      "tr": "… o médico, sido entrevistados pelo bispo e pelo presidente de estaca e enviado seus papéis para a missão — tudo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-wakolo-come-unto-christtogether",
+      "para": 24,
+      "en": "… today, extended the call for me to serve as stake president while he was serving as Area President.",
+      "tr": "… fez o chamado para que eu servisse como presidente de estaca."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 91,
+    "share_of_uncovered": 0.938,
+    "ratio": 87.3,
+    "source": "1990-10-hinckley-in-counsellors-there-is-safety",
+    "kind": "talk",
+    "sample": "do sacerdócio: Como conselheiro de uma superintendência da Escola Dominical da estaca, como era chamada, antes de me tornar seu superintendente. Como conselheiro na"
+   },
+   {
+    "term": "bispo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.216,
+    "ratio": 18.8,
+    "source": "1994-10-haight-solemn-assemblies",
+    "kind": "talk",
+    "sample": "Em fevereiro de 1950, o bispo Howard W. Hunter foi chamado como novo presidente da Estaca Pasadena Califórnia"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 313,
+  "en_talks": 215,
+  "en_verses": 0,
+  "uncovered_paragraphs": 23,
+  "renderings": [
+   {
+    "term": "presidente de estaca",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 290,
+    "talks": 202,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 16,
+      "en": "… primarily and inescapably upon the shoulders of bishops and stake presidents. They become the judges of worthiness concerning those …",
+      "tr": "… los hombros de los obispos y de los presidentes de estaca. Ellos son los jueces de la dignidad de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-sustaining-of-church-officers",
+      "para": 30,
+      "en": "… have opposed any of the proposals to contact their stake presidents.",
+      "tr": "… sostenimientos propuestos a que se comuniquen con su presidente de estaca."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-wakolo-come-unto-christtogether",
+      "para": 24,
+      "en": "… today, extended the call for me to serve as stake president while he was serving as Area President.",
+      "tr": "… quien me extendió el llamamiento a servir como presidente de estaca mientras él servía como Presidente de Área."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.739,
+    "ratio": 72.1,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "De igual forma, si no existe lealtad hacia el obispo y el presidente de la estaca a un nivel local, tampoco existirá la armonía, habrá recelo y vacilación para s"
+   }
+  ]
+ }
+}

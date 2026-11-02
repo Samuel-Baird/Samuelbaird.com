@@ -1,0 +1,15 @@
+id: concept.worthiness-interview
+category: Interviews, Repentance & Membership Councils
+en:
+  term: worthiness interview
+  match:
+  - worthiness interview
+sources: {}
+candidates:
+  pt:
+  - term: entrevista de dignidade
+    hint: pulpit-glossary:standard
+  es:
+  - term: entrevista de dignidad
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,85 @@
+{
+ "id": "concept.study-guide",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "guia de estudo",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2004,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 33,
+      "en": "Now the scriptures are the text, and, with excellent study guides, the gospel may better be taught in priesthood …",
+      "tr": "… são o texto e, com auxílio de excelentes guias de estudo, é possível ensinar melhor o evangelho nos quoruns …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hughes-out-of-small-things",
+      "para": 7,
+      "en": "… of the gospel and on the material in our study guides. Let’s prepare to create an interesting exchange of …",
+      "tr": "… evangelho e nos materiais que constam de nossos guias de estudo. Vamos nos preparar para criar uma troca interessante …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "guía de estudio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2004,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-christofferson-the-priesthood-quorum",
+      "para": 32,
+      "en": "… 1973, 36–37.\n[^2]: *A Royal Priesthood* (Melchizedek Priesthood personal study guide, 1975–76), 131.\n[^3]: “What Every Elder Should Know—and …",
+      "tr": "… Parte A, págs. 28-30.\n[^2]: Un sacerdocio real, Guía de estudio personal del Sacerdocio de Melquisedec, 1975-76, pág., 154.\n[^3]: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hughes-out-of-small-things",
+      "para": 7,
+      "en": "… of the gospel and on the material in our study guides. Let’s prepare to create an interesting exchange of …",
+      "tr": "… del Evangelio y en el material de nuestras guías de estudio. Preparémonos para fomentar un interesante intercambio de ideas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

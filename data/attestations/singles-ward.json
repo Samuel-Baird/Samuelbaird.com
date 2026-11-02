@@ -1,0 +1,85 @@
+{
+ "id": "concept.singles-ward",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "ala de solteiros",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-monson-charity-never-faileth",
+      "para": 36,
+      "en": "… manifest when a group of young women from a singles ward travels hundreds of miles to attend the funeral services …",
+      "tr": "… quando um grupo de mulheres jovens de uma ala de solteiros viaja centenas de quilômetros para assistir ao funeral da …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-shumway-participate-to-prepare-for-christs-return",
+      "para": 7,
+      "en": "… was asked to be the activities planner for a singles ward. This was my nightmare calling. Still, I accepted, …",
+      "tr": "… para ser o líder de atividades em uma ala de solteiros. Esse chamado era tudo o que eu temia. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "barrio de solteros",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-monson-charity-never-faileth",
+      "para": 36,
+      "en": "… manifest when a group of young women from a singles ward travels hundreds of miles to attend the funeral services …",
+      "tr": "… cuando un grupo de jóvenes mujeres de un barrio de solteros viaja cientos de kilómetros para asistir a los servicios …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-shumway-participate-to-prepare-for-christs-return",
+      "para": 7,
+      "en": "… was asked to be the activities planner for a singles ward. This was my nightmare calling. Still, I accepted, …",
+      "tr": "… que fuera el planificador de actividades en un barrio de solteros. Ese era el llamamiento al que más le …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "id": "concept.ministering",
+ "pt": {
+  "en_paragraphs": 350,
+  "en_talks": 201,
+  "en_verses": 30,
+  "uncovered_paragraphs": 256,
+  "renderings": [
+   {
+    "term": "ministração",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 124,
+    "talks": 82,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-faust-by-what-power-have-ye-done-this",
+      "para": 17,
+      "en": "… your priesthood. This priesthood holds “the key of the ministering of angels.”[^15] Priests may be permitted to perform the sacred …",
+      "tr": "… o seu sacerdócio. Esse sacerdócio possui “a chave da ministração dos anjos”.[^15] Os sacerdotes podem realizar a sagrada ordenança do …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-godoy-i-believe-in-angels",
+      "para": 28,
+      "en": "This is a gospel of love, a gospel of ministering. Of this I testify in the name of Jesus …",
+      "tr": "Este é um evangelho de amor, um evangelho de ministração. Presto testemunho disso em nome de Jesus Cristo. Amém."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-gilbert-come-home",
+      "para": 15,
+      "en": "… her back to church. I met Tammy on a ministering visit just after her temple endowment. She had been away …",
+      "tr": "… voltar à Igreja. Conheci Tammy em uma visita de ministração logo após sua investidura no templo. Ela esteve afastada da …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ministrar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 90,
+    "share_of_uncovered": 0.36,
+    "ratio": 110.8,
+    "source": "2002-10-pingree-charity-one-family-one-home-at-a-time",
+    "kind": "talk",
+    "sample": "r demonstrou o significado da caridade por meio de Suas próprias ações. Além de ministrar a multidões, Jesus demonstrou a intensidade de Seu amor e preocupação com a pró"
+   },
+   {
+    "term": "ministério",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 85,
+    "share_of_uncovered": 0.34,
+    "ratio": 41.2,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "Para um melhor entendimento desta parábola, lembremos que a obra do ministério no santuário havia sido designada à tribo de Levi. Era dever dos levitas ajudar"
+   },
+   {
+    "term": "anjos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 77,
+    "share_of_uncovered": 0.308,
+    "ratio": 35.2,
+    "source": "2000-04-packer-the-cloven-tongues-of-fire",
+    "kind": "talk",
+    "sample": "Batista restaurou “o Sacerdócio de Aarão, que possui as chaves do ministério de anjos e do evangelho do arrependimento e do batismo por imersão para remissão de peca"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 347,
+  "en_talks": 197,
+  "en_verses": 30,
+  "uncovered_paragraphs": 146,
+  "renderings": [
+   {
+    "term": "ministración",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 116,
+    "talks": 77,
+    "verses": 10,
+    "first_year": 2002,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 67:13",
+      "ref_en": "Doctrine and Covenants 67:13",
+      "en": "Ye are not able to abide the presence of God now, neither the ministering of angels; wherefore, continue in patience until ye are perfected.",
+      "tr": "No podéis aguantar ahora la presencia de Dios, ni la ministración de ángeles; por consiguiente, continuad con paciencia hasta perfeccionaros.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/67?lang=spa&id=p13"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-wickman-but-if-not",
+      "para": 11,
+      "en": "… still grieve for our little boy, although the tender ministering of the Spirit and the passage of the years have …",
+      "tr": "Francamente, todavía lloramos por nuestro hijito, aunque la benévola ministración del Espíritu y el paso de los años han mitigado …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-nelson-pure-truth-pure-doctrine-and-pure-revelation",
+      "para": 7,
+      "en": "… unforgettable. If you have not yet sought for the ministering of the Holy Ghost to help you hear what the …",
+      "tr": "… provechosa e inolvidable. Si aún no han buscado la ministración del Espíritu Santo para ayudarlos a escuchar lo que el …"
+     }
+    ],
+    "share": 0.508
+   },
+   {
+    "term": "ministrar",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 120,
+    "talks": 75,
+    "verses": 2,
+    "first_year": 2002,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 76:88",
+      "ref_en": "Doctrine and Covenants 76:88",
+      "en": "And also the telestial receive it of the administering of angels who are appointed to minister for them, or who are appointed to be ministering spirits for them; for they shall be heirs of salvation.",
+      "tr": "Y lo telestial también lo recibe por la ministración de ángeles que son designados para ministrar por ellos, o sea, que son nombrados para ser sus espíritus ministrantes; porque serán herederos de la salvación.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=spa&id=p88"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-pingree-charity-one-family-one-home-at-a-time",
+      "para": 3,
+      "en": "… us what charity means through His own actions. Besides ministering to multitudes, Jesus demonstrated the depth of His love and …",
+      "tr": "… Sus acciones lo que significa la caridad. Además de ministrar a las multitudes, Jesús demostró cuán profundo era Su amor …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-cook-great-love-for-our-fathers-children",
+      "para": 1,
+      "en": "… and women[^4] is the primary attribute and motive for ministering and the spiritual purposes[^5] we were charged to undertake by …",
+      "tr": "… semejantes[^4] son el atributo y la motivación principales para ministrar y los propósitos espirituales[^5] que nuestro amado profeta, el presidente …"
+     }
+    ],
+    "share": 0.492
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ángeles",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 73,
+    "share_of_uncovered": 0.5,
+    "ratio": 76.9,
+    "source": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+    "kind": "talk",
+    "sample": "adera Iglesia de Jesucristo fue restaurada sobre la tierra por el ministerio de ángeles muchos siglos después de la apostasía, y a quien se le dieron las llaves del sa"
+   },
+   {
+    "term": "ministerio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 74,
+    "share_of_uncovered": 0.507,
+    "ratio": 45.1,
+    "source": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+    "kind": "talk",
+    "sample": "quien la verdadera Iglesia de Jesucristo fue restaurada sobre la tierra por el ministerio de ángeles muchos siglos después de la apostasía, y a quien se le dieron las ll"
+   },
+   {
+    "term": "llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 38,
+    "share_of_uncovered": 0.26,
+    "ratio": 38.6,
+    "source": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+    "kind": "talk",
+    "sample": "io de ángeles muchos siglos después de la apostasía, y a quien se le dieron las llaves del sacerdocio y la autoridad necesaria para dirigir la Iglesia del Salvador en"
+   }
+  ]
+ }
+}

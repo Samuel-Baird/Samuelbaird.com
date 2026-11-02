@@ -1,0 +1,161 @@
+{
+ "id": "concept.general-authorities-and-general-officers",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "Autoridades Gerais e Oficiais Gerais",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 1993,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-hinckley-the-sustaining-of-church-officers",
+      "para": 0,
+      "en": "… conference of the Church, we present the General Authorities and general officers of the Church for your sustaining vote.",
+      "tr": "… na Conferência Geral da Igreja, apresentamos as Autoridades Gerais e oficiais gerais da Igreja para vosso voto de apoio."
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-monson-the-sustaining-of-church-officers",
+      "para": 0,
+      "en": "… I shall now present to you the General Authorities and general officers of the Church for your sustaining vote.",
+      "tr": "Irmãos, apresentamos agora as Autoridades Gerais e oficiais gerais da Igreja, para vosso voto de apoio"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "líderes gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 1111.4,
+    "source": "2005-10-johnson-the-blessings-of-general-conference",
+    "kind": "talk",
+    "sample": "mos duas vezes por ano para sermos instruídos pelas Autoridades Gerais e outros líderes gerais da Igreja. Os discursos dessas conferências estão disponíveis de várias formas,"
+   },
+   {
+    "term": "autoridades gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 128.2,
+    "source": "2005-10-johnson-the-blessings-of-general-conference",
+    "kind": "talk",
+    "sample": "oi organizada. Nós nos reunimos duas vezes por ano para sermos instruídos pelas Autoridades Gerais e outros líderes gerais da Igreja. Os discursos dessas conferências estão dispo"
+   },
+   {
+    "term": "conferência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 30.3,
+    "source": "2005-10-johnson-the-blessings-of-general-conference",
+    "kind": "talk",
+    "sample": "As conferências fazem parte da Igreja desde o começo desta dispensação. A primeira conferência"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "Autoridades Generales y Oficiales Generales",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2013,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-till-we-meet-again",
+      "para": 4,
+      "en": "… behalf and in behalf of all the General Authorities and general officers of the Church. We are strengthened by them.",
+      "tr": "… favor y a favor de todas las Autoridades Generales y oficiales generales de la Iglesia; somos fortalecidos gracias a ellas."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-monson-welcome-to-conference",
+      "para": 0,
+      "en": "… and sisters whom we have sustained as General Authorities and general officers of the Church. They have sought heaven’s help …",
+      "tr": "… hermanas a los que hemos sostenido como Autoridades Generales y oficiales generales de la Iglesia, y aprender de ellos. Han …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridades generales",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 210.6,
+    "source": "1997-04-hinckley-may-we-be-faithful-and-true",
+    "kind": "talk",
+    "sample": "en cuanto a este asunto se efectuara cuando el presidente Monson presente a las Autoridades Generales y a los oficiales generales de la Iglesia inmediatamente después de que yo conc"
+   },
+   {
+    "term": "oficiales",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 428.7,
+    "source": "1997-04-hinckley-may-we-be-faithful-and-true",
+    "kind": "talk",
+    "sample": "ctuara cuando el presidente Monson presente a las Autoridades Generales y a los oficiales generales de la Iglesia inmediatamente después de que yo concluya mis palabras."
+   },
+   {
+    "term": "conferencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 35.3,
+    "source": "1997-04-hinckley-may-we-be-faithful-and-true",
+    "kind": "talk",
+    "sample": "El próximo asunto: en esta conferencia se relevara a la presidencia general de la Sociedad de Socorro. Estas mujeres h"
+   }
+  ]
+ }
+}

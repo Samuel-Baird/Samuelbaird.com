@@ -1,0 +1,178 @@
+{
+ "id": "concept.exaltation",
+ "pt": {
+  "en_paragraphs": 335,
+  "en_talks": 251,
+  "en_verses": 12,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "exaltação",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 317,
+    "talks": 242,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 132:49",
+      "ref_en": "Doctrine and Covenants 132:49",
+      "en": "For I am the Lord thy God, and will be with thee even unto the end of the world, and through all eternity; for verily I seal upon you your exaltation, and prepare a throne for you in the kingdom of my Father, with Abraham your father.",
+      "tr": "Pois eu sou o Senhor teu Deus e estarei contigo até o fim do mundo e por toda a eternidade; pois em verdade selo sobre ti tua exaltação e preparo-te um trono no reino de meu Pai, com Abraão, teu pai.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/132?lang=por&id=p49"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-dvila-the-conversion-process",
+      "para": 8,
+      "en": "… serving full-time missions, and performing ordinances of salvation and exaltation for our kindred dead and for ourselves.",
+      "tr": "… de tempo integral, e realizando ordenanças de salvação e exaltação para familiares falecidos, e para si próprios."
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-eubank-turn-on-your-light",
+      "para": 35,
+      "en": "… in the triumph of the work and in the exaltation and glory which the Lord will give to His faithful …",
+      "tr": "… sem dúvida compartilharão o triunfo da obra e a exaltação e a glória que o Senhor dará a Seus filhos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "salvation-and-exaltation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.5,
+    "ratio": 666.8,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": ".2](https://www.churchofjesuschrist.org/study/manual/general-handbook/1-work-of-salvation-and-exaltation?lang=por&id=title_number3#title_number3), ChurchofJesusChrist.org.\n[^4]: [Alma"
+   },
+   {
+    "term": "manual geral",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.556,
+    "ratio": 247.0,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": "st.org/study/scriptures/dc-testament/dc/104?lang=por&id=p11-p18#p11).\n[^3]: Ver Manual Geral: Servir em A Igreja de Jesus Cristo dos Santos dos Últimos Dias, item [1.2.2](h"
+   },
+   {
+    "term": "work",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.5,
+    "ratio": 333.4,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": "tem [1.2.2](https://www.churchofjesuschrist.org/study/manual/general-handbook/1-work-of-salvation-and-exaltation?lang=por&id=title_number3#title_number3), ChurchofJ"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 340,
+  "en_talks": 246,
+  "en_verses": 12,
+  "uncovered_paragraphs": 16,
+  "renderings": [
+   {
+    "term": "exaltación",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 324,
+    "talks": 237,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 132:49",
+      "ref_en": "Doctrine and Covenants 132:49",
+      "en": "For I am the Lord thy God, and will be with thee even unto the end of the world, and through all eternity; for verily I seal upon you your exaltation, and prepare a throne for you in the kingdom of my Father, with Abraham your father.",
+      "tr": "Porque yo soy el Señor tu Dios, y estaré contigo hasta el fin del mundo y toda la eternidad; porque de cierto, sello sobre ti tu exaltación y te preparo un trono en el reino de mi Padre, con Abraham tu padre.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/132?lang=spa&id=p49"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-haight-a-time-for-preparation",
+      "para": 15,
+      "en": "… god and pass by the angels … to your exaltation”—possibilities which seem beyond ordinary imagination, yet the promises are …",
+      "tr": "… junto a los ángeles … hasta llegar a su exaltación”, tienen posibilidades que exceden la imaginación humana, y las …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-robbins-until-seventy-times-seven",
+      "para": 16,
+      "en": "… and women to lay hold on eternal life and exaltation *after* they have expended their own best efforts.”[^10] His grace …",
+      "tr": "… y las mujeres alcancen la vida eterna y la exaltación *después* de haber realizado su máximo esfuerzo”[^10]. Su gracia y …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "salvation-and-exaltation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.562,
+    "ratio": 750.2,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": ".2](https://www.churchofjesuschrist.org/study/manual/general-handbook/1-work-of-salvation-and-exaltation?lang=spa&id=title_number3#title_number3), LaIglesiadeJesucristo.org.\n[^4]: [Alm"
+   },
+   {
+    "term": "work",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.562,
+    "ratio": 375.1,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": "as, [1.2.2](https://www.churchofjesuschrist.org/study/manual/general-handbook/1-work-of-salvation-and-exaltation?lang=spa&id=title_number3#title_number3), LaIglesia"
+   },
+   {
+    "term": "manual general: servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.562,
+    "ratio": 321.5,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": ".org/study/scriptures/dc-testament/dc/104?lang=spa&id=p11-p18#p11).\n[^3]: Véase Manual General: Servir en La Iglesia de Jesucristo de los Santos de los Últimos Días, [1.2.2](https://"
+   }
+  ]
+ }
+}

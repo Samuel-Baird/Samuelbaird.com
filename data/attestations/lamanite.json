@@ -1,0 +1,98 @@
+{
+ "id": "concept.lamanite",
+ "pt": {
+  "en_paragraphs": 131,
+  "en_talks": 79,
+  "en_verses": 607,
+  "uncovered_paragraphs": 738,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "lamanitas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 242,
+    "share_of_uncovered": 0.968,
+    "ratio": 322.7,
+    "source": "4-ne/1/17",
+    "kind": "scripture",
+    "sample": "Não havia ladrões nem assassinos; nem havia lamanitas nem qualquer espécie de itas, mas eram um, os filhos de Cristo e herdeiros do r"
+   },
+   {
+    "term": "aconteceu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 81,
+    "share_of_uncovered": 0.324,
+    "ratio": 28.8,
+    "source": "morm/2/2",
+    "kind": "scripture",
+    "sample": "Portanto, aconteceu que aos dezesseis anos segui à frente de um exército nefita contra os lamanitas"
+   },
+   {
+    "term": "nefitas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 50,
+    "share_of_uncovered": 0.2,
+    "ratio": 34.8,
+    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
+    "kind": "talk",
+    "sample": "Encontramos evidências de que isso ocorreu com os nefitas e lamanitas no milagre que o Senhor realizou com suas criancinhas. Ele separou"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 134,
+  "en_talks": 82,
+  "en_verses": 607,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "lamanita",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 133,
+    "talks": 82,
+    "verses": 606,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mosíah 21:2",
+      "ref_en": "Mosiah 21:2",
+      "en": "And it came to pass that after many days the Lamanites began again to be stirred up in anger against the Nephites, and they began to come into the borders of the land round about.",
+      "tr": "Y aconteció que después de muchos días, los lamanitas empezaron otra vez a incitarse a la ira contra los nefitas, y empezaron a introducirse por las fronteras de la tierra circunvecina.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/21?lang=spa&id=p2"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 October General Conference",
+      "talk": "1992-10-jensen-remember-also-the-promises",
+      "para": 21,
+      "en": "… heart and disposition.* Samuel taught the Nephites that the Lamanites were “led to believe the holy scriptures, … which are …",
+      "tr": "… las personas. Samuel enseñó a los nefitas que los lamanitas habían sido “conducidos a creer en las Santas Escrituras … …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-bednar-the-windows-of-heaven",
+      "para": 9,
+      "en": "… go forth with all of their might against the Lamanites (see [Alma 58:12–13](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/58?lang=eng&id=p12-p13#p12)). Assurance, peace, faith, and hope initially might …",
+      "tr": "… vencer y avanzaron con todas sus fuerzas contra los lamanitas (véase [Alma 58:12–13](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/58?lang=spa&id=p12-p13#p12)). En un principio, la seguridad, paz, fe …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

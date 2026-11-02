@@ -1,0 +1,18 @@
+id: concept.mormonism
+category: The Church & Members
+en:
+  term: Mormonism
+  match:
+  - Mormonism
+sources:
+  Topics:
+  - mormonism
+candidates:
+  pt:
+  - term: mormonismo
+    hint: pulpit-glossary:verified
+  es:
+  - term: mormonismo
+    hint: pulpit-glossary:verified
+related: []
+note: Same 2018 style caveat as "Mormon"

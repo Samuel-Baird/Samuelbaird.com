@@ -1,0 +1,17 @@
+id: concept.teacher-council
+category: Sacrament & Meetings
+en:
+  term: teacher council
+  match:
+  - teacher council
+sources:
+  GH:
+  - 17-teaching-the-gospel#title_number41
+candidates:
+  pt:
+  - term: conselho dos professores
+    hint: pulpit-glossary:verified
+  es:
+  - term: consejo de enseñanza
+    hint: pulpit-glossary:verified
+related: []

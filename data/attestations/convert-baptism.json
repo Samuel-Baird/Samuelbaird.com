@@ -1,0 +1,141 @@
+{
+ "id": "concept.convert-baptism",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "batismo de conversos",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 1,
+      "en": "… measure our progress by visible things we can count: convert baptisms, missionaries, wards and stakes, chapels. These are symbolic …",
+      "tr": "… nosso progresso pelas coisas visíveis que podemos contar: batismo de conversos, missionários, alas e estacas, capelas. Isso representa, talvez, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-eyring-we-are-one",
+      "para": 33,
+      "en": "Recently I asked how he explained the surge of convert baptisms in his ward and the increase in the number …",
+      "tr": "… perguntei como ele explicava o grande número de batismos de conversos em sua ala e o aumento do número de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-right-before-our-eyes",
+      "para": 28,
+      "en": "… the Church’s Missionary Department. In 2022, the number of convert baptisms was 212,172. In 2023, it increased to 251,763. In …",
+      "tr": "… Missionário da Igreja. Em 2022, o número de batismos de conversos foi 212.172. Em 2023, esse número aumentou para 251.763. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "conversos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 285.8,
+    "source": "1993-04-perry-back-to-gospel-basics",
+    "kind": "talk",
+    "sample": "po mais preparados para servir, o que, naturalmente, resulta em maior número de conversos batizados."
+   },
+   {
+    "term": "missionárias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 285.8,
+    "source": "1993-04-perry-back-to-gospel-basics",
+    "kind": "talk",
+    "sample": "te começou a aumentar. Agora, as cinco missões do Peru suprem suas necessidades missionárias com membros peruanos locais. Os missionários de tempo integral vão para o campo"
+   },
+   {
+    "term": "missionários",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 36.6,
+    "source": "1993-04-perry-back-to-gospel-basics",
+    "kind": "talk",
+    "sample": "O número de missionários de tempo integral imediatamente começou a aumentar. Agora, as cinco missões do"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "bautismo de converso",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-stucki-the-faith-of-a-sparrow-faith-and-trust-in-the-lord-jesus-christ",
+      "para": 17,
+      "en": "… Lord for help, we could double the number” of convert baptisms.",
+      "tr": "… que nos ayude, podemos duplicar ese número” de bautismos de conversos."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-eyring-we-are-one",
+      "para": 33,
+      "en": "Recently I asked how he explained the surge of convert baptisms in his ward and the increase in the number …",
+      "tr": "… le pregunté cómo explicaba el repentino aumento de bautismos de conversos en su barrio y el aumento en la cantidad …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-right-before-our-eyes",
+      "para": 28,
+      "en": "… the Church’s Missionary Department. In 2022, the number of convert baptisms was 212,172. In 2023, it increased to 251,763. In …",
+      "tr": "… de la Iglesia. En 2022, el número de bautismos de conversos fue de 212 172. En 2023, aumentó a 251 …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

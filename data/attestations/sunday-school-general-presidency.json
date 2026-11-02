@@ -1,0 +1,98 @@
+{
+ "id": "concept.sunday-school-general-presidency",
+ "pt": {
+  "en_paragraphs": 19,
+  "en_talks": 12,
+  "en_verses": 0,
+  "uncovered_paragraphs": 19,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "presidência geral",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.842,
+    "ratio": 374.4,
+    "source": "1998-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "enta; os Élderes Jack H Goaslind, Robert K. Dellenbach e E. Melvin Hammond como presidência geral dos Rapazes; o Élder Glenn L. Pace como primeiro conselheiro e o Élder Neil L."
+   },
+   {
+    "term": "escola dominical",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.842,
+    "ratio": 336.9,
+    "source": "1998-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "iro e o Élder Neil L. Andersen como segundo conselheiro na presidência geral da Escola Dominical. Aqueles que desejarem nos acompanhar no agradecimento a todos eles por seus se"
+   },
+   {
+    "term": "conselheiro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.474,
+    "ratio": 145.8,
+    "source": "1991-04-hinckley-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "unir-se a nós num voto de apreciação ao irmão Derek A. Cuthbert, como primeiro conselheiro e H. Verlan Andersen, como segundo conselheiro manifestem-se."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 19,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Presidencia General de la Escuela Dominical",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 18,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 October General Conference",
+      "talk": "1997-10-faust-the-sustaining-of-church-officers",
+      "para": 8,
+      "en": "… Glenn L. Pace as second counselor in the Sunday School general presidency, and Elder F. David Stanley as first …",
+      "tr": "… L. Pace, como segundo consejero de la presidencia general de la Escuela Dominical; y en la presidencia general de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-mcconkie-gospel-learning-and-teaching",
+      "para": 0,
+      "en": "As a member of the Sunday School general presidency, I feel I should begin my remarks …",
+      "tr": "Como miembro de la Presidencia General de la Escuela Dominical, considero que debo comenzar mis palabras …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-reid-you-are-good-enough-to-teach",
+      "para": 0,
+      "en": "… I was sustained as a member of the Sunday School General Presidency, I felt inadequate, overwhelmed, and completely out …",
+      "tr": "… de ser sostenido como miembro de la Presidencia General de la Escuela Dominical, me sentí inadecuado, abrumado y completamente …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

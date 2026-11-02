@@ -1,0 +1,179 @@
+{
+ "id": "concept.stake-presidency",
+ "pt": {
+  "en_paragraphs": 59,
+  "en_talks": 50,
+  "en_verses": 0,
+  "uncovered_paragraphs": 32,
+  "renderings": [
+   {
+    "term": "presidência da estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 27,
+    "talks": 22,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 9,
+      "en": "… stake superintendent. I served as a counselor in the stake presidency before I was named stake president. And, as all …",
+      "tr": "… de me tornar seu superintendente. Como conselheiro na presidência da estaca, antes de ser chamado como presidente. E, como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-alonso-love-one-another-as-he-has-loved-us",
+      "para": 24,
+      "en": "Later that day one of the counselors in our stake presidency arranged for us to meet with the young man—the …",
+      "tr": "Naquele dia, um dos conselheiros da presidência da estaca marcou conosco uma reunião com o jovem — o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-gilbert-come-home",
+      "para": 21,
+      "en": "… His wife, Kailani, had catered a dinner for the stake presidency, and we invited them to join us. John …",
+      "tr": "… esposa, Kailani, havia preparado o jantar para a presidência da estaca, e nós os convidamos a se juntarem a …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.906,
+    "ratio": 84.3,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "Da mesma forma, a menos que exista lealdade para com o bispo e presidente de estaca em âmbito local, haverá ausência de harmonia, haverá suspeita e hesitação em se"
+   },
+   {
+    "term": "presidência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.688,
+    "ratio": 46.6,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "à fé. É preciso lembrar sempre que nenhum Presidente da Igreja, conselheiro na Presidência, autoridade geral, membro de uma presidência de estaca ou bispado ou de quorum"
+   },
+   {
+    "term": "bispados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.219,
+    "ratio": 218.8,
+    "source": "2002-04-hinckley-personal-worthiness-to-exercise-the-priesthood",
+    "kind": "talk",
+    "sample": "e proteger as possíveis vítimas futuras”. (*Volume 1: Presidências de Estaca e Bispados* [1998], p. 159)"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 53,
+  "en_talks": 45,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "presidencia de estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 41,
+    "talks": 34,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 6,
+      "en": "… serves as president. But whether it be a bishopric, stake presidency, Aaronic or Melchizedek priesthood quorum presidency, mission presidency, …",
+      "tr": "… Pero, ya sea en un obispado, en una presidencia de estaca, de quórum del Sacerdocio Aarónico o el de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-uchtdorf-the-why-of-priesthood-service",
+      "para": 26,
+      "en": "… realized that there were a lot of things a stake presidency could do—so many, in fact, that if we didn’t …",
+      "tr": "… cuenta de que había muchas cosas que una presidencia de estaca podía hacer; tantas, de hecho, que si no establecíamos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-farnes-divine-appointments",
+      "para": 1,
+      "en": "… years ago. I had just been called into a stake presidency and hadn’t yet been released as bishop. We had …",
+      "tr": "… veinte años. Me acababan de llamar a una presidencia de estaca y aún no había sido relevado como obispo. Teníamos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 1.0,
+    "ratio": 97.6,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "De igual forma, si no existe lealtad hacia el obispo y el presidente de la estaca a un nivel local, tampoco existirá la armonía, habrá recelo y vacilación para s"
+   },
+   {
+    "term": "presidencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 1.0,
+    "ratio": 58.8,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "Recordemos siempre que ningún Presidente de la Iglesia, ningún Consejero de la Presidencia, ninguna Autoridad General, ningún miembro de la presidencia de la estaca ni de"
+   },
+   {
+    "term": "consejero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 133.4,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "destruye la fe. Recordemos siempre que ningún Presidente de la Iglesia, ningún Consejero de la Presidencia, ninguna Autoridad General, ningún miembro de la presidencia"
+   }
+  ]
+ }
+}

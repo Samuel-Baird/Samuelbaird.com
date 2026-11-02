@@ -1,0 +1,18 @@
+id: concept.salvation-of-children
+category: Plan of Salvation
+en:
+  term: Salvation of Children
+  match:
+  - Salvation of Children
+sources:
+  GS:
+  - salvation-of-children
+candidates:
+  pt:
+  - term: salvação de crianças
+    hint: pulpit-glossary:verified
+  es:
+  - term: Salvación de los niños pequeños
+    hint: pulpit-glossary:verified
+related: []
+note: Specific doctrine that children who die before the age of accountability are saved automatically

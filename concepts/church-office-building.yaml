@@ -1,0 +1,15 @@
+id: concept.church-office-building
+category: Church Units & Facilities
+en:
+  term: Church Office Building
+  match:
+  - Church Office Building
+sources: {}
+candidates:
+  pt:
+  - term: Edifício dos Escritórios da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: Oficinas de la Iglesia
+    hint: pulpit-glossary:verified
+related: []

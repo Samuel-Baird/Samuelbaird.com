@@ -1,0 +1,167 @@
+{
+ "id": "concept.returned-missionary",
+ "pt": {
+  "en_paragraphs": 61,
+  "en_talks": 48,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "ex-missionário",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 51,
+    "talks": 39,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-edgley-keep-the-faith",
+      "para": 0,
+      "en": "As a young returned missionary, I and my returned missionary friends routinely bade …",
+      "tr": "Quando eu era um jovem ex-missionário, meus ex-companheiros de missão e eu despediamo-nos costumeiramente com …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-yamashita-missionaries-are-a-treasure-of-the-church",
+      "para": 5,
+      "en": "… love, respect, and feeling of thankfulness for all the returned missionaries who have served around the world. I am sure …",
+      "tr": "… amor sincero, respeito e minha gratidão por todos os ex-missionários que serviram por todo o mundo. Tenho certeza de que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-oaks-divine-helps-for-mortality",
+      "para": 21,
+      "en": "We all know examples of the unprepared: returned missionaries who have interrupted their spiritual growth by periods of …",
+      "tr": "Todos conhecemos exemplos de alguém despreparado: ex-missionários que interromperam seu crescimento espiritual por causa de períodos de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "campo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 123.1,
+    "source": "2002-10-oaks-ill-go-where-you-want-me-to-go",
+    "kind": "talk",
+    "sample": "Há quase uma década, li uma carta de um missionário que retornou do campo, descrevendo esse processo em sua vida. Ele escreveu a carta para agradecer aos"
+   },
+   {
+    "term": "missionário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.5,
+    "ratio": 32.8,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "erdócio Aarônico que serviram de exemplo para os rapazes. Um exemplo ideal é um missionário que retornou há pouco da missão, cheio de testemunho, a respeito de quem o port"
+   },
+   {
+    "term": "serviram",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.3,
+    "ratio": 171.5,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "Um dos segredos de seu sucesso foram os consultores do Sacerdócio Aarônico que serviram de exemplo para os rapazes. Um exemplo ideal é um missionário que retornou há p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 62,
+  "en_talks": 48,
+  "en_verses": 0,
+  "uncovered_paragraphs": 24,
+  "renderings": [
+   {
+    "term": "ex misionero",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 38,
+    "talks": 27,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-brough-a-holy-calling",
+      "para": 25,
+      "en": "… our children have gladly responded. Tens of thousands of returned missionaries can also testify of this process and the divine …",
+      "tr": "… de nuestros hijos contestaron con mucho gusto. Miles de ex misioneros también pueden testificar de este proceso y de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-scott-now-is-the-time-to-serve-a-mission",
+      "para": 15,
+      "en": "… would only be married in the temple to a returned missionary. Duly motivated, I served a mission in Uruguay.",
+      "tr": "… que sólo se casaría en el templo con un ex misionero. Muy motivado, presté servicio misional en Uruguay."
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-wixom-returning-to-faith",
+      "para": 3,
+      "en": "… a university, was sealed in the temple to a returned missionary, and was blessed with beautiful children.",
+      "tr": "… (preparatoria) asistió a la universidad, se selló a un ex misionero en el templo y fue bendecida con hermosos hijos."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "exmisionero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.292,
+    "ratio": 1167.0,
+    "source": "2015-10-lawrence-what-lack-i-yet",
+    "kind": "talk",
+    "sample": "Un exmisionero se hallaba estresado debido a que tenía una vida muy ocupada. Trataba de encont"
+   },
+   {
+    "term": "misioneros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.292,
+    "ratio": 14.8,
+    "source": "2001-10-hinckley-reaching-down-to-lift-another",
+    "kind": "talk",
+    "sample": "a ayuda del Fondo Perpetuo para la Educación, pagaré el préstamo para que otros misioneros puedan disfrutar de estas bendiciones“."
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.scattering-of-israel
+category: Israel & Covenant People
+en:
+  term: scattering of Israel
+  match:
+  - scattering of Israel
+sources:
+  GS:
+  - scattering-of-israel
+candidates:
+  pt:
+  - term: dispersão de Israel
+    hint: pulpit-glossary:standard
+  es:
+  - term: dispersión de Israel
+    hint: pulpit-glossary:verified
+related: []

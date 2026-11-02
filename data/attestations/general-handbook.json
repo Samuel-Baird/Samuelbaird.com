@@ -1,0 +1,179 @@
+{
+ "id": "concept.general-handbook",
+ "pt": {
+  "en_paragraphs": 82,
+  "en_talks": 66,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "Manual Geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 76,
+    "talks": 62,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-andersen-the-personal-journey-of-a-child-of-god",
+      "para": 47,
+      "en": "… demonstrations concerning abortion” (“[Abortion](https://newsroom.churchofjesuschrist.org/official-statement/abortion),” Newsroom, newsroom.ChurchofJesusChrist.org; see also [General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "… aborto\" (\"[Aborto](https://newsroom.churchofjesuschrist.org/official-statement/abortion)\", Sala de Imprensa, noticias-br.aigrejadejesuscristo.org; ver também [Manual Geral: Servir em A Igreja de Jesus Cristo dos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-dennis-put-ye-on-the-lord-jesus-christ",
+      "para": 23,
+      "en": "… Sisters](https://www.churchofjesuschrist.org/study/general-conference/2015/10/a-plea-to-my-sisters?lang=eng),” Ensign or Liahona, Nov. 2015, 95–97.\n[^44]: See General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "… A Liahona, novembro de 2015, p. 95.\n[^44]: Ver Manual Geral: Servir em A Igreja de Jesus Cristo dos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 25,
+      "en": "… covenant they made at baptism (see [Mosiah 18:8–11](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=eng&id=p8-p11#p8))” (General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "… convênio que fizeram no batismo (ver [Mosias 18:8–11](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=por&id=p8-p11#p8))\" (Manual Geral: Servir em A Igreja de Jesus Cristo dos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "manual/general-handbook",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 333.4,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "of Jesus Christ of Latter-day Saints](https://www.churchofjesuschrist.org/study/manual/general-handbook/2-supporting-individuals-and-families?lang=por), 2.2, ChurchofJesusChrist.org."
+   },
+   {
+    "term": "aaronic-priesthood",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "ro da Igreja]\" (in \"[Be with Them](https://www.ChurchofJesusChrist.org/callings/aaronic-priesthood-quorums/my-calling/leader-instruction/be-with-them)\", ChurchofJesusChrist.org/c"
+   },
+   {
+    "term": "speeches.byu.edu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 285.8,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "lang=por&id=p17#p17).\n[^9]: Henry B. Eyring, \"[Teaching Is a Moral Act](https://speeches.byu.edu/talks/henry-b-eyring/teaching-moral-act)\" (discurso proferido na Universidade B"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 79,
+  "en_talks": 64,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Manual General",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 76,
+    "talks": 62,
+    "verses": 0,
+    "first_year": 2020,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-holmes-deep-in-our-heart",
+      "para": 33,
+      "en": "… of significance if given a chance!”\n[^30]: See [General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "… si se les da la oportunidad!\".\n[^30]: Véase [Manual General: Servir en La Iglesia de Jesucristo de los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-dennis-put-ye-on-the-lord-jesus-christ",
+      "para": 21,
+      "en": "The General Handbook states that it is not required to have a …",
+      "tr": "El Manual General establece que no se requiere tener un llamamiento misional …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-soares-a-higher-and-holier-fast",
+      "para": 17,
+      "en": "See also General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "Véase también Manual General: Servir en La Iglesia de Jesucristo de los …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "manual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 108.1,
+    "source": "1998-10-faust-opening-the-windows-of-heaven",
+    "kind": "talk",
+    "sample": "[^1]: D. y C. 119:4.\n[^2]: Manual de Instrucciones de la Iglesia, 1998, Libro 1.\n[^3]: Carta del presidente D. Br"
+   },
+   {
+    "term": "general-handbook",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 381.0,
+    "source": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+    "kind": "talk",
+    "sample": "órums del Sacerdocio Aarónico](https://www.churchofjesuschrist.org/study/manual/general-handbook/10-aaronic-priesthood?lang=spa&id=title4#title4)\", Biblioteca del Evangelio.\n[^"
+   },
+   {
+    "term": "for the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 333.4,
+    "source": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+    "kind": "talk",
+    "sample": "shall, Children's Letters to God, 1991.\n[^2]: Véase Russell M. Nelson, \"[Thanks for the Covenant](https://speeches.byu.edu/talks/russell-m-nelson/thanks-covenant)\", de"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.line-of-authority
+category: Priesthood Authority & Ordinances
+en:
+  term: line of authority
+  match:
+  - line of authority
+sources: {}
+candidates:
+  pt:
+  - term: linha de autoridade
+    hint: pulpit-glossary:standard
+  es:
+  - term: línea de autoridad
+    hint: pulpit-glossary:verified
+related: []

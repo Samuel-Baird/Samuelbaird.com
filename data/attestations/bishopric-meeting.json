@@ -1,0 +1,76 @@
+{
+ "id": "concept.bishopric-meeting",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "reunião do bispado",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2023,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-uchtdorf-jesus-christ-is-the-strength-of-parents",
+      "para": 0,
+      "en": "… a father was about to leave for an evening bishopric meeting. His four-year-old daughter stepped in front of him, …",
+      "tr": "… estava prestes a sair à noite para uma reunião do bispado. Sua filhinha de 4 anos parou à sua …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "reunión de obispado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 23,
+      "en": "… welfare challenge, it could be addressed in an expanded bishopric meeting. Other less-sensitive matters can be addressed in the …",
+      "tr": "… inusual tocante a bienestar, podría tratarse en una reunión de obispado ampliada. Otros asuntos menos confidenciales pueden tratarse en el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-uchtdorf-jesus-christ-is-the-strength-of-parents",
+      "para": 0,
+      "en": "… a father was about to leave for an evening bishopric meeting. His four-year-old daughter stepped in front of him, …",
+      "tr": "… un padre que estaba por salir a una reunión de obispado en la noche. Su hijita de cuatro años se …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

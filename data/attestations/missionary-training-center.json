@@ -1,0 +1,103 @@
+{
+ "id": "concept.missionary-training-center",
+ "pt": {
+  "en_paragraphs": 37,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Centro de Treinamento Missionário",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 37,
+    "talks": 34,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hinckley-let-us-live-the-gospel-more-fully",
+      "para": 5,
+      "en": "… last night of the young men in the Missionary Training Center, who came and sang to us with great …",
+      "tr": "… lindo coro da noite passada, dos rapazes do Centro de Treinamento Missionário, que veio aqui e cantou para nós …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-monson-come-all-ye-sons-of-god",
+      "para": 1,
+      "en": "… thousands more who are waiting to enter the missionary training center or whose applications are currently being processed. We love …",
+      "tr": "… e milhares de outros aguardam para entrar no centro de treinamento missionário e ainda há outros cujos papéis estão agora …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
+      "para": 29,
+      "en": "… the Scotland/Ireland Mission home in Edinburgh, the Provo Missionary Training Center, and a museum in Stirling, Scotland. You may …",
+      "tr": "… na Casa da Missão Escócia/Irlanda em Edimburgo, no Centro de Treinamento Missionário de Provo e em um museu em Stirling, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 37,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Centro de Capacitación Misional",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 36,
+    "talks": 33,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-monson-they-will-come",
+      "para": 4,
+      "en": "… the Church Administration Building. Many also toured the Missionary Training Center at Provo, Utah. They visited the classes of learning; …",
+      "tr": "… Iglesia. Muchos también hicieron una gira por el Centro de Capacitación Misional en Provo, Utah Visitaron los salones de aprendizaje …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-monson-welcome-to-conference",
+      "para": 8,
+      "en": "… calls but who have not yet entered a missionary training center and over 6,000 more in the interview process with …",
+      "tr": "… pero que aún no han ingresado a un centro de capacitación misional, y más de 6.000 en el proceso …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
+      "para": 29,
+      "en": "… the Scotland/Ireland Mission home in Edinburgh, the Provo Missionary Training Center, and a museum in Stirling, Scotland. You may …",
+      "tr": "… de la Misión Escocia/Irlanda en Edimburgo, en el Centro de Capacitación Misional de Provo y en un museo en Stirling, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

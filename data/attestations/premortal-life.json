@@ -1,0 +1,180 @@
+{
+ "id": "concept.premortal-life",
+ "pt": {
+  "en_paragraphs": 38,
+  "en_talks": 35,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "vida pré-mortal",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 34,
+    "talks": 31,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-brewerton-light",
+      "para": 25,
+      "en": "… his own upright, sinless, and perfect course, in [premortal life], in mortality, and in resurrected glory, he sets …",
+      "tr": "… sua própria trajetória reta, perfeita e sem pecado, (na vida pré-mortal), na mortalidade e em glória ressurreta, ele é …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-costa-that-they-do-always-remember-him",
+      "para": 34,
+      "en": "- To remember His premortal life, when this beautiful planet was made by Him.[^14]",
+      "tr": "- Lembrar Sua vida pré-mortal quando este lindo planeta foi criado por Ele.[^14]"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-wada-the-words-of-christ-and-the-holy-ghost-will-lead-us-to-the-truth",
+      "para": 1,
+      "en": "… the earth, we would leave God’s presence, forget our premortal life, receive bodies of flesh and bones, gain our …",
+      "tr": "… a Terra, deixaríamos a presença de Deus, esqueceríamos nossa vida pré-mortal, receberíamos um corpo de carne e ossos, ganharíamos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pré-mortal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 428.7,
+    "source": "1998-04-ballard-marvelous-are-the-revelations-of-the-lord",
+    "kind": "talk",
+    "sample": "Na seqüência, Joseph e Sidney viram Lúcifer no mundo pré-mortal, ao ser expulso da presença de Deus por causa de sua rebelião. Viram então os f"
+   },
+   {
+    "term": "existência pré",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+    "kind": "talk",
+    "sample": "O propósito de toda preparação no sacerdócio, tanto na existência pré-mortal quanto nesta vida, é o de fazer com que nós e as pessoas a quem servimos"
+   },
+   {
+    "term": "eternos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 181.9,
+    "source": "1998-04-ballard-marvelous-are-the-revelations-of-the-lord",
+    "kind": "talk",
+    "sample": "elião. Viram então os filhos de perdição e o que acontecerá com eles nos mundos eternos. Em seguida, tiveram a visão dos reinos celestial, terrestre e telestial, e apr"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 40,
+  "en_talks": 37,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "vida preterrenal",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 26,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-miller-the-kingdoms-perfecting-pathway",
+      "para": 5,
+      "en": "… suggest that we each agreed to that in our premortal life. The key decisions pertaining to education, career, marriage, …",
+      "tr": "… que todos estuvimos de acuerdo con ello en la vida preterrenal. Las decisiones clave que tienen que ver con …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-schwitzer-let-the-clarion-trumpet-sound",
+      "para": 18,
+      "en": "… can recognize because they have heard it from their premortal life.",
+      "tr": "… muchos pueden reconocer porque la han escuchado en su vida preterrenal."
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-wada-the-words-of-christ-and-the-holy-ghost-will-lead-us-to-the-truth",
+      "para": 1,
+      "en": "… the earth, we would leave God’s presence, forget our premortal life, receive bodies of flesh and bones, gain our …",
+      "tr": "… la tierra dejaríamos la presencia de Dios, olvidaríamos nuestra vida preterrenal, recibiríamos cuerpos de carne y hueso, adquiriríamos nuestra …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "premortal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.929,
+    "ratio": 530.7,
+    "source": "2010-04-christofferson-the-blessing-of-scripture",
+    "kind": "talk",
+    "sample": "a relación con Él y con el Padre. Nos recuerdan lo que sabíamos en nuestra vida premortal, y ensanchan nuestra memoria en otro sentido al enseñarnos acerca de épocas, pe"
+   },
+   {
+    "term": "estuvimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.286,
+    "ratio": 285.8,
+    "source": "2010-04-christofferson-the-blessing-of-scripture",
+    "kind": "talk",
+    "sample": "r partirse el mar Rojo y cruzar con Moisés al otro lado entre muros de agua. No estuvimos allí para escuchar el Sermón del Monte, para ver a Lázaro al ser levantado de e"
+   },
+   {
+    "term": "plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.286,
+    "ratio": 10.4,
+    "source": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+    "kind": "talk",
+    "sample": "gunas de las primeras lecciones de la vida premortal seguramente comprendían el plan de salvación, con Jesucristo y Su expiación como parte central. No sólo se nos"
+   }
+  ]
+ }
+}

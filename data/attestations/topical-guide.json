@@ -1,0 +1,142 @@
+{
+ "id": "concept.topical-guide",
+ "pt": {
+  "en_paragraphs": 24,
+  "en_talks": 18,
+  "en_verses": 0,
+  "uncovered_paragraphs": 24,
+  "renderings": [
+   {
+    "term": "Guia Temático",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "guia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.792,
+    "ratio": 90.5,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "Incluiu-se no volume um guia por assunto, com concordância e índice remissivo, dicionário bíblico e mapas. T"
+   },
+   {
+    "term": "estudo das escrituras",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.625,
+    "ratio": 147.1,
+    "source": "2004-04-beck-my-soul-delighteth-in-the-scriptures",
+    "kind": "talk",
+    "sample": "ós mesmos. (Ver 1 Néfi 19:23.) Algumas pessoas começam escolhendo no *Guia para Estudo das Escrituras*, um assunto que precisam aprender. Ou lêem um livro de escritura desde o iníci"
+   },
+   {
+    "term": "guide",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.375,
+    "ratio": 750.2,
+    "source": "2009-04-stevenson-sacred-homes-sacred-temples",
+    "kind": "talk",
+    "sample": "[^1]: Néfi 8:24.\n[^2]: Ver *Topical Guide*, \"Templo, A Casa do Senhor\", p. 519; *Guia para Estudo das Escrituras* \"Templo"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 22,
+  "en_talks": 18,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "Guía Temática",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2014,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-packer-the-reason-for-our-hope",
+      "para": 2,
+      "en": "… handing the scriptures to the chaplain, I opened the Topical Guide and showed him one subject: 18 pages, very fine …",
+      "tr": "Antes de entregarle las Escrituras, abrí la Guía temática [en inglés] y le mostré uno de los temas: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-nelson-drawing-the-power-of-jesus-christ-into-our-lives",
+      "para": 4,
+      "en": "… the main heading and the 57 subtitles in the Topical Guide.[^11] When I finished that exciting exercise, my wife …",
+      "tr": "… el encabezamiento principal y los 57 subtítulos de la guía temática[^11]. Cuando terminé ese emocionante ejercicio, mi esposa me …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-schmutz-trusting-the-doctrine-of-christ",
+      "para": 26,
+      "en": "… let the scriptural citations about Jesus Christ in the Topical Guide become [your] personal core curriculum.”\n[^17]: See [Matthew 6:6–13](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=eng&id=p6-p13#p6). …",
+      "tr": "… Escrituras acerca de Jesucristo que se encuentran en la guía temática [*Topical Guide*, en inglés] se convi[ertan] en su principal …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estudio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.8,
+    "ratio": 69.6,
+    "source": "2004-04-beck-my-soul-delighteth-in-the-scriptures",
+    "kind": "talk",
+    "sample": "se 1 Nefi 19:23). Hay quienes comienzan por escoger un tema en la *Guía para el Estudio de las Escrituras* del cual deseen saber más. O empiezan al comienzo de un libr"
+   },
+   {
+    "term": "guía",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.867,
+    "ratio": 36.1,
+    "source": "2004-04-beck-my-soul-delighteth-in-the-scriptures",
+    "kind": "talk",
+    "sample": "s mismas (véase 1 Nefi 19:23). Hay quienes comienzan por escoger un tema en la *Guía para el Estudio de las Escrituras* del cual deseen saber más. O empiezan al com"
+   },
+   {
+    "term": "escrituras",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.867,
+    "ratio": 21.8,
+    "source": "2004-04-beck-my-soul-delighteth-in-the-scriptures",
+    "kind": "talk",
+    "sample": "Mis primeras tentativas de hacer panecillos y de leer las Escrituras no siempre fueron satisfactorias, pero con el tiempo se volvieron tareas más fá"
+   }
+  ]
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "id": "concept.baptismal-interview",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "entrevista batismal",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-alliaud-found-through-the-power-of-the-book-of-mormon",
+      "para": 14,
+      "en": "… side. And without even knowing it, she did my baptismal interview herself. Indeed, I believe that her interview was even …",
+      "tr": "… do meu lado. E, mesmo sem saber, fez uma entrevista batismal comigo. Na verdade, acho que a entrevista dela foi …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-andersen-the-personal-journey-of-a-child-of-god",
+      "para": 15,
+      "en": "… story of a dear 84-year-old woman who, during her baptismal interview, “acknowledged an abortion [many years before].” With heartfelt …",
+      "tr": "… uma querida senhora de 84 anos que, durante a entrevista batismal, “admitiu ter cometido um aborto [muitos anos antes]”. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "entrevista bautismal",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-alliaud-found-through-the-power-of-the-book-of-mormon",
+      "para": 14,
+      "en": "… side. And without even knowing it, she did my baptismal interview herself. Indeed, I believe that her interview was even …",
+      "tr": "… mi lado y, prácticamente sin saberlo, me hizo la entrevista bautismal ella misma. De hecho, creo que fue más profunda …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-andersen-the-personal-journey-of-a-child-of-god",
+      "para": 15,
+      "en": "… story of a dear 84-year-old woman who, during her baptismal interview, “acknowledged an abortion [many years before].” With heartfelt …",
+      "tr": "… mujer de ochenta y cuatro años quien, durante su entrevista bautismal, “reconoció haberse practicado un aborto [hacía muchos años]”. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

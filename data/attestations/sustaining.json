@@ -1,0 +1,131 @@
+{
+ "id": "concept.sustaining",
+ "pt": {
+  "en_paragraphs": 223,
+  "en_talks": 171,
+  "en_verses": 1,
+  "uncovered_paragraphs": 83,
+  "renderings": [
+   {
+    "term": "apoio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 141,
+    "talks": 112,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-hinckley-the-sustaining-of-church-officers",
+      "para": 0,
+      "en": "… Authorities and general officers of the Church for your sustaining vote.",
+      "tr": "… e oficiais gerais da Igreja para vosso voto de apoio."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-eyring-the-sustaining-of-church-officers",
+      "para": 22,
+      "en": "Thank you, brothers and sisters, for your sustaining vote and for your continued faith and prayers in our …",
+      "tr": "Obrigado, irmãos e irmãs, por seu voto de apoio e por sua contínua fé, devoção e orações por nós."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 23,
+      "en": "We again thank you for your sustaining vote on behalf of the leadership of the Church.",
+      "tr": "Agradecemos novamente por seu voto de apoio em favor da liderança da Igreja."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "apoiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.253,
+    "ratio": 126.5,
+    "source": "1994-10-holland-miracles-of-the-restoration",
+    "kind": "talk",
+    "sample": "hamado profético do Presidente Howard W. Hunter, a quem tivemos o privilégio de apoiar esta manhã em assembléia solene. Devido ao chamado inesperado que me foi feito"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 209,
+  "en_talks": 162,
+  "en_verses": 1,
+  "uncovered_paragraphs": 113,
+  "renderings": [
+   {
+    "term": "sostenimiento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 97,
+    "talks": 74,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-monson-the-sustaining-of-church-officers",
+      "para": 0,
+      "en": "… and general auxiliary presidencies of the Church for your sustaining vote.",
+      "tr": "… organizaciones auxiliares de la Iglesia para su voto de sostenimiento."
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-monson-welcome-to-conference",
+      "para": 2,
+      "en": "We thank you for your sustaining vote. Elder Andersen’s name will be included when the officers …",
+      "tr": "Les agradecemos su voto de sostenimiento. El nombre del élder Andersen se incluirá cuando se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 23,
+      "en": "We again thank you for your sustaining vote on behalf of the leadership of the Church.",
+      "tr": "De nuevo les agradecemos su voto de sostenimiento a favor de los líderes de la Iglesia."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sostener",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.31,
+    "ratio": 137.7,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "etos a los reyes, presidentes, gobernantes y magistrados; en obedecer, honrar y sostener la ley.” (12° Articulo de Fe.)"
+   }
+  ]
+ }
+}

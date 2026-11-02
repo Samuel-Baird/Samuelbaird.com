@@ -1,0 +1,154 @@
+{
+ "id": "concept.teacher",
+ "pt": {
+  "en_paragraphs": 877,
+  "en_talks": 456,
+  "en_verses": 85,
+  "uncovered_paragraphs": 581,
+  "renderings": [
+   {
+    "term": "mestre",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 304,
+    "talks": 181,
+    "verses": 77,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Efésios 4:11",
+      "ref_en": "Ephesians 4:11",
+      "en": "And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers;",
+      "tr": "E ele mesmo deu uns para apóstolos, e outros para profetas, e outros para evangelistas, e outros para pastores e mestres,",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/eph/4?lang=por&id=p11"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 14,
+      "en": "One of the great teachers and prophet-leaders in Israel was Ezra, who “had prepared his …",
+      "tr": "Esdras foi um dos grandes mestres e líderes-profetas de Israel, que “tinha preparado o seu coração …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-corbridge-the-prophet-joseph-smith",
+      "para": 22,
+      "en": "… apostles, Melchizedek and Levitical Priesthoods, elders, high priests, deacons, teachers, bishops, and the seventy, all as described in the …",
+      "tr": "… o Sacerdócio Levítico, com anciãos (élderes), sumos sacerdotes, diáconos, mestres, bispos e setentas, conforme descrito na Bíblia."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "professores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 104,
+    "share_of_uncovered": 0.416,
+    "ratio": 87.6,
+    "source": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+    "kind": "talk",
+    "sample": "exercitava uma fé simples, mas profunda, no Senhor. Sua escola foi o lar, seus professores, pais amorosos, e sua cartilha, a Bíblia Sagrada. Mesmo assim, nos seus tenros"
+   },
+   {
+    "term": "professora",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 51,
+    "share_of_uncovered": 0.204,
+    "ratio": 74.2,
+    "source": "2010-04-dibb-be-of-a-good-courage",
+    "kind": "talk",
+    "sample": "Depois que os alunos se colocaram em seus respectivos lados, a professora colocou-se entre os que se opunham. Escolhendo uma jovem do lado dos que apoiav"
+   },
+   {
+    "term": "pais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 55,
+    "share_of_uncovered": 0.22,
+    "ratio": 6.0,
+    "source": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+    "kind": "talk",
+    "sample": "ma fé simples, mas profunda, no Senhor. Sua escola foi o lar, seus professores, pais amorosos, e sua cartilha, a Bíblia Sagrada. Mesmo assim, nos seus tenros quator"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 838,
+  "en_talks": 448,
+  "en_verses": 85,
+  "uncovered_paragraphs": 39,
+  "renderings": [
+   {
+    "term": "maestro",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 802,
+    "talks": 432,
+    "verses": 82,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 20:38",
+      "ref_en": "Doctrine and Covenants 20:38",
+      "en": "The duty of the elders, priests, teachers, deacons, and members of the church of Christ—An apostle is an elder, and it is his calling to baptize;",
+      "tr": "El deber de los élderes, presbíteros, maestros, diáconos y miembros de la Iglesia de Cristo: Un apóstol es un élder, y es suyo el llamamiento de bautizar;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?lang=spa&id=p38"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-cook-rejoice",
+      "para": 15,
+      "en": "… a recommend. Others want to be a good home teacher or visiting teacher but are distracted by the constant parade …",
+      "tr": "… no podrían obtener una recomendación. Otros quieren ser buenos maestros orientadores o buenas maestras visitantes, pero se distraen con un …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-oaks-teachings-of-jesus",
+      "para": 1,
+      "en": "… who call themselves Christians praise Jesus as a great teacher but refrain from affirming His divinity. To address them, I …",
+      "tr": "… se denominan cristianos alaban a Jesús como un gran maestro, pero no afirman Su divinidad. Para dirigirme a ellos, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "profesor",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.231,
+    "ratio": 461.7,
+    "source": "1991-10-haight-a-time-for-preparation",
+    "kind": "talk",
+    "sample": "lavos acodillados, por lo que usamos las zapatillas de básquetbol. Nombraron al profesor de química para que fuese nuestro entrenador porque una vez había visto un part"
+   }
+  ]
+ }
+}

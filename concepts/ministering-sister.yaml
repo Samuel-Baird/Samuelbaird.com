@@ -1,0 +1,17 @@
+id: concept.ministering-sister
+category: Discipleship & Ministering
+en:
+  term: ministering sister
+  match:
+  - ministering sister
+sources:
+  GH:
+  - 21-ministering#title_number2
+candidates:
+  pt:
+  - term: irmã ministradora
+    hint: pulpit-glossary:standard
+  es:
+  - term: hermana minstrante
+    hint: approved-terms
+related: []

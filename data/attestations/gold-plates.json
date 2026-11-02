@@ -1,0 +1,101 @@
+{
+ "id": "concept.gold-plates",
+ "pt": {
+  "en_paragraphs": 18,
+  "en_talks": 14,
+  "en_verses": 2,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "placas de ouro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 13,
+    "verses": 2,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Joseph Smith—História 1:34",
+      "ref_en": "Joseph Smith—History 1:34",
+      "en": "He said there was a book deposited, written upon gold plates, giving an account of the former inhabitants of this continent, and the source from whence they sprang. He also said that the fulness of the everlasting Gospel was contained in it, as delivered by the Savior to the ancient inhabitants;",
+      "tr": "Disse-me que havia um livro escondido, escrito em placas de ouro, que continha um relato dos antigos habitantes deste continente, assim como de sua origem e procedência. Disse também que o livro continha a plenitude do evangelho eterno, tal como fora entregue pelo Salvador aos antigos habitantes.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=por&id=p34"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-sorensen-prayer",
+      "para": 24,
+      "en": "… Taft Benson is our prophet. The Book of Mormon’s gold plates are a reality, as were the appearances of Moroni …",
+      "tr": "… Restauração. Ezra Taft Benson é nosso profeta. As placas de ouro do Livro de Mórmon são uma realidade, assim como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-callister-the-book-of-mormona-book-from-god",
+      "para": 1,
+      "en": "… declared that an angel of God directed him to gold plates, which contained the writings of prophets in ancient …",
+      "tr": "… um anjo de Deus o conduziu até as placas de ouro, que continham escritos de profetas da antiga América …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 12,
+  "en_verses": 2,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "planchas de oro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 12,
+    "verses": 2,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "José Smith—Historia 1:34",
+      "ref_en": "Joseph Smith—History 1:34",
+      "en": "He said there was a book deposited, written upon gold plates, giving an account of the former inhabitants of this continent, and the source from whence they sprang. He also said that the fulness of the everlasting Gospel was contained in it, as delivered by the Savior to the ancient inhabitants;",
+      "tr": "Dijo que se hallaba depositado un libro, escrito sobre planchas de oro, el cual daba una relación de los antiguos habitantes de este continente, así como del origen de su procedencia. También declaró que en él se encerraba la plenitud del evangelio eterno cual el Salvador lo había comunicado a los antiguos habitantes.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=spa&id=p34"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-carmack-united-in-love-and-testimony",
+      "para": 8,
+      "en": "… plates and the angel. And Joseph also showed the gold plates to eight other men who saw and, using their …",
+      "tr": "… y el ángel, y José también mostró las planchas de oro a otros ocho hombres que las vieron y las …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-esplin-filling-our-homes-with-light-and-truth",
+      "para": 19,
+      "en": "… of the angel Moroni giving Joseph Smith the [gold] plates.”",
+      "tr": "… sueño la imagen del ángel Moroni entregando las planchas de oro a José Smith”."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

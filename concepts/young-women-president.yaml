@@ -1,0 +1,15 @@
+id: concept.young-women-president
+category: Local Leadership & Callings
+en:
+  term: Young Women president
+  match:
+  - Young Women president
+sources: {}
+candidates:
+  pt:
+  - term: presidente das Moças
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidenta de las Mujeres Jóvenes
+    hint: pulpit-glossary:verified
+related: []

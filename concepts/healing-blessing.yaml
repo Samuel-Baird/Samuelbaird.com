@@ -1,0 +1,13 @@
+id: concept.healing-blessing
+category: Baptism, Confirmation & Blessings
+en:
+  term: healing blessing
+  match:
+  - healing blessing
+sources: {}
+candidates:
+  pt:
+  - term: bênção de saúde
+    hint: pulpit-glossary:standard
+  es: []
+related: []

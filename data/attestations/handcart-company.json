@@ -1,0 +1,136 @@
+{
+ "id": "concept.handcart-company",
+ "pt": {
+  "en_paragraphs": 31,
+  "en_talks": 22,
+  "en_verses": 0,
+  "uncovered_paragraphs": 31,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "carrinhos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.935,
+    "ratio": 935.7,
+    "source": "1990-04-faust-gratitude-as-a-saving-principle",
+    "kind": "talk",
+    "sample": "ngelho criasse raízes? Como se expressa gratidão pelos intrépidos pioneiros dos carrinhos-de-mão que, com a própria força bruta, trouxeram seus parcos pertences através"
+   },
+   {
+    "term": "mão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 1.0,
+    "ratio": 63.5,
+    "source": "1990-04-faust-gratitude-as-a-saving-principle",
+    "kind": "talk",
+    "sample": "e raízes? Como se expressa gratidão pelos intrépidos pioneiros dos carrinhos-de-mão que, com a própria força bruta, trouxeram seus parcos pertences através das pla"
+   },
+   {
+    "term": "willie",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.548,
+    "ratio": 1097.0,
+    "source": "1990-04-faust-gratitude-as-a-saving-principle",
+    "kind": "talk",
+    "sample": "o pode a dívida de gratidão ser paga pelos descendentes das companhias Martin e Willie e outras, pela fé dos antepassados?"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 26,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "compañía de carros de mano",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-hinckley-our-mission-of-saving",
+      "para": 29,
+      "en": "… of the questions involved. A mistake to send the handcart company out so late in the season? Yes. But I …",
+      "tr": "… ocurrido. ¿Que fue un error enviar una compañía de carros de mano estando tan avanzado el otoño? Sí. Pero yo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-cook-lds-women-are-incredible",
+      "para": 7,
+      "en": "… last crossing of the Platte River with the Martin handcart company. She wrote:",
+      "tr": "… última vez el Río Platte con la compañía de carros de mano de Martin. Ella escribió:"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-cook-the-atonement-of-jesus-christ-provides-the-ultimate-rescue",
+      "para": 36,
+      "en": "… [^7]: See William G. Hartley, “The Place of Mormon Handcart Companies in America’s Westward Migration Story,” The Annals of Iowa, …",
+      "tr": "… Hodgetts y Hunt viajaban cerca de la compañía de carros de mano de Martin y también necesitaron que se les …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "compañías",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 500.1,
+    "source": "2006-10-holland-prophets-in-the-land-again",
+    "kind": "talk",
+    "sample": "recordó, en forma conmovedora, que éste es el 150 aniversario del viaje de las compañías de carros que, mientras se estaba llevando a cabo la conferencia general de oct"
+   },
+   {
+    "term": "congelados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2006-10-holland-prophets-in-the-land-again",
+    "kind": "talk",
+    "sample": "í en el valle de Lago Salado, se arrastraban a través de los últimos kilómetros congelados de Nebraska y que pronto quedarían varados en la infranqueable nieve de las tie"
+   },
+   {
+    "term": "carromatos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 666.8,
+    "source": "2012-10-stephens-wide-awake-to-our-duties",
+    "kind": "talk",
+    "sample": "en mis hermanas, quienes *han* tirado y las que *hoy continúan* tirando de sus carromatos solas. Casi el 20 por ciento de las mujeres de esas compañías estaban solas, al"
+   }
+  ]
+ }
+}

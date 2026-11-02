@@ -1,0 +1,17 @@
+id: concept.counselor
+category: Local Leadership & Callings
+en:
+  term: counselor
+  match:
+  - counselor
+sources:
+  GH:
+  - 22-providing-for-temporal-needs#title_number44
+candidates:
+  pt:
+  - term: conselheiro
+    hint: pulpit-glossary:verified
+  es:
+  - term: consejero
+    hint: approved-terms
+related: []

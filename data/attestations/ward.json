@@ -1,0 +1,102 @@
+{
+ "id": "concept.ward",
+ "pt": {
+  "en_paragraphs": 853,
+  "en_talks": 486,
+  "en_verses": 32,
+  "uncovered_paragraphs": 84,
+  "renderings": [
+   {
+    "term": "ala",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 800,
+    "talks": 463,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 128:3",
+      "ref_en": "Doctrine and Covenants 128:3",
+      "en": "Now, in relation to this matter, it would be very difficult for one recorder to be present at all times, and to do all the business. To obviate this difficulty, there can be a recorder appointed in each ward of the city, who is well qualified for taking accurate minutes; and let him be very particular and precise in taking the whole proceedings, certifying in his record that he saw with his eyes, and heard with his ears, giving the date, and names, and so forth, and the history of the whole transaction; naming also some three individuals that are present, if there be any present, who can at any time when called upon certify to the same, that in the mouth of two or three witnesses every word may be established.",
+      "tr": "Agora, com relação a esse assunto, seria muito difícil para um mesmo registrador estar presente todas as vezes e tratar de todos os assuntos. Para evitar essa dificuldade, pode-se designar um registrador bem qualificado, em cada ala da cidade, para fazer atas precisas; e que ele seja muito minucioso e exato ao anotar todos os procedimentos, afirmando em seu registro que viu com seus olhos e ouviu com seus ouvidos, dando a data, os nomes e assim por diante; e a história de toda a transação, indicando três indivíduos que estiverem presentes, se houver alguém presente, que possam, em qualquer ocasião em que forem chamados, certificar quanto ao mesmo, para que, pela boca de duas ou três testemunhas toda palavra seja confirmada.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/128?lang=por&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-watson-statistical-report-1989",
+      "para": 12,
+      "en": "Number of nations and territories with organized wards or branches",
+      "tr": "Número de países e territórios com alas ou ramos organizados"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-allred-the-essence-of-discipleship",
+      "para": 15,
+      "en": "… of Congo, Antananarivo in Madagascar, and Bulawayo in Zimbabwe. Ward members everywhere, and Relief Society sisters in particular, continue to …",
+      "tr": "… Bulawayo, no Zimbábue. Em toda parte, há membros da ala e, em especial, irmãs da Sociedade de Socorro, que continuam …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 819,
+  "en_talks": 471,
+  "en_verses": 32,
+  "uncovered_paragraphs": 67,
+  "renderings": [
+   {
+    "term": "barrio",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 783,
+    "talks": 456,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 128:3",
+      "ref_en": "Doctrine and Covenants 128:3",
+      "en": "Now, in relation to this matter, it would be very difficult for one recorder to be present at all times, and to do all the business. To obviate this difficulty, there can be a recorder appointed in each ward of the city, who is well qualified for taking accurate minutes; and let him be very particular and precise in taking the whole proceedings, certifying in his record that he saw with his eyes, and heard with his ears, giving the date, and names, and so forth, and the history of the whole transaction; naming also some three individuals that are present, if there be any present, who can at any time when called upon certify to the same, that in the mouth of two or three witnesses every word may be established.",
+      "tr": "Ahora, a este respecto, sería muy difícil que un solo registrador estuviera presente en todo momento para atender a todos los detalles. Para evitar esta dificultad, en cada barrio de la ciudad se puede nombrar un registrador que sea hábil para tomar notas precisas; y ejerza él mucho esmero y exactitud al levantar un acta de todo lo transcurrido, dando fe en su registro que vio con sus ojos y oyó con sus oídos, haciendo constar la fecha, los nombres, etcétera, y la relación completa de todo el asunto, nombrando también a unas tres personas que hayan estado presentes, si es que las hubo, las cuales en cualquier momento que se les requiera puedan certificar lo ocurrido, a fin de que en boca de dos o tres testigos se confirme toda palabra.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/128?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-wirthlin-personal-integrity",
+      "para": 36,
+      "en": "… members, a Christlike bishop, home teachers, visiting teachers, and ward members so lived.",
+      "tr": "… maestros orientadores, las maestras visitantes y los miembros del barrio así lo hicieron."
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-thompson-and-of-some-have-compassion-making-a-difference",
+      "para": 25,
+      "en": "… sat in the homes of women in my own ward and around the world. We have taught one another the …",
+      "tr": "… sentada en los hogares de mujeres de mi propio barrio y alrededor del mundo. Nos hemos enseñado el Evangelio mutuamente, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

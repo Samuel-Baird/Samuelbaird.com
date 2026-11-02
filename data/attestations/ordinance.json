@@ -1,0 +1,128 @@
+{
+ "id": "concept.ordinance",
+ "pt": {
+  "en_paragraphs": 1302,
+  "en_talks": 608,
+  "en_verses": 96,
+  "uncovered_paragraphs": 87,
+  "renderings": [
+   {
+    "term": "ordenança",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1262,
+    "talks": 594,
+    "verses": 49,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 88:140",
+      "ref_en": "Doctrine and Covenants 88:140",
+      "en": "And again, the ordinance of washing feet is to be administered by the president, or presiding elder of the church.",
+      "tr": "E também, a ordenança do lava-pés deve ser administrada pelo presidente, ou seja, o élder presidente da igreja.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p140"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-haight-come-to-the-house-of-the-lord",
+      "para": 28,
+      "en": "… required if we would receive revelation to understand the ordinances of the endowment. He wrote: “Revelation … is not imposed …",
+      "tr": "… são requeridos se desejarmos receber revelação para entender as ordenanças da investidura. Escreveu ele: “Revelação… não é algo imposto a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-davies-a-sure-foundation",
+      "para": 7,
+      "en": "… beginning and the end and the essential steps, including ordinances, which are necessary for each of Father’s children to …",
+      "tr": "… do fim, bem como dos passos essenciais, incluindo as ordenanças, que são necessários para que cada filho do Pai …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1242,
+  "en_talks": 594,
+  "en_verses": 96,
+  "uncovered_paragraphs": 74,
+  "renderings": [
+   {
+    "term": "ordenanza",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1213,
+    "talks": 580,
+    "verses": 51,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 84:21",
+      "ref_en": "Doctrine and Covenants 84:21",
+      "en": "And without the ordinances thereof, and the authority of the priesthood, the power of godliness is not manifest unto men in the flesh;",
+      "tr": "Y sin sus ordenanzas y la autoridad del sacerdocio, el poder de la divinidad no se manifiesta a los hombres en la carne;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=spa&id=p21"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-hales-gratitude-for-the-goodness-of-god",
+      "para": 10,
+      "en": "… my commandments” ([John 14:15](https://www.churchofjesuschrist.org/study/scriptures/nt/john/14?lang=eng&id=p15#p15)). Our obedience to the laws, ordinances, and commandments is the greatest expression of love and …",
+      "tr": "… mis mandamientos” (Juan 14:15). La obediencia a las leyes, ordenanzas y mandamientos es nuestra mayor expresión de amor y gratitud …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-eyring-holiness-and-the-plan-of-happiness",
+      "para": 4,
+      "en": "… demonstrate our obedience,[^4] repent,[^5] sacrifice for Him,[^6] receive sacred ordinances, and keep our covenants with Him.[^7] Qualifying for the …",
+      "tr": "… nuestra obediencia[^4], nos arrepentimos[^5], nos sacrificamos por Él[^6], recibimos ordenanzas sagradas y guardamos los convenios que hemos hecho con Él[^7]. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estatutos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.203,
+    "ratio": 811.0,
+    "source": "2010-10-oaks-two-lines-of-communication",
+    "kind": "talk",
+    "sample": "a Moisés que ilustra la importancia de la línea personal: “Y enseña a ellos los estatutos y las leyes, y muéstrales el camino por el cual deben andar y lo que *ellos* ha"
+   },
+   {
+    "term": "jehová",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.27,
+    "ratio": 22.1,
+    "source": "2019-10-christofferson-the-joy-of-the-saints",
+    "kind": "talk",
+    "sample": "Dios. Y, ¿qué aprovecha que guardemos su ley y que andemos afligidos delante de Jehová de los ejércitos?"
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.service-missionary
+category: Missionary Work
+en:
+  term: service missionary
+  match:
+  - service missionary
+sources:
+  GH:
+  - 24#title_number50
+candidates:
+  pt:
+  - term: missionários de serviço
+    hint: pulpit-glossary:verified
+  es:
+  - term: misioneros de servicio
+    hint: pulpit-glossary:verified
+related: []

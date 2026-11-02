@@ -1,0 +1,19 @@
+id: concept.heavenly-parents
+category: Deity
+en:
+  term: Heavenly Parents
+  match:
+  - Heavenly Parents
+sources:
+  Topics:
+  - heavenly-parents
+candidates:
+  pt:
+  - term: pais celestiais
+    hint: pulpit-glossary:verified
+  es:
+  - term: Padres celestiales
+    hint: pulpit-glossary:verified
+related: []
+note: Increasingly used doctrinal term referring to Heavenly Father and Heavenly Mother together — do
+  not collapse to "Heavenly Father"

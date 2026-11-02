@@ -1,0 +1,17 @@
+id: concept.proxy-ordinance
+category: Temple & Family History
+en:
+  term: proxy ordinance
+  match:
+  - proxy ordinance
+sources:
+  GH:
+  - 28#title_number2
+candidates:
+  pt:
+  - term: ordenança vicária
+    hint: pulpit-glossary:standard
+  es:
+  - term: ordenanza por poder
+    hint: pulpit-glossary:verified
+related: []

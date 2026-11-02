@@ -1,0 +1,16 @@
+id: concept.lamanite
+category: Israel & Covenant People
+en:
+  term: Lamanite
+  match:
+  - Lamanite
+sources:
+  GS:
+  - lamanites
+candidates:
+  pt: []
+  es:
+  - term: lamanita
+    hint: approved-terms
+related: []
+note: Book of Mormon covenant lineage; see Introduction to the Book of Mormon

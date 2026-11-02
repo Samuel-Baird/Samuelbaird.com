@@ -1,0 +1,97 @@
+{
+ "id": "concept.united-order",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 5,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Ordem Unida",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 5,
+    "first_year": 2011,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 104:48",
+      "ref_en": "Doctrine and Covenants 104:48",
+      "en": "After you are organized, you shall be called the United Order of the Stake of Zion, the City of Kirtland. And your brethren, after they are organized, shall be called the United Order of the City of Zion.",
+      "tr": "Depois de estardes organizados, sereis chamados de Ordem Unida da Estaca de Sião, da cidade de Kirtland. E vossos irmãos, depois de se organizarem, serão chamados de Ordem Unida da Cidade de Sião.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/104?lang=por&id=p48"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-eyring-opportunities-to-do-good",
+      "para": 4,
+      "en": "… consecration. In another period His way was called the united order. In our time it is called the Church …",
+      "tr": "… Em outra época, a maneira Dele se chamava “ordem unida”. Em nossa época, ela se chama Programa de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 5,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Orden Unida",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 5,
+    "first_year": 2011,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 104:48",
+      "ref_en": "Doctrine and Covenants 104:48",
+      "en": "After you are organized, you shall be called the United Order of the Stake of Zion, the City of Kirtland. And your brethren, after they are organized, shall be called the United Order of the City of Zion.",
+      "tr": "Después de organizaros, os llamaréis la Orden Unida de la Estaca de Sion, de la ciudad de Kirtland; y vuestros hermanos, después de organizarse, se llamarán la Orden Unida de la Ciudad de Sion.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/104?lang=spa&id=p48"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-eyring-opportunities-to-do-good",
+      "para": 4,
+      "en": "… consecration. In another period His way was called the united order. In our time it is called the Church …",
+      "tr": "… consagración. En otro período Su manera se llamó la orden unida; y en nuestra época se llama el programa …"
+     }
+    ],
+    "share": 1.0
+   },
+   {
+    "term": "Órdenes Unidas",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 0,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [],
+    "share": 0.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+id: concept.oath-and-covenant-of-the-priesthood
+category: Priesthood Authority & Ordinances
+en:
+  term: Oath and Covenant of the Priesthood
+  match:
+  - Oath and Covenant of the Priesthood
+sources:
+  GS:
+  - oath-and-covenant-of-the-priesthood
+candidates:
+  pt: []
+  es:
+  - term: Juramento y convenio del sacerdocio
+    hint: pulpit-glossary:verified
+related: []
+note: Fixed doctrinal phrase (D&C 84) distinct from the general "priesthood authority" entry

@@ -1,0 +1,21 @@
+id: concept.standard-works
+category: Scriptures & Study Helps
+en:
+  term: standard works
+  match:
+  - standard works
+sources:
+  GS:
+  - standard-works
+  Topics:
+  - standard-works
+  TtF:
+  - standard-works
+candidates:
+  pt:
+  - term: obras-padrão
+    hint: pulpit-glossary:verified
+  es:
+  - term: libros canónicos
+    hint: pulpit-glossary:verified
+related: []

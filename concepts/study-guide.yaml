@@ -1,0 +1,15 @@
+id: concept.study-guide
+category: Education & Publications
+en:
+  term: study guide
+  match:
+  - study guide
+sources: {}
+candidates:
+  pt:
+  - term: guia de estudo
+    hint: pulpit-glossary:standard
+  es:
+  - term: guía de estudio
+    hint: pulpit-glossary:verified
+related: []

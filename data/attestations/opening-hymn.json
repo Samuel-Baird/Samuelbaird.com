@@ -1,0 +1,136 @@
+{
+ "id": "concept.opening-hymn",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "hino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.9,
+    "ratio": 400.1,
+    "source": "1990-10-monson-that-we-may-touch-heaven",
+    "kind": "talk",
+    "sample": "Assistir à reunião do sacerdócio quando recém-ordenado diácono, e cantar o hino de abertura: “Atende Tu Que Tens de Deus o Sacerdócio”, é uma de minhas lembran"
+   },
+   {
+    "term": "abertura",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.7,
+    "ratio": 700.2,
+    "source": "1990-10-monson-that-we-may-touch-heaven",
+    "kind": "talk",
+    "sample": "istir à reunião do sacerdócio quando recém-ordenado diácono, e cantar o hino de abertura: “Atende Tu Que Tens de Deus o Sacerdócio”, é uma de minhas lembranças mais vív"
+   },
+   {
+    "term": "recém-ordenado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 1600.4,
+    "source": "1990-10-monson-that-we-may-touch-heaven",
+    "kind": "talk",
+    "sample": "Assistir à reunião do sacerdócio quando recém-ordenado diácono, e cantar o hino de abertura: “Atende Tu Que Tens de Deus o Sacerdócio”"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "himno de apertura",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-coleman-are-you-still-here",
+      "para": 7,
+      "en": "… heart sank. As the choir began to sing the opening hymn at 10:00 sharp, the door opened one more time, …",
+      "tr": "… en punto el coro comenzó a cantar el himno de apertura, la puerta se abrió otra vez y el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-tanner-daughters-of-heavenly-father",
+      "para": 0,
+      "en": "… mother, who from Eliza’s earliest infancy has sung our opening hymn, “I Am a Child of God” (*Hymns,* no. …",
+      "tr": "… le ha cantado como canción de cuna el himno de apertura: “Soy un hijo de Dios” (*Himnos,* Nº 196)."
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-snow-be-thou-humble",
+      "para": 20,
+      "en": "… H. Oaks reported that this was the most oft-sung opening hymn by the Brethren in the temple during his early …",
+      "tr": "… Dallin H. Oaks dijo que este era el himno de apertura que con más frecuencia cantaban las Autoridades Generales en …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "himno",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 1.0,
+    "ratio": 200.1,
+    "source": "2000-04-monson-your-eternal-voyage",
+    "kind": "talk",
+    "sample": "o asistía a la reunión del sacerdocio como diácono recién ordenado y cantaba el himno “Venid, los que tenéis de Dios el sacerdocio”[^1]. Esta noche, al lleno total c"
+   },
+   {
+    "term": "recién ordenado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2000-04-monson-your-eternal-voyage",
+    "kind": "talk",
+    "sample": "s vívidos recuerdos era cuando asistía a la reunión del sacerdocio como diácono recién ordenado y cantaba el himno “Venid, los que tenéis de Dios el sacerdocio”[^1]. Esta noch"
+   },
+   {
+    "term": "llamamientos, reflexionemos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2000-04-monson-your-eternal-voyage",
+    "kind": "talk",
+    "sample": "y les digo: *Venid, los que tenéis de Dios el sacerdocio, consideremos nuestros llamamientos, reflexionemos en nuestras responsabilidades, aprendamos nuestras obligaciones y sigamos a Jes"
+   }
+  ]
+ }
+}

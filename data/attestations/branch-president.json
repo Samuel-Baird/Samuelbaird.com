@@ -1,0 +1,222 @@
+{
+ "id": "concept.branch-president",
+ "pt": {
+  "en_paragraphs": 110,
+  "en_talks": 73,
+  "en_verses": 0,
+  "uncovered_paragraphs": 64,
+  "renderings": [
+   {
+    "term": "presidente do ramo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 46,
+    "talks": 32,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 34,
+      "en": "At the conclusion of the services, the branch president, Irving Wilson, asked if he could meet with …",
+      "tr": "Ao término da reunião o presidente do ramo, Irving Wilson, perguntou se eu podia me reunir …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-bednar-we-believe-in-being-chaste",
+      "para": 32,
+      "en": "Your bishop or branch president is the spiritual physician’s assistant who is authorized to …",
+      "tr": "Seu bispo ou presidente do ramo é o médico espiritual assistente que está autorizado a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jackson-remembering-the-sheep",
+      "para": 11,
+      "en": "… my branches one Sunday morning. I noticed that the branch president kept taking a card out of his pocket and …",
+      "tr": "… ramos num domingo pela manhã. Notei que o presidente do ramo ficava tirando um papel do bolso e escrevendo nele. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ramo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 63,
+    "share_of_uncovered": 0.984,
+    "ratio": 262.6,
+    "source": "1994-04-oaks-tithing",
+    "kind": "talk",
+    "sample": ". 3:10; 3 Néfi 24:10). Fazemos isso ao pagar o dízimo ao bispo ou presidente de ramo. Não pagamos o dízimo colaborando com nossas instituições de caridade predileta"
+   },
+   {
+    "term": "bispo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.438,
+    "ratio": 38.1,
+    "source": "1994-04-oaks-tithing",
+    "kind": "talk",
+    "sample": "à casa do tesouro” (Mal. 3:10; 3 Néfi 24:10). Fazemos isso ao pagar o dízimo ao bispo ou presidente de ramo. Não pagamos o dízimo colaborando com nossas instituições"
+   },
+   {
+    "term": "presidentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.344,
+    "ratio": 47.4,
+    "source": "1997-04-oaks-bishop-help",
+    "kind": "talk",
+    "sample": "om seus bons exemplos. Agradeço muito pela fidelidade e inspiração dos bispos e presidentes de ramo e seus conselheiros."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 102,
+  "en_talks": 72,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "presidente de rama",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 80,
+    "talks": 61,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-tobler-priesthood-and-the-home",
+      "para": 8,
+      "en": "… May I make an appeal to the bishops and branch presidents, to Melchizedek Priesthood quorums, to the ward and …",
+      "tr": "… Quisiera suplicar a los obispos y a los presidentes de rama, a los quórumes del Sacerdocio de Melquisedec, a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-pingree-i-have-a-work-for-thee",
+      "para": 2,
+      "en": "… branch was organized, and Girish later served as its branch president. He was also instrumental in translating the Book …",
+      "tr": "… habla nepalí y posteriormente Girish sirvió como el presidente de rama. También él fue parte fundamental a la hora …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jackson-remembering-the-sheep",
+      "para": 11,
+      "en": "… my branches one Sunday morning. I noticed that the branch president kept taking a card out of his pocket and …",
+      "tr": "… ramas que me correspondían, y observé que el presidente de rama constantemente sacaba de su bolsillo una tarjeta sobre la …"
+     }
+    ],
+    "share": 0.792
+   },
+   {
+    "term": "presidente de la rama",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 21,
+    "talks": 16,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 34,
+      "en": "At the conclusion of the services, the branch president, Irving Wilson, asked if he could meet with …",
+      "tr": "Al final de las reuniones, el presidente de la rama, Irving Wilson, nos preguntó si podíamos reunirnos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-monson-see-others-as-they-may-become",
+      "para": 12,
+      "en": "… priesthood. I felt inspired to call him as the branch president. I shall always remember the day that I …",
+      "tr": "… el sacerdocio. Sentí la inspiración de llamarlo como presidente de la rama. Siempre recordaré el día en que lo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-cuvelier-the-name-by-which-ye-are-called",
+      "para": 18,
+      "en": "As for the branch president, I cannot tell you his name—his identity has …",
+      "tr": "En cuanto al presidente de la rama, no puedo decirles su nombre, su identidad …"
+     }
+    ],
+    "share": 0.208
+   }
+  ],
+  "inferred": [
+   {
+    "term": "rama",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 250.1,
+    "source": "2004-10-hinckley-a-tragic-evil-among-us",
+    "kind": "talk",
+    "sample": "ro si ustedes son presidentes de estaca u obispos, presidentes de distrito o de rama, es muy probable que tengan que ayudar a los aquejados de esta dolencia. Ruego"
+   },
+   {
+    "term": "pequeña",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 106.7,
+    "source": "2014-04-eyring-the-priesthood-man",
+    "kind": "talk",
+    "sample": "virtió en un héroe. Ese héroe moldeó mi vida. Mi padre era el presidente de una pequeña rama que se reunía en nuestro hogar. Por cierto, si bajábamos al primer piso el"
+   },
+   {
+    "term": "tengan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 46.0,
+    "source": "2004-10-hinckley-a-tragic-evil-among-us",
+    "kind": "talk",
+    "sample": "tes de estaca u obispos, presidentes de distrito o de rama, es muy probable que tengan que ayudar a los aquejados de esta dolencia. Ruego al Señor que les dé sabidurí"
+   }
+  ]
+ }
+}

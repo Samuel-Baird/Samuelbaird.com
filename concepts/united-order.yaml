@@ -1,0 +1,19 @@
+id: concept.united-order
+category: Church History
+en:
+  term: United Order
+  match:
+  - United Order
+sources:
+  GS:
+  - united-order
+candidates:
+  pt:
+  - term: Ordem Unida
+    hint: pulpit-glossary:verified
+  es:
+  - term: Órdenes Unidas
+    hint: approved-terms
+  - term: Orden Unida
+    hint: pulpit-glossary:standard
+related: []

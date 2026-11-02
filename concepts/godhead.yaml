@@ -1,0 +1,21 @@
+id: concept.godhead
+category: Deity
+en:
+  term: Godhead
+  match:
+  - Godhead
+sources:
+  GS:
+  - god-godhead
+  Topics:
+  - godhead
+  TtF:
+  - godhead
+candidates:
+  pt:
+  - term: Trindade
+    hint: pulpit-glossary:verified
+  es:
+  - term: Trinidad
+    hint: approved-terms
+related: []

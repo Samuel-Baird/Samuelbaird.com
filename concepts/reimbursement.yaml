@@ -1,0 +1,11 @@
+id: concept.reimbursement
+category: Finances
+en:
+  term: reimbursement
+  match:
+  - reimbursement
+sources: {}
+candidates:
+  pt: []
+  es: []
+related: []

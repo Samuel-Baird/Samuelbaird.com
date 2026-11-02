@@ -1,0 +1,15 @@
+id: concept.returned-missionary
+category: Missionary Work
+en:
+  term: returned missionary
+  match:
+  - returned missionary
+sources: {}
+candidates:
+  pt:
+  - term: ex-missionário
+    hint: pulpit-glossary:verified
+  es:
+  - term: ex misionero
+    hint: pulpit-glossary:verified
+related: []

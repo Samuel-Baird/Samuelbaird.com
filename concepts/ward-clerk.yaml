@@ -1,0 +1,17 @@
+id: concept.ward-clerk
+category: Local Leadership & Callings
+en:
+  term: ward clerk
+  match:
+  - ward clerk
+sources:
+  GH:
+  - 33-records-and-reports#title_number11
+candidates:
+  pt:
+  - term: secretário da ala
+    hint: pulpit-glossary:verified
+  es:
+  - term: secretario del barrio
+    hint: pulpit-glossary:verified
+related: []

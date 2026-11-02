@@ -1,0 +1,15 @@
+id: concept.cultural-hall
+category: Church Units & Facilities
+en:
+  term: cultural hall
+  match:
+  - cultural hall
+sources: {}
+candidates:
+  pt:
+  - term: salão cultural
+    hint: pulpit-glossary:standard
+  es:
+  - term: salón cultural
+    hint: pulpit-glossary:verified
+related: []

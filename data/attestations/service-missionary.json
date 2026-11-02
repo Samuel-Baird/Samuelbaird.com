@@ -1,0 +1,123 @@
+{
+ "id": "concept.service-missionary",
+ "pt": {
+  "en_paragraphs": 13,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "missionários de serviço",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2024,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-andersen-temples-houses-of-the-lord-dotting-the-earth",
+      "para": 0,
+      "en": "… ordinance workers had graying hair—but not anymore. Called missionaries, service missionaries, and returned missionaries are around every corner. Across …",
+      "tr": "… cabelos grisalhos — mas isso mudou. Missionários chamados, missionários de serviço e ex-missionários estão por toda parte. Em todo o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-evanson-go-and-do-likewise",
+      "para": 21,
+      "en": "## Service Missionaries Are Examples of Consecrated Disciples of Jesus Christ[^25]",
+      "tr": "## Os missionários de serviço são exemplos de discípulos consagrados de Jesus Cristo[^25]"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "serviço",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 35.7,
+    "source": "1991-04-tingey-redemption-of-the-dead",
+    "kind": "talk",
+    "sample": "Cumprimento os milhares de funcionários, voluntários, missionários que prestam serviço e que, como dizem as escrituras, ‘(utilizam) as (suas) vidas’ ([D&C 123:13](htt"
+   },
+   {
+    "term": "servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 26.1,
+    "source": "2022-04-aidukaitis-lift-up-your-heart-and-rejoice",
+    "kind": "talk",
+    "sample": "uitas maneiras de ajudar na coligação, gostaria de falar sobre uma em especial: servir como missionário de tempo integral. Para muitos de vocês, isso significará ser"
+   },
+   {
+    "term": "missionário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 32.8,
+    "source": "2022-04-aidukaitis-lift-up-your-heart-and-rejoice",
+    "kind": "talk",
+    "sample": "as de ajudar na coligação, gostaria de falar sobre uma em especial: servir como missionário de tempo integral. Para muitos de vocês, isso significará ser um missionário de"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 12,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "misioneros de servicio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2022,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-aidukaitis-lift-up-your-heart-and-rejoice",
+      "para": 9,
+      "en": "… missionary. For many others, it will mean being a service missionary. But the world tries to distract youth from …",
+      "tr": "… misioneros de enseñanza; para muchos otros, significará ser misioneros de servicio; pero el mundo intenta distraer a los jóvenes …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-evanson-go-and-do-likewise",
+      "para": 13,
+      "en": "… meeting after his mission, he shared that “God needs service missionaries. He needs people to love and serve others. …",
+      "tr": "… después de su misión, compartió que “Dios necesita misioneros de servicio. Necesita personas que amen y sirvan a los …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

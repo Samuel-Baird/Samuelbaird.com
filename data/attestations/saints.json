@@ -1,0 +1,45 @@
+{
+ "id": "concept.saints",
+ "pt": {
+  "en_paragraphs": 860,
+  "en_talks": 508,
+  "en_verses": 192,
+  "uncovered_paragraphs": 1052,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "santos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 236,
+    "share_of_uncovered": 0.944,
+    "ratio": 24.8,
+    "source": "1990-04-condie-some-scriptural-lessons-on-leadership",
+    "kind": "talk",
+    "sample": "da Igreja que não são “mais estrangeiros, nem forasteiros, mas concidadãos dos santos, da família de Deus”. ([Efésios 2:19](https://www.churchofjesuschrist.org/study"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 821,
+  "en_talks": 503,
+  "en_verses": 192,
+  "uncovered_paragraphs": 1013,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "santos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 237,
+    "share_of_uncovered": 0.948,
+    "ratio": 23.7,
+    "source": "2011-04-eyring-a-living-testimony",
+    "kind": "talk",
+    "sample": "encias las traía, en parte, el ferrocarril intercontinental que conectaba a los santos que estaban aislados y protegidos del mundo."
+   }
+  ]
+ }
+}

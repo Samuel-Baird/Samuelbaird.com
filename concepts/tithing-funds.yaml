@@ -1,0 +1,15 @@
+id: concept.tithing-funds
+category: Finances
+en:
+  term: tithing funds
+  match:
+  - tithing funds
+sources: {}
+candidates:
+  pt:
+  - term: fundos de dízimo
+    hint: pulpit-glossary:verified
+  es:
+  - term: fondos de diezmos
+    hint: pulpit-glossary:verified
+related: []

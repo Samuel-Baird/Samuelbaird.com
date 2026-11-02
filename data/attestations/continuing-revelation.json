@@ -1,0 +1,179 @@
+{
+ "id": "concept.continuing-revelation",
+ "pt": {
+  "en_paragraphs": 25,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "revelação contínua",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 16,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-ballard-how-is-it-with-us",
+      "para": 17,
+      "en": "… it is so natural to share the principle of continuing revelation and the organization of the Church and its doctrines …",
+      "tr": "… de Deus. Daí, é natural apresentar o princípio da revelação contínua e da organização da Igreja e de seus programas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-gong-our-campfire-of-faith",
+      "para": 0,
+      "en": "Dear brothers and sisters, isn’t it marvelous to receive continuing revelation from heaven through President Russell M. Nelson and our …",
+      "tr": "… irmãos e irmãs, não é maravilhoso receber dos céus revelação contínua por intermédio do presidente Russell M. Nelson e de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-spannaus-prophets-of-god",
+      "para": 12,
+      "en": "… Lord.[^7] The [ninth article of faith](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p9#p9) speaks of the continuing revelation in these last days. It says, “We believe all …",
+      "tr": "… do Senhor.[^7] A [nona regra de fé](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p9#p9) fala da revelação contínua nestes últimos dias. Ela diz: “Cremos em tudo o …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "contínuas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 444.6,
+    "source": "1996-10-wirthlin-christians-in-belief-and-action",
+    "kind": "talk",
+    "sample": "ivina e da missão do Senhor Jesus Cristo nas santas escrituras e nas revelações contínuas concedidas aos profetas modernos."
+   },
+   {
+    "term": "revelação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 38.1,
+    "source": "2009-10-beck-relief-society-a-sacred-work",
+    "kind": "talk",
+    "sample": "dentes e reveladores, e também por pertencer a uma Igreja dirigida por contínua revelação. Tenho certeza de que, se cada irmã fizer sua parte para garantir que os propós"
+   },
+   {
+    "term": "profetas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 28.7,
+    "source": "1996-10-wirthlin-christians-in-belief-and-action",
+    "kind": "talk",
+    "sample": "or Jesus Cristo nas santas escrituras e nas revelações contínuas concedidas aos profetas modernos."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "revelación continua",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-oaks-the-living-prophet-our-source-of-pure-doctrine",
+      "para": 0,
+      "en": "… pertaining to the Kingdom of God.” This principle of continuing revelation is an essential part of the kingdom of God.",
+      "tr": "… pertenecientes al reino de Dios”. Este principio de la revelación continua es una parte esencial del reino de Dios."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-eyring-continuing-revelation",
+      "para": 21,
+      "en": "… testing all over the world. President Packer was right. Continuing revelation comes to stake presidents to lift them above their …",
+      "tr": "… todo el mundo. El presidente Packer tenía razón. La revelación continua llega a los presidentes de estaca para elevarlos por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-spannaus-prophets-of-god",
+      "para": 12,
+      "en": "… Lord.[^7] The [ninth article of faith](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p9#p9) speaks of the continuing revelation in these last days. It says, “We believe all …",
+      "tr": "… Señor[^5]. El [noveno Artículo de Fe](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=spa&id=p9#p9) habla de la revelación continua en estos últimos días. Dice: “Creemos todo lo que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "inspiración continuas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "1998-10-oaks-the-living-prophet-our-source-of-pure-doctrine",
+    "kind": "talk",
+    "sample": "os procedimientos de la Iglesia se perfeccionan por medio de la revelación y la inspiración continuas, hay quienes se molestan por cualquier cambio. Hay algunos que literalmente bus"
+   },
+   {
+    "term": "revelación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 60.6,
+    "source": "1998-10-oaks-the-living-prophet-our-source-of-pure-doctrine",
+    "kind": "talk",
+    "sample": "e las normas y los procedimientos de la Iglesia se perfeccionan por medio de la revelación y la inspiración continuas, hay quienes se molestan por cualquier cambio. Hay a"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 32.9,
+    "source": "1998-10-oaks-the-living-prophet-our-source-of-pure-doctrine",
+    "kind": "talk",
+    "sample": "cambio. Hay algunos que literalmente buscan con afán situaciones en las que los líderes o los miembros anteriores de la Iglesia hicieron declaraciones que no concuerda"
+   }
+  ]
+ }
+}

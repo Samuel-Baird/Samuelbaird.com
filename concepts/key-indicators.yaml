@@ -1,0 +1,13 @@
+id: concept.key-indicators
+category: Missionary Work
+en:
+  term: key indicators
+  match:
+  - key indicators
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: indicadores clave
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,116 @@
+{
+ "id": "concept.solemn-assembly",
+ "pt": {
+  "en_paragraphs": 44,
+  "en_talks": 23,
+  "en_verses": 18,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "assembleia solene",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 44,
+    "talks": 23,
+    "verses": 18,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Sofonias 3:18",
+      "ref_en": "Zephaniah 3:18",
+      "en": "I will gather them that are sorrowful for the solemn assembly, who are of thee, to whom the reproach of it was a burden.",
+      "tr": "Os entristecidos por causa da assembleia solene congregarei, para quem a afronta foi um peso.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/zeph/3?lang=por&id=p18"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-haight-solemn-assemblies",
+      "para": 2,
+      "en": "… witnesses to and participants in a most sacred occasion—a solemn assembly to act upon heavenly things. As in olden times, …",
+      "tr": "… somos testemunhas e participantes de uma ocasião deveras sagrada—uma assembléia solene para atuar sobre coisas celestes. Como em tempos passados, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-stevenson-the-heart-of-a-prophet",
+      "para": 0,
+      "en": "… 17th prophet of this dispensation has been sustained in solemn assembly.",
+      "tr": "… celestial. Foi algo impressionante testemunharmos juntos o apoio, em assembleia solene, do 17º profeta desta dispensação."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 34,
+  "en_talks": 18,
+  "en_verses": 18,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "Asamblea solemne",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 33,
+    "talks": 18,
+    "verses": 15,
+    "first_year": 2008,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Deuteronomio 16:8",
+      "ref_en": "Deuteronomy 16:8",
+      "en": "Six days thou shalt eat unleavened bread: and on the seventh day shall be a solemn assembly to the Lord thy God: thou shalt do no work therein.",
+      "tr": "Seis días comerás pan sin levadura, y el séptimo día será asamblea solemne a Jehová tu Dios; no trabajarás en él.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/deut/16?lang=spa&id=p8"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-hales-gaining-a-testimony-of-god-the-father-his-son-jesus-christ-and-the-holy-ghost",
+      "para": 0,
+      "en": "Like you, I appreciated the participation in the solemn assembly. But I thought I might give one point …",
+      "tr": "Yo, igual que ustedes, aprecio haber participado en la asamblea solemne; pero pensé que si explicara un punto de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-stevenson-the-heart-of-a-prophet",
+      "para": 21,
+      "en": "“A solemn assembly, as the name implies, denotes a sacred, sober, …",
+      "tr": "“Una asamblea solemne, tal como el nombre lo indica, es una …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fiestas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "amos/5/21",
+    "kind": "scripture",
+    "sample": "Aborrezco, desprecio vuestras fiestas, y no me darán olor grato vuestras asambleas."
+   }
+  ]
+ }
+}

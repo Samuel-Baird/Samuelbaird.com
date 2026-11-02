@@ -1,0 +1,17 @@
+id: concept.covenant-path
+category: Faith & Gospel Principles
+en:
+  term: covenant path
+  match:
+  - covenant path
+sources:
+  GH:
+  - 23#p_jvqG3
+candidates:
+  pt:
+  - term: caminho dos convênios
+    hint: pulpit-glossary:verified
+  es:
+  - term: senda de los convenios
+    hint: pulpit-glossary:verified
+related: []

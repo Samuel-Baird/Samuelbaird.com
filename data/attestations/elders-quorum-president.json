@@ -1,0 +1,179 @@
+{
+ "id": "concept.elders-quorum-president",
+ "pt": {
+  "en_paragraphs": 36,
+  "en_talks": 26,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "presidente do quórum de élderes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 27,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-clarke-to-honor-the-priesthood",
+      "para": 32,
+      "en": "The elders quorum president said, “That was our loss as much as for …",
+      "tr": "O presidente do quorum de élderes disse: “Era uma grande perda, tanto para nosso …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-christofferson-the-elders-quorum",
+      "para": 9,
+      "en": "… elders quorum presidencies and will call a new elders quorum president and counselors in each ward. The new elders quorum …",
+      "tr": "… de élderes e deve chamar um novo presidente do quórum de élderes e novos conselheiros do quórum em cada ala. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-runia-the-sculpting-of-our-souls",
+      "para": 30,
+      "en": "… Ryan died, he was set apart as the elders quorum president. That afternoon he visited a neighbor whose wife …",
+      "tr": "… dia antes de falecer, Ryan foi designado presidente do quórum de élderes. Naquela tarde, ele visitou um vizinho cuja …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.889,
+    "ratio": 114.7,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "Nela há pelo menos uma centelha de semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um mestre fami"
+   },
+   {
+    "term": "quorum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.778,
+    "ratio": 54.6,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "samaritano. Nela há pelo menos uma centelha de semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um"
+   },
+   {
+    "term": "sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 55.6,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um mestre familiar, e o irmão que jaz inativo à marge"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 32,
+  "en_talks": 24,
+  "en_verses": 0,
+  "uncovered_paragraphs": 27,
+  "renderings": [
+   {
+    "term": "presidente del quórum de élderes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-wirthlin-three-choices",
+      "para": 31,
+      "en": "With help from the elders quorum president, John found a modest place to live. He …",
+      "tr": "Con la ayuda del presidente del quórum de élderes, Juan encontró un lugar modesto donde vivir. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-nelson-generations-linked-in-love",
+      "para": 26,
+      "en": "… branch level, the high priests group leader or elders quorum president leads the way. Many resources, printed and online, are …",
+      "tr": "… del grupo de sumos sacerdotes o el presidente del quórum de élderes guían el camino. Hay muchos recursos disponibles, impresos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-perry-the-priesthood-of-aaron",
+      "para": 7,
+      "en": "… served a faithful mission, currently serves as an elders quorum president, and of course is a father of a …",
+      "tr": "… sirvió en una misión fielmente, actualmente es presidente del quórum de élderes y, naturalmente, es padre de una hermosa hija."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 1.0,
+    "ratio": 174.0,
+    "source": "2006-04-monson-our-sacred-priesthood-trust",
+    "kind": "talk",
+    "sample": "a llevar almas al Señor. Entonces se volvió hacia el presidente de un quórum de élderes y le preguntó: “¿Cuál es el valor de un alma?”."
+   },
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.704,
+    "ratio": 117.3,
+    "source": "2015-10-eyring-you-are-not-alone-in-the-work",
+    "kind": "talk",
+    "sample": "tá en esta obra con ustedes. Eso lo aprendí cuando conocí a un presidente de un cuórum de élderes en una conferencia de estaca hace años. En la conferencia, se presen"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.296,
+    "ratio": 27.6,
+    "source": "2006-04-monson-our-sacred-priesthood-trust",
+    "kind": "talk",
+    "sample": "s días para llevar almas al Señor. Entonces se volvió hacia el presidente de un quórum de élderes y le preguntó: “¿Cuál es el valor de un alma?”."
+   }
+  ]
+ }
+}

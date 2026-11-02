@@ -1,0 +1,93 @@
+{
+ "id": "concept.family-ward",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "ala",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 93.0,
+    "source": "2008-10-scott-honor-the-priesthood-and-use-it-well",
+    "kind": "talk",
+    "sample": "ãs solteiras recebem a atenção e consideração que merecem quando freqüentam uma ala de famílias? Elas têm oportunidades de servir em chamados significativos que fa"
+   },
+   {
+    "term": "conselhos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 47.6,
+    "source": "2019-10-nelson-spiritual-treasures",
+    "kind": "talk",
+    "sample": "s de sua voz ensinando a doutrina de Cristo. Precisamos de sua contribuição nos conselhos de família, de ala e de estaca. Sua participação é essencial e nunca decorativa"
+   },
+   {
+    "term": "sermos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 27.9,
+    "source": "2018-04-aburto-with-one-accord",
+    "kind": "talk",
+    "sample": "to; o amor de Deus vai habitar em nosso coração;[^15] teremos a determinação de sermos unos no caleidoscópio de nossa família, de nossa ala e de nossa comunidade; e m"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "barrio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 85.7,
+    "source": "2006-10-hinckley-in-the-arms-of-his-love",
+    "kind": "talk",
+    "sample": "e la vida y me ha ayudado a ser una persona mejor. Mi familia, los miembros del barrio y mis compañeros de trabajo me han apoyado, y este diciembre me graduaré."
+   },
+   {
+    "term": "consejos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 87.9,
+    "source": "2019-10-nelson-spiritual-treasures",
+    "kind": "talk",
+    "sample": "itamos su voz para enseñar la doctrina de Cristo. Necesitamos su opinión en los consejos familiares, de barrio y de estaca. ¡Su participación es esencial y nunca está d"
+   },
+   {
+    "term": "compañeros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 60.2,
+    "source": "2006-10-hinckley-in-the-arms-of-his-love",
+    "kind": "talk",
+    "sample": "e ha ayudado a ser una persona mejor. Mi familia, los miembros del barrio y mis compañeros de trabajo me han apoyado, y este diciembre me graduaré."
+   }
+  ]
+ }
+}

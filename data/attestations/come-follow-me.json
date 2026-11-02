@@ -1,0 +1,130 @@
+{
+ "id": "concept.come-follow-me",
+ "pt": {
+  "en_paragraphs": 141,
+  "en_talks": 88,
+  "en_verses": 1,
+  "uncovered_paragraphs": 138,
+  "renderings": [
+   {
+    "term": "Vem, e Segue-Me",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-cook-deep-and-lasting-conversion-to-heavenly-father-and-the-lord-jesus-christ",
+      "para": 43,
+      "en": "… available both digitally and in print.\n[^4]: [Come, Follow Me—For Individuals and Families](https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-new-testament-2019/using?lang=eng) (2019), vi.\n[^5]: See “[Come, …",
+      "tr": "… formato digital quanto em formato impresso.\n[^4]: *[Vem e Segue-Me — Estudo Pessoal e Familiar](https://www.lds.org/languages/eng/content/manual/come-follow-me-for-individuals-and-families-new-testament-2019/using)*, 2019, p. vi.\n[^5]: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-pace-come-follow-methe-lords-counterstrategy-and-proactive-plan",
+      "para": 27,
+      "en": "Studying the scriptures with Come, Follow Me as a guide is strengthening our conversion to Jesus …",
+      "tr": "Estudar as escrituras com o Vem e Segue-Me como um guia está fortalecendo nossa conversão a Jesus …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-stevenson-a-good-foundation-against-the-time-to-come",
+      "para": 23,
+      "en": "… of Mormon; temple attendance; and gospel learning through Come, Follow Me and home evening. Other helpful resources to strengthen your …",
+      "tr": "… e o aprendizado do evangelho por meio do Vem e Segue-Me e de reuniões familiares. Outros recursos úteis para fortalecer …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "segue",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 127,
+    "share_of_uncovered": 0.92,
+    "ratio": 193.8,
+    "source": "1990-04-condie-some-scriptural-lessons-on-leadership",
+    "kind": "talk",
+    "sample": "urchofjesuschrist.org/study/scriptures/nt/luke/18?lang=por&id=p22#p22): “Vem, e segue-me.” Terminado o Acampamento de Sião, o Profeta deu ao sumo conselho instruções"
+   },
+   {
+    "term": "vem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 127,
+    "share_of_uncovered": 0.92,
+    "ratio": 58.4,
+    "source": "1990-04-condie-some-scriptural-lessons-on-leadership",
+    "kind": "talk",
+    "sample": "/www.churchofjesuschrist.org/study/scriptures/nt/luke/18?lang=por&id=p22#p22): “Vem, e segue-me.” Terminado o Acampamento de Sião, o Profeta deu ao sumo conselho i"
+   },
+   {
+    "term": "estudo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 37,
+    "share_of_uncovered": 0.268,
+    "ratio": 21.9,
+    "source": "2018-10-cook-deep-and-lasting-conversion-to-heavenly-father-and-the-lord-jesus-christ",
+    "kind": "talk",
+    "sample": "O estudo do evangelho no lar — individual e em família — será aprimorado de forma signif"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 147,
+  "en_talks": 91,
+  "en_verses": 1,
+  "uncovered_paragraphs": 148,
+  "renderings": [
+   {
+    "term": "Ven, sígueme",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ven, sígueme",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 134,
+    "share_of_uncovered": 0.905,
+    "ratio": 278.7,
+    "source": "1997-10-holland-he-hath-filled-the-hungry-with-good-things",
+    "kind": "talk",
+    "sample": "y encontraras respuesta a tus propias oraciones. Dios dará descanso a tu alma. Ven, sígueme."
+   },
+   {
+    "term": "estudio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 33,
+    "share_of_uncovered": 0.223,
+    "ratio": 19.4,
+    "source": "2013-04-hales-stand-strong-in-holy-places",
+    "kind": "talk",
+    "sample": "o aprenden la doctrina y comparten sus testimonios por medio del nuevo curso de estudio *Ven*, *sígueme*."
+   }
+  ]
+ }
+}

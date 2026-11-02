@@ -1,0 +1,17 @@
+id: concept.temple-covenants
+category: Temple & Family History
+en:
+  term: temple covenants
+  match:
+  - temple covenants
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number43
+candidates:
+  pt:
+  - term: convênios do templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: convenios del templo
+    hint: pulpit-glossary:verified
+related: []

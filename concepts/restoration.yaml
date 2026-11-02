@@ -1,0 +1,23 @@
+id: concept.restoration
+category: Restoration & Revelation
+en:
+  term: Restoration
+  match:
+  - Restoration
+sources:
+  GS:
+  - restoration-of-the-gospel
+  Topics:
+  - restoration-of-the-church
+  TtF:
+  - restoration-of-the-gospel
+candidates:
+  pt:
+  - term: Restauração
+    hint: pulpit-glossary:verified
+  es:
+  - term: Restauración
+    hint: approved-terms
+  - term: restauración (del Evangelio)
+    hint: pulpit-glossary:verified
+related: []

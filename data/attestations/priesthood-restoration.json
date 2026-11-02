@@ -1,0 +1,85 @@
+{
+ "id": "concept.priesthood-restoration",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "restauração do sacerdócio",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-bateman-priesthood-keys-and-the-power-to-bless",
+      "para": 0,
+      "en": "… that they conform precisely with the biblical pattern of priesthood restoration in earlier dispensations. For example, consider the restoration and …",
+      "tr": "… serem precisamente condizentes com o padrão bíblico de restauração do sacerdócio em dispensações anteriores. Tomemos como exemplo a restauração e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-stevenson-where-are-the-keys-and-authority-of-the-priesthood",
+      "para": 7,
+      "en": "… center incorporated into a new meetinghouse, comprise the new Priesthood Restoration Site, dedicated by President Russell M. Nelson in September …",
+      "tr": "… a uma nova capela, formam o Local da Restauração do Sacerdócio, dedicado pelo Presidente Russell M. Nelson em setembro …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "restauración del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-bateman-priesthood-keys-and-the-power-to-bless",
+      "para": 0,
+      "en": "… that they conform precisely with the biblical pattern of priesthood restoration in earlier dispensations. For example, consider the restoration and …",
+      "tr": "… que cumplen con el modelo bíblico de la restauración del sacerdocio efectuada en dispensaciones anteriores. Por ejemplo, consideremos la restauración …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-stevenson-where-are-the-keys-and-authority-of-the-priesthood",
+      "para": 7,
+      "en": "… center incorporated into a new meetinghouse, comprise the new Priesthood Restoration Site, dedicated by President Russell M. Nelson in September …",
+      "tr": "… centro de reuniones, constituyen el Sitio de la restauración del sacerdocio, dedicado por el presidente Russell M. Nelson en …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

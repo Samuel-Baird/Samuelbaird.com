@@ -1,0 +1,15 @@
+id: concept.solemn-assembly
+category: Callings & Sustaining
+en:
+  term: solemn assembly
+  match:
+  - solemn assembly
+sources: {}
+candidates:
+  pt:
+  - term: assembleia solene
+    hint: pulpit-glossary:verified
+  es:
+  - term: Asamblea solemne
+    hint: approved-terms
+related: []

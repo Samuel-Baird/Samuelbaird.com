@@ -1,0 +1,15 @@
+id: concept.book-of-moses
+category: Scriptures & Study Helps
+en:
+  term: Book of Moses
+  match:
+  - Book of Moses
+sources: {}
+candidates:
+  pt:
+  - term: livro de Moisés
+    hint: pulpit-glossary:verified
+  es:
+  - term: libro de Moisés
+    hint: pulpit-glossary:verified
+related: []

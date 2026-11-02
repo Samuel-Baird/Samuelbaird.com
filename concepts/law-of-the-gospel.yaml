@@ -1,0 +1,15 @@
+id: concept.law-of-the-gospel
+category: Commandments & Laws
+en:
+  term: law of the gospel
+  match:
+  - law of the gospel
+sources: {}
+candidates:
+  pt:
+  - term: lei do evangelho
+    hint: pulpit-glossary:standard
+  es:
+  - term: ley del evangelio
+    hint: pulpit-glossary:verified
+related: []

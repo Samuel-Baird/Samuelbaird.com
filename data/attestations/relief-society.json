@@ -1,0 +1,180 @@
+{
+ "id": "concept.relief-society",
+ "pt": {
+  "en_paragraphs": 668,
+  "en_talks": 220,
+  "en_verses": 0,
+  "uncovered_paragraphs": 39,
+  "renderings": [
+   {
+    "term": "Sociedade de Socorro",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 629,
+    "talks": 212,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-oaks-honour-thy-father-and-thy-mother",
+      "para": 0,
+      "en": "… They are still doing so. Stake, ward, quorum, and Relief Society leaders acted and are still acting in the best …",
+      "tr": "… trabalho continua. Líderes de estaca, ala, quorum, e Sociedade de Socorro atuaram e continuam atuando nas melhores tradições do serviço …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-beck-daughters-in-my-kingdom-the-history-and-work-of-relief-society",
+      "para": 30,
+      "en": "… them toward the temple and their future responsibilities. In Relief Society they continue to progress toward the blessings of the …",
+      "tr": "… para o templo e para suas responsabilidades futuras.Na Sociedade de Socorro elas continuam a progredir rumo às bênçãos do templo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 16,
+      "en": "We have extended releases to the Relief Society General Presidency to be effective on August 1, 2022, …",
+      "tr": "Desobrigamos a presidência geral da Sociedade de Socorro, entrando em vigor a partir de 1º de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "society",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.436,
+    "ratio": 581.3,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "e dizia respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “Embora a"
+   },
+   {
+    "term": "relief",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.436,
+    "ratio": 581.3,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "ente que dizia respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “"
+   },
+   {
+    "term": "magazine",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.231,
+    "ratio": 184.7,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "respeito à direção e instrução a favor das mulheres da Igreja” (*Relief Society Magazine*, janeiro de 1965, página 5). Presidente Smith explicou que: “Embora as irmãs n"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 628,
+  "en_talks": 207,
+  "en_verses": 0,
+  "uncovered_paragraphs": 42,
+  "renderings": [
+   {
+    "term": "Sociedad de Socorro",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 586,
+    "talks": 204,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+      "para": 0,
+      "en": "… what can come from our relationship with him. As Relief Society members, we both *claim* and *celebrate* our place as …",
+      "tr": "… nuestra relación con El. Como miembros de la Sociedad de Socorro, reclamamos el derecho de ser Sus discípulas y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-vias-things-pertaining-to-righteousness",
+      "para": 4,
+      "en": "… distributed under the direction of the local priesthood and Relief Society leaders. They not only received medical aid, food, water, …",
+      "tr": "… los líderes locales del sacerdocio y de la Sociedad de Socorro. No sólo recibieron asistencia médica, alimentos, agua y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-solemn-assembly",
+      "para": 29,
+      "en": "Will all members of the Relief Society—that is, all women 18 years of age and …",
+      "tr": "Todas las miembros de la Sociedad de Socorro, es decir, todas las mujeres de 18 años …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "society",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.31,
+    "ratio": 206.4,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "ks, 1954,pág. 109.\n[^8]: \"Our Wives and Our Mothers in the Eternal Plan\",Relief Society Magazine,diciembre de 1946, pág. 801.\n[^9]: Moisés 5:11.\n[^10]: Priesthood and"
+   },
+   {
+    "term": "relief",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.31,
+    "ratio": 176.9,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "ey Speaks, 1954,pág. 109.\n[^8]: \"Our Wives and Our Mothers in the Eternal Plan\",Relief Society Magazine,diciembre de 1946, pág. 801.\n[^9]: Moisés 5:11.\n[^10]: Priesth"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.405,
+    "ratio": 14.3,
+    "source": "1991-10-okazaki-rejoice-in-every-good-thing",
+    "kind": "talk",
+    "sample": "(Children’s Songbook, pág. 263. Traducción.)"
+   }
+  ]
+ }
+}

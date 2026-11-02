@@ -1,0 +1,15 @@
+id: concept.line-upon-line-precept-upon-precept
+category: Restoration & Revelation
+en:
+  term: line upon line, precept upon precept
+  match:
+  - line upon line, precept upon precept
+sources: {}
+candidates:
+  pt:
+  - term: linha sobre linha, preceito sobre preceito
+    hint: pulpit-glossary:verified
+  es:
+  - term: línea sobre línea, precepto tras precepto
+    hint: pulpit-glossary:verified
+related: []

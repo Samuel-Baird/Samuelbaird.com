@@ -1,0 +1,140 @@
+{
+ "id": "concept.bishopric",
+ "pt": {
+  "en_paragraphs": 115,
+  "en_talks": 75,
+  "en_verses": 6,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "bispado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 105,
+    "talks": 70,
+    "verses": 6,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 68:16",
+      "ref_en": "Doctrine and Covenants 68:16",
+      "en": "And if they be literal descendants of Aaron they have a legal right to the bishopric, if they are the firstborn among the sons of Aaron;",
+      "tr": "E se forem descendentes literais de Aarão, têm direito legal ao bispado, se forem o primogênito dentre os filhos de Aarão;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=por&id=p16"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 33,
+      "en": "… no member of a stake presidency or of a bishopric or of an elders quorum presidency is there because he …",
+      "tr": "… autoridade geral, membro de uma presidência de estaca ou bispado ou de quorum de élderes está ali porque desejou e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-gibson-sacred-keys-of-the-aaronic-priesthood",
+      "para": 5,
+      "en": "I told him he had a wonderful bishopric and advisers who would help him become a successful and …",
+      "tr": "Eu disse que ele tinha um bispado e consultores maravilhosos que o ajudariam a tornar-se um poderoso …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "bispo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 34.8,
+    "source": "1999-04-packer-the-bishop-and-his-counselors",
+    "kind": "talk",
+    "sample": "Contudo, nenhum homem pede para ser bispo ou aspira ao cargo. Ele é *chamado* para ser bispo, “chamado por Deus, por prof"
+   },
+   {
+    "term": "sumo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 133.4,
+    "source": "1995-10-ballard-hyrum-smith-firm-as-the-pillars-of-heaven",
+    "kind": "talk",
+    "sample": "Hyrum ser­viu no bis­pa­do de Ohio, no pri­mei­ro sumo con­se­lho, como Patriarca, como con­se­lhei­ro na Primeira Presidência e, por"
+   },
+   {
+    "term": "presidências",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 133.4,
+    "source": "2002-10-oaks-ill-go-where-you-want-me-to-go",
+    "kind": "talk",
+    "sample": "reja. É isso que acontece com os 26.000 bispos e presidentes de ramo e as fiéis presidências de quóruns e da Sociedade de Socorro, Primária e Moças que servem com eles e so"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 98,
+  "en_talks": 69,
+  "en_verses": 6,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "obispado",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 97,
+    "talks": 68,
+    "verses": 6,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 82:12",
+      "ref_en": "Doctrine and Covenants 82:12",
+      "en": "To manage the affairs of the poor, and all things pertaining to the bishopric both in the land of Zion and in the land of Kirtland;",
+      "tr": "para administrar los asuntos de los pobres y todas las cosas pertenecientes al obispado, tanto en la tierra de Sion como en la de Kirtland;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/82?lang=spa&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 33,
+      "en": "… no member of a stake presidency or of a bishopric or of an elders quorum presidency is there because he …",
+      "tr": "… miembro de la presidencia de la estaca ni del obispado, ni de la presidencia del quórum de élderes está …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-eyring-eternal-families",
+      "para": 37,
+      "en": "… within the walls of your own home. Home Teaching, bishopric’s work, and other Church duties are all important, but …",
+      "tr": "… propio hogar. La orientación familiar, el trabajo en el obispado y otros deberes de la Iglesia son todos importantes, pero …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "id": "concept.assigned-families",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "sob nossa responsabilidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2007-10-oaks-good-better-best",
+    "kind": "talk",
+    "sample": "de mestres familiares e professoras visitantes, sugiro que visitar as famílias sob nossa responsabilidade é *bom*; fazer uma visita breve, na qual ensinemos doutrinas e princípios é mel"
+   },
+   {
+    "term": "famílias sob",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2007-10-oaks-good-better-best",
+    "kind": "talk",
+    "sample": "milhares de mestres familiares e professoras visitantes, sugiro que visitar as famílias sob nossa responsabilidade é *bom*; fazer uma visita breve, na qual ensinemos doutr"
+   },
+   {
+    "term": "mestres familiares",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 242.5,
+    "source": "2007-10-oaks-good-better-best",
+    "kind": "talk",
+    "sample": "Para nossas centenas de milhares de mestres familiares e professoras visitantes, sugiro que visitar as famílias sob nossa responsabili"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "familias asignadas",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2014,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-eyring-the-preparatory-priesthood",
+      "para": 19,
+      "en": "Before they were to visit one of their assigned families, that seasoned priesthood leader asked to visit my …",
+      "tr": "Antes de ir a visitar a una de las familias asignadas, ese experimentado líder del sacerdocio quiso hablar con …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

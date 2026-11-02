@@ -1,0 +1,17 @@
+id: concept.stick-of-joseph
+category: Scriptures & Study Helps
+en:
+  term: stick of Joseph
+  match:
+  - stick of Joseph
+sources:
+  GS:
+  - stick-of-joseph
+candidates:
+  pt:
+  - term: vara de José
+    hint: pulpit-glossary:verified
+  es:
+  - term: Palo de José
+    hint: pulpit-glossary:verified
+related: []

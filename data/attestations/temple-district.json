@@ -1,0 +1,103 @@
+{
+ "id": "concept.temple-district",
+ "pt": {
+  "en_paragraphs": 14,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "distrito do templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 12,
+    "talks": 12,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 6,
+      "en": "… the United States which are a part of the temple district. Some journeyed to Toronto from the distant Maritime …",
+      "tr": "… cidades dos Estados Unidos que fazem parte do distrito do templo. Alguns viajaram até Toronto, desde as distantes Províncias …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-monson-welcome-to-conference",
+      "para": 3,
+      "en": "… the dedication. In Boise over 9,000 youth from the temple district participated in the cultural celebration. There were so many …",
+      "tr": "… dedicação. Em Boise, mais de 9.000 jovens do distrito do templo participaram da celebração cultural. Tantos eram os jovens envolvidos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-cook-the-atonement-of-jesus-christ-provides-the-ultimate-rescue",
+      "para": 1,
+      "en": "The stakes in the Casper Wyoming Temple District include a portion of the overland trail used by …",
+      "tr": "As estacas do distrito do Templo de Casper Wyoming incluem uma parte da trilha usada, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 14,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "distrito del templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 12,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 2008,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-monson-welcome-to-conference",
+      "para": 2,
+      "en": "… were held. In Curitiba, Brazil, 4,330 members from the temple district, supported by a choir of 1,700 voices, presented …",
+      "tr": "… Curitiba, Brasil, cuatro mil trescientos treinta miembros del distrito del templo, con el apoyo de un coro de mil …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-monson-welcome-to-conference",
+      "para": 3,
+      "en": "… the dedication. In Boise over 9,000 youth from the temple district participated in the cultural celebration. There were so many …",
+      "tr": "… dedicación. En Boise, más de 9.000 jóvenes del distrito del templo participaron en la celebración cultural. Había tantos jóvenes participando …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-cook-the-atonement-of-jesus-christ-provides-the-ultimate-rescue",
+      "para": 1,
+      "en": "The stakes in the Casper Wyoming Temple District include a portion of the overland trail used by …",
+      "tr": "Las estacas del distrito del Templo de Casper, Wyoming, abarcan una parte del camino utilizado …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

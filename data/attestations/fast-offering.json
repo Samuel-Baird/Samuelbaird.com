@@ -1,0 +1,180 @@
+{
+ "id": "concept.fast-offering",
+ "pt": {
+  "en_paragraphs": 68,
+  "en_talks": 52,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "oferta de jejum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 61,
+    "talks": 47,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-monson-conference-is-here",
+      "para": 5,
+      "en": "… of the Church membership in the payment of their fast offerings as the Lord has commanded.",
+      "tr": "… dos membros da Igreja no pagamento de suas ofertas de jejum, conforme ordenou o Senhor."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-davies-the-law-of-the-fast-a-personal-responsibility-to-care-for-the-poor-and-needy",
+      "para": 25,
+      "en": "… the fast. When we fast and give an honest fast offering, we contribute to the Lord’s storehouse what would …",
+      "tr": "… do jejum. Quando jejuamos e doamos uma sincera oferta de jejum, contribuímos para o armazém do Senhor com o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-soares-a-higher-and-holier-fast",
+      "para": 11,
+      "en": "Though our fast offerings may seem small and simple, they become consecrated expressions …",
+      "tr": "Embora nossas ofertas de jejum pareçam pequenas e simples, elas se tornam expressões consagradas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jejum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 428.7,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "ato, lembro-me de distribuir o sagrado sacramento, arrecadar ofertas mensais de jejum e cuidar uns dos outros. A tarefa mais assustadora, porém, ocorreu numa sessão"
+   },
+   {
+    "term": "ofertas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 326.6,
+    "source": "2001-10-hales-fulfilling-our-duty-to-god",
+    "kind": "talk",
+    "sample": "eiam as escrituras diariamente. Fortaleçam seu testemunho. Paguem o dízimo e as ofertas. Lembrem-se de guardar os convênios que fizeram quando foram batizados e renove"
+   },
+   {
+    "term": "secretário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 1143.1,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "Quando eu tinha doze anos, tive o privilégio de servir como secretário do quórum de diáconos. Lembro-me com alegria das várias designações que nós, me"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 87,
+  "en_talks": 60,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "ofrenda de ayuno",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 74,
+    "talks": 54,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-eyring-witnesses-for-god",
+      "para": 19,
+      "en": "… to it whenever we can, we pay a generous fast offering. The bishop and the branch president use those …",
+      "tr": "… y, si es posible ofreciendo mas, pagamos una ofrenda de ayuno generosa. Bajo inspiración, el obispo y el presidente de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-christofferson-redemption",
+      "para": 19,
+      "en": "… the Church in need received millions of dollars in fast-offering and other welfare assistance during 2012. Thank you for your …",
+      "tr": "… la Iglesia necesitados recibieron millones de dólares en ofrendas de ayuno y otras ayudas de bienestar durante 2012. Gracias por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-soares-a-higher-and-holier-fast",
+      "para": 12,
+      "en": "… who turn their hearts toward God’s children through generous fast offerings. Personally, I have felt an increase of inspiration …",
+      "tr": "… su corazón hacia los hijos de Dios mediante ofrendas de ayuno generosas. En lo personal, he sentido más inspiración y …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ofrendas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.385,
+    "ratio": 139.9,
+    "source": "1997-04-scott-jesus-christ-our-redeemer",
+    "kind": "talk",
+    "sample": "r: santificaras el día de reposo, ejercerás la fe mediante el pago de diezmos y ofrendas, participaras con regularidad en los servicios de adoración de la Iglesia, dará"
+   },
+   {
+    "term": "ley del ayuno",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.308,
+    "ratio": 307.8,
+    "source": "2001-04-wirthlin-the-law-of-the-fast",
+    "kind": "talk",
+    "sample": "nles ver que ustedes viven por medio del ejemplo. Después, ayúdenles a vivir la ley del ayuno por sí mismos, poco a poco. Ellos pueden ayunar y también dar una ofrenda, si l"
+   },
+   {
+    "term": "ayunar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 153.9,
+    "source": "2000-10-gillespie-the-blessing-of-keeping-the-sabbath-day-holy",
+    "kind": "talk",
+    "sample": "Cena, un día ”para rendir [nuestras] devociones al Altísimo”[^8], un día para ”ayunar y orar”[^9], un día para ofrecer nuestro tiempo, talentos y medios en el servic"
+   }
+  ]
+ }
+}

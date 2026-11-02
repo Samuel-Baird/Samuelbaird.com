@@ -1,0 +1,17 @@
+id: concept.terrestrial-kingdom
+category: Plan of Salvation
+en:
+  term: terrestrial kingdom
+  match:
+  - terrestrial kingdom
+sources:
+  TtF:
+  - terrestrial-kingdom
+candidates:
+  pt:
+  - term: reino terrestrial
+    hint: pulpit-glossary:verified
+  es:
+  - term: Reino Terrestre
+    hint: approved-terms
+related: []

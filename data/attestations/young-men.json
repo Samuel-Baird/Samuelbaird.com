@@ -1,0 +1,130 @@
+{
+ "id": "concept.young-men",
+ "pt": {
+  "en_paragraphs": 704,
+  "en_talks": 350,
+  "en_verses": 100,
+  "uncovered_paragraphs": 197,
+  "renderings": [
+   {
+    "term": "Rapazes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 604,
+    "talks": 311,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Salmos 148:12",
+      "ref_en": "Psalm 148:12",
+      "en": "Both young men, and maidens; old men, and children:",
+      "tr": "Rapazes e donzelas, velhos e crianças,",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ps/148?lang=por&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 0,
+      "en": "… in this meeting. Much has been spoken to the young men. I endorse all of it. I hope that …",
+      "tr": "… reunião. Muito do que foi falado foi dirigido aos rapazes, e eu endosso isso tudo. Espero que tenham ficado …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-ballard-fathers-and-sons-a-remarkable-relationship",
+      "para": 20,
+      "en": "… open and frequent discussions that teach and clarify how young men of the priesthood handle this issue. Be positive about …",
+      "tr": "… abertas e regulares que ensinem e esclareçam como os rapazes do sacerdócio podem lidar com esse assunto. Sejam positivos sobre …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 163,
+    "share_of_uncovered": 0.827,
+    "ratio": 31.5,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "se me permitis, decidi dirigir-me aos homens, com a esperança de transmitir aos jovens algum valor de longo alcance."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 696,
+  "en_talks": 356,
+  "en_verses": 100,
+  "uncovered_paragraphs": 599,
+  "renderings": [
+   {
+    "term": "Hombres Jóvenes",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 196,
+    "talks": 129,
+    "verses": 1,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mosíah 10:9",
+      "ref_en": "Mosiah 10:9",
+      "en": "And it came to pass that I caused that the women and children of my people should be hid in the wilderness; and I also caused that all my old men that could bear arms, and also all my young men that were able to bear arms, should gather themselves together to go to battle against the Lamanites; and I did place them in their ranks, every man according to his age.",
+      "tr": "Y aconteció que hice que las mujeres y los niños de mi pueblo se ocultaran en el desierto; e hice también que todos mis hombres ancianos que podían llevar armas, así como todos mis hombres jóvenes que podían portar armas, se reunieran para ir a la batalla contra los lamanitas; y los coloqué en sus filas, cada hombre según su edad.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/10?lang=spa&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-goaslind-yagottawanna",
+      "para": 1,
+      "en": "Your potential, young men, is described in a Book of Mormon phrase: …",
+      "tr": "… los de otra generación? Como Presidente General de los Hombres Jóvenes, espero estar presidiendo una hermandad de jóvenes de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-perry-the-sabbath-and-the-sacrament",
+      "para": 19,
+      "en": "… keeping the commandments and living gospel standards. As these young men keep spiritually clean hands and pure hearts, they prepare …",
+      "tr": "… Evangelio. Manteniendo espiritualmente manos limpias y corazones puros, estos hombres jóvenes preparan y bendicen la Santa Cena a la manera …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 215,
+    "share_of_uncovered": 0.86,
+    "ratio": 23.9,
+    "source": "2009-10-eyring-be-ready",
+    "kind": "talk",
+    "sample": "queño como llevar el acta del quórum de diáconos o de maestros. Hace años había jóvenes que llevaban registros meticulosos de lo que decidían y hacían jóvenes unos mes"
+   }
+  ]
+ }
+}

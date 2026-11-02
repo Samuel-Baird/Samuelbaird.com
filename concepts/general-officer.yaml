@@ -1,0 +1,17 @@
+id: concept.general-officer
+category: Presiding Quorums & General Leadership
+en:
+  term: General Officer
+  match:
+  - General Officer
+sources:
+  GH:
+  - 5-general-and-area-leadership#title_number8
+candidates:
+  pt:
+  - term: Oficial Geral
+    hint: pulpit-glossary:standard
+  es:
+  - term: oficial general
+    hint: approved-terms
+related: []

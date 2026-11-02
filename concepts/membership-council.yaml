@@ -1,0 +1,19 @@
+id: concept.membership-council
+category: Interviews, Repentance & Membership Councils
+en:
+  term: membership council
+  match:
+  - membership council
+sources:
+  Topics:
+  - membership-councils
+  GH:
+  - 32-repentance-and-membership-councils#title_number67
+candidates:
+  pt:
+  - term: conselho de condição de membro da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: consejo de membresía
+    hint: pulpit-glossary:verified
+related: []

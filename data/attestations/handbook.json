@@ -1,0 +1,93 @@
+{
+ "id": "concept.handbook",
+ "pt": {
+  "en_paragraphs": 106,
+  "en_talks": 86,
+  "en_verses": 0,
+  "uncovered_paragraphs": 106,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "manual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 82,
+    "share_of_uncovered": 0.774,
+    "ratio": 103.2,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": ", pelas escrituras e obras-padrão que nos concedeu em nossa geração. Elas são o manual do sacerdócio. A vós, jovens do Sacerdócio Aarônico e vós, irmãos do Sacerdócio"
+   },
+   {
+    "term": "administração",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 44,
+    "share_of_uncovered": 0.415,
+    "ratio": 237.3,
+    "source": "2011-04-cook-lds-women-are-incredible",
+    "kind": "talk",
+    "sample": "Grace: How Religion Divides and Unites Us,* 2010, p. 233.\n[^3]: Ver *Manual 2: Administração da Igreja,* 2010, 1.3.1; ver também Moisés 5:1, 4, 12, 27.\n[^4]: Andrew D. Olse"
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.387,
+    "ratio": 21.2,
+    "source": "1999-10-oaks-gospel-teaching",
+    "kind": "talk",
+    "sample": "y (1975).\n[^5]: Carta da Primeira Presidência de ⌦15 de setembro de 1999.\n[^6]: The Teachings of Spencer W. Kimball, ed. Edward L. Kimball (1982), p. 533.\n[^7]: Ma"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 92,
+  "en_talks": 77,
+  "en_verses": 0,
+  "uncovered_paragraphs": 92,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "manual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 72,
+    "share_of_uncovered": 0.783,
+    "ratio": 84.6,
+    "source": "1992-04-ashton-the-tongue-can-be-a-sharp-sword",
+    "kind": "talk",
+    "sample": "tema mas importante del sermón del Salvador, que en muchos sentidos es el mejor manual con que contamos para venir a Cristo, se concentra en las virtudes del amor, la"
+   },
+   {
+    "term": "administración",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 44,
+    "share_of_uncovered": 0.478,
+    "ratio": 318.9,
+    "source": "2011-04-cook-lds-women-are-incredible",
+    "kind": "talk",
+    "sample": "Cómo nos divide y nos une la religión\"), 2010, pág. 233.\n[^3]: Véase *Manual 2: Administración de la Iglesia*, 2010, sección 1.3.1; véase también [Moisés 5:1, 4, 12, 27](http"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 48,
+    "share_of_uncovered": 0.522,
+    "ratio": 18.5,
+    "source": "2002-10-mcmullin-come-to-zion-come-to-zion",
+    "kind": "talk",
+    "sample": "[^1]: Enseñanzas de los presidentes de la Iglesia: Brigham Young, págs. 50, 251; cursiva agregada.\n[^2]: Traducción de José Smith, Mateo 6:38.\n[^3]:"
+   }
+  ]
+ }
+}

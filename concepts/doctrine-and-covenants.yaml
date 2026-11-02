@@ -1,0 +1,21 @@
+id: concept.doctrine-and-covenants
+category: Scriptures & Study Helps
+en:
+  term: Doctrine and Covenants
+  match:
+  - Doctrine and Covenants
+sources:
+  GS:
+  - doctrine-and-covenants
+  Topics:
+  - doctrine-and-covenants
+  TtF:
+  - doctrine-and-covenants
+candidates:
+  pt:
+  - term: Doutrina e Convênios
+    hint: pulpit-glossary:standard
+  es:
+  - term: Doctrina y Convenios
+    hint: approved-terms
+related: []

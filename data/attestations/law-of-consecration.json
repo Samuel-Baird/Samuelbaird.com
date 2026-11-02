@@ -1,0 +1,103 @@
+{
+ "id": "concept.law-of-consecration",
+ "pt": {
+  "en_paragraphs": 12,
+  "en_talks": 12,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "lei da consagração",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 12,
+    "talks": 12,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-oaks-tithing",
+      "para": 21,
+      "en": "… of sacrifice. It also prepares us for the law of consecration and the other higher laws of the celestial kingdom. …",
+      "tr": "… a lei do sacrifício. Prepara-nos, também, para a lei da consagração e para as outras leis mais elevadas do reino …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-bednar-prepared-to-obtain-every-needful-thing",
+      "para": 30,
+      "en": "… the gospel, the law of chastity, and the law of consecration.[^16] All Church members should become familiar with the …",
+      "tr": "… do evangelho, a lei da castidade e a lei da consagração. [^16] Todos os membros da Igreja devem se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-giuffra-trusting-the-lord-through-tithes-and-offerings",
+      "para": 16,
+      "en": "… of sacrifice. It also prepares us for the law of consecration and the other higher laws of the celestial kingdom.”[^3] …",
+      "tr": "… do sacrifício. Ele também nos prepara para a lei da consagração e para as outras leis mais elevadas do reino …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 11,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "ley de consagración",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-hales-couple-missionaries-a-time-to-serve",
+      "para": 21,
+      "en": "… our lives when we can truly live the law of consecration and devote ourselves in full-time service to the Lord. …",
+      "tr": "… nuestras vidas en que podemos vivir realmente la ley de consagración y dedicar todo nuestro tiempo al servicio del Señor. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-bednar-prepared-to-obtain-every-needful-thing",
+      "para": 30,
+      "en": "… the gospel, the law of chastity, and the law of consecration.[^16] All Church members should become familiar with the …",
+      "tr": "… del Evangelio, la ley de castidad y la ley de consagración[^16]. Todos los miembros de la Iglesia deben familiarizarse …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-giuffra-trusting-the-lord-through-tithes-and-offerings",
+      "para": 16,
+      "en": "… of sacrifice. It also prepares us for the law of consecration and the other higher laws of the celestial kingdom.”[^3] …",
+      "tr": "… ley de sacrificio. También nos prepara para la ley de consagración y las otras leyes mayores del reino celestial”[^3]. Estas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

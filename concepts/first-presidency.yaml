@@ -1,0 +1,23 @@
+id: concept.first-presidency
+category: Presiding Quorums & General Leadership
+en:
+  term: First Presidency
+  match:
+  - First Presidency
+sources:
+  GS:
+  - first-presidency
+  Topics:
+  - first-presidency
+  TtF:
+  - first-presidency
+  GH:
+  - 32-repentance-and-membership-councils#title_number73
+candidates:
+  pt:
+  - term: Primeira Presidência
+    hint: pulpit-glossary:verified
+  es:
+  - term: Primera Presidencia
+    hint: approved-terms
+related: []

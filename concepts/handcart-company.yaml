@@ -1,0 +1,13 @@
+id: concept.handcart-company
+category: Church History
+en:
+  term: handcart company
+  match:
+  - handcart company
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: compañía de carros de mano
+    hint: pulpit-glossary:verified
+related: []

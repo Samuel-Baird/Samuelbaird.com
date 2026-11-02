@@ -1,0 +1,76 @@
+{
+ "id": "concept.cultural-hall",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "salão cultural",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2008,
+    "last_year": 2008,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-uchtdorf-lift-where-you-stand",
+      "para": 2,
+      "en": "… a grand piano from the chapel to the adjoining cultural hall, where it was needed for a musical event. …",
+      "tr": "… um piano de cauda do salão sacramental para o salão cultural, onde ele seria usado num evento musical. Nenhum …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "salón cultural",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2008,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-ballard-creating-a-gospel-sharing-home",
+      "para": 28,
+      "en": "… will overflow in our chapels, our classrooms, and our cultural halls.",
+      "tr": "… conocer el Evangelio inundará nuestras capillas, nuestras aulas y salones culturales."
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-uchtdorf-lift-where-you-stand",
+      "para": 2,
+      "en": "… a grand piano from the chapel to the adjoining cultural hall, where it was needed for a musical event. …",
+      "tr": "… un piano de cola desde el salón sacramental al salón cultural contiguo, donde lo necesitaban para una actividad musical. Ninguno …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

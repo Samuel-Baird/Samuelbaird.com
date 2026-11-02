@@ -1,0 +1,17 @@
+id: concept.out-of-unit-member
+category: Membership Records
+en:
+  term: out-of-unit member
+  match:
+  - out-of-unit member
+sources:
+  GH:
+  - 33-records-and-reports#title_number24
+candidates:
+  pt:
+  - term: membro fora da unidade
+    hint: pulpit-glossary:verified
+  es:
+  - term: miembro fuera de la unidad
+    hint: pulpit-glossary:verified
+related: []

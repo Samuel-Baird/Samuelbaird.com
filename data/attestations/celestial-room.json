@@ -1,0 +1,120 @@
+{
+ "id": "concept.celestial-room",
+ "pt": {
+  "en_paragraphs": 13,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "sala celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 13,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 8,
+      "en": "… From her hospital bed, which was wheeled into the celestial room, she not only basked in the spirit found …",
+      "tr": "… Sua cama hospitalar com rodas foi empurrrada até a sala celestial, e ela não só se banqueteou com o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-monson-blessings-of-the-temple",
+      "para": 13,
+      "en": "As the young man entered the celestial room following the session, he sat in a chair and …",
+      "tr": "Quando o jovem entrou na sala celestial, depois da sessão, sentou-se numa poltrona e começou …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-budge-seek-him-with-all-your-heart",
+      "para": 22,
+      "en": "… pay attention or lingered a little longer in the celestial room in quiet reflection?[^25]",
+      "tr": "… para prestarmos atenção ou permanecêssemos um pouco mais na sala celestial em silenciosa reflexão?[^25]"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "sala celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2012,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hinckley-closing-remarks",
+      "para": 6,
+      "en": "Every temple, large or small, has its beautiful celestial room. This room was created to represent the celestial …",
+      "tr": "Cada templo, grande o pequeño, tiene su hermosa sala celestial, que se creó para representar el reino celestial. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-dalton-now-is-the-time-to-arise-and-shine",
+      "para": 12,
+      "en": "Several weeks ago I stood in the celestial room of the Reno Nevada Temple. The light streaming into …",
+      "tr": "Hace algunas semanas me encontraba en la sala celestial del Templo de Reno, Nevada. La luz que entraba …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "salón",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.909,
+    "ratio": 454.7,
+    "source": "1990-10-monson-days-never-to-be-forgotten",
+    "kind": "talk",
+    "sample": "e inundó del espíritu presente sino que contribuyó con el suyo. Cuando salí del salón, pase por su lado y, al ver su expresión de profunda gratitud al Señor, me incl"
+   },
+   {
+    "term": "siguiente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 20.6,
+    "source": "2014-10-burton-prepared-in-a-manner-that-never-had-been-known",
+    "kind": "talk",
+    "sample": "Al considerar el principio de estar preparados, imaginemos la siguiente escena: Están sentados en el salón celestial del templo y observan a las novias"
+   }
+  ]
+ }
+}

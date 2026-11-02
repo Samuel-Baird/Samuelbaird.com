@@ -1,0 +1,127 @@
+{
+ "id": "concept.healing-blessing",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "bênção de saúde",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-powers-of-the-priesthood",
+      "para": 29,
+      "en": "… priesthood blessings to his wife and children, or give healing blessings to family members or others.",
+      "tr": "… sua esposa e a seus filhos ou dar bênçãos de saúde aos membros da família e a outras pessoas."
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-oaks-the-melchizedek-priesthood-and-the-keys",
+      "para": 10,
+      "en": "… priesthood blessings to his wife and children, or giving healing blessings to family members or others.[^3] Church authorities teach family …",
+      "tr": "… à sua esposa e aos filhos, ou dar bênçãos de saúde aos membros da família e a outras pessoas.[^3] As …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "cura",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 1.0,
+    "ratio": 121.2,
+    "source": "2010-04-oaks-healing-the-sick",
+    "kind": "talk",
+    "sample": "s que logo receberão esse poder, vou concentrar meus comentários nas bênçãos de cura que envolvem o poder do sacerdócio. Temos esse poder do sacerdócio e devemos to"
+   },
+   {
+    "term": "bênçãos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 20.8,
+    "source": "2010-04-oaks-healing-the-sick",
+    "kind": "talk",
+    "sample": "ue e rapazes que logo receberão esse poder, vou concentrar meus comentários nas bênçãos de cura que envolvem o poder do sacerdócio. Temos esse poder do sacerdócio e de"
+   },
+   {
+    "term": "élder",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 23.8,
+    "source": "2010-04-oaks-healing-the-sick",
+    "kind": "talk",
+    "sample": "Outra parte da bênção do sacerdócio são as palavras de bênção proferidas pelo élder depois de selar a unção. Essas palavras podem ser muito importantes, mas seu co"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "salud",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.545,
+    "ratio": 136.4,
+    "source": "2010-04-oaks-healing-the-sick",
+    "kind": "talk",
+    "sample": "la función de la unción en relación con los otros elementos de una bendición de salud por la autoridad del sacerdocio:"
+   },
+   {
+    "term": "soportar las cargas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 1091.2,
+    "source": "2006-10-oaks-he-heals-the-heavy-laden",
+    "kind": "talk",
+    "sample": "ras veces se nos “sana” al otorgársenos fortaleza, comprensión o paciencia para soportar las cargas que llevamos."
+   },
+   {
+    "term": "sanar vienen",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 1091.2,
+    "source": "2006-10-oaks-he-heals-the-heavy-laden",
+    "kind": "talk",
+    "sample": "Las bendiciones para sanar vienen de muchas maneras, cada una adaptada a nuestras necesidades individuales, que s"
+   }
+  ]
+ }
+}

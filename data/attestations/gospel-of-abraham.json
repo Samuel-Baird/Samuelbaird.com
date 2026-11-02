@@ -1,0 +1,97 @@
+{
+ "id": "concept.gospel-of-abraham",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 7,
+  "en_verses": 1,
+  "uncovered_paragraphs": 11,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "abraão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 1.0,
+    "ratio": 222.3,
+    "source": "2006-04-faust-the-restoration-of-all-things",
+    "kind": "talk",
+    "sample": "ligação de Israel. Em seguida, Elias apareceu e comissionou-lhes o evangelho de Abraão, para que “em nós e em nossa semente todas as gerações depois de nós [sejam] ab"
+   },
+   {
+    "term": "elias apareceu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.636,
+    "ratio": 2546.1,
+    "source": "2006-04-faust-the-restoration-of-all-things",
+    "kind": "talk",
+    "sample": "eta Joseph Smith e Oliver Cowdery as chaves da coligação de Israel. Em seguida, Elias apareceu e comissionou-lhes o evangelho de Abraão, para que “em nós e em nossa semente t"
+   },
+   {
+    "term": "conferiu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.636,
+    "ratio": 1273.0,
+    "source": "2018-04-cook-prepare-to-meet-god",
+    "kind": "talk",
+    "sample": "**Segundo**, Elias apareceu e conferiu as chaves da dispensação do evangelho de Abraão, que inclui a restauração do co"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 10,
+  "en_talks": 7,
+  "en_verses": 1,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "evangelio de Abraham",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 10,
+    "talks": 7,
+    "verses": 1,
+    "first_year": 2006,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 110:12",
+      "ref_en": "Doctrine and Covenants 110:12",
+      "en": "After this, Elias appeared, and committed the dispensation of the gospel of Abraham, saying that in us and our seed all generations after us should be blessed.",
+      "tr": "Después de esto, apareció Elías y entregó la dispensación del evangelio de Abraham, diciendo que en nosotros y en nuestra descendencia serían bendecidas todas las generaciones después de nosotros.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110?lang=spa&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-faust-the-restoration-of-all-things",
+      "para": 11,
+      "en": "… Israel. After this, Elias appeared and committed the gospel of Abraham, that in “our seed all generations after us …",
+      "tr": "… Elías se apareció y entregó la dispensación del Evangelio de Abraham, “diciendo que en nosotros y en nuestra descendencia …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-christofferson-the-sealing-power",
+      "para": 4,
+      "en": "… Elias appeared and “committed the dispensation of the gospel of Abraham, saying that in us and our seed all …",
+      "tr": "… se apareció Elías y “entregó la dispensación del evangelio de Abraham, diciendo que en nosotros y en nuestra descendencia …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

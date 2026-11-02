@@ -1,0 +1,102 @@
+{
+ "id": "concept.heavenly-father",
+ "pt": {
+  "en_paragraphs": 2814,
+  "en_talks": 1143,
+  "en_verses": 12,
+  "uncovered_paragraphs": 53,
+  "renderings": [
+   {
+    "term": "Pai Celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2761,
+    "talks": 1130,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mateus 6:14",
+      "ref_en": "Matthew 6:14",
+      "en": "For if ye forgive men their trespasses, your heavenly Father will also forgive you:",
+      "tr": "Porque, se perdoardes aos homens as suas ofensas, também vosso Pai Celestial vos perdoará a vós;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=por&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-beckham-a-pattern-of-righteousness",
+      "para": 2,
+      "en": "… of righteousness in our lives, we commit to our Heavenly Father to do all in our power to help others …",
+      "tr": "… modelo de retidão em nossa vida, comprometemo-nos com o Pai Celestial a fazer tudo o que estiver ao nosso alcance …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-foster-its-never-too-early-and-its-never-too-late",
+      "para": 32,
+      "en": "It is my witness that our Heavenly Father loved us so much that He sent His Only …",
+      "tr": "Tenho testemunho de que o Pai Celestial nos amou tanto que enviou Seu Filho Unigênito para …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2803,
+  "en_talks": 1142,
+  "en_verses": 12,
+  "uncovered_paragraphs": 55,
+  "renderings": [
+   {
+    "term": "Padre Celestial",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 2748,
+    "talks": 1130,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Nefi 13:14",
+      "ref_en": "3 Nephi 13:14",
+      "en": "For, if ye forgive men their trespasses your heavenly Father will also forgive you;",
+      "tr": "Porque si perdonáis a los hombres sus ofensas, os perdonará también a vosotros vuestro Padre Celestial;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/13?lang=spa&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 46,
+      "en": "Did our Heavenly Father honor such abiding faith? The branch prospered. The membership …",
+      "tr": "¿Recompensó nuestro Padre Celestial esa fe tan firme? La rama prosperó. Los miembros …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-gibson-fatherhoodour-eternal-destiny",
+      "para": 54,
+      "en": "I know that Heavenly Father is concerned about each of us individually and has …",
+      "tr": "Sé que nuestro Padre Celestial se interesa por cada uno de nosotros en forma …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

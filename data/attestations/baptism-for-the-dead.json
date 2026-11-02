@@ -1,0 +1,139 @@
+{
+ "id": "concept.baptism-for-the-dead",
+ "pt": {
+  "en_paragraphs": 23,
+  "en_talks": 18,
+  "en_verses": 8,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "batismo pelos mortos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 15,
+    "verses": 8,
+    "first_year": 2003,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 127:10",
+      "ref_en": "Doctrine and Covenants 127:10",
+      "en": "I will say to all the saints, that I desired, with exceedingly great desire, to have addressed them from the stand on the subject of baptism for the dead, on the following Sabbath. But inasmuch as it is out of my power to do so, I will write the word of the Lord from time to time, on that subject, and send it to you by mail, as well as many other things.",
+      "tr": "Quero dizer a todos os santos que desejei, com grande desejo, falar-lhes do púlpito no domingo próximo sobre o assunto do batismo pelos mortos. Mas estando fora de meu alcance fazê-lo, escreverei a palavra do Senhor, de tempos em tempos, sobre o assunto; e enviá-la-ei pelo correio, assim como muitas outras coisas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/127?lang=por&id=p10"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-faust-the-phenomenon-that-is-you",
+      "para": 24,
+      "en": "… of temple work as you have participated in baptisms for the dead. When we go early to the temple, …",
+      "tr": "… gostinho do trabalho no templo ao participarem de batismos pelos mortos. Quando chegamos cedo ao templo, freqüentemente vemos jovens …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-cook-see-yourself-in-the-temple",
+      "para": 42,
+      "en": "… held by endowed adults, a limited-use recommend for baptisms for the dead may be received by worthy youth and unendowed …",
+      "tr": "… recomendação que os adultos portam, uma recomendação para batismos pelos mortos, de uso limitado, pode ser recebida por jovens …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mortos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 127.0,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "apenas verdade que fazemos isso hoje, mas o princípio do batismo vicário pelos mortos foi ensinado durante o ministério terreno de nosso Salvador.”"
+   },
+   {
+    "term": "ministério",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 40.4,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "so hoje, mas o princípio do batismo vicário pelos mortos foi ensinado durante o ministério terreno de nosso Salvador.”"
+   },
+   {
+    "term": "pelos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 17.1,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "Não é apenas verdade que fazemos isso hoje, mas o princípio do batismo vicário pelos mortos foi ensinado durante o ministério terreno de nosso Salvador.”"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 19,
+  "en_talks": 17,
+  "en_verses": 8,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "bautismo por los muertos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 17,
+    "verses": 8,
+    "first_year": 2003,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 128:1",
+      "ref_en": "Doctrine and Covenants 128:1",
+      "en": "As I stated to you in my letter before I left my place, that I would write to you from time to time and give you information in relation to many subjects, I now resume the subject of the baptism for the dead, as that subject seems to occupy my mind, and press itself upon my feelings the strongest, since I have been pursued by my enemies.",
+      "tr": "Conforme a lo que os comuniqué en mi carta, antes de partir de casa, que de cuando en cuando os escribiría para daros información concerniente a muchos asuntos, en esta reanudo el tema del bautismo por los muertos, porque es lo que parece ocupar mi mente e introducirse con más fuerza en mis sentimientos, desde que me persiguen mis enemigos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/128?lang=spa&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-faust-the-phenomenon-that-is-you",
+      "para": 24,
+      "en": "… of temple work as you have participated in baptisms for the dead. When we go early to the temple, …",
+      "tr": "… es la obra del templo porque han efectuado bautismos por los muertos. Cuando vamos temprano al templo solemos ver …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-cook-see-yourself-in-the-temple",
+      "para": 42,
+      "en": "… held by endowed adults, a limited-use recommend for baptisms for the dead may be received by worthy youth and unendowed …",
+      "tr": "… recibir una recomendación de uso limitado para efectuar bautismos por los muertos. Ambas recomendaciones requieren la firma del solicitante, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

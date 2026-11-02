@@ -1,0 +1,16 @@
+id: concept.school-of-the-prophets
+category: Church History
+en:
+  term: School of the Prophets
+  match:
+  - School of the Prophets
+sources:
+  GS:
+  - school-of-the-prophets
+candidates:
+  pt: []
+  es:
+  - term: Escuela de los Profetas
+    hint: approved-terms
+related: []
+note: Historical Restoration-era institution (Kirtland), not a generic educational term

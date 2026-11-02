@@ -1,0 +1,17 @@
+id: concept.sustaining
+category: Callings & Sustaining
+en:
+  term: sustaining
+  match:
+  - sustaining
+sources:
+  GH:
+  - 10-aaronic-priesthood#title_number24
+candidates:
+  pt:
+  - term: apoio
+    hint: pulpit-glossary:verified
+  es:
+  - term: sostenimiento
+    hint: pulpit-glossary:verified
+related: []

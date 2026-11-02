@@ -1,0 +1,97 @@
+{
+ "id": "concept.second-estate",
+ "pt": {
+  "en_paragraphs": 17,
+  "en_talks": 12,
+  "en_verses": 1,
+  "uncovered_paragraphs": 18,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "segundo estado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "1992-04-maxwell-my-servant-joseph",
+    "kind": "talk",
+    "sample": "mas essas glórias periódicas ocorreram em meio ao árduo dia-a-dia de Joseph no segundo estado."
+   },
+   {
+    "term": "guardarem seu segundo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.389,
+    "ratio": 1555.9,
+    "source": "1993-10-packer-for-time-and-all-eternity",
+    "kind": "talk",
+    "sample": ". Fazer com que guardem seu segundo estado é a função da maternidade, e ‘os que guardarem seu segundo estado terão aumento de glória sobre suas cabeças’ ([Abraão 3:26](https://www.c"
+   },
+   {
+    "term": "primeiro estado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.333,
+    "ratio": 1333.7,
+    "source": "2001-10-golden-our-fathers-plan",
+    "kind": "talk",
+    "sample": "O plano do Pai também exigia que todos que tivessem guardado seu primeiro estado fossem tentados e testados em um estado mortal, o segundo estado. Nessas condiç"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 17,
+  "en_talks": 12,
+  "en_verses": 1,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Segundo estado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 11,
+    "verses": 1,
+    "first_year": 1991,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Abraham 3:26",
+      "ref_en": "Abraham 3:26",
+      "en": "And they who keep their first estate shall be added upon; and they who keep not their first estate shall not have glory in the same kingdom with those who keep their first estate; and they who keep their second estate shall have glory added upon their heads for ever and ever.",
+      "tr": "y a los que guarden su primer estado les será añadido; y aquellos que no guarden su primer estado no tendrán gloria en el mismo reino con los que guarden su primer estado; y a quienes guarden su segundo estado, les será aumentada gloria sobre su cabeza para siempre jamás.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3?lang=spa&id=p26"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-oaks-joy-and-mercy",
+      "para": 7,
+      "en": "… losses on those who have proceeded to mortality, the second estate. Satan encourages a loss of virtue, a loss …",
+      "tr": "… aquellos que han llegado al estado mortal, o el segundo estado. Satanás favorece la perdida de la virtud, de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-eyring-a-priceless-heritage-of-hope",
+      "para": 25,
+      "en": "Keeping our second estate depends on our making covenants with God and faithfully …",
+      "tr": "El guardar nuestro segundo estado depende de que hagamos convenios con Dios y que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

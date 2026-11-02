@@ -1,0 +1,19 @@
+id: concept.setting-apart
+category: Baptism, Confirmation & Blessings
+en:
+  term: setting apart
+  match:
+  - setting apart
+sources:
+  GS:
+  - setting-apart
+  GH:
+  - 24#title_number30
+candidates:
+  pt:
+  - term: designação
+    hint: pulpit-glossary:standard
+  es:
+  - term: apartamiento
+    hint: pulpit-glossary:verified
+related: []

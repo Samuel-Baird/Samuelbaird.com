@@ -1,0 +1,18 @@
+id: concept.home-teaching
+category: Discipleship & Ministering
+en:
+  term: home teaching
+  match:
+  - home teaching
+sources:
+  TtF:
+  - home-teaching
+candidates:
+  pt:
+  - term: ensino familiar
+    hint: pulpit-glossary:verified
+  es:
+  - term: orientación familiar
+    hint: pulpit-glossary:verified
+related: []
+note: Replaced by ministering (2018); standard in pre-2018 talks

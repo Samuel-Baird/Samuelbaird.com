@@ -1,0 +1,161 @@
+{
+ "id": "concept.ordinance-work",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "realização das ordenanças",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2002,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-hinckley-o-that-i-were-an-angel-and-could-have-the-wish-of-mine-heart",
+      "para": 14,
+      "en": "Ordinance work was begun before the temple was entirely completed. It …",
+      "tr": "O trabalho de realização das ordenanças foi iniciado antes que as obras do templo estivessem …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ordenanças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 47.6,
+    "source": "2003-10-faust-the-phenomenon-that-is-you",
+    "kind": "talk",
+    "sample": "véu. Sentimos a influência daqueles que esperam que os encontremos para que as ordenanças a seu favor sejam realizadas. Este é um serviço cristão, porque estamos fazendo"
+   },
+   {
+    "term": "trabalho",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 20.6,
+    "source": "2003-10-faust-the-phenomenon-that-is-you",
+    "kind": "talk",
+    "sample": "ritual, com freqüência, ao buscarmos as fontes que os identificarão. Por ser um trabalho muito espiritual, podemos esperar ajuda vinda do outro lado do véu. Sentimos a"
+   },
+   {
+    "term": "mortos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 81.7,
+    "source": "2006-04-faust-the-restoration-of-all-things",
+    "kind": "talk",
+    "sample": "e vida eterna do homem”[^21]. Segue-se portanto que toda a humanidade, vivos e mortos, deve ter a oportunidade de ouvir o evangelho, seja nesta vida, seja no mundo e"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "obra de las ordenanzas",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-sorensen-small-templeslarge-blessings",
+      "para": 21,
+      "en": "… work for his deceased grandfather so he could perform ordinance work vicariously for him, literally doing something for his grandfather …",
+      "tr": "… que de esa manera pudiera llevar acabo la obra de las ordenanzas vicarias por él, haciendo literalmente por su abuelo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-hinckley-closing-remarks",
+      "para": 6,
+      "en": "… in white, to sit at the conclusion of our ordinance work in the beautiful celestial room and ponder, meditate, and …",
+      "tr": "… en la hermosa sala celestial al concluir nuestra obra de las ordenanzas, y pensar, meditar y orar en silencio."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-maynes-the-strength-to-endure",
+      "para": 10,
+      "en": "… which is eternal life, we must complete the appropriate ordinance work and then continue to keep the associated covenants. In …",
+      "tr": "… es la vida eterna, debemos completar la debida obra de las ordenanzas y luego seguir guardando los convenios asociados a …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ordenanzas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 39.7,
+    "source": "1997-10-scott-why-every-member-a-missionary",
+    "kind": "talk",
+    "sample": "en la tierra. Nuestra participación importante … es efectuar en esta tierra las ordenanzas"
+   },
+   {
+    "term": "aquellos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 22.6,
+    "source": "1997-10-scott-why-every-member-a-missionary",
+    "kind": "talk",
+    "sample": "ndo sobre la tierra; la obra misional también continua mas allá del velo entre [aquellos] que han muerto, ya sea sin haber escuchado el Evangelio, y sin haberlo aceptad"
+   },
+   {
+    "term": "obra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 17.4,
+    "source": "1997-10-scott-why-every-member-a-missionary",
+    "kind": "talk",
+    "sample": "“… esta obra no se limita a proclamar el Evangelio a [las personas]… que actualmente se encu"
+   }
+  ]
+ }
+}

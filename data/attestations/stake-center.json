@@ -1,0 +1,123 @@
+{
+ "id": "concept.stake-center",
+ "pt": {
+  "en_paragraphs": 18,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 17,
+  "renderings": [
+   {
+    "term": "centro de estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 1990,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-faust-gratitude-as-a-saving-principle",
+      "para": 16,
+      "en": "… spoken word, was arranged by President Muti in his stake center. The home evening was in honor of His …",
+      "tr": "… noite familiar com música e mensagens faladas, no centro de estaca. Essa noite familiar era em honra a Sua …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.941,
+    "ratio": 87.6,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "do e com as centenas de centros de história da fámília localizados nas sedes de estaca e nas alas, espalhados por toda a terra, como posso desvendar os segredos escon"
+   },
+   {
+    "term": "sedes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.471,
+    "ratio": 1882.8,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "ago Salgado e com as centenas de centros de história da fámília localizados nas sedes de estaca e nas alas, espalhados por toda a terra, como posso desvendar os segr"
+   },
+   {
+    "term": "autoridades gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.235,
+    "ratio": 36.2,
+    "source": "2005-10-hinckley-opening-remarks",
+    "kind": "talk",
+    "sample": "s possível para os membros da Primeira Presidência, do Quórum dos Doze e outras Autoridades Gerais visitarem cada estaca, exceto para reorganizações e divisões. A transmissão via"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "centro de estaca",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-hinckley-the-stake-president",
+      "para": 16,
+      "en": "… known for a long time that they needed a stake center, but they had been uncertain and argumentative as …",
+      "tr": "… tiempo, la gente había sabido que necesitaban un centro de estaca, pero por muchos años habían estado inseguros y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-cook-personal-peace-the-reward-of-righteousness",
+      "para": 6,
+      "en": "… had made the same decision to gather at the stake center. They called to let us know where they …",
+      "tr": "… un área más segura y luego fueron al centro de estaca de Manhattan en el Lincoln Center. Al llegar, se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-goury-be-thou-clean",
+      "para": 14,
+      "en": "… our next engagement. As we traveled back to the stake center, President Chesnut received an impression to visit one …",
+      "tr": "… antes de nuestra siguiente reunión. Mientras regresábamos al centro de estaca, el presidente Chesnut recibió la impresión de visitar …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

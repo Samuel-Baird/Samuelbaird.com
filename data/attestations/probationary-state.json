@@ -1,0 +1,177 @@
+{
+ "id": "concept.probationary-state",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 3,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "estado probatório",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 2,
+    "first_year": 2002,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 42:10",
+      "ref_en": "Alma 42:10",
+      "en": "Therefore, as they had become carnal, sensual, and devilish, by nature, this probationary state became a state for them to prepare; it became a preparatory state.",
+      "tr": "Portanto, como se haviam tornado carnais, sensuais e diabólicos por natureza, este estado probatório tornou-se para eles um estado de preparação; tornou-se um estado preparatório.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=por&id=p10"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-wickman-but-if-not",
+      "para": 4,
+      "en": "… narrowly defined purpose: It is a proving ground, a probationary state, a time to walk by faith, a time …",
+      "tr": "… especificamente definido: Trata-se de um campo de provas, um estado probatório, uma época para caminharmos pela fé, um tempo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-dibb-hold-on",
+      "para": 9,
+      "en": "… Nephi were each shown a vision of our mortal probationary state and its accompanying dangers. Lehi says, “And it came …",
+      "tr": "… e seu filho, Néfi, receberam uma visão do nosso estado probatório mortal e dos perigos que o acompanham. Leí disse: …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "provação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 320.1,
+    "source": "1996-10-faust-woman-why-weepest-thou",
+    "kind": "talk",
+    "sample": "acontecerá na Ressurreição. Segue-se então uma minuciosa narrativa do estado de provação desta vida, de justiça versus misericórdia e do plano de Deus para nossa felici"
+   },
+   {
+    "term": "estado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 128.0,
+    "source": "1996-10-faust-woman-why-weepest-thou",
+    "kind": "talk",
+    "sample": "o que lhe acontecerá na Ressurreição. Segue-se então uma minuciosa narrativa do estado de provação desta vida, de justiça versus misericórdia e do plano de Deus para"
+   },
+   {
+    "term": "encontro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 266.7,
+    "source": "2011-10-ardern-a-time-to-prepare",
+    "kind": "talk",
+    "sample": "u que “esta vida se tornou um estado de provação; um tempo de preparação para o encontro com Deus” (Alma 12:24). Para saber como usar melhor a rica herança de tempo, a"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 3,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "estado de probación",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 2,
+    "first_year": 2002,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 42:10",
+      "ref_en": "Alma 42:10",
+      "en": "Therefore, as they had become carnal, sensual, and devilish, by nature, this probationary state became a state for them to prepare; it became a preparatory state.",
+      "tr": "Por tanto, ya que se habían vuelto carnales, sensuales y diabólicos por naturaleza, este estado de probación llegó a ser para ellos un estado para prepararse; se tornó en un estado preparatorio.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=spa&id=p10"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-wickman-but-if-not",
+      "para": 4,
+      "en": "… narrowly defined purpose: It is a proving ground, a probationary state, a time to walk by faith, a time …",
+      "tr": "… más precisa: Es un terreno de pruebas, un estado de probación, un período para andar por medio de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-eyring-the-preparatory-priesthood",
+      "para": 4,
+      "en": "… which he might repent; therefore this life became a probationary state; a time to prepare to meet God; a …",
+      "tr": "… así que esta vida llegó a ser un estado de probación; un tiempo de preparación para presentarse ante Dios; …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "surtir efecto, salvo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2013-10-eyring-to-my-grandchildren",
+    "kind": "talk",
+    "sample": "orio; porque a menos que fuera por estas condiciones, la misericordia no podría surtir efecto, salvo que destruyese la obra de la justicia. Pero la obra de la justicia no podía ser"
+   },
+   {
+    "term": "salvo que destruyese",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2013-10-eyring-to-my-grandchildren",
+    "kind": "talk",
+    "sample": "menos que fuera por estas condiciones, la misericordia no podría surtir efecto, salvo que destruyese la obra de la justicia. Pero la obra de la justicia no podía ser destruida; de"
+   },
+   {
+    "term": "realizarse",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2013-10-eyring-to-my-grandchildren",
+    "kind": "talk",
+    "sample": "n estas palabras: “…por tanto, según la justicia, el plan de redención no podía realizarse sino de acuerdo con las condiciones del arrepentimiento del hombre en este esta"
+   }
+  ]
+ }
+}

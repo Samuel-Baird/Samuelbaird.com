@@ -1,0 +1,112 @@
+{
+ "id": "concept.book-of-remembrance",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 5,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "livro de recordações",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 4,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Malaquias 3:16",
+      "ref_en": "Malachi 3:16",
+      "en": "¶ Then they that feared the Lord spake often one to another: and the Lord hearkened, and heard it, and a book of remembrance was written before him for them that feared the Lord, and that thought upon his name.",
+      "tr": "Então aqueles que temem ao Senhor falam um com o outro; e o Senhor atenta e ouve; e há um livro de recordações escrito diante dele, para os que temem ao Senhor, e para os que se lembram do seu nome.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/mal/3?lang=por&id=p16"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "recordações",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 600.1,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "ns. Ele cataloga relacionamentos familiares distantes — uma espécie de álbum de recordações eletrônico — cheio de árvores genealógicas e registros de grupos familiares — n"
+   },
+   {
+    "term": "livro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 23.4,
+    "source": "2003-10-faust-the-phenomenon-that-is-you",
+    "kind": "talk",
+    "sample": "oltou-se para os pais durante uma noite familiar quando cada criança montou seu livro pessoal de recordações. O pequeno Jeff queria ir junto com a mãe aos Arquivos N"
+   },
+   {
+    "term": "familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 54.1,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "tivo para identificar e unir a família dos homens. Ele cataloga relacionamentos familiares distantes — uma espécie de álbum de recordações eletrônico — cheio de árvores"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 5,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Libro de memorias",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 5,
+    "first_year": 2016,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Moisés 6:5",
+      "ref_en": "Moses 6:5",
+      "en": "And a book of remembrance was kept, in the which was recorded, in the language of Adam, for it was given unto as many as called upon God to write by the spirit of inspiration;",
+      "tr": "y se llevaba un libro de memorias, en el cual se escribía en el lenguaje de Adán, porque a cuantos invocaban a Dios les era concedido escribir por el espíritu de inspiración;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/6?lang=spa&id=p5"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-gong-always-remember-him",
+      "para": 18,
+      "en": "… ever thought of yourself as your own living book of remembrance—reflecting what and how you choose to remember?",
+      "tr": "… vez han considerado que ustedes son su propio libro de memorias viviente, compuesto de lo que deciden recordar y de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

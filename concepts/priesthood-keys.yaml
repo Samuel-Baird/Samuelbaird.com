@@ -1,0 +1,19 @@
+id: concept.priesthood-keys
+category: Priesthood Authority & Ordinances
+en:
+  term: priesthood keys
+  match:
+  - priesthood keys
+sources:
+  Topics:
+  - priesthood-keys-study-guide
+  GH:
+  - 10-aaronic-priesthood#title_number10
+candidates:
+  pt:
+  - term: chaves do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: llaves del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,11 @@
+id: concept.activity-days
+category: Organizations & Youth
+en:
+  term: activity days
+  match:
+  - activity days
+sources: {}
+candidates:
+  pt: []
+  es: []
+related: []

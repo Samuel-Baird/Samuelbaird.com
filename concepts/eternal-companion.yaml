@@ -1,0 +1,15 @@
+id: concept.eternal-companion
+category: The Family
+en:
+  term: eternal companion
+  match:
+  - eternal companion
+sources: {}
+candidates:
+  pt:
+  - term: companheiro eterno
+    hint: pulpit-glossary:verified
+  es:
+  - term: compañero eterno
+    hint: pulpit-glossary:verified
+related: []

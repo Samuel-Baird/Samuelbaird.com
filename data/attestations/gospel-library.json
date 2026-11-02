@@ -1,0 +1,141 @@
+{
+ "id": "concept.gospel-library",
+ "pt": {
+  "en_paragraphs": 135,
+  "en_talks": 119,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "Biblioteca do Evangelho",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 131,
+    "talks": 116,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-stevenson-spiritual-eclipse",
+      "para": 22,
+      "en": "… websites like [LDS.org](https://lds.org) and [Mormon.org](https://mormon.org); mobile apps such as Gospel Library, Mormon Channel, LDS Tools, and Family Tree; and …",
+      "tr": "… [Mormon.org](http://mormon.org); aplicativos para dispositivos móveis, tais como a Biblioteca do Evangelho, o Mormon Channel, as Ferramentas SUD e a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-shumway-participate-to-prepare-for-christs-return",
+      "para": 33,
+      "en": "… 2.0](https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-young-adults/2024/11/13bednar?lang=eng&id=p49#p49)” [worldwide devotional for young adults, Nov. 3, 2024], Gospel Library).\n[^11]: See [Doctrine and Covenants 10:4](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/10?lang=eng&id=p4#p4).\n[^12]: See …",
+      "tr": "… para Jovens Adultos, 3 de novembro de 2024, Biblioteca do Evangelho).\n[^11]: Ver [Doutrina e Convênios 10:4](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/10?lang=por&id=p4#p4).\n[^12]: Ver …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-renlund-because-of-jesus-christ",
+      "para": 21,
+      "en": "… of Life, Living Water,” Hymns for Home and Church, Gospel Library.\n[^37]: “I Will Walk with Jesus,” Hymns for …",
+      "tr": "… — Para o Lar e para a Igreja, Biblioteca do Evangelho.\n[^37]: \"Quero andar com Cristo\", Hinos — Para …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "devocional",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 200.0,
+    "source": "2023-10-daines-sir-we-would-like-to-see-jesus",
+    "kind": "talk",
+    "sample": "/broadcasts/worldwide-devotional-for-young-adults/2023/01/14holland?lang=por)\", devocional mundial para jovens adultos, 8 de janeiro de 2023, broadcasts.ChurchofJesusChri"
+   },
+   {
+    "term": "young",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 100.0,
+    "source": "2023-10-daines-sir-we-would-like-to-see-jesus",
+    "kind": "talk",
+    "sample": "](https://www.churchofjesuschrist.org/study/broadcasts/worldwide-devotional-for-young-adults/2023/01/14holland?lang=por)\", devocional mundial para jovens adultos, 8"
+   },
+   {
+    "term": "general-conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 71.4,
+    "source": "2020-10-holland-the-exquisite-gift-of-the-son",
+    "kind": "talk",
+    "sample": "ll M. Nelson, \"[Perfeição incompleta](https://www.churchofjesuschrist.org/study/general-conference/1995/10/perfection-pending?lang=por)\", A Liahona, janeiro de 1996, p. 95.\n[^22]"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 135,
+  "en_talks": 119,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Biblioteca del Evangelio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 135,
+    "talks": 119,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-stevenson-spiritual-eclipse",
+      "para": 22,
+      "en": "… websites like [LDS.org](https://lds.org) and [Mormon.org](https://mormon.org); mobile apps such as Gospel Library, Mormon Channel, LDS Tools, and Family Tree; and …",
+      "tr": "… como [LDS.org](http://lds.org) y [Mormon.org](http://mormon.org); las aplicaciones móviles como Biblioteca del Evangelio, Canal Mormón, Herramientas SUD y FamilySearch; y las …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-the-plan-of-mercy",
+      "para": 34,
+      "en": "… emphasis added).\n[^20]: Gospel Topics Essays, “[First Vision Accounts](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/first-vision-accounts?lang=eng&id=p5#p5),” Gospel Library; see especially [the 1832 account](https://www.churchofjesuschrist.org/study/manual/first-vision-accounts/1832-account?lang=eng).\n[^21]: [Joseph Smith—History …",
+      "tr": "… Temas del Evangelio, \"[Relatos de la Primera Visión](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/first-vision-accounts?lang=spa&id=p5#p5)\", Biblioteca del Evangelio; véase especialmente [el relato de 1832](https://www.churchofjesuschrist.org/study/manual/first-vision-accounts/1832-account?lang=spa).\n[^21]: Véase …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-stevenson-lost-luggage-redeemed-souls",
+      "para": 52,
+      "en": "… The Church of Jesus Christ of Latter-day Saints, [21.1](https://www.churchofjesuschrist.org/study/manual/general-handbook/21-ministering?lang=eng&id=p6#p6), Gospel Library.\n[^6]: See General Handbook, [21.1](https://www.churchofjesuschrist.org/study/manual/general-handbook/21-ministering?lang=eng&id=p45#p45).\n[^7]: First Presidency …",
+      "tr": "… de los Santos de los Últimos Días, [21.1](https://www.churchofjesuschrist.org/study/manual/general-handbook/21-ministering?lang=spa&id=p6#p6), Biblioteca del Evangelio.\n[^6]: Véase Manual General, [21.1](https://www.churchofjesuschrist.org/study/manual/general-handbook/21-ministering?lang=spa&id=p45#p45).\n[^7]: Carta de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.elders-quorum
+category: Priesthood Offices & Quorums
+en:
+  term: elders quorum
+  match:
+  - elders quorum
+sources:
+  GH:
+  - 8-elders-quorum#title_number11
+candidates:
+  pt:
+  - term: quórum de élderes
+    hint: pulpit-glossary:verified
+  es:
+  - term: quórum de élderes
+    hint: pulpit-glossary:verified
+related: []

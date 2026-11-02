@@ -1,0 +1,15 @@
+id: concept.names-to-the-temple
+category: Temple & Family History
+en:
+  term: names to the temple
+  match:
+  - names to the temple
+sources: {}
+candidates:
+  pt:
+  - term: nomes ao templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: llevar nombres al templo
+    hint: pulpit-glossary:verified
+related: []

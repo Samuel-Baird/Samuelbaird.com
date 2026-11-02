@@ -1,0 +1,15 @@
+id: concept.sacrament-prayers
+category: Sacrament & Meetings
+en:
+  term: sacrament prayers
+  match:
+  - sacrament prayers
+sources: {}
+candidates:
+  pt:
+  - term: orações sacramentais
+    hint: pulpit-glossary:standard
+  es:
+  - term: oraciones sacramentales
+    hint: approved-terms
+related: []

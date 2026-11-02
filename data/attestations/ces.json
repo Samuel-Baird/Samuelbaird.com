@@ -1,0 +1,179 @@
+{
+ "id": "concept.ces",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "Sistema Educacional da Igreja",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2015,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-gibson-fatherhoodour-eternal-destiny",
+      "para": 15,
+      "en": "… [Church Educational System fireside, Nov. 6, 2005], 2; [lds.org/broadcasts](https://www.lds.org/broadcasts/archive/ces-devotionals/2005/01?lang=eng)).",
+      "tr": "… (ver “As Decisões Determinam o Destino”, serão do Sistema Educacional da Igreja, 6 de novembro de 2005, p. 2, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+      "para": 23,
+      "en": "… “[Youth of the Noble Birthright: What Will You Choose?](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2013/01/youth-of-the-noble-birthright-what-will-you-choose?lang=eng)” (Church Educational System devotional for young adults, Sept. 6, …",
+      "tr": "… nobre estirpe: O que vocês escolherão?](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2013/01/youth-of-the-noble-birthright-what-will-you-choose?lang=por)\" (Devocional do Sistema Educacional da Igreja para Jovens Adultos, 6 de setembro de 2013), …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-causs-love-all-love-each",
+      "para": 36,
+      "en": "… Caussé, “[We Are the Architects of Our Own Happiness](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2012/01/we-are-the-architects-of-our-own-happiness?lang=eng&id=p27-p34#p27)” (Church Educational System devotional for young adults, Nov. 4, …",
+      "tr": "… os arquitetos de nossa própria felicidade](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2012/01/we-are-the-architects-of-our-own-happiness?lang=por&id=p27-p34#p27)\", Devocional do Sistema Educacional da Igreja para jovens adultos, 4 de novembro de 2012, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "novembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 91.5,
+    "source": "2008-10-hamula-winning-the-war-against-evil",
+    "kind": "talk",
+    "sample": "10; Moisés 7:64.\n[^9]: Ver Bruce R. McConkie, \"The Caravan Moves On\",* Ensign*, novembro de 1984, p. 84.\n[^10]: Ver Daniel 2:44–45; D&C 38:9–15; 82:24.\n[^11]: Ver Josep"
+   },
+   {
+    "term": "broadcasts",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 266.7,
+    "source": "2012-10-oaks-protect-the-children",
+    "kind": "talk",
+    "sample": "onal do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion Not Only Where, but How We Live, Says Elder H"
+   },
+   {
+    "term": "jovens adultos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 218.2,
+    "source": "2012-10-oaks-protect-the-children",
+    "kind": "talk",
+    "sample": "land, \"Israel, Israel, God Is Calling\", (Devocional do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion No"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Sistema Educativo de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-oaks-protect-the-children",
+      "para": 37,
+      "en": "… See Jeffrey R. Holland, [“Israel, Israel, God Is Calling”](https://www.churchofjesuschrist.org/broadcasts/archive/ces-devotionals/2012/01) (Church Educational System devotional for young adults, Sept. 9, …",
+      "tr": "… llama\", Charla fogonera para jóvenes adultos del Sistema Educativo de la Iglesia, 9 de septiembre de 2012, lds.org/broadcasts; véase …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-browning-seeking-answers-to-spiritual-questions",
+      "para": 27,
+      "en": "… [^5]: Dieter F. Uchtdorf, “[The Reflection in the Water](https://www.churchofjesuschrist.org/broadcasts/watch/ces-devotionals/2009/01?lang=eng&vid=2176253771001)” (Church Educational System fireside for young adults, Nov. 1, …",
+      "tr": "… reflejo en el agua](https://www.churchofjesuschrist.org/broadcasts/watch/ces-devotionals/2009/01?lang=eng&vid=2176253771001)\", charla fogonera del Sistema Educativo de la Iglesia para jóvenes adultos, 1 de noviembre de 2009, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-causs-love-all-love-each",
+      "para": 36,
+      "en": "… Caussé, “[We Are the Architects of Our Own Happiness](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2012/01/we-are-the-architects-of-our-own-happiness?lang=eng&id=p27-p34#p27)” (Church Educational System devotional for young adults, Nov. 4, …",
+      "tr": "… arquitectos de nuestra propia felicidad\", devocional del Sistema Educativo de la Iglesia para jóvenes adultos, 4 de noviembre de 2012, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sei",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2008-10-hamula-winning-the-war-against-evil",
+    "kind": "talk",
+    "sample": "r, \"La única defensa pura\" (discurso pronunciado ante educadores religiosos del SEI, 6 de febrero de 2004), pág. 4.\n[^19]: Alma aconsejó a cada uno de sus hijos —H"
+   },
+   {
+    "term": "jóvenes adultos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 444.6,
+    "source": "2014-10-ballard-stay-in-the-boat-and-hold-on",
+    "kind": "talk",
+    "sample": "En otra ocasión este año, les hablé a los jóvenes adultos de la Iglesia en la transmisión del devocional del SEI de mayo; les dije:"
+   },
+   {
+    "term": "devocional",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 205.2,
+    "source": "2014-10-ballard-stay-in-the-boat-and-hold-on",
+    "kind": "talk",
+    "sample": "n este año, les hablé a los jóvenes adultos de la Iglesia en la transmisión del devocional del SEI de mayo; les dije:"
+   }
+  ]
+ }
+}

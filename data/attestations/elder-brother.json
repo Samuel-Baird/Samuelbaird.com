@@ -1,0 +1,97 @@
+{
+ "id": "concept.elder-brother",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 4,
+  "uncovered_paragraphs": 9,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "irmão mais velho",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 381.0,
+    "source": "2000-10-packer-ye-are-the-temple-of-god",
+    "kind": "talk",
+    "sample": "er de acordo com as leis do Progresso Eterno, que nos foram ensinadas por nosso irmão mais velho, o Senhor Jesus Cristo. Recebeste um corpo físico com o qual poderia passar pel"
+   },
+   {
+    "term": "sam",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 127.0,
+    "source": "1-ne/2/5",
+    "kind": "scripture",
+    "sample": "a, que consistia em minha mãe, Saria, e meus irmãos mais velhos, Lamã, Lemuel e Sam."
+   },
+   {
+    "term": "velhos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 63.5,
+    "source": "1-ne/2/5",
+    "kind": "scripture",
+    "sample": "deserto com sua família, que consistia em minha mãe, Saria, e meus irmãos mais velhos, Lamã, Lemuel e Sam."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 4,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "hermano mayor",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 4,
+    "first_year": 1991,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "1 Reyes 2:22",
+      "ref_en": "1 Kings 2:22",
+      "en": "And king Solomon answered and said unto his mother, And why dost thou ask Abishag the Shunammite for Adonijah? ask for him the kingdom also; for he is mine elder brother; even for him, and for Abiathar the priest, and for Joab the son of Zeruiah.",
+      "tr": "Y el rey Salomón respondió y dijo a su madre: ¿Por qué pides a Abisag, la sunamita, para Adonías? Pide también para él el reino, porque él es mi hermano mayor, y ya tiene también al sacerdote Abiatar y a Joab hijo de Sarvia.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/1-kgs/2?lang=spa&id=p22"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-lawrence-sunday-worship-service",
+      "para": 23,
+      "en": "… believe with all my soul in Jesus Christ, our elder brother. May we understand his teachings and follow him, …",
+      "tr": "Creo con toda mi alma en Jesucristo, nuestro hermano mayor. Ruego que comprendamos Sus enseñanzas y lo sigamos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-barlow-lovest-thou-me",
+      "para": 0,
+      "en": "In the parable of the prodigal son, the elder brother initially struggled to celebrate when his younger brother returned …",
+      "tr": "En la parábola del hijo pródigo, al hermano mayor le era difícil al principio celebrar que su hermano …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

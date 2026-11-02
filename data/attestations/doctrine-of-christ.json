@@ -1,0 +1,112 @@
+{
+ "id": "concept.doctrine-of-christ",
+ "pt": {
+  "en_paragraphs": 178,
+  "en_talks": 102,
+  "en_verses": 8,
+  "uncovered_paragraphs": 186,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "doutrina",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 179,
+    "share_of_uncovered": 0.962,
+    "ratio": 24.4,
+    "source": "1990-04-oaks-world-peace",
+    "kind": "talk",
+    "sample": "homens e mulheres que sejam amantes e promotores de paz. Toda pessoa, por essa doutrina de Cristo e sua Igreja, tem em suas próprias mãos a paz do mundo."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 177,
+  "en_talks": 101,
+  "en_verses": 8,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "doctrina de Cristo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 166,
+    "talks": 95,
+    "verses": 8,
+    "first_year": 2003,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Jacob 7:2",
+      "ref_en": "Jacob 7:2",
+      "en": "And it came to pass that he began to preach among the people, and to declare unto them that there should be no Christ. And he preached many things which were flattering unto the people; and this he did that he might overthrow the doctrine of Christ.",
+      "tr": "Y aconteció que empezó a predicar entre los del pueblo, y a declararles que no habría ningún Cristo; y predicó muchas cosas que lisonjeaban al pueblo; e hizo esto para derribar la doctrina de Cristo.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/7?lang=spa&id=p2"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hales-receiving-a-testimony-of-the-restored-gospel-of-jesus-christ",
+      "para": 2,
+      "en": "… religion and discovered a “great confusion” over the doctrines of Christ, with “priest contending against priest, and convert against …",
+      "tr": "… y descubrió una “gran confusión” acerca de las doctrinas de Cristo, con “sacerdote contendiendo con sacerdote, y converso con …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-eyring-the-faith-to-ask-and-then-to-act",
+      "para": 17,
+      "en": "The more we have the doctrine of Christ in our lives and hearts, the more we feel …",
+      "tr": "Cuanto más tengamos la doctrina de Cristo en nuestra vida y en el corazón, mayor serán …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "doctrina",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.818,
+    "ratio": 21.0,
+    "source": "2013-10-perry-the-doctrines-and-principles-contained-in-the-articles-of-faith",
+    "kind": "talk",
+    "sample": "## La Trinidad y la doctrina básica de Cristo"
+   },
+   {
+    "term": "pura",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.364,
+    "ratio": 161.7,
+    "source": "2013-10-uchtdorf-come-join-with-us",
+    "kind": "talk",
+    "sample": "an encontrar gente perfecta aquí, se desilusionarán; pero si buscan la doctrina pura de Cristo, la palabra de Dios “que sana el alma herida”[^9] y la santificadora"
+   },
+   {
+    "term": "dar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 14.7,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "nsporte y comunicación, este pequeño grupo de misioneros salió intrépidamente a dar a conocer este nuevo mensaje de esperanza e hizo una obra de por más espléndida"
+   }
+  ]
+ }
+}

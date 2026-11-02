@@ -1,0 +1,168 @@
+{
+ "id": "concept.sacrament-prayers",
+ "pt": {
+  "en_paragraphs": 19,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "orações sacramentais",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-bednar-receive-the-holy-ghost",
+      "para": 28,
+      "en": "… this truth each week as we listen to the sacrament prayers and worthily partake of the bread and water. As …",
+      "tr": "… nos é lembrada todas as semanas quando ouvimos as orações sacramentais e partilhamos dignamente do pão e da água. Quando …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-meurs-the-sacrament-can-help-us-become-holy",
+      "para": 37,
+      "en": "… I hear and feel as I listened to the sacrament prayers?",
+      "tr": "- O que ouvi e senti quando escutei as orações sacramentais?"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-rasband-he-is-risen",
+      "para": 23,
+      "en": "… the ordinance to His Twelve Apostles (see also the sacrament prayers used in today’s worship services in [Moroni 4:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/4?lang=eng&id=p3#p3); [5:2](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/5?lang=eng&id=p2#p2); …",
+      "tr": "… a ordenança a Seus Doze Apóstolos (ver também as orações sacramentais usadas nos serviços de adoração atuais em [Morôni 4:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/4?lang=por&id=p3#p3); …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "oração sacramental",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 2500.6,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "sa do sacramento. Um sacerdote chamado Barry tinha uma voz muito bonita e lia a oração sacramental com muita clareza, como se estivesse num concurso de oratória. Os outros membro"
+   },
+   {
+    "term": "sacramento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 74.5,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "oca em que era diácono, eu costumava observar os sacerdotes oficiarem à mesa do sacramento. Um sacerdote chamado Barry tinha uma voz muito bonita e lia a oração sacrament"
+   },
+   {
+    "term": "sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 93.8,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "Lembro que na época em que era diácono, eu costumava observar os sacerdotes oficiarem à mesa do sacramento. Um sacerdote chamado Barry tinha uma voz muito"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 22,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "oraciones sacramentales",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 14,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-lawrence-sunday-worship-service",
+      "para": 18,
+      "en": "… sacrament.* Some people have told me that they’ve heard sacrament prayers so often that they don’t even hear them when …",
+      "tr": "… Algunas personas me han dicho que han oído las oraciones sacramentales tantas veces que ya ni siquiera las escuchan cuando …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-eyring-gratitude-on-the-sabbath-day",
+      "para": 24,
+      "en": "… Spirit confirms to us that the words of the sacrament prayers, offered by those authorized priesthood holders, are honored …",
+      "tr": "… que nuestro Padre Celestial acepta las palabras de las oraciones sacramentales, ofrecidas por poseedores del sacerdocio autorizados."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-rasband-he-is-risen",
+      "para": 23,
+      "en": "… the ordinance to His Twelve Apostles (see also the sacrament prayers used in today’s worship services in [Moroni 4:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/4?lang=eng&id=p3#p3); [5:2](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/5?lang=eng&id=p2#p2); …",
+      "tr": "… la ordenanza a Sus Doce Apóstoles (véanse también las oraciones sacramentales que se utilizan en los servicios de adoración actuales …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "santa cena",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 70.2,
+    "source": "2015-10-costa-that-they-do-always-remember-him",
+    "kind": "talk",
+    "sample": "Más aún, al meditar sobre la oración de la Santa Cena y las palabras tan especiales y significativas que contienen, me recordaron qué"
+   },
+   {
+    "term": "mismos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 39.2,
+    "source": "1991-04-goaslind-yagottawanna",
+    "kind": "talk",
+    "sample": "acerlo … Nadie puede adorar en vuestro nombre, sino que debéis hacerlo vosotros mismos (Liahona, julio de 1978, pág. 5)."
+   }
+  ]
+ }
+}

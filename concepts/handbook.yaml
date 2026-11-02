@@ -1,0 +1,13 @@
+id: concept.handbook
+category: Education & Publications
+en:
+  term: Handbook
+  match:
+  - Handbook
+sources:
+  GH:
+  - 0-introductory-overview#title_number2
+candidates:
+  pt: []
+  es: []
+related: []

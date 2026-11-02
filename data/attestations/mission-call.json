@@ -1,0 +1,179 @@
+{
+ "id": "concept.mission-call",
+ "pt": {
+  "en_paragraphs": 41,
+  "en_talks": 39,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "chamado missionário",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 29,
+    "talks": 27,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-malan-these-are-your-days",
+      "para": 16,
+      "en": "When Dawn’s parents received a mission call to Japan, she was given the choice of going …",
+      "tr": "Quando os pais de Dawn receberam um chamado missionário para servir no Japão, ela devia escolher se queria …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-gonzlez-followers-of-christ",
+      "para": 8,
+      "en": "… When Brother Jimmy Olvera from Guayaquil, Ecuador, received his mission call, his family was struggling greatly. The day he …",
+      "tr": "… irmão Jimmy Olvera, de Guayaquil no Equador, recebeu seu chamado missionário, sua família se opôs grandemente. No dia de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-farias-the-book-of-mormonan-immeasurable-treasure-on-our-journey",
+      "para": 26,
+      "en": "… Sister Benson completed her mission, her brother received his mission call. He is now serving in the Mexico Tuxtla …",
+      "tr": "… da missão da síster Benson, seu irmão recebeu seu chamado missionário. Ele está servindo na Missão México Tuxtla Gutiérrez. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "missão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 1.0,
+    "ratio": 35.7,
+    "source": "1994-10-hunter-follow-the-son-of-god",
+    "kind": "talk",
+    "sample": "essa experiência um ponto ainda mais importante do que receber o chamado para a missão. Planejemos, ensinemos e supliquemos aos nossos filhos que se casem na casa do"
+   },
+   {
+    "term": "chamado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.833,
+    "ratio": 29.2,
+    "source": "1994-10-hunter-follow-the-son-of-god",
+    "kind": "talk",
+    "sample": "mente e fazer dessa experiência um ponto ainda mais importante do que receber o chamado para a missão. Planejemos, ensinemos e supliquemos aos nossos filhos que se cas"
+   },
+   {
+    "term": "missionário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.5,
+    "ratio": 32.8,
+    "source": "1994-10-hunter-follow-the-son-of-god",
+    "kind": "talk",
+    "sample": "Preparemos todo missionário para entrar no templo dignamente e fazer dessa experiência um ponto ainda mais"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 43,
+  "en_talks": 39,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "llamamiento misional",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 36,
+    "talks": 33,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-camargo-in-all-things-give-thanks",
+      "para": 9,
+      "en": "… rearing noble children, pure and dedicated, ready to accept mission calls and willing to leave their homes and go into …",
+      "tr": "… crían hijos nobles, puros y dedicados, listos para aceptar llamamientos misionales y dispuestos a dejar sus hogares para ir por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-rasband-the-divine-call-of-a-missionary",
+      "para": 29,
+      "en": "At this time in your life, a mission call from the Lord, my young friends, is the most …",
+      "tr": "… estas alturas de su vida, mis jóvenes amigos, un llamamiento misional del Señor es la obra más importante que pueden …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-farias-the-book-of-mormonan-immeasurable-treasure-on-our-journey",
+      "para": 26,
+      "en": "… Sister Benson completed her mission, her brother received his mission call. He is now serving in the Mexico Tuxtla …",
+      "tr": "… hermana Benson terminara su misión, su hermano recibió su llamamiento misional y ahora presta servicio en la Misión México Tuxtla …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 26.7,
+    "source": "1993-10-inouye-be-of-good-cheer",
+    "kind": "talk",
+    "sample": "nuestros hijos entraran a la universidad o recibieran llamamientos para ir a la misión."
+   },
+   {
+    "term": "llamamiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 58.6,
+    "source": "2005-04-faust-perseverance",
+    "kind": "talk",
+    "sample": ". En esa época, mi única meta firme era servir en una misión, y cuando llegó mi llamamiento para la misión, presté servicio como misionero y mi misión llegó a ser como la"
+   },
+   {
+    "term": "éramos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 127.0,
+    "source": "1993-10-inouye-be-of-good-cheer",
+    "kind": "talk",
+    "sample": "gresos de mi esposo eran suficientes para satisfacer nuestras necesidades, pero éramos aproximadamente veinte años mayores que la mayoría de los padres con hijos pequ"
+   }
+  ]
+ }
+}

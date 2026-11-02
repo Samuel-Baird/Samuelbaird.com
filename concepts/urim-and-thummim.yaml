@@ -1,0 +1,19 @@
+id: concept.urim-and-thummim
+category: Church History
+en:
+  term: Urim and Thummim
+  match:
+  - Urim and Thummim
+sources:
+  GS:
+  - urim-and-thummim
+  Topics:
+  - urim-and-thummim
+candidates:
+  pt:
+  - term: Urim e Tumim
+    hint: pulpit-glossary:standard
+  es:
+  - term: Urim y Tumim
+    hint: approved-terms
+related: []

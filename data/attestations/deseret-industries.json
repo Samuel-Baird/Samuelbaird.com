@@ -1,0 +1,103 @@
+{
+ "id": "concept.deseret-industries",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Indústrias Deseret",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-monson-meeting-lifes-challenges",
+      "para": 19,
+      "en": "… college. He was also aided along the way by Deseret Industries helpers who provided encouragement and taught him essential skills. …",
+      "tr": "… na faculdade. Recebeu também o apoio dos auxiliares das Indústrias Deseret que lhe deram incentivo e ensinaram técnicas essenciais. Agora, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-thomas-sacrifice-an-eternal-investment",
+      "para": 13,
+      "en": "… 19:26](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/19?lang=eng&id=p26#p26)). In many places we are blessed to have Deseret Industries. We can teach our children to go through …",
+      "tr": "… Em muitos lugares temos a bênção de ter as Indústrias Deseret. Podemos ensinar nossos filhos a verificarem seus armários …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-the-second-great-commandment",
+      "para": 32,
+      "en": "Through generous donations to Deseret Industries outlets in the United States, millions of pounds of …",
+      "tr": "Por meio de generosas doações para as Indústrias Deseret, nos Estados Unidos, milhões de quilos de roupas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Deseret Industries",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-thomas-sacrifice-an-eternal-investment",
+      "para": 13,
+      "en": "… 19:26](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/19?lang=eng&id=p26#p26)). In many places we are blessed to have Deseret Industries. We can teach our children to go through …",
+      "tr": "… muchos lugares tenemos la bendición de tener las tiendas Deseret Industries. Podemos enseñar a nuestros hijos a donar la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-holland-emissaries-to-the-church",
+      "para": 15,
+      "en": "… on his way to donate goods to the local Deseret Industries. He felt his back tire roll over a …",
+      "tr": "… del garaje para ir a la tienda local de Deseret Industries a donar algunas cosas cuando percibió que una de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-the-second-great-commandment",
+      "para": 32,
+      "en": "Through generous donations to Deseret Industries outlets in the United States, millions of pounds of …",
+      "tr": "Mediante las generosas donaciones a las tiendas de Deseret Industries de Estados Unidos, se recolectan y clasifican millones de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

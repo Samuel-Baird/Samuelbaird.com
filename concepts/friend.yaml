@@ -1,0 +1,16 @@
+id: concept.friend
+category: Education & Publications
+en:
+  term: Friend
+  match:
+  - Friend
+sources: {}
+candidates:
+  pt:
+  - term: Amigo
+    hint: pulpit-glossary:verified
+  es:
+  - term: Amigo
+    hint: pulpit-glossary:verified
+related: []
+note: Magazine title — check whether the target-language edition keeps the name

@@ -1,0 +1,177 @@
+{
+ "id": "concept.mormonism",
+ "pt": {
+  "en_paragraphs": 26,
+  "en_talks": 24,
+  "en_verses": 1,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "mormonismo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 13,
+    "talks": 12,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 135:7",
+      "ref_en": "Doctrine and Covenants 135:7",
+      "en": "They were innocent of any crime, as they had often been proved before, and were only confined in jail by the conspiracy of traitors and wicked men; and their innocent blood on the floor of Carthage jail is a broad seal affixed to “Mormonism” that cannot be rejected by any court on earth, and their innocent blood on the escutcheon of the State of Illinois, with the broken faith of the State as pledged by the governor, is a witness to the truth of the everlasting gospel that all the world cannot impeach; and their innocent blood on the banner of liberty, and on the magna charta of the United States, is an ambassador for the religion of Jesus Christ, that will touch the hearts of honest men among all nations; and their innocent blood, with the innocent blood of all the martyrs under the altar that John saw, will cry unto the Lord of Hosts till he avenges that blood on the earth. Amen.",
+      "tr": "Eram inocentes de qualquer crime, como tantas vezes antes se provara, e só foram postos na prisão pela conspiração de traidores e de homens iníquos; e seu sangue inocente, no chão da cadeia de Carthage, é um grande selo afixado ao “mormonismo,” que não poderá ser rejeitado por qualquer tribunal da Terra; e seu sangue inocente sobre o brasão do Estado de Illinois, juntamente com a violação da palavra do Estado, conforme empenhada pelo governador, é uma testemunha da veracidade do evangelho eterno, que o mundo inteiro não pode refutar; e seu sangue inocente sobre o estandarte da liberdade e sobre a carta magna dos Estados Unidos é um embaixador da religião de Jesus Cristo, que tocará o coração dos homens honestos de todas as nações; e seu sangue inocente, juntamente com o sangue de todos os mártires sob o altar que João viu, clamará ao Senhor dos Exércitos até que ele vingue esse sangue na Terra. Amém.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/135?lang=por&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 24,
+      "en": "… me. When something on a page impressed me supporting Mormonism, I turned down a corner. Soon I could hardly …",
+      "tr": "… comigo constantemente. Quando lia algo que achava apoiar o mormonismo, dobrava a ponta da folha. Logo comecei a encontrar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-andersen-trial-of-your-faith",
+      "para": 24,
+      "en": "… Florida. He had a *Time* magazine article entitled “Challenging Mormonism’s Roots.” It spoke of a recently discovered letter, supposedly …",
+      "tr": "… artigo da revista *Time* intitulado “Desafiando as Raízes do Mormonismo” que falava de uma carta recém-descoberta, supostamente escrita por …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mormonism",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "1993-10-okazaki-strength-in-the-savior",
+    "kind": "talk",
+    "sample": "vembro de 1982, p. 59.\n[^3]: Tim B. Heaton \"Vital Statistics\" *Encyclopaedia of Mormonism* (Nova York: Macmillan, 1992), 4:1532."
+   },
+   {
+    "term": "encyclopedia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 1846.6,
+    "source": "2005-10-tanner-the-sanctity-of-the-body",
+    "kind": "talk",
+    "sample": "m pensamento, linguagem, vestuário e comportamento” (em Daniel H. Ludlow, ed., *Encyclopedia of Mormonism,* 5 vols. [1992], vol. 2, p. 932)."
+   },
+   {
+    "term": "vol",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.538,
+    "ratio": 153.9,
+    "source": "2002-04-oaks-the-gospel-in-our-lives",
+    "kind": "talk",
+    "sample": "righam Young and the Mission of Mormonism\", *Brigham Young University Studies*, vol. 40, N° 2, (2001) p. 11."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 27,
+  "en_talks": 26,
+  "en_verses": 1,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "mormonismo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 135:7",
+      "ref_en": "Doctrine and Covenants 135:7",
+      "en": "They were innocent of any crime, as they had often been proved before, and were only confined in jail by the conspiracy of traitors and wicked men; and their innocent blood on the floor of Carthage jail is a broad seal affixed to “Mormonism” that cannot be rejected by any court on earth, and their innocent blood on the escutcheon of the State of Illinois, with the broken faith of the State as pledged by the governor, is a witness to the truth of the everlasting gospel that all the world cannot impeach; and their innocent blood on the banner of liberty, and on the magna charta of the United States, is an ambassador for the religion of Jesus Christ, that will touch the hearts of honest men among all nations; and their innocent blood, with the innocent blood of all the martyrs under the altar that John saw, will cry unto the Lord of Hosts till he avenges that blood on the earth. Amen.",
+      "tr": "Fueron inocentes de todo crimen, como tantas veces se había comprobado previamente, y fueron encarcelados solo por conspiraciones de traidores y hombres inicuos; y su sangre inocente derramada en el piso de la cárcel de Carthage es un amplio sello estampado sobre el “Mormonismo” que ningún tribunal del mundo puede rechazar; y su sangre inocente sobre el escudo del estado de Illinois, con la palabra violada del estado que su gobernador había empeñado, es un testimonio de la verdad del evangelio sempiterno que el mundo entero no puede impugnar; y su sangre inocente sobre el pabellón de la libertad y sobre la Carta Magna de los Estados Unidos es un embajador de la religión de Jesucristo que tocará el corazón de los hombres honrados en todas las naciones; y su sangre inocente, con la sangre inocente de todos los mártires que Juan vio bajo el altar, clamará al Señor de los Ejércitos hasta que él haya vengado esa sangre sobre la tierra. Amén.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/135?lang=spa&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 24,
+      "en": "… me. When something on a page impressed me supporting Mormonism, I turned down a corner. Soon I could hardly …",
+      "tr": "… y cuando un pasaje me parecía que apoyaba al mormonismo, marcaba la pagina. Pronto tenia casi todas las paginas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-faust-salt-lake-tabernacle-rededication",
+      "para": 5,
+      "en": "… way, “In the days of the Prophet Joseph … Mormonism flourished best out of doors.” This was because “we failed …",
+      "tr": "… característico: “En los días del profeta José… el ‘mormonismo’ florecía mejor al aire libre”. La razón fue porque …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mormonism",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.905,
+    "ratio": 1810.0,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "Tim Rathbone, \"Book of Mormon Translation by Joseph Smith\", *Encyclopedia* of *Mormonism,* 4 tomos, 1992, tomo I, pág. 211.\n[^42]: Véase \"A Chronology of Church History"
+   },
+   {
+    "term": "encyclopedia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.524,
+    "ratio": 2095.8,
+    "source": "1996-04-oaks-joseph-the-man-and-the-prophet",
+    "kind": "talk",
+    "sample": "nnonism, 1984; Truman G. Madsen,Joseph Smith the Prophet, 1989; \"Joseph Smith\", Encyclopedia of Monnonism, 5 vol., 1992, 3:1331-1339; David Herbert"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.857,
+    "ratio": 30.3,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "era, y 113 en el Libro de Mormón. (Véase *también Christ and the New Covenant,* pág. 238.)\n[^26]: Véase [D. y C. 84:57](https://www.churchofjesuschrist.org/study/s"
+   }
+  ]
+ }
+}

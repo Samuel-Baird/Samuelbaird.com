@@ -1,0 +1,98 @@
+{
+ "id": "concept.patriarch",
+ "pt": {
+  "en_paragraphs": 136,
+  "en_talks": 74,
+  "en_verses": 8,
+  "uncovered_paragraphs": 144,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "patriarca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 116,
+    "share_of_uncovered": 0.806,
+    "ratio": 358.1,
+    "source": "1990-04-lindsay-ye-have-done-it-unto-me",
+    "kind": "talk",
+    "sample": "Há alguns meses, o corpo de um patriarca de noventa anos de idade, amigo de meu pai, foi reverentemente enterrado e desc"
+   },
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 46,
+    "share_of_uncovered": 0.319,
+    "ratio": 29.7,
+    "source": "1991-10-gibbons-the-dual-aspects-of-prayer",
+    "kind": "talk",
+    "sample": "írito. Por exemplo, quando o Presidente Heber J. Grant, ainda jovem, presidia a Estaca Tooele, o Patriarca John Rowberry lhe deu uma bênção especial. Mais tarde o pat"
+   },
+   {
+    "term": "bênção",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 46,
+    "share_of_uncovered": 0.319,
+    "ratio": 15.8,
+    "source": "1991-10-gibbons-the-dual-aspects-of-prayer",
+    "kind": "talk",
+    "sample": "t, ainda jovem, presidia a Estaca Tooele, o Patriarca John Rowberry lhe deu uma bênção especial. Mais tarde o patriarca disse ao Presidente Grant: “Vi algo que não ou"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 122,
+  "en_talks": 66,
+  "en_verses": 8,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "patriarca",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 121,
+    "talks": 66,
+    "verses": 8,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Hechos 2:29",
+      "ref_en": "Acts 2:29",
+      "en": "Men and brethren, let me freely speak unto you of the patriarch David, that he is both dead and buried, and his sepulchre is with us unto this day.",
+      "tr": "Varones hermanos, se os puede decir libremente del patriarca David, que murió, y fue sepultado, y su sepulcro está con nosotros hasta el día de hoy.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/acts/2?lang=spa&id=p29"
+     },
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-jack-relief-society-a-balm-in-gilead",
+      "para": 34,
+      "en": "… happen much anymore. My grandfather served as the stake patriarch, and I served as his transcriber. What a rich …",
+      "tr": "… es muy común hoy día; mi abuelo era el patriarca de la estaca y yo transcribía las bendiciones que el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-pingree-knowing-the-lords-will-for-you",
+      "para": 7,
+      "en": "… live out a promise I had received from a patriarch decades earlier did not alleviate my concerns. Could I leave …",
+      "tr": "… que cumpliría una promesa que había recibido de un patriarca hacía varias décadas, eso no aminoró mis preocupaciones. ¿Podría dejar …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

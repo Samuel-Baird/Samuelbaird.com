@@ -1,0 +1,15 @@
+id: concept.endowment-house
+category: Temple & Family History
+en:
+  term: Endowment House
+  match:
+  - Endowment House
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Casa de Investiduras
+    hint: approved-terms
+related: []
+note: Specific 19th-century pre-temple ordinance building in Salt Lake City — historical proper noun,
+  distinct from a modern temple's endowment room

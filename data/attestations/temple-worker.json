@@ -1,0 +1,179 @@
+{
+ "id": "concept.temple-worker",
+ "pt": {
+  "en_paragraphs": 15,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "oficiante do templo",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 10,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 2009,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-bednar-honorably-hold-a-name-and-standing",
+      "para": 1,
+      "en": "… indicated he had been called to serve as a temple worker soon after his release. He then said: “I wish …",
+      "tr": "Ele disse ter sido chamado para trabalhar como oficiante do templo, logo após sua desobrigação. E acrescentou: “Gostaria de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oscarson-young-women-in-the-work",
+      "para": 9,
+      "en": "… be missionaries, gospel scholars, leaders in the Church auxiliaries, temple workers, wives, mothers, mentors, examples, and friends. They can …",
+      "tr": "… estudiosas do evangelho, líderes nas auxiliares da Igreja, oficiantes do templo, esposas, mães, mentoras, exemplos e amigas?” Elas podem …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 31,
+      "en": "So, why did the temple workers cross the road? So God and temple ordinances can …",
+      "tr": "Então, por que os oficiantes do templo atravessaram a rua? Para que Deus e as ordenanças …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "oficiantes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "1990-10-oaks-witnesses-of-christ",
+    "kind": "talk",
+    "sample": ", em Jerusalém, quando fez quarenta dias, para apresentá-lo ao Senhor. Lá, dois oficiantes idosos e espirituais receberam testemunho de sua identidade e testificaram dele"
+   },
+   {
+    "term": "leve",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 320.1,
+    "source": "1999-04-scott-receive-the-temple-blessings",
+    "kind": "talk",
+    "sample": "ido. Seria bom se fosse ao templo duas vezes para realizá-las. Na primeira vez, leve, se possível, um membro de sua família ou um amigo do mesmo sexo que o seu e qu"
+   },
+   {
+    "term": "investidura",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 133.4,
+    "source": "1999-04-scott-receive-the-temple-blessings",
+    "kind": "talk",
+    "sample": "preender melhor e ser mais grato por essa experiência sagrada. As ordenanças de investidura e de sela-mento no templo são tão gloriosas e cheias de significado que você de"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 16,
+  "en_talks": 14,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "obrera del templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 12,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-oaks-always-have-his-spirit",
+      "para": 21,
+      "en": "… had served four missions and 15 years as a temple worker. Because she was in tune with the Spirit, …",
+      "tr": "… cuatro misiones y trabajado durante quince años como obrera del templo. Debido a que estaba en armonía con el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oscarson-young-women-in-the-work",
+      "para": 9,
+      "en": "… be missionaries, gospel scholars, leaders in the Church auxiliaries, temple workers, wives, mothers, mentors, examples, and friends. They can …",
+      "tr": "… líderes en las organizaciones auxiliares de la Iglesia, obreras del templo, esposas, madres, mentoras y amigas. Ellas pueden comenzar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 31,
+      "en": "So, why did the temple workers cross the road? So God and temple ordinances can …",
+      "tr": "Entonces, ¿por qué cruzaron la calle los obreros del templo? Para que Dios y las ordenanzas del templo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "obreros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 1500.4,
+    "source": "2014-04-burton-wanted-hands-and-hearts-to-hasten-the-work",
+    "kind": "talk",
+    "sample": "- Se solicitan obreros de historia familiar y del templo que unan a las familias por la eternidad"
+   },
+   {
+    "term": "ordenanzas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 23.8,
+    "source": "2011-10-thompson-cleave-unto-the-covenants",
+    "kind": "talk",
+    "sample": "ran gozo que sentía por sus convenios. Le encantaba ir al templo y efectuar las ordenanzas a favor de miles que habían muerto. Era la misión de su vida; ella prestó servi"
+   },
+   {
+    "term": "historia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 23.0,
+    "source": "2011-10-thompson-cleave-unto-the-covenants",
+    "kind": "talk",
+    "sample": "Al leer la historia personal de mi abuela, me enteré del gran gozo que sentía por sus convenios. Le"
+   }
+  ]
+ }
+}

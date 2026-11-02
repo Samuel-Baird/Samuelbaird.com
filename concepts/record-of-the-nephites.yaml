@@ -1,0 +1,15 @@
+id: concept.record-of-the-nephites
+category: Scriptures & Study Helps
+en:
+  term: record of the Nephites
+  match:
+  - record of the Nephites
+sources: {}
+candidates:
+  pt:
+  - term: registro dos nefitas
+    hint: pulpit-glossary:standard
+  es:
+  - term: registro de los nefitas
+    hint: pulpit-glossary:verified
+related: []

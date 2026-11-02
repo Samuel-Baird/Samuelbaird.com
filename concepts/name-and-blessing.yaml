@@ -1,0 +1,13 @@
+id: concept.name-and-blessing
+category: Baptism, Confirmation & Blessings
+en:
+  term: name and blessing
+  match:
+  - name and blessing
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: nombre y la bendición
+    hint: pulpit-glossary:verified
+related: []

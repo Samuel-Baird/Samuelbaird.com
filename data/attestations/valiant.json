@@ -1,0 +1,129 @@
+{
+ "id": "concept.valiant",
+ "pt": {
+  "en_paragraphs": 169,
+  "en_talks": 122,
+  "en_verses": 34,
+  "uncovered_paragraphs": 164,
+  "renderings": [
+   {
+    "term": "Valorosos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 35,
+    "talks": 29,
+    "verses": 4,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "1 Samuel 31:12",
+      "ref_en": "1 Samuel 31:12",
+      "en": "All the valiant men arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan, and came to Jabesh, and burnt them there.",
+      "tr": "Todos os homens valorosos se levantaram, e caminharam toda a noite, e tiraram o corpo de Saul e os corpos de seus filhos do muro de Bete-Seã, e indo a Jabes, os queimaram.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/1-sam/31?lang=por&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-maxwell-brightness-of-hope",
+      "para": 11,
+      "en": "… the same three words used centuries ago by three valiant men. They knew God could rescue them from the fiery …",
+      "tr": "… mesmas três palavras usadas séculos atrás por três homens valorosos. Eles sabiam que Deus poderia libertá-los do forno ardente, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-stevenson-be-valiant-in-courage-strength-and-activity",
+      "para": 9,
+      "en": "… to be quitters, or do we want to be valiant servants in spite of all the opposition and evil in …",
+      "tr": "… Será que queremos ser desistentes ou queremos ser servos valorosos a despeito de toda a oposição e de todos os …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "valentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 78,
+    "share_of_uncovered": 0.476,
+    "ratio": 475.7,
+    "source": "1990-04-hunter-standing-as-witnesses-of-god",
+    "kind": "talk",
+    "sample": "rnalhas fosse aquecida sete vezes mais que o normal. Depois, mandou que os três valentes jovens fossem lançados ao fogo, totalmente vestidos. Na verdade, o rei insistiu"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 157,
+  "en_talks": 117,
+  "en_verses": 34,
+  "uncovered_paragraphs": 64,
+  "renderings": [
+   {
+    "term": "Valientes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 105,
+    "talks": 79,
+    "verses": 22,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "2 Samuel 11:16",
+      "ref_en": "2 Samuel 11:16",
+      "en": "And it came to pass, when Joab observed the city, that he assigned Uriah unto a place where he knew that valiant men were.",
+      "tr": "Y sucedió que cuando Joab sitió la ciudad, puso a Urías en el lugar donde sabía que estaban los hombres más valientes.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/2-sam/11?lang=spa&id=p16"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-scott-jesus-christ-our-redeemer",
+      "para": 12,
+      "en": "… to be proven, to see whether we will be valiant and be obedient to His teachings. You among all of …",
+      "tr": "… estamos aquí para ser probados, para ver si seremos valientes y obedientes a Sus enseñanzas. Entre toda la gente de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-pearson-stay-by-the-tree",
+      "para": 22,
+      "en": "… is a standard of excellence for exaltation. It requires valiant discipleship! There is no room for average or complacent disciples. …",
+      "tr": "… norma de excelencia para la exaltación y ¡requiere discípulos valientes! No hay lugar para discípulos mediocres ni satisfechos de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "valiente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 45,
+    "share_of_uncovered": 0.703,
+    "ratio": 281.3,
+    "source": "1991-04-ashton-a-voice-of-gladness",
+    "kind": "talk",
+    "sample": "Poco a poco la gente valiente cambió las costumbres y ahora tenemos Escrituras y voces de profetas para estud"
+   }
+  ]
+ }
+}

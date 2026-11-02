@@ -1,0 +1,17 @@
+id: concept.mission-president
+category: Local Leadership & Callings
+en:
+  term: mission president
+  match:
+  - mission president
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number58
+candidates:
+  pt:
+  - term: presidente de missão
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidente de misión
+    hint: approved-terms
+related: []

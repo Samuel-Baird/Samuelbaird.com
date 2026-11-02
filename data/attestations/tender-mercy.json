@@ -1,0 +1,177 @@
+{
+ "id": "concept.tender-mercy",
+ "pt": {
+  "en_paragraphs": 50,
+  "en_talks": 42,
+  "en_verses": 16,
+  "uncovered_paragraphs": 17,
+  "renderings": [
+   {
+    "term": "terna misericórdia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 46,
+    "talks": 39,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Lucas 1:78",
+      "ref_en": "Luke 1:78",
+      "en": "Through the tender mercy of our God; whereby the dayspring from on high hath visited us,",
+      "tr": "Pela terna misericórdia do nosso Deus, com que do alto nos visitará a aurora;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/luke/1?lang=por&id=p78"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-winder-instruments-to-accomplish-his-purposes",
+      "para": 12,
+      "en": "- We have watched your tender mercies and ministerings to one another.",
+      "tr": "- Temos observado vossas ternas misericórdias e serviços prestados uns aos outros."
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-stephens-the-master-healer",
+      "para": 34,
+      "en": "… feels unremitting, I rely on the memory of His tender mercies. They serve as a guiding light as I …",
+      "tr": "… as trevas parecem inexoráveis, recorro à lembrança de Suas ternas misericórdias. Para mim, elas são uma luz orientadora ao …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misericórdias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.647,
+    "ratio": 431.5,
+    "source": "2011-10-cook-the-songs-they-could-not-sing",
+    "kind": "talk",
+    "sample": "ários, grandes bênçãos advêm aos que são fiéis. Devemos ser gratos por todas as misericórdias que recebemos em nossa vida.[^15] Não nos damos conta de uma série de bênçãos q"
+   },
+   {
+    "term": "tuas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.412,
+    "ratio": 183.1,
+    "source": "2017-04-christofferson-the-voice-of-warning",
+    "kind": "talk",
+    "sample": "e congregação a tua benignidade e a tua verdade. Não retires de mim, Senhor, as tuas misericórdias”.[^36] Em nome de Jesus Cristo. Amém."
+   },
+   {
+    "term": "benignidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.294,
+    "ratio": 294.2,
+    "source": "2017-04-christofferson-the-voice-of-warning",
+    "kind": "talk",
+    "sample": "goei a tua fidelidade e a tua salvação; não escondi da grande congregação a tua benignidade e a tua verdade. Não retires de mim, Senhor, as tuas misericórdias”.[^36] Em no"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 64,
+  "en_talks": 41,
+  "en_verses": 16,
+  "uncovered_paragraphs": 33,
+  "renderings": [
+   {
+    "term": "tierna misericordia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 34,
+    "talks": 30,
+    "verses": 13,
+    "first_year": 2007,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Salmo 145:9",
+      "ref_en": "Psalm 145:9",
+      "en": "The Lord is good to all: and his tender mercies are over all his works.",
+      "tr": "Bueno es Jehová para con todos,y sus tiernas misericordias están sobre todas sus obras.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ps/145?lang=spa&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-kikuchi-will-a-man-rob-god",
+      "para": 23,
+      "en": "… offered their thanksgiving prayers, and “because of … his tender mercies,”[^7] the Lord continues to bless them.",
+      "tr": "… de acción de gracias y, “por causa de… sus tiernas misericordias”[^7], el Señor continúa bendiciéndoles."
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-budge-consistent-and-resilient-trust",
+      "para": 25,
+      "en": "… before the Lord, because of the multitude of his tender mercies over them.”[^24]",
+      "tr": "… el Señor, por causa de la abundancia de sus tiernas misericordias sobre ellos”[^24]."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misericordias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.879,
+    "ratio": 1758.0,
+    "source": "2005-04-bednar-the-tender-mercies-of-the-lord",
+    "kind": "talk",
+    "sample": "o del Libro de Mormón: “Pero he aquí, yo, Nefi, os mostraré que las entrañables misericordias del Señor se extienden sobre todos aquellos que, a causa de su fe, él ha escogi"
+   },
+   {
+    "term": "entrañables",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.848,
+    "ratio": 848.7,
+    "source": "2005-04-bednar-the-tender-mercies-of-the-lord",
+    "kind": "talk",
+    "sample": "ste versículo del Libro de Mormón: “Pero he aquí, yo, Nefi, os mostraré que las entrañables misericordias del Señor se extienden sobre todos aquellos que, a causa de su fe"
+   },
+   {
+    "term": "nefi",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.273,
+    "ratio": 8.0,
+    "source": "2005-04-bednar-the-tender-mercies-of-the-lord",
+    "kind": "talk",
+    "sample": "antar, acudió a mi mente este versículo del Libro de Mormón: “Pero he aquí, yo, Nefi, os mostraré que las entrañables misericordias del Señor se extienden sobre tod"
+   }
+  ]
+ }
+}

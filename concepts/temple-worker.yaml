@@ -1,0 +1,17 @@
+id: concept.temple-worker
+category: Temple & Family History
+en:
+  term: temple worker
+  match:
+  - temple worker
+sources:
+  GH:
+  - 25-temple-and-family-history-work#title_number26
+candidates:
+  pt:
+  - term: oficiante do templo
+    hint: pulpit-glossary:standard
+  es:
+  - term: obrera del templo
+    hint: pulpit-glossary:verified
+related: []

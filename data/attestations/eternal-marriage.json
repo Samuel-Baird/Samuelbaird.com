@@ -1,0 +1,179 @@
+{
+ "id": "concept.eternal-marriage",
+ "pt": {
+  "en_paragraphs": 51,
+  "en_talks": 35,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "casamento eterno",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 45,
+    "talks": 30,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-dvila-the-conversion-process",
+      "para": 9,
+      "en": "… years ago my wife and I were sealed in eternal marriage in the Salt Lake Temple, and the following year …",
+      "tr": "… dezoito anos, minha esposa e eu fomos selados, em casamento eterno, no Templo de Lago Salgado. No ano seguinte …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-ballard-the-greatest-generation-of-young-adults",
+      "para": 29,
+      "en": "… During this important season of preparation for a mission, eternal marriage, and life as an adult, you must continue …",
+      "tr": "… importante época de preparação para a missão, para o casamento eterno e para a vida adulta, vocês devem continuar a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-fale-i-am-a-child-of-god",
+      "para": 19,
+      "en": "… this life or the next” (Neil L. Andersen, “[Eternal Marriage Is an Eternal Journey](https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng&id=p_bIJXH#p_bIJXH),” Liahona, May 2026, 103).\n[^16]: …",
+      "tr": "… nessa vida ou na vindoura\" (Neil L. Andersen, \"[O casamento eterno é uma jornada eterna](https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=por&id=p_bIJXH#p_bIJXH)\", Liahona, maio de 2026, p. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 23.2,
+    "source": "1994-04-didier-remember-your-covenants",
+    "kind": "talk",
+    "sample": "Como podemos adquirir a força para nos decidirmos a servir ao Senhor? Simplesmente nos concentrando na doutrina de Jesus Cristo, que garan"
+   },
+   {
+    "term": "missão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 17.9,
+    "source": "2004-04-ballard-the-atonement-and-the-value-of-one-soul",
+    "kind": "talk",
+    "sample": "camente nosso neto Nathan, que morreu em um acidente de avião. Nathan serviu na Missão Báltica de língua russa. Ele adorava as pessoas e sabia que servir ao Senhor er"
+   },
+   {
+    "term": "responsabilidades",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 46.0,
+    "source": "1999-04-scott-receive-the-temple-blessings",
+    "kind": "talk",
+    "sample": "há-lo e que esteja diligentemente empenhado em preparar-se para arcar com essas responsabilidades."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 51,
+  "en_talks": 35,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "matrimonio eterno",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 48,
+    "talks": 34,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-dvila-the-conversion-process",
+      "para": 9,
+      "en": "… years ago my wife and I were sealed in eternal marriage in the Salt Lake Temple, and the following year …",
+      "tr": "… años que mi esposa y yo fuimos sellados en matrimonio eterno en el Templo de Salt Lake, y al año …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-clayton-marriage-watch-and-learn",
+      "para": 4,
+      "en": "… Thus, keeping the commandments is fundamental to establishing strong eternal marriages. Watch and learn: faith in the Lord Jesus …",
+      "tr": "… en el Señor Jesucristo es el cimiento de los matrimonios eternos felices."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-fale-i-am-a-child-of-god",
+      "para": 19,
+      "en": "… this life or the next” (Neil L. Andersen, “[Eternal Marriage Is an Eternal Journey](https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=eng&id=p_bIJXH#p_bIJXH),” Liahona, May 2026, 103).\n[^16]: …",
+      "tr": "… o en la vida venidera\" (Neil L. Andersen, \"[El matrimonio eterno es un viaje eterno](https://www.churchofjesuschrist.org/study/general-conference/2026/04/55andersen?lang=spa&id=p_bIJXH#p_bIJXH)\", Liahona, mayo de 2026, pág. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "matrimonio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 76.9,
+    "source": "2012-10-reeves-the-lord-has-not-forgotten-you",
+    "kind": "talk",
+    "sample": "ndo. No le conté a nadie mis temores. Teníamos una familia grande y joven, y un matrimonio amoroso y eterno, y la idea de perder a mi esposo y criar a mis hijos sola me l"
+   },
+   {
+    "term": "común",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 166.7,
+    "source": "2012-10-reeves-the-lord-has-not-forgotten-you",
+    "kind": "talk",
+    "sample": "Hace muchos años, mi esposo estuvo muy enfermo debido a una enfermedad poco común. A medida que pasaban las semanas y él empeoraba, más me convencía de que él es"
+   },
+   {
+    "term": "semanas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 95.3,
+    "source": "2012-10-reeves-the-lord-has-not-forgotten-you",
+    "kind": "talk",
+    "sample": "estuvo muy enfermo debido a una enfermedad poco común. A medida que pasaban las semanas y él empeoraba, más me convencía de que él estaba muriendo. No le conté a nadie"
+   }
+  ]
+ }
+}

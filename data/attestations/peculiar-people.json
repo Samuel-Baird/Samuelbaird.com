@@ -1,0 +1,177 @@
+{
+ "id": "concept.peculiar-people",
+ "pt": {
+  "en_paragraphs": 16,
+  "en_talks": 14,
+  "en_verses": 4,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "povo adquirido",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 10,
+    "verses": 1,
+    "first_year": 1997,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "1 Pedro 2:9",
+      "ref_en": "1 Peter 2:9",
+      "en": "But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:",
+      "tr": "Mas vós sois a geração eleita, o sacerdócio real, a nação santa, o povo adquirido, para que anuncieis as virtudes daquele que vos chamou das trevas para a sua maravilhosa luz;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/1-pet/2?lang=por&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-hinckley-true-to-the-faith",
+      "para": 41,
+      "en": "… chosen generation, a royal priesthood, an holy nation, a peculiar people.”[^7]",
+      "tr": "… “geração eleita, o sacerdócio real, a nação santa o povo adquirido”.^(7)"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-monson-a-royal-priesthood",
+      "para": 1,
+      "en": "… chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of …",
+      "tr": "… geração eleita, o sacerdócio real, a nação santa, o povo adquirido, para que anuncieis as virtudes daquele que vos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "povo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 1.0,
+    "ratio": 40.0,
+    "source": "1997-04-hinckley-true-to-the-faith",
+    "kind": "talk",
+    "sample": "s que zombam de nós. Vamos viver acima disso. Há os que ainda nos consideram um povo estranho. Vamos aceitar isso como um cumprimento e continuar mostrando, por int"
+   },
+   {
+    "term": "próprio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 24.1,
+    "source": "2001-10-holland-like-a-watered-garden",
+    "kind": "talk",
+    "sample": "idade. Devido a esse ato, dizemos — de fato — que somos diferentes, que somos o próprio povo de Deus. Em uma sociedade que nos diz que o dinheiro é o nosso bem mais im"
+   },
+   {
+    "term": "estranho",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 500.1,
+    "source": "1997-04-hinckley-true-to-the-faith",
+    "kind": "talk",
+    "sample": "zombam de nós. Vamos viver acima disso. Há os que ainda nos consideram um povo estranho. Vamos aceitar isso como um cumprimento e continuar mostrando, por intermédio d"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 12,
+  "en_verses": 4,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "pueblo adquirido",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 10,
+    "talks": 9,
+    "verses": 1,
+    "first_year": 1991,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "1 Pedro 2:9",
+      "ref_en": "1 Peter 2:9",
+      "en": "But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:",
+      "tr": "Mas vosotros sois linaje escogido, real sacerdocio, nación santa, pueblo adquirido por Dios, para que anunciéis las virtudes de aquel que os ha llamado de las tinieblas a su luz admirable.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/1-pet/2?lang=spa&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-monson-a-royal-priesthood",
+      "para": 7,
+      "en": "… chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of …",
+      "tr": "“… vosotros sois linaje escogido, real sacerdocio, nación santa, pueblo adquirido por Dios, para que anunciéis las virtudes de aquel …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-oaks-followers-of-christ",
+      "para": 10,
+      "en": "… declared, the followers of Jesus were to be “a peculiar people” ([1 Peter 2:9](https://www.churchofjesuschrist.org/study/scriptures/nt/1-pet/2?lang=eng&id=p9#p9)).",
+      "tr": "… Pedro, los seguidores de Jesús habían de ser “pueblo adquirido por Dios” ([1 Pedro 2:9](https://www.churchofjesuschrist.org/study/scriptures/nt/1-pet/2?lang=spa&id=p9#p9))."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pueblo singular",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2023-10-soares-brothers-and-sisters-in-christ",
+    "kind": "talk",
+    "sample": "ratas del Iguazú, sin perder nuestra divina conexión que nos identifica como un pueblo singular, los “hijos [e hijas] de Cristo y herederos del reino de Dios”[^28]."
+   },
+   {
+    "term": "legado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 102.6,
+    "source": "2017-10-oaks-the-plan-and-the-proclamation",
+    "kind": "talk",
+    "sample": "muy incierto. Si nos aferramos a nuestros valores, si edificamos sobre nuestro legado, si andamos en obediencia ante el Señor, si tan solo vivimos el Evangelio, sere"
+   },
+   {
+    "term": "eres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 102.6,
+    "source": "deut/14/2",
+    "kind": "scripture",
+    "sample": "porque eres pueblo santo a Jehová tu Dios, y Jehová te ha escogido para que le seas un pueb"
+   }
+  ]
+ }
+}

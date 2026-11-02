@@ -1,0 +1,118 @@
+{
+ "id": "concept.keystone-of-our-religion",
+ "pt": {
+  "en_paragraphs": 24,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 24,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "religião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.917,
+    "ratio": 193.0,
+    "source": "2004-10-bednar-in-the-strength-of-the-lord",
+    "kind": "talk",
+    "sample": "s para sempre. O Livro de Mórmon é a palavra de Deus e a pedra angular de nossa religião. Irmãos e irmãs, os céus não estão selados. Deus fala—para nós individualmente"
+   },
+   {
+    "term": "pedra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.917,
+    "ratio": 193.0,
+    "source": "2004-10-bednar-in-the-strength-of-the-lord",
+    "kind": "talk",
+    "sample": "lmente permanecer unidas para sempre. O Livro de Mórmon é a palavra de Deus e a pedra angular de nossa religião. Irmãos e irmãs, os céus não estão selados. Deus fala"
+   },
+   {
+    "term": "livro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 1.0,
+    "ratio": 31.3,
+    "source": "1994-10-pinegar-the-simple-things",
+    "kind": "talk",
+    "sample": "e que receberemos “uma bênção tal qual ainda não se viu” ao lermos fielmente o Livro de Mórmon juntos e “agirmos segundo seus preceitos.” (A Liahona, julho de 1986,"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 24,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 23,
+  "renderings": [
+   {
+    "term": "piedra angular de nuestra religión",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-callister-gods-compelling-witness-the-book-of-mormon",
+      "para": 0,
+      "en": "The Book of Mormon is not only the keystone of our religion, but it can also become the keystone …",
+      "tr": "… Libro de Mormón no solamente es la piedra angular de nuestra religión, sino que también puede llegar a ser …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "clave",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.957,
+    "ratio": 255.1,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "l Libro de Mormón es “el más correcto de todos los libros sobre la tierra, y la clave de nuestra religión”[^32]. Es el único libro del cual el Señor mismo ha testifi"
+   },
+   {
+    "term": "religión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 1.0,
+    "ratio": 166.7,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "es “el más correcto de todos los libros sobre la tierra, y la clave de nuestra religión”[^32]. Es el único libro del cual el Señor mismo ha testificado que es verdader"
+   },
+   {
+    "term": "mormón",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 1.0,
+    "ratio": 30.5,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "El Libro de Mormón es el texto religioso más importante que ha revelado Dios al hombre “desde que"
+   }
+  ]
+ }
+}

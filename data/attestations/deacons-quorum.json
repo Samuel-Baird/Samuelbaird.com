@@ -1,0 +1,179 @@
+{
+ "id": "concept.deacons-quorum",
+ "pt": {
+  "en_paragraphs": 41,
+  "en_talks": 27,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "quórum de diáconos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 32,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 8,
+      "en": "… was counselor to the boy who presided over our deacons quorum. Our good bishop called me in and talked …",
+      "tr": "… o de conselheiro do rapaz que presidia nosso quorum de diáconos. Nosso bom bispo me chamou e conversou comigo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-gibson-sacred-keys-of-the-aaronic-priesthood",
+      "para": 9,
+      "en": "… Doctrine and Covenants, [verse 85](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=eng&id=p85#p85). It mentions that a deacons quorum president is to sit in council with his quorum …",
+      "tr": "… 85. Aquele versículo mencionava que um presidente de quórum de diáconos devia sentar-se em conselho com os membros de seu …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-lund-divine-authority-sublime-young-men",
+      "para": 30,
+      "en": "… was one of “Alan’s boys” who baptized that erstwhile deacons quorum president in proxy for Alan.",
+      "tr": "… de Alan” que batizou o antigo presidente do quórum de diáconos em favor dele."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "diáconos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 1.0,
+    "ratio": 500.1,
+    "source": "1990-10-hinckley-in-counsellors-there-is-safety",
+    "kind": "talk",
+    "sample": "o ofício de presidente é pesado e trabalhoso. Mesmo o presidente do quorum dos diáconos, fazendo um trabalho bem feito, tem muita responsabilidade, pois responde pela"
+   },
+   {
+    "term": "quorum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.889,
+    "ratio": 62.4,
+    "source": "1990-10-hinckley-in-counsellors-there-is-safety",
+    "kind": "talk",
+    "sample": "rganização, o ofício de presidente é pesado e trabalhoso. Mesmo o presidente do quorum dos diáconos, fazendo um trabalho bem feito, tem muita responsabilidade, pois r"
+   },
+   {
+    "term": "mestres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 78.5,
+    "source": "1993-10-monson-the-upward-reach",
+    "kind": "talk",
+    "sample": "vós, rapazes, fazeis parte de presidências de quóruns de diáconos e quóruns de mestres e tendes cargos de liderança auxiliando o bispo a guiar os quóruns de sacerdote"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 42,
+  "en_talks": 26,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "quórum de diáconos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 30,
+    "talks": 18,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 8,
+      "en": "… was counselor to the boy who presided over our deacons quorum. Our good bishop called me in and talked …",
+      "tr": "En el barrio numeroso donde crecí, había cinco quórumes de diáconos, cada uno con una presidencia compuesta por tres …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-perry-the-message-of-the-restoration",
+      "para": 6,
+      "en": "… he had befriended them, and one was now attending deacons quorum meetings, and the other had been ordained a teacher …",
+      "tr": "… ellos; que uno asistía a las reuniones del quórum de diáconos y que el obispo había ordenado al otro como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-monson-the-priesthooda-sacred-gift",
+      "para": 3,
+      "en": "… when I was called to be secretary of my deacons quorum. I prepared most conscientiously the records I kept, …",
+      "tr": "… me llamó para ser el secretario de mi quórum de diáconos. Preparé con mucho cuidado los registros que llevaba, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "diáconos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.917,
+    "ratio": 611.3,
+    "source": "2016-10-eyring-gratitude-on-the-sabbath-day",
+    "kind": "talk",
+    "sample": "oy agradecido por los muchos domingos en los que impartí una clase al cuórum de diáconos en Bountiful, Utah, así como una clase de la Escuela Dominical en Idaho; y recu"
+   },
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.917,
+    "ratio": 152.8,
+    "source": "2016-10-eyring-gratitude-on-the-sabbath-day",
+    "kind": "talk",
+    "sample": "Estoy agradecido por los muchos domingos en los que impartí una clase al cuórum de diáconos en Bountiful, Utah, así como una clase de la Escuela Dominical en I"
+   },
+   {
+    "term": "barrio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 33.3,
+    "source": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+    "kind": "talk",
+    "sample": "Cuando era diácono, mi familia se mudó a una casa nueva en otro barrio. Yo comenzaba la escuela secundaria, así que también asistí a una escuela nueva"
+   }
+  ]
+ }
+}

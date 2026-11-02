@@ -1,0 +1,67 @@
+{
+ "id": "concept.official-declaration-1",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Declaração Oficial 1",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-costa-obedience-to-the-prophets",
+      "para": 20,
+      "en": "… duty” (in excerpts from three addresses following [Official Declaration 1](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1?lang=eng) in the Doctrine and Covenants).",
+      "tr": "… oráculos de Deus e de seus deveres” (Declaração Oficial 1)."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Declaración Oficial 1",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2010,
+    "last_year": 2010,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-costa-obedience-to-the-prophets",
+      "para": 20,
+      "en": "… duty” (in excerpts from three addresses following [Official Declaration 1](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1?lang=eng) in the Doctrine and Covenants).",
+      "tr": "… oráculos de Dios y de su deber” ([Declaración Oficial 1](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1?lang=spa))."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

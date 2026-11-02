@@ -1,0 +1,116 @@
+{
+ "id": "concept.agency",
+ "pt": {
+  "en_paragraphs": 385,
+  "en_talks": 229,
+  "en_verses": 5,
+  "uncovered_paragraphs": 42,
+  "renderings": [
+   {
+    "term": "arbítrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 344,
+    "talks": 201,
+    "verses": 4,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Moisés 7:32",
+      "ref_en": "Moses 7:32",
+      "en": "The Lord said unto Enoch: Behold these thy brethren; they are the workmanship of mine own hands, and I gave unto them their knowledge, in the day I created them; and in the Garden of Eden, gave I unto man his agency;",
+      "tr": "O Senhor disse a Enoque: Olha estes teus irmãos; eles são a obra de minhas próprias mãos e eu dei-lhes seu conhecimento no dia em que os criei; e no Jardim do Éden dei ao homem seu arbítrio;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/7?lang=por&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-scott-finding-the-way-back",
+      "para": 27,
+      "en": "… the process becomes easier because through your use of agency, you qualify for the Lord’s help, and He magnifies …",
+      "tr": "… se torna mais fácil, porque pelo uso do livre-arbítrio, podeis qualificar-vos para receber ajuda do Senhor, e ele …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-hales-preserving-agency-protecting-religious-freedom",
+      "para": 6,
+      "en": "Jesus Christ, using His agency, said:",
+      "tr": "Jesus Cristo, usando Seu arbítrio, disse:"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 380,
+  "en_talks": 222,
+  "en_verses": 5,
+  "uncovered_paragraphs": 27,
+  "renderings": [
+   {
+    "term": "albedrío",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 354,
+    "talks": 205,
+    "verses": 4,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Moisés 7:32",
+      "ref_en": "Moses 7:32",
+      "en": "The Lord said unto Enoch: Behold these thy brethren; they are the workmanship of mine own hands, and I gave unto them their knowledge, in the day I created them; and in the Garden of Eden, gave I unto man his agency;",
+      "tr": "El Señor dijo a Enoc: He allí a estos, tus hermanos; son la obra de mis propias manos, y les di su conocimiento el día en que los creé; y en el Jardín de Edén le di al hombre su albedrío;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/7?lang=spa&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 October General Conference",
+      "talk": "1992-10-pearce-fear",
+      "para": 16,
+      "en": "… But that reminder is not automatic. It involves our agency. We must *choose* to take our fears to him, …",
+      "tr": "… recordatorio no es automático, sino que depende de nuestro albedrío: Debemos decidir expresarle nuestros temores; debemos decidir confiar en …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-perry-obedience-through-our-faithfulness",
+      "para": 6,
+      "en": "… Lord speaks to us. Out of respect for our agency, it is never a strong, forceful tug.",
+      "tr": "… que el Señor nos habla. Por respeto a nuestro albedrío, nunca es un tirón fuerte ni enérgico."
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "agencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.259,
+    "ratio": 518.6,
+    "source": "1993-10-hales-how-will-our-children-remember-us",
+    "kind": "talk",
+    "sample": "Papa era dibujante comercial y trabajaba para una gran agencia publicitaria de la ciudad de Nueva York. En una ocasión, se encontraba trabajan"
+   }
+  ]
+ }
+}

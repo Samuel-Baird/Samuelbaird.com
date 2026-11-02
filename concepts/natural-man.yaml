@@ -1,0 +1,17 @@
+id: concept.natural-man
+category: Faith & Gospel Principles
+en:
+  term: natural man
+  match:
+  - natural man
+sources:
+  GS:
+  - natural-man
+candidates:
+  pt:
+  - term: homem natural
+    hint: pulpit-glossary:verified
+  es:
+  - term: hombre natural
+    hint: approved-terms
+related: []

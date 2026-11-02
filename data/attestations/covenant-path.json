@@ -1,0 +1,167 @@
+{
+ "id": "concept.covenant-path",
+ "pt": {
+  "en_paragraphs": 316,
+  "en_talks": 193,
+  "en_verses": 0,
+  "uncovered_paragraphs": 312,
+  "renderings": [
+   {
+    "term": "caminho dos convênios",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2007,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-dalton-stay-on-the-path",
+      "para": 7,
+      "en": "… sufficient for our needs if we keep to the covenant path. Our path is uphill most days, but the …",
+      "tr": "… suficientes para nossas necessidades, se nos mantivermos no caminho dos convênios. Nosso caminho é ladeira acima, na maioria dos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-jones-a-sin-resistant-generation",
+      "para": 16,
+      "en": "… sacred covenants as they enter and progress along the covenant path? Teaching children to keep simple promises when they …",
+      "tr": "… fazer e guardar convênios sagrados ao trilharem o caminho dos convênios? Ensinar nossos filhos a cumprir promessas simples quando …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-nelson-drawing-the-power-of-jesus-christ-into-our-lives",
+      "para": 20,
+      "en": "… into the waters of baptism. We walk along the covenant path to receive other essential ordinances.[^17] And gratefully, God’s plan …",
+      "tr": "… seguimos, entrando nas águas do batismo. Seguimos o caminho dos convênios e recebemos outras ordenanças essenciais.[^17] Somos gratos por saber …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "convênio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 246,
+    "share_of_uncovered": 0.984,
+    "ratio": 53.2,
+    "source": "2013-04-cook-when-you-save-a-girl-you-save-generations",
+    "kind": "talk",
+    "sample": "Seu caminho de convênios teve início no momento em que foram batizadas e receberam o dom do Espírito Sa"
+   },
+   {
+    "term": "caminho",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 250,
+    "share_of_uncovered": 1.0,
+    "ratio": 25.0,
+    "source": "2013-04-cook-when-you-save-a-girl-you-save-generations",
+    "kind": "talk",
+    "sample": "Seu caminho de convênios teve início no momento em que foram batizadas e receberam o dom do"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 314,
+  "en_talks": 191,
+  "en_verses": 0,
+  "uncovered_paragraphs": 40,
+  "renderings": [
+   {
+    "term": "senda de los convenios",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 274,
+    "talks": 165,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-carpenter-wilt-thou-be-made-whole",
+      "para": 24,
+      "en": "… blessed by your actions now to return to the covenant path.”[^17]",
+      "tr": "… acciones que tomen ahora para regresar a la senda de los convenios”[^17]."
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-christofferson-why-the-covenant-path",
+      "para": 22,
+      "en": "On the covenant path we also find the essential blessings of forgiveness and …",
+      "tr": "En la senda de los convenios también encontramos las bendiciones esenciales del perdón y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-chigbundu-spiritual-immunity",
+      "para": 21,
+      "en": "**Fourth, covenants.** Making covenants and staying on the covenant path are inseparable companions. Covenants create a bond between us …",
+      "tr": "… los convenios.** Hacer convenios y permanecer en la senda de los convenios son compañeros inseparables. Los convenios crean un vínculo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sendero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.425,
+    "ratio": 60.7,
+    "source": "2013-04-cook-when-you-save-a-girl-you-save-generations",
+    "kind": "talk",
+    "sample": "Su sendero de convenios empezó en el momento en que fueron bautizadas y recibieron el don"
+   },
+   {
+    "term": "convenio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.45,
+    "ratio": 30.0,
+    "source": "2013-10-stephens-do-we-know-what-we-have",
+    "kind": "talk",
+    "sample": "lias recibieran las ordenanzas que necesitaban para progresar en el sendero del convenio y fortalecer sus hogares."
+   },
+   {
+    "term": "senda",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.3,
+    "ratio": 29.3,
+    "source": "2015-04-bednar-therefore-they-hushed-their-fears",
+    "kind": "talk",
+    "sample": "Salvador, edifiquemos sobre Él como nuestro fundamento y sigamos adelante en Su senda de convenios con un compromiso consagrado."
+   }
+  ]
+ }
+}

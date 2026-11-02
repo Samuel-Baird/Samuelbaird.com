@@ -1,0 +1,15 @@
+id: concept.priesthood-office
+category: Priesthood Offices & Quorums
+en:
+  term: priesthood office
+  match:
+  - priesthood office
+sources: {}
+candidates:
+  pt:
+  - term: ofício do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: oficio del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

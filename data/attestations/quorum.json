@@ -1,0 +1,208 @@
+{
+ "id": "concept.quorum",
+ "pt": {
+  "en_paragraphs": 666,
+  "en_talks": 324,
+  "en_verses": 21,
+  "uncovered_paragraphs": 156,
+  "renderings": [
+   {
+    "term": "quórum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 512,
+    "talks": 267,
+    "verses": 19,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 107:26",
+      "ref_en": "Doctrine and Covenants 107:26",
+      "en": "And they form a quorum, equal in authority to that of the Twelve special witnesses or Apostles just named.",
+      "tr": "E eles formam um quórum igual em autoridade ao das Doze testemunhas especiais ou Apóstolos há pouco mencionados.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=por&id=p26"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 5,
+      "en": "… large and flexible in terms of the number of quorums that might be organized. Each of the presidents, who is …",
+      "tr": "… que podem ser organizados. Cada presidente chamado pelo Primeiro Quorum dos Setenta, é co-igual com os outros, sendo que um …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-monson-looking-back-and-moving-forward",
+      "para": 3,
+      "en": "… in the Quorum of the Twelve Apostles, and that quorum became the presiding authority of the Church.",
+      "tr": "… conselheiros do Presidente Hinckley, voltamos para nosso lugar no Quórum dos Doze Apóstolos, que se tornou a autoridade presidente da …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quoruns",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 144,
+    "share_of_uncovered": 0.923,
+    "ratio": 230.8,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "uxílio de excelentes guias de estudo, é possível ensinar melhor o evangelho nos quoruns do sacerdócio, auxiliares, Escola Dominical, bem como ser pregado melhor nas re"
+   },
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.205,
+    "ratio": 16.4,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "Sob a autoridade do sacerdócio do bispo, a presidente da Sociedade de Socorro de uma ala preside e dirige as atividades da Sociedade de Socorro na ala. A pre"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 653,
+  "en_talks": 315,
+  "en_verses": 21,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "quórum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 467,
+    "talks": 210,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-christofferson-the-priesthood-quorum",
+      "para": 10,
+      "en": "… Lord instructed that the priesthood should be organized into quorums, meaning selected assemblies of brethren given authority that His …",
+      "tr": "… serían los miembros, e invariablemente contenía la expresión ‘quórum vos unum’, que quería decir: ‘Del cual deseamos que seas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-packer-the-twelve",
+      "para": 42,
+      "en": "Today there are 308 Seventies in 8 quorums. They represent 44 countries and speak 30 languages.",
+      "tr": "En la actualidad hay 308 Setentas en ocho quórumes; ellos representan a 44 países y 30 idiomas."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-packer-the-book",
+      "para": 9,
+      "en": "… and temple work from the First Presidency and the Quorum of the Twelve.[^13] Your response to this emphasis will increase …",
+      "tr": "La Primera Presidencia y el Quórum de los Doce han hecho un hincapié renovado en la …"
+     }
+    ],
+    "share": 0.698
+   },
+   {
+    "term": "cuórum",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 181,
+    "talks": 106,
+    "verses": 21,
+    "first_year": 2015,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:136",
+      "ref_en": "Doctrine and Covenants 124:136",
+      "en": "I give unto him Amasa Lyman and Noah Packard for counselors, that they may preside over the quorum of high priests of my church, saith the Lord.",
+      "tr": "Le nombro como consejeros a Amasa Lyman y a Noah Packard, para que presidan el cuórum de sumos sacerdotes de mi iglesia, dice el Señor.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p136"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-andersen-faith-is-not-by-chance-but-by-choice",
+      "para": 20,
+      "en": "… is the guidance of the First Presidency and the Quorum of the Twelve. Today we sustained three new members of …",
+      "tr": "… es la guía de la Primera Presidencia y del Cuórum de los Doce. Hoy sostuvimos a tres nuevos miembros de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-bednar-gather-together-in-one-all-things-in-christ",
+      "para": 5,
+      "en": "Last April, the organizational structure of priesthood quorums was not merely changed. Rather, emphasis and strength were given …",
+      "tr": "… no solo se cambió la estructura organizativa de los cuórums del sacerdocio, sino que se dio énfasis y fuerza a …"
+     }
+    ],
+    "share": 0.302
+   }
+  ],
+  "inferred": [
+   {
+    "term": "decía",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 52.3,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "o por unirse a la Iglesia. Decidió escribir a sus padres en Vancouver, la carta decía mas o menos así:"
+   },
+   {
+    "term": "agradecimiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 31.8,
+    "source": "2000-04-monson-your-eternal-voyage",
+    "kind": "talk",
+    "sample": "ro darte estas pelotas y agradecerte el ser bueno conmigo”.Le expresé mi propio agradecimiento y salí de allí siendo un muchacho mejor que cuando había entrado. Ya no éramos"
+   },
+   {
+    "term": "esto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 9.9,
+    "source": "1998-10-christofferson-the-priesthood-quorum",
+    "kind": "talk",
+    "sample": "El presidente Boyd K. Packer ha explicado esto:"
+   }
+  ]
+ }
+}

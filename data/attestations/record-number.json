@@ -1,0 +1,99 @@
+{
+ "id": "concept.record-number",
+ "pt": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "número de registro",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "recorde",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2025-04-palmer-return-unto-me-that-i-may-heal-you",
+    "kind": "talk",
+    "sample": "Jesus promete. E, ao contrário das narrativas que às vezes circulam, um número recorde de nossos jovens está optando por permanecer firme e aumentar sua fé em Jesus C"
+   },
+   {
+    "term": "números",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 250.1,
+    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
+    "kind": "talk",
+    "sample": "Nossos rapazes e moças estão enviando seus papéis para o serviço missionário em números recordes. A nova geração está *se erguendo* como vigorosos seguidores de Jesus"
+   },
+   {
+    "term": "buscando",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 222.3,
+    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
+    "kind": "talk",
+    "sample": "lmente inspirado por nossos jovens. Eles estão servindo em grande número. Estão buscando seus antepassados e realizando as ordenanças no templo. Nossos rapazes e moças"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "récord",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 833.5,
+    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
+    "kind": "talk",
+    "sample": "n buscando a sus antepasados y efectuando ordenanzas en el templo. Una cantidad récord de hombres y mujeres jóvenes están enviando solicitudes para el servicio mision"
+   },
+   {
+    "term": "jóvenes están",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 1333.7,
+    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
+    "kind": "talk",
+    "sample": "y efectuando ordenanzas en el templo. Una cantidad récord de hombres y mujeres jóvenes están enviando solicitudes para el servicio misional. La nueva generación se está *le"
+   },
+   {
+    "term": "número",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 90.9,
+    "source": "2025-04-nelson-confidence-in-the-presence-of-god",
+    "kind": "talk",
+    "sample": "Me siento especialmente inspirado por nuestros jóvenes. Un gran número de ellos está prestando servicio. Están buscando a sus antepasados y efectuando"
+   }
+  ]
+ }
+}

@@ -1,0 +1,179 @@
+{
+ "id": "concept.meetinghouse",
+ "pt": {
+  "en_paragraphs": 97,
+  "en_talks": 79,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "capela",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 91,
+    "talks": 76,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-tingey-redemption-of-the-dead",
+      "para": 17,
+      "en": "… homes, will soon allow members to go to their meetinghouses to clear names for temple work rather than waiting for …",
+      "tr": "… nomes para as ordenanças no templo em suas próprias capelas, em vez de esperar a aprovação dos escritórios centrais."
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-davies-the-blessings-of-worship",
+      "para": 51,
+      "en": "… began as a normal Sunday morning, in that normal meetinghouse, in that normal stake, even today I am moved …",
+      "tr": "… que começou como uma manhã de domingo normal, naquela capela normal, naquela estaca normal, mesmo hoje, sinto-me inspirado pela extraordinária …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-matswagothata-he-knows-you-by-name",
+      "para": 20,
+      "en": "… out to the Lord. When I arrived at the meetinghouse, a bright-eyed Primary boy stopped me and said, “We …",
+      "tr": "… ala, abri meu coração ao Senhor. Quando cheguei à capela, um menino da Primária com olhos brilhantes me parou …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "passava",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 444.6,
+    "source": "2011-10-uchtdorf-you-matter-to-him",
+    "kind": "talk",
+    "sample": "istia a meu treinamento de pilotos e estudava o máximo que podia e, em seguida, passava a maior parte do meu tempo livre trabalhando no novo prédio. Lá eu aprendi que"
+   },
+   {
+    "term": "estaca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 46.5,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "do e com as centenas de centros de história da fámília localizados nas sedes de estaca e nas alas, espalhados por toda a terra, como posso desvendar os segredos escon"
+   },
+   {
+    "term": "houve",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 70.2,
+    "source": "2014-10-uchtdorf-lord-is-it-i",
+    "kind": "talk",
+    "sample": "am pratos fantásticos e os membros jamais sujavam o chão, e penso até que nunca houve nenhuma discussão nos jogos de futebol."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 96,
+  "en_talks": 80,
+  "en_verses": 0,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "centro de reuniones",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 70,
+    "talks": 62,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 October General Conference",
+      "talk": "1997-10-hancock-daughter-be-of-good-comfort",
+      "para": 9,
+      "en": "… train, tram, bus, and a final walk to our meetinghouse. What a blessing it had been for us in …",
+      "tr": "… y en autobús, y nuevamente caminaba hasta el centro de reuniones. Que bendición había sido para nosotros en ese …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-stevenson-where-are-the-keys-and-authority-of-the-priesthood",
+      "para": 7,
+      "en": "… parents; and a visitors’ center incorporated into a new meetinghouse, comprise the new Priesthood Restoration Site, dedicated by President …",
+      "tr": "… un centro de visitantes incorporado a un nuevo centro de reuniones, constituyen el Sitio de la restauración del sacerdocio, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-matswagothata-he-knows-you-by-name",
+      "para": 20,
+      "en": "… out to the Lord. When I arrived at the meetinghouse, a bright-eyed Primary boy stopped me and said, “We …",
+      "tr": "… derramé mi corazón al Señor. Al llegar al centro de reuniones, un alegre niño de la Primaria me detuvo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "capilla",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.538,
+    "ratio": 143.6,
+    "source": "1993-04-burton-heroes",
+    "kind": "talk",
+    "sample": "Durante el tiempo en que mi padre fue obispo se edificó una nueva capilla en nuestra zona. Parte de la contribución económica local que le correspondía a"
+   },
+   {
+    "term": "casa",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.269,
+    "ratio": 7.4,
+    "source": "1991-10-okazaki-rejoice-in-every-good-thing",
+    "kind": "talk",
+    "sample": "la Sociedad le Socorro somos diferentes. Elaine, Aileen, Carol y yo somos unas casadas y otras solteras amas de casa y profesionales, unas viajamos mucho y otras n"
+   },
+   {
+    "term": "tan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.231,
+    "ratio": 6.9,
+    "source": "1991-10-dvila-the-conversion-process",
+    "kind": "talk",
+    "sample": "ue los misioneros oraron y ayunaron para que se efectuara un cambio en mi, pues tan pronto como fui a las reuniones empece a criticar muchas de las cosas temporale"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.leadership-session
+category: Councils & Conferences
+en:
+  term: leadership session
+  match:
+  - leadership session
+sources: {}
+candidates:
+  pt:
+  - term: sessão de liderança
+    hint: pulpit-glossary:verified
+  es:
+  - term: sesión de liderazgo
+    hint: pulpit-glossary:verified
+related: []

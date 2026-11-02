@@ -1,0 +1,16 @@
+id: concept.man-of-holiness
+category: Deity
+en:
+  term: Man of Holiness
+  match:
+  - Man of Holiness
+sources:
+  GS:
+  - man-of-holiness
+candidates:
+  pt: []
+  es:
+  - term: Varón de Santidad
+    hint: approved-terms
+related: []
+note: Scriptural name for God the Father (Moses 6:57) — a specific title, not a generic descriptor

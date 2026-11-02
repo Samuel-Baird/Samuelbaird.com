@@ -1,0 +1,85 @@
+{
+ "id": "concept.second-hour",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "segunda hora",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 1,
+    "first_year": 2009,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 88:53",
+      "ref_en": "Doctrine and Covenants 88:53",
+      "en": "And he said unto the second: Go ye also into the field, and in the second hour I will visit you with the joy of my countenance.",
+      "tr": "E disse ao segundo: Vai também para o campo e, na segunda hora, visitar-te-ei com a alegria de meu semblante.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p53"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-eyring-the-enduring-legacy-of-relief-society",
+      "para": 17,
+      "en": "… Go ye also into the field, and in the second hour I will visit you with the *joy* of my …",
+      "tr": "… ao segundo: Vai também para o campo e, na segunda hora, visitar-te-ei com a *alegria* de meu semblante."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-godoy-smiling-faces-and-grateful-hearts",
+      "para": 26,
+      "en": "… half would attend a second sacrament meeting after the second hour. Again, there were no complaints—only smiling faces and …",
+      "tr": "… metade participaria de uma segunda reunião sacramental após a segunda hora. Novamente, não houve reclamações — apenas sorrisos radiantes …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 1,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "segunda hora",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2023-10-newman-preserving-the-voice-of-the-covenant-people-in-the-rising-generation",
+    "kind": "talk",
+    "sample": "la enseñanza semejante a la de Cristo. Esta reunión debe llevarse a cabo en la segunda hora de las reuniones de la Iglesia[^14]. La dirige un miembro del barrio selecciona"
+   },
+   {
+    "term": "reuniones",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 58.0,
+    "source": "2023-10-newman-preserving-the-voice-of-the-covenant-people-in-the-rising-generation",
+    "kind": "talk",
+    "sample": "ntirse solos. Por ejemplo, los consejos de barrio están autorizados a organizar reuniones de consejo de maestros para los padres. En estas reuniones trimestrales, los pa"
+   }
+  ]
+ }
+}

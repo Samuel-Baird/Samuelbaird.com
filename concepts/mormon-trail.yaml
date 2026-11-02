@@ -1,0 +1,15 @@
+id: concept.mormon-trail
+category: Church History
+en:
+  term: Mormon Trail
+  match:
+  - Mormon Trail
+sources: {}
+candidates:
+  pt:
+  - term: trilha mórmon
+    hint: pulpit-glossary:verified
+  es:
+  - term: sendero mormón
+    hint: pulpit-glossary:verified
+related: []

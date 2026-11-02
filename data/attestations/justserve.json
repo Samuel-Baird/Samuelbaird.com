@@ -1,0 +1,98 @@
+{
+ "id": "concept.justserve",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "JustServe",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-the-second-great-commandment",
+      "para": 43,
+      "en": "… Church’s charitable efforts, please see [ChurchofJesusChrist.org/topics/welfare](https://www.churchofjesuschrist.org/topics/welfare); [LatterDaySaintCharities.org](https://www.LatterDaySaintCharities.org); [facebook.com/LatterDaySaintCharities](https://www.facebook.com/LatterDaySaintCharities); [JustServe.org](https://www.JustServe.org).\n[^11]: “The most effective tract we will carry will …",
+      "tr": "… serviços humanitários da Igreja, acesse [ChurchofJesusChrist.org/topics/welfare](https://www.churchofjesuschrist.org/topics/welfare); [LatterDaySaintCharities.org](https://www.LatterDaySaintCharities.org); [facebook.com/LatterDaySaintCharities](http://www.facebook.com/LatterDaySaintCharities); [JustServe.org](https://www.JustServe.org).\n[^11]: \"A marca mais eficaz que levaremos será a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-gong-all-nations-kindreds-and-tongues",
+      "para": 49,
+      "en": "… in giving of time and means through service in JustServe or Helping Hands projects (see [justserve.org](https://www.justserve.org) and [ChurchofJesusChrist.org/topics/humanitarian-service/helping-hands](https://www.churchofjesuschrist.org/topics/humanitarian-service/helping-hands)) and through …",
+      "tr": "… tempo e recursos por meio de serviço nos programas JustServe ou Mãos Que Ajudam (ver [justserve.org](https://www.justserve.org); [churchofjesuschrist.org/topics/humanitarian-service/helping-hands](https://www.churchofjesuschrist.org/topics/humanitarian-service/helping-hands)) e por meio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-stevenson-days-never-to-be-forgotten",
+      "para": 39,
+      "en": "… [^15]: See Jessica Lawrence, “[Finding Joy in Donating Jelly](https://www.thechurchnews.com/members/2023/6/18/23760092/finding-joy-in-donating-jelly-justserve-project),” Church News, June 18, 2023, thechurchnews.com.\n[^16]: See [Matthew …",
+      "tr": "… [^15]: Ver Jessica Lawrence, \"[Finding Joy in Donating Jelly](https://www.thechurchnews.com/members/2023/6/18/23760092/finding-joy-in-donating-jelly-justserve-project)\", Church News, 18 de junho de 2023, thechurchnews.com.\n[^16]: …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "sirveahora",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2021-10-eubank-i-pray-hell-use-us",
+    "kind": "talk",
+    "sample": "- y la aplicación SirveAhora, donde esté disponible, que pone en contacto a los voluntarios con las oportuni"
+   },
+   {
+    "term": "justserve",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2019-10-nelson-the-second-great-commandment",
+    "kind": "talk",
+    "sample": "om/LatterDaySaintCharities](https://www.facebook.com/LatterDaySaintCharities); [JustServe.org](https://www.JustServe.org).\n[^11]: \"El mejor folleto que podemos ofrecer e"
+   },
+   {
+    "term": "web",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 500.1,
+    "source": "2019-10-nelson-the-second-great-commandment",
+    "kind": "talk",
+    "sample": "Tops 70 Million, UN Refugee Chief Urges Greater Solidarity in Response\", sitio web del Alto Comisionado de la ONU para Refugiados, 19 de junio de 2019, unhcr.org/"
+   }
+  ]
+ }
+}

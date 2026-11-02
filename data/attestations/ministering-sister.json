@@ -1,0 +1,133 @@
+{
+ "id": "concept.ministering-sister",
+ "pt": {
+  "en_paragraphs": 9,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "irmã ministradora",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2019,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-eyring-covenant-women-in-partnership-with-god",
+      "para": 6,
+      "en": "… on service in calls such as mother, leader, or ministering sister. The Lord, out of love, does not leave …",
+      "tr": "… serviço em chamados como os de mãe, líder ou irmã ministradora. Por nos amar, o Senhor não permite que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ministradores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 857.4,
+    "source": "2018-10-stevenson-shepherding-souls",
+    "kind": "talk",
+    "sample": "informações a respeito de nossa responsabilidade como pastores, irmãos e irmãs ministradores, de ovelhas perdidas:"
+   },
+   {
+    "term": "ministradoras",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 2857.9,
+    "source": "2022-10-eyring-legacy-of-encouragement",
+    "kind": "talk",
+    "sample": "Quando estiverem com alguém como ministradores ou ministradoras, vocês estarão representando o Senhor. Pensem no que Ele faria ou diria. Ele os"
+   },
+   {
+    "term": "informações",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 95.3,
+    "source": "2018-10-stevenson-shepherding-souls",
+    "kind": "talk",
+    "sample": "stamento, encontramos uma parábola e instrução do Salvador que nos fornece mais informações a respeito de nossa responsabilidade como pastores, irmãos e irmãs ministradore"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "hermana minstrante",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 0,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [],
+    "share": 0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ministrantes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2018-10-stevenson-shepherding-souls",
+    "kind": "talk",
+    "sample": "mayor comprensión de nuestra responsabilidad como pastores, hermanas y hermanos ministrantes, de ovejas perdidas:"
+   },
+   {
+    "term": "presidenta",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 111.1,
+    "source": "2019-10-eyring-covenant-women-in-partnership-with-god",
+    "kind": "talk",
+    "sample": "como hija de diez años en una familia en la que el padre haya fallecido, o como presidenta de la Sociedad de Socorro cuya localidad haya sufrido un incendio reciente, o s"
+   },
+   {
+    "term": "representan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 296.4,
+    "source": "2022-10-eyring-legacy-of-encouragement",
+    "kind": "talk",
+    "sample": "Ustedes representan al Señor cuando se sientan con alguien en su función de hermana o hermano minis"
+   }
+  ]
+ }
+}

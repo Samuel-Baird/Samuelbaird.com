@@ -1,0 +1,15 @@
+id: concept.baptism-for-the-dead
+category: Temple & Family History
+en:
+  term: baptism for the dead
+  match:
+  - baptism for the dead
+sources: {}
+candidates:
+  pt:
+  - term: batismo pelos mortos
+    hint: pulpit-glossary:verified
+  es:
+  - term: bautismo por los muertos
+    hint: pulpit-glossary:verified
+related: []

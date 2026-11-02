@@ -1,0 +1,15 @@
+id: concept.sunbeams
+category: Organizations & Youth
+en:
+  term: Sunbeams
+  match:
+  - Sunbeams
+sources: {}
+candidates:
+  pt:
+  - term: Raio de Sol
+    hint: pulpit-glossary:standard
+  es:
+  - term: rayitos de sol
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,161 @@
+{
+ "id": "concept.general-conference-talk",
+ "pt": {
+  "en_paragraphs": 21,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 16,
+  "renderings": [
+   {
+    "term": "discurso da conferência geral",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-uchtdorf-the-merciful-obtain-mercy",
+      "para": 2,
+      "en": "… the faith of this loving mother that a general conference talk could help heal the relationship between her children. I …",
+      "tr": "… pela fé dessa mãe amorosa de que um discurso da conferência geral pudesse ajudar a curar um relacionamento entre seus …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-holland-emissaries-to-the-church",
+      "para": 4,
+      "en": "… home teaching miracle—the kind the Brethren share in general conference talks!” She went on: “But just as I was …",
+      "tr": "… de milagre que as Autoridades Gerais relatam em discursos da conferência geral!” Ela continuou: “Mas enquanto eu decidia se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-andersen-the-voice-of-the-lord",
+      "para": 20,
+      "en": "Direction for a general conference talk often comes in the night or the early morning …",
+      "tr": "A inspiração para um discurso da conferência geral normalmente vem à noite ou nas primeiras horas …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "conferência geral",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.938,
+    "ratio": 81.5,
+    "source": "2004-10-burton-more-holiness-give-me",
+    "kind": "talk",
+    "sample": "ferência de estaca, uma moça aproximou-se de mim e disse: Bispo seu discurso na conferência geral poderia ser bem melhor se o senhor sorrisse um pouco. Pensei em falar a ela sob"
+   },
+   {
+    "term": "discurso",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.875,
+    "ratio": 87.5,
+    "source": "2004-10-burton-more-holiness-give-me",
+    "kind": "talk",
+    "sample": "recente conferência de estaca, uma moça aproximou-se de mim e disse: Bispo seu discurso na conferência geral poderia ser bem melhor se o senhor sorrisse um pouco. Pens"
+   },
+   {
+    "term": "outubro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.312,
+    "ratio": 39.1,
+    "source": "2004-10-miller-bringing-peace-and-healing-to-your-soul",
+    "kind": "talk",
+    "sample": "é fruto, ou recompensa, do arrependimento e da obediência”. (Conference Report, outubro de 1963, p. 24.)"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 23,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "discurso en una conferencia general",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 1998,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-eyring-that-we-may-be-one",
+      "para": 18,
+      "en": "… pled—as he did many times—for unity in a general conference talk, warned us against being selective in what we …",
+      "tr": "… hizo muchas veces-por la unión en su discurso en una conferencia general, nos amonestó en contra del seleccionar lo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "conferencia general",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.955,
+    "ratio": 77.9,
+    "source": "2004-10-burton-more-holiness-give-me",
+    "kind": "talk",
+    "sample": "al darnos la mano, ella dijo: “Obispo, usted podría mejorar sus discursos de la conferencia general con una sonrisa”. Quise decirle acerca del miedo y de la sonrisa, pero no tuve"
+   },
+   {
+    "term": "discurso",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.682,
+    "ratio": 80.2,
+    "source": "2004-10-miller-bringing-peace-and-healing-to-your-soul",
+    "kind": "talk",
+    "sample": "a conversión total. Citó unas palabras que el presidente Romney pronunció en un discurso de una conferencia general, en el cual citó las palabras del Salvador a Pedro:"
+   },
+   {
+    "term": "octubre",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.227,
+    "ratio": 23.9,
+    "source": "2004-10-miller-bringing-peace-and-healing-to-your-soul",
+    "kind": "talk",
+    "sample": "la recompensa del arrepentimiento y de la obediencia” (en *Conference Report*, octubre de 1963, pág. 24)."
+   }
+  ]
+ }
+}

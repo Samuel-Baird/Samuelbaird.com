@@ -1,0 +1,17 @@
+id: concept.informal-membership-restrictions
+category: Interviews, Repentance & Membership Councils
+en:
+  term: informal membership restrictions
+  match:
+  - informal membership restrictions
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number53
+candidates:
+  pt:
+  - term: restrições informais à condição de membro da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: restricciones informales de (la) condición de miembro
+    hint: approved-terms
+related: []

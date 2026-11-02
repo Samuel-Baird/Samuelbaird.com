@@ -1,0 +1,21 @@
+id: concept.the-fall
+category: Plan of Salvation
+en:
+  term: the Fall
+  match:
+  - the Fall
+sources:
+  GS:
+  - fall-of-adam-and-eve
+  Topics:
+  - fall-of-adam-and-eve
+  TtF:
+  - fall
+candidates:
+  pt:
+  - term: a Queda
+    hint: pulpit-glossary:verified
+  es:
+  - term: la Caída
+    hint: pulpit-glossary:verified
+related: []

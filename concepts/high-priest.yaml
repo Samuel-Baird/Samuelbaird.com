@@ -1,0 +1,19 @@
+id: concept.high-priest
+category: Priesthood Offices & Quorums
+en:
+  term: high priest
+  match:
+  - high priest
+sources:
+  GS:
+  - high-priest
+  Topics:
+  - high-priest
+  GH:
+  - 6-stake-leadership#title_number4
+candidates:
+  pt: []
+  es:
+  - term: sumo sacerdote
+    hint: approved-terms
+related: []

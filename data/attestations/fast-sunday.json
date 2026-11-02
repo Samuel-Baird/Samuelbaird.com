@@ -1,0 +1,104 @@
+{
+ "id": "concept.fast-sunday",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "domingo de jejum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-monson-be-thou-an-example",
+      "para": 26,
+      "en": "… I would cover a portion of the ward on fast Sunday morning, giving the small envelope to each family, waiting …",
+      "tr": "… percorria uma parte da ala na manhã do domingo de jejum entregando um pequeno envelope a cada família, aguardando a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-soares-one-in-christ",
+      "para": 7,
+      "en": "… the first time such expressions as “FHE,” “BYC,” “fast Sunday,” “baptism for the dead,” “triple combination,” and so …",
+      "tr": "… “noite familiar”, “comitê da juventude do bispado”, “domingo de jejum”, “batismo pelos mortos”, “combinação tríplice” e assim por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-stevenson-bridging-the-two-great-commandments",
+      "para": 21,
+      "en": "Consider this tender example. It was fast Sunday as Vance[^6] and I knocked on the door of …",
+      "tr": "Reflitam sobre este terno exemplo. “Nos domingos de jejum, Vance[^6] e eu batíamos à porta de uma …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "domingo de ayuno",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 9,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-wirthlin-the-law-of-the-fast",
+      "para": 8,
+      "en": "… the first Sunday of each month is designated as fast Sunday. On that day, members who are physically able …",
+      "tr": "… designa el primer domingo de cada mes como domingo de ayuno. Ese día, a los miembros que físicamente puedan …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-godoy-one-more-day",
+      "para": 10,
+      "en": "Some years ago on fast Sunday, an elderly sister came to the pulpit to …",
+      "tr": "Hace algunos años, en un domingo de ayuno, una hermana mayor se acercó al púlpito para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-stevenson-bridging-the-two-great-commandments",
+      "para": 21,
+      "en": "Consider this tender example. It was fast Sunday as Vance[^6] and I knocked on the door of …",
+      "tr": "Fíjense en este tierno ejemplo. Era un domingo de ayuno cuando Vance[^6] y yo tocamos la puerta de una …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

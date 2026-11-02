@@ -1,0 +1,13 @@
+id: concept.girls-camp
+category: Organizations & Youth
+en:
+  term: girls camp
+  match:
+  - girls camp
+sources: {}
+candidates:
+  pt:
+  - term: acampamento das Moças
+    hint: pulpit-glossary:standard
+  es: []
+related: []

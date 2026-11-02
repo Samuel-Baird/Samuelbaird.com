@@ -1,0 +1,23 @@
+id: concept.sacrament
+category: Sacrament & Meetings
+en:
+  term: sacrament
+  match:
+  - sacrament
+sources:
+  GS:
+  - sacrament
+  Topics:
+  - sacrament
+  TtF:
+  - sacrament
+  GH:
+  - 18-priesthood-ordinances-and-blessings#title_number27
+candidates:
+  pt:
+  - term: sacramento
+    hint: pulpit-glossary:verified
+  es:
+  - term: Santa Cena
+    hint: approved-terms
+related: []

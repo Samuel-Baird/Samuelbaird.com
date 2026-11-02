@@ -1,0 +1,17 @@
+id: concept.withdrawal-of-membership
+category: Interviews, Repentance & Membership Councils
+en:
+  term: withdrawal of membership
+  match:
+  - withdrawal of membership
+sources:
+  GH:
+  - 32-repentance-and-membership-councils#title_number71
+candidates:
+  pt:
+  - term: remoção da filiação à Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: retirar la condición de miembro
+    hint: approved-terms
+related: []

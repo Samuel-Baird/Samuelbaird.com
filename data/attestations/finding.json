@@ -1,0 +1,45 @@
+{
+ "id": "concept.finding",
+ "pt": {
+  "en_paragraphs": 193,
+  "en_talks": 167,
+  "en_verses": 13,
+  "uncovered_paragraphs": 206,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "encontrar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 82,
+    "share_of_uncovered": 0.398,
+    "ratio": 27.0,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "experiência como alfaiate, comecei procurando o melhor molde e tecido que pude encontrar. Com grande entusiasmo comecei a ler as instruções. Meu coração quase parou. Er"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 187,
+  "en_talks": 161,
+  "en_verses": 13,
+  "uncovered_paragraphs": 200,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "encontrar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 67,
+    "share_of_uncovered": 0.335,
+    "ratio": 29.1,
+    "source": "1999-04-neuenschwander-bridges-and-eternal-keepsakes",
+    "kind": "talk",
+    "sample": "reciente de la Iglesia revela que la participación inmediata relacionada con el encontrar y el preparar nombres de la familia para que se envíen al templo y, donde sea p"
+   }
+  ]
+ }
+}

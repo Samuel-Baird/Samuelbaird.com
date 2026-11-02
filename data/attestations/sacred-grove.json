@@ -1,0 +1,104 @@
+{
+ "id": "concept.sacred-grove",
+ "pt": {
+  "en_paragraphs": 57,
+  "en_talks": 50,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Bosque Sagrado",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 55,
+    "talks": 48,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 51,
+      "en": "… of the gospel. You move in sequence from the sacred grove to the Church today, fitting each section of the …",
+      "tr": "… testemunhareis a restauração do evangelho. Seguireis em seqüência do bosque sagrado até a Igreja de hoje, inserindo cada seção de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-dibb-your-holy-places",
+      "para": 2,
+      "en": "… today Latter-day Saints refer to these woods as the Sacred Grove.",
+      "tr": "… os santos dos últimos dias chamam aquele lugar de Bosque Sagrado."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-matswagothata-he-knows-you-by-name",
+      "para": 9,
+      "en": "And in the Sacred Grove, He called Joseph.[^5]",
+      "tr": "E no Bosque Sagrado, Ele chamou Joseph.[^5]"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 56,
+  "en_talks": 48,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Arboleda Sagrada",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 56,
+    "talks": 48,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+      "para": 15,
+      "en": "… began with the fervent prayer he offered in the Sacred Grove, which resulted in the Father and the Son …",
+      "tr": "… comenzó con la ferviente oración que elevó en la Arboleda Sagrada, a consecuencia de la cual se le aparecieron …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-dibb-your-holy-places",
+      "para": 2,
+      "en": "… today Latter-day Saints refer to these woods as the Sacred Grove.",
+      "tr": "… Últimos Días nos referimos a ese lugar como la Arboleda Sagrada."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-matswagothata-he-knows-you-by-name",
+      "para": 9,
+      "en": "And in the Sacred Grove, He called Joseph.[^5]",
+      "tr": "Y en la Arboleda Sagrada, llamó a José[^5]."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

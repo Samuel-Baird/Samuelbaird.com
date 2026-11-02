@@ -1,0 +1,21 @@
+id: concept.exaltation
+category: Plan of Salvation
+en:
+  term: exaltation
+  match:
+  - exaltation
+sources:
+  GS:
+  - exaltation
+  TtF:
+  - exaltation
+  GH:
+  - 1-work-of-salvation-and-exaltation#title_number3
+candidates:
+  pt:
+  - term: exaltação
+    hint: pulpit-glossary:verified
+  es:
+  - term: exaltación
+    hint: approved-terms
+related: []

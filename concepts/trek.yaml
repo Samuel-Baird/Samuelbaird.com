@@ -1,0 +1,15 @@
+id: concept.trek
+category: Organizations & Youth
+en:
+  term: trek
+  match:
+  - trek
+sources: {}
+candidates:
+  pt:
+  - term: trilha
+    hint: pulpit-glossary:verified
+  es:
+  - term: travesía
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,126 @@
+{
+ "id": "concept.hill-cumorah",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 3,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "monte Cumora",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 3,
+    "first_year": 1994,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mórmon 6:4",
+      "ref_en": "Mormon 6:4",
+      "en": "And it came to pass that we did march forth to the land of Cumorah, and we did pitch our tents around about the hill Cumorah; and it was in a land of many waters, rivers, and fountains; and here we had hope to gain advantage over the Lamanites.",
+      "tr": "E aconteceu que marchamos para a terra de Cumora e armamos nossas tendas ao redor do monte Cumora; e era numa terra de muitas águas, rios e fontes; e ali tínhamos esperança de sobrepujar os lamanitas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/morm/6?lang=por&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-jensen-the-power-of-a-good-life",
+      "para": 17,
+      "en": "… a branch of the Church and helped acquire the Hill Cumorah and the Martin Harris and Peter Whitmer farms. The …",
+      "tr": "… um ramo da Igreja e ajudaram na aquisição do Monte Cumora e das fazendas de Martin Harris e de Peter …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-esplin-filling-our-homes-with-light-and-truth",
+      "para": 19,
+      "en": "… window. I feel satisfied that if I saw the Hill Cumorah itself, it would not look more real. I feel …",
+      "tr": "… pois sei que, se eu tivesse visto o próprio Monte Cumora, não teria sido uma experiência mais real do …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 3,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "cerro Cumorah",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 3,
+    "first_year": 1993,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mormón 6:4",
+      "ref_en": "Mormon 6:4",
+      "en": "And it came to pass that we did march forth to the land of Cumorah, and we did pitch our tents around about the hill Cumorah; and it was in a land of many waters, rivers, and fountains; and here we had hope to gain advantage over the Lamanites.",
+      "tr": "Y ocurrió que emprendimos la marcha a la tierra de Cumorah, y plantamos nuestras tiendas en derredor del cerro Cumorah; y se hallaba en una región de muchas aguas, ríos y fuentes; y aquí esperábamos obtener ventaja sobre los lamanitas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/morm/6?lang=spa&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-hales-how-will-our-children-remember-us",
+      "para": 4,
+      "en": "… of fame in Cooperstown, New York, and to the Hill Cumorah Pageant near Palmyra, New York. This is where Joseph …",
+      "tr": "… teatral sobre la historia de la Iglesia en el cerro Cumorah, cerca de Palmyra, Nueva York. Fue ahí donde …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-esplin-filling-our-homes-with-light-and-truth",
+      "para": 19,
+      "en": "… window. I feel satisfied that if I saw the Hill Cumorah itself, it would not look more real. I feel …",
+      "tr": "… Estoy convencida de que si hubiera visto el verdadero Cerro Cumorah, no me habría parecido tan real; y sé …"
+     }
+    ],
+    "share": 0.875
+   },
+   {
+    "term": "cerro de Cumorah",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 1998,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-hinckley-testimony",
+      "para": 40,
+      "en": "Nearby is the Hill Cumorah. From there came the ancient record from which …",
+      "tr": "Cerca de allí está el cerro de Cumorah, del cual salió el antiguo registro cuya traducción …"
+     }
+    ],
+    "share": 0.125
+   }
+  ]
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "id": "concept.great-apostasy",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Grande Apostasia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 51,
+      "en": "… and Covenants and Church history course, you review the Great Apostasy and witness the restoration of the gospel. You move …",
+      "tr": "… Doutrina e Convênios e História da Igreja, examinareis a grande apostasia e testemunhareis a restauração do evangelho. Seguireis em seqüência …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-didier-the-message-of-the-restoration",
+      "para": 11,
+      "en": "However, there came a time during this great Apostasy, which had been prophesied before, when the religious …",
+      "tr": "Contudo, chegou um momento durante essa grande apostasia, que já havia sido profetizado anteriormente, em que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-ballard-learning-the-lessons-of-the-past",
+      "para": 9,
+      "en": "… great we have come to know it as the Great Apostasy, which led to the centuries of spiritual stagnation …",
+      "tr": "… O colapso foi de tamanha proporção que ocorreu uma Grande Apostasia, levando a séculos de estagnação espiritual e ignorância …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Gran Apostasía",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-golden-our-fathers-plan",
+      "para": 7,
+      "en": "… conditions of the great plan of happiness, after the Great Apostasy, was not possible until our Heavenly Father and …",
+      "tr": "… condiciones del gran plan de felicidad, después de la Gran Apostasía, no fueron posibles hasta que nuestro Padre Celestial …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hales-receiving-a-testimony-of-the-restored-gospel-of-jesus-christ",
+      "para": 3,
+      "en": "… began centuries earlier in what has been called the Great Apostasy. The day of Christ “shall not come,” said …",
+      "tr": "… años con lo que se ha denominado como la Gran Apostasía. El día de Cristo “no vendrá”, dijo el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-ballard-learning-the-lessons-of-the-past",
+      "para": 9,
+      "en": "… great we have come to know it as the Great Apostasy, which led to the centuries of spiritual stagnation …",
+      "tr": "… tan grande que hemos llegado a conocerlo como la Gran Apostasía, la cual condujo a siglos de estancamiento e …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

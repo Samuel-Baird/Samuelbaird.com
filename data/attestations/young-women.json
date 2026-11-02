@@ -1,0 +1,154 @@
+{
+ "id": "concept.young-women",
+ "pt": {
+  "en_paragraphs": 632,
+  "en_talks": 298,
+  "en_verses": 1,
+  "uncovered_paragraphs": 94,
+  "renderings": [
+   {
+    "term": "Moças",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 538,
+    "talks": 271,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Tito 2:4",
+      "ref_en": "Titus 2:4",
+      "en": "That they may teach the young women to be sober, to love their husbands, to love their children,",
+      "tr": "Para que ensinem as moças a serem prudentes, a amarem seu marido, a amarem seus filhos,",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/titus/2?lang=por&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-curtis-happiness-is-homemade",
+      "para": 12,
+      "en": "… Mothers and daughters should be active in Relief Society, Young Women, or Primary. Sister Curtis and I often reminisce …",
+      "tr": "… ser ativas na Sociedade de Socorro, na Organização das Moças ou Primária. A irmã Curtis e eu sempre nos lembramos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-eyring-a-living-testimony",
+      "para": 11,
+      "en": "He then created an association of young women that has become what we now call in the …",
+      "tr": "… na Igreja do Senhor chamamos de organização das “Moças”. Vocês sentiram hoje alguns dos maravilhosos efeitos da decisão …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 76,
+    "share_of_uncovered": 0.809,
+    "ratio": 30.8,
+    "source": "1991-10-ballard-be-an-example-of-the-believers",
+    "kind": "talk",
+    "sample": "Jovens e mulheres fiéis, que recentemente se uniram à Igreja, já estão participando de"
+   },
+   {
+    "term": "mulheres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.202,
+    "ratio": 10.0,
+    "source": "1991-10-ballard-be-an-example-of-the-believers",
+    "kind": "talk",
+    "sample": "Jovens e mulheres fiéis, que recentemente se uniram à Igreja, já estão participando desse trabalh"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 615,
+  "en_talks": 295,
+  "en_verses": 1,
+  "uncovered_paragraphs": 210,
+  "renderings": [
+   {
+    "term": "Mujeres Jóvenes",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 405,
+    "talks": 227,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Tito 2:4",
+      "ref_en": "Titus 2:4",
+      "en": "That they may teach the young women to be sober, to love their husbands, to love their children,",
+      "tr": "que enseñen a las mujeres jóvenes a amar a sus maridos y a amar a sus hijos,",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/titus/2?lang=spa&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-jack-i-will-go-and-do",
+      "para": 5,
+      "en": "I love you young women. I know that you are understanding the importance …",
+      "tr": "… ellas comprenden la importancia de los Valores de las Mujeres Jóvenes, esos principios del evangelio que les ayudan a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-ballard-put-your-trust-in-the-lord",
+      "para": 0,
+      "en": "… of the age for our young men and our young women to serve, I have had the privilege of meeting …",
+      "tr": "… en la edad de servicio para nuestros hombres y mujeres jóvenes, he tenido el privilegio de conocer a unos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jovencitas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 137,
+    "share_of_uncovered": 0.652,
+    "ratio": 145.0,
+    "source": "1991-04-hinckley-what-god-hath-joined-together",
+    "kind": "talk",
+    "sample": "e el privilegio de sellar, en dos ceremonias separadas pero consecutivas, a dos jovencitas gemelas con los respectivos apuestos y capaces jóvenes que ellas habían elegido"
+   },
+   {
+    "term": "jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 99,
+    "share_of_uncovered": 0.471,
+    "ratio": 13.1,
+    "source": "1990-10-kapp-crickets-can-be-destroyed-through-spirituality",
+    "kind": "talk",
+    "sample": "os de antaño. La valentía de ustedes tiene que ser igual o más grande que la de jóvenes como Mary Goble Pay, en cuyo diario personal leemos:"
+   }
+  ]
+ }
+}

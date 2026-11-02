@@ -1,0 +1,103 @@
+{
+ "id": "concept.another-testament-of-jesus-christ",
+ "pt": {
+  "en_paragraphs": 79,
+  "en_talks": 66,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Outro Testamento de Jesus Cristo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 77,
+    "talks": 65,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 5,
+      "en": "The subtitle “Another Testament of Jesus Christ” was added to the Book of Mormon. …",
+      "tr": "… de Mórmon foi acrescentado o subtítulo “Um Outro Testamento de Jesus Cristo”. Duas revelações foram acrescentadas a Doutrina e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-corbridge-the-prophet-joseph-smith",
+      "para": 15,
+      "en": "… then look for one who brought forth another testament of Jesus Christ and other scripture, look for one who was …",
+      "tr": "Então procurem quem trouxe outro testamento de Jesus Cristo e outra escritura, procurem quem foi o instrumento …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-reid-you-are-good-enough-to-teach",
+      "para": 9,
+      "en": "In the Book of Mormon: Another Testament of Jesus Christ, the sons of Mosiah were still young …",
+      "tr": "No Livro de Mórmon: Outro Testamento de Jesus Cristo, os filhos de Mosias ainda eram jovens …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 77,
+  "en_talks": 64,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Otro Testamento de Jesucristo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 75,
+    "talks": 63,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-oaks-resurrection",
+      "para": 15,
+      "en": "The Book of Mormon: Another Testament of Jesus Christ records the experience of hundreds who saw the …",
+      "tr": "El Libro de Mormón, Otro testamento de Jesucristo, registra la experiencia de cientos de personas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-corbridge-the-prophet-joseph-smith",
+      "para": 15,
+      "en": "… then look for one who brought forth another testament of Jesus Christ and other scripture, look for one who was …",
+      "tr": "… busquen a alguien que sacó a la luz otro testamento de Jesucristo y otras Escrituras; busquen a alguien que fue …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-reid-you-are-good-enough-to-teach",
+      "para": 9,
+      "en": "In the Book of Mormon: Another Testament of Jesus Christ, the sons of Mosiah were still young …",
+      "tr": "En el Libro de Mormón: Otro Testamento de Jesucristo, los hijos de Mosíah eran todavía jóvenes …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

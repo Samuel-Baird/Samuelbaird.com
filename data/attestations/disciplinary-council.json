@@ -1,0 +1,76 @@
+{
+ "id": "concept.disciplinary-council",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "conselho disciplinar",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 1990,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 23,
+      "en": "In times of disciplinary councils, the three brethren of the bishopric, or the …",
+      "tr": "Por ocasião de conselhos disciplinares, os três irmãos do bispado, ou os três …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "consejo disciplinario",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2000,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 23,
+      "en": "In times of disciplinary councils, the three brethren of the bishopric, or the …",
+      "tr": "Cuando hay que formar un consejo disciplinario, los tres hermanos del obispado, o de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-hinckley-the-stake-president",
+      "para": 28,
+      "en": "… He will summon the offender to appear before a disciplinary council, where action may be taken to assign a …",
+      "tr": "… llamar al infractor para que se presente ante un consejo disciplinario donde se tomarán las medidas para asignarle un período …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

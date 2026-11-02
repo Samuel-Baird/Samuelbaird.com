@@ -1,0 +1,98 @@
+{
+ "id": "concept.meridian-of-time",
+ "pt": {
+  "en_paragraphs": 29,
+  "en_talks": 28,
+  "en_verses": 6,
+  "uncovered_paragraphs": 35,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "meridiano dos tempos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.914,
+    "ratio": 3658.1,
+    "source": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+    "kind": "talk",
+    "sample": "século dezenove era tão preciosa para Deus quanto uma da época de Moisés ou do meridiano dos tempos. De outra maneira, por que o Senhor apareceria? (Vide Alma 39:17.)"
+   },
+   {
+    "term": "profetas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.257,
+    "ratio": 11.1,
+    "source": "1995-04-eyring-always-remember-him",
+    "kind": "talk",
+    "sample": "e Cristo devia ter uma igreja e que eles a encontrariam. Sabiam que deveria ter profetas e apóstolos na sua organização, pois era o que Cristo havia deixado em Sua igre"
+   },
+   {
+    "term": "entre",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.2,
+    "ratio": 7.0,
+    "source": "1999-10-hinckley-at-the-summit-of-the-ages",
+    "kind": "talk",
+    "sample": "nção nisso. Mas se pararmos para pensar, veremos que Ele é a figura sublime que entre tantas personalidades foi escolhida como base para a contagem do tempo."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 24,
+  "en_verses": 6,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "meridiano de los tiempos",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 24,
+    "talks": 23,
+    "verses": 6,
+    "first_year": 1991,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 39:3",
+      "ref_en": "Doctrine and Covenants 39:3",
+      "en": "The same which came in the meridian of time unto mine own, and mine own received me not;",
+      "tr": "el mismo que vine a los míos en el meridiano de los tiempos, pero los míos no me recibieron;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/39?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+      "para": 16,
+      "en": "… him whom God declared “should come in the meridian of time, who was prepared from before the foundation of …",
+      "tr": "… quien el Padre “declaró que vendría en el meridiano de los tiempos, que fue preparado desde antes de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-matsumori-helping-others-recognize-the-whisperings-of-the-spirit",
+      "para": 24,
+      "en": "… and Redeemer. He came to earth in the meridian of time to atone for our sins. And He will come …",
+      "tr": "… y Redentor. Vino a la tierra en el meridiano de los tiempos para expiar nuestros pecados, y vendrá nuevamente. Éstos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

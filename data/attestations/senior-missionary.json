@@ -1,0 +1,179 @@
+{
+ "id": "concept.senior-missionary",
+ "pt": {
+  "en_paragraphs": 29,
+  "en_talks": 18,
+  "en_verses": 0,
+  "uncovered_paragraphs": 23,
+  "renderings": [
+   {
+    "term": "casais missionários",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-haight-gratitude-and-service",
+      "para": 35,
+      "en": "… are examples of the marvelous service being given by senior missionary couples in various parts of the world.",
+      "tr": "Esses são exemplos de um serviço maravilhoso realizado. por casais missionários em diversas partes do mundo."
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-oaks-repentance-and-change",
+      "para": 1,
+      "en": "In these developing areas, we rely heavily on senior missionary couples. I stress this because there are many within …",
+      "tr": "Nessas áreas em desenvolvimento, dependemos muito do trabalho dos casais missionários idosos. Estou ressaltando isso porque há muitos que me …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-hales-the-holy-ghost",
+      "para": 21,
+      "en": "… was guided to prepare a general conference message about senior missionary couples. Following the conference, a brother recounted: “As we …",
+      "tr": "… a preparar uma mensagem de conferência geral sobre os casais missionários seniores. Após a conferência, um irmão relatou: “Ao ouvirmos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "seniores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.391,
+    "ratio": 1565.6,
+    "source": "2010-04-rasband-the-divine-call-of-a-missionary",
+    "kind": "talk",
+    "sample": "dor que Seus servos sabem onde esses maravilhosos rapazes e moças, missionários seniores e casais de missionários mais idosos devem servir. Naquela manhã, recebi mais u"
+   },
+   {
+    "term": "missionários",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.739,
+    "ratio": 36.1,
+    "source": "2002-10-oaks-ill-go-where-you-want-me-to-go",
+    "kind": "talk",
+    "sample": "elhante fé e devoção nos recantos mais remotos da vinha do Senhor. Nossos fiéis missionários idosos são o melhor exemplo que conheço."
+   },
+   {
+    "term": "missão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.435,
+    "ratio": 15.5,
+    "source": "2001-04-holland-witnesses-unto-me",
+    "kind": "talk",
+    "sample": "ou vinte e um anos. Encontrei todo tipo de casais, inclusive ex-presidentes de missão e de templo com a respectiva esposa, que estavam em partes do mundo que lhes er"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 29,
+  "en_talks": 18,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "misioneros mayores",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 10,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-thomas-sacrifice-an-eternal-investment",
+      "para": 15,
+      "en": "… throughout the Church, we see the tremendous need for senior missionaries. You can’t imagine what a great good they …",
+      "tr": "… de la Iglesia, vemos la tremenda necesidad de tener misioneros mayores. No se imaginan todo el bien que ellos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-cook-personal-peace-the-reward-of-righteousness",
+      "para": 28,
+      "en": "… tens of thousands of young men, young women, and senior missionaries have accepted the call to be emissaries of our …",
+      "tr": "… nuestra época, decenas de miles de jóvenes, jovencitas y misioneros mayores han aceptado el llamado para ser emisarios de nuestro …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-rasband-how-great-will-be-your-joy",
+      "para": 30,
+      "en": "… Liahona, May 2010, 52–53.\n[^7]: Russell M. Nelson, “[Senior Missionary Moments](https://www.churchofjesuschrist.org/study/liahona/2016/04/senior-missionary-moments?lang=eng),” Ensign, Apr. 2016, 67; Liahona, Apr. 2016, 27. …",
+      "tr": "… Europa y África, así como Australia/Oceanía. Hay 34 000 misioneros mayores de servicio a la Iglesia; (datos del Departamento Misional, …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misionero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.615,
+    "ratio": 107.1,
+    "source": "2005-04-hales-couple-missionaries-blessings-from-sacrifice-and-service",
+    "kind": "talk",
+    "sample": "encuentran o si pronto se van a encontrar en la edad de servir como matrimonio misionero, esta tarde me dirijo a ustedes para testificar de las bendiciones que pueden c"
+   },
+   {
+    "term": "matrimonios",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 263.8,
+    "source": "2001-04-haight-gratitude-and-service",
+    "kind": "talk",
+    "sample": "Estos son ejemplos del estupendo servicio que brindan los matrimonios misioneros en diferentes partes del mundo."
+   },
+   {
+    "term": "servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.538,
+    "ratio": 20.5,
+    "source": "2001-04-holland-witnesses-unto-me",
+    "kind": "talk",
+    "sample": ", que habían ido a partes del mundo totalmente desconocidas para ellos a fin de servir callada y desinteresadamente una segunda, tercera o cuarta misión. Todos ellos"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.tracting
+category: Missionary Work
+en:
+  term: tracting
+  match:
+  - tracting
+sources: {}
+candidates:
+  pt:
+  - term: proselitismo
+    hint: pulpit-glossary:verified
+  es:
+  - term: golpear puertas
+    hint: pulpit-glossary:verified
+related: []

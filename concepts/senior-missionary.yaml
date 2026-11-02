@@ -1,0 +1,17 @@
+id: concept.senior-missionary
+category: Missionary Work
+en:
+  term: senior missionary
+  match:
+  - senior missionary
+sources:
+  GH:
+  - 38-church-policies-and-guidelines#title_number214
+candidates:
+  pt:
+  - term: casais missionários
+    hint: pulpit-glossary:verified
+  es:
+  - term: misioneros mayores
+    hint: pulpit-glossary:verified
+related: []

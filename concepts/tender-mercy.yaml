@@ -1,0 +1,15 @@
+id: concept.tender-mercy
+category: Discipleship & Ministering
+en:
+  term: tender mercy
+  match:
+  - tender mercy
+sources: {}
+candidates:
+  pt:
+  - term: terna misericórdia
+    hint: pulpit-glossary:verified
+  es:
+  - term: tierna misericordia
+    hint: pulpit-glossary:verified
+related: []

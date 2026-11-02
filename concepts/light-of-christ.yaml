@@ -1,0 +1,20 @@
+id: concept.light-of-christ
+category: Deity
+en:
+  term: Light of Christ
+  match:
+  - Light of Christ
+sources:
+  GS:
+  - light-light-of-christ
+  Topics:
+  - light-of-christ
+  TtF:
+  - light-of-christ
+candidates:
+  pt: []
+  es:
+  - term: luz de Cristo
+    hint: approved-terms
+related: []
+note: Distinct from the Holy Ghost — light/influence given to every person; do not conflate renderings

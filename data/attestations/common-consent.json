@@ -1,0 +1,101 @@
+{
+ "id": "concept.common-consent",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 8,
+  "en_verses": 5,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "comum acordo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 6,
+    "verses": 5,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 104:71",
+      "ref_en": "Doctrine and Covenants 104:71",
+      "en": "And there shall not any part of it be used, or taken out of the treasury, only by the voice and common consent of the order.",
+      "tr": "E parte alguma deles será usada nem retirada da tesouraria, a não ser pelo voto e comum acordo da ordem.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/104?lang=por&id=p71"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-haight-solemn-assemblies",
+      "para": 11,
+      "en": "Today, by exercising the principle of common consent, we have expressed our will. How sacred is …",
+      "tr": "Hoje, ao exercermos o princípio do comum acordo, expressamos nossa vontade. Quão sagrado é este privilégio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-stevenson-the-heart-of-a-prophet",
+      "para": 18,
+      "en": "… all things must be done in order, and by common consent in the church, by the prayer of faith,”[^4] and …",
+      "tr": "… na igreja devem ser feitas em ordem e de comum acordo e pela oração da fé”,[^4] e “três sumos sacerdotes …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 7,
+  "en_verses": 5,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "común acuerdo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 7,
+    "verses": 5,
+    "first_year": 2004,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 104:71",
+      "ref_en": "Doctrine and Covenants 104:71",
+      "en": "And there shall not any part of it be used, or taken out of the treasury, only by the voice and common consent of the order.",
+      "tr": "No se usará ninguna parte de ello, ni se sacará de la tesorería, sino por la voz y el común acuerdo de la orden.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/104?lang=spa&id=p71"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-uchtdorf-the-opportunity-to-testify",
+      "para": 7,
+      "en": "… leadership of the Church according to the principle of common consent. Not one of these Church leaders is seeking …",
+      "tr": "… líderes generales de la Iglesia según el principio del común acuerdo. Ninguno de estos líderes de la Iglesia busca …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-stevenson-the-heart-of-a-prophet",
+      "para": 18,
+      "en": "… all things must be done in order, and by common consent in the church, by the prayer of faith,”[^4] and …",
+      "tr": "… todas las cosas se hagan con orden y de común acuerdo en la iglesia, por la oración de fe”[^4] y …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

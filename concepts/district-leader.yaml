@@ -1,0 +1,15 @@
+id: concept.district-leader
+category: Missionary Work
+en:
+  term: district leader
+  match:
+  - district leader
+sources: {}
+candidates:
+  pt:
+  - term: líder de distrito
+    hint: pulpit-glossary:verified
+  es:
+  - term: líder de distrito
+    hint: pulpit-glossary:verified
+related: []

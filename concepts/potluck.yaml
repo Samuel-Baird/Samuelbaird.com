@@ -1,0 +1,13 @@
+id: concept.potluck
+category: Sacrament & Meetings
+en:
+  term: potluck
+  match:
+  - potluck
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: cena comunitaria
+    hint: pulpit-glossary:verified
+related: []

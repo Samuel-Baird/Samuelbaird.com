@@ -1,0 +1,42 @@
+{
+ "id": "concept.church-newsroom",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": []
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Newsroom",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2021,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-andersen-the-name-of-the-church-is-not-negotiable",
+      "para": 47,
+      "en": "… Russell M. Nelson, in “[The Name of the Church](https://newsroom.churchofjesuschrist.org/article/name-of-the-church),” Newsroom, Aug. 16, 2018, newsroom.ChurchofJesusChrist.org.\n[^3]: “[President Nelson Discusses …",
+      "tr": "… Russell M. Nelson, en \"[El nombre de la Iglesia](https://newsroom.churchofjesuschrist.org/article/name-of-the-church)\", Sala de Prensa, 16 de agosto de 2018, noticias.laiglesiadejesucristo.org/articulo/el-nombre-de-la-iglesia. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

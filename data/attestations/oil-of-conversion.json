@@ -1,0 +1,118 @@
+{
+ "id": "concept.oil-of-conversion",
+ "pt": {
+  "en_paragraphs": 14,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "azeite",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 1.0,
+    "ratio": 571.6,
+    "source": "2012-10-bednar-converted-unto-the-lord",
+    "kind": "talk",
+    "sample": "ho. As virgens tolas levaram consigo sua lâmpada do testemunho, mas não levaram azeite. Pensem no azeite como sendo o azeite da conversão."
+   },
+   {
+    "term": "conversão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 1.0,
+    "ratio": 166.7,
+    "source": "2012-10-bednar-converted-unto-the-lord",
+    "kind": "talk",
+    "sample": "ábola das dez virgens, a fim de destacar a relação existente entre testemunho e conversão. Dez virgens, cinco prudentes e cinco tolas, levaram consigo suas lâmpadas e fo"
+   },
+   {
+    "term": "lâmpada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.714,
+    "ratio": 571.6,
+    "source": "2012-10-bednar-converted-unto-the-lord",
+    "kind": "talk",
+    "sample": "o e conversão. Dez virgens, cinco prudentes e cinco tolas, levaram consigo suas lâmpadas e foram encontrar-se com o noivo. Pensem nas lâmpadas usadas pelas virgens com"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 14,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "aceite fortalecedor de la conversión",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2025,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-johnson-spiritually-whole-in-him",
+      "para": 15,
+      "en": "… as we fill our lamps with the nourishing oil of conversion to Him.[^7] In that way, we are prepared for …",
+      "tr": "… Jesucristo cuando llenamos nuestras lámparas con el aceite fortalecedor de la conversión a Él[^7]. De esa manera, estamos preparados para …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "aceite",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 1.0,
+    "ratio": 444.6,
+    "source": "2012-10-bednar-converted-unto-the-lord",
+    "kind": "talk",
+    "sample": "írgenes insensatas tomaron sus lámparas del testimonio pero no llevaron consigo aceite. Consideren que el aceite que se describe es el aceite de la conversión."
+   },
+   {
+    "term": "conversión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 1.0,
+    "ratio": 148.2,
+    "source": "2012-10-bednar-converted-unto-the-lord",
+    "kind": "talk",
+    "sample": "diez vírgenes a fin de destacar la relación que existe entre el testimonio y la conversión. Diez vírgenes, cinco que fueron prudentes y cinco insensatas, tomaron sus lámp"
+   },
+   {
+    "term": "lámparas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.615,
+    "ratio": 615.5,
+    "source": "2012-10-bednar-converted-unto-the-lord",
+    "kind": "talk",
+    "sample": "sión. Diez vírgenes, cinco que fueron prudentes y cinco insensatas, tomaron sus lámparas y fueron a recibir al novio. Por favor consideren las lámparas que usaron las v"
+   }
+  ]
+ }
+}

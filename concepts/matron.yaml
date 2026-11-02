@@ -1,0 +1,15 @@
+id: concept.matron
+category: Temple & Family History
+en:
+  term: matron
+  match:
+  - matron
+sources: {}
+candidates:
+  pt:
+  - term: diretora
+    hint: pulpit-glossary:verified
+  es:
+  - term: directora
+    hint: pulpit-glossary:verified
+related: []

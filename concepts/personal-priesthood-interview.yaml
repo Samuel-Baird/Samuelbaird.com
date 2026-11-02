@@ -1,0 +1,13 @@
+id: concept.personal-priesthood-interview
+category: Priesthood Authority & Ordinances
+en:
+  term: personal priesthood interview
+  match:
+  - personal priesthood interview
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: entrevista personal del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

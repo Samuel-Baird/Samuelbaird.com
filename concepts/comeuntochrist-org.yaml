@@ -1,0 +1,13 @@
+id: concept.comeuntochrist-org
+category: Education & Publications
+en:
+  term: ComeUntoChrist.org
+  match:
+  - ComeUntoChrist.org
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: VeniraCristo.org
+    hint: pulpit-glossary:verified
+related: []

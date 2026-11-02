@@ -1,0 +1,141 @@
+{
+ "id": "concept.setting-apart",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "designação",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-causs-prepare-the-way",
+      "para": 22,
+      "en": "… dear bishops, you have, included in your ordination and setting apart as bishop of your ward, the sacred calling to …",
+      "tr": "Meus queridos bispos, incluído em sua ordenação e designação como bispo de sua ala está o sagrado chamado de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 34,
+      "en": "I remind you: priesthood authority comes by way of setting apart and ordination, but real priesthood power, the power to …",
+      "tr": "… lembrá-los: A autoridade do sacerdócio vem por meio da designação e da ordenação, mas o poder real do sacerdócio, o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 32,
+      "en": "… remarkable in so many ways. The calling, sustaining, and setting apart of a bishop is a never-to-be-forgotten experience. For me, …",
+      "tr": "… servir ao Senhor nesse chamado. O chamado, apoio e designação de um bispo é uma experiência inesquecível. Para mim, ela …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ofício",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 222.3,
+    "source": "1993-04-packer-the-temple-the-priesthood",
+    "kind": "talk",
+    "sample": "foi conferido, um indivíduo não possui autoridade além daquela que pertence ao ofício específico para o qual ele foi ordenado. Estes limites aplicam-se também ao cha"
+   },
+   {
+    "term": "sob",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 32.5,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "acontece com a autoridade do sacerdócio e com a autoridade associada, exercida sob a direção do sacerdócio. As organizações podem canalizar o exercício dessa auto"
+   },
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 20.2,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "As chaves são conferidas a pessoas, não a organizações. O mesmo acontece com a autoridade do sacerdócio e com a autoridade associada, exercida sob a direção do sacerdóci"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "apartamiento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-causs-prepare-the-way",
+      "para": 22,
+      "en": "… dear bishops, you have, included in your ordination and setting apart as bishop of your ward, the sacred calling to …",
+      "tr": "… queridos obispos, ustedes tienen, incluido en su ordenación y apartamiento como obispos del barrio, el sagrado llamamiento de servir como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 34,
+      "en": "I remind you: priesthood authority comes by way of setting apart and ordination, but real priesthood power, the power to …",
+      "tr": "Les recuerdo: la autoridad del sacerdocio viene mediante el apartamiento y la ordenación; pero el poder del sacerdocio real, el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 32,
+      "en": "… remarkable in so many ways. The calling, sustaining, and setting apart of a bishop is a never-to-be-forgotten experience. For me, …",
+      "tr": "… es extraordinario en muchos sentidos. El llamamiento, sostenimiento y apartamiento de los obispos es una experiencia inolvidable. Para mí, se …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

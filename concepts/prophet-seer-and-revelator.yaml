@@ -1,0 +1,15 @@
+id: concept.prophet-seer-and-revelator
+category: Priesthood Offices & Quorums
+en:
+  term: prophet, seer, and revelator
+  match:
+  - prophet, seer, and revelator
+sources: {}
+candidates:
+  pt:
+  - term: profeta, vidente e revelador
+    hint: pulpit-glossary:verified
+  es:
+  - term: profeta, vidente y revelador
+    hint: pulpit-glossary:verified
+related: []

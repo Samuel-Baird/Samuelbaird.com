@@ -1,0 +1,67 @@
+{
+ "id": "concept.sealed-portion",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "parte selada",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-bassett-for-our-spiritual-development-and-learning",
+      "para": 2,
+      "en": "… plates Moroni had delivered, we wanted to view the sealed portion. So on several occasions, my brother and I …",
+      "tr": "… placas originais entregues por Morôni, nós desejávamos ver a parte selada. Então, em diversas ocasiões, eu e meu irmão …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "porción sellada",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-bassett-for-our-spiritual-development-and-learning",
+      "para": 2,
+      "en": "… plates Moroni had delivered, we wanted to view the sealed portion. So on several occasions, my brother and I …",
+      "tr": "… y cualquier cosa que podíamos imaginar para abrir esa porción sellada de las planchas lo suficiente para ver lo que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

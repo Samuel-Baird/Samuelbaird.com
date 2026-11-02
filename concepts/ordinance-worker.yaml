@@ -1,0 +1,15 @@
+id: concept.ordinance-worker
+category: Temple & Family History
+en:
+  term: ordinance worker
+  match:
+  - ordinance worker
+sources: {}
+candidates:
+  pt:
+  - term: oficiante
+    hint: pulpit-glossary:verified
+  es:
+  - term: obrero(a) de ordenanzas
+    hint: pulpit-glossary:verified
+related: []

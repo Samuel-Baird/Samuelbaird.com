@@ -1,0 +1,177 @@
+{
+ "id": "concept.preach-my-gospel",
+ "pt": {
+  "en_paragraphs": 187,
+  "en_talks": 129,
+  "en_verses": 12,
+  "uncovered_paragraphs": 16,
+  "renderings": [
+   {
+    "term": "Pregar Meu Evangelho",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 177,
+    "talks": 122,
+    "verses": 6,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 50:14",
+      "ref_en": "Doctrine and Covenants 50:14",
+      "en": "To preach my gospel by the Spirit, even the Comforter which was sent forth to teach the truth.",
+      "tr": "Para pregar meu evangelho pelo Espírito, sim, o Consolador que foi enviado para ensinar a verdade.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/50?lang=por&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-packer-the-touch-of-the-masters-hand",
+      "para": 0,
+      "en": "… given to any one to go forth to preach my gospel, or to build up my church, except he …",
+      "tr": "… ordenou “que a ninguém será permitido sair a pregar meu evangelho ou estabelecer minha igreja, a não ser que tenha …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-cook-serve",
+      "para": 30,
+      "en": "… technologystudent.com/gears1/gears3.htm; “Compound Gear Reduction,” curriculum.vexrobotics.com.\n[^2]: See *Preach My Gospel: A Guide to Missionary Service* (2004), 87.\n[^3]: …",
+      "tr": "… [Redução de Engrenagem Composta], curriculum.vexrobotics.com.\n[^2]: Ver *Pregar Meu Evangelho: Guia para o Serviço Missionário*, 2004, p. 88. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pregai",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "1990-10-ballard-purity-precedes-power",
+    "kind": "talk",
+    "sample": "disse: “Mas purificai o coração diante de mim; e depois ide por todo o mundo e pregai meu evangelho a toda criatura que não o tiver recebido”. ([D&C 112:28](https://"
+   },
+   {
+    "term": "ide",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.375,
+    "ratio": 375.1,
+    "source": "1990-10-ballard-purity-precedes-power",
+    "kind": "talk",
+    "sample": "ecede o poder. O Senhor disse: “Mas purificai o coração diante de mim; e depois ide por todo o mundo e pregai meu evangelho a toda criatura que não o tiver recebid"
+   },
+   {
+    "term": "pregar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.438,
+    "ratio": 67.3,
+    "source": "1991-10-haight-a-time-for-preparation",
+    "kind": "talk",
+    "sample": "O Senhor perguntou: “Para que fostes ordenados?” e respondeu: “Para pregar o meu evangelho pelo Espírito,… para ensinar a verdade.” ([D&C 50:13–14](https:"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 185,
+  "en_talks": 126,
+  "en_verses": 12,
+  "uncovered_paragraphs": 23,
+  "renderings": [
+   {
+    "term": "Predicad Mi Evangelio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 172,
+    "talks": 116,
+    "verses": 2,
+    "first_year": 2005,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 80:3",
+      "ref_en": "Doctrine and Covenants 80:3",
+      "en": "Wherefore, go ye and preach my gospel, whether to the north or to the south, to the east or to the west, it mattereth not, for ye cannot go amiss.",
+      "tr": "Por tanto, id y predicad mi evangelio, bien sea al norte o al sur, al este o al oeste, no importa, porque no podréis errar.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/80?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-scott-now-is-the-time-to-serve-a-mission",
+      "para": 1,
+      "en": "… service. It is provided by the guide *Preach My Gospel* and the resources developed to accompany it. The …",
+      "tr": "… éxito misional, y la proporcionan la guía *Predicad Mi Evangelio* y las fuentes de consulta que se han …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-cook-the-eternal-everyday",
+      "para": 37,
+      "en": "… [^26]: See “Humility,” in chapter 6 of *[Preach My Gospel: A Guide to Missionary Service](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/how-do-i-develop-christlike-attributes?lang=eng)* (2004), 120.\n[^27]: …",
+      "tr": "… Véase \"Humildad\", en el capítulo 6 de *[Predicad Mi Evangelio: Una guía para el servicio misional](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/how-do-i-develop-christlike-attributes?lang=spa)*, 2004, pág. …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "predicar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.783,
+    "ratio": 284.7,
+    "source": "1991-10-haight-a-time-for-preparation",
+    "kind": "talk",
+    "sample": "El Señor preguntó: “¿A que se os ordenó?” Y entonces contestó: “A predicar mi evangelio por el Espíritu, si, [a] enseñar la verdad” (D. y C. 50:13-14)."
+   },
+   {
+    "term": "enseñar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.304,
+    "ratio": 21.4,
+    "source": "1991-10-haight-a-time-for-preparation",
+    "kind": "talk",
+    "sample": "ordenó?” Y entonces contestó: “A predicar mi evangelio por el Espíritu, si, [a] enseñar la verdad” (D. y C. 50:13-14)."
+   },
+   {
+    "term": "aquí",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.304,
+    "ratio": 9.2,
+    "source": "2012-10-holland-the-first-great-commandment",
+    "kind": "talk",
+    "sample": "A lo que Jesús respondió (y aquí vuelvo a reconocer mi elaboración no basada en las Escrituras), diciendo quizás"
+   }
+  ]
+ }
+}

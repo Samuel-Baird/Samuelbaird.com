@@ -1,0 +1,152 @@
+{
+ "id": "concept.temple-recommend-interview",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "entrevista para a recomendação do templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-cook-prepare-to-meet-god",
+      "para": 35,
+      "en": "… Covenants 59:23](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/59?lang=eng&id=p23#p23).\n[^34]: See [Alma 34:32](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/34?lang=eng&id=p32#p32).\n[^35]: The temple recommend interview questions are a good evaluation of how we are …",
+      "tr": "… Ver [Alma 34:32](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/34?lang=por&id=p32#p32).\n[^35]: As perguntas na entrevista para a recomendação do templo são uma boa avaliação de como está …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "recomendação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 1.0,
+    "ratio": 444.6,
+    "source": "1992-04-haight-come-to-the-house-of-the-lord",
+    "kind": "talk",
+    "sample": "ocasião das entrevistas anuais com os líderes do sacerdócio para a renovação da recomendação para o templo. Nossa assinatura e a deles, na recomendação, atestam a dignidade"
+   },
+   {
+    "term": "entrevista",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.6,
+    "ratio": 300.1,
+    "source": "1998-10-wirthlin-cultivating-divine-attributes",
+    "kind": "talk",
+    "sample": "samento, pois essa ordenança nos une para sempre às pessoas que mais amamos. As entrevistas de dignidade, principalmente a entrevista anual para receber a recomendação pa"
+   },
+   {
+    "term": "bispo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 34.8,
+    "source": "1992-04-haight-come-to-the-house-of-the-lord",
+    "kind": "talk",
+    "sample": "de entrar no templo. Como é importante que sejamos completamente honestos com o bispo! Não sendo completamente honestos com ele sobre nossa dignidade violamos a inte"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 10,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "entrevista de la recomendación para el templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-bednar-the-powers-of-heaven",
+      "para": 30,
+      "en": "At the conclusion of the temple recommend interviews I conducted as a bishop and stake president, I …",
+      "tr": "Cuando terminaba las entrevistas de la recomendación para el templo que hacía como obispo y presidente de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-soares-covenant-confidence-through-jesus-christ",
+      "para": 12,
+      "en": "… bishop takes time to go through the applicable temple recommend interview questions, which are then included in their Primary lessons. …",
+      "tr": "… repasar las preguntas pertinentes de la entrevista de la recomendación para el templo, que luego se incluyen en sus …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "entrevista",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 291.7,
+    "source": "2003-10-pingree-seeing-the-promises-afar-off",
+    "kind": "talk",
+    "sample": "mañana para esperar todo el día, si fuera necesario, con el fin de efectuar su entrevista para recibir la recomendación. Al llegar, notamos que entre los que esperaban e"
+   },
+   {
+    "term": "recomendación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 250.1,
+    "source": "2003-10-pingree-seeing-the-promises-afar-off",
+    "kind": "talk",
+    "sample": "l día, si fuera necesario, con el fin de efectuar su entrevista para recibir la recomendación. Al llegar, notamos que entre los que esperaban en el intenso calor había dos h"
+   },
+   {
+    "term": "tema",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 45.5,
+    "source": "2005-04-oaks-pornography",
+    "kind": "talk",
+    "sample": "Hay quienes han sugerido que el tema de la pornografía debería ser una pregunta más de la entrevista para la recomen"
+   }
+  ]
+ }
+}

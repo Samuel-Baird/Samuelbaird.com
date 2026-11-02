@@ -1,0 +1,179 @@
+{
+ "id": "concept.testimony-meeting",
+ "pt": {
+  "en_paragraphs": 29,
+  "en_talks": 25,
+  "en_verses": 0,
+  "uncovered_paragraphs": 25,
+  "renderings": [
+   {
+    "term": "reunião de testemunhos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 October General Conference",
+      "talk": "2000-10-haight-be-a-strong-link",
+      "para": 5,
+      "en": "… who are living in halfway houses. Just before the testimony meeting, a young lady walked up to the bishop …",
+      "tr": "… vivem em condições bastante humildes. Pouco antes da reunião de testemunhos, uma jovem mãe foi até o bispo no …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-cuvelier-the-name-by-which-ye-are-called",
+      "para": 14,
+      "en": "… small group of Saints. A man invited them to testimony meeting. Martin was touched by the Spirit and was …",
+      "tr": "… da Igreja. Um homem os convidou para a reunião de testemunhos. Martin foi tocado pelo Espírito e ficou tão …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
+      "para": 17,
+      "en": "… and young single adult conferences often tell me the testimony meeting, a small portion of the event, is the …",
+      "tr": "… jovens adultos solteiros frequentemente me dizem que a reunião de testemunhos, uma pequena parte do evento, é a mais …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jejum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.52,
+    "ratio": 260.1,
+    "source": "1990-10-oaks-witnesses-of-christ",
+    "kind": "talk",
+    "sample": "cebi de um membro dos Estados Unidos. Ele descreveu o que ouviu numa reunião de jejum e testemunho:"
+   },
+   {
+    "term": "reunião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.64,
+    "ratio": 44.9,
+    "source": "1990-10-oaks-witnesses-of-christ",
+    "kind": "talk",
+    "sample": "ente que recebi de um membro dos Estados Unidos. Ele descreveu o que ouviu numa reunião de jejum e testemunho:"
+   },
+   {
+    "term": "testemunhos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.44,
+    "ratio": 176.0,
+    "source": "2004-10-ballard-pure-testimony",
+    "kind": "talk",
+    "sample": "ras. Precisamos substituir as histórias, os relatos de viagens e os sermões por testemunhos puros. As pessoas encarregadas de falar e ensinar em nossas reuniões precisam f"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 34,
+  "en_talks": 27,
+  "en_verses": 0,
+  "uncovered_paragraphs": 20,
+  "renderings": [
+   {
+    "term": "reunión de testimonios",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-eyring-witnesses-for-god",
+      "para": 19,
+      "en": "… Church, once a month we hold a fast and testimony meeting. We fast for two meals. With the money …",
+      "tr": "… barrios y ramas de la Iglesia tenemos la reunión de testimonios una vez al mes. Ayunamos dos comidas antes de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-clarke-blessings-of-the-sacrament",
+      "para": 11,
+      "en": "… town. I had heard the story many times in testimony meeting. I decided finally to gently nudge his shoulder …",
+      "tr": "… había oído aquella historia muchas veces en la reunión de testimonios. Finalmente decidí tocar su hombro suavemente, con la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
+      "para": 17,
+      "en": "… and young single adult conferences often tell me the testimony meeting, a small portion of the event, is the …",
+      "tr": "… adultos solteros a menudo me dicen que la reunión de testimonios, que es una pequeña parte del evento, es …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ayuno",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.8,
+    "ratio": 133.4,
+    "source": "1996-10-eyring-witnesses-for-god",
+    "kind": "talk",
+    "sample": "Aquellos que se hayan preparado cuidadosamente para la reunión de ayuno y testimonios no necesitan que se les recuerde cómo dar su testimonio si siente"
+   },
+   {
+    "term": "testimonios",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.65,
+    "ratio": 153.0,
+    "source": "1996-10-eyring-witnesses-for-god",
+    "kind": "talk",
+    "sample": "Aquellos que se hayan preparado cuidadosamente para la reunión de ayuno y testimonios no necesitan que se les recuerde cómo dar su testimonio si sienten el impulso d"
+   },
+   {
+    "term": "reunión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.7,
+    "ratio": 51.9,
+    "source": "1996-10-eyring-witnesses-for-god",
+    "kind": "talk",
+    "sample": "Aquellos que se hayan preparado cuidadosamente para la reunión de ayuno y testimonios no necesitan que se les recuerde cómo dar su testimonio"
+   }
+  ]
+ }
+}

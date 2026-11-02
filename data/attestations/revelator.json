@@ -1,0 +1,116 @@
+{
+ "id": "concept.revelator",
+ "pt": {
+  "en_paragraphs": 57,
+  "en_talks": 50,
+  "en_verses": 7,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "revelador",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 53,
+    "talks": 46,
+    "verses": 7,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:125",
+      "ref_en": "Doctrine and Covenants 124:125",
+      "en": "I give unto you my servant Joseph to be a presiding elder over all my church, to be a translator, a revelator, a seer, and prophet.",
+      "tr": "Dou-vos meu servo Joseph como élder presidente de toda a minha igreja, e para ser tradutor, revelador, vidente e profeta.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p125"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-maxwell-my-servant-joseph",
+      "para": 13,
+      "en": "Joseph, the revelator. He also became an articulator. President Young said the …",
+      "tr": "Joseph, o Revelador. Também se tomou um articulador. O Presidente Young disse …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-bednar-receive-the-holy-ghost",
+      "para": 38,
+      "en": "… the Son. I testify the Holy Ghost is a revelator, a comforter, and the ultimate teacher from whom we …",
+      "tr": "… do Filho. Testifico que o Espírito Santo é um revelador, um consolador e o maior professor com quem devemos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "wilford woodruff",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 333.4,
+    "source": "1995-10-dunn-witnesses",
+    "kind": "talk",
+    "sample": "Wilford Woodruff disse neste taber­ná­cu­lo: “Joseph Smith foi o que pro­fes­sou ser: pro­fe­ta"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 52,
+  "en_talks": 46,
+  "en_verses": 7,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "revelador",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 51,
+    "talks": 45,
+    "verses": 7,
+    "first_year": 1995,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:125",
+      "ref_en": "Doctrine and Covenants 124:125",
+      "en": "I give unto you my servant Joseph to be a presiding elder over all my church, to be a translator, a revelator, a seer, and prophet.",
+      "tr": "Os nombro a mi siervo José para ser élder presidente de toda mi iglesia, para ser traductor, revelador, vidente y profeta.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p125"
+     },
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-hinckley-we-have-a-work-to-do",
+      "para": 3,
+      "en": "… the great war in heaven described by John the Revelator. The issue then was free agency, as it is …",
+      "tr": "… gran batalla de los cielos, descrita por Juan el Revelador. El problema en aquel entonces, como lo sigue siendo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-costa-obedience-to-the-prophets",
+      "para": 31,
+      "en": "… words and teachings of our living prophets, seers, and revelators during this general conference.",
+      "tr": "… en las palabras y enseñanzas denuestros profetas videntes y reveladores vivientes durante esta conferencia general."
+     }
+    ],
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.holy-spirit-of-promise
+category: Priesthood Authority & Ordinances
+en:
+  term: Holy Spirit of Promise
+  match:
+  - Holy Spirit of Promise
+sources:
+  GS:
+  - holy-spirit-of-promise
+candidates:
+  pt:
+  - term: Santo Espírito da promessa
+    hint: pulpit-glossary:verified
+  es:
+  - term: santo espíritu de la promesa
+    hint: approved-terms
+related: []

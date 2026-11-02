@@ -1,0 +1,17 @@
+id: concept.ward-council
+category: Councils & Conferences
+en:
+  term: ward council
+  match:
+  - ward council
+sources:
+  GH:
+  - 25-temple-and-family-history-work#title_number11
+candidates:
+  pt:
+  - term: conselho da ala
+    hint: pulpit-glossary:verified
+  es:
+  - term: consejo de barrio
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,21 @@
+id: concept.infinite-atonement
+category: Plan of Salvation
+en:
+  term: infinite Atonement
+  match:
+  - infinite Atonement
+sources:
+  GS:
+  - atone-atonement
+  Topics:
+  - atonement-of-jesus-christ
+  TtF:
+  - atonement-of-jesus-christ
+candidates:
+  pt:
+  - term: Expiação infinita
+    hint: pulpit-glossary:verified
+  es:
+  - term: Expiación infinita
+    hint: pulpit-glossary:verified
+related: []

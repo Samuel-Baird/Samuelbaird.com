@@ -1,0 +1,23 @@
+id: concept.endowment
+category: Temple & Family History
+en:
+  term: endowment
+  match:
+  - endowment
+sources:
+  GS:
+  - endowment
+  Topics:
+  - endowment
+  TtF:
+  - endowment
+  GH:
+  - 27-temple-ordinances-for-the-living#title_number11
+candidates:
+  pt:
+  - term: investidura
+    hint: pulpit-glossary:verified
+  es:
+  - term: investidura
+    hint: approved-terms
+related: []

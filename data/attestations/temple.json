@@ -1,0 +1,142 @@
+{
+ "id": "concept.temple",
+ "pt": {
+  "en_paragraphs": 2734,
+  "en_talks": 946,
+  "en_verses": 238,
+  "uncovered_paragraphs": 92,
+  "renderings": [
+   {
+    "term": "templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2654,
+    "talks": 919,
+    "verses": 226,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Atos 3:8",
+      "ref_en": "Acts 3:8",
+      "en": "And he leaping up stood, and walked, and entered with them into the temple, walking, and leaping, and praising God.",
+      "tr": "E saltando ele, pôs-se em pé, e andou, e entrou com eles no templo, andando, e saltando, e louvando a Deus;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/acts/3?lang=por&id=p8"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 37,
+      "en": "… therefore becomes a standard of eligibility to enter the temples of the Church.",
+      "tr": "… se torna um padrão de dignidade para entrar no templo."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-true-shepherds",
+      "para": 24,
+      "en": "… and a year later entered that beautiful St. George Temple and there received his endowment and sealing blessings.",
+      "tr": "… e um ano depois a família entrou no belo Templo de St. George e recebeu sua investidura e as bênçãos …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "temple",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.239,
+    "ratio": 106.3,
+    "source": "1990-04-monson-my-brothers-keeper",
+    "kind": "talk",
+    "sample": "e vai mantê-lo agasalhado. Eu trabalho logo ali do outro lado.” Era a Rua South Temple. O bom samaritano que entrou no Edifício da Administração da Igreja para o trab"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2668,
+  "en_talks": 938,
+  "en_verses": 238,
+  "uncovered_paragraphs": 61,
+  "renderings": [
+   {
+    "term": "templo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 2618,
+    "talks": 917,
+    "verses": 227,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Zacarías 6:14",
+      "ref_en": "Zechariah 6:14",
+      "en": "And the crowns shall be to Helem, and to Tobijah, and to Jedaiah, and to Hen the son of Zephaniah, for a memorial in the temple of the Lord.",
+      "tr": "Y Helem, y Tobías, y Jedaías y Hen hijo de Sofonías tendrán coronas como recordatorio en el templo de Jehová.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/zech/6?lang=spa&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-hinckley-welcome-to-conference",
+      "para": 2,
+      "en": "… we are making toward the goal of 100 working temples in the year 2000.",
+      "tr": "… en pos de nuestra meta de contar con cien templos en funcionamiento para el año 2000."
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-uchtdorf-in-praise-of-those-who-save",
+      "para": 0,
+      "en": "Many years ago, I was at the Frankfurt Germany Temple when I noticed an elderly couple holding hands. The caring …",
+      "tr": "Hace muchos años, estaba en el Templo de Fráncfort, Alemania y me llamó la atención una pareja …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "temple",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.295,
+    "ratio": 236.1,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "l hogar de Richard. Su madre me dijo que estaba trabajando en el Taller de West Temple."
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.295,
+    "ratio": 10.4,
+    "source": "1990-10-washburn-follow-the-prophet",
+    "kind": "talk",
+    "sample": "e esa naturaleza por medio de la cual supe que el Señor estaba a mi lado” (Dew, pág. 55)."
+   }
+  ]
+ }
+}

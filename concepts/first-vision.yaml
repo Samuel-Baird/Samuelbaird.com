@@ -1,0 +1,19 @@
+id: concept.first-vision
+category: Church History
+en:
+  term: First Vision
+  match:
+  - First Vision
+sources:
+  GS:
+  - first-vision
+  Topics:
+  - first-vision
+candidates:
+  pt:
+  - term: Primeira Visão
+    hint: pulpit-glossary:verified
+  es:
+  - term: Primera Visión
+    hint: pulpit-glossary:verified
+related: []

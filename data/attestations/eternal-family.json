@@ -1,0 +1,179 @@
+{
+ "id": "concept.eternal-family",
+ "pt": {
+  "en_paragraphs": 142,
+  "en_talks": 111,
+  "en_verses": 0,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "família eterna",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 120,
+    "talks": 98,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-washburn-the-temple-is-a-family-affair",
+      "para": 23,
+      "en": "… to the temple. I pray that we may become eternal families, that we may have eternal life. In the …",
+      "tr": "… juntos fortalecemos os laços que nos ajudarão a tornar-nos famílias eternas, onde realizamos a grande obra redentora por nossos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-uchtdorf-in-praise-of-those-who-save",
+      "para": 7,
+      "en": "… Church. They require constant, intentional work. The doctrine of eternal families must inspire us to dedicate our best efforts to …",
+      "tr": "… esforço e trabalho constante e intencional. A doutrina das famílias eternas deve nos inspirar a dedicar-nos ao máximo para salvar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-wakolo-come-unto-christtogether",
+      "para": 11,
+      "en": "… destiny is to exalt the children of God in eternal families.”[^7]",
+      "tr": "… é o de exaltar os filhos de Deus em famílias eternas.”[^7]"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.5,
+    "ratio": 54.1,
+    "source": "2000-10-oaks-the-challenge-to-become",
+    "kind": "talk",
+    "sample": "ornemos. Ao procedermos assim, devemos recordar que é em nossos relacionamentos familiares, ainda mais que em nossos chamados na Igreja, que ocorrerá a parte mais impor"
+   },
+   {
+    "term": "eterna",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.5,
+    "ratio": 18.5,
+    "source": "2000-10-oaks-the-challenge-to-become",
+    "kind": "talk",
+    "sample": "sta ser um líder bem-sucedido na Igreja. A exaltação é uma experiência familiar eterna e são nossas experiências familiares mortais que melhor nos prepararão para iss"
+   },
+   {
+    "term": "unidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.227,
+    "ratio": 113.7,
+    "source": "2003-04-perry-the-importance-of-the-family",
+    "kind": "talk",
+    "sample": "s que isso se transforme em um empenho consciente e seguro na edificação de uma unidade familiar eterna. Uma grande quantidade de materiais da Igreja estarão à sua dis"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 144,
+  "en_talks": 111,
+  "en_verses": 0,
+  "uncovered_paragraphs": 19,
+  "renderings": [
+   {
+    "term": "familia eterna",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 125,
+    "talks": 100,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-staheli-obediencelifes-great-challenge",
+      "para": 10,
+      "en": "… my family?” Are we establishing the foundation for an eternal family, or are we focusing more on the pride …",
+      "tr": "… a mi familia?”. ¿Estamos estableciendo los cimientos de una familia eterna o nos preocupamos más por el orgullo de las …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-perry-why-marriage-and-family-mattereverywhere-in-the-world",
+      "para": 6,
+      "en": "… and to our belief in the promised blessing of eternal families.",
+      "tr": "… y sobre nuestra creencia en la bendición prometida de familias eternas."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-rasband-love-like-jesus",
+      "para": 27,
+      "en": "… Eternal life means “to gain salvation, the blessings of eternal family, and exaltation, which is ‘the highest state of …",
+      "tr": "… eterna es \"lograr la salvación, las bendiciones de la familia eterna y la exaltación, que es el 'máximo estado de …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "familiar eterna",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.421,
+    "ratio": 842.3,
+    "source": "2000-10-oaks-the-challenge-to-become",
+    "kind": "talk",
+    "sample": "estacado líder de la Iglesia no es suficiente. La exaltación es una experiencia familiar eterna y las experiencias familiares terrenales que tenemos son la mejor manera de pre"
+   },
+   {
+    "term": "familiares",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.474,
+    "ratio": 45.1,
+    "source": "1999-04-neuenschwander-bridges-and-eternal-keepsakes",
+    "kind": "talk",
+    "sample": "rno de ese puente de unión para su propia familia. Durante una de las reuniones familiares que tuvimos esta Navidad pasada, observé a mi padre, que tiene 89 años, y a Ash"
+   },
+   {
+    "term": "relación familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.211,
+    "ratio": 421.2,
+    "source": "2011-04-monson-the-holy-templea-beacon-to-the-world",
+    "kind": "talk",
+    "sample": "l templo y que nos permiten regresar algún día a nuestro Padre Celestial en una relación familiar eterna, y ser investidos con bendiciones y poder de lo alto, merecen todo sacri"
+   }
+  ]
+ }
+}

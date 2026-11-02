@@ -1,0 +1,15 @@
+id: concept.sealing-room
+category: Temple & Family History
+en:
+  term: sealing room
+  match:
+  - sealing room
+sources: {}
+candidates:
+  pt:
+  - term: sala de selamento
+    hint: pulpit-glossary:verified
+  es:
+  - term: sala de sellamiento
+    hint: pulpit-glossary:verified
+related: []

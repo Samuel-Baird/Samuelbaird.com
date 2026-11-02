@@ -1,0 +1,143 @@
+{
+ "id": "concept.prophet-seer-and-revelator",
+ "pt": {
+  "en_paragraphs": 268,
+  "en_talks": 170,
+  "en_verses": 0,
+  "uncovered_paragraphs": 267,
+  "renderings": [
+   {
+    "term": "profeta, vidente e revelador",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-davies-come-listen-to-a-prophets-voice",
+      "para": 33,
+      "en": "… and the others who have been called as prophets, seers, and revelators. I testify that he has the gifts …",
+      "tr": "… Nelson e os outros que foram chamados como profetas videntes e reveladores. Testifico que ele possui os dons que …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "reveladores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 134,
+    "share_of_uncovered": 0.536,
+    "ratio": 153.2,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "o conselho de seus servos escolhidos em seus chamados como profetas, videntes e reveladores, eu vos prometo que o amor no lar e a obediência aos pais aumentarão; a fé se d"
+   },
+   {
+    "term": "profetas, videntes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 130,
+    "share_of_uncovered": 0.52,
+    "ratio": 160.0,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "prestardes atenção ao conselho de seus servos escolhidos em seus chamados como profetas, videntes e reveladores, eu vos prometo que o amor no lar e a obediência aos pais aumenta"
+   },
+   {
+    "term": "primeira presidência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 131,
+    "share_of_uncovered": 0.524,
+    "ratio": 52.4,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "elador, é um exemplo de sublime integridade. A designação que lhe foi dada pela Primeira Presidência, de ir à Europa aliviar os sofrimentos dos santos, depois da II Guerra Mundial,"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 245,
+  "en_talks": 160,
+  "en_verses": 0,
+  "uncovered_paragraphs": 244,
+  "renderings": [
+   {
+    "term": "profeta, vidente y revelador",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-uchtdorf-the-sustaining-of-church-officers",
+      "para": 1,
+      "en": "… proposed that we sustain Thomas Spencer Monson as prophet, seer, and revelator and President of The Church of Jesus Christ …",
+      "tr": "… propone que sostengamos a Thomas Spencer Monson como profeta vidente y revelador y como Presidente de La Iglesia de Jesucristo …"
+     }
+    ],
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "profetas, videntes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 143,
+    "share_of_uncovered": 0.586,
+    "ratio": 213.2,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "s oído al consejo de sus siervos escogidos en sus respectivos llamamientos como profetas, videntes y reveladores, os aseguro que habrá mas amor en el hogar y los hijos serán más"
+   },
+   {
+    "term": "reveladores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 145,
+    "share_of_uncovered": 0.594,
+    "ratio": 169.8,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "sus siervos escogidos en sus respectivos llamamientos como profetas, videntes y reveladores, os aseguro que habrá mas amor en el hogar y los hijos serán más obedientes a s"
+   },
+   {
+    "term": "primera presidencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 126,
+    "share_of_uncovered": 0.516,
+    "ratio": 42.2,
+    "source": "1990-10-hinckley-in-counsellors-there-is-safety",
+    "kind": "talk",
+    "sample": "Puedo asegurar a todos los miembros de la Iglesia que en la Primera Presidencia también seguimos ese proceder. Aun el Presidente de la Iglesia, que es el Profe"
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.priesthood-authority
+category: Priesthood Authority & Ordinances
+en:
+  term: priesthood authority
+  match:
+  - priesthood authority
+sources:
+  GH:
+  - 3-priesthood-principles#title_number7
+candidates:
+  pt:
+  - term: autoridade do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: autoridad del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

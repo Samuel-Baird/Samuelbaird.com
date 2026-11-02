@@ -1,0 +1,17 @@
+id: concept.plan-of-redemption
+category: Plan of Salvation
+en:
+  term: plan of redemption
+  match:
+  - plan of redemption
+sources:
+  GS:
+  - plan-of-redemption
+candidates:
+  pt:
+  - term: plano de redenção
+    hint: pulpit-glossary:verified
+  es:
+  - term: plan de redención
+    hint: approved-terms
+related: []
