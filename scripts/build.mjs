@@ -20,7 +20,8 @@ const NAME = 'Samuel Baird';
 const EMAIL = 'ithinksamofficial@gmail.com';
 const LICENSE_URL = 'https://creativecommons.org/licenses/by/4.0/';
 const LICENSE_NAME = 'CC BY 4.0';
-const TODAY = new Date().toISOString().slice(0, 10);
+const NOW = new Date().toISOString();
+const TODAY = NOW.slice(0, 10);
 const MONTH_YEAR = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const YEAR = new Date().getUTCFullYear();
 // Figures for the two sister sites, read from the live sites on the date below. Update when you rebuild.
@@ -158,7 +159,7 @@ const DATASETS = {
   sites: {
     '@type': 'Dataset', '@id': BASE + '/data#sacred-sites', name: 'Sacred Sites Visited: churches, temples and houses of worship',
     description: `${F.sites} sacred sites across ${F.traditions} traditions visited in person by Samuel Baird between ${longDate(F.firstVisit)} and ${longDate(F.lastVisit)}, with coordinates, visit counts and visit types. Each site is counted once.`,
-    url: BASE + '/data', license: LICENSE_URL, isAccessibleForFree: true, creator: { '@id': BASE + '/#person' },
+    url: BASE + '/data', license: LICENSE_URL, isAccessibleForFree: true, creator: { '@type': 'Person', name: NAME, url: BASE + '/' },
     keywords: ['sacred sites', 'places of worship', 'churches', 'LDS temples', 'religion', 'Utah'],
     temporalCoverage: `${F.firstVisit}/${F.lastVisit}`, spatialCoverage: { '@type': 'Place', name: 'United States' },
     variableMeasured: ['name', 'tradition', 'city', 'state', 'latitude', 'longitude', 'visits', 'first_visit', 'last_visit', 'visit_types'],
@@ -170,7 +171,7 @@ const DATASETS = {
   reading: {
     '@type': 'Dataset', '@id': BASE + '/data#reading-list', name: 'Reading log: books and articles with date finished',
     description: `${F.books} books and ${F.articles} articles read by Samuel Baird, with the date each was finished and a link to the source.`,
-    url: BASE + '/data', license: LICENSE_URL, isAccessibleForFree: true, creator: { '@id': BASE + '/#person' },
+    url: BASE + '/data', license: LICENSE_URL, isAccessibleForFree: true, creator: { '@type': 'Person', name: NAME, url: BASE + '/' },
     keywords: ['reading list', 'books', 'religion', 'theology', 'church history'],
     temporalCoverage: `${BOOKS.map((b) => b.read).sort()[0]}/${BOOKS[0].read}`,
     variableMeasured: ['title', 'type', 'date_finished', 'url'],
@@ -229,7 +230,7 @@ const PAGES = {
   '/': { file: 'index.html', title: `${NAME}: Data Tools and Videos on Religion, History and Ideas`, desc: `${NAME} builds Latter-day Stats (${EXT.lds.channels} LDS YouTube channels, ${EXT.lds.studies} studies), contributed to Pulpit (every General Conference talk since 1830), and maps ${F.sites} sacred sites he has visited. See the projects.`,
     ld: [WEBSITE, PERSON, ...PROJECTS] },
   '/about': { title: `About ${NAME}: Creator of Latter-day Stats`, desc: `${NAME} builds public data tools and makes videos about religion, history and ideas. What he has made, how the projects connect, how to cite them and how to get in touch.`,
-    ld: (p) => [{ '@type': 'ProfilePage', '@id': BASE + '/about#page', url: BASE + '/about', name: `About ${NAME}`, mainEntity: { '@id': BASE + '/#person' }, dateModified: TODAY }, PERSON, crumbs([['Home', '/'], ['About', '/about']])] },
+    ld: (p) => [{ '@type': 'ProfilePage', '@id': BASE + '/about#page', url: BASE + '/about', name: `About ${NAME}`, mainEntity: { '@id': BASE + '/#person' }, dateModified: NOW }, PERSON, crumbs([['Home', '/'], ['About', '/about']])] },
   '/faq': { title: `FAQ: ${NAME}, Latter-day Stats, Pulpit and Sacred Sites`, desc: 'Direct answers: how many LDS YouTube channels are tracked, what Pulpit is, which sacred sites and temples Samuel Baird has visited, what he reads, and how to cite or reuse the data.',
     ld: () => [{ '@type': 'FAQPage', '@id': BASE + '/faq#page', url: BASE + '/faq', mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } })) }, crumbs([['Home', '/'], ['FAQ', '/faq']])] },
   '/data': { title: 'Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird', desc: `Download original datasets under ${LICENSE_NAME}: ${F.sites} sacred sites with coordinates and visit dates, and a ${F.read}-item reading log. CSV and JSON, with field descriptions and a citation.`,
