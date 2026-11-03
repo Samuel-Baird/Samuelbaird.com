@@ -1,6 +1,8 @@
 {
   "root": "https://drive.google.com/drive/folders/1OwP5zVsDhbekQFMIG1LneLGCF_ze2cQ1",
   "folders": {
-    "english": "https://drive.google.com/drive/folders/1roGjCs0mybfosPhZnWbNgHbTH-Hm3qsQ"
-  }
+    "english": "https://drive.google.com/drive/folders/1roGjCs0mybfosPhZnWbNgHbTH-Hm3qsQ",
+    "afaanoromoo": "https://drive.google.com/drive/folders/1n1OkxlWtiCc5WHH-HSoDUyyDn1WFSh9L"
+  },
+  "empty_folders_created": ["afrikaans", "amharic", "armenian", "bahasaindonesia", "bahasamelayu", "bamanankan", "batsikop", "bislama", "bulgarian", "catala", "cebuano", "cesky", "chichewa", "cymraeg", "dansk", "deseret", "deutsch"]
 }
