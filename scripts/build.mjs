@@ -31,7 +31,7 @@ const EXT = {
 };
 const LDS = 'https://latterdaystats.samuelbaird.com';
 const PULPIT = 'https://pulpit.restorationcommons.org';
-const YT = 'https://www.youtube.com/@ithinkthereforeisam';
+const YT = 'https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1';
 const SUBSTACK = 'https://ithinkisam.substack.com/';
 const IG = 'https://www.instagram.com/ithinkisam/';
 const GH = 'https://github.com/Samuel-Baird';
