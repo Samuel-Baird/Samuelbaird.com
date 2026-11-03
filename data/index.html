@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='46' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/bg/bg.css">
+<script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
+<!--seo--><title>Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird</title>
+<meta name="description" content="Download original datasets under CC BY 4.0: 34 sacred sites with coordinates and visit dates, and a 51-item reading log. CSV and JSON, with field descriptions and a citation.">
+<link rel="canonical" href="https://samuelbaird.com/data">
+<meta name="author" content="Samuel Baird">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:site_name" content="Samuel Baird">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird">
+<meta property="og:description" content="Download original datasets under CC BY 4.0: 34 sacred sites with coordinates and visit dates, and a 51-item reading log. CSV and JSON, with field descriptions and a citation.">
+<meta property="og:url" content="https://samuelbaird.com/data">
+<meta property="og:image" content="https://samuelbaird.com/img/og-card.png">
+<meta property="og:image:alt" content="Samuel Baird: screenshots of Latter-day Stats, Pulpit and the Sacred Sites map">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird">
+<meta name="twitter:description" content="Download original datasets under CC BY 4.0: 34 sacred sites with coordinates and visit dates, and a 51-item reading log. CSV and JSON, with field descriptions and a citation.">
+<meta name="twitter:image" content="https://samuelbaird.com/img/og-card.png">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://samuelbaird.com/data#page","url":"https://samuelbaird.com/data","name":"Open data","isPartOf":{"@id":"https://samuelbaird.com/#website"}},{"@type":"Dataset","@id":"https://samuelbaird.com/data#sacred-sites","name":"Sacred Sites Visited: churches, temples and houses of worship","description":"34 sacred sites across 8 traditions visited in person by Samuel Baird between January 10, 2025 and June 20, 2026, with coordinates, visit counts and visit types. Each site is counted once.","url":"https://samuelbaird.com/data","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"creator":{"@id":"https://samuelbaird.com/#person"},"keywords":["sacred sites","places of worship","churches","LDS temples","religion","Utah"],"temporalCoverage":"2025-01-10/2026-06-20","spatialCoverage":{"@type":"Place","name":"United States"},"variableMeasured":["name","tradition","city","state","latitude","longitude","visits","first_visit","last_visit","visit_types"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://samuelbaird.com/data/sacred-sites.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://samuelbaird.com/data/sacred-sites.json"}]},{"@type":"Dataset","@id":"https://samuelbaird.com/data#reading-list","name":"Reading log: books and articles with date finished","description":"38 books and 13 articles read by Samuel Baird, with the date each was finished and a link to the source.","url":"https://samuelbaird.com/data","license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"creator":{"@id":"https://samuelbaird.com/#person"},"keywords":["reading list","books","religion","theology","church history"],"temporalCoverage":"2026-05-01/2026-10-30","variableMeasured":["title","type","date_finished","url"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://samuelbaird.com/data/reading-list.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://samuelbaird.com/data/reading-list.json"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://samuelbaird.com/"},{"@type":"ListItem","position":2,"name":"Open data","item":"https://samuelbaird.com/data"}]}]}</script><!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!--nav--><div class="netbar"><div class="rail"><span>Also by Samuel Baird</span><a href="https://latterdaystats.samuelbaird.com/">Latter-day Stats</a><a href="https://pulpit.restorationcommons.org/">Pulpit</a><a href="https://www.youtube.com/@ithinkthereforeisam" rel="me noopener">YouTube</a><a href="https://ithinkisam.substack.com/" rel="me noopener">Substack</a></div></div>
+<header class="topbar"><div class="rail">
+  <a class="wordmark" href="/" aria-label="Samuel Baird, home"><span class="mono" aria-hidden="true">SB</span>Samuel Baird</a>
+  <nav class="nav" aria-label="Main"><a href="/#projects">Projects</a><a href="/sacred-sites">Sacred Sites</a><a href="/books">Reading</a><a href="/collection">Collection</a><a href="/data" aria-current="page">Data</a><a href="/faq">FAQ</a><a href="/about">About</a><a class="nav-cta" href="/donate">Donate</a></nav>
+</div></header><!--/nav-->
+<main id="main" class="rail">
+<div class="pagehead">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Open data</span></nav>
+  <p class="eyebrow small-caps">Open data</p>
+  <h1>Original datasets you can download</h1>
+  <p class="lede">Two small first-hand datasets, free to reuse under CC BY 4.0. Updated November 2, 2026.</p>
+</div>
+<div class="prose wide">
+  <section class="dataset" id="sacred-sites">
+    <h2>Sacred sites visited</h2>
+    <p>34 sites in 8 traditions, visited in person between January 10, 2025 and June 20, 2026. Each site is one row; repeat visits are counted in the <code>visits</code> column. Coordinates are approximate building locations.</p>
+    <div class="btns"><a class="primary" href="/data/sacred-sites.csv" download>Download CSV</a><a class="secondary" href="/data/sacred-sites.json" download>Download JSON</a><a class="secondary" href="/sacred-sites/sites">Browse as a directory</a></div>
+    <dl class="fields"><dt><code>name</code></dt><dd>Name of the place of worship</dd><dt><code>tradition</code></dt><dd>Tradition or community, as listed on the map</dd><dt><code>denomination</code></dt><dd>Short denomination key used in the source data</dd><dt><code>city, state, country</code></dt><dd>Location</dd><dt><code>latitude, longitude</code></dt><dd>Decimal degrees (WGS84)</dd><dt><code>visits</code></dt><dd>Number of recorded visits</dd><dt><code>first_visit, last_visit</code></dt><dd>ISO dates (YYYY-MM-DD)</dd><dt><code>visit_types</code></dt><dd>Attended worship, toured interior, visited grounds or historical site</dd><dt><code>google_maps</code></dt><dd>Map search link, blank for events held outside a church building or on private property</dd></dl>
+    <div class="tablewrap"><table class="tbl"><caption>Preview: first 6 of 34 rows</caption><thead><tr><th>name</th><th>tradition</th><th>city</th><th>state</th><th>visits</th><th>last_visit</th></tr></thead><tbody>
+    <tr><td>St John's Anglican</td><td>Anglican (ACNA)</td><td>Cottonwood Heights</td><td>Utah</td><td>1</td><td>2026-02-18</td></tr><tr><td>St Mary's Episcopal Church</td><td>Episcopal</td><td>Provo</td><td>Utah</td><td>1</td><td>2026-03-22</td></tr><tr><td>Prophet Elias Greek Orthodox Church</td><td>Greek Orthodox</td><td>Salt Lake City</td><td>Utah</td><td>1</td><td>2026-06-14</td></tr><tr><td>Jehovah's Witnesses (Utah County area)</td><td>Jehovah's Witnesses</td><td>Lehi</td><td>Utah</td><td>1</td><td>2026-04-02</td></tr><tr><td>Zion Lutheran Church ELCA</td><td>Lutheran (ELCA)</td><td>Salt Lake City</td><td>Utah</td><td>1</td><td>2026-05-31</td></tr><tr><td>Cathedral of the Madeleine</td><td>Roman Catholic</td><td>Salt Lake City</td><td>Utah</td><td>1</td><td>2026-03-29</td></tr>
+    </tbody></table></div>
+    <p class="note">Maps and photos built from this data: <a href="/sacred-sites">map</a>, <a href="/sacred-sites/photos">photos</a>, <a href="/sacred-sites/stats">stats</a>.</p>
+  </section>
+  <section class="dataset" id="reading-list">
+    <h2>Reading log</h2>
+    <p>38 books and 13 articles, each with the date finished and a link to the source. Newest first.</p>
+    <div class="btns"><a class="primary" href="/data/reading-list.csv" download>Download CSV</a><a class="secondary" href="/data/reading-list.json" download>Download JSON</a><a class="secondary" href="/books">Browse with covers</a></div>
+    <dl class="fields"><dt><code>title</code></dt><dd>Title of the book or article</dd><dt><code>type</code></dt><dd><code>book</code> or <code>article</code></dd><dt><code>date_finished</code></dt><dd>ISO date (YYYY-MM-DD)</dd><dt><code>url</code></dt><dd>Link to the source (book links are Amazon affiliate links)</dd></dl>
+  </section>
+  <section class="dataset" id="more">
+    <h2>More data from the network</h2>
+    <ul class="plain">
+      <li><a href="https://latterdaystats.samuelbaird.com/data-explorer"><b>Latter-day Stats Data Explorer</b></a>: 58 graphics and public survey datasets (Pew, CCES and others) with downloadable charts.</li>
+      <li><a href="https://latterdaystats.samuelbaird.com/studies"><b>Latter-day Stats Studies</b></a>: 73 curated academic studies.</li>
+      <li><a href="https://latterdaystats.samuelbaird.com/channels"><b>Latter-day Stats Channels</b></a>: 328 LDS YouTube channels with subscriber counts.</li>
+      <li><a href="https://pulpit.restorationcommons.org/"><b>Pulpit</b></a>: 12,201 General Conference discourses, each graded for fidelity to the original words.</li>
+    </ul>
+  </section>
+  <section class="dataset" id="cite">
+    <h2>License and citation</h2>
+    <p>Released under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>: share and adapt with attribution.</p>
+    <p><code>Baird, Samuel. &ldquo;Sacred Sites Visited.&rdquo; samuelbaird.com, 2025&ndash;2026. https://samuelbaird.com/data</code></p>
+  </section>
+</div>
+</main>
+<!--foot--><footer class="sitefoot"><div class="rail">
+  <div class="cols">
+    <div><h2 class="small-caps">Projects</h2><ul>
+      <li><a href="https://latterdaystats.samuelbaird.com/">Latter-day Stats</a></li><li><a href="https://pulpit.restorationcommons.org/">Pulpit</a> <small>(contributor)</small></li>
+      <li><a href="/sacred-sites">Sacred Sites Visited</a></li><li><a href="/books">My Reading</a></li><li><a href="/collection">Collection</a></li></ul></div>
+    <div><h2 class="small-caps">Learn</h2><ul>
+      <li><a href="/about">About</a></li><li><a href="/faq">FAQ</a></li><li><a href="/data">Open data</a></li>
+      <li><a href="/sacred-sites/sites">Sacred sites directory</a></li><li><a href="/llms.txt">llms.txt</a></li></ul></div>
+    <div><h2 class="small-caps">Elsewhere</h2><ul>
+      <li><a href="https://www.youtube.com/@ithinkthereforeisam" rel="me noopener">YouTube</a></li><li><a href="https://ithinkisam.substack.com/" rel="me noopener">Substack</a></li>
+      <li><a href="https://www.instagram.com/ithinkisam/" rel="me noopener">Instagram</a></li><li><a href="https://github.com/Samuel-Baird" rel="me noopener">GitHub</a></li></ul></div>
+    <div><h2 class="small-caps">Contact &amp; support</h2><ul>
+      <li><a href="mailto:ithinksamofficial@gmail.com?subject=Samuel%20Baird">ithinksamofficial@gmail.com</a></li><li><a href="/donate">Donate</a></li>
+      <li><a href="https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4" rel="noopener">Amazon wishlist</a></li></ul></div>
+  </div>
+  <p class="legal">&copy; 2026 Samuel Baird. Free, independent and ad-free. Original data on this site is released under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</p>
+</div></footer><!--/foot-->
+<script src="/deseret.js" defer></script>
+</body>
+</html>
