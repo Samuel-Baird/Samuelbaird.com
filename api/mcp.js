@@ -1,5 +1,7 @@
 // Urim hosted MCP: read-only access to the atlas over streamable HTTP (stateless, JSON responses).
 // Data comes from data/api.json, built by pipeline/build.py. No auth, no state, no user data.
+const fs = require('fs');
+const path = require('path');
 const DATA = require('../data/api.json').concepts;
 
 const SITE = 'https://urim.samuelbaird.com';
@@ -58,6 +60,30 @@ function matchText(text) {
   }
   return out;
 }
+
+// ---- Deseret transliteration (package in /deseret, vendored from pulpit-vault), loaded on first use
+let deseretReady;
+function deseret() {
+  if (!deseretReady) {
+    deseretReady = (async () => {
+      const mod = await import('../deseret/src/index.mjs');
+      const dir = path.join(__dirname, '..', 'deseret', 'data');
+      const read = (f) => fs.readFileSync(path.join(dir, f), 'utf8');
+      return {
+        strict: false,
+        make: (confidentOnly) =>
+          mod.createTransliterator({
+            words: mod.parseWords(read('words.tsv')),
+            heteronyms: JSON.parse(read('heteronyms.json')),
+            overrides: JSON.parse(read('overrides.json')),
+            confidentOnly,
+          }),
+      };
+    })();
+  }
+  return deseretReady;
+}
+const deseretEngines = {};
 
 const url = (c) => `${SITE}/c/${c.slug}`;
 const langName = { pt: 'Portuguese (Brazil)', es: 'Spanish' };
@@ -201,6 +227,39 @@ const TOOLS = [
     },
   },
   {
+    name: 'to_deseret',
+    description:
+      'Transliterate English text into the Deseret Alphabet (the 38-letter script of the 1860s Church printings) using the pulpit-vault ' +
+      'Deseret engine: dictionary spellings, context-resolved heteronyms (read/live/use), capitalization preserved. English only; ' +
+      'Portuguese and Spanish are not supported. Words with no spelling are left in Latin script and listed, never guessed.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        text: { type: 'string', description: 'English text (up to ~20,000 characters).' },
+        confident_only: {
+          type: 'boolean',
+          description: 'Leave words whose spelling is a machine guess in Latin script (default false, matching the published edition).',
+        },
+      },
+      required: ['text'],
+    },
+    async run({ text, confident_only }) {
+      const input = String(text || '').slice(0, 20000);
+      if (!input.trim()) throw new Error('text is required');
+      const d = await deseret();
+      const key = confident_only ? 'strict' : 'all';
+      if (!deseretEngines[key]) deseretEngines[key] = d.make(!!confident_only);
+      const t = deseretEngines[key];
+      const cov = t.coverage(input);
+      return {
+        deseret: t.text(input),
+        words: cov.words,
+        converted: cov.converted,
+        left_in_latin: cov.left_latin.slice(0, 50),
+      };
+    },
+  },
+  {
     name: 'search_concepts',
     description: 'List atlas concepts by English name or topic category. With no query, returns the category list.',
     inputSchema: {
@@ -262,7 +321,7 @@ const TOOLS = [
 const ok = (id, result) => ({ jsonrpc: '2.0', id, result });
 const err = (id, code, message) => ({ jsonrpc: '2.0', id, error: { code, message } });
 
-function handle(msg) {
+async function handle(msg) {
   const { id, method, params } = msg;
   if (id === undefined || id === null) return null; // notification
   switch (method) {
@@ -285,7 +344,7 @@ function handle(msg) {
       const tool = TOOLS.find((t) => t.name === (params && params.name));
       if (!tool) return err(id, -32602, `Unknown tool: ${params && params.name}`);
       try {
-        const result = tool.run((params && params.arguments) || {});
+        const result = await tool.run((params && params.arguments) || {});
         return ok(id, { content: [{ type: 'text', text: JSON.stringify(result) }] });
       } catch (e) {
         return ok(id, { isError: true, content: [{ type: 'text', text: String(e.message || e) }] });
@@ -326,7 +385,7 @@ module.exports = async function mcp(req, res) {
     return res.end(JSON.stringify(err(null, -32700, 'Parse error')));
   }
   const batch = Array.isArray(body);
-  const replies = (batch ? body : [body]).map((m) => handle(m || {})).filter(Boolean);
+  const replies = (await Promise.all((batch ? body : [body]).map((m) => handle(m || {})))).filter(Boolean);
   if (!replies.length) {
     res.statusCode = 202;
     return res.end();

@@ -34,8 +34,8 @@
     out.innerHTML = hits.map(function (x) {
       var c = x[1];
       return '<li><a href="/c/' + c.s + '"><span><b>' + esc(c.en) + '</b><small>' + esc(c.cat) + '</small></span>' +
-        '<span><small>Português</small>' + (esc(c.pt.join(', ')) || '&mdash;') + '</span>' +
-        '<span><small>Español</small>' + (esc(c.es.join(', ')) || '&mdash;') + '</span></a></li>';
+        '<span><small lang="pt">Português</small><span lang="pt">' + (esc(c.pt.join(', ')) || '&mdash;') + '</span></span>' +
+        '<span><small lang="es">Español</small><span lang="es">' + (esc(c.es.join(', ')) || '&mdash;') + '</span></span></a></li>';
     }).join('');
   }
   q.addEventListener('input', run);

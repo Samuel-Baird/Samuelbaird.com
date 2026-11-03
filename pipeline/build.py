@@ -110,7 +110,7 @@ def earliest_translation(lang, rs, meta):
             continue
         u = talk_url(lang, e["year"], e["talk"])
         conf = E(e["conference"])
-        items.append(f'<li><b>{E(r["term"])}</b>: {(f"<a href={chr(34)}{E(u)}{chr(34)}>{conf}</a>") if u else conf} '
+        items.append(f'<li><b lang="{lang}">{E(r["term"])}</b>: {(f"<a href={chr(34)}{E(u)}{chr(34)}>{conf}</a>") if u else conf} '
                      f'<span class="muted">(para. {e["para"] + 1})</span></li>')
     if not items:
         return ""
@@ -120,7 +120,7 @@ def earliest_translation(lang, rs, meta):
         e = top["earliest"]
         pair = (f'<div class="snip"><div class="src">Earliest passage for &ldquo;{E(top["term"])}&rdquo;</div><div class="pair">'
                 f'<p><span class="l">English</span>{E(re.sub(r"\\s*\\[\\^\\d+\\]", "", e["en"]))}</p>'
-                f'<p><span class="l">{E(meta["name"])}</span>{hl(e["tr"], top["term"], lang)}</p></div></div>')
+                f'<p lang="{lang}"><span class="l">{E(meta["name"])}</span>{hl(e["tr"], top["term"], lang)}</p></div></div>')
     return ('<h3>Earliest official use</h3><p class="hint">First appearance of each rendering in the Church&rsquo;s official translations in this corpus. '
             'Official translations of conference talks begin around 1990, so this shows when a rendering is first <em>recorded here</em>, '
             'not when it was coined.</p><ul class="plainlist">' + "".join(items) + "</ul>" + pair)
@@ -197,7 +197,9 @@ def page(title, body, desc, path="", current=""):
     low = [("/connect", "Use with AI", "ai"), ("/about", "Method &amp; data", "about"),
            ("mailto:ithinksamofficial@gmail.com?subject=Urim", "Contact", "mail"), ("/donate", "Donate", "heart")]
     top_html = "".join(_link(h, n, i, current) for h, n, i in top)
-    low_html = "".join(_link(h, n, i, current) for h, n, i in low)
+    low_html = ('<button type="button" id="scriptbtn" aria-pressed="false" title="Show English text in the Deseret Alphabet">'
+                '<span class="ic glyph" aria-hidden="true">𐐔</span><span>Deseret script</span></button>'
+                + "".join(_link(h, n, i, current) for h, n, i in low))
     gh = _link("https://github.com/Samuel-Baird/urim", "Source", "code", current, ext=True)
     return f"""<!doctype html>
 <html lang="en">
@@ -243,6 +245,7 @@ def page(title, body, desc, path="", current=""):
 </div>
 </div>
 <script src="/nav.js" defer></script>
+<script src="/script.js" defer></script>
 </body>
 </html>
 """
@@ -282,7 +285,7 @@ def concept_page(c, signals):
     parts.append(earliest_section(c))
     for lang, meta in LANGS.items():
         a = c["att"][lang]
-        parts.append(f'<section class="lang" id="{lang}"><h2>{E(meta["name"])}</h2>')
+        parts.append(f'<section class="lang" id="{lang}"><h2 lang="{lang}">{E(meta["name"])}</h2>')
         rs = c["has"][lang]
         if not rs:
             n = a["en_paragraphs"] + a["en_verses"]
@@ -294,7 +297,7 @@ def concept_page(c, signals):
             for r in rs:
                 span = f'{r["first_year"]}&ndash;{r["last_year"]}' if r.get("first_year") else "&mdash;"
                 rows.append(
-                    f'<tr><td class="term">{E(r["term"])}</td><td>{badges(r)}</td>'
+                    f'<tr><td class="term" lang="{lang}">{E(r["term"])}</td><td>{badges(r)}</td>'
                     f'<td>{r["paragraphs"]} <span class="muted">in {r["talks"]} talks</span><br>{r["verses"]} <span class="muted">scripture verses</span></td>'
                     f'<td>{span}</td><td><div class="bar" title="{round(r["share"]*100)}% of confirmed uses"><i style="width:{round(r["share"]*100)}%"></i></div></td></tr>')
             parts.append('<div class="tablewrap"><table><thead><tr><th>Rendering</th><th>Evidence</th><th>Uses</th><th>Years</th><th>Share</th></tr></thead><tbody>'
@@ -312,23 +315,23 @@ def concept_page(c, signals):
                     snips.append(
                         f'<div class="snip"><div class="src">{src}</div><div class="pair">'
                         f'<p><span class="l">English</span>{hl(s["en"], en if s["kind"] == "talk" else c["en"]["match"][0], "en")}</p>'
-                        f'<p><span class="l">{E(meta["name"])}</span>{hl(s["tr"], r["term"], lang)}</p></div></div>')
+                        f'<p lang="{lang}"><span class="l">{E(meta["name"])}</span>{hl(s["tr"], r["term"], lang)}</p></div></div>')
             if snips:
                 parts.append('<h3>In the Church&rsquo;s own words</h3><div class="snips">' + "".join(snips) + "</div>")
             parts.append(earliest_translation(lang, rs, meta))
         inf = a.get("inferred", [])
         if inf:
             li = "".join(
-                f'<li><b>{E(i["term"])}</b> &mdash; {i["paragraphs"]} uncovered passages '
+                f'<li><b lang="{lang}">{E(i["term"])}</b> &mdash; {i["paragraphs"]} uncovered passages '
                 f'({"scripture" if i["kind"] == "scripture" else "conference"}); '
-                f'<span class="muted">&hellip;{E(re.sub(r"\s*\[\^\d+\]", "", i["sample"]))}&hellip;</span></li>' for i in inf)
+                f'<span class="muted" lang="{lang}">&hellip;{E(re.sub(r"\s*\[\^\d+\]", "", i["sample"]))}&hellip;</span></li>' for i in inf)
             parts.append('<details><summary><span class="badge inferred">inferred</span> Unreviewed candidates from alignment</summary>'
                          '<p class="hint">Mined automatically from Church text where none of the known renderings appeared. '
                          'These are statistical leads, not verified translations, and often include noise.</p>'
                          f'<ul>{li}</ul></details>')
         un = [r["term"] for r in a["renderings"] if not r["evidence"]]
         if un:
-            parts.append(f'<p class="hint">Listed in other Church-adjacent glossaries but not confirmed here: {E(", ".join(un))}.</p>')
+            parts.append(f'<p class="hint">Listed in other Church-adjacent glossaries but not confirmed here: <span lang="{lang}">{E(", ".join(un))}</span>.</p>')
         parts.append("</section>")
     sl = study_links(c)
     if sl:
@@ -367,14 +370,14 @@ def variants_page(concepts, sig, collapses):
         for lang in LANGS:
             real = [r for r in c["has"][lang] if "attested" in r["evidence"] and uses(r) >= MIN_USES]
             if len(real) >= 2 and real[1]["share"] >= VARY_SHARE:
-                rows.append(f'<tr><td class="term"><a href="/c/{c["slug"]}#{lang}">{E(c["en"]["term"])}</a></td><td>{lang}</td><td>'
+                rows.append(f'<tr><td class="term"><a href="/c/{c["slug"]}#{lang}">{E(c["en"]["term"])}</a></td><td>{lang}</td><td lang="{lang}">'
                             + "; ".join(f'{E(r["term"])} ({uses(r)})' for r in real[:4]) + "</td></tr>")
     parts.append('<div class="tablewrap"><table><thead><tr><th>English</th><th>Lang</th><th>Renderings (uses)</th></tr></thead><tbody>'
                  + ("".join(rows) or '<tr><td colspan="3" class="muted">None found.</td></tr>') + "</tbody></table></div></section>")
     parts.append('<section><h2>Several English terms, one rendering</h2>')
     rows = []
     for (lang, k), lst in sorted(collapses.items(), key=lambda x: -len(x[1])):
-        rows.append(f'<tr><td class="term">{E(lst[0][1]["term"])}</td><td>{lang}</td><td>'
+        rows.append(f'<tr><td class="term" lang="{lang}">{E(lst[0][1]["term"])}</td><td>{lang}</td><td>'
                     + "; ".join(f'<a href="/c/{c["slug"]}#{lang}">{E(c["en"]["term"])}</a>' for c, _ in lst) + "</td></tr>")
     parts.append('<div class="tablewrap"><table><thead><tr><th>Rendering</th><th>Lang</th><th>English terms</th></tr></thead><tbody>'
                  + ("".join(rows) or '<tr><td colspan="3" class="muted">None found.</td></tr>') + "</tbody></table></div></section>")
@@ -387,7 +390,7 @@ def variants_page(concepts, sig, collapses):
             top = c["has"][lang][:1]
             if sc and top:
                 rows.append(f'<tr><td class="term"><a href="/c/{c["slug"]}#{lang}">{E(c["en"]["term"])}</a></td><td>{lang}</td>'
-                            f'<td>{E(top[0]["term"])}</td><td>{E(sc[0]["term"])}</td></tr>')
+                            f'<td lang="{lang}">{E(top[0]["term"])}</td><td lang="{lang}">{E(sc[0]["term"])}</td></tr>')
     parts.append('<div class="tablewrap"><table><thead><tr><th>English</th><th>Lang</th><th>Conference</th><th>Scripture lead</th></tr></thead><tbody>'
                  + ("".join(rows) or '<tr><td colspan="4" class="muted">None found.</td></tr>') + "</tbody></table></div></section>")
     return page("Variants & collisions | Urim", "\n".join(parts),
@@ -417,6 +420,8 @@ def about_page(prov, n_all, n_ev):
 <li><b>Translations:</b> the first appearance of each rendering in the Church&rsquo;s official translations in this corpus. These begin around 1990, so the date means &ldquo;first recorded here&rdquo;, not &ldquo;first coined&rdquo;. Earlier translated usage is not represented.</li>
 <li>Matching is by word form, so an early hit may use the word in an ordinary sense rather than as a technical term.</li>
 </ul>
+<h2>Deseret script</h2>
+<p>The sidebar&rsquo;s <b>Deseret script</b> button shows English text on the site in the Deseret Alphabet. It uses the same engine as <a href="https://github.com/Noah-Airmet/pulpit-vault">pulpit-vault</a>&rsquo;s Deseret edition (dictionary spellings, context-resolved heteronyms, 38-letter standard). Words with no spelling stay in Latin script, and Portuguese and Spanish text is never converted. The package is in <a href="https://github.com/Samuel-Baird/urim/tree/main/deseret">deseret/</a>.</p>
 <h2>Limits</h2>
 <ul>
 <li>Counts show published usage, not correctness or doctrine. A rendering that is common in one era may be rare in another.</li>
@@ -551,7 +556,21 @@ def scripture_books():
     (DATA / "scripture_books.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+def publish_deseret():
+    """Copy the browser-safe Deseret package files into the site (lazy-loaded by /script.js)."""
+    import shutil
+    from .config import ROOT
+    pkg, out = ROOT / "deseret", SITE / "deseret"
+    (out / "lib").mkdir(parents=True, exist_ok=True)
+    for f in (pkg / "src").glob("*.mjs"):
+        if f.name != "node.mjs":
+            shutil.copyfile(f, out / "lib" / f.name)
+    for name in ("words.tsv", "heteronyms.json", "overrides.json"):
+        shutil.copyfile(pkg / "data" / name, out / name)
+
+
 def main():
+    publish_deseret()
     scripture_books()
     concepts, prov = load()
     sig, collapses = signals(concepts)

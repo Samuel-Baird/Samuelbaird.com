@@ -133,7 +133,9 @@ def connect_page():
       <ul class="side"><li>Look up a term in English, Portuguese or Spanish, including reverse lookup.</li>
       <li>Show every Church rendering with usage counts, years and source links.</li>
       <li>Pick out the Church terminology in a passage you are translating.</li>
-      <li>List terms the Church renders inconsistently.</li></ul></section>
+      <li>List terms the Church renders inconsistently.</li>
+      <li>Show the earliest attested use of a term, in English and in official translations.</li>
+      <li>Write English text in the Deseret Alphabet.</li></ul></section>
     <section><h2 class="small-caps">Questions</h2>
       <p class="side">Stuck? <a href="mailto:{EMAIL}?subject=Urim">Send a message</a>. The source for the connection is
       <a href="https://github.com/Samuel-Baird/urim/blob/main/api/mcp.js">on GitHub</a>.</p></section>

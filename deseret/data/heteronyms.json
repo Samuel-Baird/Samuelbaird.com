@@ -1,0 +1,490 @@
+{
+ "live": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "L",
+    "AY1",
+    "V"
+   ],
+   "adjective": [
+    "L",
+    "IH1",
+    "V"
+   ]
+  },
+  "pos_map": {
+   "VB": "verb",
+   "VBP": "verb",
+   "VBZ": "verb",
+   "VBG": "verb",
+   "JJ": "adjective"
+  }
+ },
+ "lives": {
+  "default": "noun",
+  "senses": {
+   "noun": [
+    "L",
+    "AY1",
+    "V",
+    "Z"
+   ],
+   "verb": [
+    "L",
+    "IH1",
+    "V",
+    "Z"
+   ]
+  },
+  "pos_map": {
+   "NNS": "noun",
+   "NN": "noun",
+   "VBZ": "verb"
+  }
+ },
+ "read": {
+  "default": "past",
+  "senses": {
+   "present": [
+    "R",
+    "IY1",
+    "D"
+   ],
+   "past": [
+    "R",
+    "EH1",
+    "D"
+   ]
+  },
+  "pos_map": {
+   "VBD": "past",
+   "VBN": "past",
+   "VB": "present",
+   "VBP": "present",
+   "VBZ": "present"
+  },
+  "rules": [
+   {
+    "when": "prev in [to, will, shall, can, may, must]",
+    "sense": "present"
+   },
+   {
+    "when": "prev in [have, has, had, hath]",
+    "sense": "past"
+   }
+  ]
+ },
+ "present": {
+  "default": "adjective",
+  "senses": {
+   "adjective": [
+    "P",
+    "R",
+    "EH1",
+    "Z",
+    "AH0",
+    "N",
+    "T"
+   ],
+   "verb": [
+    "P",
+    "R",
+    "IH0",
+    "Z",
+    "EH1",
+    "N",
+    "T"
+   ]
+  },
+  "pos_map": {
+   "JJ": "adjective",
+   "NN": "adjective",
+   "VB": "verb",
+   "VBP": "verb"
+  }
+ },
+ "blessed": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "B",
+    "L",
+    "EH1",
+    "S",
+    "T"
+   ],
+   "adjective": [
+    "B",
+    "L",
+    "EH1",
+    "S",
+    "IH0",
+    "D"
+   ]
+  },
+  "pos_map": {
+   "VBD": "verb",
+   "VBN": "verb",
+   "JJ": "adjective"
+  },
+  "rules": [
+   {
+    "when": "next in [are, is]",
+    "sense": "adjective"
+   },
+   {
+    "when": "prev in [is, are, be, art, most, thou, ye]",
+    "sense": "adjective"
+   }
+  ]
+ },
+ "use": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "Y",
+    "UW1",
+    "Z"
+   ],
+   "noun": [
+    "Y",
+    "UW1",
+    "S"
+   ]
+  },
+  "pos_map": {
+   "VB": "verb",
+   "VBP": "verb",
+   "NN": "noun"
+  }
+ },
+ "perfect": {
+  "default": "adjective",
+  "senses": {
+   "adjective": [
+    "P",
+    "ER1",
+    "F",
+    "EH0",
+    "K",
+    "T"
+   ],
+   "verb": [
+    "P",
+    "ER0",
+    "F",
+    "EH1",
+    "K",
+    "T"
+   ]
+  },
+  "pos_map": {
+   "JJ": "adjective",
+   "VB": "verb"
+  }
+ },
+ "learned": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "L",
+    "ER1",
+    "N",
+    "D"
+   ],
+   "adjective": [
+    "L",
+    "ER1",
+    "N",
+    "IH0",
+    "D"
+   ]
+  },
+  "pos_map": {
+   "VBD": "verb",
+   "VBN": "verb",
+   "JJ": "adjective"
+  }
+ },
+ "subject": {
+  "default": "noun",
+  "senses": {
+   "noun": [
+    "S",
+    "AH1",
+    "B",
+    "JH",
+    "EH0",
+    "K",
+    "T"
+   ],
+   "verb": [
+    "S",
+    "AH0",
+    "B",
+    "JH",
+    "EH1",
+    "K",
+    "T"
+   ]
+  },
+  "pos_map": {
+   "NN": "noun",
+   "JJ": "noun",
+   "VB": "verb"
+  }
+ },
+ "record": {
+  "default": "noun",
+  "senses": {
+   "noun": [
+    "R",
+    "EH1",
+    "K",
+    "ER0",
+    "D"
+   ],
+   "verb": [
+    "R",
+    "IH0",
+    "K",
+    "AO1",
+    "R",
+    "D"
+   ]
+  },
+  "pos_map": {
+   "NN": "noun",
+   "VB": "verb"
+  }
+ },
+ "records": {
+  "default": "noun",
+  "senses": {
+   "noun": [
+    "R",
+    "EH1",
+    "K",
+    "ER0",
+    "D",
+    "Z"
+   ],
+   "verb": [
+    "R",
+    "IH0",
+    "K",
+    "AO1",
+    "R",
+    "D",
+    "Z"
+   ]
+  },
+  "pos_map": {
+   "NNS": "noun",
+   "VBZ": "verb"
+  }
+ },
+ "increase": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "IH0",
+    "N",
+    "K",
+    "R",
+    "IY1",
+    "S"
+   ],
+   "noun": [
+    "IH1",
+    "N",
+    "K",
+    "R",
+    "IY2",
+    "S"
+   ]
+  },
+  "pos_map": {
+   "VB": "verb",
+   "VBP": "verb",
+   "NN": "noun"
+  },
+  "rules": [
+   {
+    "when": "prev in [an, the, any, some, great, such, this, that]",
+    "sense": "noun"
+   }
+  ]
+ },
+ "close": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "K",
+    "L",
+    "OW1",
+    "Z"
+   ],
+   "adjective": [
+    "K",
+    "L",
+    "OW1",
+    "S"
+   ]
+  },
+  "pos_map": {
+   "VB": "verb",
+   "VBP": "verb",
+   "JJ": "adjective"
+  }
+ },
+ "conduct": {
+  "default": "noun",
+  "senses": {
+   "noun": [
+    "K",
+    "AA1",
+    "N",
+    "D",
+    "AH0",
+    "K",
+    "T"
+   ],
+   "verb": [
+    "K",
+    "AH0",
+    "N",
+    "D",
+    "AH1",
+    "K",
+    "T"
+   ]
+  },
+  "pos_map": {
+   "NN": "noun",
+   "VB": "verb"
+  },
+  "rules": [
+   {
+    "when": "prev in [will, shall, to, who]",
+    "sense": "verb"
+   }
+  ]
+ },
+ "tear": {
+  "default": "noun",
+  "senses": {
+   "noun": [
+    "T",
+    "IH1",
+    "R"
+   ],
+   "verb": [
+    "T",
+    "EH1",
+    "R"
+   ]
+  },
+  "pos_map": {
+   "NN": "noun",
+   "NNS": "noun",
+   "VB": "verb"
+  }
+ },
+ "content": {
+  "default": "adjective",
+  "senses": {
+   "adjective": [
+    "K",
+    "AH0",
+    "N",
+    "T",
+    "EH1",
+    "N",
+    "T"
+   ],
+   "noun": [
+    "K",
+    "AA1",
+    "N",
+    "T",
+    "EH0",
+    "N",
+    "T"
+   ]
+  },
+  "pos_map": {
+   "JJ": "adjective",
+   "NN": "noun"
+  },
+  "rules": [
+   {
+    "when": "prev in [the, its, written, such, whose]",
+    "sense": "noun"
+   }
+  ]
+ },
+ "address": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "AH0",
+    "D",
+    "R",
+    "EH1",
+    "S"
+   ],
+   "noun": [
+    "AE1",
+    "D",
+    "R",
+    "EH2",
+    "S"
+   ]
+  },
+  "pos_map": {
+   "VB": "verb",
+   "VBP": "verb",
+   "NN": "noun"
+  },
+  "rules": [
+   {
+    "when": "prev in [this, his, her, my, an, the, that]",
+    "sense": "noun"
+   }
+  ]
+ },
+ "convert": {
+  "default": "verb",
+  "senses": {
+   "verb": [
+    "K",
+    "AH0",
+    "N",
+    "V",
+    "ER1",
+    "T"
+   ],
+   "noun": [
+    "K",
+    "AA1",
+    "N",
+    "V",
+    "ER2",
+    "T"
+   ]
+  },
+  "pos_map": {
+   "VB": "verb",
+   "VBP": "verb",
+   "NN": "noun"
+  },
+  "rules": [
+   {
+    "when": "prev in [a, the, many, new, every, each, one, this, that]",
+    "sense": "noun"
+   }
+  ]
+ }
+}

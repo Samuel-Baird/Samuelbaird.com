@@ -1,0 +1,17 @@
+{
+  "name": "@urim/deseret",
+  "version": "0.1.0",
+  "description": "Deseret Alphabet transliteration of English text (lookup runtime vendored from pulpit-vault).",
+  "type": "module",
+  "private": true,
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./node": "./src/node.mjs"
+  },
+  "bin": { "deseret": "bin/deseret.mjs" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
