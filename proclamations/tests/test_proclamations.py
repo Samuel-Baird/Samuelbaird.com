@@ -10,6 +10,12 @@ from proclamations.layout import Para, balanced_lines, break_paragraph, word
 from proclamations.templates import split_words
 
 
+def test_standard_print_sizes():
+    assert sizes.SIZES["letter"] == (612, 792)
+    w, h = sizes.SIZES["a4"]
+    assert abs(w / 72 * 25.4 - 210) < 0.01 and abs(h / 72 * 25.4 - 297) < 0.01
+
+
 def test_the_nine_requested_poster_sizes():
     want = {"11x17": (11, 17), "18x24": (18, 24), "24x36": (24, 36), "27x40": (27, 40), "40x60": (40, 60)}
     for name, (w, h) in want.items():
@@ -18,7 +24,7 @@ def test_the_nine_requested_poster_sizes():
     for name, (mw, mh) in {"a3": (297, 420), "a2": (420, 594), "a1": (594, 841), "a0": (841, 1189)}.items():
         w, h = sizes.SIZES[name]
         assert abs(w / 72 * 25.4 - mw) < 0.01 and abs(h / 72 * 25.4 - mh) < 0.01
-    assert len(sizes.SIZES) == 9
+    assert len(sizes.POSTERS) == 9 and len(sizes.SIZES) == 11
     with pytest.raises(KeyError):
         sizes.get("12x12")
 

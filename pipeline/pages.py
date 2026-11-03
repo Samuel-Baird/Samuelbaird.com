@@ -210,7 +210,7 @@ def proclamations_page(manifest):
     body = f"""<div class="pagehead">
   <p class="eyebrow small-caps" style="color:var(--honey)">Proclamations</p>
   <h1>Proclamations in the Deseret Alphabet</h1>
-  <p class="lede">The Church&rsquo;s proclamations set in the Deseret Alphabet, laid out like the official PDFs and sized for printing as posters, from 11&Prime; &times; 17&Prime; up to A0.</p>
+  <p class="lede">The Church&rsquo;s proclamations set in the Deseret Alphabet, laid out like the official PDFs and sized for printing: standard US Letter and A4, and posters from 11&Prime; &times; 17&Prime; up to A0.</p>
 </div>
 <div class="notice"><p><strong>Unofficial.</strong> These are transliterations of the English texts, made with the <a href="https://github.com/Samuel-Baird/urim/tree/main/proclamations">proclamations generator</a> in this project. They are not published or approved by The Church of Jesus Christ of Latter-day Saints, and each PDF says so in its bottom margin. The Church&rsquo;s own English versions, logo and signatures are on its website. For personal and non-commercial use.</p></div>
 <div class="pgrid">{"".join(cards)}</div>

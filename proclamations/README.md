@@ -11,7 +11,7 @@ cd proclamations
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt     # reportlab, pymupdf, pyyaml (Node is needed for Deseret)
 cd ..
-proclamations/.venv/Scripts/python -m proclamations.generate                     # 4 documents x 9 poster sizes -> proclamations/out/
+proclamations/.venv/Scripts/python -m proclamations.generate                     # 4 documents x 11 sizes -> proclamations/out/
 proclamations/.venv/Scripts/python -m proclamations.generate --doc family --size 24x36
 proclamations/.venv/Scripts/python -m proclamations.check                        # format parity vs the originals
 proclamations/.venv/Scripts/python -m proclamations.check --outputs              # integrity of every PDF in out/
@@ -27,7 +27,7 @@ proclamations/.venv/Scripts/python -m proclamations.publish                     
 | `restoration` | The Restoration of the Fulness of the Gospel (2020) | page frame, double rule around a letter-spaced subtitle, drop cap, italic closing note |
 | `articles-of-faith` | The Articles of Faith poster | gold rules, ornamental divider, large verse numerals, drop cap, right-aligned signature |
 
-Sizes: 11x17, 18x24, 24x36, 27x40, 40x60 (inches) and A3, A2, A1, A0, plus `letter` (the originals' own size, used for the format check). All portrait.
+Sizes: `letter` (8.5 x 11 in) and its metric equivalent `a4` (210 x 297 mm) for ordinary printing, then posters: 11x17, 18x24, 24x36, 27x40, 40x60 (inches) and A3, A2, A1, A0. All portrait. `letter` is also the originals' own size, which the format check uses.
 
 **Each size is a re-layout, not a stretch.** The design is 612 units wide and scaled to the page width. Header and footer keep the original proportions; the extra height of a poster goes to the text block, and the largest type size that fills it is found by search. Text is justified with an optimal line-breaker and balanced across two columns. Deseret is not hyphenated.
 
