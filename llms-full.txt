@@ -6,7 +6,7 @@
 
 ### Who is Samuel Baird?
 
-Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://latterdaystats.samuelbaird.com/), a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
+Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://latterdaystats.samuelbaird.com/), a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
 
 ### What is Latter-day Stats?
 
