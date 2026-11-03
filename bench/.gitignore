@@ -2,3 +2,4 @@ out/
 home/
 results.csv
 runs/
+*.log

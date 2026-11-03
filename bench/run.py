@@ -8,7 +8,7 @@ Per run it records wall time, API time, turns, tokens (input, output, cache read
 whether the held-out official translation was touched. Scoring compares the output with the Church's official
 translation of the same talk (chrF) and checks Church glossary compliance with Urim's own validator.
 """
-import argparse, csv, json, os, re, subprocess, sys, time
+import argparse, csv, json, os, re, shutil, subprocess, sys, time
 from collections import Counter
 from pathlib import Path
 
@@ -40,7 +40,7 @@ def run(arm, talk, lang):
     out = OUT / arm / lang / f"{talk}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.unlink(missing_ok=True)
-    cmd = ["claude", "-p", prompt(arm, talk, lang, out), "--model", MODEL, "--output-format", "stream-json", "--verbose",
+    cmd = [shutil.which("claude") or "claude", "-p", prompt(arm, talk, lang, out), "--model", MODEL, "--output-format", "stream-json", "--verbose",
            "--no-session-persistence", "--permission-mode", "bypassPermissions"]
     env = dict(os.environ)
     if arm == "pulpit":
