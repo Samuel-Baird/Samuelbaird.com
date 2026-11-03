@@ -1,0 +1,1 @@
+Translate /ROOT/pulpit-vault/talks/english/modern/2026/{talk}.md into {language} following docs/translation.md. Save it to {out}. This talk's official {language} translation is held out for the test: don't read it or use it.
