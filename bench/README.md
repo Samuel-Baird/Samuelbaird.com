@@ -88,3 +88,12 @@ What each arm could still see:
 Not covered: only 6 talks per language and one run each (no variance estimate); chrF against one official text rewards imitating Church
 phrasing and does not measure doctrinal accuracy or style; Argos could not run on this machine (Smart App Control), so the local route
 was Ollama only.
+
+## Local route with Argos unblocked (2 talks, es, run directly with `local_run.py`, no agent)
+
+| Local route | wall s (avg) | chrF (avg) |
+|---|---|---|
+| Ollama only (qwen3.5:4b) | 390 | 79.2 |
+| Argos draft + Ollama post-edit | 147 | 77.8 |
+
+Same two talks (Becerra, Hall). Argos is about 2.6 times faster and about 1.4 chrF lower; neither approaches the Haiku pipeline (about 85). Two talks only, so treat it as indicative.
