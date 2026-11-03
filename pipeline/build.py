@@ -198,9 +198,7 @@ def page(title, body, desc, path="", current=""):
     low = [("/connect", "Use with AI", "ai"), ("/about", "Method &amp; data", "about"),
            ("mailto:ithinksamofficial@gmail.com?subject=Urim", "Contact", "mail"), ("/donate", "Donate", "heart")]
     top_html = "".join(_link(h, n, i, current) for h, n, i in top)
-    low_html = ('<button type="button" id="scriptbtn" aria-pressed="false" title="Show English text in the Deseret Alphabet">'
-                '<span class="ic glyph" aria-hidden="true">𐐔</span><span>Deseret script</span></button>'
-                + "".join(_link(h, n, i, current) for h, n, i in low))
+    low_html = ("".join(_link(h, n, i, current) for h, n, i in low))
     gh = _link("https://github.com/Samuel-Baird/urim", "Source", "code", current, ext=True)
     return f"""<!doctype html>
 <html lang="en">
@@ -246,7 +244,6 @@ def page(title, body, desc, path="", current=""):
 </div>
 </div>
 <script src="/nav.js" defer></script>
-<script src="/script.js" defer></script>
 </body>
 </html>
 """
@@ -421,8 +418,8 @@ def about_page(prov, n_all, n_ev):
 <li><b>Translations:</b> the first appearance of each rendering in the Church&rsquo;s official translations in this corpus. These begin around 1990, so the date means &ldquo;first recorded here&rdquo;, not &ldquo;first coined&rdquo;. Earlier translated usage is not represented.</li>
 <li>Matching is by word form, so an early hit may use the word in an ordinary sense rather than as a technical term.</li>
 </ul>
-<h2>Deseret script</h2>
-<p>The sidebar&rsquo;s <b>Deseret script</b> button shows English text on the site in the Deseret Alphabet. It uses the same engine as <a href="https://github.com/Noah-Airmet/pulpit-vault">pulpit-vault</a>&rsquo;s Deseret edition (dictionary spellings, context-resolved heteronyms, 38-letter standard). Words with no spelling stay in Latin script, and Portuguese and Spanish text is never converted. The package is in <a href="https://github.com/Samuel-Baird/urim/tree/main/deseret">deseret/</a>.</p>
+<h2>Deseret Alphabet</h2>
+<p>The site itself is in English only. Deseret transliteration is offered as a tool: the hosted MCP has a <code>to_deseret</code> tool, the local translation server can transliterate text and files, and the <a href="/proclamations">proclamations</a> are available as Deseret PDFs. All of it uses the engine from <a href="https://github.com/Noah-Airmet/pulpit-vault">pulpit-vault</a>&rsquo;s Deseret edition (dictionary spellings, context-resolved heteronyms, 38-letter standard); words with no spelling stay in Latin script. The package is in <a href="https://github.com/Samuel-Baird/urim/tree/main/deseret">deseret/</a>.</p>
 <h2>Limits</h2>
 <ul>
 <li>Counts show published usage, not correctness or doctrine. A rendering that is common in one era may be rare in another.</li>
@@ -557,21 +554,7 @@ def scripture_books():
     (DATA / "scripture_books.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def publish_deseret():
-    """Copy the browser-safe Deseret package files into the site (lazy-loaded by /script.js)."""
-    import shutil
-    from .config import ROOT
-    pkg, out = ROOT / "deseret", SITE / "deseret"
-    (out / "lib").mkdir(parents=True, exist_ok=True)
-    for f in (pkg / "src").glob("*.mjs"):
-        if f.name != "node.mjs":
-            shutil.copyfile(f, out / "lib" / f.name)
-    for name in ("words.tsv", "heteronyms.json", "overrides.json"):
-        shutil.copyfile(pkg / "data" / name, out / name)
-
-
 def main():
-    publish_deseret()
     scripture_books()
     concepts, prov = load()
     sig, collapses = signals(concepts)

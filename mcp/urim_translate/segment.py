@@ -111,6 +111,21 @@ def protect(text: str, lang: str):
     return text, ph
 
 
+def protect_markup(text: str):
+    """Like protect() but only masks markup (footnotes, links, URLs, code, tags); scripture
+    citations are left in place. For script conversions that are not translations."""
+    ph, n = {}, [0]
+
+    def put(val):
+        n[0] += 1
+        ph[n[0]] = val
+        return PH.format(n[0])
+
+    for rx in _PROTECT:
+        text = rx.sub(lambda m: put(m.group(0)), text)
+    return text, ph
+
+
 def restore(text: str, ph: dict):
     return PH_RE.sub(lambda m: ph.get(int(m.group(1)), m.group(0)), text)
 

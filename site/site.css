@@ -104,11 +104,3 @@ footer .rail{max-width:var(--rail)}
   .sidebar .wordmark{display:inline-flex;padding:0 4px 6px}
   .side-nav.lower{margin-top:auto}
 }
-
-/* script toggle (Latin / Deseret) */
-.side-nav button{display:flex;align-items:center;gap:10px;width:100%;min-height:40px;padding:0 12px;border-radius:var(--radius);color:var(--muted);background:none;font:500 .9rem var(--font-sans);border:1px solid transparent;cursor:pointer;text-align:left}
-.side-nav button:hover{background:var(--muted-soft);color:var(--foreground)}
-.side-nav button[aria-pressed=true]{background:var(--muted-soft);color:var(--honey);border-color:var(--honey)}
-.side-nav button[aria-busy=true]{opacity:.6}
-.ic.glyph{display:inline-grid;place-items:center;font:600 1rem "Noto Sans Deseret",sans-serif;line-height:1}
-html[data-script=deseret]{--font-sans:Inter,"Noto Sans Deseret",system-ui,-apple-system,"Segoe UI",sans-serif;--font-serif:Fraunces,"Noto Sans Deseret",Georgia,"Times New Roman",serif}

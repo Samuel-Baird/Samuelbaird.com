@@ -28,7 +28,7 @@ t.coverage("some text");                       // { words, converted, left_latin
 
 ```js
 // Browser (no Node APIs): fetch the data yourself
-import { createTransliterator, parseWords } from "/deseret/lib/index.mjs";
+import { createTransliterator, parseWords } from "@urim/deseret";
 const t = createTransliterator({ words: parseWords(tsv), heteronyms, overrides });
 ```
 
@@ -40,7 +40,7 @@ node deseret/bin/deseret.mjs --html page.html
 
 `text()` is for plain text. For markup use `html()`, which is what Pulpit uses: running `text()` over markdown would transliterate link URLs.
 
-On the Urim site, the sidebar's **Deseret script** button loads the same package and converts English text in place. Portuguese and Spanish text is marked `lang="pt"` / `lang="es"` and never converted. The hosted MCP exposes it as the `to_deseret` tool.
+The Urim site itself is English only. The package is exposed as the `to_deseret` tool on the hosted MCP (`/api/mcp`) and as `to_deseret` / `deseret_file` on the local translation server, and it produces the Deseret proclamation PDFs.
 
 ## Data and provenance
 

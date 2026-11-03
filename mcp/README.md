@@ -38,7 +38,9 @@ Without any backend installed, the server still returns Church translation-memor
 
 ## Tools
 
-`translate_text`, `translate_file`, `get_translation`, `match_glossary`, `check_translation`, `lookup_term`, `glossary_add`, `glossary_remove`, `glossary_list`, `search_memory`, `backends_status`.
+`translate_text`, `translate_file`, `get_translation`, `match_glossary`, `check_translation`, `lookup_term`, `glossary_add`, `glossary_remove`, `glossary_list`, `search_memory`, `backends_status`, plus two for the Deseret Alphabet:
+
+- `to_deseret(text)` transliterates English text; `deseret_file(path)` does a markdown/text file (frontmatter, code, tables, footnotes, links and URLs stay as they are) and writes it to disk. This is a script conversion, not a translation, so it needs no models. It runs the package in `../deseret` and needs Node.js; words with no Deseret spelling stay in Latin script and are listed.
 
 User overrides (`glossary_add`) are enforced and take precedence over the Church glossary; they live only in your local database.
 

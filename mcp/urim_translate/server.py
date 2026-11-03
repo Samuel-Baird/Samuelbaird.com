@@ -3,7 +3,7 @@ from pathlib import Path
 
 from mcp.server.mcpserver import MCPServer
 
-from . import config, segment
+from . import config, deseret, segment
 from .glossary import Glossary
 from .translator import Seg, Translator
 
@@ -149,9 +149,42 @@ def search_memory(query: str, lang: str = "", origin: str = "", limit: int = 10)
 
 
 @mcp.tool()
+def to_deseret(text: str, confident_only: bool = False) -> dict:
+    """Transliterate English text into the Deseret Alphabet (the 38-letter script of the 1860s Church
+    printings), using the pulpit-vault engine: dictionary spellings, context-resolved heteronyms
+    (read/live/use), capitalization kept. English only. Words with no spelling stay in Latin script
+    and are listed. `confident_only` also leaves machine-guessed spellings in Latin. For markdown or
+    long documents use deseret_file."""
+    if not text.strip():
+        raise ValueError("text is required")
+    out, cov = deseret.convert_text(text[:20000], confident_only)
+    return {"deseret": out, **cov}
+
+
+@mcp.tool()
+def deseret_file(path: str, output_path: str = "", confident_only: bool = False) -> dict:
+    """Transliterate a markdown/text file into the Deseret Alphabet. Frontmatter, code blocks, tables,
+    footnote labels and references, links and URLs are kept as they are. The result is written to disk
+    (default under the Urim jobs folder, or `output_path`) and only its path and coverage are returned."""
+    import hashlib
+    p = Path(path)
+    text = p.read_text(encoding="utf-8")
+    out, cov = deseret.convert_document(text, confident_only)
+    if output_path:
+        dest = Path(output_path)
+    else:
+        doc_id = hashlib.sha1(f"{p}|{text[:5000]}".encode("utf-8")).hexdigest()[:10]
+        dest = config.HOME / "jobs" / doc_id / f"{p.stem}.dsrt{p.suffix or '.txt'}"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(out, encoding="utf-8")
+    return {"output_path": str(dest), **cov}
+
+
+@mcp.tool()
 def backends_status() -> dict:
     """Which translation backends are available (Argos, LibreTranslate, Ollama) and why not, if unavailable."""
-    return {"backends": T().status(), "ollama_model": config.OLLAMA_MODEL, "home": str(config.HOME)}
+    return {"backends": T().status(), "ollama_model": config.OLLAMA_MODEL, "home": str(config.HOME),
+            "deseret": deseret.available()[1]}
 
 
 def main():

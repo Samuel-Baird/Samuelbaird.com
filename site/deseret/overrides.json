@@ -1,8 +1,0 @@
-{
-  "_note": "Urim-curated pronunciations (ARPAbet) that take precedence over words.tsv. Initialisms are spelled letter by letter, as in pulpit-vault's schema/deseret/acronyms.tsv.",
-  "ai": ["EY1", "AY1"],
-  "mcp": ["EH1", "M", "S", "IY1", "P", "IY1"],
-  "api": ["EY1", "P", "IY1", "AY1"],
-  "csv": ["S", "IY1", "EH1", "S", "V", "IY1"],
-  "json": ["JH", "EY1", "S", "AH0", "N"]
-}
