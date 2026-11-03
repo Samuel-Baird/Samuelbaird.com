@@ -3,3 +3,7 @@ pymupdf
 pyyaml
 pytest
 pyphen
+fonttools
+uharfbuzz
+budoux
+regex

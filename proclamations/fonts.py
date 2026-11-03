@@ -5,9 +5,11 @@ glyph for it, so one line can mix scripts (Armenian text with a Latin name, Dese
 the template knowing. A face that lacks an italic or bold gets a synthetic one (slant / hairline stroke).
 All faces are SIL OFL Noto fonts and are embedded as subsets.
 
-This is simple text layout only: left-to-right, one glyph per character, no contextual shaping. Scripts
-that need shaping, right-to-left layout or dictionary line breaking are not handled here (see docs/scripts.md).
+Scripts that need contextual shaping (Arabic, Indic, Thai, Lao, Khmer, Myanmar) use faces flagged "shape":
+their runs are shaped with HarfBuzz and drawn as glyph outlines (render.Page.seg), with an invisible text layer
+so the PDF stays searchable. Everything else is drawn as ordinary text. See docs/scripts.md.
 """
+import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
@@ -33,9 +35,24 @@ FAMILIES = {
         {"r": "NotoSansDeseret-Regular"},
     ],
 }
+# scripts that need shaping: chain key -> (font family file stem, right-to-left)
+SHAPED = {
+    "arabic": ("NotoNaskhArabic", True), "urdu": ("NotoNastaliqUrdu", True),
+    "devanagari": ("NotoSerifDevanagari", False), "bengali": ("NotoSerifBengali", False),
+    "gujarati": ("NotoSerifGujarati", False), "tamil": ("NotoSerifTamil", False),
+    "telugu": ("NotoSerifTelugu", False), "kannada": ("NotoSerifKannada", False),
+    "malayalam": ("NotoSerifMalayalam", False), "sinhala": ("NotoSerifSinhala", False),
+    "thai": ("NotoSerifThai", False), "lao": ("NotoSerifLao", False),
+    "khmer": ("NotoSerifKhmer", False), "myanmar": ("NotoSerifMyanmar", False),
+}
+for _key, (_stem, _rtl) in SHAPED.items():
+    FAMILIES["serif-" + _key] = [FAMILIES["serif"][0],
+                                 {"r": _stem + "-Regular", "b": _stem + "-Bold", "shape": True, "rtl": _rtl}]
+# Han and Hangul: subset TrueType faces (fonts/build_cjk.py), drawn as ordinary text
+for _key, _stem in {"sc": "NotoSerifSC", "tc": "NotoSerifTC", "jp": "NotoSerifJP", "kr": "NotoSerifKR"}.items():
+    FAMILIES["serif-" + _key] = [FAMILIES["serif"][0], {"r": _stem + "-Regular", "b": _stem + "-Bold"}]
 DSRT = "NotoSansDeseret-Regular"
 _family = "sans"
-_done = False
 
 
 def _tounicode(fontname, subset):
@@ -55,27 +72,30 @@ def _tounicode(fontname, subset):
     return "\n".join(lines)
 
 
-def register():
-    global _done
-    if _done:
-        return
+_registered = set()
+
+
+def _register_family(family):
     _tt.makeToUnicodeCMap = _tounicode
-    seen = set()
-    for chain in FAMILIES.values():
-        for face in chain:
-            for name in face.values():
-                if name not in seen:
-                    seen.add(name)
-                    pdfmetrics.registerFont(TTFont(name, str(FONT_DIR / f"{name}.ttf")))
-    _done = True
+    for face in FAMILIES[family]:
+        for key, name in face.items():
+            if key in ("r", "i", "b") and name not in _registered:
+                _registered.add(name)
+                pdfmetrics.registerFont(TTFont(name, str(FONT_DIR / f"{name}.ttf")))
+
+
+def register():
+    """Register the faces of the current family with ReportLab (others on demand, since CJK faces are large)."""
+    _register_family(_family)
 
 
 def set_family(name):
-    """Choose the font family ('serif' or 'sans') used for the following text."""
+    """Choose the font family ('serif', 'sans', 'serif-arabic', ...) used for the following text."""
     global _family
     if name not in FAMILIES:
         raise KeyError(name)
     _family = name
+    _register_family(name)
 
 
 @lru_cache(maxsize=None)
@@ -104,17 +124,130 @@ def pick(ch, style, family=None):
     return face["r"], style == "i", style == "b"
 
 
+def _inherits(ch):
+    """Combining marks, joiners and variation selectors are drawn with the face of the character before them."""
+    return unicodedata.category(ch) in ("Mn", "Mc", "Me", "Cf")
+
+
 def runs(text, style="r"):
     """Split into runs drawn with one font: [(font name, synthetic italic, synthetic bold, substring)].
-    Spaces stay with the run they follow."""
+    Spaces and combining marks stay with the run they follow."""
     out = []
     for ch in text:
-        key = pick(ch, style) if ch != " " else (out[-1][:3] if out else pick(" ", style))
-        if out and out[-1][:3] == key:
+        if out and (ch == " " or _inherits(ch)):
+            key = tuple(out[-1][:3])
+        else:
+            key = pick(ch, style)
+        if out and tuple(out[-1][:3]) == key:
             out[-1][3] += ch
         else:
             out.append([*key, ch])
     return [tuple(r) for r in out]
+
+
+# ---- shaped faces (Arabic, Indic, Thai, ...): HarfBuzz shaping and glyph outlines
+_SHAPE_FACES = {}
+
+
+def _scan_shaped():
+    for chain in FAMILIES.values():
+        for face in chain:
+            if face.get("shape"):
+                for key in ("r", "b"):
+                    if key in face:
+                        _SHAPE_FACES[face[key]] = face
+
+
+_scan_shaped()
+
+
+def is_shaped(font):
+    return font in _SHAPE_FACES
+
+
+def is_rtl(font):
+    return bool(_SHAPE_FACES.get(font, {}).get("rtl"))
+
+
+@lru_cache(maxsize=None)
+def _hb_font(name):
+    import uharfbuzz as hb
+    blob = hb.Blob.from_file_path(str(FONT_DIR / f"{name}.ttf"))
+    face = hb.Face(blob)
+    return hb.Font(face), face.upem
+
+
+@lru_cache(maxsize=200000)
+def shape(font, text):
+    """Shape `text` with `font`: (glyph ids, advances, x offsets, y offsets, units per em) in visual left-to-right order."""
+    import uharfbuzz as hb
+    f, upem = _hb_font(font)
+    buf = hb.Buffer()
+    buf.add_str(text)
+    buf.direction = "rtl" if is_rtl(font) else "ltr"
+    buf.guess_segment_properties()
+    buf.direction = "rtl" if is_rtl(font) else "ltr"
+    hb.shape(f, buf, {"kern": True, "liga": True})
+    infos, pos = buf.glyph_infos, buf.glyph_positions
+    return (tuple(i.codepoint for i in infos), tuple(p.x_advance for p in pos),
+            tuple(p.x_offset for p in pos), tuple(p.y_offset for p in pos), upem)
+
+
+def shaped_width(font, text, size):
+    return sum(shape(font, text)[1]) * size / shape(font, text)[4]
+
+
+_PATHS = {}
+
+
+def glyph_path(font, gid):
+    """Outline of one glyph as [(op, points)] in font units; quadratic curves are converted to cubic."""
+    key = (font, gid)
+    if key not in _PATHS:
+        from fontTools.pens.basePen import BasePen
+
+        class P(BasePen):
+            def __init__(self, gs):
+                super().__init__(gs)
+                self.ops = []
+
+            def _moveTo(self, p):
+                self.ops.append(("M", p))
+
+            def _lineTo(self, p):
+                self.ops.append(("L", p))
+
+            def _curveToOne(self, a, b, c):
+                self.ops.append(("C", a, b, c))
+
+            def _qCurveToOne(self, q, e):
+                p0 = self._getCurrentPoint()
+                a = (p0[0] + 2 / 3 * (q[0] - p0[0]), p0[1] + 2 / 3 * (q[1] - p0[1]))
+                b = (e[0] + 2 / 3 * (q[0] - e[0]), e[1] + 2 / 3 * (q[1] - e[1]))
+                self.ops.append(("C", a, b, e))
+
+            def _closePath(self):
+                self.ops.append(("Z",))
+
+        gs = _glyphset(font)
+        name = gs.glyphOrder[gid] if hasattr(gs, "glyphOrder") else _glyph_order(font)[gid]
+        pen = P(gs)
+        gs[name].draw(pen)
+        _PATHS[key] = pen.ops
+    return _PATHS[key]
+
+
+@lru_cache(maxsize=None)
+def _ttfont(font):
+    return _FT(str(FONT_DIR / f"{font}.ttf"))
+
+
+def _glyphset(font):
+    return _ttfont(font).getGlyphSet()
+
+
+def _glyph_order(font):
+    return _ttfont(font).getGlyphOrder()
 
 
 def missing_chars(text, family=None):
@@ -140,7 +273,8 @@ def sanitize(text, family=None):
 
 def text_width(text, size, style="r", track=0.0):
     register()
-    w = sum(pdfmetrics.stringWidth(sub, name, size) for name, _i, _b, sub in runs(text, style))
+    w = sum(shaped_width(name, sub, size) if name in _SHAPE_FACES else pdfmetrics.stringWidth(sub, name, size)
+            for name, _i, _b, sub in runs(text, style))
     return w + track * len(text)
 
 
@@ -156,3 +290,33 @@ def to_caps(text):
 
 def is_upper(ch):
     return 0x10400 <= ord(ch) <= 0x10427 or ch.isupper()
+
+
+def initial_split(text):
+    """(first grapheme cluster, rest): the drop cap is a whole letter with its vowel signs, not one code point."""
+    import regex
+    m = regex.match(r"\X", text)
+    return (m.group(), text[m.end():]) if m else ("", text)
+
+
+def visual_text(text):
+    """Right-to-left text in the order it is drawn (clusters reversed). PDF readers expect the invisible text layer
+    of a right-to-left run in visual order, as other PDF writers produce it, and restore reading order themselves."""
+    import regex
+    return "".join(regex.findall(r"\X", text)[::-1])
+
+
+def drop_width(text, size, style="r"):
+    """Width to reserve beside a drop cap: its advance, or its ink if marks and medials stick out further (Myanmar)."""
+    w = text_width(text, size, style)
+    for font, _i, _b, sub in runs(text, style):
+        if font in _SHAPE_FACES:
+            gids, adv, xo, _yo, upem = shape(font, sub)
+            x, right = 0.0, 0.0
+            for gid, a, dx in zip(gids, adv, xo):
+                xs = [pt[0] for op in glyph_path(font, gid) for pt in op[1:]] if gid else []
+                if xs:
+                    right = max(right, x + dx + max(xs))
+                x += a
+            w = max(w, right * size / upem)
+    return w

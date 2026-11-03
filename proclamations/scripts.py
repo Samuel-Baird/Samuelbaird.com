@@ -1,5 +1,5 @@
 """Editions, built from the registry (languages.yaml). A Script says which published text to start from,
-how to convert it, and how to typeset it (Latin font family, hyphenation dictionary, credit line, hints).
+how to convert it, and how to typeset it (font family, hyphenation, direction, line breaking, credit line, hints).
 
 - kind "language": the Church's own published text for that language (nothing is translated here).
 - kind "script": the English text converted into another alphabet (Deseret).
@@ -28,6 +28,13 @@ class Script:
         self.hyphenation = entry.get("hyphenation")
         self.justify = entry.get("justify", self.hyphenation is not None)   # ragged-right without a dictionary
         self.cased = entry.get("caps", "upper") != "none"
+        self.rtl = entry.get("rtl", False)                  # right-to-left: the whole design is mirrored
+        self.breaker = entry.get("breaks")                  # linebreak.py function for scripts without spaces
+        self.spaced = entry.get("spaced", True)             # words are separated by spaces (lead-ins make sense)
+        self.lead = entry.get("lead", 1.0)                  # line spacing multiplier for tall scripts
+        self.tracked = entry.get("tracked", True)           # letter-spacing is fine (not for joined scripts)
+        self.char_justify = entry.get("char_justify", False)
+        self.dc_scale = entry.get("dc_scale", 1.0)          # drop-cap size factor
         self.credit = entry.get("credit", DEFAULT_CREDIT)
         self.hints = entry.get("hints") or {}
 

@@ -3,8 +3,8 @@
     python -m proclamations.register
 
 A language qualifies when the survey found at least one proclamation for it (language-survey.json) and the
-font chain has a glyph for every character of its texts (after compatibility normalization). Languages whose
-script needs shaping, right-to-left layout or dictionary line breaking are listed in docs/scripts.md instead.
+font chain has a glyph for every character of its texts (after compatibility normalization). Scripts that need shaping,
+right-to-left layout or special line breaking get their settings from RULES below (docs/scripts.md).
 Hand-written entries in languages.yaml take precedence over generated ones.
 """
 import glob
@@ -28,6 +28,38 @@ HYPHENATION = {
 }
 CASELESS = {"kat"}          # Georgian (Mkhedruli) has no capitals; upper-casing would pick Mtavruli forms the font may lack
 SLUG_OVERRIDES = {"ept": "portugueseuropeu"}
+
+# Scripts that need more than plain left-to-right text. Joined and combining scripts are never letter-spaced
+# (tracked: false); scripts written without spaces break lines by linebreak.py and spread the slack between
+# characters; tall scripts get extra line spacing (lead). See docs/scripts.md.
+_JOINED = {"caps": "none", "tracked": False, "justify": True}
+_UNSPACED = {**_JOINED, "spaced": False, "char_justify": True}
+RULES = {
+    "ara": {**_JOINED, "font": "serif-arabic", "rtl": True, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "lead": 1.25},
+    "urd": {**_JOINED, "font": "serif-arabic", "rtl": True, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "lead": 1.3},
+    "pes": {**_JOINED, "font": "serif-arabic", "rtl": True, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "lead": 1.25},
+    "ckb": {**_JOINED, "font": "serif-arabic", "rtl": True, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "dc_scale": 0.7, "lead": 1.25},
+    "hin": {**_JOINED, "font": "serif-devanagari", "lead": 1.3},
+    "mar": {**_JOINED, "font": "serif-devanagari", "lead": 1.3},
+    "nep": {**_JOINED, "font": "serif-devanagari", "lead": 1.3},
+    "ben": {**_JOINED, "font": "serif-bengali", "lead": 1.25},
+    "guj": {**_JOINED, "font": "serif-gujarati", "lead": 1.25},
+    "tam": {**_JOINED, "font": "serif-tamil", "lead": 1.3},
+    "tel": {**_JOINED, "font": "serif-telugu", "lead": 1.35},
+    "kan": {**_JOINED, "font": "serif-kannada", "lead": 1.35},
+    "mal": {**_JOINED, "font": "serif-malayalam", "lead": 1.35},
+    "sin": {**_JOINED, "font": "serif-sinhala", "lead": 1.3},
+    "tha": {**_UNSPACED, "font": "serif-thai", "breaks": "thai", "lead": 1.3},
+    "lao": {**_UNSPACED, "font": "serif-lao", "breaks": "lao", "lead": 1.3},
+    "khm": {**_UNSPACED, "font": "serif-khmer", "breaks": "khmer", "lead": 1.4},
+    "mya": {**_UNSPACED, "font": "serif-myanmar", "breaks": "myanmar", "lead": 1.5, "dc_scale": 0.32},
+    "ksw": {**_UNSPACED, "font": "serif-myanmar", "breaks": "myanmar", "lead": 1.5, "dc_scale": 0.32},
+    "zhs": {**_UNSPACED, "font": "serif-sc", "breaks": "cjk", "lead": 1.3, "tracked": True},
+    "zho": {**_UNSPACED, "font": "serif-tc", "breaks": "cjk", "lead": 1.3, "tracked": True},
+    "yue": {**_UNSPACED, "font": "serif-tc", "breaks": "cjk", "lead": 1.3, "tracked": True},
+    "jpn": {**_UNSPACED, "font": "serif-jp", "breaks": "cjk", "lead": 1.3, "tracked": True},
+    "kor": {**_JOINED, "font": "serif-kr", "lead": 1.25, "tracked": True},
+}
 
 
 def ascii_slug(text):
@@ -69,9 +101,11 @@ def main():
         code = e["code"]
         if not e["documents"] or code in handled:
             continue
+        rules = RULES.get(code, {})
+        family = rules.get("font", "serif")
         txt = texts_of(code)
-        txt = fonts.sanitize(txt, "serif")
-        missing = fonts.missing_chars(txt, "serif")
+        txt = fonts.sanitize(txt, family)
+        missing = fonts.missing_chars(txt, family)
         if missing:
             skipped.append((code, e["script"], "".join(missing)[:12]))
             continue
@@ -80,6 +114,7 @@ def main():
         taken.add(slug)
         entry = {"kind": "language", "code": code, "native": e["name"], "english": english,
                  "hyphenation": HYPHENATION.get(code), "font": "serif"}
+        entry.update(rules)
         if code in CASELESS:
             entry["caps"] = "none"
         out[slug] = entry

@@ -169,3 +169,51 @@ def test_documents_render_in_parallel(tmp_path):
     assert main(["--edition", "portugues", "--doc", "family,restoration", "--size", "letter", "--out", str(tmp_path), "--jobs", "2"]) is None
     assert sorted(p.name for p in (tmp_path / "portugues").glob("*.pdf")) == [
         "family-portugues-letter.pdf", "restoration-portugues-letter.pdf"]
+
+
+# ---- shaped, right-to-left and unspaced scripts
+def test_runs_merge_characters_of_one_font():
+    from proclamations import fonts
+    fonts.set_family("serif-devanagari")
+    parts = fonts.runs("Joseph नमस्ते Smith")
+    assert [p[0] for p in parts] == ["NotoSerif-Regular", "NotoSerifDevanagari-Regular", "NotoSerif-Regular"][:len(parts)]
+    assert "".join(p[3] for p in parts) == "Joseph नमस्ते Smith"
+    fonts.set_family("serif")
+
+
+def test_devanagari_is_shaped():
+    from proclamations import fonts
+    gids, adv, *_ = fonts.shape("NotoSerifDevanagari-Regular", "हिन्दी")
+    assert gids and all(g != 0 for g in gids)               # no missing glyphs
+    assert len(gids) < len("हिन्दी")                        # conjuncts and vowel signs were combined
+    assert fonts.glyph_path("NotoSerifDevanagari-Regular", gids[0])
+
+
+def test_kinsoku_never_starts_a_line_with_closing_punctuation():
+    from proclamations import linebreak
+    text = "今日は、晴れです。「はい」と言った。"
+    cuts = linebreak.cjk(text)
+    assert all(text[i] not in "、。」" for i in cuts) and all(text[i - 1] != "「" for i in cuts)
+
+
+def test_right_to_left_words_keep_latin_runs_in_reading_order():
+    from proclamations.layout import Word, Seg
+    from proclamations.render import visual_order
+    words = [Word([Seg(t, 9)]) for t in ("مرحبا", "Gordon", "Hinckley", "عالم")]
+    assert visual_order(words) == [0, 2, 1, 3]
+
+
+@pytest.mark.parametrize("edition", ["arabic", "hindi", "thai", "mandarinchinesesimplified", "korean", "burmese"])
+def test_complex_script_documents_pass_the_integrity_check(edition, tmp_path):
+    script = scripts.get(edition)
+    path = render("family", script, "letter", tmp_path)
+    failed = [(a, c) for a, ok, c in check.output_check(path) if not ok]
+    assert not failed, failed
+    assert pymupdf.open(path)[0].get_text().strip()          # the invisible text layer makes it searchable
+
+
+def test_arabic_page_is_mirrored(tmp_path):
+    path = render("family", scripts.get("arabic"), "letter", tmp_path)
+    words = [w for w in pymupdf.open(path)[0].get_text("words") if w[1] > 235]          # body text, below the headings
+    top = min(words, key=lambda w: (round(w[1]), -w[0]))
+    assert top[0] > 306                                      # reading starts in the right-hand column

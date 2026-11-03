@@ -98,7 +98,8 @@ def render(slug, script, size_name, out_dir, with_credit=True, loc=None):
     """Render one PDF. Pass `loc` (from localize) to avoid converting the text again."""
     fonts.set_family(script.latin_family)
     layout.set_hyphenation(script.hyphenation)
-    layout.set_justify(script.justify)
+    layout.set_justify(script.justify, script.char_justify)
+    layout.set_breaker(script.breaker)
     L, d = loc or localize(slug, script)
     w, h = sizes_mod.get(size_name)
     path = output_path(out_dir, script.name, slug, size_name)
@@ -108,7 +109,7 @@ def render(slug, script, size_name, out_dir, with_credit=True, loc=None):
         "title": f"{title} ({script.label})",
         "author": "Unofficial layout; not an official publication of The Church of Jesus Christ of Latter-day Saints",
         "subject": f"Source text: {d['source_url']}",
-    })
+    }, rtl=script.rtl)
     TEMPLATES[slug](pg, L)
     if with_credit:
         credit(pg, L)

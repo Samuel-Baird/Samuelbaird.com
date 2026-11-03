@@ -1,6 +1,6 @@
 # Proclamations generator
 
-Generates the Church's proclamations in the **layout of the official PDFs**, as vector PDFs at standard and poster sizes, in every edition listed in `languages.yaml`: the **languages** (the Church's own published text, pulled from its website: English, Español, Português so far) and **alphabets** (the English text converted, so far the Deseret Alphabet). Adding a language is a registry entry plus a fetch, with no code change.
+Generates the Church's proclamations in the **layout of the official PDFs**, as vector PDFs at standard and poster sizes, in every edition listed in `languages.yaml`: the **languages** (the Church's own published text, pulled from its website: every language in which the Church has published a proclamation and that the engine can set; 125 languages with texts, see `docs/scripts.md`) and **alphabets** (the English text converted, so far the Deseret Alphabet). Adding a language is a registry entry plus a fetch, with no code change.
 
 Unofficial: not produced or approved by The Church of Jesus Christ of Latter-day Saints. Every PDF says so in its bottom margin (`--no-credit` removes the line, for your own use).
 
@@ -65,11 +65,11 @@ Sizes: `letter` (8.5 x 11 in) and its metric equivalent `a4` (210 x 297 mm) for 
 3. If the Articles of Faith heading cannot be split, set `aof_split` to the words where "of The Church of Jesus Christ..." begins.
 4. `python -m proclamations.generate --edition <slug> --jobs 4`, then `check --outputs`, `publish` and `python -m pipeline.build`.
 
-Latin-script languages work as they are. A language in another script (Cyrillic, Greek, Arabic, Thai, CJK, ...) also needs a font that covers it added to `fonts/` and a family entry in `fonts.py`; right-to-left scripts need template work. A script conversion of existing text (like Deseret) implements `convert()` in a `Script` subclass and sets `source` to the language it converts.
+Latin, Cyrillic, Greek, Armenian, Georgian and Ethiopic work as they are. Arabic-script, Indic, Thai, Lao, Khmer, Myanmar, Chinese, Japanese and Korean editions use HarfBuzz shaping, right-to-left mirroring and per-script line breaking; how each works, and how to add another script, is in `docs/scripts.md`. A script conversion of existing text (like Deseret) implements `convert()` in a `Script` subclass and sets `source` to the language it converts.
 
 ## Scale
 
-Text is converted once per document and rendered at every size, and documents render in parallel (`--jobs`): all 176 current PDFs take about 30 seconds. Each language adds about 44 PDFs and 4 previews, roughly 2.5 MB. At 100+ languages that is several hundred MB of static files, which is heavy for git and for a static deployment; if that becomes a problem, keep Letter and A4 in the repository and serve the posters from object storage (for example Vercel Blob or GitHub Releases) or render them on demand.
+Text is converted once per document and rendered at every size, and documents render in parallel (`--jobs`): all 176 current PDFs take about 30 seconds. Each language adds about 44 PDFs and 4 previews, roughly 2.5 MB. At 100+ languages that is several hundred MB of static files, which is heavy for git and for a static deployment; so the repository and site carry only Letter and A4 (`publish.py`); the poster sizes (11x17 to A0) are generated into `proclamations/out/` (gitignored) and hosted in Google Drive, in a folder per edition named like the site's folders (`drive.json` records the folder links).
 
 ## Text extraction
 

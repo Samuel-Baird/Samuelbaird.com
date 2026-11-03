@@ -8,8 +8,8 @@ extra height to the text block.
 """
 from dataclasses import dataclass, field
 
-from .fonts import CAP_HEIGHT, text_width, to_caps
-from .layout import Para, Seg, Word, balanced_lines, fit, small_caps_word, word
+from .fonts import CAP_HEIGHT, drop_width, initial_split, text_width, to_caps
+from .layout import Para, Seg, Word, balanced_lines, find_breaks, fit, small_caps_word, word
 from .render import Page
 
 H0 = 792.0
@@ -64,6 +64,18 @@ def split_words(text, counts):
 def auto_split(text, n):
     """Split a heading into n lines of similar length at word boundaries."""
     ws = text.split()
+    if n > 1 and len(ws) < n:
+        cuts = [i for i, _ in find_breaks(text)]
+        if cuts:                                    # one long unspaced heading: cut where the halves are most alike
+            ideal = [len(text) * k / n for k in range(1, n)]
+            pick, used = [], set()
+            for want in ideal:
+                c = min((c for c in cuts if c not in used), key=lambda c: abs(c - want), default=None)
+                if c is not None:
+                    pick.append(c)
+                    used.add(c)
+            pick = sorted(pick)
+            return [text[a:b].strip() for a, b in zip([0] + pick, pick + [len(text)])]
     if n <= 1 or len(ws) < 2:
         return [text]
     import itertools
@@ -94,6 +106,8 @@ def auto_lead(toks, default=3):
 
 
 def family_lead(L, i, toks):
+    if not L.script.spaced:
+        return 0
     leads = L.hints.get("family_leads")
     return leads[i] if leads and i < len(leads) else auto_lead(toks)
 
@@ -135,6 +149,11 @@ def dropcap(pg, ch, size, color, x, baseline, style="r"):
 def dc_size(lines, lead, size):
     """Font size whose capital height spans `lines` lines of body text."""
     return ((lines - 1) * lead + CAP_HEIGHT * size) / CAP_HEIGHT
+
+
+def dcz(L, lines, lead, size):
+    """Drop-cap size for this edition's script (letters with deep descenders sit smaller)."""
+    return dc_size(lines, lead, size) * L.script.dc_scale
 
 
 def centered_note(pg, text, baseline, size, color, max_w, leading, style="i"):
@@ -183,15 +202,17 @@ def family(pg, L):
     pg.vrule(306, 226.4, 678.4 + d, 0.5, INK)
 
     def build(s):
-        size, lead, gap = 9 * s, 12.5 * s, 6.2 * s
+        k = L.script.lead
+        size, lead, gap = 9 * s, 12.5 * s * k, 6.2 * s
         paras = []
         for i, text in enumerate(L.paragraphs):
             toks = text.split(" ")
             n = family_lead(L, i, toks)
             words = []
             if i == 0:
-                first = toks[0][1:]
-                words.append(small_caps_word(first, 7 * s, 7.2 * s, INK, first_big=False)) if first else None
+                first = initial_split(toks[0])[1]
+                if first:
+                    words.append(small_caps_word(first, 7 * s, 7.2 * s, INK, first_big=False) if n else word(first, size, color=INK))
             for j, t in enumerate(toks):
                 if i == 0 and j == 0:
                     continue
@@ -201,16 +222,17 @@ def family(pg, L):
                     words.append(word(t, size, color=INK))
             p = Para(words, size, lead, gap_before=gap)
             if i == 0:
-                dcs = dc_size(3, lead, size)
-                p.dropcap_lines, p.dropcap_w = 3, text_width(toks[0][0], dcs) + 3 * s
-                p.tag = toks[0][0]
+                dcs = dcz(L, 3, lead, size)
+                p.dropcap_lines, p.dropcap_w = 3, drop_width(initial_split(toks[0])[0], dcs) + 3 * s
+                p.tag = initial_split(toks[0])[0]
             paras.append(p)
         return paras
 
     s, st, (c1, c2) = body(pg, spec, build)
-    lead = 12.5 * s * st
-    dcs = dc_size(3, 12.5 * s, 9 * s)
-    dropcap(pg, L.paragraphs[0][0], dcs, MAROON, 54, 231.0 + 2 * lead)
+    k = L.script.lead
+    lead = 12.5 * s * st * k
+    dcs = dcz(L, 3, 12.5 * s * k, 9 * s)
+    dropcap(pg, initial_split(L.paragraphs[0])[0], dcs, MAROON, 54, 231.0 + 2 * lead)
     centered_note(pg, L.note, 705 + d, 9, INK, 470, 13)
     pg.hrule(738 + d, 54, 558, 0.5, INK)
 
@@ -221,7 +243,7 @@ def living_christ(pg, L):
     S = L.script
     pg.frame(36, 36, 576, 756 + d, 0.25, INK)
     title = S.caps(L.title)
-    pg.centered(306, 82, [Seg(title, fit_size(title, 36, 400), color=BROWN)])
+    pg.centered(306, 82, [Seg(title, fit_size(title, 36 / max(S.lead, 1.0) ** 0.9, 400), color=BROWN)])
     pg.centered(306, 100, sc_segs(L.subtitle, 16, 12, INK))
     pg.centered(306, 114.5, sc_segs(L.author, 12, 9, INK))
 
@@ -229,9 +251,10 @@ def living_christ(pg, L):
     pg.vrule(306, 125.5, 622 + d, 0.25, INK)
 
     s, st, _ = body(pg, spec, _lc_build(L))
-    lead = 14.0 * s * st
-    dcs = dc_size(4, 14.0 * s, 10.7 * s)
-    dropcap(pg, L.paragraphs[0][0], dcs, BROWN, 65, 134.0 + 3 * lead)
+    k = L.script.lead
+    lead = 14.0 * s * st * k
+    dcs = dcz(L, 4, 14.0 * s * k, 10.7 * s)
+    dropcap(pg, initial_split(L.paragraphs[0])[0], dcs, BROWN, 65, 134.0 + 3 * lead)
 
     # signatures: the originals carry facsimile signatures; here the signers' names are typeset instead
     g1, g2 = (L.groups + ["", ""])[:2]
@@ -251,19 +274,19 @@ def living_christ(pg, L):
 
 def _lc_build(L):
     def build(s):
-        size, lead = 10.7 * s, 14.0 * s
+        size, lead = 10.7 * s, 14.0 * s * L.script.lead
         paras = []
         for i, text in enumerate(L.paragraphs):
             toks = text.split(" ")
             if i == 0:
-                rest = toks[0][1:]
+                rest = initial_split(toks[0])[1]
                 words = ([word(rest, size, color=INK)] if rest else []) + [word(t, size, color=INK) for t in toks[1:]]
             else:
                 words = [word(t, size, color=INK) for t in toks]
             p = Para(words, size, lead, indent_first=0 if i == 0 else 12 * s)
             if i == 0:
-                dcs = dc_size(4, lead, size)
-                p.dropcap_lines, p.dropcap_w = 4, text_width(toks[0][0], dcs) + 2 * s
+                dcs = dcz(L, 4, lead, size)
+                p.dropcap_lines, p.dropcap_w = 4, drop_width(initial_split(toks[0])[0], dcs) + 2 * s
             paras.append(p)
         return paras
     return build
@@ -279,7 +302,7 @@ def restoration(pg, L):
     pg.hrule(103.8, 77.6, 533.6, 0.35, INK)
     pg.hrule(121.1, 77.6, 534.6, 0.35, INK)
     sub = S.caps(L.subtitle)
-    track = 3.2
+    track = 3.2 if S.tracked else 0.0
     ss = fit_size(sub, 13, 440, track=track)
     pg.centered(306, 116.5, [Seg(sub, ss, color=INK, track=track)])
     for i, line in enumerate(heading_lines(L, "restoration", "author", L.author)):
@@ -293,25 +316,25 @@ def restoration(pg, L):
     pg.vrule(305.6, 182, 712.8 + d, 0.35, INK)
 
     def build(s):
-        size, lead, gap = 9.3 * s, 15.0 * s, 3.0 * s
+        size, lead, gap = 9.3 * s, 15.0 * s * L.script.lead, 3.0 * s
         paras = []
         for i, text in enumerate(L.paragraphs):
             toks = text.split(" ")
             if i == 0:
-                rest = toks[0][1:]
+                rest = initial_split(toks[0])[1]
                 words = ([word(rest, size, color=INK)] if rest else []) + [word(t, size, color=INK) for t in toks[1:]]
             else:
                 words = [word(t, size, color=INK) for t in toks]
             p = Para(words, size, lead, gap_before=gap)
             if i == 0:
-                dcs = dc_size(3, lead, size)
-                p.dropcap_lines, p.dropcap_w = 3, text_width(toks[0][0], dcs) + 3 * s
+                dcs = dcz(L, 3, lead, size)
+                p.dropcap_lines, p.dropcap_w = 3, drop_width(initial_split(toks[0])[0], dcs) + 3 * s
             paras.append(p)
         return paras
 
     s, st, _ = body(pg, spec, build)
-    lead = 15.0 * s * st
-    dropcap(pg, L.paragraphs[0][0], dc_size(3, 15.0 * s, 9.3 * s), INK, 60, 188.0 + 2 * lead)
+    lead = 15.0 * s * st * L.script.lead
+    dropcap(pg, initial_split(L.paragraphs[0])[0], dcz(L, 3, 15.0 * s * L.script.lead, 9.3 * s), INK, 60, 188.0 + 2 * lead)
     centered_note(pg, L.note, 735 + d, 8.5, INK, 400, 11.5)
 
 
@@ -338,28 +361,29 @@ def articles_of_faith(pg, L):
     pg.vrule(306, 229.5, 729.9 + d, 0.5, GOLD)
 
     def build(s):
-        size, lead, gap = 12 * s, 15.5 * s, 10.2 * s
+        size, lead, gap = 12 * s, 15.5 * s * L.script.lead, 10.2 * s
         paras = []
         for i, (n, text) in enumerate(L.verses):
             toks = text.split(" ")
-            lead_n = auto_lead(toks, 4)
+            lead_n = auto_lead(toks, 4) if L.script.spaced else 1
             if i == 0:
-                rest = toks[0][1:]
-                words = [small_caps_word(rest, 0.86 * size, 0.86 * size, INK, first_big=False)] if rest else []
+                rest = initial_split(toks[0])[1]
+                words = ([small_caps_word(rest, 0.86 * size, 0.86 * size, INK, first_big=False) if L.script.spaced
+                          else word(rest, size, color=INK)] if rest else [])
                 for j, t in enumerate(toks[1:], start=1):
                     words.append(small_caps_word(t, 0.86 * size, 0.86 * size, INK, first_big=False) if j < lead_n else word(t, size, color=INK))
             else:
                 words = [Word([Seg(f"{n} ", 18 * s, color=(0, 0, 0))])] + [word(t, size, color=INK) for t in toks]
             p = Para(words, size, lead, gap_before=gap)
             if i == 0:
-                dcs = 59.4 * s * 0.78
-                p.dropcap_lines, p.dropcap_w = 2, text_width(toks[0][0], dcs) + 3 * s
+                dcs = 59.4 * s * 0.78 * L.script.dc_scale
+                p.dropcap_lines, p.dropcap_w = 2, drop_width(initial_split(toks[0])[0], dcs) + 3 * s
             paras.append(p)
         return paras
 
     s, st, _ = body(pg, spec, build)
-    lead = 15.5 * s * st
-    dropcap(pg, L.verses[0][1][0], 59.4 * s * 0.78, MAROON, 54, 242.0 + lead)
+    lead = 15.5 * s * st * L.script.lead
+    dropcap(pg, initial_split(L.verses[0][1])[0], 59.4 * s * 0.78 * L.script.dc_scale, MAROON, 54, 242.0 + lead)
     pg.right(558, 702 + d, sc_segs(L.signature.rstrip("."), 13.3, 10.6, INK) + [Seg(".", 10.6, color=INK)])
     pg.hrule(749.9 + d, 54, 558, 0.5, GOLD)
 

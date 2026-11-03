@@ -16,7 +16,7 @@ from pathlib import Path
 import pymupdf
 import yaml
 
-from . import reference, scripts, sizes
+from . import fonts, reference, scripts, sizes
 from .generate import DOCS, HERE, load_text, localize, render
 
 POS_TOL, END_TOL, COLOR_TOL = 2.0, 4.0, 0.08
@@ -66,7 +66,8 @@ def _split_dropcap(text):
     """The decorative initial is drawn as its own glyph, so extraction sees it as a separate token
     (the Church's own PDFs behave the same way)."""
     first, _, rest = text.partition(" ")
-    return (first[0] + " " + first[1:] + " " + rest) if len(first) > 1 else text
+    head, tail = fonts.initial_split(first)
+    return (head + " " + tail + " " + rest) if tail else text
 
 
 TRACKED = {"restoration"}      # letter-spaced subtitle: extractors (and the Church's own PDF) return it letter by letter
@@ -86,8 +87,15 @@ def _expected_words(L, d):
 
 
 def _overlaps(spans, scale=1.0):
-    """True when two text spans cover each other (a heading running into its neighbor)."""
-    boxes = [s["bbox"] for s in spans if len(s["text"].strip()) > 1 and not s["text"].strip().isdigit()]
+    """True when two text spans cover each other (a heading running into its neighbor). Only the middle band of each
+    span's box is compared: tall scripts have line boxes taller than their line spacing, which is not a collision."""
+    boxes = []
+    for s in spans:
+        t = s["text"].strip()
+        if len(t) > 1 and not t.isdigit():
+            x0, y0, x1, y1 = s["bbox"]
+            mid, h = (y0 + y1) / 2, (y1 - y0) * 0.2
+            boxes.append((x0, mid - h, x1, mid + h))
     for i, a in enumerate(boxes):
         for b in boxes[i + 1:]:
             w = min(a[2], b[2]) - max(a[0], b[0])
@@ -117,13 +125,20 @@ def output_check(path):
     rejoined = [a + b for a, b in re.findall(r"(\w+)-\n(\w+)", raw)]
     got = _norm(raw) + _norm(" ".join(rejoined))
     want = _expected_words(L, d)
-    missing, remaining = [], list(got)
-    for wd in want:
-        if wd in remaining:
-            remaining.remove(wd)
-        else:
-            missing.append(wd)
-    results.append(("no source words lost", not missing, f"{len(want)} expected, missing {missing[:8]}"))
+    if not script.spaced or script.rtl:
+        # no spaces between words (or a right-to-left text layer whose word gaps readers guess): compare the letters
+        from collections import Counter
+        have, need = Counter("".join(got)), Counter("".join(want))
+        lost = need - have
+        results.append(("no source letters lost", not lost, f"{sum(need.values())} expected, missing {dict(list(lost.items())[:8])}"))
+    else:
+        missing, remaining = [], list(got)
+        for wd in want:
+            if wd in remaining:
+                remaining.remove(wd)
+            else:
+                missing.append(wd)
+        results.append(("no source words lost", not missing, f"{len(want)} expected, missing {missing[:8]}"))
     if slug in TRACKED:
         letters = "".join(_norm(L.subtitle))
         stream = "".join(_norm(raw))                      # letters only, so tracked spacing and split diacritics do not matter
@@ -137,7 +152,8 @@ def main(argv=None):
     failures = 0
     if "--outputs" in argv:
         only = argv[argv.index("--sizes") + 1].split(",") if "--sizes" in argv else None
-        pdfs = [p for p in sorted((HERE / "out").glob("*/*.pdf")) if not only or p.stem.rsplit("-", 1)[1] in only]
+        root = Path(argv[argv.index("--dir") + 1]) if "--dir" in argv else HERE / "out"
+        pdfs = [p for p in sorted(root.glob("*/*.pdf")) if not only or p.stem.rsplit("-", 1)[1] in only]
         if not pdfs:
             print("no PDFs under proclamations/out; run proclamations.generate first")
             return 1
@@ -147,7 +163,7 @@ def main(argv=None):
             fails = [r for r in res if not r[1]]
             bad += bool(fails)
             if fails:
-                print(f"FAIL {p.relative_to(HERE)}: " + "; ".join(f"{a} ({c})" for a, _, c in fails))
+                print(f"FAIL {p.relative_to(root.parent) if root.parent in p.parents else p}: " + "; ".join(f"{a} ({c})" for a, _, c in fails))
         print(f"{len(pdfs)} PDFs checked, {bad} with problems")
         return 1 if bad else 0
 

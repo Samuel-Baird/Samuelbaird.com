@@ -11,7 +11,8 @@ from .fonts import space_width, text_width, to_caps, is_upper
 INF = float("inf")
 HYPHEN_PENALTY = 30.0      # cost of ending a line with a hyphenated word
 _hyph = {"dic": None}
-_justify = {"on": True}
+_justify = {"on": True, "chars": False}
+_brk = {"fn": None}
 _RUN = re.compile(r"[^\W\d_]+")
 _DASHES = "-–—"
 
@@ -26,16 +27,26 @@ def set_hyphenation(lang):
         _hyph["dic"] = pyphen.Pyphen(lang=lang, left=2, right=3)
 
 
-def set_justify(on):
+def set_justify(on, chars=False):
     """Justified columns stretch spaces to fill the measure; ragged-right columns never do (and never shrink
-    them), which suits languages without a hyphenation dictionary and long words."""
+    them), which suits languages without a hyphenation dictionary and long words. With chars=True (Chinese,
+    Japanese, Thai, ...) the slack is spread between characters, since there are few or no spaces."""
     _justify["on"] = bool(on)
+    _justify["chars"] = bool(on and chars)
+
+
+def set_breaker(name):
+    """Line-break opportunities for a script written without spaces ('cjk', 'thai', 'khmer', 'lao', 'myanmar')."""
+    from . import linebreak
+    _brk["fn"] = linebreak.get(name)
 
 
 def find_breaks(text):
     """Break opportunities inside one word: [(index, needs_hyphen)]. Capitalised words (names) and
     short words are not hyphenated."""
     out = [(i + 1, False) for i, ch in enumerate(text[:-1]) if ch in _DASHES and text[i + 1] not in _DASHES]
+    if _brk["fn"] is not None:
+        out += [(i, False) for i in _brk["fn"](text) if 0 < i < len(text)]
     dic = _hyph["dic"]
     if dic is not None and len(text) >= 6:
         for m in _RUN.finditer(text):
@@ -104,7 +115,10 @@ def expand(words):
 
 
 def small_caps_word(text, big, small, color=(0, 0, 0), first_big=True, style="r"):
-    """Capital initial at `big`, remaining letters as capitals at `small` (small caps)."""
+    """Capital initial at `big`, remaining letters as capitals at `small` (small caps). A caseless script has no
+    small caps; its lead-in is set bold at about the body size instead."""
+    if text.upper() == text.lower() and any(ch.isalpha() for ch in text) and not any(0x10400 <= ord(ch) <= 0x1044F for ch in text):
+        return Word([Seg(text, small * 1.25, "b", color)])
     segs = []
     for i, ch in enumerate(text):
         if not ch.isalpha() and not (0x10400 <= ord(ch) <= 0x1044F):
@@ -157,6 +171,7 @@ class Line:
     first: bool = False
     hyphen: bool = False         # draw a hyphen after the last fragment (a word split across lines)
     justify: bool = True
+    chars: bool = False          # spread the slack between characters instead of at spaces
 
 
 def break_paragraph(para, col_w, space):
@@ -193,11 +208,13 @@ def break_paragraph(para, col_w, space):
                 gaps = gaps_prefix[j] - gaps_prefix[i + 1]       # spaces inside the line
                 hyphen = j < n and items[j].cont and items[j].hy
                 nat = prefix[j] - prefix[i] + gaps * space + (hy_w if hyphen else 0.0)
-                if nat - gaps * space * shrink > a + 1e-6:
+                if nat - gaps * space * (0.0 if _justify["chars"] else shrink) > a + 1e-6:
                     break
                 last = j == n
                 if last:
                     c = 0.0
+                elif _justify["chars"]:
+                    c = 100.0 * ((a - nat) / (0.5 * space * max(j - i - 1, 1))) ** 2
                 elif gaps == 0:
                     c = 4000.0
                 else:
@@ -235,7 +252,7 @@ def break_paragraph(para, col_w, space):
         nat = prefix[j] - prefix[i] + gaps * space + (hy_w if hyphen else 0.0)
         x_off = para.dropcap_w if (para.dropcap_lines and idx < para.dropcap_lines) else (para.indent_first if idx == 0 else 0.0)
         lines.append(Line(items[i:j], nat, avail(k), x_off, j == n, leading=para.leading, first=idx == 0, hyphen=hyphen,
-                          justify=_justify["on"]))
+                          justify=_justify["on"], chars=_justify["chars"]))
     return lines
 
 

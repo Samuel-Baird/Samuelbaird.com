@@ -672,6 +672,226 @@ armenian:
   english: Armenian
   hyphenation: null
   font: serif
+urdu:
+  kind: language
+  code: urd
+  native: اردو
+  english: Urdu
+  hyphenation: null
+  font: serif-arabic
+  caps: none
+  tracked: false
+  justify: true
+  rtl: true
+  dc_scale: 0.7
+  lead: 1.3
+arabic:
+  kind: language
+  code: ara
+  native: العربية
+  english: Arabic
+  hyphenation: null
+  font: serif-arabic
+  caps: none
+  tracked: false
+  justify: true
+  rtl: true
+  dc_scale: 0.7
+  lead: 1.25
+persianfarsi:
+  kind: language
+  code: pes
+  native: فارسی
+  english: Persian (Farsi)
+  hyphenation: null
+  font: serif-arabic
+  caps: none
+  tracked: false
+  justify: true
+  rtl: true
+  dc_scale: 0.7
+  lead: 1.25
+centralkurdish:
+  kind: language
+  code: ckb
+  native: کوردی سۆرانی
+  english: Central Kurdish
+  hyphenation: null
+  font: serif-arabic
+  caps: none
+  tracked: false
+  justify: true
+  rtl: true
+  dc_scale: 0.7
+  lead: 1.25
+nepali:
+  kind: language
+  code: nep
+  native: नेपाली
+  english: Nepali
+  hyphenation: null
+  font: serif-devanagari
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.3
+marathi:
+  kind: language
+  code: mar
+  native: मराठी
+  english: Marathi
+  hyphenation: null
+  font: serif-devanagari
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.3
+hindi:
+  kind: language
+  code: hin
+  native: हिन्दी
+  english: Hindi
+  hyphenation: null
+  font: serif-devanagari
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.3
+bengali:
+  kind: language
+  code: ben
+  native: বাংলা
+  english: Bengali
+  hyphenation: null
+  font: serif-bengali
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.25
+gujarati:
+  kind: language
+  code: guj
+  native: ગુજરાત
+  english: Gujarati
+  hyphenation: null
+  font: serif-gujarati
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.25
+tamil:
+  kind: language
+  code: tam
+  native: தமிழ்
+  english: Tamil
+  hyphenation: null
+  font: serif-tamil
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.3
+telugu:
+  kind: language
+  code: tel
+  native: తెలుగు
+  english: Telugu
+  hyphenation: null
+  font: serif-telugu
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.35
+kannada:
+  kind: language
+  code: kan
+  native: ಕನ್ನಡ
+  english: Kannada
+  hyphenation: null
+  font: serif-kannada
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.35
+malayalam:
+  kind: language
+  code: mal
+  native: മലയാളം
+  english: Malayalam
+  hyphenation: null
+  font: serif-malayalam
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.35
+sinhala:
+  kind: language
+  code: sin
+  native: සිංහල
+  english: Sinhala
+  hyphenation: null
+  font: serif-sinhala
+  caps: none
+  tracked: false
+  justify: true
+  lead: 1.3
+thai:
+  kind: language
+  code: tha
+  native: ภาษาไทย
+  english: Thai
+  hyphenation: null
+  font: serif-thai
+  caps: none
+  tracked: false
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: thai
+  lead: 1.3
+lao:
+  kind: language
+  code: lao
+  native: ພາສາລາວ
+  english: Lao
+  hyphenation: null
+  font: serif-lao
+  caps: none
+  tracked: false
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: lao
+  lead: 1.3
+sgawkaren:
+  kind: language
+  code: ksw
+  native: ကညီလံာ်ခီၣ်ထံ
+  english: S'gaw Karen
+  hyphenation: null
+  font: serif-myanmar
+  caps: none
+  tracked: false
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: myanmar
+  lead: 1.5
+  dc_scale: 0.32
+burmese:
+  kind: language
+  code: mya
+  native: ဗမာစာ
+  english: Burmese
+  hyphenation: null
+  font: serif-myanmar
+  caps: none
+  tracked: false
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: myanmar
+  lead: 1.5
+  dc_scale: 0.32
 georgian:
   kind: language
   code: kat
@@ -687,3 +907,84 @@ amharic:
   english: Amharic
   hyphenation: null
   font: serif
+centralkhmer:
+  kind: language
+  code: khm
+  native: ភាសាខ្មែរ
+  english: Central Khmer
+  hyphenation: null
+  font: serif-khmer
+  caps: none
+  tracked: false
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: khmer
+  lead: 1.4
+japanese:
+  kind: language
+  code: jpn
+  native: 日本語
+  english: Japanese
+  hyphenation: null
+  font: serif-jp
+  caps: none
+  tracked: true
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: cjk
+  lead: 1.3
+mandarinchinesesimplified:
+  kind: language
+  code: zhs
+  native: 简体中文 - 普通话
+  english: Mandarin Chinese — Simplified
+  hyphenation: null
+  font: serif-sc
+  caps: none
+  tracked: true
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: cjk
+  lead: 1.3
+mandarinchinesetraditional:
+  kind: language
+  code: zho
+  native: 繁體中文 - 國語
+  english: Mandarin Chinese — Traditional
+  hyphenation: null
+  font: serif-tc
+  caps: none
+  tracked: true
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: cjk
+  lead: 1.3
+cantonesechinesetraditional:
+  kind: language
+  code: yue
+  native: 繁體中文 - 廣東話
+  english: Cantonese Chinese — Traditional
+  hyphenation: null
+  font: serif-tc
+  caps: none
+  tracked: true
+  justify: true
+  spaced: false
+  char_justify: true
+  breaks: cjk
+  lead: 1.3
+korean:
+  kind: language
+  code: kor
+  native: 한국어
+  english: Korean
+  hyphenation: null
+  font: serif-kr
+  caps: none
+  tracked: true
+  justify: true
+  lead: 1.25
