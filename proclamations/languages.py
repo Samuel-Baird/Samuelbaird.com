@@ -1,16 +1,22 @@
-"""The edition registry (languages.yaml): folders, names, Church codes and typographic settings."""
+"""The edition registry: languages.yaml (hand-written) plus languages.generated.yaml (python -m proclamations.register)."""
 from functools import lru_cache
 from pathlib import Path
 
 import yaml
 
 REGISTRY = Path(__file__).resolve().parent / "languages.yaml"
+GENERATED = Path(__file__).resolve().parent / "languages.generated.yaml"
 
 
 @lru_cache(maxsize=1)
 def load():
     """slug -> entry, in file order (which is the order editions are generated and listed)."""
     data = yaml.safe_load(REGISTRY.read_text(encoding="utf-8"))
+    if GENERATED.exists():                       # hand-written entries win; generated ones fill in the rest
+        have = {e["code"] for e in data.values()}
+        for slug, e in (yaml.safe_load(GENERATED.read_text(encoding="utf-8")) or {}).items():
+            if slug not in data and e["code"] not in have:
+                data[slug] = e
     for slug, e in data.items():
         if "-" in slug or slug != slug.lower() or not slug.isascii():
             raise ValueError(f"language slug '{slug}' must be lower-case ASCII without hyphens")

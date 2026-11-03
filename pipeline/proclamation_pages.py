@@ -46,7 +46,7 @@ def index_page(manifest):
     body = f"""<div class="pagehead">
   <p class="eyebrow small-caps" style="color:var(--honey)">Proclamations</p>
   <h1>Proclamations by language</h1>
-  <p class="lede">Choose a language to open its folder. Each one holds the Church&rsquo;s proclamations in that language as PDFs for printing: US Letter, A4, and posters up to A0.</p>
+  <p class="lede">Choose a language to open its folder. Each one holds the Church&rsquo;s proclamations in that language as PDFs for printing: US Letter and A4, with poster sizes up to A0 on Google Drive.</p>
   <label class="sr" for="lang-filter">Filter languages</label>
   <input id="lang-filter" class="search" type="search" placeholder="Filter languages: español, portuguese, pt&hellip;" autocomplete="off">
   <p class="hint" id="lang-count" aria-live="polite"></p>
@@ -59,16 +59,16 @@ def index_page(manifest):
             "The Church's proclamations in many languages, laid out like the official PDFs and sized for printing.")
 
 
-def _chips(slug, files):
-    std = [k for k in ("letter", "a4") if k in files]
-    posters = [k for k in files if k not in ("letter", "a4")]
-
+def _chips(slug, files, posters_url=None):
     def chip(k):
         f = files[k]
         return (f'<a class="chip" href="/posters/{E(slug)}/{E(f["file"])}" download title="{E(f["label"])}, {f["kb"]} KB">'
                 f'{E(SHORT[k])}</a>')
-    return (f'<div class="sizerow"><span class="small-caps muted">Print</span>{"".join(chip(k) for k in std)}</div>'
-            f'<div class="sizerow"><span class="small-caps muted">Posters</span>{"".join(chip(k) for k in posters)}</div>')
+    row = f'<div class="sizerow"><span class="small-caps muted">Print</span>{"".join(chip(k) for k in files)}</div>'
+    if posters_url:
+        row += (f'<div class="sizerow"><span class="small-caps muted">Posters</span>'
+                f'<a class="chip" href="{E(posters_url)}" rel="noopener">11×17 to A0 on Google Drive</a></div>')
+    return row
 
 
 def language_page(entry):
@@ -77,13 +77,13 @@ def language_page(entry):
     for doc, d in entry["docs"].items():
         official = (f'<p><a href="{E(d["source_url"])}">Official page on churchofjesuschrist.org</a></p>'
                     if entry["kind"] == "language" else "")
-        big = f'/posters/{E(slug)}/{E(d["files"]["18x24"]["file"])}'
+        big = f'/posters/{E(slug)}/{E(d["files"]["letter"]["file"])}'
         cards.append(f"""<article class="pcard" id="{E(doc)}">
   <a class="thumb" href="{big}"><img src="/posters/{E(slug)}/{E(d["preview"])}" width="210" alt="Preview of {E(ENGLISH_NAMES[doc])} in {E(entry["english"])}" loading="lazy"></a>
   <div>
     <h2 lang="{E(code)}">{E(d["title"])}</h2>
     <p class="muted">{E(ENGLISH_NAMES[doc])}</p>
-    {official}{_chips(slug, d["files"])}
+    {official}{_chips(slug, d["files"], entry.get("posters_url"))}
   </div>
 </article>""")
     lede = ("The English text written in the Deseret Alphabet." if entry["kind"] == "script"

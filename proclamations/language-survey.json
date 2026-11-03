@@ -1,0 +1,4093 @@
+[
+ {
+  "code": "orm",
+  "name": "Afaan Oromoo",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Maatii",
+    "html_bytes": 125497
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kiristoos Isa Jiraataa",
+    "html_bytes": 139190
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Deebiʼuu Guutummaa Wangeela Yesus Kristos",
+    "html_bytes": 125480
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Keeyyata Amantii Waldaa Yesuus Kiristoos Qulqullootaa Guyyaa Boodaa",
+    "html_bytes": 119499
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "afr",
+  "name": "Afrikaans",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Die Familie",
+    "html_bytes": 145115
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Die Lewende Christus",
+    "html_bytes": 159344
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Die Herstelling van die Volheid van die Evangelie van Jesus Christus",
+    "html_bytes": 145209
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Die Geloofsartikels van die Kerk van Jesus Christus van die Heiliges van die Laaste Dae",
+    "html_bytes": 140335
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "aym",
+  "name": "Aymar Aru",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "ind",
+  "name": "Bahasa Indonesia",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Keluarga",
+    "html_bytes": 163204
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kristus yang Hidup",
+    "html_bytes": 177203
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Pemulihan Kegenapan Injil Yesus Kristus",
+    "html_bytes": 163574
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Pasal-Pasal Kepercayaan Gereja Yesus Kristus dari Orang-Orang Suci Zaman Akhir",
+    "html_bytes": 157904
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "msa",
+  "name": "Bahasa Melayu",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Keluarga",
+    "html_bytes": 163727
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kristus Yang Hidup",
+    "html_bytes": 176046
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Pemulihan Kegenapan Injil Yesus Kristus",
+    "html_bytes": 163451
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Fasal-Fasal Kepercayaan dari Gereja Yesus Kristus Orang Suci Zaman Akhir",
+    "html_bytes": 157674
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "bam",
+  "name": "Bamanankan",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Denbaya",
+    "html_bytes": 130663
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Krisita Balolen",
+    "html_bytes": 145261
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Yesu Krisita ka Kibaru Duman Dafalen ka Seginni",
+    "html_bytes": 131677
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Dannayasenw Yesu Krisita ka Don Labanw Senumanw ka Egilisi",
+    "html_bytes": 127098
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "tzo",
+  "name": "Bats'i k'op",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Nailil",
+    "html_bytes": 136198
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kuxul Kristo",
+    "html_bytes": 147408
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Slikesel ta achʼ slekil kʼop Kajvaltik Jesukristo",
+    "html_bytes": 135531
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Yaʼyejaltak Schʼunolajel Oʼntonil Ta Schʼulna Jesukristo ta Chʼul Jchʼunolajeletik ta Slajebal Kʼakʼal",
+    "html_bytes": 128868
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "bik",
+  "name": "Bikol",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "bis",
+  "name": "Bislama",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Famli",
+    "html_bytes": 148357
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Jisas Hem i Kraes we i Laef",
+    "html_bytes": 161916
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Restoresen blong Gospel blong Jisas Kraes we I Fulwan",
+    "html_bytes": 155902
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ol Toktok blong Bilif blong Jos Ia blong Jisas Kraes blong Ol Lata-dei Sent",
+    "html_bytes": 141845
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "cak",
+  "name": "Cakchiquel",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "cat",
+  "name": "Català",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "La família",
+    "html_bytes": 155276
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "El Crist Vivent",
+    "html_bytes": 168291
+   },
+   "restoration": {
+    "ok": true,
+    "title": "La restauració de la plenitud de l’evangeli de Jesucrist",
+    "html_bytes": 155289
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Els Articles de Fe de l’Església de Jesucrist dels Sants dels Darrers Dies",
+    "html_bytes": 149878
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ceb",
+  "name": "Cebuano",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ang Pamilya",
+    "html_bytes": 168157
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ang Buhi nga Kristo",
+    "html_bytes": 181232
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ang Pagpahiuli sa Kahingpitan sa Ebanghelyo ni Jesukristo",
+    "html_bytes": 176794
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ang mga Artikulo sa Hugot nga Pagtuo sa Ang Simbahan ni Jesukristo sa mga Santos sa Ulahing mga Adlaw",
+    "html_bytes": 162097
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ces",
+  "name": "Česky",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Rodina",
+    "html_bytes": 146183
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Žijící Kristus",
+    "html_bytes": 159618
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Znovuzřízení plnosti evangelia Ježíše Krista",
+    "html_bytes": 154900
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Články víry Církve Ježíše Krista Svatých posledních dnů",
+    "html_bytes": 141382
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "cha",
+  "name": "Chamoru",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "nya",
+  "name": "Chichewa",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Banja",
+    "html_bytes": 163600
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Khristu Wamoyo",
+    "html_bytes": 177830
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Chibwezeretso cha Uthenga wabwino Wonse wa Yesu Khristu",
+    "html_bytes": 165058
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Mfundo za Chikhulupiliro za Mpingo wa Yesu Khristu wa Oyera Mtima M’masiku Otsiriza",
+    "html_bytes": 160025
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "cym",
+  "name": "Cymraeg",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Y Teulu",
+    "html_bytes": 131141
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Y Crist Byw",
+    "html_bytes": 144712
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Yr Adferiad o Gyflawnder Efengyl Iesu Grist",
+    "html_bytes": 131658
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ethryglau Ffydd yr Eglwys Iesu Grist Saint y Dyddiau Diwethaf",
+    "html_bytes": 126946
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "dan",
+  "name": "Dansk",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Familien",
+    "html_bytes": 144922
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Den Levende Kristus",
+    "html_bytes": 158365
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Gengivelsen af Jesu Kristi evangeliums fylde",
+    "html_bytes": 153454
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Trosartiklerne for Jesu Kristi Kirke af Sidste Dages Hellige",
+    "html_bytes": 140001
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "deu",
+  "name": "Deutsch",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Die Familie",
+    "html_bytes": 168666
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Der lebendige Christus",
+    "html_bytes": 181621
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Die Wiederherstellung der Fülle des Evangeliums Jesu Christi",
+    "html_bytes": 169131
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Die Glaubensartikel der Kirche Jesu Christi der Heiligen der Letzten Tage",
+    "html_bytes": 162795
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "nav",
+  "name": "Diné bizaad",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jesus Christ Bina’nitin T’áá Át’é Ninályáhígíí",
+    "html_bytes": 164566
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "cuk",
+  "name": "Dulegaya",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "yor",
+  "name": "Èdè Yorùbá",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ẹbí",
+    "html_bytes": 159361
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ìmúpadàbọ̀sípò Ẹ̀kúnrẹ́rẹ́ ìhìnrere Jésù Krístì",
+    "html_bytes": 159890
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Àwọn Nkan Ìgbàgbọ́ ti Ìjọ ti Jésù Krístì ti Àwọn Ènìyàn Mímọ́ Ìgbà Ìkẹhìn",
+    "html_bytes": 153883
+   }
+  },
+  "documents": 3,
+  "script": "Latin"
+ },
+ {
+  "code": "est",
+  "name": "Eesti",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Perekond",
+    "html_bytes": 144296
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Elav Kristus",
+    "html_bytes": 158096
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jeesuse Kristuse evangeeliumi täiuse taastamine",
+    "html_bytes": 152909
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Viimse Aja Pühade Jeesuse Kristuse Kiriku usuartiklid",
+    "html_bytes": 140398
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "efi",
+  "name": "Efik",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ufɔkemana",
+    "html_bytes": 162384
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Odu Uwem Christ",
+    "html_bytes": 176766
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Edifiak-mmen Uyoho iko Abasi Jesus Christ ndi",
+    "html_bytes": 163657
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 3,
+  "script": "Latin"
+ },
+ {
+  "code": "guz",
+  "name": "EkeGusii",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "eng",
+  "name": "English",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "The Family",
+    "html_bytes": 125079
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "The Living Christ",
+    "html_bytes": 138524
+   },
+   "restoration": {
+    "ok": true,
+    "title": "The Restoration of the Fulness of the Gospel of Jesus Christ",
+    "html_bytes": 133869
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "The Articles of Faith of The Church of Jesus Christ of Latter-day Saints",
+    "html_bytes": 120777
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "spa",
+  "name": "Español",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "La Familia",
+    "html_bytes": 165997
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "El Cristo Viviente",
+    "html_bytes": 178727
+   },
+   "restoration": {
+    "ok": true,
+    "title": "La Restauración de la plenitud del evangelio de Jesucristo",
+    "html_bytes": 174669
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Los Artículos de Fe de La Iglesia de Jesucristo de los Santos de los Últimos Días",
+    "html_bytes": 160174
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "eus",
+  "name": "Euskera",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "rtm",
+  "name": "Fäeag Rotųam",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "ton",
+  "name": "Faka-Tonga",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ko e Fāmilí",
+    "html_bytes": 153084
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ko e Kalaisi Moʻuí",
+    "html_bytes": 165439
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ko e Fakafoki Mai ʻa e Kakato ʻo e Ongoongolelei ʻo Sīsū Kalaisí",
+    "html_bytes": 161668
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ko e Ngaahi Tefito ʻo e Tuí ʻo e Siasi ʻo Sīsū Kalaisi ʻo e Kau Māʻoniʻoni ʻi he Ngaahi ʻAho Kimui Ní",
+    "html_bytes": 146211
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "fat",
+  "name": "Fante",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ebusua no",
+    "html_bytes": 163436
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Christ Ɔtseasefo No",
+    "html_bytes": 177153
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jesus Christ N’Asɛmpa no ne Mãhyɛ ne Nsanananmu no",
+    "html_bytes": 163546
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Gyedzi ho Nsɛmpɔw No A Ɔwɔ Jesus Christ N’Asɔr a ɔwɔ hɔ ma Nda a Odzi Ekyir Ahotseweefo no mu",
+    "html_bytes": 159273
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "hif",
+  "name": "Fiji Hindi",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Parivaar",
+    "html_bytes": 164365
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ishu Masih ke Susamachaar ka Sampurn Punahsthaapna",
+    "html_bytes": 172011
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Vishwaas ke Vishye Ishu Masih Ka Girjaghar Antim-dino Ke Santho Ka",
+    "html_bytes": 158740
+   }
+  },
+  "documents": 3,
+  "script": "Latin"
+ },
+ {
+  "code": "chk",
+  "name": "Fosun Chuuk",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ewe Famini",
+    "html_bytes": 162672
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ewe Kraist Mi Manau",
+    "html_bytes": 176885
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ewe Niwinsefaniton ewe Unusochun ewe Kapas Allimen Jises Kraist",
+    "html_bytes": 162605
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ekkewe Nongonongen Achifoua ren Ewe Mwichefenin Jises Kraist ren Aramas mi Pin non Fansoun Soponon",
+    "html_bytes": 157835
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "fon",
+  "name": "Fɔngbè",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Hɛ̌nnù",
+    "html_bytes": 134583
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Klísu Gbɛɖè ɔ́",
+    "html_bytes": 148349
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Wɛ̀nɖàgbè Kpíkpé Jezu Klísu tɔn ɔ́ sín Jlǎ ɖǒ",
+    "html_bytes": 134135
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Agùn Jezu Klísu tɔn Mɛ Mìmɛ́ Azǎn Gǔdógúdó tɔn Lɛ́ tɔn sín Nǔɖíɖíxó lɛ́",
+    "html_bytes": 128468
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "fra",
+  "name": "Français",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "La famille",
+    "html_bytes": 168458
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Le Christ Vivant",
+    "html_bytes": 181064
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Le rétablissement de la plénitude de l’Évangile de Jésus-Christ",
+    "html_bytes": 177018
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Articles de foi de l’Église de Jésus-Christ des Saints des Derniers Jours",
+    "html_bytes": 162879
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "smo",
+  "name": "Gagana Samoa",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "O Le Aiga",
+    "html_bytes": 147665
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "O Le Keriso Soifua",
+    "html_bytes": 161335
+   },
+   "restoration": {
+    "ok": true,
+    "title": "O Le Toefuata’iga o le Atoatoaga o le Talalelei a Iesu Keriso",
+    "html_bytes": 157254
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Mataupu Faavae o le Faatuatua o le Ekalesia a Iesu Keriso o le Au Paia o Aso e Gata Ai",
+    "html_bytes": 143007
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "tvl",
+  "name": "gana Tuvalu",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "grn",
+  "name": "Guaraní (Avañe'ẽ)",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jesucristo Evanhélio Plenitu Restaurasiõ",
+    "html_bytes": 158044
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "hil",
+  "name": "Hiligaynon",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ang Panimalay",
+    "html_bytes": 149493
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ang Buhi nga Cristo",
+    "html_bytes": 162548
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ang Pagpanumbalik sang Kabug-osan sang Ebanghelyo ni Jesucristo",
+    "html_bytes": 158093
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ang Mga Artikulo sang Pagtuo sang Ang Simbahan ni Jesucristo sang mga Santos sa Ulihing mga Adlaw",
+    "html_bytes": 142978
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "hmn",
+  "name": "Hmoob",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Tsev Neeg",
+    "html_bytes": 151370
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Tus Khetos uas Muaj Txoj Sia Nyob",
+    "html_bytes": 163079
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Kev Muab Yexus Khetos Txoj Moo Zoo uas Muaj Txhij Txhua Txum Tim Rov Qab Los",
+    "html_bytes": 159193
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Tej Nqe Kev Ntseeg ntawm Yexus Khetos lub Koom Txoos ntawm Tsoom Haiv Neeg Ntseeg Hauv Hnub Nyoog Kawg",
+    "html_bytes": 143990
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "hrv",
+  "name": "Hrvatski",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Obitelj",
+    "html_bytes": 162047
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Živući Krist",
+    "html_bytes": 175964
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Obnova punine evanđelja Isusa Krista",
+    "html_bytes": 162543
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Članci vjere Crkve Isusa Krista svetaca posljednjih dana",
+    "html_bytes": 157962
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "haw",
+  "name": "ʻŌlelo Hawaiʻi",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "ibb",
+  "name": "Ibibio",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "bem",
+  "name": "Icibemba",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "sto",
+  "name": "Îethka (Yethka)",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ne Tîbî îgahbî",
+    "html_bytes": 122763
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "ibo",
+  "name": "Igbo",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ezi na ụlọ Ahụ",
+    "html_bytes": 168074
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kraịst Ahụ Dị ndụ",
+    "html_bytes": 181062
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Mweghachite Ozuzu nke Ozi ọma nke Jizọs Kraịst",
+    "html_bytes": 167690
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ndepụta nke Okwukwe Nke Nzukọ nke Jisus Kraịst nke Ndị-nsọ Ụbọchị-ikpeazụ a",
+    "html_bytes": 162409
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ilo",
+  "name": "Ilokano",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ti Kaamaan",
+    "html_bytes": 148114
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ti Sibibiag a Cristo",
+    "html_bytes": 161273
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ti Pannakaisubli ti Pakabuklan ti Ebanghelio ni Jesucristo",
+    "html_bytes": 156970
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ti Pagannurotan ti Pammati Ti Simbaan ni Jesucristo Dagiti Santo iti Ud-udina nga Aldaw",
+    "html_bytes": 141970
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "nbl",
+  "name": "isiNdebele",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "xho",
+  "name": "isiXhosa",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "USapho",
+    "html_bytes": 164088
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "UKrestu oPhilayo",
+    "html_bytes": 177855
+   },
+   "restoration": {
+    "ok": true,
+    "title": "UBuyiselo Olupheleleyo lweVangeli kaYesu Krestu",
+    "html_bytes": 165312
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "IziVumo zoKholo zeBandla likaYesu Krestu labaNgcwele beMihla yokuGqibela",
+    "html_bytes": 159331
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "zul",
+  "name": "isiZulu",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Umndeni",
+    "html_bytes": 147450
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "UKristu oPhilayo",
+    "html_bytes": 160093
+   },
+   "restoration": {
+    "ok": true,
+    "title": "UkuBuyiselwa kweVangeli likaJesu Kristu ngokuPhelele",
+    "html_bytes": 147450
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "ImiBhalo yoKholo yeBandla likaJesu Kristu labaNgcwele beziNsuku zokuGcina",
+    "html_bytes": 142306
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "isl",
+  "name": "íslenska",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Fjölskyldan",
+    "html_bytes": 145216
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Hinn lifandi Kristur",
+    "html_bytes": 158684
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Endurreisn fyllingar fagnaðarerindis Jesú Krists",
+    "html_bytes": 145434
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Trúaratriði Kirkju Jesú Krists hinna Síðari daga heilögu",
+    "html_bytes": 140781
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ita",
+  "name": "Italiano",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "La famiglia",
+    "html_bytes": 165091
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Il Cristo vivente",
+    "html_bytes": 178289
+   },
+   "restoration": {
+    "ok": true,
+    "title": "La Restaurazione della pienezza del vangelo di Gesù Cristo",
+    "html_bytes": 174207
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Articoli di Fede de La Chiesa di Gesù Cristo dei Santi degli Ultimi Giorni",
+    "html_bytes": 160165
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "iba",
+  "name": "Jaku Iban",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "kos",
+  "name": "Kahs Kosrae",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Sucu",
+    "html_bytes": 164187
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kraist Suc Moul",
+    "html_bytes": 177117
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Fohlohkihnyuckyak ke Fohnlah luhn Wosasuc luhn Jisus Kraist",
+    "html_bytes": 164339
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ip Yohk ke Luhlahlfongi ke Alu luhn Jisus Kraist luhn Mwet Luhlahlfongi ke Lwen-sahflah",
+    "html_bytes": 159268
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "mah",
+  "name": "Kajin Majōl",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Baam̧le Eo",
+    "html_bytes": 148514
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kraist Eo Emour",
+    "html_bytes": 161938
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jepļaaktok eo an Tarlep in Gospel eo an Jisōs Kraist",
+    "html_bytes": 148838
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Laajrak in Tōmak ko an Kabun̄ eo an Jisōs Kraist im Armej ro Rekwōjarjar ilo Raan ko Āliktata",
+    "html_bytes": 143130
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "qvi",
+  "name": "Kichwa",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Shinapachami Yuyaykuna Jesucristopaj Iglesiapaj Apunchipaj Agllashcacunapaj tucurimui punllacunapi",
+    "html_bytes": 129815
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "kam",
+  "name": "Kikamba",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Mũsyĩ",
+    "html_bytes": 132151
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Klĩsto Ũla wĩ Thayũ",
+    "html_bytes": 145936
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ũtũngĩo wa Wusũu wa Ũvoo Mũseo wa Yesũ Klĩsto",
+    "html_bytes": 132882
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ilungu sya Mũĩkĩĩo sya Ĩkanisa ya Yesũ Klĩsto ya Atheu ma Mĩthenya ya Mũminũkĩlyo",
+    "html_bytes": 127762
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "kin",
+  "name": "Kinyarwanda",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Umuryango",
+    "html_bytes": 163951
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kristo Uriho",
+    "html_bytes": 177148
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ukugarurwa kw’Ubwuzure bw’Inkuru Nziza ya Yesu Kristo",
+    "html_bytes": 164284
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ingingo z’Ukwizera z’Itorero rya Yesu Kristo ry’Abera b’Iminsi ya Nyuma",
+    "html_bytes": 159497
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "gil",
+  "name": "Kiribati",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Te Utu",
+    "html_bytes": 166800
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Te Kristo ae Maiu",
+    "html_bytes": 179524
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Kaokan Bwaninin Ana Euangkerio Iesu Kristo",
+    "html_bytes": 175046
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Taekan te Onimaki n Ana Ekaretia Iesu Kristo Ibukiia Aika Itiaki Ni Boong Aika Kaitira",
+    "html_bytes": 161156
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "swa",
+  "name": "Kiswahili",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Familia",
+    "html_bytes": 162124
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kristo Aliye Hai",
+    "html_bytes": 176195
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Urejesho wa Utimilifu wa Injili ya Yesu Kristo",
+    "html_bytes": 171590
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Makala ya Imani ya Kanisa la Yesu Kristo la Watakatifu wa Siku za Mwisho",
+    "html_bytes": 158005
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "hat",
+  "name": "Kreyòl Ayisyen",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Fanmi an",
+    "html_bytes": 159590
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kris Vivan An",
+    "html_bytes": 173862
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Retablisman Plenitid Levanjil Jezikri a",
+    "html_bytes": 169133
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Atik Lafwa yo Legliz Jezikri pou Sen Dènye Jou yo",
+    "html_bytes": 155419
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "kea",
+  "name": "Kriol, Crioulo",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Família",
+    "html_bytes": 122685
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Regras di Fé di Igreja di Jezus Kristu di Santus di Últimus Dias",
+    "html_bytes": 118223
+   }
+  },
+  "documents": 2,
+  "script": "Latin"
+ },
+ {
+  "code": "lav",
+  "name": "Latviešu",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ģimene",
+    "html_bytes": 164426
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Dzīvais Kristus",
+    "html_bytes": 178143
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jēzus Kristus evaņģēlija pilnības atjaunošana",
+    "html_bytes": 173764
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Pēdējo Dienu Svēto Jēzus Kristus Baznīcas Ticības apliecinājumi",
+    "html_bytes": 159837
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ltz",
+  "name": "Lëtzebuergesch",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "lit",
+  "name": "Lietuvių",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Šeima",
+    "html_bytes": 163282
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Gyvasis Kristus",
+    "html_bytes": 177133
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jėzaus Kristaus Evangelijos pilnatvės Sugrąžinimas",
+    "html_bytes": 164503
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Pastarųjų Dienų Šventųjų Jėzaus Kristaus Bažnyčios Tikėjimo Teiginiai",
+    "html_bytes": 159454
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "lin",
+  "name": "Lingála",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Libota",
+    "html_bytes": 146631
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Klisto na Bomoi",
+    "html_bytes": 161161
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Bozongisi ya Litondi ya Nsango Malamu ya Yesu Klisto",
+    "html_bytes": 147392
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Biteni ya Bondimi ya Eklezia ya Yesu Klisto ya Basantu ba Mikolo mya Nsuka",
+    "html_bytes": 142169
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "lug",
+  "name": "Luganda",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "yua",
+  "name": "maayaʼ tʼàan",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Le Láakʼtsilil",
+    "html_bytes": 134891
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Le Kuxaʼan Cristo",
+    "html_bytes": 148119
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Tsʼoʼok u Kaʼayantal u Chukaʼanil u Maʼalob Péeksil Jesucristo",
+    "html_bytes": 135096
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Le Tsoltsʼíibil Tʼaanoʼob tiʼ Oksaj Óol tiʼ U Najil Jesucristo tiʼ Maʼalob Wíinikoʼob tiʼ le Tsʼook Kʼiinoʼob",
+    "html_bytes": 128832
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "hun",
+  "name": "Magyar",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "A család",
+    "html_bytes": 148459
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Az élő Krisztus",
+    "html_bytes": 161332
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jézus Krisztus evangéliuma teljességének visszaállítása",
+    "html_bytes": 157658
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "A Hittételek Az Utolsó Napok Szentjeinek Jézus Krisztus Egyházában",
+    "html_bytes": 143131
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "pon",
+  "name": "Mahsen en Pohnpei",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Peneinei",
+    "html_bytes": 164294
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Krais Ieiaso",
+    "html_bytes": 177821
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Kopwurupwurdohn Rongamwahu Unsek en Sises Krais",
+    "html_bytes": 172289
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Iren Pwoson akan en Mwomwohdiso en Sises Krais en Souleng en Imwin Rahn akan",
+    "html_bytes": 159055
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "mlg",
+  "name": "Malagasy",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ny Fianakaviana",
+    "html_bytes": 172743
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ilay Kristy Velona",
+    "html_bytes": 185702
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ny Famerenana amin’ny Laoniny ny Fahafenoan’ny Filazantsaran’i Jesoa Kristy",
+    "html_bytes": 174228
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ireo Fanekem-pinoana Ny Fiangonan’i Jesoa Kristy ho an’ny Olomasin’ny Andro Farany",
+    "html_bytes": 165951
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "mlt",
+  "name": "Malti",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Il-Familja",
+    "html_bytes": 155072
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ir-Restawrazzjoni tal-Milja tal-Evanġelju ta’ Ġesù Kristu",
+    "html_bytes": 164002
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "L-Artikli tal-Fidi tal-Knisja ta’ Ġesù Kristu tal-Qaddisin tal-Aħħar Jiem",
+    "html_bytes": 150062
+   }
+  },
+  "documents": 3,
+  "script": "Latin"
+ },
+ {
+  "code": "mam",
+  "name": "Mam",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "rar",
+  "name": "Māori Kuki Airani",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Te Au Akatinamouanga Akarongo O Te Akonoanga A Iesu Mesia O Te Aronga Tapu I Te Au Ra I Muri Nei",
+    "html_bytes": 128924
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "meu",
+  "name": "Motu",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Bese",
+    "html_bytes": 132400
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Keriso Mauri",
+    "html_bytes": 145867
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Iesu Keriso ena Sivarai Namo Guguruna Hamauri lou ai",
+    "html_bytes": 132890
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Abidadama Herevadia, Iesu Keriso Ena Dubu Ekalesia Helagadia Dina Gabediai",
+    "html_bytes": 128091
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "apw",
+  "name": "Ndee biyáti'",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "nld",
+  "name": "Nederlands",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Het gezin",
+    "html_bytes": 164151
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "De levende Christus",
+    "html_bytes": 177550
+   },
+   "restoration": {
+    "ok": true,
+    "title": "De herstelling van de volheid van het evangelie van Jezus Christus",
+    "html_bytes": 164215
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "De geloofsartikelen van De Kerk van Jezus Christus van de Heiligen der Laatste Dagen",
+    "html_bytes": 158701
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "bla",
+  "name": "Nitsi'powahsin",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Kitoohkawapstssin",
+    "html_bytes": 126873
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "cag",
+  "name": "Nivacle",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Na vatjôjʼesham",
+    "html_bytes": 136305
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Cristo Mônlha",
+    "html_bytes": 149190
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ti chiʼnachaĵchisham na lhavoyĵayasheshchʼe na is yaʼclishesh pa Jesucristo.",
+    "html_bytes": 137071
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Yaʼĉlishayjop pa niʼvatĉacuĵayasha Na Lhishĵanĵavat pa Jesucristo shi papi Niĉacuĵanĵasa yiey nava Yojʼeshaʼne Nalhus",
+    "html_bytes": 131040
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "nor",
+  "name": "Norsk",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Familien",
+    "html_bytes": 160881
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Den levende Kristus",
+    "html_bytes": 174857
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Gjengivelsen av Jesu Kristi evangeliums fylde",
+    "html_bytes": 161591
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Trosartiklene i Jesu Kristi Kirke av Siste Dagers Hellige",
+    "html_bytes": 156557
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "pau",
+  "name": "Palauan",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "A Telungalek",
+    "html_bytes": 149170
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Olutel a Cherrengelel a Ebangkelio er a Jesus Kristo",
+    "html_bytes": 156767
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "A Tebechelel a Klaumerang er a Ikelesia er a Jesus Kristo ra Uriul Klebesei el Santo",
+    "html_bytes": 142504
+   }
+  },
+  "documents": 3,
+  "script": "Latin"
+ },
+ {
+  "code": "pam",
+  "name": "Pampango",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "title": "",
+    "html_bytes": 121738
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "pag",
+  "name": "Pangasinan",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "title": "",
+    "html_bytes": 121716
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "pap",
+  "name": "Papiamento",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "E Restourashon di e Plenitut di e Evangelio di JesuCristu",
+    "html_bytes": 138233
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 1,
+  "script": "Latin"
+ },
+ {
+  "code": "pol",
+  "name": "Polski",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Rodzina",
+    "html_bytes": 147008
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Żyjący Chrystus",
+    "html_bytes": 160204
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Przywrócenie pełni ewangelii Jezusa Chrystusa",
+    "html_bytes": 147447
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Artykuły wiary Kościoła Jezusa Chrystusa Świętych w Dniach Ostatnich",
+    "html_bytes": 141645
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "por",
+  "name": "Português (Brasil)",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "A Família",
+    "html_bytes": 164674
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "O Cristo Vivo",
+    "html_bytes": 177690
+   },
+   "restoration": {
+    "ok": true,
+    "title": "A Restauração da Plenitude do Evangelho de Jesus Cristo",
+    "html_bytes": 164938
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Regras de Fé de A Igreja de Jesus Cristo dos Santos dos Últimos Dias",
+    "html_bytes": 159277
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ept",
+  "name": "Português (Europeu)",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "A Família",
+    "html_bytes": 164108
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "O Cristo Vivo",
+    "html_bytes": 177467
+   },
+   "restoration": {
+    "ok": true,
+    "title": "A Restauração da Plenitude do Evangelho de Jesus Cristo",
+    "html_bytes": 173053
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Os Artigos de Fé d’A Igreja de Jesus Cristo dos Santos dos Últimos Dias",
+    "html_bytes": 159062
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "kek",
+  "name": "Q'eqchi'",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Li Junkab’al",
+    "html_bytes": 172940
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Li Yo’yookil Kristo",
+    "html_bytes": 184324
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Lix K’ojob’ankil Wi’chik lix Tz’aqalil lix Evangelio li Jesukristo",
+    "html_bytes": 171097
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Eb’ lix Raqalil li Paab’aal re Lix Iglees li Jesukristo reheb’ laj Santil Paab’anel sa’ Roso’jikeb’ li Kutan",
+    "html_bytes": 164595
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "quh",
+  "name": "Qhichwa Boliviamanta",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Yawar masi",
+    "html_bytes": 132963
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kawsayniyuq Cristo",
+    "html_bytes": 146597
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Kutirichinqa tukuy juntʼayta Jesucristoq evangelionmanta",
+    "html_bytes": 134197
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Aqllasqa Iñiykuna Jesucristoq Iglesian Allin Kawsaqkunapaq Qhipa Qhipa Pʼunchaykunapi",
+    "html_bytes": 127673
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "quc",
+  "name": "Quiché",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "tah",
+  "name": "Reo Tahiti",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Te ’Utuāfare",
+    "html_bytes": 162987
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Te Mesia Ora",
+    "html_bytes": 175469
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Te Fa’aho’i-fa’ahou-ra’a mai o te ’īra’a o te ’evanelia a Iesu Mesia",
+    "html_bytes": 171499
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Te mau hiroa faaroo a te Ekalesia a Iesu Mesia i te Feia Moʻa i te mau Mahana Hopea Nei",
+    "html_bytes": 154966
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ron",
+  "name": "Română",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Familia",
+    "html_bytes": 147757
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Hristos cel Viu",
+    "html_bytes": 160938
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Restaurarea plenitudinii Evangheliei lui Isus Hristos",
+    "html_bytes": 157157
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Articolele de Credință ale Bisericii lui Isus Hristos a Sfinților din Zilele din Urmă",
+    "html_bytes": 142619
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "nso",
+  "name": "sePêdi",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "sot",
+  "name": "Sesotho",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Lelapa",
+    "html_bytes": 165881
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kreste ea Phelang",
+    "html_bytes": 180014
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Tsosoloso ea Evangeli e Phethahetseng ea Jesu Kreste",
+    "html_bytes": 166618
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Lintlha tsa Tumelo tsa Kereke ea Jesu Kreste ea Bahalaleli ba Mehla ea Kajeno",
+    "html_bytes": 160591
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "tsn",
+  "name": "Setswana",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Lelwapa",
+    "html_bytes": 156615
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Keresete Yo o Tshedileng",
+    "html_bytes": 171130
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Tsosoloso ya Botlalo jwa Efangele ya ga Jeso Keresete",
+    "html_bytes": 157419
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Mekwalwana ya Tumelo ya Kereke ya ga Jeso Keresete ya Baitshepi ba Malatsi a Bofelo",
+    "html_bytes": 151258
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "sna",
+  "name": "Shona",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Mhuri",
+    "html_bytes": 147564
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kristu Anorarama",
+    "html_bytes": 161014
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Kudzorerwa kweKuzara kweVhangeri raJesu Kristu",
+    "html_bytes": 148121
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Misimboti yeChitendero cheChechi yaJesu Kristu yaVatendi vaMazuva Ekupedzisira",
+    "html_bytes": 142294
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "alb",
+  "name": "Shqip",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Familja",
+    "html_bytes": 149285
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Krishti i Gjallë",
+    "html_bytes": 161785
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Rivendosja e Plotësisë së Ungjillit të Jezu Krishtit",
+    "html_bytes": 157327
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Nenet e Besimit të Kishës së Jezu Krishtit të Shenjtorëve të Ditëve të Mëvonshme",
+    "html_bytes": 143453
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ssw",
+  "name": "siSwati",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Umndeni",
+    "html_bytes": 152637
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Khristu Lophilako",
+    "html_bytes": 165724
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Kubuyiselwa kweLivangeli leliPhelele laJesu Khristu",
+    "html_bytes": 152738
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "ImiBhalo yeLukholo yeLibandla laJesu Khristu Lalabangcwele Betinsuku Tekugcina",
+    "html_bytes": 147243
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "slk",
+  "name": "Slovenčina",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Rodina",
+    "html_bytes": 145976
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Žijúci Kristus",
+    "html_bytes": 159116
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Znovuzriadenie plnosti evanjelia Ježiša Krista",
+    "html_bytes": 154444
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Články viery Cirkvi Ježiša Krista Svätých neskorších dní",
+    "html_bytes": 141308
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "slv",
+  "name": "Slovenščina",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Družina",
+    "html_bytes": 144346
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Živi Kristus",
+    "html_bytes": 158083
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Obnova polnosti evangelija Jezusa Kristusa",
+    "html_bytes": 144757
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Členi vere Cerkve Jezusa Kristusa svetih iz poslednjih dni",
+    "html_bytes": 139923
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "fin",
+  "name": "Suomi",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Perhe",
+    "html_bytes": 164304
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Elävä Kristus",
+    "html_bytes": 178053
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jeesuksen Kristuksen evankeliumin täyteyden palautus",
+    "html_bytes": 164616
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Myöhempien Aikojen Pyhien Jeesuksen Kristuksen Kirkon Uskonkappaleet",
+    "html_bytes": 159103
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "swe",
+  "name": "Svenska",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Familjen",
+    "html_bytes": 162105
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Den Levande Kristus",
+    "html_bytes": 175889
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Återställelsen av Jesu Kristi evangeliums fullhet",
+    "html_bytes": 171244
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Trosartiklarna i Jesu Kristi Kyrka av Sista Dagars Heliga",
+    "html_bytes": 157767
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "tgl",
+  "name": "Tagalog",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ang Mag-anak",
+    "html_bytes": 166482
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ang Buhay na Cristo",
+    "html_bytes": 180351
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ang Pagpapanumbalik ng Kabuuan ng Ebanghelyo ni Jesucristo",
+    "html_bytes": 176054
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ang Mga Saligan ng Pananampalataya ng Ang Simbahan ni Jesucristo ng mga Banal sa mga Huling Araw",
+    "html_bytes": 161171
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "mri",
+  "name": "Te Reo Māori",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Te Whānau",
+    "html_bytes": 133147
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Te Karaiti Ora Tonu",
+    "html_bytes": 147113
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Te Whakahokinga Mai o te Raneatanga o te Rongopai o Ihu Karaiti",
+    "html_bytes": 133003
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ngā Tikanga o te Whakapono nō Te Hāhi o Ihu Karaiti o te Hunga Tapu o ngā Rā o Muri Nei",
+    "html_bytes": 129211
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "yap",
+  "name": "Thin Nu Wa'ab",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Fare Sulyarmen ko Gospel rok Yesus Kristus nike Polo’",
+    "html_bytes": 147728
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Fapi Kenggin Likʼngin e Mich ko Fare Galasia Ku Yesus Kristus ni Fan ko Gidiiʼen Got ko Tin Tomur e Rran",
+    "html_bytes": 143200
+   }
+  },
+  "documents": 2,
+  "script": "Latin"
+ },
+ {
+  "code": "vie",
+  "name": "Tiếng Việt",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Gia Đình",
+    "html_bytes": 173285
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Đấng Ky Tô Hằng Sống",
+    "html_bytes": 186583
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Sự Phục Hồi Phúc Âm Trọn Vẹn của Chúa Giê Su Ky Tô",
+    "html_bytes": 182238
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Những Tín Điều của Giáo Hội Các Thánh Hữu Ngày Sau của Chúa Giê Su Ky Tô",
+    "html_bytes": 166677
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "tpi",
+  "name": "Tok Pisin",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Famili",
+    "html_bytes": 162315
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Krais I Stap Laip",
+    "html_bytes": 176673
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Restoresen bilong Olgeta Toktok bilong Gospel bilong Jisas Krais",
+    "html_bytes": 163473
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Ol Bilip bilong Sios bilong Jisas Krais bilong ol Seint long Las de",
+    "html_bytes": 156787
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "lua",
+  "name": "Tshiluba",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Dîku",
+    "html_bytes": 154713
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kilisto wa Moyo",
+    "html_bytes": 168184
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Dipinguluja dia Tshiwudi tshia Lumu Luimpa lua Yezu Kilisto",
+    "html_bytes": 154725
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Tunungu tua Ditabuja tua Ekelezia wa Yezu Kilisto wa Bansantu ba Matuku a Ndekelu",
+    "html_bytes": 149406
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "tur",
+  "name": "Türkçe",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Aile",
+    "html_bytes": 154674
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Yaşayan Mesih",
+    "html_bytes": 168324
+   },
+   "restoration": {
+    "ok": true,
+    "title": "İsa Mesih’in Sevindirici Haberi’nin Tamamının İade Edilişi",
+    "html_bytes": 163390
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "İsa Mesih’in Son Zaman Azizler Kilisesi’nin İman Maddeleri",
+    "html_bytes": 150255
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "twi",
+  "name": "Twi",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Abusua no",
+    "html_bytes": 153083
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kristo Teasefoɔ No",
+    "html_bytes": 167556
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Yesu Kristo Asɛmpa no Mayɛ Mmaeɛ bio",
+    "html_bytes": 153473
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Gyedie mu Nsɛnhia no ma Yesu Kristo Asɔre a Ɛwɔ hɔ ma Nna a Ɛdi Akyire Ahotefoɔ no",
+    "html_bytes": 149221
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "niu",
+  "name": "Vagahau Niue",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kua Moui a Keriso",
+    "html_bytes": 148289
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Ko e Liuakiamaiaga ko e Fakakatoatoaaga he Evagelia ha Iesu Keriso",
+    "html_bytes": 135222
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Tau Hatakiaga kua Tua a Mautolu ki ai ma e Lotu a Iesu Keriso ke he tau Aho Fakamui nei",
+    "html_bytes": 128744
+   }
+  },
+  "documents": 3,
+  "script": "Latin"
+ },
+ {
+  "code": "fij",
+  "name": "Vosa vakaviti",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Na Matavuvale",
+    "html_bytes": 148506
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Se Bula na Karisito",
+    "html_bytes": 163452
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Na Vakalesui Mai ni Taucoko ni Kosipeli i Jisu Karisito",
+    "html_bytes": 157554
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Na Yavu Ni Vakabauta ni Lotu i Jisu Karisito ni Yalododonu Edaidai",
+    "html_bytes": 143419
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "war",
+  "name": "Waray Waray",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "title": "",
+    "html_bytes": 121717
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "quz",
+  "name": "Yunkay Quechua",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Wasi Ayllu",
+    "html_bytes": 131025
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Kausaq Cristo",
+    "html_bytes": 144809
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Jesucristoq llumpʼa Evangelion hukmanta Hatarichiynin",
+    "html_bytes": 131772
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Iñiy Qhawachiq Qhepa Pʼunchaykunapi Chanin Runakunaq Jesucristoq Iglesianpa",
+    "html_bytes": 126856
+   }
+  },
+  "documents": 4,
+  "script": "Latin"
+ },
+ {
+  "code": "ell",
+  "name": "Ελληνικά",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Η οικογένεια",
+    "html_bytes": 173703
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Ο Ζων Χριστός",
+    "html_bytes": 184356
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Η Αποκατάσταση της πληρότητας του Ευαγγελίου του Ιησού Χριστού",
+    "html_bytes": 180166
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Τα Άρθρα της Πίστεως της Εκκλησίας του Ιησού Χριστού των Αγίων των Τελευταίων Ημερών",
+    "html_bytes": 162839
+   }
+  },
+  "documents": 4,
+  "script": "Greek"
+ },
+ {
+  "code": "bel",
+  "name": "Беларуская",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "bul",
+  "name": "Български",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Семейството",
+    "html_bytes": 158546
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Живият Христос",
+    "html_bytes": 172707
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Възстановяването на пълнотата на Евангелието на Исус Христос",
+    "html_bytes": 158862
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Символът на вярата на Църквата на Исус Христос на светиите от последните дни",
+    "html_bytes": 151274
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "kaz",
+  "name": "Қазақ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Отбасы",
+    "html_bytes": 179928
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Тірі Мәсіх",
+    "html_bytes": 192962
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Иса Мәсіхтің Толық Інжілін қалпына келтіру",
+    "html_bytes": 179963
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Иса Мәсіхтің Соңғы Замандағы Әулиелері Шіркеуінің Дін Рәміздері",
+    "html_bytes": 173643
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "mkd",
+  "name": "Македонски",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Семејството",
+    "html_bytes": 182366
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Живиот Христос",
+    "html_bytes": 195701
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Обновата на Целината на Евангелието на Исус Христос",
+    "html_bytes": 182102
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Поставки на верата на Црквата на Исус Христос на Светците од Подоцнежните Дни",
+    "html_bytes": 175071
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "mon",
+  "name": "Монгол",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Гэр бүл",
+    "html_bytes": 181480
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Амьд Христ",
+    "html_bytes": 194418
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Есүс Христийн сайн мэдээний бүрэн байдлын сэргээлт",
+    "html_bytes": 190361
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Есүс Христийн Хожмын Үеийн Гэгээнтнүүдийн Сүмийн Итгэлийн Тунхаг",
+    "html_bytes": 174829
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "rus",
+  "name": "Русский",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Семья",
+    "html_bytes": 184032
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Живой Христос",
+    "html_bytes": 197285
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Восстановление полноты Евангелия Иисуса Христа",
+    "html_bytes": 193431
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Символы веры Церкви Иисуса Христа Святых последних дней",
+    "html_bytes": 176983
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "srp",
+  "name": "Српски",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Породица",
+    "html_bytes": 155231
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Христ који живи",
+    "html_bytes": 168445
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Обнова пунине Јеванђеља Исуса Христа",
+    "html_bytes": 163489
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Чланци вере Цркве Исуса Христа светаца последњих дана",
+    "html_bytes": 148168
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "ukr",
+  "name": "Українська",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Сімʼя",
+    "html_bytes": 184153
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Живий Христос",
+    "html_bytes": 196462
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Відновлення повноти євангелії Ісуса Христа",
+    "html_bytes": 192919
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Уложення віри Церкви Ісуса Христа Святих Останніх Днів",
+    "html_bytes": 176639
+   }
+  },
+  "documents": 4,
+  "script": "Cyrillic"
+ },
+ {
+  "code": "kat",
+  "name": "ქართული",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ოჯახი",
+    "html_bytes": 172441
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ცოცხალი ქრისტე",
+    "html_bytes": 183889
+   },
+   "restoration": {
+    "ok": true,
+    "title": "იესო ქრისტეს სახარების სისრულის აღდგენა",
+    "html_bytes": 170441
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "უკანასკნელ დღეთა წმინდანთა იესო ქრისტეს ეკლესიის რწმენის სიმბოლოები",
+    "html_bytes": 161428
+   }
+  },
+  "documents": 4,
+  "script": "Georgian"
+ },
+ {
+  "code": "hyw",
+  "name": "արեւմտահայերէն",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "hye",
+  "name": "Հայերեն",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "Ընտանիք",
+    "html_bytes": 179070
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "Կենդանի Քրիստոսը",
+    "html_bytes": 190294
+   },
+   "restoration": {
+    "ok": true,
+    "title": "Հիսուս Քրիստոսի ավետարանի լրիվության վերականգնումը",
+    "html_bytes": 186669
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "Հիսուս Քրիստոսի Վերջին Օրերի Սրբերի Եկեղեցու Հավատո Հանգանակը",
+    "html_bytes": 170581
+   }
+  },
+  "documents": 4,
+  "script": "Armenian"
+ },
+ {
+  "code": "urd",
+  "name": "اردو",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "خاندان",
+    "html_bytes": 174512
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "زِندَہ مسِیح",
+    "html_bytes": 188075
+   },
+   "restoration": {
+    "ok": true,
+    "title": "یِسُوع مسِیح کی مَعمُوریِ اِنجیل کی بحالی",
+    "html_bytes": 175306
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "کلِیسیائے یِسُوع مسِیح برائے مُقَدَّسِینِ آخِری ایّام کے اِیمان کے اَرکان",
+    "html_bytes": 168176
+   }
+  },
+  "documents": 4,
+  "script": "Arabic"
+ },
+ {
+  "code": "ara",
+  "name": "العربية",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "العائلة",
+    "html_bytes": 152799
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "المسيح الحَيّ",
+    "html_bytes": 166574
+   },
+   "restoration": {
+    "ok": true,
+    "title": "استعادة ملء إنجيل يسوع المسيح",
+    "html_bytes": 161289
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "بنود الإيمان لكنيسة يسوع المسيح لقدّيسي الأيام الأخيرة",
+    "html_bytes": 146801
+   }
+  },
+  "documents": 4,
+  "script": "Arabic"
+ },
+ {
+  "code": "pes",
+  "name": "فارسی",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "خانواده",
+    "html_bytes": 154706
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "مسیح زنده",
+    "html_bytes": 167922
+   },
+   "restoration": {
+    "ok": true,
+    "title": "احیای کمال مژدۀ عیسی مسیح",
+    "html_bytes": 155101
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "ارکان دین کلیسای عیسی مسیح مقدّسین آخرین زمان",
+    "html_bytes": 148553
+   }
+  },
+  "documents": 4,
+  "script": "Arabic"
+ },
+ {
+  "code": "ckb",
+  "name": "کوردی سۆرانی",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "خێزان",
+    "html_bytes": 128591
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "مەسیحی زیندوو",
+    "html_bytes": 141154
+   },
+   "restoration": {
+    "ok": true,
+    "title": "گەڕاندنەوەی پڕی ئینجیلی یەسوعی مەسیح",
+    "html_bytes": 127793
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 3,
+  "script": "Arabic"
+ },
+ {
+  "code": "amh",
+  "name": "አማርኛ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ቤተሰብ",
+    "html_bytes": 147587
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ህያው ክርስቶስ",
+    "html_bytes": 160279
+   },
+   "restoration": {
+    "ok": true,
+    "title": "የኢየሱስ ክርስቶስ ወንጌል ሙላት ዳግም መመለስ",
+    "html_bytes": 156413
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "የእምነት አንቀጾች የኋለኛው ቀን ቅዱሳን የኢየሱስ ክርስቶስ ቤተክርስቲያን",
+    "html_bytes": 141571
+   }
+  },
+  "documents": 4,
+  "script": "Ethiopic"
+ },
+ {
+  "code": "nep",
+  "name": "नेपाली",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": true,
+    "title": "येशू ख्रीष्टको सुसमचारको पूर्णताको पुनर्स्थापना",
+    "html_bytes": 197896
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "पछिल्ला दिनका सन्तहरूको येशू ख्रीष्टको चर्चको आस्थाका बुँदाहरू",
+    "html_bytes": 188450
+   }
+  },
+  "documents": 2,
+  "script": "Devanagari"
+ },
+ {
+  "code": "mar",
+  "name": "मराठी",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "कुटुंब",
+    "html_bytes": 133446
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "जिवंत ख्रिस्त",
+    "html_bytes": 147494
+   },
+   "restoration": {
+    "ok": true,
+    "title": "येशू ख्रिस्ताच्या सुवार्तेच्या परिपूर्णतेची पुनर्स्थापना",
+    "html_bytes": 134589
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "अखेरच्या काळातील संतांचे येशू ख्रिस्ताचे चर्चचे विश्वासाचे लेख",
+    "html_bytes": 124417
+   }
+  },
+  "documents": 4,
+  "script": "Devanagari"
+ },
+ {
+  "code": "hin",
+  "name": "हिन्दी",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "परिवार",
+    "html_bytes": 184828
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "जीवित मसीह",
+    "html_bytes": 197396
+   },
+   "restoration": {
+    "ok": true,
+    "title": "यीशु मसीह के सुसमाचार की परिपूर्णता की पुनःस्थापना",
+    "html_bytes": 184582
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "विश्वास के अनुच्छेद अंतिम-दिनों के संतों का यीशु मसीह का गिरजा",
+    "html_bytes": 175394
+   }
+  },
+  "documents": 4,
+  "script": "Devanagari"
+ },
+ {
+  "code": "ben",
+  "name": "বাংলা",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "পরিবার",
+    "html_bytes": 197907
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "জীবিত খ্রীষ্ট",
+    "html_bytes": 211428
+   },
+   "restoration": {
+    "ok": true,
+    "title": "যীশু খ্রীষ্টের সুসমাচারের পূর্ণতার পুনরূদ্ধার",
+    "html_bytes": 199022
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "শেষকালীন ধার্মিকদের যীশু খ্রীষ্টের মন্ডলীর বিশ্বাসের বিধিসমূহ",
+    "html_bytes": 189295
+   }
+  },
+  "documents": 4,
+  "script": "Bengali"
+ },
+ {
+  "code": "guj",
+  "name": "ગુજરાત",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "પરિવાર",
+    "html_bytes": 131193
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "શ્રદ્ધા વિષેના લેખો અંતિમ કાળ ના સંતોની ઈસુ ખ્રિસ્તની ગિરજાનો",
+    "html_bytes": 123560
+   }
+  },
+  "documents": 2,
+  "script": "Gujarati"
+ },
+ {
+  "code": "tam",
+  "name": "தமிழ்",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "குடும்பம்",
+    "html_bytes": 207878
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ஜீவிக்கும் கிறிஸ்து",
+    "html_bytes": 221654
+   },
+   "restoration": {
+    "ok": true,
+    "title": "இயேசு கிறிஸ்துவின் சுவிசேஷத்தின் முழுமையின் மறுஸ்தாபிதம்",
+    "html_bytes": 207612
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "பிற்காலப் பரிசுத்தவான்களின் இயேசு கிறிஸ்து சபையின் விசுவாசப் பிரமாணங்கள்",
+    "html_bytes": 197196
+   }
+  },
+  "documents": 4,
+  "script": "Tamil"
+ },
+ {
+  "code": "tel",
+  "name": "తెలుగు",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "కుటుంబము",
+    "html_bytes": 197570
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "జీవముతో ఉన్న క్రీస్తు",
+    "html_bytes": 211722
+   },
+   "restoration": {
+    "ok": true,
+    "title": "యేసు క్రీస్తు సువార్త సంపూర్ణత యొక్క పునఃస్థాపన",
+    "html_bytes": 198811
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "విశ్వాస ప్రమాణాలు యేసు క్రీస్తు యొక్క కడవరి దిన పరిశుద్ధుల సంఘము",
+    "html_bytes": 188016
+   }
+  },
+  "documents": 4,
+  "script": "Telugu"
+ },
+ {
+  "code": "kan",
+  "name": "ಕನ್ನಡ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ಕುಟುಂಬ",
+    "html_bytes": 204673
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ಜೀವಂತ ಕ್ರಿಸ್ತನು",
+    "html_bytes": 218514
+   },
+   "restoration": {
+    "ok": true,
+    "title": "ಯೇಸು ಕ್ರಿಸ್ತರ ಸಂಪೂರ್ಣ ಸುವಾರ್ತೆಯ ಪುನಃಸ್ಥಾಪನೆ",
+    "html_bytes": 205673
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "ಯೇಸು ಕ್ರಿಸ್ತನ ಕಡೆ ದಿನಗಳ ಸಂತರ ಸಭೆಯ ವಿಶ್ವಾಸದ ಲೇಖನಗಳು",
+    "html_bytes": 195720
+   }
+  },
+  "documents": 4,
+  "script": "Kannada"
+ },
+ {
+  "code": "mal",
+  "name": "മലയാളം",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "കുടുംബം",
+    "html_bytes": 137597
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ജീവിക്കുന്ന ക്രിസ്തു",
+    "html_bytes": 151393
+   },
+   "restoration": {
+    "ok": true,
+    "title": "യേശുകൃസ്തുവിന്റെ പരിപൂർണ്ണമായ സുവിശേഷത്തിന്റെ പുനസ്ഥാപനം",
+    "html_bytes": 138617
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "അന്ത്യകാലത്തെ വിശുദ്ധന്മാരുടെ യേശുക്രിസ്തുവിന്റെ സഭയുടെ വിശ്വാസത്തിന്റെ പ്രസ്താവനകൾ",
+    "html_bytes": 128134
+   }
+  },
+  "documents": 4,
+  "script": "Malayalam"
+ },
+ {
+  "code": "sin",
+  "name": "සිංහල",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "පවුල",
+    "html_bytes": 198806
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ජීවමාන ක්‍රිස්තුස්වහන්සේ",
+    "html_bytes": 214235
+   },
+   "restoration": {
+    "ok": true,
+    "title": "යේසුස් ක්‍රිස්තුස්වහන්සේගේ ශුභාරංචියේ පූර්ණත්වය නැවත පිහිටුවීම",
+    "html_bytes": 199782
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "යේසුස් ක්‍රිස්තුස්වහන්සේගේ පසුදවස් වල ශුද්ධවන්තයන්ගෙන් යුත් සභාවේ ඇදහිල්ලේ කරුණු",
+    "html_bytes": 189277
+   }
+  },
+  "documents": 4,
+  "script": "Sinhala"
+ },
+ {
+  "code": "tha",
+  "name": "ภาษาไทย",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ครอบครัว",
+    "html_bytes": 162257
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "พระคริสต์ผู้ทรงพระชนม์",
+    "html_bytes": 178217
+   },
+   "restoration": {
+    "ok": true,
+    "title": "การฟื้นฟูความสมบูรณ์แห่งพระกิตติคุณของพระเยซูคริสต์",
+    "html_bytes": 162705
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "หลักแห่งความเชื่อ ของศาสนจักรของพระเยซูคริสต์แห่งวิสุทธิชนยุคสุดท้าย",
+    "html_bytes": 152037
+   }
+  },
+  "documents": 4,
+  "script": "Thai"
+ },
+ {
+  "code": "lao",
+  "name": "ພາສາລາວ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ຄອບ​ຄົວ",
+    "html_bytes": 177690
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ພຣະ​ຄຣິດ​ທີ່​ຊົງ​ພຣະ​ຊົນ",
+    "html_bytes": 194192
+   },
+   "restoration": {
+    "ok": true,
+    "title": "ການ​ຟື້ນ​ຟູ​ຄວາມ​ສົມ​ບູນ​ແຫ່ງ​ພຣະ​ກິດ​ຕິ​ຄຸນ​ຂອງ​ພຣະ​ເຢ​ຊູ​ຄຣິດ",
+    "html_bytes": 186906
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "ຫລັກ​ແຫ່ງ​ຄວາມ​ເຊື່ອ ຂອງ​ສາດ​ສະ​ໜາ​ຈັກ​ຂອງ​ພຣະ​ເຢ​ຊູ​ຄຣິດ​ແຫ່ງ​ໄພ່​ພົນ​ຍຸກ​ສຸດ​ທ້າຍ",
+    "html_bytes": 164168
+   }
+  },
+  "documents": 4,
+  "script": "Lao"
+ },
+ {
+  "code": "ksw",
+  "name": "ကညီလံာ်ခီၣ်ထံ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ဟံၣ်ဖိဃီဖိ",
+    "html_bytes": 137381
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ခရံာ်လၢအမူဝဲတဂၤ",
+    "html_bytes": 153318
+   },
+   "restoration": {
+    "ok": true,
+    "title": "ယ့ၣ်ၡူးခရံာ်အတၢ်သးခုကစီၣ်အတၢ်ဟဲက့ၤစိာ်ကဒါက့ၤလၢၦဲၤ",
+    "html_bytes": 138926
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "တၢ်စူၢ်တၢ်နာ်အတၢ်ကွဲးတဖၣ် လၢယ့ၣ်ၡူးခရံာ်အသရိာ်ဘၣ်ဃးဒီးပှၤစီဆှံလၢမုၢ်နံၤခံကတၢၢ်",
+    "html_bytes": 128806
+   }
+  },
+  "documents": 4,
+  "script": "Myanmar"
+ },
+ {
+  "code": "mya",
+  "name": "ဗမာစာ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "မိသားစု",
+    "html_bytes": 188068
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "အသက်ရှင်တော်မူသောခရစ်တော်",
+    "html_bytes": 200328
+   },
+   "restoration": {
+    "ok": true,
+    "title": "ယေရှုခရစ်တော်၏ဧဝံဂေလိတရားတော် အပြည့်အစုံကို ပြန်လည်ဆောင်ယူခြင်း၊",
+    "html_bytes": 198134
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "title": "",
+    "html_bytes": 161252
+   }
+  },
+  "documents": 3,
+  "script": "Myanmar"
+ },
+ {
+  "code": "khm",
+  "name": "ភាសាខ្មែរ",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "ក្រុមគ្រួសារ",
+    "html_bytes": 170165
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "ព្រះគ្រីស្ទ​ដ៏​មាន​ព្រះ​ជន្ម​រស់",
+    "html_bytes": 188937
+   },
+   "restoration": {
+    "ok": true,
+    "title": "ការស្ដារ​ឡើងវិញ​នៃ​ភាពពេញលេញ​នៃ​ដំណឹងល្អ​របស់​ព្រះយេស៊ូវគ្រីស្ទ",
+    "html_bytes": 181958
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "មាត្រា​នៃ​សេចក្ដី​ជំនឿ នៃ​សាសនាចក្រ​នៃ​ព្រះ​យេស៊ូវ​គ្រីស្ទ​នៃ​ពួក​បរិសុទ្ធ​ថ្ងៃ​ចុង​ក្រោយ",
+    "html_bytes": 160831
+   }
+  },
+  "documents": 4,
+  "script": "Khmer"
+ },
+ {
+  "code": "kor",
+  "name": "한국어",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "가족",
+    "html_bytes": 162452
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "살아 계신 그리스도",
+    "html_bytes": 177402
+   },
+   "restoration": {
+    "ok": true,
+    "title": "예수 그리스도의 충만한 복음의 회복",
+    "html_bytes": 172371
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "신 앙 개 조 예수 그리스도 후기 성도 교회",
+    "html_bytes": 158555
+   }
+  },
+  "documents": 4,
+  "script": "Hangul"
+ },
+ {
+  "code": "jpn",
+  "name": "日本語",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "家族",
+    "html_bytes": 160709
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "生けるキリスト",
+    "html_bytes": 177531
+   },
+   "restoration": {
+    "ok": true,
+    "title": "イエス・キリストの完全な福音の回復",
+    "html_bytes": 170307
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "末まつ日じつ聖せい徒とイエス・キリスト教きょう会かいの信しん仰こう箇か条じょう",
+    "html_bytes": 179010
+   }
+  },
+  "documents": 4,
+  "script": "Japanese"
+ },
+ {
+  "code": "cmn-Latn",
+  "name": "漢語拼音",
+  "docs": {
+   "family": {
+    "ok": false,
+    "status": 404
+   },
+   "living-christ": {
+    "ok": false,
+    "status": 404
+   },
+   "restoration": {
+    "ok": false,
+    "status": 404
+   },
+   "articles-of-faith": {
+    "ok": false,
+    "status": 404
+   }
+  },
+  "documents": 0,
+  "script": null
+ },
+ {
+  "code": "zhs",
+  "name": "简体中文 - 普通话",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "家庭",
+    "html_bytes": 147593
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "活着的基督",
+    "html_bytes": 162121
+   },
+   "restoration": {
+    "ok": true,
+    "title": "耶稣基督圆满福音的复兴",
+    "html_bytes": 157585
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "耶稣基督后期圣徒教会信条",
+    "html_bytes": 145664
+   }
+  },
+  "documents": 4,
+  "script": "Han"
+ },
+ {
+  "code": "zho",
+  "name": "繁體中文 - 國語",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "家庭",
+    "html_bytes": 147603
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "活著的基督",
+    "html_bytes": 162131
+   },
+   "restoration": {
+    "ok": true,
+    "title": "耶穌基督圓滿福音的復興",
+    "html_bytes": 157575
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "耶穌基督後期聖徒教會信條",
+    "html_bytes": 145592
+   }
+  },
+  "documents": 4,
+  "script": "Han"
+ },
+ {
+  "code": "yue",
+  "name": "繁體中文 - 廣東話",
+  "docs": {
+   "family": {
+    "ok": true,
+    "title": "家庭",
+    "html_bytes": 120586
+   },
+   "living-christ": {
+    "ok": true,
+    "title": "活著的基督",
+    "html_bytes": 135126
+   },
+   "restoration": {
+    "ok": true,
+    "title": "耶穌基督圓滿福音的復興",
+    "html_bytes": 130576
+   },
+   "articles-of-faith": {
+    "ok": true,
+    "title": "耶穌基督後期聖徒教會信條",
+    "html_bytes": 118587
+   }
+  },
+  "documents": 4,
+  "script": "Han"
+ }
+]

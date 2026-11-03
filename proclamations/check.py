@@ -8,6 +8,7 @@ colours and weights, column edges, title placement. Line breaks are not compared
 originals use proprietary fonts. Exit status is non-zero if anything fails.
 """
 import re
+import unicodedata
 import sys
 import tempfile
 from pathlib import Path
@@ -57,8 +58,8 @@ def _norm(text):
     out = []
     for ch in text:
         cp = ord(ch)
-        out.append(chr(cp + 0x28) if 0x10400 <= cp <= 0x10427 else ch.casefold())
-    return re.findall(r"[\U00010428-\U0001044f\w]+", "".join(out))
+        out.append(chr(cp + 0x28) if 0x10400 <= cp <= 0x10427 else ch.casefold().replace("ı", "i"))   # Turkish dotless i is capitalized as I
+    return re.findall(r"[\U00010428-\U0001044f\w]+", unicodedata.normalize("NFC", "".join(out)).replace("i̇", "i"))
 
 
 def _split_dropcap(text):
@@ -84,6 +85,18 @@ def _expected_words(L, d):
     return _norm(" ".join(p for p in parts if p))
 
 
+def _overlaps(spans, scale=1.0):
+    """True when two text spans cover each other (a heading running into its neighbor)."""
+    boxes = [s["bbox"] for s in spans if len(s["text"].strip()) > 1 and not s["text"].strip().isdigit()]
+    for i, a in enumerate(boxes):
+        for b in boxes[i + 1:]:
+            w = min(a[2], b[2]) - max(a[0], b[0])
+            h = min(a[3], b[3]) - max(a[1], b[1])
+            if w > 4 * scale and h > 0.5 * min(a[3] - a[1], b[3] - b[1]):
+                return True
+    return False
+
+
 def output_check(path):
     slug, script_name, size = path.stem.rsplit("-", 2)       # <doc>-<edition>-<size>.pdf
     script = scripts.get(script_name)
@@ -98,6 +111,7 @@ def output_check(path):
     inside = all(-0.5 <= s["bbox"][0] and s["bbox"][2] <= page.rect.width + 0.5 and -0.5 <= s["bbox"][1]
                  and s["bbox"][3] <= page.rect.height + 0.5 for s in spans)
     results.append(("all text inside the page", inside, ""))
+    results.append(("no overlapping text", not _overlaps(spans, page.rect.width / 612), ""))
     raw = page.get_text()
     # a word split across lines extracts as "pri-" / "mavera": accept the rejoined word as well
     rejoined = [a + b for a, b in re.findall(r"(\w+)-\n(\w+)", raw)]
@@ -112,7 +126,7 @@ def output_check(path):
     results.append(("no source words lost", not missing, f"{len(want)} expected, missing {missing[:8]}"))
     if slug in TRACKED:
         letters = "".join(_norm(L.subtitle))
-        stream = "".join(_norm(" ".join(re.findall(r"(?<!\w)(\w)(?!\w)", raw))))
+        stream = "".join(_norm(raw))                      # letters only, so tracked spacing and split diacritics do not matter
         as_words = all(w in got for w in _norm(L.subtitle))      # some fonts extract tracked text as words
         results.append(("letter-spaced subtitle present", letters in stream or as_words, letters[:30]))
     return results
@@ -122,7 +136,8 @@ def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     failures = 0
     if "--outputs" in argv:
-        pdfs = sorted((HERE / "out").glob("*/*.pdf"))
+        only = argv[argv.index("--sizes") + 1].split(",") if "--sizes" in argv else None
+        pdfs = [p for p in sorted((HERE / "out").glob("*/*.pdf")) if not only or p.stem.rsplit("-", 1)[1] in only]
         if not pdfs:
             print("no PDFs under proclamations/out; run proclamations.generate first")
             return 1

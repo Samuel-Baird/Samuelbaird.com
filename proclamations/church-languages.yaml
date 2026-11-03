@@ -1,0 +1,347 @@
+# Master reference list of every language churchofjesuschrist.org offers a
+# site in, with the "site code" the Church's own ?lang= query parameter uses
+# for that language. Scraped from https://www.churchofjesuschrist.org/languages?lang=eng
+# on 2026-07-12 (150 languages at that time) -- re-scrape and update this
+# file if the Church adds or removes a language, rather than hand-editing
+# entries beyond that.
+#
+# This is a reference list, not a status list: appearing here means the
+# Church offers a site in that language, not that the vault has started
+# work on it. See progress/languages/registry.yaml for which languages the
+# vault is actively tracking (a small subset of this list), and
+# progress/languages.md for the human-readable dashboard built from both.
+#
+# `site_code` is the exact code used in ?lang=<code> on the Church site and
+# is what talks/<language>/**/*.md's `language:` frontmatter field should
+# use. It is NOT always the same as the 2-letter "tool code" used by
+# schema/glossary/glossary-<lang>.md, npm run quote, and the parallel corpus (e.g.
+# Portuguese is site_code "por" but tool code "pt") -- see
+# "Two codes, one language" in docs/translation.md.
+#
+# name is the Church's own in-language site name, exactly as it appears in
+# the language picker -- not translated, not transliterated.
+#
+# SIGNED LANGUAGES ARE OUT OF SCOPE. American Sign Language (ase), Auslan
+# (asf), and British Sign Language (bfi) below are marked `signed: true` --
+# do not scrape, translate, or otherwise bootstrap them. See "Signed
+# languages are out of scope" in docs/translation.md for why: a signed
+# language has no standard written orthography, so any conference-talk page
+# scraped as running prose "in" one of these codes is not real content in
+# that language -- it is the Church's English-caption/subtitle text served
+# alongside the interpreted video (this vault previously discovered and
+# removed 279 files wrongly committed as Auslan on this basis; see
+# progress/languages/registry.yaml history). If the Church adds another
+# signed language to its site list, mark it `signed: true` here too instead
+# of registering it in progress/languages/registry.yaml.
+
+- name: Afaan Oromoo
+  site_code: orm
+- name: Afrikaans
+  site_code: afr
+- name: American Sign Language
+  site_code: ase
+  signed: true
+- name: Auslan
+  site_code: asf
+  signed: true
+- name: Aymar Aru
+  site_code: aym
+- name: Bahasa Indonesia
+  site_code: ind
+- name: Bahasa Melayu
+  site_code: msa
+- name: Bamanankan
+  site_code: bam
+- name: Bats'i k'op
+  site_code: tzo
+- name: Bikol
+  site_code: bik
+- name: Bislama
+  site_code: bis
+- name: British Sign Language
+  site_code: bfi
+  signed: true
+- name: Cakchiquel
+  site_code: cak
+- name: Català
+  site_code: cat
+- name: Cebuano
+  site_code: ceb
+- name: Česky
+  site_code: ces
+- name: Chamoru
+  site_code: cha
+- name: Chichewa
+  site_code: nya
+- name: Cymraeg
+  site_code: cym
+- name: Dansk
+  site_code: dan
+- name: Deutsch
+  site_code: deu
+- name: Diné bizaad
+  site_code: nav
+- name: Dulegaya
+  site_code: cuk
+- name: Èdè Yorùbá
+  site_code: yor
+- name: Eesti
+  site_code: est
+- name: Efik
+  site_code: efi
+- name: EkeGusii
+  site_code: guz
+- name: English
+  site_code: eng
+- name: Español
+  site_code: spa
+- name: Euskera
+  site_code: eus
+- name: Fäeag Rotųam
+  site_code: rtm
+- name: Faka-Tonga
+  site_code: ton
+- name: Fante
+  site_code: fat
+- name: Fiji Hindi
+  site_code: hif
+- name: Fosun Chuuk
+  site_code: chk
+- name: Fɔngbè
+  site_code: fon
+- name: Français
+  site_code: fra
+- name: Gagana Samoa
+  site_code: smo
+- name: gana Tuvalu
+  site_code: tvl
+- name: "Guaraní (Avañe'ẽ)"
+  site_code: grn
+- name: Hiligaynon
+  site_code: hil
+- name: Hmoob
+  site_code: hmn
+- name: Hrvatski
+  site_code: hrv
+- name: ʻŌlelo Hawaiʻi
+  site_code: haw
+- name: Ibibio
+  site_code: ibb
+- name: Icibemba
+  site_code: bem
+- name: Îethka (Yethka)
+  site_code: sto
+- name: Igbo
+  site_code: ibo
+- name: Ilokano
+  site_code: ilo
+- name: isiNdebele
+  site_code: nbl
+- name: isiXhosa
+  site_code: xho
+- name: isiZulu
+  site_code: zul
+- name: íslenska
+  site_code: isl
+- name: Italiano
+  site_code: ita
+- name: Jaku Iban
+  site_code: iba
+- name: Kahs Kosrae
+  site_code: kos
+- name: Kajin Majōl
+  site_code: mah
+- name: Kichwa
+  site_code: qvi
+- name: Kikamba
+  site_code: kam
+- name: Kinyarwanda
+  site_code: kin
+- name: Kiribati
+  site_code: gil
+- name: Kiswahili
+  site_code: swa
+- name: Kreyòl Ayisyen
+  site_code: hat
+- name: "Kriol, Crioulo"
+  site_code: kea
+- name: Latviešu
+  site_code: lav
+- name: Lëtzebuergesch
+  site_code: ltz
+- name: Lietuvių
+  site_code: lit
+- name: Lingála
+  site_code: lin
+- name: Luganda
+  site_code: lug
+- name: maayaʼ tʼàan
+  site_code: yua
+- name: Magyar
+  site_code: hun
+- name: Mahsen en Pohnpei
+  site_code: pon
+- name: Malagasy
+  site_code: mlg
+- name: Malti
+  site_code: mlt
+- name: Mam
+  site_code: mam
+- name: Māori Kuki Airani
+  site_code: rar
+- name: Motu
+  site_code: meu
+- name: "Ndee biyáti'"
+  site_code: apw
+- name: Nederlands
+  site_code: nld
+- name: "Nitsi'powahsin"
+  site_code: bla
+- name: Nivacle
+  site_code: cag
+- name: Norsk
+  site_code: nor
+- name: Palauan
+  site_code: pau
+- name: Pampango
+  site_code: pam
+- name: Pangasinan
+  site_code: pag
+- name: Papiamento
+  site_code: pap
+- name: Polski
+  site_code: pol
+- name: Português (Brasil)
+  site_code: por
+- name: Português (Europeu)
+  site_code: ept
+- name: "Q'eqchi'"
+  site_code: kek
+- name: Qhichwa Boliviamanta
+  site_code: quh
+- name: Quiché
+  site_code: quc
+- name: Reo Tahiti
+  site_code: tah
+- name: Română
+  site_code: ron
+- name: sePêdi
+  site_code: nso
+- name: Sesotho
+  site_code: sot
+- name: Setswana
+  site_code: tsn
+- name: Shona
+  site_code: sna
+- name: Shqip
+  site_code: alb
+- name: siSwati
+  site_code: ssw
+- name: Slovenčina
+  site_code: slk
+- name: Slovenščina
+  site_code: slv
+- name: Suomi
+  site_code: fin
+- name: Svenska
+  site_code: swe
+- name: Tagalog
+  site_code: tgl
+- name: Te Reo Māori
+  site_code: mri
+- name: "Thin Nu Wa'ab"
+  site_code: yap
+- name: Tiếng Việt
+  site_code: vie
+- name: Tok Pisin
+  site_code: tpi
+- name: Tshiluba
+  site_code: lua
+- name: Türkçe
+  site_code: tur
+- name: Twi
+  site_code: twi
+- name: Vagahau Niue
+  site_code: niu
+- name: Vosa vakaviti
+  site_code: fij
+- name: Waray Waray
+  site_code: war
+- name: Yunkay Quechua
+  site_code: quz
+- name: Ελληνικά
+  site_code: ell
+- name: Беларуская
+  site_code: bel
+- name: Български
+  site_code: bul
+- name: Қазақ
+  site_code: kaz
+- name: Македонски
+  site_code: mkd
+- name: Монгол
+  site_code: mon
+- name: Русский
+  site_code: rus
+- name: Српски
+  site_code: srp
+- name: Українська
+  site_code: ukr
+- name: ქართული
+  site_code: kat
+- name: արեւմտահայերէն
+  site_code: hyw
+- name: Հայերեն
+  site_code: hye
+- name: اردو
+  site_code: urd
+- name: العربية
+  site_code: ara
+- name: فارسی
+  site_code: pes
+- name: کوردی سۆرانی
+  site_code: ckb
+- name: አማርኛ
+  site_code: amh
+- name: नेपाली
+  site_code: nep
+- name: मराठी
+  site_code: mar
+- name: हिन्दी
+  site_code: hin
+- name: বাংলা
+  site_code: ben
+- name: ગુજરાત
+  site_code: guj
+- name: தமிழ்
+  site_code: tam
+- name: తెలుగు
+  site_code: tel
+- name: ಕನ್ನಡ
+  site_code: kan
+- name: മലയാളം
+  site_code: mal
+- name: සිංහල
+  site_code: sin
+- name: ภาษาไทย
+  site_code: tha
+- name: ພາສາລາວ
+  site_code: lao
+- name: ကညီလံာ်ခီၣ်ထံ
+  site_code: ksw
+- name: ဗမာစာ
+  site_code: mya
+- name: ភាសាខ្មែរ
+  site_code: khm
+- name: 한국어
+  site_code: kor
+- name: 日本語
+  site_code: jpn
+- name: 漢語拼音
+  site_code: cmn-Latn
+- name: 简体中文 - 普通话
+  site_code: zhs
+- name: 繁體中文 - 國語
+  site_code: zho
+- name: 繁體中文 - 廣東話
+  site_code: yue

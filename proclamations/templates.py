@@ -138,7 +138,18 @@ def dc_size(lines, lead, size):
 
 
 def centered_note(pg, text, baseline, size, color, max_w, leading, style="i"):
-    for i, line in enumerate(balanced_lines(text, size, style, max_w, 2)):
+    """Centered note, two balanced lines as in the originals; a longer translation takes three,
+    then a smaller size,, so no word runs off the page."""
+    lines = None
+    while lines is None:
+        for n in (2, 3):
+            got = balanced_lines(text, size, style, max_w, n)
+            if all(text_width(l, size, style) <= max_w for l in got):
+                lines = got
+                break
+        else:
+            size *= 0.92
+    for i, line in enumerate(lines):
         pg.centered(306, baseline + i * leading, [Seg(line, size, style, color)])
 
 
@@ -224,8 +235,12 @@ def living_christ(pg, L):
 
     # signatures: the originals carry facsimile signatures; here the signers' names are typeset instead
     g1, g2 = (L.groups + ["", ""])[:2]
-    for x, g in ((64, g1), (236, g2)):
-        pg.segs(x, 647 + d, [Seg(S.caps(g), 9, "b", INK)])
+    for x, g, room in ((64, g1, 236 - 64 - 10), (236, g2, 548 - 236)):
+        g = S.caps(g)
+        size = 9.0
+        while size > 6 and text_width(g, size, "b") > room:      # a longer translation shrinks instead of running into its neighbor
+            size -= 0.25
+        pg.segs(x, 647 + d, [Seg(g, size, "b", INK)])
     for i, n in enumerate(L.names.get(0, [])):
         pg.segs(64, 668 + d + i * 15.5, [Seg(n, 10.2, color=INK)])
     for i, n in enumerate(L.names.get(1, [])):

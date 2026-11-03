@@ -73,7 +73,7 @@ def localize(slug, script):
         for gi, names in enumerate(SIGNERS):
             for ni, n in enumerate(names):
                 add(("n", gi, ni), n)
-    out = script.convert(strings)
+    out = [fonts.sanitize(t, script.latin_family) for t in script.convert(strings)]
     L = Loc(slug=slug, script=script, title="", lang=script.source, hints=script.hints)
     L.names = {0: [], 1: []}
     L.paragraphs, L.groups = [None] * len(d.get("paragraphs", [])), [None] * len(d.get("signature_groups", []))
@@ -82,7 +82,7 @@ def localize(slug, script):
         if key[0] == "p":
             L.paragraphs[key[1]] = text
         elif key[0] == "v":
-            verses[key[1]] = (d["verses"][key[1]]["n"], text)
+            verses[key[1]] = (d["verses"][key[1]].get("label") or d["verses"][key[1]]["n"], text)
         elif key[0] == "g":
             L.groups[key[1]] = text
         elif key[0] == "n":
@@ -98,6 +98,7 @@ def render(slug, script, size_name, out_dir, with_credit=True, loc=None):
     """Render one PDF. Pass `loc` (from localize) to avoid converting the text again."""
     fonts.set_family(script.latin_family)
     layout.set_hyphenation(script.hyphenation)
+    layout.set_justify(script.justify)
     L, d = loc or localize(slug, script)
     w, h = sizes_mod.get(size_name)
     path = output_path(out_dir, script.name, slug, size_name)

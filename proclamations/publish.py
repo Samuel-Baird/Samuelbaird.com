@@ -2,7 +2,8 @@
 
     python -m proclamations.publish
 
-Writes site/posters/<edition>/<doc>-<edition>-<size>.pdf (one flat folder per language or alphabet), a small
+Writes site/posters/<edition>/<doc>-<edition>-<size>.pdf for Letter and A4 only (one flat folder per language
+or alphabet; poster sizes live in Google Drive with the same folder names), a small
 JPEG preview of each document, and site/posters/manifest.json, which pipeline/build.py turns into the
 /proclamations index and one page per language.
 """
@@ -19,7 +20,8 @@ from .generate import DOCS, HERE, available, load_text, output_path
 
 ROOT = HERE.parent
 SITE = ROOT / "site" / "posters"
-PREVIEW_SIZE = "18x24"
+PUBLISHED = ("letter", "a4")      # posters are hosted in Google Drive (proclamations/drive.json), not in the repo
+PREVIEW_SIZE = "letter"
 PREVIEW_WIDTH = 420
 
 
@@ -40,7 +42,8 @@ def main(argv=None):
                 continue
             src = load_text(doc, script.source)
             files = {}
-            for size, (w, h) in sizes.SIZES.items():
+            for size in PUBLISHED:
+                w, h = sizes.SIZES[size]
                 f = output_path(a.out, slug, doc, size)
                 if not f.exists():
                     raise SystemExit(f"missing {f}; run `python -m proclamations.generate` first")
@@ -58,6 +61,12 @@ def main(argv=None):
         if docs:
             entries.append({"slug": slug, "kind": reg["kind"], "code": reg["code"], "native": reg["native"],
                             "english": reg["english"], "docs": docs})
+    drive = HERE / "drive.json"
+    cfg = json.loads(drive.read_text(encoding="utf-8")) if drive.exists() else {}
+    for e in entries:                                   # the language's own Drive folder if known, else the shared root
+        url = cfg.get("folders", {}).get(e["slug"]) or cfg.get("root")
+        if url:
+            e["posters_url"] = url
     (SITE / "manifest.json").write_text(json.dumps(entries, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
     n = sum(len(d["files"]) for e in entries for d in e["docs"].values())
     print(f"published {n} PDFs for {len(entries)} editions to {SITE.relative_to(ROOT)}")

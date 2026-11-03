@@ -26,6 +26,8 @@ class Script:
         self.source = entry.get("source", entry["code"])    # which texts/<code>/ file to start from
         self.latin_family = entry.get("font", "serif")
         self.hyphenation = entry.get("hyphenation")
+        self.justify = entry.get("justify", self.hyphenation is not None)   # ragged-right without a dictionary
+        self.cased = entry.get("caps", "upper") != "none"
         self.credit = entry.get("credit", DEFAULT_CREDIT)
         self.hints = entry.get("hints") or {}
 
@@ -33,7 +35,7 @@ class Script:
         return list(strings)
 
     def caps(self, text):
-        return text.upper()
+        return text.upper() if self.cased else text
 
     def report(self):
         return {}

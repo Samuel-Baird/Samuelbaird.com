@@ -11,6 +11,7 @@ from .fonts import space_width, text_width, to_caps, is_upper
 INF = float("inf")
 HYPHEN_PENALTY = 30.0      # cost of ending a line with a hyphenated word
 _hyph = {"dic": None}
+_justify = {"on": True}
 _RUN = re.compile(r"[^\W\d_]+")
 _DASHES = "-–—"
 
@@ -23,6 +24,12 @@ def set_hyphenation(lang):
     else:
         import pyphen
         _hyph["dic"] = pyphen.Pyphen(lang=lang, left=2, right=3)
+
+
+def set_justify(on):
+    """Justified columns stretch spaces to fill the measure; ragged-right columns never do (and never shrink
+    them), which suits languages without a hyphenation dictionary and long words."""
+    _justify["on"] = bool(on)
 
 
 def find_breaks(text):
@@ -149,6 +156,7 @@ class Line:
     para: int = 0
     first: bool = False
     hyphen: bool = False         # draw a hyphen after the last fragment (a word split across lines)
+    justify: bool = True
 
 
 def break_paragraph(para, col_w, space):
@@ -159,6 +167,7 @@ def break_paragraph(para, col_w, space):
     n = len(ws)
     K = max(para.dropcap_lines, 1)
     hy_w = text_width("-", para.size) if any(w.hy for w in items) else 0.0
+    shrink = MAX_SHRINK if _justify["on"] else 0.0
 
     def avail(k):
         a = col_w
@@ -184,7 +193,7 @@ def break_paragraph(para, col_w, space):
                 gaps = gaps_prefix[j] - gaps_prefix[i + 1]       # spaces inside the line
                 hyphen = j < n and items[j].cont and items[j].hy
                 nat = prefix[j] - prefix[i] + gaps * space + (hy_w if hyphen else 0.0)
-                if nat - gaps * space * MAX_SHRINK > a + 1e-6:
+                if nat - gaps * space * shrink > a + 1e-6:
                     break
                 last = j == n
                 if last:
@@ -225,7 +234,8 @@ def break_paragraph(para, col_w, space):
         hyphen = j < n and items[j].cont and items[j].hy
         nat = prefix[j] - prefix[i] + gaps * space + (hy_w if hyphen else 0.0)
         x_off = para.dropcap_w if (para.dropcap_lines and idx < para.dropcap_lines) else (para.indent_first if idx == 0 else 0.0)
-        lines.append(Line(items[i:j], nat, avail(k), x_off, j == n, leading=para.leading, first=idx == 0, hyphen=hyphen))
+        lines.append(Line(items[i:j], nat, avail(k), x_off, j == n, leading=para.leading, first=idx == 0, hyphen=hyphen,
+                          justify=_justify["on"]))
     return lines
 
 

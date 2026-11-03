@@ -4,11 +4,11 @@ different scale. y values are measured from the top of the page, as in the refer
 from reportlab.pdfgen import canvas
 
 from . import fonts
-from .fonts import DSRT, font_for, is_dsrt, runs, text_width
+from .fonts import runs, text_width
 from .layout import Seg
 
 BASE_W = 612.0
-SKEW = 0.2          # synthetic italic for Deseret, which has no italic face
+SKEW = 0.2          # synthetic italic for faces that have none (Deseret, Armenian, Georgian, ...)
 
 
 class Page:
@@ -17,7 +17,7 @@ class Page:
         self.k = width / BASE_W
         self.W = BASE_W
         self.H = height / self.k           # logical height
-        self.c = canvas.Canvas(str(path), pagesize=(width, height), pageCompression=1)
+        self.c = canvas.Canvas(str(path), pagesize=(width, height), pageCompression=1, invariant=1)
         if meta:
             self.c.setTitle(meta.get("title", ""))
             self.c.setAuthor(meta.get("author", ""))
@@ -66,13 +66,12 @@ class Page:
         """Draw one Seg with its baseline at top-offset t. Returns the advance."""
         c = self.c
         pos = x
-        for dsrt, txt in runs(s.text):
-            font = font_for(dsrt, s.style)
+        for font, syn_italic, syn_bold, txt in runs(s.text, s.style):
             w = text_width(txt, s.size, s.style, s.track)
             c.saveState()
             tx = c.beginText()
             tx.setFont(font, s.size)
-            skew = SKEW if (s.style == "i" and dsrt) else 0.0
+            skew = SKEW if syn_italic else 0.0
             tx.setTextTransform(1, 0, skew, 1, pos, self.Y(t))
             if s.track:
                 tx.setCharSpace(s.track)
@@ -81,8 +80,8 @@ class Page:
                 c.setFillColorRGB(*s.color)
                 c.setStrokeColorRGB(*(s.stroke or s.color))
                 c.setLineWidth(s.stroke_w or 0.5)
-            elif s.style == "b" and dsrt:
-                tx.setTextRenderMode(2)         # Deseret has no bold face: thicken with a hairline stroke
+            elif syn_bold:
+                tx.setTextRenderMode(2)         # no bold face: thicken with a hairline stroke
                 c.setFillColorRGB(*s.color)
                 c.setStrokeColorRGB(*s.color)
                 c.setLineWidth(s.size * 0.035)
@@ -120,7 +119,7 @@ class Page:
             words_w = sum(w.width for w in ln.words) + hy_w
             gaps = sum(1 for k, w in enumerate(ln.words) if k and not w.cont)
             x = col_left + ln.x_off
-            if gaps and (not ln.last or ln.natural > ln.avail + 1e-6):
+            if gaps and ln.justify and (not ln.last or ln.natural > ln.avail + 1e-6):
                 gap = (ln.avail - words_w) / gaps
             else:
                 gap = fonts.space_width(last_seg.size)

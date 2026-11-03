@@ -119,15 +119,16 @@ def test_split_words_reassemble_with_hyphens_where_needed():
 
 
 def test_editions_and_their_source_languages():
-    assert scripts.EDITIONS == ["english", "espanol", "portugues", "deseret"]
-    assert scripts.get("english").source == "en" and scripts.get("espanol").source == "es"
-    assert scripts.get("portugues").source == "pt" and scripts.get("portugues").hyphenation == "pt_BR"
-    assert scripts.get("deseret").source == "en"          # transliterated from the English text
+    assert scripts.EDITIONS[:4] == ["english", "espanol", "portugues", "deseret"]
+    assert len(scripts.EDITIONS) > 100 and len(set(scripts.EDITIONS)) == len(scripts.EDITIONS)
+    assert scripts.get("english").source == "eng" and scripts.get("espanol").source == "spa"
+    assert scripts.get("portugues").source == "por" and scripts.get("portugues").hyphenation == "pt_BR"
+    assert scripts.get("deseret").source == "eng"          # transliterated from the English text
     assert scripts.get("espanol").hyphenation == "es" and scripts.get("deseret").hyphenation is None
 
 
 def test_spanish_text_is_the_churchs_own():
-    d = yaml_load("es", "family")
+    d = yaml_load("spa", "family")
     assert d["title"] == "La Familia" and d["source_url"].endswith("?lang=spa")
     assert "Nosotros, la Primera Presidencia" in d["paragraphs"][0]
 
