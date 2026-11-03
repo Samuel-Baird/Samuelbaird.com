@@ -36,6 +36,20 @@ def prompt(arm, talk, lang, out):
     return t.replace("/ROOT", ROOT.as_posix()).format(talk=talk, language=LANGS[lang][0], out=out.as_posix())
 
 
+def _type(line):
+    try:
+        return json.loads(line).get("type")
+    except ValueError:
+        return None
+
+
+def leaked(blob, talk, lang):
+    """did a tool call touch the held-out official translation of this very talk (its file, or its corpus rows)?"""
+    b = blob.replace("\\\\", "/").replace("\\", "/")
+    return bool(re.search(rf"talks/{LANGS[lang][1]}/[^\"\s']*{re.escape(talk)}", b)
+                or re.search(rf"parallel-corpus-{lang}[^\"]*{re.escape(talk)}", b))
+
+
 def run(arm, talk, lang):
     out = OUT / arm / lang / f"{talk}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -53,12 +67,20 @@ def run(arm, talk, lang):
         cfg = {"mcpServers": {"urim": {"command": str(URIM_PY), "args": ["-m", "urim_translate"]}}}
         cmd += ["--strict-mcp-config", "--mcp-config", json.dumps(cfg)]
     t0 = time.time()
-    p = subprocess.run(cmd, cwd=cwd, env=env, capture_output=True, text=True, encoding="utf-8")
+    lines = []
+    p = subprocess.Popen(cmd, cwd=cwd, env=env, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, encoding="utf-8")
+    for line in p.stdout:                       # the MCP server can outlive claude and hold the pipe open: stop at the result
+        lines.append(line)
+        if line.startswith("{") and '"result"' in line and _type(line) == "result":
+            break
     wall = time.time() - t0
+    subprocess.run(["taskkill", "/PID", str(p.pid), "/T", "/F"], capture_output=True)
+    p.stdout.close()
+    stdout = "".join(lines)
     RUNS.mkdir(exist_ok=True)
-    (RUNS / f"{arm}-{lang}-{talk}.jsonl").write_text(p.stdout, encoding="utf-8")
+    (RUNS / f"{arm}-{lang}-{talk}.jsonl").write_text(stdout, encoding="utf-8")
     res, tools, leak = {}, Counter(), False
-    for line in p.stdout.splitlines():
+    for line in stdout.splitlines():
         try:
             ev = json.loads(line)
         except ValueError:
@@ -68,7 +90,7 @@ def run(arm, talk, lang):
                 if c.get("type") == "tool_use":
                     tools[c["name"]] += 1
                     blob = json.dumps(c.get("input", {}))
-                    if re.search(rf"talks/{LANGS[lang][1]}/[^\"]*{re.escape(talk[:20])}|{re.escape(talk)}.*{LANGS[lang][1]}", blob.replace("\\\\", "/")):
+                    if leaked(blob, talk, lang):
                         leak = True
         elif ev.get("type") == "result":
             res = ev
@@ -122,6 +144,12 @@ def score():
         ref = VAULT / "talks" / LANGS[lang][1] / "modern" / year / f"{talk}.md"
         src = VAULT / "talks" / "english" / "modern" / year / f"{talk}.md"
         row = dict(r)
+        tp = RUNS / f"{arm}-{lang}-{talk}.jsonl"
+        if tp.exists():
+            row["leak"] = any(leaked(json.dumps(c.get("input", {})), talk, lang)
+                              for l in tp.read_text(encoding="utf-8").splitlines() if l.startswith("{")
+                              for e in [json.loads(l)] if e.get("type") == "assistant"
+                              for c in e["message"].get("content", []) if c.get("type") == "tool_use")
         if out.exists() and ref.exists():
             h, rb, sb = body(out), body(ref), body(src)
             g = tr.glossary(lang)
@@ -147,7 +175,7 @@ def score():
         f = lambda c: sum(float(r[c]) for r in rs) / len(rs)
         print(f"{key[0]:6} {key[1]}  n={len(rs)}  wall {f('wall_s'):6.0f}s  out {f('output'):7.0f} tok  cost ${f('cost_usd'):.3f}"
               f"  chrF {f('chrf'):.1f}  glossary problems {f('glossary_problems'):.1f}/{f('glossary_terms'):.0f}"
-              f"  leaks {sum(1 for r in rs if r['leak'] == 'True')}")
+              f"  leaks {sum(1 for r in rs if str(r['leak']) == 'True')}")
 
 
 if __name__ == "__main__":
