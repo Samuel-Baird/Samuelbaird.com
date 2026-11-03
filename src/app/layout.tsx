@@ -67,7 +67,14 @@ const JSON_LD = {
       "@type": "Person",
       "@id": `${SITE_URL}/#publisher`,
       name: "Samuel Baird",
-      url: `${SITE_URL}/about`,
+      url: "https://samuelbaird.com/",
+      sameAs: [
+        "https://samuelbaird.com/",
+        "https://www.youtube.com/@ithinkthereforeisam",
+        "https://ithinkisam.substack.com/",
+        "https://github.com/Samuel-Baird",
+      ],
+      mainEntityOfPage: `${SITE_URL}/about`,
     },
   ],
 };
