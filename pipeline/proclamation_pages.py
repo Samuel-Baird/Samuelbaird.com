@@ -67,7 +67,7 @@ def _chips(slug, files, posters_url=None):
     row = f'<div class="sizerow"><span class="small-caps muted">Print</span>{"".join(chip(k) for k in files)}</div>'
     if posters_url:
         row += (f'<div class="sizerow"><span class="small-caps muted">Posters</span>'
-                f'<a class="chip" href="{E(posters_url)}" rel="noopener">11×17 to A0 on Google Drive</a></div>')
+                f'<a class="chip" href="{E(posters_url)}" rel="noopener">Poster-size PDFs (Google Drive)</a></div>')
     return row
 
 
