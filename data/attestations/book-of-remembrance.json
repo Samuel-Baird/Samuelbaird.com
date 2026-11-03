@@ -27,6 +27,7 @@
       "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/mal/3?lang=por&id=p16"
      }
     ],
+    "earliest": null,
     "share": 1.0
    }
   ],
@@ -105,6 +106,14 @@
       "tr": "… vez han considerado que ustedes son su propio libro de memorias viviente, compuesto de lo que deciden recordar y de …"
      }
     ],
+    "earliest": {
+     "year": 2016,
+     "conference": "2016 April General Conference",
+     "talk": "2016-04-gong-always-remember-him",
+     "para": 18,
+     "en": "… ever thought of yourself as your own living book of remembrance—reflecting what and how you choose to remember?",
+     "tr": "… vez han considerado que ustedes son su propio libro de memorias viviente, compuesto de lo que deciden recordar y de …"
+    },
     "share": 1.0
    }
   ]

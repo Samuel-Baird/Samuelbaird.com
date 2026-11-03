@@ -45,6 +45,14 @@
       "tr": "… o andaime onde trabalhavam desabou (…) (“News Capsules”, *Deseret News,* 9 de junho de 1993)."
      }
     ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-cuthbert-the-spirituality-of-service",
+     "para": 24,
+     "en": "… and generous” (*So Shall Ye Reap* [Salt Lake City: Deseret Book Co., 1960], pp. 173–74).",
+     "tr": "… e generosos.” (*So Shall Ye Reap*, Salt Lake City: Deseret Book Co., 1960, pp. 173-174.)"
+    },
     "share": 1.0
    }
   ],
@@ -132,6 +140,14 @@
       "tr": "… Cortez, \"Mom's Education Key to Halt Poverty Cycle\", *Deseret News*, 23 de septiembre de 2011, pág. A1.\n[^10]: Olene …"
      }
     ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-washburn-follow-the-prophet",
+     "para": 2,
+     "en": "… Dew, *Ezra Taft Benson: A Biography* [Salt Lake City: Deseret Book Co., 1987], pp. 13–14).",
+     "tr": "… Dew, Ezra Taft Benson: A Biography, Salt Lake City: Deseret Book Co., 1987, págs. 13-14.)"
+    },
     "share": 1.0
    },
    {
@@ -146,6 +162,7 @@
     "first_year": null,
     "last_year": null,
     "snippets": [],
+    "earliest": null,
     "share": 0.0
    }
   ],

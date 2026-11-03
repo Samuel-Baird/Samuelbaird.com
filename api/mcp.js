@@ -157,6 +157,50 @@ const TOOLS = [
     },
   },
   {
+    name: 'earliest_usage',
+    description:
+      'Earliest attested usage of a term. Returns (1) the earliest English use in the General Conference corpus (1830 onward) with its source grade ' +
+      '(fragmentary minutes and reconstructions are flagged; the first full-text source is given separately), and (2) for each Portuguese/Spanish rendering, ' +
+      'the first appearance in the Church\'s official translations in this corpus. Official translations begin around 1990, so translated dates mean ' +
+      '"first recorded here", not "first coined".',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        term: { type: 'string', description: 'Term in English, Portuguese or Spanish.' },
+        lang: { ...langProp, description: 'Optional: limit translated renderings to one language.' },
+      },
+      required: ['term'],
+    },
+    run({ term, lang }) {
+      const q = fold(String(term || '')).trim();
+      if (!q) throw new Error('term is required');
+      let best = null;
+      for (const c of DATA) {
+        const keys = c.en.map(fold);
+        for (const l of LANGS) if (c[l]) keys.push(...c[l].renderings.map((r) => fold(r.term)));
+        const s = keys.includes(q) ? 3 : keys.some((k) => k.startsWith(q)) ? 2 : keys.some((k) => k.includes(q)) ? 1 : 0;
+        if (s && (!best || s > best[0])) best = [s, c];
+      }
+      if (!best) return { query: term, found: false };
+      const c = best[1];
+      const langs = lang ? [lang] : LANGS;
+      const official = {};
+      for (const l of langs) {
+        if (!c[l]) continue;
+        official[l] = c[l].renderings
+          .filter((r) => r.earliest_official)
+          .map((r) => ({ term: r.term, ...r.earliest_official }));
+      }
+      return {
+        concept: c.en[0],
+        url: url(c),
+        english: c.earliest_english || null,
+        official_translation: official,
+        note: 'Source grades: verbatim and authoritative_print are full-text; contemporaneous_report, reconstructed and fragmentary are less certain.',
+      };
+    },
+  },
+  {
     name: 'search_concepts',
     description: 'List atlas concepts by English name or topic category. With no query, returns the category list.',
     inputSchema: {

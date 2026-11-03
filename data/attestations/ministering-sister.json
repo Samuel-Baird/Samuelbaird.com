@@ -28,6 +28,14 @@
       "tr": "… serviço em chamados como os de mãe, líder ou irmã ministradora. Por nos amar, o Senhor não permite que …"
      }
     ],
+    "earliest": {
+     "year": 2019,
+     "conference": "2019 October General Conference",
+     "talk": "2019-10-eyring-covenant-women-in-partnership-with-god",
+     "para": 6,
+     "en": "… on service in calls such as mother, leader, or ministering sister. The Lord, out of love, does not leave …",
+     "tr": "… serviço em chamados como os de mãe, líder ou irmã ministradora. Por nos amar, o Senhor não permite que …"
+    },
     "share": 1.0
    }
   ],
@@ -88,6 +96,7 @@
     "first_year": null,
     "last_year": null,
     "snippets": [],
+    "earliest": null,
     "share": 0
    }
   ],

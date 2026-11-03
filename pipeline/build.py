@@ -22,13 +22,119 @@ def uses(r):
     return r.get("paragraphs", 0) + r.get("verses", 0)
 
 
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+          "November", "December"]
+FIDELITY = {
+    "verbatim": ("verbatim", "Official word-for-word text"),
+    "authoritative_print": ("authoritative print", "Officially published record, lightly edited for print"),
+    "contemporaneous_report": ("contemporaneous report", "Recorded at the time by a reporter or scribe; the speaker often did not review it"),
+    "reconstructed": ("reconstructed", "Assembled from partial witnesses"),
+    "fragmentary": ("fragmentary", "Only part of the record survives (often minutes or notes)"),
+}
+EF = {"concepts": {}, "decade_totals": {}}
+FOOTNOTE = re.compile(r"\s*\[\^\d+\]")
+
+
+def fmt_date(date, precision=""):
+    y, _, rest = date.partition("-")
+    m, _, d = rest.partition("-")
+    if precision == "approximate":
+        return f"c. {y}"
+    if m.isdigit() and d.isdigit() and precision != "month":
+        return f"{int(d)} {MONTHS[int(m) - 1]} {y}"
+    if m.isdigit():
+        return f"{MONTHS[int(m) - 1]} {y}"
+    return y
+
+
+def fidelity_badge(f):
+    label, tip = FIDELITY.get(f, (f or "unknown", ""))
+    return f'<span class="badge fid" title="{E(tip)}">{E(label)}</span>'
+
+
+def good_url(u):
+    """A bare host (no path) is not a usable source link."""
+    return u if u and not re.fullmatch(r"https?://[^/]+/?", u) else ""
+
+
+def english_source(rec):
+    who = rec["speaker"] if rec["speaker"] and rec["speaker"] != "Conference record" else ""
+    title = E(rec["title"])
+    u = good_url(rec["source_url"])
+    t = f'<a href="{E(u)}">{title}</a>' if u else title
+    return f'<b>{E(fmt_date(rec["date"], rec["precision"]))}</b> &middot; {(E(who) + ", ") if who else ""}{t} {fidelity_badge(rec["fidelity"])}'
+
+
+def decade_chart(first):
+    tot = EF["decade_totals"]
+    decs = sorted(tot)
+    share = {d: first["decades"].get(d, 0) / tot[d] for d in decs}
+    top = max(share.values()) or 1
+    bars = "".join(
+        f'<div class="dbar" title="{d}s: {first["decades"].get(d, 0)} of {tot[d]} talks ({round(share[d] * 100)}%)">'
+        f'<i style="height:{max(2, round(share[d] / top * 100)) if share[d] else 0}%"></i><span>{d[2:] if d != "1830" else "30"}</span></div>'
+        for d in decs)
+    return f'<div class="decades" role="img" aria-label="Share of talks per decade that use this term">{bars}</div>'
+
+
+def earliest_section(c):
+    f = c.get("first")
+    if not f:
+        return ""
+    first = f["first"]
+    en = c["en"]["term"]
+    out = ['<section class="earliest"><h2>Earliest attested use</h2>'
+           '<p class="hint">English use in the General Conference corpus (1830 onward). The earliest witnesses are often minutes or '
+           'reconstructions, so the source grade is shown, and early records can include editorial notes as well as a speaker&rsquo;s words. The first full-text source is listed separately when it differs.</p>',
+           '<div class="snips">',
+           f'<div class="snip"><div class="src">First appearance &middot; {english_source(first)}</div>'
+           f'<p>{hl(first["snippet"], c["en"]["match"][0], "en")}</p></div>']
+    ft = f.get("first_fulltext")
+    if ft:
+        out.append(f'<div class="snip"><div class="src">First in a full-text source &middot; {english_source(ft)}</div>'
+                   f'<p>{hl(ft["snippet"], c["en"]["match"][0], "en")}</p></div>')
+    out.append("</div>")
+    out.append(f'<p class="hint">&ldquo;{E(en)}&rdquo; appears in {f["talks"]:,} of {EF["talks_scanned"]:,} talks, most recently in {f["last_year"]}. '
+               'Share of each decade&rsquo;s talks that use it:</p>')
+    out.append(decade_chart(f))
+    out.append("</section>")
+    return "".join(out)
+
+
+def earliest_translation(lang, rs, meta):
+    """Earliest official-translation use of each attested rendering (the corpus starts around 1990)."""
+    items = []
+    for r in rs:
+        e = r.get("earliest")
+        if not e or "attested" not in r["evidence"]:
+            continue
+        u = talk_url(lang, e["year"], e["talk"])
+        conf = E(e["conference"])
+        items.append(f'<li><b>{E(r["term"])}</b>: {(f"<a href={chr(34)}{E(u)}{chr(34)}>{conf}</a>") if u else conf} '
+                     f'<span class="muted">(para. {e["para"] + 1})</span></li>')
+    if not items:
+        return ""
+    top = next((r for r in rs if r.get("earliest")), None)
+    pair = ""
+    if top:
+        e = top["earliest"]
+        pair = (f'<div class="snip"><div class="src">Earliest passage for &ldquo;{E(top["term"])}&rdquo;</div><div class="pair">'
+                f'<p><span class="l">English</span>{E(re.sub(r"\\s*\\[\\^\\d+\\]", "", e["en"]))}</p>'
+                f'<p><span class="l">{E(meta["name"])}</span>{hl(e["tr"], top["term"], lang)}</p></div></div>')
+    return ('<h3>Earliest official use</h3><p class="hint">First appearance of each rendering in the Church&rsquo;s official translations in this corpus. '
+            'Official translations of conference talks begin around 1990, so this shows when a rendering is first <em>recorded here</em>, '
+            'not when it was coined.</p><ul class="plainlist">' + "".join(items) + "</ul>" + pair)
+
+
 def load():
     out = []
+    EF.update(json.loads((DATA / "english_first.json").read_text(encoding="utf-8")))
     prov = json.loads((DATA / "provenance.json").read_text(encoding="utf-8"))
     for p in sorted(CONCEPTS.glob("*.yaml")):
         c = yaml.safe_load(p.read_text(encoding="utf-8"))
         a = json.loads((DATA / "attestations" / f"{p.stem}.json").read_text(encoding="utf-8"))
         c["slug"] = p.stem
+        c["first"] = EF["concepts"].get(p.stem)
         c["att"] = a
         c["has"] = {l: [r for r in a[l]["renderings"] if r["evidence"]] for l in LANGS}
         c["evidence"] = any(c["has"][l] for l in LANGS)
@@ -173,6 +279,7 @@ def concept_page(c, signals):
     if c.get("note") and "Pulpit" not in c["note"]:
         parts.append(f'<p class="note">{E(c["note"])}</p>')
     parts.append("</div>")
+    parts.append(earliest_section(c))
     for lang, meta in LANGS.items():
         a = c["att"][lang]
         parts.append(f'<section class="lang" id="{lang}"><h2>{E(meta["name"])}</h2>')
@@ -208,6 +315,7 @@ def concept_page(c, signals):
                         f'<p><span class="l">{E(meta["name"])}</span>{hl(s["tr"], r["term"], lang)}</p></div></div>')
             if snips:
                 parts.append('<h3>In the Church&rsquo;s own words</h3><div class="snips">' + "".join(snips) + "</div>")
+            parts.append(earliest_translation(lang, rs, meta))
         inf = a.get("inferred", [])
         if inf:
             li = "".join(
@@ -288,6 +396,7 @@ def variants_page(concepts, sig, collapses):
 
 def about_page(prov, n_all, n_ev):
     s = prov["stats"]
+    s_first = EF.get("talks_scanned", 0)
     body = f"""<div class="hero"><p class="eyebrow small-caps">Method &amp; data</p><h1>How Urim works</h1>
 <p class="lede">Urim records how the Church&rsquo;s own published translations render Latter-day Saint vocabulary. It does not judge translations; it shows what was published, how often, and where.</p></div>
 <section class="prose"><h2>Evidence</h2>
@@ -301,6 +410,12 @@ def about_page(prov, n_all, n_ev):
 <li><span class="badge approved">approved term</span> on the Church&rsquo;s approved list.</li>
 <li><span class="badge attested">attested</span> found in aligned Church text; counts and snippets link to the official page.</li>
 <li><span class="badge inferred">inferred</span> mined automatically, not reviewed. Never treated as verified.</li>
+</ul>
+<h2>Earliest attested use</h2>
+<ul>
+<li><b>English:</b> the earliest talk in the General Conference corpus (1830 onward, {s_first:,} talks) that contains the term, plus the earliest in a full-text source (<em>verbatim</em> or <em>authoritative print</em>). Early records are often minutes, notes or reconstructions and can include editorial notes, so each source&rsquo;s grade is shown.</li>
+<li><b>Translations:</b> the first appearance of each rendering in the Church&rsquo;s official translations in this corpus. These begin around 1990, so the date means &ldquo;first recorded here&rdquo;, not &ldquo;first coined&rdquo;. Earlier translated usage is not represented.</li>
+<li>Matching is by word form, so an early hit may use the word in an ordinary sense rather than as a technical term.</li>
 </ul>
 <h2>Limits</h2>
 <ul>
@@ -394,11 +509,22 @@ def api_data(concepts, sig):
                     "term": r["term"], "evidence": r["evidence"], "talk_paragraphs": r.get("paragraphs", 0),
                     "talks": r.get("talks", 0), "scripture_verses": r.get("verses", 0),
                     "years": [r.get("first_year"), r.get("last_year")], "share": r.get("share", 0),
+                    **({"earliest_official": {k: r["earliest"][k] for k in ("year", "conference", "talk")}}
+                       if r.get("earliest") else {}),
                 } for r in c["has"][lang]],
             }
         if langs:
+            f = c.get("first")
+            earliest = {}
+            if f:
+                def brief(r):
+                    return {k: (good_url(r[k]) if k == "source_url" else r[k])
+                            for k in ("date", "speaker", "title", "conference", "fidelity", "source_url")
+                            if r.get(k) and (k != "source_url" or good_url(r[k]))}
+                earliest = {"earliest_english": {"talks": f["talks"], "last_year": f["last_year"], "first": brief(f["first"]),
+                                                 **({"first_fulltext": brief(f["first_fulltext"])} if f.get("first_fulltext") else {})}}
             out.append({"slug": c["slug"], "en": c["en"]["match"], "category": c["category"],
-                        "flags": sig.get(c["slug"], []), **langs})
+                        "flags": sig.get(c["slug"], []), **earliest, **langs})
     (DATA / "api.json").write_text(json.dumps({"concepts": out}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"api.json: {len(out)} concepts")
 

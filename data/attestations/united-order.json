@@ -36,6 +36,14 @@
       "tr": "… Em outra época, a maneira Dele se chamava “ordem unida”. Em nossa época, ela se chama Programa de …"
      }
     ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-eyring-opportunities-to-do-good",
+     "para": 4,
+     "en": "… consecration. In another period His way was called the united order. In our time it is called the Church …",
+     "tr": "… Em outra época, a maneira Dele se chamava “ordem unida”. Em nossa época, ela se chama Programa de …"
+    },
     "share": 1.0
    }
   ]
@@ -76,6 +84,14 @@
       "tr": "… consagración. En otro período Su manera se llamó la orden unida; y en nuestra época se llama el programa …"
      }
     ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-eyring-opportunities-to-do-good",
+     "para": 4,
+     "en": "… consecration. In another period His way was called the united order. In our time it is called the Church …",
+     "tr": "… consagración. En otro período Su manera se llamó la orden unida; y en nuestra época se llama el programa …"
+    },
     "share": 1.0
    },
    {
@@ -90,6 +106,7 @@
     "first_year": null,
     "last_year": null,
     "snippets": [],
+    "earliest": null,
     "share": 0.0
    }
   ]

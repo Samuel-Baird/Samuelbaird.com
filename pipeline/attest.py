@@ -85,7 +85,7 @@ class Acc:
         self.cands = [{
             "term": c["term"], "hint": c["hint"], "pat": target_pattern(c["term"]),
             "pars": 0, "talks": set(), "verses": 0, "years": [], "pool": [], "seen": 0,
-            "spool": [], "sseen": 0,
+            "spool": [], "sseen": 0, "first": None,
         } for c in uniq.values()]
         self.en_pars = 0
         self.en_talks = set()
@@ -183,6 +183,12 @@ def run():
                         c["talks"].add(r["target_id"])
                         c["years"].append(year)
                         c["seen"] += 1
+                        if c["first"] is None or r["source_id"] < c["first"]["sid"]:
+                            c["first"] = {
+                                "sid": r["source_id"], "year": year, "conference": r["source_conference"],
+                                "talk": r["target_id"], "para": r["paragraph_index"],
+                                "en": window(src, s, e), "tr": window(tgt, m.start(), m.end()),
+                            }
                         a.reservoir(c["pool"], c["seen"], {
                             "year": year, "talk": r["target_id"], "para": r["paragraph_index"],
                             "conf": r["source_conference"],
@@ -250,6 +256,7 @@ def run():
                     "paragraphs": c["pars"], "talks": len(c["talks"]), "verses": c["verses"],
                     "first_year": min(years) if years else None, "last_year": max(years) if years else None,
                     "snippets": pick_snippets(c["pool"], c["spool"], lang),
+                    "earliest": ({k: v for k, v in c["first"].items() if k != "sid"} if c["first"] else None),
                 })
             total = sum(x.get("paragraphs", 0) + x.get("verses", 0) for x in out)
             for x in out:
