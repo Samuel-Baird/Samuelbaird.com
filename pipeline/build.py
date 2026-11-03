@@ -178,6 +178,7 @@ _ICONS = {
     "code": '<path d="M8 8l-5 4 5 4"/><path d="M16 8l5 4-5 4"/><path d="M14 5l-4 14"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    "scroll": '<path d="M7 4h11a2 2 0 012 2v1H9"/><path d="M7 4a2 2 0 00-2 2v11a2 2 0 002 2h10"/><path d="M9 7v10a2 2 0 002 2h7a2 2 0 002-2v-1H12"/>',
 }
 
 
@@ -193,7 +194,7 @@ def _link(href, label, ic, current, ext=False):
 
 
 def page(title, body, desc, path="", current=""):
-    top = [("/", "Atlas", "home"), ("/variants", "Variants", "variants")]
+    top = [("/", "Atlas", "home"), ("/variants", "Variants", "variants"), ("/proclamations", "Proclamations", "scroll")]
     low = [("/connect", "Use with AI", "ai"), ("/about", "Method &amp; data", "about"),
            ("mailto:ithinksamofficial@gmail.com?subject=Urim", "Contact", "mail"), ("/donate", "Donate", "heart")]
     top_html = "".join(_link(h, n, i, current) for h, n, i in top)
@@ -602,7 +603,11 @@ def main():
     (SITE / "index.html").write_text(home_page(concepts, prov), encoding="utf-8")
     (SITE / "variants.html").write_text(variants_page(concepts, sig, collapses), encoding="utf-8")
     (SITE / "about.html").write_text(about_page(prov, len(concepts), n), encoding="utf-8")
-    from .pages import connect_page, donate_page
+    from .pages import connect_page, donate_page, proclamations_page
+    manifest = SITE / "posters" / "manifest.json"
+    if manifest.exists():
+        t, b, d = proclamations_page(json.loads(manifest.read_text(encoding="utf-8")))
+        (SITE / "proclamations.html").write_text(page(t, b, d, current="/proclamations"), encoding="utf-8")
     for name, fn in (("connect", connect_page), ("donate", donate_page)):
         t, b, d = fn()
         (SITE / f"{name}.html").write_text(page(t, b, d, current=f"/{name}"), encoding="utf-8")

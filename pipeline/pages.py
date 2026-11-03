@@ -187,3 +187,39 @@ def donate_page():
 </div>
 <script src="/donate.js" defer></script>"""
     return ("Donate | Urim", body, "Support Urim, a free and independent atlas of how the Church translates its vocabulary.")
+
+
+def proclamations_page(manifest):
+    """/proclamations: Deseret Alphabet editions of the Church's proclamations, as printable posters."""
+    cards = []
+    for m in manifest:
+        rows = "".join(
+            f'<li><a href="/posters/{E(m["slug"])}/{E(f["file"])}" download>{E(f["label"])}</a>'
+            f'<span class="muted"> &middot; PDF, {f["kb"]} KB</span></li>' for f in m["files"].values())
+        native = f'<p class="native" lang="en-Dsrt">{E(m["title_native"])}</p>' if m.get("title_native") else ""
+        full = m["title"] + (": " + m["subtitle"] if m["slug"] in ("family", "living-christ") and m["subtitle"] else "")
+        cards.append(f"""<article class="pcard" id="{E(m["slug"])}">
+  <a class="thumb" href="/posters/{E(m["slug"])}/{E(m["files"]["18x24"]["file"])}"><img src="/posters/{E(m["slug"])}/{E(m["preview"])}" width="380" alt="Preview of {E(full)} in the {E(m["label"])}" loading="lazy"></a>
+  <div>
+    <h2>{E(m["title"])}</h2>{native}
+    <p class="muted">{E(m["subtitle"])}</p>
+    <p><a href="{E(m["source_url"])}">Official English original on churchofjesuschrist.org &rarr;</a></p>
+    <details open><summary>Download by size</summary><ul class="plainlist sizes">{rows}</ul></details>
+  </div>
+</article>""")
+    body = f"""<div class="pagehead">
+  <p class="eyebrow small-caps" style="color:var(--honey)">Proclamations</p>
+  <h1>Proclamations in the Deseret Alphabet</h1>
+  <p class="lede">The Church&rsquo;s proclamations set in the Deseret Alphabet, laid out like the official PDFs and sized for printing as posters, from 11&Prime; &times; 17&Prime; up to A0.</p>
+</div>
+<div class="notice"><p><strong>Unofficial.</strong> These are transliterations of the English texts, made with the <a href="https://github.com/Samuel-Baird/urim/tree/main/proclamations">proclamations generator</a> in this project. They are not published or approved by The Church of Jesus Christ of Latter-day Saints, and each PDF says so in its bottom margin. The Church&rsquo;s own English versions, logo and signatures are on its website. For personal and non-commercial use.</p></div>
+<div class="pgrid">{"".join(cards)}</div>
+<section class="block prose"><h2>How they are made</h2>
+<ul>
+<li>The English text is read from the Church&rsquo;s pages and checked word for word against its PDFs.</li>
+<li>It is converted with the <a href="https://github.com/Samuel-Baird/urim/tree/main/deseret">Deseret transliteration package</a> (pulpit-vault&rsquo;s engine, 38-letter standard).</li>
+<li>Each poster re-flows the design at its own proportions rather than stretching the letter-size page. A checker compares the layout against the originals: rule weights and positions, frames, column edges and title placement.</li>
+<li>The Living Christ prints facsimile signatures; this edition sets the signers&rsquo; names in type instead.</li>
+</ul></section>"""
+    return ("Proclamations in the Deseret Alphabet | Urim", body,
+            "Deseret Alphabet editions of the Church's proclamations, laid out like the official PDFs and sized as posters.")

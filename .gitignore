@@ -6,3 +6,8 @@ __pycache__/
 .vercel/
 scratch/
 .mcp.json
+
+# proclamations generator
+proclamations/.venv/
+proclamations/.cache/
+proclamations/out/

@@ -1,0 +1,302 @@
+[
+ {
+  "slug": "family",
+  "title": "The Family",
+  "subtitle": "A Proclamation to the World",
+  "title_native": "𐐜 𐐙𐐰𐑋𐐮𐑊𐐨",
+  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng",
+  "files": {
+   "11x17": {
+    "file": "family-deseret-11x17.pdf",
+    "kb": 58,
+    "label": "11\" x 17\" (small / bulletin)",
+    "w_in": 11.0,
+    "h_in": 17.0
+   },
+   "18x24": {
+    "file": "family-deseret-18x24.pdf",
+    "kb": 58,
+    "label": "18\" x 24\" (medium)",
+    "w_in": 18.0,
+    "h_in": 24.0
+   },
+   "24x36": {
+    "file": "family-deseret-24x36.pdf",
+    "kb": 58,
+    "label": "24\" x 36\" (large)",
+    "w_in": 24.0,
+    "h_in": 36.0
+   },
+   "27x40": {
+    "file": "family-deseret-27x40.pdf",
+    "kb": 58,
+    "label": "27\" x 40\" (movie one-sheet)",
+    "w_in": 27.0,
+    "h_in": 40.0
+   },
+   "40x60": {
+    "file": "family-deseret-40x60.pdf",
+    "kb": 58,
+    "label": "40\" x 60\" (extra large)",
+    "w_in": 40.0,
+    "h_in": 60.0
+   },
+   "a3": {
+    "file": "family-deseret-a3.pdf",
+    "kb": 58,
+    "label": "A3 (297 x 420 mm)",
+    "w_in": 11.7,
+    "h_in": 16.5
+   },
+   "a2": {
+    "file": "family-deseret-a2.pdf",
+    "kb": 58,
+    "label": "A2 (420 x 594 mm)",
+    "w_in": 16.5,
+    "h_in": 23.4
+   },
+   "a1": {
+    "file": "family-deseret-a1.pdf",
+    "kb": 58,
+    "label": "A1 (594 x 841 mm)",
+    "w_in": 23.4,
+    "h_in": 33.1
+   },
+   "a0": {
+    "file": "family-deseret-a0.pdf",
+    "kb": 58,
+    "label": "A0 (841 x 1189 mm)",
+    "w_in": 33.1,
+    "h_in": 46.8
+   }
+  },
+  "preview": "family-deseret-preview.jpg",
+  "script": "deseret",
+  "label": "Deseret Alphabet"
+ },
+ {
+  "slug": "living-christ",
+  "title": "The Living Christ",
+  "subtitle": "The Testimony of the Apostles",
+  "title_native": "𐐜 𐐢𐐮𐑂𐐮𐑍 𐐗𐑉𐐴𐑅𐐻",
+  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng",
+  "files": {
+   "11x17": {
+    "file": "living-christ-deseret-11x17.pdf",
+    "kb": 46,
+    "label": "11\" x 17\" (small / bulletin)",
+    "w_in": 11.0,
+    "h_in": 17.0
+   },
+   "18x24": {
+    "file": "living-christ-deseret-18x24.pdf",
+    "kb": 46,
+    "label": "18\" x 24\" (medium)",
+    "w_in": 18.0,
+    "h_in": 24.0
+   },
+   "24x36": {
+    "file": "living-christ-deseret-24x36.pdf",
+    "kb": 46,
+    "label": "24\" x 36\" (large)",
+    "w_in": 24.0,
+    "h_in": 36.0
+   },
+   "27x40": {
+    "file": "living-christ-deseret-27x40.pdf",
+    "kb": 46,
+    "label": "27\" x 40\" (movie one-sheet)",
+    "w_in": 27.0,
+    "h_in": 40.0
+   },
+   "40x60": {
+    "file": "living-christ-deseret-40x60.pdf",
+    "kb": 46,
+    "label": "40\" x 60\" (extra large)",
+    "w_in": 40.0,
+    "h_in": 60.0
+   },
+   "a3": {
+    "file": "living-christ-deseret-a3.pdf",
+    "kb": 46,
+    "label": "A3 (297 x 420 mm)",
+    "w_in": 11.7,
+    "h_in": 16.5
+   },
+   "a2": {
+    "file": "living-christ-deseret-a2.pdf",
+    "kb": 46,
+    "label": "A2 (420 x 594 mm)",
+    "w_in": 16.5,
+    "h_in": 23.4
+   },
+   "a1": {
+    "file": "living-christ-deseret-a1.pdf",
+    "kb": 46,
+    "label": "A1 (594 x 841 mm)",
+    "w_in": 23.4,
+    "h_in": 33.1
+   },
+   "a0": {
+    "file": "living-christ-deseret-a0.pdf",
+    "kb": 46,
+    "label": "A0 (841 x 1189 mm)",
+    "w_in": 33.1,
+    "h_in": 46.8
+   }
+  },
+  "preview": "living-christ-deseret-preview.jpg",
+  "script": "deseret",
+  "label": "Deseret Alphabet"
+ },
+ {
+  "slug": "restoration",
+  "title": "The Restoration of the Fulness of the Gospel of Jesus Christ",
+  "subtitle": "A Bicentennial Proclamation to the World",
+  "title_native": "𐐜 𐐡𐐯𐑅𐐻𐐲𐑉𐐩𐑇𐐲𐑌 𐐲𐑂 𐑄 𐐙𐐳𐑊𐑌𐐲𐑅 𐐲𐑂 𐑄 𐐘𐐫𐑅𐐹𐐲𐑊 𐐲𐑂 𐐖𐐨𐑆𐐲𐑅 𐐗𐑉𐐴𐑅𐐻",
+  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=eng",
+  "files": {
+   "11x17": {
+    "file": "restoration-deseret-11x17.pdf",
+    "kb": 58,
+    "label": "11\" x 17\" (small / bulletin)",
+    "w_in": 11.0,
+    "h_in": 17.0
+   },
+   "18x24": {
+    "file": "restoration-deseret-18x24.pdf",
+    "kb": 58,
+    "label": "18\" x 24\" (medium)",
+    "w_in": 18.0,
+    "h_in": 24.0
+   },
+   "24x36": {
+    "file": "restoration-deseret-24x36.pdf",
+    "kb": 58,
+    "label": "24\" x 36\" (large)",
+    "w_in": 24.0,
+    "h_in": 36.0
+   },
+   "27x40": {
+    "file": "restoration-deseret-27x40.pdf",
+    "kb": 58,
+    "label": "27\" x 40\" (movie one-sheet)",
+    "w_in": 27.0,
+    "h_in": 40.0
+   },
+   "40x60": {
+    "file": "restoration-deseret-40x60.pdf",
+    "kb": 58,
+    "label": "40\" x 60\" (extra large)",
+    "w_in": 40.0,
+    "h_in": 60.0
+   },
+   "a3": {
+    "file": "restoration-deseret-a3.pdf",
+    "kb": 58,
+    "label": "A3 (297 x 420 mm)",
+    "w_in": 11.7,
+    "h_in": 16.5
+   },
+   "a2": {
+    "file": "restoration-deseret-a2.pdf",
+    "kb": 58,
+    "label": "A2 (420 x 594 mm)",
+    "w_in": 16.5,
+    "h_in": 23.4
+   },
+   "a1": {
+    "file": "restoration-deseret-a1.pdf",
+    "kb": 58,
+    "label": "A1 (594 x 841 mm)",
+    "w_in": 23.4,
+    "h_in": 33.1
+   },
+   "a0": {
+    "file": "restoration-deseret-a0.pdf",
+    "kb": 58,
+    "label": "A0 (841 x 1189 mm)",
+    "w_in": 33.1,
+    "h_in": 46.8
+   }
+  },
+  "preview": "restoration-deseret-preview.jpg",
+  "script": "deseret",
+  "label": "Deseret Alphabet"
+ },
+ {
+  "slug": "articles-of-faith",
+  "title": "The Articles of Faith",
+  "subtitle": "of The Church of Jesus Christ of Latter-day Saints",
+  "title_native": "𐐜 𐐂𐑉𐐻𐐮𐐿𐐲𐑊𐑆 𐐲𐑂 𐐙𐐩𐑃",
+  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=eng",
+  "files": {
+   "11x17": {
+    "file": "articles-of-faith-deseret-11x17.pdf",
+    "kb": 38,
+    "label": "11\" x 17\" (small / bulletin)",
+    "w_in": 11.0,
+    "h_in": 17.0
+   },
+   "18x24": {
+    "file": "articles-of-faith-deseret-18x24.pdf",
+    "kb": 38,
+    "label": "18\" x 24\" (medium)",
+    "w_in": 18.0,
+    "h_in": 24.0
+   },
+   "24x36": {
+    "file": "articles-of-faith-deseret-24x36.pdf",
+    "kb": 38,
+    "label": "24\" x 36\" (large)",
+    "w_in": 24.0,
+    "h_in": 36.0
+   },
+   "27x40": {
+    "file": "articles-of-faith-deseret-27x40.pdf",
+    "kb": 38,
+    "label": "27\" x 40\" (movie one-sheet)",
+    "w_in": 27.0,
+    "h_in": 40.0
+   },
+   "40x60": {
+    "file": "articles-of-faith-deseret-40x60.pdf",
+    "kb": 38,
+    "label": "40\" x 60\" (extra large)",
+    "w_in": 40.0,
+    "h_in": 60.0
+   },
+   "a3": {
+    "file": "articles-of-faith-deseret-a3.pdf",
+    "kb": 38,
+    "label": "A3 (297 x 420 mm)",
+    "w_in": 11.7,
+    "h_in": 16.5
+   },
+   "a2": {
+    "file": "articles-of-faith-deseret-a2.pdf",
+    "kb": 38,
+    "label": "A2 (420 x 594 mm)",
+    "w_in": 16.5,
+    "h_in": 23.4
+   },
+   "a1": {
+    "file": "articles-of-faith-deseret-a1.pdf",
+    "kb": 38,
+    "label": "A1 (594 x 841 mm)",
+    "w_in": 23.4,
+    "h_in": 33.1
+   },
+   "a0": {
+    "file": "articles-of-faith-deseret-a0.pdf",
+    "kb": 38,
+    "label": "A0 (841 x 1189 mm)",
+    "w_in": 33.1,
+    "h_in": 46.8
+   }
+  },
+  "preview": "articles-of-faith-deseret-preview.jpg",
+  "script": "deseret",
+  "label": "Deseret Alphabet"
+ }
+]

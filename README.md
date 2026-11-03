@@ -28,6 +28,7 @@ as evidence. A term with no Church source stays blank.
 - `site/` static site (Vercel root)
 - `mcp/` local, free translation MCP server (glossary-enforcing, cached)
 - `deseret/` Deseret Alphabet transliteration package (vendored from pulpit-vault; see its README)
+- `proclamations/` generator for the Church's proclamations in the official layouts, as Deseret posters (see its README)
 - `api/mcp.js` hosted read-only atlas MCP at `/api/mcp` (see the site's Connect page)
 
 ## Rebuild
