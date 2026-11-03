@@ -188,4 +188,6 @@ def backends_status() -> dict:
 
 
 def main():
+    from . import setup
+    setup.auto()                    # first run: install Argos packages, Ollama and its model in the background
     mcp.run()

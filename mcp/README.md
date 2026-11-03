@@ -13,24 +13,32 @@ Free, fully local en to pt/es translation for Latter-day Saint texts. No paid AP
 ```bash
 cd urim
 python -m venv mcp/.venv
-mcp/.venv/Scripts/python -m pip install -e mcp          # add  "mcp[argos]"  for Argos (large download)
-mcp/.venv/Scripts/python -m urim_translate seed-tm      # optional: Church translation memory (needs ../pulpit-vault)
-mcp/.venv/Scripts/python -m urim_translate status
+mcp/.venv/Scripts/python -m pip install -e "mcp[argos]"
+claude mcp add urim -- <repo>/mcp/.venv/Scripts/python -m urim_translate
 ```
 
-Register with Claude Code:
+**First run installs the rest by itself.** The first time the server starts (or when you run
+`python -m urim_translate setup`) it downloads the Argos en to pt and en to es packages (about 100 MB each), installs
+Ollama (winget on Windows, Homebrew on macOS, the install script on Linux) and pulls the model (`qwen3.5:4b`, about
+3.4 GB). It runs in the background, so the tools work straight away: until a step finishes, `backends_status` shows
+what is still missing and segments needing that backend come back flagged. Argos is optional: if the OS blocks its engine (Windows Application Control does on some machines), setup says so and Ollama translates every segment, only slower. Progress goes to stderr; a `setup.json`
+marker in `URIM_HOME` is written only when every step succeeded, so a partial setup retries on the next start. Every
+step is skipped if already done. Set `URIM_AUTO_SETUP=0` to turn the automatic run off.
+
+Optional: seed the translation memory with the Church's own aligned paragraphs (needs `../pulpit-vault`):
 
 ```bash
-claude mcp add urim -- <repo>/mcp/.venv/Scripts/python -m urim_translate
+mcp/.venv/Scripts/python -m urim_translate seed-tm
+mcp/.venv/Scripts/python -m urim_translate status
 ```
 
 ### Backends
 
 | Backend | Purpose | Setup |
 |---|---|---|
-| `argos` | fast CPU draft translation | `pip install -e "mcp[argos]"`, then install the en to pt and en to es packages (`argospm install translate-en_pt`) |
+| `argos` | fast CPU draft translation | `pip install -e "mcp[argos]"`; the packages install on first run |
 | `libretranslate` | optional HTTP alternative | run LibreTranslate, set `URIM_LIBRETRANSLATE_URL=http://localhost:5000` |
-| `ollama` | terminology-sensitive passages, post-editing | install Ollama, `ollama pull qwen3.5:4b` (about 3.4 GB) |
+| `ollama` | terminology-sensitive passages, post-editing | installed and the model pulled on first run |
 
 Settings can be environment variables (`URIM_OLLAMA_MODEL`, `URIM_BACKENDS`, `URIM_HOME`, ...) or `~/.urim/urim.toml`. To add a backend, subclass `Backend` in `backends.py` and register it in `make_backends()`.
 

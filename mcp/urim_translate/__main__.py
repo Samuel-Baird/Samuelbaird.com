@@ -1,4 +1,6 @@
-"""python -m urim_translate [serve | seed-tm | status]"""
+"""python -m urim_translate [serve | setup | seed-tm | status]
+
+setup installs the Argos en->pt/es packages, Ollama and its model (also runs automatically on first serve)."""
 import json
 import sys
 
@@ -32,6 +34,9 @@ def main(argv):
     if cmd == "serve":
         from .server import main as serve
         serve()
+    elif cmd == "setup":
+        from .setup import run
+        run(force=True)
     elif cmd == "seed-tm":
         seed_tm(argv[1:] or list(config.UI_LANGS))
     elif cmd == "status":

@@ -21,3 +21,6 @@ read it as a relative number), and length ratio. Raw transcripts are in `runs/`.
 Held-out: the official Spanish/Portuguese text is read only by the scorer. Urim's glossary was mined from the same
 corpus (including these talks), so its term counts are slightly favored; for a cleaner test rebuild the glossary without
 the test conference.
+
+Before the Urim arm, run `mcp/.venv/Scripts/python -m urim_translate setup` once (it also happens on the server's first
+start) so Argos and Ollama are installed; otherwise the arm measures only the glossary tools.
