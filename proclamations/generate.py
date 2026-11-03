@@ -1,19 +1,23 @@
-"""Generate proclamation PDFs in the Church's own formats, in English, Spanish or the Deseret Alphabet,
+"""Generate proclamation PDFs in the Church's own formats, for every edition in languages.yaml,
 at standard and poster sizes.
 
     python -m proclamations.generate                          # every edition, all four documents, every size
     python -m proclamations.generate --edition deseret --doc family --size 24x36
+    python -m proclamations.generate --edition portugues --jobs 4
     python -m proclamations.generate --edition english --size letter --out scratch/qa
 
-Output: <out>/<edition>/<doc>-<edition>-<size>.pdf, one folder per edition (english, spanish, deseret).
+Output: <out>/<edition>/<doc>-<edition>-<size>.pdf, one flat folder per edition (english, espanol, portugues,
+deseret, ...). Text is converted once per document and rendered at every size; documents run in parallel.
 """
 import argparse
 import sys
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import yaml
 
 from . import fonts
+from . import languages
 from . import layout
 from . import scripts as scripts_mod
 from . import sizes as sizes_mod
@@ -36,6 +40,11 @@ SIGNERS = [
 
 def load_text(slug, lang="en"):
     return yaml.safe_load((HERE / "texts" / lang / f"{slug}.yaml").read_text(encoding="utf-8"))
+
+
+def available(edition, slug):
+    """True if the edition has the source text for this document."""
+    return (HERE / "texts" / scripts_mod.get(edition).source / f"{slug}.yaml").exists()
 
 
 def output_path(out_dir, edition, slug, size):
@@ -65,7 +74,7 @@ def localize(slug, script):
             for ni, n in enumerate(names):
                 add(("n", gi, ni), n)
     out = script.convert(strings)
-    L = Loc(slug=slug, script=script, title="", lang=script.source)
+    L = Loc(slug=slug, script=script, title="", lang=script.source, hints=script.hints)
     L.names = {0: [], 1: []}
     L.paragraphs, L.groups = [None] * len(d.get("paragraphs", [])), [None] * len(d.get("signature_groups", []))
     verses = [None] * len(d.get("verses", []))
@@ -85,10 +94,11 @@ def localize(slug, script):
     return L, d
 
 
-def render(slug, script, size_name, out_dir, with_credit=True):
+def render(slug, script, size_name, out_dir, with_credit=True, loc=None):
+    """Render one PDF. Pass `loc` (from localize) to avoid converting the text again."""
     fonts.set_family(script.latin_family)
     layout.set_hyphenation(script.hyphenation)
-    L, d = localize(slug, script)
+    L, d = loc or localize(slug, script)
     w, h = sizes_mod.get(size_name)
     path = output_path(out_dir, script.name, slug, size_name)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -105,28 +115,49 @@ def render(slug, script, size_name, out_dir, with_credit=True):
     return path
 
 
+def run_task(edition, slug, size_names, out_dir, with_credit):
+    """One document of one edition at every requested size. Top-level so it can run in a worker process."""
+    script = scripts_mod.get(edition)
+    loc = localize(slug, script)
+    paths = [render(slug, script, n, out_dir, with_credit, loc) for n in size_names]
+    return edition, slug, [str(p) for p in paths], script.report()
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--doc", default="all", help="family, living-christ, restoration, articles-of-faith, or all")
     ap.add_argument("--edition", "--script", dest="edition", default="all",
-                    help="english, spanish, deseret, or all (default)")
+                    help="comma list of edition folders from languages.yaml, or all (default)")
     ap.add_argument("--size", default="all", help="comma list of sizes, or all")
     ap.add_argument("--out", default=str(HERE / "out"))
+    ap.add_argument("--jobs", type=int, default=1, help="documents to render in parallel")
     ap.add_argument("--no-credit", action="store_true", help="omit the unofficial-edition line in the bottom margin")
     a = ap.parse_args(argv)
 
     docs = DOCS if a.doc == "all" else a.doc.split(",")
     names = list(sizes_mod.SIZES) if a.size == "all" else a.size.split(",")
-    editions = scripts_mod.EDITIONS if a.edition == "all" else a.edition.split(",")
+    editions = languages.slugs() if a.edition == "all" else a.edition.split(",")
+    tasks = []
     for ed in editions:
-        script = scripts_mod.get(ed)
         for slug in docs:
-            for n in names:
-                p = render(slug, script, n, a.out, with_credit=not a.no_credit)
-                print(f"{p.relative_to(Path(a.out)) if str(p).startswith(str(a.out)) else p}  {p.stat().st_size // 1024} KB")
-        rep = script.report()
-        if rep.get("left_in_latin"):
-            print(f"[{ed}] words left in Latin script (no Deseret spelling):", ", ".join(rep["left_in_latin"]))
+            if available(ed, slug):
+                tasks.append((ed, slug, names, a.out, not a.no_credit))
+            else:
+                print(f"[{ed}] no source text for {slug}; skipped")
+    left = {}
+    if a.jobs > 1 and len(tasks) > 1:
+        with ProcessPoolExecutor(max_workers=a.jobs) as ex:
+            results = list(ex.map(run_task, *zip(*tasks)))
+    else:
+        results = [run_task(*t) for t in tasks]
+    for ed, slug, paths, rep in results:
+        for p in paths:
+            pp = Path(p)
+            print(f"{pp.relative_to(Path(a.out)) if str(pp).startswith(str(a.out)) else pp}  {pp.stat().st_size // 1024} KB")
+        left.setdefault(ed, set()).update(rep.get("left_in_latin", []))
+    for ed, words in left.items():
+        if words:
+            print(f"[{ed}] words left in Latin script (no Deseret spelling):", ", ".join(sorted(words)))
 
 
 if __name__ == "__main__":

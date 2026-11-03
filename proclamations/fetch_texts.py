@@ -4,11 +4,11 @@ The pages are server-rendered; this parses the headline, subtitle, author line, 
 paragraphs, numbered verses and closing note. Only text is taken: no images, logos or
 signature facsimiles. Re-run to refresh; the YAML records the URL and retrieval date.
 
-    python -m proclamations.fetch_texts                  # all four, English and Spanish
-    python -m proclamations.fetch_texts family --lang es
+    python -m proclamations.fetch_texts                  # all four, every language in languages.yaml
+    python -m proclamations.fetch_texts family --lang es,pt
 
 Text is written to texts/<lang>/<slug>.yaml. Each language is the Church's own published version
-(?lang=eng / ?lang=spa); nothing is translated here.
+(?lang=<church code> from languages.yaml); nothing is translated here.
 """
 import datetime
 import html
@@ -22,7 +22,7 @@ import yaml
 
 HERE = Path(__file__).resolve().parent
 BASE = "https://www.churchofjesuschrist.org/study/scriptures/"
-LANGS = {"en": "eng", "es": "spa"}
+from . import languages
 PAGES = {
     "family": "the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world",
     "living-christ": "the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles",
@@ -61,7 +61,7 @@ class Blocks(HTMLParser):
 
 
 def fetch(slug, lang="en"):
-    url = BASE + PAGES[slug] + f"?lang={LANGS[lang]}"
+    url = BASE + PAGES[slug] + f"?lang={languages.by_code(lang)['church']}"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     raw = urllib.request.urlopen(req, timeout=60).read().decode("utf-8")
     p = Blocks()
@@ -79,8 +79,11 @@ def build(slug, lang="en"):
     body = [(c, t) for tag, c, t in blocks if tag == "p" and c not in ("subtitle", "author-name")]
     if slug == "articles-of-faith":
         # "The Articles of Faith of The Church of ..." / "Los Artículos de Fe de La Iglesia de ..."
-        m = re.match(r"(.+?)\s+((?:of The Church|de La Iglesia).*)", h1)
-        doc["title"], doc["subtitle"] = m.group(1), m.group(2)
+        marker = languages.by_code(lang)["aof_split"]      # where the title ends and "of The Church of ..." begins
+        i = h1.find(marker)
+        if i <= 0:
+            raise ValueError(f"cannot split the Articles of Faith heading in {lang}: {h1!r} (set aof_split in languages.yaml)")
+        doc["title"], doc["subtitle"] = h1[:i].strip(), h1[i:].strip()
         doc["verses"] = [{"n": int(t.split(" ", 1)[0]), "text": t.split(" ", 1)[1]} for c, t in body if c == "verse"]
         doc["signature"] = next(t for c, t in body if c == "signature")
         return doc
@@ -102,16 +105,20 @@ def build(slug, lang="en"):
 
 
 def main(argv):
-    langs = list(LANGS)
+    langs = list(languages.church_languages())
     if "--lang" in argv:
         i = argv.index("--lang")
-        langs = [argv[i + 1]]
+        langs = argv[i + 1].split(",")
         argv = argv[:i] + argv[i + 2:]
     slugs = argv or list(PAGES)
     for lang in langs:
         (HERE / "texts" / lang).mkdir(parents=True, exist_ok=True)
         for slug in slugs:
-            doc = build(slug, lang)
+            try:
+                doc = build(slug, lang)
+            except Exception as e:                       # a language may not have every page yet
+                print(f"{lang}/{slug}: SKIPPED ({type(e).__name__}: {str(e)[:80]})")
+                continue
             (HERE / "texts" / lang / f"{slug}.yaml").write_text(
                 yaml.safe_dump(doc, allow_unicode=True, sort_keys=False, width=100), encoding="utf-8")
             n = len(doc.get("paragraphs", doc.get("verses", [])))

@@ -119,10 +119,11 @@ def test_split_words_reassemble_with_hyphens_where_needed():
 
 
 def test_editions_and_their_source_languages():
-    assert scripts.EDITIONS == ["english", "spanish", "deseret"]
-    assert scripts.get("english").source == "en" and scripts.get("spanish").source == "es"
+    assert scripts.EDITIONS == ["english", "espanol", "portugues", "deseret"]
+    assert scripts.get("english").source == "en" and scripts.get("espanol").source == "es"
+    assert scripts.get("portugues").source == "pt" and scripts.get("portugues").hyphenation == "pt_BR"
     assert scripts.get("deseret").source == "en"          # transliterated from the English text
-    assert scripts.get("spanish").hyphenation == "es" and scripts.get("deseret").hyphenation is None
+    assert scripts.get("espanol").hyphenation == "es" and scripts.get("deseret").hyphenation is None
 
 
 def test_spanish_text_is_the_churchs_own():
@@ -136,8 +137,34 @@ def yaml_load(lang, slug):
     return load_text(slug, lang)
 
 
-@pytest.mark.parametrize("edition", ["english", "spanish"])
-def test_english_and_spanish_pdfs_are_complete(edition, tmp_path):
+@pytest.mark.parametrize("edition", ["english", "espanol", "portugues"])
+def test_church_text_pdfs_are_complete(edition, tmp_path):
     path = render("living-christ", scripts.get(edition), "a4", tmp_path)
     assert path == tmp_path / edition / f"living-christ-{edition}-a4.pdf"        # one flat folder per edition
     assert all(ok for _, ok, _ in check.output_check(path))
+
+
+def test_registry_slugs_are_safe_folder_names():
+    from proclamations import languages
+    for slug, e in languages.load().items():
+        assert slug.isascii() and slug == slug.lower() and "-" not in slug, slug
+        assert e["kind"] in ("language", "script") and e["native"] and e["english"]
+    codes = [e["code"] for e in languages.load().values()]
+    assert len(codes) == len(set(codes))
+
+
+def test_portuguese_is_typeset_without_hand_tuned_hints():
+    """Heading breaks and lead-ins are automatic unless the registry carries verified overrides."""
+    from proclamations.languages import get
+    assert not get("portugues")["hints"]
+    from proclamations.templates import auto_lead, auto_split
+    assert auto_split("PROCLAMACAO AO MUNDO", 2) == ["PROCLAMACAO", "AO MUNDO"]
+    assert auto_lead("Nos, a Primeira Presidencia".split()) == 4          # pronoun + comma: take the phrase after it
+    assert auto_lead("Na esfera pre-mortal, os filhos".split()) == 3       # first clause
+
+
+def test_documents_render_in_parallel(tmp_path):
+    from proclamations.generate import main
+    assert main(["--edition", "portugues", "--doc", "family,restoration", "--size", "letter", "--out", str(tmp_path), "--jobs", "2"]) is None
+    assert sorted(p.name for p in (tmp_path / "portugues").glob("*.pdf")) == [
+        "family-portugues-letter.pdf", "restoration-portugues-letter.pdf"]

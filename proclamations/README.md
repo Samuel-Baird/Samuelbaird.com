@@ -1,6 +1,6 @@
 # Proclamations generator
 
-Generates the Church's proclamations in the **layout of the official PDFs**, as vector PDFs at standard and poster sizes, in three editions: **English** and **Spanish** (the Church's own published text for each language, pulled from its website) and the **Deseret Alphabet** (a transliteration of the English). Another language or script plugs in as a new `Script`.
+Generates the Church's proclamations in the **layout of the official PDFs**, as vector PDFs at standard and poster sizes, in every edition listed in `languages.yaml`: the **languages** (the Church's own published text, pulled from its website: English, Español, Português so far) and **alphabets** (the English text converted, so far the Deseret Alphabet). Adding a language is a registry entry plus a fetch, with no code change.
 
 Unofficial: not produced or approved by The Church of Jesus Christ of Latter-day Saints. Every PDF says so in its bottom margin (`--no-credit` removes the line, for your own use).
 
@@ -11,8 +11,8 @@ cd proclamations
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements.txt     # reportlab, pymupdf, pyyaml (Node is needed for Deseret)
 cd ..
-proclamations/.venv/Scripts/python -m proclamations.fetch_texts                  # re-read the English and Spanish text from the Church site
-proclamations/.venv/Scripts/python -m proclamations.generate                     # 3 editions x 4 documents x 11 sizes = 132 PDFs -> proclamations/out/
+proclamations/.venv/Scripts/python -m proclamations.fetch_texts                  # re-read every language's text from the Church site
+proclamations/.venv/Scripts/python -m proclamations.generate --jobs 4             # every edition x 4 documents x 11 sizes -> proclamations/out/
 proclamations/.venv/Scripts/python -m proclamations.generate --edition deseret --doc family --size 24x36
 proclamations/.venv/Scripts/python -m proclamations.check                        # format parity vs the originals
 proclamations/.venv/Scripts/python -m proclamations.check --outputs              # integrity of every PDF in out/
@@ -21,7 +21,13 @@ proclamations/.venv/Scripts/python -m proclamations.publish                     
 
 ## Output layout
 
-One flat folder per edition: `out/english/`, `out/spanish/` and `out/deseret/`, each holding `<doc>-<edition>-<size>.pdf` (for example `deseret/family-deseret-a4.pdf`). `publish` copies them to `site/posters/<edition>/`.
+One flat folder per language or alphabet, named in the language itself without accents: `out/english/`, `out/espanol/`, `out/portugues/`, `out/deseret/`. Each holds `<doc>-<edition>-<size>.pdf` (for example `espanol/family-espanol-a4.pdf`). `publish` copies them to `site/posters/<edition>/`.
+
+On the site, `/proclamations` is an index of those folders with a live filter (native name, English name or code), and each folder opens its own page with that language's four documents and every size. The index stays one compact grid however many languages there are; documents never pile into one long list.
+
+## The registry
+
+`languages.yaml` has one entry per folder: `slug` (folder name, lower-case ASCII, no hyphens), `kind` (`language` or `script`), `code`, the Church's `church` ?lang code, `native` and `english` names, the `hyphenation` dictionary, the Latin `font` family, `aof_split` (where the Articles of Faith heading splits), the unofficial-edition `credit` line in that language, and optional verified `hints`. Without hints, heading breaks are balanced by length and small-caps lead-ins follow the first clause; English and Spanish carry hints verified against the originals, and Portuguese deliberately has none, so it shows the automatic path.
 
 ## What it makes
 
@@ -54,7 +60,16 @@ Sizes: `letter` (8.5 x 11 in) and its metric equivalent `a4` (210 x 297 mm) for 
 
 ## Adding a language
 
-For a language the Church publishes, add its code to `fetch_texts.LANGS`, fetch it, add a `Script` in `scripts.py` (source language, hyphenation dictionary, credit line) and its heading breaks and lead-in counts in `templates.py`. A script conversion of existing text implements `convert()` instead, as Deseret does. Right-to-left scripts and fonts without small caps would need template work.
+1. Add an entry to `languages.yaml` (copy Portuguese). `church` is the code in the Church site's `?lang=` parameter; `hyphenation` is a [pyphen](https://github.com/Kozea/pyphen) dictionary name, or `null`.
+2. `python -m proclamations.fetch_texts --lang <code>` pulls the four documents. A page the Church has not published in that language is skipped, and the language gets only the documents it has.
+3. If the Articles of Faith heading cannot be split, set `aof_split` to the words where "of The Church of Jesus Christ..." begins.
+4. `python -m proclamations.generate --edition <slug> --jobs 4`, then `check --outputs`, `publish` and `python -m pipeline.build`.
+
+Latin-script languages work as they are. A language in another script (Cyrillic, Greek, Arabic, Thai, CJK, ...) also needs a font that covers it added to `fonts/` and a family entry in `fonts.py`; right-to-left scripts need template work. A script conversion of existing text (like Deseret) implements `convert()` in a `Script` subclass and sets `source` to the language it converts.
+
+## Scale
+
+Text is converted once per document and rendered at every size, and documents render in parallel (`--jobs`): all 176 current PDFs take about 30 seconds. Each language adds about 44 PDFs and 4 previews, roughly 2.5 MB. At 100+ languages that is several hundred MB of static files, which is heavy for git and for a static deployment; if that becomes a problem, keep Letter and A4 in the repository and serve the posters from object storage (for example Vercel Blob or GitHub Releases) or render them on demand.
 
 ## Text extraction
 

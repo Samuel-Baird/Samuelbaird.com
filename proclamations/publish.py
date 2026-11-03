@@ -2,9 +2,9 @@
 
     python -m proclamations.publish
 
-Writes site/posters/<edition>/<doc>-<edition>-<size>.pdf (one flat folder per edition: english, spanish,
-deseret), a JPEG preview of each document per edition, and site/posters/manifest.json, which
-pipeline/build.py turns into the /proclamations page.
+Writes site/posters/<edition>/<doc>-<edition>-<size>.pdf (one flat folder per language or alphabet), a small
+JPEG preview of each document, and site/posters/manifest.json, which pipeline/build.py turns into the
+/proclamations index and one page per language.
 """
 import argparse
 import json
@@ -14,13 +14,13 @@ from pathlib import Path
 
 import pymupdf
 
-from . import scripts, sizes
-from .generate import DOCS, HERE, load_text, output_path
+from . import languages, scripts, sizes
+from .generate import DOCS, HERE, available, load_text, output_path
 
 ROOT = HERE.parent
 SITE = ROOT / "site" / "posters"
 PREVIEW_SIZE = "18x24"
-PREVIEW_WIDTH = 520
+PREVIEW_WIDTH = 420
 
 
 def main(argv=None):
@@ -29,35 +29,38 @@ def main(argv=None):
     a = ap.parse_args(argv)
     if SITE.exists():
         shutil.rmtree(SITE)          # old layouts must not linger
-    manifest = []
-    for slug in DOCS:
-        en, es = load_text(slug, "en"), load_text(slug, "es")
-        entry = {"slug": slug, "title": en["title"], "subtitle": en.get("subtitle", ""),
-                 "titles": {"english": en["title"], "spanish": es["title"]},
-                 "source_url": {"english": en["source_url"], "spanish": es["source_url"]}, "editions": {}}
-        for name in scripts.EDITIONS:
-            script = scripts.get(name)
-            dest = SITE / name
-            dest.mkdir(parents=True, exist_ok=True)
+    entries = []
+    for slug in languages.slugs():
+        reg = languages.get(slug)
+        script = scripts.get(slug)
+        docs = {}
+        dest = SITE / slug
+        for doc in DOCS:
+            if not available(slug, doc):
+                continue
+            src = load_text(doc, script.source)
             files = {}
             for size, (w, h) in sizes.SIZES.items():
-                f = output_path(a.out, name, slug, size)
+                f = output_path(a.out, slug, doc, size)
                 if not f.exists():
                     raise SystemExit(f"missing {f}; run `python -m proclamations.generate` first")
+                dest.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(f, dest / f.name)
                 files[size] = {"file": f.name, "kb": round(f.stat().st_size / 1024), "label": sizes.LABELS[size],
                                "w_in": round(w / 72, 1), "h_in": round(h / 72, 1)}
-            page = pymupdf.open(output_path(a.out, name, slug, PREVIEW_SIZE))[0]
+            page = pymupdf.open(output_path(a.out, slug, doc, PREVIEW_SIZE))[0]
             z = PREVIEW_WIDTH / page.rect.width
-            preview = f"{slug}-{name}-preview.jpg"
-            page.get_pixmap(matrix=pymupdf.Matrix(z, z)).save(dest / preview, jpg_quality=82)
-            entry["editions"][name] = {"label": script.label, "files": files, "preview": preview}
-            if name == "deseret":
-                entry["title_deseret"] = script.convert([en["title"]])[0]
-        manifest.append(entry)
-    (SITE / "manifest.json").write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
-    n = sum(len(e["files"]) for m in manifest for e in m["editions"].values())
-    print(f"published {n} PDFs and {len(manifest) * len(scripts.EDITIONS)} previews to {SITE.relative_to(ROOT)}")
+            preview = f"{doc}-{slug}-preview.jpg"
+            page.get_pixmap(matrix=pymupdf.Matrix(z, z)).save(dest / preview, jpg_quality=78)
+            title = src["title"] if reg["kind"] == "language" else script.convert([src["title"]])[0]
+            docs[doc] = {"title": title, "subtitle": src.get("subtitle", "") if reg["kind"] == "language" else "",
+                         "source_url": src["source_url"], "files": files, "preview": preview}
+        if docs:
+            entries.append({"slug": slug, "kind": reg["kind"], "code": reg["code"], "native": reg["native"],
+                            "english": reg["english"], "docs": docs})
+    (SITE / "manifest.json").write_text(json.dumps(entries, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
+    n = sum(len(d["files"]) for e in entries for d in e["docs"].values())
+    print(f"published {n} PDFs for {len(entries)} editions to {SITE.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

@@ -20,25 +20,14 @@ GOLD = (189 / 255, 156 / 255, 105 / 255)
 GRAY_FILL = (166 / 255, 168 / 255, 171 / 255)
 CREDIT = (0.45, 0.45, 0.45)
 
-# Words per printed line for headings. Counts survive a word-for-word conversion (Deseret reuses "en");
-# Spanish has its own because its phrases are longer.
-BREAKS = {
-    "en": {
-        "family": {"subtitle": [2, 3], "author": [9, 9]},
-        "restoration": {"title": [5, 6], "author": [9, 9]},
-        "living-christ": {"subtitle": [5], "author": [8]},
-        "articles-of-faith": {"title": [2, 2], "subtitle": [8]},
-    },
-    "es": {
-        "family": {"subtitle": [2, 3], "author": [10, 12]},
-        "restoration": {"title": [5, 4], "author": [10, 12]},
-        "living-christ": {"subtitle": [5], "author": [11]},
-        "articles-of-faith": {"title": [2, 2], "subtitle": [9]},
-    },
+# How many printed lines each heading takes (the same in every language). Where the registry gives a verified
+# word split for a language (languages.yaml hints.breaks) it is used; otherwise the heading is balanced by length.
+LINES = {
+    "family": {"subtitle": 2, "author": 2},
+    "restoration": {"title": 2, "author": 2},
+    "living-christ": {"subtitle": 1, "author": 1},
+    "articles-of-faith": {"title": 2},
 }
-# Small-caps lead-in words of each Family paragraph (the English counts are read from the original PDF;
-# the Spanish ones follow the same phrases: "Nosotros, la Primera Presidencia", "Todos los seres humanos", ...)
-FAMILY_LEADS = {"en": [4, 3, 4, 3, 2, 3, 2, 2, 3], "es": [4, 4, 4, 3, 2, 5, 2, 2, 3]}
 
 
 @dataclass
@@ -57,7 +46,8 @@ class Loc:
     groups: list = field(default_factory=list)       # signature group headings
     names: dict = field(default_factory=dict)        # group -> [names]
     credit: str = ""
-    lang: str = "en"          # language of the source text (selects heading breaks and lead-ins)
+    lang: str = "en"          # code of the source text
+    hints: dict = field(default_factory=dict)        # per-language typographic hints from languages.yaml
 
 
 # ------------------------------------------------------------------ helpers
@@ -69,6 +59,43 @@ def split_words(text, counts):
     if i < len(ws):
         out[-1] += " " + " ".join(ws[i:])
     return out
+
+
+def auto_split(text, n):
+    """Split a heading into n lines of similar length at word boundaries."""
+    ws = text.split()
+    if n <= 1 or len(ws) < 2:
+        return [text]
+    import itertools
+    best = None
+    for cuts in itertools.combinations(range(1, len(ws)), min(n, len(ws)) - 1):
+        parts, prev = [], 0
+        for c in list(cuts) + [len(ws)]:
+            parts.append(" ".join(ws[prev:c]))
+            prev = c
+        score = max(map(len, parts)) - min(map(len, parts))
+        if best is None or score < best[0]:
+            best = (score, parts)
+    return best[1]
+
+
+def heading_lines(L, slug, field_name, text):
+    counts = L.hints.get("breaks", {}).get(slug, {}).get(field_name)
+    return split_words(text, counts) if counts else auto_split(text, LINES[slug][field_name])
+
+
+def auto_lead(toks, default=3):
+    """Words in a small-caps lead-in when no verified count is known: the first clause (up to a comma
+    after the second word or later), else the opening phrase after a pronoun ("We, the First ..."), else 3."""
+    for k, t in enumerate(toks[:5]):
+        if t.endswith(","):
+            return k + 1 if k >= 1 else min(4, len(toks))
+    return min(default, len(toks))
+
+
+def family_lead(L, i, toks):
+    leads = L.hints.get("family_leads")
+    return leads[i] if leads and i < len(leads) else auto_lead(toks)
 
 
 def fit_size(text, size, max_w, style="r", track=0.0):
@@ -131,10 +158,10 @@ def family(pg, L):
     pg.centered(306, 90, [Seg(title, ts, color=GRAY_FILL, mode="open", stroke=MAROON, stroke_w=0.9)])
     pg.hrule(102.5, 102.9, 506, 0.5, INK)
     pg.hrule(102.7, 165, 441.8, 2.5, MAROON)
-    for i, line in enumerate(split_words(S.caps(L.subtitle), BREAKS[L.lang]["family"]["subtitle"])):
+    for i, line in enumerate(heading_lines(L, "family", "subtitle", S.caps(L.subtitle))):
         ls = fit_size(line, 28, 300)
         pg.centered(306, 134 + i * 30, [Seg(line, ls, color=(0.92, 0.85, 0.87), mode="open", stroke=MAROON, stroke_w=0.8)])
-    for i, line in enumerate(split_words(L.author, BREAKS[L.lang]["family"]["author"])):
+    for i, line in enumerate(heading_lines(L, "family", "author", L.author)):
         segs = sc_segs(line, 15, 12.2, INK)
         sc = 1.0 if pg.width(segs) <= 470 else 470 / pg.width(segs)
         if sc != 1.0:
@@ -148,7 +175,8 @@ def family(pg, L):
         size, lead, gap = 9 * s, 12.5 * s, 6.2 * s
         paras = []
         for i, text in enumerate(L.paragraphs):
-            toks, n = text.split(" "), FAMILY_LEADS[L.lang][i]
+            toks = text.split(" ")
+            n = family_lead(L, i, toks)
             words = []
             if i == 0:
                 first = toks[0][1:]
@@ -231,7 +259,7 @@ def restoration(pg, L):
     d = pg.H - H0
     S = L.script
     pg.frame(21.6, 21.6, 589.5, 769.5 + d, 0.5, INK)
-    for i, line in enumerate(split_words(S.caps(L.title), BREAKS[L.lang]["restoration"]["title"])):
+    for i, line in enumerate(heading_lines(L, "restoration", "title", S.caps(L.title))):
         pg.centered(306, 66 + i * 27, [Seg(line, fit_size(line, 22.5, 470), color=INK)])
     pg.hrule(103.8, 77.6, 533.6, 0.35, INK)
     pg.hrule(121.1, 77.6, 534.6, 0.35, INK)
@@ -239,7 +267,7 @@ def restoration(pg, L):
     track = 3.2
     ss = fit_size(sub, 13, 440, track=track)
     pg.centered(306, 116.5, [Seg(sub, ss, color=INK, track=track)])
-    for i, line in enumerate(split_words(L.author, BREAKS[L.lang]["restoration"]["author"])):
+    for i, line in enumerate(heading_lines(L, "restoration", "author", L.author)):
         segs = sc_segs(line, 13, 10.4, INK)
         if pg.width(segs) > 470:
             sc = 470 / pg.width(segs)
@@ -277,7 +305,7 @@ def articles_of_faith(pg, L):
     d = pg.H - H0
     S = L.script
     pg.hrule(44.6, 54, 558, 1.0, GOLD)
-    for i, line in enumerate(split_words(S.caps(L.title), BREAKS[L.lang]["articles-of-faith"]["title"])):
+    for i, line in enumerate(heading_lines(L, "articles-of-faith", "title", S.caps(L.title))):
         pg.centered(306, 105 + i * 42, [Seg(line, fit_size(line, 42.8, 380), color=MAROON)])
     segs = sc_segs(L.subtitle, 15, 12.5, MAROON)
     if pg.width(segs) > 470:
@@ -299,11 +327,12 @@ def articles_of_faith(pg, L):
         paras = []
         for i, (n, text) in enumerate(L.verses):
             toks = text.split(" ")
+            lead_n = auto_lead(toks, 4)
             if i == 0:
                 rest = toks[0][1:]
                 words = [small_caps_word(rest, 0.86 * size, 0.86 * size, INK, first_big=False)] if rest else []
                 for j, t in enumerate(toks[1:], start=1):
-                    words.append(small_caps_word(t, 0.86 * size, 0.86 * size, INK, first_big=False) if j < 4 else word(t, size, color=INK))
+                    words.append(small_caps_word(t, 0.86 * size, 0.86 * size, INK, first_big=False) if j < lead_n else word(t, size, color=INK))
             else:
                 words = [Word([Seg(f"{n} ", 18 * s, color=(0, 0, 0))])] + [word(t, size, color=INK) for t in toks]
             p = Para(words, size, lead, gap_before=gap)

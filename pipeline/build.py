@@ -3,6 +3,7 @@ import csv
 import html
 import json
 import re
+import shutil
 import sys
 from collections import defaultdict
 
@@ -586,11 +587,23 @@ def main():
     (SITE / "index.html").write_text(home_page(concepts, prov), encoding="utf-8")
     (SITE / "variants.html").write_text(variants_page(concepts, sig, collapses), encoding="utf-8")
     (SITE / "about.html").write_text(about_page(prov, len(concepts), n), encoding="utf-8")
-    from .pages import connect_page, donate_page, proclamations_page
+    from .pages import connect_page, donate_page
+    from . import proclamation_pages as pp
     manifest = SITE / "posters" / "manifest.json"
+    pdir = SITE / "proclamations"
+    if pdir.exists():
+        shutil.rmtree(pdir)                      # stale language pages must not linger
+    old = SITE / "proclamations.html"
+    if old.exists():
+        old.unlink()
     if manifest.exists():
-        t, b, d = proclamations_page(json.loads(manifest.read_text(encoding="utf-8")))
-        (SITE / "proclamations.html").write_text(page(t, b, d, current="/proclamations"), encoding="utf-8")
+        entries = json.loads(manifest.read_text(encoding="utf-8"))
+        pdir.mkdir()
+        t, b, d = pp.index_page(entries)
+        (pdir / "index.html").write_text(page(t, b, d, current="/proclamations"), encoding="utf-8")
+        for e in entries:
+            t, b, d = pp.language_page(e)
+            (pdir / f"{e['slug']}.html").write_text(page(t, b, d, current="/proclamations"), encoding="utf-8")
     for name, fn in (("connect", connect_page), ("donate", donate_page)):
         t, b, d = fn()
         (SITE / f"{name}.html").write_text(page(t, b, d, current=f"/{name}"), encoding="utf-8")

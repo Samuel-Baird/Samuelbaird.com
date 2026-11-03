@@ -1,19 +1,15 @@
 [
  {
-  "slug": "family",
-  "title": "The Family",
-  "subtitle": "A Proclamation to the World",
-  "titles": {
-   "english": "The Family",
-   "spanish": "La Familia"
-  },
-  "source_url": {
-   "english": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng",
-   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=spa"
-  },
-  "editions": {
-   "english": {
-    "label": "English",
+  "slug": "english",
+  "kind": "language",
+  "code": "en",
+  "native": "English",
+  "english": "English",
+  "docs": {
+   "family": {
+    "title": "The Family",
+    "subtitle": "A Proclamation to the World",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng",
     "files": {
      "letter": {
       "file": "family-english-letter.pdf",
@@ -95,190 +91,10 @@
     },
     "preview": "family-english-preview.jpg"
    },
-   "spanish": {
-    "label": "Español",
-    "files": {
-     "letter": {
-      "file": "family-spanish-letter.pdf",
-      "kb": 55,
-      "label": "Letter (8.5\" x 11\")",
-      "w_in": 8.5,
-      "h_in": 11.0
-     },
-     "a4": {
-      "file": "family-spanish-a4.pdf",
-      "kb": 55,
-      "label": "A4 (210 x 297 mm)",
-      "w_in": 8.3,
-      "h_in": 11.7
-     },
-     "11x17": {
-      "file": "family-spanish-11x17.pdf",
-      "kb": 56,
-      "label": "11\" x 17\" (small / bulletin)",
-      "w_in": 11.0,
-      "h_in": 17.0
-     },
-     "18x24": {
-      "file": "family-spanish-18x24.pdf",
-      "kb": 55,
-      "label": "18\" x 24\" (medium)",
-      "w_in": 18.0,
-      "h_in": 24.0
-     },
-     "24x36": {
-      "file": "family-spanish-24x36.pdf",
-      "kb": 55,
-      "label": "24\" x 36\" (large)",
-      "w_in": 24.0,
-      "h_in": 36.0
-     },
-     "27x40": {
-      "file": "family-spanish-27x40.pdf",
-      "kb": 55,
-      "label": "27\" x 40\" (movie one-sheet)",
-      "w_in": 27.0,
-      "h_in": 40.0
-     },
-     "40x60": {
-      "file": "family-spanish-40x60.pdf",
-      "kb": 55,
-      "label": "40\" x 60\" (extra large)",
-      "w_in": 40.0,
-      "h_in": 60.0
-     },
-     "a3": {
-      "file": "family-spanish-a3.pdf",
-      "kb": 55,
-      "label": "A3 (297 x 420 mm)",
-      "w_in": 11.7,
-      "h_in": 16.5
-     },
-     "a2": {
-      "file": "family-spanish-a2.pdf",
-      "kb": 55,
-      "label": "A2 (420 x 594 mm)",
-      "w_in": 16.5,
-      "h_in": 23.4
-     },
-     "a1": {
-      "file": "family-spanish-a1.pdf",
-      "kb": 55,
-      "label": "A1 (594 x 841 mm)",
-      "w_in": 23.4,
-      "h_in": 33.1
-     },
-     "a0": {
-      "file": "family-spanish-a0.pdf",
-      "kb": 55,
-      "label": "A0 (841 x 1189 mm)",
-      "w_in": 33.1,
-      "h_in": 46.8
-     }
-    },
-    "preview": "family-spanish-preview.jpg"
-   },
-   "deseret": {
-    "label": "Deseret Alphabet",
-    "files": {
-     "letter": {
-      "file": "family-deseret-letter.pdf",
-      "kb": 58,
-      "label": "Letter (8.5\" x 11\")",
-      "w_in": 8.5,
-      "h_in": 11.0
-     },
-     "a4": {
-      "file": "family-deseret-a4.pdf",
-      "kb": 58,
-      "label": "A4 (210 x 297 mm)",
-      "w_in": 8.3,
-      "h_in": 11.7
-     },
-     "11x17": {
-      "file": "family-deseret-11x17.pdf",
-      "kb": 58,
-      "label": "11\" x 17\" (small / bulletin)",
-      "w_in": 11.0,
-      "h_in": 17.0
-     },
-     "18x24": {
-      "file": "family-deseret-18x24.pdf",
-      "kb": 58,
-      "label": "18\" x 24\" (medium)",
-      "w_in": 18.0,
-      "h_in": 24.0
-     },
-     "24x36": {
-      "file": "family-deseret-24x36.pdf",
-      "kb": 58,
-      "label": "24\" x 36\" (large)",
-      "w_in": 24.0,
-      "h_in": 36.0
-     },
-     "27x40": {
-      "file": "family-deseret-27x40.pdf",
-      "kb": 58,
-      "label": "27\" x 40\" (movie one-sheet)",
-      "w_in": 27.0,
-      "h_in": 40.0
-     },
-     "40x60": {
-      "file": "family-deseret-40x60.pdf",
-      "kb": 58,
-      "label": "40\" x 60\" (extra large)",
-      "w_in": 40.0,
-      "h_in": 60.0
-     },
-     "a3": {
-      "file": "family-deseret-a3.pdf",
-      "kb": 58,
-      "label": "A3 (297 x 420 mm)",
-      "w_in": 11.7,
-      "h_in": 16.5
-     },
-     "a2": {
-      "file": "family-deseret-a2.pdf",
-      "kb": 58,
-      "label": "A2 (420 x 594 mm)",
-      "w_in": 16.5,
-      "h_in": 23.4
-     },
-     "a1": {
-      "file": "family-deseret-a1.pdf",
-      "kb": 58,
-      "label": "A1 (594 x 841 mm)",
-      "w_in": 23.4,
-      "h_in": 33.1
-     },
-     "a0": {
-      "file": "family-deseret-a0.pdf",
-      "kb": 58,
-      "label": "A0 (841 x 1189 mm)",
-      "w_in": 33.1,
-      "h_in": 46.8
-     }
-    },
-    "preview": "family-deseret-preview.jpg"
-   }
-  },
-  "title_deseret": "𐐜 𐐙𐐰𐑋𐐮𐑊𐐨"
- },
- {
-  "slug": "living-christ",
-  "title": "The Living Christ",
-  "subtitle": "The Testimony of the Apostles",
-  "titles": {
-   "english": "The Living Christ",
-   "spanish": "El Cristo Viviente"
-  },
-  "source_url": {
-   "english": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng",
-   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=spa"
-  },
-  "editions": {
-   "english": {
-    "label": "English",
+   "living-christ": {
+    "title": "The Living Christ",
+    "subtitle": "The Testimony of the Apostles",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng",
     "files": {
      "letter": {
       "file": "living-christ-english-letter.pdf",
@@ -360,190 +176,10 @@
     },
     "preview": "living-christ-english-preview.jpg"
    },
-   "spanish": {
-    "label": "Español",
-    "files": {
-     "letter": {
-      "file": "living-christ-spanish-letter.pdf",
-      "kb": 53,
-      "label": "Letter (8.5\" x 11\")",
-      "w_in": 8.5,
-      "h_in": 11.0
-     },
-     "a4": {
-      "file": "living-christ-spanish-a4.pdf",
-      "kb": 53,
-      "label": "A4 (210 x 297 mm)",
-      "w_in": 8.3,
-      "h_in": 11.7
-     },
-     "11x17": {
-      "file": "living-christ-spanish-11x17.pdf",
-      "kb": 53,
-      "label": "11\" x 17\" (small / bulletin)",
-      "w_in": 11.0,
-      "h_in": 17.0
-     },
-     "18x24": {
-      "file": "living-christ-spanish-18x24.pdf",
-      "kb": 53,
-      "label": "18\" x 24\" (medium)",
-      "w_in": 18.0,
-      "h_in": 24.0
-     },
-     "24x36": {
-      "file": "living-christ-spanish-24x36.pdf",
-      "kb": 53,
-      "label": "24\" x 36\" (large)",
-      "w_in": 24.0,
-      "h_in": 36.0
-     },
-     "27x40": {
-      "file": "living-christ-spanish-27x40.pdf",
-      "kb": 53,
-      "label": "27\" x 40\" (movie one-sheet)",
-      "w_in": 27.0,
-      "h_in": 40.0
-     },
-     "40x60": {
-      "file": "living-christ-spanish-40x60.pdf",
-      "kb": 53,
-      "label": "40\" x 60\" (extra large)",
-      "w_in": 40.0,
-      "h_in": 60.0
-     },
-     "a3": {
-      "file": "living-christ-spanish-a3.pdf",
-      "kb": 53,
-      "label": "A3 (297 x 420 mm)",
-      "w_in": 11.7,
-      "h_in": 16.5
-     },
-     "a2": {
-      "file": "living-christ-spanish-a2.pdf",
-      "kb": 53,
-      "label": "A2 (420 x 594 mm)",
-      "w_in": 16.5,
-      "h_in": 23.4
-     },
-     "a1": {
-      "file": "living-christ-spanish-a1.pdf",
-      "kb": 53,
-      "label": "A1 (594 x 841 mm)",
-      "w_in": 23.4,
-      "h_in": 33.1
-     },
-     "a0": {
-      "file": "living-christ-spanish-a0.pdf",
-      "kb": 53,
-      "label": "A0 (841 x 1189 mm)",
-      "w_in": 33.1,
-      "h_in": 46.8
-     }
-    },
-    "preview": "living-christ-spanish-preview.jpg"
-   },
-   "deseret": {
-    "label": "Deseret Alphabet",
-    "files": {
-     "letter": {
-      "file": "living-christ-deseret-letter.pdf",
-      "kb": 46,
-      "label": "Letter (8.5\" x 11\")",
-      "w_in": 8.5,
-      "h_in": 11.0
-     },
-     "a4": {
-      "file": "living-christ-deseret-a4.pdf",
-      "kb": 46,
-      "label": "A4 (210 x 297 mm)",
-      "w_in": 8.3,
-      "h_in": 11.7
-     },
-     "11x17": {
-      "file": "living-christ-deseret-11x17.pdf",
-      "kb": 46,
-      "label": "11\" x 17\" (small / bulletin)",
-      "w_in": 11.0,
-      "h_in": 17.0
-     },
-     "18x24": {
-      "file": "living-christ-deseret-18x24.pdf",
-      "kb": 46,
-      "label": "18\" x 24\" (medium)",
-      "w_in": 18.0,
-      "h_in": 24.0
-     },
-     "24x36": {
-      "file": "living-christ-deseret-24x36.pdf",
-      "kb": 46,
-      "label": "24\" x 36\" (large)",
-      "w_in": 24.0,
-      "h_in": 36.0
-     },
-     "27x40": {
-      "file": "living-christ-deseret-27x40.pdf",
-      "kb": 46,
-      "label": "27\" x 40\" (movie one-sheet)",
-      "w_in": 27.0,
-      "h_in": 40.0
-     },
-     "40x60": {
-      "file": "living-christ-deseret-40x60.pdf",
-      "kb": 46,
-      "label": "40\" x 60\" (extra large)",
-      "w_in": 40.0,
-      "h_in": 60.0
-     },
-     "a3": {
-      "file": "living-christ-deseret-a3.pdf",
-      "kb": 46,
-      "label": "A3 (297 x 420 mm)",
-      "w_in": 11.7,
-      "h_in": 16.5
-     },
-     "a2": {
-      "file": "living-christ-deseret-a2.pdf",
-      "kb": 46,
-      "label": "A2 (420 x 594 mm)",
-      "w_in": 16.5,
-      "h_in": 23.4
-     },
-     "a1": {
-      "file": "living-christ-deseret-a1.pdf",
-      "kb": 46,
-      "label": "A1 (594 x 841 mm)",
-      "w_in": 23.4,
-      "h_in": 33.1
-     },
-     "a0": {
-      "file": "living-christ-deseret-a0.pdf",
-      "kb": 46,
-      "label": "A0 (841 x 1189 mm)",
-      "w_in": 33.1,
-      "h_in": 46.8
-     }
-    },
-    "preview": "living-christ-deseret-preview.jpg"
-   }
-  },
-  "title_deseret": "𐐜 𐐢𐐮𐑂𐐮𐑍 𐐗𐑉𐐴𐑅𐐻"
- },
- {
-  "slug": "restoration",
-  "title": "The Restoration of the Fulness of the Gospel of Jesus Christ",
-  "subtitle": "A Bicentennial Proclamation to the World",
-  "titles": {
-   "english": "The Restoration of the Fulness of the Gospel of Jesus Christ",
-   "spanish": "La Restauración de la plenitud del evangelio de Jesucristo"
-  },
-  "source_url": {
-   "english": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=eng",
-   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=spa"
-  },
-  "editions": {
-   "english": {
-    "label": "English",
+   "restoration": {
+    "title": "The Restoration of the Fulness of the Gospel of Jesus Christ",
+    "subtitle": "A Bicentennial Proclamation to the World",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=eng",
     "files": {
      "letter": {
       "file": "restoration-english-letter.pdf",
@@ -625,190 +261,10 @@
     },
     "preview": "restoration-english-preview.jpg"
    },
-   "spanish": {
-    "label": "Español",
-    "files": {
-     "letter": {
-      "file": "restoration-spanish-letter.pdf",
-      "kb": 53,
-      "label": "Letter (8.5\" x 11\")",
-      "w_in": 8.5,
-      "h_in": 11.0
-     },
-     "a4": {
-      "file": "restoration-spanish-a4.pdf",
-      "kb": 53,
-      "label": "A4 (210 x 297 mm)",
-      "w_in": 8.3,
-      "h_in": 11.7
-     },
-     "11x17": {
-      "file": "restoration-spanish-11x17.pdf",
-      "kb": 53,
-      "label": "11\" x 17\" (small / bulletin)",
-      "w_in": 11.0,
-      "h_in": 17.0
-     },
-     "18x24": {
-      "file": "restoration-spanish-18x24.pdf",
-      "kb": 53,
-      "label": "18\" x 24\" (medium)",
-      "w_in": 18.0,
-      "h_in": 24.0
-     },
-     "24x36": {
-      "file": "restoration-spanish-24x36.pdf",
-      "kb": 53,
-      "label": "24\" x 36\" (large)",
-      "w_in": 24.0,
-      "h_in": 36.0
-     },
-     "27x40": {
-      "file": "restoration-spanish-27x40.pdf",
-      "kb": 53,
-      "label": "27\" x 40\" (movie one-sheet)",
-      "w_in": 27.0,
-      "h_in": 40.0
-     },
-     "40x60": {
-      "file": "restoration-spanish-40x60.pdf",
-      "kb": 53,
-      "label": "40\" x 60\" (extra large)",
-      "w_in": 40.0,
-      "h_in": 60.0
-     },
-     "a3": {
-      "file": "restoration-spanish-a3.pdf",
-      "kb": 53,
-      "label": "A3 (297 x 420 mm)",
-      "w_in": 11.7,
-      "h_in": 16.5
-     },
-     "a2": {
-      "file": "restoration-spanish-a2.pdf",
-      "kb": 53,
-      "label": "A2 (420 x 594 mm)",
-      "w_in": 16.5,
-      "h_in": 23.4
-     },
-     "a1": {
-      "file": "restoration-spanish-a1.pdf",
-      "kb": 53,
-      "label": "A1 (594 x 841 mm)",
-      "w_in": 23.4,
-      "h_in": 33.1
-     },
-     "a0": {
-      "file": "restoration-spanish-a0.pdf",
-      "kb": 53,
-      "label": "A0 (841 x 1189 mm)",
-      "w_in": 33.1,
-      "h_in": 46.8
-     }
-    },
-    "preview": "restoration-spanish-preview.jpg"
-   },
-   "deseret": {
-    "label": "Deseret Alphabet",
-    "files": {
-     "letter": {
-      "file": "restoration-deseret-letter.pdf",
-      "kb": 58,
-      "label": "Letter (8.5\" x 11\")",
-      "w_in": 8.5,
-      "h_in": 11.0
-     },
-     "a4": {
-      "file": "restoration-deseret-a4.pdf",
-      "kb": 58,
-      "label": "A4 (210 x 297 mm)",
-      "w_in": 8.3,
-      "h_in": 11.7
-     },
-     "11x17": {
-      "file": "restoration-deseret-11x17.pdf",
-      "kb": 58,
-      "label": "11\" x 17\" (small / bulletin)",
-      "w_in": 11.0,
-      "h_in": 17.0
-     },
-     "18x24": {
-      "file": "restoration-deseret-18x24.pdf",
-      "kb": 58,
-      "label": "18\" x 24\" (medium)",
-      "w_in": 18.0,
-      "h_in": 24.0
-     },
-     "24x36": {
-      "file": "restoration-deseret-24x36.pdf",
-      "kb": 58,
-      "label": "24\" x 36\" (large)",
-      "w_in": 24.0,
-      "h_in": 36.0
-     },
-     "27x40": {
-      "file": "restoration-deseret-27x40.pdf",
-      "kb": 58,
-      "label": "27\" x 40\" (movie one-sheet)",
-      "w_in": 27.0,
-      "h_in": 40.0
-     },
-     "40x60": {
-      "file": "restoration-deseret-40x60.pdf",
-      "kb": 58,
-      "label": "40\" x 60\" (extra large)",
-      "w_in": 40.0,
-      "h_in": 60.0
-     },
-     "a3": {
-      "file": "restoration-deseret-a3.pdf",
-      "kb": 58,
-      "label": "A3 (297 x 420 mm)",
-      "w_in": 11.7,
-      "h_in": 16.5
-     },
-     "a2": {
-      "file": "restoration-deseret-a2.pdf",
-      "kb": 58,
-      "label": "A2 (420 x 594 mm)",
-      "w_in": 16.5,
-      "h_in": 23.4
-     },
-     "a1": {
-      "file": "restoration-deseret-a1.pdf",
-      "kb": 58,
-      "label": "A1 (594 x 841 mm)",
-      "w_in": 23.4,
-      "h_in": 33.1
-     },
-     "a0": {
-      "file": "restoration-deseret-a0.pdf",
-      "kb": 58,
-      "label": "A0 (841 x 1189 mm)",
-      "w_in": 33.1,
-      "h_in": 46.8
-     }
-    },
-    "preview": "restoration-deseret-preview.jpg"
-   }
-  },
-  "title_deseret": "𐐜 𐐡𐐯𐑅𐐻𐐲𐑉𐐩𐑇𐐲𐑌 𐐲𐑂 𐑄 𐐙𐐳𐑊𐑌𐐲𐑅 𐐲𐑂 𐑄 𐐘𐐫𐑅𐐹𐐲𐑊 𐐲𐑂 𐐖𐐨𐑆𐐲𐑅 𐐗𐑉𐐴𐑅𐐻"
- },
- {
-  "slug": "articles-of-faith",
-  "title": "The Articles of Faith",
-  "subtitle": "of The Church of Jesus Christ of Latter-day Saints",
-  "titles": {
-   "english": "The Articles of Faith",
-   "spanish": "Los Artículos de Fe"
-  },
-  "source_url": {
-   "english": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=eng",
-   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=spa"
-  },
-  "editions": {
-   "english": {
-    "label": "English",
+   "articles-of-faith": {
+    "title": "The Articles of Faith",
+    "subtitle": "of The Church of Jesus Christ of Latter-day Saints",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=eng",
     "files": {
      "letter": {
       "file": "articles-of-faith-english-letter.pdf",
@@ -889,92 +345,973 @@
      }
     },
     "preview": "articles-of-faith-english-preview.jpg"
-   },
-   "spanish": {
-    "label": "Español",
+   }
+  }
+ },
+ {
+  "slug": "espanol",
+  "kind": "language",
+  "code": "es",
+  "native": "Español",
+  "english": "Spanish",
+  "docs": {
+   "family": {
+    "title": "La Familia",
+    "subtitle": "Una Proclamación para el Mundo",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=spa",
     "files": {
      "letter": {
-      "file": "articles-of-faith-spanish-letter.pdf",
+      "file": "family-espanol-letter.pdf",
+      "kb": 55,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "family-espanol-a4.pdf",
+      "kb": 55,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "family-espanol-11x17.pdf",
+      "kb": 56,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "family-espanol-18x24.pdf",
+      "kb": 55,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "family-espanol-24x36.pdf",
+      "kb": 55,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "family-espanol-27x40.pdf",
+      "kb": 55,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "family-espanol-40x60.pdf",
+      "kb": 55,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "family-espanol-a3.pdf",
+      "kb": 55,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "family-espanol-a2.pdf",
+      "kb": 55,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "family-espanol-a1.pdf",
+      "kb": 55,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "family-espanol-a0.pdf",
+      "kb": 55,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "family-espanol-preview.jpg"
+   },
+   "living-christ": {
+    "title": "El Cristo Viviente",
+    "subtitle": "El Testimonio de los Apóstoles",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=spa",
+    "files": {
+     "letter": {
+      "file": "living-christ-espanol-letter.pdf",
+      "kb": 53,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "living-christ-espanol-a4.pdf",
+      "kb": 53,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "living-christ-espanol-11x17.pdf",
+      "kb": 53,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "living-christ-espanol-18x24.pdf",
+      "kb": 53,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "living-christ-espanol-24x36.pdf",
+      "kb": 53,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "living-christ-espanol-27x40.pdf",
+      "kb": 53,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "living-christ-espanol-40x60.pdf",
+      "kb": 53,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "living-christ-espanol-a3.pdf",
+      "kb": 53,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "living-christ-espanol-a2.pdf",
+      "kb": 53,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "living-christ-espanol-a1.pdf",
+      "kb": 53,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "living-christ-espanol-a0.pdf",
+      "kb": 53,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "living-christ-espanol-preview.jpg"
+   },
+   "restoration": {
+    "title": "La Restauración de la plenitud del evangelio de Jesucristo",
+    "subtitle": "Una proclamación para el mundo en el bicentenario",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=spa",
+    "files": {
+     "letter": {
+      "file": "restoration-espanol-letter.pdf",
+      "kb": 53,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "restoration-espanol-a4.pdf",
+      "kb": 53,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "restoration-espanol-11x17.pdf",
+      "kb": 53,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "restoration-espanol-18x24.pdf",
+      "kb": 53,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "restoration-espanol-24x36.pdf",
+      "kb": 53,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "restoration-espanol-27x40.pdf",
+      "kb": 53,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "restoration-espanol-40x60.pdf",
+      "kb": 53,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "restoration-espanol-a3.pdf",
+      "kb": 53,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "restoration-espanol-a2.pdf",
+      "kb": 53,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "restoration-espanol-a1.pdf",
+      "kb": 53,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "restoration-espanol-a0.pdf",
+      "kb": 53,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "restoration-espanol-preview.jpg"
+   },
+   "articles-of-faith": {
+    "title": "Los Artículos de Fe",
+    "subtitle": "de La Iglesia de Jesucristo de los Santos de los Últimos Días",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=spa",
+    "files": {
+     "letter": {
+      "file": "articles-of-faith-espanol-letter.pdf",
       "kb": 29,
       "label": "Letter (8.5\" x 11\")",
       "w_in": 8.5,
       "h_in": 11.0
      },
      "a4": {
-      "file": "articles-of-faith-spanish-a4.pdf",
+      "file": "articles-of-faith-espanol-a4.pdf",
       "kb": 29,
       "label": "A4 (210 x 297 mm)",
       "w_in": 8.3,
       "h_in": 11.7
      },
      "11x17": {
-      "file": "articles-of-faith-spanish-11x17.pdf",
+      "file": "articles-of-faith-espanol-11x17.pdf",
       "kb": 29,
       "label": "11\" x 17\" (small / bulletin)",
       "w_in": 11.0,
       "h_in": 17.0
      },
      "18x24": {
-      "file": "articles-of-faith-spanish-18x24.pdf",
+      "file": "articles-of-faith-espanol-18x24.pdf",
       "kb": 29,
       "label": "18\" x 24\" (medium)",
       "w_in": 18.0,
       "h_in": 24.0
      },
      "24x36": {
-      "file": "articles-of-faith-spanish-24x36.pdf",
+      "file": "articles-of-faith-espanol-24x36.pdf",
       "kb": 29,
       "label": "24\" x 36\" (large)",
       "w_in": 24.0,
       "h_in": 36.0
      },
      "27x40": {
-      "file": "articles-of-faith-spanish-27x40.pdf",
+      "file": "articles-of-faith-espanol-27x40.pdf",
       "kb": 29,
       "label": "27\" x 40\" (movie one-sheet)",
       "w_in": 27.0,
       "h_in": 40.0
      },
      "40x60": {
-      "file": "articles-of-faith-spanish-40x60.pdf",
+      "file": "articles-of-faith-espanol-40x60.pdf",
       "kb": 29,
       "label": "40\" x 60\" (extra large)",
       "w_in": 40.0,
       "h_in": 60.0
      },
      "a3": {
-      "file": "articles-of-faith-spanish-a3.pdf",
+      "file": "articles-of-faith-espanol-a3.pdf",
       "kb": 29,
       "label": "A3 (297 x 420 mm)",
       "w_in": 11.7,
       "h_in": 16.5
      },
      "a2": {
-      "file": "articles-of-faith-spanish-a2.pdf",
+      "file": "articles-of-faith-espanol-a2.pdf",
       "kb": 29,
       "label": "A2 (420 x 594 mm)",
       "w_in": 16.5,
       "h_in": 23.4
      },
      "a1": {
-      "file": "articles-of-faith-spanish-a1.pdf",
+      "file": "articles-of-faith-espanol-a1.pdf",
       "kb": 29,
       "label": "A1 (594 x 841 mm)",
       "w_in": 23.4,
       "h_in": 33.1
      },
      "a0": {
-      "file": "articles-of-faith-spanish-a0.pdf",
+      "file": "articles-of-faith-espanol-a0.pdf",
       "kb": 29,
       "label": "A0 (841 x 1189 mm)",
       "w_in": 33.1,
       "h_in": 46.8
      }
     },
-    "preview": "articles-of-faith-spanish-preview.jpg"
+    "preview": "articles-of-faith-espanol-preview.jpg"
+   }
+  }
+ },
+ {
+  "slug": "portugues",
+  "kind": "language",
+  "code": "pt",
+  "native": "Português",
+  "english": "Portuguese",
+  "docs": {
+   "family": {
+    "title": "A Família",
+    "subtitle": "Proclamação ao Mundo",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=por",
+    "files": {
+     "letter": {
+      "file": "family-portugues-letter.pdf",
+      "kb": 55,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "family-portugues-a4.pdf",
+      "kb": 55,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "family-portugues-11x17.pdf",
+      "kb": 55,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "family-portugues-18x24.pdf",
+      "kb": 55,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "family-portugues-24x36.pdf",
+      "kb": 55,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "family-portugues-27x40.pdf",
+      "kb": 55,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "family-portugues-40x60.pdf",
+      "kb": 55,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "family-portugues-a3.pdf",
+      "kb": 55,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "family-portugues-a2.pdf",
+      "kb": 55,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "family-portugues-a1.pdf",
+      "kb": 55,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "family-portugues-a0.pdf",
+      "kb": 55,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "family-portugues-preview.jpg"
    },
-   "deseret": {
-    "label": "Deseret Alphabet",
+   "living-christ": {
+    "title": "O Cristo Vivo",
+    "subtitle": "O Testemunho dos Apóstolos",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=por",
+    "files": {
+     "letter": {
+      "file": "living-christ-portugues-letter.pdf",
+      "kb": 53,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "living-christ-portugues-a4.pdf",
+      "kb": 53,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "living-christ-portugues-11x17.pdf",
+      "kb": 53,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "living-christ-portugues-18x24.pdf",
+      "kb": 53,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "living-christ-portugues-24x36.pdf",
+      "kb": 53,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "living-christ-portugues-27x40.pdf",
+      "kb": 53,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "living-christ-portugues-40x60.pdf",
+      "kb": 53,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "living-christ-portugues-a3.pdf",
+      "kb": 53,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "living-christ-portugues-a2.pdf",
+      "kb": 53,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "living-christ-portugues-a1.pdf",
+      "kb": 53,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "living-christ-portugues-a0.pdf",
+      "kb": 53,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "living-christ-portugues-preview.jpg"
+   },
+   "restoration": {
+    "title": "A Restauração da Plenitude do Evangelho de Jesus Cristo",
+    "subtitle": "Uma Proclamação do Bicentenário ao Mundo",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=por",
+    "files": {
+     "letter": {
+      "file": "restoration-portugues-letter.pdf",
+      "kb": 53,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "restoration-portugues-a4.pdf",
+      "kb": 53,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "restoration-portugues-11x17.pdf",
+      "kb": 53,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "restoration-portugues-18x24.pdf",
+      "kb": 53,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "restoration-portugues-24x36.pdf",
+      "kb": 53,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "restoration-portugues-27x40.pdf",
+      "kb": 53,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "restoration-portugues-40x60.pdf",
+      "kb": 53,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "restoration-portugues-a3.pdf",
+      "kb": 53,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "restoration-portugues-a2.pdf",
+      "kb": 53,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "restoration-portugues-a1.pdf",
+      "kb": 53,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "restoration-portugues-a0.pdf",
+      "kb": 53,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "restoration-portugues-preview.jpg"
+   },
+   "articles-of-faith": {
+    "title": "Regras de Fé",
+    "subtitle": "de A Igreja de Jesus Cristo dos Santos dos Últimos Dias",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=por",
+    "files": {
+     "letter": {
+      "file": "articles-of-faith-portugues-letter.pdf",
+      "kb": 29,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "articles-of-faith-portugues-a4.pdf",
+      "kb": 29,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "articles-of-faith-portugues-11x17.pdf",
+      "kb": 29,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "articles-of-faith-portugues-18x24.pdf",
+      "kb": 29,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "articles-of-faith-portugues-24x36.pdf",
+      "kb": 29,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "articles-of-faith-portugues-27x40.pdf",
+      "kb": 29,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "articles-of-faith-portugues-40x60.pdf",
+      "kb": 29,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "articles-of-faith-portugues-a3.pdf",
+      "kb": 29,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "articles-of-faith-portugues-a2.pdf",
+      "kb": 29,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "articles-of-faith-portugues-a1.pdf",
+      "kb": 29,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "articles-of-faith-portugues-a0.pdf",
+      "kb": 29,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "articles-of-faith-portugues-preview.jpg"
+   }
+  }
+ },
+ {
+  "slug": "deseret",
+  "kind": "script",
+  "code": "dsrt",
+  "native": "𐐔𐐯𐑅𐐨𐑉𐐯𐐻",
+  "english": "Deseret Alphabet",
+  "docs": {
+   "family": {
+    "title": "𐐜 𐐙𐐰𐑋𐐮𐑊𐐨",
+    "subtitle": "",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng",
+    "files": {
+     "letter": {
+      "file": "family-deseret-letter.pdf",
+      "kb": 58,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "family-deseret-a4.pdf",
+      "kb": 58,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "family-deseret-11x17.pdf",
+      "kb": 58,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "family-deseret-18x24.pdf",
+      "kb": 58,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "family-deseret-24x36.pdf",
+      "kb": 58,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "family-deseret-27x40.pdf",
+      "kb": 58,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "family-deseret-40x60.pdf",
+      "kb": 58,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "family-deseret-a3.pdf",
+      "kb": 58,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "family-deseret-a2.pdf",
+      "kb": 58,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "family-deseret-a1.pdf",
+      "kb": 58,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "family-deseret-a0.pdf",
+      "kb": 58,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "family-deseret-preview.jpg"
+   },
+   "living-christ": {
+    "title": "𐐜 𐐢𐐮𐑂𐐮𐑍 𐐗𐑉𐐴𐑅𐐻",
+    "subtitle": "",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng",
+    "files": {
+     "letter": {
+      "file": "living-christ-deseret-letter.pdf",
+      "kb": 46,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "living-christ-deseret-a4.pdf",
+      "kb": 46,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "living-christ-deseret-11x17.pdf",
+      "kb": 46,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "living-christ-deseret-18x24.pdf",
+      "kb": 46,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "living-christ-deseret-24x36.pdf",
+      "kb": 46,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "living-christ-deseret-27x40.pdf",
+      "kb": 46,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "living-christ-deseret-40x60.pdf",
+      "kb": 46,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "living-christ-deseret-a3.pdf",
+      "kb": 46,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "living-christ-deseret-a2.pdf",
+      "kb": 46,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "living-christ-deseret-a1.pdf",
+      "kb": 46,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "living-christ-deseret-a0.pdf",
+      "kb": 46,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "living-christ-deseret-preview.jpg"
+   },
+   "restoration": {
+    "title": "𐐜 𐐡𐐯𐑅𐐻𐐲𐑉𐐩𐑇𐐲𐑌 𐐲𐑂 𐑄 𐐙𐐳𐑊𐑌𐐲𐑅 𐐲𐑂 𐑄 𐐘𐐫𐑅𐐹𐐲𐑊 𐐲𐑂 𐐖𐐨𐑆𐐲𐑅 𐐗𐑉𐐴𐑅𐐻",
+    "subtitle": "",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=eng",
+    "files": {
+     "letter": {
+      "file": "restoration-deseret-letter.pdf",
+      "kb": 58,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "restoration-deseret-a4.pdf",
+      "kb": 58,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "restoration-deseret-11x17.pdf",
+      "kb": 58,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "restoration-deseret-18x24.pdf",
+      "kb": 58,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "restoration-deseret-24x36.pdf",
+      "kb": 58,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "restoration-deseret-27x40.pdf",
+      "kb": 58,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "restoration-deseret-40x60.pdf",
+      "kb": 58,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "restoration-deseret-a3.pdf",
+      "kb": 58,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "restoration-deseret-a2.pdf",
+      "kb": 58,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "restoration-deseret-a1.pdf",
+      "kb": 58,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "restoration-deseret-a0.pdf",
+      "kb": 58,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "restoration-deseret-preview.jpg"
+   },
+   "articles-of-faith": {
+    "title": "𐐜 𐐂𐑉𐐻𐐮𐐿𐐲𐑊𐑆 𐐲𐑂 𐐙𐐩𐑃",
+    "subtitle": "",
+    "source_url": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=eng",
     "files": {
      "letter": {
       "file": "articles-of-faith-deseret-letter.pdf",
@@ -1056,7 +1393,6 @@
     },
     "preview": "articles-of-faith-deseret-preview.jpg"
    }
-  },
-  "title_deseret": "𐐜 𐐂𐑉𐐻𐐮𐐿𐐲𐑊𐑆 𐐲𐑂 𐐙𐐩𐑃"
+  }
  }
 ]
