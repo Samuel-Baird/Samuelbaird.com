@@ -16,7 +16,7 @@ from datetime import date
 
 import yaml
 
-from .config import CONCEPTS, CORPUS, DATA, LANGS, PULPIT, ROOT, SCRIPTURES
+from .config import CONCEPTS, CORPUS, DATA, EXCLUDE, LANGS, PULPIT, ROOT, SCRIPTURES
 from .textutil import en_variants, fold, target_pattern, tokens, window
 
 SNIP_POOL = 60        # reservoir size per candidate
@@ -135,7 +135,7 @@ def run():
     idx = EnglishIndex(concepts)
     print(f"concepts: {len(concepts)}, duplicate match forms skipped: {idx.dupes}")
     (DATA / "attestations").mkdir(parents=True, exist_ok=True)
-    scratch = ROOT / "scratch"
+    scratch = DATA.parent / "scratch" if EXCLUDE else ROOT / "scratch"
     results = {slug: {} for slug in concepts}
     stats = {}
 
@@ -153,6 +153,8 @@ def run():
         # ---- General Conference pairs
         for k, line in enumerate(open(CORPUS[lang], encoding="utf-8")):
             r = json.loads(line)
+            if EXCLUDE and r["source_id"].startswith(EXCLUDE):
+                continue
             if r["translation_source"] != "church_official":
                 skipped_ai += 1
                 continue

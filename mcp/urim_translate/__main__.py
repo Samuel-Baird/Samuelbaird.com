@@ -1,4 +1,4 @@
-"""python -m urim_translate [serve | setup | seed-tm | status]
+"""python -m urim_translate [serve | setup | seed-tm [--exclude=2026-04] | build-scriptures | status]
 
 setup installs the Argos en->pt/es packages, Ollama and its model (also runs automatically on first serve)."""
 import json
@@ -7,7 +7,7 @@ import sys
 from . import config
 
 
-def seed_tm(langs):
+def seed_tm(langs, exclude=()):
     """Load Church-official, exact-aligned conference paragraph pairs into the translation memory."""
     from .store import Store
     store = Store()
@@ -22,6 +22,8 @@ def seed_tm(langs):
                 continue
             r = json.loads(line)
             if r["translation_source"] != "church_official" or r.get("alignment_confidence") != "exact":
+                continue
+            if exclude and r["source_id"].startswith(tuple(exclude)):
                 continue
             store.tm_put(lang, r["source_text"], r["target_text"], "church", commit=False)
             n += 1
@@ -38,7 +40,12 @@ def main(argv):
         from .setup import run
         run(force=True)
     elif cmd == "seed-tm":
-        seed_tm(argv[1:] or list(config.UI_LANGS))
+        args = argv[1:]
+        exclude = [a.split("=", 1)[1] for a in args if a.startswith("--exclude=")]   # e.g. --exclude=2026-04 (held-out talks)
+        seed_tm([a for a in args if not a.startswith("--")] or list(config.UI_LANGS), exclude)
+    elif cmd == "build-scriptures":
+        from . import scriptures
+        scriptures.build()
     elif cmd == "status":
         from .translator import Translator
         t = Translator()

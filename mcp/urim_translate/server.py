@@ -3,7 +3,7 @@ from pathlib import Path
 
 from mcp.server.mcpserver import MCPServer
 
-from . import config, deseret, segment
+from . import config, deseret, segment, workflow
 from .glossary import Glossary
 from .translator import Seg, Translator
 
@@ -12,7 +12,14 @@ mcp = MCPServer(
     instructions=(
         "Free local translation for Latter-day Saint texts (English -> pt, es). Church-attested terminology is "
         "enforced from the Urim glossary; only relevant entries are ever surfaced. Large outputs are saved to "
-        "disk and returned as a path/doc_id; read them selectively with get_translation."
+        "disk and returned as a path/doc_id; read them selectively with get_translation. "
+        "TRANSLATE A FILE YOURSELF (any agent; recommended): the server never calls a model, you write the translation and "
+        "it does the rest. 1) prepare_translation(path, lang) returns a job_id and the chunk numbers in `todo`. 2) For each "
+        "chunk n: get_chunk(job_id, n) gives English `source` (one line per paragraph), the Church `terms` to use and "
+        "ids such as [[S1]] that stand for Church scripture text inserted for you. 3) submit_chunk(job_id, n, translation): "
+        "one output line per source line, same order. If it returns problems, fix those lines and resubmit that chunk only. "
+        "4) finish_translation(job_id) writes the file. Chunks are independent, so run them in parallel if you can. "
+        "No capable agent? translate_file uses local models (Argos/Ollama) instead."
     ),
 )
 _T = {}
@@ -31,8 +38,9 @@ def _check_lang(lang):
 
 @mcp.tool()
 def translate_text(text: str, lang: str) -> dict:
-    """Translate English text into `lang` ('pt' or 'es'). Short results are returned inline; long ones are
-    saved to a file and returned as doc_id + path."""
+    """Translate English text into `lang` ('pt' or 'es') with the LOCAL models (Argos/Ollama): free but slower
+    and rougher than translating it yourself with match_glossary + check_translation. Short results are returned
+    inline; long ones are saved to a file and returned as doc_id + path."""
     _check_lang(lang)
     t = T()
     blocks, results = t.translate_document(text, lang)
@@ -47,8 +55,11 @@ def translate_text(text: str, lang: str) -> dict:
 
 @mcp.tool()
 def translate_file(path: str, lang: str, output_path: str = "") -> dict:
-    """Translate a markdown/text file into `lang`. Preserves frontmatter, code, footnotes, links and structure,
-    and localizes scripture citations. Writes the result to disk and returns doc_id, output_path and stats."""
+    """Fallback for when you cannot write the translation yourself: translates a markdown/text file into `lang`
+    with the LOCAL models (Argos/Ollama; minutes on a CPU, lower quality). If you are a capable model, use
+    prepare_translation / get_chunk / submit_chunk / finish_translation instead: faster, cheaper and closer to
+    the Church's own wording. Preserves frontmatter, code, footnotes, links and structure, localizes scripture
+    citations, writes the result to disk and returns doc_id, output_path and stats."""
     _check_lang(lang)
     p = Path(path)
     text = p.read_text(encoding="utf-8")
@@ -57,6 +68,48 @@ def translate_file(path: str, lang: str, output_path: str = "") -> dict:
     doc_id = t.doc_id(p.name, lang, text)
     out = t.save_job(doc_id, lang, str(p), blocks, results, output_path or None)
     return {"doc_id": doc_id, "output_path": str(out), **t.summarize(results)}
+
+
+@mcp.tool()
+def prepare_translation(path: str, lang: str, output_path: str = "", max_words: int = 450) -> dict:
+    """Step 1 of translating a file yourself. Splits the markdown/text file into independent chunks at paragraph
+    boundaries (frontmatter, footnotes and structure are kept), reuses the Church's own paragraphs, inserts the
+    Church's scripture text for quotations and fills footnotes that are only scripture citations. Returns job_id,
+    the chunks (number, words, status), `todo` (chunk numbers to translate) and short instructions. Calling it again
+    for the same file resumes the same job. `output_path` is where finish_translation writes the result."""
+    return workflow.prepare(T(), path, lang, output_path, max_words)
+
+
+@mcp.tool()
+def get_chunk(job_id: str, n: int) -> dict:
+    """Step 2. One chunk to translate: `source` (English lines separated by blank lines), the Church `terms` that
+    must appear in your translation (only those present in this chunk), `scripture` ids like [[S1]] to keep as they
+    are, and `quotes` (Church wording for partly quoted verses). Chunk numbers start at 1."""
+    return workflow.get_chunk(job_id, n)
+
+
+@mcp.tool()
+def submit_chunk(job_id: str, n: int, translation: str) -> dict:
+    """Step 3. Send your translation of chunk n: one line per `source` line, same order (blank lines between are
+    fine; keep leading '## ' or '[^n]: ' markers). Returns ok with the chunks still to do, or a list of problems
+    (line number, what is wrong) to fix; then resubmit this chunk only. Checked: line count, kept [^n] marks, URLs and
+    [[Sn]] ids, Church glossary renderings, numbers, length, untranslated lines."""
+    return workflow.submit_chunk(T(), job_id, n, translation)
+
+
+@mcp.tool()
+def job_status(job_id: str) -> dict:
+    """Progress of a translation job: chunks and which are still to do (use it to resume)."""
+    return workflow.job_status(job_id)
+
+
+@mcp.tool()
+def finish_translation(job_id: str, output_path: str = "", fill_missing_locally: bool = False) -> dict:
+    """Step 4. Assemble all chunks into the final file (scripture ids replaced by the Church's text, title and
+    structure restored), write it to `output_path` (or the path given to prepare_translation) and return the path
+    and stats. If chunks are missing it lists them; `fill_missing_locally=true` translates those with the local
+    backends (Argos/Ollama) and flags them for review."""
+    return workflow.finish(T(), job_id, output_path, fill_missing_locally)
 
 
 @mcp.tool()

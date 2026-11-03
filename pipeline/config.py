@@ -18,5 +18,6 @@ CORPUS = {l: PULPIT / "indexes" / f"parallel-corpus-{LANGS[l]['pulpit']}.jsonl" 
 SCRIPTURES = {l: PULPIT / "indexes" / "scriptures" / f"{l}.jsonl" for l in ("en", *LANGS)}
 
 CONCEPTS = ROOT / "concepts"
-DATA = ROOT / "data"
+DATA = Path(os.environ.get("URIM_DATA", ROOT / "data"))      # override to build a held-out copy (bench/heldout.py)
+EXCLUDE = tuple(x for x in os.environ.get("URIM_EXCLUDE", "").split(",") if x)   # talk-id prefixes left out of the evidence
 SITE = ROOT / "site"

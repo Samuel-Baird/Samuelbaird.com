@@ -1,5 +1,11 @@
 out/
 home/
+home-pipeline/
+heldout/
+jobs/
 results.csv
 runs/
 *.log
+work/
+matrix.lock/
+runs.lock

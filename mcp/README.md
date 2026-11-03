@@ -1,6 +1,51 @@
-# urim-translate: local translation MCP
+# urim-translate: translation MCP for any agent
 
-Free, fully local en to pt/es translation for Latter-day Saint texts. No paid APIs or usage limits.
+Free en to pt/es translation tools for Latter-day Saint texts. The server never calls a hosted model and needs no API
+key, vendor SDK or client feature: **your agent (any model that speaks MCP) writes the translation, the server does
+everything deterministic around it** (chunking, the Church's own paragraphs and scripture text, glossary, validation).
+A fully local route (Argos/Ollama) is kept as an optional fallback for users without a capable agent.
+
+## Translate a file with your own agent (recommended)
+
+```
+prepare_translation(path, lang)      -> job_id, chunks [{n, words, lines, status}], todo, instructions
+get_chunk(job_id, n)                 -> source (English lines), terms (Church renderings present in this chunk), placeholders
+submit_chunk(job_id, n, translation) -> ok + remaining chunks, or the exact problems to fix
+finish_translation(job_id)           -> writes the file, returns output_path and stats
+```
+
+**Recipe for any agent** (the same text is in the server instructions):
+
+1. `prepare_translation(path, lang)` with `lang` `"es"` or `"pt"`; optional `output_path` and `max_words` (default 450 per chunk).
+2. For each chunk number in `todo`: `get_chunk(job_id, n)`. Translate every line of `source`: one output line per input
+   line, same order (blank lines between are fine). Keep a leading `## `, `- ` or `[^n]: `, keep `[^n]` marks, and keep
+   ids like `[[S1]]` (Church scripture text that is inserted for you, inside your quotation marks) and `[[L1]]` (a link
+   address) exactly once. Use every rendering in `terms`. Where `quotes` is present, reuse the Church wording given there.
+3. `submit_chunk(job_id, n, translation)`. On `ok: false` read `problems` (line number, what is wrong), fix those lines and
+   resubmit that chunk only. After three attempts a chunk whose only problems are soft (glossary, numbers, length) is accepted
+   and flagged; structural problems (line count, lost ids, untranslated lines) must always be fixed.
+4. When `remaining` is empty, `finish_translation(job_id)`. If you cannot translate some chunks,
+   `finish_translation(job_id, fill_missing_locally=true)` fills them with the local backends and flags them.
+
+Chunks are independent and each is saved on its own, so an agent that can run sub-agents may translate them in parallel;
+one that cannot just goes in order. `prepare_translation` on the same file resumes the same job (`job_status` shows where it is).
+Tool results are small (ids, paths, stats); nothing returns the whole talk.
+
+What is done before your agent writes a word:
+
+- **Church translation memory:** a paragraph the Church already published in exactly this form (needs `seed-tm`) is filled in verbatim.
+- **Scripture:** a quotation that reproduces a cited verse word for word is replaced by `[[Sn]]` and filled with the Church's own text of
+  that verse in the target language (`data/scriptures/`, Church book names). Partly quoted verses are given to the agent as references,
+  and a warning is returned if the translation does not follow them. Footnotes that are only scripture citations are completed with the Church's book names.
+- **Glossary:** only the entries present in a chunk are listed; `submit_chunk` rejects a missing Church rendering (accent- and inflection-tolerant).
+- **Structure:** frontmatter, headings, footnotes and code are kept; the `title:` is translated and `language:` set.
+
+Validation is deterministic: line count, `[^n]` marks, `[[Sn]]`/`[[Ln]]` ids, untranslated or English lines, numbers, length ratio, glossary.
+It does not judge grammar or style. Jobs live in `<URIM_HOME>/jobs/<job_id>/`.
+
+## Local route (optional fallback)
+
+Fully local, no usage limits.
 
 - **Glossary enforcement:** Church-attested renderings come from Urim's `data/glossary/{pt,es}.json`. Only the entries that occur in the text are used or shown, never the whole glossary.
 - **Translation memory (SQLite, `~/.urim/urim.sqlite`):** previous translations are reused. It can be seeded with the Church's own aligned conference paragraphs, so text the Church already translated comes back verbatim (`tm:church`).
@@ -25,12 +70,16 @@ what is still missing and segments needing that backend come back flagged. Argos
 marker in `URIM_HOME` is written only when every step succeeded, so a partial setup retries on the next start. Every
 step is skipped if already done. Set `URIM_AUTO_SETUP=0` to turn the automatic run off.
 
-Optional: seed the translation memory with the Church's own aligned paragraphs (needs `../pulpit-vault`):
+The agent pipeline needs none of that setup (no models); `translate_file`/`translate_text` and `fill_missing_locally` do.
+
+Optional: seed the translation memory with the Church's own aligned paragraphs (needs `../pulpit-vault`; `--exclude=2026-04` leaves a conference out, for benchmarks):
 
 ```bash
 mcp/.venv/Scripts/python -m urim_translate seed-tm
 mcp/.venv/Scripts/python -m urim_translate status
 ```
+
+The Church scripture text in `data/scriptures/` is committed. To rebuild it from `../pulpit-vault` (read-only): `python -m urim_translate build-scriptures`.
 
 ### Backends
 
@@ -46,7 +95,7 @@ Without any backend installed, the server still returns Church translation-memor
 
 ## Tools
 
-`translate_text`, `translate_file`, `get_translation`, `match_glossary`, `check_translation`, `lookup_term`, `glossary_add`, `glossary_remove`, `glossary_list`, `search_memory`, `backends_status`, plus two for the Deseret Alphabet:
+`prepare_translation`, `get_chunk`, `submit_chunk`, `job_status`, `finish_translation`, plus `translate_text`, `translate_file` (local route), `get_translation`, `match_glossary`, `check_translation`, `lookup_term`, `glossary_add`, `glossary_remove`, `glossary_list`, `search_memory`, `backends_status`, plus two for the Deseret Alphabet:
 
 - `to_deseret(text)` transliterates English text; `deseret_file(path)` does a markdown/text file (frontmatter, code, tables, footnotes, links and URLs stay as they are) and writes it to disk. This is a script conversion, not a translation, so it needs no models. It runs the package in `../deseret` and needs Node.js; words with no Deseret spelling stay in Latin script and are listed.
 

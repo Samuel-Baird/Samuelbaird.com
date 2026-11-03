@@ -1,12 +1,15 @@
-"""Benchmark: Pulpit's own translation instructions vs the Urim MCP, same talks, same model, headless Claude Code.
+"""Benchmark: Pulpit's own translation instructions vs the Urim MCP (local route and agent pipeline), same talks.
 
-    python bench/run.py --arm pulpit --lang es --talks 2          # run
+    python bench/run.py --arm pulpit --lang es --talks 2          # run (default agent: headless Claude Code)
     python bench/run.py --arm urim --lang pt --talks 2
-    python bench/run.py --score                                    # score everything in bench/out, write results.csv
+    python bench/run.py --arm pipeline --agent claude --model haiku --lang es --talks 6   # prepare/get/submit/finish
+    python bench/run.py --arm pipeline --agent codex --lang es --talks 2                  # same tools, another vendor's agent
+    python bench/run.py --score                                    # score everything in bench/out, write results.csv and results.md
 
 Per run it records wall time, API time, turns, tokens (input, output, cache read/write), cost, tool-call counts and
 whether the held-out official translation was touched. Scoring compares the output with the Church's official
 translation of the same talk (chrF) and checks Church glossary compliance with Urim's own validator.
+Only this harness knows about specific agents; the MCP server does not.
 """
 import argparse, csv, json, os, re, shutil, subprocess, sys, time
 from collections import Counter
@@ -29,6 +32,7 @@ TALKS = [                      # April 2026, 1.3k to 1.7k words each, different 
 ]
 MODEL = os.environ.get("BENCH_MODEL", "sonnet")
 URIM_PY = URIM / "mcp" / ".venv" / "Scripts" / "python.exe"
+HELD = HERE / "heldout" / "data" / "glossary"      # glossary rebuilt without the test conference (bench/heldout.py)
 
 
 def prompt(arm, talk, lang, out):
@@ -50,35 +54,52 @@ def leaked(blob, talk, lang):
                 or re.search(rf"parallel-corpus-{lang}[^\"]*{re.escape(talk)}", b))
 
 
-def run(arm, talk, lang):
-    out = OUT / arm / lang / f"{talk}.md"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.unlink(missing_ok=True)
-    cmd = [shutil.which("claude") or "claude", "-p", prompt(arm, talk, lang, out), "--model", MODEL, "--output-format", "stream-json", "--verbose",
-           "--no-session-persistence", "--permission-mode", "bypassPermissions"]
+def _mcp_env(arm, tag="", lang="", talk=""):
     env = dict(os.environ)
-    if arm == "pulpit":
-        cwd = VAULT                                             # its CLAUDE.md / AGENTS.md load as in real use
-        cmd += ["--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}']
-    else:
-        cwd = HERE / "work"                                     # an empty folder: nothing but the urim tools
-        cwd.mkdir(exist_ok=True)
+    if arm == "urim":
         env["URIM_HOME"] = str(HERE / "home")                   # fresh memory: no Church translations of the test talks
-        cfg = {"mcpServers": {"urim": {"command": str(URIM_PY), "args": ["-m", "urim_translate"]}}}
-        cmd += ["--strict-mcp-config", "--mcp-config", json.dumps(cfg)]
-    t0 = time.time()
-    lines = []
-    p = subprocess.Popen(cmd, cwd=cwd, env=env, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, encoding="utf-8")
-    for line in p.stdout:                       # the MCP server can outlive claude and hold the pipe open: stop at the result
-        lines.append(line)
-        if line.startswith("{") and '"result"' in line and _type(line) == "result":
-            break
-    wall = time.time() - t0
-    subprocess.run(["taskkill", "/PID", str(p.pid), "/T", "/F"], capture_output=True)
-    p.stdout.close()
-    stdout = "".join(lines)
-    RUNS.mkdir(exist_ok=True)
-    (RUNS / f"{arm}-{lang}-{talk}.jsonl").write_text(stdout, encoding="utf-8")
+    elif arm == "pipeline":
+        env["URIM_HOME"] = str(HERE / "home-pipeline")          # memory seeded with the Church corpus minus the test conference
+        env["URIM_GLOSSARY_DIR"] = str(HELD)                    # glossary evidence minus the test conference
+        env["URIM_AUTO_SETUP"] = "0"                            # the pipeline arm needs no local models
+        env["URIM_JOBS_DIR"] = str(HERE / "jobs" / f"{tag}-{lang}-{talk}-{int(time.time())}")   # a rerun never resumes an earlier run's job
+    return env
+
+
+def _claude_cmd(arm, talk, lang, out, model):
+    cmd = [shutil.which("claude") or "claude", "-p", prompt(arm, talk, lang, out), "--model", model, "--output-format", "stream-json",
+           "--verbose", "--no-session-persistence", "--permission-mode", "bypassPermissions"]
+    if arm == "pulpit":
+        return cmd + ["--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}'], VAULT     # its CLAUDE.md / AGENTS.md load as in real use
+    cwd = HERE / "work"                                         # an empty folder: nothing but the urim tools
+    cwd.mkdir(exist_ok=True)
+    cfg = {"mcpServers": {"urim": {"command": str(URIM_PY), "args": ["-m", "urim_translate"]}}}
+    return cmd + ["--strict-mcp-config", "--mcp-config", json.dumps(cfg)], cwd
+
+
+def _codex_cmd(arm, talk, lang, out, env):
+    """OpenAI's Codex CLI with the same tools: only the urim server (the server writes the file itself)."""
+    cwd = HERE / "work"
+    cwd.mkdir(exist_ok=True)
+    srv = "mcp_servers.urim"
+    cmd = [shutil.which("codex") or "codex", "exec", "--json", "--skip-git-repo-check", "--sandbox", "read-only",
+           "-c", 'approval_policy="never"', "-c", 'model_reasoning_effort="low"',
+           "-c", f'{srv}.default_tools_approval_mode="approve"',
+           "-c", f"{srv}.command={json.dumps(str(URIM_PY))}", "-c", f'{srv}.args=["-m","urim_translate"]',
+           "-c", f"{srv}.env.URIM_HOME={json.dumps(env['URIM_HOME'])}", "-c", f"{srv}.env.URIM_JOBS_DIR={json.dumps(env['URIM_JOBS_DIR'])}",
+           "-c", f"{srv}.env.URIM_GLOSSARY_DIR={json.dumps(str(HELD))}", "-c", f'{srv}.env.URIM_AUTO_SETUP="0"',
+           prompt(arm, talk, lang, out)]
+    return cmd, cwd
+
+
+def _is_final(agent, line):
+    if not line.startswith("{"):
+        return False
+    t = _type(line)
+    return t == "result" if agent == "claude" else t == "turn.completed"
+
+
+def _metrics_claude(stdout, talk, lang):
     res, tools, leak = {}, Counter(), False
     for line in stdout.splitlines():
         try:
@@ -89,22 +110,92 @@ def run(arm, talk, lang):
             for c in ev["message"].get("content", []):
                 if c.get("type") == "tool_use":
                     tools[c["name"]] += 1
-                    blob = json.dumps(c.get("input", {}))
-                    if leaked(blob, talk, lang):
-                        leak = True
+                    leak |= leaked(json.dumps(c.get("input", {})), talk, lang)
         elif ev.get("type") == "result":
             res = ev
     u = res.get("usage", {})
-    row = {"arm": arm, "lang": lang, "talk": talk, "wall_s": round(wall, 1), "api_s": round(res.get("duration_api_ms", 0) / 1000, 1),
-           "turns": res.get("num_turns"), "input": u.get("input_tokens"), "output": u.get("output_tokens"),
-           "cache_read": u.get("cache_read_input_tokens"), "cache_write": u.get("cache_creation_input_tokens"),
-           "cost_usd": round(res.get("total_cost_usd", 0), 4), "tool_calls": sum(tools.values()),
-           "tools": json.dumps(dict(tools)), "leak": leak, "ok": out.exists() and not res.get("is_error")}
-    with (HERE / "runs.csv").open("a", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=list(row))
-        if f.tell() == 0:
-            w.writeheader()
-        w.writerow(row)
+    return {"api_s": round(res.get("duration_api_ms", 0) / 1000, 1), "turns": res.get("num_turns"), "input": u.get("input_tokens"),
+            "output": u.get("output_tokens"), "cache_read": u.get("cache_read_input_tokens"),
+            "cache_write": u.get("cache_creation_input_tokens"), "cost_usd": round(res.get("total_cost_usd", 0), 4),
+            "tool_calls": sum(tools.values()), "tools": json.dumps(dict(tools)), "leak": leak, "error": bool(res.get("is_error"))}
+
+
+def _metrics_codex(stdout, talk, lang):
+    """Codex reports tokens but no dollars (ChatGPT subscription) and no API time."""
+    tools, msgs, usage, leak = Counter(), 0, Counter(), False
+    for line in stdout.splitlines():
+        try:
+            ev = json.loads(line)
+        except ValueError:
+            continue
+        it = ev.get("item", {})
+        if ev.get("type") == "item.completed" and it.get("type") == "mcp_tool_call":
+            tools[it.get("tool", "?")] += 1
+            leak |= leaked(json.dumps(it.get("arguments", {})), talk, lang)
+        elif ev.get("type") == "item.completed" and it.get("type") == "command_execution":
+            tools["shell"] += 1
+            leak |= leaked(it.get("command", ""), talk, lang)
+        elif ev.get("type") == "item.completed" and it.get("type") == "agent_message":
+            msgs += 1
+        elif ev.get("type") == "turn.completed":
+            usage.update({k: v for k, v in ev.get("usage", {}).items() if isinstance(v, int)})
+    return {"api_s": "", "turns": msgs + sum(tools.values()), "input": usage["input_tokens"] - usage["cached_input_tokens"],
+            "output": usage["output_tokens"], "cache_read": usage["cached_input_tokens"], "cache_write": "",
+            "cost_usd": "", "tool_calls": sum(tools.values()), "tools": json.dumps(dict(tools)), "leak": leak, "error": False}
+
+
+def append_row(row):
+    """runs.csv grows new columns over time: rewrite the file with the union header when needed."""
+    rp = HERE / "runs.csv"
+    lock = HERE / "runs.lock"
+    for _ in range(300):                        # one writer at a time: two runs finishing together must not drop a row
+        try:
+            os.close(os.open(lock, os.O_CREAT | os.O_EXCL))
+            break
+        except FileExistsError:
+            time.sleep(0.1)
+    try:
+        _append(rp, row)
+    finally:
+        lock.unlink(missing_ok=True)
+
+
+def _append(rp, row):
+    old = list(csv.DictReader(rp.open(encoding="utf-8"))) if rp.exists() and rp.stat().st_size else []
+    cols = list(old[0]) if old else []
+    cols += [k for k in row if k not in cols]
+    with rp.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=cols, restval="")
+        w.writeheader()
+        w.writerows(old + [row])
+
+
+def run(arm, talk, lang, agent="claude", model=MODEL):
+    tag = arm if (arm in ("urim",) or (agent == "claude" and model == "sonnet" and arm == "pulpit")) else \
+        (f"{arm}-claude-{model}" if agent == "claude" else f"{arm}-{agent}")
+    out = OUT / tag / lang / f"{talk}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.unlink(missing_ok=True)
+    env = _mcp_env(arm, tag, lang, talk)
+    cmd, cwd = _claude_cmd(arm, talk, lang, out, model) if agent == "claude" else _codex_cmd(arm, talk, lang, out, env)
+    t0 = time.time()
+    lines = []
+    p = subprocess.Popen(cmd, cwd=cwd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, encoding="utf-8")
+    for line in p.stdout:                       # the MCP server can outlive the agent and hold the pipe open: stop at the final event
+        lines.append(line)
+        if _is_final(agent, line):
+            break
+    wall = time.time() - t0
+    subprocess.run(["taskkill", "/PID", str(p.pid), "/T", "/F"], capture_output=True)   # this process tree only
+    p.stdout.close()
+    stdout = "".join(lines)
+    RUNS.mkdir(exist_ok=True)
+    (RUNS / f"{tag}-{lang}-{talk}.jsonl").write_text(stdout, encoding="utf-8")
+    m = (_metrics_claude if agent == "claude" else _metrics_codex)(stdout, talk, lang)
+    err = m.pop("error")
+    row = {"arm": tag, "lang": lang, "talk": talk, "wall_s": round(wall, 1), **m, "ok": out.exists() and not err,
+           "agent": agent, "model": model if agent == "claude" else "codex (account default)"}
+    append_row(row)
     print(row)
 
 
@@ -129,13 +220,20 @@ def chrf(hyp, ref, n=6, beta=2.0):
     return 0 if p + rr == 0 else (1 + beta ** 2) * p * rr / (beta ** 2 * p + rr)
 
 
+def _claude_leak(tp, talk, lang):
+    return any(leaked(json.dumps(c.get("input", {})), talk, lang)
+               for l in tp.read_text(encoding="utf-8").splitlines() if l.startswith("{")
+               for e in [json.loads(l)] if e.get("type") == "assistant"
+               for c in e["message"].get("content", []) if c.get("type") == "tool_use")
+
+
 def score():
     sys.path.insert(0, str(URIM / "mcp"))
+    os.environ.setdefault("URIM_AUTO_SETUP", "0")
     from urim_translate.translator import Seg, Translator
-    tr = Translator()
+    tr = Translator(backends=[])          # the same full Church glossary judges every arm, whatever each arm could see
     runs = {}
-    rp = HERE / "runs.csv"
-    for r in csv.DictReader(rp.open(encoding="utf-8")):
+    for r in csv.DictReader((HERE / "runs.csv").open(encoding="utf-8")):
         runs[(r["arm"], r["lang"], r["talk"])] = r                  # the latest run of each wins
     rows = []
     for (arm, lang, talk), r in sorted(runs.items()):
@@ -145,48 +243,53 @@ def score():
         src = VAULT / "talks" / "english" / "modern" / year / f"{talk}.md"
         row = dict(r)
         tp = RUNS / f"{arm}-{lang}-{talk}.jsonl"
-        if tp.exists():
-            row["leak"] = any(leaked(json.dumps(c.get("input", {})), talk, lang)
-                              for l in tp.read_text(encoding="utf-8").splitlines() if l.startswith("{")
-                              for e in [json.loads(l)] if e.get("type") == "assistant"
-                              for c in e["message"].get("content", []) if c.get("type") == "tool_use")
+        if tp.exists() and "codex" not in arm:
+            row["leak"] = _claude_leak(tp, talk, lang)
         if out.exists() and ref.exists():
             h, rb, sb = body(out), body(ref), body(src)
             g = tr.glossary(lang)
             ms = g.match(sb)
-            seg = Seg(sb, masked=sb, matches=ms)
-            probs = tr.problems(seg, h, g)
-            terms = len({m.entry.id for m in ms})
-            row.update(chrf=round(chrf(h, rb) * 100, 1), glossary_terms=terms, glossary_problems=len(probs),
-                       length_ratio=round(len(h) / max(len(rb), 1), 2))
+            probs = tr.problems(Seg(sb, masked=sb, matches=ms), h, g)
+            row.update(chrf=round(chrf(h, rb) * 100, 1), glossary_terms=len({m.entry.id for m in ms}),
+                       glossary_problems=len(probs), length_ratio=round(len(h) / max(len(rb), 1), 2))
         rows.append(row)
     cols = []
     for r in rows:
         cols += [k for k in r if k not in cols]
     with (HERE / "results.csv").open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=cols)
+        w = csv.DictWriter(f, fieldnames=cols, restval="")
         w.writeheader()
         w.writerows(rows)
-    # summary per arm and language
+    table = ["| arm | lang | n | wall s | API s | turns | tool calls | output tok | cost | chrF | glossary problems / terms | length ratio | leaks |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for key in sorted({(r["arm"], r["lang"]) for r in rows}):
-        rs = [r for r in rows if (r["arm"], r["lang"]) == key and r.get("chrf") is not None]
+        rs = [r for r in rows if (r["arm"], r["lang"]) == key and r.get("chrf") not in (None, "")]
         if not rs:
             continue
-        f = lambda c: sum(float(r[c]) for r in rs) / len(rs)
-        print(f"{key[0]:6} {key[1]}  n={len(rs)}  wall {f('wall_s'):6.0f}s  out {f('output'):7.0f} tok  cost ${f('cost_usd'):.3f}"
-              f"  chrF {f('chrf'):.1f}  glossary problems {f('glossary_problems'):.1f}/{f('glossary_terms'):.0f}"
-              f"  leaks {sum(1 for r in rs if str(r['leak']) == 'True')}")
+
+        def f(c, fmt="{:.0f}"):
+            v = [float(r[c]) for r in rs if r.get(c) not in (None, "")]
+            return fmt.format(sum(v) / len(v)) if v else "n/a"
+        leaks = sum(1 for r in rs if str(r["leak"]) == "True")
+        table.append(f"| {key[0]} | {key[1]} | {len(rs)} | {f('wall_s')} | {f('api_s')} | {f('turns', '{:.1f}')} | {f('tool_calls', '{:.1f}')} | "
+                     f"{f('output')} | {('$' + f('cost_usd', '{:.3f}')) if f('cost_usd') != 'n/a' else 'n/a'} | {f('chrf', '{:.1f}')} | "
+                     f"{f('glossary_problems', '{:.1f}')} / {f('glossary_terms')} | {f('length_ratio', '{:.2f}')} | {leaks} |")
+    (HERE / "results.md").write_text("\n".join(table) + "\n", encoding="utf-8")
+    print("\n".join(table))
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--arm", choices=["pulpit", "urim"])
+    ap.add_argument("--arm", choices=["pulpit", "urim", "pipeline"])
+    ap.add_argument("--agent", choices=["claude", "codex"], default="claude")
+    ap.add_argument("--model", default=MODEL, help="claude model alias (haiku, sonnet...)")
     ap.add_argument("--lang", choices=list(LANGS), default="es")
     ap.add_argument("--talks", type=int, default=1, help="how many of the listed talks")
+    ap.add_argument("--start", type=int, default=0, help="index of the first talk")
     ap.add_argument("--score", action="store_true")
     a = ap.parse_args()
     if a.score:
         score()
     else:
-        for t in TALKS[: a.talks]:
-            run(a.arm, t, a.lang)
+        for t in TALKS[a.start: a.start + a.talks]:
+            run(a.arm, t, a.lang, a.agent, a.model)
