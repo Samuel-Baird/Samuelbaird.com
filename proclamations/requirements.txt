@@ -2,3 +2,4 @@ reportlab
 pymupdf
 pyyaml
 pytest
+pyphen

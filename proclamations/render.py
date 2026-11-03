@@ -115,20 +115,25 @@ class Page:
         for i, ln in enumerate(lines):
             if i:
                 t += (ln.leading + (ln.gap_before if ln.first else 0.0)) * stretch
-            words_w = sum(w.width for w in ln.words)
-            n = len(ln.words)
+            last_seg = ln.words[-1].segs[-1]
+            hy_w = text_width("-", last_seg.size, last_seg.style) if ln.hyphen else 0.0
+            words_w = sum(w.width for w in ln.words) + hy_w
+            gaps = sum(1 for k, w in enumerate(ln.words) if k and not w.cont)
             x = col_left + ln.x_off
-            if n > 1 and (not ln.last or ln.natural > ln.avail + 1e-6):
-                gap = (ln.avail - words_w) / (n - 1)
+            if gaps and (not ln.last or ln.natural > ln.avail + 1e-6):
+                gap = (ln.avail - words_w) / gaps
             else:
-                gap = fonts.space_width(ln.words[0].segs[-1].size)
+                gap = fonts.space_width(last_seg.size)
             for wi, w in enumerate(ln.words):
                 for s in w.segs:
                     x += self.seg(x, t, s)
-                if wi < n - 1:
+                if wi == len(ln.words) - 1:
+                    if ln.hyphen:
+                        x += self.seg(x, t, Seg("-", last_seg.size, last_seg.style, last_seg.color))
+                elif not ln.words[wi + 1].cont:
                     # a real (invisible) space glyph, so extracted/searched/read-aloud text keeps its word breaks
                     self.seg(x, t, Seg(" ", w.segs[-1].size, color=w.segs[-1].color))
-                x += gap
+                    x += gap
         return t
 
     def finish(self):

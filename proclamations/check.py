@@ -36,7 +36,7 @@ def _rule_matches(ref, rules):
 
 
 def format_check(slug, ref, out_dir):
-    path = render(slug, scripts.get("latin"), "letter", out_dir, with_credit=True)
+    path = render(slug, scripts.get("english"), "letter", out_dir, with_credit=True)
     got = reference.measure(path)
     results = []
     results.append(("page size", abs(got["page"][0] - ref["page"][0]) <= 1.5 and abs(got["page"][1] - ref["page"][1]) <= 1.5,
@@ -68,6 +68,9 @@ def _split_dropcap(text):
     return (first[0] + " " + first[1:] + " " + rest) if len(first) > 1 else text
 
 
+TRACKED = {"restoration"}      # letter-spaced subtitle: extractors (and the Church's own PDF) return it letter by letter
+
+
 def _expected_words(L, d):
     paras = list(L.paragraphs)
     verses = [t for _, t in L.verses]
@@ -75,15 +78,14 @@ def _expected_words(L, d):
         paras[0] = _split_dropcap(paras[0])
     if verses:
         verses[0] = _split_dropcap(verses[0])
-    parts = [L.title, L.subtitle, L.author, L.note, L.signature, L.date] + paras + verses
+    subtitle = "" if L.slug in TRACKED else L.subtitle
+    parts = [L.title, subtitle, L.author, L.note, L.signature, L.date] + paras + verses
     parts += list(L.groups) + [n for names in L.names.values() for n in names]
     return _norm(" ".join(p for p in parts if p))
 
 
 def output_check(path):
-    slug = path.parent.name
-    script_name = path.name.split("-")[-2]
-    size = path.stem.rsplit("-", 1)[1]
+    slug, script_name, size = path.stem.rsplit("-", 2)       # <doc>-<edition>-<size>.pdf
     script = scripts.get(script_name)
     L, d = localize(slug, script)
     doc = pymupdf.open(path)
@@ -96,7 +98,10 @@ def output_check(path):
     inside = all(-0.5 <= s["bbox"][0] and s["bbox"][2] <= page.rect.width + 0.5 and -0.5 <= s["bbox"][1]
                  and s["bbox"][3] <= page.rect.height + 0.5 for s in spans)
     results.append(("all text inside the page", inside, ""))
-    got = _norm(page.get_text())
+    raw = page.get_text()
+    # a word split across lines extracts as "pri-" / "mavera": accept the rejoined word as well
+    rejoined = [a + b for a, b in re.findall(r"(\w+)-\n(\w+)", raw)]
+    got = _norm(raw) + _norm(" ".join(rejoined))
     want = _expected_words(L, d)
     missing, remaining = [], list(got)
     for wd in want:
@@ -105,6 +110,11 @@ def output_check(path):
         else:
             missing.append(wd)
     results.append(("no source words lost", not missing, f"{len(want)} expected, missing {missing[:8]}"))
+    if slug in TRACKED:
+        letters = "".join(_norm(L.subtitle))
+        stream = "".join(_norm(" ".join(re.findall(r"(?<!\w)(\w)(?!\w)", raw))))
+        as_words = all(w in got for w in _norm(L.subtitle))      # some fonts extract tracked text as words
+        results.append(("letter-spaced subtitle present", letters in stream or as_words, letters[:30]))
     return results
 
 
@@ -112,7 +122,7 @@ def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     failures = 0
     if "--outputs" in argv:
-        pdfs = sorted((HERE / "out").glob("*/*/*.pdf"))
+        pdfs = sorted((HERE / "out").glob("*/*.pdf"))
         if not pdfs:
             print("no PDFs under proclamations/out; run proclamations.generate first")
             return 1

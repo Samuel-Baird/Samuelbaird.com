@@ -190,36 +190,48 @@ def donate_page():
 
 
 def proclamations_page(manifest):
-    """/proclamations: Deseret Alphabet editions of the Church's proclamations, as printable posters."""
+    """/proclamations: the Church's proclamations as printable PDFs in English, Spanish and Deseret."""
+    langs = {"english": ("English", "en"), "spanish": ("Espa\u00f1ol", "es"), "deseret": ("Deseret Alphabet", "en-Dsrt")}
     cards = []
     for m in manifest:
-        rows = "".join(
-            f'<li><a href="/posters/{E(m["slug"])}/{E(f["file"])}" download>{E(f["label"])}</a>'
-            f'<span class="muted"> &middot; PDF, {f["kb"]} KB</span></li>' for f in m["files"].values())
-        native = f'<p class="native" lang="en-Dsrt">{E(m["title_native"])}</p>' if m.get("title_native") else ""
-        full = m["title"] + (": " + m["subtitle"] if m["slug"] in ("family", "living-christ") and m["subtitle"] else "")
+        thumbs, lists = [], []
+        for ed, (label, code) in langs.items():
+            e = m["editions"][ed]
+            big = f'/posters/{ed}/{E(e["files"]["18x24"]["file"])}'
+            thumbs.append(
+                f'<figure><a class="thumb" href="{big}"><img src="/posters/{ed}/{E(e["preview"])}" width="260" '
+                f'alt="Preview of {E(m["titles"].get(ed, m["title"]))} ({E(label)} edition)" loading="lazy"></a>'
+                f'<figcaption lang="{code}">{E(label)}</figcaption></figure>')
+            rows = "".join(
+                f'<li><a href="/posters/{ed}/{E(f["file"])}" download>{E(f["label"])}</a>'
+                f'<span class="muted"> &middot; {f["kb"]} KB</span></li>' for f in e["files"].values())
+            lists.append(f'<details><summary lang="{code}">{E(label)} &middot; {len(e["files"])} sizes</summary>'
+                         f'<ul class="plainlist sizes">{rows}</ul></details>')
+        native = f'<p class="native" lang="en-Dsrt">{E(m["title_deseret"])}</p>' if m.get("title_deseret") else ""
+        es_title = m["titles"].get("spanish", "")
         cards.append(f"""<article class="pcard" id="{E(m["slug"])}">
-  <a class="thumb" href="/posters/{E(m["slug"])}/{E(m["files"]["18x24"]["file"])}"><img src="/posters/{E(m["slug"])}/{E(m["preview"])}" width="380" alt="Preview of {E(full)} in the {E(m["label"])}" loading="lazy"></a>
+  <div class="thumbs">{"".join(thumbs)}</div>
   <div>
-    <h2>{E(m["title"])}</h2>{native}
+    <h2>{E(m["title"])}</h2>
+    <p class="altnames"><span lang="es">{E(es_title)}</span></p>{native}
     <p class="muted">{E(m["subtitle"])}</p>
-    <p><a href="{E(m["source_url"])}">Official English original on churchofjesuschrist.org &rarr;</a></p>
-    <details open><summary>Download by size</summary><ul class="plainlist sizes">{rows}</ul></details>
+    <p><a href="{E(m["source_url"]["english"])}">Official English page</a> &middot; <a href="{E(m["source_url"]["spanish"])}" lang="es">P\u00e1gina oficial en espa\u00f1ol</a></p>
+    {"".join(lists)}
   </div>
 </article>""")
     body = f"""<div class="pagehead">
   <p class="eyebrow small-caps" style="color:var(--honey)">Proclamations</p>
-  <h1>Proclamations in the Deseret Alphabet</h1>
-  <p class="lede">The Church&rsquo;s proclamations set in the Deseret Alphabet, laid out like the official PDFs and sized for printing: standard US Letter and A4, and posters from 11&Prime; &times; 17&Prime; up to A0.</p>
+  <h1>Proclamations in English, Spanish and Deseret</h1>
+  <p class="lede">The Church&rsquo;s proclamations, laid out like the official PDFs and sized for printing: standard US Letter and A4, and posters from 11&Prime; &times; 17&Prime; up to A0.</p>
 </div>
-<div class="notice"><p><strong>Unofficial.</strong> These are transliterations of the English texts, made with the <a href="https://github.com/Samuel-Baird/urim/tree/main/proclamations">proclamations generator</a> in this project. They are not published or approved by The Church of Jesus Christ of Latter-day Saints, and each PDF says so in its bottom margin. The Church&rsquo;s own English versions, logo and signatures are on its website. For personal and non-commercial use.</p></div>
+<div class="notice"><p><strong>Unofficial.</strong> The English and Spanish text is the Church&rsquo;s own, taken from its website; the Deseret edition is a transliteration of the English. All were typeset with the <a href="https://github.com/Samuel-Baird/urim/tree/main/proclamations">proclamations generator</a> in this project. They are not published or approved by The Church of Jesus Christ of Latter-day Saints, and each PDF says so in its bottom margin. The Church&rsquo;s own versions, logo and signatures are on its website. For personal and non-commercial use.</p></div>
 <div class="pgrid">{"".join(cards)}</div>
 <section class="block prose"><h2>How they are made</h2>
 <ul>
-<li>The English text is read from the Church&rsquo;s pages and checked word for word against its PDFs.</li>
-<li>It is converted with the <a href="https://github.com/Samuel-Baird/urim/tree/main/deseret">Deseret transliteration package</a> (pulpit-vault&rsquo;s engine, 38-letter standard).</li>
-<li>Each poster re-flows the design at its own proportions rather than stretching the letter-size page. A checker compares the layout against the originals: rule weights and positions, frames, column edges and title placement.</li>
-<li>The Living Christ prints facsimile signatures; this edition sets the signers&rsquo; names in type instead.</li>
+<li>The text of each language is read from the Church&rsquo;s own page for that language and checked word for word against its PDF; nothing is translated here.</li>
+<li>The Deseret edition uses the <a href="https://github.com/Samuel-Baird/urim/tree/main/deseret">Deseret transliteration package</a> (pulpit-vault&rsquo;s engine, 38-letter standard).</li>
+<li>Each size re-flows the design at its own proportions rather than stretching the letter-size page. English and Spanish are hyphenated as the originals are. A checker compares the layout against the originals: rule weights and positions, frames, column edges and title placement.</li>
+<li>The Living Christ prints facsimile signatures; these editions set the signers&rsquo; names in type instead.</li>
 </ul></section>"""
-    return ("Proclamations in the Deseret Alphabet | Urim", body,
-            "Deseret Alphabet editions of the Church's proclamations, laid out like the official PDFs and sized as posters.")
+    return ("Proclamations in English, Spanish and Deseret | Urim", body,
+            "The Church's proclamations in English, Spanish and the Deseret Alphabet, laid out like the official PDFs and sized for printing.")

@@ -70,8 +70,10 @@ def measure(path):
             for s in ln["spans"]:
                 if s["text"].strip():
                     spans.append(s)
-    body_size = collections.Counter(round(s["size"], 1) for s in spans).most_common(1)[0][0]
-    body = [s for s in spans if abs(s["size"] - body_size) < 0.35]
+    # body text = the most common size among substantial runs (small-caps fragments such as "HE" must not count)
+    runs = [s for s in spans if len(s["text"].strip()) >= 15]
+    body_size = collections.Counter(round(s["size"], 1) for s in runs).most_common(1)[0][0]
+    body = [s for s in runs if abs(s["size"] - body_size) < 0.35]
     lefts = collections.Counter(round(s["bbox"][0]) for s in body if s["bbox"][0] < page.rect.width / 2 - 5)
     rights = collections.Counter(round(s["bbox"][0]) for s in body if s["bbox"][0] > page.rect.width / 2 + 5)
     # title = large type that ends above the body text (drop caps start inside the body, so they are excluded).

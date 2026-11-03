@@ -86,3 +86,58 @@ def test_text_matches_the_church_pages():
         L, d = localize(slug, scripts.get("latin"))
         assert d["source_url"].startswith("https://www.churchofjesuschrist.org/")
         assert (d.get("paragraphs") or d.get("verses"))
+
+
+# ---- editions, hyphenation, folder layout
+def test_hyphenation_points():
+    from proclamations import layout
+    layout.set_hyphenation("en_US")
+    try:
+        assert any(h for _, h in layout.find_breaks("responsibilities"))
+        assert layout.find_breaks("Presidency") == []                      # names are not hyphenated
+        assert (4, False) in layout.find_breaks("law-abiding")             # a break after a dash needs no extra hyphen
+        assert layout.find_breaks("law-wise") == [(4, False)]              # no dictionary break in a short run
+        assert layout.find_breaks("short") == []
+        layout.set_hyphenation("es")
+        assert any(h for _, h in layout.find_breaks("responsabilidades"))
+        layout.set_hyphenation(None)
+        assert layout.find_breaks("responsibilities") == []
+    finally:
+        layout.set_hyphenation(None)
+
+
+def test_split_words_reassemble_with_hyphens_where_needed():
+    from proclamations import layout
+    layout.set_hyphenation("en_US")
+    try:
+        w = layout.word("responsibilities", 9)
+        frags = layout.expand([w])
+        assert "".join(f.segs[0].text for f in frags) == "responsibilities" and len(frags) > 1
+        assert not frags[0].cont and all(f.cont for f in frags[1:])
+    finally:
+        layout.set_hyphenation(None)
+
+
+def test_editions_and_their_source_languages():
+    assert scripts.EDITIONS == ["english", "spanish", "deseret"]
+    assert scripts.get("english").source == "en" and scripts.get("spanish").source == "es"
+    assert scripts.get("deseret").source == "en"          # transliterated from the English text
+    assert scripts.get("spanish").hyphenation == "es" and scripts.get("deseret").hyphenation is None
+
+
+def test_spanish_text_is_the_churchs_own():
+    d = yaml_load("es", "family")
+    assert d["title"] == "La Familia" and d["source_url"].endswith("?lang=spa")
+    assert "Nosotros, la Primera Presidencia" in d["paragraphs"][0]
+
+
+def yaml_load(lang, slug):
+    from proclamations.generate import load_text
+    return load_text(slug, lang)
+
+
+@pytest.mark.parametrize("edition", ["english", "spanish"])
+def test_english_and_spanish_pdfs_are_complete(edition, tmp_path):
+    path = render("living-christ", scripts.get(edition), "a4", tmp_path)
+    assert path == tmp_path / edition / f"living-christ-{edition}-a4.pdf"        # one flat folder per edition
+    assert all(ok for _, ok, _ in check.output_check(path))

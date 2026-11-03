@@ -1,7 +1,7 @@
 """Font registration and text measurement.
 
 Noto Sans Deseret covers only the 80 Deseret letters, so digits, quotation marks, dashes and
-any word without a Deseret spelling use Noto Sans (same OFL family). Text is split into runs by
+any word without a Deseret spelling use Noto Sans or Noto Serif (same OFL family). Text is split into runs by
 script and each run is drawn with the matching font. Both fonts are embedded as subsets.
 """
 from pathlib import Path
@@ -11,7 +11,12 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 FONT_DIR = Path(__file__).resolve().parent / "fonts"
-DSRT, LAT, LATI, LATB = "NotoSansDeseret", "NotoSans", "NotoSans-Italic", "NotoSans-Bold"
+DSRT = "NotoSansDeseret"
+FAMILIES = {   # Latin faces by family: sans pairs with Deseret; serif is used for English and Spanish
+    "sans": {"r": "NotoSans", "i": "NotoSans-Italic", "b": "NotoSans-Bold"},
+    "serif": {"r": "NotoSerif", "i": "NotoSerif-Italic", "b": "NotoSerif-Bold"},
+}
+_family = "sans"
 CAP_HEIGHT = 0.714          # Noto Sans Deseret capital height / em
 _done = False
 
@@ -38,10 +43,20 @@ def register():
     if _done:
         return
     _tt.makeToUnicodeCMap = _tounicode
-    for name, file in ((DSRT, "NotoSansDeseret-Regular.ttf"), (LAT, "NotoSans-Regular.ttf"),
-                       (LATI, "NotoSans-Italic.ttf"), (LATB, "NotoSans-Bold.ttf")):
-        pdfmetrics.registerFont(TTFont(name, str(FONT_DIR / file)))
+    pdfmetrics.registerFont(TTFont(DSRT, str(FONT_DIR / "NotoSansDeseret-Regular.ttf")))
+    for faces in FAMILIES.values():
+        for name in faces.values():
+            file = f"{name}.ttf" if "-" in name else f"{name}-Regular.ttf"
+            pdfmetrics.registerFont(TTFont(name, str(FONT_DIR / file)))
     _done = True
+
+
+def set_family(name):
+    """Choose the Latin face family ('sans' or 'serif') used for text outside the Deseret block."""
+    global _family
+    if name not in FAMILIES:
+        raise KeyError(name)
+    _family = name
 
 
 def is_dsrt(ch):
@@ -63,7 +78,7 @@ def runs(text):
 def font_for(dsrt, style):
     if dsrt:
         return DSRT
-    return {"i": LATI, "b": LATB}.get(style, LAT)
+    return FAMILIES[_family].get(style, FAMILIES[_family]["r"])
 
 
 def text_width(text, size, style="r", track=0.0):
@@ -74,7 +89,8 @@ def text_width(text, size, style="r", track=0.0):
 
 def space_width(size):
     register()
-    return pdfmetrics.stringWidth(" ", DSRT, size)
+    face = DSRT if _family == "sans" else FAMILIES[_family]["r"]
+    return pdfmetrics.stringWidth(" ", face, size)
 
 
 def to_caps(text):

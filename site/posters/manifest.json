@@ -3,356 +3,1060 @@
   "slug": "family",
   "title": "The Family",
   "subtitle": "A Proclamation to the World",
-  "title_native": "𐐜 𐐙𐐰𐑋𐐮𐑊𐐨",
-  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng",
-  "files": {
-   "letter": {
-    "file": "family-deseret-letter.pdf",
-    "kb": 58,
-    "label": "Letter (8.5\" x 11\")",
-    "w_in": 8.5,
-    "h_in": 11.0
+  "titles": {
+   "english": "The Family",
+   "spanish": "La Familia"
+  },
+  "source_url": {
+   "english": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng",
+   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=spa"
+  },
+  "editions": {
+   "english": {
+    "label": "English",
+    "files": {
+     "letter": {
+      "file": "family-english-letter.pdf",
+      "kb": 51,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "family-english-a4.pdf",
+      "kb": 51,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "family-english-11x17.pdf",
+      "kb": 51,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "family-english-18x24.pdf",
+      "kb": 51,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "family-english-24x36.pdf",
+      "kb": 51,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "family-english-27x40.pdf",
+      "kb": 51,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "family-english-40x60.pdf",
+      "kb": 51,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "family-english-a3.pdf",
+      "kb": 51,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "family-english-a2.pdf",
+      "kb": 51,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "family-english-a1.pdf",
+      "kb": 51,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "family-english-a0.pdf",
+      "kb": 51,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "family-english-preview.jpg"
    },
-   "a4": {
-    "file": "family-deseret-a4.pdf",
-    "kb": 58,
-    "label": "A4 (210 x 297 mm)",
-    "w_in": 8.3,
-    "h_in": 11.7
+   "spanish": {
+    "label": "Español",
+    "files": {
+     "letter": {
+      "file": "family-spanish-letter.pdf",
+      "kb": 55,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "family-spanish-a4.pdf",
+      "kb": 55,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "family-spanish-11x17.pdf",
+      "kb": 56,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "family-spanish-18x24.pdf",
+      "kb": 55,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "family-spanish-24x36.pdf",
+      "kb": 55,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "family-spanish-27x40.pdf",
+      "kb": 55,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "family-spanish-40x60.pdf",
+      "kb": 55,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "family-spanish-a3.pdf",
+      "kb": 55,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "family-spanish-a2.pdf",
+      "kb": 55,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "family-spanish-a1.pdf",
+      "kb": 55,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "family-spanish-a0.pdf",
+      "kb": 55,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "family-spanish-preview.jpg"
    },
-   "11x17": {
-    "file": "family-deseret-11x17.pdf",
-    "kb": 58,
-    "label": "11\" x 17\" (small / bulletin)",
-    "w_in": 11.0,
-    "h_in": 17.0
-   },
-   "18x24": {
-    "file": "family-deseret-18x24.pdf",
-    "kb": 58,
-    "label": "18\" x 24\" (medium)",
-    "w_in": 18.0,
-    "h_in": 24.0
-   },
-   "24x36": {
-    "file": "family-deseret-24x36.pdf",
-    "kb": 58,
-    "label": "24\" x 36\" (large)",
-    "w_in": 24.0,
-    "h_in": 36.0
-   },
-   "27x40": {
-    "file": "family-deseret-27x40.pdf",
-    "kb": 58,
-    "label": "27\" x 40\" (movie one-sheet)",
-    "w_in": 27.0,
-    "h_in": 40.0
-   },
-   "40x60": {
-    "file": "family-deseret-40x60.pdf",
-    "kb": 58,
-    "label": "40\" x 60\" (extra large)",
-    "w_in": 40.0,
-    "h_in": 60.0
-   },
-   "a3": {
-    "file": "family-deseret-a3.pdf",
-    "kb": 58,
-    "label": "A3 (297 x 420 mm)",
-    "w_in": 11.7,
-    "h_in": 16.5
-   },
-   "a2": {
-    "file": "family-deseret-a2.pdf",
-    "kb": 58,
-    "label": "A2 (420 x 594 mm)",
-    "w_in": 16.5,
-    "h_in": 23.4
-   },
-   "a1": {
-    "file": "family-deseret-a1.pdf",
-    "kb": 58,
-    "label": "A1 (594 x 841 mm)",
-    "w_in": 23.4,
-    "h_in": 33.1
-   },
-   "a0": {
-    "file": "family-deseret-a0.pdf",
-    "kb": 58,
-    "label": "A0 (841 x 1189 mm)",
-    "w_in": 33.1,
-    "h_in": 46.8
+   "deseret": {
+    "label": "Deseret Alphabet",
+    "files": {
+     "letter": {
+      "file": "family-deseret-letter.pdf",
+      "kb": 58,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "family-deseret-a4.pdf",
+      "kb": 58,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "family-deseret-11x17.pdf",
+      "kb": 58,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "family-deseret-18x24.pdf",
+      "kb": 58,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "family-deseret-24x36.pdf",
+      "kb": 58,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "family-deseret-27x40.pdf",
+      "kb": 58,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "family-deseret-40x60.pdf",
+      "kb": 58,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "family-deseret-a3.pdf",
+      "kb": 58,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "family-deseret-a2.pdf",
+      "kb": 58,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "family-deseret-a1.pdf",
+      "kb": 58,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "family-deseret-a0.pdf",
+      "kb": 58,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "family-deseret-preview.jpg"
    }
   },
-  "preview": "family-deseret-preview.jpg",
-  "script": "deseret",
-  "label": "Deseret Alphabet"
+  "title_deseret": "𐐜 𐐙𐐰𐑋𐐮𐑊𐐨"
  },
  {
   "slug": "living-christ",
   "title": "The Living Christ",
   "subtitle": "The Testimony of the Apostles",
-  "title_native": "𐐜 𐐢𐐮𐑂𐐮𐑍 𐐗𐑉𐐴𐑅𐐻",
-  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng",
-  "files": {
-   "letter": {
-    "file": "living-christ-deseret-letter.pdf",
-    "kb": 46,
-    "label": "Letter (8.5\" x 11\")",
-    "w_in": 8.5,
-    "h_in": 11.0
+  "titles": {
+   "english": "The Living Christ",
+   "spanish": "El Cristo Viviente"
+  },
+  "source_url": {
+   "english": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng",
+   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=spa"
+  },
+  "editions": {
+   "english": {
+    "label": "English",
+    "files": {
+     "letter": {
+      "file": "living-christ-english-letter.pdf",
+      "kb": 50,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "living-christ-english-a4.pdf",
+      "kb": 50,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "living-christ-english-11x17.pdf",
+      "kb": 50,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "living-christ-english-18x24.pdf",
+      "kb": 50,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "living-christ-english-24x36.pdf",
+      "kb": 50,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "living-christ-english-27x40.pdf",
+      "kb": 50,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "living-christ-english-40x60.pdf",
+      "kb": 50,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "living-christ-english-a3.pdf",
+      "kb": 50,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "living-christ-english-a2.pdf",
+      "kb": 50,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "living-christ-english-a1.pdf",
+      "kb": 50,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "living-christ-english-a0.pdf",
+      "kb": 50,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "living-christ-english-preview.jpg"
    },
-   "a4": {
-    "file": "living-christ-deseret-a4.pdf",
-    "kb": 46,
-    "label": "A4 (210 x 297 mm)",
-    "w_in": 8.3,
-    "h_in": 11.7
+   "spanish": {
+    "label": "Español",
+    "files": {
+     "letter": {
+      "file": "living-christ-spanish-letter.pdf",
+      "kb": 53,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "living-christ-spanish-a4.pdf",
+      "kb": 53,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "living-christ-spanish-11x17.pdf",
+      "kb": 53,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "living-christ-spanish-18x24.pdf",
+      "kb": 53,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "living-christ-spanish-24x36.pdf",
+      "kb": 53,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "living-christ-spanish-27x40.pdf",
+      "kb": 53,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "living-christ-spanish-40x60.pdf",
+      "kb": 53,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "living-christ-spanish-a3.pdf",
+      "kb": 53,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "living-christ-spanish-a2.pdf",
+      "kb": 53,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "living-christ-spanish-a1.pdf",
+      "kb": 53,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "living-christ-spanish-a0.pdf",
+      "kb": 53,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "living-christ-spanish-preview.jpg"
    },
-   "11x17": {
-    "file": "living-christ-deseret-11x17.pdf",
-    "kb": 46,
-    "label": "11\" x 17\" (small / bulletin)",
-    "w_in": 11.0,
-    "h_in": 17.0
-   },
-   "18x24": {
-    "file": "living-christ-deseret-18x24.pdf",
-    "kb": 46,
-    "label": "18\" x 24\" (medium)",
-    "w_in": 18.0,
-    "h_in": 24.0
-   },
-   "24x36": {
-    "file": "living-christ-deseret-24x36.pdf",
-    "kb": 46,
-    "label": "24\" x 36\" (large)",
-    "w_in": 24.0,
-    "h_in": 36.0
-   },
-   "27x40": {
-    "file": "living-christ-deseret-27x40.pdf",
-    "kb": 46,
-    "label": "27\" x 40\" (movie one-sheet)",
-    "w_in": 27.0,
-    "h_in": 40.0
-   },
-   "40x60": {
-    "file": "living-christ-deseret-40x60.pdf",
-    "kb": 46,
-    "label": "40\" x 60\" (extra large)",
-    "w_in": 40.0,
-    "h_in": 60.0
-   },
-   "a3": {
-    "file": "living-christ-deseret-a3.pdf",
-    "kb": 46,
-    "label": "A3 (297 x 420 mm)",
-    "w_in": 11.7,
-    "h_in": 16.5
-   },
-   "a2": {
-    "file": "living-christ-deseret-a2.pdf",
-    "kb": 46,
-    "label": "A2 (420 x 594 mm)",
-    "w_in": 16.5,
-    "h_in": 23.4
-   },
-   "a1": {
-    "file": "living-christ-deseret-a1.pdf",
-    "kb": 46,
-    "label": "A1 (594 x 841 mm)",
-    "w_in": 23.4,
-    "h_in": 33.1
-   },
-   "a0": {
-    "file": "living-christ-deseret-a0.pdf",
-    "kb": 46,
-    "label": "A0 (841 x 1189 mm)",
-    "w_in": 33.1,
-    "h_in": 46.8
+   "deseret": {
+    "label": "Deseret Alphabet",
+    "files": {
+     "letter": {
+      "file": "living-christ-deseret-letter.pdf",
+      "kb": 46,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "living-christ-deseret-a4.pdf",
+      "kb": 46,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "living-christ-deseret-11x17.pdf",
+      "kb": 46,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "living-christ-deseret-18x24.pdf",
+      "kb": 46,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "living-christ-deseret-24x36.pdf",
+      "kb": 46,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "living-christ-deseret-27x40.pdf",
+      "kb": 46,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "living-christ-deseret-40x60.pdf",
+      "kb": 46,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "living-christ-deseret-a3.pdf",
+      "kb": 46,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "living-christ-deseret-a2.pdf",
+      "kb": 46,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "living-christ-deseret-a1.pdf",
+      "kb": 46,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "living-christ-deseret-a0.pdf",
+      "kb": 46,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "living-christ-deseret-preview.jpg"
    }
   },
-  "preview": "living-christ-deseret-preview.jpg",
-  "script": "deseret",
-  "label": "Deseret Alphabet"
+  "title_deseret": "𐐜 𐐢𐐮𐑂𐐮𐑍 𐐗𐑉𐐴𐑅𐐻"
  },
  {
   "slug": "restoration",
   "title": "The Restoration of the Fulness of the Gospel of Jesus Christ",
   "subtitle": "A Bicentennial Proclamation to the World",
-  "title_native": "𐐜 𐐡𐐯𐑅𐐻𐐲𐑉𐐩𐑇𐐲𐑌 𐐲𐑂 𐑄 𐐙𐐳𐑊𐑌𐐲𐑅 𐐲𐑂 𐑄 𐐘𐐫𐑅𐐹𐐲𐑊 𐐲𐑂 𐐖𐐨𐑆𐐲𐑅 𐐗𐑉𐐴𐑅𐐻",
-  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=eng",
-  "files": {
-   "letter": {
-    "file": "restoration-deseret-letter.pdf",
-    "kb": 58,
-    "label": "Letter (8.5\" x 11\")",
-    "w_in": 8.5,
-    "h_in": 11.0
+  "titles": {
+   "english": "The Restoration of the Fulness of the Gospel of Jesus Christ",
+   "spanish": "La Restauración de la plenitud del evangelio de Jesucristo"
+  },
+  "source_url": {
+   "english": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=eng",
+   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ/the-restoration-of-the-fulness-of-the-gospel-of-jesus-christ?lang=spa"
+  },
+  "editions": {
+   "english": {
+    "label": "English",
+    "files": {
+     "letter": {
+      "file": "restoration-english-letter.pdf",
+      "kb": 49,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "restoration-english-a4.pdf",
+      "kb": 49,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "restoration-english-11x17.pdf",
+      "kb": 49,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "restoration-english-18x24.pdf",
+      "kb": 49,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "restoration-english-24x36.pdf",
+      "kb": 49,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "restoration-english-27x40.pdf",
+      "kb": 49,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "restoration-english-40x60.pdf",
+      "kb": 49,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "restoration-english-a3.pdf",
+      "kb": 49,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "restoration-english-a2.pdf",
+      "kb": 49,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "restoration-english-a1.pdf",
+      "kb": 49,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "restoration-english-a0.pdf",
+      "kb": 49,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "restoration-english-preview.jpg"
    },
-   "a4": {
-    "file": "restoration-deseret-a4.pdf",
-    "kb": 58,
-    "label": "A4 (210 x 297 mm)",
-    "w_in": 8.3,
-    "h_in": 11.7
+   "spanish": {
+    "label": "Español",
+    "files": {
+     "letter": {
+      "file": "restoration-spanish-letter.pdf",
+      "kb": 53,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "restoration-spanish-a4.pdf",
+      "kb": 53,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "restoration-spanish-11x17.pdf",
+      "kb": 53,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "restoration-spanish-18x24.pdf",
+      "kb": 53,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "restoration-spanish-24x36.pdf",
+      "kb": 53,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "restoration-spanish-27x40.pdf",
+      "kb": 53,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "restoration-spanish-40x60.pdf",
+      "kb": 53,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "restoration-spanish-a3.pdf",
+      "kb": 53,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "restoration-spanish-a2.pdf",
+      "kb": 53,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "restoration-spanish-a1.pdf",
+      "kb": 53,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "restoration-spanish-a0.pdf",
+      "kb": 53,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "restoration-spanish-preview.jpg"
    },
-   "11x17": {
-    "file": "restoration-deseret-11x17.pdf",
-    "kb": 58,
-    "label": "11\" x 17\" (small / bulletin)",
-    "w_in": 11.0,
-    "h_in": 17.0
-   },
-   "18x24": {
-    "file": "restoration-deseret-18x24.pdf",
-    "kb": 58,
-    "label": "18\" x 24\" (medium)",
-    "w_in": 18.0,
-    "h_in": 24.0
-   },
-   "24x36": {
-    "file": "restoration-deseret-24x36.pdf",
-    "kb": 58,
-    "label": "24\" x 36\" (large)",
-    "w_in": 24.0,
-    "h_in": 36.0
-   },
-   "27x40": {
-    "file": "restoration-deseret-27x40.pdf",
-    "kb": 58,
-    "label": "27\" x 40\" (movie one-sheet)",
-    "w_in": 27.0,
-    "h_in": 40.0
-   },
-   "40x60": {
-    "file": "restoration-deseret-40x60.pdf",
-    "kb": 58,
-    "label": "40\" x 60\" (extra large)",
-    "w_in": 40.0,
-    "h_in": 60.0
-   },
-   "a3": {
-    "file": "restoration-deseret-a3.pdf",
-    "kb": 58,
-    "label": "A3 (297 x 420 mm)",
-    "w_in": 11.7,
-    "h_in": 16.5
-   },
-   "a2": {
-    "file": "restoration-deseret-a2.pdf",
-    "kb": 58,
-    "label": "A2 (420 x 594 mm)",
-    "w_in": 16.5,
-    "h_in": 23.4
-   },
-   "a1": {
-    "file": "restoration-deseret-a1.pdf",
-    "kb": 58,
-    "label": "A1 (594 x 841 mm)",
-    "w_in": 23.4,
-    "h_in": 33.1
-   },
-   "a0": {
-    "file": "restoration-deseret-a0.pdf",
-    "kb": 58,
-    "label": "A0 (841 x 1189 mm)",
-    "w_in": 33.1,
-    "h_in": 46.8
+   "deseret": {
+    "label": "Deseret Alphabet",
+    "files": {
+     "letter": {
+      "file": "restoration-deseret-letter.pdf",
+      "kb": 58,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "restoration-deseret-a4.pdf",
+      "kb": 58,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "restoration-deseret-11x17.pdf",
+      "kb": 58,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "restoration-deseret-18x24.pdf",
+      "kb": 58,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "restoration-deseret-24x36.pdf",
+      "kb": 58,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "restoration-deseret-27x40.pdf",
+      "kb": 58,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "restoration-deseret-40x60.pdf",
+      "kb": 58,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "restoration-deseret-a3.pdf",
+      "kb": 58,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "restoration-deseret-a2.pdf",
+      "kb": 58,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "restoration-deseret-a1.pdf",
+      "kb": 58,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "restoration-deseret-a0.pdf",
+      "kb": 58,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "restoration-deseret-preview.jpg"
    }
   },
-  "preview": "restoration-deseret-preview.jpg",
-  "script": "deseret",
-  "label": "Deseret Alphabet"
+  "title_deseret": "𐐜 𐐡𐐯𐑅𐐻𐐲𐑉𐐩𐑇𐐲𐑌 𐐲𐑂 𐑄 𐐙𐐳𐑊𐑌𐐲𐑅 𐐲𐑂 𐑄 𐐘𐐫𐑅𐐹𐐲𐑊 𐐲𐑂 𐐖𐐨𐑆𐐲𐑅 𐐗𐑉𐐴𐑅𐐻"
  },
  {
   "slug": "articles-of-faith",
   "title": "The Articles of Faith",
   "subtitle": "of The Church of Jesus Christ of Latter-day Saints",
-  "title_native": "𐐜 𐐂𐑉𐐻𐐮𐐿𐐲𐑊𐑆 𐐲𐑂 𐐙𐐩𐑃",
-  "source_url": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=eng",
-  "files": {
-   "letter": {
-    "file": "articles-of-faith-deseret-letter.pdf",
-    "kb": 38,
-    "label": "Letter (8.5\" x 11\")",
-    "w_in": 8.5,
-    "h_in": 11.0
+  "titles": {
+   "english": "The Articles of Faith",
+   "spanish": "Los Artículos de Fe"
+  },
+  "source_url": {
+   "english": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=eng",
+   "spanish": "https://www.churchofjesuschrist.org/study/scriptures/af-poster?lang=spa"
+  },
+  "editions": {
+   "english": {
+    "label": "English",
+    "files": {
+     "letter": {
+      "file": "articles-of-faith-english-letter.pdf",
+      "kb": 28,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "articles-of-faith-english-a4.pdf",
+      "kb": 28,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "articles-of-faith-english-11x17.pdf",
+      "kb": 28,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "articles-of-faith-english-18x24.pdf",
+      "kb": 28,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "articles-of-faith-english-24x36.pdf",
+      "kb": 28,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "articles-of-faith-english-27x40.pdf",
+      "kb": 28,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "articles-of-faith-english-40x60.pdf",
+      "kb": 28,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "articles-of-faith-english-a3.pdf",
+      "kb": 28,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "articles-of-faith-english-a2.pdf",
+      "kb": 28,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "articles-of-faith-english-a1.pdf",
+      "kb": 28,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "articles-of-faith-english-a0.pdf",
+      "kb": 28,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "articles-of-faith-english-preview.jpg"
    },
-   "a4": {
-    "file": "articles-of-faith-deseret-a4.pdf",
-    "kb": 38,
-    "label": "A4 (210 x 297 mm)",
-    "w_in": 8.3,
-    "h_in": 11.7
+   "spanish": {
+    "label": "Español",
+    "files": {
+     "letter": {
+      "file": "articles-of-faith-spanish-letter.pdf",
+      "kb": 29,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "articles-of-faith-spanish-a4.pdf",
+      "kb": 29,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "articles-of-faith-spanish-11x17.pdf",
+      "kb": 29,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "articles-of-faith-spanish-18x24.pdf",
+      "kb": 29,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "articles-of-faith-spanish-24x36.pdf",
+      "kb": 29,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "articles-of-faith-spanish-27x40.pdf",
+      "kb": 29,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "articles-of-faith-spanish-40x60.pdf",
+      "kb": 29,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "articles-of-faith-spanish-a3.pdf",
+      "kb": 29,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "articles-of-faith-spanish-a2.pdf",
+      "kb": 29,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "articles-of-faith-spanish-a1.pdf",
+      "kb": 29,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "articles-of-faith-spanish-a0.pdf",
+      "kb": 29,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "articles-of-faith-spanish-preview.jpg"
    },
-   "11x17": {
-    "file": "articles-of-faith-deseret-11x17.pdf",
-    "kb": 38,
-    "label": "11\" x 17\" (small / bulletin)",
-    "w_in": 11.0,
-    "h_in": 17.0
-   },
-   "18x24": {
-    "file": "articles-of-faith-deseret-18x24.pdf",
-    "kb": 38,
-    "label": "18\" x 24\" (medium)",
-    "w_in": 18.0,
-    "h_in": 24.0
-   },
-   "24x36": {
-    "file": "articles-of-faith-deseret-24x36.pdf",
-    "kb": 38,
-    "label": "24\" x 36\" (large)",
-    "w_in": 24.0,
-    "h_in": 36.0
-   },
-   "27x40": {
-    "file": "articles-of-faith-deseret-27x40.pdf",
-    "kb": 38,
-    "label": "27\" x 40\" (movie one-sheet)",
-    "w_in": 27.0,
-    "h_in": 40.0
-   },
-   "40x60": {
-    "file": "articles-of-faith-deseret-40x60.pdf",
-    "kb": 38,
-    "label": "40\" x 60\" (extra large)",
-    "w_in": 40.0,
-    "h_in": 60.0
-   },
-   "a3": {
-    "file": "articles-of-faith-deseret-a3.pdf",
-    "kb": 38,
-    "label": "A3 (297 x 420 mm)",
-    "w_in": 11.7,
-    "h_in": 16.5
-   },
-   "a2": {
-    "file": "articles-of-faith-deseret-a2.pdf",
-    "kb": 38,
-    "label": "A2 (420 x 594 mm)",
-    "w_in": 16.5,
-    "h_in": 23.4
-   },
-   "a1": {
-    "file": "articles-of-faith-deseret-a1.pdf",
-    "kb": 38,
-    "label": "A1 (594 x 841 mm)",
-    "w_in": 23.4,
-    "h_in": 33.1
-   },
-   "a0": {
-    "file": "articles-of-faith-deseret-a0.pdf",
-    "kb": 38,
-    "label": "A0 (841 x 1189 mm)",
-    "w_in": 33.1,
-    "h_in": 46.8
+   "deseret": {
+    "label": "Deseret Alphabet",
+    "files": {
+     "letter": {
+      "file": "articles-of-faith-deseret-letter.pdf",
+      "kb": 38,
+      "label": "Letter (8.5\" x 11\")",
+      "w_in": 8.5,
+      "h_in": 11.0
+     },
+     "a4": {
+      "file": "articles-of-faith-deseret-a4.pdf",
+      "kb": 38,
+      "label": "A4 (210 x 297 mm)",
+      "w_in": 8.3,
+      "h_in": 11.7
+     },
+     "11x17": {
+      "file": "articles-of-faith-deseret-11x17.pdf",
+      "kb": 38,
+      "label": "11\" x 17\" (small / bulletin)",
+      "w_in": 11.0,
+      "h_in": 17.0
+     },
+     "18x24": {
+      "file": "articles-of-faith-deseret-18x24.pdf",
+      "kb": 38,
+      "label": "18\" x 24\" (medium)",
+      "w_in": 18.0,
+      "h_in": 24.0
+     },
+     "24x36": {
+      "file": "articles-of-faith-deseret-24x36.pdf",
+      "kb": 38,
+      "label": "24\" x 36\" (large)",
+      "w_in": 24.0,
+      "h_in": 36.0
+     },
+     "27x40": {
+      "file": "articles-of-faith-deseret-27x40.pdf",
+      "kb": 38,
+      "label": "27\" x 40\" (movie one-sheet)",
+      "w_in": 27.0,
+      "h_in": 40.0
+     },
+     "40x60": {
+      "file": "articles-of-faith-deseret-40x60.pdf",
+      "kb": 38,
+      "label": "40\" x 60\" (extra large)",
+      "w_in": 40.0,
+      "h_in": 60.0
+     },
+     "a3": {
+      "file": "articles-of-faith-deseret-a3.pdf",
+      "kb": 38,
+      "label": "A3 (297 x 420 mm)",
+      "w_in": 11.7,
+      "h_in": 16.5
+     },
+     "a2": {
+      "file": "articles-of-faith-deseret-a2.pdf",
+      "kb": 38,
+      "label": "A2 (420 x 594 mm)",
+      "w_in": 16.5,
+      "h_in": 23.4
+     },
+     "a1": {
+      "file": "articles-of-faith-deseret-a1.pdf",
+      "kb": 38,
+      "label": "A1 (594 x 841 mm)",
+      "w_in": 23.4,
+      "h_in": 33.1
+     },
+     "a0": {
+      "file": "articles-of-faith-deseret-a0.pdf",
+      "kb": 38,
+      "label": "A0 (841 x 1189 mm)",
+      "w_in": 33.1,
+      "h_in": 46.8
+     }
+    },
+    "preview": "articles-of-faith-deseret-preview.jpg"
    }
   },
-  "preview": "articles-of-faith-deseret-preview.jpg",
-  "script": "deseret",
-  "label": "Deseret Alphabet"
+  "title_deseret": "𐐜 𐐂𐑉𐐻𐐮𐐿𐐲𐑊𐑆 𐐲𐑂 𐐙𐐩𐑃"
  }
 ]
