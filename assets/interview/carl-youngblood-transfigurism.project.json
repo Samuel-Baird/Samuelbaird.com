@@ -1,0 +1,131 @@
+{
+  "slug": "carl-youngblood-transfigurism",
+  "root": "D:/Videos/carl-youngblood-transfigurism",
+  "_note": "Interview, 3 cameras + Zoom F6. Sources referenced in place on D:/Carl Youngblood. A = host close, B = wide two-shot, C = Carl close. mic = TrL_R (mono mix, used for sync/transcript); iso mics Tr2/Tr3 used for speaker detection and the audio mix.",
+  "takes": {
+    "1": {
+      "mic": "D:/Carl Youngblood/1/261104_001.TAKE/261104_001_TrL_R.WAV",
+      "iso": [
+        "D:/Carl Youngblood/1/261104_001.TAKE/261104_001_Tr2.WAV",
+        "D:/Carl Youngblood/1/261104_001.TAKE/261104_001_Tr3.WAV"
+      ],
+      "cameras": {
+        "A": {
+          "file": "D:/Carl Youngblood/2/PRIVATE/M4ROOT/CLIP/A CAM0013.MP4",
+          "face": [
+            0.41,
+            0.28
+          ],
+          "offset": 1.6529
+        },
+        "B": {
+          "file": "D:/Carl Youngblood/3/PRIVATE/M4ROOT/CLIP/B CAM0054.MP4",
+          "face": [
+            0.5,
+            0.4
+          ],
+          "offset": 1.5172
+        },
+        "C": {
+          "file": "D:/Carl Youngblood/4/PRIVATE/M4ROOT/CLIP/C CAM9568.MP4",
+          "face": [
+            0.56,
+            0.28
+          ],
+          "offset": 1.5304
+        }
+      }
+    }
+  },
+  "longform": {
+    "take": "1",
+    "start": 25.5,
+    "end": 2215.0,
+    "slides_dir": "images",
+    "cuts": [],
+    "plan": [],
+    "output": "exports/carl-youngblood-transfigurism.mp4",
+    "web": [
+      [
+        60.6,
+        69.5,
+        "web_home_space"
+      ],
+      [
+        69.5,
+        84.0,
+        "scroll:web_full_page"
+      ],
+      [
+        812.4,
+        835.0,
+        "web_home_warm"
+      ],
+      [
+        870.4,
+        882.3,
+        "web_home_teal"
+      ],
+      [
+        1169.9,
+        1175.6,
+        "web_home_space"
+      ],
+      [
+        1175.6,
+        1181.8,
+        "scroll:web_artwork"
+      ],
+      [
+        1181.8,
+        1187.3,
+        "web_support"
+      ],
+      [
+        1187.3,
+        1202.0,
+        "web_mission"
+      ],
+      [
+        1928.6,
+        1943.6,
+        "web_home_warm"
+      ],
+      [
+        1948.6,
+        1960.0,
+        "scroll:web_full_page"
+      ],
+      [
+        2177.6,
+        2188.5,
+        "web_home_space"
+      ],
+      [
+        2188.5,
+        2198.0,
+        "web_blog"
+      ]
+    ]
+  },
+  "interview": {
+    "cams": {
+      "host": "A",
+      "guest": "C",
+      "wide": "B"
+    },
+    "wide_faces": {
+      "host": [
+        0.24,
+        0.31
+      ],
+      "guest": [
+        0.74,
+        0.31
+      ]
+    },
+    "active_db": 52,
+    "host_margin_db": -3,
+    "quiet_db": 45
+  }
+}
