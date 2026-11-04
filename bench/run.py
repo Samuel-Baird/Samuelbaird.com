@@ -32,6 +32,7 @@ TALKS = [                      # April 2026, 1.3k to 1.7k words each, different 
 ]
 MODEL = os.environ.get("BENCH_MODEL", "sonnet")
 URIM_PY = URIM / "mcp" / ".venv" / "Scripts" / "python.exe"
+CORPUS_WORDS = 26_228_101          # words in the 12,198 English talks of pulpit-vault (frontmatter excluded)
 HELD = HERE / "heldout" / "data" / "glossary"      # glossary rebuilt without the test conference (bench/heldout.py)
 
 
@@ -54,14 +55,20 @@ def leaked(blob, talk, lang):
                 or re.search(rf"parallel-corpus-{lang}[^\"]*{re.escape(talk)}", b))
 
 
-def _mcp_env(arm, tag="", lang="", talk=""):
+def _mcp_env(arm, tag="", lang="", talk="", draft=False):
     env = dict(os.environ)
     if arm == "urim":
         env["URIM_HOME"] = str(HERE / "home")                   # fresh memory: no Church translations of the test talks
+    elif arm == "local":
+        env["URIM_HOME"] = str(HERE / "home-local")             # empty memory; local models only (Argos draft + Ollama post-edit)
+        env["URIM_GLOSSARY_DIR"] = str(HELD)
+        env["URIM_AUTO_SETUP"] = "0"
     elif arm == "pipeline":
         env["URIM_HOME"] = str(HERE / "home-pipeline")          # memory seeded with the Church corpus minus the test conference
         env["URIM_GLOSSARY_DIR"] = str(HELD)                    # glossary evidence minus the test conference
         env["URIM_AUTO_SETUP"] = "0"                            # the pipeline arm needs no local models
+        if draft:
+            env["URIM_DRAFT"] = "1"                             # Argos drafts every line; the agent only sends corrections
         env["URIM_JOBS_DIR"] = str(HERE / "jobs" / f"{tag}-{lang}-{talk}-{int(time.time())}")   # a rerun never resumes an earlier run's job
     return env
 
@@ -170,13 +177,14 @@ def _append(rp, row):
         w.writerows(old + [row])
 
 
-def run(arm, talk, lang, agent="claude", model=MODEL):
+def run(arm, talk, lang, agent="claude", model=MODEL, draft=False):
+    base = arm + ("-draft" if draft else "")
     tag = arm if (arm in ("urim",) or (agent == "claude" and model == "sonnet" and arm == "pulpit")) else \
-        (f"{arm}-claude-{model}" if agent == "claude" else f"{arm}-{agent}")
+        (f"{base}-claude-{model}" if agent == "claude" else f"{base}-{agent}")
     out = OUT / tag / lang / f"{talk}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.unlink(missing_ok=True)
-    env = _mcp_env(arm, tag, lang, talk)
+    env = _mcp_env(arm, tag, lang, talk, draft)
     cmd, cwd = _claude_cmd(arm, talk, lang, out, model) if agent == "claude" else _codex_cmd(arm, talk, lang, out, env)
     t0 = time.time()
     lines = []
@@ -260,8 +268,8 @@ def score():
         w = csv.DictWriter(f, fieldnames=cols, restval="")
         w.writeheader()
         w.writerows(rows)
-    table = ["| arm | lang | n | wall s | API s | turns | tool calls | output tok | cost | chrF | glossary problems / terms | length ratio | leaks |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    table = ["| arm | lang | n | wall s | API s | turns | tool calls | output tok | cost | chrF | glossary problems / terms | length ratio | leaks | est. corpus time, 1 agent | est. corpus cost |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for key in sorted({(r["arm"], r["lang"]) for r in rows}):
         rs = [r for r in rows if (r["arm"], r["lang"]) == key and r.get("chrf") not in (None, "")]
         if not rs:
@@ -271,16 +279,22 @@ def score():
             v = [float(r[c]) for r in rs if r.get(c) not in (None, "")]
             return fmt.format(sum(v) / len(v)) if v else "n/a"
         leaks = sum(1 for r in rs if str(r["leak"]) == "True")
+        words = sum(len(body(VAULT / "talks" / "english" / "modern" / r["talk"][:4] / f"{r['talk']}.md").split()) for r in rs)
+        secs = sum(float(r["wall_s"]) for r in rs)
+        days = secs / words * CORPUS_WORDS / 86400
+        costs = [r["cost_usd"] for r in rs if r.get("cost_usd") not in (None, "")]
+        ecost = f"${sum(float(c) for c in costs) / words * CORPUS_WORDS:,.0f}" if len(costs) == len(rs) else "n/a"
         table.append(f"| {key[0]} | {key[1]} | {len(rs)} | {f('wall_s')} | {f('api_s')} | {f('turns', '{:.1f}')} | {f('tool_calls', '{:.1f}')} | "
                      f"{f('output')} | {('$' + f('cost_usd', '{:.3f}')) if f('cost_usd') != 'n/a' else 'n/a'} | {f('chrf', '{:.1f}')} | "
-                     f"{f('glossary_problems', '{:.1f}')} / {f('glossary_terms')} | {f('length_ratio', '{:.2f}')} | {leaks} |")
+                     f"{f('glossary_problems', '{:.1f}')} / {f('glossary_terms')} | {f('length_ratio', '{:.2f}')} | {leaks} | {days:.1f} days | {ecost} |")
     (HERE / "results.md").write_text("\n".join(table) + "\n", encoding="utf-8")
     print("\n".join(table))
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--arm", choices=["pulpit", "urim", "pipeline"])
+    ap.add_argument("--arm", choices=["pulpit", "urim", "pipeline", "local"])
+    ap.add_argument("--draft", action="store_true", help="pipeline arm: Argos drafts every line, the agent sends corrections")
     ap.add_argument("--agent", choices=["claude", "codex"], default="claude")
     ap.add_argument("--model", default=MODEL, help="claude model alias (haiku, sonnet...)")
     ap.add_argument("--lang", choices=list(LANGS), default="es")
@@ -292,4 +306,4 @@ if __name__ == "__main__":
         score()
     else:
         for t in TALKS[a.start: a.start + a.talks]:
-            run(a.arm, t, a.lang, a.agent, a.model)
+            run(a.arm, t, a.lang, a.agent, a.model, a.draft)

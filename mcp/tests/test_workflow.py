@@ -205,6 +205,52 @@ def test_server_exposes_the_pipeline_and_the_recipe():
     ins = server.mcp.instructions
     assert all(w in ins for w in ("prepare_translation", "get_chunk", "submit_chunk", "finish_translation", "parallel"))
     assert "LOCAL" in tools["translate_file"].description        # a model must not mistake the slow route for the main one
+    assert "edits" in ins
+
+
+class FakeDraft(FakeMT):
+    """A machine translator that gets one Church term wrong ('poder' for priesthood) and keeps masked tokens."""
+    CANNED = {
+        "The Test Tal": "A Prueba",
+        "Brothers, th": "Irmãos, o poder é o poder de Deus. Jesus ensinou: “⟦1⟧”⟦2⟧ Ele nos pediu que fôssemos fiéis em tudo⟦3⟧ todos os dias de nossas vidas.",
+        "Gifts": "Dons",
+        "The endowmen": "A investidura é 1 dom entre 3 outros que recebemos no templo do Senhor hoje.",
+        "A talk by an": "Uma palestra de um apóstolo, 2020.",
+    }
+
+    def translate(self, texts, lang):
+        return [self.CANNED[t[:12]] for t in texts]
+
+
+def test_draft_mode_only_corrections_are_sent(doc):
+    t = tr([FakeDraft()])
+    r = workflow.prepare(t, doc, "pt", draft=True)
+    assert r["ok"] and "edits" in r["instructions"]
+    jid = r["job_id"]
+    c = workflow.get_chunk(jid, 1)
+    assert set(c["draft"]) == {"1", "2", "3", "4"} and "poder" in c["draft"]["2"]
+    assert "sacerdócio" in " ".join(c["draft_issues"]["2"]) and "1" not in c["draft_issues"]
+    bad = workflow.submit_chunk(t, jid, 1, edits={})
+    assert not bad["ok"] and bad["problems"][0]["line"] == 2 and "edits" in bad["hint"]
+    assert workflow.submit_chunk(t, jid, 1, edits={"9": "x"})["ok"] is False
+    assert workflow.submit_chunk(t, jid, 1, edits="nonsense")["ok"] is False
+    good = workflow.submit_chunk(t, jid, 1, edits={"2": GOOD[1]})
+    assert good["ok"], good
+    assert workflow.submit_chunk(t, jid, 2, edits={})["ok"]              # the footnote draft was fine as it was
+    f = workflow.finish(t, jid)
+    assert f["ok"] and f["lines_by_origin"]["draft"] == 4 and f["lines_by_origin"]["agent"] == 1
+    out = open(f["output_path"], encoding="utf-8").read()
+    assert "\n## Dons\n" in out and "Irmãos, o sacerdócio" in out and "[[" not in out
+
+
+def test_draft_mode_without_a_translator_falls_back_to_plain_pipeline(doc):
+    t = tr([])
+    jid = workflow.prepare(t, doc, "pt", draft=True)["job_id"]
+    c = workflow.get_chunk(jid, 1)
+    assert "draft" not in c
+    ok = workflow.submit_chunk(t, jid, 1, "\n".join(GOOD))
+    assert ok["ok"]
+    assert not workflow.submit_chunk(t, jid, 2, edits={})["ok"]          # no draft: asks for the translation instead
 
 
 def test_ordinary_space_in_a_citation_is_accepted():
@@ -215,3 +261,29 @@ def test_ordinary_space_in_a_citation_is_accepted():
     fixed = workflow._restore_spaces(ln, typed)
     assert fixed == "[2 Nefi 33:6]([[L1]])."
     assert not any("exactly as written" in h for h in workflow._check(ln, fixed, tr([]), "es", tr([]).glossary("es"))[0])
+
+
+def test_reference_footnotes_may_stay_close_to_the_english(tmp_path):
+    p = tmp_path / "f.md"
+    p.write_text("A paragraph that has a reference.[^1]\n\n[^1]: Dallin H. Oaks, “The Family-Centered Gospel of Jesus Christ,” Liahona, May 2026.\n", encoding="utf-8")
+    t = tr([])
+    jid = workflow.prepare(t, p, "pt")["job_id"]
+    assert workflow.submit_chunk(t, jid, 1, "Um parágrafo que tem uma referência.[^1]")["ok"]
+    r = workflow.submit_chunk(t, jid, 2, "Dallin H. Oaks, “The Family-Centered Gospel of Jesus Christ,” Liahona, May 2026.")
+    assert r["ok"], r
+
+
+def test_bad_tool_arguments_return_a_readable_error():
+    from urim_translate import server
+    r = server.lookup_term("covenant path", "en")
+    assert r["ok"] is False and "es" in r["error"] and "pt" in r["error"]
+
+
+def test_link_style_citation_after_a_quote_fills_the_church_text(tmp_path):
+    url = "https://www.churchofjesuschrist.org/study/scriptures/nt/john/3?lang=eng&id=p16#p16"
+    p = tmp_path / "c.md"
+    p.write_text(f"Jesus taught, “{JOHN316}” ([John 3:16]({url}); emphasis added). Believe it today and always.\n", encoding="utf-8")
+    r = workflow.prepare(tr([]), p, "pt")
+    assert r["already_done"]["scripture_quotes_filled_from_church_text"] == 1
+    c = workflow.get_chunk(r["job_id"], 1)
+    assert "[[S1]]" in c["source"] and "everlasting" not in c["source"]

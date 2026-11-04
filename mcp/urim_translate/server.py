@@ -1,4 +1,5 @@
 """MCP server (stdio). Tools return small JSON: ids, paths and stats, not full translations."""
+import functools
 from pathlib import Path
 
 from mcp.server.mcpserver import MCPServer
@@ -19,10 +20,22 @@ mcp = MCPServer(
         "ids such as [[S1]] that stand for Church scripture text inserted for you. 3) submit_chunk(job_id, n, translation): "
         "one output line per source line, same order. If it returns problems, fix those lines and resubmit that chunk only. "
         "4) finish_translation(job_id) writes the file. Chunks are independent, so run them in parallel if you can. "
+        "If get_chunk returns a machine `draft`, review it and send only your corrections with submit_chunk(job_id, n, edits={\"3\": \"...\"}). "
         "No capable agent? translate_file uses local models (Argos/Ollama) instead."
     ),
 )
 _T = {}
+
+
+def tool(fn):
+    """Register a tool; bad arguments come back as {"ok": false, "error": ...} that says what to change, never a bare failure."""
+    @functools.wraps(fn)
+    def run(*a, **k):
+        try:
+            return fn(*a, **k)
+        except (ValueError, TypeError, KeyError, OSError) as e:
+            return {"ok": False, "error": f"{type(e).__name__}: {e}", "hint": "check the arguments (lang is 'es' or 'pt')"}
+    return mcp.tool()(run)
 
 
 def T() -> Translator:
@@ -36,7 +49,7 @@ def _check_lang(lang):
         raise ValueError(f"unsupported language '{lang}'; supported: {', '.join(config.UI_LANGS)}")
 
 
-@mcp.tool()
+@tool
 def translate_text(text: str, lang: str) -> dict:
     """Translate English text into `lang` ('pt' or 'es') with the LOCAL models (Argos/Ollama): free but slower
     and rougher than translating it yourself with match_glossary + check_translation. Short results are returned
@@ -53,7 +66,7 @@ def translate_text(text: str, lang: str) -> dict:
     return {"doc_id": doc_id, "output_path": str(path), **info}
 
 
-@mcp.tool()
+@tool
 def translate_file(path: str, lang: str, output_path: str = "") -> dict:
     """Fallback for when you cannot write the translation yourself: translates a markdown/text file into `lang`
     with the LOCAL models (Argos/Ollama; minutes on a CPU, lower quality). If you are a capable model, use
@@ -70,17 +83,17 @@ def translate_file(path: str, lang: str, output_path: str = "") -> dict:
     return {"doc_id": doc_id, "output_path": str(out), **t.summarize(results)}
 
 
-@mcp.tool()
-def prepare_translation(path: str, lang: str, output_path: str = "", max_words: int = 450) -> dict:
+@tool
+def prepare_translation(path: str, lang: str, output_path: str = "", max_words: int = 450, draft: bool | None = None) -> dict:
     """Step 1 of translating a file yourself. Splits the markdown/text file into independent chunks at paragraph
     boundaries (frontmatter, footnotes and structure are kept), reuses the Church's own paragraphs, inserts the
     Church's scripture text for quotations and fills footnotes that are only scripture citations. Returns job_id,
     the chunks (number, words, status), `todo` (chunk numbers to translate) and short instructions. Calling it again
-    for the same file resumes the same job. `output_path` is where finish_translation writes the result."""
+    for the same file resumes the same job. `output_path` is where finish_translation writes the result. `draft=true` (or URIM_DRAFT=1) pre-translates every line with the local machine translator (Argos/LibreTranslate) so you only send corrections; ignored if none is available."""
     return workflow.prepare(T(), path, lang, output_path, max_words)
 
 
-@mcp.tool()
+@tool
 def get_chunk(job_id: str, n: int) -> dict:
     """Step 2. One chunk to translate: `source` (English lines separated by blank lines), the Church `terms` that
     must appear in your translation (only those present in this chunk), `scripture` ids like [[S1]] to keep as they
@@ -88,22 +101,22 @@ def get_chunk(job_id: str, n: int) -> dict:
     return workflow.get_chunk(job_id, n)
 
 
-@mcp.tool()
-def submit_chunk(job_id: str, n: int, translation: str) -> dict:
+@tool
+def submit_chunk(job_id: str, n: int, translation: str = "", edits: dict[str, str] | None = None) -> dict:
     """Step 3. Send your translation of chunk n: one line per `source` line, same order (blank lines between are
     fine; keep leading '## ' or '[^n]: ' markers). Returns ok with the chunks still to do, or a list of problems
     (line number, what is wrong) to fix; then resubmit this chunk only. Checked: line count, kept [^n] marks, URLs and
-    [[Sn]] ids, Church glossary renderings, numbers, length, untranslated lines."""
-    return workflow.submit_chunk(T(), job_id, n, translation)
+    [[Sn]] ids, Church glossary renderings, numbers, length, untranslated lines. If get_chunk gave a machine `draft`, you may send only `edits` ({"3": "corrected line 3"}, line numbers as in `draft`); lines you do not list are accepted as drafted."""
+    return workflow.submit_chunk(T(), job_id, n, translation, edits)
 
 
-@mcp.tool()
+@tool
 def job_status(job_id: str) -> dict:
     """Progress of a translation job: chunks and which are still to do (use it to resume)."""
     return workflow.job_status(job_id)
 
 
-@mcp.tool()
+@tool
 def finish_translation(job_id: str, output_path: str = "", fill_missing_locally: bool = False) -> dict:
     """Step 4. Assemble all chunks into the final file (scripture ids replaced by the Church's text, title and
     structure restored), write it to `output_path` (or the path given to prepare_translation) and return the path
@@ -112,7 +125,7 @@ def finish_translation(job_id: str, output_path: str = "", fill_missing_locally:
     return workflow.finish(T(), job_id, output_path, fill_missing_locally)
 
 
-@mcp.tool()
+@tool
 def get_translation(doc_id: str, start: int = 0, end: int = 20, flagged_only: bool = False) -> dict:
     """Read back segments (source + translation) of a saved job. `flagged_only` returns only segments needing
     review. At most 20 segments per call."""
@@ -125,7 +138,7 @@ def get_translation(doc_id: str, start: int = 0, end: int = 20, flagged_only: bo
     return {"doc_id": doc_id, "total": len(rep), "segments": rows[:20]}
 
 
-@mcp.tool()
+@tool
 def match_glossary(text: str, lang: str) -> dict:
     """Return only the glossary entries relevant to `text` (the cheap way to translate it yourself with
     correct Church terminology). 'use' is the required rendering; confidence 'hint' means unconfirmed."""
@@ -139,7 +152,7 @@ def match_glossary(text: str, lang: str) -> dict:
     return {"lang": lang, "glossary_version": g.version, "terms": out}
 
 
-@mcp.tool()
+@tool
 def check_translation(source: str, translation: str, lang: str) -> dict:
     """Validate a translation against the glossary (required renderings) plus number and length checks.
     Returns what to fix, not the full text."""
@@ -150,7 +163,7 @@ def check_translation(source: str, translation: str, lang: str) -> dict:
     return {"ok": not probs, "problems": probs}
 
 
-@mcp.tool()
+@tool
 def lookup_term(term: str, lang: str) -> dict:
     """Look up a term in English OR in pt/es (reverse lookup). Returns the preferred Church rendering, variants,
     confidence (approved / attested / user / hint) and a link to the Urim atlas page with sources."""
@@ -159,7 +172,7 @@ def lookup_term(term: str, lang: str) -> dict:
     return {"lang": lang, "results": [e.brief() for e in g.lookup(term)]}
 
 
-@mcp.tool()
+@tool
 def glossary_add(en: str, target: str, lang: str, note: str = "") -> dict:
     """Add or replace a user glossary override (enforced, takes precedence over the Church glossary)."""
     _check_lang(lang)
@@ -168,7 +181,7 @@ def glossary_add(en: str, target: str, lang: str, note: str = "") -> dict:
     return {"ok": True, "glossary_version": T().glossary(lang).version}
 
 
-@mcp.tool()
+@tool
 def glossary_remove(en: str, lang: str) -> dict:
     """Remove a user glossary override."""
     _check_lang(lang)
@@ -177,7 +190,7 @@ def glossary_remove(en: str, lang: str) -> dict:
     return {"removed": ok}
 
 
-@mcp.tool()
+@tool
 def glossary_list(lang: str, query: str = "") -> dict:
     """List user overrides plus counts for the Church glossary; with `query`, list matching entries."""
     _check_lang(lang)
@@ -191,7 +204,7 @@ def glossary_list(lang: str, query: str = "") -> dict:
     return res
 
 
-@mcp.tool()
+@tool
 def search_memory(query: str, lang: str = "", origin: str = "", limit: int = 10) -> dict:
     """Full-text search of the translation memory (source and target). `origin`: 'church' for official Church
     paragraphs, or a backend name (argos, ollama...)."""
@@ -201,7 +214,7 @@ def search_memory(query: str, lang: str = "", origin: str = "", limit: int = 10)
     return {"results": rows, "memory": T().store.tm_stats()}
 
 
-@mcp.tool()
+@tool
 def to_deseret(text: str, confident_only: bool = False) -> dict:
     """Transliterate English text into the Deseret Alphabet (the 38-letter script of the 1860s Church
     printings), using the pulpit-vault engine: dictionary spellings, context-resolved heteronyms
@@ -214,7 +227,7 @@ def to_deseret(text: str, confident_only: bool = False) -> dict:
     return {"deseret": out, **cov}
 
 
-@mcp.tool()
+@tool
 def deseret_file(path: str, output_path: str = "", confident_only: bool = False) -> dict:
     """Transliterate a markdown/text file into the Deseret Alphabet. Frontmatter, code blocks, tables,
     footnote labels and references, links and URLs are kept as they are. The result is written to disk
@@ -233,7 +246,7 @@ def deseret_file(path: str, output_path: str = "", confident_only: bool = False)
     return {"output_path": str(dest), **cov}
 
 
-@mcp.tool()
+@tool
 def backends_status() -> dict:
     """Which translation backends are available (Argos, LibreTranslate, Ollama) and why not, if unavailable."""
     return {"backends": T().status(), "ollama_model": config.OLLAMA_MODEL, "home": str(config.HOME),

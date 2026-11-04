@@ -10,3 +10,4 @@ work/
 matrix.lock/
 runs.lock
 home-argos/
+home-local/

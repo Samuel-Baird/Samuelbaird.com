@@ -97,3 +97,16 @@ was Ollama only.
 | Argos draft + Ollama post-edit | 147 | 77.8 |
 
 Same two talks (Becerra, Hall). Argos is about 2.6 times faster and about 1.4 chrF lower; neither approaches the Haiku pipeline (about 85). Two talks only, so treat it as indicative.
+
+## Argos arms (Haiku as the agent, 6 talks x es/pt, final run)
+
+| arm | wall s | cost | chrF | est. whole corpus, 1 agent |
+|---|---|---|---|---|
+| `pipeline-claude-haiku` | 68 | $0.018 | 85.1 | 15.9 days, about $360 |
+| `pipeline-draft-claude-haiku` (Argos drafts, Haiku corrects) | 99 | $0.021 | 85.3 | 22.9 days, about $420 |
+| `local-claude-haiku` (Argos + Ollama via `translate_file`) | 289 | $0.004 | 78.3 | 67 days, about $71 (agent only; the translation itself is free) |
+| `pulpit-claude-haiku` | 127 (5 of 12 completed) | $0.109 | 85.4 | 39 days, about $2,800 per delivered talk basis |
+
+`--draft` (or `URIM_DRAFT=1`) makes `prepare_translation` pre-translate every line with Argos so the agent can send only `edits`.
+Haiku rewrote most draft lines anyway (the drafts had real errors), so drafts added time without improving chrF. The local arm uses
+`local.prompt.md` and a fresh `home-local` memory with the held-out glossary. Corpus figures: 26.2M words, linear scaling from 1,300-word talks.
