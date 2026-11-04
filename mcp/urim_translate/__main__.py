@@ -1,6 +1,4 @@
-"""python -m urim_translate [serve | setup | seed-tm [--exclude=2026-04] | build-scriptures | status]
-
-setup installs the Argos en->pt/es packages, Ollama and its model (also runs automatically on first serve)."""
+"""python -m urim_translate [serve | seed-tm [--exclude=2026-04] | build-scriptures | status]"""
 import json
 import sys
 
@@ -36,9 +34,6 @@ def main(argv):
     if cmd == "serve":
         from .server import main as serve
         serve()
-    elif cmd == "setup":
-        from .setup import run
-        run(force=True)
     elif cmd == "seed-tm":
         args = argv[1:]
         exclude = [a.split("=", 1)[1] for a in args if a.startswith("--exclude=")]   # e.g. --exclude=2026-04 (held-out talks)
@@ -49,7 +44,7 @@ def main(argv):
     elif cmd == "status":
         from .translator import Translator
         t = Translator()
-        print(json.dumps({"backends": t.status(), "memory": t.store.tm_stats(), "home": str(config.HOME)}, indent=1))
+        print(json.dumps({"memory": t.store.tm_stats(), "home": str(config.HOME)}, indent=1))
     else:
         print(__doc__)
         return 2

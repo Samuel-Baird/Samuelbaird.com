@@ -5,12 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "urim-translate"
 version = "0.1.0"
-description = "Local, free translation MCP server that enforces Church-attested LDS terminology (Urim)."
+description = "Translation MCP server for any agent: Church-attested LDS terminology, scripture text and validation (Urim)."
 requires-python = ">=3.11"
-dependencies = ["mcp>=2", "httpx", "pyyaml"]
+dependencies = ["mcp>=2", "pyyaml"]
 
 [project.optional-dependencies]
-argos = ["argostranslate"]
 test = ["pytest"]
 
 [tool.setuptools.packages.find]

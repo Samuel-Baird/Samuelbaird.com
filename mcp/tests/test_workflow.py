@@ -4,7 +4,7 @@ import re
 
 import pytest
 
-from test_engine import FakeMT, fixtures, tr  # noqa: F401  (fixtures: autouse glossary/books patches)
+from test_engine import fixtures, tr  # noqa: F401  (fixtures: autouse glossary/books patches)
 from urim_translate import config, scriptures, workflow
 
 JOHN316 = ("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him "
@@ -146,14 +146,6 @@ def test_bad_inputs_never_raise(doc, tmp_path):
     assert workflow.get_chunk(f" {jid} ", "1")["ok"]                      # whitespace and "1" as text are tolerated
 
 
-def test_finish_with_missing_chunks(doc):
-    jid = prep(doc)["job_id"]
-    r = workflow.finish(tr([]), jid)
-    assert not r["ok"] and "[1, 2]" in r["error"] and "fill_missing_locally" in r["hint"]
-    r = workflow.finish(tr([FakeMT()]), jid, fill_missing_locally=True)
-    assert r["ok"] and r["lines_by_origin"]["local"] == 5
-
-
 def test_resume_keeps_progress_and_chunks_respect_paragraphs(tmp_path):
     paras = [f"Paragraph {i}: " + "word " * 40 for i in range(10)]
     p = tmp_path / "long.md"
@@ -200,57 +192,12 @@ def test_server_exposes_the_pipeline_and_the_recipe():
     from urim_translate import server
     tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
     for name in ("prepare_translation", "get_chunk", "submit_chunk", "finish_translation", "job_status",
-                 "translate_file", "translate_text", "match_glossary", "check_translation", "backends_status"):
+                 "match_glossary", "check_translation", "lookup_term"):
         assert name in tools, name
+    assert "translate_file" not in tools and "backends_status" not in tools
     ins = server.mcp.instructions
     assert all(w in ins for w in ("prepare_translation", "get_chunk", "submit_chunk", "finish_translation", "parallel"))
-    assert "LOCAL" in tools["translate_file"].description        # a model must not mistake the slow route for the main one
-    assert "edits" in ins
 
-
-class FakeDraft(FakeMT):
-    """A machine translator that gets one Church term wrong ('poder' for priesthood) and keeps masked tokens."""
-    CANNED = {
-        "The Test Tal": "A Prueba",
-        "Brothers, th": "Irmãos, o poder é o poder de Deus. Jesus ensinou: “⟦1⟧”⟦2⟧ Ele nos pediu que fôssemos fiéis em tudo⟦3⟧ todos os dias de nossas vidas.",
-        "Gifts": "Dons",
-        "The endowmen": "A investidura é 1 dom entre 3 outros que recebemos no templo do Senhor hoje.",
-        "A talk by an": "Uma palestra de um apóstolo, 2020.",
-    }
-
-    def translate(self, texts, lang):
-        return [self.CANNED[t[:12]] for t in texts]
-
-
-def test_draft_mode_only_corrections_are_sent(doc):
-    t = tr([FakeDraft()])
-    r = workflow.prepare(t, doc, "pt", draft=True)
-    assert r["ok"] and "edits" in r["instructions"]
-    jid = r["job_id"]
-    c = workflow.get_chunk(jid, 1)
-    assert set(c["draft"]) == {"1", "2", "3", "4"} and "poder" in c["draft"]["2"]
-    assert "sacerdócio" in " ".join(c["draft_issues"]["2"]) and "1" not in c["draft_issues"]
-    bad = workflow.submit_chunk(t, jid, 1, edits={})
-    assert not bad["ok"] and bad["problems"][0]["line"] == 2 and "edits" in bad["hint"]
-    assert workflow.submit_chunk(t, jid, 1, edits={"9": "x"})["ok"] is False
-    assert workflow.submit_chunk(t, jid, 1, edits="nonsense")["ok"] is False
-    good = workflow.submit_chunk(t, jid, 1, edits={"2": GOOD[1]})
-    assert good["ok"], good
-    assert workflow.submit_chunk(t, jid, 2, edits={})["ok"]              # the footnote draft was fine as it was
-    f = workflow.finish(t, jid)
-    assert f["ok"] and f["lines_by_origin"]["draft"] == 4 and f["lines_by_origin"]["agent"] == 1
-    out = open(f["output_path"], encoding="utf-8").read()
-    assert "\n## Dons\n" in out and "Irmãos, o sacerdócio" in out and "[[" not in out
-
-
-def test_draft_mode_without_a_translator_falls_back_to_plain_pipeline(doc):
-    t = tr([])
-    jid = workflow.prepare(t, doc, "pt", draft=True)["job_id"]
-    c = workflow.get_chunk(jid, 1)
-    assert "draft" not in c
-    ok = workflow.submit_chunk(t, jid, 1, "\n".join(GOOD))
-    assert ok["ok"]
-    assert not workflow.submit_chunk(t, jid, 2, edits={})["ok"]          # no draft: asks for the translation instead
 
 
 def test_ordinary_space_in_a_citation_is_accepted():
@@ -261,23 +208,6 @@ def test_ordinary_space_in_a_citation_is_accepted():
     fixed = workflow._restore_spaces(ln, typed)
     assert fixed == "[2 Nefi 33:6]([[L1]])."
     assert not any("exactly as written" in h for h in workflow._check(ln, fixed, tr([]), "es", tr([]).glossary("es"))[0])
-
-
-def test_submit_returns_the_next_chunk_unless_asked_not_to(doc):
-    t = tr([])
-    jid = prep(doc)["job_id"]
-    ok = workflow.submit_chunk(t, jid, 1, "\n".join(GOOD))
-    assert ok["ok"] and ok["next"] == 2 and ok["next_chunk"]["chunk"] == 2 and "[^3]" in ok["next_chunk"]["source"]
-    last = workflow.submit_chunk(t, jid, 2, "[^3]: Uma palestra de um apóstolo, 2020.")
-    assert last["ok"] and "next_chunk" not in last
-    jid2 = workflow.prepare(t, doc, "pt", output_path="x.md")["job_id"]
-    assert "next_chunk" not in workflow.submit_chunk(t, jid2, 1, "\n".join(GOOD), include_next=False)
-
-
-def test_default_chunk_size_is_about_nine_hundred_words(tmp_path):
-    p = tmp_path / "long.md"
-    p.write_text("\n\n".join("Paragraph %d: %s" % (i, "word " * 99) for i in range(18)), encoding="utf-8")
-    assert len(workflow.prepare(tr([]), p, "pt")["chunks"]) <= 3 < len(workflow.prepare(tr([]), p, "pt", max_words=450)["chunks"])
 
 
 def test_reference_footnotes_may_stay_close_to_the_english(tmp_path):
@@ -304,3 +234,9 @@ def test_link_style_citation_after_a_quote_fills_the_church_text(tmp_path):
     assert r["already_done"]["scripture_quotes_filled_from_church_text"] == 1
     c = workflow.get_chunk(r["job_id"], 1)
     assert "[[S1]]" in c["source"] and "everlasting" not in c["source"]
+
+
+def test_finish_with_missing_chunks(doc):
+    jid = prep(doc)["job_id"]
+    r = workflow.finish(tr(), jid)
+    assert not r["ok"] and "[1, 2]" in r["error"] and "submit_chunk" in r["hint"]

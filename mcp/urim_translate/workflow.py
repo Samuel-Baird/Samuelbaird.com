@@ -20,8 +20,8 @@ from pathlib import Path
 from . import config, scriptures, segment
 from .textutil import fold
 
-FORMAT = 4                  # bump when the job files change shape: it is part of the job id, so old jobs are never resumed
-MAX_WORDS = 900            # target words per chunk (a paragraph is never split)
+FORMAT = 5                  # bump when the job files change shape: it is part of the job id, so old jobs are never resumed
+MAX_WORDS = 450            # target words per chunk (a paragraph is never split)
 SOFT_ATTEMPTS = 3          # on this attempt, chunks whose only problems are soft (glossary, numbers, length) are accepted
 QUOTE = re.compile(r"“([^”]{12,}?)”|\"([^\"]{12,}?)\"")
 FN_AFTER = re.compile(r"^[.,;:!?]{0,2}((?:\[\^\w+\])+)")
@@ -31,25 +31,15 @@ FN_REF = re.compile(r"\[\^\w+\]")
 TRAIL = re.compile(r"[.,;:!?]+$")
 ENGLISH = set("the and of to that is was for with are this his her have has not but they you your their which who "
               "from will would our we be by as it in on at an or".split())
-INSTRUCTIONS_DRAFT = (
-    "Each chunk comes with a machine-translated `draft` (numbered like the lines of `source`) and `draft_issues` (lines that "
-    "already break a rule). For each chunk number in `todo`: get_chunk(job_id, n), check the draft against the source, then "
-    "submit_chunk(job_id, n, edits={\"3\": \"corrected line 3\"}) with only the lines you change; lines you do not list are "
-    "accepted as drafted. Fix every line in `draft_issues`, and any mistranslation, wrong term or awkward Church register. "
-    "Keep [^n] marks, ids like [[S1]], URLs and citations as written, and use each rendering in `terms`. If submit_chunk "
-    "reports problems, send edits for those lines only. Chunks are independent: parallel if you can, else one by one. "
-    "When nothing is left to do, call finish_translation(job_id)."
-)
 STYLE = {
     "es": "Spanish for Latin America in the formal register of the Church's own translations (address the audience as 'ustedes').",
     "pt": "Brazilian Portuguese in the formal register of the Church's own translations (address the audience as 'vocês').",
 }
 INSTRUCTIONS = (
-    "Call get_chunk(job_id, n) for the first chunk number in `todo`, translate every line of `source` (one output line per "
-    "input line, same order; keep a leading '## ', '- ' or '[^n]: ' marker), then call submit_chunk(job_id, n, translation); when it succeeds it returns the next chunk as `next_chunk`: translate that one next, "
-    "without calling get_chunk again. "
+    "For each chunk number in `todo`: call get_chunk(job_id, n), translate every line of `source` (one output line per "
+    "input line, same order; keep a leading '## ', '- ' or '[^n]: ' marker), then call submit_chunk(job_id, n, translation). "
     "Keep [^n] marks, ids like [[S1]], URLs and scripture citations exactly as written, and use each rendering listed in "
-    "`terms` (each lists the line numbers it applies to). If submit_chunk reports problems, fix those lines and resubmit only that chunk. Chunks are independent: "
+    "`terms`. If submit_chunk reports problems, fix those lines and resubmit only that chunk. Chunks are independent: "
     "translate them in parallel if you can, otherwise one by one. When nothing is left to do, call finish_translation(job_id)."
 )
 
@@ -224,7 +214,7 @@ def _front_title(raw):
     return v[1:-1] if len(v) > 1 and v[0] == v[-1] and v[0] in "\"'" else v
 
 
-def prepare(tr, path, lang, output_path="", max_words=MAX_WORDS, draft=None):
+def prepare(tr, path, lang, output_path="", max_words=MAX_WORDS):
     if lang not in config.UI_LANGS:
         return _err(f"unsupported language '{lang}'", f"use one of: {', '.join(config.UI_LANGS)}")
     p = Path(str(path).strip().strip('"'))
@@ -241,11 +231,7 @@ def prepare(tr, path, lang, output_path="", max_words=MAX_WORDS, draft=None):
     except (TypeError, ValueError):
         max_words = MAX_WORDS
     g = tr.glossary(lang)
-    if draft is None:
-        draft = str(config.get("draft", "0")).lower() in ("1", "true", "yes")
-    mt = tr._first("mt") if draft else None             # a machine-translation backend (Argos / LibreTranslate), if any
-    draft = bool(mt)
-    job_id = "j" + hashlib.sha1(f"{FORMAT}|{p.resolve()}|{output_path}|{lang}|{g.version}|{max_words}|{int(draft)}|{text}".encode()).hexdigest()[:9]
+    job_id = "j" + hashlib.sha1(f"{FORMAT}|{p.resolve()}|{output_path}|{lang}|{g.version}|{max_words}|{text}".encode()).hexdigest()[:9]
     if (jobdir(job_id) / "job.json").exists():
         job, _ = _load_job(job_id)
         if output_path:
@@ -304,18 +290,14 @@ def prepare(tr, path, lang, output_path="", max_words=MAX_WORDS, draft=None):
             if skel:
                 skel["chunk"], skel["line"] = n, k
             ln["i"] = k
-        terms, seen = [], {}
-        for pos, ln in enumerate([x for x in grp if x["state"] == "pending"], 1):
-            for m in g.match(ln["shown"]):
-                if m.entry.confidence in ("approved", "attested", "user"):
-                    if m.entry.id not in seen:
-                        seen[m.entry.id] = len(terms)
-                        terms.append({**m.entry.brief(), "lines": []})
-                    if pos not in terms[seen[m.entry.id]]["lines"]:
-                        terms[seen[m.entry.id]]["lines"].append(pos)
+        terms, seen = [], set()
+        for ln in grp:
+            if ln["state"] == "pending":
+                for m in g.match(ln["shown"]):
+                    if m.entry.id not in seen and m.entry.confidence in ("approved", "attested", "user"):
+                        seen.add(m.entry.id)
+                        terms.append(m.entry.brief())
         pend = [x for x in grp if x["state"] == "pending"]
-        if mt and pend:
-            _draft_lines(mt, lang, g, pend)
         for t in terms:
             t.pop("url", None)
             t.pop("confidence", None)
@@ -323,41 +305,11 @@ def prepare(tr, path, lang, output_path="", max_words=MAX_WORDS, draft=None):
                  "status": "pending" if pend else "done", "words": sum(_words(x["shown"]) for x in pend)}
     job = {"job_id": job_id, "lang": lang, "source_path": str(p.resolve()), "created": time.time(),
            "output_path": str(output_path) if output_path else "", "glossary_version": g.version,
-           "chunks": len(groups), "blocks": skeleton, "scripture": scripture, "links": links, "has_title": bool(title_line),
-           "draft": draft}
+           "chunks": len(groups), "blocks": skeleton, "scripture": scripture, "links": links, "has_title": bool(title_line)}
     for n, c in gl.items():
         _write(_chunk_path(job_id, n), c)
     _write(jobdir(job_id) / "job.json", job)
     return _summary(job)
-
-
-def _draft_lines(mt, lang, g, lines):
-    """Machine-translate pending lines (tokens that must survive are masked), keep drafts that respect the structure rules,
-    and record the soft problems of each draft so the agent knows which lines to fix."""
-    masked, maps = [], []
-    for ln in lines:
-        toks = sorted(set(ln["keep"]), key=len, reverse=True)
-        ph = {}
-        if toks:
-            rx = re.compile("|".join(re.escape(t) for t in toks))
-
-            def put(m, ph=ph):
-                ph[len(ph) + 1] = m.group(0)
-                return segment.PH.format(len(ph))
-            masked.append(rx.sub(put, ln["shown"]))
-        else:
-            masked.append(ln["shown"])
-        maps.append(ph)
-    try:
-        outs = mt.translate(masked, lang)
-    except Exception:
-        return
-    for ln, ph, o in zip(lines, maps, outs):
-        d = _restore_spaces(ln, segment.restore(o, ph)).strip()
-        hard, soft, _ = _check(ln, d, None, lang, g)
-        if hard:
-            continue
-        ln["draft"], ln["draft_issues"] = d, soft
 
 
 def _summary(job, resumed=False):
@@ -369,7 +321,7 @@ def _summary(job, resumed=False):
            "already_done": {"lines_from_church_translation_memory": done.get("tm", 0),
                             "footnotes_that_are_only_scripture_citations": done.get("citation", 0),
                             "scripture_quotes_filled_from_church_text": len(job["scripture"])},
-           "style": STYLE[job["lang"]], "instructions": INSTRUCTIONS_DRAFT if job.get("draft") else INSTRUCTIONS}
+           "style": STYLE[job["lang"]], "instructions": INSTRUCTIONS}
     return out
 
 
@@ -401,12 +353,6 @@ def get_chunk(job_id, n):
         out["quotes"] = quotes
         out["quotes_note"] = ("each item: the words quoted just before `at` come from this Church verse; reuse its "
                               "wording for the same part")
-    drafts = {str(i): ln["draft"] for i, ln in enumerate(pend, 1) if ln.get("draft")}
-    if drafts:
-        out["draft"] = drafts
-        out["draft_issues"] = {str(i): ln["draft_issues"] for i, ln in enumerate(pend, 1) if ln.get("draft_issues")}
-        out["draft_note"] = ("machine draft per line number; submit_chunk(job_id, n, edits={\"line\": \"corrected text\"}) with "
-                             "only the lines you change; unlisted lines are accepted as drafted. Fix draft_issues first")
     if c["status"] == "needs_fix":
         out["previous_problems"] = c["problems"]
     return out
@@ -482,7 +428,7 @@ def _strip_prefix(s):
     return s[m.end():] if m else s
 
 
-def submit_chunk(tr, job_id, n, translation="", edits=None, include_next=True):
+def submit_chunk(tr, job_id, n, translation):
     job, e = _load_job(job_id)
     if e:
         return e
@@ -492,37 +438,13 @@ def submit_chunk(tr, job_id, n, translation="", edits=None, include_next=True):
     pend = _pending(c)
     if not pend:
         return {"ok": True, "chunk": c["n"], "note": "this chunk needs no translation", **_progress(job)}
-    has_text = bool(translation) and (not isinstance(translation, str) or translation.strip())
-    from_draft = set()
-    if not has_text and (edits is not None or any(ln.get("draft") for ln in pend)):
-        if edits is None:
-            edits = {}
-        if isinstance(edits, list):
-            edits = {str(e.get("line")): e.get("text", "") for e in edits if isinstance(e, dict)}
-        if not isinstance(edits, dict):
-            return _err("edits must be an object {line number: corrected text}", 'for example edits={"3": "texto corregido"}')
-        edits = {str(k).strip(): " ".join(str(v).split()) for k, v in edits.items()}
-        bad = [k for k in edits if not (k.isdigit() and 1 <= int(k) <= len(pend))]
-        if bad:
-            return _err(f"edits has unknown line numbers {bad}; this chunk has lines 1 to {len(pend)}")
-        got, missing = [], []
-        for i, ln in enumerate(pend, 1):
-            if str(i) in edits:
-                got.append(edits[str(i)])
-            elif ln.get("draft"):
-                got.append(ln["draft"])
-                from_draft.add(i)
-            else:
-                missing.append(i)
-        if missing:
-            return _err(f"lines {missing} have no draft: send their translation in edits",
-                        "or submit the whole chunk as `translation`")
-    elif isinstance(translation, (list, tuple)):
-        got = [str(x).strip() for x in translation if str(x).strip()]
+    if isinstance(translation, (list, tuple)):
+        raw = [str(x) for x in translation]
     elif isinstance(translation, str):
-        got = [x.strip() for x in translation.split("\n") if x.strip()]
+        raw = translation.split("\n")
     else:
         return _err("translation must be text: one line per source line", "send a string, lines separated by newlines")
+    got = [x.strip() for x in raw if x.strip()]
     if len(got) != len(pend):
         c["attempts"] += 1
         c["status"], c["problems"] = "needs_fix", [f"expected {len(pend)} lines, got {len(got)}"]
@@ -548,15 +470,13 @@ def submit_chunk(tr, job_id, n, translation="", edits=None, include_next=True):
         _write(_chunk_path(job["job_id"], c["n"]), c)
         return {"ok": False, "chunk": c["n"], "attempt": c["attempts"], "problems": probs + flags,
                 **({"warnings": warns} if warns else {}),
-                "hint": ("send edits for these lines only" if from_draft else "fix these lines and resubmit all lines of this chunk")
+                "hint": "fix these lines and resubmit all lines of this chunk"
                         + ("" if probs else f"; after attempt {SOFT_ATTEMPTS} a chunk with only these problems is accepted and flagged")}
-    for i, (ln, t) in enumerate(zip(pend, cleaned), 1):
-        ln.update(state="agent", target=t, origin="draft" if i in from_draft else "agent")
+    for ln, t in zip(pend, cleaned):
+        ln.update(state="agent", target=t, origin="agent")
     c["status"], c["problems"] = "done", [x["problem"] for x in flags]
     _write(_chunk_path(job["job_id"], c["n"]), c)
     out = {"ok": True, "chunk": c["n"], **_progress(job)}
-    if include_next and out["next"]:                 # saves a round trip: the next chunk comes with the answer
-        out["next_chunk"] = get_chunk(job["job_id"], out["next"])
     if flags:
         out["accepted_with_issues"] = flags
     if warns:
@@ -576,27 +496,17 @@ def job_status(job_id):
 
 
 # ---------------------------------------------------------------- finish
-def finish(tr, job_id, output_path="", fill_missing_locally=False):
+def finish(tr, job_id, output_path=""):
     job, e = _load_job(job_id)
     if e:
         return e
     lang, jid = job["lang"], job["job_id"]
     cs = _chunks(jid, job["chunks"])
     todo = [c for c in cs if c["status"] != "done"]
-    local_lines = 0
-    if todo and not fill_missing_locally:
+    if todo:
         return {"ok": False, "error": f"{len(todo)} chunk(s) are not translated yet: {[c['n'] for c in todo]}",
                 "needs_fix": [c["n"] for c in todo if c["status"] == "needs_fix"],
-                "hint": "translate and submit them, or call finish_translation with fill_missing_locally=true "
-                        "to use the local backends (Argos/Ollama) for them"}
-    if todo:
-        lines = [ln for c in todo for ln in c["lines"] if ln["state"] == "pending"]
-        segs = tr.translate_segments([ln["src"] for ln in lines], lang)
-        for ln, s in zip(lines, segs):
-            ln.update(state="local", target=s.target, origin="local:" + (s.origin or "none"), flags=s.flags)
-            local_lines += 1
-        for c in todo:
-            _write(_chunk_path(jid, c["n"]), c)
+                "hint": "translate and submit them with submit_chunk, then call finish_translation again"}
     by = {(c["n"], ln["i"]): ln for c in cs for ln in c["lines"]}
     sc = job["scripture"]
     out_lines = []
@@ -633,4 +543,4 @@ def finish(tr, job_id, output_path="", fill_missing_locally=False):
             "chunks": job["chunks"], "lines_by_origin": dict(origin),
             "scripture_quotes_from_church_text": len(sc), "flagged": issues[:10], "flagged_total": len(issues),
             **({"error": f"unfilled scripture ids remain: {left}"} if left else {}),
-            "hint": "flagged items were accepted with problems or came from the local backends; review them" if issues else ""}
+            "hint": "flagged items were accepted with problems; review them" if issues else ""}

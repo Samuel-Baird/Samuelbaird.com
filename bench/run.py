@@ -1,9 +1,9 @@
-"""Benchmark: Pulpit's own translation instructions vs the Urim MCP (local route and agent pipeline), same talks.
+"""Benchmark of the Urim agent pipeline (prepare_translation / get_chunk / submit_chunk / finish_translation) on the April 2026
+talks, scored against the Church's official translation. The agent is headless Claude Code or OpenAI's Codex CLI.
 
-    python bench/run.py --arm pulpit --lang es --talks 2          # run (default agent: headless Claude Code)
-    python bench/run.py --arm urim --lang pt --talks 2
-    python bench/run.py --arm pipeline --agent claude --model haiku --lang es --talks 6   # prepare/get/submit/finish
-    python bench/run.py --arm pipeline --agent codex --lang es --talks 2                  # same tools, another vendor's agent
+    mcp/.venv/Scripts/python bench/heldout.py                                            # once: glossary + TM without 2026-04
+    python bench/run.py --arm pipeline --agent claude --model haiku --lang es --talks 6
+    python bench/run.py --arm pipeline --agent codex --lang es --talks 2                 # same tools, another vendor's agent
     python bench/run.py --score                                    # score everything in bench/out, write results.csv and results.md
 
 Per run it records wall time, API time, turns, tokens (input, output, cache read/write), cost, tool-call counts and
@@ -30,7 +30,7 @@ TALKS = [                      # April 2026, 1.3k to 1.7k words each, different 
     "2026-04-holmes-jesus-christ-is-the-way",
     "2026-04-eyring-prayers-for-peace",
 ]
-MODEL = os.environ.get("BENCH_MODEL", "sonnet")
+MODEL = os.environ.get("BENCH_MODEL", "haiku")
 URIM_PY = URIM / "mcp" / ".venv" / "Scripts" / "python.exe"
 CORPUS_WORDS = 26_228_101          # words in the 12,198 English talks of pulpit-vault (frontmatter excluded)
 HELD = HERE / "heldout" / "data" / "glossary"      # glossary rebuilt without the test conference (bench/heldout.py)
@@ -55,31 +55,17 @@ def leaked(blob, talk, lang):
                 or re.search(rf"parallel-corpus-{lang}[^\"]*{re.escape(talk)}", b))
 
 
-def _mcp_env(arm, tag="", lang="", talk="", draft=False):
+def _mcp_env(arm, tag="", lang="", talk=""):
     env = dict(os.environ)
-    if arm == "urim":
-        env["URIM_HOME"] = str(HERE / "home")                   # fresh memory: no Church translations of the test talks
-    elif arm == "local":
-        env["URIM_HOME"] = str(HERE / "home-local")             # empty memory; local models only (Argos draft + Ollama post-edit)
-        env["URIM_GLOSSARY_DIR"] = str(HELD)
-        env["URIM_AUTO_SETUP"] = "0"
-    elif arm == "pipeline":
-        env["URIM_HOME"] = str(HERE / "home-pipeline")          # memory seeded with the Church corpus minus the test conference
-        env["URIM_GLOSSARY_DIR"] = str(HELD)                    # glossary evidence minus the test conference
-        env["URIM_AUTO_SETUP"] = "0"                            # the pipeline arm needs no local models
-        if draft:
-            env["URIM_DRAFT"] = "1"                             # Argos drafts every line; the agent only sends corrections
-        env["URIM_JOBS_DIR"] = str(HERE / "jobs" / f"{tag}-{lang}-{talk}-{int(time.time())}")   # a rerun never resumes an earlier run's job
+    env["URIM_HOME"] = str(HERE / "home-pipeline")              # memory seeded with the Church corpus minus the test conference
+    env["URIM_GLOSSARY_DIR"] = str(HELD)                        # glossary evidence minus the test conference
+    env["URIM_JOBS_DIR"] = str(HERE / "jobs" / f"{tag}-{lang}-{talk}-{int(time.time())}")   # a rerun never resumes an earlier run's job
     return env
 
 
 def _claude_cmd(arm, talk, lang, out, model):
     cmd = [shutil.which("claude") or "claude", "-p", prompt(arm, talk, lang, out), "--model", model, "--output-format", "stream-json",
            "--verbose", "--no-session-persistence", "--permission-mode", "bypassPermissions"]
-    if os.environ.get("BENCH_EFFORT"):                          # reasoning effort of the agent (a client setting, not the server's)
-        cmd += ["--effort", os.environ["BENCH_EFFORT"]]
-    if arm == "pulpit":
-        return cmd + ["--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}'], VAULT     # its CLAUDE.md / AGENTS.md load as in real use
     cwd = HERE / "work"                                         # an empty folder: nothing but the urim tools
     cwd.mkdir(exist_ok=True)
     cfg = {"mcpServers": {"urim": {"command": str(URIM_PY), "args": ["-m", "urim_translate"]}}}
@@ -96,7 +82,7 @@ def _codex_cmd(arm, talk, lang, out, env):
            "-c", f'{srv}.default_tools_approval_mode="approve"',
            "-c", f"{srv}.command={json.dumps(str(URIM_PY))}", "-c", f'{srv}.args=["-m","urim_translate"]',
            "-c", f"{srv}.env.URIM_HOME={json.dumps(env['URIM_HOME'])}", "-c", f"{srv}.env.URIM_JOBS_DIR={json.dumps(env['URIM_JOBS_DIR'])}",
-           "-c", f"{srv}.env.URIM_GLOSSARY_DIR={json.dumps(str(HELD))}", "-c", f'{srv}.env.URIM_AUTO_SETUP="0"',
+           "-c", f"{srv}.env.URIM_GLOSSARY_DIR={json.dumps(str(HELD))}",
            prompt(arm, talk, lang, out)]
     return cmd, cwd
 
@@ -179,18 +165,12 @@ def _append(rp, row):
         w.writerows(old + [row])
 
 
-def run(arm, talk, lang, agent="claude", model=MODEL, draft=False):
-    base = arm + ("-draft" if draft else "")
-    tag = arm if (arm in ("urim",) or (agent == "claude" and model == "sonnet" and arm == "pulpit")) else \
-        (f"{base}-claude-{model}" if agent == "claude" else f"{base}-{agent}")
-    if os.environ.get("BENCH_EFFORT") and agent == "claude":
-        tag += "-effort-" + os.environ["BENCH_EFFORT"]
-    if os.environ.get("BENCH_LABEL"):
-        tag += "-" + os.environ["BENCH_LABEL"]
+def run(arm, talk, lang, agent="claude", model=MODEL):
+    tag = f"{arm}-claude-{model}" if agent == "claude" else f"{arm}-{agent}"
     out = OUT / tag / lang / f"{talk}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.unlink(missing_ok=True)
-    env = _mcp_env(arm, tag, lang, talk, draft)
+    env = _mcp_env(arm, tag, lang, talk)
     cmd, cwd = _claude_cmd(arm, talk, lang, out, model) if agent == "claude" else _codex_cmd(arm, talk, lang, out, env)
     t0 = time.time()
     lines = []
@@ -243,9 +223,8 @@ def _claude_leak(tp, talk, lang):
 
 def score():
     sys.path.insert(0, str(URIM / "mcp"))
-    os.environ.setdefault("URIM_AUTO_SETUP", "0")
     from urim_translate.translator import Seg, Translator
-    tr = Translator(backends=[])          # the same full Church glossary judges every arm, whatever each arm could see
+    tr = Translator()                    # the same full Church glossary judges every arm, whatever each arm could see
     runs = {}
     for r in csv.DictReader((HERE / "runs.csv").open(encoding="utf-8")):
         runs[(r["arm"], r["lang"], r["talk"])] = r                  # the latest run of each wins
@@ -299,8 +278,7 @@ def score():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--arm", choices=["pulpit", "urim", "pipeline", "local"])
-    ap.add_argument("--draft", action="store_true", help="pipeline arm: Argos drafts every line, the agent sends corrections")
+    ap.add_argument("--arm", choices=["pipeline"], default="pipeline")
     ap.add_argument("--agent", choices=["claude", "codex"], default="claude")
     ap.add_argument("--model", default=MODEL, help="claude model alias (haiku, sonnet...)")
     ap.add_argument("--lang", choices=list(LANGS), default="es")
@@ -312,4 +290,4 @@ if __name__ == "__main__":
         score()
     else:
         for t in TALKS[a.start: a.start + a.talks]:
-            run(a.arm, t, a.lang, a.agent, a.model, a.draft)
+            run(a.arm, t, a.lang, a.agent, a.model)
