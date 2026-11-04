@@ -1,6 +1,6 @@
 # Samuel Baird: full text
 
-> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-03. Original data licensed CC BY 4.0.
+> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-04. Original data licensed CC BY 4.0.
 
 ## FAQ
 
@@ -34,7 +34,7 @@ He has logged 38 books and 13 articles, newest first. The three most recent are 
 
 ### Is the data on this site free to use?
 
-Yes. The original datasets on this site (the sacred sites list and the reading log) are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them with attribution to Samuel Baird and a link to samuelbaird.com. Download them as CSV or JSON from [Open data](https://samuelbaird.com/data). Latter-day Stats publishes its own datasets, each with sources.
+Yes. The original datasets and photographs on this site (the sacred sites list, the reading log and the [sacred sites photos](https://samuelbaird.com/sacred-sites/photos)) are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them with attribution to Samuel Baird and a link to samuelbaird.com. Download them as CSV or JSON from [Open data](https://samuelbaird.com/data). Latter-day Stats publishes its own datasets, each with sources.
 
 ### How should I cite this site?
 
