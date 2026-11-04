@@ -76,6 +76,8 @@ def _mcp_env(arm, tag="", lang="", talk="", draft=False):
 def _claude_cmd(arm, talk, lang, out, model):
     cmd = [shutil.which("claude") or "claude", "-p", prompt(arm, talk, lang, out), "--model", model, "--output-format", "stream-json",
            "--verbose", "--no-session-persistence", "--permission-mode", "bypassPermissions"]
+    if os.environ.get("BENCH_EFFORT"):                          # reasoning effort of the agent (a client setting, not the server's)
+        cmd += ["--effort", os.environ["BENCH_EFFORT"]]
     if arm == "pulpit":
         return cmd + ["--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}'], VAULT     # its CLAUDE.md / AGENTS.md load as in real use
     cwd = HERE / "work"                                         # an empty folder: nothing but the urim tools
@@ -181,6 +183,10 @@ def run(arm, talk, lang, agent="claude", model=MODEL, draft=False):
     base = arm + ("-draft" if draft else "")
     tag = arm if (arm in ("urim",) or (agent == "claude" and model == "sonnet" and arm == "pulpit")) else \
         (f"{base}-claude-{model}" if agent == "claude" else f"{base}-{agent}")
+    if os.environ.get("BENCH_EFFORT") and agent == "claude":
+        tag += "-effort-" + os.environ["BENCH_EFFORT"]
+    if os.environ.get("BENCH_LABEL"):
+        tag += "-" + os.environ["BENCH_LABEL"]
     out = OUT / tag / lang / f"{talk}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.unlink(missing_ok=True)

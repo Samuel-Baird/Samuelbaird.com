@@ -16,13 +16,13 @@ finish_translation(job_id)           -> writes the file, returns output_path and
 
 **Recipe for any agent** (the same text is in the server instructions):
 
-1. `prepare_translation(path, lang)` with `lang` `"es"` or `"pt"`; optional `output_path` and `max_words` (default 450 per chunk).
+1. `prepare_translation(path, lang)` with `lang` `"es"` or `"pt"`; optional `output_path` and `max_words` (default 900 per chunk).
 2. For each chunk number in `todo`: `get_chunk(job_id, n)`. Translate every line of `source`: one output line per input
    line, same order (blank lines between are fine). Keep a leading `## `, `- ` or `[^n]: `, keep `[^n]` marks, and keep
    ids like `[[S1]]` (Church scripture text that is inserted for you, inside your quotation marks) and `[[L1]]` (a link
    address) exactly once. Use every rendering in `terms`. Where `quotes` is present, reuse the Church wording given there.
 3. `submit_chunk(job_id, n, translation)`. On `ok: false` read `problems` (line number, what is wrong), fix those lines and
-   resubmit that chunk only. After three attempts a chunk whose only problems are soft (glossary, numbers, length) is accepted
+   resubmit that chunk only (on success `submit_chunk` also returns the next chunk as `next_chunk`, saving a call; `include_next=false` turns that off). After three attempts a chunk whose only problems are soft (glossary, numbers, length) is accepted
    and flagged; structural problems (line count, lost ids, untranslated lines) must always be fixed.
 4. When `remaining` is empty, `finish_translation(job_id)`. If you cannot translate some chunks,
    `finish_translation(job_id, fill_missing_locally=true)` fills them with the local backends and flags them.

@@ -110,3 +110,9 @@ Same two talks (Becerra, Hall). Argos is about 2.6 times faster and about 1.4 ch
 `--draft` (or `URIM_DRAFT=1`) makes `prepare_translation` pre-translate every line with Argos so the agent can send only `edits`.
 Haiku rewrote most draft lines anyway (the drafts had real errors), so drafts added time without improving chrF. The local arm uses
 `local.prompt.md` and a fresh `home-local` memory with the held-out glossary. Corpus figures: 26.2M words, linear scaling from 1,300-word talks.
+
+## Trimming Haiku's time (es + pt, 12 talks, `BENCH_EFFORT=low`, `BENCH_LABEL=fast2`)
+
+Low reasoning effort, 900-word chunks, the next chunk returned inline by `submit_chunk`, per-line term numbers: 11 turns instead of 13.8,
+but wall time unchanged (about 67 s vs 68 s) and chrF unchanged. The time is the roughly 15,000 output tokens Haiku generates per talk, not the
+number of tool calls. Run-to-run noise is about 8 s. Chunk-level parallelism (sub-agents) is the untested remaining lever.

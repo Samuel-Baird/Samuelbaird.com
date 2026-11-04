@@ -263,6 +263,23 @@ def test_ordinary_space_in_a_citation_is_accepted():
     assert not any("exactly as written" in h for h in workflow._check(ln, fixed, tr([]), "es", tr([]).glossary("es"))[0])
 
 
+def test_submit_returns_the_next_chunk_unless_asked_not_to(doc):
+    t = tr([])
+    jid = prep(doc)["job_id"]
+    ok = workflow.submit_chunk(t, jid, 1, "\n".join(GOOD))
+    assert ok["ok"] and ok["next"] == 2 and ok["next_chunk"]["chunk"] == 2 and "[^3]" in ok["next_chunk"]["source"]
+    last = workflow.submit_chunk(t, jid, 2, "[^3]: Uma palestra de um apóstolo, 2020.")
+    assert last["ok"] and "next_chunk" not in last
+    jid2 = workflow.prepare(t, doc, "pt", output_path="x.md")["job_id"]
+    assert "next_chunk" not in workflow.submit_chunk(t, jid2, 1, "\n".join(GOOD), include_next=False)
+
+
+def test_default_chunk_size_is_about_nine_hundred_words(tmp_path):
+    p = tmp_path / "long.md"
+    p.write_text("\n\n".join("Paragraph %d: %s" % (i, "word " * 99) for i in range(18)), encoding="utf-8")
+    assert len(workflow.prepare(tr([]), p, "pt")["chunks"]) <= 3 < len(workflow.prepare(tr([]), p, "pt", max_words=450)["chunks"])
+
+
 def test_reference_footnotes_may_stay_close_to_the_english(tmp_path):
     p = tmp_path / "f.md"
     p.write_text("A paragraph that has a reference.[^1]\n\n[^1]: Dallin H. Oaks, “The Family-Centered Gospel of Jesus Christ,” Liahona, May 2026.\n", encoding="utf-8")

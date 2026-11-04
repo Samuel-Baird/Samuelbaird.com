@@ -15,7 +15,7 @@ mcp = MCPServer(
         "enforced from the Urim glossary; only relevant entries are ever surfaced. Large outputs are saved to "
         "disk and returned as a path/doc_id; read them selectively with get_translation. "
         "TRANSLATE A FILE YOURSELF (any agent; recommended): the server never calls a model, you write the translation and "
-        "it does the rest. 1) prepare_translation(path, lang) returns a job_id and the chunk numbers in `todo`. 2) For each "
+        "it does the rest. 1) prepare_translation(path, lang) returns a job_id and the chunk numbers in `todo`. 2) For the first "
         "chunk n: get_chunk(job_id, n) gives English `source` (one line per paragraph), the Church `terms` to use and "
         "ids such as [[S1]] that stand for Church scripture text inserted for you. 3) submit_chunk(job_id, n, translation): "
         "one output line per source line, same order. If it returns problems, fix those lines and resubmit that chunk only. "
@@ -84,7 +84,7 @@ def translate_file(path: str, lang: str, output_path: str = "") -> dict:
 
 
 @tool
-def prepare_translation(path: str, lang: str, output_path: str = "", max_words: int = 450, draft: bool | None = None) -> dict:
+def prepare_translation(path: str, lang: str, output_path: str = "", max_words: int = 900, draft: bool | None = None) -> dict:
     """Step 1 of translating a file yourself. Splits the markdown/text file into independent chunks at paragraph
     boundaries (frontmatter, footnotes and structure are kept), reuses the Church's own paragraphs, inserts the
     Church's scripture text for quotations and fills footnotes that are only scripture citations. Returns job_id,
@@ -102,12 +102,12 @@ def get_chunk(job_id: str, n: int) -> dict:
 
 
 @tool
-def submit_chunk(job_id: str, n: int, translation: str = "", edits: dict[str, str] | None = None) -> dict:
+def submit_chunk(job_id: str, n: int, translation: str = "", edits: dict[str, str] | None = None, include_next: bool = True) -> dict:
     """Step 3. Send your translation of chunk n: one line per `source` line, same order (blank lines between are
     fine; keep leading '## ' or '[^n]: ' markers). Returns ok with the chunks still to do, or a list of problems
     (line number, what is wrong) to fix; then resubmit this chunk only. Checked: line count, kept [^n] marks, URLs and
-    [[Sn]] ids, Church glossary renderings, numbers, length, untranslated lines. If get_chunk gave a machine `draft`, you may send only `edits` ({"3": "corrected line 3"}, line numbers as in `draft`); lines you do not list are accepted as drafted."""
-    return workflow.submit_chunk(T(), job_id, n, translation, edits)
+    [[Sn]] ids, Church glossary renderings, numbers, length, untranslated lines. If get_chunk gave a machine `draft`, you may send only `edits` ({"3": "corrected line 3"}, line numbers as in `draft`); lines you do not list are accepted as drafted. On success the next chunk to do is returned as `next_chunk` (set include_next=false if several agents share the job)."""
+    return workflow.submit_chunk(T(), job_id, n, translation, edits, include_next)
 
 
 @tool

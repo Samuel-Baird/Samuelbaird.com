@@ -21,7 +21,7 @@ from . import config, scriptures, segment
 from .textutil import fold
 
 FORMAT = 4                  # bump when the job files change shape: it is part of the job id, so old jobs are never resumed
-MAX_WORDS = 450            # target words per chunk (a paragraph is never split)
+MAX_WORDS = 900            # target words per chunk (a paragraph is never split)
 SOFT_ATTEMPTS = 3          # on this attempt, chunks whose only problems are soft (glossary, numbers, length) are accepted
 QUOTE = re.compile(r"“([^”]{12,}?)”|\"([^\"]{12,}?)\"")
 FN_AFTER = re.compile(r"^[.,;:!?]{0,2}((?:\[\^\w+\])+)")
@@ -45,10 +45,11 @@ STYLE = {
     "pt": "Brazilian Portuguese in the formal register of the Church's own translations (address the audience as 'vocês').",
 }
 INSTRUCTIONS = (
-    "For each chunk number in `todo`: call get_chunk(job_id, n), translate every line of `source` (one output line per "
-    "input line, same order; keep a leading '## ', '- ' or '[^n]: ' marker), then call submit_chunk(job_id, n, translation). "
+    "Call get_chunk(job_id, n) for the first chunk number in `todo`, translate every line of `source` (one output line per "
+    "input line, same order; keep a leading '## ', '- ' or '[^n]: ' marker), then call submit_chunk(job_id, n, translation); when it succeeds it returns the next chunk as `next_chunk`: translate that one next, "
+    "without calling get_chunk again. "
     "Keep [^n] marks, ids like [[S1]], URLs and scripture citations exactly as written, and use each rendering listed in "
-    "`terms`. If submit_chunk reports problems, fix those lines and resubmit only that chunk. Chunks are independent: "
+    "`terms` (each lists the line numbers it applies to). If submit_chunk reports problems, fix those lines and resubmit only that chunk. Chunks are independent: "
     "translate them in parallel if you can, otherwise one by one. When nothing is left to do, call finish_translation(job_id)."
 )
 
@@ -303,13 +304,15 @@ def prepare(tr, path, lang, output_path="", max_words=MAX_WORDS, draft=None):
             if skel:
                 skel["chunk"], skel["line"] = n, k
             ln["i"] = k
-        terms, seen = [], set()
-        for ln in grp:
-            if ln["state"] == "pending":
-                for m in g.match(ln["shown"]):
-                    if m.entry.id not in seen and m.entry.confidence in ("approved", "attested", "user"):
-                        seen.add(m.entry.id)
-                        terms.append(m.entry.brief())
+        terms, seen = [], {}
+        for pos, ln in enumerate([x for x in grp if x["state"] == "pending"], 1):
+            for m in g.match(ln["shown"]):
+                if m.entry.confidence in ("approved", "attested", "user"):
+                    if m.entry.id not in seen:
+                        seen[m.entry.id] = len(terms)
+                        terms.append({**m.entry.brief(), "lines": []})
+                    if pos not in terms[seen[m.entry.id]]["lines"]:
+                        terms[seen[m.entry.id]]["lines"].append(pos)
         pend = [x for x in grp if x["state"] == "pending"]
         if mt and pend:
             _draft_lines(mt, lang, g, pend)
@@ -479,7 +482,7 @@ def _strip_prefix(s):
     return s[m.end():] if m else s
 
 
-def submit_chunk(tr, job_id, n, translation="", edits=None):
+def submit_chunk(tr, job_id, n, translation="", edits=None, include_next=True):
     job, e = _load_job(job_id)
     if e:
         return e
@@ -552,6 +555,8 @@ def submit_chunk(tr, job_id, n, translation="", edits=None):
     c["status"], c["problems"] = "done", [x["problem"] for x in flags]
     _write(_chunk_path(job["job_id"], c["n"]), c)
     out = {"ok": True, "chunk": c["n"], **_progress(job)}
+    if include_next and out["next"]:                 # saves a round trip: the next chunk comes with the answer
+        out["next_chunk"] = get_chunk(job["job_id"], out["next"])
     if flags:
         out["accepted_with_issues"] = flags
     if warns:
