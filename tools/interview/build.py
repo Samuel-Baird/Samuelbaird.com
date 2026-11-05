@@ -41,7 +41,8 @@ from longform import make_cards  # noqa: E402
 
 TR = 10            # slide crossfade frames
 HOP = 0.1          # speaker-detection resolution (s)
-MIN_TURN = 1.5     # shorter turns are backchannels, absorbed
+MIN_TURN = 2.5     # shorter turns are backchannels, absorbed
+QUICK = 5.0        # turns shorter than this hold the two-shot
 LONG_PAUSE = 1.5   # trim pauses longer than this ...
 KEEP_PAUSE = 0.6   # ... down to this
 
@@ -213,7 +214,7 @@ class Edit:
         return round((i0 + int(np.argmin(self.raw[i0:i1]))) * HOP + HOP / 2, 2)
 
     def next_split(self, cur, te, lo, hi, target):
-        c = [s for s in self.seg_starts if cur + lo <= s <= cur + hi and te - s >= 5 and not self.in_cut(s)]
+        c = [s for s in self.seg_starts if cur + lo <= s <= cur + hi and te - s >= 8 and not self.in_cut(s)]
         return min(c, key=lambda s: abs(s - (cur + target))) if c else None
 
     def build(self):
@@ -233,8 +234,6 @@ class Edit:
         marks = sorted({round(t, 3): r for t, r in marks if self.T0 <= t < self.T1}.items())
         bounds = [(t, r) for t, r in marks if not self.in_cut(t)] + [(self.T1, 'end')]
         iv = []
-        cycle = ['wide', 'tight', 'side', 'react', 'close', 'wide', 'tight', 'close']
-        ci = 0
         for (t, r), (te, _) in zip(bounds, bounds[1:]):
             if te - t <= 0:
                 continue
@@ -249,45 +248,48 @@ class Edit:
                 who = who if kind == 'wide' else os_[0][2]
                 iv.append(dict(kind='cam', m0=t, m1=te, **self.shot(kind, who, t, te)))
                 continue
-            if te - t < 3.5:   # quick exchange: hold the two-shot
-                if iv and iv[-1]['kind'] == 'cam' and iv[-1]['label'] == 'wide':
-                    iv[-1]['m1'] = te
+            prev = iv[-1] if iv and iv[-1]['kind'] == 'cam' else None
+            wide_cam = self.cam['wide']
+            if te - t < QUICK:   # quick exchange: hold the two-shot (never punch out of a side crop)
+                if prev and prev['label'] == 'wide':
+                    prev['m1'] = te
                     continue
-                iv.append(dict(kind='cam', m0=t, m1=te, **self.shot('wide', who, t, te)))
+                kind = 'close' if prev and prev['cam'] == wide_cam else 'wide'
+                iv.append(dict(kind='cam', m0=t, m1=te, **self.shot(kind, who, t, te)))
                 continue
-            # a turn: open on the talker's close-up, then vary inside long answers. The cycle offset
-            # depends only on this piece's start, so an edit elsewhere doesn't reshuffle every shot.
-            ci = int(t) % len(cycle)
-            cur, kind = t, 'close'
-            if iv and iv[-1]['kind'] == 'cam' and iv[-1]['cam'] == self.cam[who] and iv[-1]['label'] == f'{who} close':
-                kind = 'wide'   # cut landed on the same camera (pause trim / slide end): change angle
+            # a turn: the talker's camera first, then alternate between the wide camera (wide / side
+            # crop) and the talker's camera (close / tight) every 20-40 s. Two framings of one camera
+            # are never cut together: if the talker's camera is already on screen, that shot simply
+            # continues (same framing, so it merges into one continuous move).
+            bi, ti = int(t) % 2, 0
+            if prev and prev['cam'] == self.cam[who]:
+                kind = prev['label'].split()[-1]   # 'close' / 'tight' / 'listening' -> continue it
+                kind = kind if kind in ('close', 'tight') else 'wide'
+            else:
+                kind = 'close'
+            cur = t
             while True:
-                nxt = None
-                if kind == 'react':   # a short listening shot, or skip it if there's no pause to end on
-                    nxt = self.next_split(cur, te, 3.5, 9, 5)
-                    if nxt is None:
-                        kind = 'wide'
-                if kind != 'react':
-                    nxt = (self.next_split(cur, te, 10, 26, 18 if kind == 'close' else 14)
-                           or self.next_split(cur, te, 6, 30, 20) or self.quietest(cur + 12, min(cur + 26, te - 5)))
+                nxt = (self.next_split(cur, te, 20, 40, 28 if kind == 'close' else 24)
+                       or self.next_split(cur, te, 14, 48, 30) or self.quietest(cur + 22, min(cur + 38, te - 8)))
                 if nxt is None:
                     nxt = te
                 iv.append(dict(kind='cam', m0=cur, m1=nxt, **self.shot(kind, who, cur, nxt)))
                 if nxt >= te:
                     break
-                cur, prev_kind = nxt, kind
-                kind = cycle[ci % len(cycle)]
-                ci += 1
-                while kind == prev_kind or (kind == 'react' and te - cur < 15):
-                    kind = cycle[ci % len(cycle)]
-                    ci += 1
+                cur = nxt
+                if self.shot(kind, who, 0, 0)['cam'] == wide_cam:
+                    kind = ('close', 'tight')[ti % 2]
+                    ti += 1
+                else:
+                    kind = ('wide', 'side')[bi % 2]
+                    bi += 1
         for v in iv:
             v['f0'], v['f1'] = self.fr(v['m0']), self.fr(v['m1'])
         iv = [v for v in iv if v['f1'] > v['f0']]
-        # a sliver under a second (a turn mark just after a slide ends, say) joins the shot before it
+        # a sliver under 2.5 s (a turn mark just before or after a slide, say) joins the shot before it
         j = 1
         while j < len(iv):
-            if iv[j]['f1'] - iv[j]['f0'] < 24 and iv[j]['kind'] == 'cam' and                     not any(abs(iv[j]['m0'] - (c0 + n * FPF)) < 1e-3 for c0, n, _ in self.cuts):
+            if iv[j]['f1'] - iv[j]['f0'] < 60 and iv[j]['kind'] == 'cam' and                     not any(abs(iv[j]['m0'] - (c0 + n * FPF)) < 1e-3 for c0, n, _ in self.cuts):
                 iv[j - 1]['m1'], iv[j - 1]['f1'] = iv[j]['m1'], iv[j]['f1']
                 del iv[j]
             else:

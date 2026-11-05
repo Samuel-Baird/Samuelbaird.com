@@ -7,7 +7,8 @@ short stories (like a separately recorded history segment).
 
 project.json "shorts": {name: {take, title, hook, ranges, graphics, fade_out}}:
   ranges    [[from, to], ...] mic seconds; edges snap into the nearest silence so no word is
-            clipped. [from, to, "exact_end"] ends exactly at `to` (to drop a closing line).
+            clipped. [from, to, "exact_end"] ends exactly at `to` (to drop a closing line);
+            "exact_start" / "exact" pin the start / both edges (to drop a stutter with no pause).
   graphics  [{start, end, image, label, crop}] shown full screen with a slow push-in. No label
             = a chart graphic (its paper colour is extended to 9:16); with a label = a photo
             plate (blurred backdrop, rounded photo, label chip). `image` may be a list of two
@@ -115,8 +116,9 @@ class Short:
         rng = []
         for r in self.cfg['ranges']:
             a, b = r[:2]
-            before = [s1 for s0, s1 in sil if a - 1.2 < s1 <= a + 0.15]
-            after = [] if len(r) > 2 and r[2] == 'exact_end' else [s0 for s0, s1 in sil if b - 0.15 <= s0 < b + 1.2]
+            flag = r[2] if len(r) > 2 else ''
+            before = [] if flag in ('exact_start', 'exact') else [s1 for s0, s1 in sil if a - 1.2 < s1 <= a + 0.15]
+            after = [] if flag in ('exact_end', 'exact') else [s0 for s0, s1 in sil if b - 0.15 <= s0 < b + 1.2]
             rng.append((before[-1] - 0.06 if before else a, after[0] + 0.10 if after else b))
         self.rng = rng
         G = [(g['start'], g['end']) for g in self.graphics]

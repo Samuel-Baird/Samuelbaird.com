@@ -33,6 +33,24 @@
             0.28
           ],
           "offset": 1.5304
+        },
+        "Bh": {
+          "file": "D:/Carl Youngblood/3/PRIVATE/M4ROOT/CLIP/B CAM0054.MP4",
+          "face": [
+            0.24,
+            0.33
+          ],
+          "offset": 1.5172,
+          "_note": "virtual: wide camera framed on the host (shorts)"
+        },
+        "Bg": {
+          "file": "D:/Carl Youngblood/3/PRIVATE/M4ROOT/CLIP/B CAM0054.MP4",
+          "face": [
+            0.74,
+            0.33
+          ],
+          "offset": 1.5172,
+          "_note": "virtual: wide camera framed on the guest (shorts)"
         }
       }
     }
@@ -44,7 +62,7 @@
     "slides_dir": "images",
     "cuts": [],
     "plan": [],
-    "output": "exports/carl-youngblood-transfigurism.mp4",
+    "output": "work/longform_body.mp4",
     "web": [
       [
         60.6,
@@ -58,8 +76,33 @@
       ],
       [
         812.4,
+        816.17,
+        "theme_western"
+      ],
+      [
+        816.17,
+        819.93,
+        "theme_alpine"
+      ],
+      [
+        819.93,
+        823.7,
+        "theme_martian-colony"
+      ],
+      [
+        823.7,
+        827.47,
+        "theme_asteroid-station"
+      ],
+      [
+        827.47,
+        831.23,
+        "theme_submarine"
+      ],
+      [
+        831.23,
         835.0,
-        "web_home_warm"
+        "theme_space-habitat"
       ],
       [
         870.4,
@@ -78,11 +121,16 @@
       ],
       [
         1181.8,
-        1187.3,
-        "web_support"
+        1185.2,
+        "store_canvas"
       ],
       [
-        1187.3,
+        1185.2,
+        1189.6,
+        "store_sweatshirt"
+      ],
+      [
+        1189.6,
         1202.0,
         "web_mission"
       ],
@@ -127,5 +175,479 @@
     "active_db": 52,
     "host_margin_db": -3,
     "quiet_db": 45
-  }
+  },
+  "shorts_dir": "exports/shorts",
+  "shorts": {
+    "cyborgs": {
+      "take": "1",
+      "title": "We're All Cyborgs Already - Carl Youngblood",
+      "hook": "WE'RE ALL\nCYBORGS ALREADY",
+      "ranges": [
+        [
+          1004.4,
+          1149.4
+        ]
+      ]
+    },
+    "god-technology": {
+      "take": "1",
+      "title": "Does God Use Technology - Carl Youngblood",
+      "hook": "DOES GOD USE\nTECHNOLOGY?",
+      "ranges": [
+        [
+          1587.8,
+          1593.2,
+          "exact_start"
+        ],
+        [
+          1593.6,
+          1765.3
+        ]
+      ]
+    },
+    "dystopia": {
+      "take": "1",
+      "title": "Sick of Dystopian Futures - Carl Youngblood",
+      "hook": "SICK OF\nDYSTOPIAN FUTURES?",
+      "ranges": [
+        [
+          811.2,
+          914.6
+        ]
+      ],
+      "graphics": [
+        {
+          "start": 816.0,
+          "end": 819.05,
+          "image": "images/theme_western.png",
+          "label": "transfigurism.org"
+        },
+        {
+          "start": 819.05,
+          "end": 822.1,
+          "image": "images/theme_alpine.png",
+          "label": "transfigurism.org"
+        },
+        {
+          "start": 822.1,
+          "end": 825.15,
+          "image": "images/theme_martian-colony.png",
+          "label": "transfigurism.org"
+        },
+        {
+          "start": 825.15,
+          "end": 828.2,
+          "image": "images/theme_asteroid-station.png",
+          "label": "transfigurism.org"
+        },
+        {
+          "start": 828.2,
+          "end": 831.25,
+          "image": "images/theme_submarine.png",
+          "label": "transfigurism.org"
+        },
+        {
+          "start": 831.25,
+          "end": 834.3,
+          "image": "images/theme_space-habitat.png",
+          "label": "transfigurism.org"
+        },
+        {
+          "start": 870.4,
+          "end": 882.4,
+          "image": "images/theme_alpine.png",
+          "label": "transfigurism.org"
+        }
+      ]
+    },
+    "ai-smarter-or-lazier": {
+      "take": "1",
+      "title": "Will AI Make Us Smarter or Lazier - Carl Youngblood",
+      "hook": "WILL AI MAKE US\nSMARTER OR LAZIER?",
+      "ranges": [
+        [
+          249.8,
+          268.95
+        ],
+        [
+          356.2,
+          446.98,
+          "exact_end"
+        ]
+      ]
+    }
+  },
+  "caption_fixes": {
+    "words": {},
+    "phrases": [
+      [
+        [
+          "sci",
+          "fi"
+        ],
+        [
+          "sci-fi"
+        ]
+      ],
+      [
+        [
+          "solar",
+          "punk"
+        ],
+        [
+          "solarpunk"
+        ]
+      ],
+      [
+        [
+          "latter",
+          "day"
+        ],
+        [
+          "Latter-day"
+        ]
+      ]
+    ],
+    "insert": []
+  },
+  "teaser": {
+    "clips": [
+      [
+        239.45,
+        242.98,
+        "guest",
+        "close"
+      ],
+      [
+        861.95,
+        864.42,
+        "guest",
+        "tight"
+      ],
+      [
+        1054.8,
+        1057.4,
+        "guest",
+        "side"
+      ],
+      [
+        1595.5,
+        1599.2,
+        "host",
+        "tight"
+      ],
+      [
+        1625.0,
+        1628.45,
+        "guest",
+        "tight"
+      ]
+    ],
+    "title": [
+      "A CONVERSATION WITH",
+      "CARL YOUNGBLOOD",
+      "MORMON TRANSHUMANIST ASSOCIATION"
+    ],
+    "tail": 10
+  },
+  "thumbnails": [
+    {
+      "out": "exports/thumbnails/yt1_were_all_cyborgs.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "C",
+        "t": 1056.9
+      },
+      "face_x": 0.78,
+      "zoom_w": 2100,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            60,
+            120
+          ],
+          "text": "WE'RE ALL",
+          "size": 104,
+          "stroke": 4
+        },
+        {
+          "type": "text",
+          "xy": [
+            54,
+            222
+          ],
+          "text": "CYBORGS",
+          "size": 138,
+          "color": "orange",
+          "stroke": 5
+        },
+        {
+          "type": "text",
+          "xy": [
+            62,
+            400
+          ],
+          "text": "(and have been for ages)",
+          "size": 44,
+          "font": "bold",
+          "stroke": 2
+        },
+        {
+          "type": "pill",
+          "xy": [
+            72,
+            560
+          ],
+          "text": "MORMON TRANSHUMANISM",
+          "size": 40,
+          "bg": "flag_red",
+          "font": "black"
+        }
+      ]
+    },
+    {
+      "out": "exports/thumbnails/yt2_god_could_cease_to_be_god.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "C",
+        "t": 1660.5
+      },
+      "face_x": 0.72,
+      "zoom_w": 2000,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            60,
+            90
+          ],
+          "text": "GOD COULD",
+          "size": 100,
+          "stroke": 4
+        },
+        {
+          "type": "text",
+          "xy": [
+            54,
+            190
+          ],
+          "text": "CEASE",
+          "size": 190,
+          "color": "red",
+          "stroke": 5
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            400
+          ],
+          "text": "TO BE GOD?",
+          "size": 100,
+          "stroke": 4
+        },
+        {
+          "type": "pill",
+          "xy": [
+            72,
+            580
+          ],
+          "text": "A MORMON TRANSHUMANIST SAYS SO",
+          "size": 32,
+          "bg": "chip",
+          "font": "black"
+        }
+      ]
+    },
+    {
+      "out": "exports/thumbnails/yt3_mormons_on_mars.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "C",
+        "t": 241.7
+      },
+      "face_x": 0.74,
+      "zoom_w": 2200,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "card",
+          "image": "images/theme_martian-colony.png",
+          "xy": [
+            60,
+            300
+          ],
+          "width": 470,
+          "angle": -4,
+          "crop": [
+            0,
+            0.07,
+            1,
+            1
+          ]
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            50
+          ],
+          "text": "MORMONS",
+          "size": 120,
+          "stroke": 4
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            160
+          ],
+          "text": "ON MARS?",
+          "size": 96,
+          "color": "orange",
+          "stroke": 4
+        },
+        {
+          "type": "pill",
+          "xy": [
+            72,
+            650
+          ],
+          "text": "THE NEW PIONEERS",
+          "size": 36,
+          "bg": "flag_red",
+          "font": "black"
+        }
+      ]
+    },
+    {
+      "out": "exports/thumbnails/yt4_does_god_use_technology.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "C",
+        "t": 1719.4
+      },
+      "face_x": 0.8,
+      "zoom_w": 2100,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "text",
+          "xy": [
+            60,
+            110
+          ],
+          "text": "DOES GOD USE",
+          "size": 86,
+          "stroke": 4
+        },
+        {
+          "type": "text",
+          "xy": [
+            54,
+            205
+          ],
+          "text": "TECHNOLOGY?",
+          "size": 94,
+          "color": "orange",
+          "stroke": 5
+        },
+        {
+          "type": "text",
+          "xy": [
+            62,
+            370
+          ],
+          "text": "A Latter-day Saint",
+          "size": 52,
+          "font": "bold",
+          "stroke": 2
+        },
+        {
+          "type": "text",
+          "xy": [
+            62,
+            430
+          ],
+          "text": "transhumanist answers",
+          "size": 52,
+          "font": "bold",
+          "stroke": 2
+        }
+      ]
+    },
+    {
+      "out": "exports/thumbnails/yt5_your_tithing_built_this_station.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "frame": {
+        "take": "1",
+        "camera": "C",
+        "t": 2101.0
+      },
+      "face_x": 0.8,
+      "zoom_w": 2200,
+      "shade": "left",
+      "elements": [
+        {
+          "type": "card",
+          "image": "work/web/themes/canvas.png",
+          "xy": [
+            150,
+            225
+          ],
+          "width": 280,
+          "angle": -3,
+          "crop": [
+            0.352,
+            0.068,
+            0.562,
+            0.628
+          ]
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            40
+          ],
+          "text": "\"YOUR TITHING",
+          "size": 84,
+          "stroke": 4
+        },
+        {
+          "type": "text",
+          "xy": [
+            60,
+            128
+          ],
+          "text": "BUILT THIS STATION\"",
+          "size": 66,
+          "color": "orange",
+          "stroke": 4
+        }
+      ]
+    }
+  ]
 }
