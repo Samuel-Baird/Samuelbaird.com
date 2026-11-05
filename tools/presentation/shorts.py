@@ -49,6 +49,8 @@ def norm(w: str) -> str:
 
 
 class Short:
+    MIN_SHOT, MAX_SHOT = MIN_SHOT, MAX_SHOT   # a subclass may hold angles longer
+
     def __init__(self, pr: Project, name: str):
         self.pr, self.name = pr, name
         self.cfg = pr.cfg['shorts'][name]
@@ -138,7 +140,7 @@ class Short:
             last = max([m for m in marks if m <= a] + [rng[0][0]])
             nxt = min([m for m in marks if m >= b] + [x for _, x in rng if x >= b])
             held = (a - last) - sum(min(t[1], a) - max(t[0], last) for t in taken if t[1] > last and t[0] < a)
-            if held >= MIN_SHOT and nxt - b >= MIN_SHOT * 0.6:
+            if held >= self.MIN_SHOT and nxt - b >= self.MIN_SHOT * 0.6:
                 taken.append(c + ['hard'])
                 marks = sorted(marks + [b])
             elif kind == 'um' or b - a > 0.45:
@@ -227,7 +229,7 @@ class Short:
                 holds.pop(i)
                 continue
             i += 1
-        K = round(MAX_SHOT / FPF)
+        K = round(self.MAX_SHOT / FPF)
         shots = []
         for h in holds:
             if h[0]['gfx'] is not None:

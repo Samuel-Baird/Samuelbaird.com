@@ -218,36 +218,24 @@
       "graphics": [
         {
           "start": 816.0,
-          "end": 819.05,
+          "end": 820.575,
           "image": "images/theme_western.png",
           "label": "transfigurism.org"
         },
         {
-          "start": 819.05,
-          "end": 822.1,
-          "image": "images/theme_alpine.png",
-          "label": "transfigurism.org"
-        },
-        {
-          "start": 822.1,
+          "start": 820.575,
           "end": 825.15,
           "image": "images/theme_martian-colony.png",
           "label": "transfigurism.org"
         },
         {
           "start": 825.15,
-          "end": 828.2,
+          "end": 829.725,
           "image": "images/theme_asteroid-station.png",
           "label": "transfigurism.org"
         },
         {
-          "start": 828.2,
-          "end": 831.25,
-          "image": "images/theme_submarine.png",
-          "label": "transfigurism.org"
-        },
-        {
-          "start": 831.25,
+          "start": 829.725,
           "end": 834.3,
           "image": "images/theme_space-habitat.png",
           "label": "transfigurism.org"

@@ -95,6 +95,10 @@ a-b` renders a range of units for a check.
   cameras `Bh`/`Bg` in `project.json`). Interview shorts may run **30 s - 3 min** (user,
   2026-11-04): use the whole arc of an answer. Ranges accept `exact_start` to drop a stutter
   with no pause before it. Run the disfluent Whisper pass only over the short ranges.
+  **An angle holds at least 15 s** (user, 2026-11-04: 4-7 s angle changes were too busy): one
+  slow zoom per hold; trims inside a hold are 6-frame dissolves on the same angle; a change goes
+  to whoever holds the floor next (a short question plays over the listener); a talker past
+  ~40 s gets their other angle once. Website plates in a short: ~4.5 s each, not 3 s.
 - Thumbnails (`tools/presentation/thumbs.py`): intrigue with a kernel of truth (a real quote, the
   site's own art or merch titles); **no text over the face** — measure each line's right edge
   against the face position, then look at the render.
