@@ -36,7 +36,9 @@ const YT = 'https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1';
 const SUBSTACK = 'https://ithinkisam.substack.com/';
 const IG = 'https://www.instagram.com/ithinkisam/';
 const GH = 'https://github.com/Samuel-Baird';
-const SAMEAS = [YT, SUBSTACK, IG, GH];
+// sameAs entries are identity links, so use the plain channel URL (YT carries ?sub_confirmation=1 for visible links).
+const YT_CHANNEL = 'https://www.youtube.com/@ithinkthereforeisam';
+const SAMEAS = [YT_CHANNEL, SUBSTACK, IG, GH];
 
 /* ---------- load data ---------- */
 const sandbox = vm.createContext({ window: {}, console });
@@ -286,7 +288,8 @@ function seo(p) {
 <meta property="og:description" content="${esc(p.desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${img}">
-<meta property="og:image:alt" content="${esc(p.imageAlt || 'Samuel Baird: screenshots of Latter-day Stats, Pulpit and the Sacred Sites map')}">
+<meta property="og:locale" content="en_US">
+${p.image && p.image !== '/img/og-card.png' ? '' : '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'}<meta property="og:image:alt" content="${esc(p.imageAlt || 'Samuel Baird: screenshots of Latter-day Stats, Pulpit and the Sacred Sites map')}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(p.title)}">
 <meta name="twitter:description" content="${esc(p.desc)}">
@@ -480,7 +483,15 @@ const coverWall = BOOKS.filter((b) => b.cover).slice(0, 12).map((b) => `<li><a h
 const collectionItems = [...read('collection/index.html').matchAll(/<span class="label[^>]*>([^<]*)<\/span>\s*<h2>(.*?)<\/h2>/g)].map((m) => ({ label: m[1].replace(/&middot;/g, '·'), title: m[2] }));
 const collectionChips = collectionItems.map((c) => `<li><span class="small-caps">${c.label}</span><b>${c.title}</b></li>`).join('');
 
+/* ---------- 404 ---------- */
+function notFoundPage() {
+  const html = shell('/404', `${pagehead([['Home', '/']], '404', 'Page not found', 'That page does not exist or has moved. Try one of these instead.')}
+<div class="prose"><ul class="plain">${NAV_ITEMS.map(([h, t]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></div>`);
+  return html.replace(/<!--seo-->[\s\S]*?<!--\/seo-->/, () => `<!--seo--><title>Page not found · ${NAME}</title>\n<meta name="robots" content="noindex,follow">\n<link rel="canonical" href="${BASE}/">\n<!--/seo-->`);
+}
+
 /* ---------- run ---------- */
+write('404.html', notFoundPage());
 write('about/index.html', aboutPage());
 write('faq/index.html', faqPage());
 write('data/index.html', dataPage());
