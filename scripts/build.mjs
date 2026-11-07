@@ -272,7 +272,7 @@ const FAQ = [
   ['How should I cite this site?', `For the sacred sites data: Baird, Samuel. "Sacred Sites Visited." samuelbaird.com, ${F.firstVisit.slice(0, 4)}–${F.lastVisit.slice(0, 4)}. ${BASE}/data. For Latter-day Stats, cite the specific study, dataset or graphic page and its listed source.`],
   ['Can AI assistants and search engines use this site?', `Yes. <a href="/robots.txt">robots.txt</a> explicitly allows the major search and AI crawlers (including GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended and Applebot-Extended), and a plain-text summary for language models is at <a href="/llms.txt">/llms.txt</a>. Please attribute and link back when you use the content.`],
   ['How can I contact Samuel Baird?', `Email <a href="mailto:${EMAIL}?subject=Samuel%20Baird">${EMAIL}</a> for questions, corrections, collaboration or press. Corrections to any figure on this site are welcome.`],
-  ['How can I support the projects?', `The projects are free and ad-free. You can chip in toward hosting by <a href="/donate">donating via PayPal or Venmo</a>, or send a book from the <a href="/wishlist">wishlist</a>, sorted with the most-wanted items first.`],
+  ['How can I support the projects?', `The projects are free and ad-free. You can chip in toward hosting by <a href="/donate">donating via PayPal or Venmo</a>, or send something from the <a href="/wishlist">wishlist</a> of books and equipment for the channel, sorted with the most-wanted items first.`],
 ];
 const stripTags = (h) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
 
@@ -350,11 +350,11 @@ const PAGES = {
       crumbs([['Home', '/'], ['My Reading', '/books']])] },
   '/collection': { file: 'collection/index.html', title: `Collection: Historic Latter-day Saint Books, Periodicals and Artifacts · ${NAME}`, desc: `Historical Latter-day Saint items owned by ${NAME}, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/collection#items' } }), collectionList(), crumbs([['Home', '/'], ['Collection', '/collection']])] },
-  '/wishlist': { title: `Wishlist: Books and Research Materials · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and research item', 'books and research items') : 'Books and research materials'} ${NAME} would like for his projects and videos, most wanted first. Bought through Amazon, shipped directly to him.`,
+  '/wishlist': { title: `Wishlist: Books and Equipment for the Channel · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and piece of equipment', 'books and pieces of equipment') : 'Books and equipment'} ${NAME} would like for his YouTube channel, most wanted first. Bought through Amazon, shipped directly to him.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/wishlist#list' } }),
       { '@type': 'ItemList', '@id': BASE + '/wishlist#list', name: 'Wishlist', itemListOrder: 'https://schema.org/ItemListOrderDescending', numberOfItems: WISHLIST.length, itemListElement: WISHLIST.map((w, i) => ({ '@type': 'ListItem', position: i + 1, name: w.title, url: w.link })) },
       crumbs([['Home', '/'], ['Donate', '/donate'], ['Wishlist', '/wishlist']])] },
-  '/donate': { file: 'donate/index.html', title: `Donate · ${NAME}`, desc: `Support ${NAME}'s free, independent, ad-free projects and videos with a donation toward hosting, or send a book from the wishlist.`,
+  '/donate': { file: 'donate/index.html', title: `Donate · ${NAME}`, desc: `Support ${NAME}'s free, independent, ad-free projects and videos with a donation toward hosting, or send books or equipment for the channel from the wishlist.`,
     ld: (p) => [webPage(p, 'WebPage', { potentialAction: [
       { '@type': 'DonateAction', name: 'Donate via PayPal', recipient: PERSON_REF, target: 'https://paypal.me/Baird90' },
       { '@type': 'DonateAction', name: 'Donate via Venmo', recipient: PERSON_REF, target: 'https://venmo.com/Samuel-J-Baird' }] }), crumbs([['Home', '/'], ['Donate', '/donate']])] },
@@ -500,7 +500,7 @@ function wishlistPage() {
   ${list.map(card).join('\n  ')}
 </ul></section>`).join('\n')
     : `<p class="wl-empty">The list is syncing from Amazon. In the meantime, <a href="${WL_URL}" target="_blank" rel="noopener">view it on amazon.com</a>.</p>`;
-  return shell('/wishlist', `${pagehead([['Home', '/'], ['Donate', '/donate'], ['Wishlist', '/wishlist']], 'Wishlist', 'Send a book', `${WISHLIST.length ? `${plural(WISHLIST.length, 'item')}, most wanted first. ` : ''}Mostly books for research behind the videos and projects.${WL_UPDATED ? ` Synced from Amazon ${longDate(WL_UPDATED)}.` : ''}`)}
+  return shell('/wishlist', `${pagehead([['Home', '/'], ['Donate', '/donate'], ['Wishlist', '/wishlist']], 'Wishlist', 'Books and equipment for the channel', `${WISHLIST.length ? `${plural(WISHLIST.length, 'item')}, most wanted first. ` : ''}Research books and gear that go into making the videos.${WL_UPDATED ? ` Synced from Amazon ${longDate(WL_UPDATED)}.` : ''}`)}
 <div class="wl-how">
   <div class="btns"><a class="primary" href="${WL_URL}" target="_blank" rel="noopener">Open the list on Amazon &rarr;</a><a class="secondary" href="/donate">Donate instead</a></div>
   <p class="note disclosure">Buying from these links or the Amazon list ships to me directly and marks the item as bought. Links are Amazon affiliate links; I may earn a commission. Thank you!</p>
@@ -594,7 +594,7 @@ Figures for external sites are dated ${EXT.asOf}.
   - [Photos](${BASE}/sacred-sites/photos) and [Stats](${BASE}/sacred-sites/stats).
 - [My Reading](${BASE}/books): ${F.books} books and ${F.articles} articles with the date finished.
 - [Collection](${BASE}/collection): historic Latter-day Saint books, periodicals and artifacts.
-- [Wishlist](${BASE}/wishlist): books and research materials he would like, most wanted first.
+- [Wishlist](${BASE}/wishlist): books and equipment he would like for the YouTube channel, most wanted first.
 
 ## Answers and data
 - [FAQ](${BASE}/faq): direct answers with dated figures.
