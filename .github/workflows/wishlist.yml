@@ -23,31 +23,34 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
-      - name: Fetch Amazon wishlist
-        run: node scripts/fetch-wishlist.mjs
-
-      - name: Rebuild site if the list or priorities changed
-        id: build
-        run: |
-          if [ "${{ github.event_name }}" = "push" ] || ! git diff --quiet -- wishlist/data.json; then
-            node scripts/build.mjs
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "No wishlist changes."
-          fi
-
-      - name: Commit and push
-        if: steps.build.outputs.changed == 'true'
+      # Always work from the newest commit on the branch, and if a push races with another
+      # commit (another sync run, or you pushing), start over from the new tip rather than
+      # trying to merge generated files.
+      - name: Sync, rebuild and push
+        env:
+          BRANCH: ${{ github.ref_name }}
+          FORCE_BUILD: ${{ github.event_name == 'push' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet && exit 0
-          git commit -m "Sync wishlist from Amazon"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          for attempt in 1 2 3; do
+            git fetch -q origin "$BRANCH"
+            git reset -q --hard "origin/$BRANCH"
+            node scripts/fetch-wishlist.mjs
+            if [ "$FORCE_BUILD" != "true" ] && git diff --quiet -- wishlist/data.json; then
+              echo "No wishlist changes."; exit 0
+            fi
+            node scripts/build.mjs
+            git add -A
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Sync wishlist from Amazon"
+            git push -q origin "HEAD:$BRANCH" && exit 0
+            echo "Push rejected (branch moved); retrying from the new tip..."
+            sleep $((attempt * 5))
+          done
+          exit 1
