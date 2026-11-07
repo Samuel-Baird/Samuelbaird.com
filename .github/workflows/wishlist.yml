@@ -1,0 +1,53 @@
+# Keeps /wishlist in sync with the Amazon list.
+# - Every 6 hours (and on demand from the Actions tab) it re-reads the public Amazon list.
+# - When you edit wishlist/priorities.json on main, it rebuilds the page right away.
+# It commits only when something changed; Vercel then deploys the commit as usual.
+name: Sync wishlist
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['wishlist/priorities.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wishlist-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch Amazon wishlist
+        run: node scripts/fetch-wishlist.mjs
+
+      - name: Rebuild site if the list or priorities changed
+        id: build
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] || ! git diff --quiet -- wishlist/data.json; then
+            node scripts/build.mjs
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No wishlist changes."
+          fi
+
+      - name: Commit and push
+        if: steps.build.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync wishlist from Amazon"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

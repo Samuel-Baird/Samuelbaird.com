@@ -2,7 +2,9 @@
 // - Reads the site's own data (sacred-sites/data.js, books/data.js) and pre-renders it as plain HTML,
 //   CSV and JSON, so people, search engines and AI crawlers see the content without running JavaScript.
 // - Regenerates shared fragments (nav, footer, SEO/JSON-LD head) inside marker comments on every page.
-// - Writes /about, /faq, /data, /sacred-sites/sites, robots.txt, sitemap.xml, llms.txt, llms-full.txt.
+// - Writes /about, /faq, /data, /sacred-sites/sites, /wishlist, robots.txt, sitemap.xml, llms.txt, llms-full.txt.
+// - /wishlist merges wishlist/data.json (synced from Amazon by scripts/fetch-wishlist.mjs) with your
+//   hand-set priorities in wishlist/priorities.json.
 // Idempotent: safe to run repeatedly. Commit the output (Vercel serves the repo as-is).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -52,6 +54,27 @@ const sites = vm.runInNewContext(
   { console },
 );
 const { SITES, WISH, COMMUNITIES, labelOf, isService, categoryLabel, mapsUrl, NO_MAPS, ALL_PHOTOS, photoUrl } = sites;
+
+/* ---------- wishlist: Amazon data + local priorities ---------- */
+const AFFILIATE_TAG = 'ithinkthereforeisam-20';
+const readJson = (f, fallback) => (fs.existsSync(R(f)) ? JSON.parse(read(f)) : fallback);
+const WL_DATA = readJson('wishlist/data.json', { items: [] });
+const WL_PRI = readJson('wishlist/priorities.json', { items: {} }).items || {};
+const WL_URL = WL_DATA.url || 'https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4';
+const TIERS = [
+  ['highest', 'Most wanted'], ['high', 'High priority'], ['medium', 'Wanted'], ['low', 'Nice to have'], ['lowest', 'Someday'],
+];
+const TIER_ORDER = Object.fromEntries(TIERS.map(([k], i) => [k, i]));
+const WISHLIST = WL_DATA.items.map((it, i) => {
+  const o = (it.asin && WL_PRI[it.asin]) || WL_PRI[it.itemId] || {};
+  const priority = TIER_ORDER[o.priority] != null ? o.priority : TIER_ORDER[it.amazonPriority] != null ? it.amazonPriority : 'medium';
+  // Product link keeps the list context (colid/coliid) so Amazon offers my gift address and marks it bought.
+  const link = it.asin
+    ? `https://www.amazon.com/dp/${it.asin}?colid=${WL_DATA.list}&coliid=${it.itemId}&tag=${AFFILIATE_TAG}`
+    : it.href || WL_URL;
+  return { ...it, priority, rank: Number.isFinite(o.rank) ? o.rank : Infinity, note: o.note ?? it.comment ?? '', hide: !!o.hide, link, order: i };
+}).filter((x) => !x.hide).sort((a, b) => TIER_ORDER[a.priority] - TIER_ORDER[b.priority] || a.rank - b.rank || (b.added || '').localeCompare(a.added || '') || a.order - b.order);
+const WL_UPDATED = WL_DATA.updated ? WL_DATA.updated.slice(0, 10) : null;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const j = (o) => JSON.stringify(o);
@@ -137,7 +160,7 @@ const foot = () => `<footer class="sitefoot"><div class="rail">
       <li><a href="${IG}" rel="me noopener">Instagram</a></li><li><a href="${GH}" rel="me noopener">GitHub</a></li></ul></div>
     <div><h2 class="small-caps">Contact &amp; support</h2><ul>
       <li><a href="mailto:${EMAIL}?subject=Samuel%20Baird">${EMAIL}</a></li><li><a href="/donate">Donate</a></li>
-      <li><a href="https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4" rel="noopener">Amazon wishlist</a></li></ul></div>
+      <li><a href="/wishlist">Wishlist</a></li></ul></div>
   </div>
   <p class="legal">&copy; ${YEAR} ${NAME}. Free, independent and ad-free. Original data on this site is released under <a href="${LICENSE_URL}" rel="license noopener">${LICENSE_NAME}</a>.</p>
 </div></footer>`;
@@ -249,7 +272,7 @@ const FAQ = [
   ['How should I cite this site?', `For the sacred sites data: Baird, Samuel. "Sacred Sites Visited." samuelbaird.com, ${F.firstVisit.slice(0, 4)}–${F.lastVisit.slice(0, 4)}. ${BASE}/data. For Latter-day Stats, cite the specific study, dataset or graphic page and its listed source.`],
   ['Can AI assistants and search engines use this site?', `Yes. <a href="/robots.txt">robots.txt</a> explicitly allows the major search and AI crawlers (including GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended and Applebot-Extended), and a plain-text summary for language models is at <a href="/llms.txt">/llms.txt</a>. Please attribute and link back when you use the content.`],
   ['How can I contact Samuel Baird?', `Email <a href="mailto:${EMAIL}?subject=Samuel%20Baird">${EMAIL}</a> for questions, corrections, collaboration or press. Corrections to any figure on this site are welcome.`],
-  ['How can I support the projects?', `The projects are free and ad-free. You can chip in toward hosting by <a href="/donate">donating via PayPal or Venmo</a>, or send a book from the <a href="https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4" rel="noopener">Amazon wishlist</a>.`],
+  ['How can I support the projects?', `The projects are free and ad-free. You can chip in toward hosting by <a href="/donate">donating via PayPal or Venmo</a>, or send a book from the <a href="/wishlist">wishlist</a>, sorted with the most-wanted items first.`],
 ];
 const stripTags = (h) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
 
@@ -327,7 +350,11 @@ const PAGES = {
       crumbs([['Home', '/'], ['My Reading', '/books']])] },
   '/collection': { file: 'collection/index.html', title: `Collection: Historic Latter-day Saint Books, Periodicals and Artifacts · ${NAME}`, desc: `Historical Latter-day Saint items owned by ${NAME}, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/collection#items' } }), collectionList(), crumbs([['Home', '/'], ['Collection', '/collection']])] },
-  '/donate': { file: 'donate/index.html', title: `Donate · ${NAME}`, desc: `Support ${NAME}'s free, independent, ad-free projects and videos with a donation toward hosting, or send a book from the Amazon wishlist.`,
+  '/wishlist': { title: `Wishlist: Books and Research Materials · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and research item', 'books and research items') : 'Books and research materials'} ${NAME} would like for his projects and videos, most wanted first. Bought through Amazon, shipped directly to him.`,
+    ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/wishlist#list' } }),
+      { '@type': 'ItemList', '@id': BASE + '/wishlist#list', name: 'Wishlist', itemListOrder: 'https://schema.org/ItemListOrderDescending', numberOfItems: WISHLIST.length, itemListElement: WISHLIST.map((w, i) => ({ '@type': 'ListItem', position: i + 1, name: w.title, url: w.link })) },
+      crumbs([['Home', '/'], ['Donate', '/donate'], ['Wishlist', '/wishlist']])] },
+  '/donate': { file: 'donate/index.html', title: `Donate · ${NAME}`, desc: `Support ${NAME}'s free, independent, ad-free projects and videos with a donation toward hosting, or send a book from the wishlist.`,
     ld: (p) => [webPage(p, 'WebPage', { potentialAction: [
       { '@type': 'DonateAction', name: 'Donate via PayPal', recipient: PERSON_REF, target: 'https://paypal.me/Baird90' },
       { '@type': 'DonateAction', name: 'Donate via Venmo', recipient: PERSON_REF, target: 'https://venmo.com/Samuel-J-Baird' }] }), crumbs([['Home', '/'], ['Donate', '/donate']])] },
@@ -347,10 +374,10 @@ const HEAD_COMMON = `<meta charset="utf-8">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/bg/bg.css">
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>`;
-const shell = (path, body) => `<!doctype html>
+const shell = (path, body, extraHead = '') => `<!doctype html>
 <html lang="en">
 <head>
-${HEAD_COMMON}
+${HEAD_COMMON}${extraHead}
 <!--seo-->${seoFor(path)}<!--/seo-->
 </head>
 <body>
@@ -460,6 +487,27 @@ ${sections}
 </div>`);
 }
 
+function wishlistPage() {
+  const card = (w) => `<li>
+    <a class="cover" href="${esc(w.link)}" target="_blank" rel="noopener sponsored" tabindex="-1" aria-hidden="true">${w.image ? `<img src="${esc(w.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}</a>
+    <h3><a href="${esc(w.link)}" target="_blank" rel="noopener sponsored">${esc(w.title)}</a></h3>
+    ${w.byline ? `<p class="by">${esc(w.byline)}</p>` : ''}${w.priceText ? `<p class="price">${esc(w.priceText)}</p>` : ''}${w.note ? `<p class="why">${esc(w.note)}</p>` : ''}
+  </li>`;
+  const tiers = TIERS.map(([k, label]) => [k, label, WISHLIST.filter((w) => w.priority === k)]).filter(([, , l]) => l.length);
+  const body = WISHLIST.length
+    ? tiers.map(([k, label, list]) => `<section class="wl-tier" id="${k}"><h2>${label} <small>${plural(list.length, 'item')}</small></h2>
+<ul class="wl">
+  ${list.map(card).join('\n  ')}
+</ul></section>`).join('\n')
+    : `<p class="wl-empty">The list is syncing from Amazon. In the meantime, <a href="${WL_URL}" target="_blank" rel="noopener">view it on amazon.com</a>.</p>`;
+  return shell('/wishlist', `${pagehead([['Home', '/'], ['Donate', '/donate'], ['Wishlist', '/wishlist']], 'Wishlist', 'Send a book', `${WISHLIST.length ? `${plural(WISHLIST.length, 'item')}, most wanted first. ` : ''}Mostly books for research behind the videos and projects.${WL_UPDATED ? ` Synced from Amazon ${longDate(WL_UPDATED)}.` : ''}`)}
+<div class="wl-how">
+  <div class="btns"><a class="primary" href="${WL_URL}" target="_blank" rel="noopener">Open the list on Amazon &rarr;</a><a class="secondary" href="/donate">Donate instead</a></div>
+  <p class="note disclosure">Buying from these links or the Amazon list ships to me directly and marks the item as bought. Links are Amazon affiliate links; I may earn a commission. Thank you!</p>
+</div>
+${body}`, '\n<link rel="stylesheet" href="/wishlist/wishlist.css">');
+}
+
 /* ---------- marker patching for hand-written pages ---------- */
 const region = (html, tag, content) => {
   const re = new RegExp(`<!--${tag}-->[\\s\\S]*?<!--/${tag}-->`);
@@ -496,6 +544,7 @@ write('about/index.html', aboutPage());
 write('faq/index.html', faqPage());
 write('data/index.html', dataPage());
 write('sacred-sites/sites/index.html', sitesPage());
+write('wishlist/index.html', wishlistPage());
 write('data/sacred-sites.csv', toCsv(SITE_ROWS));
 write('data/sacred-sites.json', JSON.stringify({ name: DATASETS.sites.name, license: LICENSE_URL, source: BASE + '/data', generated: TODAY, records: SITE_ROWS }, null, 2) + '\n');
 write('data/reading-list.csv', toCsv(BOOK_ROWS));
@@ -520,7 +569,7 @@ Sitemap: ${BASE}/sitemap.xml
 `);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/stats', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/stats', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}
@@ -545,6 +594,7 @@ Figures for external sites are dated ${EXT.asOf}.
   - [Photos](${BASE}/sacred-sites/photos) and [Stats](${BASE}/sacred-sites/stats).
 - [My Reading](${BASE}/books): ${F.books} books and ${F.articles} articles with the date finished.
 - [Collection](${BASE}/collection): historic Latter-day Saint books, periodicals and artifacts.
+- [Wishlist](${BASE}/wishlist): books and research materials he would like, most wanted first.
 
 ## Answers and data
 - [FAQ](${BASE}/faq): direct answers with dated figures.

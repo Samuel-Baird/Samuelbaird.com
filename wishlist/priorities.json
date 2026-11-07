@@ -1,0 +1,11 @@
+{
+  "_help": [
+    "Your overrides for the /wishlist page. Items are synced from Amazon automatically into data.json (do not edit that file).",
+    "Key each entry by the item's ASIN (the 10-character code in its amazon.com/dp/XXXXXXXXXX link).",
+    "priority: highest | high | medium | low | lowest. Overrides the priority set on Amazon; items with neither are medium.",
+    "rank: optional number; lower shows first within the same priority. note: optional text shown on the card (overrides the Amazon comment).",
+    "hide: true keeps an item off the page without removing it from Amazon.",
+    "Example: \"0195375734\": { \"priority\": \"highest\", \"rank\": 1, \"note\": \"For the Paul video\" }"
+  ],
+  "items": {}
+}
