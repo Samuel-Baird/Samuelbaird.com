@@ -1,0 +1,260 @@
+{
+ "route": "/the-papers/[[...uri]]",
+ "pageProps": {
+  "docDetails": {
+   "panes": [
+    {
+     "title": "Browse the Papers",
+     "uri": "series",
+     "sections": [
+      {
+       "title": "",
+       "links": [
+        {
+         "title": {
+          "text": "\r\n\tDocuments",
+          "href": "/the-papers/documents",
+          "uri": "documents",
+          "documentSeriesId": "JSPPD"
+         },
+         "color": "blue",
+         "description": "Letters, revelations, reports of discourses, minutes, etc.",
+         "text": null,
+         "count": "4185"
+        },
+        {
+         "title": {
+          "text": "\r\n\tJournals",
+          "href": "/the-papers/journals",
+          "uri": "journals",
+          "documentSeriesId": "JSPPJ"
+         },
+         "color": "red",
+         "description": "Journals and diaries",
+         "text": null,
+         "count": "32"
+        },
+        {
+         "title": {
+          "text": "\r\n\tAdministrative Records",
+          "href": "/the-papers/administrative-records",
+          "uri": "administrative-records",
+          "documentSeriesId": "JSPPA"
+         },
+         "color": "orange",
+         "description": "Minutes and other official records",
+         "text": null,
+         "count": "2728"
+        },
+        {
+         "title": {
+          "text": "\r\n\tRevelations and Translations",
+          "href": "/the-papers/revelations-and-translations",
+          "uri": "revelations-and-translations",
+          "documentSeriesId": "JSPPR"
+         },
+         "color": "purple",
+         "description": "Early manuscript and printed versions of scriptural works",
+         "text": null,
+         "count": "68"
+        },
+        {
+         "title": {
+          "text": "\r\n\tHistories",
+          "href": "/the-papers/histories",
+          "uri": "histories",
+          "documentSeriesId": "JSPPH"
+         },
+         "color": "green",
+         "description": "Early histories and draft material for the later History of the Church",
+         "text": null,
+         "count": "57"
+        },
+        {
+         "title": {
+          "text": "\r\n\tLegal Records",
+          "href": "/the-papers/legal-records",
+          "uri": "legal-records",
+          "documentSeriesId": "JSPPL"
+         },
+         "color": "gold",
+         "description": "Court papers",
+         "text": null,
+         "count": "2501"
+        },
+        {
+         "title": {
+          "text": "\r\n\tFinancial Records",
+          "href": "/the-papers/financial-records",
+          "uri": "financial-records",
+          "documentSeriesId": "JSPPF"
+         },
+         "color": "skyBlue",
+         "description": "Deeds, promissory notes, invoices, agreements, daybooks, ledgers, etc.",
+         "text": null,
+         "count": "2015"
+        }
+       ]
+      },
+      {
+       "title": "Related Resources",
+       "links": [
+        {
+         "title": {
+          "text": "\r\n\tOther Contemporary Papers",
+          "href": "/the-papers/other-contemporary-papers",
+          "uri": "other-contemporary-papers",
+          "documentSeriesId": "JSPADM"
+         },
+         "color": "black",
+         "description": "Selected papers of Joseph Smith's contemporaries"
+        },
+        {
+         "title": {
+          "text": "\r\n\tCalendar of Documents",
+          "href": "/reference/calendar-of-documents",
+          "uri": "calendar-of-documents",
+          "documentSeriesId": ""
+         },
+         "color": "red",
+         "description": "Chronological list of all known Joseph Smith documents, including multiple versions of                    documents"
+        },
+        {
+         "title": {
+          "text": "\r\n\tComprehensive Works Cited",
+          "href": "/works-cited",
+          "uri": "works-cited",
+          "documentSeriesId": ""
+         },
+         "color": "red",
+         "description": "List of all sources cited on the Joseph Smith Papers website"
+        }
+       ]
+      }
+     ],
+     "id": "63883369654089332260-eng"
+    },
+    {
+     "title": "Browse the Papers: Journals",
+     "uri": "journals",
+     "message": "",
+     "sections": [
+      {
+       "title": "Images and Transcripts",
+       "links": [
+        {
+         "text": "\r\n\tJournals, 1832&ndash;1839",
+         "href": "/the-papers/journals/jsppj1",
+         "uri": "journals/jsppj1",
+         "documentSeriesId": "jsppj1",
+         "query": "",
+         "count": "5"
+        },
+        {
+         "text": "\r\n\tJournals, 1841&ndash;1844",
+         "href": "/the-papers/journals/jsppj2",
+         "uri": "journals/jsppj2",
+         "documentSeriesId": "jsppj2",
+         "query": "",
+         "count": "5"
+        }
+       ]
+      },
+      {
+       "title": "Related Materials",
+       "links": [
+        {
+         "text": "\r\n\tIntroduction to the Journals",
+         "href": "/doc/series-introduction-for-the-journals-series",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tIntroduction to 1830s Journals",
+         "href": "/doc/introduction-to-journals-volume-1",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tIntroduction to Nauvoo Journals, December 1841&ndash;April 1843",
+         "href": "/doc/introduction-to-journals-volume-2",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tIntroduction to Nauvoo Journals, May 1843&ndash;June 1844",
+         "href": "/doc/introduction-to-journals-volume-3",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tEssay on Sources Cited in Journals, Volume 1",
+         "href": "/doc/essay-on-sources-cited-in-journals-volume-1",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tEssay on Sources Cited in Journals, Volume 2",
+         "href": "/doc/essay-on-sources-cited-in-journals-volume-2",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tEssay on Sources Cited in Journals, Volume 3",
+         "href": "/doc/essay-on-sources-cited-in-journals-volume-3",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        },
+        {
+         "text": "\r\n\tEditorial Method",
+         "href": "/editorialMethod",
+         "uri": "",
+         "documentSeriesId": "",
+         "query": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "\r\n\tJournals, 1832&ndash;1839",
+     "uri": "journals/jsppj1",
+     "sections": [
+      {
+       "links": [
+        {
+         "text": "Journal, 1832–1834",
+         "href": "/paper-summary/journal-1832-1834"
+        },
+        {
+         "text": "Journal, 1835–1836",
+         "href": "/paper-summary/journal-1835-1836"
+        },
+        {
+         "text": "Journal, March–September 1838",
+         "href": "/paper-summary/journal-march-september-1838"
+        },
+        {
+         "text": "Journal, September–October 1838",
+         "href": "/paper-summary/journal-september-october-1838"
+        },
+        {
+         "text": "Journal, 1839",
+         "href": "/paper-summary/journal-1839"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "id": "63883369654089332260-eng"
+  }
+ }
+}
