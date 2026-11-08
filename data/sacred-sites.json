@@ -80,6 +80,21 @@
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Zion%20Lutheran%20Church%20ELCA%2C%20Salt%20Lake%20City%2C%20Utah"
     },
     {
+      "name": "Jordan Valley Church (PCA)",
+      "tradition": "Presbyterian Church in America (PCA)",
+      "denomination": "Presbyterian Church in America (PCA)",
+      "city": "West Jordan",
+      "state": "Utah",
+      "country": "USA",
+      "latitude": 40.5934041,
+      "longitude": -111.9782702,
+      "visits": 1,
+      "first_visit": "2026-11-08",
+      "last_visit": "2026-11-08",
+      "visit_types": "Attended worship",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Jordan%20Valley%20Church%20(PCA)%2C%20West%20Jordan%2C%20Utah"
+    },
+    {
       "name": "Cathedral of the Madeleine",
       "tradition": "Roman Catholic",
       "denomination": "Catholic",

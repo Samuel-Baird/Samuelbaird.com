@@ -34,6 +34,7 @@ const PLACES = {
   mo: ["Monticello Utah Temple", "LDS", "Monticello", "Utah", 37.877613, -109.347073],
   li: ["Lindon Utah Temple", "LDS", "Lindon", "Utah", 40.337243, -111.694798],
   rx: ["Rexburg Idaho Temple", "LDS", "Rexburg", "Idaho", 43.810224, -111.779237],
+  jv: ["Jordan Valley Church (PCA)", "Presbyterian Church in America (PCA)", "West Jordan", "Utah", 40.5934041, -111.9782702],
   sda: ["West Jordan Seventh-day Adventist Church", "SDA", "West Jordan", "Utah", 40.587188, -111.946699],
   ang: ["St John's Anglican", "Anglican", "Cottonwood Heights", "Utah", 40.621629, -111.844695],
   epi: ["St Mary's Episcopal Church", "Episcopalian", "Provo", "Utah", 40.236819, -111.66007],
@@ -104,6 +105,7 @@ const VISITS = [
   ["2026-06-13", "dp", "Sealing", "English"],
   ["2026-06-14", "go", "Worship Service", "English", "Baptism of a friend of a friend", "", P("AF1QipOg6DbnBkwvlg2HqnL2RFFhu7qmBD35_GtKcQeu")],
   ["2026-06-20", "li", "Initiatory", "English"],
+  ["2026-11-08", "jv", "Worship Service", "English", "", "", "https://photos.app.goo.gl/DJfpp2tmxxFrBxJq5"],
 ];
 
 // Visit categories come from the visit type (see lib.js). Add a visit with type "Grounds Visit" or
@@ -214,7 +216,6 @@ const WISHLIST = [
   ["w-goodnews", "Good News Lutheran Church (WELS)", "Wisconsin Evangelical Lutheran Synod (WELS)", "Lehi", "Utah", "USA", 40.4289146, -111.8323097, "3281 N 1120 E", "Good News Lutheran Church - Lehi, Utah, 3281 N 1120 E, Lehi, UT 84043"],
   ["w-goodshepherd", "Good Shepherd Lutheran Church (LCMC)", "Lutheran Congregations in Mission for Christ (LCMC)", "Sandy", "Utah", "USA", 40.5954156, -111.8716289, "8575 S 700 E", "Good Shepherd Lutheran Church (LCMC), 8575 S 700 E, Sandy, UT 84094"],
   ["w-redeemerlcms", "Redeemer Lutheran Church (LCMS)", "Lutheran Church \u2013 Missouri Synod", "Salt Lake City", "Utah", "USA", 40.7158685, -111.8351865, "1955 Stratford Ave", "Redeemer Lutheran Church, 1955 Stratford Ave S, Salt Lake City, UT 84106"],
-  ["w-jordanvalley", "Jordan Valley Church (PCA)", "Presbyterian Church in America (PCA)", "West Jordan", "Utah", "USA", 40.5934041, -111.9782702, "3671 Old Bingham Hwy", "Jordan Valley Church, 3671 Old Bingham Hwy, West Jordan, UT 84088"],
   ["w-stmaryassumption", "St. Mary of the Assumption Church and School", "Catholic", "Park City", "Utah", "USA", 40.6820204, -111.5370286, "1505 White Pine Canyon Rd", "St. Mary of the Assumption Church and School, 1505 White Pine Canyon Rd, Park City, UT 84060"],
   ["w-stfrancisorem", "Saint Francis of Assisi Catholic Church", "Catholic", "Orem", "Utah", "USA", 40.307314, -111.6940734, "65 500 N", "Saint Francis of Assisi Catholic Church, 65 500 N, Orem, UT 84057"],
   ["w-firstumcslc", "First United Methodist Church", "United Methodist Church (UMC)", "Salt Lake City", "Utah", "USA", 40.7646084, -111.8849892, "203 S 200 E", "First United Methodist Church - Salt Lake, 203 S 200 E, Salt Lake City, UT 84111"],
