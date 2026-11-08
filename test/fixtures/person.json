@@ -1,0 +1,170 @@
+{
+ "route": "/person/[uri]",
+ "pageProps": {
+  "context": "published",
+  "host": "www.josephsmithpapers.org",
+  "showHeader": true,
+  "footerStyle": "full",
+  "statusCode": 200,
+  "publisherMenuData": null,
+  "person": {
+   "authority": {
+    "references": "4822",
+    "link-target-type": "person",
+    "target": "per86",
+    "url": "/preview/jsp/searchable/people/per86.xml",
+    "unique": "per86 smith emma hale bidamon wife lady mrs bidaman wive sister goveness partner widow mine joseph bride mother emmy emit emie companion j do presidentess elect sistr prestss emey defendant aunt witness weibe emmett missus madam",
+    "refObject": {
+     "showSummary": "Y",
+     "WebPublishStatus": "InterimContent",
+     "link-target-type": "person",
+     "url": "per86",
+     "entry": "29044",
+     "title": "JSPPNAR2",
+     "docDesc": "Smith, Emma Hale",
+     "sortkey": "smith emma hale",
+     "ShowFootnotes": "Y",
+     "uriTitle": "emma-hale-smith",
+     "facet": [
+      {
+       "person": "Smith, Emma Hale",
+       "personFirstLast": "Emma Hale Smith",
+       "personLastFirst": "Smith, Emma Hale"
+      },
+      {
+       "genre": "People of the Time"
+      },
+      {
+       "person": "Hale, Emma",
+       "personFirstLast": "Emma Hale",
+       "personLastFirst": "Hale, Emma"
+      },
+      {
+       "person": "Bidamon, Emma Hale",
+       "personFirstLast": "Emma Hale Bidamon",
+       "personLastFirst": "Bidamon, Emma Hale"
+      }
+     ],
+     "documentInfo": {
+      "id": "29044",
+      "a": {
+       "ro": "per86",
+       "person": "per86",
+       "title": "Smith, Emma Hale"
+      },
+      "classification": "People of the time",
+      "sortKey": "smith emma hale",
+      "defaultUrl": "/person/emma-hale-smith",
+      "abstract": "10 July 1804–30 Apr. 1879. Scribe, editor, boardinghouse operator, clothier. Born at Willingborough Township (later in Harmony), Susquehanna Co., Pennsylvania. Daughter of Isaac Hale and Elizabeth Lewis. Member of Methodist church at Harmony (later in Oakland..."
+     },
+     "person": {
+      "name": {
+       "persName": [
+        {
+         "generalName": "Emma Smith",
+         "forename": [
+          {
+           "type": "first",
+           "_value": "Emma"
+          }
+         ],
+         "surname": [
+          {
+           "type": "maiden",
+           "_value": "Hale"
+          },
+          {
+           "type": "married",
+           "_value": "Smith"
+          }
+         ]
+        }
+       ]
+      },
+      "altNames": [
+       "Hale, Emma",
+       "Bidamon, Emma Hale"
+      ],
+      "gender": "F",
+      "description": {
+       "abstract": {
+        "p": ""
+       },
+       "summary": "<html><head></head><body><div class=\" wasptag\" xmlns:srchdoc=\"https://ldsc.xmlref.com/local/ldschurch/searchDocuments\" xmlns:pm=\"https://xmlref.com/local/pm\" xmlns:lds=\"https://ldsc.xmlref.com/local/ldschurch\" xmlns=\"\">10 July 1804<aside class=\"popup-wrapper\" id=\"16887488101355151460\"><a href=\"#16887488101355151460\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro1\"><span id=\"documentintro1\">1</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS History, 1834–1836, <a href=\"/paper-summary/history-1834-1836/11\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1834-1836\" poptitle=\"Genealogies\">9</a>.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> JS History, 1834–1836 / Smith, Joseph, et al. History, 1834–1836. In Joseph Smith et al., History, 1838–1856, vol. A-1, back of book (earliest numbering), 9–20, 46–187. Historian's Office, History of the Church, 1839–ca. 1882. CHL. <a href=\"https://catalog.churchofjesuschrist.org/assets?id=4189b38c-d9f2-4c66-b9e2-50126b947cbd&amp;crate=0&amp;index=0\" class=\"externalLink\">CR 100 102, box 1, vol. 1</a>.</p></div></div></div></aside>–30 Apr. 1879.<aside class=\"popup-wrapper\" id=\"10526264807825247175\"><a href=\"#10526264807825247175\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro2\"><span id=\"documentintro2\">2</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">“Editorial Items,” <span class=\"title\">Saints’ Herald,</span> 15 May 1879, 152.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p></div></div></div></aside> Scribe, editor, boardinghouse operator, clothier.<aside class=\"popup-wrapper\" id=\"17607209064619791021\"><a href=\"#17607209064619791021\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro3\"><span id=\"documentintro3\">3</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Minute Book 1, <a href=\"/paper-summary/minute-book-1/111\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/minute-book-1\" poptitle=\"14\nSeptember 1835 • Monday\">14 Sept. 1835</a>; Joseph Smith III, “Last Testimony of Sister Emma,” <span class=\"title\">Saints’ Herald,</span> 1 Oct. 1879, 289; “Hale, Emma,” in Black, <span class=\"title\">Membership of The Church of Jesus Christ of Latter-day Saints, 1830–1848,</span> 19:846; Newell and Avery, <span class=\"title\">Mormon Enigma,</span> 57; Cook, <span class=\"title\">Revelations of the Prophet Joseph Smith,</span> 37.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> Minute Book 1 / “Conference A,” 1832–1837. CHL. Also available at josephsmithpapers.org.</p><p id=\"source-note2\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p><p id=\"source-note3\">Black, Susan Easton, comp. <span class=\"title\">Membership of the Church of Jesus Christ of Latter-day Saints, 1830–1848.</span> 50 vols. Provo, UT: Religious Studies Center, Department of Church History and Doctrine, Brigham Young University, 1989. Also available as “Membership of the Church of Jesus Christ of Latter-day Saints, 1830–1848,” LDS Family History Suite: LDS Vital Records Library, CD-ROM ([Provo], UT: Infobases, Inc., 1996). </p><p id=\"source-note4\">Newell, Linda King and Valeen Tippetts Avery. <span class=\"title\">Mormon Enigma: Emma Hale Smith, Prophet’s Wife, “Elect Lady,” Polygamy’s Foe, 1804–1879.</span> Garden City, NY: Doubleday, 1984.</p><p id=\"source-note5\">Cook, Lyndon W. <span class=\"title\">The Revelations of the Prophet Joseph Smith: A Historical and Biographical Commentary of the Doctrine and Covenants.</span> Salt Lake City: Deseret Book, 1985. </p></div></div></div></aside> Born at Willingborough Township (later in Harmony), Susquehanna Co., Pennsylvania.<aside class=\"popup-wrapper\" id=\"8920882458219712928\"><a href=\"#8920882458219712928\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro4\"><span id=\"documentintro4\">4</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS History, 1834–1836, <a href=\"/paper-summary/history-1834-1836/11\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1834-1836\" poptitle=\"Genealogies\">9</a>.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> JS History, 1834–1836 / Smith, Joseph, et al. History, 1834–1836. In Joseph Smith et al., History, 1838–1856, vol. A-1, back of book (earliest numbering), 9–20, 46–187. Historian's Office, History of the Church, 1839–ca. 1882. CHL. <a href=\"https://catalog.churchofjesuschrist.org/assets?id=4189b38c-d9f2-4c66-b9e2-50126b947cbd&amp;crate=0&amp;index=0\" class=\"externalLink\">CR 100 102, box 1, vol. 1</a>.</p></div></div></div></aside> Daughter of Isaac Hale and Elizabeth Lewis.<aside class=\"popup-wrapper\" id=\"8037357986505432424\"><a href=\"#8037357986505432424\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro5\"><span id=\"documentintro5\">5</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS History, ca. Summer 1832, <a href=\"/paper-summary/history-circa-summer-1832\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/history-circa-summer-1832\" poptitle=\"History, circa\nSummer 1832\">5</a>; Obituary for Emma Bidamon, <span class=\"title\">Saints’ Herald,</span> 1 June 1879, 171; Cook, <span class=\"title\">Revelations of the Prophet Joseph Smith,</span> 37.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p><p id=\"source-note2\">Cook, Lyndon W. <span class=\"title\">The Revelations of the Prophet Joseph Smith: A Historical and Biographical Commentary of the Doctrine and Covenants.</span> Salt Lake City: Deseret Book, 1985. </p></div></div></div></aside> Member of Methodist church at Harmony (later in Oakland).<aside class=\"popup-wrapper\" id=\"10994750800810419549\"><a href=\"#10994750800810419549\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro6\"><span id=\"documentintro6\">6</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Youngreen, <span class=\"title\">Reflections of Emma,</span> 5.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Youngree, Buddy. <span class=\"title\">Reflections of Emma: Joseph Smith’s Wife.</span> Provo, UT: Maasai, Inc., 2001.</p></div></div></div></aside> Married first to JS by Zechariah Tarble, 18 Jan. 1827, at South Bainbridge (later Afton), Chenango Co., New York.<aside class=\"popup-wrapper\" id=\"1237382022067199453\"><a href=\"#1237382022067199453\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro7\"><span id=\"documentintro7\">7</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS Family Bible; Joseph Smith III, “Last Testimony of Sister Emma,” <span class=\"title\">Saints’ Herald,</span> 1 Oct. 1879, 289.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">JS Family Bible / Joseph Smith Family Bible, ca. 1831–1866. Private possession. Copy of genealogical information in Joseph Smith Sr. Family Reunions Files, 1972–2003. CHL.</p><p id=\"source-note2\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p></div></div></div></aside> Assisted JS as scribe during translation of Book of Mormon at Harmony, 1828, and joined him during completion of translation at Peter Whitmer Sr. farm, Fayette, Seneca Co., New York, summer 1829.<aside class=\"popup-wrapper\" id=\"7104650069222659161\"><a href=\"#7104650069222659161\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro8\"><span id=\"documentintro8\">8</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Joseph Smith III, “Last Testimony of Sister Emma,” <span class=\"title\">Saints’ Herald,</span> 1 Oct. 1879, 289; Newell and Avery, <span class=\"title\">Mormon Enigma,</span> 29–30.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p><p id=\"source-note2\">Newell, Linda King and Valeen Tippetts Avery. <span class=\"title\">Mormon Enigma: Emma Hale Smith, Prophet’s Wife, “Elect Lady,” Polygamy’s Foe, 1804–1879.</span> Garden City, NY: Doubleday, 1984.</p></div></div></div></aside> Baptized into Church of Jesus Christ of Latter-day Saints by Oliver Cowdery, 28 June 1830, at Colesville, Broome Co., New York.<aside class=\"popup-wrapper\" id=\"6621822591403929331\"><a href=\"#6621822591403929331\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro9\"><span id=\"documentintro9\">9</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Joseph Smith III, “Last Testimony of Sister Emma,” <span class=\"title\">Saints’ Herald,</span> 1 Oct. 1879, 289; History, ca. 1841, draft [Draft 3],74; Black, <span class=\"title\">Who’s Who in the Doctrine and Covenants,</span> 274.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p><p id=\"source-note2\"> JS History, ca. 1841 / <a href=\"http://josephsmithpapers.org/paperSummary/history-circa-1841-draft-draft-3\" class=\"externalLink\">Smith, Joseph. History, ca. 1841. Draft. CHL</a>.</p><p id=\"source-note3\"> Black, Susan Easton. <span class=\"title\">Who’s Who in the Doctrine and Covenants.</span> Salt Lake City: Bookcraft, 1997. </p></div></div></div></aside> Migrated from New York to Kirtland, Geauga Co., Ohio, Jan.–Feb. 1831.<aside class=\"popup-wrapper\" id=\"2883387344487342254\"><a href=\"#2883387344487342254\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro10\"><span id=\"documentintro10\">10</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS History, vol. A-1, <a href=\"/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/10\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-a-1-23-december-1805-30-august-1834\" poptitle=\"\n September 1827–February 1828\n \">8</a>; Lucy Mack Smith, History, 1844–1845, <a href=\"/paper-summary/lucy-mack-smith-history-1844-1845/117\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/lucy-mack-smith-history-1844-1845\" poptitle=\"Book 10\">bk. 10</a>, [8].</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">JS History / Smith, Joseph, et al. History, 1838–1856. Vols. A-1–F-1 (original), A-2–E-2 (fair copy). Historian’s Office, History of the Church, 1839–ca. 1882. CHL. CR 100 102, boxes 1–7. The history for the period after 5 Aug. 1838 was composed after the death of Joseph Smith.</p><p id=\"source-note2\"> Smith, Lucy Mack. History, 1844–1845. 18 books. CHL. MS 2049. Also available at <a href=\"http://josephsmithpapers.org/paperSummary/lucy-mack-smith-history-1844-1845\" class=\"externalLink\">josephsmithpapers.org</a>.</p></div></div></div></aside> Lived at John Johnson home at Hiram, Portage Co., Ohio, 1831–1832.<aside class=\"popup-wrapper\" id=\"5494979977278504059\"><a href=\"#5494979977278504059\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro11\"><span id=\"documentintro11\">11</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS History, vol. A-1, <a href=\"/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/159\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-a-1-23-december-1805-30-august-1834\" poptitle=\"\n 12 September–October 1831\n \">153</a>, <a href=\"/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/198\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-a-1-23-december-1805-30-august-1834\" poptitle=\"\n March 1832\n \">204</a>, <a href=\"/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/215\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-a-1-23-december-1805-30-august-1834\" poptitle=\"30 March–24 April\n 1832 • Friday–Tuesday\">209</a>.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">JS History / Smith, Joseph, et al. History, 1838–1856. Vols. A-1–F-1 (original), A-2–E-2 (fair copy). Historian’s Office, History of the Church, 1839–ca. 1882. CHL. CR 100 102, boxes 1–7. The history for the period after 5 Aug. 1838 was composed after the death of Joseph Smith.</p></div></div></div></aside> Edited <span class=\"italic\">A Collection of Sacred Hymns, for the Church of the Latter Day Saints,</span> published 1835, at Kirtland.<aside class=\"popup-wrapper\" id=\"12161053732222031701\"><a href=\"#12161053732222031701\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro12\"><span id=\"documentintro12\">12</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Minute Book 1, <a href=\"/paper-summary/minute-book-1/111\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/minute-book-1\" poptitle=\"14\nSeptember 1835 • Monday\">14 Sept. 1835</a>; <span class=\"title\">Collection of Sacred Hymns</span> [1835].</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> Minute Book 1 / “Conference A,” 1832–1837. CHL. Also available at josephsmithpapers.org.</p><p id=\"source-note2\"> <span class=\"title\">A Collection of Sacred Hymns, for the Church of the Latter Day Saints.</span> Edited by Emma Smith. Kirtland, OH: F. G. Williams, 1835. </p></div></div></div></aside> Stockholder in Kirtland Safety Society.<aside class=\"popup-wrapper\" id=\"12996981962410809687\"><a href=\"#12996981962410809687\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro13\"><span id=\"documentintro13\">13</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Kirtland Safety Society Stock Ledger, Chicago Historical Society.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Kirtland Safety Society. Stock Ledger, 1836–1837. Collection of Manuscripts about Mormons, 1832–1954, Chicago History Museum. Copy at CHL.</p></div></div></div></aside> Fled Ohio for Far West, Caldwell Co., Missouri, Jan.–Mar. 1838.<aside class=\"popup-wrapper\" id=\"7076609014825066239\"><a href=\"#7076609014825066239\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro14\"><span id=\"documentintro14\">14</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS, Journal, <a href=\"/paper-summary/journal-march-september-1838/9\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/journal-march-september-1838\" poptitle=\"Letter to the Presidency in Kirtland •\n29 March 1838\">29 Mar. 1838</a>.</p><hr></div></div></aside> Exiled from Missouri, Feb. 1839; located near Quincy, Adams Co., Illinois.<aside class=\"popup-wrapper\" id=\"4464994686827202876\"><a href=\"#4464994686827202876\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro15\"><span id=\"documentintro15\">15</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Obituary for Emma Bidamon, <span class=\"title\">Saints’ Herald,</span> 1 June 1879, 171; Woodruff, Journal, 16 Apr. 1838.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p><p id=\"source-note2\"> Woodruff, Wilford. Journals, 1833–1898. Wilford Woodruff, Journals and Papers, 1828–1898. CHL. <a href=\"https://catalog.churchofjesuschrist.org/record/400c3266-ede2-43cf-9a24-50153adebbeb?view=browse\" class=\"externalLink\">MS 1352</a>.</p></div></div></div></aside> Moved to Commerce (later Nauvoo), Hancock Co., Illinois, 10 May 1839.<aside class=\"popup-wrapper\" id=\"7087698964872229054\"><a href=\"#7087698964872229054\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro16\"><span id=\"documentintro16\">16</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Mary Audentia Smith Anderson, “The Memoirs of President Joseph Smith (1832–1914),” <span class=\"title\">Saints’ Herald,</span> 13 Nov. 1934, 1453.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p></div></div></div></aside> Appointed president of Female Relief Society of Nauvoo, 17 Mar. 1842.<aside class=\"popup-wrapper\" id=\"17791058096294295643\"><a href=\"#17791058096294295643\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro17\"><span id=\"documentintro17\">17</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Relief Society Minute Book, <a href=\"/paper-summary/nauvoo-relief-society-minute-book/29\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/nauvoo-relief-society-minute-book\" poptitle=\"17 March 1842 • Thursday\">17 Mar. 1842</a>.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Relief Society Minute Book / “A Book of Records Containing the Proceedings of the Female Relief Society of Nauvoo,” Mar. 1842–Mar. 1844. CHL. Also available at josephsmithpapers.org.</p></div></div></div></aside> Husband murdered, 27 June 1844.<aside class=\"popup-wrapper\" id=\"11968885307706971664\"><a href=\"#11968885307706971664\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro18\"><span id=\"documentintro18\">18</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Richards, Journal, 27 June 1844.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Richards, Willard. Journals, 1836–1853. Willard Richards, Papers, 1821–1854. CHL. <a href=\"https://catalog.churchofjesuschrist.org/record/692b9f3e-0ea2-464b-9027-e6a4d8f7af06?view=browse\" class=\"externalLink\">MS 1490, boxes 1–2</a>.</p></div></div></div></aside> Fled to Fulton, Fulton Co., Illinois, Sept. 1846–Feb. 1847, then returned to Nauvoo.<aside class=\"popup-wrapper\" id=\"5176382432683368306\"><a href=\"#5176382432683368306\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro19\"><span id=\"documentintro19\">19</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Obituary for Emma Bidamon, <span class=\"title\">Saints’ Herald,</span> 1 June 1879, 170.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p></div></div></div></aside> Married second Lewis Crum Bidamon, 23 Dec. 1847, at Nauvoo.<aside class=\"popup-wrapper\" id=\"6383355796935719110\"><a href=\"#6383355796935719110\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro20\"><span id=\"documentintro20\">20</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Hancock Co., IL, Marriage Register, 1829–1915, vol. A-1, p. 105, microfilm 954,177, U.S. and Canada Record Collection, FHL.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> U.S. and Canada Record Collection. FHL. </p></div></div></div></aside> Affiliated with Reorganized Church of Jesus Christ of Latter Day Saints, 1860.<aside class=\"popup-wrapper\" id=\"15893873277599017862\"><a href=\"#15893873277599017862\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro21\"><span id=\"documentintro21\">21</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Obituary for Emma Bidamon, <span class=\"title\">Saints’ Herald,</span> 1 June 1879, 171; <span class=\"title\">History of the Reorganized Church,</span> 3: 250.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p><p id=\"source-note2\"> <span class=\"title\">The History of the Reorganized Church of Jesus Christ of Latter Day Saints.</span> 8 vols. Independence, MO: Herald Publishing House, 1896–1976. </p></div></div></div></aside> Died at Nauvoo.<aside class=\"popup-wrapper\" id=\"18094462653135079896\"><a href=\"#18094462653135079896\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro22\"><span id=\"documentintro22\">22</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">“Editorial Items,” <span class=\"title\">Saints’ Herald,</span> 15 May 1879, 152.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Saints’ Herald.</span> Independence, MO. 1860–. </p></div></div></div></aside></div></body></html>"
+      },
+      "relatedObjects": "\n            Birth of Emma Hale\n            Joseph Smith Jr. and Emma Hale are Married\n            Joseph and Emma Smith move to Commerce Illinois\n            Death of Emma Hale Smith\n            \n            "
+     }
+    },
+    "images": [
+     {
+      "location": "/bc-jsp/content/jsp/images/content/library/images/per86---D1-page-163---088-088-emma-smith-full-2.jpg",
+      "title": "Emma Smith",
+      "caption": "Oil on canvas, David Rogers, 1842. (Church History Museum, Salt Lake City.)",
+      "alt": "Emma Smith"
+     },
+     {
+      "location": "/bc-jsp/content/jsp/images/content/library/images/per86---H1-page-406---Emma_Smith_Maudsley.jpg",
+      "title": "Emma Smith",
+      "caption": "Gouache and ink on paper, Sutcliffe Maudsley, circa 1842. (Courtesy Church History Museum, Salt Lake City.)",
+      "alt": "Emma Smith"
+     },
+     {
+      "location": "/bc-jsp/content/jsp/images/content/library/images/per86---J1-page-145---09b_Emma_Smith_with_son_needs_crop.jpg",
+      "title": "Emma Smith",
+      "caption": "With son David Hyrum. Photograph, unknown photographer, 1845. (Courtesy Community of Christ Library-Archives, Independence, MO.)",
+      "alt": "Emma Smith"
+     },
+     {
+      "location": "/bc-jsp/content/jsp/images/content/images/per-Emma-Hale-Smith-PH 1300_b0003_f0010_i0598_00001.jpg",
+      "title": "Emma Hale Smith",
+      "caption": "Circa 1860–1879, copy of a photograph by Charles W. Carter. (Church History Library, Salt Lake City.)",
+      "alt": "Emma Hale Smith"
+     }
+    ]
+   },
+   "relatedlinks": [
+    {
+     "name": "papers",
+     "links": [
+      {
+       "url": "/paper-summary/history-1838-1856-volume-a-1-23-december-1805-30-august-1834/10",
+       "date": "1839-06-11",
+       "value": "\n                                          History, 1838–1856, volume A-1\n                                          [23 December 1805–30 August 1834]"
+      },
+      {
+       "url": "/paper-summary/history-draft-6-august-1838-30-december-1839/45",
+       "date": "1838-08-06",
+       "value": "\n            History Draft [6 August 1838–30 December 1839]"
+      },
+      {
+       "url": "/paper-summary/book-of-mormon-manuscript-excerpt-circa-june-1829-1-nephi-22b-318a/",
+       "date": "1829-06-01",
+       "value": " Book of Mormon\nManuscript Excerpt, circa June 1829 [1 Nephi 2:2b–3:18a]"
+      }
+     ]
+    },
+    {
+     "name": "other",
+     "links": [
+      {
+       "url": "/back/essay-on-sources-cited-in-documents-volume-15",
+       "date": "2025-12-08",
+       "value": "\n                        \nEssay on Sources Cited in \n<em>Documents, Volume 15</em>\n\n                    "
+      },
+      {
+       "url": "/back/documents-volume-1-part-1-introduction-july-1828-march-1829",
+       "date": "2013-07-23",
+       "value": "<em>Documents, Volume 1,</em>\n Part 1 Introduction:\n            July 1828–March 1829"
+      },
+      {
+       "url": "/back/documents-volume-10-part-4-introduction-august-1842",
+       "date": "2019-05-24",
+       "value": "<em>Documents, Volume 10,</em>\n Part 4 Introduction: August 1842"
+      }
+     ]
+    }
+   ]
+  },
+  "is404": false
+ }
+}

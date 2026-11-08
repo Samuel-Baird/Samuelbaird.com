@@ -1,0 +1,540 @@
+{
+ "search": {
+  "total": 7700,
+  "perPageRange": [
+   10,
+   20,
+   50
+  ],
+  "starts": 1,
+  "perPage": 10,
+  "pageNumber": 1,
+  "query": "Nauvoo",
+  "sort": "relevance",
+  "isSuggestion": false,
+  "sorts": [
+   {
+    "name": "Relevance"
+   },
+   {
+    "name": "Alphabetical"
+   },
+   {
+    "name": "Date"
+   }
+  ],
+  "results": {
+   "result": [
+    {
+     "documentURI": "/published/jsp/expanded/meta/53997055/53997055-0001.xml",
+     "score": "1871",
+     "title": "Nauvoo City Officers, 1841–1844",
+     "image": "",
+     "summary": "<summary><e>An Act to Incorporate the City of <mark>Nauvoo</mark> Times and Seasons, Jan. 15, 1841, 2: 281– 282, 285.</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/53997055/",
+     "link": "/back/nauvoo-city-officers-1841-1844?p=1&highlight=Nauvoo",
+     "date": "2015-12-09"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/meta/53997056/53997056-0001.xml",
+     "score": "1871",
+     "title": "Nauvoo Legion Officers, 1841–1844",
+     "image": "",
+     "summary": "<summary><e> <mark>Nauvoo</mark> Legion Minute Book, 4 Feb. 1841, 5.</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/53997056/",
+     "link": "/back/nauvoo-legion-officers-1841-1844?p=1&highlight=Nauvoo",
+     "date": "2015-12-09"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/meta/54030972/54030972-0001.xml",
+     "score": "1560",
+     "title": "Nauvoo City Officers, 16 May–27 June 1844",
+     "image": "",
+     "summary": "<summary><e>Act to Incorporate the City of <mark>Nauvoo</mark> 16 Dec. 1840</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/54030972/",
+     "link": "/back/nauvoo-city-officers-16-may-27-june-1844?p=1&highlight=Nauvoo",
+     "date": "2025-12-05"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/meta/54029845/54029845-0001.xml",
+     "score": "1560",
+     "title": "Nauvoo City Officers, 1 January–15 May 1844",
+     "image": "",
+     "summary": "<summary><e>Act to Incorporate the City of <mark>Nauvoo</mark> 16 Dec. 1840</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/54029845/",
+     "link": "/back/nauvoo-city-officers-1-january-15-may-1844?p=1&highlight=Nauvoo",
+     "date": "2025-04-22"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/papers/54030040/54030040-0001.xml",
+     "score": "1544",
+     "title": "Introduction to Nauvoo City Treasurer Records, Page 1",
+     "image": "",
+     "summary": "<summary><e>...City Collector, 5 Oct. 1844– A and B; <mark>Nauvoo</mark> City Treasury Ledger, 12, 14, 17, 19– 22, 30. In the <mark>Nauvoo</mark> City Treasury Ledger, these pay orders are called orders on collector. Some of the extant pay orders were bundled together...</e></summary>",
+     "summaryType": "documentText",
+     "count": 1,
+     "id": "/published/jsp/expanded/papers/54030040/",
+     "link": "/paper-summary/introduction-to-nauvoo-city-treasurer-records/1?highlight=Nauvoo",
+     "date": "1841-02-01"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/meta/54025689/54025689-0001.xml",
+     "score": "1483",
+     "title": "Nauvoo City Officers, March–July 1843",
+     "image": "",
+     "summary": "<summary><e>Act to Incorporate the City of <mark>Nauvoo</mark> 16 Dec. 1840</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/54025689/",
+     "link": "/back/nauvoo-city-officers-march-july-1843?p=1&highlight=Nauvoo",
+     "date": "2024-01-16"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/meta/54030973/54030973-0001.xml",
+     "score": "1483",
+     "title": "Nauvoo Legion Senior Officers, 16 May–27 June 1844",
+     "image": "",
+     "summary": "<summary><e>Act to Incorporate the City of <mark>Nauvoo</mark> 16 Dec. 1840</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/54030973/",
+     "link": "/back/nauvoo-legion-senior-officers-16-may-27-june-1844?p=1&highlight=Nauvoo",
+     "date": "2025-12-05"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/meta/54028527/54028527-0001.xml",
+     "score": "1483",
+     "title": "Nauvoo City Officers, August–December 1843",
+     "image": "",
+     "summary": "<summary><e>Act to Incorporate the City of <mark>Nauvoo</mark> 16 Dec. 1840</e></summary>",
+     "summaryType": "footnote",
+     "count": 1,
+     "id": "/published/jsp/expanded/meta/54028527/",
+     "link": "/back/nauvoo-city-officers-august-december-1843?p=1&highlight=Nauvoo",
+     "date": "2024-12-03"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/papers/54013357/54013357-0001.xml",
+     "score": "1464",
+     "title": "Introduction to City of Nauvoo v. C. L. Higbee et al., Page 1",
+     "image": "",
+     "summary": "<summary><e>...<mark>Nauvoo</mark> v. R. D. Foster– A] At the October 1844 term, Almon Babbitt and George Stiles representing the City of <mark>Nauvoo</mark> motioned that the circuit court dismiss the appeals and uphold the original fines. In turn, the brothers, represented by Onias...</e></summary>",
+     "summaryType": "documentText",
+     "count": 1,
+     "id": "/published/jsp/expanded/papers/54013357/",
+     "link": "/paper-summary/introduction-to-city-of-nauvoo-v-c-l-higbee-et-al/1?highlight=Nauvoo",
+     "date": "1844-04-26"
+    },
+    {
+     "documentURI": "/published/jsp/expanded/papers/54008931/54008931-0001.xml",
+     "score": "1464",
+     "title": "Introduction to City of Nauvoo v. Davis for Slander of JS–B and City of Nauvoo v. Davis for Slander of JS–C, Page 1",
+     "image": "",
+     "summary": "<summary><e>...Davis s motion and dismissed the suit for want of Jurisdiction of the Court below” while ordering the city of <mark>Nauvoo</mark> to pay his costs. Docket Entry, 23 May 1843 City of <mark>Nauvoo</mark> v. Davis for Slander of JS– C] Docket...</e></summary>",
+     "summaryType": "documentText",
+     "count": 1,
+     "id": "/published/jsp/expanded/papers/54008931/",
+     "link": "/paper-summary/introduction-to-city-of-nauvoo-v-davis-for-slander-of-js-b-and-city-of-nauvoo-v-davis-for-slander-of-js-c/1?highlight=Nauvoo",
+     "date": "1842-11-30"
+    }
+   ]
+  },
+  "refinements": {
+   "types": {
+    "type": [
+     {
+      "title": "Documents/Papers",
+      "count": 21206,
+      "id": "documents-papers",
+      "selected": true,
+      "types": {
+       "type": [
+        {
+         "title": "Administrative",
+         "count": 8571,
+         "id": "documents-papers-administrative",
+         "selected": true
+        },
+        {
+         "title": "Documents",
+         "count": 6798,
+         "id": "documents-papers-documents",
+         "selected": true
+        },
+        {
+         "title": "Legal",
+         "count": 2227,
+         "id": "documents-papers-legal",
+         "selected": true
+        },
+        {
+         "title": "Financial",
+         "count": 1672,
+         "id": "documents-papers-financial",
+         "selected": true
+        },
+        {
+         "title": "Histories",
+         "count": 1218,
+         "id": "documents-papers-histories",
+         "selected": true
+        },
+        {
+         "title": "Journals",
+         "count": 625,
+         "id": "documents-papers-journals",
+         "selected": true
+        },
+        {
+         "title": "Revelations and Translations",
+         "count": 63,
+         "id": "documents-papers-revelations-and-translations",
+         "selected": true
+        },
+        {
+         "title": "Introductions",
+         "count": 31,
+         "id": "documents-papers-introductions",
+         "selected": true
+        },
+        {
+         "title": "Other Contemporary Papers",
+         "count": 1,
+         "id": "documents-papers-other-contemporary-papers",
+         "selected": true
+        }
+       ]
+      }
+     },
+     {
+      "title": "Reference Materials",
+      "count": 6656,
+      "id": "related-materials",
+      "selected": true
+     },
+     {
+      "title": "Biographical Directory",
+      "count": 568,
+      "id": "biographical-directory",
+      "selected": true
+     },
+     {
+      "title": "Geographical Directory",
+      "count": 71,
+      "id": "geographical-directory",
+      "selected": true
+     },
+     {
+      "title": "Glossary",
+      "count": 41,
+      "id": "glossary",
+      "selected": true
+     },
+     {
+      "title": "Event",
+      "count": 415,
+      "id": "event",
+      "selected": true
+     }
+    ]
+   },
+   "dates": {
+    "start": "",
+    "end": "",
+    "max": "1899-12-31",
+    "min": "1800-01-01"
+   },
+   "transcriptsOnly": false,
+   "subjects": {
+    "subject": [
+     {
+      "title": "Church of Christ",
+      "id": "topicchurch-of-christ",
+      "count": 2170,
+      "selected": false
+     },
+     {
+      "title": "Nauvoo Legion",
+      "id": "topicnauvoo-legion",
+      "count": 1005,
+      "selected": false
+     },
+     {
+      "title": "Elder",
+      "id": "topicelder",
+      "count": 801,
+      "selected": false
+     },
+     {
+      "title": "Twelve Apostles",
+      "id": "topictwelve-apostles",
+      "count": 683,
+      "selected": false
+     },
+     {
+      "title": "Nauvoo temple committee",
+      "id": "topicnauvoo-temple-committee",
+      "count": 661,
+      "selected": false
+     },
+     {
+      "title": "Habeas corpus",
+      "id": "topichabeas-corpus",
+      "count": 571,
+      "selected": false
+     },
+     {
+      "title": "First Presidency",
+      "id": "topicfirst-presidency",
+      "count": 551,
+      "selected": false
+     },
+     {
+      "title": "Conference",
+      "id": "topicconference",
+      "count": 505,
+      "selected": false
+     },
+     {
+      "title": "Baptism",
+      "id": "topicbaptism",
+      "count": 311,
+      "selected": false
+     },
+     {
+      "title": "Branch",
+      "id": "topicbranch",
+      "count": 297,
+      "selected": false
+     },
+     {
+      "title": "High council",
+      "id": "topichigh-council",
+      "count": 294,
+      "selected": false
+     },
+     {
+      "title": "Nauvoo House Association",
+      "id": "topicnauvoo-house-association",
+      "count": 218,
+      "selected": false
+     },
+     {
+      "title": "Agent",
+      "id": "topicagent",
+      "count": 210,
+      "selected": false
+     },
+     {
+      "title": "Execution",
+      "id": "topicexecution",
+      "count": 209,
+      "selected": false
+     },
+     {
+      "title": "Female Relief Society of Nauvoo",
+      "id": "topicfemale-relief-society-of-nauvoo",
+      "count": 205,
+      "selected": false
+     }
+    ]
+   },
+   "persons": {
+    "person": [
+     {
+      "title": "William Clayton",
+      "id": "personwilliam-clayton",
+      "count": 3896,
+      "selected": false
+     },
+     {
+      "title": "Willard Richards",
+      "id": "personwillard-richards",
+      "count": 3196,
+      "selected": false
+     },
+     {
+      "title": "Hyrum Smith",
+      "id": "personhyrum-smith",
+      "count": 2673,
+      "selected": false
+     },
+     {
+      "title": "James Sloan",
+      "id": "personjames-sloan",
+      "count": 2114,
+      "selected": false
+     },
+     {
+      "title": "Sidney Rigdon",
+      "id": "personsidney-rigdon",
+      "count": 1641,
+      "selected": false
+     },
+     {
+      "title": "Brigham Young",
+      "id": "personbrigham-young",
+      "count": 1460,
+      "selected": false
+     },
+     {
+      "title": "John Taylor",
+      "id": "personjohn-taylor",
+      "count": 1214,
+      "selected": false
+     },
+     {
+      "title": "Emma Hale Smith",
+      "id": "personemma-hale-smith",
+      "count": 1125,
+      "selected": false
+     },
+     {
+      "title": "John Cook Bennett",
+      "id": "personjohn-cook-bennett",
+      "count": 1123,
+      "selected": false
+     },
+     {
+      "title": "Thomas Bullock",
+      "id": "personthomas-bullock",
+      "count": 1113,
+      "selected": false
+     },
+     {
+      "title": "William Wines Phelps",
+      "id": "personwilliam-wines-phelps",
+      "count": 1072,
+      "selected": false
+     },
+     {
+      "title": "Robert Blashel Thompson",
+      "id": "personrobert-blashel-thompson",
+      "count": 1023,
+      "selected": false
+     },
+     {
+      "title": "Henry Garlick Sherwood",
+      "id": "personhenry-garlick-sherwood",
+      "count": 979,
+      "selected": false
+     },
+     {
+      "title": "Newel Kimball Whitney",
+      "id": "personnewel-kimball-whitney",
+      "count": 959,
+      "selected": false
+     },
+     {
+      "title": "Wilson Law",
+      "id": "personwilson-law",
+      "count": 898,
+      "selected": false
+     }
+    ]
+   },
+   "locations": {
+    "location": [
+     {
+      "title": "Nauvoo, Illinois",
+      "id": "placenauvoo,-illinois",
+      "count": 16306,
+      "selected": false
+     },
+     {
+      "title": "Illinois",
+      "id": "placeillinois",
+      "count": 3449,
+      "selected": false
+     },
+     {
+      "title": "Hancock County, Illinois",
+      "id": "placehancock-county,-illinois",
+      "count": 2649,
+      "selected": false
+     },
+     {
+      "title": "United States of America",
+      "id": "placeunited-states-of-america",
+      "count": 1710,
+      "selected": false
+     },
+     {
+      "title": "Missouri",
+      "id": "placemissouri",
+      "count": 1572,
+      "selected": false
+     },
+     {
+      "title": "Temple, Nauvoo, Illinois",
+      "id": "placetemple,-nauvoo,-illinois",
+      "count": 1179,
+      "selected": false
+     },
+     {
+      "title": "Carthage, Illinois",
+      "id": "placecarthage,-illinois",
+      "count": 1070,
+      "selected": false
+     },
+     {
+      "title": "Nauvoo House, Nauvoo, Illinois",
+      "id": "placenauvoo-house,-nauvoo,-illinois",
+      "count": 717,
+      "selected": false
+     },
+     {
+      "title": "Commerce, Illinois",
+      "id": "placecommerce,-illinois",
+      "count": 676,
+      "selected": false
+     },
+     {
+      "title": "Mississippi River",
+      "id": "placemississippi-river",
+      "count": 639,
+      "selected": false
+     },
+     {
+      "title": "Quincy, Illinois",
+      "id": "placequincy,-illinois",
+      "count": 571,
+      "selected": false
+     },
+     {
+      "title": "Springfield, Illinois",
+      "id": "placespringfield,-illinois",
+      "count": 551,
+      "selected": false
+     },
+     {
+      "title": "Kirtland Township, Ohio",
+      "id": "placekirtland-township,-ohio",
+      "count": 469,
+      "selected": false
+     },
+     {
+      "title": "England, United Kingdom",
+      "id": "placeengland,-united-kingdom",
+      "count": 444,
+      "selected": false
+     },
+     {
+      "title": "New York City, New York",
+      "id": "placenew-york-city,-new-york",
+      "count": 440,
+      "selected": false
+     }
+    ]
+   }
+  }
+ }
+}
