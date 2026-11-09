@@ -110,11 +110,12 @@ const TREE = [
     ]),
     branch("Protestant", "protestant", [
       ["Anglican", [{ l: "The Episcopal Church (TEC)", m: ["Episcopalian"] }, { l: "Anglican Church in North America (ACNA)", m: ["Anglican"] }]],
-      ["Baptist", [{ l: "Southern Baptist Convention (SBC)", m: ["SBC"] }, "Independent Fundamentalist Baptist (IFB)", "Reformed Baptist (Calvinist)"]],
+      ["Baptist", [{ l: "Southern Baptist Convention (SBC)", m: ["SBC"] }, "American Baptist Churches USA (ABCUSA)", "Independent Fundamentalist Baptist (IFB)", "Reformed Baptist (Calvinist)"]],
       ["Presbyterian", [{ l: "Presbyterian Church (U.S.A.)", m: ["Presbyterian"] }, "Presbyterian Church in America (PCA)", "Orthodox Presbyterian Church (OPC)"]],
       ["Lutheran", [{ l: "Evangelical Lutheran Church in America (ELCA)", m: ["Lutheran"] }, "Lutheran Church \u2013 Missouri Synod", "Lutheran Congregations in Mission for Christ (LCMC)", "Wisconsin Evangelical Lutheran Synod (WELS)", "Evangelical Lutheran Synod (ELS)"]],
       ["Methodist", ["United Methodist Church (UMC)", "African Methodist Episcopal Church (AME)"]],
       "United Church of Christ (UCC)",
+      "Christian Church (Disciples of Christ) (DOC)",
       ["Non-Denominational Evangelical", ["Charismatic Non-Denominational"]],
       { l: "Neo-Pentecostal", m: ["Neo-Pentecostal"] },
       "Church of the Nazarene",

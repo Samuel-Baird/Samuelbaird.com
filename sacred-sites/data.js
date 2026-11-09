@@ -133,7 +133,7 @@ const WISHLIST = [
   ["w-ensign", "Ensign Peak", "LDS", "Salt Lake City", "Utah", "USA", 40.7902, -111.8878, ""],
   ["w-tipp", "This Is the Place Heritage Park", "LDS", "Salt Lake City", "Utah", "USA", 40.7506, -111.8085, ""],
   ["w-mmm", "Mountain Meadows Massacre Memorial", "LDS", "Enterprise", "Utah", "USA", 37.4682, -113.6381, ""],
-  ["w-stmarks", "St. Mark's Episcopal Cathedral", "Episcopalian", "Salt Lake City", "Utah", "USA", 40.7656, -111.886, ""],
+  ["w-stmarks", "St. Mark's Episcopal Cathedral", "Episcopalian", "Salt Lake City", "Utah", "USA", 40.7656, -111.886, "The Episcopal Church (TEC)", "St. Mark's Cathedral, Salt Lake City, UT"],
   ["w-holytrinity", "Holy Trinity Greek Orthodox Cathedral", "Greek Orthodox", "Salt Lake City", "Utah", "USA", 40.7631, -111.8967, ""],
   ["w-firstpres", "First Presbyterian Church", "Presbyterian", "Salt Lake City", "Utah", "USA", 40.7765, -111.8838, ""],
   ["w-silverreef", "Silver Reef Catholic Cemetery", "Catholic", "Leeds", "Utah", "USA", 37.2566, -113.3616, ""],
@@ -222,4 +222,8 @@ const WISHLIST = [
   ["w-provouccc", "Provo Community Congregational United Church of Christ", "United Church of Christ (UCC)", "Provo", "Utah", "USA", 40.2362231, -111.6591356, "175 N University Ave", "Provo Community Congregational United Church of Christ, 175 N University Ave, Provo, UT 84601"],
   ["w-stxenia", "St. Xenia Orthodox Church", "Eastern Orthodox", "Payson", "Utah", "USA", 40.033, -111.754, "1173 S 1950 W. Coordinates approximate; jurisdiction unverified.", "St. Xenia Orthodox Church, 1173 S 1950 W, Payson, UT 84651"],
   ["w-stpaullcms", "St. Paul Lutheran Church (LCMS)", "Lutheran Church \u2013 Missouri Synod", "Ogden", "Utah", "USA", 41.202832, -111.949692, "3329 Harrison Blvd", "St. Paul Lutheran Church (LCMS), 3329 Harrison Blvd, Ogden, UT 84403"],
+  ["w-fbcogden", "First Baptist Church of Ogden", "American Baptist Churches USA (ABCUSA)", "Ogden", "Utah", "USA", 41.2229, -111.9667, "2519 Jefferson Ave. Coordinates approximate.", "First Baptist Church of Ogden, 2519 Jefferson Ave, Ogden, UT"],
+  ["w-fbcslc", "First Baptist Church of Salt Lake City", "American Baptist Churches USA (ABCUSA)", "Salt Lake City", "Utah", "USA", 40.7515, -111.853, "Coordinates approximate.", "First Baptist Church, Salt Lake City, UT"],
+  ["w-afpres", "American Fork Presbyterian Church", "Presbyterian", "American Fork", "Utah", "USA", 40.3769, -111.7958, "Presbyterian Church (U.S.A.). Coordinates approximate.", "American Fork Presbyterian Church, American Fork, UT"],
+  ["w-granger", "Granger Community Christian Church", "Christian Church (Disciples of Christ) (DOC)", "West Valley City", "Utah", "USA", 40.6866, -111.9772, "3232 W 4100 S. Coordinates approximate.", "Granger Community Christian Church, 3232 W 4100 S, West Valley City, UT 84119"],
 ];
