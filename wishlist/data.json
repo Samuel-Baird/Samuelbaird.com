@@ -143,15 +143,15 @@
       "asin": "1733472770",
       "title": "Book of Common Prayer (2019)",
       "byline": "Staff Of Anglican Liturgy Press (Hardcover)",
-      "price": 34.95,
-      "priceText": "$34.95",
+      "price": 62.98,
+      "priceText": "$62.98",
       "image": "https://m.media-amazon.com/images/I/31qqevxtOLL._SL500_.jpg",
       "amazonPriority": "medium",
       "comment": null,
       "requested": 1,
       "purchased": 0,
       "added": null,
-      "href": "https://www.amazon.com/dp/1733472770/?coliid=I1P9S77MQ9OPF7&colid=3ECBMMP7G2LZ4&psc=1&ref_=list_c_wl_lv_vv_lig_dp_it"
+      "href": "https://www.amazon.com/dp/1733472770/?coliid=I1P9S77MQ9OPF7&colid=3ECBMMP7G2LZ4&psc=0&ref_=list_c_wl_lv_vv_lig_dp_it"
     },
     {
       "itemId": "INCBKURWG8IVG",
@@ -379,5 +379,5 @@
       "href": "https://www.amazon.com/dp/0870610694/?coliid=ITTZANT0YQ1BT&colid=3ECBMMP7G2LZ4&psc=1&ref_=list_c_wl_lv_vv_lig_dp_it"
     }
   ],
-  "updated": "2026-11-08T22:15:25.683Z"
+  "updated": "2026-11-09T06:50:13.445Z"
 }
