@@ -636,4 +636,12 @@ ${BOOKS.map((b) => `- ${b.read}: ${b.title} (${b.type})`).join('\n')}
 ${collectionItems.map((c) => `- ${c.title.replace(/&rsquo;/g, "'").replace(/&ndash;/g, '-').replace(/&amp;/g, '&')} (${c.label})`).join('\n')}
 `);
 
+// Deseret title reveal: every word in a page title needs a phonetic entry in /deseret.js.
+{
+  const { pageTitles, readTable, WORD_RE, wordKey } = await import('./deseret-words.mjs');
+  const table = readTable();
+  const gaps = pageTitles().flatMap((t) => (t.text.match(WORD_RE) || []).filter((w) => !table[wordKey(w)]).map((w) => `${w} (${t.file})`));
+  if (gaps.length) console.warn(`deseret.js has no entry for: ${gaps.join(', ')}. Run node scripts/deseret-words.mjs.`);
+}
+
 console.log(`built: ${F.sites} sites, ${F.traditions} traditions, ${F.read} reading items, ${F.ldsTemples} LDS temples, ${F.photos} photos`);
