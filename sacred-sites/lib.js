@@ -98,7 +98,7 @@ const specLeaf = (spec, group) => {
   const match = typeof spec === "string" ? [spec] : spec.m || [spec.l];
   const c = COMMUNITIES.find((x) => x.match.some((m) => match.includes(m)));
   const obj = typeof spec === "string" ? {} : spec;
-  return { label, match, group, wiki: obj.w ? WIKI + obj.w : "", site: obj.s || "", color: (c || {}).color || GROUP_COLOR[group] };
+  return { label, match, group, wiki: obj.w ? WIKI + obj.w : "", site: obj.s || "", kind: obj.k || "denomination", color: (c || {}).color || GROUP_COLOR[group] };
 };
 const specNode = (spec, group) =>
   Array.isArray(spec) ? { name: spec[0], children: spec[1].map((s) => specNode(s, group)) } : specLeaf(spec, group);
@@ -108,7 +108,7 @@ const TREE = [
     branch("Catholic", "catholic", [
       ["Latin tradition", [
         { l: "Latin (Roman) Catholic Church", m: ["Catholic"], w: "Latin_Church", s: "https://www.vatican.va/" },
-        { l: "Traditional Latin Mass (worship experience)", w: "Tridentine_Mass", s: "https://fssp.org/" },
+        { l: "Traditional Latin Mass", k: "worship", w: "Tridentine_Mass", s: "https://fssp.org/" },
         { l: "Anglican Ordinariate (Latin Church)", w: "Personal_ordinariate", s: "https://ordinariate.net/" },
       ]],
       ["Byzantine tradition", [

@@ -166,3 +166,12 @@ details.tleaf>.hint{padding:0 14px 10px;margin:0}
 .tpop[hidden]{display:none}
 .tpop b{font:600 14px var(--font-serif)}
 .tpop a{color:var(--accent);font-weight:600}
+
+/* ---- stats: church family / denomination / worship tradition ---- */
+.kinds{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:10px 14px;margin:0 0 12px}
+.kinds summary{cursor:pointer;font-weight:600}
+.kinds dl{margin:0}
+.kinds dt{font-weight:600;margin-top:8px}
+.kinds dd{margin:2px 0 0;color:var(--muted);font-size:13px}
+.kind-tag{font:600 11px var(--font-sans);font-style:normal;color:var(--muted);border:1px solid var(--line);border-radius:var(--radius);padding:1px 7px;margin-left:auto;white-space:nowrap}
+.kind-tag+.t-count{margin-left:10px}
