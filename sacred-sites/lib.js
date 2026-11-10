@@ -81,7 +81,7 @@ const SITES = Object.entries(PLACES).map(([id, [name, denom, city, state, lat, l
 })).filter((s) => s.visits.length);
 
 const WISH = WISHLIST.map(([id, name, denom, city, state, country, lat, lon, note, q]) => ({
-  id, name, denom, city, state, country, lat, lon, note, q, wish: true, visits: [], ...linksOf(id),
+  id, name, denom, city, state, country, lat, lon, note, q, wish: true, visits: [], also: WISH_ALSO[id] || [], ...linksOf(id),
 }));
 
 // Distance from Provo, Utah (home base) in miles.
@@ -155,7 +155,7 @@ const TREE = [
       "Gnostic Catholic",
     ]),
     branch("Orthodox", "orthodox", [
-      ["Eastern Orthodox", [{ l: "Greek Orthodox", m: ["Greek Orthodox"] }, { l: "Eastern Orthodox (other jurisdictions)", m: ["Eastern Orthodox"] }, "Russian Orthodox (Old Believer)"]],
+      ["Eastern Orthodox", [{ l: "Greek Orthodox", m: ["Greek Orthodox"] }, { l: "Eastern Orthodox (other jurisdictions)", m: ["Eastern Orthodox"], w: "Eastern_Orthodox_Church" }, "Russian Orthodox (Old Believer)"]],
       ["Oriental Orthodox", ["Armenian Apostolic"]],
     ]),
     branch("Protestant", "protestant", [
@@ -222,7 +222,7 @@ for (const lf of LEAVES) {
 const leafSites = (leaf) => SITES.filter((s) => leaf.match.includes(s.denom));
 const leafVisited = (leaf) => leafSites(leaf).length > 0;
 // Wishlist places for a tradition, nearest to Provo first.
-const nearestWish = (leaf, n = 3) => WISH.filter((w) => leaf.match.includes(w.denom))
+const nearestWish = (leaf, n = 3) => WISH.filter((w) => leaf.match.includes(w.denom) || w.also.some((a) => leaf.match.includes(a)))
   .map((w) => ({ ...w, miles: milesFromProvo(w) })).sort((a, b) => a.miles - b.miles).slice(0, n);
 
 // Marker glyph per tradition (see GLYPHS in app.js).
