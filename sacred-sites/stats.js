@@ -24,14 +24,16 @@ const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const listedNames = new Set(listed.map((t) => t.c.name));
 
 // Build the tree, dropping branches with nothing visited.
+let showWish = false;
 function build(n) {
   if (n.match) {
+    if (showWish) return { ...n, sites: SITES.filter((s) => n.match.includes(s.denom)).sort((a, b) => a.name.localeCompare(b.name)) };
     const sites = SITES.filter((s) => n.match.includes(s.denom)).sort((a, b) => a.name.localeCompare(b.name));
     const pending = COMMUNITIES.some((c) => c.listed && listedNames.has(c.name) && c.match.some((m) => n.match.includes(m)));
     return sites.length || pending ? { ...n, sites } : null;
   }
   const kids = n.children.map(build).filter(Boolean);
-  return kids.length ? { ...n, kids, count: kids.reduce((t, x) => t + (x.sites ? x.sites.length : x.count), 0) } : null;
+  return kids.length || (showWish && n.children.length) ? { ...n, kids, count: kids.reduce((t, x) => t + (x.sites ? x.sites.length : x.count), 0) } : null;
 }
 function placeRow(s) {
   const first = s.visits[s.visits.length - 1].date;
@@ -40,13 +42,40 @@ function placeRow(s) {
 }
 function render(n, depth) {
   if (n.sites) {
-    const body = n.sites.length ? `<ul class="places">${n.sites.map(placeRow).join("")}</ul>` : `<p class="hint">Visited, not yet logged.</p>`;
-    return `<details class="tleaf"><summary>${dot(n.color)}<span class="t-name">${esc(n.label)}</span><span class="t-count">${n.sites.length ? plural(n.sites.length, "site") : "not yet logged"}</span></summary>${body}</details>`;
+    const wish = showWish && !n.sites.length && !n.match.some((m) => listedNames.has(labelOf(m)));
+    const body = wish ? `<p class="hint">Wishlist: not visited yet.</p>` : n.sites.length ? `<ul class="places">${n.sites.map(placeRow).join("")}</ul>` : `<p class="hint">Visited, not yet logged.</p>`;
+    return `<details class="tleaf"><summary>${dot(n.color)}<span class="t-name"${n.wiki || n.site ? ` data-wiki="${esc(n.wiki)}" data-site="${esc(n.site)}" tabindex="0"` : ""}>${esc(n.label)}</span><span class="t-count">${wish ? '<em class="wish-tag">wishlist</em>' : n.sites.length ? plural(n.sites.length, "site") : "not yet logged"}</span></summary>${body}</details>`;
   }
   const tag = `h${Math.min(depth + 2, 5)}`;
   return `<section class="tgroup d${depth}"><${tag}>${esc(n.name)}${n.count ? `<small>${plural(n.count, "site")}</small>` : ""}</${tag}>${n.kids.map((k) => render(k, depth + 1)).join("")}</section>`;
 }
-document.getElementById("tree").innerHTML = TREE.map(build).filter(Boolean).map((n) => render(n, 1)).join("");
+const treeEl = document.getElementById("tree");
+const drawTree = () => { treeEl.innerHTML = TREE.map(build).filter(Boolean).map((n) => render(n, 1)).join(""); };
+drawTree();
+document.getElementById("wish-toggle").addEventListener("change", (e) => { showWish = e.target.checked; hidePop(); drawTree(); });
+
+// Hover/focus card with outside links for a tradition.
+const pop = document.createElement("div");
+pop.className = "tpop"; pop.hidden = true; document.body.appendChild(pop);
+let popTimer;
+function hidePop() { clearTimeout(popTimer); pop.hidden = true; }
+function showPop(el) {
+  clearTimeout(popTimer);
+  const links = [["Wikipedia", el.dataset.wiki], ["Official website", el.dataset.site]].filter(([, u]) => u);
+  pop.innerHTML = `<b>${esc(el.textContent)}</b>` + links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${t} &#8599;</a>`).join("");
+  pop.hidden = false;
+  const r = el.getBoundingClientRect();
+  pop.style.left = Math.max(8, Math.min(r.left + scrollX, scrollX + innerWidth - pop.offsetWidth - 8)) + "px";
+  pop.style.top = r.bottom + scrollY + 4 + "px";
+}
+const later = () => { popTimer = setTimeout(hidePop, 250); };
+treeEl.addEventListener("mouseover", (e) => { const t = e.target.closest(".t-name[data-wiki]"); if (t) showPop(t); });
+treeEl.addEventListener("mouseout", (e) => { if (e.target.closest(".t-name[data-wiki]")) later(); });
+treeEl.addEventListener("focusin", (e) => { const t = e.target.closest(".t-name[data-wiki]"); if (t) showPop(t); });
+treeEl.addEventListener("focusout", later);
+pop.addEventListener("mouseenter", () => clearTimeout(popTimer));
+pop.addEventListener("mouseleave", later);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") hidePop(); });
 
 // Visits per year (every logged visit, repeats included).
 const byYear = {};
