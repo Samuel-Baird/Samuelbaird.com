@@ -8,7 +8,7 @@ import { SHAME_ENTRIES } from "@/lib/hall-of-shame";
 export const metadata: Metadata = {
   title: "Exegesis Hall of Shame",
   description:
-    "Readings of scripture so confidently wrong they are funny, each one followed by what the passage plainly says.",
+    "Funny examples of poor exegesis I have come across.",
   alternates: { canonical: "/exegesis-hall-of-shame" },
 };
 
@@ -23,9 +23,7 @@ export default function ExegesisHallOfShamePage() {
           <DeseretTitle text="The Exegesis Hall of Shame." />
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
-          Readings of scripture so bad they are funny. Each entry gives the
-          claim as it was reported, then what the passage says when you read
-          the sentence around it.
+          Just some funny examples of poor exegesis I have come across.
         </p>
       </header>
 
@@ -61,11 +59,7 @@ export default function ExegesisHallOfShamePage() {
                 {e.source}
               </p>
 
-              <p className="small-caps mt-6 text-[11px] font-medium text-[color:var(--muted)]">
-                The plain reading
-              </p>
-              <p className="mt-1 text-base leading-relaxed">{e.plain}</p>
-              <p className="mt-4 text-sm">
+              <p className="mt-5 text-sm">
                 <a
                   href={e.readUrl}
                   className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
@@ -93,21 +87,6 @@ export default function ExegesisHallOfShamePage() {
             >
               Send a nomination
             </a>
-          </section>
-
-          <section>
-            <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-              House rules
-            </h2>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed">
-              <li>The reading is the target. The scripture is not.</li>
-              <li>Speakers stay anonymous unless they said it in public.</li>
-              <li>Reports are unverified, and the page says so.</li>
-              <li>
-                A reading that is merely different from yours does not qualify.
-                It has to ignore the sentence it sits in.
-              </li>
-            </ul>
           </section>
 
           <p className="text-xs leading-relaxed text-[color:var(--muted)]">

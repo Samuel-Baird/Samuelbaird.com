@@ -4,6 +4,7 @@ import {
   BarChart3,
   BookOpen,
   Globe2,
+  Quote,
   Sparkles,
   Users,
   type LucideIcon,
@@ -23,7 +24,8 @@ export type HomeFeatureIcon =
   | "studies"
   | "data"
   | "map"
-  | "ai";
+  | "ai"
+  | "shame";
 
 const ICONS: Record<HomeFeatureIcon, LucideIcon> = {
   channels: Users,
@@ -31,6 +33,7 @@ const ICONS: Record<HomeFeatureIcon, LucideIcon> = {
   data: BarChart3,
   map: Globe2,
   ai: Sparkles,
+  shame: Quote,
 };
 
 export function HomeFeatureGrid({ features }: { features: HomeFeature[] }) {

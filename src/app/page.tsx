@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SHAME_ENTRIES } from "@/lib/hall-of-shame";
 import { ArrowRight } from "lucide-react";
 import {
   getChannelsWithLatest,
@@ -123,6 +124,14 @@ export default async function Home() {
         "Connect the data to Claude or ChatGPT and ask questions in plain language. Free, no account.",
       figure: "Claude · ChatGPT",
       icon: "ai",
+    },
+    {
+      href: "/exegesis-hall-of-shame",
+      title: "Exegesis Hall of Shame",
+      description:
+        "Funny examples of poor scripture exegesis I have come across.",
+      figure: `${fmtNumber(SHAME_ENTRIES.length)} ${SHAME_ENTRIES.length === 1 ? "entry" : "entries"}`,
+      icon: "shame",
     },
   ];
 
