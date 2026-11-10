@@ -193,33 +193,7 @@ const TREE = [
   ] },
   branch("Jewish", "jewish", [{ l: "Jewish (general)", m: ["Jewish"] }, "Reform", "Conservative"]),
   branch("Islamic", "other", [{ l: "Islam (general)", m: ["Islam"] }, "Sunni", "Shia", "Sufi", "Nation of Islam"]),
-  branch("Middle-Eastern, Additional", "other", ["Mandaean", "Yazidi", "Druze", "Zoroastrian", "Bah\u00e1\u02bc\u00ed Faith"]),
-  branch("Dharmic Religions", "other", [
-    ["Hindu", ["Pan-Denominational Hindu", "Bochasanwasi Akshar Purushottam Swaminarayan Sanstha (BAPS)", "International Society for Krishna Consciousness (ISKCON)", "The Vedanta Society"]],
-    ["Sikh", ["Mainstream Sikh", "Sikh Dharma International"]],
-    "Jain",
-    ["Buddhist", ["Zen Buddhist", "Tibetan Buddhist", "Soka Gakkai International (SGI)", "Chinese Esoteric Buddhist", "Won Buddhist", "New Kadampa Tradition (NKT-IKBU)"]],
-  ]),
-  branch("Asian, Additional", "other", ["Taoist", ["Shint\u014d", ["Konk\u014dky\u014d"]], "Tenrikyo", "Happy Science", "Seich\u014d-no-Ie", "Falun Gong", "Cao Dai"]),
-  branch("New Age and/or Western Esoteric", "other", [
-    ["Thelema/Thelemic-derived", ["Ordo Templi Orientis", "Ecclesia Babalon"]],
-    "Santa Muerte", "Spiritualism", "Builders of the Adytum (BOTA)", "Unity Church (New Thought/Christian)", "Eckankar",
-    "Fourth Way (Gurdjieff)", "Full Circle", "Urantia", "Self-Realization Fellowship (SRF)",
-    ["Theosophy", ["The Theosophical Society", "United Lodge of Theosophists (ULT)", "Share International"]],
-    ["The Gnostic Society", ["Besant Lodge"]], "The Rosicrucian Fellowship (Mount Ecclesia)", "The Lemurian Fellowship",
-  ]),
-  branch("UFO/Extraterrestrial New Religious Movement", "other", ["Aetherius Society", "Church of Scientology", "International Ra\u00ebl\u00efan Movement", "Unarius Academy of Science"]),
-  branch("Neo-Paganism / Pagan Reconstructionist", "other", [
-    "Wicca", ["Ukrainian Pagan", ["Native Ukrainian National Faith (RUNVira)"]],
-    ["Nordic Pagan (Asatru)", ["Asatru (Inclusive)", "Asatru Folk Assembly"]],
-    ["Armenian Hetanist", ["Order of the Children of Ari"]],
-  ]),
-  branch("Humanistic, Atheistic, and/or Secular", "other", [
-    ["Contemporary Satanism", ["The Satanic Temple (TST)", "The Church of Satan / LaVeyan Satanism"]],
-    ["Secular Humanist", ["Humanist Society of Greater Phoenix"]],
-    "Unitarian Universalist",
-  ]),
-  branch("Other", "other", [{ l: "Other", m: ["Other"] }]),
+  branch("Middle-Eastern, Additional", "other", ["Mandaean", "Zoroastrian", "Bah\u00e1\u02bc\u00ed Faith"]),
 ];
 // Lookup by denomination, and make sure every leaf has a COMMUNITIES entry (colors, filters).
 const LEAVES = [];
