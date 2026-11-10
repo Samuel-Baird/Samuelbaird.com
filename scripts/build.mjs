@@ -49,7 +49,7 @@ const BOOKS = sandbox.window.BOOKS.map((b) => ({
   ...b, type: b.type || (/amazon\./.test(b.link) ? 'book' : 'article'),
 }));
 const sites = vm.runInNewContext(
-  read('sacred-sites/data.js') + '\n' + read('sacred-sites/lib.js') +
+  read('sacred-sites/data.js') + '\n' + read('sacred-sites/links.js') + '\n' + read('sacred-sites/lib.js') +
   '\n;({SITES,WISH,COMMUNITIES,labelOf,isService,categoryLabel,mapsUrl,NO_MAPS,ALL_PHOTOS,COUNTRY,photoUrl});',
   { console },
 );
@@ -124,7 +124,7 @@ const siteRow = (s) => {
   const cats = [...new Set(s.visits.map((v) => categoryLabel(v.cat)))];
   return {
     name: s.name, tradition: labelOf(s.denom), denomination: s.denom, city: s.city, state: s.state, country: s.country,
-    latitude: s.lat, longitude: s.lon, visits: s.visits.length, first_visit: dates[0], last_visit: dates[dates.length - 1],
+    latitude: s.lat, longitude: s.lon, website: s.site || '', wikipedia: s.wikiUrl || '', visits: s.visits.length, first_visit: dates[0], last_visit: dates[dates.length - 1],
     visit_types: cats.join('; '),
     google_maps: NO_MAPS.has(s.id) ? '' : mapsUrl(s),
   };
@@ -265,7 +265,7 @@ const FAQ = [
   ['What is Latter-day Stats?', `Latter-day Stats is a public, independent hub for statistics, research and creator data on the Latter-day Saint community. As of ${EXT.asOf} it tracks ${EXT.lds.channels} LDS YouTube channels with ${EXT.lds.subs} combined subscribers, ${EXT.lds.studies} academic studies and ${EXT.lds.graphics} survey-data graphics (Pew and other surveys). Its Data Explorer lets you chart public survey datasets, Studies is a curated research library, and Channels is a directory of LDS YouTube creators. It lives at <a href="${LDS}/">latterdaystats.samuelbaird.com</a>.`],
   ['How many LDS YouTube channels are there?', `There is no official count. The most complete public list is the directory at <a href="${LDS}/channels">Latter-day Stats Channels</a>, which tracked ${EXT.lds.channels} LDS-related YouTube channels with ${EXT.lds.subs} combined subscribers as of ${EXT.asOf}. The directory is refreshed regularly, so check it for the current figure.`],
   ['What is Pulpit?', `Pulpit is a critical digital edition of every General Conference discourse since 1830: ${EXT.pulpit.discourses.toLocaleString('en-US')} discourses as of ${EXT.asOf}, each traced to its best surviving witness and graded for fidelity (${EXT.pulpit.verbatim.toLocaleString('en-US')} verbatim, ${EXT.pulpit.authoritative.toLocaleString('en-US')} authoritative print, ${EXT.pulpit.contemporaneous.toLocaleString('en-US')} contemporaneous report, ${EXT.pulpit.reconstructed} reconstructed, ${EXT.pulpit.fragmentary} fragmentary). It is a Restoration Commons project that Samuel Baird contributed to: <a href="${PULPIT}/">pulpit.restorationcommons.org</a>.`],
-  ['Which sacred sites has Samuel Baird visited?', `Since January 2025 he has visited ${F.sites} sacred sites in ${F.traditions} traditions (Catholic, Greek Orthodox, Anglican, Baptist, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on ${longDate(F.lastVisit)}. Each site is counted once. Browse the <a href="/sacred-sites/sites">full directory</a>, the <a href="/sacred-sites">interactive map</a>, the <a href="/sacred-sites/photos">photo gallery</a> or the <a href="/sacred-sites/stats">statistics</a>.`],
+  ['Which sacred sites has Samuel Baird visited?', `Since January 2025 he has visited ${F.sites} sacred sites in ${F.traditions} traditions (Catholic, Greek Orthodox, Anglican, Presbyterian, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on ${longDate(F.lastVisit)}. Each site is counted once. Browse the <a href="/sacred-sites/sites">full directory</a>, the <a href="/sacred-sites">interactive map</a>, the <a href="/sacred-sites/photos">photo gallery</a> or the <a href="/sacred-sites/traditions">traditions page</a>.`],
   ['How many LDS temples has Samuel Baird visited?', `${F.ldsTemples} distinct Latter-day Saint temples as of ${MONTH_YEAR}: ${ldsTempleNames.map(esc).join(', ')}. Repeat visits to the same temple are counted once. Details are in the <a href="/sacred-sites/sites#the-church-of-jesus-christ-of-latter-day-saints-lds">sacred sites directory</a>.`],
   ['What has Samuel Baird read recently?', `He has logged ${plural(F.books, 'book')} and ${plural(F.articles, 'article')}, newest first. The three most recent are ${recent3.map((t) => '<i>' + esc(t) + '</i>').join(', ')}; the latest was finished on ${longDate(F.lastRead.read)}. See <a href="/books">My Reading</a>.`],
   ['Is the data on this site free to use?', `Yes. The original datasets and photographs on this site (the sacred sites list, the reading log and the <a href="/sacred-sites/photos">sacred sites photos</a>) are released under <a href="${LICENSE_URL}" rel="license noopener">${LICENSE_NAME}</a>: reuse them with attribution to Samuel Baird and a link to samuelbaird.com. Download them as CSV or JSON from <a href="/data">Open data</a>. Latter-day Stats publishes its own datasets, each with sources.`],
@@ -340,8 +340,8 @@ const PAGES = {
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': BASE + '/sacred-sites/sites#list' } }), DATASETS.sites, sitesList(), ...SITES.map(placeNode), crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites']])] },
   '/sacred-sites/photos': { file: 'sacred-sites/photos/index.html', title: `Sacred Sites Photos: ${F.photos} Photos of Churches and Temples · ${NAME}`, desc: `${F.photos} photographs from the churches, temples and houses of worship ${NAME} has visited, filterable by tradition, newest first. Free to reuse under ${LICENSE_NAME}.`, image: '/img/sacred-sites-photos.webp', imageAlt: 'Photo gallery of Greek Orthodox church interiors',
     ld: (p) => [webPage(p, 'ImageGallery', { associatedMedia: photoNodes().map((n) => ({ '@id': n['@id'] })) }), ...photoNodes(), ...SITES.filter((s) => (ALL_PHOTOS.some((x) => x.site === s))).map(placeNode), crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites'], ['Photos', '/sacred-sites/photos']])] },
-  '/sacred-sites/stats': { file: 'sacred-sites/stats/index.html', title: `Sacred Sites Statistics: ${F.sites} Sites, ${F.traditions} Traditions · ${NAME}`, desc: `Totals and a per-tradition breakdown of the ${F.sites} sacred sites ${NAME} has visited: sites, traditions, worship services attended and first and last visit dates.`, image: '/img/sacred-sites-stats.webp', imageAlt: 'Statistics page for sacred sites visited',
-    ld: (p) => [webPage(p, 'WebPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': DATASETS.sites['@id'] } }), DATASETS.sites, crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites'], ['Stats', '/sacred-sites/stats']])] },
+  '/sacred-sites/traditions': { file: 'sacred-sites/traditions/index.html', title: `Sacred Sites Traditions: ${F.traditions} Traditions Visited · ${NAME}`, desc: `Every faith tradition in the Sacred Sites project, which ones ${NAME} has visited (${F.traditions} so far, across ${F.sites} sites), and the nearest places to Provo, Utah to visit the rest.`, image: '/img/sacred-sites-stats.webp', imageAlt: 'Traditions page for sacred sites visited',
+    ld: (p) => [webPage(p, 'WebPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': DATASETS.sites['@id'] } }), DATASETS.sites, crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites'], ['Traditions', '/sacred-sites/traditions']])] },
   '/sacred-sites/sites': { title: `Every Sacred Site I've Visited: ${F.sites} Churches, Temples and Houses of Worship`, desc: `A complete directory of the ${F.sites} sacred sites ${NAME} has visited, grouped by tradition, with city, state, number of visits, dates and map links.`, image: '/img/sacred-sites-map.webp',
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': BASE + '/sacred-sites/sites#list' } }), DATASETS.sites, sitesList(), ...SITES.map(placeNode), crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites'], ['Directory', '/sacred-sites/sites']])] },
   '/books': { file: 'books/index.html', title: `My Reading: ${F.books} Books and ${F.articles} Articles Read · ${NAME}`, desc: `${plural(F.books, 'book')} and ${plural(F.articles, 'article')} ${NAME} has read on religion, theology and church history, newest first, with the date he finished each one.`, image: '/img/og-card.png',
@@ -439,11 +439,11 @@ function dataPage() {
     <h2>Sacred sites visited</h2>
     <p>${plural(F.sites, 'site')} in ${plural(F.traditions, 'tradition')}, visited in person between ${longDate(F.firstVisit)} and ${longDate(F.lastVisit)}. Each site is one row; repeat visits are counted in the <code>visits</code> column. Coordinates are approximate building locations.</p>
     <div class="btns"><a class="primary" href="/data/sacred-sites.csv" download>Download CSV</a><a class="secondary" href="/data/sacred-sites.json" download>Download JSON</a><a class="secondary" href="/sacred-sites/sites">Browse as a directory</a></div>
-    ${fields([['name', 'Name of the place of worship'], ['tradition', 'Tradition or community, as listed on the map'], ['denomination', 'Short denomination key used in the source data'], ['city, state, country', 'Location'], ['latitude, longitude', 'Decimal degrees (WGS84)'], ['visits', 'Number of recorded visits'], ['first_visit, last_visit', 'ISO dates (YYYY-MM-DD)'], ['visit_types', 'Attended worship, toured interior, visited grounds or historical site'], ['google_maps', 'Map search link, blank for events held outside a church building or on private property']])}
+    ${fields([['name', 'Name of the place of worship'], ['tradition', 'Tradition or community, as listed on the map'], ['denomination', 'Short denomination key used in the source data'], ['city, state, country', 'Location'], ['latitude, longitude', 'Decimal degrees (WGS84)'], ['website, wikipedia', 'Official website and English Wikipedia article for the place, blank when none'], ['visits', 'Number of recorded visits'], ['first_visit, last_visit', 'ISO dates (YYYY-MM-DD)'], ['visit_types', 'Attended worship, toured interior, visited grounds or historical site'], ['google_maps', 'Map search link, blank for events held outside a church building or on private property']])}
     <div class="tablewrap"><table class="tbl"><caption>Preview: first ${preview.length} of ${F.sites} rows</caption><thead><tr><th>name</th><th>tradition</th><th>city</th><th>state</th><th>visits</th><th>last_visit</th></tr></thead><tbody>
     ${preview.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.tradition)}</td><td>${esc(r.city)}</td><td>${esc(r.state)}</td><td>${r.visits}</td><td>${r.last_visit}</td></tr>`).join('')}
     </tbody></table></div>
-    <p class="note">Maps and photos built from this data: <a href="/sacred-sites">map</a>, <a href="/sacred-sites/photos">photos</a>, <a href="/sacred-sites/stats">stats</a>.</p>
+    <p class="note">Maps and photos built from this data: <a href="/sacred-sites">map</a>, <a href="/sacred-sites/photos">photos</a>, <a href="/sacred-sites/traditions">traditions</a>.</p>
   </section>
   <section class="dataset" id="reading-list">
     <h2>Reading log</h2>
@@ -475,12 +475,12 @@ function sitesPage() {
   ${t.sites.map((s) => {
     const d = s.visits.map((v) => v.date).sort();
     const range = d[0] === d[d.length - 1] ? shortDate(d[0]) : `${shortDate(d[0])} to ${shortDate(d[d.length - 1])}`;
-    const link = NO_MAPS.has(s.id) ? '' : ` <a href="${mapsUrl(s)}" rel="noopener">Map</a>`;
+    const link = [s.site && `<a href="${esc(s.site)}" rel="noopener">Website</a>`, s.wikiUrl && `<a href="${esc(s.wikiUrl)}" rel="noopener">Wikipedia</a>`, !NO_MAPS.has(s.id) && `<a href="${mapsUrl(s)}" rel="noopener">Map</a>`].filter(Boolean).map((a) => ' ' + a).join('');
     return `<li><b>${esc(s.name)}</b><span>${esc(s.city)}, ${esc(s.state)} &middot; ${plural(s.visits.length, 'visit')} &middot; ${range}${link}</span></li>`;
   }).join('\n  ')}
   </ul></section>`).join('\n');
   return shell('/sacred-sites/sites', `${pagehead([['Home', '/'], ['Sacred Sites', '/sacred-sites'], ['Directory', '/sacred-sites/sites']], 'Directory', `Every sacred site I&rsquo;ve visited`, `${plural(F.sites, 'site')} across ${plural(F.traditions, 'tradition')} since ${longDate(F.firstVisit)}, grouped by tradition. Each site is counted once; most recent visit ${longDate(F.lastVisit)}.`)}
-<div class="btns" style="margin:0 0 28px"><a class="primary" href="/sacred-sites">Open the map</a><a class="secondary" href="/sacred-sites/photos">Photos</a><a class="secondary" href="/sacred-sites/stats">Stats</a><a class="secondary" href="/data#sacred-sites">Download CSV / JSON</a></div>
+<div class="btns" style="margin:0 0 28px"><a class="primary" href="/sacred-sites">Open the map</a><a class="secondary" href="/sacred-sites/photos">Photos</a><a class="secondary" href="/sacred-sites/traditions">Traditions</a><a class="secondary" href="/data#sacred-sites">Download CSV / JSON</a></div>
 <nav class="jump" aria-label="Jump to tradition">${byTradition.map((t) => `<a href="#${slug(t.name)}">${esc(t.name.replace(/ \(.*\)$/, '').replace('The Church of Jesus Christ of Latter-day Saints', 'LDS'))}</a>`).join('')}</nav>
 <div class="prose wide">
 ${sections}
@@ -556,7 +556,7 @@ patch('collection/index.html', '/collection');
 patch('donate/index.html', '/donate');
 patch('sacred-sites/index.html', '/sacred-sites');
 patch('sacred-sites/photos/index.html', '/sacred-sites/photos');
-patch('sacred-sites/stats/index.html', '/sacred-sites/stats');
+patch('sacred-sites/traditions/index.html', '/sacred-sites/traditions');
 
 // robots.txt: allow everything, and say so explicitly for the crawlers that feed AI search and assistants.
 const BOTS = ['Googlebot', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot', 'Applebot-Extended', 'DuckAssistBot', 'Amazonbot', 'MistralAI-User', 'cohere-ai', 'Meta-ExternalAgent', 'CCBot', 'YouBot'];
@@ -569,7 +569,7 @@ Sitemap: ${BASE}/sitemap.xml
 `);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/stats', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}
@@ -591,7 +591,7 @@ Figures for external sites are dated ${EXT.asOf}.
 - [Pulpit](${PULPIT}/): ${EXT.pulpit.discourses.toLocaleString('en-US')} General Conference discourses since 1830, each traced to its best surviving witness and graded for fidelity. A Restoration Commons project Samuel Baird contributed to.
 - [Sacred Sites Visited](${BASE}/sacred-sites): interactive map of ${F.sites} churches, temples and houses of worship visited since January 2025.
   - [Directory of every site](${BASE}/sacred-sites/sites): grouped by tradition, with dates and map links.
-  - [Photos](${BASE}/sacred-sites/photos) and [Stats](${BASE}/sacred-sites/stats).
+  - [Photos](${BASE}/sacred-sites/photos) and [Traditions](${BASE}/sacred-sites/traditions).
 - [My Reading](${BASE}/books): ${F.books} books and ${F.articles} articles with the date finished.
 - [Collection](${BASE}/collection): historic Latter-day Saint books, periodicals and artifacts.
 - [Wishlist](${BASE}/wishlist): books and equipment he would like for the YouTube channel, most wanted first.

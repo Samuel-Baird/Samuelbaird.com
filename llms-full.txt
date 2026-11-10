@@ -1,6 +1,6 @@
 # Samuel Baird: full text
 
-> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-09. Original data licensed CC BY 4.0.
+> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-10. Original data licensed CC BY 4.0.
 
 ## FAQ
 
@@ -22,7 +22,7 @@ Pulpit is a critical digital edition of every General Conference discourse since
 
 ### Which sacred sites has Samuel Baird visited?
 
-Since January 2025 he has visited 35 sacred sites in 9 traditions (Catholic, Greek Orthodox, Anglican, Baptist, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on November 8, 2026. Each site is counted once. Browse the [full directory](https://samuelbaird.com/sacred-sites/sites), the [interactive map](https://samuelbaird.com/sacred-sites), the [photo gallery](https://samuelbaird.com/sacred-sites/photos) or the [statistics](https://samuelbaird.com/sacred-sites/stats).
+Since January 2025 he has visited 35 sacred sites in 9 traditions (Catholic, Greek Orthodox, Anglican, Presbyterian, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on November 8, 2026. Each site is counted once. Browse the [full directory](https://samuelbaird.com/sacred-sites/sites), the [interactive map](https://samuelbaird.com/sacred-sites), the [photo gallery](https://samuelbaird.com/sacred-sites/photos) or the [traditions page](https://samuelbaird.com/sacred-sites/traditions).
 
 ### How many LDS temples has Samuel Baird visited?
 
