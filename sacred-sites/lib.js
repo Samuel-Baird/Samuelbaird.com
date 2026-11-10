@@ -242,7 +242,7 @@ const GLYPHS = {
   orthodox: '<path d="M12 3v18M8.5 6.4h7M6 11.2h12M9 17.6l6-2.4" stroke-width="2.1" fill="none"/>',
   spire: '<path d="M12 2.5l3.3 18.5H8.7z" stroke="none"/>',
   star: '<path d="M12 4l7 12H5zM12 20L5 8h14z" stroke-width="1.8" fill="none"/>',
-  crescent: '<path d="M15.5 4a8 8 0 1 0 0 16 6.6 6.6 0 1 1 0-16z" stroke="none"/>',
+  crescent: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="none"/>',
   flame: '<path d="M12 2.5c.9 4.2 5.2 5.8 5.2 10.5a5.2 5.2 0 0 1-10.4 0c0-2 .9-3.2 2-4.2.2 1.5.9 2.2 1.6 2.4C10.2 8.6 10.9 5.4 12 2.5z" stroke="none"/>',
   sun: '<circle cx="12" cy="12" r="4.2" stroke="none"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke-width="1.8" fill="none"/>',
 };
