@@ -1,5 +1,8 @@
 // Shared helpers for the map, photos and stats pages (loads after data.js).
 
+const WIKI = "https://en.wikipedia.org/wiki/";
+const wikiHref = (w) => !w ? "" : /^https?:/.test(w) ? w : WIKI + w;
+
 // Traditions as listed on the site. `match` = denominations in the data; `listed` = shown in the sidebar/stats.
 const COMMUNITIES = [
   { name: "Roman Catholic", match: ["Catholic"], color: "#c05621", listed: true },
@@ -69,16 +72,27 @@ const mapsUrl = (s) => `https://www.google.com/maps/search/?api=1&query=${mapsQu
 const mapsEmbedUrl = (s) => `https://www.google.com/maps?q=${mapsQuery(s)}&ll=${s.lat},${s.lon}&output=embed`;
 
 // Visited sites, newest visit first inside each site.
+const linksOf = (id) => ({ site: (PLACE_LINKS[id] || {}).site || "", wikiUrl: wikiHref((PLACE_LINKS[id] || {}).wiki) });
 const SITES = Object.entries(PLACES).map(([id, [name, denom, city, state, lat, lon]]) => ({
-  id, name, denom, city, state, country: COUNTRY, lat, lon,
+  id, name, denom, city, state, country: COUNTRY, lat, lon, ...linksOf(id),
   visits: VISITS.filter((v) => v[1] === id).map(([date, , type, lang, note, video, photos]) => ({
     date, type, lang, note, video, photos, cat: categoryOf(type),
   })).sort((a, b) => b.date.localeCompare(a.date)),
 })).filter((s) => s.visits.length);
 
 const WISH = WISHLIST.map(([id, name, denom, city, state, country, lat, lon, note, q]) => ({
-  id, name, denom, city, state, country, lat, lon, note, q, wish: true, visits: [],
+  id, name, denom, city, state, country, lat, lon, note, q, wish: true, visits: [], also: WISH_ALSO[id] || [], ...linksOf(id),
 }));
+
+// Distance from Provo, Utah (home base) in miles.
+const PROVO = { lat: 40.2338, lon: -111.6585 };
+const milesBetween = (a, b) => {
+  const r = (d) => (d * Math.PI) / 180, dLat = r(b.lat - a.lat), dLon = r(b.lon - a.lon);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLon / 2) ** 2;
+  return 3958.8 * 2 * Math.asin(Math.sqrt(h));
+};
+const milesFromProvo = (s) => milesBetween(PROVO, s);
+const fmtMiles = (m) => (m < 10 ? m.toFixed(1) : Math.round(m).toLocaleString("en-US")) + " mi";
 
 // Every photo with the visit it belongs to.
 const ALL_PHOTOS = SITES.flatMap((s) => (PHOTOS[s.id] || []).map((p) => {
@@ -92,13 +106,13 @@ const ALL_PHOTOS = SITES.flatMap((s) => (PHOTOS[s.id] || []).map((p) => {
 // the place a denomination equal to the leaf's label (or to the short key used by existing data, see `m`).
 const GROUP_COLOR = { catholic: "#c05621", orthodox: "#b7791f", protestant: "#2c7a7b", restoration: "#38a169", jewish: "#00a3c4", other: "#718096" };
 // spec: "Label" | { l: "Label", m: [denominations in the data] } | ["Group name", [specs...]]
-const WIKI = "https://en.wikipedia.org/wiki/";
 const specLeaf = (spec, group) => {
   const label = typeof spec === "string" ? spec : spec.l;
   const match = typeof spec === "string" ? [spec] : spec.m || [spec.l];
   const c = COMMUNITIES.find((x) => x.match.some((m) => match.includes(m)));
   const obj = typeof spec === "string" ? {} : spec;
-  return { label, match, group, wiki: obj.w ? WIKI + obj.w : "", site: obj.s || "", kind: obj.k || "denomination", color: (c || {}).color || GROUP_COLOR[group] };
+  const L = TRAD_LINKS[label] || {};
+  return { label, match, group, wiki: wikiHref(L.w || obj.w), site: L.s || obj.s || "", kind: obj.k || "denomination", color: (c || {}).color || GROUP_COLOR[group] };
 };
 const specNode = (spec, group) =>
   Array.isArray(spec) ? { name: spec[0], children: spec[1].map((s) => specNode(s, group)) } : specLeaf(spec, group);
@@ -141,7 +155,7 @@ const TREE = [
       "Gnostic Catholic",
     ]),
     branch("Orthodox", "orthodox", [
-      ["Eastern Orthodox", [{ l: "Greek Orthodox", m: ["Greek Orthodox"] }, "Russian Orthodox (Old Believer)"]],
+      ["Eastern Orthodox", [{ l: "Greek Orthodox", m: ["Greek Orthodox"] }, { l: "Eastern Orthodox (other jurisdictions)", m: ["Eastern Orthodox"], w: "Eastern_Orthodox_Church" }, "Russian Orthodox (Old Believer)"]],
       ["Oriental Orthodox", ["Armenian Apostolic"]],
     ]),
     branch("Protestant", "protestant", [
@@ -177,7 +191,6 @@ const TREE = [
         "Reorganized Church of Jesus Christ of Latter-day Saints Branch (RLDS)",
         "The Remnant (Snufferite)",
         "The Church of Jesus Christ (Bickertonite)",
-        "The Restoration Church of Jesus Christ (RCJC)",
         { l: "Other Latter Day Saint movements", m: ["Restoration (non-LDS)"] },
       ]],
     ]),
@@ -203,3 +216,37 @@ for (const lf of LEAVES) for (const m of lf.match) LEAF_BY_DENOM[m] = lf;
 for (const lf of LEAVES) {
   if (!COMMUNITIES.some((c) => c.match.some((m) => lf.match.includes(m)))) COMMUNITIES.push({ name: lf.label, match: lf.match, color: lf.color, listed: false });
 }
+
+// Visited / to-visit helpers shared by the map and the Traditions page.
+const leafSites = (leaf) => SITES.filter((s) => leaf.match.includes(s.denom));
+const leafVisited = (leaf) => leafSites(leaf).length > 0;
+// Wishlist places for a tradition, nearest to Provo first.
+const nearestWish = (leaf, n = 3) => WISH.filter((w) => leaf.match.includes(w.denom) || w.also.some((a) => leaf.match.includes(a)))
+  .map((w) => ({ ...w, miles: milesFromProvo(w) })).sort((a, b) => a.miles - b.miles).slice(0, n);
+
+// Marker glyph per tradition (see GLYPHS in app.js).
+const glyphOf = (denom) => {
+  const g = groupOf(denom);
+  if (g === "orthodox") return "orthodox";
+  if (g === "catholic" || g === "protestant") return "cross";
+  if (g === "lds") return "spire";
+  if (g === "jewish") return "star";
+  if (/islam|sunni|shia|sufi/i.test(denom)) return "crescent";
+  if (g === "restoration") return "flame";
+  return "sun";
+};
+
+// Inline SVG glyphs (24x24 viewBox, drawn in currentColor).
+const GLYPHS = {
+  cross: '<path d="M12 3.5v17M6.5 9h11" stroke-width="2.6" fill="none"/>',
+  orthodox: '<path d="M12 3v18M8.5 6.4h7M6 11.2h12M9 17.6l6-2.4" stroke-width="2.1" fill="none"/>',
+  spire: '<path d="M12 2.5l3.3 18.5H8.7z" stroke="none"/>',
+  star: '<path d="M12 4l7 12H5zM12 20L5 8h14z" stroke-width="1.8" fill="none"/>',
+  crescent: '<path d="M15.5 4a8 8 0 1 0 0 16 6.6 6.6 0 1 1 0-16z" stroke="none"/>',
+  flame: '<path d="M12 2.5c.9 4.2 5.2 5.8 5.2 10.5a5.2 5.2 0 0 1-10.4 0c0-2 .9-3.2 2-4.2.2 1.5.9 2.2 1.6 2.4C10.2 8.6 10.9 5.4 12 2.5z" stroke="none"/>',
+  sun: '<circle cx="12" cy="12" r="4.2" stroke="none"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke-width="1.8" fill="none"/>',
+};
+const glyphSvg = (key, px = 16) => `<svg class="glyph" viewBox="0 0 24 24" width="${px}" height="${px}" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${GLYPHS[key] || GLYPHS.sun}</svg>`;
+const GLYPH_KEY = [["cross", "Catholic / Protestant"], ["orthodox", "Orthodox"], ["spire", "LDS"], ["flame", "Restorationist"], ["star", "Jewish"], ["crescent", "Islamic"], ["sun", "Other"]];
+const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const leafAnchor = (denom) => { const lf = LEAF_BY_DENOM[denom]; return lf ? slugify(lf.label) : ""; };
