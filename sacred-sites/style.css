@@ -163,7 +163,7 @@ details.tleaf>.hint{padding:0 14px 10px;margin:0}
 .leaflet-tooltip.mk-tip small{display:block;font-weight:400;color:var(--muted);font-size:11px}
 .leaflet-tooltip-top.mk-tip::before{border-top-color:var(--border)}
 .pop-head{display:flex;align-items:center;gap:7px;margin:-2px -4px 8px;padding:6px 10px;border-radius:var(--radius);background:color-mix(in srgb,var(--c) 28%,var(--surface));border-left:3px solid var(--c);font:600 12px var(--font-sans);letter-spacing:.02em}
-.pop-head .glyph{color:var(--c);flex:none;filter:brightness(1.35)}
+.pop-head .glyph{color:var(--foreground);flex:none}
 .pop-head em{margin-left:auto;font-style:normal;font-weight:600;font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:var(--radius);padding:0 6px}
 .pop .links{display:flex;flex-wrap:wrap;gap:2px 12px;margin:0 0 8px;font-size:12px}
 .pop .links a{margin:0}
