@@ -44,7 +44,7 @@ function render(n, depth) {
   if (n.sites) {
     const wish = showWish && !n.sites.length && !n.match.some((m) => listedNames.has(labelOf(m)));
     const body = wish ? `<p class="hint">Wishlist: not visited yet.</p>` : n.sites.length ? `<ul class="places">${n.sites.map(placeRow).join("")}</ul>` : `<p class="hint">Visited, not yet logged.</p>`;
-    return `<details class="tleaf"><summary>${dot(n.color)}<span class="t-name"${n.wiki || n.site ? ` data-wiki="${esc(n.wiki)}" data-site="${esc(n.site)}" tabindex="0"` : ""}>${esc(n.label)}</span><span class="t-count">${wish ? '<em class="wish-tag">wishlist</em>' : n.sites.length ? plural(n.sites.length, "site") : "not yet logged"}</span></summary>${body}</details>`;
+    return `<details class="tleaf"><summary>${dot(n.color)}<span class="t-name"${n.wiki || n.site ? ` data-wiki="${esc(n.wiki)}" data-site="${esc(n.site)}" tabindex="0"` : ""}>${esc(n.label)}</span>${n.kind === "worship" ? '<em class="kind-tag">Worship tradition</em>' : ""}<span class="t-count">${wish ? '<em class="wish-tag">wishlist</em>' : n.sites.length ? plural(n.sites.length, "site") : "not yet logged"}</span></summary>${body}</details>`;
   }
   const tag = `h${Math.min(depth + 2, 5)}`;
   return `<section class="tgroup d${depth}"><${tag}>${esc(n.name)}${n.count ? `<small>${plural(n.count, "site")}</small>` : ""}</${tag}>${n.kids.map((k) => render(k, depth + 1)).join("")}</section>`;
