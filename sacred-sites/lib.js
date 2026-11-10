@@ -92,18 +92,54 @@ const ALL_PHOTOS = SITES.flatMap((s) => (PHOTOS[s.id] || []).map((p) => {
 // the place a denomination equal to the leaf's label (or to the short key used by existing data, see `m`).
 const GROUP_COLOR = { catholic: "#c05621", orthodox: "#b7791f", protestant: "#2c7a7b", restoration: "#38a169", jewish: "#00a3c4", other: "#718096" };
 // spec: "Label" | { l: "Label", m: [denominations in the data] } | ["Group name", [specs...]]
+const WIKI = "https://en.wikipedia.org/wiki/";
 const specLeaf = (spec, group) => {
   const label = typeof spec === "string" ? spec : spec.l;
-  const match = typeof spec === "string" ? [spec] : spec.m;
+  const match = typeof spec === "string" ? [spec] : spec.m || [spec.l];
   const c = COMMUNITIES.find((x) => x.match.some((m) => match.includes(m)));
-  return { label, match, group, color: (c || {}).color || GROUP_COLOR[group] };
+  const obj = typeof spec === "string" ? {} : spec;
+  return { label, match, group, wiki: obj.w ? WIKI + obj.w : "", site: obj.s || "", color: (c || {}).color || GROUP_COLOR[group] };
 };
 const specNode = (spec, group) =>
   Array.isArray(spec) ? { name: spec[0], children: spec[1].map((s) => specNode(s, group)) } : specLeaf(spec, group);
 const branch = (name, group, specs) => ({ name, group, children: specs.map((s) => specNode(s, group)) });
 const TREE = [
   { name: "Christian", children: [
-    branch("Catholic", "catholic", [{ l: "Roman Catholic", m: ["Catholic"] }, "Byzantine Catholic", "Gnostic Catholic"]),
+    branch("Catholic", "catholic", [
+      ["Latin tradition", [
+        { l: "Latin (Roman) Catholic Church", m: ["Catholic"], w: "Latin_Church", s: "https://www.vatican.va/" },
+        { l: "Traditional Latin Mass (worship experience)", w: "Tridentine_Mass", s: "https://fssp.org/" },
+        { l: "Anglican Ordinariate (Latin Church)", w: "Personal_ordinariate", s: "https://ordinariate.net/" },
+      ]],
+      ["Byzantine tradition", [
+        { l: "Ruthenian Byzantine Catholic", w: "Ruthenian_Greek_Catholic_Church", s: "https://archpitt.org/" },
+        { l: "Ukrainian Greek Catholic", w: "Ukrainian_Greek_Catholic_Church", s: "https://ugcc.ua/" },
+        { l: "Melkite Greek Catholic", w: "Melkite_Greek_Catholic_Church", s: "https://melkite.org/" },
+        { l: "Romanian Greek Catholic", w: "Romanian_Greek_Catholic_Church" },
+        { l: "Russian Greek Catholic", w: "Russian_Greek_Catholic_Church" },
+        { l: "Greek Byzantine Catholic", w: "Greek_Byzantine_Catholic_Church" },
+        { l: "Slovak Greek Catholic", w: "Slovak_Greek_Catholic_Church" },
+        { l: "Hungarian Greek Catholic", w: "Hungarian_Greek_Catholic_Church" },
+        { l: "Bulgarian Greek Catholic", w: "Bulgarian_Greek_Catholic_Church" },
+        { l: "Macedonian Greek Catholic", w: "Macedonian_Greek_Catholic_Church" },
+        { l: "Belarusian Greek Catholic", w: "Belarusian_Greek_Catholic_Church" },
+        { l: "Albanian Greek Catholic", w: "Albanian_Greek_Catholic_Church" },
+        { l: "Italo-Albanian Catholic", w: "Italo-Albanian_Catholic_Church" },
+        { l: "Greek Catholic Church of Croatia and Serbia", w: "Greek_Catholic_Church_of_Croatia_and_Serbia" },
+      ]],
+      ["Other Eastern Catholic traditions", [
+        { l: "Maronite Catholic (West Syriac)", w: "Maronite_Church" },
+        { l: "Syriac Catholic (West Syriac)", w: "Syriac_Catholic_Church" },
+        { l: "Syro-Malankara Catholic (West Syriac)", w: "Syro-Malankara_Catholic_Church" },
+        { l: "Chaldean Catholic (East Syriac)", w: "Chaldean_Catholic_Church" },
+        { l: "Syro-Malabar Catholic (East Syriac)", w: "Syro-Malabar_Catholic_Church" },
+        { l: "Coptic Catholic (Alexandrian)", w: "Coptic_Catholic_Church" },
+        { l: "Ethiopian Catholic (Alexandrian)", w: "Ethiopian_Catholic_Church" },
+        { l: "Eritrean Catholic (Alexandrian)", w: "Eritrean_Catholic_Church" },
+        { l: "Armenian Catholic (Armenian)", w: "Armenian_Catholic_Church" },
+      ]],
+      "Gnostic Catholic",
+    ]),
     branch("Orthodox", "orthodox", [
       ["Eastern Orthodox", [{ l: "Greek Orthodox", m: ["Greek Orthodox"] }, "Russian Orthodox (Old Believer)"]],
       ["Oriental Orthodox", ["Armenian Apostolic"]],
@@ -145,6 +181,15 @@ const TREE = [
         { l: "Other Latter Day Saint movements", m: ["Restoration (non-LDS)"] },
       ]],
     ]),
+    branch("Gnostic Christian", "other", [
+      { l: "Ecclesia Gnostica (sacramental Christian Gnosticism)", w: "Ecclesia_Gnostica" },
+      { l: "Apostolic Johannite Church (Johannine Christianity)", w: "Apostolic_Johannite_Church", s: "https://apostolicjohannite.org/" },
+      "\u00c9glise Gnostique Apostolique (French Gnostic revival)",
+      "Ecclesia Gnostica Mysteriorum (mystical, less dogmatic)",
+      "Ecclesia Pistis Sophia (Sophian; Christian Kabbalah)",
+      "Ecclesia Sophiana (Cathar influences, Syriac-style liturgy)",
+      "Gnostic Church of Valentinus (Valentinian revival, Austin TX)",
+    ]),
   ] },
   branch("Jewish", "jewish", [{ l: "Jewish (general)", m: ["Jewish"] }, "Reform", "Conservative"]),
   branch("Islamic", "other", [{ l: "Islam (general)", m: ["Islam"] }, "Sunni", "Shia", "Sufi", "Nation of Islam"]),
@@ -161,7 +206,7 @@ const TREE = [
     "Santa Muerte", "Spiritualism", "Builders of the Adytum (BOTA)", "Unity Church (New Thought/Christian)", "Eckankar",
     "Fourth Way (Gurdjieff)", "Full Circle", "Urantia", "Self-Realization Fellowship (SRF)",
     ["Theosophy", ["The Theosophical Society", "United Lodge of Theosophists (ULT)", "Share International"]],
-    "Ecclesia Gnostica", ["The Gnostic Society", ["Besant Lodge"]], "The Rosicrucian Fellowship (Mount Ecclesia)", "The Lemurian Fellowship",
+    ["The Gnostic Society", ["Besant Lodge"]], "The Rosicrucian Fellowship (Mount Ecclesia)", "The Lemurian Fellowship",
   ]),
   branch("UFO/Extraterrestrial New Religious Movement", "other", ["Aetherius Society", "Church of Scientology", "International Ra\u00ebl\u00efan Movement", "Unarius Academy of Science"]),
   branch("Neo-Paganism / Pagan Reconstructionist", "other", [
