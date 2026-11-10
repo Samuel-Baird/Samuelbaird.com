@@ -191,7 +191,6 @@ const TREE = [
         "Reorganized Church of Jesus Christ of Latter-day Saints Branch (RLDS)",
         "The Remnant (Snufferite)",
         "The Church of Jesus Christ (Bickertonite)",
-        "The Restoration Church of Jesus Christ (RCJC)",
         { l: "Other Latter Day Saint movements", m: ["Restoration (non-LDS)"] },
       ]],
     ]),
