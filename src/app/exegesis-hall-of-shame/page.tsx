@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
-import { Tag } from "@/components/tag";
-import { mailto } from "@/lib/contact";
 import { SHAME_ENTRIES } from "@/lib/hall-of-shame";
 
 export const metadata: Metadata = {
@@ -42,7 +40,6 @@ export default function ExegesisHallOfShamePage() {
                 <h2 className="serif text-2xl font-semibold tracking-tight">
                   {e.reference}
                 </h2>
-                <Tag ink={e.faultInk}>{e.fault}</Tag>
               </div>
 
               <blockquote className="mt-5 border-l-2 border-[color:var(--honey)] pl-4 text-sm italic leading-relaxed text-[color:var(--muted)] sm:text-base">
@@ -50,7 +47,7 @@ export default function ExegesisHallOfShamePage() {
               </blockquote>
 
               <p className="small-caps mt-6 text-[11px] font-medium text-[color:var(--oxblood)]">
-                The claim
+                The exegesis
               </p>
               <p className="serif mt-1 text-lg leading-snug sm:text-xl">
                 {e.heard}
@@ -72,23 +69,6 @@ export default function ExegesisHallOfShamePage() {
         </ol>
 
         <aside className="mt-14 space-y-8 lg:mt-0 lg:border-l lg:border-[color:var(--border)] lg:pl-10">
-          <section>
-            <h2 className="small-caps text-xs font-medium text-[color:var(--muted)]">
-              Nominate an entry
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed">
-              Heard a reading that made you put your pen down? Send the verse,
-              the claim as close to word for word as you can, and where you
-              heard it.
-            </p>
-            <a
-              href={mailto("Exegesis Hall of Shame nomination")}
-              className="small-caps mt-4 inline-flex h-10 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-[13px] transition-colors hover:bg-[color:var(--muted-soft)]"
-            >
-              Send a nomination
-            </a>
-          </section>
-
           <p className="text-xs leading-relaxed text-[color:var(--muted)]">
             Independent and{" "}
             <Link
