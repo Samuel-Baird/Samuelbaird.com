@@ -1,8 +1,10 @@
 // Sync the public Amazon wishlist into wishlist/data.json. Run: node scripts/fetch-wishlist.mjs
 // - Reads the list's public "list view" page and follows its "show more" pagination.
 // - Only rewrites data.json when the items actually changed, so scheduled runs make no empty commits.
-// - Refuses to overwrite good data with an empty result (Amazon sometimes serves a CAPTCHA to bots).
-//   Pass --allow-empty if the list really is empty now.
+// - Refuses to overwrite good data with an empty result. Pass --allow-empty if the list really is empty now.
+// - Amazon sometimes serves a CAPTCHA to bots. If it still does after retries, the run keeps the
+//   current data.json and exits 0 with a warning (the next scheduled run tries again); it only fails
+//   when there is no data on file yet.
 // No dependencies. Runs on a schedule in .github/workflows/wishlist.yml; also safe to run by hand.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -95,14 +97,22 @@ const nextUrl = (html) => {
   return v ? new URL(v, ORIGIN).href : null;
 };
 
+class BlockedError extends Error {}
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Pause between pages, with jitter, so the crawl looks less like a bot burst.
+const PAGE_DELAY_MS = 1500;
+
 async function get(url) {
   for (let attempt = 1; ; attempt++) {
     const res = await fetch(url, { headers: HEADERS, redirect: 'follow' });
     const body = await res.text();
     const blocked = /captcha|Type the characters you see|api-services-support@amazon\.com/i.test(body);
     if (res.ok && !blocked) return body;
-    if (attempt >= 4) throw new Error(`${url}: ${blocked ? 'Amazon served a CAPTCHA / bot check' : 'HTTP ' + res.status}`);
-    await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
+    if (attempt >= 4) {
+      const msg = `${url}: ${blocked ? 'Amazon served a CAPTCHA / bot check' : 'HTTP ' + res.status}`;
+      throw blocked || res.status === 503 ? new BlockedError(msg) : new Error(msg);
+    }
+    await sleep(2000 * 2 ** attempt + Math.random() * 2000);
   }
 }
 
@@ -115,6 +125,7 @@ async function main() {
     for (const it of parseItems(html)) if (!seen.has(it.itemId)) seen.set(it.itemId, it);
     const next = FILE ? null : nextUrl(html);
     if (!next || page >= MAX_PAGES || /id=["']endOfListMarker["']/.test(html)) break;
+    await sleep(PAGE_DELAY_MS + Math.random() * PAGE_DELAY_MS);
     html = await get(next);
   }
   // Drop items that are fully bought (Amazon's "unpurchased" filter normally already does this).
@@ -135,4 +146,12 @@ async function main() {
   console.log(`wishlist updated: ${items.length} items${prev ? ` (was ${prev.items.length})` : ''}`);
 }
 
-main().catch((e) => { console.error(e.message || e); process.exit(1); });
+main().catch((e) => {
+  // Blocked by Amazon but we already have data: keep it and let the next scheduled run retry.
+  if (e instanceof BlockedError && fs.existsSync(OUT)) {
+    console.log(`::warning title=Wishlist sync skipped::${e.message.split(': ').pop()}; keeping the current wishlist/data.json.`);
+    return;
+  }
+  console.error(e.message || e);
+  process.exit(1);
+});
