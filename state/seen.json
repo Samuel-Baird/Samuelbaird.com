@@ -1,4 +1,101 @@
 {
   "_comment": "Dedupe log maintained by the daily run. Key = canonical listing URL. Value = {title, price, scout, first_seen, last_price}.",
-  "items": {}
+  "items": {
+    "https://panoplybooks.com/the-deseret-second-book-by-the-regents-of-deseret-university-1868-original": {
+      "title": "Deseret Second Book 1868 (Panoply)",
+      "price": "$195",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$195",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/product/deseret-second-alphabet-1868/": {
+      "title": "Deseret Second Reader 1868 (Schilb)",
+      "price": "$750",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$750",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/29383.html": {
+      "title": "Orson Pratt Divine Authority 1848 (Ken Sanders)",
+      "price": "$50",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$50",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/25054.html": {
+      "title": "Weightman Mormonism Exposed 1884",
+      "price": "$100",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$100",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1573023623": {
+      "title": "Barclay Mormonism Exposed 1884",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1212039266": {
+      "title": "Millennial Star Vol XII 1850",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1769846177": {
+      "title": "Times and Seasons vols 1-6",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1499257563": {
+      "title": "Journal of Discourses Vol II",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1478706402": {
+      "title": "Deseret BoM Part 1 1869 (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1714859909": {
+      "title": "Deseret BoM selection 1869 (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.proantic.com/en/1537849-pewter-chalice-18th-century.html": {
+      "title": "Pewter chalice 18th c.",
+      "price": "EUR310",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "EUR310",
+      "verified": false
+    },
+    "https://www.proantic.com/en/1704452-17th-century-pewter-chalice.html": {
+      "title": "Pewter chalice 17th c.",
+      "price": "EUR250",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "EUR250",
+      "verified": false
+    }
+  }
 }
