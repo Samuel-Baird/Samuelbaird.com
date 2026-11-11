@@ -1,0 +1,4413 @@
+{
+ "id": "me3320",
+ "title": "ME 3320 Heat Transfer",
+ "term": "Fall 2026",
+ "text": "Fundamentals of Heat and Mass Transfer, 8th ed. (Bergman, Lavine, Incropera, DeWitt)",
+ "pageOffset": 24,
+ "canvas": "https://uvu.instructure.com/courses/641165",
+ "dates": {
+  "test1": {
+   "label": "Test 1",
+   "when": "2026-10-09T23:59:00-06:00",
+   "done": true
+  },
+  "test2": {
+   "label": "Test 2",
+   "when": "2026-11-13T23:59:00-07:00",
+   "done": false
+  },
+  "final": {
+   "label": "Final (in class, comprehensive)",
+   "when": "2026-12-08T13:00:00-07:00",
+   "done": false,
+   "where": "SE-326, 1:00–2:50 pm"
+  }
+ },
+ "tests": {
+  "T2": [
+   "Ch 4: §4.3 + Table 4.1 first four cases; finite difference (§4.4–4.5)",
+   "Ch 5: §5.1, 5.2, 5.4, 5.5 with first half of Table 5.1; finite-difference transient",
+   "Ch 6: §6.1–6.7, Tables 6.1–6.3, the four boundary-layer equations",
+   "Know area/volume of a sphere and cylinder; average quantities; conservation of mass and energy"
+  ]
+ },
+ "units": [
+  {
+   "id": "u01",
+   "num": 1,
+   "ch": 1,
+   "title": "Introduction: the three modes and the energy balance",
+   "tag": "T1",
+   "sched": "Aug 20",
+   "why": "Every exam problem starts here: name the modes, draw the control volume, write the energy balance.",
+   "sections": [
+    "1.2",
+    "1.3",
+    "1.5"
+   ],
+   "book": [
+    {
+     "sec": "1.2",
+     "title": "Physical Origins and Rate Equations",
+     "page": 3
+    },
+    {
+     "sec": "1.3",
+     "title": "Relationship to Thermodynamics",
+     "page": 12
+    },
+    {
+     "sec": "1.5",
+     "title": "Analysis of Heat Transfer Problems: Methodology",
+     "page": 35
+    }
+   ],
+   "examples": [
+    {
+     "ex": "1.1",
+     "page": 5
+    },
+    {
+     "ex": "1.2",
+     "page": 10
+    },
+    {
+     "ex": "1.3",
+     "page": 18
+    },
+    {
+     "ex": "1.4",
+     "page": 20
+    },
+    {
+     "ex": "1.5",
+     "page": 23
+    },
+    {
+     "ex": "1.6",
+     "page": 25
+    },
+    {
+     "ex": "1.7",
+     "page": 31
+    },
+    {
+     "ex": "1.8",
+     "page": 36
+    }
+   ],
+   "videos": [
+    {
+     "id": "a-lz-YzwvE8",
+     "title": "Chapter 1 – Lecture 1: Introduction to heat transfer",
+     "channel": "Kody Powell",
+     "len": "19:40",
+     "note": "Best single overview, follows this book",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 1 - Lecture 1 - Introduction to Heat Transfer",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "uEZWoi4ySpU",
+     "title": "L1 p1 – Three types of heat transfer",
+     "channel": "Ron Hugo",
+     "len": "4:46",
+     "note": "Fast refresher",
+     "verified": true,
+     "ytTitle": "Heat Transfer L1 p1 - Three Types of Heat Transfer",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "X_Ws46vNTfM",
+     "title": "Chapter 1 – Example 3: equating conduction and convection",
+     "channel": "Kody Powell",
+     "len": "15:02",
+     "note": "Exam-style surface balance",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 1 - Example Problem 3 - Equating conduction and convection at a surface",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "aUezuJvYXkE",
+     "title": "Crash course: example exam problem with convection and radiation",
+     "channel": "Kody Powell",
+     "len": "8:30",
+     "note": "Convection + radiation together",
+     "verified": true,
+     "ytTitle": "Heat Transfer Crash Course: Example exam problem: Convection and Radiation",
+     "ytAuthor": "Kody Powell"
+    }
+   ],
+   "know": [
+    "Three modes: conduction (Fourier), convection (Newton's law of cooling), radiation (Stefan–Boltzmann). A surface often loses heat by two or three at once.",
+    "Heat rate $q$ in W; heat flux $q''=q/A$ in W/m². The sign tells direction, so draw the arrow first.",
+    "Radiation temperatures must be absolute (K). For a small surface in large surroundings use $\\varepsilon\\sigma(T_s^4-T_{sur}^4)$, or the linearized $h_r$.",
+    "Energy balance on a control volume: $\\dot E_{in}-\\dot E_{out}+\\dot E_g=\\dot E_{st}$. At a surface there is no volume, so conduction in = convection out + radiation out.",
+    "Steady state means $\\dot E_{st}=0$. Always state your assumptions (steady, 1-D, constant properties)."
+   ],
+   "eq": [
+    {
+     "label": "Fourier",
+     "tex": "q''_x=-k\\,\\frac{dT}{dx}"
+    },
+    {
+     "label": "Newton",
+     "tex": "q''=h\\,(T_s-T_\\infty)"
+    },
+    {
+     "label": "Net radiation",
+     "tex": "q''_{rad}=\\varepsilon\\sigma\\,(T_s^4-T_{sur}^4)=h_r(T_s-T_{sur})"
+    },
+    {
+     "label": "Linearized radiation",
+     "tex": "h_r=\\varepsilon\\sigma\\,(T_s+T_{sur})(T_s^2+T_{sur}^2)"
+    },
+    {
+     "label": "Energy balance",
+     "tex": "\\dot E_{in}-\\dot E_{out}+\\dot E_g=\\dot E_{st}=\\rho c_p V\\,\\frac{dT}{dt}"
+    }
+   ],
+   "pitfalls": [
+    "Using °C in the radiation term.",
+    "Forgetting radiation when $h$ is a natural-convection value (radiation is often equal in size).",
+    "Mixing up $q$ (W), $q'$ (W/m) and $q''$ (W/m²)."
+   ],
+   "tables": [],
+   "samples": [
+    "Test 1 practice: Ch 1 — 14, 16, 22, 49"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 1 slides (1.1–1.2)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477684"
+     },
+     {
+      "label": "Ch 1 slides (1.3)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477688"
+     },
+     {
+      "label": "Notes: Ch 1 – Ch 8 §8.3",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477682"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW1 · Ch 1: 5, 9, 14, 21, 36",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221367",
+      "due": "Aug 27"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "1a",
+     "title": "Hot plate: convection plus radiation",
+     "level": "warm-up",
+     "minutes": 8,
+     "statement": "A thin flat plate of area $A=0.5\\ \\mathrm{m^2}$ has one face at $T_s=90^\\circ$C, exposed to room air at $T_\\infty=25^\\circ$C with $h=18\\ \\mathrm{W/m^2K}$ and to large surroundings at $T_{sur}=25^\\circ$C. The surface emissivity is $\\varepsilon=0.8$. (a) Find the convective and radiative heat fluxes. (b) Find the radiation heat-transfer coefficient $h_r$ and the total heat rate from the face.",
+     "given": [
+      "$T_s=90^\\circ$C",
+      "$T_\\infty=T_{sur}=25^\\circ$C",
+      "$h=18$ W/m²K",
+      "$\\varepsilon=0.8$",
+      "$A=0.5$ m²"
+     ],
+     "find": [
+      "$q''_{conv}$, $q''_{rad}$",
+      "$h_r$ and $q$ (W)"
+     ],
+     "hint": "Radiation always needs kelvin. Convection and radiation from the same surface add (parallel paths).",
+     "solution": {
+      "steps": [
+       "Convection (Newton): $q''_{conv}=h(T_s-T_\\infty)=18(363.15-298.15)=1170\\ \\mathrm{W/m^2}$.",
+       "Radiation uses **absolute** temperatures: $q''_{rad}=\\varepsilon\\sigma(T_s^4-T_{sur}^4)=0.8(5.67\\times10^{-8})(363.15^4-298.15^4)=430\\ \\mathrm{W/m^2}$.",
+       "Linearize radiation: $h_r=\\varepsilon\\sigma(T_s+T_{sur})(T_s^2+T_{sur}^2)=6.62\\ \\mathrm{W/m^2K}$ — comparable to $h$, so radiation cannot be ignored here.",
+       "Total flux $=1600$ W/m²; $q=q''A=800$ W."
+      ],
+      "answers": [
+       "$q''_{conv}=1170$ W/m²; $q''_{rad}=430$ W/m²",
+       "$h_r=6.62$ W/m²K; $q=800$ W"
+      ]
+     }
+    },
+    {
+     "id": "1b",
+     "title": "Chip energy balance (find the surface temperature)",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "A square chip, $20\\times20$ mm, dissipates $P=2$ W. Its back and edges are perfectly insulated, so all the power leaves through the top face to $T_\\infty=22^\\circ$C air ($h=60\\ \\mathrm{W/m^2K}$) and by radiation to surroundings at 22 °C ($\\varepsilon=0.9$). Write the surface energy balance and find the steady surface temperature. How much error results from ignoring radiation?",
+     "given": [
+      "$P=2$ W",
+      "$A=4\\times10^{-4}$ m²",
+      "$h=60$ W/m²K",
+      "$\\varepsilon=0.9$",
+      "$T_\\infty=T_{sur}=22^\\circ$C"
+     ],
+     "find": [
+      "Surface energy balance",
+      "$T_s$ with radiation",
+      "$T_s$ without radiation"
+     ],
+     "hint": "Setting up the balance on the correct control surface is where the points are.",
+     "solution": {
+      "steps": [
+       "Control surface at the top face: $E_{in}-E_{out}=0$, so $P/A=q''_{conv}+q''_{rad}$, i.e. $P/A=h(T_s-T_\\infty)+\\varepsilon\\sigma(T_s^4-T_{sur}^4)$. Here $P/A=5000$ W/m².",
+       "The equation is quartic in $T_s$, so iterate (or use the linearized $h_r$): guess $T_s$, compute both fluxes, adjust until they sum to $P/A$.",
+       "Solution: $T_s=96.0^\\circ$C (at that temperature $h_r\\approx7.57$ W/m²K).",
+       "Convection only: $T_s=T_\\infty+P/(hA)=105.3^\\circ$C. Ignoring radiation overpredicts the surface temperature by about 9 K."
+      ],
+      "answers": [
+       "$T_s=96.0^\\circ$C with radiation",
+       "$T_s=105.3^\\circ$C convection only (error 9 K)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "num": 2,
+   "ch": 2,
+   "title": "Conduction: heat equation and boundary conditions",
+   "tag": "T1",
+   "sched": "Aug 25–27",
+   "why": "The instructor wants you to set up the diffusion equation, state boundary conditions and integrate. This is the core skill behind Test 1.",
+   "sections": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4"
+   ],
+   "book": [
+    {
+     "sec": "2.1",
+     "title": "The Conduction Rate Equation",
+     "page": 60
+    },
+    {
+     "sec": "2.2",
+     "title": "The Thermal Properties of Matter",
+     "page": 62
+    },
+    {
+     "sec": "2.3",
+     "title": "The Heat Diffusion Equation",
+     "page": 74
+    },
+    {
+     "sec": "2.4",
+     "title": "Boundary and Initial Conditions",
+     "page": 82
+    }
+   ],
+   "examples": [
+    {
+     "ex": "2.1",
+     "page": 71
+    },
+    {
+     "ex": "2.2",
+     "page": 72
+    },
+    {
+     "ex": "2.3",
+     "page": 79
+    },
+    {
+     "ex": "2.4",
+     "page": 83
+    }
+   ],
+   "videos": [
+    {
+     "id": "_Fh7dkTDTFE",
+     "title": "L1 p4 – Conduction rate equation (Fourier's law)",
+     "channel": "Ron Hugo",
+     "len": "4:58",
+     "note": "Quick start",
+     "verified": true,
+     "ytTitle": "Heat Transfer L1 p4 - Conduction Rate Equation - Fourier's Law",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "eWwpCme6tHA",
+     "title": "L4 p2 – Derivation of the heat diffusion equation",
+     "channel": "Ron Hugo",
+     "len": "20:46",
+     "note": "Derivation from the energy balance",
+     "verified": true,
+     "ytTitle": "Heat Transfer L4 p2 - Derivation - Heat Diffusion Equation",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "AS83QF4X_2M",
+     "title": "Heat equation derivation",
+     "channel": "LearnChemE",
+     "len": "11:16",
+     "note": "Shorter alternative",
+     "verified": true,
+     "ytTitle": "Heat Equation Derivation",
+     "ytAuthor": "LearnChemE"
+    },
+    {
+     "id": "Eo9OQiHzObM",
+     "title": "Chapter 2.4: Boundary and initial conditions",
+     "channel": "Regina Vrikkis",
+     "len": "7:07",
+     "note": "Matches the book's section",
+     "verified": true,
+     "ytTitle": "MEGR3116  Chapter 2.4: Boundary and Initial Conditions",
+     "ytAuthor": "Regina Vrikkis"
+    },
+    {
+     "id": "C-gzUUraM9A",
+     "title": "L4 p3 – Common boundary conditions",
+     "channel": "Ron Hugo",
+     "len": "12:06",
+     "note": "Dirichlet / Neumann / convection",
+     "verified": true,
+     "ytTitle": "Heat Transfer L4 p3 - Common Boundary Conditions",
+     "ytAuthor": "Ron Hugo"
+    }
+   ],
+   "know": [
+    "The heat equation is an energy balance on a differential volume. Steady, 1-D, constant $k$, no generation reduces it to $d^2T/dx^2=0$ (plane wall).",
+    "Know the three coordinate forms. In cylinders and spheres the area changes, so the $r$ factors stay inside the derivative.",
+    "Thermal diffusivity $\\alpha=k/\\rho c_p$ measures how quickly temperature disturbances spread.",
+    "Boundary conditions: fixed temperature, fixed flux (adiabatic is zero flux), convection at a surface. Transient problems also need an initial condition.",
+    "A curved temperature profile in steady state means generation or variable $k$."
+   ],
+   "eq": [
+    {
+     "label": "Heat equation (Cartesian)",
+     "tex": "\\frac{\\partial}{\\partial x}\\!\\left(k\\frac{\\partial T}{\\partial x}\\right)+\\frac{\\partial}{\\partial y}\\!\\left(k\\frac{\\partial T}{\\partial y}\\right)+\\frac{\\partial}{\\partial z}\\!\\left(k\\frac{\\partial T}{\\partial z}\\right)+\\dot q=\\rho c_p\\frac{\\partial T}{\\partial t}"
+    },
+    {
+     "label": "Cylindrical, 1-D radial",
+     "tex": "\\frac1r\\frac{\\partial}{\\partial r}\\!\\left(kr\\frac{\\partial T}{\\partial r}\\right)+\\dot q=\\rho c_p\\frac{\\partial T}{\\partial t}"
+    },
+    {
+     "label": "Spherical, 1-D radial",
+     "tex": "\\frac1{r^2}\\frac{\\partial}{\\partial r}\\!\\left(kr^2\\frac{\\partial T}{\\partial r}\\right)+\\dot q=\\rho c_p\\frac{\\partial T}{\\partial t}"
+    },
+    {
+     "label": "Diffusivity",
+     "tex": "\\alpha=\\dfrac{k}{\\rho c_p}"
+    },
+    {
+     "label": "Convection BC",
+     "tex": "-k\\frac{\\partial T}{\\partial x}\\Big|_{x=0}=h\\,[T_\\infty-T(0,t)]"
+    }
+   ],
+   "pitfalls": [
+    "Taking $r$ outside the derivative in cylindrical/spherical forms.",
+    "Writing the convection boundary condition with the wrong sign — draw the heat-flow direction first.",
+    "Losing an integration constant: count constants vs. boundary conditions."
+   ],
+   "tables": [],
+   "samples": [
+    "Test 1 practice: Ch 2 — 2, 13, 14, 22, 38"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 2 slides",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421089"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW2 · Ch 2: 7, 11, 13, 26, 40",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221368",
+      "due": "Sep 3"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "2a",
+     "title": "Reading a temperature profile",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "Steady one-dimensional conduction occurs in a plane wall of thickness $L=0.10$ m and $k=15\\ \\mathrm{W/m\\,K}$. The measured temperature distribution is $T(x)=120-1000x-20000x^2$ with $T$ in °C and $x$ in m. (a) Find the heat flux at $x=0$ and $x=L$. (b) Use the heat diffusion equation to find the volumetric generation rate $\\dot q$. (c) Confirm with an overall energy balance on the wall.",
+     "given": [
+      "$k=15$ W/m·K",
+      "$L=0.10$ m",
+      "$T(x)=120-1000x-20000x^2$"
+     ],
+     "find": [
+      "$q''_x(0)$, $q''_x(L)$",
+      "$\\dot q$",
+      "Energy-balance check"
+     ],
+     "hint": "Differentiate once for the flux, twice for $\\dot q$. A profile with curvature means generation (or variable k).",
+     "solution": {
+      "steps": [
+       "Fourier: $q''_x=-k\\,dT/dx=-15(-1000-40000x)$. At $x=0$: $q''=15000$ W/m²; at $x=L$: $q''=75000$ W/m² (both positive: flow is in $+x$).",
+       "1-D steady heat equation with generation: $k\\,d^2T/dx^2+\\dot q=0\\Rightarrow\\dot q=-k(2c)=-15(-40000)=6.00\\times10^{5}$ W/m³.",
+       "Overall balance (steady): $\\dot E_{in}-\\dot E_{out}+\\dot E_g=0$ per unit area: $q''(0)-q''(L)+\\dot qL=15000-75000+60000=0$ ✓. More energy leaves at $x=L$ than enters at $x=0$, exactly the generated amount."
+      ],
+      "answers": [
+       "$q''(0)=15000$, $q''(L)=75000$ W/m²",
+       "$\\dot q=6.00\\times10^{5}$ W/m³"
+      ]
+     }
+    },
+    {
+     "id": "2b",
+     "title": "Radial profile in a heated rod",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A long solid rod of radius $r_0=20$ mm and $k=20\\ \\mathrm{W/m\\,K}$ has steady radial temperatures $T(r)=T_0-Ar^2$ with $A=5\\times10^{5}\\ \\mathrm{K/m^2}$. (a) Start from the cylindrical heat equation and find $\\dot q$. (b) Find the surface heat flux and the heat rate per unit length. (c) Verify with an energy balance. (d) How much hotter is the centerline than the surface?",
+     "given": [
+      "$k=20$ W/m·K",
+      "$r_0=0.02$ m",
+      "$T=T_0-Ar^2$, $A=5\\times10^5$ K/m²"
+     ],
+     "find": [
+      "$\\dot q$",
+      "$q''(r_0)$, $q'$",
+      "Check",
+      "$T(0)-T(r_0)$"
+     ],
+     "hint": "Use the radial form with the $r$ inside the derivative. Check units of $\\dot q$.",
+     "solution": {
+      "steps": [
+       "Cylindrical, steady, 1-D: $\\dfrac1r\\dfrac{d}{dr}\\!\\left(kr\\dfrac{dT}{dr}\\right)+\\dot q=0$. With $dT/dr=-2Ar$: $r\\,dT/dr=-2Ar^2$, derivative $=-4Ar$, so $\\dot q=4Ak=4.00\\times10^{7}$ W/m³.",
+       "Surface flux (outward): $q''(r_0)=-k\\,dT/dr=2Akr_0=4.00\\times10^{5}$ W/m²; per unit length $q'=q''(2\\pi r_0)=50265$ W/m.",
+       "Energy balance on a unit length: generated $=\\dot q\\pi r_0^2=50265$ W/m $=q'$ ✓.",
+       "$T(0)-T(r_0)=Ar_0^2=200$ K."
+      ],
+      "answers": [
+       "$\\dot q=4.00\\times10^{7}$ W/m³",
+       "$q''(r_0)=4.00\\times10^{5}$ W/m²; $q'=50265$ W/m",
+       "$\\Delta T=200$ K"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "num": 3,
+   "ch": 3,
+   "title": "1-D steady conduction: walls, circuits, radial systems",
+   "tag": "T1",
+   "sched": "Sep 1–8",
+   "why": "Thermal circuits solve most steady problems in minutes. Contact resistance, composite walls and insulation on pipes appear on almost every exam.",
+   "sections": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4"
+   ],
+   "book": [
+    {
+     "sec": "3.1",
+     "title": "The Plane Wall",
+     "page": 100
+    },
+    {
+     "sec": "3.2",
+     "title": "An Alternative Conduction Analysis",
+     "page": 121
+    },
+    {
+     "sec": "3.3",
+     "title": "Radial Systems",
+     "page": 125
+    },
+    {
+     "sec": "3.4",
+     "title": "Summary of One-Dimensional Conduction Results",
+     "page": 131
+    }
+   ],
+   "examples": [
+    {
+     "ex": "3.1",
+     "page": 110
+    },
+    {
+     "ex": "3.2",
+     "page": 113
+    },
+    {
+     "ex": "3.3",
+     "page": 115
+    },
+    {
+     "ex": "3.4",
+     "page": 118
+    },
+    {
+     "ex": "3.5",
+     "page": 122
+    },
+    {
+     "ex": "3.6",
+     "page": 127
+    },
+    {
+     "ex": "3.7",
+     "page": 134
+    },
+    {
+     "ex": "3.8",
+     "page": 140
+    }
+   ],
+   "videos": [
+    {
+     "id": "jh6jaQGrG88",
+     "title": "Ch 3 – One-dimensional conduction: plane wall",
+     "channel": "Kody Powell",
+     "len": "7:06",
+     "note": "Fundamentals",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - One Dimensional Conduction - Plane Wall",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "ZcO0yjdxIFQ",
+     "title": "Ch 3 – Thermal resistance",
+     "channel": "Kody Powell",
+     "len": "11:50",
+     "note": "The circuit idea",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - One Dimensional Conduction - Thermal Resistances",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "4G65iLk99wE",
+     "title": "Ch 3 – Composite wall",
+     "channel": "Kody Powell",
+     "len": "14:01",
+     "note": "Series layers + convection",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - One Dimensional Conduction - Composite Wall",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "HIcA5wqfy6U",
+     "title": "Ch 3 – Parallel resistances and contact resistance",
+     "channel": "Kody Powell",
+     "len": "20:09",
+     "note": "Parallel paths and $R''_{t,c}$",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - Thermal Resistances in Parallel, Contact Resistance, R-Value",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "YMaIIIZtgoY",
+     "title": "L6 p3 – Example: thermal resistance",
+     "channel": "Ron Hugo",
+     "len": "12:39",
+     "note": "Worked example",
+     "verified": true,
+     "ytTitle": "Heat Transfer L6 p3 - Example - Thermal Resistance",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "8I10ojkp2C4",
+     "title": "Chapter 3.3: radial systems",
+     "channel": "Regina Vrikkis",
+     "len": "5:30",
+     "note": "Cylinders and spheres, short",
+     "verified": true,
+     "ytTitle": "MEGR3116 Chapter 3.3 1D SS Heat Conduction   Radial Systems",
+     "ytAuthor": "Regina Vrikkis"
+    },
+    {
+     "id": "6x-jdCGWuHI",
+     "title": "Ch 3 – Cylindrical systems: profile and heat rate",
+     "channel": "Kody Powell",
+     "len": "21:48",
+     "note": "Derivation + use",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - Cylindrical Systems - Temperature profile, Thermal Resistance, U-Value",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "EMJZdyZCRNI",
+     "title": "Pipe insulation thickness: thermal resistance example",
+     "channel": "Brian Bernard",
+     "len": "14:49",
+     "note": "Insulation + critical radius",
+     "verified": true,
+     "ytTitle": "Calculate Pipe Insulation Thickness - Thermal Resistance Example Problem",
+     "ytAuthor": "Brian Bernard"
+    }
+   ],
+   "know": [
+    "Plane wall: $q=\\Delta T/R_{tot}$ with series resistances $R_{cond}=L/kA$, $R_{conv}=1/hA$, and $R_{rad}=1/h_rA$. Same $q$ through every series element, so $\\Delta T_i=qR_i$.",
+    "Parallel paths combine like resistors in parallel. Contact resistance $R''_{t,c}$ sits at layer interfaces.",
+    "Cylinder (per length): $R'_{cond}=\\ln(r_2/r_1)/2\\pi k$; sphere: $R=(1/r_1-1/r_2)/4\\pi k$. In radial systems $q$ is constant but $q''$ falls with radius.",
+    "Critical radius of insulation $r_{cr}=k/h$ (cylinder) or $2k/h$ (sphere): insulating below it increases heat loss.",
+    "Overall coefficient: $q=UA\\,\\Delta T$ with $1/UA=R_{tot}$."
+   ],
+   "eq": [
+    {
+     "label": "Wall resistance",
+     "tex": "R_{t,cond}=\\dfrac{L}{kA},\\quad R_{t,conv}=\\dfrac1{hA}"
+    },
+    {
+     "label": "Series circuit",
+     "tex": "q=\\dfrac{T_{\\infty,1}-T_{\\infty,2}}{R_{tot}}"
+    },
+    {
+     "label": "Cylinder",
+     "tex": "R'_{t}=\\dfrac{\\ln(r_2/r_1)}{2\\pi k},\\quad q'=\\dfrac{T_1-T_2}{R'_t}"
+    },
+    {
+     "label": "Sphere",
+     "tex": "R_t=\\dfrac{1/r_1-1/r_2}{4\\pi k}"
+    },
+    {
+     "label": "Critical radius",
+     "tex": "r_{cr}=\\dfrac{k}{h}\\ \\text{(cyl.)},\\ \\dfrac{2k}{h}\\ \\text{(sphere)}"
+    },
+    {
+     "label": "Contact",
+     "tex": "q''=\\dfrac{\\Delta T_c}{R''_{t,c}}"
+    }
+   ],
+   "pitfalls": [
+    "Putting convection resistance on only one side.",
+    "Using the wrong area in cylindrical $R$ (the log form already contains it).",
+    "Treating $q''$ as constant in a cylinder."
+   ],
+   "tables": [
+    "Table 3.1–3.2 (contact resistances)",
+    "Table 3.3 (1-D solutions)",
+    "Table A.1, A.3 (solids)"
+   ],
+   "samples": [
+    "Test 1 practice: Ch 3 — 4, 20, 21, 32, 65"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 3 slides (3.1–3.4)",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421482"
+     },
+     {
+      "label": "Ch 3 Examples a",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477620"
+     },
+     {
+      "label": "Ch 3 Examples b",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477617"
+     },
+     {
+      "label": "Ch 3 Examples c",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477708"
+     },
+     {
+      "label": "Ch 3 Examples d",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477710"
+     },
+     {
+      "label": "Ch 3 Examples f",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477744"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW3 · Ch 3: 6, 13, 20, 33, 54, (42*)",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221369",
+      "due": "Sep 11"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "3a",
+     "title": "Composite wall with contact resistance",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "An exterior wall is built, from inside to outside, of gypsum board ($L=12.5$ mm, $k=0.17$), glass-fiber insulation ($L=80$ mm, $k=0.04$) and brick ($L=120$ mm, $k=0.70$; all W/m·K). Imperfect contact between the insulation and brick gives $R''_{t,c}=0.020\\ \\mathrm{m^2K/W}$. Inside air is $21^\\circ$C with $h_i=8\\ \\mathrm{W/m^2K}$; outside air is $-10^\\circ$C with $h_o=25\\ \\mathrm{W/m^2K}$. Draw the thermal circuit, then find (a) the heat loss per m², (b) the inside wall-surface temperature, and (c) the temperature drop across the contact resistance.",
+     "given": [
+      "gypsum 12.5 mm, k=0.17",
+      "insulation 80 mm, k=0.04",
+      "brick 120 mm, k=0.70",
+      "$R''_{t,c}=0.020$",
+      "$h_i=8$, $h_o=25$",
+      "$T_{\\infty,i}=21^\\circ$C, $T_{\\infty,o}=-10^\\circ$C"
+     ],
+     "find": [
+      "$q''$",
+      "inside surface temperature",
+      "$\\Delta T$ across contact"
+     ],
+     "hint": "Same $q''$ flows through every series element. $\\Delta T=q''R''$ for each.",
+     "solution": {
+      "steps": [
+       "Series circuit (per m² of wall): $R''_{tot}=\\dfrac1{h_i}+\\dfrac{L_g}{k_g}+\\dfrac{L_{ins}}{k_{ins}}+R''_{t,c}+\\dfrac{L_b}{k_b}+\\dfrac1{h_o}$.",
+       "Numbers: $0.1250+0.0735+2.0000+0.0200+0.1714+0.0400=2.4300\\ \\mathrm{m^2K/W}$ (the insulation dominates).",
+       "$q''=\\dfrac{T_{\\infty,i}-T_{\\infty,o}}{R''_{tot}}=\\dfrac{31}{2.4300}=12.76$ W/m².",
+       "Inside surface: $T_{s,i}=T_{\\infty,i}-q''/h_i=21-12.76(0.125)=19.41^\\circ$C.",
+       "Contact drop: $\\Delta T_c=q''R''_{t,c}=12.76(0.020)=0.255$ K. (Interface temperatures on either side: -7.05 °C and -7.30 °C.)"
+      ],
+      "answers": [
+       "$q''=12.76$ W/m²",
+       "$T_{s,i}=19.41^\\circ$C",
+       "$\\Delta T_c=0.255$ K"
+      ]
+     }
+    },
+    {
+     "id": "3b",
+     "title": "Insulated steam pipe and critical radius",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A steam pipe of outer radius $r_1=30$ mm has an outer wall at $150^\\circ$C. It is wrapped with insulation ($k=0.05\\ \\mathrm{W/m\\,K}$, outer radius $r_2=55$ mm). Surrounding air is $20^\\circ$C with a combined (convection+radiation) coefficient $h=15\\ \\mathrm{W/m^2K}$. (a) Find the heat loss per meter of pipe and the outer insulation-surface temperature. (b) Find the critical radius and say whether this insulation is helping. (c) Compare with the bare pipe.",
+     "given": [
+      "$r_1=0.030$ m, $r_2=0.055$ m",
+      "$k=0.05$ W/m·K",
+      "$T_1=150^\\circ$C",
+      "$T_\\infty=20^\\circ$C, $h=15$"
+     ],
+     "find": [
+      "$q'$",
+      "$T_{s,2}$",
+      "$r_{cr}$",
+      "bare-pipe $q'$"
+     ],
+     "hint": "In cylindrical coordinates the conduction resistance is a log term per unit length.",
+     "solution": {
+      "steps": [
+       "Radial circuit: $R'_{cond}=\\dfrac{\\ln(r_2/r_1)}{2\\pi k}=1.9294$ m·K/W; $R'_{conv}=\\dfrac1{2\\pi r_2h}=0.1929$ m·K/W.",
+       "$q'=\\dfrac{T_1-T_\\infty}{R'_{cond}+R'_{conv}}=\\dfrac{130}{2.1223}=61.3$ W/m.",
+       "$T_{s,2}=T_\\infty+q'R'_{conv}=31.8^\\circ$C.",
+       "Critical radius (cylinder) $r_{cr}=k/h=3.33$ mm $<r_1=30$ mm, so any added insulation reduces the loss.",
+       "Bare pipe: $q'=h(2\\pi r_1)(T_1-T_\\infty)=368$ W/m, so the insulation cuts the loss by 83%."
+      ],
+      "answers": [
+       "$q'=61.3$ W/m; $T_{s,2}=31.8^\\circ$C",
+       "$r_{cr}=3.33$ mm (< $r_1$: insulation helps)",
+       "bare: $368$ W/m"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "num": 4,
+   "ch": 3,
+   "title": "Conduction with thermal energy generation",
+   "tag": "T1",
+   "sched": "Sep 8",
+   "why": "Generation problems follow one recipe: integrate twice, apply symmetry and a surface energy balance.",
+   "sections": [
+    "3.5"
+   ],
+   "book": [
+    {
+     "sec": "3.5",
+     "title": "Conduction with Thermal Energy Generation",
+     "page": 131
+    }
+   ],
+   "examples": [],
+   "videos": [
+    {
+     "id": "Z4SuGpHcwJ4",
+     "title": "One-dimensional heat conduction with generation",
+     "channel": "LearnChemE",
+     "len": "11:49",
+     "note": "The derivation",
+     "verified": true,
+     "ytTitle": "One-Dimensional Heat Conduction with Generation",
+     "ytAuthor": "LearnChemE"
+    },
+    {
+     "id": "mup-xI5rGIk",
+     "title": "Chapter 1 – Example 4: radiation and generation",
+     "channel": "Kody Powell",
+     "len": "12:14",
+     "note": "Generation + surface balance",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 1 - Example Problem 4 - Radiation and Generation",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "BWckkRjbiyo",
+     "title": "PE exam problem: conduction with heat generation",
+     "channel": "Energy & Heat",
+     "len": "10:36",
+     "note": "Exam-style numbers",
+     "verified": true,
+     "ytTitle": "PE Exam Problem 2 with Solution - Conduction Heat Transfer with Heat Generation by Dr. Ethan Languri",
+     "ytAuthor": "Energy & Heat"
+    }
+   ],
+   "know": [
+    "Plane wall with symmetric cooling: $T(x)=T_s+\\dfrac{\\dot q}{2k}(L^2-x^2)$, maximum at the midplane.",
+    "Cylinder: $T(r)=T_s+\\dfrac{\\dot qr_o^2}{4k}(1-r^2/r_o^2)$; sphere: $\\dfrac{\\dot qr_o^2}{6k}$.",
+    "Surface temperature comes from an overall energy balance: all generated heat leaves through the surface by convection (and radiation).",
+    "Use Appendix C's summary instead of re-deriving, but know how the derivation goes (instructor's slides: 3B).",
+    "Check: heat leaving $=\\dot q\\times$ volume."
+   ],
+   "eq": [
+    {
+     "label": "Plane wall (2L thick)",
+     "tex": "T(x)=T_s+\\dfrac{\\dot qL^2}{2k}\\left(1-\\dfrac{x^2}{L^2}\\right),\\ \\ T_s=T_\\infty+\\dfrac{\\dot qL}{h}"
+    },
+    {
+     "label": "Cylinder",
+     "tex": "T(r)=T_s+\\dfrac{\\dot qr_o^2}{4k}\\left(1-\\dfrac{r^2}{r_o^2}\\right),\\ \\ T_s=T_\\infty+\\dfrac{\\dot qr_o}{2h}"
+    },
+    {
+     "label": "Sphere",
+     "tex": "T(r)=T_s+\\dfrac{\\dot qr_o^2}{6k}\\left(1-\\dfrac{r^2}{r_o^2}\\right),\\ \\ T_s=T_\\infty+\\dfrac{\\dot qr_o}{3h}"
+    }
+   ],
+   "pitfalls": [
+    "Using the full thickness instead of half-thickness $L$.",
+    "Forgetting the symmetry condition $dT/dx=0$ at the midplane.",
+    "Using $\\dot q$ (W/m³) where a flux (W/m²) is needed."
+   ],
+   "tables": [
+    "Appendix C (generation summary)"
+   ],
+   "samples": [
+    "HW4 (Ch 3) includes generation problems"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 3 slides (3.5, App. C)",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421501"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW4 · Ch 3: 68, 71, 98, 100, 104, (114*)",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221370",
+      "due": "Sep 19"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "4a",
+     "title": "Plane wall with generation, convection both sides",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "A wall of thickness $2L=40$ mm ($k=25$ W/m·K) generates $\\dot q=2\\times10^6\\ \\mathrm{W/m^3}$ uniformly. Both surfaces see fluid at $100^\\circ$C with $h=1000\\ \\mathrm{W/m^2K}$. (a) Derive $T(x)$ using the midplane as $x=0$. (b) Find the surface and midplane temperatures. (c) Where is the maximum temperature?",
+     "given": [
+      "$L=0.020$ m",
+      "$k=25$",
+      "$\\dot q=2\\times10^6$ W/m³",
+      "$h=1000$, $T_\\infty=100^\\circ$C"
+     ],
+     "find": [
+      "$T(x)$",
+      "$T_s$, $T_0$",
+      "location of $T_{max}$"
+     ],
+     "hint": "Do the energy balance at the surface instead of fighting the second boundary condition algebraically.",
+     "solution": {
+      "steps": [
+       "$k\\,T''+\\dot q=0$, so $T=-\\dfrac{\\dot q}{2k}x^2+C_1x+C_2$. Symmetry ($dT/dx|_0=0$) gives $C_1=0$.",
+       "Surface energy balance at $x=L$: heat conducted to the surface equals heat convected away, $\\dot qL=h(T_s-T_\\infty)$, so $T_s=T_\\infty+\\dot qL/h=140.0^\\circ$C.",
+       "$T(x)=T_s+\\dfrac{\\dot q}{2k}(L^2-x^2)$, so $T_0=T_s+\\dfrac{\\dot qL^2}{2k}=156.0^\\circ$C.",
+       "Maximum temperature is at the midplane $x=0$ (symmetry, adiabatic there)."
+      ],
+      "answers": [
+       "$T_s=140.0^\\circ$C",
+       "$T_0=156.0^\\circ$C at $x=0$"
+      ]
+     }
+    },
+    {
+     "id": "4b",
+     "title": "Current-carrying wire",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A long nichrome wire ($D=3$ mm, $k=20$ W/m·K, electrical resistivity $\\rho_e=1.08\\times10^{-6}\\ \\Omega\\,$m) carries $I=30$ A in $25^\\circ$C air with $h=100\\ \\mathrm{W/m^2K}$. Find (a) $\\dot q$, (b) the surface temperature, and (c) the centerline-to-surface temperature difference. Which resistance dominates?",
+     "given": [
+      "$D=3$ mm",
+      "$I=30$ A",
+      "$\\rho_e=1.08\\times10^{-6}\\ \\Omega$m",
+      "$k=20$",
+      "$h=100$, $T_\\infty=25^\\circ$C"
+     ],
+     "find": [
+      "$\\dot q$",
+      "$T_s$",
+      "$T_0-T_s$"
+     ],
+     "hint": "Convert current into $\\dot q$ first. Surface energy balance sets $T_s$, conduction only sets the small internal rise.",
+     "solution": {
+      "steps": [
+       "$A_c=\\pi D^2/4=7.07\\times10^{-6}$ m²; $R'_e=\\rho_e/A_c=0.1528\\ \\Omega$/m; power per length $q'=I^2R'_e=137.5$ W/m; $\\dot q=q'/A_c=1.95\\times10^{7}$ W/m³.",
+       "Steady: all generated heat leaves by convection: $q'=h\\pi D(T_s-T_\\infty)$, so $T_s=T_\\infty+\\dfrac{q'}{\\pi Dh}=170.9^\\circ$C.",
+       "Solid cylinder with generation: $T_0-T_s=\\dfrac{\\dot qr_o^2}{4k}=0.55$ K.",
+       "Convection resistance dominates by a factor of several hundred: the wire is essentially isothermal."
+      ],
+      "answers": [
+       "$\\dot q=1.95\\times10^{7}$ W/m³",
+       "$T_s=170.9^\\circ$C",
+       "$T_0-T_s=0.55$ K"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "num": 5,
+   "ch": 3,
+   "title": "Fins and extended surfaces",
+   "tag": "T1",
+   "sched": "Sep 15",
+   "why": "Fin questions have a fixed recipe: find $m$, pick the tip condition, compute $q_f$, then efficiency or array totals.",
+   "sections": [
+    "3.6",
+    "3.7"
+   ],
+   "book": [
+    {
+     "sec": "3.6",
+     "title": "Heat Transfer from Extended Surfaces",
+     "page": 143
+    },
+    {
+     "sec": "3.7",
+     "title": "Other Applications of One-Dimensional, Steady-State Conduction",
+     "page": 163
+    }
+   ],
+   "examples": [
+    {
+     "ex": "3.9",
+     "page": 150
+    },
+    {
+     "ex": "3.10",
+     "page": 161
+    },
+    {
+     "ex": "3.11",
+     "page": 164
+    },
+    {
+     "ex": "3.12",
+     "page": 172
+    },
+    {
+     "ex": "3.13",
+     "page": 177
+    }
+   ],
+   "videos": [
+    {
+     "id": "SUjhwuKtU14",
+     "title": "Ch 3 – Extended surfaces (fins)",
+     "channel": "Kody Powell",
+     "len": "16:46",
+     "note": "Main lecture, follows the book",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - Extended Surfaces (Fins)",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "mVWNEkKyMLM",
+     "title": "L8 p1 – Introduction to fins",
+     "channel": "Ron Hugo",
+     "len": "5:58",
+     "note": "Why fins work",
+     "verified": true,
+     "ytTitle": "Heat Transfer L8 p1 - Introduction to Fins",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "F6R-NNbRjck",
+     "title": "L8 p2 – The fin equation",
+     "channel": "Ron Hugo",
+     "len": "12:01",
+     "note": "Derivation",
+     "verified": true,
+     "ytTitle": "Heat Transfer L8 p2 - Fin Equation",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "BZKA0-0YOcY",
+     "title": "L8 p4 – Example: rod fin",
+     "channel": "Ron Hugo",
+     "len": "8:01",
+     "note": "Worked pin fin",
+     "verified": true,
+     "ytTitle": "Heat Transfer L8 p4 - Example - Rod Fin",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "wOcmdI3w4C0",
+     "title": "L9 p1 – Fin efficiency and corrected length",
+     "channel": "Ron Hugo",
+     "len": "8:34",
+     "note": "Shortcut for exams",
+     "verified": true,
+     "ytTitle": "Heat Transfer L9 p1 - Fin Efficiency and Corrected Length",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "u6Rv_Qj0BD8",
+     "title": "How to solve fin efficiency problems (and effectiveness)",
+     "channel": "Brian Bernard",
+     "len": "13:55",
+     "note": "Efficiency vs effectiveness",
+     "verified": true,
+     "ytTitle": "How to Solve Fin Efficiency Problems (and Fin Effectiveness)",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "JqdsMnthim0",
+     "title": "Ch 3 – Fins, arrays and their performance",
+     "channel": "Kody Powell",
+     "len": "7:11",
+     "note": "Arrays",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 3 - Fins, Arrays, and Their Performance",
+     "ytAuthor": "Kody Powell"
+    }
+   ],
+   "know": [
+    "Fin equation $d^2\\theta/dx^2-m^2\\theta=0$ with $m^2=hP/kA_c$. Tip conditions (Table 3.4): convective tip, adiabatic tip, fixed tip temperature, infinite fin.",
+    "Adiabatic tip: $q_f=M\\tanh mL$. For a convective tip, use the corrected length $L_c=L+A_c/P$ (that is $L+D/4$ for a pin, $L+t/2$ for a thin rectangular fin) in the adiabatic formula.",
+    "Fin efficiency $\\eta_f=q_f/q_{max}$ where $q_{max}=hA_f\\theta_b$; Table 3.5 gives $\\eta_f$ for common shapes.",
+    "Arrays: $\\eta_o=1-\\dfrac{NA_f}{A_t}(1-\\eta_f)$ and $q_t=\\eta_ohA_t\\theta_b$ (or add fin heat rates plus the unfinned base).",
+    "Fins help most when $h$ is low (gases) and $k$ is high; fin effectiveness $\\varepsilon_f=q_f/(hA_{c,b}\\theta_b)$ should be >2 to justify a fin."
+   ],
+   "eq": [
+    {
+     "label": "Fin parameter",
+     "tex": "m=\\sqrt{\\dfrac{hP}{kA_c}},\\ \\ M=\\sqrt{hPkA_c}\\,\\theta_b"
+    },
+    {
+     "label": "Adiabatic tip",
+     "tex": "q_f=M\\tanh mL"
+    },
+    {
+     "label": "Convective tip",
+     "tex": "q_f=M\\,\\dfrac{\\sinh mL+(h/mk)\\cosh mL}{\\cosh mL+(h/mk)\\sinh mL}"
+    },
+    {
+     "label": "Corrected length",
+     "tex": "L_c=L+\\dfrac{A_c}{P}"
+    },
+    {
+     "label": "Efficiency",
+     "tex": "\\eta_f=\\dfrac{q_f}{hA_f\\theta_b},\\ \\ \\eta_f=\\dfrac{\\tanh mL_c}{mL_c}"
+    },
+    {
+     "label": "Array",
+     "tex": "\\eta_o=1-\\dfrac{NA_f}{A_t}(1-\\eta_f),\\ \\ q_t=\\eta_o hA_t\\theta_b"
+    }
+   ],
+   "pitfalls": [
+    "Using the wrong perimeter $P$ or cross-section $A_c$.",
+    "Forgetting the unfinned base area in an array.",
+    "Using the adiabatic-tip result with a short, fat fin without correcting the length."
+   ],
+   "tables": [
+    "Table 3.4 (fin heat rates)",
+    "Table 3.5 (fin efficiency)"
+   ],
+   "samples": [
+    "HW4 (Ch 3) includes fin problems: 98, 100, 104, (114*)"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 3 slides (3.6 fins)",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421518"
+     },
+     {
+      "label": "Ch 3 slides (3.7–3.9)",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421523"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW4 · Ch 3: 68, 71, 98, 100, 104, (114*)",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221370",
+      "due": "Sep 19"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "5a",
+     "title": "Pin fin: heat rate and efficiency",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "An aluminum pin fin ($k=200$ W/m·K) has diameter $D=4$ mm and length $L=40$ mm. Its base is at $120^\\circ$C and the air is $25^\\circ$C with $h=50\\ \\mathrm{W/m^2K}$ (also acting on the tip). (a) Find $m$ and $mL$. (b) Find the heat rate with the convective tip, and compare with the adiabatic-tip and corrected-length approximations. (c) Find the fin efficiency.",
+     "given": [
+      "$k=200$, $D=4$ mm, $L=40$ mm",
+      "$h=50$",
+      "$T_b=120^\\circ$C, $T_\\infty=25^\\circ$C"
+     ],
+     "find": [
+      "$m$, $mL$",
+      "$q_f$ (three ways)",
+      "$\\eta_f$"
+     ],
+     "hint": "Corrected length is the fastest accurate shortcut on an exam.",
+     "solution": {
+      "steps": [
+       "$P=\\pi D$, $A_c=\\pi D^2/4$. $m=\\sqrt{hP/(kA_c)}=\\sqrt{4h/(kD)}=15.81\\ \\mathrm{m^{-1}}$, so $mL=0.632$. $M=\\sqrt{hPkA_c}\\,\\theta_b=3.775$ W.",
+       "Convective tip: $q_f=M\\dfrac{\\sinh mL+(h/mk)\\cosh mL}{\\cosh mL+(h/mk)\\sinh mL}$ with $h/mk=0.0158$, giving $q_f=2.154$ W.",
+       "Adiabatic tip: $M\\tanh mL=2.113$ W (a 1.9% underprediction). Corrected length $L_c=L+D/4=0.0410$ m: $M\\tanh mL_c=2.154$ W (within 0.00% of the exact convective-tip value).",
+       "Efficiency: $\\eta_f=q_f/(hA_f\\theta_b)$ with $A_f=\\pi DL+\\pi D^2/4=5.15\\times10^{-4}$ m², so $\\eta_f=0.880$."
+      ],
+      "answers": [
+       "$q_f=2.154$ W (convective tip)",
+       "$q_f\\approx2.154$ W (corrected length)",
+       "$\\eta_f=0.880$"
+      ]
+     }
+    },
+    {
+     "id": "5b",
+     "title": "Finned surface vs bare surface",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A $100\\times100$ mm base plate at $120^\\circ$C carries $N=25$ of the pin fins from Problem 5a (same $h$, air at $25^\\circ$C). Find the total heat rate, the heat rate from the bare plate without fins, and the overall effectiveness of the finned surface. Is adding fins worthwhile at this $h$?",
+     "given": [
+      "25 fins from 5a",
+      "$A_b=0.01$ m²",
+      "$h=50$ W/m²K",
+      "$\\theta_b=95$ K"
+     ],
+     "find": [
+      "$q_{tot}$",
+      "$q_{bare}$",
+      "$\\varepsilon$"
+     ],
+     "hint": "Subtract the fin footprint from the base area before computing the unfinned convection.",
+     "solution": {
+      "steps": [
+       "Unfinned base area: $A_u=A_b-N A_{c}=0.01-25(1.26\\times10^{-5})=0.00969$ m².",
+       "$q_{tot}=Nq_f+hA_u\\theta_b=25(2.154)+50(0.00969)(95)=99.9$ W.",
+       "Bare plate: $q=hA_b\\theta_b=47.5$ W.",
+       "Effectiveness $=q_{tot}/q_{bare}=2.10$. Fins pay off here because $h$ is low (natural/forced air); with a liquid at high $h$ the gain would shrink."
+      ],
+      "answers": [
+       "$q_{tot}=99.9$ W; $q_{bare}=47.5$ W; $\\varepsilon=2.10$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "num": 6,
+   "ch": 4,
+   "title": "2-D steady conduction: shape factors",
+   "tag": "T2",
+   "sched": "Sep 17",
+   "why": "On Test 2: use $q=Sk(T_1-T_2)$ with the first four cases of Table 4.1.",
+   "sections": [
+    "4.1",
+    "4.3"
+   ],
+   "book": [
+    {
+     "sec": "4.1",
+     "title": "General Considerations and Solution Techniques",
+     "page": 210
+    },
+    {
+     "sec": "4.3",
+     "title": "The Conduction Shape Factor and the Dimensionless Conduction Heat Rate",
+     "page": 215
+    }
+   ],
+   "examples": [
+    {
+     "ex": "4.1",
+     "page": 219
+    }
+   ],
+   "videos": [
+    {
+     "id": "UZeAHUehj94",
+     "title": "L10 p2 – Shape factors",
+     "channel": "Ron Hugo",
+     "len": "5:02",
+     "note": "Concept in five minutes",
+     "verified": true,
+     "ytTitle": "Heat Transfer L10 p2 - Shape Factors",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "fhW43Pd_wGg",
+     "title": "Heat Transfer (11): 2D conduction, shape factors and examples",
+     "channel": "CPPMechEngTutorials",
+     "len": "44:23",
+     "note": "Long, with many examples; skim",
+     "verified": true,
+     "ytTitle": "Heat Transfer (11): 2D conduction shape factors, shape factor examples, finite difference analysis",
+     "ytAuthor": "CPPMechEngTutorials"
+    }
+   ],
+   "know": [
+    "Table 4.1 cases to know: (1) sphere buried in a semi-infinite medium, (2) horizontal cylinder buried in a semi-infinite medium, (3) vertical cylinder, (4) two cylinders in an infinite medium. These are the first four cases the study guide names.",
+    "$q=Sk(T_1-T_2)$ where $S$ has units of length. Compose with 1-D shape factors: wall $A/L$, cylinder $2\\pi L/\\ln(r_2/r_1)$, sphere $4\\pi r_1r_2/(r_2-r_1)$.",
+    "Two isothermal boundaries only. Resistance form: $R=1/(Sk)$.",
+    "Check restrictions ($L\\gg D$, $z>D/2$) before using a formula."
+   ],
+   "eq": [
+    {
+     "label": "Heat rate",
+     "tex": "q=S\\,k\\,(T_1-T_2)"
+    },
+    {
+     "label": "Sphere in semi-infinite medium",
+     "tex": "S=\\dfrac{2\\pi D}{1-D/4z}"
+    },
+    {
+     "label": "Horizontal cylinder",
+     "tex": "S=\\dfrac{2\\pi L}{\\cosh^{-1}(2z/D)}\\ \\approx\\ \\dfrac{2\\pi L}{\\ln(4z/D)}\\ (z>3D/2)"
+    },
+    {
+     "label": "Vertical cylinder",
+     "tex": "S=\\dfrac{2\\pi L}{\\ln(4L/D)}"
+    }
+   ],
+   "pitfalls": [
+    "Using $z$ where the formula needs $2z/D$.",
+    "Applying the formula to a surface that is not isothermal.",
+    "Ignoring that $S$ is a length, not an area."
+   ],
+   "tables": [
+    "Table 4.1 (shape factors)"
+   ],
+   "samples": [
+    "Test 2 guide: §4.3 and Table 4.1, first four cases only"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 4 slides (4.1, 4.3)",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421092"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW5 · Ch 4: 2, 9, 23, 36",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221371",
+      "due": "Sep 24"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "6a",
+     "title": "Buried pipe (Table 4.1, horizontal cylinder)",
+     "level": "exam",
+     "minutes": 10,
+     "statement": "A hot-water pipe of diameter $D=0.20$ m and length $L=30$ m is buried with its axis $z=1.5$ m below the ground surface. The pipe wall is at $60^\\circ$C, the ground surface is held at $5^\\circ$C and the soil has $k=1.0$ W/m·K. Find the shape factor and the heat loss. Compare the exact $\\cosh^{-1}$ expression with the $\\ln(4z/D)$ approximation.",
+     "given": [
+      "$D=0.20$ m, $L=30$ m, $z=1.5$ m",
+      "$k=1.0$ W/m·K",
+      "$T_1=60^\\circ$C, $T_2=5^\\circ$C"
+     ],
+     "find": [
+      "$S$",
+      "$q$",
+      "check approximate form"
+     ],
+     "hint": "Use the ratio $2z/D$, not $z/D$, inside the $\\cosh^{-1}$ expression.",
+     "solution": {
+      "steps": [
+       "Two-dimensional conduction between two isothermal boundaries, so $q=Sk(T_1-T_2)$. Table 4.1, horizontal isothermal cylinder in a semi-infinite medium ($L\\gg D$): $S=\\dfrac{2\\pi L}{\\cosh^{-1}(2z/D)}$.",
+       "$2z/D=15$, $\\cosh^{-1}(15)=3.4001$, so $S=55.44$ m. Approximation ($z>3D/2$ ✓): $S=2\\pi L/\\ln(4z/D)=55.42$ m (0.03% off).",
+       "$q=Sk(T_1-T_2)=55.44(1.0)(55)=3049$ W, i.e. 101.6 W per meter of pipe."
+      ],
+      "answers": [
+       "$S=55.44$ m",
+       "$q=3049$ W"
+      ]
+     }
+    },
+    {
+     "id": "6b",
+     "title": "Buried spherical tank (Table 4.1, sphere)",
+     "level": "exam",
+     "minutes": 10,
+     "statement": "A spherical tank of diameter $D=2$ m contains a process fluid so that its wall is at $40^\\circ$C. The center is $z=4$ m below a ground surface at $10^\\circ$C; the soil has $k=1.2$ W/m·K. Find the heat loss. By what percentage would you misestimate it if you treated the soil as an infinite medium?",
+     "given": [
+      "$D=2$ m, $z=4$ m",
+      "$k=1.2$ W/m·K",
+      "$\\Delta T=30$ K"
+     ],
+     "find": [
+      "$q$",
+      "error of infinite-medium shortcut"
+     ],
+     "hint": "Both cases-1-through-4 formulas appear in Table 4.1, which the study guide says to know.",
+     "solution": {
+      "steps": [
+       "Table 4.1, isothermal sphere in a semi-infinite medium ($z>D/2$): $S=\\dfrac{2\\pi D}{1-D/4z}=\\dfrac{12.566}{1-0.125}=14.36$ m.",
+       "$q=Sk\\Delta T=14.36(1.2)(30)=517$ W.",
+       "Infinite medium: $S=2\\pi D=12.57$ m, a 12.5% underestimate — the nearby surface (at $10^\\circ$C) increases the loss."
+      ],
+      "answers": [
+       "$q=517$ W",
+       "infinite-medium shortcut is 12.5% low"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "num": 7,
+   "ch": 4,
+   "title": "Finite-difference method (steady)",
+   "tag": "T2",
+   "sched": "Sep 22",
+   "why": "Expect to write nodal equations (interior, convective surface, corner) and solve a small system.",
+   "sections": [
+    "4.4",
+    "4.5"
+   ],
+   "book": [
+    {
+     "sec": "4.4",
+     "title": "Finite-Difference Equations",
+     "page": 221
+    },
+    {
+     "sec": "4.5",
+     "title": "Solving the Finite-Difference Equations",
+     "page": 230
+    }
+   ],
+   "examples": [
+    {
+     "ex": "4.2",
+     "page": 226
+    },
+    {
+     "ex": "4.3",
+     "page": 231
+    }
+   ],
+   "videos": [
+    {
+     "id": "XPbFUN-AsxU",
+     "title": "Chapter 4.4: 2-D steady conduction, finite-difference",
+     "channel": "Regina Vrikkis",
+     "len": "9:06",
+     "note": "Clear, short, book-aligned",
+     "verified": true,
+     "ytTitle": "MEGR3116 Chapter 4.4 Two Dimensional Steady State Conduction: Finite Difference Equations",
+     "ytAuthor": "Regina Vrikkis"
+    },
+    {
+     "id": "LoraivYIePY",
+     "title": "L11 p3 – Finite difference method",
+     "channel": "Ron Hugo",
+     "len": "10:28",
+     "note": "Method and setup",
+     "verified": true,
+     "ytTitle": "Heat Transfer L11 p3 - Finite Difference Method",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "6BwnF9gGQOM",
+     "title": "Finite difference method: simple node problem",
+     "channel": "The Chemical Engineering Tutor",
+     "len": "7:49",
+     "note": "Quick example",
+     "verified": true,
+     "ytTitle": "Finite Difference Method/Heat Transfer/Simple Node Problem",
+     "ytAuthor": "The Chemical Engineering Tutor"
+    },
+    {
+     "id": "LJPSRp0ZeJo",
+     "title": "Heat Transfer (12): Finite difference examples",
+     "channel": "CPPMechEngTutorials",
+     "len": "46:42",
+     "note": "Many worked cases; skim",
+     "verified": true,
+     "ytTitle": "Heat Transfer (12): Finite difference examples",
+     "ytAuthor": "CPPMechEngTutorials"
+    }
+   ],
+   "know": [
+    "Write an energy balance on each node's control volume. Interior node with no generation: $T_{m,n}$ is the average of its four neighbors.",
+    "Boundary nodes (Table 4.2): plane surface with convection, external corner, internal corner, insulated boundary (mirror image). Each has its own $Bi=h\\Delta x/k$ terms.",
+    "Solve by matrix inversion or Gauss–Seidel iteration (needs a diagonally dominant system).",
+    "Use symmetry to cut unknowns. Check the final answer by an overall energy balance."
+   ],
+   "eq": [
+    {
+     "label": "Interior node",
+     "tex": "T_{m,n+1}+T_{m,n-1}+T_{m+1,n}+T_{m-1,n}-4T_{m,n}+\\dfrac{\\dot q\\,\\Delta x^2}{k}=0"
+    },
+    {
+     "label": "Convective plane surface",
+     "tex": "T_{m,n+1}+T_{m,n-1}+2T_{m-1,n}+2Bi\\,T_\\infty-2(Bi+2)T_{m,n}=0"
+    },
+    {
+     "label": "External corner with convection",
+     "tex": "2(T_{m-1,n}+T_{m,n-1})+4Bi\\,T_\\infty-4(Bi+1)T_{m,n}=0"
+    },
+    {
+     "label": "Biot number",
+     "tex": "Bi=\\dfrac{h\\,\\Delta x}{k}"
+    }
+   ],
+   "pitfalls": [
+    "Dropping the factor of 2 on the interior neighbor at a convective surface.",
+    "Using the plane-surface formula at a corner.",
+    "Changing $\\Delta x$ or $\\Delta y$ without rescaling terms."
+   ],
+   "tables": [
+    "Table 4.2 (nodal equations)",
+    "Appendix D (Gauss–Seidel)"
+   ],
+   "samples": [
+    "Test 2 guide: finite-difference method"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 4 slides (4.4–4.5)",
+      "url": "https://uvu.instructure.com/courses/641165/files/135421098"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW5 · Ch 4: 2, 9, 23, 36",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221371",
+      "due": "Sep 24"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "7a",
+     "title": "Four-node finite-difference solution",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "A square plate has its top edge held at $100^\\circ$C and its left, right and bottom edges at $0^\\circ$C. The plate is discretized with $\\Delta x=\\Delta y$ so that there are four interior nodes: nodes 1 (top-left) and 2 (top-right) in the top row, nodes 3 (bottom-left) and 4 (bottom-right) in the bottom row (each one grid spacing from its neighboring edges). Write the finite-difference equation for each node and solve for the temperatures. Use symmetry as a check.",
+     "given": [
+      "interior nodes 1–4",
+      "$T_{top}=100^\\circ$C",
+      "other edges $0^\\circ$C",
+      "$\\Delta x=\\Delta y$, no generation"
+     ],
+     "find": [
+      "Node equations",
+      "$T_1,\\dots,T_4$"
+     ],
+     "hint": "One equation per unknown; exploit symmetry to reduce to 2×2.",
+     "solution": {
+      "steps": [
+       "Interior node, no generation: $T_{m,n}=\\tfrac14(T_{m+1,n}+T_{m-1,n}+T_{m,n+1}+T_{m,n-1})$.",
+       "Node 1: $4T_1=100+0+T_2+T_3$. Node 2: $4T_2=100+0+T_1+T_4$. Node 3: $4T_3=T_1+0+0+T_4$. Node 4: $4T_4=T_2+0+T_3+0$.",
+       "Symmetry about the vertical centerline gives $T_1=T_2=a$, $T_3=T_4=b$: $3a-b=100$ and $3b=a$.",
+       "$b=12.50$, $a=37.50$. Direct solve of the 4×4 system: $T_1=37.50$, $T_2=37.50$, $T_3=12.50$, $T_4=12.50$ °C (matches symmetry)."
+      ],
+      "answers": [
+       "$T_1=T_2=37.5^\\circ$C",
+       "$T_3=T_4=12.5^\\circ$C"
+      ]
+     }
+    },
+    {
+     "id": "7b",
+     "title": "Convective boundary node",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A node lies on a plane surface exposed to fluid at $T_\\infty=20^\\circ$C with $Bi=h\\Delta x/k=0.5$. Its two neighbors along the surface (above and below) are at $90^\\circ$C each, and its interior neighbor (one $\\Delta x$ into the solid) is at $85^\\circ$C. Derive the energy balance for the node and find its temperature. No generation, steady state.",
+     "given": [
+      "$Bi=0.5$",
+      "$T_\\infty=20^\\circ$C",
+      "neighbors: 90, 90 (along surface), 85 (interior)"
+     ],
+     "find": [
+      "Node equation",
+      "$T_{surface\\ node}$"
+     ],
+     "hint": "Remember the factor of 2 on the interior neighbor and the $Bi$ term; the corner-node version has different coefficients.",
+     "solution": {
+      "steps": [
+       "Control volume is a half-cell of size $\\Delta x/2\\times\\Delta y$: conduction in from the interior neighbor (full height) and from the two side neighbors (half height each), plus convection from the fluid.",
+       "Energy balance: $\\;T_{up}+T_{down}+2T_{in}+2Bi\\,T_\\infty-2(Bi+2)T_{node}=0$.",
+       "$90+90+2(85)+2(0.5)(20)-2(2.5)T=0\\Rightarrow 370=5T\\Rightarrow T_{node}=74.0^\\circ$C."
+      ],
+      "answers": [
+       "$T_{node}=74.0^\\circ$C"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "num": 8,
+   "ch": 5,
+   "title": "Transient: lumped capacitance",
+   "tag": "T2",
+   "sched": "Sep 24",
+   "why": "Always the first step in a transient problem: compute $Bi$. If $Bi<0.1$ the whole body is at one temperature.",
+   "sections": [
+    "5.1",
+    "5.2",
+    "5.3"
+   ],
+   "book": [
+    {
+     "sec": "5.1",
+     "title": "The Lumped Capacitance Method",
+     "page": 254
+    },
+    {
+     "sec": "5.2",
+     "title": "Validity of the Lumped Capacitance Method",
+     "page": 257
+    },
+    {
+     "sec": "5.3",
+     "title": "General Lumped Capacitance Analysis",
+     "page": 261
+    }
+   ],
+   "examples": [
+    {
+     "ex": "5.1",
+     "page": 259
+    },
+    {
+     "ex": "5.2",
+     "page": 264
+    },
+    {
+     "ex": "5.3",
+     "page": 266
+    },
+    {
+     "ex": "5.4",
+     "page": 268
+    }
+   ],
+   "videos": [
+    {
+     "id": "T6rMS7wTzvA",
+     "title": "Ch 5 – The lumped capacitance approximation",
+     "channel": "Kody Powell",
+     "len": "22:06",
+     "note": "Main lecture",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 5 - The Lumped Capacitance Approximation",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "QOtecMidRek",
+     "title": "L14 p3 – Lumped capacitance method",
+     "channel": "Ron Hugo",
+     "len": "11:41",
+     "note": "Short and clean",
+     "verified": true,
+     "ytTitle": "Heat Transfer L14 p3 - Lumped Capacitance Method",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "WEPUZ2lB6y0",
+     "title": "Transient heat transfer – Biot number",
+     "channel": "R. Paul Singh",
+     "len": "7:01",
+     "note": "Meaning of Bi",
+     "verified": true,
+     "ytTitle": "Transient Heat Transfer - Biot Number",
+     "ytAuthor": "R. Paul Singh"
+    },
+    {
+     "id": "cMOE7k1xK1Q",
+     "title": "Lumped capacitance example problem",
+     "channel": "Brian Bernard",
+     "len": "12:59",
+     "note": "Worked example",
+     "verified": true,
+     "ytTitle": "Lumped Capacitance Method Example Problem - Unsteady State Conduction",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "sDVtU8cBJ0M",
+     "title": "Ch 5.1–5.3: transient conduction with no spatial effects",
+     "channel": "Regina Vrikkis",
+     "len": "15:24",
+     "note": "Book-aligned",
+     "verified": true,
+     "ytTitle": "MEGR3116 Ch 5.1-5.3 Transient Conduction with No Spatial Effects - Lumped Capacitance Method",
+     "ytAuthor": "Regina Vrikkis"
+    }
+   ],
+   "know": [
+    "$Bi=hL_c/k$ with $L_c=V/A_s$ (not the radius). If $Bi<0.1$, assume a uniform temperature.",
+    "Energy balance with convection only: $\\rho Vc\\,dT/dt=-hA_s(T-T_\\infty)$, solution $\\theta/\\theta_i=e^{-t/\\tau_t}$ with $\\tau_t=\\rho Vc/hA_s$.",
+    "Total energy removed: $Q=\\rho Vc\\,\\theta_i(1-e^{-t/\\tau_t})$. After $3\\tau_t$ about 5% of the difference remains.",
+    "Add radiation, generation or surface flux to the balance when stated (§5.3). These usually give an ODE that is no longer a pure exponential."
+   ],
+   "eq": [
+    {
+     "label": "Biot number",
+     "tex": "Bi=\\dfrac{hL_c}{k},\\quad L_c=\\dfrac{V}{A_s}"
+    },
+    {
+     "label": "Temperature history",
+     "tex": "\\dfrac{T-T_\\infty}{T_i-T_\\infty}=\\exp\\!\\left(-\\dfrac{t}{\\tau_t}\\right)"
+    },
+    {
+     "label": "Time constant",
+     "tex": "\\tau_t=\\dfrac{\\rho Vc}{hA_s}=\\dfrac{\\rho cL_c}{h}"
+    },
+    {
+     "label": "Energy transferred",
+     "tex": "Q=\\rho Vc\\,(T_i-T_\\infty)\\left[1-e^{-t/\\tau_t}\\right]"
+    }
+   ],
+   "pitfalls": [
+    "Using $L_c=r$ for a sphere (it is $r/3$).",
+    "Skipping the $Bi$ check.",
+    "Forgetting a face is insulated when computing $A_s$."
+   ],
+   "tables": [],
+   "samples": [
+    "Test 2 guide: §5.1, §5.2"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 5 slides (5.1–5.5)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477689"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW6 · Ch 5: 11, 40, 58, 88",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221372",
+      "due": "Oct 6"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "8a",
+     "title": "Quenching a steel ball (lumped capacitance)",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A steel sphere ($\\rho=7800$ kg/m³, $c=470$ J/kg·K, $k=44$ W/m·K) of diameter $25$ mm at $500^\\circ$C is quenched in an oil bath at $40^\\circ$C with $h=300\\ \\mathrm{W/m^2K}$. (a) Check whether the lumped-capacitance method is valid. (b) Find the time constant and the time to reach $100^\\circ$C. (c) How much energy has left the ball by then?",
+     "given": [
+      "$\\rho=7800$, $c=470$, $k=44$",
+      "$D=25$ mm",
+      "$T_i=500^\\circ$C, $T_\\infty=40^\\circ$C",
+      "$h=300$"
+     ],
+     "find": [
+      "$Bi$",
+      "$\\tau$, $t$",
+      "$Q$"
+     ],
+     "hint": "Characteristic length is $V/A_s$, not the radius. Always compute $Bi$ first.",
+     "solution": {
+      "steps": [
+       "$L_c=V/A_s=D/6=0.00417$ m, $Bi=hL_c/k=0.0284$ < 0.1, so lumped capacitance is valid.",
+       "$\\tau_t=\\dfrac{\\rho Vc}{hA_s}=\\dfrac{\\rho cL_c}{h}=50.9$ s. From $\\dfrac{T-T_\\infty}{T_i-T_\\infty}=e^{-t/\\tau_t}$: $t=\\tau_t\\ln\\dfrac{460}{60}=103.7$ s.",
+       "$V=8.18\\times10^{-6}$ m³; $Q=\\rho Vc(T_i-T)=11997$ J (≈ 12.0 kJ)."
+      ],
+      "answers": [
+       "$Bi=0.028$ (valid)",
+       "$\\tau_t=50.9$ s; $t=104$ s",
+       "$Q=12.0$ kJ"
+      ]
+     }
+    },
+    {
+     "id": "8b",
+     "title": "Thin plate cooling in air",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A thin aluminum plate ($\\rho=2700$, $c=900$ J/kg·K, $k=237$ W/m·K), $2$ mm thick, at $200^\\circ$C is suddenly exposed on both faces to air at $25^\\circ$C with $h=35\\ \\mathrm{W/m^2K}$ (neglect edges and radiation). (a) Show that the plate is effectively isothermal. (b) Find the time to cool to $60^\\circ$C. (c) What happens to that time if $h$ is doubled? (d) What fraction of the initial temperature difference remains after $3\\tau_t$?",
+     "given": [
+      "thickness 2 mm, both faces",
+      "$\\rho=2700$, $c=900$, $k=237$",
+      "$T_i=200^\\circ$C, $T_\\infty=25^\\circ$C, $h=35$"
+     ],
+     "find": [
+      "$Bi$",
+      "$t$",
+      "effect of $2h$",
+      "$\\theta/\\theta_i$ at $3\\tau$"
+     ],
+     "hint": "Two exposed faces: the characteristic length is half the thickness.",
+     "solution": {
+      "steps": [
+       "Both faces exposed: $L_c=V/A_s=(\\text{thickness})/2=0.0010$ m. $Bi=hL_c/k=1.48\\times10^{-4}\\ll0.1$ ✓ (isothermal).",
+       "$\\tau_t=\\rho cL_c/h=69.4$ s; $t=\\tau_t\\ln\\dfrac{175}{35}=\\tau_t\\ln5=112$ s (≈ 1.9 min).",
+       "Doubling $h$ halves $\\tau_t$ and so halves the time: $t=56$ s.",
+       "$\\theta/\\theta_i=e^{-3}=0.050$ — about 5% of the initial difference remains."
+      ],
+      "answers": [
+       "$Bi=1.5\\times10^{-4}$",
+       "$t=112$ s",
+       "$t=56$ s with $2h$",
+       "$e^{-3}=0.050$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "num": 9,
+   "ch": 5,
+   "title": "Transient: spatial effects (plane wall, cylinder, sphere)",
+   "tag": "T2",
+   "sched": "Sep 29",
+   "why": "When $Bi>0.1$, use the one-term series: find $\\zeta_1$ and $C_1$ from Table 5.1, then temperature at the center or surface.",
+   "sections": [
+    "5.4",
+    "5.5",
+    "5.6"
+   ],
+   "book": [
+    {
+     "sec": "5.4",
+     "title": "Spatial Effects",
+     "page": 272
+    },
+    {
+     "sec": "5.5",
+     "title": "The Plane Wall with Convection",
+     "page": 273
+    },
+    {
+     "sec": "5.6",
+     "title": "Radial Systems with Convection",
+     "page": 277
+    }
+   ],
+   "examples": [
+    {
+     "ex": "5.5",
+     "page": 279
+    },
+    {
+     "ex": "5.6",
+     "page": 282
+    }
+   ],
+   "videos": [
+    {
+     "id": "2YzsldKbqVQ",
+     "title": "Ch 5.4–5.6: transient conduction with spatial effects",
+     "channel": "Regina Vrikkis",
+     "len": "14:52",
+     "note": "Book-aligned overview",
+     "verified": true,
+     "ytTitle": "Chapter 5.4-5.6 Transient Conduction with Spatial Effects",
+     "ytAuthor": "Regina Vrikkis"
+    },
+    {
+     "id": "o2-DNjGaC9M",
+     "title": "Ch 5 – Conceptual overview of transient conduction",
+     "channel": "Kody Powell",
+     "len": "29:10",
+     "note": "Deep concept lecture",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 5 - Conceptual Overview of Transient Conduction",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "masjyM8bsbM",
+     "title": "L15 p3 – Slab transient convective solutions",
+     "channel": "Ron Hugo",
+     "len": "7:39",
+     "note": "Plane wall method",
+     "verified": true,
+     "ytTitle": "Heat Transfer L15 p3 - Slab Transient Convective Solutions",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "84T_ut0_-P8",
+     "title": "L16 p2 – Example: sphere, transient convection (Heisler chart)",
+     "channel": "Ron Hugo",
+     "len": "9:36",
+     "note": "Worked example",
+     "verified": true,
+     "ytTitle": "Heat Transfer L16 p2 - Example - Sphere - Transient Convection - Heisler Chart",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "t6gi0IGLEFk",
+     "title": "One-term approximation vs lumped heat capacity",
+     "channel": "Brian Bernard",
+     "len": "13:53",
+     "note": "When to use which",
+     "verified": true,
+     "ytTitle": "One Term Approximation vs Lumped Heat Capacity",
+     "ytAuthor": "Brian Bernard"
+    }
+   ],
+   "know": [
+    "Dimensionless variables: $\\theta^*=\\theta/\\theta_i$, $x^*=x/L$, $Fo=\\alpha t/L^2$, $Bi=hL/k$ with $L$ the half-thickness (wall) or $r_o$ (cylinder, sphere).",
+    "One-term series valid for $Fo>0.2$: $\\theta^*=C_1e^{-\\zeta_1^2Fo}\\times$ shape function. Find $\\zeta_1,C_1$ from Table 5.1 or solve the eigenvalue equation.",
+    "Center temperature first: $\\theta_o^*=C_1e^{-\\zeta_1^2Fo}$. Then other positions via the cosine / $J_0$ / sine function.",
+    "Total energy: $Q/Q_o=1-\\theta^*_o\\times$ (shape factor from the book). Remember $Q_o=\\rho cV\\theta_i$.",
+    "Plane wall with both faces exposed uses half-thickness. If only one face is exposed and the other is adiabatic, the full thickness is $L$."
+   ],
+   "eq": [
+    {
+     "label": "Fourier number",
+     "tex": "Fo=\\dfrac{\\alpha t}{L^2}"
+    },
+    {
+     "label": "Plane wall",
+     "tex": "\\theta^*=C_1e^{-\\zeta_1^2Fo}\\cos(\\zeta_1x^*),\\ \\ \\zeta_1\\tan\\zeta_1=Bi,\\ \\ C_1=\\dfrac{4\\sin\\zeta_1}{2\\zeta_1+\\sin2\\zeta_1}"
+    },
+    {
+     "label": "Cylinder",
+     "tex": "\\theta^*=C_1e^{-\\zeta_1^2Fo}J_0(\\zeta_1r^*),\\ \\ \\zeta_1\\dfrac{J_1(\\zeta_1)}{J_0(\\zeta_1)}=Bi"
+    },
+    {
+     "label": "Sphere",
+     "tex": "\\theta^*=C_1e^{-\\zeta_1^2Fo}\\dfrac{\\sin(\\zeta_1r^*)}{\\zeta_1r^*},\\ \\ 1-\\zeta_1\\cot\\zeta_1=Bi"
+    },
+    {
+     "label": "Wall energy",
+     "tex": "\\dfrac{Q}{Q_o}=1-\\dfrac{\\sin\\zeta_1}{\\zeta_1}\\theta_o^*"
+    }
+   ],
+   "pitfalls": [
+    "Using $L_c=V/A$ in this $Bi$ — here it is $L$ or $r_o$.",
+    "Using the one-term formula when $Fo<0.2$.",
+    "Mixing up $\\theta^*_o$ (center) with the surface value."
+   ],
+   "tables": [
+    "Table 5.1 (one-term coefficients)"
+   ],
+   "samples": [
+    "Test 2 guide: §5.4, §5.5 and the first half of Table 5.1"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 5 slides (5.1–5.5)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477689"
+     },
+     {
+      "label": "Ch 5 slides (5.4–5.8)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477679"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW6 · Ch 5: 11, 40, 58, 88",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221372",
+      "due": "Oct 6"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "9a",
+     "title": "Heating a slab: one-term solution (plane wall)",
+     "level": "exam",
+     "minutes": 18,
+     "statement": "A concrete-like slab of thickness $2L=100$ mm ($k=1.2$ W/m·K, $\\alpha=6\\times10^{-7}\\ \\mathrm{m^2/s}$) is initially uniform at $20^\\circ$C and is suddenly exposed on both faces to gas at $400^\\circ$C with $h=100\\ \\mathrm{W/m^2K}$. After $t=30$ min find (a) the midplane temperature, (b) the surface temperature, and (c) the energy absorbed per unit area. State whether the one-term approximation is valid. (Solve the eigenvalue equation $\\zeta\\tan\\zeta=Bi$ or interpolate Table 5.1.)",
+     "given": [
+      "$L=0.05$ m, $k=1.2$, $\\alpha=6\\times10^{-7}$",
+      "$h=100$",
+      "$T_i=20^\\circ$C, $T_\\infty=400^\\circ$C",
+      "$t=1800$ s"
+     ],
+     "find": [
+      "$T(0,t)$",
+      "$T(L,t)$",
+      "$Q$ per area"
+     ],
+     "hint": "Check $Fo>0.2$ before trusting the one-term form. Surface values use $\\cos(\\zeta_1x^*)$ at $x^*=1$.",
+     "solution": {
+      "steps": [
+       "$Bi=hL/k=4.167$ (not lumped — spatial gradients matter). $Fo=\\alpha t/L^2=0.432>0.2$ ✓ so one term is accurate.",
+       "First root of $\\zeta_1\\tan\\zeta_1=Bi$: $\\zeta_1=1.2741$ rad, $C_1=\\dfrac{4\\sin\\zeta_1}{2\\zeta_1+\\sin2\\zeta_1}=1.2310$.",
+       "Midplane: $\\theta_0^*=C_1e^{-\\zeta_1^2Fo}=0.6105$, so $T_0=T_\\infty+\\theta_0^*(T_i-T_\\infty)=168.0^\\circ$C.",
+       "Surface ($x^*=1$): $\\theta^*=\\theta_0^*\\cos\\zeta_1=0.1785$, $T_s=332.2^\\circ$C.",
+       "Energy: $Q/Q_o=1-\\dfrac{\\sin\\zeta_1}{\\zeta_1}\\theta_0^*=0.5417$ with $Q_o=\\rho c(2L)(T_\\infty-T_i)=7.60\\times10^{7}$ J/m² (using $\\rho c=k/\\alpha$), so $Q=4.12\\times10^{7}$ J/m²."
+      ],
+      "answers": [
+       "$T_0=168^\\circ$C; $T_s=332^\\circ$C",
+       "$Q=4.12\\times10^{7}$ J/m² (54.2% of the maximum)"
+      ]
+     }
+    },
+    {
+     "id": "9b",
+     "title": "Cooling a long steel cylinder",
+     "level": "exam",
+     "minutes": 18,
+     "statement": "A long steel cylinder of radius $r_o=30$ mm ($k=15$ W/m·K, $\\alpha=3.9\\times10^{-6}\\ \\mathrm{m^2/s}$) leaves a furnace at $600^\\circ$C and is cooled in air at $30^\\circ$C with $h=250\\ \\mathrm{W/m^2K}$. After $t=100$ s find the centerline and surface temperatures. Is lumped capacitance acceptable? (One-term series for a cylinder: $\\theta^*=C_1e^{-\\zeta_1^2Fo}J_0(\\zeta_1r^*)$ with $\\zeta_1J_1(\\zeta_1)/J_0(\\zeta_1)=Bi$.)",
+     "given": [
+      "$r_o=0.03$ m, $k=15$, $\\alpha=3.9\\times10^{-6}$",
+      "$h=250$",
+      "$T_i=600^\\circ$C, $T_\\infty=30^\\circ$C",
+      "$t=100$ s"
+     ],
+     "find": [
+      "lumped check",
+      "$T(0,t)$",
+      "$T(r_o,t)$"
+     ],
+     "hint": "For a cylinder the characteristic length in the lumped check is $r_o/2$, but the Heisler/one-term $Bi$ uses $r_o$.",
+     "solution": {
+      "steps": [
+       "$Bi=hr_o/k=0.500$. With $L_c=r_o/2$, $Bi_{lump}=0.250>0.1$, so lumped capacitance is **not** acceptable.",
+       "$Fo=\\alpha t/r_o^2=0.433>0.2$ ✓. Solve $\\zeta_1J_1/J_0=Bi$: $\\zeta_1=0.9408$; $C_1=\\dfrac{2J_1(\\zeta_1)}{\\zeta_1[J_0^2(\\zeta_1)+J_1^2(\\zeta_1)]}=1.1143$.",
+       "$\\theta_0^*=C_1e^{-\\zeta_1^2Fo}=0.7593$, so $T_0=462.8^\\circ$C.",
+       "Surface: $\\theta^*=\\theta_0^*J_0(\\zeta_1)=0.6004$, $T_s=372.2^\\circ$C (a 91 K gradient across the cylinder)."
+      ],
+      "answers": [
+       "$T_0=463^\\circ$C",
+       "$T_s=372^\\circ$C"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "num": 10,
+   "ch": 5,
+   "title": "Semi-infinite solid and finite-difference (transient)",
+   "tag": "T2",
+   "sched": "Oct 1",
+   "why": "Short-time heating of thick bodies uses erf; numerical transient problems need the explicit scheme and its stability limit.",
+   "sections": [
+    "5.7",
+    "5.10"
+   ],
+   "book": [
+    {
+     "sec": "5.7",
+     "title": "The Semi-Infinite Solid",
+     "page": 284
+    },
+    {
+     "sec": "5.10",
+     "title": "Finite-Difference Methods",
+     "page": 304
+    }
+   ],
+   "examples": [
+    {
+     "ex": "5.7",
+     "page": 289
+    },
+    {
+     "ex": "5.11",
+     "page": 307
+    },
+    {
+     "ex": "5.12",
+     "page": 312
+    }
+   ],
+   "videos": [
+    {
+     "id": "8S5gGo540G8",
+     "title": "L15 p1 – Semi-infinite solid transient solutions",
+     "channel": "Ron Hugo",
+     "len": "13:26",
+     "note": "Erf solutions",
+     "verified": true,
+     "ytTitle": "Heat Transfer L15 p1 - Semi-Infinite Solid Transient Solutions",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "X6t3kCXjwjc",
+     "title": "L12 p1 – Finite-difference heat equation",
+     "channel": "Ron Hugo",
+     "len": "11:46",
+     "note": "Explicit scheme",
+     "verified": true,
+     "ytTitle": "Heat Transfer L12 p1 - Finite Difference Heat Equation",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "j0ZgkGM6ckk",
+     "title": "L12 p3 – Convection boundary condition",
+     "channel": "Ron Hugo",
+     "len": "6:09",
+     "note": "Surface node",
+     "verified": true,
+     "ytTitle": "Heat Transfer L12 p3 - Convection Boundary Condition",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "80zgpwsa5fU",
+     "title": "L13 p1 – Heat equation Excel solver",
+     "channel": "Ron Hugo",
+     "len": "15:12",
+     "note": "Optional: spreadsheet method",
+     "verified": true,
+     "ytTitle": "Heat Transfer L13 p1 - Heat Equation Excel Solver",
+     "ytAuthor": "Ron Hugo"
+    }
+   ],
+   "know": [
+    "Semi-infinite: valid when the thermal wave has not reached the far side (penetration depth $\\approx2\\sqrt{\\alpha t}$). Three surface cases: constant $T_s$, constant flux, convection.",
+    "Constant surface temperature: $T(x,t)$ via $\\mathrm{erf}(x/2\\sqrt{\\alpha t})$ and surface flux $\\propto t^{-1/2}$.",
+    "Explicit FD: $T_m^{p+1}=Fo(T_{m+1}^p+T_{m-1}^p)+(1-2Fo)T_m^p$; stable only for $Fo\\le1/2$. A convective surface node is stricter: $Fo(1+Bi)\\le1/2$.",
+    "Implicit FD is unconditionally stable but needs a system solve each time step."
+   ],
+   "eq": [
+    {
+     "label": "Constant $T_s$",
+     "tex": "\\dfrac{T(x,t)-T_s}{T_i-T_s}=\\mathrm{erf}\\!\\left(\\dfrac{x}{2\\sqrt{\\alpha t}}\\right)"
+    },
+    {
+     "label": "Surface flux",
+     "tex": "q''_s(t)=\\dfrac{k(T_s-T_i)}{\\sqrt{\\pi\\alpha t}}"
+    },
+    {
+     "label": "Explicit interior node",
+     "tex": "T_m^{p+1}=Fo\\,(T_{m+1}^p+T_{m-1}^p)+(1-2Fo)\\,T_m^p"
+    },
+    {
+     "label": "Explicit convective surface node",
+     "tex": "T_0^{p+1}=2Fo\\,(T_1^p+Bi\\,T_\\infty)+(1-2Fo-2Bi\\,Fo)\\,T_0^p"
+    },
+    {
+     "label": "Stability",
+     "tex": "Fo\\le\\tfrac12,\\ \\ Fo(1+Bi)\\le\\tfrac12"
+    }
+   ],
+   "pitfalls": [
+    "Using semi-infinite results after the wave reaches the back surface.",
+    "Forgetting to check stability for the convective node.",
+    "Using $\\Delta t$ that satisfies the interior limit but not the surface limit."
+   ],
+   "tables": [
+    "Section 5.7 (the three surface cases)",
+    "Appendix B (erf values)"
+   ],
+   "samples": [
+    "Test 2 guide mentions Ch 5 finite-difference solutions"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 5 slides (5.4–5.8)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477679"
+     },
+     {
+      "label": "Ch 5 slides (5.10)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477690"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW6 · Ch 5: 11, 40, 58, 88",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221372",
+      "due": "Oct 6"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "10a",
+     "title": "Frost penetration into soil (semi-infinite solid)",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "Soil initially at $T_i=5^\\circ$C (thermal diffusivity $\\alpha=0.5\\times10^{-6}\\ \\mathrm{m^2/s}$) has its surface suddenly held at $T_s=-15^\\circ$C for 30 days. Ignoring latent heat, how deep is the $0^\\circ$C isotherm? Write the solution you use and the similarity variable.",
+     "given": [
+      "$T_i=5^\\circ$C",
+      "$T_s=-15^\\circ$C",
+      "$\\alpha=5\\times10^{-7}$ m²/s",
+      "$t=30$ d $=2.592\\times10^6$ s"
+     ],
+     "find": [
+      "depth where $T=0^\\circ$C"
+     ],
+     "hint": "Penetration depth scales as $\\sqrt{\\alpha t}$: four times as long, only twice as deep.",
+     "solution": {
+      "steps": [
+       "Constant surface temperature, semi-infinite solid: $\\dfrac{T(x,t)-T_s}{T_i-T_s}=\\mathrm{erf}\\!\\left(\\dfrac{x}{2\\sqrt{\\alpha t}}\\right)$.",
+       "At $T=0$: $\\mathrm{erf}(\\eta)=\\dfrac{0-(-15)}{5-(-15)}=0.75\\Rightarrow\\eta=0.8134$ (from the erf table).",
+       "$x=2\\eta\\sqrt{\\alpha t}=2(0.8134)\\sqrt{1.296}=1.85$ m."
+      ],
+      "answers": [
+       "$x_{0^\\circ C}=1.85$ m"
+      ]
+     }
+    },
+    {
+     "id": "10b",
+     "title": "Why tile feels colder than wood (contact temperature)",
+     "level": "warm-up",
+     "minutes": 8,
+     "statement": "Treat skin and the floor as semi-infinite solids that are suddenly brought into contact. Skin at $33^\\circ$C ($k=0.37$, $\\rho=1000$, $c=3500$ in SI units) touches (i) ceramic tile at $18^\\circ$C ($k=1.0$, $\\rho=2000$, $c=800$) and (ii) wood at $18^\\circ$C ($k=0.15$, $\\rho=700$, $c=1600$). Find the contact temperature in each case.",
+     "given": [
+      "skin 33 °C, floor 18 °C",
+      "tile, wood properties as above"
+     ],
+     "find": [
+      "$T_{contact}$ for tile and wood"
+     ],
+     "hint": "Compare the effusivities, not the thermal conductivities alone.",
+     "solution": {
+      "steps": [
+       "For two semi-infinite solids in perfect contact the interface temperature is constant: $T_s=\\dfrac{e_1T_1+e_2T_2}{e_1+e_2}$ with effusivity $e=\\sqrt{k\\rho c}$.",
+       "$e_{skin}=1138$, $e_{tile}=1265$, $e_{wood}=410$ W·s^½/m²K.",
+       "Tile: $T_s=25.1^\\circ$C. Wood: $T_s=29.0^\\circ$C. High effusivity pulls the interface toward the floor temperature, so tile feels colder."
+      ],
+      "answers": [
+       "tile $25.1^\\circ$C; wood $29.0^\\circ$C"
+      ]
+     }
+    },
+    {
+     "id": "10c",
+     "title": "Explicit finite-difference: stability and one time step",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A solid ($k=2.0$ W/m·K, $\\alpha=1\\times10^{-6}\\ \\mathrm{m^2/s}$) is modeled in 1-D with $\\Delta x=10$ mm, with a convective surface ($h=100$ W/m²K, $T_\\infty=20^\\circ$C). (a) Find the maximum stable time step for the interior nodes and for the surface node. (b) Using $\\Delta t=30$ s, advance one step for an interior node (at $70^\\circ$C with neighbors $90^\\circ$C and $60^\\circ$C) and for the surface node (at $75^\\circ$C with interior neighbor at $65^\\circ$C).",
+     "given": [
+      "$\\Delta x=0.01$ m, $\\alpha=10^{-6}$, $k=2$",
+      "$h=100$, $T_\\infty=20^\\circ$C",
+      "$\\Delta t=30$ s"
+     ],
+     "find": [
+      "$\\Delta t_{max}$ (interior, surface)",
+      "$T_m^{p+1}$, $T_0^{p+1}$"
+     ],
+     "hint": "Stability is checked for every node type; the convective surface node is the strictest.",
+     "solution": {
+      "steps": [
+       "$Bi=h\\Delta x/k=0.50$. Interior stability: $Fo\\le\\tfrac12\\Rightarrow\\Delta t\\le\\dfrac{\\Delta x^2}{2\\alpha}=50$ s. Surface node: $Fo(1+Bi)\\le\\tfrac12\\Rightarrow\\Delta t\\le33.3$ s. The surface node governs.",
+       "$\\Delta t=30$ s gives $Fo=0.30$ (stable, since 30 s < <dts:.1f>> s).",
+       "Interior: $T_m^{p+1}=Fo(T_{m+1}+T_{m-1})+(1-2Fo)T_m=73.0^\\circ$C.",
+       "Surface: $T_0^{p+1}=2Fo(T_1+BiT_\\infty)+(1-2Fo-2BiFo)T_0=52.5^\\circ$C."
+      ],
+      "answers": [
+       "$\\Delta t_{max}=33.3$ s (surface node)",
+       "$T_m=73.0$, $T_0=52.5^\\circ$C"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "num": 11,
+   "ch": 6,
+   "title": "Convection fundamentals and boundary layers",
+   "tag": "T2",
+   "sched": "Oct 6–8",
+   "why": "The language of convection: boundary layers, $Re$, $Pr$, $Nu$, and how analogies convert drag into heat transfer.",
+   "sections": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6",
+    "6.7"
+   ],
+   "book": [
+    {
+     "sec": "6.1",
+     "title": "The Convection Boundary Layers",
+     "page": 342
+    },
+    {
+     "sec": "6.2",
+     "title": "Local and Average Convection Coefficients",
+     "page": 346
+    },
+    {
+     "sec": "6.3",
+     "title": "Laminar and Turbulent Flow",
+     "page": 353
+    },
+    {
+     "sec": "6.4",
+     "title": "The Boundary Layer Equations",
+     "page": 358
+    },
+    {
+     "sec": "6.5",
+     "title": "Boundary Layer Similarity: The Normalized Boundary Layer Equations",
+     "page": 362
+    },
+    {
+     "sec": "6.6",
+     "title": "Physical Interpretation of the Dimensionless Parameters",
+     "page": 372
+    },
+    {
+     "sec": "6.7",
+     "title": "Boundary Layer Analogies",
+     "page": 374
+    }
+   ],
+   "examples": [
+    {
+     "ex": "6.1",
+     "page": 349
+    },
+    {
+     "ex": "6.2",
+     "page": 350
+    },
+    {
+     "ex": "6.3",
+     "page": 351
+    },
+    {
+     "ex": "6.4",
+     "page": 356
+    },
+    {
+     "ex": "6.5",
+     "page": 367
+    },
+    {
+     "ex": "6.6",
+     "page": 370
+    },
+    {
+     "ex": "6.7",
+     "page": 376
+    },
+    {
+     "ex": "6.8",
+     "page": 380
+    }
+   ],
+   "videos": [
+    {
+     "id": "t6hK9mKaNKc",
+     "title": "Ch 6 – Introduction to convection: boundary layers",
+     "channel": "Kody Powell",
+     "len": "13:22",
+     "note": "Start here",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 6 - Introduction to Convection - Boundary Layers",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "uvREDOh0X2s",
+     "title": "Ch 6 – Local heat transfer coefficients and averages",
+     "channel": "Kody Powell",
+     "len": "8:39",
+     "note": "Local vs average $h$",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 6 - Convection - Local Heat Transfer Coefficients and Laminar/Turbulent Flow",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "i6vDhaYZfTQ",
+     "title": "L17 p1 – Principles of convection",
+     "channel": "Ron Hugo",
+     "len": "7:12",
+     "note": "Concepts",
+     "verified": true,
+     "ytTitle": "Heat Transfer L17 p1 - Principles of Convection",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "aqUWsU_lsK4",
+     "title": "L17 p4 – Thermal boundary layer",
+     "channel": "Ron Hugo",
+     "len": "8:24",
+     "note": "$\\delta$ vs $\\delta_t$",
+     "verified": true,
+     "ytTitle": "Heat Transfer L17 p4 - Thermal Boundary Layer",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "Cm_Ggi9_FtY",
+     "title": "Convective heat transfer: dimensionless numbers",
+     "channel": "R. Paul Singh",
+     "len": "11:40",
+     "note": "Re, Pr, Nu, St meaning",
+     "verified": true,
+     "ytTitle": "Convective heat transfer - Dimensionless numbers",
+     "ytAuthor": "R. Paul Singh"
+    }
+   ],
+   "know": [
+    "Velocity, thermal and concentration boundary layers: $\\delta$, $\\delta_t$, $\\delta_c$ and how $Pr$ and $Sc$ set their ratios.",
+    "Local $h_x$ vs average $\\bar h=\\frac1L\\int h_xdx$. Flat-plate transition at $Re_{x,c}\\approx5\\times10^5$.",
+    "The four boundary-layer equations: continuity, $x$-momentum, energy, species. They share one form, so one solution gives analogous results for all.",
+    "Dimensionless groups: $Nu=hL/k$ (surface gradient), $Pr=\\nu/\\alpha$, $Re$, $St=Nu/(RePr)$, $Cf$. Physical meaning: Section 6.6.",
+    "Analogies: Reynolds and Chilton–Colburn, $St\\,Pr^{2/3}=Cf/2$ for $0.6<Pr<60$ and $dp/dx\\approx0$."
+   ],
+   "eq": [
+    {
+     "label": "Reynolds number",
+     "tex": "Re_x=\\dfrac{\\rho u_\\infty x}{\\mu}=\\dfrac{u_\\infty x}{\\nu}"
+    },
+    {
+     "label": "Prandtl, Nusselt",
+     "tex": "Pr=\\dfrac{\\nu}{\\alpha},\\ \\ Nu_x=\\dfrac{h_xx}{k_f}"
+    },
+    {
+     "label": "Skin friction",
+     "tex": "Cf_x=\\dfrac{\\tau_s}{\\rho u_\\infty^2/2}"
+    },
+    {
+     "label": "Stanton",
+     "tex": "St=\\dfrac{Nu}{Re\\,Pr}=\\dfrac{h}{\\rho u_\\infty c_p}"
+    },
+    {
+     "label": "Chilton–Colburn analogy",
+     "tex": "St\\,Pr^{2/3}=\\dfrac{Cf}{2}"
+    },
+    {
+     "label": "Momentum BL",
+     "tex": "u\\dfrac{\\partial u}{\\partial x}+v\\dfrac{\\partial u}{\\partial y}=-\\dfrac1\\rho\\dfrac{dp}{dx}+\\nu\\dfrac{\\partial^2u}{\\partial y^2}"
+    },
+    {
+     "label": "Energy BL",
+     "tex": "u\\dfrac{\\partial T}{\\partial x}+v\\dfrac{\\partial T}{\\partial y}=\\alpha\\dfrac{\\partial^2T}{\\partial y^2}"
+    }
+   ],
+   "pitfalls": [
+    "Evaluating properties at the wrong temperature (use the film temperature unless told otherwise).",
+    "Confusing local and average coefficients.",
+    "Applying the analogy to flows with large pressure gradients."
+   ],
+   "tables": [
+    "Tables 6.1–6.3 (similarity results and dimensionless groups)"
+   ],
+   "samples": [
+    "Test 2 guide: §6.1–6.7 and Tables 6.1–6.3"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 6 slides (6.1–6.8, E.1–E.3)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477687"
+     },
+     {
+      "label": "Ch 6 slides (E.4)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477692"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW7 · Ch 6: 8, 25, 40, 46",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221373",
+      "due": "Oct 13"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "11a",
+     "title": "Laminar boundary layer on a flat plate",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "Air at 300 K ($k=0.0263$ W/m·K, $\\nu=15.89\\times10^{-6}$ m²/s, $Pr=0.707$, $\\rho=1.161$ kg/m³) flows at $U_\\infty=5$ m/s over a flat plate of length $L=1$ m. (a) Is the flow laminar over the whole plate? (b) At $x=0.4$ m find the hydrodynamic and thermal boundary-layer thicknesses, the local friction coefficient and wall shear stress, and the local convection coefficient. (c) Find the average coefficient over $0<x<L$. Use $\\delta=5x/\\sqrt{Re_x}$, $\\delta_t=\\delta Pr^{-1/3}$, $Cf_x=0.664Re_x^{-1/2}$, $Nu_x=0.332Re_x^{1/2}Pr^{1/3}$.",
+     "given": [
+      "air at 300 K properties above",
+      "$U_\\infty=5$ m/s, $L=1$ m",
+      "$Re_{x,c}=5\\times10^5$"
+     ],
+     "find": [
+      "transition location",
+      "$\\delta$, $\\delta_t$, $Cf_x$, $\\tau_s$, $h_x$ at 0.4 m",
+      "$\\bar h_L$"
+     ],
+     "hint": "$\\bar h=2h_x$ at the end of the plate is a laminar-only shortcut because $h_x\\sim x^{-1/2}$.",
+     "solution": {
+      "steps": [
+       "$x_c=Re_{x,c}\\nu/U_\\infty=1.59$ m $>L=1$ m, so the flow is laminar over the entire plate ($Re_L=3.15\\times10^{5}$).",
+       "At $x=0.4$: $Re_x=1.26\\times10^{5}$, $\\delta=5x/\\sqrt{Re_x}=5.64$ mm, $\\delta_t=\\delta Pr^{-1/3}=6.33$ mm (thermal layer slightly thicker since $Pr<1$).",
+       "$Cf_x=0.664/\\sqrt{Re_x}=0.00187$, $\\tau_s=Cf_x\\rho U^2/2=0.0272$ N/m². $Nu_x=104.9$, so $h_x=Nu_xk/x=6.90$ W/m²K.",
+       "Laminar plate: $h_x\\propto x^{-1/2}$, so $\\bar h_L=2h_{x=L}=2(4.36)=8.73$ W/m²K."
+      ],
+      "answers": [
+       "laminar everywhere ($x_c=1.59$ m)",
+       "$\\delta=5.64$ mm, $\\delta_t=6.33$ mm, $h_x=6.90$ W/m²K",
+       "$\\bar h_L=8.73$ W/m²K"
+      ]
+     }
+    },
+    {
+     "id": "11b",
+     "title": "Heat transfer from a drag measurement (Reynolds–Colburn analogy)",
+     "level": "exam",
+     "minutes": 10,
+     "statement": "Air at 300 K ($\\rho=1.161$ kg/m³, $c_p=1007$ J/kg·K, $Pr=0.707$) flows at $20$ m/s over a plate. A balance measurement gives an average wall shear stress of $0.95$ N/m². Use the Reynolds–Colburn analogy $St\\,Pr^{2/3}=Cf/2$ to estimate the average convection coefficient. Where is the analogy valid?",
+     "given": [
+      "$\\rho=1.161$, $c_p=1007$, $Pr=0.707$",
+      "$U_\\infty=20$ m/s",
+      "$\\bar\\tau_s=0.95$ N/m²"
+     ],
+     "find": [
+      "$\\overline{Cf}$",
+      "$\\overline{St}$",
+      "$\\bar h$"
+     ],
+     "hint": "Convert $\\tau_s$ to $Cf$ using the dynamic pressure $\\rho U^2/2$.",
+     "solution": {
+      "steps": [
+       "$\\overline{Cf}=\\dfrac{\\tau_s}{\\rho U_\\infty^2/2}=\\dfrac{0.95}{232.3}=0.00409$.",
+       "$St=\\dfrac{Cf/2}{Pr^{2/3}}=0.00258$. Since $St=\\dfrac{h}{\\rho U_\\infty c_p}$: $\\bar h=St\\,\\rho U_\\infty c_p=60.3$ W/m²K.",
+       "Valid for $0.6<Pr<60$ and when $dp/dx\\approx0$ (flat-plate-like flow); it fails with large form drag (bluff bodies)."
+      ],
+      "answers": [
+       "$\\bar h\\approx60$ W/m²K"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "num": 12,
+   "ch": 7,
+   "title": "External flow: flat plate",
+   "tag": "F",
+   "sched": "Oct 13",
+   "why": "Always the same four steps: film temperature, Reynolds number, pick the correlation, compute $h$ and $q$.",
+   "sections": [
+    "7.1",
+    "7.2",
+    "7.3"
+   ],
+   "book": [
+    {
+     "sec": "7.1",
+     "title": "The Empirical Method",
+     "page": 397
+    },
+    {
+     "sec": "7.2",
+     "title": "The Flat Plate in Parallel Flow",
+     "page": 398
+    },
+    {
+     "sec": "7.3",
+     "title": "Methodology for a Convection Calculation",
+     "page": 409
+    }
+   ],
+   "examples": [
+    {
+     "ex": "7.1",
+     "page": 410
+    },
+    {
+     "ex": "7.2",
+     "page": 411
+    },
+    {
+     "ex": "7.3",
+     "page": 414
+    }
+   ],
+   "videos": [
+    {
+     "id": "BCYc_D1ArxM",
+     "title": "Ch 7 – External convection over a flat plate",
+     "channel": "Kody Powell",
+     "len": "27:08",
+     "note": "Main lecture",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 7 - External Convection - Convection over a Flat Plate with Laminar Flow",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "2Y4WRubLNVQ",
+     "title": "Ch 7 – Applying a convective heat transfer correlation",
+     "channel": "Kody Powell",
+     "len": "18:10",
+     "note": "Method",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 7 - External Convection - Applying a Convective Heat Transfer Correlation",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "LC4gkrm_SNo",
+     "title": "Ch 7 – Heat transfer correlations",
+     "channel": "Kody Powell",
+     "len": "18:30",
+     "note": "The correlations",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 7 - External Convection - Heat Transfer Correlations for Turbulent Flow",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "IdsRQQbyFck",
+     "title": "Heat Transfer (25): Flat-plate convection examples",
+     "channel": "CPPMechEngTutorials",
+     "len": "33:21",
+     "note": "Long example set; skim",
+     "verified": true,
+     "ytTitle": "Heat Transfer (25) - Flat plate convection heat transfer examples, Flows over cylinders",
+     "ytAuthor": "CPPMechEngTutorials"
+    }
+   ],
+   "know": [
+    "Methodology (§7.3): film temperature → properties → $Re_L$ → laminar, mixed or turbulent correlation → $h$ → $q$.",
+    "Laminar: $Nu_x=0.332Re_x^{1/2}Pr^{1/3}$ and $\\overline{Nu}_L=0.664Re_L^{1/2}Pr^{1/3}$ ($Pr\\ge0.6$); average is twice the local value at $x=L$.",
+    "Turbulent: $Nu_x=0.0296Re_x^{4/5}Pr^{1/3}$; mixed (laminar start): $\\overline{Nu}_L=(0.037Re_L^{4/5}-871)Pr^{1/3}$.",
+    "Constant heat flux gives local $Nu_x$ about 36% higher than isothermal (0.453 vs 0.332 coefficient).",
+    "Flow along vs across the plate changes the length used in $Re$."
+   ],
+   "eq": [
+    {
+     "label": "Laminar local",
+     "tex": "Nu_x=0.332\\,Re_x^{1/2}Pr^{1/3}"
+    },
+    {
+     "label": "Laminar average",
+     "tex": "\\overline{Nu}_L=0.664\\,Re_L^{1/2}Pr^{1/3}"
+    },
+    {
+     "label": "Turbulent local",
+     "tex": "Nu_x=0.0296\\,Re_x^{4/5}Pr^{1/3}"
+    },
+    {
+     "label": "Mixed average",
+     "tex": "\\overline{Nu}_L=(0.037Re_L^{4/5}-871)Pr^{1/3}"
+    },
+    {
+     "label": "Film temperature",
+     "tex": "T_f=\\dfrac{T_s+T_\\infty}{2}"
+    }
+   ],
+   "pitfalls": [
+    "Using the turbulent correlation for a plate that is mostly laminar.",
+    "Wrong length in $Re_L$.",
+    "Properties at $T_\\infty$ instead of film temperature."
+   ],
+   "tables": [
+    "Table 7.1 (flat plate laminar results)",
+    "Table 7.7 (summary of external correlations)",
+    "Table A.4, A.6 (air, water)"
+   ],
+   "samples": [
+    "Instructor example files: Ch 7 Prob 68, Prob 95"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 7 slides (7.1–7.3)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477694"
+     },
+     {
+      "label": "Ch 7 Prob 68",
+      "url": "https://uvu.instructure.com/courses/641165/files/135836740"
+     },
+     {
+      "label": "Ch 7 Prob 95",
+      "url": "https://uvu.instructure.com/courses/641165/files/135836782"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW8 · Ch 7: 7, 41, 69, 93, (100*)",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221374",
+      "due": "Oct 23"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "12a",
+     "title": "Mixed laminar–turbulent flat plate",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "Air at $T_\\infty=300$ K flows at $U_\\infty=20$ m/s over a flat plate $L=1.5$ m long and $W=0.8$ m wide held at $T_s=330$ K. Evaluate properties at the film temperature (315 K): $k=0.0274$ W/m·K, $\\nu=17.40\\times10^{-6}$ m²/s, $Pr=0.705$. Take $Re_{x,c}=5\\times10^5$. (a) Where does transition occur? (b) Find the average Nusselt number and $\\bar h_L$ for the combined laminar–turbulent boundary layer. (c) Find the total heat rate from the plate.",
+     "given": [
+      "$U_\\infty=20$ m/s, $L=1.5$ m, $W=0.8$ m",
+      "$T_s=330$ K, $T_\\infty=300$ K",
+      "air properties at 315 K above"
+     ],
+     "find": [
+      "$x_c$",
+      "$\\bar{Nu}_L$, $\\bar h_L$",
+      "$q$"
+     ],
+     "hint": "Check $Re_L$ against $5\\times10^5$ first; it decides which correlation applies.",
+     "solution": {
+      "steps": [
+       "$Re_L=U_\\infty L/\\nu=1.72\\times10^{6}$ and $x_c=Re_{x,c}\\nu/U_\\infty=0.435$ m: only the first 29% of the plate is laminar, so use the mixed correlation.",
+       "$\\overline{Nu}_L=(0.037Re_L^{4/5}-871)Pr^{1/3}=2437$ (all-turbulent would give 3213, 32% too high; all-laminar 776, far too low).",
+       "$\\bar h_L=\\overline{Nu}_Lk/L=44.54$ W/m²K.",
+       "$q=\\bar h_L(LW)(T_s-T_\\infty)=44.54(1.2)(30)=1603$ W."
+      ],
+      "answers": [
+       "$x_c=0.435$ m",
+       "$\\bar h_L=44.5$ W/m²K",
+       "$q=1603$ W"
+      ]
+     }
+    },
+    {
+     "id": "12b",
+     "title": "Laminar flat plate in water",
+     "level": "exam",
+     "minutes": 10,
+     "statement": "Water at 20 °C ($k=0.613$ W/m·K, $\\nu=0.858\\times10^{-6}$ m²/s, $Pr=5.83$) flows at $0.15$ m/s over a $0.5\\times0.3$ m heated plate (flow along the $0.5$ m side) at $40^\\circ$C. Verify the flow regime, then find $\\bar h$, the heat rate, and the boundary-layer thickness at the trailing edge.",
+     "given": [
+      "$U_\\infty=0.15$ m/s",
+      "$L=0.5$, $W=0.3$ m",
+      "$T_s=40^\\circ$C, $T_\\infty=20^\\circ$C",
+      "water properties above"
+     ],
+     "find": [
+      "$Re_L$",
+      "$\\bar h$, $q$",
+      "$\\delta(L)$"
+     ],
+     "hint": "High $Pr$ fluid: the thermal boundary layer is much thinner than the velocity layer.",
+     "solution": {
+      "steps": [
+       "$Re_L=8.74\\times10^{4}<5\\times10^5$ — laminar over the whole plate.",
+       "$\\overline{Nu}_L=0.664Re_L^{1/2}Pr^{1/3}=353$ ($Pr>0.6$ ✓); $\\bar h=\\overline{Nu}_Lk/L=433$ W/m²K.",
+       "$q=\\bar h(LW)(T_s-T_\\infty)=1300$ W. Thickness: $\\delta(L)=5L/\\sqrt{Re_L}=8.5$ mm."
+      ],
+      "answers": [
+       "$\\bar h=433$ W/m²K; $q=1300$ W",
+       "$\\delta(L)=8.5$ mm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "num": 13,
+   "ch": 7,
+   "title": "External flow: cylinders, spheres, tube banks",
+   "tag": "F",
+   "sched": "Oct 20",
+   "why": "Correlations differ by geometry; the chain 'external $h$ → lumped time' is an exam favorite.",
+   "sections": [
+    "7.4",
+    "7.5",
+    "7.6"
+   ],
+   "book": [
+    {
+     "sec": "7.4",
+     "title": "The Cylinder in Cross Flow",
+     "page": 417
+    },
+    {
+     "sec": "7.5",
+     "title": "The Sphere",
+     "page": 427
+    },
+    {
+     "sec": "7.6",
+     "title": "Flow Across Banks of Tubes",
+     "page": 430
+    }
+   ],
+   "examples": [
+    {
+     "ex": "7.4",
+     "page": 421
+    },
+    {
+     "ex": "7.5",
+     "page": 424
+    },
+    {
+     "ex": "7.6",
+     "page": 428
+    },
+    {
+     "ex": "7.7",
+     "page": 435
+    }
+   ],
+   "videos": [
+    {
+     "id": "KANKSlcHqbA",
+     "title": "L19 p1 – Convective heat transfer: cylinder",
+     "channel": "Ron Hugo",
+     "len": "13:58",
+     "note": "Cross flow over a cylinder",
+     "verified": true,
+     "ytTitle": "Heat Transfer L19 p1 - Convective Heat Transfer - Cylinder",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "xXjsgs22qvk",
+     "title": "Introduction to radial convective heat transfer",
+     "channel": "LearnChemE",
+     "len": "6:11",
+     "note": "Cylinder and sphere basics",
+     "verified": true,
+     "ytTitle": "Introduction to Radial Convective Heat Transfer",
+     "ytAuthor": "LearnChemE"
+    },
+    {
+     "id": "rtyLLIW0IJw",
+     "title": "Heat Transfer (23): Convection over external surfaces",
+     "channel": "CPPMechEngTutorials",
+     "len": "55:55",
+     "note": "Long; sphere and cylinder sections",
+     "verified": true,
+     "ytTitle": "Heat Transfer (23): Convection heat transfer over external surfaces, flat plate analysis",
+     "ytAuthor": "CPPMechEngTutorials"
+    }
+   ],
+   "know": [
+    "Cylinder in cross flow: Churchill–Bernstein (one formula for all $Re_DPr>0.2$) or Hilpert/Zukauskas $\\overline{Nu}_D=CRe_D^mPr^{1/3}$ with $C,m$ from Table 7.2.",
+    "Sphere: Whitaker correlation includes the viscosity ratio $(\\mu/\\mu_s)^{1/4}$.",
+    "Tube banks: velocity is based on the minimum free area (aligned vs staggered), correlation constants come from Table 7.5, and Table 7.6 corrects for fewer than 20 rows.",
+    "Bank outlet temperature uses an exponential like internal flow: $(T_s-T_o)/(T_s-T_i)=\\exp(-\\pi DNh/\\rho V N_TS_Tc_p)$.",
+    "No dedicated tube-bank video was found; use the instructor's slides (7B) and book §7.6."
+   ],
+   "eq": [
+    {
+     "label": "Churchill–Bernstein",
+     "tex": "\\overline{Nu}_D=0.3+\\dfrac{0.62Re_D^{1/2}Pr^{1/3}}{[1+(0.4/Pr)^{2/3}]^{1/4}}\\left[1+\\left(\\dfrac{Re_D}{282{,}000}\\right)^{5/8}\\right]^{4/5}"
+    },
+    {
+     "label": "Whitaker sphere",
+     "tex": "\\overline{Nu}_D=2+(0.4Re_D^{1/2}+0.06Re_D^{2/3})Pr^{0.4}\\left(\\dfrac{\\mu}{\\mu_s}\\right)^{1/4}"
+    },
+    {
+     "label": "Hilpert",
+     "tex": "\\overline{Nu}_D=C\\,Re_D^m\\,Pr^{1/3}"
+    },
+    {
+     "label": "Cylinder heat rate",
+     "tex": "q'=\\bar h\\,\\pi D\\,(T_s-T_\\infty)"
+    }
+   ],
+   "pitfalls": [
+    "Using velocity upstream of a bank instead of $V_{max}$.",
+    "Forgetting the viscosity ratio for the sphere.",
+    "Evaluating all properties at the same temperature when the correlation says otherwise."
+   ],
+   "tables": [
+    "Table 7.2–7.4 (Hilpert constants)",
+    "Table 7.5–7.6 (tube banks)",
+    "Table 7.7 (summary)"
+   ],
+   "samples": [
+    "HW8 (Ch 7) includes cylinder and tube-bank problems"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 7 slides (7.4–7.8)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477695"
+     },
+     {
+      "label": "Ch 7 Prob 68",
+      "url": "https://uvu.instructure.com/courses/641165/files/135836740"
+     },
+     {
+      "label": "Ch 7 Prob 95",
+      "url": "https://uvu.instructure.com/courses/641165/files/135836782"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW8 · Ch 7: 7, 41, 69, 93, (100*)",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221374",
+      "due": "Oct 23"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "13a",
+     "title": "Heated cylinder in cross flow (Churchill–Bernstein)",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "Air at 300 K and 10 m/s crosses a long cylinder of diameter $D=20$ mm whose surface is at 400 K. Use film properties at 350 K: $k=0.030$ W/m·K, $\\nu=20.92\\times10^{-6}$ m²/s, $Pr=0.700$. Find $Re_D$, the average Nusselt number from the Churchill–Bernstein correlation, $\\bar h$, and the heat loss per meter. $\\overline{Nu}_D=0.3+\\dfrac{0.62Re_D^{1/2}Pr^{1/3}}{[1+(0.4/Pr)^{2/3}]^{1/4}}\\left[1+\\left(\\dfrac{Re_D}{282{,}000}\\right)^{5/8}\\right]^{4/5}$ ($Re_DPr>0.2$).",
+     "given": [
+      "$V=10$ m/s, $D=0.020$ m",
+      "$T_s=400$ K, $T_\\infty=300$ K",
+      "air at 350 K properties"
+     ],
+     "find": [
+      "$Re_D$",
+      "$\\overline{Nu}_D$, $\\bar h$",
+      "$q'$"
+     ],
+     "hint": "Characteristic length for a cylinder in cross flow is the diameter, and properties are at the film temperature.",
+     "solution": {
+      "steps": [
+       "$Re_D=VD/\\nu=9560$; $Re_DPr=6692>0.2$ ✓.",
+       "$\\overline{Nu}_D=52.0$, so $\\bar h=\\overline{Nu}_Dk/D=78.0$ W/m²K.",
+       "$q'=\\bar h\\pi D(T_s-T_\\infty)=78.0\\pi(0.020)(100)=490$ W/m."
+      ],
+      "answers": [
+       "$\\overline{Nu}_D=52.0$, $\\bar h=78.0$ W/m²K",
+       "$q'=490$ W/m"
+      ]
+     }
+    },
+    {
+     "id": "13b",
+     "title": "Sphere in air flow, then lumped cooling (two-topic problem)",
+     "level": "exam",
+     "minutes": 18,
+     "statement": "A copper sphere ($D=12$ mm; $\\rho=8933$ kg/m³, $c=385$ J/kg·K, $k=401$ W/m·K) at 350 K is suspended in air at 300 K flowing at 5 m/s. Air properties at 300 K: $k=0.0263$, $\\nu=15.89\\times10^{-6}$, $Pr=0.707$, $\\mu_\\infty=184.6\\times10^{-7}$ N·s/m²; viscosity at the surface $\\mu_s=208.2\\times10^{-7}$ N·s/m². (a) Find $\\bar h$ with the Whitaker sphere correlation $\\overline{Nu}_D=2+(0.4Re_D^{1/2}+0.06Re_D^{2/3})Pr^{0.4}(\\mu/\\mu_s)^{1/4}$. (b) Show lumped capacitance applies and find the time for the sphere to cool to 310 K.",
+     "given": [
+      "$D=12$ mm, copper",
+      "$V=5$ m/s",
+      "$T_i=350$ K, $T_\\infty=300$ K",
+      "properties above"
+     ],
+     "find": [
+      "$\\bar h$",
+      "$Bi$",
+      "$t$ to 310 K"
+     ],
+     "hint": "Chapter 7 gives $h$, Chapter 5 turns it into a time. Exams love this chain.",
+     "solution": {
+      "steps": [
+       "$Re_D=VD/\\nu=3776$. $\\overline{Nu}_D=2+(0.4\\sqrt{Re}+0.06Re^{2/3})Pr^{0.4}(\\mu/\\mu_s)^{1/4}=35.1$, so $\\bar h=76.8$ W/m²K.",
+       "$L_c=D/6=0.0020$ m; $Bi=\\bar hL_c/k=3.8\\times10^{-4}\\ll0.1$ ✓.",
+       "$\\tau_t=\\rho cL_c/\\bar h=90$ s; $t=\\tau_t\\ln\\dfrac{50}{10}=144$ s (≈ 2.4 min)."
+      ],
+      "answers": [
+       "$\\bar h=76.8$ W/m²K",
+       "$Bi=3.8\\times10^{-4}$",
+       "$t=144$ s"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "num": 14,
+   "ch": 8,
+   "title": "Internal flow in tubes",
+   "tag": "F",
+   "sched": "Oct 22–29",
+   "why": "Use the mean temperature $T_m$ and an energy balance on the tube. Constant surface temperature vs constant heat flux are the two cases to know.",
+   "sections": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "8.5",
+    "8.6"
+   ],
+   "book": [
+    {
+     "sec": "8.1",
+     "title": "Hydrodynamic Considerations",
+     "page": 470
+    },
+    {
+     "sec": "8.2",
+     "title": "Thermal Considerations",
+     "page": 475
+    },
+    {
+     "sec": "8.3",
+     "title": "The Energy Balance",
+     "page": 481
+    },
+    {
+     "sec": "8.4",
+     "title": "Laminar Flow in Circular Tubes: Thermal Analysis and Convection Correlations",
+     "page": 489
+    },
+    {
+     "sec": "8.5",
+     "title": "Convection Correlations: Turbulent Flow in Circular Tubes",
+     "page": 496
+    },
+    {
+     "sec": "8.6",
+     "title": "Convection Correlations: Noncircular Tubes and the Concentric Tube Annulus",
+     "page": 504
+    }
+   ],
+   "examples": [
+    {
+     "ex": "8.1",
+     "page": 479
+    },
+    {
+     "ex": "8.2",
+     "page": 483
+    },
+    {
+     "ex": "8.3",
+     "page": 487
+    },
+    {
+     "ex": "8.4",
+     "page": 491
+    },
+    {
+     "ex": "8.5",
+     "page": 498
+    },
+    {
+     "ex": "8.6",
+     "page": 502
+    }
+   ],
+   "videos": [
+    {
+     "id": "pt_oNfFNtz4",
+     "title": "Ch 8 – Internal convection: hydrodynamic considerations",
+     "channel": "Kody Powell",
+     "len": "10:52",
+     "note": "Entry length, $Re$",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 8 - Internal Convection - Hydrodynamic Considerations",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "JDAC4_xdCFw",
+     "title": "Ch 8 – Thermal considerations",
+     "channel": "Kody Powell",
+     "len": "10:55",
+     "note": "Mean temperature",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 8 - Internal Convection - Thermal Considerations",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "GzGTPpXpsiM",
+     "title": "Ch 8 – Internal convection heat transfer correlations",
+     "channel": "Kody Powell",
+     "len": "11:10",
+     "note": "Pick the correlation",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 8 - Internal Convection Heat Transfer Correlations",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "bYvPtxhO70s",
+     "title": "Ch 8 – Temperature profile with constant heat flux",
+     "channel": "Kody Powell",
+     "len": "10:32",
+     "note": "Const. $q''_s$",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 8 - Solving for a Temperature Profile for Flow with Constant Surface Temp.",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "blkqtboZd3s",
+     "title": "Ch 8 – Temperature profile with constant surface temperature",
+     "channel": "Kody Powell",
+     "len": "9:27",
+     "note": "Const. $T_s$",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 8 - Solving for a Temperature Profile for Flow with Constant Surface Flux",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "HugsUjI38-c",
+     "title": "Internal forced convection example: turbulent flow",
+     "channel": "Brian Bernard",
+     "len": "14:39",
+     "note": "Worked example",
+     "verified": true,
+     "ytTitle": "Internal Forced Convection Example Problem with Turbulent Flow",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "NeoXHnHkn9o",
+     "title": "8.3–8.4 Internal flow: energy balance",
+     "channel": "Regina Vrikkis",
+     "len": "8:17",
+     "note": "Book-aligned",
+     "verified": true,
+     "ytTitle": "MEGR3116 8.3-8.4 Internal Flow - Energy Balance",
+     "ytAuthor": "Regina Vrikkis"
+    }
+   ],
+   "know": [
+    "$Re_D=4\\dot m/\\pi D\\mu$; laminar below about 2300. Entry lengths: laminar $x_{fd,h}\\approx0.05Re_DD$, $x_{fd,t}\\approx0.05Re_DPrD$; turbulent about $10D$.",
+    "Tube energy balance: $q=\\dot mc_p(T_{m,o}-T_{m,i})$. Constant $q''_s$: $T_m$ rises linearly. Constant $T_s$: $T_s-T_m$ decays exponentially.",
+    "Laminar, fully developed: $Nu_D=4.36$ (const. flux), $3.66$ (const. $T_s$). Non-circular tubes use the hydraulic diameter $D_h=4A_c/P$.",
+    "Turbulent: Dittus–Boelter ($n=0.4$ heating, $0.3$ cooling), or Gnielinski for more accuracy.",
+    "Overall problem: find $Re$ → pick correlation → $\\bar h$ → use $NTU$-type exponential or $\\Delta T_{lm}$ for outlet temperature."
+   ],
+   "eq": [
+    {
+     "label": "Reynolds",
+     "tex": "Re_D=\\dfrac{4\\dot m}{\\pi D\\mu}"
+    },
+    {
+     "label": "Energy balance",
+     "tex": "q=\\dot m\\,c_p\\,(T_{m,o}-T_{m,i})"
+    },
+    {
+     "label": "Const. $T_s$",
+     "tex": "\\dfrac{T_s-T_{m,o}}{T_s-T_{m,i}}=\\exp\\!\\left(-\\dfrac{\\pi DL\\,\\bar h}{\\dot m c_p}\\right),\\ \\ q=\\bar hA_s\\Delta T_{lm}"
+    },
+    {
+     "label": "Const. $q''_s$",
+     "tex": "T_m(x)=T_{m,i}+\\dfrac{q''_sPx}{\\dot m c_p},\\ \\ T_s-T_m=\\dfrac{q''_s}{h}"
+    },
+    {
+     "label": "Log-mean",
+     "tex": "\\Delta T_{lm}=\\dfrac{\\Delta T_o-\\Delta T_i}{\\ln(\\Delta T_o/\\Delta T_i)}"
+    },
+    {
+     "label": "Dittus–Boelter",
+     "tex": "Nu_D=0.023Re_D^{4/5}Pr^n"
+    },
+    {
+     "label": "Gnielinski",
+     "tex": "Nu_D=\\dfrac{(f/8)(Re_D-1000)Pr}{1+12.7(f/8)^{1/2}(Pr^{2/3}-1)}"
+    }
+   ],
+   "pitfalls": [
+    "Averaging inlet and outlet temperatures instead of using the exponential/log-mean.",
+    "Using the wrong $n$ for heating vs cooling.",
+    "Using laminar $Nu$ in the entry region."
+   ],
+   "tables": [
+    "Sections 8.4–8.6 (correlation summaries)",
+    "Moody chart on Canvas (friction factor)"
+   ],
+   "samples": [
+    "Instructor examples: Ch 8 Prob 25, Ch 8 §6–7"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 8 slides (8.1–8.3)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477693"
+     },
+     {
+      "label": "Ch 8 slides (8.4–8.6)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477696"
+     },
+     {
+      "label": "Notes: Ch 8-2-1",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477728"
+     },
+     {
+      "label": "Notes: Ch 8 §6–7",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477496"
+     },
+     {
+      "label": "Ch 8 Prob 25",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477742"
+     },
+     {
+      "label": "Ch 8 §6–7 examples",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477707"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW9 · Ch 8: 3, 12, 27, 69",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221375",
+      "due": "Nov 3"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "14a",
+     "title": "Water heated in a tube at constant wall temperature",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "Water flows at $\\dot m=0.20$ kg/s through a $D=25$ mm tube, $L=3$ m long, whose wall is held at $100^\\circ$C (condensing steam). The inlet temperature is $20^\\circ$C. Evaluate properties at 310 K: $c_p=4178$ J/kg·K, $\\mu=695\\times10^{-6}$ N·s/m², $k=0.628$ W/m·K, $Pr=4.5$. (a) Determine the flow regime. (b) Use Dittus–Boelter to find $\\bar h$. (c) Find the outlet temperature and the heat rate; verify with the log-mean temperature difference.",
+     "given": [
+      "$\\dot m=0.20$ kg/s, $D=0.025$ m, $L=3$ m",
+      "$T_s=100^\\circ$C, $T_{m,i}=20^\\circ$C",
+      "properties above"
+     ],
+     "find": [
+      "$Re_D$",
+      "$\\bar h$",
+      "$T_{m,o}$, $q$"
+     ],
+     "hint": "The exponential form with $T_s-T_m$ is the constant-surface-temperature result; do not average the temperatures arithmetically.",
+     "solution": {
+      "steps": [
+       "$Re_D=\\dfrac{4\\dot m}{\\pi D\\mu}=14656>10^4$ — turbulent. Heating, $n=0.4$.",
+       "$Nu_D=0.023Re_D^{4/5}Pr^{0.4}=90.3$ (valid for $L/D=120>10$ ✓), $\\bar h=Nu_Dk/D=2269$ W/m²K.",
+       "Constant $T_s$: $\\dfrac{T_s-T_{m,o}}{T_s-T_{m,i}}=\\exp\\!\\left(-\\dfrac{\\pi DL\\bar h}{\\dot mc_p}\\right)=\\exp(-0.640)$, so $T_{m,o}=57.8^\\circ$C.",
+       "$q=\\dot mc_p(T_{m,o}-T_{m,i})=31593$ W. Check: $\\Delta T_{lm}=59.1$ K, $q=\\bar hA_s\\Delta T_{lm}=31593$ W ✓."
+      ],
+      "answers": [
+       "$Re_D=14656$ (turbulent), $\\bar h=2269$ W/m²K",
+       "$T_{m,o}=57.8^\\circ$C, $q=31593$ W"
+      ]
+     }
+    },
+    {
+     "id": "14b",
+     "title": "Laminar flow with constant heat flux",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "Water at $\\dot m=0.003$ kg/s enters a $D=8$ mm tube at $20^\\circ$C; a heater supplies a uniform flux $q''_s=5000$ W/m² over $L=1.5$ m (same properties as the previous problem). (a) Determine the regime. (b) Find the outlet mean temperature. (c) Find the surface temperature at the outlet assuming fully developed flow ($Nu_D=4.36$). (d) Compare the entry lengths with $L$.",
+     "given": [
+      "$\\dot m=0.003$ kg/s, $D=8$ mm, $L=1.5$ m",
+      "$q''_s=5000$ W/m²",
+      "$T_{m,i}=20^\\circ$C",
+      "properties as 14a"
+     ],
+     "find": [
+      "$Re_D$",
+      "$T_{m,o}$",
+      "$T_{s,o}$",
+      "entry lengths"
+     ],
+     "hint": "For constant flux the wall–fluid difference $q''_s/h$ is constant once developed.",
+     "solution": {
+      "steps": [
+       "$Re_D=4\\dot m/(\\pi D\\mu)=687$ — laminar.",
+       "Constant flux: $q=q''_s\\pi DL=188.5$ W and $T_{m,o}=T_{m,i}+q/(\\dot mc_p)=35.0^\\circ$C ($T_m$ rises linearly with $x$).",
+       "$h=Nu_Dk/D=4.36(0.628)/0.008=342$ W/m²K and $T_{s,o}=T_{m,o}+q''_s/h=49.6^\\circ$C.",
+       "Hydrodynamic entry $\\approx0.05Re_DD=0.27$ m; thermal entry $\\approx0.05Re_DPrD=1.24$ m vs. $L=1.5$ m — the thermal layer is nearly developed by the exit, so $Nu=4.36$ is reasonable near the outlet but optimistic upstream."
+      ],
+      "answers": [
+       "$T_{m,o}=35.0^\\circ$C",
+       "$T_{s,o}=49.6^\\circ$C"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "num": 15,
+   "ch": 11,
+   "title": "Heat exchangers: LMTD and effectiveness–NTU",
+   "tag": "F",
+   "sched": "Oct 20 & Oct 29",
+   "why": "Two methods for the same energy balance: LMTD when all four temperatures are known, NTU when outlets are unknown.",
+   "sections": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5"
+   ],
+   "book": [
+    {
+     "sec": "11.1",
+     "title": "Heat Exchanger Types",
+     "page": 646
+    },
+    {
+     "sec": "11.2",
+     "title": "The Overall Heat Transfer Coefficient",
+     "page": 648
+    },
+    {
+     "sec": "11.3",
+     "title": "Heat Exchanger Analysis: Use of the Log Mean Temperature Difference",
+     "page": 651
+    },
+    {
+     "sec": "11.4",
+     "title": "Heat Exchanger Analysis: The Effectiveness–NTU Method",
+     "page": 662
+    },
+    {
+     "sec": "11.5",
+     "title": "Heat Exchanger Design and Performance Calculations",
+     "page": 670
+    }
+   ],
+   "examples": [
+    {
+     "ex": "11.1",
+     "page": 656
+    },
+    {
+     "ex": "11.2",
+     "page": 658
+    },
+    {
+     "ex": "11.3",
+     "page": 668
+    },
+    {
+     "ex": "11.4",
+     "page": 670
+    },
+    {
+     "ex": "11.5",
+     "page": 672
+    },
+    {
+     "ex": "11.6",
+     "page": 675
+    }
+   ],
+   "videos": [
+    {
+     "id": "wijs6wlLCxs",
+     "title": "Parallel vs counterflow: log-mean temperature difference",
+     "channel": "Brian Bernard",
+     "len": "14:55",
+     "note": "LMTD setup",
+     "verified": true,
+     "ytTitle": "Parallel vs Counter Flow - Log Mean Temperature Difference (LMTD)",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "HPJxwbMrNow",
+     "title": "Log mean temperature difference",
+     "channel": "LearnChemE",
+     "len": "2:47",
+     "note": "Definition in 3 minutes",
+     "verified": true,
+     "ytTitle": "Log Mean Temperature Difference",
+     "ytAuthor": "LearnChemE"
+    },
+    {
+     "id": "dAsgQXGEzp0",
+     "title": "Log mean temperature difference made easy",
+     "channel": "The ChemEngStudent",
+     "len": "10:42",
+     "note": "Worked example",
+     "verified": true,
+     "ytTitle": "Log Mean Temperature Difference Made Easy | Heat Transfer Tutorial",
+     "ytAuthor": "The ChemEngStudent"
+    },
+    {
+     "id": "cBw7zz_d0lk",
+     "title": "Chapter 11.3: LMTD",
+     "channel": "Regina Vrikkis",
+     "len": "10:15",
+     "note": "Book-aligned",
+     "verified": true,
+     "ytTitle": "Heat Transfer Chapter 11.3 Heat Exchangers: The Log Mean Temperature Difference",
+     "ytAuthor": "Regina Vrikkis"
+    },
+    {
+     "id": "Rqkgb_qiz0c",
+     "title": "L33 p1 – Effectiveness–NTU method",
+     "channel": "Ron Hugo",
+     "len": "8:39",
+     "note": "Concept",
+     "verified": true,
+     "ytTitle": "Heat Transfer L33 p1 - Effectiveness-NTU Method",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "gXM9ZdWbNLA",
+     "title": "L33 p2 – Procedures using the ε–NTU method",
+     "channel": "Ron Hugo",
+     "len": "6:46",
+     "note": "Procedure",
+     "verified": true,
+     "ytTitle": "Heat Transfer L33 p2 - Procedures using Effectiveness-NTU Method",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "aRyIx1Xnamk",
+     "title": "NTU example: double-pipe counterflow",
+     "channel": "Brian Bernard",
+     "len": "18:50",
+     "note": "Full example",
+     "verified": true,
+     "ytTitle": "NTU Example Problem - Double Pipe CounterFlow Heat Exchanger",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "yXW6LGNe2Ko",
+     "title": "L31 p4 – Overall heat transfer coefficient",
+     "channel": "Ron Hugo",
+     "len": "8:54",
+     "note": "$U$ and fouling",
+     "verified": true,
+     "ytTitle": "Heat Transfer L31 p4 - Overall Heat Transfer Coefficient",
+     "ytAuthor": "Ron Hugo"
+    }
+   ],
+   "know": [
+    "$q=UA\\Delta T_{lm}$ with $\\Delta T_{lm}$ for counterflow ($\\Delta T_1=T_{h,i}-T_{c,o}$) or parallel flow ($\\Delta T_1=T_{h,i}-T_{c,i}$). Use correction factor $F$ for cross-flow and multipass.",
+    "Overall coefficient $1/UA=R_{h}+R_{f}+R_{wall}+R_{c}$ — resistances add, same as Chapter 3.",
+    "$\\varepsilon=q/q_{max}$, $q_{max}=C_{min}(T_{h,i}-T_{c,i})$, $NTU=UA/C_{min}$, $C_r=C_{min}/C_{max}$. Tables 11.3–11.4 give $\\varepsilon$ ↔ NTU for each flow arrangement.",
+    "Boiling/condensing ($C_r=0$): $\\varepsilon=1-e^{-NTU}$ for every configuration.",
+    "Counterflow is always at least as effective as parallel flow for the same $UA$."
+   ],
+   "eq": [
+    {
+     "label": "Heat rate",
+     "tex": "q=UA\\,\\Delta T_{lm},\\quad \\Delta T_{lm}=\\dfrac{\\Delta T_1-\\Delta T_2}{\\ln(\\Delta T_1/\\Delta T_2)}"
+    },
+    {
+     "label": "NTU",
+     "tex": "NTU=\\dfrac{UA}{C_{min}},\\ \\ C_r=\\dfrac{C_{min}}{C_{max}},\\ \\ C=\\dot mc_p"
+    },
+    {
+     "label": "Effectiveness",
+     "tex": "\\varepsilon=\\dfrac{q}{C_{min}(T_{h,i}-T_{c,i})}"
+    },
+    {
+     "label": "Counterflow",
+     "tex": "\\varepsilon=\\dfrac{1-e^{-NTU(1-C_r)}}{1-C_re^{-NTU(1-C_r)}}"
+    },
+    {
+     "label": "Parallel flow",
+     "tex": "\\varepsilon=\\dfrac{1-e^{-NTU(1+C_r)}}{1+C_r}"
+    },
+    {
+     "label": "Overall $U$",
+     "tex": "\\dfrac1{UA}=\\dfrac1{(hA)_h}+\\dfrac{R''_{f,h}}{A_h}+R_{wall}+\\dfrac{R''_{f,c}}{A_c}+\\dfrac1{(hA)_c}"
+    }
+   ],
+   "pitfalls": [
+    "Mislabeling $\\Delta T_1$ and $\\Delta T_2$ for counterflow.",
+    "Using the cold-stream capacity rate as $C_{min}$ without checking.",
+    "Applying LMTD when outlet temperatures are unknown — use NTU."
+   ],
+   "tables": [
+    "Tables 11.1–11.2 (fouling factors, typical $U$)",
+    "Tables 11.3–11.4 (ε and NTU relations)",
+    "F-factor charts (Section 11.3)"
+   ],
+   "samples": [
+    "No Ch 11 slides or homework are posted on Canvas — rely on the book and these videos"
+   ],
+   "canvas": {
+    "files": [],
+    "hw": []
+   },
+   "problems": [
+    {
+     "id": "15a",
+     "title": "Oil cooler design with LMTD (counter vs parallel)",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "Oil ($\\dot m=2$ kg/s, $c_p=2100$ J/kg·K) is cooled from $120^\\circ$C to $80^\\circ$C by water entering at $20^\\circ$C and leaving at $50^\\circ$C ($c_p=4180$). The overall coefficient is $U=500$ W/m²K. Find (a) the heat rate, (b) the water flow rate, (c) the area required for a counterflow exchanger, and (d) the area if it were parallel flow.",
+     "given": [
+      "oil 2 kg/s, 120→80 °C",
+      "water 20→50 °C",
+      "$U=500$ W/m²K"
+     ],
+     "find": [
+      "$q$",
+      "$\\dot m_c$",
+      "$A_{counter}$",
+      "$A_{parallel}$"
+     ],
+     "hint": "Label which temperature difference sits at which end before taking the log.",
+     "solution": {
+      "steps": [
+       "$q=\\dot m_hc_{p,h}(T_{h,i}-T_{h,o})=2(2100)(40)=168000$ W; $\\dot m_c=q/[c_{p,c}(T_{c,o}-T_{c,i})]=1.340$ kg/s.",
+       "Counterflow: $\\Delta T_1=T_{h,i}-T_{c,o}=70$ K, $\\Delta T_2=T_{h,o}-T_{c,i}=60$ K; $\\Delta T_{lm}=\\dfrac{\\Delta T_1-\\Delta T_2}{\\ln(\\Delta T_1/\\Delta T_2)}=64.87$ K.",
+       "$A=\\dfrac{q}{U\\Delta T_{lm}}=5.18$ m².",
+       "Parallel flow: $\\Delta T_1=T_{h,i}-T_{c,i}=100$, $\\Delta T_2=T_{h,o}-T_{c,o}=30$; $\\Delta T_{lm}=58.14$ K, so $A=5.78$ m² — about 12% more area."
+      ],
+      "answers": [
+       "$q=168$ kW; $\\dot m_c=1.34$ kg/s",
+       "$A_{counter}=5.18$ m²; $A_{parallel}=5.78$ m²"
+      ]
+     }
+    },
+    {
+     "id": "15b",
+     "title": "Rating an exchanger with the effectiveness–NTU method",
+     "level": "exam",
+     "minutes": 15,
+     "statement": "A counterflow water–water exchanger has $UA=400\\times8=3200$ W/K. Hot water enters at $90^\\circ$C at $0.8$ kg/s; cold water enters at $20^\\circ$C at $1.2$ kg/s ($c_p=4180$ J/kg·K for both). Find the effectiveness, the heat rate, and both outlet temperatures. How would a parallel-flow arrangement with the same $UA$ compare? (Counterflow: $\\varepsilon=\\dfrac{1-e^{-NTU(1-C_r)}}{1-C_re^{-NTU(1-C_r)}}$; parallel: $\\varepsilon=\\dfrac{1-e^{-NTU(1+C_r)}}{1+C_r}$.)",
+     "given": [
+      "hot 0.8 kg/s at 90 °C",
+      "cold 1.2 kg/s at 20 °C",
+      "$UA=3200$ W/K",
+      "counterflow"
+     ],
+     "find": [
+      "$C_{min}$, $C_r$, NTU",
+      "$\\varepsilon$, $q$",
+      "$T_{h,o}$, $T_{c,o}$",
+      "parallel comparison"
+     ],
+     "hint": "NTU uses $C_{min}$, not the cold stream, unless they happen to be the same.",
+     "solution": {
+      "steps": [
+       "$C_h=3344$ W/K, $C_c=5016$ W/K: $C_{min}=C_h$, $C_r=C_{min}/C_{max}=0.667$, $NTU=UA/C_{min}=0.957$.",
+       "$\\varepsilon=0.5299$. $q_{max}=C_{min}(T_{h,i}-T_{c,i})=234080$ W, so $q=\\varepsilon q_{max}=124037$ W.",
+       "$T_{h,o}=T_{h,i}-q/C_h=52.9^\\circ$C; $T_{c,o}=T_{c,i}+q/C_c=44.7^\\circ$C.",
+       "Parallel: $\\varepsilon=0.4782$, $q=111947$ W — about 10% less heat for the same $UA$."
+      ],
+      "answers": [
+       "$\\varepsilon=0.530$, $q=124037$ W",
+       "$T_{h,o}=52.9^\\circ$C; $T_{c,o}=44.7^\\circ$C"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "num": 16,
+   "ch": 9,
+   "title": "Free (natural) convection",
+   "tag": "F",
+   "sched": "Nov 3–10",
+   "why": "Compute $Ra$ first; it picks the correlation (vertical plate, horizontal plate, cylinder, enclosure) and tells you if the flow is laminar or turbulent.",
+   "sections": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5",
+    "9.6",
+    "9.7",
+    "9.8",
+    "9.9"
+   ],
+   "book": [
+    {
+     "sec": "9.1",
+     "title": "Physical Considerations",
+     "page": 540
+    },
+    {
+     "sec": "9.2",
+     "title": "The Governing Equations for Laminar Boundary Layers",
+     "page": 542
+    },
+    {
+     "sec": "9.3",
+     "title": "Similarity Considerations",
+     "page": 544
+    },
+    {
+     "sec": "9.4",
+     "title": "Laminar Free Convection on a Vertical Surface",
+     "page": 545
+    },
+    {
+     "sec": "9.5",
+     "title": "The Effects of Turbulence",
+     "page": 548
+    },
+    {
+     "sec": "9.6",
+     "title": "Empirical Correlations: External Free Convection Flows",
+     "page": 550
+    },
+    {
+     "sec": "9.7",
+     "title": "Free Convection Within Parallel Plate Channels",
+     "page": 564
+    },
+    {
+     "sec": "9.8",
+     "title": "Empirical Correlations: Enclosures",
+     "page": 567
+    },
+    {
+     "sec": "9.9",
+     "title": "Combined Free and Forced Convection",
+     "page": 573
+    }
+   ],
+   "examples": [
+    {
+     "ex": "9.1",
+     "page": 549
+    },
+    {
+     "ex": "9.2",
+     "page": 552
+    },
+    {
+     "ex": "9.3",
+     "page": 556
+    },
+    {
+     "ex": "9.4",
+     "page": 560
+    },
+    {
+     "ex": "9.5",
+     "page": 572
+    }
+   ],
+   "videos": [
+    {
+     "id": "QB4yD7Gb5wI",
+     "title": "Ch 9 – Conceptual introduction to natural (free) convection",
+     "channel": "Kody Powell",
+     "len": "12:09",
+     "note": "Buoyancy picture",
+     "verified": true,
+     "ytTitle": "Heat Transfer - Chapter 9 - Conceptual Introduction to Natural (Free) Convection)",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "dg1c3KwKR2g",
+     "title": "L23 p1 – Free or natural convection",
+     "channel": "Ron Hugo",
+     "len": "5:45",
+     "note": "Quick intro",
+     "verified": true,
+     "ytTitle": "Heat Transfer L23 p1 - Free or Natural Convection",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "fefT7SWgKfA",
+     "title": "L23 p2 – Natural convection fluid mechanics",
+     "channel": "Ron Hugo",
+     "len": "8:09",
+     "note": "Boundary layer",
+     "verified": true,
+     "ytTitle": "Heat Transfer L23 p2 - Natural Convection - Fluid Mechanics",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "kNT88CcpLyM",
+     "title": "Free convection over a vertical plate",
+     "channel": "LearnChemE",
+     "len": "7:25",
+     "note": "Vertical plate",
+     "verified": true,
+     "ytTitle": "Free Convection over a Vertical Plate",
+     "ytAuthor": "LearnChemE"
+    },
+    {
+     "id": "nN24XQFk4zE",
+     "title": "Natural convection example: vertical vs horizontal surfaces",
+     "channel": "Brian Bernard",
+     "len": "23:34",
+     "note": "Choosing correlations",
+     "verified": true,
+     "ytTitle": "Natural Convection Example Problem - Vertical vs Horizontal Surfaces",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "coMnsOGgosQ",
+     "title": "L25 p1 – Free convection in enclosed spaces",
+     "channel": "Ron Hugo",
+     "len": "6:33",
+     "note": "Enclosures",
+     "verified": true,
+     "ytTitle": "Heat Transfer L25 p1 - Free Convection in Enclosed Spaces",
+     "ytAuthor": "Ron Hugo"
+    }
+   ],
+   "know": [
+    "Buoyancy drives the flow. $Gr_L=g\\beta\\Delta TL^3/\\nu^2$, $Ra_L=Gr_LPr$; $\\beta=1/T_f$ for ideal gases (kelvin!).",
+    "Vertical plate transition at $Ra_L\\approx10^9$. Churchill–Chu full-range correlation works for all $Ra$; the laminar-only form needs $Ra\\le10^9$.",
+    "Horizontal plates: hot side up (or cold side down) $Nu=0.54Ra^{1/4}$ or $0.15Ra^{1/3}$; hot side down $Nu=0.52Ra^{1/5}$ (check Table 9.3). Characteristic length $L=A_s/P$.",
+    "Horizontal cylinder and sphere: Churchill–Chu forms; enclosures use cavity correlations (§9.8).",
+    "Mixed convection when $Gr/Re^2\\approx1$: combine $Nu^n=Nu_F^n\\pm Nu_N^n$ ($n=3$ for most cases).",
+    "Natural convection $h$ is small, so radiation is often comparable — add $h_r$."
+   ],
+   "eq": [
+    {
+     "label": "Rayleigh",
+     "tex": "Ra_L=\\dfrac{g\\beta(T_s-T_\\infty)L^3}{\\nu\\alpha}"
+    },
+    {
+     "label": "Vertical plate (full range)",
+     "tex": "\\overline{Nu}_L=\\left\\{0.825+\\dfrac{0.387Ra_L^{1/6}}{[1+(0.492/Pr)^{9/16}]^{8/27}}\\right\\}^2"
+    },
+    {
+     "label": "Vertical plate (laminar)",
+     "tex": "\\overline{Nu}_L=0.68+\\dfrac{0.670Ra_L^{1/4}}{[1+(0.492/Pr)^{9/16}]^{4/9}}\\ \\ (Ra_L\\le10^9)"
+    },
+    {
+     "label": "Horizontal cylinder",
+     "tex": "\\overline{Nu}_D=\\left\\{0.6+\\dfrac{0.387Ra_D^{1/6}}{[1+(0.559/Pr)^{9/16}]^{8/27}}\\right\\}^2"
+    },
+    {
+     "label": "Horizontal plate, hot up",
+     "tex": "\\overline{Nu}_L=0.54Ra_L^{1/4}\\ (10^4\\!-\\!10^7),\\ \\ 0.15Ra_L^{1/3}\\ (10^7\\!-\\!10^{11})"
+    },
+    {
+     "label": "Mixed convection",
+     "tex": "Nu^3=Nu_F^3\\pm Nu_N^3"
+    }
+   ],
+   "pitfalls": [
+    "Using °C for $\\beta$.",
+    "Not computing $Ra$ before choosing.",
+    "Forgetting to add radiation."
+   ],
+   "tables": [
+    "Table 9.2 (constants for horizontal plates)",
+    "Table 9.3 (summary of correlations)",
+    "Table A.4, A.6 (properties)"
+   ],
+   "samples": [
+    "Instructor examples: Ch 9 Prob 7, 40, 59 & 67"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 9 slides (9.1–9.6.2, 9.9)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477698"
+     },
+     {
+      "label": "Ch 9 slides (9.6.3–9.8)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477699"
+     },
+     {
+      "label": "Notes: Ch 9 §1–4",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477495"
+     },
+     {
+      "label": "Notes: Ch 9 §7, 8",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477497"
+     },
+     {
+      "label": "Ch 9 Prob 7",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477743"
+     },
+     {
+      "label": "Ch 9 Prob 40",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477709"
+     },
+     {
+      "label": "Ch 9 Prob 59 & 67",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477734"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW10 · Ch 9: 9, 36, 39, 61, 71",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221364",
+      "due": "Nov 12"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "16a",
+     "title": "Vertical heated plate in still air",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A vertical plate $0.6$ m tall and $0.8$ m wide is at $370$ K in quiescent air at $280$ K. Film properties (325 K): $k=0.02815$ W/m·K, $\\nu=18.4\\times10^{-6}$ m²/s, $\\alpha=26.2\\times10^{-6}$ m²/s, $Pr=0.7035$, $\\beta=1/T_f$. Find $Ra_L$, decide the regime, and compute $\\bar h$ and the convective heat rate using the Churchill–Chu full-range correlation $\\overline{Nu}_L=\\left\\{0.825+\\dfrac{0.387Ra_L^{1/6}}{[1+(0.492/Pr)^{9/16}]^{8/27}}\\right\\}^2$.",
+     "given": [
+      "$L=0.6$ m, $W=0.8$ m",
+      "$T_s=370$ K, $T_\\infty=280$ K",
+      "air at 325 K properties"
+     ],
+     "find": [
+      "$Ra_L$",
+      "$\\overline{Nu}_L$, $\\bar h$",
+      "$q$"
+     ],
+     "hint": "$\\beta=1/T_f$ for an ideal gas, with $T_f$ in kelvin. Compute $Ra$ first to choose the correlation.",
+     "solution": {
+      "steps": [
+       "$Ra_L=\\dfrac{g\\beta\\Delta TL^3}{\\nu\\alpha}=1.22\\times10^{9}$. Transition for a vertical plate is near $10^9$, so this is turbulent.",
+       "Churchill–Chu: $\\overline{Nu}_L=130.4$ (the laminar-only form would give 96.6, which is not valid here).",
+       "$\\bar h=\\overline{Nu}_Lk/L=6.12$ W/m²K; $q=\\bar hA\\Delta T=264$ W."
+      ],
+      "answers": [
+       "$Ra_L=1.22\\times10^{9}$ (turbulent)",
+       "$\\bar h=6.12$ W/m²K; $q=264$ W"
+      ]
+     }
+    },
+    {
+     "id": "16b",
+     "title": "Hot pipe in a room: free convection plus radiation",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A horizontal pipe of diameter $D=50$ mm at 370 K sits in still air at 280 K (same film properties as 16a); the pipe surface emissivity is $\\varepsilon=0.9$ and the room surfaces are at 280 K. Find $Ra_D$, $\\bar h$ from the Churchill–Chu horizontal-cylinder correlation $\\overline{Nu}_D=\\left\\{0.6+\\dfrac{0.387Ra_D^{1/6}}{[1+(0.559/Pr)^{9/16}]^{8/27}}\\right\\}^2$, and the convective, radiative and total heat loss per meter.",
+     "given": [
+      "$D=0.05$ m",
+      "$T_s=370$ K, $T_\\infty=T_{sur}=280$ K",
+      "$\\varepsilon=0.9$"
+     ],
+     "find": [
+      "$Ra_D$",
+      "$\\bar h$",
+      "$q'_{conv}$, $q'_{rad}$, total"
+     ],
+     "hint": "In natural convection in air, $h$ and $h_r$ are often the same order of magnitude. Add both.",
+     "solution": {
+      "steps": [
+       "$Ra_D=7.04\\times10^{5}$ (well within the $Ra_D\\le10^{12}$ range).",
+       "$\\overline{Nu}_D=13.16$, $\\bar h=7.41$ W/m²K.",
+       "$h_r=\\varepsilon\\sigma(T_s+T_{sur})(T_s^2+T_{sur}^2)=7.14$ W/m²K — almost the same as $\\bar h$, so radiation carries about half of the total loss.",
+       "$q'_{conv}=\\bar h\\pi D\\Delta T=104.8$ W/m; $q'_{rad}=h_r\\pi D\\Delta T=101.0$ W/m; total $=205.7$ W/m."
+      ],
+      "answers": [
+       "$\\bar h=7.41$ W/m²K",
+       "$q'_{conv}=104.8$, $q'_{rad}=101.0$, total $205.7$ W/m"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "num": 17,
+   "ch": 12,
+   "title": "Radiation: properties and processes",
+   "tag": "F",
+   "sched": "Nov 12–17",
+   "why": "Blackbody laws, band emission with $F(\\lambda T)$, emissivity/absorptivity and Kirchhoff's law. Problems combine them with energy balances.",
+   "sections": [
+    "12.1",
+    "12.2",
+    "12.3",
+    "12.4",
+    "12.5",
+    "12.6",
+    "12.7",
+    "12.8",
+    "12.9"
+   ],
+   "book": [
+    {
+     "sec": "12.1",
+     "title": "Fundamental Concepts",
+     "page": 702
+    },
+    {
+     "sec": "12.2",
+     "title": "Radiation Heat Fluxes",
+     "page": 705
+    },
+    {
+     "sec": "12.3",
+     "title": "Radiation Intensity",
+     "page": 707
+    },
+    {
+     "sec": "12.4",
+     "title": "Blackbody Radiation",
+     "page": 716
+    },
+    {
+     "sec": "12.5",
+     "title": "Emission from Real Surfaces",
+     "page": 726
+    },
+    {
+     "sec": "12.6",
+     "title": "Absorption, Reflection, and Transmission by Real Surfaces",
+     "page": 735
+    },
+    {
+     "sec": "12.7",
+     "title": "Kirchhoff’s Law",
+     "page": 744
+    },
+    {
+     "sec": "12.8",
+     "title": "The Gray Surface",
+     "page": 746
+    },
+    {
+     "sec": "12.9",
+     "title": "Environmental Radiation",
+     "page": 752
+    }
+   ],
+   "examples": [
+    {
+     "ex": "12.1",
+     "page": 711
+    },
+    {
+     "ex": "12.2",
+     "page": 714
+    },
+    {
+     "ex": "12.3",
+     "page": 722
+    },
+    {
+     "ex": "12.4",
+     "page": 723
+    },
+    {
+     "ex": "12.5",
+     "page": 725
+    },
+    {
+     "ex": "12.6",
+     "page": 731
+    },
+    {
+     "ex": "12.7",
+     "page": 733
+    },
+    {
+     "ex": "12.8",
+     "page": 741
+    },
+    {
+     "ex": "12.9",
+     "page": 743
+    },
+    {
+     "ex": "12.10",
+     "page": 748
+    },
+    {
+     "ex": "12.11",
+     "page": 750
+    },
+    {
+     "ex": "12.12",
+     "page": 759
+    }
+   ],
+   "videos": [
+    {
+     "id": "BD609Vp3ulE",
+     "title": "Ch 12.1–12.2, 12.4–12.5: Fundamental concepts of radiation",
+     "channel": "Regina Vrikkis",
+     "len": "11:34",
+     "note": "Book-aligned",
+     "verified": true,
+     "ytTitle": "Ch 12.1-12.2, 12.4 12.5 Fundamental Concepts of Radiation",
+     "ytAuthor": "Regina Vrikkis"
+    },
+    {
+     "id": "otdK1x-WCsk",
+     "title": "L2 p5 – Radiative heat transfer simplified",
+     "channel": "Ron Hugo",
+     "len": "7:43",
+     "note": "Simple net radiation",
+     "verified": true,
+     "ytTitle": "Heat Transfer L2 p5 - Radiative Heat Transfer - Simplified",
+     "ytAuthor": "Ron Hugo"
+    },
+    {
+     "id": "FDmYCI_xYlA",
+     "title": "Understanding thermal radiation",
+     "channel": "The Efficient Engineer",
+     "len": "17:33",
+     "note": "Big picture",
+     "verified": true,
+     "ytTitle": "Understanding Thermal Radiation",
+     "ytAuthor": "The Efficient Engineer"
+    },
+    {
+     "id": "F7ocoOdrH-I",
+     "title": "Kirchhoff's law in radiation: emissivity and absorptivity",
+     "channel": "Shridhar Jagtap",
+     "len": "11:31",
+     "note": "Kirchhoff",
+     "verified": true,
+     "ytTitle": "8| Kirchhoff’s Law in Radiation | Emissivity & Absorptivity Explained Simply",
+     "ytAuthor": "Shridhar Jagtap"
+    },
+    {
+     "id": "wA5-BH2nSq4",
+     "title": "Thermal radiation 3",
+     "channel": "Randall Manteufel",
+     "len": "41:01",
+     "note": "Longer lecture on properties",
+     "verified": true,
+     "ytTitle": "Thermal Radiation 3",
+     "ytAuthor": "Randall Manteufel"
+    }
+   ],
+   "know": [
+    "Blackbody: $E_b=\\sigma T^4$; spectral shape from Planck; Wien: $\\lambda_{max}T=2898\\ \\mu$m·K.",
+    "Band emission via $F_{(0\\to\\lambda T)}$ from Table 12.2: $E_{\\lambda_1\\to\\lambda_2}=[F(\\lambda_2T)-F(\\lambda_1T)]E_b$.",
+    "Real surfaces: $E=\\varepsilon E_b$. Irradiation splits: $\\alpha+\\rho+\\tau=1$ (opaque: $\\alpha+\\rho=1$).",
+    "Kirchhoff: $\\varepsilon_\\lambda=\\alpha_\\lambda$ for diffuse surfaces; total $\\varepsilon=\\alpha$ only if gray or if the irradiation matches the surface temperature.",
+    "$\\alpha$ depends on the source spectrum (use band fractions at the source temperature); $\\varepsilon$ on the surface spectrum.",
+    "Intensity: diffuse emission $E=\\pi I_e$; solid-angle integrals give irradiation and emissive power."
+   ],
+   "eq": [
+    {
+     "label": "Blackbody",
+     "tex": "E_b=\\sigma T^4,\\ \\ \\sigma=5.67\\times10^{-8}\\ \\mathrm{W/m^2K^4}"
+    },
+    {
+     "label": "Wien",
+     "tex": "\\lambda_{max}T=2898\\ \\mu\\mathrm{m\\!\\cdot\\!K}"
+    },
+    {
+     "label": "Band fraction",
+     "tex": "E_{\\lambda_1\\to\\lambda_2}=\\left[F_{(0\\to\\lambda_2T)}-F_{(0\\to\\lambda_1T)}\\right]\\sigma T^4"
+    },
+    {
+     "label": "Emissivity",
+     "tex": "\\varepsilon=\\dfrac{E}{E_b}"
+    },
+    {
+     "label": "Absorptivity (average)",
+     "tex": "\\alpha=\\dfrac{\\int\\alpha_\\lambda G_\\lambda d\\lambda}{\\int G_\\lambda d\\lambda}"
+    },
+    {
+     "label": "Energy split",
+     "tex": "\\alpha+\\rho+\\tau=1"
+    },
+    {
+     "label": "Small body in large surroundings",
+     "tex": "q_{rad}=\\varepsilon A\\sigma(T_s^4-T_{sur}^4)"
+    }
+   ],
+   "pitfalls": [
+    "Using $\\varepsilon$ where $\\alpha_S$ is needed (and vice versa).",
+    "Using Celsius.",
+    "Applying Kirchhoff to non-diffuse surfaces or without checking the spectra."
+   ],
+   "tables": [
+    "Table 12.2 (blackbody radiation functions)",
+    "Table 12.3 ($\\alpha_S$, $\\varepsilon$ of surfaces)",
+    "Table A.11 (emissivities)"
+   ],
+   "samples": [
+    "Instructor examples: Ch 12 Prob 3, 7, 16, 30 & 38"
+   ],
+   "canvas": {
+    "files": [
+     {
+      "label": "Ch 12 slides (12.1–12.4)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477702"
+     },
+     {
+      "label": "Ch 12 slides (12.5–12.8)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477703"
+     },
+     {
+      "label": "Ch 12 slides (12.9)",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477704"
+     },
+     {
+      "label": "Notes: Ch 12 §1–3",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477683"
+     },
+     {
+      "label": "Notes: Ch 12 §4",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477678"
+     },
+     {
+      "label": "Notes: Ch 12 §5",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477685"
+     },
+     {
+      "label": "Notes: Ch 12 §6–8",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477686"
+     },
+     {
+      "label": "Ch 12 Prob 3",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477711"
+     },
+     {
+      "label": "Ch 12 Prob 7",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477705"
+     },
+     {
+      "label": "Ch 12 Prob 16",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477706"
+     },
+     {
+      "label": "Ch 12 Prob 30 & 38",
+      "url": "https://uvu.instructure.com/courses/641165/files/134477713"
+     }
+    ],
+    "hw": [
+     {
+      "label": "HW11 · Ch 12: 1, 10, 14, 27",
+      "url": "https://uvu.instructure.com/courses/641165/assignments/9221365",
+      "due": "Nov 18"
+     }
+    ]
+   },
+   "problems": [
+    {
+     "id": "17a",
+     "title": "Blackbody band emission and Wien's law",
+     "level": "exam",
+     "minutes": 10,
+     "statement": "A surface at 1000 K emits as a blackbody. Find (a) its total emissive power, (b) the wavelength of peak emission, (c) the fraction and the power of emission between $\\lambda_1=2\\ \\mu$m and $\\lambda_2=5\\ \\mu$m (use the blackbody fraction $F_{(0\\to\\lambda)}$ vs. $\\lambda T$, Table 12.2), (d) the emissive power if the surface were gray with $\\varepsilon=0.6$.",
+     "given": [
+      "$T=1000$ K",
+      "$\\lambda_1=2\\ \\mu$m, $\\lambda_2=5\\ \\mu$m",
+      "$\\sigma=5.67\\times10^{-8}$"
+     ],
+     "find": [
+      "$E_b$",
+      "$\\lambda_{max}$",
+      "band fraction and power",
+      "gray $E$"
+     ],
+     "hint": "Convert wavelengths to $\\lambda T$ in $\\mu$m·K before using the table.",
+     "solution": {
+      "steps": [
+       "$E_b=\\sigma T^4=56700$ W/m².",
+       "Wien: $\\lambda_{max}T=2898\\ \\mu$m·K, so $\\lambda_{max}=2.898\\ \\mu$m (near-infrared).",
+       "$\\lambda_1T=2000$ and $\\lambda_2T=5000\\ \\mu$m·K give $F_{(0\\to2000)}=0.0667$ and $F_{(0\\to5000)}=0.6337$ (Table 12.2: 0.0667, 0.6337). Band fraction $=F_{(\\lambda_1\\to\\lambda_2)}=0.5670$, power $=32149$ W/m².",
+       "Gray: $E=\\varepsilon\\sigma T^4=34020$ W/m² (the same spectral shape, scaled by 0.6)."
+      ],
+      "answers": [
+       "$E_b=56700$ W/m²; $\\lambda_{max}=2.90\\ \\mu$m",
+       "band fraction $0.567$ → $32149$ W/m²; gray: $34020$ W/m²"
+      ]
+     }
+    },
+    {
+     "id": "17b",
+     "title": "Selective surface in sunlight (Kirchhoff + band properties)",
+     "level": "exam",
+     "minutes": 18,
+     "statement": "An opaque, diffuse plate facing the sun has $\\alpha_\\lambda=0.9$ for $\\lambda<2\\ \\mu$m and $\\alpha_\\lambda=0.2$ for $\\lambda>2\\ \\mu$m. Solar irradiation is $G_S=1000$ W/m² with spectral distribution of a 5800 K blackbody. The back is insulated and the plate radiates to cold space (no convection). (a) Find the solar absorptivity $\\alpha_S$. (b) Using Kirchhoff's law ($\\varepsilon_\\lambda=\\alpha_\\lambda$ for a diffuse surface), find the total emissivity at the equilibrium temperature and the equilibrium temperature itself.",
+     "given": [
+      "$\\alpha_\\lambda=0.9\\ (\\lambda<2\\ \\mu$m$)$, $0.2\\ (\\lambda>2\\ \\mu$m$)$",
+      "$G_S=1000$ W/m², sun ≈ 5800 K blackbody",
+      "insulated back, radiates to 0 K"
+     ],
+     "find": [
+      "$\\alpha_S$",
+      "$\\varepsilon$, $T_{eq}$"
+     ],
+     "hint": "$\\alpha$ is averaged with the **source** spectrum, $\\varepsilon$ with the **surface** spectrum (set by its own temperature).",
+     "solution": {
+      "steps": [
+       "Absorptivity is a solar-weighted average: $\\lambda T_{sun}=2\\times5800=11{,}600\\ \\mu$m·K gives $F_{(0\\to2\\mu m)}=0.9402$. $\\alpha_S=0.9F+0.2(1-F)=0.8581$.",
+       "Equilibrium: $\\alpha_SG_S=\\varepsilon(T)\\sigma T^4$ with $\\varepsilon(T)=0.9F_{(0\\to2T)}+0.2[1-F_{(0\\to2T)}]$. At the plate temperature $\\lambda T=2T\\approx1048\\ \\mu$m·K is tiny, so $F\\approx0$ and $\\varepsilon\\approx0.2004$.",
+       "Iterating: $T_{eq}=524$ K ($\\approx251^\\circ$C). A black surface would reach only $(G_S/\\sigma)^{1/4}=364$ K; the selective coating runs much hotter."
+      ],
+      "answers": [
+       "$\\alpha_S=0.858$",
+       "$\\varepsilon\\approx0.200$, $T_{eq}\\approx524$ K"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "num": 18,
+   "ch": 13,
+   "title": "Radiation exchange between surfaces",
+   "tag": "F",
+   "sched": "Nov 19",
+   "why": "View factors (reciprocity, summation) plus the radiation-resistance network solve enclosures and shields.",
+   "sections": [
+    "13.1",
+    "13.2",
+    "13.3"
+   ],
+   "book": [
+    {
+     "sec": "13.1",
+     "title": "The View Factor",
+     "page": 786
+    },
+    {
+     "sec": "13.2",
+     "title": "Blackbody Radiation Exchange",
+     "page": 796
+    },
+    {
+     "sec": "13.3",
+     "title": "Radiation Exchange Between Opaque, Diffuse, Gray Surfaces in an Enclosure",
+     "page": 800
+    }
+   ],
+   "examples": [
+    {
+     "ex": "13.1",
+     "page": 794
+    },
+    {
+     "ex": "13.2",
+     "page": 795
+    },
+    {
+     "ex": "13.3",
+     "page": 797
+    },
+    {
+     "ex": "13.4",
+     "page": 804
+    },
+    {
+     "ex": "13.5",
+     "page": 811
+    },
+    {
+     "ex": "13.6",
+     "page": 813
+    }
+   ],
+   "videos": [
+    {
+     "id": "UIfRBB49MC4",
+     "title": "View factors",
+     "channel": "LearnChemE",
+     "len": "9:51",
+     "note": "Fast intro",
+     "verified": true,
+     "ytTitle": "View Factors",
+     "ytAuthor": "LearnChemE"
+    },
+    {
+     "id": "x2vIp1thoVQ",
+     "title": "Intro to radiation view factors: reciprocity and superposition",
+     "channel": "Brian Bernard",
+     "len": "19:04",
+     "note": "Rules",
+     "verified": true,
+     "ytTitle": "Intro to Radiation View Factors - Reciprocity and Superposition",
+     "ytAuthor": "Brian Bernard"
+    },
+    {
+     "id": "kuYFeGY-zFA",
+     "title": "Determine the radiation view factor easily",
+     "channel": "The ChemEngStudent",
+     "len": "19:39",
+     "note": "Practice",
+     "verified": true,
+     "ytTitle": "Determine The Radiation View Factor Easily | Heat Transfer",
+     "ytAuthor": "The ChemEngStudent"
+    },
+    {
+     "id": "5YSK-gdosYw",
+     "title": "Crash course: example exam problem on radiation heat transfer",
+     "channel": "Kody Powell",
+     "len": "12:05",
+     "note": "Exam-style",
+     "verified": true,
+     "ytTitle": "Heat Transfer Crash Course: Example Exam Problem: Radiation heat transfer",
+     "ytAuthor": "Kody Powell"
+    },
+    {
+     "id": "H5sFz47N0rY",
+     "title": "Heat Transfer (20): Surface and space resistances, radiation network",
+     "channel": "CPPMechEngTutorials",
+     "len": "46:25",
+     "note": "Network method",
+     "verified": true,
+     "ytTitle": "Heat Transfer (20): Surface and space resistances, radiation network models and examples",
+     "ytAuthor": "CPPMechEngTutorials"
+    }
+   ],
+   "know": [
+    "View factor $F_{ij}$: fraction of radiation leaving $i$ that reaches $j$. Rules: reciprocity $A_iF_{ij}=A_jF_{ji}$, summation $\\sum_jF_{ij}=1$, superposition, symmetry. Table 13.1–13.2 give common geometries.",
+    "Black surfaces: $q_{ij}=A_iF_{ij}\\sigma(T_i^4-T_j^4)$.",
+    "Gray diffuse enclosure: surface resistance $(1-\\varepsilon)/\\varepsilon A$ and space resistance $1/A_iF_{ij}$ in a network between $E_b$ and radiosity $J$ nodes.",
+    "Special cases (Table 13.3): large parallel plates, long concentric cylinders/spheres, small object in a large cavity.",
+    "Radiation shields add two surface resistances and one space resistance per gap; they reduce the exchange by roughly $1/(N+1)$ for equal emissivities."
+   ],
+   "eq": [
+    {
+     "label": "Reciprocity",
+     "tex": "A_iF_{ij}=A_jF_{ji}"
+    },
+    {
+     "label": "Summation",
+     "tex": "\\sum_{j=1}^NF_{ij}=1"
+    },
+    {
+     "label": "Black surfaces",
+     "tex": "q_{ij}=A_iF_{ij}\\,\\sigma(T_i^4-T_j^4)"
+    },
+    {
+     "label": "Net radiation from surface $i$",
+     "tex": "q_i=\\dfrac{E_{b,i}-J_i}{(1-\\varepsilon_i)/\\varepsilon_iA_i}"
+    },
+    {
+     "label": "Space resistance",
+     "tex": "R_{ij}=\\dfrac1{A_iF_{ij}}"
+    },
+    {
+     "label": "Large parallel plates",
+     "tex": "q''_{12}=\\dfrac{\\sigma(T_1^4-T_2^4)}{1/\\varepsilon_1+1/\\varepsilon_2-1}"
+    },
+    {
+     "label": "Triangle (2-D)",
+     "tex": "F_{12}=\\dfrac{w_1+w_2-w_3}{2w_1}"
+    }
+   ],
+   "pitfalls": [
+    "Forgetting that a flat or convex surface has $F_{ii}=0$.",
+    "Using $\\varepsilon$ where radiosity is needed.",
+    "Dropping a surface resistance for a low-emissivity surface (it often dominates)."
+   ],
+   "tables": [
+    "Tables 13.1–13.2 (view factors)",
+    "Table 13.3 (special enclosures)"
+   ],
+   "samples": [
+    "No Ch 13 slides or homework are posted on Canvas — rely on the book and these videos"
+   ],
+   "canvas": {
+    "files": [],
+    "hw": []
+   },
+   "problems": [
+    {
+     "id": "18a",
+     "title": "View factors in a long triangular duct",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "A long duct has a right-triangle cross-section with sides $w_1=0.3$ m, $w_2=0.4$ m and $w_3=0.5$ m (flat surfaces, no self-view). (a) Find all nine view factors using the summation rule, reciprocity and (for a triangle) the crossed-strings form $F_{12}=(w_1+w_2-w_3)/(2w_1)$. (b) If surfaces 1 and 2 are black at 500 K and 300 K, find the net radiation from 1 to 2 per unit length.",
+     "given": [
+      "$w_1=0.3$, $w_2=0.4$, $w_3=0.5$ m",
+      "$T_1=500$ K, $T_2=300$ K (black)"
+     ],
+     "find": [
+      "$F_{ij}$",
+      "$q'_{1\\to2}$"
+     ],
+     "hint": "Use reciprocity to get the 'backwards' factors, summation to finish each row.",
+     "solution": {
+      "steps": [
+       "No self-view, so $F_{11}=F_{22}=F_{33}=0$. $F_{12}=\\dfrac{w_1+w_2-w_3}{2w_1}=0.3333$, $F_{13}=1-F_{12}=0.6667$ (check: $\\dfrac{w_1+w_3-w_2}{2w_1}=0.6667$).",
+       "Reciprocity $A_iF_{ij}=A_jF_{ji}$ (per unit length $A=w$): $F_{21}=w_1F_{12}/w_2=0.2500$, $F_{31}=w_1F_{13}/w_3=0.4000$.",
+       "Summation: $F_{23}=1-F_{21}=0.7500$ and $F_{32}=1-F_{31}=0.6000$; check reciprocity $w_2F_{23}=0.3000=w_3F_{32}=0.3000$ ✓.",
+       "$q'_{1\\to2}=A_1'F_{12}\\sigma(T_1^4-T_2^4)=0.3(0.3333)(5.67\\times10^{-8})(500^4-300^4)=308.4$ W/m."
+      ],
+      "answers": [
+       "$F_{12}=0.333$, $F_{13}=0.667$, $F_{21}=0.250$, $F_{23}=0.750$, $F_{31}=0.400$, $F_{32}=0.600$",
+       "$q'_{1\\to2}=308.4$ W/m"
+      ]
+     }
+    },
+    {
+     "id": "18b",
+     "title": "Radiation shield between large parallel plates",
+     "level": "exam",
+     "minutes": 12,
+     "statement": "Two large parallel gray plates have $T_1=600$ K, $\\varepsilon_1=0.7$ and $T_2=300$ K, $\\varepsilon_2=0.5$. (a) Find the net radiation flux between them. (b) A thin shield with $\\varepsilon_3=0.1$ on both sides is placed midway. Find the new flux and the shield temperature. By what percentage does the shield cut the exchange?",
+     "given": [
+      "$T_1=600$ K, $\\varepsilon_1=0.7$",
+      "$T_2=300$ K, $\\varepsilon_2=0.5$",
+      "shield $\\varepsilon_3=0.1$ (both sides)"
+     ],
+     "find": [
+      "$q''_{12}$",
+      "$q''$ with shield, $T_3$",
+      "reduction"
+     ],
+     "hint": "Treat each gap as a two-plate exchange and add the resistances in series.",
+     "solution": {
+      "steps": [
+       "No shield: $q''_{12}=\\dfrac{\\sigma(T_1^4-T_2^4)}{1/\\varepsilon_1+1/\\varepsilon_2-1}=2837$ W/m².",
+       "With shield, two gaps in series: $R_{13}=1/\\varepsilon_1+1/\\varepsilon_3-1=10.43$, $R_{32}=1/\\varepsilon_3+1/\\varepsilon_2-1=11.00$, so $q''=\\dfrac{\\sigma(T_1^4-T_2^4)}{R_{13}+R_{32}}=321$ W/m².",
+       "Shield temperature from the first gap: $\\sigma(T_1^4-T_3^4)=q''R_{13}\\Rightarrow T_3=515$ K.",
+       "Reduction: $1-q''_{shield}/q''_{12}=89$% — a low-emissivity shield is very effective."
+      ],
+      "answers": [
+       "$q''_{12}=2837$ W/m²",
+       "with shield: $321$ W/m², $T_3=515$ K ($89$% reduction)"
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "mocks": [
+  {
+   "id": "mockA",
+   "title": "Mock final A (steady + transient + flow + free convection)",
+   "minutes": 120,
+   "problems": [
+    "3a",
+    "9a",
+    "14a",
+    "16b"
+   ]
+  },
+  {
+   "id": "mockB",
+   "title": "Mock final B (generation/fins + external + exchangers + radiation)",
+   "minutes": 120,
+   "problems": [
+    "5a",
+    "13b",
+    "15b",
+    "17b"
+   ]
+  }
+ ],
+ "tableGuide": [
+  {
+   "need": "Air properties (k, ν, α, Pr, μ, cp)",
+   "where": "Table A.4 — interpolate at the film temperature"
+  },
+  {
+   "need": "Water properties",
+   "where": "Table A.6 (saturated water); other fluids Table A.5"
+  },
+  {
+   "need": "Thermal conductivity and ρ, c of solids",
+   "where": "Table A.1 (metals), A.2 (nonmetals), A.3 (common materials)"
+  },
+  {
+   "need": "Emissivities / solar absorptivity",
+   "where": "Table A.11, Table 12.3"
+  },
+  {
+   "need": "Contact resistance",
+   "where": "Tables 3.1–3.2"
+  },
+  {
+   "need": "Fin tip cases and efficiency",
+   "where": "Table 3.4 and Table 3.5"
+  },
+  {
+   "need": "Shape factors for 2-D conduction",
+   "where": "Table 4.1"
+  },
+  {
+   "need": "Finite-difference nodal equations",
+   "where": "Table 4.2"
+  },
+  {
+   "need": "Transient one-term coefficients",
+   "where": "Table 5.1"
+  },
+  {
+   "need": "Cylinder / tube-bank constants",
+   "where": "Tables 7.2–7.6"
+  },
+  {
+   "need": "Summary of external-flow correlations",
+   "where": "Table 7.7"
+  },
+  {
+   "need": "Summary of free-convection correlations",
+   "where": "Table 9.3"
+  },
+  {
+   "need": "Heat-exchanger ε and NTU relations",
+   "where": "Tables 11.3–11.4"
+  },
+  {
+   "need": "Blackbody fraction F(λT)",
+   "where": "Table 12.2"
+  },
+  {
+   "need": "View factors",
+   "where": "Tables 13.1–13.2"
+  }
+ ],
+ "mistakes": [
+  "Radiation (or $\\beta$ in Ch 9) with °C instead of kelvin.",
+  "Skipping the Biot-number check before using lumped capacitance.",
+  "Using the same $q''$ in a cylinder or sphere (only $q$ is constant).",
+  "Property temperature: film temperature for external flow and free convection; mean temperature for internal flow.",
+  "No units, no box around the final answers, no assumptions listed — the instructor grades presentation.",
+  "Using a correlation outside its $Re$, $Pr$ or $Ra$ range — check the range first."
+ ],
+ "policy": "Built from concepts, videos and original practice problems only. It contains no solutions to assigned homework or test problems. The syllabus allows AI for finding information and brainstorming, and forbids it on tests, quizzes and for solving assigned work.",
+ "generated": "2026-11-11"
+}

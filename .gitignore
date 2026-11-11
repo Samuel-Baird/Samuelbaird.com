@@ -1,0 +1,6 @@
+# Copyrighted source material stays local only
+*.pdf
+courses/*/textbook/cache/
+courses/*/canvas/files/
+__pycache__/
+node_modules/
