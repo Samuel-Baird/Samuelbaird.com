@@ -1,0 +1,4 @@
+{
+  "_comment": "Dedupe log maintained by the daily run. Key = canonical listing URL. Value = {title, price, scout, first_seen, last_price}.",
+  "items": {}
+}
