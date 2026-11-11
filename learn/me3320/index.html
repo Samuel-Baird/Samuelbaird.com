@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark">
+<title>ME 3320 Fast Track</title>
+<meta name="description" content="Fast-track study guide for ME 3320 Heat Transfer: videos, key equations, book pointers and original exam-style practice, in course order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--background);color:var(--foreground);font:16px/1.6 var(--font-sans)}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+button{font:inherit;color:inherit}
+.rail{max-width:56rem;margin:0 auto;padding:24px 16px 80px}
+h1{font:600 clamp(1.8rem,5vw,2.6rem)/1.15 var(--font-serif);margin:0 0 6px}
+h2{font:600 1.4rem/1.25 var(--font-serif);margin:0 0 12px}
+h3{font:600 1.05rem/1.3 var(--font-sans);margin:22px 0 8px;color:var(--accent);letter-spacing:.01em}
+h4{font:600 1rem/1.3 var(--font-sans);margin:0}
+p{margin:0 0 10px}
+.eyebrow{color:var(--accent);margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.muted{color:var(--muted)}
+/* countdown + progress */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:10px;margin:14px 0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.card .k{font-variant-caps:all-small-caps;letter-spacing:.08em;color:var(--muted);font-size:.85rem}
+.card .v{font:600 1.5rem/1.2 var(--font-serif);margin-top:2px}
+.card.hot{border-left:3px solid var(--honey)}
+.bar{height:8px;background:var(--muted-soft);border-radius:4px;overflow:hidden;margin:6px 0 2px}
+.bar>i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+/* tabs */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin:20px 0 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--background);z-index:20;padding-top:8px}
+.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;min-height:44px;cursor:pointer;color:var(--muted);font-weight:500;white-space:nowrap;flex:0 0 auto}
+.tabs button[aria-selected=true]{color:var(--foreground);border-bottom-color:var(--accent)}
+.tabs button:hover{color:var(--foreground)}
+.panel[hidden]{display:none}
+/* plan */
+.banner{background:var(--accent-soft);border:1px solid var(--border);border-left:3px solid var(--honey);border-radius:var(--radius);padding:14px 16px;margin:0 0 18px}
+.banner b{color:var(--honey)}
+ol.plan{padding-left:1.2rem;margin:0 0 14px}
+ol.plan li{margin:0 0 8px}
+.note{font-size:.92rem;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:20px}
+/* filters */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.chip{background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:6px 12px;min-height:36px;cursor:pointer;font-size:.9rem}
+.chip[aria-pressed=true]{background:var(--accent-soft);border-color:var(--accent);color:var(--foreground)}
+/* unit accordion */
+details.unit{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin:0 0 10px}
+details.unit.done{border-left:3px solid #6fae7e}
+details.unit>summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:2.2rem minmax(0,1fr) auto;gap:10px;align-items:center;min-height:56px}
+details.unit>summary::-webkit-details-marker{display:none}
+.num{font:600 1.3rem var(--font-serif);color:var(--muted)}
+.ut{font-weight:600;line-height:1.3}
+.um{font-size:.85rem;color:var(--muted)}
+.tag{font-size:.75rem;padding:2px 8px;border-radius:99px;border:1px solid var(--border);white-space:nowrap}
+.tag.t2{border-color:var(--honey);color:var(--honey)}
+.tag.t1{color:var(--muted)}
+.tag.f{border-color:var(--accent);color:var(--accent)}
+.ubody{padding:4px 14px 16px;border-top:1px solid var(--border)}
+.why{font-style:italic;color:var(--muted)}
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:12px}
+.vid{background:var(--muted-soft);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.vid .thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#000;border:0;padding:0;cursor:pointer}
+.vid img,.vid iframe{width:100%;height:100%;object-fit:cover;display:block;border:0}
+.vid .play{position:absolute;inset:0;display:grid;place-items:center;font-size:2.2rem;color:#fff;text-shadow:0 2px 8px #000}
+.vid .len{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.8);font-size:.75rem;padding:1px 6px;border-radius:3px}
+.vid .meta{padding:8px 10px;font-size:.88rem}
+.vid .meta b{display:block;font-weight:600;line-height:1.3}
+.vid .meta span{color:var(--muted)}
+.vid label{display:flex;gap:8px;align-items:center;padding:0 10px 10px;font-size:.85rem;color:var(--muted);min-height:32px}
+.core{color:var(--honey);font-size:.75rem;font-weight:600}
+ul.k{padding-left:1.15rem;margin:0}
+ul.k li{margin:0 0 6px}
+.eqs{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:8px}
+.eq{background:var(--muted-soft);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;overflow-x:auto}
+.eq small{display:block;color:var(--muted);margin-bottom:2px}
+.eq .katex-display{margin:.3em 0}
+.refs{display:flex;flex-wrap:wrap;gap:6px}
+.ref{background:var(--muted-soft);border:1px solid var(--border);border-radius:3px;padding:4px 8px;font-size:.88rem}
+.todo a{display:block;margin:0 0 4px}
+/* problems */
+.prob{border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin:0 0 12px;background:var(--background)}
+.prob header{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.lvl{font-size:.8rem;color:var(--muted)}
+.gf{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:10px;font-size:.92rem;margin:8px 0}
+.gf ul{margin:2px 0 0;padding-left:1.1rem}
+.act{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:8px 14px;min-height:40px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
+.sol{border-top:1px dashed var(--border);margin-top:10px;padding-top:10px}
+.sol ol{padding-left:1.2rem;margin:0 0 8px}
+.sol li{margin:0 0 8px}
+.ans{background:var(--accent-soft);border-radius:var(--radius);padding:8px 12px}
+.hint{color:var(--honey);margin:8px 0 0}
+.doneRow{display:flex;gap:10px;align-items:center;margin-top:16px;padding-top:12px;border-top:1px solid var(--border)}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--accent)}
+.timer{font:600 2.2rem var(--font-serif);margin:6px 0}
+.timer.low{color:var(--honey)}
+select{background:var(--surface);color:var(--foreground);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;min-height:40px;font:inherit}
+/* formula sheet */
+.sheet{columns:2 18rem;column-gap:18px}
+.sheet .blk{break-inside:avoid;margin:0 0 10px;border-bottom:1px solid var(--border);padding-bottom:6px}
+.sheet .blk b{font-size:.82rem;color:var(--accent)}
+.sheet .row{font-size:.9rem;overflow-x:auto}
+table.tg{border-collapse:collapse;width:100%;font-size:.92rem}
+table.tg td{border-bottom:1px solid var(--border);padding:6px 8px;vertical-align:top}
+@media (max-width:520px){details.unit>summary{grid-template-columns:1.8rem minmax(0,1fr)}details.unit>summary .tag{grid-column:2}}
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  .rail{padding:0;max-width:none}
+  header.top,.tabs,.panel:not(#p-sheet),.sheetbar,.note,footer{display:none!important}
+  #p-sheet{display:block!important}
+  .sheet{columns:2;font-size:9pt}
+  .sheet .blk b{color:#000}
+  .sheet .blk{border-color:#999}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="rail">
+<header class="top">
+  <p class="eyebrow small-caps">ME 3320 · Fall 2026</p>
+  <h1>Heat Transfer, fast track</h1>
+  <p class="sub">Watch the short videos, learn the equations, do the problems. In course order.</p>
+  <div class="cards" id="cards"></div>
+  <div class="bar" aria-hidden="true"><i id="pbar"></i></div>
+  <p class="muted" id="ptxt" style="font-size:.9rem;margin:0"></p>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Sections">
+  <button role="tab" aria-selected="true" data-tab="plan" id="t-plan">Plan</button>
+  <button role="tab" aria-selected="false" data-tab="units" id="t-units">Units</button>
+  <button role="tab" aria-selected="false" data-tab="mock" id="t-mock">Mock finals</button>
+  <button role="tab" aria-selected="false" data-tab="sheet" id="t-sheet">Formula sheet</button>
+  <button role="tab" aria-selected="false" data-tab="tables" id="t-tables">Tables &amp; mistakes</button>
+</nav>
+
+<main id="main">
+  <section class="panel" id="p-plan" role="tabpanel" aria-labelledby="t-plan"></section>
+  <section class="panel" id="p-units" role="tabpanel" aria-labelledby="t-units" hidden></section>
+  <section class="panel" id="p-mock" role="tabpanel" aria-labelledby="t-mock" hidden></section>
+  <section class="panel" id="p-sheet" role="tabpanel" aria-labelledby="t-sheet" hidden></section>
+  <section class="panel" id="p-tables" role="tabpanel" aria-labelledby="t-tables" hidden></section>
+</main>
+<footer class="note" id="policy"></footer>
+</div>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var KEY="me3320:v1", S={done:{},watched:{},solved:{},last:null,mock:null,filter:"all"}, D=null;
+function load(){try{var j=JSON.parse(localStorage.getItem(KEY)||"{}");for(var k in j)S[k]=j[k]}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function md(s){return esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>")}
+function mins(l){var p=l.split(":").map(Number);return p.length===3?p[0]*60+p[1]+p[2]/60:p[0]+p[1]/60}
+function typeset(el){
+  var go=function(){
+    if(!window.renderMathInElement){return false}
+    window.renderMathInElement(el,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],throwOnError:false});
+    $$(".tex",el).forEach(function(n){if(n.dataset.rendered)return;n.dataset.rendered=1;try{window.katex.render(n.dataset.tex,n,{displayMode:true,throwOnError:false})}catch(e){n.textContent=n.dataset.tex}});
+    return true};
+  if(!go()){var t=setInterval(function(){if(go())clearInterval(t)},150)}
+}
+function fmtLeft(ms){if(ms<=0)return "now";var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60);m=m%60;return d>0?d+"d "+h+"h":h+"h "+m+"m"}
+function when(k){return new Date(D.dates[k].when)}
+function nextExam(){var now=Date.now();return ["test2","final"].map(function(k){return Object.assign({k:k},D.dates[k],{t:new Date(D.dates[k].when)})}).filter(function(e){return e.t>now})[0]||null}
+function core(u){return u.videos.slice(0,2).reduce(function(a,v){return a+mins(v.len)},0)+u.problems.reduce(function(a,p){return a+p.minutes},0)}
+function tagChip(t){return t==="T1"?'<span class="tag t1">Test 1 ✓</span>':t==="T2"?'<span class="tag t2">Test 2</span>':'<span class="tag f">Final</span>'}
+
+/* ---------- header ---------- */
+function renderHeader(){
+  var ne=nextExam(),cards="";
+  ["test2","final"].forEach(function(k){var d=D.dates[k],left=when(k)-Date.now();
+    cards+='<div class="card'+(ne&&ne.k===k?' hot':'')+'"><div class="k">'+esc(d.label)+'</div><div class="v">'+(left>0?fmtLeft(left):"passed")+'</div><div class="muted" style="font-size:.8rem">'+new Date(d.when).toLocaleDateString(undefined,{month:"short",day:"numeric"})+(d.where?" · "+esc(d.where):"")+'</div></div>'});
+  var total=D.units.length,done=D.units.filter(function(u){return S.done[u.id]}).length;
+  var tp=0,sp=0;D.units.forEach(function(u){tp+=u.problems.length;u.problems.forEach(function(p){if(S.solved[p.id])sp++})});
+  cards+='<div class="card"><div class="k">Units done</div><div class="v">'+done+' / '+total+'</div><div class="muted" style="font-size:.8rem">'+sp+' / '+tp+' problems solved</div></div>';
+  $("#cards").innerHTML=cards;
+  $("#pbar").style.width=Math.round(100*(done+sp/tp)/(total+1))+"%";
+  var all=D.units.reduce(function(a,u){return a+core(u)},0);
+  $("#ptxt").textContent="Everything at the fast pace is about "+Math.round(all/60)+" hours of focused work.";
+}
+
+/* ---------- plan ---------- */
+function renderPlan(){
+  var ne=nextExam(),h="";
+  var t2=D.units.filter(function(u){return u.tag==="T2"}),fin=D.units.filter(function(u){return u.tag==="F"});
+  var tmins=t2.reduce(function(a,u){return a+core(u)},0),fmins=fin.reduce(function(a,u){return a+core(u)},0);
+  if(ne&&ne.k==="test2"){
+    h+='<div class="banner"><b>Test 2 is in '+fmtLeft(ne.t-Date.now())+'.</b> It covers Ch 4–6 ('+t2.length+' units, about '+Math.round(tmins/60*10)/10+' hours at the fast pace). Work the units below in order; the Ch 1–3 material is not the focus, but conservation of energy and the three modes still show up.</div>';
+    h+='<h2>Test 2 crash plan</h2><ol class="plan">'+t2.map(function(u){return '<li><a href="#" data-open="'+u.id+'">'+u.num+'. '+esc(u.title)+'</a> <span class="muted">· ≈ '+Math.round(core(u))+' min</span></li>'}).join("")+'</ol>';
+    h+='<p>For each unit: watch the first two videos (marked <span class="core">CORE</span>), read the “Know this” list, skim the book pointers, then do the practice problems <b>without looking at the solutions</b>. Compare only after you have an answer.</p>';
+    h+='<p>Build your one-page formula sheet from the <a href="#" data-tab="sheet">Formula sheet</a> tab (equations only; the instructor does not allow problems on it).</p>';
+    h+='<h2>Then the final</h2><p>'+fin.length+' more units (Ch 7–9, 11–13), about '+Math.round(fmins/60*10)/10+' hours at the fast pace, plus the mock finals. The final is in class and comprehensive.</p>';
+  }else{
+    h+='<div class="banner"><b>'+(ne?esc(ne.label)+' in '+fmtLeft(ne.t-Date.now()):'The final is behind you.')+'</b> Work through the units you have not finished, then use the mock finals.</div>';
+    h+='<h2>Plan</h2><ol class="plan">'+D.units.filter(function(u){return !S.done[u.id]}).map(function(u){return '<li><a href="#" data-open="'+u.id+'">'+u.num+'. '+esc(u.title)+'</a> '+tagChip(u.tag)+'</li>'}).join("")+'</ol>';
+  }
+  h+='<h2>How each unit is organized</h2><ol class="plan"><li><b>Learn</b> — the short videos (core ones first).</li><li><b>Know this</b> — the minimum you need, with the key equations.</li><li><b>Book check</b> — which sections and worked examples to skim instead of reading the chapter.</li><li><b>Do these</b> — the instructor’s homework and sample problems (links to Canvas) are the closest to the tests.</li><li><b>Practice</b> — original exam-style problems with worked solutions checked by calculation.</li></ol>';
+  h+='<h2>What the tests look like</h2><ul class="k"><li>Four equally weighted problems like the homework. Tests are take-home, 3 hours, open book, <b>no internet</b>, individual work. The final is in class.</li><li>Tables and equations are provided. You may bring one 8.5×11 sheet of formulas and notes (no problems on it).</li><li>Graded on presentation too: neat work, assumptions, units, boxed answers.</li></ul>';
+  if(D.tests&&D.tests.T2){h+='<h3>Test 2 scope (from the instructor’s study guide)</h3><ul class="k">'+D.tests.T2.map(function(x){return '<li>'+md(x)+'</li>'}).join("")+'</ul>'}
+  $("#p-plan").innerHTML=h;
+  $("#policy").innerHTML='<b>Use this for studying, not during a test.</b> '+esc(D.policy);
+}
+
+/* ---------- units ---------- */
+function videoTile(u,v,i){
+  var w=S.watched[v.id]?" checked":"";
+  return '<div class="vid" data-vid="'+v.id+'"><button class="thumb" data-play="'+v.id+'" aria-label="Play: '+esc(v.title)+'"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+v.id+'/mqdefault.jpg"><span class="play">▶</span><span class="len">'+esc(v.len)+'</span></button><div class="meta">'+(i<2?'<span class="core">CORE</span> ':'')+'<b>'+esc(v.title)+'</b><span>'+esc(v.channel)+' · '+esc(v.note)+'</span></div><label><input type="checkbox" data-watch="'+v.id+'"'+w+'> watched</label></div>'}
+function problemHtml(p){
+  var sol='<div class="sol" hidden><ol>'+p.solution.steps.map(function(s){return '<li>'+md(s)+'</li>'}).join("")+'</ol><p class="ans"><b>Answers:</b> '+p.solution.answers.map(md).join(" &nbsp;|&nbsp; ")+'</p></div>';
+  return '<article class="prob" data-pid="'+p.id+'"><header><h4>'+esc(p.id)+' · '+esc(p.title)+'</h4><span class="lvl">'+(p.level==="exam"?"exam-style":"warm-up")+' · ≈ '+p.minutes+' min</span></header><p>'+md(p.statement)+'</p><div class="gf"><div><b>Given</b><ul>'+p.given.map(function(g){return '<li>'+md(g)+'</li>'}).join("")+'</ul></div><div><b>Find</b><ul>'+p.find.map(function(g){return '<li>'+md(g)+'</li>'}).join("")+'</ul></div></div>'+
+    '<div class="act"><button class="btn" data-hint>Hint</button><button class="btn primary" data-sol>Show solution</button><label class="muted"><input type="checkbox" data-solved="'+p.id+'"'+(S.solved[p.id]?" checked":"")+'> I solved it first</label></div><p class="hint" hidden>'+md(p.hint||"")+'</p>'+sol+'</article>'}
+function unitBody(u){
+  var h='<p class="why">'+md(u.why)+'</p>';
+  h+='<h3>1 · Learn</h3><div class="vids">'+u.videos.map(function(v,i){return videoTile(u,v,i)}).join("")+'</div>';
+  h+='<h3>2 · Know this</h3><ul class="k">'+u.know.map(function(k){return '<li>'+md(k)+'</li>'}).join("")+'</ul>';
+  h+='<div class="eqs" style="margin-top:12px">'+u.eq.map(function(e){return '<div class="eq"><small>'+md(e.label)+'</small><div class="tex" data-tex="'+esc(e.tex)+'"></div></div>'}).join("")+'</div>';
+  h+='<h3>3 · Book check (skim instead of reading the chapter)</h3><div class="refs">'+u.book.map(function(b){return '<span class="ref">§'+b.sec+' '+esc(b.title)+' · p. '+b.page+'</span>'}).join("")+u.examples.map(function(e){return '<span class="ref">Example '+e.ex+' · p. '+e.page+'</span>'}).join("")+'</div>';
+  if(u.tables.length)h+='<p class="muted" style="margin-top:8px;font-size:.9rem">Tables to have open: '+u.tables.map(md).join("; ")+'</p>';
+  h+='<h3>4 · Do these (closest to the tests)</h3><div class="todo">';
+  u.canvas.hw.forEach(function(x){h+='<a href="'+x.url+'" target="_blank" rel="noopener noreferrer">'+esc(x.label)+' <span class="muted">(due '+esc(x.due)+')</span></a>'});
+  u.samples.forEach(function(s){h+='<p style="margin:0 0 4px">'+md(s)+'</p>'});
+  u.canvas.files.forEach(function(f){h+='<a href="'+f.url+'" target="_blank" rel="noopener noreferrer">'+esc(f.label)+'</a>'});
+  h+='<p class="muted" style="font-size:.85rem">Canvas links open only when you are signed in to UVU Canvas. Do the instructor’s problems yourself first; this page does not solve them.</p></div>';
+  h+='<h3>5 · Practice (original problems)</h3>'+u.problems.map(problemHtml).join("");
+  h+='<h3>Common traps</h3><ul class="k">'+u.pitfalls.map(function(k){return '<li>'+md(k)+'</li>'}).join("")+'</ul>';
+  h+='<div class="doneRow"><label><input type="checkbox" data-done="'+u.id+'"'+(S.done[u.id]?" checked":"")+'> Mark this unit done</label></div>';
+  return h}
+function unitSummary(u){var m=Math.round(core(u));return '<summary><span class="num">'+String(u.num).padStart(2,"0")+'</span><span><span class="ut">'+esc(u.title)+'</span><br><span class="um">Ch '+u.ch+' · '+esc(u.sched)+' · ≈ '+m+' min</span></span>'+tagChip(u.tag)+'</summary>'}
+function renderUnits(){
+  var f=S.filter,list=D.units.filter(function(u){return f==="all"||(f==="t2"&&u.tag==="T2")||(f==="fin"&&u.tag==="F")||(f==="todo"&&!S.done[u.id])});
+  var h='<div class="filters" role="group" aria-label="Filter units">'+[["all","All"],["t2","Test 2"],["fin","Final only"],["todo","Not done"]].map(function(x){return '<button class="chip" data-filter="'+x[0]+'" aria-pressed="'+(f===x[0])+'">'+x[1]+'</button>'}).join("")+'</div>';
+  h+=list.map(function(u){return '<details class="unit'+(S.done[u.id]?' done':'')+'" id="'+u.id+'" data-u="'+u.id+'">'+unitSummary(u)+'<div class="ubody"></div></details>'}).join("")||'<p class="muted">Nothing here.</p>';
+  $("#p-units").innerHTML=h}
+function openUnit(id){
+  setTab("units");
+  if($("#"+id)===null){S.filter="all";renderUnits()}
+  var d=$("#"+id);if(!d)return;d.open=true;fillUnit(d);d.scrollIntoView({block:"start"});S.last=id;save()}
+function fillUnit(d){
+  var b=$(".ubody",d);if(b.dataset.filled)return;b.dataset.filled=1;
+  var u=D.units.filter(function(x){return x.id===d.dataset.u})[0];b.innerHTML=unitBody(u);typeset(b)}
+
+/* ---------- mock finals ---------- */
+var timerH=null;
+function problemById(id){var r=null;D.units.forEach(function(u){u.problems.forEach(function(p){if(p.id===id)r=p})});return r}
+function renderMock(){
+  var h='<h2>Mock finals</h2><p class="sub">Four problems, two hours, closed notes except your formula sheet. Use after finishing the units. Solutions unlock when the timer ends or when you give up.</p><select id="mocksel" aria-label="Choose mock final">'+D.mocks.map(function(m){return '<option value="'+m.id+'">'+esc(m.title)+'</option>'}).join("")+'</select> <button class="btn primary" id="mstart">Start</button> <button class="btn" id="mstop">Reveal solutions</button><div class="timer" id="mtimer" aria-live="off">02:00:00</div><div id="mbody"></div>';
+  $("#p-mock").innerHTML=h;
+  if(S.mock&&S.mock.start&&Date.now()-S.mock.start<S.mock.minutes*60000){$("#mocksel").value=S.mock.id;runMock(true)}}
+function runMock(resume){
+  clearInterval(timerH);var id=$("#mocksel").value,m=D.mocks.filter(function(x){return x.id===id})[0];
+  if(!resume){S.mock={id:id,start:Date.now(),minutes:m.minutes};save()}
+  $("#mbody").innerHTML=m.problems.map(function(pid){var p=problemById(pid);var x=problemHtml(p);return x}).join("");
+  $$("#mbody .sol, #mbody [data-hint], #mbody .hint, #mbody [data-sol], #mbody label").forEach(function(n){n.hidden=true});
+  typeset($("#mbody"));
+  var el=$("#mtimer"),end=S.mock.start+S.mock.minutes*60000;
+  timerH=setInterval(function(){var left=Math.max(0,end-Date.now()),s=Math.floor(left/1000);el.textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(function(n){return String(n).padStart(2,"0")}).join(":");el.classList.toggle("low",left<15*60000);if(left<=0){clearInterval(timerH);revealMock()}},500)}
+function revealMock(){$$("#mbody .sol").forEach(function(n){n.hidden=false})}
+
+/* ---------- formula sheet ---------- */
+var GEOM=[["Sphere","$A=4\\pi r^2,\\ V=\\tfrac43\\pi r^3$"],["Cylinder","$A_s=2\\pi rL,\\ V=\\pi r^2L$"],["Constants","$\\sigma=5.67\\times10^{-8}\\ \\mathrm{W/m^2K^4},\\ g=9.81\\ \\mathrm{m/s^2}$"]];
+function renderSheet(){
+  var f=S.sheet||"t2";
+  var h='<div class="sheetbar"><h2>Formula sheet</h2><p class="sub">Equations only (no problems — the instructor does not allow them on the sheet). Pick the scope, print, and trim to one page.</p><div class="filters"><button class="chip" data-sheet="t2" aria-pressed="'+(f==="t2")+'">Test 2 (Ch 4–6 + basics)</button><button class="chip" data-sheet="all" aria-pressed="'+(f==="all")+'">Everything</button><button class="btn primary" id="print">Print</button></div></div><div class="sheet" id="sheetbody">';
+  h+='<div class="blk"><b>Geometry &amp; constants</b>'+GEOM.map(function(g){return '<div class="row">'+g[0]+': '+g[1]+'</div>'}).join("")+'</div>';
+  D.units.filter(function(u){return f==="all"||u.tag==="T2"||u.id==="u01"}).forEach(function(u){
+    h+='<div class="blk"><b>'+u.num+'. '+esc(u.title)+'</b>'+u.eq.map(function(e){return '<div class="row">'+md(e.label)+': $'+esc(e.tex).replace(/&amp;/g,"&")+'$</div>'}).join("")+'</div>'});
+  h+='</div>';
+  $("#p-sheet").innerHTML=h;typeset($("#p-sheet"))}
+
+/* ---------- tables & mistakes ---------- */
+function renderTables(){
+  $("#p-tables").innerHTML='<h2>Which table do I need?</h2><table class="tg">'+D.tableGuide.map(function(t){return '<tr><td>'+md(t.need)+'</td><td>'+md(t.where)+'</td></tr>'}).join("")+'</table><h2 style="margin-top:22px">Mistakes that cost points</h2><ul class="k">'+D.mistakes.map(function(m){return '<li>'+md(m)+'</li>'}).join("")+'</ul><p class="note">Page numbers refer to the printed numbering of the 8th edition (PDF page = printed page + '+D.pageOffset+'). Property tables and equations are also on the Canvas “Formulas” module.</p>';
+  typeset($("#p-tables"))}
+
+/* ---------- tabs & events ---------- */
+function setTab(t){
+  $$(".tabs button").forEach(function(b){b.setAttribute("aria-selected",b.dataset.tab===t)});
+  $$(".panel").forEach(function(p){p.hidden=p.id!=="p-"+t});
+  if(t!=="units"&&history.replaceState){}
+  window.scrollTo({top:0})}
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button,a,summary");if(!t)return;
+  if(t.dataset.tab){e.preventDefault();setTab(t.dataset.tab);return}
+  if(t.dataset.open){e.preventDefault();openUnit(t.dataset.open);return}
+  if(t.dataset.filter){S.filter=t.dataset.filter;save();renderUnits();return}
+  if(t.dataset.sheet){S.sheet=t.dataset.sheet;save();renderSheet();return}
+  if(t.id==="print"){window.print();return}
+  if(t.id==="mstart"){runMock(false);return}
+  if(t.id==="mstop"){revealMock();return}
+  if(t.dataset.play){var box=t.parentNode;box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+t.dataset.play+'?autoplay=1&rel=0" title="Video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="aspect-ratio:16/9"></iframe>';return}
+  if(t.hasAttribute("data-hint")){var a=t.closest(".prob");$(".hint",a).hidden=!$(".hint",a).hidden;return}
+  if(t.hasAttribute("data-sol")){var p=t.closest(".prob"),s=$(".sol",p);s.hidden=!s.hidden;t.textContent=s.hidden?"Show solution":"Hide solution";return}
+});
+document.addEventListener("change",function(e){
+  var c=e.target;
+  if(c.dataset.watch){S.watched[c.dataset.watch]=c.checked;save();return}
+  if(c.dataset.solved){S.solved[c.dataset.solved]=c.checked;save();renderHeader();return}
+  if(c.dataset.done){S.done[c.dataset.done]=c.checked;save();var d=$("#"+c.dataset.done);if(d)d.classList.toggle("done",c.checked);renderHeader();return}
+});
+document.addEventListener("toggle",function(e){var d=e.target;if(d.matches&&d.matches("details.unit")&&d.open){fillUnit(d);S.last=d.dataset.u;save()}},true);
+
+fetch("course.json").then(function(r){return r.json()}).then(function(j){
+  D=j;load();renderHeader();renderPlan();renderUnits();renderMock();renderSheet();renderTables();
+  setInterval(renderHeader,60000);
+  var hash=location.hash.slice(1);if(hash&&D.units.some(function(u){return u.id===hash}))openUnit(hash);
+}).catch(function(){$("#main").innerHTML='<p class="muted">Could not load the course data. Reload the page.</p>'});
+})();
+</script>
+</body>
+</html>
