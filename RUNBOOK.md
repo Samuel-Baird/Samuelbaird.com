@@ -109,3 +109,14 @@ anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
 - Write a run entry even when nothing is new, with empty `leads` and the summary saying so.
 - Do not touch any other file in that repo. Commit `Scout leads YYYY-MM-DD` and push to `main`
   (Vercel deploys it). If this step fails, say so in the report and the issue.
+
+## Standing authorization
+The owner has authorized pushes for these daily updates every run: commits to `main` in this
+repo (report, `state/seen.json`) and to `main` in `Samuel-Baird/samuelbaird.com` (`scout/leads.json`).
+Do not stop to ask; the push to the leads repo is part of step 7. If a push is still blocked, say so
+at the top of the report and in the issue.
+
+## Multiple runs per day
+If `reports/YYYY-MM-DD.md` already exists, write the new report to `reports/YYYY-MM-DD-run2.md`
+(then `-run3`, etc.), and replace that date's entry in `leads.json` with a merged list (carry over
+earlier live/unknown leads, drop dismissed and gone ones). The issue title stays `Scout YYYY-MM-DD: N finds`.
