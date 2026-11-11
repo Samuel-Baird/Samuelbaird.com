@@ -1,11 +1,11 @@
 // Vercel function behind the private /scout page.
 //   GET  /api/scout  -> { keys: [...] }  normalized URLs the owner has dismissed (no titles; same data leads.json already exposes)
-//   POST /api/scout  -> body { url, title }, header x-scout-key: adds the URL to state/dismissed.json in
+//   POST /api/scout  -> body { url, title }: adds the URL to state/dismissed.json in
 //                       Samuel-Baird/collector-items so future scout runs skip it.
-// Env (set in Vercel): SCOUT_GITHUB_TOKEN = fine-grained token, Contents read/write on collector-items only;
-//                      SCOUT_KEY = passphrase the owner types on the page.
+// No login: the /scout page is unlinked and noindex, so nothing protects this endpoint beyond that.
+// Env (set in Vercel): SCOUT_GITHUB_TOKEN = fine-grained token, Contents read/write on collector-items only.
 // No dependencies. The repo and file path are fixed here and never taken from the request.
-const crypto = require('node:crypto');
+const MAX_ITEMS = 2000; // keeps dismissed.json from growing without bound if the URL is ever found
 
 const OWNER = 'Samuel-Baird';
 const REPO = 'collector-items';
@@ -24,14 +24,6 @@ function normalize(u) {
     const q = x.searchParams.toString();
     return host + path + (q ? '?' + q : '');
   } catch { return ''; }
-}
-
-function keyOk(given) {
-  const want = process.env.SCOUT_KEY || '';
-  if (!want || typeof given !== 'string') return false;
-  const a = crypto.createHash('sha256').update(given).digest();
-  const b = crypto.createHash('sha256').update(want).digest();
-  return crypto.timingSafeEqual(a, b);
 }
 
 async function gh(method, body) {
@@ -57,7 +49,7 @@ function decode(file) {
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-  if (!process.env.SCOUT_GITHUB_TOKEN || !process.env.SCOUT_KEY) {
+  if (!process.env.SCOUT_GITHUB_TOKEN) {
     return res.status(503).json({ error: 'Not configured' });
   }
 
@@ -72,8 +64,6 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!keyOk(req.headers['x-scout-key'])) return res.status(401).json({ error: 'Wrong passphrase' });
-
   const body = typeof req.body === 'string' ? (() => { try { return JSON.parse(req.body); } catch { return {}; } })() : (req.body || {});
   const key = normalize(body.url);
   if (!key || key.length > 1500) return res.status(400).json({ error: 'Bad url' });
@@ -85,6 +75,7 @@ module.exports = async (req, res) => {
     const data = decode(cur.json);
     data.items = data.items || {};
     if (data.items[key]) return res.status(200).json({ ok: true, already: true });
+    if (Object.keys(data.items).length >= MAX_ITEMS) return res.status(507).json({ error: 'Dismissed list is full' });
     data.items[key] = { title, dismissed_at: new Date().toISOString().slice(0, 10) };
     const put = await gh('PUT', {
       message: 'Dismiss lead from /scout',

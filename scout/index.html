@@ -72,9 +72,6 @@ const safe=(u)=>/^https?:\/\//i.test(u)?esc(u):'#';
 let DATA,DISMISSED=new Set();
 const ORDER=['Deseret Alphabet','LDS sacrament ware','Early LDS print','Anti-Mormon literature','Portuguese-language LDS','LDS relics & art','Luther & Reformation','Historic Christianity','Communion vessels (pre-1900)','Wants'];
 const DEAD=new Set(['sold','gone','ended']);
-const KEYNAME='scoutKey';
-const getKey=()=>{try{return localStorage.getItem(KEYNAME)||''}catch(e){return ''}};
-const setKey=(v)=>{try{v?localStorage.setItem(KEYNAME,v):localStorage.removeItem(KEYNAME)}catch(e){}};
 // Same rule as api/scout.js and the scout runs: host + path + query, no scheme, no www., no tracking params.
 const norm=(u)=>{try{const x=new URL(String(u));const drop=/^(utm_|_trk|hash$|fbclid|gclid|mkcid|mkevt|mkrid|campid|customid|toolid|ssspo|sssrc|ssuid|widget_ver|media$)/i;[...x.searchParams.keys()].forEach((k)=>{if(drop.test(k))x.searchParams.delete(k)});const q=x.searchParams.toString();return x.hostname.toLowerCase().replace(/^www\./,'')+(x.pathname.replace(/\/+$/,'')||'/')+(q?'?'+q:'')}catch(e){return String(u).toLowerCase()}};
 const initials=(c)=>String(c||'?').split(/[^A-Za-z]+/).filter(Boolean).slice(0,2).map((w)=>w[0]).join('').toUpperCase();
@@ -126,15 +123,12 @@ function render(){
 }
 async function dismiss(btn){
   const url=btn.dataset.url,title=btn.dataset.title;
-  let key=getKey();
-  if(!key){key=(window.prompt('Passphrase to save dismissals (asked once on this device):')||'').trim();if(!key)return;}
   const card=btn.closest('.lead');
   card.hidden=true;say('');
   try{
-    const r=await fetch('/api/scout',{method:'POST',headers:{'content-type':'application/json','x-scout-key':key},body:JSON.stringify({url,title})});
-    if(r.status===401){setKey('');throw new Error('Wrong passphrase. Try the X again.');}
+    const r=await fetch('/api/scout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({url,title})});
     if(!r.ok)throw new Error(`Could not save the dismissal (${r.status}). The lead is back.`);
-    setKey(key);DISMISSED.add(norm(url));fillDays();render();
+    DISMISSED.add(norm(url));fillDays();render();
   }catch(e){card.hidden=false;say(e.message||'Could not save the dismissal.');}
 }
 Promise.all([
