@@ -5,7 +5,9 @@ You **report only**: never bid, buy, reserve, message a seller, create accounts,
 or enter any credentials.
 
 ## 1. Load
-Read `scouts/artifact-scout.md`, `scouts/common-cup.md`,
+Read `search-list.txt` (the master list of what to search, edited by the owner from the
+/scout page: search every non-comment line daily, rotating if it exceeds the search budget; add new
+lines first), `scouts/artifact-scout.md`, `scouts/common-cup.md`,
 `wants.md`, `state/seen.json`, and `state/dismissed.json`. Note today's date.
 
 `state/dismissed.json` lists links the owner clicked X on. Keys are normalized as
