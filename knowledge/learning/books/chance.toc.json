@@ -1,0 +1,96 @@
+{
+ "slug": "chance",
+ "offset": 19,
+ "chapters": [
+  {
+   "ch": 1,
+   "title": "Introduction: Learning to Change",
+   "printed": 1,
+   "pdf": 20
+  },
+  {
+   "ch": 2,
+   "title": "The Study of Learning and Behavior",
+   "printed": 33,
+   "pdf": 52
+  },
+  {
+   "ch": 3,
+   "title": "Pavlovian Conditioning",
+   "printed": 55,
+   "pdf": 74
+  },
+  {
+   "ch": 4,
+   "title": "Pavlovian Applications",
+   "printed": 97,
+   "pdf": 116
+  },
+  {
+   "ch": 5,
+   "title": "Operant Learning: Reinforcement",
+   "printed": 129,
+   "pdf": 148
+  },
+  {
+   "ch": 6,
+   "title": "Reinforcement: Beyond Habit",
+   "printed": 172,
+   "pdf": 191
+  },
+  {
+   "ch": 7,
+   "title": "Schedules of Reinforcement",
+   "printed": 197,
+   "pdf": 216
+  },
+  {
+   "ch": 8,
+   "title": "Operant Learning: Punishment",
+   "printed": 236,
+   "pdf": 255
+  },
+  {
+   "ch": 9,
+   "title": "Operant Applications",
+   "printed": 261,
+   "pdf": 280
+  },
+  {
+   "ch": 10,
+   "title": "Observational Learning",
+   "printed": 287,
+   "pdf": 306
+  },
+  {
+   "ch": 11,
+   "title": "Generalization, Discrimination, and Stimulus Control",
+   "printed": 324,
+   "pdf": 343
+  },
+  {
+   "ch": 12,
+   "title": "Forgetting",
+   "printed": 357,
+   "pdf": 376
+  },
+  {
+   "ch": 13,
+   "title": "The Limits of Learning",
+   "printed": 391,
+   "pdf": 410
+  },
+  {
+   "ch": "Glossary",
+   "title": "Glossary",
+   "printed": 412,
+   "pdf": 431
+  },
+  {
+   "ch": "References",
+   "title": "References",
+   "printed": 420,
+   "pdf": 439
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "note": "Registry of the learning-science textbooks. pdf page = printed page + offset. PDFs and extracted text stay local (gitignored).",
+ "books": [
+  {"slug": "chance", "title": "Learning and Behavior (Active Learning Edition)", "authors": "Paul Chance, Ellen Furlong", "edition": "8th", "year": 2023, "publisher": "Cengage", "offset": 19},
+  {"slug": "olson-ramirez", "title": "An Introduction to Theories of Learning", "authors": "Matthew H. Olson, Julio J. Ramirez", "edition": "10th", "year": 2020, "publisher": "Routledge", "offset": 17},
+  {"slug": "mazur-odum", "title": "Learning and Behavior", "authors": "James E. Mazur, Amy L. Odum", "edition": "9th", "year": 2023, "publisher": "Routledge", "offset": 19},
+  {"slug": "gluck", "title": "Learning and Memory: From Brain to Behavior", "authors": "Mark A. Gluck, Eduardo Mercado, Catherine E. Myers", "edition": "3rd", "year": 2016, "publisher": "Worth", "offset": 27},
+  {"slug": "domjan-delamater", "title": "The Essentials of Conditioning and Learning", "authors": "Michael Domjan, Andrew R. Delamater", "edition": "5th", "year": 2024, "publisher": "APA", "offset": 17},
+  {"slug": "dehouwer-hughes", "title": "The Psychology of Learning: An Introduction from a Functional-Cognitive Perspective", "authors": "Jan De Houwer, Sean Hughes", "edition": "1st", "year": 2020, "publisher": "MIT Press", "offset": 15}
+ ]
+}

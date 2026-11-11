@@ -1,0 +1,114 @@
+{
+ "slug": "olson-ramirez",
+ "offset": 17,
+ "chapters": [
+  {
+   "ch": 1,
+   "title": "What Is Learning?",
+   "printed": 3,
+   "pdf": 20
+  },
+  {
+   "ch": 2,
+   "title": "Approaches to the Study of Learning",
+   "printed": 15,
+   "pdf": 32
+  },
+  {
+   "ch": 3,
+   "title": "Early Notions About Learning",
+   "printed": 31,
+   "pdf": 48
+  },
+  {
+   "ch": 4,
+   "title": "Edward Lee Thorndike",
+   "printed": 57,
+   "pdf": 74
+  },
+  {
+   "ch": 5,
+   "title": "Burrhus Frederic Skinner",
+   "printed": 81,
+   "pdf": 98
+  },
+  {
+   "ch": 6,
+   "title": "Clark Leonard Hull",
+   "printed": 127,
+   "pdf": 144
+  },
+  {
+   "ch": 7,
+   "title": "Ivan Petrovich Pavlov",
+   "printed": 165,
+   "pdf": 182
+  },
+  {
+   "ch": 8,
+   "title": "Edwin Ray Guthrie",
+   "printed": 211,
+   "pdf": 228
+  },
+  {
+   "ch": 9,
+   "title": "William Kaye Estes",
+   "printed": 237,
+   "pdf": 254
+  },
+  {
+   "ch": 10,
+   "title": "Gestalt Theory",
+   "printed": 265,
+   "pdf": 282
+  },
+  {
+   "ch": 11,
+   "title": "Jean Piaget",
+   "printed": 295,
+   "pdf": 312
+  },
+  {
+   "ch": 12,
+   "title": "Edward Chace Tolman",
+   "printed": 315,
+   "pdf": 332
+  },
+  {
+   "ch": 13,
+   "title": "Albert Bandura",
+   "printed": 343,
+   "pdf": 360
+  },
+  {
+   "ch": 14,
+   "title": "Donald Olding Hebb",
+   "printed": 377,
+   "pdf": 394
+  },
+  {
+   "ch": 15,
+   "title": "Robert C. Bolles and Evolutionary Psychology",
+   "printed": 415,
+   "pdf": 432
+  },
+  {
+   "ch": 16,
+   "title": "A Final Word",
+   "printed": 449,
+   "pdf": 466
+  },
+  {
+   "ch": "Glossary",
+   "title": "Glossary",
+   "printed": 459,
+   "pdf": 476
+  },
+  {
+   "ch": "References",
+   "title": "References",
+   "printed": 490,
+   "pdf": 507
+  }
+ ]
+}

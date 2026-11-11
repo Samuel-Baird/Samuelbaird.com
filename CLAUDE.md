@@ -4,7 +4,7 @@ Private repo. Each course gets a study site at `samuelbaird.com/learn/<course>` 
 
 ## Hard rules (read first)
 - **Academic integrity.** Syllabi usually allow AI for finding information and brainstorming and forbid it for solving assigned work or on tests/quizzes. ME 3320 does. So the site contains concepts, videos, equations and *original* practice problems only. Never solve assigned homework, take-home test problems or quiz problems. Never open the site during a take-home test.
-- **Copyright.** Textbook PDFs, instructor files and solution manuals stay local (`.gitignore` blocks `*.pdf`, `textbook/cache/`, `canvas/files/`). The public JSON holds section/page/problem-number references, Canvas links and original writing — no book text.
+- **Copyright.** Textbook PDFs, instructor files and solution manuals stay local (`.gitignore` blocks `*.pdf`, `textbook/cache/`, `canvas/files/`, `knowledge/cache/`, `knowledge/sources/`). The public JSON holds section/page/problem-number references, Canvas links and original writing — no book text. Notes under `knowledge/` are paraphrase with page cites; run `python -I scripts/kb_check.py` (must report 0) before committing them.
 - **Read-only Canvas.** Scan with Claude in Chrome. Never submit, edit or take quizzes. Ask before downloading files.
 
 ## Layout
@@ -17,7 +17,15 @@ courses/<id>/
   problems/*.py           original practice problems; every number in a solution is computed in Python
   build_course.py         assembles course.json (add --verify-videos to check every YouTube id via oEmbed)
   course.json             the page's data
+knowledge/                how people learn + a searchable library of textbook material (see knowledge/README.md)
+  learning/playbook.md    12 rules for building study guides, with a per-unit checklist (read before content work)
+  learning/glossary.md    cross-book terms in our own words
+  learning/books/<slug>.md  chapter digests of 6 learning-science textbooks (own words, page cites)
+  cache/, sources/        gitignored: extracted page text, FTS index, textbook PDFs
 scripts/
+  kb_extract.py kb_toc.py kb_index.py   PDF -> per-page text cache -> chapter map -> SQLite FTS index (any textbook)
+  kb_search.py kb_read.py               search the index / read cached pages by printed page range (local reading only)
+  kb_check.py                           copyright guardrail: flags verbatim runs of book text in committed notes
   build_toc.py            PDF bookmarks -> toc.json (page offset: printed = PDF - 24 for Bergman 8e)
   problem_index.py        problem numbers by section heading (rough; headings can be off)
   publish.mjs             validate course.json and copy it to ../Samuelbaird.com/learn/<id>/
@@ -32,6 +40,19 @@ The page itself (`learn/<id>/index.html`) lives in the `Samuelbaird.com` repo; `
 5. **Write problems** in `problems/part*.py` using `common.T()` templating (`<<name:.3g>>`, `<<x:sci3>>`) so solutions are computed, never typed. Keep a self-check (`python partN.py`) that fails on leftover `<<`.
 6. `python courses/<id>/build_course.py --verify-videos && node scripts/publish.mjs <id>`.
 7. Preview the site (`site-preview` in the workspace `.claude/launch.json`, port 4173), check every unit renders without KaTeX errors, then branch + PR on `Samuelbaird.com`.
+
+## Teaching approach (read `knowledge/learning/playbook.md` before writing `content.py` or `problems/`)
+The short version, each rule backed by the learning-science books:
+1. **Retrieval first** — questions before answers; prefer problems and recall prompts over more reading.
+2. **Immediate, specific feedback** — solutions name the exact error and show the sanity check; every pitfall has a problem that triggers it.
+3. **Space and revisit** — an expanding review schedule tied to the exam dates, earlier-unit review problems inside later units, cumulative mocks.
+4. **Mix and contrast** — put look-alike cases side by side with the deciding feature; mix methods so learners must choose before computing.
+5. **Worked example → guided → independent**, with difficulty tags; early wins, then exam-like problems.
+6. **Frame and meaning** — a one-sentence goal per unit, equations with their conditions of use, chunked `know` blocks (about four ideas).
+7. **Exam-format and novel-setup practice** — transfer is programmed, not assumed.
+8. **Calibrate** — predict-then-check on mocks; readiness checklist; say that rereading feels better than it works.
+9. **Effort-based motivation** — progress tracking, specific next steps, no punitive wording; test-day routine and graded exam rehearsal.
+Integrity rules above still win over all of this. Look up anything in the books with `scripts/kb_search.py`; cite as book + printed page and paraphrase.
 
 ## Gotchas
 - `python -I` ignores the script's folder; use plain `python` for the builders and `-I` only for scripts that read untrusted files.

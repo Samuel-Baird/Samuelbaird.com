@@ -1,0 +1,102 @@
+{
+ "slug": "domjan-delamater",
+ "offset": 17,
+ "chapters": [
+  {
+   "ch": 1,
+   "title": "Basic Concepts and Definitions",
+   "printed": 3,
+   "pdf": 20
+  },
+  {
+   "ch": 2,
+   "title": "The Substrate for Learning: Unconditioned Behavior",
+   "printed": 17,
+   "pdf": 34
+  },
+  {
+   "ch": 3,
+   "title": "Habituation and Sensitization",
+   "printed": 31,
+   "pdf": 48
+  },
+  {
+   "ch": 4,
+   "title": "Pavlovian Conditioning: Basic Concepts",
+   "printed": 45,
+   "pdf": 62
+  },
+  {
+   "ch": 5,
+   "title": "Stimulus Relations in Pavlovian Conditioning",
+   "printed": 63,
+   "pdf": 80
+  },
+  {
+   "ch": 6,
+   "title": "Pavlovian Conditioning Mechanisms and Theories",
+   "printed": 83,
+   "pdf": 100
+  },
+  {
+   "ch": 7,
+   "title": "Instrumental or Operant Conditioning",
+   "printed": 101,
+   "pdf": 118
+  },
+  {
+   "ch": 8,
+   "title": "Schedules of Reinforcement",
+   "printed": 121,
+   "pdf": 138
+  },
+  {
+   "ch": 9,
+   "title": "Theories of Reinforcement",
+   "printed": 139,
+   "pdf": 156
+  },
+  {
+   "ch": 10,
+   "title": "Extinction of Conditioned Behavior",
+   "printed": 155,
+   "pdf": 172
+  },
+  {
+   "ch": 11,
+   "title": "Punishment",
+   "printed": 173,
+   "pdf": 190
+  },
+  {
+   "ch": 12,
+   "title": "Avoidance Learning",
+   "printed": 189,
+   "pdf": 206
+  },
+  {
+   "ch": 13,
+   "title": "Stimulus Control of Behavior",
+   "printed": 207,
+   "pdf": 224
+  },
+  {
+   "ch": 14,
+   "title": "Memory Mechanisms",
+   "printed": 225,
+   "pdf": 242
+  },
+  {
+   "ch": "Glossary",
+   "title": "Glossary",
+   "printed": 245,
+   "pdf": 262
+  },
+  {
+   "ch": "References",
+   "title": "References",
+   "printed": 261,
+   "pdf": 278
+  }
+ ]
+}

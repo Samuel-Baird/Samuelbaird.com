@@ -1,0 +1,60 @@
+{
+ "slug": "dehouwer-hughes",
+ "offset": 15,
+ "chapters": [
+  {
+   "ch": 0,
+   "title": "Introduction: What Is Learning and How Can We Study It",
+   "printed": 1,
+   "pdf": 16
+  },
+  {
+   "ch": 1,
+   "title": "Effects of Regularities in the Presence of a Single Stimulus",
+   "printed": 37,
+   "pdf": 52
+  },
+  {
+   "ch": 2,
+   "title": "Classical Conditioning: Effects of Regularities in the Presence of Multiple Stimuli",
+   "printed": 57,
+   "pdf": 72
+  },
+  {
+   "ch": 3,
+   "title": "Operant Conditioning: Effects of Regularities in the Presence of Stimuli and Behavior",
+   "printed": 117,
+   "pdf": 132
+  },
+  {
+   "ch": 4,
+   "title": "Complex Forms of Learning: Joint Effects of Multiple Regularities",
+   "printed": 181,
+   "pdf": 196
+  },
+  {
+   "ch": 5,
+   "title": "Applied Learning Psychology: Using the Principles of Learning to Improve",
+   "printed": 199,
+   "pdf": 214
+  },
+  {
+   "ch": "Glossary",
+   "title": "Glossary",
+   "printed": 247,
+   "pdf": 262
+  },
+  {
+   "ch": "Notes",
+   "title": "Notes",
+   "printed": 259,
+   "pdf": 274
+  },
+  {
+   "ch": "References",
+   "title": "References",
+   "printed": 267,
+   "pdf": 282
+  }
+ ]
+}
