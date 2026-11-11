@@ -1,0 +1,189 @@
+{
+  "updated": "2026-11-11",
+  "runs": [
+    {
+      "date": "2026-11-11",
+      "searches": 40,
+      "summary": "0 verified finds, 12 unverified leads. Every listing page was blocked (403/404/410), so none is confirmed live.",
+      "leads": [
+        {
+          "title": "Deseret Second Book (1868) \"[Original]\"",
+          "price": "~$195",
+          "seller": "Panoply Books",
+          "url": "https://panoplybooks.com/the-deseret-second-book-by-the-regents-of-deseret-university-1868-original",
+          "more_urls": [],
+          "date": "1868",
+          "category": "Artifact · Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "A sibling URL returned 404, so it may be sold or removed.",
+          "action": "Contact seller to confirm"
+        },
+        {
+          "title": "Deseret Second Reader, 1868, first edition",
+          "price": "~$750",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/product/deseret-second-alphabet-1868/",
+          "more_urls": [],
+          "date": "1868",
+          "category": "Artifact · Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Over budget. Search result said in stock; page returned 403.",
+          "action": "Watch"
+        },
+        {
+          "title": "Deseret Alphabet Book of Mormon, Part 1 (1869)",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1478706402",
+          "more_urls": [
+            "https://www.abaa.org/book/1714859909"
+          ],
+          "date": "1869",
+          "category": "Artifact · Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "The Moon's Rare Books copy (~$450) now returns 410 Gone.",
+          "action": "Watch"
+        },
+        {
+          "title": "Orson Pratt, Divine Authority / Remarkable Visions (Liverpool, R. James, 1848)",
+          "price": "~$50",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/29383.html",
+          "more_urls": [],
+          "date": "1848",
+          "category": "Artifact · Early LDS",
+          "alert": true,
+          "verified": false,
+          "notes": "19th-century LDS pamphlet within budget.",
+          "action": "Contact seller / buy after confirming live"
+        },
+        {
+          "title": "Hugh Weightman, Mormonism Exposed: The Other Side (1884)",
+          "price": "~$100",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/25054.html",
+          "more_urls": [
+            "https://www.abaa.org/book/384586234"
+          ],
+          "date": "1884",
+          "category": "Artifact · Anti-Mormon",
+          "alert": true,
+          "verified": false,
+          "notes": "",
+          "action": "Watch / buy"
+        },
+        {
+          "title": "J. W. Barclay, Mormonism Exposed, The Other Side: An English View (1884)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1573023623",
+          "more_urls": [],
+          "date": "1884",
+          "category": "Artifact · Anti-Mormon",
+          "alert": true,
+          "verified": false,
+          "notes": "Near-fine wrappers.",
+          "action": "Watch"
+        },
+        {
+          "title": "Millennial Star, Vol. XII (1850)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1212039266",
+          "more_urls": [
+            "https://www.abaa.org/book/726125373",
+            "https://www.abaa.org/book/726149742"
+          ],
+          "date": "1848–1851",
+          "category": "Artifact · Millennial Star",
+          "alert": true,
+          "verified": false,
+          "notes": "Comparable Freeman's sale: $469 (2020). Vol. 10 (1848) and Vol. 13 (1851) also listed.",
+          "action": "Watch"
+        },
+        {
+          "title": "Times and Seasons, vols 1–6 (in 5 volumes)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1769846177",
+          "more_urls": [],
+          "date": "1839–1846",
+          "category": "Artifact · Times and Seasons",
+          "alert": true,
+          "verified": false,
+          "notes": "Probably far over budget.",
+          "action": "Watch"
+        },
+        {
+          "title": "Journal of Discourses, Vol. II (Liverpool, 1855)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1499257563",
+          "more_urls": [],
+          "date": "1855",
+          "category": "Artifact · Early LDS",
+          "alert": true,
+          "verified": false,
+          "notes": "",
+          "action": "Watch"
+        },
+        {
+          "title": "Pewter chalice, 18th century",
+          "price": "~€310",
+          "seller": "Proantic dealer",
+          "url": "https://www.proantic.com/en/1537849-pewter-chalice-18th-century.html",
+          "more_urls": [],
+          "date": "18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": true,
+          "verified": false,
+          "notes": "The date is the dealer's claim.",
+          "action": "Watch"
+        },
+        {
+          "title": "Pewter chalice, 17th century",
+          "price": "~€250",
+          "seller": "Proantic dealer",
+          "url": "https://www.proantic.com/en/1704452-17th-century-pewter-chalice.html",
+          "more_urls": [],
+          "date": "17th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": true,
+          "verified": false,
+          "notes": "Hallmarks unidentified; the 'Templar cross' is a red flag.",
+          "action": "Watch"
+        },
+        {
+          "title": "Works of Martin Luther, 1557 Wittenberg edition",
+          "price": "price unknown",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=992802",
+          "more_urls": [],
+          "date": "1557",
+          "category": "Artifact · Luther / Reformation",
+          "alert": false,
+          "verified": false,
+          "notes": "Peripheral; probably over budget.",
+          "action": "Ignore / watch"
+        }
+      ],
+      "nothing_found": [
+        "LDS common cups",
+        "Metal individual sacrament cups or trays with LDS provenance",
+        "Pre-1960 Portuguese-language LDS items",
+        "Happy Songs to Sing (1952) for sale"
+      ],
+      "coverage_gaps": [
+        "abaa.org",
+        "schilbantiquarian.com",
+        "panoplybooks.com",
+        "reach.dog",
+        "eBay, AbeBooks, Etsy, LiveAuctioneers, Heritage, Estante Virtual, Mercado Livre (no page could be opened)"
+      ],
+      "issue": "https://github.com/Samuel-Baird/collector-items/issues/1"
+    }
+  ]
+}
