@@ -22,19 +22,22 @@ h1{font:600 clamp(1.8rem,5vw,2.6rem)/1.15 var(--font-serif);margin:0 0 8px}
 select,label{font:500 .95rem var(--font-sans);color:var(--foreground)}
 select{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;min-height:40px}
 .summary{color:var(--muted);margin:0 0 24px}
-.lead{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--border);border-radius:var(--radius);padding:14px;margin:0 0 12px}
+#msg{color:#d99;margin:-12px 0 16px;min-height:0}
+.lead{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--border);border-radius:var(--radius);padding:14px;margin:0 0 12px}
+.lead[hidden]{display:none}
 @media (min-width:640px){.lead{grid-template-columns:140px minmax(0,1fr);gap:18px;padding:16px 18px}}
 .thumb{display:block;text-decoration:none;aspect-ratio:1;border-radius:var(--radius);overflow:hidden;background:var(--muted-soft);border:1px solid var(--border)}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .ph{display:grid;place-items:center;width:100%;height:100%;color:var(--muted);font:600 1.6rem var(--font-serif);text-align:center}
 .ph small{display:block;font:500 .68rem var(--font-sans);margin-top:2px}
-.lead.dead{opacity:.6}
+.x{position:absolute;top:4px;right:4px;width:40px;height:40px;border:0;border-radius:var(--radius);background:transparent;color:var(--muted);font:400 1.5rem/1 var(--font-sans);cursor:pointer}
+.x:hover,.x:focus-visible{color:var(--foreground);background:var(--muted-soft)}
 .sec{margin:28px 0 0}
 .sec>h2{display:flex;align-items:baseline;gap:10px;font:600 1.35rem/1.2 var(--font-serif);margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .sec>h2 small{font:500 .85rem var(--font-sans);color:var(--muted)}
 .toc{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.9rem;margin:0 0 8px}
 .lead.alert{border-left-color:var(--honey)}
-.lead h3{font:600 1.15rem/1.3 var(--font-serif);margin:0 0 6px}
+.lead h3{font:600 1.15rem/1.3 var(--font-serif);margin:0 0 6px;padding-right:36px}
 .meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.88rem;color:var(--muted);margin:0 0 6px}
 .price{color:var(--foreground);font-weight:600}
 .tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted);margin-right:6px}
@@ -45,6 +48,10 @@ select{background:var(--surface);border:1px solid var(--border);border-radius:va
 .links{margin:6px 0 0;font-size:.9rem}
 #extra h3{font:600 .82rem var(--font-sans);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:32px 0 8px}
 ul.plain{margin:0;padding-left:20px;color:var(--muted)}
+table.cov{border-collapse:collapse;font-size:.9rem;width:100%}
+table.cov th,table.cov td{text-align:left;padding:4px 12px 4px 0;border-bottom:1px solid var(--border);color:var(--muted);font-weight:500}
+table.cov td.ok{color:#9c9}
+table.cov td.bad{color:#d99}
 .empty{color:var(--muted)}
 </style>
 </head>
@@ -52,8 +59,9 @@ ul.plain{margin:0;padding-left:20px;color:var(--muted)}
 <main class="rail">
 <p class="eyebrow">Collector scout</p>
 <h1>Leads of the day</h1>
-<div class="bar"><label for="day">Day</label><select id="day"></select><label><input type="checkbox" id="alerts"> Alerts only</label></div>
+<div class="bar"><label for="day">Day</label><select id="day"></select><label><input type="checkbox" id="alerts"> Alerts only</label><label><input type="checkbox" id="unv"> Show unverified</label></div>
 <p class="summary" id="summary">Loading…</p>
+<p id="msg" role="status"></p>
 <div id="list"></div>
 <div id="extra"></div>
 </main>
@@ -61,16 +69,24 @@ ul.plain{margin:0;padding-left:20px;color:var(--muted)}
 const $=(s)=>document.querySelector(s);
 const esc=(s)=>String(s??'').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=(u)=>/^https?:\/\//i.test(u)?esc(u):'#';
-let DATA;
+let DATA,DISMISSED=new Set();
 const ORDER=['Deseret Alphabet','LDS sacrament ware','Early LDS print','Anti-Mormon literature','Portuguese-language LDS','LDS relics & art','Luther & Reformation','Historic Christianity','Communion vessels (pre-1900)','Wants'];
 const DEAD=new Set(['sold','gone','ended']);
-const STATUS={sold:'Sold',gone:'Listing gone',ended:'Ended',live:'Live'};
+const KEYNAME='scoutKey';
+const getKey=()=>{try{return localStorage.getItem(KEYNAME)||''}catch(e){return ''}};
+const setKey=(v)=>{try{v?localStorage.setItem(KEYNAME,v):localStorage.removeItem(KEYNAME)}catch(e){}};
+// Same rule as api/scout.js and the scout runs: host + path + query, no scheme, no www., no tracking params.
+const norm=(u)=>{try{const x=new URL(String(u));const drop=/^(utm_|_trk|hash$|fbclid|gclid|mkcid|mkevt|mkrid|campid|customid|toolid|ssspo|sssrc|ssuid|widget_ver|media$)/i;[...x.searchParams.keys()].forEach((k)=>{if(drop.test(k))x.searchParams.delete(k)});const q=x.searchParams.toString();return x.hostname.toLowerCase().replace(/^www\./,'')+(x.pathname.replace(/\/+$/,'')||'/')+(q?'?'+q:'')}catch(e){return String(u).toLowerCase()}};
 const initials=(c)=>String(c||'?').split(/[^A-Za-z]+/).filter(Boolean).slice(0,2).map((w)=>w[0]).join('').toUpperCase();
+// Sold, gone and ended leads are never shown. Live leads show by default; unverified ones only when asked.
+const visible=(l)=>!DEAD.has(l.status)&&!DISMISSED.has(norm(l.url))&&(l.status==='live'||$('#unv').checked);
+const say=(t)=>{$('#msg').textContent=t||'';};
 function card(l){
   const ph=`<span class="ph"><span>${esc(initials(l.category))}<small>no photo</small></span></span>`;
   const img=l.image&&/^https:\/\//i.test(l.image)?`<img src="${esc(l.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.replaceWith(document.createRange().createContextualFragment(this.dataset.ph))" data-ph="${esc(ph)}">`:ph;
-  const st=DEAD.has(l.status)?`<span class="tag uv">${esc(STATUS[l.status]||l.status)}</span>`:(l.verified?'<span class="tag ok">Verified live</span>':'<span class="tag uv">Unverified</span>');
-  return `<article class="lead${l.alert?' alert':''}${DEAD.has(l.status)?' dead':''}">
+  const st=l.status==='live'?'<span class="tag ok">Verified live</span>':'<span class="tag uv">Unverified</span>';
+  return `<article class="lead${l.alert?' alert':''}">
+    <button class="x" type="button" aria-label="Dismiss this lead" title="Dismiss" data-url="${esc(l.url)}" data-title="${esc(l.title)}">×</button>
     <a class="thumb" href="${safe(l.url)}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">${img}</a>
     <div>
     <div>${l.alert?'<span class="tag al">Alert</span>':''}${st}</div>
@@ -81,34 +97,61 @@ function card(l){
     </div>
   </article>`;
 }
+function fillDays(){
+  const cur=$('#day').value;
+  $('#day').innerHTML=DATA.runs.map((r)=>`<option value="${esc(r.date)}">${esc(r.date)} · ${(r.leads||[]).filter(visible).length} leads</option>`).join('');
+  if(cur&&DATA.runs.some((r)=>r.date===cur))$('#day').value=cur;
+}
 function render(){
   const run=DATA.runs.find((r)=>r.date===$('#day').value);
   if(!run){$('#summary').textContent='No runs yet.';return;}
   const only=$('#alerts').checked;
-  const leads=(run.leads||[]).filter((l)=>!only||l.alert);
+  const leads=(run.leads||[]).filter((l)=>visible(l)&&(!only||l.alert));
   $('#summary').textContent=`${run.summary||''}${run.searches?` · ${run.searches} searches`:''}`;
   const groups=new Map();
   ORDER.forEach((c)=>groups.set(c,[]));
   leads.forEach((l)=>{const c=l.category||'Other';if(!groups.has(c))groups.set(c,[]);groups.get(c).push(l);});
-  const rank=(l)=>(DEAD.has(l.status)?2:0)+(l.alert?0:1);
+  const rank=(l)=>(l.status==='live'?0:2)+(l.alert?0:1);
   const secs=[...groups].filter(([,v])=>v.length).map(([c,v])=>[c,v.sort((a,b)=>rank(a)-rank(b))]);
   const slug=(c)=>c.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+  const hiddenUnv=$('#unv').checked?0:(run.leads||[]).filter((l)=>!DEAD.has(l.status)&&l.status!=='live'&&!DISMISSED.has(norm(l.url))&&(!only||l.alert)).length;
   $('#list').innerHTML=secs.length?`<nav class="toc">${secs.map(([c,v])=>`<a href="#${slug(c)}">${esc(c)} (${v.length})</a>`).join('')}</nav>`+secs.map(([c,v])=>`
-  <section class="sec" id="${slug(c)}"><h2>${esc(c)} <small>${v.length}</small></h2>${v.map(card).join('')}</section>`).join(''):'<p class="empty">No leads for this day.</p>';
+  <section class="sec" id="${slug(c)}"><h2>${esc(c)} <small>${v.length}</small></h2>${v.map(card).join('')}</section>`).join(''):`<p class="empty">No confirmed-live leads for this day.${hiddenUnv?` ${hiddenUnv} unverified ${hiddenUnv===1?'lead is':'leads are'} hidden; tick “Show unverified” to see ${hiddenUnv===1?'it':'them'}.`:''}</p>`;
   let x='';
+  if((run.coverage||[]).length)x+=`<h3>Sites searched</h3><table class="cov"><tr><th>Site</th><th>Status</th><th>Results</th></tr>${run.coverage.map((c)=>`<tr><td>${esc(c.site)}</td><td class="${c.status==='searched'?'ok':'bad'}">${esc(c.status)}</td><td>${esc(c.results??'')}</td></tr>`).join('')}</table>`;
   if((run.nothing_found||[]).length)x+=`<h3>Searched, nothing found</h3><ul class="plain">${run.nothing_found.map((s)=>`<li>${esc(s)}</li>`).join('')}</ul>`;
   if((run.coverage_gaps||[]).length)x+=`<h3>Couldn't read</h3><ul class="plain">${run.coverage_gaps.map((s)=>`<li>${esc(s)}</li>`).join('')}</ul>`;
   if(run.issue)x+=`<h3>Issue</h3><p><a href="${safe(run.issue)}" target="_blank" rel="noopener noreferrer">${esc(run.issue)}</a></p>`;
   $('#extra').innerHTML=x;
 }
-fetch('/scout/leads.json',{cache:'no-store'}).then((r)=>r.json()).then((d)=>{
-  DATA=d; d.runs.sort((a,b)=>b.date.localeCompare(a.date));
-  $('#day').innerHTML=d.runs.map((r)=>`<option value="${esc(r.date)}">${esc(r.date)} · ${(r.leads||[]).length} leads</option>`).join('');
+async function dismiss(btn){
+  const url=btn.dataset.url,title=btn.dataset.title;
+  let key=getKey();
+  if(!key){key=(window.prompt('Passphrase to save dismissals (asked once on this device):')||'').trim();if(!key)return;}
+  const card=btn.closest('.lead');
+  card.hidden=true;say('');
+  try{
+    const r=await fetch('/api/scout',{method:'POST',headers:{'content-type':'application/json','x-scout-key':key},body:JSON.stringify({url,title})});
+    if(r.status===401){setKey('');throw new Error('Wrong passphrase. Try the X again.');}
+    if(!r.ok)throw new Error(`Could not save the dismissal (${r.status}). The lead is back.`);
+    setKey(key);DISMISSED.add(norm(url));fillDays();render();
+  }catch(e){card.hidden=false;say(e.message||'Could not save the dismissal.');}
+}
+Promise.all([
+  fetch('/scout/leads.json',{cache:'no-store'}).then((r)=>r.json()),
+  fetch('/api/scout',{cache:'no-store'}).then((r)=>r.ok?r.json():{keys:[]}).catch(()=>({keys:[]})),
+]).then(([d,dis])=>{
+  DATA=d;DISMISSED=new Set(dis.keys||[]);
+  d.runs.sort((a,b)=>b.date.localeCompare(a.date));
+  fillDays();
   const want=new URLSearchParams(location.search).get('date');
   if(want&&d.runs.some((r)=>r.date===want))$('#day').value=want;
   render();
 }).catch(()=>{$('#summary').textContent='Could not load leads.json.';});
-$('#day').addEventListener('change',render);$('#alerts').addEventListener('change',render);
+$('#day').addEventListener('change',render);
+$('#alerts').addEventListener('change',render);
+$('#unv').addEventListener('change',()=>{fillDays();render();});
+$('#list').addEventListener('click',(e)=>{const b=e.target.closest('.x');if(b)dismiss(b);});
 </script>
 </body>
 </html>
