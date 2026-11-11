@@ -62,7 +62,17 @@ anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
 - In `scout/leads.json`, add or replace the entry in `runs` for today's date. Keep the
   same shape as the existing entries: `date`, `searches`, `summary`, `leads` (each with `title`, `price`,
   `seller`, `url`, `more_urls`, `date`, `category`, `alert`, `verified`, `notes`, `action`),
-  `nothing_found`, `coverage_gaps`, `issue`. Set `updated` to today. Keep the last 60 runs.
+  `nothing_found`, `coverage_gaps`, `issue`, plus per lead `image` and `status`).
+  Set `updated` to today. Keep the last 60 runs.
+- `image`: the listing's main photo as a direct https URL. Take it from the page's `og:image` or main
+  product image when the listing opens, otherwise from a search result's image. If there is none, use `null`
+  and the page shows a placeholder. Never use a stock or unrelated image.
+- `status`: `live` (verified open), `unknown` (could not check), `sold`, `gone` (404/410) or `ended`.
+  Sold, gone and ended items are dimmed and listed last in their section.
+- `category`: use exactly one of these names, which become the page sections (in this order): `Deseret Alphabet`,
+  `LDS sacrament ware`, `Early LDS print`, `Anti-Mormon literature`, `Portuguese-language LDS`,
+  `LDS relics & art`, `Luther & Reformation`, `Historic Christianity`,
+  `Communion vessels (pre-1900)`, `Wants`.
 - Write a run entry even when nothing is new, with empty `leads` and the summary saying so.
 - Do not touch any other file in that repo. Commit `Scout leads YYYY-MM-DD` and push to `main`
   (Vercel deploys it). If this step fails, say so in the report and the issue.
