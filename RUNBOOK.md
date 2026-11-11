@@ -5,7 +5,7 @@ You **report only**: never bid, buy, reserve, message a seller, create accounts,
 or enter any credentials.
 
 ## 1. Load
-Read `scouts/artifact-scout.md`, `scouts/common-cup.md`, `scouts/pioneer-book.md`,
+Read `scouts/artifact-scout.md`, `scouts/common-cup.md`,
 `wants.md`, and `state/seen.json`. Note today's date.
 
 ## 2. Search
@@ -15,7 +15,6 @@ Run web searches and page fetches for each scout:
   century, Times and Seasons, Millennial Star, Portuguese-language LDS pre-1960,
   sacrament cups/trays, Deseret Alphabet, pre-1800 communion vessels).
 - **Common cup:** run every search term daily.
-- **Pioneer Book:** fetch every category page and all pagination.
 - **wants.md:** search for each listed item daily.
 
 ### Depth requirements (do not stop early)
