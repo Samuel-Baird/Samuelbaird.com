@@ -53,3 +53,16 @@ If there are new finds, open one GitHub issue in this repository:
 - Body: the report content (alerts first), with every item's link.
 - Label `alert` if any Special Alert item is included (create the label if missing).
 If there are no new finds, open no issue.
+
+## 7. Publish to the private leads page
+After step 5, update the bookmark-only page https://samuelbaird.com/scout (not linked
+anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
+`Samuel-Baird/samuelbaird.com` repo.
+- Attach that repo (`add_repo`, push access) and clone it with `--depth 1`.
+- In `scout/leads.json`, add or replace the entry in `runs` for today's date. Keep the
+  same shape as the existing entries: `date`, `searches`, `summary`, `leads` (each with `title`, `price`,
+  `seller`, `url`, `more_urls`, `date`, `category`, `alert`, `verified`, `notes`, `action`),
+  `nothing_found`, `coverage_gaps`, `issue`. Set `updated` to today. Keep the last 60 runs.
+- Write a run entry even when nothing is new, with empty `leads` and the summary saying so.
+- Do not touch any other file in that repo. Commit `Scout leads YYYY-MM-DD` and push to `main`
+  (Vercel deploys it). If this step fails, say so in the report and the issue.
