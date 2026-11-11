@@ -96,6 +96,70 @@
       "first_seen": "2026-11-11",
       "last_price": "EUR250",
       "verified": false
+    },
+    "https://www.kensandersbooks.com/pages/books/67057/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852": {
+      "title": "Governor's Message Utah 1852",
+      "price": "$1,500",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$1,500",
+      "verified": true
+    },
+    "https://www.rarenewspapers.com/newspaper/130049-before-utah-became-a-state": {
+      "title": "Deseret News 1880",
+      "price": "$30",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$30",
+      "verified": true
+    },
+    "https://www.rarenewspapers.com/newspaper/565712-brigham-young-warns-the-army-to-leave-or-be-annihilated": {
+      "title": "The Circular 1858 Utah War",
+      "price": "$38",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$38",
+      "verified": true
+    },
+    "https://panoplybooks.com/selections-from-the-book-of-mormon-in-the-deseret-alphabet-brigham-young-1869-1st-ed": {
+      "title": "Selections BoM Deseret Alphabet 1869 (Panoply)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1111282842": {
+      "title": "Deseret Reader Second Vol 1868 (Biblio)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1770377836": {
+      "title": "Deseret First Reader (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1770377831": {
+      "title": "Deseret Second Reader (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/43482.html": {
+      "title": "Journal of Discourses Vol II 1855 (Ken Sanders)",
+      "price": "$400",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$400",
+      "verified": false
     }
   }
 }
