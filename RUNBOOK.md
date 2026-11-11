@@ -18,6 +18,13 @@ Run web searches and page fetches for each scout:
 - **Pioneer Book:** fetch every category page and all pagination.
 - **wants.md:** search for each listed item daily.
 
+### Depth requirements (do not stop early)
+- Run at least 40 distinct web searches per run, in parallel batches, covering every
+  scout. A run that did fewer than ~25 searches is a failed run; say so in the report.
+- If a site cannot be fetched (e.g. "host not allowed"), do NOT give up on it: search for
+  it with `site:` queries and use the search-result titles, snippets and URLs as leads.
+  Keep going with other sites; list blocked hosts once in the report's coverage section.
+
 ## 3. Verify each candidate
 Open the listing. Confirm it is live (not ended/sold), read the price, and apply the
 reject and avoid rules of the relevant scout (glass/plastic cups, reprints, undated
@@ -33,6 +40,13 @@ Create `reports/YYYY-MM-DD.md` with a section per scout using that scout's repor
 format. Put Special Alert items first. List any platform or page you could not read,
 so coverage gaps are visible. If nothing is new, write a short "nothing new" report.
 Add new items to `state/seen.json`, then commit and push to `main`.
+
+### Unverified leads
+If a promising item matches a Special Alert or a want but its listing page could not be
+opened (blocked host), still report it in a separate "Unverified leads" section of the
+report and the issue, with the URL, whatever price/date the search result showed, and a
+clear "could not verify live/original" note. Do not add it to `seen.json` as verified;
+record it with `"verified": false` so it is not repeated daily unless its status changes.
 
 ## 6. Notify
 If there are new finds, open one GitHub issue in this repository:
