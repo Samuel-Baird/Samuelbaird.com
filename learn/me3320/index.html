@@ -318,7 +318,7 @@ document.addEventListener("change",function(e){
 });
 document.addEventListener("toggle",function(e){var d=e.target;if(d.matches&&d.matches("details.unit")&&d.open){fillUnit(d);S.last=d.dataset.u;save()}},true);
 
-fetch("course.json").then(function(r){return r.json()}).then(function(j){
+fetch("/learn/me3320/course.json").then(function(r){return r.json()}).then(function(j){
   D=j;load();renderHeader();renderPlan();renderUnits();renderMock();renderSheet();renderTables();
   setInterval(renderHeader,60000);
   var hash=location.hash.slice(1);if(hash&&D.units.some(function(u){return u.id===hash}))openUnit(hash);
