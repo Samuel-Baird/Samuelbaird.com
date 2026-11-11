@@ -1,0 +1,4 @@
+{
+  "_comment": "Links the owner dismissed with the X on samuelbaird.com/scout. Written by the site's /api/scout function. Key = normalized URL (lowercase host, no www., tracking params removed). Never report these again.",
+  "items": {}
+}

@@ -6,7 +6,11 @@ or enter any credentials.
 
 ## 1. Load
 Read `scouts/artifact-scout.md`, `scouts/common-cup.md`,
-`wants.md`, and `state/seen.json`. Note today's date.
+`wants.md`, `state/seen.json`, and `state/dismissed.json`. Note today's date.
+
+`state/dismissed.json` lists links the owner clicked X on (keys are normalized URLs:
+lowercase host, no `www.`, tracking params like `utm_*`, `_trkparms` and `hash` removed).
+Never report, publish or re-check a dismissed link, whatever its price or status.
 
 ## 2. Search
 Run web searches and page fetches for each scout:
@@ -16,6 +20,25 @@ Run web searches and page fetches for each scout:
   sacrament cups/trays, Deseret Alphabet, pre-1800 communion vessels).
 - **Common cup:** run every search term daily.
 - **wants.md:** search for each listed item daily.
+
+### Platforms to attempt every run
+Attempt each of these once per run, either by fetching the search URL or, if the host is
+blocked, with a `site:` web search. Record the outcome for each in the run's `coverage`
+list (see step 7). Search URL patterns (replace `TERM` with a URL-encoded search term):
+- eBay: `https://www.ebay.com/sch/i.html?_nkw=TERM&LH_BIN=1` and `...&LH_Auction=1` (active only)
+- AbeBooks: `https://www.abebooks.com/servlet/SearchResults?kn=TERM`
+- Biblio: `https://www.biblio.com/search.php?keyisbn=TERM`
+- ViaLibri: `https://www.vialibri.net/searches_results?q=TERM`
+- LiveAuctioneers: `https://www.liveauctioneers.com/search/?q=TERM`
+- Heritage Auctions: `https://www.ha.com/c/search-results.zx?N=0&Ntt=TERM`
+- RR Auction: `https://www.rrauction.com/search/?q=TERM`
+- Etsy: `https://www.etsy.com/search?q=TERM`
+- WorthPoint: `https://www.worthpoint.com/search?query=TERM`
+- Rare Book Hub: `https://www.rarebookhub.com/`
+- Estante Virtual: `https://www.estantevirtual.com.br/busca?q=TERM`
+- Mercado Livre Brasil: `https://lista.mercadolivre.com.br/TERM`
+- Trem das 7: `https://www.tremdas7.com.br/`
+- Ken Sanders Rare Books, Moon's Rare Books, Schilb Antiquarian, Panoply Books, Deseret Book rare items
 
 ### Depth requirements (do not stop early)
 - Run at least 40 distinct web searches per run, in parallel batches, covering every
@@ -31,8 +54,10 @@ or post-1900 cross-tradition vessels, over-budget items that are not exceptional
 Never report an item without a direct listing URL.
 
 ## 4. Dedupe
-Skip any URL already in `state/seen.json`, unless its price has dropped ≥25% since
-the recorded price.
+Skip any URL in `state/dismissed.json`, permanently (no price-drop exception). Skip any
+URL already in `state/seen.json`, unless its price has dropped ≥25% since the recorded
+price. Sold, gone and ended listings are recorded in `seen.json` with their status (so
+they are not re-reported) but are never published to the leads page.
 
 ## 5. Write the report
 Create `reports/YYYY-MM-DD.md` with a section per scout using that scout's report
@@ -67,8 +92,14 @@ anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
 - `image`: the listing's main photo as a direct https URL. Take it from the page's `og:image` or main
   product image when the listing opens, otherwise from a search result's image. If there is none, use `null`
   and the page shows a placeholder. Never use a stock or unrelated image.
-- `status`: `live` (verified open), `unknown` (could not check), `sold`, `gone` (404/410) or `ended`.
-  Sold, gone and ended items are dimmed and listed last in their section.
+- `status`: `live` (verified open) or `unknown` (could not check; snippet-only leads are
+  `unknown` with `verified: false`). **Never write sold, gone or ended leads into
+  `leads.json`**: drop them (and remove any earlier copy). The page shows `live` leads by
+  default and `unknown` ones behind a "Show unverified" toggle.
+- Also skip any lead whose normalized URL is in `state/dismissed.json`.
+- `coverage`: add a list to the run entry with one object per platform attempted in step 2:
+  `{"site": "eBay", "status": "searched" | "blocked" | "skipped", "results": <number of candidates>}`.
+  A later local check (see `LOCAL_CHECK.md`) may upgrade `blocked` entries.
 - `category`: use exactly one of these names, which become the page sections (in this order): `Deseret Alphabet`,
   `LDS sacrament ware`, `Early LDS print`, `Anti-Mormon literature`, `Portuguese-language LDS`,
   `LDS relics & art`, `Luther & Reformation`, `Historic Christianity`,
