@@ -13,11 +13,13 @@
           "url": "https://panoplybooks.com/the-deseret-second-book-by-the-regents-of-deseret-university-1868-original",
           "more_urls": [],
           "date": "1868",
-          "category": "Artifact · Deseret Alphabet",
+          "category": "Deseret Alphabet",
           "alert": true,
           "verified": false,
-          "notes": "A sibling URL returned 404, so it may be sold or removed.",
-          "action": "Contact seller to confirm"
+          "notes": "Rechecked 2026-11-11: listing returns 404, probably sold or removed.",
+          "action": "Ignore unless it reappears",
+          "image": null,
+          "status": "gone"
         },
         {
           "title": "Deseret Second Reader, 1868, first edition",
@@ -26,11 +28,13 @@
           "url": "https://www.schilbantiquarian.com/product/deseret-second-alphabet-1868/",
           "more_urls": [],
           "date": "1868",
-          "category": "Artifact · Deseret Alphabet",
+          "category": "Deseret Alphabet",
           "alert": true,
           "verified": false,
           "notes": "Over budget. Search result said in stock; page returned 403.",
-          "action": "Watch"
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Deseret Alphabet Book of Mormon, Part 1 (1869)",
@@ -41,11 +45,13 @@
             "https://www.abaa.org/book/1714859909"
           ],
           "date": "1869",
-          "category": "Artifact · Deseret Alphabet",
+          "category": "Deseret Alphabet",
           "alert": true,
           "verified": false,
           "notes": "The Moon's Rare Books copy (~$450) now returns 410 Gone.",
-          "action": "Watch"
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Orson Pratt, Divine Authority / Remarkable Visions (Liverpool, R. James, 1848)",
@@ -54,11 +60,13 @@
           "url": "https://www.kensandersbooks.com/shop/rarebooks/29383.html",
           "more_urls": [],
           "date": "1848",
-          "category": "Artifact · Early LDS",
+          "category": "Early LDS print",
           "alert": true,
           "verified": false,
           "notes": "19th-century LDS pamphlet within budget.",
-          "action": "Contact seller / buy after confirming live"
+          "action": "Contact seller / buy after confirming live",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Hugh Weightman, Mormonism Exposed: The Other Side (1884)",
@@ -69,11 +77,13 @@
             "https://www.abaa.org/book/384586234"
           ],
           "date": "1884",
-          "category": "Artifact · Anti-Mormon",
+          "category": "Anti-Mormon literature",
           "alert": true,
           "verified": false,
           "notes": "",
-          "action": "Watch / buy"
+          "action": "Watch / buy",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "J. W. Barclay, Mormonism Exposed, The Other Side: An English View (1884)",
@@ -82,11 +92,13 @@
           "url": "https://www.abaa.org/book/1573023623",
           "more_urls": [],
           "date": "1884",
-          "category": "Artifact · Anti-Mormon",
+          "category": "Anti-Mormon literature",
           "alert": true,
           "verified": false,
           "notes": "Near-fine wrappers.",
-          "action": "Watch"
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Millennial Star, Vol. XII (1850)",
@@ -98,11 +110,13 @@
             "https://www.abaa.org/book/726149742"
           ],
           "date": "1848–1851",
-          "category": "Artifact · Millennial Star",
+          "category": "Early LDS print",
           "alert": true,
           "verified": false,
           "notes": "Comparable Freeman's sale: $469 (2020). Vol. 10 (1848) and Vol. 13 (1851) also listed.",
-          "action": "Watch"
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Times and Seasons, vols 1–6 (in 5 volumes)",
@@ -111,11 +125,13 @@
           "url": "https://www.abaa.org/book/1769846177",
           "more_urls": [],
           "date": "1839–1846",
-          "category": "Artifact · Times and Seasons",
+          "category": "Early LDS print",
           "alert": true,
           "verified": false,
           "notes": "Probably far over budget.",
-          "action": "Watch"
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Journal of Discourses, Vol. II (Liverpool, 1855)",
@@ -124,11 +140,13 @@
           "url": "https://www.abaa.org/book/1499257563",
           "more_urls": [],
           "date": "1855",
-          "category": "Artifact · Early LDS",
+          "category": "Early LDS print",
           "alert": true,
           "verified": false,
           "notes": "",
-          "action": "Watch"
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
         },
         {
           "title": "Pewter chalice, 18th century",
@@ -140,8 +158,10 @@
           "category": "Communion vessels (pre-1900)",
           "alert": true,
           "verified": false,
-          "notes": "The date is the dealer's claim.",
-          "action": "Watch"
+          "notes": "Rechecked 2026-11-11: page says \"This object was sold.\"",
+          "action": "Ignore",
+          "image": "https://www.proantic.com/galerie/art-stannum/img/1537849-main-680fe46f3ee90.jpg",
+          "status": "sold"
         },
         {
           "title": "Pewter chalice, 17th century",
@@ -153,8 +173,10 @@
           "category": "Communion vessels (pre-1900)",
           "alert": true,
           "verified": false,
-          "notes": "Hallmarks unidentified; the 'Templar cross' is a red flag.",
-          "action": "Watch"
+          "notes": "Rechecked 2026-11-11: listing returns 410 Gone. Hallmarks unidentified; the 'Templar cross' is a red flag.",
+          "action": "Ignore",
+          "image": null,
+          "status": "gone"
         },
         {
           "title": "Works of Martin Luther, 1557 Wittenberg edition",
@@ -163,11 +185,13 @@
           "url": "https://www.schilbantiquarian.com/?p=992802",
           "more_urls": [],
           "date": "1557",
-          "category": "Artifact · Luther / Reformation",
+          "category": "Luther & Reformation",
           "alert": false,
           "verified": false,
           "notes": "Peripheral; probably over budget.",
-          "action": "Ignore / watch"
+          "action": "Ignore / watch",
+          "image": null,
+          "status": "unknown"
         }
       ],
       "nothing_found": [
