@@ -3,39 +3,9 @@
   "runs": [
     {
       "date": "2026-11-11",
-      "searches": 40,
-      "summary": "0 verified finds, 12 unverified leads. Every listing page was blocked (403/404/410), so none is confirmed live.",
+      "searches": 42,
+      "summary": "3 verified live finds (Ken Sanders 1852 Governor's Message $1,500; Deseret News 1880 $30; The Circular 1858 $38) plus unverified Deseret Alphabet and Journal of Discourses leads. Dismissed items removed.",
       "leads": [
-        {
-          "title": "Deseret Second Book (1868) \"[Original]\"",
-          "price": "~$195",
-          "seller": "Panoply Books",
-          "url": "https://panoplybooks.com/the-deseret-second-book-by-the-regents-of-deseret-university-1868-original",
-          "more_urls": [],
-          "date": "1868",
-          "category": "Deseret Alphabet",
-          "alert": true,
-          "verified": false,
-          "notes": "Rechecked 2026-11-11: listing returns 404, probably sold or removed.",
-          "action": "Ignore unless it reappears",
-          "image": null,
-          "status": "gone"
-        },
-        {
-          "title": "Deseret Second Reader, 1868, first edition",
-          "price": "~$750",
-          "seller": "Schilb Antiquarian",
-          "url": "https://www.schilbantiquarian.com/product/deseret-second-alphabet-1868/",
-          "more_urls": [],
-          "date": "1868",
-          "category": "Deseret Alphabet",
-          "alert": true,
-          "verified": false,
-          "notes": "Over budget. Search result said in stock; page returned 403.",
-          "action": "Watch",
-          "image": null,
-          "status": "unknown"
-        },
         {
           "title": "Deseret Alphabet Book of Mormon, Part 1 (1869)",
           "price": "price unknown",
@@ -65,38 +35,6 @@
           "verified": false,
           "notes": "19th-century LDS pamphlet within budget.",
           "action": "Contact seller / buy after confirming live",
-          "image": null,
-          "status": "unknown"
-        },
-        {
-          "title": "Hugh Weightman, Mormonism Exposed: The Other Side (1884)",
-          "price": "~$100",
-          "seller": "Ken Sanders Rare Books",
-          "url": "https://www.kensandersbooks.com/shop/rarebooks/25054.html",
-          "more_urls": [
-            "https://www.abaa.org/book/384586234"
-          ],
-          "date": "1884",
-          "category": "Anti-Mormon literature",
-          "alert": true,
-          "verified": false,
-          "notes": "",
-          "action": "Watch / buy",
-          "image": null,
-          "status": "unknown"
-        },
-        {
-          "title": "J. W. Barclay, Mormonism Exposed, The Other Side: An English View (1884)",
-          "price": "price unknown",
-          "seller": "ABAA dealer",
-          "url": "https://www.abaa.org/book/1573023623",
-          "more_urls": [],
-          "date": "1884",
-          "category": "Anti-Mormon literature",
-          "alert": true,
-          "verified": false,
-          "notes": "Near-fine wrappers.",
-          "action": "Watch",
           "image": null,
           "status": "unknown"
         },
@@ -164,21 +102,6 @@
           "status": "sold"
         },
         {
-          "title": "Pewter chalice, 17th century",
-          "price": "~€250",
-          "seller": "Proantic dealer",
-          "url": "https://www.proantic.com/en/1704452-17th-century-pewter-chalice.html",
-          "more_urls": [],
-          "date": "17th c.",
-          "category": "Communion vessels (pre-1900)",
-          "alert": true,
-          "verified": false,
-          "notes": "Rechecked 2026-11-11: listing returns 410 Gone. Hallmarks unidentified; the 'Templar cross' is a red flag.",
-          "action": "Ignore",
-          "image": null,
-          "status": "gone"
-        },
-        {
           "title": "Works of Martin Luther, 1557 Wittenberg edition",
           "price": "price unknown",
           "seller": "Schilb Antiquarian",
@@ -190,6 +113,117 @@
           "verified": false,
           "notes": "Peripheral; probably over budget.",
           "action": "Ignore / watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Governor's Message to the Legislative Assembly of Utah Territory, 5 Jan 1852 (Brigham Young)",
+          "price": "$1,500",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/pages/books/67057/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "8pp unsewn octavo, Good+; only 5 institutional copies known. Over budget but pioneer-era Utah imprint of real rarity.",
+          "action": "Watch",
+          "image": "https://kensandersbooks.cdn.bibliopolis.com/pictures/67057.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1724269885",
+          "status": "live"
+        },
+        {
+          "title": "Deseret News, Salt Lake City, Utah Territory (1880 issue, date varies)",
+          "price": "$30",
+          "seller": "Rare Newspapers (Timothy Hughes)",
+          "url": "https://www.rarenewspapers.com/newspaper/130049-before-utah-became-a-state",
+          "more_urls": [],
+          "date": "1880",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Add-to-cart shown. Actual issue date varies per the seller; ask which issue. Cheap 19th-c. Deseret News.",
+          "action": "Buy",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/5.h8.2006/image028.jpg",
+          "status": "live"
+        },
+        {
+          "title": "The Circular (Oneida, NY), 15 Apr 1858: Brigham Young tells army to leave Utah",
+          "price": "$38",
+          "seller": "Rare Newspapers (Timothy Hughes)",
+          "url": "https://www.rarenewspapers.com/newspaper/565712-brigham-young-warns-the-army-to-leave-or-be-annihilated",
+          "more_urls": [],
+          "date": "1858",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Peripheral: non-LDS newspaper reporting the Utah War, 4pp, nice condition, in cart-able listing.",
+          "action": "Watch",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/12.14.2009/image018.jpg",
+          "status": "live"
+        },
+        {
+          "title": "Selections from the Book of Mormon in the Deseret Alphabet (1869) [1st Ed.]",
+          "price": "price unknown",
+          "seller": "Panoply Books",
+          "url": "https://panoplybooks.com/selections-from-the-book-of-mormon-in-the-deseret-alphabet-brigham-young-1869-1st-ed",
+          "more_urls": [],
+          "date": "1869",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Seen in search results only; page returned 404, may be sold. Could not verify live/original.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret Reader, Second Volume (1868)",
+          "price": "price unknown",
+          "seller": "Back of Beyond Books (via Biblio)",
+          "url": "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1111282842",
+          "more_urls": [
+            "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1200072002"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Very Good, no dust jacket per snippet; page 403. Second Biblio copy: /d/1200072002. Could not verify live.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret First Reader / Second Reader (1868) ABAA copies",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1770377836",
+          "more_urls": [
+            "https://www.abaa.org/book/1770377831"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "First Reader; Second Reader at abaa.org/book/1770377831. Not fetched (403). Could not verify live/original.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses Vol. II (Liverpool, 1855), first edition",
+          "price": "~$400 (another copy ~$200)",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/43482.html",
+          "more_urls": [
+            "https://www.kensandersbooks.com/shop/rarebooks/29758.html"
+          ],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Prices from search snippet; page would not load. Second listing: /shop/rarebooks/29758.html.",
+          "action": "Watch",
           "image": null,
           "status": "unknown"
         }
@@ -207,7 +241,7 @@
         "reach.dog",
         "eBay, AbeBooks, Etsy, LiveAuctioneers, Heritage, Estante Virtual, Mercado Livre (no page could be opened)"
       ],
-      "issue": "https://github.com/Samuel-Baird/collector-items/issues/1"
+      "issue": null
     }
   ]
 }
