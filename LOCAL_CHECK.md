@@ -52,7 +52,7 @@ For each platform below, run searches with a rotating subset of the scout search
 
 Apply every reject/avoid rule in the scout files (reprints, glass or plastic cups,
 post-1900 cross-tradition vessels, budget limits). Skip URLs already in `seen.json` or
-`dismissed.json` (normalized: lowercase host, no `www.`, tracking params removed),
+`dismissed.json` (normalized as `host/path?query`, see RUNBOOK.md),
 except re-report a seen URL if its price dropped by 25% or more.
 
 ## 4. Write results

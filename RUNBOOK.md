@@ -8,8 +8,10 @@ or enter any credentials.
 Read `scouts/artifact-scout.md`, `scouts/common-cup.md`,
 `wants.md`, `state/seen.json`, and `state/dismissed.json`. Note today's date.
 
-`state/dismissed.json` lists links the owner clicked X on (keys are normalized URLs:
-lowercase host, no `www.`, tracking params like `utm_*`, `_trkparms` and `hash` removed).
+`state/dismissed.json` lists links the owner clicked X on. Keys are normalized as
+`host/path?query`: no `http(s)://`, lowercase host, no `www.`, no trailing slash, and
+tracking params (`utm_*`, `_trk*`, `hash`, `fbclid`, `gclid`, `mkcid`, `mkevt`, `mkrid`,
+`campid`, `customid`, `toolid`) removed. Normalize a listing URL the same way before comparing.
 Never report, publish or re-check a dismissed link, whatever its price or status.
 
 ## 2. Search
