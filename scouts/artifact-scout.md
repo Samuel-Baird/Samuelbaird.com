@@ -89,6 +89,44 @@ Only four works were ever printed in the Deseret Alphabet, all 1868–1869, all 
 
 **Critical warning — reprints dominate this market.** Confetti Books and similar sellers distribute modern softcover reprints of all three primer/BoM-Part-1 titles; these are explicitly unwanted per existing "Avoid" rules. Only report items credibly identified as first-edition 1868–1869 originals (period binding, period paper, seller explicitly states "first edition" or "1868/1869 original," or auction-house cataloging with Flake-Draper reference). If a listing doesn't clearly distinguish original vs. reprint, note this as a red flag rather than assuming original.
 
+#### Category H — additional known historical items (from the deseretalphabet.org resources and the ScriptWorks "Documents" collection)
+
+These are real, documented historical Deseret Alphabet items. Any original of the following is a find; watch for them by title.
+
+**Printed items**
+- *The Deseret Alphabet* (1854), anonymous 4-page imprint — held by the Church History Library; an original would be extraordinary
+- *The Deseret Alphabet* broadside, about the 1860s — Church History Library copy known
+- Deseret Alphabet card (1859)
+- Deseret News, 1859 issues carrying Deseret Alphabet text (e.g. the 16 February 1859 issue with the Sermon on the Mount), and the 1860s Deseret News articles in the alphabet (70+ known)
+- General Election "People's Ticket" printed in the alphabet
+- Improvement Era page with Deseret Alphabet text
+- *Annual Report of the Territorial Superintendent* (Deseret Alphabet content; verify title and date on any listing)
+- English–Hopi Vocabulary (1860)
+- Mormon Passage of George D. Watt
+- Deseret First Book, Second Book, Book of Mormon Part 1, and complete Book of Mormon (1868–1869) — see above
+
+**Manuscript and ephemeral material**
+- Deseret Alphabet manuscripts circa 1869 (Church History Library holds some; MS 4223 and CR 1234 1 are cited for cursive forms)
+- Journals and minutes written in the alphabet (George D. Watt's bishop's meeting minutes; journals including a Hopi mission journal)
+- Marion J. Shelton handwriting samples
+- Gravestones and store signs with Deseret lettering (photographs, rubbings, or salvaged pieces)
+- Letters or documents by Orson Pratt, George D. Watt, or the Board of Regents about the alphabet
+
+**Peripheral but collectible (clearly label as "peripheral")**
+- First editions of period travel and anti-Mormon books that reproduce the alphabet in a table: Burton, *The City of the Saints* (1862); Remy and Brenchley, *A Journey to Great Salt Lake City* (1861); Beadle, *Life in Utah* (1870); Faulmann, *Das Buch der Schrift* (Vienna, 1878)
+
+**Additional search terms (Deseret Alphabet)**
+- "Deseret Alphabet" / "Deseret alphabet primer" / "Deseret First Book" / "Deseret Second Book"
+- "Book of Mormon Deseret Alphabet 1869" / "Flake-Draper 607" / "Flake-Draper 608"
+- "Russell Brothers New York 1869 Mormon" / "University of Deseret 1868"
+- "Deseret News 1859" / "Deseret News 1860s original" / "Deseret alphabet broadside"
+- "Deseret gold coin 1860" / "Mormon gold Deseret alphabet"
+- "Deseret alphabet manuscript" / "George D. Watt" / "Orson Pratt Deseret alphabet"
+- "Territorial Superintendent annual report Utah" / "People's Ticket Utah 1860s"
+- "Burton City of the Saints 1862" / "Beadle Life in Utah 1870" (peripheral)
+
+**Remember:** modern reprints (Confetti Books and similar) and print-on-demand copies are the main risk. Report only credibly original items, and flag unclear listings as red flags.
+
 ---
 
 ## Search Locations
@@ -262,6 +300,7 @@ In this repository an "alert" means: the daily GitHub issue gets the `alert` lab
 - Early editions of *Millennial Star*
 - Pioneer-era Utah publications
 - Original Book of Mormon-related ephemera
+- **Any credibly original Deseret Alphabet item** (1868–1869 books, 1850s–1860s broadsides, cards, Deseret News issues, manuscripts, 1860 Deseret gold coin) — see Category H
 - Rare missionary tracts
 - Manuscript material connected to LDS history
 - Historically important Reformation documents
