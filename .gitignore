@@ -2,5 +2,7 @@
 *.pdf
 courses/*/textbook/cache/
 courses/*/canvas/files/
+knowledge/cache/
+knowledge/sources/
 __pycache__/
 node_modules/
