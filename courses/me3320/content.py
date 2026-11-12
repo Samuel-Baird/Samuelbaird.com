@@ -398,6 +398,7 @@ UNITS = [
 
 # Mock finals built from the practice problems (ids defined in problems/*.py)
 MOCKS = [
+    dict(id="mockT2", title="Mock Test 2 (shape factor + finite difference + transient + convection)", minutes=120, problems=["6b", "7a", "9b", "11a"]),
     dict(id="mockA", title="Mock final A (steady + transient + flow + free convection)", minutes=120, problems=["3a", "9a", "14a", "16b"]),
     dict(id="mockB", title="Mock final B (generation/fins + external + exchangers + radiation)", minutes=120, problems=["5a", "13b", "15b", "17b"]),
 ]
