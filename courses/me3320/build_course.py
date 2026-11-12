@@ -14,7 +14,8 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "problems"))
 
 import content as C                       # noqa: E402
-import part1, part2, part3                # noqa: E402
+import learning as LR                     # noqa: E402  (recall cards, review links, method labels, contrasts)
+import part1, part2, part3, warmups       # noqa: E402
 
 toc = json.load(open(os.path.join(HERE, "textbook", "toc.json"), encoding="utf-8"))
 sec_info = {s["sec"]: s for c in toc["chapters"] for s in c["sections"]}
@@ -27,6 +28,21 @@ for mod in (part1, part2, part3):
     problems.update(mod.build())
 
 assert not [u["id"] for u in C.UNITS if u["id"] not in problems], "unit without problems"
+
+# warm-ups go first in their unit: easy single-idea problem, then the exam-style ones (playbook rule 5)
+for uid, lst in warmups.build().items():
+    problems[uid] = lst + problems[uid]
+for lst in problems.values():
+    for p in lst:
+        assert p["id"] in LR.METHODS, f"no method label for {p['id']}"
+        p["method"] = LR.METHODS[p["id"]]
+assert set(LR.METHODS) == {p["id"] for lst in problems.values() for p in lst}, "method label for a missing problem"
+unit_order = {u["id"]: i for i, u in enumerate(C.UNITS)}
+owner = {p["id"]: uid for uid, lst in problems.items() for p in lst}
+for uid, ids in LR.REVIEW.items():
+    for pid in ids:
+        assert pid in owner and unit_order[owner[pid]] < unit_order[uid], f"review {pid} in {uid} must come from an earlier unit"
+assert set(LR.RECALL) == {u["id"] for u in C.UNITS}, "every unit needs recall cards"
 
 
 def canvas_links(unit):
@@ -48,6 +64,8 @@ for i, u in enumerate(C.UNITS, 1):
         "videos": [{"id": v[0], "title": v[1], "channel": v[2], "len": v[3], "note": v[4]} for v in u["videos"]],
         "know": u["know"], "eq": [{"label": a, "tex": b} for a, b in u["eq"]], "pitfalls": u["pitfalls"],
         "tables": u.get("tables", []), "samples": u["samples"], "canvas": canvas_links(u),
+        "recall": [{"q": q, "a": a} for q, a in LR.RECALL[u["id"]]],
+        "review": LR.REVIEW.get(u["id"], []),
         "problems": problems[u["id"]],
     })
 
@@ -77,6 +95,8 @@ course = {
     "mocks": C.MOCKS,
     "tableGuide": [{"need": a, "where": b} for a, b in C.TABLE_GUIDE],
     "mistakes": C.COMMON_MISTAKES,
+    "contrasts": LR.CONTRASTS,
+    "routine": LR.ROUTINE,
     "policy": "Built from concepts, videos and original practice problems only. It contains no solutions to assigned homework or test problems. "
               "The syllabus allows AI for finding information and brainstorming, and forbids it on tests, quizzes and for solving assigned work.",
     "generated": datetime.date.today().isoformat(),
