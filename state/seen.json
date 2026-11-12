@@ -160,6 +160,62 @@
       "first_seen": "2026-11-11",
       "last_price": "$400",
       "verified": false
+    },
+    "https://ebornbooks.com/shop/non-fiction/mormon-lds/mormon-rare/1856-marriage-and-morals-in-utah-an-address-written-by-parley-p-pratt-rare-pamphlet": {
+      "title": "Parley P. Pratt, Marriage and Morals in Utah (Liverpool, 1856, 8pp pamphlet)",
+      "price": "$300",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$300",
+      "verified": true
+    },
+    "https://biblio.co.uk/book/journal-discourses-brigham-young-his-two/d/439272277": {
+      "title": "Journal of Discourses Vol. 3 (1856), Orrin Schwab Books, Good+",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://www.biblio.com/book/biographical-sketches-joseph/d/1375755943": {
+      "title": "Orson Pratt, Biographical Sketches of Joseph Smith (Liverpool, 1853), leather, fair",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://biblio.co.nz/book/latter-day-saints-millennial-star-volume/d/1515609620": {
+      "title": "Millennial Star Vols 12 & 13 (1850-51) bound in one, Alcuin Books",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1674016997": {
+      "title": "Luther, Vonn der Freyheyt eyni\u00df Christennmenschen (Wittenberg 1521), 2nd printing",
+      "price": "price not shown (likely well over budget)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown (likely well over budget)",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=133497": {
+      "title": "Luther Small Catechism, Dresden/Leipzig 1688 (Schilb)",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://heliosauctions.com/?p=37467": {
+      "title": "Russian Orthodox gilt-brass chalice, 18th c. (Helios Auctions, start $200, est $300-400)",
+      "price": "$200 start",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$200 start",
+      "verified": false
     }
   }
 }
