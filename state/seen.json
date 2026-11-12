@@ -216,6 +216,154 @@
       "first_seen": "2026-11-12",
       "last_price": "$200 start",
       "verified": false
+    },
+    "https://www.ebay.com/itm/306041126025": {
+      "title": "RARE Folio German Luther Bible leaf 1567, Daniel Fiery Furnace woodcut (dalebooks, eBay)",
+      "price": "$345 or Best Offer",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$345",
+      "verified": true
+    },
+    "https://www.ebay.com/itm/306680166003": {
+      "title": "RARE Folio German Luther Bible leaf 1567, Book John 17-18 (dalebooks, eBay)",
+      "price": "$145 or Best Offer",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$145",
+      "verified": true
+    },
+    "https://www.abaa.org/book/726149017": {
+      "title": "Millennial Star Vol XIV 1852 (Richards, Weller Book Works)",
+      "price": "$300",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$300",
+      "verified": true
+    },
+    "https://local-pec.com/product/large-pewter-goblet-chalice-hand-forged/": {
+      "title": "Large pewter goblet/chalice, probable 18th c. Scottish communion cup (The Local Store PEC)",
+      "price": "$225",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$225",
+      "verified": true
+    },
+    "https://www.1stdibs.com/furniture/dining-entertaining/sterling-silver/queen-anne-period-antique-sterling-silver-chalice-hallmarked-1705/id-f_24075602": {
+      "title": "Queen Anne sterling chalice, London 1705, William Gamble (1stdibs)",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://auction.potterauctions.com/online-auctions/potter-potter/mormons-deseret-alphabet-deseret-second-reader-salt-lake-city-regents-of-the-deseret-university-1868-9016575": {
+      "title": "Deseret Second Reader 1868 (Potter & Potter, lot 332)",
+      "price": "$480 (sold)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$480",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://cascobayauctions.com/auction/247-eclectic-collections/lot-295-1868-mormon/": {
+      "title": "1868 Mormon First Reader in Deseret Language (Casco Bay lot 295)",
+      "price": "$120 (sold)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$120",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://www.liveauctioneers.com/item/176632196_1882-mormon-1ed-joseph-smith-questions-and-answers-lds-brigham-young-utah-rare": {
+      "title": "1882 Joseph Smith Questions & Answers (Schilb, LiveAuctioneers)",
+      "price": "sold June 2024",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "sold",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/29758.html": {
+      "title": "Journal of Discourses Vol II (Ken Sanders 29758)",
+      "price": "~$200 (earlier)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "~$200 (earlier)",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/69589/deseret-alphabet/deseret-second-bok-by-the-regents-of-the-deseret-yionivursiti-deseret-alphabet-second-primer": {
+      "title": "Deseret Second Bok 1868 (Ken Sanders 69589)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.kensandersbooks.com/pages/books/62390/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852": {
+      "title": "Governor's Message 1852 second copy (Ken Sanders 62390)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.kensandersbooks.com/pages/books/67058/james-linforth/the-rev-c-w-lawrences-few-words-from-a-pastor-to-his-people-on-the-subject-of-the-latter-day-saints": {
+      "title": "Linforth reply to C.W. Lawrence, Liverpool c.1851 (Ken Sanders)",
+      "price": "$1,500",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$1,500",
+      "verified": true,
+      "status": "over_budget"
+    },
+    "https://www.abaa.org/book/726157908": {
+      "title": "Millennial Star Vols XV-XVI 1853-54 (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.sellingantiques.co.uk/1061200/near-pair-of-very-large-pewter-communion-flagons-jugs-1845": {
+      "title": "Near pair pewter communion flagons 1845 (David Pickett)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://www.thehoarde.com/product/collier-antiques/georgian-lidded-pewter-chalice-rj02699/print": {
+      "title": "Georgian lidded pewter chalice (Collier Antiques rj02699)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.inessa.com/religious-antiques/19th-century-coin-silver-communion-plate-47427.html": {
+      "title": "19th c. coin silver communion plate (Inessa 47427)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.chairish.com/product/32063593/antique-1800s-pewter-methodist-episcopal-church-presentation-tankard-flagon": {
+      "title": "Methodist Episcopal pewter presentation flagon, 19th c. (Dusty Treasures, Chairish) - presentation piece, not reported",
+      "price": "$385",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$385",
+      "verified": true,
+      "status": "not_reported"
     }
   }
 }
