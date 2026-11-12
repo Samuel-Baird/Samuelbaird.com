@@ -89,41 +89,56 @@ Only four works were ever printed in the Deseret Alphabet, all 1868–1869, all 
 
 **Critical warning — reprints dominate this market.** Confetti Books and similar sellers distribute modern softcover reprints of all three primer/BoM-Part-1 titles; these are explicitly unwanted per existing "Avoid" rules. Only report items credibly identified as first-edition 1868–1869 originals (period binding, period paper, seller explicitly states "first edition" or "1868/1869 original," or auction-house cataloging with Flake-Draper reference). If a listing doesn't clearly distinguish original vs. reprint, note this as a red flag rather than assuming original.
 
-#### Category H — additional known historical items (from the deseretalphabet.org resources and the ScriptWorks "Documents" collection)
+#### Category H — additional known historical items
 
-These are real, documented historical Deseret Alphabet items. Any original of the following is a find; watch for them by title.
+Compiled from the owner's Deseret reference folder (scans of the 1854 brochure, broadside, 1859 card, Deseret News pages, the 1875 People's Ticket, the 1868 Annual Report, the alphabet tables from Burton, Remy, Beadle, Faulmann and the New York Times, and Beesley & Elzinga's *An 1860 English-Hopi Vocabulary Written in the Deseret Alphabet*, 2015). Any original of the following is a find; watch for them by title.
 
-**Printed items**
-- *The Deseret Alphabet* (1854), anonymous 4-page imprint — held by the Church History Library; an original would be extraordinary
-- *The Deseret Alphabet* broadside, about the 1860s — Church History Library copy known
-- Deseret Alphabet card (1859)
-- Deseret News, 1859 issues carrying Deseret Alphabet text (e.g. the 16 February 1859 issue with the Sermon on the Mount), and the 1860s Deseret News articles in the alphabet (70+ known)
-- General Election "People's Ticket" printed in the alphabet
-- Improvement Era page with Deseret Alphabet text
-- *Annual Report of the Territorial Superintendent* (Deseret Alphabet content; verify title and date on any listing)
-- English–Hopi Vocabulary (1860)
-- Mormon Passage of George D. Watt
-- Deseret First Book, Second Book, Book of Mormon Part 1, and complete Book of Mormon (1868–1869) — see above
+**Printed items, 1854–1875 (originals are Special Alerts)**
+- *The Deseret Alphabet* (Salt Lake City, 24 March 1854): single-sheet bifold brochure, 4 pp., probably printed from wooden type; text begins "...to represent the sounds heard in the English Language..." and has a "Words of One Syllable" page. CHL copy: Vault M288.8 D457. An original would be extraordinary.
+- *The Deseret Alphabet* broadside, about 1859–1860 (Burton copied it during his 1860 visit): "Vocal Sounds / Articulate Sounds / Double" layout. CHL copy known.
+- Deseret Alphabet card (Salt Lake City, about 1859): small printed card, "Long / Short" columns.
+- *Key to Deseret Alphabet* (Salt Lake City, about 1868?): small key/card, Bancroft Library F826 .K397. Unrecorded in trade; any copy is a find.
+- Deseret News issues with Deseret Alphabet text. The alphabet chart and the first part of the Sermon on the Mount (Matthew 5) appeared on **16 February 1859**; alphabet articles ran almost weekly to about May 1860, and again in 1864. Also the first announcement, Deseret News **19 January 1854**. Whole original issues or disbound leaves count.
+- **General Election, 1875, People's Ticket** (Salt Lake, Summit and Tooele counties; Monday, August 2d), a narrow ballot slip with "People's Ticket" in Deseret Alphabet under the date. Note: **1875, not the 1860s.**
+- *Annual Report of the Territorial Superintendent of Common Schools for the Year 1868* (Salt Lake City: George Q. Cannon, Public Printer, Deseret News Office), by Robert L. Campbell. 22 pp. pamphlet arguing for the Deseret system. Only an 1868/1869 original counts, not the Internet Archive print-on-demand.
+- *The Juvenile Instructor*, 1875 (vol. 10): George Q. Cannon's "Editorial Thoughts" announcing that the alphabet was abandoned. A single issue or bound volume is collectible, low priority.
+- Deseret First Book, Second Book, Book of Mormon Part I, and the complete Book of Mormon (1868–1869); see above.
+
+**Coin**
+- 1860 Deseret Assay Office $5 (lion obverse, "Holiness to the Lord" in Deseret Alphabet; eagle reverse "DESERET ASSAY OFFICE PURE GOLD 5.D."). Recent originals sold for about $47,000–$144,000, far over budget, so report only as an exceptional item. The **uniface copper restrike (Kagin K-8 / K-8a)** has sold for about $7,600. **Modern gilt replicas** are common and cheap, and are never Special Alerts; label them "replica".
 
 **Manuscript and ephemeral material**
-- Deseret Alphabet manuscripts circa 1869 (Church History Library holds some; MS 4223 and CR 1234 1 are cited for cursive forms)
-- Journals and minutes written in the alphabet (George D. Watt's bishop's meeting minutes; journals including a Hopi mission journal)
-- Marion J. Shelton handwriting samples
-- Gravestones and store signs with Deseret lettering (photographs, rubbings, or salvaged pieces)
-- Letters or documents by Orson Pratt, George D. Watt, or the Board of Regents about the alphabet
+- Deseret Alphabet manuscripts circa 1859–1869. CHL holds the complete Bible, Doctrine and Covenants, John Jaques's Catechism, and a "Deseret Phonetic Speller" in manuscript (found 1967). MS 4223 and CR 1234 1 are cited for cursive forms.
+- Journals, ledgers and minutes kept in the alphabet: George D. Watt's minutes; Brigham Young's "Ledger C" (1859–60, USU); the "History of Brigham Young" (1859–60); Thales H. Haskell's 1859 Hopi mission journal (BYU; a leaf is at Cornell); Andrew S. Gibbons's 1858 journal; Marion J. Shelton's 1859 letters and the English–Hopi vocabulary (CHL MS 2977). Any **letter or diary page in Deseret script** from a family collection is a top find. Flag any of these names on a manuscript listing: Watt, Shelton, Haskell, Gibbons, Ellerbeck, Bullock, Hamblin, Mosiah Hancock, Henry Eyring (Cherokee mission, 1859).
+- Gravestones and store signs with Deseret lettering (photographs, rubbings, or salvaged pieces).
+- Letters or documents by Orson Pratt, George D. Watt, or the Board of Regents about the alphabet.
+- Original Deseret Alphabet **printing type or matrices** (cast in St. Louis in 1857; new matrices arrived 1859) are possible but unrecorded in trade. Flag any listing.
 
-**Peripheral but collectible (clearly label as "peripheral")**
-- First editions of period travel and anti-Mormon books that reproduce the alphabet in a table: Burton, *The City of the Saints* (1862); Remy and Brenchley, *A Journey to Great Salt Lake City* (1861); Beadle, *Life in Utah* (1870); Faulmann, *Das Buch der Schrift* (Vienna, 1878)
+**Peripheral but collectible (label as "peripheral"; first or early editions only)**
+- Burton, *The City of the Saints, and Across the Rocky Mountains to California* (London: Longman, 1861; New York: Harper, 1862). Full-page "The Deseret Alphabet" table (p. 420 in the 1862 Harper edition, in the chapter on the Historian and Recorder's Office), copied from the broadside's "Vocal Sounds / Articulate Sounds" layout.
+- Remy and Brenchley, *A Journey to Great-Salt-Lake City* (London: W. Jeffs, 1861, 2 vols.), with a lithographed plate "Alphabet des Mormons / The Mormon Alphabet"; the French original, Remy, *Voyage au pays des Mormons* (Paris: Dentu, 1860, 2 vols.). **Loose copies of the plate** turn up as prints.
+- Beadle, *Life in Utah; or, The Mysteries and Crimes of Mormonism* (Philadelphia: National Publishing Co., 1870, and Chicago/Cincinnati issues). It has a full-page "Mormon Alphabet" engraving (p. 470), credited to "O. Pratt and W. Phelps".
+- Faulmann, *Das Buch der Schrift* (Vienna: K.K. Hof- und Staatsdruckerei, 1878; 2nd ed. 1880). "Mormonen-Alphabet" table and note on p. 14 (listed in the contents under America).
+- *New York Times*, 2 October 1857, "The New Mormon Alphabet" (first national printing of the type specimen). Original issues are sold by newspaper dealers such as RareNewspapers.com.
+- Isaac Pitman's phonotypy imprints (for example the 1850 phonotypic Bible, *The Phonotypic Journal*, the *Fonetic Nuz*). These were the model for the alphabet; deep peripheral, under $100 only.
 
-**Additional search terms (Deseret Alphabet)**
-- "Deseret Alphabet" / "Deseret alphabet primer" / "Deseret First Book" / "Deseret Second Book"
-- "Book of Mormon Deseret Alphabet 1869" / "Flake-Draper 607" / "Flake-Draper 608"
-- "Russell Brothers New York 1869 Mormon" / "University of Deseret 1868"
-- "Deseret News 1859" / "Deseret News 1860s original" / "Deseret alphabet broadside"
-- "Deseret gold coin 1860" / "Mormon gold Deseret alphabet"
-- "Deseret alphabet manuscript" / "George D. Watt" / "Orson Pratt Deseret alphabet"
-- "Territorial Superintendent annual report Utah" / "People's Ticket Utah 1860s"
-- "Burton City of the Saints 1862" / "Beadle Life in Utah 1870" (peripheral)
+**Later collectibles (20th–21st c.; never Special Alerts, report under Deseret Alphabet with "modern" in the title)**
+- *Improvement Era*, July 1967: "Deseret Alphabet Manuscripts Found" by Albert L. Zobell Jr., pp. 10–11. Cheap single issue.
+- *Deseret News* Church News section, 20 December 1958: "Deseret Alphabet Readers Become Collectors Items". Unsold Second Books and Part I copies were then sold for 50 cents. This is why crisp, unread originals exist; such a copy is **not** automatically a reprint.
+- *The Herald* (Provo), Sunday 4 April 1976, p. 23: UPI article "Is Deseret Alphabet to Blame for Eating 'Carn' With a 'Fark'?"
+- *Plan 10 From Outer Space* (Trent Harris film, 1995), official Deseret Alphabet font, sold on 3.5" floppy (Macintosh PostScript) and with a Windows TrueType card/sleeve. Film promo items that show the alphabet also count.
+- Josep Carles Laínez, *La piedra ente la ñeve* (Uviéu: Trabe, 2010), Asturian poems with parallel Deseret Alphabet text.
+- Beesley and Elzinga, *An 1860 English-Hopi Vocabulary Written in the Deseret Alphabet* (University of Utah Press, 2015); Ronald G. Watt, *The Mormon Passage of George D. Watt* (USU Press, 2009). Reference books; report only if signed or under $20.
+- Utah Historical Quarterly 52:3 (1984), "Creating a New Alphabet for Zion"; UHQ 1944, Juanita Brooks, "Journal of Thales H. Haskell". Reference issues, under $20 only.
+
+**Title variants sellers use (search these too)**
+- Book of Mormon Part I is often misadvertised as "The Book of Nephi," "The First Book of Nephi," or "Selections from the Book of Mormon." It is the same 1869 book (1 Nephi–Words of Mormon).
+- "Mormon alphabet," "Brigham Young's alphabet," "Mormon phonetic alphabet," "Deseret reader," "Deseret primer," "Regents of the Deseret University," "Russell Bros. 1868/1869."
+- Deseret Alphabet Unicode titles that some sellers paste: 𐐜 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐙𐐨𐑉𐑅𐐻 𐐒𐐳𐐿 (First Book), 𐐜 𐐒𐐳𐐿 𐐱𐑂 𐐣𐐫𐑉𐑋𐐲𐑌 (Book of Mormon).
+
+**Ignore (modern noise)**: t-shirts, stickers, jewelry, digital-download charts, "Deseret Alphabet" keyboard/fonts sold today, Etsy reproduction posters, and modern Deseret Alphabet translations (Book of Mormon, Bible, novels by deseretbooks.net and similar), except the named later collectibles above. Reprint markers: Confetti Books, ISBN, "facsimile," "reprint," softcover with modern barcode, Kessinger, Forgotten Books, print-on-demand.
+
+**Search terms:** the master list is `search-list.txt` (its Deseret Alphabet sections). Use the variants above to refine when a platform's results are noisy.
 
 **Remember:** modern reprints (Confetti Books and similar) and print-on-demand copies are the main risk. Report only credibly original items, and flag unclear listings as red flags.
 
@@ -300,7 +315,7 @@ In this repository an "alert" means: the daily GitHub issue gets the `alert` lab
 - Early editions of *Millennial Star*
 - Pioneer-era Utah publications
 - Original Book of Mormon-related ephemera
-- **Any credibly original Deseret Alphabet item** (1868–1869 books, 1850s–1860s broadsides, cards, Deseret News issues, manuscripts, 1860 Deseret gold coin) — see Category H
+- **Any credibly original Deseret Alphabet item** (1854 brochure, 1859 card, broadside, Key, 1868–1869 books, Deseret News issues 1854–1864, the 1875 People's Ticket, the 1868 Annual Report, manuscripts in Deseret script, the 1860 Deseret $5 or its copper restrike). See Category H. Modern and peripheral Deseret items are reported but are not alerts.
 - Rare missionary tracts
 - Manuscript material connected to LDS history
 - Historically important Reformation documents
