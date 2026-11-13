@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f1115">
+<meta name="color-scheme" content="dark">
+<title>ME 3410 Catch-up</title>
+<meta name="description" content="Catch-up tracker for ME 3410 Applied Finite Element Analysis: plan, deadlines, deliverables and grade projection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--background);color:var(--foreground);font:16px/1.6 var(--font-sans)}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+button,select{font:inherit;color:inherit}
+.rail{max-width:56rem;margin:0 auto;padding:24px 16px 80px}
+h1{font:600 clamp(1.8rem,5vw,2.6rem)/1.15 var(--font-serif);margin:0 0 6px}
+h2{font:600 1.35rem/1.25 var(--font-serif);margin:26px 0 12px}
+h3{font:600 1rem/1.3 var(--font-sans);margin:0}
+p{margin:0 0 10px}
+.eyebrow{color:var(--accent);margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.muted{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:10px;margin:14px 0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.card .k{font-variant-caps:all-small-caps;letter-spacing:.08em;color:var(--muted);font-size:.85rem}
+.card .v{font:600 1.5rem/1.2 var(--font-serif);margin-top:2px}
+.card .s{color:var(--muted);font-size:.85rem}
+.card.hot{border-left:3px solid var(--honey)}
+.banner{background:var(--accent-soft);border:1px solid var(--border);border-left:3px solid var(--honey);border-radius:var(--radius);padding:14px 16px;margin:0 0 18px}
+.banner b{color:var(--honey)}
+.tabs{display:flex;gap:4px;margin:20px 0 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--background);z-index:20;padding-top:8px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;min-height:44px;cursor:pointer;color:var(--muted);font-weight:500;white-space:nowrap;flex:0 0 auto}
+.tabs button[aria-selected=true]{color:var(--foreground);border-bottom-color:var(--accent)}
+.panel[hidden]{display:none}
+/* plan timeline */
+.day{display:grid;grid-template-columns:6.2rem 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--border)}
+.day .d{font:600 1rem/1.3 var(--font-serif)}
+.day .d small{display:block;font:400 .82rem var(--font-sans);color:var(--muted)}
+.day.today .d{color:var(--honey)}
+.task{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin:0 0 6px}
+.task a{color:var(--foreground);text-decoration:none;font-weight:500}
+.task a:hover{color:var(--accent)}
+/* items */
+.item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin:0 0 10px}
+.item[data-st=submitted],.item[data-st=graded]{border-left:3px solid #6fae7e}
+.item[data-st=pdf_ready]{border-left:3px solid var(--accent)}
+.item[data-st=blocked]{border-left:3px solid #c0705a}
+.item summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:start}
+.item summary::-webkit-details-marker{display:none}
+.item .meta{grid-column:1/-1;color:var(--muted);font-size:.88rem}
+.item .body{padding:0 14px 14px}
+.pill{display:inline-block;border:1px solid var(--border);border-radius:var(--radius);padding:0 7px;font-size:.85rem;white-space:nowrap;font-variant-caps:all-small-caps;letter-spacing:.06em;font-weight:500}
+.pill.todo{color:var(--muted)}
+.pill.in_progress{color:var(--honey);border-color:var(--honey)}
+.pill.pdf_ready{color:var(--accent);border-color:var(--accent)}
+.pill.submitted,.pill.graded{color:#8fd19e;border-color:#6fae7e}
+.pill.blocked{color:#e39a86;border-color:#c0705a}
+.pill.late{color:#e39a86;border-color:#5a3a33}
+.pill.ok{color:#8fd19e;border-color:#2f4a36}
+ul.dl{list-style:none;padding:0;margin:8px 0}
+ul.dl li{display:flex;gap:10px;align-items:flex-start;padding:4px 0}
+ul.dl input{margin-top:5px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--accent)}
+ul.dl li.done span{color:var(--muted);text-decoration:line-through}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0}
+select{background:var(--background);border:1px solid var(--border);border-radius:var(--radius);padding:6px 8px;min-height:36px}
+.note{font-size:.92rem;color:var(--muted);border-left:2px solid var(--border);padding-left:10px;margin:8px 0}
+code{font:.85rem/1.4 ui-monospace,Consolas,monospace;background:var(--muted-soft);padding:1px 5px;border-radius:2px}
+.bar{height:10px;background:var(--muted-soft);border-radius:5px;overflow:hidden;position:relative;margin:6px 0 2px}
+.bar>i{position:absolute;inset:0 auto 0 0;background:var(--accent);opacity:.35}
+.bar>b{position:absolute;inset:0 auto 0 0;background:var(--accent)}
+.grp{margin:0 0 14px}
+.grp .h{display:flex;justify-content:space-between;gap:8px;font-size:.92rem}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.chip{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;min-height:36px;cursor:pointer;font-size:.9rem}
+.chip[aria-pressed=true]{background:var(--accent-soft);border-color:var(--accent)}
+ol.pipe{padding-left:1.2rem}
+ol.pipe li{margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--border);padding:6px 4px;text-align:left}
+th{color:var(--muted);font-weight:500}
+@media (max-width:520px){.day{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<div class="rail">
+  <p class="eyebrow small-caps"><a href="/learn">Learn</a> · Catch-up tracker</p>
+  <h1>ME 3410 · Applied FEA</h1>
+  <p class="sub" id="sub">Loading…</p>
+  <div class="cards" id="cards"></div>
+  <div class="banner" id="focus"></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="plan">Plan</button>
+    <button role="tab" aria-selected="false" data-tab="work">Assignments</button>
+    <button role="tab" aria-selected="false" data-tab="grade">Grade</button>
+    <button role="tab" aria-selected="false" data-tab="how">Pipeline</button>
+  </nav>
+  <section class="panel" id="plan"></section>
+  <section class="panel" id="work" hidden>
+    <div class="filters" id="filters"></div>
+    <div id="items"></div>
+  </section>
+  <section class="panel" id="grade" hidden></section>
+  <section class="panel" id="how" hidden></section>
+  <p class="note" id="foot"></p>
+</div>
+<script>
+(function(){
+var KEY="me3410:v1",S={st:{},dl:{}},D=null,FILTER="open";
+var LABEL={todo:"To do",in_progress:"In progress",pdf_ready:"Doc ready",submitted:"Submitted",graded:"Graded",blocked:"Blocked"};
+var ORDER=["todo","in_progress","pdf_ready","submitted","graded","blocked"];
+function load(){try{var j=JSON.parse(localStorage.getItem(KEY)||"{}");if(j.st)S.st=j.st;if(j.dl)S.dl=j.dl}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function st(it){return S.st[it.id]||it.status}
+function isOpen(it){var s=st(it);return s!=="submitted"&&s!=="graded"}
+function now(){return new Date()}
+function lateDays(it,when){var ms=when-new Date(it.due_iso);return ms>0?Math.ceil(ms/864e5):0}
+function pen(d){return Math.min(50,10*d)}
+function dayName(iso){var d=new Date(iso+"T12:00:00");return d.toLocaleDateString("en-US",{weekday:"short"})}
+function dayLabel(iso){var d=new Date(iso+"T12:00:00");return d.toLocaleDateString("en-US",{month:"short",day:"numeric"})}
+function todayIso(){var d=now();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function untilText(iso){var ms=new Date(iso)-now();if(ms<0){var d=Math.ceil(-ms/864e5);return d+" day"+(d>1?"s":"")+" late"}var h=Math.floor(ms/36e5);return h<48?h+" h left":Math.floor(h/24)+" days left"}
+
+function render(){
+  var items=D.items,open=items.filter(isOpen);
+  document.getElementById("sub").textContent=D.section+" · Updated "+D.updated+". Work each assignment through the pipeline, review the Word file, export it to PDF, submit it on Canvas, then mark it here.";
+  // cards
+  var next=open.filter(function(i){return new Date(i.due_iso)>now()}).sort(function(a,b){return new Date(a.due_iso)-new Date(b.due_iso)})[0];
+  var late=open.filter(function(i){return new Date(i.due_iso)<now()});
+  var done=items.length-open.length;
+  var g=D.grade;
+  var c=[
+    ["Next deadline",next?esc(next.title.split(":")[0]):"None",next?untilText(next.due_iso)+" · "+esc(next.due_local):"",true],
+    ["Overdue",late.length,late.length?"late work loses 10%/day, max 50%":"none",late.length>0],
+    ["Done",done+" / "+items.length,"submitted or graded",false],
+    ["Grade now",g.if_nothing_submitted+"%","if nothing else is turned in",false],
+    ["With the plan",g.if_plan_completed+"%","projected, see Grade tab",false]
+  ];
+  document.getElementById("cards").innerHTML=c.map(function(x){return '<div class="card'+(x[3]?" hot":"")+'"><div class="k">'+x[0]+'</div><div class="v">'+x[1]+'</div><div class="s">'+x[2]+'</div></div>'}).join("");
+  // focus
+  var t=todayIso(),todays=open.filter(function(i){return i.plan<=t}).sort(function(a,b){return a.priority-b.priority});
+  var f=document.getElementById("focus");
+  if(todays.length){f.innerHTML="<b>Today:</b> "+todays.slice(0,3).map(function(i){return '<a href="#'+i.id+'" data-open="'+i.id+'">'+esc(i.title)+"</a>"}).join(" → ")+(todays.length>3?" (+"+(todays.length-3)+" more)":"")+'. '+esc(todays[0].note||"")}
+  else{f.innerHTML="<b>Nothing scheduled today.</b> "+(open[0]?"Next up: "+esc(open[0].title)+" on "+dayLabel(open[0].plan)+".":"Everything is in.")}
+  renderPlan();renderItems();renderGrade();renderHow();
+  document.getElementById("foot").textContent="Status changes and checkboxes are saved in this browser only. Canvas is the record of what is actually submitted. Word files stay on your computer in school/courses/me3410/out/.";
+}
+function renderPlan(){
+  var by={};D.items.forEach(function(i){(by[i.plan]=by[i.plan]||[]).push(i)});
+  var t=todayIso(),h='<p class="muted">Ordered by what saves the most points: Part I is due tonight, HW 7 still loses 10% a day, Test 1 is the whole 40% exam category. Items more than five days late are already at the 50% cap, so after that, on-time work comes first.</p>';
+  Object.keys(by).sort().forEach(function(d){
+    h+='<div class="day'+(d===t?" today":"")+'"><div class="d">'+dayName(d)+" "+dayLabel(d)+(d===t?"<small>today</small>":"")+'</div><div>';
+    by[d].forEach(function(i){
+      var s=st(i),ld=lateDays(i,new Date(d+"T23:00:00"));
+      h+='<div class="task"><a href="#'+i.id+'" data-open="'+i.id+'">'+esc(i.title)+'</a> <span class="pill '+s+'">'+LABEL[s]+'</span>'+(ld&&isOpen(i)?' <span class="pill late">−'+pen(ld)+'%</span>':'')+' <span class="muted" style="font-size:.85rem">~'+i.hrs+' h · due '+esc(i.due_local)+'</span></div>';
+    });
+    h+="</div></div>";
+  });
+  document.getElementById("plan").innerHTML=h;
+}
+function renderItems(){
+  var fs=[["open","Open"],["all","All"],["Assignments","Assignments"],["Exams","Exams"],["Term project","Term project"]];
+  document.getElementById("filters").innerHTML=fs.map(function(x){return '<button class="chip" aria-pressed="'+(FILTER===x[0])+'" data-f="'+x[0]+'">'+x[1]+"</button>"}).join("");
+  var list=D.items.filter(function(i){return FILTER==="all"||(FILTER==="open"?isOpen(i):i.group===FILTER)});
+  document.getElementById("items").innerHTML=list.map(function(i){
+    var s=st(i),ld=lateDays(i,now()),dl=S.dl[i.id]||{},nd=i.deliver.filter(function(_,k){return dl[k]}).length;
+    var lateP=isOpen(i)&&ld?'<span class="pill late">'+ld+" d late · −"+pen(ld)+"% now</span>":(isOpen(i)?'<span class="pill ok">'+untilText(i.due_iso)+"</span>":"");
+    return '<details class="item" id="'+i.id+'" data-st="'+s+'"><summary><h3>'+esc(i.title)+'</h3><span class="pill '+s+'">'+LABEL[s]+'</span><div class="meta">'+esc(i.group)+" · "+i.pts+" pts · due "+esc(i.due_local)+" · plan "+dayName(i.plan)+" "+dayLabel(i.plan)+" · "+nd+"/"+i.deliver.length+" deliverables "+lateP+"</div></summary>"
+      +'<div class="body">'+(i.note?'<p class="note">'+esc(i.note)+"</p>":"")
+      +'<p class="muted" style="font-size:.9rem">'+esc(i.kind)+" · Word file <code>"+esc(i.pdf)+"</code></p>"
+      +'<ul class="dl">'+i.deliver.map(function(x,k){return '<li class="'+(dl[k]?"done":"")+'"><input type="checkbox" data-i="'+i.id+'" data-k="'+k+'" '+(dl[k]?"checked":"")+' aria-label="'+esc(x)+'"><span>'+esc(x)+"</span></li>"}).join("")+"</ul>"
+      +'<div class="row"><label class="muted" for="s-'+i.id+'">Status</label><select id="s-'+i.id+'" data-s="'+i.id+'">'+ORDER.map(function(o){return '<option value="'+o+'"'+(o===s?" selected":"")+">"+LABEL[o]+"</option>"}).join("")+'</select><a href="'+esc(i.url)+'" target="_blank" rel="noopener">Open in Canvas</a></div></div></details>';
+  }).join("")||'<p class="muted">Nothing here.</p>';
+}
+function renderGrade(){
+  var g=D.grade,w=D.policy.weights,h='<p>Canvas weights each group: '+Object.keys(w).map(function(k){return esc(k)+" "+w[k]+"%"}).join(", ")+'. Canvas shows '+g.canvas_current+'% on graded work only and '+g.canvas_final_zeros+'% with missing work counted as zero.</p>';
+  Object.keys(w).forEach(function(k){
+    var a=g.groups_now[k]||0,b=g.groups_plan[k]||0;
+    h+='<div class="grp"><div class="h"><span>'+esc(k)+' <span class="muted">('+w[k]+'%)</span></span><span>'+a+'% → <b>'+b+'%</b></span></div><div class="bar"><i style="width:'+b+'%"></i><b style="width:'+a+'%"></b></div></div>';
+  });
+  h+='<p class="muted">'+esc(g.assumption)+' Overall: <b>'+g.if_nothing_submitted+'%</b> now → <b>'+g.if_plan_completed+'%</b> with the plan. Test 1 alone is worth up to 40 points of the final grade; Dr. Seibi asked for it to be submitted, so ask whether the late penalty applies; without it the projection rises sharply.</p>';
+  h+='<h2>Already graded</h2><table><thead><tr><th>Item</th><th>Group</th><th>Score</th></tr></thead><tbody>'+D.graded.map(function(x){return "<tr><td>"+esc(x.title)+"</td><td>"+esc(x.group)+"</td><td>"+x.earned+" / "+x.possible+"</td></tr>"}).join("")+"</tbody></table>";
+  document.getElementById("grade").innerHTML=h;
+}
+function renderHow(){
+  var h='<p class="banner" style="border-left-color:var(--accent)"><b style="color:var(--accent)">AI use:</b> '+esc(D.policy.ai)+'</p><p>'+esc(D.policy.late)+'</p><h2>How each assignment is produced</h2><ol class="pipe">'+D.pipeline.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+'</ol><p class="muted">Every Word document contains: the AI-use statement first, the given data, hand calculations (symbolic form, numbers substituted, boxed result), ANSYS screenshots (model with BCs, mesh, contours), mesh-convergence evidence, and a hand-vs-ANSYS comparison table with % difference.</p>';
+  document.getElementById("how").innerHTML=h;
+}
+document.addEventListener("click",function(e){
+  var b=e.target.closest("[data-tab]");if(b){showTab(b.getAttribute("data-tab"));return}
+  var f=e.target.closest("[data-f]");if(f){FILTER=f.getAttribute("data-f");renderItems();return}
+  var o=e.target.closest("[data-open]");if(o){e.preventDefault();FILTER="all";showTab("work");renderItems();var el=document.getElementById(o.getAttribute("data-open"));if(el){el.open=true;el.scrollIntoView({block:"start"})}}
+});
+document.addEventListener("change",function(e){
+  var t=e.target;
+  if(t.matches("input[data-i]")){var i=t.getAttribute("data-i"),k=t.getAttribute("data-k");S.dl[i]=S.dl[i]||{};S.dl[i][k]=t.checked;save();t.closest("li").className=t.checked?"done":"";var it=D.items.filter(function(x){return x.id===i})[0];if(it&&t.checked&&st(it)==="todo"){S.st[i]="in_progress";save();var sel=document.querySelector('select[data-s="'+i+'"]');if(sel)sel.value="in_progress"}}
+  if(t.matches("select[data-s]")){S.st[t.getAttribute("data-s")]=t.value;save();render()}
+});
+function showTab(id){document.querySelectorAll("[data-tab]").forEach(function(b){b.setAttribute("aria-selected",b.getAttribute("data-tab")===id)});document.querySelectorAll(".panel").forEach(function(p){p.hidden=p.id!==id})}
+load();
+fetch("/learn/me3410/tracker.json").then(function(r){return r.json()}).then(function(j){D=j;render()}).catch(function(){document.getElementById("sub").textContent="Could not load tracker.json."});
+})();
+</script>
+</body>
+</html>

@@ -38,11 +38,20 @@ h1{font:600 clamp(1.8rem,5vw,2.4rem)/1.15 var(--font-serif);margin:0 0 8px}
     <span>Fall 2026 · 18 units, 90 videos, 37 practice problems, mock finals, formula sheet</span><br>
     <span id="prog"></span>
   </a>
+  <a class="course" href="/learn/me3410">
+    <b>ME 3410 · Applied Finite Element Analysis</b>
+    <span>Fall 2026 · Catch-up tracker: plan, deadlines, deliverables, grade projection</span><br>
+    <span id="prog3410"></span>
+  </a>
 </div>
 <script>
 try{
   var s=JSON.parse(localStorage.getItem("me3320:v1")||"{}"),d=Object.keys(s.done||{}).filter(function(k){return s.done[k]}).length,p=Object.keys(s.solved||{}).filter(function(k){return s.solved[k]}).length;
   if(d||p)document.getElementById("prog").textContent=d+" of 18 units done · "+p+" problems solved";
+}catch(e){}
+try{
+  var t=JSON.parse(localStorage.getItem("me3410:v1")||"{}"),n=Object.keys(t.st||{}).filter(function(k){return t.st[k]==="submitted"||t.st[k]==="graded"}).length;
+  if(n)document.getElementById("prog3410").textContent=n+" of 15 items submitted";
 }catch(e){}
 </script>
 </body>
