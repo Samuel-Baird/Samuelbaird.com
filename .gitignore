@@ -13,3 +13,4 @@ courses/*/out/
 courses/*/work/*/ansys_out/
 courses/*/work/*/figs/
 courses/*/work/*/assets/*.step
+courses/*/work/*/assets/*.xml
