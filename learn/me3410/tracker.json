@@ -17,7 +17,7 @@
   "canvas_current": 52.6,
   "canvas_final_zeros": 17.3,
   "if_nothing_submitted": 17.8,
-  "if_plan_completed": 66.1,
+  "if_plan_completed": 66.8,
   "groups_now": {
    "Attendance": 76.0,
    "Assignments": 26.7,
@@ -26,7 +26,7 @@
   },
   "groups_plan": {
    "Attendance": 76.0,
-   "Assignments": 70.5,
+   "Assignments": 73.5,
    "Exams": 45.0,
    "Term project": 91.4
   },
@@ -84,7 +84,7 @@
    "plan": "2026-11-13",
    "hrs": 3,
    "kind": "ANSYS (2D + 3D) + hand checks",
-   "status": "todo",
+   "status": "pdf_ready",
    "pdf": "HW7_2D_3D_Models.docx",
    "deliver": [
     "Q1 plane stress vs. strain, justified",
@@ -98,7 +98,7 @@
     "Q2 selected material and why",
     "Q2 radial deformation, radial stress, hoop stress contours"
    ],
-   "note": "Already 1 day late on Nov 13; every day costs another 10%. Do it right after Part I.",
+   "note": "Already 1 day late on Nov 13; every day costs another 10%. Q2 uses ANSYS library fibers; Kevlar 49 is not in the library, so it comes from the handout table (ν = 0.36 assumed).",
    "priority": 2,
    "due_local": "Wed Nov 11, 11:59 PM MT",
    "due_iso": "2026-11-11T23:59:59-07:00",
@@ -106,6 +106,34 @@
    "late_days_at_plan": 2,
    "penalty_at_plan": 0.2,
    "expected_pts": 7.2
+  },
+  {
+   "id": "hw4",
+   "title": "HW 4: Truss element",
+   "cid": 9163925,
+   "group": "Assignments",
+   "pts": 10,
+   "due": "2026-09-28T05:59:59Z",
+   "plan": "2026-11-13",
+   "hrs": 1,
+   "kind": "Direct-stiffness hand solution + ANSYS links",
+   "status": "pdf_ready",
+   "pdf": "HW4_Truss_Element.docx",
+   "deliver": [
+    "Q1 FE hand solution: element and global stiffness, joint deflections",
+    "Q1 member stresses and reaction forces",
+    "Q1 verification (method of joints, equilibrium)",
+    "Q2 ANSYS model (link elements), deflections, stresses, reactions",
+    "Q2 comparison table with the hand solution"
+   ],
+   "note": "Graded 0 because it was never submitted. Late cap is 50%, so it is still worth up to 5 points.",
+   "priority": 3,
+   "due_local": "Sun Sep 27, 11:59 PM MT",
+   "due_iso": "2026-09-27T23:59:59-06:00",
+   "url": "https://uvu.instructure.com/courses/641173/assignments/9163925",
+   "late_days_at_plan": 47,
+   "penalty_at_plan": 0.5,
+   "expected_pts": 4.5
   },
   {
    "id": "test1",
@@ -129,7 +157,7 @@
     "Q3 statics/MoM reactions and max bending stress + % error table"
    ],
    "note": "Worth the entire 40% exam category right now (currently 0). Instructor commented Nov 2: \"Please submit the exam to improve your grade.\"",
-   "priority": 3,
+   "priority": 4,
    "due_local": "Wed Oct 14, 11:59 PM MT",
    "due_iso": "2026-10-14T23:59:59-06:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9349636",
@@ -158,7 +186,7 @@
     "Statics & MoM validation"
    ],
    "note": "Instructor's solutions are posted on Canvas; use them to check, not to copy.",
-   "priority": 4,
+   "priority": 5,
    "due_local": "Sun Oct 11, 11:59 PM MT",
    "due_iso": "2026-10-11T23:59:59-06:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9163927",
@@ -185,7 +213,7 @@
     "Validation for each"
    ],
    "note": "Same tooling as Test 1, so do it the same weekend.",
-   "priority": 5,
+   "priority": 6,
    "due_local": "Mon Oct 5, 11:59 PM MT",
    "due_iso": "2026-10-05T23:59:59-06:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9163939",
@@ -213,7 +241,7 @@
     "Total deformation",
     "Von Mises contour"
    ],
-   "priority": 6,
+   "priority": 7,
    "due_local": "Wed Oct 28, 11:59 PM MT",
    "due_iso": "2026-10-28T23:59:59-06:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9163930",
@@ -237,7 +265,7 @@
     "Problem 1 from the 10-28 handout (plane stress/strain tutorial)"
    ],
    "note": "The 10-28 handout is a step-by-step screenshot tutorial; problem 1 is required.",
-   "priority": 7,
+   "priority": 8,
    "due_local": "Thu Oct 29, 11:59 PM MT",
    "due_iso": "2026-10-29T23:59:59-06:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9361468",
@@ -260,7 +288,7 @@
    "deliver": [
     "Problem 2 from the 10-28 handout (bonus points)"
    ],
-   "priority": 8,
+   "priority": 9,
    "due_local": "Thu Oct 29, 11:59 PM MT",
    "due_iso": "2026-10-29T23:59:59-06:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9361471",
@@ -287,7 +315,7 @@
     "Total deformation"
    ],
    "note": "No handout on Canvas. Ask Dr. Seibi or a teammate which tutorial was done on Nov 4 (likely axisymmetric, from the module order).",
-   "priority": 9,
+   "priority": 10,
    "due_local": "Thu Nov 5, 11:59 PM MT",
    "due_iso": "2026-11-05T23:59:59-07:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9365212",
@@ -313,7 +341,7 @@
     "Total deformation and X/Y/Z deformation",
     "Reaction force"
    ],
-   "priority": 10,
+   "priority": 11,
    "due_local": "Thu Nov 19, 11:59 PM MT",
    "due_iso": "2026-11-19T23:59:59-07:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9163938",
@@ -343,7 +371,7 @@
     "Equivalent stress",
     "Safety factor and fail / no-fail"
    ],
-   "priority": 11,
+   "priority": 12,
    "due_local": "Fri Nov 20, 11:59 PM MT",
    "due_iso": "2026-11-20T23:59:59-07:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9163933",
@@ -371,7 +399,7 @@
     "Q2 full model",
     "Q2 for both: FEM with BCs, total deformation, Y deformation, equivalent stress, shear stress"
    ],
-   "priority": 12,
+   "priority": 13,
    "due_local": "Wed Dec 2, 11:59 PM MT",
    "due_iso": "2026-12-02T23:59:59-07:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9163934",
@@ -394,7 +422,7 @@
    "deliver": [
     "Answer Form B questions (statics, MoM, FEA interpretation)"
    ],
-   "priority": 13,
+   "priority": 14,
    "due_local": "Fri Dec 4, 11:59 PM MT",
    "due_iso": "2026-12-04T23:59:59-07:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9351753",
@@ -421,7 +449,7 @@
     "Optional eigenvalue buckling",
     "Design recommendation inputs for Spar A"
    ],
-   "priority": 14,
+   "priority": 15,
    "due_local": "Wed Dec 9, 11:59 PM MT",
    "due_iso": "2026-12-09T23:59:59-07:00",
    "url": "https://uvu.instructure.com/courses/641173/assignments/9351779",
@@ -447,12 +475,6 @@
    "title": "HW 3 1D element",
    "group": "Assignments",
    "earned": 10,
-   "possible": 10
-  },
-  {
-   "title": "HW 4 Truss element",
-   "group": "Assignments",
-   "earned": 0,
    "possible": 10
   },
   {
