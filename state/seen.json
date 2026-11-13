@@ -194,7 +194,7 @@
       "verified": false
     },
     "https://www.abaa.org/book/1674016997": {
-      "title": "Luther, Vonn der Freyheyt eyni\u00df Christennmenschen (Wittenberg 1521), 2nd printing",
+      "title": "Luther, Vonn der Freyheyt eyniß Christennmenschen (Wittenberg 1521), 2nd printing",
       "price": "price not shown (likely well over budget)",
       "scout": "artifact",
       "first_seen": "2026-11-12",
@@ -364,6 +364,30 @@
       "last_price": "$385",
       "verified": true,
       "status": "not_reported"
+    },
+    "https://www.sellingantiques.co.uk/pdf.asp?id=1154177": {
+      "title": "Pair Old Sheffield Plate communion goblets, Ardrossan Free Church 1844",
+      "price": "£345",
+      "scout": "artifact",
+      "first_seen": "2026-11-13",
+      "last_price": "£345",
+      "verified": true
+    },
+    "https://www.sellingantiques.co.uk/pdf.asp?id=1154178": {
+      "title": "Pair Old Sheffield Plate communion chalices 1843",
+      "price": "£325",
+      "scout": "artifact",
+      "first_seen": "2026-11-13",
+      "last_price": "£325",
+      "verified": true
+    },
+    "https://www.schilbantiquarian.com/product/luther-schriften-1567-jena/": {
+      "title": "Luther Schriften, Jena 1567 (Schilb)",
+      "price": "unknown",
+      "scout": "artifact",
+      "first_seen": "2026-11-13",
+      "last_price": "unknown",
+      "verified": false
     }
   }
 }
