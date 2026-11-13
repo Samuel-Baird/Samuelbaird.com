@@ -4,7 +4,8 @@ Canvas: https://uvu.instructure.com/courses/641173 · Instructor: Dr. Abdennour 
 Scope of this scan, at the student's request: the catch-up assignments only (plus syllabus policy lines needed to plan).
 
 ## Policies that drive the plan
-- **AI:** the syllabus has no AI clause. The instructor told the student AI is allowed if its use is clearly stated at the beginning of each assignment. Every PDF opens with an AI-use statement (`pipeline/report.py`). Worth confirming in a one-line email so it is in writing.
+- **AI:** the syllabus has no AI clause, but Dr. Seibi's Canvas message to the class on Fri Nov 13, 2026 ("Accessing ANSYS remotely") says AI tools are permitted for coursework and exams, for assignments, problem-solving and examinations, provided AI use is clearly disclosed in the submission. Every document opens with an AI-use statement (`pipeline/report.py`).
+- **ANSYS access:** remotely through the Citrix lab at myapps.uvu.edu (same message). The pipeline uses the local ANSYS 2026 R1 Student install.
 - **Late work (syllabus §6):** accepted, minus 10% per day, capped at 50%.
 - **Make-up exams:** only by arrangement. For Test 1, the instructor commented on Nov 2: "Please submit the exam to improve your grade."
 - **Weights (Canvas groups):** Attendance 10 · Assignments 25 · Exams 40 · Term project 25.

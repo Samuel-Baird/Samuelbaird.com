@@ -174,8 +174,9 @@ def build():
         "canvas": COURSE,
         "updated": TODAY.strftime("%b %d, %Y"),
         "policy": {
-            "ai": "Instructor allows AI if its use is stated at the beginning of each assignment (verbal permission; "
-                  "the syllabus has no AI clause). Every document opens with an AI-use statement.",
+            "ai": "AI tools are permitted for coursework and exams, provided AI use is clearly disclosed in the "
+                  "submission (Dr. Seibi's Canvas message to the class, Nov 13, 2026). Every document opens with an "
+                  "AI-use statement.",
             "late": "Late work accepted, minus 10% per day, capped at 50% (syllabus §6).",
             "weights": WEIGHTS,
         },
