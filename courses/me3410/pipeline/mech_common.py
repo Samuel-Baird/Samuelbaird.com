@@ -52,7 +52,8 @@ def named_selection(name, ids, kind="geo"):
 
 
 def assign_material(name):
-    Model.Materials.Import(MATXML)
+    if name not in [m.Name for m in Model.Materials.Children]:
+        Model.Materials.Import(MATXML)
     for b in bodies():
         b.Material = name
 

@@ -79,8 +79,6 @@ def setup(tapered, size, lc_list):
     ns_tip = named_selection("TIP", tip)
     ns_pos = named_selection("LIFT_FACE_LEADING_HALF", pos)
     ns_neg = named_selection("LIFT_FACE_TRAILING_HALF", neg)
-    Model.Mesh.ElementOrder = ElementOrder.Quadratic
-    Model.Mesh.ElementSize = q(size, "m")
     hv = H * s_of(X_VAL, tapered) / 2 * 0.999
     ht = H * s_of(L, tapered) / 2
     bt = B * s_of(L, tapered) / 2 * 0.999
@@ -209,6 +207,9 @@ FINAL = SIZES[-1]
 
 
 def mesh_at(size):
+    # Set mesh properties in a later call than the geometry import: right after import they
+    # can be read-only for a moment.
+    Model.Mesh.ElementOrder = ElementOrder.Quadratic
     Model.Mesh.ElementSize = q(size, "m")
     Model.Mesh.GenerateMesh()
     return "meshed %g mm: %d nodes" % (size * 1000, Model.Mesh.Nodes)
@@ -241,6 +242,7 @@ ExtAPI.DataModel.Project.New()
 #%% split
 CASES = setup(False, SIZES[0], ["LC1", "LC2"])
 results["material"] = material_props("Aluminum Alloy")
+#%% split
 mesh_at(SIZES[0])
 #%% split
 conv_step(SIZES[0])
@@ -262,6 +264,7 @@ final_solve("constant", False)
 ExtAPI.DataModel.Project.New()
 #%% split
 CASES = setup(True, FINAL, ["LC1", "LC2"])
+#%% split
 mesh_at(FINAL)
 #%% split
 final_solve("tapered", True)

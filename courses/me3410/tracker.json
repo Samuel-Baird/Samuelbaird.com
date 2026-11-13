@@ -4,7 +4,7 @@
  "canvas": "https://uvu.instructure.com/courses/641173",
  "updated": "Nov 13, 2026",
  "policy": {
-  "ai": "Instructor allows AI if its use is stated at the beginning of each assignment (verbal permission; the syllabus has no AI clause). Every PDF opens with an AI-use statement.",
+  "ai": "Instructor allows AI if its use is stated at the beginning of each assignment (verbal permission; the syllabus has no AI clause). Every document opens with an AI-use statement.",
   "late": "Late work accepted, minus 10% per day, capped at 50% (syllabus §6).",
   "weights": {
    "Attendance": 10,
@@ -37,8 +37,9 @@
   "solve.py: hand calculations with every number computed in Python (shown as symbolic → substituted → result).",
   "cad.py: geometry to STEP (build123d) when ANSYS needs a solid or line model.",
   "ansys.py: ANSYS Mechanical 2026 R1 Student run through PyMechanical: mesh study, solve, screenshots, results JSON.",
-  "report.py: one PDF per assignment, AI-use statement first, hand calcs, ANSYS screenshots, comparison tables.",
-  "Review the PDF, then submit it on Canvas yourself and mark it submitted here."
+  "report.py: one Word document per assignment (native equations), AI-use statement first, hand calcs, ANSYS screenshots, comparison tables.",
+  "Open it in Word, review and edit, then File > Export > PDF.",
+  "Submit the PDF on Canvas yourself and mark it submitted here."
  ],
  "items": [
   {
@@ -52,7 +53,7 @@
    "hrs": 2,
    "kind": "Team · hand calcs + ANSYS",
    "status": "pdf_ready",
-   "pdf": "TP_Part_I_Spar_A_I-section.pdf",
+   "pdf": "TP_Part_I_Spar_A_I-section.docx",
    "deliver": [
     "FBD, resultant and root reactions (900 N, 450 N·m), LC2 torque 45 N·m",
     "V(x), M(x) derivation and plots; checks at x = 0.25 m",
@@ -62,9 +63,9 @@
     "Tip deflection q₀L⁴/30EI and tapered numerical integral",
     "Torsion J = ⅓Σbt³, tip twist (LC2)",
     "ANSYS: constant + tapered, LC1 + LC2, mesh convergence, comparison tables",
-    "Send PDF to the team for the combined progress report"
+    "Send the Word file to the team for the combined progress report"
    ],
-   "note": "Due tonight 11:59 PM MT (Canvas shows Nov 14 in UTC). Team submits one combined report; this PDF is the Spar A section.",
+   "note": "Due tonight 11:59 PM MT (Canvas shows Nov 14 in UTC). Team submits one combined report; this Word file is the Spar A section.",
    "priority": 1,
    "due_local": "Fri Nov 13, 11:59 PM MT",
    "due_iso": "2026-11-13T23:59:59-07:00",
@@ -84,7 +85,7 @@
    "hrs": 3,
    "kind": "ANSYS (2D + 3D) + hand checks",
    "status": "todo",
-   "pdf": "HW7_2D_3D_Models.pdf",
+   "pdf": "HW7_2D_3D_Models.docx",
    "deliver": [
     "Q1 plane stress vs. strain, justified",
     "Q1 2D model (plane stress) with BCs/loads",
@@ -117,7 +118,7 @@
    "hrs": 4,
    "kind": "Hand calcs + ANSYS + statics checks",
    "status": "todo",
-   "pdf": "Test1_1D_Truss_Beam.pdf",
+   "pdf": "Test1_1D_Truss_Beam.docx",
    "deliver": [
     "Q1 1D stepped shaft: 7-step FE hand solution (u₂, u₃, midpoint of element 1, reactions, σ₁)",
     "Q1 ANSYS: model, directional deformation, reactions, direct stress per element",
@@ -147,7 +148,7 @@
    "hrs": 1.5,
    "kind": "ANSYS beam + statics/MoM",
    "status": "todo",
-   "pdf": "HW5_Beam_Element.pdf",
+   "pdf": "HW5_Beam_Element.docx",
    "deliver": [
     "FE model with BCs and loads",
     "Total deformation",
@@ -176,7 +177,7 @@
    "hrs": 1.5,
    "kind": "ANSYS ×3 + validation",
    "status": "todo",
-   "pdf": "InClass_1D_Truss_Beam.pdf",
+   "pdf": "InClass_1D_Truss_Beam.docx",
    "deliver": [
     "Q1 1D shaft: model, deflection at B, reactions, element stresses",
     "Q2 truss: model, deflection at A, reactions, stresses",
@@ -203,7 +204,7 @@
    "hrs": 1.5,
    "kind": "ANSYS 2D",
    "status": "todo",
-   "pdf": "HW6_Plate_Pressure.pdf",
+   "pdf": "HW6_Plate_Pressure.docx",
    "deliver": [
     "Plane stress or strain, justified",
     "FE model, BCs and loads",
@@ -231,7 +232,7 @@
    "hrs": 1.5,
    "kind": "ANSYS 2D",
    "status": "todo",
-   "pdf": "InClass_10-28_P1.pdf",
+   "pdf": "InClass_10-28_P1.docx",
    "deliver": [
     "Problem 1 from the 10-28 handout (plane stress/strain tutorial)"
    ],
@@ -255,7 +256,7 @@
    "hrs": 1,
    "kind": "ANSYS 2D",
    "status": "todo",
-   "pdf": "InClass_10-28_P2.pdf",
+   "pdf": "InClass_10-28_P2.docx",
    "deliver": [
     "Problem 2 from the 10-28 handout (bonus points)"
    ],
@@ -278,7 +279,7 @@
    "hrs": 1.5,
    "kind": "ANSYS + mesh refinement",
    "status": "blocked",
-   "pdf": "InClass_11-04.pdf",
+   "pdf": "InClass_11-04.docx",
    "deliver": [
     "FE model with BCs and loads (state them)",
     "Mesh refinement curve",
@@ -305,7 +306,7 @@
    "hrs": 2,
    "kind": "3D CAD + ANSYS",
    "status": "todo",
-   "pdf": "InClass_3D_Bracket.pdf",
+   "pdf": "InClass_3D_Bracket.docx",
    "deliver": [
     "FE model with BCs and loads",
     "Equivalent stress",
@@ -331,7 +332,7 @@
    "hrs": 3,
    "kind": "Steady thermal → static structural",
    "status": "todo",
-   "pdf": "HW8_Pipe_Elbow_Thermal.pdf",
+   "pdf": "HW8_Pipe_Elbow_Thermal.docx",
    "deliver": [
     "Elbow with a second flange at the free end (aluminium alloy)",
     "Thermal: model with BCs (initial temp, temperature, convection)",
@@ -361,7 +362,7 @@
    "hrs": 4,
    "kind": "Axisymmetric vs 3D + 3D bracket",
    "status": "todo",
-   "pdf": "HW9_3D_Modeling.pdf",
+   "pdf": "HW9_3D_Modeling.docx",
    "deliver": [
     "Q1 rotating part at 100 rpm: axisymmetric model",
     "Q1 3D model",
@@ -389,7 +390,7 @@
    "hrs": 2,
    "kind": "Statics / MoM / FEA questions",
    "status": "todo",
-   "pdf": "Post_Term_Assessment_FormB.pdf",
+   "pdf": "Post_Term_Assessment_FormB.docx",
    "deliver": [
     "Answer Form B questions (statics, MoM, FEA interpretation)"
    ],
@@ -412,7 +413,7 @@
    "hrs": 6,
    "kind": "Team report: Spar A sections + full wing",
    "status": "todo",
-   "pdf": "TP_Report_Spar_A.pdf",
+   "pdf": "TP_Report_Spar_A.docx",
    "deliver": [
     "Spar A: Part I results carried into the report",
     "Wing model with NACA 0018 skin (team)",

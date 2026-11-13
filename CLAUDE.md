@@ -5,7 +5,7 @@ Private repo. Each course gets a study site at `samuelbaird.com/learn/<course>` 
 ## Hard rules (read first)
 - **Copyright.** Textbook PDFs, instructor files and solution manuals stay local (`.gitignore` blocks `*.pdf`, `textbook/cache/`, `canvas/files/`, `knowledge/cache/`, `knowledge/sources/`). The public JSON holds section/page/problem-number references, Canvas links and original writing — no book text. Notes under `knowledge/` are paraphrase with page cites; run `python -I scripts/kb_check.py` (must report 0) before committing them.
 - **Read-only Canvas.** Scan with Claude in Chrome. Never submit, edit or take quizzes. Ask before downloading files.
-- **ME 3410 assignment pipeline** (`courses/me3410/`, see its README): the instructor allows AI on assignments and tests if its use is stated at the top. Every PDF starts with the AI-use statement built into `pipeline/report.py`; never remove it. The student reviews and submits; nothing here submits to Canvas. Generated PDFs, ANSYS output and handouts stay local (gitignored); the public tracker JSON holds statuses and deliverable names only.
+- **ME 3410 assignment pipeline** (`courses/me3410/`, see its README): the instructor allows AI on assignments and tests if its use is stated at the top. Every document starts with the AI-use statement built into `pipeline/report.py`; never remove it. The student reviews and submits; nothing here submits to Canvas. Generated Word files, ANSYS output and handouts stay local (gitignored); the public tracker JSON holds statuses and deliverable names only.
 
 ## Layout
 ```

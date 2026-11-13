@@ -12,6 +12,7 @@ batch instance (and leaves it running for the next call unless --exit).
 """
 import argparse
 import sys
+import time
 from pathlib import Path
 
 import ansys.mechanical.core as pymech
@@ -49,7 +50,12 @@ def main():
     app, launched = get_app(a.port, a.new)
     try:
         for i, chunk in enumerate(chunks):
-            out = app.run_python_script(chunk, enable_logging=True)
+            try:
+                out = app.run_python_script(chunk, enable_logging=True)
+            except Exception as e:  # Mechanical sometimes reports a transient "read-only property"
+                print(f"[phase {i + 1}] retrying after: {str(e).splitlines()[0][:160]}", file=sys.stderr)
+                time.sleep(3)
+                out = app.run_python_script(chunk, enable_logging=True)
             if out:
                 print(out if i == len(chunks) - 1 else f"[phase {i + 1}] {out}")
     except Exception as e:  # show Mechanical-side errors plainly

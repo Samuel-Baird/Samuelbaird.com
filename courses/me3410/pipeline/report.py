@@ -42,9 +42,10 @@ def fmt(x: float, sig: int = 4) -> str:
     if x == 0:
         return "0"
     ax = abs(x)
-    if 1e-3 <= ax < 1e5:
-        s = f"{x:.{sig}g}"
-        return s
+    if 1e3 <= ax < 1e6:
+        return f"{x:,.0f}".replace(",", r"\,")  # 36\,864 rather than 3.686e+04
+    if 1e-3 <= ax < 1e3:
+        return f"{x:.{sig}g}"
     m, e = f"{x:.{sig - 1}e}".split("e")
     return rf"{m}\times10^{{{int(e)}}}"
 
@@ -55,6 +56,7 @@ class Report:
         self.title, self.subtitle, self.due, self.student = title, subtitle, due, student
         self.ai = (ai_statement or AI_STATEMENT).format(student=student)
         self.blocks: list[str] = []
+        self.md: list[str] = []   # parallel Markdown for the Word (.docx) output
         self.math: list[dict] = []
         self.n_fig = 0
         self.n_tab = 0
@@ -81,22 +83,28 @@ class Report:
     # ---- blocks ------------------------------------------------------------------------
     def h1(self, t):
         self.blocks.append(f"<h1>{self._inline(t)}</h1>")
+        self.md.append(f"# {t}")
 
     def h2(self, t):
         self.blocks.append(f"<h2>{self._inline(t)}</h2>")
+        self.md.append(f"## {t}")
 
     def h3(self, t):
         self.blocks.append(f"<h3>{self._inline(t)}</h3>")
+        self.md.append(f"### {t}")
 
     def p(self, t):
         self.blocks.append(f"<p>{self._inline(t)}</p>")
+        self.md.append(t)
 
     def bullets(self, items):
         lis = "".join(f"<li>{self._inline(i)}</li>" for i in items)
         self.blocks.append(f"<ul>{lis}</ul>")
+        self.md.append("\n".join(f"- {i}" for i in items))
 
     def eq(self, tex):
         self.blocks.append(f'<div class="eq">{self._m(tex, True)}</div>')
+        self.md.append(f"$${tex}$$")
 
     def step(self, lhs: str, symbolic: str | None, numeric: str | None, value: float | str,
              unit: str = "", note: str = ""):
@@ -111,13 +119,18 @@ class Report:
         tex = " = ".join(chain) + rf" = \boxed{{{val}{u}}}"
         n = f'<span class="note">{self._inline(note)}</span>' if note else ""
         self.blocks.append(f'<div class="step">{self._m(tex, True)}{n}</div>')
+        self.md.append(f"$${tex}$$")
+        if note:
+            self.md.append(f'::: {{custom-style="Calc Note"}}\n{note}\n:::')
 
     def handcalc(self, title: str):
         """Open a hand-calculation sheet (engineering-paper styling) until end_handcalc()."""
         self.blocks.append(f'<section class="sheet"><div class="sheet-h">{self._inline(title)}</div>')
+        self.md.append(f'::::: {{custom-style="Hand Calc"}}\n::: {{custom-style="Calc Title"}}\n{title}\n:::')
 
     def end_handcalc(self):
         self.blocks.append("</section>")
+        self.md.append(":::::")
 
     def table(self, headers, rows, caption="", widths=None, cls=""):
         self.n_tab += 1
@@ -128,6 +141,16 @@ class Report:
             tds = "".join(f"<td>{self._inline(str(c))}</td>" for c in row)
             trs.append(f"<tr>{tds}</tr>")
         self.blocks.append(f'<table class="{cls}">{cap}<thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table>')
+
+        def cell(c):
+            return str(c).replace("|", "\\|").replace("\n", " ")
+
+        align = ["---"] + (["--:"] if cls == "num" else ["---"]) * (len(headers) - 1)
+        lines = ["| " + " | ".join(cell(h) for h in headers) + " |", "|" + "|".join(align) + "|"]
+        lines += ["| " + " | ".join(cell(c) for c in row) + " |" for row in rows]
+        if caption:
+            lines += ["", f"Table: Table {self.n_tab}. {caption}"]
+        self.md.append("\n".join(lines))
         return self.n_tab
 
     def img(self, path, caption="", width="100%", border=True):
@@ -138,6 +161,9 @@ class Report:
         cap = f"<figcaption>Figure {self.n_fig}. {self._inline(caption)}</figcaption>" if caption else ""
         b = " bordered" if border else ""
         self.blocks.append(f'<figure class="fig{b}"><img src="data:{mime};base64,{data}" style="width:{width}">{cap}</figure>')
+        # Word ignores % widths for images; convert to inches of the 6.9 in text column.
+        w = f"{6.9 * float(width[:-1]) / 100:.2f}in" if width.endswith("%") else width
+        self.md.append(f"![Figure {self.n_fig}. {caption}](<{p.resolve().as_posix()}>){{width={w}}}")
         return self.n_fig
 
     def img_row(self, items, height="2.6in"):
@@ -150,12 +176,18 @@ class Report:
             cells.append(f'<figure class="fig bordered"><img src="data:image/png;base64,{data}" style="height:{height};max-width:100%;object-fit:contain">'
                          f"<figcaption>Figure {self.n_fig}. {self._inline(caption)}</figcaption></figure>")
         self.blocks.append(f'<div class="row">{"".join(cells)}</div>')
+        first = self.n_fig - len(items) + 1
+        imgs = " ".join(f"![](<{Path(pth).resolve().as_posix()}>){{width=3.35in}}" for pth, _ in items)
+        caps = "; ".join(f"Figure {first + k}. {c}" for k, (_, c) in enumerate(items))
+        self.md.append(imgs + "\\\n" + caps)
 
     def callout(self, text, kind="note"):
         self.blocks.append(f'<div class="callout {kind}">{self._inline(text)}</div>')
+        self.md.append(f'::: {{custom-style="Callout"}}\n{text}\n:::')
 
     def pagebreak(self):
         self.blocks.append('<div class="pb"></div>')
+        self.md.append('```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```')
 
     # ---- output ------------------------------------------------------------------------
     def html(self) -> str:
@@ -186,6 +218,29 @@ class Report:
         if res.returncode != 0:
             raise SystemExit("KaTeX failed:\n" + res.stderr)
         return json.loads(res.stdout)
+
+    def markdown(self) -> str:
+        meta = (f"{self.student} · {COURSE}" + (f" · Due {self.due}" if self.due else "")
+                + f" · Prepared {date.today():%b %d, %Y}")
+        head = [f'::: {{custom-style="Title"}}\n{self.title}\n:::']
+        if self.subtitle:
+            head.append(f'::: {{custom-style="Subtitle"}}\n{self.subtitle}\n:::')
+        head.append(f'::: {{custom-style="Meta"}}\n{meta}\n:::')
+        head.append(f'::: {{custom-style="AI Statement"}}\n**AI use statement.** {self.ai}\n:::')
+        return "\n\n".join(head + self.md) + "\n"
+
+    def docx(self, out_docx):
+        """Word document with native (editable) equations. Export to PDF from Word."""
+        import pypandoc
+
+        out_docx = Path(out_docx).resolve()
+        out_docx.parent.mkdir(parents=True, exist_ok=True)
+        md = self.markdown()
+        out_docx.with_suffix(".md").write_text(md, encoding="utf-8")
+        pypandoc.convert_text(md, "docx", format="markdown+tex_math_dollars+implicit_figures",
+                              outputfile=str(out_docx),
+                              extra_args=["--reference-doc", str(HERE / "reference.docx")])
+        return out_docx
 
     def pdf(self, out_pdf):
         out_pdf = Path(out_pdf).resolve()

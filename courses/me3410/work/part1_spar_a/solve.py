@@ -1,4 +1,4 @@
-"""Term Project Part I, Spar A (I-section): hand calculations + ANSYS comparison -> PDF.
+"""Term Project Part I, Spar A (I-section): hand calculations + ANSYS comparison -> Word (.docx).
 
     python solve.py            (needs ansys_out/results_full.json from ansys.py)
 
@@ -21,7 +21,7 @@ from report import Report, fmt  # noqa: E402
 
 FIG = HERE / "figs"
 FIG.mkdir(exist_ok=True)
-OUT_PDF = HERE.parents[1] / "out" / "TP_Part_I_Spar_A_I-section.pdf"
+OUT_DOCX = HERE.parents[1] / "out" / "TP_Part_I_Spar_A_I-section.docx"
 RES = json.loads((HERE / "ansys_out" / "results_full.json").read_text())
 
 # ---------------------------------------------------------------- data
@@ -328,7 +328,7 @@ def build():
     r.step(r"I_{c,f}", r"\frac{B t_f^3}{12}", rf"\frac{{(55)(6)^3}}{{12}}", Ic_f, "mm^4")
     r.step(r"I_{c,w}", r"\frac{t_w h_w^3}{12}", rf"\frac{{(4)(48)^3}}{{12}}", Ic_w, "mm^4")
     r.step("I_z", r"2\left[I_{c,f}+A_f d_f^2\right]+I_{c,w}", rf"2\left[990+330(27)^2\right]+36864", I_mm4, "mm^4",
-           f"= {I:.4e} m⁴. Reference: 5.200×10⁻⁷ m⁴.")
+           f"= {I * 1e7:.3f}×10⁻⁷ m⁴. Reference: 5.200×10⁻⁷ m⁴.")
     r.step("I_y", r"2\frac{t_f B^3}{12} + \frac{h_w t_w^3}{12}", rf"2\frac{{(6)(55)^3}}{{12}}+\frac{{(48)(4)^3}}{{12}}", Iy_mm4, "mm^4", "Chordwise (edgewise) bending axis, for reference.")
     r.end_handcalc()
 
@@ -504,7 +504,7 @@ def build():
     r.h3("Reproducibility")
     r.p("Geometry: `cad.py` (build123d → STEP). FEA: `ansys.py` run in ANSYS Mechanical 2026 R1 Student through "
         "PyMechanical (`scripts/mech.py`). Hand calculations, plots and this report: `solve.py`.")
-    out = r.pdf(OUT_PDF)
+    out = r.docx(OUT_DOCX)
     print("wrote", out)
 
 
