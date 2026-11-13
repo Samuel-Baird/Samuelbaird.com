@@ -186,7 +186,7 @@ function renderGrade(){
     var a=g.groups_now[k]||0,b=g.groups_plan[k]||0;
     h+='<div class="grp"><div class="h"><span>'+esc(k)+' <span class="muted">('+w[k]+'%)</span></span><span>'+a+'% → <b>'+b+'%</b></span></div><div class="bar"><i style="width:'+b+'%"></i><b style="width:'+a+'%"></b></div></div>';
   });
-  h+='<p class="muted">'+esc(g.assumption)+' Overall: <b>'+g.if_nothing_submitted+'%</b> now → <b>'+g.if_plan_completed+'%</b> with the plan. Test 1 alone is worth up to 40 points of the final grade; if Dr. Seibi waives the late cap for it (he asked for it to be submitted), the projection rises sharply.</p>';
+  h+='<p class="muted">'+esc(g.assumption)+' Overall: <b>'+g.if_nothing_submitted+'%</b> now → <b>'+g.if_plan_completed+'%</b> with the plan. Test 1 alone is worth up to 40 points of the final grade; Dr. Seibi asked for it to be submitted, so ask whether the late penalty applies; without it the projection rises sharply.</p>';
   h+='<h2>Already graded</h2><table><thead><tr><th>Item</th><th>Group</th><th>Score</th></tr></thead><tbody>'+D.graded.map(function(x){return "<tr><td>"+esc(x.title)+"</td><td>"+esc(x.group)+"</td><td>"+x.earned+" / "+x.possible+"</td></tr>"}).join("")+"</tbody></table>";
   document.getElementById("grade").innerHTML=h;
 }
