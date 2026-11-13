@@ -20,6 +20,15 @@ import ansys.mechanical.core as pymech
 EXE = r"C:\Program Files\ANSYS Inc\ANSYS Student\v261\aisol\bin\winx64\AnsysWBU.exe"
 
 
+def _details(e):
+    """The useful part of a gRPC error from Mechanical: the exception text and its script line."""
+    s = str(e)
+    i = s.find('details = "')
+    body = s[i + 11:] if i >= 0 else s
+    lines = [ln.strip() for ln in body.splitlines() if ln.strip() and not ln.strip().startswith("at ")]
+    return " | ".join(lines[:4])[:600]
+
+
 def get_app(port: int, new: bool):
     if not new:
         try:
@@ -36,6 +45,7 @@ def main():
     ap.add_argument("--port", type=int, default=10000)
     ap.add_argument("--new", action="store_true")
     ap.add_argument("--exit", action="store_true")
+    ap.add_argument("--no-retry", action="store_true", help="fail on the first error in a phase")
     ap.add_argument("--lib", action="append", default=[], help="file(s) prepended before the script")
     a = ap.parse_args()
     head = []
@@ -53,13 +63,15 @@ def main():
             try:
                 out = app.run_python_script(chunk, enable_logging=True)
             except Exception as e:  # Mechanical sometimes reports a transient "read-only property"
-                print(f"[phase {i + 1}] retrying after: {str(e).splitlines()[0][:160]}", file=sys.stderr)
+                if a.no_retry:
+                    raise
+                print(f"[phase {i + 1}] retrying after: {_details(e)}", file=sys.stderr)
                 time.sleep(3)
                 out = app.run_python_script(chunk, enable_logging=True)
             if out:
                 print(out if i == len(chunks) - 1 else f"[phase {i + 1}] {out}")
     except Exception as e:  # show Mechanical-side errors plainly
-        print("MECHANICAL ERROR:", e, file=sys.stderr)
+        print("MECHANICAL ERROR:", _details(e), file=sys.stderr)
         sys.exit(1)
     finally:
         if a.exit:

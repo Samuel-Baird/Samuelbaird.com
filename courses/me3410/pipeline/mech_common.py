@@ -4,7 +4,7 @@ import json
 import os
 
 Model = ExtAPI.DataModel.Project.Model
-MATXML = r"C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Samples\General_Materials.xml"
+GENERAL_MATXML = r"C:\Program Files\ANSYS Inc\ANSYS Student\v261\Addins\EngineeringData\Samples\General_Materials.xml"
 
 
 def new_model(step_path, unit_system=None, fresh=True):
@@ -37,6 +37,37 @@ def geo_faces():
     return out
 
 
+def geo_edges():
+    out = []
+    for asm in ExtAPI.DataModel.GeoData.Assemblies:
+        for part in asm.Parts:
+            for b in part.Bodies:
+                for e in b.Edges:
+                    out.append(e)
+    return out
+
+
+def edge_info(e):
+    return {"id": e.Id, "c": list(e.Centroid), "len": e.Length}
+
+
+def import_geometry(step_path, two_d=False):
+    """Import into the current (already New()'d) model. two_d=True for 2D analyses."""
+    gi = Model.GeometryImportGroup.AddGeometryImport()
+    prefs = Ansys.ACT.Mechanical.Utilities.GeometryImportPreferences()
+    prefs.ProcessLines = True
+    if two_d:
+        prefs.AnalysisType = Ansys.Mechanical.DataModel.Enums.GeometryImportPreference.AnalysisType.Type2D
+    gi.Import(step_path, Ansys.Mechanical.DataModel.Enums.GeometryImportPreference.Format.Automatic, prefs)
+    return gi
+
+
+def import_materials(xml_path, names):
+    have = [m.Name for m in Model.Materials.Children]
+    if any(n not in have for n in names):
+        Model.Materials.Import(xml_path)
+
+
 def face_info(f):
     n = f.NormalAtParam(0.5, 0.5)
     return {"id": f.Id, "c": list(f.Centroid), "area": f.Area, "n": list(n)}
@@ -53,7 +84,7 @@ def named_selection(name, ids, kind="geo"):
 
 def assign_material(name):
     if name not in [m.Name for m in Model.Materials.Children]:
-        Model.Materials.Import(MATXML)
+        Model.Materials.Import(GENERAL_MATXML)
     for b in bodies():
         b.Material = name
 
@@ -87,7 +118,7 @@ def q(v, unit):
     return Quantity("%r [%s]" % (v, unit))
 
 
-def export_image(obj, path, view="iso", width=1400, height=800, fit=True, units=None, frame=None):
+def export_image(obj, path, view="iso", width=1400, height=800, fit=True, units=None, frame=None, true_scale=False):
     """Activate a tree object and save a PNG of the graphics window.
 
     Plots are shown in mm / MPa (units=StandardNMM) without element edges; the active unit
@@ -95,8 +126,13 @@ def export_image(obj, path, view="iso", width=1400, height=800, fit=True, units=
     """
     prev = ExtAPI.Application.ActiveUnitSystem
     ExtAPI.Application.ActiveUnitSystem = units or MechanicalUnitSystem.StandardNMM
-    Graphics.ViewOptions.ResultPreference.ExtraModelDisplay = \
-        Ansys.Mechanical.DataModel.MechanicalEnums.Graphics.ExtraModelDisplay.NoWireframe
+    rp = Graphics.ViewOptions.ResultPreference
+    G = Ansys.Mechanical.DataModel.MechanicalEnums.Graphics
+    rp.ExtraModelDisplay = G.ExtraModelDisplay.NoWireframe
+    try:  # true_scale: show the real deformed shape (auto-scaling distorts thick 3D parts)
+        rp.DeformationScaling = G.DeformationScaling.True if true_scale else G.DeformationScaling.Auto
+    except Exception:
+        pass
     try:
         return _export_image(obj, path, view, width, height, fit, frame)
     finally:
