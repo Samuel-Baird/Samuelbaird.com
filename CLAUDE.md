@@ -3,7 +3,6 @@
 Private repo. Each course gets a study site at `samuelbaird.com/learn/<course>` (unlisted: `noindex`, not in the sitemap or nav), built from the Canvas course, the syllabus and the textbook.
 
 ## Hard rules (read first)
-- **Academic integrity.** Syllabi usually allow AI for finding information and brainstorming and forbid it for solving assigned work or on tests/quizzes. ME 3320 does. So the site contains concepts, videos, equations and *original* practice problems only. Never solve assigned homework, take-home test problems or quiz problems. Never open the site during a take-home test.
 - **Copyright.** Textbook PDFs, instructor files and solution manuals stay local (`.gitignore` blocks `*.pdf`, `textbook/cache/`, `canvas/files/`, `knowledge/cache/`, `knowledge/sources/`). The public JSON holds section/page/problem-number references, Canvas links and original writing — no book text. Notes under `knowledge/` are paraphrase with page cites; run `python -I scripts/kb_check.py` (must report 0) before committing them.
 - **Read-only Canvas.** Scan with Claude in Chrome. Never submit, edit or take quizzes. Ask before downloading files.
 
