@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f1115">
+<title>Scout Leads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--foreground);font:16px/1.6 var(--font-sans)}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+.rail{max-width:56rem;margin:0 auto;padding:32px 16px 64px}
+h1{font:600 clamp(1.8rem,5vw,2.6rem)/1.15 var(--font-serif);margin:0 0 8px}
+.eyebrow{color:var(--accent);margin:0 0 8px}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:20px 0 8px}
+select,label{font:500 .95rem var(--font-sans);color:var(--foreground)}
+select{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;min-height:40px}
+.summary{color:var(--muted);margin:0 0 24px}
+#msg{color:#d99;margin:-12px 0 16px;min-height:0}
+.lead{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--border);border-radius:var(--radius);padding:14px;margin:0 0 12px}
+.lead[hidden]{display:none}
+@media (min-width:640px){.lead{grid-template-columns:140px minmax(0,1fr);gap:18px;padding:16px 18px}}
+.thumb{display:block;text-decoration:none;aspect-ratio:1;border-radius:var(--radius);overflow:hidden;background:var(--muted-soft);border:1px solid var(--border)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{display:grid;place-items:center;width:100%;height:100%;color:var(--muted);font:600 1.6rem var(--font-serif);text-align:center}
+.ph small{display:block;font:500 .68rem var(--font-sans);margin-top:2px}
+.x{position:absolute;top:4px;right:4px;width:40px;height:40px;border:0;border-radius:var(--radius);background:transparent;color:var(--muted);font:400 1.5rem/1 var(--font-sans);cursor:pointer}
+.x:hover,.x:focus-visible{color:var(--foreground);background:var(--muted-soft)}
+.sec{margin:28px 0 0}
+.sec>h2{display:flex;align-items:baseline;gap:10px;font:600 1.35rem/1.2 var(--font-serif);margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.sec>h2 small{font:500 .85rem var(--font-sans);color:var(--muted)}
+.toc{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.9rem;margin:0 0 8px}
+.lead.alert{border-left-color:var(--honey)}
+.lead h3{font:600 1.15rem/1.3 var(--font-serif);margin:0 0 6px;padding-right:36px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.88rem;color:var(--muted);margin:0 0 6px}
+.price{color:var(--foreground);font-weight:600}
+.tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted);margin-right:6px}
+.tag.al{border-color:var(--honey);color:var(--honey)}
+.tag.uv{border-color:#8a5a5a;color:#d99}
+.tag.ok{border-color:#4f7d5a;color:#9c9}
+.notes{margin:6px 0 0;font-size:.92rem}
+.links{margin:6px 0 0;font-size:.9rem}
+#extra h3{font:600 .82rem var(--font-sans);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:32px 0 8px}
+ul.plain{margin:0;padding-left:20px;color:var(--muted)}
+table.cov{border-collapse:collapse;font-size:.9rem;width:100%}
+table.cov th,table.cov td{text-align:left;padding:4px 12px 4px 0;border-bottom:1px solid var(--border);color:var(--muted);font-weight:500}
+table.cov td.ok{color:#9c9}
+table.cov td.bad{color:#d99}
+.empty{color:var(--muted)}
+#editor{margin-top:40px}
+#editor h2{font:600 1.35rem/1.2 var(--font-serif);margin:0 0 6px}
+#editor p{color:var(--muted);margin:0 0 10px;font-size:.92rem}
+#listtext{width:100%;min-height:22rem;resize:vertical;background:var(--surface);color:var(--foreground);border:1px solid var(--border);border-radius:var(--radius);padding:12px;font:.9rem/1.5 ui-monospace,Menlo,Consolas,monospace}
+#save{margin-top:10px;min-height:44px;padding:0 22px;border:0;border-radius:var(--radius);background:var(--accent);color:#0f1115;font:600 1rem var(--font-sans);cursor:pointer}
+#save:disabled{opacity:.5;cursor:default}
+#savemsg{display:inline-block;margin-left:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="rail">
+<p class="eyebrow">Collector scout</p>
+<h1>Leads of the day</h1>
+<div class="bar"><label for="day">Day</label><select id="day"></select><label><input type="checkbox" id="alerts"> Alerts only</label><label><input type="checkbox" id="unv"> Show unverified</label></div>
+<p class="summary" id="summary">Loading…</p>
+<p id="msg" role="status"></p>
+<div id="list"></div>
+<div id="extra"></div>
+<section id="editor">
+<h2>What the scout searches for</h2>
+<p>One search per line. Delete a line to stop searching it, type a new line to add one, then press Save. Lines starting with # are headings. The next daily run uses the saved list.</p>
+<textarea id="listtext" spellcheck="false" aria-label="Scout search list" disabled>Loading…</textarea>
+<div><button id="save" type="button" disabled>Save</button><span id="savemsg" role="status"></span></div>
+</section>
+</main>
+<script>
+const $=(s)=>document.querySelector(s);
+const esc=(s)=>String(s??'').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safe=(u)=>/^https?:\/\//i.test(u)?esc(u):'#';
+let DATA,DISMISSED=new Set();
+const ORDER=['Deseret Alphabet','LDS sacrament ware','Early LDS print','Anti-Mormon literature','Portuguese-language LDS','LDS relics & art','Luther & Reformation','Historic Christianity','Communion vessels (pre-1900)','Wants'];
+const DEAD=new Set(['sold','gone','ended']);
+// Same rule as api/scout.js and the scout runs: host + path + query, no scheme, no www., no tracking params.
+const norm=(u)=>{try{const x=new URL(String(u));const drop=/^(utm_|_trk|hash$|fbclid|gclid|mkcid|mkevt|mkrid|campid|customid|toolid|ssspo|sssrc|ssuid|widget_ver|media$)/i;[...x.searchParams.keys()].forEach((k)=>{if(drop.test(k))x.searchParams.delete(k)});const q=x.searchParams.toString();return x.hostname.toLowerCase().replace(/^www\./,'')+(x.pathname.replace(/\/+$/,'')||'/')+(q?'?'+q:'')}catch(e){return String(u).toLowerCase()}};
+const initials=(c)=>String(c||'?').split(/[^A-Za-z]+/).filter(Boolean).slice(0,2).map((w)=>w[0]).join('').toUpperCase();
+// Sold, gone and ended leads are never shown. Live leads show by default; unverified ones only when asked.
+const visible=(l)=>!DEAD.has(l.status)&&!DISMISSED.has(norm(l.url))&&(l.status==='live'||$('#unv').checked);
+const say=(t)=>{$('#msg').textContent=t||'';};
+function card(l){
+  const ph=`<span class="ph"><span>${esc(initials(l.category))}<small>no photo</small></span></span>`;
+  const img=l.image&&/^https:\/\//i.test(l.image)?`<img src="${esc(l.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.replaceWith(document.createRange().createContextualFragment(this.dataset.ph))" data-ph="${esc(ph)}">`:ph;
+  const st=l.status==='live'?'<span class="tag ok">Verified live</span>':'<span class="tag uv">Unverified</span>';
+  return `<article class="lead${l.alert?' alert':''}">
+    <button class="x" type="button" aria-label="Dismiss this lead" title="Dismiss" data-url="${esc(l.url)}" data-title="${esc(l.title)}">×</button>
+    <a class="thumb" href="${safe(l.url)}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">${img}</a>
+    <div>
+    <div>${l.alert?'<span class="tag al">Alert</span>':''}${st}</div>
+    <h3><a href="${safe(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}</a></h3>
+    <p class="meta"><span class="price">${esc(l.price)}</span><span>${esc(l.seller)}</span>${l.date?`<span>${esc(l.date)}</span>`:''}${l.action?`<span>Suggested: ${esc(l.action)}</span>`:''}</p>
+    ${l.notes?`<p class="notes">${esc(l.notes)}</p>`:''}
+    ${(l.more_urls||[]).length?`<p class="links">Also: ${l.more_urls.map((u)=>`<a href="${safe(u)}" target="_blank" rel="noopener noreferrer">${esc(u.replace(/^https?:\/\/(www\.)?/,''))}</a>`).join(' · ')}</p>`:''}
+    </div>
+  </article>`;
+}
+function fillDays(){
+  const cur=$('#day').value;
+  $('#day').innerHTML=DATA.runs.map((r)=>`<option value="${esc(r.date)}">${esc(r.date)} · ${(r.leads||[]).filter(visible).length} leads</option>`).join('');
+  if(cur&&DATA.runs.some((r)=>r.date===cur))$('#day').value=cur;
+}
+function render(){
+  const run=DATA.runs.find((r)=>r.date===$('#day').value);
+  if(!run){$('#summary').textContent='No runs yet.';return;}
+  const only=$('#alerts').checked;
+  const leads=(run.leads||[]).filter((l)=>visible(l)&&(!only||l.alert));
+  $('#summary').textContent=`${run.summary||''}${run.searches?` · ${run.searches} searches`:''}`;
+  const groups=new Map();
+  ORDER.forEach((c)=>groups.set(c,[]));
+  leads.forEach((l)=>{const c=l.category||'Other';if(!groups.has(c))groups.set(c,[]);groups.get(c).push(l);});
+  const rank=(l)=>(l.status==='live'?0:2)+(l.alert?0:1);
+  const secs=[...groups].filter(([,v])=>v.length).map(([c,v])=>[c,v.sort((a,b)=>rank(a)-rank(b))]);
+  const slug=(c)=>c.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+  const hiddenUnv=$('#unv').checked?0:(run.leads||[]).filter((l)=>!DEAD.has(l.status)&&l.status!=='live'&&!DISMISSED.has(norm(l.url))&&(!only||l.alert)).length;
+  $('#list').innerHTML=secs.length?`<nav class="toc">${secs.map(([c,v])=>`<a href="#${slug(c)}">${esc(c)} (${v.length})</a>`).join('')}</nav>`+secs.map(([c,v])=>`
+  <section class="sec" id="${slug(c)}"><h2>${esc(c)} <small>${v.length}</small></h2>${v.map(card).join('')}</section>`).join(''):`<p class="empty">No confirmed-live leads for this day.${hiddenUnv?` ${hiddenUnv} unverified ${hiddenUnv===1?'lead is':'leads are'} hidden; tick “Show unverified” to see ${hiddenUnv===1?'it':'them'}.`:''}</p>`;
+  let x='';
+  if((run.coverage||[]).length)x+=`<h3>Sites searched</h3><table class="cov"><tr><th>Site</th><th>Status</th><th>Results</th></tr>${run.coverage.map((c)=>`<tr><td>${esc(c.site)}</td><td class="${c.status==='searched'?'ok':'bad'}">${esc(c.status)}</td><td>${esc(c.results??'')}</td></tr>`).join('')}</table>`;
+  if((run.nothing_found||[]).length)x+=`<h3>Searched, nothing found</h3><ul class="plain">${run.nothing_found.map((s)=>`<li>${esc(s)}</li>`).join('')}</ul>`;
+  if((run.coverage_gaps||[]).length)x+=`<h3>Couldn't read</h3><ul class="plain">${run.coverage_gaps.map((s)=>`<li>${esc(s)}</li>`).join('')}</ul>`;
+  if(run.issue)x+=`<h3>Issue</h3><p><a href="${safe(run.issue)}" target="_blank" rel="noopener noreferrer">${esc(run.issue)}</a></p>`;
+  $('#extra').innerHTML=x;
+}
+async function dismiss(btn){
+  const url=btn.dataset.url,title=btn.dataset.title;
+  const card=btn.closest('.lead');
+  card.hidden=true;say('');
+  try{
+    const r=await fetch('/api/scout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({url,title})});
+    if(!r.ok)throw new Error(`Could not save the dismissal (${r.status}). The lead is back.`);
+    DISMISSED.add(norm(url));fillDays();render();
+  }catch(e){card.hidden=false;say(e.message||'Could not save the dismissal.');}
+}
+Promise.all([
+  fetch('/scout/leads.json',{cache:'no-store'}).then((r)=>r.json()),
+  fetch('/api/scout',{cache:'no-store'}).then((r)=>r.ok?r.json():{keys:[]}).catch(()=>({keys:[]})),
+]).then(([d,dis])=>{
+  DATA=d;DISMISSED=new Set(dis.keys||[]);
+  d.runs.sort((a,b)=>b.date.localeCompare(a.date));
+  fillDays();
+  const want=new URLSearchParams(location.search).get('date');
+  if(want&&d.runs.some((r)=>r.date===want))$('#day').value=want;
+  render();
+}).catch(()=>{$('#summary').textContent='Could not load leads.json.';});
+let LOADED='';
+fetch('/api/scout?list=1',{cache:'no-store'}).then((r)=>r.ok?r.json():Promise.reject()).then((j)=>{LOADED=j.text;$('#listtext').value=j.text;$('#listtext').disabled=false;$('#save').disabled=false;}).catch(()=>{$('#listtext').value='Could not load the search list.';});
+$('#save').addEventListener('click',async()=>{
+  const b=$('#save'),m=$('#savemsg'),t=$('#listtext').value;
+  b.disabled=true;m.textContent='Saving…';
+  try{
+    const r=await fetch('/api/scout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({list:t})});
+    if(!r.ok)throw new Error(`Save failed (${r.status}).`);
+    LOADED=t;m.textContent='Saved. The next run will use this list.';
+  }catch(e){m.textContent=e.message||'Save failed.';}
+  b.disabled=false;
+});
+addEventListener('beforeunload',(e)=>{if(!$('#listtext').disabled&&$('#listtext').value!==LOADED){e.preventDefault();}});
+$('#day').addEventListener('change',render);
+$('#alerts').addEventListener('change',render);
+$('#unv').addEventListener('change',()=>{fillDays();render();});
+$('#list').addEventListener('click',(e)=>{const b=e.target.closest('.x');if(b)dismiss(b);});
+</script>
+</body>
+</html>

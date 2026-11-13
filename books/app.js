@@ -1,6 +1,7 @@
 const list = document.getElementById("books");
 const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-for (const b of window.BOOKS) {
+// The list is pre-rendered into the HTML by scripts/build.mjs; only build it here if that is missing.
+if (!list.children.length) for (const b of window.BOOKS) {
   const li = document.createElement("li");
   li.className = "book";
   // Anything that isn't an Amazon (book) link is an article, unless data.js says otherwise.
@@ -20,4 +21,4 @@ for (const btn of buttons) {
 
 const nb = [...list.children].filter(li => li.dataset.type === "book").length;
 const na = list.children.length - nb;
-document.getElementById("count").textContent = `${nb} book${nb === 1 ? "" : "s"} and ${na} article${na === 1 ? "" : "s"}, newest first, with the date I finished each one.`;
+if (!document.getElementById("count").textContent) document.getElementById("count").textContent = `${nb} book${nb === 1 ? "" : "s"} and ${na} article${na === 1 ? "" : "s"}, newest first, with the date I finished each one.`;
