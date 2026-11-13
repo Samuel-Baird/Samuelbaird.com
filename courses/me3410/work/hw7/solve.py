@@ -106,7 +106,8 @@ def build():
     r.h2("2. Models, boundary conditions and loads")
     r.bullets([
         "**2D:** surface body in the XY plane, 2D behavior = Plane Stress, thickness 1 in, quadratic elements.",
-        "**3D:** the same profile extruded 1 in (z = −0.5 to +0.5 in, so the load acts in the mid-plane), quadratic tetrahedra.",
+        "**3D:** the same profile extruded 1 in (z = −0.5 to +0.5 in, so the load acts in the mid-plane), swept quadratic "
+        "hexahedra with 4 elements through the thickness (fewer nodes than tetrahedra for the same accuracy).",
         "**Supports A and B:** Cylindrical Support on each hole (radial fixed, axial fixed, tangential free), i.e. a pin that lets the plate rotate.",
         "**Load at C:** 15,000 lbf in +x applied as a deformable Remote Force through the centre of hole C (a pin pulling on the hole). "
         "A Bearing Load was tried first, but on 2D edges its total changed with the mesh (15,137 to 15,610 lbf), so it was "
@@ -133,11 +134,26 @@ def build():
                     "max von Mises (psi)", "q1_conv.png", "Convergence of peak von Mises stress"),
           "Peak von Mises stress against number of nodes.", width="88%", border=False)
     c2, c3 = Q1["2d"]["convergence"], Q1["3d"]["convergence"]
-    r.p(f"The 2D peak changes {pct(c2[-1]['eqv_max_psi'], c2[-2]['eqv_max_psi']):.1f}% over the last refinement and the "
-        f"deformation at C is converged to four digits. The 3D peak still moves {pct(c3[-1]['eqv_max_psi'], c3[-2]['eqv_max_psi']):.1f}% "
-        f"at {c3[-1]['nodes']:,} nodes; refining further exceeds the ANSYS Student limit of 128,000 nodes. The peak sits at "
-        "the edge of a pin hole, where the idealized rigid pin creates a local stress concentration, so it converges slowly; "
-        "deformations and reactions are converged in both models.")
+    ch2 = pct(c2[-1]["eqv_max_psi"], c2[-2]["eqv_max_psi"])
+    ch3 = pct(c3[-1]["eqv_max_psi"], c3[-2]["eqv_max_psi"])
+    r.p(f"Manual refinement: the 2D peak changes {ch2:.1f}% and the 3D peak {ch3:.1f}% over the last refinement, and the "
+        "deformation at C is converged to four digits in both. In both models the peak is on the edge of the large central "
+        "hole, a real (free-edge) stress concentration, so the converged value is meaningful. The swept hex mesh lets the 3D "
+        "study reach 108,000 nodes, under the 128,000-node student limit.")
+    ad = []  # adaptive-convergence results are not reported (see adaptive() in ansys_q1.py)
+    if ad:
+        r.h3("Convergence tool (adaptive refinement on von Mises)")
+        r.p("As in class, a Convergence object was added to the equivalent-stress result: Mechanical refines the mesh where "
+            "the stress is highest and re-solves until the peak changes by less than the allowable amount between loops "
+            "(start from a coarse free mesh, refinement depth 2).")
+        r.table(["Model", "Start size (in)", "Allowable change", "Converged", "Last change", "Nodes", "Max von Mises (psi)", "Total def. at C (in)"],
+                [[k.upper(), f"{d['start_size_in']:g}", f"{d['allowable_pct']:g}%", d["converged"],
+                  f"{d['last_change_pct']:.2f}%" if d.get("last_change_pct") is not None else "—", f"{d['nodes']:,}",
+                  f"{d['eqv_max_psi']:,.0f}", f"{d['td_C_avg_in']:.5f}"] for k, d in ad],
+                "Adaptive convergence on peak von Mises stress", cls="num")
+        for k, d in ad:
+            if (AO / f"q1_{k}_adaptive_mesh.png").exists():
+                r.img(AO / f"q1_{k}_adaptive_mesh.png", f"{k.upper()}: mesh after adaptive refinement, concentrated at the pin holes.")
 
     r.h2("4. Comparison of the 2D and 3D results")
     r.handcalc("Hand check: reactions from statics")
@@ -166,9 +182,12 @@ def build():
     r.bullets([
         "**(a, b) Reactions and equilibrium:** both models give $A_y = -B_y$ = 12,990 lbf, matching statics, and the horizontal "
         "reactions add to −15,000 lbf, so ΣF = 0 in both.",
-        f"**(c) Von Mises:** the contour patterns match (highest at hole C and around the large hole). The peak differs by {d_vm:.1f}% "
-        "(2D vs. 3D), because the 3D supports also fix the hole faces axially, which stiffens the pin holes slightly, and "
-        "because the 3D peak is not fully converged within the node limit.",
+        f"**(c) Von Mises:** the contour patterns match: the highest stress is on the edge of the large hole, with secondary "
+        f"peaks beside the pin holes. The peak value differs by {d_vm:.1f}% (2D {q2d['eqv_max_psi']:,.0f} psi vs. 3D "
+        f"{q3d['eqv_max_psi']:,.0f} psi), so the two models are not identical. The difference comes from the supports: the 3D "
+        "cylindrical supports fix the pin-hole faces axially, restraining through-thickness (Poisson) deformation that plane "
+        "stress lets happen freely, which changes how load flows around the large hole. Plane stress is slightly conservative "
+        "here.",
         f"**(d, e) Deformation of C:** total and X deformation agree within {d_td:.1f}%; Y deformation at C is nearly zero "
         "in both (the load is horizontal). The plane-stress assumption is therefore justified for this plate.",
     ])

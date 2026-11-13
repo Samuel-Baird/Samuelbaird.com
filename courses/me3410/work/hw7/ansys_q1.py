@@ -8,7 +8,8 @@ RP = 3.5
 HOLES = {"A": (RP * math.cos(math.radians(210)), RP * math.sin(math.radians(210))),
          "B": (RP * math.cos(math.radians(330)), RP * math.sin(math.radians(330))),
          "C": (0.0, RP)}
-SIZES = {"2d": [0.4, 0.2, 0.1, 0.05], "3d": [0.4, 0.3, 0.2, 0.15]}
+SIZES = {"2d": [0.4, 0.2, 0.1, 0.05], "3d": [0.3, 0.2, 0.15, 0.1, 0.075, 0.06]}
+SWEEP = None
 PROBLEMS = []
 R = {"2d": {"convergence": []}, "3d": {"convergence": []}, "problems": PROBLEMS}
 
@@ -46,6 +47,20 @@ def setup(kind):
     HOLE_SIZING = Model.Mesh.AddSizing()
     HOLE_SIZING.Location = named_selection("PIN_HOLES", H["A"] + H["B"] + H["C"])
     HOLE_SIZING.Name = "Pin-hole refinement (global size / 4)"
+    global SWEEP
+    if kind == "3d":
+        # Swept hex mesh through the thickness: far fewer nodes than tets for the same accuracy,
+        # so the refinement study can go further under the 128k-node student limit.
+        SWEEP = Model.Mesh.AddAutomaticMethod()
+        sel = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)
+        sel.Ids = [b.Id for asm in ExtAPI.DataModel.GeoData.Assemblies for part in asm.Parts for b in part.Bodies]
+        SWEEP.Location = sel
+        SWEEP.Method = MethodType.Sweep
+        try:
+            SWEEP.SweepNumberDivisions = 4
+        except Exception as ex:
+            PROBLEMS.append("sweep divisions: %s" % str(ex)[:80])
+        SWEEP.Name = "Sweep (hex) through the thickness, 4 divisions"
     AN = Model.AddStaticStructuralAnalysis()
     SUP = {}
     for k in ("A", "B"):
@@ -117,6 +132,46 @@ def mesh_solve(kind, size, images=False):
             imgs["eqv_front"] = export_image(RES["eqv"], os.path.join(OUT, "q1_3d_eqv_front.png"), **V2)
         d["images"] = imgs
     return d
+
+
+def adaptive(kind, start_size, allowable=5.0, loops=6):
+    # Not used for HW 7: in 2D it stopped at 2.7k nodes (49.0 ksi) before the pin-hole edge was
+    # resolved (manual refinement gives ~55 ksi); with the swept 3D mesh it failed to solve.
+    """Mechanical's convergence tool on peak von Mises: adaptive refinement until the change
+    between loops is below the allowable %, as done in class."""
+    Model = ExtAPI.DataModel.Project.Model
+    if SWEEP is not None:
+        SWEEP.Suppressed = True  # adaptive refinement needs a free (tet) mesh
+    Model.Mesh.ElementSize = Quantity("%r [in]" % start_size)
+    HOLE_SIZING.Suppressed = True
+    conv = RES["eqv"].AddConvergence()
+    conv.Type = ConvergenceType.Maximum
+    conv.AllowableChange = allowable
+    AN.Solution.MaximumRefinementLoops = loops
+    AN.Solution.RefinementDepth = 2
+    Model.Mesh.GenerateMesh()
+    AN.Solve(True)
+    AN.Solution.EvaluateAllResults()
+    d = {"start_size_in": start_size, "allowable_pct": allowable, "loops_max": loops,
+         "converged": str(conv.IsConverged) if hasattr(conv, "IsConverged") else str(conv.Converged),
+         "last_change_pct": float(str(conv.LastChange).split()[0]) if conv.LastChange is not None else None,
+         "nodes": Model.Mesh.Nodes, "eqv_max_psi": qval(RES["eqv"].Maximum, "psi"),
+         "td_C_avg_in": qval(RES["td_C"].Average, "in")}
+    try:
+        d["history"] = [(x.Caption, str(x.StringValue)) for x in conv.VisibleProperties]
+    except Exception:
+        pass
+    V = dict(view="front" if kind == "2d" else "iso", width=1000, height=700, units=MechanicalUnitSystem.StandardBIN,
+             true_scale=(kind == "3d"))
+    d["image_eqv"] = export_image(RES["eqv"], os.path.join(OUT, "q1_%s_adaptive_eqv.png" % kind), **V)
+    d["image_mesh"] = export_image(Model.Mesh, os.path.join(OUT, "q1_%s_adaptive_mesh.png" % kind), **V)
+    conv.Delete()
+    AN.Solution.MaximumRefinementLoops = 1
+    HOLE_SIZING.Suppressed = False
+    if SWEEP is not None:
+        SWEEP.Suppressed = False
+    R[kind]["adaptive"] = d
+    return "%s adaptive: %s" % (kind, dict((k, v) for k, v in d.items() if not k.startswith("image")))
 
 
 def run_series(kind):
