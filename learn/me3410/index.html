@@ -114,7 +114,7 @@ th{color:var(--muted);font-weight:500}
 <script>
 (function(){
 var KEY="me3410:v1",S={st:{},dl:{}},D=null,FILTER="open";
-var LABEL={todo:"To do",in_progress:"In progress",pdf_ready:"PDF ready",submitted:"Submitted",graded:"Graded",blocked:"Blocked"};
+var LABEL={todo:"To do",in_progress:"In progress",pdf_ready:"Doc ready",submitted:"Submitted",graded:"Graded",blocked:"Blocked"};
 var ORDER=["todo","in_progress","pdf_ready","submitted","graded","blocked"];
 function load(){try{var j=JSON.parse(localStorage.getItem(KEY)||"{}");if(j.st)S.st=j.st;if(j.dl)S.dl=j.dl}catch(e){}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
@@ -131,7 +131,7 @@ function untilText(iso){var ms=new Date(iso)-now();if(ms<0){var d=Math.ceil(-ms/
 
 function render(){
   var items=D.items,open=items.filter(isOpen);
-  document.getElementById("sub").textContent=D.section+" · Updated "+D.updated+". Work each assignment through the pipeline, review the PDF, submit it on Canvas, then mark it here.";
+  document.getElementById("sub").textContent=D.section+" · Updated "+D.updated+". Work each assignment through the pipeline, review the Word file, export it to PDF, submit it on Canvas, then mark it here.";
   // cards
   var next=open.filter(function(i){return new Date(i.due_iso)>now()}).sort(function(a,b){return new Date(a.due_iso)-new Date(b.due_iso)})[0];
   var late=open.filter(function(i){return new Date(i.due_iso)<now()});
@@ -151,7 +151,7 @@ function render(){
   if(todays.length){f.innerHTML="<b>Today:</b> "+todays.slice(0,3).map(function(i){return '<a href="#'+i.id+'" data-open="'+i.id+'">'+esc(i.title)+"</a>"}).join(" → ")+(todays.length>3?" (+"+(todays.length-3)+" more)":"")+'. '+esc(todays[0].note||"")}
   else{f.innerHTML="<b>Nothing scheduled today.</b> "+(open[0]?"Next up: "+esc(open[0].title)+" on "+dayLabel(open[0].plan)+".":"Everything is in.")}
   renderPlan();renderItems();renderGrade();renderHow();
-  document.getElementById("foot").textContent="Status changes and checkboxes are saved in this browser only. Canvas is the record of what is actually submitted. PDFs stay on your computer in school/courses/me3410/out/.";
+  document.getElementById("foot").textContent="Status changes and checkboxes are saved in this browser only. Canvas is the record of what is actually submitted. Word files stay on your computer in school/courses/me3410/out/.";
 }
 function renderPlan(){
   var by={};D.items.forEach(function(i){(by[i.plan]=by[i.plan]||[]).push(i)});
@@ -175,7 +175,7 @@ function renderItems(){
     var lateP=isOpen(i)&&ld?'<span class="pill late">'+ld+" d late · −"+pen(ld)+"% now</span>":(isOpen(i)?'<span class="pill ok">'+untilText(i.due_iso)+"</span>":"");
     return '<details class="item" id="'+i.id+'" data-st="'+s+'"><summary><h3>'+esc(i.title)+'</h3><span class="pill '+s+'">'+LABEL[s]+'</span><div class="meta">'+esc(i.group)+" · "+i.pts+" pts · due "+esc(i.due_local)+" · plan "+dayName(i.plan)+" "+dayLabel(i.plan)+" · "+nd+"/"+i.deliver.length+" deliverables "+lateP+"</div></summary>"
       +'<div class="body">'+(i.note?'<p class="note">'+esc(i.note)+"</p>":"")
-      +'<p class="muted" style="font-size:.9rem">'+esc(i.kind)+" · output <code>"+esc(i.pdf)+"</code></p>"
+      +'<p class="muted" style="font-size:.9rem">'+esc(i.kind)+" · Word file <code>"+esc(i.pdf)+"</code></p>"
       +'<ul class="dl">'+i.deliver.map(function(x,k){return '<li class="'+(dl[k]?"done":"")+'"><input type="checkbox" data-i="'+i.id+'" data-k="'+k+'" '+(dl[k]?"checked":"")+' aria-label="'+esc(x)+'"><span>'+esc(x)+"</span></li>"}).join("")+"</ul>"
       +'<div class="row"><label class="muted" for="s-'+i.id+'">Status</label><select id="s-'+i.id+'" data-s="'+i.id+'">'+ORDER.map(function(o){return '<option value="'+o+'"'+(o===s?" selected":"")+">"+LABEL[o]+"</option>"}).join("")+'</select><a href="'+esc(i.url)+'" target="_blank" rel="noopener">Open in Canvas</a></div></div></details>';
   }).join("")||'<p class="muted">Nothing here.</p>';
@@ -191,7 +191,7 @@ function renderGrade(){
   document.getElementById("grade").innerHTML=h;
 }
 function renderHow(){
-  var h='<p class="banner" style="border-left-color:var(--accent)"><b style="color:var(--accent)">AI use:</b> '+esc(D.policy.ai)+'</p><p>'+esc(D.policy.late)+'</p><h2>How each assignment is produced</h2><ol class="pipe">'+D.pipeline.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+'</ol><p class="muted">Every PDF contains: the AI-use statement first, the given data, hand calculations (symbolic form, numbers substituted, boxed result), ANSYS screenshots (model with BCs, mesh, contours), mesh-convergence evidence, and a hand-vs-ANSYS comparison table with % difference.</p>';
+  var h='<p class="banner" style="border-left-color:var(--accent)"><b style="color:var(--accent)">AI use:</b> '+esc(D.policy.ai)+'</p><p>'+esc(D.policy.late)+'</p><h2>How each assignment is produced</h2><ol class="pipe">'+D.pipeline.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+'</ol><p class="muted">Every Word document contains: the AI-use statement first, the given data, hand calculations (symbolic form, numbers substituted, boxed result), ANSYS screenshots (model with BCs, mesh, contours), mesh-convergence evidence, and a hand-vs-ANSYS comparison table with % difference.</p>';
   document.getElementById("how").innerHTML=h;
 }
 document.addEventListener("click",function(e){
