@@ -1,0 +1,24 @@
+[
+  {
+    "id": "me3410",
+    "code": "ME 3410",
+    "title": "Applied Finite Element Analysis",
+    "term": "Fall 2026",
+    "kind": "Catch-up tracker",
+    "blurb": "Plan by day, deliverable checklists, late-penalty math and grade projection.",
+    "href": "/learn/me3410",
+    "data": "/learn/me3410/tracker.json",
+    "canvas": "https://uvu.instructure.com/courses/641173"
+  },
+  {
+    "id": "me3320",
+    "code": "ME 3320",
+    "title": "Heat Transfer",
+    "term": "Fall 2026",
+    "kind": "Study guide",
+    "blurb": "18 units in course order: videos, key equations, book pointers, original practice problems and mock exams.",
+    "href": "/learn/me3320",
+    "data": "/learn/me3320/course.json",
+    "canvas": "https://uvu.instructure.com/courses/641165"
+  }
+]
