@@ -118,7 +118,8 @@ def q(v, unit):
     return Quantity("%r [%s]" % (v, unit))
 
 
-def export_image(obj, path, view="iso", width=1400, height=800, fit=True, units=None, frame=None, true_scale=False):
+def export_image(obj, path, view="iso", width=1400, height=800, fit=True, units=None, frame=None, true_scale=False,
+                 wire=False):
     """Activate a tree object and save a PNG of the graphics window.
 
     Plots are shown in mm / MPa (units=StandardNMM) without element edges; the active unit
@@ -128,7 +129,7 @@ def export_image(obj, path, view="iso", width=1400, height=800, fit=True, units=
     ExtAPI.Application.ActiveUnitSystem = units or MechanicalUnitSystem.StandardNMM
     rp = Graphics.ViewOptions.ResultPreference
     G = Ansys.Mechanical.DataModel.MechanicalEnums.Graphics
-    rp.ExtraModelDisplay = G.ExtraModelDisplay.NoWireframe
+    rp.ExtraModelDisplay = G.ExtraModelDisplay.UndeformedWireframe if wire else G.ExtraModelDisplay.NoWireframe
     try:  # true_scale: show the real deformed shape (auto-scaling distorts thick 3D parts)
         rp.DeformationScaling = G.DeformationScaling.True if true_scale else G.DeformationScaling.Auto
     except Exception:

@@ -196,35 +196,96 @@ def read_case(tag, lc, an, r, tapered, images):
             imgs[key] = export_image(r[key], pre + "_%s.png" % key, **SPAN)
         imgs["sx_path"] = export_image(r["sx_path"], pre + "_sx_path.png", view="front")
         imgs["fr"] = export_image(r["fr"], pre + "_reaction.png", **SPAN)
+        imgs["td_true"] = export_image(r["td"], pre + "_td_true.png", true_scale=True, wire=True, **SPAN)
         d["images"] = imgs
     return d
 
 
 PROBLEMS = []
 results = {"material": None, "cases": {}, "convergence": [], "problems": PROBLEMS}
-SIZES = [0.015, 0.010, 0.0075, 0.005] if MODE == "full" else [0.012]
-FINAL = SIZES[-1]
+# Handout §7.3 mesh table: (name, global size, root/junction refinement). The model is a solid,
+# meshed with MultiZone quadratic hexes (SOLID186): the global size sets the spanwise element
+# length, the refinement size sets the cross-section mesh (root face, swept along the span, so it
+# also covers every web-flange junction and the validation section), and a hard edge sizing puts
+# two elements through every flange and web thickness (handout §7.1 rule for solids).
+# The very fine level uses 10 mm spanwise, not 8 mm: 8 mm with a 3 mm section is 134,373 nodes,
+# over the 128,000-node limit of ANSYS Student.
+LEVELS = [("Coarse", 0.030, 0.010), ("Medium", 0.020, 0.006), ("Fine", 0.012, 0.004),
+          ("Very fine", 0.010, 0.003)]
+if MODE != "full":
+    LEVELS = [LEVELS[0]]
+FINAL = LEVELS[-1]
+MESHCTL = {}
 
 
-def mesh_at(size):
-    # Set mesh properties in a later call than the geometry import: right after import they
-    # can be read-only for a moment.
+def mesh_controls():
+    """MultiZone hex method + section sizing + 2 divisions through each wall (created once per
+    model, in a later call than the geometry import)."""
+    MESHCTL.clear()
     Model.Mesh.ElementOrder = ElementOrder.Quadratic
-    Model.Mesh.ElementSize = q(size, "m")
+    sel = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)
+    sel.Ids = [b.Id for asm in ExtAPI.DataModel.GeoData.Assemblies for part in asm.Parts for b in part.Bodies]
+    m = Model.Mesh.AddAutomaticMethod()
+    m.Location = sel
+    m.Method = MethodType.MultiZone
+    m.Name = "MultiZone hex (SOLID186), swept along the span"
+    fs = [face_info(f) for f in geo_faces()]
+    root = [f["id"] for f in fs if f["n"][0] < -0.9]
+    fz = Model.Mesh.AddSizing()
+    s2 = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)
+    s2.Ids = root
+    fz.Location = s2
+    fz.Name = "Section refinement (root face, swept)"
+    # geometry units are mm: root edges whose length is a wall thickness (6 mm flange, 4 mm web)
+    es = [edge_info(e) for e in geo_edges()]
+    thick = [e["id"] for e in es if abs(e["c"][0]) < 1e-3 and min(abs(e["len"] - 6.0), abs(e["len"] - 4.0)) < 1e-3]
+    ez = Model.Mesh.AddSizing()
+    s3 = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)
+    s3.Ids = thick
+    ez.Location = s3
+    ez.Type = SizingType.NumberOfDivisions
+    ez.NumberOfDivisions = 2
+    ez.Behavior = SizingBehavior.Hard
+    ez.Name = "2 elements through each wall thickness"
+    MESHCTL.update(method=m, face=fz, edge=ez, n_thick_edges=len(thick))
+    return "mesh controls: %d thickness edges" % len(thick)
+
+
+def mesh_at(level):
+    name, glob, ref = level
+    Model.Mesh.ElementSize = q(glob, "m")
+    MESHCTL["face"].ElementSize = q(ref, "m")
     Model.Mesh.GenerateMesh()
-    return "meshed %g mm: %d nodes" % (size * 1000, Model.Mesh.Nodes)
+    return "meshed %s (%g/%g mm): %d nodes" % (name, glob * 1000, ref * 1000, Model.Mesh.Nodes)
 
 
-def conv_step(size):
+def geometry_mass():
+    b = bodies()[0]
+    out = {}
+    try:
+        out["volume_m3"] = float(b.Volume.ConvertUnit("m m m").Value)
+    except Exception as e:
+        PROBLEMS.append("volume: %s" % str(e)[:100])
+    try:
+        out["mass_kg"] = float(b.Mass.ConvertUnit("kg").Value)
+    except Exception as e:
+        PROBLEMS.append("mass: %s" % str(e)[:100])
+    return out
+
+
+def conv_step(level):
     refresh(CASES)
     lc, an, fix, pr, r = CASES[0]
     an.Solve(True)
-    d = read_case("conv_%g" % (size * 1000), lc, an, r, False, False)
+    name, glob, ref = level
+    d = read_case("conv_%s" % name.replace(" ", "_"), lc, an, r, False, False)
     results["convergence"].append({
-        "size_mm": size * 1000, "nodes": d["nodes"], "elements": d["elements"],
+        "level": name, "global_mm": glob * 1000, "refine_mm": ref * 1000,
+        "nodes": d["nodes"], "elements": d["elements"],
         "tip_dy_mm": d["tip_dy_max_mm"], "sx_val_top_MPa": d.get("sx_val_top_MPa"),
-        "sxy_val_NA_MPa": d.get("sxy_val_NA_MPa"), "Fy_root_N": d["Fy_root_N"]})
-    return "conv %g mm: tip %.4f mm, state %s" % (size * 1000, d["tip_dy_max_mm"], d["sol_state"])
+        "sx_val_bot_MPa": d.get("sx_val_bot_MPa"), "sxy_val_NA_MPa": d.get("sxy_val_NA_MPa"),
+        "sx_max_MPa": d["sx_max_MPa"], "eqv_max_MPa": d["eqv_max_MPa"], "Fy_root_N": d["Fy_root_N"]})
+    return "conv %s: %d nodes, tip %.4f mm, state %s" % (name, d["nodes"], d["tip_dy_max_mm"], d["sol_state"])
 
 
 def final_solve(tag, tapered):
@@ -240,36 +301,44 @@ def final_solve(tag, tapered):
 
 ExtAPI.DataModel.Project.New()
 #%% split
-CASES = setup(False, SIZES[0], ["LC1", "LC2"])
+CASES = setup(False, None, ["LC1", "LC2"])
 results["material"] = material_props("Aluminum Alloy")
+results["mass_constant"] = geometry_mass()
 #%% split
-mesh_at(SIZES[0])
+mesh_controls()
 #%% split
-conv_step(SIZES[0])
+mesh_at(LEVELS[0])
 #%% split
-mesh_at(SIZES[1]) if len(SIZES) > 1 else "skip"
+conv_step(LEVELS[0])
 #%% split
-conv_step(SIZES[1]) if len(SIZES) > 1 else "skip"
+mesh_at(LEVELS[1]) if len(LEVELS) > 1 else "skip"
 #%% split
-mesh_at(SIZES[2]) if len(SIZES) > 2 else "skip"
+conv_step(LEVELS[1]) if len(LEVELS) > 1 else "skip"
 #%% split
-conv_step(SIZES[2]) if len(SIZES) > 2 else "skip"
+mesh_at(LEVELS[2]) if len(LEVELS) > 2 else "skip"
 #%% split
-mesh_at(SIZES[3]) if len(SIZES) > 3 else "skip"
+conv_step(LEVELS[2]) if len(LEVELS) > 2 else "skip"
 #%% split
-conv_step(SIZES[3]) if len(SIZES) > 3 else "skip"
+mesh_at(LEVELS[3]) if len(LEVELS) > 3 else "skip"
+#%% split
+conv_step(LEVELS[3]) if len(LEVELS) > 3 else "skip"
 #%% split
 final_solve("constant", False)
 #%% split
 ExtAPI.DataModel.Project.New()
 #%% split
-CASES = setup(True, FINAL, ["LC1", "LC2"])
+CASES = setup(True, None, ["LC1", "LC2"])
+results["mass_tapered"] = geometry_mass()
+#%% split
+mesh_controls()
 #%% split
 mesh_at(FINAL)
 #%% split
 final_solve("tapered", True)
 #%% split
-results["final_size_mm"] = FINAL * 1000
+results["final_level"] = list(FINAL)
+results["mesh_controls_thick_edges"] = MESHCTL.get("n_thick_edges")
 save_json(os.path.join(OUT, "results_%s.json" % MODE), results)
 json.dumps({"problems": PROBLEMS, "convergence": results["convergence"],
+            "mass": [results.get("mass_constant"), results.get("mass_tapered")],
             "cases": dict((c, dict((k, v) for k, v in cv.items() if not isinstance(v, (list, dict)))) for c, cv in results["cases"].items())})

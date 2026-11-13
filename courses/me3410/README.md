@@ -50,6 +50,9 @@ Then update the item's status in `tracker.py`, run it, and `node scripts/publish
   (`ElementOrder`, `ElementSize`) in a later call than the geometry import: right after import they can
   be read-only. `mech.py` also retries a failed phase once after 3 s.
 - Globals persist between script calls, so `#%% split` phases share state.
+- Sweep fails on a body whose source face is split into several faces (e.g. a split loaded face);
+  MultiZone meshes it as all-hex. ANSYS Student stops at 128,000 nodes: quadratic hexes run about 5.6
+  nodes per element, so check the finest mesh's node count before a long study.
 - Plots: `export_image` switches to mm/MPa and hides element edges, then restores m/Pa so formula loads
   are never reinterpreted.
 
