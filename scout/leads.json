@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "runs": [
     {
       "date": "2026-11-11",
@@ -1183,6 +1183,138 @@
         }
       ],
       "issue": null
+    },
+    {
+      "date": "2026-11-14",
+      "searches": 35,
+      "summary": "No verified new finds. 3 unverified leads (Deseret Alphabet x2, 1899 anti-Mormon eBay). Nothing new for Portuguese LDS, sacrament cups, Happy Songs to Sing, Luther or communion vessels.",
+      "leads": [
+        {
+          "title": "Deseret Alphabet 1869 'first edition' (ABAA listing)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1655900921",
+          "more_urls": [],
+          "date": "1869",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only (403). Could not verify live or original; may duplicate an already-seen ABAA record.",
+          "action": "Check seller site",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Moon's Rare Books: 'Deseret Alphabet'",
+          "price": "$450",
+          "seller": "Moon's Rare Books",
+          "url": "https://reach.dog/shop/moons-rare-books/products/deseret-alphabet",
+          "more_urls": [],
+          "date": "unknown",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Price from search snippet; no date/description. Could not verify original vs. reprint or live status.",
+          "action": "Check seller site",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "'Rare 1899 Mormon Book title Peepstone Joe Exposed Old Mormon Manuscript Found'",
+          "price": "price unknown",
+          "seller": "eBay (de)",
+          "url": "https://www.ebay.de/itm/306319096576",
+          "more_urls": [],
+          "date": "1899",
+          "category": "Anti-Mormon literature",
+          "alert": true,
+          "verified": false,
+          "notes": "Title only; page blocked (403), may be ended. Could not verify.",
+          "action": "Check seller site",
+          "image": null,
+          "status": "unknown"
+        }
+      ],
+      "nothing_found": [
+        "Portuguese LDS pre-1960",
+        "LDS sacrament cups/trays (metal)",
+        "Happy Songs to Sing",
+        "Luther (affordable)",
+        "pre-1900 communion vessels (affordable)"
+      ],
+      "coverage_gaps": [
+        "ABAA, eBay.de, Ken Sanders blocked on fetch",
+        "Rare Book Hub and Trem das 7 not attempted",
+        "35 searches (under 40 target)"
+      ],
+      "issue": "https://github.com/Samuel-Baird/collector-items/issues/6",
+      "coverage": [
+        {
+          "site": "eBay",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "AbeBooks",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Biblio",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "ViaLibri",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "LiveAuctioneers",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Heritage Auctions",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "RR Auction",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Etsy",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "WorthPoint",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Estante Virtual",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Mercado Livre Brasil",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Rare Book Hub",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Trem das 7",
+          "status": "skipped",
+          "results": 0
+        }
+      ]
     }
   ]
 }
