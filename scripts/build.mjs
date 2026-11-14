@@ -293,6 +293,10 @@ function checkLd(path, graph) {
 }
 
 /* ---------- head / SEO ---------- */
+// Vercel Web Analytics (cookie-free). Needs "Web Analytics" enabled for the project in the Vercel dashboard;
+// until then /_vercel/insights/script.js 404s harmlessly. Gives referrers such as chatgpt.com and perplexity.ai.
+const ANALYTICS = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
+<script defer src="/_vercel/insights/script.js"></script>`;
 function seo(p) {
   const url = BASE + (p.path === '/' ? '/' : p.path);
   const img = BASE + (p.image || '/img/og-card.png');
@@ -317,7 +321,8 @@ ${p.image && p.image !== '/img/og-card.png' ? '' : '<meta property="og:image:wid
 <meta name="twitter:title" content="${esc(p.title)}">
 <meta name="twitter:description" content="${esc(p.desc)}">
 <meta name="twitter:image" content="${img}">
-<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">${ld}`;
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
+${ANALYTICS}${ld}`;
 }
 
 const PAGES = {
