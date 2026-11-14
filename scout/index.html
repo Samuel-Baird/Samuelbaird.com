@@ -101,19 +101,26 @@ function card(l){
     <div>
     <div>${l.alert?'<span class="tag al">Alert</span>':''}${st}</div>
     <h3><a href="${safe(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}</a></h3>
-    <p class="meta"><span class="price">${esc(l.price)}</span><span>${esc(l.seller)}</span>${l.date?`<span>${esc(l.date)}</span>`:''}${l.action?`<span>Suggested: ${esc(l.action)}</span>`:''}</p>
+    <p class="meta"><span class="price">${esc(l.price)}</span><span>${esc(l.seller)}</span>${l.date?`<span>${esc(l.date)}</span>`:''}${l.action?`<span>Suggested: ${esc(l.action)}</span>`:''}${l._first?`<span>First seen ${esc(l._first)}</span>`:''}</p>
     ${l.notes?`<p class="notes">${esc(l.notes)}</p>`:''}
     ${(l.more_urls||[]).length?`<p class="links">Also: ${l.more_urls.map((u)=>`<a href="${safe(u)}" target="_blank" rel="noopener noreferrer">${esc(u.replace(/^https?:\/\/(www\.)?/,''))}</a>`).join(' · ')}</p>`:''}
     </div>
   </article>`;
 }
+// "All active" view: every lead from every run, newest copy of each URL wins, until the owner dismisses it.
+function allLeads(){
+  const seen=new Map();
+  DATA.runs.forEach((r)=>(r.leads||[]).forEach((l)=>{const k=norm(l.url);if(!seen.has(k))seen.set(k,{...l,_first:r.date});else seen.get(k)._first=r.date;}));
+  return [...seen.values()];
+}
 function fillDays(){
   const cur=$('#day').value;
-  $('#day').innerHTML=DATA.runs.map((r)=>`<option value="${esc(r.date)}">${esc(r.date)} · ${(r.leads||[]).filter(visible).length} leads</option>`).join('');
-  if(cur&&DATA.runs.some((r)=>r.date===cur))$('#day').value=cur;
+  $('#day').innerHTML=`<option value="all">All active leads · ${allLeads().filter(visible).length}</option>`+DATA.runs.map((r)=>`<option value="${esc(r.date)}">${esc(r.date)} · ${(r.leads||[]).filter(visible).length} leads</option>`).join('');
+  if(cur&&(cur==='all'||DATA.runs.some((r)=>r.date===cur)))$('#day').value=cur;
 }
 function render(){
-  const run=DATA.runs.find((r)=>r.date===$('#day').value);
+  const isAll=$('#day').value==='all';
+  const run=isAll?{summary:'Every lead from every run stays here until you dismiss it. Pick a date to see just that day.',leads:allLeads()}:DATA.runs.find((r)=>r.date===$('#day').value);
   if(!run){$('#summary').textContent='No runs yet.';return;}
   const only=$('#alerts').checked;
   const leads=(run.leads||[]).filter((l)=>visible(l)&&(!only||l.alert));
@@ -150,7 +157,7 @@ Promise.all([
 ]).then(([d,dis])=>{
   DATA=d;DISMISSED=new Set(dis.keys||[]);
   d.runs.sort((a,b)=>b.date.localeCompare(a.date));
-  fillDays();
+  fillDays();$('#day').value='all';
   const want=new URLSearchParams(location.search).get('date');
   if(want&&d.runs.some((r)=>r.date===want))$('#day').value=want;
   render();
