@@ -90,6 +90,18 @@ Then update the item's status in `tracker.py`, run it, and `node scripts/publish
   singularity shows up, because the coarse mesh puts the peak elsewhere. Start it from a mesh fine enough to show
   the singular point, or put the Convergence object on deformation or a stress scoped away from it.
 
+- Thermal → structural in one Mechanical session: `ST.ImportLoad(TH)` links a Steady-State Thermal analysis to a
+  Static Structural one (the scripted version of dragging the system in Workbench); it adds the Imported Body
+  Temperature, and solving ST after TH uses the thermal result (`work/hw8/ansys.py`).
+- A bend made with build123d `revolve` imported into Mechanical as the 270° complement of the torus (face area 3×
+  too large). Build pipe bends with `sweep` along a line-arc-line wire instead (`work/hw8/cad.py`).
+- `mech.py` retries a failed phase once; for a phase that imports geometry that leaves a second body. Run with
+  `--no-retry` while debugging a setup phase.
+- Path results' `PlotData` has `X/Y/Z Coordinate` and `Values` keys (no length); compute the arc length from the
+  coordinates (`work/hw8/solve.py: path_xy()`).
+- A Fixed Support on a heated face also stops its in-plane thermal growth: expect σ_vM ≈ EαΔT/(1−ν) just under the
+  face and singular peaks on its edges (`work/hw8`).
+
 ## Every document must have
 1. The AI-use statement first (built into `Report`).
 2. Given data with sources.
