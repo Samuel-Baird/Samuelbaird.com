@@ -80,6 +80,12 @@ Then update the item's status in `tracker.py`, run it, and `node scripts/publish
   erratic peak stresses; refine the face too, or use a Convergence object scoped to the fillet.
 - To rerun only the later phases of a script on the live session, put them in a second file and run it with
   `SCRIPT=<file> bash run_ansys.sh` (globals persist; see `work/ict1028a/ansys_tail.py`).
+- 3D views in batch mode: setting `Camera.ViewVector` does not take (the export stays on the last named
+  orientation, e.g. a plan view). Use the named Iso orientation, `Camera.Rotate(180, CameraAxisType.ScreenY)` for
+  the back, and set `FocalPoint` + `SceneWidth` + `SceneHeight` explicitly: `SetFit` crops tall parts in a
+  1400 × 800 export (`work/bracket/ansys.py: view_export()`).
+- Bearing Load + a Convergence object: the adaptive run's reactions drifted 2.7% above the applied load (the bearing
+  distribution is re-applied on the refined mesh). Check the reactions of any adaptive run with a bearing load.
 - 2D adaptive meshing (Convergence object): from a coarse start it can report "converged" before a stress
   singularity shows up, because the coarse mesh puts the peak elsewhere. Start it from a mesh fine enough to show
   the singular point, or put the Convergence object on deformation or a stress scoped away from it.
