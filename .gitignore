@@ -11,6 +11,7 @@ node_modules/
 .venv-cad/
 courses/*/out/
 courses/*/work/*/ansys_out*/
+courses/*/work/*/figures/
 courses/*/work/*/figs/
 courses/*/work/*/assets/*.step
 courses/*/work/*/assets/*.xml
