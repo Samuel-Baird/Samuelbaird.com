@@ -122,3 +122,10 @@ at the top of the report and in the issue.
 If `reports/YYYY-MM-DD.md` already exists, write the new report to `reports/YYYY-MM-DD-run2.md`
 (then `-run3`, etc.), and replace that date's entry in `leads.json` with a merged list (carry over
 earlier live/unknown leads, drop dismissed and gone ones). The issue title stays `Scout YYYY-MM-DD: N finds`.
+
+## Carry-over of leads
+The leads page (samuelbaird.com/scout) now shows an "All active leads" view that merges every run in
+`leads.json`, so earlier leads and alerts stay visible until the owner dismisses them. A lead disappears
+only when dismissed or when a later run re-lists it with status `sold`, `gone` or `ended`. So: when you
+re-check an earlier lead and find it ended/sold, include it in today's run entry with that status
+(the page hides it) rather than just omitting it. Do not drop earlier live/unverified leads from `leads.json`.
