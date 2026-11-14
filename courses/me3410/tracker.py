@@ -132,8 +132,14 @@ ITEMS = [
          note="No handout on Canvas. Ask Dr. Seibi or a teammate which tutorial was done on Nov 4 (likely axisymmetric, from the module order)."),
     dict(id="bracket", title="In-class tutorial: 3D bracket", cid=9163938, group="Assignments", pts=10,
          due="2026-11-20T06:59:59Z", plan="2026-11-18", hrs=2, kind="3D CAD + ANSYS",
-         status="todo", pdf="InClass_3D_Bracket.docx",
-         deliver=["FE model with BCs and loads", "Equivalent stress", "Total deformation and X/Y/Z deformation", "Reaction force"]),
+         status="pdf_ready", pdf="InClass_3D_Bracket.docx",
+         deliver=["FE model with BCs and loads (bearing load + axial force on the 30 mm hole, base fixed)",
+                  "Equivalent stress (converged on the R10 fillet)", "Total deformation and X/Y/Z deformation",
+                  "Reaction force and moment, checked against statics",
+                  "Beam-theory checks of the upright, mesh study, bearing load vs. uniform force"],
+         note="Word file ready. Peak von Mises 152.6 MPa on the R10 fillet (yield safety factor 1.83); total deformation "
+              "0.654 mm at the top of the upright; reactions match the load to 0.01%. Geometry placements read from "
+              "the isometric sketch are stated in the document."),
     dict(id="hw8", title="HW 8: Pipe elbow thermal stress", cid=9163933, group="Assignments", pts=10,
          due="2026-11-21T06:59:59Z", plan="2026-11-19", hrs=3, kind="Steady thermal → static structural",
          status="todo", pdf="HW8_Pipe_Elbow_Thermal.docx",

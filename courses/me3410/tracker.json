@@ -348,14 +348,16 @@
    "plan": "2026-11-18",
    "hrs": 2,
    "kind": "3D CAD + ANSYS",
-   "status": "todo",
+   "status": "pdf_ready",
    "pdf": "InClass_3D_Bracket.docx",
    "deliver": [
-    "FE model with BCs and loads",
-    "Equivalent stress",
+    "FE model with BCs and loads (bearing load + axial force on the 30 mm hole, base fixed)",
+    "Equivalent stress (converged on the R10 fillet)",
     "Total deformation and X/Y/Z deformation",
-    "Reaction force"
+    "Reaction force and moment, checked against statics",
+    "Beam-theory checks of the upright, mesh study, bearing load vs. uniform force"
    ],
+   "note": "Word file ready. Peak von Mises 152.6 MPa on the R10 fillet (yield safety factor 1.83); total deformation 0.654 mm at the top of the upright; reactions match the load to 0.01%. Geometry placements read from the isometric sketch are stated in the document.",
    "priority": 11,
    "due_local": "Thu Nov 19, 11:59 PM MT",
    "due_iso": "2026-11-19T23:59:59-07:00",
