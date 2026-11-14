@@ -1,0 +1,1188 @@
+{
+  "updated": "2026-11-13",
+  "runs": [
+    {
+      "date": "2026-11-11",
+      "searches": 42,
+      "summary": "3 verified live finds (Ken Sanders 1852 Governor's Message $1,500; Deseret News 1880 $30; The Circular 1858 $38) plus unverified Deseret Alphabet and Journal of Discourses leads. Dismissed items removed.",
+      "leads": [
+        {
+          "title": "Deseret Alphabet Book of Mormon, Part 1 (1869)",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1478706402",
+          "more_urls": [
+            "https://www.abaa.org/book/1714859909"
+          ],
+          "date": "1869",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "The Moon's Rare Books copy (~$450) now returns 410 Gone.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Orson Pratt, Divine Authority / Remarkable Visions (Liverpool, R. James, 1848)",
+          "price": "~$50",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/29383.html",
+          "more_urls": [],
+          "date": "1848",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "19th-century LDS pamphlet within budget.",
+          "action": "Contact seller / buy after confirming live",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Millennial Star, Vol. XII (1850)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1212039266",
+          "more_urls": [
+            "https://www.abaa.org/book/726125373",
+            "https://www.abaa.org/book/726149742"
+          ],
+          "date": "1848–1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Comparable Freeman's sale: $469 (2020). Vol. 10 (1848) and Vol. 13 (1851) also listed.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Times and Seasons, vols 1–6 (in 5 volumes)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1769846177",
+          "more_urls": [],
+          "date": "1839–1846",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Probably far over budget.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses, Vol. II (Liverpool, 1855)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1499257563",
+          "more_urls": [],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Pewter chalice, 18th century",
+          "price": "~€310",
+          "seller": "Proantic dealer",
+          "url": "https://www.proantic.com/en/1537849-pewter-chalice-18th-century.html",
+          "more_urls": [],
+          "date": "18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": true,
+          "verified": false,
+          "notes": "Rechecked 2026-11-11: page says \"This object was sold.\"",
+          "action": "Ignore",
+          "image": "https://www.proantic.com/galerie/art-stannum/img/1537849-main-680fe46f3ee90.jpg",
+          "status": "sold"
+        },
+        {
+          "title": "Works of Martin Luther, 1557 Wittenberg edition",
+          "price": "price unknown",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=992802",
+          "more_urls": [],
+          "date": "1557",
+          "category": "Luther & Reformation",
+          "alert": false,
+          "verified": false,
+          "notes": "Peripheral; probably over budget.",
+          "action": "Ignore / watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Governor's Message to the Legislative Assembly of Utah Territory, 5 Jan 1852 (Brigham Young)",
+          "price": "$1,500",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/pages/books/67057/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "8pp unsewn octavo, Good+; only 5 institutional copies known. Over budget but pioneer-era Utah imprint of real rarity.",
+          "action": "Watch",
+          "image": "https://kensandersbooks.cdn.bibliopolis.com/pictures/67057.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1724269885",
+          "status": "live"
+        },
+        {
+          "title": "Deseret News, Salt Lake City, Utah Territory (1880 issue, date varies)",
+          "price": "$30",
+          "seller": "Rare Newspapers (Timothy Hughes)",
+          "url": "https://www.rarenewspapers.com/newspaper/130049-before-utah-became-a-state",
+          "more_urls": [],
+          "date": "1880",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Add-to-cart shown. Actual issue date varies per the seller; ask which issue. Cheap 19th-c. Deseret News.",
+          "action": "Buy",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/5.h8.2006/image028.jpg",
+          "status": "live"
+        },
+        {
+          "title": "The Circular (Oneida, NY), 15 Apr 1858: Brigham Young tells army to leave Utah",
+          "price": "$38",
+          "seller": "Rare Newspapers (Timothy Hughes)",
+          "url": "https://www.rarenewspapers.com/newspaper/565712-brigham-young-warns-the-army-to-leave-or-be-annihilated",
+          "more_urls": [],
+          "date": "1858",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Peripheral: non-LDS newspaper reporting the Utah War, 4pp, nice condition, in cart-able listing.",
+          "action": "Watch",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/12.14.2009/image018.jpg",
+          "status": "live"
+        },
+        {
+          "title": "Selections from the Book of Mormon in the Deseret Alphabet (1869) [1st Ed.]",
+          "price": "price unknown",
+          "seller": "Panoply Books",
+          "url": "https://panoplybooks.com/selections-from-the-book-of-mormon-in-the-deseret-alphabet-brigham-young-1869-1st-ed",
+          "more_urls": [],
+          "date": "1869",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Seen in search results only; page returned 404, may be sold. Could not verify live/original.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret Reader, Second Volume (1868)",
+          "price": "price unknown",
+          "seller": "Back of Beyond Books (via Biblio)",
+          "url": "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1111282842",
+          "more_urls": [
+            "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1200072002"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Very Good, no dust jacket per snippet; page 403. Second Biblio copy: /d/1200072002. Could not verify live.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret First Reader / Second Reader (1868) ABAA copies",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1770377836",
+          "more_urls": [
+            "https://www.abaa.org/book/1770377831"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "First Reader; Second Reader at abaa.org/book/1770377831. Not fetched (403). Could not verify live/original.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses Vol. II (Liverpool, 1855), first edition",
+          "price": "~$400 (another copy ~$200)",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/43482.html",
+          "more_urls": [
+            "https://www.kensandersbooks.com/shop/rarebooks/29758.html"
+          ],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Prices from search snippet; page would not load. Second listing: /shop/rarebooks/29758.html.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        }
+      ],
+      "nothing_found": [
+        "LDS common cups",
+        "Metal individual sacrament cups or trays with LDS provenance",
+        "Pre-1960 Portuguese-language LDS items",
+        "Happy Songs to Sing (1952) for sale"
+      ],
+      "coverage_gaps": [
+        "abaa.org",
+        "schilbantiquarian.com",
+        "panoplybooks.com",
+        "reach.dog",
+        "eBay, AbeBooks, Etsy, LiveAuctioneers, Heritage, Estante Virtual, Mercado Livre (no page could be opened)"
+      ],
+      "issue": null
+    },
+    {
+      "date": "2026-11-12",
+      "searches": 84,
+      "summary": "Run 2 (manual): 3 verified Special Alert finds (two 1567 Luther Bible leaves, $345 and $145 or best offer; Millennial Star vol. XIV 1852, $300) and 1 pewter communion cup ($225, probable 18th c.). Carries over the morning's verified Parley P. Pratt find ($300, not rechecked this run) and unverified leads. Sold, gone and dismissed items removed. Searches: 44 (morning) + 40 (run 2).",
+      "leads": [
+        {
+          "title": "Luther Bible folio leaf, 1567, woodcut 'Daniel' (Fiery Furnace)",
+          "price": "$345 or Best Offer",
+          "seller": "dalebooks (eBay)",
+          "url": "https://www.ebay.com/itm/306041126025",
+          "more_urls": [],
+          "date": "1567",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": true,
+          "notes": "Live on eBay (Buy It Now / Make offer). Loose 16th-c. leaf. Confirm original 1567 printing and condition before offering.",
+          "action": "Contact seller",
+          "image": "https://i.ebayimg.com/images/g/KR8AAOSwjdJnhre-/s-l400.jpg",
+          "status": "live"
+        },
+        {
+          "title": "Luther Bible folio leaf, 1567, Book of John 17-18 (Jesus / Judas)",
+          "price": "$145 or Best Offer",
+          "seller": "dalebooks (eBay)",
+          "url": "https://www.ebay.com/itm/306680166003",
+          "more_urls": [],
+          "date": "1567",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": true,
+          "notes": "Live on eBay (Buy It Now / Make offer). Loose 16th-c. leaf. Confirm original printing and condition.",
+          "action": "Contact seller",
+          "image": "https://i.ebayimg.com/images/g/vrgAAeSwAStpUF0G/s-l400.jpg",
+          "status": "live"
+        },
+        {
+          "title": "The Latter-day Saints' Millennial Star, Vol. XIV (1852)",
+          "price": "$300",
+          "seller": "Weller Book Works (ABAA)",
+          "url": "https://www.abaa.org/book/726149017",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Samuel W. Richards, Liverpool, 792pp 8vo, Very Good. Light stains, upper eighth of title page missing. Collated complete.",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live"
+        },
+        {
+          "title": "Large pewter goblet / chalice, hand forged (probable 18th c. Scottish communion cup)",
+          "price": "$225",
+          "seller": "The Local Store, PEC",
+          "url": "https://local-pec.com/product/large-pewter-goblet-chalice-hand-forged/",
+          "more_urls": [],
+          "date": "probable 18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "Dating is 'probable' only; 'hand forged' may mean modern making; no maker's mark stated. Ask for marks and provenance.",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live"
+        },
+        {
+          "title": "Queen Anne sterling chalice, London 1705 (maker William Gamble)",
+          "price": "price not shown",
+          "seller": "1stdibs (London dealer b1579)",
+          "url": "https://www.1stdibs.com/furniture/dining-entertaining/sterling-silver/queen-anne-period-antique-sterling-silver-chalice-hallmarked-1705/id-f_24075602",
+          "more_urls": [],
+          "date": "1705",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": false,
+          "notes": "Unverified: price and availability not shown; intended use (communion or other) not stated. Would be an alert if communion.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Parley P. Pratt, Marriage and Morals in Utah (Liverpool, 1856, 8pp pamphlet)",
+          "price": "$300",
+          "seller": "eBornBooks",
+          "url": "https://ebornbooks.com/shop/non-fiction/mormon-lds/mormon-rare/1856-marriage-and-morals-in-utah-an-address-written-by-parley-p-pratt-rare-pamphlet",
+          "more_urls": [],
+          "date": "1856",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Reprinted from Deseret News; slight staining, numbers inked on title page.",
+          "action": "Watch / contact seller",
+          "image": "https://i0.wp.com/ebornbooks.com/wp-content/uploads/2020/08/8-3.jpg?fit=416%2C703&ssl=1",
+          "status": "live"
+        },
+        {
+          "title": "Journal of Discourses Vol. 3 (1856), Orrin Schwab Books, Good+",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://biblio.co.uk/book/journal-discourses-brigham-young-his-two/d/439272277",
+          "more_urls": [],
+          "date": "1856",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Orson Pratt, Biographical Sketches of Joseph Smith (Liverpool, 1853), leather, fair",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://www.biblio.com/book/biographical-sketches-joseph/d/1375755943",
+          "more_urls": [],
+          "date": "1853",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Millennial Star Vols 12 & 13 (1850-51) bound in one, Alcuin Books",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://biblio.co.nz/book/latter-day-saints-millennial-star-volume/d/1515609620",
+          "more_urls": [],
+          "date": "1850-1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Luther, Vonn der Freyheyt eyniß Christennmenschen (Wittenberg 1521), 2nd printing",
+          "price": "price not shown (likely well over budget)",
+          "seller": "dealer",
+          "url": "https://www.abaa.org/book/1674016997",
+          "more_urls": [],
+          "date": "1521",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Luther Small Catechism, Dresden/Leipzig 1688 (Schilb)",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://www.schilbantiquarian.com/?p=133497",
+          "more_urls": [],
+          "date": "1688",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Russian Orthodox gilt-brass chalice, 18th c. (Helios Auctions, start $200, est $300-400)",
+          "price": "$200 start",
+          "seller": "dealer",
+          "url": "https://heliosauctions.com/?p=37467",
+          "more_urls": [],
+          "date": "18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret Alphabet Book of Mormon, Part 1 (1869)",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1478706402",
+          "more_urls": [
+            "https://www.abaa.org/book/1714859909"
+          ],
+          "date": "1869",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "The Moon's Rare Books copy (~$450) now returns 410 Gone.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Orson Pratt, Divine Authority / Remarkable Visions (Liverpool, R. James, 1848)",
+          "price": "~$50",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/29383.html",
+          "more_urls": [],
+          "date": "1848",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "19th-century LDS pamphlet within budget.",
+          "action": "Contact seller / buy after confirming live",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Millennial Star, Vol. XII (1850)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1212039266",
+          "more_urls": [
+            "https://www.abaa.org/book/726125373",
+            "https://www.abaa.org/book/726149742"
+          ],
+          "date": "1848–1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Comparable Freeman's sale: $469 (2020). Vol. 10 (1848) and Vol. 13 (1851) also listed.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Times and Seasons, vols 1–6 (in 5 volumes)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1769846177",
+          "more_urls": [],
+          "date": "1839–1846",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Probably far over budget.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses, Vol. II (Liverpool, 1855)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1499257563",
+          "more_urls": [],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Works of Martin Luther, 1557 Wittenberg edition",
+          "price": "price unknown",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=992802",
+          "more_urls": [],
+          "date": "1557",
+          "category": "Luther & Reformation",
+          "alert": false,
+          "verified": false,
+          "notes": "Peripheral; probably over budget.",
+          "action": "Ignore / watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Governor's Message to the Legislative Assembly of Utah Territory, 5 Jan 1852 (Brigham Young)",
+          "price": "$1,500",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/pages/books/67057/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "8pp unsewn octavo, Good+; only 5 institutional copies known. Over budget but pioneer-era Utah imprint of real rarity.",
+          "action": "Watch",
+          "image": "https://kensandersbooks.cdn.bibliopolis.com/pictures/67057.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1724269885",
+          "status": "live"
+        },
+        {
+          "title": "Deseret News, Salt Lake City, Utah Territory (1880 issue, date varies)",
+          "price": "$30",
+          "seller": "Rare Newspapers (Timothy Hughes)",
+          "url": "https://www.rarenewspapers.com/newspaper/130049-before-utah-became-a-state",
+          "more_urls": [],
+          "date": "1880",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Add-to-cart shown. Actual issue date varies per the seller; ask which issue. Cheap 19th-c. Deseret News.",
+          "action": "Buy",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/5.h8.2006/image028.jpg",
+          "status": "live"
+        },
+        {
+          "title": "Deseret Reader, Second Volume (1868)",
+          "price": "price unknown",
+          "seller": "Back of Beyond Books (via Biblio)",
+          "url": "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1111282842",
+          "more_urls": [
+            "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1200072002"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Very Good, no dust jacket per snippet; page 403. Second Biblio copy: /d/1200072002. Could not verify live.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret First Reader / Second Reader (1868) ABAA copies",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1770377836",
+          "more_urls": [
+            "https://www.abaa.org/book/1770377831"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "First Reader; Second Reader at abaa.org/book/1770377831. Not fetched (403). Could not verify live/original.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses Vol. II (Liverpool, 1855), first edition",
+          "price": "~$400 (another copy ~$200)",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/43482.html",
+          "more_urls": [
+            "https://www.kensandersbooks.com/shop/rarebooks/29758.html"
+          ],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Prices from search snippet; page would not load. Second listing: /shop/rarebooks/29758.html.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        }
+      ],
+      "nothing_found": [
+        "Deseret Alphabet originals (new)",
+        "LDS common/metal sacrament cups",
+        "Portuguese pre-1960 LDS",
+        "Happy Songs to Sing"
+      ],
+      "coverage_gaps": [
+        "biblio fetch blocked (403)",
+        "marketplaces checked by web search except eBay (Chrome), ABAA, Ken Sanders, Potter & Potter, Casco Bay, LiveAuctioneers (Chrome)"
+      ],
+      "issue": "https://github.com/Samuel-Baird/collector-items/issues/4",
+      "coverage": [
+        {
+          "site": "eBay",
+          "status": "searched",
+          "results": 2
+        },
+        {
+          "site": "AbeBooks",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Biblio",
+          "status": "blocked",
+          "results": 0
+        },
+        {
+          "site": "ViaLibri",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "LiveAuctioneers",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Heritage Auctions",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "RR Auction",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Etsy",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "WorthPoint",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Estante Virtual",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Mercado Livre Brasil",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Rare Book Hub",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Trem das 7",
+          "status": "skipped",
+          "results": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "searches": 40,
+      "summary": "2 verified live finds (pairs of Old Sheffield plate communion goblets, 1843/1844, £325-345) and 1 unverified Luther lead. No new Deseret Alphabet, Portuguese LDS, sacrament cup or Happy Songs to Sing listings.",
+      "leads": [
+        {
+          "title": "Pair of Old Sheffield Plate communion goblets, 'Ardrossan Free Church 1844'",
+          "price": "£345 (~$438)",
+          "seller": "David Pickett Antiques (Sellingantiques)",
+          "url": "https://www.sellingantiques.co.uk/pdf.asp?id=1154177",
+          "more_urls": [],
+          "date": "1844",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "Pair; engraved Free Church inscription. For sale per listing page (SA1154177).",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live"
+        },
+        {
+          "title": "Pair of Old Sheffield Plate communion chalices, engraved 1843",
+          "price": "£325 (~$413)",
+          "seller": "David Pickett Antiques (Sellingantiques)",
+          "url": "https://www.sellingantiques.co.uk/pdf.asp?id=1154178",
+          "more_urls": [],
+          "date": "1843",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "Pair; inscribed 1843. For sale per listing page (SA1154178).",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live"
+        },
+        {
+          "title": "Luther Schriften, Jena 1567 (Schilb)",
+          "price": "price unknown",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/product/luther-schriften-1567-jena/",
+          "more_urls": [],
+          "date": "1567",
+          "category": "Luther & Reformation",
+          "alert": false,
+          "verified": false,
+          "notes": "Page blocked (403); seen in search snippet only. Could not verify live or price.",
+          "action": "Check seller site",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Luther Bible folio leaf, 1567, woodcut 'Daniel' (Fiery Furnace)",
+          "price": "$345 or Best Offer",
+          "seller": "dalebooks (eBay)",
+          "url": "https://www.ebay.com/itm/306041126025",
+          "more_urls": [],
+          "date": "1567",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": true,
+          "notes": "Live on eBay (Buy It Now / Make offer). Loose 16th-c. leaf. Confirm original 1567 printing and condition before offering.",
+          "action": "Contact seller",
+          "image": "https://i.ebayimg.com/images/g/KR8AAOSwjdJnhre-/s-l400.jpg",
+          "status": "live"
+        },
+        {
+          "title": "Luther Bible folio leaf, 1567, Book of John 17-18 (Jesus / Judas)",
+          "price": "$145 or Best Offer",
+          "seller": "dalebooks (eBay)",
+          "url": "https://www.ebay.com/itm/306680166003",
+          "more_urls": [],
+          "date": "1567",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": true,
+          "notes": "Live on eBay (Buy It Now / Make offer). Loose 16th-c. leaf. Confirm original printing and condition.",
+          "action": "Contact seller",
+          "image": "https://i.ebayimg.com/images/g/vrgAAeSwAStpUF0G/s-l400.jpg",
+          "status": "live"
+        },
+        {
+          "title": "The Latter-day Saints' Millennial Star, Vol. XIV (1852)",
+          "price": "$300",
+          "seller": "Weller Book Works (ABAA)",
+          "url": "https://www.abaa.org/book/726149017",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Samuel W. Richards, Liverpool, 792pp 8vo, Very Good. Light stains, upper eighth of title page missing. Collated complete.",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live"
+        },
+        {
+          "title": "Large pewter goblet / chalice, hand forged (probable 18th c. Scottish communion cup)",
+          "price": "$225",
+          "seller": "The Local Store, PEC",
+          "url": "https://local-pec.com/product/large-pewter-goblet-chalice-hand-forged/",
+          "more_urls": [],
+          "date": "probable 18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "Dating is 'probable' only; 'hand forged' may mean modern making; no maker's mark stated. Ask for marks and provenance.",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live"
+        },
+        {
+          "title": "Queen Anne sterling chalice, London 1705 (maker William Gamble)",
+          "price": "price not shown",
+          "seller": "1stdibs (London dealer b1579)",
+          "url": "https://www.1stdibs.com/furniture/dining-entertaining/sterling-silver/queen-anne-period-antique-sterling-silver-chalice-hallmarked-1705/id-f_24075602",
+          "more_urls": [],
+          "date": "1705",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": false,
+          "notes": "Unverified: price and availability not shown; intended use (communion or other) not stated. Would be an alert if communion.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Parley P. Pratt, Marriage and Morals in Utah (Liverpool, 1856, 8pp pamphlet)",
+          "price": "$300",
+          "seller": "eBornBooks",
+          "url": "https://ebornbooks.com/shop/non-fiction/mormon-lds/mormon-rare/1856-marriage-and-morals-in-utah-an-address-written-by-parley-p-pratt-rare-pamphlet",
+          "more_urls": [],
+          "date": "1856",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Reprinted from Deseret News; slight staining, numbers inked on title page.",
+          "action": "Watch / contact seller",
+          "image": "https://i0.wp.com/ebornbooks.com/wp-content/uploads/2020/08/8-3.jpg?fit=416%2C703&ssl=1",
+          "status": "live"
+        },
+        {
+          "title": "Journal of Discourses Vol. 3 (1856), Orrin Schwab Books, Good+",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://biblio.co.uk/book/journal-discourses-brigham-young-his-two/d/439272277",
+          "more_urls": [],
+          "date": "1856",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Orson Pratt, Biographical Sketches of Joseph Smith (Liverpool, 1853), leather, fair",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://www.biblio.com/book/biographical-sketches-joseph/d/1375755943",
+          "more_urls": [],
+          "date": "1853",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Millennial Star Vols 12 & 13 (1850-51) bound in one, Alcuin Books",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://biblio.co.nz/book/latter-day-saints-millennial-star-volume/d/1515609620",
+          "more_urls": [],
+          "date": "1850-1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Luther, Vonn der Freyheyt eyniß Christennmenschen (Wittenberg 1521), 2nd printing",
+          "price": "price not shown (likely well over budget)",
+          "seller": "dealer",
+          "url": "https://www.abaa.org/book/1674016997",
+          "more_urls": [],
+          "date": "1521",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Luther Small Catechism, Dresden/Leipzig 1688 (Schilb)",
+          "price": "price not shown",
+          "seller": "dealer",
+          "url": "https://www.schilbantiquarian.com/?p=133497",
+          "more_urls": [],
+          "date": "1688",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Russian Orthodox gilt-brass chalice, 18th c. (Helios Auctions, start $200, est $300-400)",
+          "price": "$200 start",
+          "seller": "dealer",
+          "url": "https://heliosauctions.com/?p=37467",
+          "more_urls": [],
+          "date": "18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret Alphabet Book of Mormon, Part 1 (1869)",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1478706402",
+          "more_urls": [
+            "https://www.abaa.org/book/1714859909"
+          ],
+          "date": "1869",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "The Moon's Rare Books copy (~$450) now returns 410 Gone.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Orson Pratt, Divine Authority / Remarkable Visions (Liverpool, R. James, 1848)",
+          "price": "~$50",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/29383.html",
+          "more_urls": [],
+          "date": "1848",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "19th-century LDS pamphlet within budget.",
+          "action": "Contact seller / buy after confirming live",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Millennial Star, Vol. XII (1850)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1212039266",
+          "more_urls": [
+            "https://www.abaa.org/book/726125373",
+            "https://www.abaa.org/book/726149742"
+          ],
+          "date": "1848–1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Comparable Freeman's sale: $469 (2020). Vol. 10 (1848) and Vol. 13 (1851) also listed.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Times and Seasons, vols 1–6 (in 5 volumes)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1769846177",
+          "more_urls": [],
+          "date": "1839–1846",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Probably far over budget.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses, Vol. II (Liverpool, 1855)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1499257563",
+          "more_urls": [],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Works of Martin Luther, 1557 Wittenberg edition",
+          "price": "price unknown",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=992802",
+          "more_urls": [],
+          "date": "1557",
+          "category": "Luther & Reformation",
+          "alert": false,
+          "verified": false,
+          "notes": "Peripheral; probably over budget.",
+          "action": "Ignore / watch",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Governor's Message to the Legislative Assembly of Utah Territory, 5 Jan 1852 (Brigham Young)",
+          "price": "$1,500",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/pages/books/67057/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "8pp unsewn octavo, Good+; only 5 institutional copies known. Over budget but pioneer-era Utah imprint of real rarity.",
+          "action": "Watch",
+          "image": "https://kensandersbooks.cdn.bibliopolis.com/pictures/67057.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1724269885",
+          "status": "live"
+        },
+        {
+          "title": "Deseret News, Salt Lake City, Utah Territory (1880 issue, date varies)",
+          "price": "$30",
+          "seller": "Rare Newspapers (Timothy Hughes)",
+          "url": "https://www.rarenewspapers.com/newspaper/130049-before-utah-became-a-state",
+          "more_urls": [],
+          "date": "1880",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Add-to-cart shown. Actual issue date varies per the seller; ask which issue. Cheap 19th-c. Deseret News.",
+          "action": "Buy",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/5.h8.2006/image028.jpg",
+          "status": "live"
+        },
+        {
+          "title": "Deseret Reader, Second Volume (1868)",
+          "price": "price unknown",
+          "seller": "Back of Beyond Books (via Biblio)",
+          "url": "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1111282842",
+          "more_urls": [
+            "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1200072002"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "Very Good, no dust jacket per snippet; page 403. Second Biblio copy: /d/1200072002. Could not verify live.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Deseret First Reader / Second Reader (1868) ABAA copies",
+          "price": "price unknown",
+          "seller": "ABAA dealers",
+          "url": "https://www.abaa.org/book/1770377836",
+          "more_urls": [
+            "https://www.abaa.org/book/1770377831"
+          ],
+          "date": "1868",
+          "category": "Deseret Alphabet",
+          "alert": true,
+          "verified": false,
+          "notes": "First Reader; Second Reader at abaa.org/book/1770377831. Not fetched (403). Could not verify live/original.",
+          "action": "Check listing",
+          "image": null,
+          "status": "unknown"
+        },
+        {
+          "title": "Journal of Discourses Vol. II (Liverpool, 1855), first edition",
+          "price": "~$400 (another copy ~$200)",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/43482.html",
+          "more_urls": [
+            "https://www.kensandersbooks.com/shop/rarebooks/29758.html"
+          ],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "Prices from search snippet; page would not load. Second listing: /shop/rarebooks/29758.html.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown"
+        }
+      ],
+      "nothing_found": [
+        "Deseret Alphabet originals",
+        "Portuguese-language LDS pre-1960",
+        "LDS sacrament cups/trays (metal)",
+        "Happy Songs to Sing"
+      ],
+      "coverage_gaps": [
+        "Schilb and Casco Bay fetch 403; web search only for most platforms"
+      ],
+      "coverage": [
+        {
+          "site": "eBay",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "AbeBooks",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Biblio",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "ViaLibri",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "LiveAuctioneers",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Heritage Auctions",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "RR Auction",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Etsy",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "WorthPoint",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Estante Virtual",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Mercado Livre",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Ken Sanders / Moon's",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Schilb",
+          "status": "blocked",
+          "results": 1
+        },
+        {
+          "site": "Casco Bay",
+          "status": "blocked",
+          "results": 0
+        },
+        {
+          "site": "Rare Book Hub",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Trem das 7",
+          "status": "skipped",
+          "results": 0
+        }
+      ],
+      "issue": null
+    }
+  ]
+}

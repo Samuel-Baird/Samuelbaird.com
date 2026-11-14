@@ -11,7 +11,7 @@ Update the `EXT` block at the top of `scripts/build.mjs` when the Latter-day Sta
 | Original information | Done | `/data`: sacred-sites and reading-list as CSV + JSON, CC BY 4.0, with field docs and citation. Lists are pre-rendered as static HTML. Consider also depositing the CSVs on Zenodo (gets a DOI), Kaggle and GitHub. |
 | Third-party citations | **You** | See "Citations" below. |
 | Clear site structure | Done | Descriptive URLs, one H1 per page, breadcrumbs, shared nav + footer on every page, cross-links to the sister sites. |
-| Structured data | Done | Person, WebSite, ProfilePage, FAQPage, Dataset, DataDownload, ItemList, Place, BreadcrumbList. Validate at https://validator.schema.org. |
+| Structured data | Done | Every page carries a connected `@graph`: shared WebSite + Person, a page node (WebPage/CollectionPage/ProfilePage/FAQPage/ImageGallery) with description, image, breadcrumb and dateModified, plus Dataset/DataCatalog, ItemList, PlaceOfWorship/Church/CatholicChurch (with geo + hasMap), ImageObject (CC BY 4.0, creator, location), Book (ISBN where known)/Article, PublicationIssue, DonateAction. `checkLd()` in the build script fails the build on dangling `@id` references or untyped nodes. Validate at https://validator.schema.org and Google's Rich Results Test. The `COLLECTION` list in the build script must be kept in sync with `collection/index.html`. |
 | Measure AI mentions | **You** | See "Measuring". |
 
 ## Citations (what moves the needle most)

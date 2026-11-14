@@ -1,12 +1,12 @@
 # Samuel Baird: full text
 
-> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-03. Original data licensed CC BY 4.0.
+> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-14. Original data licensed CC BY 4.0.
 
 ## FAQ
 
 ### Who is Samuel Baird?
 
-Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://latterdaystats.samuelbaird.com/), a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
+Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://latterdaystats.samuelbaird.com/), a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
 
 ### What is Latter-day Stats?
 
@@ -22,7 +22,7 @@ Pulpit is a critical digital edition of every General Conference discourse since
 
 ### Which sacred sites has Samuel Baird visited?
 
-Since January 2025 he has visited 34 sacred sites in 8 traditions (Catholic, Greek Orthodox, Anglican, Baptist, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on June 20, 2026. Each site is counted once. Browse the [full directory](https://samuelbaird.com/sacred-sites/sites), the [interactive map](https://samuelbaird.com/sacred-sites), the [photo gallery](https://samuelbaird.com/sacred-sites/photos) or the [statistics](https://samuelbaird.com/sacred-sites/stats).
+Since January 2025 he has visited 35 sacred sites in 9 traditions (Catholic, Greek Orthodox, Anglican, Presbyterian, Lutheran, Episcopal, Seventh-day Adventist, Jehovah's Witnesses and The Church of Jesus Christ of Latter-day Saints), most recently on November 8, 2026. Each site is counted once. Browse the [full directory](https://samuelbaird.com/sacred-sites/sites), the [interactive map](https://samuelbaird.com/sacred-sites), the [photo gallery](https://samuelbaird.com/sacred-sites/photos) or the [traditions page](https://samuelbaird.com/sacred-sites/traditions).
 
 ### How many LDS temples has Samuel Baird visited?
 
@@ -34,7 +34,7 @@ He has logged 38 books and 13 articles, newest first. The three most recent are 
 
 ### Is the data on this site free to use?
 
-Yes. The original datasets on this site (the sacred sites list and the reading log) are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them with attribution to Samuel Baird and a link to samuelbaird.com. Download them as CSV or JSON from [Open data](https://samuelbaird.com/data). Latter-day Stats publishes its own datasets, each with sources.
+Yes. The original datasets and photographs on this site (the sacred sites list, the reading log and the [sacred sites photos](https://samuelbaird.com/sacred-sites/photos)) are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them with attribution to Samuel Baird and a link to samuelbaird.com. Download them as CSV or JSON from [Open data](https://samuelbaird.com/data). Latter-day Stats publishes its own datasets, each with sources.
 
 ### How should I cite this site?
 
@@ -50,9 +50,9 @@ Email [ithinksamofficial@gmail.com](mailto:ithinksamofficial@gmail.com?subject=S
 
 ### How can I support the projects?
 
-The projects are free and ad-free. You can chip in toward hosting by [donating via PayPal or Venmo](https://samuelbaird.com/donate), or send a book from the [Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3ECBMMP7G2LZ4).
+The projects are free and ad-free. You can chip in toward hosting by [donating via PayPal or Venmo](https://samuelbaird.com/donate), or send something from the [wishlist](https://samuelbaird.com/wishlist) of books and equipment for the channel, sorted with the most-wanted items first.
 
-## Sacred sites visited (34 sites, 8 traditions, January 10, 2025 to June 20, 2026)
+## Sacred sites visited (35 sites, 9 traditions, January 10, 2025 to November 8, 2026)
 
 ### Roman Catholic (3)
 
@@ -111,6 +111,10 @@ The projects are free and ad-free. You can chip in toward hosting by [donating v
 ### Seventh-day Adventist (1)
 
 - West Jordan Seventh-day Adventist Church, West Jordan, Utah: 1 visit, 2026-01-31
+
+### Presbyterian Church in America (PCA) (1)
+
+- Jordan Valley Church (PCA), West Jordan, Utah: 1 visit, 2026-11-08
 
 ## Reading log (38 books, 13 articles; newest first)
 
