@@ -179,7 +179,7 @@
    "plan": "2026-11-14",
    "hrs": 4,
    "kind": "Hand calcs + ANSYS + statics checks",
-   "status": "todo",
+   "status": "pdf_ready",
    "pdf": "Test1_1D_Truss_Beam.docx",
    "deliver": [
     "Q1 1D stepped shaft: 7-step FE hand solution (u₂, u₃, midpoint of element 1, reactions, σ₁)",
@@ -188,9 +188,10 @@
     "Q2 truss ANSYS: model, X/Y deformation, reactions, member stresses",
     "Q2 statics reactions + % error table",
     "Q3 beam ANSYS: model, deflection, reactions, SFD/BMD, max combined stress",
-    "Q3 statics/MoM reactions and max bending stress + % error table"
+    "Q3 statics/MoM reactions and max bending stress + % error table",
+    "Extras: member forces and joint deflections (Q2), midspan deflection with shear term (Q3), mesh studies"
    ],
-   "note": "Worth the entire 40% exam category right now (currently 0). Instructor commented Nov 2: \"Please submit the exam to improve your grade.\"",
+   "note": "Worth the entire 40% exam category right now (currently 0). Instructor commented Nov 2: \"Please submit the exam to improve your grade.\" Word file ready: every reaction and stress matches ANSYS to round-off; Q3 deflection differs by shear deformation (explained).",
    "priority": 4,
    "due_local": "Wed Oct 14, 11:59 PM MT",
    "due_iso": "2026-10-14T23:59:59-06:00",

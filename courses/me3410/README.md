@@ -55,6 +55,18 @@ Then update the item's status in `tracker.py`, run it, and `node scripts/publish
   nodes per element, so check the finest mesh's node count before a long study.
 - Plots: `export_image` switches to mm/MPa and hides element edges, then restores m/Pa so formula loads
   are never reinterpreted.
+- Geometry import and image export fail on paths with spaces (this repo lives under "AI projects"):
+  pass `ASSETS`/`OUT` through a space-free folder. `work/test1/run_ansys.sh` stages them in
+  `%LOCALAPPDATA%\Temp\me3410_test1` and copies the outputs back.
+- The Student license can deny a solve that starts right after the previous one ("Maximum licensed number
+  of demo users"). The solution just shows SolveFailed; `solve.out` in `AN.WorkingDir` says why.
+  `work/test1/line_common.py: solve_retry()` waits and retries.
+- Line-body models (trusses, frames, stepped shafts): each STEP edge imports as its own body. Join them
+  with one node merge per joint (`merge_joints()` in `work/test1/line_common.py`). A Shear-Moment Diagram
+  must be scoped to an edge Path from Construction Geometry and added after the solve; an unscoped one
+  leaves the solution UnderDefined and the solve fails. Its `PlotData` is SI, in the path's local axes.
+- `SetFit` leaves a short line body tiny in a wide image; `export_front_framed()` sets the focal point and
+  scene width instead.
 
 ## Every document must have
 1. The AI-use statement first (built into `Report`).
