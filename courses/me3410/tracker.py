@@ -94,10 +94,13 @@ ITEMS = [
               "explains it and shows a shear-rigid ANSYS run that matches."),
     dict(id="ict-1", title="In-class tutorial: 1D / Truss / Beam", cid=9163939, group="Assignments", pts=10,
          due="2026-10-06T05:59:59Z", plan="2026-11-15", hrs=1.5, kind="ANSYS ×3 + validation",
-         status="todo", pdf="InClass_1D_Truss_Beam.docx",
+         status="pdf_ready", pdf="InClass_1D_Truss_Beam.docx",
          deliver=["Q1 1D shaft: model, deflection at B, reactions, element stresses", "Q2 truss: model, deflection at A, reactions, stresses",
-                  "Q3 beam: model, max deflection, reactions, SFD/BMD, stresses", "Validation for each"],
-         note="Same tooling as Test 1, so do it the same weekend."),
+                  "Q3 beam: model, max deflection, reactions, SFD/BMD, stresses", "Validation for each",
+                  "Extras: FE hand solution (Q1), elastic curve of span AB (Q3), shear-rigid check, mesh studies"],
+         note="Word file ready: every reaction, stress and the handout's reference values match ANSYS to round-off. "
+              "The handout's Q3 y_max = 0.238 in is the upward peak of span AB, not the deflection at C (0.418 in); "
+              "the Word file explains this."),
     dict(id="hw6", title="HW 6: Plate under distributed pressure", cid=9163930, group="Assignments", pts=10,
          due="2026-10-29T05:59:59Z", plan="2026-11-13", hrs=1.5, kind="ANSYS 2D + hand checks",
          status="pdf_ready", pdf="HW6_Plate_Pressure.docx",
