@@ -72,6 +72,14 @@ Then update the item's status in `tracker.py`, run it, and `node scripts/publish
   skews 2D views; use the Front orientation and then set the focal point (`work/hw6/ansys.py: shot()`).
 - Run one Mechanical at a time. `mech.py --new` while another instance is still open makes every solve fail on
   the Student license (results read back as zeros). Close stray `AnsysWBU`/`ansyscl` processes first.
+- Fatigue Tool: `MeanStressTheory` takes `MeanStressTheoryType` (`NoneStress`, `Goodman`, `Soderberg`, `Gerber`...),
+  not `FatigueAnalysisType`; there is no member called `None`. `LoadingType` takes `FatigueLoadType`
+  (`FullyReversed`, `Ratio` + `LoadingRatio`). Its Goodman safety factor is the load factor
+  1/n = σa/Se + σm/Su (`work/ict1028a/hand.py: fatigue()` reproduces it to round-off).
+- Edge Sizing on a fillet with a coarse Face Sizing behind it (10 mm against 0.6 mm) adds few elements and gives
+  erratic peak stresses; refine the face too, or use a Convergence object scoped to the fillet.
+- To rerun only the later phases of a script on the live session, put them in a second file and run it with
+  `SCRIPT=<file> bash run_ansys.sh` (globals persist; see `work/ict1028a/ansys_tail.py`).
 - 2D adaptive meshing (Convergence object): from a coarse start it can report "converged" before a stress
   singularity shows up, because the coarse mesh puts the peak elsewhere. Start it from a mesh fine enough to show
   the singular point, or put the Convergence object on deformation or a stress scoped away from it.

@@ -112,9 +112,15 @@ ITEMS = [
               "on the R50 fillet (FoS 2.8 vs. 250 MPa); tip deflection 0.215 mm."),
     dict(id="ict-1028a", title="In-class tutorial 10-28 (problem 1)", cid=9361468, group="Assignments", pts=10,
          due="2026-10-30T05:59:59Z", plan="2026-11-16", hrs=1.5, kind="ANSYS 2D",
-         status="todo", pdf="InClass_10-28_P1.docx",
-         deliver=["Problem 1 from the 10-28 handout (plane stress/strain tutorial)"],
-         note="The 10-28 handout is a step-by-step screenshot tutorial; problem 1 is required."),
+         status="pdf_ready", pdf="InClass_10-28_P1.docx",
+         deliver=["Stepped plate with R25 fillet, 2D plane stress (justified)", "FE model, BCs and loads",
+                  "Meshing techniques: face sizing, edge sizing, adaptive convergence (vs. the in-class table)",
+                  "Hand check: nominal stress × Kt at the fillet, static safety factor (DET)",
+                  "Von Mises, total deformation, stress along the fillet",
+                  "Fatigue Tool: life and safety factor at R = -1 and R = -0.5 (Goodman), checked by hand"],
+         note="Word file ready. The 10-28 notes are handwritten (no problem statement), so problem 1 is taken as the "
+              "stepped plate worked in class. Fillet stress converges to 113.4 MPa, matching the class table; hand Kt σ0 = "
+              "118.1 MPa (Kt 1.4 extrapolated; effective 1.35). Fatigue safety factors are below 1 at 10^6 cycles."),
     dict(id="ict-1028b", title="In-class tutorial 10-28 (problem 2, bonus)", cid=9361471, group="Assignments", pts=10,
          due="2026-10-30T05:59:59Z", plan="2026-11-16", hrs=1, kind="ANSYS 2D",
          status="todo", pdf="InClass_10-28_P2.docx",

@@ -269,12 +269,17 @@
    "plan": "2026-11-16",
    "hrs": 1.5,
    "kind": "ANSYS 2D",
-   "status": "todo",
+   "status": "pdf_ready",
    "pdf": "InClass_10-28_P1.docx",
    "deliver": [
-    "Problem 1 from the 10-28 handout (plane stress/strain tutorial)"
+    "Stepped plate with R25 fillet, 2D plane stress (justified)",
+    "FE model, BCs and loads",
+    "Meshing techniques: face sizing, edge sizing, adaptive convergence (vs. the in-class table)",
+    "Hand check: nominal stress × Kt at the fillet, static safety factor (DET)",
+    "Von Mises, total deformation, stress along the fillet",
+    "Fatigue Tool: life and safety factor at R = -1 and R = -0.5 (Goodman), checked by hand"
    ],
-   "note": "The 10-28 handout is a step-by-step screenshot tutorial; problem 1 is required.",
+   "note": "Word file ready. The 10-28 notes are handwritten (no problem statement), so problem 1 is taken as the stepped plate worked in class. Fillet stress converges to 113.4 MPa, matching the class table; hand Kt σ0 = 118.1 MPa (Kt 1.4 extrapolated; effective 1.35). Fatigue safety factors are below 1 at 10^6 cycles.",
    "priority": 8,
    "due_local": "Thu Oct 29, 11:59 PM MT",
    "due_iso": "2026-10-29T23:59:59-06:00",
