@@ -376,7 +376,7 @@
    "plan": "2026-11-19",
    "hrs": 3,
    "kind": "Steady thermal → static structural",
-   "status": "todo",
+   "status": "pdf_ready",
    "pdf": "HW8_Pipe_Elbow_Thermal.docx",
    "deliver": [
     "Elbow with a second flange at the free end (aluminium alloy)",
@@ -388,6 +388,7 @@
     "Equivalent stress",
     "Safety factor and fail / no-fail"
    ],
+   "note": "Word file ready. Elbow at 99.71-100 C, heat flow 50.95 W (hand 51.00 W). Fixed flanges push back with 15.3 kN and 1.44 kN·m (hand beam models 14.0-17.3 kN, moment within 1%); max deformation 0.453 mm. Bend 109 MPa (n = 2.6); flange material at the bolted faces about 195-264 MPa (n = 1.06-1.30, hand EαΔT/(1−ν) = 190 MPa); the 548 MPa peak is a singular fixed-face edge. Verdict: does not fail.",
    "priority": 12,
    "due_local": "Fri Nov 20, 11:59 PM MT",
    "due_iso": "2026-11-20T23:59:59-07:00",
