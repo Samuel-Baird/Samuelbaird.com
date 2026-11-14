@@ -15,7 +15,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 MT = ZoneInfo("America/Denver")  # handles the Nov 1 switch from MDT to MST
 COURSE = "https://uvu.instructure.com/courses/641173"
-TODAY = datetime(2026, 11, 13, tzinfo=MT)
+TODAY = datetime(2026, 11, 14, tzinfo=MT)
 
 WEIGHTS = {"Attendance": 10, "Assignments": 25, "Exams": 40, "Term project": 25}
 
@@ -123,8 +123,17 @@ ITEMS = [
               "118.1 MPa (Kt 1.4 extrapolated; effective 1.35). Fatigue safety factors are below 1 at 10^6 cycles."),
     dict(id="ict-1028b", title="In-class tutorial 10-28 (problem 2, bonus)", cid=9361471, group="Assignments", pts=10,
          due="2026-10-30T05:59:59Z", plan="2026-11-16", hrs=1, kind="ANSYS 2D",
-         status="todo", pdf="InClass_10-28_P2.docx",
-         deliver=["Problem 2 from the 10-28 handout (bonus points)"]),
+         status="pdf_ready", pdf="InClass_10-28_P2.docx",
+         deliver=["Q2 of the Plane Strain-Stress Tutorial (V2): long pressurized concrete block with a Ø50 hole",
+                  "Plane strain, justified", "FE model, BCs and loads (fixed base, 50/25 MPa top, 10 MPa sides)",
+                  "Max von Mises and location; σx, σy, τxy; max vertical displacement",
+                  "Mesh convergence (8 meshes); fillet-radius study (R5-R40)",
+                  "Hand checks: statics, beam theory on the hole section, Kirsch hole stresses, column displacement",
+                  "Concrete failure check (Coulomb-Mohr, 3 / 40 MPa)"],
+         note="Word file ready. Problem source found on Canvas: Q2 of the Plane Strain-Stress Tutorial (V2). Reactions "
+              "match statics exactly. Peak von Mises 142 MPa on the R20 fillet; hole sides -129 MPa, crown +17 MPa "
+              "(Kirsch with the FE nominal stress within 2% at the sides). The block fails: the 50 MPa load alone "
+              "exceeds the 40 MPa crushing strength (Mohr-Coulomb minimum 0.17 at the hole crown)."),
     dict(id="ict-1104", title="In-class tutorial 11-4", cid=9365212, group="Assignments", pts=10,
          due="2026-11-06T06:59:59Z", plan="2026-11-17", hrs=1.5, kind="ANSYS + mesh refinement",
          status="blocked", pdf="InClass_11-04.docx",

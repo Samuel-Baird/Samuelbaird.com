@@ -47,3 +47,12 @@ ANSYS Aluminum Alloy has E = 71 GPa (5.49 mm).
 ## Files
 Downloaded with permission to `canvas/files/` (gitignored), extracted with
 `python -I scripts/extract_handouts.py courses/me3410/canvas/files` into `canvas/files/_extract/<name>/{text.md,img/}`.
+
+## In-class tutorial 10-28: the problem statements (found Nov 14)
+Both 10-28 assignments (9361468, 9361471) carry the same text: submit the first problem of the in-class tutorial; the
+second earns bonus points. The problems are in **PLANE STRAIN-STRESS TUTORIAL - V2.docx** (Canvas file 135955121,
+module "Two dimensional elements"; read in the Canvas preview, not downloaded). Q1 is the L-shaped bracket (the
+stepped plate in the handwritten 10-28 notes) and Q2 is a long pressurized concrete block with a Ø50 hole (plane
+strain). Note: the handout's Q1 specifies aluminium (E 70 GPa, ν 0.33, Sy 250 MPa) and F = 10 kN, with a fatigue item,
+while the class worked it with 1000 N (notes: M = 112.5 N·m); the P1 Word file follows the class notes with
+Structural Steel.
