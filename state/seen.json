@@ -194,7 +194,7 @@
       "verified": false
     },
     "https://www.abaa.org/book/1674016997": {
-      "title": "Luther, Vonn der Freyheyt eyniß Christennmenschen (Wittenberg 1521), 2nd printing",
+      "title": "Luther, Vonn der Freyheyt eyni\u00df Christennmenschen (Wittenberg 1521), 2nd printing",
       "price": "price not shown (likely well over budget)",
       "scout": "artifact",
       "first_seen": "2026-11-12",
@@ -367,18 +367,18 @@
     },
     "https://www.sellingantiques.co.uk/pdf.asp?id=1154177": {
       "title": "Pair Old Sheffield Plate communion goblets, Ardrossan Free Church 1844",
-      "price": "£345",
+      "price": "\u00a3345",
       "scout": "artifact",
       "first_seen": "2026-11-13",
-      "last_price": "£345",
+      "last_price": "\u00a3345",
       "verified": true
     },
     "https://www.sellingantiques.co.uk/pdf.asp?id=1154178": {
       "title": "Pair Old Sheffield Plate communion chalices 1843",
-      "price": "£325",
+      "price": "\u00a3325",
       "scout": "artifact",
       "first_seen": "2026-11-13",
-      "last_price": "£325",
+      "last_price": "\u00a3325",
       "verified": true
     },
     "https://www.schilbantiquarian.com/product/luther-schriften-1567-jena/": {
@@ -387,6 +387,30 @@
       "scout": "artifact",
       "first_seen": "2026-11-13",
       "last_price": "unknown",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1655900921": {
+      "title": "Deseret Alphabet 1869 first edition (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-14",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://reach.dog/shop/moons-rare-books/products/deseret-alphabet": {
+      "title": "Moon's Deseret Alphabet",
+      "price": "$450",
+      "scout": "artifact",
+      "first_seen": "2026-11-14",
+      "last_price": "$450",
+      "verified": false
+    },
+    "https://www.ebay.de/itm/306319096576": {
+      "title": "1899 Peepstone Joe Exposed (eBay.de)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-14",
+      "last_price": "?",
       "verified": false
     }
   }
