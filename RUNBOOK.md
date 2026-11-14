@@ -91,7 +91,7 @@ anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
 - In `scout/leads.json`, add or replace the entry in `runs` for today's date. Keep the
   same shape as the existing entries: `date`, `searches`, `summary`, `leads` (each with `title`, `price`,
   `seller`, `url`, `more_urls`, `date`, `category`, `alert`, `verified`, `notes`, `action`),
-  `nothing_found`, `coverage_gaps`, `issue`, plus per lead `image` and `status`).
+  `nothing_found`, `coverage_gaps`, `issue`, plus per lead `image`, `status` and `search_terms`).
   Set `updated` to today. Keep the last 60 runs.
 - `image`: the listing's main photo as a direct https URL. Take it from the page's `og:image` or main
   product image when the listing opens, otherwise from a search result's image. If there is none, use `null`
@@ -129,3 +129,9 @@ The leads page (samuelbaird.com/scout) now shows an "All active leads" view that
 only when dismissed or when a later run re-lists it with status `sold`, `gone` or `ended`. So: when you
 re-check an earlier lead and find it ended/sold, include it in today's run entry with that status
 (the page hides it) rather than just omitting it. Do not drop earlier live/unverified leads from `leads.json`.
+
+## Search-term tags
+From 2026-11-15 on, every new lead in `leads.json` carries `search_terms`: a list of the exact search
+term(s) from `search-list.txt` (or the scout file's term list) that surfaced it; include every term that
+independently found it. The page shows them as tags. Do not backfill leads from earlier days. If a
+carried-over lead is found again by a new term, add that term to its list.
