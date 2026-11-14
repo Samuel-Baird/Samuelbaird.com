@@ -43,6 +43,7 @@ select{background:var(--surface);border:1px solid var(--border);border-radius:va
 .tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted);margin-right:6px}
 .tag.al{border-color:var(--honey);color:var(--honey)}
 .tag.uv{border-color:#8a5a5a;color:#d99}
+.tag.st{border-color:var(--border);color:var(--fg,inherit)}
 .tag.ok{border-color:#4f7d5a;color:#9c9}
 .notes{margin:6px 0 0;font-size:.92rem}
 .links{margin:6px 0 0;font-size:.9rem}
@@ -99,7 +100,7 @@ function card(l){
     <button class="x" type="button" aria-label="Dismiss this lead" title="Dismiss" data-url="${esc(l.url)}" data-title="${esc(l.title)}">×</button>
     <a class="thumb" href="${safe(l.url)}" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">${img}</a>
     <div>
-    <div>${l.alert?'<span class="tag al">Alert</span>':''}${st}</div>
+    <div>${l.alert?'<span class="tag al">Alert</span>':''}${st}${(l.search_terms||[]).map((t)=>`<span class="tag st" title="Search term that found this">🔍 ${esc(t)}</span>`).join('')}</div>
     <h3><a href="${safe(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}</a></h3>
     <p class="meta"><span class="price">${esc(l.price)}</span><span>${esc(l.seller)}</span>${l.date?`<span>${esc(l.date)}</span>`:''}${l.action?`<span>Suggested: ${esc(l.action)}</span>`:''}${l._first?`<span>First seen ${esc(l._first)}</span>`:''}</p>
     ${l.notes?`<p class="notes">${esc(l.notes)}</p>`:''}
