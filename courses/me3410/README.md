@@ -67,6 +67,14 @@ Then update the item's status in `tracker.py`, run it, and `node scripts/publish
   leaves the solution UnderDefined and the solve fails. Its `PlotData` is SI, in the path's local axes.
 - `SetFit` leaves a short line body tiny in a wide image; `export_front_framed()` sets the focal point and
   scene width instead.
+- Framing a zoom: set `Camera.SceneHeight` as well as `SceneWidth` (width × image height / width). With only the
+  width set, the camera keeps the fitted height and the "close-up" barely zooms. A custom `ViewVector` of (0, 0, 1)
+  skews 2D views; use the Front orientation and then set the focal point (`work/hw6/ansys.py: shot()`).
+- Run one Mechanical at a time. `mech.py --new` while another instance is still open makes every solve fail on
+  the Student license (results read back as zeros). Close stray `AnsysWBU`/`ansyscl` processes first.
+- 2D adaptive meshing (Convergence object): from a coarse start it can report "converged" before a stress
+  singularity shows up, because the coarse mesh puts the peak elsewhere. Start it from a mesh fine enough to show
+  the singular point, or put the Convergence object on deformation or a stress scoped away from it.
 
 ## Every document must have
 1. The AI-use statement first (built into `Report`).
