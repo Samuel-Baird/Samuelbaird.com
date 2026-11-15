@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "runs": [
     {
       "date": "2026-11-11",
@@ -1311,6 +1311,211 @@
         },
         {
           "site": "Trem das 7",
+          "status": "skipped",
+          "results": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "searches": 40,
+      "summary": "4 unverified alert leads (anti-Mormon 1855/1877/1884, Utah 1852 imprint) and 1 verified 19th-c pewter communion flagon. Dealer hosts blocked fetches.",
+      "leads": [
+        {
+          "title": "Mormonism Exposed, Part 5: The Constitution and the Territories (1884 pamphlet)",
+          "price": "$100 (snippet)",
+          "seller": "Ken Sanders Rare Books",
+          "url": "https://www.kensandersbooks.com/shop/rarebooks/5921.html",
+          "more_urls": [],
+          "date": "1884",
+          "category": "Anti-Mormon literature",
+          "alert": true,
+          "verified": false,
+          "notes": "Page failed to load; could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Mormonism Exposed"
+          ]
+        },
+        {
+          "title": "Utah territorial laws, Salt Lake City 1852 (printed by Brigham H. Young)",
+          "price": "price unknown",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/868705697",
+          "more_urls": [],
+          "date": "1852",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "403 on fetch; described as a very early Utah imprint.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Utah Territory"
+          ]
+        },
+        {
+          "title": "Belisle, The Prophets, or Mormonism Unveiled (1855), first edition",
+          "price": "$499 (snippet)",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=954127",
+          "more_urls": [],
+          "date": "1855",
+          "category": "Anti-Mormon literature",
+          "alert": true,
+          "verified": false,
+          "notes": "403 on fetch; anti-polygamy novel; top of budget.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Mormonism Unveiled"
+          ]
+        },
+        {
+          "title": "Possibly J. D. Lee, Mormonism Unveiled (1877), first edition",
+          "price": "$499 (snippet)",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=1030781",
+          "more_urls": [],
+          "date": "1877",
+          "category": "Anti-Mormon literature",
+          "alert": true,
+          "verified": false,
+          "notes": "403 on fetch; URL/title pairing from search snippet is uncertain.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Mormonism Unveiled"
+          ]
+        },
+        {
+          "title": "Pewter Communion Flagon, 19th century",
+          "price": "GBP 275 (~$364)",
+          "seller": "Brian Knapp Antiques (Antiques Atlas)",
+          "url": "https://antiques-atlas.com/antique/pewter_communion_flagon_a064/as1221a064",
+          "more_urls": [],
+          "date": "19th century",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "Page opened; listed For Sale. Flagon, no finer date.",
+          "action": "Watch",
+          "image": "https://images.antiquesatlas.com/dealer-stock-images/brianknappantiques/Pewter_Communion_Flagon_as1221a064b.jpg",
+          "status": "live",
+          "search_terms": [
+            "pewter communion flagon antique"
+          ]
+        }
+      ],
+      "nothing_found": [
+        "Common cup: only glass cups",
+        "Portuguese LDS pre-1960",
+        "Happy Songs to Sing",
+        "New Deseret Alphabet originals"
+      ],
+      "coverage_gaps": [
+        "Schilb, ABAA, Ken Sanders, Panoply, Proantic blocked",
+        "Heritage, RR Auction, ViaLibri, Rare Book Hub, Trem das 7 not reached"
+      ],
+      "issue": "https://github.com/Samuel-Baird/collector-items/issues/7",
+      "coverage": [
+        {
+          "site": "eBay",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "AbeBooks",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Biblio",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "ViaLibri",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "LiveAuctioneers",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Heritage Auctions",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "RR Auction",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Etsy",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "WorthPoint",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Rare Book Hub",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Estante Virtual",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Mercado Livre Brasil",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Trem das 7",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Ken Sanders Rare Books",
+          "status": "blocked",
+          "results": 1
+        },
+        {
+          "site": "Schilb Antiquarian",
+          "status": "blocked",
+          "results": 2
+        },
+        {
+          "site": "Panoply Books",
+          "status": "blocked",
+          "results": 0
+        },
+        {
+          "site": "ABAA",
+          "status": "blocked",
+          "results": 1
+        },
+        {
+          "site": "Moon's Rare Books",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Deseret Book rare",
           "status": "skipped",
           "results": 0
         }
