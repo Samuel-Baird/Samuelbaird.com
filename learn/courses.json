@@ -20,5 +20,14 @@
     "href": "/learn/me3320",
     "data": "/learn/me3320/course.json",
     "canvas": "https://uvu.instructure.com/courses/641165"
+  },
+  {
+    "id": "equinox-ev",
+    "code": "Personal",
+    "title": "Equinox EV Owner Course",
+    "term": "2024 Chevrolet Equinox EV LT",
+    "kind": "Owner course",
+    "blurb": "10 short modules for a first-time EV owner: driving, charging, range, battery care, the app and safety, with recall practice and a spaced review plan.",
+    "href": "/learn/equinox-ev"
   }
 ]
