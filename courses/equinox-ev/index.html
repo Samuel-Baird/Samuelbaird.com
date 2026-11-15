@@ -27,6 +27,7 @@ details{border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:8
 table{border-collapse:collapse;width:100%;font-size:.93rem}td,th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--accbg)}
 label{display:block;margin:6px 0}input[type=number],input[type=date]{padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font:inherit;width:9em}
 .chk label{display:flex;gap:8px;align-items:flex-start}
+.vid{border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:8px 0}.vid .btn{margin:6px 8px 0 0}
 ul{padding-left:1.2em}li{margin:.25em 0}
 </style>
 </head>
@@ -97,6 +98,20 @@ const MODS=[
  quiz:[["Brake pads wear...",["Faster than gas cars","Slower, thanks to regen","The same"],1,"Regen takes much of the braking load. Still inspect them and the fluid."],["After a collision with smoke or fire smell, you...",["Stay in the car","Exit, move away, call emergency services and say it's an EV","Open the hood"],1,"Safety first and give first responders the key information."]],
  tasks:["Locate the 12V jump points and the tire-rotation interval in the manual.","Save Chevrolet roadside assistance and your insurer's EV claims line.","Fill in the emergency card in your glove box."]}
 ];
+// [youtube id, title, channel, length, why watch]. Each id was checked with YouTube oEmbed on 2026-11-15.
+const VIDS={
+m1:[["XU2xd2b-GTs","How Do Electric Vehicles Work? EV Charger, Battery, Motor All Explained","CNET","4:23","Quick overview of the parts"],["4ONdsVs6yS0","Electric Cars: How They Work","Donut","10:38","Older but a clear walk through the motor, battery and regen"]],
+m2:[["DLTSk4MXctw","Equinox EV Education: First Drive","Chevrolet","6:55","Official first-drive orientation for this exact car"],["9omcPlMIW54","Hands On: 2024 Chevy Equinox EV Interior Deep Dive Tour","GM Authority","30:41","Where everything is inside"],["jToS4g2OL5w","2024 Chevy Equinox EV: Hidden Tips and Tricks","Bachman Auto Reviews","12:21","Small features owners miss"],["xiq8ymwDT_A","I Drive The Chevy Equinox EV For The First Time (full tour)","Out of Spec Reviews","1:01:10","Long and detailed: watch in parts"]],
+m3:[["ek3JEs8y56M","Equinox EV Education: One Pedal Driving","Chevrolet","0:51","Official, short"],["4CYoBZviRBc","Blazer EV: Regen on Demand and One Pedal Driving","Chevrolet","2:05","Same system on a sister model"],["GXrO5-VuNx8","Steering Wheel and Cluster in the Chevrolet Equinox EV (2024-2026)","Cars With Steve","13:22","Learn the buttons and the dash"]],
+m4:[["Ph05hlu0S3E","Beginner's Guide to EV Charging","Alex Sibila","10:26","Levels, plugs and speeds"],["p1h98lWZ1UM","EV Charging 101: Level 1 vs Level 2 vs DC Fast Charging","ThatJamesGuy","11:57","Side by side comparison"],["5egfwH8VtAg","What are the 3 Levels of EV Charging?","Strong Energy EV Charging","5:37","Shortest version"]],
+m5:[["aOhx-uUfE34","Tips and Tricks for Charging Your Chevy Equinox EV","PhillipsChevy","3:17","Model-specific home charging tips"],["r-_OmKXWYfM","Who Needs Level 2 EV Charging at Home?","EV Pulse","4:26","Decide if you need a wallbox"],["87joDusz_ic","How to Install an EV Charger","This Old House","8:27","What an installation involves (hire a licensed electrician)"]],
+m6:[["4LWW4K8hHdQ","Ultimate Guide to Charging Your GM Vehicle on the Tesla Supercharger Network","The Average EV","19:27","Adapter and app setup"],["Rikj4L3a8zc","How to Charge a GM EV on a Tesla Supercharger","Coul St.","10:43","Step by step at the stall"],["tW1pAk6uWrU","Beginner's Guide To EV Road Trips (Mistakes To Avoid)","Mike Seguin","5:36","Common first-trip errors"],["MlMrHuflkOM","How I Plan my Family EV Roadtrips using PlugShare Trips","The Average EV","16:26","Trip planning workflow"]],
+m7:[["rlsCave1R4g","Efficient Winter Driving: Chevy EV's Tech Tips for Maximum Range","Chevrolet","1:47","Official, short"],["GveRT3ypZCA","Does Preconditioning Your Battery Add MORE Range in the Winter?","The Average EV","10:02","Evidence for preconditioning"],["kGL7NVeOO64","Lose Less EV Range In Cold Weather With Battery Conditioning","Out of Spec Deals","13:41","How to do it"]],
+m8:[["nTOMpxycEss","Does the 80% Charging Rule Still Matter?","EV Pulse","8:55","Balanced take on charge limits"],["eBEbLgvDVgM","Many EV Owners Get This Wrong: Battery Charging","Jim's EV Adventures","10:04","Everyday charging habits"]],
+m9:[["mXVeTktETAE","Chevrolet Equinox EV Infotainment (2024-2026 models)","Cars With Steve","33:11","Screen walkthrough"],["4J_4nfhEo2A","Chevrolet Equinox EV Infotainment Walkthrough and Tutorial","The Average EV","27:14","Second viewpoint on the screen"],["QWngR5Um8og","myChevrolet App Tutorial","PhillipsChevy","2:55","Phone app basics"],["3dqHEFeH12s","Remote Start and Keyfob Tricks in the Chevrolet Equinox EV","Cars With Steve","3:24","Key fob and remote start"]],
+m10:[["MrG8eTrZs_0","Dead 12V Battery (Don't Get Stranded!)","Everyday Chris","8:03","Shown on a Tesla, but the 12V lesson applies to any EV"],["lE_w-cz-p4M","The Hidden Reason EVs Must Have 12V Batteries","Energize This","7:23","Why a 12V still matters"],["iOJYtSNHUpo","Electric Vehicles: Doors, Glass, and Emergency Shutdown","Fire Engineering","8:37","What first responders do"]]
+};
+function vids(m){const v=VIDS[m.id];if(!v)return"";return `<h3>Watch (optional, after you try the recall questions)</h3>`+v.map(x=>`<div class="vid"><b>${esc(x[1])}</b><div class="mut">${esc(x[2])} · ${esc(x[3])} · ${esc(x[4])}</div><button class="btn play" data-id="${x[0]}">Play here</button> <a href="https://www.youtube.com/watch?v=${x[0]}" target="_blank" rel="noopener">Open on YouTube</a><div class="slot"></div></div>`).join("")}
 const KEY="equinoxCourse.v1";let S={};try{S=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 S.done=S.done||{};S.start=S.start||null;let cur="m1";
@@ -110,10 +125,12 @@ function mod(m){let h=`<div class="card"><h2>${esc(m.t)}</h2><div class="goal"><
  m.recall.forEach(([q,a])=>{h+=`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`});
  h+=`<h3>Key ideas</h3><ul>`+m.know.map(k=>`<li>${esc(k)}</li>`).join("")+`</ul>`;
  if(m.verify)h+=V(esc(m.verify));
+ h+=vids(m);
  h+=`<h3>Quick quiz</h3>`+m.quiz.map((q,i)=>`<div class="q" data-i="${i}"><p><b>${esc(q[0])}</b></p>`+q[1].map((o,j)=>`<button class="opt" data-j="${j}">${esc(o)}</button>`).join("")+`<div class="fb" hidden></div></div>`).join("");
  h+=`<h3>Do it in the car</h3><div class="chk">`+m.tasks.map((t,i)=>`<label><input type="checkbox" data-k="${m.id}t${i}" ${S[m.id+"t"+i]?"checked":""}> ${esc(t)}</label>`).join("")+`</div>`;
  h+=`<p><button class="btn pri" id="doneBtn">${S.done[m.id]?"Marked done ✓ (tap to undo)":"Mark module done"}</button></p></div>`;return h}
 function bindMod(m){view.querySelectorAll(".q").forEach(q=>{const i=+q.dataset.i;q.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{const j=+b.dataset.j,c=m.quiz[i][2];q.querySelectorAll(".opt").forEach(x=>x.classList.remove("right","wrong"));b.classList.add(j===c?"right":"wrong");if(j!==c)q.querySelectorAll(".opt")[c].classList.add("right");const f=q.querySelector(".fb");f.hidden=false;f.textContent=(j===c?"Correct. ":"Not quite. ")+m.quiz[i][3]})});
+ view.querySelectorAll(".play").forEach(b=>b.onclick=()=>{const s=b.parentNode.querySelector(".slot");if(s.firstChild){s.textContent="";return}const f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+b.dataset.id;f.allowFullscreen=true;f.setAttribute("allow","encrypted-media; picture-in-picture");f.style.cssText="width:100%;aspect-ratio:16/9;border:0;margin-top:8px;border-radius:8px";s.appendChild(f)});
  view.querySelectorAll("input[type=checkbox]").forEach(c=>c.onchange=()=>{S[c.dataset.k]=c.checked;save()});
  document.getElementById("doneBtn").onclick=()=>{if(S.done[m.id])delete S.done[m.id];else{S.done[m.id]=Date.now();if(!S.start)S.start=new Date().toISOString().slice(0,10)}save();draw()}}
 function tools(){return `<div class="card"><h2>Charge time & cost calculator</h2><p class="mut">Estimates only. Real charging slows near full and loses some energy as heat.</p>
