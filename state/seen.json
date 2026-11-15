@@ -412,6 +412,64 @@
       "first_seen": "2026-11-14",
       "last_price": "?",
       "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/5921.html": {
+      "title": "Mormonism Exposed pt 5, Constitution and the Territories (1884)",
+      "price": "$100",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$100",
+      "verified": false
+    },
+    "https://www.abaa.org/book/868705697": {
+      "title": "Utah territorial laws, Salt Lake City 1852",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=954127": {
+      "title": "Belisle, The Prophets, or Mormonism Unveiled (1855)",
+      "price": "$499",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$499",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=1030781": {
+      "title": "Schilb (possibly Lee Mormonism Unveiled 1877)",
+      "price": "$499",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$499",
+      "verified": false
+    },
+    "https://antiques-atlas.com/antique/pewter_communion_flagon_a064/as1221a064": {
+      "title": "Pewter communion flagon, 19th c. (Brian Knapp)",
+      "price": "GBP275",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "GBP275",
+      "verified": true
+    },
+    "https://www.proantic.com/en/1746924-liturgical-chalice-in-silver-rome-18th-century.html": {
+      "title": "Silver chalice Rome 18th c. (Proantic)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://panoplybooks.com/mormonism-unveiled-by-john-d-lee-1891-1st-ed-illustrated": {
+      "title": "Lee Mormonism Unveiled 1891 (Panoply)",
+      "price": "$400",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$400",
+      "verified": false,
+      "status": "gone"
     }
   }
 }
