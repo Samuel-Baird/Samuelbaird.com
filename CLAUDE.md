@@ -54,6 +54,9 @@ The short version, each rule backed by the learning-science books:
 9. **Effort-based motivation** — progress tracking, specific next steps, no punitive wording; test-day routine and graded exam rehearsal.
 Integrity rules above still win over all of this. Look up anything in the books with `scripts/kb_search.py`; cite as book + printed page and paraphrase.
 
+## General how-tos
+- `notes/download-course-videos-kaltura.md`: download, transcribe and clip UVU Canvas/Kaltura lecture recordings (personal use).
+
 ## Gotchas
 - `python -I` ignores the script's folder; use plain `python` for the builders and `-I` only for scripts that read untrusted files.
 - PowerShell/bash tool calls can collapse `\\` to `\`; write TeX with the Write/Edit tools, not shell heredocs.
