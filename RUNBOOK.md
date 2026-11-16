@@ -7,7 +7,7 @@ or enter any credentials.
 ## 1. Load
 Read `search-list.txt` (the master list of what to search, edited by the owner from the
 /scout page: search every non-comment line daily, rotating if it exceeds the search budget; add new
-lines first), `scouts/artifact-scout.md`, `scouts/common-cup.md`,
+lines first), `scouts/artifact-scout.md`, `scouts/common-cup.md`, `scouts/chaplain-scout.md`,
 `wants.md`, `state/seen.json`, and `state/dismissed.json`. Note today's date.
 
 `state/dismissed.json` lists links the owner clicked X on. Keys are normalized as
