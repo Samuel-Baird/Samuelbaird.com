@@ -470,6 +470,31 @@
       "last_price": "$400",
       "verified": false,
       "status": "gone"
+    },
+    "https://www.schilbantiquarian.com/product/1589-enormous-martin-luther-wittenberg-bible-german-biblia-exceedingly-rare/": {
+      "title": "1589 Luther Wittenberg German Bible (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-16",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://napoleonexhibit.com/store/RAREST-ANCIENT-FIRST-EDITION-FIRST-PRINTING-MARTIN-LUTHER-1523-BIBLE-LEAF-PAGE_303258324511.html": {
+      "title": "Luther 1523 'first printing' Bible leaf (eBay mirror, doubtful)",
+      "price": "$7,500",
+      "scout": "artifact",
+      "first_seen": "2026-11-16",
+      "last_price": "$7,500",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/pages/books/62559/ebenezer-robinson-joseph-smith-don-carlos-smith-john-taylor/times-and-seasons": {
+      "title": "Times and Seasons full run 1839-46 (Ken Sanders)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-16",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
     }
   }
 }
