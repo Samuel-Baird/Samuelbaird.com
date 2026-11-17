@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deseret MCP: the Deseret Alphabet for your AI assistant</title>
+<meta name="description" content="Connect Claude or ChatGPT to the Deseret Alphabet: write any English in Deseret letters, read Deseret back, and ask questions answered from deseret.wiki with links. Free, no account.">
+<meta property="og:title" content="Deseret MCP: the Deseret Alphabet for your AI assistant">
+<meta property="og:description" content="Connect Claude or ChatGPT to the Deseret Alphabet: write any English in Deseret letters, read Deseret back, and ask questions answered from deseret.wiki with links. Free, no account.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F3E9D2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16161A" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&family=Noto+Sans+Deseret&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='4' fill='%23243A50'/%3E%3Crect x='5' y='5' width='90' height='90' rx='2' fill='none' stroke='%23A98442' stroke-width='3'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='%23F3E9D2' font-family='Georgia,serif'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/bg/bg.css">
+<script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
+<script src="/deseret.js" charset="utf-8" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mobilebar">
+  <a class="wordmark" href="/" aria-label="Deseret MCP, home"><span class="mono" aria-hidden="true">𐐔</span>Deseret MCP</a>
+  <button type="button" class="menubtn" id="menubtn" aria-expanded="false" aria-controls="sidebar" aria-label="Menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</header>
+<div class="shell">
+<aside class="sidebar" id="sidebar">
+  <a class="wordmark" href="/" aria-label="Deseret MCP, home"><span class="mono" aria-hidden="true">𐐔</span>Deseret MCP</a>
+  <nav class="side-nav" aria-label="Main"><a href="/" aria-current="page"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Try it</span></a><a href="/connect"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Use with AI</span></a><a href="/about"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.5v.01"/></svg><span>Method &amp; data</span></a></nav>
+  <nav class="side-nav lower" aria-label="Related"><span class="side-label small-caps">Related</span><a href="https://deseret.wiki" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg><span>Deseret Wiki</span></a><a href="https://urim.samuelbaird.com" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 010 18a14 14 0 010-18"/></svg><span>Urim</span></a><a href="mailto:ithinksamofficial@gmail.com?subject=Deseret%20MCP"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a></nav>
+  <nav class="side-nav last" aria-label="Source"><a href="https://github.com/Samuel-Baird/deseret-mcp" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4"/><path d="M16 8l5 4-5 4"/><path d="M14 5l-4 14"/></svg><span>Source</span></a></nav>
+</aside>
+<div class="content">
+<main id="main" class="rail">
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow small-caps">A connector for Claude and ChatGPT</p>
+      <h1 data-dsrt="𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐇𐐣𐐝𐐀𐐑𐐀">Deseret MCP</h1>
+      <p class="lede">Your AI assistant can write any English in the Deseret Alphabet, read Deseret back into Latin letters, and answer questions about the alphabet from every source on <a href="https://deseret.wiki">deseret.wiki</a>, with a link to the page each answer came from. It is free and needs no account.</p>
+      <div class="copyfield"><span class="small-caps lbl">Address</span><code class="">https://mcp.deseret.wiki/api/mcp</code><button type="button" data-copy="https://mcp.deseret.wiki/api/mcp" aria-label="Copy Address">Copy</button><span class="sr" role="status"></span></div>
+      <p class="btns" style="margin-top:20px"><a class="primary" href="/connect">Add it to your AI</a><a class="secondary" href="/about">How it works</a></p>
+    </div>
+    <figure class="specimen"><span class="dsrt" lang="en-Dsrt">𐐐𐐬𐑊𐐨𐑌𐐲𐑅 𐐻𐐭 𐑄𐐲 𐐢𐐫𐑉𐐼</span><figcaption>&ldquo;Holiness to the Lord,&rdquo; as struck on the 1860 five-dollar gold piece, spelled here by the server itself.</figcaption></figure>
+  </div>
+</div>
+
+<section id="try" aria-labelledby="try-h">
+  <h2 id="try-h">Try it</h2>
+  <p class="muted">This box uses the same server your assistant would. Words it cannot spell stay in Latin letters and are listed, never guessed.</p>
+  <div class="try">
+    <div class="tabs" role="tablist" aria-label="Direction">
+      <button role="tab" type="button" id="mode-to" aria-selected="true">English to Deseret</button>
+      <button role="tab" type="button" id="mode-from" aria-selected="false">Deseret to English</button>
+    </div>
+    <textarea id="try-in" aria-label="English text" spellcheck="false">In 1854 the Regents of the University of Deseret approved a new alphabet: one letter for every sound of English. Brigham Young hoped the Saints would read and write it.</textarea>
+    <div class="row"><button type="button" class="primary" id="try-go">Transliterate</button><span class="status" id="try-status" role="status"></span></div>
+    <div class="out dsrt" id="try-out" lang="en-Dsrt" aria-live="polite"></div>
+    <div class="report" id="try-report"></div>
+  </div>
+</section>
+
+<section aria-labelledby="can-h">
+  <h2 id="can-h">What your assistant can do with it</h2>
+  <div class="cards">
+    <div class="card"><h3>Write in Deseret <span class="dsrt" aria-hidden="true">𐑉𐐴𐐻</span></h3>
+      <p>Single words, passages or whole files. Every word of the 126,052-word CMU Pronouncing Dictionary, spelled sound by sound the way deseret.wiki spells its own pages.</p>
+      <ul><li>Explains a word letter by letter: name, sound, key word.</li><li>Lists the words it could not spell, and the ones it built from their parts.</li><li>Keeps Markdown and HTML intact: links, code, footnotes.</li><li>Reads Deseret back, naming the homophones.</li></ul></div>
+    <div class="card"><h3>Ask about the alphabet <span class="dsrt" aria-hidden="true">𐐰𐑅𐐿</span></h3>
+      <p>Answers come from what deseret.wiki holds, with the page to cite.</p>
+      <ul><li>The encyclopedia article, section by section (23 sections).</li><li>The library: 28 PDFs, sermons and readings.</li><li>35 fonts, 40 books &amp; prints, 9 videos, 10 resources, 1 quote.</li><li>The 38-letter chart with sounds and key words.</li></ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="ask-h">
+  <h2 id="ask-h">Things to ask</h2>
+  <p class="muted">Name it in your question so the assistant knows to use it.</p>
+  <div class="stack">
+    <div class="copyfield"><code class="wrap">Use Deseret MCP: write &quot;I will go and do the things which the Lord hath commanded&quot; in the Deseret Alphabet, and tell me any words you could not spell.</code><button type="button" data-copy="Use Deseret MCP: write &quot;I will go and do the things which the Lord hath commanded&quot; in the Deseret Alphabet, and tell me any words you could not spell." aria-label="Copy text">Copy</button><span class="sr" role="status"></span></div>
+    <div class="copyfield"><code class="wrap">Use Deseret MCP: who designed the Deseret Alphabet, and why was it abandoned? Cite the Deseret Wiki pages.</code><button type="button" data-copy="Use Deseret MCP: who designed the Deseret Alphabet, and why was it abandoned? Cite the Deseret Wiki pages." aria-label="Copy text">Copy</button><span class="sr" role="status"></span></div>
+    <div class="copyfield"><code class="wrap">Use Deseret MCP: spell &quot;Zarahemla&quot; in Deseret and explain each letter.</code><button type="button" data-copy="Use Deseret MCP: spell &quot;Zarahemla&quot; in Deseret and explain each letter." aria-label="Copy text">Copy</button><span class="sr" role="status"></span></div>
+    <div class="copyfield"><code class="wrap">Use Deseret MCP: which fonts can I install to type Deseret in Word, and what licence is each under?</code><button type="button" data-copy="Use Deseret MCP: which fonts can I install to type Deseret in Word, and what licence is each under?" aria-label="Copy text">Copy</button><span class="sr" role="status"></span></div>
+  </div>
+</section>
+
+<section aria-labelledby="tools-h">
+  <h2 id="tools-h">The tools</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>to_deseret</code></td><td>English text, up to 100,000 characters, to Deseret, with a report of unknown, built-up and two-sense words.</td></tr>
+      <tr><td><code>deseret_word</code></td><td>One word explained: phones, each letter's name and sound, every pronunciation.</td></tr>
+      <tr><td><code>from_deseret</code></td><td>Deseret back to Latin letters, naming homophones and respelled words.</td></tr>
+      <tr><td><code>search_wiki</code></td><td>Search every source on deseret.wiki; each hit links to its page and original source.</td></tr>
+      <tr><td><code>read_wiki</code></td><td>The full text of a hit with a ready-made citation.</td></tr>
+      <tr><td><code>wiki_contents</code></td><td>What the wiki holds, by kind.</td></tr>
+      <tr><td><code>deseret_file</code></td><td>Local server only: transliterates a text, Markdown or HTML file on your computer.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="ornament" aria-hidden="true">𐑄𐐲 𐐯𐑌𐐼</p>
+</section>
+</main>
+<footer><div class="rail">Deseret MCP is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a>, companion to <a href="https://deseret.wiki">deseret.wiki</a>, and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Pronunciations from the CMU Pronouncing Dictionary.</div></footer>
+</div>
+</div>
+<script src="/nav.js" defer></script>
+<script src="/connect.js" charset="utf-8" defer></script>
+<script src="/try.js" charset="utf-8" defer></script>
+</body>
+</html>

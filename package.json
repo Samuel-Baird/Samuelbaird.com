@@ -1,0 +1,17 @@
+{
+  "name": "deseret-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the Deseret Alphabet: English <-> Deseret transliteration with the whole CMU Pronouncing Dictionary, and search over every source on the Deseret Wiki.",
+  "type": "module",
+  "private": true,
+  "bin": { "deseret-mcp": "bin/deseret-mcp.mjs" },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "build:dict": "node scripts/build-dict.mjs",
+    "build:wiki": "node scripts/build-wiki.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "start": "node bin/deseret-mcp.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
