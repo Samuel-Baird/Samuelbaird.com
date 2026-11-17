@@ -27,19 +27,23 @@ const talks = [
   { who: 'George Albert Smith', date: 'Apr 1936', title: 'Membership in Christ’s Church a Privilege', note: 'Lists the Book of Mormon translations, including one "in the Deseret alphabet."', url: 'https://pulpit.restorationcommons.org/talks/1936-04-george-albert-smith-obedience-to-the-teachings-of-jesus/#p11' },
 ];
 
-// Copyrighted books: read in the Gospel Scholar Archive, not hosted here.
+// In copyright: not hosted. Linked to Amazon (ISBN pages); see the archive page for the exact citation.
 const books = [
-  { title: 'The Complete Discourses of Brigham Young, vols. 2–5', note: 'Regents, spelling reform and the alphabet in school and Church; see vol. 4 pp. 430–434, 467, 580–581.', url: 'https://corpus.restorationcommons.org/b/4-1862-1867-b34e/430' },
-  { title: 'Allen & Leonard, The Story of the Latter-day Saints', note: 'Pp. 282, 365.', url: 'https://corpus.restorationcommons.org/b/allen-and-leonard-the-story-of-the-latter-day-2585/365' },
-  { title: 'Arrington, Brigham Young: American Moses', note: 'P. 336.', url: 'https://corpus.restorationcommons.org/b/arrington-brigham-young-american-moses-669e/336' },
-  { title: 'Givens & Grow, Parley P. Pratt: The Apostle Paul of Mormonism', note: 'Pp. 410–411, on Pratt and the Deseret News editorial on the alphabet.', url: 'https://corpus.restorationcommons.org/b/givens-and-grow-parley-p-pratt-the-apostle-paul-ab99/411' },
-  { title: 'Encyclopedia of Mormonism: "Deseret Alphabet" (Eleanor Knowles)', note: 'Vol. 1, pp. 465–466, with the table of thirty-eight symbols.', url: 'https://corpus.restorationcommons.org/b/1-a-d-f012/466' },
-  { title: 'Griffiths & Woodger, 50 Relics of the Restoration', note: 'Pp. 79, 92–94: the Deseret Alphabet reader.', url: 'https://corpus.restorationcommons.org/b/griffiths-and-woodger-50-relics-of-the-02cb/92' },
-  { title: 'Reeve & Parshall, Mormonism: A Historical Encyclopedia', note: 'P. 324.', url: 'https://corpus.restorationcommons.org/b/reeve-and-parshall-mormonism-a-historical-39f3/324' },
-  { title: 'Barker, A Mormon Bibliography, 1830–1930', note: 'Pp. 116, 512: bibliographic entries for the printings.', url: 'https://corpus.restorationcommons.org/b/a-mormon-bibliography-1830-1930-8282/116' },
-  { title: 'Kimball, Heber C. Kimball: Mormon Patriarch and Pioneer', note: 'Pp. 245–247, on the purpose of the alphabet.', url: 'https://corpus.restorationcommons.org/b/kimball-heber-c-kimball-mormon-patriarch-and-3810/247' },
-  { title: 'Nibley, Temple and Cosmos', note: 'P. 456.', url: 'https://corpus.restorationcommons.org/b/12-temple-and-cosmos-0257/456' },
-  { title: 'Dialogue: A Journal of Mormon Thought (V54N03, V54N02, V19N03 and others)', note: 'Search "Deseret alphabet" in the archive for the full list.', url: 'https://corpus.restorationcommons.org/b/v54n03-7a1b/142' },
+  { title: "The Complete Discourses of Brigham Young, vols. 2–5 (Van Wagoner, ed.)", note: "Regents, spelling reform and the alphabet in school and Church; see vol. 4 pp. 430–434, 467, 580–581.", url: "https://www.amazon.com/Complete-Discourses-Brigham-Young-Book/dp/B07LC27ZXS", cite: "https://corpus.restorationcommons.org/b/4-1862-1867-b34e/430" },
+  { title: "Allen & Leonard, The Story of the Latter-day Saints (2nd ed., 1992)", note: "Pp. 282, 365.", url: "https://www.amazon.com/dp/087579565X", cite: "https://corpus.restorationcommons.org/b/allen-and-leonard-the-story-of-the-latter-day-2585/365" },
+  { title: "Arrington, Brigham Young: American Moses", note: "P. 336.", url: "https://www.amazon.com/dp/0345803213", cite: "https://corpus.restorationcommons.org/b/arrington-brigham-young-american-moses-669e/336" },
+  { title: "Givens & Grow, Parley P. Pratt: The Apostle Paul of Mormonism", note: "Pp. 410–411, on Pratt and the Deseret News editorial on the alphabet.", url: "https://www.amazon.com/dp/0195375734", cite: "https://corpus.restorationcommons.org/b/givens-and-grow-parley-p-pratt-the-apostle-paul-ab99/411" },
+  { title: "Griffiths & Woodger, 50 Relics of the Restoration", note: "Pp. 79, 92–94: the Deseret Alphabet reader.", url: "https://www.amazon.com/dp/1462138160", cite: "https://corpus.restorationcommons.org/b/griffiths-and-woodger-50-relics-of-the-02cb/92" },
+  { title: "Reeve & Parshall, Mormonism: A Historical Encyclopedia", note: "P. 324.", url: "https://www.amazon.com/dp/1598841076", cite: "https://corpus.restorationcommons.org/b/reeve-and-parshall-mormonism-a-historical-39f3/324" },
+  { title: "Kimball, Heber C. Kimball: Mormon Patriarch and Pioneer", note: "Pp. 245–247, on the purpose of the alphabet.", url: "https://www.amazon.com/dp/0252012992", cite: "https://corpus.restorationcommons.org/b/kimball-heber-c-kimball-mormon-patriarch-and-3810/247" },
+];
+
+// Free to read from the publisher or institution (BYU, Maxwell Institute, Dialogue). Linked, not copied.
+const freeBooks = [
+  { title: "Encyclopedia of Mormonism: \"Deseret Alphabet\" (Eleanor Knowles)", note: "Vol. 1, pp. 465–466, with the table of thirty-eight symbols. Free at BYU.", url: "https://eom.byu.edu/index.php/Deseret_Alphabet" },
+  { title: "Nibley, Temple and Cosmos (Collected Works, vol. 12)", note: "P. 456. Free from the Maxwell Institute, BYU.", url: "https://mi.byu.edu/temple-and-cosmos" },
+  { title: "Flake & Draper, A Mormon Bibliography, 1830–1930 (2nd ed., 2004)", note: "Bibliographic entries for the printings. Free from BYU Religious Studies Center.", url: "https://rsc.byu.edu/book/mormon-bibliography-1830-1930" },
+  { title: "Dialogue: A Journal of Mormon Thought", note: "Several issues discuss the alphabet; every issue is free on the journal site.", url: "https://www.dialoguejournal.com/" },
 ];
 ---
 <Base title="Library — Deseret Wiki">
@@ -71,13 +75,24 @@ const books = [
       ))}
     </ol>
 
-    <h2>Further reading (read online, not hosted)</h2>
-    <p class="small">These are in copyright, so they are linked rather than copied.</p>
+    <h2>Free to read online</h2>
+    <p class="small">Published open-access by BYU and others, so these link straight to the publisher.</p>
+    <ol class="register">
+      {freeBooks.map((b) => (
+        <li>
+          <a href={b.url} rel="noopener"><span class="reg-title">{b.title}</span></a>
+          <span class="reg-note">{b.note}</span>
+        </li>
+      ))}
+    </ol>
+
+    <h2>Books to buy</h2>
+    <p class="small">These are in copyright, so they are linked to Amazon rather than copied. Each note gives the pages that mention the alphabet.</p>
     <ol class="register">
       {books.map((b) => (
         <li>
           <a href={b.url} rel="noopener"><span class="reg-title">{b.title}</span></a>
-          <span class="reg-note">{b.note}</span>
+          <span class="reg-note">{b.note} <a href={b.cite} rel="noopener">View in archive</a></span>
         </li>
       ))}
     </ol>
