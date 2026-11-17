@@ -63,6 +63,10 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
       <stop offset=".45" stop-color="#8A4A2E" stop-opacity=".22" />
       <stop offset="1" stop-color="#8A4A2E" stop-opacity="0" />
     </radialGradient>
+    <radialGradient id={`${id}-moonglow`}>
+      <stop offset="0" stop-color="#E8DFC6" stop-opacity=".22" />
+      <stop offset="1" stop-color="#E8DFC6" stop-opacity="0" />
+    </radialGradient>
     <clipPath id={`${id}-sky`}><path d={line(back) + `L${W} 0L0 0Z`} /></clipPath>
   </defs>
   <g fill="none" stroke="currentColor" stroke-linecap="round">
@@ -72,6 +76,13 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
         <g class="sun-rays"><path d={rays} stroke-width=".8" opacity=".75" /></g>
         <circle r="20" stroke-width="1.2" class="sun-disc" />
         <circle r="15.5" stroke-width=".5" opacity=".7" />
+      </g>
+      <!-- the moon: rises at nightfall; its lit part is redrawn for the phase by sky.js -->
+      <g class="moon" transform="translate(600 60)" style="opacity:0">
+        <circle r="50" fill={`url(#${id}-moonglow)`} stroke="none" class="moon-halo" />
+        <circle r="16" class="moon-dark" stroke-width=".6" />
+        <path class="moon-lit" stroke="none" d="" />
+        <g class="moon-marks" stroke="none"><circle cx="-5" cy="-4" r="3.2" /><circle cx="5" cy="5" r="2.2" /><circle cx="4" cy="-7" r="1.5" /><circle cx="-6" cy="6" r="1.2" /></g>
       </g>
     </g>
     <path d={fill(back)} class="mtn-paper" stroke="none" />
@@ -89,4 +100,8 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
   .mtn-paper { fill: #16171A; }
   .sun { color: #D9B46A; }
   .sun-disc { fill: rgb(217 180 106 / .14); }
+  .moon { color: #E8DFC6; }
+  .moon-dark { fill: #1A1B20; stroke: rgb(232 223 198 / .35); }
+  .moon-lit { fill: #E6DDC4; }
+  .moon-marks { fill: rgb(26 27 32 / .16); }
 </style>

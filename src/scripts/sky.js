@@ -1,5 +1,5 @@
-// The living backdrop: the real night sky over Great Salt Lake City, a sun that rises and sets over
-// the Wasatch panorama, tumbleweeds, a passing honeybee, and engraved emblems drifting in the margins.
+// The living backdrop: the real night sky over Great Salt Lake City, a sun and a waxing and waning moon
+// that rise and set over the Wasatch panorama, honeybees by day, and engraved emblems in the margins.
 //
 // Stars: NASA HEASARC's Yale Bright Star Catalogue (public/stars.json, built by scripts/stars.mjs).
 // Their positions are computed for the real time and place, so the sky turns at the Earth's true rate
@@ -9,17 +9,11 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const D = Math.PI / 180;
 const LAT = 40.76 * D, LON = -111.89; // Great Salt Lake City
 const VIEW_AZ = 95 * D, VIEW_ALT = 36 * D; // looking east, toward the Wasatch
-const SUN_CYCLE = 150_000; // ms for one day in the engraving
-const DAY_SHARE = 0.62; // of the cycle the sun is above the ridge
+import { sunPhase, moonPhase, moonLit } from './clock.js';
 const rand = (a, b) => a + Math.random() * (b - a);
 
-/* ---------- sun clock (shared by the panorama and the sky) ---------- */
-let daylight = 0, sunLow = 0;
-function sunPhase(now) {
-  const p = (now % SUN_CYCLE) / SUN_CYCLE;
-  if (p >= DAY_SHARE) return { up: false, p: (p - DAY_SHARE) / (1 - DAY_SHARE) };
-  return { up: true, p: p / DAY_SHARE };
-}
+/* ---------- light (the clock itself is in clock.js, shared with the land) ---------- */
+let daylight = 0, sunLow = 0, moonlight = 0;
 
 /* ---------- stars ---------- */
 const canvas = document.getElementById('sky');
@@ -80,12 +74,14 @@ function drawSky(now) {
   g.addColorStop(1, `rgb(${21 + 34 * sunLow * daylight},${21 + 18 * sunLow * daylight},${24 + 2 * sunLow * daylight})`);
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, W, H);
-  if (daylight > 0) { ctx.fillStyle = `rgba(60,72,92,${0.22 * daylight * (1 - sunLow)})`; ctx.fillRect(0, 0, W, H); }
+  if (daylight > 0) { ctx.fillStyle = `rgba(60,72,92,${0.24 * daylight * (1 - sunLow)})`; ctx.fillRect(0, 0, W, H); }
+  // a bright moon lifts the night a little; a new moon leaves it at its darkest
+  if (moonlight > 0) { ctx.fillStyle = `rgba(70,82,104,${0.11 * moonlight})`; ctx.fillRect(0, 0, W, H); }
   if (!prepared) return;
 
   const s = Math.max(W, H * 0.9) / 2 / 1.155; // ±60° across the wider side
   const cx = W / 2, cy = H * 0.6;
-  const fade = (1 - 0.65 * daylight) * dim;
+  const fade = (1 - 0.65 * daylight) * (1 - 0.22 * moonlight) * dim;
   const t = now / 1000;
   for (const st of prepared) {
     const ha = lst - st.ra;
@@ -112,14 +108,37 @@ function drawSky(now) {
   }
 }
 
-/* ---------- sun in the panorama ---------- */
+/* ---------- sun and moon in the panorama ---------- */
 const panoramas = [...document.querySelectorAll('.mountains')];
+// The lit part of a disc of radius r: the bright limb, closed by the terminator (a half-ellipse).
+function moonPath(phase, r) {
+  const rx = (r * Math.abs(Math.cos(phase * 2 * Math.PI))).toFixed(2);
+  const waxing = phase < 0.5;
+  const limb = waxing ? 1 : 0; // lit on the right while waxing, on the left while waning
+  const term = waxing ? (phase < 0.25 ? 0 : 1) : (phase < 0.75 ? 0 : 1);
+  return `M0 ${-r}A${r} ${r} 0 0 ${limb} 0 ${r}A${rx} ${r} 0 0 ${term} 0 ${-r}Z`;
+}
 function drawSun(now) {
   const { up, p } = sunPhase(now);
   const h = up ? Math.sin(Math.PI * p) : 0;
   daylight = up ? Math.pow(h, 0.5) : 0;
   sunLow = up ? Math.pow(1 - h, 2) : 0;
+  const phase = moonPhase(now), lit = moonLit(phase);
+  const mh = up ? 0 : Math.sin(Math.PI * p);
+  moonlight = up ? 0 : Math.pow(mh, 0.6) * lit;
   for (const svg of panoramas) {
+    const moon = svg.querySelector('.moon');
+    if (moon) {
+      const mx = 110 + 980 * (up ? 0 : p), my = 172 - 132 * mh;
+      moon.setAttribute('transform', `translate(${mx.toFixed(1)} ${my.toFixed(1)})`);
+      moon.style.opacity = up ? 0 : 1;
+      const litEl = moon.querySelector('.moon-lit');
+      if (litEl && litEl.dataset.phase !== phase.toFixed(3)) { litEl.dataset.phase = phase.toFixed(3); litEl.setAttribute('d', moonPath(phase, 16)); }
+      const halo = moon.querySelector('.moon-halo');
+      if (halo) halo.style.opacity = (0.25 + 0.75 * lit).toFixed(2);
+      const marks = moon.querySelector('.moon-marks');
+      if (marks) marks.style.opacity = lit > 0.45 ? 1 : 0;
+    }
     const sun = svg.querySelector('.sun'), glow = svg.querySelector('.sun-glow'), rays = svg.querySelector('.sun-rays');
     if (!sun) continue;
     const x = 90 + 1020 * (up ? p : 0), y = 168 - 138 * h;
@@ -152,46 +171,8 @@ if (ctx) {
 }
 requestAnimationFrame(frame);
 
-/* ---------- tumbleweeds and a honeybee ---------- */
+/* ---------- honeybees, out by day (tumbleweeds, crickets and gulls are in land.js) ---------- */
 const layer = document.getElementById('critters');
-const NS = 'http://www.w3.org/2000/svg';
-
-function tumbleweedSvg(size) {
-  const svg = document.createElementNS(NS, 'svg');
-  svg.setAttribute('viewBox', '-50 -50 100 100');
-  svg.setAttribute('width', size); svg.setAttribute('height', size);
-  let d = '';
-  for (let i = 0; i < 34; i++) { // a ball of looping, crossing twigs
-    const a1 = rand(0, 6.28), a2 = a1 + rand(1.2, 3.2), r1 = rand(18, 46), r2 = rand(18, 46);
-    const c = rand(-40, 40);
-    d += `M${(r1 * Math.cos(a1)).toFixed(1)} ${(r1 * Math.sin(a1)).toFixed(1)}Q${c.toFixed(1)} ${rand(-40, 40).toFixed(1)} ${(r2 * Math.cos(a2)).toFixed(1)} ${(r2 * Math.sin(a2)).toFixed(1)}`;
-  }
-  const p = document.createElementNS(NS, 'path');
-  p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', 'currentColor');
-  p.setAttribute('stroke-width', '1.4'); p.setAttribute('stroke-linecap', 'round');
-  svg.append(p);
-  return svg;
-}
-
-function rollTumbleweed() {
-  if (document.hidden) return;
-  const size = rand(38, 70);
-  const el = document.createElement('div');
-  el.className = 'tumbleweed';
-  el.append(tumbleweedSvg(size));
-  layer.append(el);
-  const dist = innerWidth + size * 2 + 80;
-  const dur = dist / rand(110, 170) * 1000;
-  const turns = dist / (Math.PI * size) * 360;
-  const frames = [];
-  const hops = Math.round(dist / rand(160, 260));
-  for (let i = 0; i <= hops * 4; i++) {
-    const t = i / (hops * 4), q = (i % 4) / 4;
-    const hop = Math.sin(Math.PI * q) * size * rand(0.35, 0.8) * (1 - t * 0.4);
-    frames.push({ transform: `translate(${(-size - 40 + dist * t).toFixed(1)}px, ${(-hop).toFixed(1)}px) rotate(${(turns * t).toFixed(0)}deg)`, offset: t });
-  }
-  el.animate(frames, { duration: dur, easing: 'linear' }).finished.then(() => el.remove());
-}
 
 const BEE = `<svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
 <path class="wing" d="M14.5 15C9 14 5.5 7 9.5 4.5C13.5 2.2 17 9 14.5 15Z" stroke-width=".9"/><path class="wing" d="M16.5 15C16.5 9 21.5 3.6 25 5.4C28.4 7.6 22.5 13.6 16.5 15Z" stroke-width=".9"/>
@@ -200,7 +181,7 @@ const BEE = `<svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
 <path d="M27.8 14.9c.8-2.1 2-3.1 3.4-3.3M26.4 14.8c.3-2.3 1.1-3.5 2.3-4.1" stroke-width=".7"/></g></svg>`;
 
 function flyBee() {
-  if (document.hidden) return;
+  if (document.hidden || !sunPhase().up) return;
   const el = document.createElement('div');
   el.className = 'sky-bee';
   el.innerHTML = BEE;
@@ -223,8 +204,7 @@ function every(fn, first, min, max) {
   setTimeout(function tick() { fn(); setTimeout(tick, rand(min, max)); }, first);
 }
 if (layer && !reduced) {
-  every(rollTumbleweed, rand(6000, 14000), 28000, 55000);
-  every(flyBee, rand(14000, 26000), 38000, 75000);
+  every(flyBee, rand(5000, 12000), 16000, 34000);
 }
 
 /* ---------- engraved emblems in the margins, with parallax ---------- */
@@ -256,7 +236,7 @@ function layoutMargins() {
     margins.append(el);
     items.push({ el, y, speed });
     side ^= 1;
-    y += rand(300, 420);
+    y += rand(460, 640);
   }
   place();
 }

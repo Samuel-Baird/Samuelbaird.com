@@ -275,6 +275,31 @@ main { display: block; min-height: 50vh; }
 .sky-bee .wing { transform-origin: 50% 90%; transform-box: fill-box; animation: wing 70ms linear infinite alternate; }
 body::before { z-index: -2; }
 
+/* The land (src/scripts/land.js): bands of country down the page in three depths. Kept faint, and
+   fainter still behind the text column, so it lives at the edges of the eye. */
+#land { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; color: #EDE3CB; }
+#land .depth { position: absolute; inset: 0; }
+#land .layer { position: absolute; left: 0; top: 0; will-change: transform; }
+#land svg { display: block; overflow: visible; }
+#land .d-far { opacity: .17; }
+#land .d-mid { opacity: .26; }
+#land .d-near .scenery, #land .d-near .tumbleweed { opacity: .5; } /* the critters read brighter than the ground they cross */
+@media (min-width: 900px) {
+  #land { -webkit-mask-image: linear-gradient(90deg, #000 0 16%, rgb(0 0 0 / .38) 32% 68%, #000 84% 100%); mask-image: linear-gradient(90deg, #000 0 16%, rgb(0 0 0 / .38) 32% 68%, #000 84% 100%); }
+}
+@media (max-width: 899px) { #land { opacity: .55; } }
+#land .win { fill: #E9B862; opacity: 0; transition: opacity 5s; }
+#land.night .win { opacity: .85; }
+#land .smoke circle { transform-box: fill-box; transform-origin: center; animation: smoke 6s linear infinite; opacity: 0; }
+@keyframes smoke { 0% { transform: translate(0, 0) scale(.6); opacity: 0; } 15% { opacity: .45; } 100% { transform: translate(12px, -34px) scale(2.4); opacity: 0; } }
+#land .water { stroke-dasharray: 7 9; animation: shimmer 6s linear infinite; }
+@keyframes shimmer { to { stroke-dashoffset: -32; } }
+#land .hive-bees { transition: opacity 3s; }
+#land.night .hive-bees { opacity: 0; }
+#land .hive-bees circle { transform-box: view-box; animation: orbit 3s linear infinite; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #land * { animation: none !important; } }
+
 /* Drifting Deseret glyphs (src/scripts/glyphs.js): very faint, tinted to the theme's brass. */
 .glyph-bg {
   position: fixed; inset: 0; z-index: -2; pointer-events: none; contain: strict;
