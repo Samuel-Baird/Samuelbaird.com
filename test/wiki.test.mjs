@@ -21,6 +21,12 @@ test('the corpus covers every kind of source on the wiki', () => {
   assert.equal(new Set(corpus.records.map((r) => r.id)).size, corpus.records.length, 'ids are unique');
 });
 
+test('no links to the private research archive, and it is not named', () => {
+  const raw = JSON.stringify(corpus);
+  assert.doesNotMatch(raw, /corpus\.restorationcommons\.org/);
+  assert.doesNotMatch(raw, /Gospel Scholar/i);
+});
+
 test('article anchors match the ids the built site gives its headings', { skip: !fs.existsSync(path.join(ROOT, '..', 'deseret', 'dist', 'wiki', 'deseret-alphabet', 'index.html')) }, () => {
   const html = fs.readFileSync(path.join(ROOT, '..', 'deseret', 'dist', 'wiki', 'deseret-alphabet', 'index.html'), 'utf8');
   const ids = new Set([...html.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
@@ -42,7 +48,7 @@ test('search by kind and for people', () => {
   const v = wiki.search('Saints Unscripted', { kind: 'video' });
   assert.match(v.results[0].source_url, /youtube\.com/);
   const t = wiki.search('Brigham Young 1868 conference', { kind: 'library' });
-  assert.match(t.results[0].source_url, /pulpit\.restorationcommons\.org|corpus\.restorationcommons\.org/);
+  assert.match(t.results[0].source_url, /pulpit\.restorationcommons\.org/);
 });
 
 test('read returns the full record, a citation and neighbours', () => {

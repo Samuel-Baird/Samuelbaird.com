@@ -66,8 +66,10 @@ function walk(dir, re, out = []) {
   return out;
 }
 
+// The research archive behind some of the wiki's sources is not for public use: never pass its links on.
+const PRIVATE_HOST = /corpus\.restorationcommons\.org/i;
 const records = [];
-const add = (r) => records.push(Object.fromEntries(Object.entries(r).filter(([, v]) => v !== undefined && v !== null && v !== '')));
+const add = (r) => records.push(Object.fromEntries(Object.entries(r).filter(([, v]) => v !== undefined && v !== null && v !== '' && !(typeof v === 'string' && PRIVATE_HOST.test(v) && /^https?:/.test(v)))));
 
 // ---- articles, one record per section
 const articleFiles = [...walk(path.join(WIKI, 'src', 'pages'), /\.mdx?$/), ...walk(path.join(WIKI, 'src', 'content'), /\.mdx?$/)];
@@ -146,7 +148,7 @@ const MAPPERS = {
   'buy.sections': null,
   'library.pdfs': (p) => ({ kind: 'library', title: p.title, text: p.note, url: `${SITE}/library/${encodeURI(p.file)}`, source_url: p.cite, format: 'PDF (hosted on deseret.wiki)' }),
   'library.talks': (t, page) => ({ kind: 'library', title: `${t.who}, "${t.title}"`, text: `${t.date}. ${t.note}`, url: page, source_url: t.url, date: t.date, author: t.who, format: 'Sermon or conference address (Pulpit corpus)' }),
-  'library.books': (b, page) => ({ kind: 'library', title: b.title, text: b.note, url: page, source_url: b.url, format: 'In copyright; read online in the Gospel Scholar Archive' }),
+  'library.books': (b, page) => ({ kind: 'library', title: b.title, text: b.note, url: page, source_url: b.url, format: 'In copyright; linked to the publisher or a store' }),
   'resources.links': (l, page) => ({ kind: 'resource', title: l.title, text: l.note, url: page, source_url: l.url }),
   'videos.videos': (v, page) => ({ kind: 'video', title: v.title, text: `${v.title}. Video by ${v.by}.`, author: v.by, url: page, source_url: v.short ? `https://www.youtube.com/shorts/${v.id}` : `https://www.youtube.com/watch?v=${v.id}${v.list ? `&list=${v.list}` : ''}` }),
 };
