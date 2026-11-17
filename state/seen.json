@@ -194,7 +194,7 @@
       "verified": false
     },
     "https://www.abaa.org/book/1674016997": {
-      "title": "Luther, Vonn der Freyheyt eyni\u00df Christennmenschen (Wittenberg 1521), 2nd printing",
+      "title": "Luther, Vonn der Freyheyt eyniß Christennmenschen (Wittenberg 1521), 2nd printing",
       "price": "price not shown (likely well over budget)",
       "scout": "artifact",
       "first_seen": "2026-11-12",
@@ -367,18 +367,18 @@
     },
     "https://www.sellingantiques.co.uk/pdf.asp?id=1154177": {
       "title": "Pair Old Sheffield Plate communion goblets, Ardrossan Free Church 1844",
-      "price": "\u00a3345",
+      "price": "£345",
       "scout": "artifact",
       "first_seen": "2026-11-13",
-      "last_price": "\u00a3345",
+      "last_price": "£345",
       "verified": true
     },
     "https://www.sellingantiques.co.uk/pdf.asp?id=1154178": {
       "title": "Pair Old Sheffield Plate communion chalices 1843",
-      "price": "\u00a3325",
+      "price": "£325",
       "scout": "artifact",
       "first_seen": "2026-11-13",
-      "last_price": "\u00a3325",
+      "last_price": "£325",
       "verified": true
     },
     "https://www.schilbantiquarian.com/product/luther-schriften-1567-jena/": {
@@ -492,6 +492,72 @@
       "price": "?",
       "scout": "artifact",
       "first_seen": "2026-11-16",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.proantic.com/en/1717375-pewter-chalice-huy-hoei-belgium-18th-century.html": {
+      "title": "Pewter chalice, Huy (Belgium) 18th c. (Art Stannum, Proantic)",
+      "price": "EUR420",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "EUR420",
+      "verified": true
+    },
+    "https://www.abaa.org/book/1032784917": {
+      "title": "Orson Pratt, A Series of Pamphlets (Liverpool 1851, Kinderhook plate) (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=992802": {
+      "title": "Works of Martin Luther 1557, first Wittenberg ed. (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://schilbantiquarian.com/?p=833651": {
+      "title": "1575 Luther Bible commentaries/sermons folio (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/product/postilla-habermann-1582/": {
+      "title": "Postilla, Habermann 1582 (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://rockwellantiquesdallas.com/de-conjugio-episcoporum-et-diaconorum-by-bugenhagen-1525": {
+      "title": "Bugenhagen De Conjugio Episcoporum 1525 (Rockwell Antiques)",
+      "price": "$1,600",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "$1,600",
+      "verified": false,
+      "status": "over_budget"
+    },
+    "https://www.ebay.com/itm/255823682764": {
+      "title": "Cased daguerreotype said to be Joseph & Emma Smith (eBay)",
+      "price": "$135,000 or BO",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "$135,000 or BO",
+      "verified": false
+    },
+    "https://www.proantic.com/en/1780671-pewter-chalice-north-picardy-second-half-of-the-18th-century.html": {
+      "title": "Pewter chalice N. Picardy 18th c. (Proantic)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
       "last_price": "?",
       "verified": false,
       "status": "gone"
