@@ -1,0 +1,193 @@
+/* The GSA design tokens: the only place in the frontend (static/) where a colour, a size, a
+   radius, a duration or a z-index is written as a number. Everything else
+   uses these (tests/design_lint.py enforces it). The reasons live in
+   DESIGN.md; this file says what, briefly. The site is dark only (Noah,
+   2026-10-28): no light theme and no theme switch. The reader's page
+   tones (Paper, Sepia, Night) are about the scan, not the interface. */
+
+:root {
+  color-scheme: dark;
+
+  /* ---- materials ---- */
+  --bg: #0D0D0C;                         /* the one canvas */
+  --surface: #151514;                    /* raised: cards, popovers, opaque sheets and panels */
+  --fill: rgba(240, 238, 232, .055);     /* hover, filled fields */
+  --fill-2: rgba(240, 238, 232, .095);   /* pressed, current */
+  --ink: #EDEBE4;
+  --ink-2: #A6A39B;
+  --ink-3: #86837B;
+  --rule: rgba(240, 238, 232, .08);      /* hairlines, only where tone and space can't separate */
+  --edge: rgba(240, 238, 232, .13);      /* outlines */
+  --edge-hover: rgba(240, 238, 232, .26);
+  --accent: #1AADFF;                     /* the one accent: here · working · focus · the Field's ring.
+                                            The blue of the Claude Code texture's ripple (Noah, 2026-10-28) */
+  --accent-wash: rgba(26, 173, 255, .16);  /* the spoken word, a selection */
+  --on-accent: #FFFFFF;                  /* a figure on the accent: the walkthroughs' numbered rings, over screenshots */
+  --rubric: #E46A50;                     /* CFM Prep's accent only: references, marks, the text's own dating */
+  --gilt: #D3B26A;                       /* spine and swatch tooling only */
+  --on-cloth: #F4EFE2;
+  --scrim: rgba(0, 0, 0, .4);
+
+  /* bookcloth: which shelf, never state */
+  --c-read: #8E3036; --c-res: #34507D; --c-lang: #557A4E; --c-quote: #A07A2C;
+  --c-vis: #3C8084; --c-listen: #7A5280; --c-watch: #66707C;
+
+  /* the one frost (bars, popovers, fit sheets, the player). Never frost on frost. */
+  /* blur, saturation, a flat tint and a hairline: nothing else, no gradient,
+     no rim light (DESIGN.md §7; the macOS strength, pending the iPhone: design/layers-mock/) */
+  --frost: color-mix(in srgb, var(--surface) 60%, transparent);
+  --frost-filter: blur(44px) saturate(190%);
+  --frost-edge: inset 0 0 0 .5px var(--edge);
+  /* the phone's floating sidebar: dimmer and feathered, so its four sides match the top one, which
+     iOS's status-bar blur softens anyway (Noah, 2026-10-29) */
+  --frost-edge-soft: inset 0 0 1px .5px rgba(240, 238, 232, .07);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4), 0 2px 8px -2px rgba(0, 0, 0, .45);           /* covers */
+  --shadow-lg: 0 1px 2px rgba(0, 0, 0, .3), 0 24px 60px -24px rgba(0, 0, 0, .7);          /* the composer, drawers */
+  --shadow-float: 0 18px 50px -14px rgba(0, 0, 0, .6);                                    /* popovers, fit sheets, the player */
+
+  /* ---- type ---- */
+  /* Instrument Serif names things at 32px and up; Geist is the display face
+     for tools; Source Serif 4 is what you read; Geist operates. */
+  --display: "Instrument Serif", "Source Serif 4", Georgia, serif;
+  --display-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --serif: "Source Serif 4", "Iowan Old Style", Palatino, Georgia, serif;
+  --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* CFM Prep's issue: Adobe's cut of Source Serif 4, which keeps the small caps and
+     old-style figures Google's drops, and pointed Hebrew (static/cfm/ sets --serif to it) */
+  --serif-cfm: "CFM Serif", "CFM Hebrew", var(--serif);
+
+  /* the whole scale; nothing between these steps */
+  --t-xs: 12px;     /* meta, counts, page numbers */
+  --t-sm: 13px;     /* secondary UI, captions */
+  --t-md: 14px;     /* UI: sidebar, buttons, menus */
+  --t-lg: 15px;     /* fields, snippets */
+  --t-body: 17px;   /* titles in lists, answers, reading UI */
+  --t-xl: 19px;     /* result titles, the Listen view's text */
+  --t-2xl: 22px;    /* section headings (sans 500) */
+  --t-3xl: 28px;    /* sheet titles, the Speed value */
+  --t-4xl: 36px;    /* page titles on phones */
+  --t-5xl: 46px;    /* page titles */
+  /* reading sizes: the six steps of Aa in the Listen view (and the reader's text), saved as an index */
+  --read-0: 16px; --read-1: 17.5px; --read-2: 19px; --read-3: 21px; --read-4: 23.5px; --read-5: 26px;
+  --t-display-sans: clamp(40px, 4.6vw, 64px);  /* the landing headline, in Geist (Noah, 2026-10-28) */
+  /* CFM Prep's masthead, the one loud thing on its page: a book's chapters in huge
+     old-style figures, or a block across books on one smaller line */
+  --t-cfm-chapters: clamp(108px, 34vw, 212px);
+  --t-cfm-block: clamp(46px, 11vw, 76px);
+
+  --lh-tight: 1.04; --lh-snug: 1.3; --lh-ui: 1.5; --lh-read: 1.66;
+  --track-display: -.012em;   /* Instrument Serif is already condensed: barely any */
+  --track-display-sans: -.045em;
+  --track-title: -.02em;
+
+  /* ---- form ---- */
+  --r-xs: 4px;      /* covers and spines: drawn objects */
+  --r-sm: 8px;      /* small rows, chips inside fields */
+  --r-ctl: 10px;    /* buttons, chips, segments and hover plates 28-44px tall: rounded rects, never circles */
+  --r-md: 12px;     /* list rows, menu items */
+  --r-lg: 16px;     /* popovers, cards, result tiles */
+  --r-xl: 24px;     /* the composer, large cards */
+  --r-sheet: 40px;  /* fit sheets: one radius all round, about the phone's own less the 8px inset */
+  --r-pill: 999px;  /* anything you press or type into */
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+  --gutter: 32px;   /* page side padding; 16px on phones */
+  --hit: 44px;      /* the smallest thing a thumb presses */
+  --icon-sm: 16px; --icon-md: 20px; --icon-lg: 24px;
+  /* the geometry of floating cards and their controls (layers-mock): the
+     plate inside a card sits --card-pad from both edges; card radius =
+     plate radius + pad; the bar's centre line = inset + pad + plate / 2 */
+  --plate: 34px;          /* the visible plate of an icon button inside its 44px target */
+  --card-inset: 6px;      /* a floating card from the window's edge */
+  --card-pad: 6px;        /* a plate from its card's edge */
+  --edge-pad: calc(var(--card-inset) + var(--card-pad) - (var(--hit) - var(--plate)) / 2);  /* a 44px target from the window's edge: 7px */
+  --bar-h: calc(2 * (var(--card-inset) + var(--card-pad)) + var(--plate));                  /* 58px */
+  --sidebar-w: 272px;
+  /* where a bar's content may start at the top: the safe area, and in the home-screen app (html.app)
+     12px more, past the soft blur iOS lays under its status bar (measured on iOS 27: it fades out by
+     about 92pt on a 62pt safe area; DESIGN.md §5) */
+  --safe-top: env(safe-area-inset-top);
+  --player-h: calc(2 * var(--card-pad) + var(--hit));   /* the island and the capsule: 56px (DESIGN.md §8) */
+  --hit-skip: 64px; --hit-play: 80px;                   /* Now Playing's transport: thumbs need 56px and more */
+
+  /* ---- CFM Prep's issue (static/cfm/, DESIGN.md Appendix F): its ground, accent and faces live here, so the
+     look changes in one place (Noah chose this one of four on 2026-11-15). ---- */
+  --cf-bg: var(--bg); --cf-card: var(--surface); --cf-accent: var(--rubric); --cf-wash: rgba(228, 106, 80, .14);
+  --cf-display: var(--display-sans); --cf-num-w: 300; --cf-num-track: -.07em;        /* the block's numerals */
+  --cf-head: var(--display-sans); --cf-head-w: 500; --cf-head-track: -.03em; --cf-head-style: normal;   /* names: sections, hooks, questions */
+  --cf-read: var(--serif-cfm); --cf-ui: var(--sans);                                 /* what you read; what you press */
+  --cf-label: var(--mono); --cf-label-track: 0; --cf-label-case: none;               /* small marks: references, minutes, counts */
+  --cf-r: var(--r-lg);                                                               /* a card */
+  --cf-black: #000000;                                                               /* the Atlas's captions stand on true black (Noah, 2026-11-15) */
+
+  /* ---- the Boylan quiz (static/boylan/, DESIGN.md Appendix J): "After Hours", its own inks and faces,
+     like CFM's --cf-*. Rubric means late or wrong here, and gilt means one of Robert's own books. ---- */
+  --bl-umber: #3B342D;       /* the portrait's mid-tone and its checker mat */
+  --bl-gilt-2: #8C7A55;      /* the gilt ramp's shadow */
+  --bl-late: var(--rubric);  /* late, wrong, the clock's last two seconds */
+  --bl-gilt: var(--gilt);    /* Robert's own book: the bonus */
+  --bl-deep: #FF4A3D;        /* the deep cuts (after 20 right): signal red, the room's alarm */
+  --bl-deep-2: #8A2219;      /* its ramp: the mid-tone */
+  --bl-deep-3: #3A0F0B;      /* its ramp: the shadow */
+  --bl-deep-bg: #140807;     /* the room's ground while they last */
+  --bl-px: 2px;              /* one pixel of the room's grid: borders, the dither mat */
+  --bl-step: 2px;            /* one step of a pixel corner (three steps a corner) */
+  --bl-pixel: "Departure Mono", var(--mono);         /* labels, choices, buttons: drawn on an 11px grid */
+  --bl-dot: "Geist Pixel Circle", var(--mono);       /* the score and big numerals */
+  /* Departure Mono is pixel-exact only at whole and half multiples of 11px */
+  --bl-t-s: 11px; --bl-t-m: 16.5px; --bl-t-l: 22px; --bl-t-xl: 33px;
+  --bl-type: "Redaction 20", var(--serif);           /* the question and Robert's lines; it rots to 35, 70, 100 */
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(.2, .7, .2, 1);          /* hovers, lifts, popovers, panels */
+  --ease-sheet: cubic-bezier(.32, .72, 0, 1);   /* sheets and covers: iOS's curve */
+  --d-fast: 120ms;    /* hover fills */
+  --d-pop: 160ms;     /* popovers */
+  --d-panel: 300ms;   /* panels, the sidebar */
+  --d-sheet: 420ms;   /* a sheet or cover rising */
+  --d-sheet-out: 280ms;
+  --d-lap: 900ms;      /* the Librarian's light, once round the composer */
+  --d-field-in: 2400ms;  /* the Field arrives a beat after the page */
+  --d-draw: 700ms;     /* CFM Prep's timeline drawing itself as you reach it */
+  --d-step: 55ms;      /* between one row and the next */
+
+  /* ---- the reader's pages (static/reader/): the scan under its tone, never the interface ---- */
+  --page: #FFFFFF;                       /* Paper: the scan as it is, and the back of a turning leaf */
+  --page-sepia: #F2E5CA;
+  --page-night: #100F0D;
+  --desk-night: #090908;                 /* the desk under Night pages, a step below the canvas */
+  --ink-paper: #1A1A1A; --ink-sepia: #4A3A22; --ink-night: #D9D3C6;   /* the tone swatches' Aa */
+  --page-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 34px -14px rgba(0, 0, 0, .65);
+  --page-shadow-night: 0 0 0 1px rgba(240, 238, 232, .07), 0 12px 34px -14px rgba(0, 0, 0, .9);
+  --find-wash: rgba(26, 173, 255, .24);  /* every match of a find: the accent, faint */
+  --find-here: rgba(26, 173, 255, .5);   /* the match you're on */
+  /* the page turn's shading: the fold, the leaf's back, the shadow it casts */
+  --curl-front: linear-gradient(to right, rgba(0, 0, 0, .26), rgba(0, 0, 0, .08) 40%, rgba(0, 0, 0, 0));
+  --curl-back: linear-gradient(to right, rgba(0, 0, 0, .12), rgba(255, 255, 255, .28) 5%, rgba(255, 255, 255, .06) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .1));
+  --curl-back-night: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(255, 255, 255, .08) 5%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .2));
+  --curl-cast: linear-gradient(to right, rgba(0, 0, 0, .38), rgba(0, 0, 0, .12) 35%, rgba(0, 0, 0, 0));
+
+  /* ---- stacking: the only z-indexes there are ---- */
+  --z-bar: 10;
+  --z-player: 20;
+  --z-panel: 30;
+  --z-scrim: 40;
+  --z-sheet: 50;       /* popovers and sheets */
+  --z-cover: 60;       /* Now Playing, an image, the reader on a phone */
+  --z-over-cover: 70;  /* a fit sheet over a cover (Speed over Now Playing) */
+  --z-chip: 80;
+}
+
+
+@media (max-width: 720px) {
+  :root { --gutter: 16px; }
+}
+html.app { --safe-top: calc(env(safe-area-inset-top) + 12px); }
+
+/* paper: what prints (CFM Prep's issue is printed for class) is ink on white */
+@media print {
+  :root { color-scheme: light; --bg: #FFFFFF; --surface: #F3F1EC; --fill: #F3F1EC; --fill-2: #E9E6DE;
+    --ink: #111111; --ink-2: #333333; --ink-3: #666666; --rule: #DDDAD2; --edge: #CCC8BE; --rubric: #9B2F16; }
+}

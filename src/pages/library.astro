@@ -12,6 +12,9 @@ const pdfs = [
   { title: 'Ricks, Hoskisson, Smith & Gee, Dictionary of Proper Names & Foreign Words in the Book of Mormon (Interpreter Foundation, 2022)', note: 'Full volume. About 290 entries give a Deseret Alphabet spelling with IPA.', file: 'Ricks-Hoskisson-Smith-Gee_Dictionary-of-Proper-Names_2022.pdf', cite: 'https://corpus.restorationcommons.org/b/dictionary-of-proper-names-and-foreign-words-in-1efa/16' },
 ];
 
+// Opens a hosted PDF in the reader (public/pdfjs + public/web/reader, from gsa-dash)
+const read = (p) => `/pdfjs/web/viewer.html?file=${encodeURIComponent('/library/' + p.file)}&title=${encodeURIComponent(p.title)}`;
+
 // General Conference / Journal of Discourses talks (the Pulpit corpus).
 const talks = [
   { who: 'Parley P. Pratt', date: '26 Dec 1853', title: 'Education', note: '"The Regency are getting out a new alphabet…" An early mention, a year before the first characters.', url: 'https://pulpit.restorationcommons.org/talks/1853-12-26-pratt-pp-education/#p5' },
@@ -58,8 +61,8 @@ const freeBooks = [
     <ol class="register">
       {pdfs.map((p) => (
         <li>
-          <a href={`/library/${p.file}`}><span class="reg-title">{p.title}</span></a>
-          <span class="reg-note">{p.note} <a href={p.cite} rel="noopener">View in archive</a></span>
+          <a href={read(p)}><span class="reg-title">{p.title}</span></a>
+          <span class="reg-note">{p.note} <a href={read(p)}>Read</a> · <a href={`/library/${p.file}`} download>Download PDF</a> · <a href={p.cite} rel="noopener">View in archive</a></span>
         </li>
       ))}
     </ol>
