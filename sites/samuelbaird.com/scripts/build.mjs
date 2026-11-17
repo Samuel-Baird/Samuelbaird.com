@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { renderHead, renderTop, renderFoot, PROJECTS as FAMILY } from '../../../packages/family/render.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const R = (...p) => path.join(ROOT, ...p);
@@ -32,7 +33,9 @@ const EXT = {
   lds: { channels: 328, subs: '16.6M', studies: 73, graphics: 58 },
   pulpit: { discourses: 12201, verbatim: 4292, authoritative: 5474, contemporaneous: 2225, reconstructed: 2, fragmentary: 208 },
 };
-const LDS = 'https://latterdaystats.samuelbaird.com';
+// Project URLs come from packages/family/projects.json (one registry for every site).
+const projectUrl = (id) => FAMILY.find((p) => p.id === id).url;
+const LDS = projectUrl('latter-day-stats');
 const PULPIT = 'https://pulpit.restorationcommons.org';
 const DESERET = 'https://deseret.wiki';
 const YT = 'https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1';
@@ -140,19 +143,15 @@ const NAV_ITEMS = [
   ['/#projects', 'Projects'], ['/sacred-sites', 'Sacred Sites'], ['/books', 'Reading'], ['/collection', 'Collection'],
   ['/data', 'Data'], ['/faq', 'FAQ'], ['/about', 'About'],
 ];
-const nav = (p) => {
-  const links = NAV_ITEMS.map(([h, t]) => `<a href="${h}"${h.split('#')[0] === p && !h.includes('#') || (h === '/sacred-sites' && p.startsWith('/sacred-sites')) ? ' aria-current="page"' : ''}>${t}</a>`).join('');
-  return `<div class="netbar"><div class="rail"><span>Also by ${NAME}</span><a href="${LDS}/">Latter-day Stats</a><a href="${PULPIT}/">Pulpit</a><a href="${DESERET}/">Deseret Wiki</a><a href="${YT}" rel="me noopener">YouTube</a><a href="${SUBSTACK}" rel="me noopener">Substack</a></div></div>
-<header class="topbar"><div class="rail">
-  <a class="wordmark" href="/" aria-label="${NAME}, home"><span class="mono" aria-hidden="true">SB</span>${NAME}</a>
-  <nav class="nav" aria-label="Main">${links}<a class="nav-cta" href="/donate"${p === '/donate' ? ' aria-current="page"' : ''}>Donate</a></nav>
-</div></header>`;
-};
+// Shared family chrome (sidebar, top bar, panorama) from packages/family.
+const nav = (p) => renderTop('samuelbaird.com', p);
+// samuelbaird.com links stay root-relative on this site.
+const rel = (u) => (u.startsWith(BASE) ? u.slice(BASE.length) || '/' : u + (/^https?:\/\/[^/]+$/.test(u) ? '/' : ''));
 const foot = () => `<footer class="sitefoot"><div class="rail">
   <div class="cols">
     <div><h2 class="small-caps">Projects</h2><ul>
-      <li><a href="${LDS}/">Latter-day Stats</a></li><li><a href="${PULPIT}/">Pulpit</a> <small>(contributor)</small></li><li><a href="${DESERET}/">Deseret Wiki</a></li>
-      <li><a href="/sacred-sites">Sacred Sites Visited</a></li><li><a href="/books">My Reading</a></li><li><a href="/collection">Collection</a></li></ul></div>
+      ${FAMILY.map((x) => `<li><a href="${rel(x.url)}">${esc(x.name)}</a>${x.role === 'contributor' ? ' <small>(contributor)</small>' : ''}</li>`).join('')}
+      <li><a href="/projects">All projects</a></li></ul></div>
     <div><h2 class="small-caps">Learn</h2><ul>
       <li><a href="/about">About</a></li><li><a href="/faq">FAQ</a></li><li><a href="/data">Open data</a></li>
       <li><a href="/sacred-sites/sites">Sacred sites directory</a></li><li><a href="/llms.txt">llms.txt</a></li></ul></div>
@@ -163,21 +162,27 @@ const foot = () => `<footer class="sitefoot"><div class="rail">
       <li><a href="mailto:${EMAIL}?subject=Samuel%20Baird">${EMAIL}</a></li><li><a href="/donate">Donate</a></li>
       <li><a href="/wishlist">Wishlist</a></li></ul></div>
   </div>
-  <p class="legal">&copy; ${YEAR} ${NAME}. Free, independent and ad-free. Original data on this site is released under <a href="${LICENSE_URL}" rel="license noopener">${LICENSE_NAME}</a>.</p>
-</div></footer>`;
+  <p class="legal">Original data on this site is released under <a href="${LICENSE_URL}" rel="license noopener">${LICENSE_NAME}</a>.</p>
+</div></footer>
+${renderFoot('samuelbaird.com')}`;
 
 /* ---------- structured data ---------- */
 const PERSON = {
   '@type': 'Person', '@id': BASE + '/#person', name: NAME, url: BASE + '/', sameAs: SAMEAS,
-  description: 'Builds public data tools and makes videos about religion, history and ideas. Creator of Latter-day Stats, contributor to Pulpit, and keeper of the Sacred Sites Visited map.',
-  knowsAbout: ['Latter-day Saint history', 'Religious demographics', 'Survey data', 'General Conference', 'Comparative religion', 'Data visualization'],
+  description: 'Builds public data tools and makes videos about religion, history and ideas. Creator of Latter-day Stats, the Deseret Wiki, Urim and MCP servers for Latter-day Saint research (Peepstone, Omni, Deseret MCP); contributor to Pulpit; keeper of the Sacred Sites Visited map.',
+  knowsAbout: ['Latter-day Saint history', 'Religious demographics', 'Survey data', 'General Conference', 'Deseret Alphabet', 'Translation', 'Model Context Protocol', 'Comparative religion', 'Data visualization'],
   email: 'mailto:' + EMAIL,
 };
 const WEBSITE = { '@type': 'WebSite', '@id': BASE + '/#website', url: BASE + '/', name: NAME, description: 'Data tools and videos about religion, history and ideas.', inLanguage: 'en', publisher: { '@id': BASE + '/#person' }, license: LICENSE_URL };
-const PROJECTS = [
-  { '@type': 'WebSite', '@id': LDS + '/#website', name: 'Latter-day Stats', url: LDS + '/', description: 'A public, independent hub for statistics, research and creator data on the Latter-day Saint community.', creator: { '@id': BASE + '/#person' } },
-  { '@type': 'WebSite', '@id': PULPIT + '/#website', name: 'Pulpit', url: PULPIT + '/', description: 'Every General Conference discourse since 1830, each traced to its best surviving witness and graded for fidelity. A Restoration Commons project.', contributor: { '@id': BASE + '/#person' } },
-];
+// One schema.org node per external project (on-site pages get their own CollectionPage nodes).
+const projectNodeId = (x) => (x.kind === 'page' ? x.url + '#page' : x.url + '/#' + (x.schemaType === 'SoftwareApplication' ? 'app' : 'website'));
+const projectNode = (x) => ({
+  '@type': x.schemaType, '@id': projectNodeId(x), name: x.name, url: x.url + '/', description: x.description,
+  ...(x.schemaType === 'SoftwareApplication' ? { applicationCategory: 'DeveloperApplication', operatingSystem: 'Any (Model Context Protocol client)', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } } : { inLanguage: 'en' }),
+  [x.role === 'contributor' ? 'contributor' : 'creator']: { '@id': BASE + '/#person' },
+  keywords: x.topics.join(', '), subjectOf: { '@type': 'AboutPage', '@id': BASE + '/projects/' + x.id + '#page', url: BASE + '/projects/' + x.id, name: `About ${x.name}` },
+});
+const PROJECTS = FAMILY.filter((x) => x.kind !== 'page').map(projectNode);
 const pageId = (path) => BASE + (path === '/' ? '/' : path) + '#page';
 const crumbs = (items) => {
   const last = items[items.length - 1][1];
@@ -262,7 +267,8 @@ const DATASETS = {
 const recent3 = BOOKS.slice(0, 3).map((b) => b.title);
 const ldsTempleNames = SITES.filter((s) => s.denom === 'LDS' && /temple/i.test(s.name)).map((s) => s.name).sort();
 const FAQ = [
-  ['Who is Samuel Baird?', `Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created <a href="${LDS}/">Latter-day Stats</a>, a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to <a href="${PULPIT}/">Pulpit</a>, a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel <a href="${YT}" rel="me noopener">@ithinkthereforeisam</a>. Everything is free, independent and ad-free. See <a href="/about">About</a>.`],
+  ['Who is Samuel Baird?', `Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created <a href="${rel(LDS)}">Latter-day Stats</a>, a public hub for statistics, research and creator data on the Latter-day Saint community; the <a href="${DESERET}/">Deseret Wiki</a>, a library and primer of the 1854 Deseret Alphabet; <a href="${rel(projectUrl('urim'))}">Urim</a>, an atlas of how the Church translates its own vocabulary; and AI tools for Latter-day Saint research (<a href="/projects/peepstone">Peepstone</a>, <a href="/projects/omni">Omni</a> and <a href="/projects/deseret-mcp">Deseret MCP</a>). He contributed to <a href="${PULPIT}/">Pulpit</a>, a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel <a href="${YT}" rel="me noopener">@ithinkthereforeisam</a>. Everything is free, independent and ad-free. See <a href="/about">About</a>.`],
+  ['What projects has Samuel Baird made?', `${FAMILY.filter((x) => x.role === 'creator').length} public projects, all free: ${FAMILY.filter((x) => x.role === 'creator').map((x) => `<a href="${rel(x.url)}">${esc(x.name)}</a> (${esc(x.tagline.replace(/\.$/, '').replace(/^./, (c) => c.toLowerCase()))})`).join('; ')}. He also contributed to <a href="${PULPIT}/">Pulpit</a>. Every project has a page under <a href="/projects">Projects</a>.`],
   ['What is Latter-day Stats?', `Latter-day Stats is a public, independent hub for statistics, research and creator data on the Latter-day Saint community. As of ${EXT.asOf} it tracks ${EXT.lds.channels} LDS YouTube channels with ${EXT.lds.subs} combined subscribers, ${EXT.lds.studies} academic studies and ${EXT.lds.graphics} survey-data graphics (Pew and other surveys). Its Data Explorer lets you chart public survey datasets, Studies is a curated research library, and Channels is a directory of LDS YouTube creators. It lives at <a href="${LDS}/">latterdaystats.samuelbaird.com</a>.`],
   ['How many LDS YouTube channels are there?', `There is no official count. The most complete public list is the directory at <a href="${LDS}/channels">Latter-day Stats Channels</a>, which tracked ${EXT.lds.channels} LDS-related YouTube channels with ${EXT.lds.subs} combined subscribers as of ${EXT.asOf}. The directory is refreshed regularly, so check it for the current figure.`],
   ['What is Pulpit?', `Pulpit is a critical digital edition of every General Conference discourse since 1830: ${EXT.pulpit.discourses.toLocaleString('en-US')} discourses as of ${EXT.asOf}, each traced to its best surviving witness and graded for fidelity (${EXT.pulpit.verbatim.toLocaleString('en-US')} verbatim, ${EXT.pulpit.authoritative.toLocaleString('en-US')} authoritative print, ${EXT.pulpit.contemporaneous.toLocaleString('en-US')} contemporaneous report, ${EXT.pulpit.reconstructed} reconstructed, ${EXT.pulpit.fragmentary} fragmentary). It is a Restoration Commons project that Samuel Baird contributed to: <a href="${PULPIT}/">pulpit.restorationcommons.org</a>.`],
@@ -327,12 +333,9 @@ ${ANALYTICS}${ld}`;
 }
 
 const PAGES = {
-  '/': { file: 'index.html', title: `${NAME}: Data Tools and Videos on Religion, History and Ideas`, desc: `${NAME} builds Latter-day Stats (${EXT.lds.channels} LDS YouTube channels, ${EXT.lds.studies} studies), contributed to Pulpit (every General Conference talk since 1830), and maps ${F.sites} sacred sites he has visited. See the projects.`,
+  '/': { file: 'index.html', title: `${NAME}: Data Tools and Videos on Religion, History and Ideas`, desc: `${NAME} builds Latter-day Stats (${EXT.lds.channels} LDS YouTube channels, ${EXT.lds.studies} studies), the Deseret Wiki, the Urim translation atlas and AI tools for Latter-day Saint research, and maps ${F.sites} sacred sites he has visited.`,
     ld: (p) => [webPage(p, 'WebPage', { '@id': BASE + '/#webpage', about: PERSON_REF, mainEntity: { '@id': BASE + '/#projects' } }), ...PROJECTS,
-      { '@type': 'ItemList', '@id': BASE + '/#projects', name: 'Projects', numberOfItems: 5, itemListElement: [
-        { '@type': 'ListItem', position: 1, item: { '@id': LDS + '/#website' } }, { '@type': 'ListItem', position: 2, item: { '@id': PULPIT + '/#website' } },
-        { '@type': 'ListItem', position: 3, item: { '@id': pageId('/sacred-sites') } }, { '@type': 'ListItem', position: 4, item: { '@id': pageId('/books') } },
-        { '@type': 'ListItem', position: 5, item: { '@id': pageId('/collection') } }] },
+      { '@type': 'ItemList', '@id': BASE + '/#projects', name: 'Projects', numberOfItems: FAMILY.length, itemListElement: FAMILY.map((x, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@id': projectNodeId(x) } })) },
       webPage({ path: '/sacred-sites', title: 'Sacred Sites Visited', desc: `Map, photos and statistics of the churches, temples and houses of worship ${NAME} has visited since January 2025.`, image: '/img/sacred-sites-map.webp' }, 'CollectionPage', { breadcrumb: undefined }),
       webPage({ path: '/books', title: 'My Reading', desc: `Books and articles ${NAME} has read, with the date he finished each one.` }, 'CollectionPage', { breadcrumb: undefined }),
       webPage({ path: '/collection', title: 'Collection', desc: `Historical Latter-day Saint books, periodicals and artifacts owned by ${NAME}.` }, 'CollectionPage', { breadcrumb: undefined })] },
@@ -369,16 +372,16 @@ const sitesList = () => ({ '@type': 'ItemList', '@id': BASE + '/sacred-sites/sit
 const seoFor = (path) => { const p = { path, ...PAGES[path] }; if (typeof p.ld === 'function') p.ld = p.ld(p); p.ld = (p.ld || []).filter(Boolean); return seo(p); };
 
 /* ---------- page shell for generated pages ---------- */
+const FAVICON = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='4' fill='%2316161A'/%3E%3Crect x='5' y='5' width='90' height='90' rx='2' fill='none' stroke='%23BF9A55' stroke-width='3'/%3E%3Ctext x='50' y='67' font-size='46' text-anchor='middle' fill='%23E8DCC0' font-family='Georgia,serif'%3ESB%3C/text%3E%3C/svg%3E">`;
+// Shared head links, also stamped into hand-written pages between <!--famhead--> markers.
+const FAMHEAD = `${renderHead()}\n${FAVICON}`;
 const HEAD_COMMON = `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0f1115">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='46' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3ESB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#16161A">
 <link rel="stylesheet" href="/tokens.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/bg/bg.css">
+<!--famhead-->${FAMHEAD}<!--/famhead-->
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>`;
 const shell = (path, body, extraHead = '') => `<!doctype html>
 <html lang="en">
@@ -405,22 +408,68 @@ const pagehead = (crumb, eyebrow, h1, lede) => `<div class="pagehead">
   ${lede ? `<p class="lede">${lede}</p>` : ''}
 </div>`;
 
+
+/* ---------- projects: one page per project, from packages/family/projects.json ---------- */
+const KIND = { site: 'Website', tool: 'AI tool (MCP server)', page: 'On this site' };
+const hostOf = (u) => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
+const related = (x) => FAMILY.filter((y) => y.id !== x.id && y.kind !== 'page' && y.topics.some((t) => x.topics.includes(t)));
+const projectFaq = (x) => [
+  [`What is ${x.name}?`, x.description],
+  [`Who made ${x.name}?`, x.role === 'contributor' ? `${x.name} is a Restoration Commons project. ${NAME} is a contributor; see <a href="/about">About</a>.` : `${NAME} built and maintains ${x.name}. It is independent and not affiliated with The Church of Jesus Christ of Latter-day Saints. See <a href="/about">About ${NAME}</a>.`],
+  [`Is ${x.name} free?`, `Yes. ${x.name} is free to use, ad-free and needs no account${x.id === 'latter-day-stats' ? ' for browsing' : ''}.`],
+  [`Where is ${x.name}?`, `At <a href="${rel(x.url)}">${hostOf(x.url)}</a>.${x.formerUrl ? ` It used to live at ${hostOf(x.formerUrl)}, which now redirects there.` : ''}`],
+  ...(x.kind === 'tool' ? [[`How do I use ${x.name} with Claude or another AI assistant?`, `Add it as a custom connector using its MCP endpoint (${esc(x.facts.find((f) => f.startsWith('MCP endpoint') || f.startsWith('One endpoint'))?.replace(/^[^:]+:\s*/, '') || x.url)}). In Claude: Settings, Connectors, Add custom connector.`]] : []),
+];
+const projectPage = (x) => {
+  const path = '/projects/' + x.id;
+  const visit = rel(x.url);
+  const rels = related(x);
+  return shell(path, `${pagehead([['Home', '/'], ['Projects', '/projects'], [x.name, path]], `${KIND[x.kind]}${x.role === 'contributor' ? ' &middot; Contributor' : ''}`, esc(x.name), esc(x.tagline))}
+<div class="prose project">
+  <p class="visit"><a class="btn" href="${visit}">Visit ${esc(hostOf(x.url))} &rarr;</a></p>
+  <h2 id="what">What is ${esc(x.name)}?</h2>
+  <p>${esc(x.description)}</p>
+  ${x.facts.length ? `<h2 id="facts">At a glance</h2>\n  <ul>${x.facts.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
+  ${x.links.length ? `<h2 id="start">Start here</h2>\n  <ul>${x.links.map(([t, u]) => `<li><a href="${rel(x.url) + (u === '/' ? '' : u)}">${esc(t)}</a></li>`).join('')}</ul>` : ''}
+  <h2 id="topics">Topics</h2>
+  <p class="topics">${x.topics.map((t) => `<span class="smallcaps">${esc(t)}</span>`).join(' ')}</p>
+  ${rels.length ? `<h2 id="related">Related projects</h2>\n  <ol class="register">${rels.map((y) => `<li><a class="reg-title" href="/projects/${y.id}">${esc(y.name)}</a><p class="reg-note">${esc(y.tagline)}</p></li>`).join('')}</ol>` : ''}
+  <h2 id="questions">Questions</h2>
+  <dl class="qa">${projectFaq(x).map(([q, a]) => `<dt>${esc(q)}</dt><dd>${/</.test(a) ? a : esc(a)}</dd>`).join('')}</dl>
+  <p class="small">Part of <a href="/projects">${NAME}&rsquo;s projects</a>. Figures dated ${EXT.asOf}.</p>
+</div>`);
+};
+function projectsIndex() {
+  return shell('/projects', `${pagehead([['Home', '/'], ['Projects', '/projects']], 'Projects', 'Projects', `Everything ${NAME} has built or contributed to: websites, open data and AI tools for research on religion and Latter-day Saint history. All free and independent.`)}
+<div class="prose">
+  ${['site', 'tool', 'page'].map((k) => `<h2>${{ site: 'Websites', tool: 'AI tools', page: 'On this site' }[k]}</h2>
+  <ol class="register">${FAMILY.filter((x) => x.kind === k).map((x) => `<li id="${x.id}"><a class="reg-title" href="${x.kind === 'page' ? rel(x.url) : '/projects/' + x.id}">${esc(x.name)}</a><p class="reg-note">${esc(x.tagline)}${x.role === 'contributor' ? ' (contributor)' : ''}</p><p class="reg-note"><a href="${rel(x.url)}">${esc(hostOf(x.url))}</a></p></li>`).join('')}</ol>`).join('\n  ')}
+</div>`);
+}
+for (const x of FAMILY.filter((y) => y.kind !== 'page')) {
+  PAGES['/projects/' + x.id] = { title: `${x.name}: ${x.tagline.replace(/\.$/, '')} · ${NAME}`, desc: x.description.split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.'),
+    ld: (p) => [webPage(p, 'AboutPage', { about: { '@id': projectNodeId(x) }, mainEntity: { '@id': projectNodeId(x) } }), projectNode(x),
+      { '@type': 'FAQPage', '@id': BASE + p.path + '#faq', isPartOf: { '@id': BASE + p.path + '#page' }, mainEntity: projectFaq(x).map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } })) },
+      crumbs([['Home', '/'], ['Projects', '/projects'], [x.name, p.path]])] };
+}
+PAGES['/projects'] = { title: `Projects by ${NAME}: Latter-day Stats, Deseret Wiki, Urim and More`, desc: `All ${FAMILY.length} projects by ${NAME}: ${FAMILY.map((x) => x.name).join(', ')}. Websites, open data and AI tools for research on religion and Latter-day Saint history.`,
+  ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/#projects' } }), ...PROJECTS,
+    ...FAMILY.filter((x) => x.kind === 'page').map((x) => webPage({ path: x.url.slice(BASE.length), title: x.name, desc: x.description }, 'CollectionPage', { breadcrumb: undefined })),
+    { '@type': 'ItemList', '@id': BASE + '/#projects', name: 'Projects', numberOfItems: FAMILY.length, itemListElement: FAMILY.map((x, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@id': projectNodeId(x) } })) },
+    crumbs([['Home', '/'], ['Projects', '/projects']])] };
+const projectRegister = () => `<ol class="register project-index">${FAMILY.map((x) => `<li><a class="reg-title" href="${x.kind === 'page' ? rel(x.url) : '/projects/' + x.id}">${esc(x.name)}</a><p class="reg-note">${esc(x.tagline)}${x.role === 'contributor' ? ' (contributor)' : ''}</p><p class="reg-note"><a href="${rel(x.url)}">${esc(hostOf(x.url))}</a></p></li>`).join('')}</ol>`;
+
 /* ---------- generated pages ---------- */
 function aboutPage() {
   return shell('/about', `${pagehead([['Home', '/'], ['About', '/about']], 'About', `About ${NAME}`, `I build public data tools and make videos about what people believe and why. Everything here is free, independent and ad-free.`)}
 <div class="prose">
   <h2>What I make</h2>
   <ul class="plain">
-    <li><a href="${LDS}/"><b>Latter-day Stats</b></a>: a public hub for statistics, research and creator data on the Latter-day Saint community. As of ${EXT.asOf} it tracks ${EXT.lds.channels} YouTube channels (${EXT.lds.subs} combined subscribers), ${EXT.lds.studies} studies and ${EXT.lds.graphics} survey graphics.</li>
-    <li><a href="${PULPIT}/"><b>Pulpit</b></a>: a Restoration Commons critical edition of all ${EXT.pulpit.discourses.toLocaleString('en-US')} General Conference discourses since 1830, each traced to its best surviving witness. I contributed to it.</li>
-    <li><a href="${DESERET}/"><b>Deseret Wiki</b></a>: a wiki, document library and learning toolkit for the Deseret Alphabet (work in progress).</li>
-    <li><a href="/sacred-sites"><b>Sacred Sites Visited</b></a>: a map, photo gallery and statistics of the ${F.sites} places of worship I have visited in person since January 2025, across ${F.traditions} traditions.</li>
-    <li><a href="/books"><b>My Reading</b></a>: ${plural(F.books, 'book')} and ${plural(F.articles, 'article')} with the date I finished each.</li>
-    <li><a href="/collection"><b>Collection</b></a>: historic Latter-day Saint books, periodicals and artifacts I own.</li>
+    ${FAMILY.map((x) => `<li><a href="${rel(x.url)}"><b>${esc(x.name)}</b></a>: ${esc(x.tagline)}${x.role === 'contributor' ? ' I contributed to it.' : ''} <a href="/projects/${x.id}">More</a>.</li>`).join('\n    ')}
     <li><a href="${YT}" rel="me noopener"><b>YouTube</b></a> and <a href="${SUBSTACK}" rel="me noopener"><b>Substack</b></a>: videos and written pieces on history, belief and data.</li>
   </ul>
   <h2>How the projects fit together</h2>
-  <p>Latter-day Stats answers questions about the Latter-day Saint community with numbers. Pulpit answers questions about what was actually said from the General Conference pulpit. Sacred Sites Visited is first-hand fieldwork across many traditions, and My Reading and the Collection list the printed sources I read and own. Each site links to the others, and the datasets are published openly on <a href="/data">Open data</a>.</p>
+  <p>Latter-day Stats answers questions about the Latter-day Saint community with numbers. Pulpit answers questions about what was actually said from the General Conference pulpit. Urim shows how those words are translated, and the Deseret Wiki preserves the alphabet the early Church designed to write them. Peepstone, Omni and Deseret MCP let AI assistants search all of it with citations. Sacred Sites Visited is first-hand fieldwork across many traditions, and My Reading and the Collection list the printed sources I read and own. Every project lives at samuelbaird.com or links back to it, shares one design and one menu, and the datasets are published openly on <a href="/data">Open data</a>.</p>
   <h2 id="cite">How to cite</h2>
   <p>Baird, Samuel. &ldquo;Sacred Sites Visited.&rdquo; samuelbaird.com, ${F.firstVisit.slice(0, 4)}&ndash;${F.lastVisit.slice(0, 4)}. <code>${BASE}/data</code><br>For Latter-day Stats, cite the individual study, dataset or graphic page and its stated source. Original data is released under <a href="${LICENSE_URL}" rel="license noopener">${LICENSE_NAME}</a>.</p>
   <h2 id="contact">Contact</h2>
@@ -527,6 +576,7 @@ const patch = (file, path, extra = {}) => {
   h = region(h, 'seo', seoFor(path));
   h = region(h, 'nav', nav(path));
   h = region(h, 'foot', foot());
+  h = region(h, 'famhead', FAMHEAD);
   for (const [tag, content] of Object.entries(extra)) h = region(h, tag, content);
   // numbers that must match the data: <b data-b="sites">34</b>
   h = h.replace(/(<([a-z0-9]+)[^>]*\sdata-b="(\w+)"[^>]*>)[^<]*(<\/\2>)/g, (m, open, t, key, close) => (key in FACT ? open + FACT[key] + close : m));
@@ -552,12 +602,14 @@ write('faq/index.html', faqPage());
 write('data/index.html', dataPage());
 write('sacred-sites/sites/index.html', sitesPage());
 write('wishlist/index.html', wishlistPage());
+write('projects/index.html', projectsIndex());
+for (const x of FAMILY.filter((y) => y.kind !== 'page')) write(`projects/${x.id}/index.html`, projectPage(x));
 write('data/sacred-sites.csv', toCsv(SITE_ROWS));
 write('data/sacred-sites.json', JSON.stringify({ name: DATASETS.sites.name, license: LICENSE_URL, source: BASE + '/data', generated: TODAY, records: SITE_ROWS }, null, 2) + '\n');
 write('data/reading-list.csv', toCsv(BOOK_ROWS));
 write('data/reading-list.json', JSON.stringify({ name: DATASETS.reading.name, license: LICENSE_URL, source: BASE + '/data', generated: TODAY, records: BOOK_ROWS }, null, 2) + '\n');
 
-patch('index.html', '/', { covers: coverWall, 'collection-items': collectionChips });
+patch('index.html', '/', { covers: coverWall, 'collection-items': collectionChips, 'project-index': projectRegister() });
 patch('books/index.html', '/books', { books: BOOKS.map(bookLi).join('\n') });
 patch('collection/index.html', '/collection');
 patch('donate/index.html', '/donate');
@@ -576,7 +628,7 @@ Sitemap: ${BASE}/sitemap.xml
 `);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}
@@ -591,16 +643,10 @@ write('llms.txt', `# ${NAME}
 Figures for external sites are dated ${EXT.asOf}.
 
 ## Projects
-- [Latter-day Stats](${LDS}/): ${EXT.lds.channels} LDS YouTube channels (${EXT.lds.subs} combined subscribers), ${EXT.lds.studies} studies, ${EXT.lds.graphics} survey graphics.
-  - [Data Explorer](${LDS}/data-explorer): public survey datasets (Pew, CCES and others) with charts.
-  - [Studies](${LDS}/studies): curated academic research library.
-  - [Channels](${LDS}/channels): directory of LDS YouTube creators.
-- [Pulpit](${PULPIT}/): ${EXT.pulpit.discourses.toLocaleString('en-US')} General Conference discourses since 1830, each traced to its best surviving witness and graded for fidelity. A Restoration Commons project Samuel Baird contributed to.
-- [Sacred Sites Visited](${BASE}/sacred-sites): interactive map of ${F.sites} churches, temples and houses of worship visited since January 2025.
-  - [Directory of every site](${BASE}/sacred-sites/sites): grouped by tradition, with dates and map links.
-  - [Photos](${BASE}/sacred-sites/photos) and [Traditions](${BASE}/sacred-sites/traditions).
-- [My Reading](${BASE}/books): ${F.books} books and ${F.articles} articles with the date finished.
-- [Collection](${BASE}/collection): historic Latter-day Saint books, periodicals and artifacts.
+All projects: [${BASE}/projects](${BASE}/projects). Every project except the Deseret Wiki lives at ${BASE}/<project>.
+
+${FAMILY.map((x) => `- [${x.name}](${x.url}${x.kind === 'page' ? '' : '/'}): ${x.tagline}${x.role === 'contributor' ? ' Samuel Baird is a contributor.' : ''}${x.kind === 'page' ? '' : ` [About](${BASE}/projects/${x.id})`}${x.facts.length ? '\n' + x.facts.map((f) => `  - ${f}`).join('\n') : ''}${x.links.length ? '\n' + x.links.map(([t, u]) => `  - [${t}](${x.url}${u === '/' ? '/' : u})`).join('\n') : ''}`).join('\n')}
+  - Sacred sites: [directory of every site](${BASE}/sacred-sites/sites), [photos](${BASE}/sacred-sites/photos) and [traditions](${BASE}/sacred-sites/traditions).
 - [Wishlist](${BASE}/wishlist): books and equipment he would like for the YouTube channel, most wanted first.
 
 ## Answers and data
@@ -625,6 +671,10 @@ const md = (h) => stripTags(h.replace(/<a [^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/g,
 write('llms-full.txt', `# ${NAME}: full text
 
 > Plain-text copy of the key pages of ${BASE}. Updated ${TODAY}. Original data licensed ${LICENSE_NAME}.
+
+## Projects
+
+${FAMILY.map((x) => `### ${x.name}\n\n${x.url}${x.kind === 'page' ? '' : '/'}${x.role === 'contributor' ? ' (Samuel Baird is a contributor)' : ''}\n\n${x.description}${x.facts.length ? '\n\n' + x.facts.map((f) => `- ${f}`).join('\n') : ''}\n\nTopics: ${x.topics.join(', ')}.`).join('\n\n')}
 
 ## FAQ
 

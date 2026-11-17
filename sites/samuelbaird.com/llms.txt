@@ -5,16 +5,59 @@
 Figures for external sites are dated November 2026.
 
 ## Projects
-- [Latter-day Stats](https://latterdaystats.samuelbaird.com/): 328 LDS YouTube channels (16.6M combined subscribers), 73 studies, 58 survey graphics.
-  - [Data Explorer](https://latterdaystats.samuelbaird.com/data-explorer): public survey datasets (Pew, CCES and others) with charts.
-  - [Studies](https://latterdaystats.samuelbaird.com/studies): curated academic research library.
-  - [Channels](https://latterdaystats.samuelbaird.com/channels): directory of LDS YouTube creators.
-- [Pulpit](https://pulpit.restorationcommons.org/): 12,201 General Conference discourses since 1830, each traced to its best surviving witness and graded for fidelity. A Restoration Commons project Samuel Baird contributed to.
-- [Sacred Sites Visited](https://samuelbaird.com/sacred-sites): interactive map of 35 churches, temples and houses of worship visited since January 2025.
-  - [Directory of every site](https://samuelbaird.com/sacred-sites/sites): grouped by tradition, with dates and map links.
-  - [Photos](https://samuelbaird.com/sacred-sites/photos) and [Traditions](https://samuelbaird.com/sacred-sites/traditions).
-- [My Reading](https://samuelbaird.com/books): 38 books and 13 articles with the date finished.
-- [Collection](https://samuelbaird.com/collection): historic Latter-day Saint books, periodicals and artifacts.
+All projects: [https://samuelbaird.com/projects](https://samuelbaird.com/projects). Every project except the Deseret Wiki lives at https://samuelbaird.com/<project>.
+
+- [Latter-day Stats](https://samuelbaird.com/latter-day-stats/): Statistics, research and creator data on the Latter-day Saint community. [About](https://samuelbaird.com/projects/latter-day-stats)
+  - Tracks 328 LDS YouTube channels with 16.6M combined subscribers
+  - Curates 73 academic studies and 58 survey graphics
+  - Data Explorer for Pew, CCES and other public survey data
+  - MCP endpoint: https://samuelbaird.com/latter-day-stats/api/mcp
+  - [Data Explorer](https://samuelbaird.com/latter-day-stats/data-explorer)
+  - [Studies](https://samuelbaird.com/latter-day-stats/studies)
+  - [Channels](https://samuelbaird.com/latter-day-stats/channels)
+  - [Use with AI](https://samuelbaird.com/latter-day-stats/connect)
+- [Deseret Wiki](https://deseret.wiki/): A library, encyclopaedia and primer of the Deseret Alphabet. [About](https://samuelbaird.com/projects/deseret-wiki)
+  - Scans of the Deseret readers, the 1869 Book of Mormon and the Deseret News
+  - Articles on the alphabet's people, letters, works and variants
+  - Every known Deseret font with specimens and licenses
+  - Read any page in the Deseret alphabet with one toggle
+  - [The Alphabet](https://deseret.wiki/wiki/deseret-alphabet/)
+  - [Library](https://deseret.wiki/library/)
+  - [Fonts](https://deseret.wiki/fonts/)
+  - [Quotes](https://deseret.wiki/quotes/)
+- [Urim](https://samuelbaird.com/urim/): The Mormon Translation Atlas: how the Church translates its own vocabulary. [About](https://samuelbaird.com/projects/urim)
+  - 367 concepts with evidence
+  - 125,650 aligned General Conference paragraphs
+  - 41,994 aligned scripture verses
+  - English, Portuguese (Brazil) and Spanish
+  - [Atlas](https://samuelbaird.com/urim/)
+  - [Variants](https://samuelbaird.com/urim/variants)
+  - [Proclamations](https://samuelbaird.com/urim/proclamations)
+  - [Use with AI](https://samuelbaird.com/urim/connect)
+- [Pulpit](https://pulpit.restorationcommons.org/): Every General Conference discourse since 1830, graded for fidelity. Samuel Baird is a contributor. [About](https://samuelbaird.com/projects/pulpit)
+  - 12,201 discourses since 1830
+  - 4,292 graded verbatim
+  - Each talk traced to its best surviving witness
+- [Deseret MCP](https://mcp.deseret.wiki/): Deseret Alphabet transliteration and Deseret Wiki search for AI assistants. [About](https://samuelbaird.com/projects/deseret-mcp)
+  - MCP endpoint: https://mcp.deseret.wiki/api/mcp
+  - English to Deseret and back, phonetically
+  - Searches every Deseret Wiki article
+  - [Connect](https://mcp.deseret.wiki/connect)
+  - [About](https://mcp.deseret.wiki/about)
+- [Peepstone](https://samuelbaird.com/peepstone/): Search and read the Joseph Smith Papers from any AI assistant. [About](https://samuelbaird.com/projects/peepstone)
+  - MCP endpoint: https://samuelbaird.com/peepstone/mcp
+  - Full-site search with people, place and subject facets
+  - Reads any document page with footnotes and citation
+  - People, places, glossary, events and the Calendar of Documents
+  - Not affiliated with the Joseph Smith Papers Project
+- [Omni](https://samuelbaird.com/omni/): One MCP connector for every Latter-day Saint research server. [About](https://samuelbaird.com/projects/omni)
+  - One endpoint: https://samuelbaird.com/omni/api/mcp
+  - Each server's tools are prefixed by source
+  - A down server is skipped without breaking the rest
+- [Sacred Sites Visited](https://samuelbaird.com/sacred-sites): A map of every church, temple and house of worship visited since 2025.
+- [My Reading](https://samuelbaird.com/books): Every book and article read, with the date finished.
+- [Collection](https://samuelbaird.com/collection): Historic Latter-day Saint books, periodicals and artifacts.
+  - Sacred sites: [directory of every site](https://samuelbaird.com/sacred-sites/sites), [photos](https://samuelbaird.com/sacred-sites/photos) and [traditions](https://samuelbaird.com/sacred-sites/traditions).
 - [Wishlist](https://samuelbaird.com/wishlist): books and equipment he would like for the YouTube channel, most wanted first.
 
 ## Answers and data

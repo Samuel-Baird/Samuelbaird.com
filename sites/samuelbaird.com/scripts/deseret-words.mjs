@@ -28,6 +28,9 @@ const OVERRIDES = {
   not: 'N O1 T',
   periodicals: 'P IH2 R IY0 O1 D IH0 K AH0 L Z',
   projects: 'P R O1 JH EH0 K T S',
+  urim: 'Y UH1 R IH0 M', // as in Urim and Thummim
+  peepstone: 'P IY1 P S T OW2 N',
+  mcp: 'EH1 M S IY1 P IY1', // spelled out
 };
 
 const toDeseret = (phones) => phones.split(/\s+/).map((p) => {

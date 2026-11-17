@@ -1,0 +1,321 @@
+{
+  "$comment": "Single source of truth for every public Samuel Baird project. Drives the shared sidebar on every site and the project pages, JSON-LD, sitemap and llms.txt on samuelbaird.com. Never add private work here (school, collector-items, content-creation) and never link the Gospel Scholar Archive. After editing, run: node scripts/family-sync.mjs URL rule: every project except the Deseret Wiki family (deseret.wiki, mcp.deseret.wiki) lives at https://samuelbaird.com/<id>, served by its own Vercel project through rewrites in sites/samuelbaird.com/vercel.json; formerUrl hosts 301 there.",
+  "owner": {
+    "name": "Samuel Baird",
+    "url": "https://samuelbaird.com",
+    "projectsUrl": "https://samuelbaird.com/projects"
+  },
+  "projects": [
+    {
+      "id": "latter-day-stats",
+      "name": "Latter-day Stats",
+      "url": "https://samuelbaird.com/latter-day-stats",
+      "role": "creator",
+      "kind": "site",
+      "color": "#7E9BBB",
+      "icon": "i-books",
+      "dir": "sites/latter-day-stats",
+      "tagline": "Statistics, research and creator data on the Latter-day Saint community.",
+      "description": "A public, independent hub for statistics, research and creator data on the Latter-day Saint community. It tracks the LDS YouTube creator ecosystem, curates a library of academic studies, and lets anyone chart public survey datasets (Pew, CCES and others) in a Data Explorer. It also offers an MCP server so AI assistants can query the same data.",
+      "facts": [
+        "Tracks 328 LDS YouTube channels with 16.6M combined subscribers",
+        "Curates 73 academic studies and 58 survey graphics",
+        "Data Explorer for Pew, CCES and other public survey data",
+        "MCP endpoint: https://samuelbaird.com/latter-day-stats/api/mcp"
+      ],
+      "links": [
+        [
+          "Data Explorer",
+          "/data-explorer"
+        ],
+        [
+          "Studies",
+          "/studies"
+        ],
+        [
+          "Channels",
+          "/channels"
+        ],
+        [
+          "Use with AI",
+          "/connect"
+        ]
+      ],
+      "topics": [
+        "Latter-day Saints",
+        "Religious demographics",
+        "Survey data",
+        "YouTube creators",
+        "Data visualization"
+      ],
+      "schemaType": "WebSite",
+      "since": "2026",
+      "formerUrl": "https://latterdaystats.samuelbaird.com",
+      "basePath": "/latter-day-stats"
+    },
+    {
+      "id": "deseret-wiki",
+      "name": "Deseret Wiki",
+      "url": "https://deseret.wiki",
+      "role": "creator",
+      "kind": "site",
+      "color": "#C9A45C",
+      "icon": "i-primer",
+      "dir": "sites/deseret-wiki",
+      "tagline": "A library, encyclopaedia and primer of the Deseret Alphabet.",
+      "description": "A wiki, document library and learning toolkit for the Deseret Alphabet, the 1854 phonetic script of the University of Deseret. It collects scans of the primary sources (the First and Second Readers, the 1869 Book of Mormon, the Deseret News), linked articles on the alphabet's history and people, every known Deseret font, and tools for reading and typing the script.",
+      "facts": [
+        "Scans of the Deseret readers, the 1869 Book of Mormon and the Deseret News",
+        "Articles on the alphabet's people, letters, works and variants",
+        "Every known Deseret font with specimens and licenses",
+        "Read any page in the Deseret alphabet with one toggle"
+      ],
+      "links": [
+        [
+          "The Alphabet",
+          "/wiki/deseret-alphabet/"
+        ],
+        [
+          "Library",
+          "/library/"
+        ],
+        [
+          "Fonts",
+          "/fonts/"
+        ],
+        [
+          "Quotes",
+          "/quotes/"
+        ]
+      ],
+      "topics": [
+        "Deseret Alphabet",
+        "Latter-day Saint history",
+        "Phonetic writing",
+        "Typography",
+        "Pioneer Utah"
+      ],
+      "schemaType": "WebSite",
+      "since": "2026"
+    },
+    {
+      "id": "urim",
+      "name": "Urim",
+      "url": "https://samuelbaird.com/urim",
+      "role": "creator",
+      "kind": "site",
+      "color": "#8DA27A",
+      "icon": "i-eye",
+      "dir": "sites/urim",
+      "tagline": "The Mormon Translation Atlas: how the Church translates its own vocabulary.",
+      "description": "A searchable multilingual dictionary of Latter-day Saint theological vocabulary. For each Restoration term it shows how the Church's own published translations render it in English, Portuguese and Spanish, with counts, dates and links to the source. Only Church-translated material is used as evidence; AI translations are never shown.",
+      "facts": [
+        "367 concepts with evidence",
+        "125,650 aligned General Conference paragraphs",
+        "41,994 aligned scripture verses",
+        "English, Portuguese (Brazil) and Spanish"
+      ],
+      "links": [
+        [
+          "Atlas",
+          "/"
+        ],
+        [
+          "Variants",
+          "/variants"
+        ],
+        [
+          "Proclamations",
+          "/proclamations"
+        ],
+        [
+          "Use with AI",
+          "/connect"
+        ]
+      ],
+      "topics": [
+        "Translation",
+        "Latter-day Saint terminology",
+        "Portuguese",
+        "Spanish",
+        "Multilingual dictionary"
+      ],
+      "schemaType": "WebSite",
+      "since": "2026",
+      "formerUrl": "https://urim.samuelbaird.com",
+      "basePath": "/urim"
+    },
+    {
+      "id": "pulpit",
+      "name": "Pulpit",
+      "url": "https://pulpit.restorationcommons.org",
+      "role": "contributor",
+      "kind": "site",
+      "color": "#B8645A",
+      "icon": "i-quote",
+      "external": true,
+      "tagline": "Every General Conference discourse since 1830, graded for fidelity.",
+      "description": "A critical digital edition of every General Conference discourse since 1830. Each talk is traced to its best surviving witness and graded for how faithfully the text preserves what was said. Pulpit is a Restoration Commons project; Samuel Baird is a contributor.",
+      "facts": [
+        "12,201 discourses since 1830",
+        "4,292 graded verbatim",
+        "Each talk traced to its best surviving witness"
+      ],
+      "links": [],
+      "topics": [
+        "General Conference",
+        "Latter-day Saint history",
+        "Textual criticism"
+      ],
+      "schemaType": "WebSite"
+    },
+    {
+      "id": "deseret-mcp",
+      "name": "Deseret MCP",
+      "url": "https://mcp.deseret.wiki",
+      "role": "creator",
+      "kind": "tool",
+      "color": "#A98442",
+      "icon": "i-sorts",
+      "dir": "sites/deseret-mcp",
+      "tagline": "Deseret Alphabet transliteration and Deseret Wiki search for AI assistants.",
+      "description": "A Model Context Protocol (MCP) server that lets Claude and other AI assistants transliterate English to and from the Deseret Alphabet and search the Deseret Wiki. Add it as a custom connector and ask for any text in Deseret, or for sourced answers about the alphabet's history.",
+      "facts": [
+        "MCP endpoint: https://mcp.deseret.wiki/api/mcp",
+        "English to Deseret and back, phonetically",
+        "Searches every Deseret Wiki article"
+      ],
+      "links": [
+        [
+          "Connect",
+          "/connect"
+        ],
+        [
+          "About",
+          "/about"
+        ]
+      ],
+      "topics": [
+        "Model Context Protocol",
+        "Deseret Alphabet",
+        "Transliteration",
+        "AI tools"
+      ],
+      "schemaType": "SoftwareApplication",
+      "since": "2026"
+    },
+    {
+      "id": "peepstone",
+      "name": "Peepstone",
+      "url": "https://samuelbaird.com/peepstone",
+      "role": "creator",
+      "kind": "tool",
+      "color": "#9A7CA8",
+      "icon": "i-lamp",
+      "dir": "sites/peepstone",
+      "tagline": "Search and read the Joseph Smith Papers from any AI assistant.",
+      "description": "An MCP server for The Joseph Smith Papers. It gives Claude and other AI assistants live search and reading access to the journals, letters, revelations, histories, minutes and legal records on josephsmithpapers.org, with the project's transcriptions, footnotes and source notes. Every result carries the canonical josephsmithpapers.org URL and a citation. It stores no copy of the site.",
+      "facts": [
+        "MCP endpoint: https://samuelbaird.com/peepstone/mcp",
+        "Full-site search with people, place and subject facets",
+        "Reads any document page with footnotes and citation",
+        "People, places, glossary, events and the Calendar of Documents",
+        "Not affiliated with the Joseph Smith Papers Project"
+      ],
+      "links": [],
+      "topics": [
+        "Joseph Smith Papers",
+        "Model Context Protocol",
+        "Church history",
+        "AI tools"
+      ],
+      "schemaType": "SoftwareApplication",
+      "since": "2026",
+      "formerUrl": "https://peepstone.vercel.app",
+      "basePath": "/peepstone"
+    },
+    {
+      "id": "omni",
+      "name": "Omni",
+      "url": "https://samuelbaird.com/omni",
+      "role": "creator",
+      "kind": "tool",
+      "color": "#6F8F9A",
+      "icon": "i-comb",
+      "dir": "sites/omni",
+      "tagline": "One MCP connector for every Latter-day Saint research server.",
+      "description": "One Model Context Protocol endpoint that fronts several research servers at once: Pulpit, Latter-day Stats, Peepstone and Deseret MCP. Add a single connector and an AI assistant can search General Conference, survey data, the Joseph Smith Papers and the Deseret Alphabet together.",
+      "facts": [
+        "One endpoint: https://samuelbaird.com/omni/api/mcp",
+        "Each server's tools are prefixed by source",
+        "A down server is skipped without breaking the rest"
+      ],
+      "links": [],
+      "topics": [
+        "Model Context Protocol",
+        "AI tools",
+        "Latter-day Saint research"
+      ],
+      "schemaType": "SoftwareApplication",
+      "since": "2026",
+      "formerUrl": "https://omni.samuelbaird.com",
+      "basePath": "/omni"
+    },
+    {
+      "id": "sacred-sites",
+      "name": "Sacred Sites Visited",
+      "url": "https://samuelbaird.com/sacred-sites",
+      "role": "creator",
+      "kind": "page",
+      "color": "#C98A5A",
+      "icon": "i-wagon",
+      "tagline": "A map of every church, temple and house of worship visited since 2025.",
+      "description": "An interactive map, photo gallery and statistics of the churches, temples and houses of worship Samuel Baird has visited since January 2025, filterable by tradition, place and year.",
+      "facts": [],
+      "links": [],
+      "topics": [
+        "Places of worship",
+        "Comparative religion",
+        "Travel"
+      ],
+      "schemaType": "CollectionPage"
+    },
+    {
+      "id": "books",
+      "name": "My Reading",
+      "url": "https://samuelbaird.com/books",
+      "role": "creator",
+      "kind": "page",
+      "color": "#8A9A6A",
+      "icon": "i-books",
+      "tagline": "Every book and article read, with the date finished.",
+      "description": "Books and articles Samuel Baird has read on religion, theology and church history, newest first, with the date he finished each one.",
+      "facts": [],
+      "links": [],
+      "topics": [
+        "Reading log",
+        "Theology",
+        "Church history"
+      ],
+      "schemaType": "CollectionPage"
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "url": "https://samuelbaird.com/collection",
+      "role": "creator",
+      "kind": "page",
+      "color": "#A87C5A",
+      "icon": "i-sego",
+      "tagline": "Historic Latter-day Saint books, periodicals and artifacts.",
+      "description": "Historical Latter-day Saint items owned by Samuel Baird, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.",
+      "facts": [],
+      "links": [],
+      "topics": [
+        "Latter-day Saint history",
+        "Rare books"
+      ],
+      "schemaType": "CollectionPage"
+    }
+  ]
+}

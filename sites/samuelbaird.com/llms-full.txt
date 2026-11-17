@@ -2,19 +2,138 @@
 
 > Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-17. Original data licensed CC BY 4.0.
 
+## Projects
+
+### Latter-day Stats
+
+https://samuelbaird.com/latter-day-stats/
+
+A public, independent hub for statistics, research and creator data on the Latter-day Saint community. It tracks the LDS YouTube creator ecosystem, curates a library of academic studies, and lets anyone chart public survey datasets (Pew, CCES and others) in a Data Explorer. It also offers an MCP server so AI assistants can query the same data.
+
+- Tracks 328 LDS YouTube channels with 16.6M combined subscribers
+- Curates 73 academic studies and 58 survey graphics
+- Data Explorer for Pew, CCES and other public survey data
+- MCP endpoint: https://samuelbaird.com/latter-day-stats/api/mcp
+
+Topics: Latter-day Saints, Religious demographics, Survey data, YouTube creators, Data visualization.
+
+### Deseret Wiki
+
+https://deseret.wiki/
+
+A wiki, document library and learning toolkit for the Deseret Alphabet, the 1854 phonetic script of the University of Deseret. It collects scans of the primary sources (the First and Second Readers, the 1869 Book of Mormon, the Deseret News), linked articles on the alphabet's history and people, every known Deseret font, and tools for reading and typing the script.
+
+- Scans of the Deseret readers, the 1869 Book of Mormon and the Deseret News
+- Articles on the alphabet's people, letters, works and variants
+- Every known Deseret font with specimens and licenses
+- Read any page in the Deseret alphabet with one toggle
+
+Topics: Deseret Alphabet, Latter-day Saint history, Phonetic writing, Typography, Pioneer Utah.
+
+### Urim
+
+https://samuelbaird.com/urim/
+
+A searchable multilingual dictionary of Latter-day Saint theological vocabulary. For each Restoration term it shows how the Church's own published translations render it in English, Portuguese and Spanish, with counts, dates and links to the source. Only Church-translated material is used as evidence; AI translations are never shown.
+
+- 367 concepts with evidence
+- 125,650 aligned General Conference paragraphs
+- 41,994 aligned scripture verses
+- English, Portuguese (Brazil) and Spanish
+
+Topics: Translation, Latter-day Saint terminology, Portuguese, Spanish, Multilingual dictionary.
+
+### Pulpit
+
+https://pulpit.restorationcommons.org/ (Samuel Baird is a contributor)
+
+A critical digital edition of every General Conference discourse since 1830. Each talk is traced to its best surviving witness and graded for how faithfully the text preserves what was said. Pulpit is a Restoration Commons project; Samuel Baird is a contributor.
+
+- 12,201 discourses since 1830
+- 4,292 graded verbatim
+- Each talk traced to its best surviving witness
+
+Topics: General Conference, Latter-day Saint history, Textual criticism.
+
+### Deseret MCP
+
+https://mcp.deseret.wiki/
+
+A Model Context Protocol (MCP) server that lets Claude and other AI assistants transliterate English to and from the Deseret Alphabet and search the Deseret Wiki. Add it as a custom connector and ask for any text in Deseret, or for sourced answers about the alphabet's history.
+
+- MCP endpoint: https://mcp.deseret.wiki/api/mcp
+- English to Deseret and back, phonetically
+- Searches every Deseret Wiki article
+
+Topics: Model Context Protocol, Deseret Alphabet, Transliteration, AI tools.
+
+### Peepstone
+
+https://samuelbaird.com/peepstone/
+
+An MCP server for The Joseph Smith Papers. It gives Claude and other AI assistants live search and reading access to the journals, letters, revelations, histories, minutes and legal records on josephsmithpapers.org, with the project's transcriptions, footnotes and source notes. Every result carries the canonical josephsmithpapers.org URL and a citation. It stores no copy of the site.
+
+- MCP endpoint: https://samuelbaird.com/peepstone/mcp
+- Full-site search with people, place and subject facets
+- Reads any document page with footnotes and citation
+- People, places, glossary, events and the Calendar of Documents
+- Not affiliated with the Joseph Smith Papers Project
+
+Topics: Joseph Smith Papers, Model Context Protocol, Church history, AI tools.
+
+### Omni
+
+https://samuelbaird.com/omni/
+
+One Model Context Protocol endpoint that fronts several research servers at once: Pulpit, Latter-day Stats, Peepstone and Deseret MCP. Add a single connector and an AI assistant can search General Conference, survey data, the Joseph Smith Papers and the Deseret Alphabet together.
+
+- One endpoint: https://samuelbaird.com/omni/api/mcp
+- Each server's tools are prefixed by source
+- A down server is skipped without breaking the rest
+
+Topics: Model Context Protocol, AI tools, Latter-day Saint research.
+
+### Sacred Sites Visited
+
+https://samuelbaird.com/sacred-sites
+
+An interactive map, photo gallery and statistics of the churches, temples and houses of worship Samuel Baird has visited since January 2025, filterable by tradition, place and year.
+
+Topics: Places of worship, Comparative religion, Travel.
+
+### My Reading
+
+https://samuelbaird.com/books
+
+Books and articles Samuel Baird has read on religion, theology and church history, newest first, with the date he finished each one.
+
+Topics: Reading log, Theology, Church history.
+
+### Collection
+
+https://samuelbaird.com/collection
+
+Historical Latter-day Saint items owned by Samuel Baird, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.
+
+Topics: Latter-day Saint history, Rare books.
+
 ## FAQ
 
 ### Who is Samuel Baird?
 
-Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://latterdaystats.samuelbaird.com/), a public hub for statistics, research and creator data on the Latter-day Saint community; he contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
+Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://samuelbaird.com/latter-day-stats), a public hub for statistics, research and creator data on the Latter-day Saint community; the [Deseret Wiki](https://deseret.wiki/), a library and primer of the 1854 Deseret Alphabet; [Urim](https://samuelbaird.com/urim), an atlas of how the Church translates its own vocabulary; and AI tools for Latter-day Saint research ([Peepstone](https://samuelbaird.com/projects/peepstone), [Omni](https://samuelbaird.com/projects/omni) and [Deseret MCP](https://samuelbaird.com/projects/deseret-mcp)). He contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
+
+### What projects has Samuel Baird made?
+
+9 public projects, all free: [Latter-day Stats](https://samuelbaird.com/latter-day-stats) (statistics, research and creator data on the Latter-day Saint community); [Deseret Wiki](https://deseret.wiki/) (a library, encyclopaedia and primer of the Deseret Alphabet); [Urim](https://samuelbaird.com/urim) (the Mormon Translation Atlas: how the Church translates its own vocabulary); [Deseret MCP](https://mcp.deseret.wiki/) (deseret Alphabet transliteration and Deseret Wiki search for AI assistants); [Peepstone](https://samuelbaird.com/peepstone) (search and read the Joseph Smith Papers from any AI assistant); [Omni](https://samuelbaird.com/omni) (one MCP connector for every Latter-day Saint research server); [Sacred Sites Visited](https://samuelbaird.com/sacred-sites) (a map of every church, temple and house of worship visited since 2025); [My Reading](https://samuelbaird.com/books) (every book and article read, with the date finished); [Collection](https://samuelbaird.com/collection) (historic Latter-day Saint books, periodicals and artifacts). He also contributed to [Pulpit](https://pulpit.restorationcommons.org/). Every project has a page under [Projects](https://samuelbaird.com/projects).
 
 ### What is Latter-day Stats?
 
-Latter-day Stats is a public, independent hub for statistics, research and creator data on the Latter-day Saint community. As of November 2026 it tracks 328 LDS YouTube channels with 16.6M combined subscribers, 73 academic studies and 58 survey-data graphics (Pew and other surveys). Its Data Explorer lets you chart public survey datasets, Studies is a curated research library, and Channels is a directory of LDS YouTube creators. It lives at [latterdaystats.samuelbaird.com](https://latterdaystats.samuelbaird.com/).
+Latter-day Stats is a public, independent hub for statistics, research and creator data on the Latter-day Saint community. As of November 2026 it tracks 328 LDS YouTube channels with 16.6M combined subscribers, 73 academic studies and 58 survey-data graphics (Pew and other surveys). Its Data Explorer lets you chart public survey datasets, Studies is a curated research library, and Channels is a directory of LDS YouTube creators. It lives at [latterdaystats.samuelbaird.com](https://samuelbaird.com/latter-day-stats/).
 
 ### How many LDS YouTube channels are there?
 
-There is no official count. The most complete public list is the directory at [Latter-day Stats Channels](https://latterdaystats.samuelbaird.com/channels), which tracked 328 LDS-related YouTube channels with 16.6M combined subscribers as of November 2026. The directory is refreshed regularly, so check it for the current figure.
+There is no official count. The most complete public list is the directory at [Latter-day Stats Channels](https://samuelbaird.com/latter-day-stats/channels), which tracked 328 LDS-related YouTube channels with 16.6M combined subscribers as of November 2026. The directory is refreshed regularly, so check it for the current figure.
 
 ### What is Pulpit?
 

@@ -1,1 +1,8 @@
 .vercel
+node_modules/
+.next/
+.astro/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+.DS_Store

@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['wishlist/priorities.json']
+    paths: ['sites/samuelbaird.com/wishlist/priorities.json']
 
 permissions:
   contents: write
@@ -22,8 +22,16 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sites/samuelbaird.com
     steps:
       - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            sites/samuelbaird.com
+            sites/deseret-wiki/src/data
+            packages
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -46,7 +54,7 @@ jobs:
               echo "No wishlist changes."; exit 0
             fi
             node scripts/build.mjs
-            git add -A
+            git add -A .
             git diff --cached --quiet && exit 0
             git commit -q -m "Sync wishlist from Amazon"
             git push -q origin "HEAD:$BRANCH" && exit 0

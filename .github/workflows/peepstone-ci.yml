@@ -1,18 +1,26 @@
-name: CI
+name: Peepstone CI
 on:
   push:
     branches: [main]
+    paths: ['sites/peepstone/**', '.github/workflows/peepstone-ci.yml']
   pull_request:
+    paths: ['sites/peepstone/**', '.github/workflows/peepstone-ci.yml']
 
 jobs:
   check:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sites/peepstone
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: sites/peepstone
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: sites/peepstone/package-lock.json
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
