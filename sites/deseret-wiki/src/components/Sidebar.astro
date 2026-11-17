@@ -3,6 +3,8 @@
 // with the main pages up top, the "shelves" marked by coloured bars, and secondary links at the foot.
 // Engraved icons come from the sprite (Sprite.astro); behaviour is the script at the bottom.
 import { toDeseret } from '../lib/dsrt.js';
+// The shared Samuel Baird projects list, synced from packages/family by scripts/family-sync.mjs.
+import family from '../data/family.json';
 interface Props { path: string }
 const { path } = Astro.props;
 
@@ -21,7 +23,7 @@ const shelves = [
 ];
 const foot = [
   { href: '/about/', label: 'About this wiki', icon: 'i-eye', vb: '0 0 64 64' },
-  { href: 'https://github.com/Samuel-Baird/deseret', label: 'Source on GitHub', icon: 'i-sorts', vb: '0 0 64 64', ext: true },
+  { href: family.about, label: 'About this project', icon: 'i-sorts', vb: '0 0 64 64', ext: true },
   { href: 'https://samuelbaird.com', label: 'samuelbaird.com', icon: 'i-star', vb: '0 0 10 10', ext: true },
 ];
 const current = (href: string, exact = false) => (exact ? path === href : path.startsWith(href)) ? 'page' : undefined;
@@ -57,6 +59,14 @@ const current = (href: string, exact = false) => (exact ? path === href : path.s
         <li><a class="side-link" href={s.href} aria-current={current(s.href)}><i class="bar" style={`background:${s.color}`}></i><span>{s.label}</span></a></li>
       ))}
     </ul>
+
+    <p class="side-label">Samuel Baird projects</p>
+    <ul class="side-list">
+      {family.projects.map((p) => (
+        <li><a class="side-link" href={p.current ? '/' : p.url} aria-current={p.current ? 'true' : undefined} rel={p.current ? undefined : 'noopener'}><i class="bar" style={`background:${p.color}`}></i><span>{p.name}</span>{p.role === 'contributor' && <small class="side-note">contributor</small>}</a></li>
+      ))}
+    </ul>
+    <a class="side-all" href={family.owner.projectsUrl}>All projects &rarr;</a>
   </nav>
 
   <div class="side-foot">
@@ -105,7 +115,9 @@ const current = (href: string, exact = false) => (exact ? path === href : path.s
   }
   .side-link svg { flex: none; width: 1.15rem; height: 1.15rem; color: var(--accent); }
   .side-link:hover { background: rgb(237 227 203 / .06); }
-  .side-link[aria-current='page'] { background: rgb(201 164 92 / .14); color: var(--heading); box-shadow: inset 0 0 0 1px rgb(201 164 92 / .18); }
+  .side-note { margin-left: auto; font: italic .68rem var(--f-display); color: var(--ink-soft); }
+  .side-all { display: block; margin: .3rem .6rem 0; font: italic .82rem var(--f-display); color: var(--link); text-decoration: none; }
+  .side-link[aria-current] { background: rgb(201 164 92 / .14); color: var(--heading); box-shadow: inset 0 0 0 1px rgb(201 164 92 / .18); }
   .side-link:focus-visible { outline: 1px solid var(--accent); outline-offset: -1px; }
   .bar { flex: none; display: block; width: 3px; height: 1rem; margin: 0 .5rem 0 .45rem; border-radius: 1px; }
   .side-label { margin: 1.4rem .6rem .4rem; font: 600 .62rem/1 var(--f-formal); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); }

@@ -1,0 +1,90 @@
+{
+  "owner": {
+    "name": "Samuel Baird",
+    "url": "https://samuelbaird.com",
+    "projectsUrl": "https://samuelbaird.com/projects"
+  },
+  "projects": [
+    {
+      "id": "latter-day-stats",
+      "name": "Latter-day Stats",
+      "url": "https://samuelbaird.com/latter-day-stats/",
+      "color": "#7E9BBB",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "deseret-wiki",
+      "name": "Deseret Wiki",
+      "url": "https://deseret.wiki/",
+      "color": "#C9A45C",
+      "role": "creator",
+      "current": true
+    },
+    {
+      "id": "urim",
+      "name": "Urim",
+      "url": "https://samuelbaird.com/urim/",
+      "color": "#8DA27A",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "pulpit",
+      "name": "Pulpit",
+      "url": "https://pulpit.restorationcommons.org/",
+      "color": "#B8645A",
+      "role": "contributor",
+      "current": false
+    },
+    {
+      "id": "deseret-mcp",
+      "name": "Deseret MCP",
+      "url": "https://mcp.deseret.wiki/",
+      "color": "#A98442",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "peepstone",
+      "name": "Peepstone",
+      "url": "https://samuelbaird.com/peepstone/",
+      "color": "#9A7CA8",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "omni",
+      "name": "Omni",
+      "url": "https://samuelbaird.com/omni/",
+      "color": "#6F8F9A",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "sacred-sites",
+      "name": "Sacred Sites Visited",
+      "url": "https://samuelbaird.com/sacred-sites",
+      "color": "#C98A5A",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "books",
+      "name": "My Reading",
+      "url": "https://samuelbaird.com/books",
+      "color": "#8A9A6A",
+      "role": "creator",
+      "current": false
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "url": "https://samuelbaird.com/collection",
+      "color": "#A87C5A",
+      "role": "creator",
+      "current": false
+    }
+  ],
+  "about": "https://samuelbaird.com/projects/deseret-wiki"
+}

@@ -55,7 +55,8 @@ for (const [id, site] of Object.entries(SITES)) {
   const t = site.target;
   const pub = t.type === 'static' || t.type === 'self' ? t.dir : path.join(t.dir, t.publicDir || 'public');
   console.log(id);
-  for (const a of ASSETS) put(path.join(pub, '_family', a), fs.readFileSync(path.join(PKG, a)));
+  // The Deseret Wiki is the style's origin and keeps its own stylesheet; it only takes the project list.
+  if (t.type !== 'astro') for (const a of ASSETS) put(path.join(pub, '_family', a), fs.readFileSync(path.join(PKG, a)));
 
   if (t.type === 'static') {
     const dir = path.join(ROOT, t.dir);
