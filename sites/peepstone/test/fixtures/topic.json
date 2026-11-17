@@ -1,0 +1,130 @@
+{
+ "route": "/topic/[uri]",
+ "pageProps": {
+  "context": "published",
+  "host": "www.josephsmithpapers.org",
+  "showHeader": true,
+  "footerStyle": "full",
+  "statusCode": 200,
+  "publisherMenuData": null,
+  "topic": {
+   "authority": {
+    "references": "1365",
+    "link-target-type": "topic",
+    "target": "x6248",
+    "url": "/preview/jsp/searchable/topics/x6248.xml",
+    "unique": "x6248 nauvoo legon l ligion ligeon ligin legions ligon leageon leagon nuuvoo legin legan leigion leigon legeon lesgion illinois nouvoo",
+    "refObject": {
+     "showSummary": "Y",
+     "url": "x6248",
+     "entry": "31344",
+     "docDesc": "Nauvoo Legion",
+     "title": "JSPPTAR",
+     "sortkey": "Nauvoo Legion",
+     "link-target-type": "topic",
+     "WebPublishStatus": "InterimContent",
+     "ShowFootnotes": "Y",
+     "uriTitle": "nauvoo-legion",
+     "facet": [
+      {
+       "topic": "Nauvoo Legion"
+      },
+      {
+       "genre": "Topics"
+      }
+     ],
+     "documentInfo": {
+      "id": "31344",
+      "a": {
+       "ro": "x6248",
+       "topic": "x6248",
+       "title": "Nauvoo Legion"
+      },
+      "classification": "Topic",
+      "sortKey": "Nauvoo Legion",
+      "defaultUrl": "/topic/nauvoo-legion",
+      "abstract": "A contingent of the Illinois state militia provided for in the Nauvoo city charter. The Nauvoo Legion was organized into two cohorts: one infantry and one cavalry. Each cohort could potentially comprise several thousand men and was overseen by a brigadier..."
+     },
+     "topic": {
+      "name": {
+       "topicName": [
+        "Nauvoo Legion"
+       ]
+      },
+      "altNames": {
+       "topicName": [
+        ""
+       ]
+      },
+      "description": {
+       "abstract": {
+        "p": ""
+       },
+       "summary": "<html><head></head><body><div class=\" wasptag\" xmlns:srchdoc=\"https://ldsc.xmlref.com/local/ldschurch/searchDocuments\" xmlns:pm=\"https://xmlref.com/local/pm\" xmlns:lds=\"https://ldsc.xmlref.com/local/ldschurch\" xmlns=\"\">A contingent of the Illinois state militia provided for in the Nauvoo city charter.<aside class=\"popup-wrapper\" id=\"5947122741021989223\"><a href=\"#5947122741021989223\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro1\"><span id=\"documentintro1\">1</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Nauvoo Legion Minute Book, 3 Feb. 1841, 1–3; JS History, vol. E-1, <a href=\"/paper-summary/history-1838-1856-volume-e-1-1-july-1843-30-april-1844/171\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-e-1-1-july-1843-30-april-1844\" poptitle=\"11 December 1843 • MondaySee 11 Dec.\n 1843 entry in History Draft.\">1799</a>; “A Proclamation, to the Saints Scattered Abroad,” <span class=\"title\">Times and Seasons,</span> 15 Jan. 1841, 2:274; Nauvoo City Council Minute Book, 3 Feb. 1841, pp. 1–2.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Nauvoo Legion Minute Book, 1843–1844. Nauvoo Legion, Records, 1841–1845. CHL. MS 3430, fd. 1.</p><p id=\"source-note2\"> <span class=\"title\">Times and Seasons.</span> Commerce/Nauvoo, IL. Nov. 1839–Feb. 1846.</p><p id=\"source-note3\"> Nauvoo City Council Minute Book / Nauvoo City Council. “A Record of the Proceedings of the City Council of the City of Nauvoo Handcock County, State of Illinois, Commencing A.D. 1841,” ca. 1841–1845. CHL. MS 3435.</p></div></div></div></aside> The Nauvoo Legion was organized into two cohorts: one infantry and one cavalry.<aside class=\"popup-wrapper\" id=\"16833738331757108594\"><a href=\"#16833738331757108594\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro2\"><span id=\"documentintro2\">2</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Nauvoo Legion Minute Book, 3 Feb. 1841, 2.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Nauvoo Legion Minute Book, 1843–1844. Nauvoo Legion, Records, 1841–1845. CHL. MS 3430, fd. 1.</p></div></div></div></aside> Each cohort could potentially comprise several thousand men and was overseen by a brigadier general.<aside class=\"popup-wrapper\" id=\"16013404188408515085\"><a href=\"#16013404188408515085\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro3\"><span id=\"documentintro3\">3</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Nauvoo Legion Minute Book, 3 Feb. 1841, 2–3; An Act for the Organization and Government of the Militia of this State [2 Mar. 1833], <span class=\"title\">Public and General Statute Laws of the State of Illinois</span> [1834–1837], pp. 470–471.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Nauvoo Legion Minute Book, 1843–1844. Nauvoo Legion, Records, 1841–1845. CHL. MS 3430, fd. 1.</p><p id=\"source-note2\"><span class=\"title\">The Public and General Statute Laws of the State of Illinois: Containing All the Laws . . . Passed by the Ninth General Assembly, at Their First Session, Commencing December 1, 1834, and Ending February 13, 1835; and at Their Second Session, Commencing December 7, 1835, and Ending January 18, 1836; and Those Passed by the Tenth General Assembly, at Their Session Commencing December 5, 1836, and Ending March 6, 1837; and at Their Special Session, Commencing July 10, and Ending July 22, 1837. . . .</span> Compiled by Jonathan Young Scammon. Chicago: Stephen F. Gale, 1839.</p></div></div></div></aside> On 4 February 1841, JS was appointed lieutenant general, the commanding officer of the Nauvoo Legion.<aside class=\"popup-wrapper\" id=\"15959299008739526709\"><a href=\"#15959299008739526709\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro4\"><span id=\"documentintro4\">4</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">JS History, vol. C-1, <a href=\"/paper-summary/history-1838-1856-volume-c-1-2-november-1838-31-july-1842/333\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-c-1-2-november-1838-31-july-1842\" poptitle=\"4 February 1841 • ThursdaySee 4 Feb. 1841\n entry in History Draft.\">1161–1162</a>; JS, Journal, <a href=\"/paper-summary/journal-december-1841-december-1842/21\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/journal-december-1841-december-1842\" poptitle=\" 11\nMarch 1842 • Friday\">11 Mar. 1842</a>; Nauvoo Legion Minute Book, 3 Feb. 1841, 2.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Nauvoo Legion Minute Book, 1843–1844. Nauvoo Legion, Records, 1841–1845. CHL. MS 3430, fd. 1.</p></div></div></div></aside> In addition to training in regular military exercises as required by Illinois statute, the Legion frequently mustered for reviews and inspections.<aside class=\"popup-wrapper\" id=\"15836903219672283450\"><a href=\"#15836903219672283450\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro5\"><span id=\"documentintro5\">5</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">An Act for the Organization and Government of the Militia of this State [2 Mar. 1833], <span class=\"title\">Public and General Statute Laws of the State of Illinois</span> [1834–1837], pp. 476–477; Nauvoo Legion Minute Book, 12 Mar. 1842, 12; 8 July 1843, 47; <a href=\"/paper-summary/history-1838-1856-volume-c-1-2-november-1838-31-july-1842/461\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-c-1-2-november-1838-31-july-1842\" poptitle=\"11 March 1842 • FridaySee 11 Mar.\n 1842 entry in History Draft.\"> JS History, vol. C-1, 1287</a>, <a href=\"/paper-summary/history-1838-1856-volume-c-1-2-november-1838-31-july-1842/499\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-c-1-2-november-1838-31-july-1842\" poptitle=\"28 April 1842 • ThursdaySee 28 Apr.\n 1842 entry in History Draft.\">1325</a>; JS History, vol. D-1, <a href=\"/paper-summary/history-1838-1856-volume-d-1-1-august-1842-1-july-1843/183\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-d-1-1-august-1842-1-july-1843\" poptitle=\"24 April 1843 • MondaySee 24 Apr. 1843 entry in History\n Draft.\">1540</a>.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"><span class=\"title\">The Public and General Statute Laws of the State of Illinois: Containing All the Laws . . . Passed by the Ninth General Assembly, at Their First Session, Commencing December 1, 1834, and Ending February 13, 1835; and at Their Second Session, Commencing December 7, 1835, and Ending January 18, 1836; and Those Passed by the Tenth General Assembly, at Their Session Commencing December 5, 1836, and Ending March 6, 1837; and at Their Special Session, Commencing July 10, and Ending July 22, 1837. . . .</span> Compiled by Jonathan Young Scammon. Chicago: Stephen F. Gale, 1839.</p><p id=\"source-note2\">Nauvoo Legion Minute Book, 1843–1844. Nauvoo Legion, Records, 1841–1845. CHL. MS 3430, fd. 1.</p></div></div></div></aside> The Legion’s main purpose, according to JS, was to protect the city from mobs and enforce city ordinances and state laws.<aside class=\"popup-wrapper\" id=\"1936559165365244558\"><a href=\"#1936559165365244558\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro6\"><span id=\"documentintro6\">6</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">“A Proclamation, to the Saints Scattered Abroad,” <span class=\"title\">Times and Seasons,</span> 15 Jan. 1841, 2:274; JS, Journal, <a href=\"/paper-summary/journal-december-1841-december-1842/32\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/journal-december-1841-december-1842\" poptitle=\" 4\nJuly 1842 • Monday\">4 July</a> and <a href=\"/paper-summary/journal-december-1841-december-1842/36\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/journal-december-1841-december-1842\" poptitle=\" 14\nAugust 1842 • Sunday\">14 Aug. 1842</a>; JS History, vol. E-1, <a href=\"/paper-summary/history-1838-1856-volume-e-1-1-july-1843-30-april-1844/170\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/history-1838-1856-volume-e-1-1-july-1843-30-april-1844\" poptitle=\"9 December 1843 • SaturdaySee 9 Dec.\n 1843 entry in History Draft.\">1798–1799</a>.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> <span class=\"title\">Times and Seasons.</span> Commerce/Nauvoo, IL. Nov. 1839–Feb. 1846.</p></div></div></div></aside> In June 1844, when Nauvoo was threatened by increasing conflict in Hancock County, Governor Thomas Ford demanded that the Legion surrender its arms.<aside class=\"popup-wrapper\" id=\"1543776375366084048\"><a href=\"#1543776375366084048\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro7\"><span id=\"documentintro7\">7</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Clayton, Journal, 24 June 1844; Richards, Journal, 24 June 1844; Ford, <span class=\"title\">History of Illinois,</span> 335–336.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Clayton, William. Journals, 1842–1845. CHL.</p><p id=\"source-note2\">Richards, Willard. Journals, 1836–1853. Willard Richards, Papers, 1821–1854. CHL. <a href=\"https://catalog.churchofjesuschrist.org/record/692b9f3e-0ea2-464b-9027-e6a4d8f7af06?view=browse\" class=\"externalLink\">MS 1490, boxes 1–2</a>.</p><p id=\"source-note3\"> Ford, Thomas. <span class=\"title\">A History of Illinois, from Its Commencement as a State in 1818 to 1847. Containing a Full Account of the Black Hawk War, the Rise, Progress, and Fall of Mormonism, the Alton and Lovejoy Riots, and Other Important and Interesting Events.</span> Chicago: S. C. Griggs; New York: Ivison and Phinney, 1854. </p></div></div></div></aside> In January 1845, the Nauvoo charter was repealed and the Nauvoo Legion lost its legal standing.<aside class=\"popup-wrapper\" id=\"1958062775377732119\"><a href=\"#1958062775377732119\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro8\"><span id=\"documentintro8\">8</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">An Act to Repeal the Act Entitled “An Act to Incorporate the City of Nauvoo” [29 Jan. 1845], <span class=\"title\">Laws of the State of Illinois</span> [1844–1845], pp. 187–188; Leonard, <span class=\"title\">Nauvoo,</span> 469–470.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"><span class=\"title\">Laws of the State of Illinois, Passed by the Fourteenth General Assembly, at Their Regular Session, Began and Held at Springfield, December 2nd, 1844.</span> Springfield, IL: Walters and Weber, 1845.</p><p id=\"source-note2\"> Leonard, Glen M. <span class=\"title\">Nauvoo: A Place of Peace, a People of Promise.</span> Salt Lake City: Deseret Book; Provo, UT: Brigham Young University Press, 2002. </p></div></div></div></aside> See also “<aside class=\"popup-wrapper\" id=\"633959274544331193\"><a href=\"#633959274544331193\" class=\"reference staticPopup\" ro=\"x6246\" topic=\"x6246\" title=\"Nauvoo charter\">Nauvoo charter</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Nauvoo charter\"><p>“An Act to Incorporate the City of Nauvoo,” approved 16 December 1840 by the Illinois general assembly to legally organize the city of Nauvoo. The charter authorized the creation of a city council, consisting initially of a mayor, four aldermen, and nine ...</p><a class=\"more\" href=\"/topic/nauvoo-charter\">View Glossary</a></div></div></aside>.”</div></body></html>"
+      },
+      "relatedObjects": "\n            ",
+      "sources": ""
+     }
+    }
+   },
+   "relatedlinks": [
+    {
+     "name": "papers",
+     "links": [
+      {
+       "url": "/paper-summary/city-charter-laws-ordinances-and-acts-july-1842/1",
+       "date": "1842-07-31",
+       "value": "<em>City Charter: Laws, Ordinances, and\n                            Acts,</em>\n July 1842"
+      },
+      {
+       "url": "/paper-summary/general-joseph-smiths-appeal-to-the-green-mountain-boys-21-november-circa-3-december-1843/1",
+       "date": "1843-12-01",
+       "value": "<em>General Joseph Smith’s Appeal to the Green Mountain Boys,</em>\n 21 November–circa 3 December 1843"
+      },
+      {
+       "url": "/paper-summary/jubilee-songs-between-11-and-18-january-1843/1",
+       "date": "1843-01-18",
+       "value": "<em>Jubilee Songs,</em>\n between 11 and 18 January 1843"
+      }
+     ]
+    },
+    {
+     "name": "glossary",
+     "links": [
+      {
+       "url": "/topic/nauvoo-legion-scrip?p=",
+       "date": "",
+       "value": "Nauvoo Legion scrip"
+      },
+      {
+       "url": "/topic/nauvoo-charter",
+       "date": "",
+       "value": "Nauvoo charter"
+      }
+     ]
+    },
+    {
+     "name": "other",
+     "links": [
+      {
+       "url": "/back/essay-on-sources-cited-in-documents-volume-12",
+       "date": "2024-01-16",
+       "value": "\n                        \nEssay on Sources Cited in \n<em>Documents, Volume 12</em>\n\n                    "
+      },
+      {
+       "url": "/back/essay-on-sources-cited-in-documents-volume-15",
+       "date": "2025-12-08",
+       "value": "\n                        \nEssay on Sources Cited in \n<em>Documents, Volume 15</em>\n\n                    "
+      },
+      {
+       "url": "/back/documents-volume-10-part-1-introduction-may-1842",
+       "date": "2019-05-24",
+       "value": "<em>Documents, Volume 10,</em>\n Part 1 Introduction: May 1842"
+      }
+     ]
+    }
+   ]
+  },
+  "is404": false
+ }
+}

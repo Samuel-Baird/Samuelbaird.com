@@ -1,0 +1,353 @@
+{
+ "route": "/paper-summary/[uri]/[page]",
+ "pageProps": {
+  "context": "published",
+  "host": "www.josephsmithpapers.org",
+  "showHeader": true,
+  "footerStyle": "mini",
+  "statusCode": 200,
+  "uri": "journal-1835-1836",
+  "page": "11",
+  "is404": false,
+  "gallery": [
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_000_thumb.jpg",
+    "page": "1",
+    "label": "[0]",
+    "href": "/paper-summary/journal-1835-1836/1"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_001_thumb.jpg",
+    "page": "2",
+    "label": "1",
+    "href": "/paper-summary/journal-1835-1836/2"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_002_thumb.jpg",
+    "page": "3",
+    "label": "2",
+    "href": "/paper-summary/journal-1835-1836/3"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_003_thumb.jpg",
+    "page": "4",
+    "label": "3",
+    "href": "/paper-summary/journal-1835-1836/4"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_004_thumb.jpg",
+    "page": "5",
+    "label": "4",
+    "href": "/paper-summary/journal-1835-1836/5"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_005_thumb.jpg",
+    "page": "6",
+    "label": "5",
+    "href": "/paper-summary/journal-1835-1836/6"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_006_thumb.jpg",
+    "page": "7",
+    "label": "6",
+    "href": "/paper-summary/journal-1835-1836/7"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_007_thumb.jpg",
+    "page": "8",
+    "label": "7",
+    "href": "/paper-summary/journal-1835-1836/8"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_008_thumb.jpg",
+    "page": "9",
+    "label": "8",
+    "href": "/paper-summary/journal-1835-1836/9"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_009_thumb.jpg",
+    "page": "10",
+    "label": "9",
+    "href": "/paper-summary/journal-1835-1836/10"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_010_thumb.jpg",
+    "page": "11",
+    "label": "10",
+    "href": "/paper-summary/journal-1835-1836/11"
+   },
+   {
+    "image": "/6663/6663_ms155_1_02_jsj-2_011_thumb.jpg",
+    "page": "12",
+    "label": "11",
+    "href": "/paper-summary/journal-1835-1836/12"
+   }
+  ],
+  "tableOfContents": [
+   {
+    "pageTitle": "22 September 1835 • Tuesday",
+    "editorialPageNumber": "1",
+    "pageNumber": "2",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0002.xml",
+    "date": "1835-09-22",
+    "intPageNumber": 2,
+    "linkID": "JSPPJ1_d1e12158",
+    "id": 18
+   },
+   {
+    "pageTitle": "23 September 1835 • Wednesday",
+    "editorialPageNumber": "1",
+    "pageNumber": "2",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0002.xml",
+    "date": "1835-09-23",
+    "intPageNumber": 2,
+    "linkID": "JSPPJ1_d1e12364",
+    "id": 19
+   },
+   {
+    "pageTitle": "24 September 1835 • Thursday",
+    "editorialPageNumber": "2",
+    "pageNumber": "3",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0003.xml",
+    "date": "1835-09-24",
+    "intPageNumber": 3,
+    "linkID": "JSPPJ1_d1e12470",
+    "id": 118
+   },
+   {
+    "pageTitle": "25 September 1835 • Friday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-09-25",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12681",
+    "id": 20
+   },
+   {
+    "pageTitle": "26 September 1835 • Saturday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-09-26",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12703",
+    "id": 21
+   },
+   {
+    "pageTitle": "27 September 1835 • Sunday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-09-27",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12837",
+    "id": 22
+   },
+   {
+    "pageTitle": "28 September 1835 • Monday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-09-28",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12874",
+    "id": 23
+   },
+   {
+    "pageTitle": "29 September 1835 • Tuesday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-09-29",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12904",
+    "id": 24
+   },
+   {
+    "pageTitle": "30 September 1835 • Wednesday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-09-30",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12978",
+    "id": 25
+   },
+   {
+    "pageTitle": "1 October 1835 • Thursday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-10-01",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e12989",
+    "id": 26
+   },
+   {
+    "pageTitle": "2 October 1835 • Friday",
+    "editorialPageNumber": "3",
+    "pageNumber": "4",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0004.xml",
+    "date": "1835-10-02",
+    "intPageNumber": 4,
+    "linkID": "JSPPJ1_d1e13045",
+    "id": 27
+   },
+   {
+    "pageTitle": "3 October 1835 • Saturday",
+    "editorialPageNumber": "4",
+    "pageNumber": "5",
+    "pageUri": "/published/jsp/expanded/papers/27467/27467-0005.xml",
+    "date": "1835-10-03",
+    "intPageNumber": 5,
+    "linkID": "JSPPJ1_d1e13084",
+    "id": 125
+   }
+  ],
+  "summary": {
+   "uri": "journal-1835-1836",
+   "series": "JSPPJ",
+   "urlTitleValue": "JSPPJ1",
+   "documentSeriesTitle": "Journal, 1835–1836",
+   "editorialPageNumber": "10",
+   "isPageNumberPresent": true,
+   "searchUrl": "/published/jsp/searchable/papers/27467/27467-0011.xml",
+   "clearText": "<html><head></head><body><div class=\"indent continuation wasptag\"> of $20, including costs, for which he was oblieged to sell his cow, to defray the expenses of the same, and I say in the name of Jesus Christ that the money that they have thus unjustly taken shall be a testimony against them and canker &amp; eat their flesh as fire</div> <div class=\"noindent anonymous-block-p journal-entry-divider\"><a name=\"JSPPJ1_d1e14344\"><span id=\"JSPPJ1_d1e14344\" class=\"anonymous-block\">27 October 1835 • Tuesday</span></a></div> <div class=\"indent wasptag\">Tuesday 27th in the morning I was called to visit at Br <aside class=\"popup-wrapper\" id=\"10236147438253908347\"><a href=\"#10236147438253908347\" class=\"reference staticPopup\" ro=\"per65\" person=\"per65\" title=\"Samuel Harrison Smith\">Samuel Smith</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Samuel Harrison\"><p>13 Mar. 1808–30 July 1844. Farmer, logger, scribe, builder, tavern operator. Born at Tunbridge, Orange Co., Vermont. Son of Joseph Smith Sr. and Lucy Mack. Moved to Royalton, Windsor Co., Vermont, by Mar. 1810; to Lebanon, Grafton Co., New Hampshire, 1811...</p><a class=\"more\" href=\"/person/samuel-harrison-smith\">View Full Bio</a></div></div></aside>s <aside class=\"popup-wrapper\" id=\"18346591468033437509\"><a href=\"#18346591468033437509\" class=\"reference staticPopup\" ro=\"per1182\" person=\"per1182\" title=\"Mary Bailey Smith\">his wife</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Mary Bailey\"><p>20 Dec. 1808–25 Jan. 1841. Born at Bedford, Hillsborough Co., New Hampshire. Daughter of Joshua Bailey and Hannah Boutwell. Baptized into Church of Jesus Christ of Latter-day Saints by Samuel H. Smith, 26 June 1832, at Boston. Migrated from Boston to Kirtland...</p><a class=\"more\" href=\"/person/mary-bailey-smith\">View Full Bio</a></div></div></aside> was confined and in a verry dangerous situation, <aside class=\"popup-wrapper\" id=\"13011219459829923175\"><a href=\"#13011219459829923175\" class=\"reference staticPopup\" ro=\"per493\" person=\"per493\" title=\"Don Carlos Smith (JS’s brother)\">Br. Carloss [Don Carlos Smith]</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Don Carlos (JS’s brother)\"><p>25 Mar. 1816–7 Aug. 1841. Farmer, printer, editor. Born at Norwich, Windsor Co., Vermont. Son of Joseph Smith Sr. and Lucy Mack. Moved to Palmyra, Ontario Co., New York, 1816–Jan. 1817. Moved to Manchester, Ontario Co., 1825. Baptized into Church of Jesus...</p><a class=\"more\" href=\"/person/don-carlos-smith-jss-brother\">View Full Bio</a></div></div></aside> took one of my horses and went to <aside class=\"popup-wrapper\" id=\"304794117720756676\"><a href=\"#304794117720756676\" class=\"reference staticPopup\" ro=\"plc117\" place=\"plc117\" title=\"Chardon Township, Ohio\">Chardon</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Chardon Township, Ohio\"><p>Located eight miles south of Lake Erie and immediately east of Kirtland Township. Settled by 1812. Included village of Chardon. Population of township in 1820 about 430; in 1830 about 880; and in 1840 about 1,100. Two of JS’s sisters resided in township. ...</p><a class=\"more\" href=\"/place/chardon-township-ohio\">More Info</a></div></div></aside> after <aside class=\"popup-wrapper\" id=\"9281287106191350009\"><a href=\"#9281287106191350009\" class=\"reference staticPopup\" ro=\"per63\" person=\"per63\" title=\"Frederick Granger Williams\">Doct. Frederick G. Williams</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Williams, Frederick Granger\"><p>28 Oct. 1787–10 Oct. 1842. Ship’s pilot, teacher, physician, justice of the peace. Born at Suffield, Hartford Co., Connecticut. Son of William Wheeler Williams and Ruth Granger. Moved to Newburg, Cuyahoga Co., Ohio, 1799. Practiced Thomsonian botanical system...</p><a class=\"more\" href=\"/person/frederick-granger-williams\">View Full Bio</a></div></div></aside> I went out into the field and bowed before the Lord and called upon him in mighty prayer in her behalf the word of the Lord came unto me saying my Servant <aside class=\"popup-wrapper\" id=\"2704719496440159174\"><a href=\"#2704719496440159174\" class=\"reference staticPopup\" ro=\"per63\" person=\"per63\" title=\"Frederick Granger Williams\">Fredrick</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Williams, Frederick Granger\"><p>28 Oct. 1787–10 Oct. 1842. Ship’s pilot, teacher, physician, justice of the peace. Born at Suffield, Hartford Co., Connecticut. Son of William Wheeler Williams and Ruth Granger. Moved to Newburg, Cuyahoga Co., Ohio, 1799. Practiced Thomsonian botanical system...</p><a class=\"more\" href=\"/person/frederick-granger-williams\">View Full Bio</a></div></div></aside> shall come and shall have wisdom given him to deal prudently and my handmaden shall be delivered of a living child &amp; be spared, he come in a bout one hour after that and in the course of about 2. hours she was delivered<aside class=\"popup-wrapper\" id=\"13312904275012301787\"><a href=\"#13312904275012301787\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"trans33\"><span id=\"documenttrans33\">33</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">The infant was <a href=\"/person/susanna-susan-bailey-smith-hunt\" class=\"referenceInPop\">Susanna Bailey Smith</a>, <a href=\"/person/samuel-harrison-smith\" class=\"referenceInPop\">Samuel</a> and <a href=\"/person/mary-bailey-smith\" class=\"referenceInPop\">Mary Bailey Smith</a>’s first child.</p><hr></div></div></aside> and thus what God had manifested to me was fulfilled every whit, on the night of the same day I preached in the <aside class=\"popup-wrapper\" id=\"7670727054295799890\"><a href=\"#7670727054295799890\" class=\"reference staticPopup\" ro=\"x5107\" place=\"x5107\" title=\"Schoolhouse, Kirtland Township, Ohio\">Schoolhouse</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Schoolhouse, Kirtland Township, Ohio\"><p>Two-story structure measuring thirty by thirty-eight feet, built during fall and winter of 1834. Located immediately west of temple lot on Whitney Street (now Maple Street) in Kirtland. School of the Elders met here from winter 1834–1835 to Jan. 1836. Ground...</p><a class=\"more\" href=\"/place/schoolhouse-kirtland-township-ohio\">More Info</a></div></div></aside> to a crowded congregation</div> <div class=\"noindent anonymous-block-p journal-entry-divider\"><a name=\"JSPPJ1_d1e14432\"><span id=\"JSPPJ1_d1e14432\" class=\"anonymous-block\">28 October 1835 • Wednesday</span></a></div> <div class=\"indent wasptag\">Wednesday 28th at holm attending to my family concerns &amp;c</div> <div class=\"noindent anonymous-block-p journal-entry-divider\"><a name=\"JSPPJ1_d1e14445\"><span id=\"JSPPJ1_d1e14445\" class=\"anonymous-block\">29 October 1835 • Thursday</span></a></div> <div class=\"indent wasptag\">Thursday 29th Br <aside class=\"popup-wrapper\" id=\"12807620858397900207\"><a href=\"#12807620858397900207\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">W. Parish [Warren Parrish]</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> commenced writing for me, <aside class=\"popup-wrapper\" id=\"17460918612242079954\"><a href=\"#17460918612242079954\" class=\"reference staticPopup\" ro=\"per58\" person=\"per58\" title=\"Joseph Smith Sr.\">Father</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Joseph, Sr.\"><p>12 July 1771–14 Sept. 1840. Cooper, farmer, teacher, merchant. Born at Topsfield, Essex Co., Massachusetts. Son of Asael Smith and Mary Duty. Nominal member of Congregationalist church at Topsfield. Married to Lucy Mack by Seth Austin, 24 Jan. 1796, at Tunbridge...</p><a class=\"more\" href=\"/person/joseph-smith-sr\">View Full Bio</a></div></div></aside> &amp; <aside class=\"popup-wrapper\" id=\"8473665084406814387\"><a href=\"#8473665084406814387\" class=\"reference staticPopup\" ro=\"x4507\" person=\"x4507\" title=\"Lucy Mack Smith\">Mother Smith</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Lucy Mack\"><p>8 July 1775–14 May 1856. Oilcloth painter, nurse, fund-raiser, author. Born at Gilsum, Cheshire Co., New Hampshire. Daughter of Solomon Mack Sr. and Lydia Gates. Moved to Montague, Franklin Co., Massachusetts, 1779; to Tunbridge, Orange Co., Vermont, 1788...</p><a class=\"more\" href=\"/person/lucy-mack-smith\">View Full Bio</a></div></div></aside> visited us and while we set writing <aside class=\"popup-wrapper\" id=\"7137347946157868214\"><a href=\"#7137347946157868214\" class=\"reference staticPopup\" ro=\"per77\" person=\"per77\" title=\"Edward Partridge\">Bishop, Partrige [Edward Partridge]</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Partridge, Edward\"><p>27 Aug. 1793–27 May 1840. Hatter. Born at Pittsfield, Berkshire Co., Massachusetts. Son of William Partridge and Jemima Bidwell. Moved to Painesville, Geauga Co., Ohio. Married Lydia Clisbee, 22 Aug. 1819, at Painesville. Initially a Universal Restorationist...</p><a class=\"more\" href=\"/person/edward-partridge\">View Full Bio</a></div></div></aside> passed our window just returned from the East— <aside class=\"popup-wrapper\" id=\"1388174876430900435\"><a href=\"#1388174876430900435\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">Br Parish</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> commenced writing for me at $15.00 per month I paid him $16.00 in advance out of the <aside class=\"popup-wrapper\" id=\"13528553124866088638\"><a href=\"#13528553124866088638\" class=\"reference staticPopup\" ro=\"x5051\" place=\"x5051\" title=\"Committee store, Kirtland Township, Ohio\">committee Store</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Committee store, Kirtland Township, Ohio\"><p>Established by temple building committee to support those working on Kirtland temple.</p><a class=\"more\" href=\"/place/committee-store-kirtland-township-ohio\">More Info</a></div></div></aside> <aside class=\"popup-wrapper\" id=\"6466755047654127972\"><a href=\"#6466755047654127972\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">Br Parrish</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> agrees to board himself, for which I agree to allow him four Dollars more per. month making $19.00. I was then called to appear before the <aside class=\"popup-wrapper\" id=\"8234602662231378481\"><a href=\"#8234602662231378481\" class=\"reference staticPopup\" ro=\"x4086\" topic=\"x4086\" title=\"High council\">high Council</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"High council\"><p>A governing body of twelve high priests. The first high council was organized in Kirtland, Ohio, on 17 February 1834 “for the purpose of settling important difficulties which might arise in the church, which could not be settled by the church, or the bishop...</p><a class=\"more\" href=\"/topic/high-council\">View Glossary</a></div></div></aside> which was [p. 10]</div></body></html>",
+   "expandedText": "<html><head></head><body><div class=\"indent continuation wasptag\"> of $20, including costs, for which <span class=\"deleted\">Lawsuit,</span> he was <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>oblieged to sell his cow, to defray the expenses of the <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>same, and I say in the name of Jesus Christ that <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>the money that they have thus unjustly taken shall <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>be a testimony against them and canker &amp; eat their <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>flesh as fire</div> <div class=\"noindent anonymous-block-p journal-entry-divider\"><a name=\"JSPPJ1_d1e14344\"><span id=\"JSPPJ1_d1e14344\" class=\"anonymous-block\">27 October 1835 • Tuesday</span></a></div> <div class=\"indent wasptag\">Tuesday 27<span class=\"superscript\">th</span> in the morning I was called to visit at <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>Br <aside class=\"popup-wrapper\" id=\"2139811677352141568\"><a href=\"#2139811677352141568\" class=\"reference staticPopup\" ro=\"per65\" person=\"per65\" title=\"Samuel Harrison Smith\">Samuel Smith</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Samuel Harrison\"><p>13 Mar. 1808–30 July 1844. Farmer, logger, scribe, builder, tavern operator. Born at Tunbridge, Orange Co., Vermont. Son of Joseph Smith Sr. and Lucy Mack. Moved to Royalton, Windsor Co., Vermont, by Mar. 1810; to Lebanon, Grafton Co., New Hampshire, 1811...</p><a class=\"more\" href=\"/person/samuel-harrison-smith\">View Full Bio</a></div></div></aside>s <aside class=\"popup-wrapper\" id=\"13680597783785854541\"><a href=\"#13680597783785854541\" class=\"reference staticPopup\" ro=\"per1182\" person=\"per1182\" title=\"Mary Bailey Smith\">his wife</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Mary Bailey\"><p>20 Dec. 1808–25 Jan. 1841. Born at Bedford, Hillsborough Co., New Hampshire. Daughter of Joshua Bailey and Hannah Boutwell. Baptized into Church of Jesus Christ of Latter-day Saints by Samuel H. Smith, 26 June 1832, at Boston. Migrated from Boston to Kirtland...</p><a class=\"more\" href=\"/person/mary-bailey-smith\">View Full Bio</a></div></div></aside> was confined an[d] in <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>a verry dangerous situation, <aside class=\"popup-wrapper\" id=\"9101738371584416557\"><a href=\"#9101738371584416557\" class=\"reference staticPopup\" ro=\"per493\" person=\"per493\" title=\"Don Carlos Smith (JS’s brother)\">Br. Carloss [Don Carlos Smith]</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Don Carlos (JS’s brother)\"><p>25 Mar. 1816–7 Aug. 1841. Farmer, printer, editor. Born at Norwich, Windsor Co., Vermont. Son of Joseph Smith Sr. and Lucy Mack. Moved to Palmyra, Ontario Co., New York, 1816–Jan. 1817. Moved to Manchester, Ontario Co., 1825. Baptized into Church of Jesus...</p><a class=\"more\" href=\"/person/don-carlos-smith-jss-brother\">View Full Bio</a></div></div></aside> took one of <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>my horses and went to <aside class=\"popup-wrapper\" id=\"16077872411815521205\"><a href=\"#16077872411815521205\" class=\"reference staticPopup\" ro=\"plc117\" place=\"plc117\" title=\"Chardon Township, Ohio\">Chardon</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Chardon Township, Ohio\"><p>Located eight miles south of Lake Erie and immediately east of Kirtland Township. Settled by 1812. Included village of Chardon. Population of township in 1820 about 430; in 1830 about 880; and in 1840 about 1,100. Two of JS’s sisters resided in township. ...</p><a class=\"more\" href=\"/place/chardon-township-ohio\">More Info</a></div></div></aside> after <aside class=\"popup-wrapper\" id=\"1587568222200850871\"><a href=\"#1587568222200850871\" class=\"reference staticPopup\" ro=\"per63\" person=\"per63\" title=\"Frederick Granger Williams\">Doct. [Frederick G.] Williams</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Williams, Frederick Granger\"><p>28 Oct. 1787–10 Oct. 1842. Ship’s pilot, teacher, physician, justice of the peace. Born at Suffield, Hartford Co., Connecticut. Son of William Wheeler Williams and Ruth Granger. Moved to Newburg, Cuyahoga Co., Ohio, 1799. Practiced Thomsonian botanical system...</p><a class=\"more\" href=\"/person/frederick-granger-williams\">View Full Bio</a></div></div></aside> <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>I went out into the field and bowed before the <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>Lord and called upon him in mighty prayer <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>in her behalf the word of the Lord came unto me <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>saying my Servant <aside class=\"popup-wrapper\" id=\"9815194222379439082\"><a href=\"#9815194222379439082\" class=\"reference staticPopup\" ro=\"per63\" person=\"per63\" title=\"Frederick Granger Williams\">Fredrick</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Williams, Frederick Granger\"><p>28 Oct. 1787–10 Oct. 1842. Ship’s pilot, teacher, physician, justice of the peace. Born at Suffield, Hartford Co., Connecticut. Son of William Wheeler Williams and Ruth Granger. Moved to Newburg, Cuyahoga Co., Ohio, 1799. Practiced Thomsonian botanical system...</p><a class=\"more\" href=\"/person/frederick-granger-williams\">View Full Bio</a></div></div></aside> shall come and shall <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>have wisdom given him to deal prudently and <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>my handmaden shall be delivered of a living <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>child &amp; be spared, he come in a bout one hour after <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>that and in the course of about 2. hours she was <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>delivered<aside class=\"popup-wrapper\" id=\"9311624896368907994\"><a href=\"#9311624896368907994\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"trans33\"><span id=\"documenttrans33\">33</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">The infant was <a href=\"/person/susanna-susan-bailey-smith-hunt\" class=\"referenceInPop\">Susanna Bailey Smith</a>, <a href=\"/person/samuel-harrison-smith\" class=\"referenceInPop\">Samuel</a> and <a href=\"/person/mary-bailey-smith\" class=\"referenceInPop\">Mary Bailey Smith</a>’s first child.</p><hr></div></div></aside> and thus what God had manifested to <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>me was fulfilled every whit, on the night of <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>the same day I preached in the <aside class=\"popup-wrapper\" id=\"11541178168355909830\"><a href=\"#11541178168355909830\" class=\"reference staticPopup\" ro=\"x5107\" place=\"x5107\" title=\"Schoolhouse, Kirtland Township, Ohio\">Schoolhouse</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Schoolhouse, Kirtland Township, Ohio\"><p>Two-story structure measuring thirty by thirty-eight feet, built during fall and winter of 1834. Located immediately west of temple lot on Whitney Street (now Maple Street) in Kirtland. School of the Elders met here from winter 1834–1835 to Jan. 1836. Ground...</p><a class=\"more\" href=\"/place/schoolhouse-kirtland-township-ohio\">More Info</a></div></div></aside> to a <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>crowded congregation</div> <div class=\"noindent anonymous-block-p journal-entry-divider\"><a name=\"JSPPJ1_d1e14432\"><span id=\"JSPPJ1_d1e14432\" class=\"anonymous-block\">28 October 1835 • Wednesday</span></a></div> <div class=\"indent wasptag\">Wednesday 28<span class=\"superscript\">th</span> at holm attending to my family <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>concerns &amp;c</div> <div class=\"noindent anonymous-block-p journal-entry-divider\"><a name=\"JSPPJ1_d1e14445\"><span id=\"JSPPJ1_d1e14445\" class=\"anonymous-block\">29 October 1835 • Thursday</span></a></div> <div class=\"indent wasptag\">Thursday 29<span class=\"superscript\">th</span> Br <aside class=\"popup-wrapper\" id=\"5462126858216240779\"><a href=\"#5462126858216240779\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">W. Parish [Warren Parrish]</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> commenced <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>writing for me, <aside class=\"popup-wrapper\" id=\"15998455166153781811\"><a href=\"#15998455166153781811\" class=\"reference staticPopup\" ro=\"per58\" person=\"per58\" title=\"Joseph Smith Sr.\">Father</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Joseph, Sr.\"><p>12 July 1771–14 Sept. 1840. Cooper, farmer, teacher, merchant. Born at Topsfield, Essex Co., Massachusetts. Son of Asael Smith and Mary Duty. Nominal member of Congregationalist church at Topsfield. Married to Lucy Mack by Seth Austin, 24 Jan. 1796, at Tunbridge...</p><a class=\"more\" href=\"/person/joseph-smith-sr\">View Full Bio</a></div></div></aside> &amp; <aside class=\"popup-wrapper\" id=\"9862467037144690200\"><a href=\"#9862467037144690200\" class=\"reference staticPopup\" ro=\"x4507\" person=\"x4507\" title=\"Lucy Mack Smith\">Mother Smith</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Lucy Mack\"><p>8 July 1775–14 May 1856. Oilcloth painter, nurse, fund-raiser, author. Born at Gilsum, Cheshire Co., New Hampshire. Daughter of Solomon Mack Sr. and Lydia Gates. Moved to Montague, Franklin Co., Massachusetts, 1779; to Tunbridge, Orange Co., Vermont, 1788...</p><a class=\"more\" href=\"/person/lucy-mack-smith\">View Full Bio</a></div></div></aside> visit[ed] us <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>and while we set writing <aside class=\"popup-wrapper\" id=\"16342035238937150858\"><a href=\"#16342035238937150858\" class=\"reference staticPopup\" ro=\"per77\" person=\"per77\" title=\"Edward Partridge\">Bishop, Partrige [Edward Partridge]</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Partridge, Edward\"><p>27 Aug. 1793–27 May 1840. Hatter. Born at Pittsfield, Berkshire Co., Massachusetts. Son of William Partridge and Jemima Bidwell. Moved to Painesville, Geauga Co., Ohio. Married Lydia Clisbee, 22 Aug. 1819, at Painesville. Initially a Universal Restorationist...</p><a class=\"more\" href=\"/person/edward-partridge\">View Full Bio</a></div></div></aside> <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>passed our window just returned from the <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>East— <aside class=\"popup-wrapper\" id=\"15657363016470134582\"><a href=\"#15657363016470134582\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">Br Parish</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> commenced writing for me at <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>$15.00 p[e]r month I paid him $16.00 in advance <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>out of the <aside class=\"popup-wrapper\" id=\"2844430910033909596\"><a href=\"#2844430910033909596\" class=\"reference staticPopup\" ro=\"x5051\" place=\"x5051\" title=\"Committee store, Kirtland Township, Ohio\">committee Store</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Committee store, Kirtland Township, Ohio\"><p>Established by temple building committee to support those working on Kirtland temple.</p><a class=\"more\" href=\"/place/committee-store-kirtland-township-ohio\">More Info</a></div></div></aside> <aside class=\"popup-wrapper\" id=\"9240151081996155431\"><a href=\"#9240151081996155431\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">Br Parrish</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> agrees <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>to board himself, for which I agree to &lt;​allow him​&gt; four Dollars <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>more p[e]r. month making $19.00. I was then called <span class=\"line-break\" xmlns=\"http://www.w3.org/1999/xhtml\"></span>to appear before the <aside class=\"popup-wrapper\" id=\"646649241462452347\"><a href=\"#646649241462452347\" class=\"reference staticPopup\" ro=\"x4086\" topic=\"x4086\" title=\"High council\">high Council</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"High council\"><p>A governing body of twelve high priests. The first high council was organized in Kirtland, Ohio, on 17 February 1834 “for the purpose of settling important difficulties which might arise in the church, which could not be settled by the church, or the bishop...</p><a class=\"more\" href=\"/topic/high-council\">View Glossary</a></div></div></aside> which was [p. 10]</div></body></html>",
+   "historicalIntro": {
+    "text": "<html><head></head><body><div class=\"indent wasptag\">JS viewed himself as divinely commissioned to gather God’s people in the last days and prepare them for Jesus Christ’s second coming and millennial reign. By 1835, the <aside class=\"popup-wrapper\" id=\"3586996341832616965\"><a href=\"#3586996341832616965\" class=\"reference staticPopup\" ro=\"x5077\" place=\"x5077\" title=\"House of the Lord, Kirtland Township, Ohio\">House of the Lord</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"House of the Lord, Kirtland Township, Ohio\"><p>JS revelation, dated Jan. 1831, directed Latter-day Saints to migrate to Ohio, where they would “be endowed with power from on high.” In Dec. 1832, JS revelation directed Saints to “establish . . . an house of God.” JS revelation, dated 1 June 1833, chastened...</p><a class=\"more\" href=\"/place/house-of-the-lord-kirtland-township-ohio\">More Info</a></div></div></aside>, a temple in <aside class=\"popup-wrapper\" id=\"17012052699992327849\"><a href=\"#17012052699992327849\" class=\"reference staticPopup\" ro=\"plc13\" place=\"plc13\" title=\"Kirtland Township, Ohio\">Kirtland</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Kirtland Township, Ohio\"><p>Located ten miles south of Lake Erie. Settled by 1811. Organized by 1818. Latter-day Saint missionaries visited township, early Nov. 1830; many residents joined Church of Jesus Christ of Latter-day Saints. Population in 1830 about 55 Latter-day Saints and...</p><a class=\"more\" href=\"/place/kirtland-township-ohio\">More Info</a></div></div></aside>, Ohio, became the centerpiece of this commission and hence of this journal. The Latter-day Saints were commanded in revelations dated as early as December 1832 to establish “a house of God” and were chastised in June 1833 for not having begun the endeavor.<aside class=\"popup-wrapper\" id=\"17368652662260955554\"><a href=\"#17368652662260955554\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro1\"><span id=\"documentintro1\">1</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\"><a href=\"/paper-summary/revelation-27-28-december-1832-dc-881-126\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-27-28-december-1832-dc-881-126\" poptitle=\"Revelation, 27–28 December 1832 [D&amp;C 88:1–126]\">Revelation, 27–28 Dec. 1832</a> and <a href=\"/paper-summary/revelation-3-january-1833-dc-88127-137\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-3-january-1833-dc-88127-137\" poptitle=\"Revelation, 3\nJanuary 1833 [D&amp;C 88:127–137]\">3 Jan. 1833</a>, in <a href=\"/paper-summary/doctrine-and-covenants-1835/115\" class=\"externalLink\">Doctrine and Covenants 7:36, 1835 ed.</a> [D&amp;C 88:119]; <a href=\"/paper-summary/revelation-1-june-1833-dc-95\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-1-june-1833-dc-95\" poptitle=\"Revelation, 1 June 1833 [D&amp;C\n95]\">Revelation, 1 June 1833</a>, in <a href=\"/paper-summary/doctrine-and-covenants-1835/241\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/doctrine-and-covenants-1835\" poptitle=\"Section 95 • Revelation, 1 June\n1833 [D&amp;C 95]\">Doctrine and Covenants 95:1, 1835 ed.</a> [D&amp;C 95:2–3].</p><hr></div></div></aside> Construction began 6 June 1833 after JS and colleagues saw in vision the completed structure.<aside class=\"popup-wrapper\" id=\"11474767727844086690\"><a href=\"#11474767727844086690\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro2\"><span id=\"documentintro2\">2</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Angell, Autobiography, 14–15.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> Angell, Truman O. Autobiography, 1884. CHL. MS 12334. Also available in Archie Leon Brow</div></body></html>",
+    "footnotes": [
+     {
+      "id": "17368652662260955554",
+      "text": "<html><head></head><body><p class=\"bottom_0\"><a href=\"/paper-summary/revelation-27-28-december-1832-dc-881-126\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-27-28-december-1832-dc-881-126\" poptitle=\"Revelation, 27–28 December 1832 [D&amp;C 88:1–126]\">Revelation, 27–28 Dec. 1832</a> and <a href=\"/paper-summary/revelation-3-january-1833-dc-88127-137\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-3-january-1833-dc-88127-137\" poptitle=\"Revelation, 3\nJanuary 1833 [D&amp;C 88:127–137]\">3 Jan. 1833</a>, in <a href=\"/paper-summary/doctrine-and-covenants-1835/115\" class=\"externalLink\">Doctrine and Covenants 7:36, 1835 ed.</a> [D&amp;C 88:119]; <a href=\"/paper-summary/revelation-1-june-1833-dc-95\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-1-june-1833-dc-95\" poptitle=\"Revelation, 1 June 1833 [D&amp;C\n95]\">Revelation, 1 June 1833</a>, in <a href=\"/paper-summary/doctrine-and-covenants-1835/241\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/doctrine-and-covenants-1835\" poptitle=\"Section 95 • Revelation, 1 June\n1833 [D&amp;C 95]\">Doctrine and Covenants 95:1, 1835 ed.</a> [D&amp;C 95:2–3].</p></body></html>",
+      "number": 1,
+      "type": "number",
+      "toenote": "",
+      "longcitation": null
+     },
+     {
+      "id": "11474767727844086690",
+      "text": "<html><head></head><body><p class=\"bottom_0\">Angell, Autobiography, 14–15.</p></body></html>",
+      "number": 2,
+      "type": "number",
+      "toenote": "",
+      "longcitation": "<p id=\"source-note1\"> Angell, Truman O. Autobiography, 1884. CHL. MS 12334. Also available in Archie Leon Brown and Charlene L. Hathaway, <span class=\"title\">141 Years of Mormon Heritage: Rawsons, Browns, Angells—Pioneers</span> (Oakland, CA: By the authors, 1973), 119–135. </p>"
+     },
+     {
+      "id": "10827054009799296372",
+      "text": "<html><head></head><body><p class=\"bottom_0\"><a href=\"/paper-summary/revelation-22-june-1834-dc-105\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/revelation-22-june-1834-dc-105\" poptitle=\"Revelation, 22 June 1834\n[D&amp;C 105]\">Revelation, 22 June 1834</a>, in <a href=\"/paper-summary/doctrine-and-covenants-1844/391\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/doctrine-and-covenants-1844\" poptitle=\"Section 102 • Revelation, 22 June 1834 [D&amp;C 105]\">Doctrine and Covenants 102:3, 1844 ed.</a> [D&amp;C 105:11]. For an account of the solemn assembly, see the journal entry for <a href=\"/paper-summary/journal-1835-1836/190\" class=\"referenceInPop\" pop=\"/ajax/papers-text/tooltip/journal-1835-1836\" poptitle=\"30 March 1836 • Wednesday\">30 March 1836</a>.</p></body></html>",
+      "number": 3,
+      "type": "number",
+      "toenote": "",
+      "longcitation": null
+     }
+    ]
+   },
+   "sourceNotes": {
+    "text": "<html><head></head><body><span class=\"source-note-summary\"> <div class=\"indent wasptag\">JS, “Sketch Book for the use of Joseph Smith, jr.,” Journal, Sept. 1835–Apr. 1836; handwriting of <aside class=\"popup-wrapper\" id=\"15201522340273370835\"><a href=\"#15201522340273370835\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">Warren Parrish</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside>, an unidentified scribe, <aside class=\"popup-wrapper\" id=\"9991632527124769841\"><a href=\"#9991632527124769841\" class=\"reference staticPopup\" ro=\"per940\" person=\"per940\" title=\"Sylvester Smith\">Sylvester Smith</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Smith, Sylvester\"><p>25 Mar. 1806–22 Feb. 1880. Farmer, carpenter, lawyer, realtor. Born at Tyringham, Berkshire Co., Massachusetts. Son of Chileab Smith and Nancy Marshall. Moved to Amherst, Lorain Co., Ohio, ca. 1815. Married Elizabeth Frank, 27 Dec. 1827, likely in Chautauque...</p><a class=\"more\" href=\"/person/sylvester-smith\">View Full Bio</a></div></div></aside>, <aside class=\"popup-wrapper\" id=\"4107879198535069657\"><a href=\"#4107879198535069657\" class=\"reference staticPopup\" ro=\"per63\" person=\"per63\" title=\"Frederick Granger Williams\">Frederick G. Williams</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Williams, Frederick Granger\"><p>28 Oct. 1787–10 Oct. 1842. Ship’s pilot, teacher, physician, justice of the peace. Born at Suffield, Hartford Co., Connecticut. Son of William Wheeler Williams and Ruth Granger. Moved to Newburg, Cuyahoga Co., Ohio, 1799. Practiced Thomsonian botanical system...</p><a class=\"more\" href=\"/person/frederick-granger-williams\">View Full Bio</a></div></div></aside>, <aside class=\"popup-wrapper\" id=\"12155628297574491662\"><a href=\"#12155628297574491662\" class=\"reference staticPopup\" ro=\"per589\" person=\"per589\" title=\"Warren A. Cowdery\">Warren Cowdery</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Cowdery, Warren A.\"><p>17 Oct. 1788–23 Feb. 1851. Physician, druggist, farmer, editor. Born at Wells, Rutland Co., Vermont. Son of William Cowdery and Rebecca Fuller. Married Patience Simonds, 22 Sept. 1814, in Pawlet, Rutland Co. Moved to Freedom, Cattaraugus Co., New York, 1816...</p><a class=\"more\" href=\"/person/warren-a-cowdery\">View Full Bio</a></div></div></aside>, JS, and <aside class=\"popup-wrapper\" id=\"12978316883993061702\"><a href=\"#12978316883993061702\" class=\"reference staticPopup\" ro=\"per47\" person=\"per47\" title=\"Oliver Cowdery\">Oliver Cowdery</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Cowdery, Oliver\"><p>3 Oct. 1806–3 Mar. 1850. Clerk, teacher, justice of the peace, lawyer, newspaper editor. Born at Wells, Rutland Co., Vermont. Son of William Cowdery and Rebecca Fuller. Raised Congregationalist. Moved to western New York and clerked at a store, ca. 1825–1828...</p><a class=\"more\" href=\"/person/oliver-cowdery\">View Full Bio</a></div></div></aside>; 195 pages; JS Collection, CHL. Includes redactions and archival marking.</div> </span> <div class=\"indent wasptag\">The text block consists of 114 leaves—including single flyleaves and pastedowns in the front and back—measuring 12¼ x 8 inches (31 x 20 cm). The 110 interior leaves are ledger paper with thirty-four lines in faint—and now faded—black ink that has turned brown. There are nine gatherings of various sizes—each gathering about a dozen leaves. The text block is sewn all along over cloth tapes. The front and back covers of the journal are pasteboard. The ledger has a tight-back case binding with a brown calfskin quarter-leather binding. The outside covers are adorned in shell marbled paper, with dark green body and veins of light green. The bound volume measures 12⅜ x 8¼ inches (31 x 21 cm) and is <span class=\"fraction\"><sup class=\"math_super\">13</sup>/<sub class=\"math_sub\">16</sub></span> inches (2 cm) thick. One cover of the book is labeled “Repentence.” in black ink. The first page of ledger paper under that cover contains eight lines of references to the book of Genesis under the heading “Scriptures relating to Repentince”. The spine has “No 8” inscribed upside up when the book is standing upright for this side. When the volume is turned upside down and flipped front to back, the other cover is titled “Sabbath Day” with “No 9” written beneath in black ink. The first page of ledger paper under that cover contains two lines of references to the book of Genesis under the heading “Scriptures relating to the Sabbath day”. Thus the book was used to simultaneously house two volumes of topical notes on biblical passages. This book was apparently part of a larger series that included at least two other extant volumes—one bearing “Faith” and “10” on the cover, and the other bearing “Second Comeing of Christ” and “No 3” on one cover and “Gift of the Holy Ghost” on the other cover.<aside class=\"popup-wrapper\" id=\"1378773231863112383\"><a href=\"#1378773231863112383\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro1\"><span id=\"documentintro1\">1</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">“<a href=\"/paper-summary/grammar-and-alphabet-of-the-egyptian-language-circa-july-circa-november-1835\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/grammar-and-alphabet-of-the-egyptian-language-circa-july-circa-november-1835\" poptitle=\"Grammar and Alphabet of the Egyptian Language, circa\n July–circa November 1835\">Grammar &amp; Aphabet of the Egyptian Language</a>,” Kirtland Egyptian Papers, ca. 1835–1836, CHL; Kirtland Elders Quorum, “Record”.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> Kirtland Elders Quorum. “A Record of the First Quorurum of Elders Belonging to the Church of Christ: In Kirtland Geauga Co. Ohio,” 1836–1838, 1840–1841. CCLA. </p></div></div></div></aside> In late 1835, JS and scribes began using the book to record his journal for 1835–1836, which begins on the recto of the second leaf of ledger paper. <aside class=\"popup-wrapper\" id=\"13365577161450163702\"><a href=\"#13365577161450163702\" class=\"reference staticPopup\" ro=\"per622\" person=\"per622\" title=\"Warren Farr Parrish\">Warren Parrish</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Parrish, Warren Farr\"><p>10 Jan. 1803–3 Jan. 1877. Clergyman, gardener. Born in New York. Son of John Parrish and Ruth Farr. Married first Elizabeth (Betsey) Patten of Westmoreland Co., New Hampshire, ca. 1822. Lived at Alexandria, Jefferson Co., New York, 1830. Purchased land at...</p><a class=\"more\" href=\"/person/warren-farr-parrish\">View Full Bio</a></div></div></aside> added the title “Sketch Book” to the cover, beneath “Repentence.”</div> <div class=\"indent wasptag\">The entire journal is inscribed in black ink that later turned brown. Pages 25, 51, 77, 103, 129, and 154 bear the marks of adhesive wafers that were probably used to attach manuscripts until they were copied into the journal. The journal was used in <aside class=\"popup-wrapper\" id=\"1008808051126327838\"><a href=\"#1008808051126327838\" class=\"reference staticPopup\" ro=\"plc12\" place=\"plc12\" title=\"Nauvoo, Illinois\">Nauvoo</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Nauvoo, Illinois\"><p>Principal gathering place for Saints following expulsion from Missouri. Beginning in 1839, Church of Jesus Christ of Latter-day Saints purchased lands in earlier settlement of Commerce and planned settlement of Commerce City, as well as surrounding areas....</p><a class=\"more\" href=\"/place/nauvoo-illinois\">More Info</a></div></div></aside>, Illinois, in 1843 as a major source in composing JS’s multivolume manuscript history of the church. At this time, redactions were made in ink and in graphite pencil, and use marks were made in graphite. Also, apparently in Nauvoo, the cover of the journal side of the book was marked with a “D” and then with a larger, stylized “D”. At some point a white paper spine label was added with “1835–6 &lt;​<aside class=\"popup-wrapper\" id=\"10393320278721716338\"><a href=\"#10393320278721716338\" class=\"reference staticPopup\" ro=\"plc13\" place=\"plc13\" title=\"Kirtland Township, Ohio\">Kirtland</a><div class=\"popup-content\"><div class=\"note-data\" isnote=\"Y\" isnonsearchable=\"Y\"><input type=\"hidden\" value=\"Kirtland Township, Ohio\"><p>Located ten miles south of Lake Erie. Settled by 1811. Organized by 1818. Latter-day Saint missionaries visited township, early Nov. 1830; many residents joined Church of Jesus Christ of Latter-day Saints. Population in 1830 about 55 Latter-day Saints and...</p><a class=\"more\" href=\"/place/kirtland-township-ohio\">More Info</a></div></div></aside>​&gt; JOURNAL” hand printed or stenciled in black ink that later turned brown. The insertion “Kirtland” is written in graphite. Also, in the “Repentence” side of the volume, the rectos of the third through eighth leaves of ledger paper are numbered on the upper right-hand corners as 195, 197, 199, 201, 203, and 205—all written in graphite and apparently redactions. Except with regard to the title “Sketch Book”, none of the authors of the inscriptions mentioned previously have been identified. This volume is listed in Nauvoo and early Utah inventories of church records, indicating continuous custody.<aside class=\"popup-wrapper\" id=\"16985232625165601005\"><a href=\"#16985232625165601005\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro2\"><span id=\"documentintro2\">2</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">“Schedule of Church Records. Nauvoo 1846,” [1]; “Historian’s Office Catalogue,” [1], Catalogs and Inventories, 1846–1904, CHL; Johnson, <span class=\"title\">Register of the Joseph Smith Collection,</span> 7.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\"> Historian’s Office. Catalogs and Inventories, 1846–1904. CHL. CR 100 130.</p><p id=\"source-note2\"> Johnson, Jeffery O. <span class=\"title\">Register of the Joseph Smith Collection in the Church Archives, the Church of Jesus Christ of Latter-day Saints.</span> Salt Lake City: Historical Department of the Church of Jesus Christ of Latter-day Saints, 1973. </p></div></div></div></aside></div></body></html>",
+    "footnotes": [
+     {
+      "id": "1378773231863112383",
+      "text": "<html><head></head><body><p class=\"bottom_0\">“<a href=\"/paper-summary/grammar-and-alphabet-of-the-egyptian-language-circa-july-circa-november-1835\" class=\"referenceInPop\" pop=\"/ajax/papers/tooltip/grammar-and-alphabet-of-the-egyptian-language-circa-july-circa-november-1835\" poptitle=\"Grammar and Alphabet of the Egyptian Language, circa\n July–circa November 1835\">Grammar &amp; Aphabet of the Egyptian Language</a>,” Kirtland Egyptian Papers, ca. 1835–1836, CHL; Kirtland Elders Quorum, “Record”.</p></body></html>",
+      "number": 1,
+      "type": "number",
+      "toenote": "",
+      "longcitation": "<p id=\"source-note1\"> Kirtland Elders Quorum. “A Record of the First Quorurum of Elders Belonging to the Church of Christ: In Kirtland Geauga Co. Ohio,” 1836–1838, 1840–1841. CCLA. </p>"
+     },
+     {
+      "id": "16985232625165601005",
+      "text": "<html><head></head><body><p class=\"bottom_0\">“Schedule of Church Records. Nauvoo 1846,” [1]; “Historian’s Office Catalogue,” [1], Catalogs and Inventories, 1846–1904, CHL; Johnson, <span class=\"title\">Register of the Joseph Smith Collection,</span> 7.</p></body></html>",
+      "number": 2,
+      "type": "number",
+      "toenote": "",
+      "longcitation": "<p id=\"source-note1\"> Historian’s Office. Catalogs and Inventories, 1846–1904. CHL. CR 100 130.</p><p id=\"source-note2\"> Johnson, Jeffery O. <span class=\"title\">Register of the Joseph Smith Collection in the Church Archives, the Church of Jesus Christ of Latter-day Saints.</span> Salt Lake City: Historical Department of the Church of Jesus Christ of Latter-day Saints, 1973. </p>"
+     }
+    ]
+   },
+   "calendarsOfDocuments": [],
+   "versions": [
+    {
+     "versionTitle": "Letter and Revelation to Harvey Whitlock, 16 November 1835",
+     "versionLink": "/paper-summary/letter-and-revelation-to-harvey-whitlock-16-november-1835/1",
+     "versionFeatured": "true"
+    },
+    {
+     "versionTitle": "Revelation, 16 November 1835",
+     "versionLink": "/paper-summary/revelation-16-november-1835/1",
+     "versionFeatured": "true"
+    },
+    {
+     "versionTitle": "Discourse, 30 March 1836",
+     "versionLink": "/paper-summary/discourse-30-march-1836/1",
+     "versionFeatured": "true"
+    },
+    {
+     "versionTitle": "Discourse, 16 January 1836",
+     "versionLink": "/paper-summary/discourse-16-january-1836/1",
+     "versionFeatured": "true"
+    },
+    {
+     "versionTitle": "Revelation, 27 October 1835",
+     "versionLink": "/paper-summary/revelation-27-october-1835/1",
+     "versionFeatured": "true"
+    }
+   ],
+   "images": {
+    "smallImageUrl": "/6663/6663_ms155_1_02_jsj-2_010_thumb.jpg",
+    "mediumImageUrl": "/6663/6663_ms155_1_02_jsj-2_010_med.jpg",
+    "largeImageUrl": "/6663/6663_ms155_1_02_jsj-2_010.jpg",
+    "downloadImageUrl": "/6663/6663_ms155_1_02_jsj-2_010_download.jpg"
+   },
+   "imageCredit": "",
+   "facsimile": "",
+   "dzUrlXml": "/6663/6663_ms155_1_02_jsj-2_010.xml",
+   "classification": "Journals",
+   "publishedStatus": "FinalContent",
+   "accessionNumber": "6663",
+   "requestedPageNumber": "11",
+   "numberOfPages": "196",
+   "editorialTitle": "Journal, 1835–1836",
+   "cleanEditorialTitle": "Journal, 1835–1836",
+   "date": "September 22, 1835",
+   "handwriting": "Handwriting of Warren Parrish, an unidentified scribe, Sylvester Smith, Frederick G. Williams, Warren Cowdery, JS, and Oliver Cowdery",
+   "footnotes": [
+    {
+     "id": "9311624896368907994",
+     "text": "<html><head></head><body><p class=\"bottom_0\">The infant was <a href=\"/person/susanna-susan-bailey-smith-hunt\" class=\"referenceInPop\">Susanna Bailey Smith</a>, <a href=\"/person/samuel-harrison-smith\" class=\"referenceInPop\">Samuel</a> and <a href=\"/person/mary-bailey-smith\" class=\"referenceInPop\">Mary Bailey Smith</a>’s first child.</p></body></html>",
+     "number": 33,
+     "type": "number",
+     "toenote": "",
+     "longcitation": null
+    }
+   ],
+   "meta": {
+    "/paper-summary-PageTitle": "Journal, 1835–1836, Page 10",
+    "/paper-summary-MetaTitle": "Journal, 1835–1836, Page 10",
+    "/paper-summary-MetaDescription": "of $20, including costs, for which he was oblieged to sell his cow, to defray the expenses of the sa...",
+    "/paper-summary-MetaUrl": "/paper-summary/journal-1835-1836/11",
+    "/paper-summary-MetaImage": "/bc-jsp/content/jsp/images/6663/6663_ms155_1_02_jsj-2_010_thumb.jpg"
+   },
+   "scribes": [
+    {
+     "id": "per622",
+     "name": "Warren Parrish"
+    }
+   ],
+   "printVolumeLocation": "<a href=\"http://www.josephsmithpapers.org/articles/journals-volume-1-1832-1839\" class=\"externalLink\" xmlns:srchdoc=\"https://ldsc.xmlref.com/local/ldschurch/searchDocuments\" xmlns:lds=\"https://ldsc.xmlref.com/local/ldschurch\"><span class=\"title\">JSP,</span> J1:53–223 </a>"
+  },
+  "legal": {},
+  "disableVerticalScroll": true,
+  "documentURI": "/published/jsp/searchable/papers/27467/27467-0011.xml",
+  "searchOptions": [
+   {
+    "name": "| This Document",
+    "value": "document"
+   },
+   {
+    "name": "| Full Site",
+    "value": "site"
+   }
+  ]
+ }
+}

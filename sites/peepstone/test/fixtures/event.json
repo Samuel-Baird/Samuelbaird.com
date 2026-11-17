@@ -1,0 +1,83 @@
+{
+ "route": "/event/[uri]",
+ "pageProps": {
+  "context": "published",
+  "host": "www.josephsmithpapers.org",
+  "showHeader": true,
+  "footerStyle": "full",
+  "statusCode": 200,
+  "publisherMenuData": null,
+  "event": {
+   "authority": {
+    "references": "0",
+    "link-target-type": "event",
+    "target": "x13124",
+    "url": "/preview/jsp/searchable/events/x13124.xml",
+    "unique": "",
+    "refObject": {
+     "url": "x13124",
+     "entry": "53998544",
+     "docDesc": "Reorganization of Nauvoo House Association",
+     "title": "JSPPEAR",
+     "sortkey": "1845-04-07 000",
+     "link-target-type": "event",
+     "showSummary": "Y",
+     "WebPublishStatus": "InterimContent",
+     "ShowFootnotes": "Y",
+     "uriTitle": "reorganization-of-nauvoo-house-association",
+     "facet": [
+      {
+       "event": "Reorganization of Nauvoo House Association"
+      },
+      {
+       "genre": "Events"
+      }
+     ],
+     "documentInfo": {
+      "id": "53998544",
+      "a": {
+       "ro": "x13124",
+       "event": "x13124",
+       "title": "Reorganization of Nauvoo House Association"
+      },
+      "subtitle": "April 7, 1845",
+      "classification": "Timeline of Events",
+      "date": {
+       "sort": "1845-04-07",
+       "_value": "April 7, 1845"
+      },
+      "sortKey": "1845-04-07 000",
+      "defaultUrl": "/event/reorganization-of-nauvoo-house-association",
+      "abstract": "Reorganization of Nauvoo House Association, Nauvoo, Illinois."
+     },
+     "event": {
+      "name": {
+       "eventName": "Reorganization of Nauvoo House Association"
+      },
+      "altNames": {
+       "eventName": ""
+      },
+      "date": {
+       "when-iso": "1845-04-07",
+       "_value": "7 April 1845"
+      },
+      "priority": "1",
+      "typeInfo": {
+       "type": ""
+      },
+      "description": {
+       "abstract": {
+        "p": ""
+       },
+       "summary": "<html><head></head><body><div class=\" wasptag\" xmlns:srchdoc=\"https://ldsc.xmlref.com/local/ldschurch/searchDocuments\" xmlns:pm=\"https://xmlref.com/local/pm\" xmlns:lds=\"https://ldsc.xmlref.com/local/ldschurch\" xmlns=\"\">Reorganization of Nauvoo House Association, Nauvoo, Illinois.<aside class=\"popup-wrapper\" id=\"9239437426576662460\"><a href=\"#9239437426576662460\" class=\"editorial-note-static staticPopup\" title=\"Note\" name=\"intro1\"><span id=\"documentintro1\">1</span></a><div class=\"popup-content\"><div class=\"note-data editorial-footnote\" isnote=\"Y\"><p class=\"bottom_0\">Nauvoo House Association, Minutes, 7 Apr. 1845.</p><hr><div class=\"works-cited-links\"><a href=\"/works-cited\" class=\"pdf\" id=\"comp-works\">Comprehensive Works Cited</a></div><div class=\"source-note\"><p id=\"source-note1\">Nauvoo House Association. Minutes, 5 and 7 Apr. 1845. Nauvoo House Association, Records, 1841–1846. CHL. <a href=\"https://catalog.churchofjesuschrist.org/assets?id=8fdf9808-9a91-46f6-9daf-e78e1d9792bc&amp;crate=0&amp;index=0\" class=\"externalLink\">MS 2375, box 5, fd. 16</a>.</p></div></div></div></aside></div></body></html>"
+      },
+      "relatedObjects": "",
+      "sources": ""
+     }
+    }
+   },
+   "relatedlinks": []
+  },
+  "is404": false
+ }
+}
