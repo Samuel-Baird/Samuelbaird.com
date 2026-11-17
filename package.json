@@ -2,6 +2,6 @@
   "name": "deseret-wiki",
   "type": "module",
   "private": true,
-  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
+  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview", "words": "node scripts/deseret-words.mjs" },
   "dependencies": { "astro": "^5.0.0" }
 }
