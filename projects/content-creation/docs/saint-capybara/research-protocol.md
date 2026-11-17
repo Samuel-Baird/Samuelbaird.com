@@ -167,6 +167,47 @@ attributed quote:
 6. Record the verification in `sources.yaml`'s `verification` field:
    `{tool, verdict, link}`.
 
+### 6a. User-asserted verification override (2026-09-11 user direction)
+
+The user owns this project and may personally vouch for a source the agent's
+own tools cannot confirm — a print/microfilm record with no digital copy, a
+scan an OCR pass can't read, a paywall/anti-bot block, a site that refuses
+automated fetches, etc. This is a real gap: agent tooling fails in ways that
+don't mean the underlying fact is false.
+
+**How this works — flag, don't hide:**
+
+1. **The agent still attempts independent verification first**, every time,
+   using every tool available (Pulpit/GSA, WebSearch/WebFetch, the Browser
+   MCP, direct primary-source lookup). This override is a fallback for when
+   those attempts fail, not a shortcut around trying.
+2. **If the agent can't confirm it, ask for a source once** (a link, a
+   citation, a page number) — the user may have one and forgot to include
+   it.
+3. **If the user says they've personally verified it and doesn't want to
+   dig up a link, proceed on their word** — but record it honestly in
+   `sources.yaml`:
+   ```yaml
+   verification:
+     tool: "user-asserted"
+     verdict: "unconfirmed-by-agent (user states personally verified)"
+     link: null
+   notes: "Agent could not independently confirm -- attempted: <what was
+     tried and why it failed>. Included on the user's explicit direction as
+     project owner."
+   ```
+4. **This flag must never be silently dropped.** It stays visible in
+   `claims.md` and `sources.yaml` through Gate A, so the user sees at
+   review time exactly which claims rest on their word alone versus
+   independent confirmation, and can change their mind before anything
+   ships.
+5. **This does not weaken the sensitive-topics rules (sec 11) or lower the
+   bar for a first attempt at verification** — it only changes what happens
+   after a genuine, documented tooling failure. Escalation trigger #2 ("a
+   load-bearing quote that cannot be verified") is satisfied by this
+   flagged-override path instead of blocking indefinitely, once the user
+   has explicitly chosen to override for that specific claim.
+
 ## 7. False-vs-misleading taxonomy
 
 When rebutting a claim, be precise about which of these it is — the
