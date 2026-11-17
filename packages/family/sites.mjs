@@ -49,12 +49,15 @@ export const SITES = {
     project: 'deseret-mcp',
     target: { type: 'static', dir: 'sites/deseret-mcp/site' },
     main: [
-      { href: '/', label: 'Home', icon: 'i-skep', exact: true },
-      { href: '/connect', label: 'Connect', icon: 'i-sorts' },
-      { href: 'https://deseret.wiki/', label: 'Deseret Wiki', icon: 'i-primer' },
+      { href: '/', label: 'Try it', icon: 'i-primer', exact: true },
+      { href: '/connect', label: 'Use with AI', icon: 'i-sorts' },
+      { href: '/about', label: 'Method & data', icon: 'i-lamp' },
     ],
-    shelves: [],
-    foot: [{ href: '/about', label: 'About', icon: 'i-eye' }],
+    shelves: [
+      { href: 'https://deseret.wiki/', label: 'Deseret Wiki', color: '#C9A45C' },
+      { href: 'mailto:ithinksamofficial@gmail.com?subject=Deseret%20MCP', label: 'Contact', color: '#8DA27A' },
+    ],
+    foot: [],
   },
   'latter-day-stats': {
     name: 'Latter-day Stats',

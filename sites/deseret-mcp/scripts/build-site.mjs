@@ -38,8 +38,9 @@ const copy = (text, { wrap = false, label } = {}) =>
   `<div class="copyfield">${label ? `<span class="small-caps lbl">${esc(label)}</span>` : ''}<code class="${wrap ? 'wrap' : ''}">${esc(text)}</code><button type="button" data-copy="${esc(text)}" aria-label="Copy ${esc(label || 'text')}">Copy</button><span class="sr" role="status"></span></div>`;
 const step = (i, title, body) => `<li><span class="n">${i}</span><div><h3>${title}</h3><div class="stepbody">${body}</div></div></li>`;
 
+// The sidebar, top bar and colophon are the shared Samuel Baird family chrome, stamped into the
+// <!--family:*--> markers by `node scripts/family-sync.mjs` at the monorepo root. Run it after this.
 function page({ file, title, description, current, body, scripts = [] }) {
-  const nav = (href, key, label, ic, ext) => `<a href="${href}"${current === key ? ' aria-current="page"' : ''}${ext ? ' target="_blank" rel="noopener"' : ''}>${icon(I[ic])}<span>${label}</span></a>`;
   const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -52,38 +53,23 @@ function page({ file, title, description, current, body, scripts = [] }) {
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F3E9D2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16161A" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&family=Noto+Sans+Deseret&display=swap" rel="stylesheet">
 <link rel="icon" href="${FAVICON}">
 <link rel="stylesheet" href="/tokens.css">
 <link rel="stylesheet" href="/site.css">
 <link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/bg/bg.css">
+<!--family:head--><!--/family:head-->
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
 <script src="/deseret.js" charset="utf-8" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="mobilebar">
-  <a class="wordmark" href="/" aria-label="Deseret MCP, home"><span class="mono" aria-hidden="true">𐐔</span>Deseret MCP</a>
-  <button type="button" class="menubtn" id="menubtn" aria-expanded="false" aria-controls="sidebar" aria-label="Menu">${icon(I.menu)}</button>
-</header>
-<div class="shell">
-<aside class="sidebar" id="sidebar">
-  <a class="wordmark" href="/" aria-label="Deseret MCP, home"><span class="mono" aria-hidden="true">𐐔</span>Deseret MCP</a>
-  <nav class="side-nav" aria-label="Main">${nav('/', 'home', 'Try it', 'home')}${nav('/connect', 'connect', 'Use with AI', 'ai')}${nav('/about', 'about', 'Method &amp; data', 'about')}</nav>
-  <nav class="side-nav lower" aria-label="Related"><span class="side-label small-caps">Related</span>${nav('https://deseret.wiki', '', 'Deseret Wiki', 'book', true)}${nav('https://urim.samuelbaird.com', '', 'Urim', 'globe', true)}${nav(MAIL, '', 'Contact', 'mail')}</nav>
-  <nav class="side-nav last" aria-label="Source">${nav(REPO, '', 'Source', 'code', true)}</nav>
-</aside>
-<div class="content">
+<!--family:top--><!--/family:top-->
 <main id="main" class="rail">
 ${body.trim()}
 </main>
-<footer><div class="rail">Deseret MCP is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a>, companion to <a href="https://deseret.wiki">deseret.wiki</a>, and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Pronunciations from the CMU Pronouncing Dictionary.</div></footer>
-</div>
-</div>
-<script src="/nav.js" defer></script>
+<p class="rail disclaimer">Deseret MCP is a companion to <a href="https://deseret.wiki">deseret.wiki</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Pronunciations from the CMU Pronouncing Dictionary.</p>
+<!--family:foot--><!--/family:foot-->
 ${scripts.map((s) => `<script src="${s}" charset="utf-8" defer></script>`).join('\n')}
 </body>
 </html>
@@ -292,7 +278,7 @@ page({
 <h2>Privacy</h2>
 <p>The connection keeps nothing: text you send is transliterated and returned, not stored or logged by the server. No account, no sign-in.</p>
 <h2>Source and credits</h2>
-<p>Source code, tests and the data files: <a href="${REPO}">github.com/Samuel-Baird/deseret-mcp</a>. Pronunciations &copy; Carnegie Mellon University (BSD licence). Method, letter table and corrections from the <a href="https://github.com/Samuel-Baird/deseret">Deseret Wiki</a>. Sister project of <a href="https://urim.samuelbaird.com">Urim</a>, whose layout this site shares.</p>
+<p>Source code, tests and the data files: <a href="${REPO}">github.com/Samuel-Baird/deseret-mcp</a>. Pronunciations &copy; Carnegie Mellon University (BSD licence). Method, letter table and corrections from the <a href="https://deseret.wiki/">Deseret Wiki</a>. Sister project of <a href="https://samuelbaird.com/urim">Urim</a>, whose layout this site shares.</p>
 </section>`,
 });
 console.log(`site written for ${ORIGIN}`);

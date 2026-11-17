@@ -30,25 +30,7 @@ footer{border-top:3px double var(--border);padding:24px 0;color:var(--muted);fon
 details{margin:14px 0;border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;background:var(--surface)}
 summary{cursor:pointer}
 
-/* ---- app shell: left sidebar (desktop) / menu bar (mobile), as on Urim */
+/* ---- page frame: shared family chrome lives in /_family/family.css */
 .ic{width:18px;height:18px;flex:none}
-.shell{display:block}
-.mobilebar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 20px;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--background) 92%,transparent);backdrop-filter:blur(6px)}
-.menubtn{display:inline-grid;place-items:center;width:40px;height:40px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--foreground);cursor:pointer}
-.sidebar{display:none;flex-direction:column;gap:12px;padding:16px 12px;background:color-mix(in srgb,var(--background) 97%,transparent);border-bottom:1px solid var(--border)}
-.sidebar.open{display:flex}
-.sidebar .wordmark{display:none}
-.side-nav{display:grid;gap:2px}
-.side-nav a{display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:var(--radius);color:var(--muted);text-decoration:none;font:400 1rem var(--font-sans);border:1px solid transparent}
-.side-nav a:hover{background:var(--muted-soft);color:var(--foreground)}
-.side-nav a[aria-current=page]{background:var(--muted-soft);color:var(--accent);border-color:var(--border)}
-.side-nav.lower,.side-nav.last{padding-top:12px;border-top:1px solid var(--border)}
-.side-label{font-size:.66rem;color:var(--muted);padding:0 12px 4px}
-.content{min-width:0}
-@media (min-width:900px){
-  .mobilebar{display:none}
-  .shell{display:grid;grid-template-columns:14rem minmax(0,1fr);min-height:100vh}
-  .sidebar{display:flex;position:sticky;top:0;height:100vh;overflow-y:auto;border-bottom:0;border-right:1px solid var(--border);padding:18px 12px}
-  .sidebar .wordmark{display:inline-flex;padding:0 4px 6px}
-  .side-nav.lower{margin-top:auto}
-}
+.rail{max-width:var(--wide)}
+.disclaimer{margin-top:3rem;color:var(--ink-soft);font-size:.82rem}
