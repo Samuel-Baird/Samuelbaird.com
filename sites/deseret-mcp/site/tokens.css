@@ -1,0 +1,36 @@
+/* Deseret MCP design tokens: Urim's Archive layout, re-inked in the Deseret Wiki palette
+   (parchment, Deseret blue, brass, oxide; IM Fell English, Cinzel, Noto Sans Deseret). Loaded first on every page. */
+:root{
+  --parchment:#F3E9D2; --deseret-blue:#243A50; --brass:#A98442; --oxide:#782F30;
+  --background:var(--parchment); --surface:#FAF3E2; --foreground:#2A2620; --muted:#5A5144;
+  --muted-soft:#EDE0C2; --border:#C9B68C; --accent:var(--deseret-blue); --accent-soft:#E3DCC9;
+  --honey:#8A6A30; --link:var(--oxide); --on-accent:#F3E9D2; --radius:2px;
+  --font-serif:"IM Fell English","Noto Sans Deseret",Georgia,"Times New Roman",serif;
+  --font-sans:"IM Fell English","Noto Sans Deseret",Georgia,serif;
+  --font-formal:Cinzel,"Noto Sans Deseret",Georgia,serif;
+  --font-dsrt:"Noto Sans Deseret",sans-serif;
+  --rail:72rem;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --background:#16161A; --surface:#1E1C1A; --foreground:#EDE3CB; --muted:#B9AE96;
+    --muted-soft:#26221D; --border:#4A4134; --accent:#D9B46A; --accent-soft:#2B261F;
+    --honey:#BF9A55; --link:#D9B46A; --on-accent:#16161A; color-scheme:dark;
+  }
+}
+.serif{font-family:var(--font-serif)}
+.small-caps{font-family:var(--font-formal);text-transform:uppercase;font-size:.78em;letter-spacing:.14em;font-weight:600}
+.dsrt{font-family:var(--font-dsrt);font-weight:400}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;padding:8px 14px;background:var(--accent);color:var(--on-accent);border-radius:var(--radius);font:600 .9rem var(--font-formal)}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Deseret title reveal (see /deseret.js). */
+.dz-word{position:relative;display:inline-block}
+.dz-over{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;font-family:var(--font-dsrt);font-weight:400;white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){
+  @keyframes deseret-out{from{opacity:1;filter:blur(0)}to{opacity:0;filter:blur(2px)}}
+  @keyframes deseret-in{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:blur(0)}}
+}
