@@ -24,7 +24,7 @@ Long results are capped at about 20,000 characters, and each such result says wh
 ## Use it
 
 ### Remote (claude.ai, Claude Desktop, Claude mobile)
-Once deployed (see below), add a custom connector with the deployment URL plus `/mcp`, e.g. `https://peepstone.vercel.app/mcp`:
+Once deployed (see below), add a custom connector with the deployment URL plus `/mcp`, e.g. `https://samuelbaird.com/peepstone/mcp` (the app is served under the `/peepstone` base path; the old `peepstone.vercel.app/mcp` address still works):
 **Settings → Connectors → Add custom connector**.
 
 ### Local (stdio)

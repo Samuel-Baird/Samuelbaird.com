@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/mcp",
+      "destination": "/peepstone/mcp"
+    }
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ../../packages/family"
+}

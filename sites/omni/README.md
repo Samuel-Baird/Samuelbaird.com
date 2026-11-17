@@ -1,6 +1,6 @@
 # Omni
 
-One MCP endpoint that fronts several others: `https://omni.samuelbaird.com/api/mcp`
+One MCP endpoint that fronts several others: `https://samuelbaird.com/omni/api/mcp` (served under the `/omni` base path; the old `omni.samuelbaird.com/api/mcp` still works)
 
 Stateless Streamable-HTTP proxy. Tools from each upstream are re-exposed with a source prefix.
 
