@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15",
+  "updated": "2026-11-17",
   "runs": [
     {
       "date": "2026-11-11",
@@ -1651,6 +1651,230 @@
         },
         {
           "site": "Deseret Book rare",
+          "status": "skipped",
+          "results": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "searches": 40,
+      "summary": "1 verified live 18th-c. pewter chalice (Huy, EUR 420) plus 6 unverified leads (Orson Pratt 1851 pamphlets, three Schilb Luther items, a 1525 Bugenhagen, a doubtful Smith daguerreotype). No sacrament common cups, Portuguese LDS items or wants-list copies found.",
+      "leads": [
+        {
+          "title": "Pewter chalice, Huy (Belgium), 18th century",
+          "price": "EUR 420",
+          "seller": "Art Stannum via Proantic",
+          "url": "https://www.proantic.com/en/1717375-pewter-chalice-huy-hoei-belgium-18th-century.html",
+          "more_urls": [],
+          "date": "18th c.",
+          "category": "Communion vessels (pre-1900)",
+          "alert": true,
+          "verified": true,
+          "notes": "In stock. Maker received as master in 1706. Continental Catholic piece, no denominational inscription noted.",
+          "action": "Watch",
+          "image": "https://www.proantic.com/galerie/art-stannum/img/1717375-main-69a60ec5a0519.jpg",
+          "status": "live",
+          "search_terms": [
+            "pewter chalice 18th century"
+          ]
+        },
+        {
+          "title": "Orson Pratt, A Series of Pamphlets (Liverpool 1851), with Kinderhook plates folding plate",
+          "price": "price not seen",
+          "seller": "ABAA dealer",
+          "url": "https://www.abaa.org/book/1032784917",
+          "more_urls": [],
+          "date": "1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": false,
+          "notes": "ABAA page returned 403; snippet only. Could not verify live.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Orson Pratt"
+          ]
+        },
+        {
+          "title": "Works of Martin Luther, 1557, first Wittenberg ed. (Augsburg Confession)",
+          "price": "price not seen",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/?p=992802",
+          "more_urls": [],
+          "date": "1557",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Schilb returned 403; could not verify live or price. Likely over budget.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Martin Luther Works"
+          ]
+        },
+        {
+          "title": "1575 Martin Luther Bible commentaries / sermons, folio",
+          "price": "price not seen",
+          "seller": "Schilb Antiquarian",
+          "url": "https://schilbantiquarian.com/?p=833651",
+          "more_urls": [],
+          "date": "1575",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Schilb returned 403; could not verify live or price.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Reformation pamphlet"
+          ]
+        },
+        {
+          "title": "Postilla, Habermann, 1582",
+          "price": "price not seen",
+          "seller": "Schilb Antiquarian",
+          "url": "https://www.schilbantiquarian.com/product/postilla-habermann-1582/",
+          "more_urls": [],
+          "date": "1582",
+          "category": "Luther & Reformation",
+          "alert": true,
+          "verified": false,
+          "notes": "Schilb returned 403; could not verify live or price.",
+          "action": "Watch",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "Postilla"
+          ]
+        },
+        {
+          "title": "Bugenhagen, De Conjugio Episcoporum et Diaconorum, 1525",
+          "price": "$1,600",
+          "seller": "Rockwell Antiques (Dallas)",
+          "url": "https://rockwellantiquesdallas.com/de-conjugio-episcoporum-et-diaconorum-by-bugenhagen-1525",
+          "more_urls": [],
+          "date": "1525",
+          "category": "Luther & Reformation",
+          "alert": false,
+          "verified": false,
+          "notes": "Page opened but stock status not stated. Over budget; Wittenberg reformer, prior owner signatures 1710/1810.",
+          "action": "Watch",
+          "image": "https://rockwellantiquesdallas.com/wp-content/uploads/2017/07/20200215_132240-2.jpg",
+          "status": "unknown",
+          "search_terms": [
+            "Reformation pamphlet"
+          ]
+        },
+        {
+          "title": "Cased daguerreotype said to be Joseph and Emma Smith",
+          "price": "$135,000 or Best Offer",
+          "seller": "eBay seller",
+          "url": "https://www.ebay.com/itm/255823682764",
+          "more_urls": [],
+          "date": "1840s?",
+          "category": "LDS relics & art",
+          "alert": true,
+          "verified": false,
+          "notes": "Snippet only, not opened. Far over budget, authenticity doubtful.",
+          "action": "Ignore",
+          "image": null,
+          "status": "unknown",
+          "search_terms": [
+            "daguerreotype Mormon"
+          ]
+        }
+      ],
+      "nothing_found": [
+        "Common cup: only glass cups",
+        "Portuguese LDS pre-1960",
+        "Happy Songs to Sing",
+        "145th FA history",
+        "New Deseret Alphabet originals",
+        "Times and Seasons / Millennial Star: only seen or sold items"
+      ],
+      "coverage_gaps": [
+        "Schilb, ABAA fetches blocked (403)",
+        "ViaLibri, Trem das 7, Rare Book Hub skipped",
+        "Etsy, WorthPoint, Heritage: site: searches returned no pages"
+      ],
+      "issue": "https://github.com/Samuel-Baird/collector-items/issues/9",
+      "coverage": [
+        {
+          "site": "eBay",
+          "status": "searched",
+          "results": 1
+        },
+        {
+          "site": "AbeBooks",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Biblio",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "LiveAuctioneers",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Heritage Auctions",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "RR Auction",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Etsy",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "WorthPoint",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Estante Virtual",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Mercado Livre",
+          "status": "searched",
+          "results": 0
+        },
+        {
+          "site": "Schilb",
+          "status": "blocked",
+          "results": 3
+        },
+        {
+          "site": "ABAA",
+          "status": "blocked",
+          "results": 1
+        },
+        {
+          "site": "ViaLibri",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Trem das 7",
+          "status": "skipped",
+          "results": 0
+        },
+        {
+          "site": "Rare Book Hub",
           "status": "skipped",
           "results": 0
         }
