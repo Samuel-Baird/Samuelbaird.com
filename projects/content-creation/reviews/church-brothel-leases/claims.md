@@ -24,59 +24,54 @@ Audience = `catholic | protestant | exmo | atheist | media | general`.
 ### Claim 1
 
 - **Anchor context**: 0:00–0:11 read; motive/inference claim. The video itself calls the church only 'technically and legally the leaser.'
-- **Research**: (pending /capy-research)
-- **Grading**:
-- **Doctrine tier** (if applicable):
-- **Adversarial Q1**:
-- **Adversarial Q2**:
-- **Turnabout**:
-- **Briefs**: `research/briefs/claim1-*.md`
-- **Red-team persona**:
+- **Research**: Quinn records the leases (1891-1941); the *motive* ('struggling financially, so allowed it') is an inference no source states.
+- **Grading**: inference (motive); leases themselves: fact
+- **Doctrine tier** (if applicable): Not doctrine; institutional history.
+- **Adversarial Q1**: Strongest objection: leases ran 34 years past debt-free status, so 'money' is still the simplest reading; the response answers with the 1897 protest and the 1941 loss-accepting order but cannot prove motive. Response concedes the leases and grades motive an inference.
+- **Adversarial Q2**: Omitted from clip: the video itself calls the Church 'technically and legally only the leaser' and notes later cleanup orders (0:39-0:56, not clipped); responses do not imply otherwise.
+- **Briefs**: none (researched inline with GSA/Pulpit tools, 2026-10-17; /capy-research subagent fan-out not run)
+- **Red-team persona**: none (see /capy-critique, not yet run)
 
 ### Claim 2
 
 - **Anchor context**: 0:11–0:40 read; names three entities (the Church, Brigham Young Trust Company, Clayton Investment Company) — the corporate chain is the crux.
-- **Research**: (pending /capy-research)
-- **Grading**:
-- **Doctrine tier** (if applicable):
-- **Adversarial Q1**:
-- **Adversarial Q2**:
-- **Turnabout**:
-- **Briefs**: `research/briefs/claim2-*.md`
-- **Red-team persona**:
+- **Research**: Quinn (Extensions p. 798/PDF 828) confirms Commercial Street (now Regent Street) and the Brigham Young Trust Company; Wealth p. 271/296 confirm Clayton as its successor. Tribune 1908 article and the $2,400 rent NOT inspected, so not repeated on screen.
+- **Grading**: fact (Quinn's account); $2,400: unverified
+- **Doctrine tier** (if applicable): n/a
+- **Adversarial Q1**: Strongest objection: Trust Company and Clayton were not literally 'the Church'; the script avoids saying it was, and names the companies and Cannon's dual role instead.
+- **Adversarial Q2**: Omitted: 'knowingly' and the Tribune article are not clipped in c01; no response relies on them.
+- **Briefs**: none (researched inline with GSA/Pulpit tools, 2026-10-17; /capy-research subagent fan-out not run)
+- **Red-team persona**: none (see /capy-critique, not yet run)
 
 ### Claim 3
 
 - **Anchor context**: 0:40–0:56 read; the source concedes lessor-only status and later cleanup orders.
-- **Research**: (pending /capy-research)
-- **Grading**:
-- **Doctrine tier** (if applicable):
-- **Adversarial Q1**:
-- **Adversarial Q2**:
-- **Turnabout**:
-- **Briefs**: `research/briefs/claim3-*.md`
-- **Red-team persona**:
+- **Research**: Not clipped. Video's own concession; Quinn's 1897/1941 entries are consistent with it.
+- **Grading**: fact (as to internal objections)
+- **Doctrine tier** (if applicable): n/a
+- **Adversarial Q1**: Strongest objection: using the objectors to defend the Church underplays that the leases continued. n04/n06 state the delay.
+- **Adversarial Q2**: Omitted: n/a (not responded to).
+- **Briefs**: none (researched inline with GSA/Pulpit tools, 2026-10-17; /capy-research subagent fan-out not run)
+- **Red-team persona**: none (see /capy-critique, not yet run)
 
 ### Claim 4
 
 - **Anchor context**: 0:56–1:11 read; presidents named.
-- **Research**: (pending /capy-research)
-- **Grading**:
-- **Doctrine tier** (if applicable):
-- **Adversarial Q1**:
-- **Adversarial Q2**:
-- **Turnabout**:
-- **Briefs**: `research/briefs/claim4-*.md`
-- **Red-team persona**:
+- **Research**: Quinn: begins 1891, ends 10 Mar 1941, 'fifty years'. Video's 1941 date matches. Presidents' names/tenures not tool-verified, so no beat asserts them.
+- **Grading**: fact (span); presidents: not verified
+- **Doctrine tier** (if applicable): n/a
+- **Adversarial Q1**: Strongest objection: Quinn is a summary, not a ledger; no beat claims more than Quinn states.
+- **Adversarial Q2**: Omitted: the presidents list (62.62-70.92) is not clipped and not answered.
+- **Briefs**: none (researched inline with GSA/Pulpit tools, 2026-10-17; /capy-research subagent fan-out not run)
+- **Red-team persona**: none (see /capy-critique, not yet run)
 
 ### Claim 5
 
 - **Anchor context**: 1:11–1:25 read; 37-year arithmetic and the 1907 debt claim to be checked.
-- **Research**: (pending /capy-research)
-- **Grading**:
-- **Doctrine tier** (if applicable):
-- **Adversarial Q1**:
-- **Adversarial Q2**:
-- **Turnabout**:
-- **Briefs**: `research/briefs/claim5-*.md`
-- **Red-team persona**:
+- **Research**: 1941-1907=34, not 37. Audit report dated 20 Mar 1907, read at conference 6 Apr 1907 (not 5 Apr); states 'free from debt'. Last-payment date not stated, so 'April 5' is unsupported, not disproved.
+- **Grading**: fact (arithmetic, dates); motive: inference
+- **Doctrine tier** (if applicable): n/a
+- **Adversarial Q1**: Strongest objection: debt-free does not mean no need for income; and 34 years is still long. n08 concedes the length and grades the 'slow, divided leadership' reading as the stronger reading, not proven.
+- **Adversarial Q2**: Omitted: 'Could it be that the church really cares about money?' is clipped (c03) and answered by n08.
+- **Briefs**: none (researched inline with GSA/Pulpit tools, 2026-10-17; /capy-research subagent fan-out not run)
+- **Red-team persona**: none (see /capy-critique, not yet run)
