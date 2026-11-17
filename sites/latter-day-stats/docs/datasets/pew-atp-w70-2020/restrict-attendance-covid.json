@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD), restricted to respondents who attend religious services at least monthly (gated on XATTEND_W70). Share saying their house of worship should be restricting the number of people who can attend at one time in response to the coronavirus outbreak (vs. should not), CONGRESTRICT2_c_W70; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 1838.0928861600044,
+  "total_unweighted_n": 2161,
+  "group_order": [
+    "Catholic",
+    "Mormon",
+    "Historically Black Protestant",
+    "Unaffiliated",
+    "Mainline Protestant",
+    "Evangelical Protestant",
+    "All attenders"
+  ],
+  "should_restrict_attendance": {
+    "Evangelical Protestant": {
+      "pct": 64.62,
+      "valid_unweighted_n": 892,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 66.6,
+      "valid_unweighted_n": 256,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 75.44,
+      "valid_unweighted_n": 117,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 89.98,
+      "valid_unweighted_n": 666,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 85.85,
+      "valid_unweighted_n": 96,
+      "group_unweighted_n": 167
+    },
+    "Unaffiliated": {
+      "pct": 70.88,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 3079
+    },
+    "All attenders": {
+      "pct": 73.6,
+      "valid_unweighted_n": 2161,
+      "group_unweighted_n": 10211
+    }
+  }
+}

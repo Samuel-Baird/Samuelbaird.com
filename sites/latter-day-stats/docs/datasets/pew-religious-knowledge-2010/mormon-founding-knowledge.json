@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn42 asked all respondents when the Mormon religion was founded; the correct answer is \"sometime after 1800\" (1830). Broken out by the respondent's own present religion (qn20); don't know/refused excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Mormon",
+    "Atheist",
+    "Jewish",
+    "Agnostic",
+    "Protestant",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 75.3,
+      "valid_unweighted_n": 834,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 71.94,
+      "valid_unweighted_n": 396,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 93.19,
+      "valid_unweighted_n": 207,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 82.18,
+      "valid_unweighted_n": 165,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 84.66,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 80.96,
+      "valid_unweighted_n": 120,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 71.41,
+      "valid_unweighted_n": 219,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 74.53,
+      "valid_unweighted_n": 2227,
+      "group_unweighted_n": 3412
+    }
+  }
+}

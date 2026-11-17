@@ -1,0 +1,46 @@
+{
+  "source": "Pew Research Center. India Religion Survey, fielded November 17, 2019-March 23, 2020.",
+  "method": "Population is the respondent's own religion (QRELSING), restricted to respondents actually asked Q63c - the survey skips a respondent's own religion in its neighbor-acceptance battery, so Christian respondents (N=1,011) were never asked whether they'd accept a Christian neighbor. Share answering \"yes\" to Q63c (\"Would you be willing to accept a Christian as a neighbor?\"); \"other/both/neither/depends,\" don't know, and refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own weight variable.",
+  "total_weighted_n": 29220.4788476668,
+  "total_unweighted_n": 28988,
+  "group_order": [
+    "Buddhist",
+    "Sikh",
+    "Muslim",
+    "Hindu",
+    "Jain",
+    "All non-Christian adults"
+  ],
+  "accept_christian_neighbor": {
+    "Hindu": {
+      "pct": 65.6,
+      "valid_unweighted_n": 21118,
+      "group_unweighted_n": 22975
+    },
+    "Muslim": {
+      "pct": 71.13,
+      "valid_unweighted_n": 2989,
+      "group_unweighted_n": 3336
+    },
+    "Sikh": {
+      "pct": 71.96,
+      "valid_unweighted_n": 1601,
+      "group_unweighted_n": 1782
+    },
+    "Buddhist": {
+      "pct": 82.43,
+      "valid_unweighted_n": 687,
+      "group_unweighted_n": 719
+    },
+    "Jain": {
+      "pct": 49.32,
+      "valid_unweighted_n": 105,
+      "group_unweighted_n": 109
+    },
+    "All non-Christian adults": {
+      "pct": 66.65,
+      "valid_unweighted_n": 26559,
+      "group_unweighted_n": 28988
+    }
+  }
+}

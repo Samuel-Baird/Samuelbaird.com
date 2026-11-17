@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD), all respondents. Share saying houses of worship should be allowed more flexibility with rules about social distancing than other organizations and businesses (vs. required to follow the same rules), COVIDRF_W70; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10068.480492113691,
+  "total_unweighted_n": 10113,
+  "group_order": [
+    "Evangelical Protestant",
+    "Mormon",
+    "Mainline Protestant",
+    "Jewish",
+    "Catholic",
+    "Historically Black Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "worship_more_flexibility": {
+    "Evangelical Protestant": {
+      "pct": 36.88,
+      "valid_unweighted_n": 2055,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 20.16,
+      "valid_unweighted_n": 1359,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 11.96,
+      "valid_unweighted_n": 445,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 19.18,
+      "valid_unweighted_n": 2212,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 34.29,
+      "valid_unweighted_n": 163,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 19.27,
+      "valid_unweighted_n": 248,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 10.14,
+      "valid_unweighted_n": 3063,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 19.41,
+      "valid_unweighted_n": 10113,
+      "group_unweighted_n": 10211
+    }
+  }
+}

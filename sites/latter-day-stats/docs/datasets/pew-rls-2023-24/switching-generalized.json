@@ -1,0 +1,71 @@
+{
+  "source": "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” doi: 10.58094/3kwb-bf52.",
+  "method": "Two 100%-stacked compositions per tradition from the FRMREL/CURREL cross-tab, both weighted by WEIGHT: (1) current membership split into retained-in (raised in it, still in it) vs. converted-in, as % of CURREL==group; (2) the raised cohort split into stayed vs. left, as % of FRMREL==group. The 'Christian average' pools weighted totals across all six groups before taking ratios, not an unweighted mean of the six percentages. Chart form (small-multiples pair over a single merged bar) chosen per this dataset's GRAPHICS_TODO.md.",
+  "total_weighted_n": 257520024.0,
+  "total_unweighted_n": 36908,
+  "switching_generalized": {
+    "Protestant": {
+      "retained_in_pct": 80.88,
+      "converted_in_pct": 19.12,
+      "stayed_pct": 70.28,
+      "left_pct": 29.72,
+      "raised_unweighted_n": 17942,
+      "current_unweighted_n": 15099,
+      "stayed_unweighted_n": 12464
+    },
+    "Catholic": {
+      "retained_in_pct": 91.92,
+      "converted_in_pct": 8.08,
+      "stayed_pct": 57.48,
+      "left_pct": 42.52,
+      "raised_unweighted_n": 11281,
+      "current_unweighted_n": 6958,
+      "stayed_unweighted_n": 6296
+    },
+    "Latter-day Saint": {
+      "retained_in_pct": 74.07,
+      "converted_in_pct": 25.93,
+      "stayed_pct": 53.91,
+      "left_pct": 46.09,
+      "raised_unweighted_n": 730,
+      "current_unweighted_n": 565,
+      "stayed_unweighted_n": 414
+    },
+    "Orthodox Christian": {
+      "retained_in_pct": 70.81,
+      "converted_in_pct": 29.19,
+      "stayed_pct": 65.67,
+      "left_pct": 34.33,
+      "raised_unweighted_n": 266,
+      "current_unweighted_n": 225,
+      "stayed_unweighted_n": 170
+    },
+    "Jehovah's Witness": {
+      "retained_in_pct": 53.47,
+      "converted_in_pct": 46.53,
+      "stayed_pct": 34.43,
+      "left_pct": 65.57,
+      "raised_unweighted_n": 158,
+      "current_unweighted_n": 113,
+      "stayed_unweighted_n": 49
+    },
+    "Other Christian": {
+      "retained_in_pct": 13.53,
+      "converted_in_pct": 86.47,
+      "stayed_pct": 12.54,
+      "left_pct": 87.46,
+      "raised_unweighted_n": 242,
+      "current_unweighted_n": 226,
+      "stayed_unweighted_n": 35
+    },
+    "Christian average": {
+      "retained_in_pct": 83.08,
+      "converted_in_pct": 16.92,
+      "stayed_pct": 64.22,
+      "left_pct": 35.78,
+      "raised_unweighted_n": 30619,
+      "current_unweighted_n": 23186,
+      "stayed_unweighted_n": 19428
+    }
+  }
+}

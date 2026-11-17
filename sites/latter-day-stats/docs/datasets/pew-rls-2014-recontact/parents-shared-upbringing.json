@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. 2016. \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
+  "method": "Population is current religious tradition (reltrad). qb3 asks which parent was more responsible for the respondent's religious upbringing; this reads the share saying their parents shared it about equally (vs. mother or father more). Respondents volunteering that they were not raised in any religion; don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted (this recontact reached only 5,000 of the main 2014 RLS's 35,071 respondents). Weighted by the dataset's own `rweight` variable.",
+  "total_weighted_n": 3934.798341131269,
+  "total_unweighted_n": 4066,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Catholic",
+    "Unaffiliated",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "All U.S. adults"
+  ],
+  "parents_shared_upbringing_equally": {
+    "Evangelical Protestant": {
+      "pct": 61.11,
+      "valid_unweighted_n": 837,
+      "group_unweighted_n": 1043
+    },
+    "Mainline Protestant": {
+      "pct": 56.35,
+      "valid_unweighted_n": 997,
+      "group_unweighted_n": 1175
+    },
+    "Historically Black Protestant": {
+      "pct": 56.63,
+      "valid_unweighted_n": 215,
+      "group_unweighted_n": 335
+    },
+    "Catholic": {
+      "pct": 58.02,
+      "valid_unweighted_n": 830,
+      "group_unweighted_n": 956
+    },
+    "Mormon": {
+      "pct": 76.62,
+      "valid_unweighted_n": 54,
+      "group_unweighted_n": 61
+    },
+    "Unaffiliated": {
+      "pct": 56.97,
+      "valid_unweighted_n": 903,
+      "group_unweighted_n": 1149
+    },
+    "All U.S. adults": {
+      "pct": 59.05,
+      "valid_unweighted_n": 4066,
+      "group_unweighted_n": 5000
+    }
+  }
+}

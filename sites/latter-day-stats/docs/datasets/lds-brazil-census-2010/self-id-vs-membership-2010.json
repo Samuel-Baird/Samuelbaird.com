@@ -1,0 +1,23 @@
+{
+  "year": 2010,
+  "row_order": [
+    "Self-identified to census taker",
+    "On Church membership rolls"
+  ],
+  "rows": {
+    "Self-identified to census taker": {
+      "value": 226509,
+      "source": "2010 Brazilian Census (IBGE), SIDRA table 137, category 100423"
+    },
+    "On Church membership rolls": {
+      "value": 1138740,
+      "source": "cumorah.com LDS Growth Case Studies (Matt Martinich), \"Expanding LDS Outreach in Brazil\""
+    }
+  },
+  "ratio_membership_to_selfid": 5.03,
+  "sources_summary": [
+    "2010 Brazilian Census (IBGE), SIDRA aggregate table 137, classification 133 (Religiao), category 100423 (\"Igreja de Jesus Cristo dos Santos dos Ultimos Dias\") - verified against https://apisidra.ibge.gov.br/values/t/137/n1/all/v/93/p/all/c133/100423.",
+    "cumorah.com LDS Growth Case Studies (Matt Martinich), \"Expanding LDS Outreach in Brazil\" - same 2010 figure already cited in docs/datasets/lds-brazil-2022/membership-by-year.json."
+  ],
+  "method": "A direct same-year (2010) comparison of two differently-defined counts: how many people told an IBGE census taker they were Latter-day Saints, versus how many people the Church itself counted as members on its own rolls. This chart does not attribute the gap to any single cause (inactivity, moving away, declining to state a religion, record lag) - see this script's own docstring."
+}

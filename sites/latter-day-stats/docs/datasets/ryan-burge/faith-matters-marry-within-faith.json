@@ -1,0 +1,64 @@
+{
+  "source": "Faith Matters Survey 2006 (Robert D. Putnam and David E. Campbell), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: all respondents with a coded religious tradition (reltrad), weighted by `weight`. Share saying it is 'very important' that their children marry someone of their own faith, Q9-8. Asked of respondents with children. Don't know/refused excluded from the base. Latter-day Saint = reltrad 6 (Mormon), 53 unweighted respondents in the full sample.",
+  "total_unweighted_n": 3108,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other non-Christian",
+    "All U.S. adults"
+  ],
+  "marry_within_faith_very_important": {
+    "Latter-day Saint": {
+      "pct": 53.11,
+      "valid_unweighted_n": 42,
+      "group_unweighted_n": 53
+    },
+    "Evangelical Protestant": {
+      "pct": 33.55,
+      "valid_unweighted_n": 741,
+      "group_unweighted_n": 913
+    },
+    "Historically Black Protestant": {
+      "pct": 30.6,
+      "valid_unweighted_n": 189,
+      "group_unweighted_n": 242
+    },
+    "Mainline Protestant": {
+      "pct": 11.71,
+      "valid_unweighted_n": 408,
+      "group_unweighted_n": 499
+    },
+    "Catholic": {
+      "pct": 18.94,
+      "valid_unweighted_n": 555,
+      "group_unweighted_n": 726
+    },
+    "Jewish": {
+      "pct": 31.11,
+      "valid_unweighted_n": 48,
+      "group_unweighted_n": 68
+    },
+    "Religiously unaffiliated": {
+      "pct": 6.84,
+      "valid_unweighted_n": 309,
+      "group_unweighted_n": 471
+    },
+    "Other non-Christian": {
+      "pct": 13.32,
+      "valid_unweighted_n": 75,
+      "group_unweighted_n": 103
+    },
+    "All U.S. adults": {
+      "pct": 22.4,
+      "valid_unweighted_n": 2367,
+      "group_unweighted_n": 3075
+    }
+  }
+}

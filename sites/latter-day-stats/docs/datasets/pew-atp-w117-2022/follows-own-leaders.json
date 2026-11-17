@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD) among social media users (SNSUSE_W117 = \"yes\"). Share answering \"yes\" to LEADERFOLLOW2_W117 (\"Do you follow or keep track of your own religious leaders online or on social media?\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted (Orthodox Christian falls below this floor at the social-media-user screen). Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592036,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Jewish",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "Catholic",
+    "All U.S. adults"
+  ],
+  "follows_own_religious_leaders": {
+    "Evangelical Protestant": {
+      "pct": 40.69,
+      "valid_unweighted_n": 1379,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 29.62,
+      "valid_unweighted_n": 524,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 51.26,
+      "valid_unweighted_n": 429,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 21.42,
+      "valid_unweighted_n": 810,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 75.12,
+      "valid_unweighted_n": 126,
+      "group_unweighted_n": 199
+    },
+    "Jewish": {
+      "pct": 50.95,
+      "valid_unweighted_n": 59,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 28.72,
+      "valid_unweighted_n": 229,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 36.21,
+      "valid_unweighted_n": 3723,
+      "group_unweighted_n": 11377
+    }
+  }
+}

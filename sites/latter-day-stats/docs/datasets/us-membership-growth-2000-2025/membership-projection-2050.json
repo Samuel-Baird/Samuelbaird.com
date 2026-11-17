@@ -1,0 +1,281 @@
+{
+  "method": "Two bounds, not one line - see build_projection.py's own docstring for why a single trend (linear or otherwise) wasn't defensible 25 years out. HIGH: linear fit to the 14 Church-reported figures 2012-2025 (slope ~44,996/year), extended unchanged. LOW: that same window's year-over-year growth rate, fit as a declining linear trend and compounded forward, floored at 0% (reaches the floor around 2031). Both anchored at the actual 2025 figure.",
+  "trend_fit_years": [
+    2012,
+    2025
+  ],
+  "high_slope_per_year": 44996,
+  "low_rate_slope_per_year": -0.0005799150358720319,
+  "low_rate_intercept": 1.177947094123455,
+  "low_rate_floor_year": 2031,
+  "anchor_year": 2025,
+  "anchor_value": 6929770.0,
+  "history_year_order": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "history_series": {
+    "2000": {
+      "members": 5208827,
+      "status": "reported"
+    },
+    "2001": {
+      "members": 5309414,
+      "status": "reported"
+    },
+    "2002": {
+      "members": 5410000,
+      "status": "reported"
+    },
+    "2003": {
+      "members": 5505000,
+      "status": "reported"
+    },
+    "2004": {
+      "members": 5600000,
+      "status": "reported"
+    },
+    "2005": {
+      "members": 5690000,
+      "status": "reported"
+    },
+    "2006": {
+      "members": 5780000,
+      "status": "reported"
+    },
+    "2007": {
+      "members": 5875000,
+      "status": "reported"
+    },
+    "2008": {
+      "members": 5970000,
+      "status": "reported"
+    },
+    "2009": {
+      "members": 6058907,
+      "status": "reported"
+    },
+    "2010": {
+      "members": 6144582,
+      "status": "reported"
+    },
+    "2011": {
+      "members": 6232999,
+      "status": "reported"
+    },
+    "2012": {
+      "members": 6321416,
+      "status": "reported"
+    },
+    "2013": {
+      "members": 6398889,
+      "status": "reported"
+    },
+    "2014": {
+      "members": 6466267,
+      "status": "reported"
+    },
+    "2015": {
+      "members": 6531656,
+      "status": "reported"
+    },
+    "2016": {
+      "members": 6592195,
+      "status": "reported"
+    },
+    "2017": {
+      "members": 6641886,
+      "status": "reported"
+    },
+    "2018": {
+      "members": 6681829,
+      "status": "reported"
+    },
+    "2019": {
+      "members": 6721032,
+      "status": "reported"
+    },
+    "2020": {
+      "members": 6742000,
+      "status": "reported"
+    },
+    "2021": {
+      "members": 6763019,
+      "status": "reported"
+    },
+    "2022": {
+      "members": 6804028,
+      "status": "reported"
+    },
+    "2023": {
+      "members": 6868793,
+      "status": "reported"
+    },
+    "2024": {
+      "members": 6929956,
+      "status": "reported"
+    },
+    "2025": {
+      "members": 6929770,
+      "status": "reported"
+    }
+  },
+  "range_year_order": [
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050
+  ],
+  "range_series": {
+    "2025": {
+      "low": 6929770.0,
+      "high": 6929770.0
+    },
+    "2026": {
+      "low": 6950831,
+      "high": 6974766
+    },
+    "2027": {
+      "low": 6967925,
+      "high": 7019763
+    },
+    "2028": {
+      "low": 6981021,
+      "high": 7064759
+    },
+    "2029": {
+      "low": 6990093,
+      "high": 7109755
+    },
+    "2030": {
+      "low": 6995123,
+      "high": 7154752
+    },
+    "2031": {
+      "low": 6996100,
+      "high": 7199748
+    },
+    "2032": {
+      "low": 6996100,
+      "high": 7244744
+    },
+    "2033": {
+      "low": 6996100,
+      "high": 7289741
+    },
+    "2034": {
+      "low": 6996100,
+      "high": 7334737
+    },
+    "2035": {
+      "low": 6996100,
+      "high": 7379734
+    },
+    "2036": {
+      "low": 6996100,
+      "high": 7424730
+    },
+    "2037": {
+      "low": 6996100,
+      "high": 7469726
+    },
+    "2038": {
+      "low": 6996100,
+      "high": 7514723
+    },
+    "2039": {
+      "low": 6996100,
+      "high": 7559719
+    },
+    "2040": {
+      "low": 6996100,
+      "high": 7604715
+    },
+    "2041": {
+      "low": 6996100,
+      "high": 7649712
+    },
+    "2042": {
+      "low": 6996100,
+      "high": 7694708
+    },
+    "2043": {
+      "low": 6996100,
+      "high": 7739704
+    },
+    "2044": {
+      "low": 6996100,
+      "high": 7784701
+    },
+    "2045": {
+      "low": 6996100,
+      "high": 7829697
+    },
+    "2046": {
+      "low": 6996100,
+      "high": 7874693
+    },
+    "2047": {
+      "low": 6996100,
+      "high": 7919690
+    },
+    "2048": {
+      "low": 6996100,
+      "high": 7964686
+    },
+    "2049": {
+      "low": 6996100,
+      "high": 8009683
+    },
+    "2050": {
+      "low": 6996100,
+      "high": 8054679
+    }
+  }
+}

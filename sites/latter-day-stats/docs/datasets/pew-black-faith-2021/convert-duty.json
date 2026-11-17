@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. \"Faith Among Black Americans,\" published Feb. 16, 2021 (survey fielded Nov. 19, 2019-June 3, 2020).",
+  "method": "Population is Black American adults (\"black faith black respondents.sav\"), grouped by self-reported present religion (RELIGMOD): named affiliations shown individually; Atheist, Agnostic, and Nothing in particular combined into \"Religiously unaffiliated.\" Share answering \"Yes, believe this\" to PERSBLV_e (\"People of faith have a religious duty to try to convert nonbelievers\"); not-answered excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT variable.",
+  "total_weighted_n": 3182.1186302210263,
+  "total_unweighted_n": 8660,
+  "group_order": [
+    "Jehovah's Witness",
+    "Protestant",
+    "Mormon",
+    "Muslim",
+    "Catholic",
+    "Religiously unaffiliated",
+    "All Black Americans"
+  ],
+  "believes_duty_to_convert": {
+    "Protestant": {
+      "pct": 63.71,
+      "valid_unweighted_n": 5582,
+      "group_unweighted_n": 5784
+    },
+    "Catholic": {
+      "pct": 36.46,
+      "valid_unweighted_n": 554,
+      "group_unweighted_n": 562
+    },
+    "Mormon": {
+      "pct": 61.42,
+      "valid_unweighted_n": 34,
+      "group_unweighted_n": 34
+    },
+    "Jehovah's Witness": {
+      "pct": 65.18,
+      "valid_unweighted_n": 136,
+      "group_unweighted_n": 147
+    },
+    "Muslim": {
+      "pct": 37.55,
+      "valid_unweighted_n": 94,
+      "group_unweighted_n": 100
+    },
+    "Religiously unaffiliated": {
+      "pct": 28.26,
+      "valid_unweighted_n": 1709,
+      "group_unweighted_n": 1735
+    },
+    "All Black Americans": {
+      "pct": 53.04,
+      "valid_unweighted_n": 8396,
+      "group_unweighted_n": 8660
+    }
+  }
+}

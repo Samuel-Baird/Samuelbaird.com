@@ -1,0 +1,182 @@
+{
+  "source": "Ryan Burge (github.com/ryanburge), CES stacked 2006-2018 common content extract (ces_stacked_2006-2018_css_small.csv).",
+  "via": "Ryan Burge",
+  "method": "Population: trad == 'Mormon', split by gender, across all eight waves. pid7's 7 categories collapsed to 3 (Democrat/Independent/Republican, leaners folded into their party) per the backlog item's own design-decision note - the smallest year/gender cell (2017 women, N=134) is too thin for the full 7-point split. Unweighted - this file carries no survey weight column.",
+  "category_order": [
+    "Democrat",
+    "Independent",
+    "Republican"
+  ],
+  "waves": [
+    2006,
+    2008,
+    2010,
+    2012,
+    2014,
+    2016,
+    2017,
+    2018
+  ],
+  "by_year_gender": {
+    "2006_Male": {
+      "year": 2006,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 59.54,
+        "Independent": 8.26,
+        "Republican": 32.19
+      },
+      "n": 351
+    },
+    "2006_Female": {
+      "year": 2006,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 76.19,
+        "Independent": 6.03,
+        "Republican": 17.78
+      },
+      "n": 315
+    },
+    "2008_Male": {
+      "year": 2008,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 16.25,
+        "Independent": 8.68,
+        "Republican": 75.07
+      },
+      "n": 357
+    },
+    "2008_Female": {
+      "year": 2008,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 16.48,
+        "Independent": 9.96,
+        "Republican": 73.56
+      },
+      "n": 261
+    },
+    "2010_Male": {
+      "year": 2010,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 11.2,
+        "Independent": 10.81,
+        "Republican": 78.0
+      },
+      "n": 509
+    },
+    "2010_Female": {
+      "year": 2010,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 24.55,
+        "Independent": 12.02,
+        "Republican": 63.43
+      },
+      "n": 391
+    },
+    "2012_Male": {
+      "year": 2012,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 12.5,
+        "Independent": 11.0,
+        "Republican": 76.5
+      },
+      "n": 400
+    },
+    "2012_Female": {
+      "year": 2012,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 21.91,
+        "Independent": 8.51,
+        "Republican": 69.57
+      },
+      "n": 470
+    },
+    "2014_Male": {
+      "year": 2014,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 15.57,
+        "Independent": 15.57,
+        "Republican": 68.86
+      },
+      "n": 456
+    },
+    "2014_Female": {
+      "year": 2014,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 21.02,
+        "Independent": 15.9,
+        "Republican": 63.07
+      },
+      "n": 371
+    },
+    "2016_Male": {
+      "year": 2016,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 20.36,
+        "Independent": 18.34,
+        "Republican": 61.3
+      },
+      "n": 447
+    },
+    "2016_Female": {
+      "year": 2016,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 21.89,
+        "Independent": 14.68,
+        "Republican": 63.43
+      },
+      "n": 402
+    },
+    "2017_Male": {
+      "year": 2017,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 21.32,
+        "Independent": 18.38,
+        "Republican": 60.29
+      },
+      "n": 136
+    },
+    "2017_Female": {
+      "year": 2017,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 32.31,
+        "Independent": 16.15,
+        "Republican": 51.54
+      },
+      "n": 130
+    },
+    "2018_Male": {
+      "year": 2018,
+      "gender": "Male",
+      "shares_pct": {
+        "Democrat": 16.16,
+        "Independent": 19.44,
+        "Republican": 64.39
+      },
+      "n": 396
+    },
+    "2018_Female": {
+      "year": 2018,
+      "gender": "Female",
+      "shares_pct": {
+        "Democrat": 22.3,
+        "Independent": 12.75,
+        "Republican": 64.95
+      },
+      "n": 408
+    }
+  }
+}

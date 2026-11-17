@@ -1,0 +1,64 @@
+{
+  "source": "American National Election Studies, 2016 Time Series Study, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: respondents with a post-election interview, weighted by V160102 (post-election full-sample weight). Groups from V161265x (major religion summary) with Latter-day Saints pulled out of 'Other religion' via V161264x == 301; Black Protestant dropped (fewer than 30 post-election respondents). Share agreeing strongly or somewhat that the newer lifestyles are contributing to the breakdown of our society, V162208. Refused/don't know/no post interview excluded from the base. Latter-day Saint n=43 with a post-election interview. 'All U.S. adults' includes Black Protestants.",
+  "total_unweighted_n": 3648,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Christian (no denomination given)",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other religion",
+    "All U.S. adults"
+  ],
+  "newer_lifestyles_breakdown_agree": {
+    "Latter-day Saint": {
+      "pct": 62.09,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 43
+    },
+    "Evangelical Protestant": {
+      "pct": 68.49,
+      "valid_unweighted_n": 641,
+      "group_unweighted_n": 643
+    },
+    "Mainline Protestant": {
+      "pct": 48.56,
+      "valid_unweighted_n": 548,
+      "group_unweighted_n": 550
+    },
+    "Catholic": {
+      "pct": 51.55,
+      "valid_unweighted_n": 789,
+      "group_unweighted_n": 792
+    },
+    "Christian (no denomination given)": {
+      "pct": 60.66,
+      "valid_unweighted_n": 578,
+      "group_unweighted_n": 580
+    },
+    "Jewish": {
+      "pct": 21.76,
+      "valid_unweighted_n": 74,
+      "group_unweighted_n": 74
+    },
+    "Religiously unaffiliated": {
+      "pct": 29.97,
+      "valid_unweighted_n": 750,
+      "group_unweighted_n": 751
+    },
+    "Other religion": {
+      "pct": 36.15,
+      "valid_unweighted_n": 153,
+      "group_unweighted_n": 155
+    },
+    "All U.S. adults": {
+      "pct": 49.99,
+      "valid_unweighted_n": 3602,
+      "group_unweighted_n": 3614
+    }
+  }
+}

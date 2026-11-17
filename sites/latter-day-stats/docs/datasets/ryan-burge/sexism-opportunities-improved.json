@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted. Share who strongly or somewhat agree (top-two-box) that opportunities for women have improved their quality of life; don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "opportunities_improved_agree": {
+    "Mormon": {
+      "pct": 84.1
+    },
+    "Protestant": {
+      "pct": 84.4
+    },
+    "Catholic": {
+      "pct": 85.5
+    },
+    "Jewish": {
+      "pct": 89.6
+    },
+    "Buddhist": {
+      "pct": 88.9
+    },
+    "Atheist": {
+      "pct": 93.9
+    },
+    "Agnostic": {
+      "pct": 90.7
+    },
+    "Nothing in particular": {
+      "pct": 86.4
+    },
+    "Something else": {
+      "pct": 85.9
+    }
+  }
+}

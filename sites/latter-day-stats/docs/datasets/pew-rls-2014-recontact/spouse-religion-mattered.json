@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2016. \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
+  "method": "Population is current religious tradition (reltrad), among ever-married respondents (qd6a's own skip pattern). Cutpoint is top box (\"very important\") on qd6a (how important the spouse's religion was in deciding to marry them); don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted (this recontact reached only 5,000 of the main 2014 RLS's 35,071 respondents). Weighted by the dataset's own `rweight` variable.",
+  "total_weighted_n": 5000.000004114336,
+  "total_unweighted_n": 5000,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Jewish",
+    "Evangelical Protestant",
+    "Catholic",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "spouse_religion_very_important": {
+    "Evangelical Protestant": {
+      "pct": 39.09,
+      "valid_unweighted_n": 681,
+      "group_unweighted_n": 1043
+    },
+    "Mainline Protestant": {
+      "pct": 15.9,
+      "valid_unweighted_n": 842,
+      "group_unweighted_n": 1175
+    },
+    "Historically Black Protestant": {
+      "pct": 42.7,
+      "valid_unweighted_n": 109,
+      "group_unweighted_n": 335
+    },
+    "Catholic": {
+      "pct": 30.78,
+      "valid_unweighted_n": 641,
+      "group_unweighted_n": 956
+    },
+    "Mormon": {
+      "pct": 61.81,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 61
+    },
+    "Jewish": {
+      "pct": 40.97,
+      "valid_unweighted_n": 45,
+      "group_unweighted_n": 87
+    },
+    "Unaffiliated": {
+      "pct": 6.91,
+      "valid_unweighted_n": 703,
+      "group_unweighted_n": 1149
+    },
+    "All U.S. adults": {
+      "pct": 27.31,
+      "valid_unweighted_n": 3148,
+      "group_unweighted_n": 5000
+    }
+  }
+}

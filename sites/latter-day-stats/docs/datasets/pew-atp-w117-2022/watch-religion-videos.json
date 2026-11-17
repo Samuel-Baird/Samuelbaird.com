@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share answering \"yes, I do this\" to APPUSE2_b_W117 (\"Do you ever do any of the following? Watch religion-focused online videos (other than religious services), for example on YouTube or TikTok\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592038,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Catholic",
+    "Mainline Protestant",
+    "Jewish",
+    "Orthodox Christian",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "watches_religion_videos": {
+    "Evangelical Protestant": {
+      "pct": 40.02,
+      "valid_unweighted_n": 2433,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 15.43,
+      "valid_unweighted_n": 1495,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 49.06,
+      "valid_unweighted_n": 752,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 16.5,
+      "valid_unweighted_n": 2162,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 50.99,
+      "valid_unweighted_n": 197,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 11.42,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 15.38,
+      "valid_unweighted_n": 229,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 7.16,
+      "valid_unweighted_n": 3297,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 21.22,
+      "valid_unweighted_n": 11133,
+      "group_unweighted_n": 11377
+    }
+  }
+}

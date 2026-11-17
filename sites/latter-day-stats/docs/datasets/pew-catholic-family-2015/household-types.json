@@ -1,0 +1,376 @@
+{
+  "source": "Pew Research Center. 2015 Survey of U.S. Catholics and Family Life, fielded May 5-June 7, 2015.",
+  "method": "Population is all respondents (a general-public sample with a Catholic oversample), grouped by present religion (relig). Each item's own 'depends'/'this is the best arrangement' (volunteered) and don't know/refused excluded from its own denominator; share is top box ('acceptable and as good as any other arrangement') vs. 'acceptable but not as good' or 'not an acceptable arrangement.' Groups under 30 valid respondents omitted - Mormon N is thin (88 total respondents, ~85 valid per item) and should be read directionally. Weighted by the dataset's own weight variable.",
+  "total_weighted_n": 14217.4,
+  "total_unweighted_n": 5122,
+  "raised_by_divorced_parents": {
+    "Protestant": {
+      "pct": 33.37,
+      "valid_unweighted_n": 1746,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 32.93,
+      "valid_unweighted_n": 944,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 15.81,
+      "valid_unweighted_n": 81,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 23.35,
+      "valid_unweighted_n": 39,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 40.34,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 30.91,
+      "valid_unweighted_n": 42,
+      "group_unweighted_n": 43
+    },
+    "Buddhist": {
+      "pct": 46.45,
+      "valid_unweighted_n": 32,
+      "group_unweighted_n": 32
+    },
+    "Hindu": {
+      "pct": 37.14,
+      "valid_unweighted_n": 35,
+      "group_unweighted_n": 38
+    },
+    "Atheist": {
+      "pct": 47.29,
+      "valid_unweighted_n": 157,
+      "group_unweighted_n": 171
+    },
+    "Agnostic": {
+      "pct": 39.55,
+      "valid_unweighted_n": 190,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 41.74,
+      "valid_unweighted_n": 88,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 43.61,
+      "valid_unweighted_n": 692,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 30.12,
+      "valid_unweighted_n": 535,
+      "group_unweighted_n": 582
+    },
+    "U.S. adults": {
+      "pct": 35.37,
+      "valid_unweighted_n": 4779,
+      "group_unweighted_n": 5122
+    }
+  },
+  "raised_by_gay_lesbian_couple": {
+    "Protestant": {
+      "pct": 30.72,
+      "valid_unweighted_n": 1738,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 46.01,
+      "valid_unweighted_n": 949,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 13.05,
+      "valid_unweighted_n": 87,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 37.64,
+      "valid_unweighted_n": 40,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 80.12,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 29.95,
+      "valid_unweighted_n": 39,
+      "group_unweighted_n": 43
+    },
+    "Buddhist": {
+      "pct": 85.84,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "Hindu": {
+      "pct": 52.34,
+      "valid_unweighted_n": 32,
+      "group_unweighted_n": 38
+    },
+    "Atheist": {
+      "pct": 89.28,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 171
+    },
+    "Agnostic": {
+      "pct": 81.05,
+      "valid_unweighted_n": 196,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 69.88,
+      "valid_unweighted_n": 90,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 60.39,
+      "valid_unweighted_n": 689,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 34.99,
+      "valid_unweighted_n": 536,
+      "group_unweighted_n": 582
+    },
+    "Jehovah's Witness": {
+      "pct": 24.51,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "U.S. adults": {
+      "pct": 45.4,
+      "valid_unweighted_n": 4796,
+      "group_unweighted_n": 5122
+    }
+  },
+  "raised_by_single_parent": {
+    "Protestant": {
+      "pct": 34.78,
+      "valid_unweighted_n": 1763,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 41.08,
+      "valid_unweighted_n": 946,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 22.62,
+      "valid_unweighted_n": 86,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 30.78,
+      "valid_unweighted_n": 40,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 43.82,
+      "valid_unweighted_n": 101,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 29.24,
+      "valid_unweighted_n": 41,
+      "group_unweighted_n": 43
+    },
+    "Buddhist": {
+      "pct": 50.95,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "Hindu": {
+      "pct": 55.29,
+      "valid_unweighted_n": 36,
+      "group_unweighted_n": 38
+    },
+    "Atheist": {
+      "pct": 49.21,
+      "valid_unweighted_n": 166,
+      "group_unweighted_n": 171
+    },
+    "Agnostic": {
+      "pct": 40.58,
+      "valid_unweighted_n": 191,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 49.22,
+      "valid_unweighted_n": 93,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 50.95,
+      "valid_unweighted_n": 691,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 36.12,
+      "valid_unweighted_n": 540,
+      "group_unweighted_n": 582
+    },
+    "Jehovah's Witness": {
+      "pct": 50.42,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "U.S. adults": {
+      "pct": 40.08,
+      "valid_unweighted_n": 4827,
+      "group_unweighted_n": 5122
+    }
+  },
+  "raised_by_cohabiting_unmarried_parents": {
+    "Protestant": {
+      "pct": 38.69,
+      "valid_unweighted_n": 1786,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 50.4,
+      "valid_unweighted_n": 971,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 17.19,
+      "valid_unweighted_n": 87,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 40.6,
+      "valid_unweighted_n": 39,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 63.66,
+      "valid_unweighted_n": 104,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 38.66,
+      "valid_unweighted_n": 43,
+      "group_unweighted_n": 43
+    },
+    "Buddhist": {
+      "pct": 67.28,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "Hindu": {
+      "pct": 58.84,
+      "valid_unweighted_n": 33,
+      "group_unweighted_n": 38
+    },
+    "Atheist": {
+      "pct": 87.44,
+      "valid_unweighted_n": 165,
+      "group_unweighted_n": 171
+    },
+    "Agnostic": {
+      "pct": 77.93,
+      "valid_unweighted_n": 197,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 70.53,
+      "valid_unweighted_n": 91,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 69.2,
+      "valid_unweighted_n": 704,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 43.98,
+      "valid_unweighted_n": 548,
+      "group_unweighted_n": 582
+    },
+    "Jehovah's Witness": {
+      "pct": 31.69,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 32
+    },
+    "U.S. adults": {
+      "pct": 51.15,
+      "valid_unweighted_n": 4901,
+      "group_unweighted_n": 5122
+    }
+  },
+  "raised_by_married_mother_father": {
+    "Protestant": {
+      "pct": 95.3,
+      "valid_unweighted_n": 1527,
+      "group_unweighted_n": 1861
+    },
+    "Catholic": {
+      "pct": 94.04,
+      "valid_unweighted_n": 852,
+      "group_unweighted_n": 1016
+    },
+    "Mormon": {
+      "pct": 95.76,
+      "valid_unweighted_n": 68,
+      "group_unweighted_n": 88
+    },
+    "Orthodox Christian": {
+      "pct": 87.28,
+      "valid_unweighted_n": 36,
+      "group_unweighted_n": 40
+    },
+    "Jewish": {
+      "pct": 98.16,
+      "valid_unweighted_n": 90,
+      "group_unweighted_n": 105
+    },
+    "Muslim": {
+      "pct": 92.17,
+      "valid_unweighted_n": 35,
+      "group_unweighted_n": 43
+    },
+    "Hindu": {
+      "pct": 84.43,
+      "valid_unweighted_n": 37,
+      "group_unweighted_n": 38
+    },
+    "Atheist": {
+      "pct": 96.23,
+      "valid_unweighted_n": 153,
+      "group_unweighted_n": 171
+    },
+    "Agnostic": {
+      "pct": 95.32,
+      "valid_unweighted_n": 187,
+      "group_unweighted_n": 205
+    },
+    "Something else": {
+      "pct": 95.8,
+      "valid_unweighted_n": 83,
+      "group_unweighted_n": 99
+    },
+    "Nothing in particular": {
+      "pct": 95.28,
+      "valid_unweighted_n": 653,
+      "group_unweighted_n": 731
+    },
+    "Christian (unspecified)": {
+      "pct": 94.7,
+      "valid_unweighted_n": 472,
+      "group_unweighted_n": 582
+    },
+    "U.S. adults": {
+      "pct": 94.84,
+      "valid_unweighted_n": 4307,
+      "group_unweighted_n": 5122
+    }
+  }
+}

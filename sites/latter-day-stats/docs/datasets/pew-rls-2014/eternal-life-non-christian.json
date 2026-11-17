@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Population is current religious tradition (RELTRAD), restricted to Christian traditions - qh2 was asked only of respondents the survey's skip logic had already classified as Christian; non-Christian and unaffiliated respondents have no valid cases on this item. Share shown is those who say some non-Christian religions can also lead to eternal life, vs. only Christian religions; don't know/refused/undesignated are excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own national WEIGHT variable.",
+  "total_weighted_n": 15330.670054089202,
+  "total_unweighted_n": 15886,
+  "group_order": [
+    "Orthodox Christian",
+    "Catholic",
+    "Mainline Protestant Tradition",
+    "Mormon",
+    "Historically Black Protestant Tradition",
+    "Evangelical Protestant Tradition",
+    "All Christian traditions"
+  ],
+  "non_christian_can_lead_to_eternal_life": {
+    "Evangelical Protestant Tradition": {
+      "pct": 64.06,
+      "valid_unweighted_n": 4054,
+      "group_unweighted_n": 8593
+    },
+    "Mainline Protestant Tradition": {
+      "pct": 86.32,
+      "valid_unweighted_n": 4671,
+      "group_unweighted_n": 6083
+    },
+    "Historically Black Protestant Tradition": {
+      "pct": 70.95,
+      "valid_unweighted_n": 1049,
+      "group_unweighted_n": 1916
+    },
+    "Catholic": {
+      "pct": 89.58,
+      "valid_unweighted_n": 5636,
+      "group_unweighted_n": 7202
+    },
+    "Mormon": {
+      "pct": 84.15,
+      "valid_unweighted_n": 243,
+      "group_unweighted_n": 664
+    },
+    "Orthodox Christian": {
+      "pct": 90.42,
+      "valid_unweighted_n": 127,
+      "group_unweighted_n": 186
+    },
+    "All Christian traditions": {
+      "pct": 80.04,
+      "valid_unweighted_n": 15886,
+      "group_unweighted_n": 15886
+    }
+  }
+}

@@ -1,0 +1,5626 @@
+{
+  "data_version": "3",
+  "responses": [
+    "strongly_disagree",
+    "somewhat_disagree",
+    "not_sure",
+    "somewhat_agree",
+    "strongly_agree"
+  ],
+  "responses_3": [
+    "strongly_disagree",
+    "not_sure",
+    "strongly_agree"
+  ],
+  "traditions": [
+    "Evangelical",
+    "Black Protestant",
+    "Mainline",
+    "Roman Catholic"
+  ],
+  "baseline_group": "All U.S. adults",
+  "constants": {
+    "EVANGELICAL_SHARE": 0.25,
+    "PROB_FLOOR": 0.02,
+    "NEG_FLOOR": 0.005,
+    "SHRINKAGE": 2.5,
+    "TIE_MARGIN": 0.25
+  },
+  "years": [
+    2022,
+    2025
+  ],
+  "items": [
+    {
+      "id": "god_perfect",
+      "statement": "God is a perfect being and cannot make a mistake.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.397895,
+        -1.299283,
+        -1.609438,
+        -0.336472,
+        0.65764
+      ],
+      "p": {
+        "Evangelical": [
+          0.02,
+          0.03,
+          0.02,
+          0.1,
+          0.83
+        ],
+        "Black Protestant": [
+          0.019802,
+          0.019802,
+          0.059406,
+          0.118812,
+          0.782178
+        ],
+        "Mainline": [
+          0.05,
+          0.1,
+          0.05,
+          0.14,
+          0.66
+        ],
+        "Roman Catholic": [
+          0.07,
+          0.11,
+          0.07,
+          0.21,
+          0.54
+        ]
+      },
+      "p_all": [
+        0.17,
+        0.09,
+        0.08,
+        0.13,
+        0.53
+      ],
+      "p_not_evangelical": [
+        0.22,
+        0.11,
+        0.1,
+        0.14,
+        0.43
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          2,
+          3,
+          2,
+          10,
+          83
+        ],
+        "Black Protestant": [
+          1,
+          2,
+          6,
+          12,
+          79
+        ],
+        "Mainline": [
+          5,
+          10,
+          5,
+          14,
+          66
+        ],
+        "Roman Catholic": [
+          7,
+          11,
+          7,
+          21,
+          54
+        ],
+        "All U.S. adults": [
+          17,
+          9,
+          8,
+          13,
+          53
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "trinity",
+      "statement": "There is one true God in three persons: God the Father, God the Son, and God the Holy Spirit.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.278975,
+        -0.858662,
+        -1.856298,
+        -0.485787,
+        0.600727
+      ],
+      "p": {
+        "Evangelical": [
+          0.019802,
+          0.019802,
+          0.019802,
+          0.108911,
+          0.831683
+        ],
+        "Black Protestant": [
+          0.019608,
+          0.019608,
+          0.058824,
+          0.127451,
+          0.77451
+        ],
+        "Mainline": [
+          0.019802,
+          0.019802,
+          0.079208,
+          0.217822,
+          0.663366
+        ],
+        "Roman Catholic": [
+          0.03,
+          0.03,
+          0.05,
+          0.24,
+          0.65
+        ]
+      },
+      "p_all": [
+        0.15,
+        0.04,
+        0.1,
+        0.16,
+        0.55
+      ],
+      "p_not_evangelical": [
+        0.193399,
+        0.046733,
+        0.126733,
+        0.17703,
+        0.456106
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          1,
+          2,
+          2,
+          11,
+          84
+        ],
+        "Black Protestant": [
+          1,
+          1,
+          6,
+          13,
+          79
+        ],
+        "Mainline": [
+          1,
+          2,
+          8,
+          22,
+          67
+        ],
+        "Roman Catholic": [
+          3,
+          3,
+          5,
+          24,
+          65
+        ],
+        "All U.S. adults": [
+          15,
+          4,
+          10,
+          16,
+          55
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "all_religions",
+      "statement": "God accepts the worship of all religions, including Christianity, Judaism, and Islam.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.91056,
+        0.81093,
+        -0.236389,
+        -0.272867,
+        -0.405465
+      ],
+      "p": {
+        "Evangelical": [
+          0.29,
+          0.12,
+          0.1,
+          0.17,
+          0.32
+        ],
+        "Black Protestant": [
+          0.09,
+          0.04,
+          0.06,
+          0.24,
+          0.57
+        ],
+        "Mainline": [
+          0.05,
+          0.07,
+          0.08,
+          0.26,
+          0.54
+        ],
+        "Roman Catholic": [
+          0.03,
+          0.04,
+          0.05,
+          0.22,
+          0.66
+        ]
+      },
+      "p_all": [
+        0.16,
+        0.07,
+        0.12,
+        0.21,
+        0.44
+      ],
+      "p_not_evangelical": [
+        0.116667,
+        0.053333,
+        0.126667,
+        0.223333,
+        0.48
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          29,
+          12,
+          10,
+          17,
+          32
+        ],
+        "Black Protestant": [
+          9,
+          4,
+          6,
+          24,
+          57
+        ],
+        "Mainline": [
+          5,
+          7,
+          8,
+          26,
+          54
+        ],
+        "Roman Catholic": [
+          3,
+          4,
+          5,
+          22,
+          66
+        ],
+        "All U.S. adults": [
+          16,
+          7,
+          12,
+          21,
+          44
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "god_unchanging",
+      "statement": "God is unchanging.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.956332,
+        -1.181045,
+        -1.397069,
+        -0.379957,
+        0.612489
+      ],
+      "p": {
+        "Evangelical": [
+          0.019802,
+          0.029703,
+          0.039604,
+          0.118812,
+          0.792079
+        ],
+        "Black Protestant": [
+          0.03,
+          0.03,
+          0.06,
+          0.12,
+          0.76
+        ],
+        "Mainline": [
+          0.04,
+          0.08,
+          0.09,
+          0.16,
+          0.63
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.09,
+          0.11,
+          0.24,
+          0.52
+        ]
+      },
+      "p_all": [
+        0.11,
+        0.08,
+        0.13,
+        0.16,
+        0.52
+      ],
+      "p_not_evangelical": [
+        0.140066,
+        0.096766,
+        0.160132,
+        0.173729,
+        0.429307
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          1,
+          3,
+          4,
+          12,
+          80
+        ],
+        "Black Protestant": [
+          3,
+          3,
+          6,
+          12,
+          76
+        ],
+        "Mainline": [
+          4,
+          8,
+          9,
+          16,
+          63
+        ],
+        "Roman Catholic": [
+          4,
+          9,
+          11,
+          24,
+          52
+        ],
+        "All U.S. adults": [
+          11,
+          8,
+          13,
+          16,
+          52
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "resurrection",
+      "statement": "Biblical accounts of the physical (bodily) resurrection of Jesus are completely accurate. This event actually occurred.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.345645,
+        -1.620048,
+        -1.527022,
+        -0.300105,
+        0.812855
+      ],
+      "p": {
+        "Evangelical": [
+          0.019802,
+          0.019802,
+          0.029703,
+          0.158416,
+          0.772277
+        ],
+        "Black Protestant": [
+          0.02,
+          0.04,
+          0.09,
+          0.18,
+          0.67
+        ],
+        "Mainline": [
+          0.05,
+          0.06,
+          0.1,
+          0.31,
+          0.48
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.09,
+          0.12,
+          0.29,
+          0.46
+        ]
+      },
+      "p_all": [
+        0.16,
+        0.08,
+        0.11,
+        0.2,
+        0.45
+      ],
+      "p_not_evangelical": [
+        0.206733,
+        0.100066,
+        0.136766,
+        0.213861,
+        0.342574
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          1,
+          2,
+          3,
+          16,
+          78
+        ],
+        "Black Protestant": [
+          2,
+          4,
+          9,
+          18,
+          67
+        ],
+        "Mainline": [
+          5,
+          6,
+          10,
+          31,
+          48
+        ],
+        "Roman Catholic": [
+          4,
+          9,
+          12,
+          29,
+          46
+        ],
+        "All U.S. adults": [
+          16,
+          8,
+          11,
+          20,
+          45
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "god_loves_same",
+      "statement": "God loves all people the same way.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.181045,
+        -0.013245,
+        -1.310133,
+        -0.439544,
+        0.240563
+      ],
+      "p": {
+        "Evangelical": [
+          0.029703,
+          0.029703,
+          0.019802,
+          0.09901,
+          0.821782
+        ],
+        "Black Protestant": [
+          0.019417,
+          0.019417,
+          0.019417,
+          0.097087,
+          0.84466
+        ],
+        "Mainline": [
+          0.019608,
+          0.029412,
+          0.019608,
+          0.147059,
+          0.784314
+        ],
+        "Roman Catholic": [
+          0.019608,
+          0.019608,
+          0.019608,
+          0.156863,
+          0.784314
+        ]
+      },
+      "p_all": [
+        0.08,
+        0.03,
+        0.06,
+        0.14,
+        0.69
+      ],
+      "p_not_evangelical": [
+        0.096766,
+        0.030099,
+        0.073399,
+        0.153663,
+        0.646073
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          3,
+          3,
+          1,
+          10,
+          83
+        ],
+        "Black Protestant": [
+          0,
+          2,
+          1,
+          10,
+          87
+        ],
+        "Mainline": [
+          1,
+          3,
+          1,
+          15,
+          80
+        ],
+        "Roman Catholic": [
+          1,
+          2,
+          1,
+          16,
+          80
+        ],
+        "All U.S. adults": [
+          8,
+          3,
+          6,
+          14,
+          69
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "arian",
+      "statement": "Jesus is the first and greatest being created by God.",
+      "year": 2022,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.174353,
+        0.160343,
+        -0.465363,
+        -0.186586,
+        0.251314
+      ],
+      "p": {
+        "Evangelical": [
+          0.21,
+          0.09,
+          0.09,
+          0.13,
+          0.48
+        ],
+        "Black Protestant": [
+          0.09,
+          0.07,
+          0.06,
+          0.22,
+          0.56
+        ],
+        "Mainline": [
+          0.16,
+          0.1,
+          0.13,
+          0.15,
+          0.46
+        ],
+        "Roman Catholic": [
+          0.11,
+          0.09,
+          0.09,
+          0.2,
+          0.51
+        ]
+      },
+      "p_all": [
+        0.24,
+        0.08,
+        0.13,
+        0.15,
+        0.4
+      ],
+      "p_not_evangelical": [
+        0.25,
+        0.076667,
+        0.143333,
+        0.156667,
+        0.373333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          21,
+          9,
+          9,
+          13,
+          48
+        ],
+        "Black Protestant": [
+          9,
+          7,
+          6,
+          22,
+          56
+        ],
+        "Mainline": [
+          16,
+          10,
+          13,
+          15,
+          46
+        ],
+        "Roman Catholic": [
+          11,
+          9,
+          9,
+          20,
+          51
+        ],
+        "All U.S. adults": [
+          24,
+          8,
+          13,
+          15,
+          40
+        ]
+      },
+      "wave_reference": {
+        "source": "State of Theology 2022 respondent microdata (this item's own wave)",
+        "url": "https://thestateoftheology.com/assets/data/us/responses-2022.csv",
+        "n": 3011,
+        "curve": [
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.465363,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.186586,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          -0.174353,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.160343,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314,
+          0.251314
+        ]
+      }
+    },
+    {
+      "id": "jesus_not_god",
+      "statement": "Jesus was a great teacher, but he was not God.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.864212,
+        -0.13815,
+        -1.203973,
+        -0.693147,
+        -0.310155
+      ],
+      "p": {
+        "Evangelical": [
+          0.53,
+          0.09,
+          0.04,
+          0.12,
+          0.22
+        ],
+        "Black Protestant": [
+          0.28,
+          0.07,
+          0.1,
+          0.17,
+          0.38
+        ],
+        "Mainline": [
+          0.31,
+          0.12,
+          0.05,
+          0.22,
+          0.3
+        ],
+        "Roman Catholic": [
+          0.26,
+          0.14,
+          0.1,
+          0.22,
+          0.28
+        ]
+      },
+      "p_all": [
+        0.3,
+        0.1,
+        0.11,
+        0.21,
+        0.28
+      ],
+      "p_not_evangelical": [
+        0.223333,
+        0.103333,
+        0.133333,
+        0.24,
+        0.3
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          53,
+          9,
+          4,
+          12,
+          22
+        ],
+        "Black Protestant": [
+          28,
+          7,
+          10,
+          17,
+          38
+        ],
+        "Mainline": [
+          31,
+          12,
+          5,
+          22,
+          30
+        ],
+        "Roman Catholic": [
+          26,
+          14,
+          10,
+          22,
+          28
+        ],
+        "All U.S. adults": [
+          30,
+          10,
+          11,
+          21,
+          28
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "marriage_man_woman",
+      "statement": "God created marriage to be between one man and one woman.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.94591,
+        -0.693147,
+        -0.847298,
+        -0.427444,
+        0.639746
+      ],
+      "p": {
+        "Evangelical": [
+          0.04,
+          0.04,
+          0.03,
+          0.1,
+          0.79
+        ],
+        "Black Protestant": [
+          0.06,
+          0.04,
+          0.03,
+          0.11,
+          0.76
+        ],
+        "Mainline": [
+          0.12,
+          0.1,
+          0.05,
+          0.15,
+          0.58
+        ],
+        "Roman Catholic": [
+          0.13,
+          0.1,
+          0.06,
+          0.2,
+          0.51
+        ]
+      },
+      "p_all": [
+        0.22,
+        0.07,
+        0.06,
+        0.14,
+        0.51
+      ],
+      "p_not_evangelical": [
+        0.28,
+        0.08,
+        0.07,
+        0.153333,
+        0.416667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          4,
+          4,
+          3,
+          10,
+          79
+        ],
+        "Black Protestant": [
+          6,
+          4,
+          3,
+          11,
+          76
+        ],
+        "Mainline": [
+          12,
+          10,
+          5,
+          15,
+          58
+        ],
+        "Roman Catholic": [
+          13,
+          10,
+          6,
+          20,
+          51
+        ],
+        "All U.S. adults": [
+          22,
+          7,
+          6,
+          14,
+          51
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "spirit_force",
+      "statement": "The Holy Spirit is a force but is not a personal being.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.587787,
+        0.451985,
+        -0.587787,
+        -0.367725,
+        0.043963
+      ],
+      "p": {
+        "Evangelical": [
+          0.27,
+          0.11,
+          0.1,
+          0.21,
+          0.31
+        ],
+        "Black Protestant": [
+          0.17,
+          0.1,
+          0.08,
+          0.23,
+          0.42
+        ],
+        "Mainline": [
+          0.1,
+          0.07,
+          0.1,
+          0.39,
+          0.34
+        ],
+        "Roman Catholic": [
+          0.1,
+          0.09,
+          0.13,
+          0.34,
+          0.34
+        ]
+      },
+      "p_all": [
+        0.18,
+        0.08,
+        0.16,
+        0.28,
+        0.3
+      ],
+      "p_not_evangelical": [
+        0.15,
+        0.07,
+        0.18,
+        0.303333,
+        0.296667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          27,
+          11,
+          10,
+          21,
+          31
+        ],
+        "Black Protestant": [
+          17,
+          10,
+          8,
+          23,
+          42
+        ],
+        "Mainline": [
+          10,
+          7,
+          10,
+          39,
+          34
+        ],
+        "Roman Catholic": [
+          10,
+          9,
+          13,
+          34,
+          34
+        ],
+        "All U.S. adults": [
+          18,
+          8,
+          16,
+          28,
+          30
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "spirit_new_birth",
+      "statement": "The Holy Spirit gives a spiritual new birth or new life before a person has faith in Jesus Christ.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.0,
+        -0.154151,
+        -0.619039,
+        -0.119545,
+        0.546544
+      ],
+      "p": {
+        "Evangelical": [
+          0.19,
+          0.08,
+          0.14,
+          0.21,
+          0.38
+        ],
+        "Black Protestant": [
+          0.14,
+          0.09,
+          0.11,
+          0.23,
+          0.43
+        ],
+        "Mainline": [
+          0.08,
+          0.11,
+          0.21,
+          0.32,
+          0.28
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.09,
+          0.23,
+          0.32,
+          0.32
+        ]
+      },
+      "p_all": [
+        0.19,
+        0.09,
+        0.23,
+        0.23,
+        0.26
+      ],
+      "p_not_evangelical": [
+        0.19,
+        0.093333,
+        0.26,
+        0.236667,
+        0.22
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          19,
+          8,
+          14,
+          21,
+          38
+        ],
+        "Black Protestant": [
+          14,
+          9,
+          11,
+          23,
+          43
+        ],
+        "Mainline": [
+          8,
+          11,
+          21,
+          32,
+          28
+        ],
+        "Roman Catholic": [
+          4,
+          9,
+          23,
+          32,
+          32
+        ],
+        "All U.S. adults": [
+          19,
+          9,
+          23,
+          23,
+          26
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "spirit_forbidden",
+      "statement": "The Holy Spirit can tell me to do something which is forbidden in the Bible.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.354545,
+        -0.200671,
+        -1.129865,
+        -0.322773,
+        0.0
+      ],
+      "p": {
+        "Evangelical": [
+          0.67,
+          0.12,
+          0.07,
+          0.07,
+          0.07
+        ],
+        "Black Protestant": [
+          0.58,
+          0.16,
+          0.09,
+          0.08,
+          0.09
+        ],
+        "Mainline": [
+          0.53,
+          0.17,
+          0.13,
+          0.12,
+          0.05
+        ],
+        "Roman Catholic": [
+          0.45,
+          0.16,
+          0.16,
+          0.13,
+          0.1
+        ]
+      },
+      "p_all": [
+        0.52,
+        0.14,
+        0.18,
+        0.09,
+        0.07
+      ],
+      "p_not_evangelical": [
+        0.47,
+        0.146667,
+        0.216667,
+        0.096667,
+        0.07
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          67,
+          12,
+          7,
+          7,
+          7
+        ],
+        "Black Protestant": [
+          58,
+          16,
+          9,
+          8,
+          9
+        ],
+        "Mainline": [
+          53,
+          17,
+          13,
+          12,
+          5
+        ],
+        "Roman Catholic": [
+          45,
+          16,
+          16,
+          13,
+          10
+        ],
+        "All U.S. adults": [
+          52,
+          14,
+          18,
+          9,
+          7
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "good_by_nature",
+      "statement": "Everyone sins a little, but most people are good by nature.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.737599,
+        0.329479,
+        -0.635989,
+        -0.272867,
+        -0.174353
+      ],
+      "p": {
+        "Evangelical": [
+          0.23,
+          0.19,
+          0.03,
+          0.34,
+          0.21
+        ],
+        "Black Protestant": [
+          0.09,
+          0.13,
+          0.07,
+          0.38,
+          0.33
+        ],
+        "Mainline": [
+          0.06,
+          0.11,
+          0.02,
+          0.55,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.11,
+          0.03,
+          0.49,
+          0.33
+        ]
+      },
+      "p_all": [
+        0.14,
+        0.15,
+        0.05,
+        0.42,
+        0.24
+      ],
+      "p_not_evangelical": [
+        0.11,
+        0.136667,
+        0.056667,
+        0.446667,
+        0.25
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          23,
+          19,
+          3,
+          34,
+          21
+        ],
+        "Black Protestant": [
+          9,
+          13,
+          7,
+          38,
+          33
+        ],
+        "Mainline": [
+          6,
+          11,
+          2,
+          55,
+          26
+        ],
+        "Roman Catholic": [
+          4,
+          11,
+          3,
+          49,
+          33
+        ],
+        "All U.S. adults": [
+          14,
+          15,
+          5,
+          42,
+          24
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "smallest_sin",
+      "statement": "Even the smallest sin deserves eternal damnation.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.48112,
+        0.336472,
+        0.0,
+        0.251314,
+        1.175573
+      ],
+      "p": {
+        "Evangelical": [
+          0.41,
+          0.14,
+          0.06,
+          0.12,
+          0.27
+        ],
+        "Black Protestant": [
+          0.43,
+          0.14,
+          0.09,
+          0.11,
+          0.23
+        ],
+        "Mainline": [
+          0.67,
+          0.11,
+          0.03,
+          0.12,
+          0.07
+        ],
+        "Roman Catholic": [
+          0.66,
+          0.12,
+          0.03,
+          0.1,
+          0.09
+        ]
+      },
+      "p_all": [
+        0.6,
+        0.11,
+        0.06,
+        0.1,
+        0.13
+      ],
+      "p_not_evangelical": [
+        0.663333,
+        0.1,
+        0.06,
+        0.093333,
+        0.083333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          41,
+          14,
+          6,
+          12,
+          27
+        ],
+        "Black Protestant": [
+          43,
+          14,
+          9,
+          11,
+          23
+        ],
+        "Mainline": [
+          67,
+          11,
+          3,
+          12,
+          7
+        ],
+        "Roman Catholic": [
+          66,
+          12,
+          3,
+          10,
+          9
+        ],
+        "All U.S. adults": [
+          60,
+          11,
+          6,
+          10,
+          13
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "justification_faith",
+      "statement": "God counts a person as righteous not because of one’s works but only because of one’s faith in Jesus Christ.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.358123,
+        -0.465363,
+        -1.299283,
+        0.0,
+        0.832344
+      ],
+      "p": {
+        "Evangelical": [
+          0.06,
+          0.09,
+          0.04,
+          0.22,
+          0.59
+        ],
+        "Black Protestant": [
+          0.04,
+          0.1,
+          0.1,
+          0.22,
+          0.54
+        ],
+        "Mainline": [
+          0.11,
+          0.13,
+          0.06,
+          0.27,
+          0.43
+        ],
+        "Roman Catholic": [
+          0.16,
+          0.19,
+          0.12,
+          0.26,
+          0.27
+        ]
+      },
+      "p_all": [
+        0.19,
+        0.13,
+        0.12,
+        0.22,
+        0.34
+      ],
+      "p_not_evangelical": [
+        0.233333,
+        0.143333,
+        0.146667,
+        0.22,
+        0.256667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          6,
+          9,
+          4,
+          22,
+          59
+        ],
+        "Black Protestant": [
+          4,
+          10,
+          10,
+          22,
+          54
+        ],
+        "Mainline": [
+          11,
+          13,
+          6,
+          27,
+          43
+        ],
+        "Roman Catholic": [
+          16,
+          19,
+          12,
+          26,
+          27
+        ],
+        "All U.S. adults": [
+          19,
+          13,
+          12,
+          22,
+          34
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "born_innocent",
+      "statement": "Everyone is born innocent in the eyes of God.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.709148,
+        0.251314,
+        -0.847298,
+        -0.413976,
+        0.0
+      ],
+      "p": {
+        "Evangelical": [
+          0.21,
+          0.06,
+          0.04,
+          0.13,
+          0.56
+        ],
+        "Black Protestant": [
+          0.15,
+          0.05,
+          0.03,
+          0.13,
+          0.64
+        ],
+        "Mainline": [
+          0.059406,
+          0.049505,
+          0.019802,
+          0.178218,
+          0.693069
+        ],
+        "Roman Catholic": [
+          0.04,
+          0.05,
+          0.02,
+          0.19,
+          0.7
+        ]
+      },
+      "p_all": [
+        0.13,
+        0.05,
+        0.08,
+        0.18,
+        0.56
+      ],
+      "p_not_evangelical": [
+        0.103333,
+        0.046667,
+        0.093333,
+        0.196667,
+        0.56
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          21,
+          6,
+          4,
+          13,
+          56
+        ],
+        "Black Protestant": [
+          15,
+          5,
+          3,
+          13,
+          64
+        ],
+        "Mainline": [
+          6,
+          5,
+          1,
+          18,
+          70
+        ],
+        "Roman Catholic": [
+          4,
+          5,
+          2,
+          19,
+          70
+        ],
+        "All U.S. adults": [
+          13,
+          5,
+          8,
+          18,
+          56
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "bible_myths",
+      "statement": "The Bible, like all sacred writings, contains helpful accounts of ancient myths but is not literally true.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.998529,
+        0.09309,
+        -0.587787,
+        -0.725937,
+        -1.15268
+      ],
+      "p": {
+        "Evangelical": [
+          0.57,
+          0.15,
+          0.05,
+          0.15,
+          0.08
+        ],
+        "Black Protestant": [
+          0.43,
+          0.16,
+          0.09,
+          0.18,
+          0.14
+        ],
+        "Mainline": [
+          0.27,
+          0.18,
+          0.06,
+          0.34,
+          0.15
+        ],
+        "Roman Catholic": [
+          0.19,
+          0.18,
+          0.1,
+          0.35,
+          0.18
+        ]
+      },
+      "p_all": [
+        0.3,
+        0.14,
+        0.08,
+        0.27,
+        0.21
+      ],
+      "p_not_evangelical": [
+        0.21,
+        0.136667,
+        0.09,
+        0.31,
+        0.253333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          57,
+          15,
+          5,
+          15,
+          8
+        ],
+        "Black Protestant": [
+          43,
+          16,
+          9,
+          18,
+          14
+        ],
+        "Mainline": [
+          27,
+          18,
+          6,
+          34,
+          15
+        ],
+        "Roman Catholic": [
+          19,
+          18,
+          10,
+          35,
+          18
+        ],
+        "All U.S. adults": [
+          30,
+          14,
+          8,
+          27,
+          21
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "bible_accurate",
+      "statement": "The Bible is 100% accurate in all that it teaches.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.773067,
+        -0.587787,
+        -0.427444,
+        0.072759,
+        1.034074
+      ],
+      "p": {
+        "Evangelical": [
+          0.06,
+          0.1,
+          0.05,
+          0.19,
+          0.6
+        ],
+        "Black Protestant": [
+          0.1,
+          0.09,
+          0.04,
+          0.2,
+          0.57
+        ],
+        "Mainline": [
+          0.18,
+          0.24,
+          0.07,
+          0.25,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.19,
+          0.24,
+          0.06,
+          0.26,
+          0.25
+        ]
+      },
+      "p_all": [
+        0.28,
+        0.16,
+        0.07,
+        0.18,
+        0.31
+      ],
+      "p_not_evangelical": [
+        0.353333,
+        0.18,
+        0.076667,
+        0.176667,
+        0.213333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          6,
+          10,
+          5,
+          19,
+          60
+        ],
+        "Black Protestant": [
+          10,
+          9,
+          4,
+          20,
+          57
+        ],
+        "Mainline": [
+          18,
+          24,
+          7,
+          25,
+          26
+        ],
+        "Roman Catholic": [
+          19,
+          24,
+          6,
+          26,
+          25
+        ],
+        "All U.S. adults": [
+          28,
+          16,
+          7,
+          18,
+          31
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "science_disproves",
+      "statement": "Modern science disproves the Bible.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.824175,
+        -0.154151,
+        -0.76214,
+        -0.541131,
+        -0.998529
+      ],
+      "p": {
+        "Evangelical": [
+          0.57,
+          0.16,
+          0.07,
+          0.13,
+          0.07
+        ],
+        "Black Protestant": [
+          0.48,
+          0.13,
+          0.11,
+          0.2,
+          0.08
+        ],
+        "Mainline": [
+          0.4,
+          0.29,
+          0.11,
+          0.14,
+          0.06
+        ],
+        "Roman Catholic": [
+          0.31,
+          0.23,
+          0.17,
+          0.21,
+          0.08
+        ]
+      },
+      "p_all": [
+        0.33,
+        0.18,
+        0.13,
+        0.2,
+        0.16
+      ],
+      "p_not_evangelical": [
+        0.25,
+        0.186667,
+        0.15,
+        0.223333,
+        0.19
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          57,
+          16,
+          7,
+          13,
+          7
+        ],
+        "Black Protestant": [
+          48,
+          13,
+          11,
+          20,
+          8
+        ],
+        "Mainline": [
+          40,
+          29,
+          11,
+          14,
+          6
+        ],
+        "Roman Catholic": [
+          31,
+          23,
+          17,
+          21,
+          8
+        ],
+        "All U.S. adults": [
+          33,
+          18,
+          13,
+          20,
+          16
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "election",
+      "statement": "God chose the people he would save before he created the world.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.14183,
+        -0.097638,
+        -0.211309,
+        0.195745,
+        0.510826
+      ],
+      "p": {
+        "Evangelical": [
+          0.35,
+          0.13,
+          0.17,
+          0.15,
+          0.2
+        ],
+        "Black Protestant": [
+          0.31,
+          0.13,
+          0.16,
+          0.15,
+          0.25
+        ],
+        "Mainline": [
+          0.4,
+          0.2,
+          0.16,
+          0.15,
+          0.09
+        ],
+        "Roman Catholic": [
+          0.33,
+          0.17,
+          0.19,
+          0.16,
+          0.15
+        ]
+      },
+      "p_all": [
+        0.39,
+        0.14,
+        0.2,
+        0.13,
+        0.14
+      ],
+      "p_not_evangelical": [
+        0.403333,
+        0.143333,
+        0.21,
+        0.123333,
+        0.12
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          35,
+          13,
+          17,
+          15,
+          20
+        ],
+        "Black Protestant": [
+          31,
+          13,
+          16,
+          15,
+          25
+        ],
+        "Mainline": [
+          40,
+          20,
+          16,
+          15,
+          9
+        ],
+        "Roman Catholic": [
+          33,
+          17,
+          19,
+          16,
+          15
+        ],
+        "All U.S. adults": [
+          39,
+          14,
+          20,
+          13,
+          14
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "hell_real",
+      "statement": "Hell is a real place where certain people will be punished forever.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.845827,
+        -0.725937,
+        -0.76214,
+        -0.200671,
+        0.881548
+      ],
+      "p": {
+        "Evangelical": [
+          0.04,
+          0.05,
+          0.07,
+          0.18,
+          0.66
+        ],
+        "Black Protestant": [
+          0.019802,
+          0.039604,
+          0.09901,
+          0.247525,
+          0.594059
+        ],
+        "Mainline": [
+          0.11,
+          0.15,
+          0.15,
+          0.28,
+          0.31
+        ],
+        "Roman Catholic": [
+          0.1,
+          0.1,
+          0.16,
+          0.33,
+          0.31
+        ]
+      },
+      "p_all": [
+        0.2,
+        0.09,
+        0.13,
+        0.21,
+        0.37
+      ],
+      "p_not_evangelical": [
+        0.253333,
+        0.103333,
+        0.15,
+        0.22,
+        0.273333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          4,
+          5,
+          7,
+          18,
+          66
+        ],
+        "Black Protestant": [
+          1,
+          4,
+          10,
+          25,
+          60
+        ],
+        "Mainline": [
+          11,
+          15,
+          15,
+          28,
+          31
+        ],
+        "Roman Catholic": [
+          10,
+          10,
+          16,
+          33,
+          31
+        ],
+        "All U.S. adults": [
+          20,
+          9,
+          13,
+          21,
+          37
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "second_coming",
+      "statement": "There will be a time when Jesus Christ returns to judge all the people who have lived.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.512306,
+        -1.021651,
+        -1.299283,
+        -0.389465,
+        0.888541
+      ],
+      "p": {
+        "Evangelical": [
+          0.02,
+          0.03,
+          0.04,
+          0.14,
+          0.77
+        ],
+        "Black Protestant": [
+          0.03,
+          0.03,
+          0.08,
+          0.2,
+          0.66
+        ],
+        "Mainline": [
+          0.07,
+          0.04,
+          0.12,
+          0.33,
+          0.44
+        ],
+        "Roman Catholic": [
+          0.07,
+          0.08,
+          0.13,
+          0.3,
+          0.42
+        ]
+      },
+      "p_all": [
+        0.19,
+        0.07,
+        0.12,
+        0.19,
+        0.43
+      ],
+      "p_not_evangelical": [
+        0.246667,
+        0.083333,
+        0.146667,
+        0.206667,
+        0.316667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          2,
+          3,
+          4,
+          14,
+          77
+        ],
+        "Black Protestant": [
+          3,
+          3,
+          8,
+          20,
+          66
+        ],
+        "Mainline": [
+          7,
+          4,
+          12,
+          33,
+          44
+        ],
+        "Roman Catholic": [
+          7,
+          8,
+          13,
+          30,
+          42
+        ],
+        "All U.S. adults": [
+          19,
+          7,
+          12,
+          19,
+          43
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "worship_alone",
+      "statement": "Worshiping alone or with one’s family is a valid replacement for regularly attending church.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.497838,
+        0.693147,
+        -0.635989,
+        -0.040822,
+        -0.451985
+      ],
+      "p": {
+        "Evangelical": [
+          0.17,
+          0.24,
+          0.06,
+          0.32,
+          0.21
+        ],
+        "Black Protestant": [
+          0.19,
+          0.17,
+          0.07,
+          0.29,
+          0.28
+        ],
+        "Mainline": [
+          0.06,
+          0.17,
+          0.06,
+          0.42,
+          0.29
+        ],
+        "Roman Catholic": [
+          0.1,
+          0.16,
+          0.07,
+          0.39,
+          0.28
+        ]
+      },
+      "p_all": [
+        0.12,
+        0.15,
+        0.1,
+        0.33,
+        0.3
+      ],
+      "p_not_evangelical": [
+        0.103333,
+        0.12,
+        0.113333,
+        0.333333,
+        0.33
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          17,
+          24,
+          6,
+          32,
+          21
+        ],
+        "Black Protestant": [
+          19,
+          17,
+          7,
+          29,
+          28
+        ],
+        "Mainline": [
+          6,
+          17,
+          6,
+          42,
+          29
+        ],
+        "Roman Catholic": [
+          10,
+          16,
+          7,
+          39,
+          28
+        ],
+        "All U.S. adults": [
+          12,
+          15,
+          10,
+          33,
+          30
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "faith_not_politics",
+      "statement": "Christians should not allow their religious beliefs to influence their political decisions.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.962037,
+        0.223144,
+        -0.200671,
+        -0.348307,
+        -0.813106
+      ],
+      "p": {
+        "Evangelical": [
+          0.41,
+          0.2,
+          0.06,
+          0.16,
+          0.17
+        ],
+        "Black Protestant": [
+          0.21,
+          0.2,
+          0.11,
+          0.21,
+          0.27
+        ],
+        "Mainline": [
+          0.28,
+          0.28,
+          0.04,
+          0.18,
+          0.22
+        ],
+        "Roman Catholic": [
+          0.14,
+          0.18,
+          0.06,
+          0.3,
+          0.32
+        ]
+      },
+      "p_all": [
+        0.22,
+        0.17,
+        0.07,
+        0.21,
+        0.33
+      ],
+      "p_not_evangelical": [
+        0.156667,
+        0.16,
+        0.073333,
+        0.226667,
+        0.383333
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          41,
+          20,
+          6,
+          16,
+          17
+        ],
+        "Black Protestant": [
+          21,
+          20,
+          11,
+          21,
+          27
+        ],
+        "Mainline": [
+          28,
+          28,
+          4,
+          18,
+          22
+        ],
+        "Roman Catholic": [
+          14,
+          18,
+          6,
+          30,
+          32
+        ],
+        "All U.S. adults": [
+          22,
+          17,
+          7,
+          21,
+          33
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "join_church",
+      "statement": "Every Christian has an obligation to join a local church.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -0.646627,
+        0.0,
+        -0.367725,
+        0.502629,
+        0.737599
+      ],
+      "p": {
+        "Evangelical": [
+          0.22,
+          0.22,
+          0.06,
+          0.27,
+          0.23
+        ],
+        "Black Protestant": [
+          0.17,
+          0.18,
+          0.09,
+          0.27,
+          0.29
+        ],
+        "Mainline": [
+          0.28,
+          0.34,
+          0.1,
+          0.15,
+          0.13
+        ],
+        "Roman Catholic": [
+          0.28,
+          0.26,
+          0.07,
+          0.24,
+          0.15
+        ]
+      },
+      "p_all": [
+        0.37,
+        0.22,
+        0.08,
+        0.19,
+        0.14
+      ],
+      "p_not_evangelical": [
+        0.42,
+        0.22,
+        0.086667,
+        0.163333,
+        0.11
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          22,
+          22,
+          6,
+          27,
+          23
+        ],
+        "Black Protestant": [
+          17,
+          18,
+          9,
+          27,
+          29
+        ],
+        "Mainline": [
+          28,
+          34,
+          10,
+          15,
+          13
+        ],
+        "Roman Catholic": [
+          28,
+          26,
+          7,
+          24,
+          15
+        ],
+        "All U.S. adults": [
+          37,
+          22,
+          8,
+          19,
+          14
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "sex_outside_marriage",
+      "statement": "Sex outside of traditional marriage is a sin.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.646825,
+        -0.693147,
+        -0.635989,
+        0.129212,
+        0.973449
+      ],
+      "p": {
+        "Evangelical": [
+          0.07,
+          0.08,
+          0.03,
+          0.22,
+          0.6
+        ],
+        "Black Protestant": [
+          0.07,
+          0.16,
+          0.04,
+          0.26,
+          0.47
+        ],
+        "Mainline": [
+          0.18,
+          0.2,
+          0.07,
+          0.31,
+          0.24
+        ],
+        "Roman Catholic": [
+          0.26,
+          0.19,
+          0.06,
+          0.24,
+          0.25
+        ]
+      },
+      "p_all": [
+        0.29,
+        0.14,
+        0.05,
+        0.2,
+        0.32
+      ],
+      "p_not_evangelical": [
+        0.363333,
+        0.16,
+        0.056667,
+        0.193333,
+        0.226667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          7,
+          8,
+          3,
+          22,
+          60
+        ],
+        "Black Protestant": [
+          7,
+          16,
+          4,
+          26,
+          47
+        ],
+        "Mainline": [
+          18,
+          20,
+          7,
+          31,
+          24
+        ],
+        "Roman Catholic": [
+          26,
+          19,
+          6,
+          24,
+          25
+        ],
+        "All U.S. adults": [
+          29,
+          14,
+          5,
+          20,
+          32
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "abortion_sin",
+      "statement": "Abortion is a sin.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.376992,
+        -0.336472,
+        -0.154151,
+        0.151231,
+        0.783531
+      ],
+      "p": {
+        "Evangelical": [
+          0.09,
+          0.1,
+          0.08,
+          0.19,
+          0.54
+        ],
+        "Black Protestant": [
+          0.13,
+          0.11,
+          0.13,
+          0.28,
+          0.35
+        ],
+        "Mainline": [
+          0.19,
+          0.22,
+          0.09,
+          0.24,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.2,
+          0.16,
+          0.09,
+          0.24,
+          0.31
+        ]
+      },
+      "p_all": [
+        0.29,
+        0.13,
+        0.09,
+        0.17,
+        0.32
+      ],
+      "p_not_evangelical": [
+        0.356667,
+        0.14,
+        0.093333,
+        0.163333,
+        0.246667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          9,
+          10,
+          8,
+          19,
+          54
+        ],
+        "Black Protestant": [
+          13,
+          11,
+          13,
+          28,
+          35
+        ],
+        "Mainline": [
+          19,
+          22,
+          9,
+          24,
+          26
+        ],
+        "Roman Catholic": [
+          20,
+          16,
+          9,
+          24,
+          31
+        ],
+        "All U.S. adults": [
+          29,
+          13,
+          9,
+          17,
+          32
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "gender_choice",
+      "statement": "People should be able to choose their gender regardless of their biological sex.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.688184,
+        -0.236389,
+        -0.367725,
+        -0.587787,
+        -1.349927
+      ],
+      "p": {
+        "Evangelical": [
+          0.67,
+          0.1,
+          0.06,
+          0.1,
+          0.07
+        ],
+        "Black Protestant": [
+          0.53,
+          0.12,
+          0.09,
+          0.1,
+          0.16
+        ],
+        "Mainline": [
+          0.46,
+          0.15,
+          0.11,
+          0.16,
+          0.12
+        ],
+        "Roman Catholic": [
+          0.38,
+          0.15,
+          0.09,
+          0.2,
+          0.18
+        ]
+      },
+      "p_all": [
+        0.42,
+        0.12,
+        0.08,
+        0.16,
+        0.22
+      ],
+      "p_not_evangelical": [
+        0.336667,
+        0.126667,
+        0.086667,
+        0.18,
+        0.27
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          67,
+          10,
+          6,
+          10,
+          7
+        ],
+        "Black Protestant": [
+          53,
+          12,
+          9,
+          10,
+          16
+        ],
+        "Mainline": [
+          46,
+          15,
+          11,
+          16,
+          12
+        ],
+        "Roman Catholic": [
+          38,
+          15,
+          9,
+          20,
+          18
+        ],
+        "All U.S. adults": [
+          42,
+          12,
+          8,
+          16,
+          22
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "homosexual_condemnation",
+      "statement": "The Bible’s condemnation of homosexual behavior doesn’t apply today.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.946806,
+        0.0,
+        -0.93827,
+        -0.635989,
+        -1.036092
+      ],
+      "p": {
+        "Evangelical": [
+          0.61,
+          0.13,
+          0.06,
+          0.09,
+          0.11
+        ],
+        "Black Protestant": [
+          0.41,
+          0.11,
+          0.19,
+          0.12,
+          0.17
+        ],
+        "Mainline": [
+          0.29,
+          0.21,
+          0.12,
+          0.2,
+          0.18
+        ],
+        "Roman Catholic": [
+          0.22,
+          0.19,
+          0.15,
+          0.22,
+          0.22
+        ]
+      },
+      "p_all": [
+        0.33,
+        0.13,
+        0.13,
+        0.15,
+        0.26
+      ],
+      "p_not_evangelical": [
+        0.236667,
+        0.13,
+        0.153333,
+        0.17,
+        0.31
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          61,
+          13,
+          6,
+          9,
+          11
+        ],
+        "Black Protestant": [
+          41,
+          11,
+          19,
+          12,
+          17
+        ],
+        "Mainline": [
+          29,
+          21,
+          12,
+          20,
+          18
+        ],
+        "Roman Catholic": [
+          22,
+          19,
+          15,
+          22,
+          22
+        ],
+        "All U.S. adults": [
+          33,
+          13,
+          13,
+          15,
+          26
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "god_unconcerned",
+      "statement": "God is unconcerned with my day-to-day decisions.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.728594,
+        -0.13815,
+        -1.299283,
+        -0.847298,
+        -1.369487
+      ],
+      "p": {
+        "Evangelical": [
+          0.67,
+          0.18,
+          0.03,
+          0.07,
+          0.05
+        ],
+        "Black Protestant": [
+          0.59,
+          0.21,
+          0.05,
+          0.1,
+          0.05
+        ],
+        "Mainline": [
+          0.48,
+          0.26,
+          0.03,
+          0.16,
+          0.07
+        ],
+        "Roman Catholic": [
+          0.38,
+          0.27,
+          0.07,
+          0.17,
+          0.11
+        ]
+      },
+      "p_all": [
+        0.41,
+        0.2,
+        0.09,
+        0.14,
+        0.16
+      ],
+      "p_not_evangelical": [
+        0.323333,
+        0.206667,
+        0.11,
+        0.163333,
+        0.196667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          67,
+          18,
+          3,
+          7,
+          5
+        ],
+        "Black Protestant": [
+          59,
+          21,
+          5,
+          10,
+          5
+        ],
+        "Mainline": [
+          48,
+          26,
+          3,
+          16,
+          7
+        ],
+        "Roman Catholic": [
+          38,
+          27,
+          7,
+          17,
+          11
+        ],
+        "All U.S. adults": [
+          41,
+          20,
+          9,
+          14,
+          16
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "bible_authority_must_do",
+      "statement": "The Bible has the authority to tell us what we must do.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.00148,
+        -0.635989,
+        -0.847298,
+        0.283575,
+        1.098612
+      ],
+      "p": {
+        "Evangelical": [
+          0.05,
+          0.09,
+          0.03,
+          0.27,
+          0.56
+        ],
+        "Black Protestant": [
+          0.13,
+          0.04,
+          0.07,
+          0.3,
+          0.46
+        ],
+        "Mainline": [
+          0.15,
+          0.17,
+          0.06,
+          0.36,
+          0.26
+        ],
+        "Roman Catholic": [
+          0.23,
+          0.22,
+          0.07,
+          0.28,
+          0.2
+        ]
+      },
+      "p_all": [
+        0.29,
+        0.15,
+        0.06,
+        0.22,
+        0.28
+      ],
+      "p_not_evangelical": [
+        0.37,
+        0.17,
+        0.07,
+        0.203333,
+        0.186667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          5,
+          9,
+          3,
+          27,
+          56
+        ],
+        "Black Protestant": [
+          13,
+          4,
+          7,
+          30,
+          46
+        ],
+        "Mainline": [
+          15,
+          17,
+          6,
+          36,
+          26
+        ],
+        "Roman Catholic": [
+          23,
+          22,
+          7,
+          28,
+          20
+        ],
+        "All U.S. adults": [
+          29,
+          15,
+          6,
+          22,
+          28
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "belief_not_objective",
+      "statement": "Religious belief is not about objective truth.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        0.847298,
+        0.236389,
+        0.0,
+        -0.417735,
+        -0.635989
+      ],
+      "p": {
+        "Evangelical": [
+          0.28,
+          0.19,
+          0.23,
+          0.18,
+          0.12
+        ],
+        "Black Protestant": [
+          0.23,
+          0.16,
+          0.2,
+          0.18,
+          0.23
+        ],
+        "Mainline": [
+          0.18,
+          0.2,
+          0.17,
+          0.31,
+          0.14
+        ],
+        "Roman Catholic": [
+          0.11,
+          0.19,
+          0.22,
+          0.32,
+          0.16
+        ]
+      },
+      "p_all": [
+        0.16,
+        0.16,
+        0.23,
+        0.25,
+        0.2
+      ],
+      "p_not_evangelical": [
+        0.12,
+        0.15,
+        0.23,
+        0.273333,
+        0.226667
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          28,
+          19,
+          23,
+          18,
+          12
+        ],
+        "Black Protestant": [
+          23,
+          16,
+          20,
+          18,
+          23
+        ],
+        "Mainline": [
+          18,
+          20,
+          17,
+          31,
+          14
+        ],
+        "Roman Catholic": [
+          11,
+          19,
+          22,
+          32,
+          16
+        ],
+        "All U.S. adults": [
+          16,
+          16,
+          23,
+          25,
+          20
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "bible_highest_authority",
+      "statement": "The Bible is the highest authority for what I believe.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.377094,
+        -1.09822,
+        -0.019411,
+        -0.055961,
+        0.987779
+      ],
+      "p": {
+        "Evangelical": [
+          0.029412,
+          0.058824,
+          0.019608,
+          0.22549,
+          0.666667
+        ],
+        "Black Protestant": [
+          0.019417,
+          0.116505,
+          0.019417,
+          0.252427,
+          0.592233
+        ],
+        "Mainline": [
+          0.088235,
+          0.117647,
+          0.019608,
+          0.401961,
+          0.372549
+        ],
+        "Roman Catholic": [
+          0.147059,
+          0.186275,
+          0.019608,
+          0.343137,
+          0.303922
+        ]
+      },
+      "p_all": [
+        0.245098,
+        0.147059,
+        0.019608,
+        0.235294,
+        0.352941
+      ],
+      "p_not_evangelical": [
+        0.316869,
+        0.176401,
+        0.019992,
+        0.238469,
+        0.248269
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          3,
+          6,
+          0,
+          23,
+          68
+        ],
+        "Black Protestant": [
+          1,
+          12,
+          0,
+          26,
+          61
+        ],
+        "Mainline": [
+          9,
+          12,
+          0,
+          41,
+          38
+        ],
+        "Roman Catholic": [
+          15,
+          19,
+          0,
+          35,
+          31
+        ],
+        "All U.S. adults": [
+          25,
+          15,
+          0,
+          24,
+          36
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "evangelism_important",
+      "statement": "It is very important for me personally to encourage non-Christians to trust Jesus Christ as their Savior.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -1.964387,
+        -0.788065,
+        -0.019411,
+        0.323165,
+        0.965473
+      ],
+      "p": {
+        "Evangelical": [
+          0.04902,
+          0.098039,
+          0.019608,
+          0.284314,
+          0.54902
+        ],
+        "Black Protestant": [
+          0.078431,
+          0.147059,
+          0.019608,
+          0.254902,
+          0.5
+        ],
+        "Mainline": [
+          0.147059,
+          0.205882,
+          0.019608,
+          0.323529,
+          0.303922
+        ],
+        "Roman Catholic": [
+          0.196078,
+          0.245098,
+          0.019608,
+          0.303922,
+          0.235294
+        ]
+      },
+      "p_all": [
+        0.27451,
+        0.186275,
+        0.019608,
+        0.22549,
+        0.294118
+      ],
+      "p_not_evangelical": [
+        0.349536,
+        0.215602,
+        0.019992,
+        0.205802,
+        0.209068
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          5,
+          10,
+          0,
+          29,
+          56
+        ],
+        "Black Protestant": [
+          8,
+          15,
+          0,
+          26,
+          51
+        ],
+        "Mainline": [
+          15,
+          21,
+          0,
+          33,
+          31
+        ],
+        "Roman Catholic": [
+          20,
+          25,
+          0,
+          31,
+          24
+        ],
+        "All U.S. adults": [
+          28,
+          19,
+          0,
+          23,
+          30
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "cross_only_sacrifice",
+      "statement": "Jesus Christ’s death on the cross is the only sacrifice that could remove the penalty of my sin.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.564557,
+        -1.065959,
+        -0.019411,
+        -0.405073,
+        0.927856
+      ],
+      "p": {
+        "Evangelical": [
+          0.019608,
+          0.068627,
+          0.019608,
+          0.156863,
+          0.735294
+        ],
+        "Black Protestant": [
+          0.039216,
+          0.068627,
+          0.019608,
+          0.196078,
+          0.676471
+        ],
+        "Mainline": [
+          0.088235,
+          0.166667,
+          0.019608,
+          0.27451,
+          0.45098
+        ],
+        "Roman Catholic": [
+          0.098039,
+          0.205882,
+          0.019608,
+          0.323529,
+          0.352941
+        ]
+      },
+      "p_all": [
+        0.196078,
+        0.166667,
+        0.019608,
+        0.215686,
+        0.401961
+      ],
+      "p_not_evangelical": [
+        0.254802,
+        0.199268,
+        0.019992,
+        0.235202,
+        0.290736
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          2,
+          7,
+          0,
+          16,
+          75
+        ],
+        "Black Protestant": [
+          4,
+          7,
+          0,
+          20,
+          69
+        ],
+        "Mainline": [
+          9,
+          17,
+          0,
+          28,
+          46
+        ],
+        "Roman Catholic": [
+          10,
+          21,
+          0,
+          33,
+          36
+        ],
+        "All U.S. adults": [
+          20,
+          17,
+          0,
+          22,
+          41
+        ]
+      },
+      "wave_reference": null
+    },
+    {
+      "id": "christ_alone_salvation",
+      "statement": "Only those who trust in Jesus Christ alone as their Savior receive God’s free gift of eternal salvation.",
+      "year": 2025,
+      "scale": [
+        "strongly_disagree",
+        "somewhat_disagree",
+        "not_sure",
+        "somewhat_agree",
+        "strongly_agree"
+      ],
+      "three_option": false,
+      "w": [
+        -2.079049,
+        -1.129473,
+        -0.019411,
+        -0.061166,
+        1.041846
+      ],
+      "p": {
+        "Evangelical": [
+          0.039216,
+          0.068627,
+          0.019608,
+          0.205882,
+          0.666667
+        ],
+        "Black Protestant": [
+          0.039216,
+          0.137255,
+          0.019608,
+          0.22549,
+          0.578431
+        ],
+        "Mainline": [
+          0.127451,
+          0.186275,
+          0.019608,
+          0.323529,
+          0.343137
+        ],
+        "Roman Catholic": [
+          0.176471,
+          0.235294,
+          0.019608,
+          0.303922,
+          0.264706
+        ]
+      },
+      "p_all": [
+        0.245098,
+        0.176471,
+        0.019608,
+        0.215686,
+        0.343137
+      ],
+      "p_not_evangelical": [
+        0.313603,
+        0.212335,
+        0.019992,
+        0.218868,
+        0.235202
+      ],
+      "raw_pct": {
+        "Evangelical": [
+          4,
+          7,
+          0,
+          21,
+          68
+        ],
+        "Black Protestant": [
+          4,
+          14,
+          0,
+          23,
+          59
+        ],
+        "Mainline": [
+          13,
+          19,
+          0,
+          33,
+          35
+        ],
+        "Roman Catholic": [
+          18,
+          24,
+          0,
+          31,
+          27
+        ],
+        "All U.S. adults": [
+          25,
+          18,
+          0,
+          22,
+          35
+        ]
+      },
+      "wave_reference": null
+    }
+  ],
+  "expected_items": 36,
+  "pending_items": [],
+  "percentile_items": [
+    "god_perfect",
+    "trinity",
+    "all_religions",
+    "god_unchanging",
+    "resurrection",
+    "god_loves_same",
+    "jesus_not_god",
+    "marriage_man_woman",
+    "spirit_force",
+    "spirit_new_birth",
+    "spirit_forbidden",
+    "good_by_nature",
+    "smallest_sin",
+    "justification_faith",
+    "born_innocent",
+    "bible_myths",
+    "bible_accurate",
+    "science_disproves",
+    "election",
+    "hell_real",
+    "second_coming",
+    "worship_alone",
+    "faith_not_politics",
+    "join_church",
+    "sex_outside_marriage",
+    "abortion_sin",
+    "gender_choice",
+    "homosexual_condemnation",
+    "god_unconcerned",
+    "bible_authority_must_do",
+    "belief_not_objective",
+    "bible_highest_authority",
+    "evangelism_important",
+    "cross_only_sacrifice",
+    "christ_alone_salvation"
+  ],
+  "reference": {
+    "source": "State of Theology 2025 respondent microdata",
+    "url": "https://thestateoftheology.com/assets/data/us/responses-2025.csv",
+    "n": 3001,
+    "group_order": [
+      "all",
+      "evangelical",
+      "non_evangelical",
+      "black_protestant",
+      "mainline",
+      "catholic",
+      "other_none",
+      "evangelical_by_belief"
+    ],
+    "groups": {
+      "all": {
+        "label": "All Americans",
+        "n": 3001,
+        "curve": [
+          -18.636057,
+          -17.885894,
+          -17.550821,
+          -17.294737,
+          -17.110891,
+          -16.881731,
+          -16.679179,
+          -16.621903,
+          -16.477549,
+          -16.308488,
+          -16.229607,
+          -16.164565,
+          -16.029339,
+          -15.924822,
+          -15.792654,
+          -15.665206,
+          -15.570861,
+          -15.381166,
+          -15.215834,
+          -15.062389,
+          -14.928988,
+          -14.759247,
+          -14.656599,
+          -14.518693,
+          -14.310977,
+          -14.167201,
+          -14.05564,
+          -13.859179,
+          -13.711694,
+          -13.630641,
+          -13.524239,
+          -13.189953,
+          -13.075025,
+          -12.921068,
+          -12.713054,
+          -12.548458,
+          -12.346948,
+          -12.061792,
+          -11.82682,
+          -11.54962,
+          -11.260795,
+          -11.150445,
+          -10.980001,
+          -10.635407,
+          -10.339473,
+          -9.99381,
+          -9.789579,
+          -9.592873,
+          -9.457325,
+          -9.240869,
+          -9.091245,
+          -8.890852,
+          -8.669554,
+          -8.463441,
+          -8.27038,
+          -8.086462,
+          -7.826005,
+          -7.688043,
+          -7.565238,
+          -7.439861,
+          -7.280012,
+          -7.045316,
+          -6.866158,
+          -6.726659,
+          -6.642104,
+          -6.371451,
+          -6.241091,
+          -6.152253,
+          -5.932304,
+          -5.762997,
+          -5.635747,
+          -5.486506,
+          -5.296442,
+          -5.233288,
+          -5.095901,
+          -4.906515,
+          -4.777215,
+          -4.602086,
+          -4.477346,
+          -4.316479,
+          -4.173266,
+          -4.088402,
+          -3.943383,
+          -3.815082,
+          -3.680565,
+          -3.551216,
+          -3.440487,
+          -3.305612,
+          -3.202164,
+          -3.058001,
+          -2.833988,
+          -2.695458,
+          -2.568832,
+          -2.411079,
+          -2.297976,
+          -2.184801,
+          -2.051833,
+          -1.926571,
+          -1.82366,
+          -1.647426,
+          -1.532604,
+          -1.422678,
+          -1.330218,
+          -1.23741,
+          -1.103481,
+          -1.002945,
+          -0.890973,
+          -0.752465,
+          -0.591191,
+          -0.485289,
+          -0.397622,
+          -0.33468,
+          -0.219251,
+          -0.100855,
+          -0.022938,
+          0.10776,
+          0.226951,
+          0.286528,
+          0.418156,
+          0.466623,
+          0.569605,
+          0.702885,
+          0.810099,
+          0.898016,
+          1.006376,
+          1.122749,
+          1.206478,
+          1.295549,
+          1.443484,
+          1.574665,
+          1.667319,
+          1.759157,
+          1.952994,
+          2.090724,
+          2.176244,
+          2.314927,
+          2.4021,
+          2.541275,
+          2.642003,
+          2.732906,
+          2.897092,
+          2.984721,
+          3.077183,
+          3.209934,
+          3.330327,
+          3.421498,
+          3.578096,
+          3.721196,
+          3.816653,
+          3.94128,
+          4.040658,
+          4.1615,
+          4.218429,
+          4.340208,
+          4.43624,
+          4.569177,
+          4.638651,
+          4.791315,
+          4.894719,
+          5.046756,
+          5.184945,
+          5.272676,
+          5.345264,
+          5.464914,
+          5.593136,
+          5.728829,
+          5.81663,
+          5.948261,
+          6.04564,
+          6.173007,
+          6.359284,
+          6.483551,
+          6.66061,
+          6.784661,
+          6.868764,
+          7.050486,
+          7.153104,
+          7.250852,
+          7.421282,
+          7.527767,
+          7.636104,
+          7.739491,
+          7.848541,
+          7.986542,
+          8.112645,
+          8.230955,
+          8.34464,
+          8.490346,
+          8.552144,
+          8.669366,
+          8.822991,
+          8.950792,
+          9.111903,
+          9.243182,
+          9.467833,
+          9.638752,
+          9.929925,
+          10.080214,
+          10.315689,
+          10.547227,
+          10.902277
+        ]
+      },
+      "evangelical": {
+        "label": "Evangelicals",
+        "n": 798,
+        "curve": [
+          -14.632954,
+          -12.204899,
+          -10.796831,
+          -9.457325,
+          -8.609593,
+          -8.425652,
+          -7.459191,
+          -6.826764,
+          -6.717037,
+          -6.439076,
+          -5.781076,
+          -5.575031,
+          -5.331278,
+          -5.12185,
+          -4.908031,
+          -4.702607,
+          -4.306429,
+          -4.147764,
+          -3.832317,
+          -3.637646,
+          -3.515344,
+          -3.107207,
+          -2.86104,
+          -2.82077,
+          -2.626807,
+          -2.501506,
+          -2.358991,
+          -2.198676,
+          -2.166992,
+          -2.099664,
+          -1.905348,
+          -1.620789,
+          -1.430734,
+          -1.162591,
+          -0.991179,
+          -0.917502,
+          -0.785517,
+          -0.556451,
+          -0.394659,
+          -0.269244,
+          -0.176742,
+          -0.080946,
+          0.124756,
+          0.245055,
+          0.286528,
+          0.412161,
+          0.55275,
+          0.702885,
+          0.84519,
+          0.887225,
+          0.983023,
+          1.120598,
+          1.125638,
+          1.401271,
+          1.514588,
+          1.622038,
+          1.683427,
+          1.743271,
+          1.948779,
+          2.090724,
+          2.327366,
+          2.442182,
+          2.501449,
+          2.542181,
+          2.642003,
+          2.76603,
+          2.81295,
+          2.976886,
+          3.015614,
+          3.132847,
+          3.209798,
+          3.246573,
+          3.322074,
+          3.383716,
+          3.43254,
+          3.498205,
+          3.608839,
+          3.674669,
+          3.745582,
+          3.811729,
+          3.828846,
+          3.880401,
+          3.995463,
+          4.014334,
+          4.105245,
+          4.165689,
+          4.275545,
+          4.283701,
+          4.356766,
+          4.433035,
+          4.454325,
+          4.49946,
+          4.569177,
+          4.626238,
+          4.749058,
+          4.784023,
+          4.844715,
+          4.894719,
+          5.090847,
+          5.184945,
+          5.221684,
+          5.278379,
+          5.311573,
+          5.378254,
+          5.476999,
+          5.535511,
+          5.633727,
+          5.733352,
+          5.75785,
+          5.784374,
+          5.81663,
+          5.893309,
+          5.93652,
+          6.016195,
+          6.059094,
+          6.138525,
+          6.307215,
+          6.371298,
+          6.429235,
+          6.485671,
+          6.548814,
+          6.662105,
+          6.68686,
+          6.741594,
+          6.807308,
+          6.844119,
+          6.908016,
+          6.986868,
+          7.050486,
+          7.091562,
+          7.134532,
+          7.204468,
+          7.250852,
+          7.295924,
+          7.421282,
+          7.448537,
+          7.549612,
+          7.573277,
+          7.587618,
+          7.602346,
+          7.667323,
+          7.707991,
+          7.72614,
+          7.816279,
+          7.844759,
+          7.859575,
+          7.878586,
+          7.920068,
+          8.012839,
+          8.06033,
+          8.110857,
+          8.137164,
+          8.164978,
+          8.180077,
+          8.24067,
+          8.27875,
+          8.3142,
+          8.384151,
+          8.418248,
+          8.454484,
+          8.481797,
+          8.498736,
+          8.528742,
+          8.552144,
+          8.583582,
+          8.615598,
+          8.631531,
+          8.691645,
+          8.767086,
+          8.798612,
+          8.842826,
+          8.863864,
+          8.908083,
+          8.955793,
+          9.024623,
+          9.088911,
+          9.152481,
+          9.171737,
+          9.208753,
+          9.280929,
+          9.317078,
+          9.401058,
+          9.467833,
+          9.571048,
+          9.628961,
+          9.725186,
+          9.821468,
+          9.903271,
+          9.969777,
+          10.033907,
+          10.064812,
+          10.121011,
+          10.162564,
+          10.279433,
+          10.344562,
+          10.450506,
+          10.474128,
+          10.547227,
+          10.651441,
+          10.781709,
+          10.825242
+        ]
+      },
+      "non_evangelical": {
+        "label": "Non-evangelicals",
+        "n": 2203,
+        "curve": [
+          -18.636057,
+          -18.135207,
+          -17.650378,
+          -17.423223,
+          -17.301326,
+          -17.137847,
+          -16.968176,
+          -16.780915,
+          -16.679179,
+          -16.638341,
+          -16.5746,
+          -16.458279,
+          -16.332587,
+          -16.278115,
+          -16.201924,
+          -16.15321,
+          -16.034425,
+          -15.979284,
+          -15.857735,
+          -15.759669,
+          -15.665206,
+          -15.58785,
+          -15.49743,
+          -15.347085,
+          -15.23005,
+          -15.114785,
+          -15.040535,
+          -14.878197,
+          -14.769617,
+          -14.696946,
+          -14.614454,
+          -14.461646,
+          -14.326609,
+          -14.234256,
+          -14.093647,
+          -14.001228,
+          -13.86135,
+          -13.750026,
+          -13.690096,
+          -13.619048,
+          -13.536044,
+          -13.276497,
+          -13.140468,
+          -13.009385,
+          -12.921068,
+          -12.769945,
+          -12.617911,
+          -12.455166,
+          -12.332254,
+          -12.166125,
+          -11.939958,
+          -11.709318,
+          -11.485615,
+          -11.29518,
+          -11.180493,
+          -11.041343,
+          -10.823198,
+          -10.622479,
+          -10.38821,
+          -10.078325,
+          -9.972647,
+          -9.756723,
+          -9.592873,
+          -9.474164,
+          -9.270313,
+          -9.203229,
+          -9.048872,
+          -8.909939,
+          -8.752539,
+          -8.571694,
+          -8.361255,
+          -8.234131,
+          -8.086462,
+          -7.950357,
+          -7.752891,
+          -7.629028,
+          -7.555636,
+          -7.439861,
+          -7.306762,
+          -7.136604,
+          -6.963834,
+          -6.847808,
+          -6.707512,
+          -6.633712,
+          -6.404769,
+          -6.261282,
+          -6.171173,
+          -6.055413,
+          -5.924755,
+          -5.762997,
+          -5.653511,
+          -5.556697,
+          -5.376807,
+          -5.258421,
+          -5.177665,
+          -5.000575,
+          -4.886744,
+          -4.72923,
+          -4.602086,
+          -4.505144,
+          -4.389238,
+          -4.249863,
+          -4.126005,
+          -4.061513,
+          -3.931737,
+          -3.813302,
+          -3.721436,
+          -3.561865,
+          -3.481021,
+          -3.351103,
+          -3.270265,
+          -3.196525,
+          -3.040179,
+          -2.824492,
+          -2.686204,
+          -2.574368,
+          -2.411079,
+          -2.315133,
+          -2.184801,
+          -2.03614,
+          -1.926571,
+          -1.828608,
+          -1.698872,
+          -1.569752,
+          -1.474564,
+          -1.381287,
+          -1.293602,
+          -1.228189,
+          -1.103481,
+          -1.013222,
+          -0.907379,
+          -0.771203,
+          -0.61517,
+          -0.540463,
+          -0.446736,
+          -0.37069,
+          -0.316478,
+          -0.172476,
+          -0.065637,
+          0.012588,
+          0.10776,
+          0.226951,
+          0.334551,
+          0.420449,
+          0.463701,
+          0.555905,
+          0.661755,
+          0.764903,
+          0.868789,
+          0.992671,
+          1.126241,
+          1.206478,
+          1.261665,
+          1.359151,
+          1.517464,
+          1.642827,
+          1.750204,
+          1.948952,
+          2.08475,
+          2.148537,
+          2.269736,
+          2.367991,
+          2.47396,
+          2.622422,
+          2.719681,
+          2.909871,
+          2.963959,
+          3.128997,
+          3.224562,
+          3.390057,
+          3.578096,
+          3.759982,
+          3.956024,
+          4.075182,
+          4.170063,
+          4.271143,
+          4.471621,
+          4.601422,
+          4.788811,
+          4.949273,
+          5.056106,
+          5.1894,
+          5.328632,
+          5.430907,
+          5.597902,
+          5.752816,
+          6.005218,
+          6.118748,
+          6.319051,
+          6.503981,
+          6.785288,
+          7.052118,
+          7.210583,
+          7.435865,
+          7.679234,
+          7.986542,
+          8.321615,
+          8.825203,
+          9.366842,
+          10.033289,
+          10.902277
+        ]
+      },
+      "black_protestant": {
+        "label": "Black Protestants",
+        "n": 103,
+        "curve": [
+          -12.636974,
+          -12.636974,
+          -12.636974,
+          -10.765295,
+          -9.421406,
+          -9.421406,
+          -9.421406,
+          -7.984841,
+          -7.984841,
+          -7.977946,
+          -7.977946,
+          -7.555636,
+          -7.555636,
+          -7.432784,
+          -7.051499,
+          -7.051499,
+          -7.051499,
+          -7.011126,
+          -6.724388,
+          -6.724388,
+          -4.484145,
+          -4.484145,
+          -3.973436,
+          -3.973436,
+          -3.942689,
+          -3.72319,
+          -3.72319,
+          -3.675456,
+          -3.675456,
+          -3.097659,
+          -2.982152,
+          -2.982152,
+          -2.982152,
+          -2.760626,
+          -2.677848,
+          -2.677848,
+          -2.365545,
+          -2.365545,
+          -2.196693,
+          -2.196693,
+          -2.184801,
+          -1.929332,
+          -1.929332,
+          -1.892463,
+          -1.892463,
+          -1.824578,
+          -1.824578,
+          -1.824578,
+          -1.49777,
+          -1.293602,
+          -1.293602,
+          -1.270836,
+          -1.270836,
+          -1.270836,
+          -0.993394,
+          -0.941504,
+          -0.941504,
+          -0.548836,
+          -0.548836,
+          -0.241938,
+          -0.100855,
+          -0.100855,
+          0.209954,
+          0.209954,
+          0.274994,
+          0.274994,
+          0.334551,
+          0.360205,
+          0.360205,
+          0.444371,
+          0.737863,
+          0.737863,
+          0.737863,
+          1.194894,
+          1.194894,
+          1.358809,
+          1.586462,
+          1.586462,
+          1.790054,
+          1.790054,
+          1.952994,
+          1.996083,
+          1.996083,
+          1.996083,
+          2.115616,
+          2.115616,
+          2.169428,
+          2.169428,
+          2.285668,
+          2.285668,
+          2.382404,
+          2.382404,
+          2.4021,
+          2.4021,
+          2.407573,
+          2.407573,
+          2.430043,
+          2.732906,
+          2.732906,
+          2.915958,
+          3.148037,
+          3.148037,
+          3.390057,
+          3.421498,
+          3.421498,
+          3.729061,
+          3.729061,
+          4.011126,
+          4.011126,
+          4.011126,
+          4.192274,
+          4.192274,
+          4.192274,
+          4.311071,
+          4.311071,
+          4.611909,
+          4.71603,
+          4.71603,
+          4.71603,
+          4.830071,
+          4.830071,
+          4.856995,
+          4.960616,
+          4.960616,
+          4.960616,
+          5.046756,
+          5.046756,
+          5.046756,
+          5.056106,
+          5.056106,
+          5.066414,
+          5.066414,
+          5.103625,
+          5.103625,
+          5.328632,
+          5.328632,
+          5.430465,
+          5.430465,
+          5.494896,
+          5.494896,
+          5.55581,
+          5.55581,
+          5.618154,
+          5.618154,
+          5.618154,
+          5.672156,
+          5.690907,
+          5.690907,
+          5.840671,
+          5.840671,
+          5.948261,
+          5.948261,
+          6.002079,
+          6.002079,
+          6.002079,
+          6.043587,
+          6.043587,
+          6.156375,
+          6.156375,
+          6.480282,
+          6.480282,
+          6.494981,
+          6.503981,
+          6.503981,
+          6.503981,
+          6.750242,
+          7.072778,
+          7.072778,
+          7.072778,
+          7.185181,
+          7.185181,
+          7.210583,
+          7.210583,
+          7.457737,
+          7.457737,
+          7.739491,
+          7.739491,
+          7.739601,
+          7.739601,
+          7.74375,
+          7.74375,
+          7.796121,
+          7.796121,
+          7.943305,
+          7.943305,
+          8.045709,
+          8.045709,
+          8.117603,
+          8.117603,
+          8.321615,
+          8.321615,
+          9.933653,
+          10.080214,
+          10.080214,
+          10.080214,
+          10.10007,
+          10.10007,
+          10.563092,
+          10.563092,
+          10.687721,
+          10.687721
+        ]
+      },
+      "mainline": {
+        "label": "Mainline Protestants",
+        "n": 222,
+        "curve": [
+          -16.96674,
+          -15.419414,
+          -15.381166,
+          -15.040535,
+          -14.352439,
+          -14.265014,
+          -13.731256,
+          -13.656895,
+          -13.619048,
+          -13.616256,
+          -13.559092,
+          -12.769945,
+          -12.201774,
+          -12.039119,
+          -10.68586,
+          -10.637687,
+          -10.617728,
+          -10.231605,
+          -9.852193,
+          -9.486697,
+          -8.969662,
+          -8.876974,
+          -8.352634,
+          -8.330924,
+          -8.312351,
+          -8.129825,
+          -7.894594,
+          -7.815041,
+          -7.702936,
+          -7.688043,
+          -7.619031,
+          -7.342629,
+          -7.136604,
+          -7.070301,
+          -7.016754,
+          -6.866158,
+          -6.866158,
+          -6.371451,
+          -6.371451,
+          -6.314496,
+          -6.054194,
+          -5.931966,
+          -5.724251,
+          -5.635747,
+          -5.471508,
+          -5.158398,
+          -5.158398,
+          -4.72923,
+          -4.640769,
+          -4.640769,
+          -4.488319,
+          -4.473023,
+          -4.462423,
+          -4.299595,
+          -4.216881,
+          -4.139589,
+          -4.126005,
+          -4.045025,
+          -3.95171,
+          -3.946263,
+          -3.751533,
+          -3.634153,
+          -3.331181,
+          -3.324552,
+          -3.324552,
+          -3.285048,
+          -3.168668,
+          -2.790917,
+          -2.686204,
+          -2.592562,
+          -2.413362,
+          -2.315133,
+          -2.311513,
+          -2.270606,
+          -2.10308,
+          -2.071381,
+          -2.051833,
+          -1.98858,
+          -1.911189,
+          -1.876523,
+          -1.876523,
+          -1.595101,
+          -1.449856,
+          -1.449856,
+          -1.361853,
+          -1.327114,
+          -1.203657,
+          -1.190271,
+          -1.140279,
+          -1.118591,
+          -0.92029,
+          -0.7801,
+          -0.771203,
+          -0.579982,
+          -0.540463,
+          -0.540463,
+          -0.480767,
+          -0.337227,
+          -0.330313,
+          -0.320177,
+          -0.176081,
+          -0.146325,
+          -0.11717,
+          -0.051604,
+          -0.033993,
+          0.010073,
+          0.021637,
+          0.047359,
+          0.105225,
+          0.336133,
+          0.36342,
+          0.437188,
+          0.463701,
+          0.463701,
+          0.466623,
+          0.556424,
+          0.661755,
+          0.683348,
+          0.710475,
+          0.814502,
+          0.973337,
+          0.97497,
+          1.126241,
+          1.466525,
+          1.47886,
+          1.528943,
+          1.838064,
+          1.859621,
+          1.863204,
+          1.952266,
+          1.991389,
+          1.991389,
+          2.042954,
+          2.088964,
+          2.165548,
+          2.201576,
+          2.286939,
+          2.39482,
+          2.540089,
+          2.616564,
+          2.719681,
+          2.789455,
+          2.800549,
+          2.897092,
+          2.92278,
+          2.92278,
+          2.938281,
+          3.333673,
+          3.40223,
+          3.466122,
+          3.842609,
+          4.039625,
+          4.039625,
+          4.218429,
+          4.246017,
+          4.255612,
+          4.271143,
+          4.286013,
+          4.340208,
+          4.500159,
+          4.534489,
+          4.628845,
+          4.876871,
+          4.902123,
+          5.119297,
+          5.226473,
+          5.253314,
+          5.410787,
+          5.507638,
+          5.718428,
+          5.768821,
+          6.041896,
+          6.10516,
+          6.118241,
+          6.268385,
+          6.422463,
+          6.47311,
+          6.478567,
+          6.500003,
+          7.071833,
+          7.089598,
+          7.348297,
+          7.388338,
+          7.44253,
+          7.46262,
+          8.020538,
+          8.201687,
+          8.220333,
+          8.301645,
+          8.521836,
+          8.521836,
+          8.539654,
+          8.663986,
+          8.948309,
+          8.958005,
+          8.958005,
+          9.565591,
+          9.613235,
+          9.704569,
+          10.033289,
+          10.825242
+        ]
+      },
+      "catholic": {
+        "label": "Roman Catholics",
+        "n": 683,
+        "curve": [
+          -17.40538,
+          -16.263413,
+          -15.293097,
+          -15.173494,
+          -14.403986,
+          -14.093647,
+          -13.681045,
+          -13.276497,
+          -12.950586,
+          -12.921068,
+          -12.808974,
+          -12.421109,
+          -12.263381,
+          -12.006623,
+          -11.708558,
+          -11.373807,
+          -11.210175,
+          -11.162331,
+          -11.086287,
+          -10.714537,
+          -10.163147,
+          -9.756723,
+          -9.572964,
+          -9.417509,
+          -9.256385,
+          -9.096609,
+          -9.048872,
+          -8.976288,
+          -8.763126,
+          -8.537952,
+          -8.382709,
+          -8.086462,
+          -7.962954,
+          -7.832717,
+          -7.727053,
+          -7.648461,
+          -7.56996,
+          -7.502808,
+          -7.439861,
+          -7.40208,
+          -7.187554,
+          -6.895468,
+          -6.764786,
+          -6.666374,
+          -6.439528,
+          -6.232992,
+          -6.144803,
+          -5.989849,
+          -5.861103,
+          -5.744074,
+          -5.636133,
+          -5.486506,
+          -5.3133,
+          -5.296442,
+          -5.271021,
+          -5.204169,
+          -5.130174,
+          -5.095885,
+          -4.973506,
+          -4.89759,
+          -4.810927,
+          -4.711313,
+          -4.59697,
+          -4.562663,
+          -4.551402,
+          -4.249863,
+          -4.183159,
+          -4.171777,
+          -4.073062,
+          -3.985514,
+          -3.943383,
+          -3.912684,
+          -3.796901,
+          -3.726856,
+          -3.679085,
+          -3.612994,
+          -3.542882,
+          -3.499208,
+          -3.481021,
+          -3.427562,
+          -3.330338,
+          -3.270265,
+          -3.202164,
+          -3.156454,
+          -3.040179,
+          -2.935637,
+          -2.824492,
+          -2.729863,
+          -2.651487,
+          -2.633387,
+          -2.574368,
+          -2.427845,
+          -2.359894,
+          -2.183983,
+          -2.048035,
+          -1.96391,
+          -1.926571,
+          -1.828608,
+          -1.693529,
+          -1.552007,
+          -1.533904,
+          -1.483416,
+          -1.454579,
+          -1.381756,
+          -1.330326,
+          -1.329122,
+          -1.198546,
+          -1.083747,
+          -1.019366,
+          -1.002945,
+          -0.886449,
+          -0.837839,
+          -0.751282,
+          -0.635292,
+          -0.581076,
+          -0.550813,
+          -0.482868,
+          -0.401575,
+          -0.37069,
+          -0.290148,
+          -0.190735,
+          -0.122868,
+          -0.065637,
+          -0.015244,
+          0.054423,
+          0.103232,
+          0.152753,
+          0.226951,
+          0.362568,
+          0.435049,
+          0.465491,
+          0.494417,
+          0.551556,
+          0.598333,
+          0.703598,
+          0.802604,
+          0.868789,
+          0.927548,
+          0.956972,
+          1.081433,
+          1.136788,
+          1.206478,
+          1.227746,
+          1.323773,
+          1.434064,
+          1.517464,
+          1.597508,
+          1.687739,
+          1.745941,
+          1.991932,
+          2.090979,
+          2.168973,
+          2.288138,
+          2.380227,
+          2.523704,
+          2.640303,
+          2.691499,
+          2.724279,
+          2.875717,
+          2.939306,
+          2.984721,
+          3.023654,
+          3.167944,
+          3.209934,
+          3.25183,
+          3.347093,
+          3.459382,
+          3.561799,
+          3.660177,
+          3.771728,
+          3.884275,
+          4.023924,
+          4.1615,
+          4.240839,
+          4.396282,
+          4.506362,
+          4.58261,
+          4.698582,
+          4.807541,
+          4.880886,
+          5.034832,
+          5.090274,
+          5.237404,
+          5.345071,
+          5.399243,
+          5.48552,
+          5.519408,
+          5.613262,
+          5.752816,
+          5.886427,
+          6.006061,
+          6.115096,
+          6.563376,
+          6.85758,
+          7.22752,
+          7.333723,
+          7.507909,
+          7.768505,
+          8.126324,
+          8.609969,
+          10.545903
+        ]
+      },
+      "other_none": {
+        "label": "Other faiths & the unaffiliated",
+        "n": 1195,
+        "curve": [
+          -18.636057,
+          -18.285375,
+          -18.095189,
+          -17.712031,
+          -17.583343,
+          -17.423223,
+          -17.372192,
+          -17.293895,
+          -17.197543,
+          -17.109693,
+          -16.968176,
+          -16.881731,
+          -16.756104,
+          -16.701096,
+          -16.657923,
+          -16.638341,
+          -16.613666,
+          -16.521462,
+          -16.458279,
+          -16.373979,
+          -16.308488,
+          -16.287318,
+          -16.224641,
+          -16.201924,
+          -16.164565,
+          -16.129635,
+          -16.044468,
+          -16.019984,
+          -15.942038,
+          -15.864953,
+          -15.821159,
+          -15.786459,
+          -15.672009,
+          -15.659635,
+          -15.625786,
+          -15.570861,
+          -15.517596,
+          -15.412867,
+          -15.259582,
+          -15.21975,
+          -15.130422,
+          -15.072451,
+          -15.011266,
+          -14.941499,
+          -14.856923,
+          -14.769617,
+          -14.72337,
+          -14.690254,
+          -14.625368,
+          -14.576388,
+          -14.461646,
+          -14.420556,
+          -14.295898,
+          -14.228068,
+          -14.134929,
+          -14.06552,
+          -13.980509,
+          -13.873559,
+          -13.828415,
+          -13.739104,
+          -13.698112,
+          -13.63457,
+          -13.589965,
+          -13.524239,
+          -13.29109,
+          -13.189953,
+          -13.140468,
+          -13.075025,
+          -12.961511,
+          -12.860543,
+          -12.733715,
+          -12.616087,
+          -12.548458,
+          -12.427224,
+          -12.302383,
+          -12.134407,
+          -11.906821,
+          -11.8101,
+          -11.59297,
+          -11.460722,
+          -11.308822,
+          -11.198741,
+          -11.041343,
+          -10.98529,
+          -10.785043,
+          -10.563499,
+          -10.384194,
+          -10.129343,
+          -10.058981,
+          -9.943695,
+          -9.789579,
+          -9.683713,
+          -9.529683,
+          -9.409976,
+          -9.240869,
+          -9.185208,
+          -9.020858,
+          -8.904496,
+          -8.752539,
+          -8.66651,
+          -8.372465,
+          -8.27038,
+          -8.147973,
+          -8.057061,
+          -7.800916,
+          -7.598394,
+          -7.540587,
+          -7.431349,
+          -7.280012,
+          -7.045316,
+          -6.91383,
+          -6.805667,
+          -6.68294,
+          -6.601868,
+          -6.442519,
+          -6.302994,
+          -6.209844,
+          -6.153415,
+          -6.05128,
+          -5.908262,
+          -5.746723,
+          -5.647335,
+          -5.566382,
+          -5.284769,
+          -5.233288,
+          -5.000575,
+          -4.855267,
+          -4.687427,
+          -4.512839,
+          -4.392671,
+          -4.309305,
+          -4.123125,
+          -3.92735,
+          -3.793649,
+          -3.61175,
+          -3.378853,
+          -3.28224,
+          -3.196525,
+          -2.843755,
+          -2.629868,
+          -2.411079,
+          -2.329652,
+          -2.154192,
+          -1.906939,
+          -1.79547,
+          -1.656578,
+          -1.506776,
+          -1.314408,
+          -1.23741,
+          -1.099949,
+          -0.96872,
+          -0.811933,
+          -0.613038,
+          -0.446736,
+          -0.382351,
+          -0.300413,
+          -0.068152,
+          0.066341,
+          0.2466,
+          0.339978,
+          0.420449,
+          0.578229,
+          0.764903,
+          0.868393,
+          1.011248,
+          1.186091,
+          1.253198,
+          1.34904,
+          1.502466,
+          1.648901,
+          1.783934,
+          2.105846,
+          2.176244,
+          2.314927,
+          2.47396,
+          2.622422,
+          2.861849,
+          3.0635,
+          3.250354,
+          3.61007,
+          3.786129,
+          4.040528,
+          4.165969,
+          4.358418,
+          4.604958,
+          4.931191,
+          5.160284,
+          5.326305,
+          5.464914,
+          6.04564,
+          6.252673,
+          6.548549,
+          6.765449,
+          7.003614,
+          7.169765,
+          7.46392,
+          7.986542,
+          8.793144,
+          9.178026,
+          9.706331,
+          10.902277
+        ]
+      },
+      "evangelical_by_belief": {
+        "label": "Evangelicals by belief (NAE definition)",
+        "n": 637,
+        "curve": [
+          -2.365545,
+          -0.689989,
+          -0.447059,
+          -0.071004,
+          0.205415,
+          0.642619,
+          1.136788,
+          1.295933,
+          1.642827,
+          1.736478,
+          2.08475,
+          2.115724,
+          2.271754,
+          2.314927,
+          2.540517,
+          2.622422,
+          2.714709,
+          2.758105,
+          2.867827,
+          2.92278,
+          2.939306,
+          2.989827,
+          3.167944,
+          3.209798,
+          3.347093,
+          3.404806,
+          3.466122,
+          3.498399,
+          3.61007,
+          3.691256,
+          3.786129,
+          3.840171,
+          3.893258,
+          3.964672,
+          4.084674,
+          4.124661,
+          4.167438,
+          4.215624,
+          4.283701,
+          4.340208,
+          4.418148,
+          4.550089,
+          4.590876,
+          4.614243,
+          4.685064,
+          4.791315,
+          4.830071,
+          4.876871,
+          4.894719,
+          4.960616,
+          5.032335,
+          5.066414,
+          5.119297,
+          5.144521,
+          5.206627,
+          5.253314,
+          5.278051,
+          5.343306,
+          5.388481,
+          5.430465,
+          5.464914,
+          5.479071,
+          5.498432,
+          5.535511,
+          5.597902,
+          5.633727,
+          5.691113,
+          5.750218,
+          5.784374,
+          5.840671,
+          5.87751,
+          5.893309,
+          5.918773,
+          6.031261,
+          6.043587,
+          6.119274,
+          6.156375,
+          6.265495,
+          6.319051,
+          6.392727,
+          6.422463,
+          6.456665,
+          6.492433,
+          6.522943,
+          6.548814,
+          6.572345,
+          6.66061,
+          6.671943,
+          6.701869,
+          6.750242,
+          6.841519,
+          6.865461,
+          6.908016,
+          6.979277,
+          7.004571,
+          7.041649,
+          7.072778,
+          7.089598,
+          7.134532,
+          7.159675,
+          7.185181,
+          7.215327,
+          7.229099,
+          7.250852,
+          7.282667,
+          7.333723,
+          7.368567,
+          7.44253,
+          7.457737,
+          7.519548,
+          7.562522,
+          7.574822,
+          7.588652,
+          7.602346,
+          7.660482,
+          7.70182,
+          7.720589,
+          7.74375,
+          7.785171,
+          7.816279,
+          7.831199,
+          7.844759,
+          7.859575,
+          7.878586,
+          7.935198,
+          7.986542,
+          8.012839,
+          8.052816,
+          8.085938,
+          8.112645,
+          8.163912,
+          8.166108,
+          8.180077,
+          8.220333,
+          8.243903,
+          8.294912,
+          8.321615,
+          8.34464,
+          8.4128,
+          8.454484,
+          8.474203,
+          8.498267,
+          8.500063,
+          8.521836,
+          8.542326,
+          8.552144,
+          8.56655,
+          8.608185,
+          8.625236,
+          8.663986,
+          8.691645,
+          8.767086,
+          8.794052,
+          8.830919,
+          8.842826,
+          8.875611,
+          8.887507,
+          8.936166,
+          8.955793,
+          8.984676,
+          9.030096,
+          9.058129,
+          9.09318,
+          9.141359,
+          9.163835,
+          9.171737,
+          9.192983,
+          9.21427,
+          9.268568,
+          9.310134,
+          9.366842,
+          9.441634,
+          9.478013,
+          9.565591,
+          9.58336,
+          9.616415,
+          9.638752,
+          9.704569,
+          9.784456,
+          9.821468,
+          9.903271,
+          9.933653,
+          9.99202,
+          10.033907,
+          10.052588,
+          10.075963,
+          10.088495,
+          10.147111,
+          10.182446,
+          10.270463,
+          10.315689,
+          10.360455,
+          10.461568,
+          10.474128,
+          10.53295,
+          10.547227,
+          10.563092,
+          10.66097,
+          10.781709,
+          10.824154,
+          10.902277
+        ]
+      }
+    }
+  }
+}

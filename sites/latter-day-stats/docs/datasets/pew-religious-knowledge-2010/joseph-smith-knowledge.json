@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn48c asked all respondents to identify Joseph Smith's religion (Catholic, Jewish, Buddhist, Mormon, or Hindu); the correct answer is \"Mormon.\" Broken out by the respondent's own present religion (qn20); don't know/refused excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Mormon",
+    "Agnostic",
+    "Jewish",
+    "Atheist",
+    "Protestant",
+    "Unaffiliated",
+    "Catholic",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 84.29,
+      "valid_unweighted_n": 935,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 72.98,
+      "valid_unweighted_n": 432,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 98.51,
+      "valid_unweighted_n": 208,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 89.19,
+      "valid_unweighted_n": 171,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 85.6,
+      "valid_unweighted_n": 58,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 96.36,
+      "valid_unweighted_n": 119,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 73.41,
+      "valid_unweighted_n": 214,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 80.22,
+      "valid_unweighted_n": 2374,
+      "group_unweighted_n": 3412
+    }
+  }
+}

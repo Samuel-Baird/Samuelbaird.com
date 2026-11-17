@@ -1,0 +1,31 @@
+{
+  "study_slug": "dyer-lds-trends-us-byu-studies-2026",
+  "source_short_title": "Dyer et al., LDS Trends in the US 2026",
+  "sources": [
+    {
+      "id": "digital-media-section",
+      "citation": "W. Justin Dyer, Jenet Jacob Erickson, Sam A. Hardy, Barbara Morgan Gardner, and David C. Dollahite, \"Latter-day Saint Religiousness, Well-Being, and Retention in the United States,\" BYU Studies, 2026, p. 33, \"Digital Media\" section — logistic regression on the Family Foundations of Youth Development (FFYD) panel, using 2020 predictor levels to predict deidentification as Latter-day Saint by 2024.",
+      "url": "https://website-files-bucket.s3.us-west-2.amazonaws.com/books/book_pdf/LDS%20Religiousness%20Report.pdf"
+    }
+  ],
+  "charts": {
+    "smartphone-ownership": {
+      "source": "digital-media-section",
+      "unit": "percent of FFYD youth who had deidentified as Latter-day Saint by 2024",
+      "rows": [
+        { "label": "Owned a smartphone", "pct": 13.0 },
+        { "label": "No smartphone", "pct": 4.9 }
+      ]
+    },
+    "video-clip-watching": {
+      "source": "digital-media-section",
+      "unit": "percent of FFYD youth who had deidentified as Latter-day Saint by 2024",
+      "rows": [
+        { "label": "No video clips", "pct": 7.6 },
+        { "label": "1 hour a day", "pct": 12.1 },
+        { "label": "2 hours a day", "pct": 16.3 },
+        { "label": "3 hours a day", "pct": 21.6 }
+      ]
+    }
+  }
+}

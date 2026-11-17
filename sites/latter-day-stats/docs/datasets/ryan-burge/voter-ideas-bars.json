@@ -1,0 +1,397 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, 2016 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted (this project's other VOTER graphics use weight_2017; the 2016 wave's own case weight was not selected into this extract, so these eight are raw shares - good for shape/direction). Excludes the same too-thin categories as every other VOTER graphic.",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wished_voted": {
+    "Protestant": {
+      "pct": 44.06,
+      "valid_n": 143,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 33.33,
+      "valid_n": 72,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 16.67,
+      "valid_n": 6,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 60.0,
+      "valid_n": 10,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 66.67,
+      "valid_n": 3,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 18.18,
+      "valid_n": 11,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 38.89,
+      "valid_n": 18,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 21.59,
+      "valid_n": 88,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 35.71,
+      "valid_n": 14,
+      "group_n": 328
+    }
+  },
+  "vote_regrets": {
+    "Protestant": {
+      "pct": 2.03,
+      "valid_n": 3047,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 2.71,
+      "valid_n": 1625,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 1.59,
+      "valid_n": 126,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 2.37,
+      "valid_n": 253,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 8.47,
+      "valid_n": 59,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 2.34,
+      "valid_n": 471,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 1.22,
+      "valid_n": 490,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 2.66,
+      "valid_n": 1166,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 1.59,
+      "valid_n": 314,
+      "group_n": 328
+    }
+  },
+  "self_reliance": {
+    "Protestant": {
+      "pct": 54.08,
+      "valid_n": 3029,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 60.7,
+      "valid_n": 1603,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 68.22,
+      "valid_n": 129,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 84.98,
+      "valid_n": 253,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 81.97,
+      "valid_n": 61,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 86.7,
+      "valid_n": 466,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 83.44,
+      "valid_n": 489,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 70.25,
+      "valid_n": 1200,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 69.23,
+      "valid_n": 312,
+      "group_n": 328
+    }
+  },
+  "race_slave_agree": {
+    "Protestant": {
+      "pct": 34.98,
+      "valid_n": 3025,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 32.44,
+      "valid_n": 1603,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 27.64,
+      "valid_n": 123,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 49.81,
+      "valid_n": 257,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 82.54,
+      "valid_n": 63,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 79.1,
+      "valid_n": 469,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 62.86,
+      "valid_n": 490,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 46.17,
+      "valid_n": 1150,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 47.71,
+      "valid_n": 306,
+      "group_n": 328
+    }
+  },
+  "reverse_discrimination_agree": {
+    "Protestant": {
+      "pct": 61.82,
+      "valid_n": 2897,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 60.94,
+      "valid_n": 1513,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 67.2,
+      "valid_n": 125,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 40.76,
+      "valid_n": 238,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 25.0,
+      "valid_n": 60,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 15.67,
+      "valid_n": 466,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 28.66,
+      "valid_n": 478,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 48.89,
+      "valid_n": 1123,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 48.18,
+      "valid_n": 303,
+      "group_n": 328
+    }
+  },
+  "trust_people": {
+    "Protestant": {
+      "pct": 38.35,
+      "valid_n": 2996,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 41.35,
+      "valid_n": 1596,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 57.85,
+      "valid_n": 121,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 44.4,
+      "valid_n": 232,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 56.9,
+      "valid_n": 58,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 52.78,
+      "valid_n": 432,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 45.88,
+      "valid_n": 473,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 36.83,
+      "valid_n": 1154,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 42.86,
+      "valid_n": 294,
+      "group_n": 328
+    }
+  },
+  "rigged_elites_agree": {
+    "Protestant": {
+      "pct": 85.69,
+      "valid_n": 3144,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 84.57,
+      "valid_n": 1672,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 83.85,
+      "valid_n": 130,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 78.08,
+      "valid_n": 260,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 83.87,
+      "valid_n": 62,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 73.79,
+      "valid_n": 477,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 82.5,
+      "valid_n": 503,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 88.24,
+      "valid_n": 1241,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 90.06,
+      "valid_n": 322,
+      "group_n": 328
+    }
+  },
+  "military_household": {
+    "Protestant": {
+      "pct": 67.81,
+      "valid_n": 3200,
+      "group_n": 3200
+    },
+    "Catholic": {
+      "pct": 64.84,
+      "valid_n": 1698,
+      "group_n": 1698
+    },
+    "Mormon": {
+      "pct": 67.67,
+      "valid_n": 133,
+      "group_n": 133
+    },
+    "Jewish": {
+      "pct": 49.43,
+      "valid_n": 265,
+      "group_n": 265
+    },
+    "Buddhist": {
+      "pct": 52.38,
+      "valid_n": 63,
+      "group_n": 63
+    },
+    "Atheist": {
+      "pct": 54.56,
+      "valid_n": 482,
+      "group_n": 482
+    },
+    "Agnostic": {
+      "pct": 62.87,
+      "valid_n": 509,
+      "group_n": 509
+    },
+    "Nothing in particular": {
+      "pct": 57.78,
+      "valid_n": 1260,
+      "group_n": 1260
+    },
+    "Something else": {
+      "pct": 61.28,
+      "valid_n": 328,
+      "group_n": 328
+    }
+  }
+}

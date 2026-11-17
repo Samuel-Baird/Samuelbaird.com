@@ -1,0 +1,34 @@
+{
+  "source": "Pew Research Center. 2015 Survey of U.S. Catholics and Family Life, fielded May 5-June 7, 2015.",
+  "method": "Population is respondents who are Catholic by religion (RELIG=2), broken out by how often they attend religious services (ATTEND), collapsed into the survey's own three-bucket grouping (weekly or more; monthly or yearly; seldom or never). Share saying the Catholic Church should (Q.J31e: \"Allow divorced Catholics who remarry without getting an annulment to receive Communion\"); don't know/refused excluded from each row's denominator. Weighted by the dataset's own WEIGHT variable.",
+  "total_weighted_n": 2790.2285714285717,
+  "total_unweighted_n": 1016,
+  "group_order": [
+    "Seldom/never attend",
+    "Attend monthly or yearly",
+    "Attend weekly or more",
+    "All U.S. Catholics"
+  ],
+  "should_allow_communion_after_remarriage": {
+    "Attend weekly or more": {
+      "pct": 54.5,
+      "valid_unweighted_n": 393,
+      "group_unweighted_n": 431
+    },
+    "Attend monthly or yearly": {
+      "pct": 73.45,
+      "valid_unweighted_n": 415,
+      "group_unweighted_n": 433
+    },
+    "Seldom/never attend": {
+      "pct": 77.56,
+      "valid_unweighted_n": 141,
+      "group_unweighted_n": 151
+    },
+    "All U.S. Catholics": {
+      "pct": 66.86,
+      "valid_unweighted_n": 949,
+      "group_unweighted_n": 1016
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "source": "Faith Matters Survey 2006 (Robert D. Putnam and David E. Campbell), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: all respondents with a coded religious tradition (reltrad), weighted by `weight`. Share whose household gave $1,000 or more to religious causes in the past 12 months (top two bands of a six-band scale: $1,000-$4,999 and $5,000+), Q14-2. Don't know/refused excluded from the base. Latter-day Saint = reltrad 6 (Mormon), 53 unweighted respondents in the full sample.",
+  "total_unweighted_n": 3108,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other non-Christian",
+    "All U.S. adults"
+  ],
+  "gave_1000_plus_religious": {
+    "Latter-day Saint": {
+      "pct": 67.3,
+      "valid_unweighted_n": 45,
+      "group_unweighted_n": 53
+    },
+    "Evangelical Protestant": {
+      "pct": 36.36,
+      "valid_unweighted_n": 705,
+      "group_unweighted_n": 913
+    },
+    "Historically Black Protestant": {
+      "pct": 24.54,
+      "valid_unweighted_n": 178,
+      "group_unweighted_n": 242
+    },
+    "Mainline Protestant": {
+      "pct": 31.53,
+      "valid_unweighted_n": 404,
+      "group_unweighted_n": 499
+    },
+    "Catholic": {
+      "pct": 17.89,
+      "valid_unweighted_n": 534,
+      "group_unweighted_n": 726
+    },
+    "Jewish": {
+      "pct": 38.37,
+      "valid_unweighted_n": 59,
+      "group_unweighted_n": 68
+    },
+    "Religiously unaffiliated": {
+      "pct": 11.47,
+      "valid_unweighted_n": 293,
+      "group_unweighted_n": 471
+    },
+    "Other non-Christian": {
+      "pct": 19.33,
+      "valid_unweighted_n": 75,
+      "group_unweighted_n": 103
+    },
+    "All U.S. adults": {
+      "pct": 26.93,
+      "valid_unweighted_n": 2293,
+      "group_unweighted_n": 3075
+    }
+  }
+}

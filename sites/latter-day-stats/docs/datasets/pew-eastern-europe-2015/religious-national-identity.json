@@ -1,0 +1,134 @@
+{
+  "source": "Pew Research Center. 2017. \"Religious Belief and National Belonging in Central and Eastern Europe.\"",
+  "method": "Population is all respondents in each of the 18 countries covered by the cited report (the raw file's 19th country, Kazakhstan, is excluded - see this script's own docstring). Share answering \"very important\" to Q66c (\"How important do you think each of the following is for being truly [survey country citizenship]? To be a [survey country's dominant denomination, e.g. Russian Orthodox, Greek Orthodox, Polish Catholic]\"); don't know/refused excluded from each row's denominator. Chart shows the 6 highest- and 6 lowest-ranked of the 18 countries; see the dataset README for the full country table. Weighted by the dataset's own final_weight variable.",
+  "total_weighted_n": 29853.000000000007,
+  "total_unweighted_n": 29853,
+  "region_weighted_n": 29233.143823841034,
+  "region_pct_very_important": 33.15,
+  "group_order": [
+    "Armenia",
+    "Georgia",
+    "Serbia",
+    "Greece",
+    "Romania",
+    "Bosnia",
+    "Ukraine",
+    "Hungary",
+    "Belarus",
+    "Czech Republic",
+    "Latvia",
+    "Estonia"
+  ],
+  "full_country_order": [
+    "Armenia",
+    "Georgia",
+    "Serbia",
+    "Greece",
+    "Romania",
+    "Bosnia",
+    "Bulgaria",
+    "Croatia",
+    "Moldova",
+    "Poland",
+    "Russia",
+    "Lithuania",
+    "Ukraine",
+    "Hungary",
+    "Belarus",
+    "Czech Republic",
+    "Latvia",
+    "Estonia"
+  ],
+  "important_to_share_dominant_faith": {
+    "Armenia": {
+      "pct": 66.94,
+      "valid_unweighted_n": 1502,
+      "group_unweighted_n": 1523
+    },
+    "Belarus": {
+      "pct": 17.29,
+      "valid_unweighted_n": 1492,
+      "group_unweighted_n": 1513
+    },
+    "Bosnia": {
+      "pct": 43.83,
+      "valid_unweighted_n": 1525,
+      "group_unweighted_n": 1561
+    },
+    "Bulgaria": {
+      "pct": 38.06,
+      "valid_unweighted_n": 1591,
+      "group_unweighted_n": 1619
+    },
+    "Croatia": {
+      "pct": 37.33,
+      "valid_unweighted_n": 1606,
+      "group_unweighted_n": 1616
+    },
+    "Czech Republic": {
+      "pct": 9.08,
+      "valid_unweighted_n": 1476,
+      "group_unweighted_n": 1490
+    },
+    "Estonia": {
+      "pct": 5.56,
+      "valid_unweighted_n": 1629,
+      "group_unweighted_n": 1689
+    },
+    "Georgia": {
+      "pct": 64.0,
+      "valid_unweighted_n": 1487,
+      "group_unweighted_n": 1533
+    },
+    "Greece": {
+      "pct": 53.25,
+      "valid_unweighted_n": 1451,
+      "group_unweighted_n": 1465
+    },
+    "Hungary": {
+      "pct": 18.17,
+      "valid_unweighted_n": 1478,
+      "group_unweighted_n": 1483
+    },
+    "Latvia": {
+      "pct": 6.28,
+      "valid_unweighted_n": 1563,
+      "group_unweighted_n": 1649
+    },
+    "Lithuania": {
+      "pct": 27.45,
+      "valid_unweighted_n": 1546,
+      "group_unweighted_n": 1572
+    },
+    "Moldova": {
+      "pct": 35.65,
+      "valid_unweighted_n": 1798,
+      "group_unweighted_n": 1841
+    },
+    "Poland": {
+      "pct": 31.08,
+      "valid_unweighted_n": 1445,
+      "group_unweighted_n": 1484
+    },
+    "Romania": {
+      "pct": 45.0,
+      "valid_unweighted_n": 1348,
+      "group_unweighted_n": 1361
+    },
+    "Russia": {
+      "pct": 27.79,
+      "valid_unweighted_n": 2383,
+      "group_unweighted_n": 2471
+    },
+    "Serbia": {
+      "pct": 59.35,
+      "valid_unweighted_n": 1560,
+      "group_unweighted_n": 1574
+    },
+    "Ukraine": {
+      "pct": 22.47,
+      "valid_unweighted_n": 2299,
+      "group_unweighted_n": 2409
+    }
+  }
+}

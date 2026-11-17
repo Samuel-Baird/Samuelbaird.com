@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share reading religion-focused books at least once a week (codes 1-4 of NONTECH2_b_W117's 7-point frequency scale, from \"several times a day\" through \"once a week\"), vs. less often; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592038,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Jewish",
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Catholic",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "reads_religion_books_weekly": {
+    "Evangelical Protestant": {
+      "pct": 50.87,
+      "valid_unweighted_n": 1667,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 39.08,
+      "valid_unweighted_n": 593,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 58.36,
+      "valid_unweighted_n": 468,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 40.2,
+      "valid_unweighted_n": 691,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 59.03,
+      "valid_unweighted_n": 159,
+      "group_unweighted_n": 199
+    },
+    "Jewish": {
+      "pct": 73.62,
+      "valid_unweighted_n": 55,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 38.64,
+      "valid_unweighted_n": 374,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 48.14,
+      "valid_unweighted_n": 4235,
+      "group_unweighted_n": 11377
+    }
+  }
+}

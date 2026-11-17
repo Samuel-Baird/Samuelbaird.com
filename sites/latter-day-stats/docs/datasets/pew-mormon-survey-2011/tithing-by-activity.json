@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design), broken out by self-reported activity level in the Church (q406). q416's \"donate but not a full 10%\" response and its own don't know/refused are excluded from each row's denominator, since this chart answers q416's own yes/no framing (pay a full tithe, or not). Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "activity_order": [
+    "Very active",
+    "Somewhat active",
+    "Not too active",
+    "Not at all active",
+    "All Mormon adults"
+  ],
+  "pay_tithing_yes": {
+    "Very active": {
+      "pct": 99.33,
+      "valid_unweighted_n": 742,
+      "group_unweighted_n": 746
+    },
+    "Somewhat active": {
+      "pct": 62.56,
+      "valid_unweighted_n": 138,
+      "group_unweighted_n": 144
+    },
+    "Not too active": {
+      "pct": 18.9,
+      "valid_unweighted_n": 73,
+      "group_unweighted_n": 76
+    },
+    "Not at all active": {
+      "pct": 1.55,
+      "valid_unweighted_n": 52,
+      "group_unweighted_n": 52
+    },
+    "All Mormon adults": {
+      "pct": 80.17,
+      "valid_unweighted_n": 1006,
+      "group_unweighted_n": 1019
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn64 asked all respondents whether they have ever taken any college-level religion course; don't know/refused excluded from each row's denominator. Broken out by the respondent's own present religion (qn20). Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Mormon",
+    "Jewish",
+    "Agnostic",
+    "Atheist",
+    "Protestant",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 32.01,
+      "valid_unweighted_n": 784,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 25.4,
+      "valid_unweighted_n": 377,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 65.81,
+      "valid_unweighted_n": 156,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 39.24,
+      "valid_unweighted_n": 172,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 32.27,
+      "valid_unweighted_n": 57,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 34.13,
+      "valid_unweighted_n": 117,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 23.54,
+      "valid_unweighted_n": 183,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 29.75,
+      "valid_unweighted_n": 2034,
+      "group_unweighted_n": 3412
+    }
+  }
+}

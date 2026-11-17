@@ -1,0 +1,25 @@
+# Latter-day Stats
+
+> An independent research site covering the Latter-day Saint community: creator statistics, curated academic studies, and a data explorer of survey/compiled datasets on Latter-day Saint demographics, belief, and culture. No institutional affiliation with The Church of Jesus Christ of Latter-day Saints, BYU, or any tracked creator.
+
+Latter-day Stats tracks public YouTube statistics for Latter-day Saint creators, curates academic and journalistic research about the Latter-day Saint community, and hosts a data explorer of survey and compiled datasets with rendered chart graphics. All data is public and sourced with attribution; see the methodology page for selection criteria and data collection details.
+
+## Core sections
+
+- [Channels](https://latterdaystats.samuelbaird.com/channels): Latter-day Saint YouTube creators, with subscriber, view, and upload statistics refreshed regularly.
+- [Studies](https://latterdaystats.samuelbaird.com/studies): Curated academic studies and research relating to the Latter-day Saint community, each with an abstract, key findings, and stated limitations.
+- [Data Explorer](https://latterdaystats.samuelbaird.com/data-explorer): Survey and compiled datasets on Latter-day Saint demographics, belief, and culture, each with rendered chart graphics.
+- [Methodology](https://latterdaystats.samuelbaird.com/methodology): How channels are selected, how statistics are collected, and how studies are curated.
+- [About](https://latterdaystats.samuelbaird.com/about): Who runs the site and its independence policy.
+
+## Notes for automated use
+
+- The site is independent and not affiliated with, endorsed by, or officially connected to The Church of Jesus Christ of Latter-day Saints.
+- Study entries summarize academic and journalistic sources; the `external_url` on each study page links to the original source, which should be cited in preference to this site when possible.
+- Channel statistics are collected from the public YouTube Data API on a regular schedule and may lag real-time figures.
+
+## Related projects by the same author
+
+- [samuelbaird.com](https://samuelbaird.com/): home of the projects; see the [FAQ](https://samuelbaird.com/faq) and [open data](https://samuelbaird.com/data) (CC BY 4.0).
+- [Sacred Sites Visited](https://samuelbaird.com/sacred-sites): map, photos and directory of places of worship visited in person.
+- [Pulpit](https://pulpit.restorationcommons.org/): every General Conference discourse since 1830, graded for fidelity (a Restoration Commons project the author contributed to).

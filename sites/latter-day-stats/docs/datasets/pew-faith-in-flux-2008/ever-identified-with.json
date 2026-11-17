@@ -1,0 +1,70 @@
+{
+  "source": "Pew Research Center. 2009. \"Faith in Flux: Changes in Religious Affiliation in the U.S.\"",
+  "method": "Population is all 2,867 respondents in this recontact survey of religious switchers. Each item in the q22 battery asks whether the respondent has EVER identified with a named religion/identity at any point in their life, not just as their childhood (FRMREL) or current (CURREL) religion; each item has its own valid-response base due to the survey's own skip logic and don't know/refused exclusions. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 247503.0,
+  "total_unweighted_n": 2867,
+  "identity_order": [
+    "Nothing in particular",
+    "Nondenominational Christian",
+    "Other Protestant",
+    "Baptist",
+    "Agnostic",
+    "Methodist",
+    "Catholic",
+    "Other religion",
+    "Atheist",
+    "Lutheran",
+    "Mormon",
+    "Jewish"
+  ],
+  "ever_identified_pct": {
+    "Baptist": {
+      "pct": 13.33,
+      "valid_unweighted_n": 1647
+    },
+    "Methodist": {
+      "pct": 11.09,
+      "valid_unweighted_n": 1773
+    },
+    "Nondenominational Christian": {
+      "pct": 27.54,
+      "valid_unweighted_n": 1850
+    },
+    "Lutheran": {
+      "pct": 3.5,
+      "valid_unweighted_n": 1859
+    },
+    "Other Protestant": {
+      "pct": 20.17,
+      "valid_unweighted_n": 2034
+    },
+    "Catholic": {
+      "pct": 7.99,
+      "valid_unweighted_n": 1138
+    },
+    "Mormon": {
+      "pct": 2.69,
+      "valid_unweighted_n": 2010
+    },
+    "Jewish": {
+      "pct": 0.76,
+      "valid_unweighted_n": 2015
+    },
+    "Nothing in particular": {
+      "pct": 34.31,
+      "valid_unweighted_n": 1118
+    },
+    "Atheist": {
+      "pct": 5.4,
+      "valid_unweighted_n": 1922
+    },
+    "Agnostic": {
+      "pct": 12.66,
+      "valid_unweighted_n": 1812
+    },
+    "Other religion": {
+      "pct": 6.75,
+      "valid_unweighted_n": 2042
+    }
+  }
+}

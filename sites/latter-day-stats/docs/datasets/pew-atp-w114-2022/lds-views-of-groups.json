@@ -1,0 +1,51 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 114, fielded September 13-18, 2022.",
+  "method": "Population is Latter-day Saint respondents only (F_RELIG code 3, 190 unweighted). Each row is the share with a very or somewhat favorable view of that group (RELFAV_a-f, i) among Latter-day Saints who gave a rating; 'don't know enough to say' and refused are excluded from the denominator. Rows are the groups being rated, not the respondents' own religion. Weighted by the dataset's own WEIGHT_W114 variable.",
+  "total_unweighted_n": 190,
+  "group_order": [
+    "Latter-day Saint",
+    "Jewish",
+    "Mainline Protestant",
+    "Catholic",
+    "Evangelical Protestant",
+    "Muslim",
+    "Atheist"
+  ],
+  "lds_favorable_view_of_group": {
+    "Evangelical Protestant": {
+      "pct": 57.26,
+      "valid_unweighted_n": 176,
+      "group_unweighted_n": 190
+    },
+    "Catholic": {
+      "pct": 59.98,
+      "valid_unweighted_n": 183,
+      "group_unweighted_n": 190
+    },
+    "Latter-day Saint": {
+      "pct": 81.09,
+      "valid_unweighted_n": 188,
+      "group_unweighted_n": 190
+    },
+    "Jewish": {
+      "pct": 65.22,
+      "valid_unweighted_n": 174,
+      "group_unweighted_n": 190
+    },
+    "Muslim": {
+      "pct": 52.99,
+      "valid_unweighted_n": 166,
+      "group_unweighted_n": 190
+    },
+    "Atheist": {
+      "pct": 25.79,
+      "valid_unweighted_n": 178,
+      "group_unweighted_n": 190
+    },
+    "Mainline Protestant": {
+      "pct": 61.44,
+      "valid_unweighted_n": 169,
+      "group_unweighted_n": 190
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. \"Faith Among Black Americans,\" published Feb. 16, 2021 (survey fielded Nov. 19, 2019-June 3, 2020).",
+  "method": "Population is Black American adults (\"black faith black respondents.sav\"), grouped by self-reported present religion (RELIGMOD): named affiliations shown individually; Atheist, Agnostic, and Nothing in particular combined into \"Religiously unaffiliated.\" Share answering \"Yes\" to SERV1 (\"Have you ever turned to a church or other religious congregation for help with bills, housing or food?\"); not-answered excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT variable.",
+  "total_weighted_n": 3182.1186302210263,
+  "total_unweighted_n": 8660,
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Jehovah's Witness",
+    "Religiously unaffiliated",
+    "Muslim",
+    "Catholic",
+    "All Black Americans"
+  ],
+  "turned_to_congregation_for_help": {
+    "Protestant": {
+      "pct": 32.1,
+      "valid_unweighted_n": 5705,
+      "group_unweighted_n": 5784
+    },
+    "Catholic": {
+      "pct": 18.42,
+      "valid_unweighted_n": 553,
+      "group_unweighted_n": 562
+    },
+    "Mormon": {
+      "pct": 58.21,
+      "valid_unweighted_n": 33,
+      "group_unweighted_n": 34
+    },
+    "Jehovah's Witness": {
+      "pct": 26.07,
+      "valid_unweighted_n": 145,
+      "group_unweighted_n": 147
+    },
+    "Muslim": {
+      "pct": 21.51,
+      "valid_unweighted_n": 97,
+      "group_unweighted_n": 100
+    },
+    "Religiously unaffiliated": {
+      "pct": 23.74,
+      "valid_unweighted_n": 1721,
+      "group_unweighted_n": 1735
+    },
+    "All Black Americans": {
+      "pct": 29.27,
+      "valid_unweighted_n": 8547,
+      "group_unweighted_n": 8660
+    }
+  }
+}

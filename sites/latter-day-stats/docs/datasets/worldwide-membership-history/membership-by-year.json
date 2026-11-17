@@ -1,0 +1,988 @@
+{
+  "source": "Wikipedia, \"Membership history of the Church of Jesus Christ of Latter-day Saints\" (year-end figures), itself sourced to the 2013 Church Almanac for 1830-2011 and the Church's own annual statistical reports for 2012-2025.",
+  "method": "Complete year-end series, no gaps or interpolation - every year from the Church's 1830 founding is documented in this source lineage. 2025's figure independently matches the Church's own current newsroom statistics page.",
+  "year_order": [
+    1830,
+    1831,
+    1832,
+    1833,
+    1834,
+    1835,
+    1836,
+    1837,
+    1838,
+    1839,
+    1840,
+    1841,
+    1842,
+    1843,
+    1844,
+    1845,
+    1846,
+    1847,
+    1848,
+    1849,
+    1850,
+    1851,
+    1852,
+    1853,
+    1854,
+    1855,
+    1856,
+    1857,
+    1858,
+    1859,
+    1860,
+    1861,
+    1862,
+    1863,
+    1864,
+    1865,
+    1866,
+    1867,
+    1868,
+    1869,
+    1870,
+    1871,
+    1872,
+    1873,
+    1874,
+    1875,
+    1876,
+    1877,
+    1878,
+    1879,
+    1880,
+    1881,
+    1882,
+    1883,
+    1884,
+    1885,
+    1886,
+    1887,
+    1888,
+    1889,
+    1890,
+    1891,
+    1892,
+    1893,
+    1894,
+    1895,
+    1896,
+    1897,
+    1898,
+    1899,
+    1900,
+    1901,
+    1902,
+    1903,
+    1904,
+    1905,
+    1906,
+    1907,
+    1908,
+    1909,
+    1910,
+    1911,
+    1912,
+    1913,
+    1914,
+    1915,
+    1916,
+    1917,
+    1918,
+    1919,
+    1920,
+    1921,
+    1922,
+    1923,
+    1924,
+    1925,
+    1926,
+    1927,
+    1928,
+    1929,
+    1930,
+    1931,
+    1932,
+    1933,
+    1934,
+    1935,
+    1936,
+    1937,
+    1938,
+    1939,
+    1940,
+    1941,
+    1942,
+    1943,
+    1944,
+    1945,
+    1946,
+    1947,
+    1948,
+    1949,
+    1950,
+    1951,
+    1952,
+    1953,
+    1954,
+    1955,
+    1956,
+    1957,
+    1958,
+    1959,
+    1960,
+    1961,
+    1962,
+    1963,
+    1964,
+    1965,
+    1966,
+    1967,
+    1968,
+    1969,
+    1970,
+    1971,
+    1972,
+    1973,
+    1974,
+    1975,
+    1976,
+    1977,
+    1978,
+    1979,
+    1980,
+    1981,
+    1982,
+    1983,
+    1984,
+    1985,
+    1986,
+    1987,
+    1988,
+    1989,
+    1990,
+    1991,
+    1992,
+    1993,
+    1994,
+    1995,
+    1996,
+    1997,
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "series": {
+    "1830": {
+      "members": 280,
+      "status": "reported"
+    },
+    "1831": {
+      "members": 680,
+      "status": "reported"
+    },
+    "1832": {
+      "members": 2661,
+      "status": "reported"
+    },
+    "1833": {
+      "members": 3140,
+      "status": "reported"
+    },
+    "1834": {
+      "members": 4372,
+      "status": "reported"
+    },
+    "1835": {
+      "members": 8835,
+      "status": "reported"
+    },
+    "1836": {
+      "members": 13293,
+      "status": "reported"
+    },
+    "1837": {
+      "members": 16282,
+      "status": "reported"
+    },
+    "1838": {
+      "members": 17881,
+      "status": "reported"
+    },
+    "1839": {
+      "members": 16460,
+      "status": "reported"
+    },
+    "1840": {
+      "members": 16865,
+      "status": "reported"
+    },
+    "1841": {
+      "members": 19856,
+      "status": "reported"
+    },
+    "1842": {
+      "members": 23564,
+      "status": "reported"
+    },
+    "1843": {
+      "members": 25980,
+      "status": "reported"
+    },
+    "1844": {
+      "members": 26146,
+      "status": "reported"
+    },
+    "1845": {
+      "members": 30332,
+      "status": "reported"
+    },
+    "1846": {
+      "members": 33993,
+      "status": "reported"
+    },
+    "1847": {
+      "members": 34694,
+      "status": "reported"
+    },
+    "1848": {
+      "members": 40477,
+      "status": "reported"
+    },
+    "1849": {
+      "members": 48160,
+      "status": "reported"
+    },
+    "1850": {
+      "members": 51839,
+      "status": "reported"
+    },
+    "1851": {
+      "members": 52165,
+      "status": "reported"
+    },
+    "1852": {
+      "members": 52640,
+      "status": "reported"
+    },
+    "1853": {
+      "members": 64154,
+      "status": "reported"
+    },
+    "1854": {
+      "members": 68429,
+      "status": "reported"
+    },
+    "1855": {
+      "members": 63974,
+      "status": "reported"
+    },
+    "1856": {
+      "members": 63881,
+      "status": "reported"
+    },
+    "1857": {
+      "members": 55236,
+      "status": "reported"
+    },
+    "1858": {
+      "members": 55755,
+      "status": "reported"
+    },
+    "1859": {
+      "members": 57038,
+      "status": "reported"
+    },
+    "1860": {
+      "members": 61082,
+      "status": "reported"
+    },
+    "1861": {
+      "members": 66211,
+      "status": "reported"
+    },
+    "1862": {
+      "members": 68780,
+      "status": "reported"
+    },
+    "1863": {
+      "members": 71770,
+      "status": "reported"
+    },
+    "1864": {
+      "members": 74348,
+      "status": "reported"
+    },
+    "1865": {
+      "members": 76771,
+      "status": "reported"
+    },
+    "1866": {
+      "members": 77884,
+      "status": "reported"
+    },
+    "1867": {
+      "members": 81124,
+      "status": "reported"
+    },
+    "1868": {
+      "members": 84622,
+      "status": "reported"
+    },
+    "1869": {
+      "members": 88432,
+      "status": "reported"
+    },
+    "1870": {
+      "members": 90130,
+      "status": "reported"
+    },
+    "1871": {
+      "members": 95596,
+      "status": "reported"
+    },
+    "1872": {
+      "members": 98152,
+      "status": "reported"
+    },
+    "1873": {
+      "members": 101538,
+      "status": "reported"
+    },
+    "1874": {
+      "members": 103916,
+      "status": "reported"
+    },
+    "1875": {
+      "members": 107167,
+      "status": "reported"
+    },
+    "1876": {
+      "members": 111111,
+      "status": "reported"
+    },
+    "1877": {
+      "members": 115065,
+      "status": "reported"
+    },
+    "1878": {
+      "members": 125046,
+      "status": "reported"
+    },
+    "1879": {
+      "members": 128386,
+      "status": "reported"
+    },
+    "1880": {
+      "members": 133628,
+      "status": "reported"
+    },
+    "1881": {
+      "members": 140733,
+      "status": "reported"
+    },
+    "1882": {
+      "members": 145604,
+      "status": "reported"
+    },
+    "1883": {
+      "members": 151593,
+      "status": "reported"
+    },
+    "1884": {
+      "members": 158242,
+      "status": "reported"
+    },
+    "1885": {
+      "members": 164130,
+      "status": "reported"
+    },
+    "1886": {
+      "members": 166653,
+      "status": "reported"
+    },
+    "1887": {
+      "members": 173029,
+      "status": "reported"
+    },
+    "1888": {
+      "members": 180294,
+      "status": "reported"
+    },
+    "1889": {
+      "members": 183144,
+      "status": "reported"
+    },
+    "1890": {
+      "members": 188263,
+      "status": "reported"
+    },
+    "1891": {
+      "members": 195445,
+      "status": "reported"
+    },
+    "1892": {
+      "members": 200961,
+      "status": "reported"
+    },
+    "1893": {
+      "members": 214534,
+      "status": "reported"
+    },
+    "1894": {
+      "members": 222369,
+      "status": "reported"
+    },
+    "1895": {
+      "members": 231116,
+      "status": "reported"
+    },
+    "1896": {
+      "members": 241427,
+      "status": "reported"
+    },
+    "1897": {
+      "members": 255736,
+      "status": "reported"
+    },
+    "1898": {
+      "members": 267251,
+      "status": "reported"
+    },
+    "1899": {
+      "members": 271681,
+      "status": "reported"
+    },
+    "1900": {
+      "members": 283765,
+      "status": "reported"
+    },
+    "1901": {
+      "members": 292931,
+      "status": "reported"
+    },
+    "1902": {
+      "members": 299105,
+      "status": "reported"
+    },
+    "1903": {
+      "members": 304901,
+      "status": "reported"
+    },
+    "1904": {
+      "members": 324289,
+      "status": "reported"
+    },
+    "1905": {
+      "members": 332048,
+      "status": "reported"
+    },
+    "1906": {
+      "members": 345014,
+      "status": "reported"
+    },
+    "1907": {
+      "members": 357913,
+      "status": "reported"
+    },
+    "1908": {
+      "members": 371472,
+      "status": "reported"
+    },
+    "1909": {
+      "members": 377279,
+      "status": "reported"
+    },
+    "1910": {
+      "members": 398478,
+      "status": "reported"
+    },
+    "1911": {
+      "members": 407291,
+      "status": "reported"
+    },
+    "1912": {
+      "members": 417555,
+      "status": "reported"
+    },
+    "1913": {
+      "members": 431607,
+      "status": "reported"
+    },
+    "1914": {
+      "members": 454718,
+      "status": "reported"
+    },
+    "1915": {
+      "members": 466238,
+      "status": "reported"
+    },
+    "1916": {
+      "members": 477321,
+      "status": "reported"
+    },
+    "1917": {
+      "members": 488038,
+      "status": "reported"
+    },
+    "1918": {
+      "members": 495962,
+      "status": "reported"
+    },
+    "1919": {
+      "members": 507961,
+      "status": "reported"
+    },
+    "1920": {
+      "members": 525987,
+      "status": "reported"
+    },
+    "1921": {
+      "members": 548803,
+      "status": "reported"
+    },
+    "1922": {
+      "members": 566358,
+      "status": "reported"
+    },
+    "1923": {
+      "members": 575896,
+      "status": "reported"
+    },
+    "1924": {
+      "members": 597861,
+      "status": "reported"
+    },
+    "1925": {
+      "members": 613572,
+      "status": "reported"
+    },
+    "1926": {
+      "members": 623909,
+      "status": "reported"
+    },
+    "1927": {
+      "members": 644745,
+      "status": "reported"
+    },
+    "1928": {
+      "members": 655686,
+      "status": "reported"
+    },
+    "1929": {
+      "members": 663652,
+      "status": "reported"
+    },
+    "1930": {
+      "members": 670017,
+      "status": "reported"
+    },
+    "1931": {
+      "members": 688435,
+      "status": "reported"
+    },
+    "1932": {
+      "members": 703949,
+      "status": "reported"
+    },
+    "1933": {
+      "members": 717619,
+      "status": "reported"
+    },
+    "1934": {
+      "members": 730738,
+      "status": "reported"
+    },
+    "1935": {
+      "members": 746384,
+      "status": "reported"
+    },
+    "1936": {
+      "members": 760690,
+      "status": "reported"
+    },
+    "1937": {
+      "members": 767752,
+      "status": "reported"
+    },
+    "1938": {
+      "members": 784764,
+      "status": "reported"
+    },
+    "1939": {
+      "members": 803528,
+      "status": "reported"
+    },
+    "1940": {
+      "members": 862664,
+      "status": "reported"
+    },
+    "1941": {
+      "members": 892080,
+      "status": "reported"
+    },
+    "1942": {
+      "members": 917715,
+      "status": "reported"
+    },
+    "1943": {
+      "members": 937050,
+      "status": "reported"
+    },
+    "1944": {
+      "members": 954004,
+      "status": "reported"
+    },
+    "1945": {
+      "members": 979454,
+      "status": "reported"
+    },
+    "1946": {
+      "members": 996505,
+      "status": "reported"
+    },
+    "1947": {
+      "members": 1016170,
+      "status": "reported"
+    },
+    "1948": {
+      "members": 1041970,
+      "status": "reported"
+    },
+    "1949": {
+      "members": 1078671,
+      "status": "reported"
+    },
+    "1950": {
+      "members": 1111314,
+      "status": "reported"
+    },
+    "1951": {
+      "members": 1147157,
+      "status": "reported"
+    },
+    "1952": {
+      "members": 1189053,
+      "status": "reported"
+    },
+    "1953": {
+      "members": 1246362,
+      "status": "reported"
+    },
+    "1954": {
+      "members": 1302240,
+      "status": "reported"
+    },
+    "1955": {
+      "members": 1357274,
+      "status": "reported"
+    },
+    "1956": {
+      "members": 1416731,
+      "status": "reported"
+    },
+    "1957": {
+      "members": 1488314,
+      "status": "reported"
+    },
+    "1958": {
+      "members": 1555799,
+      "status": "reported"
+    },
+    "1959": {
+      "members": 1616088,
+      "status": "reported"
+    },
+    "1960": {
+      "members": 1693180,
+      "status": "reported"
+    },
+    "1961": {
+      "members": 1823661,
+      "status": "reported"
+    },
+    "1962": {
+      "members": 1965786,
+      "status": "reported"
+    },
+    "1963": {
+      "members": 2117451,
+      "status": "reported"
+    },
+    "1964": {
+      "members": 2234916,
+      "status": "reported"
+    },
+    "1965": {
+      "members": 2395932,
+      "status": "reported"
+    },
+    "1966": {
+      "members": 2480899,
+      "status": "reported"
+    },
+    "1967": {
+      "members": 2614340,
+      "status": "reported"
+    },
+    "1968": {
+      "members": 2684073,
+      "status": "reported"
+    },
+    "1969": {
+      "members": 2807456,
+      "status": "reported"
+    },
+    "1970": {
+      "members": 2930810,
+      "status": "reported"
+    },
+    "1971": {
+      "members": 3090953,
+      "status": "reported"
+    },
+    "1972": {
+      "members": 3218908,
+      "status": "reported"
+    },
+    "1973": {
+      "members": 3306658,
+      "status": "reported"
+    },
+    "1974": {
+      "members": 3409987,
+      "status": "reported"
+    },
+    "1975": {
+      "members": 3572202,
+      "status": "reported"
+    },
+    "1976": {
+      "members": 3742749,
+      "status": "reported"
+    },
+    "1977": {
+      "members": 3969220,
+      "status": "reported"
+    },
+    "1978": {
+      "members": 4166854,
+      "status": "reported"
+    },
+    "1979": {
+      "members": 4404121,
+      "status": "reported"
+    },
+    "1980": {
+      "members": 4639822,
+      "status": "reported"
+    },
+    "1981": {
+      "members": 4920449,
+      "status": "reported"
+    },
+    "1982": {
+      "members": 5162619,
+      "status": "reported"
+    },
+    "1983": {
+      "members": 5351724,
+      "status": "reported"
+    },
+    "1984": {
+      "members": 5641054,
+      "status": "reported"
+    },
+    "1985": {
+      "members": 5919483,
+      "status": "reported"
+    },
+    "1986": {
+      "members": 6166974,
+      "status": "reported"
+    },
+    "1987": {
+      "members": 6394314,
+      "status": "reported"
+    },
+    "1988": {
+      "members": 6721210,
+      "status": "reported"
+    },
+    "1989": {
+      "members": 7308444,
+      "status": "reported"
+    },
+    "1990": {
+      "members": 7761179,
+      "status": "reported"
+    },
+    "1991": {
+      "members": 8089848,
+      "status": "reported"
+    },
+    "1992": {
+      "members": 8404087,
+      "status": "reported"
+    },
+    "1993": {
+      "members": 8689168,
+      "status": "reported"
+    },
+    "1994": {
+      "members": 9024368,
+      "status": "reported"
+    },
+    "1995": {
+      "members": 9338859,
+      "status": "reported"
+    },
+    "1996": {
+      "members": 9692441,
+      "status": "reported"
+    },
+    "1997": {
+      "members": 10071783,
+      "status": "reported"
+    },
+    "1998": {
+      "members": 10354241,
+      "status": "reported"
+    },
+    "1999": {
+      "members": 10752986,
+      "status": "reported"
+    },
+    "2000": {
+      "members": 11068861,
+      "status": "reported"
+    },
+    "2001": {
+      "members": 11394522,
+      "status": "reported"
+    },
+    "2002": {
+      "members": 11721548,
+      "status": "reported"
+    },
+    "2003": {
+      "members": 11985254,
+      "status": "reported"
+    },
+    "2004": {
+      "members": 12275822,
+      "status": "reported"
+    },
+    "2005": {
+      "members": 12560869,
+      "status": "reported"
+    },
+    "2006": {
+      "members": 12868606,
+      "status": "reported"
+    },
+    "2007": {
+      "members": 13193999,
+      "status": "reported"
+    },
+    "2008": {
+      "members": 13508509,
+      "status": "reported"
+    },
+    "2009": {
+      "members": 13824854,
+      "status": "reported"
+    },
+    "2010": {
+      "members": 14131467,
+      "status": "reported"
+    },
+    "2011": {
+      "members": 14441346,
+      "status": "reported"
+    },
+    "2012": {
+      "members": 14782473,
+      "status": "reported"
+    },
+    "2013": {
+      "members": 15082028,
+      "status": "reported"
+    },
+    "2014": {
+      "members": 15372337,
+      "status": "reported"
+    },
+    "2015": {
+      "members": 15634199,
+      "status": "reported"
+    },
+    "2016": {
+      "members": 15882417,
+      "status": "reported"
+    },
+    "2017": {
+      "members": 16118169,
+      "status": "reported"
+    },
+    "2018": {
+      "members": 16313735,
+      "status": "reported"
+    },
+    "2019": {
+      "members": 16565036,
+      "status": "reported"
+    },
+    "2020": {
+      "members": 16663663,
+      "status": "reported"
+    },
+    "2021": {
+      "members": 16805400,
+      "status": "reported"
+    },
+    "2022": {
+      "members": 17002461,
+      "status": "reported"
+    },
+    "2023": {
+      "members": 17255394,
+      "status": "reported"
+    },
+    "2024": {
+      "members": 17509781,
+      "status": "reported"
+    },
+    "2025": {
+      "members": 17887212,
+      "status": "reported"
+    }
+  }
+}

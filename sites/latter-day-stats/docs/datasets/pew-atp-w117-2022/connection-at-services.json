@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share of in-person attenders saying they feel a great deal of connection with the other people in attendance when they attend religious services in person (vs. quite a bit, some, a little, or none), CNCTPER_W117; refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 3732.450098547436,
+  "total_unweighted_n": 4033,
+  "group_order": [
+    "Jewish",
+    "Mormon",
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "great_deal_connection_at_services": {
+    "Evangelical Protestant": {
+      "pct": 41.63,
+      "valid_unweighted_n": 1504,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 32.01,
+      "valid_unweighted_n": 543,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 45.36,
+      "valid_unweighted_n": 404,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 19.91,
+      "valid_unweighted_n": 960,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 45.41,
+      "valid_unweighted_n": 163,
+      "group_unweighted_n": 199
+    },
+    "Jewish": {
+      "pct": 45.47,
+      "valid_unweighted_n": 65,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 18.83,
+      "valid_unweighted_n": 211,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 34.92,
+      "valid_unweighted_n": 4033,
+      "group_unweighted_n": 11377
+    }
+  }
+}

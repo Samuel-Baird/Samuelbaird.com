@@ -1,0 +1,153 @@
+{
+  "sources_summary": [
+    "Church official chronology page (Brazil): https://www.churchofjesuschrist.org/study/history/global-histories/brazil/br-chronology?lang=eng",
+    "Church official temple list: https://www.churchofjesuschrist.org/temples/list?lang=eng",
+    "Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple\": https://newsroom.churchofjesuschrist.org/article/president-oaks-dedicates-belo-horizonte-brazil-temple"
+  ],
+  "method": "Every currently-dedicated Brazil temple (12 as of this writing), each with its own exact dedication date, cross-verified against the Church's own chronology and temple-list pages. This is a real, complete count of DEDICATED temples only - temples under construction or merely announced are not counted here (see `under_construction_or_announced` below). No point is interpolated or estimated. Two calendar years (2000, 2022) saw two dedications each, collapsed into one plotted point carrying that year's ending cumulative total - see `temples` for each individual dedication.",
+  "temples": [
+    {
+      "name": "Sao Paulo Brazil",
+      "dedicated": "Oct 30, 1978",
+      "year": 1978
+    },
+    {
+      "name": "Recife Brazil",
+      "dedicated": "Dec 15, 2000",
+      "year": 2000
+    },
+    {
+      "name": "Porto Alegre Brazil",
+      "dedicated": "Dec 17, 2000",
+      "year": 2000
+    },
+    {
+      "name": "Campinas Brazil",
+      "dedicated": "May 17, 2002",
+      "year": 2002
+    },
+    {
+      "name": "Curitiba Brazil",
+      "dedicated": "Jun 1, 2008",
+      "year": 2008
+    },
+    {
+      "name": "Manaus Brazil",
+      "dedicated": "Jun 10, 2012",
+      "year": 2012
+    },
+    {
+      "name": "Fortaleza Brazil",
+      "dedicated": "Jun 2, 2019",
+      "year": 2019
+    },
+    {
+      "name": "Rio de Janeiro Brazil",
+      "dedicated": "May 8, 2022",
+      "year": 2022
+    },
+    {
+      "name": "Belem Brazil",
+      "dedicated": "Nov 20, 2022",
+      "year": 2022
+    },
+    {
+      "name": "Brasilia Brazil",
+      "dedicated": "Sep 17, 2023",
+      "year": 2023
+    },
+    {
+      "name": "Salvador Brazil",
+      "dedicated": "Oct 20, 2024",
+      "year": 2024
+    },
+    {
+      "name": "Belo Horizonte Brazil",
+      "dedicated": "Aug 16, 2026",
+      "year": 2026
+    }
+  ],
+  "under_construction_or_announced": {
+    "under_construction": [
+      "Natal",
+      "Teresina",
+      "Santos",
+      "Joao Pessoa",
+      "Ribeirao Preto",
+      "Londrina"
+    ],
+    "announced": [
+      "Maceio",
+      "Campo Grande",
+      "Florianopolis",
+      "Sao Paulo East",
+      "Goiania",
+      "Vitoria"
+    ],
+    "note": "Not counted in the chart itself - only dedicated temples are plotted as completed milestones."
+  },
+  "year_order": [
+    1978,
+    2000,
+    2002,
+    2008,
+    2012,
+    2019,
+    2022,
+    2023,
+    2024,
+    2026
+  ],
+  "series": {
+    "1978": {
+      "count": 1,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2000": {
+      "count": 3,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2002": {
+      "count": 4,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2008": {
+      "count": 5,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2012": {
+      "count": 6,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2019": {
+      "count": 7,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2022": {
+      "count": 9,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2023": {
+      "count": 10,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2024": {
+      "count": 11,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    },
+    "2026": {
+      "count": 12,
+      "status": "reported",
+      "source": "Church official chronology page (Brazil) and temple list, churchofjesuschrist.org; #12 confirmed via Church Newsroom, \"President Oaks Dedicates the Belo Horizonte Brazil Temple.\""
+    }
+  }
+}

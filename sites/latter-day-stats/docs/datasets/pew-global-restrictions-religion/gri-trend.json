@@ -1,0 +1,123 @@
+{
+  "sources_summary": [
+    "Pew Research Center, \"Global Restrictions on Religion\" cumulative dataset, 2007-2022 (PublicDataset_ReligiousRestrictions_2007to2022.csv), 198 countries and territories rated annually.",
+    "https://www.pewresearch.org/religion/2024/12/18/government-restrictions-on-religion-stayed-at-peak-levels-globally-in-2022/"
+  ],
+  "method": "Each row in the raw dataset is one country-year, rated 0-10 on the Government Restrictions Index (GRI). This series is the global median GRI score across all 197-198 rated countries/territories for each year, computed directly from the country-level rows (median, not mean, since the distribution across countries is right-skewed - matching how Pew's own published reports summarize the global trend). Every year is a real Pew-coded rating; none are interpolated.",
+  "year_order": [
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "series": {
+    "2007": {
+      "median_gri": 1.75,
+      "median_shi": 1.02,
+      "n_countries": 197,
+      "status": "reported"
+    },
+    "2008": {
+      "median_gri": 1.92,
+      "median_shi": 1.79,
+      "n_countries": 197,
+      "status": "reported"
+    },
+    "2009": {
+      "median_gri": 1.83,
+      "median_shi": 1.15,
+      "n_countries": 197,
+      "status": "reported"
+    },
+    "2010": {
+      "median_gri": 2.56,
+      "median_shi": 1.47,
+      "n_countries": 197,
+      "status": "reported"
+    },
+    "2011": {
+      "median_gri": 2.34,
+      "median_shi": 1.76,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2012": {
+      "median_gri": 2.43,
+      "median_shi": 2.05,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2013": {
+      "median_gri": 2.43,
+      "median_shi": 1.67,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2014": {
+      "median_gri": 2.54,
+      "median_shi": 1.54,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2015": {
+      "median_gri": 2.71,
+      "median_shi": 1.95,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2016": {
+      "median_gri": 2.77,
+      "median_shi": 1.79,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2017": {
+      "median_gri": 2.78,
+      "median_shi": 2.05,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2018": {
+      "median_gri": 2.94,
+      "median_shi": 1.98,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2019": {
+      "median_gri": 2.9,
+      "median_shi": 1.67,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2020": {
+      "median_gri": 2.78,
+      "median_shi": 1.76,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2021": {
+      "median_gri": 3.0,
+      "median_shi": 1.6,
+      "n_countries": 198,
+      "status": "reported"
+    },
+    "2022": {
+      "median_gri": 3.0,
+      "median_shi": 1.57,
+      "n_countries": 198,
+      "status": "reported"
+    }
+  }
+}

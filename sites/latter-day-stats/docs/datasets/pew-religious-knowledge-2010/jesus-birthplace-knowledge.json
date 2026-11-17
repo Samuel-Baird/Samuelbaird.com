@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn41 asked all respondents where the Bible says Jesus was born (Bethlehem, Jericho, Jerusalem, or Nazareth); the correct answer is \"Bethlehem.\" Broken out by the respondent's own present religion (qn20); don't know/refused excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Atheist",
+    "Agnostic",
+    "Jewish",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 79.93,
+      "valid_unweighted_n": 1397,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 67.18,
+      "valid_unweighted_n": 656,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 83.03,
+      "valid_unweighted_n": 214,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 67.21,
+      "valid_unweighted_n": 196,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 75.01,
+      "valid_unweighted_n": 72,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 71.79,
+      "valid_unweighted_n": 133,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 64.87,
+      "valid_unweighted_n": 305,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 73.94,
+      "valid_unweighted_n": 3286,
+      "group_unweighted_n": 3412
+    }
+  }
+}

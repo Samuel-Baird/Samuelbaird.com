@@ -1,0 +1,224 @@
+{
+  "source": "Pew Research Center. 2025. “2023-24 Religious Landscape Study (RLS) Dataset.” doi: 10.58094/3kwb-bf52.",
+  "method": "Share of each RELTRAD tradition's current membership born in each decade (BIRTHDECADE), weighted by WEIGHT. RELTRAD is the public-use file's finest tradition split - unlike CURREL, it keeps Evangelical, Mainline, and Historically Black Protestant as separate traditions. Respondents who declined to answer BIRTHDECADE are excluded from that group's denominator. Small groups (e.g. Hindu, Buddhist, Other World Religions) carry wide margins of error - see Pew's methodology report before treating a small difference between them as meaningful.",
+  "decade_order": [
+    "1940s or earlier",
+    "1950s",
+    "1960s",
+    "1970s",
+    "1980s",
+    "1990s",
+    "2000s"
+  ],
+  "total_unweighted_n": 36908,
+  "distribution": {
+    "Evangelical Protestant": {
+      "shares_pct": {
+        "1940s or earlier": 12.84,
+        "1950s": 17.02,
+        "1960s": 19.87,
+        "1970s": 15.42,
+        "1980s": 15.41,
+        "1990s": 13.24,
+        "2000s": 6.2
+      },
+      "unweighted_n": 8298,
+      "answered_unweighted_n": 8144
+    },
+    "Mainline Protestant": {
+      "shares_pct": {
+        "1940s or earlier": 19.28,
+        "1950s": 20.55,
+        "1960s": 19.51,
+        "1970s": 13.04,
+        "1980s": 12.52,
+        "1990s": 9.58,
+        "2000s": 5.52
+      },
+      "unweighted_n": 5333,
+      "answered_unweighted_n": 5246
+    },
+    "Historically Black Protestant": {
+      "shares_pct": {
+        "1940s or earlier": 8.5,
+        "1950s": 15.2,
+        "1960s": 19.71,
+        "1970s": 15.36,
+        "1980s": 17.52,
+        "1990s": 16.3,
+        "2000s": 7.41
+      },
+      "unweighted_n": 1468,
+      "answered_unweighted_n": 1448
+    },
+    "Catholic": {
+      "shares_pct": {
+        "1940s or earlier": 13.57,
+        "1950s": 17.17,
+        "1960s": 21.7,
+        "1970s": 14.76,
+        "1980s": 13.89,
+        "1990s": 12.21,
+        "2000s": 6.7
+      },
+      "unweighted_n": 6958,
+      "answered_unweighted_n": 6860
+    },
+    "Latter-day Saint": {
+      "shares_pct": {
+        "1940s or earlier": 9.64,
+        "1950s": 11.98,
+        "1960s": 14.79,
+        "1970s": 16.14,
+        "1980s": 15.07,
+        "1990s": 18.98,
+        "2000s": 13.4
+      },
+      "unweighted_n": 565,
+      "answered_unweighted_n": 558
+    },
+    "Orthodox Christian": {
+      "shares_pct": {
+        "1940s or earlier": 8.26,
+        "1950s": 10.52,
+        "1960s": 18.01,
+        "1970s": 13.21,
+        "1980s": 20.8,
+        "1990s": 12.91,
+        "2000s": 16.29
+      },
+      "unweighted_n": 225,
+      "answered_unweighted_n": 220
+    },
+    "Jehovah's Witness": {
+      "shares_pct": {
+        "1940s or earlier": 13.38,
+        "1950s": 21.86,
+        "1960s": 12.53,
+        "1970s": 13.67,
+        "1980s": 23.37,
+        "1990s": 14.97,
+        "2000s": 0.22
+      },
+      "unweighted_n": 113,
+      "answered_unweighted_n": 112
+    },
+    "Other Christian": {
+      "shares_pct": {
+        "1940s or earlier": 8.14,
+        "1950s": 17.9,
+        "1960s": 21.41,
+        "1970s": 15.64,
+        "1980s": 20.42,
+        "1990s": 14.01,
+        "2000s": 2.48
+      },
+      "unweighted_n": 226,
+      "answered_unweighted_n": 225
+    },
+    "Jewish": {
+      "shares_pct": {
+        "1940s or earlier": 15.92,
+        "1950s": 16.48,
+        "1960s": 13.66,
+        "1970s": 10.87,
+        "1980s": 14.27,
+        "1990s": 20.27,
+        "2000s": 8.54
+      },
+      "unweighted_n": 850,
+      "answered_unweighted_n": 846
+    },
+    "Muslim": {
+      "shares_pct": {
+        "1940s or earlier": 2.06,
+        "1950s": 6.58,
+        "1960s": 9.43,
+        "1970s": 10.82,
+        "1980s": 24.18,
+        "1990s": 23.73,
+        "2000s": 23.2
+      },
+      "unweighted_n": 273,
+      "answered_unweighted_n": 267
+    },
+    "Buddhist": {
+      "shares_pct": {
+        "1940s or earlier": 6.21,
+        "1950s": 17.94,
+        "1960s": 11.92,
+        "1970s": 15.86,
+        "1980s": 19.57,
+        "1990s": 20.14,
+        "2000s": 8.36
+      },
+      "unweighted_n": 348,
+      "answered_unweighted_n": 344
+    },
+    "Hindu": {
+      "shares_pct": {
+        "1940s or earlier": 2.07,
+        "1950s": 3.4,
+        "1960s": 7.04,
+        "1970s": 23.11,
+        "1980s": 28.79,
+        "1990s": 21.58,
+        "2000s": 14.01
+      },
+      "unweighted_n": 247,
+      "answered_unweighted_n": 235
+    },
+    "Other World Religions": {
+      "shares_pct": {
+        "1940s or earlier": 9.1,
+        "1950s": 8.31,
+        "1960s": 13.14,
+        "1970s": 15.6,
+        "1980s": 15.49,
+        "1990s": 22.18,
+        "2000s": 16.19
+      },
+      "unweighted_n": 99,
+      "answered_unweighted_n": 97
+    },
+    "Other Faiths": {
+      "shares_pct": {
+        "1940s or earlier": 6.3,
+        "1950s": 9.79,
+        "1960s": 12.13,
+        "1970s": 11.31,
+        "1980s": 24.87,
+        "1990s": 25.11,
+        "2000s": 10.49
+      },
+      "unweighted_n": 761,
+      "answered_unweighted_n": 754
+    },
+    "Religiously Unaffiliated": {
+      "shares_pct": {
+        "1940s or earlier": 4.73,
+        "1950s": 8.34,
+        "1960s": 11.92,
+        "1970s": 14.2,
+        "1980s": 21.86,
+        "1990s": 26.02,
+        "2000s": 12.91
+      },
+      "unweighted_n": 10729,
+      "answered_unweighted_n": 10567
+    },
+    "All respondents": {
+      "shares_pct": {
+        "1940s or earlier": 10.58,
+        "1950s": 14.26,
+        "1960s": 17.08,
+        "1970s": 14.5,
+        "1980s": 17.36,
+        "1990s": 17.35,
+        "2000s": 8.87
+      },
+      "unweighted_n": 36493,
+      "answered_unweighted_n": 35923
+    }
+  }
+}

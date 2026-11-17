@@ -1,0 +1,64 @@
+{
+  "source": "American National Election Studies, 2016 Time Series Study, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: respondents with a post-election interview, weighted by V160102 (post-election full-sample weight). Groups from V161265x (major religion summary) with Latter-day Saints pulled out of 'Other religion' via V161264x == 301; Black Protestant dropped (fewer than 30 post-election respondents). Share saying it is much, somewhat, or slightly better if the man is the achiever outside the home and the woman takes care of the home and family (vs. makes no difference or worse), V162230x. Refused/don't know/no post interview excluded from the base. Latter-day Saint n=43 with a post-election interview. 'All U.S. adults' includes Black Protestants.",
+  "total_unweighted_n": 3648,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Christian (no denomination given)",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other religion",
+    "All U.S. adults"
+  ],
+  "man_works_woman_home_better": {
+    "Latter-day Saint": {
+      "pct": 62.2,
+      "valid_unweighted_n": 42,
+      "group_unweighted_n": 43
+    },
+    "Evangelical Protestant": {
+      "pct": 45.46,
+      "valid_unweighted_n": 634,
+      "group_unweighted_n": 643
+    },
+    "Mainline Protestant": {
+      "pct": 33.23,
+      "valid_unweighted_n": 544,
+      "group_unweighted_n": 550
+    },
+    "Catholic": {
+      "pct": 37.48,
+      "valid_unweighted_n": 781,
+      "group_unweighted_n": 792
+    },
+    "Christian (no denomination given)": {
+      "pct": 39.16,
+      "valid_unweighted_n": 576,
+      "group_unweighted_n": 580
+    },
+    "Jewish": {
+      "pct": 24.31,
+      "valid_unweighted_n": 72,
+      "group_unweighted_n": 74
+    },
+    "Religiously unaffiliated": {
+      "pct": 25.41,
+      "valid_unweighted_n": 743,
+      "group_unweighted_n": 751
+    },
+    "Other religion": {
+      "pct": 24.39,
+      "valid_unweighted_n": 154,
+      "group_unweighted_n": 155
+    },
+    "All U.S. adults": {
+      "pct": 35.69,
+      "valid_unweighted_n": 3572,
+      "group_unweighted_n": 3614
+    }
+  }
+}

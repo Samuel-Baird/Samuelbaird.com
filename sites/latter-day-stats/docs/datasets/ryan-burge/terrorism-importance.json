@@ -1,0 +1,70 @@
+{
+  "source": "Ryan Burge (github.com/ryanburge), Democracy Fund VOTER Survey Panel, 2017 wave.",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2017, weighted by weight_2017. Share saying terrorism is a very or somewhat important issue (top-two-box); don't know/skipped excluded. Orthodox (n=18), Muslim (n=13), and Hindu (n=3) excluded as too thin, matching voter_matrices.py's convention.",
+  "total_unweighted_n": 8000,
+  "group_order": [
+    "Protestant",
+    "Catholic",
+    "Mormon",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else",
+    "All respondents"
+  ],
+  "terrorism_important": {
+    "Protestant": {
+      "pct": 94.27,
+      "valid_unweighted_n": 1948,
+      "group_unweighted_n": 1977
+    },
+    "Catholic": {
+      "pct": 93.24,
+      "valid_unweighted_n": 1036,
+      "group_unweighted_n": 1055
+    },
+    "Mormon": {
+      "pct": 93.96,
+      "valid_unweighted_n": 83,
+      "group_unweighted_n": 84
+    },
+    "Jewish": {
+      "pct": 84.77,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 168
+    },
+    "Buddhist": {
+      "pct": 81.62,
+      "valid_unweighted_n": 49,
+      "group_unweighted_n": 51
+    },
+    "Atheist": {
+      "pct": 47.27,
+      "valid_unweighted_n": 292,
+      "group_unweighted_n": 292
+    },
+    "Agnostic": {
+      "pct": 73.63,
+      "valid_unweighted_n": 307,
+      "group_unweighted_n": 310
+    },
+    "Nothing in particular": {
+      "pct": 86.36,
+      "valid_unweighted_n": 805,
+      "group_unweighted_n": 819
+    },
+    "Something else": {
+      "pct": 89.15,
+      "valid_unweighted_n": 199,
+      "group_unweighted_n": 204
+    },
+    "All respondents": {
+      "pct": 87.93,
+      "valid_unweighted_n": 4886,
+      "group_unweighted_n": 4886
+    }
+  }
+}

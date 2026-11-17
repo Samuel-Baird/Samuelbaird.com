@@ -1,0 +1,70 @@
+{
+  "source": "Pew Research Center, Forum on Religion & Public Life. 2006. \"Spirit and Power: A 10-Country Survey of Pentecostals.\"",
+  "method": "Population is each country's general public sample (SAMPLE==1), excluding the renewalist oversample rows added to boost within-group analysis. Share coded \"Pentecostal\" or \"Charismatic\" on the survey's own RENEWALIST derived variable (vs. \"Non-renewalist\"); no missing values on this derived field within the general public sample. Weighted by the dataset's own GPWGT (general-public weight). Fielded May-September 2006 (see each country's own field dates in the topline); India's sample covers disproportionately Christian districts of three states and is not representative of India as a whole, per Pew's own note in the topline.",
+  "total_weighted_n": 7473.1736149370445,
+  "total_unweighted_n": 7475,
+  "group_order": [
+    "Guatemala",
+    "Kenya",
+    "Brazil",
+    "Philippines",
+    "South Africa",
+    "Chile",
+    "Nigeria",
+    "United States",
+    "South Korea",
+    "India"
+  ],
+  "renewalist_share": {
+    "Brazil": {
+      "pct": 48.86,
+      "valid_unweighted_n": 700,
+      "group_unweighted_n": 700
+    },
+    "Chile": {
+      "pct": 29.0,
+      "valid_unweighted_n": 600,
+      "group_unweighted_n": 600
+    },
+    "Guatemala": {
+      "pct": 59.4,
+      "valid_unweighted_n": 1005,
+      "group_unweighted_n": 1005
+    },
+    "India": {
+      "pct": 4.96,
+      "valid_unweighted_n": 726,
+      "group_unweighted_n": 726
+    },
+    "Kenya": {
+      "pct": 55.79,
+      "valid_unweighted_n": 655,
+      "group_unweighted_n": 655
+    },
+    "Nigeria": {
+      "pct": 26.22,
+      "valid_unweighted_n": 650,
+      "group_unweighted_n": 650
+    },
+    "Philippines": {
+      "pct": 44.32,
+      "valid_unweighted_n": 1000,
+      "group_unweighted_n": 1000
+    },
+    "South Africa": {
+      "pct": 34.08,
+      "valid_unweighted_n": 800,
+      "group_unweighted_n": 800
+    },
+    "South Korea": {
+      "pct": 10.67,
+      "valid_unweighted_n": 600,
+      "group_unweighted_n": 600
+    },
+    "United States": {
+      "pct": 23.48,
+      "valid_unweighted_n": 739,
+      "group_unweighted_n": 739
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 44, fielded Feb. 4-19, 2019.",
+  "method": "Population is all respondents, grouped by religious tradition (F_RELTRAD). Each item's own refused excluded from its own denominator. Groups under 30 valid respondents omitted. Weighted by WEIGHT_W44.",
+  "total_weighted_n": 10970.9999999965,
+  "total_unweighted_n": 10971,
+  "learns_about_own_religion_weekly_plus": {
+    "Protestant": {
+      "pct": 50.02,
+      "valid_unweighted_n": 4468,
+      "group_unweighted_n": 4482
+    },
+    "Catholic": {
+      "pct": 26.67,
+      "valid_unweighted_n": 1833,
+      "group_unweighted_n": 1835
+    },
+    "Latter-day Saint": {
+      "pct": 66.11,
+      "valid_unweighted_n": 432,
+      "group_unweighted_n": 432
+    },
+    "Orthodox Christian": {
+      "pct": 18.05,
+      "valid_unweighted_n": 53,
+      "group_unweighted_n": 53
+    },
+    "Jehovah's Witness": {
+      "pct": 81.31,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 50
+    },
+    "Other Christian": {
+      "pct": 50.75,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 62
+    },
+    "Jewish": {
+      "pct": 18.65,
+      "valid_unweighted_n": 429,
+      "group_unweighted_n": 429
+    },
+    "Muslim": {
+      "pct": 52.79,
+      "valid_unweighted_n": 60,
+      "group_unweighted_n": 60
+    },
+    "Buddhist": {
+      "pct": 32.2,
+      "valid_unweighted_n": 74,
+      "group_unweighted_n": 74
+    },
+    "Hindu": {
+      "pct": 20.24,
+      "valid_unweighted_n": 60,
+      "group_unweighted_n": 60
+    },
+    "Other faiths": {
+      "pct": 38.48,
+      "valid_unweighted_n": 182,
+      "group_unweighted_n": 185
+    },
+    "Religiously unaffiliated": {
+      "pct": 8.94,
+      "valid_unweighted_n": 3152,
+      "group_unweighted_n": 3170
+    },
+    "U.S. adults": {
+      "pct": 30.89,
+      "valid_unweighted_n": 10930,
+      "group_unweighted_n": 10971
+    }
+  },
+  "personally_knows_a_mormon": {
+    "Protestant": {
+      "pct": 49.51,
+      "valid_unweighted_n": 4448,
+      "group_unweighted_n": 4482
+    },
+    "Catholic": {
+      "pct": 43.82,
+      "valid_unweighted_n": 1820,
+      "group_unweighted_n": 1835
+    },
+    "Latter-day Saint": {
+      "pct": 99.94,
+      "valid_unweighted_n": 432,
+      "group_unweighted_n": 432
+    },
+    "Orthodox Christian": {
+      "pct": 31.18,
+      "valid_unweighted_n": 52,
+      "group_unweighted_n": 53
+    },
+    "Jehovah's Witness": {
+      "pct": 10.74,
+      "valid_unweighted_n": 49,
+      "group_unweighted_n": 50
+    },
+    "Other Christian": {
+      "pct": 50.93,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 62
+    },
+    "Jewish": {
+      "pct": 40.45,
+      "valid_unweighted_n": 421,
+      "group_unweighted_n": 429
+    },
+    "Muslim": {
+      "pct": 13.08,
+      "valid_unweighted_n": 59,
+      "group_unweighted_n": 60
+    },
+    "Buddhist": {
+      "pct": 46.9,
+      "valid_unweighted_n": 73,
+      "group_unweighted_n": 74
+    },
+    "Hindu": {
+      "pct": 22.92,
+      "valid_unweighted_n": 59,
+      "group_unweighted_n": 60
+    },
+    "Other faiths": {
+      "pct": 62.11,
+      "valid_unweighted_n": 185,
+      "group_unweighted_n": 185
+    },
+    "Religiously unaffiliated": {
+      "pct": 47.88,
+      "valid_unweighted_n": 3152,
+      "group_unweighted_n": 3170
+    },
+    "U.S. adults": {
+      "pct": 47.79,
+      "valid_unweighted_n": 10883,
+      "group_unweighted_n": 10971
+    }
+  },
+  "religious_ed_4plus_years": {
+    "Protestant": {
+      "pct": 68.25,
+      "valid_unweighted_n": 4463,
+      "group_unweighted_n": 4482
+    },
+    "Catholic": {
+      "pct": 49.39,
+      "valid_unweighted_n": 1826,
+      "group_unweighted_n": 1835
+    },
+    "Latter-day Saint": {
+      "pct": 74.82,
+      "valid_unweighted_n": 430,
+      "group_unweighted_n": 432
+    },
+    "Orthodox Christian": {
+      "pct": 21.21,
+      "valid_unweighted_n": 52,
+      "group_unweighted_n": 53
+    },
+    "Jehovah's Witness": {
+      "pct": 41.82,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 50
+    },
+    "Other Christian": {
+      "pct": 82.92,
+      "valid_unweighted_n": 62,
+      "group_unweighted_n": 62
+    },
+    "Jewish": {
+      "pct": 44.19,
+      "valid_unweighted_n": 428,
+      "group_unweighted_n": 429
+    },
+    "Muslim": {
+      "pct": 28.33,
+      "valid_unweighted_n": 59,
+      "group_unweighted_n": 60
+    },
+    "Buddhist": {
+      "pct": 33.14,
+      "valid_unweighted_n": 74,
+      "group_unweighted_n": 74
+    },
+    "Hindu": {
+      "pct": 20.28,
+      "valid_unweighted_n": 59,
+      "group_unweighted_n": 60
+    },
+    "Other faiths": {
+      "pct": 54.61,
+      "valid_unweighted_n": 184,
+      "group_unweighted_n": 185
+    },
+    "Religiously unaffiliated": {
+      "pct": 35.21,
+      "valid_unweighted_n": 3160,
+      "group_unweighted_n": 3170
+    },
+    "U.S. adults": {
+      "pct": 51.6,
+      "valid_unweighted_n": 10922,
+      "group_unweighted_n": 10971
+    }
+  }
+}

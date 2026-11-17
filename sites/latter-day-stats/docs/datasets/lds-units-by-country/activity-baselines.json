@@ -1,0 +1,12 @@
+{
+  "note": "Self-identification (census or survey) divided by Church-reported membership, same year. Different definitions; not an activity rate.",
+  "baselines": {
+    "Brazil": {
+      "self_id": 226509,
+      "members": 1138740,
+      "ratio": 0.1989,
+      "year": 2010,
+      "source": "2010 Brazilian Census (IBGE) vs Church membership rolls; see docs/datasets/lds-brazil-census-2010"
+    }
+  }
+}

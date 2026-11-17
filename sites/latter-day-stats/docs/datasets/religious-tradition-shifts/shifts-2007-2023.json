@@ -1,0 +1,159 @@
+{
+  "source_2007": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\" Continental-US file, N=35,556.",
+  "source_2023_24": "Pew Research Center. 2025. \"2023-24 Religious Landscape Study (RLS) Dataset.\" doi: 10.58094/3kwb-bf52. Public-use file, N=36,908.",
+  "method": "Share of ALL U.S. adults identifying with each RELTRAD tradition (Pew's own religious-tradition classification, identical coding across every RLS wave), weighted by each wave's own weight variable, don't-know/refused kept in the denominator. 2007 is the continental-U.S. main survey only. Not every small group's change is statistically meaningful - see each row's unweighted n; groups under a few hundred respondents (Jehovah's Witness, Buddhist, Hindu, Orthodox Christian) carry wide margins of error in both waves. The 2023-24 wave also changed data collection mode from telephone (2007) to mostly online/mail, which Pew flags as a caveat for any cross-wave comparison.",
+  "group_order": [
+    "Religiously unaffiliated",
+    "Evangelical Protestant",
+    "Catholic",
+    "Mainline Protestant",
+    "Historically Black Protestant",
+    "Other Faiths",
+    "Jewish",
+    "Latter-day Saint",
+    "Muslim",
+    "Buddhist",
+    "Hindu",
+    "Orthodox Christian",
+    "Other Christian",
+    "Jehovah's Witness",
+    "Other World Religions"
+  ],
+  "groups": [
+    {
+      "name": "Religiously unaffiliated",
+      "pct_2007": 16.089,
+      "pct_2023_24": 29.41,
+      "unweighted_n_2007": 5048,
+      "unweighted_n_2023_24": 10729,
+      "absolute_change_pct_points": 13.321,
+      "relative_change_pct": 82.8
+    },
+    {
+      "name": "Evangelical Protestant",
+      "pct_2007": 26.278,
+      "pct_2023_24": 23.079,
+      "unweighted_n_2007": 9472,
+      "unweighted_n_2023_24": 8298,
+      "absolute_change_pct_points": -3.199,
+      "relative_change_pct": -12.2
+    },
+    {
+      "name": "Catholic",
+      "pct_2007": 23.863,
+      "pct_2023_24": 18.888,
+      "unweighted_n_2007": 8054,
+      "unweighted_n_2023_24": 6958,
+      "absolute_change_pct_points": -4.975,
+      "relative_change_pct": -20.8
+    },
+    {
+      "name": "Mainline Protestant",
+      "pct_2007": 18.084,
+      "pct_2023_24": 11.491,
+      "unweighted_n_2007": 7470,
+      "unweighted_n_2023_24": 5333,
+      "absolute_change_pct_points": -6.593,
+      "relative_change_pct": -36.5
+    },
+    {
+      "name": "Historically Black Protestant",
+      "pct_2007": 6.916,
+      "pct_2023_24": 5.386,
+      "unweighted_n_2007": 1995,
+      "unweighted_n_2023_24": 1468,
+      "absolute_change_pct_points": -1.53,
+      "relative_change_pct": -22.1
+    },
+    {
+      "name": "Other Faiths",
+      "pct_2007": 1.225,
+      "pct_2023_24": 1.913,
+      "unweighted_n_2007": 449,
+      "unweighted_n_2023_24": 761,
+      "absolute_change_pct_points": 0.688,
+      "relative_change_pct": 56.2
+    },
+    {
+      "name": "Jewish",
+      "pct_2007": 1.716,
+      "pct_2023_24": 1.679,
+      "unweighted_n_2007": 682,
+      "unweighted_n_2023_24": 850,
+      "absolute_change_pct_points": -0.037,
+      "relative_change_pct": -2.2
+    },
+    {
+      "name": "Latter-day Saint",
+      "pct_2007": 1.669,
+      "pct_2023_24": 1.503,
+      "unweighted_n_2007": 581,
+      "unweighted_n_2023_24": 565,
+      "absolute_change_pct_points": -0.166,
+      "relative_change_pct": -9.9
+    },
+    {
+      "name": "Muslim",
+      "pct_2007": 0.438,
+      "pct_2023_24": 1.175,
+      "unweighted_n_2007": 116,
+      "unweighted_n_2023_24": 273,
+      "absolute_change_pct_points": 0.737,
+      "relative_change_pct": 168.3
+    },
+    {
+      "name": "Buddhist",
+      "pct_2007": 0.745,
+      "pct_2023_24": 1.075,
+      "unweighted_n_2007": 411,
+      "unweighted_n_2023_24": 348,
+      "absolute_change_pct_points": 0.33,
+      "relative_change_pct": 44.3
+    },
+    {
+      "name": "Hindu",
+      "pct_2007": 0.413,
+      "pct_2023_24": 0.932,
+      "unweighted_n_2007": 257,
+      "unweighted_n_2023_24": 247,
+      "absolute_change_pct_points": 0.519,
+      "relative_change_pct": 125.7
+    },
+    {
+      "name": "Orthodox Christian",
+      "pct_2007": 0.576,
+      "pct_2023_24": 0.723,
+      "unweighted_n_2007": 363,
+      "unweighted_n_2023_24": 225,
+      "absolute_change_pct_points": 0.147,
+      "relative_change_pct": 25.5
+    },
+    {
+      "name": "Other Christian",
+      "pct_2007": 0.325,
+      "pct_2023_24": 0.633,
+      "unweighted_n_2007": 129,
+      "unweighted_n_2023_24": 226,
+      "absolute_change_pct_points": 0.308,
+      "relative_change_pct": 94.8
+    },
+    {
+      "name": "Jehovah's Witness",
+      "pct_2007": 0.708,
+      "pct_2023_24": 0.416,
+      "unweighted_n_2007": 215,
+      "unweighted_n_2023_24": 113,
+      "absolute_change_pct_points": -0.292,
+      "relative_change_pct": -41.2
+    },
+    {
+      "name": "Other World Religions",
+      "pct_2007": 0.134,
+      "pct_2023_24": 0.301,
+      "unweighted_n_2007": 42,
+      "unweighted_n_2023_24": 99,
+      "absolute_change_pct_points": 0.167,
+      "relative_change_pct": 124.6
+    }
+  ]
+}

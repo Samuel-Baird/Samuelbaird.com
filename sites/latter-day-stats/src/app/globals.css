@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Dark stone only (the light "aged paper" theme was removed). The page is a
+     low-frequency mottle with sparse pale specks; cards sit on it as flat
+     sheets. This is the same canvas samuelbaird.com uses. */
+  /* The one radius. Archive surfaces are flat panels, not pills. */
+  --radius: 3px;
+  /* Dark stone: a broad low-frequency mottle plus sparse pale specks. */
+  --background: #0f1115;
+  --surface: #161a20;
+  --foreground: #e9e7e2;
+  --muted: #9a9a9a;
+  --muted-soft: #1d2027;
+  --border: #2a2e36;
+  --accent: #7fb0d8;
+  --accent-soft: #1a2733;
+  --honey: #d9a441;
+  --honey-soft: #2b230f;
+  --oxblood: #d98787;
+  --oxblood-soft: #2a1a1a;
+  /* Same ramp, reauthored for the dark surface: increasing intensity means
+     increasing brightness against the dark background, the opposite
+     direction from the light theme above. */
+  --chart-ordinal-1: #16232e;
+  --chart-ordinal-2: #1e3247;
+  --chart-ordinal-3: #2c4a63;
+  --chart-ordinal-4: #3d648a;
+  --chart-ordinal-5: #7fb0d8;
+  --chart-ordinal-6: #a8cbe6;
+  --chart-ordinal-7: #d3e6f4;
+  /* Layer 1 is the stone grain. Layer 2 thresholds the noise via the alpha
+     row (alpha = 7A - 5.45) so only the brightest peaks survive as flecks,
+     landing about 0.5% of pixels; make the constant more negative for
+     sparser specks (-6.1 is effectively none, -4.8 is heavy granite). */
+  --page-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.18' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.86 0 0 0 0 0.88 0 0 0 0.05 0'/%3E%3C/filter%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.92 0 0 0 0 0.92 0 0 0 0 0.90 0 0 0 7 -5.45'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23m)'/%3E%3Crect width='320' height='320' filter='url(%23s)'/%3E%3C/svg%3E");
+  color-scheme: dark;
+}
+
+/* Card surfaces are authored as bg-white in markup; both themes resolve it
+   through --surface. Unlayered, so it wins over the Tailwind utility. */
+.bg-white {
+  background-color: var(--surface);
+}
+
+/* Soft accent backgrounds with opacity modifiers like bg-[color:var(--accent-soft)]/30
+   already adapt because the var changes. Same for borders. */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-honey: var(--honey);
+  --color-honey-soft: var(--honey-soft);
+  --color-oxblood: var(--oxblood);
+  --color-oxblood-soft: var(--oxblood-soft);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+}
+
+body {
+  background-color: var(--background);
+  background-image: var(--page-texture);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.serif {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-feature-settings: "ss01";
+}
+
+/* Old-style figures for dates set in running serif text (annals, bylines). */
+.serif-onum {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-feature-settings: "ss01", "onum";
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* Small-caps label style used for tags, table headers, and secondary
+   button text — the Archive direction's substitute for pill/badge fills. */
+.small-caps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+}
+
+/* Section-break flourish. Usage: <div class="dinkus">::before content set
+   via the beehive mark component, or plain text fallback below.</div> */
+.dinkus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--honey);
+  margin-block: 2rem;
+}
+.dinkus::before,
+.dinkus::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+/* Drop cap for study abstracts / long-form intros. Apply to a paragraph
+   directly following an element with class "drop-cap-lead". */
+.drop-cap-lead::first-letter {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 0.08em;
+  padding-top: 0.03em;
+  color: var(--honey);
+}
+
+/* Deseret title reveal. Both the hidden states live inside the keyframes and
+   never inline, so when this block is absent (reduced motion) the Latin text
+   simply stays visible and the Deseret overlay never renders. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes deseret-out {
+    from {
+      opacity: 1;
+      filter: blur(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(2px);
+    }
+  }
+  @keyframes deseret-in {
+    from {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  /* Modal entrance (donate thank-you popup). Referencing an undefined
+     keyframe when this block is absent (reduced motion) is a no-op, so the
+     panel just renders at its default opacity/transform — visible, not
+     stuck hidden. */
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+}
+
+/* Site chrome is rendered by the root layout, so page-level utilities can't
+   reach it. Drop it from printouts and print on white. */
+@media print {
+  body > header,
+  body > footer {
+    display: none;
+  }
+  body {
+    background: #fff;
+    background-image: none;
+  }
+}
+
+/* Drifting Deseret glyphs behind the page (public/bg/, same field as
+   samuelbaird.com). Hover wakes the letters; click sends a blue ripple. */
+.glyph-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  contain: strict;
+  opacity: 0;
+  transition: opacity 2500ms ease-out;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: #7a7a7a;
+}
+.glyph-bg .absolute { position: absolute; }
+.glyph-bg .block { display: block; }
+@media print {
+  .glyph-bg { display: none; }
+}

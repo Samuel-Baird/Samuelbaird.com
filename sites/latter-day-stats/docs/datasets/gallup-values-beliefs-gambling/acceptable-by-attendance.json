@@ -1,0 +1,19 @@
+{
+  "source": "Gallup, \"Acceptance of Gambling Reaches New Heights\" (2018): https://news.gallup.com/poll/235379/acceptance-gambling-reaches-new-heights.aspx",
+  "method": "Transcribed from Gallup's published article (table 'Views on Gambling Differ Significantly Within Subgroups'), not computed from microdata. Shares of U.S. adults saying gambling is morally acceptable / morally wrong, by religious service attendance (Values and Beliefs poll, May 2018). The two do not sum to 100% because other responses are not reported. Latter-day Saints are not broken out.",
+  "attendance_order": [
+    "Seldom/never",
+    "Nearly weekly/monthly",
+    "At least weekly"
+  ],
+  "acceptable_pct": {
+    "Seldom/never": 78,
+    "Nearly weekly/monthly": 63,
+    "At least weekly": 48
+  },
+  "wrong_pct": {
+    "Seldom/never": 18,
+    "Nearly weekly/monthly": 30,
+    "At least weekly": 47
+  }
+}

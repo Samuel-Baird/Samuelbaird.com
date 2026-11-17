@@ -1,0 +1,284 @@
+{
+  "n": 2623,
+  "rows": [
+    {
+      "unitid": "110644",
+      "name": "University of California-Davis",
+      "state": "CA",
+      "rape24": 103,
+      "enrollment": 40065.0,
+      "rate24": 25.7082,
+      "rank_raw": 1
+    },
+    {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "rape24": 76,
+      "enrollment": 36894.0,
+      "rate24": 20.5996,
+      "rank_raw": 2
+    },
+    {
+      "unitid": "234076",
+      "name": "University of Virginia-Main Campus",
+      "state": "VA",
+      "rape24": 68,
+      "enrollment": 26409.0,
+      "rate24": 25.7488,
+      "rank_raw": 3
+    },
+    {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "state": "OH",
+      "rape24": 62,
+      "enrollment": 61443.0,
+      "rate24": 10.0907,
+      "rank_raw": 4
+    },
+    {
+      "unitid": "173957",
+      "name": "Mayo Clinic College of Medicine and Science",
+      "state": "MN",
+      "rape24": 62,
+      "enrollment": 1439.0,
+      "rate24": 430.8548,
+      "rank_raw": 4
+    },
+    {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "state": "CA",
+      "rape24": 55,
+      "enrollment": 47335.0,
+      "rate24": 11.6193,
+      "rank_raw": 6
+    },
+    {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "state": "IA",
+      "rape24": 55,
+      "enrollment": 30779.0,
+      "rate24": 17.8693,
+      "rank_raw": 6
+    },
+    {
+      "unitid": "151111",
+      "name": "Indiana University-Indianapolis",
+      "state": "IN",
+      "rape24": 50,
+      "enrollment": 22534.0,
+      "rate24": 22.1887,
+      "rank_raw": 8
+    },
+    {
+      "unitid": "233897",
+      "name": "University of Virginia's College at Wise",
+      "state": "VA",
+      "rape24": 49,
+      "enrollment": 2167.0,
+      "rate24": 226.1191,
+      "rank_raw": 9
+    },
+    {
+      "unitid": "232557",
+      "name": "Liberty University",
+      "state": "VA",
+      "rape24": 45,
+      "enrollment": 104327.0,
+      "rate24": 4.3134,
+      "rank_raw": 10
+    },
+    {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "state": "MI",
+      "rape24": 44,
+      "enrollment": 52855.0,
+      "rate24": 8.3247,
+      "rank_raw": 11
+    },
+    {
+      "unitid": "134130",
+      "name": "University of Florida",
+      "state": "FL",
+      "rape24": 42,
+      "enrollment": 56311.0,
+      "rate24": 7.4586,
+      "rank_raw": 12
+    },
+    {
+      "unitid": "110653",
+      "name": "University of California-Irvine",
+      "state": "CA",
+      "rape24": 33,
+      "enrollment": 37297.0,
+      "rate24": 8.8479,
+      "rank_raw": 13
+    },
+    {
+      "unitid": "228723",
+      "name": "Texas A&M University-College Station",
+      "state": "TX",
+      "rape24": 32,
+      "enrollment": 78321.0,
+      "rate24": 4.0857,
+      "rank_raw": 14
+    },
+    {
+      "unitid": "157085",
+      "name": "University of Kentucky",
+      "state": "KY",
+      "rape24": 32,
+      "enrollment": 34709.0,
+      "rate24": 9.2195,
+      "rank_raw": 14
+    },
+    {
+      "unitid": "228635",
+      "name": "University of Texas Southwestern Medical Center",
+      "state": "TX",
+      "rape24": 30,
+      "enrollment": 2549.0,
+      "rate24": 117.6932,
+      "rank_raw": 16
+    },
+    {
+      "unitid": "155317",
+      "name": "University of Kansas",
+      "state": "KS",
+      "rape24": 29,
+      "enrollment": 29792.0,
+      "rate24": 9.7342,
+      "rank_raw": 17
+    },
+    {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "state": "WI",
+      "rape24": 27,
+      "enrollment": 51044.0,
+      "rate24": 5.2896,
+      "rank_raw": 18
+    },
+    {
+      "unitid": "228459",
+      "name": "Texas State University",
+      "state": "TX",
+      "rape24": 27,
+      "enrollment": 40674.0,
+      "rate24": 6.6381,
+      "rank_raw": 18
+    },
+    {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "state": "IN",
+      "rape24": 26,
+      "enrollment": 48424.0,
+      "rate24": 5.3692,
+      "rank_raw": 20
+    },
+    {
+      "unitid": "123961",
+      "name": "University of Southern California",
+      "state": "CA",
+      "rape24": 24,
+      "enrollment": 46566.0,
+      "rate24": 5.154,
+      "rank_raw": 21
+    },
+    {
+      "unitid": "110635",
+      "name": "University of California-Berkeley",
+      "state": "CA",
+      "rape24": 23,
+      "enrollment": 45882.0,
+      "rate24": 5.0129,
+      "rank_raw": 22
+    },
+    {
+      "unitid": "162928",
+      "name": "Johns Hopkins University",
+      "state": "MD",
+      "rape24": 23,
+      "enrollment": 30210.0,
+      "rate24": 7.6134,
+      "rank_raw": 22
+    },
+    {
+      "unitid": "187985",
+      "name": "University of New Mexico-Main Campus",
+      "state": "NM",
+      "rape24": 22,
+      "enrollment": 23124.0,
+      "rate24": 9.5139,
+      "rank_raw": 24
+    },
+    {
+      "unitid": "190415",
+      "name": "Cornell University",
+      "state": "NY",
+      "rape24": 21,
+      "enrollment": 26793.0,
+      "rate24": 7.8379,
+      "rank_raw": 25
+    },
+    {
+      "unitid": "182670",
+      "name": "Dartmouth College",
+      "state": "NH",
+      "rape24": 21,
+      "enrollment": 6938.0,
+      "rate24": 30.2681,
+      "rank_raw": 25
+    },
+    {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "state": "OR",
+      "rape24": 20,
+      "enrollment": 24404.0,
+      "rate24": 8.1954,
+      "rank_raw": 27
+    },
+    {
+      "unitid": "221999",
+      "name": "Vanderbilt University",
+      "state": "TN",
+      "rape24": 20,
+      "enrollment": 13575.0,
+      "rate24": 14.733,
+      "rank_raw": 27
+    },
+    {
+      "unitid": "238032",
+      "name": "West Virginia University",
+      "state": "WV",
+      "rape24": 19,
+      "enrollment": 23643.0,
+      "rate24": 8.0362,
+      "rank_raw": 29
+    },
+    {
+      "unitid": "243744",
+      "name": "Stanford University",
+      "state": "CA",
+      "rape24": 19,
+      "enrollment": 18625.0,
+      "rate24": 10.2013,
+      "rank_raw": 29
+    }
+  ],
+  "byu": {
+    "unitid": "230038",
+    "name": "Brigham Young University",
+    "state": "UT",
+    "rape24": 14,
+    "enrollment": 35873.0,
+    "rate24": 3.9027,
+    "rank_raw": 48
+  }
+}

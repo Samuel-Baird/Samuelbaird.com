@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 114, fielded September 13-18, 2022.",
+  "method": "Population is respondent's self-reported religious affiliation (F_RELIG) - Wave 114 does not carry the finer F_RELTRAD frame variable used in other ATP waves in this dataset family. Share saying it is \"essential\" to what being a faithful member of their tradition means to them that they attend religious services regularly (ESSENT_b_W114). Refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W114 variable.",
+  "total_weighted_n": 10588.00000740826,
+  "total_unweighted_n": 10588,
+  "group_order": [
+    "Muslim",
+    "Mormon",
+    "Protestant",
+    "Orthodox Christian",
+    "Catholic",
+    "Jewish",
+    "Hindu",
+    "Buddhist"
+  ],
+  "attend_services_essential": {
+    "Protestant": {
+      "pct": 33.93,
+      "valid_unweighted_n": 4416,
+      "group_unweighted_n": 4441
+    },
+    "Catholic": {
+      "pct": 28.45,
+      "valid_unweighted_n": 2072,
+      "group_unweighted_n": 2085
+    },
+    "Mormon": {
+      "pct": 49.11,
+      "valid_unweighted_n": 190,
+      "group_unweighted_n": 190
+    },
+    "Orthodox Christian": {
+      "pct": 33.63,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 17.6,
+      "valid_unweighted_n": 230,
+      "group_unweighted_n": 230
+    },
+    "Muslim": {
+      "pct": 57.51,
+      "valid_unweighted_n": 54,
+      "group_unweighted_n": 54
+    },
+    "Buddhist": {
+      "pct": 4.86,
+      "valid_unweighted_n": 66,
+      "group_unweighted_n": 66
+    },
+    "Hindu": {
+      "pct": 15.66,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 52
+    }
+  }
+}

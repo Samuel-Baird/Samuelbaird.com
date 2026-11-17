@@ -1,0 +1,88 @@
+{
+  "population_floor": 50000,
+  "n_eligible_municipalities": 470,
+  "n_total_municipalities_queried": 5565,
+  "top_city": "Sant'Ana do Livramento - RS",
+  "top_city_pct": 1.04,
+  "rs_in_top10": 5,
+  "sources_summary": [
+    "2010 Brazilian Census (IBGE), SIDRA aggregate table 137, classification 133 (Religiao), category 100423 (\"Igreja de Jesus Cristo dos Santos dos Ultimos Dias\") at the municipality level (n6), restricted to municipalities with total 2010 population >= 50,000 to avoid small-town statistical noise."
+  ],
+  "method": "Of 5,565 Brazilian municipalities queried, 470 had both a non-suppressed LDS-specific count and total population >= 50,000; the chart shows only the top 12 of those by share of population. Several of the highest-concentration cities are in Rio Grande do Sul, including border cities with Uruguay/Argentina, consistent with the Church's history of early missionary concentration in southern Brazil.",
+  "city_order": [
+    "Sant'Ana do Livramento - RS",
+    "Taboão da Serra - SP",
+    "Ponta Porã - MS",
+    "Ponta Grossa - PR",
+    "Alegrete - RS",
+    "Cruz Alta - RS",
+    "Pinhais - PR",
+    "Uruguaiana - RS",
+    "Santa Maria - RS",
+    "Embu-Guaçu - SP",
+    "Itacoatiara - AM",
+    "Passo Fundo - RS"
+  ],
+  "cities": {
+    "Sant'Ana do Livramento - RS": {
+      "lds": 858,
+      "population": 82464,
+      "pct": 1.04
+    },
+    "Taboão da Serra - SP": {
+      "lds": 2328,
+      "population": 244528,
+      "pct": 0.952
+    },
+    "Ponta Porã - MS": {
+      "lds": 704,
+      "population": 77872,
+      "pct": 0.904
+    },
+    "Ponta Grossa - PR": {
+      "lds": 2760,
+      "population": 311611,
+      "pct": 0.886
+    },
+    "Alegrete - RS": {
+      "lds": 674,
+      "population": 77653,
+      "pct": 0.868
+    },
+    "Cruz Alta - RS": {
+      "lds": 536,
+      "population": 62821,
+      "pct": 0.853
+    },
+    "Pinhais - PR": {
+      "lds": 923,
+      "population": 117008,
+      "pct": 0.789
+    },
+    "Uruguaiana - RS": {
+      "lds": 858,
+      "population": 125435,
+      "pct": 0.684
+    },
+    "Santa Maria - RS": {
+      "lds": 1673,
+      "population": 261031,
+      "pct": 0.641
+    },
+    "Embu-Guaçu - SP": {
+      "lds": 386,
+      "population": 62769,
+      "pct": 0.615
+    },
+    "Itacoatiara - AM": {
+      "lds": 528,
+      "population": 86839,
+      "pct": 0.608
+    },
+    "Passo Fundo - RS": {
+      "lds": 1117,
+      "population": 184826,
+      "pct": 0.604
+    }
+  }
+}

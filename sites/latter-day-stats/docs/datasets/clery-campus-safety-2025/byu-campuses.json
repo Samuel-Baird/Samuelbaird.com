@@ -1,0 +1,156 @@
+{
+  "median_rate_2024": 1.2287,
+  "median_rate_3yr": 2.4114,
+  "median_basis": "four-year institutions with 1,000+ students",
+  "byu_ids": [
+    "230038",
+    "142522",
+    "230047"
+  ],
+  "rows": [
+    {
+      "unitid": "230038",
+      "name": "Brigham Young University",
+      "state": "UT",
+      "rape22": 6.0,
+      "rape23": 1.0,
+      "rape24": 4,
+      "enrollment": 35873.0,
+      "rate24": 1.115,
+      "rate3": 1.0221,
+      "label": "BYU\u2013Provo"
+    },
+    {
+      "unitid": "142522",
+      "name": "Brigham Young University-Idaho",
+      "state": "ID",
+      "rape22": 15.0,
+      "rape23": 0.0,
+      "rape24": 2,
+      "enrollment": 45585.0,
+      "rate24": 0.4387,
+      "rate3": 1.2431,
+      "label": "BYU\u2013Idaho"
+    },
+    {
+      "unitid": "230047",
+      "name": "Brigham Young University-Hawaii",
+      "state": "HI",
+      "rape22": 2.0,
+      "rape23": 1.0,
+      "rape24": 2,
+      "enrollment": 2906.0,
+      "rate24": 6.8823,
+      "rate3": 5.7353,
+      "label": "BYU\u2013Hawaii"
+    },
+    {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "rape22": 24.0,
+      "rape23": 172.0,
+      "rape24": 140,
+      "enrollment": 36894.0,
+      "rate24": 37.9465,
+      "rate3": 30.3572,
+      "label": "University of Utah"
+    },
+    {
+      "unitid": "230737",
+      "name": "Utah Valley University",
+      "state": "UT",
+      "rape22": 9.0,
+      "rape23": 3.0,
+      "rape24": 9,
+      "enrollment": 46807.0,
+      "rate24": 1.9228,
+      "rate3": 1.4955,
+      "label": "Utah Valley University"
+    },
+    {
+      "unitid": "152080",
+      "name": "University of Notre Dame",
+      "state": "IN",
+      "rape22": 4.0,
+      "rape23": 5.0,
+      "rape24": 5,
+      "enrollment": 13042.0,
+      "rate24": 3.8338,
+      "rate3": 3.5782,
+      "label": "University of Notre Dame"
+    },
+    {
+      "unitid": "223232",
+      "name": "Baylor University",
+      "state": "TX",
+      "rape22": 22.0,
+      "rape23": 7.0,
+      "rape24": 10,
+      "enrollment": 20626.0,
+      "rate24": 4.8482,
+      "rate3": 6.3027,
+      "label": "Baylor University"
+    },
+    {
+      "unitid": "232557",
+      "name": "Liberty University",
+      "state": "VA",
+      "rape22": 2.0,
+      "rape23": 6.0,
+      "rape24": 12,
+      "enrollment": 104327.0,
+      "rate24": 1.1502,
+      "rate3": 0.639,
+      "label": "Liberty University"
+    },
+    {
+      "unitid": "130794",
+      "name": "Yale University",
+      "state": "CT",
+      "rape22": 40.0,
+      "rape23": 53.0,
+      "rape24": 13,
+      "enrollment": 15564.0,
+      "rate24": 8.3526,
+      "rate3": 22.702,
+      "label": "Yale University"
+    },
+    {
+      "unitid": "166027",
+      "name": "Harvard University",
+      "state": "MA",
+      "rape22": 15.0,
+      "rape23": 16.0,
+      "rape24": 7,
+      "enrollment": 30259.0,
+      "rate24": 2.3134,
+      "rate3": 4.1861,
+      "label": "Harvard University"
+    },
+    {
+      "unitid": "243744",
+      "name": "Stanford University",
+      "state": "CA",
+      "rape22": 33.0,
+      "rape23": 31.0,
+      "rape24": 27,
+      "enrollment": 18625.0,
+      "rate24": 14.4966,
+      "rate3": 16.2864,
+      "label": "Stanford University"
+    },
+    {
+      "unitid": "190415",
+      "name": "Cornell University",
+      "state": "NY",
+      "rape22": 25.0,
+      "rape23": 28.0,
+      "rape24": 23,
+      "enrollment": 26793.0,
+      "rate24": 8.5843,
+      "rate3": 9.4552,
+      "label": "Cornell University"
+    }
+  ]
+}

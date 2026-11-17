@@ -1,0 +1,46 @@
+{
+  "source": "Pew Research Center (Pew Hispanic Center and Pew Forum on Religion & Public Life). \"Changing Faiths: Latinos and the Transformation of American Religion,\" survey of 4,016 U.S. Hispanic adults, fielded Aug. 10-Oct. 4, 2006.",
+  "method": "Population is Hispanic adults currently belonging to each religious group (the survey's own recoded 'relig' variable). Share answering \"Very important\" (vs. \"Fairly important\"/\"Not very important\") to qn24, \"How important would you say religion is in your own life\"; don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own newweight variable, which corrects for a deliberate oversample of 2,000 non-Catholic respondents.",
+  "total_weighted_n": 4015.9999998,
+  "total_unweighted_n": 4016,
+  "group_order": [
+    "Jehovah's Witness",
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Unaffiliated"
+  ],
+  "very_important": {
+    "Unaffiliated": {
+      "pct": 29.48,
+      "valid_unweighted_n": 480,
+      "group_unweighted_n": 493
+    },
+    "Catholic": {
+      "pct": 68.54,
+      "valid_unweighted_n": 2011,
+      "group_unweighted_n": 2025
+    },
+    "Protestant": {
+      "pct": 80.6,
+      "valid_unweighted_n": 1101,
+      "group_unweighted_n": 1111
+    },
+    "Jehovah's Witness": {
+      "pct": 92.07,
+      "valid_unweighted_n": 104,
+      "group_unweighted_n": 104
+    },
+    "Mormon": {
+      "pct": 84.84,
+      "valid_unweighted_n": 34,
+      "group_unweighted_n": 34
+    },
+    "Jewish": {
+      "pct": 60.3,
+      "valid_unweighted_n": 36,
+      "group_unweighted_n": 37
+    }
+  }
+}

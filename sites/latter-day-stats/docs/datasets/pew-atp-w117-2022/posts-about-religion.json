@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD), among social media users. Share answering \"yes, I do this\" to SNSPOST3_W117 (\"Do you ever post or share things about your religion/your thoughts on religion on social media?\"); respondents who generally do not post or share anything on social media, and refused, are excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592038,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Jewish",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "posts_about_religion": {
+    "Evangelical Protestant": {
+      "pct": 55.64,
+      "valid_unweighted_n": 1373,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 27.15,
+      "valid_unweighted_n": 777,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 55.43,
+      "valid_unweighted_n": 455,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 22.69,
+      "valid_unweighted_n": 1116,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 57.15,
+      "valid_unweighted_n": 106,
+      "group_unweighted_n": 199
+    },
+    "Jewish": {
+      "pct": 22.83,
+      "valid_unweighted_n": 114,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 18.65,
+      "valid_unweighted_n": 1617,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 33.65,
+      "valid_unweighted_n": 5863,
+      "group_unweighted_n": 11377
+    }
+  }
+}

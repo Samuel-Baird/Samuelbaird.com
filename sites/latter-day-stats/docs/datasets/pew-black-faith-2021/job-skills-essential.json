@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. \"Faith Among Black Americans,\" published Feb. 16, 2021 (survey fielded Nov. 19, 2019-June 3, 2020).",
+  "method": "Population is Black American adults (\"black faith black respondents.sav\"), grouped by self-reported present religion (RELIGMOD): named affiliations shown individually; Atheist, Agnostic, and Nothing in particular combined into \"Religiously unaffiliated.\" Share saying it is \"essential\" for churches and other houses of worship to \"teach practical job and life skills\" (ESSENTCHURCH_c); not-answered excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT variable.",
+  "total_weighted_n": 3182.1186302210263,
+  "total_unweighted_n": 8660,
+  "group_order": [
+    "Mormon",
+    "Muslim",
+    "Protestant",
+    "Catholic",
+    "Jehovah's Witness",
+    "Religiously unaffiliated",
+    "All Black Americans"
+  ],
+  "job_skills_essential": {
+    "Protestant": {
+      "pct": 47.55,
+      "valid_unweighted_n": 5650,
+      "group_unweighted_n": 5784
+    },
+    "Catholic": {
+      "pct": 40.73,
+      "valid_unweighted_n": 553,
+      "group_unweighted_n": 562
+    },
+    "Mormon": {
+      "pct": 70.51,
+      "valid_unweighted_n": 33,
+      "group_unweighted_n": 34
+    },
+    "Jehovah's Witness": {
+      "pct": 40.39,
+      "valid_unweighted_n": 135,
+      "group_unweighted_n": 147
+    },
+    "Muslim": {
+      "pct": 50.88,
+      "valid_unweighted_n": 99,
+      "group_unweighted_n": 100
+    },
+    "Religiously unaffiliated": {
+      "pct": 39.88,
+      "valid_unweighted_n": 1715,
+      "group_unweighted_n": 1735
+    },
+    "All Black Americans": {
+      "pct": 45.28,
+      "valid_unweighted_n": 8472,
+      "group_unweighted_n": 8660
+    }
+  }
+}

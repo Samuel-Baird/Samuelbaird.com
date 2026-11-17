@@ -1,0 +1,42 @@
+{
+  "source": "U.S. Dept. of Education, Campus Safety and Security (Clery Act) data, 2025 release (years 2022-2024), Oncampuscrime222324.xls",
+  "byu_unitid": "230038",
+  "n_four_year_institutions_with_2024_data": 2623,
+  "n_ge_1000": 1684,
+  "n_ge_5000": 690,
+  "n_three_year_ge_5000": 690,
+  "pooled_rate_per_10k_ge_1000": 3.4985,
+  "byu": {
+    "rapes_2024": 4,
+    "enrollment": 35873,
+    "rate_2024": 1.115,
+    "rank_raw_2024": 336,
+    "of_raw": 2623,
+    "rank_rate_ge_1000": 855,
+    "of_ge_1000": 1684,
+    "percentile_ge_1000": 49.3,
+    "rank_rate_ge_5000": 441,
+    "of_ge_5000": 690,
+    "percentile_ge_5000": 36.2,
+    "rapes_2022_24": [
+      6,
+      1,
+      4
+    ],
+    "rate_3yr": 1.0221,
+    "rank_3yr": 464,
+    "of_3yr": 690,
+    "percentile_3yr": 32.8
+  },
+  "distribution_ge_5000_2024": {
+    "median": 2.0908,
+    "mean": 3.4388,
+    "p90": 8.3537,
+    "max": 41.6867,
+    "share_zero": 28.0
+  },
+  "distribution_3yr_ge_5000": {
+    "median": 2.5034,
+    "mean": 3.5868
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey\"; Pew Research Center. 2015. \"2014 Religious Landscape Study.\"",
+  "method": "Unaffiliated (\"nones\") share of the total population in each wave's own RELTRAD variable (code 100000). 2007 is continental-US main survey only. Each wave weighted by its own weight variable.",
+  "wave_order": [
+    "2007",
+    "2014"
+  ],
+  "unaffiliated_pct": {
+    "2007": {
+      "pct": 16.09,
+      "unweighted_n": 5048,
+      "total_unweighted_n": 35556
+    },
+    "2014": {
+      "pct": 22.82,
+      "unweighted_n": 7556,
+      "total_unweighted_n": 35071
+    }
+  }
+}

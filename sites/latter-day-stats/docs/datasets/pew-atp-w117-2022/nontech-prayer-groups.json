@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share answering \"yes, I do this\" to NONTECH1_c_W117 (\"Do you ever do any of the following? Participate in in-person prayer groups, scripture study groups or religious education programs\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592036,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Orthodox Christian",
+    "Mainline Protestant",
+    "Jewish",
+    "Catholic",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "participates_in_person_study_group": {
+    "Evangelical Protestant": {
+      "pct": 40.01,
+      "valid_unweighted_n": 2467,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 19.5,
+      "valid_unweighted_n": 1527,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 33.07,
+      "valid_unweighted_n": 791,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 10.65,
+      "valid_unweighted_n": 2204,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 57.04,
+      "valid_unweighted_n": 198,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 30.48,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 19.17,
+      "valid_unweighted_n": 235,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 4.56,
+      "valid_unweighted_n": 3319,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 19.33,
+      "valid_unweighted_n": 11318,
+      "group_unweighted_n": 11377
+    }
+  }
+}

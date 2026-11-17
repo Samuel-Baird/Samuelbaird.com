@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2012. \"2011 National Survey of Mormons.\"",
+  "method": "Population is all respondents (self-identified Mormons by the survey's own design), broken out by self-reported activity level in the Church (q406). q412 asks how often the respondent prays outside of religious services; this chart shows the top-two-box share praying at least once a day (\"several times a day\" + \"once a day\"). Don't know/refused is excluded from each row's denominator. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 4075.9999990607785,
+  "total_unweighted_n": 1019,
+  "activity_order": [
+    "Very active",
+    "Somewhat active",
+    "Not too active",
+    "Not at all active",
+    "All Mormon adults"
+  ],
+  "prays_daily_pct": {
+    "Very active": {
+      "pct": 96.09,
+      "valid_unweighted_n": 743,
+      "group_unweighted_n": 746
+    },
+    "Somewhat active": {
+      "pct": 69.65,
+      "valid_unweighted_n": 142,
+      "group_unweighted_n": 144
+    },
+    "Not too active": {
+      "pct": 49.57,
+      "valid_unweighted_n": 75,
+      "group_unweighted_n": 76
+    },
+    "Not at all active": {
+      "pct": 38.06,
+      "valid_unweighted_n": 50,
+      "group_unweighted_n": 52
+    },
+    "All Mormon adults": {
+      "pct": 83.95,
+      "valid_unweighted_n": 1011,
+      "group_unweighted_n": 1019
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "source": "Kramer, Stephanie, Yunping Tong and Anne Fengyan Shi. 2024. \"Religious Composition of the World's Migrants, 1990-2020.\" Pew Research Center.",
+  "method": "Global total ('Global Total', level 3) rows for Direction=Incoming, Year=2020, from Pew's 'Incoming and Outgoing Migrant Counts' file - Pew's own estimate of the religious composition of the world's international migrant stock (people living outside their country of birth), built primarily from 270 censuses and surveys plus Pew's own indirect-estimation methodology for gaps (see the Peru case study in this dataset's data/ folder for a worked example of that imputation).",
+  "year": 2020,
+  "total_migrants": 280569984.0,
+  "group_order": [
+    "Christian",
+    "Muslim",
+    "Religiously unaffiliated",
+    "Hindu",
+    "Buddhist",
+    "Other religions",
+    "Jewish"
+  ],
+  "global_composition": {
+    "Christian": {
+      "pct": 46.6,
+      "count": 130880000.0
+    },
+    "Muslim": {
+      "pct": 28.7,
+      "count": 80420000.0
+    },
+    "Religiously unaffiliated": {
+      "pct": 13.0,
+      "count": 36400000.0
+    },
+    "Hindu": {
+      "pct": 4.8,
+      "count": 13480000.0
+    },
+    "Buddhist": {
+      "pct": 3.9,
+      "count": 10900000.0
+    },
+    "Jewish": {
+      "pct": 1.1,
+      "count": 2980000.0
+    },
+    "Other religions": {
+      "pct": 2.0,
+      "count": 5510000.0
+    }
+  },
+  "christian_share_by_year": {
+    "1990": {
+      "pct": 47.5,
+      "count": 72710000.0
+    },
+    "1995": {
+      "pct": 48.9,
+      "count": 78810000.0
+    },
+    "2000": {
+      "pct": 48.9,
+      "count": 84780000.0
+    },
+    "2005": {
+      "pct": 49.1,
+      "count": 94060000.0
+    },
+    "2010": {
+      "pct": 48.0,
+      "count": 106000000.0
+    },
+    "2015": {
+      "pct": 46.4,
+      "count": 115160000.0
+    },
+    "2020": {
+      "pct": 46.6,
+      "count": 130880000.0
+    }
+  }
+}

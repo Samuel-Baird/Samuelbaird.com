@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share answering \"yes\" to ATTENDMONTH_W70 (\"In the last month, did you attend religious services in person\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10211.00001353193,
+  "total_unweighted_n": 10211,
+  "group_order": [
+    "Evangelical Protestant",
+    "Mormon",
+    "Historically Black Protestant",
+    "Catholic",
+    "Jewish",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "attended_inperson_covid": {
+    "Evangelical Protestant": {
+      "pct": 28.12,
+      "valid_unweighted_n": 2073,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 8.61,
+      "valid_unweighted_n": 1364,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 13.7,
+      "valid_unweighted_n": 457,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 13.41,
+      "valid_unweighted_n": 2220,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 28.1,
+      "valid_unweighted_n": 167,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 10.38,
+      "valid_unweighted_n": 250,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 2.26,
+      "valid_unweighted_n": 3073,
+      "group_unweighted_n": 3079
+    },
+    "All U.S. adults": {
+      "pct": 11.79,
+      "valid_unweighted_n": 10177,
+      "group_unweighted_n": 10211
+    }
+  }
+}

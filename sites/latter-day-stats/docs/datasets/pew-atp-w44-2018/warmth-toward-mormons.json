@@ -1,0 +1,73 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 44, fielded Feb. 4-19, 2019.",
+  "method": "Population is all respondents, grouped by religious tradition (F_RELTRAD; Protestant sub-traditions collapsed, see knowledge_batch.py's own note). REL3c is a 0-100 feeling thermometer toward Mormons (0=coldest, 100=warmest); out-of-range codes (refused) excluded. Groups under 30 valid respondents omitted. Weighted mean by WEIGHT_W44.",
+  "total_weighted_n": 10970.9999999965,
+  "total_unweighted_n": 10971,
+  "warmth_toward_mormons": {
+    "Protestant": {
+      "mean": 51.5,
+      "valid_unweighted_n": 4419,
+      "group_unweighted_n": 4482
+    },
+    "Catholic": {
+      "mean": 55.2,
+      "valid_unweighted_n": 1808,
+      "group_unweighted_n": 1835
+    },
+    "Latter-day Saint": {
+      "mean": 86.1,
+      "valid_unweighted_n": 429,
+      "group_unweighted_n": 432
+    },
+    "Orthodox Christian": {
+      "mean": 49.4,
+      "valid_unweighted_n": 52,
+      "group_unweighted_n": 53
+    },
+    "Jehovah's Witness": {
+      "mean": 51.5,
+      "valid_unweighted_n": 48,
+      "group_unweighted_n": 50
+    },
+    "Other Christian": {
+      "mean": 54.6,
+      "valid_unweighted_n": 62,
+      "group_unweighted_n": 62
+    },
+    "Jewish": {
+      "mean": 53.6,
+      "valid_unweighted_n": 422,
+      "group_unweighted_n": 429
+    },
+    "Muslim": {
+      "mean": 53.5,
+      "valid_unweighted_n": 58,
+      "group_unweighted_n": 60
+    },
+    "Buddhist": {
+      "mean": 42.4,
+      "valid_unweighted_n": 74,
+      "group_unweighted_n": 74
+    },
+    "Hindu": {
+      "mean": 56.4,
+      "valid_unweighted_n": 60,
+      "group_unweighted_n": 60
+    },
+    "Other faiths": {
+      "mean": 46.2,
+      "valid_unweighted_n": 183,
+      "group_unweighted_n": 185
+    },
+    "Religiously unaffiliated": {
+      "mean": 46.7,
+      "valid_unweighted_n": 3135,
+      "group_unweighted_n": 3170
+    },
+    "U.S. adults": {
+      "mean": 50.9,
+      "valid_unweighted_n": 10823,
+      "group_unweighted_n": 10971
+    }
+  }
+}

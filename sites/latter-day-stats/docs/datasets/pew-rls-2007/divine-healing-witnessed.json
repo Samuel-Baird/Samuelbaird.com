@@ -1,0 +1,88 @@
+{
+  "source": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\"",
+  "method": "Population is current religious tradition (RELTRAD), continental-US main survey only. q43d asked whether the respondent has ever experienced or witnessed a divine healing of an illness or injury; shown here is the share answering \"yes.\" Don't know/refused are excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 88292.49782861538,
+  "total_unweighted_n": 35556,
+  "group_order": [
+    "Mormon",
+    "Historically Black Protestant Churches",
+    "Evangelical Protestant Churches",
+    "Orthodox",
+    "Hindu",
+    "Buddhist",
+    "Muslim",
+    "Mainline Protestant Churches",
+    "Catholic",
+    "Unaffiliated",
+    "Jewish",
+    "Jehovah's Witness",
+    "All U.S. adults"
+  ],
+  "divine_healing_witnessed": {
+    "Evangelical Protestant Churches": {
+      "pct": 51.62,
+      "valid_unweighted_n": 9182,
+      "group_unweighted_n": 9472
+    },
+    "Mainline Protestant Churches": {
+      "pct": 29.09,
+      "valid_unweighted_n": 7069,
+      "group_unweighted_n": 7470
+    },
+    "Historically Black Protestant Churches": {
+      "pct": 56.08,
+      "valid_unweighted_n": 1937,
+      "group_unweighted_n": 1995
+    },
+    "Catholic": {
+      "pct": 28.31,
+      "valid_unweighted_n": 7687,
+      "group_unweighted_n": 8054
+    },
+    "Mormon": {
+      "pct": 69.4,
+      "valid_unweighted_n": 572,
+      "group_unweighted_n": 581
+    },
+    "Orthodox": {
+      "pct": 36.76,
+      "valid_unweighted_n": 338,
+      "group_unweighted_n": 363
+    },
+    "Jehovah's Witness": {
+      "pct": 7.73,
+      "valid_unweighted_n": 205,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 20.57,
+      "valid_unweighted_n": 545,
+      "group_unweighted_n": 682
+    },
+    "Muslim": {
+      "pct": 29.84,
+      "valid_unweighted_n": 106,
+      "group_unweighted_n": 116
+    },
+    "Buddhist": {
+      "pct": 30.55,
+      "valid_unweighted_n": 294,
+      "group_unweighted_n": 411
+    },
+    "Hindu": {
+      "pct": 32.9,
+      "valid_unweighted_n": 232,
+      "group_unweighted_n": 257
+    },
+    "Unaffiliated": {
+      "pct": 22.44,
+      "valid_unweighted_n": 3376,
+      "group_unweighted_n": 5048
+    },
+    "All U.S. adults": {
+      "pct": 37.17,
+      "valid_unweighted_n": 32230,
+      "group_unweighted_n": 35556
+    }
+  }
+}

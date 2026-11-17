@@ -1,0 +1,74 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_note": "2017 wave (religpew_2017)",
+  "note": "Share who strongly or somewhat agree (top-two-box) with each Muslim surveillance/restriction proposal.",
+  "target_order": [
+    "Increase mosque surveillance",
+    "Target Muslims at airport screening",
+    "Deny Muslim citizens the right to vote"
+  ],
+  "matrix": {
+    "Protestant": {
+      "Increase mosque surveillance": 62.5,
+      "Target Muslims at airport screening": 59.0,
+      "Deny Muslim citizens the right to vote": 13.7
+    },
+    "Catholic": {
+      "Increase mosque surveillance": 61.7,
+      "Target Muslims at airport screening": 58.4,
+      "Deny Muslim citizens the right to vote": 10.1
+    },
+    "Mormon": {
+      "Increase mosque surveillance": 56.6,
+      "Target Muslims at airport screening": 61.4,
+      "Deny Muslim citizens the right to vote": 4.8
+    },
+    "Jewish": {
+      "Increase mosque surveillance": 45.5,
+      "Target Muslims at airport screening": 40.1,
+      "Deny Muslim citizens the right to vote": 6.0
+    },
+    "Buddhist": {
+      "Increase mosque surveillance": 39.2,
+      "Target Muslims at airport screening": 35.3,
+      "Deny Muslim citizens the right to vote": 17.6
+    },
+    "Atheist": {
+      "Increase mosque surveillance": 18.8,
+      "Target Muslims at airport screening": 18.5,
+      "Deny Muslim citizens the right to vote": 3.1
+    },
+    "Agnostic": {
+      "Increase mosque surveillance": 26.9,
+      "Target Muslims at airport screening": 24.2,
+      "Deny Muslim citizens the right to vote": 2.9
+    },
+    "Nothing in particular": {
+      "Increase mosque surveillance": 47.7,
+      "Target Muslims at airport screening": 45.0,
+      "Deny Muslim citizens the right to vote": 12.7
+    },
+    "Something else": {
+      "Increase mosque surveillance": 47.5,
+      "Target Muslims at airport screening": 45.6,
+      "Deny Muslim citizens the right to vote": 9.9
+    }
+  }
+}

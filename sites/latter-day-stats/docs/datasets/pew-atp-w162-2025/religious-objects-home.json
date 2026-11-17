@@ -1,0 +1,76 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 162, fielded February 3-9, 2025.",
+  "method": "Population is respondent's present religion (RELIG_W162; this wave has no F_RELTRAD frame variable). Share who have religious objects or artwork displayed in their home, e.g. a cross, crucifix, or pictures of Jesus or the saints (RELART_W162); don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W162 variable.",
+  "total_weighted_n": 9544.000199450762,
+  "total_unweighted_n": 9544,
+  "group_order": [
+    "Catholic",
+    "Mormon",
+    "Orthodox Christian",
+    "Jewish",
+    "Buddhist",
+    "Protestant",
+    "Nothing in particular",
+    "Agnostic",
+    "Atheist",
+    "Something else",
+    "All U.S. adults"
+  ],
+  "religious_objects_at_home": {
+    "Protestant": {
+      "pct": 53.91,
+      "valid_unweighted_n": 4029,
+      "group_unweighted_n": 4037
+    },
+    "Catholic": {
+      "pct": 79.69,
+      "valid_unweighted_n": 1784,
+      "group_unweighted_n": 1787
+    },
+    "Mormon": {
+      "pct": 78.22,
+      "valid_unweighted_n": 135,
+      "group_unweighted_n": 135
+    },
+    "Orthodox Christian": {
+      "pct": 70.58,
+      "valid_unweighted_n": 44,
+      "group_unweighted_n": 44
+    },
+    "Jewish": {
+      "pct": 59.7,
+      "valid_unweighted_n": 55,
+      "group_unweighted_n": 390
+    },
+    "Buddhist": {
+      "pct": 55.75,
+      "valid_unweighted_n": 31,
+      "group_unweighted_n": 89
+    },
+    "Atheist": {
+      "pct": 19.16,
+      "valid_unweighted_n": 259,
+      "group_unweighted_n": 609
+    },
+    "Agnostic": {
+      "pct": 28.6,
+      "valid_unweighted_n": 338,
+      "group_unweighted_n": 713
+    },
+    "Something else": {
+      "pct": 34.28,
+      "valid_unweighted_n": 262,
+      "group_unweighted_n": 262
+    },
+    "Nothing in particular": {
+      "pct": 37.48,
+      "valid_unweighted_n": 548,
+      "group_unweighted_n": 1261
+    },
+    "All U.S. adults": {
+      "pct": 56.83,
+      "valid_unweighted_n": 7537,
+      "group_unweighted_n": 9544
+    }
+  }
+}

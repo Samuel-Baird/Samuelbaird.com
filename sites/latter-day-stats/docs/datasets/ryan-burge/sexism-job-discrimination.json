@@ -1,0 +1,45 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2016, unweighted. Share who strongly or somewhat agree (top-two-box) that women miss out on good jobs due to discrimination; don't know/skipped excluded. PROVISIONAL: derived from the already-computed matrix JSON (same method/population), not recomputed from microdata directly - the source .dta was unreachable when this was generated. Per-cell unweighted n's and an 'All respondents' row are pending a re-run of the real compute script once the data drive is available.",
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "job_discrimination_agree": {
+    "Mormon": {
+      "pct": 51.1
+    },
+    "Protestant": {
+      "pct": 57.9
+    },
+    "Catholic": {
+      "pct": 56.3
+    },
+    "Jewish": {
+      "pct": 72.0
+    },
+    "Buddhist": {
+      "pct": 77.8
+    },
+    "Atheist": {
+      "pct": 81.8
+    },
+    "Agnostic": {
+      "pct": 72.8
+    },
+    "Nothing in particular": {
+      "pct": 69.2
+    },
+    "Something else": {
+      "pct": 68.9
+    }
+  }
+}

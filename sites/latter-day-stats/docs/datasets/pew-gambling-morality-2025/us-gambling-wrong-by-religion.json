@@ -1,0 +1,10 @@
+{
+  "source": "Pew Research Center, 'Americans are less likely than people in many other countries to see gambling as morally wrong' (2026-03-16): https://www.pewresearch.org/short-reads/2026/03/16/americans-are-less-likely-than-people-in-many-other-countries-to-see-gambling-as-morally-wrong/",
+  "method": "Transcribed from the published short read, not computed from microdata. Share of U.S. adults saying gambling is morally wrong. Latter-day Saints are not broken out.",
+  "wrong_pct": {
+    "Christian": 33,
+    "Jewish": 25,
+    "Unaffiliated": 19,
+    "All U.S. adults": 29
+  }
+}

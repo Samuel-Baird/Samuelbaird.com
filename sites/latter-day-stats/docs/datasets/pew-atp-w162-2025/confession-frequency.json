@@ -1,0 +1,35 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 162, fielded Feb. 3-9, 2025.",
+  "method": "Population is Catholic respondents (RELIG_W162 == 2). Don't know/refused excluded from the denominator. Weighted by WEIGHT_W162.",
+  "total_weighted_n": 1897.0755719870785,
+  "total_unweighted_n": 1779,
+  "item_order": [
+    "Never",
+    "Less than once a year",
+    "Once a year",
+    "Several times a year",
+    "At least once a month"
+  ],
+  "confession_frequency_pct": {
+    "Never": {
+      "pct": 46.85,
+      "valid_unweighted_n": 869
+    },
+    "Less than once a year": {
+      "pct": 29.73,
+      "valid_unweighted_n": 531
+    },
+    "Once a year": {
+      "pct": 11.68,
+      "valid_unweighted_n": 180
+    },
+    "Several times a year": {
+      "pct": 9.11,
+      "valid_unweighted_n": 154
+    },
+    "At least once a month": {
+      "pct": 2.63,
+      "valid_unweighted_n": 45
+    }
+  }
+}

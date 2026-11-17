@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share coded 1 on WATCHMONTHSUM_W117, Pew's derived summary measure for watching religious services online or on TV at least monthly (built from ATTENDONLINE_W117/ATTENDONLINE2_W117). Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592036,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Historically Black Protestant",
+    "Evangelical Protestant",
+    "Mormon",
+    "Orthodox Christian",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "watches_online_monthly": {
+    "Evangelical Protestant": {
+      "pct": 47.22,
+      "valid_unweighted_n": 2479,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 27.99,
+      "valid_unweighted_n": 1540,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 57.57,
+      "valid_unweighted_n": 797,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 23.74,
+      "valid_unweighted_n": 2213,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 40.1,
+      "valid_unweighted_n": 199,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 37.72,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 19.33,
+      "valid_unweighted_n": 235,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 7.14,
+      "valid_unweighted_n": 3330,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 26.99,
+      "valid_unweighted_n": 11377,
+      "group_unweighted_n": 11377
+    }
+  }
+}

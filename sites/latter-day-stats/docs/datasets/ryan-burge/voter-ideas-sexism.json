@@ -1,0 +1,104 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_note": "2016 wave (religpew_2016)",
+  "note": "Share who strongly or somewhat agree (top-two-box) with each statement.",
+  "target_order": [
+    "Women should return to traditional roles",
+    "Equality demands are really about special favors",
+    "Women miss out on jobs due to discrimination",
+    "Harassment complaints cause more problems than they solve",
+    "Workplace harassment is no longer a real problem",
+    "Opportunities for women have improved quality of life"
+  ],
+  "matrix": {
+    "Protestant": {
+      "Women should return to traditional roles": 19.7,
+      "Equality demands are really about special favors": 42.1,
+      "Women miss out on jobs due to discrimination": 57.9,
+      "Harassment complaints cause more problems than they solve": 36.0,
+      "Workplace harassment is no longer a real problem": 21.2,
+      "Opportunities for women have improved quality of life": 84.4
+    },
+    "Catholic": {
+      "Women should return to traditional roles": 17.4,
+      "Equality demands are really about special favors": 43.4,
+      "Women miss out on jobs due to discrimination": 56.3,
+      "Harassment complaints cause more problems than they solve": 36.9,
+      "Workplace harassment is no longer a real problem": 24.5,
+      "Opportunities for women have improved quality of life": 85.5
+    },
+    "Mormon": {
+      "Women should return to traditional roles": 25.8,
+      "Equality demands are really about special favors": 50.0,
+      "Women miss out on jobs due to discrimination": 51.1,
+      "Harassment complaints cause more problems than they solve": 36.4,
+      "Workplace harassment is no longer a real problem": 25.0,
+      "Opportunities for women have improved quality of life": 84.1
+    },
+    "Jewish": {
+      "Women should return to traditional roles": 10.1,
+      "Equality demands are really about special favors": 25.7,
+      "Women miss out on jobs due to discrimination": 72.0,
+      "Harassment complaints cause more problems than they solve": 22.4,
+      "Workplace harassment is no longer a real problem": 13.5,
+      "Opportunities for women have improved quality of life": 89.6
+    },
+    "Buddhist": {
+      "Women should return to traditional roles": 14.3,
+      "Equality demands are really about special favors": 25.4,
+      "Women miss out on jobs due to discrimination": 77.8,
+      "Harassment complaints cause more problems than they solve": 25.4,
+      "Workplace harassment is no longer a real problem": 20.6,
+      "Opportunities for women have improved quality of life": 88.9
+    },
+    "Atheist": {
+      "Women should return to traditional roles": 5.0,
+      "Equality demands are really about special favors": 14.4,
+      "Women miss out on jobs due to discrimination": 81.8,
+      "Harassment complaints cause more problems than they solve": 10.7,
+      "Workplace harassment is no longer a real problem": 8.8,
+      "Opportunities for women have improved quality of life": 93.9
+    },
+    "Agnostic": {
+      "Women should return to traditional roles": 4.7,
+      "Equality demands are really about special favors": 22.8,
+      "Women miss out on jobs due to discrimination": 72.8,
+      "Harassment complaints cause more problems than they solve": 18.5,
+      "Workplace harassment is no longer a real problem": 11.3,
+      "Opportunities for women have improved quality of life": 90.7
+    },
+    "Nothing in particular": {
+      "Women should return to traditional roles": 13.4,
+      "Equality demands are really about special favors": 30.8,
+      "Women miss out on jobs due to discrimination": 69.2,
+      "Harassment complaints cause more problems than they solve": 28.0,
+      "Workplace harassment is no longer a real problem": 17.5,
+      "Opportunities for women have improved quality of life": 86.4
+    },
+    "Something else": {
+      "Women should return to traditional roles": 14.2,
+      "Equality demands are really about special favors": 32.0,
+      "Women miss out on jobs due to discrimination": 68.9,
+      "Harassment complaints cause more problems than they solve": 28.8,
+      "Workplace harassment is no longer a real problem": 17.7,
+      "Opportunities for women have improved quality of life": 85.9
+    }
+  }
+}

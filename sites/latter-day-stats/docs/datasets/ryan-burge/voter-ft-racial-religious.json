@@ -1,0 +1,114 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, 2017 wave, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: religpew_2017, weighted by weight_2017. Excludes three categories too thin to show individually - see excluded_too_thin below.",
+  "excluded_too_thin": {
+    "4": "Orthodox (n=18)",
+    "6": "Muslim (n=13)",
+    "8": "Hindu (n=3)"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "note": "Feeling thermometer (0=coldest/most unfavorable, 100=warmest/most favorable). Sentinel codes (don't know/skipped/not asked) excluded before averaging.",
+  "target_order": [
+    "Blacks",
+    "Whites",
+    "Hispanics",
+    "Asians",
+    "Muslims",
+    "Jews",
+    "Christians"
+  ],
+  "matrix": {
+    "Protestant": {
+      "Blacks": 71.9,
+      "Whites": 78.8,
+      "Hispanics": 69.8,
+      "Asians": 73.7,
+      "Muslims": 45.5,
+      "Jews": 78.6,
+      "Christians": 86.3
+    },
+    "Catholic": {
+      "Blacks": 69.3,
+      "Whites": 76.8,
+      "Hispanics": 70.3,
+      "Asians": 71.3,
+      "Muslims": 47.6,
+      "Jews": 75.4,
+      "Christians": 77.3
+    },
+    "Mormon": {
+      "Blacks": 56.7,
+      "Whites": 73.6,
+      "Hispanics": 63.4,
+      "Asians": 67.9,
+      "Muslims": 43.9,
+      "Jews": 64.5,
+      "Christians": 78.1
+    },
+    "Jewish": {
+      "Blacks": 71.9,
+      "Whites": 74.8,
+      "Hispanics": 71.3,
+      "Asians": 74.4,
+      "Muslims": 49.2,
+      "Jews": 90.4,
+      "Christians": 70.7
+    },
+    "Buddhist": {
+      "Blacks": 76.4,
+      "Whites": 61.8,
+      "Hispanics": 75.9,
+      "Asians": 76.3,
+      "Muslims": 71.6,
+      "Jews": 65.7,
+      "Christians": 50.8
+    },
+    "Atheist": {
+      "Blacks": 67.9,
+      "Whites": 62.8,
+      "Hispanics": 68.5,
+      "Asians": 73.9,
+      "Muslims": 57.0,
+      "Jews": 68.1,
+      "Christians": 38.0
+    },
+    "Agnostic": {
+      "Blacks": 71.5,
+      "Whites": 67.2,
+      "Hispanics": 72.0,
+      "Asians": 75.6,
+      "Muslims": 63.7,
+      "Jews": 72.3,
+      "Christians": 45.4
+    },
+    "Nothing in particular": {
+      "Blacks": 63.1,
+      "Whites": 69.0,
+      "Hispanics": 61.6,
+      "Asians": 65.5,
+      "Muslims": 45.1,
+      "Jews": 65.0,
+      "Christians": 57.6
+    },
+    "Something else": {
+      "Blacks": 66.6,
+      "Whites": 73.6,
+      "Hispanics": 70.1,
+      "Asians": 69.7,
+      "Muslims": 47.6,
+      "Jews": 69.7,
+      "Christians": 69.5
+    }
+  }
+}

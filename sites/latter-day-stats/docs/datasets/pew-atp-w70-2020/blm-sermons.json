@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 70, fielded July 13-19, 2020.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD), restricted to respondents who attend religious services at least monthly (the survey's own SERMONISSUE skip pattern, gated on XATTEND_W70). Share answering \"yes\" to SERMONISSUE_b_W70 (\"in the past few months have you heard any sermons in person, online, or on TV expressing support for the recent Black Lives Matter protests\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W70 variable.",
+  "total_weighted_n": 10211.00001353193,
+  "total_unweighted_n": 10211,
+  "group_order": [
+    "Historically Black Protestant",
+    "Jewish",
+    "Unaffiliated",
+    "Mainline Protestant",
+    "Catholic",
+    "Mormon",
+    "Evangelical Protestant",
+    "All attenders"
+  ],
+  "heard_blm_support_sermon": {
+    "Evangelical Protestant": {
+      "pct": 30.14,
+      "valid_unweighted_n": 1529,
+      "group_unweighted_n": 2085
+    },
+    "Mainline Protestant": {
+      "pct": 41.05,
+      "valid_unweighted_n": 642,
+      "group_unweighted_n": 1371
+    },
+    "Historically Black Protestant": {
+      "pct": 69.85,
+      "valid_unweighted_n": 352,
+      "group_unweighted_n": 458
+    },
+    "Catholic": {
+      "pct": 39.58,
+      "valid_unweighted_n": 986,
+      "group_unweighted_n": 2228
+    },
+    "Mormon": {
+      "pct": 33.16,
+      "valid_unweighted_n": 102,
+      "group_unweighted_n": 167
+    },
+    "Jewish": {
+      "pct": 61.74,
+      "valid_unweighted_n": 60,
+      "group_unweighted_n": 250
+    },
+    "Unaffiliated": {
+      "pct": 54.88,
+      "valid_unweighted_n": 225,
+      "group_unweighted_n": 3079
+    },
+    "All attenders": {
+      "pct": 41.93,
+      "valid_unweighted_n": 4091,
+      "group_unweighted_n": 10211
+    }
+  }
+}

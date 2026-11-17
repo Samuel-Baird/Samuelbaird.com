@@ -1,0 +1,52 @@
+{
+  "source": "Pew Research Center. 2016. \"One-in-Five U.S. Adults Were Raised in Interfaith Homes.\"",
+  "method": "Population is current religious tradition (reltrad), among respondents who attend religious services (qd3's own skip pattern) and have a spouse/partner. Share answering \"yes\" to qd3 (\"when you attend religious services, is it typically with your spouse/partner\"); don't know/refused excluded from each row's denominator. Groups under 30 valid respondents omitted (this recontact reached only 5,000 of the main 2014 RLS's 35,071 respondents). Weighted by the dataset's own `rweight` variable.",
+  "total_weighted_n": 5000.000004114336,
+  "total_unweighted_n": 5000,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Historically Black Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "attend_with_spouse": {
+    "Evangelical Protestant": {
+      "pct": 80.62,
+      "valid_unweighted_n": 640,
+      "group_unweighted_n": 1043
+    },
+    "Mainline Protestant": {
+      "pct": 77.64,
+      "valid_unweighted_n": 680,
+      "group_unweighted_n": 1175
+    },
+    "Historically Black Protestant": {
+      "pct": 72.9,
+      "valid_unweighted_n": 98,
+      "group_unweighted_n": 335
+    },
+    "Catholic": {
+      "pct": 77.28,
+      "valid_unweighted_n": 568,
+      "group_unweighted_n": 956
+    },
+    "Mormon": {
+      "pct": 87.17,
+      "valid_unweighted_n": 41,
+      "group_unweighted_n": 61
+    },
+    "Unaffiliated": {
+      "pct": 65.66,
+      "valid_unweighted_n": 205,
+      "group_unweighted_n": 1149
+    },
+    "All U.S. adults": {
+      "pct": 77.36,
+      "valid_unweighted_n": 2319,
+      "group_unweighted_n": 5000
+    }
+  }
+}

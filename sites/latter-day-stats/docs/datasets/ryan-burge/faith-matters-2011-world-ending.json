@@ -1,0 +1,70 @@
+{
+  "source": "Faith Matters Survey 2011 (Robert D. Putnam and David E. Campbell), via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "method": "Population: 2011 respondents with a coded religious tradition (RELTRA11), weighted by WGTTOT11. Share saying yes to 'Do you believe the world is soon coming to an end, or not?', Q12-1. Don't know/refused excluded from the base. Latter-day Saint = RELTRA11 6 (Mormon), 49 unweighted respondents in the 2011 sample.",
+  "total_unweighted_n": 2322,
+  "group_order": [
+    "Latter-day Saint",
+    "Evangelical Protestant",
+    "Historically Black Protestant",
+    "Mainline Protestant",
+    "Catholic",
+    "Jewish",
+    "Religiously unaffiliated",
+    "Other non-Christian",
+    "Other Protestant/Christian",
+    "All U.S. adults"
+  ],
+  "world_ending_soon": {
+    "Latter-day Saint": {
+      "pct": 41.63,
+      "valid_unweighted_n": 48,
+      "group_unweighted_n": 49
+    },
+    "Evangelical Protestant": {
+      "pct": 49.4,
+      "valid_unweighted_n": 488,
+      "group_unweighted_n": 533
+    },
+    "Historically Black Protestant": {
+      "pct": 52.63,
+      "valid_unweighted_n": 156,
+      "group_unweighted_n": 167
+    },
+    "Mainline Protestant": {
+      "pct": 23.29,
+      "valid_unweighted_n": 349,
+      "group_unweighted_n": 371
+    },
+    "Catholic": {
+      "pct": 18.0,
+      "valid_unweighted_n": 443,
+      "group_unweighted_n": 462
+    },
+    "Jewish": {
+      "pct": 4.1,
+      "valid_unweighted_n": 60,
+      "group_unweighted_n": 60
+    },
+    "Religiously unaffiliated": {
+      "pct": 16.52,
+      "valid_unweighted_n": 400,
+      "group_unweighted_n": 416
+    },
+    "Other non-Christian": {
+      "pct": 16.51,
+      "valid_unweighted_n": 77,
+      "group_unweighted_n": 81
+    },
+    "Other Protestant/Christian": {
+      "pct": 46.04,
+      "valid_unweighted_n": 158,
+      "group_unweighted_n": 166
+    },
+    "All U.S. adults": {
+      "pct": 30.8,
+      "valid_unweighted_n": 2179,
+      "group_unweighted_n": 2305
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "min_enrollment": 1000,
+  "n": 12,
+  "n_3yr": 12,
+  "median_rate_2024": 1.1691,
+  "median_rate_3yr": 1.4613,
+  "pooled_rate_per_10k": 7.6796,
+  "byu": {
+    "rank_raw": 6,
+    "rank_rate": 7,
+    "rank_3yr": 8,
+    "rate_2024": 1.115,
+    "rate_3yr": 1.0221
+  },
+  "rows": [
+    {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "rape22": 24.0,
+      "rape23": 172.0,
+      "rape24": 140,
+      "avg_rapes": 112.0,
+      "enrollment": 36894.0,
+      "rate3": 30.3572,
+      "rank3": 1
+    },
+    {
+      "unitid": "230597",
+      "name": "Snow College",
+      "state": "UT",
+      "rape22": 3.0,
+      "rape23": 1.0,
+      "rape24": 5,
+      "avg_rapes": 3.0,
+      "enrollment": 5577.0,
+      "rate3": 5.3792,
+      "rank3": 2
+    },
+    {
+      "unitid": "230171",
+      "name": "Utah Tech University",
+      "state": "UT",
+      "rape22": 6.0,
+      "rape23": 5.0,
+      "rape24": 6,
+      "avg_rapes": 5.6667,
+      "enrollment": 13167.0,
+      "rate3": 4.3037,
+      "rank3": 3
+    },
+    {
+      "unitid": "230728",
+      "name": "Utah State University",
+      "state": "UT",
+      "rape22": 9.0,
+      "rape23": 3.0,
+      "rape24": 6,
+      "avg_rapes": 6.0,
+      "enrollment": 28904.0,
+      "rate3": 2.0758,
+      "rank3": 4
+    },
+    {
+      "unitid": "230603",
+      "name": "Southern Utah University",
+      "state": "UT",
+      "rape22": 4.0,
+      "rape23": 3.0,
+      "rape24": 1,
+      "avg_rapes": 2.6667,
+      "enrollment": 15444.0,
+      "rate3": 1.7267,
+      "rank3": 5
+    },
+    {
+      "unitid": "230737",
+      "name": "Utah Valley University",
+      "state": "UT",
+      "rape22": 9.0,
+      "rape23": 3.0,
+      "rape24": 9,
+      "avg_rapes": 7.0,
+      "enrollment": 46807.0,
+      "rate3": 1.4955,
+      "rank3": 6
+    },
+    {
+      "unitid": "230782",
+      "name": "Weber State University",
+      "state": "UT",
+      "rape22": 2.0,
+      "rape23": 8.0,
+      "rape24": 4,
+      "avg_rapes": 4.6667,
+      "enrollment": 32701.0,
+      "rate3": 1.4271,
+      "rank3": 7
+    },
+    {
+      "unitid": "230038",
+      "name": "Brigham Young University",
+      "state": "UT",
+      "rape22": 6.0,
+      "rape23": 1.0,
+      "rape24": 4,
+      "avg_rapes": 3.6667,
+      "enrollment": 35873.0,
+      "rate3": 1.0221,
+      "rank3": 8
+    },
+    {
+      "unitid": "230418",
+      "name": "Ensign College",
+      "state": "UT",
+      "rape22": 0.0,
+      "rape23": 0.0,
+      "rape24": 0,
+      "avg_rapes": 0.0,
+      "enrollment": 7594.0,
+      "rate3": 0.0,
+      "rank3": 9
+    },
+    {
+      "unitid": "230807",
+      "name": "Westminster University",
+      "state": "UT",
+      "rape22": 0.0,
+      "rape23": 0.0,
+      "rape24": 0,
+      "avg_rapes": 0.0,
+      "enrollment": 1155.0,
+      "rate3": 0.0,
+      "rank3": 9
+    },
+    {
+      "unitid": "447263",
+      "name": "Joyce University of Nursing and Health Sciences",
+      "state": "UT",
+      "rape22": 0.0,
+      "rape23": 0.0,
+      "rape24": 0,
+      "avg_rapes": 0.0,
+      "enrollment": 2073.0,
+      "rate3": 0.0,
+      "rank3": 9
+    },
+    {
+      "unitid": "475495",
+      "name": "Rocky Mountain University of Health Professions",
+      "state": "UT",
+      "rape22": 0.0,
+      "rape23": 0.0,
+      "rape24": 0,
+      "avg_rapes": 0.0,
+      "enrollment": 1686.0,
+      "rate3": 0.0,
+      "rank3": 9
+    }
+  ]
+}

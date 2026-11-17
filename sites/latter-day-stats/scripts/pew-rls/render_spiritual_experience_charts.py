@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Renders the three "spiritual experience" PNGs for the Pew RLS Data
+Explorer page: thinking about life's meaning/purpose weekly+, feeling
+spiritual peace weekly+, and feeling the presence of something beyond this
+world weekly+ - all Christian only.
+
+Reads only docs/datasets/pew-rls-2023-24/spiritual-experience.json
+(produced by scripts/pew-rls/spiritual_experience.py) - no number here is
+hand-typed. Same canvas/fonts/per-group identity color magnitude-bar shape
+as render_childhood_formation_charts.py; see STYLE.md in this folder.
+
+Usage:
+    python render_spiritual_experience_charts.py \
+        --meaning-out ../../public/data-explorer/pew-religious-landscape-study/spiritual-meaning.png \
+        --peace-out ../../public/data-explorer/pew-religious-landscape-study/spiritual-peace.png \
+        --presence-out ../../public/data-explorer/pew-religious-landscape-study/spiritual-presence.png
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import textwrap
+from pathlib import Path
+
+import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from chart_style import MIN, color_for_group, draw_caption_bottom, sort_groups  # noqa: E402
+
+INK = "#1A1A1A"
+PAPER = "#FFFFFF"
+MUTED = "#6E6A63"
+
+FIG_W_IN, FIG_H_IN, DPI = 9, 11.25, 120
+
+GROUP_ORDER = [
+    "Latter-day Saint", "Catholic", "Protestant", "Orthodox Christian",
+    "Jehovah's Witness",
+]
+
+DEFAULT_DATA_JSON = (
+    Path(__file__).parent / ".." / ".." / "docs" / "datasets" / "pew-rls-2023-24" / "spiritual-experience.json"
+).resolve()
+DEFAULT_FONTS_DIR = (
+    Path(__file__).parent / ".." / "state-of-theology-graphics" / "fonts"
+).resolve()
+
+
+def load_fonts(fonts_dir: Path) -> dict[str, fm.FontProperties]:
+    files = {
+        "regular": "RobotoCondensed-Regular.ttf",
+        "bold": "RobotoCondensed-Bold.ttf",
+        "title": "RobotoSlab-Bold.ttf",
+    }
+    props = {}
+    for key, filename in files.items():
+        path = fonts_dir / filename
+        if not path.exists():
+            raise SystemExit(f"missing font file: {path}")
+        fm.fontManager.addfont(str(path))
+        props[key] = fm.FontProperties(fname=str(path))
+    return props
+
+
+def draw_title(fig, fonts, title: str, subtitle: str, width: int = 42,
+                subtitle_fontsize: float = 16) -> float:
+    """Dynamic wrap + spacing; returns the y-fraction where the subtitle
+    block actually ends, so the caller can size its axes to the real
+    available band instead of a fixed guess - see STYLE.md's "Vertical
+    layout" section."""
+    title_fontsize = 32
+    title_lines = textwrap.wrap(title, width=width)
+    line_spacing = title_fontsize / 650
+    title_top = 0.965
+    for i, line in enumerate(title_lines):
+        fig.text(
+            0.065, title_top - i * line_spacing, line,
+            fontproperties=fonts["title"], fontsize=title_fontsize, color=INK, ha="left", va="top",
+        )
+    subtitle_y = title_top - len(title_lines) * line_spacing - 0.015
+    fig.text(
+        0.065, subtitle_y, subtitle,
+        fontproperties=fonts["regular"], fontsize=subtitle_fontsize, color=INK, ha="left", va="top",
+    )
+    subtitle_lines = subtitle.count("\n") + 1
+    subtitle_line_height = subtitle_fontsize * 1.2 / 72 / FIG_H_IN
+    return subtitle_y - subtitle_lines * subtitle_line_height
+
+
+def render_magnitude_bar(
+    results: dict, title: str, subtitle: str, total_n: int,
+    out_path: Path, fonts: dict[str, fm.FontProperties],
+    title_width: int = 42,
+) -> None:
+    """title_width: override on a chart-by-chart basis when a title's
+    actual rendered width overflows the canvas at the default - see
+    STYLE.md's "Title wrap width" note."""
+    fig = plt.figure(figsize=(FIG_W_IN, FIG_H_IN), dpi=DPI)
+    fig.patch.set_facecolor(PAPER)
+
+    # Vertical centering: size the axes to the real gap between the
+    # subtitle and the caption, not a fixed guess - see STYLE.md. Caption is
+    # drawn first (bottom-anchored) so its real top edge is known.
+    subtitle_bottom = draw_title(fig, fonts, title, subtitle, width=title_width)
+    caption_top = draw_caption_bottom(
+        fig, fonts, [], handle="@ithinkisam | data: Pew 2023-24 RLS",
+        fontsize=16, color=INK,
+    )
+    ax_top = subtitle_bottom - 0.035
+    ax_bottom = caption_top + 0.035
+
+    AXES_LEFT, AXES_WIDTH = 0.34, 0.60
+    ax = fig.add_axes([AXES_LEFT, ax_bottom, AXES_WIDTH, ax_top - ax_bottom])
+    ax.set_facecolor(PAPER)
+    ax.set_xticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.tick_params(axis="y", length=0, pad=10)
+
+    sorted_order = sort_groups(GROUP_ORDER, lambda g: results[g]["pct"])
+    rows = sorted_order[::-1]
+    values = [results[g]["pct"] for g in rows]
+    colors = [color_for_group(g) for g in rows]
+
+    ax.barh(rows, values, height=0.6, color=colors, zorder=3)
+    ax.set_xlim(0, max(values) * 1.2)
+    ax.margins(y=0.11)
+
+    for tick_label, g in zip(ax.get_yticklabels(), rows):
+        tick_label.set_fontproperties(fonts["bold"])
+        tick_label.set_fontsize(MIN.LEGEND)
+        tick_label.set_color(INK)
+
+    for g, v, c in zip(rows, values, colors):
+        ax.text(v + max(values) * 0.02, g, f"{v:.0f}%", va="center", ha="left",
+                 color=c, fontproperties=fonts["bold"], fontsize=15, zorder=4)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=PAPER, dpi=DPI)
+    plt.close(fig)
+    print(f"wrote {out_path} ({FIG_W_IN * DPI}x{int(FIG_H_IN * DPI)}px)")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--meaning-out", type=Path, required=True)
+    ap.add_argument("--peace-out", type=Path, required=True)
+    ap.add_argument("--presence-out", type=Path, required=True)
+    ap.add_argument("--data", type=Path, default=DEFAULT_DATA_JSON)
+    ap.add_argument("--fonts-dir", type=Path, default=DEFAULT_FONTS_DIR)
+    args = ap.parse_args()
+
+    with open(args.data, encoding="utf-8") as f:
+        data = json.load(f)
+    fonts = load_fonts(args.fonts_dir)
+    total_n = data["total_unweighted_n"]
+
+    render_magnitude_bar(
+        data["meaning_purpose_weekly_plus"],
+        title="Think about life's meaning and purpose, weekly+",
+        subtitle="Share who think about the meaning and purpose of life\nat least once a week.",
+        total_n=total_n, out_path=args.meaning_out, fonts=fonts,
+        # Default 42-char wrap overflows this title's canvas width at 32pt
+        # (wide letterforms) - see render_magnitude_bar's docstring.
+        title_width=38,
+    )
+    render_magnitude_bar(
+        data["spiritual_peace_weekly_plus"],
+        title="Feel spiritual peace and well-being, weekly+",
+        subtitle="Share who feel a deep sense of spiritual peace and\nwell-being at least once a week.",
+        total_n=total_n, out_path=args.peace_out, fonts=fonts,
+    )
+    render_magnitude_bar(
+        data["presence_beyond_weekly_plus"],
+        title="Feel a presence beyond this world, weekly+",
+        subtitle="Share who feel the presence of something from beyond\nthis world at least once a week.",
+        total_n=total_n, out_path=args.presence_out, fonts=fonts,
+        # Same title-overflow fix as meaning_out above.
+        title_width=38,
+    )
+
+
+if __name__ == "__main__":
+    main()

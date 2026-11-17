@@ -1,0 +1,58 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "qn46 asked all respondents to pick which of five options is NOT one of the Ten Commandments; the correct answer is \"do unto others as you would have them do unto you\" (the Golden Rule, from the Sermon on the Mount, not the Ten Commandments). Don't know/refused excluded from each row's denominator. Broken out by the respondent's own present religion (qn20). Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "group_order": [
+    "Mormon",
+    "Agnostic",
+    "Jewish",
+    "Catholic",
+    "Protestant",
+    "Atheist",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "correct_pct": {
+    "Protestant": {
+      "pct": 59.99,
+      "valid_unweighted_n": 1362,
+      "group_unweighted_n": 1429
+    },
+    "Catholic": {
+      "pct": 60.13,
+      "valid_unweighted_n": 652,
+      "group_unweighted_n": 679
+    },
+    "Mormon": {
+      "pct": 85.35,
+      "valid_unweighted_n": 207,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 64.01,
+      "valid_unweighted_n": 208,
+      "group_unweighted_n": 212
+    },
+    "Atheist": {
+      "pct": 54.86,
+      "valid_unweighted_n": 69,
+      "group_unweighted_n": 74
+    },
+    "Agnostic": {
+      "pct": 74.15,
+      "valid_unweighted_n": 130,
+      "group_unweighted_n": 138
+    },
+    "Unaffiliated": {
+      "pct": 49.15,
+      "valid_unweighted_n": 310,
+      "group_unweighted_n": 334
+    },
+    "All U.S. adults": {
+      "pct": 58.62,
+      "valid_unweighted_n": 3244,
+      "group_unweighted_n": 3412
+    }
+  }
+}

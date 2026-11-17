@@ -1,0 +1,104 @@
+{
+  "source": "Democracy Fund Voter Study Group / YouGov, VOTER Survey Panel, via Ryan Burge (github.com/ryanburge).",
+  "via": "Ryan Burge",
+  "excluded_too_thin": {
+    "4": "Orthodox",
+    "6": "Muslim",
+    "8": "Hindu"
+  },
+  "group_order": [
+    "Mormon",
+    "Protestant",
+    "Catholic",
+    "Jewish",
+    "Buddhist",
+    "Atheist",
+    "Agnostic",
+    "Nothing in particular",
+    "Something else"
+  ],
+  "wave_note": "2017 wave (religpew_2017)",
+  "note": "First two rows: share holding the pro-immigrant view. Last four rows: mean 0-100 (rescaled from a 1-10 slider, 100=most positive view of immigrants' effect). Not a single scale, but every row is independently a 0-100 share of 'positive' sentiment.",
+  "target_order": [
+    "Say immigrants mostly make a contribution",
+    "Favor a path to citizenship",
+    "Improve the economy",
+    "Reduce crime",
+    "Enrich cultural life",
+    "Improve national security"
+  ],
+  "matrix": {
+    "Mormon": {
+      "Say immigrants mostly make a contribution": 49.4,
+      "Favor a path to citizenship": 55.7,
+      "Improve the economy": 55.6,
+      "Reduce crime": 36.8,
+      "Enrich cultural life": 57.1,
+      "Improve national security": 39.3
+    },
+    "Protestant": {
+      "Say immigrants mostly make a contribution": 52.1,
+      "Favor a path to citizenship": 54.9,
+      "Improve the economy": 49.6,
+      "Reduce crime": 37.5,
+      "Enrich cultural life": 54.6,
+      "Improve national security": 40.0
+    },
+    "Catholic": {
+      "Say immigrants mostly make a contribution": 54.5,
+      "Favor a path to citizenship": 57.7,
+      "Improve the economy": 52.7,
+      "Reduce crime": 38.4,
+      "Enrich cultural life": 58.4,
+      "Improve national security": 43.4
+    },
+    "Jewish": {
+      "Say immigrants mostly make a contribution": 72.6,
+      "Favor a path to citizenship": 70.8,
+      "Improve the economy": 67.3,
+      "Reduce crime": 49.6,
+      "Enrich cultural life": 73.6,
+      "Improve national security": 53.3
+    },
+    "Buddhist": {
+      "Say immigrants mostly make a contribution": 78.0,
+      "Favor a path to citizenship": 86.4,
+      "Improve the economy": 75.4,
+      "Reduce crime": 54.5,
+      "Enrich cultural life": 80.2,
+      "Improve national security": 60.3
+    },
+    "Atheist": {
+      "Say immigrants mostly make a contribution": 84.0,
+      "Favor a path to citizenship": 84.4,
+      "Improve the economy": 76.4,
+      "Reduce crime": 56.8,
+      "Enrich cultural life": 80.3,
+      "Improve national security": 60.9
+    },
+    "Agnostic": {
+      "Say immigrants mostly make a contribution": 79.1,
+      "Favor a path to citizenship": 76.9,
+      "Improve the economy": 68.9,
+      "Reduce crime": 52.3,
+      "Enrich cultural life": 75.2,
+      "Improve national security": 57.5
+    },
+    "Nothing in particular": {
+      "Say immigrants mostly make a contribution": 60.9,
+      "Favor a path to citizenship": 63.4,
+      "Improve the economy": 55.0,
+      "Reduce crime": 42.8,
+      "Enrich cultural life": 61.1,
+      "Improve national security": 45.7
+    },
+    "Something else": {
+      "Say immigrants mostly make a contribution": 61.9,
+      "Favor a path to citizenship": 63.9,
+      "Improve the economy": 58.7,
+      "Reduce crime": 42.5,
+      "Enrich cultural life": 62.0,
+      "Improve national security": 46.2
+    }
+  }
+}

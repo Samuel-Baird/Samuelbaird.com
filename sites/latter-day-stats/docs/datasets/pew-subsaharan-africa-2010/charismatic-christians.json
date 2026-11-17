@@ -1,0 +1,94 @@
+{
+  "source": "Pew Research Center's Forum on Religion & Public Life. \"Tolerance and Tension: Islam and Christianity in Sub-Saharan Africa,\" April 15, 2010. Fielded December 2008-April 2009, face-to-face, in 19 sub-Saharan African countries.",
+  "method": "Population is respondents who identify as Christian (Q32), by country (COUNTRY). Share also describing themselves as a \"Charismatic Christian\" (Q36D: \"Would you describe yourself as a Charismatic Christian, or not?\"); don't know/refused excluded from each row's denominator. Countries under 30 valid respondents omitted (Djibouti, n=24). Of the 18 remaining countries only the top 12 by value are shown; omitted for space: Mozambique, Kenya, Chad, Cameroon, Liberia, Tanzania. Weighted by the dataset's own WEIGHT variable.",
+  "total_weighted_n": 25031.16794193698,
+  "total_unweighted_n": 25091,
+  "countries_omitted_low_n": [
+    "Djibouti"
+  ],
+  "countries_omitted_low_rank": [
+    "Mozambique",
+    "Kenya",
+    "Chad",
+    "Cameroon",
+    "Liberia",
+    "Tanzania"
+  ],
+  "all_christians_pct": 29.48,
+  "group_order": [
+    "Guinea Bissau",
+    "Ethiopia",
+    "Nigeria",
+    "Democratic Republic of the Congo",
+    "Senegal",
+    "Ghana",
+    "Zambia",
+    "Rwanda",
+    "Botswana",
+    "Mali",
+    "South Africa",
+    "Uganda"
+  ],
+  "charismatic_christian_share": {
+    "Ethiopia": {
+      "pct": 48.4,
+      "valid_unweighted_n": 971,
+      "group_unweighted_n": 1014
+    },
+    "South Africa": {
+      "pct": 25.06,
+      "valid_unweighted_n": 1178,
+      "group_unweighted_n": 1307
+    },
+    "Rwanda": {
+      "pct": 34.22,
+      "valid_unweighted_n": 847,
+      "group_unweighted_n": 925
+    },
+    "Guinea Bissau": {
+      "pct": 59.22,
+      "valid_unweighted_n": 580,
+      "group_unweighted_n": 619
+    },
+    "Uganda": {
+      "pct": 22.71,
+      "valid_unweighted_n": 656,
+      "group_unweighted_n": 711
+    },
+    "Zambia": {
+      "pct": 34.97,
+      "valid_unweighted_n": 955,
+      "group_unweighted_n": 976
+    },
+    "Democratic Republic of the Congo": {
+      "pct": 43.51,
+      "valid_unweighted_n": 974,
+      "group_unweighted_n": 1193
+    },
+    "Botswana": {
+      "pct": 31.44,
+      "valid_unweighted_n": 788,
+      "group_unweighted_n": 867
+    },
+    "Mali": {
+      "pct": 27.39,
+      "valid_unweighted_n": 61,
+      "group_unweighted_n": 81
+    },
+    "Nigeria": {
+      "pct": 45.91,
+      "valid_unweighted_n": 644,
+      "group_unweighted_n": 678
+    },
+    "Ghana": {
+      "pct": 35.81,
+      "valid_unweighted_n": 1088,
+      "group_unweighted_n": 1148
+    },
+    "Senegal": {
+      "pct": 42.23,
+      "valid_unweighted_n": 90,
+      "group_unweighted_n": 103
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "source": "Pew Research Center. 2014. \"Religion in Latin America: Widespread Change in a Historically Catholic Region.\"",
+  "method": "Population is respondent's own current religion (QCURRELrec), pooled across all 18 Latin American/Caribbean countries and Puerto Rico. Top-two-box (strongly favor + favor) on Q15 (\"allowing gays and lesbians to marry legally\"); don't know/refused excluded from each row's denominator. Weighted by the dataset's own combined base/post-stratification WEIGHT.",
+  "total_weighted_n": 30326.60869018281,
+  "total_unweighted_n": 30326,
+  "group_order": [
+    "Unaffiliated",
+    "Catholic",
+    "Other religion",
+    "Protestant/Evangelical",
+    "All respondents"
+  ],
+  "favor_samesex_marriage": {
+    "Catholic": {
+      "pct": 34.95,
+      "valid_unweighted_n": 18048,
+      "group_unweighted_n": 19799
+    },
+    "Protestant/Evangelical": {
+      "pct": 16.13,
+      "valid_unweighted_n": 6363,
+      "group_unweighted_n": 6744
+    },
+    "Other religion": {
+      "pct": 28.67,
+      "valid_unweighted_n": 877,
+      "group_unweighted_n": 944
+    },
+    "Unaffiliated": {
+      "pct": 51.29,
+      "valid_unweighted_n": 2564,
+      "group_unweighted_n": 2793
+    },
+    "All respondents": {
+      "pct": 32.07,
+      "valid_unweighted_n": 27897,
+      "group_unweighted_n": 30326
+    }
+  }
+}

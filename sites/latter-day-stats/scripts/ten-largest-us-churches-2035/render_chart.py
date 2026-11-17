@@ -1,0 +1,76 @@
+"""
+Renders the ten-largest-us-churches-2035 dataset's one chart: a log-scale
+dumbbell comparing each denomination's last-reported membership against its
+2035 straight-line projection. See scripts/flagship-charts/common.py's
+render_dumbbell_log docstring for the chart shape and why log scale is
+required here.
+
+Usage:
+    python scripts/ten-largest-us-churches-2035/build_data.py
+    python scripts/ten-largest-us-churches-2035/render_chart.py \
+        --out public/data-explorer/ten-largest-us-churches-2035/projected-2035.png
+"""
+import argparse
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "flagship-charts"))
+from common import load_fonts, render_dumbbell_log  # noqa: E402
+
+DATA_PATH = Path(__file__).resolve().parent.parent.parent / "docs/datasets/ten-largest-us-churches-2035/denominations.json"
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", required=True, type=Path)
+    args = parser.parse_args()
+
+    data = json.loads(DATA_PATH.read_text())
+    denominations = data["denominations"]
+    order = data["denomination_order"]
+
+    # Display order: largest current (last-reported) membership first, so
+    # the chart reads "biggest church at top" - the same "largest churches"
+    # framing the dataset is named for - rather than sorted by projected
+    # change or by the JSON's own build order.
+    rows = sorted(order, key=lambda s: denominations[s]["last_reported_members"], reverse=True)
+
+    # Short labels for the chart's own y-axis (long formal names would clip
+    # against the canvas edge or crowd the "Presbyterian Church (USA)"/
+    # "...in America" pair together) - the JSON's own `name` field keeps the
+    # full formal name for the dataset page and alt text.
+    CHART_LABELS = {
+        "catholic-church": "Catholic Church",
+        "united-methodist-church": "United Methodist Church",
+        "lds-church": "LDS Church",
+        "elca": "ELCA",
+        "lcms": "LCMS",
+        "orthodox-christian": "Orthodox Christian (est.)",
+        "episcopal-church": "Episcopal Church",
+        "pcusa": "PCUSA",
+        "cogic": "Church of God in Christ",
+        "pca": "PCA",
+    }
+    row_labels = {s: CHART_LABELS[s] for s in order}
+    start_values = {s: denominations[s]["last_reported_members"] for s in order}
+    end_values = {s: denominations[s]["projected_2035_members"] for s in order}
+    low_confidence_rows = {s for s in order if denominations[s]["confidence"] == "low"}
+
+    render_dumbbell_log(
+        rows=rows,
+        row_labels=row_labels,
+        start_values=start_values,
+        end_values=end_values,
+        low_confidence_rows=low_confidence_rows,
+        title="Ten Largest U.S.-Rooted Churches, Projected to 2035",
+        subtitle="Last reported membership vs. a straight-line trend extended to 2035",
+        caption_paragraphs=[],
+        handle="@ithinkisam | data: Compiled denominational reporting",
+        out_path=args.out,
+        fonts=load_fonts(),
+    )
+
+
+if __name__ == "__main__":
+    main()

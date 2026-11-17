@@ -1,0 +1,82 @@
+{
+  "source": "Pew Research Center. 2008. \"U.S. Religious Landscape Survey.\"",
+  "method": "Population is current religious tradition (RELTRAD), continental-US main survey only. q40a asked which statement comes closer to the respondent's views: 'my religion is the one, true faith leading to eternal life' or 'many religions can lead to eternal life'; shown here is the share choosing the first (volunteered neither/both kept in the base). Don't know/refused are excluded from each row's denominator. Groups with fewer than 30 valid respondents are omitted. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 70511.92486328205,
+  "total_unweighted_n": 29093,
+  "group_order": [
+    "Jehovah's Witness",
+    "Mormon",
+    "Evangelical Protestant Churches",
+    "Muslim",
+    "Historically Black Protestant Churches",
+    "Orthodox",
+    "Catholic",
+    "Mainline Protestant Churches",
+    "Jewish",
+    "Hindu",
+    "Buddhist",
+    "All U.S. adults"
+  ],
+  "one_true_faith": {
+    "Evangelical Protestant Churches": {
+      "pct": 37.88,
+      "valid_unweighted_n": 9034,
+      "group_unweighted_n": 9472
+    },
+    "Mainline Protestant Churches": {
+      "pct": 12.06,
+      "valid_unweighted_n": 7200,
+      "group_unweighted_n": 7470
+    },
+    "Historically Black Protestant Churches": {
+      "pct": 35.35,
+      "valid_unweighted_n": 1918,
+      "group_unweighted_n": 1995
+    },
+    "Catholic": {
+      "pct": 16.24,
+      "valid_unweighted_n": 7829,
+      "group_unweighted_n": 8054
+    },
+    "Mormon": {
+      "pct": 57.94,
+      "valid_unweighted_n": 572,
+      "group_unweighted_n": 581
+    },
+    "Orthodox": {
+      "pct": 20.8,
+      "valid_unweighted_n": 345,
+      "group_unweighted_n": 363
+    },
+    "Jehovah's Witness": {
+      "pct": 83.11,
+      "valid_unweighted_n": 209,
+      "group_unweighted_n": 215
+    },
+    "Jewish": {
+      "pct": 5.46,
+      "valid_unweighted_n": 640,
+      "group_unweighted_n": 682
+    },
+    "Muslim": {
+      "pct": 35.78,
+      "valid_unweighted_n": 104,
+      "group_unweighted_n": 116
+    },
+    "Buddhist": {
+      "pct": 4.84,
+      "valid_unweighted_n": 395,
+      "group_unweighted_n": 411
+    },
+    "Hindu": {
+      "pct": 5.26,
+      "valid_unweighted_n": 245,
+      "group_unweighted_n": 257
+    },
+    "All U.S. adults": {
+      "pct": 24.66,
+      "valid_unweighted_n": 29093,
+      "group_unweighted_n": 35556
+    }
+  }
+}

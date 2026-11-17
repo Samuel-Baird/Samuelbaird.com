@@ -1,0 +1,25 @@
+{
+  "source": "Pew Research Center. 2010. \"U.S. Religious Knowledge Survey.\"",
+  "method": "Population is all U.S. adults. Each item asks whether the U.S. Constitution, per Supreme Court rulings, permits a public school teacher to do the named thing; don't know/refused excluded from each item's own base. Weighted by the dataset's own `weight` variable.",
+  "total_weighted_n": 3412.80075483,
+  "total_unweighted_n": 3412,
+  "item_order": [
+    "Lead a class in prayer",
+    "Teach a class comparing world religions",
+    "Read from the Bible as an example of literature"
+  ],
+  "correct_pct": {
+    "Lead a class in prayer": {
+      "pct": 93.6,
+      "valid_unweighted_n": 3264
+    },
+    "Teach a class comparing world religions": {
+      "pct": 41.55,
+      "valid_unweighted_n": 2926
+    },
+    "Read from the Bible as an example of literature": {
+      "pct": 25.37,
+      "valid_unweighted_n": 3014
+    }
+  }
+}

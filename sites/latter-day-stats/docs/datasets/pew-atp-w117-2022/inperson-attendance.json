@@ -1,0 +1,64 @@
+{
+  "source": "Pew Research Center. American Trends Panel Wave 117, fielded November 16-27, 2022.",
+  "method": "Population is respondent's religious tradition (F_RELTRAD). Share answering \"yes\" to ATTENDMONTH_W117 (\"In the last month, did you attend religious services in person at a church, synagogue, mosque or other house of worship?\"); refused excluded from each row's denominator. Groups under 30 valid respondents omitted. Weighted by the dataset's own WEIGHT_W117 variable.",
+  "total_weighted_n": 11377.000185592038,
+  "total_unweighted_n": 11377,
+  "group_order": [
+    "Mormon",
+    "Evangelical Protestant",
+    "Orthodox Christian",
+    "Historically Black Protestant",
+    "Jewish",
+    "Catholic",
+    "Mainline Protestant",
+    "Unaffiliated",
+    "All U.S. adults"
+  ],
+  "attended_in_person": {
+    "Evangelical Protestant": {
+      "pct": 49.7,
+      "valid_unweighted_n": 2472,
+      "group_unweighted_n": 2479
+    },
+    "Mainline Protestant": {
+      "pct": 29.27,
+      "valid_unweighted_n": 1528,
+      "group_unweighted_n": 1540
+    },
+    "Historically Black Protestant": {
+      "pct": 39.46,
+      "valid_unweighted_n": 796,
+      "group_unweighted_n": 797
+    },
+    "Catholic": {
+      "pct": 33.75,
+      "valid_unweighted_n": 2203,
+      "group_unweighted_n": 2213
+    },
+    "Mormon": {
+      "pct": 80.25,
+      "valid_unweighted_n": 198,
+      "group_unweighted_n": 199
+    },
+    "Orthodox Christian": {
+      "pct": 39.98,
+      "valid_unweighted_n": 51,
+      "group_unweighted_n": 51
+    },
+    "Jewish": {
+      "pct": 38.08,
+      "valid_unweighted_n": 235,
+      "group_unweighted_n": 235
+    },
+    "Unaffiliated": {
+      "pct": 4.87,
+      "valid_unweighted_n": 3317,
+      "group_unweighted_n": 3330
+    },
+    "All U.S. adults": {
+      "pct": 28.55,
+      "valid_unweighted_n": 11327,
+      "group_unweighted_n": 11377
+    }
+  }
+}
