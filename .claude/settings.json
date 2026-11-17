@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone --depth 1 https://github.com/Samuel-Baird/samuelbaird.com *)",
+      "Bash(git -C /home/user/samuelbaird.com *)"
+    ]
+  }
+}
