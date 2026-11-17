@@ -1,0 +1,78 @@
+{
+ "slug": "gluck",
+ "offset": 27,
+ "chapters": [
+  {
+   "ch": 1,
+   "title": "The Psychology of Learning and Memory",
+   "printed": 1,
+   "pdf": 28
+  },
+  {
+   "ch": 2,
+   "title": "The Neuroscience of Learning and Memory",
+   "printed": 35,
+   "pdf": 62
+  },
+  {
+   "ch": 3,
+   "title": "Habituation, Sensitization, and Familiarization",
+   "printed": 71,
+   "pdf": 98
+  },
+  {
+   "ch": 4,
+   "title": "Classical Conditioning",
+   "printed": 115,
+   "pdf": 142
+  },
+  {
+   "ch": 5,
+   "title": "Operant Conditioning",
+   "printed": 167,
+   "pdf": 194
+  },
+  {
+   "ch": 6,
+   "title": "Generalization, Discrimination Learning, and Concept Formation",
+   "printed": 213,
+   "pdf": 240
+  },
+  {
+   "ch": 7,
+   "title": "Episodic and Semantic Memory",
+   "printed": 267,
+   "pdf": 294
+  },
+  {
+   "ch": 8,
+   "title": "Skill Memory",
+   "printed": 311,
+   "pdf": 338
+  },
+  {
+   "ch": 9,
+   "title": "Working Memory and Cognitive Control",
+   "printed": 351,
+   "pdf": 378
+  },
+  {
+   "ch": 10,
+   "title": "Emotional Influences on Learning and Memory",
+   "printed": 395,
+   "pdf": 422
+  },
+  {
+   "ch": 11,
+   "title": "Social Learning and Memory",
+   "printed": 439,
+   "pdf": 466
+  },
+  {
+   "ch": 12,
+   "title": "Development and Aging",
+   "printed": 473,
+   "pdf": 500
+  }
+ ]
+}

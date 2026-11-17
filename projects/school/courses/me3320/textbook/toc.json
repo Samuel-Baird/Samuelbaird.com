@@ -1,0 +1,1489 @@
+{
+ "offset": 24,
+ "chapters": [
+  {
+   "ch": 1,
+   "title": "Introduction",
+   "pdf": 25,
+   "printed": 1,
+   "sections": [
+    {
+     "sec": "1.1",
+     "title": "What and How?",
+     "pdf": 26,
+     "printed": 2
+    },
+    {
+     "sec": "1.2",
+     "title": "Physical Origins and Rate Equations",
+     "pdf": 27,
+     "printed": 3
+    },
+    {
+     "sec": "1.3",
+     "title": "Relationship to Thermodynamics",
+     "pdf": 36,
+     "printed": 12
+    },
+    {
+     "sec": "1.4",
+     "title": "Units and Dimensions",
+     "pdf": 57,
+     "printed": 33
+    },
+    {
+     "sec": "1.5",
+     "title": "Analysis of Heat Transfer Problems: Methodology",
+     "pdf": 59,
+     "printed": 35
+    },
+    {
+     "sec": "1.6",
+     "title": "Relevance of Heat Transfer",
+     "pdf": 62,
+     "printed": 38
+    },
+    {
+     "sec": "1.7",
+     "title": "Summary",
+     "pdf": 66,
+     "printed": 42
+    }
+   ],
+   "problems_pdf": 69
+  },
+  {
+   "ch": 2,
+   "title": "Introduction to Conduction",
+   "pdf": 83,
+   "printed": 59,
+   "sections": [
+    {
+     "sec": "2.1",
+     "title": "The Conduction Rate Equation",
+     "pdf": 84,
+     "printed": 60
+    },
+    {
+     "sec": "2.2",
+     "title": "The Thermal Properties of Matter",
+     "pdf": 86,
+     "printed": 62
+    },
+    {
+     "sec": "2.3",
+     "title": "The Heat Diffusion Equation",
+     "pdf": 98,
+     "printed": 74
+    },
+    {
+     "sec": "2.4",
+     "title": "Boundary and Initial Conditions",
+     "pdf": 106,
+     "printed": 82
+    },
+    {
+     "sec": "2.5",
+     "title": "Summary",
+     "pdf": 110,
+     "printed": 86
+    }
+   ],
+   "problems_pdf": 111
+  },
+  {
+   "ch": 3,
+   "title": "One-Dimensional, Steady-State Conduction",
+   "pdf": 123,
+   "printed": 99,
+   "sections": [
+    {
+     "sec": "3.1",
+     "title": "The Plane Wall",
+     "pdf": 124,
+     "printed": 100
+    },
+    {
+     "sec": "3.2",
+     "title": "An Alternative Conduction Analysis",
+     "pdf": 145,
+     "printed": 121
+    },
+    {
+     "sec": "3.3",
+     "title": "Radial Systems",
+     "pdf": 149,
+     "printed": 125
+    },
+    {
+     "sec": "3.4",
+     "title": "Summary of One-Dimensional Conduction Results",
+     "pdf": 155,
+     "printed": 131
+    },
+    {
+     "sec": "3.5",
+     "title": "Conduction with Thermal Energy Generation",
+     "pdf": 155,
+     "printed": 131
+    },
+    {
+     "sec": "3.6",
+     "title": "Heat Transfer from Extended Surfaces",
+     "pdf": 167,
+     "printed": 143
+    },
+    {
+     "sec": "3.7",
+     "title": "Other Applications of One-Dimensional, Steady-State Conduction",
+     "pdf": 187,
+     "printed": 163
+    },
+    {
+     "sec": "3.8",
+     "title": "Summary",
+     "pdf": 203,
+     "printed": 179
+    }
+   ],
+   "problems_pdf": 206
+  },
+  {
+   "ch": 4,
+   "title": "Two-Dimensional, Steady-State Conduction",
+   "pdf": 233,
+   "printed": 209,
+   "sections": [
+    {
+     "sec": "4.1",
+     "title": "General Considerations and Solution Techniques",
+     "pdf": 234,
+     "printed": 210
+    },
+    {
+     "sec": "4.2",
+     "title": "The Method of Separation of Variables",
+     "pdf": 235,
+     "printed": 211
+    },
+    {
+     "sec": "4.3",
+     "title": "The Conduction Shape Factor and the Dimensionless Conduction Heat Rate",
+     "pdf": 239,
+     "printed": 215
+    },
+    {
+     "sec": "4.4",
+     "title": "Finite-Difference Equations",
+     "pdf": 245,
+     "printed": 221
+    },
+    {
+     "sec": "4.5",
+     "title": "Solving the Finite-Difference Equations",
+     "pdf": 254,
+     "printed": 230
+    },
+    {
+     "sec": "4.6",
+     "title": "Summary",
+     "pdf": 260,
+     "printed": 236
+    }
+   ],
+   "problems_pdf": 261
+  },
+  {
+   "ch": 5,
+   "title": "Transient Conduction",
+   "pdf": 277,
+   "printed": 253,
+   "sections": [
+    {
+     "sec": "5.1",
+     "title": "The Lumped Capacitance Method",
+     "pdf": 278,
+     "printed": 254
+    },
+    {
+     "sec": "5.2",
+     "title": "Validity of the Lumped Capacitance Method",
+     "pdf": 281,
+     "printed": 257
+    },
+    {
+     "sec": "5.3",
+     "title": "General Lumped Capacitance Analysis",
+     "pdf": 285,
+     "printed": 261
+    },
+    {
+     "sec": "5.4",
+     "title": "Spatial Effects",
+     "pdf": 296,
+     "printed": 272
+    },
+    {
+     "sec": "5.5",
+     "title": "The Plane Wall with Convection",
+     "pdf": 297,
+     "printed": 273
+    },
+    {
+     "sec": "5.6",
+     "title": "Radial Systems with Convection",
+     "pdf": 301,
+     "printed": 277
+    },
+    {
+     "sec": "5.7",
+     "title": "The Semi-Infinite Solid",
+     "pdf": 308,
+     "printed": 284
+    },
+    {
+     "sec": "5.8",
+     "title": "Objects with Constant Surface Temperatures or Surface Heat Fluxes",
+     "pdf": 315,
+     "printed": 291
+    },
+    {
+     "sec": "5.9",
+     "title": "Periodic Heating",
+     "pdf": 325,
+     "printed": 301
+    },
+    {
+     "sec": "5.10",
+     "title": "Finite-Difference Methods",
+     "pdf": 328,
+     "printed": 304
+    },
+    {
+     "sec": "5.11",
+     "title": "Summary",
+     "pdf": 342,
+     "printed": 318
+    }
+   ],
+   "problems_pdf": 343
+  },
+  {
+   "ch": 6,
+   "title": "Introduction to Convection",
+   "pdf": 365,
+   "printed": 341,
+   "sections": [
+    {
+     "sec": "6.1",
+     "title": "The Convection Boundary Layers",
+     "pdf": 366,
+     "printed": 342
+    },
+    {
+     "sec": "6.2",
+     "title": "Local and Average Convection Coefficients",
+     "pdf": 370,
+     "printed": 346
+    },
+    {
+     "sec": "6.3",
+     "title": "Laminar and Turbulent Flow",
+     "pdf": 377,
+     "printed": 353
+    },
+    {
+     "sec": "6.4",
+     "title": "The Boundary Layer Equations",
+     "pdf": 382,
+     "printed": 358
+    },
+    {
+     "sec": "6.5",
+     "title": "Boundary Layer Similarity: The Normalized Boundary Layer Equations",
+     "pdf": 386,
+     "printed": 362
+    },
+    {
+     "sec": "6.6",
+     "title": "Physical Interpretation of the Dimensionless Parameters",
+     "pdf": 396,
+     "printed": 372
+    },
+    {
+     "sec": "6.7",
+     "title": "Boundary Layer Analogies",
+     "pdf": 398,
+     "printed": 374
+    },
+    {
+     "sec": "6.8",
+     "title": "Summary",
+     "pdf": 406,
+     "printed": 382
+    }
+   ],
+   "problems_pdf": 408
+  },
+  {
+   "ch": 7,
+   "title": "External Flow",
+   "pdf": 419,
+   "printed": 395,
+   "sections": [
+    {
+     "sec": "7.1",
+     "title": "The Empirical Method",
+     "pdf": 421,
+     "printed": 397
+    },
+    {
+     "sec": "7.2",
+     "title": "The Flat Plate in Parallel Flow",
+     "pdf": 422,
+     "printed": 398
+    },
+    {
+     "sec": "7.3",
+     "title": "Methodology for a Convection Calculation",
+     "pdf": 433,
+     "printed": 409
+    },
+    {
+     "sec": "7.4",
+     "title": "The Cylinder in Cross Flow",
+     "pdf": 441,
+     "printed": 417
+    },
+    {
+     "sec": "7.5",
+     "title": "The Sphere",
+     "pdf": 451,
+     "printed": 427
+    },
+    {
+     "sec": "7.6",
+     "title": "Flow Across Banks of Tubes",
+     "pdf": 454,
+     "printed": 430
+    },
+    {
+     "sec": "7.7",
+     "title": "Impinging Jets",
+     "pdf": 463,
+     "printed": 439
+    },
+    {
+     "sec": "7.8",
+     "title": "Packed Beds",
+     "pdf": 468,
+     "printed": 444
+    },
+    {
+     "sec": "7.9",
+     "title": "Summary",
+     "pdf": 469,
+     "printed": 445
+    }
+   ],
+   "problems_pdf": 472
+  },
+  {
+   "ch": 8,
+   "title": "Internal Flow",
+   "pdf": 493,
+   "printed": 469,
+   "sections": [
+    {
+     "sec": "8.1",
+     "title": "Hydrodynamic Considerations",
+     "pdf": 494,
+     "printed": 470
+    },
+    {
+     "sec": "8.2",
+     "title": "Thermal Considerations",
+     "pdf": 499,
+     "printed": 475
+    },
+    {
+     "sec": "8.3",
+     "title": "The Energy Balance",
+     "pdf": 505,
+     "printed": 481
+    },
+    {
+     "sec": "8.4",
+     "title": "Laminar Flow in Circular Tubes: Thermal Analysis and Convection Correlations",
+     "pdf": 513,
+     "printed": 489
+    },
+    {
+     "sec": "8.5",
+     "title": "Convection Correlations: Turbulent Flow in Circular Tubes",
+     "pdf": 520,
+     "printed": 496
+    },
+    {
+     "sec": "8.6",
+     "title": "Convection Correlations: Noncircular Tubes and the Concentric Tube Annulus",
+     "pdf": 528,
+     "printed": 504
+    },
+    {
+     "sec": "8.7",
+     "title": "Heat Transfer Enhancement",
+     "pdf": 531,
+     "printed": 507
+    },
+    {
+     "sec": "8.8",
+     "title": "Forced Convection in Small Channels",
+     "pdf": 534,
+     "printed": 510
+    },
+    {
+     "sec": "8.9",
+     "title": "Convection Mass Transfer",
+     "pdf": 539,
+     "printed": 515
+    },
+    {
+     "sec": "8.10",
+     "title": "Summary",
+     "pdf": 541,
+     "printed": 517
+    }
+   ],
+   "problems_pdf": 545
+  },
+  {
+   "ch": 9,
+   "title": "Free Convection",
+   "pdf": 563,
+   "printed": 539,
+   "sections": [
+    {
+     "sec": "9.1",
+     "title": "Physical Considerations",
+     "pdf": 564,
+     "printed": 540
+    },
+    {
+     "sec": "9.2",
+     "title": "The Governing Equations for Laminar Boundary Layers",
+     "pdf": 566,
+     "printed": 542
+    },
+    {
+     "sec": "9.3",
+     "title": "Similarity Considerations",
+     "pdf": 568,
+     "printed": 544
+    },
+    {
+     "sec": "9.4",
+     "title": "Laminar Free Convection on a Vertical Surface",
+     "pdf": 569,
+     "printed": 545
+    },
+    {
+     "sec": "9.5",
+     "title": "The Effects of Turbulence",
+     "pdf": 572,
+     "printed": 548
+    },
+    {
+     "sec": "9.6",
+     "title": "Empirical Correlations: External Free Convection Flows",
+     "pdf": 574,
+     "printed": 550
+    },
+    {
+     "sec": "9.7",
+     "title": "Free Convection Within Parallel Plate Channels",
+     "pdf": 588,
+     "printed": 564
+    },
+    {
+     "sec": "9.8",
+     "title": "Empirical Correlations: Enclosures",
+     "pdf": 591,
+     "printed": 567
+    },
+    {
+     "sec": "9.9",
+     "title": "Combined Free and Forced Convection",
+     "pdf": 597,
+     "printed": 573
+    },
+    {
+     "sec": "9.10",
+     "title": "Convection Mass Transfer",
+     "pdf": 598,
+     "printed": 574
+    },
+    {
+     "sec": "9.11",
+     "title": "Summary",
+     "pdf": 599,
+     "printed": 575
+    }
+   ],
+   "problems_pdf": 601
+  },
+  {
+   "ch": 10,
+   "title": "Boiling and Condensation",
+   "pdf": 619,
+   "printed": 595,
+   "sections": [
+    {
+     "sec": "10.1",
+     "title": "Dimensionless Parameters in Boiling and Condensation",
+     "pdf": 620,
+     "printed": 596
+    },
+    {
+     "sec": "10.2",
+     "title": "Boiling Modes",
+     "pdf": 621,
+     "printed": 597
+    },
+    {
+     "sec": "10.3",
+     "title": "Pool Boiling",
+     "pdf": 622,
+     "printed": 598
+    },
+    {
+     "sec": "10.4",
+     "title": "Pool Boiling Correlations",
+     "pdf": 626,
+     "printed": 602
+    },
+    {
+     "sec": "10.5",
+     "title": "Forced Convection Boiling",
+     "pdf": 635,
+     "printed": 611
+    },
+    {
+     "sec": "10.6",
+     "title": "Condensation: Physical Mechanisms",
+     "pdf": 639,
+     "printed": 615
+    },
+    {
+     "sec": "10.7",
+     "title": "Laminar Film Condensation on a Vertical Plate",
+     "pdf": 641,
+     "printed": 617
+    },
+    {
+     "sec": "10.8",
+     "title": "Turbulent Film Condensation",
+     "pdf": 645,
+     "printed": 621
+    },
+    {
+     "sec": "10.9",
+     "title": "Film Condensation on Radial Systems",
+     "pdf": 650,
+     "printed": 626
+    },
+    {
+     "sec": "10.10",
+     "title": "Condensation in Horizontal Tubes",
+     "pdf": 655,
+     "printed": 631
+    },
+    {
+     "sec": "10.11",
+     "title": "Dropwise Condensation",
+     "pdf": 656,
+     "printed": 632
+    },
+    {
+     "sec": "10.12",
+     "title": "Summary",
+     "pdf": 657,
+     "printed": 633
+    }
+   ],
+   "problems_pdf": 659
+  },
+  {
+   "ch": 11,
+   "title": "Heat Exchangers",
+   "pdf": 669,
+   "printed": 645,
+   "sections": [
+    {
+     "sec": "11.1",
+     "title": "Heat Exchanger Types",
+     "pdf": 670,
+     "printed": 646
+    },
+    {
+     "sec": "11.2",
+     "title": "The Overall Heat Transfer Coefficient",
+     "pdf": 672,
+     "printed": 648
+    },
+    {
+     "sec": "11.3",
+     "title": "Heat Exchanger Analysis: Use of the Log Mean Temperature Difference",
+     "pdf": 675,
+     "printed": 651
+    },
+    {
+     "sec": "11.4",
+     "title": "Heat Exchanger Analysis: The Effectiveness\u2013NTU Method",
+     "pdf": 686,
+     "printed": 662
+    },
+    {
+     "sec": "11.5",
+     "title": "Heat Exchanger Design and Performance Calculations",
+     "pdf": 694,
+     "printed": 670
+    },
+    {
+     "sec": "11.6",
+     "title": "Additional Considerations",
+     "pdf": 703,
+     "printed": 679
+    },
+    {
+     "sec": "11.7",
+     "title": "Summary",
+     "pdf": 711,
+     "printed": 687
+    }
+   ],
+   "problems_pdf": 712
+  },
+  {
+   "ch": 12,
+   "title": "Radiation: Processes and Properties",
+   "pdf": 725,
+   "printed": 701,
+   "sections": [
+    {
+     "sec": "12.1",
+     "title": "Fundamental Concepts",
+     "pdf": 726,
+     "printed": 702
+    },
+    {
+     "sec": "12.2",
+     "title": "Radiation Heat Fluxes",
+     "pdf": 729,
+     "printed": 705
+    },
+    {
+     "sec": "12.3",
+     "title": "Radiation Intensity",
+     "pdf": 731,
+     "printed": 707
+    },
+    {
+     "sec": "12.4",
+     "title": "Blackbody Radiation",
+     "pdf": 740,
+     "printed": 716
+    },
+    {
+     "sec": "12.5",
+     "title": "Emission from Real Surfaces",
+     "pdf": 750,
+     "printed": 726
+    },
+    {
+     "sec": "12.6",
+     "title": "Absorption, Reflection, and Transmission by Real Surfaces",
+     "pdf": 759,
+     "printed": 735
+    },
+    {
+     "sec": "12.7",
+     "title": "Kirchhoff\u2019s Law",
+     "pdf": 768,
+     "printed": 744
+    },
+    {
+     "sec": "12.8",
+     "title": "The Gray Surface",
+     "pdf": 770,
+     "printed": 746
+    },
+    {
+     "sec": "12.9",
+     "title": "Environmental Radiation",
+     "pdf": 776,
+     "printed": 752
+    },
+    {
+     "sec": "12.10",
+     "title": "Summary",
+     "pdf": 784,
+     "printed": 760
+    }
+   ],
+   "problems_pdf": 788
+  },
+  {
+   "ch": 13,
+   "title": "Radiation Exchange Between Surfaces",
+   "pdf": 809,
+   "printed": 785,
+   "sections": [
+    {
+     "sec": "13.1",
+     "title": "The View Factor",
+     "pdf": 810,
+     "printed": 786
+    },
+    {
+     "sec": "13.2",
+     "title": "Blackbody Radiation Exchange",
+     "pdf": 820,
+     "printed": 796
+    },
+    {
+     "sec": "13.3",
+     "title": "Radiation Exchange Between Opaque, Diffuse, Gray Surfaces in an Enclosure",
+     "pdf": 824,
+     "printed": 800
+    },
+    {
+     "sec": "13.4",
+     "title": "Multimode Heat Transfer",
+     "pdf": 841,
+     "printed": 817
+    },
+    {
+     "sec": "13.5",
+     "title": "Implications of the Simplifying Assumptions",
+     "pdf": 844,
+     "printed": 820
+    },
+    {
+     "sec": "13.6",
+     "title": "Radiation Exchange with Participating Media",
+     "pdf": 844,
+     "printed": 820
+    },
+    {
+     "sec": "13.7",
+     "title": "Summary",
+     "pdf": 849,
+     "printed": 825
+    }
+   ],
+   "problems_pdf": 851
+  },
+  {
+   "ch": 14,
+   "title": "Diffusion Mass Transfer",
+   "pdf": 873,
+   "printed": 849,
+   "sections": [
+    {
+     "sec": "14.1",
+     "title": "Physical Origins and Rate Equations",
+     "pdf": 874,
+     "printed": 850
+    },
+    {
+     "sec": "14.2",
+     "title": "Mass Transfer in Nonstationary Media",
+     "pdf": 879,
+     "printed": 855
+    },
+    {
+     "sec": "14.3",
+     "title": "The Stationary Medium Approximation",
+     "pdf": 887,
+     "printed": 863
+    },
+    {
+     "sec": "14.4",
+     "title": "Conservation of Species for a Stationary Medium",
+     "pdf": 887,
+     "printed": 863
+    },
+    {
+     "sec": "14.5",
+     "title": "Boundary Conditions and Discontinuous Concentrations at Interfaces",
+     "pdf": 894,
+     "printed": 870
+    },
+    {
+     "sec": "14.6",
+     "title": "Mass Diffusion with Homogeneous Chemical Reactions",
+     "pdf": 902,
+     "printed": 878
+    },
+    {
+     "sec": "14.7",
+     "title": "Transient Diffusion",
+     "pdf": 905,
+     "printed": 881
+    },
+    {
+     "sec": "14.8",
+     "title": "Summary",
+     "pdf": 911,
+     "printed": 887
+    }
+   ],
+   "problems_pdf": 912
+  }
+ ],
+ "examples": [
+  {
+   "ex": "1.1",
+   "printed": 5,
+   "pdf": 29,
+   "sec": "1.2"
+  },
+  {
+   "ex": "1.2",
+   "printed": 10,
+   "pdf": 34,
+   "sec": "1.2"
+  },
+  {
+   "ex": "1.3",
+   "printed": 18,
+   "pdf": 42,
+   "sec": "1.3"
+  },
+  {
+   "ex": "1.4",
+   "printed": 20,
+   "pdf": 44,
+   "sec": "1.3"
+  },
+  {
+   "ex": "1.5",
+   "printed": 23,
+   "pdf": 47,
+   "sec": "1.3"
+  },
+  {
+   "ex": "1.6",
+   "printed": 25,
+   "pdf": 49,
+   "sec": "1.3"
+  },
+  {
+   "ex": "1.7",
+   "printed": 31,
+   "pdf": 55,
+   "sec": "1.3"
+  },
+  {
+   "ex": "1.8",
+   "printed": 36,
+   "pdf": 60,
+   "sec": "1.5"
+  },
+  {
+   "ex": "1.9",
+   "printed": 44,
+   "pdf": 68,
+   "sec": "1.7"
+  },
+  {
+   "ex": "2.1",
+   "printed": 71,
+   "pdf": 95,
+   "sec": "2.2"
+  },
+  {
+   "ex": "2.2",
+   "printed": 72,
+   "pdf": 96,
+   "sec": "2.2"
+  },
+  {
+   "ex": "2.3",
+   "printed": 79,
+   "pdf": 103,
+   "sec": "2.3"
+  },
+  {
+   "ex": "2.4",
+   "printed": 83,
+   "pdf": 107,
+   "sec": "2.4"
+  },
+  {
+   "ex": "3.1",
+   "printed": 110,
+   "pdf": 134,
+   "sec": "3.1"
+  },
+  {
+   "ex": "3.2",
+   "printed": 113,
+   "pdf": 137,
+   "sec": "3.1"
+  },
+  {
+   "ex": "3.3",
+   "printed": 115,
+   "pdf": 139,
+   "sec": "3.1"
+  },
+  {
+   "ex": "3.4",
+   "printed": 118,
+   "pdf": 142,
+   "sec": "3.1"
+  },
+  {
+   "ex": "3.5",
+   "printed": 122,
+   "pdf": 146,
+   "sec": "3.2"
+  },
+  {
+   "ex": "3.6",
+   "printed": 127,
+   "pdf": 151,
+   "sec": "3.3"
+  },
+  {
+   "ex": "3.7",
+   "printed": 134,
+   "pdf": 158,
+   "sec": "3.4"
+  },
+  {
+   "ex": "3.8",
+   "printed": 140,
+   "pdf": 164,
+   "sec": "3.4"
+  },
+  {
+   "ex": "3.9",
+   "printed": 150,
+   "pdf": 174,
+   "sec": "3.6"
+  },
+  {
+   "ex": "3.10",
+   "printed": 161,
+   "pdf": 185,
+   "sec": "3.6"
+  },
+  {
+   "ex": "3.11",
+   "printed": 164,
+   "pdf": 188,
+   "sec": "3.7"
+  },
+  {
+   "ex": "3.12",
+   "printed": 172,
+   "pdf": 196,
+   "sec": "3.7"
+  },
+  {
+   "ex": "3.13",
+   "printed": 177,
+   "pdf": 201,
+   "sec": "3.7"
+  },
+  {
+   "ex": "4.1",
+   "printed": 219,
+   "pdf": 243,
+   "sec": "4.3"
+  },
+  {
+   "ex": "4.2",
+   "printed": 226,
+   "pdf": 250,
+   "sec": "4.4"
+  },
+  {
+   "ex": "4.3",
+   "printed": 231,
+   "pdf": 255,
+   "sec": "4.5"
+  },
+  {
+   "ex": "5.1",
+   "printed": 259,
+   "pdf": 283,
+   "sec": "5.2"
+  },
+  {
+   "ex": "5.2",
+   "printed": 264,
+   "pdf": 288,
+   "sec": "5.3"
+  },
+  {
+   "ex": "5.3",
+   "printed": 266,
+   "pdf": 290,
+   "sec": "5.3"
+  },
+  {
+   "ex": "5.4",
+   "printed": 268,
+   "pdf": 292,
+   "sec": "5.3"
+  },
+  {
+   "ex": "5.5",
+   "printed": 279,
+   "pdf": 303,
+   "sec": "5.6"
+  },
+  {
+   "ex": "5.6",
+   "printed": 282,
+   "pdf": 306,
+   "sec": "5.6"
+  },
+  {
+   "ex": "5.7",
+   "printed": 289,
+   "pdf": 313,
+   "sec": "5.7"
+  },
+  {
+   "ex": "5.8",
+   "printed": 294,
+   "pdf": 318,
+   "sec": "5.8"
+  },
+  {
+   "ex": "5.9",
+   "printed": 297,
+   "pdf": 321,
+   "sec": "5.8"
+  },
+  {
+   "ex": "5.10",
+   "printed": 302,
+   "pdf": 326,
+   "sec": "5.9"
+  },
+  {
+   "ex": "5.11",
+   "printed": 307,
+   "pdf": 331,
+   "sec": "5.10"
+  },
+  {
+   "ex": "5.12",
+   "printed": 312,
+   "pdf": 336,
+   "sec": "5.10"
+  },
+  {
+   "ex": "6.1",
+   "printed": 349,
+   "pdf": 373,
+   "sec": "6.2"
+  },
+  {
+   "ex": "6.2",
+   "printed": 350,
+   "pdf": 374,
+   "sec": "6.2"
+  },
+  {
+   "ex": "6.3",
+   "printed": 351,
+   "pdf": 375,
+   "sec": "6.2"
+  },
+  {
+   "ex": "6.4",
+   "printed": 356,
+   "pdf": 380,
+   "sec": "6.3"
+  },
+  {
+   "ex": "6.5",
+   "printed": 367,
+   "pdf": 391,
+   "sec": "6.5"
+  },
+  {
+   "ex": "6.6",
+   "printed": 370,
+   "pdf": 394,
+   "sec": "6.5"
+  },
+  {
+   "ex": "6.7",
+   "printed": 376,
+   "pdf": 400,
+   "sec": "6.7"
+  },
+  {
+   "ex": "6.8",
+   "printed": 380,
+   "pdf": 404,
+   "sec": "6.7"
+  },
+  {
+   "ex": "7.1",
+   "printed": 410,
+   "pdf": 434,
+   "sec": "7.3"
+  },
+  {
+   "ex": "7.2",
+   "printed": 411,
+   "pdf": 435,
+   "sec": "7.3"
+  },
+  {
+   "ex": "7.3",
+   "printed": 414,
+   "pdf": 438,
+   "sec": "7.3"
+  },
+  {
+   "ex": "7.4",
+   "printed": 421,
+   "pdf": 445,
+   "sec": "7.4"
+  },
+  {
+   "ex": "7.5",
+   "printed": 424,
+   "pdf": 448,
+   "sec": "7.4"
+  },
+  {
+   "ex": "7.6",
+   "printed": 428,
+   "pdf": 452,
+   "sec": "7.5"
+  },
+  {
+   "ex": "7.7",
+   "printed": 435,
+   "pdf": 459,
+   "sec": "7.6"
+  },
+  {
+   "ex": "8.1",
+   "printed": 479,
+   "pdf": 503,
+   "sec": "8.2"
+  },
+  {
+   "ex": "8.2",
+   "printed": 483,
+   "pdf": 507,
+   "sec": "8.3"
+  },
+  {
+   "ex": "8.3",
+   "printed": 487,
+   "pdf": 511,
+   "sec": "8.3"
+  },
+  {
+   "ex": "8.4",
+   "printed": 491,
+   "pdf": 515,
+   "sec": "8.4"
+  },
+  {
+   "ex": "8.5",
+   "printed": 498,
+   "pdf": 522,
+   "sec": "8.5"
+  },
+  {
+   "ex": "8.6",
+   "printed": 502,
+   "pdf": 526,
+   "sec": "8.5"
+  },
+  {
+   "ex": "8.7",
+   "printed": 512,
+   "pdf": 536,
+   "sec": "8.8"
+  },
+  {
+   "ex": "8.8",
+   "printed": 516,
+   "pdf": 540,
+   "sec": "8.9"
+  },
+  {
+   "ex": "9.1",
+   "printed": 549,
+   "pdf": 573,
+   "sec": "9.5"
+  },
+  {
+   "ex": "9.2",
+   "printed": 552,
+   "pdf": 576,
+   "sec": "9.6"
+  },
+  {
+   "ex": "9.3",
+   "printed": 556,
+   "pdf": 580,
+   "sec": "9.6"
+  },
+  {
+   "ex": "9.4",
+   "printed": 560,
+   "pdf": 584,
+   "sec": "9.6"
+  },
+  {
+   "ex": "9.5",
+   "printed": 572,
+   "pdf": 596,
+   "sec": "9.8"
+  },
+  {
+   "ex": "10.1",
+   "printed": 608,
+   "pdf": 632,
+   "sec": "10.4"
+  },
+  {
+   "ex": "10.2",
+   "printed": 610,
+   "pdf": 634,
+   "sec": "10.4"
+  },
+  {
+   "ex": "10.3",
+   "printed": 623,
+   "pdf": 647,
+   "sec": "10.8"
+  },
+  {
+   "ex": "10.4",
+   "printed": 628,
+   "pdf": 652,
+   "sec": "10.9"
+  },
+  {
+   "ex": "11.1",
+   "printed": 656,
+   "pdf": 680,
+   "sec": "11.3"
+  },
+  {
+   "ex": "11.2",
+   "printed": 658,
+   "pdf": 682,
+   "sec": "11.3"
+  },
+  {
+   "ex": "11.3",
+   "printed": 668,
+   "pdf": 692,
+   "sec": "11.4"
+  },
+  {
+   "ex": "11.4",
+   "printed": 670,
+   "pdf": 694,
+   "sec": "11.5"
+  },
+  {
+   "ex": "11.5",
+   "printed": 672,
+   "pdf": 696,
+   "sec": "11.5"
+  },
+  {
+   "ex": "11.6",
+   "printed": 675,
+   "pdf": 699,
+   "sec": "11.5"
+  },
+  {
+   "ex": "11.7",
+   "printed": 679,
+   "pdf": 703,
+   "sec": "11.6"
+  },
+  {
+   "ex": "11.8",
+   "printed": 682,
+   "pdf": 706,
+   "sec": "11.6"
+  },
+  {
+   "ex": "12.1",
+   "printed": 711,
+   "pdf": 735,
+   "sec": "12.3"
+  },
+  {
+   "ex": "12.2",
+   "printed": 714,
+   "pdf": 738,
+   "sec": "12.3"
+  },
+  {
+   "ex": "12.3",
+   "printed": 722,
+   "pdf": 746,
+   "sec": "12.4"
+  },
+  {
+   "ex": "12.4",
+   "printed": 723,
+   "pdf": 747,
+   "sec": "12.4"
+  },
+  {
+   "ex": "12.5",
+   "printed": 725,
+   "pdf": 749,
+   "sec": "12.4"
+  },
+  {
+   "ex": "12.6",
+   "printed": 731,
+   "pdf": 755,
+   "sec": "12.5"
+  },
+  {
+   "ex": "12.7",
+   "printed": 733,
+   "pdf": 757,
+   "sec": "12.5"
+  },
+  {
+   "ex": "12.8",
+   "printed": 741,
+   "pdf": 765,
+   "sec": "12.6"
+  },
+  {
+   "ex": "12.9",
+   "printed": 743,
+   "pdf": 767,
+   "sec": "12.6"
+  },
+  {
+   "ex": "12.10",
+   "printed": 748,
+   "pdf": 772,
+   "sec": "12.8"
+  },
+  {
+   "ex": "12.11",
+   "printed": 750,
+   "pdf": 774,
+   "sec": "12.8"
+  },
+  {
+   "ex": "12.12",
+   "printed": 759,
+   "pdf": 783,
+   "sec": "12.9"
+  },
+  {
+   "ex": "13.1",
+   "printed": 794,
+   "pdf": 818,
+   "sec": "13.1"
+  },
+  {
+   "ex": "13.2",
+   "printed": 795,
+   "pdf": 819,
+   "sec": "13.1"
+  },
+  {
+   "ex": "13.3",
+   "printed": 797,
+   "pdf": 821,
+   "sec": "13.2"
+  },
+  {
+   "ex": "13.4",
+   "printed": 804,
+   "pdf": 828,
+   "sec": "13.3"
+  },
+  {
+   "ex": "13.5",
+   "printed": 811,
+   "pdf": 835,
+   "sec": "13.3"
+  },
+  {
+   "ex": "13.6",
+   "printed": 813,
+   "pdf": 837,
+   "sec": "13.3"
+  },
+  {
+   "ex": "13.7",
+   "printed": 817,
+   "pdf": 841,
+   "sec": "13.4"
+  },
+  {
+   "ex": "14.1",
+   "printed": 854,
+   "pdf": 878,
+   "sec": "14.1"
+  },
+  {
+   "ex": "14.2",
+   "printed": 860,
+   "pdf": 884,
+   "sec": "14.2"
+  },
+  {
+   "ex": "14.3",
+   "printed": 868,
+   "pdf": 892,
+   "sec": "14.3"
+  },
+  {
+   "ex": "14.4",
+   "printed": 872,
+   "pdf": 896,
+   "sec": "14.5"
+  },
+  {
+   "ex": "14.5",
+   "printed": 875,
+   "pdf": 899,
+   "sec": "14.5"
+  },
+  {
+   "ex": "14.6",
+   "printed": 880,
+   "pdf": 904,
+   "sec": "14.6"
+  },
+  {
+   "ex": "14.7",
+   "printed": 883,
+   "pdf": 907,
+   "sec": "14.7"
+  }
+ ]
+}

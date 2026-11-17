@@ -1,0 +1,17 @@
+# Copyrighted source material stays local only
+*.pdf
+courses/*/textbook/cache/
+courses/*/canvas/files/
+knowledge/cache/
+knowledge/sources/
+__pycache__/
+node_modules/
+
+# local tool envs and generated outputs
+.venv-cad/
+courses/*/out/
+courses/*/work/*/ansys_out*/
+courses/*/work/*/figures/
+courses/*/work/*/figs/
+courses/*/work/*/assets/*.step
+courses/*/work/*/assets/*.xml

@@ -1,0 +1,84 @@
+{
+ "slug": "mazur-odum",
+ "offset": 19,
+ "chapters": [
+  {
+   "ch": 1,
+   "title": "History, Background, and Basic Concepts",
+   "printed": 1,
+   "pdf": 20
+  },
+  {
+   "ch": 2,
+   "title": "Innate Behavior Patterns and Habituation",
+   "printed": 28,
+   "pdf": 47
+  },
+  {
+   "ch": 3,
+   "title": "Basic Principles of Classical Conditioning",
+   "printed": 54,
+   "pdf": 73
+  },
+  {
+   "ch": 4,
+   "title": "Theories and Research on Classical Conditioning",
+   "printed": 79,
+   "pdf": 98
+  },
+  {
+   "ch": 5,
+   "title": "Basic Principles of Operant Conditioning",
+   "printed": 106,
+   "pdf": 125
+  },
+  {
+   "ch": 6,
+   "title": "Reinforcement Schedules: Experimental Analyses",
+   "printed": 135,
+   "pdf": 154
+  },
+  {
+   "ch": 7,
+   "title": "Avoidance and Punishment",
+   "printed": 163,
+   "pdf": 182
+  },
+  {
+   "ch": 8,
+   "title": "Theories and Research on Operant Conditioning",
+   "printed": 191,
+   "pdf": 210
+  },
+  {
+   "ch": 9,
+   "title": "Stimulus Control and Concept Learning",
+   "printed": 221,
+   "pdf": 240
+  },
+  {
+   "ch": 10,
+   "title": "Comparative Cognition",
+   "printed": 249,
+   "pdf": 268
+  },
+  {
+   "ch": 11,
+   "title": "Observational Learning and Motor Skills",
+   "printed": 279,
+   "pdf": 298
+  },
+  {
+   "ch": 12,
+   "title": "Choice",
+   "printed": 313,
+   "pdf": 332
+  },
+  {
+   "ch": "Glossary",
+   "title": "Glossary",
+   "printed": 342,
+   "pdf": 361
+  }
+ ]
+}
