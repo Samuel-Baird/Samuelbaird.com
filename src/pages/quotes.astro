@@ -1,0 +1,65 @@
+---
+// Quotes on the Deseret Alphabet, as share cards. The cards are images rendered from
+// /social/quote/<id>/ by scripts/social-image.py; they swap to the Deseret set with the script toggle.
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+import QUOTES from '../data/quotes.json';
+
+// Speakers in the order they first appear in the data.
+const groups: { by: string; quotes: typeof QUOTES }[] = [];
+for (const q of QUOTES) {
+  const g = groups.find((x) => x.by === q.by);
+  g ? g.quotes.push(q) : groups.push({ by: q.by, quotes: [q] });
+}
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+const img = (q: (typeof QUOTES)[number], tail: string, ext: string) => `/social/${q.image}${tail}.${ext}`;
+---
+<Base title="Quotes — Deseret Wiki" description="What Brigham Young, Parley P. Pratt, George Q. Cannon and others said about the Deseret Alphabet, as cards to read and share in either alphabet.">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">In Their Own Words</p>
+      <Title text="Quotes" />
+      <p class="lede-text">What the alphabet's makers and champions said about it, as cards to read and share. Switch the site to Deseret and the cards change script too. Each one links to its source.</p>
+    </header>
+
+    <nav class="q-index small" aria-label="Speakers">
+      {groups.map((g) => <a href={`#${slug(g.by)}`}>{g.by}</a>)}
+    </nav>
+
+    {groups.map((g) => (
+      <section class="q-group" id={slug(g.by)}>
+        <h2>{g.by}</h2>
+        <div class="q-grid">
+          {g.quotes.map((q) => (
+            <figure class="q-card" id={q.id}>
+              <a class="q-img" href={q.url} rel="noopener" aria-label={`${q.by}, ${q.label}: go to the source`}>
+                <img class="q-latn" src={img(q, '', 'webp')} srcset={`${img(q, '', 'webp')} 1x, ${img(q, '@2x', 'webp')} 2x`} width="1200" height="630" loading="lazy" alt={`“${q.text}” — ${q.by}, ${q.label}.`} />
+                <img class="q-dsrt" src={img(q, '-dsrt', 'webp')} srcset={`${img(q, '-dsrt', 'webp')} 1x, ${img(q, '-dsrt@2x', 'webp')} 2x`} width="1200" height="630" loading="lazy" alt={`The same words in the Deseret Alphabet: “${q.text}” — ${q.by}.`} />
+              </a>
+              <figcaption class="small">
+                <a href={q.url} rel="noopener">{q.note}</a>
+                <span class="q-share" data-no-dsrt>Download: <a href={img(q, '', 'png')} download>Latin</a> · <a href={img(q, '-dsrt', 'png')} download>Deseret</a></span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+  <style>
+    .q-index { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: 0 0 2.5rem; font-family: var(--f-formal); letter-spacing: .12em; text-transform: uppercase; font-size: .7rem; }
+    .q-group { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
+    .q-group h2 { margin: 0 0 1.2rem; font-size: 1.6rem; }
+    .q-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr)); gap: 2rem 1.8rem; }
+    .q-card { margin: 0; scroll-margin-top: 1.5rem; }
+    .q-img { display: block; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px rgb(201 164 92 / .35), 0 14px 40px rgb(0 0 0 / .35); transition: box-shadow .2s, transform .2s; }
+    .q-img:hover { box-shadow: 0 0 0 1px rgb(201 164 92 / .7), 0 18px 46px rgb(0 0 0 / .45); transform: translateY(-2px); }
+    .q-img img { display: block; width: 100%; height: auto; }
+    .q-dsrt { display: none !important; }
+    :global(html[data-script='dsrt']) .q-dsrt { display: block !important; }
+    :global(html[data-script='dsrt']) .q-latn { display: none !important; }
+    .q-card figcaption { margin-top: .7rem; color: var(--ink-soft); line-height: 1.5; }
+    .q-card figcaption > a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+    .q-share { display: block; margin-top: .3rem; font-family: var(--f-formal); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
+  </style>
+</Base>

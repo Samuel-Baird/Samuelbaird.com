@@ -1,36 +1,45 @@
 ---
-// The social card: Brigham Young on teaching the Deseret Alphabet (General Conference, 7 October 1867),
-// set like the home page. Rendered to /social/*.png by scripts/social-image.py, once in the Latin
-// alphabet and once in the Deseret (?script=dsrt). Not linked from the site.
-import '../../styles/global.css';
-import Sprite from '../../components/Sprite.astro';
-import Emblems from '../../components/Emblems.astro';
-import Mountains from '../../components/Mountains.astro';
-import Seal from '../../components/Seal.astro';
-import { toDeseret } from '../../lib/dsrt.js';
+// Quote cards, one per entry in src/data/quotes.json, set like the home page. Each is rendered to
+// /social/<image>.png by scripts/social-image.py, once in the Latin alphabet and once in the Deseret
+// (?script=dsrt). Not linked from the site; the images are shown on /quotes/ and the home page.
+import '../../../styles/global.css';
+import Sprite from '../../../components/Sprite.astro';
+import Emblems from '../../../components/Emblems.astro';
+import Mountains from '../../../components/Mountains.astro';
+import Seal from '../../../components/Seal.astro';
+import { toDeseret } from '../../../lib/dsrt.js';
+import QUOTES from '../../../data/quotes.json';
 
-import Q from '../../data/social-quote.json';
-const QUOTE = Q.text;
-const WHO = Q.by;
-const WHERE = 'General Conference · October 1867';
+export function getStaticPaths() {
+  return QUOTES.map((q) => ({ params: { id: q.id }, props: { q } }));
+}
+const { q } = Astro.props as { q: (typeof QUOTES)[number] & { portrait?: string; emblem?: string } };
 
-// a seeded scatter, so the card comes out the same every time
-let seed = 1867;
+// Citation line: words go to Deseret, years stay as digits.
+const [where, when] = q.label.split(' · ');
+
+// Starting sizes scale with the length of the quote; the script below shrinks them if they still overflow.
+const len = q.text.length;
+const latnPx = Math.min(46, 36.5 * Math.sqrt(214 / len)).toFixed(1);
+const dsrtPx = Math.min(38, 29 * Math.sqrt(214 / len)).toFixed(1);
+
+// a seeded scatter per card, so each comes out the same every time
+let seed = [...q.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 2147483647, 1867) || 1867;
 const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
 const stars = Array.from({ length: 150 }, () => ({ x: rnd() * 1200, y: rnd() * 520, r: 0.4 + rnd() * rnd() * 1.6, a: 0.25 + rnd() * 0.65 }));
 const LETTERS = [...'𐐀𐐁𐐂𐐃𐐄𐐅𐐆𐐇𐐈𐐉𐐊𐐋𐐌𐐍𐐎𐐏𐐐𐐑𐐒𐐓𐐔𐐕𐐖𐐗𐐘𐐙𐐚𐐛𐐜𐐝𐐞𐐟𐐠𐐡𐐢𐐣𐐤𐐥'];
 const glyphs = Array.from({ length: 70 }, () => ({ ch: LETTERS[Math.floor(rnd() * LETTERS.length)], x: rnd() * 1200, y: rnd() * 560, s: 14 + rnd() * 30, r: (rnd() - 0.5) * 40, a: 0.05 + rnd() * 0.07 }));
-const emblems = [
-  { id: 'e-daystar', x: 1110, y: 120, s: 74, r: 8 }, { id: 'e-tree', x: 365, y: 455, s: 70, r: -6 }, { id: 'i-skep', x: 24, y: 20, s: 58, r: -8 },
-  { id: 'e-dove', x: 1040, y: 360, s: 66, r: 6 }, { id: 'e-wheat', x: 22, y: 470, s: 60, r: 5 }, { id: 'e-handclasp', x: 680, y: 18, s: 50, r: -4 },
-];
+const POOL = ['e-daystar', 'e-tree', 'i-skep', 'e-dove', 'e-wheat', 'e-handclasp', 'e-sun', 'e-moon', 'e-olive', 'e-keystone', 'e-grapes', 'e-hexagram'];
+const pool = POOL.filter((id) => id !== q.emblem).sort(() => rnd() - 0.5);
+const spots = [{ x: 1110, y: 120, s: 74, r: 8 }, { x: 365, y: 455, s: 70, r: -6 }, { x: 24, y: 20, s: 58, r: -8 }, { x: 1040, y: 360, s: 66, r: 6 }, { x: 22, y: 470, s: 60, r: 5 }, { x: 680, y: 18, s: 50, r: -4 }];
+const emblems = spots.map((s, i) => ({ ...s, id: q.id === 'young-1867-taught' ? ['e-daystar', 'e-tree', 'i-skep', 'e-dove', 'e-wheat', 'e-handclasp'][i] : pool[i] }));
 ---
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
-  <title>Social card — Deseret Wiki</title>
+  <title>Quote card — Deseret Wiki</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&family=Grenze+Gotisch:wght@500&family=Noto+Sans+Deseret&display=swap" />
@@ -49,19 +58,32 @@ const emblems = [
     <div class="land"><Mountains /></div>
 
     <figure class="portrait">
-      <img src="/social/brigham-young.webp" alt="Brigham Young, photographed about 1870" />
+      {q.portrait
+        ? <img src={q.portrait} alt={q.by} />
+        : <div class="medallion"><svg viewBox="0 0 64 64" aria-hidden="true"><use href={`#${q.emblem}`} /></svg></div>}
     </figure>
 
-    <div class="words">
+    <div class="words" style={`--latn:${latnPx}px;--dsrt:${dsrtPx}px`}>
       <span class="mark" aria-hidden="true">“</span>
-      <blockquote class="latn"><p>{QUOTE}</p></blockquote>
-      <blockquote class="dsrt-q" lang="en-Dsrt"><p>{toDeseret(QUOTE)}</p></blockquote>
-      <p class="cite latn">— {WHO} <span>· {WHERE}</span></p>
-      <p class="cite dsrt-q" lang="en-Dsrt">— {toDeseret(WHO)} <span>· {toDeseret('General Conference')} · {toDeseret('October')} 1867</span></p>
+      <blockquote class="latn"><p>{q.text}</p></blockquote>
+      <blockquote class="dsrt-q" lang="en-Dsrt"><p>{toDeseret(q.text)}</p></blockquote>
+      <p class="cite latn">— {q.by} <span>· {q.label}</span></p>
+      <p class="cite dsrt-q" lang="en-Dsrt">— {toDeseret(q.by)} <span>· {toDeseret(where)}{when && ` · ${toDeseret(when)}`}</span></p>
     </div>
 
     <div class="brand"><Seal size="34px" /><span class="latn">Deseret Wiki</span><span class="dsrt-q" lang="en-Dsrt">{toDeseret('Deseret Wiki')}</span></div>
   </div>
+  <script is:inline>
+    // Shrink the quote until it fits its box, then flag the card as ready for the renderer.
+    document.fonts.ready.then(() => {
+      const box = document.querySelector('.words');
+      const dsrt = document.documentElement.dataset.v === 'dsrt';
+      const prop = dsrt ? '--dsrt' : '--latn';
+      let px = parseFloat(getComputedStyle(box).getPropertyValue(prop));
+      while (box.scrollHeight > box.clientHeight + 1 && px > 16) { px -= 0.5; box.style.setProperty(prop, px + 'px'); }
+      document.documentElement.dataset.fit = 'done';
+    });
+  </script>
 </body>
 </html>
 
@@ -82,13 +104,16 @@ const emblems = [
   .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; border-radius: 50%;
     filter: grayscale(1) sepia(.5) contrast(1.08) brightness(.92);
     -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 46%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 70% at 50% 46%, #000 62%, transparent 100%); }
+  .medallion { width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center;
+    background: radial-gradient(ellipse 60% 55% at 50% 45%, #232A3A 0%, #151A25 60%, #0E1016 100%); }
+  .medallion svg { width: 62%; color: #D2AE62; filter: drop-shadow(0 2px 10px rgb(201 164 92 / .25)); }
 
   .words { position: absolute; left: 398px; right: 64px; top: 34px; bottom: 132px; display: flex; flex-direction: column; justify-content: center; }
   .words .mark { position: relative; height: 0; margin-left: -14px; top: -62px; font: 400 150px/1 'IM Fell English', serif; color: #C9A45C; opacity: .55; }
   .words blockquote { margin: 0; padding: 0; border: 0; font-size: inherit; }
   .words blockquote::before, .words blockquote::after { content: none; }
-  .words blockquote p { margin: 0; font: italic 400 36.5px/1.3 'IM Fell English', Georgia, serif; color: #F1E6CB; text-wrap: pretty; }
-  .words .dsrt-q p { font: 400 29px/1.48 'Noto Sans Deseret', sans-serif; font-style: normal; letter-spacing: .01em; }
+  .words blockquote p { margin: 0; font: italic 400 var(--latn)/1.3 'IM Fell English', Georgia, serif; color: #F1E6CB; text-wrap: pretty; }
+  .words .dsrt-q p { font: 400 var(--dsrt)/1.48 'Noto Sans Deseret', sans-serif; font-style: normal; letter-spacing: .01em; }
   .words .cite { margin: 26px 0 0; font: 600 16px/1.4 'Cinzel', serif; letter-spacing: .18em; text-transform: uppercase; color: #D2AE62; }
   .words .cite span { color: #B9AE96; font-weight: 400; }
   .words .cite.dsrt-q { font: 400 17px/1.4 'Noto Sans Deseret', sans-serif; text-transform: none; letter-spacing: .06em; }

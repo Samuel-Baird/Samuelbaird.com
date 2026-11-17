@@ -37,6 +37,9 @@ const OVERRIDES = {
   unicode: 'Y UW1 N IH0 K OW2 D',
   youtube: 'Y UW1 T UW2 B',
   amazon: 'AE1 M AH0 Z O2 N',
+  autography: 'AO0 T AA1 G R AH0 F IY0', // Woodruff's spelling of orthography, kept as he wrote it
+  leters: 'L EH1 T ER0 Z',              // Parley P. Pratt's spelling
+  schonfield: 'SH OW1 N F IY2 L D',
 };
 
 const toDeseret = (phones) => phones.split(/\s+/).map((p) => {

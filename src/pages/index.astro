@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Ornament from '../components/Ornament.astro';
-import Q from '../data/social-quote.json';
+import QUOTES from '../data/quotes.json';
+const Q = QUOTES[0]; // Brigham Young, October 1867: the home page card and the og:image
 import WaxSeal from '../components/WaxSeal.astro';
 import { roman } from '../lib/roman.js';
 
@@ -86,12 +87,12 @@ const CATEGORIES = [
   <!-- the social card; it follows the Latin / Deseret toggle -->
   <figure class="wrap quote-card">
     <a class="qc-img" href={Q.url} aria-label={`${Q.by} in General Conference, October 1867: read the discourse`}>
-      <img class="qc-latn" src="/social/deseret-alphabet-quote.png" srcset="/social/deseret-alphabet-quote.png 1x, /social/deseret-alphabet-quote@2x.png 2x" width="1200" height="630" loading="lazy" alt={`“${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
-      <img class="qc-dsrt" src="/social/deseret-alphabet-quote-dsrt.png" srcset="/social/deseret-alphabet-quote-dsrt.png 1x, /social/deseret-alphabet-quote-dsrt@2x.png 2x" width="1200" height="630" loading="lazy" alt={`The same words in the Deseret Alphabet: “${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
+      <img class="qc-latn" src="/social/deseret-alphabet-quote.webp" srcset="/social/deseret-alphabet-quote.webp 1x, /social/deseret-alphabet-quote@2x.webp 2x" width="1200" height="630" loading="lazy" alt={`“${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
+      <img class="qc-dsrt" src="/social/deseret-alphabet-quote-dsrt.webp" srcset="/social/deseret-alphabet-quote-dsrt.webp 1x, /social/deseret-alphabet-quote-dsrt@2x.webp 2x" width="1200" height="630" loading="lazy" alt={`The same words in the Deseret Alphabet: “${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
     </a>
     <figcaption class="small">
       <a href={Q.url}>{Q.note}</a>
-      <span class="qc-share" data-no-dsrt>Share it: <a href="/social/deseret-alphabet-quote@2x.png" download>Latin</a> · <a href="/social/deseret-alphabet-quote-dsrt@2x.png" download>Deseret</a></span>
+      <span class="qc-share" data-no-dsrt>Share it: <a href="/social/deseret-alphabet-quote@2x.png" download>Latin</a> · <a href="/social/deseret-alphabet-quote-dsrt@2x.png" download>Deseret</a> · <a href="/quotes/">More quotes</a></span>
     </figcaption>
   </figure>
 
